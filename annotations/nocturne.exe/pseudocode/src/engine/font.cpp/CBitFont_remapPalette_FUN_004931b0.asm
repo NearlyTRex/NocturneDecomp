@@ -26,18 +26,18 @@
 ;   TerminatedCString s_engine_font_cpp_00581954
 ;   TerminatedCString s_CBitFont_remapPalette_In_00581967
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bf7720
+;   uchar[32768] g_ColorCubeLookup
 ;   undefined4 DAT_01c00624
 ;   undefined4 DAT_01c00628
 ;   undefined4 DAT_01c00630
 ;   undefined4 DAT_01c00634
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00640
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -90,7 +90,7 @@ section .text
     ADD EAX,EBX                         ; 0049323a
     ADD ESI,EAX                         ; 0049323c
     XOR EAX,EAX                         ; 0049323e
-    MOV AL,byte ptr [ESI + 0x1bf7720]   ; 00493240 | DAT_01bf7720
+    MOV AL,byte ptr [ESI + 0x1bf7720]   ; 00493240 | g_ColorCubeLookup
     MOV dword ptr [EDX + 0xd64],EAX     ; 00493246
         ;   Label: LAB_00493246
     MOV ECX,dword ptr [ESP + 0x28]      ; 0049324c
@@ -194,10 +194,10 @@ section .text
         ;   Label: LAB_00493368
     MOV EDX,0x686                       ; 0049336d
     PUSH 0x581967                       ; 00493372 | = "CBitFont::remapPalette - Invalid bits..."
-    MOV [0x01cc4800],EAX                ; 00493377 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00493382
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00493377 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00493382
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00493387
     JMP 0x0049324c                      ; 0049338a
         ;   XREF to: 0049324c (UNCONDITIONAL_JUMP)  ; LAB_0049324c

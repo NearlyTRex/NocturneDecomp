@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format)
+; int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
@@ -19,7 +19,7 @@
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d552
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebce
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d27b
-;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f48fd
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110 at 004f51d1
 ;   ... and 149 more
 ;
 ; Called Functions:

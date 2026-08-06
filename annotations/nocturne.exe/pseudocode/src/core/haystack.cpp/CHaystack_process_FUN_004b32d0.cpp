@@ -48,7 +48,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
   CCharacter_full_vtable *local_18;
   
   bVar13 = 0;
-  iVar5 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
@@ -71,7 +71,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   core_haystack_cpp_CHaystack_advanceMotion_FUN_004b3e00(this_ptr,delta_time);
-  iVar5 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   pCVar14 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -116,7 +116,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
             iVar10 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&this_ptr->base);
             bVar3 = false;
             if (iVar10 != 0) goto LAB_004b3666;
-            local_1c = core_hero_cpp_FUN_004b5110(&this_ptr->base);
+            local_1c = core_hero_cpp_CHero_FUN_004b5110(&this_ptr->base);
             if ((local_1c != 0) && (local_1c != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
             }
@@ -267,7 +267,7 @@ LAB_004b34e4:
   if ((EVar7 == DEATH_STATE_ALIVE) &&
      (pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                          (&pCStack_24->motion_controller), pSVar8->state_index != 0x13)) {
-    blend_callback = core_skeleton_cpp_FUN_0051b650;
+    blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar15 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cae018;
     core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_look_euler,&CStack_8c);
@@ -283,7 +283,7 @@ LAB_004b34e4:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (pCVar14,source_quaternions,fVar15,iVar5,blend_callback);
   }
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
 switchD_004b375e_caseD_9:
   return;
 }

@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   restore_zbuffer
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509f20
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508bcc
-;   core_set.cpp_FUN_00509a80 at 00509f20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_0140efa8
 ;   undefined4 DAT_0140efac
@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_00440c6c
     MOV EDI,0x1bd2fa0                   ; 00440c71
     MOV EAX,[0x0140efac]                ; 00440c76 | DAT_0140efac
-    MOV ECX,dword ptr [0x005b7620]      ; 00440c7b | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 00440c7b | g_WindowHeight
     MOV [0x005b7624],EAX                ; 00440c81 | DAT_005b7624
     MOV EAX,[0x0140efb0]                ; 00440c86 | DAT_0140efb0
     SHL ECX,0x2                         ; 00440c8b

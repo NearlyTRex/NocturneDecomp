@@ -33,14 +33,14 @@ void sound_sndmain_cpp_FUN_00523170(void)
   
   bVar7 = 0;
   if (_DAT_02dc84bc < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0x4e0;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 1248;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   if (0 < _DAT_02dc8328) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0x4e4;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 1252;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("nextMixingBuffer - shouldn't have any data pending!");
   }
   iVar5 = 0;
   count = _DAT_02dc8330 * 4;

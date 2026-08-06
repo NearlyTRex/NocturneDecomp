@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004a3b90 at 004a3fbf
-;   core_game.cpp_FUN_004a4170 at 004a45b7
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3fbf
+;   core_game.cpp_CGame_FUN_004a4170 at 004a45b7
 ;   crt_unknown.c_FUN_005650f0 at 005650fd
 ;   crt_unknown.c_FUN_00565106 at 00565115
 ;   support_codec.cpp_CCodec_processFiles_FUN_004391b0 at 00439288
@@ -25,7 +25,7 @@
 ;   crt_iostream.cpp_ios_dtor_FUN_0056b633
 ;   crt_iostream.cpp_istream_dtor_FUN_0056b6e8
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
         ;   XREF to: 005652bd (UNCONDITIONAL_JUMP)  ; LAB_005652bd
     PUSH EBX                            ; 005652f6
         ;   Label: LAB_005652f6
-    CALL crt_unknown.c_FUN_00564494     ; 005652f7
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 005652f7
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     JMP 0x005652dc                      ; 005652fc
         ;   XREF to: 005652dc (UNCONDITIONAL_JUMP)  ; LAB_005652dc
 

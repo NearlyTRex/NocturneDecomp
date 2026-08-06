@@ -124,13 +124,13 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_actor.cpp_randomChance_FUN_0040dea0
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_00428c00
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
-;   core_charactr.cpp_FUN_004259f0
-;   core_charactr.cpp_FUN_00428c00
-;   core_charactr.cpp_FUN_0042a150
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   ... and 20 more
 ;
@@ -149,8 +149,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00555c6f
     PUSH dword ptr [EBP + 0x92]         ; 00555c75
     PUSH EBX                            ; 00555c7b
-    CALL core_charactr.cpp_FUN_004259f0 ; 00555c7c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 00555c7c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00555c81
     TEST EAX,EAX                        ; 00555c84
     JZ 0x00555cf2                       ; 00555c86
@@ -264,8 +264,8 @@ section .text
     PUSH EBX                            ; 00555da0
     MOV EDI,dword ptr [0x005baf90]      ; 00555da1 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 00555da7 | DAT_01cc9450
-    CALL core_mission.cpp_FUN_004d9110  ; 00555da8
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 00555da8
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00555dad
     JMP 0x00555cbe                      ; 00555db0
         ;   XREF to: 00555cbe (UNCONDITIONAL_JUMP)  ; LAB_00555cbe
@@ -309,8 +309,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x24]      ; 00555e2d
     PUSH EBX                            ; 00555e30
     MOV dword ptr [EBP + 0x72],EDI      ; 00555e31
-    CALL core_charactr.cpp_FUN_00428c00 ; 00555e34
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 00555e34
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00555e39
     TEST EAX,EAX                        ; 00555e3c
     JZ 0x00556116                       ; 00555e3e
@@ -496,8 +496,8 @@ section .text
     ADD ESP,0x4                         ; 00556055
     PUSH dword ptr [EBP + 0x92]         ; 00556058
     PUSH EBX                            ; 0055605e
-    CALL core_charactr.cpp_FUN_0042a150 ; 0055605f
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 0055605f
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00556064
     PUSH EBX                            ; 00556067
     CALL core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_00557cc0 ; 00556068
@@ -1254,10 +1254,10 @@ section .text
         ;   Label: LAB_005568e2
     MOV EDX,0x1ad                       ; 005568e7
     PUSH 0x597d60                       ; 005568ec | = "Alpha werewolf requires 2 waypoints"
-    MOV [0x01cc4800],EAX                ; 005568f1 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 005568f6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005568fc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 005568f1 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 005568f6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005568fc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00556901
     SUB ESP,0x8                         ; 00556904
         ;   Label: LAB_00556904

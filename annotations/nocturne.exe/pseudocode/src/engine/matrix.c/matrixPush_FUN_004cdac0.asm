@@ -28,7 +28,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -78,10 +78,10 @@ section .text
     MOV EBX,0x58820f                    ; 004cdb99 | = "..\\engine\\matrix.c"
     MOV ESI,0x348                       ; 004cdb9e
     PUSH 0x588222                       ; 004cdba3 | = "Matrix unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cdba8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cdbae | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004cdbb4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004cdba8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004cdbae | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004cdbb4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004cdbb9
     POP EBX                             ; 004cdbbc
     POP ESI                             ; 004cdbbd

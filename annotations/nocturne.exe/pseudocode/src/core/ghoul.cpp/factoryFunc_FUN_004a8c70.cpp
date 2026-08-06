@@ -11,7 +11,7 @@ CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004a8c70(void)
 {
   CGhoul *pCVar1;
   
-  pCVar1 = (CGhoul *)FUN_0056497c(0xbda0);
+  pCVar1 = operator_new(0xbda0);
   if (pCVar1 == (CGhoul *)0x0) {
     return (CGhoul *)0x0;
   }

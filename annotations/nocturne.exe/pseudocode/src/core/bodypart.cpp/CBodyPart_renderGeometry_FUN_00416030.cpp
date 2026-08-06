@@ -21,15 +21,16 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart *
             (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
              this_ptr->vertices,3,this_ptr->normals);
   if ((this_ptr->texture_count == 1) ||
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 != 0)
-     ) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                        (g_CDemonRenderer_PTR_005ae704), iVar2 != 0)) {
+    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                      (g_CDemonRenderer_PTR_005ae704);
     if (iVar2 == 0) {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,this_ptr->textures)
-      ;
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+                (g_CDemonRenderer_PTR_005ae704,this_ptr->textures);
     }
     engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0
-              (DAT_005ae704,this_ptr->faces,this_ptr->tri_count,render_flags);
+              (g_CDemonRenderer_PTR_005ae704,this_ptr->faces,this_ptr->tri_count,render_flags);
   }
   else {
     iVar2 = 0;
@@ -41,11 +42,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart *
         iVar1 = *(int *)((int)this_ptr->face_texture_indices + local_14);
         if (iVar1 != local_18) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                    (DAT_005ae704,this_ptr->textures + iVar1);
+                    (g_CDemonRenderer_PTR_005ae704,this_ptr->textures + iVar1);
           local_18 = iVar1;
         }
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
-                  (DAT_005ae704,
+                  (g_CDemonRenderer_PTR_005ae704,
                    (SMRGLPrimitivePoly *)
                    ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
                           type + iVar3),render_flags);
@@ -55,6 +56,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart *
       } while (iVar2 < this_ptr->tri_count);
     }
   }
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(g_CDemonRenderer_PTR_005ae704,1);
   return;
 }

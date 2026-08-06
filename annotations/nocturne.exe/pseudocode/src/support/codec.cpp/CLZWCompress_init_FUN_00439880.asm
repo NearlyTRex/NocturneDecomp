@@ -7,8 +7,8 @@
 ; CLZWCompress *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_FUN_00446810 at 004469cc
-;   core_game.cpp_FUN_004a3b90 at 004a3f1a
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 004469cc
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f1a
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_init_FUN_004393d0

@@ -20,7 +20,7 @@
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 at 0050c27a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_007f7374
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c48
@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 0050c022
     PUSH EBX                            ; 0050c023
     MOV EBX,dword ptr [ESP + 0x34]      ; 0050c024
-    MOV EAX,[0x005ae704]                ; 0050c028 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0050c028 | g_CDemonRenderer_PTR_005ae704
     MOV EDI,dword ptr [0x01c00c50]      ; 0050c02d | DAT_01c00c50
     MOV ECX,dword ptr [0x01c00c48]      ; 0050c033 | DAT_01c00c48
     MOV ESI,dword ptr [EAX]             ; 0050c039 | DAT_01b4d738

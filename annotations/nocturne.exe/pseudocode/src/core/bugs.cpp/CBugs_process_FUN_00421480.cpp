@@ -11,7 +11,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *this_ptr,float delt
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar1 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar1 != 0) {
     if ((this_ptr->allow_chase == 0) &&
        (iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -25,7 +25,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421480(CBugs *this_ptr,float delt
     }
     switch(this_ptr->state) {
     case BUGS_STATE_IDLE:
-      core_bugs_cpp_FUN_00422050(this_ptr,delta_time);
+      core_bugs_cpp_CBugs_FUN_00422050(this_ptr,delta_time);
       break;
     case BUGS_STATE_ATTACK:
       core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(this_ptr,delta_time);

@@ -22,7 +22,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_0054e040(CVampireBoss
                             (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar2),
                              g_CTVBatActorType_02dd110c.name_hash);
     if ((this_ptr_00 != (CTVBat *)0x0) && (this_ptr_00->follow_orders != 0)) {
-      core_tvbat_cpp_FUN_0054bfc0(this_ptr_00);
+      core_tvbat_cpp_CTVBat_FUN_0054bfc0(this_ptr_00);
     }
     iVar2 = iVar2 + 4;
   }

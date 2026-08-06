@@ -73,7 +73,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004c9580(CMansionPuz
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->gem_model);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&this_ptr->reflector_model);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(this_ptr->light_texture).textures);
+            (g_CDemonRenderer_PTR_005ae704,(this_ptr->light_texture).textures);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->panel_model);
   local_c4 = (pCVar8->bounds).min.x;
   local_c0 = (pCVar8->bounds).min.y;

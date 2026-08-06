@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_chain.cpp_FUN_0042cdc0
+;   core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 0042cd3c
     ADD EBX,0x284                       ; 0042cd3e
     PUSH EBX                            ; 0042cd44
-    CALL core_chain.cpp_FUN_0042cdc0    ; 0042cd45
-        ;   XREF to: 0042cdc0 (UNCONDITIONAL_CALL)  ; undefined core_chain.cpp_FUN_0042cdc0()
+    CALL core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0 ; 0042cd45
+        ;   XREF to: 0042cdc0 (UNCONDITIONAL_CALL)  ; SChainVertex * core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0(SChainVertex * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042cd4a
     PUSH 0x1                            ; 0042cd4d
     LEA EBX,[EAX + 0xfffffd7c]          ; 0042cd4f
@@ -62,8 +62,8 @@ section .text
     RET                                 ; 0042cd87
     PUSH EAX                            ; 0042cd88
         ;   Label: LAB_0042cd88
-    CALL crt_unknown.c_FUN_00564494     ; 0042cd89
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0042cd89
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0042cd8e
     MOV EAX,EBX                         ; 0042cd91
     POP EBX                             ; 0042cd93

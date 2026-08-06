@@ -27,9 +27,9 @@ CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
 // Address: 005173c0
 void __cdecl CSkeleton::allocMemory(CSkeleton *this_ptr,int bone_count,int frame_count);
 
-// Original: core_skeleton.cpp_FUN_005174e0
+// Original: core_skeleton.cpp_CSkeleton_FUN_005174e0
 // Address: 005174e0
-void FUN_005174e0(int param_1);
+void __cdecl CSkeleton(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CSkeleton_load_FUN_00517560
 // Address: 00517560
@@ -191,9 +191,9 @@ int __cdecl CDeformableModel::findMaxWeightBone(CDeformableModel *this_ptr,int l
 // Address: 0051b600
 int __cdecl CDeformableModel::calculateMemorySize(CDeformableModel *this_ptr);
 
-// Original: core_skeleton.cpp_FUN_0051b650
+// Original: core_skeleton.cpp_motionBlendWeightFunc_FUN_0051b650
 // Address: 0051b650
-undefined4 FUN_0051b650(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+float __cdecl motionBlendWeightFunc(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
 // Address: 0051b660
@@ -207,9 +207,9 @@ CDeformableModelInstance * __cdecl CDeformableModelInstance::dtor(CDeformableMod
 // Address: 0051b750
 void __cdecl CDeformableModelInstance::allocPointList(CDeformableModelInstance *this_ptr);
 
-// Original: core_skeleton.cpp_FUN_0051b7d0
+// Original: core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0
 // Address: 0051b7d0
-void FUN_0051b7d0(int param_1);
+void __cdecl CDeformableModelInstance(CDeformableModelInstance *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 // Address: 0051b800
@@ -459,6 +459,6 @@ CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *this_ptr,uint flags);
 // Address: 0051f8a0
 CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_FUN_0051f900
+// Original: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_0051f900
 // Address: 0051f900
-CBoundingBox3D * __cdecl FUN_0051f900(CBoundingBox3D *objs,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);

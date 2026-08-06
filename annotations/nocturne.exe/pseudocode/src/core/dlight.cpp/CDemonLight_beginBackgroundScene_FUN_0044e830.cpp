@@ -20,9 +20,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
   
   bVar6 = 0;
   if ((this_ptr->base).scene_open_flag == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
-    g_INT_01cc4804 = 0x1af;
-    core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 431;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonLight::beginBackgroundScene - Scene not open");
   }
   _DAT_01ab99f0 = _DAT_01ab99f0 + 1;
   if (_DAT_01ab99f0 == 1) {
@@ -39,9 +39,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
       puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
-      g_INT_01cc4804 = 0x1bc;
-      core_main_c_FUN_004c8440("CDemonLight::beginBackgroundScene - No master Z buffer");
+      g_CurrentFilename = "..\\core\\dlight.cpp";
+      g_CurrentLineNumber = 444;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonLight::beginBackgroundScene - No master Z buffer");
     }
     iVar2 = 0;
     if (0 < this_ptr->shadow_map_height) {
@@ -53,7 +53,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
         iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->shadow_map_height);
     }
-    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   }
   return;
 }

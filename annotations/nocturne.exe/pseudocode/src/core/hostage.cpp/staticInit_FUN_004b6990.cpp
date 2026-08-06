@@ -11,6 +11,7 @@ void __cdecl core_hostage_cpp_staticInit_FUN_004b6990(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CHostageActorType_01cae1a4,"CHostage",
-             core_hostage_cpp_factoryFunc_FUN_004b69c0,&INT_005ba980,0xc,&g_CNPCActorType_01d46820);
+             core_hostage_cpp_factoryFunc_FUN_004b69c0,&g_INT_005ba980,0xc,&g_CNPCActorType_01d46820
+            );
   return;
 }

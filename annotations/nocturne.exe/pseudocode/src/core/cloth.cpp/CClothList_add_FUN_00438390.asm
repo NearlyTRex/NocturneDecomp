@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af2b
 ;   TerminatedCString s_CClothList_add_list_is_f_0057af3d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -66,10 +66,10 @@ section .text
         ;   Label: LAB_004383e0
     MOV ESI,0x5d1                       ; 004383e5
     PUSH 0x57af3d                       ; 004383ea | = "CClothList::add - list is full"
-    MOV dword ptr [0x01cc4800],ECX      ; 004383ef | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004383f5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004383fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004383ef | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004383f5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004383fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00438400
     JMP 0x0043839c                      ; 00438403
         ;   XREF to: 0043839c (UNCONDITIONAL_JUMP)  ; LAB_0043839c

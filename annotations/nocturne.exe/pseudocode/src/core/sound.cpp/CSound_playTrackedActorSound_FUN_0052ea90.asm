@@ -13,8 +13,8 @@
 ;   core_actor.cpp_CDemonActor_playAmbientSound_FUN_0040a300 at 0040a316
 ;   core_chain.cpp_CChain_process_FUN_0042bca0 at 0042c423
 ;   core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430 at 004f3942
+;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e782
 ;   core_sound.cpp_FUN_0052d790 at 0052dbe9
-;   core_sound.cpp_FUN_0052dff0 at 0052e782
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0 at 0054f7d4
 ;
 ; Called Functions:

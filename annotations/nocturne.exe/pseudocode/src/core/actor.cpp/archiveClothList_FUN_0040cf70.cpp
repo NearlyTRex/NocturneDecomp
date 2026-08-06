@@ -37,20 +37,22 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(CClothList *cloth_list
                 ("Cloth list opening brace",property_name);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(DAT_00763e84,"%d");
+  iVar1 = _fscanf(DAT_00763e84,"%d",cloth_list);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("cloth count",property_name);
   }
   iVar1 = 0;
   core_actor_cpp_archiveDescription_FUN_0040c3a0("clothCount",property_name);
   if (0 < cloth_list->count) {
+    pacVar3 = cloth_list->filenames;
     do {
-      iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\"\n");
+      iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\"\n",pacVar3);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                   ("cloth filename entry",property_name);
       }
       iVar1 = iVar1 + 1;
+      pacVar3 = pacVar3 + 1;
     } while (iVar1 < cloth_list->count);
   }
   do {

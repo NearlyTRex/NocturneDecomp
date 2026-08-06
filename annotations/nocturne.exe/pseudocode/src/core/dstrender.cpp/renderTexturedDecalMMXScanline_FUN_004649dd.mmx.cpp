@@ -33,19 +33,19 @@ __asm {
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005b06b8],EBX
         mov dword ptr [DAT_005b06d4],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005b06bc],EBX
         mov dword ptr [DAT_005b06d8],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005b06c4],EBX
         mov dword ptr [DAT_005b06dc],EDX
         mov ECX,dword ptr [DAT_005b06b8]

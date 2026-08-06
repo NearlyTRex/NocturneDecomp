@@ -38,10 +38,10 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
   
   pCVar8 = g_CDemonSet_PTR_005be368;
   if (item != (CDemonActor *)0x0) {
-    if (0x280 < DAT_005b761c) {
-      viewport_x = (viewport_x * 0x280) / DAT_005b761c;
-      viewport_y = (viewport_y * 0x1e0) / DAT_005b7620;
-      viewport_size = (viewport_size * 0x280) / DAT_005b761c;
+    if (0x280 < g_WindowWidth) {
+      viewport_x = (viewport_x * 0x280) / g_WindowWidth;
+      viewport_y = (viewport_y * 0x1e0) / g_WindowHeight;
+      viewport_size = (viewport_size * 0x280) / g_WindowWidth;
     }
     g_CDemonSet_PTR_005be368->rendering_mode = 1;
     (pCVar8->light_direction).x = -0x482b;
@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
          (uint)((longlong)iVar10 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar10 * 0x482b) >> 0x20) << 0x10;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
-              (DAT_005ae704,viewport_x,viewport_y,viewport_size,viewport_size);
+              (g_CDemonRenderer_PTR_005ae704,viewport_x,viewport_y,viewport_size,viewport_size);
     this_ptr_00 = core_inv_cpp_getItemModel_FUN_004beb40(item);
     pCVar11 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(this_ptr_00);
     pCVar1 = pCVar11->frame_bounds;
@@ -88,12 +88,13 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     local_50.y = 0.0;
     local_18 = local_50.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-              (DAT_005ae704,&local_50);
-    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,36.0);
+              (g_CDemonRenderer_PTR_005ae704,&local_50);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
+              (g_CDemonRenderer_PTR_005ae704,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-              (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-              (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
+              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
     local_44 = fVar2 + fVar5;
     local_5c.x = local_44 * -0.5f;
     local_40 = fVar3 + fVar6;
@@ -123,15 +124,18 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
       }
     }
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (DAT_005ae704,&local_38,(CVector3f *)0x0);
+              (g_CDemonRenderer_PTR_005ae704,&local_38,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (DAT_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);
+              (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);
     if (alpha < 65000) {
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,alpha);
-      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,1);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                (g_CDemonRenderer_PTR_005ae704,alpha);
+      engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0
+                (g_CDemonRenderer_PTR_005ae704,1);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (this_ptr_00,0.0,0x2e7);
-      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(DAT_005ae704);
+      engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
+                (g_CDemonRenderer_PTR_005ae704);
     }
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr_00,0.0,-1);

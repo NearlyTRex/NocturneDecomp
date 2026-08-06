@@ -9,9 +9,9 @@
 void FUN_0056e230(void)
 
 {
-  if (DAT_005c1f54 != 0) {
-    FUN_005638d0(DAT_005c1f54);
-    DAT_005c1f54 = 0;
+  if (DAT_005c1f54 != (void *)0x0) {
+    free(DAT_005c1f54);
+    DAT_005c1f54 = (void *)0x0;
   }
   return;
 }

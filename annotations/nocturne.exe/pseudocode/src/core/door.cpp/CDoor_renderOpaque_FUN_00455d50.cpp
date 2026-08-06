@@ -23,7 +23,8 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00455d50(CDoor *this_ptr)
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(pCVar1);
   if (iVar2 != 0) {
     if (this_ptr->plot_as_box_in_shadow != 0) {
-      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                        (g_CDemonRenderer_PTR_005ae704);
       if (iVar3 != 0) {
         pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_34);
         core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(pCVar1);

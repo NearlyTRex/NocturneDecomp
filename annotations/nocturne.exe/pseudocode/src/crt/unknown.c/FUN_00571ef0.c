@@ -9,6 +9,6 @@
 void __watcallStack FUN_00571ef0(void *buffer)
 
 {
-  FUN_005638d0(buffer);
+  free(buffer);
   return;
 }

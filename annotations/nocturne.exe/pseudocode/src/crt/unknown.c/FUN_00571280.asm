@@ -14,9 +14,9 @@
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
+;   crt_memory.c_calloc_FUN_00565c50
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   crt_unknown.c_FUN_005638d0
-;   crt_unknown.c_FUN_00565c50
 ;   crt_unknown.c_FUN_00572e90
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH 0x10                           ; 0057128d
     MOV ESI,0x1                         ; 0057128f
     PUSH ESI                            ; 00571294
-    CALL crt_unknown.c_FUN_00565c50     ; 00571295
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
+    CALL crt_memory.c_calloc_FUN_00565c50 ; 00571295
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_00565c50(SIZE_T count, SIZE_T size)
     MOV EBX,EAX                         ; 0057129a
     ADD ESP,0x8                         ; 0057129c
     TEST EAX,EAX                        ; 0057129f
@@ -47,8 +47,8 @@ section .text
     JZ 0x005712bd                       ; 005712ae
         ;   XREF to: 005712bd (CONDITIONAL_JUMP)  ; LAB_005712bd
     PUSH EBX                            ; 005712b0
-    CALL crt_unknown.c_FUN_005638d0     ; 005712b1
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 005712b1
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR ESI,ESI                         ; 005712b6
     ADD ESP,0x4                         ; 005712b8
     JMP 0x005712e0                      ; 005712bb

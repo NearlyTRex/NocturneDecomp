@@ -128,7 +128,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004a9270(CGhoul *this_ptr,float d
   CGhoul *local_18;
   float local_14;
   
-  iVar6 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -344,7 +344,7 @@ switchD_004a9c0a_caseD_e:
     (this_ptr->base).base.turn_speed = (float)(fVar21 * (float10)(this_ptr->base).base.turn_speed);
     (this_ptr->base).base.walk_step_speed = (float)((float10)local_8c * fVar21 * (float10)fVar26);
   }
-  iVar8 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     local_20 = -1.0;
     pCVar9 = (CGhoul *)&(this_ptr->base).base.model;
@@ -972,14 +972,14 @@ LAB_004a93c4:
     local_14 = local_60;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (this_ptr_00,this_ptr->flinch_motion_index,local_60,local_5c,_DAT_01c78c38,
-               core_skeleton_cpp_FUN_0051b650);
+               core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     fVar26 = this_ptr->flinch_blend_weight - delta_time / 0.7f;
     this_ptr->flinch_blend_weight = fVar26;
     if (fVar26 < 0.0) {
       this_ptr->flinch_blend_weight = 0.0;
     }
   }
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||
      (fVar26 = (this_ptr->base).base.position_delta.y,
      fVar25 = (this_ptr->base).base.position_delta.x, fVar1 = (this_ptr->base).base.position_delta.z
@@ -987,7 +987,7 @@ LAB_004a93c4:
     iVar8 = core_sound_cpp_CSound_isSoundPlaying_FUN_0052eba0
                       (g_CSound_PTR_005bed68,this_ptr->sfx_handle);
     if (iVar8 == 0) {
-      _sprintf(&stack0xfffffc88,"ghoul-walk-?.wav *%f");
+      _sprintf(&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
       uVar16 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffc88);
       this_ptr->sfx_handle = uVar16;

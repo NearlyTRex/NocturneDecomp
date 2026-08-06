@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,37 +58,37 @@
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 47,
+        "line": 49,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "format_error",
         "column": 28,
-        "line": 51,
+        "line": 53,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 158,
+        "line": 160,
         "message": "invalid operands to binary expression ('float' and 'int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 184,
+        "line": 188,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "format_error",
-        "column": 30,
-        "line": 187,
+        "column": 32,
+        "line": 191,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 30,
-        "line": 200,
+        "column": 32,
+        "line": 204,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -98,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 347,
+    "complexity_score": 351,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 227,
+    "pseudocode_lines": 231,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
@@ -113,7 +113,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 770
+    "total_lines": 774
   },
   "cross_references": [
     {
@@ -170,7 +170,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "0050d1c0",
@@ -184,12 +184,12 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
       "addr": "00566b5c",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
     },
     {
@@ -401,13 +401,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -777,35 +777,35 @@
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 9,
-          "line": 51,
+          "line": 53,
           "message": "sscanf format string requires 3 parameters but only 0 are given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 187,
-          "message": "sscanf format string requires 2 parameters but only 0 are given.",
+          "line": 191,
+          "message": "sscanf format string requires 2 parameters but only 1 is given.",
           "severity": "error"
         },
         {
           "check_id": "wrongPrintfScanfArgNum",
           "column": 11,
-          "line": 200,
-          "message": "sscanf format string requires 2 parameters but only 0 are given.",
+          "line": 204,
+          "message": "sscanf format string requires 2 parameters but only 1 is given.",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 17,
-          "line": 59,
+          "line": 61,
           "message": "Uninitialized variable: local_2c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 43,
-          "line": 52,
+          "line": 54,
           "message": "Uninitialized variable: local_30",
           "severity": "error"
         }
@@ -817,7 +817,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 42,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "while ((((cVar5 != '\\0' && (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
@@ -825,7 +825,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 103,
       "match": "DAT_005bef20",
       "severity": "mild",
       "text": "puVar8 = &DAT_005bef20;",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 181,
       "match": "DAT_005c168c",
       "severity": "mild",
       "text": "if (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0) {",
@@ -841,7 +841,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 91,
+      "line": 93,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -849,7 +849,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 103,
+      "line": 105,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -857,7 +857,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 82,
+      "line": 84,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -865,7 +865,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 82,
+      "line": 84,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -873,7 +873,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 68,
+      "line": 70,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -881,7 +881,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
-      "line": 109,
+      "line": 111,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -889,7 +889,7 @@
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 59,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (9 < local_2c) {",
@@ -897,7 +897,7 @@
     },
     {
       "description": "Uninitialized variable: local_30",
-      "line": 52,
+      "line": 54,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if ((local_34 < 5) || (local_2c < local_30)) {",

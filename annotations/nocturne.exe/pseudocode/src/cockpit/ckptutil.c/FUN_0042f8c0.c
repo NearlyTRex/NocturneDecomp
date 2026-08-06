@@ -43,12 +43,12 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
     if (DAT_005b7624 == 8) {
       iVar5 = *(int *)(&DAT_01bd2fa0 + iVar1);
       iVar1 = (uint)*(byte *)(iVar5 + param_1) * 3;
-      bVar2 = *(byte *)(iVar1 + 0x1c00649);
-      bVar3 = *(byte *)(iVar1 + 0x1c0064a);
+      bVar2 = g_SourcePaletteData[iVar1 + 1];
+      bVar3 = g_SourcePaletteData[iVar1 + 2];
       fVar6 = 1.0 - param_3;
       dVar17 = round
-                         ((double)((float)(byte)(&DAT_01c00648)[param_4 * 3] * fVar6 +
-                                  (float)(byte)(&DAT_01c00648)[iVar1] * param_3));
+                         ((double)((float)g_SourcePaletteData[param_4 * 3] * fVar6 +
+                                  (float)g_SourcePaletteData[iVar1] * param_3));
       iVar1 = (int)ROUND(dVar17);
       dVar17 = round
                          ((double)((float)bVar2 * fVar6 + (float)bVar3 * param_3));
@@ -58,7 +58,7 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
                          ((double)((float)bVar2 * fVar6 + (float)local_2c * param_3));
       iVar14 = (int)ROUND(dVar18) >> 0x1f;
       *(byte *)(iVar5 + param_1) =
-           (&DAT_01bf7720)
+           g_ColorCubeLookup
            [((int)(((int)ROUND(dVar18) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) +
             ((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400
             + ((int)(((int)ROUND(dVar17) + iVar13 * -8) - (uint)(iVar13 << 2 < 0)) >> 3) * 0x20];

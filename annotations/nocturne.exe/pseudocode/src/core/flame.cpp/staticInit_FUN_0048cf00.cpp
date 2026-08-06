@@ -10,7 +10,7 @@ void __cdecl core_flame_cpp_staticInit_FUN_0048cf00(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CFlameActorType_01c70618,"CFlame",core_flame_cpp_FUN_0048cf30,&INT_005b91c0
-             ,7,&g_CDemonActorActorType_00763e48);
+            (&g_CFlameActorType_01c70618,"CFlame",core_flame_cpp_factoryFunc_FUN_0048cf30,
+             &g_INT_005b91c0,7,&g_CDemonActorActorType_00763e48);
   return;
 }

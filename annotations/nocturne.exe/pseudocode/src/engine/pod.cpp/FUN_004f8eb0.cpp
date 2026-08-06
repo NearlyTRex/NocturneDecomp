@@ -27,11 +27,11 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
             (g_CEditorTools_PTR_005b6d50,"Computing CRC over entire pod: %s...");
   engine_pod_cpp_CPodFile_ctor_FUN_004f7a80(&local_240);
-  iVar2 = engine_pod_cpp_FUN_004f7ae0(&local_240,param_2);
+  iVar2 = engine_pod_cpp_CPodFile_FUN_004f7ae0(&local_240,param_2);
   if (iVar2 == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
-    g_INT_01cc4804 = 0x37a;
-    core_main_c_FUN_004c8440("Can't mount %s to check version",param_2);
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 890;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't mount %s to check version");
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(&local_240);
   if (local_240.pod_format_version == 1) {
@@ -41,10 +41,9 @@ void engine_pod_cpp_FUN_004f8eb0(uint param_1,char *param_2)
     local_1c = 8;
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
-    g_INT_01cc4804 = 0x385;
-    core_main_c_FUN_004c8440
-              ("Invalid pod version for %s: %d",param_2,local_240.pod_format_version);
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 901;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid pod version for %s: %d");
   }
   iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,param_2);
   iVar2 = local_1c;

@@ -18,11 +18,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
-;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
-;   core_mission.cpp_FUN_004d9110
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -158,8 +158,8 @@ section .text
     MOV EAX,[0x005baf90]                ; 004ef9c1 | g_CDemonMission_PTR_005baf90
     PUSH EAX                            ; 004ef9c6 | DAT_01cc9450
     MOV dword ptr [EBX + 0x1f678],0x0   ; 004ef9c7
-    CALL core_mission.cpp_FUN_004d9110  ; 004ef9d1
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004ef9d1
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004ef9d6
     JMP 0x004ef8f5                      ; 004ef9d9
         ;   XREF to: 004ef8f5 (UNCONDITIONAL_JUMP)  ; LAB_004ef8f5
@@ -206,8 +206,8 @@ section .text
     ADD ESP,0x4                         ; 004efa41
     PUSH dword ptr [EBP + 0x18]         ; 004efa44
     PUSH EBX                            ; 004efa47
-    CALL core_charactr.cpp_FUN_0042a150 ; 004efa48
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004efa48
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004efa4d
     MOV ESP,EBP                         ; 004efa50
     POP EBP                             ; 004efa52

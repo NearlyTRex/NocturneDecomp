@@ -88,9 +88,9 @@ joined_r0x004dcc9d:
     case 0x40:
       goto switchD_004dccb6_caseD_d;
     default:
-      g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
-      g_INT_01cc4804 = 0xce;
-      core_main_c_FUN_004c8440("Need a new byteswap!");
+      g_CurrentFilename = "..\\engine\\model.c";
+      g_CurrentLineNumber = 206;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Need a new byteswap!");
       data_size = data_size - uVar1;
       mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
       if (data_size < 1) {

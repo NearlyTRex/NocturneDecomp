@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_004d4f30 at 004d52ef
+;   core_mimic.cpp_CMimic_FUN_004d4f30 at 004d52ef
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_00589513
@@ -15,11 +15,11 @@
 ;   TerminatedCString s_s_morphing_into_type_s_0058956e
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   CConsole g_CConsole_0077ad0c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
@@ -101,10 +101,10 @@ section .text
     MOV ECX,0x589513                    ; 004d5deb | = "..\\core\\mimic.cpp"
     MOV ESI,0x499                       ; 004d5df0
     PUSH 0x589525                       ; 004d5df5 | = "CMimic::beginMorph() - can't do this ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d5e06
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d5e06
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d5e0b
     POP ESI                             ; 004d5e0e
     JMP 0x004d5d13                      ; 004d5e0f

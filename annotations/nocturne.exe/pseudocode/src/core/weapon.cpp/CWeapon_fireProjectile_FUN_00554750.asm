@@ -57,7 +57,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
@@ -68,7 +68,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
-;   core_fire.cpp_FUN_0048b6f0
+;   core_fire.cpp_CFireEffect_FUN_0048b6f0
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
@@ -87,7 +87,7 @@ section .text
     SUB ESP,0xd8                        ; 00554756
     SUB EBP,0x7e                        ; 0055475c
     MOV EBX,dword ptr [EBP + 0x92]      ; 0055475f
-    MOV EDX,dword ptr [0x005ae704]      ; 00554765 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00554765 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0055476b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0055476c
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -227,8 +227,8 @@ section .text
     PUSH EAX                            ; 005548de
     MOV dword ptr [EBP + 0x12],EBX      ; 005548df
     MOV dword ptr [EBP + -0x42],EBX     ; 005548e2
-    CALL core_fire.cpp_FUN_0048b6f0     ; 005548e5
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
+    CALL core_fire.cpp_CFireEffect_FUN_0048b6f0 ; 005548e5
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 005548ea
     MOV EDX,dword ptr [0x005be368]      ; 005548ed | g_CDemonSet_PTR_005be368
     PUSH EDX                            ; 005548f3 | g_CDemonSet_01e57284

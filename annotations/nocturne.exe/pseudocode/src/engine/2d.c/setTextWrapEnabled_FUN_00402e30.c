@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_setTextWrapEnabled_FUN_00402e30(int enabled)
 
 {
-  DAT_005acaa4 = enabled;
+  g_ResolutionTable[7].width = enabled;
   return;
 }

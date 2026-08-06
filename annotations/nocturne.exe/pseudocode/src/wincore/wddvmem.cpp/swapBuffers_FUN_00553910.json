@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 415,
+    "complexity_score": 345,
     "cross_reference_count": 44,
     "function_call_count": 7,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 120,
-    "suspect_count": 27,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -143,6 +143,12 @@
       "addr": "0044b660",
       "from_addr": "0044b6d7",
       "name": "core_dcube.cpp_FUN_0044b660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5998",
+      "name": "core_game.cpp_CGame_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -167,12 +173,6 @@
       "addr": "0049d960",
       "from_addr": "0049d9e0",
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a57c0",
-      "from_addr": "004a5998",
-      "name": "core_game.cpp_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -421,7 +421,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563cc0",
@@ -481,15 +481,15 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7624",
@@ -523,13 +523,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -698,14 +698,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "local_1c = DAT_005b761c *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_005b7624",
       "severity": "mild",
@@ -737,14 +729,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(ulonglong *)((int)local_20",
@@ -761,14 +745,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "} while (local_14 < DAT_005b7620);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 74,
       "match": "code *",
@@ -778,26 +754,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 91,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "puVar5 = *(byte **)(&DAT_01bd2fa0 + iVar9);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b761c) {",
       "type": "undefined_data"
     },
     {
@@ -823,22 +783,6 @@
       "severity": "moderate",
       "text": "puVar5[2] = *(byte *)((int)puVar7 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "} while (iVar6 < DAT_005b761c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "} while (iVar10 < DAT_005b7620);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

@@ -9,24 +9,24 @@
 void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(CStrList *this_ptr)
 
 {
+  void *ptr;
   int iVar1;
   int iVar2;
-  int iVar3;
   
   if (this_ptr->data_array != (char **)0x0) {
-    iVar2 = 0;
+    iVar1 = 0;
     if (0 < this_ptr->item_count) {
-      iVar3 = 0;
+      iVar2 = 0;
       do {
-        iVar1 = *(int *)((int)this_ptr->data_array + iVar3);
-        if (iVar1 != 0) {
-          FUN_005638d0(iVar1);
+        ptr = *(void **)((int)this_ptr->data_array + iVar2);
+        if (ptr != (void *)0x0) {
+          free(ptr);
         }
-        iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 4;
-      } while (iVar2 < this_ptr->item_count);
+        iVar1 = iVar1 + 1;
+        iVar2 = iVar2 + 4;
+      } while (iVar1 < this_ptr->item_count);
     }
-    FUN_005638d0(this_ptr->data_array);
+    free(this_ptr->data_array);
   }
   this_ptr->data_array = (char **)0x0;
   this_ptr->capacity = 0;

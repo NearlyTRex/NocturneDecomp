@@ -11,7 +11,7 @@
 ;
 ; XREF[8]:
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3d4c
-;   core_mission.cpp_FUN_004d8720 at 004d8740
+;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8740
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_004e99f0 at 004e9a05
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9b62
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d63
@@ -22,17 +22,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcdde8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_00490ce0
@@ -80,7 +80,7 @@ section .text
     PUSH 0xffff                         ; 0047004b
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00470050
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
-    MOV EAX,[0x005b7620]                ; 00470055 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00470055 | g_WindowHeight
     MOV EDX,EAX                         ; 0047005a
     SAR EDX,0x1f                        ; 0047005c
     SUB EAX,EDX                         ; 0047005f
@@ -91,7 +91,7 @@ section .text
     MOV EBP,dword ptr [0x01bcdde8]      ; 0047006d | DAT_01bcdde8
     PUSH EBP                            ; 00470073
     PUSH EAX                            ; 00470074
-    MOV EAX,[0x005b761c]                ; 00470075 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 00470075 | g_WindowWidth
     MOV EDX,EAX                         ; 0047007a
     SAR EDX,0x1f                        ; 0047007c
     SUB EAX,EDX                         ; 0047007f
@@ -114,10 +114,10 @@ section .text
         ;   Label: LAB_0047009f
     MOV EBX,0x8b                        ; 004700a4
     PUSH 0x57e510                       ; 004700a9 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 004700ae | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004700b4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004700ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004700ae | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004700b4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004700ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004700bf
     JMP 0x00470004                      ; 004700c2
         ;   XREF to: 00470004 (UNCONDITIONAL_JUMP)  ; LAB_00470004

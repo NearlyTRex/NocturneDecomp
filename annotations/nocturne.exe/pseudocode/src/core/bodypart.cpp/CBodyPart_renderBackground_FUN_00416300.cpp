@@ -36,8 +36,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00416300(CBodyPart
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_01);
     if ((iVar1 != 0) &&
        ((this_ptr->transparent_geometry_flag == 0 ||
-        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
-        iVar2 != 0)))) {
+        (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                           (g_CDemonRenderer_PTR_005ae704), iVar2 != 0)))) {
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(this_ptr,-1);
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();

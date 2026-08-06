@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00513209
 ;   core_setdir.cpp_FUN_00511d80 at 00512283
-;   core_setdir.cpp_FUN_005125a0 at 00513209
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dbbe
@@ -22,11 +22,11 @@
 ;   undefined4 DAT_01c00c7c
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
 ;
@@ -88,10 +88,10 @@ section .text
     MOV EBX,0x57dbbe                    ; 0045f103 | = "..\\engine\\drender.cpp"
     MOV ESI,0x29c                       ; 0045f108
     PUSH 0x57dbd4                       ; 0045f10d | = "Can't use demonZFacetCount in shadow ..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0045f112 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0045f118 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045f11e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0045f112 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0045f118 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045f11e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045f123
     PUSH 0x1b4d76c                      ; 0045f126 | DAT_01b4d76c
         ;   Label: LAB_0045f126

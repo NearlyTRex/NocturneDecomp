@@ -47,7 +47,7 @@ section .text
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00421048
         ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_00479560(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0042104d
-    PUSH 0x59b010                       ; 00421050 | g_SBugsTypeInfo_0059b010
+    PUSH 0x59b010                       ; 00421050 | g_SBugTypeInfo_0059b010
     PUSH 0x190                          ; 00421055
     ADD EAX,0xbd2c                      ; 0042105a
     PUSH EAX                            ; 0042105f

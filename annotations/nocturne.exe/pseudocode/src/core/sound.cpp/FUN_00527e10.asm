@@ -7,8 +7,8 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004c8440 at 004c84b1
 ;   core_main.c_FUN_004c90e0 at 004c934a
+;   core_main.c_displayErrorAndQuit_FUN_004c8440 at 004c84b1
 ;
 ; *****************************************************************************
 

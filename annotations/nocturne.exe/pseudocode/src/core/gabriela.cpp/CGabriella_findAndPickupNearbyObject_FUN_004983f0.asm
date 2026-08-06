@@ -42,8 +42,8 @@
 ;   double DOUBLE_0058217a = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSet_01e57284.actor_count
 ;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;   undefined4 g_CDemonSet_01e57284.actors[1]
@@ -51,7 +51,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
@@ -370,10 +370,10 @@ section .text
     MOV EBX,0x582134                    ; 00498761 | = "..\\core\\gabriela.cpp"
     MOV ESI,0x638                       ; 00498766
     PUSH 0x582149                       ; 0049876b | = "Hell froze - invalid pickUpType: %d"
-    MOV dword ptr [0x01cc4800],EBX      ; 00498770 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00498776 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0049877c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00498770 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00498776 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0049877c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00498781
     JMP 0x0049873d                      ; 00498784
         ;   XREF to: 0049873d (UNCONDITIONAL_JUMP)  ; LAB_0049873d

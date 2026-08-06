@@ -62,7 +62,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650
 ;   core_dtrace.cpp_FUN_00467890
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_resetAllPathMaps_FUN_004f1e90
 ;   core_set.cpp_CDemonSet_clear_FUN_00506ec0
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30
@@ -980,10 +980,10 @@ section .text
     MOV ECX,0x59010e                    ; 0050795c | = "..\\core\\set.cpp"
     MOV EDI,0x11b                       ; 00507961
     PUSH 0x59011e                       ; 00507966 | = "CDemonSet::Unable to open %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050796b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00507971 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00507977
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050796b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00507971 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00507977
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0050797c
     JMP 0x00506f6d                      ; 0050797f
         ;   XREF to: 00506f6d (UNCONDITIONAL_JUMP)  ; LAB_00506f6d

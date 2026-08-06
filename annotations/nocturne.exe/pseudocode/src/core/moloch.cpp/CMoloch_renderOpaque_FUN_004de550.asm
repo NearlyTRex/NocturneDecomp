@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a0ab8
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cd4318
 ;
@@ -33,7 +33,7 @@ section .text
         ;   Label: core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550
     SUB ESP,0x18                        ; 004de551
     MOV EBX,dword ptr [ESP + 0x20]      ; 004de554
-    MOV EDX,dword ptr [0x005ae704]      ; 004de558 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004de558 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004de55e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 004de55f
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_004de60f
     JZ 0x004de647                       ; 004de616
         ;   XREF to: 004de647 (CONDITIONAL_JUMP)  ; LAB_004de647
-    MOV EAX,[0x005ae704]                ; 004de618 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004de618 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 004de61d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004de61e
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

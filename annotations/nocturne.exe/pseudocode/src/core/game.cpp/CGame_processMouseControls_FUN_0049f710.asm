@@ -22,8 +22,8 @@
 ;   double DOUBLE_00582a1a = 0.0000152587890625
 ;   double DOUBLE_00582a22 = 0.75
 ;   double DOUBLE_00582a2a = -1
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
@@ -64,14 +64,14 @@ section .text
     POP ESI                             ; 0049f73a
     POP EBX                             ; 0049f73b
     RET                                 ; 0049f73c
-    MOV EAX,[0x005b761c]                ; 0049f73d | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0049f73d | g_WindowWidth
         ;   Label: LAB_0049f73d
     MOV EDX,EAX                         ; 0049f742
     SAR EDX,0x1f                        ; 0049f744
     SUB EAX,EDX                         ; 0049f747
     SAR EAX,0x1                         ; 0049f749
     MOV dword ptr [ESP + 0x20],EAX      ; 0049f74b
-    MOV EAX,[0x005b7620]                ; 0049f74f | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049f74f | g_WindowHeight
     MOV EDX,EAX                         ; 0049f754
     SAR EDX,0x1f                        ; 0049f756
     SUB EAX,EDX                         ; 0049f759

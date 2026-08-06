@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
@@ -63,13 +63,13 @@ section .text
         ;   XREF to: 00419cc4 (CONDITIONAL_JUMP)  ; LAB_00419cc4
     PUSH EDI                            ; 00419c67
     PUSH 0x0                            ; 00419c68
-    MOV ECX,dword ptr [0x005ae704]      ; 00419c6a | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00419c6a | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00419c70 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0 ; 00419c71
         ;   XREF to: 004619f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(CDemonRenderer * this_ptr, int enable_advanced_mode)
     ADD ESP,0x8                         ; 00419c76
     PUSH 0xffff                         ; 00419c79
-    MOV EDI,dword ptr [0x005ae704]      ; 00419c7e | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 00419c7e | g_CDemonRenderer_PTR_005ae704
     MOV EAX,[0x005be368]                ; 00419c84 | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 00419c89 | DAT_01b4d738
     MOV dword ptr [EAX + 0x15a8a0],0x1  ; 00419c8a | g_CDemonSet_01e57284.disable_directional_lighting
@@ -80,7 +80,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 ; 00419c9d
         ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419ca2
-    MOV EBP,dword ptr [0x005ae704]      ; 00419ca5 | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 00419ca5 | g_CDemonRenderer_PTR_005ae704
     MOV EAX,[0x005be368]                ; 00419cab | g_CDemonSet_PTR_005be368
     PUSH EBP                            ; 00419cb0 | DAT_01b4d738
     MOV dword ptr [EAX + 0x15a8a0],0x0  ; 00419cb1 | g_CDemonSet_01e57284.disable_directional_lighting

@@ -25,14 +25,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00403460 at 00403495
+;   engine_2d.c_loadLightTable_FUN_00403460 at 00403495
 ;
 ; Referenced Globals:
 ;   float FLOAT_005771f4 = 0.0625
 ;   float FLOAT_005771f8 = 255
-;   undefined4 DAT_01c00648
-;   undefined4 DAT_01c0064c
-;   undefined4 DAT_01c0064d
+;   uchar[768] g_SourcePaletteData
+;   undefined4 g_SourcePaletteData+4
+;   undefined4 g_SourcePaletteData+5
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -55,7 +55,7 @@ section .text
     MOV EBX,EAX                         ; 004031b9
     XOR EAX,EAX                         ; 004031bb
     XOR EDX,EDX                         ; 004031bd
-    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004031bf | DAT_01c00648
+    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004031bf | g_SourcePaletteData
     XOR EDI,EDI                         ; 004031c5
     MOV dword ptr [ESP + 0x48],EAX      ; 004031c7
     XOR EAX,EAX                         ; 004031cb
@@ -73,13 +73,13 @@ section .text
     FSTP float ptr [ESP + 0x18]         ; 004031fb
     XOR EAX,EAX                         ; 004031ff
         ;   Label: LAB_004031ff
-    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00403201 | DAT_01c00648
+    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00403201 | g_SourcePaletteData
     MOV dword ptr [ESP + 0x48],EAX      ; 00403207
     FILD word ptr [ESP + 0x48]          ; 0040320b
     FSTP float ptr [ESP + 0x40]         ; 0040320f
     XOR EAX,EAX                         ; 00403213
     FLD float ptr [ESP + 0x40]          ; 00403215
-    MOV AL,byte ptr [EDI + 0x1c00649]   ; 00403219 | DAT_01c0064c
+    MOV AL,byte ptr [EDI + 0x1c00649]   ; 00403219 | g_SourcePaletteData+4
     FSUB float ptr [ESP + 0x10]         ; 0040321f
     MOV dword ptr [ESP + 0x48],EAX      ; 00403223
     FLD float ptr [0x005771f4]          ; 00403227 | FLOAT_005771f4
@@ -88,7 +88,7 @@ section .text
     FILD word ptr [ESP + 0x48]          ; 00403231
     XOR EAX,EAX                         ; 00403235
     FSTP float ptr [ESP + 0x3c]         ; 00403237
-    MOV AL,byte ptr [EDI + 0x1c0064a]   ; 0040323b | DAT_01c0064d
+    MOV AL,byte ptr [EDI + 0x1c0064a]   ; 0040323b | g_SourcePaletteData+5
     FLD float ptr [ESP + 0x3c]          ; 00403241
     MOV dword ptr [ESP + 0x48],EAX      ; 00403245
     FSUB float ptr [ESP + 0x14]         ; 00403249
@@ -164,7 +164,7 @@ section .text
     JNZ 0x00403282                      ; 00403320
         ;   XREF to: 00403282 (CONDITIONAL_JUMP)  ; LAB_00403282
     XOR EAX,EAX                         ; 00403326
-    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00403328 | DAT_01c00648
+    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00403328 | g_SourcePaletteData
     MOV dword ptr [ESP + 0x48],EAX      ; 0040332e
     FLD float ptr [0x005771f8]          ; 00403332 | FLOAT_005771f8
     FLD ST0                             ; 00403338

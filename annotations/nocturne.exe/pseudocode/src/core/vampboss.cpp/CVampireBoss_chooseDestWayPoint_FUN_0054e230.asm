@@ -16,11 +16,11 @@
 ;   TerminatedCString s_core_vampboss_cpp_0059726b
 ;   TerminatedCString s_CVampireBoss_chooseDestW_00597280
 ;   undefined4 DAT_01cae0e8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -100,10 +100,10 @@ section .text
     MOV EAX,0x59726b                    ; 0054e2e6 | = "..\\core\\vampboss.cpp"
     MOV EDX,0x423                       ; 0054e2eb
     PUSH 0x597280                       ; 0054e2f0 | = "CVampireBoss::chooseDestWayPoint - wa..."
-    MOV [0x01cc4800],EAX                ; 0054e2f5 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0054e2fa | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0054e300
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0054e2f5 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0054e2fa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0054e300
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0054e305
     JMP 0x0054e262                      ; 0054e308
         ;   XREF to: 0054e262 (UNCONDITIONAL_JUMP)  ; LAB_0054e262

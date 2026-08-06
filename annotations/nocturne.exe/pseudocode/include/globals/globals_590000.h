@@ -205,7 +205,7 @@ extern WatcomTypeInfo g_CDemonFilterTypeInfo_0059ac90;
 extern WatcomTypeInfo g_CLightActorTypeInfo_0059acb0;
 extern WatcomTypeInfo g_CBoxActorTypeInfo_0059acd0;
 extern WatcomTypeInfo g_CBrideTypeInfo_0059ae70;
-extern WatcomTypeInfo g_SBugsTypeInfo_0059b010;
+extern WatcomTypeInfo g_SBugTypeInfo_0059b010;
 extern WatcomTypeInfo g_CKeyFramedModelInstanceTypeInfo_0059b030;
 extern WatcomTypeInfo g_CBugsTypeInfo_0059b050;
 extern WatcomTypeInfo g_SPoseTypeInfo_0059b1e0;

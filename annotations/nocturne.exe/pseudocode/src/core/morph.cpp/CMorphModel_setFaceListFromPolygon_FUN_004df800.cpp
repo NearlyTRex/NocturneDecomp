@@ -31,16 +31,16 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_004df800(CMor
   
   bVar14 = 0;
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
-    g_INT_01cc4804 = 0x152;
-    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid part index");
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 338;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMorphModel::setFaceList - invalid part index");
   }
   iVar5 = this_ptr->parts[part_index].start_face;
   local_18 = start_face + iVar5;
   if (iVar5 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
-    g_INT_01cc4804 = 0x159;
-    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 345;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
   }
   local_20 = 0;
   if (0 < poly_count) {

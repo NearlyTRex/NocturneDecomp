@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a1ea8
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 00519161
     LEA EAX,[ESP + 0xc]                 ; 00519164
-    MOV EDX,dword ptr [0x005ae704]      ; 00519168 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00519168 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 0051916e
     FMUL float ptr [0x005a1ea8]         ; 00519170 | DAT_005a1ea8
     FISTP dword ptr [EBX]               ; 00519176
@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 0051919a
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0051919b
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005ae704]                ; 005191a0 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 005191a0 | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [EAX]             ; 005191a5 | DAT_01b4d738
     ADD ESP,0x8                         ; 005191a7
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 005191aa

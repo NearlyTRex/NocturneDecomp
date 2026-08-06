@@ -23,11 +23,11 @@
 ;   undefined4 DAT_01b7b744
 ;   undefined4 DAT_01b7b748
 ;   undefined4 DAT_01b7b750
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
 ;
 ; *****************************************************************************
@@ -46,10 +46,10 @@ section .text
     MOV ECX,0x57e2af                    ; 0046ae51 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8ea                       ; 0046ae56
     PUSH 0x57e2c2                       ; 0046ae5b | = "CDemonRenderer::getPVS - PVS is not v..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046ae60 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046ae66 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046ae6c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046ae60 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0046ae66 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046ae6c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046ae71
     MOV EAX,[0x01b7b744]                ; 0046ae74 | DAT_01b7b744
         ;   Label: LAB_0046ae74
@@ -70,10 +70,10 @@ section .text
     MOV EAX,0x57e2ed                    ; 0046ae99 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x8f6                       ; 0046ae9e
     PUSH 0x57e300                       ; 0046aea3 | = "CDemonRaytrace::getPVS - no cubes ren..."
-    MOV [0x01cc4800],EAX                ; 0046aea8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046aead | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046aeb3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0046aea8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0046aead | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046aeb3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046aeb8
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0046aebb
         ;   Label: LAB_0046aebb
@@ -83,10 +83,10 @@ section .text
     MOV EBX,0x57e32e                    ; 0046aec4 | = "..\\core\\dtrace.cpp"
     MOV ESI,0x8fa                       ; 0046aec9
     PUSH 0x57e341                       ; 0046aece | = "CDemonRaytrace::getPVS - out of memory"
-    MOV dword ptr [0x01cc4800],EBX      ; 0046aed3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046aed9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046aedf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0046aed3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0046aed9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046aedf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046aee4
     MOV EDX,dword ptr [ESP + 0x14]      ; 0046aee7
         ;   Label: LAB_0046aee7
@@ -121,10 +121,10 @@ section .text
     MOV EAX,0x57e368                    ; 0046af26 | = "..\\core\\dtrace.cpp"
     MOV EDX,0x907                       ; 0046af2b
     PUSH 0x57e37b                       ; 0046af30 | = "CDemonRenderer::savePVS - can't find ..."
-    MOV [0x01cc4800],EAX                ; 0046af35 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046af3a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046af40
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0046af35 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0046af3a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046af40
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046af45
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0046af48
         ;   Label: LAB_0046af48

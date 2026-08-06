@@ -73,18 +73,18 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample)
         sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(&g_CMP3Decoder_02db4d18);
       }
       else {
-        g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-        g_INT_01cc4804 = 0x1084;
-        core_main_c_FUN_004c8440("Unknown sample file format extension: %s",out_sample);
+        g_CurrentFilename = "..\\sound\\sndmain.cpp";
+        g_CurrentLineNumber = 4228;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Unknown sample file format extension: %s");
       }
 LAB_00527b18:
       sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(out_sample);
       if (0 < (out_sample->sample_info).sample_count) {
         return 1;
       }
-      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      g_INT_01cc4804 = 0x108f;
-      core_main_c_FUN_004c8440("getSampleInfo - can't determine length for %s",out_sample);
+      g_CurrentFilename = "..\\sound\\sndmain.cpp";
+      g_CurrentLineNumber = 4239;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("getSampleInfo - can't determine length for %s");
       return 1;
     }
     file_handle = engine_dosio_cpp_getFile_FUN_00456a60

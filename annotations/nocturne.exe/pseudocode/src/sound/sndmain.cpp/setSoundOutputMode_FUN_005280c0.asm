@@ -11,8 +11,8 @@
 ; XREF[7]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2158
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20 at 0052dd6f
-;   sound_sndmain.cpp_FUN_005289f0 at 00528b61
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e92
+;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528b61
 ;   sound_sndmain.cpp_setAudioBitDepth_FUN_005281d0 at 005281e1
 ;   sound_sndmain.cpp_setAudioChannelCount_FUN_005281f0 at 00528201
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00528210 at 00528221
@@ -23,12 +23,12 @@
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_allocMixBuffers_FUN_00522f10
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00528490
 ;
@@ -69,10 +69,10 @@ section .text
         ;   Label: LAB_00528100
     MOV ECX,0x1168                      ; 00528105
     PUSH 0x5937e1                       ; 0052810a | = "setSoundOutputMode - can't do this wh..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0052810f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00528115 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052811b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0052810f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00528115 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052811b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00528120
     JMP 0x005280cf                      ; 00528123
         ;   XREF to: 005280cf (UNCONDITIONAL_JUMP)  ; LAB_005280cf

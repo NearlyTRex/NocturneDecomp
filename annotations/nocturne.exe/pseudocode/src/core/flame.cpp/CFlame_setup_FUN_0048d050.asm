@@ -11,7 +11,7 @@
 ;   core_vessel.cpp_CCryptVessel_setup_FUN_0054fa80 at 0054fba4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b8e00
 ;   undefined4 DAT_005b8e18
 ;   undefined4 DAT_005b8ec0
@@ -45,7 +45,7 @@ section .text
     ADD EBX,0x5b8e00                    ; 0048d076 | DAT_005b8e00
     PUSH EBX                            ; 0048d07c | DAT_005b8e00 | DAT_005b8e18 | DAT_005b8ec0
         ;   Label: LAB_0048d07c
-    MOV ECX,dword ptr [0x005ae704]      ; 0048d07d | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0048d07d | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0048d083 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0048d084
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

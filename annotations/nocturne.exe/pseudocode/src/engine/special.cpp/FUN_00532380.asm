@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b762c
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c02580
 ;   undefined4 DAT_01c02584
 ;   undefined4 DAT_01c02594
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 0053238e
     MOV ECX,dword ptr [0x01c02584]      ; 0053238f | DAT_01c02584
     PUSH ECX                            ; 00532395
-    PUSH 0x1c00648                      ; 00532396 | DAT_01c00648
+    PUSH 0x1c00648                      ; 00532396 | g_SourcePaletteData
     MOV EBX,dword ptr [0x01c02580]      ; 0053239b | DAT_01c02580
     PUSH EBX                            ; 005323a1
     MOV ESI,dword ptr [0x005b762c]      ; 005323a2 | DAT_005b762c

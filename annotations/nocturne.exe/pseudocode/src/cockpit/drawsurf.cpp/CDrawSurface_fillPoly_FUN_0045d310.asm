@@ -25,12 +25,12 @@
 ;   undefined4 DAT_01b4d494
 ;   undefined4 DAT_01b4d498
 ;   undefined4 DAT_01b4d49c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
 ;
 ; *****************************************************************************
@@ -294,10 +294,10 @@ section .text
     MOV EAX,0x57da84                    ; 0045d5e1 | = "..\\cockpit\\drawsurf.cpp"
     MOV EDX,0x578                       ; 0045d5e6
     PUSH 0x57da9c                       ; 0045d5eb | = "CDrawSurface::fillPoly - too many edges!"
-    MOV [0x01cc4800],EAX                ; 0045d5f0 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045d5f5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045d5fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0045d5f0 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0045d5f5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045d5fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045d600
     MOV EAX,EBP                         ; 0045d603
         ;   Label: LAB_0045d603

@@ -16,7 +16,7 @@ bugprone-integer-division (6)
     File: core/bodypart.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  core_charactr.cpp_FUN_0042af70                     line 115
+  core_charactr.cpp_CCharacter_FUN_0042af70          line 115
     File: core/charactr.cpp
     result of integer division used in a floating point context; possible loss of precision
 
@@ -32,7 +32,7 @@ bugprone-integer-division (6)
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackP line 37
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackP line 35
     File: sound/snddx.cpp
     result of integer division used in a floating point context; possible loss of precision
 
@@ -44,15 +44,15 @@ cert-flp30-c (5)
     File: core/actor.cpp
     loop induction expression should not have floating-point type
 
-  core_charactr.cpp_FUN_0042af70                     line 77
+  core_charactr.cpp_CCharacter_FUN_0042af70          line 77
     File: core/charactr.cpp
     loop induction expression should not have floating-point type
 
-  core_charactr.cpp_FUN_0042af70                     line 125
+  core_charactr.cpp_CCharacter_FUN_0042af70          line 125
     File: core/charactr.cpp
     loop induction expression should not have floating-point type
 
-  core_game.cpp_CGame_finishAct_FUN_004a6a10         line 46
+  core_game.cpp_CGame_finishAct_FUN_004a6a10         line 48
     File: core/game.cpp
     loop induction expression should not have floating-point type
 
@@ -61,11 +61,11 @@ cert-flp30-c (5)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (1210 diagnostics)
+Cppcheck (quick) (1064 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (547)
+uninitvar (509)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_FUN_0042d180                    line 23
@@ -272,10 +272,6 @@ uninitvar (547)
     File: core/actor.cpp
     Uninitialized variable: in_EDX
 
-  core_actor.cpp_archivePartStatus_FUN_0040cbf0      line 53
-    File: core/actor.cpp
-    Uninitialized variable: local_14
-
   core_bat.cpp_FUN_0041206c                          line 17
     File: core/bat.cpp
     Uninitialized variable: unaff_EBX
@@ -360,21 +356,25 @@ uninitvar (547)
     File: core/boneguy.cpp
     Uninitialized variable: local_14
 
-  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 49
+  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 50
     File: core/box.cpp
     Uninitialized variable: local_20
 
-  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 50
+  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 51
     File: core/box.cpp
     Uninitialized variable: local_1c
 
-  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 51
+  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 52
     File: core/box.cpp
     Uninitialized variable: local_18
 
-  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 67
+  core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 line 68
     File: core/box.cpp
     Uninitialized variable: in_stack_00000008
+
+  core_bugs.cpp_CBugs_FUN_00421b80                   line 72
+    File: core/bugs.cpp
+    Uninitialized variable: unaff_EBX
 
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004234 line 95
     File: core/bugs.cpp
@@ -392,13 +392,9 @@ uninitvar (547)
     File: core/bugs.cpp
     Uninitialized variable: local_44
 
-  core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004 line 71
+  core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004 line 72
     File: core/bugs.cpp
     Uninitialized variable: unaff_EDI
-
-  core_bugs.cpp_FUN_00421b80                         line 72
-    File: core/bugs.cpp
-    Uninitialized variable: unaff_EBX
 
   core_bugs.cpp_FUN_00423d20                         line 16
     File: core/bugs.cpp
@@ -560,6 +556,18 @@ uninitvar (547)
     File: core/curtain.cpp
     Uninitialized variable: local_dc
 
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 71
+    File: core/dcamera.cpp
+    Uninitialized variable: local_114
+
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 193
+    File: core/dcamera.cpp
+    Uninitialized variable: iStack_120
+
+  core_dcamera.cpp_CDemonCamera_FUN_00447f20         line 93
+    File: core/dcamera.cpp
+    Uninitialized variable: iStack_60
+
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 107
     File: core/dcamera.cpp
     Uninitialized variable: local_78
@@ -600,18 +608,6 @@ uninitvar (547)
     File: core/dcamera.cpp
     Uninitialized variable: in_EDX
 
-  core_dcamera.cpp_FUN_00446810                      line 71
-    File: core/dcamera.cpp
-    Uninitialized variable: local_114
-
-  core_dcamera.cpp_FUN_00446810                      line 193
-    File: core/dcamera.cpp
-    Uninitialized variable: iStack_120
-
-  core_dcamera.cpp_FUN_00447f20                      line 93
-    File: core/dcamera.cpp
-    Uninitialized variable: iStack_60
-
   core_dcamera.cpp_renderCoronaProjectedTextureScanl line 45
     File: core/dcamera.cpp
     Uninitialized variable: local_38
@@ -620,15 +616,15 @@ uninitvar (547)
     File: core/dcamera.cpp
     Uninitialized variable: local_3c
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 89
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 90
     File: core/dcube.cpp
     Uninitialized variable: local_3c
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 90
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 91
     File: core/dcube.cpp
     Uninitialized variable: local_38
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 91
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 92
     File: core/dcube.cpp
     Uninitialized variable: local_34
 
@@ -692,7 +688,7 @@ uninitvar (547)
     File: core/dlight.cpp
     Uninitialized variable: local_20
 
-  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 85
+  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 86
     File: core/dlight.cpp
     Uninitialized variable: local_d4
 
@@ -716,7 +712,7 @@ uninitvar (547)
     File: core/dlight.cpp
     Uninitialized variable: local_54
 
-  core_dlight.cpp_FUN_00450c90                       line 193
+  core_dlight.cpp_FUN_00450c90                       line 194
     File: core/dlight.cpp
     Uninitialized variable: local_5c
 
@@ -744,27 +740,23 @@ uninitvar (547)
     File: core/dlight.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 104
+  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 106
     File: core/dlight.cpp
     Uninitialized variable: fStack_48
 
-  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 120
+  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 122
     File: core/dlight.cpp
     Uninitialized variable: local_34
 
-  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 141
+  core_dlight.cpp_renderConeLightGeometry_FUN_00451b line 143
     File: core/dlight.cpp
     Uninitialized variable: iStack_3c
-
-  core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_ line 135
-    File: core/dmodel.cpp
-    Uninitialized variable: local_48
 
   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f line 84
     File: core/dpart.cpp
     Uninitialized variable: in_stack_00000010
 
-  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 89
+  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 90
     File: core/dskybox.cpp
     Uninitialized variable: local_6c
 
@@ -956,15 +948,15 @@ uninitvar (547)
     File: core/dtri.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_elephant.cpp_CElephantGun_fireProjectile_FUN_ line 50
+  core_elephant.cpp_CElephantGun_fireProjectile_FUN_ line 51
     File: core/elephant.cpp
     Uninitialized variable: fStack_48
 
-  core_elephant.cpp_CElephantGun_fireProjectile_FUN_ line 50
+  core_elephant.cpp_CElephantGun_fireProjectile_FUN_ line 51
     File: core/elephant.cpp
     Uninitialized variable: fStack_4c
 
-  core_elephant.cpp_FUN_00477890                     line 142
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 145
     File: core/elephant.cpp
     Uninitialized variable: fStack_44
 
@@ -979,10 +971,6 @@ uninitvar (547)
   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN line 53
     File: core/emitter.cpp
     Uninitialized variable: local_70
-
-  core_event.cpp_CEventList_loadState_FUN_00480f70   line 23
-    File: core/event.cpp
-    Uninitialized variable: local_20
 
   core_event.cpp_FUN_0047a260                        line 16
     File: core/event.cpp
@@ -1007,10 +995,6 @@ uninitvar (547)
   core_event.cpp_FUN_00481970                        line 17
     File: core/event.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_event.cpp_parseIntOrCounter_FUN_0047a350      line 17
-    File: core/event.cpp
-    Uninitialized variable: local_4
 
   core_fire.cpp_CBulletTrail_render_FUN_004856c0     line 56
     File: core/fire.cpp
@@ -1060,11 +1044,11 @@ uninitvar (547)
     File: core/fire.cpp
     Uninitialized variable: local_11c
 
-  core_fire.cpp_CPopcorn_render_FUN_00489990         line 51
+  core_fire.cpp_CPopcorn_render_FUN_00489990         line 52
     File: core/fire.cpp
     Uninitialized variable: local_30
 
-  core_fire.cpp_CRainDrop_render_FUN_00489d00        line 50
+  core_fire.cpp_CRainDrop_render_FUN_00489d00        line 51
     File: core/fire.cpp
     Uninitialized variable: local_38
 
@@ -1104,11 +1088,11 @@ uninitvar (547)
     File: core/flame.cpp
     Uninitialized variable: iStack_30
 
-  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 104
+  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 106
     File: core/flies.cpp
     Uninitialized variable: fStack_40
 
-  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 105
+  core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 107
     File: core/flies.cpp
     Uninitialized variable: fStack_3c
 
@@ -1132,7 +1116,7 @@ uninitvar (547)
     File: core/gabriela.cpp
     Uninitialized variable: local_98
 
-  core_game.cpp_CGame_displayActStats_FUN_004a6680   line 219
+  core_game.cpp_CGame_displayActStats_FUN_004a6680   line 182
     File: core/game.cpp
     Uninitialized variable: unaff_EDI
 
@@ -1184,13 +1168,21 @@ uninitvar (547)
     File: core/imp.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_inv.cpp_CInventory_load_FUN_004c1190          line 102
-    File: core/inv.cpp
-    Uninitialized variable: local_14
+  core_lightgun.cpp_CLightGun_fireProjectile_FUN_004 line 60
+    File: core/lightgun.cpp
+    Uninitialized variable: fStack_2c
 
-  core_inv.cpp_FUN_004c0640                          line 21
-    File: core/inv.cpp
-    Uninitialized variable: in_stack_00000008
+  core_lightgun.cpp_CLightGun_fireProjectile_FUN_004 line 60
+    File: core/lightgun.cpp
+    Uninitialized variable: fStack_34
+
+  core_lightgun.cpp_CLightGun_fireProjectile_FUN_004 line 60
+    File: core/lightgun.cpp
+    Uninitialized variable: fStack_30
+
+  core_lightgun.cpp_CLightGun_fire_FUN_004c71a0      line 212
+    File: core/lightgun.cpp
+    Uninitialized variable: unaff_retaddr
 
   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 25
     File: core/lightgun.cpp
@@ -1200,31 +1192,11 @@ uninitvar (547)
     File: core/lightgun.cpp
     Uninitialized variable: unaff_ESI
 
-  core_lightgun.cpp_FUN_004c6f50                     line 17
-    File: core/lightgun.cpp
-    Uninitialized variable: in_stack_00000004
-
-  core_lightgun.cpp_FUN_004c71a0                     line 213
-    File: core/lightgun.cpp
-    Uninitialized variable: unaff_retaddr
-
-  core_lightgun.cpp_FUN_004c7ca0                     line 57
-    File: core/lightgun.cpp
-    Uninitialized variable: fStack_2c
-
-  core_lightgun.cpp_FUN_004c7ca0                     line 57
-    File: core/lightgun.cpp
-    Uninitialized variable: fStack_34
-
-  core_lightgun.cpp_FUN_004c7ca0                     line 57
-    File: core/lightgun.cpp
-    Uninitialized variable: fStack_30
-
   core_menu.cpp_FUN_004d2880                         line 30
     File: core/menu.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 180
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 182
     File: core/menu.cpp
     Uninitialized variable: iStack_38
 
@@ -1235,26 +1207,6 @@ uninitvar (547)
   core_mirror.cpp_CMirrorReflection_setupMirrorRefle line 120
     File: core/mirror.cpp
     Uninitialized variable: local_190
-
-  core_mission.cpp_CDemonMission_generateUniqueActor line 33
-    File: core/mission.cpp
-    Uninitialized variable: local_14
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 55
-    File: core/mission.cpp
-    Uninitialized variable: local_14
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 49
-    File: core/mission.cpp
-    Uninitialized variable: local_2c
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 84
-    File: core/mission.cpp
-    Uninitialized variable: local_20
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 132
-    File: core/mission.cpp
-    Uninitialized variable: local_28
 
   core_mmx.c_detectIntelProcessor_FUN_004d9eac       line 40
     File: core/mmx.c
@@ -1340,13 +1292,9 @@ uninitvar (547)
     File: core/mobster.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_morph.cpp_FUN_004e0300                        line 20
+  core_morph.cpp_CMorph_FUN_004e0300                 line 17
     File: core/morph.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_morph.cpp_FUN_004e0300                        line 20
-    File: core/morph.cpp
-    Uninitialized variable: in_stack_00000004
 
   core_motion.cpp_CMotionController_markerPositionTo line 45
     File: core/motion.cpp
@@ -1380,7 +1328,7 @@ uninitvar (547)
     File: core/path.cpp
     Uninitialized variable: unaff_ESI
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 142
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 144
     File: core/path.cpp
     Uninitialized variable: local_34
 
@@ -1408,43 +1356,19 @@ uninitvar (547)
     File: core/platfrm.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_podmain.cpp_CDemonPod_load_FUN_004f92b0       line 32
-    File: core/podmain.cpp
-    Uninitialized variable: local_c
-
   core_scat.cpp_FUN_004fbb70                         line 16
     File: core/scat.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_script.cpp_CScript_loadState_FUN_005052c0     line 20
-    File: core/script.cpp
-    Uninitialized variable: local_18
-
-  core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920  line 20
-    File: core/set.cpp
-    Uninitialized variable: local_1c
-
-  core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920  line 27
-    File: core/set.cpp
-    Uninitialized variable: local_18
-
-  core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920  line 37
-    File: core/set.cpp
-    Uninitialized variable: local_14
-
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 85
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 88
     File: core/set.cpp
     Uninitialized variable: in_stack_0000000c
 
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 87
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 90
     File: core/set.cpp
     Uninitialized variable: in_stack_00000010
 
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 143
-    File: core/set.cpp
-    Uninitialized variable: iStack_28
-
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 151
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 145
     File: core/set.cpp
     Uninitialized variable: iStack_24
 
@@ -1452,14 +1376,6 @@ uninitvar (547)
     File: core/set.cpp
     Uninitialized variable: fStack_48
 
-  core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDir line 21
-    File: core/setdir.cpp
-    Uninitialized variable: local_18
-
-  core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDir line 25
-    File: core/setdir.cpp
-    Uninitialized variable: local_14
-
   core_setdir.cpp_FUN_00514390                       line 17
     File: core/setdir.cpp
     Uninitialized variable: in_stack_00000004
@@ -1483,48 +1399,16 @@ uninitvar (547)
   core_setdir.cpp_FUN_005143b0                       line 17
     File: core/setdir.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 145
-    File: core/setutil.cpp
-    Uninitialized variable: local_44
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 153
-    File: core/setutil.cpp
-    Uninitialized variable: local_40
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 165
-    File: core/setutil.cpp
-    Uninitialized variable: local_48
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 168
-    File: core/setutil.cpp
-    Uninitialized variable: local_3c
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 174
-    File: core/setutil.cpp
-    Uninitialized variable: local_38
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 175
-    File: core/setutil.cpp
-    Uninitialized variable: local_30
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 176
-    File: core/setutil.cpp
-    Uninitialized variable: local_34
-
-  core_setutil.cpp_C3DSLight_load_FUN_00514a70       line 177
-    File: core/setutil.cpp
-    Uninitialized variable: local_2c
 
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_ line 87
     File: core/setutil.cpp
     Uninitialized variable: local_24
 
-  core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516 line 50
+  core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516 line 51
     File: core/shotgun.cpp
     Uninitialized variable: fStack_48
 
-  core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516 line 50
+  core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516 line 51
     File: core/shotgun.cpp
     Uninitialized variable: fStack_4c
 
@@ -1536,11 +1420,11 @@ uninitvar (547)
     File: core/skeleton.cpp
     Uninitialized variable: local_38
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 69
+  core_skeleton.cpp_CDeformableModelInstance_compute line 70
     File: core/skeleton.cpp
     Uninitialized variable: extraout_ECX
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 70
+  core_skeleton.cpp_CDeformableModelInstance_compute line 71
     File: core/skeleton.cpp
     Uninitialized variable: extraout_EDX
 
@@ -1548,11 +1432,11 @@ uninitvar (547)
     File: core/skeleton.cpp
     Uninitialized variable: local_18
 
-  core_skeleton.cpp_CDeformableModel_renderParts_FUN line 85
+  core_skeleton.cpp_CDeformableModel_renderParts_FUN line 87
     File: core/skeleton.cpp
     Uninitialized variable: local_9c
 
-  core_skeleton.cpp_CDeformableModel_renderParts_FUN line 85
+  core_skeleton.cpp_CDeformableModel_renderParts_FUN line 87
     File: core/skeleton.cpp
     Uninitialized variable: local_38
 
@@ -1588,21 +1472,29 @@ uninitvar (547)
     File: core/sound.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 59
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 61
     File: core/sound.cpp
     Uninitialized variable: local_2c
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 71
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 69
     File: core/sound.cpp
     Uninitialized variable: local_c8
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 72
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 70
     File: core/sound.cpp
     Uninitialized variable: local_cc
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 73
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 71
     File: core/sound.cpp
     Uninitialized variable: local_c4
+
+  core_stranger.cpp_CStranger_FUN_0053f310           line 61
+    File: core/stranger.cpp
+    Uninitialized variable: local_14
+
+  core_stranger.cpp_CStranger_FUN_0053f310           line 61
+    File: core/stranger.cpp
+    Uninitialized variable: local_38
 
   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053 line 128
     File: core/stranger.cpp
@@ -1619,14 +1511,6 @@ uninitvar (547)
   core_stranger.cpp_FUN_00534f90                     line 17
     File: core/stranger.cpp
     Uninitialized variable: in_stack_00000008
-
-  core_stranger.cpp_FUN_0053f310                     line 61
-    File: core/stranger.cpp
-    Uninitialized variable: local_14
-
-  core_stranger.cpp_FUN_0053f310                     line 61
-    File: core/stranger.cpp
-    Uninitialized variable: local_38
 
   core_stranger.cpp_FUN_00540970                     line 17
     File: core/stranger.cpp
@@ -1812,6 +1696,10 @@ uninitvar (547)
     File: engine/2d.c
     Uninitialized variable: iStack_1c
 
+  engine_3d.c_FUN_00404430                           line 15
+    File: engine/3d.c
+    Uninitialized variable: in_stack_00000004
+
   engine_alphabit.cpp_FUN_0040eadd                   line 19
     File: engine/alphabit.cpp
     Uninitialized variable: unaff_retaddr
@@ -1852,31 +1740,11 @@ uninitvar (547)
     File: engine/font.cpp
     Uninitialized variable: local_28
 
-  engine_font.cpp_FUN_00490210                       line 41
-    File: engine/font.cpp
-    Uninitialized variable: local_24
-
-  engine_font.cpp_FUN_00490210                       line 41
-    File: engine/font.cpp
-    Uninitialized variable: local_20
-
-  engine_font.cpp_FUN_00490210                       line 49
-    File: engine/font.cpp
-    Uninitialized variable: local_18
-
-  engine_font.cpp_FUN_00490210                       line 50
-    File: engine/font.cpp
-    Uninitialized variable: local_14
-
-  engine_font.cpp_FUN_00490210                       line 51
-    File: engine/font.cpp
-    Uninitialized variable: local_10
-
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 126
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 118
     File: engine/keyframe.c
     Uninitialized variable: iStack_34
 
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 156
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 148
     File: engine/keyframe.c
     Uninitialized variable: local_2c
 
@@ -1904,29 +1772,29 @@ uninitvar (547)
     File: engine/model.c
     Uninitialized variable: local_38
 
-  engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f857 line 36
-    File: engine/pod.cpp
-    Uninitialized variable: unaff_ESI
-
-  engine_pod.cpp_FUN_004f7ae0                        line 71
+  engine_pod.cpp_CPodFile_FUN_004f7ae0               line 71
     File: engine/pod.cpp
     Uninitialized variable: local_10f
 
-  engine_pod.cpp_FUN_004f7ae0                        line 71
+  engine_pod.cpp_CPodFile_FUN_004f7ae0               line 71
     File: engine/pod.cpp
     Uninitialized variable: local_10e
 
-  engine_pod.cpp_FUN_004f7ae0                        line 71
+  engine_pod.cpp_CPodFile_FUN_004f7ae0               line 71
     File: engine/pod.cpp
     Uninitialized variable: local_10d
 
-  engine_pod.cpp_FUN_004f7ae0                        line 84
+  engine_pod.cpp_CPodFile_FUN_004f7ae0               line 84
     File: engine/pod.cpp
     Uninitialized variable: local_b8
 
-  engine_pod.cpp_FUN_004f7ae0                        line 85
+  engine_pod.cpp_CPodFile_FUN_004f7ae0               line 85
     File: engine/pod.cpp
     Uninitialized variable: local_b4
+
+  engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f857 line 36
+    File: engine/pod.cpp
+    Uninitialized variable: unaff_ESI
 
   engine_prim.c_FUN_004f942e                         line 14
     File: engine/prim.c
@@ -2036,7 +1904,7 @@ uninitvar (547)
     File: shape/edittool.cpp
     Uninitialized variable: local_30
 
-  shape_edittool.cpp_FUN_00470730                    line 97
+  shape_edittool.cpp_FUN_00470730                    line 98
     File: shape/edittool.cpp
     Uninitialized variable: in_stack_0000000c
 
@@ -2096,26 +1964,6 @@ uninitvar (547)
     File: sound/mp3.cpp
     Uninitialized variable: local_100
 
-  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 59
-    File: sound/mp3.cpp
-    Uninitialized variable: local_38
-
-  sound_mp3.cpp_FUN_004e2980                         line 17
-    File: sound/mp3.cpp
-    Uninitialized variable: in_stack_00000004
-
-  sound_mp3.cpp_FUN_004e2c50                         line 16
-    File: sound/mp3.cpp
-    Uninitialized variable: in_stack_00000004
-
-  sound_mp3.cpp_FUN_004e78b0                         line 39
-    File: sound/mp3.cpp
-    Uninitialized variable: local_1c
-
-  sound_mp3.cpp_FUN_004e7b00                         line 42
-    File: sound/mp3.cpp
-    Uninitialized variable: local_10
-
   sound_mp3.cpp_FUN_004e7ed0                         line 142
     File: sound/mp3.cpp
     Uninitialized variable: unaff_retaddr
@@ -2128,7 +1976,7 @@ uninitvar (547)
     File: sound/mp3.cpp
     Uninitialized variable: unaff_retaddr
 
-  sound_snddx.cpp_CDirectSoundDevice_unlockSample_FU line 28
+  sound_snddx.cpp_CDirectSoundDevice_unlockSample_FU line 25
     File: sound/snddx.cpp
     Uninitialized variable: in_stack_00000014
 
@@ -2140,23 +1988,23 @@ uninitvar (547)
     File: sound/snddx.cpp
     Uninitialized variable: piStack_1c
 
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 72
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 73
     File: sound/snddx.cpp
     Uninitialized variable: iStack_6c
 
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 75
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 76
     File: sound/snddx.cpp
     Uninitialized variable: unaff_EBP
 
-  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 53
+  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 55
     File: sound/snddx.cpp
     Uninitialized variable: iStack_40
 
-  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 53
+  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 55
     File: sound/snddx.cpp
     Uninitialized variable: iStack_38
 
-  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 57
+  sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 59
     File: sound/snddx.cpp
     Uninitialized variable: iStack_3c
 
@@ -2200,27 +2048,27 @@ uninitvar (547)
     File: sound/sndmain.cpp
     Uninitialized variable: local_40
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 35
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 34
     File: sound/sndmain.cpp
     Uninitialized variable: local_17
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 35
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 34
     File: sound/sndmain.cpp
     Uninitialized variable: local_16
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 35
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 34
     File: sound/sndmain.cpp
     Uninitialized variable: local_15
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 39
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 38
     File: sound/sndmain.cpp
     Uninitialized variable: local_87
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 39
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 38
     File: sound/sndmain.cpp
     Uninitialized variable: local_86
 
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 39
+  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 38
     File: sound/sndmain.cpp
     Uninitialized variable: local_85
 
@@ -2308,6 +2156,14 @@ shiftTooManyBitsSigned (200)
     File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_dcamera.cpp_CDemonCamera_FUN_004421b0         line 141
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_FUN_004421b0         line 149
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_ line 38
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -2328,19 +2184,19 @@ shiftTooManyBitsSigned (200)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 308
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 309
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 406
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 407
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 412
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 413
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 457
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 459
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2381,14 +2237,6 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 37
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_FUN_004421b0                      line 141
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_FUN_004421b0                      line 149
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2508,11 +2356,11 @@ shiftTooManyBitsSigned (200)
     File: core/dlight.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 136
+  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 139
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 137
+  core_dskybox.cpp_renderSkyDome_FUN_00463580        line 140
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2632,7 +2480,7 @@ shiftTooManyBitsSigned (200)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_CGame_renderOverlay_FUN_0049ab50     line 102
+  core_game.cpp_CGame_renderOverlay_FUN_0049ab50     line 103
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2652,35 +2500,35 @@ shiftTooManyBitsSigned (200)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 171
+  core_glass.cpp_CGlass_FUN_004accf0                 line 171
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 177
+  core_glass.cpp_CGlass_FUN_004accf0                 line 177
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 229
+  core_glass.cpp_CGlass_FUN_004accf0                 line 230
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 235
+  core_glass.cpp_CGlass_FUN_004accf0                 line 236
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 283
+  core_glass.cpp_CGlass_FUN_004accf0                 line 285
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 289
+  core_glass.cpp_CGlass_FUN_004accf0                 line 291
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 341
+  core_glass.cpp_CGlass_FUN_004accf0                 line 344
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_glass.cpp_FUN_004accf0                        line 347
+  core_glass.cpp_CGlass_FUN_004accf0                 line 350
     File: core/glass.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2692,7 +2540,7 @@ shiftTooManyBitsSigned (200)
     File: core/keyactor.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 528
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 534
     File: core/menu.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2812,6 +2660,10 @@ shiftTooManyBitsSigned (200)
     File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_set.cpp_CDemonSet_FUN_0050a260                line 117
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7 line 126
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -2836,11 +2688,7 @@ shiftTooManyBitsSigned (200)
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_set.cpp_FUN_0050a260                          line 116
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 143
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 141
     File: core/sound.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2996,7 +2844,7 @@ shiftTooManyBitsSigned (200)
     File: shape/edittool.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 130
+  shape_edittool.cpp_CEditorTools_createModalWindow_ line 133
     File: shape/edittool.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3016,15 +2864,11 @@ shiftTooManyBitsSigned (200)
     File: sound/mp3.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 47
-    File: sound/snddx.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 48
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 53
+  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 49
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3032,11 +2876,15 @@ shiftTooManyBitsSigned (200)
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 124
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 55
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 125
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 126
+    File: sound/snddx.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 127
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -3061,539 +2909,7 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-wrongPrintfScanfArgNum (132)
-----------------------------------------------------------------------------------------------------
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 208
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 280
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 335
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 437
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 499
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 560
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 591
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 630
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 655
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 679
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 701
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 737
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 823
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 902
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 977
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1020
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1044
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1097
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1136
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1194
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1233
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1290
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1331
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1366
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1505
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1510
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 257
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 264
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 266
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 319
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 385
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 417
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 436
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 566
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 651
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 699
-    File: core/event.cpp
-    sscanf format string requires 7 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 704
-    File: core/event.cpp
-    sscanf format string requires 6 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 709
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 803
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 835
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 868
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 912
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 934
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 977
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1076
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1139
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1175
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1212
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1244
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1292
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1398
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1503
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1578
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1655
-    File: core/event.cpp
-    sscanf format string requires 5 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1686
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1810
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1833
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1877
-    File: core/event.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1953
-    File: core/event.cpp
-    sscanf format string requires 7 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1964
-    File: core/event.cpp
-    sscanf format string requires 5 parameters but only 0 are given.
-
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1975
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_parseIntOrCounter_FUN_0047a350      line 15
-    File: core/event.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 17
-    File: core/event.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 22
-    File: core/event.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_mission.cpp_CDemonMission_generateUniqueActor line 32
-    File: core/mission.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 354
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 380
-    File: core/script.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 462
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 662
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 721
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 792
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 818
-    File: core/script.cpp
-    sscanf format string requires 5 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 924
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 983
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1034
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1161
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1217
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1254
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1381
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1517
-    File: core/script.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1647
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1673
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1715
-    File: core/script.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1760
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1814
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1907
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1958
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1993
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2036
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2091
-    File: core/script.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2136
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2180
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2246
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2310
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2344
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2418
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2489
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2519
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2533
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2639
-    File: core/script.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2669
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2690
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2737
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2805
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2888
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2917
-    File: core/script.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2960
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3000
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3042
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3090
-    File: core/script.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3105
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3118
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_script.cpp_parseBodyPartMask_FUN_004fe3d0     line 26
-    File: core/script.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_setutil.cpp_C3DSCamera_load_FUN_005144e0      line 22
-    File: core/setutil.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 51
-    File: core/sound.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 187
-    File: core/sound.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 200
-    File: core/sound.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  engine_ini.cpp_CIniFile_getFloat_FUN_004bdac0      line 16
-    File: engine/ini.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  engine_ini.cpp_CIniFile_getInteger_FUN_004bda20    line 16
-    File: engine/ini.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  shape_edittool.cpp_CEditorTools_promptForValidFloa line 29
-    File: shape/edittool.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  shape_edittool.cpp_CEditorTools_promptForValidInte line 29
-    File: shape/edittool.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  shape_edittool.cpp_CEditorTools_promptForValidVect line 28
-    File: shape/edittool.cpp
-    sscanf format string requires 3 parameters but only 0 are given.
-
-  shape_edittool.cpp_CStrList_insertSortedFileRecord line 57
-    File: shape/edittool.cpp
-    sscanf format string requires 2 parameters but only 0 are given.
-
-  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 58
-    File: sound/mp3.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_mp3.cpp_FUN_004e78b0                         line 38
-    File: sound/mp3.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_mp3.cpp_FUN_004e7b00                         line 41
-    File: sound/mp3.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 106
-    File: sound/sndmain.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 127
-    File: sound/sndmain.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 145
-    File: sound/sndmain.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 147
-    File: sound/sndmain.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 172
-    File: sound/sndmain.cpp
-    sscanf format string requires 1 parameter but only 0 are given.
-
-  support_trisock.cpp_parseIPComponents_FUN_00548bf0 line 18
-    File: support/trisock.cpp
-    sscanf format string requires 4 parameters but only 0 are given.
-
-----------------------------------------------------------------------------------------------------
-legacyUninitvar (105)
+legacyUninitvar (95)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 64
@@ -3607,6 +2923,10 @@ legacyUninitvar (105)
   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenha line 63
     File: cockpit/drawsurf.cpp
     Uninitialized variable: unaff_ESI
+
+  cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90 line 69
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: in_stack_00000018
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
     File: cockpit/pkbitmap.cpp
@@ -3632,10 +2952,6 @@ legacyUninitvar (105)
     File: cockpit/pkbitmap.cpp
     Uninitialized variable: iStack_14
 
-  cockpit_pkbitmap.cpp_FUN_004f4f90                  line 69
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: in_stack_00000018
-
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 153
     File: core/bodypart.cpp
     Uninitialized variable: (int)afStack_94[0]
@@ -3660,13 +2976,13 @@ legacyUninitvar (105)
     File: core/box.cpp
     Uninitialized variable: local_378
 
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 100
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_EDI
+
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 115
     File: core/dcamera.cpp
     Uninitialized variable: local_74
-
-  core_dcamera.cpp_FUN_00446810                      line 100
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_EDI
 
   core_dcube.cpp_FUN_0044ae80                        line 27
     File: core/dcube.cpp
@@ -3684,11 +3000,11 @@ legacyUninitvar (105)
     File: core/dlight.cpp
     Uninitialized variable: afStack_78
 
-  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 86
+  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 87
     File: core/dlight.cpp
     Uninitialized variable: aiStack_d0
 
-  core_dlight.cpp_FUN_00450c90                       line 194
+  core_dlight.cpp_FUN_00450c90                       line 195
     File: core/dlight.cpp
     Uninitialized variable: local_5c
 
@@ -3760,19 +3076,15 @@ legacyUninitvar (105)
     File: core/dtrace.cpp
     Uninitialized variable: unaff_EDI
 
-  core_elephant.cpp_FUN_00477890                     line 141
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 144
     File: core/elephant.cpp
     Uninitialized variable: in_stack_fffffec4
 
-  core_elephant.cpp_FUN_00477890                     line 145
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 148
     File: core/elephant.cpp
     Uninitialized variable: pCStack_2c
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 727
-    File: core/event.cpp
-    Uninitialized variable: local_84
-
-  core_fire.cpp_CPopcorn_render_FUN_00489990         line 52
+  core_fire.cpp_CPopcorn_render_FUN_00489990         line 53
     File: core/fire.cpp
     Uninitialized variable: aiStack_2c
 
@@ -3780,29 +3092,21 @@ legacyUninitvar (105)
     File: core/flame.cpp
     Uninitialized variable: aiStack_2c
 
-  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 185
+  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 191
     File: core/flame.cpp
     Uninitialized variable: fStack_18
 
-  core_game.cpp_FUN_004a4170                         line 242
-    File: core/game.cpp
-    Uninitialized variable: local_38
+  core_inv.cpp_CInventory_FUN_004c2470               line 170
+    File: core/inv.cpp
+    Uninitialized variable: local_4c
 
   core_inv.cpp_CInventory_renderSelectedItems_FUN_00 line 46
     File: core/inv.cpp
     Uninitialized variable: local_20
 
-  core_inv.cpp_FUN_004c2470                          line 169
-    File: core/inv.cpp
-    Uninitialized variable: local_4c
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 63
+  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 62
     File: core/mission.cpp
     Uninitialized variable: unaff_ESI
-
-  core_mission.cpp_CDemonMission_readMissionFile_FUN line 96
-    File: core/mission.cpp
-    Uninitialized variable: local_1c
 
   core_particle.cpp_CParticle_process_FUN_004ef120   line 49
     File: core/particle.cpp
@@ -3812,25 +3116,13 @@ legacyUninitvar (105)
     File: core/path.cpp
     Uninitialized variable: local_38
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 826
-    File: core/script.cpp
-    Uninitialized variable: local_3f80
+  core_set.cpp_CDemonSet_FUN_00509a80                line 207
+    File: core/set.cpp
+    Uninitialized variable: in_stack_ffffff9c
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1739
-    File: core/script.cpp
-    Uninitialized variable: local_3f7c
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1734
-    File: core/script.cpp
-    Uninitialized variable: local_3f70
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2330
-    File: core/script.cpp
-    Uninitialized variable: local_70
-
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2364
-    File: core/script.cpp
-    Uninitialized variable: local_68
+  core_set.cpp_CDemonSet_FUN_0050dd60                line 23
+    File: core/set.cpp
+    Uninitialized variable: in_stack_00000008
 
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 88
     File: core/set.cpp
@@ -3848,7 +3140,11 @@ legacyUninitvar (105)
     File: core/set.cpp
     Uninitialized variable: fStack_50
 
-  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 93
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 157
+    File: core/set.cpp
+    Uninitialized variable: iStack_24
+
+  core_set.cpp_CDemonSet_precomputeLightVisibility_F line 96
     File: core/set.cpp
     Uninitialized variable: iStack_18
 
@@ -3860,19 +3156,11 @@ legacyUninitvar (105)
     File: core/set.cpp
     Uninitialized variable: iStack_18
 
-  core_set.cpp_FUN_00509a80                          line 207
-    File: core/set.cpp
-    Uninitialized variable: in_stack_ffffff9c
-
-  core_set.cpp_FUN_0050dd60                          line 25
-    File: core/set.cpp
-    Uninitialized variable: in_stack_00000008
-
-  core_shotgun.cpp_FUN_00515ea0                      line 143
+  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 146
     File: core/shotgun.cpp
     Uninitialized variable: in_stack_fffffec4
 
-  core_shotgun.cpp_FUN_00515ea0                      line 147
+  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 150
     File: core/shotgun.cpp
     Uninitialized variable: pCStack_2c
 
@@ -3884,15 +3172,15 @@ legacyUninitvar (105)
     File: core/skeleton.cpp
     Uninitialized variable: local_1870
 
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 52
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 54
     File: core/sound.cpp
     Uninitialized variable: local_30
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 115
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 113
     File: core/sound.cpp
     Uninitialized variable: local_c8
 
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 115
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 113
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
@@ -3944,6 +3232,10 @@ legacyUninitvar (105)
     File: core/xform.cpp
     Uninitialized variable: local_50
 
+  engine_2d.c_FUN_004014a0                           line 36
+    File: engine/2d.c
+    Uninitialized variable: unaff_ESI
+
   engine_2d.c_drawLine3D_FUN_00401710                line 66
     File: engine/2d.c
     Uninitialized variable: unaff_ESI
@@ -3968,10 +3260,6 @@ legacyUninitvar (105)
     File: shape/edittool.cpp
     Uninitialized variable: local_18
 
-  shape_edittool.cpp_CEditorTools_promptForValidInte line 33
-    File: shape/edittool.cpp
-    Uninitialized variable: local_14
-
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 508
     File: sound/mp3.cpp
     Uninitialized variable: iStack_108
@@ -3988,29 +3276,17 @@ legacyUninitvar (105)
     File: sound/mp3.cpp
     Uninitialized variable: afStack_e78[local_f8]
 
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 51
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 52
     File: sound/snddx.cpp
     Uninitialized variable: piStack_24
 
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 161
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_470
-
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 180
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_34
-
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 74
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 72
     File: sound/sndmain.cpp
     Uninitialized variable: local_28
 
   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 267
     File: sound/sndmain.cpp
     Uninitialized variable: local_30
-
-  sound_sndmain.cpp_parseWavFile_FUN_00521830        line 73
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_1c
 
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910       line 53
     File: wincore/wddvmem.cpp
@@ -4020,303 +3296,303 @@ legacyUninitvar (105)
 invalidscanf (76)
 ----------------------------------------------------------------------------------------------------
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 208
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 209
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 280
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 282
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 335
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 338
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 499
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 505
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 560
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 567
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 591
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 599
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 737
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 749
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 823
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 837
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 977
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 996
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1044
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1065
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1097
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1120
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1136
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1160
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1194
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1218
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1233
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1257
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1290
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1315
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1366
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1393
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 266
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 267
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 385
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 387
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 436
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 440
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 566
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 571
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 651
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 658
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 699
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 707
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 704
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 714
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 709
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 720
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 803
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 816
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 835
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 849
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 934
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 949
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 977
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 992
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1076
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1092
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1139
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1157
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1244
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1264
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1292
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1313
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1398
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1420
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1503
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1528
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1578
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1604
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1686
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1714
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1810
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1841
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1877
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1910
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 22
+  core_event.cpp_parseVectorLocation_FUN_0047a4c0    line 24
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 354
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 355
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 380
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 381
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 462
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 464
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 662
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 665
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 721
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 726
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 792
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 798
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 924
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 937
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 983
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 998
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1034
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1050
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1161
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1178
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1217
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1236
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1254
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1274
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1381
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1405
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1647
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1675
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1673
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1702
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1715
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1745
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1760
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1792
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1814
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1847
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1907
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1943
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1958
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1996
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1993
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2032
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2136
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2177
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2180
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2222
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2246
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2289
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2310
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2354
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2344
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2390
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2418
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2465
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2489
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2538
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2669
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2732
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2690
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2754
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2737
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2802
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2805
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2871
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2888
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2955
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3000
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 3076
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3090
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 3169
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_parseBodyPartMask_FUN_004fe3d0     line 26
+  core_script.cpp_parseBodyPartMask_FUN_004fe3d0     line 29
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -4325,7 +3601,7 @@ invalidscanf (76)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-ignoredReturnValue (60)
+ignoredReturnValue (58)
 ----------------------------------------------------------------------------------------------------
 
   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_F line 51
@@ -4464,27 +3740,19 @@ ignoredReturnValue (60)
     File: core/lever.cpp
     Return value of function round() is not used.
 
-  core_main.c_FUN_004c90e0                           line 27
-    File: core/main.c
-    Return value of function rand() is not used.
-
-  core_main.c_showPromoScreen_FUN_004c8eb0           line 24
-    File: core/main.c
-    Return value of function rand() is not used.
-
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 109
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 111
     File: core/path.cpp
     Return value of function round() is not used.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 113
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 115
     File: core/path.cpp
     Return value of function round() is not used.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 122
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 124
     File: core/path.cpp
     Return value of function round() is not used.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 135
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 137
     File: core/path.cpp
     Return value of function round() is not used.
 
@@ -4496,7 +3764,7 @@ ignoredReturnValue (60)
     File: core/path.cpp
     Return value of function round() is not used.
 
-  core_set.cpp_FUN_0050aba0                          line 31
+  core_set.cpp_CDemonSet_FUN_0050aba0                line 31
     File: core/set.cpp
     Return value of function atan2() is not used.
 
@@ -4560,13 +3828,181 @@ ignoredReturnValue (60)
     File: shape/edittool.cpp
     Return value of function round() is not used.
 
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 70
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 69
     File: sound/sndmain.cpp
     Return value of function round() is not used.
 
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e6 line 153
     File: sound/sndmain.cpp
     Return value of function round() is not used.
+
+----------------------------------------------------------------------------------------------------
+wrongPrintfScanfArgNum (41)
+----------------------------------------------------------------------------------------------------
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 257
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 264
+    File: core/event.cpp
+    sscanf format string requires 4 parameters but only 3 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 267
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 321
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 387
+    File: core/event.cpp
+    sscanf format string requires 4 parameters but only 3 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 420
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 440
+    File: core/event.cpp
+    sscanf format string requires 4 parameters but only 3 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 571
+    File: core/event.cpp
+    sscanf format string requires 4 parameters but only 3 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 658
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 707
+    File: core/event.cpp
+    sscanf format string requires 7 parameters but only 6 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 714
+    File: core/event.cpp
+    sscanf format string requires 6 parameters but only 5 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 720
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 816
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 849
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 883
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 927
+    File: core/event.cpp
+    sscanf format string requires 1 parameter but only 0 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 949
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 992
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1092
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1157
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1193
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1230
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1264
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1313
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1420
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1528
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1604
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1682
+    File: core/event.cpp
+    sscanf format string requires 5 parameters but only 4 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1714
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1841
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1865
+    File: core/event.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1910
+    File: core/event.cpp
+    sscanf format string requires 3 parameters but only 2 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1987
+    File: core/event.cpp
+    sscanf format string requires 7 parameters but only 6 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1999
+    File: core/event.cpp
+    sscanf format string requires 5 parameters but only 4 are given.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2012
+    File: core/event.cpp
+    sscanf format string requires 4 parameters but only 3 are given.
+
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 53
+    File: core/sound.cpp
+    sscanf format string requires 3 parameters but only 0 are given.
+
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 191
+    File: core/sound.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 204
+    File: core/sound.cpp
+    sscanf format string requires 2 parameters but only 1 is given.
+
+  engine_ini.cpp_CIniFile_getFloat_FUN_004bdac0      line 16
+    File: engine/ini.cpp
+    sscanf format string requires 1 parameter but only 0 are given.
+
+  shape_edittool.cpp_CEditorTools_promptForValidFloa line 29
+    File: shape/edittool.cpp
+    sscanf format string requires 1 parameter but only 0 are given.
+
+  shape_edittool.cpp_CEditorTools_promptForValidVect line 29
+    File: shape/edittool.cpp
+    sscanf format string requires 3 parameters but only 0 are given.
 
 ----------------------------------------------------------------------------------------------------
 objectIndex (27)
@@ -4656,19 +4092,19 @@ objectIndex (27)
     File: core/netgame.cpp
     The address of local variable 'uStack_77' might be accessed at non-zero index.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 100
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 102
     File: core/path.cpp
     The address of local variable 'local_48' might be accessed at non-zero index.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 100
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 102
     File: core/path.cpp
     The address of local variable 'local_54' might be accessed at non-zero index.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 101
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 103
     File: core/path.cpp
     The address of local variable 'local_44' might be accessed at non-zero index.
 
-  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 102
+  core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  line 104
     File: core/path.cpp
     The address of local variable 'local_50' might be accessed at non-zero index.
 
@@ -4681,42 +4117,18 @@ objectIndex (27)
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (21)
+invalidPointerCast (15)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_FUN_0040bd90                        line 56
+  core_actor.cpp_FUN_0040bd90                        line 52
     File: core/actor.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_actor.cpp_FUN_0040bd90                        line 57
+  core_actor.cpp_FUN_0040bd90                        line 53
     File: core/actor.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_actor.cpp_FUN_0040bd90                        line 58
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 59
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 60
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 61
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 86
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 87
-    File: core/actor.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_actor.cpp_FUN_0040bd90                        line 88
+  core_actor.cpp_FUN_0040bd90                        line 54
     File: core/actor.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -4736,11 +4148,11 @@ invalidPointerCast (21)
     File: core/mimic.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520    line 101
+  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520    line 102
     File: core/netgame.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520    line 106
+  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520    line 108
     File: core/netgame.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -4760,11 +4172,11 @@ invalidPointerCast (21)
     File: core/skeleton.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_stranger.cpp_CStranger_applyArmAimRotation_FU line 167
+  core_stranger.cpp_CStranger_applyArmAimRotation_FU line 168
     File: core/stranger.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_stranger.cpp_CStranger_applyArmAimRotation_FU line 213
+  core_stranger.cpp_CStranger_applyArmAimRotation_FU line 215
     File: core/stranger.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -4864,7 +4276,7 @@ pointerOutOfBounds (4)
 nullPointerRedundantCheck (4)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_FUN_0040bd90                        line 81
+  core_actor.cpp_FUN_0040bd90                        line 72
     File: core/actor.cpp
     Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.
 
@@ -4901,44 +4313,48 @@ identicalInnerCondition (4)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerArithmeticRedundantCheck (3)
+arrayIndexOutOfBounds (3)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_FUN_0040bd90                        line 86
-    File: core/actor.cpp
-    Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
+  core_dcamera.cpp_CDemonCamera_FUN_00447f20         line 89
+    File: core/dcamera.cpp
+    Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
 
-  core_actor.cpp_FUN_0040bd90                        line 87
-    File: core/actor.cpp
-    Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
+  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 190
+    File: core/skeleton.cpp
+    Array 'local_74[2]' accessed at index 2, which is out of bounds.
 
-  core_actor.cpp_FUN_0040bd90                        line 88
-    File: core/actor.cpp
-    Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
+  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e77 line 31
+    File: sound/mp3.cpp
+    Array 'local_94[18]' accessed at index 19, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+invalidScanfArgType_int (3)
+----------------------------------------------------------------------------------------------------
+
+  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 58
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  sound_mp3.cpp_FUN_004e78b0                         line 39
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  sound_mp3.cpp_FUN_004e7b00                         line 42
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 selfAssignment (2)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_ckptutil.c_FUN_00430630                    line 178
+  cockpit_ckptutil.c_FUN_00430630                    line 179
     File: cockpit/ckptutil.c
     Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
 
-  cockpit_ckptutil.c_FUN_00430630                    line 280
+  cockpit_ckptutil.c_FUN_00430630                    line 281
     File: cockpit/ckptutil.c
     Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
-
-----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBounds (2)
-----------------------------------------------------------------------------------------------------
-
-  core_dcamera.cpp_FUN_00447f20                      line 89
-    File: core/dcamera.cpp
-    Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
-
-  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e77 line 31
-    File: sound/mp3.cpp
-    Array 'local_94[18]' accessed at index 19, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBoundsCond (2)
@@ -4976,7 +4392,7 @@ compareBoolExpressionWithInt (1)
 nullPointerArithmetic (1)
 ----------------------------------------------------------------------------------------------------
 
-  core_main.c_FUN_004c8440                           line 54
+  core_main.c_displayErrorAndQuit_FUN_004c8440       line 54
     File: core/main.c
     Pointer addition with NULL pointer.
 

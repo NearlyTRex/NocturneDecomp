@@ -30,11 +30,11 @@
 ;   float FLOAT_0058769c = 2
 ;   float FLOAT_005876a0 = -1.5
 ;   undefined4 DAT_01bd1d84
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_3d.c_FUN_00408e80
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760
@@ -125,10 +125,10 @@ section .text
     MOV ECX,0x58762e                    ; 004c3d41 | = "..\\engine\\keyframe.c"
     MOV EAX,0x16b                       ; 004c3d46
     PUSH 0x587643                       ; 004c3d4b | = "Bad keyframe 1"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c3d50 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004c3d56 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c3d5b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004c3d50 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004c3d56 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c3d5b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c3d60
     MOV EDX,dword ptr [EBP + 0x14]      ; 004c3d63
         ;   Label: LAB_004c3d63
@@ -387,10 +387,10 @@ section .text
         ;   Label: LAB_004c4042
     MOV EAX,0x1a6                       ; 004c4047
     PUSH 0x587667                       ; 004c404c | = "ZBP not found!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004c4051 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004c4057 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c405c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004c4051 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004c4057 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c405c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c4061
     JMP 0x004c3fd0                      ; 004c4064
         ;   XREF to: 004c3fd0 (UNCONDITIONAL_JUMP)  ; LAB_004c3fd0

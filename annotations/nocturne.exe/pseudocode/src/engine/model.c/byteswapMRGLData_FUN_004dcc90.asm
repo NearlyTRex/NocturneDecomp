@@ -11,11 +11,11 @@
 ;   undefined1* switchdataD_004dcb84 = 004dccbd
 ;   TerminatedCString s_engine_model_c_0058a4cd
 ;   TerminatedCString s_Need_a_new_byteswap_0058a4df
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_model.c_getMRGLSize_FUN_004dd520
 ;
 ; *****************************************************************************
@@ -70,10 +70,10 @@ section .text
         ;   Label: caseD_13
     MOV ECX,0xce                        ; 004dccd9
     PUSH 0x58a4df                       ; 004dccde | = "Need a new byteswap!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004dcce3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dcce9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dccef
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dcce3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004dcce9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dccef
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dccf4
     SUB EDI,ESI                         ; 004dccf7
     ADD EBX,ESI                         ; 004dccf9

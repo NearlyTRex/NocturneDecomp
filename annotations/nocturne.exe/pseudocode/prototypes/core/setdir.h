@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 00511d80
 float FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6);
 
-// Original: core_setdir.cpp_FUN_005125a0
+// Original: core_setdir.cpp_CDemonSet_FUN_005125a0
 // Address: 005125a0
-undefined4 FUN_005125a0(CDemonSet *param_1,CDemonActor *param_2,int param_3);
+int __cdecl CDemonSet(CDemonSet *this_ptr,CDemonActor *param_2,int param_3);
 
 // Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_005135d0
 // Address: 005135d0
@@ -31,9 +31,9 @@ void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 // Address: 00513670
 void FUN_00513670(SIZE_T *param_1,char *param_2);
 
-// Original: core_setdir.cpp_FUN_00513720
+// Original: core_setdir.cpp_CDemonSet_FUN_00513720
 // Address: 00513720
-void FUN_00513720(CDemonSet *param_1);
+void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_FUN_005138e0
 // Address: 005138e0
@@ -47,9 +47,9 @@ void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_F
 // Address: 00513d80
 int __cdecl CDemonSet::isPointInVdirBox(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
-// Original: core_setdir.cpp_FUN_00513e20
+// Original: core_setdir.cpp_CDemonSet_FUN_00513e20
 // Address: 00513e20
-undefined4 FUN_00513e20(CDemonSet *param_1,int param_2,CVector3f *param_3);
+int __cdecl CDemonSet(CDemonSet *this_ptr,int param_2,CVector3f *param_3);
 
 // Original: core_setdir.cpp_testOBBIntersection_FUN_00513e80
 // Address: 00513e80
@@ -79,6 +79,6 @@ undefined4 * FUN_005143a0(void);
 // Address: 005143b0
 undefined4 * FUN_005143b0(void);
 
-// Original: core_setdir.cpp_FUN_005143c0
+// Original: core_setdir.cpp_CBoundingBox3D_arrdtor_FUN_005143c0
 // Address: 005143c0
-void FUN_005143c0(void);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);

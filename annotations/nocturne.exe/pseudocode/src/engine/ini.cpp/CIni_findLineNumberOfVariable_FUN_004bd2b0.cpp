@@ -25,11 +25,11 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0(CIni *this
   this_ptr->initialized = 1;
   stream = _fopen(value,"rt");
   if (stream == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
-    g_INT_01cc4804 = 0xf5;
-    core_main_c_FUN_004c8440("cIni::FindLineNumberOfVariable: Unable to open input");
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 245;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("cIni::FindLineNumberOfVariable: Unable to open input");
   }
-  _sprintf(local_114,"[%s]\n");
+  _sprintf(local_114,"[%s]\n",section);
   while (((stream->_flag & 0x10) == 0 &&
          (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
     iVar4 = _strcmp(local_214,local_114);

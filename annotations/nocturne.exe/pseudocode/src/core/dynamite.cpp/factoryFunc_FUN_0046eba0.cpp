@@ -11,7 +11,7 @@ CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0046eba0(void)
 {
   CDynamite *pCVar1;
   
-  pCVar1 = (CDynamite *)FUN_0056497c(0x584);
+  pCVar1 = operator_new(0x584);
   if (pCVar1 == (CDynamite *)0x0) {
     return (CDynamite *)0x0;
   }

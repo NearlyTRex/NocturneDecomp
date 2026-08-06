@@ -11,7 +11,7 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(CIcePick *this_pt
 {
   CIcePick *pCVar1;
   
-  pCVar1 = (CIcePick *)core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  pCVar1 = (CIcePick *)core_hero_cpp_CHero_FUN_004b46d0(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CIcePickVTable._ub;
   pCVar1->guns_drawn = 0;
   pCVar1->attack_count = 0;

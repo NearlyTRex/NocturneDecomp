@@ -15,12 +15,12 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a400(CBoneGuy *this_pt
   CVector3f *pCVar4;
   CClothList *pCVar5;
   CDeformableModelInstance *pCVar6;
-  CBoneGuy *pCVar7;
-  void *ptr;
+  CBoneGuy *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBoneGuyTypeInfo_0059aa20);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBoneGuyTypeInfo_0059aa20);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pSVar1 = core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0(this_ptr->boxes,0);
@@ -32,12 +32,12 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a400(CBoneGuy *this_pt
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
-  pCVar7 = (CBoneGuy *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
+  ptr = (CBoneGuy *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
   if ((flags & 2) == 0) {
-    return pCVar7;
+    return ptr;
   }
-  FUN_00564494(pCVar7);
-  return pCVar7;
+  operator_delete(ptr);
+  return ptr;
 }

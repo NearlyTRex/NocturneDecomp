@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0x314                          ; 0040eb40
         ;   Label: core_ammo.cpp_factoryFunc_FUN_0040eb40
-    CALL crt_unknown.c_FUN_0056497c     ; 0040eb45
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0040eb45
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0040eb4a
     TEST EAX,EAX                        ; 0040eb4d
     JNZ 0x0040eb52                      ; 0040eb4f

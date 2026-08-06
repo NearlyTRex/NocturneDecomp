@@ -38,13 +38,13 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(CExplosion *this_ptr)
                     ((double)((1.0 - this_ptr->lifetime) * (float)27));
   local_20 = (int)ROUND(dVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&this_ptr->position);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
-            (DAT_005ae704,(CVector3f *)local_5c);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)local_5c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,(CVector3f *)local_5c,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)local_5c,(CVector3f *)0x0);
   fVar3 = -this_ptr->scale * 5.5407092247005829e-315._0_4_;
   fVar2 = (float)0.00390625;
   iVar1 = this_ptr->flip_flag;
@@ -65,28 +65,29 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(CExplosion *this_ptr)
   local_34.z = (int)ROUND(256.0f * 0.0);
   local_24 = local_40;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_34);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_34);
   local_18 = local_1c;
   local_40 = (float)local_1c;
   local_5c._4_4_ = (uint)ROUND(local_40 * 256.0f);
   fStack_54 = (float)(int)ROUND(local_3c * 256.0f);
   iStack_50 = (int)ROUND(local_38 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)(local_5c + 4));
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
+             (CVector3i *)(local_5c + 4));
   local_3c = -this_ptr->scale * (float)113 * (float)0.00390625;
   local_4c.x = (int)ROUND(local_40 * 256.0f);
   local_4c.y = (int)ROUND(local_3c * 256.0f);
   local_4c.z = (int)ROUND(local_38 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_4c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_4c);
   local_40 = local_24;
   local_70.x = (int)ROUND(local_24 * 256.0f);
   local_70.y = (int)ROUND(local_3c * 256.0f);
   local_70.z = (int)ROUND(local_38 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_70);
-  this_ptr_00 = DAT_005ae704;
-  DAT_005ae704->vertex_buffer_ptr->u = 0x20000;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_70);
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
+  g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->u = 0x20000;
   this_ptr_00->vertex_buffer_ptr->v = 0x20000;
   this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;
   this_ptr_00->vertex_buffer_ptr[1].v = 0x20000;
@@ -100,8 +101,8 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(CExplosion *this_ptr)
   this_ptr_00->vertex_buffer_ptr[3].a = 0x8000;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr_00,1);
   engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
-            (DAT_005ae704,(SMRGLHeaderPrimitive *)&iStack_98,0x123);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&iStack_98,0x123);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   return;
 }

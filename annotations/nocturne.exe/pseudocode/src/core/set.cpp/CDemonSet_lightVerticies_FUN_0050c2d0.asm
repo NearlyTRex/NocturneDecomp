@@ -77,7 +77,7 @@
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 00416084
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e8c
-;   core_curtain.cpp_FUN_0043f330 at 0043f4a4
+;   core_curtain.cpp_CCurtain_FUN_0043f330 at 0043f4a4
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 00453127
 ;   core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 at 004ac583
 ;   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 at 004ac73f
@@ -92,7 +92,7 @@
 ;   TerminatedCString s_core_set_cpp_00590757
 ;   TerminatedCString s_Need_more_normals_for_pa_00590767
 ;   double DOUBLE_00590792 = 65535
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
@@ -105,7 +105,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_00441440
 ;   core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
@@ -131,12 +131,12 @@ section .text
     MOV ECX,0x5906b9                    ; 0050c2f0 | = "..\\core\\set.cpp"
     MOV EBX,0xd26                       ; 0050c2f5
     PUSH 0x5906c9                       ; 0050c2fa | = "CDemonSet::lightVerticies - tried to ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050c30b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050c30b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 0050c310
-    MOV EDI,dword ptr [0x005ae704]      ; 0050c313 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 0050c313 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050c313
     PUSH EDI                            ; 0050c319 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050c31a
@@ -872,10 +872,10 @@ section .text
     MOV ECX,0x59071e                    ; 0050cbab | = "..\\core\\set.cpp"
     MOV ESI,0xde8                       ; 0050cbb0
     PUSH 0x59072e                       ; 0050cbb5 | = "Too many normals on this packed tri list"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050cbc6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050cbc6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050cbcb
     CMP dword ptr [EBP + 0x1c],0xfa0    ; 0050cbce
         ;   Label: LAB_0050cbce
@@ -884,10 +884,10 @@ section .text
     MOV EAX,0x590757                    ; 0050cbd7 | = "..\\core\\set.cpp"
     MOV EDX,0xdea                       ; 0050cbdc
     PUSH 0x590767                       ; 0050cbe1 | = "Need more normals for packed models"
-    MOV [0x01cc4800],EAX                ; 0050cbe6 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050cbf1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0050cbe6 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050cbf1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050cbf6
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0050cbf9
         ;   Label: LAB_0050cbf9

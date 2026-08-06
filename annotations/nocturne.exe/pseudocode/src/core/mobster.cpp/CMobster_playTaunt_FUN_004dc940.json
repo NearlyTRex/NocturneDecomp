@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 32,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 27,
-        "line": 33,
-        "message": "no matching function for call to 'core_sound_cpp_FUN_0052ebc0'"
       }
     ],
     "success": false,
@@ -74,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 73,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 60,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 217
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -116,11 +104,11 @@
     {
       "addr": "0052ebc0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0052ebc0"
+      "name": "core_sound.cpp_CSound_FUN_0052ebc0"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -332,7 +320,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 50,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + local_18),",

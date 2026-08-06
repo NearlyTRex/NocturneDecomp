@@ -30,13 +30,14 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004afa20(CFootstep *this_ptr,int
   _DAT_005c5060 = 0x80000;
   _DAT_005c50bc = 0x80000;
   output = (SProjectedVertex *)&DAT_005c5014;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,this_ptr->alpha);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->alpha);
   _DAT_01c78cc8 = 0;
   _DAT_01c78ccc = 0;
   _DAT_01c78cd0 = 0;
   _DAT_01c78cd4 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);
   pCVar2 = this_ptr->corners;
   do {
     local_1c.x = (int)ROUND(pCVar2->x * 256.0f);
@@ -129,7 +130,7 @@ LAB_004afbbc:
   DAT_005c50cc = 0;
 LAB_004afc11:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78cc0);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78cc0);
   this_ptr->expired = 1;
   return;
 }

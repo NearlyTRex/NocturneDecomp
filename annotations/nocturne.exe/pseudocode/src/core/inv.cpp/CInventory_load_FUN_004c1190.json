@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,27 +57,9 @@
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 33,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 35,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 37,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
+        "column": 32,
         "line": 40,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'float *' but the argument has type 'CInventory *' [-Werror,-Wformat]"
       },
       {
         "category": "pointer_type",
@@ -87,9 +69,15 @@
       },
       {
         "category": "format_error",
-        "column": 30,
+        "column": 46,
         "line": 61,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 55,
+        "line": 61,
+        "message": "format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -166,7 +154,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004d8640",
@@ -180,7 +168,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -259,13 +247,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -397,23 +385,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CInventory_load_FUN_004c1190.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 12,
-          "line": 102,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -454,14 +425,6 @@
       "severity": "moderate",
       "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 102,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (-1 < local_14) {",
-      "type": "static_uninitvar"
     }
   ]
 }

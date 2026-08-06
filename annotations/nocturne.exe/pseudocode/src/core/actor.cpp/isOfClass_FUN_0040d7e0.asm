@@ -14,10 +14,10 @@
 ;   core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860 at 0041188f
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00414056
 ;   core_battery.cpp_CBattery_canPickup_FUN_00414e10 at 00414e1a
-;   core_boneguy.cpp_FUN_004196b0 at 00419ac0
+;   core_boneguy.cpp_CBoneGuy_FUN_004196b0 at 00419ac0
 ;   core_boxactor.cpp_CBoxActor_canPickup_FUN_0041f0b0 at 0041f0d2
+;   core_charactr.cpp_CCharacter_FUN_00427730 at 00427764
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 004299fa
-;   core_charactr.cpp_FUN_00427730 at 00427764
 ;   ... and 46 more
 ;
 ; Called Functions:

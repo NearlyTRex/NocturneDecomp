@@ -18,11 +18,11 @@
 ;   TerminatedCString s_Tried_to_save_motion_con_0058b41d
 ;   TerminatedCString s_s_s_g_current_motion_nam_0058b468
 ;   TerminatedCString s_s_s_g_current_motion_nam_0058b49a
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;
@@ -45,10 +45,10 @@ section .text
     MOV EDI,0x58b40a                    ; 004e2233 | = "..\\core\\motion.cpp"
     MOV EAX,0x536                       ; 004e2238
     PUSH 0x58b41d                       ; 004e223d | = "Tried to save motion controller state..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004e2242 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e2248 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e224d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004e2242 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004e2248 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e224d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004e2252
     SUB ESP,0x8                         ; 004e2255
         ;   Label: LAB_004e2255
@@ -65,7 +65,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004e2271
     PUSH ECX                            ; 004e2274
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004e2275
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 004e227a
     POP EBP                             ; 004e227d
     POP EDI                             ; 004e227e
@@ -83,7 +83,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 004e2297
     PUSH ECX                            ; 004e229a
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004e229b
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 004e22a0
     POP EBP                             ; 004e22a3
     POP EDI                             ; 004e22a4

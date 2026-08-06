@@ -20,12 +20,12 @@
 ;   undefined1* switchdataD_00549ed4 = 00549f8d
 ;   TerminatedCString s_core_turret_cpp_00596da5
 ;   TerminatedCString s_CTurret_getCurFrame_inva_00596db8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -83,10 +83,10 @@ section .text
         ;   Label: default
     MOV ESI,0x1c1                       ; 00549f6f
     PUSH 0x596db8                       ; 00549f74 | = "CTurret::getCurFrame - invalid state"
-    MOV dword ptr [0x01cc4800],ECX      ; 00549f79 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00549f7f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00549f85
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00549f79 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00549f7f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00549f85
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00549f8a
     FLD float ptr [ESP + 0x8]           ; 00549f8d
         ;   Label: caseD_0

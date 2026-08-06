@@ -10,13 +10,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af5c
 ;   TerminatedCString s_CClothList_remove_invali_0057af6e
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160
-;   core_main.c_FUN_004c8440
-;   crt_unknown.c_FUN_00564494
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_operator_delete_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -38,10 +38,10 @@ section .text
         ;   Label: LAB_00438423
     MOV EBX,0x5e4                       ; 00438428
     PUSH 0x57af6e                       ; 0043842d | = "CClothList::remove - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0043843e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0043843e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00438443
     MOV ESI,dword ptr [ESP + 0x10]      ; 00438446
         ;   Label: LAB_00438446
@@ -57,8 +57,8 @@ section .text
         ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00435160(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00438465
     PUSH EAX                            ; 00438468
-    CALL crt_unknown.c_FUN_00564494     ; 00438469
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00438469
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0043846e
     MOV EAX,dword ptr [ESP + 0x10]      ; 00438471
         ;   Label: LAB_00438471

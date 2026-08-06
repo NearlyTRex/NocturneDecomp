@@ -13,13 +13,13 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508515
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_FUN_004401b0
+;   core_dcamera.cpp_CDemonCamera_FUN_00446800
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
-;   core_dcamera.cpp_FUN_004401b0
-;   core_dcamera.cpp_FUN_00446800
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     PUSH EBX                            ; 0043ff60
     CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70 ; 0043ff61
         ;   XREF to: 00447a70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(CDemonCamera * this_ptr, int gamma_value)
-    MOV EDX,dword ptr [0x005b7620]      ; 0043ff66 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0043ff66 | g_WindowHeight
     ADD ESP,0x8                         ; 0043ff6c
     CMP EDX,0x1e0                       ; 0043ff6f
     JGE 0x00440006                      ; 0043ff75
@@ -51,12 +51,12 @@ section .text
     PUSH 0x0                            ; 0043ff8a
     PUSH 0x0                            ; 0043ff8c
     PUSH EBX                            ; 0043ff8e
-    CALL core_dcamera.cpp_FUN_004401b0  ; 0043ff8f
-        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004401b0()
+    CALL core_dcamera.cpp_CDemonCamera_FUN_004401b0 ; 0043ff8f
+        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_004401b0(CDemonCamera * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0043ff94
     PUSH EBX                            ; 0043ff97
-    CALL core_dcamera.cpp_FUN_00446800  ; 0043ff98
-        ;   XREF to: 00446800 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00446800(CDemonCamera * this_ptr)
+    CALL core_dcamera.cpp_CDemonCamera_FUN_00446800 ; 0043ff98
+        ;   XREF to: 00446800 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_00446800(CDemonCamera * this_ptr)
     MOV ECX,0x40                        ; 0043ff9d
     ADD ESP,0x4                         ; 0043ffa2
     XOR EBP,EBP                         ; 0043ffa5

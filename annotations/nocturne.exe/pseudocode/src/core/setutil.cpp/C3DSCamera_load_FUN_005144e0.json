@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,51 @@
       },
       {
         "category": "format_error",
-        "column": 22,
+        "column": 27,
         "line": 22,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
+        "column": 36,
         "line": 26,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 30,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 31,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 34,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 36,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 37,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
+        "column": 36,
         "line": 38,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 57,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 40,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 65,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 42,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 66,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 38,
+        "line": 70,
+        "message": "format specifies type 'float *' but the argument has type 'CBoundingBox3D *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 38,
+        "line": 72,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,17 +110,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 89,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 71,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 336
+    "total_lines": 343
   },
   "cross_references": [
     {
@@ -163,7 +151,7 @@
     {
       "addr": "00514470",
       "is_variadic": false,
-      "name": "core_setutil.cpp_FUN_00514470"
+      "name": "core_setutil.cpp_C3DSCamera_FUN_00514470"
     },
     {
       "addr": "00564b20",
@@ -172,12 +160,12 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     },
     {
       "addr": "00566b5c",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
     }
   ],
@@ -401,15 +389,8 @@
   "static_analysis": {
     "analyzed_file": "C3DSCamera_load_FUN_005144e0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 3,
-          "line": 22,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
         {
           "check_id": "invalidscanf",
           "column": 3,
@@ -425,7 +406,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
+      "line": 46,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar3->x = pCVar2->x;",
@@ -433,7 +414,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 45,
+      "line": 50,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;",

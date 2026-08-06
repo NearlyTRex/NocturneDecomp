@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00597e35 = -1
 ;   double DOUBLE_00597e39 = 0.800000000000000
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_02dd1184
 ;
@@ -89,7 +89,7 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 0055774b
     PUSH EAX                            ; 0055774f
     PUSH 0x2dd1184                      ; 00557750 | DAT_02dd1184
-    MOV EDI,dword ptr [0x005ae704]      ; 00557755 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 00557755 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 0055775b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0055775c
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -97,7 +97,7 @@ section .text
     PUSH 0x0                            ; 00557764
     LEA EAX,[ESP + 0x48]                ; 00557766
     PUSH EAX                            ; 0055776a
-    MOV EBP,dword ptr [0x005ae704]      ; 0055776b | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 0055776b | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 00557771 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00557772
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)

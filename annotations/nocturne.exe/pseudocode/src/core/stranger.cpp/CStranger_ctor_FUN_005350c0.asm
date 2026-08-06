@@ -32,7 +32,7 @@
 ;   core_cloth.cpp_CClothList_add_FUN_00438390
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   core_hero.cpp_FUN_004b46d0
+;   core_hero.cpp_CHero_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EBP,ESP                         ; 005350c2
     MOV EBX,dword ptr [EBP + 0xc]       ; 005350c4
     PUSH EBX                            ; 005350c7
-    CALL core_hero.cpp_FUN_004b46d0     ; 005350c8
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_FUN_004b46d0 ; 005350c8
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 005350cd
     ADD EAX,0x1fb40                     ; 005350d0
     PUSH EAX                            ; 005350d5

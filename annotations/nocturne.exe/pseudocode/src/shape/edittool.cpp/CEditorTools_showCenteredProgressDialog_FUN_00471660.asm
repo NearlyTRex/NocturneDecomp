@@ -15,16 +15,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
@@ -47,10 +47,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 00471671 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 00471676
     PUSH 0x57e510                       ; 0047167b | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00471680 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00471686 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047168c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00471680 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00471686 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047168c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00471691
     MOV EAX,[0x01bcd070]                ; 00471694 | DAT_01bcd070
         ;   Label: LAB_00471694
@@ -61,7 +61,7 @@ section .text
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004716a8
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     MOV [0x01bcd9bc],EAX                ; 004716ad | DAT_01bcd9bc
-    MOV EAX,[0x005b761c]                ; 004716b2 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004716b2 | g_WindowWidth
     MOV EDX,EAX                         ; 004716b7
     SAR EDX,0x1f                        ; 004716b9
     SUB EAX,EDX                         ; 004716bc

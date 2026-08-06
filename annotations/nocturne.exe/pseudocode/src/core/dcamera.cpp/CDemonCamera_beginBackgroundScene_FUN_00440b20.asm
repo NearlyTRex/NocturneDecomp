@@ -7,13 +7,13 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509e96
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b14
-;   core_set.cpp_FUN_00509a80 at 00509e96
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b741
 ;   TerminatedCString s_CDemonCamera_beginBackgr_0057b755
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_0140efa8
 ;   undefined4 DAT_0140efac
@@ -29,7 +29,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -64,10 +64,10 @@ section .text
         ;   Label: LAB_00440b55
     MOV ESI,0x43b                       ; 00440b5a
     PUSH 0x57b755                       ; 00440b5f | = "CDemonCamera::beginBackgroundScene - ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00440b64 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440b6a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00440b70
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440b64 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00440b6a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00440b70
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00440b75
     JMP 0x00440b31                      ; 00440b78
         ;   XREF to: 00440b31 (UNCONDITIONAL_JUMP)  ; LAB_00440b31
@@ -76,7 +76,7 @@ section .text
     MOV EDI,0x140efb4                   ; 00440b7f
     MOV EDX,0x8                         ; 00440b84
     MOV EAX,[0x005b7624]                ; 00440b89 | DAT_005b7624
-    MOV ECX,dword ptr [0x005b7620]      ; 00440b8e | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 00440b8e | g_WindowHeight
     MOV [0x0140efac],EAX                ; 00440b94 | DAT_0140efac
     MOV EAX,[0x01c02594]                ; 00440b99 | DAT_01c02594
     SHL ECX,0x2                         ; 00440b9e

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,34 +56,28 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 25,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 29,
+        "line": 26,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 29,
+        "line": 26,
         "message": "expected expression"
       },
       {
-        "category": "format_error",
-        "column": 58,
-        "line": 32,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 29,
+        "message": "use of undeclared identifier 'stack0xfffffe44'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 33,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 31,
+        "message": "use of undeclared identifier 'stack0xfffffe44'"
       }
     ],
     "success": false,
@@ -92,18 +86,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 58,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 2,
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
+      "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 128
+    "total_lines": 126
   },
   "cross_references": [],
   "function": {
@@ -123,11 +118,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -173,13 +168,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -293,7 +288,7 @@
         {
           "check_name": "bugprone-integer-division",
           "column": 19,
-          "line": 37,
+          "line": 35,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         }
       ],
@@ -304,7 +299,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 21,
+      "line": 18,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
@@ -312,15 +307,31 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar3 = (**(code **)(*piVar2 + 0x10))(piVar2);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xfffffe44",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe44,\"DirectSux: Unable to %s.  (%s)\",",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffe44",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_FUN_00529980(&stack0xfffffe44);",
+      "type": "stack_ref"
+    },
+    {
       "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 37,
+      "line": 35,
       "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
       "severity": "mild",
       "text": "return (double)(uStack_20 / uVar3);",

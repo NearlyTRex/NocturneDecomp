@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -68,13 +68,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 155,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -112,9 +112,9 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "01bd2fa0",
@@ -214,22 +214,6 @@
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "pbVar1 = *(byte **)(&DAT_01bd2fa0 + row_index * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b761c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_005b761c);",
       "type": "undefined_data"
     },
     {

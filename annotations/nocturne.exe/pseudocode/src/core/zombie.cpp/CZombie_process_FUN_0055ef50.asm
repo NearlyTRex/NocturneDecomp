@@ -175,13 +175,13 @@
 ;   core_actor.cpp_CVector_ctor_FUN_0040e160
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_randomChance_FUN_0040dea0
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_00428c00
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0
-;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
-;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427990
 ;   ... and 34 more
 ;
 ; *****************************************************************************
@@ -199,8 +199,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 0055ef5f
     PUSH dword ptr [EBP + 0x92]         ; 0055ef65
     PUSH EBX                            ; 0055ef6b
-    CALL core_charactr.cpp_FUN_004259f0 ; 0055ef6c
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 0055ef6c
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055ef71
     TEST EAX,EAX                        ; 0055ef74
     JNZ 0x0055ef80                      ; 0055ef76
@@ -684,10 +684,10 @@ section .text
         ;   Label: LAB_0055f4d3
     MOV EDI,0x1ee                       ; 0055f4d8
     PUSH 0x598558                       ; 0055f4dd | = "WTF!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0055f4e2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0055f4e8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0055f4ee
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0055f4e2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0055f4e8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0055f4ee
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0055f4f3
     JMP 0x0055f45d                      ; 0055f4f6
         ;   XREF to: 0055f45d (UNCONDITIONAL_JUMP)  ; LAB_0055f45d
@@ -758,10 +758,10 @@ section .text
         ;   Label: LAB_0055f5d3
     MOV EDX,0x205                       ; 0055f5d8
     PUSH 0x59858b                       ; 0055f5dd | = "WTF!"
-    MOV [0x01cc4800],EAX                ; 0055f5e2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0055f5e7 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0055f5ed
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0055f5e2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0055f5e7 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0055f5ed
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0055f5f2
     JMP 0x0055f510                      ; 0055f5f5
         ;   XREF to: 0055f510 (UNCONDITIONAL_JUMP)  ; LAB_0055f510
@@ -1054,8 +1054,8 @@ section .text
     XOR EAX,EAX                         ; 0055f958
     PUSH EBX                            ; 0055f95a
     MOV dword ptr [EBP + 0x42],EAX      ; 0055f95b
-    CALL core_charactr.cpp_FUN_00428c00 ; 0055f95e
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 0055f95e
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055f963
     TEST EAX,EAX                        ; 0055f966
     JZ 0x0056095b                       ; 0055f968
@@ -1126,8 +1126,8 @@ section .text
     ADD ESP,0x4                         ; 0055fa1c
     PUSH dword ptr [EBP + 0x92]         ; 0055fa1f
     PUSH EBX                            ; 0055fa25
-    CALL core_charactr.cpp_FUN_0042a150 ; 0055fa26
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 0055fa26
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055fa2b
     CMP dword ptr [EBX + 0xbc90],0x0    ; 0055fa2e
         ;   Label: LAB_0055fa2e
@@ -1930,8 +1930,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005603c1
     MOV EDX,dword ptr [EAX + 0x4]       ; 005603c4
     MOV dword ptr [EAX],EDX             ; 005603c7
-    CALL core_zombie.cpp_FUN_00561010   ; 005603c9
-        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_FUN_00561010(CZombie * this_ptr, float delta_time)
+    CALL core_zombie.cpp_CZombie_FUN_00561010 ; 005603c9
+        ;   XREF to: 00561010 (UNCONDITIONAL_CALL)  ; int core_zombie.cpp_CZombie_FUN_00561010(CZombie * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005603ce
     TEST EAX,EAX                        ; 005603d1
     JNZ 0x0055fc6b                      ; 005603d3

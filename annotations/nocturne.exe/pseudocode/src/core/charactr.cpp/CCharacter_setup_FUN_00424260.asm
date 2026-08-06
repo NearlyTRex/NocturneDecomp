@@ -20,8 +20,8 @@
 ;   TerminatedCString s_bip01_head_00579e16
 ;   float FLOAT_0059b094 = 9999
 ;   undefined4 DAT_007658e4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -34,7 +34,7 @@
 ;   core_cloth.cpp_CClothList_setup_FUN_00438510
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
@@ -214,10 +214,10 @@ section .text
     MOV EDX,0x579dc6                    ; 0042442b | = "..\\core\\charactr.cpp"
     MOV ECX,0x10c                       ; 00424430
     PUSH 0x579ddb                       ; 00424435 | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00424446
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00424446
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x14                        ; 0042444b
     JMP 0x004242bf                      ; 0042444e
         ;   XREF to: 004242bf (UNCONDITIONAL_JUMP)  ; LAB_004242bf

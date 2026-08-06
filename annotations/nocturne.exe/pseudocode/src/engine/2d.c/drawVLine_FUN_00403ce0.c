@@ -30,9 +30,9 @@ void __cdecl engine_2d_c_drawVLine_FUN_00403ce0(int x,int y1,int y2)
       if (DAT_005b7624 < 0x10) {
         if (DAT_005b7624 != 8) {
 LAB_00403dde:
-          g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-          g_INT_01cc4804 = 0x8d6;
-          core_main_c_FUN_004c8440("vLine - invalid bitsPerPixel");
+          g_CurrentFilename = "..\\engine\\2d.c";
+          g_CurrentLineNumber = 2262;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("vLine - invalid bitsPerPixel");
           return;
         }
         for (; iVar5 <= iVar2; iVar5 = iVar5 + 4) {

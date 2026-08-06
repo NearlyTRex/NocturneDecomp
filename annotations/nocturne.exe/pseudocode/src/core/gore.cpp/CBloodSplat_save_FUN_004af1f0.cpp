@@ -13,7 +13,7 @@ int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004af1f0(CBloodSplat *this_ptr,_F
   
   _fprintf(file_handle,"%f,%f,%f\n",(double)(this_ptr->position).x,
              (double)(this_ptr->position).y,(double)(this_ptr->position).z);
-  _fprintf();
+  _fprintf(file_handle,"%d,%d,%d\n");
   _fprintf(file_handle,"%f,%f,%f\n",(double)(this_ptr->rotation).x,
              (double)(this_ptr->rotation).z,(double)(this_ptr->rotation).y);
   iVar1 = _fprintf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",this_ptr->texture_variant,

@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   use_clipping
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
@@ -32,10 +32,10 @@ section .text
     TEST EAX,EAX                        ; 0046efac
     JL 0x0046efe7                       ; 0046efae
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
-    CMP EDX,dword ptr [0x005b761c]      ; 0046efb0 | DAT_005b761c
+    CMP EDX,dword ptr [0x005b761c]      ; 0046efb0 | g_WindowWidth
     JGE 0x0046efe7                      ; 0046efb6
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
-    CMP EAX,dword ptr [0x005b7620]      ; 0046efb8 | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 0046efb8 | g_WindowHeight
     JGE 0x0046efe7                      ; 0046efbe
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
     CMP dword ptr [ESP + 0xc],0x0       ; 0046efc0

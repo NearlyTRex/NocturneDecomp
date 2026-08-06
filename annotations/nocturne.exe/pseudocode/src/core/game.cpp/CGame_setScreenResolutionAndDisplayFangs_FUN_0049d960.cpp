@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960
   CAlphaBitmap local_18;
   
   engine_2d_c_reinitializeGraphicsSystem_FUN_00403770();
-  if ((DAT_005b7620 != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
+  if ((g_WindowHeight != 0x1e0) || (this_ptr->game_bpp != 0x20)) {
     wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(0x280,0x1e0,0x20);
   }
   if (g_CDemonMission_PTR_005baf90->is_in_editor == 0) {

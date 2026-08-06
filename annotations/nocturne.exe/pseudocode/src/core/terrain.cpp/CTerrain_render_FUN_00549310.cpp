@@ -25,7 +25,8 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
   if (_DAT_02dd10cc == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_30);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
+            (g_CDemonRenderer_PTR_005ae704,&local_30);
   local_24 = 0x40800;
   local_1c = 0;
   iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0
@@ -44,9 +45,9 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
   local_30.z = (float)((iVar2 + local_24) - this_ptr->animation_counter);
   local_30.x = (float)(iVar1 + (int)ROUND(dVar4));
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0
-            (DAT_005ae704,(CVector3i *)&local_30);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&local_30);
   core_ground_cpp_CGround_render_FUN_004b2110((CGround *)INT_005ba8ec);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (DAT_005ae704,(CVector3f *)&stack0xffffffc4);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffc4);
   return;
 }

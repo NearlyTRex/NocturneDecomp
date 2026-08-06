@@ -32,7 +32,8 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
     iVar4 = iVar3;
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if ((iVar3 == 0) && (_DAT_01c038f4 < 0x4000)) {
     pCVar5 = this_ptr;
     do {
@@ -41,12 +42,13 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
       pCVar5 = pCVar6;
     } while (pCVar6 != (CSvetlana *)(this_ptr->base).base.base.create_event);
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] = 1;
-    this_ptr_00 = DAT_005ae704;
+    this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] = 1;
     iVar3 = g_CGame_PTR_005b9354->render_mode;
     g_CGame_PTR_005b9354->render_mode = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr_00,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,48000);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,48000);
     if (iVar4 != 0) {
       core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
     }

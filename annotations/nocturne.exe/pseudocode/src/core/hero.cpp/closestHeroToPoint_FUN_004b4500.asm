@@ -10,18 +10,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042af70 at 0042aff7
+;   core_charactr.cpp_CCharacter_FUN_0042af70 at 0042aff7
 ;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0 at 004785b1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_0058569a
 ;   TerminatedCString s_closestHeroToPoint_no_he_005856ab
 ;   undefined4 DAT_01cae0d4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_004b4582
     MOV EDI,0x34                        ; 004b4587
     PUSH 0x5856ab                       ; 004b458c | = "closestHeroToPoint - no heros!"
-    MOV dword ptr [0x01cc4800],EBX      ; 004b4591 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004b4597 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b459d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004b4591 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004b4597 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b459d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b45a2
     MOV EAX,ESI                         ; 004b45a5
     ADD ESP,0x14                        ; 004b45a7

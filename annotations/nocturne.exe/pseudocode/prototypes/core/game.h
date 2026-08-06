@@ -149,7 +149,7 @@ void __cdecl giveHeroWeapon(char *class_name);
 
 // Original: core_game.cpp_FUN_004a03a0
 // Address: 004a03a0
-void FUN_004a03a0(void);
+void __cdecl FUN_004a03a0(char *param_1,EAmmoType param_2);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004a0430
 // Address: 004a0430
@@ -191,37 +191,37 @@ void __cdecl CGame::renderIrisFade(CGame *this_ptr);
 // Address: 004a3a50
 uint __cdecl CGame::fadeIn(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004a3a70
+// Original: core_game.cpp_CGame_FUN_004a3a70
 // Address: 004a3a70
-void __cdecl FUN_004a3a70(CGame *this_ptr);
+void __cdecl CGame(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004a3a90
+// Original: core_game.cpp_CGame_FUN_004a3a90
 // Address: 004a3a90
-void __cdecl FUN_004a3a90(CGame *this_ptr);
+void __cdecl CGame(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 // Address: 004a3ab0
 void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,int value,float duration);
 
-// Original: core_game.cpp_FUN_004a3b90
+// Original: core_game.cpp_CGame_FUN_004a3b90
 // Address: 004a3b90
-void __cdecl FUN_004a3b90(CGame *this_ptr,char *save_filename);
+void __cdecl CGame(CGame *this_ptr,char *save_filename);
 
-// Original: core_game.cpp_FUN_004a4170
+// Original: core_game.cpp_CGame_FUN_004a4170
 // Address: 004a4170
-void __cdecl FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl CGame(CGame *this_ptr,char *save_filename,int load_mode);
 
-// Original: core_game.cpp_FUN_004a4b50
+// Original: core_game.cpp_CGame_FUN_004a4b50
 // Address: 004a4b50
-void __cdecl FUN_004a4b50(CGame *this_ptr,int select_mode);
+void __cdecl CGame(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004a5740
 // Address: 004a5740
 void __cdecl CGame::displayBitmap(CGame *this_ptr,char *filename,int width,int height);
 
-// Original: core_game.cpp_FUN_004a57c0
+// Original: core_game.cpp_CGame_FUN_004a57c0
 // Address: 004a57c0
-void __cdecl FUN_004a57c0(CGame *this_ptr);
+void __cdecl CGame(CGame *this_ptr);
 
 // Original: core_game.cpp_joinNetworkGame_FUN_004a5e40
 // Address: 004a5e40

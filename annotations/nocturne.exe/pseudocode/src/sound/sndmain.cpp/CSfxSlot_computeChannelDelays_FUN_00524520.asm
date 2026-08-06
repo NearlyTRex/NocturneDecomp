@@ -19,12 +19,12 @@
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
 ;   undefined4 DAT_005bea80
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;
 ; *****************************************************************************
@@ -78,10 +78,10 @@ section .text
         ;   Label: LAB_0052457d
     MOV EBX,0x8e8                       ; 00524582
     PUSH 0x592d62                       ; 00524587 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052458c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524592 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00524598
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052458c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00524592 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00524598
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052459d
     JMP 0x0052453e                      ; 005245a0
         ;   XREF to: 0052453e (UNCONDITIONAL_JUMP)  ; LAB_0052453e

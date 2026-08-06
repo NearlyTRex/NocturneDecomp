@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_haystack.cpp_CHaystack_ctor_FUN_004b30a0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fa54                        ; 004b3070
         ;   Label: core_haystack.cpp_factoryFunc_FUN_004b3070
-    CALL crt_unknown.c_FUN_0056497c     ; 004b3075
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004b3075
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004b307a
     TEST EAX,EAX                        ; 004b307d
     JNZ 0x004b3082                      ; 004b307f

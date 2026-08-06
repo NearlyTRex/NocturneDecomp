@@ -70,7 +70,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mirror.cpp_CMirror_setupCorners_FUN_004d6590
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_string.c__strcmp_FUN_005649c0
@@ -96,7 +96,7 @@ section .text
     ADD ESP,0x4                         ; 004abca8
     LEA EAX,[EBX + 0x15c]               ; 004abcab
     PUSH EAX                            ; 004abcb1
-    MOV EDX,dword ptr [0x005ae704]      ; 004abcb2 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004abcb2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004abcb8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004abcb9
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -154,10 +154,10 @@ section .text
     MOV EDX,0x584edc                    ; 004abd82 | = "..\\core\\glass.cpp"
     MOV ECX,0x86                        ; 004abd87
     PUSH 0x584eee                       ; 004abd8c | = "CGlass::setup - Too many verticies(%d..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004abd9d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004abd9d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 004abda2
     FILD dword ptr [EBX + 0xb24]        ; 004abda5
         ;   Label: LAB_004abda5

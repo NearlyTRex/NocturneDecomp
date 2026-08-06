@@ -15,9 +15,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
   CSfxSample *this_ptr;
   
   if (_DAT_02dc84bc < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0xb14;
-    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2836;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   if (slot->is_active != 0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -33,9 +33,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
   slot->playback_state = 0;
   if (slot->sample != (CSfxSample *)0x0) {
     if (slot->sample->ref_count < 1) {
-      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      g_INT_01cc4804 = 0xb33;
-      core_main_c_FUN_004c8440("SfxSlot::kill - ref count out of balance!");
+      g_CurrentFilename = "..\\sound\\sndmain.cpp";
+      g_CurrentLineNumber = 2867;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - ref count out of balance!");
     }
     piVar1 = &slot->sample->ref_count;
     *piVar1 = *piVar1 + -1;
@@ -43,14 +43,14 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot)
     slot->sample = (CSfxSample *)0x0;
     if (-1 < this_ptr->streaming_slot_index) {
       if (this_ptr->ref_count != 0) {
-        g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-        g_INT_01cc4804 = 0xb42;
-        core_main_c_FUN_004c8440("refCount for streaming Sfx %s > 1",this_ptr);
+        g_CurrentFilename = "..\\sound\\sndmain.cpp";
+        g_CurrentLineNumber = 2882;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("refCount for streaming Sfx %s > 1");
       }
       if ((int)&slot[-0x28a84].fade_time_remaining / 0x120 != this_ptr->streaming_slot_index) {
-        g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-        g_INT_01cc4804 = 0xb43;
-        core_main_c_FUN_004c8440("streaming sample sfx index mismatch on %s",this_ptr);
+        g_CurrentFilename = "..\\sound\\sndmain.cpp";
+        g_CurrentLineNumber = 2883;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("streaming sample sfx index mismatch on %s");
       }
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);
     }

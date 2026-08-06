@@ -34,8 +34,8 @@
 ;   double DOUBLE_0058a3a9 = 5.34643470770547E-315
 ;   double DOUBLE_0058a3b1 = 2
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01ccdbb0
 ;   undefined4 DAT_01ccdbd0
 ;   undefined4 DAT_02dd1184
@@ -46,7 +46,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
@@ -110,10 +110,10 @@ section .text
     MOV ECX,0x58a361                    ; 004db753 | = "..\\core\\mobster.cpp"
     MOV ESI,0x323                       ; 004db758
     PUSH 0x58a375                       ; 004db75d | = "CMobster::aimTommyGun - I'm not carry..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004db762 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004db768 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004db76e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004db762 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004db768 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004db76e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004db773
     MOV EDI,0x3f490fdb                  ; 004db776
         ;   Label: LAB_004db776

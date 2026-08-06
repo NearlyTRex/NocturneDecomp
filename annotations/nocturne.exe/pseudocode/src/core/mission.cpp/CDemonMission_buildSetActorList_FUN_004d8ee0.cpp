@@ -16,9 +16,9 @@ void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemo
   for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
     if (this_ptr->current_set_index == (pCVar1->location).area_id) {
       if (1999 < g_CDemonSet_PTR_005be368->actor_count) {
-        g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-        g_INT_01cc4804 = 0x36d;
-        core_main_c_FUN_004c8440("CDemonMission::buildSetActorList - Too many actors in current set!");
+        g_CurrentFilename = "..\\core\\mission.cpp";
+        g_CurrentLineNumber = 877;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::buildSetActorList - Too many actors in current set!");
       }
       pCVar2 = g_CDemonSet_PTR_005be368;
       g_CDemonSet_PTR_005be368->actors[g_CDemonSet_PTR_005be368->actor_count] = pCVar1;

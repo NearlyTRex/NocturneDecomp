@@ -18,12 +18,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581dbb
 ;   TerminatedCString s_CFrankenstienMachine_set_00581dd0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -97,10 +97,10 @@ section .text
         ;   Label: LAB_004953cd
     MOV ECX,0x1dc                       ; 004953d2
     PUSH 0x581dd0                       ; 004953d7 | = "CFrankenstienMachine::setCourseFrame ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004953dc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004953e2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004953e8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004953dc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004953e2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004953e8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004953ed
     JMP 0x0049535e                      ; 004953f0
         ;   XREF to: 0049535e (UNCONDITIONAL_JUMP)  ; LAB_0049535e

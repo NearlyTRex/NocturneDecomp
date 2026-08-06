@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00535900 at 00536483
+;   core_stranger.cpp_CStranger_FUN_00535900 at 00536483
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00595cb7 = 3.14159265350000

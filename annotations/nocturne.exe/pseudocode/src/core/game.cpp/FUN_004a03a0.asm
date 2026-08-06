@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_FUN_004a03a0(void)
+; void __cdecl core_game_cpp_FUN_004a03a0(char *param_1,EAmmoType param_2)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   param_1
+; EAmmoType        Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
@@ -14,7 +17,7 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -23,8 +26,8 @@ section .text
     PUSH EBX                            ; 004a03a0
         ;   Label: core_game.cpp_FUN_004a03a0
     PUSH 0x314                          ; 004a03a1
-    CALL crt_unknown.c_FUN_0056497c     ; 004a03a6
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a03a6
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     MOV EBX,EAX                         ; 004a03ab
     ADD ESP,0x4                         ; 004a03ad
     TEST EAX,EAX                        ; 004a03b0

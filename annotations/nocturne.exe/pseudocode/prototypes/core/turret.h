@@ -71,13 +71,13 @@ void CTurret::stopUsing(int param_1,int param_2);
 // Address: 0054a920
 void __cdecl CTurret::updatePatrol(CTurret *this_ptr,float delta_time);
 
-// Original: core_turret.cpp_FUN_0054aab0
+// Original: core_turret.cpp_CTurret_getDamage_FUN_0054aab0
 // Address: 0054aab0
-float FUN_0054aab0(void);
+float __cdecl CTurret::getDamage(CTurret *this_ptr);
 
-// Original: core_turret.cpp_FUN_0054aae0
+// Original: core_turret.cpp_CTurret_getMuzzlePoint_FUN_0054aae0
 // Address: 0054aae0
-undefined4 * FUN_0054aae0(int param_1,undefined4 *param_2);
+CVector3f * __cdecl CTurret::getMuzzlePoint(CTurret *this_ptr,CVector3f *out_point);
 
 // Original: core_turret.cpp_CTurret_fire_FUN_0054ab10
 // Address: 0054ab10

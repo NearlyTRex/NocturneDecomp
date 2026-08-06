@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a0020
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
@@ -22,9 +22,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0
-;   core_manpuz.cpp_FUN_004ca710
-;   core_manpuz.cpp_FUN_004ca790
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_004c9c26
     LEA EBX,[ESP + 0x1c]                ; 004c9c27
     MOV EAX,0x2dd1184                   ; 004c9c2b
-    MOV EDX,dword ptr [0x005ae704]      ; 004c9c30 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004c9c30 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 004c9c36 | DAT_02dd1184
     FMUL float ptr [0x005a0020]         ; 004c9c38 | DAT_005a0020
     FISTP dword ptr [EBX]               ; 004c9c3e
@@ -91,13 +91,13 @@ section .text
     PUSH EBX                            ; 004c9c6f
         ;   Label: LAB_004c9c6f
     PUSH ESI                            ; 004c9c70
-    CALL core_manpuz.cpp_FUN_004ca710   ; 004c9c71
-        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004ca710()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710 ; 004c9c71
+        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle * this_ptr, int param_2)
     ADD ESP,0x8                         ; 004c9c76
     PUSH EBX                            ; 004c9c79
     PUSH ESI                            ; 004c9c7a
-    CALL core_manpuz.cpp_FUN_004ca790   ; 004c9c7b
-        ;   XREF to: 004ca790 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004ca790(CMansionPuzzleCircle * this_ptr, int gem_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790 ; 004c9c7b
+        ;   XREF to: 004ca790 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCircle * this_ptr, int gem_index)
     INC EBX                             ; 004c9c80
     ADD ESP,0x8                         ; 004c9c81
     CMP EBX,0xc                         ; 004c9c84
@@ -131,7 +131,7 @@ section .text
     POP EDI                             ; 004c9cc1
     POP ESI                             ; 004c9cc2
     RET                                 ; 004c9cc3
-    MOV ECX,dword ptr [0x005ae704]      ; 004c9cc4 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004c9cc4 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004c9cc4
     PUSH ECX                            ; 004c9cca | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004c9ccb

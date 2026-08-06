@@ -83,9 +83,9 @@ EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 // Address: 0041f170
 void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 
-// Original: core_boxactor.cpp_FUN_0041f190
+// Original: core_boxactor.cpp_CBoxActor_FUN_0041f190
 // Address: 0041f190
-void __cdecl FUN_0041f190(CBoxActor *this_ptr);
+void __cdecl CBoxActor(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240
 // Address: 0041f240
@@ -119,9 +119,9 @@ void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 // Address: 0041f600
 void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041f6e0
+// Original: core_boxactor.cpp_CLightActor_FUN_0041f6e0
 // Address: 0041f6e0
-void __cdecl FUN_0041f6e0(CLightActor *this_ptr);
+void __cdecl CLightActor(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_isLightPartVisible_FUN_0041f9f0
 // Address: 0041f9f0

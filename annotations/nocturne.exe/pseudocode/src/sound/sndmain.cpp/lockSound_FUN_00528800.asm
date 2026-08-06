@@ -22,13 +22,13 @@
 ;   TerminatedCString s_lockSound_unable_to_crea_0059391e
 ;   TerminatedCString s_sound_sndmain_cpp_00593948
 ;   TerminatedCString s_lockSound_lock_imbalance_0059395d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc84b8
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   wincore_winrun.cpp_createMutex_FUN_00559bc0
 ;   wincore_winrun.cpp_waitForMutex_FUN_00559bd0
 ;
@@ -52,10 +52,10 @@ section .text
     MOV ECX,0x593909                    ; 0052881a | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x12fc                      ; 0052881f
     PUSH 0x59391e                       ; 00528824 | = "lockSound - unable to create mutex ob..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00528835
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00528835
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052883a
     POP EBX                             ; 0052883d
     MOV ESI,dword ptr [0x02dc84b8]      ; 0052883e | DAT_02dc84b8
@@ -77,10 +77,10 @@ section .text
         ;   Label: LAB_00528862
     MOV EDX,0x1306                      ; 00528867
     PUSH 0x59395d                       ; 0052886c | = "lockSound - lock imbalance?"
-    MOV [0x01cc4800],EAX                ; 00528871 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052887c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00528871 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052887c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00528881
     POP EDI                             ; 00528884
     POP ESI                             ; 00528885

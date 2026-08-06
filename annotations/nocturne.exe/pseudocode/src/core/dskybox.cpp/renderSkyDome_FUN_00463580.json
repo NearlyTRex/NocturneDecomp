@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -110,10 +110,10 @@
         "message": "use of undeclared identifier '_DAT_005b0678'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 71,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "category": "undeclared_identifier",
+        "column": 58,
+        "line": 72,
+        "message": "use of undeclared identifier 'DAT_01b7b728'; did you mean 'DAT_00575728'?"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 402,
+    "complexity_score": 315,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 142,
-    "suspect_count": 23,
+    "pseudocode_lines": 145,
+    "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
       "stack_ref",
@@ -137,7 +137,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 504
+    "total_lines": 507
   },
   "cross_references": [
     {
@@ -240,9 +240,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b0678",
@@ -670,21 +670,21 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 54,
-          "line": 136,
+          "line": 139,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 43,
-          "line": 137,
+          "line": 140,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 89,
+          "line": 90,
           "message": "Uninitialized variable: local_6c",
           "severity": "error"
         }
@@ -705,33 +705,9 @@
     {
       "description": "Undefined global data reference",
       "line": 65,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_01b7b728);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
       "match": "DAT_01b7b728",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_01b7b728);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 72,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "pCVar2 = DAT_005ae704;",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_01b7b728);",
       "type": "undefined_data"
     },
     {
@@ -775,64 +751,24 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_74);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_74._0_4_ = -local_74._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_74._0_4_ = -local_74._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 87,
-      "match": "DAT_005ae704",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_74);",
-      "type": "undefined_data"
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_005ae704",
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "pCVar2 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "DAT_005ae704->vertex_buffer_ptr->r = iVar6;",
-      "type": "undefined_data"
+      "text": "local_74._0_4_ = -local_74._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 114,
       "match": "&stack0xffffff44",
       "severity": "moderate",
       "text": "(pCVar2,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
@@ -840,23 +776,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 140,
+      "line": 143,
       "match": "&stack0xffffff44",
       "severity": "moderate",
-      "text": "(DAT_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 143,
+      "line": 146,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
@@ -872,7 +800,7 @@
     },
     {
       "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 143,
+      "line": 146,
       "match": "CONCAT13",
       "severity": "moderate",
       "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
@@ -880,7 +808,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 136,
+      "line": 139,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_1c = (int)(((int)local_30 + ((int)local_30 >> 0x1f) * -4) -",
@@ -888,7 +816,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 137,
+      "line": 140,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(uint)(((int)local_30 >> 0x1f) << 1 < 0)) >> 2 & 0xffffff;",
@@ -896,7 +824,7 @@
     },
     {
       "description": "Uninitialized variable: local_6c",
-      "line": 89,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_6c = -local_6c;",

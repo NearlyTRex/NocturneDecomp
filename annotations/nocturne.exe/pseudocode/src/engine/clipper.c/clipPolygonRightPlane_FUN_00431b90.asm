@@ -19,11 +19,11 @@
 ;   TerminatedCString s_Ran_out_of_clipped_verts_0057ac5b
 ;   undefined4 DAT_007678f8
 ;   undefined4 DAT_00767b38
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
 ;
 ; *****************************************************************************
@@ -101,10 +101,10 @@ section .text
     MOV ECX,0x57ac47                    ; 00431c19 | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00431c1e
     PUSH 0x57ac5b                       ; 00431c23 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00431c28 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00431c2e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00431c33
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00431c28 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00431c2e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00431c33
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00431c38
     MOV EAX,[0x00767b38]                ; 00431c3b | DAT_00767b38
         ;   Label: LAB_00431c3b
@@ -132,10 +132,10 @@ section .text
     MOV EDX,0x57ac47                    ; 00431c70 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00431c75
     PUSH 0x57ac5b                       ; 00431c7a | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00431c7f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00431c85 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00431c8b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00431c7f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00431c85 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00431c8b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00431c90
     MOV EAX,[0x00767b38]                ; 00431c93 | DAT_00767b38
         ;   Label: LAB_00431c93

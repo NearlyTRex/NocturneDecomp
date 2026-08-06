@@ -37,9 +37,9 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
   else {
     _DAT_01cae0d4 = g_CNetGame_PTR_005bdee0->player_count;
     if (3 < _DAT_01cae0d4) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-      g_INT_01cc4804 = 0x63b;
-      core_main_c_FUN_004c8440("CDemonMission::createHeros - too many network players for MAX_HERO");
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 1595;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createHeros - too many network players for MAX_HERO");
     }
     iVar4 = 0;
     if (0 < _DAT_01cae0d4) {

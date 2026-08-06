@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CGame_01c775ec.goggles_active
@@ -60,7 +60,7 @@ section .text
     TEST EAX,EAX                        ; 0054f55d
     JZ 0x0054f5b0                       ; 0054f55f
         ;   XREF to: 0054f5b0 (CONDITIONAL_JUMP)  ; LAB_0054f5b0
-    MOV EBX,dword ptr [0x005ae704]      ; 0054f561 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0054f561 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0054f567 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f568
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -129,7 +129,7 @@ section .text
     PUSH EBX                            ; 0054f623
         ;   Label: LAB_0054f623
     PUSH ESI                            ; 0054f624
-    MOV EDX,dword ptr [0x005ae704]      ; 0054f625 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0054f625 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0054f62b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0054f62c
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -137,7 +137,7 @@ section .text
     PUSH 0x0                            ; 0054f634
     MOV ECX,dword ptr [ESP + 0x68]      ; 0054f636
     PUSH ECX                            ; 0054f63a
-    MOV EAX,[0x005ae704]                ; 0054f63b | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0054f63b | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0054f640 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0054f641
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -148,12 +148,12 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 0054f64e
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0054f653
-    MOV EDX,dword ptr [0x005ae704]      ; 0054f656 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0054f656 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0054f65c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0054f65d
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
     ADD ESP,0x4                         ; 0054f662
-    MOV ECX,dword ptr [0x005ae704]      ; 0054f665 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0054f665 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0054f66b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0054f66c
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
@@ -172,7 +172,7 @@ section .text
         ;   XREF to: 0054f623 (CONDITIONAL_JUMP)  ; LAB_0054f623
     JMP 0x0054f5b0                      ; 0054f6a2
         ;   XREF to: 0054f5b0 (UNCONDITIONAL_JUMP)  ; LAB_0054f5b0
-    MOV ESI,dword ptr [0x005ae704]      ; 0054f6a7 | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 0054f6a7 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0054f6a7
     PUSH ESI                            ; 0054f6ad | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0054f6ae

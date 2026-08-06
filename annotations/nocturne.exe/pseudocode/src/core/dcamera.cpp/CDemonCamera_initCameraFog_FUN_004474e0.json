@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,50 +58,20 @@
       {
         "category": "undeclared_identifier",
         "column": 25,
+        "line": 24,
+        "message": "use of undeclared identifier 'DAT_00b0e1fc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 25,
+        "message": "use of undeclared identifier 'DAT_00b0e1fc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
         "line": 26,
         "message": "use of undeclared identifier 'DAT_00b0e1fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_00b0e1fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 28,
-        "message": "use of undeclared identifier 'DAT_00b0e1fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_0140e790'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_0140e794'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_0140e798'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_0140e79c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_0140e7a0'"
       }
     ],
     "success": false,
@@ -110,18 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 124,
+    "complexity_score": 108,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 8,
+    "pseudocode_lines": 33,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -201,31 +170,31 @@
     },
     {
       "addr": "0140e790",
-      "name": "DAT_0140e790",
+      "name": "g_SFogGrid_0140d784.scroll_vector.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e794",
-      "name": "DAT_0140e794",
+      "name": "g_SFogGrid_0140d784.scroll_vector.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e798",
-      "name": "DAT_0140e798",
+      "name": "g_SFogGrid_0140d784.scroll_vector.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e79c",
-      "name": "DAT_0140e79c",
+      "name": "g_SFogGrid_0140d784.height_threshold",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0140e7a0",
-      "name": "DAT_0140e7a0",
+      "name": "g_SFogGrid_0140d784.density_multiplier",
       "type": "undefined4",
       "value": null
     }
@@ -312,16 +281,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_005ad450",
       "severity": "mild",
       "text": "DAT_005ad450 = (fog_config->color_index).r;",
@@ -329,7 +290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_005ad454",
       "severity": "mild",
       "text": "DAT_005ad454 = (fog_config->color_index).g;",
@@ -337,7 +298,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 15,
       "match": "DAT_005ad458",
       "severity": "mild",
       "text": "DAT_005ad458 = (fog_config->color_index).b;",
@@ -345,7 +306,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_00b0e1fc",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).r * 4) & 0xff,",
@@ -353,7 +314,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 18,
       "match": "DAT_00b0e1fc",
       "severity": "mild",
       "text": "*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).g * 4) & 0xff,",
@@ -361,7 +322,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_00b0e1fc",
       "severity": "mild",
       "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);",
@@ -369,7 +330,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 19,
       "match": "DAT_005ad458",
       "severity": "mild",
       "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);",

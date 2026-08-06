@@ -8,7 +8,7 @@
 ;   int INT_005c1654 = 0x8
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
-;   undefined4 DAT_01bf7720
+;   uchar[32768] g_ColorCubeLookup
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
@@ -47,7 +47,7 @@ section .text
     SBB EAX,EDX                         ; 00558c7a
     SAR EAX,0x3                         ; 00558c7c
     SHL EAX,0x5                         ; 00558c7f
-    MOV AL,byte ptr [EAX + 0x1bf7720]   ; 00558c82 | DAT_01bf7720
+    MOV AL,byte ptr [EAX + 0x1bf7720]   ; 00558c82 | g_ColorCubeLookup
     AND EAX,0xff                        ; 00558c88
     MOV EBX,0xfffffffb                  ; 00558c8d
     MOV [0x01c00c70],EAX                ; 00558c92 | DAT_01c00c70

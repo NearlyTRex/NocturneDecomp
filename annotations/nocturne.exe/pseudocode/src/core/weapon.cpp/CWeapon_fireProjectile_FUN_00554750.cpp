@@ -18,7 +18,8 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_p
   CVector3f local_28;
   CVector3f local_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 != 0) {
     return;
   }
@@ -67,7 +68,8 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(CWeapon *this_p
   local_94.is_damaging = 1;
   local_e8.is_damaging = 1;
   local_94.is_hero_weapon = local_e8.is_hero_weapon;
-  core_fire_cpp_FUN_0048b6f0(g_CFireEffect_PTR_005b80f0,&local_28,&local_34,&local_e8,0);
+  core_fire_cpp_CFireEffect_FUN_0048b6f0(g_CFireEffect_PTR_005b80f0,&local_28,&local_34,&local_e8,0)
+  ;
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   return;
 }

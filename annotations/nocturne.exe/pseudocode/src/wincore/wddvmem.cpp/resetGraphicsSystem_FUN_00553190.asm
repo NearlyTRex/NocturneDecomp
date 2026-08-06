@@ -13,8 +13,8 @@
 ;   TerminatedCString s_the_appropriate_bit_dept_005978e7
 ;   TerminatedCString s_I_am_forcing_the_screen_00597908
 ;   TerminatedCString s_Press_any_key_to_continu_00597939
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01c02594
 ;   int INT_02dc9d60
@@ -102,9 +102,9 @@ section .text
     MOV EAX,[0x005b7624]                ; 0055322c | DAT_005b7624
         ;   Label: LAB_0055322c
     PUSH EAX                            ; 00553231
-    MOV EDX,dword ptr [0x005b7620]      ; 00553232 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 00553232 | g_WindowHeight
     PUSH EDX                            ; 00553238
-    MOV ECX,dword ptr [0x005b761c]      ; 00553239 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 00553239 | g_WindowWidth
     PUSH ECX                            ; 0055323f
     CALL engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553240
         ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005324a0(int width, int height, int bits_per_pixel)
@@ -171,9 +171,9 @@ section .text
     MOV EAX,[0x005b7624]                ; 005532e0 | DAT_005b7624
         ;   Label: LAB_005532e0
     PUSH EAX                            ; 005532e5
-    MOV EDX,dword ptr [0x005b7620]      ; 005532e6 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 005532e6 | g_WindowHeight
     PUSH EDX                            ; 005532ec
-    MOV ECX,dword ptr [0x005b761c]      ; 005532ed | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 005532ed | g_WindowWidth
     PUSH ECX                            ; 005532f3
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 005532f4
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
@@ -186,9 +186,9 @@ section .text
     RET                                 ; 00553300
     PUSH 0x10                           ; 00553301
         ;   Label: LAB_00553301
-    MOV ESI,dword ptr [0x005b7620]      ; 00553303 | DAT_005b7620
+    MOV ESI,dword ptr [0x005b7620]      ; 00553303 | g_WindowHeight
     PUSH ESI                            ; 00553309
-    MOV EDI,dword ptr [0x005b761c]      ; 0055330a | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 0055330a | g_WindowWidth
     PUSH EDI                            ; 00553310
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553311
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)

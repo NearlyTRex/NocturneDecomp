@@ -41,7 +41,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(CCharacter 
       goto LAB_00428579;
     }
     if (DAMAGE_TYPE_SHATTER < EVar4) {
-      core_charactr_cpp_FUN_00427a60(this_ptr);
+      core_charactr_cpp_CCharacter_FUN_00427a60(this_ptr);
       goto LAB_00428579;
     }
 LAB_0042865c:
@@ -60,13 +60,13 @@ LAB_0042865c:
       }
       if (EVar4 != DAMAGE_TYPE_DECAL) goto LAB_00428579;
     }
-    core_charactr_cpp_FUN_004286d0(this_ptr,0x40000000);
+    core_charactr_cpp_CCharacter_FUN_004286d0(this_ptr,0x40000000);
   }
 LAB_00428579:
   if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (&this_ptr->base,(CVector3f *)local_28,&damage_info->impact_direction);
-    core_charactr_cpp_FUN_00427730
+    core_charactr_cpp_CCharacter_FUN_00427730
               (this_ptr,(CVector3f *)local_28,damage_info->hit_part_index,0,1.0,0);
   }
   if (0.0 < damage_info->gore_multiplier) {

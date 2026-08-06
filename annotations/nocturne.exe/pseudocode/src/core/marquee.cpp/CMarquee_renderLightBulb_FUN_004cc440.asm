@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a02b0
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 004cc443
     SUB ESP,0x34                        ; 004cc444
     MOV EAX,dword ptr [ESP + 0x4c]      ; 004cc447
-    MOV ESI,dword ptr [0x005ae704]      ; 004cc44b | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 004cc44b | g_CDemonRenderer_PTR_005ae704
     LEA EBX,[ESP + 0x28]                ; 004cc451
     MOV ESI,dword ptr [ESI]             ; 004cc455 | DAT_01b4d738
     FLD float ptr [EAX]                 ; 004cc457
@@ -61,7 +61,7 @@ section .text
     PUSH ESI                            ; 004cc47e
     CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004cc47f
         ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005ae704]                ; 004cc484 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004cc484 | g_CDemonRenderer_PTR_005ae704
     MOV ESI,dword ptr [EAX]             ; 004cc489 | DAT_01b4d738
     MOV ECX,0xc                         ; 004cc48b
     LEA EDI,[ESI + 0x30]                ; 004cc490

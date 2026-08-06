@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004b46d0 at 004b47ce
+;   core_hero.cpp_CHero_FUN_004b46d0 at 004b47ce
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_005857f6
@@ -17,8 +17,8 @@
 ;   undefined4 s_our_weapon_0058581b+1
 ;   undefined4 s_ur_weapon_0058581b+2
 ;   undefined4 s_r_weapon_0058581b+3
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
 ;   core_inv.cpp_CInventory_initialize_FUN_004bef10
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -100,10 +100,10 @@ section .text
         ;   Label: LAB_004b4e5c
     MOV ESI,0x1b2                       ; 004b4e61
     PUSH 0x58580c                       ; 004b4e66 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b4e77
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b4e77
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b4e7c
     JMP 0x004b4e08                      ; 004b4e7f
         ;   XREF to: 004b4e08 (UNCONDITIONAL_JUMP)  ; LAB_004b4e08

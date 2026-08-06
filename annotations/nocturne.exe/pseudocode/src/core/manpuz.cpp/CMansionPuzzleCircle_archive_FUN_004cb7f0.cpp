@@ -15,13 +15,13 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(CMansionP
   int *int_ptr_01;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
-  if (1 < INT_005bad50) {
+  if (1 < g_INT_005bad50) {
     core_actor_cpp_archiveVector_FUN_0040c450(&this_ptr->gem_pos,"pGemPos");
     core_actor_cpp_archiveOrientation_FUN_0040c4f0
               (&(this_ptr->gem_orient).orient,"pGemOrient");
     core_actor_cpp_archiveVector_FUN_0040c450(&(this_ptr->emitter_pos).f,"pEmitterPos");
   }
-  if (2 < INT_005bad50) {
+  if (2 < g_INT_005bad50) {
     int_ptr = &this_ptr->panels[0].color.b;
     iVar1 = 0;
     int_ptr_01 = &this_ptr->panels[0].color.g;

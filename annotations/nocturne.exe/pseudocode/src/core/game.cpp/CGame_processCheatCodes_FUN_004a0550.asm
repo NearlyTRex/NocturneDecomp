@@ -568,8 +568,8 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 004a0b50 | g_CDemonSet_PTR_005be368
     PUSH ECX                            ; 004a0b56 | g_CDemonSet_01e57284
     MOV dword ptr [EBX + 0x278],0x1     ; 004a0b57
-    CALL core_set.cpp_FUN_005090f0      ; 004a0b61
-        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_005090f0()
+    CALL core_set.cpp_CDemonSet_FUN_005090f0 ; 004a0b61
+        ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_005090f0(CDemonSet * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
         ;   Label: LAB_004a0b61
     ADD ESP,0x10                        ; 004a0b66
     PUSH 0x582d75                       ; 004a0b69 | = "cheat-1.wav"
@@ -1957,8 +1957,8 @@ section .text
     XOR AH,BH                           ; 004a1b0b
     MOV EDI,0x3                         ; 004a1b0d
     MOV byte ptr [0x01c78af0],AH        ; 004a1b12 | DAT_01c78af0
-    CALL crt_unknown.c_FUN_0056497c     ; 004a1b18
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a1b18
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a1b1d
     TEST EAX,EAX                        ; 004a1b20
     JZ 0x004a1b2d                       ; 004a1b22
@@ -1976,8 +1976,8 @@ section .text
         ;   Label: LAB_004a1b37
     MOV EDI,0x583357                    ; 004a1b3c | = "CGun"
     MOV ESI,0x7                         ; 004a1b41
-    CALL crt_unknown.c_FUN_0056497c     ; 004a1b46
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a1b46
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a1b4b
     TEST EAX,EAX                        ; 004a1b4e
     JZ 0x004a1b5b                       ; 004a1b50
@@ -1995,8 +1995,8 @@ section .text
         ;   Label: LAB_004a1b65
     MOV ESI,0x58335c                    ; 004a1b6a | = "CGun"
     MOV EDI,0x8                         ; 004a1b6f
-    CALL crt_unknown.c_FUN_0056497c     ; 004a1b74
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a1b74
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a1b79
     TEST EAX,EAX                        ; 004a1b7c
     JZ 0x004a1b89                       ; 004a1b7e
@@ -2022,8 +2022,8 @@ section .text
     PUSH 0x314                          ; 004a1bad
     MOV ESI,0x583374                    ; 004a1bb2 | = "CCrossbow"
     MOV EDI,0x1                         ; 004a1bb7
-    CALL crt_unknown.c_FUN_0056497c     ; 004a1bbc
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a1bbc
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a1bc1
     TEST EAX,EAX                        ; 004a1bc4
     JZ 0x004a1bd1                       ; 004a1bc6
@@ -2353,7 +2353,7 @@ section .text
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a1f75
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a1f7a
-    MOV EDI,dword ptr [0x005b7620]      ; 004a1f7d | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 004a1f7d | g_WindowHeight
     PUSH EDI                            ; 004a1f83
     PUSH 0x0                            ; 004a1f84
     PUSH 0x0                            ; 004a1f86
@@ -3829,8 +3829,8 @@ section .text
     XOR BL,BL                           ; 004a307a
     PUSH 0x2d0                          ; 004a307c
     MOV byte ptr [0x01c78af0],BL        ; 004a3081 | DAT_01c78af0
-    CALL crt_unknown.c_FUN_0056497c     ; 004a3087
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a3087
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a308c
     TEST EAX,EAX                        ; 004a308f
     JZ 0x004a309c                       ; 004a3091
@@ -4066,8 +4066,8 @@ section .text
     XOR CH,CH                           ; 004a3306
     MOV ESI,0x3                         ; 004a3308
     MOV byte ptr [0x01c78af0],CH        ; 004a330d | DAT_01c78af0
-    CALL crt_unknown.c_FUN_0056497c     ; 004a3313
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a3313
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a3318
     TEST EAX,EAX                        ; 004a331b
     JZ 0x004a3328                       ; 004a331d
@@ -4134,8 +4134,8 @@ section .text
     XOR AL,AL                           ; 004a33b6
     MOV ESI,0x7                         ; 004a33b8
     MOV [0x01c78af0],AL                 ; 004a33bd | DAT_01c78af0
-    CALL crt_unknown.c_FUN_0056497c     ; 004a33c2
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a33c2
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a33c7
     TEST EAX,EAX                        ; 004a33ca
     JZ 0x004a33d7                       ; 004a33cc
@@ -4202,8 +4202,8 @@ section .text
     XOR AH,AH                           ; 004a3465
     MOV EDI,0x8                         ; 004a3467
     MOV byte ptr [0x01c78af0],AH        ; 004a346c | DAT_01c78af0
-    CALL crt_unknown.c_FUN_0056497c     ; 004a3472
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a3472
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a3477
     TEST EAX,EAX                        ; 004a347a
     JZ 0x004a3487                       ; 004a347c

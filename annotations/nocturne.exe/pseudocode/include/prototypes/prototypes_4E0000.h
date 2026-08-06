@@ -5,6 +5,7 @@
 #include "system/stdint.h"
 #include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -65,14 +66,14 @@ void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_004e01f0(CMorph *this_p
 void __cdecl core_morph_cpp_CMorph_addQuadPartToModel_FUN_004e0240(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureLod *texture_lod,int *texture_index_list);
 void __cdecl core_morph_cpp_CMorph_addPartFromDeformableModel_FUN_004e0290(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
-void core_morph_cpp_FUN_004e0300(void);
+void __cdecl core_morph_cpp_CMorph_FUN_004e0300(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_004e0340(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
 void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index);
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(CMorph *this_ptr,float morph_t);
 int __cdecl core_morph_cpp_addInts_FUN_004e0890(int a,int b);
-void core_morph_cpp_FUN_004e08a0(void *param_1);
-CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel *objs,uint flags);
+CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_004e08a0(CBoundingBox3D *this_ptr,uint flags);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel *this_ptr,uint flags);
 void core_motion_cpp_FUN_004e08e0(_FILE *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr,_FILE *file_handle);
@@ -112,12 +113,12 @@ undefined4 sound_mp3_cpp_FUN_004e25c0(int param_1,int param_2);
 void sound_mp3_cpp_FUN_004e2630(int *param_1);
 void __cdecl sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(CFileBitStream *this_ptr);
 void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(CFileBitStream *this_ptr);
-void sound_mp3_cpp_FUN_004e28a0(undefined4 *param_1,_FILE *param_2,ulong param_3,undefined4 param_4);
-void sound_mp3_cpp_FUN_004e2980(void);
+void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
+void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e2980(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *bitstream,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40(CFileBitStream *this_ptr);
-undefined4 sound_mp3_cpp_FUN_004e2c50(void);
+int __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e2c50(CFileBitStream *this_ptr);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004e2c60(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);
 uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004e2ce0(CMP3Decoder *this_ptr);
 uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(CMP3Decoder *this_ptr,uint num_bits);
@@ -239,8 +240,8 @@ int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(CMouse *this_ptr,
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y);
 void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_004ee740(CMouse *this_ptr);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(CAlphaBitmap *objs,uint flags);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8b0(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_004ee920(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_004ee940(CNPC *this_ptr);

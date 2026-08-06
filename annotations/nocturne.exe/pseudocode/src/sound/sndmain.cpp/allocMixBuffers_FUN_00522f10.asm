@@ -19,8 +19,8 @@
 ;   TerminatedCString s_sound_sndmain_cpp_005927f6
 ;   TerminatedCString s_allocMixBuffers_out_of_m_0059280b
 ;   undefined4 DAT_005bea68
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8328
 ;   undefined4 DAT_02dc832c
 ;   undefined4 DAT_02dc8330
@@ -30,7 +30,7 @@
 ;   undefined4 DAT_02dc8380
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
 ;
 ; *****************************************************************************
@@ -100,10 +100,10 @@ section .text
         ;   Label: LAB_00522fcd
     MOV EAX,0x4ac                       ; 00522fd2
     PUSH 0x59280b                       ; 00522fd7 | = "allocMixBuffers - out of memory"
-    MOV dword ptr [0x01cc4800],EBP      ; 00522fdc | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00522fe2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00522fe7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00522fdc | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00522fe2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00522fe7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00522fec
     MOV ECX,dword ptr [0x005bea68]      ; 00522fef | DAT_005bea68
         ;   Label: LAB_00522fef

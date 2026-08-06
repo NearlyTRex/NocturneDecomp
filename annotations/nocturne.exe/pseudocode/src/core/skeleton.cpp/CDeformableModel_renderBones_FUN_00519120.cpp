@@ -11,7 +11,7 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_00519120(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)
 
 {
-  int iVar1;
+  SRenderVertex *pSVar1;
   SBone *text;
   int iVar2;
   CVector3i local_2c;
@@ -28,12 +28,13 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_00519120(CDeform
       local_2c.y = (int)ROUND(local_20.y * _DAT_005a1ea8);
       local_2c.z = (int)ROUND(local_20.z * _DAT_005a1ea8);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                ((SProjectedVertex *)(*DAT_005ae704 + 0xea5d0),&local_2c);
-      iVar1 = *DAT_005ae704;
-      if ((*(byte *)(iVar1 + 0xea5e3) & 0x80) == 0) {
+                (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_2c
+                );
+      pSVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
+      if ((int)(pSVar1[19999].projected_vertex.screen_x & -0x80000000) == 0) {
         engine_2d_c_drawText_FUN_00402600
-                  (text->bone_name,*(int *)(iVar1 + 0xea5e0) >> 0x10,
-                   *(int *)(iVar1 + 0xea5e4) >> 0x10);
+                  (text->bone_name,pSVar1[19999].projected_vertex.screen_x >> 0x10,
+                   pSVar1[19999].projected_vertex.screen_y >> 0x10);
       }
       bone_matrices = bone_matrices + 1;
       iVar2 = iVar2 + 1;

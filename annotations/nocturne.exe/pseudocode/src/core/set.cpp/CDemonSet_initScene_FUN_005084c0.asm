@@ -22,8 +22,8 @@
 ;   undefined4 DAT_005ad54c
 ;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
 ;   undefined4 DAT_005c15b8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01fb99d0
 ;   undefined4 DAT_01fb99d4
 ;   undefined4 DAT_01fb99d8
@@ -41,7 +41,7 @@
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_0044e720
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340
@@ -131,10 +131,10 @@ section .text
         ;   XREF to: 005085b7 (CONDITIONAL_JUMP)  ; LAB_005085b7
     MOV EAX,0x35b                       ; 0050859a
     PUSH 0x5903a5                       ; 0050859f | = "CDemonSet::initScene - Memory leakage..."
-    MOV dword ptr [0x01cc4800],EBP      ; 005085a4 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005085aa | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005085af
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005085a4 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 005085aa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005085af
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005085b4
     ADD ESI,0x4                         ; 005085b7
         ;   Label: LAB_005085b7
@@ -272,10 +272,10 @@ section .text
     MOV EBP,0x5903e6                    ; 00508727 | = "..\\core\\set.cpp"
     MOV EAX,0x372                       ; 0050872c
     PUSH 0x5903f6                       ; 00508731 | = "CDemonSet::initScene - Too many spotl..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00508736 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050873c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00508741
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00508736 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0050873c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00508741
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00508746
     JMP 0x005085f4                      ; 00508749
         ;   XREF to: 005085f4 (UNCONDITIONAL_JUMP)  ; LAB_005085f4

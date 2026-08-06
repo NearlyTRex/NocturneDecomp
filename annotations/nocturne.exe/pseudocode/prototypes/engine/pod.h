@@ -27,9 +27,9 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 // Address: 004f7ac0
 CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_004f7ae0
+// Original: engine_pod.cpp_CPodFile_FUN_004f7ae0
 // Address: 004f7ae0
-undefined4 FUN_004f7ae0(CPodFile *param_1,char *param_2);
+int __cdecl CPodFile(CPodFile *this_ptr,char *filename);
 
 // Original: engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
 // Address: 004f80e0
@@ -75,9 +75,9 @@ void __cdecl CPod::mount(CPod *this_ptr,char *pod_filename);
 // Address: 004f8970
 void __cdecl CPod::remount(CPod *this_ptr);
 
-// Original: engine_pod.cpp_FUN_004f8a10
+// Original: engine_pod.cpp_CPod_dismount_FUN_004f8a10
 // Address: 004f8a10
-void FUN_004f8a10(int *param_1,char *param_2);
+void __cdecl CPod::dismount(CPod *this_ptr,char *filename);
 
 // Original: engine_pod.cpp_CPod_init_FUN_004f8af0
 // Address: 004f8af0

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 17,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -86,6 +80,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052dff0",
+      "from_addr": "0052e25b",
+      "name": "core_sound.cpp_CSound_FUN_0052dff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052e850",
       "from_addr": "0052e855",
       "name": "core_sound.cpp_CSound_configure_FUN_0052e850",
@@ -95,12 +95,6 @@
       "addr": "0052ddf0",
       "from_addr": "0052de9f",
       "name": "core_sound.cpp_CSound_init_FUN_0052ddf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052dff0",
-      "from_addr": "0052e25b",
-      "name": "core_sound.cpp_FUN_0052dff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,7 +118,7 @@
     {
       "addr": "005289f0",
       "from_addr": "00528c12",
-      "name": "sound_sndmain.cpp_FUN_005289f0",
+      "name": "sound_sndmain.cpp_readIni_FUN_005289f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -150,7 +144,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
   "globals": [
@@ -168,13 +162,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -196,7 +190,7 @@
       {
         "call_addr": "00528c12",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005289f0",
+        "caller": "sound_sndmain.cpp_readIni_FUN_005289f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -229,7 +223,7 @@
       {
         "call_addr": "0052e25b",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0052dff0",
+        "caller": "core_sound.cpp_CSound_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

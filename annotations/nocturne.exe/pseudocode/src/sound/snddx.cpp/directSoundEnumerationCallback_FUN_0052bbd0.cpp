@@ -44,8 +44,9 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID d
     auStack_7c[0] = 0x60;
     uVar2 = (**(code **)(*piStack_1c + 0x10))();
     if (uVar2 != 0) {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
-      _sprintf(&stack0xfffffc5c,"DirectSux: Unable to %s.  (%s)");
+      pcVar8 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar2);
+      _sprintf(&stack0xfffffc5c,"DirectSux: Unable to %s.  (%s)",
+                 "Querry DirectSound capabilities",pcVar8);
       sound_sndmain_cpp_FUN_00529980(&stack0xfffffc5c);
     }
     if (piStack_24 != (int *)0x0) {

@@ -173,4 +173,4 @@ void __cdecl CDemonRaytrace::restoreShadowBitFromBuffer(CDemonRaytrace *this_ptr
 
 // Original: core_dtrace.cpp_CVector3f_arrdtor_FUN_0046c230
 // Address: 0046c230
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

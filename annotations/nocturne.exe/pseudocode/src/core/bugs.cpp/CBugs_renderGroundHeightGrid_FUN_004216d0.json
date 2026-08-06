@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -72,30 +72,6 @@
         "column": 32,
         "line": 41,
         "message": "use of undeclared identifier '_DAT_0059ae90'"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 45,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 54,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 63,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 67,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0'"
       }
     ],
     "success": false,
@@ -104,21 +80,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 208,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 12,
+    "pseudocode_lines": 64,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "unaffected_reg",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 187
+    "total_lines": 188
   },
   "cross_references": [],
   "function": {
@@ -172,9 +147,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     }
   ],
   "param_estimates": {
@@ -262,7 +237,7 @@
         {
           "check_id": "uninitvar",
           "column": 17,
-          "line": 71,
+          "line": 72,
           "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
@@ -289,48 +264,8 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(DAT_005ae704,-1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(DAT_005ae704,iStack_30,iVar1)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,iStack_24,vertex_index2);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_EDI + 0xc;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
+      "line": 65,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = unaff_EDI + 0xc;",
@@ -341,15 +276,23 @@
       "line": 65,
       "match": "unaff_EDI",
       "severity": "moderate",
+      "text": "unaff_EDI = unaff_EDI + 0xc;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EDI",
+      "severity": "moderate",
       "text": "} while (unaff_EDI != 0x90);",
       "type": "unaffected_reg"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
       "line": 38,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x +",
+      "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     },
     {
@@ -370,7 +313,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 71,
+      "line": 72,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "unaff_EDI = unaff_EDI + 0xc;",

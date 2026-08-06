@@ -26,11 +26,11 @@
 ;   TerminatedCString s_engine_model_c_0058a5a2
 ;   TerminatedCString s_Invalid_model_s_0058a5b4
 ;   TerminatedCString s_engine_model_c_0058a5c6
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_ctype.c_toupper_FUN_00565e20
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -97,10 +97,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004dcd6b
     MOV ECX,0xf0                        ; 004dcd6f
     PUSH EAX                            ; 004dcd74
-    MOV dword ptr [0x01cc4800],EDX      ; 004dcd75 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dcd7b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dcd81
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dcd75 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004dcd7b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dcd81
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dcd86
     PUSH 0x58a529                       ; 004dcd89 | = "rb"
         ;   Label: LAB_004dcd89
@@ -121,13 +121,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0xf5                        ; 004dcdb2
     ADD ESP,0xc                         ; 004dcdb7
-    MOV [0x01cc4804],EAX                ; 004dcdba | g_INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004dcdba | g_CurrentLineNumber
     LEA EAX,[ESP + 0x4]                 ; 004dcdbf
     MOV ESI,0x58a54c                    ; 004dcdc3 | = "..\\engine\\model.c"
     PUSH EAX                            ; 004dcdc8
-    MOV dword ptr [0x01cc4800],ESI      ; 004dcdc9 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004dcdcf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004dcdc9 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dcdcf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dcdd4
     PUSH EDI                            ; 004dcdd7
         ;   Label: LAB_004dcdd7
@@ -149,10 +149,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004dcdfe
     MOV ECX,0x100                       ; 004dce02
     PUSH EAX                            ; 004dce07
-    MOV dword ptr [0x01cc4800],EDX      ; 004dce08 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dce0e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dce14
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dce08 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004dce0e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dce14
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dce19
     PUSH EBP                            ; 004dce1c
         ;   Label: LAB_004dce1c
@@ -173,13 +173,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x107                       ; 004dce3d
     ADD ESP,0xc                         ; 004dce42
-    MOV [0x01cc4804],EAX                ; 004dce45 | g_INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004dce45 | g_CurrentLineNumber
     LEA EAX,[ESP + 0x4]                 ; 004dce4a
     MOV EDI,0x58a5a2                    ; 004dce4e | = "..\\engine\\model.c"
     PUSH EAX                            ; 004dce53
-    MOV dword ptr [0x01cc4800],EDI      ; 004dce54 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004dce5a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004dce54 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dce5a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dce5f
     PUSH EBP                            ; 004dce62
         ;   Label: LAB_004dce62
@@ -204,10 +204,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004dce8f
     MOV ECX,0x10d                       ; 004dce93
     PUSH EAX                            ; 004dce98
-    MOV dword ptr [0x01cc4800],EDX      ; 004dce99 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dce9f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dcea5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dce99 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004dce9f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dcea5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dceaa
     MOV EAX,ESI                         ; 004dcead
         ;   Label: LAB_004dcead

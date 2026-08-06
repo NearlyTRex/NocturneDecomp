@@ -16,9 +16,9 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this
   
   bVar4 = 0;
   if ((index < 0) || (this_ptr->item_count <= index)) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0xa9b;
-    core_main_c_FUN_004c8440("CStrList::set - invalid index");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2715;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::set - invalid index");
   }
   if (new_string == (char *)0x0) {
     new_string = &DAT_0057ed1b;
@@ -34,9 +34,9 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this
   pcVar2 = (char *)realloc(this_ptr->data_array[index],~uVar3);
   this_ptr->data_array[index] = pcVar2;
   if (this_ptr->data_array[index] == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0xaa4;
-    core_main_c_FUN_004c8440("CStrList::set - out of memory!");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2724;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::set - out of memory!");
   }
   pcVar2 = this_ptr->data_array[index];
   do {

@@ -13,7 +13,7 @@
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044e470 at 0044e5d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c
@@ -58,7 +58,7 @@ section .text
     MOV ESI,dword ptr [0x01c03a00]      ; 00441032 | DAT_01c03a00
     MOV dword ptr [EBX + 0x190],ESI     ; 00441038
     MOV ESI,dword ptr [0x01c03a04]      ; 0044103e | DAT_01c03a04
-    MOV EDX,dword ptr [0x005ae704]      ; 00441044 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00441044 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [EBX + 0x194],ESI     ; 0044104a
     MOV ESI,dword ptr [0x01c03a08]      ; 00441050 | DAT_01c03a08
     PUSH EDX                            ; 00441056 | DAT_01b4d738

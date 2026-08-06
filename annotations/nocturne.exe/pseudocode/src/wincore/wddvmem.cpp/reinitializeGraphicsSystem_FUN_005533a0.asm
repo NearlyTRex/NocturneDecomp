@@ -8,8 +8,8 @@
 ;   engine_2d.c_reinitializeGraphicsSystem_FUN_00403770 at 00403770
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf550
@@ -106,9 +106,9 @@ section .text
     MOV EDI,dword ptr [0x005b7624]      ; 0055344d | DAT_005b7624
         ;   Label: LAB_0055344d
     PUSH EDI                            ; 00553453
-    MOV EBP,dword ptr [0x005b7620]      ; 00553454 | DAT_005b7620
+    MOV EBP,dword ptr [0x005b7620]      ; 00553454 | g_WindowHeight
     PUSH EBP                            ; 0055345a
-    MOV EAX,[0x005b761c]                ; 0055345b | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0055345b | g_WindowWidth
     PUSH EAX                            ; 00553460
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553461
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)

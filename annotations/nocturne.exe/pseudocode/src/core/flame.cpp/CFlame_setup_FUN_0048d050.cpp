@@ -20,7 +20,8 @@ void __cdecl core_flame_cpp_CFlame_setup_FUN_0048d050(CFlame *this_ptr)
   do {
     texture = (SMRGLTextureBasic *)(&DAT_005b8e00 + iVar3 * 0xc0);
     do {
-      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
+      engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+                (g_CDemonRenderer_PTR_005ae704,texture);
       texture = texture + 1;
     } while (texture != pSVar2);
     iVar3 = iVar3 + 1;

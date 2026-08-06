@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -69,13 +69,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
-        "line": 20,
-        "message": "use of undeclared identifier 'DAT_01c00648'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
+        "column": 49,
         "line": 20,
         "message": "use of undeclared identifier 'DAT_01bff720'"
       }
@@ -86,13 +80,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 54,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -128,8 +122,8 @@
     },
     {
       "addr": "01c00648",
-      "name": "DAT_01c00648",
-      "type": "undefined4",
+      "name": "g_SourcePaletteData",
+      "type": "uchar[768]",
       "value": null
     },
     {
@@ -200,17 +194,9 @@
     {
       "description": "Undefined global data reference",
       "line": 13,
-      "match": "DAT_01c00648",
-      "severity": "mild",
-      "text": "iVar1 = (*_DAT_02dc9ddc)(&DAT_01c00648,&DAT_01bff720);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
       "match": "DAT_01bff720",
       "severity": "mild",
-      "text": "iVar1 = (*_DAT_02dc9ddc)(&DAT_01c00648,&DAT_01bff720);",
+      "text": "iVar1 = (*_DAT_02dc9ddc)(g_SourcePaletteData,&DAT_01bff720);",
       "type": "undefined_data"
     }
   ]

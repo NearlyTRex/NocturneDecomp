@@ -11,15 +11,15 @@
 ;
 ; XREF[11]:
 ;   core_scat.cpp_CScat_renderOpaque_FUN_004fcb20 at 004fcb7d
+;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053c838
+;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053f695
+;   core_stranger.cpp_CStranger_FUN_0053fc60 at 0053fe96
+;   core_stranger.cpp_CStranger_FUN_0053ffe0 at 005400db
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053a9bc
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539f6d
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d2dd
 ;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_0053bf90 at 0053bfaf
 ;   core_stranger.cpp_CStranger_tryDescendLadder_FUN_0053c3b0 at 0053c3cf
-;   core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630 at 0053b666
-;   core_stranger.cpp_FUN_0053c800 at 0053c838
-;   core_stranger.cpp_FUN_0053f310 at 0053f695
-;   core_stranger.cpp_FUN_0053fc60 at 0053fe96
 ;   ... and 1 more
 ;
 ; *****************************************************************************

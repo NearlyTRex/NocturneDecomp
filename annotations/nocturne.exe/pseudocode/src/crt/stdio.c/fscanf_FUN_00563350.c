@@ -2,11 +2,11 @@
 // Address: 00563350
 // Address Range: [[00563350, 00563374]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fscanf_FUN_00563350(_FILE *file,char *format)
+// Signature: int __cdecl crt_stdio_c_fscanf_FUN_00563350(_FILE *file,char *format,...)
 
 #include "nocturne.h"
 
-int __cdecl _fscanf(_FILE *file,char *format)
+int __cdecl _fscanf(_FILE *file,char *format,...)
 
 {
   int iVar1;

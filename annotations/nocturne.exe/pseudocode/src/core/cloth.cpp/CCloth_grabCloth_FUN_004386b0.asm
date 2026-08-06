@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   vertex_index
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005402f0 at 0054043a
+;   core_stranger.cpp_CStranger_FUN_005402f0 at 0054043a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af91
 ;   TerminatedCString s_CCloth_grabCloth_Can_t_f_0057afa3
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c__strcmp_FUN_005649c0
 ;
 ; *****************************************************************************
@@ -78,10 +78,10 @@ section .text
     MOV EAX,0x57af91                    ; 00438721 | = "..\\core\\cloth.cpp"
     MOV EDX,0xaa7                       ; 00438726
     PUSH 0x57afa3                       ; 0043872b | = "CCloth::grabCloth - Can't find bone %s"
-    MOV [0x01cc4800],EAX                ; 00438730 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00438735 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0043873b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00438730 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00438735 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0043873b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00438740
     JMP 0x004386e4                      ; 00438743
         ;   XREF to: 004386e4 (UNCONDITIONAL_JUMP)  ; LAB_004386e4

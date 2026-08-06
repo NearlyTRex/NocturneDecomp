@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 13,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d8cd0'"
       }
     ],
     "success": false,
@@ -79,6 +73,12 @@
     "total_lines": 36
   },
   "cross_references": [
+    {
+      "addr": "004d8fc0",
+      "from_addr": "004d8fdb",
+      "name": "core_mission.cpp_CDemonMission_FUN_004d8fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004d9a80",
       "from_addr": "004d9b68",
@@ -101,12 +101,6 @@
       "addr": "004d9440",
       "from_addr": "004d9506",
       "name": "core_mission.cpp_CDemonMission_run_FUN_004d9440",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8fc0",
-      "from_addr": "004d8fdb",
-      "name": "core_mission.cpp_FUN_004d8fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -131,7 +125,7 @@
     {
       "addr": "004d8cd0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d8cd0"
+      "name": "core_mission.cpp_CDemonMission_FUN_004d8cd0"
     }
   ],
   "globals": [],
@@ -141,7 +135,7 @@
       {
         "call_addr": "004d8fdb",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004d8fc0",
+        "caller": "core_mission.cpp_CDemonMission_FUN_004d8fc0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

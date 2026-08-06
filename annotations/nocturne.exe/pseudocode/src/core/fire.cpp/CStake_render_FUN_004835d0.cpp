@@ -15,10 +15,10 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
   CBoundingBox3D local_24;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&(this_ptr->physics_box).position);
+            (g_CDemonRenderer_PTR_005ae704,&(this_ptr->physics_box).position);
   orientation = &(this_ptr->physics_box).orientation;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,orientation,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                      (&g_CKeyFramedModelInstance_01c08d48);
   local_24.min.x = (pCVar1->bounds).min.x;

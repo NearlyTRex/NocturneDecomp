@@ -20,9 +20,9 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(CHero *this_pt
   pCVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CGun");
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar2,class_name_hash);
   if (pCVar2 == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
-    g_INT_01cc4804 = 0x1b2;
-    core_main_c_FUN_004c8440("Out of memory!");
+    g_CurrentFilename = "..\\core\\hero.cpp";
+    g_CurrentLineNumber = 434;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory!");
   }
   pcVar3 = "Your_weapon";
   pCVar4 = pCVar2;

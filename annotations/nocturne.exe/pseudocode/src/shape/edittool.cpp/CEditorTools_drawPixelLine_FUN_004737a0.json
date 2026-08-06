@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 38,
         "line": 20,
         "message": "use of undeclared identifier '_DAT_01c00c58'"
       },
@@ -81,7 +81,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
+        "column": 37,
         "line": 30,
         "message": "use of undeclared identifier '_DAT_01c00c58'"
       },
@@ -105,7 +105,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
+        "column": 37,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_01c00c58'"
       },
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 170,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 50,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 256
@@ -165,15 +164,15 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c00c58",
@@ -300,86 +299,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (((((-1 < start_x) && (-1 < start_y)) && (start_x < DAT_005b761c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "((start_y < DAT_005b7620 && (_DAT_01c00c58 <= start_x)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((((-1 < x) && (-1 < y_00)) && (x < DAT_005b761c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "(((y_00 < DAT_005b7620 && (_DAT_01c00c58 <= x)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (((((-1 < x_00) && (-1 < y_00)) && (x_00 < DAT_005b761c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "((y_00 < DAT_005b7620 && (_DAT_01c00c58 <= x_00)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((((((-1 < x) && (-1 < y)) && (x < DAT_005b761c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "((y < DAT_005b7620 && (_DAT_01c00c58 <= x)))) && (x < _DAT_01c00c60)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((((x_00 < 0) || (y < 0)) || (DAT_005b761c <= x_00)) ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "(((DAT_005b7620 <= y || (x_00 < _DAT_01c00c58)) ||",
-      "type": "undefined_data"
     }
   ]
 }

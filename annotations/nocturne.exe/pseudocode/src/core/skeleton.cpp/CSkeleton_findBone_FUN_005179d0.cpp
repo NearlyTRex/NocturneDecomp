@@ -28,8 +28,8 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton *this_pt
   if (assert_if_not_found == 0) {
     return -1;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  g_INT_01cc4804 = 0x16d;
-  core_main_c_FUN_004c8440("Can't find bone %s in skeleton %s!",bone_name,this_ptr->loaded_filename);
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 365;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find bone %s in skeleton %s!");
   return -1;
 }

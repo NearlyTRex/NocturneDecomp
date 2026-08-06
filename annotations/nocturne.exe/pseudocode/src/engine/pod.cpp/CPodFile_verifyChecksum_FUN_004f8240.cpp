@@ -73,9 +73,9 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
     local_1c = 8;
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
-    g_INT_01cc4804 = 0x1cf;
-    core_main_c_FUN_004c8440("Invalid pod version!");
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 463;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid pod version!");
   }
   filename = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0

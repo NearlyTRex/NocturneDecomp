@@ -27,27 +27,29 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
   int local_1c;
   float local_18;
   
-  vertex_ptr = DAT_005ae704->vertex_buffer_ptr;
+  vertex_ptr = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
   local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
   local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
   local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25(&vertex_ptr->projected_vertex,&local_64);
-  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(DAT_005ae704,vertex_ptr);
+  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80
+                    (g_CDemonRenderer_PTR_005ae704,vertex_ptr);
   if (iVar2 != 0) {
     dVar3 = round((double)this_ptr->age);
     local_1c = (int)ROUND(dVar3);
     if ((local_1c < 0) || (0x27 < local_1c)) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\fire.cpp";
-      g_INT_01cc4804 = 0x11d;
-      core_main_c_FUN_004c8440("CSmokeParticle::render - Frame out of range");
+      g_CurrentFilename = "..\\core\\fire.cpp";
+      g_CurrentLineNumber = 285;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CSmokeParticle::render - Frame out of range");
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005b80f4 + local_1c * 0x18));
+              (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b80f4 + local_1c * 0x18))
+    ;
     world_position = &this_ptr->position;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-              (DAT_005ae704,world_position);
+              (g_CDemonRenderer_PTR_005ae704,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
     local_18 = this_ptr->drag_factor;
     local_54 = 0;
     local_64.z = (int)-local_18;
@@ -57,12 +59,13 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     local_58 = (float)local_64.z;
     local_20 = (float)local_64.z;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_2c);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_2c);
     local_64.z = (int)local_18;
     local_58 = local_20;
     local_54 = 0;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffff8c);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
+               (CVector3i *)&stack0xffffff8c);
     local_54 = 0;
     local_64.z = (int)local_18;
     local_58 = local_18;
@@ -70,7 +73,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     local_38.y = (int)ROUND(local_18 * 256.0f);
     local_38.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_38);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_38);
     local_64.z = (int)local_20;
     local_58 = local_18;
     local_54 = 0;
@@ -78,7 +81,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
     local_50.y = (int)ROUND(local_18 * 256.0f);
     local_50.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
     DAT_005c502c = 0x80000;
     _DAT_005c5030 = 0xf80000;
     _DAT_005c505c = 0xf80000;
@@ -96,9 +99,10 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00482950(CSmokeParticle *th
               (_DAT_007f7370,world_position,(SProjectedVertex *)0x0);
     lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-              (DAT_005ae704,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+              (g_CDemonRenderer_PTR_005ae704,
+               (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-              (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
+              (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   }
   return;

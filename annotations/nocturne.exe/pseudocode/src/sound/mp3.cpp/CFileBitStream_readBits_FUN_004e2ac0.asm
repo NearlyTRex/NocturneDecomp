@@ -27,11 +27,11 @@
 ;   TerminatedCString s_Cannot_read_or_write_mor_0058b5a2
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fread_FUN_005636d0
 ;
 ; *****************************************************************************
@@ -104,10 +104,10 @@ section .text
     MOV ECX,0x58b591                    ; 004e2b40 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x266                       ; 004e2b45
     PUSH 0x58b5a2                       ; 004e2b4a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e2b5b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e2b5b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 004e2b60
     JMP 0x004e2adb                      ; 004e2b63
         ;   XREF to: 004e2adb (UNCONDITIONAL_JUMP)  ; LAB_004e2adb

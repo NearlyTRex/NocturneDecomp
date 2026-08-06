@@ -99,7 +99,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
   uint local_18;
   float local_14;
   
-  iVar6 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[1]);
     return;
@@ -133,7 +133,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
                 (g_CGore_PTR_005b96c4,&local_98,(CVector3f *)0x0,local_34,iVar6);
     }
     else if (uVar7 == 0x29a) {
-      core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
+                (g_CDemonMission_PTR_005baf90,this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,uVar7);
@@ -152,7 +153,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
                      (&pCVar1->motion_controller);
   uVar7 = pSVar9->state_index;
   local_18 = uVar7;
-  iVar6 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     EVar11 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr)
     ;
@@ -265,9 +266,9 @@ LAB_005567cd:
         if (this_ptr->type == WEREWOLF_TYPE_FOREST) {
           if ((this_ptr->alpha1 == (CDemonActor *)0x0) || (this_ptr->alpha2 == (CDemonActor *)0x0))
           {
-            g_CHAR_PTR_01cc4800 = "..\\core\\werewolf.cpp";
-            g_INT_01cc4804 = 0x1ad;
-            core_main_c_FUN_004c8440();
+            g_CurrentFilename = "..\\core\\werewolf.cpp";
+            g_CurrentLineNumber = 429;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Alpha werewolf requires 2 waypoints");
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (g_CConsole_PTR_005ad350,"Phase: %d, Timer: %f\n");
@@ -720,7 +721,7 @@ LAB_00555e90:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;

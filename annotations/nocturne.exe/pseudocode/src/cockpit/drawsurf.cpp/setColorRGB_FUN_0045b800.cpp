@@ -21,11 +21,11 @@ void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_0045b800(int red,int green,int
   uVar3 = green & 0xff;
   uVar2 = blue & 0xff;
   iVar4 = ((int)uVar2 >> 3) + ((int)uVar3 >> 3) * 0x20 + ((int)uVar1 >> 3) * 0x400;
-  _DAT_01b4d714 = (uint)(byte)(&DAT_01bf7720)[iVar4];
+  _DAT_01b4d714 = (uint)g_ColorCubeLookup[iVar4];
   _DAT_01b4d71c = 0;
   if (DAT_005b7624 < 0x10) {
     if (DAT_005b7624 == 8) {
-      _DAT_01b4d710 = (uint)(byte)(&DAT_01bf7720)[iVar4];
+      _DAT_01b4d710 = (uint)g_ColorCubeLookup[iVar4];
       return;
     }
   }
@@ -44,8 +44,8 @@ void __cdecl cockpit_drawsurf_cpp_setColorRGB_FUN_0045b800(int red,int green,int
       return;
     }
   }
-  g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-  g_INT_01cc4804 = 0x11d;
-  core_main_c_FUN_004c8440("Invalid bitsPerPixel in CDrawSurface::setColor");
+  g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+  g_CurrentLineNumber = 285;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

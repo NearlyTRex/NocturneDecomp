@@ -15,8 +15,8 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057ee2a
 ;   TerminatedCString s_Too_many_picklist_column_0057ee40
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcde20
@@ -24,11 +24,11 @@
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
@@ -122,10 +122,10 @@ section .text
     MOV EAX,0x57ee2a                    ; 0047553c | = "..\\shape\\edittool.cpp"
     MOV EDX,0xd01                       ; 00475541
     PUSH 0x57ee40                       ; 00475546 | = "Too many picklist columns!"
-    MOV [0x01cc4800],EAX                ; 0047554b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00475556
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0047554b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00475556
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0047555b
     JMP 0x004754f0                      ; 0047555e
         ;   XREF to: 004754f0 (UNCONDITIONAL_JUMP)  ; LAB_004754f0
@@ -166,7 +166,7 @@ section .text
     CMP EDI,EAX                         ; 004755c0
     JGE 0x004755de                      ; 004755c2
         ;   XREF to: 004755de (CONDITIONAL_JUMP)  ; LAB_004755de
-    MOV EAX,[0x005b761c]                ; 004755c4 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004755c4 | g_WindowWidth
     MOV EDX,EAX                         ; 004755c9
     SAR EDX,0x1f                        ; 004755cb
     IDIV ECX                            ; 004755ce
@@ -209,7 +209,7 @@ section .text
     ADD EBP,EAX                         ; 0047564c
     MOV dword ptr [EDX + 0x128],EBP     ; 0047564e
     MOV EDX,dword ptr [0x01bcd9bc]      ; 00475654 | DAT_01bcd9bc
-    MOV EAX,[0x005b7620]                ; 0047565a | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0047565a | g_WindowHeight
     SHL EDX,0x2                         ; 0047565f
     SUB EAX,EDX                         ; 00475662
     MOV ECX,dword ptr [ESP + 0x148]     ; 00475664
@@ -231,7 +231,7 @@ section .text
     JGE 0x004756b2                      ; 004756aa
         ;   XREF to: 004756b2 (CONDITIONAL_JUMP)  ; LAB_004756b2
     MOV dword ptr [EDX + 0x124],ECX     ; 004756ac
-    MOV EDX,dword ptr [0x005b761c]      ; 004756b2 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004756b2 | g_WindowWidth
         ;   Label: LAB_004756b2
     LEA EAX,[EDX*0x8 + 0x0]             ; 004756b8
     SUB EAX,EDX                         ; 004756bf

@@ -18,14 +18,14 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(CNetGame *this_
   byte *local_14;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x862;
-    core_main_c_FUN_004c8440("CNetGame::removePlayer - invalid player index");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2146;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::removePlayer - invalid player index");
   }
   if (player_index == this_ptr->local_player_index) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x869;
-    core_main_c_FUN_004c8440("CNetGame::removePlayer - tried to remove myself!");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2153;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::removePlayer - tried to remove myself!");
   }
   if (player_index == this_ptr->server_player_index) {
     this_ptr->server_player_index = -1;

@@ -97,7 +97,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = pCVar2->y;
     (this_ptr->ref_r_upperarm_bone_pos).z = pCVar2->z;
   }
-  core_stranger_cpp_FUN_005384d0(this_ptr);
+  core_stranger_cpp_CStranger_FUN_005384d0(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580

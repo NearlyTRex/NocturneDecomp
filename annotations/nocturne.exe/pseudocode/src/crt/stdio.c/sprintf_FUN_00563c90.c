@@ -2,11 +2,11 @@
 // Address: 00563c90
 // Address Range: [[00563c90, 00563cb4]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format)
+// Signature: int __cdecl crt_stdio_c_sprintf_FUN_00563c90(char *buffer,char *format,...)
 
 #include "nocturne.h"
 
-int __cdecl _sprintf(char *buffer,char *format)
+int __cdecl _sprintf(char *buffer,char *format,...)
 
 {
   int iVar1;

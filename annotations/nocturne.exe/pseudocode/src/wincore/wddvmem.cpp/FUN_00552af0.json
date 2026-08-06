@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,16 +56,28 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "other",
+        "column": 20,
+        "line": 15,
+        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'void *')"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 9,
         "line": 16,
         "message": "use of undeclared identifier '_DAT_02ddf560'"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "incompatible_types",
         "column": 5,
         "line": 21,
-        "message": "use of undeclared identifier 'FUN_005638d0'"
+        "message": "no matching function for call to 'free'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 22,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
       },
       {
         "category": "undeclared_identifier",
@@ -75,7 +87,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 16,
+        "column": 8,
         "line": 27,
         "message": "use of undeclared identifier '_DAT_02ddf560'"
       }
@@ -116,7 +128,7 @@
     {
       "addr": "005638d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
+      "name": "crt_memory.c_free_FUN_005638d0"
     }
   ],
   "globals": [
@@ -193,7 +205,7 @@
       "line": 8,
       "match": "DAT_005c5010",
       "severity": "mild",
-      "text": "if (DAT_005c5010 == 0) {",
+      "text": "if (DAT_005c5010 == (void *)0x0) {",
       "type": "undefined_data"
     },
     {
@@ -201,7 +213,7 @@
       "line": 14,
       "match": "DAT_005c5010",
       "severity": "mild",
-      "text": "FUN_005638d0(DAT_005c5010);",
+      "text": "free(DAT_005c5010);",
       "type": "undefined_data"
     },
     {
@@ -209,7 +221,7 @@
       "line": 15,
       "match": "DAT_005c5010",
       "severity": "mild",
-      "text": "DAT_005c5010 = 0;",
+      "text": "DAT_005c5010 = (void *)0x0;",
       "type": "undefined_data"
     },
     {

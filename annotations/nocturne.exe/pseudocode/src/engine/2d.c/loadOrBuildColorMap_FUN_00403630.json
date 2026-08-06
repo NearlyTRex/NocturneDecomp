@@ -1,0 +1,326 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 82,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_strchr",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 181
+  },
+  "cross_references": [
+    {
+      "addr": "00401010",
+      "from_addr": "00401076",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00403630",
+    "address_range": [
+      [
+        "00403630",
+        "00403754"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_loadOrBuildColorMap_FUN_00403630",
+    "signature": "void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00403630(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00563a50",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_00563a50"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00403570",
+      "is_variadic": false,
+      "name": "engine_2d.c_buildColorLookupTable_FUN_00403570"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00577244",
+      "name": "s_engine_2d_c_00577244",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577253",
+      "name": "s_hose_00577253",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577259",
+      "name": "s_map_00577259",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057725e",
+      "name": "s_rb_0057725e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577261",
+      "name": "s_fog_00577261",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577265",
+      "name": "s_wb_00577265",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577268",
+      "name": "s_fog_00577268",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057726c",
+      "name": "s_engine_2d_c_0057726c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057727b",
+      "name": "s_Unable_to_write_quick_ma_0057727b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01bf7720",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00401076",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.148514851485149,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 10,
+      "CBRANCH": 9,
+      "COPY": 69,
+      "INT_ADD": 29,
+      "INT_AND": 55,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 52,
+      "INT_LESS": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 26,
+      "INT_SUB": 42,
+      "LOAD": 14,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 419
+  },
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 96,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5b",
+        "offset": -91,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040363a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00403658",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 12,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 23,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

@@ -36,15 +36,16 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   engine_special_cpp_clearScreen_FUN_0052ee70();
   engine_special_cpp_clearZBufferNative_FUN_0052eed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,112.0);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
+            (g_CDemonRenderer_PTR_005ae704,112.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-            (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
   local_5c.x = (this_ptr->rotation_phase + (float)-0.5) * (float)48;
   local_5c.y = (float)48 * (this_ptr->rotation_phase + (float)-0.5);
   local_5c.z = 72.0;
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_5c)
-  ;
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
+            (g_CDemonRenderer_PTR_005ae704,&local_5c);
   pCVar1 = g_CDemonSet_PTR_005be368;
   g_CDemonSet_PTR_005be368->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;
@@ -77,9 +78,9 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
         ;
         local_50.y = local_50.y + 1.570796f;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,&local_44);
+                  (g_CDemonRenderer_PTR_005ae704,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                  (DAT_005ae704,&local_50,(CVector3f *)0x0);
+                  (g_CDemonRenderer_PTR_005ae704,&local_50,(CVector3f *)0x0);
         render_flags = 0x4dee29;
         dVar7 = round
                           ((double)*(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4

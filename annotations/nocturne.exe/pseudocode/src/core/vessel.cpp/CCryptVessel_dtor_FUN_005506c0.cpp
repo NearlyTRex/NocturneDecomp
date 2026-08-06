@@ -10,21 +10,21 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005506c0(CCryptVess
 
 {
   CDemonActor *pCVar1;
-  CCryptVessel *pCVar2;
-  void *ptr;
+  CCryptVessel *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CCryptVesselTypeInfo_005a3e60);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CCryptVesselTypeInfo_005a3e60);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&(this_ptr->flame).base,1);
-  pCVar2 = (CCryptVessel *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)((int)&pCVar1[-3].orient + 4),1);
+  ptr = (CCryptVessel *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)((int)&pCVar1[-3].orient + 4),1)
+  ;
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_00564494(pCVar2);
-  return pCVar2;
+  operator_delete(ptr);
+  return ptr;
 }

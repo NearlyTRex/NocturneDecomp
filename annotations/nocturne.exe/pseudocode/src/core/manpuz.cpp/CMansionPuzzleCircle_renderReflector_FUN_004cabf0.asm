@@ -14,7 +14,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004c9be0 at 004c9ca4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9454
@@ -63,7 +63,7 @@ section .text
     PUSH EAX                            ; 004cac32
     LEA EAX,[EBX + 0x28]                ; 004cac33
     PUSH EAX                            ; 004cac36
-    MOV ECX,dword ptr [0x005ae704]      ; 004cac37 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004cac37 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004cac3d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004cac3e
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -85,7 +85,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 004cac6e
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004cac73
-    MOV EBX,dword ptr [0x005ae704]      ; 004cac76 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 004cac76 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004cac7c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004cac7d
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()

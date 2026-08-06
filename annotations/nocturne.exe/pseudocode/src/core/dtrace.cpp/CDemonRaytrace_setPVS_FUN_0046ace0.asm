@@ -27,11 +27,11 @@
 ;   CVector3f[20000] g_CVector3f_ARRAY_01b8efcc
 ;   undefined4 g_CVector3f_ARRAY_01b8efcc[0].y
 ;   undefined4 g_CVector3f_ARRAY_01b8efcc[0].z
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -144,10 +144,10 @@ section .text
         ;   Label: LAB_0046ae09
     MOV ESI,0x8c9                       ; 0046ae0e
     PUSH 0x57e279                       ; 0046ae13 | = "CDemonRaytrace::setPVS - Too many dra..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046ae24
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046ae24
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046ae29
     JMP 0x0046ad1c                      ; 0046ae2c
         ;   XREF to: 0046ad1c (UNCONDITIONAL_JUMP)  ; LAB_0046ad1c

@@ -29,8 +29,10 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(CMobster *this_ptr
       iVar4 = *(int *)(iVar5 + 0x1ccdb94) + 1;
       *(int *)(iVar5 + 0x1ccdb94) = iVar4;
       if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar4 != 6)) {
-        _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav");
-        local_14 = (float)core_sound_cpp_FUN_0052ebc0(g_CSound_PTR_005bed68,local_80);
+        _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",
+                   (uint)(this_ptr->sound_variant).bytes[0],local_1c,
+                   *(uint *)(iVar5 + 0x1ccdb94));
+        local_14 = core_sound_cpp_CSound_FUN_0052ebc0(g_CSound_PTR_005bed68,local_80);
         this_ptr->taunt_timer = local_14;
         if (0.0 < this_ptr->taunt_timer) break;
         *(uint *)(iVar5 + 0x1ccdb94) = 0;

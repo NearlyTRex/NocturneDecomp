@@ -51,9 +51,9 @@ CScript * __cdecl CScript::ctor(CScript *this_ptr);
 // Address: 004fe4d0
 CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
-// Original: core_script.cpp_FUN_004fe500
+// Original: core_script.cpp_CScript_FUN_004fe500
 // Address: 004fe500
-void FUN_004fe500(CScript *param_1);
+void __cdecl CScript(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_freeParsedLines_FUN_004fe550
 // Address: 004fe550
@@ -67,29 +67,29 @@ void __cdecl CScript::process(CScript *this_ptr);
 // Address: 004fe710
 int __cdecl CScript::getLetterboxHeight(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_004fe770
+// Original: core_script.cpp_CScript_FUN_004fe770
 // Address: 004fe770
-void __cdecl FUN_004fe770(CScript *this_ptr);
+void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_004fe9d0
+// Original: core_script.cpp_CScript_FUN_004fe9d0
 // Address: 004fe9d0
-void __cdecl FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl CScript(CScript *this_ptr,int left,int top,int right,int bottom);
 
-// Original: core_script.cpp_FUN_004febd0
+// Original: core_script.cpp_CScript_FUN_004febd0
 // Address: 004febd0
-undefined4 FUN_004febd0(CScript *param_1,char *param_2,int param_3);
+int __cdecl CScript(CScript *this_ptr,char *param_2,int param_3);
 
-// Original: core_script.cpp_FUN_004fee30
+// Original: core_script.cpp_CScript_FUN_004fee30
 // Address: 004fee30
-void __cdecl FUN_004fee30(CScript *this_ptr);
+void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_004fef60
+// Original: core_script.cpp_CScript_FUN_004fef60
 // Address: 004fef60
-char * __cdecl FUN_004fef60(CScript *this_ptr,int *error_line_out);
+char * __cdecl CScript(CScript *this_ptr,int *error_line_out);
 
-// Original: core_script.cpp_FUN_004feff0
+// Original: core_script.cpp_CScript_FUN_004feff0
 // Address: 004feff0
-void __cdecl FUN_004feff0(CScript *this_ptr);
+void __cdecl CScript(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_executeInitSection_FUN_004ff170
 // Address: 004ff170
@@ -119,13 +119,13 @@ int __cdecl CScript::findLabelIndex(CScript *this_ptr,char *label_name);
 // Address: 00504c70
 int __cdecl CScript::skipCommands(CScript *this_ptr,int direction,int count);
 
-// Original: core_script.cpp_FUN_00504d60
+// Original: core_script.cpp_CScript_FUN_00504d60
 // Address: 00504d60
-void FUN_00504d60(CScript *param_1);
+void __cdecl CScript(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_00504d90
+// Original: core_script.cpp_CScript_FUN_00504d90
 // Address: 00504d90
-int __cdecl FUN_00504d90(CScript *this_ptr);
+int __cdecl CScript(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dbLoad_FUN_00504e70
 // Address: 00504e70
@@ -147,9 +147,9 @@ void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 // Address: 005052c0
 void __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
 
-// Original: core_script.cpp_FUN_005055f0
+// Original: core_script.cpp_CScript_saveState_FUN_005055f0
 // Address: 005055f0
-void __cdecl FUN_005055f0(CScript *this_ptr,_FILE *file_handle);
+void __cdecl CScript::saveState(CScript *this_ptr,_FILE *file_handle);
 
 // Original: core_script.cpp_CScript_computeChecksum_FUN_00505820
 // Address: 00505820

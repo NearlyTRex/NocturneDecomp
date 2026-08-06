@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50 at 0043ff82
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870 at 0049d90d
-;   core_set.cpp_FUN_005090f0 at 005090fc
+;   core_set.cpp_CDemonSet_FUN_005090f0 at 005090fc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b61b
@@ -18,12 +18,12 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057b661
 ;   TerminatedCString s_CDemonCamera_init_Unable_0057b675
 ;   undefined4 DAT_012b0660
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;
 ; *****************************************************************************
@@ -103,10 +103,10 @@ section .text
     MOV EDI,0x57b61b                    ; 0044010c | = "..\\core\\dcamera.cpp"
     MOV EBP,0x248                       ; 00440111
     PUSH 0x57b62f                       ; 00440116 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0044011b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00440121 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00440127
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0044011b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 00440121 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00440127
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044012c
     MOV EDX,dword ptr [EBX + 0x13c]     ; 0044012f
         ;   Label: LAB_0044012f
@@ -139,10 +139,10 @@ section .text
         ;   Label: LAB_00440182
     MOV ESI,0x24d                       ; 00440187
     PUSH 0x57b675                       ; 0044018c | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00440191 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440197 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044019d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440191 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00440197 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044019d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004401a2
     JMP 0x0044015b                      ; 004401a5
         ;   XREF to: 0044015b (UNCONDITIONAL_JUMP)  ; LAB_0044015b

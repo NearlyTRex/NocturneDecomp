@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   target_bone_index
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004270e0 at 004271a3
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271a3
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

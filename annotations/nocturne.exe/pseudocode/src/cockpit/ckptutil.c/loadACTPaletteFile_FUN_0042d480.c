@@ -69,7 +69,7 @@ LAB_0042d4f3:
   } while (cVar1 != '\0');
   file = engine_dosio_cpp_getFile_FUN_00456a60("art",acStack_ac,"rb");
   if (file == (_FILE *)0x0) {
-    puVar6 = (uchar *)0x1c00948;
+    puVar6 = g_DefaultPalette;
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(uint *)output_buffer = *(uint *)puVar6;
       puVar6 = puVar6 + (uint)bVar8 * -8 + 4;
@@ -84,10 +84,10 @@ LAB_0042d4f3:
   }
   SVar2 = _fread(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
-    _sprintf(acStack_5c,"Error reading %s.");
-    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    g_INT_01cc4804 = 0x135;
-    core_main_c_FUN_004c8440(acStack_5c);
+    _sprintf(acStack_5c,"Error reading %s.",acStack_ac);
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    g_CurrentLineNumber = 309;
+    core_main_c_displayErrorAndQuit_FUN_004c8440(acStack_5c);
   }
   _fclose(file);
   return;

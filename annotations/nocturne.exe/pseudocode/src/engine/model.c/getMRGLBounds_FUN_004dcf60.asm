@@ -41,11 +41,11 @@
 ;   TerminatedCString s_Unable_to_read_magnify_0058a5ea
 ;   TerminatedCString s_Unable_to_read_verticies_0058a602
 ;   TerminatedCString s_engine_model_c_0058a625
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_boss.c_modelStructNotSupported4_FUN_0041a5a0
@@ -101,10 +101,10 @@ section .text
     MOV EAX,ESP                         ; 004dcfe7
     MOV EDI,0x176                       ; 004dcfe9
     PUSH EAX                            ; 004dcfee
-    MOV dword ptr [0x01cc4800],ESI      ; 004dcfef | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004dcff5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dcffb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004dcfef | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004dcff5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dcffb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dd000
     MOV EBP,0x80000000                  ; 004dd003
         ;   Label: LAB_004dd003
@@ -388,10 +388,10 @@ section .text
         ;   Label: LAB_004dd3e3
     MOV EBP,0x172                       ; 004dd3e8
     PUSH 0x58a5ea                       ; 004dd3ed | = "Unable to read magnify!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004dd3f2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004dd3f8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004dd3fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004dd3f2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004dd3f8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004dd3fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004dd403
     JMP 0x004dcfac                      ; 004dd406
         ;   XREF to: 004dcfac (UNCONDITIONAL_JUMP)  ; LAB_004dcfac

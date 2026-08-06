@@ -17,7 +17,8 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_004de550(CMoloch *this_ptr)
   int iVar2;
   CBoundingBox3D local_1c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
@@ -42,7 +43,8 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_004de550(CMoloch *this_ptr)
         ;
       }
       if (_DAT_01cd4318 != 0) {
-        iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+        iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                          (g_CDemonRenderer_PTR_005ae704);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_004e22b0
                     (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);

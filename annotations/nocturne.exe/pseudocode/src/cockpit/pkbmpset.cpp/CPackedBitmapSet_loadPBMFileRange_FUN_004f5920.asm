@@ -14,9 +14,9 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
-;   cockpit_pkbitmap.cpp_FUN_004f5290
-;   cockpit_pkbitmap.cpp_FUN_004f52c0
-;   cockpit_pkbitmap.cpp_FUN_004f5320
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_004f5350
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;
@@ -34,12 +34,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x80]      ; 004f592b
     MOV EBP,dword ptr [ESP + 0x84]      ; 004f5932
     PUSH EDI                            ; 004f5939
-    CALL cockpit_pkbitmap.cpp_FUN_004f5320 ; 004f593a
-        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f5320()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320 ; 004f593a
+        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 004f593f
     PUSH EDI                            ; 004f5942
-    CALL cockpit_pkbitmap.cpp_FUN_004f5290 ; 004f5943
-        ;   XREF to: 004f5290 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f5290()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290 ; 004f5943
+        ;   XREF to: 004f5290 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290(CPackedBitmapSet * this_ptr)
     MOV EAX,EBP                         ; 004f5948
     SUB EAX,ESI                         ; 004f594a
     ADD ESP,0x4                         ; 004f594c
@@ -87,8 +87,8 @@ section .text
     MOV ECX,ECX                         ; 004f59ae
     PUSH EDI                            ; 004f59b0
         ;   Label: LAB_004f59b0
-    CALL cockpit_pkbitmap.cpp_FUN_004f52c0 ; 004f59b1
-        ;   XREF to: 004f52c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f52c0()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0 ; 004f59b1
+        ;   XREF to: 004f52c0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 004f59b6
     ADD ESP,0x64                        ; 004f59b9
     POP EBP                             ; 004f59bc

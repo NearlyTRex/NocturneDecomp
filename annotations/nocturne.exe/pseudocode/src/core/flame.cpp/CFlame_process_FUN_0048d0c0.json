@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -75,32 +75,32 @@
       },
       {
         "category": "format_error",
-        "column": 41,
+        "column": 44,
         "line": 81,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 93,
+        "line": 94,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 94,
+        "line": 95,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 94,
+        "line": 95,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 96,
+        "line": 97,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
@@ -110,22 +110,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 233,
+    "complexity_score": 250,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 6,
+    "pseudocode_lines": 145,
+    "suspect_count": 7,
     "suspect_types": [
       "bit_int_float_compare",
       "raw_address_pointer_store",
+      "sub84_truncation",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 526
+    "total_lines": 528
   },
   "cross_references": [
     {
@@ -175,7 +176,7 @@
     {
       "addr": "00427730",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00427730"
+      "name": "core_charactr.cpp_CCharacter_FUN_00427730"
     },
     {
       "addr": "0047dc30",
@@ -219,7 +220,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -511,8 +512,16 @@
       "type": "unknown_field"
     },
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 74,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "_sprintf(local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);",
@@ -520,7 +529,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 89,
+      "line": 90,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",

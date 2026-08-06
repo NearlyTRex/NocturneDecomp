@@ -40,9 +40,9 @@
 ;   core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0
+;   core_platfrm.cpp_CPlatform_FUN_004f7360
 ;   core_platfrm.cpp_CPlatform_startMovement_FUN_004f6bd0
 ;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_004f7700
-;   core_platfrm.cpp_FUN_004f7360
 ;   core_set.cpp_CDemonSet_findCameraByName_FUN_005090a0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0
@@ -728,8 +728,8 @@ section .text
     PUSH EBX                            ; 004f6a09
     MOV ECX,dword ptr [EBP + 0x14]      ; 004f6a0a
     PUSH ECX                            ; 004f6a0d
-    CALL core_platfrm.cpp_FUN_004f7360  ; 004f6a0e
-        ;   XREF to: 004f7360 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_FUN_004f7360(CPlatform * this_ptr, CDemonActor * actor)
+    CALL core_platfrm.cpp_CPlatform_FUN_004f7360 ; 004f6a0e
+        ;   XREF to: 004f7360 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_CPlatform_FUN_004f7360(CPlatform * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f6a13
     TEST EAX,EAX                        ; 004f6a16
     JZ 0x004f6a33                       ; 004f6a18

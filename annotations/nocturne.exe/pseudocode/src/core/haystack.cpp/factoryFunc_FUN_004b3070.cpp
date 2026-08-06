@@ -11,7 +11,7 @@ CHaystack * __cdecl core_haystack_cpp_factoryFunc_FUN_004b3070(void)
 {
   CHaystack *pCVar1;
   
-  pCVar1 = (CHaystack *)FUN_0056497c(0x1fa54);
+  pCVar1 = operator_new(0x1fa54);
   if (pCVar1 == (CHaystack *)0x0) {
     return (CHaystack *)0x0;
   }

@@ -47,7 +47,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *this_ptr,floa
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
   }
-  iVar6 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -73,7 +73,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *this_ptr,floa
   if (pCVar5->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  iVar6 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(this_ptr,delta_time);
@@ -196,7 +196,7 @@ LAB_004ddd8e:
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar2);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30

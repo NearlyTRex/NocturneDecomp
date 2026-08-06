@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870 at 0049d89f
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d98b
 ;   core_main.c_FUN_004c85f0 at 004c8760
-;   engine_2d.c_FUN_00401010 at 0040104f
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040104f
 ;   wincore_wddvmem.cpp_FUN_00553ba0 at 00553c78
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0 at 00553461
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 at 005532f4
@@ -24,22 +24,22 @@
 ;   TerminatedCString s_WDDVMEM_Fatal_out_of_Z_b_0059781f
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597847
 ;   TerminatedCString s_setScreenResolution_Crea_0059785e
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_006af62c
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd4260
-;   char* g_CHAR_PTR_01cc4800
+;   char* g_CurrentFilename
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_memory.c_memset_FUN_00563cc0
-;   crt_unknown.c_FUN_005638d0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401e30
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0
@@ -95,16 +95,16 @@ section .text
     MOV ECX,dword ptr [0x005c5010]      ; 00552e66 | DAT_005c5010
     MOV dword ptr [0x005b7624],EBX      ; 00552e6c | DAT_005b7624
     XOR EDX,EDX                         ; 00552e72
-    MOV [0x005b761c],EAX                ; 00552e74 | DAT_005b761c
+    MOV [0x005b761c],EAX                ; 00552e74 | g_WindowWidth
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00552e79
     MOV dword ptr [0x02ddf56c],EDX      ; 00552e80 | DAT_02ddf56c
-    MOV [0x005b7620],EAX                ; 00552e86 | DAT_005b7620
+    MOV [0x005b7620],EAX                ; 00552e86 | g_WindowHeight
     TEST ECX,ECX                        ; 00552e8b
     JZ 0x00552ea0                       ; 00552e8d
         ;   XREF to: 00552ea0 (CONDITIONAL_JUMP)  ; LAB_00552ea0
     PUSH ECX                            ; 00552e8f
-    CALL crt_unknown.c_FUN_005638d0     ; 00552e90
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00552e90
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EDI,EDI                         ; 00552e95
     ADD ESP,0x4                         ; 00552e97
     MOV dword ptr [0x005c5010],EDI      ; 00552e9a | DAT_005c5010
@@ -114,14 +114,14 @@ section .text
     JZ 0x00552ebb                       ; 00552ea8
         ;   XREF to: 00552ebb (CONDITIONAL_JUMP)  ; LAB_00552ebb
     PUSH EBP                            ; 00552eaa
-    CALL crt_unknown.c_FUN_005638d0     ; 00552eab
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00552eab
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EDX,EDX                         ; 00552eb0
     ADD ESP,0x4                         ; 00552eb2
     MOV dword ptr [0x006af62c],EDX      ; 00552eb5 | DAT_006af62c
-    MOV EAX,[0x005b761c]                ; 00552ebb | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 00552ebb | g_WindowWidth
         ;   Label: LAB_00552ebb
-    MOV ECX,dword ptr [0x005b7620]      ; 00552ec0 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 00552ec0 | g_WindowHeight
     IMUL ECX,EAX                        ; 00552ec6
     MOV EAX,[0x005b7624]                ; 00552ec9 | DAT_005b7624
     MOV EDX,EAX                         ; 00552ece
@@ -141,14 +141,14 @@ section .text
     MOV ESI,0x5977c5                    ; 00552ef0 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0xea                        ; 00552ef5
     PUSH 0x5977dc                       ; 00552efa | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00552eff | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00552f05 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00552f0b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00552eff | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00552f05 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00552f0b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00552f10
-    MOV EAX,[0x005b761c]                ; 00552f13 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 00552f13 | g_WindowWidth
         ;   Label: LAB_00552f13
-    IMUL EAX,dword ptr [0x005b7620]     ; 00552f18 | DAT_005b7620
+    IMUL EAX,dword ptr [0x005b7620]     ; 00552f18 | g_WindowHeight
     SHL EAX,0x2                         ; 00552f1f
     ADD EAX,0x40                        ; 00552f22
     PUSH EAX                            ; 00552f25
@@ -162,10 +162,10 @@ section .text
     MOV EAX,0x597808                    ; 00552f37 | = "..\\wincore\\wddvmem.cpp"
     MOV EDX,0xef                        ; 00552f3c
     PUSH 0x59781f                       ; 00552f41 | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV [0x01cc4800],EAX                ; 00552f46 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00552f4b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00552f51
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00552f46 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00552f4b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00552f51
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00552f56
     MOV EAX,[0x02ddf560]                ; 00552f59 | DAT_02ddf560
         ;   Label: LAB_00552f59
@@ -290,7 +290,7 @@ section .text
     TEST EAX,EAX                        ; 0055309b
     JNZ 0x00553162                      ; 0055309d
         ;   XREF to: 00553162 (CONDITIONAL_JUMP)  ; LAB_00553162
-    MOV EDX,dword ptr [0x005b7620]      ; 005530a3 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 005530a3 | g_WindowHeight
     XOR ECX,ECX                         ; 005530a9
     TEST EDX,EDX                        ; 005530ab
     JLE 0x00553120                      ; 005530ad
@@ -302,14 +302,14 @@ section .text
     SBB EAX,EDX                         ; 005530bc
     SAR EAX,0x3                         ; 005530be
     MOV EDI,EAX                         ; 005530c1
-    MOV EAX,[0x005b761c]                ; 005530c3 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 005530c3 | g_WindowWidth
     SHL EAX,0x2                         ; 005530c8
     MOV dword ptr [ESP + 0x70],EAX      ; 005530cb
-    IMUL EDX,dword ptr [0x005b761c],0x0 ; 005530cf | DAT_005b761c
+    IMUL EDX,dword ptr [0x005b761c],0x0 ; 005530cf | g_WindowWidth
     MOV EBX,dword ptr [0x005c5010]      ; 005530d6 | DAT_005c5010
-    MOV EBP,dword ptr [0x005b7620]      ; 005530dc | DAT_005b7620
+    MOV EBP,dword ptr [0x005b7620]      ; 005530dc | g_WindowHeight
     XOR EAX,EAX                         ; 005530e2
-    MOV ESI,dword ptr [0x005b761c]      ; 005530e4 | DAT_005b761c
+    MOV ESI,dword ptr [0x005b761c]      ; 005530e4 | g_WindowWidth
         ;   Label: LAB_005530e4
     IMUL ESI,ECX                        ; 005530ea
     IMUL ESI,EDI                        ; 005530ed
@@ -362,10 +362,10 @@ section .text
         ;   Label: LAB_00553162
     MOV EBX,0x1d7                       ; 00553167
     PUSH 0x59785e                       ; 0055316c | = "setScreenResolution - Create back buf..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00553171 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00553177 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0055317d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00553171 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00553177 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0055317d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553182
     XOR EAX,EAX                         ; 00553185
     ADD ESP,0x74                        ; 00553187

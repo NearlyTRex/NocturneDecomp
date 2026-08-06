@@ -423,13 +423,13 @@ void __cdecl CFireEffect::createLaserPath(CFireEffect *this_ptr,CVector3f *start
 // Address: 0048b6b0
 SLaserInfo * __cdecl SLaserInfo::ctor(SLaserInfo *this_ptr);
 
-// Original: core_fire.cpp_FUN_0048b6f0
+// Original: core_fire.cpp_CFireEffect_FUN_0048b6f0
 // Address: 0048b6f0
-void __cdecl FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
+void __cdecl CFireEffect(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
 
-// Original: core_fire.cpp_FUN_0048c0d0
+// Original: core_fire.cpp_CFireEffect_FUN_0048c0d0
 // Address: 0048c0d0
-void __cdecl FUN_0048c0d0(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
+void __cdecl CFireEffect(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
 
 // Original: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
 // Address: 0048c160
@@ -667,17 +667,17 @@ CPopcorn * __cdecl CPopcorn::arrdtor(CPopcorn *this_ptr,uint flags);
 // Address: 0048cce0
 CShell * __cdecl CShell::arrdtor(CShell *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048cd00
+// Original: core_fire.cpp_CTrail_arrdtor_FUN_0048cd00
 // Address: 0048cd00
-void FUN_0048cd00(void);
+CTrail * __cdecl CTrail::arrdtor(CTrail *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048cd20
+// Original: core_fire.cpp_CLightningBolt_arrdtor_FUN_0048cd20
 // Address: 0048cd20
-void FUN_0048cd20(void);
+CLightningBolt * __cdecl CLightningBolt::arrdtor(CLightningBolt *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CGunFlame_arrdtor_FUN_0048cd40
 // Address: 0048cd40
-CGunFlame * __cdecl CGunFlame::arrdtor(CGunFlame *objs,uint flags);
+CGunFlame * __cdecl CGunFlame::arrdtor(CGunFlame *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CCrater_arrdtor_FUN_0048cd60
 // Address: 0048cd60
@@ -687,13 +687,13 @@ CCrater * __cdecl CCrater::arrdtor(CCrater *this_ptr,uint flags);
 // Address: 0048cd80
 CToss * __cdecl CToss::arrdtor(CToss *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048cda0
+// Original: core_fire.cpp_CExplosion_arrdtor_FUN_0048cda0
 // Address: 0048cda0
-void FUN_0048cda0(void);
+CExplosion * __cdecl CExplosion::arrdtor(CExplosion *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048cdc0
+// Original: core_fire.cpp_CLaserBeam_arrdtor_FUN_0048cdc0
 // Address: 0048cdc0
-void FUN_0048cdc0(void);
+CLaserBeam * __cdecl CLaserBeam::arrdtor(CLaserBeam *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CRock_arrdtor_FUN_0048cde0
 // Address: 0048cde0
@@ -703,17 +703,17 @@ CRock * __cdecl CRock::arrdtor(CRock *this_ptr,uint flags);
 // Address: 0048ce00
 CFireball * __cdecl CFireball::arrdtor(CFireball *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048ce20
+// Original: core_fire.cpp_CBulletTrail_arrdtor_FUN_0048ce20
 // Address: 0048ce20
-void FUN_0048ce20(void);
+CBulletTrail * __cdecl CBulletTrail::arrdtor(CBulletTrail *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CGlassParticle_arrdtor_FUN_0048ce40
 // Address: 0048ce40
 CGlassParticle * __cdecl CGlassParticle::arrdtor(CGlassParticle *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048ce60
+// Original: core_fire.cpp_CMuzzleFlash_arrdtor_FUN_0048ce60
 // Address: 0048ce60
-void FUN_0048ce60(void);
+CMuzzleFlash * __cdecl CMuzzleFlash::arrdtor(CMuzzleFlash *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CSpark_arrdtor_FUN_0048ce80
 // Address: 0048ce80
@@ -723,10 +723,10 @@ CSpark * __cdecl CSpark::arrdtor(CSpark *this_ptr,uint flags);
 // Address: 0048cea0
 CStake * __cdecl CStake::arrdtor(CStake *this_ptr,uint flags);
 
-// Original: core_fire.cpp_FUN_0048cec0
+// Original: core_fire.cpp_CBulletHole_arrdtor_FUN_0048cec0
 // Address: 0048cec0
-void FUN_0048cec0(void);
+CBulletHole * __cdecl CBulletHole::arrdtor(CBulletHole *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CSmokeParticle_arrdtor_FUN_0048cee0
 // Address: 0048cee0
-CSmokeParticle * __cdecl CSmokeParticle::arrdtor(CSmokeParticle *objs,uint flags);
+CSmokeParticle * __cdecl CSmokeParticle::arrdtor(CSmokeParticle *this_ptr,uint flags);

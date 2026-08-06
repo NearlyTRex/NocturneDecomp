@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fr46_03d_raw_0058139c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 00488249
     PUSH EBP                            ; 0048824c
-    MOV EDX,dword ptr [0x005ae704]      ; 0048824d | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0048824d | g_CDemonRenderer_PTR_005ae704
     INC ESI                             ; 00488253
     PUSH EDX                            ; 00488254 | DAT_01b4d738
     ADD EDI,0x18                        ; 00488255

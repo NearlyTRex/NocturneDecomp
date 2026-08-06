@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 215,
+        "line": 216,
         "message": "use of undeclared identifier '_DAT_01c78420'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 216,
+        "line": 217,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 255,
+        "line": 256,
         "message": "use of undeclared identifier 'DAT_01c78af0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 256,
+        "line": 257,
         "message": "use of undeclared identifier 'int3'; did you mean 'int'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 259,
+        "line": 260,
         "message": "use of undeclared identifier 'DAT_01c78af0'; did you mean 'DAT_005c18a0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 286,
+        "line": 287,
         "message": "use of undeclared identifier 'DAT_01c78af0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 293,
+        "line": 294,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 297,
+        "line": 298,
         "message": "no matching function for call to 'core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40'"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 298,
+        "line": 299,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 299,
+        "line": 300,
         "message": "use of undeclared identifier 'code'"
       }
     ],
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4316,
-    "complexity_score": 3489,
+    "complexity_score": 3535,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 195,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2144,
-    "suspect_count": 128,
+    "pseudocode_lines": 2150,
+    "suspect_count": 131,
     "suspect_types": [
       "bit_int_float_compare",
       "concat_reconstruction",
@@ -137,14 +137,16 @@
       "raw_address_constant",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
+      "sub84_truncation",
       "suspect_float",
       "undefined_data",
+      "unknown_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 6460
+    "total_lines": 6466
   },
   "cross_references": [
     {
@@ -271,7 +273,7 @@
     {
       "addr": "005090f0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005090f0"
+      "name": "core_set.cpp_CDemonSet_FUN_005090f0"
     },
     {
       "addr": "0051e0a0",
@@ -304,14 +306,14 @@
       "name": "crt_ctype.c_toupper_FUN_00565e20"
     },
     {
-      "addr": "00563c90",
-      "is_variadic": false,
-      "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
       "addr": "0056497c",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_0056497c"
+      "name": "crt_memory.c_operator_new_FUN_0056497c"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
       "addr": "004c41d0",
@@ -1313,9 +1315,9 @@
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7650",
@@ -1699,31 +1701,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 248,
+      "line": 249,
       "match": "DAT_01c78af0",
       "severity": "mild",
-      "text": "(&DAT_01c78af0)[iVar16] = uVar3;",
+      "text": "(&DAT_01c78af0)[iVar18] = uVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 249,
+      "line": 250,
       "match": "int3",
       "severity": "mild",
-      "text": "iVar6 = CONCAT31((int3)((uint)iVar9 >> 8),uVar3);",
+      "text": "iVar8 = CONCAT31((int3)((uint)iVar11 >> 8),uVar3);",
       "type": "nonstandard_int"
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 253,
       "match": "DAT_01c78af0",
       "severity": "mild",
-      "text": "DAT_01c78af0 = (byte)((uint)iVar9 >> 8);",
+      "text": "DAT_01c78af0 = (byte)((uint)iVar11 >> 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 279,
+      "line": 280,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1731,15 +1733,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 292,
+      "line": 293,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar6 + 0x14c) + 0x100))(iVar6,&local_334);",
+      "text": "(**(code **)(*(int *)(iVar8 + 0x14c) + 0x100))(iVar8,&local_334);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 295,
       "match": "DAT_01c78af8",
       "severity": "mild",
       "text": "if (((((DAT_01c78af8 == 'G') && (DAT_01c78af7 == 'O')) && (DAT_01c78af6 == 'L')) &&",
@@ -1747,7 +1749,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 295,
       "match": "DAT_01c78af7",
       "severity": "mild",
       "text": "if (((((DAT_01c78af8 == 'G') && (DAT_01c78af7 == 'O')) && (DAT_01c78af6 == 'L')) &&",
@@ -1755,7 +1757,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 294,
+      "line": 295,
       "match": "DAT_01c78af6",
       "severity": "mild",
       "text": "if (((((DAT_01c78af8 == 'G') && (DAT_01c78af7 == 'O')) && (DAT_01c78af6 == 'L')) &&",
@@ -1763,7 +1765,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 296,
       "match": "DAT_01c78af5",
       "severity": "mild",
       "text": "(((DAT_01c78af5 == 'D' && (DAT_01c78af4 == 'B')) &&",
@@ -1771,7 +1773,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 295,
+      "line": 296,
       "match": "DAT_01c78af4",
       "severity": "mild",
       "text": "(((DAT_01c78af5 == 'D' && (DAT_01c78af4 == 'B')) &&",
@@ -1779,7 +1781,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 296,
+      "line": 297,
       "match": "DAT_01c78af3",
       "severity": "mild",
       "text": "((DAT_01c78af3 == 'R' && ((DAT_01c78af2 == 'I' && (DAT_01c78af1 == 'C')))))))) &&",
@@ -1787,7 +1789,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 296,
+      "line": 297,
       "match": "DAT_01c78af2",
       "severity": "mild",
       "text": "((DAT_01c78af3 == 'R' && ((DAT_01c78af2 == 'I' && (DAT_01c78af1 == 'C')))))))) &&",
@@ -1795,7 +1797,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 296,
+      "line": 297,
       "match": "DAT_01c78af1",
       "severity": "mild",
       "text": "((DAT_01c78af3 == 'R' && ((DAT_01c78af2 == 'I' && (DAT_01c78af1 == 'C')))))))) &&",
@@ -1803,7 +1805,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 297,
+      "line": 298,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "(DAT_01c78af0 == 0x4b)) {",
@@ -1811,7 +1813,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 333,
+      "line": 334,
+      "match": "DAT_01c78af0",
+      "severity": "mild",
+      "text": "DAT_01c78af0 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 347,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uStack_2b0._4_4_ = (uint)((ulonglong)dVar5 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 348,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uVar6 = uStack_2b0._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 349,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uStack_2b0._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 349,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_2b0._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 383,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1819,7 +1861,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 377,
+      "line": 418,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1827,15 +1869,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 412,
-      "match": "DAT_01c78af0",
-      "severity": "mild",
-      "text": "DAT_01c78af0 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 455,
+      "line": 461,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)iStack_274 ^ (byte)iStack_278;",
@@ -1843,15 +1877,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 464,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "uVar22 = DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 507,
+      "line": 513,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)((uint)iStack_26c >> 8) ^ (byte)((uint)iStack_270 >> 8);",
@@ -1859,7 +1885,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 549,
+      "line": 555,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1867,7 +1893,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 583,
+      "line": 589,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1875,7 +1901,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 618,
+      "line": 624,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1883,7 +1909,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 623,
+      "line": 629,
       "match": "DAT_005b9360",
       "severity": "mild",
       "text": "(float *)&DAT_005b9360,1,0.25,240.0,1);",
@@ -1891,31 +1917,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 627,
+      "line": 633,
       "match": "DAT_01c78ad0",
       "severity": "mild",
-      "text": "(int *)&DAT_01c78ad0,1,0,99999,1), iVar6 != 0)) &&",
+      "text": "(int *)&DAT_01c78ad0,1,0,99999,1), iVar8 != 0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 630,
+      "line": 636,
       "match": "DAT_005b9364",
       "severity": "mild",
-      "text": "&DAT_005b9364,1,1,9999,1), iVar6 != 0)) &&",
+      "text": "&DAT_005b9364,1,1,9999,1), iVar8 != 0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 633,
+      "line": 639,
       "match": "DAT_005b9368",
       "severity": "mild",
-      "text": "&DAT_005b9368,1,1,9999,1), iVar6 != 0)) {",
+      "text": "&DAT_005b9368,1,1,9999,1), iVar8 != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 667,
+      "line": 673,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1923,7 +1949,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 696,
+      "line": 702,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1931,7 +1957,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 751,
+      "line": 757,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1939,7 +1965,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 793,
+      "line": 799,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)iStack_234 ^ (byte)iStack_238;",
@@ -1947,7 +1973,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 836,
+      "line": 842,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)((uint)iStack_224 >> 8) ^ (byte)((uint)iStack_228 >> 8);",
@@ -1955,7 +1981,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 870,
+      "line": 876,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1963,7 +1989,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 904,
+      "line": 910,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1971,7 +1997,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 938,
+      "line": 944,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1979,7 +2005,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 973,
+      "line": 979,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1987,7 +2013,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1008,
+      "line": 1014,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -1995,7 +2021,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1043,
+      "line": 1049,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2003,7 +2029,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1078,
+      "line": 1084,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)iStack_1b8 ^ (byte)iStack_1bc;",
@@ -2011,7 +2037,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1109,
+      "line": 1115,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)((uint)iStack_1b0 >> 8) ^ (byte)((uint)iStack_1b4 >> 8);",
@@ -2019,7 +2045,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1217,
+      "line": 1223,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2027,7 +2053,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1256,
+      "line": 1262,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2035,15 +2061,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1268,
+      "line": 1274,
       "match": "DAT_005b92f0",
       "severity": "mild",
-      "text": "&DAT_005b92f0,100,1), iVar6 != 0) {",
+      "text": "&DAT_005b92f0,100,1), iVar8 != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1270,
+      "line": 1276,
       "match": "DAT_005b92f0",
       "severity": "mild",
       "text": "(0x01C03A10,&DAT_005b92f0);",
@@ -2051,7 +2077,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1272,
+      "line": 1278,
       "match": "DAT_005b92f0",
       "severity": "mild",
       "text": "core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,&DAT_005b92f0);",
@@ -2059,7 +2085,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1304,
+      "line": 1310,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2067,23 +2093,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1310,
+      "line": 1316,
       "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "iVar16 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + iVar6);",
+      "text": "iVar18 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1319,
+      "line": 1325,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar16 + 0x14c) + 0x100))(iVar16,&SStack_2f8);",
+      "text": "(**(code **)(*(int *)(iVar18 + 0x14c) + 0x100))(iVar18,&SStack_2f8);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1354,
+      "line": 1360,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2091,7 +2117,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1396,
+      "line": 1402,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2099,7 +2125,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1429,
+      "line": 1435,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2107,7 +2133,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1459,
+      "line": 1465,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)iStack_178 ^ (byte)iStack_17c;",
@@ -2115,7 +2141,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1489,
+      "line": 1495,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2123,23 +2149,23 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1492,
+      "line": 1498,
       "match": "7.00649e-45",
       "severity": "mild",
-      "text": "if (pCVar11[4].location.position.y == 7.00649e-45) {",
+      "text": "if (pCVar13[4].location.position.y == 7.00649e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1507,
+      "line": 1513,
       "match": "7.00649e-45",
       "severity": "mild",
-      "text": "pCVar11[4].location.position.y = 7.00649e-45;",
+      "text": "pCVar13[4].location.position.y = 7.00649e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1544,
+      "line": 1550,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2147,7 +2173,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1578,
+      "line": 1584,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2155,7 +2181,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1611,
+      "line": 1617,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2163,7 +2189,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1651,
+      "line": 1657,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2171,7 +2197,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1684,
+      "line": 1690,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2179,7 +2205,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1712,
+      "line": 1718,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2187,7 +2213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1740,
+      "line": 1746,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = (byte)iStack_13c ^ (byte)iStack_140;",
@@ -2195,15 +2221,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1755,
+      "line": 1761,
       "match": "(int *)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_44);",
+      "text": "iVar8 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_44);",
       "type": "pointer_cast"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 1827,
+      "line": 1833,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),",
@@ -2211,7 +2237,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1869,
+      "line": 1875,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2219,7 +2245,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1898,
+      "line": 1904,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2227,7 +2253,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1941,
+      "line": 1947,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2235,7 +2261,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1971,
+      "line": 1977,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2243,7 +2269,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 1973,
+      "line": 1979,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),",
@@ -2251,7 +2277,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2010,
+      "line": 2016,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2259,7 +2285,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2053,
+      "line": 2059,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2267,7 +2293,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2096,
+      "line": 2102,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2275,7 +2301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2141,
+      "line": 2147,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2283,7 +2309,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 290,
+      "line": 291,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.5,0);",
@@ -2291,7 +2317,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 1685,
+      "line": 1691,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_setWeatherType_FUN_00555750(0x02DDF9F0,WEATHER_TYPE_RAIN);",
@@ -2299,7 +2325,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 1713,
+      "line": 1719,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_setWeatherType_FUN_00555750(0x02DDF9F0,WEATHER_TYPE_SNOW);",
@@ -2307,7 +2333,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 706,
+      "line": 712,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2315,39 +2341,39 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 249,
+      "line": 250,
       "match": "CONCAT31",
       "severity": "moderate",
-      "text": "iVar6 = CONCAT31((int3)((uint)iVar9 >> 8),uVar3);",
+      "text": "iVar8 = CONCAT31((int3)((uint)iVar11 >> 8),uVar3);",
       "type": "concat_reconstruction"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar17->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1777,
-      "match": "pCVar17 = (T *)((pCVar17->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar19->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1783,
+      "match": "pCVar19 = (T *)((pCVar19->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);",
+      "text": "pCVar19 = (CSkeleton *)((pCVar19->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar17->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1798,
-      "match": "pCVar17 = (T *)((pCVar17->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar19->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1804,
+      "match": "pCVar19 = (T *)((pCVar19->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);",
+      "text": "pCVar19 = (CSkeleton *)((pCVar19->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar17->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1819,
-      "match": "pCVar17 = (T *)((pCVar17->FIELD).ARRAY[N] + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar19->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1825,
+      "match": "pCVar19 = (T *)((pCVar19->FIELD).ARRAY[N] + CONST)",
       "severity": "moderate",
-      "text": "pCVar17 = (CSkeleton *)((pCVar17->motion_list).state_names[1] + 2);",
+      "text": "pCVar19 = (CSkeleton *)((pCVar19->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 256,
+      "line": 257,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2355,7 +2381,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 311,
+      "line": 312,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2363,7 +2389,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 355,
+      "line": 361,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2371,7 +2397,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 391,
+      "line": 397,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2379,7 +2405,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 433,
+      "line": 439,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2387,7 +2413,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 486,
+      "line": 492,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2395,7 +2421,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 527,
+      "line": 533,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2403,7 +2429,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 561,
+      "line": 567,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2411,7 +2437,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 597,
+      "line": 603,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2419,7 +2445,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 646,
+      "line": 652,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2427,7 +2453,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 675,
+      "line": 681,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2435,7 +2461,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 730,
+      "line": 736,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2443,7 +2469,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 771,
+      "line": 777,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2451,7 +2477,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 813,
+      "line": 819,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2459,7 +2485,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 848,
+      "line": 854,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2467,7 +2493,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 880,
+      "line": 886,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2475,7 +2501,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 916,
+      "line": 922,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2483,7 +2509,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 950,
+      "line": 956,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2491,7 +2517,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 986,
+      "line": 992,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2499,7 +2525,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1021,
+      "line": 1027,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2507,7 +2533,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1055,
+      "line": 1061,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2515,7 +2541,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1088,
+      "line": 1094,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2523,7 +2549,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1195,
+      "line": 1201,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2531,7 +2557,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1235,
+      "line": 1241,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2539,7 +2565,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1282,
+      "line": 1288,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2547,7 +2573,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1332,
+      "line": 1338,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2555,7 +2581,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1375,
+      "line": 1381,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2563,7 +2589,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1408,
+      "line": 1414,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2571,7 +2597,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1438,
+      "line": 1444,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2579,7 +2605,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1468,
+      "line": 1474,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2587,7 +2613,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1522,
+      "line": 1528,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2595,7 +2621,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1557,
+      "line": 1563,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2603,7 +2629,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1589,
+      "line": 1595,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2611,7 +2637,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1628,
+      "line": 1634,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2619,7 +2645,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1663,
+      "line": 1669,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2627,7 +2653,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1691,
+      "line": 1697,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2635,7 +2661,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1718,
+      "line": 1724,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2643,7 +2669,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1848,
+      "line": 1854,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2651,7 +2677,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1877,
+      "line": 1883,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2659,7 +2685,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1919,
+      "line": 1925,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2667,7 +2693,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1950,
+      "line": 1956,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2675,7 +2701,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1989,
+      "line": 1995,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2683,7 +2709,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2031,
+      "line": 2037,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2691,7 +2717,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2074,
+      "line": 2080,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2699,7 +2725,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2120,
+      "line": 2126,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2707,7 +2733,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41200000 is the IEEE 754 bit pattern of 10f. Rewrite in a .keep as a plain float compare against 10f.",
-      "line": 287,
+      "line": 288,
       "match": "(int)local_334.damage_amount < 0x41200000",
       "severity": "moderate",
       "text": "if ((int)local_334.damage_amount < 0x41200000) {",

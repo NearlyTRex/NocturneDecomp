@@ -33,7 +33,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
         else {
           _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
         }
-        if (0x00000001 == 0) {
+        if (g_ResolutionTable[8].height == 0) {
           if (_DAT_01c03948 == 0) {
             if (DAT_005b7624 == 0x20) {
               _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
@@ -76,7 +76,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
         engine_light_cpp_calculateLighting_FUN_004c6cc0
                   ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i)
         ;
-        _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+        _DAT_01c00c70 = engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
       }
     }
     else {

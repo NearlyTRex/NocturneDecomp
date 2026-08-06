@@ -1,0 +1,341 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 369,
+    "complexity_score": 182,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 142,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 511
+  },
+  "cross_references": [
+    {
+      "addr": "00533210",
+      "from_addr": "00533517",
+      "name": "core_spike.cpp_CSpike_process_FUN_00533210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00533750",
+    "address_range": [
+      [
+        "00533750",
+        "00533c8b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_spike.cpp_CSpike_FUN_00533750",
+    "signature": "void __cdecl core_spike_cpp_CSpike_FUN_00533750(CSpike *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040a740",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740"
+    },
+    {
+      "addr": "0040a200",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_0040a200"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "0041cc00",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00"
+    },
+    {
+      "addr": "0041cc70",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70"
+    },
+    {
+      "addr": "0041dbc0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0"
+    },
+    {
+      "addr": "00423ed0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0"
+    },
+    {
+      "addr": "00511990",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990"
+    },
+    {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005950ee",
+      "name": "FLOAT_005950ee",
+      "type": "float",
+      "value": "-0.1000000"
+    },
+    {
+      "addr": "005950f2",
+      "name": "FLOAT_005950f2",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "005950f6",
+      "name": "FLOAT_005950f6",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "005950fa",
+      "name": "FLOAT_005950fa",
+      "type": "float",
+      "value": "10"
+    },
+    {
+      "addr": "005993b0",
+      "name": "g_CVectorTypeInfo_005993b0",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa5f3c",
+      "name": "g_CDemonSet_01e57284.characters[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00533517",
+        "call_type": "direct",
+        "caller": "core_spike.cpp_CSpike_process_FUN_00533210",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.749235474006116,
+    "instruction_count": 327,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 13,
+      "BRANCH": 3,
+      "CALL": 12,
+      "CALLIND": 3,
+      "CBRANCH": 13,
+      "COPY": 843,
+      "FLOAT2FLOAT": 64,
+      "FLOAT_ADD": 14,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_MULT": 14,
+      "FLOAT_NAN": 16,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 167,
+      "INT_AND": 108,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 67,
+      "INT_LEFT": 32,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 41,
+      "INT_OR": 40,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 33,
+      "INT_SUB": 63,
+      "INT_XOR": 6,
+      "INT_ZEXT": 32,
+      "LOAD": 79,
+      "POPCOUNT": 33,
+      "RETURN": 1,
+      "STORE": 107
+    },
+    "pcode_op_count": 1880
+  },
+  "stack_frame": {
+    "frame_size": 244,
+    "local_size": 240,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpike *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053375c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 60,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "point->x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 132,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "SStack_16c.impact_direction.x = CStack_a4.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

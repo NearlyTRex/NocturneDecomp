@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004b8ca0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd58                         ; 004b8c70
         ;   Label: core_hotdemon.cpp_factoryFunc_FUN_004b8c70
-    CALL crt_unknown.c_FUN_0056497c     ; 004b8c75
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004b8c75
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004b8c7a
     TEST EAX,EAX                        ; 004b8c7d
     JNZ 0x004b8c82                      ; 004b8c7f

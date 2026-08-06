@@ -26,7 +26,7 @@ void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_00494260(SRenderVertex **v
   SSoftwareEdge *local_14;
   
   _DAT_01c70f78 = 0;
-  _DAT_01c712fc = DAT_005b7620;
+  _DAT_01c712fc = g_WindowHeight;
   _DAT_01c71300 = 0;
   local_20 = 0;
   if (0 < vertex_count) {

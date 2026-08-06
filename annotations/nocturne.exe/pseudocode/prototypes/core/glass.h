@@ -35,9 +35,9 @@ int __cdecl CGlass::renderOpaque(CGlass *this_ptr);
 // Address: 004ac600
 int __cdecl CGlass::renderTransparent(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004ac7c0
+// Original: core_glass.cpp_CGlass_FUN_004ac7c0
 // Address: 004ac7c0
-void __cdecl FUN_004ac7c0(CGlass *this_ptr);
+void __cdecl CGlass(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_renderBackground_FUN_004ac9b0
 // Address: 004ac9b0
@@ -55,9 +55,9 @@ void __cdecl CGlass::archive(CGlass *this_ptr);
 // Address: 004accc0
 ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_glass.cpp_FUN_004accf0
+// Original: core_glass.cpp_CGlass_FUN_004accf0
 // Address: 004accf0
-void FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl CGlass(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5);
 
 // Original: core_glass.cpp_CGlass_shatter_FUN_004ada20
 // Address: 004ada20
@@ -71,9 +71,9 @@ void __cdecl CGlass::onLaserHit(CGlass *this_ptr,SLaserInfo *laser_info);
 // Address: 004adec0
 EGroundType __cdecl CGlass::getGroundType(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004aded0
+// Original: core_glass.cpp_CGlass_FUN_004aded0
 // Address: 004aded0
-int __cdecl FUN_004aded0(CGlass *this_ptr);
+int __cdecl CGlass(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004adef0
 // Address: 004adef0
@@ -81,4 +81,4 @@ CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint flags);
 
 // Original: core_glass.cpp_CVector3f_arrdtor_FUN_004adf70
 // Address: 004adf70
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

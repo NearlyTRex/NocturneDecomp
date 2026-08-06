@@ -37,7 +37,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_0
     puVar6 = (uint *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar1 * 4);
     iVar4 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar7->base).depth_current) *
-                  (longlong)*(int *)(&DAT_01c00c80 + (iVar2 + 1) * 4)) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar9 = (pSVar7->base).depth_current;
     while (iVar3 = iVar2 + -4, puVar5 = puVar6, 3 < iVar2) {
       uVar8 = uVar9 + iVar4 + iVar4;

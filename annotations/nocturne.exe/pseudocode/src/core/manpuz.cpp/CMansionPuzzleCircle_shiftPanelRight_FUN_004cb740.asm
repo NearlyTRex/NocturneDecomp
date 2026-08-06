@@ -8,17 +8,17 @@
 ; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004cb010 at 004cb2a3
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 at 004cb2a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_0058808a
 ;   TerminatedCString s_CMansionPuzzleCircle_shi_0058809d
 ;   TerminatedCString s_manpuz_doorslide_wav_005880ce
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
@@ -90,10 +90,10 @@ section .text
         ;   Label: LAB_004cb7cb
     MOV EAX,0x57d                       ; 004cb7d0
     PUSH 0x58809d                       ; 004cb7d5 | = "CMansionPuzzleCircle::shiftPanelRight..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004cb7da | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004cb7e0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004cb7e5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004cb7da | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004cb7e0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004cb7e5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004cb7ea
     JMP 0x004cb79d                      ; 004cb7ed
         ;   XREF to: 004cb79d (UNCONDITIONAL_JUMP)  ; LAB_004cb79d

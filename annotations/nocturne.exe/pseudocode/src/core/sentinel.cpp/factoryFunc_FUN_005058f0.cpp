@@ -11,7 +11,7 @@ CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void)
 {
   CSentinel *pCVar1;
   
-  pCVar1 = (CSentinel *)FUN_0056497c(0xbd2c);
+  pCVar1 = operator_new(0xbd2c);
   if (pCVar1 == (CSentinel *)0x0) {
     return (CSentinel *)0x0;
   }

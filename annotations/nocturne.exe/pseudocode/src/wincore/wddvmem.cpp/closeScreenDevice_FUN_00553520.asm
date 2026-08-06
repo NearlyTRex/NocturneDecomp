@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[5]:
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a5993
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5ba
-;   core_game.cpp_FUN_004a57c0 at 004a5993
 ;   engine_special.cpp_FUN_00532ba0 at 00532c45
 ;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545ac4
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539a1
@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597995
 ;   TerminatedCString s_closeScreenDevice_Unable_005979ac
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_006af62c
@@ -23,14 +23,14 @@
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02ddf558
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 005535ec (CONDITIONAL_JUMP)  ; LAB_005535ec
     PUSH EDI                            ; 0055353c
     PUSH ESI                            ; 0055353d
-    CMP dword ptr [0x005b7620],0x0      ; 0055353e | DAT_005b7620
+    CMP dword ptr [0x005b7620],0x0      ; 0055353e | g_WindowHeight
     JLE 0x005535a7                      ; 00553545
         ;   XREF to: 005535a7 (CONDITIONAL_JUMP)  ; LAB_005535a7
     PUSH EBX                            ; 00553547
@@ -58,11 +58,11 @@ section .text
     SBB EAX,EDX                         ; 00553555
     SAR EAX,0x3                         ; 00553557
     MOV EDI,EAX                         ; 0055355a
-    IMUL EDX,dword ptr [0x005b761c],0x0 ; 0055355c | DAT_005b761c
-    MOV EBP,dword ptr [0x005b761c]      ; 00553563 | DAT_005b761c
+    IMUL EDX,dword ptr [0x005b761c],0x0 ; 0055355c | g_WindowWidth
+    MOV EBP,dword ptr [0x005b761c]      ; 00553563 | g_WindowWidth
     SHL EBP,0x2                         ; 00553569
     XOR EAX,EAX                         ; 0055356c
-    MOV ESI,dword ptr [0x005b761c]      ; 0055356e | DAT_005b761c
+    MOV ESI,dword ptr [0x005b761c]      ; 0055356e | g_WindowWidth
         ;   Label: LAB_0055356e
     IMUL ESI,ECX                        ; 00553574
     IMUL ESI,EDI                        ; 00553577
@@ -74,7 +74,7 @@ section .text
     ADD EBX,EDX                         ; 00553591
     INC ECX                             ; 00553593
     MOV dword ptr [EAX + 0x1bd425c],EBX ; 00553594 | DAT_01bd4260
-    MOV EBX,dword ptr [0x005b7620]      ; 0055359a | DAT_005b7620
+    MOV EBX,dword ptr [0x005b7620]      ; 0055359a | g_WindowHeight
     ADD EDX,EBP                         ; 005535a0
     CMP ECX,EBX                         ; 005535a2
     JL 0x0055356e                       ; 005535a4
@@ -92,10 +92,10 @@ section .text
     MOV ESI,0x597995                    ; 005535bb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x27f                       ; 005535c0
     PUSH 0x5979ac                       ; 005535c5 | = "closeScreenDevice - Unable to unlock"
-    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005535d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005535d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005535db
     MOV dword ptr [0x02ddf564],0x1      ; 005535de | DAT_02ddf564
         ;   Label: LAB_005535de

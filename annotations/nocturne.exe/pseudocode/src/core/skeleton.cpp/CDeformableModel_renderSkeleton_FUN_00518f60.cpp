@@ -51,8 +51,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
         local_4c.y = (int)ROUND(local_28.y * _DAT_005a1ea8);
         local_4c.z = (int)ROUND(local_28.z * _DAT_005a1ea8);
         output = (SProjectedVertex *)
-                 ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c
-                 );
+                 ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + local_1c);
         iVar5 = iVar5 + 1;
         in_stack_ffffffa8 = 0x518ff1;
         this_ptr = (CDeformableModel *)&local_4c;
@@ -68,7 +68,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
       do {
         iVar4 = local_18->bone_list[0].parent_index;
         if (-1 < iVar4) {
-          pSVar1 = DAT_005ae704->vertex_buffer_ptr;
+          pSVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
           pSVar6 = pSVar1 + iVar4;
           piVar8 = (int *)&stack0xffffff84;
           for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -109,7 +109,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
       core_xform_cpp_matrixToEulerAngles_FUN_0055b180(bone_matrices,&local_40);
       core_xform_cpp_getTranslation_FUN_0055bc00(bone_matrices,&local_34);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                (DAT_005ae704,&local_40,&local_34);
+                (g_CDemonRenderer_PTR_005ae704,&local_40,&local_34);
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
                 (g_CEditorTools_PTR_005b6d50,0.5,0xff);
       iVar5 = iVar5 + 1;

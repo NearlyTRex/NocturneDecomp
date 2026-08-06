@@ -25,7 +25,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-              (DAT_005ae704,&this_ptr->position);
+              (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
     rotation = (CVector3f *)0x0;
   }
   else {
@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
     rotation = &this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,&this_ptr->euler_angles,rotation);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->euler_angles,rotation);
   _DAT_005c505c = (this_ptr->texture_index & 1U) * 0x800000;
   local_50 = 0;
   DAT_005c502c = _DAT_005c505c + 0x80000;
@@ -51,7 +51,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   _DAT_005c50bc = DAT_005c502c;
   _DAT_005c50c0 = _DAT_005c5090;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_40);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_40);
   local_58 = 0x3e2e147b;
   local_54 = 0xbe2e147b;
   local_50 = 0;
@@ -59,7 +59,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   local_70.y = (int)ROUND(256.0f * -0.17);
   local_70.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_70);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_70);
   local_58 = 0x3e2e147b;
   local_54 = 0x3e2e147b;
   local_50 = 0;
@@ -67,7 +67,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   local_1c.y = (int)ROUND(256.0f * 0.17);
   local_1c.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_1c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_1c);
   local_58 = 0xbe2e147b;
   local_50 = 0;
   local_54 = 0x3e2e147b;
@@ -75,7 +75,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
   local_28.y = (int)ROUND(256.0f * 0.17);
   local_28.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_28);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_28);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00447760
               (_DAT_007f7370,(SRenderVertex *)&DAT_005c5014);
@@ -99,7 +99,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00482f50(CBulletHole *this_ptr
               (g_CDemonSet_PTR_005be368,&local_64,&local_4c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
     return;

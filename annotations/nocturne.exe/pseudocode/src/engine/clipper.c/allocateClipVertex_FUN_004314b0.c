@@ -12,9 +12,9 @@ SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_004314b0(void)
   int iVar1;
   
   if (0xb < DAT_00767b38) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-    g_INT_01cc4804 = 0x5e;
-    core_main_c_FUN_004c8440("Ran out of clipped verts!");
+    g_CurrentFilename = "..\\engine\\clipper.c";
+    g_CurrentLineNumber = 94;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
   }
   iVar1 = DAT_00767b38 * 0x30;
   DAT_00767b38 = DAT_00767b38 + 1;

@@ -116,7 +116,7 @@ section .text
     LEA ECX,[EBX*0x4 + 0x0]             ; 0049127e
     SUB ECX,EBX                         ; 00491285
     XOR EAX,EBX                         ; 00491287
-    MOV AL,byte ptr [ECX + 0x1c00648]   ; 00491289 | DAT_01c00648
+    MOV AL,byte ptr [ECX + 0x1c00648]   ; 00491289 | g_SourcePaletteData
     SHL EAX,0x8                         ; 0049128f
     MOV [0x006af574],EAX                ; 00491292 | DAT_006af574
     XOR EAX,EAX                         ; 00491297

@@ -11,7 +11,7 @@ CIcePick * __cdecl core_icepick_cpp_factoryFunc_FUN_004b9cf0(void)
 {
   CIcePick *pCVar1;
   
-  pCVar1 = (CIcePick *)FUN_0056497c(0x1fa6c);
+  pCVar1 = operator_new(0x1fa6c);
   if (pCVar1 == (CIcePick *)0x0) {
     return (CIcePick *)0x0;
   }

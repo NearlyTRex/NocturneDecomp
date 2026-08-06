@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00415370
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xcb38                         ; 00415340
         ;   Label: core_biggs.cpp_factoryFunc_FUN_00415340
-    CALL crt_unknown.c_FUN_0056497c     ; 00415345
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00415345
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0041534a
     TEST EAX,EAX                        ; 0041534d
     JNZ 0x00415352                      ; 0041534f

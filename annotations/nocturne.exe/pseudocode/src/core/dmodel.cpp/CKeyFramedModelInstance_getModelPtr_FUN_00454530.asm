@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057cea8
 ;   TerminatedCString s_Tried_to_do_something_wi_0057cebb
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV ECX,0x57cea8                    ; 0045454b | = "..\\core\\dmodel.cpp"
     MOV ESI,0x52d                       ; 00454550
     PUSH 0x57cebb                       ; 00454555 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0045455a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00454560 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00454566
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0045455a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00454560 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00454566
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0045456b
     POP ESI                             ; 0045456e
     MOV EAX,dword ptr [EBX + 0x178]     ; 0045456f

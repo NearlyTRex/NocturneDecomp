@@ -11,7 +11,7 @@ CCrate * __cdecl core_crate_cpp_factoryFunc_FUN_0043c7e0(void)
 {
   CCrate *pCVar1;
   
-  pCVar1 = (CCrate *)FUN_0056497c(0x2f4);
+  pCVar1 = operator_new(0x2f4);
   if (pCVar1 == (CCrate *)0x0) {
     return (CCrate *)0x0;
   }

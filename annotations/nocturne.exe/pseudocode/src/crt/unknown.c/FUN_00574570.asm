@@ -13,9 +13,9 @@
 ;   undefined2 DAT_005c1d11
 ;
 ; Called Functions:
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_string.c_wcstombs_FUN_00570bd0
-;   crt_unknown.c_FUN_005638d0
 ;   crt_unknown.c_FUN_005713e0
 ;   SetEnvironmentVariableA
 ;   SetEnvironmentVariableW
@@ -78,8 +78,8 @@ section .text
     JNZ 0x005745f1                      ; 005745df
         ;   XREF to: 005745f1 (CONDITIONAL_JUMP)  ; LAB_005745f1
     PUSH EDI                            ; 005745e1
-    CALL crt_unknown.c_FUN_005638d0     ; 005745e2
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 005745e2
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 005745e7
     XOR EAX,EAX                         ; 005745ea
     POP EBP                             ; 005745ec
@@ -99,15 +99,15 @@ section .text
     JNZ 0x00574622                      ; 00574603
         ;   XREF to: 00574622 (CONDITIONAL_JUMP)  ; LAB_00574622
     PUSH EBP                            ; 00574605
-    CALL crt_unknown.c_FUN_005638d0     ; 00574606
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00574606
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0057460b
     TEST EBX,EBX                        ; 0057460e
     JZ 0x0057461b                       ; 00574610
         ;   XREF to: 0057461b (CONDITIONAL_JUMP)  ; LAB_0057461b
     PUSH EBX                            ; 00574612
-    CALL crt_unknown.c_FUN_005638d0     ; 00574613
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00574613
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00574618
     XOR EAX,EAX                         ; 0057461b
         ;   Label: LAB_0057461b
@@ -131,8 +131,8 @@ section .text
     JNZ 0x0057464a                      ; 00574638
         ;   XREF to: 0057464a (CONDITIONAL_JUMP)  ; LAB_0057464a
     PUSH EBX                            ; 0057463a
-    CALL crt_unknown.c_FUN_005638d0     ; 0057463b
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0057463b
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00574640
     XOR EAX,EAX                         ; 00574643
     POP EBP                             ; 00574645
@@ -146,15 +146,15 @@ section .text
     CALL dword ptr CS:[0x575590]        ; 0057464c | PTR_SetEnvironmentVariableA_00575590
     PUSH EBP                            ; 00574653
     MOV ESI,EAX                         ; 00574654
-    CALL crt_unknown.c_FUN_005638d0     ; 00574656
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00574656
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0057465b
     TEST EBX,EBX                        ; 0057465e
     JZ 0x0057466b                       ; 00574660
         ;   XREF to: 0057466b (CONDITIONAL_JUMP)  ; LAB_0057466b
     PUSH EBX                            ; 00574662
-    CALL crt_unknown.c_FUN_005638d0     ; 00574663
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00574663
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00574668
     MOV EAX,ESI                         ; 0057466b
         ;   Label: LAB_0057466b

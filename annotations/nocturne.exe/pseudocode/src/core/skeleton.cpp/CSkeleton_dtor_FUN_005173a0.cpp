@@ -10,6 +10,6 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005173a0(CSkeleton *thi
 
 {
   FUN_005670b1(0xc);
-  core_skeleton_cpp_FUN_005174e0(this_ptr);
+  core_skeleton_cpp_CSkeleton_FUN_005174e0(this_ptr);
   return this_ptr;
 }

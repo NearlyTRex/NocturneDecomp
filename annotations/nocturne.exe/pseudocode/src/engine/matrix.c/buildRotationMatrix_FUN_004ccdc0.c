@@ -53,20 +53,20 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,
   _DAT_01c03a08 =
        (uint)((longlong)iVar7 * (longlong)iVar11) >> 0x10 |
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar11) >> 0x20) << 0x10;
-  if (199 < DAT_005b7620) {
-    if (DAT_005b7620 < 0xc9) {
+  if (199 < (uint)g_WindowHeight) {
+    if ((uint)g_WindowHeight < 0xc9) {
       _DAT_01cc5170 = 0x15555;
       goto LAB_004ccf3c;
     }
-    if (DAT_005b7620 == 400) {
+    if (g_WindowHeight == 400) {
       _DAT_01cc5170 = 0xaaaa;
       goto LAB_004ccf3c;
     }
   }
   _DAT_01cc5170 = 0x10000;
 LAB_004ccf3c:
-  iVar6 = (DAT_005b761c * -(int)(((longlong)_DAT_01c00c4c * 0x10000) / (longlong)_DAT_01c00c48) * 3)
-          / (int)(DAT_005b7620 << 2);
+  iVar6 = (g_WindowWidth * -(int)(((longlong)_DAT_01c00c4c * 0x10000) / (longlong)_DAT_01c00c48) * 3
+          ) / (g_WindowHeight << 2);
   lVar1 = (longlong)iVar6 *
           (longlong)
           (int)(((uint)((longlong)iVar9 * (longlong)iVar11) >> 0x10 |
@@ -81,8 +81,8 @@ LAB_004ccf3c:
           (int)(((uint)((longlong)iVar9 * (longlong)-iVar10) >> 0x10 |
                 (int)((ulonglong)((longlong)iVar9 * (longlong)-iVar10) >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
-  iVar6 = ((((_DAT_01c00c60 - _DAT_01c00c58) * 0x280) / DAT_005b761c) * 0x30000) /
-          (((_DAT_01c00c64 - _DAT_01c00c5c) * 0x1e0) / (int)DAT_005b7620);
+  iVar6 = ((((_DAT_01c00c60 - _DAT_01c00c58) * 0x280) / g_WindowWidth) * 0x30000) /
+          (((_DAT_01c00c64 - _DAT_01c00c5c) * 0x1e0) / g_WindowHeight);
   iVar12 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
   _DAT_01c039e8 =

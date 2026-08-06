@@ -22,13 +22,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592956
 ;   TerminatedCString s_SfxSample_freeMemory_fre_0059296b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   crt_stdio.c_fclose_FUN_00563380
-;   crt_unknown.c_FUN_00564494
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00523b70
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_00523b20
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 004e7dd0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00523a9c
     PUSH EAX                            ; 00523a9f
-    CALL crt_unknown.c_FUN_00564494     ; 00523aa0
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00523aa0
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00523aa5
     MOV EDI,dword ptr [EBX + 0x14c]     ; 00523aa8
         ;   Label: LAB_00523aa8
@@ -90,10 +90,10 @@ section .text
     MOV ECX,0x592956                    ; 00523ae1 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x70a                       ; 00523ae6
     PUSH 0x59296b                       ; 00523aeb | = "SfxSample::freeMemory - freeing sampl..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00523afc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523afc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523b01
     POP ESI                             ; 00523b04
     JMP 0x00523a6f                      ; 00523b05

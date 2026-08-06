@@ -31,9 +31,9 @@ void FUN_00552a20(void);
 // Address: 00552af0
 void FUN_00552af0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00552b40
+// Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40
 // Address: 00552b40
-int __cdecl FUN_00552b40(int width,int height);
+int __cdecl initializeGraphicsSystem(int width,int height);
 
 // Original: wincore_wddvmem.cpp_FUN_00552cb0
 // Address: 00552cb0

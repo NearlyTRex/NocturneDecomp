@@ -14,9 +14,9 @@ void __cdecl core_fire_cpp_CRock_render_FUN_00484d40(CRock *this_ptr)
   CBoundingBox3D local_20;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,(CVector3f *)this_ptr);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-            (DAT_005ae704,&this_ptr->rotation,(CVector3i *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->rotation,(CVector3i *)0x0);
   pCVar1 = this_ptr->model_ptr->frame_bounds;
   local_20.min.x = (pCVar1->min).x;
   local_20.min.y = (pCVar1->min).y;

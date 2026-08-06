@@ -11,7 +11,7 @@ CMoloch * __cdecl core_moloch_cpp_factoryFunc_FUN_004dd900(void)
 {
   CMoloch *pCVar1;
   
-  pCVar1 = (CMoloch *)FUN_0056497c(0x22a00);
+  pCVar1 = operator_new(0x22a00);
   if (pCVar1 == (CMoloch *)0x0) {
     return (CMoloch *)0x0;
   }

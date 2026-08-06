@@ -18,14 +18,16 @@ void engine_drender_cpp_FUN_004574e0(int param_1)
   UIntegerFloat local_28;
   int local_1c;
   
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
+            (g_CDemonRenderer_PTR_005ae704,0);
   iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
             (g_CDemonSet_PTR_005be368,iVar1,
              (CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));
-  if (DAT_005ae704->advanced_culling_enabled != 0) {
-    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+  if (g_CDemonRenderer_PTR_005ae704->advanced_culling_enabled != 0) {
+    engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+              (g_CDemonRenderer_PTR_005ae704,1);
   }
   plane = *(UIntegerFloat **)(param_1 + 0x34);
   uVar2 = 0;
@@ -34,7 +36,7 @@ void engine_drender_cpp_FUN_004574e0(int param_1)
       iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)plane);
       if (iVar1 != 0) {
         engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
-                  (DAT_005ae704,-((uVar2 & 0x7f) + 0x80));
+                  (g_CDemonRenderer_PTR_005ae704,-((uVar2 & 0x7f) + 0x80));
         local_58.surface_normal.A = *plane;
         local_58.surface_normal.B = plane[1];
         local_58.surface_normal.C = plane[2];
@@ -56,7 +58,8 @@ void engine_drender_cpp_FUN_004574e0(int param_1)
       plane = plane + 8;
     } while ((int)uVar2 < *(int *)(param_1 + 0x24));
   }
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,1);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
+            (g_CDemonRenderer_PTR_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(g_CDemonRenderer_PTR_005ae704,1);
   return;
 }

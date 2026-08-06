@@ -9,8 +9,8 @@
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
+;   engine_pod.cpp_CPodFile_FUN_004f7ae0
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240
-;   engine_pod.cpp_FUN_004f7ae0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH EDX                            ; 004f9119
     LEA EAX,[ESP + 0x4]                 ; 004f911a
     PUSH EAX                            ; 004f911e
-    CALL engine_pod.cpp_FUN_004f7ae0    ; 004f911f
-        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f7ae0()
+    CALL engine_pod.cpp_CPodFile_FUN_004f7ae0 ; 004f911f
+        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f9124
     TEST EAX,EAX                        ; 004f9127
     JZ 0x004f9151                       ; 004f9129

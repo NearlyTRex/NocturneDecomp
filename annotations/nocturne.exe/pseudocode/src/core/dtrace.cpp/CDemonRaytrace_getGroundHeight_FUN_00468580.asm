@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_00421b80 at 00421ec7
+;   core_bugs.cpp_CBugs_FUN_00421b80 at 00421ec7
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050ecc7
 ;
 ; Referenced Globals:

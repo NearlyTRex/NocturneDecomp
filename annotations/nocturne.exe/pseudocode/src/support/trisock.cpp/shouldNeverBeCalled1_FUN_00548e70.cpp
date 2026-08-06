@@ -9,8 +9,8 @@
 int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_00548e70(int unknown1,int unknown2)
 
 {
-  g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
-  g_INT_01cc4804 = 0xd0;
-  core_main_c_FUN_004c8440("Should never be called!");
+  g_CurrentFilename = "..\\support\\trisock.cpp";
+  g_CurrentLineNumber = 208;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Should never be called!");
   return unknown1;
 }

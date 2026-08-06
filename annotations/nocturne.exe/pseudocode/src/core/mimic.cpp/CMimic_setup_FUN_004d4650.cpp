@@ -29,9 +29,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004d4650(CMimic *this_ptr)
   
   bVar9 = 0;
   if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
-    g_INT_01cc4804 = 0xb6;
-    core_main_c_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
+    g_CurrentFilename = "..\\core\\mimic.cpp";
+    g_CurrentLineNumber = 182;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   if (iVar7 == 0) {
@@ -89,9 +89,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004d4650(CMimic *this_ptr)
   pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar5,class_name_hash);
   this_ptr->morph_target_actor = pCVar5;
   if (pCVar5 == (CDemonActor *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
-    g_INT_01cc4804 = 0x101;
-    core_main_c_FUN_004c8440("CMimic failed to create morph target actor!");
+    g_CurrentFilename = "..\\core\\mimic.cpp";
+    g_CurrentLineNumber = 257;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMimic failed to create morph target actor!");
   }
   (*((this_ptr->morph_target_actor->vtable)._ub)->setup)(this_ptr->morph_target_actor);
   pCVar1 = &(this_ptr->base).base.model;

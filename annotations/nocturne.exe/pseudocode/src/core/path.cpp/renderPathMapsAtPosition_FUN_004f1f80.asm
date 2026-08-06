@@ -18,14 +18,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce9f
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ceb0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e312f8
 ;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0
 ;
 ; *****************************************************************************
@@ -84,10 +84,10 @@ section .text
         ;   Label: LAB_004f1feb
     MOV ECX,0x6b5                       ; 004f1ff0
     PUSH 0x58ceb0                       ; 004f1ff5 | = "Global pathmap list corruption"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f2006
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f2006
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f200b
     JMP 0x004f1fc3                      ; 004f200e
         ;   XREF to: 004f1fc3 (UNCONDITIONAL_JUMP)  ; LAB_004f1fc3

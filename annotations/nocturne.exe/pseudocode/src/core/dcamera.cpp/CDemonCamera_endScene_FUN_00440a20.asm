@@ -8,25 +8,25 @@
 ; int              Stack[0x8]:4   skip_zbuffer_copy
 ;
 ; XREF[4]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509f95
+;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050acde
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508070
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508c15
-;   core_set.cpp_FUN_00509a80 at 00509f95
-;   core_set.cpp_FUN_0050aba0 at 0050acde
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b704
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_0057b718
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int INT_02dc9d60
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_watcom.c__memcpy_FUN_00481a28
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
 ;   engine_special.cpp_endScene_FUN_00532360
@@ -89,7 +89,7 @@ section .text
     CMP ESI,dword ptr [EBX + 0x140]     ; 00440ab8
     JL 0x00440a7a                       ; 00440abe
         ;   XREF to: 00440a7a (CONDITIONAL_JUMP)  ; LAB_00440a7a
-    MOV EBP,dword ptr [0x005ae704]      ; 00440ac0 | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 00440ac0 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00440ac0
     PUSH EBP                            ; 00440ac6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 00440ac7
@@ -107,10 +107,10 @@ section .text
         ;   Label: LAB_00440adc
     MOV ESI,0x3f9                       ; 00440ae1
     PUSH 0x57b718                       ; 00440ae6 | = "CDemonCamera::endScene - Scene not open!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00440af7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00440af7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00440afc
     JMP 0x00440a3e                      ; 00440aff
         ;   XREF to: 00440a3e (UNCONDITIONAL_JUMP)  ; LAB_00440a3e

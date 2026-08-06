@@ -11,7 +11,7 @@
 ;   core_gore.cpp_CGore_renderDecals_FUN_004afe80 at 004afef5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_005c505c
@@ -63,7 +63,7 @@ section .text
     MOV EDX,0xffff                      ; 004af30e
     MOV dword ptr [0x01c78c88],ECX      ; 004af313 | DAT_01c78c88
     PUSH EDX                            ; 004af319
-    MOV ESI,dword ptr [0x005ae704]      ; 004af31a | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 004af31a | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [0x01c78c90],ECX      ; 004af320 | DAT_01c78c90
     PUSH ESI                            ; 004af326 | DAT_01b4d738
     MOV dword ptr [0x01c78c94],ECX      ; 004af327 | DAT_01c78c94

@@ -27,9 +27,9 @@ void __cdecl CSvetlana::setup(CSvetlana *this_ptr);
 // Address: 00541d00
 void __cdecl CSvetlana::process(CSvetlana *this_ptr,float delta_time);
 
-// Original: core_svetlana.cpp_FUN_005423c0
+// Original: core_svetlana.cpp_CSvetlana_FUN_005423c0
 // Address: 005423c0
-void __cdecl FUN_005423c0(CSvetlana *this_ptr,float delta_time);
+void __cdecl CSvetlana(CSvetlana *this_ptr,float delta_time);
 
 // Original: core_svetlana.cpp_CSvetlana_advanceMotion_FUN_00542ad0
 // Address: 00542ad0

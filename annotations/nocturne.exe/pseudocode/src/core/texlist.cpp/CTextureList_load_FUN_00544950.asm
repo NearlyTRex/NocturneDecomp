@@ -34,11 +34,11 @@
 ;   TerminatedCString s_CTextureList_load_Bad_fi_00596652
 ;   TerminatedCString s_d_00596675
 ;   TerminatedCString s_s_00596679
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_ctype.c_toupper_FUN_00565e20
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fscanf_FUN_00563350
@@ -132,10 +132,10 @@ section .text
     MOV EBX,0x59663e                    ; 005449eb | = "..\\core\\texlist.cpp"
     MOV ESI,0x6a                        ; 005449f0
     PUSH 0x596652                       ; 005449f5 | = "CTextureList::load - Bad filename!"
-    MOV dword ptr [0x01cc4800],EBX      ; 005449fa | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00544a00 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00544a06
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005449fa | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00544a00 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00544a06
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00544a0b
     PUSH EBP                            ; 00544a0e
         ;   Label: LAB_00544a0e
@@ -252,10 +252,10 @@ section .text
         ;   Label: LAB_00544b26
     MOV ECX,0x61                        ; 00544b2b
     PUSH 0x596609                       ; 00544b30 | = "CTextureList::load - No extension found"
-    MOV dword ptr [0x01cc4800],EDX      ; 00544b35 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00544b3b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00544b41
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00544b35 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00544b3b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00544b41
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00544b46
     JMP 0x005449aa                      ; 00544b49
         ;   XREF to: 005449aa (UNCONDITIONAL_JUMP)  ; LAB_005449aa

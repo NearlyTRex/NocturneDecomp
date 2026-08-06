@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_01c00648'"
       }
     ],
     "success": false,
@@ -68,18 +62,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 129,
+    "complexity_score": 89,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "unaffected_reg",
-      "undefined_data"
+      "unaffected_reg"
     ],
     "total_lines": 154
   },
@@ -149,8 +141,8 @@
     },
     {
       "addr": "006af638",
-      "name": "DAT_006af638",
-      "type": "undefined4",
+      "name": "g_PaletteLuminanceCache",
+      "type": "float[256]",
       "value": null
     }
   ],
@@ -393,20 +385,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c00648",
-      "severity": "mild",
-      "text": "pbVar5 = &DAT_01c00648 + start_index * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 27,
-      "match": "DAT_006af638",
-      "severity": "mild",
-      "text": "(float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));",
-      "type": "undefined_data"
+      "match": "(float *)((int)g_PaletteLuminanceCache",
+      "severity": "moderate",
+      "text": "(float)0.57735027000000005 - *(float *)((int)g_PaletteLuminanceCache + iVar7));",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
@@ -423,22 +407,6 @@
       "severity": "moderate",
       "text": "return unaff_EDI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Pointer value `&DAT_006af638` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
-      "match": "(int)&DAT_006af638",
-      "severity": "moderate",
-      "text": "(float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 27,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "(float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));",
-      "type": "pointer_cast"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

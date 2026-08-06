@@ -25,14 +25,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector
   float local_a8;
   float local_a4;
   float local_a0;
-  uint local_9c;
-  uint local_98;
-  uint local_94;
-  uint local_90;
-  uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
+  int local_9c [8];
   CVector3f local_7c;
   CVector3f local_70;
   CVector3f local_64;
@@ -116,28 +109,28 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector
       local_a0 = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,&this_ptr->glass_texture);
+              (g_CDemonRenderer_PTR_005ae704,&this_ptr->glass_texture);
     if (DAT_005b762c == 0x40) {
-      local_8c = 0xf80000;
-      local_98 = 0x80000;
-      local_88 = 0x80000;
-      local_94 = 0xf80000;
-      local_84 = 0x80000;
-      local_90 = 0xf80000;
-      local_80 = 0xf80000;
-      local_9c = 0x80000;
+      local_9c[4] = 0xf80000;
+      local_9c[1] = 0x80000;
+      local_9c[5] = 0x80000;
+      local_9c[2] = 0xf80000;
+      local_9c[6] = 0x80000;
+      local_9c[3] = 0xf80000;
+      local_9c[7] = 0xf80000;
+      local_9c[0] = 0x80000;
     }
     else {
-      local_8c = 0xfe0000;
-      local_98 = 0x20000;
-      local_88 = 0x20000;
-      local_94 = 0xfe0000;
-      local_84 = 0x20000;
-      local_90 = 0xfe0000;
-      local_80 = 0xfe0000;
-      local_9c = 0x20000;
+      local_9c[4] = 0xfe0000;
+      local_9c[1] = 0x20000;
+      local_9c[5] = 0x20000;
+      local_9c[2] = 0xfe0000;
+      local_9c[6] = 0x20000;
+      local_9c[3] = 0xfe0000;
+      local_9c[7] = 0xfe0000;
+      local_9c[0] = 0x20000;
     }
-    core_glass_cpp_FUN_004accf0(this_ptr,&local_cc,&local_9c,&local_8c,0);
+    core_glass_cpp_CGlass_FUN_004accf0(this_ptr,&local_cc,local_9c,local_9c + 4,0);
     (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,"glass-1.wav@2.0");
     if (this_ptr->background_flag != 0) {
       this_ptr->pending_background_render = 1;

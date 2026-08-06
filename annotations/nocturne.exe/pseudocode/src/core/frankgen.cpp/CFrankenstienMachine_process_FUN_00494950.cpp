@@ -153,9 +153,9 @@ switchD_004949bb_caseD_4:
               (this_ptr,1950.0,"frankx-big-ramp.wav");
     return;
   default:
-    g_CHAR_PTR_01cc4800 = "..\\core\\frankgen.cpp";
-    g_INT_01cc4804 = 0x13e;
-    core_main_c_FUN_004c8440("WTF!");
+    g_CurrentFilename = "..\\core\\frankgen.cpp";
+    g_CurrentLineNumber = 318;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("WTF!");
     return;
   }
 }

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_battery.cpp_CBattery_ctor_FUN_00414d80
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2d8                          ; 00414d50
         ;   Label: core_battery.cpp_factoryFunc_FUN_00414d50
-    CALL crt_unknown.c_FUN_0056497c     ; 00414d55
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00414d55
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00414d5a
     TEST EAX,EAX                        ; 00414d5d
     JNZ 0x00414d62                      ; 00414d5f

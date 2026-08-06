@@ -12,7 +12,7 @@
 ;   engine_drender.cpp_FUN_004574e0 at 00457622
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
@@ -40,7 +40,7 @@ section .text
     CMP dword ptr [EBX + 0x1f0],0x0     ; 0050dff6 | g_CGame_01c775ec.scripted_sequence_active
     JNZ 0x0050e039                      ; 0050dffd
         ;   XREF to: 0050e039 (CONDITIONAL_JUMP)  ; LAB_0050e039
-    MOV EBX,dword ptr [0x005ae704]      ; 0050dfff | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0050dfff | g_CDemonRenderer_PTR_005ae704
     MOV EBX,dword ptr [EBX + 0x18]      ; 0050e005 | DAT_01b4d750
     TEST EBX,EBX                        ; 0050e008
     JZ 0x0050e03e                       ; 0050e00a
@@ -81,7 +81,7 @@ section .text
     MOV EBX,EAX                         ; 0050e044
     PUSH EBX                            ; 0050e046
         ;   Label: LAB_0050e046
-    MOV ECX,dword ptr [0x005ae704]      ; 0050e047 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0050e047 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0050e04d | DAT_01b4d738
     INC ESI                             ; 0050e04e
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 ; 0050e04f

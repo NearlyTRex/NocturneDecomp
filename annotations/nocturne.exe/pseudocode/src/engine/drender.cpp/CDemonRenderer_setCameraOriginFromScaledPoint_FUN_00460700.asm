@@ -18,9 +18,9 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610 at 004d6620
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df05d
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec77
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a58e
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e19f
-;   core_set.cpp_FUN_0050a260 at 0050a58e
-;   core_setdir.cpp_FUN_00511d80 at 00511e29
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00512d93
 ;   ... and 3 more
 ;
 ; Referenced Globals:

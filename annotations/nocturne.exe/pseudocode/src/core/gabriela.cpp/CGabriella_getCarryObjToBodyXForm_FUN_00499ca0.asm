@@ -40,12 +40,12 @@
 ;   double DOUBLE_005822d2 = 0.700000000000000
 ;   double DOUBLE_005822da = 0.300000000000000
 ;   undefined4 g_CLightActorActorType_00764a9c.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_buildRotationY_FUN_0055c7b0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180
@@ -326,10 +326,10 @@ section .text
     MOV EAX,0x582292                    ; 0049a074 | = "..\\core\\gabriela.cpp"
     MOV EDX,0x945                       ; 0049a079
     PUSH 0x5822a7                       ; 0049a07e | = "Don't know how to carry light %s"
-    MOV [0x01cc4800],EAX                ; 0049a083 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0049a088 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0049a08e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0049a083 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0049a088 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0049a08e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0049a093
     JMP 0x00499d1a                      ; 0049a096
         ;   XREF to: 00499d1a (UNCONDITIONAL_JUMP)  ; LAB_00499d1a

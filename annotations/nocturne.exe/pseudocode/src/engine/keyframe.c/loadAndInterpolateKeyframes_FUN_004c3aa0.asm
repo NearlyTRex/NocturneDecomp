@@ -18,11 +18,11 @@
 ;   TerminatedCString s_Bad_key_frame_005875f1
 ;   TerminatedCString s_engine_keyframe_c_005875ff
 ;   TerminatedCString s_Key_frame_vertex_mismatc_00587614
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_model.c_getMRGLSize_FUN_004dd520
 ;   engine_model.c_loadModelChunk_FUN_004dd790
 ;   engine_model.c_loadModelFile_FUN_004dcd10
@@ -105,10 +105,10 @@ section .text
     MOV EDX,0x5875dc                    ; 004c3b42 | = "..\\engine\\keyframe.c"
     MOV ECX,0xfd                        ; 004c3b47
     PUSH 0x5875f1                       ; 004c3b4c | = "Bad key frame"
-    MOV dword ptr [0x01cc4800],EDX      ; 004c3b51 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c3b57 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c3b5d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004c3b51 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004c3b57 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c3b5d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c3b62
     MOV EDX,dword ptr [EDI + 0x8]       ; 004c3b65
         ;   Label: LAB_004c3b65
@@ -118,10 +118,10 @@ section .text
     MOV ECX,0x5875ff                    ; 004c3b6d | = "..\\engine\\keyframe.c"
     MOV EDI,0xfe                        ; 004c3b72
     PUSH 0x587614                       ; 004c3b77 | = "Key frame vertex mismatch"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c3b7c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004c3b82 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c3b88
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004c3b7c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004c3b82 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c3b88
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c3b8d
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c3b90
         ;   Label: LAB_004c3b90

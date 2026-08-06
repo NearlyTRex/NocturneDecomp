@@ -10,7 +10,7 @@
 ;   double DOUBLE_00579c55 = 0.25
 ;   undefined4 DAT_0059ae90
 ;   float FLOAT_0059aea8 = 0.5
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0
@@ -53,7 +53,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00421726
     LEA EBX,[ESP + 0xc]                 ; 00421729
     FADD float ptr [EAX + 0x19858]      ; 0042172d
-    MOV EDX,dword ptr [0x005ae704]      ; 00421733 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00421733 | g_CDemonRenderer_PTR_005ae704
     FSTP float ptr [ESP + 0x8]          ; 00421739
     FLD float ptr [EDI + 0x12720]       ; 0042173d
     FADD double ptr [0x00579c55]        ; 00421743 | DOUBLE_00579c55
@@ -95,7 +95,7 @@ section .text
     JL 0x004216e9                       ; 004217b8
         ;   XREF to: 004216e9 (CONDITIONAL_JUMP)  ; LAB_004216e9
     PUSH -0x1                           ; 004217be
-    MOV ESI,dword ptr [0x005ae704]      ; 004217c0 | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 004217c0 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 004217c6
     MOV EDI,0xc                         ; 004217c7
     CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10 ; 004217cc
@@ -113,7 +113,7 @@ section .text
     PUSH EBX                            ; 004217ee
     ADD EAX,ESI                         ; 004217ef
     PUSH EAX                            ; 004217f1
-    MOV EDX,dword ptr [0x005ae704]      ; 004217f2 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004217f2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004217f8
     MOV dword ptr [ESP + 0x24],EAX      ; 004217f9
     CALL engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 ; 004217fd
@@ -122,7 +122,7 @@ section .text
     PUSH EDI                            ; 00421805
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00421806
     PUSH ECX                            ; 0042180a
-    MOV EAX,[0x005ae704]                ; 0042180b | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0042180b | g_CDemonRenderer_PTR_005ae704
     INC EBX                             ; 00421810
     PUSH EAX                            ; 00421811
     INC ESI                             ; 00421812

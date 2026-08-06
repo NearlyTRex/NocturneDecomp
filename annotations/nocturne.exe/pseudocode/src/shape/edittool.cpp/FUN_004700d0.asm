@@ -15,11 +15,11 @@
 ;   undefined4 DAT_01bcddec
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
@@ -96,10 +96,10 @@ section .text
         ;   Label: LAB_00470178
     MOV EBX,0x8b                        ; 0047017d
     PUSH 0x57e510                       ; 00470182 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00470187 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0047018d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00470193
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00470187 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0047018d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00470193
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00470198
     JMP 0x004700e4                      ; 0047019b
         ;   XREF to: 004700e4 (UNCONDITIONAL_JUMP)  ; LAB_004700e4

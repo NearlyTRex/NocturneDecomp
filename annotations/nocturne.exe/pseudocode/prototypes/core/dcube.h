@@ -103,9 +103,9 @@ void __cdecl CDemonCube::allocVoxelMemory(CDemonCube *this_ptr);
 // Address: 0044acb0
 void __cdecl CDemonCube::allocGeometryMemory(CDemonCube *this_ptr);
 
-// Original: core_dcube.cpp_FUN_0044adf0
+// Original: core_dcube.cpp_CDemonCube_FUN_0044adf0
 // Address: 0044adf0
-void FUN_0044adf0(int *param_1);
+void __cdecl CDemonCube(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_FUN_0044ae80
 // Address: 0044ae80
@@ -133,11 +133,11 @@ int __cdecl CDemonCube::testCylinderGroundCollision(CDemonCube *this_ptr,CVector
 
 // Original: core_dcube.cpp_CVector3f_arrdtor_FUN_0044b640
 // Address: 0044b640
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_dcube.cpp_FUN_0044b660
 // Address: 0044b660
-void FUN_0044b660(char *param_1);
+void __cdecl FUN_0044b660(char *filename);
 
 // Original: core_dcube.cpp_FUN_0044b720
 // Address: 0044b720

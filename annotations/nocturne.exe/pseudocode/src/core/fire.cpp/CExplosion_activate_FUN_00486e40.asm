@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0048c0d0 at 0048c0f5
+;   core_fire.cpp_CFireEffect_FUN_0048c0d0 at 0048c0f5
 ;
 ; Referenced Globals:
 ;   float FLOAT_00581210 = 30
@@ -32,7 +32,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_fire.cpp_CFireEffect_createRock_FUN_0048b320
-;   core_set.cpp_FUN_0050e660
+;   core_set.cpp_CDemonSet_FUN_0050e660
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     MOV dword ptr [ESI + 0xc],0x3f800000 ; 00486e7b
     PUSH EDX                            ; 00486e82 | g_CDemonSet_01e57284
     MOV dword ptr [ESI + 0x10],EAX      ; 00486e83
-    CALL core_set.cpp_FUN_0050e660      ; 00486e86
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 00486e86
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 00486e8b
     LEA EDI,[ESI + 0x4]                 ; 00486e8e
     PUSH 0x3f000000                     ; 00486e91

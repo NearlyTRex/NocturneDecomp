@@ -16,13 +16,14 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacte
               (&this_ptr->model,-1,0xffffffff,1,0);
     core_cloth_cpp_CClothList_render_FUN_004385a0(&this_ptr->cloth_list,&this_ptr->model);
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 == 0) {
     if (this_ptr->is_ethereal == 0) {
       core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(this_ptr);
     }
     if (0.0 < this_ptr->stagger_amount) {
-      core_charactr_cpp_FUN_004270e0(this_ptr);
+      core_charactr_cpp_CCharacter_FUN_004270e0(this_ptr);
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_004265a0(this_ptr);

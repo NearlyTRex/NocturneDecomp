@@ -22,7 +22,7 @@
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004a37e0 at 004a3743
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01410280
 ;   undefined4 DAT_01410284
 ;   undefined4 DAT_01410288
@@ -43,7 +43,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 00441616
     MOV EBP,ESI                         ; 0044161a
     MOV ESI,dword ptr [ESP + 0x34]      ; 0044161c
-    MOV EDX,dword ptr [0x005ae704]      ; 00441620 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00441620 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00441626 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441627
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)

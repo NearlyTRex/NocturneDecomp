@@ -36,7 +36,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800
@@ -454,10 +454,10 @@ section .text
     MOV EAX,0x57a278                    ; 00429bf0 | = "..\\core\\charactr.cpp"
     MOV EDX,0xdb4                       ; 00429bf5
     PUSH 0x57a28d                       ; 00429bfa | = "CCharacter::findSomethingToLookAt - S..."
-    MOV [0x01cc4800],EAX                ; 00429bff | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00429c04 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00429c0a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00429bff | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00429c04 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00429c0a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00429c0f
     PUSH EBX                            ; 00429c12
         ;   Label: LAB_00429c12

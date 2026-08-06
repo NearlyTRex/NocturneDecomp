@@ -15,14 +15,14 @@
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_00593b3a
 ;   double DOUBLE_00593b5e = 8.47710503472222E-7
 ;   double DOUBLE_00593b66 = 0.25
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
 ;   undefined4 DAT_02dc84bc
 ;   undefined4 DAT_02dc84c0
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
 ;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0
@@ -87,10 +87,10 @@ section .text
         ;   Label: LAB_0052987b
     MOV EBX,0x148c                      ; 00529880
     PUSH 0x593b3a                       ; 00529885 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052988a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00529890 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00529896
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052988a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00529890 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00529896
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052989b
     JMP 0x00529824                      ; 0052989e
         ;   XREF to: 00529824 (UNCONDITIONAL_JUMP)  ; LAB_00529824

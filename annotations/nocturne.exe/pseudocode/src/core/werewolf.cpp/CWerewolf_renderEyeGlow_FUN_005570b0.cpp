@@ -89,7 +89,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_4c.y = (int)ROUND(local_54 * _DAT_005a42d0);
   local_4c.z = (int)ROUND(local_50 * _DAT_005a42d0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_4c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_4c);
   local_a0 = -0.2f;
   local_20 = 0.2f;
   local_98 = 0;
@@ -111,7 +111,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_7c.z = (int)ROUND(local_50 * _DAT_005a42d0);
   local_1c = local_a0;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_7c);
   local_b4 = -0.2f;
   local_b8 = -0.2f;
   local_b0 = 0;
@@ -133,7 +133,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_1c = local_b8;
   local_18 = local_b4;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_34);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_34);
   local_d8 = -0.2f;
   local_14 = 0.2f;
   local_dc = 0.2f;
@@ -155,9 +155,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_c4.z = (int)ROUND(local_50 * _DAT_005a42d0);
   local_18 = local_d8;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c4);
-  this_ptr_00 = DAT_005ae704;
-  DAT_005ae704->vertex_buffer_ptr->r = 0xffff;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c4);
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
+  g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0xffff;
   this_ptr_00->vertex_buffer_ptr->g = 0;
   this_ptr_00->vertex_buffer_ptr->b = 0;
   this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
@@ -192,8 +192,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(CWerewolf *t
   local_fc = 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (this_ptr_00,(SMRGLTextureBasic *)&DAT_005c1618);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
-  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(DAT_005ae704,&SStack_11c);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
+            (g_CDemonRenderer_PTR_005ae704,&SStack_11c);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

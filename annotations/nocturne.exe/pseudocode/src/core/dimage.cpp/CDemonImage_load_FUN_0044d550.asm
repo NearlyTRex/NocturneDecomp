@@ -30,13 +30,13 @@
 ;   TerminatedCString s_art_0057c463
 ;   TerminatedCString s_core_dimage_cpp_0057c467
 ;   TerminatedCString s_CDemonImage_load_Unable_0057c47a
-;   char* g_CHAR_PTR_01cc4800
+;   char* g_CurrentFilename
 ;   ... and 1 more
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_allocMemory_FUN_0044d460
 ;   core_dimage.cpp_CDemonImage_packColor_FUN_0044d4f0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -133,10 +133,10 @@ section .text
     MOV EAX,0x57c41a                    ; 0044d613 | = "..\\core\\dimage.cpp"
     MOV EDX,0x7b                        ; 0044d618
     PUSH 0x57c42d                       ; 0044d61d | = "CDemonImage::load - Unable to find ex..."
-    MOV [0x01cc4800],EAX                ; 0044d622 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044d62d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0044d622 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044d62d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044d632
     MOV ESI,0x57c45b                    ; 0044d635 | = ".ACT"
         ;   Label: LAB_0044d635
@@ -231,10 +231,10 @@ section .text
         ;   Label: LAB_0044d743
     MOV ECX,0x68                        ; 0044d748
     PUSH 0x57c3f0                       ; 0044d74d | = "CDemonImage::load - Unable to load im..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044d75e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044d75e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044d763
     JMP 0x0044d5a5                      ; 0044d766
         ;   XREF to: 0044d5a5 (UNCONDITIONAL_JUMP)  ; LAB_0044d5a5
@@ -242,10 +242,10 @@ section .text
         ;   Label: LAB_0044d76b
     MOV ESI,0x7f                        ; 0044d770
     PUSH 0x57c47a                       ; 0044d775 | = "CDemonImage::load - Unable to load pa..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044d786
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044d786
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044d78b
     JMP 0x0044d675                      ; 0044d78e
         ;   XREF to: 0044d675 (UNCONDITIONAL_JUMP)  ; LAB_0044d675

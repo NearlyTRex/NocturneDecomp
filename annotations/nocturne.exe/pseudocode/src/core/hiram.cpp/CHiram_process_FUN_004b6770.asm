@@ -19,13 +19,13 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
-;   core_charactr.cpp_FUN_004259f0
-;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_glass.cpp_CGlass_shatter_FUN_004ada20
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
-;   core_mission.cpp_FUN_004d9110
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -46,8 +46,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b677c
     PUSH dword ptr [EBP + 0x18]         ; 004b677f
     PUSH EBX                            ; 004b6782
-    CALL core_charactr.cpp_FUN_004259f0 ; 004b6783
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004b6783
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b6788
     TEST EAX,EAX                        ; 004b678b
     JNZ 0x004b6796                      ; 004b678d
@@ -99,8 +99,8 @@ section .text
     PUSH EBX                            ; 004b67fa
     MOV EDI,dword ptr [0x005baf90]      ; 004b67fb | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004b6801 | DAT_01cc9450
-    CALL core_mission.cpp_FUN_004d9110  ; 004b6802
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004b6802
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004b6807
     JMP 0x004b67d1                      ; 004b680a
         ;   XREF to: 004b67d1 (UNCONDITIONAL_JUMP)  ; LAB_004b67d1
@@ -167,8 +167,8 @@ section .text
     ADD ESP,0x4                         ; 004b6898
     PUSH dword ptr [EBP + 0x18]         ; 004b689b
     PUSH EBX                            ; 004b689e
-    CALL core_charactr.cpp_FUN_0042a150 ; 004b689f
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004b689f
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b68a4
     MOV ESP,EBP                         ; 004b68a7
     POP EBP                             ; 004b68a9

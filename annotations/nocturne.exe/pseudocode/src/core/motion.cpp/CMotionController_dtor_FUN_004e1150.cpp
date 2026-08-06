@@ -20,6 +20,6 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_00564494(this_ptr);
+  operator_delete(this_ptr);
   return this_ptr;
 }

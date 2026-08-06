@@ -16,8 +16,8 @@
 ;   TerminatedCString s_CDemonMission_buildActiv_00589d5d
 ;   undefined4 DAT_005b7650
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonSet_01e57284.actor_count
 ;   undefined4 g_CDemonSet_01e57284.actors[0]
@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0
 ;   crt_string.c__stricmp_FUN_00564520
@@ -94,10 +94,10 @@ section .text
     MOV ECX,0x589d49                    ; 004d920d | = "..\\core\\mission.cpp"
     MOV ESI,0x44e                       ; 004d9212
     PUSH 0x589d5d                       ; 004d9217 | = "CDemonMission::buildActiveSetActorLis..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d921c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d9222 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d9228
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d921c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004d9222 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d9228
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d922d
     MOV EAX,[0x005be368]                ; 004d9230 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d9230

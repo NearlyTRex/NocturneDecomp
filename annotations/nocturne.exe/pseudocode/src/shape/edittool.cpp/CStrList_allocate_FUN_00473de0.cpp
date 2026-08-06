@@ -12,23 +12,23 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00473de0(CStrList *this_pt
   char **ppcVar1;
   
   if (new_capacity < this_ptr->item_count) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x9d4;
-    core_main_c_FUN_004c8440("CStrList::allocate - Can't shrink list!");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2516;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::allocate - Can't shrink list!");
   }
   if (new_capacity < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x9d5;
-    core_main_c_FUN_004c8440("CStrList::allocate - invalid count: %d",new_capacity);
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2517;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::allocate - invalid count: %d");
   }
   if (this_ptr->capacity < new_capacity) {
     this_ptr->capacity = new_capacity;
     ppcVar1 = (char **)realloc(this_ptr->data_array,new_capacity * 4);
     this_ptr->data_array = ppcVar1;
     if (ppcVar1 == (char **)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      g_INT_01cc4804 = 0x9d9;
-      core_main_c_FUN_004c8440("CStrList::insert - out of memory");
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 2521;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::insert - out of memory");
       return;
     }
   }

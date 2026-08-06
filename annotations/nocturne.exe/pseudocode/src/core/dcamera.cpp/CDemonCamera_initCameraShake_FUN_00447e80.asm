@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   decay_time
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0050e660 at 0050e675
+;   core_set.cpp_CDemonSet_FUN_0050e660 at 0050e675
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057bb6b = 65536

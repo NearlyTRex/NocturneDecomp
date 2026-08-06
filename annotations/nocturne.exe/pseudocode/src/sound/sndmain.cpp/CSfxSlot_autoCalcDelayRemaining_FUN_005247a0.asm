@@ -14,15 +14,15 @@
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_00592ddb
 ;   undefined4 DAT_005a2150
 ;   undefined4 DAT_005bea80
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc78e0
 ;   undefined4 DAT_02dc78e8
 ;   undefined4 DAT_02dc78f0
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -49,10 +49,10 @@ section .text
     MOV ECX,0x592dc6                    ; 005247cb | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x935                       ; 005247d0
     PUSH 0x592ddb                       ; 005247d5 | = "SfxSlot::autoCalcDelayRemaining - mus..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005247da | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005247e0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005247e6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005247da | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005247e0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005247e6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005247eb
     POP ESI                             ; 005247ee
     JMP 0x005247b1                      ; 005247ef

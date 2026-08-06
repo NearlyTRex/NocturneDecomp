@@ -14,9 +14,9 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
   int iVar1;
   int iVar2;
   CSmokeParticle *this_ptr_00;
-  CBulletHole *pCVar3;
-  uint *puVar4;
-  char *pcVar5;
+  char *pcVar3;
+  CBulletHole *pCVar4;
+  uint *puVar5;
   byte bVar6;
   char acStack_60 [52];
   float local_2c;
@@ -30,15 +30,15 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
   bVar6 = 0;
   if ((surface_normal->y < (float)0.20000000000000001) && (-0.20000000000000001 < (double)surface_normal->y))
   {
-    pCVar3 = g_CBulletHole_ARRAY_01c20148;
+    pCVar4 = g_CBulletHole_ARRAY_01c20148;
     local_14 = 1;
     if ((hit_actor == (CDemonActor *)0x0) ||
        (iVar2 = (*((hit_actor->vtable)._ub)->allowBulletHoles)(hit_actor), iVar2 != 0)) {
       if ((local_14 != 0) && (iVar2 = 0, 0 < _DAT_01c20140)) {
         do {
-          local_20 = impact_pos->x - (pCVar3->position).x;
-          local_1c = impact_pos->y - (pCVar3->position).y;
-          local_18 = impact_pos->z - (pCVar3->position).z;
+          local_20 = impact_pos->x - (pCVar4->position).x;
+          local_1c = impact_pos->y - (pCVar4->position).y;
+          local_18 = impact_pos->z - (pCVar4->position).z;
           if (&local_2c != &local_20) {
             local_2c = local_20;
             fStack_28 = local_1c;
@@ -47,12 +47,12 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
           if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
               (float)0.057799999999999997) goto LAB_0048ac45;
           iVar2 = iVar2 + 1;
-          pCVar3 = pCVar3 + 1;
+          pCVar4 = pCVar4 + 1;
         } while (iVar2 < _DAT_01c20140);
       }
       if (local_14 != 0) {
-        pCVar3 = core_fire_cpp_allocateBulletHole_FUN_0048a0e0();
-        core_fire_cpp_CBulletHole_init_FUN_00482c80(pCVar3,impact_pos,surface_normal,hit_actor);
+        pCVar4 = core_fire_cpp_allocateBulletHole_FUN_0048a0e0();
+        core_fire_cpp_CBulletHole_init_FUN_00482c80(pCVar4,impact_pos,surface_normal,hit_actor);
       }
     }
   }
@@ -84,21 +84,21 @@ LAB_0048ac45:
       } while (iVar2 < 8);
     }
   }
-  puVar4 = &DAT_005b8bd8;
-  pcVar5 = acStack_60;
+  puVar5 = &DAT_005b8bd8;
+  pcVar3 = acStack_60;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    pcVar5 = pcVar5 + ((uint)bVar6 * -2 + 1) * 4;
+    *(uint *)pcVar3 = *puVar5;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    pcVar3 = pcVar3 + ((uint)bVar6 * -2 + 1) * 4;
   }
-  *(ushort *)pcVar5 = *(ushort *)puVar4;
+  *(ushort *)pcVar3 = *(ushort *)puVar5;
   switch(ground_type) {
   case 2:
   case 8:
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.16666667);
     if (iVar2 != 0) {
-      core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_CONCRETE);
-      _sprintf(acStack_60,"ric-%s!?.wav");
+      pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_CONCRETE);
+      _sprintf(acStack_60,"ric-%s!?.wav",pcVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -109,8 +109,8 @@ LAB_0048ac45:
   case 4:
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.16666667);
     if (iVar2 != 0) {
-      core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_DIRT);
-      _sprintf(acStack_60,"ric-%s.wav");
+      pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_DIRT);
+      _sprintf(acStack_60,"ric-%s.wav",pcVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -120,8 +120,8 @@ LAB_0048ac45:
   case 5:
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.16666667);
     if (iVar2 != 0) {
-      core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_METAL);
-      _sprintf(acStack_60,"ric-%s!?.wav");
+      pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_METAL);
+      _sprintf(acStack_60,"ric-%s!?.wav",pcVar3);
       if (acStack_60[0] == '\0') {
         return;
       }
@@ -131,8 +131,8 @@ LAB_0048ac45:
   case 7:
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(0.16666667);
     if (iVar2 != 0) {
-      core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_WOOD);
-      _sprintf(acStack_60,"ric-%s!?.wav");
+      pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(GROUND_TYPE_WOOD);
+      _sprintf(acStack_60,"ric-%s!?.wav",pcVar3);
       if (acStack_60[0] == '\0') {
         return;
       }

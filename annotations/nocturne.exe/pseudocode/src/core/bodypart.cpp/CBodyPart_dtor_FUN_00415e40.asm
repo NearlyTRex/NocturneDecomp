@@ -18,7 +18,7 @@
 ;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -48,13 +48,13 @@ section .text
     SUB EAX,0x56c                       ; 00415e76
     PUSH EAX                            ; 00415e7b
     CALL core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130 ; 00415e7c
-        ;   XREF to: 00418130 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire * objs, uint flags)
+        ;   XREF to: 00418130 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415e81
     PUSH 0x0                            ; 00415e84
     SUB EAX,0x4c0                       ; 00415e86
     PUSH EAX                            ; 00415e8b
     CALL core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110 ; 00415e8c
-        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel * objs, uint flags)
+        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415e91
     PUSH 0x1                            ; 00415e94
     LEA EBX,[EAX + 0xfffffd78]          ; 00415e96
@@ -85,8 +85,8 @@ section .text
     RET                                 ; 00415ece
     PUSH EAX                            ; 00415ecf
         ;   Label: LAB_00415ecf
-    CALL crt_unknown.c_FUN_00564494     ; 00415ed0
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00415ed0
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00415ed5
     MOV EAX,EBX                         ; 00415ed8
     POP EBX                             ; 00415eda

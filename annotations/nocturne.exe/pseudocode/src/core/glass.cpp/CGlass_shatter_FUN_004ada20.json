@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 118,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 140,
-        "message": "no matching function for call to 'core_glass_cpp_FUN_004accf0'"
       }
     ],
     "success": false,
@@ -74,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 308,
+    "complexity_score": 206,
     "cross_reference_count": 10,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 15,
+    "pseudocode_lines": 131,
+    "suspect_count": 6,
     "suspect_types": [
-      "raw_address_constant",
       "self_copy_guard",
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 394
+    "total_lines": 387
   },
   "cross_references": [
     {
@@ -99,13 +86,13 @@
     {
       "addr": "0043d1c0",
       "from_addr": "0043d7b4",
-      "name": "core_crossbow.cpp_FUN_0043d1c0",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00477890",
       "from_addr": "00477f49",
-      "name": "core_elephant.cpp_FUN_00477890",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00477890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,13 +122,13 @@
     {
       "addr": "00515ea0",
       "from_addr": "00516590",
-      "name": "core_shotgun.cpp_FUN_00515ea0",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00515ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00545c30",
       "from_addr": "005463ac",
-      "name": "core_tommygun.cpp_FUN_00545c30",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00545c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -172,7 +159,7 @@
     {
       "addr": "004accf0",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004accf0"
+      "name": "core_glass.cpp_CGlass_FUN_004accf0"
     },
     {
       "addr": "0050e300",
@@ -235,9 +222,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b762c",
@@ -593,87 +580,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&this_ptr->glass_texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
+      "line": 106,
       "match": "DAT_005b762c",
       "severity": "mild",
       "text": "if (DAT_005b762c == 0x40) {",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 114,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_8c = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_94`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_94` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 117,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_94 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_90`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_90` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 119,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_90 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xf80000 assigned to bare local `local_80`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_80` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 120,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "local_80 = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xfe0000 assigned to bare local `local_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 124,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_8c = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xfe0000 assigned to bare local `local_94`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_94` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 127,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_94 = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xfe0000 assigned to bare local `local_90`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_90` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 129,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_90 = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xfe0000 assigned to bare local `local_80`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_80` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 130,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_80 = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 46,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -681,7 +596,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_cc != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 73,
+      "line": 66,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_cc != &local_40) {",
@@ -689,7 +604,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 84,
+      "line": 77,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_c0 != &local_58) {",
@@ -697,7 +612,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_b4 != &local_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 95,
+      "line": 88,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_b4 != &local_34) {",
@@ -705,7 +620,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a8 != &local_28)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 106,
+      "line": 99,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_a8 != &local_28) {",

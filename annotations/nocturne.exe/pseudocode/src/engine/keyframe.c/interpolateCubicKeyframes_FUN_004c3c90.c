@@ -43,10 +43,6 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   double dVar29;
   double dVar30;
   double dVar31;
-  uint uVar32;
-  uint uVar33;
-  uint uVar34;
-  uint uVar35;
   int iStack_34;
   int local_2c;
   int *local_28;
@@ -83,9 +79,9 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   }
   pSVar21 = keyframe_model->base_keyframes;
   if ((pSVar21->header).child_count != 2) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\keyframe.c";
-    g_INT_01cc4804 = 0x16b;
-    core_main_c_FUN_004c8440("Bad keyframe 1");
+    g_CurrentFilename = "..\\engine\\keyframe.c";
+    g_CurrentLineNumber = 363;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Bad keyframe 1");
   }
   fVar15 = (float)uVar23 * (float)1.52587890625e-05;
   fVar16 = fVar15 * fVar15;
@@ -104,16 +100,12 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   pSVar26 = keyframe_model->loaded_frames[local_1c] + 1;
   pSVar27 = keyframe_model->loaded_frames[iVar28] + 1;
   iVar2 = (pSVar21->vertex_header).count;
-  uVar35 = 0x4c3e61;
   dVar29 = round
                      ((double)((fVar9 * 0.5f - fVar16 * 0.5f) *
                               (float)65536));
   local_28 = (int *)(int)ROUND(dVar29);
-  uVar34 = 0x4c3e6c;
   dVar29 = round((double)(((fVar10 + fVar16) - fVar15) * fVar14));
-  uVar33 = 0x4c3e73;
   dVar30 = round((double)((fVar13 + fVar11 + 1.0) * fVar12));
-  uVar32 = 0x4c3e7a;
   dVar31 = round((double)((fVar8 + fVar6 + fVar15) * fVar7));
   iVar28 = (int)ROUND(dVar29);
   iVar24 = (int)ROUND(dVar30);
@@ -159,9 +151,9 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
     } while (local_2c < *(int *)(uVar23 + 8));
   }
   if ((pSVar22->header).base.type != 0x17) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\keyframe.c";
-    g_INT_01cc4804 = 0x1a6;
-    core_main_c_FUN_004c8440("ZBP not found!",uVar32,uVar33,uVar34,uVar35);
+    g_CurrentFilename = "..\\engine\\keyframe.c";
+    g_CurrentLineNumber = 422;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("ZBP not found!");
   }
   pSVar21 = keyframe_model->base_keyframes;
   texture = (SMRGLPrimitiveTriangle *)&pSVar22->vertex_header;

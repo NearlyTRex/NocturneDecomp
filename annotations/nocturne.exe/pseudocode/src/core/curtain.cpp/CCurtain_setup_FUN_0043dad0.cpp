@@ -47,7 +47,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
   bVar20 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,&this_ptr->curtain_texture);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->curtain_texture);
   while( true ) {
     fVar2 = 1.0 / this_ptr->patch_size;
     fVar1 = (this_ptr->curtain_size).y;

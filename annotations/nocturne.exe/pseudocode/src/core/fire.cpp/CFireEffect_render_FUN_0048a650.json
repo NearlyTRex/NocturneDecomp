@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -86,34 +86,34 @@
         "message": "use of undeclared identifier 'DAT_01c69610'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 67,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 74,
+        "line": 75,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 83,
+        "line": 84,
         "message": "use of undeclared identifier '_DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 92,
+        "line": 93,
         "message": "use of undeclared identifier 'DAT_01c20140'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 99,
+        "line": 100,
         "message": "use of undeclared identifier 'DAT_01c4f088'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 102,
+        "message": "use of undeclared identifier '_DAT_01c5c700'"
       }
     ],
     "success": false,
@@ -122,38 +122,38 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 391,
+    "complexity_score": 382,
     "cross_reference_count": 3,
     "function_call_count": 17,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 161,
-    "suspect_count": 21,
+    "pseudocode_lines": 162,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 508
+    "total_lines": 509
   },
   "cross_references": [
     {
-      "addr": "00509760",
-      "from_addr": "00509952",
-      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00509a80",
       "from_addr": "00509df1",
-      "name": "core_set.cpp_FUN_00509a80",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050a260",
       "from_addr": "0050a466",
-      "name": "core_set.cpp_FUN_0050a260",
+      "name": "core_set.cpp_CDemonSet_FUN_0050a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509760",
+      "from_addr": "00509952",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -260,9 +260,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005be368",
@@ -539,7 +539,7 @@
       {
         "call_addr": "00509df1",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -550,7 +550,7 @@
       {
         "call_addr": "00509e16",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -561,7 +561,7 @@
       {
         "call_addr": "0050a466",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -689,15 +689,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01c20140",
       "severity": "mild",
       "text": "} while (this_ptr_03 != (CSmokeParticle *)&DAT_01c20140);",
@@ -705,7 +697,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_01c4f088",
       "severity": "mild",
       "text": "} while (this_ptr_04 != (CMuzzleFlash *)&DAT_01c4f088);",
@@ -713,7 +705,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 110,
       "match": "DAT_01c4e954",
       "severity": "mild",
       "text": "} while (this_ptr_05 != (CSpark *)&DAT_01c4e954);",
@@ -721,7 +713,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 124,
       "match": "DAT_01c58df8",
       "severity": "mild",
       "text": "} while (this_ptr_07 != (CBulletTrail *)&DAT_01c58df8);",
@@ -729,7 +721,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 129,
       "match": "DAT_01c5d820",
       "severity": "mild",
       "text": "} while (this_ptr_08 != (CExplosion *)&DAT_01c5d820);",
@@ -737,7 +729,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 134,
       "match": "DAT_01c625f4",
       "severity": "mild",
       "text": "} while (this_ptr_09 != (CToss *)&DAT_01c625f4);",
@@ -745,7 +737,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 139,
       "match": "DAT_01c6750c",
       "severity": "mild",
       "text": "} while (this_ptr_10 != (CGunFlame *)&DAT_01c6750c);",
@@ -753,7 +745,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 144,
       "match": "DAT_01c676c8",
       "severity": "mild",
       "text": "} while (this_ptr_11 != (CLightningBolt *)&DAT_01c676c8);",
@@ -761,7 +753,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 149,
       "match": "DAT_01c684dc",
       "severity": "mild",
       "text": "} while (this_ptr_12 != (CTrail *)&DAT_01c684dc);",
@@ -769,7 +761,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 156,
       "match": "DAT_01c6ce14",
       "severity": "mild",
       "text": "} while (&this_ptr_13->base != (CParticle *)&DAT_01c6ce14);",
@@ -777,7 +769,7 @@
     },
     {
       "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) != 0) {",
@@ -785,7 +777,7 @@
     },
     {
       "description": "Pointer value `&g_CBulletHole_ARRAY_01c20148[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&g_CBulletHole_ARRAY_01c20148[0].position.x",
       "severity": "moderate",
       "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",
@@ -801,7 +793,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) != 0) {",
@@ -809,7 +801,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((CBulletHole *)((int)&g_CBulletHole_ARRAY_01c20148[0].position.x + iVar1));",

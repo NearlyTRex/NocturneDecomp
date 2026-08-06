@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_stairs.cpp_CStairs_ctor_FUN_005347b0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xa2c                          ; 00534780
         ;   Label: core_stairs.cpp_factoryFunc_FUN_00534780
-    CALL crt_unknown.c_FUN_0056497c     ; 00534785
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00534785
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0053478a
     TEST EAX,EAX                        ; 0053478d
     JNZ 0x00534792                      ; 0053478f

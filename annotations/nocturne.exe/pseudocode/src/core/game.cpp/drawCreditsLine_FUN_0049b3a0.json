@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -93,7 +93,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
+        "column": 41,
         "line": 17,
         "message": "use of undeclared identifier '_DAT_01c78ae4'"
       },
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 60
@@ -158,15 +157,15 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "014b9900",
@@ -261,22 +260,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (_DAT_01c78ae0 <= DAT_005b7620 + _DAT_01c78ae4 * -4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "_DAT_01c78adc = _DAT_01c78adc + DAT_005b761c / 3;",
-      "type": "undefined_data"
     }
   ]
 }

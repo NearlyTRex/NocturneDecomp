@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005ae488
 ;   undefined4 DAT_005ae4b8
 ;   WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae638
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -26,7 +26,7 @@ section .text
         ;   Label: core_dlight.cpp_captureLightTextures_FUN_004504e0
     PUSH ESI                            ; 004504e1
     PUSH 0x5ae470                       ; 004504e2 | DAT_005ae470
-    MOV EDX,dword ptr [0x005ae704]      ; 004504e7 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004504e7 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004504ed | DAT_01b4d738
     MOV EBX,0x5ae488                    ; 004504ee | DAT_005ae488
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004504f3
@@ -35,7 +35,7 @@ section .text
     ADD ESP,0x8                         ; 004504fe
     PUSH EBX                            ; 00450501 | DAT_005ae488 | DAT_005ae4b8
         ;   Label: LAB_00450501
-    MOV ECX,dword ptr [0x005ae704]      ; 00450502 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00450502 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00450508 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00450509
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

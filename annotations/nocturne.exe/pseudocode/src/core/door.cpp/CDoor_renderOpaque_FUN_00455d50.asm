@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -60,7 +60,7 @@ section .text
     CMP dword ptr [EBX + 0x9cc],0x0     ; 00455d96
     JZ 0x00455ddf                       ; 00455d9d
         ;   XREF to: 00455ddf (CONDITIONAL_JUMP)  ; LAB_00455ddf
-    MOV EDI,dword ptr [0x005ae704]      ; 00455d9f | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 00455d9f | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 00455da5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00455da6
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

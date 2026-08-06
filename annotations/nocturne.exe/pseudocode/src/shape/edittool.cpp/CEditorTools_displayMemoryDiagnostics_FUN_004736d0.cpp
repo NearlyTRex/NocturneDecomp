@@ -39,7 +39,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736
   case 4:
     if (0 < iVar3) {
       local_18 = iVar6;
-      _sprintf(output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk");
+      _sprintf(output_buffer,"Blocks: %d Total: %.1fk Max: %.1fk",iVar3,
+                 (double)iVar6 * 0.0009765625,(double)(int)uVar4 * 0.0009765625);
       return;
     }
   case 1:

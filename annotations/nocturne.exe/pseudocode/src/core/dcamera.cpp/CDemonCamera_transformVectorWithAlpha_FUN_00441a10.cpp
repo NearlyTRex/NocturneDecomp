@@ -38,7 +38,8 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_
           (longlong)input_vector->x * (longlong)_DAT_01c039f0 +
           (longlong)input_vector->z * (longlong)_DAT_01c03a08;
   local_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar4 == 0) {
     lVar1 = (longlong)(int)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].x +
             (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].x +

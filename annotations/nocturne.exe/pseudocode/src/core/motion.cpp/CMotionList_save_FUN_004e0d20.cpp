@@ -45,14 +45,13 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr
       _fprintf(file_handle,"\"%s\",%g,%d,%d,%d\n",local_14,(double)local_14->fps,
                  local_14->state_index,local_14->frame_start,local_14->frame_count);
       _fprintf(file_handle,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n",local_18);
-      _fprintf(file_handle,"%d,%d,%g\n",local_14->exit_forward_from_frame,
-                 local_14->exit_forward_to_motion,(double)local_14->exit_forward_to_frame);
+      _fprintf(file_handle,"%d,%d,%g\n");
       _fprintf(file_handle,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n",local_18);
-      _fprintf(file_handle,"%d,%g,%d\n",local_14->exit_forward_cmd,
-                 (double)local_14->exit_forward_tween_time,local_14->exit_forward_set_new_state);
+      _fprintf(file_handle,"%d,%g,%d\n");
       _fprintf(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n",local_18);
       _fprintf(file_handle,"%d,%g\n",local_14->exit_backward_to_motion,
-                 (double)local_14->exit_backward_to_frame);
+                 SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),
+                 (int)((ulonglong)(double)local_14->exit_backward_to_frame >> 0x20));
       _fprintf(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
       iVar7 = 0;
       _fprintf(file_handle,"%d\n",local_14->transition_count);
@@ -68,16 +67,19 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr
           pSVar8 = pSVar8 + 1;
           iVar7 = iVar7 + 1;
           _fprintf(file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*pEVar5,*piVar4,(double)*pfVar3,
-                     (double)*pfVar2,*piVar1);
+                     SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
         } while (iVar7 < local_14->transition_count);
       }
       _fprintf(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);
       iVar7 = 0;
       _fprintf(file_handle,"%d\n",local_14->signal_count);
+      pSVar9 = local_14;
       if (0 < local_14->signal_count) {
         do {
           iVar7 = iVar7 + 1;
-          _fprintf();
+          _fprintf(file_handle,"%d,%d\n",pSVar9->signals[0].frame_number,
+                     pSVar9->signals[0].value);
+          pSVar9 = (SMotion *)(pSVar9->motion_name + 8);
         } while (iVar7 < local_14->signal_count);
       }
       _fprintf(file_handle,"// motion %d marker count, list\n",local_18);

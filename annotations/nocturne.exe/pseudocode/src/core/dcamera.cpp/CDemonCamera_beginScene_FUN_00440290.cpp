@@ -84,13 +84,13 @@ switchD_004402a8_caseD_3:
     this_ptr->scene_open_flag = 1;
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    g_INT_01cc4804 = 0x2f3;
-    core_main_c_FUN_004c8440("CDemonCamera::beginScene - Scene already open!");
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 755;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(this_ptr,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
-            (DAT_005ae704,this_ptr->framebuffer_width,this_ptr->framebuffer_height,
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->framebuffer_width,this_ptr->framebuffer_height,
              this_ptr->screen_width + -1,(int)this_ptr->max_distance + -1);
   iVar5 = this_ptr->framebuffer_width;
   iVar1 = this_ptr->screen_width;
@@ -103,14 +103,14 @@ switchD_004402a8_caseD_3:
   _DAT_01c00c50 = _DAT_01c00c50 + uVar4 * 0x10000;
   _DAT_01c00c54 = _DAT_01c00c54 + _DAT_012ceb74 * -0x10000;
   (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + (int)fVar2 + -1;
-  this_ptr_00 = DAT_005ae704;
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
             (this_ptr_00,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-            (DAT_005ae704,this_ptr->focal_length);
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-            (DAT_005ae704,&this_ptr->rotation_matrix);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (INT_02dc9d60 != 0) {
       engine_special_cpp_beginScene_FUN_00532340();

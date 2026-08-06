@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   weapon_category
 ;
 ; XREF[2]:
+;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2672
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850 at 004c08ec
-;   core_inv.cpp_FUN_004c2470 at 004c2672
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_00587411

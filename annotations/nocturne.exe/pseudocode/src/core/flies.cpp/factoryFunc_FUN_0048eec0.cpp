@@ -11,7 +11,7 @@ CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_0048eec0(void)
 {
   CFlies *pCVar1;
   
-  pCVar1 = (CFlies *)FUN_0056497c(0x2a18);
+  pCVar1 = operator_new(0x2a18);
   if (pCVar1 == (CFlies *)0x0) {
     return (CFlies *)0x0;
   }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,15 @@
       },
       {
         "category": "incompatible_types",
-        "column": 3,
-        "line": 35,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d7ea0'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 37,
+        "line": 38,
         "message": "no matching function for call to 'core_mission_cpp_FUN_004d9900'"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 43,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 47,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 52,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 63,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 69,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 29,
-        "line": 73,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
-        "line": 82,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 31,
-        "line": 93,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 34,
+        "line": 75,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,12 +74,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 338,
+    "complexity_score": 340,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
+    "pseudocode_lines": 235,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -136,13 +88,13 @@
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 803
+    "total_lines": 805
   },
   "cross_references": [
     {
       "addr": "004a4170",
       "from_addr": "004a47db",
-      "name": "core_game.cpp_FUN_004a4170",
+      "name": "core_game.cpp_CGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -208,7 +160,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004d8c60",
@@ -218,7 +170,7 @@
     {
       "addr": "004d7ea0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d7ea0"
+      "name": "core_mission.cpp_CDemonMission_FUN_004d7ea0"
     },
     {
       "addr": "004d9900",
@@ -232,7 +184,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -449,13 +401,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -466,7 +418,7 @@
       {
         "call_addr": "004a47db",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -630,80 +582,42 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonMission_readMissionFile_FUN_004d7fe0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 49,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 84,
-          "message": "Uninitialized variable: local_20",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 132,
-          "message": "Uninitialized variable: local_28",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 33,
-          "line": 96,
-          "message": "Uninitialized variable: local_1c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(char *)((int)pcVar9",
+      "line": 87,
+      "match": "(char *)((int)pcVar10",
       "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 128,
       "match": "DAT_005bb000",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005bb000;",
+      "text": "puVar8 = &DAT_005bb000;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 135,
       "match": "DAT_005bb068",
       "severity": "mild",
-      "text": "puVar7 = &DAT_005bb068;",
+      "text": "puVar8 = &DAT_005bb068;",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `pcVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
-      "match": "(int)pcVar9",
+      "description": "Pointer value `pcVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)pcVar10",
       "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 145,
+      "line": 147,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -711,7 +625,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 81,
+      "line": 84,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -719,7 +633,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 128,
+      "line": 130,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -727,43 +641,11 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 135,
+      "line": 137,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 49,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_2c < 4) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_20) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_28",
-      "line": 132,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "while (local_14 < local_28 + local_24) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_1c",
-      "line": 96,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (pCVar3->type_id < local_1c) {",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

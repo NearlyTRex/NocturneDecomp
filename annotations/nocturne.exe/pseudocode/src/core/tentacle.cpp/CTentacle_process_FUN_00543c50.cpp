@@ -59,7 +59,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
   float fStack_18;
   
   bVar14 = 0;
-  iVar4 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar4 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     local_24 = (CVector3f *)&(this_ptr->base).base.base.orient;
     local_258 = delta_time * (this_ptr->base).speed;
@@ -272,7 +272,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
     core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   }
   return;
 }

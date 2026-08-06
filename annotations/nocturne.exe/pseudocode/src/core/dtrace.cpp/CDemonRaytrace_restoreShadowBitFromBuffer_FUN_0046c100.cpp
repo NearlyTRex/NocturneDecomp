@@ -46,9 +46,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
                             (this_ptr,local_34,local_30,local_2c);
     if (this_ptr_00 == (CDemonCube *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-      g_INT_01cc4804 = 0xb55;
-      core_main_c_FUN_004c8440("Parity Check 999");
+      g_CurrentFilename = "..\\core\\dtrace.cpp";
+      g_CurrentLineNumber = 2901;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Parity Check 999");
     }
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30(this_ptr_00);

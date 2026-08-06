@@ -15,11 +15,11 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;
@@ -38,10 +38,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 00477090 | = "..\\shape\\edittool.cpp"
     MOV ESI,0x8b                        ; 00477095
     PUSH 0x57e510                       ; 0047709a | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047709f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004770a5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004770ab
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047709f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004770a5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004770ab
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004770b0
     POP ESI                             ; 004770b3
     MOV EAX,[0x01bcd070]                ; 004770b4 | DAT_01bcd070

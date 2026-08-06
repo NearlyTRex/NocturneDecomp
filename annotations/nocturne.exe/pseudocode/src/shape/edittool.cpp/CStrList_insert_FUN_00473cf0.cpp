@@ -18,9 +18,9 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(CStrList *this_ptr,
   
   bVar6 = 0;
   if ((insert_index < 0) || (this_ptr->item_count < insert_index)) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x9ba;
-    core_main_c_FUN_004c8440("CStrList::insert - invalid index");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2490;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::insert - invalid index");
   }
   iVar2 = this_ptr->item_count;
   iVar5 = iVar2 + 1;
@@ -42,9 +42,9 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(CStrList *this_ptr,
   pcVar3 = (char *)malloc(~uVar4);
   this_ptr->data_array[insert_index] = pcVar3;
   if (this_ptr->data_array[insert_index] == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x9c8;
-    core_main_c_FUN_004c8440("CStrList::insert - out of memory");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 2504;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::insert - out of memory");
   }
   pcVar3 = this_ptr->data_array[insert_index];
   do {

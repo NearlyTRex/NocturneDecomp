@@ -7,9 +7,9 @@
 // Address: 00534e30
 void __cdecl staticInit(void);
 
-// Original: core_stranger.cpp_FUN_00534e90
+// Original: core_stranger.cpp_motionBlendWeightFunc_FUN_00534e90
 // Address: 00534e90
-float FUN_00534e90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl motionBlendWeightFunc(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_stranger.cpp_FUN_00534f90
 // Address: 00534f90
@@ -39,29 +39,29 @@ void __cdecl CStranger::setup(CStranger *this_ptr);
 // Address: 005357d0
 void __cdecl CStranger::process(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_00535900
+// Original: core_stranger.cpp_CStranger_FUN_00535900
 // Address: 00535900
-void __cdecl FUN_00535900(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0
 // Address: 00537cd0
 void __cdecl CStranger::processMotionEvents(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_005383e0
+// Original: core_stranger.cpp_CStranger_FUN_005383e0
 // Address: 005383e0
-undefined4 FUN_005383e0(int param_1);
+float __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_00538440
+// Original: core_stranger.cpp_CStranger_FUN_00538440
 // Address: 00538440
-float * FUN_00538440(int param_1,float *param_2);
+float * __cdecl CStranger(CStranger *this_ptr,float *param_2);
 
-// Original: core_stranger.cpp_FUN_005384d0
+// Original: core_stranger.cpp_CStranger_FUN_005384d0
 // Address: 005384d0
-void __cdecl FUN_005384d0(CStranger *this_ptr);
+void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_005396d0
+// Original: core_stranger.cpp_CStranger_FUN_005396d0
 // Address: 005396d0
-void __cdecl FUN_005396d0(CStranger *this_ptr,SPose *out_pose);
+void __cdecl CStranger(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0
 // Address: 005397b0
@@ -107,9 +107,9 @@ int __cdecl CStranger::tryClimbLadder(CStranger *this_ptr);
 // Address: 0053c3b0
 int __cdecl CStranger::tryDescendLadder(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0053c800
+// Original: core_stranger.cpp_CStranger_FUN_0053c800
 // Address: 0053c800
-int __cdecl FUN_0053c800(CStranger *this_ptr);
+int __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_archive_FUN_0053cf90
 // Address: 0053cf90
@@ -155,25 +155,25 @@ void __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand
 // Address: 0053f260
 CVector3f * __cdecl CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *out_direction);
 
-// Original: core_stranger.cpp_FUN_0053f310
+// Original: core_stranger.cpp_CStranger_FUN_0053f310
 // Address: 0053f310
-void __cdecl FUN_0053f310(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_0053fc60
+// Original: core_stranger.cpp_CStranger_FUN_0053fc60
 // Address: 0053fc60
-void __cdecl FUN_0053fc60(CStranger *this_ptr);
+void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_tryThrowDynamite_FUN_0053ff50
 // Address: 0053ff50
 int __cdecl CStranger::tryThrowDynamite(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0053ffe0
+// Original: core_stranger.cpp_CStranger_FUN_0053ffe0
 // Address: 0053ffe0
-void __cdecl FUN_0053ffe0(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_FUN_005402f0
+// Original: core_stranger.cpp_CStranger_FUN_005402f0
 // Address: 005402f0
-void __cdecl FUN_005402f0(CStranger *this_ptr);
+void __cdecl CStranger(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660
 // Address: 00540660

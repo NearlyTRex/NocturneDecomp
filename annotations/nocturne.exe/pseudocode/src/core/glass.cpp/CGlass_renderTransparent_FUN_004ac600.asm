@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059e390
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
@@ -54,7 +54,7 @@ section .text
     POP ESI                             ; 004ac62c
     POP EBX                             ; 004ac62d
     RET                                 ; 004ac62e
-    MOV ESI,dword ptr [0x005ae704]      ; 004ac62f | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 004ac62f | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004ac62f
     PUSH ESI                            ; 004ac635 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004ac636
@@ -82,7 +82,7 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004ac668
     LEA EAX,[EBP + 0x15c]               ; 004ac66c
     PUSH EAX                            ; 004ac672
-    MOV EDI,dword ptr [0x005ae704]      ; 004ac673 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 004ac673 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004ac679 | DAT_01b4d738
     XOR ESI,ESI                         ; 004ac67a
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004ac67c
@@ -133,7 +133,7 @@ section .text
     IMUL EDX                            ; 004ac709
     SHRD EAX,EDX,0x10                   ; 004ac70b
     PUSH EAX                            ; 004ac70f
-    MOV ECX,dword ptr [0x005ae704]      ; 004ac710 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004ac710 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004ac716 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004ac717
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
@@ -158,7 +158,7 @@ section .text
     JLE 0x004ac7a0                      ; 004ac751
         ;   XREF to: 004ac7a0 (CONDITIONAL_JUMP)  ; LAB_004ac7a0
     MOV EBX,EBP                         ; 004ac753
-    MOV ECX,dword ptr [0x005ae704]      ; 004ac755 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004ac755 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004ac755
     MOV dword ptr [EBX + 0x6ac],0x0     ; 004ac75b
     PUSH EDI                            ; 004ac765

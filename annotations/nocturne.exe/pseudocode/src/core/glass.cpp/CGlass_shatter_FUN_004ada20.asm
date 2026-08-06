@@ -49,14 +49,14 @@
 ;
 ; XREF[10]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b7a0
-;   core_crossbow.cpp_FUN_0043d1c0 at 0043d7b4
-;   core_elephant.cpp_FUN_00477890 at 00477f49
+;   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 at 0043d7b4
+;   core_elephant.cpp_CElephantGun_fire_FUN_00477890 at 00477f49
 ;   core_glass.cpp_CGlass_process_FUN_004ac3f0 at 004ac429
 ;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2ef2
 ;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6864
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 005094fc
-;   core_shotgun.cpp_FUN_00515ea0 at 00516590
-;   core_tommygun.cpp_FUN_00545c30 at 005463ac
+;   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 at 00516590
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 at 005463ac
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afc2
 ;
 ; Referenced Globals:
@@ -67,7 +67,7 @@
 ;   TerminatedCString s_glass_1_wav_2_0_00585053
 ;   double DOUBLE_00585068 = 0.5
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b762c
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
@@ -75,7 +75,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
-;   core_glass.cpp_FUN_004accf0
+;   core_glass.cpp_CGlass_FUN_004accf0
 ;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
@@ -245,7 +245,7 @@ section .text
     LEA EAX,[EBX + 0x15c]               ; 004adc61
         ;   Label: LAB_004adc61
     PUSH EAX                            ; 004adc67
-    MOV EDX,dword ptr [0x005ae704]      ; 004adc68 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004adc68 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004adc6e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004adc6f
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -273,8 +273,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004adcbc
     PUSH EAX                            ; 004adcc0
     PUSH EBX                            ; 004adcc1
-    CALL core_glass.cpp_FUN_004accf0    ; 004adcc2
-        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004accf0()
+    CALL core_glass.cpp_CGlass_FUN_004accf0 ; 004adcc2
+        ;   XREF to: 004accf0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004accf0(CGlass * this_ptr, float * param_2, int * param_3, int * param_4, ...)
     ADD ESP,0x14                        ; 004adcc7
     PUSH 0x585053                       ; 004adcca | = "glass-1.wav@2.0"
     MOV EAX,dword ptr [EBX + 0x14c]     ; 004adccf

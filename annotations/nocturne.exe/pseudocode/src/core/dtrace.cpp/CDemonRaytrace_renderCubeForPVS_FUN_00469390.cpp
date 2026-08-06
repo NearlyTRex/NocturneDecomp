@@ -193,10 +193,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
         _DAT_01b7b740 = _DAT_01b7b740 + 1;
         local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,&local_64);
+                  (g_CDemonRenderer_PTR_005ae704,&local_64);
         core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
+                  (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
         iVar3 = _DAT_01b7b744;
         *(CDemonCube **)(_DAT_01b7b744 * 4 + 0x1b7b74c) = local_4c;
         if (g_CVector3f_ARRAY_01b8efcc + iVar3 != &local_64) {
@@ -206,9 +206,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemon
         }
         _DAT_01b7b744 = _DAT_01b7b744 + 1;
         if (19999 < _DAT_01b7b744) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-          g_INT_01cc4804 = 0x792;
-          core_main_c_FUN_004c8440("Too many drawn cubes.  Need to recompile.");
+          g_CurrentFilename = "..\\core\\dtrace.cpp";
+          g_CurrentLineNumber = 1938;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Too many drawn cubes.  Need to recompile.");
           return;
         }
       }

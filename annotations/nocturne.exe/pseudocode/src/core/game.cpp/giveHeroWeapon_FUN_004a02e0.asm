@@ -15,15 +15,15 @@
 ;   TerminatedCString s_giveHeroWeapon_This_is_n_00582b63
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0e8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_createActorByName_FUN_0040d540
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;
 ; *****************************************************************************
@@ -89,10 +89,10 @@ section .text
         ;   Label: LAB_004a0371
     MOV EAX,0xa0b                       ; 004a0376
     PUSH 0x582b63                       ; 004a037b | = "giveHeroWeapon - This is not a weapon"
-    MOV dword ptr [0x01cc4800],EBP      ; 004a0380 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004a0386 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004a038b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004a0380 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004a0386 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004a038b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004a0390
     JMP 0x004a0327                      ; 004a0393
         ;   XREF to: 004a0327 (UNCONDITIONAL_JUMP)  ; LAB_004a0327

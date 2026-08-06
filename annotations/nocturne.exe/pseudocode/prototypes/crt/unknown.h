@@ -79,10 +79,6 @@ int __cdecl fclose(_FILE *file_handle,int force_close_flag);
 // Address: 005635c0
 void * __cdecl InternalHeapAlloc(ulong size);
 
-// Original: crt_unknown.c_FUN_005638d0
-// Address: 005638d0
-void FUN_005638d0(void *param_1);
-
 // Original: crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0
 // Address: 005638e0
 void __cdecl ValidateHeapIntegrity(void *ptr);
@@ -111,10 +107,6 @@ void * __watcallStack median::of_3(void *a,void *b,void *c,QSORT_COMPARATOR comp
 // Address: 00563d90
 void __watcallRegister memory::swap(void *ptr1,void *ptr2,SIZE_T bytes);
 
-// Original: crt_unknown.c_FUN_00564494
-// Address: 00564494
-void FUN_00564494(int param_1);
-
 // Original: crt_unknown.c_FillBufferAndGetChar_FUN_00564640
 // Address: 00564640
 int __watcallStack FillBufferAndGetChar(_FILE *file);
@@ -131,10 +123,6 @@ uint * __watcallRegister GetRandomSeedPointer(void);
 // Address: 00564915
 void * __cdecl ::_arrdtor(WatcomTypeArrayInfo *destroy_info);
 
-// Original: crt_unknown.c_FUN_0056497c
-// Address: 0056497c
-void * FUN_0056497c(ulong param_1);
-
 // Original: crt_unknown.c_realloc__FUN_00564a88
 // Address: 00564a88
 void * __cdecl realloc::(void *ptr,ulong new_size);
@@ -142,10 +130,6 @@ void * __cdecl realloc::(void *ptr,ulong new_size);
 // Original: crt_unknown.c__atexit_FUN_00564bb0
 // Address: 00564bb0
 void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
-
-// Original: crt_unknown.c_printf_FUN_00564c30
-// Address: 00564c30
-int __cdecl printf(char *format);
 
 // Original: crt_unknown.c_FUN_00564e3d
 // Address: 00564e3d
@@ -207,14 +191,6 @@ int __cdecl seek::within_buffer(_FILE *file);
 // Address: 00565c12
 void __fpureg integer::power(void);
 
-// Original: crt_unknown.c_FUN_00565c50
-// Address: 00565c50
-void FUN_00565c50(int param_1,int param_2);
-
-// Original: crt_unknown.c_ios_clear_FUN_00565e94
-// Address: 00565e94
-uint __cdecl ios::clear(ios *this_ptr,uint state_flags);
-
 // Original: crt_unknown.c___arrinit_dispatch_FUN_005661c2
 // Address: 005661c2
 void * __cdecl ::_arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeInfo *type_info);
@@ -234,10 +210,6 @@ int __cdecl normalize::path_separator(int ch,int *preferred_separator);
 // Original: crt_unknown.c_strncpy_safe_FUN_00566450
 // Address: 00566450
 void __watcallStack strncpy::safe(char *dest,char *src,int length,int maxlen);
-
-// Original: crt_unknown.c_FUN_00566570
-// Address: 00566570
-int __cdecl FUN_00566570(char *path);
 
 // Original: crt_unknown.c_localtime_r_FUN_00566590
 // Address: 00566590
@@ -993,7 +965,7 @@ LPVOID FUN_0056e52c(void);
 
 // Original: crt_unknown.c_FUN_0056e56c
 // Address: 0056e56c
-int FUN_0056e56c(int param_1);
+void * FUN_0056e56c(void *param_1);
 
 // Original: crt_unknown.c_FUN_0056e5ac
 // Address: 0056e5ac

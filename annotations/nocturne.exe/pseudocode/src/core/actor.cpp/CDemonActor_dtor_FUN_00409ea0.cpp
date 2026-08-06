@@ -21,6 +21,6 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_00564494(this_ptr);
+  operator_delete(this_ptr);
   return this_ptr;
 }

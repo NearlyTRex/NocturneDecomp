@@ -23,15 +23,15 @@
 ;   TerminatedCString s_core_dtrace_cpp_0057e3de
 ;   TerminatedCString s_Parity_Check_999_0057e3f1
 ;   undefined1 DAT_005b6d08
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -130,10 +130,10 @@ section .text
     MOV EDX,0x57e3de                    ; 0046c0a3 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb19                       ; 0046c0a8
     PUSH 0x57e3f1                       ; 0046c0ad | = "Parity Check 999"
-    MOV dword ptr [0x01cc4800],EDX      ; 0046c0b2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0046c0b8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046c0be
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0046c0b2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0046c0b8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046c0be
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046c0c3
     CMP dword ptr [EBX],0x0             ; 0046c0c6
         ;   Label: LAB_0046c0c6

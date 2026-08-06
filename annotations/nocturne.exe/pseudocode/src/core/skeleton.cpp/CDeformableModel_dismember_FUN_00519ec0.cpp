@@ -35,9 +35,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
   bVar14 = 0;
   if (body_part_ptr != (CBodyPart *)0x0) {
     if (this_ptr->lod_info[lod_index].shadow_only_flag != 0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0x63d;
-      core_main_c_FUN_004c8440("CDeformableModel::dismember - can't dismember shadow LOD.");
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1597;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
     iVar8 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_30 = *(int *)(iVar8 + 0x54);
@@ -54,9 +54,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
     iVar8 = local_2c + this_ptr->parts[part_index].tri_counts[lod_index];
     iVar7 = local_30 + this_ptr->parts[part_index].cap_tri_counts[lod_index];
     if (4000 < this_ptr->vertex_count[lod_index]) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0x652;
-      core_main_c_FUN_004c8440("CDeformableModel::dismember - too many vertices!");
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1618;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::dismember - too many vertices!");
     }
     memset((void *)0x2671950,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
@@ -128,9 +128,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
       } while (local_18 < this_ptr->vertex_count[lod_index]);
     }
     if (iVar3 != body_part_ptr->vertex_count) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0x688;
-      core_main_c_FUN_004c8440("CDeformableModel::dismember - Hell froze 1!");
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1672;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
       local_20 = local_2c * 0x12;
@@ -201,9 +201,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
       } while (local_30 < iVar7 * 4);
     }
     if (local_14 != body_part_ptr->tri_count) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0x6bf;
-      core_main_c_FUN_004c8440("CDeformableModel::dismember - Hell froze 2!");
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 1727;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::dismember - Hell froze 2!");
       return;
     }
   }

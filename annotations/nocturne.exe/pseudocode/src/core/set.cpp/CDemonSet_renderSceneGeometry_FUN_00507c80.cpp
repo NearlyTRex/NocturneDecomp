@@ -18,8 +18,9 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *
   CVector3f local_1c;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00460c70
-            (DAT_005ae704,(CVector3i *)&DAT_005be36c);
-  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(DAT_005ae704,0.25);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_005be36c);
+  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
+            (g_CDemonRenderer_PTR_005ae704,0.25);
   if (this_ptr->use_world_geometry_flag != 0) goto LAB_00507d51;
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
 LAB_00507e84:
@@ -48,7 +49,8 @@ LAB_00507d02:
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
 LAB_00507d51:
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 == 0) {
     if (_DAT_01c02594 == 0.0) {
       core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(this_ptr);
@@ -59,7 +61,7 @@ LAB_00507d51:
         local_1c.y = _DAT_01c02594;
         local_1c.z = _DAT_01c02594;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,&local_1c);
+                  (g_CDemonRenderer_PTR_005ae704,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
                   (&g_CKeyFramedModel_01fbacc8,0,(CKeyFramedModelInstance *)0x0,-1);
       }
@@ -83,9 +85,9 @@ LAB_00507d51:
         core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
                   (&pCVar2->mirror_glass_actors[0]->mirror);
         if (pCVar2->mirror_glass_actors[0]->shattered != 0) {
-          core_glass_cpp_FUN_004ac7c0(pCVar2->mirror_glass_actors[0]);
+          core_glass_cpp_CGlass_FUN_004ac7c0(pCVar2->mirror_glass_actors[0]);
         }
-        core_set_cpp_FUN_0050e080(this_ptr,iVar1,1);
+        core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar1,1);
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
                   (&g_CDemonRaytrace_01fba938,frustum_param,0);
         iVar1 = iVar1 + 1;
@@ -100,9 +102,9 @@ LAB_00507d51:
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
                 (&pCVar2->mirror_glass_actors[0]->mirror);
       if (pCVar2->mirror_glass_actors[0]->shattered != 0) {
-        core_glass_cpp_FUN_004ac7c0(pCVar2->mirror_glass_actors[0]);
+        core_glass_cpp_CGlass_FUN_004ac7c0(pCVar2->mirror_glass_actors[0]);
       }
-      core_set_cpp_FUN_0050e080(this_ptr,iVar1,0);
+      core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar1,0);
       core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
                 (&g_CDemonRaytrace_01fba938,frustum_param,0);
       pCVar2 = (CDemonSet *)pCVar2->cameras;

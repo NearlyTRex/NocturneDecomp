@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bff720
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_02dc9ddc
 ;
@@ -26,7 +26,7 @@ section .text
     PUSH EBX                            ; 005325cc
         ;   Label: LAB_005325cc
     PUSH 0x1bff720                      ; 005325cd | DAT_01bff720
-    PUSH 0x1c00648                      ; 005325d2 | DAT_01c00648
+    PUSH 0x1c00648                      ; 005325d2 | g_SourcePaletteData
     CALL dword ptr [0x02dc9ddc]         ; 005325d7 | DAT_02dc9ddc
     ADD ESP,0x8                         ; 005325dd
     MOV EBX,EAX                         ; 005325e0

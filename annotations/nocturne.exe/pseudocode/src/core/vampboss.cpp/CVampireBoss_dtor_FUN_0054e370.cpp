@@ -16,12 +16,12 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(CVampire
   SFire *pSVar5;
   CVector3f *pCVar6;
   CClothList *pCVar7;
-  CVampireBoss *pCVar8;
-  void *ptr;
+  CVampireBoss *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CVampireBossTypeInfo_005a3be0);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CVampireBossTypeInfo_005a3be0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
@@ -41,12 +41,12 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(CVampire
   pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar6 + -0x26),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar7[-0x18].filenames[2] + 0x10),0);
-  pCVar8 = (CVampireBoss *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);
+  ptr = (CVampireBoss *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pCVar3[-1].part_data.visibility_flags + 9),1);
   if ((flags & 2) == 0) {
-    return pCVar8;
+    return ptr;
   }
-  FUN_00564494(pCVar8);
-  return pCVar8;
+  operator_delete(ptr);
+  return ptr;
 }

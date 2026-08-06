@@ -24,15 +24,16 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004c1dd0(int x1,int y1,in
   
   iVar1 = 0x10000;
   iVar2 = 0x10000;
-  if (0x1e0 < DAT_005b7620) {
-    iVar1 = (int)(0x2800000 / (longlong)DAT_005b761c);
-    iVar2 = (int)(0x1e00000 / (longlong)DAT_005b7620);
+  if (0x1e0 < g_WindowHeight) {
+    iVar1 = (int)(0x2800000 / (longlong)g_WindowWidth);
+    iVar2 = (int)(0x1e00000 / (longlong)g_WindowHeight);
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005bac34);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,alpha);
-  this_ptr = DAT_005ae704;
-  (DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005bac34);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(g_CDemonRenderer_PTR_005ae704,alpha)
+  ;
+  this_ptr = g_CDemonRenderer_PTR_005ae704;
+  (g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;
   (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y1 * iVar2;
   (this_ptr->vertex_buffer_ptr->projected_vertex).transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr->u = 0;

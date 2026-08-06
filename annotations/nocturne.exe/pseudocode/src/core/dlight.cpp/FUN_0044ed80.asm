@@ -13,11 +13,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0050aa70 at 0050aaa6
+;   core_set.cpp_CDemonSet_FUN_0050aa70 at 0050aaa6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 g_CGame_01c775ec.camera_debug_enabled
@@ -45,12 +45,12 @@ section .text
     JL 0x0044ef78                       ; 0044ed9d
         ;   XREF to: 0044ef78 (CONDITIONAL_JUMP)  ; LAB_0044ef78
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0044eda3
-    MOV EDI,dword ptr [0x005b761c]      ; 0044eda7 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 0044eda7 | g_WindowWidth
     LEA EAX,[EDX + ESI*0x1]             ; 0044edad
     CMP EAX,EDI                         ; 0044edb0
     JG 0x0044ef78                       ; 0044edb2
         ;   XREF to: 0044ef78 (CONDITIONAL_JUMP)  ; LAB_0044ef78
-    MOV EDX,dword ptr [0x005b7620]      ; 0044edb8 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0044edb8 | g_WindowHeight
     LEA EAX,[ECX + ESI*0x1]             ; 0044edbe
     CMP EAX,EDX                         ; 0044edc1
     JG 0x0044ef78                       ; 0044edc3

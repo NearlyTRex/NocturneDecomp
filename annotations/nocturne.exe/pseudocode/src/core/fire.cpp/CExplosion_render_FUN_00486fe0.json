@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,34 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 40,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 50,
+        "column": 67,
         "line": 41,
         "message": "use of undeclared identifier 'DAT_005b858c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 42,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 44,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 46,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
         "category": "type_error",
@@ -98,22 +74,10 @@
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
-        "category": "other",
-        "column": 29,
-        "line": 68,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
         "category": "type_error",
         "column": 11,
         "line": 71,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 75,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       }
     ],
     "success": false,
@@ -122,19 +86,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 282,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 17,
+    "pseudocode_lines": 98,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 354
+    "total_lines": 355
   },
   "cross_references": [
     {
@@ -248,9 +212,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b858c",
@@ -560,41 +524,9 @@
     {
       "description": "Undefined global data reference",
       "line": 34,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
       "match": "DAT_005b858c",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&this_ptr->position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)local_5c,(CVector3f *)0x0);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));",
       "type": "undefined_data"
     },
     {
@@ -614,76 +546,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_34);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 64,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_5c._4_4_ = (uint)ROUND(local_40 * 256.0f);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)(local_5c + 4));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_70);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "DAT_005ae704->vertex_buffer_ptr->u = 0x20000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)&iStack_98,0x123);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
-      "type": "undefined_data"
     },
     {
       "description": "Raw hex address 0x487015 assigned to bare local `iStack_98`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_98` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

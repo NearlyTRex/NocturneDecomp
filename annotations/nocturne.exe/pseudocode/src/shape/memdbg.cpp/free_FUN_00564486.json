@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -59,7 +59,7 @@
         "category": "undeclared_identifier",
         "column": 3,
         "line": 12,
-        "message": "use of undeclared identifier 'FUN_00564494'"
+        "message": "use of undeclared identifier 'operator_delete'"
       }
     ],
     "success": false,
@@ -80,15 +80,15 @@
   },
   "cross_references": [
     {
-      "addr": "004f3f50",
-      "from_addr": "004f3f61",
-      "name": "cockpit_pkbitmap.cpp_FUN_004f3f50",
+      "addr": "004f5320",
+      "from_addr": "004f5337",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f5320",
-      "from_addr": "004f5337",
-      "name": "cockpit_pkbitmap.cpp_FUN_004f5320",
+      "addr": "004f3f50",
+      "from_addr": "004f3f61",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -244,7 +244,7 @@
     {
       "addr": "00435210",
       "from_addr": "00435222",
-      "name": "core_cloth.cpp_FUN_00435210",
+      "name": "core_cloth.cpp_CCloth_FUN_00435210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -298,7 +298,7 @@
     {
       "addr": "0044adf0",
       "from_addr": "0044ae05",
-      "name": "core_dcube.cpp_FUN_0044adf0",
+      "name": "core_dcube.cpp_CDemonCube_FUN_0044adf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -308,15 +308,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00453ff0",
-      "from_addr": "004540e6",
-      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0",
+      "addr": "00452f10",
+      "from_addr": "00452f1f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00452f10",
-      "from_addr": "00452f1f",
-      "name": "core_dmodel.cpp_FUN_00452f10",
+      "addr": "00453ff0",
+      "from_addr": "004540e6",
+      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -668,6 +668,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0051b7d0",
+      "from_addr": "0051b7e2",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0051b6e0",
       "from_addr": "0051b736",
       "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0",
@@ -688,13 +694,7 @@
     {
       "addr": "005174e0",
       "from_addr": "00517500",
-      "name": "core_skeleton.cpp_FUN_005174e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051b7d0",
-      "from_addr": "0051b7e2",
-      "name": "core_skeleton.cpp_FUN_0051b7d0",
+      "name": "core_skeleton.cpp_CSkeleton_FUN_005174e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1002,7 +1002,7 @@
     {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00564494"
+      "name": "crt_memory.c_operator_delete_FUN_00564494"
     }
   ],
   "globals": [],
@@ -1045,7 +1045,7 @@
       {
         "call_addr": "00452f1f",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1056,7 +1056,7 @@
       {
         "call_addr": "00452f38",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1067,7 +1067,7 @@
       {
         "call_addr": "00452f51",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1078,7 +1078,7 @@
       {
         "call_addr": "00452f6a",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1089,7 +1089,7 @@
       {
         "call_addr": "00452f83",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1100,7 +1100,7 @@
       {
         "call_addr": "00453016",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1111,7 +1111,7 @@
       {
         "call_addr": "00453027",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00452f10",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

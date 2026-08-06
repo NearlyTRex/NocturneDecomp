@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_spike.cpp_CSpike_ctor_FUN_00533020
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x558                          ; 00532ff0
         ;   Label: core_spike.cpp_factoryFunc_FUN_00532ff0
-    CALL crt_unknown.c_FUN_0056497c     ; 00532ff5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00532ff5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00532ffa
     TEST EAX,EAX                        ; 00532ffd
     JNZ 0x00533002                      ; 00532fff

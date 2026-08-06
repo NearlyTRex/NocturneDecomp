@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
     if (DAT_006b0278 == 0) {
-      if (0x00000001 == 0) {
+      if (g_ResolutionTable[8].height == 0) {
         if (_DAT_01c03948 == 0) {
           if (DAT_005b7624 == 0x20) {
             _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
@@ -75,7 +75,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004
          engine_light_cpp_calculateLighting_FUN_004c6cc0
                    ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i
                    );
-    _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+    _DAT_01c00c70 = engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
     engine_clipper_c_FUN_00432cd0((prim->base).count,prim + 1);
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

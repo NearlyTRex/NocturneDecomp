@@ -28,7 +28,8 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   if (this_ptr->lifetime <= 0.0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,this_ptr->texture_ptr);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->texture_ptr);
   local_78.base.count = 4;
   local_78.surface_normal.D.i = 0;
   local_78.surface_normal.C.i = 0;
@@ -39,13 +40,14 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   local_5c = 1;
   local_58 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00461020
-            (DAT_005ae704,this_ptr->current_alpha);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->current_alpha);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(DAT_005ae704,&local_20);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
+            (g_CDemonRenderer_PTR_005ae704,&local_20);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,&local_20,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,&local_20,(CVector3f *)0x0);
   local_3c = 0.0;
   local_44 = this_ptr->size * this_ptr->current_alpha;
   local_2c.x = (int)ROUND(local_44 * 256.0f);
@@ -53,25 +55,25 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   local_2c.z = (int)ROUND(256.0f * 0.0);
   local_40 = local_44;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_2c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_2c);
   local_44 = -local_44;
   local_14.x = (int)ROUND(local_44 * 256.0f);
   local_14.y = (int)ROUND(local_40 * 256.0f);
   local_14.z = (int)ROUND(local_3c * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_14);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_14);
   local_40 = -local_40;
   local_38.x = (int)ROUND(local_44 * 256.0f);
   local_38.y = (int)ROUND(local_40 * 256.0f);
   local_38.z = (int)ROUND(local_3c * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_38);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_38);
   local_44 = -local_44;
   local_50.x = (int)ROUND(local_44 * 256.0f);
   local_50.y = (int)ROUND(local_40 * 256.0f);
   local_50.z = (int)ROUND(local_3c * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
   DAT_005c502c = 0x80000;
   _DAT_005c5030 = 0xf80000;
   _DAT_005c505c = 0xf80000;
@@ -92,8 +94,9 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   DAT_005c50c4 = 0xffff;
   DAT_005c50c8 = 0xffff;
   DAT_005c50cc = 0xffff;
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_78);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
+            (g_CDemonRenderer_PTR_005ae704,&local_78);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

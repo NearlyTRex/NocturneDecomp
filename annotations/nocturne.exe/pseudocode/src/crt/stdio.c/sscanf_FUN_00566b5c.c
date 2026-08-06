@@ -2,11 +2,11 @@
 // Address: 00566b5c
 // Address Range: [[00566b5c, 00566b80]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format)
+// Signature: int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format,...)
 
 #include "nocturne.h"
 
-int __cdecl sscanf(char *str,char *format)
+int __cdecl sscanf(char *str,char *format,...)
 
 {
   int iVar1;

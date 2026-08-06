@@ -54,7 +54,7 @@
 ;   ... and 18 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520
@@ -322,10 +322,10 @@ section .text
         ;   Label: LAB_00524aba
     MOV EBX,0x95d                       ; 00524abf
     PUSH 0x592e22                       ; 00524ac4 | = "SfxSlot::compute - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00524ac9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524acf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00524ad5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00524ac9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00524acf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00524ad5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00524ada
     JMP 0x0052484c                      ; 00524add
         ;   XREF to: 0052484c (UNCONDITIONAL_JUMP)  ; LAB_0052484c

@@ -53,7 +53,7 @@ SScrape * __cdecl SScrape::dtor(SScrape *this_ptr,uint flags);
 
 // Original: core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
 // Address: 0041cbe0
-SScrape * __cdecl SScrape::arrdtor(SScrape *objs,uint flags);
+SScrape * __cdecl SScrape::arrdtor(SScrape *this_ptr,uint flags);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
 // Address: 0041cc00
@@ -71,9 +71,9 @@ int __cdecl CBoundingBox3D::isVisibleWithShadow(CBoundingBox3D *this_ptr);
 // Address: 0041ceb0
 int __cdecl CBoundingBox3D::isVisible(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041d050
+// Original: core_box.cpp_CBoundingBox3D_FUN_0041d050
 // Address: 0041d050
-undefined4 FUN_0041d050(CBoundingBox3D *param_1);
+int __cdecl CBoundingBox3D(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
 // Address: 0041d450

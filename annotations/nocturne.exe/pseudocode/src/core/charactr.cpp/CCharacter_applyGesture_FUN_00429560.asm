@@ -11,18 +11,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042a150 at 0042a156
+;   core_charactr.cpp_CCharacter_FUN_0042a150 at 0042a156
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a210
 ;   TerminatedCString s_CCharacter_applyGesture_0057a225
 ;   float FLOAT_0057a26a = 0.3000000
 ;   float FLOAT_0057a26e = 0.8500000
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;
@@ -102,10 +102,10 @@ section .text
     MOV ESI,0x57a210                    ; 00429635 | = "..\\core\\charactr.cpp"
     MOV EDI,0xcdb                       ; 0042963a
     PUSH 0x57a225                       ; 0042963f | = "CCharacter::applyGesture - never set ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00429644 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0042964a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00429650
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00429644 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0042964a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00429650
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00429655
     POP EDI                             ; 00429658
     JMP 0x00429583                      ; 00429659

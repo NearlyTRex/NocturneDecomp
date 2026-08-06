@@ -24,6 +24,7 @@ void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(CBloodSplat
   _DAT_005c5090 = 0x80000;
   _DAT_005c50bc = 0x80000;
   _DAT_005c50c0 = 0x80000;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
   return;
 }

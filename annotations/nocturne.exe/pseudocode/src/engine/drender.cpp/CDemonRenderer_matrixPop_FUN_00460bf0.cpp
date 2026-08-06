@@ -13,9 +13,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(void)
 {
   _DAT_01cc5174 = _DAT_01cc5174 + -1;
   if (_DAT_01cc5174 < 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
-    g_INT_01cc4804 = 0x355;
-    core_main_c_FUN_004c8440("Matrix unbalance2");
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 853;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Matrix unbalance2");
   }
   _DAT_01c039e8 = *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5178);
   _DAT_01c039ec = *(uint *)(_DAT_01cc5174 * 4 + 0x1cc51a0);

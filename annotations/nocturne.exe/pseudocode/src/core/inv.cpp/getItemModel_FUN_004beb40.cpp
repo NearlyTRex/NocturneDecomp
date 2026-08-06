@@ -32,9 +32,9 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004beb40(CDemonA
         class_name_hash = g_CTrapActorType_02dd100c.name_hash, iVar1 == 0)))))) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(actor_ptr,"CBattery"),
      class_name_hash = g_CBatteryActorType_00764674.name_hash, iVar1 == 0)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\inv.cpp";
-    g_INT_01cc4804 = 0x9d;
-    core_main_c_FUN_004c8440("getModel - Can't classify : %s",actor_ptr);
+    g_CurrentFilename = "..\\core\\inv.cpp";
+    g_CurrentLineNumber = 157;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("getModel - Can't classify : %s");
     return (CKeyFramedModelInstance *)0x0;
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);

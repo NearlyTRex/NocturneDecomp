@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)
+; void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
 ;
 ; XREF[1]:
 ;   engine_2d.c_FUN_004013d0 at 004013e5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;
 ; *****************************************************************************
 
@@ -26,7 +30,7 @@ section .text
     CMP EDX,0x1                         ; 004012df
     JL 0x004013a1                       ; 004012e2
         ;   XREF to: 004013a1 (CONDITIONAL_JUMP)  ; LAB_004013a1
-    MOV ECX,dword ptr [0x005b7620]      ; 004012e8 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 004012e8 | g_WindowHeight
     LEA EAX,[EDX + 0x18]                ; 004012ee
     CMP EAX,ECX                         ; 004012f1
     JGE 0x004013a1                      ; 004012f3
@@ -35,7 +39,7 @@ section .text
     CMP EBX,0x1                         ; 004012fd
     JL 0x004013a1                       ; 00401300
         ;   XREF to: 004013a1 (CONDITIONAL_JUMP)  ; LAB_004013a1
-    MOV ESI,dword ptr [0x005b761c]      ; 00401306 | DAT_005b761c
+    MOV ESI,dword ptr [0x005b761c]      ; 00401306 | g_WindowWidth
     LEA EAX,[EBX + 0x17]                ; 0040130c
     CMP EAX,ESI                         ; 0040130f
     JGE 0x004013a1                      ; 00401311

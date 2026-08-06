@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -81,15 +81,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 43,
-        "line": 124,
-        "message": "use of undeclared identifier 'DAT_01bf7720'"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
+        "column": 50,
         "line": 134,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "use of undeclared identifier 'DAT_02663604'"
       }
     ],
     "success": false,
@@ -98,13 +92,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 365,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 145,
-    "suspect_count": 20,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -117,7 +111,7 @@
     {
       "addr": "00509a80",
       "from_addr": "0050a08e",
-      "name": "core_set.cpp_FUN_00509a80",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -136,7 +130,7 @@
   "function_calls": [
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -159,15 +153,15 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7624",
@@ -183,7 +177,7 @@
     },
     {
       "addr": "01bff71f",
-      "name": "DAT_01bff71f",
+      "name": "g_ColorCubeLookup+0x7fff",
       "type": "undefined4",
       "value": null
     },
@@ -212,7 +206,7 @@
       {
         "call_addr": "0050a08e",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -452,22 +446,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_54 = DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_40 = DAT_005b7620 + -0x78;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
@@ -565,26 +543,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_01bf7720",
+      "line": 127,
+      "match": "DAT_02663604",
       "severity": "mild",
-      "text": "_DAT_01c00c70 = (uint)(byte)(&DAT_01bf7720)[(uVar4 >> 3) * 0x421];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (DAT_005b761c < iVar6 + 0x81) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "bVar2 = DAT_005b7620 < local_54;",
+      "text": "_sprintf(local_c4,\"%g\",(double)*(float *)(&DAT_02663604 + local_3c * 4));",
       "type": "undefined_data"
     },
     {

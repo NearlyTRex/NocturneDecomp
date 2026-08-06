@@ -13,7 +13,7 @@ void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(char *filen
   byte *pbVar2;
   byte bVar3;
   byte *pbVar4;
-  byte *in_stack_00000010;
+  uchar *in_stack_00000010;
   uchar auStack_30c [8];
   byte abStack_304 [760];
   
@@ -25,7 +25,7 @@ void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(char *filen
     pbVar2 = pbVar4 + 2;
     pbVar4 = pbVar4 + 3;
     *in_stack_00000010 =
-         (&DAT_01bf7720)
+         g_ColorCubeLookup
          [((int)(uint)*pbVar2 >> 3) +
           ((int)(uint)bVar3 >> 3) * 0x400 + ((int)(uint)*pbVar1 >> 3) * 0x20];
     in_stack_00000010 = in_stack_00000010 + 1;

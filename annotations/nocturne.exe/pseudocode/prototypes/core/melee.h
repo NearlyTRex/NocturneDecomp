@@ -27,13 +27,13 @@ void __cdecl CMelee::archive(CMelee *this_ptr);
 // Address: 004ceed0
 int __cdecl CMelee::fire(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_004cef00
+// Original: core_melee.cpp_CMelee_getDamage_FUN_004cef00
 // Address: 004cef00
-float FUN_004cef00(int param_1);
+float __cdecl CMelee::getDamage(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_004cef30
+// Original: core_melee.cpp_CMelee_fireProjectile_FUN_004cef30
 // Address: 004cef30
-void FUN_004cef30(void);
+void __cdecl CMelee::fireProjectile(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_canPickup_FUN_004cef40
 // Address: 004cef40

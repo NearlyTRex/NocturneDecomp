@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   crt_iostream.cpp_ios_freeBufferChain_FUN_00570410
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     RET                                 ; 0056b674
     PUSH EBX                            ; 0056b675
         ;   Label: LAB_0056b675
-    CALL crt_unknown.c_FUN_00564494     ; 0056b676
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0056b676
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     JMP 0x0056b66e                      ; 0056b67b
         ;   XREF to: 0056b66e (UNCONDITIONAL_JUMP)  ; LAB_0056b66e
 

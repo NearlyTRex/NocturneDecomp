@@ -9,12 +9,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058ba54
 ;   TerminatedCString s_allocSimFrame_sim_histor_0058ba68
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d09c00
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -63,10 +63,10 @@ section .text
     MOV EBP,0x58ba54                    ; 004e977d | = "..\\core\\netgame.cpp"
     MOV EAX,0x12b                       ; 004e9782
     PUSH 0x58ba68                       ; 004e9787 | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01cc4800],EBP      ; 004e978c | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e9792 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e9797
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004e978c | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004e9792 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e9797
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004e979c
     MOV EDX,dword ptr [0x01d09c00]      ; 004e979f | DAT_01d09c00
         ;   Label: LAB_004e979f

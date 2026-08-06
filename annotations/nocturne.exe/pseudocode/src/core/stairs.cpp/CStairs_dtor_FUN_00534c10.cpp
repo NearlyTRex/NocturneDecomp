@@ -10,20 +10,20 @@ CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00534c10(CStairs *this_ptr,ui
 
 {
   SFly *pSVar1;
-  CStairs *pCVar2;
-  void *ptr;
+  CStairs *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CStairsTypeInfo_005a2590);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CStairsTypeInfo_005a2590);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pSVar1 = core_stairs_cpp_SFly_arrdtor_FUN_00534c80((SFly *)this_ptr->collision_triangles,0);
-  pCVar2 = (CStairs *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)pSVar1[-7].control_points,1);
+  ptr = (CStairs *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)pSVar1[-7].control_points,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_00564494(pCVar2);
-  return pCVar2;
+  operator_delete(ptr);
+  return ptr;
 }

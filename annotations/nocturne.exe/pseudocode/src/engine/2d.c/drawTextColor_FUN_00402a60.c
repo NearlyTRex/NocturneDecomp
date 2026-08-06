@@ -11,12 +11,12 @@
 void __cdecl engine_2d_c_drawTextColor_FUN_00402a60(char *text,int x,int y)
 
 {
-  if (DAT_005acaa4 != 0) {
-    engine_2d_c_drawTextWrappedColor_FUN_004024e0(text,x,y,_DAT_01c00c60,_DAT_01c00c64,DAT_005acaa8)
-    ;
+  if (g_ResolutionTable[7].width != 0) {
+    engine_2d_c_drawTextWrappedColor_FUN_004024e0
+              (text,x,y,_DAT_01c00c60,_DAT_01c00c64,g_ResolutionTable[7].height);
     return;
   }
-  engine_2d_c_drawTextMultilineColor_FUN_00402570(text,x,y,_DAT_01c00c60,_DAT_01c00c64,DAT_005acaa8)
-  ;
+  engine_2d_c_drawTextMultilineColor_FUN_00402570
+            (text,x,y,_DAT_01c00c60,_DAT_01c00c64,g_ResolutionTable[7].height);
   return;
 }

@@ -34,7 +34,8 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
   int iStack_18;
   
   bVar9 = 0;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar4 != 0) {
     return 0;
   }
@@ -59,15 +60,16 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
       } while (iVar6 < 0x40);
       _DAT_01c70714 = 1;
     }
-    pCVar2 = DAT_005ae704;
+    pCVar2 = g_CDemonRenderer_PTR_005ae704;
     if (_DAT_01c02594 == 0) {
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(DAT_005ae704,0,0,0);
+      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
+                (g_CDemonRenderer_PTR_005ae704,0,0,0);
       uVar5 = _DAT_01c038f4 >> 8;
       _DAT_01c70754 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
       _DAT_01c70758 = _DAT_01c70754 ^ 0xffffff;
     }
     else {
-      DAT_005ae704->vertex_buffer_ptr->r = 0;
+      g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0;
       pCVar2->vertex_buffer_ptr->g = 0;
       pCVar2->vertex_buffer_ptr->b = 0;
       pCVar2->vertex_buffer_ptr[1].r = 0;
@@ -104,21 +106,21 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
         CStack_38.y = (int)ROUND(fStack_40 * _DAT_0059da10);
         CStack_38.z = (int)ROUND(fStack_3c * _DAT_0059da10);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                  (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&CStack_38);
-        pCVar2 = DAT_005ae704;
-        vertices = DAT_005ae704->vertex_buffer_ptr;
+                  (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&CStack_38);
+        pCVar2 = g_CDemonRenderer_PTR_005ae704;
+        vertices = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
         if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
           iVar6 = (vertices->projected_vertex).screen_y >> 0x10;
           iVar4 = (vertices->projected_vertex).screen_x >> 0x10;
           if (_DAT_01c02594 == 0) {
             engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertices,1);
-            if ((((-1 < iVar4) && (iVar4 < DAT_005b761c)) && (-1 < iVar6)) && (iVar6 < DAT_005b7620)
-               ) {
+            if ((((-1 < iVar4) && (iVar4 < g_WindowWidth)) && (-1 < iVar6)) &&
+               (iVar6 < g_WindowHeight)) {
               core_flies_cpp_drawFlyPixel_FUN_0048f3c0
                         (iVar4,iVar6,(vertices->projected_vertex).transformed_z);
             }
           }
-          else if ((iVar4 < DAT_005b761c + -1) && (iVar6 < DAT_005b7620 + -1)) {
+          else if ((iVar4 < g_WindowWidth + -1) && (iVar6 < g_WindowHeight + -1)) {
             *(ushort *)&(vertices->projected_vertex).screen_x = 0;
             *(ushort *)&(vertices->projected_vertex).screen_y = 0;
             pSVar7 = vertices;

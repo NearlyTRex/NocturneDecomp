@@ -8,7 +8,7 @@
 ; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004a4b50 at 004a4eac
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a4eac
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d9596
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb4d
 ;
@@ -22,8 +22,8 @@
 ;   undefined4 g_CGame_01c775ec.aim_mode
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cae0e8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGame_01cea280
 ;   undefined4 g_CNetGame_01cea280.player_count
 ;   undefined4 g_CNetGame_01cea280.players[0].aim_mode
@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
@@ -171,10 +171,10 @@ section .text
         ;   Label: LAB_004d9be0
     MOV EDI,0x63b                       ; 004d9be5
     PUSH 0x589f7d                       ; 004d9bea | = "CDemonMission::createHeros - too many..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004d9bef | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004d9bf5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d9bfb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004d9bef | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004d9bf5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d9bfb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d9c00
     JMP 0x004d9aba                      ; 004d9c03
         ;   XREF to: 004d9aba (UNCONDITIONAL_JUMP)  ; LAB_004d9aba

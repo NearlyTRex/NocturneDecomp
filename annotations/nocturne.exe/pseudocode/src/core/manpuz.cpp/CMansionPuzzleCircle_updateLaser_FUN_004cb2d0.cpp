@@ -94,7 +94,8 @@ LAB_004cb32e:
     local_c0.color.r = local_114.color.r;
     local_c0.color.g = local_114.color.g;
     local_c0.color.b = local_114.color.b;
-    core_fire_cpp_FUN_0048b6f0(g_CFireEffect_PTR_005b80f0,&local_3c,&local_54,&local_c0,0);
+    core_fire_cpp_CFireEffect_FUN_0048b6f0
+              (g_CFireEffect_PTR_005b80f0,&local_3c,&local_54,&local_c0,0);
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
     return;
   }

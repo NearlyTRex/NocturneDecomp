@@ -13,8 +13,8 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0(void)
 
 {
   byte *pbVar1;
-  byte *pbVar2;
-  byte *pbVar3;
+  int iVar2;
+  int iVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -26,15 +26,15 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0(void)
     iVar6 = 0;
     iVar5 = 0;
     do {
-      pbVar1 = &DAT_01c00648 + iVar6;
-      pbVar2 = (byte *)(iVar6 + 0x1c00649);
-      pbVar3 = (byte *)(iVar6 + 0x1c0064a);
+      pbVar1 = g_SourcePaletteData + iVar6;
+      iVar2 = iVar6 + 1;
+      iVar3 = iVar6 + 2;
       iVar8 = iVar5 + 2;
       iVar6 = iVar6 + 3;
       *(ushort *)(&DAT_01bff720 + iVar5) =
-           (ushort)(*pbVar3 / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
+           (ushort)(g_SourcePaletteData[iVar3] / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
            (ushort)(*pbVar1 / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-           (ushort)(*pbVar2 / _DAT_01c00634 << (DAT_01c00630 & 0x1f));
+           (ushort)(g_SourcePaletteData[iVar2] / _DAT_01c00634 << (DAT_01c00630 & 0x1f));
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
     uVar4 = 0xff >> (DAT_01c0062c & 0x1f);
@@ -54,14 +54,15 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0(void)
     iVar6 = 0;
     iVar5 = 0;
     do {
-      pbVar1 = (byte *)(iVar6 + 0x1c00649);
-      pbVar2 = (byte *)(iVar6 + 0x1c0064a);
-      pbVar3 = &DAT_01c00648 + iVar6;
+      iVar2 = iVar6 + 1;
+      iVar3 = iVar6 + 2;
+      pbVar1 = g_SourcePaletteData + iVar6;
       iVar8 = iVar5 + 4;
       iVar6 = iVar6 + 3;
       *(uint *)(iVar5 + 0x1bff920) =
-           (uint)*pbVar2 << (DAT_01c0063c & 0x1f) |
-           (uint)*pbVar1 << (DAT_01c00630 & 0x1f) | (uint)*pbVar3 << (DAT_01c00624 & 0x1f);
+           (uint)g_SourcePaletteData[iVar3] << (DAT_01c0063c & 0x1f) |
+           (uint)g_SourcePaletteData[iVar2] << (DAT_01c00630 & 0x1f) |
+           (uint)*pbVar1 << (DAT_01c00624 & 0x1f);
       iVar5 = iVar8;
     } while (iVar8 != 0x400);
   }

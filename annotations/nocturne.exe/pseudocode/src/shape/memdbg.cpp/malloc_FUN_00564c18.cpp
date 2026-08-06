@@ -11,6 +11,6 @@ void * __cdecl shape_memdbg_cpp_malloc_FUN_00564c18(SIZE_T size)
 {
   void *pvVar1;
   
-  pvVar1 = (void *)FUN_0056497c(size);
+  pvVar1 = operator_new(size);
   return pvVar1;
 }

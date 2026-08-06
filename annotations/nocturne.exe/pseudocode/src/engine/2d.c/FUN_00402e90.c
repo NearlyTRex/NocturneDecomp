@@ -34,15 +34,15 @@ void engine_2d_c_FUN_00402e90(int param_1)
   _DAT_006af634 = param_1;
   param_1 = param_1 * 3;
   iVar8 = 0x1000;
-  bVar1 = (&DAT_01c00648)[param_1];
+  bVar1 = g_SourcePaletteData[param_1];
   iVar9 = 0;
-  bVar2 = *(byte *)(param_1 + 0x1c00649);
-  local_38 = (float)*(byte *)(param_1 + 0x1c0064a);
+  bVar2 = g_SourcePaletteData[param_1 + 1];
+  local_38 = (float)g_SourcePaletteData[param_1 + 2];
   do {
-    local_18 = (float)(byte)(&DAT_01c00648)[iVar9];
+    local_18 = (float)g_SourcePaletteData[iVar9];
     fVar3 = ((float)bVar1 - local_18) * 0.06666667f;
-    local_28 = (float)*(byte *)(iVar9 + 0x1c00649);
-    local_1c = (float)*(byte *)(iVar9 + 0x1c0064a);
+    local_28 = (float)g_SourcePaletteData[iVar9 + 1];
+    local_1c = (float)g_SourcePaletteData[iVar9 + 2];
     local_44 = ((float)bVar2 - local_28) * 0.06666667f;
     fVar4 = (local_38 - local_1c) * 0.06666667f;
     uRam01bd1ea0 = 0;

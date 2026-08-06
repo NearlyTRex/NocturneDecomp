@@ -12,19 +12,19 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004270e0 at 004271e1
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271e1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591d6f
 ;   TerminatedCString s_CDeformableModelInstance_00591d84
 ;   double DOUBLE_00591dcb = 2670176.85779676
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   crt_math.c_atan2_FUN_00566c81
 ;   crt_math.c_round_FUN_00563a30
@@ -99,7 +99,7 @@ section .text
     CMP dword ptr [EDX + 0x8],0x0       ; 0051f114
     JNZ 0x0051f19b                      ; 0051f118
         ;   XREF to: 0051f19b (CONDITIONAL_JUMP)  ; LAB_0051f19b
-    MOV EAX,[0x005ae704]                ; 0051f11e | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0051f11e | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [EAX]             ; 0051f123 | DAT_01b4d738
     MOV EBX,dword ptr [ESP + 0x20]      ; 0051f125
     MOV dword ptr [ECX + EAX*0x1 + 0x18],EBX ; 0051f129
@@ -112,7 +112,7 @@ section .text
     IDIV EBX                            ; 0051f13b
     MOV EDX,dword ptr [ESP + 0x24]      ; 0051f13d
     ADD EDX,EAX                         ; 0051f141
-    MOV EAX,[0x005ae704]                ; 0051f143 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0051f143 | g_CDemonRenderer_PTR_005ae704
     ADD ECX,0x30                        ; 0051f148
     MOV EAX,dword ptr [EAX]             ; 0051f14b | DAT_01b4d738
     MOV dword ptr [ECX + EAX*0x1 + -0x14],EDX ; 0051f14d
@@ -132,10 +132,10 @@ section .text
         ;   Label: LAB_0051f164
     MOV EBX,0xfa7                       ; 0051f169
     PUSH 0x591d84                       ; 0051f16e | = "CDeformableModelInstance::computeCyli..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051f173 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051f179 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051f17f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051f173 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0051f179 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051f17f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051f184
     JMP 0x0051f098                      ; 0051f187
         ;   XREF to: 0051f098 (UNCONDITIONAL_JUMP)  ; LAB_0051f098
@@ -159,7 +159,7 @@ section .text
     MOV EBX,dword ptr [ESP]             ; 0051f1b7
     ADD EAX,EBX                         ; 0051f1ba
     MOV dword ptr [ESP],EAX             ; 0051f1bc
-    MOV EAX,[0x005ae704]                ; 0051f1bf | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0051f1bf | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [EAX]             ; 0051f1c4 | DAT_01b4d738
     MOV EBX,dword ptr [ESP]             ; 0051f1c6
     JMP 0x0051f129                      ; 0051f1c9

@@ -18,11 +18,11 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   char *pcVar5;
   _FILE *file_handle;
   DWORD DVar6;
-  int iVar7;
-  char *pcVar8;
-  int iVar9;
+  char *pcVar7;
+  int iVar8;
+  char *pcVar9;
   int iVar10;
-  char *pcVar11;
+  int iVar11;
   char *pcVar12;
   byte bVar13;
   char acStack_528 [512];
@@ -38,10 +38,10 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   _DAT_005c0f80 = 1;
   pcVar5 = getenv("PROCESSOR_LEVEL");
   if (pcVar5 == (char *)0x0) {
-    DAT_006af628 = 3;
+    g_RenderingMode = 3;
   }
   else {
-    DAT_006af628 = 1;
+    g_RenderingMode = 1;
     _DAT_01c038f0 = 1;
   }
   file_handle = _fopen("stderr.txt","rb");
@@ -49,14 +49,14 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
     _fclose(file_handle);
     DVar6 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0("stderr.txt",0x1c0);
     if (DVar6 != 0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\main.c";
-      g_INT_01cc4804 = 0x28c;
-      core_main_c_FUN_004c8440();
+      g_CurrentFilename = "..\\core\\main.c";
+      g_CurrentLineNumber = 652;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Please copy Nocturne to your hard drive");
     }
   }
   pcVar5 = &stack0xfffff8d8;
   _freopen("stderr.txt","wt",(_FILE *)&DAT_005c18c8);
-  DAT_006af628 = 3;
+  g_RenderingMode = 3;
   xxx_unk_c_FUN_0048ee80();
   core_inivar_cpp_FUN_004bdb80();
   _DAT_02dc9d6c = 2;
@@ -66,391 +66,390 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   support_newmsg_cpp_FUN_004edfc0();
   core_mmx_c_detectCPUFeatures_FUN_004d9e70();
   if (_DAT_01c03948 == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\main.c";
-    g_INT_01cc4804 = 0x2b7;
-    support_newmsg_cpp_getLocalizedString_FUN_004ee370("This CPU does not have an MMX unit.");
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\core\\main.c";
+    g_CurrentLineNumber = 695;
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("This CPU does not have an MMX unit.")
+    ;
+    core_main_c_displayErrorAndQuit_FUN_004c8440(pcVar7);
   }
   engine_matrix_c_initializeTrigTables_FUN_004cc9d0();
   engine_3d_c_FUN_005458a0();
-  engine_2d_c_FUN_00401010();
+  engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0();
   wincore_winrun_cpp_initJoystick_FUN_00559e20();
-  iVar7 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(0x280,0x1e0,0x20);
-  if (iVar7 == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\main.c";
-    g_INT_01cc4804 = 0x2c8;
-    core_main_c_FUN_004c8440();
+  iVar8 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(0x280,0x1e0,0x20);
+  if (iVar8 == 0) {
+    g_CurrentFilename = "..\\core\\main.c";
+    g_CurrentLineNumber = 712;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_FUN_0044c560();
   if (_DAT_02de20a8 < 0x3c00000) {
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
-    pcVar11 = acStack_528;
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
+    pcVar7 = acStack_528;
     do {
-      cVar2 = *pcVar8;
-      *pcVar11 = cVar2;
+      cVar2 = *pcVar9;
+      *pcVar7 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
+      pcVar7[1] = cVar2;
+      pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_228,"%.1f");
-    pcVar11 = acStack_228;
-    iVar7 = -1;
-    pcVar8 = acStack_528;
+    _sprintf(acStack_228,"%.1f",(double)((float)_DAT_02de20a8 * 9.536743e-07f));
+    pcVar7 = acStack_228;
+    iVar8 = -1;
+    pcVar9 = acStack_528;
     do {
-      pcVar12 = pcVar8;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar8 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar8;
-      pcVar8 = pcVar12;
+      pcVar12 = pcVar9;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar9 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar9;
+      pcVar9 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar11;
+      cVar2 = *pcVar7;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("MB of system RAM.");
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("MB of system RAM.");
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = "\n";
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = "\n";
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Nocturne requires at least 64MB of system RAM.")
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Nocturne requires at least 64MB of system RAM.")
     ;
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = "\n";
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = "\n";
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("If you think you have at least 64MB of system RAM")
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("If you think you have at least 64MB of system RAM")
     ;
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = "\n";
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = "\n";
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("then ignore this message.")
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("then ignore this message.")
     ;
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = "\n";
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = "\n";
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("See README.TXT for more information.");
-    iVar7 = -1;
-    pcVar11 = acStack_528;
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("See README.TXT for more information.");
+    iVar8 = -1;
+    pcVar7 = acStack_528;
     do {
-      pcVar12 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar12 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar12;
+      pcVar12 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar12 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar12;
     } while (cVar2 != '\0');
     pcVar12 = pcVar12 + -1;
     do {
-      cVar2 = *pcVar8;
+      cVar2 = *pcVar9;
       *pcVar12 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
     shape_edittool_cpp_FUN_0046fb40(g_CEditorTools_PTR_005b6d50);
   }
   if (_DAT_02de20ac < 0xc800000) {
-    pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
     do {
-      cVar2 = *pcVar11;
+      cVar2 = *pcVar7;
       *pcVar5 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    _sprintf(acStack_128,"%.1f");
+    _sprintf(acStack_128,"%.1f",(double)((float)_DAT_02de20ac * 9.536743e-07f));
     pcVar5 = acStack_128;
-    iVar7 = -1;
-    pcVar11 = &stack0xfffff8d8;
+    iVar8 = -1;
+    pcVar7 = &stack0xfffff8d8;
     do {
-      pcVar8 = pcVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar11 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar8;
+      pcVar9 = pcVar7;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar7 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar9;
     } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
+    pcVar9 = pcVar9 + -1;
     do {
       cVar2 = *pcVar5;
-      *pcVar8 = cVar2;
+      *pcVar9 = cVar2;
       if (cVar2 == '\0') break;
       cVar2 = pcVar5[1];
       pcVar5 = pcVar5 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
-                        ("MB of free swap disk space.");
-    iVar7 = -1;
-    pcVar5 = &stack0xfffff8d8;
-    do {
-      pcVar8 = pcVar5;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar5 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar8;
-    } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
-    do {
-      cVar2 = *pcVar11;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
-    pcVar11 = "\n";
-    iVar7 = -1;
-    pcVar5 = &stack0xfffff8d8;
-    do {
-      pcVar8 = pcVar5;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar5 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar8;
-    } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
-    do {
-      cVar2 = *pcVar11;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
-    pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Nocturne runs best with at least 200MB free.")
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("MB of free swap disk space.")
     ;
-    iVar7 = -1;
+    iVar8 = -1;
     pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar8 = pcVar5;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar5 + (uint)bVar13 * -2 + 1;
+      pcVar9 = pcVar5;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar5 + (uint)bVar13 * -2 + 1;
       cVar2 = *pcVar5;
-      pcVar5 = pcVar8;
+      pcVar5 = pcVar9;
     } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
+    pcVar9 = pcVar9 + -1;
     do {
-      cVar2 = *pcVar11;
-      *pcVar8 = cVar2;
+      cVar2 = *pcVar7;
+      *pcVar9 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar11 = "\n";
-    iVar7 = -1;
+    pcVar7 = "\n";
+    iVar8 = -1;
     pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar8 = pcVar5;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar5 + (uint)bVar13 * -2 + 1;
+      pcVar9 = pcVar5;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar5 + (uint)bVar13 * -2 + 1;
       cVar2 = *pcVar5;
-      pcVar5 = pcVar8;
+      pcVar5 = pcVar9;
     } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
+    pcVar9 = pcVar9 + -1;
     do {
-      cVar2 = *pcVar11;
-      *pcVar8 = cVar2;
+      cVar2 = *pcVar7;
+      *pcVar9 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("See README.TXT for more information.")
-    ;
-    iVar7 = -1;
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Nocturne runs best with at least 200MB free.");
+    iVar8 = -1;
     pcVar5 = &stack0xfffff8d8;
     do {
-      pcVar8 = pcVar5;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pcVar8 = pcVar5 + (uint)bVar13 * -2 + 1;
+      pcVar9 = pcVar5;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar5 + (uint)bVar13 * -2 + 1;
       cVar2 = *pcVar5;
-      pcVar5 = pcVar8;
+      pcVar5 = pcVar9;
     } while (cVar2 != '\0');
-    pcVar8 = pcVar8 + -1;
+    pcVar9 = pcVar9 + -1;
     do {
-      cVar2 = *pcVar11;
-      *pcVar8 = cVar2;
+      cVar2 = *pcVar7;
+      *pcVar9 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
+    } while (cVar2 != '\0');
+    pcVar7 = "\n";
+    iVar8 = -1;
+    pcVar5 = &stack0xfffff8d8;
+    do {
+      pcVar9 = pcVar5;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar5 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar9;
+    } while (cVar2 != '\0');
+    pcVar9 = pcVar9 + -1;
+    do {
+      cVar2 = *pcVar7;
+      *pcVar9 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
+    } while (cVar2 != '\0');
+    pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("See README.TXT for more information.");
+    iVar8 = -1;
+    pcVar5 = &stack0xfffff8d8;
+    do {
+      pcVar9 = pcVar5;
+      if (iVar8 == 0) break;
+      iVar8 = iVar8 + -1;
+      pcVar9 = pcVar5 + (uint)bVar13 * -2 + 1;
+      cVar2 = *pcVar5;
+      pcVar5 = pcVar9;
+    } while (cVar2 != '\0');
+    pcVar9 = pcVar9 + -1;
+    do {
+      cVar2 = *pcVar7;
+      *pcVar9 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
     shape_edittool_cpp_FUN_0046fb40(g_CEditorTools_PTR_005b6d50);
   }
@@ -465,14 +464,14 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   }
   wincore_winvideo_cpp_FUN_0055a510("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0052ee70();
-  pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading...");
+  pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading...");
   pcVar5 = acStack_328;
   do {
-    cVar2 = *pcVar11;
+    cVar2 = *pcVar7;
     *pcVar5 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar11[1];
-    pcVar11 = pcVar11 + 2;
+    cVar2 = pcVar7[1];
+    pcVar7 = pcVar7 + 2;
     pcVar5[1] = cVar2;
     pcVar5 = pcVar5 + 2;
   } while (cVar2 != '\0');
@@ -484,32 +483,32 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(&CStack_28,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20(g_CSound_PTR_005bed68);
-  iVar7 = 0;
-  core_mission_cpp_FUN_004d7e00();
+  iVar8 = 0;
+  core_mission_cpp_CDemonMission_FUN_004d7e00(g_CDemonMission_PTR_005baf90);
   iStack_14 = 0;
   do {
-    puVar1 = (uint *)((int)&DAT_005ad51c + iVar7);
-    iVar7 = iVar7 + 4;
-    iVar9 = iStack_14 + 1;
+    puVar1 = (uint *)((int)&DAT_005ad51c + iVar8);
+    iVar8 = iVar8 + 4;
+    iVar10 = iStack_14 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
               ((CDemonFilter *)*puVar1,
                (float)iStack_14 * (float)0.125 + (float)0.125,0);
-    iStack_14 = iVar9;
-  } while (iVar9 < 8);
-  iVar9 = 0;
-  iVar7 = 0;
+    iStack_14 = iVar10;
+  } while (iVar10 < 8);
+  iVar10 = 0;
+  iVar8 = 0;
   do {
-    **(uint **)((int)&DAT_005ad53c + iVar9) = 0x100;
+    **(uint **)((int)&DAT_005ad53c + iVar10) = 0x100;
     fVar3 = (float)0.25;
-    *(uint *)(*(int *)((int)&DAT_005ad53c + iVar9) + 4) = 0x100;
-    puVar1 = (uint *)((int)&DAT_005ad53c + iVar9);
-    iVar9 = iVar9 + 4;
-    iVar10 = iVar7 + 1;
-    iStack_14 = iVar7;
+    *(uint *)(*(int *)((int)&DAT_005ad53c + iVar10) + 4) = 0x100;
+    puVar1 = (uint *)((int)&DAT_005ad53c + iVar10);
+    iVar10 = iVar10 + 4;
+    iVar11 = iVar8 + 1;
+    iStack_14 = iVar8;
     core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
-              ((CDemonFilter *)*puVar1,(float)iVar7 * fVar3 + (float)0.25,0);
-    iVar7 = iVar10;
-  } while (iVar10 < 4);
+              ((CDemonFilter *)*puVar1,(float)iVar8 * fVar3 + (float)0.25,0);
+    iVar8 = iVar11;
+  } while (iVar11 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(g_CMouse_PTR_005be060);
   xxx_unk_c_FUN_004940d0();
   core_netgame_cpp_CNetGame_init_FUN_004e9910(g_CNetGame_PTR_005bdee0);

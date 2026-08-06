@@ -25,7 +25,7 @@ void __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void)
   do {
     _DAT_005bf494 = DAT_005bf48c;
     puVar5 = *(ulonglong **)(&DAT_01bd2fa0 + iVar4 * 4);
-    uVar2 = (uint)(DAT_005b761c * DAT_005b7624) >> 3;
+    uVar2 = (uint)(g_WindowWidth * DAT_005b7624) >> 3;
     do {
       *puVar5 = _DAT_005bf494;
       puVar5[1] = _DAT_005bf494;
@@ -37,6 +37,6 @@ void __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void)
       uVar2 = uVar3;
     } while (uVar3 != 0 && bVar1);
     iVar4 = iVar4 + 1;
-  } while (iVar4 < DAT_005b7620);
+  } while (iVar4 < g_WindowHeight);
   return;
 }

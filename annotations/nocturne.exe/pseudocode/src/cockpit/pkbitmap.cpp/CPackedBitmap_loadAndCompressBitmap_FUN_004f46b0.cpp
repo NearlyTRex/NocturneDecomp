@@ -18,7 +18,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46
   if (raw_bitmap_data != (uchar *)0x0) {
     cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700
               (this_ptr,raw_bitmap_data,this_ptr->width);
-    FUN_005638d0();
+    free(raw_bitmap_data);
     if (in_stack_00000014 != 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_004f4ab0(this_ptr);
       return;

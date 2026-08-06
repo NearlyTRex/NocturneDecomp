@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   c1
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004a3b90 at 004a3e44
-;   core_game.cpp_FUN_004a4170 at 004a43fe
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3e44
+;   core_game.cpp_CGame_FUN_004a4170 at 004a43fe
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a47a4

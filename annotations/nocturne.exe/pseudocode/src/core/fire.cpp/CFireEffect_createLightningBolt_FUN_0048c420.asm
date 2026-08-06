@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   end_width
 ;
 ; XREF[3]:
-;   core_baron.cpp_FUN_00410cc0 at 00410d91
+;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410d91
 ;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478cc6
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554f0a
 ;
@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLightningBolt_activate_FUN_00488b10
-;   core_set.cpp_FUN_0050e660
+;   core_set.cpp_CDemonSet_FUN_0050e660
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     MOV EBP,dword ptr [0x005be368]      ; 0048c48a | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 0048c490
     PUSH EBP                            ; 0048c495 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e660      ; 0048c496
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 0048c496
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 0048c49b
     POP EBP                             ; 0048c49e
     RET                                 ; 0048c49f

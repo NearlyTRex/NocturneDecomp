@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bddc = 256
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -39,7 +39,7 @@ section .text
     MOV EBX,ESP                         ; 00445f88
     MOV dword ptr [ESP + 0x14],EAX      ; 00445f8a
     LEA EAX,[ESP + 0xc]                 ; 00445f8e
-    MOV EDX,dword ptr [0x005ae704]      ; 00445f92 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00445f92 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00445f98
     FMUL float ptr [0x0059bddc]         ; 00445f9a | FLOAT_0059bddc
     FISTP dword ptr [EBX]               ; 00445fa0

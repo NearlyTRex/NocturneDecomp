@@ -32,9 +32,9 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
-;   core_fire.cpp_FUN_0048c0d0
+;   core_fire.cpp_CFireEffect_FUN_0048c0d0
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0
-;   core_vessel.cpp_FUN_0054fc40
+;   core_vessel.cpp_CCryptVessel_FUN_0054fc40
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
         ;   XREF to: 0054ffba (CONDITIONAL_JUMP)  ; LAB_0054ffba
     MOV EAX,dword ptr [EBX + 0x2d4]     ; 0054fcfd
     PUSH EAX                            ; 0054fd03
-    CALL core_vessel.cpp_FUN_0054fc40   ; 0054fd04
-        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_0054fc40(CCryptVessel * actor)
+    CALL core_vessel.cpp_CCryptVessel_FUN_0054fc40 ; 0054fd04
+        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_CCryptVessel_FUN_0054fc40(CCryptVessel * actor)
     ADD ESP,0x4                         ; 0054fd09
     TEST EAX,EAX                        ; 0054fd0c
     JZ 0x0054fd54                       ; 0054fd0e
@@ -318,16 +318,16 @@ section .text
     RET                                 ; 0054ffb9
     PUSH EDX                            ; 0054ffba
         ;   Label: LAB_0054ffba
-    CALL core_vessel.cpp_FUN_0054fc40   ; 0054ffbb
-        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_0054fc40(CCryptVessel * actor)
+    CALL core_vessel.cpp_CCryptVessel_FUN_0054fc40 ; 0054ffbb
+        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_CCryptVessel_FUN_0054fc40(CCryptVessel * actor)
     ADD ESP,0x4                         ; 0054ffc0
     TEST EAX,EAX                        ; 0054ffc3
     JZ 0x0055002d                       ; 0054ffc5
         ;   XREF to: 0055002d (CONDITIONAL_JUMP)  ; LAB_0055002d
     MOV ESI,dword ptr [EBX + 0x2d4]     ; 0054ffc7
     PUSH ESI                            ; 0054ffcd
-    CALL core_vessel.cpp_FUN_0054fc40   ; 0054ffce
-        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_0054fc40(CCryptVessel * actor)
+    CALL core_vessel.cpp_CCryptVessel_FUN_0054fc40 ; 0054ffce
+        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_CCryptVessel_FUN_0054fc40(CCryptVessel * actor)
     ADD ESP,0x4                         ; 0054ffd3
     TEST EAX,EAX                        ; 0054ffd6
     JZ 0x0055002d                       ; 0054ffd8
@@ -361,8 +361,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2d0]     ; 0055002d
         ;   Label: LAB_0055002d
     PUSH EDI                            ; 00550033
-    CALL core_vessel.cpp_FUN_0054fc40   ; 00550034
-        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_0054fc40(CCryptVessel * actor)
+    CALL core_vessel.cpp_CCryptVessel_FUN_0054fc40 ; 00550034
+        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_CCryptVessel_FUN_0054fc40(CCryptVessel * actor)
     ADD ESP,0x4                         ; 00550039
     TEST EAX,EAX                        ; 0055003c
     JZ 0x0055005a                       ; 0055003e
@@ -376,8 +376,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x2d4]     ; 0055005a
         ;   Label: LAB_0055005a
     PUSH EBP                            ; 00550060
-    CALL core_vessel.cpp_FUN_0054fc40   ; 00550061
-        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_0054fc40(CCryptVessel * actor)
+    CALL core_vessel.cpp_CCryptVessel_FUN_0054fc40 ; 00550061
+        ;   XREF to: 0054fc40 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_CCryptVessel_FUN_0054fc40(CCryptVessel * actor)
     ADD ESP,0x4                         ; 00550066
     TEST EAX,EAX                        ; 00550069
     JNZ 0x00550040                      ; 0055006b
@@ -434,8 +434,8 @@ section .text
     PUSH ESI                            ; 00550119
     MOV EAX,[0x005b80f0]                ; 0055011a | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 0055011f
-    CALL core_fire.cpp_FUN_0048c0d0     ; 00550120
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 00550120
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     MOV EAX,dword ptr [EBX + 0x3a0]     ; 00550125
     MOV dword ptr [EBX + 0x3b4],0x3f800000 ; 0055012b
     MOV EDX,dword ptr [EAX + 0x20]      ; 00550135

@@ -16,13 +16,14 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(CBoxActor *thi
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(&this_ptr->model);
   if ((pCVar1->poly_count < 1) ||
-     ((iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 == 0
-      && ((this_ptr->base).is_transparent != 0)))) {
+     ((iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                         (g_CDemonRenderer_PTR_005ae704), iVar2 == 0 &&
+      ((this_ptr->base).is_transparent != 0)))) {
     return 0;
   }
   if ((this_ptr->plot_in_shadow_flag == 0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 != 0)
-     ) {
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                        (g_CDemonRenderer_PTR_005ae704), iVar2 != 0)) {
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00

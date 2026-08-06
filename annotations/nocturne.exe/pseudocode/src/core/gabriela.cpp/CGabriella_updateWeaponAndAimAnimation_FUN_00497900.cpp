@@ -115,7 +115,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         local_14 = local_50;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (pCVar8,_DAT_01c713cc,(float)local_50,local_28,_DAT_01c713a8,
-                   core_skeleton_cpp_FUN_0051b650);
+                   core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         if (0.82f <= this_ptr->draw_blend) {
           local_2c = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
                      this_ptr->aim_weight;
@@ -131,7 +131,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
             local_14 = &(this_ptr->base).base.model;
             core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                       (local_14,_DAT_01c713d0,local_34,local_2c * (float)0.90000000000000002,
-                       _DAT_01c713e0,core_skeleton_cpp_FUN_0051b650);
+                       _DAT_01c713e0,core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
             local_84 = CVector3f_01c71388.x * 3.141593f;
             local_6c.x = local_84 / 180.0f;
             local_80 = CVector3f_01c71388.y * 3.141593f;
@@ -221,7 +221,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
         local_14 = local_44;
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                   (pCVar8,_DAT_01c713cc,(float)local_44,local_28,_DAT_01c713a8,
-                   core_skeleton_cpp_FUN_0051b650);
+                   core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
         if ((0.82f <= this_ptr->draw_blend) &&
            (local_40 = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
                        this_ptr->aim_weight, (float)0.001 < local_40)) {
@@ -257,7 +257,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
           core_xform_cpp_multiplyQuaternion_FUN_0055d130
                     ((CQuaternion4f *)&DAT_01c71344,&local_1a4,&local_1d4);
           fVar10 = local_40;
-          pcVar11 = core_gabriela_cpp_FUN_00495580;
+          pcVar11 = core_gabriela_cpp_motionBlendWeightFunc_FUN_00495580;
           pCVar9 = &local_114;
           pCVar8 = &(this_ptr->base).base.model;
           local_114.w = local_1d4.w;
@@ -302,7 +302,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004979
   if (1.7453293 < local_78.y) {
     local_78.y = 1.7453293;
   }
-  pcVar11 = core_skeleton_cpp_FUN_0051b650;
+  pcVar11 = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
   fVar10 = this_ptr->aim_blend * this_ptr->aim_weight;
   iVar2 = _DAT_01c71398;
   core_xform_cpp_eulerToQuaternion_FUN_0055d610(&local_78,&local_c4);

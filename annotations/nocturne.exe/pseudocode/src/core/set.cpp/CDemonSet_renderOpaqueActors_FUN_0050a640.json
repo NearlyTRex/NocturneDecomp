@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -68,46 +68,28 @@
         "message": "expected expression"
       },
       {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 48,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 49,
+        "line": 50,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 49,
+        "line": 50,
         "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 56,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 61,
+        "line": 63,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 32,
-        "line": 61,
+        "line": 63,
         "message": "expected expression"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 65,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
       }
     ],
     "success": false,
@@ -116,31 +98,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 162,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 8,
+    "pseudocode_lines": 70,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 231
+    "total_lines": 234
   },
   "cross_references": [
     {
       "addr": "00509a80",
       "from_addr": "00509d4a",
-      "name": "core_set.cpp_FUN_00509a80",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050aba0",
       "from_addr": "0050accd",
-      "name": "core_set.cpp_FUN_0050aba0",
+      "name": "core_set.cpp_CDemonSet_FUN_0050aba0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,6 +139,11 @@
   },
   "function_calls": [
     {
+      "addr": "0050e080",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0050e080"
+    },
+    {
       "addr": "0050e190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190"
@@ -173,11 +159,6 @@
       "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0"
     },
     {
-      "addr": "0050e080",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050e080"
-    },
-    {
       "addr": "00461050",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050"
@@ -191,9 +172,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -208,7 +189,7 @@
       {
         "call_addr": "00509d4a",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +200,7 @@
       {
         "call_addr": "0050accd",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050aba0",
+        "caller": "core_set.cpp_CDemonSet_FUN_0050aba0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,44 +296,20 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 43,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

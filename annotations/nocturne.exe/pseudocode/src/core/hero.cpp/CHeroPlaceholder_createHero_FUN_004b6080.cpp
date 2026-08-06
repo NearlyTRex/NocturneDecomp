@@ -46,9 +46,9 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlac
     class_name = "CMoloch";
     break;
   default:
-    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
-    g_INT_01cc4804 = 0x578;
-    core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
+    g_CurrentFilename = "..\\core\\hero.cpp";
+    g_CurrentLineNumber = 1400;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004b60b9;
   }
   class_name_hash = g_CHeroActorType_01cae0ec.name_hash;
@@ -56,9 +56,9 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(CHeroPlac
   actor = (CHero *)core_actor_cpp_castToClassHash_FUN_0040d890(actor_ptr,class_name_hash);
 LAB_004b60b9:
   if (actor == (CHero *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
-    g_INT_01cc4804 = 0x57d;
-    core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - failed.");
+    g_CurrentFilename = "..\\core\\hero.cpp";
+    g_CurrentLineNumber = 1405;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720
             (g_CDemonMission_PTR_005baf90,(CDemonActor *)actor);

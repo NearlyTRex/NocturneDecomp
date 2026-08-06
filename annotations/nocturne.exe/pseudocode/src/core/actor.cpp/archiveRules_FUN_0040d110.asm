@@ -165,7 +165,7 @@ section .text
     MOV ECX,dword ptr [0x00763e84]      ; 0040d220 | DAT_00763e84
     PUSH ECX                            ; 0040d226
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d227
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040d22c
     PUSH 0x1                            ; 0040d22f
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040bff0 ; 0040d231
@@ -179,7 +179,7 @@ section .text
     MOV ESI,dword ptr [0x00763e84]      ; 0040d24a | DAT_00763e84
     PUSH ESI                            ; 0040d250
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d251
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040d256
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040d259
     MOV EBP,dword ptr [EAX]             ; 0040d25d
@@ -197,7 +197,7 @@ section .text
     MOV EAX,[0x00763e84]                ; 0040d27a | DAT_00763e84
     PUSH EAX                            ; 0040d27f
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d280
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040d285
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040d288
     INC EDI                             ; 0040d28c
@@ -219,7 +219,7 @@ section .text
     MOV ECX,dword ptr [0x00763e84]      ; 0040d2b4 | DAT_00763e84
     PUSH ECX                            ; 0040d2ba
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040d2bb
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040d2c0
     POP EBP                             ; 0040d2c3
     POP EDI                             ; 0040d2c4

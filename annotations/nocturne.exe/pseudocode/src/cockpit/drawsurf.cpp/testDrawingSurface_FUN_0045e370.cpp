@@ -25,9 +25,9 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test
   int in_stack_0000014c;
   int in_stack_0000019c;
   
-  if ((0x27f < DAT_005b761c) && (0x1df < DAT_005b7620)) {
+  if ((0x27f < g_WindowWidth) && (0x1df < g_WindowHeight)) {
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480
-              ((CDrawSurface *)&stack0xffffff9c,DAT_005b761c / 2,DAT_005b7620 / 2,0xc9,0x65,
+              ((CDrawSurface *)&stack0xffffff9c,g_WindowWidth / 2,g_WindowHeight / 2,0xc9,0x65,
                (CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480
               ((CDrawSurface *)&stack0xffffff5c,0xc,8,0x15,0xb,(CDrawSurface *)&stack0xffffff9c);
@@ -109,11 +109,11 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test
               ((CDrawSurface *)&stack0xffffffe8);
     cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0
               ((CDrawSurface *)&stack0xffffffe8,0,0,0x13,9);
-    iVar2 = DAT_005b7620 / 2 + 0x66;
-    iVar4 = DAT_005b7620 - iVar2;
+    iVar2 = g_WindowHeight / 2 + 0x66;
+    iVar4 = g_WindowHeight - iVar2;
     iVar1 = test_font->current_line_height;
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480
-              ((CDrawSurface *)&stack0x0000007c,DAT_005b761c / 2,iVar2,0xc9,iVar4,
+              ((CDrawSurface *)&stack0x0000007c,g_WindowWidth / 2,iVar2,0xc9,iVar4,
                (CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_setColorRGB_FUN_0045b800(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x00000088)
@@ -163,10 +163,10 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test
               ((CDrawSurface *)&stack0x000000f0,100,in_stack_00000120);
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0
               ((CDrawSurface *)&stack0x000000fc,100,iVar4);
-    iVar3 = DAT_005b7620 / 2 + 0x66;
-    iVar4 = DAT_005b7620 - iVar3;
+    iVar3 = g_WindowHeight / 2 + 0x66;
+    iVar4 = g_WindowHeight - iVar3;
     cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480
-              ((CDrawSurface *)&stack0x000000c8,DAT_005b761c / 2 + -0xca,iVar3,0xc9,iVar4,
+              ((CDrawSurface *)&stack0x000000c8,g_WindowWidth / 2 + -0xca,iVar3,0xc9,iVar4,
                (CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_setColorRGB_FUN_0045b800(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_0045d2b0((CDrawSurface *)&stack0x000000d4)

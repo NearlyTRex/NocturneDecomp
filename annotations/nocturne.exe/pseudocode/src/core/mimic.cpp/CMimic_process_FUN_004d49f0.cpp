@@ -17,9 +17,9 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
   SMotion *pSVar4;
   
   if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mimic.cpp";
-    g_INT_01cc4804 = 0x130;
-    core_main_c_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
+    g_CurrentFilename = "..\\core\\mimic.cpp";
+    g_CurrentLineNumber = 304;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = _DAT_01cae0e8;
   (this_ptr->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x108);
@@ -30,7 +30,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(this_ptr,delta_time);
     return;
   }
-  iVar3 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     if (this_ptr->attack_mode < 2) {
       if ((this_ptr->attack_mode < 1) &&
@@ -40,7 +40,8 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                         (0x01C03A10,this_ptr->mirror_condition);
-      if ((iVar3 != 0) && (core_mimic_cpp_FUN_004d4ba0(this_ptr), this_ptr->attack_mode == 1)) {
+      if ((iVar3 != 0) && (core_mimic_cpp_CMimic_FUN_004d4ba0(this_ptr), this_ptr->attack_mode == 1)
+         ) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                            ((CMotionController *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x150));
         uVar2 = pSVar4->state_index;
@@ -68,7 +69,7 @@ LAB_004d4b4a:
       }
     }
     else {
-      core_mimic_cpp_FUN_004d4f30(this_ptr,delta_time);
+      core_mimic_cpp_CMimic_FUN_004d4f30(this_ptr,delta_time);
     }
     core_charactr_cpp_CCharacter_computeBoundingBox_FUN_004296c0((CCharacter *)this_ptr);
   }

@@ -20,8 +20,8 @@
 ;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454ae0
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00459657
 ;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462e9a
+;   core_gabriela.cpp_CGabriella_FUN_00499b00 at 00499b33
 ;   core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 at 00497891
-;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 0049745d
 ;   ... and 25 more
 ;
 ; Called Functions:

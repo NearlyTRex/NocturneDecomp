@@ -20,12 +20,12 @@
 ;   TerminatedCString s_Unable_to_allocate_memor_0058d148
 ;   TerminatedCString s_Out_of_memory_packing_fi_0058d18d
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d1ce
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_004f3f50
-;   core_main.c_FUN_004c8440
+;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
@@ -42,8 +42,8 @@ section .text
     SUB ESP,0x144                       ; 004f47b4
     MOV EBP,dword ptr [ESP + 0x158]     ; 004f47ba
     PUSH EBP                            ; 004f47c1
-    CALL cockpit_pkbitmap.cpp_FUN_004f3f50 ; 004f47c2
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f3f50()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 ; 004f47c2
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f47c7
     MOV EAX,dword ptr [ESP + 0x160]     ; 004f47ca
     MOV dword ptr [EBP + 0x18],EAX      ; 004f47d1
@@ -152,10 +152,10 @@ section .text
     MOV EAX,ESP                         ; 004f490a
     MOV ECX,0x3b5                       ; 004f490c
     PUSH EAX                            ; 004f4911
-    MOV dword ptr [0x01cc4800],EDX      ; 004f4912 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f4918 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f491e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f4912 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f4918 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f491e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f4923
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f4926
         ;   Label: LAB_004f4926
@@ -201,10 +201,10 @@ section .text
         ;   Label: LAB_004f49ad
     MOV ESI,0x37d                       ; 004f49b2
     PUSH 0x58d148                       ; 004f49b7 | = "Unable to allocate memory for rowOffs..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004f49bc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f49c2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f49c8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004f49bc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004f49c2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f49c8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f49cd
     JMP 0x004f480e                      ; 004f49d0
         ;   XREF to: 004f480e (UNCONDITIONAL_JUMP)  ; LAB_004f480e

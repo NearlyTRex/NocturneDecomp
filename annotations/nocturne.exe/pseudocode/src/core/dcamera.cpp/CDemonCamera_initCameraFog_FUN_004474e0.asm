@@ -18,11 +18,11 @@
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
 ;   undefined4 DAT_00b0e1fc
-;   undefined4 DAT_0140e790
-;   undefined4 DAT_0140e794
-;   undefined4 DAT_0140e798
-;   undefined4 DAT_0140e79c
-;   undefined4 DAT_0140e7a0
+;   undefined4 g_SFogGrid_0140d784.scroll_vector.x
+;   undefined4 g_SFogGrid_0140d784.scroll_vector.y
+;   undefined4 g_SFogGrid_0140d784.scroll_vector.z
+;   undefined4 g_SFogGrid_0140d784.height_threshold
+;   undefined4 g_SFogGrid_0140d784.density_multiplier
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -84,13 +84,13 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 00447573
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST2                            ; 00447578
-    FISTP dword ptr [0x0140e790]        ; 0044757a | DAT_0140e790
-    FISTP dword ptr [0x0140e794]        ; 00447580 | DAT_0140e794
+    FISTP dword ptr [0x0140e790]        ; 0044757a | g_SFogGrid_0140d784.scroll_vector.x
+    FISTP dword ptr [0x0140e794]        ; 00447580 | g_SFogGrid_0140d784.scroll_vector.y
     FXCH                                ; 00447586
-    FISTP dword ptr [0x0140e798]        ; 00447588 | DAT_0140e798
+    FISTP dword ptr [0x0140e798]        ; 00447588 | g_SFogGrid_0140d784.scroll_vector.z
     FXCH                                ; 0044758e
-    FISTP dword ptr [0x0140e79c]        ; 00447590 | DAT_0140e79c
-    FISTP dword ptr [0x0140e7a0]        ; 00447596 | DAT_0140e7a0
+    FISTP dword ptr [0x0140e79c]        ; 00447590 | g_SFogGrid_0140d784.height_threshold
+    FISTP dword ptr [0x0140e7a0]        ; 00447596 | g_SFogGrid_0140d784.density_multiplier
     POP EBP                             ; 0044759c
     POP EBX                             ; 0044759d
     RET                                 ; 0044759e

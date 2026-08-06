@@ -33,7 +33,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
@@ -207,10 +207,10 @@ section .text
     MOV ECX,0x592669                    ; 005225ff | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x300                       ; 00522604
     PUSH 0x59267e                       ; 00522609 | = "Can't open %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052260e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00522614 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052261a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052260e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00522614 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052261a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052261f
     MOV EAX,dword ptr [ESP + 0x100]     ; 00522622
         ;   Label: LAB_00522622
@@ -403,10 +403,10 @@ section .text
     MOV ESI,0x5926ca                    ; 0052285b | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x34f                       ; 00522860
     PUSH 0x5926df                       ; 00522865 | = "Don't know length of sample %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0052286a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00522870 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00522876
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0052286a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00522870 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00522876
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052287b
     MOV dword ptr [EBP + 0x128],0x0     ; 0052287e
         ;   Label: LAB_0052287e
@@ -468,10 +468,10 @@ section .text
     MOV ESI,0x59273a                    ; 0052293b | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x37d                       ; 00522940
     PUSH 0x59274f                       ; 00522945 | = "Unknown sample file format extension: %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0052294a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00522950 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00522956
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0052294a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00522950 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00522956
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052295b
     JMP 0x005227bc                      ; 0052295e
         ;   XREF to: 005227bc (UNCONDITIONAL_JUMP)  ; LAB_005227bc

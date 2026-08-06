@@ -5,15 +5,15 @@
 
 // Original: engine_3d.c_FUN_00404430
 // Address: 00404430
-undefined4 * FUN_00404430(void);
+char * __cdecl FUN_00404430(void);
 
 // Original: engine_3d.c_FUN_005458a0
 // Address: 00404480
-void FUN_005458a0(void);
+void __cdecl FUN_005458a0(void);
 
 // Original: engine_3d.c_FUN_005458d0
 // Address: 00404490
-void FUN_005458d0(void);
+void __cdecl FUN_005458d0(void);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0
@@ -31,9 +31,9 @@ SMRGLHeaderExtended * __cdecl transformAndBufferVertices(SMRGLHeaderExtended *mr
 // Address: 00404610
 int __cdecl isVisiblePlane(SClipPlane *plane);
 
-// Original: engine_3d.c_FUN_00404680
+// Original: engine_3d.c_lookupLitColor_FUN_00404680
 // Address: 00404680
-int FUN_00404680(int param_1,int param_2);
+int __cdecl lookupLitColor(int color_index,int light_level);
 
 // Original: engine_3d.c_calculatePolygonLighting_FUN_00404710
 // Address: 00404710

@@ -15,8 +15,8 @@
 ;   core_dcube.cpp_FUN_0044b660 at 0044b6a8
 ;   core_event.cpp_CEventList_loadState_FUN_00480f70 at 00480f9c
 ;   core_fire.cpp_CFireEffect_load_FUN_0048c7d0 at 0048c804
+;   core_game.cpp_CGame_FUN_004a4170 at 004a45cd
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6f3c
-;   core_game.cpp_FUN_004a4170 at 004a45cd
 ;   core_gore.cpp_CGore_load_FUN_004b0820 at 004b083c
 ;   core_inv.cpp_CInventory_load_FUN_004c1190 at 004c11cc
 ;   ... and 11 more

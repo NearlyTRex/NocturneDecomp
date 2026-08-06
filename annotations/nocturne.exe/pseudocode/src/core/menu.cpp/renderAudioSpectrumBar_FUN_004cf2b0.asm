@@ -24,7 +24,7 @@
 ;   core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_004d1290 at 004d12a5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005bae58
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc5b64
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 004cf2c6
     PUSH ESI                            ; 004cf2c7
     PUSH EBX                            ; 004cf2c8
-    MOV EAX,[0x005ae704]                ; 004cf2c9 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004cf2c9 | g_CDemonRenderer_PTR_005ae704
     LEA ECX,[EBP + -0x10]               ; 004cf2ce
     MOV EBX,dword ptr [EAX]             ; 004cf2d1 | DAT_01b4d738
     SHL ECX,0x10                        ; 004cf2d3
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004cf3ad
     PUSH 0x1                            ; 004cf3b0
-    MOV EDI,dword ptr [0x005ae704]      ; 004cf3b2 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 004cf3b2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004cf3b8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004cf3b9
         ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
@@ -132,7 +132,7 @@ section .text
     ADD ESP,0x8                         ; 004cf3e2
     ADD EAX,0x5bae58                    ; 004cf3e5 | DAT_005bae58
     PUSH EAX                            ; 004cf3ea
-    MOV EBP,dword ptr [0x005ae704]      ; 004cf3eb | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 004cf3eb | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 004cf3f1 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004cf3f2
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -140,19 +140,19 @@ section .text
     PUSH 0x23                           ; 004cf3fa
     LEA EAX,[ESP + 0x10]                ; 004cf3fc
     PUSH EAX                            ; 004cf400
-    MOV EAX,[0x005ae704]                ; 004cf401 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004cf401 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 004cf406 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0 ; 004cf407
         ;   XREF to: 0045f3c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004cf40c
     PUSH 0x0                            ; 004cf40f
-    MOV EDX,dword ptr [0x005ae704]      ; 004cf411 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004cf411 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004cf417 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 ; 004cf418
         ;   XREF to: 00461000 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 004cf41d
     PUSH 0xffff                         ; 004cf420
-    MOV ECX,dword ptr [0x005ae704]      ; 004cf425 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004cf425 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004cf42b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004cf42c
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)

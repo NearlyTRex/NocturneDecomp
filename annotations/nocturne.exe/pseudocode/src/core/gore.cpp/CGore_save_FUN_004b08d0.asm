@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004d8720 at 004d8a4c
+;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8a4c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Gore_005851e0
@@ -35,7 +35,7 @@ section .text
     PUSH 0x5851e0                       ; 004b08d8 | = "--- Gore ---\n"
     PUSH EDI                            ; 004b08dd
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004b08de
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004b08e3
     MOV EDX,dword ptr [0x01c9e038]      ; 004b08e6 | DAT_01c9e038
     PUSH EDX                            ; 004b08ec
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 004b08f2
     XOR ESI,ESI                         ; 004b08f3
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004b08f5
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV ECX,dword ptr [0x01c9e038]      ; 004b08fa | DAT_01c9e038
     ADD ESP,0xc                         ; 004b0900
     TEST ECX,ECX                        ; 004b0903
@@ -71,7 +71,7 @@ section .text
     PUSH EDI                            ; 004b093b
     XOR EBX,EBX                         ; 004b093c
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004b093e
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV EDX,dword ptr [0x01c7ccf0]      ; 004b0943 | DAT_01c7ccf0
     ADD ESP,0xc                         ; 004b0949
     TEST EDX,EDX                        ; 004b094c

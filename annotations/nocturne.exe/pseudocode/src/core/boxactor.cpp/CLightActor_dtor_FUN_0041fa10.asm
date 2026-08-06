@@ -15,7 +15,7 @@
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
 ;   core_dlight.cpp_CDemonLight_dtor_FUN_0044e1c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     RET                                 ; 0041fa77
     PUSH EAX                            ; 0041fa78
         ;   Label: LAB_0041fa78
-    CALL crt_unknown.c_FUN_00564494     ; 0041fa79
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0041fa79
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0041fa7e
     MOV EAX,EBX                         ; 0041fa81
     POP EBX                             ; 0041fa83

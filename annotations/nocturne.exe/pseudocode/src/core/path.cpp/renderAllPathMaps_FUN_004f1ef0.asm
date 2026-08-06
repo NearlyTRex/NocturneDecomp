@@ -12,12 +12,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce6f
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ce80
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e312f8
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0
 ;
 ; *****************************************************************************
@@ -63,10 +63,10 @@ section .text
         ;   Label: LAB_004f1f38
     MOV ECX,0x6a8                       ; 004f1f3d
     PUSH 0x58ce80                       ; 004f1f42 | = "Global pathmap list corruption"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f1f47 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f1f4d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f1f53
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f1f47 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f1f4d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f1f53
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f1f58
     JMP 0x004f1f13                      ; 004f1f5b
         ;   XREF to: 004f1f13 (UNCONDITIONAL_JUMP)  ; LAB_004f1f13

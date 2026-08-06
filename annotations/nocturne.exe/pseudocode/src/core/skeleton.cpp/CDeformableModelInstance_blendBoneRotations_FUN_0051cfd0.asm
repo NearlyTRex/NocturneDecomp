@@ -19,11 +19,11 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497a17
 ;   core_haystack.cpp_CHaystack_process_FUN_004b32d0 at 004b3564
 ;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba2db
+;   core_scat.cpp_CScat_FUN_004fd1d0 at 004fd43a
 ;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc2c6
-;   core_scat.cpp_FUN_004fd1d0 at 004fd43a
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650 at 0051d783
+;   core_stranger.cpp_CStranger_FUN_005384d0 at 005387e2
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a53d
-;   core_stranger.cpp_FUN_005384d0 at 005387e2
 ;   ... and 1 more
 ;
 ; Referenced Globals:

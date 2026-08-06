@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 91,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_01cd8b28'"
       }
     ],
     "success": false,
@@ -68,15 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 150,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 53
@@ -98,7 +91,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
   "globals": [
@@ -122,13 +115,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -274,30 +267,6 @@
       "severity": "mild",
       "text": "return *(uint *)(\"$CMotionController$$\" + param_1 * 0x10 + param_2 * 4 + 10);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\",param_1,param_2,&DAT_01cd8b28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\",param_1,param_2,&DAT_01cd8b28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\",param_1,param_2,&DAT_01cd8b28);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

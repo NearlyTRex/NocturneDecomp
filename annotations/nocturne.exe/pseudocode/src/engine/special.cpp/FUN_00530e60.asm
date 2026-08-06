@@ -23,7 +23,7 @@
 ;   ... and 65 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_special.cpp_CExternalRenderer_ctor_FUN_00532da0
 ;   engine_special.cpp_CExternalRenderer_validate_FUN_00532df0
 ;   engine_special.cpp_FUN_00530d40
@@ -97,10 +97,10 @@ section .text
     MOV EDI,0x594d27                    ; 00530eff | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 00530f04
     PUSH 0x594d3b                       ; 00530f09 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00530f0e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00530f14 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00530f1a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00530f0e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 00530f14 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00530f1a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00530f1f
     PUSH 0x594d71                       ; 00530f22 | = "APIDLLkill"
         ;   Label: LAB_00530f22
@@ -116,10 +116,10 @@ section .text
     MOV EDX,0x594d27                    ; 00530f3e | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00530f43
     PUSH 0x594d3b                       ; 00530f48 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00530f4d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00530f53 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00530f59
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00530f4d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00530f53 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00530f59
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00530f5e
     PUSH 0x594d7c                       ; 00530f61 | = "APIDLLtoggle"
         ;   Label: LAB_00530f61
@@ -135,10 +135,10 @@ section .text
     MOV ESI,0x594d27                    ; 00530f7e | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00530f83
     PUSH 0x594d3b                       ; 00530f88 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00530f8d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00530f93 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00530f99
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00530f8d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00530f93 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00530f99
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00530f9e
     PUSH 0x594d89                       ; 00530fa1 | = "APIDLLsetVideoMode"
         ;   Label: LAB_00530fa1
@@ -154,10 +154,10 @@ section .text
     MOV EAX,0x594d27                    ; 00530fbe | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00530fc3
     PUSH 0x594d3b                       ; 00530fc8 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00530fcd | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00530fd2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00530fd8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00530fcd | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00530fd2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00530fd8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00530fdd
     PUSH 0x594d9c                       ; 00530fe0 | = "APIDLLsetVideoMode2"
         ;   Label: LAB_00530fe0
@@ -173,10 +173,10 @@ section .text
     MOV EBX,0x594d27                    ; 00530ffd | = "..\\engine\\special.c"
     MOV ESI,0x86                        ; 00531002
     PUSH 0x594d3b                       ; 00531007 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBX      ; 0053100c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00531012 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531018
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0053100c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00531012 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531018
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053101d
     PUSH 0x594db0                       ; 00531020 | = "APIDLLrestoreVideoMode"
         ;   Label: LAB_00531020
@@ -192,10 +192,10 @@ section .text
     MOV EBP,0x594d27                    ; 0053103d | = "..\\engine\\special.c"
     MOV EAX,0x86                        ; 00531042
     PUSH 0x594d3b                       ; 00531047 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0053104c | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00531052 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531057
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0053104c | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00531052 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531057
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053105c
     PUSH 0x594dc7                       ; 0053105f | = "APIDLLbeginScene"
         ;   Label: LAB_0053105f
@@ -211,10 +211,10 @@ section .text
     MOV ECX,0x594d27                    ; 0053107c | = "..\\engine\\special.c"
     MOV EBX,0x86                        ; 00531081
     PUSH 0x594d3b                       ; 00531086 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0053108b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00531091 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531097
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0053108b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00531091 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531097
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053109c
     PUSH 0x594dd8                       ; 0053109f | = "APIDLLendScene"
         ;   Label: LAB_0053109f
@@ -230,10 +230,10 @@ section .text
     MOV EDI,0x594d27                    ; 005310bc | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 005310c1
     PUSH 0x594d3b                       ; 005310c6 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 005310cb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005310d1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005310d7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 005310cb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 005310d1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005310d7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005310dc
     PUSH 0x594de7                       ; 005310df | = "APIDLLlockFrame"
         ;   Label: LAB_005310df
@@ -249,10 +249,10 @@ section .text
     MOV EDX,0x594d27                    ; 005310fb | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 00531100
     PUSH 0x594d3b                       ; 00531105 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0053110a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00531110 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531116
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0053110a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00531110 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531116
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053111b
     PUSH 0x594df7                       ; 0053111e | = "APIDLLunlockFrame"
         ;   Label: LAB_0053111e
@@ -268,10 +268,10 @@ section .text
     MOV ESI,0x594d27                    ; 0053113b | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 00531140
     PUSH 0x594d3b                       ; 00531145 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 0053114a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00531150 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531156
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0053114a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00531150 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531156
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053115b
     PUSH 0x594e09                       ; 0053115e | = "APIDLLselectTexture"
         ;   Label: LAB_0053115e
@@ -287,10 +287,10 @@ section .text
     MOV EAX,0x594d27                    ; 0053117b | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 00531180
     PUSH 0x594d3b                       ; 00531185 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 0053118a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0053118f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531195
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0053118a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0053118f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531195
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053119a
     PUSH 0x594e1d                       ; 0053119d | = "APIDLLupdateTexture"
         ;   Label: LAB_0053119d
@@ -306,10 +306,10 @@ section .text
     MOV EBX,0x594d27                    ; 005311ba | = "..\\engine\\special.c"
     MOV ESI,0x86                        ; 005311bf
     PUSH 0x594d3b                       ; 005311c4 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBX      ; 005311c9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005311cf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005311d5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005311c9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005311cf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005311d5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005311da
     PUSH 0x594e31                       ; 005311dd | = "APIDLLsetMipMapLevel"
         ;   Label: LAB_005311dd
@@ -325,10 +325,10 @@ section .text
     MOV EBP,0x594d27                    ; 005311fa | = "..\\engine\\special.c"
     MOV EAX,0x86                        ; 005311ff
     PUSH 0x594d3b                       ; 00531204 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBP      ; 00531209 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0053120f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531214
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00531209 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0053120f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531214
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531219
     PUSH 0x594e46                       ; 0053121c | = "APIDLLdrawPolygon"
         ;   Label: LAB_0053121c
@@ -344,10 +344,10 @@ section .text
     MOV ECX,0x594d27                    ; 00531239 | = "..\\engine\\special.c"
     MOV EBX,0x86                        ; 0053123e
     PUSH 0x594d3b                       ; 00531243 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00531248 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0053124e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531254
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00531248 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0053124e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531254
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531259
     PUSH 0x594e58                       ; 0053125c | = "APIDLLdrawPolygon2"
         ;   Label: LAB_0053125c
@@ -363,10 +363,10 @@ section .text
     MOV EDI,0x594d27                    ; 00531279 | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 0053127e
     PUSH 0x594d3b                       ; 00531283 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531288 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0053128e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531294
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00531288 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0053128e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531294
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531299
     PUSH 0x594e6b                       ; 0053129c | = "APIDLLdrawPolyList"
         ;   Label: LAB_0053129c
@@ -396,10 +396,10 @@ section .text
     MOV EBX,0x594d27                    ; 005312ea | = "..\\engine\\special.c"
     MOV ESI,0x86                        ; 005312ef
     PUSH 0x594d3b                       ; 005312f4 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBX      ; 005312f9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005312ff | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531305
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005312f9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005312ff | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531305
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053130a
     PUSH 0x594ea4                       ; 0053130d | = "APIDLLflushParticleList"
         ;   Label: LAB_0053130d
@@ -415,10 +415,10 @@ section .text
     MOV EBP,0x594d27                    ; 0053132a | = "..\\engine\\special.c"
     MOV EAX,0x86                        ; 0053132f
     PUSH 0x594d3b                       ; 00531334 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBP      ; 00531339 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0053133f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531344
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00531339 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0053133f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531344
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531349
     PUSH 0x594ebc                       ; 0053134c | = "APIDLLadd3dLine"
         ;   Label: LAB_0053134c
@@ -434,10 +434,10 @@ section .text
     MOV ECX,0x594d27                    ; 00531369 | = "..\\engine\\special.c"
     MOV EBX,0x86                        ; 0053136e
     PUSH 0x594d3b                       ; 00531373 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00531378 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0053137e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531384
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00531378 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0053137e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531384
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531389
     PUSH 0x594ecc                       ; 0053138c | = "APIDLLflushLineList"
         ;   Label: LAB_0053138c
@@ -453,10 +453,10 @@ section .text
     MOV EDI,0x594d27                    ; 005313a9 | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 005313ae
     PUSH 0x594d3b                       ; 005313b3 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 005313b8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005313be | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005313c4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 005313b8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 005313be | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005313c4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005313c9
     PUSH 0x594ee0                       ; 005313cc | = "APIDLLclear"
         ;   Label: LAB_005313cc
@@ -472,10 +472,10 @@ section .text
     MOV EDX,0x594d27                    ; 005313e8 | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 005313ed
     PUSH 0x594d3b                       ; 005313f2 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005313f7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005313fd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531403
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005313f7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 005313fd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531403
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531408
     PUSH 0x594eec                       ; 0053140b | = "APIDLLsetFogColor"
         ;   Label: LAB_0053140b
@@ -491,10 +491,10 @@ section .text
     MOV ESI,0x594d27                    ; 00531428 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 0053142d
     PUSH 0x594d3b                       ; 00531432 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00531437 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0053143d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531443
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00531437 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0053143d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531443
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531448
     PUSH 0x594efe                       ; 0053144b | = "APIDLLsync"
         ;   Label: LAB_0053144b
@@ -510,10 +510,10 @@ section .text
     MOV EAX,0x594d27                    ; 00531468 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 0053146d
     PUSH 0x594d3b                       ; 00531472 | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531477 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0053147c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531482
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00531477 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0053147c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531482
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531487
     PUSH 0x594f09                       ; 0053148a | = "APIDLLclearZBuffer"
         ;   Label: LAB_0053148a
@@ -529,10 +529,10 @@ section .text
     MOV EBX,0x594d27                    ; 005314a7 | = "..\\engine\\special.c"
     MOV ESI,0x86                        ; 005314ac
     PUSH 0x594d3b                       ; 005314b1 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBX      ; 005314b6 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005314bc | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005314c2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005314b6 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005314bc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005314c2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005314c7
     PUSH 0x594f1c                       ; 005314ca | = "APIDLLclearZBox"
         ;   Label: LAB_005314ca
@@ -548,10 +548,10 @@ section .text
     MOV EBP,0x594d27                    ; 005314e7 | = "..\\engine\\special.c"
     MOV EAX,0x86                        ; 005314ec
     PUSH 0x594d3b                       ; 005314f1 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBP      ; 005314f6 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005314fc | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531501
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005314f6 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 005314fc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531501
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531506
     PUSH 0x594f2c                       ; 00531509 | = "APIDLLsetColorTable16"
         ;   Label: LAB_00531509
@@ -567,10 +567,10 @@ section .text
     MOV ECX,0x594d27                    ; 00531526 | = "..\\engine\\special.c"
     MOV EBX,0x86                        ; 0053152b
     PUSH 0x594d3b                       ; 00531530 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00531535 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0053153b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531541
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00531535 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0053153b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531541
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531546
     PUSH 0x594f42                       ; 00531549 | = "APIDLLGetDisplayContext"
         ;   Label: LAB_00531549
@@ -586,10 +586,10 @@ section .text
     MOV EDI,0x594d27                    ; 00531566 | = "..\\engine\\special.c"
     MOV EBP,0x86                        ; 0053156b
     PUSH 0x594d3b                       ; 00531570 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDI      ; 00531575 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0053157b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531581
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00531575 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0053157b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531581
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531586
     PUSH 0x594f5a                       ; 00531589 | = "APIDLLReleaseDisplayContext"
         ;   Label: LAB_00531589
@@ -605,10 +605,10 @@ section .text
     MOV EDX,0x594d27                    ; 005315a5 | = "..\\engine\\special.c"
     MOV ECX,0x86                        ; 005315aa
     PUSH 0x594d3b                       ; 005315af | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005315b4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005315ba | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005315c0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005315b4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 005315ba | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005315c0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005315c5
     PUSH 0x594f76                       ; 005315c8 | = "APIDLLmasterZBuffer"
         ;   Label: LAB_005315c8
@@ -624,10 +624,10 @@ section .text
     MOV ESI,0x594d27                    ; 005315e5 | = "..\\engine\\special.c"
     MOV EDI,0x86                        ; 005315ea
     PUSH 0x594d3b                       ; 005315ef | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ESI      ; 005315f4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005315fa | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00531600
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005315f4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 005315fa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00531600
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531605
     PUSH 0x594f8a                       ; 00531608 | = "APIDLLrestoreZBuffer"
         ;   Label: LAB_00531608
@@ -643,10 +643,10 @@ section .text
     MOV EAX,0x594d27                    ; 00531625 | = "..\\engine\\special.c"
     MOV EDX,0x86                        ; 0053162a
     PUSH 0x594d3b                       ; 0053162f | = "Unable to find function!"
-    MOV [0x01cc4800],EAX                ; 00531634 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00531639 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0053163f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00531634 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00531639 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0053163f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531644
     PUSH 0x594f9f                       ; 00531647 | = "APIDLLgetVideoMemory"
         ;   Label: LAB_00531647
@@ -662,10 +662,10 @@ section .text
     MOV EBX,0x594d27                    ; 00531664 | = "..\\engine\\special.c"
     MOV ESI,0x86                        ; 00531669
     PUSH 0x594d3b                       ; 0053166e | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBX      ; 00531673 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00531679 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0053167f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00531673 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00531679 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0053167f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531684
     PUSH 0x594fb4                       ; 00531687 | = "APIDLLselectCard"
         ;   Label: LAB_00531687
@@ -681,10 +681,10 @@ section .text
     MOV EBP,0x594d27                    ; 005316a4 | = "..\\engine\\special.c"
     MOV EAX,0x86                        ; 005316a9
     PUSH 0x594d3b                       ; 005316ae | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EBP      ; 005316b3 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005316b9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005316be
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005316b3 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 005316b9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005316be
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005316c3
     PUSH 0x594fc5                       ; 005316c6 | = "APIDLLbuildCardList"
         ;   Label: LAB_005316c6
@@ -700,10 +700,10 @@ section .text
     MOV ECX,0x594d27                    ; 005316e3 | = "..\\engine\\special.c"
     MOV EBX,0x86                        ; 005316e8
     PUSH 0x594d3b                       ; 005316ed | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005316f2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005316f8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005316fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005316f2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 005316f8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005316fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00531703
     PUSH 0x594fd9                       ; 00531706 | = "APIDLLlockHoldBuffer"
         ;   Label: LAB_00531706

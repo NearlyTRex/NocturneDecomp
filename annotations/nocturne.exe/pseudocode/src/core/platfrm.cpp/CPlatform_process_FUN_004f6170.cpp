@@ -297,7 +297,8 @@ LAB_004f6a33:
     }
     if (this_ptr->push_flag == 0) {
       if (((this_ptr->base).location.position.y < fStack_28) &&
-         (iVar6 = core_platfrm_cpp_FUN_004f7360(this_ptr,&this_ptr_00->base), iVar6 != 0)) {
+         (iVar6 = core_platfrm_cpp_CPlatform_FUN_004f7360(this_ptr,&this_ptr_00->base), iVar6 != 0))
+      {
         (*(((this_ptr_00->base).vtable._uc)->_uc).kill)(this_ptr_00,8,(CVector3f *)0x0,-1.0);
       }
       goto LAB_004f6a33;

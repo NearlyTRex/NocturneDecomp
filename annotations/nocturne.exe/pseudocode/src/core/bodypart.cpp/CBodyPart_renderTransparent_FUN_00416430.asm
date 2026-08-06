@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
@@ -50,7 +50,7 @@ section .text
     ADD ESP,0x4                         ; 0041647b
     MOV EBP,dword ptr [EDI + 0xca8]     ; 0041647e
     PUSH EBP                            ; 00416484
-    MOV EAX,[0x005ae704]                ; 00416485 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 00416485 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0041648a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0041648b
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)

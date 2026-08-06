@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 23,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonRenderer *' from 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 26,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 54,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
       },
       {
         "category": "undeclared_identifier",
@@ -92,28 +74,10 @@
         "message": "use of undeclared identifier '_DAT_01cc5b64'; did you mean 'DAT_005c5064'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 55,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 18,
         "line": 58,
         "message": "use of undeclared identifier 'DAT_005bae58'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 62,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 64,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
       }
     ],
     "success": false,
@@ -122,18 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 157,
+    "complexity_score": 88,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
-    "suspect_count": 9,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 182
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -186,9 +150,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005bae58",
@@ -385,66 +349,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "this_ptr = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_005bae58",
       "severity": "mild",
       "text": "(&DAT_005bae58 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(DAT_005ae704,&local_2c,0x23)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
       "type": "undefined_data"
     }
   ]

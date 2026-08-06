@@ -29,7 +29,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   int local_14;
   
   if (_DAT_01c02594 != 0) {
-    engine_special_cpp_restoreZBuffer_FUN_00532c90(0,0,0,DAT_005b761c + -1,DAT_005b7620 + -1);
+    engine_special_cpp_restoreZBuffer_FUN_00532c90(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
     return;
   }
   if (0x100 < this_ptr->rect_array_count) {

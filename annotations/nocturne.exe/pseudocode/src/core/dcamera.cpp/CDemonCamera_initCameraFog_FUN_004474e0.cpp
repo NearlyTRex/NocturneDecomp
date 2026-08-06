@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCamera *this_ptr,SFog *fog_config)
 
 {
@@ -36,10 +34,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCame
   dVar5 = round(dVar5);
   dVar6 = round((double)(fVar1 * fVar2));
   dVar7 = round(dVar7);
-  _DAT_0140e790 = (int)ROUND(dVar3);
-  _DAT_0140e794 = (int)ROUND(dVar4);
-  _DAT_0140e798 = (int)ROUND(dVar5);
-  _DAT_0140e79c = (int)ROUND(dVar6);
-  _DAT_0140e7a0 = (int)ROUND(dVar7);
+  g_SFogGrid_0140d784.scroll_vector.x = (int)ROUND(dVar3);
+  g_SFogGrid_0140d784.scroll_vector.y = (int)ROUND(dVar4);
+  g_SFogGrid_0140d784.scroll_vector.z = (int)ROUND(dVar5);
+  g_SFogGrid_0140d784.height_threshold = (int)ROUND(dVar6);
+  g_SFogGrid_0140d784.density_multiplier = (int)ROUND(dVar7);
   return;
 }

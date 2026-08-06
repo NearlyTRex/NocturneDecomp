@@ -7,7 +7,7 @@
 ; CBarrier *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_barrier.cpp_FUN_004116e0 at 004116f3
+;   core_barrier.cpp_factoryFunc_FUN_004116e0 at 004116f3
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBarrierVTable

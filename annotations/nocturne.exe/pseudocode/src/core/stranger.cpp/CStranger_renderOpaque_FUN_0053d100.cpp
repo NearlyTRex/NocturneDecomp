@@ -74,7 +74,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
     core_xform_cpp_getTranslation_FUN_0055bc00(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (DAT_005ae704,&local_94,&local_ac);
+              (g_CDemonRenderer_PTR_005ae704,&local_94,&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
@@ -210,15 +210,16 @@ LAB_0053d387:
     core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_0055bc00(&local_dc,&local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (DAT_005ae704,&local_40,&local_4c);
+              (g_CDemonRenderer_PTR_005ae704,&local_40,&local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&(local_1c->base).model,0.0,-1);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] == 0) &&
-      (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar4 == 0
-      )) && (0 < (this_ptr->base).base.cloth_list.count)) {
+      (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                         (g_CDemonRenderer_PTR_005ae704), iVar4 == 0)) &&
+     (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_00438320(&(this_ptr->base).base.cloth_list);
   }
   return 1;

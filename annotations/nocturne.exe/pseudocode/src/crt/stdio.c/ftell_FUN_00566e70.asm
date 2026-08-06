@@ -7,11 +7,11 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[12]:
-;   core_game.cpp_FUN_004a4170 at 004a42fc
+;   core_game.cpp_CGame_FUN_004a4170 at 004a42fc
+;   core_script.cpp_CScript_FUN_004febd0 at 004fecb4
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504ed6
-;   core_script.cpp_FUN_004febd0 at 004fecb4
 ;   crt_unknown.c_fclose_FUN_005634b0 at 005634f4
-;   sound_mp3.cpp_FUN_004e28a0 at 004e28d2
+;   sound_mp3.cpp_CFileBitStream_FUN_004e28a0 at 004e28d2
 ;   sound_mp3.cpp_FUN_004e7ed0 at 004e7f31
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521f28
 ;   sound_sndmain.cpp_FUN_005229f0 at 00522c52

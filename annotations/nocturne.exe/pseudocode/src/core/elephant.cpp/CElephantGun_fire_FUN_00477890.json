@@ -1,0 +1,900 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "cast_error",
+        "column": 16,
+        "line": 70,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 20,
+        "line": 75,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 76,
+        "line": 79,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 38,
+        "line": 80,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 38,
+        "line": 81,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 46,
+        "line": 82,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 46,
+        "line": 83,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 20,
+        "line": 95,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 33,
+        "line": 96,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 33,
+        "line": 97,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 563,
+    "complexity_score": 647,
+    "cross_reference_count": 0,
+    "function_call_count": 23,
+    "global_count": 29,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 247,
+    "suspect_count": 36,
+    "suspect_types": [
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "shadow_pointer_walk",
+      "stack_param",
+      "unknown_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 810
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00477890",
+    "address_range": [
+      [
+        "00477890",
+        "00477fcd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_elephant.cpp_CElephantGun_fire_FUN_00477890",
+    "signature": "int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00477890(CElephantGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040a200",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_0040a200"
+    },
+    {
+      "addr": "0040a290",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290"
+    },
+    {
+      "addr": "0040dda0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0"
+    },
+    {
+      "addr": "0040de00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040de00"
+    },
+    {
+      "addr": "00423ed0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0"
+    },
+    {
+      "addr": "0043cdb0",
+      "is_variadic": false,
+      "name": "core_crate.cpp_CCrate_explode_FUN_0043cdb0"
+    },
+    {
+      "addr": "0048ab60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60"
+    },
+    {
+      "addr": "0048af20",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_0048af20"
+    },
+    {
+      "addr": "0048e550",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550"
+    },
+    {
+      "addr": "004aded0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_FUN_004aded0"
+    },
+    {
+      "addr": "004ada20",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004ada20"
+    },
+    {
+      "addr": "00511780",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511750",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00511750"
+    },
+    {
+      "addr": "0050fb00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00"
+    },
+    {
+      "addr": "00511800",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800"
+    },
+    {
+      "addr": "0052ea60",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0052ea60"
+    },
+    {
+      "addr": "005485a0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0"
+    },
+    {
+      "addr": "005485e0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0"
+    },
+    {
+      "addr": "00548580",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_00548580"
+    },
+    {
+      "addr": "00554600",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_00554600"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": false,
+      "name": "xxx_unk.c_FUN_004940d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057f119",
+      "name": "s_shotgun_noammo_wav_0057f119",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f12c",
+      "name": "s_elephantgun_wav_0057f12c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057f13c",
+      "name": "DOUBLE_0057f13c",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "0057f144",
+      "name": "DOUBLE_0057f144",
+      "type": "double",
+      "value": "0.00555555555555555"
+    },
+    {
+      "addr": "0057f14c",
+      "name": "DOUBLE_0057f14c",
+      "type": "double",
+      "value": "1.57491875110704E-314"
+    },
+    {
+      "addr": "0057f154",
+      "name": "DOUBLE_0057f154",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "0057f15c",
+      "name": "DOUBLE_0057f15c",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "005b80f0",
+      "name": "g_CFireEffect_PTR_005b80f0",
+      "type": "CFireEffect*",
+      "value": "01c08d04"
+    },
+    {
+      "addr": "005b9284",
+      "name": "PTR_DAT_005b9284",
+      "type": "void*",
+      "value": "01c70f74"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "005bed68",
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
+    },
+    {
+      "addr": "00765a98",
+      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077bd78",
+      "name": "g_CCrateActorType_0077bd40.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7068c",
+      "name": "g_CFlameCanActorType_01c70654.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78c78",
+      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fa3fac",
+      "name": "g_CDemonSet_01e57284.ray_origin.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fb0",
+      "name": "g_CDemonSet_01e57284.ray_origin.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fb4",
+      "name": "g_CDemonSet_01e57284.ray_origin.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fb8",
+      "name": "g_CDemonSet_01e57284.ray_target.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fbc",
+      "name": "g_CDemonSet_01e57284.ray_target.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fc0",
+      "name": "g_CDemonSet_01e57284.ray_target.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fc4",
+      "name": "g_CDemonSet_01e57284.collision_normal.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fd0",
+      "name": "g_CDemonSet_01e57284.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fd4",
+      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fe4",
+      "name": "g_CDemonSet_01e57284.collision_part_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd10bc",
+      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9355509355509355,
+    "instruction_count": 481,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 32,
+      "CALLIND": 7,
+      "CALLOTHER": 3,
+      "CBRANCH": 22,
+      "COPY": 936,
+      "FLOAT2FLOAT": 75,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 15,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 5,
+      "INT_ADD": 227,
+      "INT_AND": 165,
+      "INT_CARRY": 42,
+      "INT_EQUAL": 140,
+      "INT_LEFT": 8,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 44,
+      "INT_SLESS": 70,
+      "INT_SUB": 127,
+      "INT_XOR": 4,
+      "INT_ZEXT": 8,
+      "LOAD": 109,
+      "POPCOUNT": 70,
+      "RETURN": 2,
+      "STORE": 181
+    },
+    "pcode_op_count": 2374
+  },
+  "stack_frame": {
+    "frame_size": 184,
+    "local_size": 180,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CElephantGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0047789c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CElephantGun_fire_FUN_00477890.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 145,
+          "message": "Uninitialized variable: fStack_44",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 81,
+          "line": 144,
+          "message": "Uninitialized variable: in_stack_fffffec4",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 15,
+          "line": 148,
+          "message": "Uninitialized variable: pCStack_2c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_fffffec0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "CDemonSet *in_stack_fffffec4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 116,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "EVar5 = (**(code **)(this_ptr_00->cameras[0].camera_group + 0x104))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 137,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 137,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 145,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = (CDemonSet *)g_CDemonSet_PTR_005be368->ground_type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 146,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "in_stack_fffffec0 = (CDemonActor *)&g_CDemonSet_PTR_005be368->collision_normal;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 154,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x477f6f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 158,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x477f7a;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x477d6e;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 170,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = g_CDemonSet_PTR_005be368;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 175,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x477f2b;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x477f4e;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 179,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = pCStack_2c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 185,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = (CDemonSet *)0x477d83;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 186,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(this_ptr_00->cameras[0].camera_group + 0xd8))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 190,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_124._4_4_ = pCStack_34;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 191,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_124._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 210,
+      "match": "in_stack_fffffec0",
+      "severity": "moderate",
+      "text": "in_stack_fffffec0 = (CDemonActor *)0x477e96;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 211,
+      "match": "in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "in_stack_fffffec4 = this_ptr_00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 225,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(this_ptr_00->cameras[0].camera_group + 0x100))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 238,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_7c.y = aCStack_d0[0].y + 1.574918751107038e-314._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 246,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "if (pCVar4 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 247,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_124._0_4_ = PTR_DAT_005b9284;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `pCStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)pCStack_34",
+      "severity": "moderate",
+      "text": "if (0 < (int)pCStack_34) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_fffffec4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 137,
+      "match": "(int)in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_fffffec4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)in_stack_fffffec4",
+      "severity": "moderate",
+      "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCStack_3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 234,
+      "match": "(int)pCStack_3c",
+      "severity": "moderate",
+      "text": "} while ((int)pCStack_3c < (int)pCStack_34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 234,
+      "match": "(int)pCStack_34",
+      "severity": "moderate",
+      "text": "} while ((int)pCStack_3c < (int)pCStack_34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 81,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_dc.x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 206,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_118.x = aCStack_d0[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 216,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_108.x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_3c` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCStack_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 233,
+      "match": "pCStack_3c = (T *)((pCStack_3c->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCStack_3c = (CFlameCan *)((pCStack_3c->base).actor_name + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: fStack_44",
+      "line": 145,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack_24 = fStack_44;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_fffffec4",
+      "line": 144,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: pCStack_2c",
+      "line": 148,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (pCStack_2c == (CDemonSet *)0x0) {",
+      "type": "static_legacy_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 220,
+        "vtable_addr": "0059cb34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

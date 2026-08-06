@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,51 +56,27 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 24,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 58,
         "line": 25,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 27,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780'"
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 28,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 32,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c038f8'"
+        "column": 58,
+        "line": 29,
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
         "line": 36,
+        "message": "use of undeclared identifier '_DAT_01c038f8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_01c038fc'"
       }
     ],
@@ -110,13 +86,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 227,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 16,
+    "pseudocode_lines": 43,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -124,7 +100,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 128
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -191,9 +167,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005be368",
@@ -404,54 +380,22 @@
     {
       "description": "Undefined global data reference",
       "line": 18,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,56.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_1c)",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =",
@@ -459,7 +403,7 @@
     },
     {
       "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
+      "line": 36,
       "match": "(int)&local_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);",
@@ -467,7 +411,7 @@
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -475,7 +419,7 @@
     },
     {
       "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "(int)&local_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -483,7 +427,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =",
@@ -491,7 +435,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);",
@@ -499,7 +443,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -507,7 +451,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",

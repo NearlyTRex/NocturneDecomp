@@ -7,12 +7,12 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_crossbow.cpp_FUN_0043d1c0 at 0043d1fd
+;   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 at 0043d1fd
 ;   core_dynamite.cpp_FUN_0046ec80 at 0046ec86
-;   core_elephant.cpp_FUN_00477890 at 004778c7
+;   core_elephant.cpp_CElephantGun_fire_FUN_00477890 at 004778c7
 ;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b27fd
-;   core_shotgun.cpp_FUN_00515ea0 at 00515edd
-;   core_tommygun.cpp_FUN_00545c30 at 00545ca1
+;   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 at 00515edd
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 at 00545ca1
 ;
 ; *****************************************************************************
 

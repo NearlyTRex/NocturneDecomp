@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   color_b
 ;
 ; XREF[2]:
-;   core_fire.cpp_FUN_0048b6f0 at 0048b779
+;   core_fire.cpp_CFireEffect_FUN_0048b6f0 at 0048b779
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320 at 0053e409
 ;
 ; *****************************************************************************

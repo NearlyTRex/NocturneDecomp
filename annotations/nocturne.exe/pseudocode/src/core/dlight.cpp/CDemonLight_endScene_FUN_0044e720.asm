@@ -10,25 +10,25 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a474
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508643
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509961
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508fe6
-;   core_set.cpp_FUN_0050a260 at 0050a474
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c697
 ;   TerminatedCString s_CDemonLight_endScene_Sce_0057c6aa
 ;   double DOUBLE_0057c6d6 = 0.00390625
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
 ;
@@ -82,12 +82,12 @@ section .text
     FSTP float ptr [ESI + 0x100]        ; 0044e784
     PUSH 0x0                            ; 0044e78a
         ;   Label: LAB_0044e78a
-    MOV EDX,dword ptr [0x005ae704]      ; 0044e78c | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0044e78c | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0044e792 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0044e793
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e798
-    MOV ECX,dword ptr [0x005ae704]      ; 0044e79b | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0044e79b | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0044e7a1 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 0044e7a2
         ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
@@ -126,10 +126,10 @@ section .text
         ;   Label: LAB_0044e7fa
     MOV EBX,0x164                       ; 0044e7ff
     PUSH 0x57c6aa                       ; 0044e804 | = "CDemonLight::endScene - Scene not open"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044e809 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044e80f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044e815
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044e809 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0044e80f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044e815
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044e81a
     JMP 0x0044e73c                      ; 0044e81d
         ;   XREF to: 0044e73c (UNCONDITIONAL_JUMP)  ; LAB_0044e73c

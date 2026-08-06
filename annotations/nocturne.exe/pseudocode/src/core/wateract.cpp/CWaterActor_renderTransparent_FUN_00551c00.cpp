@@ -23,18 +23,20 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
   CBoundingBox3D local_24;
   int iStack_c;
   
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_24);
     iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
     if (iStack_c != 0) {
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,this_ptr->opacity);
-      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                (g_CDemonRenderer_PTR_005ae704,this_ptr->opacity);
+      engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
       iVar3 = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005c13cc + this_ptr->texture_frame * 0x18))
-      ;
+                (g_CDemonRenderer_PTR_005ae704,
+                 (SMRGLTextureBasic *)(&DAT_005c13cc + this_ptr->texture_frame * 0x18));
       if (0 < this_ptr->vertex_count) {
         piVar4 = (int *)&DAT_02dda6b8;
         pSVar5 = this_ptr->vertices;
@@ -56,7 +58,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
         do {
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                     (g_CDemonSet_PTR_005be368,vertex_position,(CVector3f *)&DAT_02dd1184,iVar3);
-          pSVar1 = DAT_005ae704->vertex_buffer_ptr;
+          pSVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)
           ;
           *(uint *)((int)&pSVar1->r + iVar6) =
@@ -81,17 +83,18 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
           do {
             iVar3 = iVar3 + 1;
             engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
-                      (DAT_005ae704,poly,0x267);
+                      (g_CDemonRenderer_PTR_005ae704,poly,0x267);
             poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
           } while (iVar3 < this_ptr->primitive_count);
         }
       }
       else {
-        core_set_cpp_FUN_0050ddd0
+        core_set_cpp_CDemonSet_FUN_0050ddd0
                   (g_CDemonSet_PTR_005be368,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1)
         ;
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+                (g_CDemonRenderer_PTR_005ae704,0);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
     return iStack_c;

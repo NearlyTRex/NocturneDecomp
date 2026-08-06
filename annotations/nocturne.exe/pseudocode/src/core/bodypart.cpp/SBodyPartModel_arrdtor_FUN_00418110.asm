@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel *objs,uint flags)
+; SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel *this_ptr,uint flags)
 ;
 ; Parameters:
-; SBodyPartModel * Stack[0x4]:4   objs
+; SBodyPartModel * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

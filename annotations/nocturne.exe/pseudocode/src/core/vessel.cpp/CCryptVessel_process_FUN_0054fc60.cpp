@@ -69,7 +69,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
       }
       this_ptr->timer = 1.0;
       if (this_ptr->prey == (CCryptVessel *)0x0) {
-        iVar11 = core_vessel_cpp_FUN_0054fc40(this_ptr->neutral);
+        iVar11 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral);
         if (iVar11 != 0) {
           pCVar3 = this_ptr->start_loc;
           this_ptr->state = 2;
@@ -87,11 +87,12 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
         }
       }
       else {
-        iVar11 = core_vessel_cpp_FUN_0054fc40(this_ptr->prey);
+        iVar11 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->prey);
         if (((iVar11 == 0) ||
-            (iVar11 = core_vessel_cpp_FUN_0054fc40(this_ptr->neutral), iVar11 == 0)) &&
-           ((iVar11 = core_vessel_cpp_FUN_0054fc40(this_ptr->prey), iVar11 != 0 ||
-            (iVar11 = core_vessel_cpp_FUN_0054fc40(this_ptr->neutral), iVar11 != 0)))) {
+            (iVar11 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral), iVar11 == 0)) &&
+           ((iVar11 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->prey), iVar11 != 0 ||
+            (iVar11 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral), iVar11 != 0))))
+        {
           (this_ptr->base).location.position.y = 9999.9;
           (this_ptr->base).location.position.z = 9999.9;
           (this_ptr->base).location.position.x = 9999.9;
@@ -130,7 +131,8 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
         if (0.0 <= fVar5) {
           return;
         }
-        core_fire_cpp_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,&pCVar2->position,8.0,1500.0,4.0);
+        core_fire_cpp_CFireEffect_FUN_0048c0d0
+                  (g_CFireEffect_PTR_005b80f0,&pCVar2->position,8.0,1500.0,4.0);
         pCVar3 = this_ptr->start_loc;
         this_ptr->timer = 1.0;
         (pCVar2->position).x = (pCVar3->base).location.position.x;

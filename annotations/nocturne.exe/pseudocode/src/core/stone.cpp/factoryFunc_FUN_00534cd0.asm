@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_stone.cpp_CTempleStone_ctor_FUN_00534d00
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x668                          ; 00534cd0
         ;   Label: core_stone.cpp_factoryFunc_FUN_00534cd0
-    CALL crt_unknown.c_FUN_0056497c     ; 00534cd5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00534cd5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00534cda
     TEST EAX,EAX                        ; 00534cdd
     JNZ 0x00534ce2                      ; 00534cdf

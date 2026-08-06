@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_drone.cpp_CDrone_ctor_FUN_00462940
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd3c                         ; 00462910
         ;   Label: core_drone.cpp_factoryFunc_FUN_00462910
-    CALL crt_unknown.c_FUN_0056497c     ; 00462915
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00462915
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0046291a
     TEST EAX,EAX                        ; 0046291d
     JNZ 0x00462922                      ; 0046291f

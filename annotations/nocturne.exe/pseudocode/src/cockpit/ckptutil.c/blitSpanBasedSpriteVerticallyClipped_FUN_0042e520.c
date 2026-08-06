@@ -34,7 +34,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
       iStack_38 = _DAT_01c00c5c << 2;
       do {
         iVar2 = *(int *)(&DAT_01bd2fa0 + iStack_38);
-        iVar5 = iStack_2c * DAT_005b761c;
+        iVar5 = iStack_2c * g_WindowWidth;
         iVar8 = 0;
         for (iVar7 = 0; piVar6 = (int *)(iStack_34 + (int)span_data), iVar7 < *piVar6;
             iVar7 = iVar7 + 1) {
@@ -57,7 +57,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
       iStack_40 = _DAT_01c00c5c << 2;
       do {
         iVar2 = *(int *)(&DAT_01bd2fa0 + iStack_40);
-        iVar5 = iStack_30 * DAT_005b761c;
+        iVar5 = iStack_30 * g_WindowWidth;
         iVar7 = 0;
         for (iVar8 = 0; piVar6 = (int *)(iStack_3c + (int)span_data), iVar8 < *piVar6;
             iVar8 = iVar8 + 1) {

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 258,
+    "complexity_score": 193,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 16,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "stack_alignment_array",
-      "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -171,15 +170,15 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "01c78b04",
@@ -342,30 +341,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "_DAT_01c78b0c = DAT_005b761c / 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "_DAT_01c78b10 = DAT_005b7620 / 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "_DAT_01c78b08 = (float)DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 29,
       "match": "code *",
@@ -380,30 +355,6 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)(0x01E56DA0 + 0xc),&CStack_48,&CStack_3c);",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0x1e0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "_DAT_01c78b0c = (_DAT_01c78b0c * DAT_005b761c) / 0x280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "_DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

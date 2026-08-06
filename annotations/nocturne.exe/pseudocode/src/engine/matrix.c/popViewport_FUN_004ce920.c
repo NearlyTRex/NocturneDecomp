@@ -13,9 +13,9 @@ void __cdecl engine_matrix_c_popViewport_FUN_004ce920(void)
 {
   _DAT_01cc53d0 = _DAT_01cc53d0 + -1;
   if (_DAT_01cc53d0 < 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
-    g_INT_01cc4804 = 0x569;
-    core_main_c_FUN_004c8440("3D Window unbalance");
+    g_CurrentFilename = "..\\engine\\matrix.c";
+    g_CurrentLineNumber = 1385;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("3D Window unbalance");
   }
   _DAT_01c039c4 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc549c);
   _DAT_01c039c8 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc54c4);

@@ -1,0 +1,309 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 55,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004533e0",
+      "from_addr": "004533e9",
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452630",
+      "from_addr": "00452636",
+      "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00452630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452650",
+      "from_addr": "00452659",
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00454460",
+      "from_addr": "0045446e",
+      "name": "core_dmodel.cpp_FUN_00454460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5fa0",
+      "from_addr": "004c5fc7",
+      "name": "core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dea60",
+      "from_addr": "004dea88",
+      "name": "core_moon.cpp_CMoon_free_FUN_004dea60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00506ec0",
+      "from_addr": "00506ec7",
+      "name": "core_set.cpp_CDemonSet_clear_FUN_00506ec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00452f10",
+    "address_range": [
+      [
+        "00452f10",
+        "00453030"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "00452659",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004533e9",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004534f9",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045446e",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_FUN_00454460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c5fc7",
+        "call_type": "direct",
+        "caller": "core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dea88",
+        "call_type": "direct",
+        "caller": "core_moon.cpp_CMoon_free_FUN_004dea60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dea95",
+        "call_type": "direct",
+        "caller": "core_moon.cpp_CMoon_free_FUN_004dea60",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00506ec7",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_clear_FUN_00506ec0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00452636",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00452630",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.049180327868853,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 2,
+      "COPY": 46,
+      "INT_ADD": 35,
+      "INT_AND": 24,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 20,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 33
+    },
+    "pcode_op_count": 247
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "frame_bounds[-1].",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_00564486(&this_ptr->frame_bounds[-1].max.z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "collision_triangle_list[-1].",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_00564486(&this_ptr->collision_triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
+    }
+  ]
+}

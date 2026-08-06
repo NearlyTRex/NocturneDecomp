@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[12]:
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a51e6
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e436
-;   core_game.cpp_FUN_004a4b50 at 004a51e6
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3bd9
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2176
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d86
@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00473b80
 ;   shape_edittool.cpp_FUN_00476160
 ;   shape_edittool.cpp_FUN_00476490
@@ -82,8 +82,8 @@ section .text
     RET                                 ; 00474d57
     PUSH EAX                            ; 00474d58
         ;   Label: LAB_00474d58
-    CALL crt_unknown.c_FUN_00564494     ; 00474d59
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00474d59
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00474d5e
     MOV EAX,EBX                         ; 00474d61
     POP EBX                             ; 00474d63

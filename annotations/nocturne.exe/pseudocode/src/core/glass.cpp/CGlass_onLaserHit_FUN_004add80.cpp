@@ -37,7 +37,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLas
     fVar4 = (this_ptr->glass_size).x;
     fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,&this_ptr->broken_texture);
+              (g_CDemonRenderer_PTR_005ae704,&this_ptr->broken_texture);
     fVar6 = (float)DAT_005b762c;
     dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
     dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));

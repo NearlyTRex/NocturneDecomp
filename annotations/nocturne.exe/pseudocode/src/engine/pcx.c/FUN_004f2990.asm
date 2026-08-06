@@ -27,14 +27,14 @@
 ;   TerminatedCString s_wb_0058cfc3
 ;   TerminatedCString s_engine_pcx_c_0058cfc6
 ;   TerminatedCString s_Cannot_write_PCX_0058cfd6
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
@@ -79,27 +79,27 @@ section .text
     MOV word ptr [ESP + 0x4c],SI        ; 004f29e4
     MOV DH,0x1                          ; 004f29e9
     MOV CH,0x1                          ; 004f29eb
-    MOV AX,[0x005b761c]                 ; 004f29ed | DAT_005b761c
-    MOV ESI,dword ptr [0x005b761c]      ; 004f29f3 | DAT_005b761c
+    MOV AX,[0x005b761c]                 ; 004f29ed | g_WindowWidth
+    MOV ESI,dword ptr [0x005b761c]      ; 004f29f3 | g_WindowWidth
     DEC EAX                             ; 004f29f9
     MOV byte ptr [ESP + 0xa],DH         ; 004f29fa
     MOV word ptr [ESP + 0x10],AX        ; 004f29fe
-    MOV AX,[0x005b7620]                 ; 004f2a03 | DAT_005b7620
+    MOV AX,[0x005b7620]                 ; 004f2a03 | g_WindowHeight
     MOV byte ptr [ESP + 0x49],CH        ; 004f2a09
     DEC EAX                             ; 004f2a0d
     XOR EDX,EDX                         ; 004f2a0e
     MOV word ptr [ESP + 0x12],AX        ; 004f2a10
-    MOV AX,[0x005b761c]                 ; 004f2a15 | DAT_005b761c
+    MOV AX,[0x005b761c]                 ; 004f2a15 | g_WindowWidth
     MOV word ptr [ESP + 0xc],DX         ; 004f2a1b
     MOV word ptr [ESP + 0x4a],AX        ; 004f2a20
     MOV word ptr [ESP + 0x4e],AX        ; 004f2a25
-    MOV AX,[0x005b7620]                 ; 004f2a2a | DAT_005b7620
+    MOV AX,[0x005b7620]                 ; 004f2a2a | g_WindowHeight
     MOV word ptr [ESP + 0xe],DX         ; 004f2a30
     MOV word ptr [ESP + 0x50],AX        ; 004f2a35
     CMP ESI,0x280                       ; 004f2a3a
     JNZ 0x004f2a5f                      ; 004f2a40
         ;   XREF to: 004f2a5f (CONDITIONAL_JUMP)  ; LAB_004f2a5f
-    CMP dword ptr [0x005b7620],0xf0     ; 004f2a42 | DAT_005b7620
+    CMP dword ptr [0x005b7620],0xf0     ; 004f2a42 | g_WindowHeight
     JNZ 0x004f2a5f                      ; 004f2a4c
         ;   XREF to: 004f2a5f (CONDITIONAL_JUMP)  ; LAB_004f2a5f
     MOV EDI,EAX                         ; 004f2a4e
@@ -121,10 +121,10 @@ section .text
     MOV EBP,0x58cfc6                    ; 004f2a73 | = "..\\engine\\pcx.c"
     MOV EAX,0xee                        ; 004f2a78
     PUSH 0x58cfd6                       ; 004f2a7d | = "Cannot write .PCX"
-    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f2a88 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f2a8d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004f2a88 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f2a8d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f2a92
     PUSH EBX                            ; 004f2a95
         ;   Label: LAB_004f2a95
@@ -135,7 +135,7 @@ section .text
     XOR ESI,ESI                         ; 004f2aa2
     CALL crt_stdio.c_fwrite_FUN_00563a50 ; 004f2aa4
         ;   XREF to: 00563a50 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_00563a50(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
-    MOV EDX,dword ptr [0x005b7620]      ; 004f2aa9 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 004f2aa9 | g_WindowHeight
     ADD ESP,0x10                        ; 004f2aaf
     TEST EDX,EDX                        ; 004f2ab2
     JLE 0x004f2aed                      ; 004f2ab4
@@ -145,12 +145,12 @@ section .text
     PUSH ESI                            ; 004f2ab7
     CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ab8
         ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_004f2550(int row_index, _FILE * pcx_file)
-    MOV EAX,[0x005b761c]                ; 004f2abd | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004f2abd | g_WindowWidth
     ADD ESP,0x8                         ; 004f2ac2
     CMP EAX,0x280                       ; 004f2ac5
     JNZ 0x004f2ae2                      ; 004f2aca
         ;   XREF to: 004f2ae2 (CONDITIONAL_JUMP)  ; LAB_004f2ae2
-    CMP dword ptr [0x005b7620],0xf0     ; 004f2acc | DAT_005b7620
+    CMP dword ptr [0x005b7620],0xf0     ; 004f2acc | g_WindowHeight
     JNZ 0x004f2ae2                      ; 004f2ad6
         ;   XREF to: 004f2ae2 (CONDITIONAL_JUMP)  ; LAB_004f2ae2
     PUSH EBX                            ; 004f2ad8
@@ -158,7 +158,7 @@ section .text
     CALL engine_pcx.c_writePCXScanline_FUN_004f2550 ; 004f2ada
         ;   XREF to: 004f2550 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_004f2550(int row_index, _FILE * pcx_file)
     ADD ESP,0x8                         ; 004f2adf
-    MOV ECX,dword ptr [0x005b7620]      ; 004f2ae2 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 004f2ae2 | g_WindowHeight
         ;   Label: LAB_004f2ae2
     INC ESI                             ; 004f2ae8
     CMP ESI,ECX                         ; 004f2ae9

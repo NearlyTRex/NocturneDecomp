@@ -71,16 +71,16 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_004dcf60(SMRGLHe
     local_28 = mrgl_data + 1;
     local_34 = &mrgl_data[2].count;
     if (mrgl_data->type != 0x14) {
-      g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
-      g_INT_01cc4804 = 0x172;
-      core_main_c_FUN_004c8440("Unable to read magnify!");
+      g_CurrentFilename = "..\\engine\\model.c";
+      g_CurrentLineNumber = 370;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to read magnify!");
     }
     local_2c = (int)(0x7fffffff / (longlong)mrgl_data->count) * 2;
     if (local_28->type != 2) {
       _sprintf(local_160,"Unable to read verticies in model!");
-      g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
-      g_INT_01cc4804 = 0x176;
-      core_main_c_FUN_004c8440(local_160);
+      g_CurrentFilename = "..\\engine\\model.c";
+      g_CurrentLineNumber = 374;
+      core_main_c_displayErrorAndQuit_FUN_004c8440(local_160);
     }
     iVar6 = local_2c;
     iVar7 = 0;

@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -36,7 +36,7 @@ section .text
     LEA ESI,[EDI + 0x188]               ; 0041651d
     PUSH ESI                            ; 00416523
         ;   Label: LAB_00416523
-    MOV ECX,dword ptr [0x005ae704]      ; 00416524 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00416524 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0041652a | DAT_01b4d738
     INC EBX                             ; 0041652b
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 0041652c

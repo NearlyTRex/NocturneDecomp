@@ -16,12 +16,12 @@ void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void)
   int iVar3;
   
   if (DAT_006b023c == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9e8;
-    core_main_c_FUN_004c8440("unmapFrameBuffer - frame buffer was not mapped!");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2536;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("unmapFrameBuffer - frame buffer was not mapped!");
   }
-  DAT_005b761c = DAT_006b023c;
-  DAT_005b7620 = DAT_006b0240;
+  g_WindowWidth = DAT_006b023c;
+  g_WindowHeight = DAT_006b0240;
   _DAT_01c00c58 = DAT_006b0244;
   _DAT_01c00c5c = DAT_006b0248;
   _DAT_01c00c60 = DAT_006b024c;

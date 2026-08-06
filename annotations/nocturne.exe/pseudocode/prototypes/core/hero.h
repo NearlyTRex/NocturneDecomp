@@ -19,9 +19,9 @@ int __cdecl isAnyHeroWithinRadius(CVector3f *point,float radius);
 // Address: 004b4630
 int __cdecl isAnyHeroWithinCylinder(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 
-// Original: core_hero.cpp_FUN_004b46d0
+// Original: core_hero.cpp_CHero_FUN_004b46d0
 // Address: 004b46d0
-CHero * __cdecl FUN_004b46d0(CHero *this_ptr);
+CHero * __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_dtor_FUN_004b4800
 // Address: 004b4800
@@ -83,9 +83,9 @@ int __cdecl CHero::tryInteract(CHero *this_ptr);
 // Address: 004b4fe0
 int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004b5110
+// Original: core_hero.cpp_CHero_FUN_004b5110
 // Address: 004b5110
-int __cdecl FUN_004b5110(CHero *this_ptr);
+int __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270
 // Address: 004b5270
@@ -119,9 +119,9 @@ void __cdecl CHero::stopNearbyInteraction(CHero *this_ptr);
 // Address: 004b5950
 int __cdecl CHero::findItemUseTarget(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004b5b00
+// Original: core_hero.cpp_CHero_FUN_004b5b00
 // Address: 004b5b00
-int __cdecl FUN_004b5b00(CHero *this_ptr);
+int __cdecl CHero(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004b5b70
 // Address: 004b5b70
@@ -155,9 +155,9 @@ void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direc
 // Address: 004b5ec0
 void __cdecl CHero::reset(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004b5f60
+// Original: core_hero.cpp_factoryFunc_FUN_004b5f60
 // Address: 004b5f60
-void FUN_004b5f60(void);
+CHeroPlaceholder * __cdecl factoryFunc(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004b5f80
 // Address: 004b5f80

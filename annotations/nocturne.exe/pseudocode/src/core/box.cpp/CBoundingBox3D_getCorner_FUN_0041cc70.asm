@@ -14,14 +14,14 @@
 ;
 ; XREF[11]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 at 0040a584
+;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d075
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dce6
-;   core_box.cpp_FUN_0041d050 at 0041d075
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050f015
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710 at 00510753
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 005126a5
 ;   core_setdir.cpp_FUN_00511d80 at 005120fa
-;   core_setdir.cpp_FUN_005125a0 at 005126a5
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051efbf
-;   core_spike.cpp_FUN_00533750 at 0053382a
+;   core_spike.cpp_CSpike_FUN_00533750 at 0053382a
 ;   core_turret.cpp_CTurret_getBoundingBox_FUN_00549cd0 at 00549e9f
 ;   ... and 1 more
 ;

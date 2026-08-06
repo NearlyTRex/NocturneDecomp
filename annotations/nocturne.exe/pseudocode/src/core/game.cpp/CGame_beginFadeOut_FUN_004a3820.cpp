@@ -28,9 +28,9 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004a3820(CGame *this_ptr)
   
   bVar3 = 0;
   _DAT_01c78b04 = 3;
-  _DAT_01c78b0c = DAT_005b761c / 2;
-  _DAT_01c78b10 = DAT_005b7620 / 2;
-  _DAT_01c78b08 = (float)DAT_005b761c;
+  _DAT_01c78b0c = g_WindowWidth / 2;
+  _DAT_01c78b10 = g_WindowHeight / 2;
+  _DAT_01c78b08 = (float)g_WindowWidth;
   iVar1 = *(int *)(0x01E56DA0 + 0xc);
   if (iVar1 != 0) {
     pfVar2 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_6c);
@@ -58,9 +58,9 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004a3820(CGame *this_ptr)
       _DAT_01c78b10 =
            (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-      if (0x1e0 < DAT_005b7620) {
-        _DAT_01c78b0c = (_DAT_01c78b0c * DAT_005b761c) / 0x280;
-        _DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;
+      if (0x1e0 < g_WindowHeight) {
+        _DAT_01c78b0c = (_DAT_01c78b0c * g_WindowWidth) / 0x280;
+        _DAT_01c78b10 = (_DAT_01c78b10 * g_WindowHeight) / 0x1e0;
         return;
       }
     }

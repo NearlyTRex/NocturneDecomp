@@ -19,13 +19,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c124
 ;   TerminatedCString s_CNetGame_addPlayer_too_m_0058c138
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea404
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -108,10 +108,10 @@ section .text
         ;   Label: LAB_004eb4f8
     MOV EBX,0x5ff                       ; 004eb4fd
     PUSH 0x58c138                       ; 004eb502 | = "CNetGame::addPlayer - too many players!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004eb507 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004eb50d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004eb513
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004eb507 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004eb50d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004eb513
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004eb518
     JMP 0x004eb452                      ; 004eb51b
         ;   XREF to: 004eb452 (UNCONDITIONAL_JUMP)  ; LAB_004eb452

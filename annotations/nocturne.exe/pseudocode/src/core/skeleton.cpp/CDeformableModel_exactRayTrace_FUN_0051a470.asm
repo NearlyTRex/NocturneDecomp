@@ -35,8 +35,8 @@
 ;   TerminatedCString s_CDeformableModel_exactRa_00591a24
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005a1eb0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CVector3f[5000] g_CVector3f_ARRAY_026757d0
 ;   undefined4 g_CVector3f_ARRAY_026757d0[0].y
 ;   undefined4 g_CVector3f_ARRAY_026757d0[0].z
@@ -51,7 +51,7 @@
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
 ;   core_dtri.cpp_rayTriangleIntersection_FUN_0046c620
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;
 ; *****************************************************************************
@@ -81,10 +81,10 @@ section .text
     MOV EBX,0x591a0f                    ; 0051a49f | = "..\\core\\skeleton.cpp"
     MOV ESI,0x6d2                       ; 0051a4a4
     PUSH 0x591a24                       ; 0051a4a9 | = "CDeformableModel::exactRayTrace - too..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0051a4ae | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051a4b4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051a4ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0051a4ae | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051a4b4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051a4ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051a4bf
     MOV ECX,dword ptr [EBP + 0x18]      ; 0051a4c2
         ;   Label: LAB_0051a4c2

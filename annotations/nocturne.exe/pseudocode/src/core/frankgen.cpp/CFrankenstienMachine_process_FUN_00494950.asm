@@ -38,7 +38,7 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004950a0
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30
 ;   core_frankgen.cpp_findLeader_FUN_00495240
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -401,10 +401,10 @@ section .text
         ;   Label: default
     MOV ECX,0x13e                       ; 00494d9d
     PUSH 0x581cfa                       ; 00494da2 | = "WTF!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00494db3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00494db3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00494db8
     ADD ESP,0x78                        ; 00494dbb
     POP EBP                             ; 00494dbe

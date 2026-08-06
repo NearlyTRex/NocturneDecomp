@@ -22,7 +22,7 @@
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483958
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048d905
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae4c8
-;   core_set.cpp_FUN_00509a80 at 00509d5b
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509d5b
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bddc = 256

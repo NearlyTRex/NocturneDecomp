@@ -39,9 +39,9 @@ void __cdecl CCryptVessel::onDropped(CCryptVessel *this_ptr,CVector3f *drop_posi
 // Address: 0054fc30
 CDemonActor * __cdecl CCryptVessel::getCarrier(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_0054fc40
+// Original: core_vessel.cpp_CCryptVessel_FUN_0054fc40
 // Address: 0054fc40
-int __cdecl FUN_0054fc40(CCryptVessel *actor);
+int __cdecl CCryptVessel(CCryptVessel *actor);
 
 // Original: core_vessel.cpp_CCryptVessel_process_FUN_0054fc60
 // Address: 0054fc60

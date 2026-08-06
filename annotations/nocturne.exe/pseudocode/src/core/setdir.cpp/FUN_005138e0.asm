@@ -28,15 +28,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00509a80 at 0050a08e
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 0050a08e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_g_00590c5c
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd30e0
-;   undefined4 DAT_01bff71f
+;   undefined4 g_ColorCubeLookup+0x7fff
 ;   undefined4 DAT_01c00c70
 ;   undefined4 DAT_026714b8
 ;   undefined4 DAT_026714bc
@@ -58,7 +58,7 @@ section .text
     SUB ESP,0xb4                        ; 005138e4
     MOV EDI,dword ptr [ESP + 0xc8]      ; 005138ea
     MOV EDX,0x2                         ; 005138f1
-    MOV EAX,[0x005b7620]                ; 005138f6 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 005138f6 | g_WindowHeight
     MOV ECX,dword ptr [EDI]             ; 005138fb
     XOR EBP,EBP                         ; 005138fd
     SUB EAX,0x78                        ; 005138ff
@@ -192,7 +192,7 @@ section .text
     SHL EDX,0xa                         ; 00513aae
     SHL ECX,0x5                         ; 00513ab1
     ADD ECX,EDX                         ; 00513ab4
-    MOV AL,byte ptr [ECX + EAX*0x1 + 0x1bf7720] ; 00513ab6 | DAT_01bff71f
+    MOV AL,byte ptr [ECX + EAX*0x1 + 0x1bf7720] ; 00513ab6 | g_ColorCubeLookup+0x7fff
     PUSH EDI                            ; 00513abd
     AND EAX,0xff                        ; 00513abe
     PUSH ESI                            ; 00513ac3
@@ -250,7 +250,7 @@ section .text
     LEA EAX,[EBX + 0x81]                ; 00513b7b
     LEA ECX,[EBX + 0x41]                ; 00513b81
     ADD ESP,0xc                         ; 00513b84
-    MOV EBX,dword ptr [0x005b761c]      ; 00513b87 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 00513b87 | g_WindowWidth
     MOV dword ptr [ESP + 0x98],ECX      ; 00513b8d
     CMP EAX,EBX                         ; 00513b94
     JLE 0x00513c02                      ; 00513b96
@@ -274,7 +274,7 @@ section .text
     MOV dword ptr [ESP + 0x80],ECX      ; 00513be3
     MOV dword ptr [ESP + 0x70],EBX      ; 00513bea
     ADD ESI,0x3c                        ; 00513bee
-    MOV EDI,dword ptr [0x005b7620]      ; 00513bf1 | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 00513bf1 | g_WindowHeight
     MOV dword ptr [ESP + 0x84],ESI      ; 00513bf7
     CMP EAX,EDI                         ; 00513bfe
     JG 0x00513c1f                       ; 00513c00

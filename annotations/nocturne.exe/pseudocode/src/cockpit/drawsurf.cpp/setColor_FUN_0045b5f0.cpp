@@ -41,21 +41,21 @@ void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0045b5f0(int color_value)
     iVar1 = _DAT_01b4d714 * 3;
     if (DAT_005b7624 < 0x11) {
       _DAT_01b4d710 =
-           ((byte)(&DAT_01c00648)[iVar1] / _DAT_01c00628 << (DAT_01c00624 & 0x1f) |
-            *(byte *)(iVar1 + 0x1c00649) / _DAT_01c00634 << (DAT_01c00630 & 0x1f) |
-           *(byte *)(iVar1 + 0x1c0064a) / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) & 0xffff;
+           (g_SourcePaletteData[iVar1] / _DAT_01c00628 << (DAT_01c00624 & 0x1f) |
+            g_SourcePaletteData[iVar1 + 1] / _DAT_01c00634 << (DAT_01c00630 & 0x1f) |
+           g_SourcePaletteData[iVar1 + 2] / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) & 0xffff;
       return;
     }
     if (DAT_005b7624 == 0x20) {
       _DAT_01b4d710 =
-           (uint)*(byte *)(iVar1 + 0x1c0064a) << (DAT_01c0063c & 0x1f) |
-           (uint)*(byte *)(iVar1 + 0x1c00649) << (DAT_01c00630 & 0x1f) |
-           (uint)(byte)(&DAT_01c00648)[iVar1] << (DAT_01c00624 & 0x1f);
+           (uint)g_SourcePaletteData[iVar1 + 2] << (DAT_01c0063c & 0x1f) |
+           (uint)g_SourcePaletteData[iVar1 + 1] << (DAT_01c00630 & 0x1f) |
+           (uint)g_SourcePaletteData[iVar1] << (DAT_01c00624 & 0x1f);
       return;
     }
   }
-  g_CHAR_PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-  g_INT_01cc4804 = 0xf6;
-  core_main_c_FUN_004c8440("Invalid bitsPerPixel in CDrawSurface::setColor");
+  g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
+  g_CurrentLineNumber = 246;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

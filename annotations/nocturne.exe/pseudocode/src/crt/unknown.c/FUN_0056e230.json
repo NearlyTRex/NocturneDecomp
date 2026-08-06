@@ -31,7 +31,7 @@
     {
       "addr": "005638d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
+      "name": "crt_memory.c_free_FUN_005638d0"
     }
   ],
   "globals": [
@@ -87,7 +87,7 @@
       "line": 5,
       "match": "DAT_005c1f54",
       "severity": "mild",
-      "text": "if (DAT_005c1f54 != 0) {",
+      "text": "if (DAT_005c1f54 != (void *)0x0) {",
       "type": "undefined_data"
     },
     {
@@ -95,7 +95,7 @@
       "line": 6,
       "match": "DAT_005c1f54",
       "severity": "mild",
-      "text": "FUN_005638d0(DAT_005c1f54);",
+      "text": "free(DAT_005c1f54);",
       "type": "undefined_data"
     },
     {
@@ -103,7 +103,7 @@
       "line": 7,
       "match": "DAT_005c1f54",
       "severity": "mild",
-      "text": "DAT_005c1f54 = 0;",
+      "text": "DAT_005c1f54 = (void *)0x0;",
       "type": "undefined_data"
     }
   ]

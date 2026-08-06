@@ -43,9 +43,9 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_0055bd00(CMatrix3x4f *matri
   local_20 = dVar5;
   local_98 = SUB84(__BITCAST_UINT64(dVar5),0);
   if ((((ulonglong)dVar5 & 0x7fffffff00000000) == 0) && (local_98 == 0)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\xform.cpp";
-    g_INT_01cc4804 = 0x23e;
-    core_main_c_FUN_004c8440("inverse() - Singular matrix");
+    g_CurrentFilename = "..\\core\\xform.cpp";
+    g_CurrentLineNumber = 574;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("inverse() - Singular matrix");
   }
   local_90 = matrix_in->m[1].x * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].x;
   local_60 = (double)local_90;

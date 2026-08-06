@@ -270,9 +270,9 @@ LAB_0053b782:
     }
     break;
   default:
-    g_CHAR_PTR_01cc4800 = "..\\core\\stranger.cpp";
-    g_INT_01cc4804 = 0xd31;
-    core_main_c_FUN_004c8440("Hell froze - invalid pickUpType: %d",iStack_30);
+    g_CurrentFilename = "..\\core\\stranger.cpp";
+    g_CurrentLineNumber = 3377;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze - invalid pickUpType: %d");
     goto LAB_0053bbf0;
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,format);

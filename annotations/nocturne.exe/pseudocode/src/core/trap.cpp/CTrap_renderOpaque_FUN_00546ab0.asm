@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00546ab7
     LEA EAX,[EBX + 0x20]                ; 00546abb
     PUSH EAX                            ; 00546abe
-    MOV EDX,dword ptr [0x005ae704]      ; 00546abf | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00546abf | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00546ac5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00546ac6
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -40,7 +40,7 @@ section .text
     PUSH 0x0                            ; 00546ace
     LEA EAX,[EBX + 0x30]                ; 00546ad0
     PUSH EAX                            ; 00546ad3
-    MOV ECX,dword ptr [0x005ae704]      ; 00546ad4 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00546ad4 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00546ada | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00546adb
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -72,7 +72,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00546b1e
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00546b23
-    MOV EBP,dword ptr [0x005ae704]      ; 00546b26 | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 00546b26 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00546b26
     PUSH EBP                            ; 00546b2c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00546b2d

@@ -31,7 +31,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
       _DAT_0140d778 = 0;
     }
     core_dcamera_cpp_updateFogScrollOffset_FUN_0043fe60
-              ((SFogGrid *)0x140d784,_DAT_0140d778,_DAT_0140d77c);
+              (&g_SFogGrid_0140d784,_DAT_0140d778,_DAT_0140d77c);
   }
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810(this_ptr);
   if (DAT_005b7624 == 0x20) {
@@ -87,7 +87,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
           piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_FUN_00447c60(this_ptr,*piVar2,*puVar5,*piVar1);
+          core_dcamera_cpp_CDemonCamera_FUN_00447c60(this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }
@@ -139,7 +139,7 @@ LAB_0044729d:
           piVar2 = (int *)(iVar3 + 0x12b066c);
           iVar3 = iVar3 + 0xc;
           iVar9 = iVar9 + 1;
-          core_dcamera_cpp_FUN_00447bb0(this_ptr,*piVar2,*puVar5,*piVar1);
+          core_dcamera_cpp_CDemonCamera_FUN_00447bb0(this_ptr,*piVar2,*puVar5,*piVar1);
         } while (iVar9 < _DAT_012b0664);
         uVar8 = uVar8 + 1;
       }

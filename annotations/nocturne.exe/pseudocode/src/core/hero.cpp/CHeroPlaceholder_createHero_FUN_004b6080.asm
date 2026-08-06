@@ -32,7 +32,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_createActorByName_FUN_0040d540
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;
 ; *****************************************************************************
@@ -71,10 +71,10 @@ section .text
     MOV EDI,0x585986                    ; 004b60bd | = "..\\core\\hero.cpp"
     MOV EBP,0x57d                       ; 004b60c2
     PUSH 0x585997                       ; 004b60c7 | = "CHeroPlaceholder::createHero - failed."
-    MOV dword ptr [0x01cc4800],EDI      ; 004b60cc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004b60d2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b60d8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004b60cc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004b60d2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b60d8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b60dd
     PUSH EBX                            ; 004b60e0
         ;   Label: LAB_004b60e0
@@ -168,10 +168,10 @@ section .text
         ;   Label: default
     MOV ECX,0x578                       ; 004b61c7
     PUSH 0x585954                       ; 004b61cc | = "CHeroPlaceholder::createHero - invali..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004b61d1 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b61d7 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b61dd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004b61d1 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004b61d7 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b61dd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b61e2
     JMP 0x004b60b9                      ; 004b61e5
         ;   XREF to: 004b60b9 (UNCONDITIONAL_JUMP)  ; LAB_004b60b9

@@ -11,18 +11,18 @@
 void __cdecl engine_2d_c_FUN_004012a0(void)
 
 {
-  if (DAT_006afa38 != 0) {
-    FUN_005638d0(DAT_006afa38);
-    DAT_006afa38 = 0;
+  if (g_FontBitmapData != (uchar *)0x0) {
+    free(g_FontBitmapData);
+    g_FontBitmapData = (uchar *)0x0;
     wincore_wddvmem_cpp_FUN_00552cb0();
     return;
   }
-  if (DAT_005c5010 != 0) {
-    FUN_005638d0(DAT_005c5010);
-    DAT_005c5010 = 0;
+  if (DAT_005c5010 != (void *)0x0) {
+    free(DAT_005c5010);
+    DAT_005c5010 = (void *)0x0;
   }
-  if (_DAT_02ddf560 != 0) {
-    FUN_005638d0(_DAT_02ddf560);
+  if (_DAT_02ddf560 != (void *)0x0) {
+    free(_DAT_02ddf560);
     DAT_006af62c = 0;
   }
   engine_special_cpp_kill_FUN_005322b0();

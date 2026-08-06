@@ -15,8 +15,8 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480 at 0045b4a2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;
 ; *****************************************************************************
 
@@ -62,14 +62,14 @@ section .text
         ;   Label: LAB_0045b518
     JL 0x0045b5cc                       ; 0045b51c
         ;   XREF to: 0045b5cc (CONDITIONAL_JUMP)  ; LAB_0045b5cc
-    MOV EBX,dword ptr [0x005b761c]      ; 0045b522 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0045b522 | g_WindowWidth
         ;   Label: LAB_0045b522
     CMP EBX,dword ptr [EAX + 0x18]      ; 0045b528
     JG 0x0045b533                       ; 0045b52b
         ;   XREF to: 0045b533 (CONDITIONAL_JUMP)  ; LAB_0045b533
     LEA EDX,[EBX + -0x1]                ; 0045b52d
     MOV dword ptr [EAX + 0x18],EDX      ; 0045b530
-    MOV ESI,dword ptr [0x005b7620]      ; 0045b533 | DAT_005b7620
+    MOV ESI,dword ptr [0x005b7620]      ; 0045b533 | g_WindowHeight
         ;   Label: LAB_0045b533
     CMP ESI,dword ptr [EAX + 0x1c]      ; 0045b539
     JLE 0x0045b5d8                      ; 0045b53c

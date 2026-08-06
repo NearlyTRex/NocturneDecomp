@@ -16,9 +16,9 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[3]:
+;   core_stranger.cpp_CStranger_FUN_00535900 at 00536325
+;   core_stranger.cpp_CStranger_FUN_0053ffe0 at 00540282
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 at 0053d347
-;   core_stranger.cpp_FUN_00535900 at 00536325
-;   core_stranger.cpp_FUN_0053ffe0 at 00540282
 ;
 ; Called Functions:
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760

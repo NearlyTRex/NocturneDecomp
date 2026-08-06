@@ -15,7 +15,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7630
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_005c168c
@@ -25,11 +25,11 @@
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
 ;   CKeys g_CKeys_01cc30e4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0
@@ -91,7 +91,7 @@ section .text
     PUSH EAX                            ; 0046f859
     MOV EDX,dword ptr [0x01bcd9bc]      ; 0046f85a | DAT_01bcd9bc
     PUSH EDX                            ; 0046f860
-    MOV EDX,dword ptr [0x005b761c]      ; 0046f861 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 0046f861 | g_WindowWidth
     SHL EDX,0x2                         ; 0046f867
     MOV EBX,0x5                         ; 0046f86a
     MOV EAX,EDX                         ; 0046f86f
@@ -141,10 +141,10 @@ section .text
         ;   Label: LAB_0046f8e0
     MOV EBP,0x8b                        ; 0046f8e5
     PUSH 0x57e510                       ; 0046f8ea | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046f8ef | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0046f8f5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046f8fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046f8ef | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0046f8f5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046f8fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046f900
     JMP 0x0046f80c                      ; 0046f903
         ;   XREF to: 0046f80c (UNCONDITIONAL_JUMP)  ; LAB_0046f80c

@@ -11,7 +11,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_factoryFunc_FUN_0054c280(void)
 {
   CVampireBoss *pCVar1;
   
-  pCVar1 = (CVampireBoss *)FUN_0056497c(0xbedc8);
+  pCVar1 = operator_new(0xbedc8);
   if (pCVar1 == (CVampireBoss *)0x0) {
     return (CVampireBoss *)0x0;
   }

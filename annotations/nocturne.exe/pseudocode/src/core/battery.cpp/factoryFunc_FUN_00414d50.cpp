@@ -11,7 +11,7 @@ CBattery * __cdecl core_battery_cpp_factoryFunc_FUN_00414d50(void)
 {
   CBattery *pCVar1;
   
-  pCVar1 = (CBattery *)FUN_0056497c(0x2d8);
+  pCVar1 = operator_new(0x2d8);
   if (pCVar1 == (CBattery *)0x0) {
     return (CBattery *)0x0;
   }

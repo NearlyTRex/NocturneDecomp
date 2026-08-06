@@ -12,7 +12,7 @@ int __cdecl core_event_cpp_parseIntOrCounter_FUN_0047a350(char *str)
   int iVar1;
   int local_4;
   
-  iVar1 = sscanf(str,"%d");
+  iVar1 = sscanf(str,"%d",&local_4);
   if (iVar1 == 1) {
     return local_4;
   }

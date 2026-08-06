@@ -9,8 +9,8 @@
 ; CMatrix3x4f *    Stack[0xc]:4   matrix
 ;
 ; XREF[52]:
+;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410f4a
 ;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041087b
-;   core_baron.cpp_FUN_00410cc0 at 00410f4a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004127ac
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413f2e
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 at 004195dc

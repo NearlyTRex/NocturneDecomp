@@ -19,16 +19,16 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *
   char *pcVar6;
   C3DSLight *pCVar7;
   
-  pCVar2 = (CDemonLight *)FUN_0056497c(0x2fac);
+  pCVar2 = operator_new(0x2fac);
   this_ptr_00 = (CDemonLight *)0x0;
   if (pCVar2 != (CDemonLight *)0x0) {
     this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_0044e110
                             (pCVar2,(this_ptr->size).x,(this_ptr->size).y);
   }
   if (this_ptr_00 == (CDemonLight *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\setutil.cpp";
-    g_INT_01cc4804 = 0x2c6;
-    core_main_c_FUN_004c8440("C3DSLight::create - Out of memory!");
+    g_CurrentFilename = "..\\core\\setutil.cpp";
+    g_CurrentLineNumber = 710;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("C3DSLight::create - Out of memory!");
   }
   core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(this_ptr_00);
   if (this_ptr->filter_count < 1) {

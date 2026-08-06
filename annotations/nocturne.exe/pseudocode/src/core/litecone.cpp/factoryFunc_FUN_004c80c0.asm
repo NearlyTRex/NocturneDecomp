@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_litecone.cpp_CLightCone_ctor_FUN_004c80f0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x224                          ; 004c80c0
         ;   Label: core_litecone.cpp_factoryFunc_FUN_004c80c0
-    CALL crt_unknown.c_FUN_0056497c     ; 004c80c5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c80c5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c80ca
     TEST EAX,EAX                        ; 004c80cd
     JNZ 0x004c80d2                      ; 004c80cf

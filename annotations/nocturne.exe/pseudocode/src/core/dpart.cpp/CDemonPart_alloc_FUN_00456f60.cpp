@@ -15,29 +15,29 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00456f60(CDemonPart *this_ptr)
   
   core_dpart_cpp_CDemonPart_free_FUN_00457060(this_ptr);
   if (this_ptr->vertex_count != 0) {
-    pCVar1 = (CVector3i *)FUN_00565c50(this_ptr->vertex_count,0xc);
+    pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
-      _sprintf(acStack_10c,"CDemonPart::alloc - Out of vertex %d memory!");
-      g_INT_01cc4804 = 0x8b;
-      g_CHAR_PTR_01cc4800 = "..\\core\\dpart.cpp";
-      core_main_c_FUN_004c8440(acStack_10c);
+      _sprintf(acStack_10c,"CDemonPart::alloc - Out of vertex %d memory!",this_ptr->vertex_count);
+      g_CurrentLineNumber = 139;
+      g_CurrentFilename = "..\\core\\dpart.cpp";
+      core_main_c_displayErrorAndQuit_FUN_004c8440(acStack_10c);
     }
-    pCVar1 = (CVector3i *)FUN_00565c50(this_ptr->vertex_count,0xc);
+    pCVar1 = (CVector3i *)calloc(this_ptr->vertex_count,0xc);
     this_ptr->vertex_normals = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dpart.cpp";
-      g_INT_01cc4804 = 0x91;
-      core_main_c_FUN_004c8440("CDemonPart::alloc - Out of normal memory!");
+      g_CurrentFilename = "..\\core\\dpart.cpp";
+      g_CurrentLineNumber = 145;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonPart::alloc - Out of normal memory!");
     }
   }
   if (this_ptr->face_count != 0) {
-    pSVar2 = (SSurfacePlane *)FUN_00565c50(this_ptr->face_count,0x20);
+    pSVar2 = (SSurfacePlane *)calloc(this_ptr->face_count,0x20);
     this_ptr->face_data = pSVar2;
     if (pSVar2 == (SSurfacePlane *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dpart.cpp";
-      g_INT_01cc4804 = 0x99;
-      core_main_c_FUN_004c8440("CDemonPart::alloc - Out of face memory!");
+      g_CurrentFilename = "..\\core\\dpart.cpp";
+      g_CurrentLineNumber = 153;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonPart::alloc - Out of face memory!");
       return;
     }
   }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_006afa3c'"
       },
       {
         "category": "undeclared_identifier",
@@ -80,16 +74,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 286,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 46,
-    "suspect_count": 22,
+    "suspect_count": 17,
     "suspect_types": [
-      "param_count_too_few",
-      "raw_address_pointer_store",
       "undefined_data",
       "unnamed_param"
     ],
@@ -111,23 +103,23 @@
         "004013cb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_2d.c_FUN_004012d0",
-    "signature": "void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)"
+    "signature": "void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     }
   ],
   "param_estimates": {
@@ -137,22 +129,19 @@
         "call_addr": "004013e5",
         "call_type": "direct",
         "caller": "engine_2d.c_FUN_004013d0",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.658227848101266,
@@ -183,12 +172,34 @@
     "pcode_op_count": 368
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -196,7 +207,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
+      "text": "void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -204,7 +215,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
+      "text": "void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -212,7 +223,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
+      "text": "void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -220,7 +231,7 @@
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((((0 < param_3) && (param_3 + 0x18 < DAT_005b7620)) && (0 < param_2)) &&",
+      "text": "if ((((0 < param_3) && (param_3 + 0x18 < g_WindowHeight)) && (0 < param_2)) &&",
       "type": "unnamed_param"
     },
     {
@@ -228,7 +239,7 @@
       "line": 14,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((((0 < param_3) && (param_3 + 0x18 < DAT_005b7620)) && (0 < param_2)) &&",
+      "text": "if ((((0 < param_3) && (param_3 + 0x18 < g_WindowHeight)) && (0 < param_2)) &&",
       "type": "unnamed_param"
     },
     {
@@ -236,23 +247,15 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((((0 < param_3) && (param_3 + 0x18 < DAT_005b7620)) && (0 < param_2)) &&",
+      "text": "if ((((0 < param_3) && (param_3 + 0x18 < g_WindowHeight)) && (0 < param_2)) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((((0 < param_3) && (param_3 + 0x18 < DAT_005b7620)) && (0 < param_2)) &&",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "(((param_2 + 0x17 < DAT_005b761c && (0x1f < param_1)) && (param_1 < 0x80)))) {",
+      "text": "(((param_2 + 0x17 < g_WindowWidth && (0x1f < param_1)) && (param_1 < 0x80)))) {",
       "type": "unnamed_param"
     },
     {
@@ -260,7 +263,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(((param_2 + 0x17 < DAT_005b761c && (0x1f < param_1)) && (param_1 < 0x80)))) {",
+      "text": "(((param_2 + 0x17 < g_WindowWidth && (0x1f < param_1)) && (param_1 < 0x80)))) {",
       "type": "unnamed_param"
     },
     {
@@ -268,16 +271,8 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "(((param_2 + 0x17 < DAT_005b761c && (0x1f < param_1)) && (param_1 < 0x80)))) {",
+      "text": "(((param_2 + 0x17 < g_WindowWidth && (0x1f < param_1)) && (param_1 < 0x80)))) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "(((param_2 + 0x17 < DAT_005b761c && (0x1f < param_1)) && (param_1 < 0x80)))) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -292,31 +287,15 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_006afa3c + param_1 * 4);",
+      "text": "iVar1 = g_FontCharWidths[param_1];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_006afa3c",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_006afa3c + param_1 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 19,
-      "match": "*(char **)(param_1 * 4 + 0x6afe3c",
-      "severity": "moderate",
-      "text": "pcVar7 = *(char **)(param_1 * 4 + 0x6afe3c);",
-      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar7 = *(char **)(param_1 * 4 + 0x6afe3c);",
+      "text": "puVar7 = g_FontGlyphPtrs[param_1];",
       "type": "unnamed_param"
     },
     {
@@ -358,17 +337,6 @@
       "severity": "mild",
       "text": "puVar5 = (byte *)(*(int *)(iStack_14 + 0x1bd2f9c) + param_2 + -1);",
       "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

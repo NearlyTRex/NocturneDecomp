@@ -16,11 +16,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_00596bd8
 ;   TerminatedCString s_Invalid_IP_values_d_d_d_00596bef
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   support_trisock.cpp_buildIPAddress_FUN_00548c60
 ;
 ; *****************************************************************************
@@ -64,10 +64,10 @@ section .text
     MOV EBP,0x596bd8                    ; 00548b7c | = "..\\support\\trisock.cpp"
     MOV EAX,0x41                        ; 00548b81
     PUSH 0x596bef                       ; 00548b86 | = "Invalid IP values: %d, %d, %d, %d"
-    MOV dword ptr [0x01cc4800],EBP      ; 00548b8b | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00548b91 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00548b96
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00548b8b | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00548b91 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00548b96
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x14                        ; 00548b9b
     MOV EAX,EBX                         ; 00548b9e
     POP EBP                             ; 00548ba0

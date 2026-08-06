@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 145,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -68,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 883,
-    "complexity_score": 484,
+    "complexity_score": 485,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 339,
+    "pseudocode_lines": 340,
     "suspect_count": 13,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1222
+    "total_lines": 1223
   },
   "cross_references": [
     {
@@ -116,7 +110,7 @@
     {
       "addr": "0053c800",
       "from_addr": "0053ce36",
-      "name": "core_stranger.cpp_FUN_0053c800",
+      "name": "core_stranger.cpp_CStranger_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -207,7 +201,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "005103f0",
@@ -270,13 +264,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -630,7 +624,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 172,
+      "line": 173,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar17->x = pCVar5->x;",
@@ -638,7 +632,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 192,
+      "line": 193,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_a0.x;",
@@ -646,7 +640,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 210,
+      "line": 211,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_40.x;",
@@ -654,7 +648,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 228,
+      "line": 229,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_34.x;",
@@ -662,7 +656,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 246,
+      "line": 247,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_dc.x;",
@@ -670,7 +664,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 264,
+      "line": 265,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_94.x;",
@@ -678,7 +672,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 282,
+      "line": 283,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_64.x = CStack_c4.x;",
@@ -686,7 +680,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 294,
+      "line": 295,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar1->x = pCVar17->x;",
@@ -694,7 +688,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 331,
+      "line": 332,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",

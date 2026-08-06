@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a732
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b84b4
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c08d24
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [0x01c08d44],EDI      ; 00482f06 | DAT_01c08d44
     MOV dword ptr [0x01c08d28],ECX      ; 00482f0c | DAT_01c08d28
     MOV dword ptr [0x01c08d2c],ECX      ; 00482f12 | DAT_01c08d2c
-    MOV EBX,dword ptr [0x005ae704]      ; 00482f18 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 00482f18 | g_CDemonRenderer_PTR_005ae704
     MOV EDX,0xffff                      ; 00482f1e
     PUSH EBX                            ; 00482f23 | DAT_01b4d738
     MOV dword ptr [0x01c08d34],ECX      ; 00482f24 | DAT_01c08d34
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 00482f35
     PUSH 0xffff                         ; 00482f38
-    MOV ESI,dword ptr [0x005ae704]      ; 00482f3d | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 00482f3d | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 00482f43 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00482f44
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)

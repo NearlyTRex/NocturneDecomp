@@ -11,7 +11,7 @@ void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile *this_p
 {
   char local_64 [100];
   
-  _sprintf(local_64,"%g");
+  _sprintf(local_64,"%g",(double)value);
   engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(this_ptr,key,local_64);
   return;
 }

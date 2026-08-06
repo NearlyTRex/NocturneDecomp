@@ -11,7 +11,7 @@ CBat * __cdecl core_bat_cpp_factoryFunc_FUN_004119e0(void)
 {
   CBat *pCVar1;
   
-  pCVar1 = (CBat *)FUN_0056497c(0x380);
+  pCVar1 = operator_new(0x380);
   if (pCVar1 == (CBat *)0x0) {
     return (CBat *)0x0;
   }

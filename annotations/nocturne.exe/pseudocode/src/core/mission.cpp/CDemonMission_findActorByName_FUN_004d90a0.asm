@@ -9,7 +9,7 @@
 ;
 ; XREF[9]:
 ;   core_event.cpp_resolveActorByName_FUN_0047a390 at 0047a465
-;   core_game.cpp_FUN_004a4170 at 004a4865
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4865
 ;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6846
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9cbe
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680 at 004d96e4

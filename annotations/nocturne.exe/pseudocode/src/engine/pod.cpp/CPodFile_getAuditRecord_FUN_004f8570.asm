@@ -10,11 +10,11 @@
 ;   TerminatedCString s_rb_0058dac5
 ;   TerminatedCString s_engine_pod_cpp_0058dac8
 ;   TerminatedCString s_CPodFile_getAuditRecord_0058dada
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -42,10 +42,10 @@ section .text
         ;   Label: LAB_004f8595
     MOV EDI,0x1f1                       ; 004f859a
     PUSH 0x58da89                       ; 004f859f | = "CPodFile::getAuditRecord - invalid in..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004f85a4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f85aa | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f85b0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004f85a4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004f85aa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f85b0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f85b5
     PUSH 0x58dac5                       ; 004f85b8 | = "rb"
         ;   Label: LAB_004f85b8
@@ -100,10 +100,10 @@ section .text
     MOV EAX,0x58dac8                    ; 004f8633 | = "..\\engine\\pod.cpp"
     MOV EDX,0x1f6                       ; 004f8638
     PUSH 0x58dada                       ; 004f863d | = "CPodFile::getAuditRecord - can't open %s"
-    MOV [0x01cc4800],EAX                ; 004f8642 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f8647 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f864d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004f8642 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004f8647 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f864d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004f8652
     JMP 0x004f85cf                      ; 004f8655
         ;   XREF to: 004f85cf (UNCONDITIONAL_JUMP)  ; LAB_004f85cf

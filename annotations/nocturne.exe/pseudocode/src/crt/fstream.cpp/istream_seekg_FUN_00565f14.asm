@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   offset
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004a4170 at 004a4462
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4462
 ;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456be3
 ;
 ; Called Functions:

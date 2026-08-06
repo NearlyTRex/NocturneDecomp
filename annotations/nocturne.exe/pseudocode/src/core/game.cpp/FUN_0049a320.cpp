@@ -51,8 +51,8 @@ void core_game_cpp_FUN_0049a320(void)
       return;
     }
     if (_DAT_01c78acc != 0) {
-      _sprintf(acStack_98,"noc%05d.raw");
-      _sprintf(acStack_160,"Movie recording active: movie\\%s");
+      _sprintf(acStack_98,"noc%05d.raw",_DAT_01c78ad4);
+      _sprintf(acStack_160,"Movie recording active: movie\\%s",acStack_98);
       p_Stack_2c = engine_dosio_cpp_getFile_FUN_00456a60("movie",acStack_98,"wb");
       if (p_Stack_2c != (_FILE *)0x0) {
         iStack_30 = 0;
@@ -63,10 +63,10 @@ void core_game_cpp_FUN_0049a320(void)
               iStack_34 = iStack_30 + 1;
               do {
                 file = p_Stack_2c;
-                iStack_20 = (iStack_28 * DAT_005b761c) / 0x00000040;
-                iStack_18 = ((iStack_28 + 1) * DAT_005b761c) / 0x00000040;
-                iVar2 = (iStack_30 * DAT_005b7620) / 0x00000040;
-                iVar3 = (iStack_34 * DAT_005b7620) / 0x00000040;
+                iStack_20 = (iStack_28 * g_WindowWidth) / 0x00000040;
+                iStack_18 = ((iStack_28 + 1) * g_WindowWidth) / 0x00000040;
+                iVar2 = (iStack_30 * g_WindowHeight) / 0x00000040;
+                iVar3 = (iStack_34 * g_WindowHeight) / 0x00000040;
                 iVar7 = 0;
                 iVar5 = 0;
                 iVar6 = 0;

@@ -51,9 +51,9 @@ CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBounding
 // Address: 004f6fa0
 void __cdecl CPlatform::archive(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_004f7360
+// Original: core_platfrm.cpp_CPlatform_FUN_004f7360
 // Address: 004f7360
-int __cdecl FUN_004f7360(CPlatform *this_ptr,CDemonActor *actor);
+int __cdecl CPlatform(CPlatform *this_ptr,CDemonActor *actor);
 
 // Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560
 // Address: 004f7560

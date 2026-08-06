@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_FUN_0054e130 at 0054e183
+;   core_vampboss.cpp_CVampireBoss_FUN_0054e130 at 0054e183
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057f1ac = 5.35679601527854E-315

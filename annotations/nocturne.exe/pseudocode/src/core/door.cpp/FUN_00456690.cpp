@@ -13,6 +13,6 @@ CRuleList * core_door_cpp_FUN_00456690(void)
 {
   CRuleList *in_stack_00000004;
   
-  core_event_cpp_FUN_00481620(in_stack_00000004);
+  core_event_cpp_CRuleList_FUN_00481620(in_stack_00000004);
   return in_stack_00000004;
 }

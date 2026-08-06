@@ -24,7 +24,11 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *outpu
   }
   if ((format_flags & 2) != 0) {
     if (options->position_format == 0) {
-      iVar1 = _sprintf(output_buffer," pos=%lg,%lg,%lg");
+      iVar1 = _sprintf(output_buffer," pos=%lg,%lg,%lg",*(uint *)&(options->position).x
+                         ,*(uint *)((int)&(options->position).x + 4),
+                         *(uint *)&(options->position).y,
+                         *(uint *)((int)&(options->position).y + 4),
+                         *(uint *)&(options->position).z);
       output_buffer = output_buffer + iVar1;
     }
     if (options->position_format == 1) {
@@ -38,7 +42,11 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *outpu
   }
   if ((format_flags & 4) != 0) {
     if (options->velocity_format == 0) {
-      iVar1 = _sprintf(output_buffer," vel=%lg,%lg,%lg");
+      iVar1 = _sprintf(output_buffer," vel=%lg,%lg,%lg",*(uint *)&(options->velocity).x
+                         ,*(uint *)((int)&(options->velocity).x + 4),
+                         *(uint *)&(options->velocity).y,
+                         *(uint *)((int)&(options->velocity).y + 4),
+                         *(uint *)&(options->velocity).z);
       output_buffer = output_buffer + iVar1;
     }
     if (options->velocity_format == 1) {
@@ -51,16 +59,17 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_00526410(char *outpu
     }
   }
   if ((format_flags & 8) != 0) {
-    iVar1 = _sprintf(output_buffer," vol=%g");
+    iVar1 = _sprintf(output_buffer," vol=%g",(double)options->current_volume);
     output_buffer = output_buffer + iVar1;
   }
   if ((format_flags & 0x10) != 0) {
-    iVar1 = _sprintf(output_buffer," freq=%g");
+    iVar1 = _sprintf(output_buffer," freq=%g",(double)options->base_frequency);
     output_buffer = output_buffer + iVar1;
   }
   if ((format_flags & 0x20) == 0) {
     return;
   }
-  _sprintf(output_buffer," delay=%lg");
+  _sprintf(output_buffer," delay=%lg",*(uint *)&options->delay_remaining,
+             *(uint *)((int)&options->delay_remaining + 4));
   return;
 }

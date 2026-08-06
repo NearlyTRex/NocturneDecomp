@@ -40,7 +40,7 @@
 ;   float FLOAT_005797c5 = 0.5
 ;   undefined4 DAT_0059aa80
 ;   undefined4 DAT_0059aa88
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_006b028c
 ;   undefined4 DAT_006b0290
 ;   undefined4 DAT_006b0294
@@ -49,8 +49,8 @@
 ;   undefined4 DAT_01c038f4
 ;
 ; Called Functions:
+;   core_box.cpp_CBoundingBox3D_FUN_0041d050
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0
-;   core_box.cpp_FUN_0041d050
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
@@ -65,8 +65,8 @@ section .text
     SUB ESP,0x6c                        ; 0041ceb2
     MOV EBX,dword ptr [ESP + 0x78]      ; 0041ceb5
     PUSH EBX                            ; 0041ceb9
-    CALL core_box.cpp_FUN_0041d050      ; 0041ceba
-        ;   XREF to: 0041d050 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041d050()
+    CALL core_box.cpp_CBoundingBox3D_FUN_0041d050 ; 0041ceba
+        ;   XREF to: 0041d050 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_FUN_0041d050(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0041cebf
     CMP EAX,-0x1                        ; 0041cec2
     JZ 0x0041ced1                       ; 0041cec5
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_0041ced1
     JMP 0x0041cecb                      ; 0041ced3
         ;   XREF to: 0041cecb (UNCONDITIONAL_JUMP)  ; LAB_0041cecb
-    MOV EDX,dword ptr [0x005ae704]      ; 0041ced5 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0041ced5 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041ced5
     PUSH EDX                            ; 0041cedb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041cedc

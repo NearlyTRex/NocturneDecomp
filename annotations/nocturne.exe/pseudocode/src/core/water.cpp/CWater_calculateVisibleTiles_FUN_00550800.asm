@@ -59,7 +59,7 @@
 ;   double DOUBLE_00597597 = 1.10000000000000
 ;   undefined4 DAT_005a3e8c
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005ae708
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5054
@@ -72,7 +72,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0
 ;   core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00550817
     LEA ESI,[EBX + EDX*0x1]             ; 00550818
     ADD EDX,0x20                        ; 0055081b
-    MOV CL,byte ptr [ESI + EAX*0x1 + 0x1bf771f] ; 0055081e | DAT_01bf7720
+    MOV CL,byte ptr [ESI + EAX*0x1 + 0x1bf771f] ; 0055081e | g_ColorCubeLookup
     ADD EBX,0x400                       ; 00550825
     MOV byte ptr [EAX + 0x2dd9237],CL   ; 0055082b
     CMP EAX,0x20                        ; 00550831
@@ -219,7 +219,7 @@ section .text
     MOV dword ptr [ESP + 0x68],EAX      ; 005509cc
     FILD dword ptr [ESP + 0xa0]         ; 005509d0
     FMUL float ptr [EDI + 0x8]          ; 005509d7
-    MOV ECX,dword ptr [0x005ae704]      ; 005509da | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 005509da | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [ESP + 0x64]          ; 005509e0
     FADD float ptr [0x02dd1220]         ; 005509e4 | DAT_02dd1220
     FLD float ptr [ESP + 0x68]          ; 005509ea
@@ -255,7 +255,7 @@ section .text
     MOV dword ptr [ESP + 0x68],EBX      ; 00550a54
     MOV dword ptr [ESP + 0x6c],EBX      ; 00550a58
     LEA EBX,[ESP + 0x58]                ; 00550a5c
-    MOV EDX,dword ptr [0x005ae704]      ; 00550a60 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00550a60 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00550a66
     FMUL float ptr [0x005a3e8c]         ; 00550a68 | DAT_005a3e8c
     FISTP dword ptr [EBX]               ; 00550a6e
@@ -276,7 +276,7 @@ section .text
     LEA EBX,[ESP + 0x34]                ; 00550a9b
     MOV dword ptr [ESP + 0x64],EAX      ; 00550a9f
     LEA EAX,[ESP + 0x64]                ; 00550aa3
-    MOV EDX,dword ptr [0x005ae704]      ; 00550aa7 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00550aa7 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00550aad
     FMUL float ptr [0x005a3e8c]         ; 00550aaf | DAT_005a3e8c
     FISTP dword ptr [EBX]               ; 00550ab5
@@ -298,7 +298,7 @@ section .text
     LEA EBX,[ESP + 0x7c]                ; 00550ae5
     MOV dword ptr [ESP + 0x6c],EAX      ; 00550ae9
     LEA EAX,[ESP + 0x64]                ; 00550aed
-    MOV EDX,dword ptr [0x005ae704]      ; 00550af1 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00550af1 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00550af7
     FMUL float ptr [0x005a3e8c]         ; 00550af9 | DAT_005a3e8c
     FISTP dword ptr [EBX]               ; 00550aff
@@ -319,7 +319,7 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 00550b2d
     ADD ESP,0x8                         ; 00550b31
     XOR ECX,ECX                         ; 00550b34
-    MOV EDX,dword ptr [0x005ae704]      ; 00550b36 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00550b36 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [ESP + 0x64],ECX      ; 00550b3c
     FLD float ptr [EAX]                 ; 00550b40
     FMUL float ptr [0x005a3e8c]         ; 00550b42 | DAT_005a3e8c
@@ -402,7 +402,7 @@ section .text
     MOV EAX,ESP                         ; 00550c37
     MOV dword ptr [ESP + 0x1c],EDX      ; 00550c39
     PUSH EAX                            ; 00550c3d
-    MOV EDX,dword ptr [0x005ae704]      ; 00550c3e | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00550c3e | g_CDemonRenderer_PTR_005ae704
     MOV ECX,0x2                         ; 00550c44
     PUSH EDX                            ; 00550c49 | DAT_01b4d738
     MOV dword ptr [ESP + 0x28],ECX      ; 00550c4a
@@ -418,10 +418,10 @@ section .text
     MOV EAX,0x59753f                    ; 00550c66 | = "..\\core\\water.cpp"
     MOV EDX,0x136                       ; 00550c6b
     PUSH 0x597551                       ; 00550c70 | = "Too many visible water tiles!"
-    MOV [0x01cc4800],EAX                ; 00550c75 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00550c80
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00550c75 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00550c80
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00550c85
     MOV EAX,[0x02dd1234]                ; 00550c88 | DAT_02dd1234
         ;   Label: LAB_00550c88

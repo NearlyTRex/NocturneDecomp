@@ -11,7 +11,7 @@ CShovel * __cdecl core_shovel_cpp_factoryFunc_FUN_005169e0(void)
 {
   CShovel *pCVar1;
   
-  pCVar1 = (CShovel *)FUN_0056497c(0x570);
+  pCVar1 = operator_new(0x570);
   if (pCVar1 == (CShovel *)0x0) {
     return (CShovel *)0x0;
   }

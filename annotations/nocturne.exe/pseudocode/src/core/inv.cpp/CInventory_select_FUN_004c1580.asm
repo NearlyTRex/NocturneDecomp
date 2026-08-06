@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004b5b00 at 004b5b50
+;   core_hero.cpp_CHero_FUN_004b5b00 at 004b5b50
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350 at 004c33d4
 ;
 ; Referenced Globals:
@@ -43,7 +43,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90
 ;   core_inv.cpp_getItemDisplayName_FUN_004beca0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
 ;
 ; *****************************************************************************
@@ -79,10 +79,10 @@ section .text
     MOV ECX,0x587366                    ; 004c15c0 | = "..\\core\\inv.cpp"
     MOV ESI,0x5c3                       ; 004c15c5
     PUSH 0x587376                       ; 004c15ca | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c15cf | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004c15d5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c15db
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004c15cf | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004c15d5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c15db
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c15e0
     MOV EDI,dword ptr [EBX + 0x310]     ; 004c15e3
         ;   Label: LAB_004c15e3
@@ -129,10 +129,10 @@ section .text
     MOV EDX,0x5873a8                    ; 004c1646 | = "..\\core\\inv.cpp"
     MOV ECX,0x5c9                       ; 004c164b
     PUSH 0x5873b8                       ; 004c1650 | = "CInventory::select - Catch 22"
-    MOV dword ptr [0x01cc4800],EDX      ; 004c1655 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c165b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c1661
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004c1655 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004c165b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c1661
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c1666
     MOV EAX,[0x01cae0e8]                ; 004c1669 | DAT_01cae0e8
         ;   Label: LAB_004c1669

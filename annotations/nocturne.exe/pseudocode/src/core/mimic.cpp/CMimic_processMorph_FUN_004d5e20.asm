@@ -18,15 +18,15 @@
 ;   TerminatedCString s_CMimic_processMorph_can_0058959a
 ;   float FLOAT_005a05e4 = 1
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   core_mission.cpp_FUN_004d9110
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;
@@ -80,10 +80,10 @@ section .text
         ;   Label: LAB_004d5e80
     MOV ESI,0x4c9                       ; 004d5e85
     PUSH 0x58959a                       ; 004d5e8a | = "CMimic::processMorph - can't process ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d5e9b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d5e9b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d5ea0
     JMP 0x004d5e38                      ; 004d5ea3
         ;   XREF to: 004d5e38 (UNCONDITIONAL_JUMP)  ; LAB_004d5e38
@@ -107,8 +107,8 @@ section .text
     MOV dword ptr [EBX + 0x4757c],0x0   ; 004d5ed3
     MOV EBX,dword ptr [0x005baf90]      ; 004d5edd | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004d5ee3 | DAT_01cc9450
-    CALL core_mission.cpp_FUN_004d9110  ; 004d5ee4
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004d5ee4
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004d5ee9
     LEA EAX,[EAX]                       ; 004d5eec
     MOV ESP,EBP                         ; 004d5ef0

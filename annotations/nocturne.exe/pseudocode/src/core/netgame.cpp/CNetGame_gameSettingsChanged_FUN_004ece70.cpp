@@ -17,9 +17,9 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(CNetGame
   CNetGame *pCVar4;
   
   if (this_ptr->connection_type != CONNECTION_HOST) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x88c;
-    core_main_c_FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2188;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
   }
   _DAT_01cea404 = _DAT_01cea404 + 1;
   iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();

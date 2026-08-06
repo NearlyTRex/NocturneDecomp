@@ -53,15 +53,17 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0(CDemonS
           *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;
         }
         iVar3 = 0;
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                  (g_CDemonRenderer_PTR_005ae704,1);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
-            core_set_cpp_FUN_0050e080(this_ptr,iVar3,0);
+            core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0xc))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 8;
             }
-            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                      (g_CDemonRenderer_PTR_005ae704,1);
             iVar3 = iVar3 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(this_ptr);
           } while (iVar3 < this_ptr->mirror_glass_actor_count);

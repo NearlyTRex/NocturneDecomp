@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Q_U_I_T_00588d3a
 ;   TerminatedCString s_f0100_00589207
 ;   TerminatedCString s_f0300_0058920d
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   void* PTR_s_f0100_005baf18 = 00589207
@@ -30,10 +30,10 @@
 ;   ... and 22 more
 ;
 ; Called Functions:
+;   core_game.cpp_CGame_FUN_004a4170
+;   core_game.cpp_CGame_FUN_004a4b50
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
-;   core_game.cpp_FUN_004a4170
-;   core_game.cpp_FUN_004a4b50
 ;   core_main.c_FUN_004c8510
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0
@@ -54,7 +54,7 @@ section .text
     PUSH EBP                            ; 004d23d0
         ;   Label: core_menu.cpp_FUN_004d23d0
     SUB ESP,0x8                         ; 004d23d1
-    CMP dword ptr [0x005b7620],0x1e0    ; 004d23d4 | DAT_005b7620
+    CMP dword ptr [0x005b7620],0x1e0    ; 004d23d4 | g_WindowHeight
     JL 0x004d2792                       ; 004d23de
         ;   XREF to: 004d2792 (CONDITIONAL_JUMP)  ; LAB_004d2792
     CMP dword ptr [0x02dc9d60],0x0      ; 004d23e4 | INT_02dc9d60
@@ -295,8 +295,8 @@ section .text
     PUSH 0x2                            ; 004d2636
     MOV ESI,dword ptr [0x005b9354]      ; 004d2638 | g_CGame_PTR_005b9354
     PUSH ESI                            ; 004d263e | g_CGame_01c775ec
-    CALL core_game.cpp_FUN_004a4b50     ; 004d263f
-        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4b50(CGame * this_ptr, int select_mode)
+    CALL core_game.cpp_CGame_FUN_004a4b50 ; 004d263f
+        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4b50(CGame * this_ptr, int select_mode)
         ;   Label: LAB_004d263f
     ADD ESP,0x8                         ; 004d2644
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d2647
@@ -488,8 +488,8 @@ section .text
     PUSH 0x0                            ; 004d280c
     MOV EDI,dword ptr [0x005b9354]      ; 004d280e | g_CGame_PTR_005b9354
     PUSH EDI                            ; 004d2814 | g_CGame_01c775ec
-    CALL core_game.cpp_FUN_004a4170     ; 004d2815
-        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_FUN_004a4170 ; 004d2815
+        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004d281a
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d281d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()

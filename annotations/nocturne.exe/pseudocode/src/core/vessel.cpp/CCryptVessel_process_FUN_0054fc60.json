@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,19 +58,19 @@
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 165,
+        "line": 167,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 193,
+        "line": 195,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 200,
+        "line": 202,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       }
     ],
@@ -80,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 460,
-    "complexity_score": 313,
+    "complexity_score": 315,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
+    "pseudocode_lines": 200,
     "suspect_count": 10,
     "suspect_types": [
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 658
+    "total_lines": 660
   },
   "cross_references": [],
   "function": {
@@ -116,7 +116,7 @@
     {
       "addr": "0048c0d0",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0048c0d0"
+      "name": "core_fire.cpp_CFireEffect_FUN_0048c0d0"
     },
     {
       "addr": "0048d0c0",
@@ -126,7 +126,7 @@
     {
       "addr": "0054fc40",
       "is_variadic": false,
-      "name": "core_vessel.cpp_FUN_0054fc40"
+      "name": "core_vessel.cpp_CCryptVessel_FUN_0054fc40"
     }
   ],
   "globals": [
@@ -387,7 +387,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 95,
+      "line": 96,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->base).location.position.x = (pCVar3->base).location.position.x;",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = (pUVar12->vec).x;",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 129,
+      "line": 131,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar2->position).x = (pCVar3->base).location.position.x;",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 139,
+      "line": 141,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar1->vec).x = (pUVar12->vec).x;",

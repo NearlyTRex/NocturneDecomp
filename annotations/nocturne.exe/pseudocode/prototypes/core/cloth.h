@@ -15,9 +15,9 @@ CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
 // Address: 004351b0
 void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00435210
+// Original: core_cloth.cpp_CCloth_FUN_00435210
 // Address: 00435210
-void FUN_00435210(int param_1);
+void __cdecl CCloth(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_CCloth_load_FUN_00435240
 // Address: 00435240
@@ -51,13 +51,13 @@ void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *eul
 // Address: 00436e80
 void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_00437a60
+// Original: core_cloth.cpp_CCloth_FUN_00437a60
 // Address: 00437a60
-void FUN_00437a60(int param_1);
+void __cdecl CCloth(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00437ab0
+// Original: core_cloth.cpp_CCloth_FUN_00437ab0
 // Address: 00437ab0
-void FUN_00437ab0(int param_1,int param_2,int param_3);
+void __cdecl CCloth(CCloth *this_ptr,int param_2,int param_3);
 
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0
 // Address: 00437cc0
@@ -161,12 +161,12 @@ SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0
 // Address: 004389e0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothVertex_arrdtor_FUN_00438a00
 // Address: 00438a00
-SClothVertex * __cdecl SClothVertex::arrdtor(SClothVertex *objs,uint flags);
+SClothVertex * __cdecl SClothVertex::arrdtor(SClothVertex *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothBone_arrdtor_FUN_00438a20
 // Address: 00438a20
-SClothBone * __cdecl SClothBone::arrdtor(SClothBone *objs,uint flags);
+SClothBone * __cdecl SClothBone::arrdtor(SClothBone *this_ptr,uint flags);

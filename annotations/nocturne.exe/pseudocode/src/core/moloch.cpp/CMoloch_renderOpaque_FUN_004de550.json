@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,28 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 20,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 87,
-        "line": 41,
+        "line": 42,
         "message": "use of undeclared identifier '_DAT_005a0ab8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01cd4318'; did you mean 'DAT_02DF4318'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
         "line": 45,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
+        "message": "use of undeclared identifier '_DAT_01cd4318'; did you mean 'DAT_02DF4318'?"
       }
     ],
     "success": false,
@@ -86,18 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 86,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 48,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 162
+    "total_lines": 164
   },
   "cross_references": [],
   "function": {
@@ -168,9 +155,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -254,22 +241,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

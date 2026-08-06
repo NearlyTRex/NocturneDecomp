@@ -11,30 +11,30 @@
 uint FUN_00571280(uint param_1,int param_2)
 
 {
-  uint *puVar1;
-  int iVar2;
-  uint uVar3;
+  uint *ptr;
+  int iVar1;
+  uint uVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae8)();
-  uVar3 = 1;
-  puVar1 = (uint *)FUN_00565c50(1,0x10);
-  if (puVar1 == (uint *)0x0) {
-    uVar3 = 0;
+  uVar2 = 1;
+  ptr = (uint *)calloc(1,0x10);
+  if (ptr == (uint *)0x0) {
+    uVar2 = 0;
   }
   else {
-    iVar2 = FUN_00572e90(param_2);
-    if (iVar2 == 0) {
-      puVar1[2] = param_2;
-      puVar1[1] = param_1;
-      puVar1[3] = (uint)*(byte *)(param_2 + 0x52);
-      *puVar1 = _DAT_02de5d70;
-      _DAT_02de5d70 = puVar1;
+    iVar1 = FUN_00572e90(param_2);
+    if (iVar1 == 0) {
+      ptr[2] = param_2;
+      ptr[1] = param_1;
+      ptr[3] = (uint)*(byte *)(param_2 + 0x52);
+      *ptr = _DAT_02de5d70;
+      _DAT_02de5d70 = ptr;
     }
     else {
-      FUN_005638d0(puVar1);
-      uVar3 = 0;
+      free(ptr);
+      uVar2 = 0;
     }
   }
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1aec)();
-  return uVar3;
+  return uVar2;
 }

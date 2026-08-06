@@ -54,7 +54,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
   int local_18;
   
   local_e8.surface_normal.A.i =
-       engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+       engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
   if (local_e8.surface_normal.A.i != 0) {
     return;
   }
@@ -73,11 +73,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
   local_e8.surface_normal.C.i = local_e8.surface_normal.A.i;
   local_e8.surface_normal.D.i = local_e8.surface_normal.A.i;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_007658c4);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_007658c4);
   iVar9 = 0;
   do {
-    pCVar5 = DAT_005ae704;
-    *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->u + iVar9) = 0x800000;
+    pCVar5 = g_CDemonRenderer_PTR_005ae704;
+    *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->u + iVar9) = 0x800000;
     iVar6 = iVar9 + 0x30;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->v + iVar9) = 0x800000;
     iVar9 = iVar6;
@@ -92,12 +92,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
   local_40 = this_ptr->collision_test_normals;
   local_30 = 0x28000;
   do {
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,local_30 / 5);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,local_30 / 5);
     iVar9 = 0;
     pCVar11 = local_20;
     do {
-      pCVar5 = DAT_005ae704;
-      *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar9) = 0;
+      pCVar5 = g_CDemonRenderer_PTR_005ae704;
+      *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar9) = 0;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0xffff;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->b + iVar9) = 0;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -113,12 +114,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
       pCVar11 = pCVar11 + 1;
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)
-                 ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar9),
-                 &local_78);
+                 ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar9),&local_78);
       iVar9 = iVar9 + 0x30;
     } while (iVar9 != 0x90);
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
-              (DAT_005ae704,&local_e8,0x267);
+              (g_CDemonRenderer_PTR_005ae704,&local_e8,0x267);
     local_20 = local_20 + 3;
     local_30 = local_30 + -0x8000;
   } while (local_20 != local_40);
@@ -126,12 +127,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
   local_3c = (CVector3f *)&this_ptr->hero_proximity_timer;
   local_28 = 0x28000;
   do {
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,local_28 / 5);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,local_28 / 5);
     iVar9 = 0;
     pCVar11 = local_24;
     do {
-      pCVar5 = DAT_005ae704;
-      *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar9) = 0;
+      pCVar5 = g_CDemonRenderer_PTR_005ae704;
+      *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar9) = 0;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
       *(uint *)((int)&pCVar5->vertex_buffer_ptr->b + iVar9) = 0xffff;
       pCVar7 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -147,12 +149,12 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
       pCVar11 = pCVar11 + 1;
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)
-                 ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar9),
-                 &local_6c);
+                 ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar9),&local_6c);
       iVar9 = iVar9 + 0x30;
     } while (iVar9 != 0x90);
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
-              (DAT_005ae704,&local_e8,local_2c);
+              (g_CDemonRenderer_PTR_005ae704,&local_e8,local_2c);
     local_24 = local_24 + 3;
     local_28 = local_28 + -0x8000;
   } while (local_24 != local_3c);
@@ -185,10 +187,10 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
     local_18 = iVar4;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               ((SProjectedVertex *)
-               ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6),
-               local_60);
-    pCVar5 = DAT_005ae704;
-    *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar6) = 0xffff;
+               ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                      transformed_x + iVar6),local_60);
+    pCVar5 = g_CDemonRenderer_PTR_005ae704;
+    *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar6) = 0xffff;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar6) = 0;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->b + iVar6) = 0;
     local_84.y = local_38;
@@ -200,8 +202,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
               ((SProjectedVertex *)
                ((int)&(pCVar5->vertex_buffer_ptr->projected_vertex).transformed_x + iVar9),&local_b4
               );
-    pCVar5 = DAT_005ae704;
-    *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar9) = 0xffff;
+    pCVar5 = g_CDemonRenderer_PTR_005ae704;
+    *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar9) = 0xffff;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->b + iVar9) = 0;
     if (0 < local_1c) {
@@ -212,7 +214,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
       local_c4 = iVar4;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(pCVar5,0x4000);
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
-                (DAT_005ae704,&local_e8,local_2c);
+                (g_CDemonRenderer_PTR_005ae704,&local_e8,local_2c);
     }
     iVar6 = iVar6 + 0x60;
     local_1c = local_1c + 1;
@@ -222,9 +224,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
   local_c0.y = (int)ROUND(_DAT_02dd1188 * _DAT_0059b070);
   local_c0.z = (int)ROUND(_DAT_02dd118c * _DAT_0059b070);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_c0);
-  pCVar5 = DAT_005ae704;
-  DAT_005ae704->vertex_buffer_ptr->r = 0xffff;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_c0);
+  pCVar5 = g_CDemonRenderer_PTR_005ae704;
+  g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0xffff;
   iVar6 = 0;
   pCVar5->vertex_buffer_ptr->g = 0;
   iVar9 = 0x30;
@@ -245,10 +247,10 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
     local_a8.z = (int)ROUND(local_84.z * _DAT_0059b070);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               ((SProjectedVertex *)
-               ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar9),
-               &local_a8);
-    pCVar5 = DAT_005ae704;
-    *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->r + iVar9) = 0xffff;
+               ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                      transformed_x + iVar9),&local_a8);
+    pCVar5 = g_CDemonRenderer_PTR_005ae704;
+    *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r + iVar9) = 0xffff;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->g + iVar9) = 0;
     *(uint *)((int)&pCVar5->vertex_buffer_ptr->b + iVar9) = 0;
     if (0 < iVar6) {
@@ -258,12 +260,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(CCharacte
       local_c8 = iVar6;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(pCVar5,0x4000);
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
-                (DAT_005ae704,&local_e8,local_2c);
+                (g_CDemonRenderer_PTR_005ae704,&local_e8,local_2c);
     }
     iVar6 = iVar6 + 1;
     local_f0 = local_f0 + 2;
     iVar9 = iVar9 + 0x30;
   } while (iVar6 < 0x19);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
   return;
 }

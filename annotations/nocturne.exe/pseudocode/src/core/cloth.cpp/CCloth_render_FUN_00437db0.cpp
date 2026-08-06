@@ -26,16 +26,18 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
   bVar6 = 0;
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
             (g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,(this_ptr->model).vertex_list);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
   dVar7 = round((double)(this_ptr->transparency * (float)65535));
   iVar10 = (int)ROUND(dVar7);
   if (iVar10 < 1000) {
     return;
   }
   if (iVar10 < 63000) {
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,iVar10);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,iVar10);
   }
   engine_texture_cpp_ensureTextureLoaded_FUN_00545920((this_ptr->model).texture_list[0].textures);
   if (this_ptr->double_sided == 0) {
@@ -46,9 +48,10 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
     if ((deformable_model != (CDeformableModelInstance *)0x0) &&
        (iVar4 = 0, pCVar2 = this_ptr, 0 < this_ptr->locked_vertex_count)) {
       do {
-        pCVar1 = DAT_005ae704;
+        pCVar1 = g_CDemonRenderer_PTR_005ae704;
         iVar9 = pCVar2->locked_vertex_indices[0];
-        DAT_005ae704->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[600];
+        g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[iVar9].r =
+             pCVar2->locked_vertex_indices[600];
         pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[700];
         pCVar1->vertex_buffer_ptr[iVar9].b = pCVar2->locked_vertex_indices[800];
         iVar4 = iVar4 + 1;
@@ -65,7 +68,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
       iVar9 = -1;
       pSVar8 = (this_ptr->model).poly_vert_list;
     }
-    core_set_cpp_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,iVar4 / 2,iVar9);
+    core_set_cpp_CDemonSet_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,iVar4 / 2,iVar9);
     iVar4 = (this_ptr->model).poly_count / 2;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
               (g_CDemonSet_PTR_005be368,(this_ptr->model).vertex_count,iVar4,
@@ -87,9 +90,10 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
     if ((deformable_model != (CDeformableModelInstance *)0x0) &&
        (iVar4 = 0, pCVar2 = this_ptr, 0 < this_ptr->locked_vertex_count)) {
       do {
-        pCVar1 = DAT_005ae704;
+        pCVar1 = g_CDemonRenderer_PTR_005ae704;
         iVar9 = pCVar2->locked_vertex_indices[0];
-        DAT_005ae704->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[600];
+        g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[iVar9].r =
+             pCVar2->locked_vertex_indices[600];
         pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[700];
         pCVar1->vertex_buffer_ptr[iVar9].b = pCVar2->locked_vertex_indices[800];
         iVar4 = iVar4 + 1;
@@ -106,7 +110,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
       iVar4 = (this_ptr->model).poly_count;
       pSVar8 = (this_ptr->model).poly_vert_list;
     }
-    core_set_cpp_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,iVar4,iVar9);
+    core_set_cpp_CDemonSet_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,iVar4,iVar9);
     local_20 = (this_ptr->model).poly_count;
     if (1000 < local_20) {
       local_20 = 1000;
@@ -147,8 +151,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00437db0(CCloth *this_ptr,CDeforma
   }
   iVar10 = 0x267;
 LAB_00437faa:
-  core_set_cpp_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,local_20,iVar10);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+  core_set_cpp_CDemonSet_FUN_0050ddd0(g_CDemonSet_PTR_005be368,pSVar8,local_20,iVar10);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(g_CDemonRenderer_PTR_005ae704,1);
   return;
 }

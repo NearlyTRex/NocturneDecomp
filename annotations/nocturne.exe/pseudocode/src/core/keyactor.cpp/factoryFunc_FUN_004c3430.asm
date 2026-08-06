@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_keyactor.cpp_CKeyActor_ctor_FUN_004c3460
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x314                          ; 004c3430
         ;   Label: core_keyactor.cpp_factoryFunc_FUN_004c3430
-    CALL crt_unknown.c_FUN_0056497c     ; 004c3435
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c3435
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c343a
     TEST EAX,EAX                        ; 004c343d
     JNZ 0x004c3442                      ; 004c343f

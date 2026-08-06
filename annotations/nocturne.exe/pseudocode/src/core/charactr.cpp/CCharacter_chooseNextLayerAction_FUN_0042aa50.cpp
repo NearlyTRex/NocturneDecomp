@@ -17,9 +17,9 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50(CCh
   
   if ((this_ptr->layer_action_index < 0) ||
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
-    g_INT_01cc4804 = 0xfb4;
-    core_main_c_FUN_004c8440("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
+    g_CurrentFilename = "..\\core\\charactr.cpp";
+    g_CurrentLineNumber = 4020;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
   if ((float)1.0000000000000001e-05 <= this_ptr->layer_action_t) {
     if (this_ptr->layer_action_t <= (float)0.99999000000000005) {

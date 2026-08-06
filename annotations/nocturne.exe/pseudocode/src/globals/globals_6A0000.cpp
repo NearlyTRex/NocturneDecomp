@@ -4,6 +4,21 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x6A0000
 // =============================================================================
 
+// float[256]
+float g_PaletteLuminanceCache[256] = {};
+
+// int
+int g_RenderingMode = {};
+
+// int[256]
+int g_FontCharWidths[256] = {};
+
+// uchar*
+uchar* g_FontBitmapData = {};
+
+// uchar*[256]
+uchar* g_FontGlyphPtrs[256] = {};
+
 // undefined4
 undefined4 DAT_006af554 = {};
 undefined4 DAT_006af558 = {};
@@ -27,12 +42,5 @@ undefined4 DAT_006af5f4 = {};
 undefined4 DAT_006af5f8 = {};
 undefined4 DAT_006af5fc = {};
 undefined4 DAT_006af600 = {};
-undefined4 DAT_006af628 = {};
 undefined4 DAT_006af62c = {};
-undefined4 DAT_006af638 = {};
-undefined4 DAT_006afa38 = {};
-undefined4 DAT_006afabc = {};
-undefined4 DAT_006afac0 = {};
-undefined4 DAT_006afebc = {};
-undefined4 DAT_006afec0 = {};
 

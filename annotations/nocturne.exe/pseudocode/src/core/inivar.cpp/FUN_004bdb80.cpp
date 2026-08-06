@@ -17,9 +17,9 @@ void __cdecl core_inivar_cpp_FUN_004bdb80(void)
   
   DVar2 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
   if (DVar2 != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\inivar.cpp";
-    g_INT_01cc4804 = 0x54;
-    core_main_c_FUN_004c8440("Please copy Nocturne to your hard drive");
+    g_CurrentFilename = "..\\core\\inivar.cpp";
+    g_CurrentLineNumber = 84;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Please copy Nocturne to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004bd860(&local_204,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Graphics");
@@ -64,7 +64,7 @@ void __cdecl core_inivar_cpp_FUN_004bdb80(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"currentBoard",(int *)&DAT_01cc64a4);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Sound");
-  sound_sndmain_cpp_FUN_005289f0(&local_204);
+  sound_sndmain_cpp_readIni_FUN_005289f0(&local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(&local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"gameControl",(int *)&g_CGame_PTR_005b9354->game_control);

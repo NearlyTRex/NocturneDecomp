@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a1360
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b7650
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_007f7370
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 004f6d91
     SUB ESP,0x24                        ; 004f6d92
     MOV ESI,dword ptr [ESP + 0x30]      ; 004f6d95
-    MOV EDX,dword ptr [0x005ae704]      ; 004f6d99 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004f6d99 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004f6d9f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6da0
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -93,7 +93,7 @@ section .text
         ;   XREF to: 004f6dde (CONDITIONAL_JUMP)  ; LAB_004f6dde
     PUSH EDI                            ; 004f6e18
         ;   Label: LAB_004f6e18
-    MOV EDI,dword ptr [0x005ae704]      ; 004f6e19 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 004f6e19 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004f6e1f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6e20
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -127,7 +127,7 @@ section .text
     CMP dword ptr [ESI + 0x50c],0x0     ; 004f6e71
     JZ 0x004f6f29                       ; 004f6e78
         ;   XREF to: 004f6f29 (CONDITIONAL_JUMP)  ; LAB_004f6f29
-    MOV EDX,dword ptr [0x005ae704]      ; 004f6e7e | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004f6e7e | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004f6e84 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004f6e85
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

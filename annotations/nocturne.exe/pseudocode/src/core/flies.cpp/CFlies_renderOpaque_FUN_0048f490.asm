@@ -13,9 +13,9 @@
 ;   float FLOAT_0058171f = 64
 ;   double DOUBLE_00581727 = 0.5
 ;   undefined4 DAT_0059da10
-;   undefined4 DAT_005ae704
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b9214
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c02594
@@ -51,7 +51,7 @@ section .text
     MOV EBP,ESP                         ; 0048f494
     SUB ESP,0x8c                        ; 0048f496
     AND ESP,0xfffffff8                  ; 0048f49c
-    MOV EDX,dword ptr [0x005ae704]      ; 0048f49f | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0048f49f | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0048f4a5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048f4a6
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 0048f761 (CONDITIONAL_JUMP)  ; LAB_0048f761
     MOV ECX,0x3                         ; 0048f566
     MOV ESI,0x800000                    ; 0048f56b
-    MOV EAX,[0x005ae704]                ; 0048f570 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0048f570 | g_CDemonRenderer_PTR_005ae704
     XOR EBX,EBX                         ; 0048f575
     MOV dword ptr [ESP + 0x4],ECX       ; 0048f577
     MOV dword ptr [ESP + 0x14],EBX      ; 0048f57b
@@ -216,7 +216,7 @@ section .text
         ;   XREF to: 00533f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)
     ADD ESP,0x18                        ; 0048f6cd
     LEA EAX,[ESP + 0x60]                ; 0048f6d0
-    MOV EDX,dword ptr [0x005ae704]      ; 0048f6d4 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0048f6d4 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 0048f6da
     FMUL float ptr [0x0059da10]         ; 0048f6dc | DAT_0059da10
     FISTP dword ptr [EBX]               ; 0048f6e2
@@ -232,7 +232,7 @@ section .text
     PUSH EAX                            ; 0048f703
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0048f704
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV EAX,[0x005ae704]                ; 0048f709 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0048f709 | g_CDemonRenderer_PTR_005ae704
     MOV EBX,dword ptr [EAX]             ; 0048f70e | DAT_01b4d738
     MOV DL,byte ptr [EBX + 0x13]        ; 0048f710
     ADD ESP,0x8                         ; 0048f713
@@ -268,7 +268,7 @@ section .text
         ;   Label: LAB_0048f761
     PUSH EAX                            ; 0048f762
     PUSH EAX                            ; 0048f763
-    MOV EDX,dword ptr [0x005ae704]      ; 0048f764 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0048f764 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0048f76a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0048f76b
         ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
@@ -302,12 +302,12 @@ section .text
     TEST EDX,EDX                        ; 0048f7cc
     JZ 0x0048f83f                       ; 0048f7ce
         ;   XREF to: 0048f83f (CONDITIONAL_JUMP)  ; LAB_0048f83f
-    MOV EDX,dword ptr [0x005b761c]      ; 0048f7d0 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 0048f7d0 | g_WindowWidth
     DEC EDX                             ; 0048f7d6
     CMP ESI,EDX                         ; 0048f7d7
     JGE 0x0048f71f                      ; 0048f7d9
         ;   XREF to: 0048f71f (CONDITIONAL_JUMP)  ; LAB_0048f71f
-    MOV EDX,dword ptr [0x005b7620]      ; 0048f7df | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0048f7df | g_WindowHeight
     DEC EDX                             ; 0048f7e5
     CMP EDI,EDX                         ; 0048f7e6
     JGE 0x0048f71f                      ; 0048f7e8
@@ -349,13 +349,13 @@ section .text
     TEST ESI,ESI                        ; 0048f84d
     JL 0x0048f71f                       ; 0048f84f
         ;   XREF to: 0048f71f (CONDITIONAL_JUMP)  ; LAB_0048f71f
-    CMP ESI,dword ptr [0x005b761c]      ; 0048f855 | DAT_005b761c
+    CMP ESI,dword ptr [0x005b761c]      ; 0048f855 | g_WindowWidth
     JGE 0x0048f71f                      ; 0048f85b
         ;   XREF to: 0048f71f (CONDITIONAL_JUMP)  ; LAB_0048f71f
     TEST EDI,EDI                        ; 0048f861
     JL 0x0048f71f                       ; 0048f863
         ;   XREF to: 0048f71f (CONDITIONAL_JUMP)  ; LAB_0048f71f
-    CMP EDI,dword ptr [0x005b7620]      ; 0048f869 | DAT_005b7620
+    CMP EDI,dword ptr [0x005b7620]      ; 0048f869 | g_WindowHeight
     JGE 0x0048f71f                      ; 0048f86f
         ;   XREF to: 0048f71f (CONDITIONAL_JUMP)  ; LAB_0048f71f
     PUSH EAX                            ; 0048f875

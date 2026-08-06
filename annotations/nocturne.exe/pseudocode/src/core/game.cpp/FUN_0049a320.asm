@@ -9,8 +9,8 @@
 ;   TerminatedCString s_Movie_recording_active_m_00582392
 ;   TerminatedCString s_wb_005823b3
 ;   TerminatedCString s_movie_005823b6
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b9364
 ;   undefined4 DAT_005b9368
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [ESP + 0x12c],EAX     ; 0049a42f
     MOV EDX,dword ptr [ESP + 0x138]     ; 0049a436
         ;   Label: LAB_0049a436
-    MOV ESI,dword ptr [0x005b761c]      ; 0049a43d | DAT_005b761c
+    MOV ESI,dword ptr [0x005b761c]      ; 0049a43d | g_WindowWidth
     IMUL EDX,ESI                        ; 0049a443
     MOV EDI,dword ptr [0x005b9364]      ; 0049a446 | DAT_005b9364
     MOV EAX,EDX                         ; 0049a44c
@@ -144,7 +144,7 @@ section .text
     MOV EAX,EDX                         ; 0049a465
     SAR EDX,0x1f                        ; 0049a467
     IDIV EDI                            ; 0049a46a
-    MOV EBX,dword ptr [0x005b7620]      ; 0049a46c | DAT_005b7620
+    MOV EBX,dword ptr [0x005b7620]      ; 0049a46c | g_WindowHeight
     MOV EDX,dword ptr [ESP + 0x130]     ; 0049a472
     IMUL EDX,EBX                        ; 0049a479
     MOV ESI,dword ptr [0x005b9368]      ; 0049a47c | DAT_005b9368

@@ -11,20 +11,20 @@ void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_0044ac30(CDemonCube 
 {
   SVoxelGrid *pSVar1;
   
-  pSVar1 = (SVoxelGrid *)FUN_00565c50(0x40,1);
+  pSVar1 = (SVoxelGrid *)calloc(0x40,1);
   this_ptr->voxel_buffer1 = pSVar1;
   if (pSVar1 == (SVoxelGrid *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcube.cpp";
-    g_INT_01cc4804 = 0x5f3;
-    core_main_c_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
+    g_CurrentFilename = "..\\core\\dcube.cpp";
+    g_CurrentLineNumber = 1523;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
   }
-  pSVar1 = (SVoxelGrid *)FUN_00565c50(0x40,1);
+  pSVar1 = (SVoxelGrid *)calloc(0x40,1);
   this_ptr->voxel_buffer2 = pSVar1;
   if (pSVar1 != (SVoxelGrid *)0x0) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\dcube.cpp";
-  g_INT_01cc4804 = 0x5f5;
-  core_main_c_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
+  g_CurrentFilename = "..\\core\\dcube.cpp";
+  g_CurrentLineNumber = 1525;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCube::allocMemory - Out of voxel memory");
   return;
 }

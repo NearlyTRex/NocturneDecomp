@@ -8,12 +8,12 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 at 0040ddeb
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de35
 ;   core_actor.cpp_randomChance_FUN_0040dea0 at 0040dedd
-;   core_baron.cpp_FUN_00410cc0 at 00410e63
+;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410e63
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412e00
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414610
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f4aa
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00420a10 at 00420a33
-;   core_charactr.cpp_FUN_004270e0 at 0042714a
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 0042714a
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_0043c360 at 0043c380
 ;   ... and 29 more
 ;

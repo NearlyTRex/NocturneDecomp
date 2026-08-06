@@ -63,9 +63,9 @@ void __cdecl CSound::init(CSound *this_ptr);
 // Address: 0052df90
 void __cdecl CSound::shutdown(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0052dff0
+// Original: core_sound.cpp_CSound_FUN_0052dff0
 // Address: 0052dff0
-void __cdecl FUN_0052dff0(CSound *this_ptr);
+void __cdecl CSound(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_configure_FUN_0052e850
 // Address: 0052e850
@@ -111,9 +111,9 @@ int __cdecl CSound::isSoundPlaying(CSound *this_ptr,uint sfx_handle);
 // Address: 0052ebb0
 void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 
-// Original: core_sound.cpp_FUN_0052ebc0
+// Original: core_sound.cpp_CSound_FUN_0052ebc0
 // Address: 0052ebc0
-float FUN_0052ebc0(undefined4 param_1,char *param_2);
+float __cdecl CSound(CSound *this_ptr,char *param_2);
 
 // Original: core_sound.cpp_FUN_0052ec80
 // Address: 0052ec80
@@ -159,6 +159,6 @@ undefined4 * FUN_0052ee30(void);
 // Address: 0052ee40
 undefined4 * FUN_0052ee40(void);
 
-// Original: core_sound.cpp_FUN_0052ee50
+// Original: core_sound.cpp_STrainNoise_arrdtor_FUN_0052ee50
 // Address: 0052ee50
-void FUN_0052ee50(void);
+STrainNoise * __cdecl STrainNoise::arrdtor(STrainNoise *this_ptr,uint flags);

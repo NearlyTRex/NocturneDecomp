@@ -78,7 +78,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
                         (g_CSound_PTR_005bed68,this_ptr->sfx_handle);
       if (iVar3 == 0) {
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.95,1.05);
-        _sprintf(local_f8,"torch.wav * %f");
+        _sprintf(local_f8,"torch.wav * %f",SUB84(__BITCAST_UINT64((double)local_14),0),
+                   (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
         iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
@@ -107,7 +108,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
           local_14 = fStack_18;
           if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&
              (ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {
-            core_charactr_cpp_FUN_00427730(this_ptr_00,&pCVar1->position,0,0,2.0,1);
+            core_charactr_cpp_CCharacter_FUN_00427730(this_ptr_00,&pCVar1->position,0,0,2.0,1);
           }
         }
       }
@@ -141,7 +142,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
             if ((ABS(fStack_3c) < SStack_6c.cylinder_top_y + fStack_28) &&
                (ABS(fStack_34) < SStack_6c.cylinder_top_y + fStack_28)) {
               fStack_18 = (float)iStack_24;
-              core_charactr_cpp_FUN_00427730(&this_ptr_01->base,&pCVar1->position,0,0,2.0,0);
+              core_charactr_cpp_CCharacter_FUN_00427730
+                        (&this_ptr_01->base,&pCVar1->position,0,0,2.0,0);
             }
           }
         }

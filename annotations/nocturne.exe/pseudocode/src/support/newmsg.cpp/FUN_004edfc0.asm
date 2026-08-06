@@ -35,7 +35,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
@@ -226,10 +226,10 @@ section .text
         ;   Label: LAB_004ee1c0
     MOV EDI,0x52                        ; 004ee1c5
     PUSH 0x58c945                       ; 004ee1ca | = "Unknown message file version"
-    MOV dword ptr [0x01cc4800],ESI      ; 004ee1cf | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ee1d5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ee1db
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004ee1cf | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004ee1d5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ee1db
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ee1e0
     JMP 0x004ee08b                      ; 004ee1e3
         ;   XREF to: 004ee08b (UNCONDITIONAL_JUMP)  ; LAB_004ee08b
@@ -250,10 +250,10 @@ section .text
     MOV ECX,0x58c97f                    ; 004ee20c | = "..\\support\\newmsg.cpp"
     MOV ESI,0x63                        ; 004ee211
     PUSH 0x58c995                       ; 004ee216 | = "Error reading %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004ee21b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ee221 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ee227
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ee21b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004ee221 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ee227
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004ee22c
     CMP dword ptr [0x01d16818],0x1f4    ; 004ee22f | DAT_01d16818
         ;   Label: LAB_004ee22f
@@ -308,10 +308,10 @@ section .text
     MOV EAX,0x58c9a6                    ; 004ee2a7 | = "..\\support\\newmsg.cpp"
     MOV EDX,0x68                        ; 004ee2ac
     PUSH 0x58c9bc                       ; 004ee2b1 | = "Too many messages in %s"
-    MOV [0x01cc4800],EAX                ; 004ee2b6 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ee2bb | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ee2c1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004ee2b6 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004ee2bb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ee2c1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004ee2c6
     JMP 0x004ee23b                      ; 004ee2c9
         ;   XREF to: 004ee23b (UNCONDITIONAL_JUMP)  ; LAB_004ee23b

@@ -75,7 +75,7 @@ section .text
     PUSH EDI                            ; 0049b4e2
     PUSH EBP                            ; 0049b4e3
     SUB ESP,0x1c00                      ; 0049b4e4
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b4ea | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b4ea | g_WindowWidth
     MOV ESI,dword ptr [ESP + 0x1c14]    ; 0049b4f0
     PUSH 0xffff                         ; 0049b4f7
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0049b4fc
@@ -118,7 +118,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049b572 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b577 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b57d
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b580 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b580 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049b586 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049b58c
     ADD ESP,0x18                        ; 0049b58e
@@ -129,7 +129,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b59b
     MOV ECX,0x3                         ; 0049b5a2
     SUB EAX,EDX                         ; 0049b5a7
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b5a9 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b5a9 | g_WindowWidth
     ADD EAX,EAX                         ; 0049b5af
     MOV EDX,EBX                         ; 0049b5b1
     MOV [0x01c78ae0],EAX                ; 0049b5b3 | DAT_01c78ae0
@@ -159,7 +159,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b604 | DAT_01c78ae4
     MOV EBP,dword ptr [0x01c78ae0]      ; 0049b609 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b60f | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b60f | g_WindowHeight
     ADD EBP,EAX                         ; 0049b615
     SHL EAX,0x2                         ; 0049b617
     ADD ESP,0x18                        ; 0049b61a
@@ -172,7 +172,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b62f
     MOV ECX,0x3                         ; 0049b636
     SUB EAX,EDX                         ; 0049b63b
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b63d | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b63d | g_WindowWidth
     ADD EAX,EAX                         ; 0049b643
     MOV EDX,EBX                         ; 0049b645
     MOV [0x01c78ae0],EAX                ; 0049b647 | DAT_01c78ae0
@@ -199,7 +199,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049b684 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b689 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b68f
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b692 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b692 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049b698 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049b69e
     ADD ESP,0x18                        ; 0049b6a0
@@ -210,7 +210,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b6ad
     MOV ECX,0x3                         ; 0049b6b4
     SUB EAX,EDX                         ; 0049b6b9
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b6bb | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b6bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b6c1
     MOV EDX,EBX                         ; 0049b6c3
     MOV [0x01c78ae0],EAX                ; 0049b6c5 | DAT_01c78ae0
@@ -236,7 +236,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b703 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b708 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b70e | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b70e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b714
     SHL EAX,0x2                         ; 0049b716
     ADD ESP,0x18                        ; 0049b719
@@ -249,7 +249,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b72e
     MOV ECX,0x3                         ; 0049b735
     SUB EAX,EDX                         ; 0049b73a
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b73c | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b73c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b742
     MOV EDX,EBX                         ; 0049b744
     MOV [0x01c78ae0],EAX                ; 0049b746 | DAT_01c78ae0
@@ -276,7 +276,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049b784 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b789 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b78f
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b792 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b792 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049b798 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049b79e
     ADD ESP,0x18                        ; 0049b7a0
@@ -287,7 +287,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b7ad
     MOV ECX,0x3                         ; 0049b7b4
     SUB EAX,EDX                         ; 0049b7b9
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b7bb | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b7bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b7c1
     MOV EDX,EBX                         ; 0049b7c3
     MOV [0x01c78ae0],EAX                ; 0049b7c5 | DAT_01c78ae0
@@ -313,7 +313,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b803 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b808 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b80e | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b80e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b814
     SHL EAX,0x2                         ; 0049b816
     ADD ESP,0x18                        ; 0049b819
@@ -326,7 +326,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b82e
     MOV ECX,0x3                         ; 0049b835
     SUB EAX,EDX                         ; 0049b83a
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b83c | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b83c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b842
     MOV EDX,EBX                         ; 0049b844
     MOV [0x01c78ae0],EAX                ; 0049b846 | DAT_01c78ae0
@@ -353,7 +353,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049b884 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b889 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b88f
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b892 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b892 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049b898 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049b89e
     ADD ESP,0x18                        ; 0049b8a0
@@ -364,7 +364,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b8ad
     MOV ECX,0x3                         ; 0049b8b4
     SUB EAX,EDX                         ; 0049b8b9
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b8bb | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b8bb | g_WindowWidth
     ADD EAX,EAX                         ; 0049b8c1
     MOV EDX,EBX                         ; 0049b8c3
     MOV [0x01c78ae0],EAX                ; 0049b8c5 | DAT_01c78ae0
@@ -390,7 +390,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b903 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049b908 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b90e | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b90e | g_WindowHeight
     ADD EDI,EAX                         ; 0049b914
     SHL EAX,0x2                         ; 0049b916
     ADD ESP,0x18                        ; 0049b919
@@ -403,7 +403,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b92e
     MOV ECX,0x3                         ; 0049b935
     SUB EAX,EDX                         ; 0049b93a
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b93c | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b93c | g_WindowWidth
     ADD EAX,EAX                         ; 0049b942
     MOV EDX,EBX                         ; 0049b944
     MOV [0x01c78ae0],EAX                ; 0049b946 | DAT_01c78ae0
@@ -448,7 +448,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049b9c0 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049b9c5 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049b9cb
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b9ce | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b9ce | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049b9d4 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049b9da
     ADD ESP,0x18                        ; 0049b9dc
@@ -459,7 +459,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049b9e9
     MOV ECX,0x3                         ; 0049b9f0
     SUB EAX,EDX                         ; 0049b9f5
-    MOV EBX,dword ptr [0x005b761c]      ; 0049b9f7 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049b9f7 | g_WindowWidth
     ADD EAX,EAX                         ; 0049b9fd
     MOV EDX,EBX                         ; 0049b9ff
     MOV [0x01c78ae0],EAX                ; 0049ba01 | DAT_01c78ae0
@@ -499,7 +499,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049ba68 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049ba6d | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049ba73 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049ba73 | g_WindowHeight
     ADD ECX,EAX                         ; 0049ba79
     SHL EAX,0x2                         ; 0049ba7b
     ADD ESP,0x18                        ; 0049ba7e
@@ -512,7 +512,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ba93
     MOV ECX,0x3                         ; 0049ba9a
     SUB EAX,EDX                         ; 0049ba9f
-    MOV EBX,dword ptr [0x005b761c]      ; 0049baa1 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049baa1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049baa7
     MOV EDX,EBX                         ; 0049baa9
     MOV [0x01c78ae0],EAX                ; 0049baab | DAT_01c78ae0
@@ -556,7 +556,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bb24 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bb29 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bb2f | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bb2f | g_WindowHeight
     ADD ECX,EAX                         ; 0049bb35
     SHL EAX,0x2                         ; 0049bb37
     ADD ESP,0x18                        ; 0049bb3a
@@ -570,7 +570,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bb4f
     MOV ECX,0x3                         ; 0049bb56
     SUB EAX,EDX                         ; 0049bb5b
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bb5d | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bb5d | g_WindowWidth
     ADD EAX,EAX                         ; 0049bb63
     MOV EDX,EBX                         ; 0049bb65
     MOV [0x01c78ae0],EAX                ; 0049bb67 | DAT_01c78ae0
@@ -610,7 +610,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bbce | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bbd3 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bbd9 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bbd9 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bbdf
     SHL EAX,0x2                         ; 0049bbe1
     ADD ESP,0x18                        ; 0049bbe4
@@ -623,7 +623,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bbf9
     MOV ECX,0x3                         ; 0049bc00
     SUB EAX,EDX                         ; 0049bc05
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bc07 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bc07 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bc0d
     MOV EDX,EBX                         ; 0049bc0f
     MOV [0x01c78ae0],EAX                ; 0049bc11 | DAT_01c78ae0
@@ -664,7 +664,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049bc79 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049bc7e | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049bc84
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bc87 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bc87 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bc8d | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049bc93
     ADD ESP,0x18                        ; 0049bc95
@@ -675,7 +675,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bca2
     MOV ECX,0x3                         ; 0049bca9
     SUB EAX,EDX                         ; 0049bcae
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bcb0 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bcb0 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bcb6
     MOV EDX,EBX                         ; 0049bcb8
     MOV [0x01c78ae0],EAX                ; 0049bcba | DAT_01c78ae0
@@ -715,7 +715,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bd21 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bd26 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bd2c | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bd2c | g_WindowHeight
     ADD ECX,EAX                         ; 0049bd32
     SHL EAX,0x2                         ; 0049bd34
     ADD ESP,0x18                        ; 0049bd37
@@ -728,7 +728,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bd4c
     MOV ECX,0x3                         ; 0049bd53
     SUB EAX,EDX                         ; 0049bd58
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bd5a | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bd5a | g_WindowWidth
     ADD EAX,EAX                         ; 0049bd60
     MOV EDX,EBX                         ; 0049bd62
     MOV [0x01c78ae0],EAX                ; 0049bd64 | DAT_01c78ae0
@@ -768,7 +768,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bdcb | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bdd0 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bdd6 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bdd6 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bddc
     SHL EAX,0x2                         ; 0049bdde
     ADD ESP,0x18                        ; 0049bde1
@@ -781,7 +781,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bdf6
     MOV ECX,0x3                         ; 0049bdfd
     SUB EAX,EDX                         ; 0049be02
-    MOV EBX,dword ptr [0x005b761c]      ; 0049be04 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049be04 | g_WindowWidth
     ADD EAX,EAX                         ; 0049be0a
     MOV EDX,EBX                         ; 0049be0c
     MOV [0x01c78ae0],EAX                ; 0049be0e | DAT_01c78ae0
@@ -822,7 +822,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049be76 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049be7b | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049be81
-    MOV EDX,dword ptr [0x005b7620]      ; 0049be84 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049be84 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049be8a | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049be90
     ADD ESP,0x18                        ; 0049be92
@@ -833,7 +833,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049be9f
     MOV ECX,0x3                         ; 0049bea6
     SUB EAX,EDX                         ; 0049beab
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bead | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bead | g_WindowWidth
     ADD EAX,EAX                         ; 0049beb3
     MOV EDX,EBX                         ; 0049beb5
     MOV [0x01c78ae0],EAX                ; 0049beb7 | DAT_01c78ae0
@@ -873,7 +873,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bf1e | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049bf23 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bf29 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bf29 | g_WindowHeight
     ADD ECX,EAX                         ; 0049bf2f
     SHL EAX,0x2                         ; 0049bf31
     ADD ESP,0x18                        ; 0049bf34
@@ -886,7 +886,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bf49
     MOV ECX,0x3                         ; 0049bf50
     SUB EAX,EDX                         ; 0049bf55
-    MOV EBX,dword ptr [0x005b761c]      ; 0049bf57 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049bf57 | g_WindowWidth
     ADD EAX,EAX                         ; 0049bf5d
     MOV EDX,EBX                         ; 0049bf5f
     MOV [0x01c78ae0],EAX                ; 0049bf61 | DAT_01c78ae0
@@ -926,7 +926,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049bfc8 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049bfcd | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049bfd3 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049bfd3 | g_WindowHeight
     ADD EDI,EAX                         ; 0049bfd9
     SHL EAX,0x2                         ; 0049bfdb
     ADD ESP,0x18                        ; 0049bfde
@@ -939,7 +939,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049bff3
     MOV ECX,0x3                         ; 0049bffa
     SUB EAX,EDX                         ; 0049bfff
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c001 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c001 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c007
     MOV EDX,EBX                         ; 0049c009
     MOV [0x01c78ae0],EAX                ; 0049c00b | DAT_01c78ae0
@@ -980,7 +980,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049c073 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c078 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c07e
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c081 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c081 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c087 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049c08d
     ADD ESP,0x18                        ; 0049c08f
@@ -991,7 +991,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c09c
     MOV ECX,0x3                         ; 0049c0a3
     SUB EAX,EDX                         ; 0049c0a8
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c0aa | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c0aa | g_WindowWidth
     ADD EAX,EAX                         ; 0049c0b0
     MOV EDX,EBX                         ; 0049c0b2
     MOV [0x01c78ae0],EAX                ; 0049c0b4 | DAT_01c78ae0
@@ -1031,7 +1031,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c11b | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c120 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c126 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c126 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c12c
     SHL EAX,0x2                         ; 0049c12e
     ADD ESP,0x18                        ; 0049c131
@@ -1044,7 +1044,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c146
     MOV ECX,0x3                         ; 0049c14d
     SUB EAX,EDX                         ; 0049c152
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c154 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c154 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c15a
     MOV EDX,EBX                         ; 0049c15c
     MOV [0x01c78ae0],EAX                ; 0049c15e | DAT_01c78ae0
@@ -1084,7 +1084,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c1c5 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c1ca | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c1d0 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c1d0 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c1d6
     SHL EAX,0x2                         ; 0049c1d8
     ADD ESP,0x18                        ; 0049c1db
@@ -1097,7 +1097,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c1f0
     MOV ECX,0x3                         ; 0049c1f7
     SUB EAX,EDX                         ; 0049c1fc
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c1fe | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c1fe | g_WindowWidth
     ADD EAX,EAX                         ; 0049c204
     MOV EDX,EBX                         ; 0049c206
     MOV [0x01c78ae0],EAX                ; 0049c208 | DAT_01c78ae0
@@ -1138,7 +1138,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049c270 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c275 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c27b
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c27e | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c27e | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c284 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049c28a
     ADD ESP,0x18                        ; 0049c28c
@@ -1149,7 +1149,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c299
     MOV ECX,0x3                         ; 0049c2a0
     SUB EAX,EDX                         ; 0049c2a5
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c2a7 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c2a7 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c2ad
     MOV EDX,EBX                         ; 0049c2af
     MOV [0x01c78ae0],EAX                ; 0049c2b1 | DAT_01c78ae0
@@ -1189,7 +1189,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c318 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c31d | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c323 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c323 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c329
     SHL EAX,0x2                         ; 0049c32b
     ADD ESP,0x18                        ; 0049c32e
@@ -1202,7 +1202,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c343
     MOV ECX,0x3                         ; 0049c34a
     SUB EAX,EDX                         ; 0049c34f
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c351 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c351 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c357
     MOV EDX,EBX                         ; 0049c359
     MOV [0x01c78ae0],EAX                ; 0049c35b | DAT_01c78ae0
@@ -1242,7 +1242,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c3c2 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c3c7 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c3cd | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c3cd | g_WindowHeight
     ADD EDI,EAX                         ; 0049c3d3
     SHL EAX,0x2                         ; 0049c3d5
     ADD ESP,0x18                        ; 0049c3d8
@@ -1255,7 +1255,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c3ed
     MOV ECX,0x3                         ; 0049c3f4
     SUB EAX,EDX                         ; 0049c3f9
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c3fb | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c3fb | g_WindowWidth
     ADD EAX,EAX                         ; 0049c401
     MOV EDX,EBX                         ; 0049c403
     MOV [0x01c78ae0],EAX                ; 0049c405 | DAT_01c78ae0
@@ -1296,7 +1296,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049c46d | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c472 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c478
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c47b | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c47b | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c481 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049c487
     ADD ESP,0x18                        ; 0049c489
@@ -1307,7 +1307,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c496
     MOV ECX,0x3                         ; 0049c49d
     SUB EAX,EDX                         ; 0049c4a2
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c4a4 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c4a4 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c4aa
     MOV EDX,EBX                         ; 0049c4ac
     MOV [0x01c78ae0],EAX                ; 0049c4ae | DAT_01c78ae0
@@ -1347,7 +1347,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c515 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c51a | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c520 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c520 | g_WindowHeight
     ADD ECX,EAX                         ; 0049c526
     SHL EAX,0x2                         ; 0049c528
     ADD ESP,0x18                        ; 0049c52b
@@ -1360,7 +1360,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c540
     MOV ECX,0x3                         ; 0049c547
     SUB EAX,EDX                         ; 0049c54c
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c54e | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c54e | g_WindowWidth
     ADD EAX,EAX                         ; 0049c554
     MOV EDX,EBX                         ; 0049c556
     MOV [0x01c78ae0],EAX                ; 0049c558 | DAT_01c78ae0
@@ -1400,7 +1400,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c5bf | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c5c4 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c5ca | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c5ca | g_WindowHeight
     ADD EDI,EAX                         ; 0049c5d0
     SHL EAX,0x2                         ; 0049c5d2
     ADD ESP,0x18                        ; 0049c5d5
@@ -1413,7 +1413,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c5ea
     MOV ECX,0x3                         ; 0049c5f1
     SUB EAX,EDX                         ; 0049c5f6
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c5f8 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c5f8 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c5fe
     MOV EDX,EBX                         ; 0049c600
     MOV [0x01c78ae0],EAX                ; 0049c602 | DAT_01c78ae0
@@ -1454,7 +1454,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049c66a | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c66f | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c675
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c678 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c678 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c67e | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049c684
     ADD ESP,0x18                        ; 0049c686
@@ -1465,7 +1465,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c693
     MOV ECX,0x3                         ; 0049c69a
     SUB EAX,EDX                         ; 0049c69f
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c6a1 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c6a1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c6a7
     MOV EDX,EBX                         ; 0049c6a9
     MOV [0x01c78ae0],EAX                ; 0049c6ab | DAT_01c78ae0
@@ -1505,7 +1505,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c712 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c717 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c71d | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c71d | g_WindowHeight
     ADD ECX,EAX                         ; 0049c723
     SHL EAX,0x2                         ; 0049c725
     ADD ESP,0x18                        ; 0049c728
@@ -1518,7 +1518,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c73d
     MOV ECX,0x3                         ; 0049c744
     SUB EAX,EDX                         ; 0049c749
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c74b | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c74b | g_WindowWidth
     ADD EAX,EAX                         ; 0049c751
     MOV EDX,EBX                         ; 0049c753
     MOV [0x01c78ae0],EAX                ; 0049c755 | DAT_01c78ae0
@@ -1558,7 +1558,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c7b6 | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c7bb | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c7c1 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c7c1 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c7c7
     SHL EAX,0x2                         ; 0049c7c9
     ADD ESP,0x18                        ; 0049c7cc
@@ -1571,7 +1571,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c7e1
     MOV ECX,0x3                         ; 0049c7e8
     SUB EAX,EDX                         ; 0049c7ed
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c7ef | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c7ef | g_WindowWidth
     ADD EAX,EAX                         ; 0049c7f5
     MOV EDX,EBX                         ; 0049c7f7
     MOV [0x01c78ae0],EAX                ; 0049c7f9 | DAT_01c78ae0
@@ -1612,7 +1612,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049c864 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049c869 | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049c86f
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c872 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c872 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c878 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049c87e
     ADD ESP,0x18                        ; 0049c880
@@ -1623,7 +1623,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c88d
     MOV ECX,0x3                         ; 0049c894
     SUB EAX,EDX                         ; 0049c899
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c89b | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c89b | g_WindowWidth
     ADD EAX,EAX                         ; 0049c8a1
     MOV EDX,EBX                         ; 0049c8a3
     MOV [0x01c78ae0],EAX                ; 0049c8a5 | DAT_01c78ae0
@@ -1663,7 +1663,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c90f | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049c914 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c91a | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c91a | g_WindowHeight
     ADD ECX,EAX                         ; 0049c920
     SHL EAX,0x2                         ; 0049c922
     ADD ESP,0x18                        ; 0049c925
@@ -1676,7 +1676,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c93a
     MOV ECX,0x3                         ; 0049c941
     SUB EAX,EDX                         ; 0049c946
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c948 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c948 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c94e
     MOV EDX,EBX                         ; 0049c950
     MOV [0x01c78ae0],EAX                ; 0049c952 | DAT_01c78ae0
@@ -1716,7 +1716,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049c9bc | DAT_01c78ae4
     MOV EDI,dword ptr [0x01c78ae0]      ; 0049c9c1 | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049c9c7 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049c9c7 | g_WindowHeight
     ADD EDI,EAX                         ; 0049c9cd
     SHL EAX,0x2                         ; 0049c9cf
     ADD ESP,0x18                        ; 0049c9d2
@@ -1729,7 +1729,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049c9e7
     MOV ECX,0x3                         ; 0049c9ee
     SUB EAX,EDX                         ; 0049c9f3
-    MOV EBX,dword ptr [0x005b761c]      ; 0049c9f5 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049c9f5 | g_WindowWidth
     ADD EAX,EAX                         ; 0049c9fb
     MOV EDX,EBX                         ; 0049c9fd
     MOV [0x01c78ae0],EAX                ; 0049c9ff | DAT_01c78ae0
@@ -1770,7 +1770,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049ca6a | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049ca6f | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049ca75
-    MOV EDX,dword ptr [0x005b7620]      ; 0049ca78 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049ca78 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049ca7e | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049ca84
     ADD ESP,0x18                        ; 0049ca86
@@ -1781,7 +1781,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049ca93
     MOV ECX,0x3                         ; 0049ca9a
     SUB EAX,EDX                         ; 0049ca9f
-    MOV EBX,dword ptr [0x005b761c]      ; 0049caa1 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049caa1 | g_WindowWidth
     ADD EAX,EAX                         ; 0049caa7
     MOV EDX,EBX                         ; 0049caa9
     MOV [0x01c78ae0],EAX                ; 0049caab | DAT_01c78ae0
@@ -1821,7 +1821,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049cb15 | DAT_01c78ae4
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049cb1a | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049cb20 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049cb20 | g_WindowHeight
     ADD ECX,EAX                         ; 0049cb26
     SHL EAX,0x2                         ; 0049cb28
     ADD ESP,0x18                        ; 0049cb2b
@@ -1830,7 +1830,7 @@ section .text
     CMP EDX,ECX                         ; 0049cb36
     JL 0x0049cbc9                       ; 0049cb38
         ;   XREF to: 0049cbc9 (CONDITIONAL_JUMP)  ; LAB_0049cbc9
-    MOV EBX,dword ptr [0x005b761c]      ; 0049cb3e | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049cb3e | g_WindowWidth
     ADD ESP,0x1c00                      ; 0049cb44
     POP EBP                             ; 0049cb4a
     POP EDI                             ; 0049cb4b
@@ -1870,7 +1870,7 @@ section .text
     MOV EAX,[0x01c78ae4]                ; 0049cba5 | DAT_01c78ae4
     ADD dword ptr [0x01c78ae0],EAX      ; 0049cbaa | DAT_01c78ae0
     SHL EAX,0x2                         ; 0049cbb0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049cbb3 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049cbb3 | g_WindowHeight
     MOV ECX,dword ptr [0x01c78ae0]      ; 0049cbb9 | DAT_01c78ae0
     SUB EDX,EAX                         ; 0049cbbf
     ADD ESP,0x18                        ; 0049cbc1
@@ -1881,7 +1881,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0049cbcf
     MOV ECX,0x3                         ; 0049cbd6
     SUB EAX,EDX                         ; 0049cbdb
-    MOV EBX,dword ptr [0x005b761c]      ; 0049cbdd | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049cbdd | g_WindowWidth
     ADD EAX,EAX                         ; 0049cbe3
     MOV EDX,EBX                         ; 0049cbe5
     MOV [0x01c78ae0],EAX                ; 0049cbe7 | DAT_01c78ae0
@@ -1889,7 +1889,7 @@ section .text
     MOV EAX,EBX                         ; 0049cbef
     IDIV ECX                            ; 0049cbf1
     ADD dword ptr [0x01c78adc],EAX      ; 0049cbf3 | DAT_01c78adc
-    MOV EBX,dword ptr [0x005b761c]      ; 0049cbf9 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049cbf9 | g_WindowWidth
     ADD ESP,0x1c00                      ; 0049cbff
     POP EBP                             ; 0049cc05
     POP EDI                             ; 0049cc06

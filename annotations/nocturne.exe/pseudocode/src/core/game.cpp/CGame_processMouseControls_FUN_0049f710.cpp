@@ -20,8 +20,8 @@ void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_p
   
   core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(this_ptr,player_control);
   if (this_ptr->screen_clear_condition == 0) {
-    x = DAT_005b761c / 2;
-    y = DAT_005b7620 / 2;
+    x = g_WindowWidth / 2;
+    y = g_WindowHeight / 2;
     iVar1 = _DAT_01bd1d8c - x;
     iVar2 = _DAT_01bd1d90 - y;
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);

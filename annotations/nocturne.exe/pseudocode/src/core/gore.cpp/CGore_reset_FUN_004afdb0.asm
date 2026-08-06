@@ -7,7 +7,7 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004a4170 at 004a4aa5
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4aa5
 ;   core_gore.cpp_CGore_ctor_FUN_004afd80 at 004afd86
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d84b2
 ;

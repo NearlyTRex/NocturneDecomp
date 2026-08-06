@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -46,7 +46,7 @@ section .text
     POP EBP                             ; 0041ea28
     POP EBX                             ; 0041ea29
     RET                                 ; 0041ea2a
-    MOV ECX,dword ptr [0x005ae704]      ; 0041ea2b | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0041ea2b | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041ea2b
     PUSH ECX                            ; 0041ea31 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ea32
@@ -113,7 +113,7 @@ section .text
     POP EBP                             ; 0041eacb
     POP EBX                             ; 0041eacc
     RET                                 ; 0041eacd
-    MOV EBP,dword ptr [0x005ae704]      ; 0041eace | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 0041eace | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0041eace
     PUSH EBP                            ; 0041ead4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0041ead5

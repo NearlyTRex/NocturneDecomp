@@ -31,11 +31,11 @@
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
@@ -253,10 +253,10 @@ section .text
     MOV ECX,0x57dc9d                    ; 004616b5 | = "..\\engine\\drender.cpp"
     MOV EAX,0x967                       ; 004616ba
     PUSH 0x57dcb3                       ; 004616bf | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004616c4 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004616ca | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004616cf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004616c4 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004616ca | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004616cf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004616d4
     MOV EDX,dword ptr [ESP + 0x14]      ; 004616d7
         ;   Label: LAB_004616d7

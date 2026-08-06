@@ -25,7 +25,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
     _DAT_01c02594 = _DAT_0140efb0;
     puVar5 = (uint *)&DAT_0140efb4;
     puVar6 = (uint *)&DAT_01bd2fa0;
-    for (uVar2 = DAT_005b7620 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
+    for (uVar2 = g_WindowHeight & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + 1;
       puVar6 = puVar6 + 1;

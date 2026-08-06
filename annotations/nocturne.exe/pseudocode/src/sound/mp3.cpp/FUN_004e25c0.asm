@@ -8,12 +8,12 @@
 ;   TerminatedCString s_sound_mp3_cpp_0058b52a
 ;   TerminatedCString s_js_bound_bad_layer_modex_0058b53b
 ;   undefined4 s_CMotionController_005bb246+0xa
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cd8b28
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -50,10 +50,10 @@ section .text
     MOV EDX,0x58b52a                    ; 004e25f6 | = "..\\sound\\mp3.cpp"
     MOV ECX,0x1b1                       ; 004e25fb
     PUSH 0x58b53b                       ; 004e2600 | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004e2605 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e260b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e2611
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004e2605 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004e260b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e2611
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 004e2616
     SHL ESI,0x2                         ; 004e2619
     SHL EBX,0x4                         ; 004e261c

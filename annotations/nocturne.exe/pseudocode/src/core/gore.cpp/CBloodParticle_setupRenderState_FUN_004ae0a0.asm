@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00585080 = -65536
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_007f7370
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c78c84
@@ -49,7 +49,7 @@ section .text
     MOV EDX,0x4                         ; 004ae0a6
     MOV EAX,0x1                         ; 004ae0ab
     LEA ESI,[ESP + 0x50]                ; 004ae0b0
-    MOV EBX,dword ptr [0x005ae704]      ; 004ae0b4 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 004ae0b4 | g_CDemonRenderer_PTR_005ae704
     MOV EDI,0x1c78ca8                   ; 004ae0ba
     XOR ECX,ECX                         ; 004ae0bf
     MOV dword ptr [0x01c78c84],EDX      ; 004ae0c1 | DAT_01c78c84

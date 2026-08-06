@@ -9,7 +9,7 @@
 ; XREF[8]:
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004194b0 at 00419528
 ;   core_boneguy.cpp_FUN_004181f0 at 00418216
-;   core_lightgun.cpp_FUN_004c71a0 at 004c74d4
+;   core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 at 004c74d4
 ;   core_mobster.cpp_FUN_004da070 at 004da096
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501349
 ;   core_script.cpp_makeVector_FUN_00505880 at 00505886

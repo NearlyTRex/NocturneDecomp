@@ -11,7 +11,7 @@ CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_004ef4b0(void)
 {
   CPassenger *pCVar1;
   
-  pCVar1 = (CPassenger *)FUN_0056497c(0x202b0);
+  pCVar1 = operator_new(0x202b0);
   if (pCVar1 == (CPassenger *)0x0) {
     return (CPassenger *)0x0;
   }

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004259f0 at 00425bf1
+;   core_charactr.cpp_CCharacter_FUN_004259f0 at 00425bf1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0d4

@@ -18,10 +18,10 @@
 ;   undefined4 g_CGame_01c775ec.delta_time_float
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_004259f0
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   core_stranger.cpp_FUN_00535900
+;   core_stranger.cpp_CStranger_FUN_00535900
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005357d4
     PUSH dword ptr [ESP + 0x14]         ; 005357d8
     PUSH EBX                            ; 005357dc
-    CALL core_charactr.cpp_FUN_004259f0 ; 005357dd
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 005357dd
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005357e2
     TEST EAX,EAX                        ; 005357e5
     JNZ 0x0053585b                      ; 005357e7
@@ -54,24 +54,24 @@ section .text
     FSTP float ptr [ESP + 0x4]          ; 0053580a
     PUSH dword ptr [ESP + 0x4]          ; 0053580e
     PUSH EBX                            ; 00535812
-    CALL core_stranger.cpp_FUN_00535900 ; 00535813
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_FUN_00535900 ; 00535813
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535818
     PUSH dword ptr [ESP + 0x4]          ; 0053581b
     PUSH EBX                            ; 0053581f
-    CALL core_stranger.cpp_FUN_00535900 ; 00535820
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_FUN_00535900 ; 00535820
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535825
     PUSH dword ptr [ESP + 0x4]          ; 00535828
     PUSH EBX                            ; 0053582c
-    CALL core_stranger.cpp_FUN_00535900 ; 0053582d
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_FUN_00535900 ; 0053582d
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00535832
     PUSH dword ptr [ESP + 0x4]          ; 00535835
     PUSH EBX                            ; 00535839
         ;   Label: LAB_00535839
-    CALL core_stranger.cpp_FUN_00535900 ; 0053583a
-        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00535900(CStranger * this_ptr, float delta_time)
+    CALL core_stranger.cpp_CStranger_FUN_00535900 ; 0053583a
+        ;   XREF to: 00535900 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_00535900(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0053583f
     MOV ECX,dword ptr [0x005b9354]      ; 00535842 | g_CGame_PTR_005b9354
     PUSH dword ptr [ESP + 0x8]          ; 00535848

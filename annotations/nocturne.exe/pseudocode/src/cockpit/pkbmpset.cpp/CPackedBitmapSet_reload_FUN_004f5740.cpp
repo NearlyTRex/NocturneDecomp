@@ -22,18 +22,18 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
   
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",this_ptr->filename,"rb");
   if (local_14 == (_FILE *)0x0) {
-    _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW");
-    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-    g_INT_01cc4804 = 0x107;
-    core_main_c_FUN_004c8440(local_e4);
+    _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
+    g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
+    g_CurrentLineNumber = 263;
+    core_main_c_displayErrorAndQuit_FUN_004c8440(local_e4);
   }
   size = this_ptr->width * this_ptr->height;
   local_18 = (uchar *)malloc(size);
   if (local_18 == (uchar *)0x0) {
-    _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
-    g_INT_01cc4804 = 0x114;
-    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-    core_main_c_FUN_004c8440(local_148);
+    _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
+    g_CurrentLineNumber = 276;
+    g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
+    core_main_c_displayErrorAndQuit_FUN_004c8440(local_148);
   }
   iVar2 = 0;
   if (0 < this_ptr->bitmap_count) {
@@ -43,10 +43,10 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
       if ((bitmap_index < 0) || (iVar2 == bitmap_index)) {
         SVar1 = _fread(local_18,size,1,local_14);
         if (SVar1 != 1) {
-          _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
-          g_INT_01cc4804 = 0x127;
-          g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbmpset.cpp";
-          core_main_c_FUN_004c8440(local_80);
+          _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",local_1c);
+          g_CurrentLineNumber = 295;
+          g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
+          core_main_c_displayErrorAndQuit_FUN_004c8440(local_80);
         }
         cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700
                   ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar3),local_18,
@@ -59,7 +59,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_004f5740(CPackedBi
       iVar3 = iVar3 + 0x24;
     } while (iVar2 < this_ptr->bitmap_count);
   }
-  FUN_005638d0(local_18);
+  free(local_18);
   _fclose(local_14);
   if (apply_palette_flag == 0) {
     return;

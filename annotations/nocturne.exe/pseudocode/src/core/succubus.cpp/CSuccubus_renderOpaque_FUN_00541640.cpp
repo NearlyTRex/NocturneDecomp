@@ -18,7 +18,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00541640(CSuccubus *thi
   CBoundingBox3D local_24;
   int iStack_c;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 == 0) {
     (this_ptr->base).base.was_rendered_opaque = 0;
   }
@@ -53,8 +54,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_00541640(CSuccubus *thi
         core_cloth_cpp_CClothList_render_FUN_004385a0(&this_ptr->hotdemon_cloth_list,model_ptr);
       }
       if ((_DAT_01cd4318 != 0) &&
-         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
-         iVar1 == 0)) {
+         (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                            (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_004e22b0
                   (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);

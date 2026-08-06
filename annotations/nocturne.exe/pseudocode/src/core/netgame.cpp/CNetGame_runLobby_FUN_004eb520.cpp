@@ -20,6 +20,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
   int iVar7;
   uchar *puVar8;
   double dVar9;
+  uint uVar10;
   float fStack_138;
   float fStack_134;
   uchar auStack_130 [256];
@@ -48,9 +49,9 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
     pcStack_2c = this_ptr->mission_name;
     while (this_ptr->connection_type != CONNECTION_NONE) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf((char *)auStack_130,"Mission: %s");
+      _sprintf((char *)auStack_130,"Mission: %s",pcStack_2c);
       engine_2d_c_drawText_FUN_00402600((char *)auStack_130,0,0xb);
-      _sprintf((char *)auStack_130,"MyGameSettigsId: %d");
+      _sprintf((char *)auStack_130,"MyGameSettigsId: %d",_DAT_01cea404);
       engine_2d_c_drawText_FUN_00402600((char *)auStack_130,400,0xb);
       engine_2d_c_drawText_FUN_00402600("Player",0,0x21);
       engine_2d_c_drawText_FUN_00402600("IP",100,0x21);
@@ -59,7 +60,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
       engine_2d_c_drawText_FUN_00402600("heroType",400,0x21);
       engine_2d_c_drawText_FUN_00402600("gameSettings",500,0x21);
       _DAT_01c00c70 = 0xff;
-      engine_2d_c_drawHLine_FUN_00403bd0(0,0x31,DAT_005b761c + -1);
+      engine_2d_c_drawHLine_FUN_00403bd0(0,0x31,g_WindowWidth + -1);
       iVar4 = 0x37;
       iStack_24 = 0;
       for (iStack_20 = 0; iStack_20 < g_CNetGame_PTR_005bdee0->player_count;
@@ -102,10 +103,11 @@ LAB_004eb75b:
             pcVar6 = "?";
             goto LAB_004eb75b;
           }
+          uVar10 = 0x4eb8c9;
           dVar9 = round
                             ((double)(*(float *)(pcStack_1c + 0x28) * 1000.0f));
           pcStack_1c = (char *)(int)ROUND(dVar9);
-          _sprintf((char *)&fStack_134,"%dms");
+          _sprintf((char *)&fStack_134,"%dms",pcStack_1c,uVar10);
         }
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,200,iVar4);
         if (*(int *)(pcStack_1c + 0x44) == 0) {
@@ -125,17 +127,17 @@ LAB_004eb75b:
           puVar8 = puVar8 + 2;
         } while (uVar1 != '\0');
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,300,iVar4);
-        _sprintf((char *)auStack_130,"%d");
+        _sprintf((char *)auStack_130,"%d",*(EHeroType *)(pcStack_1c + 0x14));
         engine_2d_c_drawText_FUN_00402600((char *)auStack_130,400,iVar4);
         if (this_ptr->connection_type == CONNECTION_HOST) {
-          _sprintf((char *)auStack_130,"%d");
+          _sprintf((char *)auStack_130,"%d",*(int *)(pcStack_1c + 0x34));
           engine_2d_c_drawText_FUN_00402600((char *)auStack_130,500,iVar4);
         }
         iVar4 = iVar4 + 0xb;
         iStack_24 = iStack_24 + 0x78;
       }
       iVar4 = iVar4 + 0x2c;
-      iVar7 = (_DAT_01cea40c - (DAT_005b7620 - iVar4) / 0xb) + 1;
+      iVar7 = (_DAT_01cea40c - (g_WindowHeight - iVar4) / 0xb) + 1;
       if (iVar7 < 0) {
         iVar7 = 0;
       }

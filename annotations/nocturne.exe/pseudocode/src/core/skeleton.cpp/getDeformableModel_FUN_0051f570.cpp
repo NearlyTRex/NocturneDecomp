@@ -29,9 +29,9 @@ CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(cha
     } while (iVar2 < _DAT_0268cef0);
   }
   if (0x3f < _DAT_0268cef0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    g_INT_01cc4804 = 0x1057;
-    core_main_c_FUN_004c8440("Can't load %s because deformable model manager is full.  (Size is %d)",model_filename,0x40);
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 4183;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't load %s because deformable model manager is full.  (Size is %d)");
   }
   this_ptr = g_CDeformableModel_ARRAY_0268cef4 + _DAT_0268cef0;
   _DAT_0268cef0 = _DAT_0268cef0 + 1;

@@ -1,0 +1,495 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 48,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 51,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 60,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 61,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 24,
+        "line": 61,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 100,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 101,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 45,
+        "line": 101,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 102,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 103,
+        "message": "use of undeclared identifier 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 547,
+    "complexity_score": 359,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 234,
+    "suspect_count": 10,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 781
+  },
+  "cross_references": [
+    {
+      "addr": "00541d00",
+      "from_addr": "005420b4",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00541d00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005423c0",
+    "address_range": [
+      [
+        "005423c0",
+        "00542ac8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_svetlana.cpp_CSvetlana_FUN_005423c0",
+    "signature": "void __cdecl core_svetlana_cpp_CSvetlana_FUN_005423c0(CSvetlana *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040df00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040df00"
+    },
+    {
+      "addr": "0042af70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af70"
+    },
+    {
+      "addr": "004b5d00",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_closestEnemy_FUN_004b5d00"
+    },
+    {
+      "addr": "004e1660",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660"
+    },
+    {
+      "addr": "004f1600",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600"
+    },
+    {
+      "addr": "004f1e00",
+      "is_variadic": false,
+      "name": "core_path.cpp_getPathMap_FUN_004f1e00"
+    },
+    {
+      "addr": "0054e4a0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
+    },
+    {
+      "addr": "00563cc0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_00563cc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005963c1",
+      "name": "DOUBLE_005963c1",
+      "type": "double",
+      "value": "6"
+    },
+    {
+      "addr": "005963c9",
+      "name": "DOUBLE_005963c9",
+      "type": "double",
+      "value": "0.318309886192889"
+    },
+    {
+      "addr": "005963d1",
+      "name": "DOUBLE_005963d1",
+      "type": "double",
+      "value": "4"
+    },
+    {
+      "addr": "005963d9",
+      "name": "DOUBLE_005963d9",
+      "type": "double",
+      "value": "10"
+    },
+    {
+      "addr": "005963e1",
+      "name": "DOUBLE_005963e1",
+      "type": "double",
+      "value": "-0.25"
+    },
+    {
+      "addr": "005963e9",
+      "name": "DOUBLE_005963e9",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "005963f1",
+      "name": "DOUBLE_005963f1",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "005963f9",
+      "name": "DOUBLE_005963f9",
+      "type": "double",
+      "value": "-3.14159265350000"
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005420b4",
+        "call_type": "direct",
+        "caller": "core_svetlana.cpp_CSvetlana_process_FUN_00541d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0504587155963305,
+    "instruction_count": 436,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 23,
+      "BRANCH": 14,
+      "CALL": 13,
+      "CALLIND": 4,
+      "CBRANCH": 46,
+      "COPY": 1028,
+      "FLOAT2FLOAT": 106,
+      "FLOAT_ADD": 5,
+      "FLOAT_EQUAL": 15,
+      "FLOAT_LESS": 15,
+      "FLOAT_MULT": 12,
+      "FLOAT_NAN": 30,
+      "FLOAT_NEG": 4,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 13,
+      "INT2FLOAT": 1,
+      "INT_ADD": 220,
+      "INT_AND": 187,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 60,
+      "INT_LESS": 25,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 75,
+      "INT_OR": 75,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 52,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "INT_ZEXT": 60,
+      "LOAD": 118,
+      "POPCOUNT": 52,
+      "RETURN": 1,
+      "STORE": 122
+    },
+    "pcode_op_count": 2638
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSvetlana *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005423cc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "pCVar10 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 94,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pCStack_20 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 96,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 158,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 80,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_6c.x = CStack_78.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 210,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_6c.x = CStack_60.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 216,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_6c.x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

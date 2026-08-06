@@ -1,0 +1,367 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 48,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00413040",
+      "from_addr": "004130bc",
+      "name": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414930",
+      "from_addr": "004149ac",
+      "name": "core_batman.cpp_CBatman_processDamage_FUN_00414930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420c40",
+      "from_addr": "00420ca9",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_00420c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428510",
+      "from_addr": "004285a3",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00428510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045a6f0",
+      "from_addr": "0045a754",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00478790",
+      "from_addr": "00478c46",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00478790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004880d0",
+      "from_addr": "004881fe",
+      "name": "core_fire.cpp_CGunFlame_init_FUN_004880d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048d0c0",
+      "from_addr": "0048d37d",
+      "name": "core_flame.cpp_CFlame_process_FUN_0048d0c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00427730",
+    "address_range": [
+      [
+        "00427730",
+        "004277e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_00427730",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_FUN_00427730(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040d7e0"
+    },
+    {
+      "addr": "004266a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0"
+    },
+    {
+      "addr": "0051e9e0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0051e9e0"
+    },
+    {
+      "addr": "0051e0a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057a00e",
+      "name": "s_CHero_0057a00e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004881fe",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CGunFlame_init_FUN_004880d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0048d37d",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_0048d0c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0048d5b0",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_0048d0c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00478c46",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00478790",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004285a3",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processDamage_FUN_00428510",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004130bc",
+        "call_type": "direct",
+        "caller": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004149ac",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_CBatman_processDamage_FUN_00414930",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00420ca9",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_processDamage_FUN_00420c40",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0045a754",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.387096774193548,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 53,
+      "INT_ADD": 31,
+      "INT_AND": 30,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 29,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 21,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 272
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "fire_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flame_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flame_scale",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "include_hero",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

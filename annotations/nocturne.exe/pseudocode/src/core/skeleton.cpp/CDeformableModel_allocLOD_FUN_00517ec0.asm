@@ -19,11 +19,11 @@
 ;   TerminatedCString s_core_skeleton_cpp_005915b9
 ;   TerminatedCString s_Out_of_hunk_in_CDeformab_005915ce
 ;   WatcomTypeInfo g_SVertTypeInfo_005a1ee0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c___vec_new_FUN_00566234
@@ -52,10 +52,10 @@ section .text
     MOV ECX,0x591571                    ; 00517ed5 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x28a                       ; 00517eda
     PUSH 0x591586                       ; 00517edf | = "CDeformableModel::allocLOD - invalid ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00517ee4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00517eea | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00517ef0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00517ee4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00517eea | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00517ef0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00517ef5
     LEA EBX,[EDI*0x4 + 0x0]             ; 00517ef8
         ;   Label: LAB_00517ef8
@@ -180,10 +180,10 @@ section .text
     MOV EBX,0x5915b9                    ; 00518033 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x2ae                       ; 00518038
     PUSH 0x5915ce                       ; 0051803d | = "Out of hunk in CDeformableModel::allo..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00518042 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00518048 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051804e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00518042 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00518048 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051804e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 00518053
     POP EBP                             ; 00518056
     POP EDI                             ; 00518057

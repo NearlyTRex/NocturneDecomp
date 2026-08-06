@@ -13,14 +13,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[20]:
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3bd5
+;   core_game.cpp_CGame_FUN_004a4170 at 004a41ab
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a5841
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570 at 004a65a4
-;   core_game.cpp_FUN_004a3b90 at 004a3bd5
-;   core_game.cpp_FUN_004a4170 at 004a41ab
-;   core_game.cpp_FUN_004a57c0 at 004a5841
+;   core_script.cpp_CScript_FUN_004febd0 at 004fec3c
+;   core_script.cpp_CScript_FUN_004feff0 at 004ff093
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504fdf
 ;   core_script.cpp_CScript_findDialogEntry_FUN_00505180 at 005051a6
-;   core_script.cpp_FUN_004febd0 at 004fec3c
-;   core_script.cpp_FUN_004feff0 at 004ff093
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 004900b6
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047459c
 ;   ... and 10 more

@@ -32,10 +32,11 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *t
   int local_c;
   
   if (this_ptr->is_visible != 0) {
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);
+              (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);
     this_ptr_00 = &this_ptr->course;
     if (g_CDemonMission_PTR_005baf90->is_in_editor == 0) {
       if (this_ptr->type == 1) {
@@ -114,7 +115,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(CMarquee *t
         } while (iVar3 < iVar2);
       }
     }
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
     return 1;
   }
   return 0;

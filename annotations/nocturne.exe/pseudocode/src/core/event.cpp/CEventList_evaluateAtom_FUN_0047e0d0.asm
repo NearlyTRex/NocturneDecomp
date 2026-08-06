@@ -145,7 +145,7 @@
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004c0710
 ;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004c0760
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -835,10 +835,10 @@ section .text
         ;   Label: default
     MOV ECX,0x765                       ; 0047e6fb
     PUSH 0x580339                       ; 0047e700 | = "Hell froze."
-    MOV dword ptr [0x01cc4800],EDX      ; 0047e705 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0047e70b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047e711
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0047e705 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0047e70b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047e711
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0047e716
     JMP 0x0047e57d                      ; 0047e719
         ;   XREF to: 0047e57d (UNCONDITIONAL_JUMP)  ; LAB_0047e57d

@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_0058fab2
 ;   TerminatedCString s_CScript_processTimer_inv_0058fac5
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -64,10 +64,10 @@ section .text
         ;   Label: LAB_00504bb8
     MOV ECX,0xdf7                       ; 00504bbd
     PUSH 0x58fac5                       ; 00504bc2 | = "CScript::processTimer - invalidTimeTo..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00504bc7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00504bcd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00504bd3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00504bc7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00504bcd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00504bd3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00504bd8
     JMP 0x00504b87                      ; 00504bdb
         ;   XREF to: 00504b87 (UNCONDITIONAL_JUMP)  ; LAB_00504b87

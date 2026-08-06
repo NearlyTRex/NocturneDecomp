@@ -18,12 +18,12 @@
 ;   TerminatedCString s_Unable_to_allocate_u_byt_0058d45d
 ;   TerminatedCString s_cockpit_pkbmpset_cpp_0058d4aa
 ;   WatcomTypeInfo g_CPackedBitmapTypeInfo_005a1340
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_004f5320
-;   core_main.c_FUN_004c8440
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c___vec_new_FUN_00566234
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
@@ -39,8 +39,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd4]      ; 004f5358
     MOV EBX,dword ptr [ESP + 0xd8]      ; 004f535f
     PUSH ESI                            ; 004f5366
-    CALL cockpit_pkbitmap.cpp_FUN_004f5320 ; 004f5367
-        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f5320()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320 ; 004f5367
+        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 004f536c
     TEST EBX,EBX                        ; 004f536f
     JG 0x004f537c                       ; 004f5371
@@ -81,10 +81,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f53c4
     MOV ECX,0x58d4aa                    ; 004f53c8 | = "..\\cockpit\\pkbmpset.cpp"
     PUSH EAX                            ; 004f53cd
-    MOV dword ptr [0x01cc4804],EDI      ; 004f53ce | g_INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004f53d4 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004f53da
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDI      ; 004f53ce | g_CurrentLineNumber
+    MOV dword ptr [0x01cc4800],ECX      ; 004f53d4 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f53da
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f53df
     MOV dword ptr [ESI],EBX             ; 004f53e2
         ;   Label: LAB_004f53e2

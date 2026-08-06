@@ -31,8 +31,8 @@
 ;   TerminatedCString s_s_0057e913
 ;   TerminatedCString s_shape_edittool_cpp_0057e917
 ;   TerminatedCString s_out_of_memory_to_open_ed_0057e92d
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd07c
@@ -42,7 +42,7 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401e30
@@ -83,10 +83,10 @@ section .text
     MOV EBP,0x57e8e2                    ; 00471b9a | = "..\\shape\\edittool.cpp"
     MOV EAX,0x674                       ; 00471b9f
     PUSH 0x57e8f8                       ; 00471ba4 | = "Can't open another window!"
-    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471baf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00471bb4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00471baf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00471bb4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00471bb9
     MOV EDX,dword ptr [0x01bcd07c]      ; 00471bbc | DAT_01bcd07c
         ;   Label: LAB_00471bbc
@@ -98,7 +98,7 @@ section .text
     MOV EDX,0x1bcd080                   ; 00471bce
     SHL EAX,0x3                         ; 00471bd3
     ADD EDX,EAX                         ; 00471bd6
-    MOV EAX,[0x005b761c]                ; 00471bd8 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 00471bd8 | g_WindowWidth
     MOV dword ptr [ESP + 0x12cc],EDX    ; 00471bdd
     MOV EDX,EAX                         ; 00471be4
     SAR EDX,0x1f                        ; 00471be6
@@ -106,7 +106,7 @@ section .text
     SBB EAX,EDX                         ; 00471bec
     SAR EAX,0x7                         ; 00471bee
     MOV dword ptr [ESP + 0x12c8],EAX    ; 00471bf1
-    MOV EAX,[0x005b7620]                ; 00471bf8 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00471bf8 | g_WindowHeight
     MOV EDX,EAX                         ; 00471bfd
     MOV EBX,0x60                        ; 00471bff
     SAR EDX,0x1f                        ; 00471c04
@@ -136,7 +136,7 @@ section .text
         ;   XREF to: 00472080 (CONDITIONAL_JUMP)  ; LAB_00472080
     MOV EAX,dword ptr [ESP + 0x12f8]    ; 00471c81
         ;   Label: LAB_00471c81
-    MOV ECX,dword ptr [0x005b761c]      ; 00471c88 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 00471c88 | g_WindowWidth
     CMP EAX,ECX                         ; 00471c8e
     JLE 0x00471c99                      ; 00471c90
         ;   XREF to: 00471c99 (CONDITIONAL_JUMP)  ; LAB_00471c99
@@ -219,7 +219,7 @@ section .text
         ;   XREF to: 0047208e (CONDITIONAL_JUMP)  ; LAB_0047208e
     MOV EAX,dword ptr [ESP + 0x12fc]    ; 00471d87
         ;   Label: LAB_00471d87
-    MOV EDI,dword ptr [0x005b7620]      ; 00471d8e | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 00471d8e | g_WindowHeight
     CMP EAX,EDI                         ; 00471d94
     JLE 0x00471d9f                      ; 00471d96
         ;   XREF to: 00471d9f (CONDITIONAL_JUMP)  ; LAB_00471d9f
@@ -231,10 +231,10 @@ section .text
     CMP dword ptr [0x01c02594],0x0      ; 00471dad | DAT_01c02594
     JZ 0x00471e45                       ; 00471db4
         ;   XREF to: 00471e45 (CONDITIONAL_JUMP)  ; LAB_00471e45
-    CMP dword ptr [0x005b7620],0x0      ; 00471dba | DAT_005b7620
+    CMP dword ptr [0x005b7620],0x0      ; 00471dba | g_WindowHeight
     JLE 0x00471de0                      ; 00471dc1
         ;   XREF to: 00471de0 (CONDITIONAL_JUMP)  ; LAB_00471de0
-    MOV EBX,dword ptr [0x005b7620]      ; 00471dc3 | DAT_005b7620
+    MOV EBX,dword ptr [0x005b7620]      ; 00471dc3 | g_WindowHeight
     XOR EAX,EAX                         ; 00471dc9
     SHL EBX,0x2                         ; 00471dcb
     ADD EAX,0x4                         ; 00471dce
@@ -248,7 +248,7 @@ section .text
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00471de0
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
         ;   Label: LAB_00471de0
-    MOV EDX,dword ptr [0x005b761c]      ; 00471de5 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 00471de5 | g_WindowWidth
     MOV ECX,dword ptr [0x005b7624]      ; 00471deb | DAT_005b7624
     IMUL EDX,ECX                        ; 00471df1
     MOV EAX,EDX                         ; 00471df4
@@ -256,7 +256,7 @@ section .text
     SHL EDX,0x3                         ; 00471df9
     SBB EAX,EDX                         ; 00471dfc
     SAR EAX,0x3                         ; 00471dfe
-    MOV ESI,dword ptr [0x005b7620]      ; 00471e01 | DAT_005b7620
+    MOV ESI,dword ptr [0x005b7620]      ; 00471e01 | g_WindowHeight
     XOR EBX,EBX                         ; 00471e07
     MOV EBP,EAX                         ; 00471e09
     TEST ESI,ESI                        ; 00471e0b
@@ -276,7 +276,7 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 00471e29
     POP EDI                             ; 00471e2b
     INC EBX                             ; 00471e2c
-    MOV EDI,dword ptr [0x005b7620]      ; 00471e2d | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 00471e2d | g_WindowHeight
     ADD EDX,0x4                         ; 00471e33
     CMP EBX,EDI                         ; 00471e36
     JL 0x00471e11                       ; 00471e38
@@ -312,10 +312,10 @@ section .text
     MOV EBP,0x57e917                    ; 00471e9d | = "..\\shape\\edittool.cpp"
     MOV EAX,0x6c4                       ; 00471ea2
     PUSH 0x57e92d                       ; 00471ea7 | = "out of memory to open editor window."
-    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471eb2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00471eb7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00471eb2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00471eb7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00471ebc
     MOV EBP,dword ptr [ESP + 0x12cc]    ; 00471ebf
         ;   Label: LAB_00471ebf
@@ -426,10 +426,10 @@ section .text
         ;   Label: LAB_00472058
     MOV EBX,0x8b                        ; 0047205d
     PUSH 0x57e510                       ; 00472062 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00472073
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00472073
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00472078
     JMP 0x00471b6e                      ; 0047207b
         ;   XREF to: 00471b6e (UNCONDITIONAL_JUMP)  ; LAB_00471b6e

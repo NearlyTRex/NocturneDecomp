@@ -7,9 +7,9 @@
 // Address: 004954a0
 void __cdecl staticInit(void);
 
-// Original: core_gabriela.cpp_FUN_00495580
+// Original: core_gabriela.cpp_motionBlendWeightFunc_FUN_00495580
 // Address: 00495580
-float FUN_00495580(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+float __cdecl motionBlendWeightFunc(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004955c0
 // Address: 004955c0
@@ -103,9 +103,9 @@ int __cdecl CGabriella::renderOpaque(CGabriella *this_ptr);
 // Address: 00498db0
 int __cdecl CGabriella::renderTransparent(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_00498de0
+// Original: core_gabriela.cpp_CGabriella_FUN_00498de0
 // Address: 00498de0
-float __cdecl FUN_00498de0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
+float __cdecl CGabriella(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
 
 // Original: core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0
 // Address: 004990c0
@@ -115,13 +115,13 @@ void __cdecl CGabriella::updateAimTracking(CGabriella *this_ptr,float delta_time
 // Address: 004996b0
 void __cdecl CGabriella::processDamage(CGabriella *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_gabriela.cpp_FUN_004998c0
+// Original: core_gabriela.cpp_CGabriella_FUN_004998c0
 // Address: 004998c0
-void __cdecl FUN_004998c0(CGabriella *this_ptr,float delta_time,int has_carried_objects);
+void __cdecl CGabriella(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 
-// Original: core_gabriela.cpp_FUN_00499b00
+// Original: core_gabriela.cpp_CGabriella_FUN_00499b00
 // Address: 00499b00
-void FUN_00499b00(CDemonActor *param_1,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6);
+void __cdecl CGabriella(CGabriella *this_ptr,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6);
 
 // Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0
 // Address: 00499ca0

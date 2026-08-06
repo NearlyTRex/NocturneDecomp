@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   vertex_index
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005402f0 at 00540564
+;   core_stranger.cpp_CStranger_FUN_005402f0 at 00540564
 ;
 ; *****************************************************************************
 

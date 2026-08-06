@@ -1,0 +1,405 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 437,
+    "complexity_score": 209,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 154,
+    "suspect_count": 4,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "pointer_cast",
+      "warning_type_propagation"
+    ],
+    "total_lines": 591
+  },
+  "cross_references": [
+    {
+      "addr": "00418a00",
+      "from_addr": "0041936a",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004196b0",
+    "address_range": [
+      [
+        "004196b0",
+        "00419be0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_boneguy.cpp_CBoneGuy_FUN_004196b0",
+    "signature": "int __cdecl core_boneguy_cpp_CBoneGuy_FUN_004196b0(CBoneGuy *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040dda0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0"
+    },
+    {
+      "addr": "0040de00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040de00"
+    },
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040d7e0"
+    },
+    {
+      "addr": "00417fc0",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_addVector_FUN_00417fc0"
+    },
+    {
+      "addr": "00417f60",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_scaleVector_FUN_00417f60"
+    },
+    {
+      "addr": "004247f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0"
+    },
+    {
+      "addr": "004e16b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057937e",
+      "name": "s_s_can_t_pick_up_s_sombod_0057937e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005793b0",
+      "name": "s_s_can_t_pick_up_s_giving_005793b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005793d4",
+      "name": "s_s_beginning_to_pickup_s_005793d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005793ef",
+      "name": "s_CBodyPart_005793ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005793f9",
+      "name": "s_s_is_going_to_try_to_pic_005793f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057941e",
+      "name": "DOUBLE_0057941e",
+      "type": "double",
+      "value": "0.333333333333333"
+    },
+    {
+      "addr": "00579426",
+      "name": "DOUBLE_00579426",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "0057942e",
+      "name": "DOUBLE_0057942e",
+      "type": "double",
+      "value": "0.400000000000000"
+    },
+    {
+      "addr": "00579436",
+      "name": "DOUBLE_00579436",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "0057943e",
+      "name": "DOUBLE_0057943e",
+      "type": "double",
+      "value": "6"
+    },
+    {
+      "addr": "005ad350",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01fa3ff0",
+      "name": "g_CDemonSet_01e57284.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3ff4",
+      "name": "g_CDemonSet_01e57284.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0041936a",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.462337662337663,
+    "instruction_count": 385,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 15,
+      "BRANCH": 2,
+      "CALL": 14,
+      "CALLIND": 6,
+      "CBRANCH": 22,
+      "COPY": 768,
+      "FLOAT2FLOAT": 53,
+      "FLOAT_ADD": 4,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 20,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 11,
+      "INT2FLOAT": 7,
+      "INT_ADD": 191,
+      "INT_AND": 157,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 103,
+      "INT_LEFT": 40,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 53,
+      "INT_OR": 50,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 50,
+      "INT_SUB": 87,
+      "INT_XOR": 6,
+      "INT_ZEXT": 40,
+      "LOAD": 119,
+      "POPCOUNT": 50,
+      "RETURN": 6,
+      "STORE": 115
+    },
+    "pcode_op_count": 2103
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004196bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "pCVar3 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(CDemonActor **)((int)auStack_d4",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41700001 is the IEEE 754 bit pattern of 15f. Rewrite in a .keep as a plain float compare against 15f.",
+      "line": 126,
+      "match": "(int)fVar1 < 0x41700001",
+      "severity": "moderate",
+      "text": "if (((float)5 <= fVar1) && ((int)fVar1 < 0x41700001)) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

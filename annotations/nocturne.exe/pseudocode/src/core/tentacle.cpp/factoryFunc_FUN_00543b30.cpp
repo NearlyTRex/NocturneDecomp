@@ -11,7 +11,7 @@ CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_00543b30(void)
 {
   CTentacle *pCVar1;
   
-  pCVar1 = (CTentacle *)FUN_0056497c(0xbd94);
+  pCVar1 = operator_new(0xbd94);
   if (pCVar1 == (CTentacle *)0x0) {
     return (CTentacle *)0x0;
   }

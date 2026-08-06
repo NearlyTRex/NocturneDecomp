@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,63 @@
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 34,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 40,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 38,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 44,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 42,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 30,
+        "line": 67,
+        "message": "format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 46,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 42,
+        "line": 71,
+        "message": "format specifies type 'float *' but the argument has type 'CColor3i *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 52,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 59,
+        "line": 71,
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 59,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 64,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 68,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
+        "column": 14,
         "line": 72,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
+        "column": 33,
         "line": 76,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 46,
+        "line": 99,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 66,
+        "line": 103,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 67,
+        "line": 126,
+        "message": "format specifies type 'int *' but the argument has type 'CVector2i *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 295,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 175,
-    "suspect_count": 11,
+    "pseudocode_lines": 185,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 752
+    "total_lines": 762
   },
   "cross_references": [
     {
@@ -159,7 +159,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563cc0",
@@ -173,7 +173,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -318,13 +318,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -519,76 +519,10 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "C3DSLight_load_FUN_00514a70.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 8,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 145,
-          "message": "Uninitialized variable: local_44",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 153,
-          "message": "Uninitialized variable: local_40",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 165,
-          "message": "Uninitialized variable: local_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 168,
-          "message": "Uninitialized variable: local_3c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 174,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 175,
-          "message": "Uninitialized variable: local_30",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 176,
-          "message": "Uninitialized variable: local_34",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 177,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 93,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->filter_indices + local_1c) = 0;",
@@ -596,74 +530,74 @@
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 146,
       "match": "(int)&this_ptr->camera_light_bounds[0].x_min",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 140,
+      "line": 147,
       "match": "(int)&this_ptr->camera_light_bounds[0].x_max",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar3) = 0x13e;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 148,
       "match": "(int)&this_ptr->camera_light_bounds[0].y_min",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar3) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 149,
       "match": "(int)&this_ptr->camera_light_bounds[0].y_max",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar3) = 0xee;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&pCVar2->light_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 149,
-      "match": "(int)&pCVar2->light_type",
+      "description": "Pointer value `&local_24->x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 152,
+      "match": "(int)&local_24->x_min",
       "severity": "moderate",
-      "text": "pCVar2 = (C3DSLight *)((int)&pCVar2->light_type + 1);",
+      "text": "iVar2 = (int)&local_24->x_min + iVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar4->light_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 158,
+      "match": "(int)&pCVar4->light_type",
+      "severity": "moderate",
+      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 139,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar3) = 1;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 140,
+      "line": 147,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar3) = 0x13e;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 141,
+      "line": 148,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar3) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar3) = 0xee;",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;",
       "type": "pointer_cast"
     },
     {
@@ -671,72 +605,24 @@
       "line": 149,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar2 = (C3DSLight *)((int)&pCVar2->light_type + 1);",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;",
       "type": "pointer_cast"
     },
     {
-      "description": "Uninitialized variable: local_44",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pCVar2->visible_flags[0] = local_44;",
-      "type": "static_uninitvar"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 152,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&local_24->x_min + iVar5;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Uninitialized variable: local_40",
-      "line": 153,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pCVar2->visible_flags[0] = local_40;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_48",
-      "line": 165,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_48) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_3c",
-      "line": 168,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0xf9 < local_3c) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 174,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->camera_light_bounds[local_3c].x_min = local_38;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_30",
-      "line": 175,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->camera_light_bounds[local_3c].x_max = local_30;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_34",
-      "line": 176,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->camera_light_bounds[local_3c].y_min = local_34;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 177,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->camera_light_bounds[local_3c].y_max = local_2c;",
-      "type": "static_uninitvar"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 158,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

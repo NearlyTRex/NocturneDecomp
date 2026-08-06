@@ -24,9 +24,9 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(CCrater *this_ptr)
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&this_ptr->center_position);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->center_position);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005b8afc);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b8afc);
   local_20.x = (int)ROUND(this_ptr->corner_positions[0].x * 256.0f);
   local_20.y = (int)ROUND(this_ptr->corner_positions[0].y * 256.0f);
   local_20.z = (int)ROUND(this_ptr->corner_positions[0].z * 256.0f);
@@ -71,12 +71,16 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_00487af0(CCrater *this_ptr)
   local_54 = 0;
   local_50 = 1;
   local_4c = 2;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_6c);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
+            (g_CDemonRenderer_PTR_005ae704,&local_6c);
   local_54 = 0;
   local_50 = 2;
   local_4c = 3;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,&local_6c);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
+            (g_CDemonRenderer_PTR_005ae704,&local_6c);
   return;
 }

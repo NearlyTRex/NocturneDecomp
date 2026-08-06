@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_lever.cpp_CLever_ctor_FUN_004c6040
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x80c                          ; 004c6010
         ;   Label: core_lever.cpp_factoryFunc_FUN_004c6010
-    CALL crt_unknown.c_FUN_0056497c     ; 004c6015
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c6015
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c601a
     TEST EAX,EAX                        ; 004c601d
     JNZ 0x004c6022                      ; 004c601f

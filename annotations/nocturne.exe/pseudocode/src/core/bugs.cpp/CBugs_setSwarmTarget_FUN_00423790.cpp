@@ -47,7 +47,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423790(CBugs *this_ptr,CDe
                   (g_CConsole_PTR_005ad350,"%s swarming on %s at LOD %d\n");
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
                            (this_ptr->deformable_model_ptr);
-        core_bugs_cpp_FUN_004219f0
+        core_bugs_cpp_CBugs_FUN_004219f0
                   (this_ptr,pCVar4->tri_count[this_ptr->lod_index],
                    pCVar4->tri_data_ptr[this_ptr->lod_index]);
         core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50

@@ -11,7 +11,7 @@ CBackgroundActor * __cdecl core_backgnd_cpp_factoryFunc_FUN_0040fea0(void)
 {
   CBackgroundActor *pCVar1;
   
-  pCVar1 = (CBackgroundActor *)FUN_0056497c(0x2d4);
+  pCVar1 = operator_new(0x2d4);
   if (pCVar1 == (CBackgroundActor *)0x0) {
     return (CBackgroundActor *)0x0;
   }

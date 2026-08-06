@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x9c]:1  local_9c
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00535900 at 0053632e
+;   core_stranger.cpp_CStranger_FUN_00535900 at 0053632e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_00595cf7
@@ -18,8 +18,8 @@
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 DAT_02dc9f5c
 ;
@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
@@ -318,10 +318,10 @@ section .text
         ;   Label: LAB_0053e6c5
     MOV ESI,0x10b4                      ; 0053e6ca
     PUSH 0x595d0c                       ; 0053e6cf | = "CStranger::aimLeftPistol - no weapon?"
-    MOV dword ptr [0x01cc4800],ECX      ; 0053e6d4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0053e6da | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0053e6e0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0053e6d4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0053e6da | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0053e6e0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0053e6e5
     JMP 0x0053e33f                      ; 0053e6e8
         ;   XREF to: 0053e33f (UNCONDITIONAL_JUMP)  ; LAB_0053e33f

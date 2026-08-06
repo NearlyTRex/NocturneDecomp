@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -70,20 +70,26 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 93,
+        "line": 94,
         "message": "no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 94,
+        "line": 95,
         "message": "no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'"
       },
       {
-        "category": "format_error",
-        "column": 26,
-        "line": 97,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "undeclared_identifier",
+        "column": 34,
+        "line": 98,
+        "message": "use of undeclared identifier '_DAT_01c78ac0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 98,
+        "message": "use of undeclared identifier 'DAT_01c789c0'"
       }
     ],
     "success": false,
@@ -92,20 +98,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 365,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 20,
+    "pseudocode_lines": 146,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 550
+    "total_lines": 551
   },
   "cross_references": [
     {
@@ -141,7 +147,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -212,15 +218,15 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005be220",
@@ -560,7 +566,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 22,
-          "line": 102,
+          "line": 103,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -580,87 +586,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005b761c",
+      "line": 91,
+      "match": "DAT_01c789c0",
       "severity": "mild",
-      "text": "local_60 = DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_5c = DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_64 = DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "iVar2 = DAT_005b7620 - iVar2 * iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "local_4c = DAT_005b761c + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((DAT_005b7620 < 0x1e0) && (this_ptr_00 = g_CBitFont_PTR_014b98fc, DAT_005b7620 < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((DAT_005b7620 < 0x1e0) && (this_ptr_00 = g_CBitFont_PTR_014b98fc, DAT_005b7620 < 0x180)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "iVar4 = DAT_005b7620 - iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (0x280 < DAT_005b761c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (800 < DAT_005b761c) {",
+      "text": "_sprintf(local_164,\"%d - %s\",_DAT_01c78ac0,&DAT_01c789c0);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 106,
+      "line": 107,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "if ((int)local_44 < iVar4) {",
@@ -668,7 +602,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 115,
+      "line": 116,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_50 = ((int)local_44 * 3) / 2;",
@@ -676,7 +610,7 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 119,
+      "line": 120,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_34 = iVar2 - (int)local_44;",
@@ -684,7 +618,7 @@
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 138,
       "match": "(int)local_38",
       "severity": "moderate",
       "text": "(iVar3,(int)local_38,local_30 + iVar3,local_28,iVar4);",
@@ -692,7 +626,7 @@
     },
     {
       "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 142,
       "match": "(int)local_40",
       "severity": "moderate",
       "text": "(local_44,local_20,(int)local_40,local_34,0xf8,0);",
@@ -708,7 +642,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 86,
+      "line": 87,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);",
@@ -716,7 +650,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 87,
+      "line": 88,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);",
@@ -732,7 +666,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 102,
+      "line": 103,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar3 = local_60 >> 0x1f;",

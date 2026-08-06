@@ -19,11 +19,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00509a80 at 00509ade
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509ade
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_0140e7a4
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
@@ -260,11 +260,11 @@ section .text
     POP ESI                             ; 00440961
     POP EBX                             ; 00440962
     RET                                 ; 00440963
-    MOV EAX,[0x005b7620]                ; 00440964 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00440964 | g_WindowHeight
         ;   Label: LAB_00440964
     DEC EAX                             ; 00440969
     PUSH EAX                            ; 0044096a
-    MOV EAX,[0x005b761c]                ; 0044096b | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0044096b | g_WindowWidth
     DEC EAX                             ; 00440970
     PUSH EAX                            ; 00440971
     PUSH 0x0                            ; 00440972

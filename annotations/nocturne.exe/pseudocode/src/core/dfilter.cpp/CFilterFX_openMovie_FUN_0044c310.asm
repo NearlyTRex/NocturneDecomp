@@ -25,14 +25,14 @@
 ;   TerminatedCString s_core_dfilter_cpp_0057c0c9
 ;   TerminatedCString s_Can_t_open_movie_s_mov_0057c0dd
 ;   undefined4 DAT_005ad54c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60
 ;   core_dfilter.cpp_CFilterFX_free_FUN_0044c2f0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -81,10 +81,10 @@ section .text
     MOV EDX,0x57c08f                    ; 0044c366 | = "..\\core\\dfilter.cpp"
     MOV ECX,0x15a                       ; 0044c36b
     PUSH 0x57c0a3                       ; 0044c370 | = "Can't open movie %s.txt"
-    MOV dword ptr [0x01cc4800],EDX      ; 0044c375 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044c37b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044c381
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0044c375 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0044c37b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044c381
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0044c386
     PUSH ESI                            ; 0044c389
         ;   Label: LAB_0044c389
@@ -182,10 +182,10 @@ section .text
     MOV EBP,0x57c0c9                    ; 0044c45e | = "..\\core\\dfilter.cpp"
     MOV EAX,0x166                       ; 0044c463
     PUSH 0x57c0dd                       ; 0044c468 | = "Can't open movie %s.mov"
-    MOV dword ptr [0x01cc4800],EBP      ; 0044c46d | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044c473 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044c478
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044c46d | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0044c473 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044c478
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0044c47d
     JMP 0x0044c3e2                      ; 0044c480
         ;   XREF to: 0044c3e2 (UNCONDITIONAL_JUMP)  ; LAB_0044c3e2

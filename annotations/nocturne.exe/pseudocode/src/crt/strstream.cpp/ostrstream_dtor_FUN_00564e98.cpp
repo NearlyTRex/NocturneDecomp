@@ -31,7 +31,7 @@ _ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_00564e98(void *this_
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_ostrstreamTypeInfo_0059b490);

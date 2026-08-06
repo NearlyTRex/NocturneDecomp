@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_baron.cpp_CBaron_ctor_FUN_004101d0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fb3c                        ; 004101a0
         ;   Label: core_baron.cpp_factoryFunc_FUN_004101a0
-    CALL crt_unknown.c_FUN_0056497c     ; 004101a5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004101a5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004101aa
     TEST EAX,EAX                        ; 004101ad
     JNZ 0x004101b2                      ; 004101af

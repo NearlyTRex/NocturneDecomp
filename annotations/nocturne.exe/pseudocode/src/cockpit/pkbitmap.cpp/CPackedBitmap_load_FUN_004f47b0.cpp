@@ -29,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap 
   uchar *puStack_14;
   
   bVar10 = 0;
-  cockpit_pkbitmap_cpp_FUN_004f3f50(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f3f50(this_ptr);
   this_ptr->width = width;
   this_ptr->height = height;
   if (row_stride == 0) {
@@ -38,9 +38,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap 
   piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((this_ptr->height + 1) * 4);
   this_ptr->row_offsets = piVar1;
   if (piVar1 == (int *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    g_INT_01cc4804 = 0x37d;
-    core_main_c_FUN_004c8440("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
+    g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+    g_CurrentLineNumber = 893;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
   }
   new_size = 0;
   iStack_24 = 0;
@@ -77,10 +77,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap 
             puVar4 = (ushort *)realloc(this_ptr->packed_data,uStack_18);
             this_ptr->packed_data = puVar4;
             if (puVar4 == (ushort *)0x0) {
-              _sprintf(acStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes");
-              g_CHAR_PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-              g_INT_01cc4804 = 0x3b5;
-              core_main_c_FUN_004c8440(acStack_154);
+              _sprintf(acStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,iStack_24,
+                         uStack_18);
+              g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
+              g_CurrentLineNumber = 949;
+              core_main_c_displayErrorAndQuit_FUN_004c8440(acStack_154);
             }
           }
           puVar4 = (ushort *)((int)this_ptr->packed_data + new_size);

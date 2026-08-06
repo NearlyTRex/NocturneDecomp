@@ -11,6 +11,10 @@ int __cdecl getFileStat(char *filename,_stat *file_info);
 // Address: 00565dc6
 int __cdecl ::utime_00600c1e(char *filename,_utimbuf *timestamps);
 
+// Original: crt_io.c_chdir_FUN_00566570
+// Address: 00566570
+int __cdecl chdir(char *path);
+
 // Original: crt_io.c_register_handler_wrapper_FUN_005671e8
 // Address: 005671e8
 int __cdecl register::handler_wrapper(HANDLE file_handle);

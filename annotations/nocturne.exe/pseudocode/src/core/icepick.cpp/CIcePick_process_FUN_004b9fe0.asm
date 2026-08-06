@@ -46,17 +46,17 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_00428c00
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_FUN_004259f0
-;   core_charactr.cpp_FUN_00428c00
-;   core_charactr.cpp_FUN_0042a150
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004b5490
+;   core_hero.cpp_CHero_FUN_004b5110
 ;   core_hero.cpp_CHero_tryInteract_FUN_004b4e90
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004b5270
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004b52f0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0
-;   core_hero.cpp_FUN_004b5110
 ;   ... and 15 more
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9fef
     PUSH dword ptr [EBP + 0x18]         ; 004b9ff2
     PUSH EBX                            ; 004b9ff5
-    CALL core_charactr.cpp_FUN_004259f0 ; 004b9ff6
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004b9ff6
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004b9ffb
     TEST EAX,EAX                        ; 004b9ffe
     JZ 0x004ba2fb                       ; 004ba000
@@ -121,8 +121,8 @@ section .text
     FLD float ptr [EBX + 0x23ac]        ; 004ba08e
     PUSH EBX                            ; 004ba094
     FSTP float ptr [EBX + 0x242c]       ; 004ba095
-    CALL core_charactr.cpp_FUN_00428c00 ; 004ba09b
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 004ba09b
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ba0a0
     LEA EDX,[EBX + 0x150]               ; 004ba0a3
     TEST EAX,EAX                        ; 004ba0a9
@@ -328,13 +328,13 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004ba2e3
         ;   Label: LAB_004ba2e3
     PUSH EBX                            ; 004ba2e6
-    CALL core_icepick.cpp_FUN_004ba740  ; 004ba2e7
-        ;   XREF to: 004ba740 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004ba740(CIcePick * this_ptr, float delta_time)
+    CALL core_icepick.cpp_CIcePick_FUN_004ba740 ; 004ba2e7
+        ;   XREF to: 004ba740 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_FUN_004ba740(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ba2ec
     PUSH dword ptr [EBP + 0x18]         ; 004ba2ef
     PUSH EBX                            ; 004ba2f2
-    CALL core_charactr.cpp_FUN_0042a150 ; 004ba2f3
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004ba2f3
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ba2f8
     MOV ESP,EBP                         ; 004ba2fb
         ;   Label: LAB_004ba2fb
@@ -346,8 +346,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004ba302
         ;   Label: LAB_004ba302
     PUSH EBX                            ; 004ba305
-    CALL core_icepick.cpp_FUN_004baba0  ; 004ba306
-        ;   XREF to: 004baba0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_FUN_004baba0(CIcePick * this_ptr, float delta_time)
+    CALL core_icepick.cpp_CIcePick_FUN_004baba0 ; 004ba306
+        ;   XREF to: 004baba0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_FUN_004baba0(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ba30b
     JMP 0x004ba020                      ; 004ba30e
         ;   XREF to: 004ba020 (UNCONDITIONAL_JUMP)  ; LAB_004ba020
@@ -536,8 +536,8 @@ section .text
     JNZ 0x004ba3fc                      ; 004ba4ff
         ;   XREF to: 004ba3fc (CONDITIONAL_JUMP)  ; LAB_004ba3fc
     PUSH EBX                            ; 004ba505
-    CALL core_hero.cpp_FUN_004b5110     ; 004ba506
-        ;   XREF to: 004b5110 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004b5110(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_FUN_004b5110 ; 004ba506
+        ;   XREF to: 004b5110 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_FUN_004b5110(CHero * this_ptr)
     ADD ESP,0x4                         ; 004ba50b
     MOV dword ptr [ESP + 0x74],EAX      ; 004ba50e
     TEST EAX,EAX                        ; 004ba512

@@ -11,20 +11,20 @@
 void engine_special_cpp_FUN_0052f031(void)
 
 {
-  int iVar1;
-  bool bVar2;
-  byte bVar3;
-  undefined6 uVar7;
+  bool bVar1;
+  byte bVar2;
+  undefined6 uVar6;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
-  int iVar10;
-  uint uVar11;
+  int iVar9;
+  uint uVar10;
   int unaff_EBX;
+  uint uVar11;
   uint uVar12;
-  uint uVar13;
-  byte *pbVar14;
-  int iVar15;
+  byte *pbVar13;
+  int iVar14;
   int unaff_ESI;
+  int iVar15;
   int *piVar16;
   int unaff_EDI;
   uint uVar17;
@@ -60,88 +60,88 @@ void engine_special_cpp_FUN_0052f031(void)
   short sVar47;
   ushort uVar48;
   ushort uVar49;
+  char cVar3;
   char cVar4;
-  char cVar5;
-  byte bVar6;
+  byte bVar5;
   
   uVar17 = *(uint *)(unaff_ESI + 8);
-  uVar11 = *(uint *)(unaff_EDI + 8);
-  uVar8 = uVar17;
-  iVar15 = unaff_ESI;
-  if (uVar11 < uVar17) {
-    uVar8 = uVar11;
-    uVar11 = uVar17;
-    iVar15 = unaff_EDI;
+  uVar10 = *(uint *)(unaff_EDI + 8);
+  uVar7 = uVar17;
+  iVar14 = unaff_ESI;
+  if (uVar10 < uVar17) {
+    uVar7 = uVar10;
+    uVar10 = uVar17;
+    iVar14 = unaff_EDI;
     unaff_EDI = unaff_ESI;
   }
-  uVar8 = uVar8 >> 0x10;
-  iVar10 = (uVar11 >> 0x10) - uVar8;
-  if (iVar10 != 0 && uVar8 <= uVar11 >> 0x10) {
-    DAT_005bf078 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar8 * 4;
-    DAT_005bf014 = iVar10 * 4;
-    piVar16 = (int *)(*(int *)(&DAT_01bd4260 + unaff_EBX * 4) + uVar8 * 4);
+  uVar7 = uVar7 >> 0x10;
+  iVar9 = (uVar10 >> 0x10) - uVar7;
+  if (iVar9 != 0 && uVar7 <= uVar10 >> 0x10) {
+    DAT_005bf078 = *(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar7 * 4;
+    DAT_005bf014 = iVar9 * 4;
+    piVar16 = (int *)(*(int *)(&DAT_01bd4260 + unaff_EBX * 4) + uVar7 * 4);
     DAT_005bf07c = piVar16;
     if (_DAT_01c039a0 == 0x80) {
-      iVar15 = *(int *)(iVar15 + 0x28);
-      iVar10 = (int)((ulonglong)
-                     ((longlong)(*(int *)(unaff_EDI + 0x28) - iVar15) *
-                     (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+      iVar14 = *(int *)(iVar14 + 0x28);
+      iVar9 = (int)((ulonglong)
+                    ((longlong)(*(int *)(unaff_EDI + 0x28) - iVar14) *
+                    (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
       uVar17 = DAT_005bf014;
-      DAT_005bf05c = iVar15;
-      DAT_005bf488 = iVar10;
+      DAT_005bf05c = iVar14;
+      DAT_005bf488 = iVar9;
       do {
-        *piVar16 = iVar15;
-        iVar15 = iVar15 + iVar10;
+        *piVar16 = iVar14;
+        iVar14 = iVar14 + iVar9;
         piVar16 = piVar16 + 1;
-        uVar11 = uVar17 - 4;
-        bVar2 = 3 < (int)uVar17;
-        uVar17 = uVar11;
-      } while (uVar11 != 0 && bVar2);
+        uVar10 = uVar17 - 4;
+        bVar1 = 3 < (int)uVar17;
+        uVar17 = uVar10;
+      } while (uVar10 != 0 && bVar1);
       return;
     }
     if (_DAT_01c039a4 == 5) {
-      uVar17 = *(uint *)(iVar15 + 0x18);
+      uVar17 = *(uint *)(iVar14 + 0x18);
       DAT_005bf050 = (uint)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
-                           (longlong)*(int *)(iVar15 + 0x28));
+                           (longlong)*(int *)(iVar14 + 0x28));
       uVar17 = *(uint *)(unaff_EDI + 0x18);
       _DAT_005bf480 =
            (int)((ulonglong)
                  ((longlong)
                   (int)((int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
                              (longlong)*(int *)(unaff_EDI + 0x28)) - DAT_005bf050) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-      uVar17 = *(uint *)(iVar15 + 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+      uVar17 = *(uint *)(iVar14 + 0x20);
       DAT_005bf054 = (uint)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
-                           (longlong)*(int *)(iVar15 + 0x28));
+                           (longlong)*(int *)(iVar14 + 0x28));
       uVar17 = *(uint *)(unaff_EDI + 0x20);
       _DAT_005bf484 =
            (int)((ulonglong)
                  ((longlong)
                   (int)((int)(CONCAT44(((int)uVar17 >> 0x1f) << 0x18 | uVar17 >> 8,uVar17 << 0x18) /
                              (longlong)*(int *)(unaff_EDI + 0x28)) - DAT_005bf054) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
     }
     else {
-      DAT_005bf050 = *(uint *)(iVar15 + 0x18);
+      DAT_005bf050 = *(uint *)(iVar14 + 0x18);
       _DAT_005bf480 =
            (int)((ulonglong)
                  ((longlong)(int)(*(int *)(unaff_EDI + 0x18) - DAT_005bf050) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-      DAT_005bf054 = *(uint *)(iVar15 + 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+      DAT_005bf054 = *(uint *)(iVar14 + 0x20);
       _DAT_005bf484 =
            (int)((ulonglong)
                  ((longlong)(int)(*(int *)(unaff_EDI + 0x20) - DAT_005bf054) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
     }
-    iVar10 = *(int *)(iVar15 + 0x28);
+    iVar15 = *(int *)(iVar14 + 0x28);
     DAT_005bf488 = (int)((ulonglong)
-                         ((longlong)(*(int *)(unaff_EDI + 0x28) - iVar10) *
-                         (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-    DAT_005bf540 = *(int *)(iVar15 + 0x30);
+                         ((longlong)(*(int *)(unaff_EDI + 0x28) - iVar15) *
+                         (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+    DAT_005bf540 = *(int *)(iVar14 + 0x30);
     _DAT_005bf548 =
          (int)((ulonglong)
                ((longlong)(*(int *)(unaff_EDI + 0x30) - DAT_005bf540) *
-               (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
     if ((_DAT_01c039a0 & 0x200) == 0) {
       if ((_DAT_01c039a0 & 4) == 0) {
         if ((_DAT_01c039a0 & 0x10) == 0) {
@@ -159,76 +159,76 @@ void engine_special_cpp_FUN_0052f031(void)
       }
       else {
         uVar17 = *(int *)(unaff_EDI + 0x10) - 0x100;
-        uVar11 = *(int *)(iVar15 + 0x10) - 0x100;
+        uVar10 = *(int *)(iVar14 + 0x10) - 0x100;
         if (0xfff < uVar17) {
           uVar17 = 0xfff;
         }
-        if (0xfff < uVar11) {
-          uVar11 = 0xfff;
+        if (0xfff < uVar10) {
+          uVar10 = 0xfff;
         }
-        uVar8 = uVar11 * 8;
+        uVar7 = uVar10 * 8;
         uVar17 = (uint)((ulonglong)
-                        ((longlong)(int)(uVar17 * 8 + uVar11 * -8) *
-                        (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-        DAT_005bf500._0_4_ = uVar8 & 0xffff;
+                        ((longlong)(int)(uVar17 * 8 + uVar10 * -8) *
+                        (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+        DAT_005bf500._0_4_ = uVar7 & 0xffff;
         DAT_005bf520._0_4_ = uVar17 & 0xffff;
-        uVar39 = ((CONCAT44(DAT_005bf500._4_4_,uVar8) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_005bf500._4_4_,uVar8) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(DAT_005bf500._4_4_,uVar8) & 0xffffffff0000ffff;
+        uVar39 = ((CONCAT44(DAT_005bf500._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(DAT_005bf500._4_4_,uVar7) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(DAT_005bf500._4_4_,uVar7) & 0xffffffff0000ffff;
         uVar44 = ((CONCAT44(DAT_005bf520._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
                  CONCAT44(DAT_005bf520._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
                  CONCAT44(DAT_005bf520._4_4_,uVar17) & 0xffffffff0000ffff;
       }
     }
     else {
-      uVar9 = *(uint *)(iVar15 + 0x10) >> 1;
+      uVar8 = *(uint *)(iVar14 + 0x10) >> 1;
       uVar17 = (uint)((ulonglong)
-                      ((longlong)(int)((*(uint *)(unaff_EDI + 0x10) >> 1) - uVar9) *
-                      (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-      DAT_005bf500._0_4_ = uVar9 & 0xffff;
+                      ((longlong)(int)((*(uint *)(unaff_EDI + 0x10) >> 1) - uVar8) *
+                      (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+      DAT_005bf500._0_4_ = uVar8 & 0xffff;
       DAT_005bf520._0_4_ = uVar17 & 0xffff;
-      uVar12 = *(uint *)(iVar15 + 0x38) >> 1;
-      uVar11 = (uint)((ulonglong)
-                      ((longlong)(int)((*(uint *)(unaff_EDI + 0x38) >> 1) - uVar12) *
-                      (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-      _DAT_005bf508 = uVar12 & 0xffff;
-      _DAT_005bf528 = uVar11 & 0xffff;
-      uVar13 = *(uint *)(iVar15 + 0x40) >> 1;
-      uVar8 = (uint)((ulonglong)
-                     ((longlong)(int)((*(uint *)(unaff_EDI + 0x40) >> 1) - uVar13) *
-                     (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
-      _DAT_005bf510 = uVar13 & 0xffff;
-      _DAT_005bf530 = uVar8 & 0xffff;
-      uVar39 = ((CONCAT44(DAT_005bf500._4_4_,uVar9) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam005bf50c,uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam005bf514,uVar13) & 0xffffffff0000ffff;
+      uVar11 = *(uint *)(iVar14 + 0x38) >> 1;
+      uVar10 = (uint)((ulonglong)
+                      ((longlong)(int)((*(uint *)(unaff_EDI + 0x38) >> 1) - uVar11) *
+                      (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+      _DAT_005bf508 = uVar11 & 0xffff;
+      _DAT_005bf528 = uVar10 & 0xffff;
+      uVar12 = *(uint *)(iVar14 + 0x40) >> 1;
+      uVar7 = (uint)((ulonglong)
+                     ((longlong)(int)((*(uint *)(unaff_EDI + 0x40) >> 1) - uVar12) *
+                     (longlong)(int)g_ReciprocalLookupTable[iVar9 + 1]) >> 0x20);
+      _DAT_005bf510 = uVar12 & 0xffff;
+      _DAT_005bf530 = uVar7 & 0xffff;
+      uVar39 = ((CONCAT44(DAT_005bf500._4_4_,uVar8) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam005bf50c,uVar11) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam005bf514,uVar12) & 0xffffffff0000ffff;
       uVar44 = ((CONCAT44(DAT_005bf520._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam005bf52c,uVar11) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam005bf534,uVar8) & 0xffffffff0000ffff;
+               CONCAT44(uRam005bf52c,uVar10) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(uRam005bf534,uVar7) & 0xffffffff0000ffff;
     }
     uVar17 = 0;
     sVar43 = (short)uVar44;
     sVar45 = (short)(uVar44 >> 0x10);
     sVar46 = (short)(uVar44 >> 0x20);
     sVar47 = (short)(uVar44 >> 0x30);
-    DAT_005bf05c = iVar10;
+    DAT_005bf05c = iVar15;
     if ((_DAT_01c02584 == 0) && ((_DAT_01c039a0 & 2) == 0)) {
       uVar36 = (ulonglong)_DAT_01c039a8 >> 0x10;
       uVar38 = (ushort)(((uint7)(byte)((ulonglong)_DAT_01c039a8 >> 0x18) << 0x30) >> 0x28);
       uVar44 = (ulonglong)_DAT_01c039a8 >> 8;
       bVar31 = (byte)_DAT_01c039a8;
-      uVar11 = DAT_005bf050;
-      uVar8 = DAT_005bf054;
-      iVar15 = DAT_005bf540;
+      uVar10 = DAT_005bf050;
+      uVar7 = DAT_005bf054;
+      iVar14 = DAT_005bf540;
       if ((_DAT_01c039a0 & 8) == 0) {
-        iVar15 = 0;
+        iVar14 = 0;
         _DAT_005bf548 = 0;
       }
       while( true ) {
         uVar48 = (ushort)(uVar39 >> 0x10);
         uVar49 = (ushort)(uVar39 >> 0x20);
         uVar18 = (ushort)(uVar39 >> 0x30);
-        if (((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar10)) {
+        if (((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
           if ((_DAT_01c039a0 & 1) == 0) {
             uVar20 = 0x00FFFFFF;
             if ((_DAT_01c039a0 & 0x200) == 0) {
@@ -238,8 +238,8 @@ void engine_special_cpp_FUN_0052f031(void)
           else {
             uVar20 = *(uint *)
                       (&DAT_01c00024 +
-                      (uint)*(byte *)((uVar11 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
-                                      (uVar8 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + _DAT_01c02580
+                      (uint)*(byte *)((uVar10 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
+                                      (uVar7 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + _DAT_01c02580
                                      ) * 4);
           }
           uVar21 = psllw((ulonglong)
@@ -252,27 +252,27 @@ void engine_special_cpp_FUN_0052f031(void)
                                           CONCAT24(uVar49 >> 3,
                                                    CONCAT22(uVar48 >> 3,(ushort)uVar39 >> 3))));
           sVar37 = (short)uVar21;
-          bVar3 = (0 < sVar37) * (sVar37 < 0x100) * (char)uVar21 - (0xff < sVar37);
+          bVar2 = (0 < sVar37) * (sVar37 < 0x100) * (char)uVar21 - (0xff < sVar37);
           sVar37 = (short)((ulonglong)uVar21 >> 0x10);
-          cVar4 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x10) -
+          cVar3 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x10) -
                   (0xff < sVar37);
-          uVar19 = CONCAT11(cVar4,bVar3);
+          uVar19 = CONCAT11(cVar3,bVar2);
           sVar37 = (short)((ulonglong)uVar21 >> 0x20);
-          cVar5 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x20) -
+          cVar4 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x20) -
                   (0xff < sVar37);
           sVar37 = (short)((ulonglong)uVar21 >> 0x30);
-          bVar6 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x30) -
+          bVar5 = (0 < sVar37) * (sVar37 < 0x100) * (char)((ulonglong)uVar21 >> 0x30) -
                   (0xff < sVar37);
-          uVar20 = CONCAT13(bVar6,CONCAT12(cVar5,uVar19));
+          uVar20 = CONCAT13(bVar5,CONCAT12(cVar4,uVar19));
           if ((_DAT_01c039a0 & 8) != 0) {
-            uVar35 = (&DAT_005bfe70)[iVar15 >> 8];
+            uVar35 = (&DAT_005bfe70)[iVar14 >> 8];
             uVar32 = uVar35 ^ 0x000000FF00FF00FF;
-            uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),
-                                                    CONCAT14(cVar5,uVar20)) >> 0x20),uVar20) >> 0x18
+            uVar8 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar5 << 0x30) >> 0x28),
+                                                    CONCAT14(cVar4,uVar20)) >> 0x20),uVar20) >> 0x18
                           );
-            uVar23 = (uint5)uVar9 & 0xffffffff00;
-            uVar22 = (ushort)bVar3 * (short)uVar32 + (ushort)bVar31 * (short)uVar35;
-            uVar27 = ((ushort)(CONCAT43(uVar9,CONCAT12(cVar4,uVar19)) >> 0x10) & 0xff) *
+            uVar23 = (uint5)uVar8 & 0xffffffff00;
+            uVar22 = (ushort)bVar2 * (short)uVar32 + (ushort)bVar31 * (short)uVar35;
+            uVar27 = ((ushort)(CONCAT43(uVar8,CONCAT12(cVar3,uVar19)) >> 0x10) & 0xff) *
                      (short)(uVar32 >> 0x10) + (ushort)(byte)uVar44 * (short)(uVar35 >> 0x10);
             uVar25 = (short)(uVar23 >> 8) * (short)(uVar32 >> 0x20) +
                      (short)CONCAT21(uVar38,(char)uVar36) * (short)(uVar35 >> 0x20);
@@ -293,19 +293,19 @@ void engine_special_cpp_FUN_0052f031(void)
           }
           *(uint *)(DAT_005bf078 + uVar17) = uVar20;
           if ((_DAT_01c039a0 & 0x80) != 0) {
-            *(int *)((int)DAT_005bf07c + uVar17) = iVar10;
+            *(int *)((int)DAT_005bf07c + uVar17) = iVar15;
           }
         }
         uVar17 = uVar17 + 4;
         if (DAT_005bf014 <= uVar17) break;
-        uVar11 = uVar11 + _DAT_005bf480;
+        uVar10 = uVar10 + _DAT_005bf480;
         sVar37 = (ushort)uVar39 + sVar43;
         sVar40 = uVar48 + sVar45;
         sVar41 = uVar49 + sVar46;
         sVar42 = uVar18 + sVar47;
-        uVar8 = uVar8 + _DAT_005bf484;
-        iVar10 = iVar10 + DAT_005bf488;
-        iVar15 = iVar15 + _DAT_005bf548;
+        uVar7 = uVar7 + _DAT_005bf484;
+        iVar15 = iVar15 + DAT_005bf488;
+        iVar14 = iVar14 + _DAT_005bf548;
         uVar39 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar42),
                           CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar41),
                                    CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
@@ -315,32 +315,32 @@ void engine_special_cpp_FUN_0052f031(void)
       }
     }
     else {
-      iVar15 = DAT_005bf540;
+      iVar14 = DAT_005bf540;
       if ((_DAT_01c039a0 & 0x100) == 0) {
-        iVar15 = DAT_005b763c << 8;
+        iVar14 = DAT_005b763c << 8;
         _DAT_005bf548 = 0;
       }
-      uVar11 = DAT_005bf050;
-      uVar8 = DAT_005bf054;
+      uVar10 = DAT_005bf050;
+      uVar7 = DAT_005bf054;
       if (_DAT_01c02584 != 0) {
         while( true ) {
           uVar38 = (ushort)uVar39;
           uVar48 = (ushort)(uVar39 >> 0x10);
           uVar49 = (ushort)(uVar39 >> 0x20);
           uVar18 = (ushort)(uVar39 >> 0x30);
-          if (((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar10)) {
-            pbVar14 = (byte *)((uVar11 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
-                               (uVar8 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + _DAT_01c02580);
-            uVar20 = *(uint *)(&DAT_01c00024 + (uint)*pbVar14 * 4);
+          if (((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
+            pbVar13 = (byte *)((uVar10 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
+                               (uVar7 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + _DAT_01c02580);
+            uVar20 = *(uint *)(&DAT_01c00024 + (uint)*pbVar13 * 4);
             uVar39 = (ulonglong)
                      CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
                                                   uVar20 >> 0x18) << 0x30) >> 0x28),
                                                   CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)) >>
                                                   0x20),uVar20) >> 0x18),(char)((uint)uVar20 >> 8)),
                               (ushort)(byte)uVar20) & 0xffffffff00ffffff;
-            uVar9 = (uint)pbVar14[_DAT_01c02584 - _DAT_01c02580];
-            if (uVar9 != 0) {
-              if ((((iVar15 < 0xff01) || (uVar9 < 0xff)) || (iVar15 < 0xff)) || (_DAT_01c03998 != 0)
+            uVar8 = (uint)pbVar13[_DAT_01c02584 - _DAT_01c02580];
+            if (uVar8 != 0) {
+              if ((((iVar14 < 0xff01) || (uVar8 < 0xff)) || (iVar14 < 0xff)) || (_DAT_01c03998 != 0)
                  ) {
                 uVar20 = *(uint *)(uVar17 + DAT_005bf078);
                 uVar22 = (ushort)(((uint7)(byte)((uint)uVar20 >> 0x18) << 0x30) >> 0x28);
@@ -348,12 +348,12 @@ void engine_special_cpp_FUN_0052f031(void)
                          CONCAT34((int3)(CONCAT25(uVar22,CONCAT14((char)((uint)uVar20 >> 0x10),
                                                                   uVar20)) >> 0x20),uVar20) &
                          0xffffffff00ffffff;
-                uVar7 = CONCAT51((int5)(uVar36 >> 0x18),(char)((uint)uVar20 >> 8));
+                uVar6 = CONCAT51((int5)(uVar36 >> 0x18),(char)((uint)uVar20 >> 8));
                 uVar21 = psllw(uVar39,4);
                 uVar21 = pmulhw(uVar21,CONCAT26(uVar18 >> 3,
                                                 CONCAT24(uVar49 >> 3,
                                                          CONCAT22(uVar48 >> 3,uVar38 >> 3))));
-                uVar39 = (&DAT_005bfe70)[uVar9 * iVar15 >> 0x10];
+                uVar39 = (&DAT_005bfe70)[uVar8 * iVar14 >> 0x10];
                 sVar37 = (short)uVar21;
                 sVar40 = (short)((ulonglong)uVar21 >> 0x10);
                 sVar41 = (short)((ulonglong)uVar21 >> 0x20);
@@ -381,7 +381,7 @@ void engine_special_cpp_FUN_0052f031(void)
                                    CONCAT26((uVar22 >> 8) * (short)(uVar44 >> 0x30),
                                             CONCAT24((short)(uVar36 >> 0x20) *
                                                      (short)(uVar44 >> 0x20),
-                                                     CONCAT22((short)uVar7 * (short)(uVar44 >> 0x10)
+                                                     CONCAT22((short)uVar6 * (short)(uVar44 >> 0x10)
                                                               ,(ushort)(byte)uVar20 * (short)uVar44)
                                                     )));
                   uVar22 = (ushort)uVar21 >> 8;
@@ -400,7 +400,7 @@ void engine_special_cpp_FUN_0052f031(void)
                                                       (0xff < uVar22))));
                 }
                 else {
-                  uVar21 = psllw(CONCAT62(uVar7,(ushort)(byte)uVar20),8);
+                  uVar21 = psllw(CONCAT62(uVar6,(ushort)(byte)uVar20),8);
                   uVar21 = paddusw(CONCAT26(uVar27 * sVar34,
                                             CONCAT24(sVar37 * sVar33,
                                                      CONCAT22(uVar28 * sVar42,uVar24 * (short)uVar39
@@ -442,16 +442,16 @@ void engine_special_cpp_FUN_0052f031(void)
               }
               *(uint *)(uVar17 + DAT_005bf078) = uVar20;
               if ((_DAT_01c039a0 & 0x80) != 0) {
-                *(int *)(uVar17 + (int)DAT_005bf07c) = iVar10;
+                *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
               }
             }
           }
           uVar17 = uVar17 + 4;
           if (DAT_005bf014 <= uVar17) break;
-          uVar11 = uVar11 + _DAT_005bf480;
-          uVar8 = uVar8 + _DAT_005bf484;
-          iVar10 = iVar10 + DAT_005bf488;
-          iVar15 = iVar15 + _DAT_005bf548;
+          uVar10 = uVar10 + _DAT_005bf480;
+          uVar7 = uVar7 + _DAT_005bf484;
+          iVar15 = iVar15 + DAT_005bf488;
+          iVar14 = iVar14 + _DAT_005bf548;
           uVar39 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
                                      (short)(uVar18 + sVar47)),
                             CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
@@ -469,11 +469,11 @@ void engine_special_cpp_FUN_0052f031(void)
         uVar38 = (ushort)(uVar39 >> 0x10);
         uVar48 = (ushort)(uVar39 >> 0x20);
         uVar49 = (ushort)(uVar39 >> 0x30);
-        if ((((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar10)) &&
-           (iVar1 = *(int *)(&DAT_01c00024 +
-                            (uint)*(byte *)((uVar11 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
-                                            (uVar8 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) +
-                                           _DAT_01c02580) * 4), iVar1 != 0)) {
+        if ((((_DAT_01c039a0 & 0x40) == 0) || (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) &&
+           (iVar9 = *(int *)(&DAT_01c00024 +
+                            (uint)*(byte *)((uVar10 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
+                                            (uVar7 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) +
+                                           _DAT_01c02580) * 4), iVar9 != 0)) {
           uVar44 = 0;
           if ((_DAT_01c039a0 & 0x20) != 0) {
             uVar20 = *(uint *)(uVar17 + DAT_005bf078);
@@ -486,14 +486,14 @@ void engine_special_cpp_FUN_0052f031(void)
           }
           uVar21 = psllw((ulonglong)
                          CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-                                                  uint)iVar1 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)((uint)iVar1 >> 0x10),iVar1)) >>
-                                                  0x20),iVar1) >> 0x18),(char)((uint)iVar1 >> 8)),
-                                  (ushort)(byte)iVar1) & 0xffffffff00ffffff,4);
+                                                  uint)iVar9 >> 0x18) << 0x30) >> 0x28),
+                                                  CONCAT14((char)((uint)iVar9 >> 0x10),iVar9)) >>
+                                                  0x20),iVar9) >> 0x18),(char)((uint)iVar9 >> 8)),
+                                  (ushort)(byte)iVar9) & 0xffffffff00ffffff,4);
           uVar21 = pmulhw(uVar21,CONCAT26(uVar49 >> 3,
                                           CONCAT24(uVar48 >> 3,
                                                    CONCAT22(uVar38 >> 3,(ushort)uVar39 >> 3))));
-          uVar36 = (&DAT_005bfe70)[iVar15 >> 8];
+          uVar36 = (&DAT_005bfe70)[iVar14 >> 8];
           sVar37 = (short)uVar21;
           sVar40 = (short)((ulonglong)uVar21 >> 0x10);
           sVar41 = (short)((ulonglong)uVar21 >> 0x20);
@@ -554,19 +554,19 @@ void engine_special_cpp_FUN_0052f031(void)
           }
           *(uint *)(uVar17 + DAT_005bf078) = uVar20;
           if ((_DAT_01c039a0 & 0x80) != 0) {
-            *(int *)(uVar17 + (int)DAT_005bf07c) = iVar10;
+            *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
           }
         }
         uVar17 = uVar17 + 4;
         if (DAT_005bf014 <= uVar17) break;
-        uVar11 = uVar11 + _DAT_005bf480;
+        uVar10 = uVar10 + _DAT_005bf480;
         sVar37 = (ushort)uVar39 + sVar43;
         sVar40 = uVar38 + sVar45;
         sVar41 = uVar48 + sVar46;
         sVar42 = uVar49 + sVar47;
-        uVar8 = uVar8 + _DAT_005bf484;
-        iVar10 = iVar10 + DAT_005bf488;
-        iVar15 = iVar15 + _DAT_005bf548;
+        uVar7 = uVar7 + _DAT_005bf484;
+        iVar15 = iVar15 + DAT_005bf488;
+        iVar14 = iVar14 + _DAT_005bf548;
         uVar39 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar42),
                           CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar41),
                                    CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <

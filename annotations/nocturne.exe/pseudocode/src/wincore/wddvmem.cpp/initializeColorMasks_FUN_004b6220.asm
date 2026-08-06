@@ -40,17 +40,17 @@ section .text
     XOR EAX,EAX                         ; 004b622b
         ;   Label: LAB_004b622b
     MOV EDI,dword ptr [0x01c00628]      ; 004b622d | DAT_01c00628
-    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004b6233 | DAT_01c00648
+    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004b6233 | g_SourcePaletteData
     XOR EDX,EDX                         ; 004b6239
     MOV dword ptr [ESP],EAX             ; 004b623b
     DIV EDI                             ; 004b623e
     XOR ECX,ECX                         ; 004b6240
-    MOV CL,byte ptr [EBX + 0x1c00649]   ; 004b6242 | DAT_01c0064c
+    MOV CL,byte ptr [EBX + 0x1c00649]   ; 004b6242 | g_SourcePaletteData+4
     MOV dword ptr [ESP],EAX             ; 004b6248
     XOR EDX,EDX                         ; 004b624b
     MOV EAX,ECX                         ; 004b624d
     DIV dword ptr [0x01c00634]          ; 004b624f | DAT_01c00634
-    MOVZX EBP,byte ptr [EBX + 0x1c0064a] ; 004b6255 | DAT_01c0064d
+    MOVZX EBP,byte ptr [EBX + 0x1c0064a] ; 004b6255 | g_SourcePaletteData+5
     MOV dword ptr [ESP + 0x4],EBP       ; 004b625c
     MOV EDI,EAX                         ; 004b6260
     XOR EDX,EDX                         ; 004b6262

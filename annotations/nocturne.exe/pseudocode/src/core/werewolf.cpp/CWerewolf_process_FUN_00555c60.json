@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -59,61 +59,61 @@
         "category": "incompatible_types",
         "column": 7,
         "line": 136,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
+        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110'"
       },
       {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 160,
+        "line": 161,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 169,
+        "line": 170,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 183,
+        "line": 184,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 197,
+        "line": 198,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 209,
+        "line": 210,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 210,
+        "line": 211,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 212,
+        "line": 213,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 57,
-        "line": 215,
+        "line": 216,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 270,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "category": "type_error",
+        "column": 15,
+        "line": 337,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 1051,
+    "complexity_score": 1052,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 34,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 716,
+    "pseudocode_lines": 717,
     "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
@@ -142,7 +142,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2461
+    "total_lines": 2462
   },
   "cross_references": [],
   "function": {
@@ -195,6 +195,21 @@
       "name": "core_actor.cpp_randomChance_FUN_0040dea0"
     },
     {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
+    },
+    {
+      "addr": "0042a150",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
+    },
+    {
       "addr": "00425050",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050"
@@ -213,21 +228,6 @@
       "addr": "004247f0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0"
-    },
-    {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00428c00"
-    },
-    {
-      "addr": "0042a150",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042a150"
     },
     {
       "addr": "00423ed0",
@@ -257,12 +257,12 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004d9110",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d9110"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110"
     },
     {
       "addr": "004e11c0",
@@ -494,13 +494,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -1267,7 +1267,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 153,
+      "line": 154,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "((this_ptr->base).victim == *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {",
@@ -1275,7 +1275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 163,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_e0,(CVector3f *)&DAT_02dd1184,",
@@ -1283,7 +1283,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 177,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_d4,(CVector3f *)&DAT_02dd1184,",
@@ -1291,7 +1291,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 191,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_17c,(CVector3f *)&DAT_02dd1184,",
@@ -1299,7 +1299,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 202,
+      "line": 203,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "if (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != (this_ptr->base).victim) {",
@@ -1307,7 +1307,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 203,
+      "line": 204,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);",
@@ -1315,7 +1315,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 205,
+      "line": 206,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "pSVar17 = (SDamageInfo *)&stack0xfffffce0;",
@@ -1323,7 +1323,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 209,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_74,(CVector3f *)&DAT_02dd1184,",
@@ -1331,7 +1331,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 329,
+      "line": 330,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uVar18._0_4_ = 0.5;",
@@ -1339,7 +1339,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 331,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar18._4_4_ = 0.17453292;",
@@ -1347,7 +1347,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 337,
+      "line": 338,
       "match": "in_stack_fffffcec",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1355,7 +1355,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 337,
+      "line": 338,
       "match": "SUB84(",
       "severity": "moderate",
       "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
@@ -1363,7 +1363,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 459,
+      "line": 460,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_11c,(CVector3f *)&DAT_02dd1184,",
@@ -1371,7 +1371,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 489,
+      "line": 490,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "if (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != (this_ptr->base).victim) {",
@@ -1379,7 +1379,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 498,
+      "line": 499,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1d0,(CVector3f *)&DAT_02dd1184,",
@@ -1387,7 +1387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 509,
+      "line": 510,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_68,(CVector3f *)&DAT_02dd1184,",
@@ -1395,7 +1395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 520,
+      "line": 521,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1a0,(CVector3f *)&DAT_02dd1184,",
@@ -1403,7 +1403,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 537,
+      "line": 538,
       "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "if ((this_ptr->base).victim != *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
@@ -1411,7 +1411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 546,
+      "line": 547,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_1f4,(CVector3f *)&DAT_02dd1184,",
@@ -1427,7 +1427,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 354,
+      "line": 355,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_bc.x = local_194.x;",
@@ -1443,7 +1443,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 324,
+      "line": 325,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1451,7 +1451,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 704,
+      "line": 705,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1459,7 +1459,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 708,
+      "line": 709,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1467,7 +1467,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 385,
+      "line": 386,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

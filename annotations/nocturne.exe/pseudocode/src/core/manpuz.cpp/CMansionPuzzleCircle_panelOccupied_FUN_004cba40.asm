@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004cb010 at 004cb279
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 at 004cb279
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_0058810f
 ;   TerminatedCString s_CMansionPuzzleCircle_pan_00588122
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0
 ;
 ; *****************************************************************************
@@ -41,10 +41,10 @@ section .text
     MOV EDX,0x58810f                    ; 004cba55 | = "..\\core\\manpuz.cpp"
     MOV ECX,0x5e6                       ; 004cba5a
     PUSH 0x588122                       ; 004cba5f | = "CMansionPuzzleCircle::panelOccupied -..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004cba64 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004cba6a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004cba70
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004cba64 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004cba6a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004cba70
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004cba75
     LEA EAX,[EBX*0x4 + 0x0]             ; 004cba78
         ;   Label: LAB_004cba78

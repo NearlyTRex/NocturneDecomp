@@ -54,9 +54,9 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004a3860(void)
       _DAT_01c78b10 =
            (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-      if (0x1e0 < DAT_005b7620) {
-        _DAT_01c78b0c = (_DAT_01c78b0c * DAT_005b761c) / 0x280;
-        _DAT_01c78b10 = (_DAT_01c78b10 * DAT_005b7620) / 0x1e0;
+      if (0x1e0 < g_WindowHeight) {
+        _DAT_01c78b0c = (_DAT_01c78b0c * g_WindowWidth) / 0x280;
+        _DAT_01c78b10 = (_DAT_01c78b10 * g_WindowHeight) / 0x1e0;
         return;
       }
     }

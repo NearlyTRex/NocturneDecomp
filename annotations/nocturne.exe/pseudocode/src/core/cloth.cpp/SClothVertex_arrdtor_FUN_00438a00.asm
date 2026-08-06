@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *objs,uint flags)
+; SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *this_ptr,uint flags)
 ;
 ; Parameters:
-; SClothVertex *   Stack[0x4]:4   objs
+; SClothVertex *   Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

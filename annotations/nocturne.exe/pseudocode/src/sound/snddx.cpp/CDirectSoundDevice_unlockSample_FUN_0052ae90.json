@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,43 +58,31 @@
       {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 20,
+        "line": 19,
         "message": "use of undeclared identifier 'DAT_02dc9244'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 26,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 32,
+        "line": 27,
         "message": "use of undeclared identifier 'DAT_02dc9244'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 33,
+        "line": 28,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 27,
-        "line": 33,
+        "line": 28,
         "message": "expected expression"
-      },
-      {
-        "category": "format_error",
-        "column": 58,
-        "line": 36,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 37,
+        "line": 33,
         "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       }
     ],
@@ -104,20 +92,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 141,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 9,
+    "pseudocode_lines": 27,
+    "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
       "stack_param",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 107
+    "total_lines": 103
   },
   "cross_references": [],
   "function": {
@@ -136,11 +124,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -181,13 +169,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -267,7 +255,7 @@
         {
           "check_id": "uninitvar",
           "column": 26,
-          "line": 28,
+          "line": 25,
           "message": "Uninitialized variable: in_stack_00000014",
           "severity": "error"
         }
@@ -279,7 +267,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 7,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "int in_stack_00000014;",
@@ -287,7 +275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 12,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "if (((buffer_id < 1) || (0x18 < buffer_id)) || (*(int *)(&DAT_02dc9244 + buffer_id * 4) == 0)) {",
@@ -295,23 +283,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "iStack_1a4 = *(uint *)(in_stack_00000014 + 0x15c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "pcStack_1a8 = *(char **)(in_stack_00000014 + 0x164);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 18,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "uStack_1ac = *(uint *)(in_stack_00000014 + 0x158);",
@@ -319,7 +291,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 19,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "uStack_1b0 = *(uint *)(in_stack_00000014 + 0x160);",
@@ -327,7 +299,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 20,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "piStack_1b4 = *(int **)(&DAT_02dc9244 + buffer_id * 4);",
@@ -335,7 +307,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*piStack_1b4 + 0x4c))();",
@@ -343,7 +315,7 @@
     },
     {
       "description": "Raw hex address 0x52aed2 assigned to bare local `uStack_1ac`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1ac` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
+      "line": 15,
       "match": "0x52aed2",
       "severity": "moderate",
       "text": "uStack_1ac = 0x52aed2;",
@@ -351,10 +323,10 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000014",
-      "line": 28,
+      "line": 25,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "iStack_1a4 = *(uint *)(in_stack_00000014 + 0x15c);",
+      "text": "uStack_1ac = *(uint *)(in_stack_00000014 + 0x158);",
       "type": "static_uninitvar"
     }
   ],

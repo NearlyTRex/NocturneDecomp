@@ -10,14 +10,13 @@ uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(uint *result_ptr,
 
 {
   int iVar1;
-  uint in_stack_00000010;
   
   iVar1 = support_trisock_cpp_parseIPComponents_FUN_00548bf0(result_ptr,dotted_decimal_string);
   if (iVar1 != 0) {
     return result_ptr;
   }
-  g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
-  g_INT_01cc4804 = 0x36;
-  core_main_c_FUN_004c8440("Invalid dotted decimal string: %s",in_stack_00000010);
+  g_CurrentFilename = "..\\support\\trisock.cpp";
+  g_CurrentLineNumber = 54;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid dotted decimal string: %s");
   return result_ptr;
 }

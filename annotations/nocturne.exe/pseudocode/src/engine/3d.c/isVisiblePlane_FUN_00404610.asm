@@ -7,7 +7,7 @@
 ; SClipPlane *     Stack[0x4]:4   plane
 ;
 ; XREF[79]:
-;   core_box.cpp_FUN_0041d050 at 0041d191
+;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d191
 ;   engine_3d.c_FUN_00405200 at 00405209
 ;   engine_3d.c_FUN_00405ab0 at 00405ac7
 ;   engine_3d.c_FUN_00406a00 at 00406a40

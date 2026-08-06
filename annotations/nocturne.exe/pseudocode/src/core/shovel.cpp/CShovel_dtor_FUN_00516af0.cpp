@@ -9,18 +9,18 @@
 CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00516af0(CShovel *this_ptr,uint flags)
 
 {
-  CWeapon *pCVar1;
-  void *ptr;
+  CWeapon *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CShovelTypeInfo_005a1d30);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CShovelTypeInfo_005a1d30);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(&this_ptr->base,1);
+  ptr = core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return (CShovel *)pCVar1;
+    return (CShovel *)ptr;
   }
-  FUN_00564494(pCVar1);
-  return (CShovel *)pCVar1;
+  operator_delete(ptr);
+  return (CShovel *)ptr;
 }

@@ -9,6 +9,7 @@
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonPod_vtable.h"
+#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
@@ -19,6 +20,7 @@
 #include "types/classes/CSmiley_full_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
+#include "types/structs/SResolutionEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5A0000
@@ -56,6 +58,9 @@ extern CDemonActor_vtable g_CWayPointVTable;
 
 // CDemonPod_vtable
 extern CDemonPod_vtable g_CDemonPodVTable;
+
+// CDemonRenderer*
+extern CDemonRenderer* g_CDemonRenderer_PTR_005ae704;
 
 // CEnemy_full_vtable
 extern CEnemy_full_vtable g_CMimicVTable;
@@ -104,6 +109,9 @@ extern CWeapon_full_vtable g_CShovelVTable;
 extern CWeapon_full_vtable g_CTommyGunVTable;
 extern CWeapon_full_vtable g_CTurretVTable;
 extern CWeapon_full_vtable g_CWeaponVTable;
+
+// SResolutionEntry[9]
+extern SResolutionEntry g_ResolutionTable[9];
 
 // WatcomDestructorCall
 extern WatcomDestructorCall g_WatcomDestructorCall_005a0510;
@@ -299,8 +307,6 @@ extern undefined1* g_MRGLBlockHandlerTable;
 
 // undefined4
 extern undefined4 DAT_005a4b78;
-extern undefined4 DAT_005acaa4;
-extern undefined4 DAT_005acaa8;
 extern undefined4 DAT_005acab4;
 extern undefined4 DAT_005accf8;
 extern undefined4 DAT_005accfc;
@@ -321,6 +327,5 @@ extern undefined4 DAT_005ad8bc;
 extern undefined4 DAT_005ad8c0;
 extern undefined4 DAT_005ae6f4;
 extern undefined4 DAT_005ae6f8;
-extern undefined4 DAT_005ae704;
 extern undefined4 DAT_005ae708;
 

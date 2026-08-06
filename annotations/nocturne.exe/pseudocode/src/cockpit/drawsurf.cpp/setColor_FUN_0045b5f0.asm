@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e431
-;   core_script.cpp_FUN_004fe9d0 at 004fea18
+;   core_script.cpp_CScript_FUN_004fe9d0 at 004fea18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d886
@@ -31,7 +31,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -115,7 +115,7 @@ section .text
         ;   Label: LAB_0045b6dc
     XOR EAX,EAX                         ; 0045b6de
     MOV BL,byte ptr [ECX + 0x1c00649]   ; 0045b6e0
-    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0045b6e6 | DAT_01c00648
+    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0045b6e6 | g_SourcePaletteData
     MOV CL,byte ptr [ECX + 0x1c0064a]   ; 0045b6ec
     MOV ESI,dword ptr [0x01c00628]      ; 0045b6f2 | DAT_01c00628
     XOR EDX,EDX                         ; 0045b6f8
@@ -151,7 +151,7 @@ section .text
     POP ESI                             ; 0045b754
     POP EBX                             ; 0045b755
     RET                                 ; 0045b756
-    MOVZX ESI,byte ptr [ECX + 0x1c00648] ; 0045b757 | DAT_01c00648
+    MOVZX ESI,byte ptr [ECX + 0x1c00648] ; 0045b757 | g_SourcePaletteData
         ;   Label: LAB_0045b757
     XOR EAX,EAX                         ; 0045b75e
     XOR EBX,EBX                         ; 0045b760
@@ -202,10 +202,10 @@ section .text
         ;   Label: LAB_0045b7cf
     MOV EDX,0xf6                        ; 0045b7d4
     PUSH 0x57d89e                       ; 0045b7d9 | = "Invalid bitsPerPixel in CDrawSurface:..."
-    MOV [0x01cc4800],EAX                ; 0045b7de | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045b7e3 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045b7e9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0045b7de | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0045b7e3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045b7e9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045b7ee
     ADD ESP,0x4                         ; 0045b7f1
     POP EBP                             ; 0045b7f4

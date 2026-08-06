@@ -6,19 +6,19 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 0050782c
+;   core_setcolid.cpp_CDemonSet_FUN_00511a10 at 00511a72
+;   core_setcolid.cpp_CDemonSet_FUN_00511aa0 at 00511b02
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30 at 00511b3d
-;   core_setcolid.cpp_FUN_00511a10 at 00511a72
-;   core_setcolid.cpp_FUN_00511aa0 at 00511b02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce3f
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ce50
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e312f8
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_CPathMap_reset_FUN_004f1e10
 ;
 ; *****************************************************************************
@@ -42,10 +42,10 @@ section .text
     MOV EAX,0x58ce3f                    ; 004f1eaa | = "..\\core\\path.cpp"
     MOV EDX,0x6a1                       ; 004f1eaf
     PUSH 0x58ce50                       ; 004f1eb4 | = "Global pathmap list corruption"
-    MOV [0x01cc4800],EAX                ; 004f1eb9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f1ebe | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f1ec4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004f1eb9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004f1ebe | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f1ec4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f1ec9
     MOV ECX,dword ptr [EBX + 0x1e312fc] ; 004f1ecc
         ;   Label: LAB_004f1ecc

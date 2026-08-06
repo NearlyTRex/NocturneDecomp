@@ -17,9 +17,9 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *
   
   if (-1 < this_ptr->gesture_motion_index) {
     if (this_ptr->gesture_branch_root < -1) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\charactr.cpp";
-      g_INT_01cc4804 = 0xcdb;
-      core_main_c_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
+      g_CurrentFilename = "..\\core\\charactr.cpp";
+      g_CurrentLineNumber = 3291;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s");
     }
     iVar1 = this_ptr->gesture_motion_index;
     pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890
@@ -36,7 +36,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *
     }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (&this_ptr->model,this_ptr->gesture_motion_index,this_ptr->gesture_frame,local_8,
-               this_ptr->gesture_branch_root,core_skeleton_cpp_FUN_0051b650);
+               this_ptr->gesture_branch_root,core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
   }
   return;
 }

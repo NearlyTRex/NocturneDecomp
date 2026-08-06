@@ -13,7 +13,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_00490b20(CBitFont *this_ptr,i
   byte *puStack_14;
   
   puStack_14 = &stack0x0000001c;
-  iVar1 = engine_font_cpp_FUN_00490b70
+  iVar1 = engine_font_cpp_CBitFont_FUN_00490b70
                     (this_ptr,x,y,color_mode,color_value,format_string,(va_list_t)&puStack_14);
   return iVar1;
 }

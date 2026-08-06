@@ -31,9 +31,9 @@ void __cdecl engine_2d_c_drawHLine_FUN_00403bd0(int x1,int y,int x2)
       if (DAT_005b7624 < 0x10) {
         if (DAT_005b7624 != 8) {
 LAB_00403cb2:
-          g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-          g_INT_01cc4804 = 0x8a4;
-          core_main_c_FUN_004c8440("hLine - invalid bitsPerPixel");
+          g_CurrentFilename = "..\\engine\\2d.c";
+          g_CurrentLineNumber = 2212;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("hLine - invalid bitsPerPixel");
           return;
         }
         memset

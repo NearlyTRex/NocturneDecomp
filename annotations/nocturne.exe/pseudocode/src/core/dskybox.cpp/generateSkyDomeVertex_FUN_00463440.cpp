@@ -12,7 +12,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture
 
 {
   int iVar1;
-  int *piVar2;
+  CDemonRenderer *pCVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
@@ -22,7 +22,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture
   CVector3i *input;
   float local_48;
   
-  piVar2 = DAT_005ae704;
+  pCVar2 = g_CDemonRenderer_PTR_005ae704;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
@@ -43,7 +43,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(SMRGLSkyTexture
   input = (CVector3i *)0x46351a;
   round((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            ((SProjectedVertex *)(*piVar2 + vertex_index * 0x30),input);
+            (&pCVar2->vertex_buffer_ptr[vertex_index].projected_vertex,input);
   iVar1 = (sky_texture->base).type;
   (&DAT_005c5034)[vertex_index * 0xc] = iVar1;
   (&DAT_005c5038)[vertex_index * 0xc] = iVar1;

@@ -13,8 +13,8 @@
 ;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 005226fd
 ;
 ; Called Functions:
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_stdio.c_fclose_FUN_00563380
-;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     RET                                 ; 004e82b3
     PUSH EBX                            ; 004e82b4
         ;   Label: LAB_004e82b4
-    CALL crt_unknown.c_FUN_005638d0     ; 004e82b5
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 004e82b5
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 004e82ba
     MOV dword ptr [ESI + 0x4],0x0       ; 004e82bd
     MOV byte ptr [EDI],0x0              ; 004e82c4

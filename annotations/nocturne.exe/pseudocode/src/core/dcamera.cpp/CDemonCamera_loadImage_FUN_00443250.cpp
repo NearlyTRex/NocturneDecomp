@@ -107,9 +107,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   pcVar24 = (char *)0x0;
 LAB_00443299:
   if (pcVar24 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    g_INT_01cc4804 = 0x982;
-    core_main_c_FUN_004c8440("CDemonCamera::loadImage - no extention");
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 2434;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
   pcVar26 = ".ACT";
   do {
@@ -150,9 +150,9 @@ LAB_00443299:
     pcVar26 = (char *)0x0;
 LAB_00443363:
     if (pcVar26 == (char *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-      g_INT_01cc4804 = 0x995;
-      core_main_c_FUN_004c8440("CDemonCamera::loadImage - no ext");
+      g_CurrentFilename = "..\\core\\dcamera.cpp";
+      g_CurrentLineNumber = 2453;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no ext");
     }
     pcVar24 = ".fog";
     do {
@@ -166,14 +166,15 @@ LAB_00443363:
     } while (cVar5 != '\0');
     local_14 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
-      _fread((void *)0x140d784,0x1000,1,local_14);
+      _fread(&g_SFogGrid_0140d784,0x1000,1,local_14);
       p_Var6 = local_14;
-      if (_DAT_0140e7a0 == 0) {
+      if (g_SFogGrid_0140d784.density_multiplier == 0) {
         memset((void *)0x12e1778,0,0x12c000);
       }
       else {
         _DAT_0140d780 = 0x10;
-        if ((_DAT_0140e790 == 0 && _DAT_0140e794 == 0) && _DAT_0140e798 == 0) {
+        if ((g_SFogGrid_0140d784.scroll_vector.x == 0 && g_SFogGrid_0140d784.scroll_vector.y == 0)
+            && g_SFogGrid_0140d784.scroll_vector.z == 0) {
           _DAT_0140d780 = 1;
         }
         _fread(local_a0,3,1,local_14);
@@ -184,14 +185,14 @@ LAB_00443363:
           iVar7 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
           local_9c = iVar7 - 0x1003;
           if ((int)local_9c < 1) {
-            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            g_INT_01cc4804 = 0x9b5;
-            core_main_c_FUN_004c8440("Hell froze loading %s",local_f4);
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2485;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze loading %s");
           }
           if (500000 < local_9c) {
-            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            g_INT_01cc4804 = 0x9bb;
-            core_main_c_FUN_004c8440("%s too big to fit in decompress buffer",local_f4);
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2491;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("%s too big to fit in decompress buffer");
           }
           _fread(&DAT_0077d250,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompress_012cdb28);
@@ -200,9 +201,9 @@ LAB_00443363:
                             (&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,
                              (char *)0x12e1778,&local_98,1);
           if (iVar7 == 0) {
-            g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-            g_INT_01cc4804 = 0x9c4;
-            core_main_c_FUN_004c8440("Error decompressing %s",local_f4);
+            g_CurrentFilename = "..\\core\\dcamera.cpp";
+            g_CurrentLineNumber = 2500;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Error decompressing %s");
           }
           local_a4 = 0;
           if (0 < (int)_DAT_0140d780) {
@@ -417,7 +418,7 @@ LAB_00443363:
         iVar21 = iVar21 + 0x1e0;
       } while (iVar7 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);
+                (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);
       puVar16 = (uint *)&DAT_0145b290;
       puVar28 = _DAT_01c02580;
       for (iVar7 = 0x4000; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -443,9 +444,10 @@ LAB_00443363:
         puVar28 = (uint *)((int)puVar28 + (uint)bVar31 * -2 + 1);
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
-                (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,(SRGBColorPalette *)&DAT_00b0daf8);
+                (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,
+                 (SRGBColorPalette *)&DAT_00b0daf8);
       _memset((void *)0xaafdb8,0,0x12d40);
-      if (DAT_005b7620 == 0x180) {
+      if (g_WindowHeight == 0x180) {
         iStack_18 = 0;
         iStack_1c = 0;
         do {

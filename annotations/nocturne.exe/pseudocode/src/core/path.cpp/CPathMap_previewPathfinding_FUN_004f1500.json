@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,33 +56,33 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "format_error",
-        "column": 30,
-        "line": 31,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "undeclared_identifier",
+        "column": 35,
+        "line": 33,
+        "message": "use of undeclared identifier 'PTR_s_x_005be130'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 32,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_01e3161c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 32,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_01e31620'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 35,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_01e31624'; did you mean 'DAT_02DF1624'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 49,
-        "line": 35,
+        "line": 37,
         "message": "use of undeclared identifier '_DAT_01e31628'; did you mean 'DAT_02DF1628'?"
       }
     ],
@@ -92,18 +92,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 67,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 2,
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 118
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -121,7 +120,7 @@
   "function_calls": [
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -139,9 +138,9 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "01e3161c",
@@ -230,14 +229,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "x = DAT_005b761c / 2 + iVar3;",
-      "type": "undefined_data"
     }
   ]
 }

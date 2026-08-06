@@ -15,8 +15,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004a4170 at 004a42d7
-;   core_game.cpp_FUN_004a4b50 at 004a4e83
+;   core_game.cpp_CGame_FUN_004a4170 at 004a42d7
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a4e83
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d957c
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@
 ;   TerminatedCString s_load2_005878bb
 ;   TerminatedCString s_load3_005878c1
 ;   TerminatedCString s_load4_005878c7
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005baca4
 ;   undefined4 DAT_01b4d738
 ;
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c56cf
     PUSH 0x5baca4                       ; 004c56d2 | DAT_005baca4
-    MOV EDX,dword ptr [0x005ae704]      ; 004c56d7 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004c56d7 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004c56dd | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c56de
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

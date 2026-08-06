@@ -40,9 +40,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
   float local_94;
   int local_90;
   int local_8c [2];
-  float local_84;
-  float local_80;
-  float local_7c;
+  CVector3f local_84;
   CVector3f local_78;
   float local_6c;
   float local_68;
@@ -165,21 +163,21 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             local_8c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                  *(int *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
             fVar2 = (float)0.00390625;
-            local_84 = (float)local_90 * fVar2;
+            local_84.x = (float)local_90 * fVar2;
             local_14 = (float)local_8c[1];
-            local_7c = (float)local_8c[1] * fVar2;
+            local_84.z = (float)local_8c[1] * fVar2;
             local_98 = (float)local_8c[0] * fVar2 - local_c8;
-            local_9c = local_84 - local_cc;
-            local_94 = local_7c - local_c4;
+            local_9c = local_84.x - local_cc;
+            local_94 = local_84.z - local_c4;
             fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
             if ((float)50 < fVar1) {
               local_160 = (fVar1 + (float)-50) * (float)0.02 + 0.0;
             }
-            local_80 = (float)local_8c[0] * fVar2 + 1.0;
-            local_14 = (float)core_setcolid_cpp_FUN_0050f910(g_CDemonSet_PTR_005be368);
-            if ((float)60 < local_14 - local_80) {
-              local_160 = ((local_14 - local_80) + (float)-60) * (float)0.016666666666666701
-                          + local_160;
+            local_84.y = (float)local_8c[0] * fVar2 + 1.0;
+            local_14 = core_setcolid_cpp_CDemonSet_FUN_0050f910(g_CDemonSet_PTR_005be368,&local_84);
+            if ((float)60 < local_14 - local_84.y) {
+              local_160 = ((local_14 - local_84.y) + (float)-60) *
+                          (float)0.016666666666666701 + local_160;
             }
           }
           else {

@@ -56,9 +56,9 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr)
   CMorph *local_14;
   
   if ((this_ptr->models[0].num_points < 3) || (this_ptr->models[1].num_points < 3)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
-    g_INT_01cc4804 = 799;
-    core_main_c_FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 799;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
   }
   __arrinit(&local_c8,2,&g_CBoundingBox3D_005993f0);
   local_38 = this_ptr;

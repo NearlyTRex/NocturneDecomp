@@ -25,7 +25,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float d
   float local_20;
   float local_1c;
   
-  iVar6 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -46,7 +46,7 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_004154b0(CBiggs *this_ptr,float d
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar3;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->motion_controller);
-  iVar6 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) goto LAB_0041558b;
   uVar4 = (this_ptr->base).base.is_walking;
   if (uVar4 < 2) {
@@ -105,7 +105,7 @@ LAB_0041558b:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                     (0x01C03A10,this_ptr->morph_event);
   if (iVar6 != 0) {

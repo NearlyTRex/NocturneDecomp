@@ -14,15 +14,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c2a2
 ;   TerminatedCString s_CNetGame_processChatOut_0058c2b6
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01d06610
 ;   undefined4 DAT_01d09bfc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_addChatHistory_FUN_004ec500
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_string.c__strncpy_FUN_00565f70
@@ -145,10 +145,10 @@ section .text
         ;   Label: LAB_004ec10f
     MOV EBP,0x76c                       ; 004ec114
     PUSH 0x58c2b6                       ; 004ec119 | = "CNetGame::processChatOut - too many p..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ec11e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004ec124 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ec12a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ec11e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004ec124 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ec12a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ec12f
     JMP 0x004ebfef                      ; 004ec132
         ;   XREF to: 004ebfef (UNCONDITIONAL_JUMP)  ; LAB_004ebfef

@@ -18,17 +18,17 @@ __asm {
         call engine_special_cpp_clearScreen_FUN_0052ee70
         call engine_special_cpp_clearZBufferNative_FUN_0052eed4
         push 0x2dd1184
-        mov EDX,dword ptr [DAT_005ae704]
+        mov EDX,dword ptr [g_CDemonRenderer_PTR_005ae704]
         push EDX
         call engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
         add ESP,0x8
-        mov ECX,dword ptr [DAT_005ae704]
+        mov ECX,dword ptr [g_CDemonRenderer_PTR_005ae704]
         push 0x42e00000
         push ECX
         call engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
         add ESP,0x8
         push 0x2dd1184
-        mov EBX,dword ptr [DAT_005ae704]
+        mov EBX,dword ptr [g_CDemonRenderer_PTR_005ae704]
         push EBX
         call engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
         fld double ptr [DOUBLE_0058a936]
@@ -44,7 +44,7 @@ __asm {
         add ESP,0x8
         fmulp
         push EAX
-        mov EAX,[DAT_005ae704]
+        mov EAX,[g_CDemonRenderer_PTR_005ae704]
         mov EDI,0x42900000
         push EAX
         mov dword ptr [EBP + -0x44],EDI
@@ -104,7 +104,7 @@ __asm {
         fld float ptr [EBP + -0x3c]
         fxch ST(3)
         fadd float ptr [EBX + EAX*0x1 + 0xc]
-        mov EDI,dword ptr [DAT_005ae704]
+        mov EDI,dword ptr [g_CDemonRenderer_PTR_005ae704]
         fstp float ptr [EBP + -0x34]
         fxch
         fadd float ptr [EBX + EAX*0x1 + 0x10]
@@ -124,7 +124,7 @@ __asm {
         push 0x0
         lea EAX,[EBP + -0x40]
         push EAX
-        mov EAX,[DAT_005ae704]
+        mov EAX,[g_CDemonRenderer_PTR_005ae704]
         push EAX
         call engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
         add ESP,0xc
@@ -138,7 +138,7 @@ __asm {
         push 0x1cce1bc
         call core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
         add ESP,0x10
-        mov ECX,dword ptr [DAT_005ae704]
+        mov ECX,dword ptr [g_CDemonRenderer_PTR_005ae704]
         push ECX
         call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0
         imul EAX,dword ptr [EBX + 0x1ccdeec],0xc

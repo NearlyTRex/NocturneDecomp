@@ -34,7 +34,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00467930
 ;   core_fire.cpp_CFireEffect_createRock_FUN_0048b320
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0
-;   core_set.cpp_FUN_0050e660
+;   core_set.cpp_CDemonSet_FUN_0050e660
 ;
 ; *****************************************************************************
 
@@ -168,8 +168,8 @@ section .text
     MOV EBP,dword ptr [0x005be368]      ; 0046248c | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 00462492
     PUSH EBP                            ; 00462497 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e660      ; 00462498
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 00462498
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 0046249d
     LEA EDX,[EBX + 0x30c]               ; 004624a0
     PUSH EDX                            ; 004624a6

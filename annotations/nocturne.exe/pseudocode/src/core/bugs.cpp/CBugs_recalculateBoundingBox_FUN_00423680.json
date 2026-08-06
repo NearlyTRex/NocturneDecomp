@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -77,6 +77,12 @@
   },
   "cross_references": [
     {
+      "addr": "00422050",
+      "from_addr": "00422151",
+      "name": "core_bugs.cpp_CBugs_FUN_00422050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00422370",
       "from_addr": "004224f1",
       "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370",
@@ -92,12 +98,6 @@
       "addr": "004227a0",
       "from_addr": "004227a5",
       "name": "core_bugs.cpp_CBugs_updateBoundingBox_FUN_004227a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00422050",
-      "from_addr": "00422151",
-      "name": "core_bugs.cpp_FUN_00422050",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -140,7 +140,7 @@
       {
         "call_addr": "00422151",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00422050",
+        "caller": "core_bugs.cpp_CBugs_FUN_00422050",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

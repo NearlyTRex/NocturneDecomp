@@ -161,9 +161,9 @@ switchD_004eff7e_default:
     case 8:
       return local_a0 + (float)-2.356194490125;
     default:
-      g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-      g_INT_01cc4804 = 0x183;
-      core_main_c_FUN_004c8440("CPathMap::getDirection - Should never get here either");
+      g_CurrentFilename = "..\\core\\path.cpp";
+      g_CurrentLineNumber = 387;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CPathMap::getDirection - Should never get here either");
     }
   }
   if ((current_direction != prev_direction) && (prev_direction != next_direction))

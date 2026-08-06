@@ -29,13 +29,13 @@
 ;   TerminatedCString s_Verifying_CRC_for_s_0058da5c
 ;   TerminatedCString s_rb_0058da74
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -352,10 +352,10 @@ section .text
         ;   Label: LAB_004f8547
     MOV EBP,0x1cf                       ; 004f854c
     PUSH 0x58da47                       ; 004f8551 | = "Invalid pod version!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f8562
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f8562
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f8567
     JMP 0x004f8284                      ; 004f856a
         ;   XREF to: 004f8284 (UNCONDITIONAL_JUMP)  ; LAB_004f8284

@@ -49,7 +49,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00535900 at 00536344
+;   core_stranger.cpp_CStranger_FUN_00535900 at 00536344
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00595daf = 0.400000000000000

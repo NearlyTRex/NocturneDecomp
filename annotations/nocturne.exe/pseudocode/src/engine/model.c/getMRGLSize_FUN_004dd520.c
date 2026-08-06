@@ -9,9 +9,11 @@
 int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
 
 {
+  int iVar1;
   char local_100 [256];
   
-  switch((header->base).type) {
+  iVar1 = (header->base).type;
+  switch(iVar1) {
   case 0:
     return 4;
   case 1:
@@ -65,10 +67,10 @@ int __cdecl engine_model_c_getMRGLSize_FUN_004dd520(SMRGLHeaderExtended *header)
   case 0x10:
     return 0x14;
   default:
-    _sprintf(local_100,"MRGLSize: Bad type : %d");
-    g_CHAR_PTR_01cc4800 = "..\\engine\\model.c";
-    g_INT_01cc4804 = 0x25b;
-    core_main_c_FUN_004c8440(local_100);
+    _sprintf(local_100,"MRGLSize: Bad type : %d",iVar1);
+    g_CurrentFilename = "..\\engine\\model.c";
+    g_CurrentLineNumber = 603;
+    core_main_c_displayErrorAndQuit_FUN_004c8440(local_100);
     return 4;
   case 0x16:
     return (header->base).count * 4 + 8;

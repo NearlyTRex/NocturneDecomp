@@ -41,8 +41,8 @@ LAB_0054da79:
         if (this_ptr->form == 3) {
           local_78 = this_ptr->morph_t;
         }
-        if (0.0 < local_78) {
-          _sprintf(local_74,"wing?.wav @%f");
+        if (0.0 < (double)local_78) {
+          _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);
           sound_name = local_74;
           goto LAB_0054da79;
         }

@@ -9,6 +9,6 @@
 void __cdecl core_ladder_cpp_CLadder_process_FUN_004c4360(CLadder *this_ptr,float delta_time)
 
 {
-  core_ladder_cpp_FUN_004c45a0(this_ptr);
+  core_ladder_cpp_CLadder_FUN_004c45a0(this_ptr);
   return;
 }

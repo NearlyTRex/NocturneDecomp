@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_0053fc60 at 0053febf
+;   core_stranger.cpp_CStranger_FUN_0053fc60 at 0053febf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Climbing_ladder_s_00595af7

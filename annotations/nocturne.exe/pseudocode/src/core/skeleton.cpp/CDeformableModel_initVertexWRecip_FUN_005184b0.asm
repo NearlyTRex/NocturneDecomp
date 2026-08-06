@@ -12,7 +12,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0051db70 at 0051db9a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
 ;
@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 005184b1
     PUSH EDI                            ; 005184b2
     PUSH EBP                            ; 005184b3
-    MOV EDI,dword ptr [0x005ae704]      ; 005184b4 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 005184b4 | g_CDemonRenderer_PTR_005ae704
     MOV EBP,dword ptr [0x01c038f4]      ; 005184ba | DAT_01c038f4
     MOV ESI,dword ptr [ESP + 0x18]      ; 005184c0
     MOV ECX,dword ptr [ESP + 0x14]      ; 005184c4
@@ -50,7 +50,7 @@ section .text
     NOP                                 ; 005184ef
     MOV dword ptr [0x01c038f4],EBP      ; 005184f0 | DAT_01c038f4
         ;   Label: LAB_005184f0
-    MOV dword ptr [0x005ae704],EDI      ; 005184f6 | DAT_005ae704
+    MOV dword ptr [0x005ae704],EDI      ; 005184f6 | g_CDemonRenderer_PTR_005ae704
     POP EBP                             ; 005184fc
     POP EDI                             ; 005184fd
     POP ESI                             ; 005184fe

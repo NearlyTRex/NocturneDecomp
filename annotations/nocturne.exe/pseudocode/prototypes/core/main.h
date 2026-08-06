@@ -7,9 +7,9 @@
 // Address: 004c83d0
 void __cdecl staticInit(void);
 
-// Original: core_main.c_FUN_004c8440
+// Original: core_main.c_displayErrorAndQuit_FUN_004c8440
 // Address: 004c8440
-void FUN_004c8440(char *param_1);
+void __cdecl displayErrorAndQuit(char *format);
 
 // Original: core_main.c_FUN_004c8510
 // Address: 004c8510

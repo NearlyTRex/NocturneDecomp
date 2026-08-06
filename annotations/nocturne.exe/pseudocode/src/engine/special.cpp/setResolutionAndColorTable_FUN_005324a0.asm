@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_02dc9d70
 ;   undefined4 DAT_02dc9d84
@@ -75,7 +75,7 @@ section .text
     JZ 0x005325aa                       ; 005324f5
         ;   XREF to: 005325aa (CONDITIONAL_JUMP)  ; LAB_005325aa
     PUSH 0x1bff720                      ; 005324fb
-    PUSH 0x1c00648                      ; 00532500 | DAT_01c00648
+    PUSH 0x1c00648                      ; 00532500 | g_SourcePaletteData
     CALL dword ptr [0x02dc9ddc]         ; 00532505 | DAT_02dc9ddc
     ADD ESP,0x8                         ; 0053250b
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 0053250e

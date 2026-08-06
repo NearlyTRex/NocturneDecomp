@@ -11,7 +11,7 @@ CGrave * __cdecl core_grave_cpp_factoryFunc_FUN_004b0b10(void)
 {
   CGrave *pCVar1;
   
-  pCVar1 = (CGrave *)FUN_0056497c(0x3a8);
+  pCVar1 = operator_new(0x3a8);
   if (pCVar1 == (CGrave *)0x0) {
     return (CGrave *)0x0;
   }

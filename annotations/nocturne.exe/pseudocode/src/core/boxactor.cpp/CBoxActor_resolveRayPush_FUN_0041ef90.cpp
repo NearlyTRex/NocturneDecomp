@@ -41,7 +41,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_0041ef90(CBoxActor *
       (this_ptr->base).location.position.y = fVar2 + fStack_2c;
       (this_ptr->base).location.position.z = fVar3 + fStack_28;
       core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(this_ptr);
-      core_boxactor_cpp_FUN_0041f190(this_ptr);
+      core_boxactor_cpp_CBoxActor_FUN_0041f190(this_ptr);
       return;
     }
   }

@@ -24,11 +24,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b1ba
 ;   TerminatedCString s_Can_t_find_state_s_in_mo_0058b1cd
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
 ;
 ; *****************************************************************************
@@ -85,10 +85,10 @@ section .text
     MOV ESI,0x58b1ba                    ; 004e10e8 | = "..\\core\\motion.cpp"
     MOV EDI,0x113                       ; 004e10ed
     PUSH 0x58b1cd                       ; 004e10f2 | = "Can't find state \"%s\" in motion list"
-    MOV dword ptr [0x01cc4800],ESI      ; 004e10f7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e10fd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e1103
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004e10f7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004e10fd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e1103
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e1108
     MOV EAX,0xffffffff                  ; 004e110b
     POP EBP                             ; 004e1110

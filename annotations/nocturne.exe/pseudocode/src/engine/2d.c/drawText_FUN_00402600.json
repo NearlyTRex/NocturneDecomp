@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -86,15 +86,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 40,
+    "complexity_score": 25,
     "cross_reference_count": 24,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 51
@@ -173,6 +172,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050aa70",
+      "from_addr": "0050ab4c",
+      "name": "core_set.cpp_CDemonSet_FUN_0050aa70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00506f10",
       "from_addr": "00507c4e",
       "name": "core_set.cpp_CDemonSet_load_FUN_00506f10",
@@ -182,12 +187,6 @@
       "addr": "00507f80",
       "from_addr": "0050813b",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050aa70",
-      "from_addr": "0050ab4c",
-      "name": "core_set.cpp_FUN_0050aa70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -272,7 +271,7 @@
   "globals": [
     {
       "addr": "005acaa4",
-      "name": "DAT_005acaa4",
+      "name": "g_ResolutionTable[7].width",
       "type": "undefined4",
       "value": null
     },
@@ -470,14 +469,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005acaa4",
-      "severity": "mild",
-      "text": "if (DAT_005acaa4 != 0) {",
-      "type": "undefined_data"
     }
   ]
 }

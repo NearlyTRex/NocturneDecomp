@@ -52,7 +52,7 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mobster.cpp_CMobster_ctor_FUN_004da150
@@ -502,8 +502,8 @@ section .text
         ;   XREF to: 0054f263 (CONDITIONAL_JUMP)  ; LAB_0054f263
     PUSH 0xbdfc                         ; 0054f071
         ;   Label: LAB_0054f071
-    CALL crt_unknown.c_FUN_0056497c     ; 0054f076
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0054f076
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0054f07b
     TEST EAX,EAX                        ; 0054f07e
     JZ 0x0054f08b                       ; 0054f080
@@ -515,8 +515,8 @@ section .text
     PUSH 0x57c                          ; 0054f08b
         ;   Label: LAB_0054f08b
     MOV ESI,EAX                         ; 0054f090
-    CALL crt_unknown.c_FUN_0056497c     ; 0054f092
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0054f092
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0054f097
     TEST EAX,EAX                        ; 0054f09a
     JZ 0x0054f0a7                       ; 0054f09c
@@ -534,10 +534,10 @@ section .text
         ;   Label: LAB_0054f0b1
     MOV EDX,0x161                       ; 0054f0b6
     PUSH 0x597346                       ; 0054f0bb | = "CMobster::process - Out of memory!"
-    MOV [0x01cc4800],EAX                ; 0054f0c0 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0054f0cb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0054f0c0 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0054f0cb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0054f0d0
     PUSH 0x3f000000                     ; 0054f0d3
         ;   Label: LAB_0054f0d3

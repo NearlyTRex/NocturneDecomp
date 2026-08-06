@@ -58,9 +58,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMix
   int local_14;
   
   if (_DAT_02dc84bc < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0xa1a;
-    core_main_c_FUN_004c8440("SfxSlot::mix - must be locked!");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2586;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::mix - must be locked!");
   }
   if (this_ptr->playback_state != 0) {
     local_58 = mix_buffer.num_output_samples;

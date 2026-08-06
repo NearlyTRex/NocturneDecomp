@@ -19,11 +19,11 @@
 ;   TerminatedCString s_CDR_captureFace_too_many_0057dd6d
 ;   undefined4 DAT_01b4d7ac
 ;   undefined4 DAT_01b4d7b0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
 ;
 ; *****************************************************************************
@@ -76,10 +76,10 @@ section .text
     MOV EDI,0x57dd57                    ; 00461c4d | = "..\\engine\\drender.cpp"
     MOV EAX,0xa81                       ; 00461c52
     PUSH 0x57dd6d                       ; 00461c57 | = "CDR::captureFace - too many faces cap..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00461c5c | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00461c62 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00461c67
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00461c5c | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00461c62 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00461c67
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00461c6c
     MOV EDX,dword ptr [0x01b4d7ac]      ; 00461c6f | DAT_01b4d7ac
         ;   Label: LAB_00461c6f

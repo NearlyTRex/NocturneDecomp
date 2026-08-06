@@ -62,9 +62,9 @@ LAB_004950c9:
               (this_ptr,start_frame,end_frame);
     break;
   default:
-    g_CHAR_PTR_01cc4800 = "..\\core\\frankgen.cpp";
-    g_INT_01cc4804 = 0x1bb;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\core\\frankgen.cpp";
+    g_CurrentLineNumber = 443;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(&this_ptr->base);
   dVar6 = round((double)this_ptr->part_frame);

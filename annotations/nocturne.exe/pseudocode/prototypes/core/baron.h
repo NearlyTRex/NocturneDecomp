@@ -39,9 +39,9 @@ void __cdecl CBaron::detachFromOwner(CBaron *this_ptr,CDemonActor *target);
 // Address: 00410bf0
 void __cdecl CBaron::updateMountedPosition(CBaron *this_ptr,float delta_time);
 
-// Original: core_baron.cpp_FUN_00410cc0
+// Original: core_baron.cpp_CBaron_FUN_00410cc0
 // Address: 00410cc0
-void __cdecl FUN_00410cc0(CBaron *this_ptr);
+void __cdecl CBaron(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_advanceMotion_FUN_00411010
 // Address: 00411010
@@ -51,9 +51,9 @@ void __cdecl CBaron::advanceMotion(CBaron *this_ptr,float delta_time);
 // Address: 00411080
 void __cdecl CBaron::archive(CBaron *this_ptr);
 
-// Original: core_baron.cpp_FUN_004110e0
+// Original: core_baron.cpp_CBaron_renderOpaque_FUN_004110e0
 // Address: 004110e0
-undefined4 FUN_004110e0(void);
+int __cdecl CBaron::renderOpaque(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_renderTransparent_FUN_004110f0
 // Address: 004110f0
@@ -99,9 +99,9 @@ int __cdecl CBaronWeapon::fire(CBaronWeapon *this_ptr);
 // Address: 00411440
 int __cdecl CBaronWeapon::isReadyToFire(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_FUN_00411470
+// Original: core_baron.cpp_CBaron_fireProjectile_FUN_00411470
 // Address: 00411470
-void FUN_00411470(void);
+void __cdecl CBaron::fireProjectile(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0
 // Address: 004114a0

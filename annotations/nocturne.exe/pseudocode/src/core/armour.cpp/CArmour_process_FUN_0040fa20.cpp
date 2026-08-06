@@ -16,7 +16,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040fa20(CArmour *this_ptr,floa
   float local_20;
   CVector3f CStack_1c;
   
-  iVar3 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar3 != 0) {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -35,7 +35,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040fa20(CArmour *this_ptr,floa
     (this_ptr->base).base.turn_speed = delta_time * fVar2 * fVar1;
     core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->motion_controller)
     ;
-    iVar3 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+    iVar3 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
     if (iVar3 != 0) {
       (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
       (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -45,7 +45,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_0040fa20(CArmour *this_ptr,floa
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+    core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                       (0x01C03A10,this_ptr->fall_apart_event);
     if (iVar3 != 0) {

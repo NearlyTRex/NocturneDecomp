@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_inv_cpp_00587310
 ;   TerminatedCString s_CInventory_setupItems_we_00587320
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -62,10 +62,10 @@ section .text
         ;   Label: LAB_004c1555
     MOV EBX,0x56e                       ; 004c155a
     PUSH 0x587320                       ; 004c155f | = "CInventory::setupItems - we should ow..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004c1564 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004c156a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c1570
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004c1564 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004c156a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c1570
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c1575
     JMP 0x004c1521                      ; 004c1578
         ;   XREF to: 004c1521 (UNCONDITIONAL_JUMP)  ; LAB_004c1521

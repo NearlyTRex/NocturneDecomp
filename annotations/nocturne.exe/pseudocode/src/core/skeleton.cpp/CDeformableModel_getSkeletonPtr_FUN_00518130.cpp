@@ -12,8 +12,8 @@ CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005181
   if (this_ptr->skeleton_ptr != (CSkeleton *)0x0) {
     return this_ptr->skeleton_ptr;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  g_INT_01cc4804 = 0x2e6;
-  core_main_c_FUN_004c8440("Tried to do something with the skeleton, but skeleton ptr not set!");
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 742;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to do something with the skeleton, but skeleton ptr not set!");
   return this_ptr->skeleton_ptr;
 }

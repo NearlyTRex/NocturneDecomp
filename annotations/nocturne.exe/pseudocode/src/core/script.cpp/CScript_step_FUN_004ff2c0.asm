@@ -188,10 +188,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
+;   core_script.cpp_CScript_FUN_004fef60 at 004fefa5
+;   core_script.cpp_CScript_FUN_00504d90 at 00504ded
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170 at 004ff1e6
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe661
-;   core_script.cpp_FUN_004fef60 at 004fefa5
-;   core_script.cpp_FUN_00504d90 at 00504ded
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_0058e489
@@ -253,10 +253,10 @@ section .text
         ;   Label: LAB_004ff2de
     MOV EDI,0x46d                       ; 004ff2e3
     PUSH 0x58e49c                       ; 004ff2e8 | = "CScript::step - Invalid instruction p..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004ff2ed | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ff2f3 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ff2f9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004ff2ed | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004ff2f3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ff2f9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ff2fe
     MOV ESI,0x58e536                    ; 004ff301 | = "(no error message provided)"
         ;   Label: LAB_004ff301
@@ -411,10 +411,10 @@ section .text
         ;   Label: LAB_004ff48c
     MOV ECX,0x49f                       ; 004ff491
     PUSH 0x58e581                       ; 004ff496 | = "Internal script error checking for du..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004ff49b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004ff4a1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ff4a7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004ff49b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004ff4a1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ff4a7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ff4ac
     JMP 0x004ff473                      ; 004ff4af
         ;   XREF to: 004ff473 (UNCONDITIONAL_JUMP)  ; LAB_004ff473
@@ -3507,8 +3507,8 @@ section .text
     PUSH ESI                            ; 0050173c
     MOV ECX,dword ptr [0x005be368]      ; 0050173d | g_CDemonSet_PTR_005be368
     PUSH ECX                            ; 00501743 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e550      ; 00501744
-        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e550()
+    CALL core_set.cpp_CDemonSet_FUN_0050e550 ; 00501744
+        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e550(CDemonSet * this_ptr, int param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00501749
     JMP 0x004ff36b                      ; 0050174c
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -4611,8 +4611,8 @@ section .text
     PUSH EDI                            ; 005024de
     MOV EAX,[0x005be368]                ; 005024df | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 005024e4 | g_CDemonSet_01e57284
-    CALL core_setdir.cpp_FUN_005125a0   ; 005024e5
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
+    CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 005024e5
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
     ADD ESP,0xc                         ; 005024ea
     MOV EDX,dword ptr [0x005be368]      ; 005024ed | g_CDemonSet_PTR_005be368
     MOV EAX,[0x005be220]                ; 005024f3 | DAT_005be220
@@ -5801,10 +5801,10 @@ section .text
     MOV EAX,0x58f414                    ; 00503349 | = "..\\core\\script.cpp"
     MOV EDX,0xad9                       ; 0050334e
     PUSH 0x58f427                       ; 00503353 | = "script selectWeapon() command - hell ..."
-    MOV [0x01cc4800],EAX                ; 00503358 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050335d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00503363
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00503358 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0050335d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00503363
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00503368
     LEA EAX,[ESP + 0x390c]              ; 0050336b
         ;   Label: LAB_0050336b

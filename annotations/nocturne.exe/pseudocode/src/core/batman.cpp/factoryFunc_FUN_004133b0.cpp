@@ -11,7 +11,7 @@ CBatman * __cdecl core_batman_cpp_factoryFunc_FUN_004133b0(void)
 {
   CBatman *pCVar1;
   
-  pCVar1 = (CBatman *)FUN_0056497c(0xbde0);
+  pCVar1 = operator_new(0xbde0);
   if (pCVar1 == (CBatman *)0x0) {
     return (CBatman *)0x0;
   }

@@ -20,7 +20,7 @@ void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(int 
   if (DAT_005b7624 == 8) {
     pbVar1 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar4) + start_x);
     for (; start_x <= end_x; start_x = start_x + 1) {
-      *pbVar1 = *(byte *)(*pbVar1 + 0x1bf5d20);
+      *pbVar1 = g_LightTable[8][*pbVar1];
       pbVar1 = pbVar1 + 1;
     }
   }

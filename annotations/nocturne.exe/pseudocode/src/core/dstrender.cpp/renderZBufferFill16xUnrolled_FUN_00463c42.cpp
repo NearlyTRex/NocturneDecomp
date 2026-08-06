@@ -35,7 +35,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42(
     puVar7 = (uint *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar1 * 4);
     iVar5 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                  (longlong)*(int *)(&DAT_01c00c80 + (iVar3 + 1) * 4)) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar9 = (pSVar8->base).depth_current;
     while (iVar4 = iVar3 + -4, puVar6 = puVar7, 3 < iVar3) {
       *puVar7 = uVar9 >> 8;

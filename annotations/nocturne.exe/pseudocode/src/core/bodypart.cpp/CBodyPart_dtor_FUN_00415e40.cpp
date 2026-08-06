@@ -12,12 +12,12 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CBodyPart *thi
   CBox *pCVar1;
   SBodyPartFire *pSVar2;
   SBodyPartModel *pSVar3;
-  CBodyPart *pCVar4;
-  void *ptr;
+  CBodyPart *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBodyPartTypeInfo_0059a860);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBodyPartTypeInfo_0059a860);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable._ub = &g_CBodyPartVTable;
@@ -27,12 +27,12 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CBodyPart *thi
                      ((SBodyPartFire *)&pCVar1[-3].scrape_points[4].previous_position,0);
   pSVar3 = core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110
                      ((SBodyPartModel *)(pSVar2[-2].flame.base.create_event + 0xc),0);
-  pCVar4 = (CBodyPart *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pSVar3[-2].model.model_name + 0x10),1);
+  ptr = (CBodyPart *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pSVar3[-2].model.model_name + 0x10),1);
   if ((flags & 2) == 0) {
-    return pCVar4;
+    return ptr;
   }
-  FUN_00564494(pCVar4);
-  return pCVar4;
+  operator_delete(ptr);
+  return ptr;
 }

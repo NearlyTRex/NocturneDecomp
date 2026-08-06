@@ -15,11 +15,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0058432a
 ;   TerminatedCString s_CGame_displayBitmap_trie_0058433b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -67,10 +67,10 @@ section .text
     MOV EDX,0x58432a                    ; 004a5794 | = "..\\core\\game.cpp"
     MOV ECX,0xfcf                       ; 004a5799
     PUSH 0x58433b                       ; 004a579e | = "CGame::displayBitmap - tried to queue..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004a57a3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004a57a9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004a57af
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004a57a3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004a57a9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004a57af
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 004a57b4
     JMP 0x004a5754                      ; 004a57b7
         ;   XREF to: 004a5754 (UNCONDITIONAL_JUMP)  ; LAB_004a5754

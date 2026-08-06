@@ -15,7 +15,9 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor 
   float fVar2;
   float fVar3;
   int iVar4;
-  uint uVar5;
+  char *pcVar5;
+  uint uVar6;
+  double dVar7;
   char local_8c [100];
   float local_28;
   float local_24;
@@ -78,9 +80,10 @@ LAB_0040dc41:
       xxx_unk_c_FUN_004940d0();
     }
   }
-  core_ground_cpp_getGroundTypeCode_FUN_004b11b0(ground_type);
-  _sprintf(local_8c,"footstep-%s-!-%s-?.wav @ %f");
-  uVar5 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
+  dVar7 = (double)volume;
+  pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(ground_type);
+  _sprintf(local_8c,"footstep-%s-!-%s-?.wav @ %f",this_ptr->footstep_sound_code,pcVar5,dVar7);
+  uVar6 = core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                     (g_CSound_PTR_005bed68,this_ptr,local_8c,position);
-  return uVar5;
+  return uVar6;
 }

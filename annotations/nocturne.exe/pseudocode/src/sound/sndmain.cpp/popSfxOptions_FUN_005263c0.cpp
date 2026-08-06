@@ -15,8 +15,8 @@ void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005263c0(void)
   if (-1 < _DAT_02dc1b74) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-  g_INT_01cc4804 = 0xd03;
-  core_main_c_FUN_004c8440("popSfxOptions - stack empty");
+  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+  g_CurrentLineNumber = 3331;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("popSfxOptions - stack empty");
   return;
 }

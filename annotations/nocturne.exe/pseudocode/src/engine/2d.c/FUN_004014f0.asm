@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_2d_c_FUN_004014f0(byte *param_1)
+; int __cdecl engine_2d_c_FUN_004014f0(byte *param_1)
 ;
+; Parameters:
+; byte *           Stack[0x4]:4   param_1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006afa3c
+;   int[256] g_FontCharWidths
 ;
 ; *****************************************************************************
 
@@ -34,7 +36,7 @@ section .text
     XOR ECX,ECX                         ; 0040150e
     MOV CL,byte ptr [EDX]               ; 00401510
     INC EDX                             ; 00401512
-    MOV EDI,dword ptr [ECX*0x4 + 0x6afa3c] ; 00401513 | DAT_006afa3c
+    MOV EDI,dword ptr [ECX*0x4 + 0x6afa3c] ; 00401513 | g_FontCharWidths
     INC EBX                             ; 0040151a
     ADD ESI,EDI                         ; 0040151b
     JMP 0x004014fe                      ; 0040151d

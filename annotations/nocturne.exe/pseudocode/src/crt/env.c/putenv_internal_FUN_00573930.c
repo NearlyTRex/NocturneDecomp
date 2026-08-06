@@ -16,17 +16,17 @@ int __cdecl putenv_internal(char *envstr)
   uint uVar3;
   LPCSTR lpName;
   BOOL BVar4;
-  void *pvVar5;
-  uint uVar6;
-  CHAR *pCVar7;
-  LPCSTR pCVar8;
-  char *pcVar9;
-  byte bVar10;
-  uint uVar11;
+  void *ptr;
+  uint uVar5;
+  CHAR *pCVar6;
+  LPCSTR pCVar7;
+  char *pcVar8;
+  byte bVar9;
+  uint uVar10;
   LPCSTR pCStack_18;
   
-  bVar10 = 0;
-  uVar11 = 1;
+  bVar9 = 0;
+  uVar10 = 1;
   pcVar1 = char_in_set(envstr,L'=');
   if (pcVar1 == (char *)0x0) {
     iVar2 = -1;
@@ -40,46 +40,46 @@ int __cdecl putenv_internal(char *envstr)
     if (lpName == (LPCSTR)0x0) {
       return -1;
     }
-    pCVar7 = envstr;
-    pCVar8 = lpName;
-    for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(uint *)pCVar8 = *(uint *)pCVar7;
-      pCVar7 = pCVar7 + (uint)bVar10 * -8 + 4;
-      pCVar8 = pCVar8 + (uint)bVar10 * -8 + 4;
+    pCVar6 = envstr;
+    pCVar7 = lpName;
+    for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(uint *)pCVar7 = *(uint *)pCVar6;
+      pCVar6 = pCVar6 + (uint)bVar9 * -8 + 4;
+      pCVar7 = pCVar7 + (uint)bVar9 * -8 + 4;
     }
-    for (uVar6 = uVar3 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pCVar8 = *pCVar7;
-      pCVar7 = pCVar7 + (uint)bVar10 * -2 + 1;
-      pCVar8 = pCVar8 + (uint)bVar10 * -2 + 1;
+    for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *pCVar7 = *pCVar6;
+      pCVar6 = pCVar6 + (uint)bVar9 * -2 + 1;
+      pCVar7 = pCVar7 + (uint)bVar9 * -2 + 1;
     }
     lpName[uVar3] = '\0';
-    uVar3 = FUN_00574000(pcVar1 + 1,uVar11);
+    uVar3 = FUN_00574000(pcVar1 + 1,uVar10);
     if (uVar3 == 0) {
       pCStack_18 = (LPCSTR)0x0;
     }
     else {
       pCStack_18 = malloc(uVar3 + 1);
       if (pCStack_18 == (char *)0x0) {
-        FUN_005638d0(lpName);
+        free(lpName);
         return -1;
       }
       pcVar1 = pcVar1 + 1;
-      pcVar9 = pCStack_18;
-      for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(uint *)pcVar9 = *(uint *)pcVar1;
-        pcVar1 = pcVar1 + (uint)bVar10 * -8 + 4;
-        pcVar9 = pcVar9 + (uint)bVar10 * -8 + 4;
+      pcVar8 = pCStack_18;
+      for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *(uint *)pcVar8 = *(uint *)pcVar1;
+        pcVar1 = pcVar1 + (uint)bVar9 * -8 + 4;
+        pcVar8 = pcVar8 + (uint)bVar9 * -8 + 4;
       }
-      for (uVar6 = uVar3 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar9 = *pcVar1;
-        pcVar1 = pcVar1 + (uint)bVar10 * -2 + 1;
-        pcVar9 = pcVar9 + (uint)bVar10 * -2 + 1;
+      for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *pcVar8 = *pcVar1;
+        pcVar1 = pcVar1 + (uint)bVar9 * -2 + 1;
+        pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
       }
       pCStack_18[uVar3] = '\0';
     }
     BVar4 = SetEnvironmentVariableA(lpName,pCStack_18);
-    FUN_005638d0(lpName);
-    FUN_005638d0(pCStack_18);
+    free(lpName);
+    free(pCStack_18);
     if (BVar4 == 0) {
       return -1;
     }
@@ -90,17 +90,17 @@ int __cdecl putenv_internal(char *envstr)
     iVar2 = 0;
     if (_DAT_02de54a8 != 0) {
       iVar2 = FUN_00574000(envstr);
-      pvVar5 = malloc((int)lpName * (iVar2 + 1));
-      if (pvVar5 == (void *)0x0) {
+      ptr = malloc((int)lpName * (iVar2 + 1));
+      if (ptr == (void *)0x0) {
         convertWindowsErrorToErrno(5);
         return -1;
       }
-      iVar2 = FUN_00574030(pvVar5,envstr,(iVar2 + 1) * 2);
+      iVar2 = FUN_00574030(ptr,envstr,(iVar2 + 1) * 2);
       if (iVar2 == -1) {
-        FUN_005638d0(pvVar5);
+        free(ptr);
         return -1;
       }
-      iVar2 = FUN_00574264(pvVar5);
+      iVar2 = FUN_00574264(ptr);
     }
   }
   return iVar2;

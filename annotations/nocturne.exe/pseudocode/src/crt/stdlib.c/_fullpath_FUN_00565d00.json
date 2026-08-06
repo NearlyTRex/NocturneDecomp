@@ -36,7 +36,7 @@
     {
       "addr": "004f7ae0",
       "from_addr": "004f7b12",
-      "name": "engine_pod.cpp_FUN_004f7ae0",
+      "name": "engine_pod.cpp_CPodFile_FUN_004f7ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,6 +70,11 @@
       "name": "crt_errno.c_setErrno_FUN_00568e80"
     },
     {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_free_FUN_005638d0"
+    },
+    {
       "addr": "005635b0",
       "is_variadic": false,
       "name": "crt_memory.c_malloc_FUN_005635b0"
@@ -78,11 +83,6 @@
       "addr": "00564520",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_00564520"
-    },
-    {
-      "addr": "005638d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
     },
     {
       "addr": "0056c5f0",
@@ -154,7 +154,7 @@
       {
         "call_addr": "004f7b12",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_004f7ae0",
+        "caller": "engine_pod.cpp_CPodFile_FUN_004f7ae0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +259,7 @@
       "line": 24,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "FUN_005638d0(unaff_EBP);",
+      "text": "free(unaff_EBP);",
       "type": "unaffected_reg"
     }
   ]

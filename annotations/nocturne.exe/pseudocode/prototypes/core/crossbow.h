@@ -31,21 +31,21 @@ int __cdecl CCrossbow::renderOpaque(CCrossbow *this_ptr);
 // Address: 0043d120
 int __cdecl CCrossbow::renderTransparent(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043d150
+// Original: core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043d150
 // Address: 0043d150
-undefined4 * FUN_0043d150(int param_1,undefined4 *param_2);
+CVector3f * __cdecl CCrossbow::getMuzzlePoint(CCrossbow *this_ptr,CVector3f *out_point);
 
-// Original: core_crossbow.cpp_FUN_0043d1c0
+// Original: core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
 // Address: 0043d1c0
-undefined4 FUN_0043d1c0(CCharacter *param_1);
+int __cdecl CCrossbow::fire(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043d810
 // Address: 0043d810
 float __cdecl CCrossbow::getCurFrame(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043d840
+// Original: core_crossbow.cpp_CCrossbow_getDamage_FUN_0043d840
 // Address: 0043d840
-float FUN_0043d840(void);
+float __cdecl CCrossbow::getDamage(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_dtor_FUN_0043d870
 // Address: 0043d870

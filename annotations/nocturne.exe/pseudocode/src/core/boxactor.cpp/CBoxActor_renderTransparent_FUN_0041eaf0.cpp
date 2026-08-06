@@ -24,7 +24,8 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041eaf0(CBoxActor
             ((CDemonRenderer *)PTR_DAT_005ae700,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_20);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0xffff);
   if (this_ptr->dont_use_normals != 0) {
     g_CDemonSet_PTR_005be368->disable_directional_lighting = 1;
   }

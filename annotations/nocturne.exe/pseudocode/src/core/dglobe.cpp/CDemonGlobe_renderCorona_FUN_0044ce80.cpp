@@ -37,7 +37,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(CDemonGlobe *
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             ((CDemonRenderer *)PTR_DAT_005ae700,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_18);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
+            (g_CDemonRenderer_PTR_005ae704,&local_18);
   local_24.x = local_18.x - (this_ptr->position).x;
   local_24.y = local_18.y - (this_ptr->position).y;
   local_24.z = local_18.z - (this_ptr->position).z;

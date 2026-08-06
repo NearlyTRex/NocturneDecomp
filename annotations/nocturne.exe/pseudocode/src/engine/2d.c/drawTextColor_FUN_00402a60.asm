@@ -17,8 +17,8 @@
 ;   engine_2d.c_drawTextRightAlignedColor_FUN_00402b60 at 00402b82
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005acaa4
-;   undefined4 DAT_005acaa8
+;   undefined4 g_ResolutionTable[7].width
+;   undefined4 g_ResolutionTable[7].height
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;
@@ -37,11 +37,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00402a63
     MOV EAX,dword ptr [ESP + 0x14]      ; 00402a67
     MOV ECX,dword ptr [ESP + 0x18]      ; 00402a6b
-    CMP dword ptr [0x005acaa4],0x0      ; 00402a6f | DAT_005acaa4
+    CMP dword ptr [0x005acaa4],0x0      ; 00402a6f | g_ResolutionTable[7].width
     JZ 0x00402a9e                       ; 00402a76
         ;   XREF to: 00402a9e (CONDITIONAL_JUMP)  ; LAB_00402a9e
     PUSH EBX                            ; 00402a78
-    MOV EBX,dword ptr [0x005acaa8]      ; 00402a79 | DAT_005acaa8
+    MOV EBX,dword ptr [0x005acaa8]      ; 00402a79 | g_ResolutionTable[7].height
     PUSH EBX                            ; 00402a7f
     MOV ESI,dword ptr [0x01c00c64]      ; 00402a80 | DAT_01c00c64
     PUSH ESI                            ; 00402a86
@@ -58,7 +58,7 @@ section .text
     POP EDI                             ; 00402a9b
     POP ESI                             ; 00402a9c
     RET                                 ; 00402a9d
-    MOV ESI,dword ptr [0x005acaa8]      ; 00402a9e | DAT_005acaa8
+    MOV ESI,dword ptr [0x005acaa8]      ; 00402a9e | g_ResolutionTable[7].height
         ;   Label: LAB_00402a9e
     PUSH ESI                            ; 00402aa4
     MOV EDI,dword ptr [0x01c00c64]      ; 00402aa5 | DAT_01c00c64

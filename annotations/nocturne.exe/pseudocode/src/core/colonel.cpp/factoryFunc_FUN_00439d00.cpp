@@ -11,7 +11,7 @@ CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_00439d00(void)
 {
   CColonel *pCVar1;
   
-  pCVar1 = (CColonel *)FUN_0056497c(0x1fa54);
+  pCVar1 = operator_new(0x1fa54);
   if (pCVar1 == (CColonel *)0x0) {
     return (CColonel *)0x0;
   }

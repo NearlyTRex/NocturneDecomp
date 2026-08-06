@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,20 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 692,
+    "complexity_score": 708,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 272,
-    "suspect_count": 40,
+    "pseudocode_lines": 273,
+    "suspect_count": 41,
     "suspect_types": [
       "raw_address_constant",
+      "raw_address_pointer_store",
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1033
+    "total_lines": 1034
   },
   "cross_references": [
     {
@@ -198,7 +199,7 @@
     {
       "addr": "005125a0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_005125a0"
+      "name": "core_setdir.cpp_CDemonSet_FUN_005125a0"
     }
   ],
   "globals": [
@@ -780,11 +781,19 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 268,
+      "match": "*(CDemonActor **)(0x01E56DA0",
+      "severity": "moderate",
+      "text": "(g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 267,
+      "line": 268,
       "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "core_setdir_cpp_FUN_005125a0(g_CDemonSet_PTR_005be368,*(uint *)(0x01E56DA0 + 0xc),1);",
+      "text": "(g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);",
       "type": "raw_address_constant"
     }
   ]

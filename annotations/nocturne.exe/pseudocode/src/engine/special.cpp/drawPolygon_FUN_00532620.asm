@@ -13,7 +13,7 @@
 ;   engine_prim.c_FUN_004f9dd0 at 004f9faa
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fafd9
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005329c0 at 00532a5d
-;   engine_texture.cpp_FUN_00545700 at 005457e4
+;   engine_texture.cpp_CTextureCache_FUN_00545700 at 005457e4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c02594

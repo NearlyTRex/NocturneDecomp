@@ -23,13 +23,13 @@
 ;   TerminatedCString s_Error_reading_keyframed_0057c9df
 ;   TerminatedCString s_core_dmodel_cpp_0057ca02
 ;   TerminatedCString s_KFM_file_is_invalid_vers_0057ca15
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_allocate_FUN_004533e0
 ;   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_fread_FUN_005636d0
 ;
@@ -67,10 +67,10 @@ section .text
     MOV EAX,0x57ca02                    ; 004527d2 | = "..\\core\\dmodel.cpp"
     MOV EDX,0xed                        ; 004527d7
     PUSH 0x57ca15                       ; 004527dc | = "KFM file is invalid version %d"
-    MOV [0x01cc4800],EAX                ; 004527e1 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004527e6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004527ec
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004527e1 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004527e6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004527ec
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004527f1
     XOR EDI,EDI                         ; 004527f4
         ;   Label: LAB_004527f4
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_00452819
     MOV ECX,0xe7                        ; 0045281e
     PUSH 0x57c9df                       ; 00452823 | = "Error reading keyframed model file"
-    MOV dword ptr [0x01cc4800],EDX      ; 00452828 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0045282e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00452834
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00452828 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0045282e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00452834
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00452839
     JMP 0x004527c6                      ; 0045283c
         ;   XREF to: 004527c6 (UNCONDITIONAL_JUMP)  ; LAB_004527c6

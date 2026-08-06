@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -60,54 +60,6 @@
         "column": 46,
         "line": 53,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 70,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 963,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 1008,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 1028,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 1057,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 1081,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 1122,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 1129,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d8cd0'"
       }
     ],
     "success": false,
@@ -116,12 +68,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1993,
-    "complexity_score": 2409,
+    "complexity_score": 2413,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1124,
+    "pseudocode_lines": 1128,
     "suspect_count": 125,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -132,13 +84,13 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3117
+    "total_lines": 3121
   },
   "cross_references": [
     {
       "addr": "0040f1a0",
       "from_addr": "0040f1c4",
-      "name": "core_ammobox.cpp_FUN_0040f1a0",
+      "name": "core_ammobox.cpp_CAmmoBox_FUN_0040f1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,7 +132,7 @@
     {
       "addr": "004c0640",
       "from_addr": "004c06f7",
-      "name": "core_inv.cpp_FUN_004c0640",
+      "name": "core_inv.cpp_CInventory_FUN_004c0640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -265,23 +217,23 @@
       "name": "core_menu.cpp_getKeyDisplayName_FUN_004d2900"
     },
     {
+      "addr": "004d8cd0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_FUN_004d8cd0"
+    },
+    {
       "addr": "004d9720",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720"
     },
     {
-      "addr": "004d8cd0",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d8cd0"
-    },
-    {
       "addr": "004d9110",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d9110"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -774,7 +726,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 999,
+      "line": 1000,
       "match": "2.8026e-43",
       "severity": "mild",
       "text": "pCVar5[4].location.position.x = 2.8026e-43;",
@@ -782,7 +734,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 1070,
+      "line": 1072,
       "match": "2.8026e-43",
       "severity": "mild",
       "text": "pCVar5[4].location.position.x = 2.8026e-43;",
@@ -1142,7 +1094,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 960,
+      "line": 961,
       "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
       "text": "pCVar10 = (CInventory *)&pCVar10->owner;",
@@ -1150,7 +1102,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 978,
+      "line": 979,
       "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
       "text": "pCVar10 = (CInventory *)&pCVar10->owner;",
@@ -1158,7 +1110,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1008,
+      "line": 1010,
       "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
       "text": "pCVar10 = (CInventory *)&pCVar10->owner;",
@@ -1166,7 +1118,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_20->owner`). Replace `pCStack_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1079,
+      "line": 1082,
       "match": "pCStack_20 = (T *)&pCStack_20->FIELD",
       "severity": "moderate",
       "text": "pCStack_20 = (CInventory *)&pCStack_20->owner;",
@@ -1174,7 +1126,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_18->owner`). Replace `pCStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1110,
+      "line": 1113,
       "match": "pCStack_18 = (T *)&pCStack_18->FIELD",
       "severity": "moderate",
       "text": "pCStack_18 = (CInventory *)&pCStack_18->owner;",

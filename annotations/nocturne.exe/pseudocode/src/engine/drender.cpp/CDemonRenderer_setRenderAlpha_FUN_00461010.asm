@@ -14,10 +14,10 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041eaf0 at 0041eb70
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_00421540 at 00421655
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c5a9
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 0042710d
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425dc6
-;   core_charactr.cpp_FUN_004270e0 at 0042710d
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437df8
-;   core_curtain.cpp_FUN_0043f330 at 0043f3ae
+;   core_curtain.cpp_CCurtain_FUN_0043f330 at 0043f3ae
 ;   ... and 32 more
 ;
 ; Called Functions:

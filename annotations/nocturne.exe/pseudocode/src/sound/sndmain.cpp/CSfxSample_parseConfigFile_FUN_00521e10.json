@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -72,48 +72,6 @@
         "column": 15,
         "line": 94,
         "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "format_error",
-        "column": 43,
-        "line": 106,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 111,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 118,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "format_error",
-        "column": 45,
-        "line": 127,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 132,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 140,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 145,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -122,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 252,
+    "complexity_score": 241,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 197,
+    "pseudocode_lines": 186,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 725
+    "total_lines": 714
   },
   "cross_references": [
     {
@@ -179,7 +137,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "0056626c",
@@ -203,7 +161,7 @@
     },
     {
       "addr": "00566b5c",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
     },
     {
@@ -480,13 +438,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -800,63 +758,14 @@
   "static_analysis": {
     "analyzed_file": "CSfxSample_parseConfigFile_FUN_00521e10.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 8,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 15,
-          "line": 106,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 17,
-          "line": 127,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 19,
-          "line": 145,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 21,
-          "line": 147,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 23,
-          "line": 172,
-          "message": "sscanf format string requires 1 parameter but only 0 are given.",
-          "severity": "error"
-        },
         {
           "check_id": "nullPointer",
           "column": 60,
           "line": 90,
           "message": "Possible null pointer dereference: pcVar8",
           "severity": "warning"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 19,
-          "line": 161,
-          "message": "Uninitialized variable: local_470",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 21,
-          "line": 180,
-          "message": "Uninitialized variable: local_34",
-          "severity": "error"
         }
       ],
       "error": null
@@ -903,22 +812,6 @@
       "severity": "major",
       "text": "while ((local_46c < pcVar8 && (((&DAT_005c168c)[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {",
       "type": "static_null_pointer"
-    },
-    {
-      "description": "Uninitialized variable: local_470",
-      "line": 161,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (local_470 < (float)0.001) {",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_34",
-      "line": 180,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (local_34 < 1) {",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

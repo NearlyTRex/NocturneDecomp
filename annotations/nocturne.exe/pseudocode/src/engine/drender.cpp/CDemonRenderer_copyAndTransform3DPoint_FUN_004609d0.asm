@@ -14,7 +14,7 @@
 ; XREF[3]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 at 0046a272
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00 at 00468d90
-;   core_setdir.cpp_FUN_00513720 at 005137f0
+;   core_setdir.cpp_CDemonSet_FUN_00513720 at 005137f0
 ;
 ; Called Functions:
 ;   engine_3d.c_processCameraRelativePoint_FUN_004044d0

@@ -27,7 +27,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -85,10 +85,10 @@ section .text
     MOV EBX,0x5882ea                    ; 004cea26 | = "..\\engine\\matrix.c"
     MOV ESI,0x569                       ; 004cea2b
     PUSH 0x5882fd                       ; 004cea30 | = "3D Window unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cea35 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cea3b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004cea41
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004cea35 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004cea3b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004cea41
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004cea46
     POP EBX                             ; 004cea49
     POP ESI                             ; 004cea4a

@@ -19,9 +19,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
   
   bVar5 = 0;
   if (this_ptr->scene_open_flag == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    g_INT_01cc4804 = 0x43b;
-    core_main_c_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 1083;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
   }
   _DAT_0140efa8 = _DAT_0140efa8 + 1;
   if (_DAT_0140efa8 == 1) {
@@ -29,7 +29,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
     _DAT_0140efb0 = _DAT_01c02594;
     puVar3 = (uint *)&DAT_01bd2fa0;
     puVar4 = (uint *)&DAT_0140efb4;
-    for (uVar1 = DAT_005b7620 & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
+    for (uVar1 = g_WindowHeight & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
       *puVar4 = *puVar3;
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;

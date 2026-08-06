@@ -11,7 +11,7 @@ CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_00535090(void)
 {
   CStranger *pCVar1;
   
-  pCVar1 = (CStranger *)FUN_0056497c(0x1fcd8);
+  pCVar1 = operator_new(0x1fcd8);
   if (pCVar1 == (CStranger *)0x0) {
     return (CStranger *)0x0;
   }

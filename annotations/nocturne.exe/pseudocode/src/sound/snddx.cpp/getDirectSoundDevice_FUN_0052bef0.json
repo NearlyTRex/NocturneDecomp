@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 218,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 71,
     "suspect_count": 13,
     "suspect_types": [
       "raw_address_constant",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 268
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -165,7 +165,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -395,7 +395,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 53,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_005c3908",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_02dc9220",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_02dc93a0",
       "severity": "mild",
       "text": "return (CDirectSoundDevice *)&DAT_02dc93a0;",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 70,
       "match": "DAT_02dc93a0",
       "severity": "mild",
       "text": "sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0);",

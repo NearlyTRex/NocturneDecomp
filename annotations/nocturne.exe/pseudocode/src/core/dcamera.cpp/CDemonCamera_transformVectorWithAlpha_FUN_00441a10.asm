@@ -18,7 +18,7 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c6eb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c039e8
 ;   undefined4 DAT_01c039ec
@@ -90,7 +90,7 @@ section .text
     ADD EAX,EBX                         ; 00441a92
     ADC EDX,ECX                         ; 00441a94
     SHRD EAX,EDX,0x10                   ; 00441a96
-    MOV EDX,dword ptr [0x005ae704]      ; 00441a9a | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00441a9a | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00441aa0 | DAT_01b4d738
     MOV dword ptr [ESP + 0xc],EAX       ; 00441aa1
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441aa5

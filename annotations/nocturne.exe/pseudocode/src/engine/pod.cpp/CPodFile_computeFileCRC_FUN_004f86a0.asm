@@ -20,13 +20,13 @@
 ;   TerminatedCString s_rb_0058db5b
 ;   TerminatedCString s_engine_pod_cpp_0058db5e
 ;   TerminatedCString s_CPodFile_computeOneFileC_0058db70
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -55,10 +55,10 @@ section .text
         ;   Label: LAB_004f86bb
     MOV ESI,0x221                       ; 004f86c0
     PUSH 0x58db2f                       ; 004f86c5 | = "CPodFile::computeOneFileCRC - invalid..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004f86ca | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f86d0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f86d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f86ca | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004f86d0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f86d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f86db
     PUSH 0x58db5b                       ; 004f86de | = "rb"
         ;   Label: LAB_004f86de
@@ -75,10 +75,10 @@ section .text
     MOV EBP,0x58db5e                    ; 004f86f7 | = "..\\engine\\pod.cpp"
     MOV EAX,0x226                       ; 004f86fc
     PUSH 0x58db70                       ; 004f8701 | = "CPodFile::computeOneFileCRC - can't o..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004f8706 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f870c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f8711
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004f8706 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004f870c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f8711
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004f8716
     LEA ESI,[EDI*0x4 + 0x0]             ; 004f8719
         ;   Label: LAB_004f8719

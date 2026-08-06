@@ -24,12 +24,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_box_cpp_00579655
 ;   TerminatedCString s_CBox_setupN_Too_many_scr_00579665
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_updateTransform_FUN_0041aaa0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -192,10 +192,10 @@ section .text
         ;   Label: LAB_0041aa70
     MOV ECX,0x80                        ; 0041aa75
     PUSH 0x579665                       ; 0041aa7a | = "CBox::setupN - Too many scrape points"
-    MOV dword ptr [0x01cc4800],EDX      ; 0041aa7f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0041aa85 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0041aa8b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0041aa7f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0041aa85 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0041aa8b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0041aa90
     JMP 0x0041a928                      ; 0041aa93
         ;   XREF to: 0041a928 (UNCONDITIONAL_JUMP)  ; LAB_0041a928

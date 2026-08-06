@@ -246,24 +246,24 @@ LAB_004f0ce0:
         iVar2 = iVar2 - *(int *)(&DAT_005be0e8 + uVar6 * 4);
         iVar3 = iVar3 - *(int *)(&DAT_005be10c + uVar6 * 4);
         if (iVar2 < 0) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-          g_INT_01cc4804 = 0x547;
-          core_main_c_FUN_004c8440("Out of bounds1!");
+          g_CurrentFilename = "..\\core\\path.cpp";
+          g_CurrentLineNumber = 1351;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Out of bounds1!");
         }
         if (iVar3 < 0) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-          g_INT_01cc4804 = 0x548;
-          core_main_c_FUN_004c8440("Out of bounds2!");
+          g_CurrentFilename = "..\\core\\path.cpp";
+          g_CurrentLineNumber = 1352;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Out of bounds2!");
         }
         if (99 < iVar2) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-          g_INT_01cc4804 = 0x549;
-          core_main_c_FUN_004c8440("Out of bounds3!");
+          g_CurrentFilename = "..\\core\\path.cpp";
+          g_CurrentLineNumber = 1353;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Out of bounds3!");
         }
         if (99 < iVar3) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-          g_INT_01cc4804 = 0x54a;
-          core_main_c_FUN_004c8440("Out of bounds4!");
+          g_CurrentFilename = "..\\core\\path.cpp";
+          g_CurrentLineNumber = 1354;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Out of bounds4!");
         }
         uVar5 = uVar6;
       } while ((iVar2 != _DAT_01e3161c) || (iVar3 != _DAT_01e31620));

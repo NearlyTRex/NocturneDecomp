@@ -11,7 +11,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004b9ac0(void)
 {
   CHighPriestOfGardath *pCVar1;
   
-  pCVar1 = (CHighPriestOfGardath *)FUN_0056497c(0x1f5d4);
+  pCVar1 = operator_new(0x1f5d4);
   if (pCVar1 == (CHighPriestOfGardath *)0x0) {
     return (CHighPriestOfGardath *)0x0;
   }

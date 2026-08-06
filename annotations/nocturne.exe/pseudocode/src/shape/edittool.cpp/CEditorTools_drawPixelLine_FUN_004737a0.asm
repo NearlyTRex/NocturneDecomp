@@ -15,8 +15,8 @@
 ;   shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004739e0 at 00473a46
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
@@ -43,7 +43,7 @@ section .text
     TEST EDX,EDX                        ; 004737b3
     JL 0x004737c3                       ; 004737b5
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
-    CMP EBX,dword ptr [0x005b761c]      ; 004737b7 | DAT_005b761c
+    CMP EBX,dword ptr [0x005b761c]      ; 004737b7 | g_WindowWidth
     JL 0x0047384d                       ; 004737bd
         ;   XREF to: 0047384d (CONDITIONAL_JUMP)  ; LAB_0047384d
     MOV ESI,dword ptr [ESP + 0x24]      ; 004737c3
@@ -68,7 +68,7 @@ section .text
     TEST EDI,EDI                        ; 004737f2
     JL 0x00473802                       ; 004737f4
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EBP,dword ptr [0x005b761c]      ; 004737f6 | DAT_005b761c
+    CMP EBP,dword ptr [0x005b761c]      ; 004737f6 | g_WindowWidth
     JL 0x0047389c                       ; 004737fc
         ;   XREF to: 0047389c (CONDITIONAL_JUMP)  ; LAB_0047389c
     TEST ESI,ESI                        ; 00473802
@@ -78,7 +78,7 @@ section .text
     TEST EDI,EDI                        ; 00473806
     JL 0x00473816                       ; 00473808
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
-    CMP ESI,dword ptr [0x005b761c]      ; 0047380a | DAT_005b761c
+    CMP ESI,dword ptr [0x005b761c]      ; 0047380a | g_WindowWidth
     JL 0x004738e7                       ; 00473810
         ;   XREF to: 004738e7 (CONDITIONAL_JUMP)  ; LAB_004738e7
     TEST EBP,EBP                        ; 00473816
@@ -88,7 +88,7 @@ section .text
     TEST EBX,EBX                        ; 0047381a
     JL 0x0047382a                       ; 0047381c
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBP,dword ptr [0x005b761c]      ; 0047381e | DAT_005b761c
+    CMP EBP,dword ptr [0x005b761c]      ; 0047381e | g_WindowWidth
     JL 0x00473932                       ; 00473824
         ;   XREF to: 00473932 (CONDITIONAL_JUMP)  ; LAB_00473932
     TEST ESI,ESI                        ; 0047382a
@@ -98,7 +98,7 @@ section .text
     TEST EBX,EBX                        ; 0047382e
     JL 0x0047383e                       ; 00473830
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
-    CMP ESI,dword ptr [0x005b761c]      ; 00473832 | DAT_005b761c
+    CMP ESI,dword ptr [0x005b761c]      ; 00473832 | g_WindowWidth
     JL 0x0047397d                       ; 00473838
         ;   XREF to: 0047397d (CONDITIONAL_JUMP)  ; LAB_0047397d
     MOV ECX,dword ptr [ESP + 0x24]      ; 0047383e
@@ -111,7 +111,7 @@ section .text
     MOV dword ptr [ESP + 0x24],ECX      ; 00473847
     JMP 0x004737e5                      ; 0047384b
         ;   XREF to: 004737e5 (UNCONDITIONAL_JUMP)  ; LAB_004737e5
-    CMP EDX,dword ptr [0x005b7620]      ; 0047384d | DAT_005b7620
+    CMP EDX,dword ptr [0x005b7620]      ; 0047384d | g_WindowHeight
         ;   Label: LAB_0047384d
     JGE 0x004737c3                      ; 00473853
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
@@ -136,7 +136,7 @@ section .text
     ADD ESP,0x8                         ; 00473894
     JMP 0x004737c3                      ; 00473897
         ;   XREF to: 004737c3 (UNCONDITIONAL_JUMP)  ; LAB_004737c3
-    CMP EDI,dword ptr [0x005b7620]      ; 0047389c | DAT_005b7620
+    CMP EDI,dword ptr [0x005b7620]      ; 0047389c | g_WindowHeight
         ;   Label: LAB_0047389c
     JGE 0x00473802                      ; 004738a2
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
@@ -159,7 +159,7 @@ section .text
     ADD ESP,0x8                         ; 004738df
     JMP 0x00473802                      ; 004738e2
         ;   XREF to: 00473802 (UNCONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EDI,dword ptr [0x005b7620]      ; 004738e7 | DAT_005b7620
+    CMP EDI,dword ptr [0x005b7620]      ; 004738e7 | g_WindowHeight
         ;   Label: LAB_004738e7
     JGE 0x00473816                      ; 004738ed
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
@@ -182,7 +182,7 @@ section .text
     ADD ESP,0x8                         ; 0047392a
     JMP 0x00473816                      ; 0047392d
         ;   XREF to: 00473816 (UNCONDITIONAL_JUMP)  ; LAB_00473816
-    CMP EBX,dword ptr [0x005b7620]      ; 00473932 | DAT_005b7620
+    CMP EBX,dword ptr [0x005b7620]      ; 00473932 | g_WindowHeight
         ;   Label: LAB_00473932
     JGE 0x0047382a                      ; 00473938
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
@@ -205,7 +205,7 @@ section .text
     ADD ESP,0x8                         ; 00473975
     JMP 0x0047382a                      ; 00473978
         ;   XREF to: 0047382a (UNCONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBX,dword ptr [0x005b7620]      ; 0047397d | DAT_005b7620
+    CMP EBX,dword ptr [0x005b7620]      ; 0047397d | g_WindowHeight
         ;   Label: LAB_0047397d
     JGE 0x0047383e                      ; 00473983
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e

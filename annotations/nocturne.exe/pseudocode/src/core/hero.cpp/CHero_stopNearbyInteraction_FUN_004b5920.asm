@@ -7,8 +7,8 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_stranger.cpp_CStranger_FUN_00535900 at 00536e08
 ;   core_stranger.cpp_CStranger_processDamage_FUN_0053e860 at 0053e894
-;   core_stranger.cpp_FUN_00535900 at 00536e08
 ;
 ; *****************************************************************************
 

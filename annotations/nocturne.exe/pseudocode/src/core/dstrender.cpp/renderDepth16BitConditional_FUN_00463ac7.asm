@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01c00c84
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     ADD EBX,EAX                         ; 00463ae9
     MOV EAX,dword ptr [EDI + 0x28]      ; 00463aeb
     SUB EAX,dword ptr [ESI + 0x28]      ; 00463aee
-    IMUL dword ptr [ECX*0x4 + 0x1c00c84] ; 00463af1 | DAT_01c00c84
+    IMUL dword ptr [ECX*0x4 + 0x1c00c84] ; 00463af1 | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 00463af8
     MOV EAX,ESI                         ; 00463afb
         ;   Label: LAB_00463afb

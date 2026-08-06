@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,25 +57,13 @@
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 66,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 7,
-        "line": 84,
+        "line": 85,
         "message": "no matching function for call to 'engine_drender_cpp_FUN_00460d10'"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_0059c038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
         "line": 90,
         "message": "use of undeclared identifier '_DAT_0059c038'"
       },
@@ -87,33 +75,45 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 39,
+        "line": 92,
+        "message": "use of undeclared identifier '_DAT_0059c038'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 37,
-        "line": 104,
+        "line": 105,
         "message": "use of undeclared identifier '_DAT_01c038f4'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 110,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 140,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 129,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 141,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 131,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0'"
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 142,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 133,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 147,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 148,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 477,
-    "complexity_score": 414,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
-    "suspect_count": 19,
+    "pseudocode_lines": 211,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_alignment_array",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 681
+    "total_lines": 688
   },
   "cross_references": [
     {
@@ -276,9 +276,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b9354",
@@ -878,14 +878,14 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 85,
+          "line": 86,
           "message": "Uninitialized variable: local_d4",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 36,
-          "line": 86,
+          "line": 87,
           "message": "Uninitialized variable: aiStack_d0",
           "severity": "error"
         }
@@ -913,127 +913,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_8c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_00460d10(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_e0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_98);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_98,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_74);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 147,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_f8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
+      "line": 161,
       "match": "DAT_005ae470",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 163,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "pSVar1 = DAT_005ae704->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 201,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 66,
+      "line": 67,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_8c.x = pCVar3->x;",
@@ -1041,7 +929,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 117,
+      "line": 119,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_e0.x = local_a4.x;",
@@ -1049,7 +937,7 @@
     },
     {
       "description": "Uninitialized variable: local_d4",
-      "line": 85,
+      "line": 86,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_d4;",
@@ -1057,7 +945,7 @@
     },
     {
       "description": "Uninitialized variable: aiStack_d0",
-      "line": 86,
+      "line": 87,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_58[(uint)bVar5 * -2] = aiStack_d0[(uint)bVar5 * -2];",

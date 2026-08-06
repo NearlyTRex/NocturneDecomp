@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042a150 at 0042a184
+;   core_charactr.cpp_CCharacter_FUN_0042a150 at 0042a184
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 at 004980ec
 ;   core_mobster.cpp_CMobster_process_FUN_004da790 at 004da7d9
 ;

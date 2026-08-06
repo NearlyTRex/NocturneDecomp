@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_going_into_background_00578f60
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01b4d738
@@ -93,7 +93,7 @@ section .text
     CALL core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 ; 004163a6
         ;   XREF to: 00416030 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030(CBodyPart * this_ptr, int render_flags)
     ADD ESP,0x8                         ; 004163ab
-    MOV EAX,[0x005ae704]                ; 004163ae | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004163ae | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004163ae
     PUSH EAX                            ; 004163b3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004163b4
@@ -126,7 +126,7 @@ section .text
     ADD ESP,0xc                         ; 00416409
     JMP 0x0041632f                      ; 0041640c
         ;   XREF to: 0041632f (UNCONDITIONAL_JUMP)  ; LAB_0041632f
-    MOV EBP,dword ptr [0x005ae704]      ; 00416411 | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 00416411 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00416411
     PUSH EBP                            ; 00416417 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00416418

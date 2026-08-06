@@ -30,6 +30,7 @@ int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004af2a0(CBloodPool *t
   _DAT_01c78c90 = 0;
   _DAT_01c78c94 = 0;
   _DAT_01c78c8c = 0xffff;
-  iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+  iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                    (g_CDemonRenderer_PTR_005ae704,0xffff);
   return iVar1;
 }

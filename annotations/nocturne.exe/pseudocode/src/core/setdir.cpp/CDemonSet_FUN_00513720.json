@@ -1,0 +1,435 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 34,
+        "message": "use of undeclared identifier 'DAT_020875f8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 37,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 39,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 41,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 36,
+        "line": 43,
+        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 198,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 11,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 198
+  },
+  "cross_references": [
+    {
+      "addr": "00513610",
+      "from_addr": "00513634",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00513720",
+    "address_range": [
+      [
+        "00513720",
+        "005138a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_FUN_00513720",
+    "signature": "void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00507c80",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80"
+    },
+    {
+      "addr": "004609d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0"
+    },
+    {
+      "addr": "00461090",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090"
+    },
+    {
+      "addr": "00460e70",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70"
+    },
+    {
+      "addr": "00460e40",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40"
+    },
+    {
+      "addr": "00460700",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070"
+    },
+    {
+      "addr": "00460c00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00"
+    },
+    {
+      "addr": "00460780",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780"
+    },
+    {
+      "addr": "0052eed4",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearZBufferNative_FUN_0052eed4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ae700",
+      "name": "PTR_DAT_005ae700",
+      "type": "void*",
+      "value": "01b4d738"
+    },
+    {
+      "addr": "005ae704",
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bd4260",
+      "name": "DAT_01bd4260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020875f8",
+      "name": "DAT_020875f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020875fc",
+      "name": "DAT_020875fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020875fd",
+      "name": "DAT_020875fd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020876f8",
+      "name": "DAT_020876f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00513634",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.794871794871795,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 5,
+      "COPY": 93,
+      "INT_ADD": 53,
+      "INT_AND": 72,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 61,
+      "INT_LESS": 3,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 3,
+      "INT_SLESS": 30,
+      "INT_SUB": 48,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 561
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_020875f8",
+      "severity": "mild",
+      "text": "local_18 = (uint *)&DAT_020875f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_01bd4260",
+      "severity": "mild",
+      "text": "puVar5 = *(uint **)(&DAT_01bd4260 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_1c) + offsetof(subfield)` equals the real array stride. Replace `local_1c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 58,
+      "match": "local_1c = (T *)&local_1c[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_1c = (CVector3f *)&local_1c[0x22].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_14) + offsetof(subfield)` equals the real array stride. Replace `local_14->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 60,
+      "match": "local_14 = (T *)&local_14[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_14 = (CVector3f *)&local_14[0x22].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0051382a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 92,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0051382a: MOVSD.REP ES:EDI,ESI  ; DAT_020875f8 | DAT_020875fc | DAT_020876f8",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

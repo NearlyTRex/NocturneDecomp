@@ -13,8 +13,8 @@
 ; XREF[144]:
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da03
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b36a
+;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410e8b
 ;   core_baron.cpp_CBaron_process_FUN_00410490 at 0041088a
-;   core_baron.cpp_FUN_00410cc0 at 00410e8b
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00413040 at 004130a3
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041271d
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414930 at 00414993

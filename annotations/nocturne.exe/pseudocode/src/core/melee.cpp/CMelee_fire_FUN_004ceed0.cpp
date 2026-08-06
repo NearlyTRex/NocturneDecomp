@@ -9,8 +9,8 @@
 int __cdecl core_melee_cpp_CMelee_fire_FUN_004ceed0(CMelee *this_ptr)
 
 {
-  g_CHAR_PTR_01cc4800 = "..\\core\\melee.cpp";
-  g_INT_01cc4804 = 0x8c;
-  core_main_c_FUN_004c8440("CMelee::fire - should never be called...");
+  g_CurrentFilename = "..\\core\\melee.cpp";
+  g_CurrentLineNumber = 140;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CMelee::fire - should never be called...");
   return 1;
 }

@@ -58,7 +58,8 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,fl
       iVar7 = *(int *)(iVar7 + 0x1cae0d8);
       iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x140))(iVar7);
       if ((iVar7 == 0) &&
-         (uVar6 = core_charactr_cpp_FUN_0042af70((CCharacter *)this_ptr,delta_time), uVar6 != 0)) {
+         (uVar6 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
+         uVar6 != 0)) {
         if (uVar6 < 2) {
           (this_ptr->base).player_input.action_state.walk = 1;
         }

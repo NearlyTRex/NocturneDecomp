@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[4]:
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 at 004cb26f
 ;   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40 at 004cba9b
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 at 004cb5b1
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0 at 004cb53c
-;   core_manpuz.cpp_FUN_004cb010 at 004cb26f
 ;
 ; *****************************************************************************
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcube_cpp_FUN_0044b660(char *param_1)
+; void __cdecl core_dcube_cpp_FUN_0044b660(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x68]:1  local_68
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0057bdef
 ;   TerminatedCString s_help_0057bdf2
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -73,7 +75,7 @@ section .text
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0044b6c3
     ADD dword ptr [EBP + -0x4],0xb      ; 0044b6c6
-    MOV EAX,[0x005b7620]                ; 0044b6ca | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0044b6ca | g_WindowHeight
     SUB EAX,0xb                         ; 0044b6cf
     CMP EAX,dword ptr [EBP + -0x4]      ; 0044b6d2
     JGE 0x0044b6f2                      ; 0044b6d5

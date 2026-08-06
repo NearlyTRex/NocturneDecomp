@@ -13,7 +13,7 @@
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518645
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   CGame g_CGame_01c775ec
@@ -21,7 +21,7 @@
 ;   undefined4 g_CGame_01c775ec.render_mode
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_0050d910
+;   core_set.cpp_CDemonSet_FUN_0050d910
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_FUN_00461720
 ;
@@ -39,7 +39,7 @@ section .text
     CMP dword ptr [EAX + 0x1f4],0x0     ; 0050dee0 | g_CGame_01c775ec.render_mode
     JZ 0x0050defc                       ; 0050dee7
         ;   XREF to: 0050defc (CONDITIONAL_JUMP)  ; LAB_0050defc
-    MOV EBX,dword ptr [0x005ae704]      ; 0050dee9 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0050dee9 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0050deef | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0050def0
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
@@ -54,7 +54,7 @@ section .text
     PUSH EDX                            ; 0050df05
     MOV ECX,dword ptr [ESP + 0x18]      ; 0050df06
     PUSH ECX                            ; 0050df0a
-    MOV EBX,dword ptr [0x005ae704]      ; 0050df0b | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0050df0b | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 0050df11 | DAT_01b4d738
     CALL engine_drender.cpp_FUN_00461720 ; 0050df12
         ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_00461720(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 0050df2d
     MOV EBP,dword ptr [ESP + 0x20]      ; 0050df2e
     PUSH EBP                            ; 0050df32
-    CALL core_set.cpp_FUN_0050d910      ; 0050df33
-        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050d910(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
+    CALL core_set.cpp_CDemonSet_FUN_0050d910 ; 0050df33
+        ;   XREF to: 0050d910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050d910(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
     ADD ESP,0x10                        ; 0050df38
     POP ESI                             ; 0050df3b
     POP EDI                             ; 0050df3c

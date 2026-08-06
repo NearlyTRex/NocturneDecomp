@@ -14,11 +14,11 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
@@ -114,10 +114,10 @@ section .text
         ;   Label: LAB_004772aa
     MOV ESI,0x8b                        ; 004772af
     PUSH 0x57e510                       ; 004772b4 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 004772b9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004772bf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004772c5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004772b9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004772bf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004772c5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004772ca
     JMP 0x00477239                      ; 004772cd
         ;   XREF to: 00477239 (UNCONDITIONAL_JUMP)  ; LAB_00477239

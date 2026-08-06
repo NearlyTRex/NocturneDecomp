@@ -18,16 +18,16 @@
 ;   TerminatedCString s_CFilterCache_getFilter_T_0057be71
 ;   TerminatedCString s_core_dfilter_cpp_0057be9c
 ;   TerminatedCString s_CFilterCache_getFilter_O_0057beb0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_ctor_FUN_0044beb0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_operator_new_FUN_0056497c
 ;   crt_string.c__strcmp_FUN_005649c0
-;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -92,8 +92,8 @@ section .text
     POP EDI                             ; 0044bd94
         ;   Label: LAB_0044bd94
     PUSH 0x4c                           ; 0044bd95
-    CALL crt_unknown.c_FUN_0056497c     ; 0044bd97
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0044bd97
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0044bd9c
     TEST EAX,EAX                        ; 0044bd9f
     JZ 0x0044bdac                       ; 0044bda1
@@ -111,10 +111,10 @@ section .text
     MOV ESI,0x57be9c                    ; 0044bdb9 | = "..\\core\\dfilter.cpp"
     MOV EDI,0x59                        ; 0044bdbe
     PUSH 0x57beb0                       ; 0044bdc3 | = "CFilterCache::getFilter - Out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 0044bdc8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0044bdce | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044bdd4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0044bdc8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0044bdce | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044bdd4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044bdd9
     LEA ESI,[EBX*0x4 + 0x0]             ; 0044bddc
         ;   Label: LAB_0044bddc
@@ -155,10 +155,10 @@ section .text
         ;   Label: LAB_0044be32
     MOV EAX,0x55                        ; 0044be37
     PUSH 0x57be71                       ; 0044be3c | = "CFilterCache::getFilter - Too many fi..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0044be41 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044be47 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044be4c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0044be41 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0044be47 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044be4c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044be51
     JMP 0x0044bd5f                      ; 0044be54
         ;   XREF to: 0044bd5f (UNCONDITIONAL_JUMP)  ; LAB_0044bd5f

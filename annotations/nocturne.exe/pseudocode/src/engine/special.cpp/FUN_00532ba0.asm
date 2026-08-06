@@ -10,8 +10,8 @@
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 00532c4c (CONDITIONAL_JUMP)  ; LAB_00532c4c
     PUSH ESI                            ; 00532bbf
     PUSH EBX                            ; 00532bc0
-    MOV EDX,dword ptr [0x005b761c]      ; 00532bc1 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 00532bc1 | g_WindowWidth
     MOV ESI,dword ptr [0x005b7624]      ; 00532bc7 | DAT_005b7624
     IMUL EDX,ESI                        ; 00532bcd
     MOV EAX,EDX                         ; 00532bd0
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00532bec
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
-    MOV EAX,[0x005b7620]                ; 00532bf1 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00532bf1 | g_WindowHeight
     MOV dword ptr [ESP + 0xc],EDI       ; 00532bf6
     TEST EAX,EAX                        ; 00532bfa
     JLE 0x00532c40                      ; 00532bfc
@@ -76,7 +76,7 @@ section .text
     POP EDI                             ; 00532c19
     ADD EDX,0x4                         ; 00532c1a
     MOV ECX,dword ptr [ESP + 0xc]       ; 00532c1d
-    MOV ESI,dword ptr [0x005b7620]      ; 00532c21 | DAT_005b7620
+    MOV ESI,dword ptr [0x005b7620]      ; 00532c21 | g_WindowHeight
     INC ECX                             ; 00532c27
     ADD EBX,EBP                         ; 00532c28
     MOV dword ptr [ESP + 0xc],ECX       ; 00532c2a

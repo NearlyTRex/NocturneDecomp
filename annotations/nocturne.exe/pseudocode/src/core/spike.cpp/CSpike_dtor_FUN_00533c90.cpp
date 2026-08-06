@@ -9,18 +9,18 @@
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_00533c90(CSpike *this_ptr,uint flags)
 
 {
-  CSpike *pCVar1;
-  void *ptr;
+  CSpike *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CSpikeTypeInfo_005a2410);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CSpikeTypeInfo_005a2410);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CSpike *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
+  ptr = (CSpike *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_00564494(pCVar1);
-  return pCVar1;
+  operator_delete(ptr);
+  return ptr;
 }

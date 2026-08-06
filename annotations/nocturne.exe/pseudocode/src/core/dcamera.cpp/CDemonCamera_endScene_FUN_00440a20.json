@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -90,6 +90,18 @@
   },
   "cross_references": [
     {
+      "addr": "00509a80",
+      "from_addr": "00509f95",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aba0",
+      "from_addr": "0050acde",
+      "name": "core_set.cpp_CDemonSet_FUN_0050aba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00507f80",
       "from_addr": "00508070",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
@@ -99,18 +111,6 @@
       "addr": "005088f0",
       "from_addr": "00508c15",
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_005088f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00509a80",
-      "from_addr": "00509f95",
-      "name": "core_set.cpp_FUN_00509a80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050aba0",
-      "from_addr": "0050acde",
-      "name": "core_set.cpp_FUN_0050aba0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -135,7 +135,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00481a28",
@@ -173,9 +173,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -197,13 +197,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -242,7 +242,7 @@
       {
         "call_addr": "00509f95",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,7 +253,7 @@
       {
         "call_addr": "0050acde",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050aba0",
+        "caller": "core_set.cpp_CDemonSet_FUN_0050aba0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

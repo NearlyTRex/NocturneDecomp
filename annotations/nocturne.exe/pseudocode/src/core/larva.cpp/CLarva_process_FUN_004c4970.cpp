@@ -73,7 +73,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float d
   float local_18;
   float local_14;
   
-  iVar6 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     return;
   }
@@ -151,7 +151,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float d
                      (&this_ptr_00->motion_controller);
   local_30 = pSVar7->state_index;
   local_28 = local_30;
-  iVar6 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar6 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if (local_28 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -305,7 +305,8 @@ LAB_004c4a74:
       fVar16 = (float10)fscale(fVar15 + fVar16,fVar14);
       local_68 = (double)fVar16;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.99,1.01);
-      _sprintf(&stack0xfffffe10,"slime.wav @%f *%f");
+      _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
+                 (double)(local_14 * (float)local_68));
       uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffe10);
       this_ptr->sfx_handles[1] = uVar10;
@@ -348,6 +349,6 @@ LAB_004c4a74:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

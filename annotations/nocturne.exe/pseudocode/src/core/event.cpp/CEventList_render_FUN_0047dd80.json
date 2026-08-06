@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,39 +57,39 @@
       },
       {
         "category": "format_error",
-        "column": 39,
-        "line": 33,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 42,
+        "line": 36,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 40,
-        "line": 44,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 43,
+        "line": 49,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 38,
-        "line": 55,
+        "column": 84,
+        "line": 62,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 27,
+        "line": 86,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 27,
-        "line": 78,
+        "line": 97,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
-        "column": 27,
-        "line": 89,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 28,
-        "line": 101,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 18,
+        "line": 112,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -98,15 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 99,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 99,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 365
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 379
   },
   "cross_references": [
     {
@@ -136,7 +139,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -331,5 +334,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar5->sfx_handles).entries[0].playback_position + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar5->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 107,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CEventList *)((pCVar5->events).names[8] + 0x1c);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

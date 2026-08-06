@@ -20,23 +20,23 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace 
   int iVar7;
   
   if (_DAT_01b7b748 == 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x8ea;
-    core_main_c_FUN_004c8440("CDemonRenderer::getPVS - PVS is not valid!");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 2282;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRenderer::getPVS - PVS is not valid!");
   }
   iVar5 = _DAT_01b7b744;
   *output_count = _DAT_01b7b744;
   piVar2 = (int *)realloc(*input_indices_array,iVar5 << 2);
   *input_indices_array = piVar2;
   if (*output_count < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x8f6;
-    core_main_c_FUN_004c8440("CDemonRaytrace::getPVS - no cubes rendered???");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 2294;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::getPVS - no cubes rendered???");
   }
   if (*input_indices_array == (int *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x8fa;
-    core_main_c_FUN_004c8440("CDemonRaytrace::getPVS - out of memory");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 2298;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::getPVS - out of memory");
   }
   iVar6 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
   iVar5 = 0;
@@ -53,9 +53,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace 
         } while (iVar4 < iVar6);
       }
       if (iVar6 <= iVar4) {
-        g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-        g_INT_01cc4804 = 0x907;
-        core_main_c_FUN_004c8440("CDemonRenderer::savePVS - can't find drawn cube!");
+        g_CurrentFilename = "..\\core\\dtrace.cpp";
+        g_CurrentLineNumber = 2311;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRenderer::savePVS - can't find drawn cube!");
       }
       iVar1 = _DAT_01b7b744;
       iVar5 = iVar5 + 1;

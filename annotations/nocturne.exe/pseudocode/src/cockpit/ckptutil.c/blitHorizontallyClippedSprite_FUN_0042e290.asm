@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
@@ -69,7 +69,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x34]      ; 0042e2dd
     MOV EBP,EAX                         ; 0042e2e1
     IMUL ECX,dword ptr [ESP + 0x48]     ; 0042e2e3
-    MOV EAX,[0x005b761c]                ; 0042e2e8 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0042e2e8 | g_WindowWidth
     MOV EDX,EAX                         ; 0042e2ed
     SAR EDX,0x1f                        ; 0042e2ef
     SUB EAX,EDX                         ; 0042e2f2

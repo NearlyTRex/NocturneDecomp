@@ -43,14 +43,14 @@
 ;   core_game.cpp_CGame_clearOverlay_FUN_0049aa90
 ;   core_game.cpp_CGame_fadeIn_FUN_004a3a50
 ;   core_game.cpp_CGame_FUN_0049f930
+;   core_game.cpp_CGame_FUN_004a3b90
+;   core_game.cpp_CGame_FUN_004a57c0
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10
 ;   core_game.cpp_CGame_processFudge_FUN_0049b260
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
-;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
-;   core_game.cpp_CGame_setGameRes_FUN_0049d870
 ;   ... and 42 more
 ;
 ; *****************************************************************************
@@ -258,8 +258,8 @@ section .text
     PUSH EBX                            ; 0049dd23
     MOV ESI,dword ptr [0x005be368]      ; 0049dd24 | g_CDemonSet_PTR_005be368
     PUSH ESI                            ; 0049dd2a | g_CDemonSet_01e57284
-    CALL core_setdir.cpp_FUN_005125a0   ; 0049dd2b
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
+    CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 0049dd2b
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
     ADD ESP,0xc                         ; 0049dd30
     MOV EDI,dword ptr [EBP + 0x14]      ; 0049dd33
         ;   Label: LAB_0049dd33
@@ -506,8 +506,8 @@ section .text
     ADD ESP,0x4                         ; 0049dfe1
     MOV EAX,[0x005be368]                ; 0049dfe4 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049dfe9 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050ad20      ; 0049dfea
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050ad20(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0050ad20 ; 0049dfea
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0049dfef
     PUSH 0x1c78424                      ; 0049dff2 | g_CPickList_01c78424
     MOV dword ptr [EDI + 0x1ec],0x3f800000 ; 0049dff7
@@ -571,8 +571,8 @@ section .text
     PUSH EBX                            ; 0049e0a4
     MOV EAX,[0x005be368]                ; 0049e0a5 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049e0aa | g_CDemonSet_01e57284
-    CALL core_setdir.cpp_FUN_005125a0   ; 0049e0ab
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
+    CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 0049e0ab
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
     ADD ESP,0xc                         ; 0049e0b0
     TEST EAX,EAX                        ; 0049e0b3
     JZ 0x0049e0c3                       ; 0049e0b5
@@ -807,7 +807,7 @@ section .text
     PUSH EAX                            ; 0049e34c | g_CDemonSet_01e57284
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049e34d
         ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
-    MOV EAX,[0x005b7620]                ; 0049e352 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049e352 | g_WindowHeight
     ADD ESP,0x8                         ; 0049e357
     CMP EAX,0xf0                        ; 0049e35a
     JLE 0x0049e4e7                      ; 0049e35f
@@ -831,8 +831,8 @@ section .text
     PUSH 0x0                            ; 0049e385
     MOV ECX,dword ptr [EBP + 0x14]      ; 0049e387
     PUSH ECX                            ; 0049e38a
-    CALL core_game.cpp_FUN_004a3b90     ; 0049e38b
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3b90(CGame * this_ptr, char * save_filename)
+    CALL core_game.cpp_CGame_FUN_004a3b90 ; 0049e38b
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a3b90(CGame * this_ptr, char * save_filename)
     ADD ESP,0x8                         ; 0049e390
     CMP EBX,0x4                         ; 0049e393
         ;   Label: LAB_0049e393
@@ -857,8 +857,8 @@ section .text
         ;   XREF to: 0049e3e3 (CONDITIONAL_JUMP)  ; LAB_0049e3e3
     MOV EDX,dword ptr [0x005be220]      ; 0049e3c1 | DAT_005be220
     PUSH EDX                            ; 0049e3c7 | g_CScript_01e56da0
-    CALL core_script.cpp_FUN_00504d90   ; 0049e3c8
-        ;   XREF to: 00504d90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00504d90(CScript * this_ptr)
+    CALL core_script.cpp_CScript_FUN_00504d90 ; 0049e3c8
+        ;   XREF to: 00504d90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_FUN_00504d90(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049e3cd
     TEST EAX,EAX                        ; 0049e3d0
     SETZ AL                             ; 0049e3d2
@@ -1034,8 +1034,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0049e59d
         ;   Label: LAB_0049e59d
     PUSH ECX                            ; 0049e5a0
-    CALL core_game.cpp_FUN_004a57c0     ; 0049e5a1
-        ;   XREF to: 004a57c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a57c0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_004a57c0 ; 0049e5a1
+        ;   XREF to: 004a57c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a57c0(CGame * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049e5a6
     MOV EBX,dword ptr [EAX + 0x200]     ; 0049e5a9
     ADD ESP,0x4                         ; 0049e5af

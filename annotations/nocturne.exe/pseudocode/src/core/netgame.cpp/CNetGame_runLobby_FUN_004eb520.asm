@@ -166,7 +166,7 @@ section .text
     PUSH 0x58c1c8                       ; 004eb67b | = "gameSettings"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb680
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
-    MOV EAX,[0x005b761c]                ; 004eb685 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004eb685 | g_WindowWidth
     ADD ESP,0xc                         ; 004eb68a
     DEC EAX                             ; 004eb68d
     PUSH EAX                            ; 004eb68e
@@ -420,7 +420,7 @@ section .text
     ADD ESP,0xc                         ; 004eb930
     JMP 0x004eb80f                      ; 004eb933
         ;   XREF to: 004eb80f (UNCONDITIONAL_JUMP)  ; LAB_004eb80f
-    MOV EDX,dword ptr [0x005b7620]      ; 004eb938 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 004eb938 | g_WindowHeight
         ;   Label: LAB_004eb938
     ADD EBX,0x2c                        ; 004eb93e
     SUB EDX,EBX                         ; 004eb941

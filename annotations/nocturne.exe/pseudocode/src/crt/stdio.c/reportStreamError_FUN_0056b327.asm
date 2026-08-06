@@ -14,12 +14,12 @@
 ;   crt_fstream.cpp_istream_seekg_FUN_00565f14 at 00565f57
 ;   crt_fstream.cpp_openFile_FUN_00565eb5 at 00565ef1
 ;   crt_fstream.cpp_ostream_write_FUN_00565a13 at 00565a8c
+;   crt_iostream.cpp_ios_clear_FUN_00565e94 at 00565ea9
 ;   crt_iostream.cpp_ostream_put_FUN_00564ce5 at 00564d4d
 ;   crt_stdio.c_fflush_FUN_00565e59 at 00565e7e
 ;   crt_stdio.c_fgetcInternal_FUN_0056b2b4 at 0056b313
 ;   crt_stdio.c_fgetc_buffered_FUN_00571c60 at 00571caf
 ;   crt_stdio.c_stream_flush_FUN_0056b3c2 at 0056b3f9
-;   crt_stdio.c_stream_setup_FUN_0056b227 at 0056b278
 ;   ... and 2 more
 ;
 ; Called Functions:

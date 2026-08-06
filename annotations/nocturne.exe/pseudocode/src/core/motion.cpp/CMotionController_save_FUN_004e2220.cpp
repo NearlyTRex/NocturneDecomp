@@ -14,9 +14,9 @@ void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(CMotionControll
   
   if (this_ptr->current_motion_name[0] == '\0') {
     if (this_ptr->motion_list_ptr == (CMotionList *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
-      g_INT_01cc4804 = 0x536;
-      core_main_c_FUN_004c8440();
+      g_CurrentFilename = "..\\core\\motion.cpp";
+      g_CurrentLineNumber = 1334;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to save motion controller state without setting motion list pointer!");
     }
     dVar2 = (double)this_ptr->current_frame_number;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(this_ptr);

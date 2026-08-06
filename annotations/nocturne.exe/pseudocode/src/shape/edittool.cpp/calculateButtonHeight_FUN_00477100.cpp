@@ -14,9 +14,9 @@ int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00477100(char *button_t
   int iVar1;
   
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x8b;
-    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 139;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
@@ -26,5 +26,5 @@ int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00477100(char *button_t
   else {
     iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,button_text);
   }
-  return DAT_005b7620 / 0x50 + iVar1;
+  return g_WindowHeight / 0x50 + iVar1;
 }

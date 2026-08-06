@@ -53,9 +53,9 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(CGround *this_ptr,char *f
   pcVar5 = (char *)0x0;
 LAB_004b153d:
   if (pcVar5 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
-    g_INT_01cc4804 = 0x40;
-    core_main_c_FUN_004c8440("eopen - ext not found!");
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 64;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("eopen - ext not found!");
   }
   pcVar7 = local_20;
   pcVar5 = pcVar5 + 1;
@@ -71,9 +71,9 @@ LAB_004b153d:
   } while (cVar1 != '\0');
   file = engine_dosio_cpp_getFile_FUN_00456a60(local_24,local_cc,pcVar7);
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
-    g_INT_01cc4804 = 0x44;
-    core_main_c_FUN_004c8440("eopen - Cannot open file");
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 68;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("eopen - Cannot open file");
   }
   local_18 = 0;
   if (0 < this_ptr->height) {
@@ -123,9 +123,9 @@ LAB_004b153d:
   pcVar7 = (char *)0x0;
 LAB_004b1687:
   if (pcVar7 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
-    g_INT_01cc4804 = 0x40;
-    core_main_c_FUN_004c8440("eopen - ext not found!");
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 64;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("eopen - ext not found!");
   }
   pcVar7 = pcVar7 + 1;
   pcVar5 = "clr";
@@ -140,9 +140,9 @@ LAB_004b1687:
   } while (cVar1 != '\0');
   local_1c = engine_dosio_cpp_getFile_FUN_00456a60(local_28,local_7c,local_2c);
   if (local_1c == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\ground.cpp";
-    g_INT_01cc4804 = 0x44;
-    core_main_c_FUN_004c8440("eopen - Cannot open file");
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 68;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("eopen - Cannot open file");
   }
   local_14 = 0;
   if (0 < this_ptr->height) {

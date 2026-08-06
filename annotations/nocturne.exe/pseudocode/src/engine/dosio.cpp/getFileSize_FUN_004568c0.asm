@@ -15,12 +15,12 @@
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044346c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 at 0044bfcb
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b3d4
-;   core_game.cpp_FUN_004a3b90 at 004a3e2c
-;   core_game.cpp_FUN_004a4170 at 004a43e2
-;   core_game.cpp_FUN_004a57c0 at 004a57fb
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3e2c
+;   core_game.cpp_CGame_FUN_004a4170 at 004a43e2
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a57fb
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0136
+;   core_script.cpp_CScript_FUN_004febd0 at 004fec08
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504e93
-;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500872
 ;   ... and 17 more
 ;
 ; Called Functions:

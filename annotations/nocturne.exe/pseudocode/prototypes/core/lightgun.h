@@ -23,9 +23,9 @@ CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 // Address: 004c6ef0
 int __cdecl CLightGun::isVampireType(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_004c6f50
+// Original: core_lightgun.cpp_CLightGun_FUN_004c6f50
 // Address: 004c6f50
-undefined4 FUN_004c6f50(void);
+int __cdecl CLightGun(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0
 // Address: 004c6ff0
@@ -35,9 +35,9 @@ void __cdecl CLightGun::updateBeamLight(CLightGun *this_ptr);
 // Address: 004c70a0
 int __cdecl CLightGun::canSeeTarget(CLightGun *this_ptr,CDemonActor *target);
 
-// Original: core_lightgun.cpp_FUN_004c71a0
+// Original: core_lightgun.cpp_CLightGun_fire_FUN_004c71a0
 // Address: 004c71a0
-undefined4 FUN_004c71a0(CCharacter *param_1);
+int __cdecl CLightGun::fire(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_process_FUN_004c79a0
 // Address: 004c79a0
@@ -47,9 +47,9 @@ void __cdecl CLightGun::process(CLightGun *this_ptr,float delta_time);
 // Address: 004c7c60
 float __cdecl CLightGun::getDamage(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_004c7ca0
+// Original: core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0
 // Address: 004c7ca0
-void FUN_004c7ca0(CCharacter *param_1);
+void __cdecl CLightGun::fireProjectile(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_004c8040
 // Address: 004c8040

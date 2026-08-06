@@ -49,11 +49,11 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
       pcVar2 = filename + 2;
     }
     if ((((*pcVar2 == '\\') || (*pcVar2 == '/')) && (pcVar2[1] == '\0')) || (bVar1)) {
-      iVar3 = FUN_00566570(filename);
+      iVar3 = chdir(filename);
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_00566570((char *)local_124);
+      chdir((char *)local_124);
       memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }

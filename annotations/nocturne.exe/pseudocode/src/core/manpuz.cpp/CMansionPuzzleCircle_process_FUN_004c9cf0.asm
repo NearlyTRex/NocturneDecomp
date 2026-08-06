@@ -15,12 +15,12 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
 ;   core_game.cpp_CGame_setFudgeTarget_FUN_0049b240
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0
+;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004cb2d0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980
-;   core_manpuz.cpp_FUN_004cb010
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004c9d53
     PUSH ESI                            ; 004c9d57
     PUSH EBX                            ; 004c9d58
-    CALL core_manpuz.cpp_FUN_004cb010   ; 004c9d59
-        ;   XREF to: 004cb010 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004cb010(CMansionPuzzleCircle * this_ptr, int gem_index, float delta_time)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010 ; 004c9d59
+        ;   XREF to: 004cb010 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004cb010(CMansionPuzzleCircle * this_ptr, int gem_index, float delta_time)
     INC ESI                             ; 004c9d5e
     ADD ESP,0xc                         ; 004c9d5f
     CMP ESI,0xc                         ; 004c9d62

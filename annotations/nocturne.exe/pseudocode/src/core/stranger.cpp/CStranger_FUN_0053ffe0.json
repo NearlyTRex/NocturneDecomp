@@ -1,0 +1,259 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "cast_error",
+        "column": 13,
+        "line": 118,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 37,
+        "line": 121,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 285,
+    "complexity_score": 184,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 139,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 424
+  },
+  "cross_references": [
+    {
+      "addr": "00535900",
+      "from_addr": "0053649d",
+      "name": "core_stranger.cpp_CStranger_FUN_00535900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053ffe0",
+    "address_range": [
+      [
+        "0053ffe0",
+        "005402e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_FUN_0053ffe0",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_FUN_0053ffe0(CStranger *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042a9d0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0"
+    },
+    {
+      "addr": "0053a660",
+      "is_variadic": false,
+      "name": "core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0053ffb4",
+      "name": "switchdataD_0053ffb4",
+      "type": "void*",
+      "value": "005400d4"
+    },
+    {
+      "addr": "00595eb7",
+      "name": "DOUBLE_00595eb7",
+      "type": "double",
+      "value": "0.990000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053649d",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_FUN_00535900",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.995145631067961,
+    "instruction_count": 206,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 7,
+      "BRANCH": 12,
+      "BRANCHIND": 1,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 33,
+      "COPY": 250,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 2,
+      "INT_ADD": 92,
+      "INT_AND": 132,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 102,
+      "INT_LEFT": 12,
+      "INT_LESS": 19,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 51,
+      "INT_SUB": 38,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 61,
+      "POPCOUNT": 51,
+      "RETURN": 4,
+      "STORE": 32
+    },
+    "pcode_op_count": 1029
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 121,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,grabber,unaff_EDI), iVar4 != 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 129,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr->weapon,unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

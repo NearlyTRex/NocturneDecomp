@@ -14,7 +14,7 @@ int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *thi
   double dVar1;
   
   dVar1 = round
-                    ((double)((float)((DAT_005b7620 - (DAT_005b761c * 100) / 0xb9) / 2) *
+                    ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
                              _DAT_01e56c20));
   return (int)ROUND(dVar1);
 }

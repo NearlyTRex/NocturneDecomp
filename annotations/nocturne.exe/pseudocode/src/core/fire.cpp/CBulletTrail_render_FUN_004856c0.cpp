@@ -76,12 +76,12 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004856c0(CBulletTrail *this_p
           local_40.z = (this_ptr->start_position).z + local_2c;
           local_18 = iVar1;
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                    (DAT_005ae704,&local_40);
+                    (g_CDemonRenderer_PTR_005ae704,&local_40);
           local_4c.x = 0.0;
           local_4c.y = 0.0;
           local_4c.z = 0.0;
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                    (DAT_005ae704,&local_7c,&local_4c);
+                    (g_CDemonRenderer_PTR_005ae704,&local_7c,&local_4c);
           dVar5 = round((double)fVar3);
           fStack_1c = (float)(int)ROUND(dVar5);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040

@@ -23,7 +23,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_actor.cpp_randomChance_FUN_0040dea0
-;   core_charactr.cpp_FUN_00427a60
+;   core_charactr.cpp_CCharacter_FUN_00427a60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -238,8 +238,8 @@ section .text
         ;   XREF to: 004ab4f0 (UNCONDITIONAL_JUMP)  ; LAB_004ab4f0
     PUSH EBX                            ; 004ab6a9
         ;   Label: LAB_004ab6a9
-    CALL core_charactr.cpp_FUN_00427a60 ; 004ab6aa
-        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427a60(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_FUN_00427a60 ; 004ab6aa
+        ;   XREF to: 00427a60 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00427a60(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004ab6af
     PUSH EDI                            ; 004ab6b2
     PUSH EBX                            ; 004ab6b3

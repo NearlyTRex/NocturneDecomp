@@ -63,11 +63,11 @@
 ;   TerminatedCString s_core_netgame_cpp_0058c38a
 ;   TerminatedCString s_Hell_froze_0058c39e
 ;   int g_INT_005bdee4 = 0x1
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_netgame.cpp_assignInt1_FUN_004edfa0
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_004ecc80
@@ -96,10 +96,10 @@ section .text
         ;   Label: LAB_004ec623
     MOV EDI,0x7e6                       ; 004ec628
     PUSH 0x58c33e                       ; 004ec62d | = "CNetGame::applyNewGameSettings - shou..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004ec632 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ec638 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ec63e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004ec632 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004ec638 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ec63e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ec643
     MOV ECX,0x2c                        ; 004ec646
         ;   Label: LAB_004ec646
@@ -234,10 +234,10 @@ section .text
     MOV EAX,0x58c38a                    ; 004ec7d3 | = "..\\core\\netgame.cpp"
     MOV EDX,0x811                       ; 004ec7d8
     PUSH 0x58c39e                       ; 004ec7dd | = "Hell froze"
-    MOV [0x01cc4800],EAX                ; 004ec7e2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ec7e7 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ec7ed
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004ec7e2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004ec7e7 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ec7ed
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ec7f2
     MOV ECX,dword ptr [ESP + 0x14c]     ; 004ec7f5
         ;   Label: LAB_004ec7f5

@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
@@ -68,7 +68,7 @@ section .text
     JGE 0x0042e400                      ; 0042e427
         ;   XREF to: 0042e400 (CONDITIONAL_JUMP)  ; LAB_0042e400
     MOV ESI,EAX                         ; 0042e429
-    MOV EAX,[0x005b761c]                ; 0042e42b | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0042e42b | g_WindowWidth
         ;   Label: LAB_0042e42b
     IMUL EAX,EBX                        ; 0042e430
     MOV EDX,dword ptr [ESP + 0x20]      ; 0042e433
@@ -101,7 +101,7 @@ section .text
     LEA EDX,[EDI + EDI*0x1]             ; 0042e467
     MOV ESI,EAX                         ; 0042e46a
     MOV dword ptr [ESP],EDX             ; 0042e46c
-    MOV EAX,[0x005b761c]                ; 0042e46f | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0042e46f | g_WindowWidth
         ;   Label: LAB_0042e46f
     IMUL EAX,EBX                        ; 0042e474
     MOV EDX,dword ptr [ESP + 0x20]      ; 0042e477

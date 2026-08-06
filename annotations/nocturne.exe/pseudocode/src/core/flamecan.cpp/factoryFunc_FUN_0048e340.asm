@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flamecan.cpp_CFlameCan_ctor_FUN_0048e370
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5d8                          ; 0048e340
         ;   Label: core_flamecan.cpp_factoryFunc_FUN_0048e340
-    CALL crt_unknown.c_FUN_0056497c     ; 0048e345
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0048e345
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0048e34a
     TEST EAX,EAX                        ; 0048e34d
     JNZ 0x0048e352                      ; 0048e34f

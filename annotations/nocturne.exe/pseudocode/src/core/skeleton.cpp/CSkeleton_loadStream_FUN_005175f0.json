@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,58 +56,52 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'core_skeleton_cpp_FUN_005174e0'"
+        "category": "format_error",
+        "column": 45,
+        "line": 61,
+        "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 31,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 37,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 41,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "column": 47,
+        "line": 81,
+        "message": "format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 47,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 40,
+        "line": 100,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 31,
-        "line": 56,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 46,
+        "line": 100,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 33,
-        "line": 71,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 56,
+        "line": 100,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 29,
-        "line": 84,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 40,
+        "line": 114,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 29,
-        "line": 95,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 46,
+        "line": 114,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 114,
+        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -116,17 +110,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 186,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 101,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 139,
+    "suspect_count": 5,
     "suspect_types": [
-      "warning_unreachable"
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 499
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -152,7 +148,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004e0920",
@@ -167,7 +163,7 @@
     {
       "addr": "005174e0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005174e0"
+      "name": "core_skeleton.cpp_CSkeleton_FUN_005174e0"
     },
     {
       "addr": "00564570",
@@ -176,7 +172,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -285,13 +281,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -409,68 +405,44 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00517914) */",
-      "type": "warning_unreachable"
+      "description": "Pointer value `&this_ptr->frame_positions_1->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)&this_ptr->frame_positions_1->x",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&this_ptr->frame_positions_1->x + iVar7;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00517918) */",
-      "type": "warning_unreachable"
+      "description": "Pointer value `&this_ptr->frame_positions_2->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&this_ptr->frame_positions_2->x",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&this_ptr->frame_positions_2->x + iVar7;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00517925) */",
-      "type": "warning_unreachable"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&this_ptr->frame_positions_1->x + iVar7;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0051792a) */",
-      "type": "warning_unreachable"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&this_ptr->frame_positions_2->x + iVar7;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0051793a) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0051793e) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 8,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0051794b) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 9,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00517950) */",
-      "type": "warning_unreachable"
+      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 56,
+      "match": "piVar5 = piVar5 + N",
+      "severity": "moderate",
+      "text": "piVar5 = piVar5 + 9;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

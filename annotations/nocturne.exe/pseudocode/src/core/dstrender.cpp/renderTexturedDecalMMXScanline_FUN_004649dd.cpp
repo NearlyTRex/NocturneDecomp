@@ -16,6 +16,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
   uint uVar3;
   uint uVar4;
   SSoftwareEdge *pSVar5;
+  int iVar6;
   
   uVar3 = (right_edge->base).x_current;
   uVar4 = (left_edge->base).x_current;
@@ -37,23 +38,23 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
     _DAT_005b06d4 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar3) *
-               (longlong)*(int *)(&DAT_01c00c84 + DAT_005b06e4)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar4 = (pSVar5->base).v_current;
     _DAT_005b06d8 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
-               (longlong)*(int *)(&DAT_01c00c84 + DAT_005b06e4)) >> 0x20);
-    iVar2 = (pSVar5->base).depth_current;
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
+    iVar6 = (pSVar5->base).depth_current;
     _DAT_005b06dc =
          (int)((ulonglong)
-               ((longlong)((left_edge->base).depth_current - iVar2) *
-               (longlong)*(int *)(&DAT_01c00c84 + DAT_005b06e4)) >> 0x20);
+               ((longlong)((left_edge->base).depth_current - iVar6) *
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar1 = 0;
     DAT_005b06b8 = uVar3;
     DAT_005b06bc = uVar4;
-    DAT_005b06c4 = iVar2;
+    DAT_005b06c4 = iVar6;
     while( true ) {
-      if (*(int *)(DAT_005b06e8 + uVar1) <= iVar2) {
+      if (*(int *)(DAT_005b06e8 + uVar1) <= iVar6) {
         *(uint *)(DAT_005b06e0 + uVar1) =
              *(uint *)
               (&DAT_01c00024 +
@@ -64,7 +65,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
       if (DAT_005b06e4 < uVar1) break;
       uVar3 = uVar3 + _DAT_005b06d4;
       uVar4 = uVar4 + _DAT_005b06d8;
-      iVar2 = iVar2 + _DAT_005b06dc;
+      iVar6 = iVar6 + _DAT_005b06dc;
     }
   }
   return;

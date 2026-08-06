@@ -15,14 +15,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel *
   CKeyFramedModel *pCVar3;
   char *pcVar4;
   
-  core_dmodel_cpp_FUN_00452f10(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(this_ptr);
   file = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rb");
   pcVar4 = filename;
   pCVar3 = this_ptr;
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    g_INT_01cc4804 = 0xb8;
-    core_main_c_FUN_004c8440("Can't open keyframed model %s",filename);
+    g_CurrentFilename = "..\\core\\dmodel.cpp";
+    g_CurrentLineNumber = 184;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s");
   }
   do {
     cVar1 = *pcVar4;
@@ -39,9 +39,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel *
     _fclose(file);
     file = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rt");
     if (file == (_FILE *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-      g_INT_01cc4804 = 0xc5;
-      core_main_c_FUN_004c8440("Can't open keyframed model %s",filename);
+      g_CurrentFilename = "..\\core\\dmodel.cpp";
+      g_CurrentLineNumber = 197;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s");
     }
     core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(this_ptr,file);
   }

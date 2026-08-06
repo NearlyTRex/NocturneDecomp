@@ -12,7 +12,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_0044bf70(CDemonFilter 
   if (this_ptr->data_buffer == (uchar *)0x0) {
     return;
   }
-  FUN_005638d0(this_ptr->data_buffer);
+  free(this_ptr->data_buffer);
   this_ptr->data_buffer = (uchar *)0x0;
   return;
 }

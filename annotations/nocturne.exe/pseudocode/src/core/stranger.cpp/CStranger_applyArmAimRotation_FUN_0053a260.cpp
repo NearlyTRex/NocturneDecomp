@@ -112,7 +112,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0053a260(CStran
                          (&local_1c->motion_controller,iVar7,(this_ptr->base).base.layer_action_t);
     local_18 = local_34;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (this_ptr_00,iVar7,local_34,local_1e0,local_24,core_skeleton_cpp_FUN_0051b650);
+              (this_ptr_00,iVar7,local_34,local_1e0,local_24,
+               core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_20->target_yaw,&local_4c);
     pCVar1 = &local_16c;
     local_16c.w = local_4c.w;
@@ -188,7 +189,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_0053a260(CStran
     *puVar3 = *puVar2;
     puVar3[(uint)bVar6 * -2 + 1] = puVar2[(uint)bVar6 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
-              (local_1c,&local_13c,local_1e0,local_28,core_skeleton_cpp_FUN_0051b650);
+              (local_1c,&local_13c,local_1e0,local_28,
+               core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     if ((float)0.0001 < this_ptr->arm_recoil_blend) {
       core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(1.5707964,&local_5c);
       pCVar1 = &local_fc;

@@ -11,7 +11,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_00543120(void)
 {
   CBassPlayer *pCVar1;
   
-  pCVar1 = (CBassPlayer *)FUN_0056497c(0x1f578);
+  pCVar1 = operator_new(0x1f578);
   if (pCVar1 == (CBassPlayer *)0x0) {
     return (CBassPlayer *)0x0;
   }

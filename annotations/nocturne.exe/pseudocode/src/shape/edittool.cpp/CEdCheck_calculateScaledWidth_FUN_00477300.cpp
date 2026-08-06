@@ -13,7 +13,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00477300(CEdChe
   int iVar2;
   
   iVar1 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_00477340(this_ptr);
-  iVar1 = iVar1 * DAT_005b761c * 3;
+  iVar1 = iVar1 * g_WindowWidth * 3;
   iVar2 = iVar1 >> 0x1f;
-  return ((int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2) / DAT_005b7620;
+  return ((int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2) / g_WindowHeight;
 }

@@ -8,7 +8,7 @@
 ;   engine_3d.c_FUN_00405b30 at 00405b32
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005acaac
+;   undefined4 g_ResolutionTable[8].width
 ;   undefined4 DAT_006b0264
 ;   undefined4 DAT_006b0268
 ;   undefined4 DAT_006b0278
@@ -69,7 +69,7 @@ section .text
     TEST ECX,ECX                        ; 00405b80
     JNZ 0x00405b5b                      ; 00405b82
         ;   XREF to: 00405b5b (CONDITIONAL_JUMP)  ; LAB_00405b5b
-    CMP dword ptr [0x005acaac],0x0      ; 00405b84 | DAT_005acaac
+    CMP dword ptr [0x005acaac],0x0      ; 00405b84 | g_ResolutionTable[8].width
         ;   Label: LAB_00405b84
     JZ 0x00405bd0                       ; 00405b8b
         ;   XREF to: 00405bd0 (CONDITIONAL_JUMP)  ; LAB_00405bd0

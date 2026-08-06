@@ -20,14 +20,14 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
   
   while( true ) {
     if (_DAT_01cae0d4 < 1) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-      g_INT_01cc4804 = 0x4c7;
-      core_main_c_FUN_004c8440("CDemonMission::run - hero list empty");
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 1223;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::run - hero list empty");
     }
     if (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) == 0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-      g_INT_01cc4804 = 0x4c8;
-      core_main_c_FUN_004c8440("CDemonMission::run - no gLocalHero");
+      g_CurrentFilename = "..\\core\\mission.cpp";
+      g_CurrentLineNumber = 1224;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
               (this_ptr,*(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2c));
@@ -35,9 +35,9 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(g_CGame_PTR_005b9354);
     this_ptr_00 = *(CHero **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    core_mission_cpp_FUN_004d8cd0(this_ptr,this_ptr_00);
+    core_mission_cpp_CDemonMission_FUN_004d8cd0(this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
-    core_mission_cpp_FUN_004d7ea0(this_ptr);
+    core_mission_cpp_CDemonMission_FUN_004d7ea0(this_ptr);
     if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
     iVar1 = _stricmp
                       (g_CDemonSet_PTR_005be368->geometry_filename,"hq.geo");

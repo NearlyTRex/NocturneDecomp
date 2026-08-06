@@ -27,8 +27,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00467560(CDemonRayt
   if ((this_ptr->triangle_list != (CDemonTriangle *)0x0) && (puVar4 != (uchar *)0x0)) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-  g_INT_01cc4804 = 0xf9;
-  core_main_c_FUN_004c8440("CDemonRaytrace::allocTriList - Out of memory!");
+  g_CurrentFilename = "..\\core\\dtrace.cpp";
+  g_CurrentLineNumber = 249;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::allocTriList - Out of memory!");
   return;
 }

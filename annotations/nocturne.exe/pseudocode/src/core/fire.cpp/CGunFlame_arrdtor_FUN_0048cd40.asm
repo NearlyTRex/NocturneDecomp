@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(CGunFlame *objs,uint flags)
+; CGunFlame * __cdecl core_fire_cpp_CGunFlame_arrdtor_FUN_0048cd40(CGunFlame *this_ptr,uint flags)
 ;
 ; Parameters:
-; CGunFlame *      Stack[0x4]:4   objs
+; CGunFlame *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

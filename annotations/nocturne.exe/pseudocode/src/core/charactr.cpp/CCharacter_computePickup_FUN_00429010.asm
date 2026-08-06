@@ -18,17 +18,17 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[2]:
+;   core_charactr.cpp_CCharacter_FUN_004259f0 at 00425bd3
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40 at 00428ffc
-;   core_charactr.cpp_FUN_004259f0 at 00425bd3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a1d1
 ;   TerminatedCString s_CCharacter_computePickup_0057a1e6
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_inverse_FUN_0055bd00
@@ -141,10 +141,10 @@ section .text
         ;   Label: LAB_0042912f
     MOV ESI,0xc14                       ; 00429134
     PUSH 0x57a1e6                       ; 00429139 | = "CCharacter::computePickup - invalid b..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0042913e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00429144 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0042914a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0042913e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00429144 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042914a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042914f
     JMP 0x00429040                      ; 00429152
         ;   XREF to: 00429040 (UNCONDITIONAL_JUMP)  ; LAB_00429040

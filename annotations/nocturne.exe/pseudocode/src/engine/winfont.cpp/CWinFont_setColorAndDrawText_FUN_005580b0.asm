@@ -21,8 +21,8 @@
 ; Referenced Globals:
 ;   void* PTR_SetTextColor_005753c8 = 001757c6
 ;   void* PTR_TextOutA_005753cc = 001757d6
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01c00624
@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01c00638
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00644
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005649c0
@@ -74,7 +74,7 @@ section .text
     XOR EDX,ESI                         ; 00558104
     XOR ECX,ECX                         ; 00558106
     MOV DL,byte ptr [EAX + 0x1c00649]   ; 00558108
-    MOV CL,byte ptr [EAX + 0x1c00648]   ; 0055810e | DAT_01c00648
+    MOV CL,byte ptr [EAX + 0x1c00648]   ; 0055810e | g_SourcePaletteData
     SHL EDX,0x8                         ; 00558114
     MOV AL,byte ptr [EAX + 0x1c0064a]   ; 00558117
     OR EDX,ECX                          ; 0055811d
@@ -95,7 +95,7 @@ section .text
     MOV DL,byte ptr [EAX + 0x1c00649]   ; 00558142
     XOR ECX,ECX                         ; 00558148
     SHL EDX,0x8                         ; 0055814a
-    MOV CL,byte ptr [EAX + 0x1c00648]   ; 0055814d | DAT_01c00648
+    MOV CL,byte ptr [EAX + 0x1c00648]   ; 0055814d | g_SourcePaletteData
     MOV AL,byte ptr [EAX + 0x1c0064a]   ; 00558153
     OR EDX,ECX                          ; 00558159
     AND EAX,0xff                        ; 0055815b
@@ -174,7 +174,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x44]      ; 00558202
         ;   Label: LAB_00558202
     MOV EAX,dword ptr [EBX + 0x120]     ; 00558206
-    MOV EDI,dword ptr [0x005b761c]      ; 0055820c | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 0055820c | g_WindowWidth
     ADD EAX,ESI                         ; 00558212
     CMP EAX,EDI                         ; 00558214
     JL 0x00558355                       ; 00558216
@@ -184,7 +184,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x48]      ; 00558220
         ;   Label: LAB_00558220
     MOV EAX,dword ptr [EBX + 0x124]     ; 00558224
-    MOV ECX,dword ptr [0x005b7620]      ; 0055822a | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 0055822a | g_WindowHeight
     ADD EAX,EDX                         ; 00558230
     CMP EAX,ECX                         ; 00558232
     JL 0x00558360                       ; 00558234
@@ -223,7 +223,7 @@ section .text
     TEST EAX,EAX                        ; 0055828d
     JL 0x0055829d                       ; 0055828f
         ;   XREF to: 0055829d (CONDITIONAL_JUMP)  ; LAB_0055829d
-    CMP EAX,dword ptr [0x005b7620]      ; 00558291 | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 00558291 | g_WindowHeight
     JL 0x0055836b                       ; 00558297
         ;   XREF to: 0055836b (CONDITIONAL_JUMP)  ; LAB_0055836b
     MOV ECX,dword ptr [ESP + 0x18]      ; 0055829d
@@ -382,7 +382,7 @@ section .text
     TEST EAX,EAX                        ; 00558467
     JL 0x00558473                       ; 00558469
         ;   XREF to: 00558473 (CONDITIONAL_JUMP)  ; LAB_00558473
-    CMP EAX,dword ptr [0x005b7620]      ; 0055846b | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 0055846b | g_WindowHeight
     JL 0x0055848b                       ; 00558471
         ;   XREF to: 0055848b (CONDITIONAL_JUMP)  ; LAB_0055848b
     MOV EDX,dword ptr [ESP + 0x14]      ; 00558473

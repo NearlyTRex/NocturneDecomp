@@ -3,9 +3,9 @@
 // Function prototypes for engine/2d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_2d.c_FUN_00401010
+// Original: engine_2d.c_initGraphicsSystem_FUN_00401010
 // Address: 00401010
-void FUN_00401010(void);
+void __cdecl initGraphicsSystem(void);
 
 // Original: engine_2d.c_FUN_004012a0
 // Address: 004012a0
@@ -13,19 +13,19 @@ void __cdecl FUN_004012a0(void);
 
 // Original: engine_2d.c_FUN_004012d0
 // Address: 004012d0
-void FUN_004012d0(int param_1,int param_2,int param_3);
+void __cdecl FUN_004012d0(int param_1,int param_2,int param_3);
 
 // Original: engine_2d.c_FUN_004013d0
 // Address: 004013d0
-int FUN_004013d0(int param_1,int param_2,int param_3,byte param_4);
+int __cdecl FUN_004013d0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6 ,byte param_7);
 
 // Original: engine_2d.c_FUN_004014a0
 // Address: 004014a0
-void FUN_004014a0(char *param_1,int param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl FUN_004014a0(byte *param_1,int param_2,int param_3,undefined4 param_4);
 
 // Original: engine_2d.c_FUN_004014f0
 // Address: 004014f0
-int FUN_004014f0(byte *param_1);
+int __cdecl FUN_004014f0(byte *param_1);
 
 // Original: engine_2d.c_plotPixel_FUN_00401530
 // Address: 00401530
@@ -47,13 +47,13 @@ void __cdecl drawLine3D(int x1,int y1,uint z1,int x2,int y2,uint z2);
 // Address: 00401850
 int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int end_index);
 
-// Original: engine_2d.c_FUN_00401990
+// Original: engine_2d.c_buildBlendTables_FUN_00401990
 // Address: 00401990
-void __cdecl FUN_00401990(char *filename);
+void __cdecl buildBlendTables(char *filename);
 
-// Original: engine_2d.c_FUN_00401bd0
+// Original: engine_2d.c_loadPaletteFile_FUN_00401bd0
 // Address: 00401bd0
-void __cdecl FUN_00401bd0(char *filename);
+void __cdecl loadPaletteFile(char *filename);
 
 // Original: engine_2d.c_drawCharacter_FUN_00401c40
 // Address: 00401c40
@@ -251,9 +251,9 @@ void FUN_00403130(char *param_1);
 // Address: 004031a0
 void FUN_004031a0(int param_1);
 
-// Original: engine_2d.c_FUN_00403460
+// Original: engine_2d.c_loadLightTable_FUN_00403460
 // Address: 00403460
-void FUN_00403460(char *param_1);
+void __cdecl loadLightTable(char *filename);
 
 // Original: engine_2d.c_FUN_00403500
 // Address: 00403500
@@ -263,9 +263,9 @@ void FUN_00403500(char *param_1);
 // Address: 00403570
 void __cdecl buildColorLookupTable(void);
 
-// Original: engine_2d.c_FUN_00403630
+// Original: engine_2d.c_loadOrBuildColorMap_FUN_00403630
 // Address: 00403630
-void __cdecl FUN_00403630(char *filename);
+void __cdecl loadOrBuildColorMap(char *filename);
 
 // Original: engine_2d.c_resetGraphicsSystem_FUN_00403760
 // Address: 00403760

@@ -17,7 +17,7 @@
 ;   undefined4 DAT_02dc8380
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     JZ 0x005230f8                       ; 005230e5
         ;   XREF to: 005230f8 (CONDITIONAL_JUMP)  ; LAB_005230f8
     PUSH ESI                            ; 005230e7
-    CALL crt_unknown.c_FUN_005638d0     ; 005230e8
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 005230e8
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 005230ed
     ADD ESP,0x4                         ; 005230ef
     MOV dword ptr [0x02dc8380],EBP      ; 005230f2 | DAT_02dc8380
@@ -70,8 +70,8 @@ section .text
     RET                                 ; 00523142
     PUSH EDX                            ; 00523143
         ;   Label: LAB_00523143
-    CALL crt_unknown.c_FUN_005638d0     ; 00523144
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00523144
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBX,EBX                         ; 00523149
     ADD ESP,0x4                         ; 0052314b
     MOV dword ptr [0x02dc835c],EBX      ; 0052314e | DAT_02dc835c
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 005230dc (UNCONDITIONAL_JUMP)  ; LAB_005230dc
     PUSH EAX                            ; 00523156
         ;   Label: LAB_00523156
-    CALL crt_unknown.c_FUN_005638d0     ; 00523157
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00523157
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR ECX,ECX                         ; 0052315c
     ADD ESP,0x4                         ; 0052315e
     MOV dword ptr [0x02dc8338],ECX      ; 00523161 | DAT_02dc8338

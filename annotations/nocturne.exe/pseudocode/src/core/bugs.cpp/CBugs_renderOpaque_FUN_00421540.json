@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 27,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 42,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 53,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
       }
     ],
     "success": false,
@@ -80,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 148,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 7,
+    "pseudocode_lines": 60,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 204
+    "total_lines": 206
   },
   "cross_references": [],
   "function": {
@@ -132,7 +113,7 @@
     {
       "addr": "0050e370",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050e370"
+      "name": "core_set.cpp_CDemonSet_FUN_0050e370"
     },
     {
       "addr": "00460aa0",
@@ -158,9 +139,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005be368",
@@ -258,32 +239,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,position,rotation);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_2c.x = CStack_20.x;",
@@ -291,7 +248,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 50,
+      "line": 52,
       "match": "position = (T *)&position[N].SUBFIELD",
       "severity": "moderate",
       "text": "position = (CVector3f *)&position[5].y;",
@@ -299,7 +256,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `rotation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*rotation) + offsetof(subfield)` equals the real array stride. Replace `rotation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
+      "line": 54,
       "match": "rotation = (T *)&rotation[N].SUBFIELD",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)&rotation[5].y;",

@@ -7,12 +7,12 @@
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509df1
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a466
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509952
-;   core_set.cpp_FUN_00509a80 at 00509df1
-;   core_set.cpp_FUN_0050a260 at 0050a466
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   CSmokeParticle[2048] g_CSmokeParticle_ARRAY_01c0a140
@@ -129,7 +129,7 @@ section .text
     CMP EBX,ESI                         ; 0048a6fd
     JNZ 0x0048a6f0                      ; 0048a6ff
         ;   XREF to: 0048a6f0 (CONDITIONAL_JUMP)  ; LAB_0048a6f0
-    MOV EAX,[0x005ae704]                ; 0048a701 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 0048a701 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0048a706 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0048a707
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   set_index
 ;
 ; XREF[4]:
+;   core_mission.cpp_CDemonMission_FUN_004d93d0 at 004d9426
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d9396
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d949b
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9802
-;   core_mission.cpp_FUN_004d93d0 at 004d9426
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284

@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 at 0045e3cc
-;   core_script.cpp_FUN_004fe9d0 at 004fea0e
+;   core_script.cpp_CScript_FUN_004fe9d0 at 004fea0e
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0

@@ -10,7 +10,7 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,
 
 {
   char cVar1;
-  _FILE *file_handle;
+  _FILE *file;
   uint uVar2;
   int iVar3;
   char *pcVar4;
@@ -40,10 +40,10 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,
   }
   engine_console_cpp_CConsole_writeChar_FUN_0043ad30(this_ptr,'\0');
   if (this_ptr->file_logging_enabled != 0) {
-    file_handle = _fopen("console.txt","at");
-    if (file_handle != (_FILE *)0x0) {
-      _fprintf(file_handle,"%s",local_1014);
-      _fclose(file_handle);
+    file = _fopen("console.txt","at");
+    if (file != (_FILE *)0x0) {
+      _fprintf(file,"%s",local_1014);
+      _fclose(file);
       return;
     }
   }

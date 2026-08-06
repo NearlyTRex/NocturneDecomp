@@ -17,11 +17,11 @@
 ;   TerminatedCString s_CRuleList_insert_invalid_00580eed
 ;   TerminatedCString s_core_event_cpp_00580f0f
 ;   TerminatedCString s_CRuleList_insert_list_fu_00580f21
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
 ;
 ; *****************************************************************************
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_00481647
     MOV EDI,0xcd9                       ; 0048164c
     PUSH 0x580eed                       ; 00481651 | = "CRuleList::insert - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00481656 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0048165c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00481662
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00481656 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0048165c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00481662
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00481667
     CMP dword ptr [EBX],0x5             ; 0048166a
         ;   Label: LAB_0048166a
@@ -151,10 +151,10 @@ section .text
         ;   Label: LAB_00481744
     MOV EDX,0xcda                       ; 00481749
     PUSH 0x580f21                       ; 0048174e | = "CRuleList::insert - list full"
-    MOV [0x01cc4800],EAX                ; 00481753 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00481758 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0048175e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00481753 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00481758 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0048175e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00481763
     JMP 0x00481673                      ; 00481766
         ;   XREF to: 00481673 (UNCONDITIONAL_JUMP)  ; LAB_00481673

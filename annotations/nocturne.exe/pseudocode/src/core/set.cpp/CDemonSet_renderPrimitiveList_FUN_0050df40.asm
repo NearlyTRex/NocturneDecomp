@@ -12,7 +12,7 @@
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60 at 0044abc1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
@@ -20,7 +20,7 @@
 ;   undefined4 g_CGame_01c775ec.scripted_sequence_active
 ;
 ; Called Functions:
-;   core_mirror.cpp_FUN_004d76e0
+;   core_mirror.cpp_CMirror_FUN_004d76e0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
 ;   engine_special.cpp_sync_FUN_00532b30
 ;
@@ -40,7 +40,7 @@ section .text
     CMP dword ptr [EBX + 0x1f0],0x0     ; 0050df56 | g_CGame_01c775ec.scripted_sequence_active
     JNZ 0x0050df99                      ; 0050df5d
         ;   XREF to: 0050df99 (CONDITIONAL_JUMP)  ; LAB_0050df99
-    MOV EBX,dword ptr [0x005ae704]      ; 0050df5f | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0050df5f | g_CDemonRenderer_PTR_005ae704
     MOV EBX,dword ptr [EBX + 0x18]      ; 0050df65 | DAT_01b4d750
     TEST EBX,EBX                        ; 0050df68
     JZ 0x0050df9e                       ; 0050df6a
@@ -55,8 +55,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x161268]  ; 0050df75
     PUSH EAX                            ; 0050df7b
     INC EBX                             ; 0050df7c
-    CALL core_mirror.cpp_FUN_004d76e0   ; 0050df7d
-        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d76e0()
+    CALL core_mirror.cpp_CMirror_FUN_004d76e0 ; 0050df7d
+        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_FUN_004d76e0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESI,0x28                        ; 0050df82
     ADD ESP,0x8                         ; 0050df85
     CMP EBX,EDI                         ; 0050df88
@@ -81,7 +81,7 @@ section .text
     MOV EBX,EAX                         ; 0050dfa4
     PUSH EBX                            ; 0050dfa6
         ;   Label: LAB_0050dfa6
-    MOV ECX,dword ptr [0x005ae704]      ; 0050dfa7 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0050dfa7 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0050dfad | DAT_01b4d738
     INC ESI                             ; 0050dfae
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 0050dfaf

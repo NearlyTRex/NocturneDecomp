@@ -12,9 +12,9 @@ void __cdecl sound_sndmain_cpp_FUN_00526150(int index,void *userdata)
 
 {
   if ((index < 0) || (1 < index)) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0xcc7;
-    core_main_c_FUN_004c8440("setNextSfxUserData - invalid user data index: %d",index);
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 3271;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("setNextSfxUserData - invalid user data index: %d");
   }
   *(void **)(_DAT_02dc1b74 * 0x6c + 0x2dc1bcc + index * 4) = userdata;
   return;

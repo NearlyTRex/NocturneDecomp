@@ -29,13 +29,13 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
 ;   engine_ini.cpp_CIniFile_getString_FUN_004bd910
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0
-;   sound_sndmain.cpp_FUN_005289f0
+;   sound_sndmain.cpp_readIni_FUN_005289f0
 ;
 ; *****************************************************************************
 
@@ -232,8 +232,8 @@ section .text
     ADD ESP,0x8                         ; 004bddc1
     LEA EAX,[ESP + 0x8]                 ; 004bddc4
     PUSH EAX                            ; 004bddc8
-    CALL sound_sndmain.cpp_FUN_005289f0 ; 004bddc9
-        ;   XREF to: 005289f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005289f0(CIniFile * ini_file)
+    CALL sound_sndmain.cpp_readIni_FUN_005289f0 ; 004bddc9
+        ;   XREF to: 005289f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_readIni_FUN_005289f0(CIniFile * ini_file)
     ADD ESP,0x4                         ; 004bddce
     PUSH 0x5baa38                       ; 004bddd1 | = "Control"
     LEA EAX,[ESP + 0xc]                 ; 004bddd6
@@ -638,10 +638,10 @@ section .text
         ;   Label: LAB_004be29f
     MOV ECX,0x54                        ; 004be2a4
     PUSH 0x586757                       ; 004be2a9 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004be2ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004be2ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004be2bf
     JMP 0x004bdba3                      ; 004be2c2
         ;   XREF to: 004bdba3 (UNCONDITIONAL_JUMP)  ; LAB_004bdba3

@@ -14,9 +14,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_00525a80(CSfxSlot *this_ptr)
   int dest_buffer_offset;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0xbf0;
-    core_main_c_FUN_004c8440("SfxSlot::seek - no sample?!");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 3056;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::seek - no sample?!");
   }
   dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
                     (&this_ptr->sample->sample_info,(this_ptr->options).trigger_time,

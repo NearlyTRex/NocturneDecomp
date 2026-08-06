@@ -9,9 +9,9 @@
 ;   undefined4 DAT_01c00624
 ;   undefined4 DAT_01c00630
 ;   undefined4 DAT_01c0063c
-;   undefined4 DAT_01c00648
-;   undefined4 DAT_01c0064c
-;   undefined4 DAT_01c0064d
+;   uchar[768] g_SourcePaletteData
+;   undefined4 g_SourcePaletteData+4
+;   undefined4 g_SourcePaletteData+5
 ;
 ; *****************************************************************************
 
@@ -25,11 +25,11 @@ section .text
     MOV EBP,dword ptr [0x005b7624]      ; 004b6374 | DAT_005b7624
     XOR EDX,EDX                         ; 004b637a
     XOR EAX,EAX                         ; 004b637c
-    MOVZX ESI,byte ptr [EAX + 0x1c00649] ; 004b637e | DAT_01c0064c
+    MOVZX ESI,byte ptr [EAX + 0x1c00649] ; 004b637e | g_SourcePaletteData+4
         ;   Label: LAB_004b637e
     XOR EBX,EBX                         ; 004b6385
-    MOVZX EDI,byte ptr [EAX + 0x1c00648] ; 004b6387 | DAT_01c00648
-    MOV BL,byte ptr [EAX + 0x1c0064a]   ; 004b638e | DAT_01c0064d
+    MOVZX EDI,byte ptr [EAX + 0x1c00648] ; 004b6387 | g_SourcePaletteData
+    MOV BL,byte ptr [EAX + 0x1c0064a]   ; 004b638e | g_SourcePaletteData+5
     CMP EBP,0x20                        ; 004b6394
     JNZ 0x004b63e1                      ; 004b6397
         ;   XREF to: 004b63e1 (CONDITIONAL_JUMP)  ; LAB_004b63e1

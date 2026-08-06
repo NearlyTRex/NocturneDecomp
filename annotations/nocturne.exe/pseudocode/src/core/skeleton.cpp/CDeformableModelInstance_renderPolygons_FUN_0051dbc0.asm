@@ -9,17 +9,17 @@
 ; int              Stack[0xc]:4   skip_texture_capture
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004270e0 at 00427225
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 00427225
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 at 0051da0b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591bd3
 ;   TerminatedCString s_CDeformableModelInstance_00591be8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;
@@ -63,10 +63,10 @@ section .text
     MOV ECX,0x591bd3                    ; 0051dc06 | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd23                       ; 0051dc0b
     PUSH 0x591be8                       ; 0051dc10 | = "CDeformableModelInstance::renderPolyg..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051dc15 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051dc1b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051dc21
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051dc15 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051dc1b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051dc21
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051dc26
     POP ESI                             ; 0051dc29
     JMP 0x0051dbd0                      ; 0051dc2a

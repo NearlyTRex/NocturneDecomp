@@ -12,6 +12,7 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   uint uVar1;
   byte *puVar2;
   uint *puVar3;
+  ulong size;
   byte *puVar4;
   uint *puVar5;
   uint uVar6;
@@ -29,12 +30,13 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
   
   bVar10 = 0;
   uStack_18 = param_2 * param_4;
-  puStack_24 = (uint *)malloc(param_2 * param_3 * param_4);
+  size = param_2 * param_3 * param_4;
+  puStack_24 = (uint *)malloc(size);
   if (puStack_24 == (uint *)0x0) {
-    _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.");
-    g_INT_01cc4804 = 0x802;
-    g_CHAR_PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
-    core_main_c_FUN_004c8440(acStack_78);
+    _sprintf(acStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.",size);
+    g_CurrentLineNumber = 2050;
+    g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+    core_main_c_displayErrorAndQuit_FUN_004c8440(acStack_78);
   }
   if (param_4 == 1) {
     uVar6 = 0;
@@ -101,6 +103,6 @@ void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint
     puVar3 = (uint *)((int)puVar3 + (uint)bVar10 * -2 + 1);
     param_1 = (uint *)((int)param_1 + (uint)bVar10 * -2 + 1);
   }
-  FUN_005638d0(puStack_24);
+  free(puStack_24);
   return;
 }

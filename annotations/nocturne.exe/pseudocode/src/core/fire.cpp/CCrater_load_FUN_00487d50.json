@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,45 +57,45 @@
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 14,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 39,
+        "line": 17,
+        "message": "format specifies type 'int *' but the argument has type 'CCrater *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 15,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
+        "column": 36,
         "line": 19,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 21,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 38,
+        "line": 27,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 22,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 31,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 23,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 33,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 25,
-        "line": 24,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 36,
+        "line": 35,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 36,
+        "line": 37,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -104,15 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 16,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 141
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -137,7 +139,7 @@
   "function_calls": [
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -264,5 +266,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar3` was initialized to the address of an array element's subfield (`pfVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 21,
+      "match": "pfVar3 = pfVar3 + N",
+      "severity": "moderate",
+      "text": "pfVar3 = pfVar3 + 3;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar4` was initialized to the address of an array element's subfield (`pfVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 22,
+      "match": "pfVar4 = pfVar4 + N",
+      "severity": "moderate",
+      "text": "pfVar4 = pfVar4 + 3;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

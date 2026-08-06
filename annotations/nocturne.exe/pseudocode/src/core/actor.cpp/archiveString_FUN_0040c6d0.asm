@@ -148,7 +148,7 @@ section .text
     MOV ECX,dword ptr [0x00763e84]      ; 0040c7c2 | DAT_00763e84
     PUSH ECX                            ; 0040c7c8
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c7c9
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040c7ce
     PUSH EBX                            ; 0040c7d1
     PUSH 0x5acc58                       ; 0040c7d2 | = "String"

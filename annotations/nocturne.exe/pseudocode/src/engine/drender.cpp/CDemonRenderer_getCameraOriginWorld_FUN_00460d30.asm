@@ -14,14 +14,14 @@
 ;
 ; XREF[10]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80 at 0044cea8
+;   core_dlight.cpp_CDemonLight_FUN_0044f0b0 at 0044f225
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350 at 004514a2
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 0045055c
-;   core_dlight.cpp_FUN_0044f0b0 at 0044f225
 ;   core_dlight.cpp_FUN_0044f9b0 at 0044f9e1
 ;   core_fire.cpp_CGunFlame_render_FUN_00488580 at 00488660
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00485b5a
+;   core_set.cpp_CDemonSet_FUN_0050e080 at 0050e097
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d317
-;   core_set.cpp_FUN_0050e080 at 0050e097
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310 at 00549336
 ;
 ; Referenced Globals:

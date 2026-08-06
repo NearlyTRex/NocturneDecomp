@@ -79,9 +79,10 @@ LAB_004358cb:
                   iVar7 = local_2c->connected_count + 1;
                   local_2c->connected_count = iVar7;
                   if (0xf < iVar7) {
-                    g_CHAR_PTR_01cc4800 = "..\\core\\cloth.cpp";
-                    g_INT_01cc4804 = 0x1c3;
-                    core_main_c_FUN_004c8440("Too many connecting verticies");
+                    g_CurrentFilename = "..\\core\\cloth.cpp";
+                    g_CurrentLineNumber = 451;
+                    core_main_c_displayErrorAndQuit_FUN_004c8440
+                              ("Too many connecting verticies");
                     iVar5 = iVar5 + 1;
                     iVar10 = iVar10 + 0xc;
                     if (*(int *)(iVar11 + 4) <= iVar5) break;

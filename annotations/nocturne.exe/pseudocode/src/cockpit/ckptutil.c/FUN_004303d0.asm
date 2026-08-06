@@ -7,14 +7,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_u_byt_0057aaab
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aae5
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     POP EDI                             ; 004304a6
     MOV ESI,dword ptr [ESP + 0x54]      ; 004304a7
     PUSH ESI                            ; 004304ab
-    CALL crt_unknown.c_FUN_005638d0     ; 004304ac
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 004304ac
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 004304b1
     ADD ESP,0x68                        ; 004304b4
     POP EBP                             ; 004304b7
@@ -122,10 +122,10 @@ section .text
     MOV EAX,ESP                         ; 004304d4
     MOV ECX,0x57aae5                    ; 004304d6 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 004304db
-    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | g_INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004304e8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | g_CurrentLineNumber
+    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004304e8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004304ed
     JMP 0x00430413                      ; 004304f0
         ;   XREF to: 00430413 (UNCONDITIONAL_JUMP)  ; LAB_00430413

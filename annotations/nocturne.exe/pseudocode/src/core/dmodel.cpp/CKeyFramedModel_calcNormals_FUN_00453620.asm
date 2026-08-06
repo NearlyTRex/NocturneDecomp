@@ -20,11 +20,11 @@
 ;   TerminatedCString s_core_dmodel_cpp_0057cc8e
 ;   TerminatedCString s_CKeyFramedModel_calcNorm_0057cca1
 ;   double DOUBLE_0057cce6 = 65535
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
@@ -163,10 +163,10 @@ section .text
         ;   Label: LAB_0045375f
     MOV ESI,0x2f1                       ; 00453764
     PUSH 0x57cca1                       ; 00453769 | = "CKeyFramedModel::calcNormals() - vert..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0045376e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00453774 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045377a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0045376e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00453774 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045377a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045377f
     JMP 0x00453649                      ; 00453782
         ;   XREF to: 00453649 (UNCONDITIONAL_JUMP)  ; LAB_00453649

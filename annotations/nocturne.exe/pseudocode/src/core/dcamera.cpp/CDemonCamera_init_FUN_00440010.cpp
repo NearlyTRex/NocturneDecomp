@@ -36,17 +36,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(CDemonCamera *this_
                      (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    g_INT_01cc4804 = 0x248;
-    core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 584;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   pvVar2 = malloc
                      (this_ptr->screen_width * (int)this_ptr->max_distance * 4 + 0x1010);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dcamera.cpp";
-    g_INT_01cc4804 = 0x24d;
-    core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc z buffer");
+    g_CurrentFilename = "..\\core\\dcamera.cpp";
+    g_CurrentLineNumber = 589;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::init - Unable to alloc z buffer");
   }
   this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);
   this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);

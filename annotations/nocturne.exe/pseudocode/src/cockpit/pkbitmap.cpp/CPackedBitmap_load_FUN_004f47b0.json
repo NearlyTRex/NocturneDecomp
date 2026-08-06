@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -63,9 +63,15 @@
       },
       {
         "category": "format_error",
-        "column": 67,
+        "column": 105,
         "line": 80,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 81,
+        "message": "format specifies type 'unsigned int' but the argument has type 'ulong' (aka 'unsigned long') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -74,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 184,
+    "complexity_score": 185,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 100,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 277
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -118,12 +124,12 @@
     {
       "addr": "004f3f50",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_004f3f50"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50"
     },
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00564a70",
@@ -132,7 +138,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -168,13 +174,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -305,7 +311,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 80,
       "match": "(ushort *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)((int)this_ptr->packed_data + new_size);",
@@ -313,7 +319,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 93,
       "match": "(ushort *)((int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
@@ -321,7 +327,7 @@
     },
     {
       "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
+      "line": 93,
       "match": "(int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
@@ -329,7 +335,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 84,
+      "line": 85,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = (uVar9 & 0xffff) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -337,7 +343,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 89,
+      "line": 90,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar9 = uVar9 & 3; new_size = uStack_1c, uVar9 != 0; uVar9 = uVar9 - 1) {",

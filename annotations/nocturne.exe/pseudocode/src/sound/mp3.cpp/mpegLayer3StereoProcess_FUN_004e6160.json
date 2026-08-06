@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1416,
+    "complexity_score": 1406,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 526,
-    "suspect_count": 87,
+    "suspect_count": 86,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
@@ -162,7 +162,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004e60c0",
@@ -275,13 +275,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -1224,14 +1224,6 @@
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar9,local_2078);",
       "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 498,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004c8440(\"Error in streo processing.  File: %s\",&DAT_01cd8b28);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&uStack_57a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

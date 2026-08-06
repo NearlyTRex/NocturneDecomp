@@ -33,17 +33,17 @@
 ;   TerminatedCString s_Can_t_create_body_part_00578e8f
 ;   float FLOAT_00578eaa = 10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x44]      ; 00415b3b
     MOV EDI,dword ptr [ESP + 0x48]      ; 00415b3f
     PUSH 0xf18                          ; 00415b43
-    CALL crt_unknown.c_FUN_0056497c     ; 00415b48
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00415b48
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00415b4d
     TEST EAX,EAX                        ; 00415b50
     JNZ 0x00415c31                      ; 00415b52
@@ -73,10 +73,10 @@ section .text
     MOV EDX,0x578e7a                    ; 00415b5e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00415b63
     PUSH 0x578e8f                       ; 00415b68 | = "Can't create body part!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00415b79
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00415b79
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00415b7e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00415b81
         ;   Label: LAB_00415b81

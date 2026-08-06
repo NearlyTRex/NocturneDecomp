@@ -16,18 +16,21 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041c850(CBox *this_ptr,_FILE *f
   CVector3f local_2c;
   CVector3f local_20;
   float local_14;
+  byte local_10 [4];
   
   _fgets(local_144,0xff,file_handle);
-  _fscanf(file_handle," %d\n");
+  _fscanf(file_handle," %d\n",local_10);
   _fgets(local_144,0xff,file_handle);
-  _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle," %f\n");
+  _fscanf(file_handle," %f,%f,%f\n",&local_20,&local_20.y,&local_20.z);
+  _fscanf(file_handle," %f,%f,%f\n",&local_2c,&local_2c.z,&local_2c.y);
+  _fscanf(file_handle," %f,%f,%f\n",&local_44,&local_44.y,&local_44.z);
+  _fscanf(file_handle," %f\n",&local_14);
   core_box_cpp_CBox_setupCorners_FUN_0041a6e0(this_ptr,&local_20,&local_2c,&local_44,local_14);
-  _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle," %f,%f,%f\n");
-  _fscanf(file_handle," %d\n");
+  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->linear_velocity_local,
+             &(this_ptr->linear_velocity_local).y,&(this_ptr->linear_velocity_local).z);
+  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->angular_velocity,
+             &(this_ptr->angular_velocity).y,&(this_ptr->angular_velocity).z);
+  _fscanf(file_handle," %d\n",&this_ptr->is_valid);
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40
                      (&this_ptr->rotation_matrix,&local_38,&this_ptr->linear_velocity_local);
   if (&this_ptr->linear_velocity == pCVar1) {

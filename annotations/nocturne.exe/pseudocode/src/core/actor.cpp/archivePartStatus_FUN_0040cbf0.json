@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,13 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 19,
-        "message": "no matching function for call to '_fprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 21,
+        "line": 20,
         "message": "no matching function for call to '_fprintf'"
       },
       {
@@ -75,44 +69,50 @@
       },
       {
         "category": "incompatible_types",
-        "column": 7,
-        "line": 27,
-        "message": "no matching function for call to '_fprintf'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 5,
-        "line": 29,
-        "message": "no matching function for call to '_fprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 31,
+        "line": 23,
         "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 36,
+        "line": 28,
         "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 38,
+        "line": 30,
         "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 40,
+        "line": 32,
+        "message": "no matching function for call to '_fprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 37,
+        "message": "no matching function for call to '_fprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 39,
+        "message": "no matching function for call to '_fprintf'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 41,
         "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 44,
+        "line": 45,
         "message": "no matching function for call to '_fgetc'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 327,
+    "complexity_score": 332,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 82,
     "suspect_count": 24,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data"
     ],
-    "total_lines": 335
+    "total_lines": 340
   },
   "cross_references": [
     {
@@ -213,12 +213,12 @@
     },
     {
       "addr": "005644f0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -507,27 +507,10 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "archivePartStatus_FUN_0040cbf0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 53,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_00763e88",
       "severity": "mild",
       "text": "if (DAT_00763e88 != 1) {",
@@ -535,7 +518,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
@@ -543,7 +526,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s{ // %s\\n\",&DAT_005acc90,property_name);",
@@ -551,7 +534,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%d\\n\",&DAT_005acc90,0x1e);",
@@ -559,7 +542,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s%d\\n\",&DAT_005acc90,0x1e);",
@@ -567,7 +550,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
@@ -575,7 +558,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_005acc90",
       "severity": "mild",
       "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
@@ -583,147 +566,139 @@
     },
     {
       "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar4->visibility_flags[0]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"\\n\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar4->texture_set_indices[0]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"\\n\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_005acc90",
+      "severity": "mild",
+      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_00763e84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\"%d\",&local_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_00763e84,\"%d\",pSVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\" \");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_00763e84,\"%d\",piVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "_fscanf(DAT_00763e84,\" \");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_00763e84",
+      "severity": "mild",
+      "text": "while (iVar1 = _fgetc(DAT_00763e84), -1 < iVar1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 20,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar1->visibility_flags[0]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005acc90",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%d \",pSVar1->texture_set_indices[0]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005acc90",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s}\\n\",&DAT_005acc90);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar2 = _fgetc(DAT_00763e84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\"%d\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar3 = _fscanf(DAT_00763e84,\"%d\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\" \");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar3 = _fscanf(DAT_00763e84,\"%d\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fscanf(DAT_00763e84,\" \");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "while (iVar2 = _fgetc(DAT_00763e84), -1 < iVar2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 19,
-      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CDeformableModelInstance *)&(pCVar4->motion_controller).current_motion_index;",
+      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `model_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
+      "line": 28,
       "match": "model_ptr = (T *)&(model_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 53,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_14) {",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -18,7 +18,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr)
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(&this_ptr->base);
   pvVar3 = __arrinit
-                     (pCVar2[1].base.base.actor_name + 8,400,&g_SBugsTypeInfo_0059b010);
+                     (pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo_0059b010);
   this_ptr_00 = (CKeyFramedModelInstance *)__arrinit
                           ((void *)((int)pvVar3 + 0x6404),4,
                            &g_CKeyFramedModelInstanceTypeInfo_0059b030);

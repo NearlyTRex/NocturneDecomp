@@ -18,7 +18,7 @@
 ;   engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00406fd0 at 00407019
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01c70f78
 ;   undefined4 DAT_01c70f7c
 ;   undefined4 DAT_01c70fb4
@@ -39,7 +39,7 @@ section .text
     PUSH EBP                            ; 00494263
     SUB ESP,0x14                        ; 00494264
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00494267
-    MOV EAX,[0x005b7620]                ; 0049426b | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049426b | g_WindowHeight
     XOR EDX,EDX                         ; 00494270
     XOR EBP,EBP                         ; 00494272
     MOV [0x01c712fc],EAX                ; 00494274 | DAT_01c712fc

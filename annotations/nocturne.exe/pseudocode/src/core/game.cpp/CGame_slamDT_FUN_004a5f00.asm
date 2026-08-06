@@ -11,19 +11,19 @@
 ;   core_fire.cpp_CSpark_process_FUN_004836e0 at 0048372f
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cca6
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980 at 004ed9b0
+;   core_stranger.cpp_CStranger_FUN_00535900 at 00535a60
 ;   core_stranger.cpp_CStranger_process_FUN_005357d0 at 0053584d
-;   core_stranger.cpp_FUN_00535900 at 00535a60
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_00584452
 ;   TerminatedCString s_CGame_slamDT_invalid_dt_00584463
 ;   float FLOAT_00584482 = 65536
 ;   undefined4 DAT_01bd1d80
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;
 ; *****************************************************************************
@@ -56,10 +56,10 @@ section .text
         ;   Label: LAB_004a5f41
     MOV ECX,0x10b5                      ; 004a5f46
     PUSH 0x584463                       ; 004a5f4b | = "CGame::slamDT - invalid dt!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004a5f50 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004a5f56 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004a5f5c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004a5f50 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004a5f56 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004a5f5c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004a5f61
     JMP 0x004a5f12                      ; 004a5f64
         ;   XREF to: 004a5f12 (UNCONDITIONAL_JUMP)  ; LAB_004a5f12

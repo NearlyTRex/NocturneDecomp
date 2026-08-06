@@ -42,9 +42,9 @@ void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(
     }
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\core\\icepick.cpp";
-    g_INT_01cc4804 = 0x28a;
-    core_main_c_FUN_004c8440("CIcePick::getCarryObjToBodyXForm - wrong hand");
+    g_CurrentFilename = "..\\core\\icepick.cpp";
+    g_CurrentLineNumber = 650;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(&local_78,&local_3c,&local_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00

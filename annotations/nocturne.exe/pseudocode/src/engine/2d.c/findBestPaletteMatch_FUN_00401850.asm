@@ -29,7 +29,7 @@
 ;   double DOUBLE_0057713c = 0.590000000000000
 ;   double DOUBLE_00577144 = 0.110000000000000
 ;   double DOUBLE_0057714c = 0.150000000000000
-;   undefined4 DAT_006af638
+;   float[256] g_PaletteLuminanceCache
 ;
 ; *****************************************************************************
 
@@ -103,7 +103,7 @@ section .text
     XOR EAX,EDX                         ; 00401905
     SUB EAX,EDX                         ; 00401907
     FLD float ptr [ESP + 0x1c]          ; 00401909
-    FSUB float ptr [ESI + 0x6af638]     ; 0040190d | DAT_006af638
+    FSUB float ptr [ESI + 0x6af638]     ; 0040190d | g_PaletteLuminanceCache
     MOV dword ptr [ESP + 0x2c],EAX      ; 00401913
     FABS                                ; 00401917
     FLD float ptr [ESP + 0x8]           ; 00401919

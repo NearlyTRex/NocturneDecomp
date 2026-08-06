@@ -32,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad1fc);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad1fc);
   this_ptr_00 = &this_ptr->model;
   if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
@@ -90,7 +90,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
     local_30 = 0.0;
     puVar7 = puVar11;
     puVar10 = puVar11;
-    for (iVar8 = 0; pCVar4 = DAT_005ae704, iVar8 < (int)(uint)*puVar11; iVar8 = iVar8 + 1) {
+    for (iVar8 = 0; pCVar4 = g_CDemonRenderer_PTR_005ae704, iVar8 < (int)(uint)*puVar11;
+        iVar8 = iVar8 + 1) {
       dVar13 = round
                          ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00765aa0)[puVar10[1]]));
       local_18 = (int)ROUND(dVar13);

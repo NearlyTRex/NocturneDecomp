@@ -15,7 +15,7 @@
 ;
 ; XREF[3]:
 ;   core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120 at 00478294
-;   core_lightgun.cpp_FUN_004c7ca0 at 004c7e30
+;   core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0 at 004c7e30
 ;   core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770 at 005168e4
 ;
 ; Referenced Globals:

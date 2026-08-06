@@ -8,17 +8,17 @@
 ;
 ; XREF[2]:
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2198
-;   sound_sndmain.cpp_FUN_005289f0 at 00528b02
+;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528b02
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059388e
 ;   TerminatedCString s_enableHwSoundMixing_Can_005938a3
 ;   undefined4 DAT_005bea78
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00528480
 ;
 ; *****************************************************************************
@@ -38,10 +38,10 @@ section .text
         ;   Label: LAB_005284b3
     MOV ECX,0x1237                      ; 005284b8
     PUSH 0x5938a3                       ; 005284bd | = "enableHwSoundMixing - Can't do this w..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005284c2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005284c8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005284ce
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005284c2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 005284c8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005284ce
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005284d3
     MOV EAX,dword ptr [ESP + 0x4]       ; 005284d6
     MOV [0x005bea78],EAX                ; 005284da | DAT_005bea78

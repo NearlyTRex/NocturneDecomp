@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,12 +62,6 @@
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
-        "category": "format_error",
-        "column": 30,
-        "line": 31,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
         "category": "incompatible_types",
         "column": 13,
         "line": 41,
@@ -75,15 +69,9 @@
       },
       {
         "category": "format_error",
-        "column": 28,
+        "column": 31,
         "line": 54,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 61,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "message": "format specifies type 'unsigned int *' but the argument has type 'CDemonActor **' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -92,18 +80,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 172,
+    "complexity_score": 171,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 61,
     "suspect_count": 10,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data"
     ],
-    "total_lines": 209
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -129,7 +117,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "004d90a0",
@@ -143,7 +131,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     },
     {
@@ -225,13 +213,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -337,19 +325,12 @@
   "static_analysis": {
     "analyzed_file": "CDemonMission_loadActor_FUN_004d8aa0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 55,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        },
         {
           "check_id": "legacyUninitvar",
           "column": 14,
-          "line": 63,
+          "line": 62,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -409,7 +390,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 55,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
@@ -417,7 +398,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 57,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
@@ -425,7 +406,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 59,
+      "line": 58,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
@@ -433,23 +414,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 60,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Uninitialized variable: local_14",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pCVar1 = local_14;",
-      "type": "static_uninitvar"
-    },
-    {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 63,
+      "line": 62,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "pCVar1 = unaff_ESI;",

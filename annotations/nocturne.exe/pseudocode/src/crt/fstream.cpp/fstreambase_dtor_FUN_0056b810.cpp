@@ -32,7 +32,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_0056b810(fstreambase 
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_fstreambaseTypeInfo_005a4a60);

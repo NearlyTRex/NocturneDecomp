@@ -1,0 +1,335 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "cast_error",
+        "column": 20,
+        "line": 75,
+        "message": "cannot cast from type 'float' to pointer type 'float *'"
+      },
+      {
+        "category": "type_error",
+        "column": 54,
+        "line": 93,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 54,
+        "line": 95,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 54,
+        "line": 96,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 293,
+    "complexity_score": 159,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 109,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unknown_field",
+      "warning_type_propagation"
+    ],
+    "total_lines": 402
+  },
+  "cross_references": [
+    {
+      "addr": "00421480",
+      "from_addr": "004214c0",
+      "name": "core_bugs.cpp_CBugs_process_FUN_00421480",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00422050",
+    "address_range": [
+      [
+        "00422050",
+        "00422368"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bugs.cpp_CBugs_FUN_00422050",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_FUN_00422050(CBugs *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00423a50",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50"
+    },
+    {
+      "addr": "00422370",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370"
+    },
+    {
+      "addr": "00421b80",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_FUN_00421b80"
+    },
+    {
+      "addr": "00423680",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680"
+    },
+    {
+      "addr": "00423790",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790"
+    },
+    {
+      "addr": "004227b0",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0"
+    },
+    {
+      "addr": "00425050",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050"
+    },
+    {
+      "addr": "0044d7a0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0"
+    },
+    {
+      "addr": "0044da40",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40"
+    },
+    {
+      "addr": "004f1600",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600"
+    },
+    {
+      "addr": "004f1e00",
+      "is_variadic": false,
+      "name": "core_path.cpp_getPathMap_FUN_004f1e00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00579d1d",
+      "name": "DOUBLE_00579d1d",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00579d25",
+      "name": "DOUBLE_00579d25",
+      "type": "double",
+      "value": "5.22209901682860E-315"
+    },
+    {
+      "addr": "0059aeb4",
+      "name": "FLOAT_0059aeb4",
+      "type": "float",
+      "value": "2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004214c0",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_process_FUN_00421480",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.857142857142857,
+    "instruction_count": 252,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 13,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CALLIND": 2,
+      "CBRANCH": 19,
+      "COPY": 547,
+      "FLOAT2FLOAT": 51,
+      "FLOAT_ABS": 3,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 18,
+      "FLOAT_SUB": 6,
+      "INT_ADD": 120,
+      "INT_AND": 117,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 64,
+      "INT_LEFT": 36,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 47,
+      "INT_OR": 45,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 32,
+      "INT_SUB": 50,
+      "INT_XOR": 3,
+      "INT_ZEXT": 36,
+      "LOAD": 73,
+      "POPCOUNT": 32,
+      "RETURN": 2,
+      "STORE": 73
+    },
+    "pcode_op_count": 1476
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042205c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_5c = fStack_20 * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_58 = fStack_1c * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_54 = fStack_18 * 5.2220990168285998e-315._0_4_;",
+      "type": "unknown_field"
+    }
+  ]
+}

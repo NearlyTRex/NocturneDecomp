@@ -29,10 +29,10 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee *th
   local_1c.y = (int)ROUND(position->y * _DAT_005a02b0);
   local_1c.z = (int)ROUND(position->z * _DAT_005a02b0);
   engine_special_cpp_transformPoint_FUN_00530a25
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_1c);
-  this_ptr_00 = DAT_005ae704;
-  pSVar3 = DAT_005ae704->vertex_buffer_ptr;
-  pSVar4 = DAT_005ae704->vertex_buffer_ptr + 1;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_1c);
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
+  pSVar3 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
+  pSVar4 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr + 1;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);

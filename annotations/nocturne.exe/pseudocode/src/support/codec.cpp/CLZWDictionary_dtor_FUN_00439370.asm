@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_dcamera.cpp_FUN_00446810 at 00446db6
-;   core_game.cpp_FUN_004a3b90 at 004a3f8b
-;   core_game.cpp_FUN_004a4170 at 004a4581
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446db6
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f8b
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4581
 ;   support_codec.cpp_CLZWCompress_dtor_FUN_00439c70 at 00439c82
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10 at 00439c22
 ;

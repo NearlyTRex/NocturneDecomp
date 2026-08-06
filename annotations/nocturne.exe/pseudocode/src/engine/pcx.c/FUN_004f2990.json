@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 92,
-        "message": "use of undeclared identifier 'DAT_01c00648'; did you mean 'DAT_02DF0648'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 103,
-        "message": "use of undeclared identifier 'DAT_01c00648'; did you mean 'DAT_02DF0648'?"
       }
     ],
     "success": false,
@@ -74,13 +62,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 348,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 103,
-    "suspect_count": 23,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -112,7 +100,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563cc0",
@@ -176,15 +164,15 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7624",
@@ -194,13 +182,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -377,110 +365,6 @@
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "local_80 = (short)DAT_005b761c + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_7e = (short)DAT_005b7620 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "local_46 = (short)DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "local_42 = (short)DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "local_40 = (short)DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "} while (iVar2 < DAT_005b7620);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_01c00648",
-      "severity": "mild",
-      "text": "*file->_ptr = (&DAT_01c00648)[iVar2];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01c00648",
-      "severity": "mild",
-      "text": "character = (uint)(byte)(&DAT_01c00648)[iVar2];",
       "type": "undefined_data"
     },
     {

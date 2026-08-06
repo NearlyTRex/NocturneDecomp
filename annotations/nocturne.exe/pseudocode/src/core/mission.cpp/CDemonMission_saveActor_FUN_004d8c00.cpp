@@ -10,20 +10,20 @@ void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004d8c00(CDemonMission
 
 {
   char *pcVar1;
-  char *pcVar2;
+  char *format;
   
   if (actor_ptr < (CDemonActor *)0xff000000) {
     pcVar1 = "(none)";
     if (actor_ptr != (CDemonActor *)0x0) {
       pcVar1 = actor_ptr->actor_name;
     }
-    pcVar2 = "\"%s\"";
+    format = "\"%s\"";
   }
   else {
-    pcVar2 = "%08x";
+    format = "%08x";
     pcVar1 = actor_ptr->actor_name;
   }
-  _fprintf(file,pcVar2,pcVar1);
+  _fprintf(file,format,pcVar1);
   if (description != (char *)0x0) {
     _fprintf(file,"\t\t// %s\n",description);
     return;

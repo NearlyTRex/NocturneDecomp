@@ -15,16 +15,16 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042a150 at 0042a15f
+;   core_charactr.cpp_CCharacter_FUN_0042a150 at 0042a15f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a316
 ;   TerminatedCString s_CCharacter_applyLookAt_n_0057a32b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_quaternionFromAngleX_FUN_0055d4a0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_0055d4e0
@@ -118,10 +118,10 @@ section .text
     MOV ECX,0x57a316                    ; 00429f31 | = "..\\core\\charactr.cpp"
     MOV ESI,0xdf9                       ; 00429f36
     PUSH 0x57a32b                       ; 00429f3b | = "CCharacter::applyLookAt - never set l..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00429f4c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00429f4c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00429f51
     JMP 0x00429e8a                      ; 00429f54
         ;   XREF to: 00429e8a (UNCONDITIONAL_JUMP)  ; LAB_00429e8a

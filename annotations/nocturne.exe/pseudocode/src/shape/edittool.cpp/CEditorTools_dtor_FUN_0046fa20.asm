@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01bcd07c
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 0046fa5f
     PUSH ESI                            ; 0046fa60
         ;   Label: LAB_0046fa60
-    CALL crt_unknown.c_FUN_005638d0     ; 0046fa61
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0046fa61
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 0046fa66
     ADD ESP,0x4                         ; 0046fa68
     MOV dword ptr [0x01bcd078],EBP      ; 0046fa6b | DAT_01bcd078

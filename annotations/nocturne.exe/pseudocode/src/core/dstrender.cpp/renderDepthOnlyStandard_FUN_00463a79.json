@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,15 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
-        "line": 38,
+        "column": 35,
+        "line": 37,
         "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_01c00c84'"
       }
     ],
     "success": false,
@@ -74,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 70,
+    "complexity_score": 60,
     "cross_reference_count": 18,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 45,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
@@ -218,7 +212,7 @@
     },
     {
       "addr": "01c00c84",
-      "name": "DAT_01c00c84",
+      "name": "g_ReciprocalLookupTable[1]",
       "type": "undefined4",
       "value": null
     }
@@ -278,18 +272,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
-      "text": "puVar10 = (ushort *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar6 * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01c00c84",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_01c00c84 + iVar8 * 4);",
+      "text": "puVar9 = (ushort *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar5 * 2);",
       "type": "undefined_data"
     }
   ]

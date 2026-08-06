@@ -279,7 +279,7 @@ LAB_004d039c:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    _sprintf(local_120,"%d");
+    _sprintf(local_120,"%d",g_CGame_PTR_005b9354->game_bpp);
     iVar5 = -1;
     pcVar8 = &DAT_01cc6080;
     do {

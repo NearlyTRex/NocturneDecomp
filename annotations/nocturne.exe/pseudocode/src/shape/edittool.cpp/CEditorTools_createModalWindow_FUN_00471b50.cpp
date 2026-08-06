@@ -18,11 +18,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   void *pvVar4;
   uint uVar5;
   int *piVar6;
-  uint *puVar7;
-  int iVar8;
-  uint *puVar9;
+  int iVar7;
+  uint *puVar8;
+  int iVar9;
   uint *puVar10;
-  byte bVar11;
+  uint *puVar11;
+  byte bVar12;
   uint local_12e8 [1200];
   int local_28;
   int local_24;
@@ -31,24 +32,24 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   int local_18;
   uint local_14;
   
-  bVar11 = 0;
+  bVar12 = 0;
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x8b;
-    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 139;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (4 < _DAT_01bcd07c) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x674;
-    core_main_c_FUN_004c8440("Can't open another window!");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 1652;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open another window!");
   }
   iVar1 = _DAT_01bcd07c * 0x1d8;
   local_1c = (int *)(iVar1 + 0x1bcd080);
-  local_20 = (int)((DAT_005b761c + (DAT_005b761c >> 0x1f) * -0x80) -
-                  (uint)((DAT_005b761c >> 0x1f) << 6 < 0)) >> 7;
-  local_24 = DAT_005b7620 / 0x60;
+  local_20 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
+                  (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+  local_24 = g_WindowHeight / 0x60;
   _DAT_01bcd07c = _DAT_01bcd07c + 1;
   left = left - local_20;
   top = top - local_24;
@@ -57,8 +58,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   if (left < 0) {
     left = 0;
   }
-  if (DAT_005b761c < right) {
-    right = DAT_005b761c;
+  if (g_WindowWidth < right) {
+    right = g_WindowWidth;
   }
   local_28 = 0;
   *(byte *)(iVar1 + 0x1bcd0b8) = 0;
@@ -66,14 +67,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     iVar1 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
                       (_DAT_01bcd070,text_content,(char *)0x1bcc0d0,0x14,200,
                        (right - left) + local_20 * -2);
-    iVar8 = 0;
+    iVar9 = 0;
     piVar6 = local_1c + 0xe;
     if (0 < iVar1) {
+      iVar7 = 0x1bcc0d0;
       do {
-        iVar8 = iVar8 + 1;
-        iVar2 = _sprintf((char *)piVar6,"%s\n");
+        iVar9 = iVar9 + 1;
+        iVar2 = _sprintf((char *)piVar6,"%s\n",iVar7);
         piVar6 = (int *)((int)piVar6 + iVar2);
-      } while (iVar8 < iVar1);
+        iVar7 = iVar7 + 200;
+      } while (iVar9 < iVar1);
     }
     this_ptr_00 = _DAT_01bcd070;
     if (0 < iVar1) {
@@ -88,77 +91,77 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   if (top < 0) {
     top = 0;
   }
-  if (DAT_005b7620 < bottom) {
-    bottom = DAT_005b7620;
+  if (g_WindowHeight < bottom) {
+    bottom = g_WindowHeight;
   }
   if ((window_flags & 1) == 0) {
     if (_DAT_01c02594 != 0) {
-      if (0 < DAT_005b7620) {
+      if (0 < g_WindowHeight) {
         iVar1 = 0;
         do {
-          iVar8 = iVar1 + 4;
+          iVar9 = iVar1 + 4;
           *(uint *)((int)local_12e8 + iVar1) = *(uint *)(&DAT_01bd2fa0 + iVar1);
-          iVar1 = iVar8;
-        } while (iVar8 < DAT_005b7620 * 4);
+          iVar1 = iVar9;
+        } while (iVar9 < g_WindowHeight * 4);
       }
       engine_special_cpp_lockFrame_FUN_005322e0();
-      iVar1 = DAT_005b761c * DAT_005b7624 >> 0x1f;
-      uVar3 = (int)((DAT_005b761c * DAT_005b7624 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
+      iVar1 = g_WindowWidth * DAT_005b7624 >> 0x1f;
+      uVar3 = (int)((g_WindowWidth * DAT_005b7624 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
       iVar1 = 0;
-      if (0 < DAT_005b7620) {
-        iVar8 = 0;
+      if (0 < g_WindowHeight) {
+        iVar9 = 0;
         do {
-          puVar7 = *(uint **)(&DAT_01bd2fa0 + iVar8);
-          puVar9 = *(uint **)((int)local_12e8 + iVar8);
+          puVar8 = *(uint **)(&DAT_01bd2fa0 + iVar9);
+          puVar10 = *(uint **)((int)local_12e8 + iVar9);
           for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *puVar9 = *puVar7;
-            puVar7 = puVar7 + (uint)bVar11 * -2 + 1;
-            puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+            *puVar10 = *puVar8;
+            puVar8 = puVar8 + (uint)bVar12 * -2 + 1;
+            puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
           }
           for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *(byte *)puVar9 = *(byte *)puVar7;
-            puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);
-            puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
+            *(byte *)puVar10 = *(byte *)puVar8;
+            puVar8 = (uint *)((int)puVar8 + (uint)bVar12 * -2 + 1);
+            puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
           }
           iVar1 = iVar1 + 1;
-          iVar8 = iVar8 + 4;
-        } while (iVar1 < DAT_005b7620);
+          iVar9 = iVar9 + 4;
+        } while (iVar1 < g_WindowHeight);
       }
       engine_special_cpp_FUN_00532320();
     }
     iVar1 = (right - left) * DAT_005b7624;
-    iVar8 = iVar1 >> 0x1f;
-    local_14 = (int)((iVar1 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3;
+    iVar9 = iVar1 >> 0x1f;
+    local_14 = (int)((iVar1 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
     pvVar4 = malloc((bottom - top) * local_14);
     local_1c[0x72] = (int)pvVar4;
     if (pvVar4 == (void *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      g_INT_01cc4804 = 0x6c4;
-      core_main_c_FUN_004c8440("out of memory to open editor window.");
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 1732;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("out of memory to open editor window.");
     }
-    puVar7 = (uint *)local_1c[0x72];
+    puVar8 = (uint *)local_1c[0x72];
     if (top < bottom) {
       iVar1 = top * 4;
       local_18 = bottom * 4;
       do {
-        iVar8 = left * DAT_005b7624 >> 0x1f;
+        iVar9 = left * DAT_005b7624 >> 0x1f;
         piVar6 = (int *)(&DAT_01bd2fa0 + iVar1);
         iVar1 = iVar1 + 4;
-        puVar9 = (uint *)
-                 (*piVar6 +
-                 ((int)((left * DAT_005b7624 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
-        puVar10 = puVar7;
+        puVar10 = (uint *)
+                  (*piVar6 +
+                  ((int)((left * DAT_005b7624 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3));
+        puVar11 = puVar8;
         for (uVar3 = local_14 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar10 = *puVar9;
-          puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
-          puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+          *puVar11 = *puVar10;
+          puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+          puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
         }
         for (uVar3 = local_14 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *(byte *)puVar10 = *(byte *)puVar9;
-          puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
-          puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
+          *(byte *)puVar11 = *(byte *)puVar10;
+          puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
+          puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);
         }
-        puVar7 = (uint *)((int)puVar7 + local_14);
+        puVar8 = (uint *)((int)puVar8 + local_14);
       } while (iVar1 < local_18);
     }
   }

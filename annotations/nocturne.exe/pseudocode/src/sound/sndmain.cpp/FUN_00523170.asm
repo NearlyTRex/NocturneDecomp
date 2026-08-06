@@ -11,8 +11,8 @@
 ;   TerminatedCString s_nextMixingBuffer_shouldn_00592875
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8328
 ;   undefined4 DAT_02dc832c
 ;   undefined4 DAT_02dc8330
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_string.c_memmove_FUN_00566170
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -47,10 +47,10 @@ section .text
     MOV EDI,0x592860                    ; 0052318d | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x4e4                       ; 00523192
     PUSH 0x592875                       ; 00523197 | = "nextMixingBuffer - shouldn't have any..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0052319c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005231a2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005231a8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0052319c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 005231a2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005231a8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005231ad
     MOV ESI,dword ptr [0x02dc8330]      ; 005231b0 | DAT_02dc8330
         ;   Label: LAB_005231b0
@@ -169,10 +169,10 @@ section .text
         ;   Label: LAB_005232f9
     MOV EBX,0x4e0                       ; 005232fe
     PUSH 0x592840                       ; 00523303 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523308 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052330e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00523314
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523308 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0052330e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523314
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523319
     JMP 0x00523184                      ; 0052331c
         ;   XREF to: 00523184 (UNCONDITIONAL_JUMP)  ; LAB_00523184

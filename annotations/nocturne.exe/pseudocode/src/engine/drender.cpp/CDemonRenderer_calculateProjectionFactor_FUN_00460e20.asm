@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0050e080 at 0050e0fa
+;   core_set.cpp_CDemonSet_FUN_0050e080 at 0050e0fa
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057dc85 = 18

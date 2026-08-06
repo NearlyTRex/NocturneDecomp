@@ -9,11 +9,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591c2c
 ;   TerminatedCString s_CDeformableModelInstance_00591c41
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00518ec0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;
@@ -47,10 +47,10 @@ section .text
     MOV ECX,0x591c2c                    ; 0051dc5c | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd33                       ; 0051dc61
     PUSH 0x591c41                       ; 0051dc66 | = "CDeformableModelInstance::outlinePoly..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051dc6b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051dc71 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051dc77
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051dc6b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051dc71 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051dc77
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051dc7c
     POP ESI                             ; 0051dc7f
     JMP 0x0051dc3f                      ; 0051dc80

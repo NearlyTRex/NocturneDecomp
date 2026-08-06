@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00585070 = 0.0000152590218966964
 ;   double DOUBLE_00585078 = 0.5
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b762c
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c02580
@@ -67,7 +67,7 @@ section .text
     FLD1                                ; 004addd8
     FXCH                                ; 004addda
     FADD double ptr [0x00585078]        ; 004adddc | DOUBLE_00585078
-    MOV EBX,dword ptr [0x005ae704]      ; 004adde2 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 004adde2 | g_CDemonRenderer_PTR_005ae704
     FSTP float ptr [ESP + 0x8]          ; 004adde8
     FSUBRP                              ; 004addec
     PUSH EBX                            ; 004addee | DAT_01b4d738

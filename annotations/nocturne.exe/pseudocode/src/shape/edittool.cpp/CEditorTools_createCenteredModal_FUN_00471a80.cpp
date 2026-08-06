@@ -15,9 +15,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(CE
   int top;
   
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x8b;
-    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 139;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
@@ -27,9 +27,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(CE
       min_width = iVar1;
     }
   }
-  iVar1 = (DAT_005b761c - min_width) / 2;
-  top = (DAT_005b7620 - min_height) / 2;
+  iVar1 = (g_WindowWidth - min_width) / 2;
+  top = (g_WindowHeight - min_height) / 2;
   shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50
-            (this_ptr,iVar1,top,DAT_005b761c - iVar1,DAT_005b7620 - top,text_content,window_flags);
+            (this_ptr,iVar1,top,g_WindowWidth - iVar1,g_WindowHeight - top,text_content,window_flags
+            );
   return;
 }

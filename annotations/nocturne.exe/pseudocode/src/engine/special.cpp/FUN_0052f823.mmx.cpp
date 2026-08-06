@@ -48,7 +48,7 @@ __asm {
         shl EAX,0x18
         idiv EBX
         sub EAX,dword ptr [DAT_005bf050]
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf480],EDX
         mov EAX,dword ptr [ESI + 0x20]
         mov EBX,dword ptr [ESI + 0x28]
@@ -64,33 +64,33 @@ __asm {
         shl EAX,0x18
         idiv EBX
         sub EAX,dword ptr [DAT_005bf054]
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf484],EDX
         jmp LAB_0052f928
     LAB_0052f8f4:
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf050],EBX
         mov dword ptr [DAT_005bf480],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf054],EBX
         mov dword ptr [DAT_005bf484],EDX
     LAB_0052f928:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf05c],EBX
         mov dword ptr [DAT_005bf488],EDX
         mov EAX,dword ptr [EDI + 0x30]
         mov EBX,dword ptr [ESI + 0x30]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf540],EBX
         mov dword ptr [DAT_005bf548],EDX
         mov EBP,dword ptr [DAT_005bf540]
@@ -111,7 +111,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [DAT_005bf500],EBX
@@ -121,7 +121,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [DAT_005bf508],EBX
@@ -131,7 +131,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [DAT_005bf510],EBX
@@ -163,7 +163,7 @@ __asm {
         shl EAX,0x3
         shl EBX,0x3
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [DAT_005bf500],EBX
@@ -536,7 +536,7 @@ __asm {
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_01c00c84 + ECX]
+        imul dword ptr [ECX + 0x1c00c84]
         mov dword ptr [DAT_005bf05c],EBX
         mov dword ptr [DAT_005bf488],EDX
         mov EAX,[DAT_005bf05c]

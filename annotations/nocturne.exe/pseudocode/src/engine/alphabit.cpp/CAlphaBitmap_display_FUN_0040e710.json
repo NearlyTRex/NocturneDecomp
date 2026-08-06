@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -74,13 +74,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 195,
+    "complexity_score": 115,
     "cross_reference_count": 12,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 80,
-    "suspect_count": 11,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
@@ -114,7 +114,7 @@
     {
       "addr": "004c2470",
       "from_addr": "004c2b14",
-      "name": "core_inv.cpp_FUN_004c2470",
+      "name": "core_inv.cpp_CInventory_FUN_004c2470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -192,15 +192,15 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7624",
@@ -454,34 +454,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if ((((-1 < this_ptr->width + x) && (x < DAT_005b761c)) && (-1 < y + this_ptr->height)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "(y < DAT_005b7620)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((-1 < local_18) && (local_18 < DAT_005b7620)) {",
       "type": "undefined_data"
     },
     {
@@ -494,50 +470,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (DAT_005b761c < x + iVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005b761c - x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if ((-1 < local_1c) && (local_1c < DAT_005b7620)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "destPixels_00 = *(ushort **)(&DAT_01bd2fa0 + local_1c * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (DAT_005b761c < x + iVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005b761c - x;",
       "type": "undefined_data"
     }
   ]

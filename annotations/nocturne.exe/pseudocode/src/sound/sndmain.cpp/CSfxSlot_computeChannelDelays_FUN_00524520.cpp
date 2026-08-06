@@ -20,9 +20,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00524520(CSfxSl
   ulonglong local_20;
   
   if (_DAT_02dc84bc < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0x8e8;
-    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2280;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   iVar2 = DAT_005bea68;
   if (DAT_005bea68 < 2) {

@@ -36,9 +36,9 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemon
       return;
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
-      g_INT_01cc4804 = 0x202;
-      core_main_c_FUN_004c8440("CDemonLight::blitZBuffer - No master Z buffer");
+      g_CurrentFilename = "..\\core\\dlight.cpp";
+      g_CurrentLineNumber = 514;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonLight::blitZBuffer - No master Z buffer");
     }
     iVar6 = 0;
     if (0 < (this_ptr->base).rect_array_count) {

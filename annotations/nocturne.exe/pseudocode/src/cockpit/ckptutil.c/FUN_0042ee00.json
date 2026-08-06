@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "format_error",
-        "column": 55,
-        "line": 33,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -68,13 +62,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 169,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "unnamed_param"
     ],
@@ -97,7 +91,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563380",
@@ -106,12 +100,12 @@
     },
     {
       "addr": "005644f0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -177,13 +171,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -306,7 +300,15 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"wt\");",
+      "text": "file = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1,\"wt\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(local_6c,\"Could not create output file (%s).\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +316,7 @@
       "line": 31,
       "match": "param_3",
       "severity": "mild",
-      "text": "_fprintf(file_handle,\"%d\\n\",param_3);",
+      "text": "_fprintf(file,\"%d\\n\",param_3);",
       "type": "unnamed_param"
     },
     {

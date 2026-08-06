@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad49c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_00b0daf8
 ;   undefined4 DAT_00b0dafc
 ;   undefined4 DAT_00b0dafd
@@ -64,7 +64,7 @@ section .text
     JNZ 0x00443188                      ; 004431de
         ;   XREF to: 00443188 (CONDITIONAL_JUMP)  ; LAB_00443188
     PUSH 0x5ad49c                       ; 004431e0 | DAT_005ad49c
-    MOV EDX,dword ptr [0x005ae704]      ; 004431e5 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004431e5 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004431eb | DAT_01b4d738
     MOV ESI,0x145b290                   ; 004431ec
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004431f1
@@ -93,7 +93,7 @@ section .text
     POP EDI                             ; 00443230
     PUSH 0xb0daf8                       ; 00443231 | DAT_00b0daf8
     PUSH 0x5ad49c                       ; 00443236 | DAT_005ad49c
-    MOV ECX,dword ptr [0x005ae704]      ; 0044323b | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0044323b | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00443241 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60 ; 00443242
         ;   XREF to: 00461f60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)

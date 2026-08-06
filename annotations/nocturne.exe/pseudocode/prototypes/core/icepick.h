@@ -27,9 +27,9 @@ void __cdecl CIcePick::setup(CIcePick *this_ptr);
 // Address: 004b9fe0
 void __cdecl CIcePick::process(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004ba740
+// Original: core_icepick.cpp_CIcePick_FUN_004ba740
 // Address: 004ba740
-void __cdecl FUN_004ba740(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick(CIcePick *this_ptr,float delta_time);
 
 // Original: core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004ba8a0
 // Address: 004ba8a0
@@ -43,9 +43,9 @@ int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 // Address: 004baa50
 void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_icepick.cpp_FUN_004baba0
+// Original: core_icepick.cpp_CIcePick_FUN_004baba0
 // Address: 004baba0
-void __cdecl FUN_004baba0(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick(CIcePick *this_ptr,float delta_time);
 
 // Original: core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0
 // Address: 004bb2d0

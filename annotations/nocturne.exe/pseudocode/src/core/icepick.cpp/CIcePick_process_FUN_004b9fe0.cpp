@@ -46,7 +46,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
   CDeformableModelInstance *local_14;
   
   bVar14 = 0;
-  iVar5 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
@@ -54,7 +54,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_icepick_cpp_FUN_004baba0(this_ptr,delta_time);
+    core_icepick_cpp_CIcePick_FUN_004baba0(this_ptr,delta_time);
   }
   fVar3 = (float)12.566370614;
   fVar15 = (this_ptr->base).invincibility_timer;
@@ -73,7 +73,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,f
   pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   core_icepick_cpp_CIcePick_processMotionEvents_FUN_004bb2d0(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  iVar5 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar5 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   pCVar7 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
     pSVar13 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -124,7 +124,7 @@ LAB_004ba357:
                 iVar11 = core_hero_cpp_CHero_tryInteract_FUN_004b4e90(&this_ptr->base);
                 bVar2 = false;
                 if (iVar11 != 0) goto LAB_004ba3fc;
-                local_24 = core_hero_cpp_FUN_004b5110(&this_ptr->base);
+                local_24 = core_hero_cpp_CHero_FUN_004b5110(&this_ptr->base);
                 if ((local_24 != 0) && (local_24 != 1)) {
                   core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
                 }
@@ -301,7 +301,7 @@ LAB_004ba228:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(local_18);
   EVar9 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (EVar9 == DEATH_STATE_ALIVE) {
-    blend_callback = core_skeleton_cpp_FUN_0051b650;
+    blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar15 = this_ptr->head_look_blend_weight;
     iVar5 = _DAT_01cae288;
     core_xform_cpp_eulerToQuaternion_FUN_0055d610
@@ -319,7 +319,7 @@ LAB_004ba228:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (local_14,(CQuaternion4f *)auStack_78,fVar15,iVar5,blend_callback);
   }
-  core_icepick_cpp_FUN_004ba740(this_ptr,delta_time);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_icepick_cpp_CIcePick_FUN_004ba740(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

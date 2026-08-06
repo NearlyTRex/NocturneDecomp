@@ -109,7 +109,7 @@ section .text
     PUSH 0x5845f2                       ; 004a6a79 | = "To be continued..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a6a7e
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
-    MOV EDX,dword ptr [0x005b7620]      ; 004a6a83 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 004a6a83 | g_WindowHeight
     ADD ESP,0x4                         ; 004a6a89
     SUB EDX,ESI                         ; 004a6a8c
     PUSH EAX                            ; 004a6a8e
@@ -120,7 +120,7 @@ section .text
     PUSH 0x0                            ; 004a6a98
     PUSH 0xf8                           ; 004a6a9a
     PUSH EAX                            ; 004a6a9f
-    MOV EAX,[0x005b761c]                ; 004a6aa0 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004a6aa0 | g_WindowWidth
     DEC EAX                             ; 004a6aa5
     PUSH EAX                            ; 004a6aa6
     PUSH 0x0                            ; 004a6aa7

@@ -137,11 +137,13 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
       pcVar13 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound effects : ");
       _sprintf(pcVar5,pcVar13);
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(0);
+      uVar20 = CONCAT44(window_flags,0x4d144d);
       dVar19 = round
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar19);
-      _sprintf(acStack_34c,"%d");
+      _sprintf(acStack_34c,"%d",local_18,uVar20);
+      window_flags = (uint)((ulonglong)uVar20 >> 0x20);
       pcVar13 = acStack_34c;
       iVar4 = -1;
       pcVar14 = pcVar5;
@@ -206,11 +208,13 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
         pcVar13 = pcVar13 + 2;
       } while (cVar2 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(2);
+      uVar20 = CONCAT44(window_flags,0x4d1553);
       dVar19 = round
                          ((double)((local_14 * 100.0f) / 1.0f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar19);
-      _sprintf(acStack_14c,"%d");
+      _sprintf(acStack_14c,"%d",local_18,uVar20);
+      window_flags = (uint)((ulonglong)uVar20 >> 0x20);
       pcVar13 = acStack_14c;
       iVar4 = -1;
       pcVar14 = pcVar5;
@@ -275,11 +279,13 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
         pcVar13 = pcVar13 + 2;
       } while (cVar2 != '\0');
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(1);
+      uVar20 = CONCAT44(window_flags,0x4d1657);
       dVar19 = round
                          ((double)((local_14 * 100.0f) / 0.25f +
                                   (float)0.001));
       local_18 = (int)ROUND(dVar19);
-      _sprintf((char *)&local_560.is_emulated,"%d");
+      _sprintf((char *)&local_560.is_emulated,"%d",local_18,uVar20);
+      window_flags = (uint)((ulonglong)uVar20 >> 0x20);
       pDVar11 = &local_560.is_emulated;
       iVar4 = -1;
       pcVar13 = pcVar5;
@@ -335,8 +341,8 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
       pcVar13[1] = cVar2;
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
-    sound_sndmain_cpp_getAudioSampleRate_FUN_005281b0();
-    _sprintf(local_248,"%d");
+    iVar4 = sound_sndmain_cpp_getAudioSampleRate_FUN_005281b0();
+    _sprintf(local_248,"%d",iVar4);
     pcVar13 = local_248;
     iVar4 = -1;
     pcVar14 = pcVar5;
@@ -393,8 +399,8 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     local_24 = iVar9;
-    sound_sndmain_cpp_getAudioBitDepth_FUN_005281a0();
-    _sprintf(local_248,"%d");
+    iVar9 = sound_sndmain_cpp_getAudioBitDepth_FUN_005281a0();
+    _sprintf(local_248,"%d",iVar9);
     pcVar13 = local_248;
     iVar9 = -1;
     pcVar14 = pcVar5;
@@ -522,8 +528,8 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
     iVar4 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
     if (iVar4 != 0) {
       iVar4 = sound_sndmain_cpp_getAudioChannelCount_FUN_005281c0();
-      local_1c = DAT_005b761c / 0x14;
-      local_18 = DAT_005b761c / iVar4;
+      local_1c = g_WindowWidth / 0x14;
+      local_18 = g_WindowWidth / iVar4;
       iVar9 = local_18 + local_1c * -2;
       iVar15 = iVar9 >> 0x1f;
       fVar7 = (float)((int)((iVar9 + iVar15 * -4) - (uint)(iVar15 << 1 < 0)) >> 2);
@@ -547,11 +553,11 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
               uStack_44 = (double)fVar18;
               fVar8 = sound_sndmain_cpp_analyzeFrequencyBand_FUN_00528e60
                                 (iVar9,(float)__BITCAST_DOUBLE(CONCAT44(local_800,uStack_804)),(float)fVar18);
-              y_top = DAT_005b7620 + -1;
+              y_top = g_WindowHeight + -1;
               uVar21 = 0x4d1ac4;
               dVar19 = round
-                                 ((double)((float)DAT_005b7620 -
-                                          fVar8 * (float)DAT_005b7620 * 0.25f));
+                                 ((double)((float)g_WindowHeight -
+                                          fVar8 * (float)g_WindowHeight * 0.25f));
               local_14 = (float)(int)ROUND(dVar19);
               height_half = (y_top - (int)local_14) + 1;
               dVar19 = __BITCAST_DOUBLE(CONCAT44(uVar21,height_half));

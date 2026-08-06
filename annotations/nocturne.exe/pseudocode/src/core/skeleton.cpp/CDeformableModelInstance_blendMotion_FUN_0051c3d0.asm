@@ -44,12 +44,12 @@
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_00429560 at 00429625
 ;   core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_0042a700 at 0042a748
+;   core_gabriela.cpp_CGabriella_FUN_004998c0 at 00499ac6
+;   core_gabriela.cpp_CGabriella_FUN_00499b00 at 00499bd0
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 at 00497c7c
-;   core_gabriela.cpp_FUN_004998c0 at 00499ac6
-;   core_gabriela.cpp_FUN_00499b00 at 00499bd0
 ;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004a9576
 ;   core_hostage.cpp_CHostage_process_FUN_004b6d80 at 004b80c8
-;   core_icepick.cpp_FUN_004ba740 at 004ba7c0
+;   core_icepick.cpp_CIcePick_FUN_004ba740 at 004ba7c0
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db942
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 at 004fd18b
 ;   ... and 4 more
@@ -58,11 +58,11 @@
 ;   TerminatedCString s_core_skeleton_cpp_00591b6b
 ;   TerminatedCString s_Write_me_00591b80
 ;   double DOUBLE_00591b8b = 0.00100000000000000
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00517a80
@@ -533,10 +533,10 @@ section .text
         ;   Label: LAB_0051ca7a
     MOV ESI,0xa82                       ; 0051ca7f
     PUSH 0x591b80                       ; 0051ca84 | = "Write me!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0051ca89 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051ca8f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051ca95
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051ca89 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051ca8f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051ca95
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051ca9a
     JMP 0x0051c559                      ; 0051ca9d
         ;   XREF to: 0051c559 (UNCONDITIONAL_JUMP)  ; LAB_0051c559

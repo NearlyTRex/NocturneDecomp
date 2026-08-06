@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -66,12 +66,6 @@
         "column": 38,
         "line": 21,
         "message": "use of undeclared identifier 'DAT_005b8e00'; did you mean 'DAT_005b5e00'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 23,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
       }
     ],
     "success": false,
@@ -80,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 57,
+    "complexity_score": 48,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 65
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -138,9 +132,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b8e00",
@@ -259,14 +253,6 @@
       "match": "DAT_005b8e00",
       "severity": "mild",
       "text": "texture = (SMRGLTextureBasic *)(&DAT_005b8e00 + iVar3 * 0xc0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);",
       "type": "undefined_data"
     }
   ],

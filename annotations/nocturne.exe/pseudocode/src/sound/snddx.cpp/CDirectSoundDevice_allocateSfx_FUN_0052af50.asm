@@ -20,13 +20,13 @@
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   undefined4 DAT_005c3918
 ;   CConsole g_CConsole_0077ad0c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc9214
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
@@ -54,10 +54,10 @@ section .text
     MOV ECX,0x59436b                    ; 0052af6f | = "..\\sound\\snddx.cpp"
     MOV EBX,0x2be                       ; 0052af74
     PUSH 0x59437e                       ; 0052af79 | = "DirectSoundDevice::allocateSfx - Inva..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0052af7e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052af84 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052af8a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052af7e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0052af84 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052af8a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052af8f
     CMP dword ptr [0x02dc9214],0x0      ; 0052af92 | DAT_02dc9214
         ;   Label: LAB_0052af92
@@ -66,10 +66,10 @@ section .text
     MOV EBP,0x5943b9                    ; 0052af9b | = "..\\sound\\snddx.cpp"
     MOV EAX,0x2bf                       ; 0052afa0
     PUSH 0x5943cc                       ; 0052afa5 | = "DirectSoundDevice::allocateSfx - dSou..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0052afaa | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0052afb0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052afb5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0052afaa | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0052afb0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052afb5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052afba
     MOV EAX,0x4                         ; 0052afbd
         ;   Label: LAB_0052afbd

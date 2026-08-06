@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_dcamera.cpp_FUN_00446810 at 00446dc8
-;   core_game.cpp_FUN_004a3b90 at 004a3f9d
-;   core_game.cpp_FUN_004a4170 at 004a4593
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446dc8
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f9d
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4593
 ;   support_codec.cpp_CLZWCompress_dtor_FUN_00439c70 at 00439c90
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10 at 00439c30
 ;
@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     RET                                 ; 00438f6b
     PUSH EBX                            ; 00438f6c
         ;   Label: LAB_00438f6c
-    CALL crt_unknown.c_FUN_00564494     ; 00438f6d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00438f6d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00438f72
     MOV EAX,EBX                         ; 00438f75
     POP EBX                             ; 00438f77

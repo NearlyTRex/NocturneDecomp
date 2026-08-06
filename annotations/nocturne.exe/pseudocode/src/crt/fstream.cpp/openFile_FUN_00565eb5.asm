@@ -10,14 +10,14 @@
 ; SIZE_T           Stack[0x10]:4   buffer_size
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004a3b90 at 004a3e85
-;   core_game.cpp_FUN_004a4170 at 004a4450
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3e85
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4450
 ;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b93
 ;
 ; Called Functions:
+;   crt_iostream.cpp_ios_clear_FUN_00565e94
 ;   crt_stdio.c_reportStreamError_FUN_0056b327
 ;   crt_unknown.c_FUN_0056cd9b
-;   crt_unknown.c_ios_clear_FUN_00565e94
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x0                            ; 00565f08
     ADD EBX,EBP                         ; 00565f0a
     PUSH EBX                            ; 00565f0c
-    CALL crt_unknown.c_ios_clear_FUN_00565e94 ; 00565f0d
-        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ios_clear_FUN_00565e94(ios * this_ptr, uint state_flags)
+    CALL crt_iostream.cpp_ios_clear_FUN_00565e94 ; 00565f0d
+        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; uint crt_iostream.cpp_ios_clear_FUN_00565e94(ios * this_ptr, uint state_flags)
     JMP 0x00565ef6                      ; 00565f12
         ;   XREF to: 00565ef6 (UNCONDITIONAL_JUMP)  ; LAB_00565ef6
 

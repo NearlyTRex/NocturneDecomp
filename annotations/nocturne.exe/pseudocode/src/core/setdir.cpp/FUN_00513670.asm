@@ -14,11 +14,11 @@
 ;   TerminatedCString s_Can_t_create_s_00590c28
 ;   TerminatedCString s_core_setdir_cpp_00590c38
 ;   TerminatedCString s_Error_writing_s_00590c4b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fwrite_FUN_00563a50
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -47,10 +47,10 @@ section .text
     MOV EDX,0x590c15                    ; 00513692 | = "..\\core\\setdir.cpp"
     MOV ECX,0x2a2                       ; 00513697
     PUSH 0x590c28                       ; 0051369c | = "Can't create %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 005136a1 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005136a7 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005136ad
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005136a1 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 005136a7 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005136ad
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 005136b2
     MOV EAX,dword ptr [ESP + 0x14]      ; 005136b5
         ;   Label: LAB_005136b5
@@ -80,10 +80,10 @@ section .text
     MOV EBP,0x590c38                    ; 005136e6 | = "..\\core\\setdir.cpp"
     MOV EAX,0x2a4                       ; 005136eb
     PUSH 0x590c4b                       ; 005136f0 | = "Error writing %s"
-    MOV dword ptr [0x01cc4800],EBP      ; 005136f5 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005136fb | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00513700
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005136f5 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 005136fb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00513700
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00513705
     PUSH EBX                            ; 00513708
     CALL crt_stdio.c_fclose_FUN_00563380 ; 00513709

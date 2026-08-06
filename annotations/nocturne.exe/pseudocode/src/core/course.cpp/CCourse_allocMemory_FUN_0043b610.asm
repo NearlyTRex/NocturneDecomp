@@ -13,12 +13,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_course_cpp_0057b22a
 ;   TerminatedCString s_CCourse_allocMemory_out_0057b23d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_0043b7c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -69,10 +69,10 @@ section .text
         ;   Label: LAB_0043b65b
     MOV EBX,0x6e                        ; 0043b660
     PUSH 0x57b23d                       ; 0043b665 | = "CCourse::allocMemory - out of hunk!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0043b66a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0043b670 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0043b676
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0043b66a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0043b670 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0043b676
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0043b67b
     POP ESI                             ; 0043b67e
     POP EBX                             ; 0043b67f

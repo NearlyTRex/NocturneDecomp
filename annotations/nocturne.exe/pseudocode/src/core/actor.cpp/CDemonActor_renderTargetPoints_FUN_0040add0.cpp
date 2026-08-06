@@ -28,7 +28,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonAc
   iVar4 = 0;
   if (0 < iStack_18) {
     do {
-      uStack_14 = (uint)DAT_01bff320;
+      uStack_14 = (uint)g_ColorCubeLookup[0x7c00];
       CStack_24.x = (int)ROUND(pCVar6->x * _DAT_005992b0);
       CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005992b0);
       CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005992b0);
@@ -39,47 +39,56 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonAc
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;
         _DAT_01c00c70 = uStack_14;
         iVar5 = *(int *)(iVar5 + 0xea5e4) >> 0x10;
-        if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < DAT_005b761c)) && (iVar5 < DAT_005b7620)) {
+        if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < g_WindowWidth)) && (iVar5 < g_WindowHeight))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar3,iVar5);
         }
         iVar1 = iVar3 + -1;
         iVar2 = iVar5 + -1;
-        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {
+        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + -1;
         iVar2 = iVar5 + 1;
-        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {
+        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + 1;
         iVar2 = iVar5 + -1;
-        if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {
+        if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < g_WindowWidth)) && (iVar2 < g_WindowHeight))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + 1;
         iVar2 = iVar5 + 1;
-        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {
+        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + -2;
         iVar2 = iVar5 + -2;
-        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {
+        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + -2;
         iVar2 = iVar5 + 2;
-        if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < DAT_005b761c)) && (iVar2 < DAT_005b7620)) {
+        if ((((-1 < iVar1) && (-1 < iVar2)) && (iVar1 < g_WindowWidth)) && (iVar2 < g_WindowHeight))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar1 = iVar3 + 2;
         iVar2 = iVar5 + -2;
-        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < DAT_005b761c && (iVar2 < DAT_005b7620)))) {
+        if (((-1 < iVar1) && (-1 < iVar2)) && ((iVar1 < g_WindowWidth && (iVar2 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar1,iVar2);
         }
         iVar3 = iVar3 + 2;
         iVar5 = iVar5 + 2;
-        if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005b761c && (iVar5 < DAT_005b7620)))) {
+        if (((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < g_WindowWidth && (iVar5 < g_WindowHeight))))
+        {
           engine_2d_c_plotPixel_FUN_00401530(iVar3,iVar5);
         }
       }

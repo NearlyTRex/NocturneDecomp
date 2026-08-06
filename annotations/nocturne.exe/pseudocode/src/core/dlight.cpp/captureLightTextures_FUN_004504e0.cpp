@@ -13,9 +13,10 @@ void __cdecl core_dlight_cpp_captureLightTextures_FUN_004504e0(void)
   
   texture = (SMRGLTextureBasic *)&DAT_005ae488;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);
   do {
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+              (g_CDemonRenderer_PTR_005ae704,texture);
     texture = texture + 2;
   } while (texture != (SMRGLTextureBasic *)&g_WatcomStaticDestructorNode_005ae638);
   return;

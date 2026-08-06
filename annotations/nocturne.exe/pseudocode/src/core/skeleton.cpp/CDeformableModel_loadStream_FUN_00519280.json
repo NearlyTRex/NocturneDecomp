@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,63 @@
       },
       {
         "category": "format_error",
-        "column": 33,
-        "line": 47,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 58,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
+        "column": 28,
+        "line": 108,
+        "message": "format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 37,
-        "line": 65,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 61,
+        "line": 127,
+        "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 39,
-        "line": 77,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 50,
+        "line": 140,
+        "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 39,
-        "line": 86,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 54,
+        "line": 143,
+        "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 39,
-        "line": 96,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 44,
+        "line": 162,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 35,
-        "line": 106,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 58,
+        "line": 167,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 41,
-        "line": 114,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 81,
+        "line": 183,
+        "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 41,
-        "line": 117,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 38,
+        "line": 184,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 35,
-        "line": 125,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 47,
+        "line": 184,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 184,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 903,
-    "complexity_score": 255,
+    "complexity_score": 279,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 240,
+    "pseudocode_lines": 264,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 1143
+    "total_lines": 1167
   },
   "cross_references": [
     {
@@ -158,7 +158,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00517ec0",
@@ -182,7 +182,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     }
   ],
@@ -357,13 +357,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -661,14 +661,39 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_loadStream_FUN_00519280.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 29,
+          "line": 190,
+          "message": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 213,
+      "line": 236,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "this_ptr->bbox_pool[0].min.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
+      "line": 190,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "*puVar8 = local_74[iVar2 * 2];",
+      "type": "static_array_oob"
     }
   ]
 }

@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360(C
     local_34[0] = '\0';
   }
   else {
-    _sprintf(local_34,"%d");
+    _sprintf(local_34,"%d",*result_ptr);
   }
   while( true ) {
     while( true ) {
@@ -26,7 +26,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360(C
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(local_34,"%d");
+      iVar1 = sscanf(local_34,"%d",&local_14);
       if (iVar1 == 1) break;
       shape_edittool_cpp_FUN_0046fcd0(this_ptr,"Please enter a valid integer.");
     }

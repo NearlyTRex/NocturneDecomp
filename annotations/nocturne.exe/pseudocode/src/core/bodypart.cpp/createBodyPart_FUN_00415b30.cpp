@@ -20,15 +20,15 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(CVector3f *pos
   float10 fVar7;
   float10 fVar8;
   
-  this_ptr = (CBodyPart *)FUN_0056497c(0xf18);
+  this_ptr = operator_new(0xf18);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\bodypart.cpp";
-    g_INT_01cc4804 = 0x32;
-    core_main_c_FUN_004c8440("Can't create body part!");
+    g_CurrentFilename = "..\\core\\bodypart.cpp";
+    g_CurrentLineNumber = 50;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create body part!");
   }
   (this_ptr_00->base).location.position.x = position->x;
   (this_ptr_00->base).location.position.y = position->y;

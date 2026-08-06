@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005c1ab8
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_unknown.c_FUN_0056e56c
 ;   crt_unknown.c_FUN_00571280
 ;   TlsSetValue
@@ -52,8 +52,8 @@ section .text
     JNZ 0x0056e64d                      ; 0056e63d
         ;   XREF to: 0056e64d (CONDITIONAL_JUMP)  ; LAB_0056e64d
     PUSH EBX                            ; 0056e63f
-    CALL crt_unknown.c_FUN_005638d0     ; 0056e640
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0056e640
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0056e645
     XOR EAX,EAX                         ; 0056e648
     POP ESI                             ; 0056e64a

@@ -47,9 +47,9 @@ ECollisionType __cdecl CAmmo::getCollisionType(CAmmo *this_ptr,SCollisionInfo *c
 // Address: 0040ed80
 void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 
-// Original: core_ammo.cpp_FUN_0040ef60
+// Original: core_ammo.cpp_CAmmo_setWeaponAmmo_FUN_0040ef60
 // Address: 0040ef60
-void __cdecl FUN_0040ef60(CAmmo *this_ptr,int ammo_count);
+void __cdecl CAmmo::setWeaponAmmo(CAmmo *this_ptr,int ammo_count);
 
 // Original: core_ammo.cpp_CAmmo_canPickup_FUN_0040ef70
 // Address: 0040ef70

@@ -49,18 +49,18 @@ section .text
     XOR EAX,EAX                         ; 004b6408
         ;   Label: LAB_004b6408
     MOV EDI,dword ptr [0x01c00628]      ; 004b640a | DAT_01c00628
-    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004b6410 | DAT_01c00648
+    MOV AL,byte ptr [EBX + 0x1c00648]   ; 004b6410 | g_SourcePaletteData
     XOR EDX,EDX                         ; 004b6416
     MOV dword ptr [ESP],EAX             ; 004b6418
     DIV EDI                             ; 004b641b
-    MOVZX EBP,byte ptr [EBX + 0x1c00649] ; 004b641d | DAT_01c0064c
+    MOVZX EBP,byte ptr [EBX + 0x1c00649] ; 004b641d | g_SourcePaletteData+4
     MOV dword ptr [ESP + 0x4],EBP       ; 004b6424
     MOV dword ptr [ESP],EAX             ; 004b6428
     XOR EDX,EDX                         ; 004b642b
     MOV EAX,EBP                         ; 004b642d
     DIV dword ptr [0x01c00634]          ; 004b642f | DAT_01c00634
     XOR ECX,ECX                         ; 004b6435
-    MOV CL,byte ptr [EBX + 0x1c0064a]   ; 004b6437 | DAT_01c0064d
+    MOV CL,byte ptr [EBX + 0x1c0064a]   ; 004b6437 | g_SourcePaletteData+5
     MOV dword ptr [ESP + 0x4],EAX       ; 004b643d
     XOR EDX,EDX                         ; 004b6441
     MOV EAX,ECX                         ; 004b6443
@@ -130,10 +130,10 @@ section .text
     MOV EDX,dword ptr [0x005b7624]      ; 004b6538 | DAT_005b7624
     XOR EAX,EAX                         ; 004b653e
     XOR EBX,EBX                         ; 004b6540
-    MOVZX EDI,byte ptr [EBX + 0x1c00649] ; 004b6542 | DAT_01c0064c
+    MOVZX EDI,byte ptr [EBX + 0x1c00649] ; 004b6542 | g_SourcePaletteData+4
         ;   Label: LAB_004b6542
-    MOVZX ESI,byte ptr [EBX + 0x1c0064a] ; 004b6549 | DAT_01c0064d
-    MOVZX EBP,byte ptr [EBX + 0x1c00648] ; 004b6550 | DAT_01c00648
+    MOVZX ESI,byte ptr [EBX + 0x1c0064a] ; 004b6549 | g_SourcePaletteData+5
+    MOVZX EBP,byte ptr [EBX + 0x1c00648] ; 004b6550 | g_SourcePaletteData
     CMP EDX,0x20                        ; 004b6557
     JNZ 0x004b6595                      ; 004b655a
         ;   XREF to: 004b6595 (CONDITIONAL_JUMP)  ; LAB_004b6595

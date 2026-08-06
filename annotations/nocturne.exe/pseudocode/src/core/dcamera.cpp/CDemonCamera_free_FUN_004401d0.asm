@@ -9,10 +9,10 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0043ff30 at 0043ff36
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 0044001d
-;   core_set.cpp_FUN_0050ad20 at 0050ad9a
+;   core_set.cpp_CDemonSet_FUN_0050ad20 at 0050ad9a
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -42,15 +42,15 @@ section .text
     RET                                 ; 0044021e
     PUSH EDX                            ; 0044021f
         ;   Label: LAB_0044021f
-    CALL crt_unknown.c_FUN_005638d0     ; 00440220
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00440220
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00440225
     JMP 0x004401e0                      ; 00440228
         ;   XREF to: 004401e0 (UNCONDITIONAL_JUMP)  ; LAB_004401e0
     PUSH ESI                            ; 0044022a
         ;   Label: LAB_0044022a
-    CALL crt_unknown.c_FUN_005638d0     ; 0044022b
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0044022b
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00440230
     JMP 0x004401fe                      ; 00440233
         ;   XREF to: 004401fe (UNCONDITIONAL_JUMP)  ; LAB_004401fe

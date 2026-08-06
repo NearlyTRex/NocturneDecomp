@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00577188 = 0.06666667
 ;   undefined4 DAT_006af634
-;   undefined4 DAT_01c00648
-;   undefined4 DAT_01c0064c
+;   uchar[768] g_SourcePaletteData
+;   undefined4 g_SourcePaletteData+4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -50,7 +50,7 @@ section .text
     MOV EBX,EAX                         ; 00402eac
     XOR EAX,EAX                         ; 00402eae
     XOR EDX,EDX                         ; 00402eb0
-    MOV AL,byte ptr [EBX + 0x1c00648]   ; 00402eb2 | DAT_01c00648
+    MOV AL,byte ptr [EBX + 0x1c00648]   ; 00402eb2 | g_SourcePaletteData
     XOR EDI,EDI                         ; 00402eb8
     MOV dword ptr [ESP + 0x30],EAX      ; 00402eba
     XOR EAX,EAX                         ; 00402ebe
@@ -68,7 +68,7 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 00402eee
     XOR EAX,EAX                         ; 00402ef2
         ;   Label: LAB_00402ef2
-    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00402ef4 | DAT_01c00648
+    MOV AL,byte ptr [EDI + 0x1c00648]   ; 00402ef4 | g_SourcePaletteData
     MOV dword ptr [ESP + 0x30],EAX      ; 00402efa
     FLD float ptr [ESP + 0x10]          ; 00402efe
     FILD word ptr [ESP + 0x30]          ; 00402f02
@@ -79,7 +79,7 @@ section .text
     FMUL ST1                            ; 00402f16
     XOR EAX,EAX                         ; 00402f18
     FLD float ptr [ESP + 0x14]          ; 00402f1a
-    MOV AL,byte ptr [EDI + 0x1c00649]   ; 00402f1e | DAT_01c0064c
+    MOV AL,byte ptr [EDI + 0x1c00649]   ; 00402f1e | g_SourcePaletteData+4
     FLD float ptr [ESP + 0xc]           ; 00402f24
     MOV dword ptr [ESP + 0x30],EAX      ; 00402f28
     XOR EAX,EAX                         ; 00402f2c

@@ -45,19 +45,19 @@
   },
   "function_calls": [
     {
-      "addr": "005671e4",
+      "addr": "00565c50",
       "is_variadic": false,
-      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
+      "name": "crt_memory.c_calloc_FUN_00565c50"
     },
     {
       "addr": "005638d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
+      "name": "crt_memory.c_free_FUN_005638d0"
     },
     {
-      "addr": "00565c50",
+      "addr": "005671e4",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00565c50"
+      "name": "crt_sync.c_CriticalSectionStub_FUN_005671e4"
     },
     {
       "addr": "00572e90",
@@ -194,7 +194,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_00572e90(param_2);",
+      "text": "iVar1 = FUN_00572e90(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -202,7 +202,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1[2] = param_2;",
+      "text": "ptr[2] = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -210,7 +210,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1[1] = param_1;",
+      "text": "ptr[1] = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +218,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1[3] = (uint)*(byte *)(param_2 + 0x52);",
+      "text": "ptr[3] = (uint)*(byte *)(param_2 + 0x52);",
       "type": "unnamed_param"
     },
     {

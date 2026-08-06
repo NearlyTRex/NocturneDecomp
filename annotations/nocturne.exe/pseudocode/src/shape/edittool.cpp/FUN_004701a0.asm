@@ -7,15 +7,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
 ;
@@ -39,7 +39,7 @@ section .text
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004701c4
     MOV ECX,0x5                         ; 004701c7
-    MOV EDX,dword ptr [0x005b761c]      ; 004701cc | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004701cc | g_WindowWidth
     PUSH 0x0                            ; 004701d2
     MOV ESI,dword ptr [ESP + 0x14]      ; 004701d4
     MOV [0x01bcd9bc],EAX                ; 004701d8 | DAT_01bcd9bc
@@ -63,10 +63,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 004701fb | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 00470200
     PUSH 0x57e510                       ; 00470205 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047020a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00470210 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00470216
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047020a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00470210 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00470216
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0047021b
     POP EBX                             ; 0047021e
     JMP 0x004701ab                      ; 0047021f

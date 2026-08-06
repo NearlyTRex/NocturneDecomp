@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_smiley.cpp_CSmiley_ctor_FUN_0051fcf0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd68                         ; 0051fcc0
         ;   Label: core_smiley.cpp_factoryFunc_FUN_0051fcc0
-    CALL crt_unknown.c_FUN_0056497c     ; 0051fcc5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0051fcc5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0051fcca
     TEST EAX,EAX                        ; 0051fccd
     JNZ 0x0051fcd2                      ; 0051fccf

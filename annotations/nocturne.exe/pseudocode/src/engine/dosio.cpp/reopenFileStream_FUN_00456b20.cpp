@@ -13,7 +13,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *directory_path
   SFoundFileInfo local_220;
   
   _fflush((_FILE *)file_stream);
-  ios_clear
+  crt_iostream_cpp_ios_clear_FUN_00565e94
             ((ios *)((file_stream->_fstreambase_core)._filebuf.__unbuffered_get_area +
                     *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);
   engine_dosio_cpp_getRelativeFilePath_FUN_00456700(local_220.found_path,directory_path,filename);

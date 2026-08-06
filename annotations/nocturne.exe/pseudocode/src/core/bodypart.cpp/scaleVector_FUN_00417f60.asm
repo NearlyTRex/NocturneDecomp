@@ -9,9 +9,9 @@
 ; float *          Stack[0xc]:4   scalar
 ;
 ; XREF[3]:
-;   core_boneguy.cpp_FUN_004196b0 at 004198be
+;   core_boneguy.cpp_CBoneGuy_FUN_004196b0 at 004198be
 ;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0 at 004dbf1f
-;   core_zombie.cpp_FUN_00561010 at 00561288
+;   core_zombie.cpp_CZombie_FUN_00561010 at 00561288
 ;
 ; *****************************************************************************
 

@@ -31,7 +31,7 @@
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ab
 ;   core_fire.cpp_CCrater_activate_FUN_004876d0 at 00487725
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b
-;   core_stranger.cpp_FUN_0053c800 at 0053ce36
+;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053ce36
 ;   core_trash.cpp_CTrash_process_FUN_00546e10 at 00547456
 ;
 ; Referenced Globals:
@@ -42,8 +42,8 @@
 ;   float FLOAT_00590a0d = 2
 ;   float FLOAT_00590a11 = -10
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;   undefined4 g_CSpikeActorType_02dc9e28.name_hash
 ;
@@ -61,7 +61,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0
 ;   ... and 2 more
 ;
@@ -818,10 +818,10 @@ section .text
     MOV ESI,0x59097d                    ; 0050f6ed | = "..\\core\\setcolid.cpp"
     MOV EDX,0xcb                        ; 0050f6f2
     PUSH 0x590992                       ; 0050f6f7 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050f708
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050f708
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0050f70d
     LEA EAX,[EDI + 0x20]                ; 0050f710
         ;   Label: LAB_0050f710
@@ -931,10 +931,10 @@ section .text
         ;   Label: LAB_0050f8bc
     MOV EBX,0x12b                       ; 0050f8c1
     PUSH 0x5909f3                       ; 0050f8c6 | = "Invalid collision type!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050f8d7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050f8d7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050f8dc
     JMP 0x0050eebd                      ; 0050f8df
         ;   XREF to: 0050eebd (UNCONDITIONAL_JUMP)  ; LAB_0050eebd

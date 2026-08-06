@@ -9,8 +9,8 @@
 ; SIZE_T           Stack[0xc]:4   count
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_FUN_00446810 at 00446929
-;   core_game.cpp_FUN_004a3b90 at 004a3ef3
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446929
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3ef3
 ;
 ; Called Functions:
 ;   crt_stdio.c_prepare_stream_for_write_FUN_0056b35c

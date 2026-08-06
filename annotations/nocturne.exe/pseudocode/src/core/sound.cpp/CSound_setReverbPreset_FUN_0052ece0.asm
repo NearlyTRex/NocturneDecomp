@@ -16,11 +16,11 @@
 ;   undefined4 DAT_005bed70
 ;   undefined4 DAT_005bed74
 ;   undefined4 DAT_005bed78
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0052ecb0
 ;
 ; *****************************************************************************
@@ -53,10 +53,10 @@ section .text
         ;   Label: LAB_0052ed14
     MOV ECX,0x402                       ; 0052ed19
     PUSH 0x594c15                       ; 0052ed1e | = "CSound::setReverbPreset - invalid index"
-    MOV dword ptr [0x01cc4800],EDX      ; 0052ed23 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052ed29 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052ed2f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0052ed23 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0052ed29 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052ed2f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0052ed34
     JMP 0x0052ecee                      ; 0052ed37
         ;   XREF to: 0052ecee (UNCONDITIONAL_JUMP)  ; LAB_0052ecee

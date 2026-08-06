@@ -15,14 +15,12 @@ int sound_mp3_cpp_FUN_004e2480(int *param_1)
   int iVar4;
   int iVar5;
   double dVar6;
-  uint uVar7;
   
   piVar2 = (int *)*param_1;
   iVar3 = *piVar2;
   iVar5 = *(int *)(&DAT_005bbc88 + piVar2[3] * 4 + iVar3 * 0xb4 + (piVar2[1] + -1) * 0x3c) /
           param_1[4];
   iVar4 = param_1[6];
-  uVar7 = 0x4e24ed;
   dVar6 = round(*(double *)(&DAT_005bbc48 + piVar2[4] * 8 + iVar3 * 0x20));
   iVar1 = (int)ROUND(dVar6);
   if (iVar3 == 1) {
@@ -48,8 +46,8 @@ int sound_mp3_cpp_FUN_004e2480(int *param_1)
   else if (param_1[3] == 4) {
     return iVar4;
   }
-  g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-  g_INT_01cc4804 = 0x1a1;
-  core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
+  g_CurrentFilename = "..\\sound\\mp3.cpp";
+  g_CurrentLineNumber = 417;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
   return iVar4;
 }

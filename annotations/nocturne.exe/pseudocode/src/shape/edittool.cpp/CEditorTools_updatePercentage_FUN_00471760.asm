@@ -43,7 +43,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_2d.c_fillRectColor_FUN_00403e60
 ;   engine_2d.c_fillRectWithBorder_FUN_00403ef0
@@ -329,10 +329,10 @@ section .text
         ;   Label: LAB_00471a58
     MOV EBX,0x605                       ; 00471a5d
     PUSH 0x57e849                       ; 00471a62 | = "CEditorTools::updatePercentageWindow ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00471a73
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00471a73
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00471a78
     JMP 0x00471779                      ; 00471a7b
         ;   XREF to: 00471779 (UNCONDITIONAL_JUMP)  ; LAB_00471779

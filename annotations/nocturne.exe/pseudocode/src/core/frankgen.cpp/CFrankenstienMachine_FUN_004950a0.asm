@@ -26,8 +26,8 @@
 ;   TerminatedCString s_WTF_00581d6d
 ;   undefined4 DAT_0059db58
 ;   float FLOAT_0059db70 = 2300
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -36,7 +36,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340
 ;   core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;
 ; *****************************************************************************
@@ -178,10 +178,10 @@ section .text
         ;   Label: default
     MOV ECX,0x1bb                       ; 00495201
     PUSH 0x581d6d                       ; 00495206 | = "WTF!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0049520b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00495211 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00495217
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0049520b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00495211 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00495217
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0049521c
     JMP 0x004950d2                      ; 0049521f
         ;   XREF to: 004950d2 (UNCONDITIONAL_JUMP)  ; LAB_004950d2

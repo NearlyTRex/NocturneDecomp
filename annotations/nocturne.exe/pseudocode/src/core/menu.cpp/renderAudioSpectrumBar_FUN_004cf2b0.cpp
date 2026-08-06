@@ -20,10 +20,10 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004cf2b0(int x_center,int 
   uint local_c;
   uint local_8;
   
-  this_ptr = DAT_005ae704;
+  this_ptr = g_CDemonRenderer_PTR_005ae704;
   if (0 < height_half * 2) {
     iVar1 = (x_center + -0x10) * 0x10000;
-    (DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
+    (g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;
     (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y_top << 0x10;
     iVar2 = (x_center + 0x10) * 0x10000;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar2;
@@ -51,18 +51,19 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004cf2b0(int x_center,int 
     local_8 = 3;
     local_10 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(this_ptr,0x8000);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,
+              (g_CDemonRenderer_PTR_005ae704,
                (SMRGLTextureBasic *)
                (&DAT_005bae58 +
                (((int)((_DAT_01cc5b64 + (_DAT_01cc5b64 >> 0x1f) * -0x10000) -
                       (uint)((_DAT_01cc5b64 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7U) * 0x18))
     ;
-    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(DAT_005ae704,&local_2c,0x23)
-    ;
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
-    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
+              (g_CDemonRenderer_PTR_005ae704,&local_2c,0x23);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+              (g_CDemonRenderer_PTR_005ae704,0xffff);
   }
   return;
 }

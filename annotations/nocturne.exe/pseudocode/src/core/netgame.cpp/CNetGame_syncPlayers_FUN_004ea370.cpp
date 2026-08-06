@@ -27,9 +27,9 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
   
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   if (sync_stage < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x337;
-    core_main_c_FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 823;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
   }
   if (this_ptr->connection_type == CONNECTION_NONE) {
     return 1;
@@ -51,7 +51,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
     local_20 = this_ptr->players;
     while( true ) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(local_194,"Syncing stage %d.");
+      _sprintf(local_194,"Syncing stage %d.",sync_stage);
       engine_2d_c_drawText_FUN_00402600(local_194,0,0xb);
       engine_2d_c_drawText_FUN_00402600("Waiting on:",0,0x16);
       local_1c = 1.4013e-45;
@@ -63,7 +63,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
           if (pCVar3->players[0].local_sync_stage < sync_stage) {
             local_1c = 0.0;
             engine_2d_c_drawText_FUN_00402600(local_20[iVar2].name,0,local_18);
-            _sprintf(local_194,"%d");
+            _sprintf(local_194,"%d",pCVar3->players[0].local_sync_stage);
             engine_2d_c_drawText_FUN_00402600(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
@@ -116,7 +116,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
     }
     while (_DAT_01cea400 < sync_stage) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
-      _sprintf(local_94,"Waiting on sync code %d from server...");
+      _sprintf(local_94,"Waiting on sync code %d from server...",sync_stage);
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
@@ -128,9 +128,9 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(CNetGame *this_pt
     }
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x3c0;
-    core_main_c_FUN_004c8440("CNetGame::syncPlayers - invalid mode");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 960;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::syncPlayers - invalid mode");
   }
   return 1;
 }

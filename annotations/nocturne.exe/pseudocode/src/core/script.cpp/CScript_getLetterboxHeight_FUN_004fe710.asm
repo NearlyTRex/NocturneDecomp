@@ -11,11 +11,11 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abfb
-;   core_script.cpp_FUN_004fe770 at 004fe7f3
+;   core_script.cpp_CScript_FUN_004fe770 at 004fe7f3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01e56c20
 ;
 ; Called Functions:
@@ -28,7 +28,7 @@ section .text
     PUSH EBX                            ; 004fe710
         ;   Label: core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
     SUB ESP,0x8                         ; 004fe711
-    MOV EDX,dword ptr [0x005b761c]      ; 004fe714 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004fe714 | g_WindowWidth
     LEA EAX,[EDX*0x4 + 0x0]             ; 004fe71a
     SUB EAX,EDX                         ; 004fe721
     SHL EAX,0x3                         ; 004fe723
@@ -38,7 +38,7 @@ section .text
     MOV EAX,EDX                         ; 004fe730
     SAR EDX,0x1f                        ; 004fe732
     IDIV EBX                            ; 004fe735
-    MOV ECX,dword ptr [0x005b7620]      ; 004fe737 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 004fe737 | g_WindowHeight
     MOV EDX,ECX                         ; 004fe73d
     SUB EDX,EAX                         ; 004fe73f
     MOV EAX,EDX                         ; 004fe741

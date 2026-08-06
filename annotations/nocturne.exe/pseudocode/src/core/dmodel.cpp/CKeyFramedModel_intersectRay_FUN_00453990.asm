@@ -49,7 +49,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040aa03
-;   core_platfrm.cpp_FUN_004f7360 at 004f7519
+;   core_platfrm.cpp_CPlatform_FUN_004f7360 at 004f7519
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059c064

@@ -59,7 +59,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34
         engine_light_cpp_calculateLighting_FUN_004c6cc0
                   ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
                    (primitive->surface_normal).C.i);
-        _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+        _DAT_01c00c70 = engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
       }
     }
     else {

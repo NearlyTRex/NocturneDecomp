@@ -29,7 +29,7 @@
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   core_event.cpp_FUN_00481620
+;   core_event.cpp_CRuleList_FUN_00481620
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     ADD ESP,0x4                         ; 0045506b
     LEA EBX,[EAX + 0x320]               ; 0045506e
     PUSH EBX                            ; 00455074
-    CALL core_event.cpp_FUN_00481620    ; 00455075
-        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_00481620(CRuleList * this_ptr)
+    CALL core_event.cpp_CRuleList_FUN_00481620 ; 00455075
+        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_FUN_00481620(CRuleList * this_ptr)
     ADD ESP,0x4                         ; 0045507a
     SUB EBX,0x470                       ; 0045507d
     PUSH 0x57d008                       ; 00455083 | = "churchd01.kfm"

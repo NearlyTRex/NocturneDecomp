@@ -65,11 +65,13 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CTommyGun *this_pt
   }
   else {
     this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
-    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.9,1.1111112);
-    iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handles[0],local_18);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.9,1.1111112);
+    local_18 = fVar2;
+    iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handles[0],fVar2);
     if (iVar3 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
-      _sprintf((char *)&local_1b4.taken,"m-gun1.wav @ 2.3 * %f");
+      _sprintf((char *)&local_1b4.taken,"m-gun1.wav @ 2.3 * %f",SUB84(__BITCAST_UINT64((double)fVar2),0),
+                 (int)((ulonglong)(double)fVar2 >> 0x20));
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[1]);
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,(char *)&local_1b4.taken);

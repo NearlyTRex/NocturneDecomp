@@ -56,9 +56,9 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(CMotionContro
         core_motion_cpp_CMotionController_startTransition_FUN_004e1770(this_ptr,&local_40);
         break;
       default:
-        g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
-        g_INT_01cc4804 = 0x1b7;
-        core_main_c_FUN_004c8440("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_40.cmd);
+        g_CurrentFilename = "..\\core\\motion.cpp";
+        g_CurrentLineNumber = 439;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid transition command returned by CMotionControler::advanceComplex: %d");
       }
       goto LAB_004e1332;
     }
@@ -98,9 +98,9 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(CMotionContro
                 (this_ptr,this_ptr->tween_target_motion,this_ptr->tween_target_frame,&local_48);
       goto LAB_004e12bd;
     default:
-      g_CHAR_PTR_01cc4800 = "..\\core\\motion.cpp";
-      g_INT_01cc4804 = 0x17e;
-      core_main_c_FUN_004c8440("CMotionController::advance: Tweening active but invalid tweenType: %d",this_ptr->tween_type);
+      g_CurrentFilename = "..\\core\\motion.cpp";
+      g_CurrentLineNumber = 382;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CMotionController::advance: Tweening active but invalid tweenType: %d");
     }
 switchD_004e12af_caseD_3:
     if (local_18 != 0) {

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 30,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 66,
+        "line": 67,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 67,
+        "line": 68,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 68,
+        "line": 69,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 69,
+        "line": 70,
         "message": "use of undeclared identifier 'stack0xfffffff0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 74,
+        "line": 75,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 108,
+        "line": 109,
         "message": "use of undeclared identifier '_DAT_01410280'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 109,
+        "line": 110,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 110,
+        "line": 111,
         "message": "use of undeclared identifier 'DAT_01410284'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 112,
+        "message": "use of undeclared identifier 'stack0xffffffd8'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 233,
-    "complexity_score": 348,
+    "complexity_score": 339,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
-    "suspect_count": 21,
+    "pseudocode_lines": 109,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -137,7 +137,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 341
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -193,9 +193,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01410280",
@@ -457,16 +457,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 60,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
@@ -474,7 +466,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 61,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -482,7 +474,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 62,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -490,7 +482,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 63,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -498,7 +490,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(uint *)((int)output_ptr",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
@@ -506,7 +498,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
+      "line": 66,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
@@ -514,7 +506,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 68,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -522,7 +514,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 103,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
@@ -530,7 +522,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_01410284",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01410284 + (uint)bVar6 * -8);",
@@ -538,7 +530,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 105,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -546,7 +538,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_01410288",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01410288 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -554,7 +546,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 107,
       "match": "(uint *)((int)output_ptr",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
@@ -562,7 +554,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 109,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
@@ -570,7 +562,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
+      "line": 111,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -578,7 +570,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -586,7 +578,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -594,7 +586,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -602,7 +594,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",

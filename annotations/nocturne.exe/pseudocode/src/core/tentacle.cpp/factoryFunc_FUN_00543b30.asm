@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_tentacle.cpp_CTentacle_ctor_FUN_00543b60
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd94                         ; 00543b30
         ;   Label: core_tentacle.cpp_factoryFunc_FUN_00543b30
-    CALL crt_unknown.c_FUN_0056497c     ; 00543b35
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00543b35
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00543b3a
     TEST EAX,EAX                        ; 00543b3d
     JNZ 0x00543b42                      ; 00543b3f

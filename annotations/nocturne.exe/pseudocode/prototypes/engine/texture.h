@@ -3,17 +3,17 @@
 // Function prototypes for engine/texture.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_texture.cpp_FUN_00544de0
+// Original: engine_texture.cpp_CTextureCache_FUN_00544de0
 // Address: 00544de0
-CTextureCache * __cdecl FUN_00544de0(CTextureCache *this_ptr,int max_texture_count);
+CTextureCache * __cdecl CTextureCache(CTextureCache *this_ptr,int max_texture_count);
 
 // Original: engine_texture.cpp_CTextureCache_free_FUN_00544e30
 // Address: 00544e30
 int __cdecl CTextureCache::free(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_FUN_00544e50
+// Original: engine_texture.cpp_CTextureCache_FUN_00544e50
 // Address: 00544e50
-void __cdecl FUN_00544e50(CTextureCache *this_ptr);
+void __cdecl CTextureCache(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60
 // Address: 00544e60
@@ -31,9 +31,9 @@ int __cdecl CTextureCache::findTexture(CTextureCache *this_ptr,int hint_index,ch
 // Address: 00545410
 void __cdecl CTextureCache::setupTexture(CTextureCache *cache,int texture_index);
 
-// Original: engine_texture.cpp_FUN_00545700
+// Original: engine_texture.cpp_CTextureCache_FUN_00545700
 // Address: 00545700
-void __cdecl FUN_00545700(CTextureCache *this_ptr);
+void __cdecl CTextureCache(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_00545810
 // Address: 00545810
@@ -41,11 +41,11 @@ int __cdecl CTextureCache::getTextureCacheStats(CTextureCache *this_ptr,char *ou
 
 // Original: engine_texture.cpp_FUN_005458a0
 // Address: 005458a0
-void FUN_005458a0(void);
+void __cdecl FUN_005458a0(void);
 
 // Original: engine_texture.cpp_FUN_005458d0
 // Address: 005458d0
-void FUN_005458d0(void);
+void __cdecl FUN_005458d0(void);
 
 // Original: engine_texture.cpp_ensureTextureLoaded_FUN_00545920
 // Address: 00545920

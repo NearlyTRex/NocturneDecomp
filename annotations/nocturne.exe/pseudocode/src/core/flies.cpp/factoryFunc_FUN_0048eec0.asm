@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flies.cpp_CFlies_ctor_FUN_0048eef0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2a18                         ; 0048eec0
         ;   Label: core_flies.cpp_factoryFunc_FUN_0048eec0
-    CALL crt_unknown.c_FUN_0056497c     ; 0048eec5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0048eec5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0048eeca
     TEST EAX,EAX                        ; 0048eecd
     JNZ 0x0048eed2                      ; 0048eecf

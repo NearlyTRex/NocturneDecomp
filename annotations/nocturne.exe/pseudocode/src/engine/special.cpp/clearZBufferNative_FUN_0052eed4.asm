@@ -8,11 +8,11 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404e1
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df04c
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec66
-;   core_set.cpp_FUN_0050a260 at 0050a5c7
-;   core_setdir.cpp_FUN_00513720 at 005137f8
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a5c7
+;   core_setdir.cpp_CDemonSet_FUN_00513720 at 005137f8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined8 DAT_005bf48c
 ;   undefined4 DAT_005bf494
 ;   undefined4 DAT_01bd4260
@@ -32,14 +32,14 @@ section .text
     POP ES                              ; 0052eed9
     MOV EDI,dword ptr [0x01bd4260]      ; 0052eeda | DAT_01bd4260
     MOV EAX,[0x01c00c5c]                ; 0052eee0 | DAT_01c00c5c
-    MOV ECX,dword ptr [0x005b761c]      ; 0052eee5 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 0052eee5 | g_WindowWidth
     MUL ECX                             ; 0052eeeb
     SHL EAX,0x2                         ; 0052eeed
     ADD EDI,EAX                         ; 0052eef0
     MOV EAX,[0x01c00c64]                ; 0052eef2 | DAT_01c00c64
     SUB EAX,dword ptr [0x01c00c5c]      ; 0052eef7 | DAT_01c00c5c
     INC EAX                             ; 0052eefd
-    MOV ECX,dword ptr [0x005b761c]      ; 0052eefe | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 0052eefe | g_WindowWidth
     MUL ECX                             ; 0052ef04
     MOV ECX,EAX                         ; 0052ef06
     FLD double ptr [0x005bf48c]         ; 0052ef08 | DAT_005bf48c

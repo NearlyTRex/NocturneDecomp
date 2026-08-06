@@ -23,7 +23,7 @@ void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042e6c0(void *
         pcVar2 = (char *)((int)src_data + local_18);
         do {
           if (*pcVar2 == '\0') {
-            *pcVar2 = *(char *)(DAT_005b761c * local_14 + iVar1 + dest_x + (int)background_base);
+            *pcVar2 = *(char *)(g_WindowWidth * local_14 + iVar1 + dest_x + (int)background_base);
           }
           iVar1 = iVar1 + 1;
           pcVar2 = pcVar2 + 1;

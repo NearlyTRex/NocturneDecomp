@@ -34,11 +34,11 @@
 ;   undefined4 DAT_01c00634
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00640
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -162,10 +162,10 @@ section .text
         ;   Label: LAB_0045b936
     MOV EDX,0x11d                       ; 0045b93b
     PUSH 0x57d8e5                       ; 0045b940 | = "Invalid bitsPerPixel in CDrawSurface:..."
-    MOV [0x01cc4800],EAX                ; 0045b945 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045b94a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045b950
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0045b945 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0045b94a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045b950
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045b955
     ADD ESP,0x8                         ; 0045b958
     POP EBP                             ; 0045b95b

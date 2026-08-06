@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_02dd1184
 ;
@@ -79,7 +79,7 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 005476e0
     PUSH EAX                            ; 005476e4
     PUSH 0x2dd1184                      ; 005476e5 | DAT_02dd1184
-    MOV EDI,dword ptr [0x005ae704]      ; 005476ea | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 005476ea | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 005476f0 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005476f1
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -91,7 +91,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00547704
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 00547709
-    MOV EBP,dword ptr [0x005ae704]      ; 0054770c | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 0054770c | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 00547712 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00547713
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()

@@ -7,11 +7,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_special_c_00594d27
 ;   TerminatedCString s_Unable_to_find_function_00594d3b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -29,10 +29,10 @@ section .text
         ;   Label: LAB_00530cff
     MOV ECX,0x86                        ; 00530d04
     PUSH 0x594d3b                       ; 00530d09 | = "Unable to find function!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00530d0e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00530d14 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00530d1a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00530d0e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00530d14 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00530d1a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00530d1f
     RET                                 ; 00530d22
 

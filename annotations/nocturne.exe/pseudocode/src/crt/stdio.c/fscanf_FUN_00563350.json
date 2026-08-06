@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 49,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "stack_ref"
     ],
     "total_lines": 25
@@ -151,7 +150,7 @@
     {
       "addr": "004a4170",
       "from_addr": "004a47bc",
-      "name": "core_game.cpp_FUN_004a4170",
+      "name": "core_game.cpp_CGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -295,13 +294,13 @@
     {
       "addr": "00401010",
       "from_addr": "004010d1",
-      "name": "engine_2d.c_FUN_00401010",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00490210",
       "from_addr": "0049026c",
-      "name": "engine_font.cpp_FUN_00490210",
+      "name": "engine_font.cpp_CBitFont_FUN_00490210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -321,7 +320,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fscanf_FUN_00563350",
-    "signature": "int __cdecl crt_stdio_c_fscanf_FUN_00563350(_FILE *file,char *format)"
+    "signature": "int __cdecl crt_stdio_c_fscanf_FUN_00563350(_FILE *file,char *format,...)"
   },
   "function_calls": [
     {
@@ -337,7 +336,7 @@
       {
         "call_addr": "004a47bc",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -348,7 +347,7 @@
       {
         "call_addr": "004a480b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,7 +358,7 @@
       {
         "call_addr": "004a4848",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -370,7 +369,7 @@
       {
         "call_addr": "004a496e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -381,7 +380,7 @@
       {
         "call_addr": "004a4993",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -392,7 +391,7 @@
       {
         "call_addr": "004a49f5",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -511,17 +510,6 @@
       "severity": "moderate",
       "text": "local_8 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

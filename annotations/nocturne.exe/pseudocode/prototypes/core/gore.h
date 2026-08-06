@@ -199,13 +199,13 @@ CBloodParticle * __cdecl CBloodParticle::dtor(CBloodParticle *this_ptr,uint flag
 // Address: 004b0a60
 CFootstep * __cdecl CFootstep::arrdtor(CFootstep *this_ptr,uint flags);
 
-// Original: core_gore.cpp_FUN_004b0a80
+// Original: core_gore.cpp_CBloodPool_arrdtor_FUN_004b0a80
 // Address: 004b0a80
-void FUN_004b0a80(void *param_1);
+CBloodPool * __cdecl CBloodPool::arrdtor(CBloodPool *this_ptr,uint flags);
 
-// Original: core_gore.cpp_FUN_004b0aa0
+// Original: core_gore.cpp_CBloodSplat_arrdtor_FUN_004b0aa0
 // Address: 004b0aa0
-void FUN_004b0aa0(void *param_1);
+CBloodSplat * __cdecl CBloodSplat::arrdtor(CBloodSplat *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodParticle_arrdtor_FUN_004b0ac0
 // Address: 004b0ac0

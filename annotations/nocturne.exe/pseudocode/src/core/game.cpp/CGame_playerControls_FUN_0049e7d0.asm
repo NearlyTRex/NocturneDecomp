@@ -22,8 +22,8 @@
 ;   undefined4 DAT_01c78418
 ;   undefined4 DAT_01c7841c
 ;   undefined4 DAT_01c78420
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGame_01cea280
 ;   ... and 1 more
 ;
@@ -32,7 +32,7 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30
 ;   core_game.cpp_CGame_processMouseControls_FUN_0049f710
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_004eda40
 ;
 ; *****************************************************************************
@@ -133,10 +133,10 @@ section .text
         ;   Label: LAB_0049e887
     MOV EAX,0x71d                       ; 0049e88c
     PUSH 0x5829bb                       ; 0049e891 | = "CGame::playerControls - unknown contr..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0049e896 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0049e89c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0049e8a1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0049e896 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0049e89c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0049e8a1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0049e8a6
     JMP 0x0049e80e                      ; 0049e8a9
         ;   XREF to: 0049e80e (UNCONDITIONAL_JUMP)  ; LAB_0049e80e

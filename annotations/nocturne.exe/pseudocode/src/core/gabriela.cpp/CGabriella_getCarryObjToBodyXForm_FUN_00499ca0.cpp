@@ -74,9 +74,9 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499c
       local_1c.y = local_a0.max.y;
     }
     else {
-      g_CHAR_PTR_01cc4800 = "..\\core\\gabriela.cpp";
-      g_INT_01cc4804 = 0x945;
-      core_main_c_FUN_004c8440("Don't know how to carry light %s",pCVar1);
+      g_CurrentFilename = "..\\core\\gabriela.cpp";
+      g_CurrentLineNumber = 2373;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Don't know how to carry light %s");
     }
     goto LAB_00499d1a;
   }

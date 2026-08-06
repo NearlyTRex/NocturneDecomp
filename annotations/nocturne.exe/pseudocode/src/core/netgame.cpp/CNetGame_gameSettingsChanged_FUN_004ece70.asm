@@ -13,14 +13,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c430
 ;   TerminatedCString s_CNetGame_gameSettingsCha_0058c444
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea404
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_004ecf15
     MOV EBP,0x88c                       ; 004ecf1a
     PUSH 0x58c444                       ; 004ecf1f | = "CNetGame::gameSettingsChanged - shoul..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ecf24 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004ecf2a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ecf30
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ecf24 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004ecf2a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ecf30
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ecf35
     JMP 0x004ece8d                      ; 004ecf38
         ;   XREF to: 004ece8d (UNCONDITIONAL_JUMP)  ; LAB_004ece8d

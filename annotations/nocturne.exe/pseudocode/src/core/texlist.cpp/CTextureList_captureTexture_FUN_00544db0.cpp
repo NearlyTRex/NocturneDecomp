@@ -10,6 +10,6 @@ void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00544db0(CTextureL
 
 {
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,this_ptr->texture_entries + (texture_index & 0xfff));
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->texture_entries + (texture_index & 0xfff));
   return;
 }

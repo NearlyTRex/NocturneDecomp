@@ -11,7 +11,7 @@ CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_00478390(void)
 {
   CEmitter *pCVar1;
   
-  pCVar1 = (CEmitter *)FUN_0056497c(0x48c);
+  pCVar1 = operator_new(0x48c);
   if (pCVar1 == (CEmitter *)0x0) {
     return (CEmitter *)0x0;
   }

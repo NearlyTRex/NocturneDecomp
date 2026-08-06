@@ -25,11 +25,11 @@
 ;   TerminatedCString s_CTextureList_save_Bad_fi_005966da
 ;   TerminatedCString s_d_005966fd
 ;   TerminatedCString s_s_d_00596701
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -121,10 +121,10 @@ section .text
     MOV EBX,0x5966c6                    ; 00544cab | = "..\\core\\texlist.cpp"
     MOV ESI,0xb6                        ; 00544cb0
     PUSH 0x5966da                       ; 00544cb5 | = "CTextureList::save - Bad filename!"
-    MOV dword ptr [0x01cc4800],EBX      ; 00544cba | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00544cc0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00544cc6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00544cba | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00544cc0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00544cc6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00544ccb
     MOV EDI,dword ptr [EBP]             ; 00544cce
         ;   Label: LAB_00544cce
@@ -134,7 +134,7 @@ section .text
     PUSH EAX                            ; 00544cde
     XOR EDI,EDI                         ; 00544cdf
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00544ce1
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 00544ce6
     ADD ESP,0xc                         ; 00544ce9
     TEST EDX,EDX                        ; 00544cec
@@ -153,7 +153,7 @@ section .text
     INC EDI                             ; 00544d0d
     ADD ESI,0x18                        ; 00544d0e
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00544d11
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 00544d16
     ADD ESP,0x10                        ; 00544d19
     CMP EDI,EDX                         ; 00544d1c
@@ -175,10 +175,10 @@ section .text
         ;   Label: LAB_00544d3b
     MOV ECX,0xad                        ; 00544d40
     PUSH 0x596691                       ; 00544d45 | = "CTextureList::save - No extension found"
-    MOV dword ptr [0x01cc4800],EDX      ; 00544d4a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00544d50 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00544d56
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00544d4a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00544d50 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00544d56
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00544d5b
     JMP 0x00544c6a                      ; 00544d5e
         ;   XREF to: 00544c6a (UNCONDITIONAL_JUMP)  ; LAB_00544c6a

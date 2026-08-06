@@ -64,9 +64,9 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0(CBitFont *t
       goto LAB_004912b7;
     }
     iVar5 = color_mode * 3;
-    uVar4 = (uint)*(byte *)(iVar5 + 0x1c0064a);
-    uVar2 = (uint)(byte)(&DAT_01c00648)[iVar5];
-    uVar3 = (uint)*(byte *)(iVar5 + 0x1c00649);
+    uVar4 = (uint)g_SourcePaletteData[iVar5 + 2];
+    uVar2 = (uint)g_SourcePaletteData[iVar5];
+    uVar3 = (uint)g_SourcePaletteData[iVar5 + 1];
   }
   _DAT_006af578 = uVar3 << 8;
   _DAT_006af574 = uVar2 << 8;

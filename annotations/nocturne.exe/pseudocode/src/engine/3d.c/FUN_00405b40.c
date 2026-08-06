@@ -49,7 +49,7 @@ SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
     pSVar3 = pSVar7;
     iVar8 = (header->base).type;
   }
-  if (0x00000001 != 0) {
+  if (g_ResolutionTable[8].width != 0) {
     if (DAT_006b0278 == 0) {
       iVar5 = 0;
       _qsort

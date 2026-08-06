@@ -10,9 +10,9 @@ void __cdecl shape_edittool_cpp_CPickList_swap_FUN_00476200(CPickList *this_ptr,
 
 {
   if (0 < this_ptr->enabled_capacity) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0xe35;
-    core_main_c_FUN_004c8440("CPickList::swap - can't do this after enableing/disabling items (yet)");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 3637;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CPickList::swap - can't do this after enableing/disabling items (yet)");
   }
   shape_edittool_cpp_CStrList_swap_FUN_00474300(&this_ptr->base,index1,index2);
   return;

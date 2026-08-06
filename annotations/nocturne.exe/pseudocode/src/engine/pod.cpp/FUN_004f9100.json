@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 19,
-        "message": "no matching function for call to 'engine_pod_cpp_FUN_004f7ae0'"
       }
     ],
     "success": false,
@@ -105,14 +99,14 @@
       "name": "engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0"
     },
     {
+      "addr": "004f7ae0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_FUN_004f7ae0"
+    },
+    {
       "addr": "004f8240",
       "is_variadic": false,
       "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240"
-    },
-    {
-      "addr": "004f7ae0",
-      "is_variadic": false,
-      "name": "engine_pod.cpp_FUN_004f7ae0"
     }
   ],
   "globals": [],
@@ -171,7 +165,7 @@
       "line": 8,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "uint in_stack_00000008;",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -179,7 +173,7 @@
       "line": 12,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "iVar1 = engine_pod_cpp_FUN_004f7ae0(&local_220,in_stack_00000008);",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_FUN_004f7ae0(&local_220,in_stack_00000008);",
       "type": "stack_param"
     }
   ]

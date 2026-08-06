@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005821fa = 0.900000000000000
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CDynamiteActorType_01bca088.name_hash
 ;
@@ -65,7 +65,7 @@ section .text
     CALL core_cloth.cpp_CCloth_render_FUN_00437db0 ; 00498d05
         ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_00437db0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 00498d0a
-    MOV EDX,dword ptr [0x005ae704]      ; 00498d0d | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00498d0d | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00498d13 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00498d14
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()

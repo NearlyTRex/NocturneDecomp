@@ -24,23 +24,23 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_
   local_24.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
   local_24.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_24);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_24);
   local_30.x = (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);
   local_30.y = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
   local_30.z = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_30);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_30);
   local_3c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);
   local_3c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
   local_3c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_3c);
   local_18.x = (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);
   local_18.y = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
   local_18.z = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_18);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_18);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
   local_64.base.count = 4;
   local_64.surface_normal.D.i = 0;
   local_64.surface_normal.C.i = 0;
@@ -51,7 +51,7 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_004d77f0(CMirror *this_
   local_44 = 2;
   local_40 = 3;
   iVar1 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-                    (DAT_005ae704,&local_64);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+                    (g_CDemonRenderer_PTR_005ae704,&local_64);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
   return iVar1;
 }

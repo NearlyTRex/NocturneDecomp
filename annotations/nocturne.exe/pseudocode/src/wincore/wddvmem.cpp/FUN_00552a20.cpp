@@ -15,20 +15,20 @@ void wincore_wddvmem_cpp_FUN_00552a20(void)
   DAT_005c5010 = malloc
                            (((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -
                                   (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
-                            DAT_005b761c * DAT_005b7620);
+                            g_WindowWidth * g_WindowHeight);
   if (DAT_005c5010 == (void *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01cc4804 = 0xea;
-    core_main_c_FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 234;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02ddf560 = malloc(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
+  _DAT_02ddf560 = malloc(g_WindowWidth * g_WindowHeight * 4 + 0x40);
   if (_DAT_02ddf560 != (void *)0x0) {
     DAT_006af62c = (int)_DAT_02ddf560 + 0x10U & 0xfffffff0;
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-  g_INT_01cc4804 = 0xef;
-  core_main_c_FUN_004c8440("WDDVMEM: Fatal - out of Z buffer memory");
+  g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+  g_CurrentLineNumber = 239;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("WDDVMEM: Fatal - out of Z buffer memory");
   DAT_006af62c = (int)_DAT_02ddf560 + 0x10U & 0xfffffff0;
   return;
 }

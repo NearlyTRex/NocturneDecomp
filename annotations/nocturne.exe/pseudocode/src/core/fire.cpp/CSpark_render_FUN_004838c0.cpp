@@ -42,20 +42,21 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
   float local_1c;
   float local_18;
   
-  vertex_ptr = DAT_005ae704->vertex_buffer_ptr;
+  vertex_ptr = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
   local_70.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_70.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_70.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
   local_20 = 0.4;
   engine_special_cpp_transformPoint_FUN_00530a25(&vertex_ptr->projected_vertex,&local_70);
-  iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(DAT_005ae704,vertex_ptr);
+  iVar3 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80
+                    (g_CDemonRenderer_PTR_005ae704,vertex_ptr);
   if (iVar3 == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,(CVector3f *)this_ptr);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-            (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
   local_4c = -0.4;
   local_48 = -0.4;
   local_44 = 0;
@@ -63,7 +64,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
   local_64.y = (int)ROUND(256.0f * -0.4);
   local_64.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_64);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_64);
   local_4c = 0.4;
   local_44 = 0;
   local_48 = -0.4;
@@ -71,7 +72,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
   local_b8.y = (int)ROUND(256.0f * -0.4);
   local_b8.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_b8);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_b8);
   local_4c = 0.4;
   local_48 = 0.4;
   local_44 = 0;
@@ -79,7 +80,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
   local_94.y = (int)ROUND(256.0f * 0.4);
   local_94.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_94);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_94);
   local_4c = -0.4;
   local_48 = 0.4;
   local_44 = 0;
@@ -87,7 +88,7 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
   local_7c.y = (int)ROUND(256.0f * 0.4);
   local_7c.z = (int)ROUND(256.0f * 0.0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_7c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_7c);
   uVar1 = this_ptr->spark_type;
   if (uVar1 == 0) {
     texture = (SMRGLTextureBasic *)&DAT_005b84cc;
@@ -99,7 +100,8 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004838c0(CSpark *this_ptr)
     if (uVar1 != 2) goto LAB_0048394f;
     texture = (SMRGLTextureBasic *)&DAT_005b84fc;
   }
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+            (g_CDemonRenderer_PTR_005ae704,texture);
 LAB_0048394f:
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
             (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
@@ -120,10 +122,10 @@ LAB_0048394f:
   DAT_005c5070 = DAT_005c5040;
   _DAT_005c50a0 = DAT_005c5040;
   _DAT_005c50d0 = DAT_005c5040;
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
-            (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   local_58.x = (this_ptr->base).position.x;
   local_58.y = (this_ptr->base).position.y;
@@ -145,9 +147,9 @@ LAB_0048394f:
     local_58.z = local_58.z - local_a4;
     local_58.y = local_58.y - local_a8;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-              (DAT_005ae704,&local_58);
+              (g_CDemonRenderer_PTR_005ae704,&local_58);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
-              (DAT_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
+              (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_01c08d08,(CVector3i *)0x0);
     local_4c = -local_20 * local_d4;
     local_44 = 0;
     local_40[0].x = (int)ROUND(local_4c * 256.0f);
@@ -156,7 +158,7 @@ LAB_0048394f:
     local_48 = local_4c;
     local_1c = local_4c;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,local_40);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,local_40);
     local_4c = local_20 * local_d4;
     local_48 = local_1c;
     local_44 = 0;
@@ -165,7 +167,7 @@ LAB_0048394f:
     local_c4.z = (int)ROUND(256.0f * 0.0);
     local_18 = local_4c;
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_c4);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_c4);
     local_44 = 0;
     local_4c = local_18;
     local_48 = local_18;
@@ -173,7 +175,7 @@ LAB_0048394f:
     local_88.y = (int)ROUND(local_18 * 256.0f);
     local_88.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_88);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_88);
     local_4c = local_1c;
     local_48 = local_18;
     local_44 = 0;
@@ -181,7 +183,7 @@ LAB_0048394f:
     local_d0.y = (int)ROUND(local_18 * 256.0f);
     local_d0.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_d0);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_d0);
     core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
               (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
     lVar2 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - _DAT_01c038f4);
@@ -201,10 +203,10 @@ LAB_0048394f:
     DAT_005c5070 = DAT_005c5040;
     _DAT_005c50a0 = DAT_005c5040;
     _DAT_005c50d0 = DAT_005c5040;
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
-              (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+              (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
     iVar3 = iVar3 + 1;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   } while (iVar3 < 3);

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,40 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 35,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 36,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 37,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 51,
-        "line": 38,
+        "column": 68,
+        "line": 39,
         "message": "use of undeclared identifier 'DAT_005badbc'"
       },
       {
         "category": "type_error",
         "column": 25,
-        "line": 81,
+        "line": 82,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 21,
-        "line": 107,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       },
       {
         "category": "type_error",
@@ -104,10 +80,10 @@
         "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 117,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000'"
+        "category": "type_error",
+        "column": 21,
+        "line": 110,
+        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
       }
     ],
     "success": false,
@@ -116,20 +92,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 251,
+    "complexity_score": 212,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 12,
+    "pseudocode_lines": 112,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_truncation",
       "undefined_data",
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 352
+    "total_lines": 353
   },
   "cross_references": [],
   "function": {
@@ -184,9 +160,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005badbc",
@@ -442,39 +418,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005badbc",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005badbc);",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 75,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_94._8_4_ = pCVar1->x;",
@@ -482,7 +434,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 101,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_4c._0_4_ = pCVar1->x;",
@@ -490,7 +442,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 102,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_4c._4_4_ = pCVar1->y;",
@@ -498,23 +450,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 102,
+      "line": 103,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_4c._8_4_ = pCVar1->z;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 64,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "if (0 < (int)local_18) {",
@@ -522,7 +466,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 84,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "} while (iVar3 < (int)local_18);",
@@ -530,7 +474,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_68.x = pCVar1->x;",

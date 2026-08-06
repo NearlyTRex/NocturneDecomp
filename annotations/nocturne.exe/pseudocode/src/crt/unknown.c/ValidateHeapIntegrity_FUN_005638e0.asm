@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00568d58 at 00568df6
 ;   crt_heap.c_ResizeBlockInPlace_FUN_0056afe8 at 0056b190
-;   crt_unknown.c_FUN_005638d0 at 005638d5
+;   crt_memory.c_free_FUN_005638d0 at 005638d5
 ;   crt_unknown.c_realloc__FUN_00564a88 at 00564aab
 ;
 ; Referenced Globals:

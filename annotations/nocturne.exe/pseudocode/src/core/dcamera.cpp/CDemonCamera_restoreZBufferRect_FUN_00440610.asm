@@ -13,8 +13,8 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710 at 004409a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
 ;
@@ -103,11 +103,11 @@ section .text
     POP ESI                             ; 004406e5
     POP EBX                             ; 004406e6
     RET                                 ; 004406e7
-    MOV EAX,[0x005b7620]                ; 004406e8 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004406e8 | g_WindowHeight
         ;   Label: LAB_004406e8
     DEC EAX                             ; 004406ed
     PUSH EAX                            ; 004406ee
-    MOV EAX,[0x005b761c]                ; 004406ef | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004406ef | g_WindowWidth
     DEC EAX                             ; 004406f4
     PUSH EAX                            ; 004406f5
     PUSH 0x0                            ; 004406f6

@@ -11,7 +11,7 @@ CPendulum * __cdecl core_pendulum_cpp_factoryFunc_FUN_004f2c00(void)
 {
   CPendulum *pCVar1;
   
-  pCVar1 = (CPendulum *)FUN_0056497c(0x43c);
+  pCVar1 = operator_new(0x43c);
   if (pCVar1 == (CPendulum *)0x0) {
     return (CPendulum *)0x0;
   }

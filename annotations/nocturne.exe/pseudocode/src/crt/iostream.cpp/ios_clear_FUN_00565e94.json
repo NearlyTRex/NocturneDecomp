@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 8,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "00565eb5",
+      "from_addr": "00565f0d",
+      "name": "crt_fstream.cpp_openFile_FUN_00565eb5",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00456b20",
+      "from_addr": "00456b4a",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565e94",
+    "address_range": [
+      [
+        "00565e94",
+        "00565eb4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_iostream.cpp_ios_clear_FUN_00565e94",
+    "signature": "uint __cdecl crt_iostream_cpp_ios_clear_FUN_00565e94(ios *this_ptr,uint state_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056b327",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_0056b327"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00565f0d",
+        "call_type": "direct",
+        "caller": "crt_fstream.cpp_openFile_FUN_00565eb5",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00456b4a",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00456b20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4166666666666665,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 41
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "ios *"
+      },
+      {
+        "is_param": true,
+        "name": "state_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

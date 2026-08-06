@@ -32,7 +32,7 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
       uVar1 = uVar1 | uVar2;
     }
     if ((file_handle->_flag & 8) != 0) {
-      FUN_005638d0(file_handle->_link->__reserve_end);
+      free(file_handle->_link->__reserve_end);
       file_handle->_link->__reserve_end = (char *)0x0;
     }
     if ((file_handle->_flag & 0x800) != 0) {

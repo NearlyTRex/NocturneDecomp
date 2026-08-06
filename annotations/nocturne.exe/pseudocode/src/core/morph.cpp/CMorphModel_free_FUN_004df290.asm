@@ -15,7 +15,7 @@
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0 at 004e00d0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -44,16 +44,16 @@ section .text
     RET                                 ; 004df2c1
     PUSH EDX                            ; 004df2c2
         ;   Label: LAB_004df2c2
-    CALL crt_unknown.c_FUN_005638d0     ; 004df2c3
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 004df2c3
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 004df2c8
     MOV dword ptr [EBX + 0x58],0x0      ; 004df2cb
     JMP 0x004df29d                      ; 004df2d2
         ;   XREF to: 004df29d (UNCONDITIONAL_JUMP)  ; LAB_004df29d
     PUSH ESI                            ; 004df2d4
         ;   Label: LAB_004df2d4
-    CALL crt_unknown.c_FUN_005638d0     ; 004df2d5
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 004df2d5
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 004df2da
     MOV dword ptr [EBX + 0x60],0x0      ; 004df2dd
     JMP 0x004df2a4                      ; 004df2e4

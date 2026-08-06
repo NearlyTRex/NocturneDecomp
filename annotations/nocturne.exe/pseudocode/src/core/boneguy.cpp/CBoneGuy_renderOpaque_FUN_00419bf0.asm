@@ -7,7 +7,7 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x005ae704]      ; 00419bf0 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00419bf0 | g_CDemonRenderer_PTR_005ae704
         ;   Label: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
     PUSH EDX                            ; 00419bf6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00419bf7

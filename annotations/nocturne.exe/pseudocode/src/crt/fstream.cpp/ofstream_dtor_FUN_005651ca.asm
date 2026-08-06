@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_dcamera.cpp_FUN_00446810 at 00446dda
-;   core_game.cpp_FUN_004a3b90 at 004a3fae
-;   core_game.cpp_FUN_004a4170 at 004a45a5
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446dda
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3fae
+;   core_game.cpp_CGame_FUN_004a4170 at 004a45a5
 ;   crt_unknown.c_FUN_0056519c at 005651a9
 ;   crt_unknown.c_FUN_005651b2 at 005651c1
 ;   support_codec.cpp_CCodec_processFiles_FUN_004391b0 at 00439277
@@ -26,7 +26,7 @@
 ;   crt_iostream.cpp_ios_dtor_FUN_0056b633
 ;   crt_iostream.cpp_ostream_dtor_FUN_0056b538
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -98,8 +98,8 @@ section .text
         ;   XREF to: 00565223 (UNCONDITIONAL_JUMP)  ; LAB_00565223
     PUSH EBX                            ; 0056525c
         ;   Label: LAB_0056525c
-    CALL crt_unknown.c_FUN_00564494     ; 0056525d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0056525d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     JMP 0x00565242                      ; 00565262
         ;   XREF to: 00565242 (UNCONDITIONAL_JUMP)  ; LAB_00565242
 

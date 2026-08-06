@@ -17,15 +17,15 @@
 ;   TerminatedCString s_art_0058d308
 ;   TerminatedCString s_Unable_to_open_PBM_file_0058d30c
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d327
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_004f4ab0
+;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0
-;   cockpit_pkbitmap.cpp_FUN_004f3f50
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -40,8 +40,8 @@ section .text
     SUB ESP,0x64                        ; 004f4e42
     MOV EBX,dword ptr [ESP + 0x70]      ; 004f4e45
     PUSH EBX                            ; 004f4e49
-    CALL cockpit_pkbitmap.cpp_FUN_004f3f50 ; 004f4e4a
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f3f50()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 ; 004f4e4a
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f4e4f
     MOV EDX,dword ptr [ESP + 0x74]      ; 004f4e52
     PUSH EDX                            ; 004f4e56
@@ -71,10 +71,10 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f4e92
     MOV ECX,0x58d327                    ; 004f4e96 | = "..\\cockpit\\pkbitmap.cpp"
     PUSH EAX                            ; 004f4e9b
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | g_INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004f4ea8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | g_CurrentLineNumber
+    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f4ea8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f4ead
     POP EDI                             ; 004f4eb0
     PUSH 0x0                            ; 004f4eb1

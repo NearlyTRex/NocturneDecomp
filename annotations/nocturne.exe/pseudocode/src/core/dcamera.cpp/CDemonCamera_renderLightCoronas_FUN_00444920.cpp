@@ -67,7 +67,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(CDemo
     } while (iVar5 < this_ptr->display_height);
   }
   iStack_68 = 0x4449a9;
-  core_dlight_cpp_FUN_0044f0b0(light_source);
+  core_dlight_cpp_CDemonLight_FUN_0044f0b0(light_source);
   fVar1 = (light_source->base).fixed_point_scale * (float)256;
   fVar2 = (float)3.3219280948900001;
   dVar11 = round((double)fVar1);

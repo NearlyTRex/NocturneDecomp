@@ -50,7 +50,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delt
   CVector3f CStack_20;
   
   bVar22 = 0;
-  iVar12 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar12 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   pCVar11 = g_CGame_PTR_005b9354;
   if (iVar12 == 0) {
     return;
@@ -71,7 +71,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delt
   pCVar13->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  iVar12 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar12 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   if (iVar12 == 0) {
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_scat_cpp_CScat_updateAI_FUN_004fc610(this_ptr,delta_time);
@@ -269,7 +269,7 @@ LAB_004fc138:
   if (pCVar9 != (CWeapon *)0x0) {
     (*((pCVar9->base).vtable._ub)->process)(&pCVar9->base,delta_time);
   }
-  core_scat_cpp_FUN_004fcd90(this_ptr,delta_time);
+  core_scat_cpp_CScat_FUN_004fcd90(this_ptr,delta_time);
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   uVar19 = (uint)((this_ptr->base).base.hit_points <= 0.0);
   pCVar15 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
@@ -304,7 +304,7 @@ LAB_004fc138:
   if ((iVar12 == 0) &&
      (EVar17 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                          ((CCharacter *)this_ptr), EVar17 == DEATH_STATE_ALIVE)) {
-    blend_callback = core_skeleton_cpp_FUN_0051b650;
+    blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar16 = this_ptr->head_blend_weight;
     iVar12 = _DAT_01e53388;
     core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_euler_angles,&local_58);
@@ -319,8 +319,8 @@ LAB_004fc138:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
               (unaff_EBX,source_quaternions,fVar16,iVar12,blend_callback);
   }
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
-  core_scat_cpp_FUN_004fdd00(this_ptr);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_scat_cpp_CScat_FUN_004fdd00(this_ptr);
 switchD_004fc3b6_caseD_5:
   return;
 }

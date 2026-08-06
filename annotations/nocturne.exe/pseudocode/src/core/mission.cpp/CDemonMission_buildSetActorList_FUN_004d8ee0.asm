@@ -7,22 +7,22 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_mission.cpp_CDemonMission_FUN_004d8fc0 at 004d8fef
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80 at 004d9b7b
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d9051
-;   core_mission.cpp_FUN_004d8fc0 at 004d8fef
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00589ca4
 ;   TerminatedCString s_CDemonMission_buildSetAc_00589cb8
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonSet_01e57284.actor_count
 ;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0
 ;
@@ -76,10 +76,10 @@ section .text
     JL 0x004d8f69                       ; 004d8f4e
         ;   XREF to: 004d8f69 (CONDITIONAL_JUMP)  ; LAB_004d8f69
     PUSH 0x589cb8                       ; 004d8f50 | = "CDemonMission::buildSetActorList - To..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004d8f55 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004d8f5b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d8f61
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004d8f55 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004d8f5b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d8f61
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d8f66
     MOV EAX,[0x005be368]                ; 004d8f69 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004d8f69

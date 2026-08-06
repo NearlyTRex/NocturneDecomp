@@ -10,7 +10,7 @@
 ; byte *           Stack[0x10]:4   lightmap_index
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_00447bb0 at 00447c48
+;   core_dcamera.cpp_CDemonCamera_FUN_00447bb0 at 00447c48
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b5d00

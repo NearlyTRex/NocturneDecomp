@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004a3a90 at 004a3aa2
+;   core_game.cpp_CGame_FUN_004a3a90 at 004a3aa2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0e8

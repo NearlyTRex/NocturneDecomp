@@ -22,7 +22,7 @@
 ;   core_fire.cpp_CLightningBolt_render_FUN_00488bf0 at 00488d63
 ;   core_fire.cpp_CTrail_render_FUN_00489360 at 00489407
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0 at 0048db48
-;   core_set.cpp_FUN_0050e080 at 0050e0ca
+;   core_set.cpp_CDemonSet_FUN_0050e080 at 0050e0ca
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f *objs,uint flags)
+; CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f *this_ptr,uint flags)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   objs
+; CVector3f *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:

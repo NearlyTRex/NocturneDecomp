@@ -20,9 +20,9 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
       if (_DAT_02ddf55c != (int *)0x0) {
         iVar1 = (**(code **)(*_DAT_02ddf554 + 0x7c))(_DAT_02ddf554,_DAT_02ddf55c);
         if (iVar1 != 0) {
-          g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-          g_INT_01cc4804 = 0x3df;
-          core_main_c_FUN_004c8440("videoRestore - Unable to set front buffer palette");
+          g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+          g_CurrentLineNumber = 991;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("videoRestore - Unable to set front buffer palette");
           return;
         }
       }
@@ -30,7 +30,7 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
   }
   else {
     iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005324a0
-                      (DAT_005b761c,DAT_005b7620,DAT_005b7624);
+                      (g_WindowWidth,g_WindowHeight,DAT_005b7624);
     if (iVar1 == 0) {
       INT_02dc9d60 = iVar1;
       if (_DAT_02ddf55c != (int *)0x0) {
@@ -54,7 +54,8 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
       if (iVar1 == 0) {
         (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
       }
-      wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,DAT_005b7624);
+      wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
+                (g_WindowWidth,g_WindowHeight,DAT_005b7624);
     }
     SetFocus(_DAT_02de2098);
   }

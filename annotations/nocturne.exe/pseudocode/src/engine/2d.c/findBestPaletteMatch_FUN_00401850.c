@@ -19,7 +19,7 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int 
   int unaff_EDI;
   float local_20;
   
-  pbVar5 = &DAT_01c00648 + start_index * 3;
+  pbVar5 = g_SourcePaletteData + start_index * 3;
   local_20 = 1e+30;
   if (start_index <= end_index) {
     iVar7 = start_index << 2;
@@ -31,7 +31,7 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int 
       uVar6 = (int)(blue - (uint)pbVar5[2]) >> 0x1f;
       fVar3 = ABS(SQRT((float)blue * (float)blue +
                        (float)green * (float)green + (float)red * (float)red) *
-                  (float)0.57735027000000005 - *(float *)((int)&DAT_006af638 + iVar7));
+                  (float)0.57735027000000005 - *(float *)((int)g_PaletteLuminanceCache + iVar7));
       fVar4 = (float)(int)((blue - (uint)pbVar5[2] ^ uVar6) - uVar6);
       fVar1 = fVar3 * fVar3 * (float)0.14999999999999999 +
               fVar4 * fVar4 * (float)0.11 +

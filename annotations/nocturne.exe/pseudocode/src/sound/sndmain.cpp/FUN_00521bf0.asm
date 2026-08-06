@@ -7,14 +7,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005922b0
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_005922c5
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[0].playback_state
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].playback_state
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -50,10 +50,10 @@ section .text
     MOV ECX,0x5922b0                    ; 00521c23 | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x1f6                       ; 00521c28
     PUSH 0x5922c5                       ; 00521c2d | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00521c32 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00521c38 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00521c3e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00521c32 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00521c38 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00521c3e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00521c43
     POP EBX                             ; 00521c46
     JMP 0x00521bfa                      ; 00521c47

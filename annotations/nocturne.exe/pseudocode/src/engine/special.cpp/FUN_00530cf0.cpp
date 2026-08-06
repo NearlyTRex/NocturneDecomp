@@ -13,8 +13,8 @@ void engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
   if (param_2 != 0) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\engine\\special.c";
-  g_INT_01cc4804 = 0x86;
-  core_main_c_FUN_004c8440("Unable to find function!");
+  g_CurrentFilename = "..\\engine\\special.c";
+  g_CurrentLineNumber = 134;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to find function!");
   return;
 }

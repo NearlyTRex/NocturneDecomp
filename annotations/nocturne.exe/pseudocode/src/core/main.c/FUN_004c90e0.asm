@@ -31,7 +31,7 @@
 ;   core_dfont.cpp_FUN_0044cc00
 ;   core_dmodel.cpp_FUN_00454460
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0
-;   core_mission.cpp_FUN_004d7e90
+;   core_mission.cpp_CDemonMission_FUN_004d7e90
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
 ;   core_skeleton.cpp_FUN_0051f650
@@ -271,8 +271,8 @@ section .text
     ADD ESP,0x4                         ; 004c9332
     MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 004c933b
-    CALL core_mission.cpp_FUN_004d7e90  ; 004c933c
-        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004d7e90(void * param_1)
+    CALL core_mission.cpp_CDemonMission_FUN_004d7e90 ; 004c933c
+        ;   XREF to: 004d7e90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7e90(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004c9341
     MOV EAX,[0x005bed68]                ; 004c9344 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004c9349
@@ -292,7 +292,7 @@ section .text
     CALL engine_2d.c_FUN_004012a0       ; 004c936b
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004012a0()
     CALL engine_3d.c_FUN_005458d0       ; 004c9370
-        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_005458d0()
+        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_005458d0()
     CALL core_dfont.cpp_FUN_0044cc00    ; 004c9375
         ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044cc00()
     CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a

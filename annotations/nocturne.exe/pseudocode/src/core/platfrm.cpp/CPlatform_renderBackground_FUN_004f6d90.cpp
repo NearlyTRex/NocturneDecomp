@@ -16,7 +16,8 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform 
   CBoundingBox3D local_2c;
   CVector3i CStack_14;
   
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 != 0) {
     return;
   }
@@ -42,7 +43,8 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform 
       return;
     }
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar1 == 0) {
     if (this_ptr->render_in_background_when_not_moving_flag == 0) {
       this_ptr->one_shot = 3;
@@ -56,8 +58,8 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform 
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
   if (iVar1 != 0) {
     if ((this_ptr->recompute_fog == 0) ||
-       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),
-       iVar1 != 0)) {
+       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                          (g_CDemonRenderer_PTR_005ae704), iVar1 != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (&this_ptr->model,0.0,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);

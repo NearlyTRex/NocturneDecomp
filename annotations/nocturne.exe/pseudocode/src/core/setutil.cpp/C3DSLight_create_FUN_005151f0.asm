@@ -15,16 +15,16 @@
 ;   TerminatedCString s_core_setutil_cpp_00590e25
 ;   TerminatedCString s_C3DSLight_create_Out_of_00590e39
 ;   undefined4 DAT_005ad54c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0044e110
 ;   core_dlight.cpp_CDemonLight_init_FUN_0044e1e0
-;   core_main.c_FUN_004c8440
-;   crt_unknown.c_FUN_0056497c
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x4                         ; 005151f4
     MOV EBP,dword ptr [ESP + 0x18]      ; 005151f7
     PUSH 0x2fac                         ; 005151fb
-    CALL crt_unknown.c_FUN_0056497c     ; 00515200
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00515200
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00515205
     TEST EAX,EAX                        ; 00515208
     JNZ 0x0051531a                      ; 0051520a
@@ -52,10 +52,10 @@ section .text
     MOV EBX,0x590e25                    ; 00515217 | = "..\\core\\setutil.cpp"
     MOV ESI,0x2c6                       ; 0051521c
     PUSH 0x590e39                       ; 00515221 | = "C3DSLight::create - Out of memory!"
-    MOV dword ptr [0x01cc4800],EBX      ; 00515226 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051522c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00515232
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00515226 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051522c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00515232
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00515237
     MOV EDI,dword ptr [ESP]             ; 0051523a
         ;   Label: LAB_0051523a

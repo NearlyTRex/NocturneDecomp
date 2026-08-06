@@ -160,9 +160,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
           iVar4 = 4;
         }
         if (iVar4 != *(int *)(local_a4 + 0xc)) {
-          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          g_INT_01cc4804 = 0x1a1;
-          core_main_c_FUN_004c8440();
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 417;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
         }
         SStack_e4.channel_mode = (int)local_a0;
       }
@@ -175,9 +175,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         uVar9 = *(uint *)(iVar7 + 0x20);
         if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)uVar9 < 0)) || (3 < (int)uVar9))
         {
-          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          g_INT_01cc4804 = 0x1b1;
-          core_main_c_FUN_004c8440();
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 433;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s");
         }
         SStack_e4.private_bit =
              (int)*(int **)("$CMotionController$$" + uVar9 * 4 + local_8c * 0x10 + 10);
@@ -373,9 +373,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(CMP3Decoder *this
         iVar7 = sound_mp3_cpp_calculateMainDataSize_FUN_004e77d0(frame_info_00);
         this_ptr->main_data_offset = this_ptr->main_data_offset + iVar7;
         if (local_74 < 0) {
-          g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-          g_INT_01cc4804 = 0xf90;
-          core_main_c_FUN_004c8440();
+          g_CurrentFilename = "..\\sound\\mp3.cpp";
+          g_CurrentLineNumber = 3984;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Not enough main data to decode frame %d.");
         }
         while (iVar7 = local_74, 0 < local_74) {
           sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(this_ptr,8);

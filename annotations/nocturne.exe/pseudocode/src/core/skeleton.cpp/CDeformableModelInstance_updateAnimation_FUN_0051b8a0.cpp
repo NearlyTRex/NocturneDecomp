@@ -18,6 +18,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
             (this_ptr,(this_ptr->motion_controller).tween_target_motion,
              (this_ptr->motion_controller).tween_target_frame,
-             (this_ptr->motion_controller).tween_progress,-1,core_skeleton_cpp_FUN_0051b650);
+             (this_ptr->motion_controller).tween_progress,-1,
+             core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
   return;
 }

@@ -11,7 +11,7 @@ CLightCone * __cdecl core_litecone_cpp_factoryFunc_FUN_004c80c0(void)
 {
   CLightCone *pCVar1;
   
-  pCVar1 = (CLightCone *)FUN_0056497c(0x224);
+  pCVar1 = operator_new(0x224);
   if (pCVar1 == (CLightCone *)0x0) {
     return (CLightCone *)0x0;
   }

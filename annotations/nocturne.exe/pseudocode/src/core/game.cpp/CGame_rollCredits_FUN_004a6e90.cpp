@@ -70,9 +70,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
     pvVar4 = malloc(~uVar5 + 9);
     *(void **)((int)local_1134 + iVar6) = pvVar4;
     if (pvVar4 == (void *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
-      g_INT_01cc4804 = 0x1242;
-      core_main_c_FUN_004c8440("CGame::rollCredits - Out of memory");
+      g_CurrentFilename = "..\\core\\game.cpp";
+      g_CurrentLineNumber = 4674;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::rollCredits - Out of memory");
     }
     pcVar3 = local_134;
     pcVar8 = *(char **)((int)local_1134 + iVar6);
@@ -150,7 +150,7 @@ LAB_004a722b:
           do {
             iVar7 = iVar6 + -4;
             iVar6 = iVar6 + 4;
-            FUN_005638d0(*(uint *)((int)local_1134 + iVar7));
+            free(*(void **)((int)local_1134 + iVar7));
           } while (iVar6 < iVar2);
         }
         engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340((CAlphaBitmap *)auStack_38,0);

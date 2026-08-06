@@ -17,9 +17,9 @@ int sound_sndmain_cpp_FUN_00521bf0(void)
   int iVar3;
   
   if (_DAT_02dc84bc < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0x1f6;
-    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 502;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   iVar3 = 0;
   iVar2 = 0;

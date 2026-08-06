@@ -92,7 +92,7 @@ section .text
     MOV ECX,dword ptr [0x00763e84]      ; 0040c570 | DAT_00763e84
     PUSH ECX                            ; 0040c576
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c577
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x24                        ; 0040c57c
     JMP 0x0040c521                      ; 0040c57f
         ;   XREF to: 0040c521 (UNCONDITIONAL_JUMP)  ; LAB_0040c521

@@ -55,25 +55,25 @@ EDeathState __cdecl CBugs::getDeathState(CBugs *this_ptr);
 // Address: 004219d0
 void __cdecl CBugs::processDamage(CBugs *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_bugs.cpp_FUN_004219f0
+// Original: core_bugs.cpp_CBugs_FUN_004219f0
 // Address: 004219f0
-void __cdecl FUN_004219f0(CBugs *this_ptr,int tri_count,SInputFace *triangles);
+void __cdecl CBugs(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 
 // Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0
 // Address: 00421ad0
 void __cdecl CBugs::addSwarmGraphEdge(CBugs *this_ptr,int vertex_index,int neighbor_index,int first_edge_data);
 
-// Original: core_bugs.cpp_FUN_00421b80
+// Original: core_bugs.cpp_CBugs_FUN_00421b80
 // Address: 00421b80
-void __cdecl FUN_00421b80(CBugs *this_ptr);
+void __cdecl CBugs(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00421f00
 // Address: 00421f00
 float __cdecl CBugs::sampleGroundHeight(CBugs *this_ptr,float x,float z);
 
-// Original: core_bugs.cpp_FUN_00422050
+// Original: core_bugs.cpp_CBugs_FUN_00422050
 // Address: 00422050
-void __cdecl FUN_00422050(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
 // Address: 00422370
@@ -167,6 +167,6 @@ SBug * __cdecl SBug::ctor(SBug *this_ptr);
 // Address: 00423e70
 SBug * __cdecl SBug::dtor(SBug *this_ptr,uint flags);
 
-// Original: core_bugs.cpp_FUN_00423e80
+// Original: core_bugs.cpp_SBug_arrdtor_FUN_00423e80
 // Address: 00423e80
-void FUN_00423e80(void *param_1);
+SBug * __cdecl SBug::arrdtor(SBug *this_ptr,uint flags);

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -70,49 +70,49 @@
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 50,
+        "line": 49,
         "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier 'DAT_01b4d720'"
       },
       {
         "category": "undeclared_identifier",
         "column": 84,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01b4d730'"
       },
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 59,
+        "line": 58,
         "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 61,
+        "line": 60,
         "message": "use of undeclared identifier 'DAT_01b4d720'"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 61,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_01b4d730'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 80,
+        "line": 79,
         "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 82,
+        "line": 81,
         "message": "use of undeclared identifier 'DAT_01b4d710'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 282,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 91,
     "suspect_count": 18,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 311
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -159,7 +159,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
   "globals": [
@@ -225,13 +225,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -387,7 +387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 < 0x11) {",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_01b4d720",
       "severity": "mild",
       "text": "*(ushort *)(*piVar1 + iVar2) >> (DAT_01b4d720 & 0x1f) & (ushort)_DAT_01b4d730;",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 == 0x20) {",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "puVar6 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar3) + iVar5 * 4);",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_01b4d720",
       "severity": "mild",
       "text": "*puVar6 = *puVar6 >> (DAT_01b4d720 & 0x1f) & _DAT_01b4d730;",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 < 0x10) {",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 != 8) {",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 72,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);",
@@ -459,7 +459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 74,
       "match": "DAT_01b4d710",
       "severity": "mild",
       "text": "*(byte *)(*piVar1 + iVar5) = DAT_01b4d710;",
@@ -467,7 +467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 77,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "else if (DAT_005b7624 < 0x11) {",
@@ -475,7 +475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 79,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_005b7624",
       "severity": "mild",
       "text": "if (DAT_005b7624 != 0x20) goto LAB_0045c933;",
@@ -491,7 +491,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
       "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);",

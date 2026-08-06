@@ -11,11 +11,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004270e0 at 004271c5
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271c5
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 at 0051da28
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 0051a701
     SUB ESP,0x8                         ; 0051a702
     MOV EBX,dword ptr [ESP + 0x14]      ; 0051a705
-    MOV EDX,dword ptr [0x005ae704]      ; 0051a709 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0051a709 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0051a70f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 0051a710
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_00582402
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01c78adc
 ;   undefined4 DAT_01c78ae0
@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     MOV EAX,[0x01c78ae4]                ; 0049b478 | DAT_01c78ae4
     MOV EBP,dword ptr [0x01c78ae0]      ; 0049b47d | DAT_01c78ae0
-    MOV EDX,dword ptr [0x005b7620]      ; 0049b483 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049b483 | g_WindowHeight
     ADD EBP,EAX                         ; 0049b489
     SHL EAX,0x2                         ; 0049b48b
     ADD ESP,0x18                        ; 0049b48e
@@ -82,7 +82,7 @@ section .text
     SUB EAX,EDX                         ; 0049b4b5
     ADD EAX,EAX                         ; 0049b4b7
     MOV [0x01c78ae0],EAX                ; 0049b4b9 | DAT_01c78ae0
-    MOV EAX,[0x005b761c]                ; 0049b4be | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0049b4be | g_WindowWidth
     MOV EDX,EAX                         ; 0049b4c3
     MOV ECX,0x3                         ; 0049b4c5
     SAR EDX,0x1f                        ; 0049b4ca

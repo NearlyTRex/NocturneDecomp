@@ -10,21 +10,21 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_0048e8f0(CFlameCan *thi
 
 {
   CDemonActor *pCVar1;
-  CFlameCan *pCVar2;
-  void *ptr;
+  CFlameCan *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CFlameCanTypeInfo_0059d760);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CFlameCanTypeInfo_0059d760);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&(this_ptr->flame).base,1);
-  pCVar2 = (CFlameCan *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar1[-3].create_event + 0x40),1);
+  ptr = (CFlameCan *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pCVar1[-3].create_event + 0x40),1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_00564494(pCVar2);
-  return pCVar2;
+  operator_delete(ptr);
+  return ptr;
 }

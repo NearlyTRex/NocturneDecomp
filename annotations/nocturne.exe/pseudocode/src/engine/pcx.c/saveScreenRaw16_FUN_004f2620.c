@@ -48,9 +48,9 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_004f2620(char *filename)
   pcVar7 = (char *)0x0;
 LAB_004f2663:
   if (pcVar7 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pcx.c";
-    g_INT_01cc4804 = 0x68;
-    core_main_c_FUN_004c8440("saveScreenRaw16 - No ext found");
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 104;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("saveScreenRaw16 - No ext found");
   }
   pcVar5 = ".RAW";
   do {
@@ -64,17 +64,17 @@ LAB_004f2663:
   } while (cVar1 != '\0');
   file = _fopen(local_70,"wb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pcx.c";
-    g_INT_01cc4804 = 0x6e;
-    core_main_c_FUN_004c8440("saveScreenRaw16 - Unable to open output");
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 110;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("saveScreenRaw16 - Unable to open output");
   }
   local_14 = 0;
-  if (0 < DAT_005b7620) {
+  if (0 < g_WindowHeight) {
     local_18 = 0;
     do {
       iVar3 = 0;
       puVar6 = *(ushort **)(&DAT_01bd2fa0 + local_18);
-      if (0 < DAT_005b761c) {
+      if (0 < g_WindowWidth) {
         do {
           uVar2 = *puVar6;
           local_20 = (uint)(uVar2 >> (DAT_01c00624 & 0x1f)) * _DAT_01c00628 & 0xff;
@@ -85,11 +85,11 @@ LAB_004f2663:
           puVar6 = puVar6 + 1;
           iVar3 = iVar3 + 1;
           _fputc(uVar4 & 0xff,file);
-        } while (iVar3 < DAT_005b761c);
+        } while (iVar3 < g_WindowWidth);
       }
       local_18 = local_18 + 4;
       local_14 = local_14 + 1;
-    } while (local_14 < DAT_005b7620);
+    } while (local_14 < g_WindowHeight);
   }
   _fclose(file);
   return;

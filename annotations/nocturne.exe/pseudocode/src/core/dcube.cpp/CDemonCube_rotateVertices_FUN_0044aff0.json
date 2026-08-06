@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,40 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 33,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 58,
         "line": 34,
-        "message": "use of undeclared identifier 'DAT_02dd1184'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 38,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 40,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 41,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0'"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 45,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
@@ -110,10 +80,40 @@
         "message": "use of undeclared identifier '_DAT_0059be10'"
       },
       {
-        "category": "other",
-        "column": 23,
-        "line": 61,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 66,
+        "message": "use of undeclared identifier 'DAT_014b8488'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 67,
+        "message": "use of undeclared identifier 'DAT_014b8488'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 67,
+        "message": "use of undeclared identifier 'DAT_014b8488'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 68,
+        "message": "use of undeclared identifier '_DAT_014b847c'; did you mean 'DAT_005b747c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 69,
+        "message": "use of undeclared identifier '_DAT_014b8484'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 70,
+        "message": "use of undeclared identifier '_DAT_014b8480'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 363,
+    "complexity_score": 274,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 23,
+    "pseudocode_lines": 99,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -138,7 +138,7 @@
       "warning_jumptable",
       "warning_overlapping_globals"
     ],
-    "total_lines": 326
+    "total_lines": 327
   },
   "cross_references": [
     {
@@ -176,7 +176,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00461050",
@@ -237,9 +237,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "014b847c",
@@ -279,13 +279,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -493,21 +493,21 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 89,
+          "line": 90,
           "message": "Uninitialized variable: local_3c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 90,
+          "line": 91,
           "message": "Uninitialized variable: local_38",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 27,
-          "line": 91,
+          "line": 92,
           "message": "Uninitialized variable: local_34",
           "severity": "warning"
         }
@@ -528,62 +528,14 @@
     {
       "description": "Undefined global data reference",
       "line": 27,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "output = DAT_005ae704->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "if (DAT_005ae704->advanced_culling_enabled == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_014b8488",
       "severity": "mild",
       "text": "if ((DAT_014b8488 & 1) == 0) {",
@@ -591,7 +543,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_014b8488",
       "severity": "mild",
       "text": "DAT_014b8488 = DAT_014b8488 | 1;",
@@ -599,7 +551,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_014b8488",
       "severity": "mild",
       "text": "DAT_014b8488 = DAT_014b8488 | 1;",
@@ -607,7 +559,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 70,
+      "line": 71,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x0044b10e. Too many branches */",
@@ -615,7 +567,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 71,
+      "line": 72,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -623,7 +575,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 73,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_0044afd0 + local_24))();",
@@ -631,7 +583,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 77,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);",
@@ -639,7 +591,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 80,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);",
@@ -647,47 +599,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 81,
       "match": "(float *)((int)(pCVar2->triangle).vertices",
       "severity": "moderate",
       "text": "local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
       "severity": "moderate",
       "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + local_18),",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&PTR_LAB_0044afd0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&PTR_LAB_0044afd0",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_0044afd0 + local_24))();",
@@ -695,7 +623,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(**(code **)((int)&PTR_LAB_0044afd0 + local_24))();",
@@ -703,7 +631,7 @@
     },
     {
       "description": "Uninitialized variable: local_3c",
-      "line": 89,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_3c = local_3c * 127.0f;",
@@ -711,7 +639,7 @@
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 90,
+      "line": 91,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_38 = local_38 * 127.0f;",
@@ -719,7 +647,7 @@
     },
     {
       "description": "Uninitialized variable: local_34",
-      "line": 91,
+      "line": 92,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_34 = 127.0f * local_34;",

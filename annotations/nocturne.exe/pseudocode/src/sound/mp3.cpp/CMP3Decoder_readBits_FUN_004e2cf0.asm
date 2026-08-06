@@ -22,11 +22,11 @@
 ;   TerminatedCString s_Buffer_overflow_File_s_0058b5ef
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -100,10 +100,10 @@ section .text
     MOV EBP,0x58b5de                    ; 004e2da1 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x2c0                       ; 004e2da6
     PUSH 0x58b5ef                       ; 004e2dab | = "Buffer overflow!!  File: %s"
-    MOV dword ptr [0x01cc4800],EBP      ; 004e2db0 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e2db6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e2dbb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004e2db0 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004e2db6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e2dbb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e2dc0
     JMP 0x004e2d1e                      ; 004e2dc3
         ;   XREF to: 004e2d1e (UNCONDITIONAL_JUMP)  ; LAB_004e2d1e

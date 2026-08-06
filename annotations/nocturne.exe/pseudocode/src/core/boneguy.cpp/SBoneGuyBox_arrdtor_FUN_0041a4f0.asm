@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0(SBoneGuyBox *objs,uint flags)
+; SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0(SBoneGuyBox *this_ptr,uint flags)
 ;
 ; Parameters:
-; SBoneGuyBox *    Stack[0x4]:4   objs
+; SBoneGuyBox *    Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

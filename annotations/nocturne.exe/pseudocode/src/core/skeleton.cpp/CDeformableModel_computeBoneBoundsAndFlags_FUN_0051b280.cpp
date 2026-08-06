@@ -84,9 +84,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
             do {
               iVar7 = pCVar3->bone_list[iVar7].parent_index;
               if (iVar7 < 0) {
-                g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-                g_INT_01cc4804 = 0x86b;
-                core_main_c_FUN_004c8440("Bug!");
+                g_CurrentFilename = "..\\core\\skeleton.cpp";
+                g_CurrentLineNumber = 2155;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("Bug!");
               }
             } while ((this_ptr->bone_flags[iVar7] != 2) && (iVar9 = iVar9 + 1, iVar9 < 2));
             if (iVar9 < 2) goto LAB_0051b360;

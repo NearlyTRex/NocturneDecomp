@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005992b0
 ;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c70
 ;
@@ -69,7 +69,7 @@ section .text
     TEST EBX,EBX                        ; 0040abec
     JL 0x0040abfc                       ; 0040abee
         ;   XREF to: 0040abfc (CONDITIONAL_JUMP)  ; LAB_0040abfc
-    CMP ESI,dword ptr [0x005b761c]      ; 0040abf0 | DAT_005b761c
+    CMP ESI,dword ptr [0x005b761c]      ; 0040abf0 | g_WindowWidth
     JL 0x0040acda                       ; 0040abf6
         ;   XREF to: 0040acda (CONDITIONAL_JUMP)  ; LAB_0040acda
     LEA EAX,[ESI + -0x1]                ; 0040abfc
@@ -81,7 +81,7 @@ section .text
     TEST EDX,EDX                        ; 0040ac06
     JL 0x0040ac16                       ; 0040ac08
         ;   XREF to: 0040ac16 (CONDITIONAL_JUMP)  ; LAB_0040ac16
-    CMP EAX,dword ptr [0x005b761c]      ; 0040ac0a | DAT_005b761c
+    CMP EAX,dword ptr [0x005b761c]      ; 0040ac0a | g_WindowWidth
     JL 0x0040acf5                       ; 0040ac10
         ;   XREF to: 0040acf5 (CONDITIONAL_JUMP)  ; LAB_0040acf5
     LEA EDX,[ESI + -0x1]                ; 0040ac16
@@ -93,7 +93,7 @@ section .text
     TEST EAX,EAX                        ; 0040ac20
     JL 0x0040ac30                       ; 0040ac22
         ;   XREF to: 0040ac30 (CONDITIONAL_JUMP)  ; LAB_0040ac30
-    CMP EDX,dword ptr [0x005b761c]      ; 0040ac24 | DAT_005b761c
+    CMP EDX,dword ptr [0x005b761c]      ; 0040ac24 | g_WindowWidth
     JL 0x0040ad10                       ; 0040ac2a
         ;   XREF to: 0040ad10 (CONDITIONAL_JUMP)  ; LAB_0040ad10
     LEA EDX,[ESI + 0x1]                 ; 0040ac30
@@ -105,7 +105,7 @@ section .text
     TEST EAX,EAX                        ; 0040ac3a
     JL 0x0040ac4a                       ; 0040ac3c
         ;   XREF to: 0040ac4a (CONDITIONAL_JUMP)  ; LAB_0040ac4a
-    CMP EDX,dword ptr [0x005b761c]      ; 0040ac3e | DAT_005b761c
+    CMP EDX,dword ptr [0x005b761c]      ; 0040ac3e | g_WindowWidth
     JL 0x0040ad2b                       ; 0040ac44
         ;   XREF to: 0040ad2b (CONDITIONAL_JUMP)  ; LAB_0040ad2b
     LEA EAX,[ESI + 0x1]                 ; 0040ac4a
@@ -117,7 +117,7 @@ section .text
     TEST EDX,EDX                        ; 0040ac54
     JL 0x0040ac64                       ; 0040ac56
         ;   XREF to: 0040ac64 (CONDITIONAL_JUMP)  ; LAB_0040ac64
-    CMP EAX,dword ptr [0x005b761c]      ; 0040ac58 | DAT_005b761c
+    CMP EAX,dword ptr [0x005b761c]      ; 0040ac58 | g_WindowWidth
     JL 0x0040ad46                       ; 0040ac5e
         ;   XREF to: 0040ad46 (CONDITIONAL_JUMP)  ; LAB_0040ad46
     LEA EDX,[ESI + -0x2]                ; 0040ac64
@@ -129,7 +129,7 @@ section .text
     TEST EAX,EAX                        ; 0040ac6e
     JL 0x0040ac7e                       ; 0040ac70
         ;   XREF to: 0040ac7e (CONDITIONAL_JUMP)  ; LAB_0040ac7e
-    CMP EDX,dword ptr [0x005b761c]      ; 0040ac72 | DAT_005b761c
+    CMP EDX,dword ptr [0x005b761c]      ; 0040ac72 | g_WindowWidth
     JL 0x0040ad61                       ; 0040ac78
         ;   XREF to: 0040ad61 (CONDITIONAL_JUMP)  ; LAB_0040ad61
     LEA EAX,[ESI + -0x2]                ; 0040ac7e
@@ -141,7 +141,7 @@ section .text
     TEST EDX,EDX                        ; 0040ac88
     JL 0x0040ac98                       ; 0040ac8a
         ;   XREF to: 0040ac98 (CONDITIONAL_JUMP)  ; LAB_0040ac98
-    CMP EAX,dword ptr [0x005b761c]      ; 0040ac8c | DAT_005b761c
+    CMP EAX,dword ptr [0x005b761c]      ; 0040ac8c | g_WindowWidth
     JL 0x0040ad7c                       ; 0040ac92
         ;   XREF to: 0040ad7c (CONDITIONAL_JUMP)  ; LAB_0040ad7c
     LEA EAX,[ESI + 0x2]                 ; 0040ac98
@@ -153,7 +153,7 @@ section .text
     TEST EDX,EDX                        ; 0040aca2
     JL 0x0040acb2                       ; 0040aca4
         ;   XREF to: 0040acb2 (CONDITIONAL_JUMP)  ; LAB_0040acb2
-    CMP EAX,dword ptr [0x005b761c]      ; 0040aca6 | DAT_005b761c
+    CMP EAX,dword ptr [0x005b761c]      ; 0040aca6 | g_WindowWidth
     JL 0x0040ad97                       ; 0040acac
         ;   XREF to: 0040ad97 (CONDITIONAL_JUMP)  ; LAB_0040ad97
     ADD ESI,0x2                         ; 0040acb2
@@ -165,10 +165,10 @@ section .text
     TEST EBX,EBX                        ; 0040acbc
     JL 0x0040acd4                       ; 0040acbe
         ;   XREF to: 0040acd4 (CONDITIONAL_JUMP)  ; LAB_0040acd4
-    CMP ESI,dword ptr [0x005b761c]      ; 0040acc0 | DAT_005b761c
+    CMP ESI,dword ptr [0x005b761c]      ; 0040acc0 | g_WindowWidth
     JGE 0x0040acd4                      ; 0040acc6
         ;   XREF to: 0040acd4 (CONDITIONAL_JUMP)  ; LAB_0040acd4
-    CMP EBX,dword ptr [0x005b7620]      ; 0040acc8 | DAT_005b7620
+    CMP EBX,dword ptr [0x005b7620]      ; 0040acc8 | g_WindowHeight
     JL 0x0040adb2                       ; 0040acce
         ;   XREF to: 0040adb2 (CONDITIONAL_JUMP)  ; LAB_0040adb2
     ADD ESP,0xc                         ; 0040acd4
@@ -176,7 +176,7 @@ section .text
     POP ESI                             ; 0040acd7
     POP EBX                             ; 0040acd8
     RET                                 ; 0040acd9
-    CMP EBX,dword ptr [0x005b7620]      ; 0040acda | DAT_005b7620
+    CMP EBX,dword ptr [0x005b7620]      ; 0040acda | g_WindowHeight
         ;   Label: LAB_0040acda
     JGE 0x0040abfc                      ; 0040ace0
         ;   XREF to: 0040abfc (CONDITIONAL_JUMP)  ; LAB_0040abfc
@@ -187,7 +187,7 @@ section .text
     ADD ESP,0x8                         ; 0040aced
     JMP 0x0040abfc                      ; 0040acf0
         ;   XREF to: 0040abfc (UNCONDITIONAL_JUMP)  ; LAB_0040abfc
-    CMP EDX,dword ptr [0x005b7620]      ; 0040acf5 | DAT_005b7620
+    CMP EDX,dword ptr [0x005b7620]      ; 0040acf5 | g_WindowHeight
         ;   Label: LAB_0040acf5
     JGE 0x0040ac16                      ; 0040acfb
         ;   XREF to: 0040ac16 (CONDITIONAL_JUMP)  ; LAB_0040ac16
@@ -198,7 +198,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad08
     JMP 0x0040ac16                      ; 0040ad0b
         ;   XREF to: 0040ac16 (UNCONDITIONAL_JUMP)  ; LAB_0040ac16
-    CMP EAX,dword ptr [0x005b7620]      ; 0040ad10 | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 0040ad10 | g_WindowHeight
         ;   Label: LAB_0040ad10
     JGE 0x0040ac30                      ; 0040ad16
         ;   XREF to: 0040ac30 (CONDITIONAL_JUMP)  ; LAB_0040ac30
@@ -209,7 +209,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad23
     JMP 0x0040ac30                      ; 0040ad26
         ;   XREF to: 0040ac30 (UNCONDITIONAL_JUMP)  ; LAB_0040ac30
-    CMP EAX,dword ptr [0x005b7620]      ; 0040ad2b | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 0040ad2b | g_WindowHeight
         ;   Label: LAB_0040ad2b
     JGE 0x0040ac4a                      ; 0040ad31
         ;   XREF to: 0040ac4a (CONDITIONAL_JUMP)  ; LAB_0040ac4a
@@ -220,7 +220,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad3e
     JMP 0x0040ac4a                      ; 0040ad41
         ;   XREF to: 0040ac4a (UNCONDITIONAL_JUMP)  ; LAB_0040ac4a
-    CMP EDX,dword ptr [0x005b7620]      ; 0040ad46 | DAT_005b7620
+    CMP EDX,dword ptr [0x005b7620]      ; 0040ad46 | g_WindowHeight
         ;   Label: LAB_0040ad46
     JGE 0x0040ac64                      ; 0040ad4c
         ;   XREF to: 0040ac64 (CONDITIONAL_JUMP)  ; LAB_0040ac64
@@ -231,7 +231,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad59
     JMP 0x0040ac64                      ; 0040ad5c
         ;   XREF to: 0040ac64 (UNCONDITIONAL_JUMP)  ; LAB_0040ac64
-    CMP EAX,dword ptr [0x005b7620]      ; 0040ad61 | DAT_005b7620
+    CMP EAX,dword ptr [0x005b7620]      ; 0040ad61 | g_WindowHeight
         ;   Label: LAB_0040ad61
     JGE 0x0040ac7e                      ; 0040ad67
         ;   XREF to: 0040ac7e (CONDITIONAL_JUMP)  ; LAB_0040ac7e
@@ -242,7 +242,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad74
     JMP 0x0040ac7e                      ; 0040ad77
         ;   XREF to: 0040ac7e (UNCONDITIONAL_JUMP)  ; LAB_0040ac7e
-    CMP EDX,dword ptr [0x005b7620]      ; 0040ad7c | DAT_005b7620
+    CMP EDX,dword ptr [0x005b7620]      ; 0040ad7c | g_WindowHeight
         ;   Label: LAB_0040ad7c
     JGE 0x0040ac98                      ; 0040ad82
         ;   XREF to: 0040ac98 (CONDITIONAL_JUMP)  ; LAB_0040ac98
@@ -253,7 +253,7 @@ section .text
     ADD ESP,0x8                         ; 0040ad8f
     JMP 0x0040ac98                      ; 0040ad92
         ;   XREF to: 0040ac98 (UNCONDITIONAL_JUMP)  ; LAB_0040ac98
-    CMP EDX,dword ptr [0x005b7620]      ; 0040ad97 | DAT_005b7620
+    CMP EDX,dword ptr [0x005b7620]      ; 0040ad97 | g_WindowHeight
         ;   Label: LAB_0040ad97
     JGE 0x0040acb2                      ; 0040ad9d
         ;   XREF to: 0040acb2 (CONDITIONAL_JUMP)  ; LAB_0040acb2

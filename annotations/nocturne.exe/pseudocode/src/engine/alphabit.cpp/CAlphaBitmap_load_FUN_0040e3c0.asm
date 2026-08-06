@@ -44,7 +44,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
@@ -97,10 +97,10 @@ section .text
     MOV EDX,0x5780d3                    ; 0040e431 | = "..\\engine\\alphabit.cpp"
     MOV ECX,0x56                        ; 0040e436
     PUSH 0x5780ea                       ; 0040e43b | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040e440 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040e446 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040e44c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040e440 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040e446 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040e44c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040e451
     PUSH 0x400                          ; 0040e454
         ;   Label: LAB_0040e454
@@ -114,10 +114,10 @@ section .text
     MOV EDI,0x57810d                    ; 0040e468 | = "..\\engine\\alphabit.cpp"
     MOV EBP,0x59                        ; 0040e46d
     PUSH 0x578124                       ; 0040e472 | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 0040e477 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0040e47d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040e483
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0040e477 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0040e47d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040e483
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040e488
     MOV EAX,dword ptr [ESP + 0x11c]     ; 0040e48b
         ;   Label: LAB_0040e48b
@@ -144,10 +144,10 @@ section .text
     MOV EDX,0x578155                    ; 0040e4ca | = "..\\engine\\alphabit.cpp"
     MOV ECX,0x5f                        ; 0040e4cf
     PUSH 0x57816c                       ; 0040e4d4 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040e4d9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040e4df | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040e4e5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040e4d9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040e4df | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040e4e5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0040e4ea
     MOV ESI,dword ptr [ESP + 0x100]     ; 0040e4ed
         ;   Label: LAB_0040e4ed
@@ -278,10 +278,10 @@ section .text
         ;   Label: LAB_0040e65b
     MOV EDI,0x53                        ; 0040e660
     PUSH 0x5780b0                       ; 0040e665 | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 0040e66a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040e670 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040e676
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0040e66a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0040e670 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040e676
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040e67b
     JMP 0x0040e412                      ; 0040e67e
         ;   XREF to: 0040e412 (UNCONDITIONAL_JUMP)  ; LAB_0040e412
@@ -291,10 +291,10 @@ section .text
     MOV ESI,0x57819d                    ; 0040e686 | = "..\\engine\\alphabit.cpp"
     MOV EDI,0x65                        ; 0040e68b
     PUSH 0x5781b4                       ; 0040e690 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0040e695 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040e69b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040e6a1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0040e695 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0040e69b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040e6a1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0040e6a6
     JMP 0x0040e559                      ; 0040e6a9
         ;   XREF to: 0040e559 (UNCONDITIONAL_JUMP)  ; LAB_0040e559

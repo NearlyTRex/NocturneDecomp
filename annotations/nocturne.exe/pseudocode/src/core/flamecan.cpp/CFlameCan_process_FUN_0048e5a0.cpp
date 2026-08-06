@@ -41,7 +41,8 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
   if (0.0 < fVar1) {
     return;
   }
-  core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,this_ptr,1);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
+            (g_CDemonMission_PTR_005baf90,this_ptr,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_40);
   fStack_10 = local_40.max.x - local_40.min.x;
   fStack_1c = fStack_10 * 0.5f;
@@ -52,7 +53,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
   fStack_28 = (this_ptr->base).location.position.x + fStack_1c;
   fStack_24 = (this_ptr->base).location.position.y + fStack_18;
   fStack_20 = (this_ptr->base).location.position.z + fStack_14;
-  core_fire_cpp_FUN_0048c0d0
+  core_fire_cpp_CFireEffect_FUN_0048c0d0
             (g_CFireEffect_PTR_005b80f0,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);
   return;
 }

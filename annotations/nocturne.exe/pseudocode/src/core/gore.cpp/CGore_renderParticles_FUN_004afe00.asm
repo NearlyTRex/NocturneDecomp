@@ -7,12 +7,12 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509d6c
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a457
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509943
-;   core_set.cpp_FUN_00509a80 at 00509d6c
-;   core_set.cpp_FUN_0050a260 at 0050a457
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
@@ -48,7 +48,7 @@ section .text
     POP ESI                             ; 004afe16
     POP EBX                             ; 004afe17
     RET                                 ; 004afe18
-    MOV ECX,dword ptr [0x005ae704]      ; 004afe19 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004afe19 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004afe19
     PUSH ECX                            ; 004afe1f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 004afe20

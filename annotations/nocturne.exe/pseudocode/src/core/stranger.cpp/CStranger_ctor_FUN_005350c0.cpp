@@ -17,7 +17,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005350c0(CStranger *thi
   CHero *pCVar5;
   CKeyFramedModelInstance *pCVar6;
   
-  pCVar5 = core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  pCVar5 = core_hero_cpp_CHero_FUN_004b46d0(&this_ptr->base);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490
                      ((CKeyFramedModelInstance *)&pCVar5[1].base.base.process_disabled);
   this_ptr_00 = (CStranger *)(pCVar6[-0x156].part_visibility_flags + 0x1a);

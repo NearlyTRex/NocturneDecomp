@@ -28,7 +28,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
     iVar2 = _fgetc(file);
     if (iVar2 != 0x22) {
       _ungetc(iVar2,file);
-      iVar2 = _fscanf(file,"%[^\"]");
+      iVar2 = _fscanf(file,"%[^\"]",local_dc);
       if (iVar2 == 1) {
         iVar2 = _stricmp(local_dc,"(none)");
         if (iVar2 == 0) {
@@ -51,15 +51,14 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
   }
   else {
     _ungetc(iVar2,file);
-    iVar2 = _fscanf(file,"%x");
+    iVar2 = _fscanf(file,"%x",&local_14);
     pCVar1 = local_14;
     if (iVar2 == 1) goto LAB_004d8b28;
   }
   do {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-    g_INT_01cc4804 = 0x22d;
-    core_main_c_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description)
-    ;
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 557;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n");
     pCVar1 = unaff_ESI;
 LAB_004d8b28:
     while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {

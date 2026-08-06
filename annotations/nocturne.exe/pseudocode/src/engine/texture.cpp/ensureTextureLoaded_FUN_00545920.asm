@@ -7,7 +7,7 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture
 ;
 ; XREF[13]:
-;   core_charactr.cpp_FUN_004270e0 at 0042717f
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 0042717f
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e47
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060 at 0044d159
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 at 0048f637

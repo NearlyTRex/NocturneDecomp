@@ -117,7 +117,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               (g_CDemonSet_PTR_005be368,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);
+    core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004a3660(this_ptr);
@@ -144,7 +144,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
           (g_CNetGame_PTR_005bdee0->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0))
       {
-        iVar3 = core_setdir_cpp_FUN_005125a0
+        iVar3 = core_setdir_cpp_CDemonSet_FUN_005125a0
                           (g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,
                            0x01E56DA0->focus_actor_changed);
         if (iVar3 != 0) {
@@ -225,7 +225,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
                         (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->selected_camera_index);
               _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
-              if (0xf0 < DAT_005b7620) {
+              if (0xf0 < g_WindowHeight) {
                 _DAT_01bcd070 = g_CBitFont_PTR_014b9900;
               }
             }
@@ -233,7 +233,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
             }
             if (iVar3 == 3) {
-              core_game_cpp_FUN_004a3b90(this_ptr,(char *)0x0);
+              core_game_cpp_CGame_FUN_004a3b90(this_ptr,(char *)0x0);
             }
             if (iVar3 == 4) {
               pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
@@ -244,7 +244,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               }
             }
             if (iVar3 == 5) {
-              iVar3 = core_script_cpp_FUN_00504d90(0x01E56DA0);
+              iVar3 = core_script_cpp_CScript_FUN_00504d90(0x01E56DA0);
               this_ptr->cutscene_skippable = (uint)(iVar3 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403f50();
@@ -308,7 +308,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         local_1c = 1;
         goto LAB_0049dec1;
       }
-      core_game_cpp_FUN_004a57c0(this_ptr);
+      core_game_cpp_CGame_FUN_004a57c0(this_ptr);
       if (this_ptr->wait_for_keypress != 0) {
         wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
       }
@@ -351,7 +351,7 @@ LAB_0049dec1:
   xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
   (*g_CKeys_PTR_005bac64->vtable->clearKeyPresses)(g_CKeys_PTR_005bac64);
-  core_set_cpp_FUN_0050ad20(g_CDemonSet_PTR_005be368);
+  core_set_cpp_CDemonSet_FUN_0050ad20(g_CDemonSet_PTR_005be368);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
   core_inv_cpp_freeInventory_FUN_004bf270();

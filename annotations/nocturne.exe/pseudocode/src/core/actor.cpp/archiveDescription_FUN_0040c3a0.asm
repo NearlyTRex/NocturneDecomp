@@ -87,7 +87,7 @@ section .text
     MOV EBX,dword ptr [0x00763e84]      ; 0040c3fd | DAT_00763e84
     PUSH EBX                            ; 0040c403
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c404
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040c409
     MOV EAX,[0x00763e84]                ; 0040c40c | DAT_00763e84
     TEST byte ptr [EAX + 0xc],0x20      ; 0040c411
@@ -103,7 +103,7 @@ section .text
     MOV EBP,dword ptr [0x00763e84]      ; 0040c421 | DAT_00763e84
     PUSH EBP                            ; 0040c427
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c428
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040c42d
     MOV EAX,[0x00763e84]                ; 0040c430 | DAT_00763e84
     TEST byte ptr [EAX + 0xc],0x20      ; 0040c435

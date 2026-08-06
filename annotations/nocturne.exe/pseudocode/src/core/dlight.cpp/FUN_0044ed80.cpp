@@ -18,7 +18,7 @@ void core_dlight_cpp_FUN_0044ed80(char *param_1,int param_2,int param_3,int para
   uint local_14;
   
   if ((-1 < param_2) && (-1 < param_3)) {
-    if ((param_2 + param_4 <= DAT_005b761c) && (param_3 + param_4 <= DAT_005b7620)) {
+    if ((param_2 + param_4 <= g_WindowWidth) && (param_3 + param_4 <= g_WindowHeight)) {
       iVar1 = (*(int *)(param_1 + 0x1cc0) << 8) / param_4;
       local_14 = 0x20000;
       uVar4 = 0;

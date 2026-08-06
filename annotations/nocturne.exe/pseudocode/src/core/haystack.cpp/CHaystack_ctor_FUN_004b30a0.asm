@@ -14,7 +14,7 @@
 ;   CHero_full_vtable g_CHaystackVTable
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004b46d0
+;   core_hero.cpp_CHero_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
         ;   Label: core_haystack.cpp_CHaystack_ctor_FUN_004b30a0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b30a1
     PUSH EDX                            ; 004b30a5
-    CALL core_hero.cpp_FUN_004b46d0     ; 004b30a6
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_FUN_004b46d0 ; 004b30a6
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_FUN_004b46d0(CHero * this_ptr)
     MOV EBX,EAX                         ; 004b30ab
     ADD EAX,0x150                       ; 004b30ad
     ADD ESP,0x4                         ; 004b30b2

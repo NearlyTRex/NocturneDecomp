@@ -10,14 +10,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_mirror.cpp_CMirror_FUN_004d76e0 at 004d76ea
+;   core_mirror.cpp_CMirror_FUN_004d7720 at 004d772a
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760 at 004d77be
-;   core_mirror.cpp_FUN_004d76e0 at 004d76ea
-;   core_mirror.cpp_FUN_004d7720 at 004d772a
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a0880 = 256
 ;   float FLOAT_005a0888 = 0.00390625
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc9120
 ;   CVector3f[32] g_CVector3f_ARRAY_01cc9124
@@ -58,7 +58,7 @@ section .text
     MOV EBX,dword ptr [ESI + 0x18]      ; 004d74c0
         ;   Label: LAB_004d74c0
     IMUL EBX,EBX,0x30                   ; 004d74c3
-    MOV EAX,[0x005ae704]                ; 004d74c6 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004d74c6 | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [EAX]             ; 004d74cb | DAT_01b4d738
     ADD ESI,0x4                         ; 004d74cd
     ADD EAX,EBX                         ; 004d74d0
@@ -181,7 +181,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 004d764a
     MOV dword ptr [ESP],EDI             ; 004d764e
     MOV EDI,0xea000                     ; 004d7651
-    MOV EAX,[0x005ae704]                ; 004d7656 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004d7656 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004d7656
     MOV EBX,dword ptr [EAX]             ; 004d765b | DAT_01b4d738
     MOV EAX,dword ptr [ESP]             ; 004d765d
@@ -195,7 +195,7 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 004d7678 | g_CVector3f_ARRAY_01cc92a8[0].z | g_CVector3f_ARRAY_01cc92a8[1].z
     FMUL float ptr [0x005a0880]         ; 004d767b | FLOAT_005a0880
     FISTP dword ptr [EBX + 0x8]         ; 004d7681
-    MOV EAX,[0x005ae704]                ; 004d7684 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004d7684 | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [EAX]             ; 004d7689 | DAT_01b4d738
     LEA EDX,[EBP + 0x4e00]              ; 004d768b
     ADD ESI,0x4                         ; 004d7691

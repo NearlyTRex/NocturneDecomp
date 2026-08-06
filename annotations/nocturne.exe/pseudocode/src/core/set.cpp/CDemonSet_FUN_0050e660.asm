@@ -1,0 +1,55 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_set_cpp_CDemonSet_FUN_0050e660(CDemonSet *this_ptr,float param_2,float param_3,float param_4,float param_5)
+;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   param_2
+; float            Stack[0xc]:4   param_3
+; float            Stack[0x10]:4   param_4
+; float            Stack[0x14]:4   param_5
+; Local Variables:
+; undefined4       Stack[-0x4]:4  local_4
+;
+; XREF[6]:
+;   core_drip.cpp_CDrip_process_FUN_00462300 at 00462498
+;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d354
+;   core_fire.cpp_CExplosion_activate_FUN_00486e40 at 00486e86
+;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0 at 0048c51a
+;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420 at 0048c496
+;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484bd2
+;
+; Referenced Globals:
+;   void* PTR_DAT_005b9284 = 01c70f74
+;
+; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80
+;   xxx_unk.c_FUN_004940d0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH dword ptr [ESP + 0x14]         ; 0050e660
+        ;   Label: core_set.cpp_CDemonSet_FUN_0050e660
+    PUSH dword ptr [ESP + 0x14]         ; 0050e664
+    PUSH dword ptr [ESP + 0x14]         ; 0050e668
+    PUSH dword ptr [ESP + 0x14]         ; 0050e66c
+    PUSH 0x1fb8508                      ; 0050e670
+    CALL core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80 ; 0050e675
+        ;   XREF to: 00447e80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, ...)
+    ADD ESP,0x14                        ; 0050e67a
+    FLD float ptr [ESP + 0xc]           ; 0050e67d
+    FADD float ptr [ESP + 0x10]         ; 0050e681
+    FADD float ptr [ESP + 0x14]         ; 0050e685
+    SUB ESP,0x4                         ; 0050e689
+    FSTP float ptr [ESP]                ; 0050e68c
+    MOV EDX,dword ptr [0x005b9284]      ; 0050e68f | PTR_DAT_005b9284
+    PUSH 0x3f800000                     ; 0050e695
+    PUSH EDX                            ; 0050e69a
+    CALL xxx_unk.c_FUN_004940d0         ; 0050e69b
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    ADD ESP,0xc                         ; 0050e6a0
+    RET                                 ; 0050e6a3
+

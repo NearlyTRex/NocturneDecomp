@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004a3b90 at 004a3d38
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3d38
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Fire_state_00581530
@@ -30,14 +30,14 @@ section .text
     PUSH 0x581530                       ; 0048c857 | = "Fire state\n"
     PUSH ESI                            ; 0048c85c
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048c85d
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0048c862
     PUSH 0x58153c                       ; 0048c865 | CHAR_1_0058153c
     MOV EBX,0x1c625f8                   ; 0048c86a
     PUSH ESI                            ; 0048c86f
     LEA EDI,[EBX + 0x8c0]               ; 0048c870
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0048c876
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0048c87b
     PUSH ESI                            ; 0048c87e
         ;   Label: LAB_0048c87e

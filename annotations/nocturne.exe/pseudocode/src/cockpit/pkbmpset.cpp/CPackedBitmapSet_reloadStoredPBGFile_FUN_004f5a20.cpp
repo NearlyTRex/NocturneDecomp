@@ -9,7 +9,7 @@
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_004f5a20(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)
 
 {
-  cockpit_pkbitmap_cpp_FUN_004f5320(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(this_ptr);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_004f59d0
             (this_ptr,this_ptr->filename,apply_palette_flag,this_ptr->frames_per_bitmap,0);
   return;

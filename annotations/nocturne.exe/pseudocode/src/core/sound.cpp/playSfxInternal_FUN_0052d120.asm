@@ -63,7 +63,7 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
 ;   core_sound.cpp_FUN_0052d030
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -365,10 +365,10 @@ section .text
     MOV ECX,0x594a24                    ; 0052d3e3 | = "..\\core\\sound.cpp"
     MOV EBX,0x137                       ; 0052d3e8
     PUSH 0x594a36                       ; 0052d3ed | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052d3f2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052d3f8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052d3fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052d3f2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0052d3f8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052d3fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052d403
     PUSH 0x594a4d                       ; 0052d406 | = "?"
         ;   Label: LAB_0052d406
@@ -533,10 +533,10 @@ section .text
     MOV EDX,0x594a70                    ; 0052d5c8 | = "..\\core\\sound.cpp"
     MOV ECX,0x1a4                       ; 0052d5cd
     PUSH 0x594a82                       ; 0052d5d2 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0052d5d7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052d5dd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052d5e3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0052d5d7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0052d5dd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052d5e3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052d5e8
     MOV EAX,dword ptr [ESP + 0x154]     ; 0052d5eb
     ADD dword ptr [ESP + 0x164],EAX     ; 0052d5f2
@@ -578,10 +578,10 @@ section .text
     MOV EDI,0x594a9f                    ; 0052d65c | = "..\\core\\sound.cpp"
     MOV EAX,0x1aa                       ; 0052d661
     PUSH 0x594ab1                       ; 0052d666 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 0052d66b | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0052d671 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052d676
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0052d66b | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0052d671 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052d676
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052d67b
     MOV EAX,dword ptr [ESP + 0x158]     ; 0052d67e
     ADD dword ptr [ESP + 0x164],EAX     ; 0052d685
@@ -605,10 +605,10 @@ section .text
     MOV ECX,0x594ac8                    ; 0052d6b5 | = "..\\core\\sound.cpp"
     MOV EDI,0x1ad                       ; 0052d6ba
     PUSH 0x594ada                       ; 0052d6bf | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052d6c4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052d6ca | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052d6d0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052d6c4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0052d6ca | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052d6d0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0052d6d5
     JMP 0x0052d2f9                      ; 0052d6d8
         ;   XREF to: 0052d2f9 (UNCONDITIONAL_JUMP)  ; LAB_0052d2f9

@@ -39,7 +39,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00474
     } while (cVar1 != '\0');
   }
   else {
-    _sprintf(local_110,"%s\\%s");
+    _sprintf(local_110,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CPod_PTR_005be1cc != (CPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_004f8d50(g_CPod_PTR_005be1cc,local_110,&local_844);

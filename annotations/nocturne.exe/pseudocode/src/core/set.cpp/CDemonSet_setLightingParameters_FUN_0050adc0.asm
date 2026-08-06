@@ -18,10 +18,10 @@
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489779
 ;   core_fire.cpp_CStake_render_FUN_004835d0 at 00483688
 ;   core_gore.cpp_CGore_renderParticles_FUN_004afe00 at 004afe38
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a4af
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750 at 005087d8
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a6fb
 ;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0 at 0050a89b
-;   core_set.cpp_FUN_0050a260 at 0050a4af
 ;   ... and 1 more
 ;
 ; Referenced Globals:

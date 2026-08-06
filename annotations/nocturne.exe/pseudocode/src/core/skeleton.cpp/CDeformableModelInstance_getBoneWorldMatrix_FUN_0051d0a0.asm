@@ -28,9 +28,9 @@
 ;
 ; XREF[6]:
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_00420eb0 at 00420ed3
-;   core_gabriela.cpp_FUN_00499b00 at 00499beb
+;   core_gabriela.cpp_CGabriella_FUN_00499b00 at 00499beb
 ;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004ab110 at 004ab133
-;   core_mimic.cpp_FUN_004d4f30 at 004d51d4
+;   core_mimic.cpp_CMimic_FUN_004d4f30 at 004d51d4
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0 at 0051d346
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_00561940 at 00561983
 ;

@@ -50,18 +50,18 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
     _DAT_005b06a4 =
          (int)((ulonglong)
                ((longlong)(int)(DAT_005b0698 - DAT_005b0680) *
-               (longlong)*(int *)(&DAT_01c00c84 + iVar5 * 4)) >> 0x20) << 4;
+               (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20) << 4;
     DAT_005b0684 = (pSVar15->base).v_current;
     DAT_005b069c = (left_edge->base).v_current;
     _DAT_005b06a8 =
          (int)((ulonglong)
                ((longlong)(int)(DAT_005b069c - DAT_005b0684) *
-               (longlong)*(int *)(&DAT_01c00c84 + iVar5 * 4)) >> 0x20) << 4;
+               (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20) << 4;
     iVar1 = (pSVar15->base).depth_current;
     DAT_005b06a0 = (left_edge->base).depth_current;
     DAT_005b06ac = (int)((ulonglong)
                          ((longlong)(DAT_005b06a0 - iVar1) *
-                         (longlong)*(int *)(&DAT_01c00c84 + iVar5 * 4)) >> 0x20) << 4;
+                         (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20) << 4;
     DAT_005b06b0 = (int)(CONCAT44(((int)DAT_005b0680 >> 0x1f) << 0x18 | DAT_005b0680 >> 8,
                                   DAT_005b0680 << 0x18) / (longlong)iVar1);
     DAT_005b06b4 = (int)(CONCAT44(((int)DAT_005b0684 >> 0x1f) << 0x18 | DAT_005b0684 >> 8,
@@ -190,9 +190,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
       DAT_005b06bc = (int)(CONCAT44(((int)DAT_005b069c >> 0x1f) << 0x18 | DAT_005b069c >> 8,
                                     DAT_005b069c << 0x18) / (longlong)DAT_005b06a0);
       iVar6 = (int)((longlong)(DAT_005b06bc - DAT_005b06b4) *
-                    (longlong)*(int *)(&DAT_01c00c84 + iVar5 * 4) >> 0x28);
+                    (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1] >> 0x28);
       uVar17 = (uint)((longlong)(DAT_005b06b8 - DAT_005b06b0) *
-                      (longlong)*(int *)(&DAT_01c00c84 + iVar5 * 4) >> 0x28) & 0xffff |
+                      (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1] >> 0x28) & 0xffff |
                iVar5 << 0x10;
       iVar5 = (DAT_005b06b0 >> 8) + uVar17;
       iVar7 = (DAT_005b06b4 >> 8) + iVar6;

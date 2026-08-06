@@ -8,10 +8,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[21]:
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a4015
+;   core_game.cpp_CGame_FUN_004a4170 at 004a46be
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a5bd1
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e34
-;   core_game.cpp_FUN_004a3b90 at 004a4015
-;   core_game.cpp_FUN_004a4170 at 004a46be
-;   core_game.cpp_FUN_004a57c0 at 004a5bd1
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d434b
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a6d
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8bc0
@@ -34,11 +34,11 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   CKeys g_CKeys_01cc30e4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -69,10 +69,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 0046fce4 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fce9
     PUSH 0x57e510                       ; 0046fcee | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046fcff
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046fcff
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046fd04
     MOV EAX,[0x01bcd070]                ; 0046fd07 | DAT_01bcd070
         ;   Label: LAB_0046fd07

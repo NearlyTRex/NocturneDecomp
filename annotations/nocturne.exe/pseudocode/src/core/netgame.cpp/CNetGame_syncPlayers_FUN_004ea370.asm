@@ -37,12 +37,12 @@
 ;   double DOUBLE_0058be4a = 0.100000000000000
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CKeys g_CKeys_01cc30e4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10
@@ -283,10 +283,10 @@ section .text
         ;   Label: LAB_004ea5e3
     MOV EBX,0x337                       ; 004ea5e8
     PUSH 0x58bd3e                       ; 004ea5ed | = "CNetGame::syncPlayers - don't use 0!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ea5fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ea5fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ea603
     JMP 0x004ea391                      ; 004ea606
         ;   XREF to: 004ea391 (UNCONDITIONAL_JUMP)  ; LAB_004ea391
@@ -368,10 +368,10 @@ section .text
         ;   Label: LAB_004ea6ac
     MOV ECX,0x3c0                       ; 004ea6b1
     PUSH 0x58be10                       ; 004ea6b6 | = "CNetGame::syncPlayers - invalid mode"
-    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ea6c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ea6c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ea6cc
     MOV EAX,0x1                         ; 004ea6cf
         ;   Label: LAB_004ea6cf

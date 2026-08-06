@@ -19,11 +19,11 @@
 ;   TerminatedCString s_d_0057a968
 ;   TerminatedCString s_d_0057a96c
 ;   TerminatedCString s_s_3d_3d_3d_3d_d_0057a970
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -63,20 +63,20 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     MOV EAX,0x4ff                       ; 0042ee43
     ADD ESP,0xc                         ; 0042ee48
-    MOV [0x01cc4804],EAX                ; 0042ee4b | g_INT_01cc4804
+    MOV [0x01cc4804],EAX                ; 0042ee4b | g_CurrentLineNumber
     MOV EAX,ESP                         ; 0042ee50
     MOV EBP,0x57a952                    ; 0042ee52 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0042ee57
-    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 0042ee5e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042ee5e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042ee63
     PUSH EBX                            ; 0042ee66
         ;   Label: LAB_0042ee66
     PUSH 0x57a968                       ; 0042ee67 | = "%d\n"
     PUSH EDI                            ; 0042ee6c
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0042ee6d
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0042ee72
     TEST EBX,EBX                        ; 0042ee75
     JLE 0x0042ef4e                      ; 0042ee77
@@ -95,7 +95,7 @@ section .text
     PUSH EDI                            ; 0042ee9f
     XOR EBX,EBX                         ; 0042eea0
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0042eea2
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0042eea7
     XOR ESI,ESI                         ; 0042eeaa
     MOV EBP,dword ptr [ESP + 0x58]      ; 0042eeac
@@ -129,7 +129,7 @@ section .text
     ADD ESI,0x8                         ; 0042eef6
     INC EBX                             ; 0042eef9
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0042eefa
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x1c                        ; 0042eeff
     JMP 0x0042eeb0                      ; 0042ef02
         ;   XREF to: 0042eeb0 (UNCONDITIONAL_JUMP)  ; LAB_0042eeb0
@@ -137,10 +137,10 @@ section .text
         ;   Label: LAB_0042ef04
     MOV EDI,0x4f8                       ; 0042ef09
     PUSH 0x57a90e                       ; 0042ef0e | = "Edge list array is empty!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0042ef1f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042ef1f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042ef24
     JMP 0x0042ee1a                      ; 0042ef27
         ;   XREF to: 0042ee1a (UNCONDITIONAL_JUMP)  ; LAB_0042ee1a

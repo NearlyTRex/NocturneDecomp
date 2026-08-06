@@ -28,7 +28,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
   iStack_18 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(pCVar1);
   this_ptr->is_visible = iStack_18;
   if (iStack_18 != 0) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                      (g_CDemonRenderer_PTR_005ae704);
     if ((iVar2 == 0) || (g_CGame_PTR_005b9354->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (&this_ptr->model,0.0,-1);
@@ -40,9 +41,9 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
         pCVar3 = &this_ptr->tires[0].runtime_position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                    (DAT_005ae704,position,pCVar3);
+                    (g_CDemonRenderer_PTR_005ae704,position,pCVar3);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                    (DAT_005ae704,pCStack_14,(CVector3f *)0x0);
+                    (g_CDemonRenderer_PTR_005ae704,pCStack_14,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
@@ -62,8 +63,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
   if ((this_ptr->is_visible != 0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar2 == 0)
-     ) {
+     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                        (g_CDemonRenderer_PTR_005ae704), iVar2 == 0)) {
     CStack_30.z = 6.0;
     CStack_24.z = 6.0;
     CStack_30.x = 1.14;

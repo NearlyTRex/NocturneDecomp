@@ -13,11 +13,11 @@ void __cdecl core_mission_cpp_CDemonMission_save_FUN_004d7f80(CDemonMission *thi
   
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60("world",filename,"wt");
   if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-    g_INT_01cc4804 = 0xb6;
-    core_main_c_FUN_004c8440("CDemonMission::save - Unable to open file");
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 182;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::save - Unable to open file");
   }
-  core_mission_cpp_FUN_004d8720(this_ptr,file_handle);
+  core_mission_cpp_CDemonMission_FUN_004d8720(this_ptr,file_handle);
   _fclose(file_handle);
   return;
 }

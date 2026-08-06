@@ -13,7 +13,7 @@
 ; undefined        Stack[-0x48]:1  local_48
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_00446810 at 00446cfc
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446cfc
 ;
 ; Called Functions:
 ;   crt_strstream.cpp_istrstream_ctor_FUN_00564f32

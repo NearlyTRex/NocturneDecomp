@@ -28,11 +28,11 @@
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
 ;
 ; *****************************************************************************
@@ -135,10 +135,10 @@ section .text
         ;   Label: LAB_004721b5
     MOV EBX,0x6f7                       ; 004721ba
     PUSH 0x57e968                       ; 004721bf | = "CEditorTools::closeWindow() called bu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004721c4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004721ca | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004721d0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004721c4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004721ca | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004721d0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004721d5
     JMP 0x004720d4                      ; 004721d8
         ;   XREF to: 004720d4 (UNCONDITIONAL_JUMP)  ; LAB_004720d4

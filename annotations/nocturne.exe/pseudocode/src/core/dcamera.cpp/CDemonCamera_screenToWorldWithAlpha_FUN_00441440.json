@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,21 +56,15 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 33,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 77,
+        "line": 78,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 79,
+        "line": 80,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
@@ -80,21 +74,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 196,
+    "complexity_score": 182,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 10,
+    "pseudocode_lines": 72,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 222
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -126,9 +119,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -348,16 +341,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 69,
       "match": "(uint *)((int)local_10",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)local_10 + (uint)bVar7 * -8 + 4);",
@@ -365,7 +350,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 71,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
@@ -373,7 +358,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 73,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -381,7 +366,7 @@
     },
     {
       "description": "Pointer value `local_10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 69,
       "match": "(int)local_10",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)local_10 + (uint)bVar7 * -8 + 4);",
@@ -389,7 +374,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&stack0xffffffe8",
       "severity": "moderate",
       "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
@@ -397,7 +382,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -405,7 +390,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
@@ -413,7 +398,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 73,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",

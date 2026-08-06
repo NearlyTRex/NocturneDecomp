@@ -23,13 +23,13 @@ CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 // Address: 00516a90
 int __cdecl CShovel::fire(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_00516ab0
+// Original: core_shovel.cpp_CShovel_getDamage_FUN_00516ab0
 // Address: 00516ab0
-float FUN_00516ab0(void);
+float __cdecl CShovel::getDamage(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_00516ae0
+// Original: core_shovel.cpp_CShovel_fireProjectile_FUN_00516ae0
 // Address: 00516ae0
-void FUN_00516ae0(void);
+void __cdecl CShovel::fireProjectile(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00516af0
 // Address: 00516af0

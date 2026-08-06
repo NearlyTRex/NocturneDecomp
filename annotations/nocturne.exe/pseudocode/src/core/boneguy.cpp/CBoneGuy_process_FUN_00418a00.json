@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -65,30 +65,30 @@
         "category": "incompatible_types",
         "column": 9,
         "line": 175,
-        "message": "no matching function for call to 'core_mission_cpp_FUN_004d9110'"
+        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110'"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 306,
+        "line": 307,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "type_error",
         "column": 57,
-        "line": 325,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 328,
+        "line": 326,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "type_error",
         "column": 57,
         "line": 329,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 330,
         "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
@@ -98,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 757,
+    "complexity_score": 758,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 442,
+    "pseudocode_lines": 443,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -116,7 +116,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1394
+    "total_lines": 1395
   },
   "cross_references": [],
   "function": {
@@ -156,7 +156,22 @@
     {
       "addr": "004196b0",
       "is_variadic": false,
-      "name": "core_boneguy.cpp_FUN_004196b0"
+      "name": "core_boneguy.cpp_CBoneGuy_FUN_004196b0"
+    },
+    {
+      "addr": "004259f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_004259f0"
+    },
+    {
+      "addr": "00428c00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_00428c00"
+    },
+    {
+      "addr": "0042a150",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a150"
     },
     {
       "addr": "00425960",
@@ -189,21 +204,6 @@
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0"
     },
     {
-      "addr": "004259f0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004259f0"
-    },
-    {
-      "addr": "00428c00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00428c00"
-    },
-    {
-      "addr": "0042a150",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042a150"
-    },
-    {
       "addr": "00423ed0",
       "is_variadic": false,
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0"
@@ -231,7 +231,7 @@
     {
       "addr": "004d9110",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004d9110"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110"
     },
     {
       "addr": "004e11c0",
@@ -1038,7 +1038,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 299,
+      "line": 300,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(&local_94,(CVector3f *)&DAT_02dd1184,",
@@ -1046,7 +1046,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 301,
+      "line": 302,
       "match": "DAT_00764794",
       "severity": "mild",
       "text": "DAT_00764794);",
@@ -1054,7 +1054,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 318,
+      "line": 319,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.x = local_10c * 5.2220990168285998e-315._0_4_;",
@@ -1062,7 +1062,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 321,
+      "line": 322,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.y = local_108 * 5.2220990168285998e-315._0_4_;",
@@ -1070,7 +1070,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 322,
+      "line": 323,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_c4.z = local_104 * 5.2220990168285998e-315._0_4_;",
@@ -1126,7 +1126,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 336,
+      "line": 337,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_100.x = pCVar13->x;",
@@ -1134,7 +1134,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 343,
+      "line": 344,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_f4.x = pCVar13->x;",
@@ -1142,7 +1142,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 182,
+      "line": 183,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1150,7 +1150,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 379,
+      "line": 380,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1158,7 +1158,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 410,
+      "line": 411,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1166,7 +1166,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 413,
+      "line": 414,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1230,7 +1230,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 171,
+      "line": 172,
       "match": "pCVar11 = (T *)((pCVar11->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar11 = (CBoneGuy *)((pCVar11->base).base.base.orient_matrix.m + 1);",

@@ -37,17 +37,17 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b2
     _DAT_005b06d4 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar3) *
-               (longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar4 = (pSVar5->base).v_current;
     _DAT_005b06d8 =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
-               (longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar1 = (pSVar5->base).depth_current;
     _DAT_005b06dc =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).depth_current - uVar1) *
-               (longlong)*(int *)(&DAT_01c00c84 + iVar2 * 4)) >> 0x20);
+               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar6 = 0;
     DAT_005b06b8 = uVar3;
     DAT_005b06bc = uVar4;

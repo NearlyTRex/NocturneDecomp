@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f0b4
 ;   TerminatedCString s_CEdScrollBar_computeThum_0057f0ca
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -126,10 +126,10 @@ section .text
         ;   Label: LAB_004768ca
     MOV EAX,0xefb                       ; 004768cf
     PUSH 0x57f0ca                       ; 004768d4 | = "CEdScrollBar::computeThumb - invalid ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004768df | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004768e4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004768df | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004768e4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004768e9
     JMP 0x0047682e                      ; 004768ec
         ;   XREF to: 0047682e (UNCONDITIONAL_JUMP)  ; LAB_0047682e

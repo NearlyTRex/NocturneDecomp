@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760
-;   core_hero.cpp_FUN_004b46d0
+;   core_hero.cpp_CHero_FUN_004b46d0
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;
@@ -29,8 +29,8 @@ section .text
         ;   Label: core_scat.cpp_CScat_ctor_FUN_004fbc00
     MOV EDX,dword ptr [ESP + 0x8]       ; 004fbc01
     PUSH EDX                            ; 004fbc05
-    CALL core_hero.cpp_FUN_004b46d0     ; 004fbc06
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004b46d0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_FUN_004b46d0 ; 004fbc06
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_FUN_004b46d0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004fbc0b
     MOV EBX,EAX                         ; 004fbc0e
     ADD EAX,0x150                       ; 004fbc10

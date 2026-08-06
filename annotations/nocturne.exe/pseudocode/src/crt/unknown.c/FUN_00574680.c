@@ -12,25 +12,25 @@ void FUN_00574680(void)
 
 {
   int iVar1;
-  void *pvVar2;
-  int iVar3;
-  int *piVar4;
+  void *ptr;
+  int iVar2;
+  int *piVar3;
   
-  piVar4 = _DAT_02de54a4;
+  piVar3 = _DAT_02de54a4;
   if (_DAT_02de54a4 != (int *)0x0) {
     while( true ) {
-      iVar3 = *piVar4;
-      piVar4 = piVar4 + 1;
-      if (iVar3 == 0) break;
-      iVar1 = FUN_00574000(iVar3);
-      pvVar2 = malloc((iVar1 + 1) * 2);
-      if (pvVar2 != (void *)0x0) {
-        iVar3 = FUN_00574030(pvVar2,iVar3,iVar1 + 1);
-        if (iVar3 == -1) {
-          FUN_005638d0(pvVar2);
+      iVar2 = *piVar3;
+      piVar3 = piVar3 + 1;
+      if (iVar2 == 0) break;
+      iVar1 = FUN_00574000(iVar2);
+      ptr = malloc((iVar1 + 1) * 2);
+      if (ptr != (void *)0x0) {
+        iVar2 = FUN_00574030(ptr,iVar2,iVar1 + 1);
+        if (iVar2 == -1) {
+          free(ptr);
         }
         else {
-          FUN_00574264(pvVar2);
+          FUN_00574264(ptr);
         }
       }
     }

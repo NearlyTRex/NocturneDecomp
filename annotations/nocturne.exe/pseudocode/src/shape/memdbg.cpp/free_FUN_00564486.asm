@@ -7,8 +7,8 @@
 ; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[151]:
-;   cockpit_pkbitmap.cpp_FUN_004f3f50 at 004f3f61
-;   cockpit_pkbitmap.cpp_FUN_004f5320 at 004f5337
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320 at 004f5337
+;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 at 004f3f61
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 at 00409ee0
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040efc5
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040f4b0 at 0040f4e5
@@ -20,7 +20,7 @@
 ;   ... and 141 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00564486
         ;   Label: shape_memdbg.cpp_free_FUN_00564486
     PUSH EDX                            ; 0056448a
-    CALL crt_unknown.c_FUN_00564494     ; 0056448b
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0056448b
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00564490
     RET                                 ; 00564493
 

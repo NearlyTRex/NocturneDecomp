@@ -60,7 +60,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x54]      ; 0046c3a9
     PUSH EDX                            ; 0046c3ad
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0046c3ae
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x50                        ; 0046c3b3
     RET                                 ; 0046c3b6
 

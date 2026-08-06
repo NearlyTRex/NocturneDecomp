@@ -19,7 +19,7 @@
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c52d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00441455
     MOV EAX,dword ptr [ECX]             ; 00441459
     MOV dword ptr [ESP],EAX             ; 0044145b
-    MOV EDX,dword ptr [0x005ae704]      ; 0044145e | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0044145e | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [ECX + 0x4]       ; 00441464
     PUSH EDX                            ; 00441467 | DAT_01b4d738
     MOV dword ptr [ESP + 0x8],EAX       ; 00441468

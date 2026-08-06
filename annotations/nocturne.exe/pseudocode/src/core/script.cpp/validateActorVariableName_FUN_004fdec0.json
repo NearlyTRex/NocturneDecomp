@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
+        "column": 39,
         "line": 29,
         "message": "use of undeclared identifier 'DAT_005c168c'"
       },
@@ -128,7 +128,7 @@
   "function_calls": [
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     }
   ],
@@ -264,7 +264,7 @@
       "line": 22,
       "match": "DAT_005c168c",
       "severity": "mild",
-      "text": "((&DAT_005c168c)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))",
+      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
       "type": "undefined_data"
     },
     {
@@ -272,7 +272,7 @@
       "line": 29,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is not valid\");",
+      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
       "type": "undefined_data"
     },
     {
@@ -280,7 +280,7 @@
       "line": 32,
       "match": "DAT_01e56420",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is too long\");",
+      "text": "_sprintf(&DAT_01e56420,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
       "type": "undefined_data"
     },
     {

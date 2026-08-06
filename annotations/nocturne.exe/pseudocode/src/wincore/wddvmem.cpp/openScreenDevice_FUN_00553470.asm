@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[5]:
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a597f
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cce5
-;   core_game.cpp_FUN_004a57c0 at 004a597f
 ;   engine_special.cpp_FUN_00532ba0 at 00532be7
 ;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545aab
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e
@@ -16,17 +16,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597954
 ;   TerminatedCString s_openScreenDevice_Unable_0059796b
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c02594
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02ddf558
 ;   undefined4 DAT_02ddf56c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -78,14 +78,14 @@ section .text
     MOV ESI,0x597954                    ; 005534cb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x255                       ; 005534d0
     PUSH 0x59796b                       ; 005534d5 | = "openScreenDevice - Unable to lock scr..."
-    MOV dword ptr [0x01cc4800],ESI      ; 005534da | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005534e0 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005534e6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005534da | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 005534e0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005534e6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005534eb
     POP ESI                             ; 005534ee
     POP EDI                             ; 005534ef
-    MOV EBP,dword ptr [0x005b7620]      ; 005534f0 | DAT_005b7620
+    MOV EBP,dword ptr [0x005b7620]      ; 005534f0 | g_WindowHeight
         ;   Label: LAB_005534f0
     MOV EDX,dword ptr [ESP + 0x24]      ; 005534f6
     TEST EBP,EBP                        ; 005534fa

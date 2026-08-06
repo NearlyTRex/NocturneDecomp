@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -98,22 +98,22 @@
         "message": "use of undeclared identifier '_DAT_01cc30a4'; did you mean 'DAT_005c50a4'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 63,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40'"
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 95,
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 90,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700'"
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 97,
+        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
-        "category": "incompatible_types",
+        "category": "undeclared_identifier",
         "column": 5,
-        "line": 92,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00'"
+        "line": 104,
+        "message": "use of undeclared identifier '_DAT_01c038f4'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 324,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 134,
-    "suspect_count": 18,
+    "pseudocode_lines": 138,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 530
+    "total_lines": 534
   },
   "cross_references": [
     {
@@ -316,21 +316,21 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005be368",
@@ -741,138 +741,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "if (0x280 < DAT_005b761c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "viewport_x = (viewport_x * 0x280) / DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "viewport_y = (viewport_y * 0x1e0) / DAT_005b7620;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "viewport_size = (viewport_size * 0x280) / DAT_005b761c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,viewport_x,viewport_y,viewport_size,viewport_size);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,36.0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
+      "line": 90,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_38,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
+      "line": 122,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,alpha);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(DAT_005ae704);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184,&local_5c);",
       "type": "undefined_data"
     }
   ]

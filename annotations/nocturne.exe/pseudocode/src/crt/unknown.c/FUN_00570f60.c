@@ -41,7 +41,7 @@ void FUN_00570f60(void)
       _DAT_02de5d60 = pcVar3;
       iVar6 = func_0x00570f50(iVar6 * 5 + 4);
       if (iVar6 == 0) {
-        FUN_005638d0(pcVar3);
+        free(pcVar3);
       }
       else {
         count = 0;

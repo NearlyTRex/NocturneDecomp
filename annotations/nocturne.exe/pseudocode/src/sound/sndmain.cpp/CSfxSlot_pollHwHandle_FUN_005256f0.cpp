@@ -22,9 +22,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this
     return;
   }
   if (this_ptr->sample == (CSfxSample *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-    g_INT_01cc4804 = 0xb63;
-    core_main_c_FUN_004c8440("SfxSlot::pollHwHandle - no sample?");
+    g_CurrentFilename = "..\\sound\\sndmain.cpp";
+    g_CurrentLineNumber = 2915;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::pollHwHandle - no sample?");
   }
   iVar1 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,this_ptr);
   if (iVar1 == 0) {

@@ -14,9 +14,9 @@ int __cdecl engine_special_cpp_setFogColorFromPalette_FUN_00532a80(int palette_i
   int iVar1;
   
   iVar1 = palette_index * 3;
-  _DAT_02dc9e0c = (uint)(byte)(&DAT_01c00648)[iVar1];
-  _DAT_02dc9e10 = (uint)*(byte *)(iVar1 + 0x1c00649);
-  _DAT_02dc9e14 = (uint)*(byte *)(iVar1 + 0x1c0064a);
+  _DAT_02dc9e0c = (uint)g_SourcePaletteData[iVar1];
+  _DAT_02dc9e10 = (uint)g_SourcePaletteData[iVar1 + 1];
+  _DAT_02dc9e14 = (uint)g_SourcePaletteData[iVar1 + 2];
   if (_DAT_01c02594 == 0) {
     return 0;
   }

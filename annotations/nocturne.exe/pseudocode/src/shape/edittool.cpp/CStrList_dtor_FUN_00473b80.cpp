@@ -21,6 +21,6 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00473b80(CStrList *this_
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_00564494(this_ptr);
+  operator_delete(this_ptr);
   return this_ptr;
 }

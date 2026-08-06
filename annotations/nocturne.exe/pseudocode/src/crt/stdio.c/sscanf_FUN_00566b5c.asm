@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format)
+; int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

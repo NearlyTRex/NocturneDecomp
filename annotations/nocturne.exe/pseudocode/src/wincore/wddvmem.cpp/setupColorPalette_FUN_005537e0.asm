@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   engine_2d.c_FUN_00401010 at 0040108b
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040108b
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 at 00553140
 ;
 ; Referenced Globals:
@@ -14,19 +14,19 @@
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597a9d
 ;   TerminatedCString s_setpal_Unable_to_set_fro_00597ab4
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00648
-;   undefined4 DAT_01c0064c
-;   undefined4 DAT_01c0064d
+;   uchar[768] g_SourcePaletteData
+;   undefined4 g_SourcePaletteData+4
+;   undefined4 g_SourcePaletteData+5
 ;   undefined4 DAT_01c02594
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc9ddc
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf55c
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 ;
@@ -53,11 +53,11 @@ section .text
     XOR EAX,EAX                         ; 0055380d
     ADD EAX,0x4                         ; 0055380f
         ;   Label: LAB_0055380f
-    MOV BL,byte ptr [EDX + 0x1c00648]   ; 00553812 | DAT_01c00648
+    MOV BL,byte ptr [EDX + 0x1c00648]   ; 00553812 | g_SourcePaletteData
     MOV byte ptr [EAX + 0x2ddf56c],BL   ; 00553818
-    MOV BL,byte ptr [EDX + 0x1c00649]   ; 0055381e | DAT_01c0064c
+    MOV BL,byte ptr [EDX + 0x1c00649]   ; 0055381e | g_SourcePaletteData+4
     MOV byte ptr [EAX + 0x2ddf56d],BL   ; 00553824
-    MOV BL,byte ptr [EDX + 0x1c0064a]   ; 0055382a | DAT_01c0064d
+    MOV BL,byte ptr [EDX + 0x1c0064a]   ; 0055382a | g_SourcePaletteData+5
     MOV byte ptr [EAX + 0x2ddf56e],BL   ; 00553830
     MOV BL,0x1                          ; 00553836
     ADD EDX,0x3                         ; 00553838
@@ -79,10 +79,10 @@ section .text
     MOV EDI,0x597a5d                    ; 00553865 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0x2f1                       ; 0055386a
     PUSH 0x597a74                       ; 0055386f | = "setpal - Unable to create palette object"
-    MOV dword ptr [0x01cc4800],EDI      ; 00553874 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0055387a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00553880
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00553874 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0055387a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00553880
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553885
     MOV ECX,dword ptr [0x02ddf55c]      ; 00553888 | DAT_02ddf55c
         ;   Label: LAB_00553888
@@ -98,10 +98,10 @@ section .text
     MOV EBX,0x597a9d                    ; 0055389f | = "..\\wincore\\wddvmem.cpp"
     MOV ESI,0x2f7                       ; 005538a4
     PUSH 0x597ab4                       ; 005538a9 | = "setpal - Unable to set front buffer p..."
-    MOV dword ptr [0x01cc4800],EBX      ; 005538ae | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005538b4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005538ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005538ae | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005538b4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005538ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005538bf
     POP ESI                             ; 005538c2
     CMP dword ptr [0x005b7624],0x8      ; 005538c3 | DAT_005b7624
@@ -114,7 +114,7 @@ section .text
     RET                                 ; 005538cf
     PUSH 0x1bff720                      ; 005538d0
         ;   Label: LAB_005538d0
-    PUSH 0x1c00648                      ; 005538d5 | DAT_01c00648
+    PUSH 0x1c00648                      ; 005538d5 | g_SourcePaletteData
     CALL dword ptr [0x02dc9ddc]         ; 005538da | DAT_02dc9ddc
     ADD ESP,0x8                         ; 005538e0
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005538e3

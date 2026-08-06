@@ -12,17 +12,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_0058276a
 ;   TerminatedCString s_CGame_setGameRes_Unable_0058277b
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   CBitFont* g_CBitFont_PTR_014b9904
 ;   undefined4 DAT_01bcd070
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cc64a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_2d.c_resetGraphicsSystem_FUN_00403760
 ;   engine_special.cpp_selectCard_FUN_00532d00
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
@@ -41,7 +41,7 @@ section .text
     TEST EDX,EDX                        ; 0049d87e
     JNZ 0x0049d928                      ; 0049d880
         ;   XREF to: 0049d928 (CONDITIONAL_JUMP)  ; LAB_0049d928
-    MOV EAX,[0x005b7620]                ; 0049d886 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d886 | g_WindowHeight
         ;   Label: LAB_0049d886
     CMP EAX,dword ptr [EBX + 0x4]       ; 0049d88b
     JZ 0x0049d936                       ; 0049d88e
@@ -82,20 +82,20 @@ section .text
     MOV EBP,0x58276a                    ; 0049d8da | = "..\\core\\game.cpp"
     MOV EAX,0x497                       ; 0049d8df
     PUSH 0x58277b                       ; 0049d8e4 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0049d8ef | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0049d8f4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0049d8ef | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0049d8f4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 0049d8f9
     CALL engine_2d.c_resetGraphicsSystem_FUN_00403760 ; 0049d8fc
         ;   XREF to: 00403760 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00403760()
         ;   Label: LAB_0049d8fc
-    MOV EDI,dword ptr [0x005b7620]      ; 0049d901 | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 0049d901 | g_WindowHeight
     PUSH EDI                            ; 0049d907
     PUSH 0x1fb8508                      ; 0049d908
     CALL core_dcamera.cpp_CDemonCamera_init_FUN_00440010 ; 0049d90d
         ;   XREF to: 00440010 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_00440010(CDemonCamera * this_ptr, int screen_height)
-    MOV EBP,dword ptr [0x005b7620]      ; 0049d912 | DAT_005b7620
+    MOV EBP,dword ptr [0x005b7620]      ; 0049d912 | g_WindowHeight
     ADD ESP,0x8                         ; 0049d918
     CMP EBP,0x180                       ; 0049d91b
     JL 0x0049d947                       ; 0049d921

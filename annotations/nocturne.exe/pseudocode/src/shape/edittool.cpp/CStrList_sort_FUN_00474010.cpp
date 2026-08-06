@@ -11,9 +11,9 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(CStrList *this_ptr,in
 {
   if (sort_type < sort_order) {
     if ((sort_type < 0) || (this_ptr->item_count <= sort_order)) {
-      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      g_INT_01cc4804 = 0xa32;
-      core_main_c_FUN_004c8440("CStrList::sort - invalid range!");
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 2610;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::sort - invalid range!");
     }
     _qsort
               (this_ptr->data_array + sort_type,(sort_order - sort_type) + 1,4,

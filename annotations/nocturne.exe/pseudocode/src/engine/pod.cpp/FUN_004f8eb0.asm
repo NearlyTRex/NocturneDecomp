@@ -21,13 +21,13 @@
 ;   TerminatedCString s_Invalid_pod_version_for_0058dcca
 ;   TerminatedCString s_rb_0058dce9
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -37,8 +37,8 @@
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
 ;   engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
+;   engine_pod.cpp_CPodFile_FUN_004f7ae0
 ;   engine_pod.cpp_crc32UpdateByte_FUN_004f77d0
-;   engine_pod.cpp_FUN_004f7ae0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     PUSH EBX                            ; 004f8ee8
     LEA EAX,[ESP + 0x4]                 ; 004f8ee9
     PUSH EAX                            ; 004f8eed
-    CALL engine_pod.cpp_FUN_004f7ae0    ; 004f8eee
-        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f7ae0()
+    CALL engine_pod.cpp_CPodFile_FUN_004f7ae0 ; 004f8eee
+        ;   XREF to: 004f7ae0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_FUN_004f7ae0(CPodFile * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004f8ef3
     TEST EAX,EAX                        ; 004f8ef6
     JNZ 0x004f8f1e                      ; 004f8ef8
@@ -78,10 +78,10 @@ section .text
     MOV ESI,0x58dc86                    ; 004f8efb | = "..\\engine\\pod.cpp"
     MOV EDI,0x37a                       ; 004f8f00
     PUSH 0x58dc98                       ; 004f8f05 | = "Can't mount %s to check version"
-    MOV dword ptr [0x01cc4800],ESI      ; 004f8f0a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f8f10 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f8f16
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004f8f0a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004f8f10 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f8f16
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004f8f1b
     MOV EAX,ESP                         ; 004f8f1e
         ;   Label: LAB_004f8f1e
@@ -244,10 +244,10 @@ section .text
     MOV EAX,0x58dcb8                    ; 004f90ca | = "..\\engine\\pod.cpp"
     MOV EDX,0x385                       ; 004f90cf
     PUSH 0x58dcca                       ; 004f90d4 | = "Invalid pod version for %s: %d"
-    MOV [0x01cc4800],EAX                ; 004f90d9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f90de | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f90e4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004f90d9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004f90de | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f90e4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 004f90e9
     JMP 0x004f8f41                      ; 004f90ec
         ;   XREF to: 004f8f41 (UNCONDITIONAL_JUMP)  ; LAB_004f8f41

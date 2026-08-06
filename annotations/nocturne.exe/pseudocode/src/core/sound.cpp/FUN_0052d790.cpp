@@ -24,6 +24,7 @@ uint core_sound_cpp_FUN_0052d790(void)
   char *pcVar10;
   byte bVar11;
   float fStack_120;
+  float fStack_11c;
   char acStack_118 [100];
   char acStack_b4 [100];
   CVector3f CStack_50;
@@ -137,6 +138,7 @@ uint core_sound_cpp_FUN_0052d790(void)
   if ((0.0 >= _DAT_02dc9d50) && (pSStack_1c != (STrainNoise *)0x0)) {
     _DAT_02dc9d50 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(1.0,5.0);
     fStack_20 = 20.0;
+    fStack_11c = 1.0;
     puVar9 = &DAT_005bef88;
     pcVar10 = acStack_118;
     fStack_14 = _DAT_02dc9d50;
@@ -150,11 +152,13 @@ uint core_sound_cpp_FUN_0052d790(void)
     switch(iVar4 % 5) {
     case 0:
     case 1:
+      fStack_11c = fStack_120 * (float)0.59999999999999998;
       fStack_20 = 25.0;
       _sprintf(acStack_118,"rail?%s.wav");
       break;
     case 2:
     case 3:
+      fStack_11c = fStack_120 * (float)0.80000000000000004;
       pcVar10 = acStack_118;
       fStack_20 = 20.0;
       pcVar8 = "bump?.wav";
@@ -179,7 +183,7 @@ uint core_sound_cpp_FUN_0052d790(void)
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
     sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);
-    _sprintf(acStack_b4,"%s @ %g");
+    _sprintf(acStack_b4,"%s @ %g",acStack_118,(double)fStack_11c);
     uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_0052ea90
                       (g_CSound_PTR_005bed68,(CDemonActor *)0x0,acStack_b4,&pSStack_1c->position);
     pSStack_1c->sfx_handle = uVar6;

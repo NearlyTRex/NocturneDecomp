@@ -7,7 +7,7 @@
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_004fe9d0 at 004fea47
+;   core_script.cpp_CScript_FUN_004fe9d0 at 004fea47
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d718

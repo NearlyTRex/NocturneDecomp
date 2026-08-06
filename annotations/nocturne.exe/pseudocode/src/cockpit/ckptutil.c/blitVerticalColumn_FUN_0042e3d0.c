@@ -22,7 +22,7 @@ void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(void *sprite_dat
     if (DAT_005b7624 == 8) {
       if (start_y < end_y) {
         do {
-          iVar3 = DAT_005b761c * start_y;
+          iVar3 = g_WindowWidth * start_y;
           piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);
           iVar4 = iVar4 + 4;
           start_y = start_y + 1;
@@ -33,7 +33,7 @@ void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_0042e3d0(void *sprite_dat
     }
     else if (start_y < end_y) {
       do {
-        iVar3 = DAT_005b761c * start_y;
+        iVar3 = g_WindowWidth * start_y;
         piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);
         iVar4 = iVar4 + 4;
         start_y = start_y + 1;

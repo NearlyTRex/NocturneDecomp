@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_005384d0 at 005385b3
+;   core_stranger.cpp_CStranger_FUN_005384d0 at 005385b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005958e7
@@ -49,15 +49,15 @@
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   float FLOAT_005a2738 = 2.700000
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc9f5c
 ;   ... and 6 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
@@ -95,10 +95,10 @@ section .text
         ;   Label: LAB_00539b31
     MOV EDI,0xa7c                       ; 00539b36
     PUSH 0x5958fc                       ; 00539b3b | = "CStranger::makeDrawDecision - draw mo..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00539b40 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00539b46 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00539b4c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00539b40 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00539b46 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00539b4c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00539b51
     MOV dword ptr [ESP + 0x10],0x3f800000 ; 00539b54
         ;   Label: LAB_00539b54

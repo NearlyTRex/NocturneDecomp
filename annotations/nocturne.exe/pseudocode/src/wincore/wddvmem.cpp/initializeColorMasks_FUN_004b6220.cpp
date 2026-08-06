@@ -12,8 +12,8 @@ void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
 
 {
   byte *pbVar1;
-  byte *pbVar2;
-  byte *pbVar3;
+  int iVar2;
+  int iVar3;
   uint uVar4;
   int iVar5;
   uint uVar6;
@@ -24,14 +24,14 @@ void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004b6220(void)
   iVar5 = 0;
   iVar7 = 0;
   do {
-    pbVar1 = &DAT_01c00648 + iVar5;
-    pbVar2 = (byte *)(iVar5 + 0x1c00649);
-    pbVar3 = (byte *)(iVar5 + 0x1c0064a);
+    pbVar1 = g_SourcePaletteData + iVar5;
+    iVar2 = iVar5 + 1;
+    iVar3 = iVar5 + 2;
     iVar8 = iVar7 + 2;
     iVar5 = iVar5 + 3;
     *(ushort *)(&DAT_01bff720 + iVar7) =
-         (ushort)(*pbVar3 / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
-         (ushort)(*pbVar2 / _DAT_01c00634 << (DAT_01c00630 & 0x1f)) |
+         (ushort)(g_SourcePaletteData[iVar3] / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
+         (ushort)(g_SourcePaletteData[iVar2] / _DAT_01c00634 << (DAT_01c00630 & 0x1f)) |
          (ushort)(*pbVar1 / _DAT_01c00628 << (DAT_01c00624 & 0x1f));
     iVar7 = iVar8;
   } while (iVar8 != 0x200);

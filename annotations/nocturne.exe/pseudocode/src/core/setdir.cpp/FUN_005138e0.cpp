@@ -39,9 +39,9 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
   int local_18;
   int local_14;
   
-  local_54 = DAT_005b7620;
+  local_54 = g_WindowHeight;
   iVar6 = 0;
-  local_40 = DAT_005b7620 + -0x78;
+  local_40 = g_WindowHeight + -0x78;
   local_2c = 2;
   if (0 < *param_1) {
     iVar3 = 0;
@@ -121,7 +121,7 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
             if (0xff < uVar4) {
               uVar4 = 0xff;
             }
-            _DAT_01c00c70 = (uint)(byte)(&DAT_01bf7720)[(uVar4 >> 3) * 0x421];
+            _DAT_01c00c70 = (uint)g_ColorCubeLookup[(uVar4 >> 3) * 0x421];
             engine_2d_c_plotPixel_FUN_00401530(iVar3,iVar6);
             iVar5 = iVar5 + 4;
             iVar3 = iVar3 + 1;
@@ -131,19 +131,19 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      _sprintf(local_c4,"%g");
+      _sprintf(local_c4,"%g",(double)*(float *)(&DAT_02663604 + local_3c * 4));
       iVar6 = local_2c;
       engine_2d_c_drawText_FUN_00402600(local_c4,local_2c,local_44);
       engine_2d_c_drawText_FUN_00402600((char *)(local_60 + local_3c * 0x68),iVar6,local_4c);
       local_2c = iVar6 + 0x41;
-      if (DAT_005b761c < iVar6 + 0x81) {
+      if (g_WindowWidth < iVar6 + 0x81) {
         local_2c = 2;
         local_58 = local_58 + 0xf0;
         local_48 = local_48 + 0xf0;
         local_4c = local_4c + 0x3c;
         local_44 = local_44 + 0x3c;
         local_40 = local_40 + 0x3c;
-        bVar2 = DAT_005b7620 < local_54;
+        bVar2 = g_WindowHeight < local_54;
         local_54 = local_54 + 0x3c;
         if (bVar2) {
           return;

@@ -10,7 +10,7 @@
 ;   engine_2d.c_FUN_00403070 at 004030da
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_02dc9dcc
 ;   undefined4 DAT_02dc9e0c
@@ -26,7 +26,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 00532a84
     SUB EAX,EDX                         ; 00532a8b
     XOR EDX,EDX                         ; 00532a8d
-    MOV DL,byte ptr [EAX + 0x1c00648]   ; 00532a8f | DAT_01c00648
+    MOV DL,byte ptr [EAX + 0x1c00648]   ; 00532a8f | g_SourcePaletteData
     MOV dword ptr [0x02dc9e0c],EDX      ; 00532a95 | DAT_02dc9e0c
     XOR EDX,EDX                         ; 00532a9b
     MOV DL,byte ptr [EAX + 0x1c00649]   ; 00532a9d

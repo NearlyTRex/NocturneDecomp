@@ -14,7 +14,7 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_pt
   int iVar2;
   SMotion *pSVar3;
   
-  iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar2 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }
@@ -46,11 +46,11 @@ void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_pt
   }
   if ((this_ptr->action_pending == 7) || (bVar1)) {
     delta_time = delta_time * (float)0.25;
-    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
-    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
-    core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
+    core_stranger_cpp_CStranger_FUN_00535900(this_ptr,delta_time);
+    core_stranger_cpp_CStranger_FUN_00535900(this_ptr,delta_time);
+    core_stranger_cpp_CStranger_FUN_00535900(this_ptr,delta_time);
   }
-  core_stranger_cpp_FUN_00535900(this_ptr,delta_time);
+  core_stranger_cpp_CStranger_FUN_00535900(this_ptr,delta_time);
   core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time_00);
   return;
 }

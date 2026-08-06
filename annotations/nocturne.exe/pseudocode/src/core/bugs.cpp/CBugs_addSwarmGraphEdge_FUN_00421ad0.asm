@@ -10,16 +10,16 @@
 ; int              Stack[0x10]:4   first_edge_data
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_004219f0 at 00421a39
+;   core_bugs.cpp_CBugs_FUN_004219f0 at 00421a39
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bugs_cpp_00579cbc
 ;   TerminatedCString s_CBugs_addSwarmGraphEdge_00579ccd
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -43,10 +43,10 @@ section .text
     MOV EBP,0x579cbc                    ; 00421af4 | = "..\\core\\bugs.cpp"
     MOV EAX,0x1b8                       ; 00421af9
     PUSH 0x579ccd                       ; 00421afe | = "CBugs::addSwarmGraphEdge - Too many v..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00421b03 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00421b09 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00421b0e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00421b03 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00421b09 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00421b0e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00421b13
     LEA EAX,[EDI*0x4 + 0x0]             ; 00421b16
         ;   Label: LAB_00421b16

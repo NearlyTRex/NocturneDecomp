@@ -26,7 +26,7 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_004dea60(CMoon *this_ptr)
     core_course_cpp_CCourse_free_FUN_0043b7c0(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != g_CCourse_ARRAY_01ccdec8 + sizeof(g_CCourse_ARRAY_01ccdec8) / sizeof(g_CCourse_ARRAY_01ccdec8[0]));
-  core_dmodel_cpp_FUN_00452f10(&this_ptr->moon);
-  core_dmodel_cpp_FUN_00452f10(&g_CKeyFramedModel_01cce1bc);
+  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(&this_ptr->moon);
+  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(&g_CKeyFramedModel_01cce1bc);
   return;
 }

@@ -11,13 +11,13 @@
 void __cdecl core_dmodel_cpp_FUN_00454460(void)
 
 {
-  CKeyFramedModel *pCVar1;
+  CKeyFramedModel *this_ptr;
   
-  pCVar1 = g_CKeyFramedModel_ARRAY_01abb65c;
+  this_ptr = g_CKeyFramedModel_ARRAY_01abb65c;
   do {
-    core_dmodel_cpp_FUN_00452f10(pCVar1);
-    pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != g_CKeyFramedModel_ARRAY_01abb65c + sizeof(g_CKeyFramedModel_ARRAY_01abb65c) / sizeof(g_CKeyFramedModel_ARRAY_01abb65c[0]));
+    core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != g_CKeyFramedModel_ARRAY_01abb65c + sizeof(g_CKeyFramedModel_ARRAY_01abb65c) / sizeof(g_CKeyFramedModel_ARRAY_01abb65c[0]));
   _DAT_01abb658 = 0;
   return;
 }

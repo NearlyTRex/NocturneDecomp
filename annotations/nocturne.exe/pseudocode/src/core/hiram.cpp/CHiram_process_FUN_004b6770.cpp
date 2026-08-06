@@ -17,7 +17,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004b6770(CHiram *this_ptr,float d
   uint class_name_hash;
   float local_18 [2];
   
-  iVar2 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar2 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
     return;
   }
@@ -52,7 +52,8 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004b6770(CHiram *this_ptr,float d
     iVar2 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
                       (&pCVar1->motion_controller,local_18);
     if (iVar2 == 0x29a) {
-      core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
+                (g_CDemonMission_PTR_005baf90,this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar2);
@@ -61,6 +62,6 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004b6770(CHiram *this_ptr,float d
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar1);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000((CDemonActor *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar1);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   return;
 }

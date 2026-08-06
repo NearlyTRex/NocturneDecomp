@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_00583b02 = 31457280
 ;   double DOUBLE_00583b0a = 256
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01c78b04
 ;   undefined4 DAT_01c78b08
 ;
@@ -36,7 +36,7 @@ section .text
     CMP EDX,0x4                         ; 004a3896
     JGE 0x004a38fa                      ; 004a3899
         ;   XREF to: 004a38fa (CONDITIONAL_JUMP)  ; LAB_004a38fa
-    FILD dword ptr [0x005b7620]         ; 004a389b | DAT_005b7620
+    FILD dword ptr [0x005b7620]         ; 004a389b | g_WindowHeight
     FDIVR double ptr [0x00583b02]       ; 004a38a1 | DOUBLE_00583b02
     FSTP float ptr [ESP]                ; 004a38a7
     CMP EDX,0x2                         ; 004a38aa
@@ -83,7 +83,7 @@ section .text
     FLD float ptr [0x01c78b08]          ; 004a3910 | DAT_01c78b08
     FXCH                                ; 004a3916
     FADD ST0,ST1                        ; 004a3918
-    FILD dword ptr [0x005b761c]         ; 004a391a | DAT_005b761c
+    FILD dword ptr [0x005b761c]         ; 004a391a | g_WindowWidth
     FXCH                                ; 004a3920
     FSTP ST2                            ; 004a3922
     FXCH                                ; 004a3924

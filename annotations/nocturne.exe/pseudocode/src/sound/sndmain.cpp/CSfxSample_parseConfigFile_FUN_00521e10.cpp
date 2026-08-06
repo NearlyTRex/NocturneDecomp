@@ -11,8 +11,8 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample *this_ptr)
 
 {
-  float fVar1;
-  char cVar2;
+  char cVar1;
+  float fVar2;
   float fVar3;
   float fVar4;
   _FILE *stream;
@@ -39,11 +39,11 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSampl
   
   bVar10 = 0;
   fVar3 = (float)_DAT_005bea88;
-  fVar1 = 20.0f * fVar3;
+  fVar2 = 20.0f * fVar3;
   fVar4 = g_FLOAT_02dbd370 * fVar3;
   fVar3 = 10000.0f * fVar3;
   this_ptr->loop_marker_count = 0;
-  (this_ptr->sample_info).reference_distance = fVar1;
+  (this_ptr->sample_info).reference_distance = fVar2;
   (this_ptr->sample_info).reference_volume_distance = fVar4;
   (this_ptr->sample_info).max_distance = fVar3;
   splitpath
@@ -97,26 +97,24 @@ joined_r0x00521ffd:
       do {
         if (uVar9 == 0) break;
         uVar9 = uVar9 - 1;
-        cVar2 = *pcVar7;
+        cVar1 = *pcVar7;
         pcVar7 = pcVar7 + (uint)bVar10 * -2 + 1;
-      } while (cVar2 != '\0');
+      } while (cVar1 != '\0');
       memmove(local_46c,local_46c + 1,~uVar9 - 1);
     }
     if (local_46c[0] != '\0') {
-      iVar5 = sscanf(local_46c,"refDist =%f");
+      iVar5 = sscanf(local_46c,"refDist =%f",local_30);
       if (iVar5 == 1) {
         if (local_1c != 0) {
-          g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-          g_INT_01cc4804 = 0x292;
-          core_main_c_FUN_004c8440("Reference distance specified in %s on line %d, then again on line %d",local_340,local_1c,local_38);
+          g_CurrentFilename = "..\\sound\\sndmain.cpp";
+          g_CurrentLineNumber = 658;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Reference distance specified in %s on line %d, then again on line %d");
         }
         local_1c = local_38;
-        fVar1 = (this_ptr->sample_info).reference_distance;
-        if (fVar1 < (float)0.10000000000000001) {
-          g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-          g_INT_01cc4804 = 0x294;
-          core_main_c_FUN_004c8440
-                    ("Reference volume distance %g is too small in %s line %d!",(double)fVar1,local_340,local_38);
+        if ((this_ptr->sample_info).reference_distance < (float)0.10000000000000001) {
+          g_CurrentFilename = "..\\sound\\sndmain.cpp";
+          g_CurrentLineNumber = 660;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Reference volume distance %g is too small in %s line %d!");
         }
         if (local_18 == 0) {
           (this_ptr->sample_info).reference_volume_distance =
@@ -124,64 +122,56 @@ joined_r0x00521ffd:
         }
       }
       else {
-        iVar5 = sscanf(local_46c,"minDist =%f");
+        iVar5 = sscanf(local_46c,"minDist =%f",local_28);
         if (iVar5 == 1) {
           if (local_18 != 0) {
-            g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-            g_INT_01cc4804 = 0x29a;
-            core_main_c_FUN_004c8440
-                      ("Minimum distance specified in %s on line %d, then again on line %d",local_340,local_18,local_38);
+            g_CurrentFilename = "..\\sound\\sndmain.cpp";
+            g_CurrentLineNumber = 666;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Minimum distance specified in %s on line %d, then again on line %d");
           }
           local_18 = local_38;
-          fVar1 = (this_ptr->sample_info).reference_volume_distance;
-          if (fVar1 < (float)0.10000000000000001) {
-            g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-            g_INT_01cc4804 = 0x29c;
-            core_main_c_FUN_004c8440
-                      ("Reference volume distance %g is too small in %s line %d!",(double)fVar1,local_340,local_38);
+          if ((this_ptr->sample_info).reference_volume_distance < (float)0.10000000000000001) {
+            g_CurrentFilename = "..\\sound\\sndmain.cpp";
+            g_CurrentLineNumber = 668;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Reference volume distance %g is too small in %s line %d!");
           }
         }
         else {
-          iVar5 = sscanf(local_46c,"maxDist =%f");
+          iVar5 = sscanf(local_46c,"maxDist =%f",local_2c);
           if (iVar5 != 1) {
-            iVar5 = sscanf(local_46c,"maxVol =%f");
+            iVar5 = sscanf(local_46c,"maxVol =%f",&local_470);
             if (iVar5 == 1) {
               if (local_1c == 0) {
-                g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                g_INT_01cc4804 = 0x2a6;
-                core_main_c_FUN_004c8440("%s specified maxVol on line %d without first specifying reference distance",local_340,local_38);
+                g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                g_CurrentLineNumber = 678;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("%s specified maxVol on line %d without first specifying reference distance");
               }
               if (local_18 != 0) {
-                g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                g_INT_01cc4804 = 0x2a7;
-                core_main_c_FUN_004c8440
-                          ("Minimum distance specified in %s on line %d, then again on line %d",local_340,local_18,local_38);
+                g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                g_CurrentLineNumber = 679;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("Minimum distance specified in %s on line %d, then again on line %d");
               }
               local_18 = local_38;
               if (local_470 < (float)0.001) {
-                g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                g_INT_01cc4804 = 0x2a9;
-                core_main_c_FUN_004c8440
-                          ("maxVol %g is too small in %s line %d!",(double)local_470,local_340,local_38)
-                ;
+                g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                g_CurrentLineNumber = 681;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("maxVol %g is too small in %s line %d!");
               }
               (this_ptr->sample_info).reference_volume_distance =
                    (this_ptr->sample_info).reference_distance / local_470;
             }
             else {
-              iVar5 = sscanf(local_46c,"length =%d");
+              iVar5 = sscanf(local_46c,"length =%d",&local_34);
               if (iVar5 == 1) {
                 if (-1 < (this_ptr->sample_info).sample_count) {
-                  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                  g_INT_01cc4804 = 0x2b0;
-                  core_main_c_FUN_004c8440
-                            ("Length for %s already known, then specified again in %s line %d",this_ptr,local_340,local_38);
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 688;
+                  core_main_c_displayErrorAndQuit_FUN_004c8440("Length for %s already known, then specified again in %s line %d");
                 }
                 if (local_34 < 1) {
-                  g_INT_01cc4804 = 0x2b1;
-                  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                  core_main_c_FUN_004c8440
-                            ("Invalid length %d in %s line %d",local_34,local_340,local_38);
+                  g_CurrentLineNumber = 689;
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid length %d in %s line %d");
                 }
                 (this_ptr->sample_info).sample_count = local_34;
               }
@@ -191,10 +181,9 @@ joined_r0x00521ffd:
                   this_ptr->loop_marker_count = 1;
                 }
                 else {
-                  g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-                  g_INT_01cc4804 = 0x2be;
-                  core_main_c_FUN_004c8440
-                            ("Error parsing %s line %d: %s",local_340,local_38,local_46c);
+                  g_CurrentFilename = "..\\sound\\sndmain.cpp";
+                  g_CurrentLineNumber = 702;
+                  core_main_c_displayErrorAndQuit_FUN_004c8440("Error parsing %s line %d: %s");
                 }
               }
             }

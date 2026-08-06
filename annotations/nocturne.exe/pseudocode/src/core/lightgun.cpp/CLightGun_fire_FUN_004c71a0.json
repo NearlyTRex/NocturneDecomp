@@ -1,0 +1,753 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "type_error",
+        "column": 13,
+        "line": 65,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 13,
+        "line": 69,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 69,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 13,
+        "line": 70,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 70,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 13,
+        "line": 71,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 71,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 32,
+        "line": 73,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 32,
+        "line": 74,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 32,
+        "line": 75,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 644,
+    "complexity_score": 470,
+    "cross_reference_count": 0,
+    "function_call_count": 22,
+    "global_count": 31,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 230,
+    "suspect_count": 21,
+    "suspect_types": [
+      "pointer_cast",
+      "raw_address_pointer_store",
+      "sub84_truncation",
+      "unknown_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 874
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c71a0",
+    "address_range": [
+      [
+        "004c71a0",
+        "004c7999"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_lightgun.cpp_CLightGun_fire_FUN_004c71a0",
+    "signature": "int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "0040a240",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240"
+    },
+    {
+      "addr": "0040a200",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_0040a200"
+    },
+    {
+      "addr": "0040e160",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CVector_ctor_FUN_0040e160"
+    },
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040d7e0"
+    },
+    {
+      "addr": "00423ed0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0"
+    },
+    {
+      "addr": "00445fe0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0"
+    },
+    {
+      "addr": "004c6ff0",
+      "is_variadic": false,
+      "name": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0"
+    },
+    {
+      "addr": "00511740",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00511740"
+    },
+    {
+      "addr": "00511780",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00511780"
+    },
+    {
+      "addr": "00511750",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00511750"
+    },
+    {
+      "addr": "00511590",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590"
+    },
+    {
+      "addr": "005113e0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0"
+    },
+    {
+      "addr": "0050fb00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00"
+    },
+    {
+      "addr": "00511800",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800"
+    },
+    {
+      "addr": "0052ea60",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0052ea60"
+    },
+    {
+      "addr": "005485a0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005485a0"
+    },
+    {
+      "addr": "005485e0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0"
+    },
+    {
+      "addr": "00548580",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_00548580"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
+    },
+    {
+      "addr": "005270d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005270d0"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": false,
+      "name": "xxx_unk.c_FUN_004940d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005879ef",
+      "name": "s_CDraculaBride_005879ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005879fd",
+      "name": "s_CBatman_005879fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a05",
+      "name": "s_CBatCreature_00587a05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a12",
+      "name": "s_CBride_00587a12",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a19",
+      "name": "s_CGhoul_00587a19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a20",
+      "name": "s_CTVBat_00587a20",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a27",
+      "name": "s_CBatCreature_00587a27",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a34",
+      "name": "s_CWerewolf_00587a34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a3e",
+      "name": "s_CSvetlana_00587a3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a48",
+      "name": "s_CTrigger_CGlass_00587a48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a61",
+      "name": "s_s_in_volume_00587a61",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a6f",
+      "name": "s_cre_fire_wav_00587a6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00587a7d",
+      "name": "DOUBLE_00587a7d",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "00587a85",
+      "name": "FLOAT_00587a85",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0059fd60",
+      "name": "FLOAT_0059fd60",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "0059fd68",
+      "name": "FLOAT_0059fd68",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "005ad350",
+      "name": "g_CConsole_PTR_005ad350",
+      "type": "CConsole*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "005b9284",
+      "name": "PTR_DAT_005b9284",
+      "type": "void*",
+      "value": "01c70f74"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "005bed68",
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
+    },
+    {
+      "addr": "00765a98",
+      "name": "g_CCharacterActorType_00765a60.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "g_CConsole_0077ad0c",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01c74640",
+      "name": "g_CDemonLight_01c74640",
+      "type": "CDemonLight",
+      "value": null
+    },
+    {
+      "addr": "01c78c78",
+      "name": "g_CGlassActorType_01c78c40.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fa3fe0",
+      "name": "g_CDemonSet_01e57284.collision_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa5f34",
+      "name": "g_CDemonSet_01e57284.character_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa5f38",
+      "name": "g_CDemonSet_01e57284.characters[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa5f3c",
+      "name": "g_CDemonSet_01e57284.characters[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd10bc",
+      "name": "g_CTriggerActorType_02dd1084.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.966165413533835,
+    "instruction_count": 532,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 5,
+      "BRANCH": 10,
+      "CALL": 45,
+      "CALLIND": 10,
+      "CBRANCH": 31,
+      "COPY": 867,
+      "FLOAT2FLOAT": 62,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 232,
+      "INT_AND": 240,
+      "INT_CARRY": 58,
+      "INT_EQUAL": 203,
+      "INT_LEFT": 12,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 61,
+      "INT_SLESS": 101,
+      "INT_SUB": 166,
+      "INT_XOR": 9,
+      "INT_ZEXT": 12,
+      "LOAD": 109,
+      "POPCOUNT": 101,
+      "RETURN": 3,
+      "STORE": 207
+    },
+    "pcode_op_count": 2642
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c71ac",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CLightGun_fire_FUN_004c71a0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 25,
+          "line": 212,
+          "message": "Uninitialized variable: unaff_retaddr",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_6c._4_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 123,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar8),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 147,
+      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "severity": "moderate",
+      "text": "if (pCVar6 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 188,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 218,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_fc._4_4_ = 0.1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 224,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_c8._0_4_ = this_ptr;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(code **)((int)pCVar3",
+      "severity": "moderate",
+      "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 225,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 225,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Uninitialized variable: unaff_retaddr",
+      "line": 212,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (pCVar6 == unaff_retaddr) {",
+      "type": "static_uninitvar"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 220,
+        "vtable_addr": "0059fd94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

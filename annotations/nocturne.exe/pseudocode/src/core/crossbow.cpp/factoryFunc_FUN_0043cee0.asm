@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x810                          ; 0043cee0
         ;   Label: core_crossbow.cpp_factoryFunc_FUN_0043cee0
-    CALL crt_unknown.c_FUN_0056497c     ; 0043cee5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0043cee5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0043ceea
     TEST EAX,EAX                        ; 0043ceed
     JNZ 0x0043cef2                      ; 0043ceef

@@ -7,11 +7,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057db3d
 ;   TerminatedCString s_Ortho_isn_t_supported_an_0057db53
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -29,10 +29,10 @@ section .text
         ;   Label: LAB_0045ed51
     MOV ECX,0x9b                        ; 0045ed56
     PUSH 0x57db53                       ; 0045ed5b | = "Ortho isn't supported any more"
-    MOV dword ptr [0x01cc4800],EDX      ; 0045ed60 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0045ed66 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045ed6c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0045ed60 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0045ed66 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045ed6c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045ed71
     RET                                 ; 0045ed74
 

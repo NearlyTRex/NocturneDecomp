@@ -38,7 +38,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_atan2_FUN_00566c81
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_matrix.c_interpolatedCos_FUN_004ccaa0
@@ -555,10 +555,10 @@ section .text
         ;   Label: LAB_004ce6df
     MOV ESI,0x4c6                       ; 004ce6e4
     PUSH 0x58829e                       ; 004ce6e9 | = "Matrix unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004ce6ee | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ce6f4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ce6fa
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004ce6ee | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004ce6f4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ce6fa
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ce6ff
     ADD ESP,0x40                        ; 004ce702
     POP EBP                             ; 004ce705

@@ -10,9 +10,9 @@ void __cdecl shape_edittool_cpp_CPickList_remove_FUN_00476100(CPickList *this_pt
 
 {
   if (0 < this_ptr->enabled_capacity) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0xe22;
-    core_main_c_FUN_004c8440("CPickList::remove - can't do this after enableing/disabling items (yet)");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 3618;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CPickList::remove - can't do this after enableing/disabling items (yet)");
   }
   shape_edittool_cpp_CStrList_remove_FUN_00473f10(&this_ptr->base,start_index,end_index);
   return;

@@ -9,18 +9,18 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_00509a80 at 00509d4a
-;   core_set.cpp_FUN_0050aba0 at 0050accd
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509d4a
+;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050accd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
+;   core_set.cpp_CDemonSet_FUN_0050e080
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-;   core_set.cpp_FUN_0050e080
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
 ;
@@ -122,7 +122,7 @@ section .text
         ;   XREF to: 0050e340 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0050a71e
     PUSH 0xffff                         ; 0050a721
-    MOV ECX,dword ptr [0x005ae704]      ; 0050a726 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0050a726 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0050a72c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0050a72d
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
@@ -137,7 +137,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x4       ; 0050a74a
     PUSH 0x1                            ; 0050a751
         ;   Label: LAB_0050a751
-    MOV ESI,dword ptr [0x005ae704]      ; 0050a753 | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 0050a753 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 0050a759 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a75a
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
@@ -151,8 +151,8 @@ section .text
         ;   Label: LAB_0050a76e
     PUSH ESI                            ; 0050a770
     PUSH EDI                            ; 0050a771
-    CALL core_set.cpp_FUN_0050e080      ; 0050a772
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 0050a772
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0050a777
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0050a77a
     PUSH EBX                            ; 0050a780
@@ -164,7 +164,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x4       ; 0050a78b
     PUSH 0x1                            ; 0050a792
         ;   Label: LAB_0050a792
-    MOV EDX,dword ptr [0x005ae704]      ; 0050a794 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0050a794 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0050a79a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a79b
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)

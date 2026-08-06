@@ -9,12 +9,12 @@
 ;   TerminatedCString s_Invalid_height_array_siz_0057a72c
 ;   TerminatedCString s_cockpit_ckptutil_c_0057a747
 ;   TerminatedCString s_No_room_for_scroll_bitma_0057a75d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
-;   crt_unknown.c_FUN_00564494
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -190,8 +190,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0042e93f
         ;   Label: LAB_0042e93f
     PUSH ECX                            ; 0042e943
-    CALL crt_unknown.c_FUN_00564494     ; 0042e944
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0042e944
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0042e949
     POP ESI                             ; 0042e94c
     ADD ESP,0x30                        ; 0042e94d
@@ -204,10 +204,10 @@ section .text
         ;   Label: LAB_0042e954
     MOV ESI,0x3f0                       ; 0042e959
     PUSH 0x57a72c                       ; 0042e95e | = "Invalid height array size."
-    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0042e96f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042e96f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042e974
     JMP 0x0042e7e3                      ; 0042e977
         ;   XREF to: 0042e7e3 (UNCONDITIONAL_JUMP)  ; LAB_0042e7e3
@@ -215,10 +215,10 @@ section .text
         ;   Label: LAB_0042e97c
     MOV EDX,0x3f6                       ; 0042e981
     PUSH 0x57a75d                       ; 0042e986 | = "No room for scroll bitmap height table."
-    MOV [0x01cc4800],EAX                ; 0042e98b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0042e996
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0042e98b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042e996
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042e99b
     JMP 0x0042e7ff                      ; 0042e99e
         ;   XREF to: 0042e7ff (UNCONDITIONAL_JUMP)  ; LAB_0042e7ff

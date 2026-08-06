@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_cow.cpp_CZombieCow_ctor_FUN_0043bbe0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd58                         ; 0043bbb0
         ;   Label: core_cow.cpp_factoryFunc_FUN_0043bbb0
-    CALL crt_unknown.c_FUN_0056497c     ; 0043bbb5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0043bbb5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0043bbba
     TEST EAX,EAX                        ; 0043bbbd
     JNZ 0x0043bbc2                      ; 0043bbbf

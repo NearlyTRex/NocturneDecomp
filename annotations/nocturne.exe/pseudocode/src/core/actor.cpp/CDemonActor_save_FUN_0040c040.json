@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 22,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "format_error",
@@ -84,12 +78,6 @@
         "column": 63,
         "line": 34,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 38,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       },
       {
         "category": "incompatible_types",
@@ -132,7 +120,7 @@
     {
       "addr": "004d8720",
       "from_addr": "004d8a20",
-      "name": "core_mission.cpp_FUN_004d8720",
+      "name": "core_mission.cpp_CDemonMission_FUN_004d8720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,11 +155,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "005644f0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
     }
   ],
@@ -238,13 +226,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -255,7 +243,7 @@
       {
         "call_addr": "004d8a20",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004d8720",
+        "caller": "core_mission.cpp_CDemonMission_FUN_004d8720",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -15,11 +15,11 @@
 ;   TerminatedCString s_core_manpuz_cpp_00587f72
 ;   TerminatedCString s_CMansionPuzzleCircle_pro_00587f85
 ;   float FLOAT_005a0040 = 2
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0
 ;
 ; *****************************************************************************
@@ -93,10 +93,10 @@ section .text
     MOV EBP,0x587f72                    ; 004cad24 | = "..\\core\\manpuz.cpp"
     MOV EAX,0x45d                       ; 004cad29
     PUSH 0x587f85                       ; 004cad2e | = "CMansionPuzzleCircle::processPanel - ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004cad33 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004cad39 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004cad3e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004cad33 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004cad39 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004cad3e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004cad43
     MOV EAX,ESI                         ; 004cad46
         ;   Label: LAB_004cad46

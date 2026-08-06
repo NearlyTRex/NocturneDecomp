@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_fire.cpp_CFireEffect_ctor_FUN_0048a130 at 0048a136
 ;   core_fire.cpp_CFireEffect_load_FUN_0048c7d0 at 0048c7f1
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4932
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e01f
-;   core_game.cpp_FUN_004a4170 at 004a4932
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c0a13c

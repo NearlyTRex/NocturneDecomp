@@ -19,11 +19,11 @@
 ;   TerminatedCString s_CIniFile_setString_filen_005866cd
 ;   TerminatedCString s_engine_ini_cpp_005866f7
 ;   TerminatedCString s_CIniFile_setString_secti_00586709
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_ini.cpp_writeProfileString_FUN_004bd830
 ;
 ; *****************************************************************************
@@ -59,10 +59,10 @@ section .text
         ;   Label: LAB_004bd9d1
     MOV ECX,0x26b                       ; 004bd9d6
     PUSH 0x5866cd                       ; 004bd9db | = "CIniFile::setString - filename not wr..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004bd9e0 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004bd9e6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004bd9ec
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004bd9e0 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004bd9e6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004bd9ec
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004bd9f1
     JMP 0x004bd9ab                      ; 004bd9f4
         ;   XREF to: 004bd9ab (UNCONDITIONAL_JUMP)  ; LAB_004bd9ab
@@ -72,10 +72,10 @@ section .text
     MOV ESI,0x5866f7                    ; 004bd9f8 | = "..\\engine\\ini.cpp"
     MOV EDI,0x26c                       ; 004bd9fd
     PUSH 0x586709                       ; 004bda02 | = "CIniFile::setString - section not write!"
-    MOV dword ptr [0x01cc4800],ESI      ; 004bda07 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004bda0d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004bda13
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004bda07 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004bda0d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004bda13
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004bda18
     POP ESI                             ; 004bda1b
     POP EDI                             ; 004bda1c

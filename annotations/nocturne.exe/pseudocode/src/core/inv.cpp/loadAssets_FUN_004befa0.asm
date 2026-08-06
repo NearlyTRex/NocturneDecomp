@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660 at 004a368e
+;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2dd3
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 at 004c23d1
-;   core_inv.cpp_FUN_004c2470 at 004c2dd3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00586d91
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 004befa1
     PUSH 0x586d91                       ; 004befa2 | = "rt"
     PUSH 0x586d94                       ; 004befa7 | = "invsize.txt"
-    MOV EAX,[0x005b7620]                ; 004befac | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004befac | g_WindowHeight
     PUSH 0x586da0                       ; 004befb1 | = "data"
     MOV [0x01cc30a0],EAX                ; 004befb6 | DAT_01cc30a0
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004befbb

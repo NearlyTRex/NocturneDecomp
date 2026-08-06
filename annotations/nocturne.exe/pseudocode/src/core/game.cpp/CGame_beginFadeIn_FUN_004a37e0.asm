@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00583afa = 0.5
 ;   undefined4 DAT_0059de84
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005be220
 ;   undefined4 DAT_01c78b04
 ;   undefined4 DAT_01c78b08
@@ -111,12 +111,12 @@ section .text
     SHL EDX,0x10                        ; 004a377c
     SBB EAX,EDX                         ; 004a377f
     SAR EAX,0x10                        ; 004a3781
-    MOV ESI,dword ptr [0x005b7620]      ; 004a3784 | DAT_005b7620
+    MOV ESI,dword ptr [0x005b7620]      ; 004a3784 | g_WindowHeight
     MOV [0x01c78b10],EAX                ; 004a378a | DAT_01c78b10
     CMP ESI,0x1e0                       ; 004a378f
     JLE 0x004a3876                      ; 004a3795
         ;   XREF to: 004a3876 (CONDITIONAL_JUMP)  ; LAB_004a3876
-    MOV EDI,dword ptr [0x005b761c]      ; 004a379b | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a379b | g_WindowWidth
     MOV EDX,dword ptr [0x01c78b0c]      ; 004a37a1 | DAT_01c78b0c
     IMUL EDX,EDI                        ; 004a37a7
     MOV EBX,0x280                       ; 004a37aa
@@ -138,12 +138,12 @@ section .text
     RET                                 ; 004a37db
     MOV dword ptr [0x01c78b04],0x1      ; 004a37e0 | DAT_01c78b04
         ;   Label: core_game.cpp_CGame_beginFadeIn_FUN_004a37e0
-    MOV EDX,dword ptr [0x005b761c]      ; 004a37ea | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004a37ea | g_WindowWidth
     MOV EAX,EDX                         ; 004a37f0
     SAR EDX,0x1f                        ; 004a37f2
     SUB EAX,EDX                         ; 004a37f5
     SAR EAX,0x1                         ; 004a37f7
-    MOV EDX,dword ptr [0x005b7620]      ; 004a37f9 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 004a37f9 | g_WindowHeight
     MOV [0x01c78b0c],EAX                ; 004a37ff | DAT_01c78b0c
     MOV EAX,EDX                         ; 004a3804
     SAR EDX,0x1f                        ; 004a3806

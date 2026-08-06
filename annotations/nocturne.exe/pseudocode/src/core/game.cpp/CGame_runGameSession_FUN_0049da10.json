@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -93,7 +93,7 @@
       },
       {
         "category": "other",
-        "column": 71,
+        "column": 81,
         "line": 120,
         "message": "member reference type 'int' is not a pointer"
       },
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 618,
+    "complexity_score": 608,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 348,
-    "suspect_count": 23,
+    "suspect_count": 22,
     "suspect_types": [
       "raw_address_constant",
       "shadow_pointer_walk",
@@ -199,6 +199,16 @@
       "name": "core_game.cpp_CGame_FUN_0049f930"
     },
     {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004a3b90"
+    },
+    {
+      "addr": "004a57c0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004a57c0"
+    },
+    {
       "addr": "004a3660",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_loadAssets_FUN_004a3660"
@@ -249,16 +259,6 @@
       "name": "core_game.cpp_CGame_updateStatusDisplays_FUN_0049b0b0"
     },
     {
-      "addr": "004a3b90",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004a3b90"
-    },
-    {
-      "addr": "004a57c0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004a57c0"
-    },
-    {
       "addr": "004bf270",
       "is_variadic": false,
       "name": "core_inv.cpp_freeInventory_FUN_004bf270"
@@ -296,7 +296,12 @@
     {
       "addr": "00504d90",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00504d90"
+      "name": "core_script.cpp_CScript_FUN_00504d90"
+    },
+    {
+      "addr": "0050ad20",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0050ad20"
     },
     {
       "addr": "005084c0",
@@ -319,14 +324,9 @@
       "name": "core_set.cpp_CDemonSet_setGamma_FUN_0050e400"
     },
     {
-      "addr": "0050ad20",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050ad20"
-    },
-    {
       "addr": "005125a0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_005125a0"
+      "name": "core_setdir.cpp_CDemonSet_FUN_005125a0"
     },
     {
       "addr": "0052ddf0",
@@ -650,9 +650,9 @@
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b80f0",
@@ -1047,14 +1047,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 221,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0xf0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 283,
       "match": "code *",
@@ -1123,7 +1115,7 @@
       "line": 113,
       "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "core_setdir_cpp_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);",
+      "text": "core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);",
       "type": "raw_address_constant"
     },
     {
@@ -1155,7 +1147,7 @@
       "line": 240,
       "match": "0x1e56da0",
       "severity": "moderate",
-      "text": "iVar3 = core_script_cpp_FUN_00504d90(0x01E56DA0);",
+      "text": "iVar3 = core_script_cpp_CScript_FUN_00504d90(0x01E56DA0);",
       "type": "raw_address_constant"
     },
     {

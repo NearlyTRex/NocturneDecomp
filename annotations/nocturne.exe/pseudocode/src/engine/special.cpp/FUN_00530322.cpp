@@ -45,7 +45,7 @@ int * engine_special_cpp_FUN_00530322(void)
       piVar4 = *(int **)(iVar8 + 0x28);
       iVar8 = (int)((ulonglong)
                     ((longlong)(*(int *)(unaff_EDI + 0x28) - (int)piVar4) *
-                    (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                    (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20);
       uVar9 = DAT_005bf014;
       DAT_005bf05c = piVar4;
       DAT_005bf488 = iVar8;
@@ -69,7 +69,7 @@ int * engine_special_cpp_FUN_00530322(void)
                  ((longlong)
                   (int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /
                              (longlong)*(int *)(unaff_EDI + 0x28)) - DAT_005bf050) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20);
       uVar9 = *(uint *)(iVar8 + 0x20);
       DAT_005bf054 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /
                            (longlong)*(int *)(iVar8 + 0x28));
@@ -79,23 +79,23 @@ int * engine_special_cpp_FUN_00530322(void)
                  ((longlong)
                   (int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /
                              (longlong)*(int *)(unaff_EDI + 0x28)) - DAT_005bf054) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20);
     }
     else {
       DAT_005bf050 = *(uint *)(iVar8 + 0x18);
       _DAT_005bf480 =
            (int)((ulonglong)
                  ((longlong)(int)(*(int *)(unaff_EDI + 0x18) - DAT_005bf050) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20);
       DAT_005bf054 = *(uint *)(iVar8 + 0x20);
       _DAT_005bf484 =
            (int)((ulonglong)
                  ((longlong)(int)(*(int *)(unaff_EDI + 0x20) - DAT_005bf054) *
-                 (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014)) >> 0x20);
+                 (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1]) >> 0x20);
     }
     iVar8 = *(int *)(iVar8 + 0x28);
     lVar2 = (longlong)(*(int *)(unaff_EDI + 0x28) - iVar8) *
-            (longlong)*(int *)(&DAT_01c00c84 + DAT_005bf014);
+            (longlong)(int)g_ReciprocalLookupTable[iVar5 + 1];
     DAT_005bf488 = (int)((ulonglong)lVar2 >> 0x20);
     piVar3 = (int *)lVar2;
     uVar9 = 0;

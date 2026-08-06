@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   sample_rate
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_005289f0 at 00528a8e
+;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528a8e
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528d1a
 ;
 ; Referenced Globals:

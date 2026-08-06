@@ -11,14 +11,14 @@
 void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void)
 
 {
-  CSkeleton *pCVar1;
+  CSkeleton *this_ptr;
   
-  pCVar1 = g_CSkeleton_ARRAY_02737ef8;
+  this_ptr = g_CSkeleton_ARRAY_02737ef8;
   core_skeleton_cpp_FUN_0051f650();
   do {
-    core_skeleton_cpp_FUN_005174e0(pCVar1);
-    pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != (CSkeleton *)0x2da8a58);
+    core_skeleton_cpp_CSkeleton_FUN_005174e0(this_ptr);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != (CSkeleton *)0x2da8a58);
   _DAT_02737ef4 = 0;
   return;
 }

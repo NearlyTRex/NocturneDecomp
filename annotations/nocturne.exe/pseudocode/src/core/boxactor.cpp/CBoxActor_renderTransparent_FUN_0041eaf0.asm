@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 0041ceb0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D * this_ptr)
     ADD ESP,0x8                         ; 0041eb5f
     PUSH 0xffff                         ; 0041eb62
-    MOV EDI,dword ptr [0x005ae704]      ; 0041eb67 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 0041eb67 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 0041eb6d | DAT_01b4d738
     MOV ESI,EAX                         ; 0041eb6e
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0041eb70

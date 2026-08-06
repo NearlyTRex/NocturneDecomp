@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(SFire *objs,uint flags)
+; SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(SFire *this_ptr,uint flags)
 ;
 ; Parameters:
-; SFire *          Stack[0x4]:4   objs
+; SFire *          Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[37]:

@@ -11,7 +11,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_004fbc00(CScat *this_ptr)
 {
   CScat *this_ptr_00;
   
-  this_ptr_00 = (CScat *)core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  this_ptr_00 = (CScat *)core_hero_cpp_CHero_FUN_004b46d0(&this_ptr->base);
   (this_ptr_00->base).base.base.vtable._ub = &g_CScatVTable._ub;
   this_ptr_00->guns_drawn = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0

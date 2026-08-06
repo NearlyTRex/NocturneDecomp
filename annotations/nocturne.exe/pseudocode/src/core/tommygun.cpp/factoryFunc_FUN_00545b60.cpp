@@ -11,7 +11,7 @@ CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_00545b60(void)
 {
   CTommyGun *pCVar1;
   
-  pCVar1 = (CTommyGun *)FUN_0056497c(0x57c);
+  pCVar1 = operator_new(0x57c);
   if (pCVar1 == (CTommyGun *)0x0) {
     return (CTommyGun *)0x0;
   }

@@ -26,6 +26,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4
       return;
     }
   }
-  core_set_cpp_FUN_0050e660(g_CDemonSet_PTR_005be368,0x42c80000,0,0,0x3f800000);
+  core_set_cpp_CDemonSet_FUN_0050e660(g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
   return;
 }

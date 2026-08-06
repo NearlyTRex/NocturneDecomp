@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_simbox.cpp_CSimBox_ctor_FUN_00516ba0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5c4                          ; 00516b70
         ;   Label: core_simbox.cpp_factoryFunc_FUN_00516b70
-    CALL crt_unknown.c_FUN_0056497c     ; 00516b75
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00516b75
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00516b7a
     TEST EAX,EAX                        ; 00516b7d
     JNZ 0x00516b82                      ; 00516b7f

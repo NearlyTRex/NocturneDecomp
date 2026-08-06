@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,30 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 19,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 23,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 26,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 29,
-        "line": 35,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -102,7 +78,7 @@
     {
       "addr": "004a4170",
       "from_addr": "004a4a0e",
-      "name": "core_game.cpp_FUN_004a4170",
+      "name": "core_game.cpp_CGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -122,11 +98,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     },
     {
@@ -192,13 +168,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -209,7 +185,7 @@
       {
         "call_addr": "004a4a0e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -296,37 +272,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_loadStateInfo_FUN_0050e920.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 20,
-          "message": "Uninitialized variable: local_1c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 33,
-          "line": 27,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 37,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar2->vertices[0].a`). Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -335,30 +280,6 @@
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_1c",
-      "line": 20,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_1c != 1) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 27,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (this_ptr->camera_count != local_18) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 37,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pCVar2->cameras[0].enabled = local_14;",
-      "type": "static_uninitvar"
     }
   ]
 }

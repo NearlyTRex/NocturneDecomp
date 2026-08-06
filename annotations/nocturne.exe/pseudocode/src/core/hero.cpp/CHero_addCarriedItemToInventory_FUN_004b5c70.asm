@@ -9,8 +9,8 @@
 ;
 ; XREF[3]:
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 00497538
+;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053f560
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 00537f73
-;   core_stranger.cpp_FUN_0053f310 at 0053f560
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360

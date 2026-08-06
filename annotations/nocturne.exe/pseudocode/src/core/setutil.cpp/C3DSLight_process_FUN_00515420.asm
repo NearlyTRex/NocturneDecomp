@@ -18,13 +18,13 @@
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01bd1d80
 ;   undefined4 g_CGame_01c775ec.delta_time_float
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSet_01e57284.camera_enabled_flag
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -153,10 +153,10 @@ section .text
         ;   Label: LAB_005155a0
     MOV ECX,0x31e                       ; 005155a5
     PUSH 0x590e7d                       ; 005155aa | = "C3DSLight::process - NULL CDemonLight..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005155af | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005155b5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005155bb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005155af | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 005155b5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005155bb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005155c0
     JMP 0x00515434                      ; 005155c3
         ;   XREF to: 00515434 (UNCONDITIONAL_JUMP)  ; LAB_00515434

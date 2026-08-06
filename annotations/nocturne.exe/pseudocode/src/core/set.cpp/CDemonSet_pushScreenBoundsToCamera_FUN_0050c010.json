@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,36 +58,18 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 22,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_007f7374'; did you mean 'DAT_004FB374'?"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 23,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
         "line": 25,
         "message": "use of undeclared identifier '_DAT_01c00c50'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
+        "column": 31,
         "line": 25,
         "message": "use of undeclared identifier '_DAT_01c00c48'"
       },
@@ -95,25 +77,43 @@
         "category": "undeclared_identifier",
         "column": 13,
         "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c54'"
+        "message": "use of undeclared identifier '_DAT_01c00c50'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
         "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
+        "message": "use of undeclared identifier '_DAT_01c00c48'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
+        "column": 13,
         "line": 27,
         "message": "use of undeclared identifier '_DAT_01c00c54'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
+        "column": 29,
         "line": 27,
         "message": "use of undeclared identifier '_DAT_01c00c4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 28,
+        "message": "use of undeclared identifier '_DAT_01c00c54'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 31,
+        "line": 28,
+        "message": "use of undeclared identifier '_DAT_01c00c4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 55,
+        "message": "use of undeclared identifier '_DAT_01c00c48'"
       }
     ],
     "success": false,
@@ -122,20 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 136,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 89,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 271
+    "total_lines": 284
   },
   "cross_references": [
     {
@@ -173,9 +170,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "007f7374",
@@ -365,30 +362,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "piVar3 = (int *)*DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(byte *)((int)piVar3",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)piVar3 + 0x13) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)piVar3",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)piVar3 + 0x13) & 0x80) == 0) {",
-      "type": "pointer_truncation"
     }
   ]
 }

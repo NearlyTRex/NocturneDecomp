@@ -24,9 +24,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(CKey
     core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(this_ptr,transform_vector);
   }
   if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    g_INT_01cc4804 = 0x40e;
-    core_main_c_FUN_004c8440("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",this_ptr);
+    g_CurrentFilename = "..\\core\\dmodel.cpp";
+    g_CurrentLineNumber = 1038;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!");
   }
   triangle = this_ptr->collision_triangle_list + frame_index * this_ptr->collision_triangle_count;
   iVar1 = 0;

@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d16810
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   engine_font.cpp_CBitFont_FUN_0048fe30
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc2b
     PUSH EAX                            ; 0044cc2e
-    CALL crt_unknown.c_FUN_00564494     ; 0044cc2f
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044cc2f
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cc34
     XOR EBP,EBP                         ; 0044cc37
         ;   Label: LAB_0044cc37
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc4f
     PUSH EAX                            ; 0044cc52
-    CALL crt_unknown.c_FUN_00564494     ; 0044cc53
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044cc53
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cc58
     XOR ECX,ECX                         ; 0044cc5b
         ;   Label: LAB_0044cc5b
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc74
     PUSH EAX                            ; 0044cc77
-    CALL crt_unknown.c_FUN_00564494     ; 0044cc78
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044cc78
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cc7d
     XOR EDI,EDI                         ; 0044cc80
         ;   Label: LAB_0044cc80
@@ -99,8 +99,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cc99
     PUSH EAX                            ; 0044cc9c
-    CALL crt_unknown.c_FUN_00564494     ; 0044cc9d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044cc9d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cca2
     XOR EDX,EDX                         ; 0044cca5
         ;   Label: LAB_0044cca5
@@ -116,8 +116,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044ccc4
     PUSH EAX                            ; 0044ccc7
-    CALL crt_unknown.c_FUN_00564494     ; 0044ccc8
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044ccc8
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cccd
     XOR EDI,EDI                         ; 0044ccd0
         ;   Label: LAB_0044ccd0
@@ -182,8 +182,8 @@ section .text
         ;   XREF to: 0048fe30 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_FUN_0048fe30(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044cd58
     PUSH EAX                            ; 0044cd5b
-    CALL crt_unknown.c_FUN_00564494     ; 0044cd5c
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044cd5c
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044cd61
     JMP 0x0044cc12                      ; 0044cd64
         ;   XREF to: 0044cc12 (UNCONDITIONAL_JUMP)  ; LAB_0044cc12

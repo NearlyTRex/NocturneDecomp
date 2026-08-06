@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   engine_pod.cpp_FUN_004f7ae0 at 004f7b45
+;   engine_pod.cpp_CPodFile_FUN_004f7ae0 at 004f7b45
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_findFile_FUN_004567a0

@@ -21,6 +21,7 @@ void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00445f70(int vertex_in
   local_1c.y = (int)ROUND(y * 256.0f);
   local_1c.z = (int)ROUND(z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            ((SProjectedVertex *)(vertex_index * 0x30 + *DAT_005ae704),&local_1c);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[vertex_index].projected_vertex,
+             &local_1c);
   return;
 }

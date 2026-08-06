@@ -12,9 +12,9 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_0052ad50(CDirectS
   int *piVar1;
   
   if (((buffer_id < 1) || (0x18 < buffer_id)) || (*(int *)(&DAT_02dc9244 + buffer_id * 4) == 0)) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\snddx.cpp";
-    g_INT_01cc4804 = 0x2a1;
-    core_main_c_FUN_004c8440("DirectSoundDevice::freeSample - Invalid handle: %d",buffer_id);
+    g_CurrentFilename = "..\\sound\\snddx.cpp";
+    g_CurrentLineNumber = 673;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::freeSample - Invalid handle: %d");
   }
   piVar1 = *(int **)(&DAT_02dc9244 + buffer_id * 4);
   if (piVar1 != (int *)0x0) {

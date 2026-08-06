@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "category": "incompatible_types",
-        "column": 14,
+        "column": 11,
         "line": 29,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
@@ -65,7 +65,7 @@
         "category": "undeclared_identifier",
         "column": 5,
         "line": 91,
-        "message": "use of undeclared identifier 'FUN_00564494'"
+        "message": "use of undeclared identifier 'operator_delete'"
       }
     ],
     "success": false,
@@ -103,12 +103,12 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00564494"
+      "name": "crt_memory.c_operator_delete_FUN_00564494"
     },
     {
       "addr": "00564c18",
@@ -143,13 +143,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -297,7 +297,7 @@
       "line": 22,
       "match": "param_4",
       "severity": "mild",
-      "text": "piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);",
+      "text": "ptr = shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);",
       "type": "unnamed_param"
     },
     {
@@ -313,7 +313,7 @@
       "line": 33,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar5 = param_3 + -1;",
+      "text": "iVar4 = param_3 + -1;",
       "type": "unnamed_param"
     },
     {
@@ -321,7 +321,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar6);",
+      "text": "for (pbVar3 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -329,7 +329,7 @@
       "line": 34,
       "match": "param_3",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar6);",
+      "text": "for (pbVar3 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -337,7 +337,7 @@
       "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar6);",
+      "text": "for (pbVar3 = (byte *)(param_1 + (param_3 + -1) * param_2 + iVar5);",
       "type": "unnamed_param"
     },
     {
@@ -345,7 +345,7 @@
       "line": 35,
       "match": "param_7",
       "severity": "mild",
-      "text": "(-1 < iVar5 && (*pbVar4 != param_7)); pbVar4 = pbVar4 + -param_2) {",
+      "text": "(-1 < iVar4 && (*pbVar3 != param_7)); pbVar3 = pbVar3 + -param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -353,7 +353,7 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "(-1 < iVar5 && (*pbVar4 != param_7)); pbVar4 = pbVar4 + -param_2) {",
+      "text": "(-1 < iVar4 && (*pbVar3 != param_7)); pbVar3 = pbVar3 + -param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -361,7 +361,7 @@
       "line": 44,
       "match": "param_4",
       "severity": "mild",
-      "text": "} while (iVar6 < param_4);",
+      "text": "} while (iVar5 < param_4);",
       "type": "unnamed_param"
     },
     {
@@ -385,7 +385,7 @@
       "line": 49,
       "match": "param_4",
       "severity": "mild",
-      "text": "iVar6 = param_4 + -1;",
+      "text": "iVar5 = param_4 + -1;",
       "type": "unnamed_param"
     },
     {
@@ -401,7 +401,7 @@
       "line": 52,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar5 = param_3 + -1;",
+      "text": "iVar4 = param_3 + -1;",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +409,7 @@
       "line": 53,
       "match": "param_3",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(iVar6 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
+      "text": "for (pbVar3 = (byte *)(iVar5 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +417,7 @@
       "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(iVar6 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
+      "text": "for (pbVar3 = (byte *)(iVar5 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -425,7 +425,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (pbVar4 = (byte *)(iVar6 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
+      "text": "for (pbVar3 = (byte *)(iVar5 + (param_3 + -1) * param_2 + param_1 + iStack_14);",
       "type": "unnamed_param"
     },
     {
@@ -433,7 +433,7 @@
       "line": 54,
       "match": "param_7",
       "severity": "mild",
-      "text": "(-1 < iVar5 && (*pbVar4 != param_7)); pbVar4 = pbVar4 + -param_2) {",
+      "text": "(-1 < iVar4 && (*pbVar3 != param_7)); pbVar3 = pbVar3 + -param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -441,7 +441,7 @@
       "line": 54,
       "match": "param_2",
       "severity": "mild",
-      "text": "(-1 < iVar5 && (*pbVar4 != param_7)); pbVar4 = pbVar4 + -param_2) {",
+      "text": "(-1 < iVar4 && (*pbVar3 != param_7)); pbVar3 = pbVar3 + -param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -449,7 +449,7 @@
       "line": 67,
       "match": "param_4",
       "severity": "mild",
-      "text": "piVar1[param_4 + -1] = iVar5 + 1;",
+      "text": "ptr[param_4 + -1] = iVar4 + 1;",
       "type": "unnamed_param"
     },
     {
@@ -465,7 +465,7 @@
       "line": 77,
       "match": "param_4",
       "severity": "mild",
-      "text": "} while (iVar5 < param_4);",
+      "text": "} while (iVar4 < param_4);",
       "type": "unnamed_param"
     },
     {

@@ -10,10 +10,10 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610(CM
 
 {
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (DAT_005ae704,&this_ptr->camera_origin);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->camera_origin);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-            (DAT_005ae704,this_ptr->projection_scale);
+            (g_CDemonRenderer_PTR_005ae704,this_ptr->projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-            (DAT_005ae704,&this_ptr->reflection_matrix);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->reflection_matrix);
   return;
 }

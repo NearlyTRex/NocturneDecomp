@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_mobster.cpp_CMobster_ctor_FUN_004da150
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbdfc                         ; 004da120
         ;   Label: core_mobster.cpp_factoryFunc_FUN_004da120
-    CALL crt_unknown.c_FUN_0056497c     ; 004da125
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004da125
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004da12a
     TEST EAX,EAX                        ; 004da12d
     JNZ 0x004da132                      ; 004da12f

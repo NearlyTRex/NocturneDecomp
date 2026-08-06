@@ -9,12 +9,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058ba22
 ;   TerminatedCString s_removeChatOut_invalid_in_0058ba36
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01d06610
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
 ;
 ; *****************************************************************************
@@ -72,10 +72,10 @@ section .text
     MOV ECX,0x58ba22                    ; 004e96ac | = "..\\core\\netgame.cpp"
     MOV ESI,0x107                       ; 004e96b1
     PUSH 0x58ba36                       ; 004e96b6 | = "removeChatOut - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e96bb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e96c1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e96c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e96bb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004e96c1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e96c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004e96cc
     POP ESI                             ; 004e96cf
     JMP 0x004e9652                      ; 004e96d0

@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004a3b90 at 004a4075
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a4075
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -42,7 +42,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c_strupr_FUN_00566ad0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -80,10 +80,10 @@ section .text
     MOV ESI,0x57e4fa                    ; 00470ed8 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00470edd
     PUSH 0x57e510                       ; 00470ee2 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00470ef3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00470ef3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00470ef8
     MOV EAX,[0x01bcd070]                ; 00470efb | DAT_01bcd070
         ;   Label: LAB_00470efb

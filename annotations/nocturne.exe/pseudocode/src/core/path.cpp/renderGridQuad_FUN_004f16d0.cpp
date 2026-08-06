@@ -27,7 +27,7 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   float local_38;
   float local_2c;
   
-  pCVar4 = DAT_005ae704;
+  pCVar4 = g_CDemonRenderer_PTR_005ae704;
   dVar3 = _DAT_0058ce27;
   fVar1 = g_CDemonRaytrace_01fba938.adjusted_size.y * _DAT_0058ce1f;
   fVar2 = g_CDemonRaytrace_01fba938.adjusted_size.z * _DAT_0058ce1f;
@@ -44,19 +44,19 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   local_38 = (float)(int)ROUND(dVar10);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar4->vertex_buffer_ptr->projected_vertex,pCVar11);
-  pCVar4 = DAT_005ae704;
+  pCVar4 = g_CDemonRenderer_PTR_005ae704;
   piVar12 = &local_3c;
   pCVar11 = (CVector3i *)0x4f17aa;
   round((double)((float)local_3c + (float)(int)ROUND(dVar9)));
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar4->vertex_buffer_ptr[1].projected_vertex,pCVar11);
-  pCVar4 = DAT_005ae704;
+  pCVar4 = g_CDemonRenderer_PTR_005ae704;
   pCVar11 = (CVector3i *)0x4f17e0;
   dVar10 = round((double)((float)(int)local_38 + local_2c));
   local_3c = (int)ROUND(dVar10);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar4->vertex_buffer_ptr[2].projected_vertex,pCVar11);
-  pCVar4 = DAT_005ae704;
+  pCVar4 = g_CDemonRenderer_PTR_005ae704;
   pCVar11 = (CVector3i *)0x4f1816;
   round((double)((float)(int)piVar12 - local_38));
   iVar5 = red << 8;
@@ -64,8 +64,8 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   iVar7 = blue << 8;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&pCVar4->vertex_buffer_ptr[3].projected_vertex,pCVar11);
-  pCVar4 = DAT_005ae704;
-  DAT_005ae704->vertex_buffer_ptr->r = iVar5;
+  pCVar4 = g_CDemonRenderer_PTR_005ae704;
+  g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = iVar5;
   pCVar4->vertex_buffer_ptr->g = iVar6;
   pCVar4->vertex_buffer_ptr->b = iVar7;
   pCVar4->vertex_buffer_ptr->a = grid_x;

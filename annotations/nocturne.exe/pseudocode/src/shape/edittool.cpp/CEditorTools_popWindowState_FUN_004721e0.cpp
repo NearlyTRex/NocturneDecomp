@@ -14,14 +14,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditor
   int iVar1;
   
   if (_DAT_01bcd07c < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x718;
-    core_main_c_FUN_004c8440("CEditorTools::popWindow() called but no window was opened!");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 1816;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::popWindow() called but no window was opened!");
   }
   _DAT_01bcd07c = _DAT_01bcd07c + -1;
   iVar1 = _DAT_01bcd07c * 0x1d8;
-  if (*(int *)(iVar1 + 0x1bcd248) != 0) {
-    FUN_005638d0(*(int *)(iVar1 + 0x1bcd248));
+  if (*(void **)(iVar1 + 0x1bcd248) != (void *)0x0) {
+    free(*(void **)(iVar1 + 0x1bcd248));
     *(uint *)(iVar1 + 0x1bcd248) = 0;
   }
   _DAT_01c00c58 = *(uint *)(iVar1 + 0x1bcd090);

@@ -11,7 +11,7 @@
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0 at 0050e01d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cc942c
 ;   undefined4 DAT_01cc9430
@@ -65,7 +65,7 @@ section .text
         ;   Label: LAB_004d77cb
     ADD EAX,0xe8                        ; 004d77cf
     PUSH EAX                            ; 004d77d4
-    MOV ECX,dword ptr [0x005ae704]      ; 004d77d5 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004d77d5 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004d77db | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60 ; 004d77dc
         ;   XREF to: 0045ee60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)

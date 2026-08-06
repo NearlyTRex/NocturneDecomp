@@ -15,13 +15,13 @@
 ;   TerminatedCString s_CCloth_saveJoinedLight_C_0057ae5f
 ;   TerminatedCString s_core_cloth_cpp_0057ae99
 ;   TerminatedCString s_CCloth_saveJoinedLight_M_0057aeab
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x39e7c]   ; 00437d04
         ;   Label: LAB_00437d04
     IMUL ECX,ECX,0x30                   ; 00437d0a
-    MOV EDX,dword ptr [0x005ae704]      ; 00437d0d | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00437d0d | g_CDemonRenderer_PTR_005ae704
     MOV EDI,dword ptr [EDX]             ; 00437d13 | DAT_01b4d738
     MOV EDI,dword ptr [ECX + EDI*0x1 + 0x20] ; 00437d15
     MOV dword ptr [EAX + 0x3a64c],EDI   ; 00437d19
@@ -87,10 +87,10 @@ section .text
         ;   Label: LAB_00437d55
     MOV ECX,0x4e3                       ; 00437d5a
     PUSH 0x57ae5f                       ; 00437d5f | = "CCloth::saveJoinedLight - Can't save ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00437d64 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00437d6a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00437d70
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00437d64 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00437d6a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00437d70
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00437d75
     JMP 0x00437cd4                      ; 00437d78
         ;   XREF to: 00437cd4 (UNCONDITIONAL_JUMP)  ; LAB_00437cd4
@@ -98,10 +98,10 @@ section .text
         ;   Label: LAB_00437d7d
     MOV ESI,0x4e8                       ; 00437d82
     PUSH 0x57aeab                       ; 00437d87 | = "CCloth::saveJoinedLight - Model wasn'..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00437d8c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00437d92 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00437d98
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00437d8c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00437d92 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00437d98
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00437d9d
     JMP 0x00437ce2                      ; 00437da0
         ;   XREF to: 00437ce2 (UNCONDITIONAL_JUMP)  ; LAB_00437ce2

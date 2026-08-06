@@ -69,7 +69,7 @@
 ;   double DOUBLE_0057e246 = 256
 ;   undefined4 DAT_0059c8a0
 ;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5054
 ;   undefined4 DAT_005c5084
@@ -83,7 +83,7 @@
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
@@ -489,7 +489,7 @@ section .text
     FSTP float ptr [ESP + 0x8c]         ; 00469928
     FMUL float ptr [ESI + 0x30]         ; 0046992f
     MOV EBX,dword ptr [0x01b7b740]      ; 00469932 | DAT_01b7b740
-    MOV EDI,dword ptr [0x005ae704]      ; 00469938 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 00469938 | g_CDemonRenderer_PTR_005ae704
     INC EBX                             ; 0046993e
     LEA EAX,[ESP + 0x88]                ; 0046993f
     MOV dword ptr [0x01b7b740],EBX      ; 00469946 | DAT_01b7b740
@@ -508,7 +508,7 @@ section .text
         ;   XREF to: 0044aff0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube * this_ptr, uint rendering_mode)
     ADD ESP,0x8                         ; 00469970
     PUSH 0x2dd1184                      ; 00469973 | DAT_02dd1184
-    MOV EDX,dword ptr [0x005ae704]      ; 00469978 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00469978 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0046997e | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0046997f
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -542,10 +542,10 @@ section .text
     MOV ESI,0x57e1fe                    ; 004699ec | = "..\\core\\dtrace.cpp"
     MOV EDI,0x792                       ; 004699f1
     PUSH 0x57e211                       ; 004699f6 | = "Too many drawn cubes.  Need to recomp..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004699fb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00469a01 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00469a07
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004699fb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00469a01 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00469a07
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00469a0c
     ADD ESP,0xc4                        ; 00469a0f
     POP EBP                             ; 00469a15

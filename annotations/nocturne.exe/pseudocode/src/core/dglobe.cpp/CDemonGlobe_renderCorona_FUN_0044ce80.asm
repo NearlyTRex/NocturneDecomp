@@ -77,7 +77,7 @@ section .text
     ADD ESP,0x8                         ; 0044ce99
     LEA EAX,[ESP + 0x4c]                ; 0044ce9c
     PUSH EAX                            ; 0044cea0
-    MOV ECX,dword ptr [0x005ae704]      ; 0044cea1 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 0044cea1 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 0044cea7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 0044cea8
         ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)

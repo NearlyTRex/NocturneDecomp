@@ -11,8 +11,8 @@ void __cdecl core_flies_cpp_CFlies_archive_FUN_0048eff0(CFlies *this_ptr)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->fly_count,"count");
-  if (INT_005b9210 < 2) {
-    if (INT_005b9210 < 3) {
+  if (g_INT_005b9210 < 2) {
+    if (g_INT_005b9210 < 3) {
       return;
     }
   }
@@ -20,7 +20,7 @@ void __cdecl core_flies_cpp_CFlies_archive_FUN_0048eff0(CFlies *this_ptr)
     core_actor_cpp_archiveActor_FUN_0040c980(&this_ptr->follow_actor,"followActor");
     core_actor_cpp_archiveInteger_FUN_0040c900(&this_ptr->gather_count,"gatherCount");
     core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->gather_time,"gatherTime");
-    if (INT_005b9210 < 3) {
+    if (g_INT_005b9210 < 3) {
       return;
     }
   }

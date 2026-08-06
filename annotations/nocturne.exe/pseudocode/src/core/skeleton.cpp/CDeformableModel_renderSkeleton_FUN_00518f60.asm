@@ -26,7 +26,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a1ea8
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c70
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 0055bc00 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_getTranslation_FUN_0055bc00(CMatrix3x4f * matrix_in, CVector3f * vector_out)
     ADD ESP,0x8                         ; 00518fad
     LEA EAX,[ESP + 0x24]                ; 00518fb0
-    MOV EDX,dword ptr [0x005ae704]      ; 00518fb4 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00518fb4 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 00518fba
     FMUL float ptr [0x005a1ea8]         ; 00518fbc | DAT_005a1ea8
     FISTP dword ptr [EBX]               ; 00518fc2
@@ -122,7 +122,7 @@ section .text
     JL 0x0051905c                       ; 0051902b
         ;   XREF to: 0051905c (CONDITIONAL_JUMP)  ; LAB_0051905c
     IMUL ESI,EAX,0x30                   ; 0051902d
-    MOV EAX,[0x005ae704]                ; 00519030 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 00519030 | g_CDemonRenderer_PTR_005ae704
     MOV ECX,0xc                         ; 00519035
     SUB ESP,0x30                        ; 0051903a
     MOV EAX,dword ptr [EAX]             ; 0051903d | DAT_01b4d738
@@ -176,7 +176,7 @@ section .text
     PUSH EAX                            ; 005190bc
     LEA EAX,[ESP + 0x10]                ; 005190bd
     PUSH EAX                            ; 005190c1
-    MOV EDI,dword ptr [0x005ae704]      ; 005190c2 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 005190c2 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 005190c8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 005190c9
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -188,7 +188,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 ; 005190e1
         ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 005190e6
-    MOV EDX,dword ptr [0x005ae704]      ; 005190e9 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 005190e9 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 005190ef | DAT_01b4d738
     INC EBX                             ; 005190f0
     ADD ESI,0x30                        ; 005190f1

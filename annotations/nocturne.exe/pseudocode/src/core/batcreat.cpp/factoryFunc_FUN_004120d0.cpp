@@ -11,7 +11,7 @@ CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004120d0(void)
 {
   CBatCreature *pCVar1;
   
-  pCVar1 = (CBatCreature *)FUN_0056497c(0xbd6c);
+  pCVar1 = operator_new(0xbd6c);
   if (pCVar1 == (CBatCreature *)0x0) {
     return (CBatCreature *)0x0;
   }

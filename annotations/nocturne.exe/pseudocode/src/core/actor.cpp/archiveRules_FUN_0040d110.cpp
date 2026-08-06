@@ -40,19 +40,23 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(CRuleList *rules,char *pro
                 ("Rule list opening brace",property_name);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(DAT_00763e84,"%d");
+  iVar1 = _fscanf(DAT_00763e84,"%d",rules);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule count",property_name);
   }
   core_actor_cpp_archiveDescription_FUN_0040c3a0("ruleCount",property_name);
   iVar1 = 0;
   if (0 < rules->list_size) {
+    pacVar3 = rules->events;
+    pacVar4 = rules->conditions;
     do {
-      iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\" => \"%[^\"]\"\n");
+      iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\" => \"%[^\"]\"\n",pacVar4,pacVar3);
       if (iVar2 != 2) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("rule",property_name);
       }
+      pacVar4 = pacVar4 + 1;
       iVar1 = iVar1 + 1;
+      pacVar3 = pacVar3 + 1;
     } while (iVar1 < rules->list_size);
   }
   do {

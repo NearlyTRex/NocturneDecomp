@@ -7,8 +7,8 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004a4170 at 004a48cc
-;   core_game.cpp_FUN_004a4b50 at 004a4ebf
+;   core_game.cpp_CGame_FUN_004a4170 at 004a48cc
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a4ebf
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d95a7
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb5f
 ;
@@ -36,7 +36,7 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170
-;   core_script.cpp_FUN_004feff0
+;   core_script.cpp_CScript_FUN_004feff0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0
 ;   shape_edittool.cpp_FUN_0046fcd0
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
@@ -139,8 +139,8 @@ section .text
     MOV ECX,dword ptr [0x005be220]      ; 004d987d | DAT_005be220
         ;   Label: LAB_004d987d
     PUSH ECX                            ; 004d9883 | g_CScript_01e56da0
-    CALL core_script.cpp_FUN_004feff0   ; 004d9884
-        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004feff0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_FUN_004feff0 ; 004d9884
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004feff0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004d9889
     MOV EBX,dword ptr [0x005be220]      ; 004d988c | DAT_005be220
     PUSH EBX                            ; 004d9892 | g_CScript_01e56da0

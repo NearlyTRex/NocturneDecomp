@@ -22,15 +22,16 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
   engine_special_cpp_clearScreen_FUN_0052ee70();
   engine_special_cpp_clearZBufferNative_FUN_0052eed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-            (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
-  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,56.0);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
+            (g_CDemonRenderer_PTR_005ae704,56.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-            (DAT_005ae704,(CVector3f *)&DAT_02dd1184);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_02dd1184);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   local_1c.z = 36.0;
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_1c)
-  ;
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
+            (g_CDemonRenderer_PTR_005ae704,&local_1c);
   g_CDemonSet_PTR_005be368->rendering_mode = 1;
   local_28.x = _DAT_01c038f8 + -0x8000;
   local_28.y = _DAT_01c038fc + -0x8000;

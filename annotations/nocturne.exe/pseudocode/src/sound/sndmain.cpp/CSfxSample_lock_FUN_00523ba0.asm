@@ -19,12 +19,12 @@
 ;   TerminatedCString s_SfxSample_lock_invalid_r_005929e6
 ;   TerminatedCString s_sound_sndmain_cpp_00592a07
 ;   TerminatedCString s_SfxSample_lock_nothing_a_00592a1c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
 ;
 ; *****************************************************************************
@@ -55,10 +55,10 @@ section .text
         ;   Label: LAB_00523bce
     MOV EBP,0x752                       ; 00523bd3
     PUSH 0x5929e6                       ; 00523bd8 | = "SfxSample::lock - invalid region"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523bdd | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00523be3 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00523be9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523bdd | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 00523be3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523be9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523bee
     CMP dword ptr [EBX + 0x130],0x0     ; 00523bf1
         ;   Label: LAB_00523bf1
@@ -70,10 +70,10 @@ section .text
     MOV EAX,0x592a07                    ; 00523c07 | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x759                       ; 00523c0c
     PUSH 0x592a1c                       ; 00523c11 | = "SfxSample::lock - nothing allocated!"
-    MOV [0x01cc4800],EAX                ; 00523c16 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00523c1b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00523c21
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00523c16 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00523c1b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523c21
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523c26
     PUSH EBX                            ; 00523c29
         ;   Label: LAB_00523c29
@@ -99,10 +99,10 @@ section .text
         ;   Label: LAB_00523c52
     MOV EBP,0x74d                       ; 00523c57
     PUSH 0x5929af                       ; 00523c5c | = "SfxSample::lock - already locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523c61 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00523c67 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00523c6d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523c61 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 00523c67 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523c6d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523c72
     JMP 0x00523bbd                      ; 00523c75
         ;   XREF to: 00523bbd (UNCONDITIONAL_JUMP)  ; LAB_00523bbd

@@ -16,11 +16,11 @@
 ;   TerminatedCString s_CStrList_insert_invalid_0057eb70
 ;   TerminatedCString s_shape_edittool_cpp_0057eb91
 ;   TerminatedCString s_CStrList_insert_out_of_m_0057eba7
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_string.c_memmove_FUN_00566170
 ;   shape_edittool.cpp_CStrList_allocate_FUN_00473de0
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_00473d04
     MOV ESI,0x9ba                       ; 00473d09
     PUSH 0x57eb70                       ; 00473d0e | = "CStrList::insert - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00473d13 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00473d19 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00473d1f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00473d13 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00473d19 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00473d1f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00473d24
     MOV EDI,dword ptr [EBX]             ; 00473d27
         ;   Label: LAB_00473d27
@@ -129,10 +129,10 @@ section .text
         ;   Label: LAB_00473db8
     MOV EDI,0x9c8                       ; 00473dbd
     PUSH 0x57eba7                       ; 00473dc2 | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 00473dc7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473dcd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00473dd3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00473dc7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00473dcd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00473dd3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00473dd8
     JMP 0x00473d8f                      ; 00473ddb
         ;   XREF to: 00473d8f (UNCONDITIONAL_JUMP)  ; LAB_00473d8f

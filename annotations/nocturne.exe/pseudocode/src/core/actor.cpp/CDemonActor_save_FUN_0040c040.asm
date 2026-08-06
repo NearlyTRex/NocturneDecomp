@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10e3
-;   core_mission.cpp_FUN_004d8720 at 004d8a20
+;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8a20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005779d9
@@ -25,14 +25,14 @@
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;   undefined4 DAT_00763e8c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;
 ; *****************************************************************************
@@ -62,10 +62,10 @@ section .text
     MOV EDX,0x5779d9                    ; 0040c066 | = "..\\core\\actor.cpp"
     MOV ECX,0x787                       ; 0040c06b
     PUSH 0x5779eb                       ; 0040c070 | = "CDemonActor::save - tried to save act..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0040c075 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040c07b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040c081
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040c075 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040c07b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040c081
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0040c086
     PUSH EBX                            ; 0040c089
         ;   Label: LAB_0040c089
@@ -74,7 +74,7 @@ section .text
     PUSH 0x577a2c                       ; 0040c090 | = "%s{ %s \"%s\"\n"
     PUSH EDI                            ; 0040c095
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c096
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040c09b
     MOV EAX,[0x00763e84]                ; 0040c09e | DAT_00763e84
     MOV EBP,dword ptr [0x00763e8c]      ; 0040c0a3 | DAT_00763e8c
@@ -103,7 +103,7 @@ section .text
     PUSH 0x577a39                       ; 0040c0f7 | = "%s} %s \"%s\"\n"
     PUSH EDI                            ; 0040c0fc
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c0fd
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV DH,byte ptr [EDI + 0xc]         ; 0040c102
     ADD ESP,0x14                        ; 0040c105
     TEST DH,0x20                        ; 0040c108
@@ -126,10 +126,10 @@ section .text
     MOV EDX,0x577a46                    ; 0040c12d | = "..\\core\\actor.cpp"
     MOV ECX,0x7a9                       ; 0040c132
     PUSH 0x577a58                       ; 0040c137 | = "IO Error after writing actor of type %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040c13c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040c142 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040c148
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040c13c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040c142 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040c148
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0040c14d
     JMP 0x0040c10d                      ; 0040c150
         ;   XREF to: 0040c10d (UNCONDITIONAL_JUMP)  ; LAB_0040c10d

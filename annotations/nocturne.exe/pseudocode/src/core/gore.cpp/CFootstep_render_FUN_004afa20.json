@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 684,
+    "complexity_score": 655,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
-    "suspect_count": 54,
+    "pseudocode_lines": 125,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_many",
       "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 366
+    "total_lines": 367
   },
   "cross_references": [
     {
@@ -188,9 +188,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005ba84c",
@@ -525,31 +525,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,this_ptr->alpha);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_005ba84c",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ba84c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0x7ff;",
@@ -557,7 +541,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "DAT_005c503c = 0x7ff;",
@@ -565,7 +549,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0x7ff;",
@@ -573,7 +557,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0x7ff;",
@@ -581,7 +565,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_005c506c",
       "severity": "mild",
       "text": "DAT_005c506c = 0x7ff;",
@@ -589,7 +573,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0x7ff;",
@@ -597,7 +581,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0x7ff;",
@@ -605,7 +589,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_005c509c",
       "severity": "mild",
       "text": "DAT_005c509c = 0x7ff;",
@@ -613,7 +597,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0x7ff;",
@@ -621,7 +605,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0x7ff;",
@@ -629,7 +613,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_005c50cc",
       "severity": "mild",
       "text": "DAT_005c50cc = 0x7ff;",
@@ -637,7 +621,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0x7ff;",
@@ -645,7 +629,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0x2000;",
@@ -653,7 +637,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 62,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0;",
@@ -661,7 +645,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0x7f80;",
@@ -669,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0;",
@@ -677,7 +661,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 70,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "DAT_005c5038 = 0;",
@@ -685,7 +669,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 71,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "DAT_005c5034 = 0;",
@@ -693,7 +677,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 73,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "DAT_005c503c = 0;",
@@ -701,7 +685,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0x2000;",
@@ -709,7 +693,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0;",
@@ -717,7 +701,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0x7f80;",
@@ -725,7 +709,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0;",
@@ -733,7 +717,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_005c5068",
       "severity": "mild",
       "text": "DAT_005c5068 = 0;",
@@ -741,7 +725,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_005c5064",
       "severity": "mild",
       "text": "DAT_005c5064 = 0;",
@@ -749,7 +733,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 89,
       "match": "DAT_005c506c",
       "severity": "mild",
       "text": "DAT_005c506c = 0;",
@@ -757,7 +741,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0x2000;",
@@ -765,7 +749,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 94,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0;",
@@ -773,7 +757,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0x7f80;",
@@ -781,7 +765,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0;",
@@ -789,7 +773,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_005c5098",
       "severity": "mild",
       "text": "DAT_005c5098 = 0;",
@@ -797,7 +781,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_005c5094",
       "severity": "mild",
       "text": "DAT_005c5094 = 0;",
@@ -805,7 +789,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 105,
       "match": "DAT_005c509c",
       "severity": "mild",
       "text": "DAT_005c509c = 0;",
@@ -813,7 +797,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 109,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0x7f80;",
@@ -821,7 +805,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 110,
       "match": "DAT_005c50cc",
       "severity": "mild",
       "text": "DAT_005c50cc = 0;",
@@ -829,7 +813,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 111,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0;",
@@ -837,7 +821,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0;",
@@ -845,7 +829,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 116,
       "match": "DAT_005c50cc",
       "severity": "mild",
       "text": "DAT_005c50cc = 0;",
@@ -853,7 +837,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0;",
@@ -861,7 +845,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 121,
       "match": "DAT_005c50c4",
       "severity": "mild",
       "text": "DAT_005c50c4 = 0x2000;",
@@ -869,7 +853,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 122,
       "match": "DAT_005c50c8",
       "severity": "mild",
       "text": "DAT_005c50c8 = 0;",
@@ -877,18 +861,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 123,
       "match": "DAT_005c50cc",
       "severity": "mild",
       "text": "DAT_005c50cc = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78cc0);",
       "type": "undefined_data"
     },
     {

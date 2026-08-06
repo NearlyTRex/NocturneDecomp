@@ -10,21 +10,21 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(CPickList *th
 
 {
   CEdScrollBar *pCVar1;
-  CPickList *pCVar2;
-  void *ptr;
+  CPickList *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CPickListTypeInfo_0059cad0);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CPickListTypeInfo_0059cad0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).vtable._us = &g_CPickListVTable._us;
   shape_edittool_cpp_FUN_00476160(this_ptr);
   pCVar1 = shape_edittool_cpp_FUN_00476490(&this_ptr->scrollbar,0);
-  pCVar2 = (CPickList *)shape_edittool_cpp_CStrList_dtor_FUN_00473b80((CStrList *)(pCVar1 + -6),1);
+  ptr = (CPickList *)shape_edittool_cpp_CStrList_dtor_FUN_00473b80((CStrList *)(pCVar1 + -6),1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_00564494(pCVar2);
-  return pCVar2;
+  operator_delete(ptr);
+  return ptr;
 }

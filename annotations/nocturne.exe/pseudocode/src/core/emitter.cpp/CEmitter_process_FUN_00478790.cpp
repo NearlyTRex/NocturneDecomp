@@ -152,7 +152,7 @@ LAB_0047883d:
     if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) <
         (float)2.5) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(pCVar2,&local_a0,&pCVar1->position);
-      core_charactr_cpp_FUN_00427730
+      core_charactr_cpp_CCharacter_FUN_00427730
                 (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,1.0,1);
     }
     break;

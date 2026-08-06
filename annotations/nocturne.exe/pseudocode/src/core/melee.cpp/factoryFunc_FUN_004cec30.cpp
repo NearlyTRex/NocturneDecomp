@@ -11,7 +11,7 @@ CMelee * __cdecl core_melee_cpp_factoryFunc_FUN_004cec30(void)
 {
   CMelee *pCVar1;
   
-  pCVar1 = (CMelee *)FUN_0056497c(0x6c4);
+  pCVar1 = operator_new(0x6c4);
   if (pCVar1 == (CMelee *)0x0) {
     return (CMelee *)0x0;
   }

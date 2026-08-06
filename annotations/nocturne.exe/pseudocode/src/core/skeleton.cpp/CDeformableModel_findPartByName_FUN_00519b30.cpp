@@ -28,8 +28,8 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00519b30(CDefo
   if (error_if_not_found == 0) {
     return -1;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-  g_INT_01cc4804 = 0x5c8;
-  core_main_c_FUN_004c8440("Can't find part %s in model %s",part_name,this_ptr->model_filename);
+  g_CurrentFilename = "..\\core\\skeleton.cpp";
+  g_CurrentLineNumber = 1480;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find part %s in model %s");
   return -1;
 }

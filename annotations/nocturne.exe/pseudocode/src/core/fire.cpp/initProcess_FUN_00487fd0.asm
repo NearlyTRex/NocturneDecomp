@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01c09ed4
 ;   undefined4 DAT_01c09ed8
 ;   undefined4 g_CFlameCanActorType_01c70654.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonSet_01e57284.actor_count
 ;   undefined4 g_CDemonSet_01e57284.actors[0]
@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004b45b0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -94,10 +94,10 @@ section .text
         ;   Label: LAB_00488065
     MOV EDX,0xd03                       ; 0048806a
     PUSH 0x58135b                       ; 0048806f | = "CGunFlame::initProcess - too many cha..."
-    MOV [0x01cc4800],EAX                ; 00488074 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00488079 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0048807f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00488074 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00488079 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0048807f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00488084
     JMP 0x00488047                      ; 00488087
         ;   XREF to: 00488047 (UNCONDITIONAL_JUMP)  ; LAB_00488047

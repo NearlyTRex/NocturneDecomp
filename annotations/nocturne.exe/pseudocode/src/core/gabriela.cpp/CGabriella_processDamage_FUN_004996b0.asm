@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510
-;   core_game.cpp_FUN_004a3a90
+;   core_game.cpp_CGame_FUN_004a3a90
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -209,8 +209,8 @@ section .text
     MOV EAX,[0x005b9354]                ; 00499892 | g_CGame_PTR_005b9354
         ;   Label: LAB_00499892
     PUSH EAX                            ; 00499897 | g_CGame_01c775ec
-    CALL core_game.cpp_FUN_004a3a90     ; 00499898
-        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_004a3a90 ; 00499898
+        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049989d
     PUSH ESI                            ; 004998a0
     PUSH EBX                            ; 004998a1

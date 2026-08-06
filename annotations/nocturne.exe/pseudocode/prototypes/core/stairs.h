@@ -69,4 +69,4 @@ CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
 // Original: core_stairs.cpp_SFly_arrdtor_FUN_00534c80
 // Address: 00534c80
-SFly * __cdecl SFly::arrdtor(SFly *objs,uint flags);
+SFly * __cdecl SFly::arrdtor(SFly *this_ptr,uint flags);

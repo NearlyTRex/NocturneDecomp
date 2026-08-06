@@ -26,13 +26,13 @@
 ;   TerminatedCString s_mapFrameBuffer_ySize_too_00577439
 ;   TerminatedCString s_engine_2d_c_00577459
 ;   TerminatedCString s_mapFrameBuffer_invalid_b_00577468
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   ... and 17 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -75,10 +75,10 @@ section .text
     MOV EDX,0x57739b                    ; 00404168 | = "..\\engine\\2d.c"
     MOV ECX,0x9a0                       ; 0040416d
     PUSH 0x5773aa                       ; 00404172 | = "mapFrameBuffer - invalid bits/pixel"
-    MOV dword ptr [0x01cc4800],EDX      ; 00404177 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040417d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00404183
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00404177 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040417d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00404183
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00404188
     MOV EDX,EBP                         ; 0040418b
         ;   Label: LAB_0040418b
@@ -99,10 +99,10 @@ section .text
     MOV EAX,0x5773ce                    ; 004041aa | = "..\\engine\\2d.c"
     MOV EDX,0x9a1                       ; 004041af
     PUSH 0x5773dd                       ; 004041b4 | = "mapFrameBuffer - invalid stride"
-    MOV [0x01cc4800],EAX                ; 004041b9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004041be | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004041c4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004041b9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004041be | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004041c4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004041c9
     CMP EBP,0x1                         ; 004041cc
         ;   Label: LAB_004041cc
@@ -112,10 +112,10 @@ section .text
         ;   Label: LAB_004041d5
     MOV EAX,0x9a2                       ; 004041da
     PUSH 0x57740c                       ; 004041df | = "mapFrameBuffer - invalid size"
-    MOV dword ptr [0x01cc4800],ECX      ; 004041e4 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004041ea | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004041ef
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004041e4 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004041ea | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004041ef
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004041f4
     CMP EDI,0x4b0                       ; 004041f7
         ;   Label: LAB_004041f7
@@ -124,10 +124,10 @@ section .text
     MOV EDX,0x57742a                    ; 004041ff | = "..\\engine\\2d.c"
     MOV ECX,0x9a3                       ; 00404204
     PUSH 0x577439                       ; 00404209 | = "mapFrameBuffer - ySize too big!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040420e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00404214 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040421a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040420e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00404214 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040421a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040421f
     CMP dword ptr [ESP + 0x14],0x0      ; 00404222
         ;   Label: LAB_00404222
@@ -136,28 +136,28 @@ section .text
     MOV EDX,0x577459                    ; 00404229 | = "..\\engine\\2d.c"
     MOV ECX,0x9a4                       ; 0040422e
     PUSH 0x577468                       ; 00404233 | = "mapFrameBuffer - invalid buffer!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00404238 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040423e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00404244
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00404238 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040423e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00404244
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00404249
-    MOV EAX,[0x005b761c]                ; 0040424c | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0040424c | g_WindowWidth
         ;   Label: LAB_0040424c
     MOV [0x006b023c],EAX                ; 00404251 | DAT_006b023c
-    MOV EAX,[0x005b7620]                ; 00404256 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00404256 | g_WindowHeight
     MOV EDX,dword ptr [0x01bd2fa0]      ; 0040425b | DAT_01bd2fa0
     MOV [0x006b0240],EAX                ; 00404261 | DAT_006b0240
     MOV EAX,[0x01c00c58]                ; 00404266 | DAT_01c00c58
     XOR ECX,ECX                         ; 0040426b
     MOV [0x006b0244],EAX                ; 0040426d | DAT_006b0244
     MOV EAX,[0x01c00c5c]                ; 00404272 | DAT_01c00c5c
-    MOV dword ptr [0x005b761c],EBP      ; 00404277 | DAT_005b761c
+    MOV dword ptr [0x005b761c],EBP      ; 00404277 | g_WindowWidth
     MOV [0x006b0248],EAX                ; 0040427d | DAT_006b0248
     MOV EAX,[0x01c00c60]                ; 00404282 | DAT_01c00c60
     DEC EBP                             ; 00404287
     MOV [0x006b024c],EAX                ; 00404288 | DAT_006b024c
     MOV EAX,[0x01c00c64]                ; 0040428d | DAT_01c00c64
-    MOV dword ptr [0x005b7620],EDI      ; 00404292 | DAT_005b7620
+    MOV dword ptr [0x005b7620],EDI      ; 00404292 | g_WindowHeight
     MOV [0x006b0250],EAX                ; 00404298 | DAT_006b0250
     MOV EAX,[0x005b7624]                ; 0040429d | DAT_005b7624
     MOV dword ptr [0x01c00c58],ECX      ; 004042a2 | DAT_01c00c58
@@ -196,10 +196,10 @@ section .text
         ;   Label: LAB_00404305
     MOV EAX,0x998                       ; 0040430a
     PUSH 0x57737a                       ; 0040430f | = "mapFrameBuffer - already mapped!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00404314 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0040431a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040431f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00404314 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0040431a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040431f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00404324
     JMP 0x00404141                      ; 00404327
         ;   XREF to: 00404141 (UNCONDITIONAL_JUMP)  ; LAB_00404141

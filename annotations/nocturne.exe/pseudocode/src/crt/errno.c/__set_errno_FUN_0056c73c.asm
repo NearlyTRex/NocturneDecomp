@@ -6,6 +6,7 @@
 ;
 ; XREF[18]:
 ;   crt_io.c__utime_FUN_0056cb60 at 0056cb8e
+;   crt_io.c_chdir_FUN_00566570 at 0056657e
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c999
 ;   crt_io.c_tell_FUN_0056bc10 at 0056bc66
 ;   crt_io.c_write_FUN_0057301c at 005730c2
@@ -14,7 +15,6 @@
 ;   crt_stdio.c_lseek_FUN_005689c0 at 00568a3f
 ;   crt_stdio.c_rename_FUN_00566f00 at 00566f16
 ;   crt_stdlib.c__fullpath_FUN_00565d00 at 00565da7
-;   crt_unknown.c_FUN_00566570 at 0056657e
 ;   ... and 8 more
 ;
 ; Referenced Globals:

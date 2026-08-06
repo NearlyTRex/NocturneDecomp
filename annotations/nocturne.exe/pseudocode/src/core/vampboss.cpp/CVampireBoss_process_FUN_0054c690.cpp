@@ -81,13 +81,13 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *t
   pCVar14 = this_ptr;
   do {
     if (pCVar14->way_point_0 == (CDemonActor *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\vampboss.cpp";
-      g_INT_01cc4804 = 0xcf;
-      core_main_c_FUN_004c8440("CVampireBoss::process - Need 4 waypoints");
+      g_CurrentFilename = "..\\core\\vampboss.cpp";
+      g_CurrentLineNumber = 207;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CVampireBoss::process - Need 4 waypoints");
     }
     pCVar14 = (CVampireBoss *)((pCVar14->base).base.base.actor_name + 4);
   } while (pCVar14 != (CVampireBoss *)((this_ptr->base).base.base.actor_name + 0x10));
-  iVar8 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar8 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar8 == 0) {
     return;
   }
@@ -397,7 +397,7 @@ LAB_0054d1ae:
     }
     else {
       if (uVar11 < 3) {
-        core_vampboss_cpp_FUN_0054e130(this_ptr);
+        core_vampboss_cpp_CVampireBoss_FUN_0054e130(this_ptr);
         goto LAB_0054d1ae;
       }
       if (uVar11 < 4) {
@@ -585,7 +585,7 @@ LAB_0054d280:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   pCVar3 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar3);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   local_18 = (CVector3f *)&(this_ptr->base).base.base.orient;
   pCVar1 = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CCloth_process_FUN_00436e50

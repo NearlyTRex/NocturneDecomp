@@ -27,8 +27,8 @@
 ;   TerminatedCString s_wb_0058cf19
 ;   TerminatedCString s_engine_pcx_c_0058cf1c
 ;   TerminatedCString s_saveScreenRaw16_Unable_t_0058cf2c
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c00624
@@ -36,7 +36,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fputc_FUN_00566cc0
@@ -126,14 +126,14 @@ section .text
     MOV EBX,0x58cf1c                    ; 004f26a4 | = "..\\engine\\pcx.c"
     MOV ESI,0x6e                        ; 004f26a9
     PUSH 0x58cf2c                       ; 004f26ae | = "saveScreenRaw16 - Unable to open output"
-    MOV dword ptr [0x01cc4800],EBX      ; 004f26b3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f26b9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f26bf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004f26b3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004f26b9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f26bf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f26c4
     XOR EBP,EBP                         ; 004f26c7
         ;   Label: LAB_004f26c7
-    MOV EAX,[0x005b7620]                ; 004f26c9 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004f26c9 | g_WindowHeight
     MOV dword ptr [ESP + 0x5c],EBP      ; 004f26ce
     TEST EAX,EAX                        ; 004f26d2
     JLE 0x004f27a6                      ; 004f26d4
@@ -141,7 +141,7 @@ section .text
     MOV dword ptr [ESP + 0x58],EBP      ; 004f26da
     MOV ESI,dword ptr [ESP + 0x58]      ; 004f26de
         ;   Label: LAB_004f26de
-    MOV EBP,dword ptr [0x005b761c]      ; 004f26e2 | DAT_005b761c
+    MOV EBP,dword ptr [0x005b761c]      ; 004f26e2 | g_WindowWidth
     XOR EBX,EBX                         ; 004f26e8
     MOV ESI,dword ptr [ESI + 0x1bd2fa0] ; 004f26ea | DAT_01bd2fa0 | DAT_01bd2fa4
     TEST EBP,EBP                        ; 004f26f0
@@ -186,7 +186,7 @@ section .text
     INC EBX                             ; 004f276d
     CALL crt_stdio.c_fputc_FUN_00566cc0 ; 004f276e
         ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_00566cc0(int character, _FILE * file)
-    MOV EDX,dword ptr [0x005b761c]      ; 004f2773 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004f2773 | g_WindowWidth
     ADD ESP,0x8                         ; 004f2779
     CMP EBX,EDX                         ; 004f277c
     JL 0x004f26f8                       ; 004f277e
@@ -194,7 +194,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58]      ; 004f2784
         ;   Label: LAB_004f2784
     MOV ECX,dword ptr [ESP + 0x5c]      ; 004f2788
-    MOV EBX,dword ptr [0x005b7620]      ; 004f278c | DAT_005b7620
+    MOV EBX,dword ptr [0x005b7620]      ; 004f278c | g_WindowHeight
     ADD EDX,0x4                         ; 004f2792
     INC ECX                             ; 004f2795
     MOV dword ptr [ESP + 0x58],EDX      ; 004f2796
@@ -217,10 +217,10 @@ section .text
         ;   Label: LAB_004f27b7
     MOV ECX,0x68                        ; 004f27bc
     PUSH 0x58cef5                       ; 004f27c1 | = "saveScreenRaw16 - No ext found"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f27c6 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f27cc | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f27d2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f27c6 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f27cc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f27d2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f27d7
     JMP 0x004f266d                      ; 004f27da
         ;   XREF to: 004f266d (UNCONDITIONAL_JUMP)  ; LAB_004f266d

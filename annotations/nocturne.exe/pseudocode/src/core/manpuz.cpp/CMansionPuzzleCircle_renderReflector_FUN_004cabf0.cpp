@@ -17,7 +17,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(C
     return;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,&this_ptr->reflectors[reflector_index].rotation,
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->reflectors[reflector_index].rotation,
              &this_ptr->reflectors[reflector_index].position);
   render_flags = -1;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530

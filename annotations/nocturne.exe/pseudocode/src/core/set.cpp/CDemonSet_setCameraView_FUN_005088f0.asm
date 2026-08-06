@@ -30,9 +30,9 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f6f5
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e055
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502518
+;   core_set.cpp_CDemonSet_FUN_005090f0 at 00509127
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_0050e310 at 0050e324
-;   core_set.cpp_FUN_005090f0 at 00509127
-;   core_setdir.cpp_FUN_005125a0 at 005125d9
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 005125d9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590422
@@ -48,8 +48,8 @@
 ;   undefined4 DAT_005c15b8
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c038f4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 18 more
 ;
 ; Called Functions:
@@ -57,12 +57,12 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00440c50
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
+;   core_dcamera.cpp_CDemonCamera_FUN_004421b0
+;   core_dcamera.cpp_CDemonCamera_FUN_00448310
+;   core_dcamera.cpp_CDemonCamera_FUN_00448380
 ;   core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_004474e0
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
-;   core_dcamera.cpp_FUN_004421b0
-;   core_dcamera.cpp_FUN_00448310
-;   core_dcamera.cpp_FUN_00448380
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0
 ;   core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_0044e830
@@ -94,10 +94,10 @@ section .text
     MOV EBX,0x590422                    ; 00508919 | = "..\\core\\set.cpp"
     MOV ESI,0x3ed                       ; 0050891e
     PUSH 0x590432                       ; 00508923 | = "CDemonSet::setCameraView - invalid in..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00508928 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0050892e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00508934
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00508928 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0050892e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00508934
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00508939
     MOV EAX,[0x01fba2d8]                ; 0050893c | DAT_01fba2d8
         ;   Label: LAB_0050893c
@@ -186,8 +186,8 @@ section .text
     PUSH ESI                            ; 00508a3a
     MOV [0x01fba2ec],EAX                ; 00508a3b | DAT_01fba2ec
     MOV [0x01fba480],EAX                ; 00508a40 | DAT_01fba480
-    CALL core_setutil.cpp_FUN_005148b0  ; 00508a45
-        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
+    CALL core_setutil.cpp_C3DSCamera_FUN_005148b0 ; 00508a45
+        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_FUN_005148b0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00508a4a
     LEA EAX,[EBP + 0x15a86c]            ; 00508a4d
     MOV EDI,dword ptr [EBX + EBP*0x1 + 0x150] ; 00508a53
@@ -274,8 +274,8 @@ section .text
         ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00508b34
     PUSH 0x1fb8508                      ; 00508b37
-    CALL core_dcamera.cpp_FUN_00448310  ; 00508b3c
-        ;   XREF to: 00448310 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00448310()
+    CALL core_dcamera.cpp_CDemonCamera_FUN_00448310 ; 00508b3c
+        ;   XREF to: 00448310 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_00448310(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508b41
     MOV EAX,0x1                         ; 00508b44
     PUSH EAX                            ; 00508b49
@@ -287,12 +287,12 @@ section .text
     XOR EDX,EDX                         ; 00508b58
     PUSH 0x1fb8508                      ; 00508b5a
     MOV dword ptr [0x01ffb060],EDX      ; 00508b5f | DAT_01ffb060
-    CALL core_dcamera.cpp_FUN_004421b0  ; 00508b65
-        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_004421b0(CDemonCamera * this_ptr)
+    CALL core_dcamera.cpp_CDemonCamera_FUN_004421b0 ; 00508b65
+        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_004421b0(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508b6a
     PUSH 0x1fb8508                      ; 00508b6d
-    CALL core_dcamera.cpp_FUN_00448380  ; 00508b72
-        ;   XREF to: 00448380 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00448380()
+    CALL core_dcamera.cpp_CDemonCamera_FUN_00448380 ; 00508b72
+        ;   XREF to: 00448380 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_00448380(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 00508b77
     MOV EDX,dword ptr [ESP + 0xf8]      ; 00508b7a
     LEA EAX,[EDX*0x4 + 0x0]             ; 00508b81
@@ -598,10 +598,10 @@ section .text
     MOV EDX,0x590466                    ; 00508f2d | = "..\\core\\set.cpp"
     MOV ECX,0x460                       ; 00508f32
     PUSH 0x590476                       ; 00508f37 | = "CDemonSet::setCameraView - Too many o..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00508f3c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00508f42 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00508f48
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00508f3c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00508f42 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00508f48
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00508f4d
     CMP dword ptr [EBX + 0x19648],0x0   ; 00508f50
         ;   Label: LAB_00508f50

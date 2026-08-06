@@ -36,9 +36,9 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *this_ptr
   } while (cVar1 != '\0');
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_11c,"rb");
   if (p_Var4 == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dimage.cpp";
-    g_INT_01cc4804 = 0x68;
-    core_main_c_FUN_004c8440("CDemonImage::load - Unable to load image!");
+    g_CurrentFilename = "..\\core\\dimage.cpp";
+    g_CurrentLineNumber = 104;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonImage::load - Unable to load image!");
   }
   this_ptr->width = width;
   this_ptr->height = height;
@@ -56,9 +56,9 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_0044d550(CDemonImage *this_ptr
   pcVar8 = (char *)0x0;
 LAB_0044d60d:
   if (pcVar8 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dimage.cpp";
-    g_INT_01cc4804 = 0x7b;
-    core_main_c_FUN_004c8440("CDemonImage::load - Unable to find extention!");
+    g_CurrentFilename = "..\\core\\dimage.cpp";
+    g_CurrentLineNumber = 123;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonImage::load - Unable to find extention!");
   }
   pcVar6 = ".ACT";
   do {
@@ -72,9 +72,9 @@ LAB_0044d60d:
   } while (cVar1 != '\0');
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_11c,"rb");
   if (p_Var4 == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dimage.cpp";
-    g_INT_01cc4804 = 0x7f;
-    core_main_c_FUN_004c8440("CDemonImage::load - Unable to load palette!");
+    g_CurrentFilename = "..\\core\\dimage.cpp";
+    g_CurrentLineNumber = 127;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonImage::load - Unable to load palette!");
   }
   _fread(&this_ptr->palette,0x100,3,p_Var4);
   _fclose(p_Var4);
@@ -92,7 +92,7 @@ LAB_0044d60d:
     pCVar7 = (CDemonImage *)(pCVar7->color_cube_lookup + 2);
     pCVar5 = (CDemonImage *)(pCVar5->color_cube_lookup + 3);
     pCVar9->color_cube_lookup[0] =
-         (&DAT_01bf7720)[(uint)(bVar2 >> 3) * 0x20 + (local_1c >> 3) * 0x400 + (local_18 >> 3)];
+         g_ColorCubeLookup[(uint)(bVar2 >> 3) * 0x20 + (local_1c >> 3) * 0x400 + (local_18 >> 3)];
     pCVar9 = (CDemonImage *)(pCVar9->color_cube_lookup + 1);
   } while (pCVar7 != local_14);
   return;

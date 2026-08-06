@@ -13,19 +13,19 @@
 ;   undefined4 DAT_005b7650
 ;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
 ;   undefined4 DAT_01cae0e8
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGame_01cea280
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0
-;   core_charactr.cpp_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_004259f0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   core_mimic.cpp_CMimic_FUN_004d4ba0
+;   core_mimic.cpp_CMimic_FUN_004d4f30
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
-;   core_mimic.cpp_FUN_004d4ba0
-;   core_mimic.cpp_FUN_004d4f30
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
         ;   XREF to: 004d4ab0 (CONDITIONAL_JUMP)  ; LAB_004d4ab0
     PUSH dword ptr [ESP + 0x10]         ; 004d4a51
     PUSH EBX                            ; 004d4a55
-    CALL core_charactr.cpp_FUN_004259f0 ; 004d4a56
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004d4a56
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d4a5b
     TEST EAX,EAX                        ; 004d4a5e
     JZ 0x004d4a83                       ; 004d4a60
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 004d4ac0 (CONDITIONAL_JUMP)  ; LAB_004d4ac0
     PUSH dword ptr [ESP + 0x10]         ; 004d4a6d
     PUSH EBX                            ; 004d4a71
-    CALL core_mimic.cpp_FUN_004d4f30    ; 004d4a72
-        ;   XREF to: 004d4f30 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_FUN_004d4f30(CMimic * this_ptr, float delta_time)
+    CALL core_mimic.cpp_CMimic_FUN_004d4f30 ; 004d4a72
+        ;   XREF to: 004d4f30 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_004d4f30(CMimic * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d4a77
     PUSH EBX                            ; 004d4a7a
         ;   Label: LAB_004d4a7a
@@ -89,10 +89,10 @@ section .text
     MOV ECX,0x5893d1                    ; 004d4a87 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 004d4a8c
     PUSH 0x5893e3                       ; 004d4a91 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d4aa2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d4aa2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d4aa7
     POP ESI                             ; 004d4aaa
     JMP 0x004d4a04                      ; 004d4aab
@@ -132,8 +132,8 @@ section .text
     JZ 0x004d4a7a                       ; 004d4afd
         ;   XREF to: 004d4a7a (CONDITIONAL_JUMP)  ; LAB_004d4a7a
     PUSH EBX                            ; 004d4b03
-    CALL core_mimic.cpp_FUN_004d4ba0    ; 004d4b04
-        ;   XREF to: 004d4ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_FUN_004d4ba0(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_FUN_004d4ba0 ; 004d4b04
+        ;   XREF to: 004d4ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_004d4ba0(CMimic * this_ptr)
     MOV ECX,dword ptr [EBX + 0x4691c]   ; 004d4b09
     ADD ESP,0x4                         ; 004d4b0f
     CMP ECX,0x1                         ; 004d4b12

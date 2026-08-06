@@ -18,10 +18,10 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   core_fire.cpp_FUN_0048c0d0
+;   core_fire.cpp_CFireEffect_FUN_0048c0d0
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
-;   core_mission.cpp_FUN_004d9110
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
     PUSH EBX                            ; 0048e617
     MOV ESI,dword ptr [0x005baf90]      ; 0048e618 | g_CDemonMission_PTR_005baf90
     PUSH ESI                            ; 0048e61e | DAT_01cc9450
-    CALL core_mission.cpp_FUN_004d9110  ; 0048e61f
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 0048e61f
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0048e624
     LEA EDX,[ESP + 0x8]                 ; 0048e627
     PUSH EDX                            ; 0048e62b
@@ -128,8 +128,8 @@ section .text
     FADD float ptr [ESP + 0x44]         ; 0048e6b6
     PUSH EDI                            ; 0048e6ba
     FSTP float ptr [ESP + 0x3c]         ; 0048e6bb
-    CALL core_fire.cpp_FUN_0048c0d0     ; 0048e6bf
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 0048e6bf
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0048e6c4
     POP ESI                             ; 0048e6c7
     POP EDI                             ; 0048e6c8

@@ -45,7 +45,8 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
   int local_14;
   
   bVar9 = 0;
-  iVar8 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+  iVar8 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar8 != 0) {
     return;
   }
@@ -55,11 +56,11 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
   local_64.z = (float)(this_ptr->grid_origin).z * g_CDemonRaytrace_01fba938.adjusted_size.z +
                g_CDemonRaytrace_01fba938.bbox_min.z;
   local_7c = 0x4f1926;
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(DAT_005ae704,&local_64)
-  ;
+  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
+            (g_CDemonRenderer_PTR_005ae704,&local_64);
   local_7c = 0x4f193f;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005be090);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be090);
   _DAT_01e42814 = 4;
   _DAT_01e42818 = 0;
   _DAT_01e4281c = 0;
@@ -78,7 +79,8 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
   _DAT_01e42854 = 0x800000;
   _DAT_01e4284c = 3;
   local_7c = 0x4f19c6;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
+            (g_CDemonRenderer_PTR_005ae704,0);
   local_20 = depth << 8;
   local_28 = (byte *)(red << 8);
   local_24 = green << 8;
@@ -89,7 +91,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
     local_50 = 0;
     local_18 = (int)(this_ptr->height_cache + -1) + 0x160 + local_2c;
     do {
-      pCVar7 = DAT_005ae704;
+      pCVar7 = g_CDemonRenderer_PTR_005ae704;
       if ((-1000 < *(int *)(local_18 + 0x9c70)) && (*(int *)(local_18 + 0x9c70) < 1000)) {
         fVar2 = g_CDemonRaytrace_01fba938.adjusted_size.y * _DAT_0058ce2f;
         fVar3 = g_CDemonRaytrace_01fba938.adjusted_size.z * _DAT_0058ce2f;
@@ -116,13 +118,13 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         iVar8 = (int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&pCVar7->vertex_buffer_ptr->projected_vertex,pCVar12);
-        pCVar7 = DAT_005ae704;
+        pCVar7 = g_CDemonRenderer_PTR_005ae704;
         local_20 = local_7c;
         pCVar12 = (CVector3i *)0x4f1b52;
         round((double)((float)local_7c + local_4c));
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&pCVar7->vertex_buffer_ptr[1].projected_vertex,pCVar12);
-        pCVar7 = DAT_005ae704;
+        pCVar7 = g_CDemonRenderer_PTR_005ae704;
         puVar11 = &stack0xffffff80;
         pCVar12 = (CVector3i *)0x4f1b86;
         local_24 = iVar8;
@@ -130,13 +132,13 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
         local_7c = (int)ROUND(dVar10);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&pCVar7->vertex_buffer_ptr[2].projected_vertex,pCVar12);
-        pCVar7 = DAT_005ae704;
+        pCVar7 = g_CDemonRenderer_PTR_005ae704;
         local_28 = puVar11;
         round((double)((float)(int)puVar11 - local_54));
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&pCVar7->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff7c);
-        pCVar7 = DAT_005ae704;
-        DAT_005ae704->vertex_buffer_ptr->r = (int)local_38;
+        pCVar7 = g_CDemonRenderer_PTR_005ae704;
+        g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = (int)local_38;
         pCVar7->vertex_buffer_ptr->g = (int)local_40;
         pCVar7->vertex_buffer_ptr->b = (int)local_3c;
         pCVar7->vertex_buffer_ptr->a = local_34;
@@ -162,6 +164,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0(CPathMap *this_pt
     local_2c = local_2c + 4;
   } while ((int)local_58 < 100);
   local_7c = 0x4f1a63;
-  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0
+            (g_CDemonRenderer_PTR_005ae704,1);
   return;
 }

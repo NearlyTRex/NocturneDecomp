@@ -35,13 +35,13 @@ void __cdecl CMimic::setup(CMimic *this_ptr);
 // Address: 004d49f0
 void __cdecl CMimic::process(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_FUN_004d4ba0
+// Original: core_mimic.cpp_CMimic_FUN_004d4ba0
 // Address: 004d4ba0
-void __cdecl FUN_004d4ba0(CMimic *this_ptr);
+void __cdecl CMimic(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004d4f30
+// Original: core_mimic.cpp_CMimic_FUN_004d4f30
 // Address: 004d4f30
-void __cdecl FUN_004d4f30(CMimic *this_ptr,float delta_time);
+void __cdecl CMimic(CMimic *this_ptr,float delta_time);
 
 // Original: core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
 // Address: 004d5770

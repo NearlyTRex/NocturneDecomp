@@ -13,8 +13,8 @@
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_0048eb30 at 0048eb67
 ;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004aaca7
 ;   core_platfrm.cpp_CPlatform_process_FUN_004f6170 at 004f6712
+;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e569
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_0052e9d0 at 0052e9de
-;   core_sound.cpp_FUN_0052dff0 at 0052e569
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSfx_FUN_00527230

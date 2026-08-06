@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_pendulum.cpp_CPendulum_ctor_FUN_004f2c30
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x43c                          ; 004f2c00
         ;   Label: core_pendulum.cpp_factoryFunc_FUN_004f2c00
-    CALL crt_unknown.c_FUN_0056497c     ; 004f2c05
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004f2c05
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004f2c0a
     TEST EAX,EAX                        ; 004f2c0d
     JNZ 0x004f2c12                      ; 004f2c0f

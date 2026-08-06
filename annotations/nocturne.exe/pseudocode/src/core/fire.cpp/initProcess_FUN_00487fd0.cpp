@@ -26,9 +26,9 @@ void __cdecl core_fire_cpp_initProcess_FUN_00487fd0(void)
       iVar2 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0((CVector3f *)(iVar1 + 0x20),50.0);
       if (iVar2 != 0) {
         if (0x31 < _DAT_01c09e08) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\fire.cpp";
-          g_INT_01cc4804 = 0xd03;
-          core_main_c_FUN_004c8440("CGunFlame::initProcess - too many characters!");
+          g_CurrentFilename = "..\\core\\fire.cpp";
+          g_CurrentLineNumber = 3331;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("CGunFlame::initProcess - too many characters!");
         }
         *(int *)(&DAT_01c09e0c + _DAT_01c09e08 * 4) = iVar1;
         _DAT_01c09e08 = _DAT_01c09e08 + 1;

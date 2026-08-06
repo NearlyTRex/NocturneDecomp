@@ -11,9 +11,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
+;   core_stranger.cpp_CStranger_FUN_005384d0 at 005391c8
+;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053cab9
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053b3c6
-;   core_stranger.cpp_FUN_005384d0 at 005391c8
-;   core_stranger.cpp_FUN_0053c800 at 0053cab9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005951e7 = 0.00390625

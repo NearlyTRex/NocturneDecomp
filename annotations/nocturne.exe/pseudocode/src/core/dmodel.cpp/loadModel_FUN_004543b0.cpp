@@ -28,9 +28,9 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(char *filename)
     } while (iVar3 < _DAT_01abb658);
   }
   if (0xff < _DAT_01abb658) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    g_INT_01cc4804 = 0x4cd;
-    core_main_c_FUN_004c8440("Can't load %s because keyFrame model manager is full.  (Size is %d)",filename,0x100);
+    g_CurrentFilename = "..\\core\\dmodel.cpp";
+    g_CurrentLineNumber = 1229;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't load %s because keyFrame model manager is full.  (Size is %d)");
   }
   pCVar2 = g_CKeyFramedModel_ARRAY_01abb65c + _DAT_01abb658;
   _DAT_01abb658 = _DAT_01abb658 + 1;

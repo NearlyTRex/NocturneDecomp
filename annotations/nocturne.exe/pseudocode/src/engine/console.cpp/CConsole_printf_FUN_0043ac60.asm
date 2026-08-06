@@ -19,8 +19,8 @@
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413a7e
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 0041572f
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00416300 at 00416404
+;   core_boneguy.cpp_CBoneGuy_FUN_004196b0 at 00419959
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_00418a00 at 0041947d
-;   core_boneguy.cpp_FUN_004196b0 at 00419959
 ;   ... and 69 more
 ;
 ; Referenced Globals:
@@ -116,7 +116,7 @@ section .text
     PUSH 0x57b1c7                       ; 0043ad08 | = "%s"
     PUSH EBX                            ; 0043ad0d
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0043ad0e
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0043ad13
     PUSH EBX                            ; 0043ad16
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0043ad17

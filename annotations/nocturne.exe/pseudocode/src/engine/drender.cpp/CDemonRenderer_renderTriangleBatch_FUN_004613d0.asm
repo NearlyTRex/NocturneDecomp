@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160ed
-;   core_set.cpp_FUN_0050dd60 at 0050dda2
+;   core_set.cpp_CDemonSet_FUN_0050dd60 at 0050dda2
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30

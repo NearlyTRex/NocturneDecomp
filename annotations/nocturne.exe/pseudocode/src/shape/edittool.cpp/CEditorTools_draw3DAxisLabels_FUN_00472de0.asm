@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_cloth.cpp_FUN_00437ab0 at 00437cb0
+;   core_cloth.cpp_CCloth_FUN_00437ab0 at 00437cb0
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 005190e1
 ;   shape_edittool.cpp_FUN_00472fd0 at 00473060
 ;
@@ -36,7 +36,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290
@@ -180,10 +180,10 @@ section .text
         ;   Label: LAB_00472f4f
     MOV EBX,0x8b                        ; 00472f54
     PUSH 0x57e510                       ; 00472f59 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00472f6a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00472f6a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00472f6f
     JMP 0x00472df4                      ; 00472f72
         ;   XREF to: 00472df4 (UNCONDITIONAL_JUMP)  ; LAB_00472df4

@@ -48,12 +48,12 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
+;   crt_memory.c_operator_new_FUN_0056497c
 ;   crt_stdio.c_ftell_FUN_00566e70
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_string.c_splitpath_FUN_00566498
-;   crt_unknown.c_FUN_0056497c
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90
@@ -320,10 +320,10 @@ section .text
         ;   Label: LAB_00526881
     MOV EDI,0x1f6                       ; 00526886
     PUSH 0x5922c5                       ; 0052688b | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00526890 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00526896 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0052689c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00526890 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00526896 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0052689c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005268a1
     JMP 0x0052665b                      ; 005268a4
         ;   XREF to: 0052665b (UNCONDITIONAL_JUMP)  ; LAB_0052665b
@@ -416,8 +416,8 @@ section .text
     JLE 0x00526c07                      ; 00526993
         ;   XREF to: 00526c07 (CONDITIONAL_JUMP)  ; LAB_00526c07
     PUSH 0x8630                         ; 00526999
-    CALL crt_unknown.c_FUN_0056497c     ; 0052699e
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0052699e
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 005269a3
     TEST EAX,EAX                        ; 005269a6
     JZ 0x005269b3                       ; 005269a8
@@ -435,10 +435,10 @@ section .text
     MOV EDI,0x592796                    ; 005269c4 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x3c8                       ; 005269c9
     PUSH 0x5927ab                       ; 005269ce | = "Out of memory."
-    MOV dword ptr [0x01cc4800],EDI      ; 005269d3 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 005269d9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005269de
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 005269d3 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 005269d9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005269de
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005269e3
     MOV EAX,dword ptr [ESP + 0x378]     ; 005269e6
         ;   Label: LAB_005269e6

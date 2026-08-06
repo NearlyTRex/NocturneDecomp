@@ -43,7 +43,8 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
       _DAT_02dd925c = 0xffff;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005c11f4 + _DAT_02dd1230 * 0x18));
+              (g_CDemonRenderer_PTR_005ae704,
+               (SMRGLTextureBasic *)(&DAT_005c11f4 + _DAT_02dd1230 * 0x18));
     _DAT_01c038f4 = 0;
     _DAT_02dd9260 =
          g_CGame_PTR_005b9354->delta_time_float * (float)3.1415926535000001 * (float)0.5 *
@@ -59,7 +60,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         local_6c.z = (float)iVar2 * this_ptr->tile_size + _DAT_02dd1228;
         local_14 = iVar2;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,&local_6c);
+                  (g_CDemonRenderer_PTR_005ae704,&local_6c);
         local_30.x = local_6c.x;
         local_30.y = local_6c.y;
         local_30.z = local_6c.z;
@@ -77,7 +78,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         local_60.y = (int)ROUND(local_6c.y * _DAT_005a3e8c);
         local_60.z = (int)ROUND(_DAT_005a3e8c * 0.0);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                  (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
+                  (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (g_CDemonSet_PTR_005be368,&local_6c,&local_30,0);
         local_6c.x = this_ptr->tile_size;
@@ -92,7 +93,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         local_54.y = (int)ROUND(local_6c.y * _DAT_005a3e8c);
         local_54.z = (int)ROUND(local_6c.z * _DAT_005a3e8c);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                  (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
+                  (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (g_CDemonSet_PTR_005be368,&local_6c,&local_30,1);
         local_6c.z = this_ptr->tile_size;
@@ -108,7 +109,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         local_48.y = (int)ROUND(local_6c.y * _DAT_005a3e8c);
         local_48.z = (int)ROUND(local_6c.z * _DAT_005a3e8c);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                  (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_48);
+                  (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_48);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (g_CDemonSet_PTR_005be368,&local_6c,&local_30,2);
         local_6c.x = 0.0;
@@ -123,30 +124,32 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         local_3c.y = (int)ROUND(local_6c.y * _DAT_005a3e8c);
         local_3c.z = (int)ROUND(local_6c.z * _DAT_005a3e8c);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                  (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_3c);
+                  (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_3c);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (g_CDemonSet_PTR_005be368,&local_6c,&local_30,3);
         if (this_ptr->wave_animation_enabled == 0) {
           if (_DAT_01c02594 == 0) {
             if (render_mode == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0
-                        (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
+                        (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
             }
             else {
               engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
-                        (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
+                        (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
             }
           }
           else {
-            engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(DAT_005ae704,1);
+            engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
+                      (g_CDemonRenderer_PTR_005ae704,1);
             engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
-                      (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
+                      (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
           }
         }
         else {
-          engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xa000);
+          engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                    (g_CDemonRenderer_PTR_005ae704,0xa000);
           engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370
-                    (DAT_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
+                    (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);
         }
         local_18 = local_18 + 4;
         local_1c = local_1c + 1;

@@ -27,7 +27,8 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumC
   int local_10;
   
   bVar6 = 0;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar4 == 0) {
     local_24 = input_ptr->x - (this_ptr->camera_origin).x;
     local_20 = input_ptr->y - (this_ptr->camera_origin).y;

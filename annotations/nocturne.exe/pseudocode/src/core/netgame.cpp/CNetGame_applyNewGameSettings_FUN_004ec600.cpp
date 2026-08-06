@@ -74,9 +74,9 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
   bVar18 = 0;
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-    g_INT_01cc4804 = 0x7e6;
-    core_main_c_FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
+    g_CurrentFilename = "..\\core\\netgame.cpp";
+    g_CurrentLineNumber = 2022;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
   piVar13 = (int *)&stack0xfffffe90;
   for (iVar6 = 0x2c; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -138,9 +138,9 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(CNetGame
       }
       if (iVar6 == local_113) {
         if (local_24 == this_ptr->local_player_index) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-          g_INT_01cc4804 = 0x811;
-          core_main_c_FUN_004c8440("Hell froze");
+          g_CurrentFilename = "..\\core\\netgame.cpp";
+          g_CurrentLineNumber = 2065;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze");
         }
         core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(this_ptr,local_24);
       }

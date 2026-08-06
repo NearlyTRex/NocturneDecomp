@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_anvil.cpp_CAnvil_ctor_FUN_0040f560
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x33c                          ; 0040f530
         ;   Label: core_anvil.cpp_factoryFunc_FUN_0040f530
-    CALL crt_unknown.c_FUN_0056497c     ; 0040f535
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0040f535
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0040f53a
     TEST EAX,EAX                        ; 0040f53d
     JNZ 0x0040f542                      ; 0040f53f

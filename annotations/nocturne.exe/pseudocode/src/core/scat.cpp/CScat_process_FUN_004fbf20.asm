@@ -42,18 +42,18 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_00428c00
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
-;   core_charactr.cpp_FUN_004259f0
-;   core_charactr.cpp_FUN_00428c00
-;   core_charactr.cpp_FUN_0042a150
 ;   core_inv.cpp_CInventory_updateInventory_FUN_004c1850
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0
-;   core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40
+;   core_scat.cpp_CScat_FUN_004fcd90
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004fbf2c
     PUSH dword ptr [EBP + 0x18]         ; 004fbf2f
     PUSH EBX                            ; 004fbf32
-    CALL core_charactr.cpp_FUN_004259f0 ; 004fbf33
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 004fbf33
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fbf38
     TEST EAX,EAX                        ; 004fbf3b
     JZ 0x004fc2e3                       ; 004fbf3d
@@ -111,8 +111,8 @@ section .text
     FLD float ptr [EBX + 0x23ac]        ; 004fbfad
     PUSH EBX                            ; 004fbfb3
     FSTP float ptr [EBX + 0x242c]       ; 004fbfb4
-    CALL core_charactr.cpp_FUN_00428c00 ; 004fbfba
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 004fbfba
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fbfbf
     TEST EAX,EAX                        ; 004fbfc2
     JZ 0x004fc386                       ; 004fbfc4
@@ -272,8 +272,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004fc161
         ;   Label: LAB_004fc161
     PUSH EBX                            ; 004fc164
-    CALL core_scat.cpp_FUN_004fcd90     ; 004fc165
-        ;   XREF to: 004fcd90 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_004fcd90(CScat * this_ptr, float delta_time)
+    CALL core_scat.cpp_CScat_FUN_004fcd90 ; 004fc165
+        ;   XREF to: 004fcd90 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_FUN_004fcd90(CScat * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fc16a
     PUSH EBX                            ; 004fc16d
     XOR ESI,ESI                         ; 004fc16e
@@ -418,12 +418,12 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004fc2ce
         ;   Label: LAB_004fc2ce
     PUSH EBX                            ; 004fc2d1
-    CALL core_charactr.cpp_FUN_0042a150 ; 004fc2d2
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 004fc2d2
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fc2d7
     PUSH EBX                            ; 004fc2da
-    CALL core_scat.cpp_FUN_004fdd00     ; 004fc2db
-        ;   XREF to: 004fdd00 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_004fdd00(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_FUN_004fdd00 ; 004fc2db
+        ;   XREF to: 004fdd00 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_FUN_004fdd00(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fc2e0
     MOV ESP,EBP                         ; 004fc2e3
         ;   Label: caseD_5

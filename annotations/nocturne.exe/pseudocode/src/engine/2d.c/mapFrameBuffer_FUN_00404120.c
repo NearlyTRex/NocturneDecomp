@@ -14,48 +14,48 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
   int iVar1;
   
   if (DAT_006b023c != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x998;
-    core_main_c_FUN_004c8440("mapFrameBuffer - already mapped!");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2456;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - already mapped!");
   }
   if (stride == 0) {
     iVar1 = width * bits_per_pixel >> 0x1f;
     stride = (int)((width * bits_per_pixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
   }
   if (((bits_per_pixel != 8) && (bits_per_pixel != 0x10)) && (bits_per_pixel != 0x20)) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9a0;
-    core_main_c_FUN_004c8440("mapFrameBuffer - invalid bits/pixel");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2464;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - invalid bits/pixel");
   }
   iVar1 = width * bits_per_pixel >> 0x1f;
   if ((stride ^ stride >> 0x1f) - (stride >> 0x1f) <
       (int)((width * bits_per_pixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9a1;
-    core_main_c_FUN_004c8440("mapFrameBuffer - invalid stride");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2465;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - invalid stride");
   }
   if ((width < 1) || (height < 1)) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9a2;
-    core_main_c_FUN_004c8440("mapFrameBuffer - invalid size");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2466;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - invalid size");
   }
   if (0x4b0 < height) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9a3;
-    core_main_c_FUN_004c8440("mapFrameBuffer - ySize too big!");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2467;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - ySize too big!");
   }
   if (frame_buffer == (void *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x9a4;
-    core_main_c_FUN_004c8440("mapFrameBuffer - invalid buffer!");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 2468;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - invalid buffer!");
   }
-  DAT_006b023c = DAT_005b761c;
-  DAT_006b0240 = DAT_005b7620;
+  DAT_006b023c = g_WindowWidth;
+  DAT_006b0240 = g_WindowHeight;
   DAT_006b0244 = _DAT_01c00c58;
-  DAT_005b761c = width;
+  g_WindowWidth = width;
   DAT_006b0248 = _DAT_01c00c5c;
   DAT_006b024c = _DAT_01c00c60;
-  DAT_005b7620 = height;
+  g_WindowHeight = height;
   DAT_006b0250 = _DAT_01c00c64;
   _DAT_01c00c58 = 0;
   DAT_006b0254 = DAT_005b7624;

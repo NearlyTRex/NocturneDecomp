@@ -11,7 +11,7 @@
 ;   core_dpart.cpp_CDemonPart_dtor_FUN_00456f40 at 00456f46
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     JZ 0x00457085                       ; 00457073
         ;   XREF to: 00457085 (CONDITIONAL_JUMP)  ; LAB_00457085
     PUSH ESI                            ; 00457075
-    CALL crt_unknown.c_FUN_005638d0     ; 00457076
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00457076
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0045707b
     MOV dword ptr [EBX + 0x34],0x0      ; 0045707e
     MOV EBP,dword ptr [EBX + 0x30]      ; 00457085
@@ -47,16 +47,16 @@ section .text
     RET                                 ; 0045708f
     PUSH EDX                            ; 00457090
         ;   Label: LAB_00457090
-    CALL crt_unknown.c_FUN_005638d0     ; 00457091
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00457091
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00457096
     MOV dword ptr [EBX + 0x2c],0x0      ; 00457099
     JMP 0x0045706e                      ; 004570a0
         ;   XREF to: 0045706e (UNCONDITIONAL_JUMP)  ; LAB_0045706e
     PUSH EBP                            ; 004570a2
         ;   Label: LAB_004570a2
-    CALL crt_unknown.c_FUN_005638d0     ; 004570a3
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 004570a3
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 004570a8
     MOV dword ptr [EBX + 0x30],0x0      ; 004570ab
     POP EBP                             ; 004570b2

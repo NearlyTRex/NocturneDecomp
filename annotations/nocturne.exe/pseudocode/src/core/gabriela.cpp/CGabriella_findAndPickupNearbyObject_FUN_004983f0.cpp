@@ -129,9 +129,9 @@ LAB_00498579:
   if (uStack_28 < 2) {
     if (uStack_28 != 1) {
 LAB_00498759:
-      g_CHAR_PTR_01cc4800 = "..\\core\\gabriela.cpp";
-      g_INT_01cc4804 = 0x638;
-      core_main_c_FUN_004c8440("Hell froze - invalid pickUpType: %d",uStack_28);
+      g_CurrentFilename = "..\\core\\gabriela.cpp";
+      g_CurrentLineNumber = 1592;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze - invalid pickUpType: %d");
       return 1;
     }
     iVar5 = 0xe;

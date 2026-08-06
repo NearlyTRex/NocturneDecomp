@@ -5,18 +5,18 @@
 ;
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00403460 at 0040349e
+;   engine_2d.c_loadLightTable_FUN_00403460 at 0040349e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_00577207
 ;   TerminatedCString s_fog_0057720a
 ;   TerminatedCString s_engine_2d_c_0057720e
 ;   TerminatedCString s_Unable_to_write_light_ta_0057721d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fwrite_FUN_00563a50
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -57,10 +57,10 @@ section .text
     MOV ECX,0x57720e                    ; 0040353f | = "..\\engine\\2d.c"
     MOV ESI,0x738                       ; 00403544
     PUSH 0x57721d                       ; 00403549 | = "Unable to write light tab"
-    MOV dword ptr [0x01cc4800],ECX      ; 0040354e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00403554 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040355a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0040354e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00403554 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040355a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040355f
     POP ESI                             ; 00403562
     JMP 0x0040351e                      ; 00403563

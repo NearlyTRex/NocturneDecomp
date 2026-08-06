@@ -20,6 +20,7 @@
 #include "types/classes/CSkeleton.h"
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EAmmoType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -33,7 +34,7 @@
 
 int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name);
-void core_game_cpp_FUN_004a03a0(void);
+void __cdecl core_game_cpp_FUN_004a03a0(char *param_1,EAmmoType param_2);
 void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code,char *class_name,char *message);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr);
@@ -44,14 +45,14 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004a3860(void);
 void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004a3880(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004a3a50(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004a3a70(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004a3a90(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_FUN_004a3a70(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_FUN_004a3a90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,int value,float duration);
-void __cdecl core_game_cpp_FUN_004a3b90(CGame *this_ptr,char *save_filename);
-void __cdecl core_game_cpp_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
-void __cdecl core_game_cpp_FUN_004a4b50(CGame *this_ptr,int select_mode);
+void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filename);
+void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char *filename,int width,int height);
-void __cdecl core_game_cpp_FUN_004a57c0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(CGame *this_ptr,float delta_time);
 void __cdecl core_game_cpp_CGame_process_FUN_004a6010(CGame *this_ptr);
@@ -110,18 +111,18 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_process_FUN_004ac3f0(CGlass *this_ptr,float delta_time);
 int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ac440(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004ac600(CGlass *this_ptr);
-void __cdecl core_glass_cpp_FUN_004ac7c0(CGlass *this_ptr);
+void __cdecl core_glass_cpp_CGlass_FUN_004ac7c0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004acb60(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004acbc0(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004accc0(CGlass *this_ptr,SCollisionInfo *collision_info);
-void core_glass_cpp_FUN_004accf0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void __cdecl core_glass_cpp_CGlass_FUN_004accf0(CGlass *this_ptr,float *param_2,int *param_3,int *param_4,int param_5);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004ada20(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004adec0(CGlass *this_ptr);
-int __cdecl core_glass_cpp_FUN_004aded0(CGlass *this_ptr);
+int __cdecl core_glass_cpp_CGlass_FUN_004aded0(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004adef0(CGlass *this_ptr,uint flags);
-CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004adf70(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004adf70(CVector3f *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004adf90(void);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ae070(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr);

@@ -13,8 +13,8 @@
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c54b
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 at 00426eab
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425d28
+;   core_curtain.cpp_CCurtain_FUN_0043f330 at 0043f3c5
 ;   core_curtain.cpp_CCurtain_setup_FUN_0043dad0 at 0043daf6
-;   core_curtain.cpp_FUN_0043f330 at 0043f3c5
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 004438d8
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180 at 004431f1
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f8e5
@@ -24,11 +24,11 @@
 ;   TerminatedCString s_engine_drender_cpp_0057dd98
 ;   TerminatedCString s_CDR_texture_Too_many_cap_0057ddae
 ;   undefined4 DAT_01b4d7b0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
 ;
 ; *****************************************************************************
@@ -57,10 +57,10 @@ section .text
     MOV EDI,0x57dd98                    ; 00461edc | = "..\\engine\\drender.cpp"
     MOV EBP,0xafc                       ; 00461ee1
     PUSH 0x57ddae                       ; 00461ee6 | = "CDR::texture - Too many captured text..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00461eeb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00461ef1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00461ef7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00461eeb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 00461ef1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00461ef7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00461efc
     MOV EDX,dword ptr [0x01b4d7b0]      ; 00461eff | DAT_01b4d7b0
         ;   Label: LAB_00461eff

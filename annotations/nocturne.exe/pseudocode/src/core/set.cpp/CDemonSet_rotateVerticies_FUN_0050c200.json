@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,30 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 19,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 24,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 38,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050'"
       }
     ],
     "success": false,
@@ -86,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 67,
+    "complexity_score": 33,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 119
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -120,7 +94,7 @@
     {
       "addr": "0043f330",
       "from_addr": "0043f42f",
-      "name": "core_curtain.cpp_FUN_0043f330",
+      "name": "core_curtain.cpp_CCurtain_FUN_0043f330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -182,7 +156,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "0050c010",
@@ -215,9 +189,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -227,13 +201,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -299,7 +273,7 @@
       {
         "call_addr": "0043f42f",
         "call_type": "direct",
-        "caller": "core_curtain.cpp_FUN_0043f330",
+        "caller": "core_curtain.cpp_CCurtain_FUN_0043f330",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -424,30 +398,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "output = DAT_005ae704->vertex_buffer_ptr;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

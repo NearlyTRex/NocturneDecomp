@@ -123,9 +123,9 @@ void __cdecl CMorph::addPartFromDeformableModel(CMorph *this_ptr,int model_index
 // Address: 004e02c0
 void __cdecl CMorph::addPartFromKeyframedModel(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_FUN_004e0300
+// Original: core_morph.cpp_CMorph_FUN_004e0300
 // Address: 004e0300
-void FUN_004e0300(void);
+void __cdecl CMorph(CMorph *this_ptr);
 
 // Original: core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 // Address: 004e0340
@@ -147,10 +147,10 @@ void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 // Address: 004e0890
 int __cdecl addInts(int a,int b);
 
-// Original: core_morph.cpp_FUN_004e08a0
+// Original: core_morph.cpp_CBoundingBox3D_arrdtor_FUN_004e08a0
 // Address: 004e08a0
-void FUN_004e08a0(void *param_1);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
 // Address: 004e08c0
-CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *objs,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *this_ptr,uint flags);

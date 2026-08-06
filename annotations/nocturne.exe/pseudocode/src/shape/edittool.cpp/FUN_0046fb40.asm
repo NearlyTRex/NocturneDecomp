@@ -11,10 +11,10 @@
 ;   core_main.c_FUN_004c85f0 at 004c8a09
 ;   core_script.cpp_CScript_loadState_FUN_005052c0 at 005055d4
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920 at 0050e990
+;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053cafe
+;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053fbb9
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 00538350
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0 at 0053bf1e
-;   core_stranger.cpp_FUN_0053c800 at 0053cafe
-;   core_stranger.cpp_FUN_0053f310 at 0053fbb9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -30,11 +30,11 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   CKeys g_CKeys_01cc30e4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -65,10 +65,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 0046fb54 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fb59
     PUSH 0x57e510                       ; 0046fb5e | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046fb63 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0046fb69 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0046fb6f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046fb63 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0046fb69 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0046fb6f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0046fb74
     MOV EAX,[0x01bcd070]                ; 0046fb77 | DAT_01bcd070
         ;   Label: LAB_0046fb77

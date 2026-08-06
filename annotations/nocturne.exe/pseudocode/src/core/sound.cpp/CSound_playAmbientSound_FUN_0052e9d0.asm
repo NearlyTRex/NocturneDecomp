@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[2]:
+;   core_script.cpp_CScript_FUN_004feff0 at 004ff123
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050353d
-;   core_script.cpp_FUN_004feff0 at 004ff123
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284

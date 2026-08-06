@@ -7,9 +7,9 @@
 // Address: 0048cf00
 void __cdecl staticInit(void);
 
-// Original: core_flame.cpp_FUN_0048cf30
+// Original: core_flame.cpp_factoryFunc_FUN_0048cf30
 // Address: 0048cf30
-void FUN_0048cf30(void);
+CFlame * __cdecl factoryFunc(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_0048cf50
 // Address: 0048cf50
@@ -31,9 +31,9 @@ void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 // Address: 0048d5d0
 int __cdecl CFlame::renderTransparent(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_0048df10
+// Original: core_flame.cpp_CFlame_FUN_0048df10
 // Address: 0048df10
-void __cdecl FUN_0048df10(CFlame *this_ptr);
+void __cdecl CFlame(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_renderBackground_FUN_0048df20
 // Address: 0048df20

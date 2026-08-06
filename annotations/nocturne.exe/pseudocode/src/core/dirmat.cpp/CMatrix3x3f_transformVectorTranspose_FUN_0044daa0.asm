@@ -18,7 +18,7 @@
 ;   core_cloth.cpp_CCloth_applyRotation_FUN_00438780 at 00438810
 ;   core_cloth.cpp_CCloth_step_FUN_00436e80 at 004372ff
 ;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0 at 0043e24e
-;   core_dcamera.cpp_FUN_00442d9c at 00442e6b
+;   core_dcamera.cpp_CDemonCamera_FUN_00447f20 at 00448177
 ;   ... and 18 more
 ;
 ; *****************************************************************************

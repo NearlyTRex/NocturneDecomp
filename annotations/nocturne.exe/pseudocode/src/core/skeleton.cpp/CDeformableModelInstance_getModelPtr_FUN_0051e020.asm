@@ -15,8 +15,8 @@
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fd2c
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423790 at 0042384b
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422eed
+;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004271bc
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427b9d
-;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00426570 at 0042657f
 ;   ... and 40 more
 ;
 ; Referenced Globals:
@@ -24,11 +24,11 @@
 ;   TerminatedCString s_CDeformableModelInstance_00591ca0
 ;   TerminatedCString s_core_skeleton_cpp_00591cee
 ;   TerminatedCString s_Tried_to_do_something_wi_00591d03
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -48,10 +48,10 @@ section .text
     MOV EDI,0x591c8b                    ; 0051e039 | = "..\\core\\skeleton.cpp"
     MOV EBP,0xdd1                       ; 0051e03e
     PUSH 0x591ca0                       ; 0051e043 | = "CDeformableModelInstance::getModelPtr..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0051e048 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0051e04e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051e054
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0051e048 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0051e04e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051e054
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051e059
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 0051e05c
         ;   Label: LAB_0051e05c
@@ -66,10 +66,10 @@ section .text
     MOV ECX,0x591cee                    ; 0051e06e | = "..\\core\\skeleton.cpp"
     MOV ESI,0xdd3                       ; 0051e073
     PUSH 0x591d03                       ; 0051e078 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051e07d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051e083 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051e089
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051e07d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0051e083 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051e089
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0051e08e
     POP ESI                             ; 0051e091
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 0051e092

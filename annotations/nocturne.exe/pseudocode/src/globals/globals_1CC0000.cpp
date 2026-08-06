@@ -71,8 +71,8 @@ CVector3f g_CVector3f_ARRAY_01cc92a8[32] = {};
 SBat g_SBat_ARRAY_01ccdeec[30] = {};
 
 // char*
-char* g_CHAR_PTR_01cc4800 = {};
+char* g_CurrentFilename = {};
 
 // int
-int g_INT_01cc4804 = {};
+int g_CurrentLineNumber = {};
 

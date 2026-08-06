@@ -9,7 +9,7 @@
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00476e10 at 00476e10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
 
     PUSH EBX                            ; 00476df0
         ;   Label: shape_edittool.cpp_calculateGridWidth_FUN_00476df0
-    MOV EBX,dword ptr [0x005b761c]      ; 00476df1 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 00476df1 | g_WindowWidth
     MOV ECX,0x30                        ; 00476df7
     MOV EDX,EBX                         ; 00476dfc
     MOV EAX,EBX                         ; 00476dfe

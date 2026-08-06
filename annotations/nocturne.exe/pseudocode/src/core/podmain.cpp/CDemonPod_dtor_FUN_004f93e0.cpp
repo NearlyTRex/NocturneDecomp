@@ -9,18 +9,18 @@
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0(CDemonPod *this_ptr,uint flags)
 
 {
-  CPod *pCVar1;
-  void *ptr;
+  CPod *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CDemonPodTypeInfo_005a1510);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CDemonPodTypeInfo_005a1510);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pCVar1 = engine_pod_cpp_CPod_dtor_FUN_004f8840((CPod *)this_ptr,1);
+  ptr = engine_pod_cpp_CPod_dtor_FUN_004f8840((CPod *)this_ptr,1);
   if ((flags & 2) == 0) {
-    return (CDemonPod *)pCVar1;
+    return (CDemonPod *)ptr;
   }
-  FUN_00564494(pCVar1);
-  return (CDemonPod *)pCVar1;
+  operator_delete(ptr);
+  return (CDemonPod *)ptr;
 }

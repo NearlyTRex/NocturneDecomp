@@ -9,216 +9,137 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 399
-  Total diagnostics: 1221
+  Functions with findings: 378
+  Total diagnostics: 1075
   Functions flagged by multiple tools: 2
-  .keep.cpp files: 0, raw .cpp files: 399
+  .keep.cpp files: 0, raw .cpp files: 378
 
 ====================================================================================================
 DETAILED FINDINGS
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_CScript_step_FUN_004ff2c0  [.cpp] [Cppcheck (quick)]
-  File: core/script.cpp  (87 diagnostics)
-
-  Line  354: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  354: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  380: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line  380: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  462: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  462: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  662: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  662: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  721: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  721: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  792: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  792: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  818: [wrongPrintfScanfArgNum] sscanf format string requires 5 parameters but only 0 are given.
-  Line  826: [legacyUninitvar] Uninitialized variable: local_3f80
-  Line  924: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  924: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  983: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  983: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1034: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1034: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1161: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1161: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1217: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1217: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1254: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1254: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1381: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1381: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1517: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 1647: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1647: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1673: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1673: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1715: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line 1715: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1734: [legacyUninitvar] Uninitialized variable: local_3f70
-  Line 1739: [legacyUninitvar] Uninitialized variable: local_3f7c
-  Line 1760: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1760: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1814: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1814: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1907: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1907: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1958: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1958: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1993: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1993: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2036: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2091: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 2136: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2136: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2180: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2180: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2246: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2246: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2310: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2310: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2330: [legacyUninitvar] Uninitialized variable: local_70
-  Line 2344: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2344: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2364: [legacyUninitvar] Uninitialized variable: local_68
-  Line 2418: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2418: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2489: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2489: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2519: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2533: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2639: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 2669: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2669: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2690: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2690: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2737: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2737: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2805: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 2805: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2888: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 2888: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 2917: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 2960: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 3000: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 3000: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 3042: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 3090: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 3090: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 3105: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 3118: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-
-----------------------------------------------------------------------------------------------------
 core_event.cpp_CEventList_executeCommand_FUN_0047ac50  [.cpp] [Cppcheck (quick)]
   File: core/event.cpp  (57 diagnostics)
 
-  Line  257: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  264: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line  266: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  266: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  319: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  385: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line  385: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  417: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  436: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line  436: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  566: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line  566: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  651: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  651: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  699: [wrongPrintfScanfArgNum] sscanf format string requires 7 parameters but only 0 are given.
-  Line  699: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  704: [wrongPrintfScanfArgNum] sscanf format string requires 6 parameters but only 0 are given.
-  Line  704: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  709: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  709: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  803: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  803: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  835: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  835: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  868: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  912: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  934: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  934: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  977: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  977: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1076: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1076: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1139: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1139: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1175: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1212: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1244: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1244: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1292: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1292: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1398: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1398: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1503: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1503: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1578: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1578: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1655: [wrongPrintfScanfArgNum] sscanf format string requires 5 parameters but only 0 are given.
-  Line 1686: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1686: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1810: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1810: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1833: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1877: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line 1877: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1953: [wrongPrintfScanfArgNum] sscanf format string requires 7 parameters but only 0 are given.
-  Line 1964: [wrongPrintfScanfArgNum] sscanf format string requires 5 parameters but only 0 are given.
-  Line 1975: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
+  Line  257: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  264: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 3 are given.
+  Line  267: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  267: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  321: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  387: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 3 are given.
+  Line  387: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  420: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line  440: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 3 are given.
+  Line  440: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  571: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 3 are given.
+  Line  571: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  658: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  658: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  707: [wrongPrintfScanfArgNum] sscanf format string requires 7 parameters but only 6 are given.
+  Line  707: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  714: [wrongPrintfScanfArgNum] sscanf format string requires 6 parameters but only 5 are given.
+  Line  714: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  720: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line  720: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  816: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  816: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  849: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  849: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  883: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  927: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
+  Line  949: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  949: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  992: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  992: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1092: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1092: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1157: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line 1157: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1193: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line 1230: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1264: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1264: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1313: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1313: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1420: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1420: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1528: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1528: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1604: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line 1604: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1682: [wrongPrintfScanfArgNum] sscanf format string requires 5 parameters but only 4 are given.
+  Line 1714: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1714: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1841: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line 1841: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1865: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line 1910: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 2 are given.
+  Line 1910: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1987: [wrongPrintfScanfArgNum] sscanf format string requires 7 parameters but only 6 are given.
+  Line 1999: [wrongPrintfScanfArgNum] sscanf format string requires 5 parameters but only 4 are given.
+  Line 2012: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 3 are given.
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_step_FUN_004ff2c0  [.cpp] [Cppcheck (quick)]
+  File: core/script.cpp  (35 diagnostics)
+
+  Line  355: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  381: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  464: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  665: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  726: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  798: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  937: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  998: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1050: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1178: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1236: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1274: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1405: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1675: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1702: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1745: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1792: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1847: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1943: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1996: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2032: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2177: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2222: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2289: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2354: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2390: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2465: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2538: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2732: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2754: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2802: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2871: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2955: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 3076: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 3169: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0  [.cpp] [Cppcheck (quick)]
-  File: core/event.cpp  (43 diagnostics)
+  File: core/event.cpp  (16 diagnostics)
 
-  Line  208: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  208: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  280: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  280: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  335: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  335: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  437: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  499: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  499: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  560: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  560: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  591: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  591: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  630: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  655: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  679: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  701: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  727: [legacyUninitvar] Uninitialized variable: local_84
-  Line  737: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  737: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  823: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line  823: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  902: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  977: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  977: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1020: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 1044: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1044: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1097: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1097: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1136: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1136: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1194: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1194: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1233: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1233: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1290: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1290: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1331: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line 1366: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line 1366: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1505: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line 1510: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
+  Line  209: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  282: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  338: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  505: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  567: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  599: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  749: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  837: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  996: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1065: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1120: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1160: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1218: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1257: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1315: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1393: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_morph.cpp_CMorph_getReady_FUN_004e03c0  [.cpp] [Cppcheck (quick)]
@@ -279,24 +200,6 @@ core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790  [.cpp] [Cppcheck (quic
   Line  132: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  136: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040bd90  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (13 diagnostics)
-
-  Line   56: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   57: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   58: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   59: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   60: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   61: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   81: [nullPointerRedundantCheck] Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.
-  Line   86: [nullPointerArithmeticRedundantCheck] Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
-  Line   86: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   87: [nullPointerArithmeticRedundantCheck] Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
-  Line   87: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   88: [nullPointerArithmeticRedundantCheck] Either the condition 'param_1!=(char*)0x0' is redundant or there is pointer arithmetic with NULL pointer.
-  Line   88: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_mmx.c_detectIntelProcessor_FUN_004d9eac  [.cpp] [Cppcheck (quick)]
@@ -422,15 +325,15 @@ core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20  [.cpp] [Cppcheck (qui
 core_path.cpp_CPathMap_renderPathMap_FUN_004f18c0  [.cpp] [Cppcheck (quick)]
   File: core/path.cpp  (9 diagnostics)
 
-  Line  100: [objectIndex] The address of local variable 'local_48' might be accessed at non-zero index.
-  Line  100: [objectIndex] The address of local variable 'local_54' might be accessed at non-zero index.
-  Line  101: [objectIndex] The address of local variable 'local_44' might be accessed at non-zero index.
-  Line  102: [objectIndex] The address of local variable 'local_50' might be accessed at non-zero index.
-  Line  109: [ignoredReturnValue] Return value of function round() is not used.
-  Line  113: [ignoredReturnValue] Return value of function round() is not used.
-  Line  122: [ignoredReturnValue] Return value of function round() is not used.
-  Line  135: [ignoredReturnValue] Return value of function round() is not used.
-  Line  142: [uninitvar] Uninitialized variable: local_34
+  Line  102: [objectIndex] The address of local variable 'local_48' might be accessed at non-zero index.
+  Line  102: [objectIndex] The address of local variable 'local_54' might be accessed at non-zero index.
+  Line  103: [objectIndex] The address of local variable 'local_44' might be accessed at non-zero index.
+  Line  104: [objectIndex] The address of local variable 'local_50' might be accessed at non-zero index.
+  Line  111: [ignoredReturnValue] Return value of function round() is not used.
+  Line  115: [ignoredReturnValue] Return value of function round() is not used.
+  Line  124: [ignoredReturnValue] Return value of function round() is not used.
+  Line  137: [ignoredReturnValue] Return value of function round() is not used.
+  Line  144: [uninitvar] Uninitialized variable: local_34
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80  [.cpp] [Cppcheck (quick)]
@@ -472,30 +375,17 @@ core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0  [.cpp] [Cppcheck
   Line  331: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_glass.cpp_FUN_004accf0  [.cpp] [Cppcheck (quick)]
+core_glass.cpp_CGlass_FUN_004accf0  [.cpp] [Cppcheck (quick)]
   File: core/glass.cpp  (8 diagnostics)
 
   Line  171: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  177: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  229: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  235: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  283: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  289: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  341: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  347: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_setutil.cpp_C3DSLight_load_FUN_00514a70  [.cpp] [Cppcheck (quick)]
-  File: core/setutil.cpp  (8 diagnostics)
-
-  Line  145: [uninitvar] Uninitialized variable: local_44
-  Line  153: [uninitvar] Uninitialized variable: local_40
-  Line  165: [uninitvar] Uninitialized variable: local_48
-  Line  168: [uninitvar] Uninitialized variable: local_3c
-  Line  174: [uninitvar] Uninitialized variable: local_38
-  Line  175: [uninitvar] Uninitialized variable: local_30
-  Line  176: [uninitvar] Uninitialized variable: local_34
-  Line  177: [uninitvar] Uninitialized variable: local_2c
+  Line  230: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  236: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  285: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  291: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  344: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  350: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_turret.cpp_CTurret_updateTargeting_FUN_0054a110  [.cpp] [Cppcheck (quick)]
@@ -509,19 +399,6 @@ core_turret.cpp_CTurret_updateTargeting_FUN_0054a110  [.cpp] [Cppcheck (quick)]
   Line  138: [legacyUninitvar] Uninitialized variable: fStack_a0
   Line  138: [legacyUninitvar] Uninitialized variable: fStack_9c
   Line  138: [legacyUninitvar] Uninitialized variable: fStack_98
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10  [.cpp] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (8 diagnostics)
-
-  Line   90: [nullPointer] Possible null pointer dereference: pcVar8
-  Line  106: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  127: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  145: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  147: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  161: [legacyUninitvar] Uninitialized variable: local_470
-  Line  172: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line  180: [legacyUninitvar] Uninitialized variable: local_34
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750  [.cpp] [Cppcheck (quick)]
@@ -632,18 +509,6 @@ engine_special.cpp_FUN_00530322  [.cpp] [Cppcheck (quick)]
   Line   80: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_parseWavFile_FUN_00521830  [.cpp] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (7 diagnostics)
-
-  Line   35: [uninitvar] Uninitialized variable: local_17
-  Line   35: [uninitvar] Uninitialized variable: local_16
-  Line   35: [uninitvar] Uninitialized variable: local_15
-  Line   39: [uninitvar] Uninitialized variable: local_87
-  Line   39: [uninitvar] Uninitialized variable: local_86
-  Line   39: [uninitvar] Uninitialized variable: local_85
-  Line   73: [legacyUninitvar] Uninitialized variable: local_1c
-
-----------------------------------------------------------------------------------------------------
 cockpit_drawsurf.cpp_FUN_0045c400  [.cpp] [Cppcheck (quick)]
   File: cockpit/drawsurf.cpp  (6 diagnostics)
 
@@ -695,8 +560,8 @@ core_dlight.cpp_FUN_00450c90  [.cpp] [Cppcheck (quick)]
   Line  108: [uninitvar] Uninitialized variable: local_50
   Line  130: [uninitvar] Uninitialized variable: local_3c
   Line  134: [uninitvar] Uninitialized variable: local_54
-  Line  193: [uninitvar] Uninitialized variable: local_5c
-  Line  194: [legacyUninitvar] Uninitialized variable: local_5c
+  Line  194: [uninitvar] Uninitialized variable: local_5c
+  Line  195: [legacyUninitvar] Uninitialized variable: local_5c
 
 ----------------------------------------------------------------------------------------------------
 core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200  [.cpp] [Cppcheck (quick)]
@@ -735,12 +600,12 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0  [.cpp] [Cppcheck (quick)]
 core_sound.cpp_updateListeners_FUN_0052c9d0  [.cpp] [Cppcheck (quick)]
   File: core/sound.cpp  (6 diagnostics)
 
-  Line   71: [uninitvar] Uninitialized variable: local_c8
-  Line   72: [uninitvar] Uninitialized variable: local_cc
-  Line   73: [uninitvar] Uninitialized variable: local_c4
-  Line  115: [legacyUninitvar] Uninitialized variable: local_c8
-  Line  115: [legacyUninitvar] Uninitialized variable: local_c4
-  Line  143: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   69: [uninitvar] Uninitialized variable: local_c8
+  Line   70: [uninitvar] Uninitialized variable: local_cc
+  Line   71: [uninitvar] Uninitialized variable: local_c4
+  Line  113: [legacyUninitvar] Uninitialized variable: local_c8
+  Line  113: [legacyUninitvar] Uninitialized variable: local_c4
+  Line  141: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_drawLine3D_FUN_00401710  [.cpp] [Cppcheck (quick)]
@@ -763,6 +628,17 @@ sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0  [.cpp] [Cppcheck (quick)]
   Line  514: [uninitvar] Uninitialized variable: local_104
   Line  514: [uninitvar] Uninitialized variable: iStack_114
   Line  520: [uninitvar] Uninitialized variable: local_100
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_parseWavFile_FUN_00521830  [.cpp] [Cppcheck (quick)]
+  File: sound/sndmain.cpp  (6 diagnostics)
+
+  Line   34: [uninitvar] Uninitialized variable: local_17
+  Line   34: [uninitvar] Uninitialized variable: local_16
+  Line   34: [uninitvar] Uninitialized variable: local_15
+  Line   38: [uninitvar] Uninitialized variable: local_87
+  Line   38: [uninitvar] Uninitialized variable: local_86
+  Line   38: [uninitvar] Uninitialized variable: local_85
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300  [.cpp] [Clang-Tidy (quick), Cppcheck (quick)]
@@ -798,21 +674,21 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20  [.cpp] [Cppch
 core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (5 diagnostics)
 
-  Line   85: [uninitvar] Uninitialized variable: in_stack_0000000c
-  Line   87: [uninitvar] Uninitialized variable: in_stack_00000010
-  Line   93: [legacyUninitvar] Uninitialized variable: iStack_18
-  Line  143: [uninitvar] Uninitialized variable: iStack_28
-  Line  151: [uninitvar] Uninitialized variable: iStack_24
+  Line   88: [uninitvar] Uninitialized variable: in_stack_0000000c
+  Line   90: [uninitvar] Uninitialized variable: in_stack_00000010
+  Line   96: [legacyUninitvar] Uninitialized variable: iStack_18
+  Line  145: [uninitvar] Uninitialized variable: iStack_24
+  Line  157: [legacyUninitvar] Uninitialized variable: iStack_24
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_playSfxInternal_FUN_0052d120  [.cpp] [Cppcheck (quick)]
   File: core/sound.cpp  (5 diagnostics)
 
-  Line   51: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
-  Line   52: [legacyUninitvar] Uninitialized variable: local_30
-  Line   59: [uninitvar] Uninitialized variable: local_2c
-  Line  187: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line  200: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
+  Line   53: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
+  Line   54: [legacyUninitvar] Uninitialized variable: local_30
+  Line   61: [uninitvar] Uninitialized variable: local_2c
+  Line  191: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  204: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
 
 ----------------------------------------------------------------------------------------------------
 core_turret.cpp_CTurret_updatePatrol_FUN_0054a920  [.cpp] [Cppcheck (quick)]
@@ -865,17 +741,7 @@ core_xform.cpp_matrixToEulerAngles_FUN_0055b180  [.cpp] [Cppcheck (quick)]
   Line  165: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
-engine_font.cpp_FUN_00490210  [.cpp] [Cppcheck (quick)]
-  File: engine/font.cpp  (5 diagnostics)
-
-  Line   41: [uninitvar] Uninitialized variable: local_24
-  Line   41: [uninitvar] Uninitialized variable: local_20
-  Line   49: [uninitvar] Uninitialized variable: local_18
-  Line   50: [uninitvar] Uninitialized variable: local_14
-  Line   51: [uninitvar] Uninitialized variable: local_10
-
-----------------------------------------------------------------------------------------------------
-engine_pod.cpp_FUN_004f7ae0  [.cpp] [Cppcheck (quick)]
+engine_pod.cpp_CPodFile_FUN_004f7ae0  [.cpp] [Cppcheck (quick)]
   File: engine/pod.cpp  (5 diagnostics)
 
   Line   71: [uninitvar] Uninitialized variable: local_10f
@@ -892,6 +758,15 @@ cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0  [.cpp] [Cppche
   Line   53: [uninitvar] Uninitialized variable: unaff_ESI
   Line   63: [legacyUninitvar] Uninitialized variable: unaff_ESI
   Line   67: [uninitvar] Uninitialized variable: unaff_EDI
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_FUN_0040bd90  [.cpp] [Cppcheck (quick)]
+  File: core/actor.cpp  (4 diagnostics)
+
+  Line   52: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   53: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   54: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   72: [nullPointerRedundantCheck] Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_FUN_0040e1cc  [.cpp] [Cppcheck (quick)]
@@ -924,10 +799,10 @@ core_boneguy.cpp_hsvToRgb_FUN_00418480  [.cpp] [Cppcheck (quick)]
 core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0  [.cpp] [Cppcheck (quick)]
   File: core/box.cpp  (4 diagnostics)
 
-  Line   49: [uninitvar] Uninitialized variable: local_20
-  Line   50: [uninitvar] Uninitialized variable: local_1c
-  Line   51: [uninitvar] Uninitialized variable: local_18
-  Line   67: [uninitvar] Uninitialized variable: in_stack_00000008
+  Line   50: [uninitvar] Uninitialized variable: local_20
+  Line   51: [uninitvar] Uninitialized variable: local_1c
+  Line   52: [uninitvar] Uninitialized variable: local_18
+  Line   68: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
 core_box.cpp_CBox_processPhysics_FUN_0041ad10  [.cpp] [Cppcheck (quick)]
@@ -951,10 +826,10 @@ core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480  [.cpp] [Cppcheck (quick)]
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (4 diagnostics)
 
-  Line  308: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  406: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  412: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  457: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  309: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  407: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  413: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  459: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcube.cpp_FUN_0044ae80  [.cpp] [Cppcheck (quick)]
@@ -1036,15 +911,6 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004a3860  [.cpp] [Cppcheck (quick)]
   Line   53: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   56: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0  [.cpp] [Cppcheck (quick)]
-  File: core/mission.cpp  (4 diagnostics)
-
-  Line   49: [uninitvar] Uninitialized variable: local_2c
-  Line   84: [uninitvar] Uninitialized variable: local_20
-  Line   96: [legacyUninitvar] Uninitialized variable: local_1c
-  Line  132: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_searchGrid_FUN_004f20a0  [.cpp] [Cppcheck (quick)]
@@ -1131,19 +997,19 @@ shape_edittool.cpp_FUN_0047767b  [.cpp] [Cppcheck (quick)]
 sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (4 diagnostics)
 
-  Line   53: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  124: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  125: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  126: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  127: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (4 diagnostics)
 
   Line   42: [uninitvar] Uninitialized variable: piStack_1c
-  Line   51: [legacyUninitvar] Uninitialized variable: piStack_24
-  Line   72: [uninitvar] Uninitialized variable: iStack_6c
-  Line   75: [uninitvar] Uninitialized variable: unaff_EBP
+  Line   52: [legacyUninitvar] Uninitialized variable: piStack_24
+  Line   73: [uninitvar] Uninitialized variable: iStack_6c
+  Line   76: [uninitvar] Uninitialized variable: unaff_EBP
 
 ----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_FUN_0042d180  [.cpp] [Cppcheck (quick)]
@@ -1210,20 +1076,20 @@ core_bodypart.cpp_FUN_00417fec  [.cpp] [Cppcheck (quick)]
   Line   20: [uninitvar] Uninitialized variable: in_EDX
 
 ----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_FUN_0042af70  [.cpp] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (3 diagnostics)
+
+  Line   77: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  115: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  125: [cert-flp30-c] loop induction expression should not have floating-point type
+
+----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0  [.cpp] [Cppcheck (quick)]
   File: core/charactr.cpp  (3 diagnostics)
 
   Line   67: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line   68: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line   69: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_charactr.cpp_FUN_0042af70  [.cpp] [Clang-Tidy (quick)]
-  File: core/charactr.cpp  (3 diagnostics)
-
-  Line   77: [cert-flp30-c] loop induction expression should not have floating-point type
-  Line  115: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  125: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580  [.cpp] [Cppcheck (quick)]
@@ -1242,6 +1108,14 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290  [.cpp] [Cppcheck (quick
   Line  166: [uninitvar] Uninitialized variable: local_dc
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_FUN_00446810  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (3 diagnostics)
+
+  Line   71: [uninitvar] Uninitialized variable: local_114
+  Line  100: [legacyUninitvar] Uninitialized variable: unaff_EDI
+  Line  193: [uninitvar] Uninitialized variable: iStack_120
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (3 diagnostics)
 
@@ -1258,14 +1132,6 @@ core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50  [.cpp] [Cppcheck (qu
   Line  127: [uninitvar] Uninitialized variable: local_74
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_FUN_00446810  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (3 diagnostics)
-
-  Line   71: [uninitvar] Uninitialized variable: local_114
-  Line  100: [legacyUninitvar] Uninitialized variable: unaff_EDI
-  Line  193: [uninitvar] Uninitialized variable: iStack_120
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderCoronaScanlineSegment_FUN_004451a0  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (3 diagnostics)
 
@@ -1277,9 +1143,9 @@ core_dcamera.cpp_renderCoronaScanlineSegment_FUN_004451a0  [.cpp] [Cppcheck (qui
 core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0  [.cpp] [Cppcheck (quick)]
   File: core/dcube.cpp  (3 diagnostics)
 
-  Line   89: [uninitvar] Uninitialized variable: local_3c
-  Line   90: [uninitvar] Uninitialized variable: local_38
-  Line   91: [uninitvar] Uninitialized variable: local_34
+  Line   90: [uninitvar] Uninitialized variable: local_3c
+  Line   91: [uninitvar] Uninitialized variable: local_38
+  Line   92: [uninitvar] Uninitialized variable: local_34
 
 ----------------------------------------------------------------------------------------------------
 core_dirmat.cpp_FUN_0044db00  [.cpp] [Cppcheck (quick)]
@@ -1293,9 +1159,9 @@ core_dirmat.cpp_FUN_0044db00  [.cpp] [Cppcheck (quick)]
 core_dlight.cpp_renderConeLightGeometry_FUN_00451b70  [.cpp] [Cppcheck (quick)]
   File: core/dlight.cpp  (3 diagnostics)
 
-  Line  104: [uninitvar] Uninitialized variable: fStack_48
-  Line  120: [uninitvar] Uninitialized variable: local_34
-  Line  141: [uninitvar] Uninitialized variable: iStack_3c
+  Line  106: [uninitvar] Uninitialized variable: fStack_48
+  Line  122: [uninitvar] Uninitialized variable: local_34
+  Line  143: [uninitvar] Uninitialized variable: iStack_3c
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440  [.cpp] [Cppcheck (quick)]
@@ -1309,9 +1175,9 @@ core_dskybox.cpp_generateSkyDomeVertex_FUN_00463440  [.cpp] [Cppcheck (quick)]
 core_dskybox.cpp_renderSkyDome_FUN_00463580  [.cpp] [Cppcheck (quick)]
   File: core/dskybox.cpp  (3 diagnostics)
 
-  Line   89: [uninitvar] Uninitialized variable: local_6c
-  Line  136: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  137: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   90: [uninitvar] Uninitialized variable: local_6c
+  Line  139: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0046baa0  [.cpp] [Cppcheck (quick)]
@@ -1346,12 +1212,12 @@ core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700  [.cpp] [
   Line   46: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-core_elephant.cpp_FUN_00477890  [.cpp] [Cppcheck (quick)]
+core_elephant.cpp_CElephantGun_fire_FUN_00477890  [.cpp] [Cppcheck (quick)]
   File: core/elephant.cpp  (3 diagnostics)
 
-  Line  141: [legacyUninitvar] Uninitialized variable: in_stack_fffffec4
-  Line  142: [uninitvar] Uninitialized variable: fStack_44
-  Line  145: [legacyUninitvar] Uninitialized variable: pCStack_2c
+  Line  144: [legacyUninitvar] Uninitialized variable: in_stack_fffffec4
+  Line  145: [uninitvar] Uninitialized variable: fStack_44
+  Line  148: [legacyUninitvar] Uninitialized variable: pCStack_2c
 
 ----------------------------------------------------------------------------------------------------
 core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0  [.cpp] [Cppcheck (quick)]
@@ -1360,14 +1226,6 @@ core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0  [.cpp] [Cppcheck (q
   Line   44: [uninitvar] Uninitialized variable: local_68
   Line   50: [uninitvar] Uninitialized variable: local_64
   Line   53: [uninitvar] Uninitialized variable: local_70
-
-----------------------------------------------------------------------------------------------------
-core_event.cpp_parseVectorLocation_FUN_0047a4c0  [.cpp] [Cppcheck (quick)]
-  File: core/event.cpp  (3 diagnostics)
-
-  Line   17: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
-  Line   22: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line   22: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_createBulletImpact_FUN_0048ab60  [.cpp] [Cppcheck (quick)]
@@ -1415,7 +1273,7 @@ core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0  [.cpp] [Cppcheck (quick)]
 
   Line   76: [uninitvar] Uninitialized variable: iStack_30
   Line   77: [legacyUninitvar] Uninitialized variable: aiStack_2c
-  Line  185: [legacyUninitvar] Uninitialized variable: fStack_18
+  Line  191: [legacyUninitvar] Uninitialized variable: fStack_18
 
 ----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_00496d10  [.cpp] [Cppcheck (quick)]
@@ -1434,12 +1292,12 @@ core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0  [.cpp] [Cppcheck (qu
   Line   60: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
+core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
   File: core/lightgun.cpp  (3 diagnostics)
 
-  Line   57: [uninitvar] Uninitialized variable: fStack_2c
-  Line   57: [uninitvar] Uninitialized variable: fStack_34
-  Line   57: [uninitvar] Uninitialized variable: fStack_30
+  Line   60: [uninitvar] Uninitialized variable: fStack_2c
+  Line   60: [uninitvar] Uninitialized variable: fStack_34
+  Line   60: [uninitvar] Uninitialized variable: fStack_30
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_renderGridQuad_FUN_004f16d0  [.cpp] [Cppcheck (quick)]
@@ -1448,14 +1306,6 @@ core_path.cpp_renderGridQuad_FUN_004f16d0  [.cpp] [Cppcheck (quick)]
   Line   50: [ignoredReturnValue] Return value of function round() is not used.
   Line   55: [uninitvar] Uninitialized variable: local_2c
   Line   61: [ignoredReturnValue] Return value of function round() is not used.
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920  [.cpp] [Cppcheck (quick)]
-  File: core/set.cpp  (3 diagnostics)
-
-  Line   20: [uninitvar] Uninitialized variable: local_1c
-  Line   27: [uninitvar] Uninitialized variable: local_18
-  Line   37: [uninitvar] Uninitialized variable: local_14
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_processActors_FUN_00509140  [.cpp] [Cppcheck (quick)]
@@ -1541,9 +1391,9 @@ sound_mp3.cpp_mpegLayer3StereoProcess_FUN_004e6160  [.cpp] [Cppcheck (quick)]
 sound_snddx.cpp_fillStreamBuffer_FUN_00529c10  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (3 diagnostics)
 
-  Line   53: [uninitvar] Uninitialized variable: iStack_40
-  Line   53: [uninitvar] Uninitialized variable: iStack_38
-  Line   57: [uninitvar] Uninitialized variable: iStack_3c
+  Line   55: [uninitvar] Uninitialized variable: iStack_40
+  Line   55: [uninitvar] Uninitialized variable: iStack_38
+  Line   59: [uninitvar] Uninitialized variable: iStack_3c
 
 ----------------------------------------------------------------------------------------------------
 support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0  [.cpp] [Cppcheck (quick)]
@@ -1565,8 +1415,8 @@ support_codec.cpp_readBitsFromStream_FUN_00438ab0  [.cpp] [Cppcheck (quick)]
 cockpit_ckptutil.c_FUN_00430630  [.cpp] [Cppcheck (quick)]
   File: cockpit/ckptutil.c  (2 diagnostics)
 
-  Line  178: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
-  Line  280: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
+  Line  179: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
+  Line  281: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_drawLineAA_FUN_0042f600  [.cpp] [Cppcheck (quick)]
@@ -1660,6 +1510,20 @@ core_course.cpp_FUN_0043b500  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_FUN_004421b0  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (2 diagnostics)
+
+  Line  141: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  149: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_FUN_00447f20  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (2 diagnostics)
+
+  Line   89: [arrayIndexOutOfBounds] Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
+  Line   93: [uninitvar] Uninitialized variable: iStack_60
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
@@ -1688,25 +1552,11 @@ core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180  [.cpp] [Cppche
   Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_FUN_004421b0  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line  141: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  149: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_FUN_00442d9c  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
   Line   23: [uninitvar] Uninitialized variable: unaff_EBP
   Line   40: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_FUN_00447f20  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line   89: [arrayIndexOutOfBounds] Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
-  Line   93: [uninitvar] Uninitialized variable: iStack_60
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_00444600  [.cpp] [Cppcheck (quick)]
@@ -1740,8 +1590,8 @@ core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60  [.cpp] [
 core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520  [.cpp] [Cppcheck (quick)]
   File: core/dlight.cpp  (2 diagnostics)
 
-  Line   85: [uninitvar] Uninitialized variable: local_d4
-  Line   86: [legacyUninitvar] Uninitialized variable: aiStack_d0
+  Line   86: [uninitvar] Uninitialized variable: local_d4
+  Line   87: [legacyUninitvar] Uninitialized variable: aiStack_d0
 
 ----------------------------------------------------------------------------------------------------
 core_dlight.cpp_FUN_0044f9b0  [.cpp] [Cppcheck (quick)]
@@ -1796,8 +1646,8 @@ core_dtri.cpp_FUN_0046d4c0  [.cpp] [Cppcheck (quick)]
 core_elephant.cpp_CElephantGun_fireProjectile_FUN_00478120  [.cpp] [Cppcheck (quick)]
   File: core/elephant.cpp  (2 diagnostics)
 
-  Line   50: [uninitvar] Uninitialized variable: fStack_48
-  Line   50: [uninitvar] Uninitialized variable: fStack_4c
+  Line   51: [uninitvar] Uninitialized variable: fStack_48
+  Line   51: [uninitvar] Uninitialized variable: fStack_4c
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_FUN_00481960  [.cpp] [Cppcheck (quick)]
@@ -1812,13 +1662,6 @@ core_event.cpp_FUN_00481970  [.cpp] [Cppcheck (quick)]
 
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000004
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
-
-----------------------------------------------------------------------------------------------------
-core_event.cpp_parseIntOrCounter_FUN_0047a350  [.cpp] [Cppcheck (quick)]
-  File: core/event.cpp  (2 diagnostics)
-
-  Line   15: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   17: [uninitvar] Uninitialized variable: local_4
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireball_process_FUN_00484050  [.cpp] [Cppcheck (quick)]
@@ -1838,8 +1681,8 @@ core_fire.cpp_CLaserBeam_render_FUN_00485a90  [.cpp] [Cppcheck (quick)]
 core_fire.cpp_CPopcorn_render_FUN_00489990  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (2 diagnostics)
 
-  Line   51: [uninitvar] Uninitialized variable: local_30
-  Line   52: [legacyUninitvar] Uninitialized variable: aiStack_2c
+  Line   52: [uninitvar] Uninitialized variable: local_30
+  Line   53: [legacyUninitvar] Uninitialized variable: aiStack_2c
 
 ----------------------------------------------------------------------------------------------------
 core_flame.cpp_CFlame_updateGlobe_FUN_0048e230  [.cpp] [Cppcheck (quick)]
@@ -1852,8 +1695,8 @@ core_flame.cpp_CFlame_updateGlobe_FUN_0048e230  [.cpp] [Cppcheck (quick)]
 core_flies.cpp_CFlies_renderOpaque_FUN_0048f490  [.cpp] [Cppcheck (quick)]
   File: core/flies.cpp  (2 diagnostics)
 
-  Line  104: [uninitvar] Uninitialized variable: fStack_40
-  Line  105: [uninitvar] Uninitialized variable: fStack_3c
+  Line  106: [uninitvar] Uninitialized variable: fStack_40
+  Line  107: [uninitvar] Uninitialized variable: fStack_3c
 
 ----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0  [.cpp] [Cppcheck (quick)]
@@ -1894,8 +1737,8 @@ core_lightgun.cpp_CLightGun_updateBeamLight_FUN_004c6ff0  [.cpp] [Cppcheck (quic
 core_menu.cpp_configureSoundOptions_FUN_004d12e0  [.cpp] [Cppcheck (quick)]
   File: core/menu.cpp  (2 diagnostics)
 
-  Line  180: [uninitvar] Uninitialized variable: iStack_38
-  Line  528: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  182: [uninitvar] Uninitialized variable: iStack_38
+  Line  534: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650  [.cpp] [Cppcheck (quick)]
@@ -1905,20 +1748,6 @@ core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650  [.cpp] [Cp
   Line  120: [uninitvar] Uninitialized variable: local_190
 
 ----------------------------------------------------------------------------------------------------
-core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004d9680  [.cpp] [Cppcheck (quick)]
-  File: core/mission.cpp  (2 diagnostics)
-
-  Line   32: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   33: [uninitvar] Uninitialized variable: local_14
-
-----------------------------------------------------------------------------------------------------
-core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0  [.cpp] [Cppcheck (quick)]
-  File: core/mission.cpp  (2 diagnostics)
-
-  Line   55: [uninitvar] Uninitialized variable: local_14
-  Line   63: [legacyUninitvar] Uninitialized variable: unaff_ESI
-
-----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0  [.cpp] [Cppcheck (quick)]
   File: core/mission.cpp  (2 diagnostics)
 
@@ -1926,18 +1755,11 @@ core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0  [.cpp] [Cppcheck (
   Line   33: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_morph.cpp_FUN_004e0300  [.cpp] [Cppcheck (quick)]
-  File: core/morph.cpp  (2 diagnostics)
-
-  Line   20: [uninitvar] Uninitialized variable: in_stack_00000008
-  Line   20: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
 core_netgame.cpp_CNetGame_runLobby_FUN_004eb520  [.cpp] [Cppcheck (quick)]
   File: core/netgame.cpp  (2 diagnostics)
 
-  Line  101: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  106: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  102: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  108: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_renderPathMapsAtPosition_FUN_004f1f80  [.cpp] [Cppcheck (quick)]
@@ -1952,20 +1774,6 @@ core_platfrm.cpp_FUN_004f76c0  [.cpp] [Cppcheck (quick)]
 
   Line   18: [uninitvar] Uninitialized variable: in_stack_00000004
   Line   20: [uninitvar] Uninitialized variable: in_stack_00000008
-
-----------------------------------------------------------------------------------------------------
-core_script.cpp_parseBodyPartMask_FUN_004fe3d0  [.cpp] [Cppcheck (quick)]
-  File: core/script.cpp  (2 diagnostics)
-
-  Line   26: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-  Line   26: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0  [.cpp] [Cppcheck (quick)]
-  File: core/setdir.cpp  (2 diagnostics)
-
-  Line   21: [uninitvar] Uninitialized variable: local_18
-  Line   25: [uninitvar] Uninitialized variable: local_14
 
 ----------------------------------------------------------------------------------------------------
 core_setdir.cpp_FUN_00514390  [.cpp] [Cppcheck (quick)]
@@ -1989,25 +1797,18 @@ core_setdir.cpp_FUN_005143b0  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
-core_setutil.cpp_C3DSCamera_load_FUN_005144e0  [.cpp] [Cppcheck (quick)]
-  File: core/setutil.cpp  (2 diagnostics)
-
-  Line   22: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   22: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
 core_shotgun.cpp_CShotgun_fireProjectile_FUN_00516770  [.cpp] [Cppcheck (quick)]
   File: core/shotgun.cpp  (2 diagnostics)
 
-  Line   50: [uninitvar] Uninitialized variable: fStack_48
-  Line   50: [uninitvar] Uninitialized variable: fStack_4c
+  Line   51: [uninitvar] Uninitialized variable: fStack_48
+  Line   51: [uninitvar] Uninitialized variable: fStack_4c
 
 ----------------------------------------------------------------------------------------------------
-core_shotgun.cpp_FUN_00515ea0  [.cpp] [Cppcheck (quick)]
+core_shotgun.cpp_CShotgun_fire_FUN_00515ea0  [.cpp] [Cppcheck (quick)]
   File: core/shotgun.cpp  (2 diagnostics)
 
-  Line  143: [legacyUninitvar] Uninitialized variable: in_stack_fffffec4
-  Line  147: [legacyUninitvar] Uninitialized variable: pCStack_2c
+  Line  146: [legacyUninitvar] Uninitialized variable: in_stack_fffffec4
+  Line  150: [legacyUninitvar] Uninitialized variable: pCStack_2c
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60  [.cpp] [Cppcheck (quick)]
@@ -2020,8 +1821,8 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00
 core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (2 diagnostics)
 
-  Line   69: [uninitvar] Uninitialized variable: extraout_ECX
-  Line   70: [uninitvar] Uninitialized variable: extraout_EDX
+  Line   70: [uninitvar] Uninitialized variable: extraout_ECX
+  Line   71: [uninitvar] Uninitialized variable: extraout_EDX
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590  [.cpp] [Cppcheck (quick)]
@@ -2034,8 +1835,8 @@ core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_0051e590  [.cp
 core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (2 diagnostics)
 
-  Line   85: [uninitvar] Uninitialized variable: local_9c
-  Line   85: [uninitvar] Uninitialized variable: local_38
+  Line   87: [uninitvar] Uninitialized variable: local_9c
+  Line   87: [uninitvar] Uninitialized variable: local_38
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_FUN_0051f800  [.cpp] [Cppcheck (quick)]
@@ -2066,6 +1867,13 @@ core_sound.cpp_FUN_0052ee40  [.cpp] [Cppcheck (quick)]
   Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_FUN_0053f310  [.cpp] [Cppcheck (quick)]
+  File: core/stranger.cpp  (2 diagnostics)
+
+  Line   61: [uninitvar] Uninitialized variable: local_14
+  Line   61: [uninitvar] Uninitialized variable: local_38
+
+----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320  [.cpp] [Cppcheck (quick)]
   File: core/stranger.cpp  (2 diagnostics)
 
@@ -2076,15 +1884,8 @@ core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320  [.cpp] [Cppcheck (quick)
 core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260  [.cpp] [Cppcheck (quick)]
   File: core/stranger.cpp  (2 diagnostics)
 
-  Line  167: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  213: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_FUN_0053f310  [.cpp] [Cppcheck (quick)]
-  File: core/stranger.cpp  (2 diagnostics)
-
-  Line   61: [uninitvar] Uninitialized variable: local_14
-  Line   61: [uninitvar] Uninitialized variable: local_38
+  Line  168: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  215: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_stranger.cpp_FUN_00540970  [.cpp] [Cppcheck (quick)]
@@ -2125,8 +1926,8 @@ engine_drender.cpp_FUN_0045ed40  [.cpp] [Cppcheck (quick)]
 engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90  [.cpp] [Cppcheck (quick)]
   File: engine/keyframe.c  (2 diagnostics)
 
-  Line  126: [uninitvar] Uninitialized variable: iStack_34
-  Line  156: [uninitvar] Uninitialized variable: local_2c
+  Line  118: [uninitvar] Uninitialized variable: iStack_34
+  Line  148: [uninitvar] Uninitialized variable: local_2c
 
 ----------------------------------------------------------------------------------------------------
 engine_prim.c_FUN_004faca0  [.cpp] [Cppcheck (quick)]
@@ -2143,13 +1944,6 @@ shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430  [.cpp] [Cppche
   Line   33: [legacyUninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360  [.cpp] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (2 diagnostics)
-
-  Line   29: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   33: [legacyUninitvar] Uninitialized variable: local_14
-
-----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (2 diagnostics)
 
@@ -2164,32 +1958,11 @@ shape_edittool.cpp_FUN_004720c0  [.cpp] [Cppcheck (quick)]
   Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200  [.cpp] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (2 diagnostics)
-
-  Line   58: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   59: [uninitvar] Uninitialized variable: local_38
-
-----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_FUN_004e25c0  [.cpp] [Cppcheck (quick)]
   File: sound/mp3.cpp  (2 diagnostics)
 
   Line   13: [pointerOutOfBoundsCond] Undefined behaviour, when 'param_1*0x10' is 48 the pointer arithmetic '"$CMotionController$$"+param_1*0x10' is out of bounds.
   Line   18: [pointerOutOfBoundsCond] Undefined behaviour, when 'param_1*0x10' is 64 the pointer arithmetic '"$CMotionController$$"+param_1*0x10' is out of bounds.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_FUN_004e78b0  [.cpp] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (2 diagnostics)
-
-  Line   38: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   39: [uninitvar] Uninitialized variable: local_1c
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_FUN_004e7b00  [.cpp] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (2 diagnostics)
-
-  Line   41: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   42: [uninitvar] Uninitialized variable: local_10
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_FUN_004e7ed0  [.cpp] [Cppcheck (quick)]
@@ -2209,15 +1982,15 @@ sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0  [.cpp] [Clang-Tidy (qu
 sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (2 diagnostics)
 
-  Line   47: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   48: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0  [.cpp] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (2 diagnostics)
 
-  Line   70: [ignoredReturnValue] Return value of function round() is not used.
-  Line   74: [legacyUninitvar] Uninitialized variable: local_28
+  Line   69: [ignoredReturnValue] Return value of function round() is not used.
+  Line   72: [legacyUninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10  [.cpp] [Cppcheck (quick)]
@@ -2305,6 +2078,12 @@ cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50  [.cpp] [Cppc
   Line   28: [uninitvar] Uninitialized variable: in_stack_00000018
 
 ----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90  [.cpp] [Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (1 diagnostics)
+
+  Line   69: [legacyUninitvar] Uninitialized variable: in_stack_00000018
+
+----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_004f45e0  [.cpp] [Cppcheck (quick)]
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
@@ -2335,12 +2114,6 @@ cockpit_pkbitmap.cpp_FUN_004f49d8  [.cpp] [Cppcheck (quick)]
   Line   16: [uninitvar] Uninitialized variable: unaff_EBP
 
 ----------------------------------------------------------------------------------------------------
-cockpit_pkbitmap.cpp_FUN_004f4f90  [.cpp] [Cppcheck (quick)]
-  File: cockpit/pkbitmap.cpp  (1 diagnostics)
-
-  Line   69: [legacyUninitvar] Uninitialized variable: in_stack_00000018
-
-----------------------------------------------------------------------------------------------------
 cockpit_pkbmpset.cpp_FUN_004f5d00  [.cpp] [Cppcheck (quick)]
   File: cockpit/pkbmpset.cpp  (1 diagnostics)
 
@@ -2357,12 +2130,6 @@ core_actor.cpp_FUN_0040e2f1  [.cpp] [Cppcheck (quick)]
   File: core/actor.cpp  (1 diagnostics)
 
   Line   14: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_archivePartStatus_FUN_0040cbf0  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (1 diagnostics)
-
-  Line   53: [uninitvar] Uninitialized variable: local_14
 
 ----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40  [.cpp] [Clang-Tidy (quick)]
@@ -2389,16 +2156,16 @@ core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550  [.cpp] [Cppcheck (qui
   Line  145: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
-core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0  [.cpp] [Cppcheck (quick)]
-  File: core/bugs.cpp  (1 diagnostics)
-
-  Line   71: [uninitvar] Uninitialized variable: unaff_EDI
-
-----------------------------------------------------------------------------------------------------
-core_bugs.cpp_FUN_00421b80  [.cpp] [Cppcheck (quick)]
+core_bugs.cpp_CBugs_FUN_00421b80  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (1 diagnostics)
 
   Line   72: [uninitvar] Uninitialized variable: unaff_EBX
+
+----------------------------------------------------------------------------------------------------
+core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0  [.cpp] [Cppcheck (quick)]
+  File: core/bugs.cpp  (1 diagnostics)
+
+  Line   72: [uninitvar] Uninitialized variable: unaff_EDI
 
 ----------------------------------------------------------------------------------------------------
 core_bugs.cpp_FUN_00423d20  [.cpp] [Cppcheck (quick)]
@@ -2509,12 +2276,6 @@ core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0  [.cpp] [Cppc
   Line   24: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990  [.cpp] [Cppcheck (quick)]
-  File: core/dmodel.cpp  (1 diagnostics)
-
-  Line  135: [uninitvar] Uninitialized variable: local_48
-
-----------------------------------------------------------------------------------------------------
 core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0  [.cpp] [Cppcheck (quick)]
   File: core/dpart.cpp  (1 diagnostics)
 
@@ -2533,12 +2294,6 @@ core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0  [.cpp] [Cppcheck 
   Line   20: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_event.cpp_CEventList_loadState_FUN_00480f70  [.cpp] [Cppcheck (quick)]
-  File: core/event.cpp  (1 diagnostics)
-
-  Line   23: [uninitvar] Uninitialized variable: local_20
-
-----------------------------------------------------------------------------------------------------
 core_event.cpp_FUN_0047a260  [.cpp] [Cppcheck (quick)]
   File: core/event.cpp  (1 diagnostics)
 
@@ -2551,6 +2306,12 @@ core_event.cpp_FUN_00481930  [.cpp] [Cppcheck (quick)]
   Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
+core_event.cpp_parseVectorLocation_FUN_0047a4c0  [.cpp] [Cppcheck (quick)]
+  File: core/event.cpp  (1 diagnostics)
+
+  Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
 core_fire.cpp_CBulletTrail_render_FUN_004856c0  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (1 diagnostics)
 
@@ -2560,7 +2321,7 @@ core_fire.cpp_CBulletTrail_render_FUN_004856c0  [.cpp] [Cppcheck (quick)]
 core_fire.cpp_CRainDrop_render_FUN_00489d00  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (1 diagnostics)
 
-  Line   50: [uninitvar] Uninitialized variable: local_38
+  Line   51: [uninitvar] Uninitialized variable: local_38
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_FUN_0048c920  [.cpp] [Cppcheck (quick)]
@@ -2590,25 +2351,19 @@ core_frankgen.cpp_FUN_00495420  [.cpp] [Cppcheck (quick)]
 core_game.cpp_CGame_displayActStats_FUN_004a6680  [.cpp] [Cppcheck (quick)]
   File: core/game.cpp  (1 diagnostics)
 
-  Line  219: [uninitvar] Uninitialized variable: unaff_EDI
+  Line  182: [uninitvar] Uninitialized variable: unaff_EDI
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_finishAct_FUN_004a6a10  [.cpp] [Clang-Tidy (quick)]
   File: core/game.cpp  (1 diagnostics)
 
-  Line   46: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line   48: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_renderOverlay_FUN_0049ab50  [.cpp] [Cppcheck (quick)]
   File: core/game.cpp  (1 diagnostics)
 
-  Line  102: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_FUN_004a4170  [.cpp] [Cppcheck (quick)]
-  File: core/game.cpp  (1 diagnostics)
-
-  Line  242: [legacyUninitvar] Uninitialized variable: local_38
+  Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_ground.cpp_CGround_load_FUN_004b14d0  [.cpp] [Cppcheck (quick)]
@@ -2623,22 +2378,10 @@ core_imp.cpp_FUN_004bc7c0  [.cpp] [Cppcheck (quick)]
   Line   19: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_load_FUN_004c1190  [.cpp] [Cppcheck (quick)]
+core_inv.cpp_CInventory_FUN_004c2470  [.cpp] [Cppcheck (quick)]
   File: core/inv.cpp  (1 diagnostics)
 
-  Line  102: [uninitvar] Uninitialized variable: local_14
-
-----------------------------------------------------------------------------------------------------
-core_inv.cpp_FUN_004c0640  [.cpp] [Cppcheck (quick)]
-  File: core/inv.cpp  (1 diagnostics)
-
-  Line   21: [uninitvar] Uninitialized variable: in_stack_00000008
-
-----------------------------------------------------------------------------------------------------
-core_inv.cpp_FUN_004c2470  [.cpp] [Cppcheck (quick)]
-  File: core/inv.cpp  (1 diagnostics)
-
-  Line  169: [legacyUninitvar] Uninitialized variable: local_4c
+  Line  170: [legacyUninitvar] Uninitialized variable: local_4c
 
 ----------------------------------------------------------------------------------------------------
 core_lever.cpp_CLever_getHandlePosition_FUN_004c6640  [.cpp] [Cppcheck (quick)]
@@ -2647,34 +2390,16 @@ core_lever.cpp_CLever_getHandlePosition_FUN_004c6640  [.cpp] [Cppcheck (quick)]
   Line   20: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_FUN_004c6f50  [.cpp] [Cppcheck (quick)]
+core_lightgun.cpp_CLightGun_fire_FUN_004c71a0  [.cpp] [Cppcheck (quick)]
   File: core/lightgun.cpp  (1 diagnostics)
 
-  Line   17: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line  212: [uninitvar] Uninitialized variable: unaff_retaddr
 
 ----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_FUN_004c71a0  [.cpp] [Cppcheck (quick)]
-  File: core/lightgun.cpp  (1 diagnostics)
-
-  Line  213: [uninitvar] Uninitialized variable: unaff_retaddr
-
-----------------------------------------------------------------------------------------------------
-core_main.c_FUN_004c8440  [.cpp] [Cppcheck (quick)]
+core_main.c_displayErrorAndQuit_FUN_004c8440  [.cpp] [Cppcheck (quick)]
   File: core/main.c  (1 diagnostics)
 
   Line   54: [nullPointerArithmetic] Pointer addition with NULL pointer.
-
-----------------------------------------------------------------------------------------------------
-core_main.c_FUN_004c90e0  [.cpp] [Cppcheck (quick)]
-  File: core/main.c  (1 diagnostics)
-
-  Line   27: [ignoredReturnValue] Return value of function rand() is not used.
-
-----------------------------------------------------------------------------------------------------
-core_main.c_showPromoScreen_FUN_004c8eb0  [.cpp] [Cppcheck (quick)]
-  File: core/main.c  (1 diagnostics)
-
-  Line   24: [ignoredReturnValue] Return value of function rand() is not used.
 
 ----------------------------------------------------------------------------------------------------
 core_menu.cpp_FUN_004d2880  [.cpp] [Cppcheck (quick)]
@@ -2695,10 +2420,22 @@ core_mimic.cpp_CMimic_setupCloth_FUN_004d5770  [.cpp] [Cppcheck (quick)]
   Line   37: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0  [.cpp] [Cppcheck (quick)]
+  File: core/mission.cpp  (1 diagnostics)
+
+  Line   62: [legacyUninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 core_mobster.cpp_FUN_004dba50  [.cpp] [Cppcheck (quick)]
   File: core/mobster.cpp  (1 diagnostics)
 
   Line   19: [uninitvar] Uninitialized variable: in_stack_00000004
+
+----------------------------------------------------------------------------------------------------
+core_morph.cpp_CMorph_FUN_004e0300  [.cpp] [Cppcheck (quick)]
+  File: core/morph.cpp  (1 diagnostics)
+
+  Line   17: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
 core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50  [.cpp] [Cppcheck (quick)]
@@ -2731,22 +2468,16 @@ core_pendulum.cpp_CPendulum_updateSwing_FUN_004f3430  [.cpp] [Cppcheck (quick)]
   Line   88: [uninitvar] Uninitialized variable: local_3c
 
 ----------------------------------------------------------------------------------------------------
-core_podmain.cpp_CDemonPod_load_FUN_004f92b0  [.cpp] [Cppcheck (quick)]
-  File: core/podmain.cpp  (1 diagnostics)
-
-  Line   32: [uninitvar] Uninitialized variable: local_c
-
-----------------------------------------------------------------------------------------------------
 core_scat.cpp_FUN_004fbb70  [.cpp] [Cppcheck (quick)]
   File: core/scat.cpp  (1 diagnostics)
 
   Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_CScript_loadState_FUN_005052c0  [.cpp] [Cppcheck (quick)]
+core_script.cpp_parseBodyPartMask_FUN_004fe3d0  [.cpp] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
-  Line   20: [uninitvar] Uninitialized variable: local_18
+  Line   29: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_trimLine_FUN_004fdf60  [.cpp] [Cppcheck (quick)]
@@ -2755,28 +2486,34 @@ core_script.cpp_trimLine_FUN_004fdf60  [.cpp] [Cppcheck (quick)]
   Line   44: [nullPointer] Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_FUN_00509a80  [.cpp] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_FUN_00509a80  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
   Line  207: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_FUN_0050a260  [.cpp] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_FUN_0050a260  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line  116: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  117: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_FUN_0050aba0  [.cpp] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_FUN_0050aba0  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
   Line   31: [ignoredReturnValue] Return value of function atan2() is not used.
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_FUN_0050dd60  [.cpp] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_FUN_0050dd60  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line   25: [legacyUninitvar] Uninitialized variable: in_stack_00000008
+  Line   23: [legacyUninitvar] Uninitialized variable: in_stack_00000008
+
+----------------------------------------------------------------------------------------------------
+core_setutil.cpp_C3DSCamera_load_FUN_005144e0  [.cpp] [Cppcheck (quick)]
+  File: core/setutil.cpp  (1 diagnostics)
+
+  Line   22: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0  [.cpp] [Cppcheck (quick)]
@@ -2801,6 +2538,12 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280  [.cpp
   File: core/skeleton.cpp  (1 diagnostics)
 
   Line   72: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280  [.cpp] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (1 diagnostics)
+
+  Line  190: [arrayIndexOutOfBounds] Array 'local_74[2]' accessed at index 2, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0  [.cpp] [Cppcheck (quick)]
@@ -2869,10 +2612,22 @@ core_xform.cpp_FUN_0055d660  [.cpp] [Cppcheck (quick)]
   Line   27: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
+engine_2d.c_FUN_004014a0  [.cpp] [Cppcheck (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   36: [legacyUninitvar] Uninitialized variable: unaff_ESI
+
+----------------------------------------------------------------------------------------------------
 engine_2d.c_FUN_00402e90  [.cpp] [Cppcheck (quick)]
   File: engine/2d.c  (1 diagnostics)
 
   Line   75: [uninitvar] Uninitialized variable: unaff_SI
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_FUN_00404430  [.cpp] [Cppcheck (quick)]
+  File: engine/3d.c  (1 diagnostics)
+
+  Line   15: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
 engine_alphabit.cpp_FUN_0040eadd  [.cpp] [Cppcheck (quick)]
@@ -2918,12 +2673,6 @@ engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470  [.cpp] [Cppcheck (q
 
 ----------------------------------------------------------------------------------------------------
 engine_ini.cpp_CIniFile_getFloat_FUN_004bdac0  [.cpp] [Cppcheck (quick)]
-  File: engine/ini.cpp  (1 diagnostics)
-
-  Line   16: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-
-----------------------------------------------------------------------------------------------------
-engine_ini.cpp_CIniFile_getInteger_FUN_004bda20  [.cpp] [Cppcheck (quick)]
   File: engine/ini.cpp  (1 diagnostics)
 
   Line   16: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
@@ -3058,13 +2807,13 @@ shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300  [.cpp] [Cppcheck 
 shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (1 diagnostics)
 
-  Line  130: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  133: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (1 diagnostics)
 
-  Line   28: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
+  Line   29: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60  [.cpp] [Cppcheck (quick)]
@@ -3073,16 +2822,10 @@ shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60  [.cpp] [Cppche
   Line   42: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460  [.cpp] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (1 diagnostics)
-
-  Line   57: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 0 are given.
-
-----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_FUN_00470730  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (1 diagnostics)
 
-  Line   97: [uninitvar] Uninitialized variable: in_stack_0000000c
+  Line   98: [uninitvar] Uninitialized variable: in_stack_0000000c
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_FUN_00476fd0  [.cpp] [Cppcheck (quick)]
@@ -3091,22 +2834,28 @@ shape_edittool.cpp_FUN_00476fd0  [.cpp] [Cppcheck (quick)]
   Line   21: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200  [.cpp] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line   58: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e7720  [.cpp] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   31: [arrayIndexOutOfBounds] Array 'local_94[18]' accessed at index 19, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_FUN_004e2980  [.cpp] [Cppcheck (quick)]
+sound_mp3.cpp_FUN_004e78b0  [.cpp] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line   17: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   39: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_FUN_004e2c50  [.cpp] [Cppcheck (quick)]
+sound_mp3.cpp_FUN_004e7b00  [.cpp] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   42: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_calculateMainDataSize_FUN_004e77d0  [.cpp] [Cppcheck (quick)]
@@ -3124,13 +2873,13 @@ sound_mp3.cpp_requantizeLayer3Samples_FUN_004e58d0  [.cpp] [Cppcheck (quick)]
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880  [.cpp] [Clang-Tidy (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
-  Line   37: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   35: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
-  Line   28: [uninitvar] Uninitialized variable: in_stack_00000014
+  Line   25: [uninitvar] Uninitialized variable: in_stack_00000014
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_FUN_0052ad30  [.cpp] [Cppcheck (quick)]
@@ -3149,6 +2898,12 @@ sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40  [.cpp] [Cppcheck (qu
   File: sound/sndmain.cpp  (1 diagnostics)
 
   Line   16: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10  [.cpp] [Cppcheck (quick)]
+  File: sound/sndmain.cpp  (1 diagnostics)
+
+  Line   90: [nullPointer] Possible null pointer dereference: pcVar8
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_FUN_00523550  [.cpp] [Cppcheck (quick)]
@@ -3221,12 +2976,6 @@ support_trisock.cpp_buildSockaddrIn_FUN_00548dc0  [.cpp] [Cppcheck (quick)]
   File: support/trisock.cpp  (1 diagnostics)
 
   Line   30: [negativeIndex] Array 'auStack_14[3]' accessed at index -1, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
-support_trisock.cpp_parseIPComponents_FUN_00548bf0  [.cpp] [Cppcheck (quick)]
-  File: support/trisock.cpp  (1 diagnostics)
-
-  Line   18: [wrongPrintfScanfArgNum] sscanf format string requires 4 parameters but only 0 are given.
 
 ----------------------------------------------------------------------------------------------------
 wincore_wddvmem.cpp_openScreenDevice_FUN_00553470  [.cpp] [Cppcheck (quick)]

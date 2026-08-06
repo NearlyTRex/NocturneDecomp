@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c64
@@ -51,7 +51,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0042e56f
         ;   Label: LAB_0042e56f
     MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0042e573
-    MOV ECX,dword ptr [0x005b761c]      ; 0042e579 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 0042e579 | g_WindowWidth
     MOV dword ptr [ESP + 0x18],EAX      ; 0042e57f
     MOV EAX,dword ptr [ESP + 0x14]      ; 0042e583
     IMUL EAX,ECX                        ; 0042e587
@@ -122,7 +122,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0042e62a
         ;   Label: LAB_0042e62a
     MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0042e62d
-    MOV EBX,dword ptr [0x005b761c]      ; 0042e633 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0042e633 | g_WindowWidth
     MOV dword ptr [ESP + 0x28],EAX      ; 0042e639
     MOV EAX,dword ptr [ESP + 0x10]      ; 0042e63d
     IMUL EAX,EBX                        ; 0042e641

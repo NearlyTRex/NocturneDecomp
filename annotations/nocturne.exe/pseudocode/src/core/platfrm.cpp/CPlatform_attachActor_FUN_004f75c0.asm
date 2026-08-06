@@ -18,11 +18,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_platfrm_cpp_0058d971
 ;   TerminatedCString s_CPlatform_attachActor_to_0058d985
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00
@@ -122,10 +122,10 @@ section .text
         ;   Label: LAB_004f7688
     MOV EBX,0x3d0                       ; 004f768d
     PUSH 0x58d985                       ; 004f7692 | = "CPlatform::attachActor - too many!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f7697 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004f769d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f76a3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f7697 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004f769d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f76a3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f76a8
     ADD ESP,0x90                        ; 004f76ab
     POP EBP                             ; 004f76b1

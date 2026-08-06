@@ -12,9 +12,9 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMan
   int iVar1;
   
   if ((panel_index < 0) || (0xb < panel_index)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\manpuz.cpp";
-    g_INT_01cc4804 = 0x5e6;
-    core_main_c_FUN_004c8440("CMansionPuzzleCircle::panelOccupied - invalid index: %d",panel_index);
+    g_CurrentFilename = "..\\core\\manpuz.cpp";
+    g_CurrentLineNumber = 1510;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMansionPuzzleCircle::panelOccupied - invalid index: %d");
   }
   if (this_ptr->panels[panel_index].exists == 0) {
     iVar1 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0

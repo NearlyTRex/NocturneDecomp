@@ -22,7 +22,7 @@ void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(void 
   iVar1 = _DAT_01bd2fa4 - _DAT_01bd2fa0;
   if (sprite_data != (void *)0x0) {
     pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
-    src_buffer = (void *)((int)sprite_data + start_x + DAT_005b761c / 2 + dest_y * src_stride);
+    src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);
     iVar4 = max_height - src_y_offset;
     iVar3 = (dest_y + src_y_offset) * 4;
     if (DAT_005b7624 == 8) {

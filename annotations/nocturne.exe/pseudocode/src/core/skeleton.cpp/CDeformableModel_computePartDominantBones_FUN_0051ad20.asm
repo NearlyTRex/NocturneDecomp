@@ -51,11 +51,11 @@
 ;   TerminatedCString s_core_skeleton_cpp_00591a9d
 ;   TerminatedCString s_CDeformableModel_compute_00591ab2
 ;   undefined4 DAT_005a1eb0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130
@@ -64,7 +64,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -109,8 +109,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x28558]   ; 0051ad7d
     PUSH 0x22b4                         ; 0051ad83
     MOV dword ptr [ESP + 0x210],EAX     ; 0051ad88
-    CALL crt_unknown.c_FUN_0056497c     ; 0051ad8f
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0051ad8f
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0051ad94
     TEST EAX,EAX                        ; 0051ad97
     JZ 0x0051ada4                       ; 0051ad99
@@ -127,10 +127,10 @@ section .text
     MOV ECX,0x591a9d                    ; 0051adaf | = "..\\core\\skeleton.cpp"
     MOV EBX,0x7d3                       ; 0051adb4
     PUSH 0x591ab2                       ; 0051adb9 | = "CDeformableModel::computePartDominant..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051adbe | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051adc4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051adca
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051adbe | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0051adc4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051adca
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051adcf
     PUSH EBP                            ; 0051add2
         ;   Label: LAB_0051add2

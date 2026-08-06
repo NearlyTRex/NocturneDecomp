@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,22 +62,10 @@
         "message": "use of undeclared identifier 'DAT_005ae488'; did you mean 'DAT_005ae4a8'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 15,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 49,
+        "column": 66,
         "line": 16,
-        "message": "use of undeclared identifier 'DAT_005ae470'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 18,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
+        "message": "use of undeclared identifier 'DAT_005ae470'; did you mean 'DAT_005ae4b0'?"
       }
     ],
     "success": false,
@@ -86,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 57,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 37
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -152,9 +140,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -228,25 +216,9 @@
     {
       "description": "Undefined global data reference",
       "line": 9,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
       "match": "DAT_005ae470",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ae470);",
       "type": "undefined_data"
     }
   ]

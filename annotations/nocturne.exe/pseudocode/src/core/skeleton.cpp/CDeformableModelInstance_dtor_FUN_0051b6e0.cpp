@@ -10,24 +10,23 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
 
 {
   CVector3f *pCVar1;
-  CDeformableModelInstance *pCVar2;
-  void *ptr;
+  CDeformableModelInstance *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete
-                    (this_ptr,&g_CDeformableModelInstanceTypeInfo_005a1f00);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete
+                       (this_ptr,&g_CDeformableModelInstanceTypeInfo_005a1f00);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   (this_ptr->motion_controller).vtable = &g_CDeformableModelInstanceVTable;
-  core_skeleton_cpp_FUN_0051b7d0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_FUN_0051b7d0(this_ptr);
   pCVar1 = core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(this_ptr->transformed_vertices,0);
-  pCVar2 = (CDeformableModelInstance *)
-           core_motion_cpp_CMotionController_dtor_FUN_004e1150((CMotionController *)&pCVar1[-8].z,1)
-  ;
+  ptr = (CDeformableModelInstance *)
+        core_motion_cpp_CMotionController_dtor_FUN_004e1150((CMotionController *)&pCVar1[-8].z,1);
   if ((flags & 2) == 0) {
-    return pCVar2;
+    return ptr;
   }
-  FUN_00564494(pCVar2);
-  return pCVar2;
+  operator_delete(ptr);
+  return ptr;
 }

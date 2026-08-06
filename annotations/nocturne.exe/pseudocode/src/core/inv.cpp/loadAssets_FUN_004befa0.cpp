@@ -14,11 +14,11 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)
   _FILE *p_Var1;
   int iVar2;
   
-  _DAT_01cc30a0 = DAT_005b7620;
+  _DAT_01cc30a0 = g_WindowHeight;
   p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("data","invsize.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
-    _fscanf(p_Var1,"%d,%d\n");
+    _fscanf(p_Var1,"%d,%d\n",&INT_005bab60,&INT_005bab64);
     _fclose(p_Var1);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0

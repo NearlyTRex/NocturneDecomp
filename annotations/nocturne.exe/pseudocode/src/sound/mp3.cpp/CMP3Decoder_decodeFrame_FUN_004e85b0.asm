@@ -100,12 +100,12 @@
 ;   undefined4 DAT_005bbc48
 ;   undefined4 DAT_005bbc88
 ;   undefined4 DAT_005bbdf0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cd8b28
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   sound_mp3.cpp_antiAliasingButterfly_FUN_004e7030
 ;   sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004e3e70
@@ -300,10 +300,10 @@ section .text
     MOV EAX,0x58b4e0                    ; 004e87e4 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1a1                       ; 004e87e9
     PUSH 0x58b4f1                       ; 004e87ee | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV [0x01cc4800],EAX                ; 004e87f3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e87f8 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e87fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004e87f3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004e87f8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e87fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e8803
     MOV EAX,dword ptr [ESP + 0x6034]    ; 004e8806
         ;   Label: LAB_004e8806
@@ -327,10 +327,10 @@ section .text
     MOV ECX,0x58b52a                    ; 004e883f | = "..\\sound\\mp3.cpp"
     MOV EAX,0x1b1                       ; 004e8844
     PUSH 0x58b53b                       ; 004e8849 | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e884e | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e8854 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e8859
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e884e | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004e8854 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e8859
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 004e885e
     MOV EAX,dword ptr [ESP + 0x6048]    ; 004e8861
         ;   Label: LAB_004e8861
@@ -910,10 +910,10 @@ section .text
     MOV EDX,0x58b9c0                    ; 004e8fbf | = "..\\sound\\mp3.cpp"
     MOV ECX,0xf90                       ; 004e8fc4
     PUSH 0x58b9d1                       ; 004e8fc9 | = "Not enough main data to decode frame %d."
-    MOV dword ptr [0x01cc4800],EDX      ; 004e8fce | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e8fd4 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e8fda
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004e8fce | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004e8fd4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e8fda
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e8fdf
     JMP 0x004e8f84                      ; 004e8fe2
         ;   XREF to: 004e8f84 (UNCONDITIONAL_JUMP)  ; LAB_004e8f84

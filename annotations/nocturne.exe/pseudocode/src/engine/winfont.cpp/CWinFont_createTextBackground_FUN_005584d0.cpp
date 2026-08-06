@@ -18,7 +18,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
   LOGBRUSH local_1c;
   
   if (width < 1) {
-    width = DAT_005b761c;
+    width = g_WindowWidth;
   }
   if (height < 1) {
     height = 100;

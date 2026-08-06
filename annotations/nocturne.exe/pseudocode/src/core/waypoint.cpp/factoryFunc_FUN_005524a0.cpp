@@ -11,7 +11,7 @@ CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005524a0(void)
 {
   CWayPoint *pCVar1;
   
-  pCVar1 = (CWayPoint *)FUN_0056497c(0x550);
+  pCVar1 = operator_new(0x550);
   if (pCVar1 == (CWayPoint *)0x0) {
     return (CWayPoint *)0x0;
   }

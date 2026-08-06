@@ -18,7 +18,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_005184b0(CD
   iVar2 = 0;
   if (0 < this_ptr->vertex_count[lod_index]) {
     do {
-      *(uint *)(*DAT_005ae704 + 0x2c + iVar1) = _DAT_01c038f4;
+      *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->a + iVar1) =
+           _DAT_01c038f4;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x30;
     } while (iVar2 < this_ptr->vertex_count[lod_index]);

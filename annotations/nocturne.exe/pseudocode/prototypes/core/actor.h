@@ -213,7 +213,7 @@ char * __cdecl copyToActorDebugBuffer(char *source_string);
 
 // Original: core_actor.cpp_FUN_0040bd90
 // Address: 0040bd90
-void FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3);
+void FUN_0040bd90(char *param_1);
 
 // Original: core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
 // Address: 0040bff0
@@ -463,6 +463,10 @@ void FUN_0040e2e1(undefined4 *param_1);
 // Address: 0040e2f1
 void FUN_0040e2f1(undefined4 *param_1);
 
-// Original: core_actor.cpp_FUN_0040e300
+// Original: core_actor.cpp_CVector3f_arrdtor_FUN_0040e300
 // Address: 0040e300
-void FUN_0040e300(void *param_1);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+
+// Original: core_actor.cpp_CDemonActor_returnZero_FUN_0044ba10
+// Address: 0044ba10
+int __cdecl CDemonActor::returnZero(CDemonActor *this_ptr);

@@ -10,9 +10,9 @@
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004aea00 at 004aea3f
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 at 004b02e0
 ;   core_larva.cpp_CLarva_process_FUN_004c4970 at 004c4c7f
-;   core_set.cpp_FUN_0050aba0 at 0050ac33
+;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050ac33
 ;   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080 at 0051f1a0
-;   core_stranger.cpp_FUN_005384d0 at 0053920f
+;   core_stranger.cpp_CStranger_FUN_005384d0 at 0053920f
 ;   core_tvbat.cpp_CTVBat_process_FUN_0054b460 at 0054b7aa
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054ca21
 ;   ... and 6 more

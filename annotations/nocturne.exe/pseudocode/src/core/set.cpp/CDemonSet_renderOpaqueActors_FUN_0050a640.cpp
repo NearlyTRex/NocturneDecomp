@@ -45,7 +45,8 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(CDemonSet *t
         core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
                   (this_ptr,*(int *)(iVar1 + 0x108),*(int *)(iVar1 + 0x10c),*(int *)(iVar1 + 0x110))
         ;
-        engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+        engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                  (g_CDemonRenderer_PTR_005ae704,0xffff);
         iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);
         if (iVar3 == 0) {
           *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) & 0xfb;
@@ -53,16 +54,18 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(CDemonSet *t
         else {
           *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;
         }
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                  (g_CDemonRenderer_PTR_005ae704,1);
         iVar3 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
-            core_set_cpp_FUN_0050e080(this_ptr,iVar3,0);
+            core_set_cpp_CDemonSet_FUN_0050e080(this_ptr,iVar3,0);
             iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 8))(iVar1);
             if (iVar4 != 0) {
               *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;
             }
-            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+            engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                      (g_CDemonRenderer_PTR_005ae704,1);
             iVar3 = iVar3 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(this_ptr);
           } while (iVar3 < this_ptr->mirror_glass_actor_count);

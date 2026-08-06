@@ -42,7 +42,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463
     puVar8 = (uint *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar2 * 4);
     iVar5 = (int)((ulonglong)
                   ((longlong)((left_edge->base).depth_current - (pSVar10->base).depth_current) *
-                  (longlong)*(int *)(&DAT_01c00c80 + (iVar3 + 1) * 4)) >> 0x20);
+                  (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar11 = (pSVar10->base).depth_current;
     while (iVar4 = iVar3 + -4, puVar7 = puVar8, puVar12 = puVar6, 3 < iVar3) {
       if ((int)*puVar8 <= (int)(uVar11 >> 8)) {

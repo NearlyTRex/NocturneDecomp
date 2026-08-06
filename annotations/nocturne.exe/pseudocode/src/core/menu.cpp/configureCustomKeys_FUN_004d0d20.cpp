@@ -102,7 +102,8 @@ LAB_004d0e3b:
       pcVar10[1] = cVar1;
       pcVar10 = pcVar10 + 2;
     } while (cVar1 != '\0');
-    _sprintf(local_114,"%5.2f");
+    _sprintf(local_114,"%5.2f",
+               (double)g_CGame_PTR_005b9354->x_mouse_sensitivity * 1.52587890625e-05);
     iVar4 = -1;
     pcVar5 = (char *)0x1cc6ab0;
     do {
@@ -135,7 +136,8 @@ LAB_004d0e3b:
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
     iVar4 = 7;
-    _sprintf(local_114,"%5.2f");
+    _sprintf(local_114,"%5.2f",
+               (double)g_CGame_PTR_005b9354->y_mouse_sensitivity * 1.52587890625e-05);
     iVar6 = -1;
     pcVar8 = (char *)0x1cc6bb0;
     do {

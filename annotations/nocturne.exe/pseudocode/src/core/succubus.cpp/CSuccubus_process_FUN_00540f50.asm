@@ -51,14 +51,14 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
+;   core_charactr.cpp_CCharacter_FUN_004259f0
+;   core_charactr.cpp_CCharacter_FUN_00428c00
+;   core_charactr.cpp_CCharacter_FUN_0042a150
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00425960
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
-;   core_charactr.cpp_FUN_004259f0
-;   core_charactr.cpp_FUN_00428c00
-;   core_charactr.cpp_FUN_0042a150
 ;   core_cloth.cpp_CClothList_process_FUN_00438550
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -81,8 +81,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00540f59
     PUSH dword ptr [EBP + 0x18]         ; 00540f5c
     PUSH EBX                            ; 00540f5f
-    CALL core_charactr.cpp_FUN_004259f0 ; 00540f60
-        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_004259f0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_004259f0 ; 00540f60
+        ;   XREF to: 004259f0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_004259f0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00540f65
     TEST EAX,EAX                        ; 00540f68
     JZ 0x0054139a                       ; 00540f6a
@@ -161,8 +161,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00541036
     PUSH EBX                            ; 00541039
     MOV EDI,dword ptr [EAX + 0x24]      ; 0054103a
-    CALL core_charactr.cpp_FUN_00428c00 ; 0054103d
-        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00428c00(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_00428c00 ; 0054103d
+        ;   XREF to: 00428c00 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00428c00(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00541042
     TEST EAX,EAX                        ; 00541045
     JZ 0x005415be                       ; 00541047
@@ -280,8 +280,8 @@ section .text
     ADD ESP,0x4                         ; 00541189
     PUSH dword ptr [EBP + 0x18]         ; 0054118c
     PUSH EBX                            ; 0054118f
-    CALL core_charactr.cpp_FUN_0042a150 ; 00541190
-        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a150(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a150 ; 00541190
+        ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00541195
     PUSH ESI                            ; 00541198
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 00541199
@@ -314,8 +314,8 @@ section .text
     JBE 0x0054131f                      ; 005411ea
         ;   XREF to: 0054131f (CONDITIONAL_JUMP)  ; LAB_0054131f
     PUSH 0xbd58                         ; 005411f0
-    CALL crt_unknown.c_FUN_0056497c     ; 005411f5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 005411f5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 005411fa
     TEST EAX,EAX                        ; 005411fd
     JZ 0x0054120a                       ; 005411ff

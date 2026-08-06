@@ -39,10 +39,10 @@ void __cdecl CMouse::getPosition(CMouse *this_ptr,int *out_x,int *out_y);
 // Address: 004ee740
 void __cdecl CMouse::render(CMouse *this_ptr);
 
-// Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0
+// Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor_FUN_004ee8b0
 // Address: 004ee8b0
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor1(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);
 
-// Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0
+// Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0
 // Address: 004ee8d0
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor2(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);

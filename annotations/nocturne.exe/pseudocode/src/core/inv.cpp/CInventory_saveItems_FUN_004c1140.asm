@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_save_FUN_004c0fa0 at 004c10b8
-;   core_mission.cpp_FUN_004d8720 at 004d8a93
+;   core_mission.cpp_CDemonMission_FUN_004d8720 at 004d8a93
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_s_005872ae
@@ -50,7 +50,7 @@ section .text
     ADD EBX,0x4                         ; 004c1170
     INC ESI                             ; 004c1173
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004c1174
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV EDX,dword ptr [EDI + 0x8]       ; 004c1179
     ADD ESP,0x14                        ; 004c117c
     CMP ESI,EDX                         ; 004c117f

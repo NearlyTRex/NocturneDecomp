@@ -15,8 +15,8 @@
 ;   engine_matrix.c_setCameraRotation_FUN_004ce730 at 004ce750
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7648
 ;   undefined4 DAT_01c00c48
 ;   undefined4 DAT_01c00c4c
@@ -166,7 +166,7 @@ section .text
     IMUL EDX                            ; 004ccf11
     SHRD EAX,EDX,0x10                   ; 004ccf13
     MOV [0x01c03a08],EAX                ; 004ccf17 | DAT_01c03a08
-    MOV EAX,[0x005b7620]                ; 004ccf1c | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004ccf1c | g_WindowHeight
     CMP EAX,0xc8                        ; 004ccf21
     JC 0x004cd0c6                       ; 004ccf26
         ;   XREF to: 004cd0c6 (CONDITIONAL_JUMP)  ; LAB_004cd0c6
@@ -180,12 +180,12 @@ section .text
     IMUL EDX                            ; 004ccf4d
     IDIV EBX                            ; 004ccf4f
     MOV ECX,EAX                         ; 004ccf51
-    MOV EDX,dword ptr [0x005b761c]      ; 004ccf53 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004ccf53 | g_WindowWidth
     NEG ECX                             ; 004ccf59
     IMUL EDX,ECX                        ; 004ccf5b
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ccf5e
     SUB EAX,EDX                         ; 004ccf65
-    MOV ECX,dword ptr [0x005b7620]      ; 004ccf67 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 004ccf67 | g_WindowHeight
     MOV EDX,EAX                         ; 004ccf6d
     SHL ECX,0x2                         ; 004ccf6f
     SAR EDX,0x1f                        ; 004ccf72
@@ -211,7 +211,7 @@ section .text
     LEA EDX,[EAX*0x4 + 0x0]             ; 004ccfbd
     ADD EDX,EAX                         ; 004ccfc4
     SHL EDX,0x7                         ; 004ccfc6
-    MOV EDI,dword ptr [0x005b761c]      ; 004ccfc9 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004ccfc9 | g_WindowWidth
     MOV EAX,EDX                         ; 004ccfcf
     SAR EDX,0x1f                        ; 004ccfd1
     IDIV EDI                            ; 004ccfd4
@@ -223,7 +223,7 @@ section .text
     SHL EDX,0x4                         ; 004ccfee
     SUB EBX,EAX                         ; 004ccff1
     SUB EDX,ECX                         ; 004ccff3
-    MOV ECX,dword ptr [0x005b7620]      ; 004ccff5 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 004ccff5 | g_WindowHeight
     MOV EAX,EDX                         ; 004ccffb
     SAR EDX,0x1f                        ; 004ccffd
     IDIV ECX                            ; 004cd000

@@ -26,9 +26,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CE
       goto LAB_00473a96;
     }
     if (cursor_type != 2) {
-      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      g_INT_01cc4804 = 0x93b;
-      core_main_c_FUN_004c8440("CEditorTools::setMousePointerType - invalid type!");
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 2363;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::setMousePointerType - invalid type!");
       DAT_005b6d54 = height;
       DAT_005b6d58 = width;
       return;
@@ -38,7 +38,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CE
     width = 0xb;
   }
   if (height < 1) {
-    iVar1 = (width * DAT_005b761c * 3) / DAT_005b7620;
+    iVar1 = (width * g_WindowWidth * 3) / g_WindowHeight;
     iVar2 = iVar1 >> 0x1f;
     height = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
   }

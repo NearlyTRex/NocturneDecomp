@@ -1,0 +1,743 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "type_error",
+        "column": 42,
+        "line": 67,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 257,
+    "complexity_score": 436,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 116,
+    "suspect_count": 28,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "sub84_truncation",
+      "unaffected_reg",
+      "undefined_data",
+      "unknown_field",
+      "unrolled_memcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 373
+  },
+  "cross_references": [
+    {
+      "addr": "00422050",
+      "from_addr": "004220ef",
+      "name": "core_bugs.cpp_CBugs_FUN_00422050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422370",
+      "from_addr": "00422746",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00421b80",
+    "address_range": [
+      [
+        "00421b80",
+        "00421ef1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_FUN_00421b80",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_FUN_00421b80(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468580",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580"
+    },
+    {
+      "addr": "005648c0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005648c0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00579d09",
+      "name": "FLOAT_00579d09",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00579d0d",
+      "name": "DOUBLE_00579d0d",
+      "type": "double",
+      "value": "5.40342189935737E-315"
+    },
+    {
+      "addr": "00579d15",
+      "name": "DOUBLE_00579d15",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0059aea8",
+      "name": "FLOAT_0059aea8",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00764b58",
+      "name": "DAT_00764b58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00764b5c",
+      "name": "DAT_00764b5c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "01fba938",
+      "name": "g_CDemonRaytrace_01fba938",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004220ef",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_FUN_00422050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00422349",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_FUN_00422050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00422746",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00422784",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.114406779661017,
+    "instruction_count": 236,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 18,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 10,
+      "COPY": 588,
+      "FLOAT2FLOAT": 56,
+      "FLOAT_ADD": 10,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 11,
+      "FLOAT_SUB": 5,
+      "INT2FLOAT": 5,
+      "INT_2COMP": 2,
+      "INT_ADD": 153,
+      "INT_AND": 111,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 83,
+      "INT_LEFT": 4,
+      "INT_LESS": 14,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 15,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 43,
+      "INT_SUB": 37,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 84,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 66,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1443
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CBugs_FUN_00421b80.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 25,
+          "line": 72,
+          "message": "Uninitialized variable: unaff_EBX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 47,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_40 = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 53,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_44 = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "fVar12 = 0.5f * 5.4034218993573707e-315._0_4_ * (float)0.5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_20 = *(int *)(unaff_EBX + 0x1984c) - iStack_3c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_24 = *(int *)(unaff_EBX + 0x19850) - local_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)(unaff_EBX + 0x12720);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_00764b58",
+      "severity": "mild",
+      "text": "puVar8 = &DAT_00764b58;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(uint *)((int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(uint *)((int)puVar8",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_54.y = *(float *)(unaff_EBX + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)(unaff_EBX + 0x28);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x19854);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar12 = *(float *)(unaff_EBX + 0x20) + *(float *)(unaff_EBX + 0x19854);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)(unaff_EBX + 0x19858);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_30 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 102,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(float *)(iVar9 + 0x12720) = fVar3 - *(float *)(unaff_EBX + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_00764b58",
+      "severity": "mild",
+      "text": "*(uint *)(iVar4 + 0x12720) = *(uint *)((int)&DAT_00764b58 + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 116,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBX + 0x1984c) = iStack_3c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBX + 0x19850) = local_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)puVar8",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00764b58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)&DAT_00764b58",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar4 + 0x12720) = *(uint *)((int)&DAT_00764b58 + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 71,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 76,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 105,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar4 + 0x12720) = *(uint *)((int)&DAT_00764b58 + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00421d51, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 132,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00421d51: MOVSD.REP ES:EDI,ESI  ; DAT_00764b58 | DAT_00764b5c",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBX",
+      "line": 72,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_20 = *(int *)(unaff_EBX + 0x1984c) - iStack_3c;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

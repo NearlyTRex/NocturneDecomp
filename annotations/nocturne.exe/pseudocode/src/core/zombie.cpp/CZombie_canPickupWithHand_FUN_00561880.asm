@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   object_shape_type
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_00561010 at 00561208
+;   core_zombie.cpp_CZombie_FUN_00561010 at 00561208
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0

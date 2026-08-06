@@ -11,7 +11,7 @@ CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_0048ed30(void)
 {
   CFlashlight *pCVar1;
   
-  pCVar1 = (CFlashlight *)FUN_0056497c(0x570);
+  pCVar1 = operator_new(0x570);
   if (pCVar1 == (CFlashlight *)0x0) {
     return (CFlashlight *)0x0;
   }

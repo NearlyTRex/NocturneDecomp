@@ -80,11 +80,11 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
-;   core_inv.cpp_FUN_004c2470
+;   core_inv.cpp_CInventory_FUN_004c2470
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_004ed720
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0
-;   core_script.cpp_FUN_004fe770
-;   core_script.cpp_FUN_004fe9d0
+;   core_script.cpp_CScript_FUN_004fe770
+;   core_script.cpp_CScript_FUN_004fe9d0
 ;   ... and 39 more
 ;
 ; *****************************************************************************
@@ -190,8 +190,8 @@ section .text
     PUSH 0x1                            ; 0049cd18
     MOV EDI,dword ptr [0x005be368]      ; 0049cd1a | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 0049cd20 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_00509a80      ; 0049cd21
-        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00509a80(CDemonSet * this_ptr, int skip_prerender)
+    CALL core_set.cpp_CDemonSet_FUN_00509a80 ; 0049cd21
+        ;   XREF to: 00509a80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00509a80(CDemonSet * this_ptr, int skip_prerender)
     ADD ESP,0x8                         ; 0049cd26
     MOV EAX,[0x005bdee0]                ; 0049cd29 | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_0049cd29
@@ -206,8 +206,8 @@ section .text
         ;   XREF to: 0049d5d9 (CONDITIONAL_JUMP)  ; LAB_0049d5d9
     LEA EAX,[EBP + -0x22]               ; 0049cd4b
     PUSH EAX                            ; 0049cd4e
-    CALL core_slew.cpp_FUN_0051f930     ; 0049cd4f
-        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_0051f930()
+    CALL core_slew.cpp_CSlew_FUN_0051f930 ; 0049cd4f
+        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_FUN_0051f930(CSlew * this_ptr)
     MOV EAX,[0x01cae0e8]                ; 0049cd54 | DAT_01cae0e8
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cd59
     LEA EAX,[EBP + -0x22]               ; 0049cd60
@@ -329,7 +329,7 @@ section .text
     ADD ESP,0x4                         ; 0049ceb6
     PUSH 0xffff                         ; 0049ceb9
         ;   Label: LAB_0049ceb9
-    MOV EDI,dword ptr [0x005ae704]      ; 0049cebe | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 0049cebe | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 0049cec4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0049cec5
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
@@ -373,8 +373,8 @@ section .text
         ;   XREF to: 0049cf5d (CONDITIONAL_JUMP)  ; LAB_0049cf5d
     MOV EAX,[0x005be368]                ; 0049cf4f | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049cf54 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050a260      ; 0049cf55
-        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050a260(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0050a260 ; 0049cf55
+        ;   XREF to: 0050a260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050a260(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0049cf5a
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cf5d
         ;   Label: LAB_0049cf5d
@@ -409,8 +409,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cfb6
     ADD EAX,0x1f5a0                     ; 0049cfbd
     PUSH EAX                            ; 0049cfc2
-    CALL core_inv.cpp_FUN_004c2470      ; 0049cfc3
-        ;   XREF to: 004c2470 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004c2470(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_FUN_004c2470 ; 0049cfc3
+        ;   XREF to: 004c2470 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_FUN_004c2470(CInventory * this_ptr)
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cfc8
     MOV ESI,dword ptr [EAX + 0x278]     ; 0049cfce
     ADD ESP,0x4                         ; 0049cfd4
@@ -419,8 +419,8 @@ section .text
         ;   XREF to: 0049cfea (CONDITIONAL_JUMP)  ; LAB_0049cfea
     MOV EDI,dword ptr [0x005be368]      ; 0049cfdb | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 0049cfe1 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050aa70      ; 0049cfe2
-        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050aa70(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_FUN_0050aa70 ; 0049cfe2
+        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050aa70(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0049cfe7
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cfea
         ;   Label: LAB_0049cfea
@@ -469,8 +469,8 @@ section .text
     MOV EAX,[0x005be220]                ; 0049d066 | DAT_005be220
         ;   Label: LAB_0049d066
     PUSH EAX                            ; 0049d06b | g_CScript_01e56da0
-    CALL core_script.cpp_FUN_004fe770   ; 0049d06c
-        ;   XREF to: 004fe770 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004fe770(CScript * this_ptr)
+    CALL core_script.cpp_CScript_FUN_004fe770 ; 0049d06c
+        ;   XREF to: 004fe770 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004fe770(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049d071
     MOV EDX,dword ptr [EBP + 0x92]      ; 0049d074
     PUSH EDX                            ; 0049d07a
@@ -502,7 +502,7 @@ section .text
     PUSH EAX                            ; 0049d0db
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049d0dc
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
-    MOV EAX,[0x005b7620]                ; 0049d0e1 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d0e1 | g_WindowHeight
     ADD ESP,0x10                        ; 0049d0e6
     SUB EAX,0x16                        ; 0049d0e9
     PUSH EAX                            ; 0049d0ec
@@ -537,7 +537,7 @@ section .text
     PUSH EAX                            ; 0049d157
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049d158
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
-    MOV EAX,[0x005b7620]                ; 0049d15d | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d15d | g_WindowHeight
     ADD ESP,0x1c                        ; 0049d162
     SUB EAX,0xb                         ; 0049d165
     PUSH EAX                            ; 0049d168
@@ -629,7 +629,7 @@ section .text
     PUSH EAX                            ; 0049d281
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049d282
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
-    MOV EAX,[0x005b7620]                ; 0049d287 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d287 | g_WindowHeight
     ADD ESP,0x20                        ; 0049d28c
     SUB EAX,0x4d                        ; 0049d28f
     PUSH EAX                            ; 0049d292
@@ -693,7 +693,7 @@ section .text
     PUSH EAX                            ; 0049d329
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0049d32a
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
-    MOV EAX,[0x005b7620]                ; 0049d32f | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d32f | g_WindowHeight
     ADD ESP,0x34                        ; 0049d334
     SUB EAX,0x42                        ; 0049d337
     PUSH EAX                            ; 0049d33a
@@ -707,7 +707,7 @@ section .text
     PUSH EAX                            ; 0049d352
     CALL engine_texture.cpp_getTextureCacheStats_FUN_00545a80 ; 0049d353
         ;   XREF to: 00545a80 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_getTextureCacheStats_FUN_00545a80(char * output_buffer)
-    MOV EAX,[0x005b7620]                ; 0049d358 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d358 | g_WindowHeight
     ADD ESP,0x4                         ; 0049d35d
     SUB EAX,0x37                        ; 0049d360
     PUSH EAX                            ; 0049d363
@@ -721,7 +721,7 @@ section .text
     PUSH EAX                            ; 0049d37b
     CALL core_skeleton.cpp_FUN_0051f760 ; 0049d37c
         ;   XREF to: 0051f760 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f760(char * output_buffer)
-    MOV EAX,[0x005b7620]                ; 0049d381 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d381 | g_WindowHeight
     ADD ESP,0x4                         ; 0049d386
     SUB EAX,0x2c                        ; 0049d389
     PUSH EAX                            ; 0049d38c
@@ -730,7 +730,7 @@ section .text
     PUSH EAX                            ; 0049d395
     CALL engine_2d.c_drawText_FUN_00402600 ; 0049d396
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
-    MOV EAX,[0x005b7620]                ; 0049d39b | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d39b | g_WindowHeight
     ADD ESP,0xc                         ; 0049d3a0
     SUB EAX,0x21                        ; 0049d3a3
     PUSH EAX                            ; 0049d3a6
@@ -802,18 +802,18 @@ section .text
     CMP dword ptr [EAX + 0x278],0x0     ; 0049d44a
     JZ 0x0049d477                       ; 0049d451
         ;   XREF to: 0049d477 (CONDITIONAL_JUMP)  ; LAB_0049d477
-    MOV EAX,[0x005b7620]                ; 0049d453 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d453 | g_WindowHeight
     DEC EAX                             ; 0049d458
     PUSH EAX                            ; 0049d459
-    MOV EAX,[0x005b761c]                ; 0049d45a | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0049d45a | g_WindowWidth
     DEC EAX                             ; 0049d45f
     PUSH EAX                            ; 0049d460
     PUSH 0xf0                           ; 0049d461
     PUSH 0x0                            ; 0049d466
     MOV EDI,dword ptr [0x005be220]      ; 0049d468 | DAT_005be220
     PUSH EDI                            ; 0049d46e | g_CScript_01e56da0
-    CALL core_script.cpp_FUN_004fe9d0   ; 0049d46f
-        ;   XREF to: 004fe9d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_004fe9d0(CScript * this_ptr, int left, int top, int right, ...)
+    CALL core_script.cpp_CScript_FUN_004fe9d0 ; 0049d46f
+        ;   XREF to: 004fe9d0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_FUN_004fe9d0(CScript * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0049d474
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049d477
         ;   Label: LAB_0049d477
@@ -826,7 +826,7 @@ section .text
     PUSH ECX                            ; 0049d493
     CALL shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0 ; 0049d494
         ;   XREF to: 004736d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0(CEditorTools * this_ptr, char * output_buffer)
-    MOV EAX,[0x005b7620]                ; 0049d499 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049d499 | g_WindowHeight
     ADD ESP,0x8                         ; 0049d49e
     SUB EAX,0x42                        ; 0049d4a1
     PUSH EAX                            ; 0049d4a4
@@ -872,15 +872,15 @@ section .text
     PUSH EAX                            ; 0049d50c
     XOR EAX,EAX                         ; 0049d50d
     PUSH 0x0                            ; 0049d50f
-    MOV AL,[0x01bff320]                 ; 0049d511 | DAT_01bff320
+    MOV AL,[0x01bff320]                 ; 0049d511 | g_ColorCubeLookup+0x7c00
     PUSH EAX                            ; 0049d516
     MOV EAX,[0x014b98f8]                ; 0049d517 | g_CBitFont_PTR_014b98f8
     MOV EDX,dword ptr [EAX + 0x316c]    ; 0049d51c
-    MOV ECX,dword ptr [0x005b7620]      ; 0049d522 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 0049d522 | g_WindowHeight
     ADD EDX,EDX                         ; 0049d528
     SUB ECX,EDX                         ; 0049d52a
     PUSH ECX                            ; 0049d52c
-    MOV EBX,dword ptr [0x005b761c]      ; 0049d52d | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 0049d52d | g_WindowWidth
     PUSH EBX                            ; 0049d533
     PUSH 0x0                            ; 0049d534
     PUSH EAX                            ; 0049d536
@@ -954,8 +954,8 @@ section .text
     ADD ESP,0x4                         ; 0049d5df
     MOV EBX,dword ptr [0x005bed68]      ; 0049d5e2 | g_CSound_PTR_005bed68
     PUSH EBX                            ; 0049d5e8
-    CALL core_sound.cpp_FUN_0052dff0    ; 0049d5e9
-        ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052dff0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_FUN_0052dff0 ; 0049d5e9
+        ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_FUN_0052dff0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049d5ee
     MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | PTR_DAT_005b9284
     PUSH ESI                            ; 0049d5f7
@@ -1033,7 +1033,7 @@ section .text
     MOV dword ptr [EBP + 0x52],EAX      ; 0049d6ce
     MOV EDX,dword ptr [EBP + 0x5e]      ; 0049d6d1
         ;   Label: LAB_0049d6d1
-    MOV EDI,dword ptr [0x005b761c]      ; 0049d6d4 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 0049d6d4 | g_WindowWidth
     IMUL EDX,EDI                        ; 0049d6da
     MOV ECX,dword ptr [0x005b9364]      ; 0049d6dd | DAT_005b9364
     MOV EAX,EDX                         ; 0049d6e3
@@ -1046,7 +1046,7 @@ section .text
     MOV EAX,EDX                         ; 0049d6f4
     SAR EDX,0x1f                        ; 0049d6f6
     IDIV ECX                            ; 0049d6f9
-    MOV EDI,dword ptr [0x005b7620]      ; 0049d6fb | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 0049d6fb | g_WindowHeight
     MOV EDX,dword ptr [EBP + 0x56]      ; 0049d701
     IMUL EDX,EDI                        ; 0049d704
     MOV ECX,dword ptr [0x005b9368]      ; 0049d707 | DAT_005b9368

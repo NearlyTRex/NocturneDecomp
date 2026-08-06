@@ -11,7 +11,7 @@ CSimBox * __cdecl core_simbox_cpp_factoryFunc_FUN_00516b70(void)
 {
   CSimBox *pCVar1;
   
-  pCVar1 = (CSimBox *)FUN_0056497c(0x5c4);
+  pCVar1 = operator_new(0x5c4);
   if (pCVar1 == (CSimBox *)0x0) {
     return (CSimBox *)0x0;
   }

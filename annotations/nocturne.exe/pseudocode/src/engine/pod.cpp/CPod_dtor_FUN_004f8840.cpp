@@ -21,6 +21,6 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(CPod *this_ptr,uint flags)
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  FUN_00564494(this_ptr);
+  operator_delete(this_ptr);
   return this_ptr;
 }

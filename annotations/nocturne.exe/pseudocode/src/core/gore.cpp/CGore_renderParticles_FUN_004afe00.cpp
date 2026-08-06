@@ -13,8 +13,8 @@ void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004afe00(CGore *this_ptr)
   CBloodParticle *this_ptr_00;
   
   if ((g_CGame_PTR_005b9354->blood_flag != 0) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar1 == 0)
-     ) {
+     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                        (g_CDemonRenderer_PTR_005ae704), iVar1 == 0)) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
               (g_CDemonSet_PTR_005be368,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);

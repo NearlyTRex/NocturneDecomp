@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -66,12 +66,6 @@
         "column": 81,
         "line": 65,
         "message": "use of undeclared identifier '_DAT_02dc9f50'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 76,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
       },
       {
         "category": "undeclared_identifier",
@@ -98,22 +92,10 @@
         "message": "use of undeclared identifier '_DAT_02dc9f88'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 212,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 64,
         "line": 219,
         "message": "use of undeclared identifier '_DAT_02dc9fa8'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 220,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       }
     ],
     "success": false,
@@ -122,22 +104,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 414,
+    "complexity_score": 380,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
-    "suspect_count": 17,
+    "pseudocode_lines": 215,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 718
+    "total_lines": 719
   },
   "cross_references": [],
   "function": {
@@ -281,9 +262,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b80f0",
@@ -684,14 +665,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_94,&local_ac);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 200,
       "match": "(CMatrix3x4f *)((int)pCVar5",
@@ -706,22 +679,6 @@
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 206,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_40,&local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704), iVar4 == 0",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

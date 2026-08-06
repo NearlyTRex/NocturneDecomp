@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_ctor_FUN_0055eac0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbe14                         ; 0055ea90
         ;   Label: core_zombie.cpp_factoryFunc_FUN_0055ea90
-    CALL crt_unknown.c_FUN_0056497c     ; 0055ea95
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0055ea95
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0055ea9a
     TEST EAX,EAX                        ; 0055ea9d
     JNZ 0x0055eaa2                      ; 0055ea9f

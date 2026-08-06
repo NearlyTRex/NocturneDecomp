@@ -15,12 +15,12 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005436f0(CBassPlaye
   CVector3f *pCVar4;
   CClothList *pCVar5;
   CDeformableModelInstance *pCVar6;
-  CBassPlayer *pCVar7;
-  void *ptr;
+  CBassPlayer *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CBassPlayerTypeInfo_005a2ea0);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CBassPlayerTypeInfo_005a2ea0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0(&(this_ptr->base).path_map,0);
@@ -33,12 +33,12 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005436f0(CBassPlaye
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
-  pCVar7 = (CBassPlayer *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
+  ptr = (CBassPlayer *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
   if ((flags & 2) == 0) {
-    return pCVar7;
+    return ptr;
   }
-  FUN_00564494(pCVar7);
-  return pCVar7;
+  operator_delete(ptr);
+  return ptr;
 }

@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_FUN_0049f930 at 0049fa90
 ;   core_menu.cpp_FUN_004d23d0 at 004d26bd
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1b6e
-;   sound_sndmain.cpp_FUN_005289f0 at 00528b95
+;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528b95
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8324

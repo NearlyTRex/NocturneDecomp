@@ -28,7 +28,7 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
     _DAT_01c02594 = iVar2;
     return 0;
   }
-  (*_DAT_02dc9ddc)(&DAT_01c00648,&DAT_01bff720);
+  (*_DAT_02dc9ddc)(g_SourcePaletteData,&DAT_01bff720);
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0();
   (*_DAT_02dc9dcc)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
   _DAT_01c02594 = 1;

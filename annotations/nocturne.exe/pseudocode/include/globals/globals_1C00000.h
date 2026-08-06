@@ -31,3 +31,10 @@ extern CKeyFramedModelInstance g_CKeyFramedModelInstance_ARRAY_01c094bc[5];
 // CSmokeParticle[2048]
 extern CSmokeParticle g_CSmokeParticle_ARRAY_01c0a140[2048];
 
+// uchar[768]
+extern uchar g_SourcePaletteData[768];
+extern uchar g_DefaultPalette[768];
+
+// uint[1600]
+extern uint g_ReciprocalLookupTable[1600];
+

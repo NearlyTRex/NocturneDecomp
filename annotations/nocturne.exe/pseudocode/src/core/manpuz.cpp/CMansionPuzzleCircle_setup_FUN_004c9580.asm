@@ -62,7 +62,7 @@
 ;   float FLOAT_00587f4a = -4
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   float FLOAT_005a003c = 0.5235988
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -121,7 +121,7 @@ section .text
     ADD ESP,0x4                         ; 004c95de
     ADD EAX,0x14b8                      ; 004c95e1
     PUSH EAX                            ; 004c95e6
-    MOV ECX,dword ptr [0x005ae704]      ; 004c95e7 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004c95e7 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004c95ed | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004c95ee
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

@@ -8,7 +8,7 @@
 ; CDemonActor * *  Stack[0x8]:4   actor
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_005055f0 at 00505757
+;   core_script.cpp_CScript_saveState_FUN_005055f0 at 00505757
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0058fcba
@@ -33,7 +33,7 @@ section .text
     PUSH 0x58fcba                       ; 00505293 | = "\"%s\"\n"
     PUSH EDX                            ; 00505298
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00505299
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0050529e
     RET                                 ; 005052a1
     PUSH EAX                            ; 005052a2
@@ -41,7 +41,7 @@ section .text
     PUSH 0x58fcc0                       ; 005052a3 | = "\"%s\"\n"
     PUSH EDX                            ; 005052a8
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 005052a9
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005052ae
     RET                                 ; 005052b1
 

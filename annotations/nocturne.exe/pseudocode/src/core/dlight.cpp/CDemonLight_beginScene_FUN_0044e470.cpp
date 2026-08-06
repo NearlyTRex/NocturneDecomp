@@ -17,28 +17,29 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   CDemonLight *pCVar3;
   
   if ((this_ptr->base).scene_open_flag != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dlight.cpp";
-    g_INT_01cc4804 = 0xf3;
-    core_main_c_FUN_004c8440("CDemonLight::beginScene - Scene already open");
+    g_CurrentFilename = "..\\core\\dlight.cpp";
+    g_CurrentLineNumber = 243;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(&this_ptr->base,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
-            (DAT_005ae704,0,0,this_ptr->shadow_map_width + -1,this_ptr->shadow_map_height + -1);
+            (g_CDemonRenderer_PTR_005ae704,0,0,this_ptr->shadow_map_width + -1,
+             this_ptr->shadow_map_height + -1);
   (this_ptr->base).viewport_rect.y_min = this_ptr->shadow_map_width + -1;
   iVar2 = this_ptr->shadow_map_height;
   (this_ptr->base).viewport_rect.x_min = 0;
   (this_ptr->base).viewport_rect.y_max = iVar2 + -1;
   (this_ptr->base).viewport_rect.x_max = 0;
-  this_ptr_00 = DAT_005ae704;
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   (this_ptr->base).rect_array_count = 0;
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
             (this_ptr_00,&(this_ptr->base).position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-            (DAT_005ae704,(this_ptr->base).focal_length);
+            (g_CDemonRenderer_PTR_005ae704,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-            (DAT_005ae704,&(this_ptr->base).rotation_matrix);
+            (g_CDemonRenderer_PTR_005ae704,&(this_ptr->base).rotation_matrix);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039ec;
   _DAT_01c039ec = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039f8;
@@ -62,7 +63,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
     } while (iVar2 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(&this_ptr->base);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,1);
   if (skip_clear_buffers == 0) {
     _DAT_01b4d1fc = skip_clear_buffers;
     return;

@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059347a
 ;   TerminatedCString s_pushSfxOptions_stack_ful_0059348f
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc1b74
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -64,10 +64,10 @@ section .text
     MOV EBX,0x59347a                    ; 00526398 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xcf4                       ; 0052639d
     PUSH 0x59348f                       ; 005263a2 | = "pushSfxOptions - stack full"
-    MOV dword ptr [0x01cc4800],EBX      ; 005263a7 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005263ad | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005263b3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005263a7 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 005263ad | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005263b3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 005263b8
     POP EBX                             ; 005263bb
     JMP 0x00526354                      ; 005263bc

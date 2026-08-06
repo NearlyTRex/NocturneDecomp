@@ -15,11 +15,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509d41
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a3e5
+;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050acc4
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 00509899
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b1f
-;   core_set.cpp_FUN_00509a80 at 00509d41
-;   core_set.cpp_FUN_0050a260 at 0050a3e5
-;   core_set.cpp_FUN_0050aba0 at 0050acc4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005907aa
@@ -30,7 +30,7 @@
 ;   double DOUBLE_00590822 = 0.0000152587890625
 ;   double DOUBLE_0059082a = 1000
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_007f7370
@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdlib.c__qsort_FUN_00563db8
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
@@ -63,7 +63,7 @@ section .text
     CMP dword ptr [EAX + 0x20c],0x0     ; 0050d2e3 | g_CGame_01c775ec.profile_mode
     JNZ 0x0050d436                      ; 0050d2ea
         ;   XREF to: 0050d436 (CONDITIONAL_JUMP)  ; LAB_0050d436
-    MOV EBX,dword ptr [0x005ae704]      ; 0050d2f0 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 0050d2f0 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050d2f0
     XOR ECX,ECX                         ; 0050d2f6
     PUSH EBX                            ; 0050d2f8 | DAT_01b4d738
@@ -74,7 +74,7 @@ section .text
     ADD ESP,0x4                         ; 0050d308
     LEA EAX,[ESP + 0x24]                ; 0050d30b
     PUSH EAX                            ; 0050d30f
-    MOV ESI,dword ptr [0x005ae704]      ; 0050d310 | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 0050d310 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 0050d316 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 0050d317
         ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
@@ -86,10 +86,10 @@ section .text
     MOV EAX,0x5907aa                    ; 0050d329 | = "..\\core\\set.cpp"
     MOV EDX,0xedb                       ; 0050d32e
     PUSH 0x5907ba                       ; 0050d333 | = "CSet::buildActorDisplayList - Don't h..."
-    MOV [0x01cc4800],EAX                ; 0050d338 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050d343
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0050d338 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050d343
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050d348
     MOV ECX,0xc                         ; 0050d34b
         ;   Label: LAB_0050d34b

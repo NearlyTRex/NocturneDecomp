@@ -12,9 +12,9 @@ void engine_dosio_cpp_FUN_00456750(uint param_1)
 
 {
   if (4 < _DAT_01af4ed8) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\dosio.c";
-    g_INT_01cc4804 = 0x4d;
-    core_main_c_FUN_004c8440("addGetFileInfoHook - too many!");
+    g_CurrentFilename = "..\\engine\\dosio.c";
+    g_CurrentLineNumber = 77;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("addGetFileInfoHook - too many!");
   }
   *(uint *)(_DAT_01af4ed8 * 4 + 0x1af4edc) = param_1;
   _DAT_01af4ed8 = _DAT_01af4ed8 + 1;

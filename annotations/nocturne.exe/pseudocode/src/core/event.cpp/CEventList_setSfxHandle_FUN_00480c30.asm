@@ -16,13 +16,13 @@
 ;   TerminatedCString s_CEventList_setSfxHandle_00580c38
 ;   TerminatedCString s_core_event_cpp_00580c61
 ;   TerminatedCString s_CEventList_setSfxHandle_00580c73
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findSfxEntry_FUN_00480d10
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -54,10 +54,10 @@ section .text
     MOV ECX,0x580c26                    ; 00480c5e | = "..\\core\\event.cpp"
     MOV EDI,0xba6                       ; 00480c63
     PUSH 0x580c38                       ; 00480c68 | = "CEventList::setSfxHandle - too many sfx!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00480c6d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00480c73 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00480c79
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00480c6d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00480c73 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00480c79
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00480c7e
     MOV EDX,dword ptr [EBX + 0x3ac8]    ; 00480c81
         ;   Label: LAB_00480c81
@@ -114,10 +114,10 @@ section .text
     MOV EAX,0x580c61                    ; 00480cea | = "..\\core\\event.cpp"
     MOV EDX,0xbae                       ; 00480cef
     PUSH 0x580c73                       ; 00480cf4 | = "CEventList::setSfxHandle - sfx handle..."
-    MOV [0x01cc4800],EAX                ; 00480cf9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00480cfe | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00480d04
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00480cf9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00480cfe | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00480d04
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 00480d09
     JMP 0x00480cb5                      ; 00480d0c
         ;   XREF to: 00480cb5 (UNCONDITIONAL_JUMP)  ; LAB_00480cb5

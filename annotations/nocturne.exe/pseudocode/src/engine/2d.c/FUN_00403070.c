@@ -20,9 +20,9 @@ void engine_2d_c_FUN_00403070(char *param_1,int param_2)
     file = engine_dosio_cpp_getFile_FUN_00456a60("fog",param_1,"rb");
   }
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-    g_INT_01cc4804 = 0x69c;
-    core_main_c_FUN_004c8440("Unable to read fog table.");
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 1692;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to read fog table.");
   }
   else {
     _fread((void *)0x1bd1ea0,0x100,0x10,file);

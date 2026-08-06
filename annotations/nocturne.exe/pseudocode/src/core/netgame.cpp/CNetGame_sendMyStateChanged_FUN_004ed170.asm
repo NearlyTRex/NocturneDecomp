@@ -23,13 +23,13 @@
 ;   TerminatedCString s_core_netgame_cpp_0058c525
 ;   TerminatedCString s_CNetGame_sendMyStateChan_0058c539
 ;   int g_INT_005bdee4 = 0x1
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
@@ -54,10 +54,10 @@ section .text
         ;   Label: LAB_004ed186
     MOV EDI,0x8d0                       ; 004ed18b
     PUSH 0x58c539                       ; 004ed190 | = "CNetGame::sendMyStateChanged - should..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004ed195 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ed19b | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ed1a1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004ed195 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004ed19b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ed1a1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ed1a6
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004ed1a9
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()

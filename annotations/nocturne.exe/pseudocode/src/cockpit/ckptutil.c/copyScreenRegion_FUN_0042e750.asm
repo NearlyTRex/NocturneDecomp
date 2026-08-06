@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     MOV EDX,ECX                         ; 0042e76b
     ADD ECX,ESI                         ; 0042e76d
     MOV dword ptr [ESP + 0x4],ECX       ; 0042e76f
-    MOV ESI,dword ptr [0x005b761c]      ; 0042e773 | DAT_005b761c
+    MOV ESI,dword ptr [0x005b761c]      ; 0042e773 | g_WindowWidth
         ;   Label: LAB_0042e773
     IMUL ESI,EDX                        ; 0042e779
     MOV ECX,dword ptr [ESP + 0x20]      ; 0042e77c

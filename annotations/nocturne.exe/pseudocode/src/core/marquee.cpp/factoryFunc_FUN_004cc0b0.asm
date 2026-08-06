@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1b4                          ; 004cc0b0
         ;   Label: core_marquee.cpp_factoryFunc_FUN_004cc0b0
-    CALL crt_unknown.c_FUN_0056497c     ; 004cc0b5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004cc0b5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004cc0ba
     TEST EAX,EAX                        ; 004cc0bd
     JNZ 0x004cc0c2                      ; 004cc0bf

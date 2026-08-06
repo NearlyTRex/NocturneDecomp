@@ -16,14 +16,14 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
   CHero *local_14;
   
   if (_DAT_01cae0d4 <= index) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-    g_INT_01cc4804 = 0x5f3;
-    core_main_c_FUN_004c8440("CDemonMission::createOneHero - too many heros!");
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 1523;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createOneHero - too many heros!");
   }
   if (*(int *)(index * 4 + 0x1cae0d8) != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-    g_INT_01cc4804 = 0x5f4;
-    core_main_c_FUN_004c8440("CDemonMission::createOneHero - hero already created!");
+    g_CurrentFilename = "..\\core\\mission.cpp";
+    g_CurrentLineNumber = 1524;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createOneHero - hero already created!");
   }
   actor_ptr = this_ptr->first_actor;
   local_14 = (CHero *)0x0;

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,46 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 21,
-        "message": "no matching function for call to '_fprintf'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 23,
-        "message": "no matching function for call to '_fprintf'"
+        "category": "format_error",
+        "column": 35,
+        "line": 28,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 35,
-        "line": 30,
+        "line": 39,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 34,
-        "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "format_error",
         "column": 35,
-        "line": 41,
+        "line": 50,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 45,
-        "message": "no matching function for call to '_fprintf'"
-      },
-      {
-        "category": "format_error",
-        "column": 35,
-        "line": 52,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 56,
-        "message": "no matching function for call to '_fprintf'"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 63,
+        "line": 61,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 69,
-        "message": "no matching function for call to '_fprintf'"
+        "category": "format_error",
+        "column": 30,
+        "line": 72,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 32,
+        "line": 81,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 35,
+        "line": 92,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,21 +104,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 98,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 23,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 98,
+    "pseudocode_lines": 88,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 382
+    "total_lines": 372
   },
   "cross_references": [
     {
       "addr": "004a3b90",
       "from_addr": "004a3d18",
-      "name": "core_game.cpp_FUN_004a3b90",
+      "name": "core_game.cpp_CGame_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,7 +137,7 @@
   "function_calls": [
     {
       "addr": "005644f0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
     }
   ],
@@ -305,7 +287,7 @@
       {
         "call_addr": "004a3d18",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

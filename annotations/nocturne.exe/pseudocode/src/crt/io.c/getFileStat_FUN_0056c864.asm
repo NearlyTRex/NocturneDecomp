@@ -38,13 +38,13 @@
 ;   crt_errno.c___set_errno_FUN_0056c73c
 ;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_io.c_analyze_file_type_FUN_0056c750
+;   crt_io.c_chdir_FUN_00566570
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdlib.c__fullpath_FUN_00565d00
 ;   crt_string.c__strncpy_FUN_00565f70
 ;   crt_string.c_mbtowc_next_FUN_0056da80
 ;   crt_string.c_strpbrk_FUN_00570870
 ;   crt_time.c_dos_datetime_to_time_t_FUN_005709b0
-;   crt_unknown.c_FUN_00566570
 ;   crt_unknown.c_FUN_005708c0
 ;   crt_watcom.c_getcwd_FUN_0056c5f0
 ;   FindClose
@@ -145,8 +145,8 @@ section .text
         ;   XREF to: 0056c989 (CONDITIONAL_JUMP)  ; LAB_0056c989
     PUSH ESI                            ; 0056c93e
         ;   Label: LAB_0056c93e
-    CALL crt_unknown.c_FUN_00566570     ; 0056c93f
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
+    CALL crt_io.c_chdir_FUN_00566570    ; 0056c93f
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 0056c944
     TEST EAX,EAX                        ; 0056c947
     JZ 0x0056c95b                       ; 0056c949
@@ -161,8 +161,8 @@ section .text
     LEA EAX,[ESP + 0x244]               ; 0056c95b
         ;   Label: LAB_0056c95b
     PUSH EAX                            ; 0056c962
-    CALL crt_unknown.c_FUN_00566570     ; 0056c963
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00566570(char * path)
+    CALL crt_io.c_chdir_FUN_00566570    ; 0056c963
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; int crt_io.c_chdir_FUN_00566570(char * path)
     ADD ESP,0x4                         ; 0056c968
     PUSH 0x13e                          ; 0056c96b
     PUSH 0x0                            ; 0056c970

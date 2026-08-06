@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059e4d4 = 256
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005ba84c
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c502c
@@ -69,7 +69,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x38]      ; 004afa87
     MOV dword ptr [0x005c50c0],EDX      ; 004afa8a | DAT_005c50c0
     PUSH EAX                            ; 004afa90
-    MOV EDX,dword ptr [0x005ae704]      ; 004afa91 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004afa91 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [0x005c5060],EBP      ; 004afa97 | DAT_005c5060
     PUSH EDX                            ; 004afa9d | DAT_01b4d738
     MOV dword ptr [0x005c50bc],EBP      ; 004afa9e | DAT_005c50bc
@@ -77,7 +77,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004afaa9
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004afaae
-    MOV EBP,dword ptr [0x005ae704]      ; 004afab1 | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 004afab1 | g_CDemonRenderer_PTR_005ae704
     XOR ECX,ECX                         ; 004afab7
     PUSH 0x5ba84c                       ; 004afab9 | DAT_005ba84c
     MOV dword ptr [0x01c78cc8],ECX      ; 004afabe | DAT_01c78cc8
@@ -178,7 +178,7 @@ section .text
     MOV dword ptr [0x005c50c4],EDI      ; 004afc0b | DAT_005c50c4
     PUSH 0x1c78cc0                      ; 004afc11
         ;   Label: LAB_004afc11
-    MOV ECX,dword ptr [0x005ae704]      ; 004afc16 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004afc16 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004afc1c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0 ; 004afc1d
         ;   XREF to: 004602a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)

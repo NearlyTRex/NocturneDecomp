@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,33 +56,27 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 30,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 29,
-        "line": 32,
+        "line": 33,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 35,
+        "line": 36,
         "message": "use of undeclared identifier 'stack0xfffffe5c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 36,
+        "line": 38,
         "message": "use of undeclared identifier 'stack0xfffffe5c'"
       }
     ],
@@ -92,19 +86,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 87,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 34,
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 150
+    "total_lines": 152
   },
   "cross_references": [],
   "function": {
@@ -123,11 +117,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -180,13 +174,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -257,7 +251,7 @@
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 25,
+      "line": 26,
       "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "error_code = (**(code **)(**(int **)(iVar1 * 4 + 0x2dc92a8) + 0x30))();",
@@ -265,7 +259,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(**(int **)(iVar1 * 4 + 0x2dc92a8) + 0x30))();",
@@ -273,15 +267,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 29,
       "match": "&stack0xfffffe5c",
       "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffe5c,\"DirectSux: Unable to %s.  (%s)\");",
+      "text": "_sprintf(&stack0xfffffe5c,\"DirectSux: Unable to %s.  (%s)\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 31,
       "match": "&stack0xfffffe5c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_00529980(&stack0xfffffe5c);",

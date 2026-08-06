@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 45,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_02dc9d54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_02dc945c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
         "line": 49,
-        "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
+        "message": "use of undeclared identifier '_DAT_02dc945c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
         "line": 50,
+        "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_02dc9464'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 52,
+        "line": 53,
         "message": "use of undeclared identifier '_DAT_02dc945c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_02dc9464'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 56,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 60,
+        "line": 61,
         "message": "use of undeclared identifier 'PTR_s_int_005bed60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 63,
+        "line": 64,
         "message": "use of undeclared identifier 'PTR_s_int_005bed60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 66,
+        "line": 67,
         "message": "use of undeclared identifier '_DAT_02dc9d54'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 290,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 180,
+    "pseudocode_lines": 184,
     "suspect_count": 8,
     "suspect_types": [
       "extra_output",
@@ -137,7 +137,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 532
+    "total_lines": 536
   },
   "cross_references": [],
   "function": {
@@ -189,7 +189,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -505,7 +505,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 128,
+      "line": 129,
       "match": "NAN(",
       "severity": "severe",
       "text": "uVar6 = (uint)(ushort)((ushort)(0.0 < _DAT_02dc9d50) << 8 | (ushort)NAN(_DAT_02dc9d50) << 10 |",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 135,
       "match": "DAT_005bef88",
       "severity": "mild",
       "text": "puVar9 = &DAT_005bef88;",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 178,
       "match": "DAT_02dc9d44",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090((CVector3f *)&DAT_02dc9d44);",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 180,
+      "line": 184,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 154,
+      "line": 158,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 136,
+      "line": 138,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {",

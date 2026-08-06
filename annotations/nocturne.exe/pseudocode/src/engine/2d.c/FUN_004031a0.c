@@ -34,20 +34,20 @@ void engine_2d_c_FUN_004031a0(int param_1)
   iVar7 = 0x1000;
   iVar8 = 0;
   local_18 = 0;
-  bVar1 = *(byte *)(param_1 * 3 + 0x1c0064a);
+  bVar1 = g_SourcePaletteData[param_1 * 3 + 2];
   do {
-    fVar2 = ((float)*(byte *)(iVar8 + 0x1c0064a) - (float)bVar1) * 0.0625f;
+    fVar2 = ((float)g_SourcePaletteData[iVar8 + 2] - (float)bVar1) * 0.0625f;
     local_24 = 0.0;
     iVar5 = local_18;
     do {
       local_24 = local_24 + fVar2;
-      *(byte *)(iVar5 + 0x1bf5620) = 0;
+      g_LightTable[1][iVar5] = '\0';
       iVar5 = iVar5 + 0x100;
     } while (iVar5 != iVar7);
-    local_40 = (float)(byte)(&DAT_01c00648)[iVar8];
+    local_40 = (float)g_SourcePaletteData[iVar8];
     fVar2 = (255.0f - local_40) * 0.0625f;
-    local_28 = (float)*(byte *)(iVar8 + 0x1c00649);
-    local_2c = (float)*(byte *)(iVar8 + 0x1c0064a);
+    local_28 = (float)g_SourcePaletteData[iVar8 + 1];
+    local_2c = (float)g_SourcePaletteData[iVar8 + 2];
     fVar3 = (255.0f - local_28) * 0.0625f;
     local_58 = (255.0f - local_2c) * 0.0625f;
     iVar5 = local_18;
@@ -65,7 +65,7 @@ void engine_2d_c_FUN_004031a0(int param_1)
       iVar6 = iVar5 + 0x100;
       iVar4 = engine_2d_c_findBestPaletteMatch_FUN_00401850
                         ((int)ROUND(dVar9),(int)local_58,blue,iVar4,end_index);
-      *(char *)(iVar5 + 0x1bf6620) = (char)iVar4;
+      g_LightTable[0x11][iVar5] = (uchar)iVar4;
       iVar5 = iVar6;
     } while (iVar6 != iVar7);
     iVar8 = iVar8 + 3;

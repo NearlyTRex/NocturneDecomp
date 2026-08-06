@@ -42,18 +42,18 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_18 = 0xf;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&this_ptr->position);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
   if (this_ptr->is_wall_splat == 1) {
     _DAT_01c78c88 = 0;
     _DAT_01c78c8c = 0;
     _DAT_01c78c94 = 0;
     _DAT_01c78c90 = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,
+              (g_CDemonRenderer_PTR_005ae704,
                (SMRGLTextureBasic *)
                (&DAT_005b974c + local_18 * 0x18 + this_ptr->texture_variant * 0x180));
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-              (DAT_005ae704,&this_ptr->rotation,(CVector3f *)0x0);
+              (g_CDemonRenderer_PTR_005ae704,&this_ptr->rotation,(CVector3f *)0x0);
     local_48 = 0xbf000000;
     local_44 = 0xbf000000;
     local_40 = 0;
@@ -61,7 +61,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_78.y = (int)ROUND(256.0f * -0.5);
     local_78.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_78);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_78);
     local_48 = 0x3f000000;
     local_44 = 0xbf000000;
     local_40 = 0;
@@ -69,7 +69,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_54.y = (int)ROUND(256.0f * -0.5);
     local_54.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_54);
     local_48 = 0x3f000000;
     local_44 = 0x3f000000;
     local_40 = 0;
@@ -77,7 +77,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_24.y = (int)ROUND(256.0f * 0.5);
     local_24.z = (int)ROUND(256.0f * 0.0);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_24);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_24);
     input = &CStack_90;
     local_48 = 0xbf000000;
     local_40 = 0;
@@ -93,8 +93,8 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     _DAT_01c78c94 = 0;
     _DAT_01c78c8c = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (DAT_005ae704,(SMRGLTextureBasic *)(&DAT_005b96ec + this_ptr->texture_variant * 0x18))
-    ;
+              (g_CDemonRenderer_PTR_005ae704,
+               (SMRGLTextureBasic *)(&DAT_005b96ec + this_ptr->texture_variant * 0x18));
     local_6c = 0xbf000000;
     local_68 = 0;
     local_64 = 0xbf000000;
@@ -102,7 +102,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_60.y = (int)ROUND(256.0f * 0.0);
     local_60.z = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);
     local_6c = 0x3f000000;
     local_68 = 0;
     local_64 = 0xbf000000;
@@ -110,7 +110,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_3c.y = (int)ROUND(256.0f * 0.0);
     local_3c.z = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_3c);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_3c);
     local_6c = 0x3f000000;
     local_68 = 0;
     local_64 = 0x3f000000;
@@ -118,7 +118,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     local_30.y = (int)ROUND(256.0f * 0.0);
     local_30.z = (int)ROUND(256.0f * 0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-              (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_30);
+              (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_30);
     local_6c = 0xbf000000;
     local_68 = 0;
     local_64 = 0x3f000000;
@@ -128,7 +128,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004aeb70(CBloodSplat *this_ptr
     input = &local_84;
   }
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,input);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,input);
   uVar1 = this_ptr->blood_type;
   if (uVar1 == 0) {
 LAB_004aedaf:
@@ -195,7 +195,7 @@ LAB_004aee09:
 LAB_004aee48:
   DAT_005c50cc = 0;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-            (DAT_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
   if (this_ptr->is_wall_splat == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
     return;

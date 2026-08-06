@@ -14,15 +14,15 @@
 ;   TerminatedCString s_CGround_init_Out_of_memo_00585395
 ;   TerminatedCString s_core_ground_cpp_005853b3
 ;   TerminatedCString s_CGround_init_Out_of_memo_005853c6
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_free_FUN_004b1470
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_texlist.cpp_CTextureList_ctor_FUN_00544930
 ;   crt_memory.c_malloc_FUN_005635b0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 004b141a (CONDITIONAL_JUMP)  ; LAB_004b141a
     PUSH 0x6d64                         ; 004b13f7
         ;   Label: LAB_004b13f7
-    CALL crt_unknown.c_FUN_0056497c     ; 004b13fc
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004b13fc
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004b1401
     TEST EAX,EAX                        ; 004b1404
     JZ 0x004b1411                       ; 004b1406
@@ -71,10 +71,10 @@ section .text
     MOV ESI,0x585382                    ; 004b141c | = "..\\core\\ground.cpp"
     MOV EDI,0xd3                        ; 004b1421
     PUSH 0x585395                       ; 004b1426 | = "CGround::init - Out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 004b142b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004b1431 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b1437
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004b142b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004b1431 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b1437
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b143c
     POP ESI                             ; 004b143f
     POP EDI                             ; 004b1440
@@ -84,10 +84,10 @@ section .text
         ;   Label: LAB_004b1443
     MOV EDX,0xd8                        ; 004b1448
     PUSH 0x5853c6                       ; 004b144d | = "CGround::init - Out of memory2"
-    MOV [0x01cc4800],EAX                ; 004b1452 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004b1457 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004b145d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004b1452 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004b1457 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004b145d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004b1462
     POP EBX                             ; 004b1465
     RET                                 ; 004b1466

@@ -38,7 +38,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DS
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&this_ptr->pos);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->pos);
   local_c = 0;
   local_18 = 0;
   do {
@@ -63,10 +63,10 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DS
       local_8 = iVar3;
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)
-                 ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
-                 &local_50);
-      this_ptr_00 = DAT_005ae704;
-      *(uint *)((int)&DAT_005ae704->vertex_buffer_ptr->u + iVar2) = 0x800000;
+                 ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar2),&local_50);
+      this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
+      *(uint *)((int)&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->u + iVar2) = 0x800000;
       *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar2) = 0x800000;
       pSVar1 = this_ptr_00->vertex_buffer_ptr;
       dVar9 = round((double)((float)(this_ptr->color).r * _DAT_00591029));
@@ -88,9 +88,10 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DS
   } while (local_18 < 0x11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (this_ptr_00,(SMRGLTextureBasic *)&DAT_005be924);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0x4000);
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+            (g_CDemonRenderer_PTR_005ae704,0x4000);
+  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
   local_20 = 10;
   local_1c = 0;
   do {
@@ -98,11 +99,11 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_005159a0(C3DS
     do {
       iVar2 = iVar2 + 1;
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-                (DAT_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
+                (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff7c);
     } while (iVar2 < 4);
     local_1c = local_1c + 10;
     local_20 = local_20 + 10;
   } while (local_1c != 0xa0);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

@@ -12,44 +12,44 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79(SSoft
   uint uVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
-  bool bVar5;
+  bool bVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  ushort *puVar10;
-  SSoftwareEdge *pSVar11;
-  int iVar12;
+  ushort *puVar9;
+  SSoftwareEdge *pSVar10;
+  int iVar11;
   
   uVar1 = (right_edge->base).x_current;
-  uVar7 = (left_edge->base).x_current;
-  uVar6 = uVar1;
-  pSVar11 = right_edge;
-  if (uVar7 < uVar1) {
-    uVar6 = uVar7;
-    uVar7 = uVar1;
-    pSVar11 = left_edge;
+  uVar6 = (left_edge->base).x_current;
+  uVar5 = uVar1;
+  pSVar10 = right_edge;
+  if (uVar6 < uVar1) {
+    uVar5 = uVar6;
+    uVar6 = uVar1;
+    pSVar10 = left_edge;
     left_edge = right_edge;
   }
-  uVar6 = uVar6 >> 0x10;
-  iVar8 = (uVar7 >> 0x10) - uVar6;
-  if (iVar8 != 0 && uVar6 <= uVar7 >> 0x10) {
-    puVar10 = (ushort *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar6 * 2);
+  uVar5 = uVar5 >> 0x10;
+  iVar7 = (uVar6 >> 0x10) - uVar5;
+  if (iVar7 != 0 && uVar5 <= uVar6 >> 0x10) {
+    puVar9 = (ushort *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar5 * 2);
     iVar2 = (left_edge->base).depth_current;
-    iVar3 = (pSVar11->base).depth_current;
-    iVar4 = *(int *)(&DAT_01c00c84 + iVar8 * 4);
-    iVar12 = (pSVar11->base).depth_current;
+    iVar3 = (pSVar10->base).depth_current;
+    uVar1 = g_ReciprocalLookupTable[iVar7 + 1];
+    iVar11 = (pSVar10->base).depth_current;
     do {
-      if ((uint)(iVar12 >> 8) < (uint)*puVar10) {
-        *puVar10 = (ushort)((uint)iVar12 >> 8);
+      if ((uint)(iVar11 >> 8) < (uint)*puVar9) {
+        *puVar9 = (ushort)((uint)iVar11 >> 8);
       }
-      iVar12 = iVar12 + (int)((ulonglong)((longlong)(iVar2 - iVar3) * (longlong)iVar4) >> 0x20);
-      puVar10 = puVar10 + 1;
-      iVar9 = iVar8 + -1;
-      bVar5 = 0 < iVar8;
-      iVar8 = iVar9;
-    } while (iVar9 != 0 && bVar5);
+      iVar11 = iVar11 + (int)((ulonglong)((longlong)(iVar2 - iVar3) * (longlong)(int)uVar1) >> 0x20)
+      ;
+      puVar9 = puVar9 + 1;
+      iVar8 = iVar7 + -1;
+      bVar4 = 0 < iVar7;
+      iVar7 = iVar8;
+    } while (iVar8 != 0 && bVar4);
   }
   return;
 }

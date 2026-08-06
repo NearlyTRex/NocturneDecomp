@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 37,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
     "total_lines": 65
@@ -38,7 +39,7 @@
     {
       "addr": "005638d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
+      "name": "crt_memory.c_free_FUN_005638d0"
     }
   ],
   "globals": [
@@ -120,6 +121,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(LPCRITICAL_SECTION *)(iVar2 + (int)_DAT_02de5c18",
+      "severity": "moderate",
+      "text": "DeleteCriticalSection(*(LPCRITICAL_SECTION *)(iVar2 + (int)_DAT_02de5c18));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)(iVar2 + (int)_DAT_02de5c18",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)(iVar2 + (int)_DAT_02de5c18);",
+      "type": "pointer_cast"
     }
   ]
 }

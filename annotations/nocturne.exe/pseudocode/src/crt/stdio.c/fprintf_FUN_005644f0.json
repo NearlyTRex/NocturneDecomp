@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 82,
+    "complexity_score": 23,
     "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 7,
-    "suspect_count": 6,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
-    "total_lines": 24
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -158,7 +156,7 @@
     {
       "addr": "004a3b90",
       "from_addr": "004a3c84",
-      "name": "core_game.cpp_FUN_004a3b90",
+      "name": "core_game.cpp_CGame_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -192,15 +190,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8c00",
-      "from_addr": "004d8c23",
-      "name": "core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00",
+      "addr": "004d8720",
+      "from_addr": "004d8762",
+      "name": "core_mission.cpp_CDemonMission_FUN_004d8720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8720",
-      "from_addr": "004d8762",
-      "name": "core_mission.cpp_FUN_004d8720",
+      "addr": "004d8c00",
+      "from_addr": "004d8c23",
+      "name": "core_mission.cpp_CDemonMission_saveActor_FUN_004d8c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -218,7 +216,7 @@
     {
       "addr": "005055f0",
       "from_addr": "00505602",
-      "name": "core_script.cpp_FUN_005055f0",
+      "name": "core_script.cpp_CScript_saveState_FUN_005055f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,9 +258,9 @@
         "00564514"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_stdio.c_fprintf_FUN_005644f0",
-    "signature": "void crt_stdio_c_fprintf_FUN_005644f0(undefined4 param_1,undefined4 param_2)"
+    "signature": "int __cdecl crt_stdio_c_fprintf_FUN_005644f0(_FILE *file,char *format,...)"
   },
   "function_calls": [
     {
@@ -279,12 +277,10 @@
         "call_addr": "004bd5b5",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -292,12 +288,10 @@
         "call_addr": "004bd619",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -305,13 +299,10 @@
         "call_addr": "004bd637",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -319,12 +310,10 @@
         "call_addr": "004bd68d",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -332,12 +321,10 @@
         "call_addr": "004bd6bb",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 5,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -345,13 +332,10 @@
         "call_addr": "004bd6f4",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 6,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
       },
@@ -359,12 +343,10 @@
         "call_addr": "004bd73a",
         "call_type": "direct",
         "caller": "engine_ini.cpp_CIni_writeProfileString_FUN_004bd480",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -372,33 +354,28 @@
         "call_addr": "0043ad0e",
         "call_type": "direct",
         "caller": "engine_console.cpp_CConsole_printf_FUN_0043ac60",
-        "estimated_params": 5,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       },
       {
         "call_addr": "004a3c84",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a3b90",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004a3c94",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_FUN_004a3b90",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -407,11 +384,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -436,10 +413,10 @@
     "pcode_op_count": 60
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 20,
     "local_size": 12,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -448,60 +425,31 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void _fprintf(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void _fprintf(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 7,
+      "line": 8,
       "match": "&stack0x0000000c",
       "severity": "moderate",
       "text": "local_8 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0056ae10(param_1,param_2,&local_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_0056ae10(param_1,param_2,&local_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

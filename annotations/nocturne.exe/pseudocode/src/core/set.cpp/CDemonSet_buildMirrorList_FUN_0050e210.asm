@@ -14,17 +14,17 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590832
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_00590842
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_CGlassActorType_01c78c40.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;
 ; *****************************************************************************
@@ -89,12 +89,12 @@ section .text
     MOV EBX,0x590832                    ; 0050e2ad | = "..\\core\\set.cpp"
     MOV EAX,0x1118                      ; 0050e2b2
     PUSH 0x590842                       ; 0050e2b7 | = "CDemonSet::buildMirrorList - Too many..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050e2c2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050e2c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0050e2c2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050e2c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050e2cc
-    MOV EDX,dword ptr [0x005ae704]      ; 0050e2cf | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0050e2cf | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050e2cf
     PUSH EDX                            ; 0050e2d5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0050e2d6

@@ -16,19 +16,19 @@
 ;   TerminatedCString s_rb_005927ba
 ;   TerminatedCString s_sound_005927bd
 ;   float FLOAT_005a2174 = 2
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc1ed8
 ;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
 ;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
+;   crt_memory.c_operator_new_FUN_0056497c
 ;   crt_stdio.c_ftell_FUN_00566e70
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_string.c_splitpath_FUN_00566498
-;   crt_unknown.c_FUN_0056497c
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90
@@ -124,8 +124,8 @@ section .text
     JLE 0x00522ceb                      ; 00522aaa
         ;   XREF to: 00522ceb (CONDITIONAL_JUMP)  ; LAB_00522ceb
     PUSH 0x8630                         ; 00522ab0
-    CALL crt_unknown.c_FUN_0056497c     ; 00522ab5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00522ab5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00522aba
     TEST EAX,EAX                        ; 00522abd
     JZ 0x00522aca                       ; 00522abf
@@ -142,10 +142,10 @@ section .text
     MOV EDI,0x592796                    ; 00522ad4 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x3c8                       ; 00522ad9
     PUSH 0x5927ab                       ; 00522ade | = "Out of memory."
-    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00522ae9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00522aee
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00522ae9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00522aee
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00522af3
     PUSH ESI                            ; 00522af6
         ;   Label: LAB_00522af6

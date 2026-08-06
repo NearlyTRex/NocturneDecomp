@@ -164,9 +164,9 @@ LAB_00549887:
     }
     break;
   default:
-    g_CHAR_PTR_01cc4800 = "..\\core\\turret.cpp";
-    g_INT_01cc4804 = 0x15a;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\core\\turret.cpp";
+    g_CurrentLineNumber = 346;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {
     (*(((this_ptr->base).base.vtable._uc)->_uc).releaseFromGrab)((CCharacter *)this_ptr);
@@ -181,7 +181,7 @@ LAB_00549887:
     local_14 = local_f8;
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handles[0],local_f8);
     if (iVar5 == 0) {
-      _sprintf(local_f4,"turret-loop.wav * %f");
+      _sprintf(local_f4,"turret-loop.wav * %f",(double)local_f8);
       uVar7 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
       this_ptr->sfx_handles[0] = uVar7;

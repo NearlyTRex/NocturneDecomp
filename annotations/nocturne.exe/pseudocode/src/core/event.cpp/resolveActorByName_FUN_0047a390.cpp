@@ -42,7 +42,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
                             (g_CDemonMission_PTR_005baf90,name);
       if (actor_ptr == (CDemonActor *)0x0) {
-        _sprintf(&DAT_01c08b60,"Actor \"%s\" does not exist.");
+        _sprintf(&DAT_01c08b60,"Actor \"%s\" does not exist.",name);
         return (CDemonActor *)0x0;
       }
       goto LAB_0047a41f;
@@ -64,7 +64,7 @@ LAB_0047a41f:
   if (*name == '@') {
     return 0x0FFFFFFF;
   }
-  core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(actor_ptr);
-  _sprintf(&DAT_01c08b60,"Actor \"%s\" is of type %s, this command requires an actor of type %s.");
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(actor_ptr);
+  _sprintf(&DAT_01c08b60,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",name,pcVar3,class_name);
   return (CDemonActor *)0x0;
 }

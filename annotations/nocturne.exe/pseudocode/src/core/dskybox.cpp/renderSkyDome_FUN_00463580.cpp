@@ -69,14 +69,14 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
     _DAT_005b0678 = local_30;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,(CVector3f *)&DAT_01b7b728);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_01b7b728);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar7 = (float10)fsin((float10)0.58904862253125001);
   fVar8 = (float10)_DAT_005b0678;
   fVar9 = (float10)256;
   dVar10 = round((double)(fVar7 * fVar8 * fVar9));
-  pCVar2 = DAT_005ae704;
+  pCVar2 = g_CDemonRenderer_PTR_005ae704;
   local_74._4_4_ = (uint)ROUND(dVar10);
   local_68 = local_74._4_4_;
   dVar10 = round((double)(fVar8 * fVar9));
@@ -85,16 +85,19 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
             (&pCVar2->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_74 + 4));
   local_74._0_4_ = -local_74._0_4_;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_74);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
+             (CVector3i *)local_74);
   local_6c = -local_6c;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)local_74);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,
+             (CVector3i *)local_74);
   local_74._0_4_ = -local_74._0_4_;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_74);
-  pCVar2 = DAT_005ae704;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
+             (CVector3i *)local_74);
+  pCVar2 = g_CDemonRenderer_PTR_005ae704;
   iVar6 = (sky_texture->base).type;
-  DAT_005ae704->vertex_buffer_ptr->r = iVar6;
+  g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = iVar6;
   pCVar2->vertex_buffer_ptr->g = iVar6;
   pCVar2->vertex_buffer_ptr->b = iVar6;
   pCVar2->vertex_buffer_ptr->a = 0;
@@ -144,7 +147,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
       local_40 = local_40 + 4;
       iVar6 = iVar6 + 1;
       engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
-                (DAT_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);
+                (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff44,0x2c5);
     } while (iVar6 < 3);
     local_28 = local_28 + 4;
     local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\x01',(undefined3)local_30));

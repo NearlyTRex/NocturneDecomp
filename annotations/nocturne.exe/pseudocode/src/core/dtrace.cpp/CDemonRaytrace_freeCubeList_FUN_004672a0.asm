@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_dtor_FUN_00456f40
-;   crt_unknown.c_FUN_005638d0
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_free_FUN_005638d0
+;   crt_memory.c_operator_delete_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -62,16 +62,16 @@ section .text
         ;   XREF to: 00456f40 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_00456f40(CDemonPart * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00467300
     PUSH EAX                            ; 00467303
-    CALL crt_unknown.c_FUN_00564494     ; 00467304
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00467304
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00467309
     JMP 0x004672e9                      ; 0046730c
         ;   XREF to: 004672e9 (UNCONDITIONAL_JUMP)  ; LAB_004672e9
     MOV EBX,dword ptr [ESI + 0x4c]      ; 0046730e
         ;   Label: LAB_0046730e
     PUSH EBX                            ; 00467311
-    CALL crt_unknown.c_FUN_005638d0     ; 00467312
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00467312
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00467317
     POP EBX                             ; 0046731a
     POP EDI                             ; 0046731b

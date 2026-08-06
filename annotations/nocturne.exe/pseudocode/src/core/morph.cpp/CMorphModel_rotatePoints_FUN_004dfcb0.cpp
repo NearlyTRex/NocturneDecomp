@@ -27,9 +27,9 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   uint local_14;
   
   if (2000 < this_ptr->num_points) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\morph.cpp";
-    g_INT_01cc4804 = 0x1f8;
-    core_main_c_FUN_004c8440("CMorphModel::rotatePoints - too many points!");
+    g_CurrentFilename = "..\\core\\morph.cpp";
+    g_CurrentLineNumber = 504;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMorphModel::rotatePoints - too many points!");
   }
   local_20 = 0;
   local_14 = 0xff;
@@ -52,10 +52,10 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
       input->z = (int)ROUND((blend_factor * fVar4 + fVar8 * fVar2) * _DAT_005a0cc0);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)
-                 ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar10),
-                 input);
-      uVar7 = *(uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x + iVar10)
-      ;
+                 ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                        transformed_x + iVar10),input);
+      uVar7 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                              screen_x + iVar10);
       if ((uVar7 & 0x80000000) == 0) {
         local_14 = 0;
       }
@@ -77,6 +77,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
             (g_CDemonSet_PTR_005be368,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
              (CVector3i *)&DAT_01cce554,3,(CVector3i *)0x0);
-  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,local_20);
+  engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+            (g_CDemonRenderer_PTR_005ae704,local_20);
   return;
 }

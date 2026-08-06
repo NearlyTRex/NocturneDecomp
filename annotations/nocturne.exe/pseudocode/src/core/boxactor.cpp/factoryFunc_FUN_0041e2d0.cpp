@@ -11,7 +11,7 @@ CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_0041e2d0(void)
 {
   CBoxActor *pCVar1;
   
-  pCVar1 = (CBoxActor *)FUN_0056497c(0x664);
+  pCVar1 = operator_new(0x664);
   if (pCVar1 == (CBoxActor *)0x0) {
     return (CBoxActor *)0x0;
   }

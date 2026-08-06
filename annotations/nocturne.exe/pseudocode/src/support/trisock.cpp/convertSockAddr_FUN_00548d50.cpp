@@ -11,19 +11,16 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_00548d50(SNetworkA
 {
   ushort uVar1;
   uint *puVar2;
-  char *apcStack_10 [2];
   
   if (src_addr->sin_family != 2) {
-    apcStack_10[0] = "sockaddr is not of AF_INET family!";
-    g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
-    g_INT_01cc4804 = 0xa5;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\support\\trisock.cpp";
+    g_CurrentLineNumber = 165;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("sockaddr is not of AF_INET family!");
   }
-  apcStack_10[0] = (char *)(uint)src_addr->sin_port;
   uVar1 = Ordinal_15();
   dest_addr->port = uVar1;
   puVar2 = support_trisock_cpp_copyIPAddress_FUN_00548ae0
-                     ((uint *)apcStack_10,(uint *)&src_addr->sin_addr);
+                     ((uint *)&stack0xfffffff0,(uint *)&src_addr->sin_addr);
   dest_addr->ip_address = *puVar2;
   return (SOCKADDR_IN *)dest_addr;
 }

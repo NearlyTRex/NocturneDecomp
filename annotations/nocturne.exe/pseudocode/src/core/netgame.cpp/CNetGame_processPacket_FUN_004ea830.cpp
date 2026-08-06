@@ -372,9 +372,9 @@ LAB_004eaf88:
       } while (iVar5 < _DAT_01d09c00 * 100);
     }
     if (0x1ff < _DAT_01d09c00) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-      g_INT_01cc4804 = 299;
-      core_main_c_FUN_004c8440("allocSimFrame - sim history list full");
+      g_CurrentFilename = "..\\core\\netgame.cpp";
+      g_CurrentLineNumber = 299;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("allocSimFrame - sim history list full");
     }
     puVar3 = (uint *)(_DAT_01d09c00 * 100 + 0x1d09c04);
     _DAT_01d09c00 = _DAT_01d09c00 + 1;
@@ -389,9 +389,9 @@ LAB_004eb1a5:
       local_24 = puVar3;
       do {
         if (iVar5 < 0) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\netgame.cpp";
-          g_INT_01cc4804 = 0x596;
-          core_main_c_FUN_004c8440("Player list mismatch processing SimFrame Update packet!");
+          g_CurrentFilename = "..\\core\\netgame.cpp";
+          g_CurrentLineNumber = 1430;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Player list mismatch processing SimFrame Update packet!");
         }
         pSVar7 = (local_18->sim_frame).frame.player_input;
         puVar3 = local_24 + iVar5 * 0xb + 3;

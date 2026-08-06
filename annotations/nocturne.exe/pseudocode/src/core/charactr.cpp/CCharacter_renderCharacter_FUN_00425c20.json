@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 19,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
       }
     ],
     "success": false,
@@ -68,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 39,
+    "complexity_score": 25,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 100
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -150,6 +142,11 @@
   },
   "function_calls": [
     {
+      "addr": "004270e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_FUN_004270e0"
+    },
+    {
       "addr": "004265a0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0"
@@ -163,11 +160,6 @@
       "addr": "00425cc0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0"
-    },
-    {
-      "addr": "004270e0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004270e0"
     },
     {
       "addr": "004385a0",
@@ -188,9 +180,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b9354",
@@ -377,14 +369,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

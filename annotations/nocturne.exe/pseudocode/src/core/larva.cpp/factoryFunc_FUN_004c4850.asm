@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_larva.cpp_CLarva_ctor_FUN_004c4880
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd30                         ; 004c4850
         ;   Label: core_larva.cpp_factoryFunc_FUN_004c4850
-    CALL crt_unknown.c_FUN_0056497c     ; 004c4855
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c4855
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c485a
     TEST EAX,EAX                        ; 004c485d
     JNZ 0x004c4862                      ; 004c485f

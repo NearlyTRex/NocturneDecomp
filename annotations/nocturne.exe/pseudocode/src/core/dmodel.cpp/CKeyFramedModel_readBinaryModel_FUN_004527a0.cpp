@@ -23,9 +23,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
   if (SVar1 != 1) goto LAB_00452819;
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-      g_INT_01cc4804 = 0xed;
-      core_main_c_FUN_004c8440("KFM file is invalid version %d",local_2c);
+      g_CurrentFilename = "..\\core\\dmodel.cpp";
+      g_CurrentLineNumber = 237;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is invalid version %d");
     }
     local_14 = 0;
     if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
@@ -59,8 +59,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
       }
     }
 LAB_00452819:
-    g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-    g_INT_01cc4804 = 0xe7;
-    core_main_c_FUN_004c8440("Error reading keyframed model file");
+    g_CurrentFilename = "..\\core\\dmodel.cpp";
+    g_CurrentLineNumber = 231;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading keyframed model file");
   } while( true );
 }

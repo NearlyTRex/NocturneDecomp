@@ -9,6 +9,6 @@
 void __cdecl shape_memdbg_cpp_free_FUN_00564486(void *ptr)
 
 {
-  FUN_00564494(ptr);
+  operator_delete(ptr);
   return;
 }

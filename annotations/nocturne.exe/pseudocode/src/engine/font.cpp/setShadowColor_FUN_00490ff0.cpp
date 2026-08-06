@@ -13,7 +13,7 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uin
 
 {
   if (DAT_005b7624 == 8) {
-    DAT_01c70f5c = (&DAT_01bf7720)
+    DAT_01c70f5c = g_ColorCubeLookup
                    [((int)green >> 3) * 0x20 + ((int)red >> 3) * 0x400 + ((int)blue >> 3)];
   }
   else if (DAT_005b7624 == 0x10) {
@@ -28,9 +28,9 @@ void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uin
          green << (DAT_01c00630 & 0x1f) | red << (DAT_01c00624 & 0x1f);
   }
   else {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
-    g_INT_01cc4804 = 0x399;
-    core_main_c_FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
+    g_CurrentFilename = "..\\engine\\font.cpp";
+    g_CurrentLineNumber = 921;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
   }
   _DAT_01c70f68 = green;
   _DAT_01c70f6c = blue;

@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00535900 at 005364b8
+;   core_stranger.cpp_CStranger_FUN_00535900 at 005364b8
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a2704 = 10

@@ -36,17 +36,17 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004931b0(CBitFont *this_p
         uVar1 = (uint)(byte)pCVar5->palette_data[0];
         if (DAT_005b7624 < 0x10) {
           if (DAT_005b7624 == 8) {
-            uVar1 = (uint)(byte)(&DAT_01bf7720)
-                                [((int)uVar4 >> 3) +
-                                 ((int)uVar1 >> 3) * 0x400 + ((int)uVar2 >> 3) * 0x20];
+            uVar1 = (uint)g_ColorCubeLookup
+                          [((int)uVar4 >> 3) + ((int)uVar1 >> 3) * 0x400 + ((int)uVar2 >> 3) * 0x20]
+            ;
 LAB_00493246:
             local_20->palettes_display[0][iVar3] = uVar1;
           }
           else {
 LAB_00493368:
-            g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
-            g_INT_01cc4804 = 0x686;
-            core_main_c_FUN_004c8440("CBitFont::remapPalette - Invalid bitsPerPixel");
+            g_CurrentFilename = "..\\engine\\font.cpp";
+            g_CurrentLineNumber = 1670;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("CBitFont::remapPalette - Invalid bitsPerPixel");
           }
         }
         else {

@@ -29,11 +29,11 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_00544e60(CTexture
       pCVar5->texture_names[0][0] = '\0';
       pCVar3->texture_dimensions[0] = 0;
       if (pCVar3->texture_data_ptrs[0] != (uchar *)0x0) {
-        FUN_005638d0(pCVar3->texture_data_ptrs[0]);
+        free(pCVar3->texture_data_ptrs[0]);
         pCVar3->texture_data_ptrs[0] = (uchar *)0x0;
       }
       if (pCVar3->texture_opacity_ptrs[0] != (uchar *)0x0) {
-        FUN_005638d0(pCVar3->texture_opacity_ptrs[0]);
+        free(pCVar3->texture_opacity_ptrs[0]);
         pCVar3->texture_opacity_ptrs[0] = (uchar *)0x0;
       }
       iVar4 = iVar4 + 1;

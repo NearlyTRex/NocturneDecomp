@@ -23,9 +23,9 @@ CShotgun * __cdecl CShotgun::ctor(CShotgun *this_ptr);
 // Address: 00515db0
 void __cdecl CShotgun::process(CShotgun *this_ptr,float delta_time);
 
-// Original: core_shotgun.cpp_FUN_00515ea0
+// Original: core_shotgun.cpp_CShotgun_fire_FUN_00515ea0
 // Address: 00515ea0
-undefined4 FUN_00515ea0(CCharacter *param_1);
+int __cdecl CShotgun::fire(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_onFired_FUN_00516620
 // Address: 00516620

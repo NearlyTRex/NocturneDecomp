@@ -23,9 +23,9 @@ CElephantGun * __cdecl CElephantGun::ctor(CElephantGun *this_ptr);
 // Address: 004777a0
 void __cdecl CElephantGun::process(CElephantGun *this_ptr,float delta_time);
 
-// Original: core_elephant.cpp_FUN_00477890
+// Original: core_elephant.cpp_CElephantGun_fire_FUN_00477890
 // Address: 00477890
-undefined4 FUN_00477890(CCharacter *param_1);
+int __cdecl CElephantGun::fire(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0
 // Address: 00477fd0

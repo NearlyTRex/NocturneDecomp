@@ -531,6 +531,6 @@ int __cdecl getFontMaxCharHeight(CBitFont *font_ptr);
 // Address: 0047767b
 void FUN_0047767b(void);
 
-// Original: shape_edittool.cpp_FUN_00477690
+// Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_00477690
 // Address: 00477690
-void FUN_00477690(void);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

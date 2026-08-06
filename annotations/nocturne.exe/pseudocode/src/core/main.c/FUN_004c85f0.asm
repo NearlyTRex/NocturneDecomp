@@ -32,9 +32,9 @@
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
 ;   core_dfont.cpp_FUN_0044c560
 ;   core_inivar.cpp_FUN_004bdb80
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0
-;   core_mission.cpp_FUN_004d7e00
+;   core_mission.cpp_CDemonMission_FUN_004d7e00
 ;   core_mmx.c_detectCPUFeatures_FUN_004d9e70
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_0052dd20
@@ -43,7 +43,7 @@
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_freopen_FUN_00565724
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   engine_2d.c_FUN_00401010
+;   engine_2d.c_initGraphicsSystem_FUN_00401010
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -71,7 +71,7 @@ section .text
     TEST EAX,EAX                        ; 004c862a
     JNZ 0x004c8d70                      ; 004c862c
         ;   XREF to: 004c8d70 (CONDITIONAL_JUMP)  ; LAB_004c8d70
-    MOV dword ptr [0x006af628],0x3      ; 004c8632 | DAT_006af628
+    MOV dword ptr [0x006af628],0x3      ; 004c8632 | g_RenderingMode
     PUSH 0x587b65                       ; 004c863c | = "rb"
         ;   Label: LAB_004c863c
     PUSH 0x587b68                       ; 004c8641 | = "stderr.txt"
@@ -96,10 +96,10 @@ section .text
     MOV EDX,0x587b7e                    ; 004c8671 | = "..\\core\\main.c"
     MOV ECX,0x28c                       ; 004c8676
     PUSH 0x587b8d                       ; 004c867b | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01cc4800],EDX      ; 004c8680 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c8686 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c868c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004c8680 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004c8686 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c868c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c8691
     PUSH 0x5c18c8                       ; 004c8694 | DAT_005c18c8
         ;   Label: LAB_004c8694
@@ -109,7 +109,7 @@ section .text
     CALL crt_stdio.c_freopen_FUN_00565724 ; 004c86a8
         ;   XREF to: 00565724 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_00565724(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 004c86ad
-    MOV dword ptr [0x006af628],EBX      ; 004c86b0 | DAT_006af628
+    MOV dword ptr [0x006af628],EBX      ; 004c86b0 | g_RenderingMode
     CALL xxx_unk.c_FUN_0048ee80         ; 004c86b6
         ;   XREF to: 0048ee80 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_0048ee80()
     CALL core_inivar.cpp_FUN_004bdb80   ; 004c86bb
@@ -141,22 +141,22 @@ section .text
     MOV EDX,0x587bcf                    ; 004c870f | = "..\\core\\main.c"
     MOV ECX,0x2b7                       ; 004c8714
     PUSH 0x587bde                       ; 004c8719 | = "This CPU does not have an MMX unit."
-    MOV dword ptr [0x01cc4800],EDX      ; 004c871e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c8724 | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 004c871e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004c8724 | g_CurrentLineNumber
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004c872a
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004c872f
     PUSH EAX                            ; 004c8732
-    CALL core_main.c_FUN_004c8440       ; 004c8733
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c8733
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c8738
     CALL engine_matrix.c_initializeTrigTables_FUN_004cc9d0 ; 004c873b
         ;   XREF to: 004cc9d0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_initializeTrigTables_FUN_004cc9d0()
         ;   Label: LAB_004c873b
     CALL engine_3d.c_FUN_005458a0       ; 004c8740
-        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_005458a0()
-    CALL engine_2d.c_FUN_00401010       ; 004c8745
-        ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00401010()
+        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_005458a0()
+    CALL engine_2d.c_initGraphicsSystem_FUN_00401010 ; 004c8745
+        ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; void engine_2d.c_initGraphicsSystem_FUN_00401010()
     CALL wincore_winrun.cpp_calibrateCPUSpeed_FUN_005587f0 ; 004c874a
         ;   XREF to: 005587f0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_calibrateCPUSpeed_FUN_005587f0()
     CALL wincore_winrun.cpp_initJoystick_FUN_00559e20 ; 004c874f
@@ -173,10 +173,10 @@ section .text
     MOV EBX,0x587c02                    ; 004c876c | = "..\\core\\main.c"
     MOV ESI,0x2c8                       ; 004c8771
     PUSH 0x587c11                       ; 004c8776 | = "Unable to set 640x480x32bpp.  Please ..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004c877b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004c8781 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004c8787
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004c877b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004c8781 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c8787
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c878c
     CALL core_dfont.cpp_FUN_0044c560    ; 004c878f
         ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044c560()
@@ -750,8 +750,8 @@ section .text
     MOV EBX,dword ptr [0x005baf90]      ; 004c8c84 | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004c8c8a
     XOR ESI,ESI                         ; 004c8c8b
-    CALL core_mission.cpp_FUN_004d7e00  ; 004c8c8d
-        ;   XREF to: 004d7e00 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d7e00()
+    CALL core_mission.cpp_CDemonMission_FUN_004d7e00 ; 004c8c8d
+        ;   XREF to: 004d7e00 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d7e00(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004c8c92
     XOR EBX,EBX                         ; 004c8c95
     MOV dword ptr [ESP + 0x714],EBX     ; 004c8c97
@@ -824,7 +824,7 @@ section .text
     POP ESI                             ; 004c8d6d
     POP EBX                             ; 004c8d6e
     RET                                 ; 004c8d6f
-    MOV dword ptr [0x006af628],EBX      ; 004c8d70 | DAT_006af628
+    MOV dword ptr [0x006af628],EBX      ; 004c8d70 | g_RenderingMode
         ;   Label: LAB_004c8d70
     MOV dword ptr [0x01c038f0],EBX      ; 004c8d76 | DAT_01c038f0
     JMP 0x004c863c                      ; 004c8d7c

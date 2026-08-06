@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   skip_data_load
 ;
 ; XREF[2]:
+;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90 at 004f50a6
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4eb5
-;   cockpit_pkbitmap.cpp_FUN_004f4f90 at 004f50a6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d252
@@ -19,12 +19,12 @@
 ;   TerminatedCString s_Corrupt_data_detected_re_0058d2b0
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d2d3
 ;   TerminatedCString s_Out_of_memory_reading_PB_0058d2eb
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_004f3f50
-;   core_main.c_FUN_004c8440
+;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
@@ -43,8 +43,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 004f4c87
     MOV EBP,dword ptr [ESP + 0x34]      ; 004f4c8b
     PUSH EBX                            ; 004f4c8f
-    CALL cockpit_pkbitmap.cpp_FUN_004f3f50 ; 004f4c90
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f3f50()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 ; 004f4c90
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f4c95
         ;   Label: LAB_004f4c95
     PUSH EBP                            ; 004f4c98
@@ -75,29 +75,29 @@ section .text
         ;   Label: LAB_004f4cca
     MOV ECX,0x4b1                       ; 004f4ccf
     PUSH 0x58d2b0                       ; 004f4cd4 | = "Corrupt data detected reading PBM."
-    MOV dword ptr [0x01cc4800],EDX      ; 004f4cd9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f4cdf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f4ce5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f4cd9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f4cdf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f4ce5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f4cea
     MOV ESI,0x58d2d3                    ; 004f4ced | = "..\\cockpit\\pkbitmap.cpp"
         ;   Label: LAB_004f4ced
     MOV EDI,0x4b2                       ; 004f4cf2
     PUSH 0x58d2eb                       ; 004f4cf7 | = "Out of memory reading PBM"
-    MOV dword ptr [0x01cc4800],ESI      ; 004f4cfc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4d02 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f4d08
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004f4cfc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4d02 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f4d08
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     JMP 0x004f4c95                      ; 004f4d0d
         ;   XREF to: 004f4c95 (UNCONDITIONAL_JUMP)  ; LAB_004f4c95
     MOV EDI,0x58d252                    ; 004f4d0f | = "..\\cockpit\\pkbitmap.cpp"
         ;   Label: LAB_004f4d0f
     MOV EAX,0x4b0                       ; 004f4d14
     PUSH 0x58d26a                       ; 004f4d19 | = "IO error reading PBM (possibly corrup..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004f4d1e | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f4d24 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f4d29
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004f4d1e | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004f4d24 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f4d29
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f4d2e
     JMP 0x004f4cca                      ; 004f4d31
         ;   XREF to: 004f4cca (UNCONDITIONAL_JUMP)  ; LAB_004f4cca

@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00523b70(CSfxSample
   if (this_ptr->sample_data == (short *)0x0) {
     return;
   }
-  FUN_005638d0(this_ptr->sample_data);
+  free(this_ptr->sample_data);
   this_ptr->sample_data = (short *)0x0;
   return;
 }

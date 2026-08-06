@@ -48,19 +48,19 @@
 // FUNCTION PROTOTYPES - Range 0x400000
 // =============================================================================
 
-void engine_2d_c_FUN_00401010(void);
+void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void);
 void __cdecl engine_2d_c_FUN_004012a0(void);
-void engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3);
-int engine_2d_c_FUN_004013d0(int param_1,int param_2,int param_3,byte param_4);
-void engine_2d_c_FUN_004014a0(char *param_1,int param_2,undefined4 param_3,undefined4 param_4);
-int engine_2d_c_FUN_004014f0(byte *param_1);
+void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3);
+int __cdecl engine_2d_c_FUN_004013d0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6 ,byte param_7);
+void __cdecl engine_2d_c_FUN_004014a0(byte *param_1,int param_2,int param_3,undefined4 param_4);
+int __cdecl engine_2d_c_FUN_004014f0(byte *param_1);
 void __cdecl engine_2d_c_plotPixel_FUN_00401530(int x,int y);
 void __cdecl engine_2d_c_drawLine_FUN_004015a0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int x_coord,int y_coord,uint depth_value);
 void __cdecl engine_2d_c_drawLine3D_FUN_00401710(int x1,int y1,uint z1,int x2,int y2,uint z2);
 int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int blue,int start_index,int end_index);
-void __cdecl engine_2d_c_FUN_00401990(char *filename);
-void __cdecl engine_2d_c_FUN_00401bd0(char *filename);
+void __cdecl engine_2d_c_buildBlendTables_FUN_00401990(char *filename);
+void __cdecl engine_2d_c_loadPaletteFile_FUN_00401bd0(char *filename);
 int __cdecl engine_2d_c_drawCharacter_FUN_00401c40(int char_code,int x_pos,int y_pos);
 void __cdecl engine_2d_c_project3DPointToScreen_FUN_00401da0(int x_3d,int y_3d,int z_depth);
 void __cdecl engine_2d_c_project3DPointClipped_FUN_00401df0(int x_3d,int y_3d,int z_depth);
@@ -110,10 +110,10 @@ void engine_2d_c_FUN_00402e90(int param_1);
 void engine_2d_c_FUN_00403070(char *param_1,int param_2);
 void engine_2d_c_FUN_00403130(char *param_1);
 void engine_2d_c_FUN_004031a0(int param_1);
-void engine_2d_c_FUN_00403460(char *param_1);
+void __cdecl engine_2d_c_loadLightTable_FUN_00403460(char *filename);
 void engine_2d_c_FUN_00403500(char *param_1);
 void __cdecl engine_2d_c_buildColorLookupTable_FUN_00403570(void);
-void __cdecl engine_2d_c_FUN_00403630(char *filename);
+void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00403630(char *filename);
 void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00403760(void);
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void);
 void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3);
@@ -131,14 +131,14 @@ void __cdecl engine_2d_c_setSolidColor_FUN_00404090(int red_component,int green_
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void);
-undefined4 * engine_3d_c_FUN_00404430(void);
-void engine_3d_c_FUN_005458a0(void);
-void engine_3d_c_FUN_005458d0(void);
+char * __cdecl engine_3d_c_FUN_00404430(void);
+void __cdecl engine_3d_c_FUN_005458a0(void);
+void __cdecl engine_3d_c_FUN_005458d0(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004044a0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended *mrgl);
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane);
-int engine_3d_c_FUN_00404680(int param_1,int param_2);
+int __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_index,int light_level);
 void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00404730(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00404790(SMRGLHeaderPrimitive *prim);
@@ -275,7 +275,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor 
 void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_string);
-void core_actor_cpp_FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3);
+void core_actor_cpp_FUN_0040bd90(char *param_1);
 int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta);
 void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *this_ptr,_FILE *file_handle);
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(CDemonActor *this_ptr,_FILE *file_handle);
@@ -342,7 +342,7 @@ CVector3f * __cdecl core_actor_cpp_CVector_copy_FUN_0040e2a0(CVector3f *this_ptr
 void core_actor_cpp_FUN_0040e2ce(void);
 void core_actor_cpp_FUN_0040e2e1(undefined4 *param_1);
 void core_actor_cpp_FUN_0040e2f1(undefined4 *param_1);
-void core_actor_cpp_FUN_0040e300(void *param_1);
+CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor_FUN_0040e300(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap *this_ptr);
@@ -363,7 +363,7 @@ CBoundingBox3D * __cdecl core_ammo_cpp_CAmmo_getBoundingBox_FUN_0040eca0(CAmmo *
 void __cdecl core_ammo_cpp_CAmmo_archive_FUN_0040ecf0(CAmmo *this_ptr);
 ECollisionType __cdecl core_ammo_cpp_CAmmo_getCollisionType_FUN_0040ed50(CAmmo *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo *this_ptr,char *weapon_class_name);
-void __cdecl core_ammo_cpp_FUN_0040ef60(CAmmo *this_ptr,int ammo_count);
+void __cdecl core_ammo_cpp_CAmmo_setWeaponAmmo_FUN_0040ef60(CAmmo *this_ptr,int ammo_count);
 int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_0040ef70(CAmmo *this_ptr,CDemonActor *picker);
 CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040ef90(CAmmo *this_ptr,uint flags);
 void __cdecl core_ammobox_cpp_staticInit_FUN_0040efe0(void);
@@ -373,7 +373,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_0040f040(CAmmoBox *this_pt
 void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_0040f0f0(CAmmoBox *this_ptr);
 void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040f120(CAmmoBox *this_ptr,float delta_time);
 void __cdecl core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(CAmmoBox *this_ptr,float open_pct);
-void __cdecl core_ammobox_cpp_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
+void __cdecl core_ammobox_cpp_CAmmoBox_FUN_0040f1a0(CAmmoBox *this_ptr,CInventory *inventory);
 int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_0040f2b0(CAmmoBox *this_ptr);
 CBoundingBox3D * __cdecl core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_0040f340(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040f390(CAmmoBox *this_ptr);
@@ -405,9 +405,9 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040fc30(CArmour *this_ptr,ui
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040fcf0(CEnemy *this_ptr,uint flags);
 SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_0040fdb0(SFire *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040fdc0(CFlame *this_ptr,uint flags);
-CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f *objs,uint flags);
-SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(SFire *objs,uint flags);
-CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(CFlame *objs,uint flags);
+CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f *this_ptr,uint flags);
+SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(SFire *this_ptr,uint flags);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_0040fe70(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFunc_FUN_0040fea0(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(CBackgroundActor *this_ptr);

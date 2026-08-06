@@ -16,17 +16,17 @@ void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
   
   if ((((0 < param_3) && (param_1 <= param_3)) && (-param_3 <= param_1)) &&
      ((param_2 <= param_3 && (-param_3 <= param_2)))) {
-    if (DAT_005b7620 < 400) {
-      if (DAT_005b7620 != 200) {
+    if ((uint)g_WindowHeight < 400) {
+      if (g_WindowHeight != 200) {
 LAB_004038d6:
-        g_CHAR_PTR_01cc4800 = "..\\engine\\2d.c";
-        g_INT_01cc4804 = 0x7dd;
-        core_main_c_FUN_004c8440("draw320x200SizeDot: unknown graphics option");
+        g_CurrentFilename = "..\\engine\\2d.c";
+        g_CurrentLineNumber = 2013;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("draw320x200SizeDot: unknown graphics option");
         return;
       }
       engine_2d_c_project3DPointToScreen_FUN_00401da0(param_1,param_2,param_3);
     }
-    else if (DAT_005b7620 < 0x191) {
+    else if ((uint)g_WindowHeight < 0x191) {
       iVar2 = (int)(((longlong)param_1 * (longlong)_DAT_01c00c48) / (longlong)param_3) +
               _DAT_01c00c50 >> 0x10;
       iVar1 = _DAT_01c00c54 +
@@ -38,7 +38,7 @@ LAB_004038d6:
       }
     }
     else {
-      if (DAT_005b7620 != 0x1e0) goto LAB_004038d6;
+      if (g_WindowHeight != 0x1e0) goto LAB_004038d6;
       iVar2 = (int)(((longlong)param_1 * (longlong)_DAT_01c00c48) / (longlong)param_3) +
               _DAT_01c00c50 >> 0x10;
       iVar1 = (int)(((longlong)param_2 * (longlong)_DAT_01c00c4c) / (longlong)param_3) +

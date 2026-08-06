@@ -8,7 +8,7 @@
 ;   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 at 0048afcb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b8b14
 ;   undefined4 DAT_005b8b2c
 ;   undefined4 DAT_005b8ba4
@@ -28,7 +28,7 @@ section .text
     LEA ESI,[EBX + 0x90]                ; 00488ad7 | DAT_005b8ba4
     PUSH EBX                            ; 00488add | DAT_005b8b14 | DAT_005b8b2c
         ;   Label: LAB_00488add
-    MOV EDX,dword ptr [0x005ae704]      ; 00488ade | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00488ade | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00488ae4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00488ae5
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)

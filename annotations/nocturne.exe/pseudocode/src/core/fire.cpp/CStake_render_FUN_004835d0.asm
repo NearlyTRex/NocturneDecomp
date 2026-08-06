@@ -18,7 +18,7 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a95b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   CDemonSet g_CDemonSet_01e57284
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 004835d6
     LEA EBX,[EDI + 0x4]                 ; 004835da
     PUSH EBX                            ; 004835dd
-    MOV EDX,dword ptr [0x005ae704]      ; 004835de | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004835de | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004835e4 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 004835e5
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -52,7 +52,7 @@ section .text
     PUSH 0x0                            ; 004835ed
     LEA ESI,[EDI + 0x10]                ; 004835ef
     PUSH ESI                            ; 004835f2
-    MOV ECX,dword ptr [0x005ae704]      ; 004835f3 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004835f3 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004835f9 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004835fa
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -88,7 +88,7 @@ section .text
     TEST EAX,EAX                        ; 00483657
     JNZ 0x00483671                      ; 00483659
         ;   XREF to: 00483671 (CONDITIONAL_JUMP)  ; LAB_00483671
-    MOV ESI,dword ptr [0x005ae704]      ; 0048365b | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 0048365b | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0048365b
     PUSH ESI                            ; 00483661 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00483662

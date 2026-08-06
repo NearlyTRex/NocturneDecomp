@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,8 +58,8 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 32,
-        "message": "use of undeclared identifier 'FUN_00564494'"
+        "line": 34,
+        "message": "use of undeclared identifier 'operator_delete'"
       }
     ],
     "success": false,
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 39,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 26,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 83
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -100,19 +100,19 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00409ea0"
     },
     {
-      "addr": "004cc020",
-      "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_004cc020"
-    },
-    {
       "addr": "004cc040",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_004cc040"
+      "name": "core_manpuz.cpp_SGem_arrdtor_FUN_004cc040"
+    },
+    {
+      "addr": "004cc020",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_SPanel_arrdtor_FUN_004cc020"
     },
     {
       "addr": "004cc060",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_004cc060"
+      "name": "core_manpuz.cpp_SReflector_arrdtor_FUN_004cc060"
     },
     {
       "addr": "0056445f",
@@ -122,7 +122,7 @@
     {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00564494"
+      "name": "crt_memory.c_operator_delete_FUN_00564494"
     },
     {
       "addr": "00564486",
@@ -197,10 +197,10 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 20,
       "match": "pSVar2[-7].",
       "severity": "mild",
-      "text": "pSVar3 = core_manpuz_cpp_FUN_004cc020((SPanel *)&pSVar2[-7].collision_tri_a.vertex3.y,0);",
+      "text": "((SPanel *)&pSVar2[-7].collision_tri_a.vertex3.y,0);",
       "type": "negative_offset"
     }
   ],

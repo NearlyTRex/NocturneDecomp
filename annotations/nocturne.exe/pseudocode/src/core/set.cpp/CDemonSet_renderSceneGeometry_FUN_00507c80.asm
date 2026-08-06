@@ -13,15 +13,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
+;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a3cf
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508634
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508061
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
-;   core_set.cpp_FUN_0050a260 at 0050a3cf
-;   core_setdir.cpp_FUN_00513720 at 00513809
+;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513809
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b0674
 ;   undefined4 DAT_005be36c
 ;   undefined4 DAT_005be378
@@ -38,11 +38,11 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40
 ;   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0
-;   core_glass.cpp_FUN_004ac7c0
+;   core_glass.cpp_CGlass_FUN_004ac7c0
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
+;   core_set.cpp_CDemonSet_FUN_0050e080
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
-;   core_set.cpp_FUN_0050e080
 ;   core_terrain.cpp_CTerrain_render_FUN_00549310
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
 ;   core_water.cpp_CWater_render_FUN_00550cb0
@@ -63,12 +63,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 00507c87
     MOV EDI,dword ptr [ESP + 0x28]      ; 00507c8b
     PUSH 0x5be36c                       ; 00507c8f | DAT_005be36c
-    MOV EDX,dword ptr [0x005ae704]      ; 00507c94 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00507c94 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00507c9a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70 ; 00507c9b
         ;   XREF to: 00460c70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70(CDemonRenderer * this_ptr, CVector3i * direction)
     ADD ESP,0x8                         ; 00507ca0
-    MOV ECX,dword ptr [0x005ae704]      ; 00507ca3 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00507ca3 | g_CDemonRenderer_PTR_005ae704
     PUSH 0x3e800000                     ; 00507ca9
     PUSH ECX                            ; 00507cae | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40 ; 00507caf
@@ -125,7 +125,7 @@ section .text
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40 ; 00507d49
         ;   XREF to: 0046ae40 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array)
     ADD ESP,0xc                         ; 00507d4e
-    MOV EAX,[0x005ae704]                ; 00507d51 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 00507d51 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00507d51
     PUSH EAX                            ; 00507d56 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00507d57
@@ -151,7 +151,7 @@ section .text
         ;   XREF to: 00507dbb (CONDITIONAL_JUMP)  ; LAB_00507dbb
     MOV EAX,ESP                         ; 00507d8c
     PUSH EAX                            ; 00507d8e
-    MOV ESI,dword ptr [0x005ae704]      ; 00507d8f | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 00507d8f | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [ESP + 0x4],EDI       ; 00507d95
     PUSH ESI                            ; 00507d99 | DAT_01b4d738
     MOV dword ptr [ESP + 0xc],EDI       ; 00507d9a
@@ -204,15 +204,15 @@ section .text
     JZ 0x00507e29                       ; 00507e1e
         ;   XREF to: 00507e29 (CONDITIONAL_JUMP)  ; LAB_00507e29
     PUSH EAX                            ; 00507e20
-    CALL core_glass.cpp_FUN_004ac7c0    ; 00507e21
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 00507e21
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507e26
     PUSH 0x1                            ; 00507e29
         ;   Label: LAB_00507e29
     PUSH EDI                            ; 00507e2b
     PUSH EBX                            ; 00507e2c
-    CALL core_set.cpp_FUN_0050e080      ; 00507e2d
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 00507e2d
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507e32
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
@@ -311,15 +311,15 @@ section .text
     JZ 0x00507f3d                       ; 00507f32
         ;   XREF to: 00507f3d (CONDITIONAL_JUMP)  ; LAB_00507f3d
     PUSH EAX                            ; 00507f34
-    CALL core_glass.cpp_FUN_004ac7c0    ; 00507f35
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 00507f35
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00507f3a
     PUSH 0x0                            ; 00507f3d
         ;   Label: LAB_00507f3d
     PUSH ESI                            ; 00507f3f
     PUSH EBX                            ; 00507f40
-    CALL core_set.cpp_FUN_0050e080      ; 00507f41
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 00507f41
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00507f46
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b

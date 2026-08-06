@@ -28,7 +28,7 @@ _istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_0056b6e8(_istream *this_ptr
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_istreamTypeInfo_005a4a00);

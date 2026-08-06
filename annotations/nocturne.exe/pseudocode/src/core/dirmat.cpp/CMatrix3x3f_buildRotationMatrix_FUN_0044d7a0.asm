@@ -20,10 +20,10 @@
 ;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041b118
 ;   core_box.cpp_CBox_updateTransform_FUN_0041aaa0 at 0041aada
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041f3d0 at 0041f5d1
+;   core_bugs.cpp_CBugs_FUN_00422050 at 004221d1
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422658
-;   core_bugs.cpp_FUN_00422050 at 004221d1
+;   core_charactr.cpp_CCharacter_FUN_0042af70 at 0042b135
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427d17
-;   core_charactr.cpp_FUN_0042af70 at 0042b135
 ;   ... and 37 more
 ;
 ; *****************************************************************************

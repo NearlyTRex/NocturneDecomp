@@ -11,7 +11,7 @@ CBride * __cdecl core_bride_cpp_factoryFunc_FUN_0041fb80(void)
 {
   CBride *pCVar1;
   
-  pCVar1 = (CBride *)FUN_0056497c(0xbd54);
+  pCVar1 = operator_new(0xbd54);
   if (pCVar1 == (CBride *)0x0) {
     return (CBride *)0x0;
   }

@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_00561010 at 0056164e
+;   core_zombie.cpp_CZombie_FUN_00561010 at 0056164e
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005983ce = 2

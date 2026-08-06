@@ -35,7 +35,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonGrayscaleLitOp54_FUN_0040
          engine_light_cpp_calculateLighting_FUN_004c6cc0
                    ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i
                    );
-    _DAT_01c00c70 = engine_3d_c_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+    _DAT_01c00c70 = engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
     engine_clipper_c_FUN_00432cd0((prim->base).count,prim + 1);
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

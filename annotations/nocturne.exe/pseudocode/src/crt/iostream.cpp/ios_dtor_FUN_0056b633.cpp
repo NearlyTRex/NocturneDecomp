@@ -17,7 +17,7 @@ ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0056b633(ios *this_ptr,uint flags)
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_iosTypeInfo_005a49a0);

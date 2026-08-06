@@ -33,9 +33,9 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_00490980(CBitFont *this_ptr,ch
     return iVar1 - x;
   }
   if (this_ptr->win_font_helper == (CWinFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\font.cpp";
-    g_INT_01cc4804 = 0x267;
-    core_main_c_FUN_004c8440("CBitFont::drawText - OSFont not set before DrawText called");
+    g_CurrentFilename = "..\\engine\\font.cpp";
+    g_CurrentLineNumber = 615;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CBitFont::drawText - OSFont not set before DrawText called");
   }
   local_14 = text;
   do {

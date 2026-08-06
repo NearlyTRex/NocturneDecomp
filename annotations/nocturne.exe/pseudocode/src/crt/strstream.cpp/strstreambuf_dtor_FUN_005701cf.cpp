@@ -29,7 +29,7 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf(strstrea
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     pvVar1 = __vec_delete(this_ptr,&g_strstreambufTypeInfo_005a4af0);

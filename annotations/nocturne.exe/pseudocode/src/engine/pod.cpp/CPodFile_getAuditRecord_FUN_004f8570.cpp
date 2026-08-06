@@ -18,15 +18,15 @@ void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2
   
   bVar3 = 0;
   if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
-    g_INT_01cc4804 = 0x1f1;
-    core_main_c_FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 497;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
   file = _fopen((char *)(param_1 + 4),"rb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pod.cpp";
-    g_INT_01cc4804 = 0x1f6;
-    core_main_c_FUN_004c8440("CPodFile::getAuditRecord - can't open %s",(char *)(param_1 + 4));
+    g_CurrentFilename = "..\\engine\\pod.cpp";
+    g_CurrentLineNumber = 502;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CPodFile::getAuditRecord - can't open %s");
   }
   _fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
   _fread(auStack_144,0x138,1,file);

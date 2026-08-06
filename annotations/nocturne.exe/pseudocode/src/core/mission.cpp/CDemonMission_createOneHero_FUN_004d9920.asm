@@ -24,13 +24,13 @@
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990
 ;   shape_edittool.cpp_FUN_0046fcd0
@@ -57,10 +57,10 @@ section .text
     MOV EAX,0x589ef8                    ; 004d9945 | = "..\\core\\mission.cpp"
     MOV EDX,0x5f4                       ; 004d994a
     PUSH 0x589f0c                       ; 004d994f | = "CDemonMission::createOneHero - hero a..."
-    MOV [0x01cc4800],EAX                ; 004d9954 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d9959 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d995f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004d9954 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004d9959 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d995f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d9964
     MOV ESI,dword ptr [ESP + 0x18]      ; 004d9967
         ;   Label: LAB_004d9967
@@ -103,10 +103,10 @@ section .text
         ;   Label: LAB_004d99b9
     MOV EBX,0x5f3                       ; 004d99be
     PUSH 0x589ec9                       ; 004d99c3 | = "CDemonMission::createOneHero - too ma..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d99c8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d99ce | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d99d4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d99c8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004d99ce | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d99d4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d99d9
     JMP 0x004d993b                      ; 004d99dc
         ;   XREF to: 004d993b (UNCONDITIONAL_JUMP)  ; LAB_004d993b

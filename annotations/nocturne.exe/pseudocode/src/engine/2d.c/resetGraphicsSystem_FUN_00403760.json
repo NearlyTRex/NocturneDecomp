@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,19 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 301,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 22,
+    "pseudocode_lines": 67,
+    "suspect_count": 16,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 69
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -213,22 +213,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,0x10);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 24,
       "match": "code *",
@@ -271,25 +255,9 @@
     {
       "description": "Undefined global data reference",
       "line": 41,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
       "match": "DAT_005b7624",
       "severity": "mild",
-      "text": "(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
+      "text": "(g_WindowWidth,g_WindowHeight,DAT_005b7624);",
       "type": "undefined_data"
     },
     {
@@ -350,26 +318,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_005b7624",
       "severity": "mild",
-      "text": "wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,DAT_005b7624);",
+      "text": "(g_WindowWidth,g_WindowHeight,DAT_005b7624);",
       "type": "undefined_data"
     }
   ]

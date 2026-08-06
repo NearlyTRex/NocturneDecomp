@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,56 @@
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_00590fd5'"
       },
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_00590fd9'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 25,
+        "line": 24,
         "message": "use of undeclared identifier '_DAT_00590fe1'"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_00590fe9'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier '_DAT_00590fd9'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 31,
+        "line": 30,
         "message": "use of undeclared identifier '_DAT_00590ff1'"
       },
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'; did you mean 'DAT_005acab0'?"
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_005a1ab0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 55,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'; did you mean 'DAT_005acab0'?"
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_005a1ab0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'; did you mean 'DAT_005acab0'?"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 39,
-        "message": "indirection requires pointer operand ('undefined4' (aka 'unsigned int') invalid)"
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_005a1ab0'"
       }
     ],
     "success": false,
@@ -122,18 +116,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 83,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -194,9 +187,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -342,30 +335,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*DAT_005ae704 + iVar2),local_38);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "piVar1 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "*(uint *)(*DAT_005ae704 + 0x18 + iVar2) = 0x800000;",
-      "type": "undefined_data"
     }
   ]
 }

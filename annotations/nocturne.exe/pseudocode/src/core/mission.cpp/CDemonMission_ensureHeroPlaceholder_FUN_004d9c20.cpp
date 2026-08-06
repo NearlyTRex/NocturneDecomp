@@ -35,11 +35,11 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(C
                            ((CStrList *)&stack0xfffffe84,iVar1);
           pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(this_ptr,name);
           if (pCVar3 == (CDemonActor *)0x0) {
-            g_CHAR_PTR_01cc4800 = "..\\core\\mission.cpp";
-            g_INT_01cc4804 = 0x687;
-            core_main_c_FUN_004c8440("Hell froze finding hero.");
+            g_CurrentFilename = "..\\core\\mission.cpp";
+            g_CurrentLineNumber = 1671;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze finding hero.");
           }
-          this_ptr_00 = (CHeroPlaceholder *)FUN_0056497c(0x154);
+          this_ptr_00 = operator_new(0x154);
           actor = (CHeroPlaceholder *)0x0;
           if (this_ptr_00 != (CHeroPlaceholder *)0x0) {
             actor = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(this_ptr_00);

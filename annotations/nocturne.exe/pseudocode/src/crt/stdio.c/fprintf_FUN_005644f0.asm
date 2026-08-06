@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdio_c_fprintf_FUN_005644f0(undefined4 param_1,undefined4 param_2)
+; int __cdecl crt_stdio_c_fprintf_FUN_005644f0(_FILE *file,char *format,...)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;

@@ -26,8 +26,8 @@
 ;   core_door.cpp_CDoor_reposition_FUN_004552a0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
-;   core_setcolid.cpp_FUN_00511a10
-;   core_setcolid.cpp_FUN_00511aa0
+;   core_setcolid.cpp_CDemonSet_FUN_00511a10
+;   core_setcolid.cpp_CDemonSet_FUN_00511aa0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
         ;   Label: LAB_004556dc
     MOV EDI,dword ptr [0x005be368]      ; 004556dd | g_CDemonSet_PTR_005be368
     PUSH EDI                            ; 004556e3 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_FUN_00511aa0 ; 004556e4
-        ;   XREF to: 00511aa0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511aa0(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_setcolid.cpp_CDemonSet_FUN_00511aa0 ; 004556e4
+        ;   XREF to: 00511aa0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511aa0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004556e9
     MOV dword ptr [ESI + 0x9a4],0x0     ; 004556ec
         ;   Label: LAB_004556ec
@@ -263,8 +263,8 @@ section .text
         ;   Label: LAB_0045592b
     MOV EBP,dword ptr [0x005be368]      ; 0045592c | g_CDemonSet_PTR_005be368
     PUSH EBP                            ; 00455932 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_FUN_00511a10 ; 00455933
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_setcolid.cpp_CDemonSet_FUN_00511a10 ; 00455933
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00455938
     JMP 0x004556f6                      ; 0045593b
         ;   XREF to: 004556f6 (UNCONDITIONAL_JUMP)  ; default
@@ -287,8 +287,8 @@ section .text
         ;   Label: LAB_0045597b
     MOV EBX,dword ptr [0x005be368]      ; 0045597c | g_CDemonSet_PTR_005be368
     PUSH EBX                            ; 00455982 | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_FUN_00511a10 ; 00455983
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_setcolid.cpp_CDemonSet_FUN_00511a10 ; 00455983
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00455988
     JMP 0x004556f6                      ; 0045598b
         ;   XREF to: 004556f6 (UNCONDITIONAL_JUMP)  ; default

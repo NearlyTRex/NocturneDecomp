@@ -23,11 +23,11 @@
 ;   TerminatedCString s_Can_t_open_s_0058b977
 ;   TerminatedCString s_sound_mp3_cpp_0058b985
 ;   TerminatedCString s_Error_preparing_to_decod_0058b996
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   sound_mp3.cpp_FUN_004e7ed0
@@ -67,10 +67,10 @@ section .text
     MOV EAX,0x58b966                    ; 004e7e2a | = "..\\sound\\mp3.cpp"
     MOV EDX,0xe0f                       ; 004e7e2f
     PUSH 0x58b977                       ; 004e7e34 | = "Can't open %s"
-    MOV [0x01cc4800],EAX                ; 004e7e39 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e7e3e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e7e44
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004e7e39 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004e7e3e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e7e44
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e7e49
     PUSH EBP                            ; 004e7e4c
         ;   Label: LAB_004e7e4c
@@ -109,10 +109,10 @@ section .text
     MOV EDX,0x58b93e                    ; 004e7e7b | = "..\\sound\\mp3.cpp"
     MOV ECX,0xe0a                       ; 004e7e80
     PUSH 0x58b94f                       ; 004e7e85 | = "Can't open %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004e7e8a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e7e90 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e7e96
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004e7e8a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004e7e90 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e7e96
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e7e9b
     JMP 0x004e7e10                      ; 004e7e9e
         ;   XREF to: 004e7e10 (UNCONDITIONAL_JUMP)  ; LAB_004e7e10
@@ -121,10 +121,10 @@ section .text
     MOV ECX,0x58b985                    ; 004e7ea4 | = "..\\sound\\mp3.cpp"
     MOV EBX,0xe14                       ; 004e7ea9
     PUSH 0x58b996                       ; 004e7eae | = "Error preparing to decode %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e7eb3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004e7eb9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004e7ebf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e7eb3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004e7eb9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004e7ebf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 004e7ec4
     JMP 0x004e7e5b                      ; 004e7ec7
         ;   XREF to: 004e7e5b (UNCONDITIONAL_JUMP)  ; LAB_004e7e5b

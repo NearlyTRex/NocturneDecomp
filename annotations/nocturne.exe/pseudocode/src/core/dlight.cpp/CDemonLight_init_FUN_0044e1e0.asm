@@ -18,13 +18,13 @@
 ;   TerminatedCString s_CDemonCamera_init_Unable_0057c551
 ;   double DOUBLE_0057c586 = 7
 ;   undefined4 DAT_005ad51c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
-;   core_dlight.cpp_FUN_0044e2c0
-;   core_main.c_FUN_004c8440
+;   core_dlight.cpp_CDemonLight_FUN_0044e2c0
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_malloc_FUN_005635b0
 ;
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x4                         ; 0044e1e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0044e1e5
     PUSH EBX                            ; 0044e1e9
-    CALL core_dlight.cpp_FUN_0044e2c0   ; 0044e1ea
-        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0044e2c0(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_FUN_0044e2c0 ; 0044e1ea
+        ;   XREF to: 0044e2c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_FUN_0044e2c0(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1cc0]    ; 0044e1ef
     IMUL EDX,dword ptr [EBX + 0x1cc4]   ; 0044e1f5
     ADD EDX,EDX                         ; 0044e1fc
@@ -95,10 +95,10 @@ section .text
     MOV EDI,0x57c53e                    ; 0044e28d | = "..\\core\\dlight.cpp"
     MOV EBP,0x6c                        ; 0044e292
     PUSH 0x57c551                       ; 0044e297 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0044e29c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0044e2a2 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044e2a8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0044e29c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0044e2a2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044e2a8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044e2ad
     POP EDI                             ; 0044e2b0
     JMP 0x0044e21a                      ; 0044e2b1

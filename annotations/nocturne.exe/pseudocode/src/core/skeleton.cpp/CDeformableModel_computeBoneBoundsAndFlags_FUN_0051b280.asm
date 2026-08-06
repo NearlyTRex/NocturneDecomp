@@ -22,13 +22,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591aee
 ;   TerminatedCString s_Bug_00591b03
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130
 ;
 ; *****************************************************************************
@@ -229,10 +229,10 @@ section .text
         ;   Label: LAB_0051b44d
     MOV EDX,0x86b                       ; 0051b452
     PUSH 0x591b03                       ; 0051b457 | = "Bug!"
-    MOV [0x01cc4800],EAX                ; 0051b45c | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0051b461 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051b467
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0051b45c | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0051b461 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051b467
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0051b46c
     JMP 0x0051b40e                      ; 0051b46f
         ;   XREF to: 0051b40e (UNCONDITIONAL_JUMP)  ; LAB_0051b40e

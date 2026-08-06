@@ -11,7 +11,7 @@ CTurret * __cdecl core_turret_cpp_factoryFunc_FUN_00549470(void)
 {
   CTurret *pCVar1;
   
-  pCVar1 = (CTurret *)FUN_0056497c(0x8b4);
+  pCVar1 = operator_new(0x8b4);
   if (pCVar1 == (CTurret *)0x0) {
     return (CTurret *)0x0;
   }

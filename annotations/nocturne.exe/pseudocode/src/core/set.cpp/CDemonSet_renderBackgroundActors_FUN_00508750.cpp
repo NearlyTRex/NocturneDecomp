@@ -40,11 +40,13 @@ void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSe
                  &CStack_28.max,&this_ptr_00->orient_matrix);
       core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
                 (this_ptr,(this_ptr_00->scale).x,(this_ptr_00->scale).y,(this_ptr_00->scale).z);
-      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(DAT_005ae704,0xffff);
+      engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
+                (g_CDemonRenderer_PTR_005ae704,0xffff);
       (*((this_ptr_00->vtable)._ub)->renderBackground)(this_ptr_00,layer_flag);
       core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(this_ptr,0x10000,0x10000,0x10000);
       iVar2 = iVar2 + 1;
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                (g_CDemonRenderer_PTR_005ae704,1);
       pCVar3 = (CDemonSet *)pCVar3->cameras;
     } while (iVar2 < this_ptr->sorted_render_actor_count);
   }

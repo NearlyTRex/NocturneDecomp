@@ -45,7 +45,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
   
   core_actor_cpp_CDemonActor_setup_FUN_00409fc0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,&this_ptr->glass_texture);
+            (g_CDemonRenderer_PTR_005ae704,&this_ptr->glass_texture);
   if (this_ptr->mirror_flag != 0) {
     local_84.z = 0.0;
     local_84.y = 0.0;
@@ -114,11 +114,9 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
   this_ptr->broken_vertex_count = (this_ptr->grid_cols + 1) * (this_ptr->grid_rows + 1);
   this_ptr->broken_polygon_count = iVar4;
   if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar4)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\glass.cpp";
-    g_INT_01cc4804 = 0x86;
-    core_main_c_FUN_004c8440
-              ("CGlass::setup - Too many verticies(%d) or faces(%d)!",this_ptr->broken_vertex_count,
-               this_ptr->broken_polygon_count);
+    g_CurrentFilename = "..\\core\\glass.cpp";
+    g_CurrentLineNumber = 134;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CGlass::setup - Too many verticies(%d) or faces(%d)!");
   }
   local_2c = (this_ptr->glass_size).x / (float)this_ptr->grid_cols;
   local_3c.y = (this_ptr->glass_size).y / (float)this_ptr->grid_rows;

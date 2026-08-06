@@ -48,9 +48,9 @@ LAB_0045663d:
       case DOOR_TYPE_TILT:
         return 1;
       default:
-        g_CHAR_PTR_01cc4800 = "..\\core\\door.cpp";
-        g_INT_01cc4804 = 0x39e;
-        core_main_c_FUN_004c8440("CDoor::getMoveType - invalid door!");
+        g_CurrentFilename = "..\\core\\door.cpp";
+        g_CurrentLineNumber = 926;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("CDoor::getMoveType - invalid door!");
         return 0;
       }
     }

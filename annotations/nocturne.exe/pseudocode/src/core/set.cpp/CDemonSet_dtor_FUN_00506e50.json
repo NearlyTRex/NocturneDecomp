@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 28,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 50
+    "total_lines": 51
   },
   "cross_references": [],
   "function": {
@@ -89,29 +89,29 @@
   },
   "function_calls": [
     {
+      "addr": "0050eb00",
+      "is_variadic": false,
+      "name": "core_set.cpp_C3DSCamera_arrdtor_FUN_0050eb00"
+    },
+    {
+      "addr": "0050eb20",
+      "is_variadic": false,
+      "name": "core_set.cpp_C3DSLight_arrdtor_FUN_0050eb20"
+    },
+    {
       "addr": "00506ec0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_clear_FUN_00506ec0"
     },
     {
-      "addr": "0050eb00",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050eb00"
-    },
-    {
-      "addr": "0050eb20",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050eb20"
-    },
-    {
       "addr": "0050eb40",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050eb40"
+      "name": "core_set.cpp_SRoom_arrdtor_FUN_0050eb40"
     },
     {
       "addr": "0050eb60",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050eb60"
+      "name": "core_set.cpp_SVDBox_arrdtor_FUN_0050eb60"
     }
   ],
   "globals": [],
@@ -172,7 +172,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 16,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "return (CDemonSet *)&pCVar4[-1].enabled;",

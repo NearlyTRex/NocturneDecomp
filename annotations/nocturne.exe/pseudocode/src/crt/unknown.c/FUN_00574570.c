@@ -30,27 +30,27 @@ BOOL FUN_00574570(LPCWSTR param_1,LPCWSTR param_2)
       size = iVar2 * 2 + 1;
       dest_00 = (char *)malloc(size);
       if (dest_00 == (char *)0x0) {
-        FUN_005638d0(dest);
+        free(dest);
         return 0;
       }
     }
     iVar2 = wcstombs(dest,param_1,size);
     if (iVar2 == -1) {
-      FUN_005638d0(dest);
+      free(dest);
       if (dest_00 != (char *)0x0) {
-        FUN_005638d0(dest_00);
+        free(dest_00);
       }
       return 0;
     }
     if ((dest_00 != (char *)0x0) &&
        (iVar2 = wcstombs(dest_00,param_2,size), iVar2 == -1)) {
-      FUN_005638d0(dest_00);
+      free(dest_00);
       return 0;
     }
     BVar1 = SetEnvironmentVariableA(dest,dest_00);
-    FUN_005638d0(dest);
+    free(dest);
     if (dest_00 != (char *)0x0) {
-      FUN_005638d0(dest_00);
+      free(dest_00);
     }
   }
   return BVar1;

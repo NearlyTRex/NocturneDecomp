@@ -140,9 +140,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDe
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                                           (local_158.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
-                    g_CHAR_PTR_01cc4800 = "..\\core\\setcolid.cpp";
-                    g_INT_01cc4804 = 0xcb;
-                    core_main_c_FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
+                    g_CurrentFilename = "..\\core\\setcolid.cpp";
+                    g_CurrentLineNumber = 203;
+                    core_main_c_displayErrorAndQuit_FUN_004c8440
+                              ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
                   }
                   CStack_58.x = local_e8.x - (pCVar2->location).position.x;
                   CStack_58.y = local_e8.y - (pCVar2->location).position.y;
@@ -306,9 +307,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDe
                   }
                   else {
 LAB_0050f8bc:
-                    g_CHAR_PTR_01cc4800 = "..\\core\\setcolid.cpp";
-                    g_INT_01cc4804 = 299;
-                    core_main_c_FUN_004c8440("Invalid collision type!");
+                    g_CurrentFilename = "..\\core\\setcolid.cpp";
+                    g_CurrentLineNumber = 299;
+                    core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid collision type!");
                   }
                 }
                 else if (COLLISION_TYPE_CYLINDER < bounding_box_type) {

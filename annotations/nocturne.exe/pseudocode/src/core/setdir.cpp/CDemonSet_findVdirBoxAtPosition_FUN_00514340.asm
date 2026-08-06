@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 005086b6
-;   core_setdir.cpp_FUN_005125a0 at 005128c2
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 005128c2
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00514300

@@ -11,7 +11,7 @@ CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004776e0(void)
 {
   CElephantGun *pCVar1;
   
-  pCVar1 = (CElephantGun *)FUN_0056497c(0x57c);
+  pCVar1 = operator_new(0x57c);
   if (pCVar1 == (CElephantGun *)0x0) {
     return (CElephantGun *)0x0;
   }

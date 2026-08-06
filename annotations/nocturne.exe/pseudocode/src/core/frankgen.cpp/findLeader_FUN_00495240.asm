@@ -13,15 +13,15 @@
 ;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CFrankenstienMachineActorType_01c71304.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSet_01e57284.actor_count
 ;   undefined4 g_CDemonSet_01e57284.actors[0]
 ;   undefined4 g_CDemonSet_01e57284.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -57,10 +57,10 @@ section .text
         ;   Label: LAB_0049527a
     MOV EBX,0x1cf                       ; 0049527f
     PUSH 0x581d87                       ; 00495284 | = "CFrankenstienMachine::findLeader - no..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00495295
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00495295
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0049529a
     XOR EAX,EAX                         ; 0049529d
     POP EBP                             ; 0049529f

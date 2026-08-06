@@ -11,7 +11,7 @@ CCurtain * __cdecl core_curtain_cpp_factoryFunc_FUN_0043d930(void)
 {
   CCurtain *pCVar1;
   
-  pCVar1 = (CCurtain *)FUN_0056497c(0x65b30);
+  pCVar1 = operator_new(0x65b30);
   if (pCVar1 == (CCurtain *)0x0) {
     return (CCurtain *)0x0;
   }

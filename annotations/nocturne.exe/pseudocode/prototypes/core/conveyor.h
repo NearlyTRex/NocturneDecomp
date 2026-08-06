@@ -27,9 +27,9 @@ void __cdecl CConveyor::setup(CConveyor *this_ptr);
 // Address: 0043b1a0
 void __cdecl CConveyor::process(CConveyor *this_ptr,float delta_time);
 
-// Original: core_conveyor.cpp_FUN_0043b2f0
+// Original: core_conveyor.cpp_CConveyor_renderOpaque_FUN_0043b2f0
 // Address: 0043b2f0
-undefined4 FUN_0043b2f0(void);
+int __cdecl CConveyor::renderOpaque(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_renderBackground_FUN_0043b300
 // Address: 0043b300

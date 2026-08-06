@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -88,13 +88,13 @@
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 73,
+        "line": 74,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 44,
-        "line": 73,
+        "line": 74,
         "message": "expected expression"
       }
     ],
@@ -104,12 +104,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 304,
-    "complexity_score": 215,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
+    "pseudocode_lines": 126,
     "suspect_count": 7,
     "suspect_types": [
       "unresolved_funcptr",
@@ -117,7 +117,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 429
+    "total_lines": 430
   },
   "cross_references": [
     {
@@ -149,7 +149,7 @@
     {
       "addr": "0042af70",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042af70"
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af70"
     },
     {
       "addr": "004f1600",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 66,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
       "text": "this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar7 + 0x14c) + 0xbc))(iVar7);",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_74.x = CStack_38.x;",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 107,
+      "line": 108,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_74.x = pCVar5->x;",

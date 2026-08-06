@@ -11,7 +11,7 @@ CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005438a0(void)
 {
   CTeleport *pCVar1;
   
-  pCVar1 = (CTeleport *)FUN_0056497c(0x160);
+  pCVar1 = operator_new(0x160);
   if (pCVar1 == (CTeleport *)0x0) {
     return (CTeleport *)0x0;
   }

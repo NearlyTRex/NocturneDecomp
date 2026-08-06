@@ -8,13 +8,13 @@
 ;
 ; XREF[9]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040bb68
-;   core_elephant.cpp_FUN_00477890 at 00477f6a
+;   core_elephant.cpp_CElephantGun_fire_FUN_00477890 at 00477f6a
 ;   core_fire.cpp_CGunFlame_init_FUN_004880d0 at 0048820c
 ;   core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0 at 0048e5d1
 ;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2cae
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 0050959e
-;   core_shotgun.cpp_FUN_00515ea0 at 005165b1
-;   core_tommygun.cpp_FUN_00545c30 at 00546165
+;   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 at 005165b1
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 at 00546165
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afdc
 ;
 ; Referenced Globals:

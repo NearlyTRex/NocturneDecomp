@@ -35,9 +35,9 @@ void __cdecl CTVBat::archive(CTVBat *this_ptr);
 // Address: 0054b460
 void __cdecl CTVBat::process(CTVBat *this_ptr,float delta_time);
 
-// Original: core_tvbat.cpp_FUN_0054bfc0
+// Original: core_tvbat.cpp_CTVBat_FUN_0054bfc0
 // Address: 0054bfc0
-void __cdecl FUN_0054bfc0(CTVBat *this_ptr);
+void __cdecl CTVBat(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_renderOpaque_FUN_0054bfd0
 // Address: 0054bfd0

@@ -21,7 +21,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0
-;   core_charactr.cpp_FUN_00427730
+;   core_charactr.cpp_CCharacter_FUN_00427730
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -84,8 +84,8 @@ section .text
     LEA EAX,[ESP + 0x28]                ; 004149a6
     PUSH EAX                            ; 004149aa
     PUSH ESI                            ; 004149ab
-    CALL core_charactr.cpp_FUN_00427730 ; 004149ac
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
+    CALL core_charactr.cpp_CCharacter_FUN_00427730 ; 004149ac
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004149b1
     PUSH EDI                            ; 004149b4
         ;   Label: LAB_004149b4

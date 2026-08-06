@@ -12,11 +12,11 @@
 ;   void* PTR_SetFocus_00575470 = 00175a70
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597b48
 ;   TerminatedCString s_videoRestore_Unable_to_s_00597b5f
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
@@ -26,7 +26,7 @@
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   DirectDrawCreate
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
 ;   SetFocus
@@ -48,9 +48,9 @@ section .text
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
     MOV EDX,dword ptr [0x005b7624]      ; 00553bbd | DAT_005b7624
     PUSH EDX                            ; 00553bc3
-    MOV ECX,dword ptr [0x005b7620]      ; 00553bc4 | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 00553bc4 | g_WindowHeight
     PUSH ECX                            ; 00553bca
-    MOV EBX,dword ptr [0x005b761c]      ; 00553bcb | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 00553bcb | g_WindowWidth
     PUSH EBX                            ; 00553bd1
     CALL engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553bd2
         ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005324a0(int width, int height, int bits_per_pixel)
@@ -115,9 +115,9 @@ section .text
     MOV EAX,[0x005b7624]                ; 00553c64 | DAT_005b7624
         ;   Label: LAB_00553c64
     PUSH EAX                            ; 00553c69
-    MOV EDX,dword ptr [0x005b7620]      ; 00553c6a | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 00553c6a | g_WindowHeight
     PUSH EDX                            ; 00553c70
-    MOV ECX,dword ptr [0x005b761c]      ; 00553c71 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 00553c71 | g_WindowWidth
     PUSH ECX                            ; 00553c77
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 ; 00553c78
         ;   XREF to: 00552e00 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00(int width, int height, int bits_per_pixel)
@@ -171,10 +171,10 @@ section .text
     MOV EBP,0x597b48                    ; 00553cec | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x3df                       ; 00553cf1
     PUSH 0x597b5f                       ; 00553cf6 | = "videoRestore - Unable to set front bu..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00553d01 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00553d06
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00553d01 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00553d06
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553d0b
     POP EBP                             ; 00553d0e
     POP ESI                             ; 00553d0f

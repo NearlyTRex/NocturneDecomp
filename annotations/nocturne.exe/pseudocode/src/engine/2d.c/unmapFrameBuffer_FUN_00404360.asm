@@ -7,8 +7,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00577489
 ;   TerminatedCString s_unmapFrameBuffer_frame_b_00577498
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_006b023c
 ;   undefined4 DAT_006b0240
@@ -23,7 +23,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -39,9 +39,9 @@ section .text
         ;   XREF to: 00404402 (CONDITIONAL_JUMP)  ; LAB_00404402
     MOV EAX,[0x006b023c]                ; 00404376 | DAT_006b023c
         ;   Label: LAB_00404376
-    MOV [0x005b761c],EAX                ; 0040437b | DAT_005b761c
+    MOV [0x005b761c],EAX                ; 0040437b | g_WindowWidth
     MOV EAX,[0x006b0240]                ; 00404380 | DAT_006b0240
-    MOV [0x005b7620],EAX                ; 00404385 | DAT_005b7620
+    MOV [0x005b7620],EAX                ; 00404385 | g_WindowHeight
     MOV EAX,[0x006b0244]                ; 0040438a | DAT_006b0244
     MOV [0x01c00c58],EAX                ; 0040438f | DAT_01c00c58
     MOV EAX,[0x006b0248]                ; 00404394 | DAT_006b0248
@@ -53,7 +53,7 @@ section .text
     MOV EBX,dword ptr [0x006b025c]      ; 004043b3 | DAT_006b025c
     MOV [0x01c00c64],EAX                ; 004043b9 | DAT_01c00c64
     MOV EAX,[0x006b0254]                ; 004043be | DAT_006b0254
-    MOV EDI,dword ptr [0x005b7620]      ; 004043c3 | DAT_005b7620
+    MOV EDI,dword ptr [0x005b7620]      ; 004043c3 | g_WindowHeight
     MOV [0x005b7624],EAX                ; 004043c9 | DAT_005b7624
     TEST EDI,EDI                        ; 004043ce
     JLE 0x004043f0                      ; 004043d0
@@ -81,10 +81,10 @@ section .text
     MOV ECX,0x577489                    ; 00404403 | = "..\\engine\\2d.c"
     MOV ESI,0x9e8                       ; 00404408
     PUSH 0x577498                       ; 0040440d | = "unmapFrameBuffer - frame buffer was n..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040441e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040441e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00404423
     POP ESI                             ; 00404426
     JMP 0x00404376                      ; 00404427

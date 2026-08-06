@@ -17,11 +17,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a3d5
 ;   TerminatedCString s_CCharacter_addLayerActio_0057a3ea
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -78,10 +78,10 @@ section .text
         ;   Label: LAB_0042a7ce
     MOV ESI,0xf56                       ; 0042a7d3
     PUSH 0x57a3ea                       ; 0042a7d8 | = "CCharacter::addLayerAction - too many"
-    MOV dword ptr [0x01cc4800],ECX      ; 0042a7dd | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0042a7e3 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0042a7e9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0042a7dd | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0042a7e3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0042a7e9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0042a7ee
     JMP 0x0042a770                      ; 0042a7f1
         ;   XREF to: 0042a770 (UNCONDITIONAL_JUMP)  ; LAB_0042a770

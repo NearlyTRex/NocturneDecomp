@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_gargoyle.cpp_CGargoyle_ctor_FUN_004a7350
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbd80                         ; 004a7320
         ;   Label: core_gargoyle.cpp_factoryFunc_FUN_004a7320
-    CALL crt_unknown.c_FUN_0056497c     ; 004a7325
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004a7325
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004a732a
     TEST EAX,EAX                        ; 004a732d
     JNZ 0x004a7332                      ; 004a732f

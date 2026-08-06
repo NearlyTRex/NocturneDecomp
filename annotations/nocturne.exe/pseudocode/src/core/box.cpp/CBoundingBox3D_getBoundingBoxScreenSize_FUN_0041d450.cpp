@@ -11,6 +11,7 @@
 float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(CBoundingBox3D *this_ptr)
 
 {
+  int iVar1;
   CVector3i local_34;
   float local_28;
   float local_24;
@@ -23,12 +24,12 @@ float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(
   local_34.y = (int)ROUND(local_24 * _DAT_0059aa80);
   local_34.z = (int)ROUND(local_20 * _DAT_0059aa80);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            ((SProjectedVertex *)(*DAT_005ae704 + 0xea5d0),&local_34);
-  if (0 < *(int *)(*DAT_005ae704 + 0xea5d8)) {
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_34);
+  iVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
+  if (0 < iVar1) {
     return ABS(((float)_DAT_01c00c4c *
-               (((this_ptr->max).y - (this_ptr->min).y) /
-               ((float)*(int *)(*DAT_005ae704 + 0xea5d8) * (float)0.00390625))) /
-               (float)DAT_005b7648);
+               (((this_ptr->max).y - (this_ptr->min).y) / ((float)iVar1 * (float)0.00390625)))
+               / (float)DAT_005b7648);
   }
   return 99999.0;
 }

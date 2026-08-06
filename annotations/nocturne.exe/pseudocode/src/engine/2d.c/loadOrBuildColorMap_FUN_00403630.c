@@ -1,0 +1,62 @@
+// Name: engine_2d.c_loadOrBuildColorMap_FUN_00403630
+// Address: 00403630
+// Address Range: [[00403630, 00403754]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00403630(char *filename)
+
+#include "nocturne.h"
+
+void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00403630(char *filename)
+
+{
+  char cVar1;
+  _FILE *p_Var2;
+  char *pcVar3;
+  char *pcVar4;
+  char local_5c [80];
+  
+  pcVar4 = local_5c;
+  do {
+    cVar1 = *filename;
+    *pcVar4 = cVar1;
+    pcVar3 = local_5c;
+    if (cVar1 == '\0') break;
+    cVar1 = filename[1];
+    filename = filename + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+    pcVar3 = local_5c;
+  } while (cVar1 != '\0');
+  do {
+    pcVar4 = pcVar3;
+    if (*pcVar3 == '.') goto LAB_00403672;
+    if (*pcVar3 == '\0') break;
+    pcVar4 = pcVar3 + 1;
+    if (*pcVar4 == '.') goto LAB_00403672;
+    pcVar3 = pcVar3 + 2;
+  } while (*pcVar4 != '\0');
+  pcVar4 = (char *)0x0;
+LAB_00403672:
+  if (pcVar4 == (char *)0x0) {
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 1902;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("hose!");
+  }
+  _sprintf(pcVar4,".map");
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"rb");
+  if (p_Var2 != (_FILE *)0x0) {
+    _fread(g_ColorCubeLookup,1,0x8000,p_Var2);
+    _fclose(p_Var2);
+    return;
+  }
+  engine_2d_c_buildColorLookupTable_FUN_00403570();
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
+  if (p_Var2 == (_FILE *)0x0) {
+    g_CurrentFilename = "..\\engine\\2d.c";
+    g_CurrentLineNumber = 1909;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to write quick map!");
+  }
+  _fwrite(g_ColorCubeLookup,1,0x8000,p_Var2);
+  _fclose(p_Var2);
+  return;
+}

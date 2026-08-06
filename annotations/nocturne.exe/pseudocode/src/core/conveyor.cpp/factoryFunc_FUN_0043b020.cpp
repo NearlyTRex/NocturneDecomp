@@ -11,7 +11,7 @@ CConveyor * __cdecl core_conveyor_cpp_factoryFunc_FUN_0043b020(void)
 {
   CConveyor *pCVar1;
   
-  pCVar1 = (CConveyor *)FUN_0056497c(0x854);
+  pCVar1 = operator_new(0x854);
   if (pCVar1 == (CConveyor *)0x0) {
     return (CConveyor *)0x0;
   }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -78,7 +78,7 @@
     {
       "addr": "0040f1a0",
       "from_addr": "0040f230",
-      "name": "core_ammobox.cpp_FUN_0040f1a0",
+      "name": "core_ammobox.cpp_CAmmoBox_FUN_0040f1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,6 +94,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c0640",
+      "from_addr": "004c06ba",
+      "name": "core_inv.cpp_CInventory_FUN_004c0640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bf360",
       "from_addr": "004bff5e",
       "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
@@ -103,12 +109,6 @@
       "addr": "004c1b90",
       "from_addr": "004c1be5",
       "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c0640",
-      "from_addr": "004c06ba",
-      "name": "core_inv.cpp_FUN_004c0640",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -380,7 +380,7 @@
       {
         "call_addr": "0040f230",
         "call_type": "direct",
-        "caller": "core_ammobox.cpp_FUN_0040f1a0",
+        "caller": "core_ammobox.cpp_CAmmoBox_FUN_0040f1a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

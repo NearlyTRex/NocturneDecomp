@@ -11,7 +11,7 @@ CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_00462910(void)
 {
   CDrone *pCVar1;
   
-  pCVar1 = (CDrone *)FUN_0056497c(0xbd3c);
+  pCVar1 = operator_new(0xbd3c);
   if (pCVar1 == (CDrone *)0x0) {
     return (CDrone *)0x0;
   }

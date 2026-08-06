@@ -213,8 +213,8 @@ void engine_matrix_c_FUN_004cdfa0(int param_1,uint param_2,int param_3)
   if (_DAT_01cc5174 < 10) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\engine\\matrix.c";
-  g_INT_01cc4804 = 0x4c6;
-  core_main_c_FUN_004c8440("Matrix unbalance");
+  g_CurrentFilename = "..\\engine\\matrix.c";
+  g_CurrentLineNumber = 1222;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Matrix unbalance");
   return;
 }

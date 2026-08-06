@@ -12,12 +12,12 @@
 ;   TerminatedCString s_world_0058966c
 ;   TerminatedCString s_core_mission_cpp_00589672
 ;   TerminatedCString s_CDemonMission_save_Unabl_00589686
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
-;   core_mission.cpp_FUN_004d8720
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   core_mission.cpp_CDemonMission_FUN_004d8720
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_004d7f9f
     MOV EDI,dword ptr [ESP + 0x10]      ; 004d7fa0
     PUSH EDI                            ; 004d7fa4
-    CALL core_mission.cpp_FUN_004d8720  ; 004d7fa5
-        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
+    CALL core_mission.cpp_CDemonMission_FUN_004d8720 ; 004d7fa5
+        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_004d8720(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004d7faa
     PUSH EBX                            ; 004d7fad
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004d7fae
@@ -58,10 +58,10 @@ section .text
     MOV ECX,0x589672                    ; 004d7fba | = "..\\core\\mission.cpp"
     MOV ESI,0xb6                        ; 004d7fbf
     PUSH 0x589686                       ; 004d7fc4 | = "CDemonMission::save - Unable to open ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d7fd5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d7fd5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d7fda
     POP ESI                             ; 004d7fdd
     JMP 0x004d7f9f                      ; 004d7fde

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_02de5c18
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EDI                            ; 0056e34e
     ADD EBX,0x4                         ; 0056e34f
     INC ESI                             ; 0056e352
-    CALL crt_unknown.c_FUN_005638d0     ; 0056e353
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0056e353
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     MOV EBP,dword ptr [0x02de5c14]      ; 0056e358 | DAT_02de5c14
     ADD ESP,0x4                         ; 0056e35e
     CMP ESI,EBP                         ; 0056e361
@@ -52,8 +52,8 @@ section .text
     JZ 0x0056e377                       ; 0056e36c
         ;   XREF to: 0056e377 (CONDITIONAL_JUMP)  ; LAB_0056e377
     PUSH EAX                            ; 0056e36e
-    CALL crt_unknown.c_FUN_005638d0     ; 0056e36f
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 0056e36f
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0056e374
     POP EBP                             ; 0056e377
         ;   Label: LAB_0056e377

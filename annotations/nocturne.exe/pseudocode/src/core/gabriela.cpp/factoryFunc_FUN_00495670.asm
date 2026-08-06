@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_gabriela.cpp_CGabriella_ctor_FUN_004956a0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5a5b0                        ; 00495670
         ;   Label: core_gabriela.cpp_factoryFunc_FUN_00495670
-    CALL crt_unknown.c_FUN_0056497c     ; 00495675
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00495675
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0049567a
     TEST EAX,EAX                        ; 0049567d
     JNZ 0x00495682                      ; 0049567f

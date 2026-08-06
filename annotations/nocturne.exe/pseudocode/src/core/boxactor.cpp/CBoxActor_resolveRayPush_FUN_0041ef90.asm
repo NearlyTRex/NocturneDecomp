@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496164
-;   core_stranger.cpp_FUN_00535900 at 0053646a
+;   core_stranger.cpp_CStranger_FUN_00535900 at 0053646a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057995d = 1.01000000000000
@@ -27,8 +27,8 @@
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
+;   core_boxactor.cpp_CBoxActor_FUN_0041f190
 ;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0
-;   core_boxactor.cpp_FUN_0041f190
 ;
 ; *****************************************************************************
 
@@ -142,8 +142,8 @@ section .text
         ;   XREF to: 0041e4d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f094
     PUSH EBX                            ; 0041f097
-    CALL core_boxactor.cpp_FUN_0041f190 ; 0041f098
-        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_FUN_0041f190(CBoxActor * this_ptr)
+    CALL core_boxactor.cpp_CBoxActor_FUN_0041f190 ; 0041f098
+        ;   XREF to: 0041f190 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_0041f190(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 0041f09d
     MOV ESP,EBP                         ; 0041f0a0
     POP EBP                             ; 0041f0a2

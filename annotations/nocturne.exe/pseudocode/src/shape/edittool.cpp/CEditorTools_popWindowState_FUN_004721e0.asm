@@ -24,12 +24,12 @@
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c68
 ;   undefined4 DAT_01c00c6c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
-;   crt_unknown.c_FUN_005638d0
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_memory.c_free_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -86,17 +86,17 @@ section .text
         ;   Label: LAB_00472270
     MOV EBX,0x718                       ; 00472275
     PUSH 0x57e9bb                       ; 0047227a | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047228b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047228b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00472290
     JMP 0x004721f0                      ; 00472293
         ;   XREF to: 004721f0 (UNCONDITIONAL_JUMP)  ; LAB_004721f0
     PUSH EDI                            ; 00472298
         ;   Label: LAB_00472298
-    CALL crt_unknown.c_FUN_005638d0     ; 00472299
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00472299
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0047229e
     MOV dword ptr [EBX + 0x1c8],0x0     ; 004722a1
     JMP 0x0047221c                      ; 004722ab

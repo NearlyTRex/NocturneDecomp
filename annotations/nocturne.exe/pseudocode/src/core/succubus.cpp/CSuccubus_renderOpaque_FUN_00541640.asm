@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a28d8 = 4
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01cd4318
 ;
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 00541641
     SUB ESP,0x1c                        ; 00541642
     MOV EBX,dword ptr [ESP + 0x28]      ; 00541645
-    MOV EDX,dword ptr [0x005ae704]      ; 00541649 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00541649 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0054164f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00541650
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
@@ -95,7 +95,7 @@ section .text
         ;   Label: LAB_005416d8
     JZ 0x00541711                       ; 005416df
         ;   XREF to: 00541711 (CONDITIONAL_JUMP)  ; LAB_00541711
-    MOV EDX,dword ptr [0x005ae704]      ; 005416e1 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 005416e1 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 005416e7 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 005416e8
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

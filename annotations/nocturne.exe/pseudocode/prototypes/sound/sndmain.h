@@ -587,9 +587,9 @@ float __cdecl getMaxSwLatency(void);
 // Address: 00528980
 void __cdecl setMaxSwSoundLatency(float latency);
 
-// Original: sound_sndmain.cpp_FUN_005289f0
+// Original: sound_sndmain.cpp_readIni_FUN_005289f0
 // Address: 005289f0
-void __cdecl FUN_005289f0(CIniFile *ini_file);
+void __cdecl readIni(CIniFile *ini_file);
 
 // Original: sound_sndmain.cpp_writeIni_FUN_00528c80
 // Address: 00528c80

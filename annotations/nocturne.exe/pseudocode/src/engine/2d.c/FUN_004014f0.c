@@ -1,12 +1,12 @@
 // Name: engine_2d.c_FUN_004014f0
 // Address: 004014f0
 // Address Range: [[004014f0, 00401525]]
-// Convention: unknown
-// Signature: int engine_2d_c_FUN_004014f0(byte *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl engine_2d_c_FUN_004014f0(byte *param_1)
 
 #include "nocturne.h"
 
-int engine_2d_c_FUN_004014f0(byte *param_1)
+int __cdecl engine_2d_c_FUN_004014f0(byte *param_1)
 
 {
   byte bVar1;
@@ -34,6 +34,6 @@ int engine_2d_c_FUN_004014f0(byte *param_1)
     bVar1 = *pbVar3;
     pbVar3 = pbVar3 + 1;
     uVar4 = uVar4 + 1;
-    iVar5 = iVar5 + *(int *)(&DAT_006afa3c + (uint)bVar1 * 4);
+    iVar5 = iVar5 + g_FontCharWidths[bVar1];
   } while( true );
 }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,16 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 41,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 49,
+        "column": 66,
         "line": 42,
-        "message": "use of undeclared identifier 'DAT_005baca4'"
+        "message": "use of undeclared identifier 'DAT_005baca4'; did you mean 'DAT_005bacd4'?"
       }
     ],
     "success": false,
@@ -74,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 120,
+    "complexity_score": 110,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 95,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
@@ -90,13 +84,13 @@
     {
       "addr": "004a4170",
       "from_addr": "004a42d7",
-      "name": "core_game.cpp_FUN_004a4170",
+      "name": "core_game.cpp_CGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a4b50",
       "from_addr": "004a4e83",
-      "name": "core_game.cpp_FUN_004a4b50",
+      "name": "core_game.cpp_CGame_FUN_004a4b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -193,9 +187,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005baca4",
@@ -216,7 +210,7 @@
       {
         "call_addr": "004a4e83",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_FUN_004a4b50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +221,7 @@
       {
         "call_addr": "004a42d7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_FUN_004a4170",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -356,17 +350,9 @@
     {
       "description": "Undefined global data reference",
       "line": 35,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
       "match": "DAT_005baca4",
       "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005baca4);",
       "type": "undefined_data"
     }
   ]

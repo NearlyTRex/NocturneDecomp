@@ -11,11 +11,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057eefa
 ;   TerminatedCString s_CPickList_insert_can_t_d_0057ef10
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   shape_edittool.cpp_CStrList_insert_FUN_00473cf0
 ;
 ; *****************************************************************************
@@ -49,10 +49,10 @@ section .text
     MOV ECX,0x57eefa                    ; 004760cc | = "..\\shape\\edittool.cpp"
     MOV EBX,0xe1d                       ; 004760d1
     PUSH 0x57ef10                       ; 004760d6 | = "CPickList::insert - can't do this aft..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004760db | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004760e1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004760e7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004760db | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004760e1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004760e7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004760ec
     POP EBX                             ; 004760ef
     JMP 0x004760b0                      ; 004760f0

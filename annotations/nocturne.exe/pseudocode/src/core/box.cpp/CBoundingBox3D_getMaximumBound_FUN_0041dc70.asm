@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_005125a0 at 00512806
+;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00512806
 ;
 ; *****************************************************************************
 

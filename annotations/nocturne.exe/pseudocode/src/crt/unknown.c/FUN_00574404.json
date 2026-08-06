@@ -40,14 +40,14 @@
   },
   "function_calls": [
     {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_free_FUN_005638d0"
+    },
+    {
       "addr": "00566170",
       "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_00566170"
-    },
-    {
-      "addr": "005638d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
     },
     {
       "addr": "005746f0",
@@ -160,7 +160,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "sVar5 = *param_1;",
+      "text": "sVar4 = *param_1;",
       "type": "unnamed_param"
     },
     {
@@ -168,7 +168,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "psVar10 = param_1;",
+      "text": "psVar9 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -182,17 +182,17 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(char *)(iVar9 + (int)_DAT_02de54a0",
+      "match": "(char *)(iVar8 + (int)_DAT_02de54a0",
       "severity": "moderate",
-      "text": "if (*(char *)(iVar9 + (int)_DAT_02de54a0) != '\\0') {",
+      "text": "if (*(char *)(iVar8 + (int)_DAT_02de54a0) != '\\0') {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(byte *)(iVar9 + (int)dest",
+      "match": "(byte *)(iVar8 + (int)dest",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(iVar9 + (int)dest);",
+      "text": "puVar6 = (byte *)(iVar8 + (int)dest);",
       "type": "pointer_cast"
     },
     {
@@ -208,7 +208,7 @@
       "line": 33,
       "match": "(int)dest",
       "severity": "moderate",
-      "text": "iVar9 = (int)dest - (int)_DAT_02de54a8 >> 2;",
+      "text": "iVar8 = (int)dest - (int)_DAT_02de54a8 >> 2;",
       "type": "pointer_truncation"
     },
     {
@@ -224,7 +224,7 @@
       "line": 53,
       "match": "(int)dest",
       "severity": "moderate",
-      "text": "puVar7 = (byte *)(iVar9 + (int)dest);",
+      "text": "puVar6 = (byte *)(iVar8 + (int)dest);",
       "type": "pointer_truncation"
     },
     {

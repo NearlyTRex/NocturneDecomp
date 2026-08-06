@@ -17,21 +17,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509fb3
+;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050acfd
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508954
-;   core_set.cpp_FUN_00509a80 at 00509fb3
-;   core_set.cpp_FUN_0050aba0 at 0050acfd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c76e
 ;   TerminatedCString s_CDemonLight_blitZBuffer_0057c781
 ;   undefined4 DAT_01abacb4
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044e660
 ;   core_dstrender.cpp_memcpyMMX_FUN_00465341
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -269,10 +269,10 @@ section .text
         ;   Label: LAB_0044ebc1
     MOV EDI,0x202                       ; 0044ebc6
     PUSH 0x57c781                       ; 0044ebcb | = "CDemonLight::blitZBuffer - No master ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0044ebd0 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0044ebd6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0044ebdc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0044ebd0 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0044ebd6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0044ebdc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0044ebe1
     JMP 0x0044e9a5                      ; 0044ebe4
         ;   XREF to: 0044e9a5 (UNCONDITIONAL_JUMP)  ; LAB_0044e9a5

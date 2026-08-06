@@ -39,8 +39,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_dc.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_0059c8a0);
   local_dc.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_dc.vertices + 5)
-            );
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,
+             (CVector3i *)(local_dc.vertices + 5));
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)world_pos->z;
@@ -48,7 +48,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_64.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
   local_64.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_64);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_64);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
@@ -56,7 +56,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_58.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
   local_58.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_58);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_58);
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
@@ -67,7 +67,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_dc.vertices[6].texture_v = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0)
   ;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
              (CVector3i *)(local_dc.vertices + 6));
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
@@ -76,7 +76,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_40.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
   local_40.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[4].projected_vertex,&local_40);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[4].projected_vertex,&local_40);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)world_pos->z;
@@ -84,7 +84,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_28.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
   local_28.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[5].projected_vertex,&local_28);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[5].projected_vertex,&local_28);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
@@ -92,7 +92,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_34.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
   local_34.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[6].projected_vertex,&local_34);
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[6].projected_vertex,&local_34);
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
@@ -103,46 +103,53 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   local_dc.vertices[4].texture_v = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0)
   ;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&DAT_005ae704->vertex_buffer_ptr[7].projected_vertex,
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[7].projected_vertex,
              (CVector3i *)(local_dc.vertices + 4));
   uVar1 = rand();
-  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(DAT_005ae704,uVar1 & 0xff);
+  engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10
+            (g_CDemonRenderer_PTR_005ae704,uVar1 & 0xff);
   local_dc.base.base.count = 4;
   local_dc.base.surface_normal.A.i = 0;
   local_dc.base.surface_normal.B.i = 0;
   local_dc.base.surface_normal.C.i = 0;
   local_dc.base.surface_normal.D.i = 0;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
   local_dc.vertices[3].vertex_index = 0;
   local_dc.vertices[2].vertex_index = 1;
   local_dc.vertices[0].vertex_index = 4;
   local_dc.vertices[1].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
   local_dc.vertices[3].vertex_index = 2;
   local_dc.vertices[2].vertex_index = 3;
   local_dc.vertices[1].vertex_index = 7;
   local_dc.vertices[0].vertex_index = 6;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
   local_dc.vertices[1].vertex_index = 7;
   local_dc.vertices[3].vertex_index = 0;
   local_dc.vertices[2].vertex_index = 4;
   local_dc.vertices[0].vertex_index = 3;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
   local_dc.vertices[3].vertex_index = 1;
   local_dc.vertices[2].vertex_index = 2;
   local_dc.vertices[1].vertex_index = 6;
   local_dc.vertices[0].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
   local_dc.vertices[1].vertex_index = 6;
   local_dc.vertices[3].vertex_index = 4;
   local_dc.vertices[2].vertex_index = 5;
   local_dc.vertices[0].vertex_index = 7;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
   local_dc.vertices[2].vertex_index = 2;
   local_dc.vertices[1].vertex_index = 1;
   local_dc.vertices[3].vertex_index = 3;
   local_dc.vertices[0].vertex_index = 0;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(DAT_005ae704,&local_dc);
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
+            (g_CDemonRenderer_PTR_005ae704,&local_dc);
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

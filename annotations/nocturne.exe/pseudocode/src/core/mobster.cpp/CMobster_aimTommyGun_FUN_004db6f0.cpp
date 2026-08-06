@@ -51,9 +51,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
                          ((this_ptr->base).base.carry_hands[1].carry_actor,
                           g_CWeaponActorType_02ddf970.name_hash);
       if (pCVar3 == (CDemonActor *)0x0) {
-        g_CHAR_PTR_01cc4800 = "..\\core\\mobster.cpp";
-        g_INT_01cc4804 = 0x323;
-        core_main_c_FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
+        g_CurrentFilename = "..\\core\\mobster.cpp";
+        g_CurrentLineNumber = 803;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
       }
       local_88 = 0.7853982;
       if (this_ptr->vehicle != (CDemonActor *)0x0) {
@@ -120,7 +120,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (&(this_ptr->base).base.model,iVar2,6.0,fVar8,_DAT_01ccdbd0,
-                 core_skeleton_cpp_FUN_0051b650);
+                 core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       core_xform_cpp_quaternionFromAngleX_FUN_0055d4a0(local_2c.x,&local_60);
       local_80.w = local_60.w;
       puVar6 = (uint *)((int)&local_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
@@ -132,9 +132,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_p
       local_18 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (local_18,&local_80,this_ptr->firing_blend,_DAT_01ccdbd0,
-                 core_skeleton_cpp_FUN_0051b650);
+                 core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(local_2c.y,&local_70);
-      blend_callback = core_skeleton_cpp_FUN_0051b650;
+      blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
       local_80.w = local_70.w;
       puVar6 = (uint *)((int)&local_80 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
       puVar5 = (uint *)((int)&local_70 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);

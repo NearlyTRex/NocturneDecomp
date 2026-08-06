@@ -9,8 +9,8 @@
 void shape_edittool_cpp_FUN_00476160(CStrList *param_1)
 
 {
-  if (param_1[0x13].capacity != 0) {
-    FUN_005638d0(param_1[0x13].capacity);
+  if ((void *)param_1[0x13].capacity != (void *)0x0) {
+    free((void *)param_1[0x13].capacity);
     param_1[0x13].capacity = 0;
   }
   param_1[0x13].item_count = 0;

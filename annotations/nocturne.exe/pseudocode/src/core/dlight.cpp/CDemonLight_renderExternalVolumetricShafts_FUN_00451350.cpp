@@ -82,7 +82,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)0.10000000000000001 <= (g_CDemonSet_PTR_005be368->active_fog).density_multiplier)) &&
      (g_CGame_PTR_005b9354->halo_mode != 0)) {
-    engine_drender_cpp_FUN_00460d10(DAT_005ae704);
+    engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
     local_9c = local_f0;
     (&local_98)[(uint)bVar5 * -2] = afStack_ec[(uint)bVar5 * -2];
     (&local_98)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
@@ -105,7 +105,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
       this_ptr_01 = &(this_ptr->base).rotation_matrix;
       local_dc = local_dc * fVar1;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(this_ptr_01,&local_108,&local_120);
-      engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_138);
+      engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
+                (g_CDemonRenderer_PTR_005ae704,&local_138);
       local_138.x = local_138.x - (this_ptr->base).position.x;
       local_138.y = local_138.y - (this_ptr->base).position.y;
       local_138.z = local_138.z - (this_ptr->base).position.z;
@@ -123,12 +124,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
       local_58 = 1.0 - fVar2 / fVar1;
       if ((fVar1 <= fVar2) || (local_58 <= (float)0.5)) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                  (DAT_005ae704,&(this_ptr->base).position);
+                  (g_CDemonRenderer_PTR_005ae704,&(this_ptr->base).position);
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
                   (&(this_ptr->base).rotation_matrix,&local_b4);
         local_50 = 1;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                  (DAT_005ae704,&local_b4,(CVector3f *)0x0);
+                  (g_CDemonRenderer_PTR_005ae704,&local_b4,(CVector3f *)0x0);
         do {
           fVar6 = (float10)local_50 *
                   ((float10)18 / (float10)(this_ptr->base).focal_length) *
@@ -191,7 +192,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_12c.y = (int)ROUND(local_f8 * _DAT_0059c030);
               local_12c.z = (int)ROUND(local_f4 * _DAT_0059c030);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                        (&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_12c);
+                        (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,
+                         &local_12c);
               local_f4 = local_2c;
               if (local_20 < local_2c) {
                 local_f4 = local_20;
@@ -202,7 +204,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_a8.y = (int)ROUND(local_f8 * _DAT_0059c030);
               local_a8.z = (int)ROUND(local_f4 * _DAT_0059c030);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                        (&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_a8);
+                        (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
+                         &local_a8);
               local_f4 = local_2c;
               if (local_1c < local_2c) {
                 local_f4 = local_1c;
@@ -213,7 +216,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_d8.y = (int)ROUND(local_f8 * _DAT_0059c030);
               local_d8.z = (int)ROUND(local_f4 * _DAT_0059c030);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                        (&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_d8);
+                        (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,
+                         &local_d8);
               local_f4 = local_28;
               if (local_1c < local_28) {
                 local_f4 = local_1c;
@@ -224,9 +228,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_c0.y = (int)ROUND(local_f8 * _DAT_0059c030);
               local_c0.z = (int)ROUND(local_f4 * _DAT_0059c030);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-                        (&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_c0);
-              this_ptr_00 = DAT_005ae704;
-              DAT_005ae704->vertex_buffer_ptr->r = local_68;
+                        (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
+                         &local_c0);
+              this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
+              g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = local_68;
               this_ptr_00->vertex_buffer_ptr[1].r = local_68;
               this_ptr_00->vertex_buffer_ptr[2].r = local_64;
               this_ptr_00->vertex_buffer_ptr[3].r = local_64;

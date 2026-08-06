@@ -12,8 +12,8 @@ CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(CMouse *this_ptr,ui
   CAlphaBitmap *pCVar1;
   CMouse *pCVar2;
   
-  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(this_ptr->skulls,0);
-  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_004ee8b0(pCVar1 + -7,0);
+  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0(this_ptr->skulls,0);
+  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8b0(pCVar1 + -7,0);
   pCVar2 = (CMouse *)core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(pCVar1 + -8,0);
   return pCVar2;
 }

@@ -18,7 +18,7 @@
 ;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf8ef
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f8
@@ -56,19 +56,19 @@ section .text
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004df04c
         ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     PUSH 0x2dd1184                      ; 004df051 | DAT_02dd1184
-    MOV EDX,dword ptr [0x005ae704]      ; 004df056 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004df056 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004df05c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 004df05d
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 004df062
-    MOV ECX,dword ptr [0x005ae704]      ; 004df065 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 004df065 | g_CDemonRenderer_PTR_005ae704
     PUSH 0x42600000                     ; 004df06b
     PUSH ECX                            ; 004df070 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00 ; 004df071
         ;   XREF to: 00460c00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004df076
     PUSH 0x2dd1184                      ; 004df079 | DAT_02dd1184
-    MOV EBX,dword ptr [0x005ae704]      ; 004df07e | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 004df07e | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004df084 | DAT_01b4d738
     MOV EBP,0x42100000                  ; 004df085
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780 ; 004df08a
@@ -77,7 +77,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004df092
     XOR ESI,ESI                         ; 004df096
     PUSH EAX                            ; 004df098
-    MOV EAX,[0x005ae704]                ; 004df099 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004df099 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [ESP + 0x1c],ESI      ; 004df09e
     PUSH EAX                            ; 004df0a2 | DAT_01b4d738
     MOV dword ptr [ESP + 0x24],ESI      ; 004df0a3

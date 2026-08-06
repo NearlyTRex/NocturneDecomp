@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -105,15 +105,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 27,
-        "line": 68,
-        "message": "use of undeclared identifier 'DAT_01c00648'; did you mean 'DAT_02DF0648'?"
+        "column": 3,
+        "line": 71,
+        "message": "use of undeclared identifier '_DAT_006af578'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 71,
-        "message": "use of undeclared identifier '_DAT_006af578'"
+        "line": 72,
+        "message": "use of undeclared identifier '_DAT_006af574'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 578,
+    "complexity_score": 568,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 36,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 178,
-    "suspect_count": 38,
+    "suspect_count": 37,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy",
@@ -338,8 +338,8 @@
     },
     {
       "addr": "01c00648",
-      "name": "DAT_01c00648",
-      "type": "undefined4",
+      "name": "g_SourcePaletteData",
+      "type": "uchar[768]",
       "value": null
     },
     {
@@ -654,14 +654,6 @@
       "match": "DAT_005b9250",
       "severity": "mild",
       "text": "engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005b9250);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01c00648",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(byte)(&DAT_01c00648)[iVar5];",
       "type": "undefined_data"
     },
     {

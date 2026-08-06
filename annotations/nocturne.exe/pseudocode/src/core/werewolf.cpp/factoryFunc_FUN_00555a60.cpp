@@ -11,7 +11,7 @@ CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_00555a60(void)
 {
   CWerewolf *pCVar1;
   
-  pCVar1 = (CWerewolf *)FUN_0056497c(0xbd6c);
+  pCVar1 = operator_new(0xbd6c);
   if (pCVar1 == (CWerewolf *)0x0) {
     return (CWerewolf *)0x0;
   }

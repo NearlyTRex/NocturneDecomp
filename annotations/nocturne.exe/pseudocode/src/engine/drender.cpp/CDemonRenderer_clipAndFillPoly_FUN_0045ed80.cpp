@@ -10,9 +10,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDem
 
 {
   if (this_ptr->projection_mode != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\drender.cpp";
-    g_INT_01cc4804 = 0xac;
-    core_main_c_FUN_004c8440("CDemonRenderer::clipAndFillPoly - Bad projection mode");
+    g_CurrentFilename = "..\\engine\\drender.cpp";
+    g_CurrentLineNumber = 172;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRenderer::clipAndFillPoly - Bad projection mode");
   }
   if (this_ptr->face_capture_enabled == 0) {
     if (((this_ptr->face_count == 0) || ((DAT_01c039a0 & 1) != 0)) && ((DAT_01c039a0 & 5) != 0)) {

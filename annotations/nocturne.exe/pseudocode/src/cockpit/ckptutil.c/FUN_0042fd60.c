@@ -40,12 +40,12 @@ void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int p
     if (DAT_005b7624 == 8) {
       iVar6 = *(int *)(&DAT_01bd2fa0 + iVar1);
       iVar1 = (uint)*(byte *)(iVar6 + param_1) * 3;
-      bVar4 = *(byte *)(iVar1 + 0x1c0064a);
-      bVar2 = *(byte *)(param_4 * 3 + 0x1c00649);
+      bVar4 = g_SourcePaletteData[iVar1 + 2];
+      bVar2 = g_SourcePaletteData[param_4 * 3 + 1];
       fVar9 = 1.0 - param_3;
       dVar16 = round
-                         ((double)((float)(byte)(&DAT_01c00648)[param_4 * 3] * fVar9 +
-                                  (float)(byte)(&DAT_01c00648)[iVar1] * param_3));
+                         ((double)((float)g_SourcePaletteData[param_4 * 3] * fVar9 +
+                                  (float)g_SourcePaletteData[iVar1] * param_3));
       iVar1 = (int)ROUND(dVar16);
       dVar16 = round
                          ((double)((float)bVar4 * fVar9 + (float)bVar2 * param_3));
@@ -55,7 +55,7 @@ void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int p
                          ((double)((float)bVar2 * fVar9 + (float)sStack_2c * param_3));
       iVar14 = (int)ROUND(dVar17) >> 0x1f;
       *(byte *)(iVar6 + param_1) =
-           (&DAT_01bf7720)
+           g_ColorCubeLookup
            [((int)(((int)ROUND(dVar17) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) +
             ((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400
             + ((int)(((int)ROUND(dVar16) + iVar13 * -8) - (uint)(iVar13 << 2 < 0)) >> 3) * 0x20];
@@ -76,11 +76,11 @@ void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int p
     bVar8 = DAT_01c0063c & 0x1f;
     bVar7 = DAT_01c00644 & 0x1f;
     param_4 = param_4 * 3;
-    bVar2 = *(byte *)(param_4 + 0x1c00649);
+    bVar2 = g_SourcePaletteData[param_4 + 1];
     fVar9 = 1.0 - param_3;
-    bVar3 = *(byte *)(param_4 + 0x1c0064a);
+    bVar3 = g_SourcePaletteData[param_4 + 2];
     dVar16 = round
-                       ((double)((float)(byte)(&DAT_01c00648)[param_4] * fVar9 +
+                       ((double)((float)g_SourcePaletteData[param_4] * fVar9 +
                                 (float)(uVar10 & 0xff) * param_3));
     dVar17 = round
                        ((double)((float)bVar2 * fVar9 + (float)(uVar11 & 0xff) * param_3));

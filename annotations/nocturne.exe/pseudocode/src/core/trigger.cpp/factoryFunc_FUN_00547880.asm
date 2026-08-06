@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_trigger.cpp_CTrigger_ctor_FUN_005478b0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x368                          ; 00547880
         ;   Label: core_trigger.cpp_factoryFunc_FUN_00547880
-    CALL crt_unknown.c_FUN_0056497c     ; 00547885
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00547885
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0054788a
     TEST EAX,EAX                        ; 0054788d
     JNZ 0x00547892                      ; 0054788f

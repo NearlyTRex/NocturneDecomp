@@ -11,14 +11,14 @@ CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPt
 {
   if (this_ptr->model_ptr == (CDeformableModel *)0x0) {
     if (this_ptr->model_name[0] != '\0') {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0xdd3;
-      core_main_c_FUN_004c8440("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.",this_ptr->model_name);
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 3539;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.");
       return this_ptr->model_ptr;
     }
-    g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-    g_INT_01cc4804 = 0xdd1;
-    core_main_c_FUN_004c8440("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
+    g_CurrentFilename = "..\\core\\skeleton.cpp";
+    g_CurrentLineNumber = 3537;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.");
   }
   return this_ptr->model_ptr;
 }

@@ -1,0 +1,1218 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 47,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 47,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 58,
+        "message": "use of undeclared identifier 'stack0xfffffb4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 64,
+        "message": "use of undeclared identifier 'stack0xfffffb4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 66,
+        "message": "use of undeclared identifier 'stack0xfffffb4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 68,
+        "message": "use of undeclared identifier 'stack0xfffffb4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 27,
+        "line": 70,
+        "message": "use of undeclared identifier 'stack0xfffffb4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 91,
+        "message": "use of undeclared identifier '_DAT_01c78ac0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 92,
+        "message": "use of undeclared identifier '_DAT_01c78ac4'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1066,
+    "complexity_score": 699,
+    "cross_reference_count": 2,
+    "function_call_count": 21,
+    "global_count": 86,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 394,
+    "suspect_count": 28,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1460
+  },
+  "cross_references": [
+    {
+      "addr": "004c8510",
+      "from_addr": "004c8597",
+      "name": "core_main.c_FUN_004c8510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d23d0",
+      "from_addr": "004d263f",
+      "name": "core_menu.cpp_FUN_004d23d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a4b50",
+    "address_range": [
+      [
+        "004a4b50",
+        "004a573a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_FUN_004a4b50",
+    "signature": "void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00480410",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_resetGameFlags_FUN_00480410"
+    },
+    {
+      "addr": "004a4170",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004a4170"
+    },
+    {
+      "addr": "004c5640",
+      "is_variadic": false,
+      "name": "core_level.cpp_CLevelLoader_show_FUN_004c5640"
+    },
+    {
+      "addr": "004d9a80",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80"
+    },
+    {
+      "addr": "004d7ee0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_load_FUN_004d7ee0"
+    },
+    {
+      "addr": "004d9440",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004d9440"
+    },
+    {
+      "addr": "004d9780",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_startMission_FUN_004d9780"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "0056568c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_0056568c"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004bd860",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004bd860"
+    },
+    {
+      "addr": "004bda20",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004bda20"
+    },
+    {
+      "addr": "00470550",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550"
+    },
+    {
+      "addr": "00474c90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_00474c90"
+    },
+    {
+      "addr": "00474d70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70"
+    },
+    {
+      "addr": "00474cf0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_00474cf0"
+    },
+    {
+      "addr": "00475f80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_enableItem_FUN_00475f80"
+    },
+    {
+      "addr": "00473cb0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00473cb0"
+    },
+    {
+      "addr": "00476160",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00476160"
+    },
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00583db6",
+      "name": "s_rt_00583db6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583db9",
+      "name": "s_world_00583db9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dbf",
+      "name": "s_rb_00583dbf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dc2",
+      "name": "s_enemy_pod_00583dc2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dcc",
+      "name": "CHAR_00h_00583dcc",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "00583dcd",
+      "name": "s_rt_00583dcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dd0",
+      "name": "s_pod_ini_00583dd0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dd8",
+      "name": "s_Game_00583dd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583ddd",
+      "name": "s_system_nocturne_ini_00583ddd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583df1",
+      "name": "s_Act1Code_00583df1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583dfa",
+      "name": "s_Act2Code_00583dfa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e03",
+      "name": "s_Act3Code_00583e03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e0c",
+      "name": "s_Act4Code_00583e0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e15",
+      "name": "s_Dark_Reign_of_the_Vampir_00583e15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e36",
+      "name": "s_Tomb_of_the_Underground_00583e36",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e54",
+      "name": "s_Windy_City_Massacre_00583e54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e6a",
+      "name": "s_The_House_on_the_Edge_of_00583e6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e8a",
+      "name": "s_Epilogue_00583e8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583e95",
+      "name": "s_Volume_1_Dark_Reign_of_t_00583e95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583ec1",
+      "name": "s_Volume_2_Tomb_of_the_Und_00583ec1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583eea",
+      "name": "s_Volume_3_Windy_City_Mass_00583eea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f0b",
+      "name": "s_Volume_4_The_House_on_th_00583f0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f36",
+      "name": "s_Volume_5_Epilogue_00583f36",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f4c",
+      "name": "s_rt_00583f4c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f4f",
+      "name": "s_world_00583f4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f55",
+      "name": "s_Choose_a_story_to_play_00583f55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f6c",
+      "name": "s_Chapter_1_Your_New_Partn_00583f6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583f8b",
+      "name": "s_Chapter_2_Sentinels_00583f8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583fa3",
+      "name": "s_Chapter_3_Werewolf_Fores_00583fa3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583fc1",
+      "name": "s_Chapter_4_Castle_Gaustad_00583fc1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583fdf",
+      "name": "s_Chapter_5_Dungeon_00583fdf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00583ff5",
+      "name": "s_Dark_Reign_of_the_Vampir_00583ff5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584016",
+      "name": "s_Chapter_1_Train_to_Redey_00584016",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584034",
+      "name": "s_Chapter_2_Zombie_Town_00584034",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058404e",
+      "name": "s_Chapter_3_Underground_Mi_0058404e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058406d",
+      "name": "s_Chapter_4_Hidden_Entranc_0058406d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058408b",
+      "name": "s_Chapter_5_Temple_of_the_0058408b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005840ab",
+      "name": "s_Chapter_6_Epilogue_005840ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005840c2",
+      "name": "s_Chapter_X_Failure_005840c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005840d8",
+      "name": "s_Tomb_of_the_Underground_005840d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005840f6",
+      "name": "s_Chapter_1_Headquarters_005840f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584111",
+      "name": "s_Chapter_2_Chicago_River_00584111",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058412d",
+      "name": "s_Chapter_3_The_Vendome_0058412d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584147",
+      "name": "s_Chapter_4_Night_on_the_T_00584147",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584167",
+      "name": "s_Chapter_5_Water_Works_00584167",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584181",
+      "name": "s_Chapter_6_Windy_City_00584181",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058419a",
+      "name": "s_Chapter_7_Crescent_Theat_0058419a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005841b9",
+      "name": "s_Chapter_8_Rooftop_to_Roo_005841b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005841da",
+      "name": "s_Chapter_9_Warehouse_of_H_005841da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005841fa",
+      "name": "s_Chapter_10_Mobster_Facto_005841fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584219",
+      "name": "s_Chapter_11_Not_You_Again_00584219",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584236",
+      "name": "s_Windy_City_Massacre_00584236",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058424c",
+      "name": "s_Chapter_1_Headquarters_0058424c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584267",
+      "name": "s_Chapter_2_Graveyard_00584267",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058427f",
+      "name": "s_Chapter_3_House_of_Hell_0058427f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058429b",
+      "name": "s_Chapter_4_Back_from_Hell_0058429b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005842b8",
+      "name": "s_The_House_on_the_Edge_of_005842b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005842d8",
+      "name": "s_Chapter_1_Headquarters_005842d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005842f3",
+      "name": "s_Epilogue_005842f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005842fe",
+      "name": "s_rt_005842fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584301",
+      "name": "s_world_00584301",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584307",
+      "name": "s_msn_00584307",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058430d",
+      "name": "s_world_0058430d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00584313",
+      "name": "s_Select_mission_to_play_00584313",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6d50",
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
+    },
+    {
+      "addr": "005b7650",
+      "name": "DAT_005b7650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9418",
+      "name": "DAT_005b9418",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9450",
+      "name": "DAT_005b9450",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9451",
+      "name": "DAT_005b9451",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9454",
+      "name": "PTR_s_gtown_msn_005846ed_005b9454",
+      "type": "void*",
+      "value": "005846ed"
+    },
+    {
+      "addr": "005b9485",
+      "name": "DAT_005b9485",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9554",
+      "name": "DAT_005b9554",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005baca0",
+      "name": "g_CLevelLoader_PTR_005baca0",
+      "type": "CLevelLoader*",
+      "value": "01cc3160"
+    },
+    {
+      "addr": "005baf90",
+      "name": "g_CDemonMission_PTR_005baf90",
+      "type": "CDemonMission*",
+      "value": "01cc9450"
+    },
+    {
+      "addr": "014b9900",
+      "name": "g_CBitFont_PTR_014b9900",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "01bcd070",
+      "name": "DAT_01bcd070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78598",
+      "name": "DAT_01c78598",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78599",
+      "name": "DAT_01c78599",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7859a",
+      "name": "DAT_01c7859a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7859b",
+      "name": "DAT_01c7859b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c789c0",
+      "name": "DAT_01c789c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c789c1",
+      "name": "DAT_01c789c1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c789c2",
+      "name": "DAT_01c789c2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c789c3",
+      "name": "DAT_01c789c3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac0",
+      "name": "DAT_01c78ac0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac4",
+      "name": "DAT_01c78ac4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004c8597",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004c8510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d263f",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004d23d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4620098039215685,
+    "instruction_count": 816,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 36,
+      "BOOL_OR": 1,
+      "BRANCH": 16,
+      "CALL": 125,
+      "CBRANCH": 52,
+      "COPY": 508,
+      "INT_ADD": 291,
+      "INT_AND": 465,
+      "INT_CARRY": 142,
+      "INT_EQUAL": 442,
+      "INT_LEFT": 2,
+      "INT_LESS": 35,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 5,
+      "INT_SBORROW": 35,
+      "INT_SCARRY": 149,
+      "INT_SEXT": 15,
+      "INT_SLESS": 220,
+      "INT_SUB": 393,
+      "INT_XOR": 16,
+      "LOAD": 54,
+      "POPCOUNT": 218,
+      "RETURN": 2,
+      "STORE": 388,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 3641
+  },
+  "stack_frame": {
+    "frame_size": 1216,
+    "local_size": 1208,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4b4",
+        "offset": -1204,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2b4",
+        "offset": -692,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_143",
+        "offset": -323,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "select_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "uint in_stack_fffffb4c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xfffffb4c",
+      "severity": "moderate",
+      "text": "((CIniFile *)&stack0xfffffb4c,\"system\\\\nocturne.ini\",\"Game\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xfffffb4c",
+      "severity": "moderate",
+      "text": "((CIniFile *)&stack0xfffffb4c,\"Act1Code\",&local_2c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xfffffb4c",
+      "severity": "moderate",
+      "text": "((CIniFile *)&stack0xfffffb4c,\"Act2Code\",&local_28);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xfffffb4c",
+      "severity": "moderate",
+      "text": "((CIniFile *)&stack0xfffffb4c,\"Act3Code\",&local_24);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xfffffb4c",
+      "severity": "moderate",
+      "text": "((CIniFile *)&stack0xfffffb4c,\"Act4Code\",&local_20);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_01c789c0",
+      "severity": "mild",
+      "text": "DAT_01c789c0 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar3),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 129,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar3,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 166,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 182,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 211,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 224,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 263,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 276,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 294,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 307,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 316,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "(\"world\",*(char **)(&DAT_005b9450 + iVar5),\"rt\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 328,
+      "match": "in_stack_fffffb4c",
+      "severity": "moderate",
+      "text": "(&local_2b4,pcVar7,iVar6,in_stack_fffffb4c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 338,
+      "match": "DAT_005b9450",
+      "severity": "mild",
+      "text": "pcVar4 = *(char **)(&DAT_005b9450 + iVar3 * 0x34 + iVar6 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 352,
+      "match": "DAT_01c789c0",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_01c789c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 354,
+      "match": "DAT_005b9554",
+      "severity": "mild",
+      "text": "_DAT_01c78ac0 = *(uint *)(&DAT_005b9554 + iVar3 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 369,
+      "match": "DAT_01c78598",
+      "severity": "mild",
+      "text": "iVar6 = _stricmp(&DAT_01c78598,local_144);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 372,
+      "match": "DAT_01c78598",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_01c78598;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 339,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 356,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 373,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

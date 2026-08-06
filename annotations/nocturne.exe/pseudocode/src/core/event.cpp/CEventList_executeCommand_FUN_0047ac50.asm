@@ -377,10 +377,10 @@ section .text
         ;   Label: LAB_0047adb7
     MOV EAX,0x257                       ; 0047adbc
     PUSH 0x57f5b3                       ; 0047adc1 | = "Too many events"
-    MOV dword ptr [0x01cc4800],EDI      ; 0047adc6 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0047adcc | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047add1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0047adc6 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0047adcc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047add1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0047add6
     JMP 0x0047ad30                      ; 0047add9
         ;   XREF to: 0047ad30 (UNCONDITIONAL_JUMP)  ; LAB_0047ad30
@@ -538,10 +538,10 @@ section .text
     MOV EBX,0x57f60d                    ; 0047af1c | = "..\\core\\event.cpp"
     MOV ESI,0x27f                       ; 0047af21
     PUSH 0x57f61f                       ; 0047af26 | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0047af2b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0047af31 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047af37
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0047af2b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0047af31 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047af37
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0047af3c
     MOV EDI,dword ptr [EBP + 0x4a]      ; 0047af3f
         ;   Label: LAB_0047af3f
@@ -781,8 +781,8 @@ section .text
     PUSH EAX                            ; 0047b17f
     MOV ECX,dword ptr [0x005b80f0]      ; 0047b180 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0047b186
-    CALL core_fire.cpp_FUN_0048c0d0     ; 0047b187
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 0047b187
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0047b18c
     JMP 0x0047aead                      ; 0047b18f
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead
@@ -3479,14 +3479,14 @@ section .text
     CMP dword ptr [EBP + 0x42],0x0      ; 0047cadb
     JNZ 0x0047cb0a                      ; 0047cadf
         ;   XREF to: 0047cb0a (CONDITIONAL_JUMP)  ; LAB_0047cb0a
-    MOV dword ptr [0x01cc4800],0x57fdf5 ; 0047cae1 | g_CHAR_PTR_01cc4800 | = "..\\core\\event.cpp"
+    MOV dword ptr [0x01cc4800],0x57fdf5 ; 0047cae1 | g_CurrentFilename | = "..\\core\\event.cpp"
     LEA EAX,[EBP + 0xfffff89a]          ; 0047caeb
     PUSH EAX                            ; 0047caf1
     MOV EDX,0x4e0                       ; 0047caf2
     PUSH 0x57fe07                       ; 0047caf7 | = "Can't find CDemonLight for light %s i..."
-    MOV dword ptr [0x01cc4804],EDX      ; 0047cafc | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047cb02
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDX      ; 0047cafc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047cb02
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0047cb07
     MOV ECX,dword ptr [EBP + 0x42]      ; 0047cb0a
         ;   Label: LAB_0047cb0a
@@ -4396,8 +4396,8 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0047d34a | g_CDemonSet_PTR_005be368
     PUSH dword ptr [EBP + 0x5e]         ; 0047d350
     PUSH EDI                            ; 0047d353 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e660      ; 0047d354
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 0047d354
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 0047d359
     JMP 0x0047aead                      ; 0047d35c
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead

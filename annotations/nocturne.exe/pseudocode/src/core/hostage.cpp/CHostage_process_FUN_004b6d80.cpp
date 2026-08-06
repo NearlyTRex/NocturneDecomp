@@ -110,7 +110,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
     (this_ptr->base).base.ai_detection_range_max = 99999.0;
     (this_ptr->base).base.ai_detection_range_min = 99999.0;
   }
-  iVar11 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time);
+  iVar11 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time);
   if (iVar11 == 0) {
     return;
   }
@@ -225,7 +225,7 @@ LAB_004b7170:
                               (&pCVar2->motion_controller,5), 0.0 < local_18)) ||
        (local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                              (&pCVar2->motion_controller,8), 0.0 < local_18)) goto LAB_004b7170;
-    iVar11 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+    iVar11 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
     pCVar10 = g_CConsole_PTR_005ad350;
     if (iVar11 == 0) {
       switch(this_ptr->hostage_state) {
@@ -265,7 +265,7 @@ LAB_004b7170:
         if (this_ptr->next_way_point == (CDemonActor *)0x0) {
           iVar11 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(this_ptr,delta_time);
           if (iVar11 == 0) {
-            iVar11 = core_charactr_cpp_FUN_0042af70((CCharacter *)this_ptr,delta_time);
+            iVar11 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time);
             if (iVar11 == 0) {
               core_charactr_cpp_CCharacter_followActor_FUN_00428780
                         ((CCharacter *)this_ptr,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),5.0
@@ -651,10 +651,10 @@ LAB_004b72a1:
       local_18 = local_58;
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (pCVar2,_DAT_01cae1a0,local_58,this_ptr->gun_blend_weight,this_ptr->bone_indices[0],
-                 core_skeleton_cpp_FUN_0051b650);
+                 core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (pCVar2,_DAT_01cae1a0,local_58,this_ptr->gun_blend_weight,this_ptr->bone_indices[1],
-                 core_skeleton_cpp_FUN_0051b650);
+                 core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
       if (((1.0 <= this_ptr->gun_blend_weight) && (0.0 < this_ptr->gun_raise_progress)) &&
          (fVar4 = delta_time / local_54 + this_ptr->gun_raise_progress,
          this_ptr->gun_raise_progress = fVar4, 1.0 < fVar4)) {
@@ -668,7 +668,7 @@ LAB_004b72a1:
   }
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730
             ((CCharacter *)this_ptr,delta_time,uVar12);
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   if ((1.0 <= this_ptr->gun_raise_progress) &&
      (pCVar16 = (CCharacter *)
                 core_actor_cpp_castToClassHash_FUN_0040d890

@@ -27,11 +27,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mirror_cpp_005895ea
 ;   TerminatedCString s_Bad_clip_005895fd
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -118,10 +118,10 @@ section .text
         ;   Label: LAB_004d63c1
     MOV EAX,0x42                        ; 004d63c6
     PUSH 0x5895fd                       ; 004d63cb | = "Bad clip!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004d63d0 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004d63d6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d63db
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d63d0 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004d63d6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d63db
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d63e0
     JMP 0x004d6335                      ; 004d63e3
         ;   XREF to: 004d6335 (UNCONDITIONAL_JUMP)  ; LAB_004d6335

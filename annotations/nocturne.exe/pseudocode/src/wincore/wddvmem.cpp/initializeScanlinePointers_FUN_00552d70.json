@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -74,13 +74,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 131,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data"
     ],
@@ -103,15 +103,15 @@
   "globals": [
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "005b7624",
@@ -212,14 +212,6 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (0 < DAT_005b7620) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_005b7624",
       "severity": "mild",
@@ -236,14 +228,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "iVar2 = DAT_005b761c * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_01bd2fa0",
       "severity": "mild",
@@ -253,17 +237,9 @@
     {
       "description": "Undefined global data reference",
       "line": 21,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "DAT_005b761c * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) + DAT_005c5010;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
       "match": "DAT_005c5010",
       "severity": "mild",
-      "text": "DAT_005b761c * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) + DAT_005c5010;",
+      "text": "g_WindowWidth * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) + DAT_005c5010;",
       "type": "undefined_data"
     },
     {
@@ -280,14 +256,6 @@
       "match": "DAT_006af62c",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bd4260 + iVar3) = DAT_006af62c + iVar6;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_005b7620);",
       "type": "undefined_data"
     }
   ]

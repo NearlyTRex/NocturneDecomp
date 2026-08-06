@@ -12,7 +12,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(CPac
   if (this_ptr->packed_data == (ushort *)0x0) {
     return;
   }
-  FUN_005638d0(this_ptr->packed_data);
+  free(this_ptr->packed_data);
   this_ptr->packed_data = (ushort *)0x0;
   return;
 }

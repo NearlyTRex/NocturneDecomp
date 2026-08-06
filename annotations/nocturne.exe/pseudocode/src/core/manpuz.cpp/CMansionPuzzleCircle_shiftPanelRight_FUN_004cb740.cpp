@@ -16,9 +16,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740(C
   iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(this_ptr,panel_index);
   if ((((pSVar1->exists == 0) || (this_ptr->panels[iVar2].exists != 0)) ||
       (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\manpuz.cpp";
-    g_INT_01cc4804 = 0x57d;
-    core_main_c_FUN_004c8440("CMansionPuzzleCircle::shiftPanelRight - fubared.");
+    g_CurrentFilename = "..\\core\\manpuz.cpp";
+    g_CurrentLineNumber = 1405;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMansionPuzzleCircle::shiftPanelRight - fubared.");
   }
   pSVar1->anim_speed = 1.0;
   sound_sndmain_cpp_pushSfxOptions_FUN_00526340();

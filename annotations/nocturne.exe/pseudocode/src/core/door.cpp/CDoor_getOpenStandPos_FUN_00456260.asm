@@ -26,19 +26,19 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00428c00 at 00428cf4
+;   core_charactr.cpp_CCharacter_FUN_00428c00 at 00428cf4
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045624c = 004562b4
 ;   TerminatedCString s_core_door_cpp_0057d21a
 ;   TerminatedCString s_CDoor_getOpenStandPos_in_0057d22b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -229,10 +229,10 @@ section .text
         ;   Label: default
     MOV ECX,0x340                       ; 00456428
     PUSH 0x57d22b                       ; 0045642d | = "CDoor::getOpenStandPos - invalid door..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00456432 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00456438 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045643e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00456432 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00456438 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045643e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00456443
     FLD float ptr [EDI + 0x24]          ; 00456446
     MOV EAX,EBX                         ; 00456449

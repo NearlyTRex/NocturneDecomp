@@ -28,12 +28,12 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_0058abe6
 ;   TerminatedCString s_core_morph_cpp_0058ac14
 ;   TerminatedCString s_CMorphModel_setFaceList_0058ac26
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cd4314
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
 ;
 ; *****************************************************************************
@@ -59,10 +59,10 @@ section .text
         ;   Label: LAB_004df81b
     MOV EBP,0x152                       ; 004df820
     PUSH 0x58abe6                       ; 004df825 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004df82a | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004df830 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004df836
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004df82a | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 004df830 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004df836
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004df83b
     MOV EAX,ESI                         ; 004df83e
         ;   Label: LAB_004df83e
@@ -79,10 +79,10 @@ section .text
     MOV EBP,0x58ac14                    ; 004df859 | = "..\\core\\morph.cpp"
     MOV EAX,0x159                       ; 004df85e
     PUSH 0x58ac26                       ; 004df863 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004df868 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004df86e | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004df873
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004df868 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004df86e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004df873
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004df878
     MOV ECX,dword ptr [ESP + 0x48]      ; 004df87b
         ;   Label: LAB_004df87b

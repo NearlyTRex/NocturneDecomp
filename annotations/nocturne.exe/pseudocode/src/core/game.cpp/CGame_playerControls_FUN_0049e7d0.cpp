@@ -37,9 +37,9 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
       core_game_cpp_CGame_processJoystickControls_FUN_0049ec80(this_ptr,player_control);
     }
     else {
-      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
-      g_INT_01cc4804 = 0x71d;
-      core_main_c_FUN_004c8440("CGame::playerControls - unknown control type");
+      g_CurrentFilename = "..\\core\\game.cpp";
+      g_CurrentLineNumber = 1821;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::playerControls - unknown control type");
     }
     puVar3 = (uint *)&DAT_01c02598;
     puVar4 = (uint *)&DAT_01c781c0;

@@ -42,7 +42,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
-;   core_setdir.cpp_FUN_005125a0
+;   core_setdir.cpp_CDemonSet_FUN_005125a0
 ;
 ; *****************************************************************************
 
@@ -527,8 +527,8 @@ section .text
     MOV EAX,[0x005be368]                ; 0049f3a6 | g_CDemonSet_PTR_005be368
     PUSH EAX                            ; 0049f3ab | g_CDemonSet_01e57284
     MOV EBX,dword ptr [EAX + 0x15aabc]  ; 0049f3ac | g_CDemonSet_01e57284.selected_camera_index
-    CALL core_setdir.cpp_FUN_005125a0   ; 0049f3b2
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
+    CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 0049f3b2
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
     MOV EAX,[0x005be220]                ; 0049f3b7 | DAT_005be220
     MOV dword ptr [EAX + 0x10],0x0      ; 0049f3bc | g_CScript_01e56da0.focus_actor_changed
     MOV EAX,[0x005be368]                ; 0049f3c3 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284

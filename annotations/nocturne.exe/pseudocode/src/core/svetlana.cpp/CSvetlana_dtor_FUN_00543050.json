@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -59,7 +59,7 @@
         "category": "undeclared_identifier",
         "column": 3,
         "line": 28,
-        "message": "use of undeclared identifier 'FUN_00564494'"
+        "message": "use of undeclared identifier 'operator_delete'"
       }
     ],
     "success": false,
@@ -112,7 +112,7 @@
     {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00564494"
+      "name": "crt_memory.c_operator_delete_FUN_00564494"
     },
     {
       "addr": "00564486",
@@ -187,10 +187,10 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 16,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "core_hero_cpp_CHero_dtor_FUN_004b4800((CHero *)(pCVar1[-1].vertices + 0x183),1);",
+      "text": "ptr = (CSvetlana *)core_hero_cpp_CHero_dtor_FUN_004b4800((CHero *)(pCVar1[-1].vertices + 0x183),1)",
       "type": "negative_offset"
     }
   ],

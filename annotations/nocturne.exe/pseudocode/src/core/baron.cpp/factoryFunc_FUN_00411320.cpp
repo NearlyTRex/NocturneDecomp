@@ -11,7 +11,7 @@ CBaronWeapon * __cdecl core_baron_cpp_factoryFunc_FUN_00411320(void)
 {
   CBaronWeapon *pCVar1;
   
-  pCVar1 = (CBaronWeapon *)FUN_0056497c(0x574);
+  pCVar1 = operator_new(0x574);
   if (pCVar1 == (CBaronWeapon *)0x0) {
     return (CBaronWeapon *)0x0;
   }

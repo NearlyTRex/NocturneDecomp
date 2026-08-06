@@ -16,7 +16,7 @@
 ;   TerminatedCString s_s_4_2f_0058853d
 ;   double DOUBLE_00588543 = 0.0000152587890625
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bd1d8c
@@ -54,7 +54,7 @@ section .text
     PUSH 0x0                            ; 004cfbcc
     MOV EDX,dword ptr [EBP + 0x18]      ; 004cfbce
     PUSH EDX                            ; 004cfbd1
-    MOV EDX,dword ptr [0x005b761c]      ; 004cfbd2 | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004cfbd2 | g_WindowWidth
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cfbd8
     SUB EAX,EDX                         ; 004cfbdf
     MOV EDX,EAX                         ; 004cfbe1
@@ -86,7 +86,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004cfc2d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | DAT_01bd1d90
-    MOV EAX,[0x005b761c]                ; 004cfc38 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004cfc38 | g_WindowWidth
     PUSH ECX                            ; 004cfc3d
     LEA EDX,[ESI + 0xffffc000]          ; 004cfc3e
     DEC EAX                             ; 004cfc44
@@ -108,7 +108,7 @@ section .text
     CMP EDX,dword ptr [ESP + 0x8]       ; 004cfc6d
     JZ 0x004cfc94                       ; 004cfc71
         ;   XREF to: 004cfc94 (CONDITIONAL_JUMP)  ; LAB_004cfc94
-    MOV EBX,dword ptr [0x005b761c]      ; 004cfc73 | DAT_005b761c
+    MOV EBX,dword ptr [0x005b761c]      ; 004cfc73 | g_WindowWidth
     MOV EAX,EDX                         ; 004cfc79
     MOV EDX,0x3c000                     ; 004cfc7b
     DEC EBX                             ; 004cfc80

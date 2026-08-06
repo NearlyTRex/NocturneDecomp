@@ -20,19 +20,19 @@
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
@@ -122,15 +122,15 @@ section .text
     MOV ECX,0x58a0d2                    ; 004d9ccc | = "..\\core\\mission.cpp"
     MOV EBX,0x687                       ; 004d9cd1
     PUSH 0x58a0e6                       ; 004d9cd6 | = "Hell froze finding hero."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d9ce7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d9ce7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d9cec
     PUSH 0x154                          ; 004d9cef
         ;   Label: LAB_004d9cef
-    CALL crt_unknown.c_FUN_0056497c     ; 004d9cf4
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004d9cf4
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004d9cf9
     TEST EAX,EAX                        ; 004d9cfc
     JZ 0x004d9d09                       ; 004d9cfe

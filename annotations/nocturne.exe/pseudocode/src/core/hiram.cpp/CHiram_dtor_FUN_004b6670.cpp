@@ -15,12 +15,12 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint f
   CVector3f *pCVar4;
   CClothList *pCVar5;
   CDeformableModelInstance *pCVar6;
-  CHiram *pCVar7;
-  void *ptr;
+  CHiram *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CHiramTypeInfo_0059eee0);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CHiramTypeInfo_0059eee0);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable._ub;
@@ -34,12 +34,12 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004b6670(CHiram *this_ptr,uint f
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar4 + -0x26),0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
-  pCVar7 = (CHiram *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
-                     ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
+  ptr = (CHiram *)
+        core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
+                  ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 9),1);
   if ((flags & 2) == 0) {
-    return pCVar7;
+    return ptr;
   }
-  FUN_00564494(pCVar7);
-  return pCVar7;
+  operator_delete(ptr);
+  return ptr;
 }

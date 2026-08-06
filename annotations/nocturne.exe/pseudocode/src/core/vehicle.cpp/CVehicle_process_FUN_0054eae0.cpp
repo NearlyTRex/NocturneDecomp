@@ -210,20 +210,20 @@ joined_r0x0054f2b0:
     EVar14 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7);
     goto joined_r0x0054f2b0;
   }
-  this_ptr_00 = (CMobster *)FUN_0056497c(0xbdfc);
+  this_ptr_00 = operator_new(0xbdfc);
   this_ptr_01 = (CMobster *)0x0;
   if (this_ptr_00 != (CMobster *)0x0) {
     this_ptr_01 = core_mobster_cpp_CMobster_ctor_FUN_004da150(this_ptr_00);
   }
-  this_ptr_02 = (CTommyGun *)FUN_0056497c(0x57c);
+  this_ptr_02 = operator_new(0x57c);
   actor = (CTommyGun *)0x0;
   if (this_ptr_02 != (CTommyGun *)0x0) {
     actor = core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(this_ptr_02);
   }
   if ((this_ptr_01 == (CMobster *)0x0) || (actor == (CTommyGun *)0x0)) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\vehicle.cpp";
-    g_INT_01cc4804 = 0x161;
-    core_main_c_FUN_004c8440("CMobster::process - Out of memory!");
+    g_CurrentFilename = "..\\core\\vehicle.cpp";
+    g_CurrentLineNumber = 353;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CMobster::process - Out of memory!");
   }
   iVar15 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
   if (iVar15 == 0) {

@@ -1,0 +1,547 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 27,
+        "line": 43,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 48,
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 216,
+    "complexity_score": 163,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 40,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 78,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant"
+    ],
+    "total_lines": 294
+  },
+  "cross_references": [
+    {
+      "addr": "004c85f0",
+      "from_addr": "004c8745",
+      "name": "core_main.c_FUN_004c85f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401010",
+    "address_range": [
+      [
+        "00401010",
+        "0040129a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+    "signature": "void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00563350",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_00563350"
+    },
+    {
+      "addr": "00401990",
+      "is_variadic": false,
+      "name": "engine_2d.c_buildBlendTables_FUN_00401990"
+    },
+    {
+      "addr": "00403460",
+      "is_variadic": false,
+      "name": "engine_2d.c_loadLightTable_FUN_00403460"
+    },
+    {
+      "addr": "00403630",
+      "is_variadic": false,
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00403630"
+    },
+    {
+      "addr": "00401bd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_loadPaletteFile_FUN_00401bd0"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004568c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
+    },
+    {
+      "addr": "00552b40",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40"
+    },
+    {
+      "addr": "00552e00",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00"
+    },
+    {
+      "addr": "005537e0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00577004",
+      "name": "s_engine_2d_c_00577004",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577013",
+      "name": "s_No_room_for_frame_buffer_00577013",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057703f",
+      "name": "s_vga_act_0057703f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577047",
+      "name": "s_vga_lte_00577047",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057704f",
+      "name": "s_vga_map_0057704f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577057",
+      "name": "s_vga_act_00577057",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057705f",
+      "name": "s_rb_0057705f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577062",
+      "name": "s_font_ndx_00577062",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057706b",
+      "name": "s_startup_0057706b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577073",
+      "name": "s_engine_2d_c_00577073",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577082",
+      "name": "s_Unable_to_open_font_ndx_00577082",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057709a",
+      "name": "s_d_0057709a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057709e",
+      "name": "s_font_bin_0057709e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770a7",
+      "name": "s_startup_005770a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770af",
+      "name": "s_engine_2d_c_005770af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770be",
+      "name": "s_Unable_to_malloc_font_me_005770be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770db",
+      "name": "s_rb_005770db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770de",
+      "name": "s_font_bin_005770de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770e7",
+      "name": "s_startup_005770e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770ef",
+      "name": "s_engine_2d_c_005770ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005770fe",
+      "name": "s_Unable_to_open_font_bin_005770fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577116",
+      "name": "s_rb_00577116",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577119",
+      "name": "s_default_act_00577119",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00577125",
+      "name": "s_art_00577125",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005aca6c",
+      "name": "g_ResolutionTable",
+      "type": "SResolutionEntry[9]",
+      "value": null
+    },
+    {
+      "addr": "005aca70",
+      "name": "g_ResolutionTable[0].height",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b761c",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005b7620",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "006af628",
+      "name": "g_RenderingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "006afa38",
+      "name": "g_FontBitmapData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "006afa3c",
+      "name": "g_FontCharWidths",
+      "type": "int[256]",
+      "value": null
+    },
+    {
+      "addr": "006afabc",
+      "name": "g_FontCharWidths[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006afac0",
+      "name": "g_FontCharWidths[33]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006afebc",
+      "name": "g_FontGlyphPtrs[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006afec0",
+      "name": "g_FontGlyphPtrs[33]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c80",
+      "name": "g_ReciprocalLookupTable",
+      "type": "uint[1600]",
+      "value": null
+    },
+    {
+      "addr": "01c00c84",
+      "name": "g_ReciprocalLookupTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c88",
+      "name": "g_ReciprocalLookupTable[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c8745",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004c85f0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8830409356725144,
+    "instruction_count": 171,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 3,
+      "CALL": 22,
+      "CBRANCH": 8,
+      "COPY": 120,
+      "INT_ADD": 43,
+      "INT_AND": 81,
+      "INT_CARRY": 27,
+      "INT_DIV": 1,
+      "INT_EQUAL": 76,
+      "INT_LEFT": 1,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 28,
+      "INT_SEXT": 3,
+      "INT_SLESS": 38,
+      "INT_SUB": 68,
+      "INT_XOR": 2,
+      "INT_ZEXT": 3,
+      "LOAD": 12,
+      "POPCOUNT": 38,
+      "RETURN": 2,
+      "STORE": 67,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 664
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)g_FontCharWidths",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_FontCharWidths + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uchar **)((int)g_FontGlyphPtrs",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)g_FontGlyphPtrs + iVar3) = g_FontBitmapData + iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)g_ReciprocalLookupTable",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ReciprocalLookupTable + iVar3) = (int)(0xffffffff / uVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_FontGlyphPtrs` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)g_FontGlyphPtrs",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)g_FontGlyphPtrs + iVar3) = g_FontBitmapData + iVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0x6afabc matches address of g_FontCharWidths (+128 bytes into) (type int[256]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 33,
+      "match": "0x6afabc",
+      "severity": "moderate",
+      "text": "iVar3 = 0x6afabc;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x6afc3c matches address of g_FontCharWidths (+512 bytes into) (type int[256]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 38,
+      "match": "0x6afc3c",
+      "severity": "moderate",
+      "text": "} while (iVar5 != 0x6afc3c);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x6afabc assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 33,
+      "match": "0x6afabc",
+      "severity": "moderate",
+      "text": "iVar3 = 0x6afabc;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

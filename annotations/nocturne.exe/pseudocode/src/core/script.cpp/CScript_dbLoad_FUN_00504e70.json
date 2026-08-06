@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,39 +57,9 @@
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 37,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "format_error",
-        "column": 35,
-        "line": 48,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
         "column": 7,
-        "line": 52,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 86,
+        "line": 85,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
-      },
-      {
-        "category": "format_error",
-        "column": 26,
-        "line": 90,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 28,
-        "line": 93,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -98,12 +68,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 222,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 116,
     "suspect_count": 8,
     "suspect_types": [
       "alloc_magic_size",
@@ -112,13 +82,13 @@
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 405
+    "total_lines": 404
   },
   "cross_references": [
     {
       "addr": "004febd0",
       "from_addr": "004fec82",
-      "name": "core_script.cpp_FUN_004febd0",
+      "name": "core_script.cpp_CScript_FUN_004febd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -138,7 +108,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00505180",
@@ -162,7 +132,7 @@
     },
     {
       "addr": "00563350",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
     },
     {
@@ -172,7 +142,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -330,13 +300,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -347,7 +317,7 @@
       {
         "call_addr": "004fec82",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_004febd0",
+        "caller": "core_script.cpp_CScript_FUN_004febd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -490,7 +460,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 115,
       "match": "(SDialogEntry *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -498,7 +468,7 @@
     },
     {
       "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 116,
+      "line": 115,
       "match": "(int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -506,7 +476,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -514,7 +484,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -522,7 +492,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 91,
+      "line": 90,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -530,7 +500,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -538,7 +508,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x226 == sizeof(SDialogEntry). Replace the magic with sizeof(SDialogEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 104,
+      "line": 103,
       "match": "(SDialogEntry*) alloc stride 0x226",
       "severity": "moderate",
       "text": "(SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226)",

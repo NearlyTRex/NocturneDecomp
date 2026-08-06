@@ -1,0 +1,422 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 72,
+        "message": "use of undeclared identifier 'stack0xffffffb0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 46,
+        "line": 74,
+        "message": "use of undeclared identifier 'stack0xffffffb0'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 157,
+    "complexity_score": 170,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 6,
+    "suspect_types": [
+      "alloc_magic_size",
+      "stack_param",
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 247
+  },
+  "cross_references": [
+    {
+      "addr": "004f5110",
+      "from_addr": "004f515f",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f4f90",
+    "address_range": [
+      [
+        "004f4f90",
+        "004f510b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90",
+    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f4f90(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f3e90",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90"
+    },
+    {
+      "addr": "004f3f00",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00"
+    },
+    {
+      "addr": "004f4c80",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00566234",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_new_FUN_00566234"
+    },
+    {
+      "addr": "005636d0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005636d0"
+    },
+    {
+      "addr": "00564c18",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_malloc_FUN_00564c18"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058d370",
+      "name": "s_cockpit_pkbitmap_cpp_0058d370",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d388",
+      "name": "s_IO_error_reading_PBG_pos_0058d388",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d3b6",
+      "name": "s_cockpit_pkbitmap_cpp_0058d3b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d3ce",
+      "name": "s_Corrupt_data_detected_re_0058d3ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d3f1",
+      "name": "s_cockpit_pkbitmap_cpp_0058d3f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058d409",
+      "name": "s_Out_of_memory_reading_PB_0058d409",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005a1340",
+      "name": "g_CPackedBitmapTypeInfo_005a1340",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005be180",
+      "name": "DAT_005be180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005be181",
+      "name": "DAT_005be180+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f515f",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.516393442622951,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CBRANCH": 13,
+      "COPY": 93,
+      "INT_ADD": 41,
+      "INT_AND": 68,
+      "INT_CARRY": 13,
+      "INT_DIV": 1,
+      "INT_EQUAL": 66,
+      "INT_LEFT": 1,
+      "INT_LESS": 12,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 1,
+      "INT_REM": 1,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 3,
+      "INT_SLESS": 32,
+      "INT_SUB": 49,
+      "INT_XOR": 3,
+      "INT_ZEXT": 7,
+      "LOAD": 19,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 38,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 551
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_set_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "frames_per_bitmap",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "skip_data_load",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "selected_bitmap_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CPackedBitmapSet_FUN_004f4f90.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "legacyUninitvar",
+          "column": 21,
+          "line": 69,
+          "message": "Uninitialized variable: in_stack_00000018",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005be180",
+      "severity": "mild",
+      "text": "pbVar6 = (byte *)&DAT_005be180;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "if (1 < in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "((CPackedBitmap *)&stack0xffffffb0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "((CPackedBitmap *)&stack0xffffffb0,file_handle,1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom array-new allocation hardcodes 0x24 == sizeof(CPackedBitmap) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CPackedBitmap) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 49,
+      "match": "(CPackedBitmap *) array-new alloc stride 0x24",
+      "severity": "moderate",
+      "text": "array_memory = shape_memdbg_cpp_malloc_FUN_00564c18(uVar3 * 0x24 + 4)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000018",
+      "line": 69,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if (1 < in_stack_00000018) {",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

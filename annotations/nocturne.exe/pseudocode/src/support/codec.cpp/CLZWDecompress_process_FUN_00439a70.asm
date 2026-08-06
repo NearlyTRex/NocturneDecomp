@@ -10,7 +10,7 @@
 ; _ostream *       Stack[0x10]:4   ostream
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004a4170 at 004a44e9
+;   core_game.cpp_CGame_FUN_004a4170 at 004a44e9
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_004394f0

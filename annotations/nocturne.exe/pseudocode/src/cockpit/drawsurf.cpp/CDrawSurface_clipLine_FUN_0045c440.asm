@@ -21,11 +21,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d97e
 ;   TerminatedCString s_s_2d_line_clipping_excee_0057d996
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -328,10 +328,10 @@ section .text
         ;   Label: LAB_0045c6f3
     MOV EAX,0x369                       ; 0045c6f8
     PUSH 0x57d996                       ; 0045c6fd | = "2d line clipping exceeded max iterations"
-    MOV dword ptr [0x01cc4800],EBP      ; 0045c702 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 0045c708 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0045c70d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0045c702 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 0045c708 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045c70d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045c712
     MOV EAX,dword ptr [ESP + 0x18]      ; 0045c715
     ADD ESP,0x48                        ; 0045c719

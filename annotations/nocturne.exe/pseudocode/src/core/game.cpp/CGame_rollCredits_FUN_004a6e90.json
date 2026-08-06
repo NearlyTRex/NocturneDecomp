@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -60,12 +60,6 @@
         "column": 13,
         "line": 141,
         "message": "use of undeclared identifier '_DAT_01d16810'; did you mean 'DAT_02DE6810'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 153,
-        "message": "use of undeclared identifier 'FUN_005638d0'"
       }
     ],
     "success": false,
@@ -129,12 +123,17 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563a30",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_free_FUN_005638d0"
     },
     {
       "addr": "005635b0",
@@ -155,11 +154,6 @@
       "addr": "005649c0",
       "is_variadic": false,
       "name": "crt_string.c__strcmp_FUN_005649c0"
-    },
-    {
-      "addr": "005638d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005638d0"
     },
     {
       "addr": "00403f50",
@@ -342,13 +336,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -560,9 +554,9 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(uint *)((int)local_1134",
+      "match": "(void **)((int)local_1134",
       "severity": "moderate",
-      "text": "FUN_005638d0(*(uint *)((int)local_1134 + iVar7));",
+      "text": "free(*(void **)((int)local_1134 + iVar7));",
       "type": "pointer_cast"
     },
     {

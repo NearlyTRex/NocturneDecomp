@@ -66,30 +66,30 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
         return 0.0;
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-                (DAT_005ae704,&param_5->position);
+                (g_CDemonRenderer_PTR_005ae704,&param_5->position);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                (DAT_005ae704,param_5->projection_scale);
+                (g_CDemonRenderer_PTR_005ae704,param_5->projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-                (DAT_005ae704,&param_5->orientation);
+                (g_CDemonRenderer_PTR_005ae704,&param_5->orientation);
       local_38 = 0x800000ff;
       local_44 = 0;
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-                (DAT_005ae704,&(param_1->location).position);
+                (g_CDemonRenderer_PTR_005ae704,&(param_1->location).position);
       local_94.x = (param_1->orient).vec.x;
       local_94.z = (param_1->orient).vec.z;
       local_94.y = (param_5->orientation).y;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-                (DAT_005ae704,&local_94,(CVector3f *)0x0);
+                (g_CDemonRenderer_PTR_005ae704,&local_94,(CVector3f *)0x0);
       iVar6 = 0;
       do {
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   ((SProjectedVertex *)
-                   ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + iVar6)
-                   ,param_2);
+                   ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                          transformed_x + iVar6),param_2);
         iVar10 = iVar6 + 0x30;
         param_2 = param_2 + 1;
-        uVar13 = *(uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x +
-                          iVar6);
+        uVar13 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex
+                                 ).screen_x + iVar6);
         local_38 = local_38 & uVar13;
         local_44 = local_44 | uVar13;
         iVar6 = iVar10;
@@ -111,8 +111,8 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
       local_1c = 0;
       do {
         point = (SProjectedVertex *)
-                ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x + local_1c)
-        ;
+                ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                       transformed_x + local_1c);
         iVar6 = point->transformed_z;
         if (0 < iVar6) {
           iVar10 = iVar6 + 0x80;
@@ -129,11 +129,11 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
       iVar6 = 0;
       local_d8 = 1.0;
       do {
-        if ((*(byte *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x +
-                      iVar6 + 3) & 0x80) != 0) {
+        if ((*(byte *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
+                             screen_x + iVar6 + 3) & 0x80) != 0) {
           dVar5 = _DAT_00590bcd;
-          if (0 < *(int *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_z +
-                          iVar6)) {
+          if (0 < *(int *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex
+                                 ).transformed_z + iVar6)) {
             dVar5 = _DAT_00590bc5;
           }
           local_d8 = local_d8 * (float)dVar5;
@@ -168,11 +168,11 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
               local_7c[0].z = (int)ROUND(local_88.z * _DAT_005a1a70);
               engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         ((SProjectedVertex *)
-                         ((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).transformed_x +
-                         iVar6),local_7c);
+                         ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex)
+                                .transformed_x + iVar6),local_7c);
               uVar13 = uVar13 + 1;
-              uVar1 = *(uint *)((int)&(DAT_005ae704->vertex_buffer_ptr->projected_vertex).screen_x +
-                               iVar6);
+              uVar1 = *(uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->
+                                      projected_vertex).screen_x + iVar6);
               local_54 = local_54 & uVar1;
               local_18 = local_18 | uVar1;
               iVar6 = iVar6 + 0x30;
@@ -200,47 +200,48 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
                   iVar6 = iVar6 + 4;
                   puVar11 = puVar11 + 0x100;
                 } while (iVar6 != 0xc0);
-                engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+                engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+                          (g_CDemonRenderer_PTR_005ae704,1);
               }
               local_d4.base.count = 4;
               engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-                        (DAT_005ae704,(uint)((local_18 & 0x80000000) != 0));
+                        (g_CDemonRenderer_PTR_005ae704,(uint)((local_18 & 0x80000000) != 0));
               local_b4 = 0xe;
               local_bc = 8;
               local_b8 = 0xc;
               local_b0 = 10;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
               local_b0 = 0xd;
               local_bc = 9;
               local_b8 = 0xb;
               local_b4 = 0xf;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
               local_bc = 8;
               local_b8 = 9;
               local_b4 = 0xd;
               local_b0 = 0xc;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
               local_bc = 10;
               local_b8 = 0xe;
               local_b4 = 0xf;
               local_b0 = 0xb;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
               local_bc = 8;
               local_b4 = 0xb;
               local_b8 = 10;
               local_b0 = 9;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
               local_b8 = 0xd;
               local_bc = 0xc;
               local_b4 = 0xf;
               local_b0 = 0xe;
               engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-                        (DAT_005ae704,&local_d4);
+                        (g_CDemonRenderer_PTR_005ae704,&local_d4);
             }
           }
           local_30 = local_30 + 4;
@@ -248,7 +249,8 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
           local_28 = local_28 + 1;
         } while (local_28 < _DAT_026639ec);
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+                (g_CDemonRenderer_PTR_005ae704,0);
       if (local_3c == 0) {
         puVar11 = &DAT_020875f8 + param_4 * 0x3000;
         iVar6 = 0;
@@ -258,16 +260,18 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
           puVar11 = puVar11 + 0x100;
         } while (iVar6 != 0xc0);
       }
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+                (g_CDemonRenderer_PTR_005ae704,1);
       engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-                (DAT_005ae704,(uint)((local_44 & 0x80000000) != 0));
+                (g_CDemonRenderer_PTR_005ae704,(uint)((local_44 & 0x80000000) != 0));
       iVar6 = 0;
       local_40 = 0;
       if (0 < local_24) {
         iVar10 = local_24 * 4;
         do {
           iVar8 = engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090
-                            (DAT_005ae704,*(SMRGLPrimitivePoly **)((int)aiStack_ac + iVar6));
+                            (g_CDemonRenderer_PTR_005ae704,
+                             *(SMRGLPrimitivePoly **)((int)aiStack_ac + iVar6));
           iVar6 = iVar6 + 4;
           local_40 = local_40 + iVar8;
         } while (iVar6 < iVar10);
@@ -297,14 +301,16 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
         if (0 < local_24) {
           do {
             engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
-                      (DAT_005ae704,param_3);
+                      (g_CDemonRenderer_PTR_005ae704,param_3);
             iVar6 = iVar6 + 1;
             param_3 = (SMRGLPrimitivePoly *)(param_3->vertices + 4);
           } while (iVar6 < local_24);
         }
       }
-      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
-      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,0);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
+                (g_CDemonRenderer_PTR_005ae704,1);
+      engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
+                (g_CDemonRenderer_PTR_005ae704,0);
       return (float)local_40 * local_d8;
     }
   }

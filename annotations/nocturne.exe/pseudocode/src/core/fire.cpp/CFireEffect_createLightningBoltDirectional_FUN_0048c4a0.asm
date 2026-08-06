@@ -12,7 +12,7 @@
 ; float            Stack[0x18]:4   end_spread
 ;
 ; XREF[2]:
-;   core_baron.cpp_FUN_00410cc0 at 00410fc3
+;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410fc3
 ;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478e83
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50
-;   core_set.cpp_FUN_0050e660
+;   core_set.cpp_CDemonSet_FUN_0050e660
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     MOV EAX,[0x005be368]                ; 0048c50f | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 0048c514
     PUSH EAX                            ; 0048c519 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e660      ; 0048c51a
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 0048c51a
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 0048c51f
     POP EBX                             ; 0048c522
     RET                                 ; 0048c523

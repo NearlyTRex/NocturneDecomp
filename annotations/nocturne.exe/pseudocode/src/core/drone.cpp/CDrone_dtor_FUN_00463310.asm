@@ -18,7 +18,7 @@
 ;   core_cloth.cpp_CClothList_dtor_FUN_00438250
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -35,25 +35,25 @@ section .text
     ADD EBX,0x33c4                      ; 00463322
     PUSH EBX                            ; 00463328
     CALL core_armour.cpp_CFlame_arrdtor_FUN_0040fe50 ; 00463329
-        ;   XREF to: 0040fe50 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor_FUN_0040fe50(CFlame * objs, uint flags)
+        ;   XREF to: 0040fe50 (UNCONDITIONAL_CALL)  ; CFlame * core_armour.cpp_CFlame_arrdtor_FUN_0040fe50(CFlame * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0046332e
     PUSH 0x0                            ; 00463331
     SUB EAX,0x4b0                       ; 00463333
     PUSH EAX                            ; 00463338
     CALL core_armour.cpp_SFire_arrdtor_FUN_0040fe30 ; 00463339
-        ;   XREF to: 0040fe30 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor_FUN_0040fe30(SFire * objs, uint flags)
+        ;   XREF to: 0040fe30 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor_FUN_0040fe30(SFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0046333e
     PUSH 0x0                            ; 00463341
     SUB EAX,0x20c                       ; 00463343
     PUSH EAX                            ; 00463348
     CALL core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 ; 00463349
-        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f * objs, uint flags)
+        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0046334e
     PUSH 0x0                            ; 00463351
     SUB EAX,0xb4                        ; 00463353
     PUSH EAX                            ; 00463358
     CALL core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 ; 00463359
-        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f * objs, uint flags)
+        ;   XREF to: 0040fe10 (UNCONDITIONAL_CALL)  ; CVector3f * core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0046335e
     PUSH 0x0                            ; 00463361
     SUB EAX,0x1c8                       ; 00463363
@@ -96,8 +96,8 @@ section .text
     RET                                 ; 004633bb
     PUSH EAX                            ; 004633bc
         ;   Label: LAB_004633bc
-    CALL crt_unknown.c_FUN_00564494     ; 004633bd
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 004633bd
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 004633c2
     MOV EAX,EBX                         ; 004633c5
     POP EBX                             ; 004633c7

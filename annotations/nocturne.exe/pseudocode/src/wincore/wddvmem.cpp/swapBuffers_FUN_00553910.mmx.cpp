@@ -24,13 +24,13 @@ __asm {
         mov EBX,dword ptr [DAT_005c5010]
         mov dword ptr [DAT_02ddf56c],EDX
         call wincore_wddvmem_cpp_openScreenDevice_FUN_00553470
-        mov ESI,dword ptr [DAT_005b7620]
+        mov ESI,dword ptr [g_WindowHeight]
         xor EDI,EDI
         test ESI,ESI
         jle LAB_005539a1
         xor ESI,ESI
     LAB_00553961:
-        mov ECX,dword ptr [DAT_005b761c]
+        mov ECX,dword ptr [g_WindowWidth]
         mov EAX,dword ptr [DAT_01bd2fa0 + ESI]
         xor EDX,EDX
         test ECX,ECX
@@ -44,12 +44,12 @@ __asm {
         mov CL,byte ptr [EBX + -0x2]
         inc EDX
         mov byte ptr [EAX + 0x2],CL
-        mov ECX,dword ptr [DAT_005b761c]
+        mov ECX,dword ptr [g_WindowWidth]
         add EAX,0x3
         cmp EDX,ECX
         jl LAB_00553973
     LAB_00553994:
-        mov EAX,[DAT_005b7620]
+        mov EAX,[g_WindowHeight]
         inc EDI
         add ESI,0x4
         cmp EDI,EAX
@@ -91,7 +91,7 @@ __asm {
         shl EDX,0x3
         sbb EAX,EDX
         sar EAX,0x3
-        mov EDX,dword ptr [DAT_005b761c]
+        mov EDX,dword ptr [g_WindowWidth]
         imul EDX,EAX
         push 0x6c
         push ECX
@@ -116,15 +116,15 @@ __asm {
         mov EDI,0x597ae0
         mov EAX,0x346
         push 0x597af7
-        mov dword ptr [g_CHAR_PTR_01cc4800],EDI
-        mov [g_INT_01cc4804],EAX
-        call core_main_c_FUN_004c8440
+        mov dword ptr [g_CurrentFilename],EDI
+        mov [g_CurrentLineNumber],EAX
+        call core_main_c_displayErrorAndQuit_FUN_004c8440
         add ESP,0x4
     LAB_00553a63:
         mov EAX,dword ptr [EBP + -0x58]
         mov dword ptr [EBP + -0x8],EAX
         xor EDX,EDX
-        mov ECX,dword ptr [DAT_005b7620]
+        mov ECX,dword ptr [g_WindowHeight]
         mov dword ptr [EBP + -0x4],EDX
         test ECX,ECX
         jle LAB_00553ae0
@@ -152,7 +152,7 @@ __asm {
         add dword ptr [EBP + -0x8],EAX
         mov ECX,dword ptr [EBP + -0x4]
         inc ECX
-        mov EBX,dword ptr [DAT_005b7620]
+        mov EBX,dword ptr [g_WindowHeight]
         mov dword ptr [EBP + -0x4],ECX
         cmp ECX,EBX
         jl LAB_00553a78
@@ -170,9 +170,9 @@ __asm {
         mov ESI,0x597b13
         mov EDI,0x368
         push 0x597b2a
-        mov dword ptr [g_CHAR_PTR_01cc4800],ESI
-        mov dword ptr [g_INT_01cc4804],EDI
-        call core_main_c_FUN_004c8440
+        mov dword ptr [g_CurrentFilename],ESI
+        mov dword ptr [g_CurrentLineNumber],EDI
+        call core_main_c_displayErrorAndQuit_FUN_004c8440
         add ESP,0x4
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI

@@ -12,8 +12,8 @@
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d08a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 004a3962
     PUSH EBP                            ; 004a3963
     SUB ESP,0x4                         ; 004a3964
-    MOV EDI,dword ptr [0x005b761c]      ; 004a3967 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a3967 | g_WindowWidth
     MOV EDX,dword ptr [0x01c78b04]      ; 004a396d | DAT_01c78b04
     TEST EDX,EDX                        ; 004a3973
     JZ 0x004a3a13                       ; 004a3975
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
     FLD float ptr [0x01c78b08]          ; 004a39ab | DAT_01c78b08
     FMUL ST0                            ; 004a39b1
-    MOV EAX,[0x005b7620]                ; 004a39b3 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004a39b3 | g_WindowHeight
     XOR ESI,ESI                         ; 004a39b8
     CALL crt_math.c_round_FUN_00563a30  ; 004a39ba
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
@@ -67,7 +67,7 @@ section .text
     JLE 0x004a3a13                      ; 004a39c4
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
     XOR EBP,EBP                         ; 004a39c6
-    MOV EDI,dword ptr [0x005b761c]      ; 004a39c8 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a39c8 | g_WindowWidth
         ;   Label: LAB_004a39c8
     MOV EDX,dword ptr [EBP + 0x1bd2fa0] ; 004a39ce | DAT_01bd2fa0 | DAT_01bd2fa4
     XOR EAX,EAX                         ; 004a39d4
@@ -91,15 +91,15 @@ section .text
     CMP EAX,EDI                         ; 004a39fb
     JL 0x004a39da                       ; 004a39fd
         ;   XREF to: 004a39da (CONDITIONAL_JUMP)  ; LAB_004a39da
-    MOV EDX,dword ptr [0x005b7620]      ; 004a39ff | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 004a39ff | g_WindowHeight
         ;   Label: LAB_004a39ff
     ADD EBP,0x4                         ; 004a3a05
     INC ESI                             ; 004a3a08
-    MOV dword ptr [0x005b761c],EDI      ; 004a3a09 | DAT_005b761c
+    MOV dword ptr [0x005b761c],EDI      ; 004a3a09 | g_WindowWidth
     CMP ESI,EDX                         ; 004a3a0f
     JL 0x004a39c8                       ; 004a3a11
         ;   XREF to: 004a39c8 (CONDITIONAL_JUMP)  ; LAB_004a39c8
-    MOV EDI,dword ptr [0x005b761c]      ; 004a3a13 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a3a13 | g_WindowWidth
         ;   Label: LAB_004a3a13
     ADD ESP,0x4                         ; 004a3a19
     POP EBP                             ; 004a3a1c
@@ -107,11 +107,11 @@ section .text
     POP ESI                             ; 004a3a1e
     POP EBX                             ; 004a3a1f
     RET                                 ; 004a3a20
-    MOV EAX,[0x005b7620]                ; 004a3a21 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004a3a21 | g_WindowHeight
         ;   Label: LAB_004a3a21
     PUSH 0x0                            ; 004a3a26
     DEC EAX                             ; 004a3a28
-    MOV EDI,dword ptr [0x005b761c]      ; 004a3a29 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a3a29 | g_WindowWidth
     PUSH EAX                            ; 004a3a2f
     LEA EAX,[EDI + -0x1]                ; 004a3a30
     PUSH EAX                            ; 004a3a33
@@ -119,7 +119,7 @@ section .text
     PUSH 0x0                            ; 004a3a36
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004a3a38
         ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
-    MOV EDI,dword ptr [0x005b761c]      ; 004a3a3d | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 004a3a3d | g_WindowWidth
     ADD ESP,0x14                        ; 004a3a43
     JMP 0x004a3a13                      ; 004a3a46
         ;   XREF to: 004a3a13 (UNCONDITIONAL_JUMP)  ; LAB_004a3a13

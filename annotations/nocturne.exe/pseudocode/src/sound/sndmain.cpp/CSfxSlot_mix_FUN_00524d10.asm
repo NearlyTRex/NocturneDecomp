@@ -48,13 +48,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592f4e
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_00592f63
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8340
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_floor_FUN_005648c0
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -209,10 +209,10 @@ section .text
         ;   Label: LAB_00524e7e
     MOV EBX,0xa1a                       ; 00524e83
     PUSH 0x592f63                       ; 00524e88 | = "SfxSlot::mix - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00524e8d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524e93 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00524e99
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00524e8d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 00524e93 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00524e99
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00524e9e
     JMP 0x00524d2f                      ; 00524ea1
         ;   XREF to: 00524d2f (UNCONDITIONAL_JUMP)  ; LAB_00524d2f

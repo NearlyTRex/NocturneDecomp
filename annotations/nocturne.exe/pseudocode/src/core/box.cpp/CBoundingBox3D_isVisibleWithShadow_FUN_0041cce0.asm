@@ -18,7 +18,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 at 0041d038
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_014b9920
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c00c48
@@ -42,7 +42,7 @@ section .text
     PUSH EDI                            ; 0041ccf1
     PUSH ESI                            ; 0041ccf2
     PUSH EBX                            ; 0041ccf3
-    MOV EDX,dword ptr [0x005ae704]      ; 0041ccf4 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0041ccf4 | g_CDemonRenderer_PTR_005ae704
     MOV EAX,[0x01c00c50]                ; 0041ccfa | DAT_01c00c50
     MOV ECX,dword ptr [0x01c00c48]      ; 0041ccff | DAT_01c00c48
     MOV EDI,dword ptr [0x01c00c50]      ; 0041cd05 | DAT_01c00c50

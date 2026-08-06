@@ -65,12 +65,12 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(CTrigger *this_
       }
       else {
         if (this_ptr->shape != 1) {
-          g_CHAR_PTR_01cc4800 = "..\\core\\trigger.cpp";
-          g_INT_01cc4804 = 0x37d;
-          core_main_c_FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s",this_ptr->shape,this_ptr);
-          g_INT_01cc4804 = 899;
-          g_CHAR_PTR_01cc4800 = "..\\core\\trigger.cpp";
-          core_main_c_FUN_004c8440("Hell froze...");
+          g_CurrentFilename = "..\\core\\trigger.cpp";
+          g_CurrentLineNumber = 893;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s");
+          g_CurrentLineNumber = 899;
+          g_CurrentFilename = "..\\core\\trigger.cpp";
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze...");
           return 0;
         }
         (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_94);

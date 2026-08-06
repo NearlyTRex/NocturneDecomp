@@ -14,7 +14,7 @@
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     RET                                 ; 00517127
     PUSH EAX                            ; 00517128
         ;   Label: LAB_00517128
-    CALL crt_unknown.c_FUN_00564494     ; 00517129
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00517129
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0051712e
     MOV EAX,EBX                         ; 00517131
     POP EBX                             ; 00517133

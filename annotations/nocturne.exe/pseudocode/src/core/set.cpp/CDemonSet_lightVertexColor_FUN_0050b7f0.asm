@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_FUN_0050e370 at 0050e3be
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 at 0050bb6d
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 at 0050c3be
-;   core_set.cpp_FUN_0050e370 at 0050e3be
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005905ea
@@ -30,15 +30,15 @@
 ;   undefined4 DAT_01c038f4
 ;   undefined4 DAT_01c039c4
 ;   undefined4 DAT_01c039cc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
 ;   undefined4 DAT_01ffb05c
 ;   undefined4 DAT_01fff224
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
 ;
 ; *****************************************************************************
@@ -63,10 +63,10 @@ section .text
     MOV ESI,0x5905ea                    ; 0050b811 | = "..\\core\\set.cpp"
     MOV EBP,0xaf6                       ; 0050b816
     PUSH 0x5905fa                       ; 0050b81b | = "CDemonSet::lightVertexColor - Quick l..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0050b820 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0050b826 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0050b82c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0050b820 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBP      ; 0050b826 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0050b82c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0050b831
     MOV EAX,dword ptr [EBX + 0x15aa8c]  ; 0050b834
         ;   Label: LAB_0050b834

@@ -10,14 +10,13 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00548b40(uchar *de
 
 {
   int iVar1;
-  uint in_stack_00000024;
   
   iVar1 = support_trisock_cpp_buildIPAddress_FUN_00548c60(dest_ip,octet1,octet2,octet3,octet4);
   if (iVar1 != 0) {
     return dest_ip;
   }
-  g_CHAR_PTR_01cc4800 = "..\\support\\trisock.cpp";
-  g_INT_01cc4804 = 0x41;
-  core_main_c_FUN_004c8440("Invalid IP values: %d, %d, %d, %d",octet1,octet2,in_stack_00000024);
+  g_CurrentFilename = "..\\support\\trisock.cpp";
+  g_CurrentLineNumber = 65;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid IP values: %d, %d, %d, %d");
   return dest_ip;
 }

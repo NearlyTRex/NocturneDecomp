@@ -9,18 +9,18 @@
 CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_004f3e40(CPendulum *this_ptr,uint flags)
 
 {
-  CPendulum *pCVar1;
-  void *ptr;
+  CPendulum *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CPendulumTypeInfo_005a1320);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CPendulumTypeInfo_005a1320);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pCVar1 = (CPendulum *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
+  ptr = (CPendulum *)core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
-    return pCVar1;
+    return ptr;
   }
-  FUN_00564494(pCVar1);
-  return pCVar1;
+  operator_delete(ptr);
+  return ptr;
 }

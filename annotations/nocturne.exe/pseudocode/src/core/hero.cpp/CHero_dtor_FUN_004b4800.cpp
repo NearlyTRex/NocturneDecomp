@@ -27,7 +27,7 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004b4800(CHero *this_ptr,uint flags
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);
-  pCVar2 = core_inv_cpp_FUN_004bee60(&this_ptr->inventory,0);
+  pCVar2 = core_inv_cpp_CInventory_dtor_FUN_004bee60(&this_ptr->inventory,0);
   pCVar3 = core_path_cpp_CPathMap_dtor_FUN_004efdd0
                      ((CPathMap *)(pCVar2[-0x48].item_angles + 0x21),0);
   pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50

@@ -15,7 +15,7 @@
 ;   core_glass.cpp_CVector3f_arrdtor_FUN_004adf70
 ;   core_mirror.cpp_CMirror_dtor_FUN_004d6570
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -32,7 +32,7 @@ section .text
     ADD EBX,0x384                       ; 004adefe
     PUSH EBX                            ; 004adf04
     CALL core_glass.cpp_CVector3f_arrdtor_FUN_004adf70 ; 004adf05
-        ;   XREF to: 004adf70 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_CVector3f_arrdtor_FUN_004adf70(CVector3f * objs, uint flags)
+        ;   XREF to: 004adf70 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_CVector3f_arrdtor_FUN_004adf70(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004adf0a
     PUSH 0x0                            ; 004adf0d
     SUB EAX,0x1a0                       ; 004adf0f
@@ -69,8 +69,8 @@ section .text
     RET                                 ; 004adf57
     PUSH EAX                            ; 004adf58
         ;   Label: LAB_004adf58
-    CALL crt_unknown.c_FUN_00564494     ; 004adf59
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 004adf59
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 004adf5e
     MOV EAX,EBX                         ; 004adf61
     POP EBX                             ; 004adf63

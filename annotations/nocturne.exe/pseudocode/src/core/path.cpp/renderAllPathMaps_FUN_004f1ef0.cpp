@@ -19,9 +19,9 @@ void __cdecl core_path_cpp_renderAllPathMaps_FUN_004f1ef0(int depth,int red,int 
     iVar1 = 0;
     do {
       if (*(int *)(iVar1 + 0x1e312fc) == 0) {
-        g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-        g_INT_01cc4804 = 0x6a8;
-        core_main_c_FUN_004c8440("Global pathmap list corruption");
+        g_CurrentFilename = "..\\core\\path.cpp";
+        g_CurrentLineNumber = 1704;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Global pathmap list corruption");
       }
       if ((int)((*(CPathMap **)(iVar1 + 0x1e312fc))->cached_world_position).x < 0x461c3c01) {
         core_path_cpp_CPathMap_renderPathMap_FUN_004f18c0

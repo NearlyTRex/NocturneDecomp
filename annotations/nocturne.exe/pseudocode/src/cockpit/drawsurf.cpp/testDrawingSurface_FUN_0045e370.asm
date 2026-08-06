@@ -55,11 +55,11 @@ section .text
     PUSH EBP                            ; 0045e371
     SUB ESP,0xbc                        ; 0045e372
     MOV ESI,dword ptr [ESP + 0xc8]      ; 0045e378
-    MOV EDX,dword ptr [0x005b761c]      ; 0045e37f | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 0045e37f | g_WindowWidth
     CMP EDX,0x280                       ; 0045e385
     JL 0x0045e39b                       ; 0045e38b
         ;   XREF to: 0045e39b (CONDITIONAL_JUMP)  ; LAB_0045e39b
-    MOV ECX,dword ptr [0x005b7620]      ; 0045e38d | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 0045e38d | g_WindowHeight
     CMP ECX,0x1e0                       ; 0045e393
     JGE 0x0045e3a4                      ; 0045e399
         ;   XREF to: 0045e3a4 (CONDITIONAL_JUMP)  ; LAB_0045e3a4
@@ -402,18 +402,18 @@ section .text
     MOV EAX,[0x005ae6fc]                ; 0045e71a | DAT_005ae6fc
     ADD ESP,0x14                        ; 0045e71f
     MOV dword ptr [ESP + 0xa8],EAX      ; 0045e722
-    MOV EAX,[0x005b761c]                ; 0045e729 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0045e729 | g_WindowWidth
     MOV EDX,EAX                         ; 0045e72e
     SAR EDX,0x1f                        ; 0045e730
     SUB EAX,EDX                         ; 0045e733
     SAR EAX,0x1                         ; 0045e735
     MOV EBP,EAX                         ; 0045e737
-    MOV EAX,[0x005b7620]                ; 0045e739 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0045e739 | g_WindowHeight
     MOV EDX,EAX                         ; 0045e73e
     SAR EDX,0x1f                        ; 0045e740
     SUB EAX,EDX                         ; 0045e743
     SAR EAX,0x1                         ; 0045e745
-    MOV EDX,dword ptr [0x005b7620]      ; 0045e747 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0045e747 | g_WindowHeight
     ADD EAX,0x66                        ; 0045e74d
     DEC EDX                             ; 0045e750
     SUB EDX,EAX                         ; 0045e751
@@ -634,18 +634,18 @@ section .text
     PUSH EAX                            ; 0045ea1b
     CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0 ; 0045ea1c
         ;   XREF to: 0045bab0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurface * this_ptr, int x, int y)
-    MOV EAX,[0x005b761c]                ; 0045ea21 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0045ea21 | g_WindowWidth
     MOV EDX,EAX                         ; 0045ea26
     SAR EDX,0x1f                        ; 0045ea28
     SUB EAX,EDX                         ; 0045ea2b
     SAR EAX,0x1                         ; 0045ea2d
     LEA ECX,[EAX + 0xffffff36]          ; 0045ea2f
-    MOV EAX,[0x005b7620]                ; 0045ea35 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0045ea35 | g_WindowHeight
     MOV EDX,EAX                         ; 0045ea3a
     SAR EDX,0x1f                        ; 0045ea3c
     SUB EAX,EDX                         ; 0045ea3f
     SAR EAX,0x1                         ; 0045ea41
-    MOV EDX,dword ptr [0x005b7620]      ; 0045ea43 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0045ea43 | g_WindowHeight
     ADD EAX,0x66                        ; 0045ea49
     DEC EDX                             ; 0045ea4c
     ADD ESP,0xc                         ; 0045ea4d

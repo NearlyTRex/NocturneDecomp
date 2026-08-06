@@ -16,7 +16,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
   if (_DAT_01cc64a4 != 0) {
     engine_special_cpp_selectCard_FUN_00532d00(_DAT_01cc64a4);
   }
-  if (((DAT_005b7620 != this_ptr->game_pixy) || (DAT_005b7624 != this_ptr->game_bpp)) &&
+  if (((g_WindowHeight != this_ptr->game_pixy) || (DAT_005b7624 != this_ptr->game_bpp)) &&
      (iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                         (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp), iVar1 == 0)) {
     this_ptr->game_pixy = 0x1e0;
@@ -24,16 +24,14 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
     iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                       (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp);
     if (iVar1 == 0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\game.cpp";
-      g_INT_01cc4804 = 0x497;
-      core_main_c_FUN_004c8440
-                ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",this_ptr->game_pixx,this_ptr->game_pixy,
-                 this_ptr->game_bpp);
+      g_CurrentFilename = "..\\core\\game.cpp";
+      g_CurrentLineNumber = 1175;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::setGameRes - Unable to set the video mode to %dx%dx%d");
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00403760();
-  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCamera_01fb8508,DAT_005b7620);
-  if (DAT_005b7620 < 0x180) {
+  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCamera_01fb8508,g_WindowHeight);
+  if (g_WindowHeight < 0x180) {
     _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
     return;
   }

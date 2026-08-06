@@ -20,7 +20,7 @@
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b56d
 ;   core_game.cpp_drawCreditsLine_FUN_0049b3a0 at 0049b3c1
 ;   core_game.cpp_drawKeyBindingEntry_FUN_0049b420 at 0049b473
-;   core_inv.cpp_FUN_004c2470 at 004c2650
+;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2650
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f60
 ;   core_main.c_FUN_004c90e0 at 004c91b5
 ;   core_main.c_drawCenteredText_FUN_004c8dc0 at 004c8e01
@@ -31,11 +31,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005818c4
 ;   TerminatedCString s_CBitFont_drawText_OSFont_005818d7
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004916c0
 ;   engine_palette.cpp_CFont_drawText_FUN_004eefd0
 ;
@@ -139,10 +139,10 @@ section .text
         ;   Label: LAB_00490a5a
     MOV EAX,0x267                       ; 00490a5f
     PUSH 0x5818d7                       ; 00490a64 | = "CBitFont::drawText - OSFont not set b..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00490a69 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 00490a6f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00490a74
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00490a69 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 00490a6f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00490a74
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00490a79
     JMP 0x004909ad                      ; 00490a7c
         ;   XREF to: 004909ad (UNCONDITIONAL_JUMP)  ; LAB_004909ad

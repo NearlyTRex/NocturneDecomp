@@ -47,13 +47,13 @@ CVector3f * __cdecl CMirrorReflection::applyMirrorTransform(CMirrorReflection *t
 // Address: 004d74a0
 uint __cdecl CMirror::reflectAndClipPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 
-// Original: core_mirror.cpp_FUN_004d76e0
+// Original: core_mirror.cpp_CMirror_FUN_004d76e0
 // Address: 004d76e0
-void FUN_004d76e0(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
+void __cdecl CMirror(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: core_mirror.cpp_FUN_004d7720
+// Original: core_mirror.cpp_CMirror_FUN_004d7720
 // Address: 004d7720
-int __cdecl FUN_004d7720(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl CMirror(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760
 // Address: 004d7760
@@ -85,8 +85,8 @@ SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr,uint flags);
 
 // Original: core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90
 // Address: 004d7d90
-SClipPlane * __cdecl SClipPlane::arrdtor(SClipPlane *objs,uint flags);
+SClipPlane * __cdecl SClipPlane::arrdtor(SClipPlane *this_ptr,uint flags);
 
-// Original: core_mirror.cpp_FUN_004d7db0
+// Original: core_mirror.cpp_CVector3f_arrdtor_FUN_004d7db0
 // Address: 004d7db0
-void FUN_004d7db0(void);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

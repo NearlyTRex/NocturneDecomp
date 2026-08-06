@@ -30,7 +30,7 @@ _istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_00564fd8(void *this_
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,(WatcomTypeInfo *)&DAT_0059b4b0);

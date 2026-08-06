@@ -38,9 +38,9 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(CInputString *thi
   iVar3 = _DAT_01bcdde0;
   if (this_ptr->mask_mode != 0) {
     if (0x3ff < (uint)this_ptr->current_length) {
-      g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-      g_INT_01cc4804 = 0x1a5;
-      core_main_c_FUN_004c8440("CInputString::draw - string too big for hidden text!");
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 421;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CInputString::draw - string too big for hidden text!");
     }
     memset((void *)0x1bcd9c8,0x2a,this_ptr->current_length);
     iVar3 = _DAT_01bcdde0;

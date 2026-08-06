@@ -56,9 +56,9 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
         pCVar5 = (CStrList *)&pCVar5->capacity;
         if (*pcVar3 == '\0') break;
         if (9 < iVar10) {
-          g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-          g_INT_01cc4804 = 0xd01;
-          core_main_c_FUN_004c8440("Too many picklist columns!");
+          g_CurrentFilename = "..\\shape\\edittool.cpp";
+          g_CurrentLineNumber = 3329;
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Too many picklist columns!");
         }
       }
       if (param_1[10].capacity < iVar10) {
@@ -70,7 +70,7 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
   pCVar5 = param_1;
   for (iVar10 = 0; iVar10 < param_1[10].capacity + -1; iVar10 = iVar10 + 1) {
     pCVar5[7].vtable._us =
-         (CStrList_vtable *)((int)&(pCVar5[7].vtable._us)->dtor + DAT_005b761c / 0x28);
+         (CStrList_vtable *)((int)&(pCVar5[7].vtable._us)->dtor + g_WindowWidth / 0x28);
     pCVar5 = (CStrList *)&pCVar5->capacity;
   }
   iVar9 = 0;
@@ -87,7 +87,7 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
     } while (iVar9 < iVar10);
   }
   param_1[0x12].data_array = (char **)((int)param_1[0x12].data_array + param_1[0x11].capacity * 2);
-  iVar10 = (DAT_005b7620 + _DAT_01bcd9bc * -4) / param_1[0x11].item_count;
+  iVar10 = (g_WindowHeight + _DAT_01bcd9bc * -4) / param_1[0x11].item_count;
   param_1[0x12].capacity = iVar10;
   if (iVar10 < 1) {
     param_1[0x12].capacity = 1;
@@ -95,9 +95,9 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
   if (param_1->item_count < param_1[0x12].capacity) {
     param_1[0x12].capacity = param_1->item_count;
   }
-  iVar10 = DAT_005b761c * 7 >> 0x1f;
+  iVar10 = g_WindowWidth * 7 >> 0x1f;
   pCVar4 = (CStrList_vtable *)
-           (((int)((DAT_005b761c * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /
+           (((int)((g_WindowWidth * 7 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3) /
            (int)param_1[0x12].data_array);
   param_1[0x12].vtable._us = pCVar4;
   if ((int)pCVar4 < 1) {

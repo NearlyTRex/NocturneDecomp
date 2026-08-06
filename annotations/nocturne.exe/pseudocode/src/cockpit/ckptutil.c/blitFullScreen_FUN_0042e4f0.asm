@@ -8,8 +8,8 @@
 ; void *           Stack[0x8]:4   span_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_blitDualModeSprite_FUN_0042e060
@@ -21,9 +21,9 @@ section .text
     PUSH EBX                            ; 0042e4f0
         ;   Label: cockpit_ckptutil.c_blitFullScreen_FUN_0042e4f0
     PUSH ESI                            ; 0042e4f1
-    MOV EDX,dword ptr [0x005b7620]      ; 0042e4f2 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0042e4f2 | g_WindowHeight
     PUSH EDX                            ; 0042e4f8
-    MOV ECX,dword ptr [0x005b761c]      ; 0042e4f9 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 0042e4f9 | g_WindowWidth
     PUSH ECX                            ; 0042e4ff
     PUSH 0x0                            ; 0042e500
     PUSH 0x0                            ; 0042e502

@@ -24,9 +24,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(CKeyFramed
   
   if (this_ptr->frame_count == 1) {
     if (this_ptr->vertex_normal_list == (CVector3i *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\dmodel.cpp";
-      g_INT_01cc4804 = 0x2f1;
-      core_main_c_FUN_004c8440("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
+      g_CurrentFilename = "..\\core\\dmodel.cpp";
+      g_CurrentLineNumber = 753;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
     memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
     local_14 = 0;

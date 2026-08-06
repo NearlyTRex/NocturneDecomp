@@ -49,16 +49,16 @@ LAB_00522a32:
      (iVar6 = _stricmp(local_114,".mp3"), iVar6 == 0)) {
     iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",param_2);
     if (iVar6 < 1) goto LAB_00522ceb;
-    this_ptr = (CMP3Decoder *)FUN_0056497c(0x8630);
+    this_ptr = operator_new(0x8630);
     pCVar3 = (CMP3Decoder *)0x0;
     if (this_ptr != (CMP3Decoder *)0x0) {
       pCVar3 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(this_ptr);
     }
     sfx_sample->mp3_data = pCVar3;
     if (pCVar3 == (CMP3Decoder *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\sound\\sndmain.cpp";
-      g_INT_01cc4804 = 0x3c8;
-      core_main_c_FUN_004c8440("Out of memory.");
+      g_CurrentFilename = "..\\sound\\sndmain.cpp";
+      g_CurrentLineNumber = 968;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory.");
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(sfx_sample->mp3_data,param_2);
     pCVar8 = sfx_sample;

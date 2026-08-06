@@ -8,16 +8,16 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 - Rewrites applied: **5**
 - Functions touched: **5**
-- Pools indexed: **124**
-- Adjacency pairs in lookup: **124**
+- Pools indexed: **134**
+- Adjacency pairs in lookup: **134**
 
 ## Rewrites by function
 
 ### `core_dmodel.cpp_FUN_00454460`
 
 - Pool `g_CKeyFramedModel_ARRAY_01abb65c` sentinel `g_CZombieDogActorType_01af4e5c` (count 256)
-  - Before: `while (pCVar1 != (CKeyFramedModel *)&g_CZombieDogActorType_01af4e5c)`
-  - After:  `while (pCVar1 != g_CKeyFramedModel_ARRAY_01abb65c + sizeof(g_CKeyFramedModel_ARRAY_01abb65c) / sizeof(g_CKeyFramedModel_ARRAY_01abb65c[0]))`
+  - Before: `while (this_ptr != (CKeyFramedModel *)&g_CZombieDogActorType_01af4e5c)`
+  - After:  `while (this_ptr != g_CKeyFramedModel_ARRAY_01abb65c + sizeof(g_CKeyFramedModel_ARRAY_01abb65c) / sizeof(g_CKeyFramedModel_ARRAY_01abb65c[0]))`
 
 ### `core_fire.cpp_CFireEffect_init_FUN_0048a150`
 

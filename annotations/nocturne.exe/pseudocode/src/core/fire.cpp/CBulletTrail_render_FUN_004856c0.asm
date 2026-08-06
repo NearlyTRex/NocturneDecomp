@@ -38,7 +38,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0058115c = 5.16407569540752E-315
 ;   double DOUBLE_00581164 = 0.0100000000000000
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -202,7 +202,7 @@ section .text
     FSTP float ptr [ESP + 0x48]         ; 00485855
     FLD float ptr [EBX + 0x4]           ; 00485859
     FADD float ptr [ESP + 0x58]         ; 0048585c
-    MOV EAX,[0x005ae704]                ; 00485860 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 00485860 | g_CDemonRenderer_PTR_005ae704
     FSTP float ptr [ESP + 0x4c]         ; 00485865
     FLD float ptr [EBX + 0x8]           ; 00485869
     FADD float ptr [ESP + 0x5c]         ; 0048586c
@@ -219,7 +219,7 @@ section .text
     MOV dword ptr [ESP + 0x40],EDX      ; 0048588c
     PUSH EAX                            ; 00485890
     MOV dword ptr [ESP + 0x48],EDX      ; 00485891
-    MOV EDX,dword ptr [0x005ae704]      ; 00485895 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00485895 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 0048589b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 0048589c
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -237,7 +237,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040 ; 004858bd
         ;   XREF to: 00453040 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     ADD ESP,0x10                        ; 004858c2
-    MOV EDX,dword ptr [0x005ae704]      ; 004858c5 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004858c5 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004858cb | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004858cc
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()

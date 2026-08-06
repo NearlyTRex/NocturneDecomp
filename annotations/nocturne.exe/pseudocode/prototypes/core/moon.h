@@ -47,9 +47,9 @@ SBat * __cdecl SBat::ctor(SBat *this_ptr);
 // Address: 004df1a0
 SBat * __cdecl SBat::dtor(SBat *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_004df1b0
+// Original: core_moon.cpp_SBat_arrdtor_FUN_004df1b0
 // Address: 004df1b0
-void FUN_004df1b0(void);
+SBat * __cdecl SBat::arrdtor(SBat *this_ptr,uint flags);
 
 // Original: core_moon.cpp_CCourse_arrdtor_FUN_004df1d0
 // Address: 004df1d0

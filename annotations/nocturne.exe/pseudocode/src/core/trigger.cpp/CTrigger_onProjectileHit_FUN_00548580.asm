@@ -7,12 +7,12 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_crossbow.cpp_FUN_0043d1c0 at 0043d53d
-;   core_elephant.cpp_FUN_00477890 at 00477d34
+;   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0 at 0043d53d
+;   core_elephant.cpp_CElephantGun_fire_FUN_00477890 at 00477d34
 ;   core_gun.cpp_CGun_fire_FUN_004b27c0 at 004b2efd
-;   core_lightgun.cpp_FUN_004c71a0 at 004c7713
-;   core_shotgun.cpp_FUN_00515ea0 at 0051639c
-;   core_tommygun.cpp_FUN_00545c30 at 005463b7
+;   core_lightgun.cpp_CLightGun_fire_FUN_004c71a0 at 004c7713
+;   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0 at 0051639c
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00545c30 at 005463b7
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054af49
 ;
 ; *****************************************************************************

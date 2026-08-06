@@ -21,7 +21,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00420a10
-;   core_charactr.cpp_FUN_00427730
+;   core_charactr.cpp_CCharacter_FUN_00427730
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -79,8 +79,8 @@ section .text
     LEA EAX,[EBP + -0x20]               ; 00420ca4
     PUSH EAX                            ; 00420ca7
     PUSH ESI                            ; 00420ca8
-    CALL core_charactr.cpp_FUN_00427730 ; 00420ca9
-        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
+    CALL core_charactr.cpp_CCharacter_FUN_00427730 ; 00420ca9
+        ;   XREF to: 00427730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00427730(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 00420cae
     PUSH EDI                            ; 00420cb1
         ;   Label: LAB_00420cb1

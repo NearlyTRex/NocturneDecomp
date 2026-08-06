@@ -11,7 +11,7 @@
 ;   engine_pcx.c_FUN_004f2990 at 004f2ab8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_01bd2fa0
 ;
 ; Called Functions:
@@ -28,7 +28,7 @@ section .text
     PUSH EBP                            ; 004f2553
     MOV EBX,dword ptr [ESP + 0x18]      ; 004f2554
     MOV ESI,dword ptr [ESP + 0x14]      ; 004f2558
-    MOV EDX,dword ptr [0x005b761c]      ; 004f255c | DAT_005b761c
+    MOV EDX,dword ptr [0x005b761c]      ; 004f255c | g_WindowWidth
     XOR EDI,EDI                         ; 004f2562
     MOV ESI,dword ptr [ESI*0x4 + 0x1bd2fa0] ; 004f2564 | DAT_01bd2fa0
     TEST EDX,EDX                        ; 004f256b
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 00566cc0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_00566cc0(int character, _FILE * file)
         ;   Label: LAB_004f259a
     ADD ESP,0x8                         ; 004f259f
-    MOV ECX,dword ptr [0x005b761c]      ; 004f25a2 | DAT_005b761c
+    MOV ECX,dword ptr [0x005b761c]      ; 004f25a2 | g_WindowWidth
         ;   Label: LAB_004f25a2
     INC EDI                             ; 004f25a8
     INC ESI                             ; 004f25a9

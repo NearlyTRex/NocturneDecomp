@@ -15,9 +15,9 @@ int __cdecl rayTestQuadFloor(CVector3f *position,float search_radius,CVector3f *
 // Address: 0050ec80
 float __cdecl CDemonSet::processCollisionTypes(CDemonSet *this_ptr,CVector3f *position,float radius);
 
-// Original: core_setcolid.cpp_FUN_0050f910
+// Original: core_setcolid.cpp_CDemonSet_FUN_0050f910
 // Address: 0050f910
-float FUN_0050f910(CDemonSet *param_1,CVector3f *param_2);
+float __cdecl CDemonSet(CDemonSet *this_ptr,CVector3f *param_2);
 
 // Original: core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
 // Address: 0050fa30
@@ -35,9 +35,9 @@ int __cdecl CDemonSet::testVoxelRaycast(CDemonSet *this_ptr,CVector3f *start_pos
 // Address: 0050fb00
 float __cdecl CDemonSet::raycast(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target);
 
-// Original: core_setcolid.cpp_FUN_0050fc90
+// Original: core_setcolid.cpp_CDemonSet_FUN_0050fc90
 // Address: 0050fc90
-float FUN_0050fc90(CDemonSet *param_1);
+float __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0
 // Address: 0050fdd0
@@ -75,9 +75,9 @@ void __cdecl CDemonSet::pushRaytraceState(CDemonSet *this_ptr);
 // Address: 00511590
 void __cdecl CDemonSet::popRaytraceState(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_00511740
+// Original: core_setcolid.cpp_CDemonSet_FUN_00511740
 // Address: 00511740
-void __cdecl FUN_00511740(CDemonSet *this_ptr);
+void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_init_FUN_00511750
 // Address: 00511750
@@ -91,9 +91,9 @@ void __cdecl CDemonSet::ignore(CDemonSet *this_ptr,CDemonActor *actor);
 // Address: 005117e0
 void __cdecl CDemonSet::disableIgnore(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_005117f0
+// Original: core_setcolid.cpp_CDemonSet_FUN_005117f0
 // Address: 005117f0
-void __cdecl FUN_005117f0(CDemonSet *this_ptr);
+void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800
 // Address: 00511800
@@ -115,13 +115,13 @@ SCollisionInfo * __cdecl SCollisionInfo::ctor(SCollisionInfo *this_ptr);
 // Address: 005119b0
 void __cdecl CDemonSet::buildCollidableActorList(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_00511a10
+// Original: core_setcolid.cpp_CDemonSet_FUN_00511a10
 // Address: 00511a10
-void __cdecl FUN_00511a10(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl CDemonSet(CDemonSet *this_ptr,CDemonActor *actor);
 
-// Original: core_setcolid.cpp_FUN_00511aa0
+// Original: core_setcolid.cpp_CDemonSet_FUN_00511aa0
 // Address: 00511aa0
-void __cdecl FUN_00511aa0(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl CDemonSet(CDemonSet *this_ptr,CDemonActor *actor);
 
 // Original: core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30
 // Address: 00511b30

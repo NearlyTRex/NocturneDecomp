@@ -39,8 +39,8 @@
 ;   double DOUBLE_005823e2 = 65535
 ;   double DOUBLE_005823ea = 0.600000000000000
 ;   double DOUBLE_005823f2 = 0.350000000000000
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005be220
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   CBitFont* g_CBitFont_PTR_014b98fc
@@ -77,9 +77,9 @@ section .text
     MOV EBP,ESP                         ; 0049ab54
     SUB ESP,0x160                       ; 0049ab56
     AND ESP,0xfffffff8                  ; 0049ab5c
-    MOV EAX,[0x005b761c]                ; 0049ab5f | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0049ab5f | g_WindowWidth
     MOV dword ptr [ESP + 0x110],EAX     ; 0049ab64
-    MOV EAX,[0x005b7620]                ; 0049ab6b | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049ab6b | g_WindowHeight
     MOV dword ptr [ESP + 0x114],EAX     ; 0049ab70
     MOV dword ptr [ESP + 0x10c],EAX     ; 0049ab77
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049ab7e
@@ -97,7 +97,7 @@ section .text
     SAHF                                ; 0049abac
     JNC 0x0049ac66                      ; 0049abad
         ;   XREF to: 0049ac66 (CONDITIONAL_JUMP)  ; LAB_0049ac66
-    MOV EDX,dword ptr [0x005b7620]      ; 0049abb3 | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049abb3 | g_WindowHeight
     MOV EBX,dword ptr [0x014b98f8]      ; 0049abb9 | g_CBitFont_PTR_014b98f8
     CMP EDX,0x1e0                       ; 0049abbf
     JGE 0x0049abdb                      ; 0049abc5
@@ -129,7 +129,7 @@ section .text
     PUSH EDX                            ; 0049ac09 | g_CScript_01e56da0
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049ac0a
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
-    MOV EDX,dword ptr [0x005b7620]      ; 0049ac0f | DAT_005b7620
+    MOV EDX,dword ptr [0x005b7620]      ; 0049ac0f | g_WindowHeight
     SUB EDX,EAX                         ; 0049ac15
     MOV EAX,EDX                         ; 0049ac17
     ADD ESP,0x4                         ; 0049ac19
@@ -182,12 +182,12 @@ section .text
     IDIV ESI                            ; 0049acaa
     MOV dword ptr [ESP + 0x12c],EAX     ; 0049acac
     MOV EAX,[0x014b9904]                ; 0049acb3 | g_CBitFont_PTR_014b9904
-    MOV EDI,dword ptr [0x005b761c]      ; 0049acb8 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 0049acb8 | g_WindowWidth
     MOV dword ptr [ESP + 0x130],EAX     ; 0049acbe
     CMP EDI,0x280                       ; 0049acc5
     JG 0x0049b090                       ; 0049accb
         ;   XREF to: 0049b090 (CONDITIONAL_JUMP)  ; LAB_0049b090
-    CMP dword ptr [0x005b761c],0x320    ; 0049acd1 | DAT_005b761c
+    CMP dword ptr [0x005b761c],0x320    ; 0049acd1 | g_WindowWidth
         ;   Label: LAB_0049acd1
     JLE 0x0049ace9                      ; 0049acdb
         ;   XREF to: 0049ace9 (CONDITIONAL_JUMP)  ; LAB_0049ace9
@@ -405,7 +405,7 @@ section .text
     ADD ESP,0x8                         ; 0049afc8
     MOV ESI,EAX                         ; 0049afcb
     MOV dword ptr [ESP + 0x11c],EAX     ; 0049afcd
-    MOV EAX,[0x005b7620]                ; 0049afd4 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 0049afd4 | g_WindowHeight
     MOV EDI,dword ptr [0x005be220]      ; 0049afd9 | DAT_005be220
     SUB EAX,EBX                         ; 0049afdf
     PUSH EDI                            ; 0049afe1 | g_CScript_01e56da0
@@ -424,7 +424,7 @@ section .text
     SUB ESI,0x7                         ; 0049b003
     MOV ECX,dword ptr [ESP + 0x128]     ; 0049b006
         ;   Label: LAB_0049b006
-    MOV EAX,[0x005b761c]                ; 0049b00d | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 0049b00d | g_WindowWidth
     XOR EDI,EDI                         ; 0049b012
     DEC EAX                             ; 0049b014
     TEST ECX,ECX                        ; 0049b015

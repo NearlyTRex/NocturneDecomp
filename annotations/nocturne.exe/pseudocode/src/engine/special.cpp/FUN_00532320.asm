@@ -6,8 +6,8 @@
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 at 00445091
+;   core_game.cpp_CGame_FUN_004a57c0 at 004a598e
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5ab
-;   core_game.cpp_FUN_004a57c0 at 004a598e
 ;   engine_special.cpp_FUN_00532ba0 at 00532c40
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 at 00532576
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471e40

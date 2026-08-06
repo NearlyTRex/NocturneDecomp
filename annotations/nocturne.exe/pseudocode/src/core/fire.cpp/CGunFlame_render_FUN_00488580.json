@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,57 +62,39 @@
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 63,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 65,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 67,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 68,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0'"
-      },
-      {
         "category": "cast_error",
         "column": 16,
-        "line": 72,
+        "line": 74,
         "message": "C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed"
       },
       {
         "category": "cast_error",
         "column": 16,
-        "line": 75,
+        "line": 77,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 76,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30'"
       },
       {
         "category": "cast_error",
         "column": 48,
-        "line": 94,
+        "line": 96,
         "message": "C-style cast from 'byte *' (aka 'unsigned char *') to 'double' is not allowed"
       },
       {
         "category": "type_error",
         "column": 48,
-        "line": 97,
+        "line": 99,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 51,
+        "line": 100,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 42,
+        "line": 131,
         "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
@@ -122,20 +104,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 382,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 172,
-    "suspect_count": 19,
+    "pseudocode_lines": 174,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "suspect_float",
-      "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 576
+    "total_lines": 578
   },
   "cross_references": [
     {
@@ -309,9 +290,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -706,52 +687,12 @@
       "line": 57,
       "match": "(SMRGLTextureBasic *)((int)fStack_2c",
       "severity": "moderate",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c09c28));",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c09c28))",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c09c28));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&this_ptr->position);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(DAT_005ae704,&CStack_88);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&CStack_88,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_94);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 92,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_78 = local_d0 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
@@ -759,91 +700,27 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 91,
+      "line": 93,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_7c = -fStack_d4 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_58);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_64);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_70);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "this_ptr_00 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 124,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar5 = fVar2 * 5.4940833406217561e-315._0_4_;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 123,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "DAT_005ae704->vertex_buffer_ptr->u = 0x20000;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 166,
+      "line": 168,
       "match": "5.60519e-45",
       "severity": "mild",
       "text": "fStack_d4 = 5.60519e-45;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)(auStack_dc + 4));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 172,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
-      "type": "undefined_data"
     }
   ]
 }

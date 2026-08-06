@@ -19,12 +19,12 @@
 ;   TerminatedCString s_CEventList_setTimerEvent_00580ac2
 ;   TerminatedCString s_core_event_cpp_00580afa
 ;   TerminatedCString s_CEventList_setTimerEvent_00580b0c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findTimer_FUN_004808b0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
 ;
 ; *****************************************************************************
@@ -58,10 +58,10 @@ section .text
     MOV EDX,0x580ab0                    ; 0048057f | = "..\\core\\event.cpp"
     MOV ECX,0xa5d                       ; 00480584
     PUSH 0x580ac2                       ; 00480589 | = "CEventList::setTimerEvent - invalid d..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0048058e | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00480594 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0048059a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0048058e | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 00480594 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0048059a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 0048059f
     MOV EDX,dword ptr [EBP + 0x18]      ; 004805a2
         ;   Label: LAB_004805a2
@@ -145,10 +145,10 @@ section .text
     MOV ESI,0x580afa                    ; 00480655 | = "..\\core\\event.cpp"
     MOV EDI,0xa7e                       ; 0048065a
     PUSH 0x580b0c                       ; 0048065f | = "CEventList::setTimerEvent - too many ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00480664 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0048066a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00480670
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00480664 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0048066a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00480670
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00480675
     MOV EDI,dword ptr [EBX + 0x3210]    ; 00480678
         ;   Label: LAB_00480678

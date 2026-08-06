@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 0045937e
 ;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478bbe
-;   core_flamegun.cpp_FUN_0048ea60 at 0048eab3
+;   core_flamegun.cpp_CFlameThrower_fire_FUN_0048ea60 at 0048eab3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c62eb8

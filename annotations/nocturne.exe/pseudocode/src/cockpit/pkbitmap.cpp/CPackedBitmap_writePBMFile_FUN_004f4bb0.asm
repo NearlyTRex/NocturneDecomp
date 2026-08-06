@@ -8,16 +8,16 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b53
+;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f4b30 at 004f4b53
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d228
 ;   TerminatedCString s_Error_writing_PBM_0058d240
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_fwrite_FUN_00563a50
 ;
 ; *****************************************************************************
@@ -99,10 +99,10 @@ section .text
         ;   Label: LAB_004f4c52
     MOV ESI,0x49d                       ; 004f4c57
     PUSH 0x58d240                       ; 004f4c5c | = "Error writing PBM"
-    MOV dword ptr [0x01cc4800],EBX      ; 004f4c61 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f4c67 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f4c6d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004f4c61 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 004f4c67 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f4c6d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f4c72
     ADD ESP,0x1c                        ; 004f4c75
     POP EBP                             ; 004f4c78

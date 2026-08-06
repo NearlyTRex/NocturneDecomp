@@ -15,7 +15,9 @@ int __cdecl support_trisock_cpp_parseIPComponents_FUN_00548bf0(uint *result_ptr,
   int iStack_c;
   int iStack_8;
   
-  iVar1 = sscanf(dotted_decimal_string,"%d.%d.%d.%d");
+  iVar1 = sscanf
+                    (dotted_decimal_string,"%d.%d.%d.%d",&iStack_14,&iStack_10,&iStack_c,
+                     &iStack_8);
   if (iVar1 != 4) {
     return 0;
   }

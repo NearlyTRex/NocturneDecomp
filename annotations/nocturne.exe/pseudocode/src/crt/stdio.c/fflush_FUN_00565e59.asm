@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_fflush_FUN_00565e59(_FILE *stream)
+; int __cdecl crt_stdio_c_fflush_FUN_00565e59(_FILE *stream)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004a3b90 at 004a3f6a
-;   core_game.cpp_FUN_004a4170 at 004a4511
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f6a
+;   core_game.cpp_CGame_FUN_004a4170 at 004a4511
 ;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b38
 ;
 ; Called Functions:

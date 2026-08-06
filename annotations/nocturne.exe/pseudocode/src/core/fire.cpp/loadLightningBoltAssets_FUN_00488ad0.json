@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,15 +62,9 @@
         "message": "use of undeclared identifier 'DAT_005b8b14'"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 16,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 18,
+        "line": 19,
         "message": "use of undeclared identifier 'DAT_005b8ba4'; did you mean 'DAT_005beba4'?"
       }
     ],
@@ -80,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 45,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 29
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -122,9 +116,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b8b14",
@@ -215,15 +209,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_005b8ba4",
       "severity": "mild",
       "text": "} while (texture != (SMRGLTextureBasic *)&DAT_005b8ba4);",

@@ -22,14 +22,14 @@ void core_dtrace_cpp_FUN_004676c0(CDemonRaytrace *param_1,_FILE *param_2)
   _DAT_01bc994c = 0;
   _fread(&local_14,4,1,param_2);
   if (local_14 < 1) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x148;
-    core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 328;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
   }
   if (0x00000004 < local_14) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x14b;
-    core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 331;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
   _fread(&param_1->grid_coord,4,1,param_2);
   _fread(&(param_1->grid_coord).y,4,1,param_2);
@@ -46,9 +46,9 @@ void core_dtrace_cpp_FUN_004676c0(CDemonRaytrace *param_1,_FILE *param_2)
     (param_1->adjusted_size).z = local_18;
   }
   if (local_14 < 4) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-    g_INT_01cc4804 = 0x1e2;
-    core_main_c_FUN_004c8440("Release build doesn't support old geometry");
+    g_CurrentFilename = "..\\core\\dtrace.cpp";
+    g_CurrentLineNumber = 482;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Release build doesn't support old geometry");
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(param_1);
@@ -64,8 +64,8 @@ void core_dtrace_cpp_FUN_004676c0(CDemonRaytrace *param_1,_FILE *param_2)
   if ((param_2->_flag & 0x20) == 0) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\dtrace.cpp";
-  g_INT_01cc4804 = 0x1ff;
-  core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - error reading file");
+  g_CurrentFilename = "..\\core\\dtrace.cpp";
+  g_CurrentLineNumber = 511;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRaytrace::loadBinary - error reading file");
   return;
 }

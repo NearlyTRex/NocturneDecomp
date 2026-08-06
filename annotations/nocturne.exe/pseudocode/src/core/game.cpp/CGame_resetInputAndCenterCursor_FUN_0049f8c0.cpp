@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *t
   memset(dest,value,count);
   memset(&DAT_01c781c0,0,600);
   _DAT_01c78418 = 0;
-  wincore_winrun_cpp_setCursorPosition_FUN_00558d60(DAT_005b761c / 2,DAT_005b7620 / 2);
+  wincore_winrun_cpp_setCursorPosition_FUN_00558d60(g_WindowWidth / 2,g_WindowHeight / 2);
   _DAT_01c7841c = g_CDemonSet_PTR_005be368->selected_camera_index;
   return;
 }

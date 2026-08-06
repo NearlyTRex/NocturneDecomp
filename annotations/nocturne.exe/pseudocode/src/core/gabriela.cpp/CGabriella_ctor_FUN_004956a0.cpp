@@ -13,7 +13,7 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(CGabriella *
   CHero *pCVar2;
   CCloth *pCVar3;
   
-  pCVar2 = core_hero_cpp_FUN_004b46d0(&this_ptr->base);
+  pCVar2 = core_hero_cpp_CHero_FUN_004b46d0(&this_ptr->base);
   pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00435100
                      ((CCloth *)&pCVar2[1].base.base.orient_matrix.m[0].y);
   pCVar3[-1].vertices[0x183].bone_weights[1] = (float)&g_CGabriellaVTable;

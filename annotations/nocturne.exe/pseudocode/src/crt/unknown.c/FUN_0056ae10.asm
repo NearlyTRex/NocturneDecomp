@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_stdio.c_fprintf_FUN_005644f0 at 00564508
-;   crt_unknown.c_printf_FUN_00564c30 at 00564c47
+;   crt_stdio.c_printf_FUN_00564c30 at 00564c47
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4

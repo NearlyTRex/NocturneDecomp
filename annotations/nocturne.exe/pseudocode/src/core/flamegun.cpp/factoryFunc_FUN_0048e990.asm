@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x580                          ; 0048e990
         ;   Label: core_flamegun.cpp_factoryFunc_FUN_0048e990
-    CALL crt_unknown.c_FUN_0056497c     ; 0048e995
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0048e995
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0048e99a
     TEST EAX,EAX                        ; 0048e99d
     JNZ 0x0048e9a2                      ; 0048e99f

@@ -14,7 +14,8 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
   uint uVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
+  char *pcVar4;
+  int iVar5;
   int *piStack_380;
   int iStack_37c;
   int iStack_378;
@@ -45,8 +46,9 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
     piStack_380 = _DAT_02dc921c;
     uVar1 = (**(code **)(*_DAT_02dc921c + 0x2c))();
     if (uVar1 != 0) {
-      sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
-      _sprintf((char *)&piStack_380,"DirectSux: Unable to %s.  (%s)");
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
+      _sprintf((char *)&piStack_380,"DirectSux: Unable to %s.  (%s)",
+                 "Lock secondary buffer",pcVar4);
       sound_sndmain_cpp_FUN_00529980(&piStack_380);
       return 0;
     }
@@ -54,12 +56,12 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
       iVar2 = (int)((_DAT_02dc9228 + (_DAT_02dc9228 >> 0x1f) * -8) -
                    (uint)((_DAT_02dc9228 >> 0x1f) << 2 < 0)) >> 3;
       iVar3 = 0;
-      iVar4 = iStack_3c;
+      iVar5 = iStack_3c;
       if (0 < _DAT_02dc9230 * 4) {
         do {
-          *(int *)((int)apvStack_60 + iVar3) = iVar4;
+          *(int *)((int)apvStack_60 + iVar3) = iVar5;
           iVar3 = iVar3 + 4;
-          iVar4 = iVar4 + iVar2;
+          iVar5 = iVar5 + iVar2;
         } while (iVar3 < _DAT_02dc9230 * 4);
       }
       sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0
@@ -72,8 +74,9 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void)
       uVar1 = (**(code **)(*_DAT_02dc921c + 0x4c))
                         (_DAT_02dc921c,iStack_3c,iStack_38,iStack_40,uStack_34);
       if (uVar1 != 0) {
-        sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
-        _sprintf(acStack_204,"DirectSux: Unable to %s.  (%s)");
+        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
+        _sprintf(acStack_204,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
+                   ,pcVar4);
         sound_sndmain_cpp_FUN_00529980(acStack_204);
         return 0;
       }

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_tvbat.cpp_CTVBat_ctor_FUN_0054b140
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xbf5c                         ; 0054b0e0
         ;   Label: core_tvbat.cpp_factoryFunc_FUN_0054b0e0
-    CALL crt_unknown.c_FUN_0056497c     ; 0054b0e5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0054b0e5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0054b0ea
     TEST EAX,EAX                        ; 0054b0ed
     JNZ 0x0054b0f2                      ; 0054b0ef

@@ -8,9 +8,9 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_004259f0 at 00425a94
+;   core_charactr.cpp_CCharacter_FUN_004259f0 at 00425a94
+;   core_script.cpp_CScript_FUN_00504d60 at 00504d6a
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00500fa9
-;   core_script.cpp_FUN_00504d60 at 00504d6a
 ;
 ; *****************************************************************************
 

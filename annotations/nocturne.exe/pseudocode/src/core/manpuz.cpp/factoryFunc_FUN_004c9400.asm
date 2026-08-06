@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004c9430
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x150c                         ; 004c9400
         ;   Label: core_manpuz.cpp_factoryFunc_FUN_004c9400
-    CALL crt_unknown.c_FUN_0056497c     ; 004c9405
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c9405
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c940a
     TEST EAX,EAX                        ; 004c940d
     JNZ 0x004c9412                      ; 004c940f

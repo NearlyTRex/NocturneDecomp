@@ -27,12 +27,12 @@ uint engine_special_cpp_FUN_00532ba0(void)
     return 0;
   }
   if (_DAT_02dc9e24 == 0) {
-    iVar4 = DAT_005b761c * DAT_005b7624 >> 0x1f;
-    uVar1 = (int)((DAT_005b761c * DAT_005b7624 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+    iVar4 = g_WindowWidth * DAT_005b7624 >> 0x1f;
+    uVar1 = (int)((g_WindowWidth * DAT_005b7624 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
     engine_special_cpp_lockFrame_FUN_005322e0();
     local_8 = 0;
-    if (0 < DAT_005b7620) {
+    if (0 < g_WindowHeight) {
       iVar4 = 0;
       do {
         puVar6 = puVar5;
@@ -50,7 +50,7 @@ uint engine_special_cpp_FUN_00532ba0(void)
         iVar4 = iVar4 + 4;
         local_8 = local_8 + 1;
         puVar5 = (uint *)((int)puVar5 + uVar1);
-      } while (local_8 < DAT_005b7620);
+      } while (local_8 < g_WindowHeight);
     }
     engine_special_cpp_FUN_00532320();
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();

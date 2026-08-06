@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_glass.cpp_CGlass_ctor_FUN_004abb50
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xb38                          ; 004abb20
         ;   Label: core_glass.cpp_factoryFunc_FUN_004abb20
-    CALL crt_unknown.c_FUN_0056497c     ; 004abb25
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004abb25
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004abb2a
     TEST EAX,EAX                        ; 004abb2d
     JNZ 0x004abb32                      ; 004abb2f

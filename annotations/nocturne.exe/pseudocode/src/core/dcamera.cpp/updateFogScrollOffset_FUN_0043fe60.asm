@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   time_minor
 ;
 ; XREF[2]:
+;   core_dcamera.cpp_CDemonCamera_FUN_00446810 at 00446a0c
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 00447152
-;   core_dcamera.cpp_FUN_00446810 at 00446a0c
 ;
 ; *****************************************************************************
 

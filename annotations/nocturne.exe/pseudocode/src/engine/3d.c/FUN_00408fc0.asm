@@ -17,11 +17,11 @@
 ;   undefined4 DAT_00761ec8
 ;   undefined4 DAT_00761ecc
 ;   undefined4 DAT_01c02594
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_3d.c_FUN_00408e80
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
@@ -189,10 +189,10 @@ section .text
     MOV EAX,0x57751c                    ; 0040911c | = "..\\engine\\3d.c"
     MOV EDX,0xd89                       ; 00409121
     PUSH 0x57752b                       ; 00409126 | = "renderFaceList - too many faces"
-    MOV [0x01cc4800],EAX                ; 0040912b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00409130 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00409136
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0040912b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00409130 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00409136
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040913b
     MOV EAX,[0x00761ec4]                ; 0040913e | DAT_00761ec4
         ;   Label: LAB_0040913e
@@ -254,10 +254,10 @@ section .text
     MOV EAX,ESP                         ; 004091be
     MOV ECX,0x577562                    ; 004091c0 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 004091c5
-    MOV dword ptr [0x01cc4804],EBX      ; 004091c6 | g_INT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004091cc | g_CHAR_PTR_01cc4800
-    CALL core_main.c_FUN_004c8440       ; 004091d2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 004091c6 | g_CurrentLineNumber
+    MOV dword ptr [0x01cc4800],ECX      ; 004091cc | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004091d2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004091d7
     JMP 0x0040900f                      ; 004091da
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f

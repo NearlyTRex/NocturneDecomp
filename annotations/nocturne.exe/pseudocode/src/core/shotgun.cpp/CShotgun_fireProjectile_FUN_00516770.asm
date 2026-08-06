@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_005910ad = 3.14159265350000
 ;   double DOUBLE_005910b5 = 0.00555555555555555
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   undefined4 DAT_01b4d738
 ;
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x68                        ; 00516775
     AND ESP,0xfffffff8                  ; 00516778
     MOV EBX,dword ptr [EBP + 0x10]      ; 0051677b
-    MOV EDX,dword ptr [0x005ae704]      ; 0051677e | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 0051677e | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00516784 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00516785
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)

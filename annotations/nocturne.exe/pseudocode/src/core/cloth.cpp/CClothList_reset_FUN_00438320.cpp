@@ -9,21 +9,21 @@
 void __cdecl core_cloth_cpp_CClothList_reset_FUN_00438320(CClothList *this_ptr)
 
 {
-  CCloth *pCVar1;
-  int iVar2;
-  CClothList *pCVar3;
+  CCloth *ptr;
+  int iVar1;
+  CClothList *pCVar2;
   
-  iVar2 = 0;
-  pCVar3 = this_ptr;
+  iVar1 = 0;
+  pCVar2 = this_ptr;
   if (0 < this_ptr->count) {
     do {
-      if (pCVar3->cloths[0] != (CCloth *)0x0) {
-        pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar3->cloths[0],0);
-        FUN_00564494(pCVar1);
+      if (pCVar2->cloths[0] != (CCloth *)0x0) {
+        ptr = core_cloth_cpp_CCloth_dtor_FUN_00435160(pCVar2->cloths[0],0);
+        operator_delete(ptr);
       }
-      iVar2 = iVar2 + 1;
-      pCVar3 = (CClothList *)pCVar3->filenames;
-    } while (iVar2 < this_ptr->count);
+      iVar1 = iVar1 + 1;
+      pCVar2 = (CClothList *)pCVar2->filenames;
+    } while (iVar1 < this_ptr->count);
   }
   this_ptr->count = 0;
   memset(this_ptr->filenames,0,400);

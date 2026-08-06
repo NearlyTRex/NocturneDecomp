@@ -39,22 +39,22 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
   if (_DAT_02ddf564 == 0) {
     if (_DAT_02ddf56c == 0) {
       local_20 = DAT_005c5010;
-      local_1c = DAT_005b761c *
+      local_1c = g_WindowWidth *
                  ((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -
                        (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3);
       memset(local_8c,0,0x6c);
       local_8c[0] = 0x6c;
       iVar10 = (**(code **)(*_DAT_02ddf554 + 100))(_DAT_02ddf554,0,local_8c,1,0);
       if (iVar10 != 0) {
-        g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-        g_INT_01cc4804 = 0x346;
-        core_main_c_FUN_004c8440("Unable to lock front buffer");
+        g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+        g_CurrentLineNumber = 838;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to lock front buffer");
       }
       local_18 = local_68;
       local_14 = 0;
       iVar10 = local_1c;
       puVar8 = local_20;
-      if (0 < DAT_005b7620) {
+      if (0 < g_WindowHeight) {
         do {
           do {
             uVar1 = puVar8[1];
@@ -76,13 +76,13 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
           iVar10 = local_1c;
           local_20 = puVar8;
           local_18 = local_68;
-        } while (local_14 < DAT_005b7620);
+        } while (local_14 < g_WindowHeight);
       }
       iVar10 = (**(code **)(*_DAT_02ddf554 + 0x80))(_DAT_02ddf554,0);
       if (iVar10 != 0) {
-        g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-        g_INT_01cc4804 = 0x368;
-        core_main_c_FUN_004c8440("Unable to unlock front buffer");
+        g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+        g_CurrentLineNumber = 872;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to unlock front buffer");
         _DAT_02ddf564 = 0;
         wincore_winrun_cpp_processWindowMessages_FUN_005591c0();
         return;
@@ -92,13 +92,13 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
     _DAT_02ddf56c = _DAT_01c02594;
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
     iVar10 = 0;
-    if (0 < DAT_005b7620) {
+    if (0 < g_WindowHeight) {
       iVar9 = 0;
       do {
         puVar5 = *(byte **)(&DAT_01bd2fa0 + iVar9);
         iVar6 = 0;
         puVar7 = puVar8;
-        if (0 < DAT_005b761c) {
+        if (0 < g_WindowWidth) {
           do {
             *puVar5 = *(byte *)puVar7;
             puVar8 = (ulonglong *)((int)puVar7 + 4);
@@ -107,11 +107,11 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
             puVar5[2] = *(byte *)((int)puVar7 + 2);
             puVar5 = puVar5 + 3;
             puVar7 = puVar8;
-          } while (iVar6 < DAT_005b761c);
+          } while (iVar6 < g_WindowWidth);
         }
         iVar10 = iVar10 + 1;
         iVar9 = iVar9 + 4;
-      } while (iVar10 < DAT_005b7620);
+      } while (iVar10 < g_WindowHeight);
     }
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
     _DAT_02ddf56c = 1;

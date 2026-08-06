@@ -18,10 +18,9 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
   char local_87;
   char local_86;
   char local_85;
-  byte local_24 [2];
-  ushort uStack_22;
+  uint local_24;
   uint local_20;
-  short local_1c;
+  uint local_1c;
   char local_18;
   char local_17;
   char local_16;
@@ -57,28 +56,29 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
                             ("WAV file is invalid: %s\n","File contains invalid \"fmt\" chunk");
                   goto LAB_00521857;
                 }
-                SVar3 = _fread(local_24,10,1,file_handle);
+                SVar3 = _fread(&local_24,10,1,file_handle);
                 if (SVar3 != 1) goto LAB_00521857;
-                if ((short)_local_24 != 1) {
-                  _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)");
+                if ((short)local_24 != 1) {
+                  _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff);
                   sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
                   goto LAB_00521857;
                 }
-                if ((uStack_22 == 0) || (2 < uStack_22)) {
-                  _sprintf(&local_88,"Invalid number of channels: %u  (must be 1 or 2)");
+                if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {
+                  _sprintf(&local_88,"Invalid number of channels: %u  (must be 1 or 2)",(uint)local_24._2_2_);
                   sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
                   goto LAB_00521857;
                 }
-                sVar1 = uStack_22 * (short)local_20;
-                if (sVar1 == local_1c) {
+                sVar1 = local_24._2_2_ * (short)local_20;
+                if (sVar1 == (short)local_1c) {
                   (sfx_sample->sample_info).bit_depth = 8;
                   goto LAB_00521a3e;
                 }
-                if ((short)(sVar1 * 2) == local_1c) {
+                if ((short)(sVar1 * 2) == (short)local_1c) {
                   (sfx_sample->sample_info).bit_depth = 0x10;
                   goto LAB_00521a3e;
                 }
-                _sprintf(&local_88,"Invalid bytes/sec value: %u (%04Xh)");
+                _sprintf(&local_88,"Invalid bytes/sec value: %u (%04Xh)",local_1c & 0xffff,
+                           local_1c & 0xffff);
                 sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
                 goto LAB_00521857;
               }
@@ -104,10 +104,10 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
     if (SVar3 != 1) goto LAB_00521857;
     if (((local_18 == 'd') && (local_17 == 'a')) && ((local_16 == 't' && (local_15 == 'a')))) {
       *file_offset_ptr = *file_offset_ptr + iVar5 + 8;
-      (sfx_sample->sample_info).num_channels = (uint)uStack_22;
+      (sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;
       iVar2 = (sfx_sample->sample_info).bit_depth >> 0x1f;
       (sfx_sample->sample_info).sample_count =
-           (int)(((ulonglong)local_14 / (ulonglong)uStack_22) /
+           (int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /
                 (ulonglong)
                 (uint)((int)(((sfx_sample->sample_info).bit_depth + iVar2 * -8) -
                             (uint)(iVar2 << 2 < 0)) >> 3));

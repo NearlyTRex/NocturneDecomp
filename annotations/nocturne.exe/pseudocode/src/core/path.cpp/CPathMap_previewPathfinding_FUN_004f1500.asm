@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0058ce1b
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
 ;   undefined4 DAT_01e31624
@@ -68,7 +68,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x100]     ; 004f1584
         ;   Label: LAB_004f1584
     PUSH EAX                            ; 004f158b
-    MOV EAX,[0x005b761c]                ; 004f158c | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004f158c | g_WindowWidth
     MOV EDX,EAX                         ; 004f1591
     SAR EDX,0x1f                        ; 004f1593
     SUB EAX,EDX                         ; 004f1596

@@ -72,15 +72,15 @@
 ;   TerminatedCString s_Out_of_bounds4_0058ce0b
 ;   undefined4 DAT_005be0e8
 ;   undefined4 DAT_005be10c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0
 ;   core_path.cpp_CPathMap_getDirection_FUN_004efeb0
@@ -666,10 +666,10 @@ section .text
     MOV EAX,0x58cdd9                    ; 004f131e | = "..\\core\\path.cpp"
     MOV EDX,0x549                       ; 004f1323
     PUSH 0x58cdea                       ; 004f1328 | = "Out of bounds3!"
-    MOV [0x01cc4800],EAX                ; 004f132d | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f1332 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f1338
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004f132d | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 004f1332 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f1338
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f133d
     CMP ESI,0x64                        ; 004f1340
         ;   Label: LAB_004f1340
@@ -678,10 +678,10 @@ section .text
     MOV ECX,0x58cdfa                    ; 004f1345 | = "..\\core\\path.cpp"
     MOV EAX,0x54a                       ; 004f134a
     PUSH 0x58ce0b                       ; 004f134f | = "Out of bounds4!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f1354 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f135a | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f135f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f1354 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004f135a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f135f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f1364
     CMP EBX,dword ptr [0x01e3161c]      ; 004f1367 | DAT_01e3161c
         ;   Label: LAB_004f1367
@@ -789,10 +789,10 @@ section .text
         ;   Label: LAB_004f14b0
     MOV EAX,0x547                       ; 004f14b5
     PUSH 0x58cda8                       ; 004f14ba | = "Out of bounds1!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f14bf | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f14c5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f14ca
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f14bf | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004f14c5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f14ca
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f14cf
     JMP 0x004f1311                      ; 004f14d2
         ;   XREF to: 004f1311 (UNCONDITIONAL_JUMP)  ; LAB_004f1311
@@ -800,10 +800,10 @@ section .text
         ;   Label: LAB_004f14d7
     MOV ECX,0x548                       ; 004f14dc
     PUSH 0x58cdc9                       ; 004f14e1 | = "Out of bounds2!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f14e6 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f14ec | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004f14f2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f14e6 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 004f14ec | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004f14f2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004f14f7
     JMP 0x004f1319                      ; 004f14fa
         ;   XREF to: 004f1319 (UNCONDITIONAL_JUMP)  ; LAB_004f1319

@@ -5,7 +5,6 @@
 #include "system/time.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEdButton.h"
@@ -137,13 +136,13 @@ int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,ch
 int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_00477670(CBitFont *font_ptr);
 void shape_edittool_cpp_FUN_0047767b(void);
-void shape_edittool_cpp_FUN_00477690(void);
+CVector3f * __cdecl shape_edittool_cpp_CVector3f_arrdtor_FUN_00477690(CVector3f *this_ptr,uint flags);
 void __cdecl core_elephant_cpp_staticInit_FUN_004776b0(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004776e0(void);
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_00477700(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_00477710(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004777a0(CElephantGun *this_ptr,float delta_time);
-undefined4 core_elephant_cpp_FUN_00477890(CCharacter *param_1);
+int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00477890(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00477fd0(CElephantGun *this_ptr);
 float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004780e0(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_00478120(CElephantGun *this_ptr);
@@ -180,7 +179,7 @@ void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_0047a000(CEnemy *this_pt
 int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0047a090(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CDemonActor *lost_actor);
-int core_enemy_cpp_FUN_0047a150(CDemonActor *param_1);
+int __cdecl core_enemy_cpp_CEnemy_FUN_0047a150(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_0047a1d0(void);
 int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message);
 undefined4 core_event_cpp_FUN_0047a210(char *param_1);

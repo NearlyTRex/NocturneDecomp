@@ -30,7 +30,7 @@ ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_00565264(void *this_ptr,uin
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    FUN_00564494(this_ptr);
+    operator_delete(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_ifstreamTypeInfo_0059b4d0);

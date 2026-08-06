@@ -23,7 +23,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
   
   if (this_ptr->background_flag == 0) {
     if (((layer_flag != 0) && (this_ptr->shattered != 0)) && (this_ptr->mirror_flag != 0)) {
-      core_glass_cpp_FUN_004ac7c0(this_ptr);
+      core_glass_cpp_CGlass_FUN_004ac7c0(this_ptr);
       return;
     }
   }
@@ -38,7 +38,8 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
     else {
       texture = &this_ptr->broken_texture;
     }
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+              (g_CDemonRenderer_PTR_005ae704,texture);
     pCVar1 = this_ptr->broken_vertices;
     iVar4 = 0;
     pCVar2 = this_ptr->render_vertices;
@@ -60,7 +61,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
       pCVar3 = this_ptr;
       do {
         pCVar3->broken_quads[0].base.surface_normal.A.i = 0;
-        this_ptr_00 = DAT_005ae704;
+        this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
         pCVar3->broken_quads[0].base.surface_normal.B.i = 0;
         iVar4 = iVar4 + 1;
         pCVar3->broken_quads[0].base.surface_normal.C.i = 0;

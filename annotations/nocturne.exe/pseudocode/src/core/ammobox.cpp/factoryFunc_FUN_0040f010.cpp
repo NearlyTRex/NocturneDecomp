@@ -11,7 +11,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_0040f010(void)
 {
   CAmmoBox *pCVar1;
   
-  pCVar1 = (CAmmoBox *)FUN_0056497c(0x344);
+  pCVar1 = operator_new(0x344);
   if (pCVar1 == (CAmmoBox *)0x0) {
     return (CAmmoBox *)0x0;
   }

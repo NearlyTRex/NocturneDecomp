@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 21,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "stack_ref"
     ],
     "total_lines": 25
@@ -153,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_sscanf_FUN_00566b5c",
-    "signature": "int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format)"
+    "signature": "int __cdecl crt_stdio_c_sscanf_FUN_00566b5c(char *str,char *format,...)"
   },
   "function_calls": [
     {
@@ -343,17 +342,6 @@
       "severity": "moderate",
       "text": "local_8 = &stack0x0000000c;",
       "type": "stack_ref"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:4",
-      "param_delta": 2,
-      "text": "Function declares 2 params but call sites push 4 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -27,11 +27,11 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr)
     engine_dosio_cpp_CFileFinder_dtor_FUN_00456c20(&local_170,0);
     return;
   }
-  _fscanf(file,"%d\n");
+  _fscanf(file,"%d\n",&local_c);
   iVar1 = 0;
   if (0 < local_c) {
     do {
-      _fscanf(file,"%s\n");
+      _fscanf(file,"%s\n",local_5c);
       (*this_ptr->vtable->mount)((CPod *)this_ptr,local_5c);
       iVar1 = iVar1 + 1;
     } while (iVar1 < local_c);

@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createFireball_FUN_0048b270
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
-;   core_set.cpp_FUN_0050e660
+;   core_set.cpp_CDemonSet_FUN_0050e660
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
@@ -81,8 +81,8 @@ section .text
     MOV ECX,dword ptr [0x005be368]      ; 00484bc6 | g_CDemonSet_PTR_005be368
     PUSH 0x42c80000                     ; 00484bcc
     PUSH ECX                            ; 00484bd1 | g_CDemonSet_01e57284
-    CALL core_set.cpp_FUN_0050e660      ; 00484bd2
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e660()
+    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 00484bd2
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
     ADD ESP,0x14                        ; 00484bd7
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00526340 ; 00484bda
         ;   XREF to: 00526340 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00526340()

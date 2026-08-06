@@ -9,6 +9,7 @@
 void __cdecl core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004b1df0(CGround *this_ptr,SMRGLHeaderPrimitive *primitive)
 
 {
-  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(DAT_005ae704,primitive,0x24d);
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
+            (g_CDemonRenderer_PTR_005ae704,primitive,0x24d);
   return;
 }

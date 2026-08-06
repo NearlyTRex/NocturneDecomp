@@ -15,13 +15,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
   int iVar2;
   
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x8b;
-    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 139;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
-  iVar1 = DAT_005b761c / 2;
+  iVar1 = g_WindowWidth / 2;
   if (message_text != (char *)0x0) {
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,message_text);
     if (iVar1 < iVar2) {

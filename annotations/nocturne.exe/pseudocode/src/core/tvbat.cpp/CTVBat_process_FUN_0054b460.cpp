@@ -198,9 +198,9 @@ LAB_0054b592:
       this_ptr->attack_timer = 0.0;
     }
     if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\tvbat.cpp";
-      g_INT_01cc4804 = 0x10a;
-      core_main_c_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
+      g_CurrentFilename = "..\\core\\tvbat.cpp";
+      g_CurrentLineNumber = 266;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
     }
     iVar16 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     if (&local_58 != (float *)(iVar16 + 0x20)) {

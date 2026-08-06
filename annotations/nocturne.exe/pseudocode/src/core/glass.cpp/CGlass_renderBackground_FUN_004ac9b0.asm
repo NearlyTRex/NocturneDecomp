@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059e390
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   CDemonSet g_CDemonSet_01e57284
@@ -20,7 +20,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
-;   core_glass.cpp_FUN_004ac7c0
+;   core_glass.cpp_CGlass_FUN_004ac7c0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 004acb21 (CONDITIONAL_JUMP)  ; LAB_004acb21
     LEA EAX,[EBP + 0x36c]               ; 004aca19
     PUSH EAX                            ; 004aca1f
-    MOV EDX,dword ptr [0x005ae704]      ; 004aca20 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004aca20 | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 004aca26 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004aca27
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
@@ -124,7 +124,7 @@ section .text
     PUSH 0xc1                           ; 004acabb
         ;   Label: LAB_004acabb
     MOV dword ptr [EBX + 0x6ac],0x0     ; 004acac0
-    MOV EAX,[0x005ae704]                ; 004acaca | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004acaca | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [EBX + 0x6b0],0x0     ; 004acacf
     PUSH ESI                            ; 004acad9
     INC EDI                             ; 004acada
@@ -157,7 +157,7 @@ section .text
     LEA EAX,[EBP + 0x15c]               ; 004acb21
         ;   Label: LAB_004acb21
     PUSH EAX                            ; 004acb27
-    MOV EAX,[0x005ae704]                ; 004acb28 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 004acb28 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 004acb2d | DAT_01b4d738
     JMP 0x004aca27                      ; 004acb2e
         ;   XREF to: 004aca27 (UNCONDITIONAL_JUMP)  ; LAB_004aca27
@@ -172,8 +172,8 @@ section .text
     JZ 0x004acb1b                       ; 004acb47
         ;   XREF to: 004acb1b (CONDITIONAL_JUMP)  ; LAB_004acb1b
     PUSH EBP                            ; 004acb49
-    CALL core_glass.cpp_FUN_004ac7c0    ; 004acb4a
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ac7c0(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_FUN_004ac7c0 ; 004acb4a
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_FUN_004ac7c0(CGlass * this_ptr)
     ADD ESP,0x4                         ; 004acb4f
     ADD ESP,0x18                        ; 004acb52
     POP EBP                             ; 004acb55

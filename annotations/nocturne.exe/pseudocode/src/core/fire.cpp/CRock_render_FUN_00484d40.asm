@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   CDemonSet g_CDemonSet_01e57284
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x18                        ; 00484d42
     MOV EBX,dword ptr [ESP + 0x24]      ; 00484d45
     PUSH EBX                            ; 00484d49
-    MOV EDX,dword ptr [0x005ae704]      ; 00484d4a | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00484d4a | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00484d50 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00484d51
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -46,7 +46,7 @@ section .text
     PUSH 0x0                            ; 00484d59
     LEA EAX,[EBX + 0x38]                ; 00484d5b
     PUSH EAX                            ; 00484d5e
-    MOV ECX,dword ptr [0x005ae704]      ; 00484d5f | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00484d5f | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00484d65 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 ; 00484d66
         ;   XREF to: 00460a50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
@@ -79,7 +79,7 @@ section .text
     TEST EAX,EAX                        ; 00484db9
     JNZ 0x00484dd2                      ; 00484dbb
         ;   XREF to: 00484dd2 (CONDITIONAL_JUMP)  ; LAB_00484dd2
-    MOV EBP,dword ptr [0x005ae704]      ; 00484dbd | DAT_005ae704
+    MOV EBP,dword ptr [0x005ae704]      ; 00484dbd | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00484dbd
     PUSH EBP                            ; 00484dc3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00484dc4

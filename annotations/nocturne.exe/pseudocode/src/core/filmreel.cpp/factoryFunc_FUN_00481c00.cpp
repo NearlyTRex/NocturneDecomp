@@ -11,7 +11,7 @@ CFilmReel * __cdecl core_filmreel_cpp_factoryFunc_FUN_00481c00(void)
 {
   CFilmReel *pCVar1;
   
-  pCVar1 = (CFilmReel *)FUN_0056497c(0x314);
+  pCVar1 = operator_new(0x314);
   if (pCVar1 == (CFilmReel *)0x0) {
     return (CFilmReel *)0x0;
   }

@@ -19,13 +19,13 @@ CDemonActorType * __cdecl CTommyGun::getActorType(CTommyGun *this_ptr);
 // Address: 00545b90
 CTommyGun * __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_00545c30
+// Original: core_tommygun.cpp_CTommyGun_fire_FUN_00545c30
 // Address: 00545c30
-undefined4 FUN_00545c30(CCharacter *param_1);
+int __cdecl CTommyGun::fire(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_00546470
+// Original: core_tommygun.cpp_CTommyGun_getDamage_FUN_00546470
 // Address: 00546470
-float FUN_00546470(void);
+float __cdecl CTommyGun::getDamage(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_process_FUN_005464a0
 // Address: 005464a0

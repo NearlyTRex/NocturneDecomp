@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bf7720
+;   uchar[32768] g_ColorCubeLookup
 ;   undefined4 DAT_01c00024
 ;   undefined4 DAT_01c00624
 ;   undefined4 DAT_01c0062c
@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01c00638
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00644
-;   undefined4 DAT_01c00648
+;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
@@ -233,7 +233,7 @@ section .text
     LEA ECX,[EAX*0x4 + 0x0]             ; 0042fb27
     SUB ECX,EAX                         ; 0042fb2e
     XOR EAX,EAX                         ; 0042fb30
-    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0042fb32 | DAT_01c00648
+    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0042fb32 | g_SourcePaletteData
     MOV dword ptr [ESP + 0x34],EAX      ; 0042fb38
     FILD word ptr [ESP + 0x34]          ; 0042fb3c
     XOR EAX,EAX                         ; 0042fb40
@@ -249,7 +249,7 @@ section .text
     LEA ECX,[EAX*0x4 + 0x0]             ; 0042fb62
     SUB ECX,EAX                         ; 0042fb69
     XOR EAX,EAX                         ; 0042fb6b
-    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0042fb6d | DAT_01c00648
+    MOV AL,byte ptr [ECX + 0x1c00648]   ; 0042fb6d | g_SourcePaletteData
     MOV dword ptr [ESP + 0x3c],EAX      ; 0042fb73
     XOR EAX,EAX                         ; 0042fb77
     FILD word ptr [ESP + 0x3c]          ; 0042fb79
@@ -313,7 +313,7 @@ section .text
     SBB EAX,EDX                         ; 0042fc1c
     SAR EAX,0x3                         ; 0042fc1e
     ADD EAX,ECX                         ; 0042fc21
-    MOV CL,byte ptr [EAX + 0x1bf7720]   ; 0042fc23 | DAT_01bf7720
+    MOV CL,byte ptr [EAX + 0x1bf7720]   ; 0042fc23 | g_ColorCubeLookup
     MOV byte ptr [EBX],CL               ; 0042fc29
     MOV ESP,EBP                         ; 0042fc2b
     POP EBP                             ; 0042fc2d

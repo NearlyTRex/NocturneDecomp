@@ -43,11 +43,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005982fa
 ;   TerminatedCString s_inverse_Singular_matrix_0059830c
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_determinant_FUN_0055bcb0
 ;
 ; *****************************************************************************
@@ -250,10 +250,10 @@ section .text
         ;   Label: LAB_0055bf21
     MOV EDI,0x23e                       ; 0055bf26
     PUSH 0x59830c                       ; 0055bf2b | = "inverse() - Singular matrix"
-    MOV dword ptr [0x01cc4800],ESI      ; 0055bf30 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0055bf36 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0055bf3c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0055bf30 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0055bf36 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0055bf3c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0055bf41
     JMP 0x0055bd4a                      ; 0055bf44
         ;   XREF to: 0055bd4a (UNCONDITIONAL_JUMP)  ; LAB_0055bd4a

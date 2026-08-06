@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -68,12 +68,6 @@
         "message": "no matching function for call to 'engine_3d_c_FUN_00408e80'"
       },
       {
-        "category": "format_error",
-        "column": 52,
-        "line": 61,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 15,
         "line": 73,
@@ -92,13 +86,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 601,
+    "complexity_score": 611,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 111,
-    "suspect_count": 46,
+    "suspect_count": 47,
     "suspect_types": [
       "displaced_global_access",
       "pointer_cast",
@@ -126,11 +120,11 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -247,13 +241,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -447,6 +441,14 @@
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_FUN_00408e80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(local_110,\"Unknown primitive : %d\",(uint)(byte)(param_1->base).type);",
       "type": "unnamed_param"
     },
     {

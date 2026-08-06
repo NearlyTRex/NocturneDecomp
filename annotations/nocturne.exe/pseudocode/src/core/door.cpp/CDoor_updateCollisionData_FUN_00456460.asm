@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_reposition_FUN_004552a0
-;   core_setcolid.cpp_FUN_00511a10
+;   core_setcolid.cpp_CDemonSet_FUN_00511a10
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EBX                            ; 00456484
     MOV EBX,dword ptr [0x005be368]      ; 00456485 | g_CDemonSet_PTR_005be368
     PUSH EBX                            ; 0045648b | g_CDemonSet_01e57284
-    CALL core_setcolid.cpp_FUN_00511a10 ; 0045648c
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_setcolid.cpp_CDemonSet_FUN_00511a10 ; 0045648c
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00456491
     POP EBX                             ; 00456494
     RET                                 ; 00456495

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_melee.cpp_CMelee_ctor_FUN_004cec60
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x6c4                          ; 004cec30
         ;   Label: core_melee.cpp_factoryFunc_FUN_004cec30
-    CALL crt_unknown.c_FUN_0056497c     ; 004cec35
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004cec35
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004cec3a
     TEST EAX,EAX                        ; 004cec3d
     JNZ 0x004cec42                      ; 004cec3f

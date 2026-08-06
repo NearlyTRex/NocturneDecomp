@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_batcreat.cpp_CBatCreature_ctor_FUN_00412100
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0xbd6c                         ; 004120d0
         ;   Label: core_batcreat.cpp_factoryFunc_FUN_004120d0
-    CALL crt_unknown.c_FUN_0056497c     ; 004120d5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004120d5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004120da
     TEST EAX,EAX                        ; 004120dd
     JNZ 0x004120e2                      ; 004120df

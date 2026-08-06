@@ -26,8 +26,8 @@
 ;   TerminatedCString s_core_boneguy_cpp_0057950d
 ;   TerminatedCString s_CBoneGuy_explode_Not_eno_00579521
 ;   TerminatedCString s_boneguy_fallapart_wav_0057954b
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -35,7 +35,7 @@
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004291f0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_xform.cpp_eulerToQuaternion_FUN_0055d610
 ;
@@ -215,10 +215,10 @@ section .text
         ;   Label: LAB_0041a2e5
     MOV ESI,0x443                       ; 0041a2ea
     PUSH 0x579521                       ; 0041a2ef | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0041a2f4 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0041a2fa | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0041a300
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0041a2f4 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 0041a2fa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0041a300
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0041a305
     JMP 0x0041a147                      ; 0041a308
         ;   XREF to: 0041a147 (UNCONDITIONAL_JUMP)  ; LAB_0041a147

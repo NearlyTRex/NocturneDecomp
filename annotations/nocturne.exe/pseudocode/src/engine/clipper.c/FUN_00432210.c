@@ -186,9 +186,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           break;
         case 1:
           if (0xb < DAT_00767b38) {
-            g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-            g_INT_01cc4804 = 0x5e;
-            core_main_c_FUN_004c8440();
+            g_CurrentFilename = "..\\engine\\clipper.c";
+            g_CurrentLineNumber = 94;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
           }
           iVar9 = DAT_00767b38 * 0x30;
           DAT_00767b38 = DAT_00767b38 + 1;
@@ -202,9 +202,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           iVar9 = uVar8 + 1;
           *(SRenderVertex **)(local_4c + uVar8 * 4) = pSVar12;
           if (0xb < iVar4) {
-            g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-            g_INT_01cc4804 = 0x5e;
-            core_main_c_FUN_004c8440();
+            g_CurrentFilename = "..\\engine\\clipper.c";
+            g_CurrentLineNumber = 94;
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
           }
           iVar4 = DAT_00767b38 * 0x30;
           DAT_00767b38 = DAT_00767b38 + 1;
@@ -241,9 +241,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
             break;
           case 1:
             if (0xb < DAT_00767b38) {
-              g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-              g_INT_01cc4804 = 0x5e;
-              core_main_c_FUN_004c8440();
+              g_CurrentFilename = "..\\engine\\clipper.c";
+              g_CurrentLineNumber = 94;
+              core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
             }
             iVar4 = DAT_00767b38 * 0x30;
             uVar13 = uVar13 + 1;
@@ -255,9 +255,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           case 2:
             auStack_d0[uVar13 + 1] = pSVar12;
             if (0xb < DAT_00767b38) {
-              g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-              g_INT_01cc4804 = 0x5e;
-              core_main_c_FUN_004c8440();
+              g_CurrentFilename = "..\\engine\\clipper.c";
+              g_CurrentLineNumber = 94;
+              core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
             }
             iVar4 = DAT_00767b38 * 0x30;
             uVar13 = uVar13 + 2;
@@ -298,9 +298,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
               break;
             case 1:
               if (0xb < DAT_00767b38) {
-                g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-                g_INT_01cc4804 = 0x5e;
-                core_main_c_FUN_004c8440();
+                g_CurrentFilename = "..\\engine\\clipper.c";
+                g_CurrentLineNumber = 94;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
               iVar4 = DAT_00767b38 * 0x30;
               uVar8 = uVar15 + 1;
@@ -312,9 +312,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
             case 2:
               local_14c[uVar15] = pSVar12;
               if (0xb < DAT_00767b38) {
-                g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-                g_INT_01cc4804 = 0x5e;
-                core_main_c_FUN_004c8440();
+                g_CurrentFilename = "..\\engine\\clipper.c";
+                g_CurrentLineNumber = 94;
+                core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
               }
               iVar4 = DAT_00767b38 * 0x30;
               uVar8 = uVar15 + 2;
@@ -354,9 +354,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
                 break;
               case 1:
                 if (0xb < DAT_00767b38) {
-                  g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-                  g_INT_01cc4804 = 0x5e;
-                  core_main_c_FUN_004c8440();
+                  g_CurrentFilename = "..\\engine\\clipper.c";
+                  g_CurrentLineNumber = 94;
+                  core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
                 }
                 iVar4 = DAT_00767b38 * 0x30;
                 uVar13 = uVar13 + 1;
@@ -368,9 +368,9 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
               case 2:
                 auStack_d0[uVar13 + 1] = pSVar12;
                 if (0xb < DAT_00767b38) {
-                  g_CHAR_PTR_01cc4800 = "..\\engine\\clipper.c";
-                  g_INT_01cc4804 = 0x5e;
-                  core_main_c_FUN_004c8440();
+                  g_CurrentFilename = "..\\engine\\clipper.c";
+                  g_CurrentLineNumber = 94;
+                  core_main_c_displayErrorAndQuit_FUN_004c8440("Ran out of clipped verts!");
                 }
                 iVar4 = DAT_00767b38 * 0x30;
                 uVar13 = uVar13 + 2;

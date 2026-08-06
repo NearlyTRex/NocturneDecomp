@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 468,
+    "complexity_score": 411,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 30,
+    "pseudocode_lines": 146,
+    "suspect_count": 24,
     "suspect_types": [
       "sign_compare_idiom",
       "stack_ref",
@@ -136,7 +136,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 493
+    "total_lines": 496
   },
   "cross_references": [
     {
@@ -176,7 +176,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00563a30",
@@ -249,9 +249,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005ae708",
@@ -297,19 +297,19 @@
     },
     {
       "addr": "01bf7720",
-      "name": "DAT_01bf7720",
-      "type": "undefined4",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     },
@@ -822,40 +822,16 @@
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_54);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_60);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 99,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 106,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_44._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);",
@@ -863,23 +839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_6c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
+      "line": 119,
       "match": "DAT_005ae708",
       "severity": "mild",
       "text": "uVar3 = DAT_005ae708;",
@@ -887,7 +847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 120,
       "match": "DAT_005c5024",
       "severity": "mild",
       "text": "uVar5 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
@@ -895,7 +855,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 120,
       "match": "DAT_005c5054",
       "severity": "mild",
       "text": "uVar5 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
@@ -903,7 +863,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 120,
       "match": "DAT_005c5084",
       "severity": "mild",
       "text": "uVar5 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
@@ -911,7 +871,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 120,
       "match": "DAT_005c50b4",
       "severity": "mild",
       "text": "uVar5 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
@@ -919,7 +879,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 122,
       "match": "DAT_005ae708",
       "severity": "mild",
       "text": "DAT_005ae708 = 0x10;",
@@ -927,23 +887,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 122,
+      "line": 125,
       "match": "&stack0xffffff48",
       "severity": "moderate",
-      "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff48);",
+      "text": "(SMRGLHeaderPrimitive *)&stack0xffffff48);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff48);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
+      "line": 132,
       "match": "DAT_02dd1238",
       "severity": "mild",
       "text": "*(int *)(&DAT_02dd1238 + _DAT_02dd1234 * 4) = iVar8;",
@@ -951,7 +903,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 133,
       "match": "DAT_02dd5238",
       "severity": "mild",
       "text": "*(int *)(&DAT_02dd5238 + _DAT_02dd1234 * 4) = iVar6;",
@@ -959,7 +911,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 138,
       "match": "DAT_005ae708",
       "severity": "mild",
       "text": "DAT_005ae708 = uVar3;",

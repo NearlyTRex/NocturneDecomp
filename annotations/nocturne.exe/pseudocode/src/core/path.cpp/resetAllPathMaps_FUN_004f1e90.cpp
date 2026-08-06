@@ -20,9 +20,9 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_004f1e90(void)
     iVar2 = 0;
     do {
       if (*(int *)(iVar2 + 0x1e312fc) == 0) {
-        g_CHAR_PTR_01cc4800 = "..\\core\\path.cpp";
-        g_INT_01cc4804 = 0x6a1;
-        core_main_c_FUN_004c8440("Global pathmap list corruption");
+        g_CurrentFilename = "..\\core\\path.cpp";
+        g_CurrentLineNumber = 1697;
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Global pathmap list corruption");
       }
       puVar1 = (uint *)(iVar2 + 0x1e312fc);
       iVar2 = iVar2 + 4;

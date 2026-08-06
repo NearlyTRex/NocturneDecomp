@@ -23,7 +23,7 @@
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_0054dac0 at 0054db59
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_007658e4
 ;   undefined4 DAT_01b4d738
 ;
@@ -108,7 +108,7 @@ section .text
     PUSH EAX                            ; 0042665a
     LEA EAX,[ESP + 0x64]                ; 0042665b
     PUSH EAX                            ; 0042665f
-    MOV ESI,dword ptr [0x005ae704]      ; 00426660 | DAT_005ae704
+    MOV ESI,dword ptr [0x005ae704]      ; 00426660 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 00426666 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00426667
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -119,7 +119,7 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0 ; 00426678
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042667d
-    MOV EDI,dword ptr [0x005ae704]      ; 00426680 | DAT_005ae704
+    MOV EDI,dword ptr [0x005ae704]      ; 00426680 | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 00426686 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00426687
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()

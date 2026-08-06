@@ -11,7 +11,7 @@ CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042b720(void)
 {
   CChain *pCVar1;
   
-  pCVar1 = (CChain *)FUN_0056497c(0x570);
+  pCVar1 = operator_new(0x570);
   if (pCVar1 == (CChain *)0x0) {
     return (CChain *)0x0;
   }

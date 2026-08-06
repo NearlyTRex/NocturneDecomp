@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01b4d764
 ;   undefined4 DAT_01b4d768
 ;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01c00c80
+;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
 
@@ -48,7 +48,7 @@ section .text
     INC ECX                             ; 00464025
     MOV EAX,dword ptr [EDI + 0x28]      ; 00464026
     SUB EAX,dword ptr [ESI + 0x28]      ; 00464029
-    IMUL dword ptr [ECX*0x4 + 0x1c00c80] ; 0046402c | DAT_01c00c80
+    IMUL dword ptr [ECX*0x4 + 0x1c00c80] ; 0046402c | g_ReciprocalLookupTable
     MOV EBX,EBP                         ; 00464033
     DEC ECX                             ; 00464035
     MOV ESI,dword ptr [ESI + 0x28]      ; 00464036

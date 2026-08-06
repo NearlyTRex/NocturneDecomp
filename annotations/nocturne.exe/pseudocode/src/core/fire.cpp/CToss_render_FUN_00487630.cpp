@@ -13,9 +13,9 @@ void __cdecl core_fire_cpp_CToss_render_FUN_00487630(CToss *this_ptr)
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (DAT_005ae704,&(this_ptr->physics_box).position);
+            (g_CDemonRenderer_PTR_005ae704,&(this_ptr->physics_box).position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (DAT_005ae704,&(this_ptr->physics_box).orientation,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,&(this_ptr->physics_box).orientation,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(&this_ptr->model,0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
   return;

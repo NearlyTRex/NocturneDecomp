@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "format_error",
-        "column": 24,
-        "line": 17,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 19,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_01c78adc'; did you mean 'DAT_005b8bdc'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 19,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_01c78ae0'; did you mean 'DAT_005c18a0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01c78ae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01c78ae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01c78ae4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 21,
+        "line": 22,
         "message": "use of undeclared identifier '_DAT_01c78ae0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
-        "line": 21,
+        "column": 41,
+        "line": 22,
         "message": "use of undeclared identifier '_DAT_01c78ae4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 24,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_01c78ae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 24,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_01c78ae4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01c78adc'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 56,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 83
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -156,7 +155,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -174,15 +173,15 @@
     },
     {
       "addr": "005b761c",
-      "name": "DAT_005b761c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
     },
     {
       "addr": "005b7620",
-      "name": "DAT_005b7620",
-      "type": "undefined4",
-      "value": null
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
     },
     {
       "addr": "014b9900",
@@ -291,22 +290,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005b7620",
-      "severity": "mild",
-      "text": "if (_DAT_01c78ae0 <= DAT_005b7620 + _DAT_01c78ae4 * -4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005b761c",
-      "severity": "mild",
-      "text": "_DAT_01c78adc = _DAT_01c78adc + DAT_005b761c / 3;",
-      "type": "undefined_data"
     }
   ]
 }

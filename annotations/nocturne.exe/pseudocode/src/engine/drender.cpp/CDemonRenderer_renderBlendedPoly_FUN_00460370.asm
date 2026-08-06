@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_curtain.cpp_FUN_0043f330 at 0043f4da
+;   core_curtain.cpp_CCurtain_FUN_0043f330 at 0043f4da
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 004868e5
 ;   core_glass.cpp_CGlass_renderOpaque_FUN_004ac440 at 004ac5ca
 ;   core_glass.cpp_CGlass_renderTransparent_FUN_004ac600 at 004ac789

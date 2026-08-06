@@ -37,7 +37,7 @@
 ;   void* PTR_SelectObject_005753bc = 0017579c
 ;   void* PTR_SetBkColor_005753c0 = 001757ac
 ;   void* PTR_SetBkMode_005753c4 = 001757ba
-;   undefined4 DAT_005b761c
+;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7624
 ;
 ; Called Functions:
@@ -100,7 +100,7 @@ section .text
     POP ESI                             ; 00558535
     POP EBX                             ; 00558536
     RET                                 ; 00558537
-    MOV EDI,dword ptr [0x005b761c]      ; 00558538 | DAT_005b761c
+    MOV EDI,dword ptr [0x005b761c]      ; 00558538 | g_WindowWidth
         ;   Label: LAB_00558538
     JMP 0x005584e7                      ; 0055853e
         ;   XREF to: 005584e7 (UNCONDITIONAL_JUMP)  ; LAB_005584e7

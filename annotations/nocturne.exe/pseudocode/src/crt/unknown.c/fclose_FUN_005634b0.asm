@@ -19,12 +19,12 @@
 ; Called Functions:
 ;   crt_io.c_close_FUN_00568a50
 ;   crt_io.c_invalidate_handle_wrapper_FUN_005671f8
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_stdio.c_ftell_FUN_00566e70
 ;   crt_stdio.c_lseek_FUN_005689c0
 ;   crt_stdio.c_remove_FUN_005657c0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c__tempnam_FUN_005633fc
-;   crt_unknown.c_FUN_005638d0
 ;   crt_unknown.c_FUN_00568890
 ;
 ; *****************************************************************************
@@ -91,8 +91,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 0056352e
     MOV EDX,dword ptr [EAX + 0x8]       ; 00563531
     PUSH EDX                            ; 00563534
-    CALL crt_unknown.c_FUN_005638d0     ; 00563535
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00563535
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     MOV EAX,dword ptr [EBX + 0x8]       ; 0056353a
     ADD ESP,0x4                         ; 0056353d
     MOV dword ptr [EAX + 0x8],0x0       ; 00563540

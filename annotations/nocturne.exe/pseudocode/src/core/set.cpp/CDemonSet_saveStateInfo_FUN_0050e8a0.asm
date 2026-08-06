@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004a3b90 at 004a3dfa
+;   core_game.cpp_CGame_FUN_004a3b90 at 004a3dfa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Set_state_version_00590882
@@ -33,17 +33,17 @@ section .text
     PUSH 0x590882                       ; 0050e8ab | = "// Set state version\n"
     PUSH EDI                            ; 0050e8b0
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0050e8b1
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050e8b6
     PUSH 0x590898                       ; 0050e8b9 | = "1\n"
     PUSH EDI                            ; 0050e8be
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0050e8bf
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050e8c4
     PUSH 0x59089b                       ; 0050e8c7 | = "// Camera count, enabled list\n"
     PUSH EDI                            ; 0050e8cc
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0050e8cd
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050e8d2
     MOV EDX,dword ptr [EBP]             ; 0050e8d5
     PUSH EDX                            ; 0050e8d8
@@ -51,7 +51,7 @@ section .text
     PUSH EDI                            ; 0050e8de
     XOR EBX,EBX                         ; 0050e8df
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0050e8e1
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV ECX,dword ptr [EBP]             ; 0050e8e6
     ADD ESP,0xc                         ; 0050e8e9
     TEST ECX,ECX                        ; 0050e8ec
@@ -67,7 +67,7 @@ section .text
     ADD ESI,0x1a0                       ; 0050e900
     INC EBX                             ; 0050e906
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0050e907
-        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fprintf_FUN_005644f0()
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     MOV EDX,dword ptr [EBP]             ; 0050e90c
     ADD ESP,0xc                         ; 0050e90f
     CMP EBX,EDX                         ; 0050e912

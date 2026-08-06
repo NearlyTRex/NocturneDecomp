@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_005827b8
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CBitFont* g_CBitFont_PTR_014b9900
 ;   undefined4 DAT_01bcd070
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x14                        ; 0049d961
     CALL engine_2d.c_reinitializeGraphicsSystem_FUN_00403770 ; 0049d964
         ;   XREF to: 00403770 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_00403770()
-    CMP dword ptr [0x005b7620],0x1e0    ; 0049d969 | DAT_005b7620
+    CMP dword ptr [0x005b7620],0x1e0    ; 0049d969 | g_WindowHeight
     JNZ 0x0049d97f                      ; 0049d973
         ;   XREF to: 0049d97f (CONDITIONAL_JUMP)  ; LAB_0049d97f
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0049d975

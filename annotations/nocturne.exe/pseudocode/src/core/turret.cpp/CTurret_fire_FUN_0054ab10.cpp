@@ -121,7 +121,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_0054ab10(CTurret *this_ptr)
         }
       }
       else {
-        iVar3 = core_glass_cpp_FUN_004aded0(pCStack_1c);
+        iVar3 = core_glass_cpp_CGlass_FUN_004aded0(pCStack_1c);
         if (iVar3 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
                   (pCStack_1c,&g_CDemonSet_PTR_005be368->collision_impact_position);

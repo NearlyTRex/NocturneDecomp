@@ -83,8 +83,8 @@ extern CVector3f g_CVector3f_ARRAY_01cc92a8[32];
 extern SBat g_SBat_ARRAY_01ccdeec[30];
 
 // char*
-extern char* g_CHAR_PTR_01cc4800;
+extern char* g_CurrentFilename;
 
 // int
-extern int g_INT_01cc4804;
+extern int g_CurrentLineNumber;
 

@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_00596b9f
 ;   TerminatedCString s_Invalid_dotted_decimal_s_00596bb6
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   support_trisock.cpp_parseIPComponents_FUN_00548bf0
 ;
 ; *****************************************************************************
@@ -47,10 +47,10 @@ section .text
     MOV ECX,0x596b9f                    ; 00548b12 | = "..\\support\\trisock.cpp"
     MOV ESI,0x36                        ; 00548b17
     PUSH 0x596bb6                       ; 00548b1c | = "Invalid dotted decimal string: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 00548b21 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00548b27 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00548b2d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00548b21 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00548b27 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00548b2d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 00548b32
     POP ESI                             ; 00548b35
     POP EDI                             ; 00548b36

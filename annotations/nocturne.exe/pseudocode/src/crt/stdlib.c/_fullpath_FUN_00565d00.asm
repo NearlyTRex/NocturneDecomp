@@ -12,7 +12,7 @@
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c8cd
 ;   crt_io.c_getTempDirectory_FUN_005687bc at 00568807
 ;   engine_dosio.cpp_findFileNormally_FUN_00456800 at 00456832
-;   engine_pod.cpp_FUN_004f7ae0 at 004f7b12
+;   engine_pod.cpp_CPodFile_FUN_004f7ae0 at 004f7b12
 ;   shape_edittool.cpp_FUN_00474ae0 at 00474c2c
 ;
 ; Referenced Globals:
@@ -23,9 +23,9 @@
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
 ;   crt_errno.c_setErrno_FUN_00568e80
+;   crt_memory.c_free_FUN_005638d0
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_string.c__stricmp_FUN_00564520
-;   crt_unknown.c_FUN_005638d0
 ;   crt_watcom.c_getcwd_FUN_0056c5f0
 ;   GetFullPathNameA
 ;
@@ -95,8 +95,8 @@ section .text
     JNC 0x00565d8d                      ; 00565d6e
         ;   XREF to: 00565d8d (CONDITIONAL_JUMP)  ; LAB_00565d8d
     PUSH EBP                            ; 00565d70
-    CALL crt_unknown.c_FUN_005638d0     ; 00565d71
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00565d71
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00565d76
     PUSH 0xe                            ; 00565d79
     CALL crt_errno.c_setErrno_FUN_00568e80 ; 00565d7b

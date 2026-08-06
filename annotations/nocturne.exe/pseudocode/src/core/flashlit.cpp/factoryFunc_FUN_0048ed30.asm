@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flashlit.cpp_CFlashlight_ctor_FUN_0048ed60
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x570                          ; 0048ed30
         ;   Label: core_flashlit.cpp_factoryFunc_FUN_0048ed30
-    CALL crt_unknown.c_FUN_0056497c     ; 0048ed35
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 0048ed35
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 0048ed3a
     TEST EAX,EAX                        ; 0048ed3d
     JNZ 0x0048ed42                      ; 0048ed3f

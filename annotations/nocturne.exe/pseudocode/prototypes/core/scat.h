@@ -71,17 +71,17 @@ void CScat::handlePureVirtualCall(int param_1,undefined4 param_2);
 // Address: 004fcd40
 int __cdecl CScat::isWeaponReady(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_004fcd90
+// Original: core_scat.cpp_CScat_FUN_004fcd90
 // Address: 004fcd90
-void __cdecl FUN_004fcd90(CScat *this_ptr,float delta_time);
+void __cdecl CScat(CScat *this_ptr,float delta_time);
 
 // Original: core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0
 // Address: 004fcff0
 void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_004fd1d0
+// Original: core_scat.cpp_CScat_FUN_004fd1d0
 // Address: 004fd1d0
-void __cdecl FUN_004fd1d0(CScat *this_ptr,int hand_index);
+void __cdecl CScat(CScat *this_ptr,int hand_index);
 
 // Original: core_scat.cpp_CScat_updateAiming_FUN_004fd450
 // Address: 004fd450
@@ -91,9 +91,9 @@ void __cdecl CScat::updateAiming(CScat *this_ptr,float delta_time,int is_holster
 // Address: 004fda20
 int __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int hand_index);
 
-// Original: core_scat.cpp_FUN_004fdd00
+// Original: core_scat.cpp_CScat_FUN_004fdd00
 // Address: 004fdd00
-void __cdecl FUN_004fdd00(CScat *this_ptr);
+void __cdecl CScat(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_004fde30
 // Address: 004fde30

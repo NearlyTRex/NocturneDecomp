@@ -23,7 +23,7 @@ section .text
     ADD EAX,0x98                        ; 004d6576
     PUSH EAX                            ; 004d657b
     CALL core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90 ; 004d657c
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; SClipPlane * core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane * objs, uint flags)
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; SClipPlane * core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d6581
     SUB EAX,0x98                        ; 004d6584
     RET                                 ; 004d6589

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -58,20 +58,14 @@
       {
         "category": "type_error",
         "column": 29,
-        "line": 30,
+        "line": 32,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 61,
+        "line": 63,
         "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "format_error",
-        "column": 32,
-        "line": 82,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -80,12 +74,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 135,
+    "complexity_score": 138,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 78,
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -93,7 +87,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 247
+    "total_lines": 250
   },
   "cross_references": [],
   "function": {
@@ -136,7 +130,7 @@
     },
     {
       "addr": "00563c90",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
@@ -352,7 +346,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 23,
+      "line": 25,
       "match": "5.8789082188252795e-39",
       "severity": "mild",
       "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
@@ -360,7 +354,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 23,
+      "line": 25,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
@@ -368,7 +362,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 54,
+      "line": 56,
       "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
       "severity": "moderate",
       "text": "if (this_ptr == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",

@@ -62,7 +62,8 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
     }
   }
   if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) ||
-     (iVar3 = core_charactr_cpp_FUN_004259f0((CCharacter *)this_ptr,delta_time), iVar3 == 0)) {
+     (iVar3 = core_charactr_cpp_CCharacter_FUN_004259f0((CCharacter *)this_ptr,delta_time),
+     iVar3 == 0)) {
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
@@ -87,7 +88,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   if (this_ptr->summoned == 0) {
     return;
   }
-  iVar3 = core_charactr_cpp_FUN_00428c00((CCharacter *)this_ptr,delta_time);
+  iVar3 = core_charactr_cpp_CCharacter_FUN_00428c00((CCharacter *)this_ptr,delta_time);
   pCVar9 = &(this_ptr->base).base.model;
   if (iVar3 == 0) {
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -207,7 +208,7 @@ switchD_00410a6d_default:
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);
   pCVar9 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(pCVar9);
-  blend_callback = core_skeleton_cpp_FUN_0051b650;
+  blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
   fVar10 = this_ptr->head_blend_weight;
   iVar3 = DAT_007642e8;
   core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_rotation,&local_a4);
@@ -222,7 +223,7 @@ switchD_00410a6d_default:
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0
             (pCVar9,source_quaternions,fVar10,iVar3,blend_callback);
   iVar3 = 0;
-  core_charactr_cpp_FUN_0042a150((CCharacter *)this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_FUN_0042a150((CCharacter *)this_ptr,delta_time);
   do {
     local_60.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-2.0,2.0);
     iVar3 = iVar3 + 1;

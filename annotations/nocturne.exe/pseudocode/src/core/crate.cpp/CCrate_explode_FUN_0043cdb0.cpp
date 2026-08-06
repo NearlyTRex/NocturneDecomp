@@ -25,8 +25,9 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(CCrate *this_ptr)
     CStack_10.z = (this_ptr->base).location.position.z;
   }
   CStack_10.y = (CStack_28.max.y - CStack_28.min.y) + CStack_10.y;
-  core_fire_cpp_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,&CStack_10,32.0,1500.0,4.0);
-  core_mission_cpp_FUN_004d9110(g_CDemonMission_PTR_005baf90,this_ptr,1);
+  core_fire_cpp_CFireEffect_FUN_0048c0d0(g_CFireEffect_PTR_005b80f0,&CStack_10,32.0,1500.0,4.0);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
+            (g_CDemonMission_PTR_005baf90,this_ptr,1);
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   return;
 }

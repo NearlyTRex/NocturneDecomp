@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_actor_cpp_FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3)
+; void core_actor_cpp_FUN_0040bd90(char *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
@@ -29,7 +29,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -60,10 +60,10 @@ section .text
     MOV EAX,0x577853                    ; 0040bdb9 | = "..\\core\\actor.cpp"
     MOV EDX,0x71d                       ; 0040bdbe
     PUSH 0x577865                       ; 0040bdc3 | = "Invalid actor pointer %08X detected a..."
-    MOV [0x01cc4800],EAX                ; 0040bdc8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040bdcd | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040bdd3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0040bdc8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0040bdcd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040bdd3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 0040bdd8
     MOV EDI,dword ptr [EBX + 0x68]      ; 0040bddb
         ;   Label: LAB_0040bddb
@@ -77,8 +77,8 @@ section .text
     MOV EDX,0x727                       ; 0040bdf0
     MOV ESI,EBX                         ; 0040bdf5
     PUSH 0x763e10                       ; 0040bdf7 | DAT_00763e10
-    MOV [0x01cc4800],EAX                ; 0040bdfc | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | g_INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040bdfc | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0040be01 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040be07
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040be0c
@@ -99,8 +99,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0040be2f
     PUSH EDI                            ; 0040be32
     PUSH 0x5778aa                       ; 0040be33 | = "Dangling/corrupt actor pointer detect..."
-    CALL core_main.c_FUN_004c8440       ; 0040be38
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040be38
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x18                        ; 0040be3d
     LEA EAX,[EBX + 0x20]                ; 0040be40
         ;   Label: LAB_0040be40
@@ -133,8 +133,8 @@ section .text
     MOV EDX,0x732                       ; 0040be86
     MOV EDI,0x763e10                    ; 0040be8b | DAT_00763e10
     PUSH 0x763e10                       ; 0040be90 | DAT_00763e10
-    MOV [0x01cc4800],EAX                ; 0040be95 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | g_INT_01cc4804
+    MOV [0x01cc4800],EAX                ; 0040be95 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 0040be9a | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bea0
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bea5
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x18]      ; 0040bec5
     PUSH ESI                            ; 0040bec8
     PUSH 0x57791a                       ; 0040bec9 | = "Dangling/corrupt actor pointer detect..."
-    CALL core_main.c_FUN_004c8440       ; 0040bece
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040bece
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x2c                        ; 0040bed3
     MOV dword ptr [EBP + -0x4],EBX      ; 0040bed6
         ;   Label: LAB_0040bed6
@@ -185,8 +185,8 @@ section .text
     MOV ESI,0x577975                    ; 0040bf11 | = "..\\core\\actor.cpp"
     MOV EDI,0x740                       ; 0040bf16
     PUSH 0x763e10                       ; 0040bf1b | DAT_00763e10
-    MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | g_INT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 0040bf20 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0040bf26 | g_CurrentLineNumber
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0040bf2c
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0040bf31
@@ -212,8 +212,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 0040bf5e
     PUSH EDX                            ; 0040bf61
     PUSH 0x577987                       ; 0040bf62 | = "Dangling/corrupt actor pointer detect..."
-    CALL core_main.c_FUN_004c8440       ; 0040bf67
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040bf67
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x2c                        ; 0040bf6c
     MOV EDX,dword ptr [EBP + -0x8]      ; 0040bf6f
         ;   Label: LAB_0040bf6f
@@ -241,10 +241,10 @@ section .text
     MOV EDX,0x577819                    ; 0040bf96 | = "..\\core\\actor.cpp"
     MOV ECX,0x719                       ; 0040bf9b
     PUSH 0x57782b                       ; 0040bfa0 | = "NULL actor pointer detected, %s line %d"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040bfa5 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040bfab | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0040bfb1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040bfa5 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ECX      ; 0040bfab | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0040bfb1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 0040bfb6
     JMP 0x0040bda4                      ; 0040bfb9
         ;   XREF to: 0040bda4 (UNCONDITIONAL_JUMP)  ; LAB_0040bda4

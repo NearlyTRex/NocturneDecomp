@@ -39,9 +39,9 @@ void __cdecl CCurtain::solveConstraints(CCurtain *this_ptr,SCurtainVertex *verte
 // Address: 0043ebf0
 void __cdecl CCurtain::process(CCurtain *this_ptr,float delta_time);
 
-// Original: core_curtain.cpp_FUN_0043f330
+// Original: core_curtain.cpp_CCurtain_FUN_0043f330
 // Address: 0043f330
-int __cdecl FUN_0043f330(CCurtain *this_ptr);
+int __cdecl CCurtain(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_renderOpaque_FUN_0043f610
 // Address: 0043f610
@@ -83,10 +83,10 @@ SCurtainVertex * __cdecl SCurtainVertex::dtor(SCurtainVertex *this_ptr,uint flag
 // Address: 0043f970
 SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
 
-// Original: core_curtain.cpp_FUN_0043f980
+// Original: core_curtain.cpp_SCurtainVertex_arrdtor_FUN_0043f980
 // Address: 0043f980
-SCurtainVertex * __cdecl FUN_0043f980(SCurtainVertex *objs,uint flags);
+SCurtainVertex * __cdecl SCurtainVertex::arrdtor(SCurtainVertex *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0
 // Address: 0043f9a0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

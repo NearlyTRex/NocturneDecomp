@@ -12,7 +12,7 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050184e
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_0050e550
+;   core_set.cpp_CDemonSet_FUN_0050e550
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EDX                            ; 0050e5b4
     PUSH EBX                            ; 0050e5b5
     PUSH EDI                            ; 0050e5b6
-    CALL core_set.cpp_FUN_0050e550      ; 0050e5b7
-        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e550()
+    CALL core_set.cpp_CDemonSet_FUN_0050e550 ; 0050e5b7
+        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e550(CDemonSet * this_ptr, int param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0050e5bc
     JMP 0x0050e59e                      ; 0050e5bf
         ;   XREF to: 0050e59e (UNCONDITIONAL_JUMP)  ; LAB_0050e59e

@@ -7,13 +7,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_menu_cpp_00588d42
 ;   TerminatedCString s_Too_many_custom_keys_00588d53
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cc8120
 ;   undefined4 DAT_01cc8124
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -61,10 +61,10 @@ section .text
     MOV ECX,0x588d42                    ; 004d28d4 | = "..\\core\\menu.cpp"
     MOV EBX,0x827                       ; 004d28d9
     PUSH 0x588d53                       ; 004d28de | = "Too many custom keys!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004d28e3 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d28e9 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004d28ef
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d28e3 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 004d28e9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d28ef
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d28f4
     POP EBX                             ; 004d28f7
     JMP 0x004d288b                      ; 004d28f8

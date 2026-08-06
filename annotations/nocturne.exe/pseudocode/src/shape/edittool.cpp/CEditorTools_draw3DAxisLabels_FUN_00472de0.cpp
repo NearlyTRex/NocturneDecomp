@@ -53,9 +53,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   
   bVar7 = 0;
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\shape\\edittool.cpp";
-    g_INT_01cc4804 = 0x8b;
-    core_main_c_FUN_004c8440();
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 139;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);

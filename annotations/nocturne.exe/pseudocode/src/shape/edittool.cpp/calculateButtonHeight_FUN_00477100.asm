@@ -12,15 +12,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_005b7620
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
 ;
@@ -39,10 +39,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 00477110 | = "..\\shape\\edittool.cpp"
     MOV ESI,0x8b                        ; 00477115
     PUSH 0x57e510                       ; 0047711a | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047711f | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00477125 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0047712b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047711f | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],ESI      ; 00477125 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0047712b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00477130
     POP ESI                             ; 00477133
     MOV EAX,[0x01bcd070]                ; 00477134 | DAT_01bcd070
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 0047717b (CONDITIONAL_JUMP)  ; LAB_0047717b
     MOV ECX,dword ptr [0x01bcd070]      ; 00477159 | DAT_01bcd070
     MOV ECX,dword ptr [ECX + 0x316c]    ; 0047715f
-    MOV EAX,[0x005b7620]                ; 00477165 | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 00477165 | g_WindowHeight
         ;   Label: LAB_00477165
     MOV EDX,EAX                         ; 0047716a
     MOV EBX,0x50                        ; 0047716c

@@ -32,6 +32,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
   char *pcVar17;
   char *pcVar18;
   byte bVar19;
+  float local_a88;
   char local_a84 [255];
   char local_985 [101];
   char local_920 [99];
@@ -82,7 +83,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
   int local_90;
   int local_8c;
   int local_88;
-  float local_84;
+  float local_84 [4];
   int local_74;
   int local_70;
   int local_6c;
@@ -205,7 +206,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
     iVar7 = _stricmp(local_150,"exists");
     if (iVar7 == 0) {
       local_6c = -1;
-      sscanf(expression + *parse_position," ( %[^ )] )%n");
+      sscanf
+                (expression + *parse_position," ( %[^ )] )%n",acStack_2e1 + 1,&local_6c);
       if (local_6c < 3) {
         pcVar17 = "Error parsing exists parameters.";
         pcVar18 = &DAT_01c08b60;
@@ -277,7 +279,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
           return -1;
         }
         local_b8 = -1;
-        sscanf(expression + *parse_position," (%[^)])%n");
+        sscanf
+                  (expression + *parse_position," (%[^)])%n",acStack_7f5 + 1,&local_b8);
         if (local_b8 < 3) {
           pcVar17 = "Error parsing hasItem parameters.";
           pcVar18 = &DAT_01c08b60;
@@ -332,7 +335,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
         iVar7 = _stricmp(local_150,"hasItemType");
         if (iVar7 == 0) {
           local_ac = -1;
-          sscanf(expression + *parse_position," (%[^,], %[^)] )%n");
+          sscanf
+                    (expression + *parse_position," (%[^,], %[^)] )%n",acStack_72d + 1,local_6c9 + 1,
+                     &local_ac);
           if (local_ac < 5) {
             pcVar17 = "Error parsing hasItemType parameters.";
             pcVar18 = &DAT_01c08b60;
@@ -434,7 +439,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             return -1;
           }
           local_a4 = -1;
-          sscanf(expression + *parse_position," ( %d )%n");
+          sscanf
+                    (expression + *parse_position," ( %d )%n",&local_a0,&local_a4);
           if (local_a4 < 3) {
             pcVar17 = "Error parsing hasKeyMask parameters.";
             pcVar18 = &DAT_01c08b60;
@@ -496,7 +502,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
           iVar7 = _stricmp(local_150,"isBroken");
           if (iVar7 == 0) {
             local_9c = -1;
-            sscanf(expression + *parse_position," (%[^)])%n");
+            sscanf
+                      (expression + *parse_position," (%[^)])%n",acStack_59d + 1,&local_9c);
             if (local_9c < 3) {
               pcVar17 = "Error parsing isBroken parameters.";
               pcVar18 = &DAT_01c08b60;
@@ -557,7 +564,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
           iVar7 = _stricmp(local_150,"isCurrentCamera");
           if (iVar7 == 0) {
             local_94 = -1;
-            sscanf(expression + *parse_position," ( %[^ )] )%n");
+            sscanf
+                      (expression + *parse_position," ( %[^ )] )%n",local_858,&local_94);
             if (local_94 < 3) {
               pcVar17 = "Error parsing icCurrentCamera parameters.";
               pcVar18 = &DAT_01c08b60;
@@ -588,7 +596,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             iVar7 = _stricmp(local_150,"isDead");
             if (iVar7 == 0) {
               local_90 = -1;
-              sscanf(expression + *parse_position," ( %[^ )] )%n");
+              sscanf
+                        (expression + *parse_position," ( %[^ )] )%n",local_600,&local_90);
               if (local_90 < 3) {
                 pcVar17 = "Error parsing isDead parameters.";
                 pcVar18 = &DAT_01c08b60;
@@ -627,7 +636,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             iVar7 = _stricmp(local_150,"isFadeFinished");
             if (iVar7 == 0) {
               local_8c = -1;
-              sscanf(expression + *parse_position," ( )%n");
+              sscanf(expression + *parse_position," ( )%n",&local_8c);
               this_ptr_00 = g_CGame_PTR_005b9354;
               if (local_8c < 2) {
                 pcVar17 = "Error parsing isFadeFinished function.";
@@ -652,7 +661,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
               iVar7 = _stricmp(local_150,"isInRange");
               if (iVar7 == 0) {
                 local_88 = -1;
-                sscanf(expression + *parse_position," ( %n");
+                sscanf(expression + *parse_position," ( %n",&local_88)
+                ;
                 if (local_88 < 1) {
                   pcVar17 = "Error parsing isInRange parameters.";
                   pcVar18 = &DAT_01c08b60;
@@ -676,7 +686,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   return -1;
                 }
                 local_88 = -1;
-                sscanf(expression + *parse_position," , %n");
+                sscanf(expression + *parse_position," , %n",&local_88)
+                ;
                 if (local_88 < 1) {
                   pcVar17 = "Error parsing isInRange parameters.";
                   pcVar18 = &DAT_01c08b60;
@@ -698,7 +709,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                                     (expression,parse_position,&local_ec);
                   if (-1 < iVar8) {
                     local_88 = -1;
-                    sscanf(expression + *parse_position," , %f )%n");
+                    sscanf
+                              (expression + *parse_position," , %f )%n",local_84,&local_88);
                     if (local_88 < 3) {
                       pcVar17 = "Error parsing isInRange parameters.";
                       pcVar18 = &DAT_01c08b60;
@@ -724,7 +736,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                                              + (local_104.y - local_ec.y) *
                                                (local_104.y - local_ec.y) +
                                                (local_104.x - local_ec.x) *
-                                               (local_104.x - local_ec.x)) <= local_84);
+                                               (local_104.x - local_ec.x)) <= local_84[0]);
                     }
                     goto LAB_0047e580;
                   }
@@ -734,7 +746,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
               iVar7 = _stricmp(local_150,"isOfType");
               if (iVar7 == 0) {
                 local_70 = -1;
-                sscanf(expression + *parse_position," ( %[^ ,] , %[^ )] )%n");
+                sscanf
+                          (expression + *parse_position," ( %[^ ,] , %[^ )] )%n",acStack_40d + 1,local_985 + 1,
+                           &local_70);
                 if (local_70 < 3) {
                   pcVar17 = "Error parsing isOfType parameters.";
                   pcVar18 = &DAT_01c08b60;
@@ -820,7 +834,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
               iVar7 = _stricmp(local_150,"isFacing");
               if (iVar7 == 0) {
                 local_60 = -1;
-                sscanf(expression + *parse_position," (%[^,], %[^,)]%n");
+                sscanf
+                          (expression + *parse_position," (%[^,], %[^,)]%n",acStack_4d5 + 1,local_3a9 + 1,
+                           &local_60);
                 if (local_60 < 5) {
                   pcVar17 = "Error parsing isFacing parameters.";
                   pcVar18 = &DAT_01c08b60;
@@ -897,9 +913,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   return -1;
                 }
                 *parse_position = *parse_position + local_60;
+                local_a88 = 45.0;
                 if (expression[*parse_position] == ',') {
                   local_60 = -1;
-                  sscanf(expression + *parse_position,",%f %n");
+                  sscanf
+                            (expression + *parse_position,",%f %n",&local_a88,&local_60);
                   if (local_60 < 2) {
                     pcVar17 = "Error parsing isFacing parameters.";
                     pcVar18 = &DAT_01c08b60;
@@ -916,7 +934,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  if (180 < 45.0) {
+                  if (((double)local_a88 < 0.0) || (180 < (double)local_a88)) {
                     pcVar17 = "isFacing() angle must be in range 0..180.";
                     pcVar18 = &DAT_01c08b60;
                     do {
@@ -962,7 +980,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   local_110.y = 0.0;
                   pCVar14 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                                       (&local_f8,&local_110);
-                  if ((float)3.1415926535000001 * 45.0 * (float)0.0055555555555555497 < ABS(pCVar14->y)) {
+                  if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar14->y))
+                  {
                     local_dc = 0;
                   }
                   else {
@@ -974,7 +993,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                 iVar7 = _stricmp(local_150,"isLightOn");
                 if (iVar7 == 0) {
                   local_54 = -1;
-                  sscanf(expression + *parse_position," ( %[^ )] )%n");
+                  sscanf
+                            (expression + *parse_position," ( %[^ )] )%n",local_920,&local_54);
                   if (local_54 < 3) {
                     pcVar17 = "Error parsing isLightOn parameters.";
                     pcVar18 = &DAT_01c08b60;
@@ -994,7 +1014,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
                             (g_CDemonSet_PTR_005be368,local_920,&local_4c,&local_48);
                   if (local_4c == (C3DSLight *)0x0) {
-                    _sprintf(local_a84,"Spotlight %s doesn't exist.");
+                    _sprintf(local_a84,"Spotlight %s doesn't exist.",local_920);
                     pcVar17 = local_a84;
                     pcVar18 = &DAT_01c08b60;
                     do {
@@ -1017,7 +1037,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                   iVar7 = _stricmp(local_150,"isNudityEnabled");
                   if (iVar7 == 0) {
                     local_44 = -1;
-                    sscanf(expression + *parse_position," ( )%n");
+                    sscanf
+                              (expression + *parse_position," ( )%n",&local_44);
                     if (local_44 < 2) {
                       pcVar17 = "Error parsing isNudityEnabled().";
                       pcVar18 = &DAT_01c08b60;
@@ -1041,7 +1062,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                     iVar7 = _stricmp(local_150,"isSfxActive");
                     if (iVar7 == 0) {
                       local_40 = -1;
-                      sscanf(expression + *parse_position," ( %[^ )] )%n");
+                      sscanf
+                                (expression + *parse_position," ( %[^ )] )%n",acStack_791 + 1,&local_40
+                                );
                       if (local_40 < 3) {
                         pcVar17 = "Error parsing isSfxActive parameters.";
                         pcVar18 = &DAT_01c08b60;
@@ -1094,7 +1117,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                       iVar7 = _stricmp(local_150,"isTalking");
                       if (iVar7 == 0) {
                         local_38 = -1;
-                        sscanf(expression + *parse_position," ( %[^ )] )%n");
+                        sscanf
+                                  (expression + *parse_position," ( %[^ )] )%n",local_27c,&local_38);
                         if (local_38 < 3) {
                           pcVar17 = "Error parsing isTalking parameters.";
                           pcVar18 = &DAT_01c08b60;
@@ -1133,8 +1157,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                         iVar7 = _stricmp(local_150,"isVictim");
                         if (iVar7 == 0) {
                           local_e0 = -1;
-                          sscanf(expression + *parse_position," ( %[^ )] )%n")
-                          ;
+                          sscanf
+                                    (expression + *parse_position," ( %[^ )] )%n",local_1b4,&local_e0);
                           if (local_e0 < 3) {
                             pcVar17 = "Error parsing isVictim parameters.";
                             pcVar18 = &DAT_01c08b60;
@@ -1191,8 +1215,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                                           (local_150,"isWeaponDrawn");
                         if (iVar7 == 0) {
                           local_d8 = -1;
-                          sscanf(expression + *parse_position," ( %[^ )] )%n")
-                          ;
+                          sscanf
+                                    (expression + *parse_position," ( %[^ )] )%n",local_470,&local_d8);
                           if (local_d8 < 3) {
                             pcVar17 = "Error parsing isWeaponDrawn parameters.";
                             pcVar18 = &DAT_01c08b60;
@@ -1231,7 +1255,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                           if (iVar7 == 0) {
                             local_20 = -1;
                             sscanf
-                                      (expression + *parse_position," ( %[^ )] )%n");
+                                      (expression + *parse_position," ( %[^ )] )%n",local_538,&local_20
+                                      );
                             if (local_20 < 3) {
                               pcVar17 = "Error parsing isWearingGasMask parameters.";
                               pcVar18 = &DAT_01c08b60;
@@ -1288,7 +1313,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                               }
                               local_18 = -1;
                               sscanf
-                                        (expression + *parse_position," ( %[^ )] )%n");
+                                        (expression + *parse_position," ( %[^ )] )%n",local_664,
+                                         &local_18);
                               if (local_18 < 3) {
                                 pcVar17 = "Error parsing reachedDest parameters.";
                                 pcVar18 = &DAT_01c08b60;
@@ -1329,7 +1355,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                             }
                             local_1c = -1;
                             sscanf
-                                      (expression + *parse_position," ( %f )%n");
+                                      (expression + *parse_position," ( %f )%n",&local_d4,
+                                       &local_1c);
                             if (local_1c < 3) {
                               pcVar17 = "Error parsing randBool parameters.";
                               pcVar18 = &DAT_01c08b60;
@@ -1363,7 +1390,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
     goto LAB_0047e580;
   }
   local_c0 = -1;
-  sscanf(expression + *parse_position," ( %s %s %[^ )] )%n");
+  sscanf
+            (expression + *parse_position," ( %s %s %[^ )] )%n",acStack_8bd + 1,local_219 + 1,
+             local_345 + 1,&local_c0);
   if (local_c0 < 3) {
     pcVar17 = "Error parsing cmp parameters.";
     pcVar18 = &DAT_01c08b60;
@@ -1502,12 +1531,12 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
     return -1;
   }
   *parse_position = *parse_position + local_c0;
-  iVar9 = sscanf(acStack_8bd + 1,"%d");
+  iVar9 = sscanf(acStack_8bd + 1,"%d",&local_c4);
   iVar8 = local_c4;
   if (iVar9 != 1) {
     iVar8 = core_event_cpp_CEventList_getCounterValue_FUN_004807e0(0x01C03A10,acStack_8bd + 1);
   }
-  iVar9 = sscanf(local_345 + 1,"%d");
+  iVar9 = sscanf(local_345 + 1,"%d",&local_74);
   if (iVar9 == 1) {
     switch(iVar7) {
     case 0:
@@ -1536,9 +1565,9 @@ switchD_0047e565_caseD_5:
       break;
     default:
 switchD_0047e565_default:
-      g_CHAR_PTR_01cc4800 = "..\\core\\event.cpp";
-      g_INT_01cc4804 = 0x765;
-      core_main_c_FUN_004c8440("Hell froze.");
+      g_CurrentFilename = "..\\core\\event.cpp";
+      g_CurrentLineNumber = 1893;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze.");
     }
 LAB_0047e580:
     while (((&DAT_005c168c)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {

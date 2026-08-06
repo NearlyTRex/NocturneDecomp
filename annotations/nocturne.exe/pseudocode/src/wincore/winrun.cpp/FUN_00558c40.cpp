@@ -28,9 +28,9 @@ void wincore_winrun_cpp_FUN_00558c40(void)
     _DAT_02de0858 = 0xff;
   }
   _DAT_01c00c70 =
-       (uint)(byte)(&DAT_01bf7720)
-                   [((int)((_DAT_02de0858 + (_DAT_02de0858 >> 0x1f) * -8) -
-                          (uint)((_DAT_02de0858 >> 0x1f) << 2 < 0)) >> 3) * 0x20];
+       (uint)g_ColorCubeLookup
+             [((int)((_DAT_02de0858 + (_DAT_02de0858 >> 0x1f) * -8) -
+                    (uint)((_DAT_02de0858 >> 0x1f) << 2 < 0)) >> 3) * 0x20];
   iVar1 = -5;
   do {
     y = _DAT_01bd1d90 + iVar1;

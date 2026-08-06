@@ -39,10 +39,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_setcolid.cpp_CDemonSet_FUN_0050f910 at 0050f9de
+;   core_setcolid.cpp_CDemonSet_FUN_0050fc90 at 0050fcf6
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00 at 0050fbb4
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30 at 0050fa77
-;   core_setcolid.cpp_FUN_0050f910 at 0050f9de
-;   core_setcolid.cpp_FUN_0050fc90 at 0050fcf6
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740

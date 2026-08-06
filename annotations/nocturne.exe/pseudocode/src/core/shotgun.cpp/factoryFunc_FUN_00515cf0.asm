@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_shotgun.cpp_CShotgun_ctor_FUN_00515d20
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x57c                          ; 00515cf0
         ;   Label: core_shotgun.cpp_factoryFunc_FUN_00515cf0
-    CALL crt_unknown.c_FUN_0056497c     ; 00515cf5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00515cf5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 00515cfa
     TEST EAX,EAX                        ; 00515cfd
     JNZ 0x00515d02                      ; 00515cff

@@ -5,7 +5,7 @@
 
 // Original: crt_stdio.c_fscanf_FUN_00563350
 // Address: 00563350
-int __cdecl fscanf(_FILE *file,char *format);
+int __cdecl fscanf(_FILE *file,char *format,...) __attribute__((format(scanf, 2, 3)));
 
 // Original: crt_stdio.c_fclose_FUN_00563380
 // Address: 00563380
@@ -25,11 +25,11 @@ SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_sprintf_FUN_00563c90
 // Address: 00563c90
-int __cdecl sprintf(char *buffer,char *format);
+int __cdecl sprintf(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_fprintf_FUN_005644f0
 // Address: 005644f0
-void fprintf(undefined4 param_1,undefined4 param_2);
+int __cdecl fprintf(_FILE *file,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_fgetc_FUN_00564570
 // Address: 00564570
@@ -42,6 +42,10 @@ int __cdecl ungetc(int character,_FILE *stream);
 // Original: crt_stdio.c_fgets_FUN_00564b20
 // Address: 00564b20
 char * __cdecl fgets(char *str,int num,_FILE *stream);
+
+// Original: crt_stdio.c_printf_FUN_00564c30
+// Address: 00564c30
+int __cdecl printf(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: crt_stdio.c_fopen_FUN_0056568c
 // Address: 0056568c
@@ -61,11 +65,11 @@ int __cdecl fseek(_FILE *file,long offset,int whence);
 
 // Original: crt_stdio.c_fflush_FUN_00565e59
 // Address: 00565e59
-void __cdecl fflush(_FILE *stream);
+int __cdecl fflush(_FILE *stream);
 
 // Original: crt_stdio.c_sscanf_FUN_00566b5c
 // Address: 00566b5c
-int __cdecl sscanf(char *str,char *format);
+int __cdecl sscanf(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));
 
 // Original: crt_stdio.c_fputc_FUN_00566cc0
 // Address: 00566cc0

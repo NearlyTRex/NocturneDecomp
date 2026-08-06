@@ -17,8 +17,8 @@ void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(CDemonFilter
   if (puVar1 != (uchar *)0x0) {
     return;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\dfilter.cpp";
-  g_INT_01cc4804 = 0x8d;
-  core_main_c_FUN_004c8440("CDemonFilter::allocMemory - Out of memory");
+  g_CurrentFilename = "..\\core\\dfilter.cpp";
+  g_CurrentLineNumber = 141;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonFilter::allocMemory - Out of memory");
   return;
 }

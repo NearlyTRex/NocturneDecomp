@@ -16,16 +16,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   CWinFont *pCVar3;
   CWinFont *pCVar4;
   
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b98f8 = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x41;
-    core_main_c_FUN_004c8440("Medium font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 65;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Medium font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b98f8,"nocfont.raw",0x136,0x1ae,0);
@@ -38,16 +38,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   g_CBitFont_PTR_014b98f8->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b98fc = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x51;
-    core_main_c_FUN_004c8440("Tiny font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 81;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Tiny font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b98fc,"nocsmall.raw",0xf8,0x158,0);
@@ -59,16 +59,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   g_CBitFont_PTR_014b98fc->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b9900 = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x60;
-    core_main_c_FUN_004c8440("Theme font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 96;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Theme font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b9900,"menufont.raw",0xfa,0x23f,0);
@@ -82,16 +82,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   g_CBitFont_PTR_014b9900->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b9904 = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x71;
-    core_main_c_FUN_004c8440("Debug font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 113;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Debug font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b9904,"fnte_pfd.RAW",0x94,0xec,0);
@@ -104,16 +104,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
   _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b9908 = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x84;
-    core_main_c_FUN_004c8440("Console font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 132;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Console font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b9908,"fnte_f.RAW",0x94,0xec,0xff);
@@ -125,16 +125,16 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
   _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
-  pCVar1 = (CBitFont *)FUN_0056497c(0x3198);
+  pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
     pCVar2 = engine_font_cpp_CBitFont_ctor_FUN_0048fe10(pCVar1);
   }
   g_CBitFont_PTR_014b990c = pCVar2;
   if (pCVar2 == (CBitFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0x96;
-    core_main_c_FUN_004c8440("Micro font object not allocated!");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 150;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Micro font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (g_CBitFont_PTR_014b990c,"micro.raw",0x94,0xec,0);
@@ -149,61 +149,61 @@ void __cdecl core_dfont_cpp_FUN_0044c560(void)
   if (_DAT_01d16810 == 0) {
     return;
   }
-  pCVar3 = (CWinFont *)FUN_0056497c(0x13c);
+  pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xe,2,2);
   }
   _DAT_014b9910 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0xa6;
-    core_main_c_FUN_004c8440("initFonts - Can't allocate gMediumOSFont");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 166;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gMediumOSFont");
   }
   pCVar4 = _DAT_014b9910;
   pCVar2 = g_CBitFont_PTR_014b98f8;
   g_CBitFont_PTR_014b98f8->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)FUN_0056497c(0x13c);
+  pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0x12,0,0);
   }
   _DAT_014b9918 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0xac;
-    core_main_c_FUN_004c8440("initFonts - Can't allocate gThemeOSFont");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 172;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gThemeOSFont");
   }
   pCVar4 = _DAT_014b9918;
   pCVar2 = g_CBitFont_PTR_014b9900;
   g_CBitFont_PTR_014b9900->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)FUN_0056497c(0x13c);
+  pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xc,0,0);
   }
   _DAT_014b9914 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0xb2;
-    core_main_c_FUN_004c8440("initFonts - Can't allocate gTinyOSFont");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 178;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gTinyOSFont");
   }
   pCVar4 = _DAT_014b9914;
   pCVar2 = g_CBitFont_PTR_014b98fc;
   g_CBitFont_PTR_014b98fc->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
-  pCVar3 = (CWinFont *)FUN_0056497c(0x13c);
+  pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,10,0,0);
   }
   _DAT_014b991c = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\dfont.cpp";
-    g_INT_01cc4804 = 0xb8;
-    core_main_c_FUN_004c8440("initFonts - Can't allocate gDebugOSFont");
+    g_CurrentFilename = "..\\core\\dfont.cpp";
+    g_CurrentLineNumber = 184;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gDebugOSFont");
   }
   pCVar4 = _DAT_014b991c;
   pCVar2 = g_CBitFont_PTR_014b9904;

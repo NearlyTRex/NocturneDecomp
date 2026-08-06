@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -57,45 +57,15 @@
       },
       {
         "category": "incompatible_types",
-        "column": 11,
-        "line": 19,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 13,
-        "line": 34,
+        "line": 35,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 39,
+        "line": 40,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 45,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 59,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 67,
-        "message": "use of undeclared identifier '_DAT_005a1360'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_005a1360'"
       },
       {
         "category": "undeclared_identifier",
@@ -105,14 +75,26 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
+        "column": 69,
         "line": 70,
+        "message": "use of undeclared identifier '_DAT_005a1360'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 69,
+        "line": 71,
+        "message": "use of undeclared identifier '_DAT_005a1360'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 72,
         "message": "use of undeclared identifier '_DAT_014b7190'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 72,
+        "line": 74,
         "message": "use of undeclared identifier '_DAT_007f7370'"
       }
     ],
@@ -122,18 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 118,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 68,
-    "suspect_count": 4,
+    "pseudocode_lines": 70,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 233
+    "total_lines": 235
   },
   "cross_references": [],
   "function": {
@@ -194,9 +175,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b7650",
@@ -312,30 +293,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704),",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

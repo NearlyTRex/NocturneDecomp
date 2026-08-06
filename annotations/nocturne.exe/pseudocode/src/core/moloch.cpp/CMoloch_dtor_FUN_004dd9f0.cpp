@@ -11,12 +11,12 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CMoloch *this_ptr,ui
 {
   CMorph *pCVar1;
   CDeformableModelInstance *pCVar2;
-  CMoloch *pCVar3;
-  void *ptr;
+  CMoloch *ptr;
+  void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CMolochTypeInfo_005a0c10);
-    shape_memdbg_cpp_free_FUN_00564486(ptr);
+    ptr_00 = __vec_delete(this_ptr,&g_CMolochTypeInfo_005a0c10);
+    shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
   (this_ptr->base).base.base.vtable._ub = &g_CMolochVTable._ub;
@@ -24,12 +24,12 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_004dd9f0(CMoloch *this_ptr,ui
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)
                       &pCVar1[-3].models[0].textures[2].textures[0].base.count,0);
-  pCVar3 = (CMoloch *)
-           core_hero_cpp_CHero_dtor_FUN_004b4800
-                     ((CHero *)(pCVar2[-0xf].bone_transform.bone_scales + 0x58),1);
+  ptr = (CMoloch *)
+        core_hero_cpp_CHero_dtor_FUN_004b4800
+                  ((CHero *)(pCVar2[-0xf].bone_transform.bone_scales + 0x58),1);
   if ((flags & 2) == 0) {
-    return pCVar3;
+    return ptr;
   }
-  FUN_00564494(pCVar3);
-  return pCVar3;
+  operator_delete(ptr);
+  return ptr;
 }

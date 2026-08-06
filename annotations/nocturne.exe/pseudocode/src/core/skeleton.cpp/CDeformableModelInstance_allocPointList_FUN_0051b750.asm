@@ -12,13 +12,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591b08
 ;   TerminatedCString s_CDeformableModelInstance_00591b1d
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-;   core_skeleton.cpp_FUN_0051b7d0
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     PUSH ESI                            ; 0051b751
     MOV EBX,dword ptr [ESP + 0xc]       ; 0051b752
     PUSH EBX                            ; 0051b756
-    CALL core_skeleton.cpp_FUN_0051b7d0 ; 0051b757
-        ;   XREF to: 0051b7d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051b7d0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0 ; 0051b757
+        ;   XREF to: 0051b7d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051b75c
     PUSH EBX                            ; 0051b75f
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020 ; 0051b760
@@ -59,10 +59,10 @@ section .text
     MOV ECX,0x591b08                    ; 0051b799 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x8fa                       ; 0051b79e
     PUSH 0x591b1d                       ; 0051b7a3 | = "CDeformableModelInstance::allocPointL..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051b7a8 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0051b7ae | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0051b7b4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051b7a8 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 0051b7ae | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051b7b4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x8                         ; 0051b7b9
     POP EDI                             ; 0051b7bc
     MOV dword ptr [EBX + 0x2230],0xffffffff ; 0051b7bd

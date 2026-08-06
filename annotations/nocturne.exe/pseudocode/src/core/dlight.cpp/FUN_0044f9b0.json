@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 69,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30'"
       },
       {
         "category": "type_error",
@@ -114,6 +108,12 @@
         "column": 15,
         "line": 79,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 24,
+        "line": 81,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 863,
+    "complexity_score": 729,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 213,
-    "suspect_count": 61,
+    "pseudocode_lines": 219,
+    "suspect_count": 47,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -139,13 +139,13 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 728
+    "total_lines": 734
   },
   "cross_references": [
     {
       "addr": "00509a80",
       "from_addr": "0050a1f0",
-      "name": "core_set.cpp_FUN_00509a80",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -328,9 +328,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "01b4d738",
@@ -351,7 +351,7 @@
       {
         "call_addr": "0050a1f0",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -362,7 +362,7 @@
       {
         "call_addr": "0050a213",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -980,14 +980,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)local_74);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 64,
       "match": "._0_4_",
@@ -1156,14 +1148,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_00460d10(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_1",
@@ -1202,14 +1186,6 @@
       "severity": "mild",
       "text": "* 4.6004211948482694e-315._0_4_) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_005ae704;",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -1292,100 +1268,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&CStack_e4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,local_48);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,local_48,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 149,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr->projected_vertex,&local_d8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 161,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_54);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 166,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_c8._8_4_ = (uint)ROUND(local_a0[1] * _DAT_0059c030);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 167,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(&DAT_005ae704->vertex_buffer_ptr[3].projected_vertex,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 169,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,texture);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 170,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "pCVar5 = DAT_005ae704;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 177,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "DAT_005ae704->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 209,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&CStack_e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -1413,7 +1301,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 192,
+      "line": 197,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",
@@ -1421,7 +1309,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 199,
+      "line": 204,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",

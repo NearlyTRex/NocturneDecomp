@@ -66,17 +66,17 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
     SetTextColor((HDC)this_ptr->device_context_handle,CStack_24);
     TextOutA((HDC)this_ptr->device_context_handle,0,0,text_string,~uVar7 - 1);
   }
-  if (this_ptr->right + x < DAT_005b761c) {
+  if (this_ptr->right + x < g_WindowWidth) {
     iVar3 = this_ptr->right;
   }
   else {
-    iVar3 = DAT_005b761c - x;
+    iVar3 = g_WindowWidth - x;
   }
-  if (this_ptr->top + y < DAT_005b7620) {
+  if (this_ptr->top + y < g_WindowHeight) {
     CStack_24 = this_ptr->top;
   }
   else {
-    CStack_24 = DAT_005b7620 - y;
+    CStack_24 = g_WindowHeight - y;
   }
   if (this_ptr->cached_string_width < iVar3) {
     iVar3 = this_ptr->cached_string_width;
@@ -90,7 +90,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
       iStack_1c = y;
       do {
         iVar4 = iStack_1c + this_ptr->y_offset1;
-        if ((-1 < iVar4) && (iVar4 < DAT_005b7620)) {
+        if ((-1 < iVar4) && (iVar4 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar3) {
             puVar9 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar4 * 4) + x * 2);
@@ -121,7 +121,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
       iStack_20 = y;
       do {
         iVar5 = iStack_20 + this_ptr->y_offset1;
-        if ((-1 < iVar5) && (iVar5 < DAT_005b7620)) {
+        if ((-1 < iVar5) && (iVar5 < g_WindowHeight)) {
           iVar6 = 0;
           if (0 < iVar3) {
             piVar10 = (int *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar5 * 4));

@@ -31,17 +31,18 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
   if (g_CGame_PTR_005b9354->render_mode == 2) {
     alpha = DAT_005b763c << 8;
   }
   else {
     lVar3 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-              (DAT_005ae704,(uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
+              (g_CDemonRenderer_PTR_005ae704,
+               (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
-  engine_drender_cpp_FUN_00460d10(DAT_005ae704);
+  engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
   local_14 = 0;
   if (0 < count) {
     do {
@@ -107,11 +108,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
       }
       if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
-                  (DAT_005ae704,&SStack_f4);
+                  (g_CDemonRenderer_PTR_005ae704,&SStack_f4);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
-                  (DAT_005ae704,&SStack_f4);
+                  (g_CDemonRenderer_PTR_005ae704,&SStack_f4);
       }
       local_14 = local_14 + 1;
       prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);

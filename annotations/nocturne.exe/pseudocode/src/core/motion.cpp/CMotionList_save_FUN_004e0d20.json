@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -68,10 +68,28 @@
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 80,
-        "message": "no matching function for call to '_fprintf'"
+        "category": "format_error",
+        "column": 30,
+        "line": 48,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 30,
+        "line": 50,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 18,
+        "line": 53,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 22,
+        "line": 70,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -80,17 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 105,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
-    "suspect_count": 1,
+    "pseudocode_lines": 92,
+    "suspect_count": 4,
     "suspect_types": [
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "sub84_truncation"
     ],
-    "total_lines": 384
+    "total_lines": 386
   },
   "cross_references": [],
   "function": {
@@ -108,7 +127,7 @@
   "function_calls": [
     {
       "addr": "005644f0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
     }
   ],
@@ -353,8 +372,32 @@
   },
   "suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 46,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 63,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar9`. Replace those `pSVar9->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 84,
+      "line": 75,
+      "match": "pSVar9 = (T *)(pSVar9->motion_name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar9 = (SMotion *)(pSVar9->motion_name + 8);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar9`. Replace those `pSVar9->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 86,
       "match": "pSVar9 = (T *)(pSVar9->motion_name + CONST)",
       "severity": "moderate",
       "text": "pSVar9 = (SMotion *)(pSVar9->motion_name + 4);",

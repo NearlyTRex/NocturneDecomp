@@ -39,8 +39,8 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(CLocation *locatio
   if (pCVar6 != (CHero *)0x0) {
     return pCVar6;
   }
-  g_CHAR_PTR_01cc4800 = "..\\core\\hero.cpp";
-  g_INT_01cc4804 = 0x34;
-  core_main_c_FUN_004c8440("closestHeroToPoint - no heros!");
+  g_CurrentFilename = "..\\core\\hero.cpp";
+  g_CurrentLineNumber = 52;
+  core_main_c_displayErrorAndQuit_FUN_004c8440("closestHeroToPoint - no heros!");
   return (CHero *)0x0;
 }

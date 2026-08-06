@@ -30,7 +30,8 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FU
   local_28 = input_ptr->x;
   local_24 = input_ptr->y;
   local_10 = output_ptr;
-  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(DAT_005ae704);
+  iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
+  ;
   if (iVar4 == 0) {
     lVar1 = (longlong)local_24 * (longlong)(this_ptr->inverted_matrix).m[1].x +
             (longlong)local_28 * (longlong)(this_ptr->inverted_matrix).m[0].x +

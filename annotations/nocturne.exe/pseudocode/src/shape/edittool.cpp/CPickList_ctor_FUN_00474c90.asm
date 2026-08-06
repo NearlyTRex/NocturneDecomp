@@ -7,8 +7,8 @@
 ; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[14]:
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a4f3b
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049defd
-;   core_game.cpp_FUN_004a4b50 at 004a4f3b
 ;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a223
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3af7
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d20db

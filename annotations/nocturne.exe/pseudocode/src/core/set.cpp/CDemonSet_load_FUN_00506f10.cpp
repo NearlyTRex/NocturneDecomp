@@ -26,6 +26,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   char local_c4 [100];
   CVector3f local_60;
   CVector3f local_54;
+  byte local_48 [4];
   float *local_44;
   int *local_40;
   float *local_3c;
@@ -46,15 +47,15 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   core_set_cpp_CDemonSet_clear_FUN_00506ec0(this_ptr);
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("models",filename,"rt");
   if (p_Var4 == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\core\\set.cpp";
-    g_INT_01cc4804 = 0x11b;
-    core_main_c_FUN_004c8440("CDemonSet::Unable to open %s",filename);
+    g_CurrentFilename = "..\\core\\set.cpp";
+    g_CurrentLineNumber = 283;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::Unable to open %s");
   }
-  _fscanf(p_Var4,"%d\n");
-  _fscanf(p_Var4,"%f\n");
-  _fscanf(p_Var4,"%s\n");
-  _fscanf(p_Var4,"%s\n");
-  _fscanf(p_Var4,"%f\n");
+  _fscanf(p_Var4,"%d\n",&this_ptr->set_file_version);
+  _fscanf(p_Var4,"%f\n",&this_ptr->set_scale_factor);
+  _fscanf(p_Var4,"%s\n",local_228);
+  _fscanf(p_Var4,"%s\n",local_128);
+  _fscanf(p_Var4,"%f\n",&this_ptr->min_ambient_value);
   if (this_ptr->set_file_version == 0) {
     _fgets(local_228,0xff,p_Var4);
     _fgets(local_228,0xff,p_Var4);
@@ -62,10 +63,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   if (this_ptr->set_file_version < 0x11) {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d,%d,%d,%d\n");
+    _fscanf(p_Var4,"%d,%d,%d,%d\n",local_48,&this_ptr->scene_fog,
+               &(this_ptr->scene_fog).color_index.g,&(this_ptr->scene_fog).color_index.b);
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%f,%f,%f\n");
-    _fscanf(p_Var4,"%f,%f,%f,%f\n");
+    _fscanf(p_Var4,"%f,%f,%f\n",&(this_ptr->scene_fog).scroll,&(this_ptr->scene_fog).scroll.y
+               ,&(this_ptr->scene_fog).scroll.z);
+    _fscanf(p_Var4,"%f,%f,%f,%f\n",&(this_ptr->scene_fog).height_threshold,
+               &(this_ptr->scene_fog).density_multiplier,local_48,local_48);
     (this_ptr->scene_fog).temperature = 50.0;
   }
   else {
@@ -73,9 +77,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
               (&this_ptr->scene_fog,p_Var4,this_ptr->set_file_version);
   }
   _fgets(local_228,0xff,p_Var4);
-  _fscanf(p_Var4,"%f,%f\n");
+  _fscanf(p_Var4,"%f,%f\n",0x02DD1210 + 1,0x02DD1210 + 2);
   _fgets(local_228,0xff,p_Var4);
-  _fscanf(p_Var4,"%d,%s\n");
+  _fscanf(p_Var4,"%d,%s\n",&this_ptr->use_enviro_model,this_ptr->enviro_model_name);
   if (this_ptr->set_file_version < 5) {
     iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
@@ -87,14 +91,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",0x02DD1210);
   }
   if (this_ptr->set_file_version < 6) {
     this_ptr->has_sky = 1;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->has_sky);
   }
   pcVar3 = this_ptr->sky_texture_name;
   if (this_ptr->set_file_version < 0xc) {
@@ -111,7 +115,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     this_ptr->sky_brightness = 0x4000;
   }
   else {
-    _fscanf(p_Var4,"%d,%s\n");
+    _fscanf(p_Var4,"%d,%s\n",&this_ptr->sky_brightness,pcVar3);
   }
   pcVar3 = this_ptr->world_geometry_name;
   if (this_ptr->set_file_version < 0xd) {
@@ -129,14 +133,15 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d,%s\n");
+    _fscanf(p_Var4,"%d,%s\n",&this_ptr->use_world_geometry_flag,pcVar3)
+    ;
   }
   if (this_ptr->set_file_version < 0x19) {
     this_ptr->weather_type = WEATHER_TYPE_NONE;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->weather_type);
   }
   iVar10 = _strnicmp(local_128,"train",5);
   this_ptr_00 = 0x02DD10C8;
@@ -152,7 +157,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
   }
   iVar10 = 0;
-  _fscanf(p_Var4,"%d\n");
+  _fscanf(p_Var4,"%d\n",&this_ptr->light_count);
   if (0 < this_ptr->light_count) {
     this_ptr_01 = this_ptr->lights;
     do {
@@ -165,7 +170,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
   }
   iVar10 = 0;
-  _fscanf(p_Var4,"%d\n");
+  _fscanf(p_Var4,"%d\n",this_ptr);
   if (0 < this_ptr->camera_count) {
     pCVar6 = this_ptr->cameras;
     do {
@@ -200,9 +205,9 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->default_room_size);
     iVar10 = 0;
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->room_count);
     if (0 < this_ptr->room_count) {
       local_38 = this_ptr->rooms;
       local_40 = &this_ptr->rooms[0].reverb_size;
@@ -213,12 +218,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
       local_20 = &this_ptr->rooms[0].position.y;
       local_44 = &this_ptr->rooms[0].position.z;
       do {
-        _fscanf(p_Var4,"%f,%f,%f\n");
-        _fscanf(p_Var4,"%f,%f,%f\n");
-        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n",local_38 + iVar10,local_20,local_44)
+        ;
+        _fscanf(p_Var4,"%f,%f,%f\n",local_18,local_2c,local_28);
+        _fscanf(p_Var4,"%f,%f,%f\n",&local_54,&local_54.z,&local_54.y);
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(pCVar8,&local_54);
         iVar10 = iVar10 + 1;
-        _fscanf(p_Var4,"%d\n");
+        _fscanf(p_Var4,"%d\n",local_40);
         pCVar8 = (CMatrix3x3f *)((int)(pCVar8 + 1) + 0x20);
         local_40 = local_40 + 0x11;
         local_18 = (CVector3f *)((int)(local_18 + 5) + 8);
@@ -258,14 +264,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->default_ground_type);
   }
   if (this_ptr->set_file_version < 0x18) {
     this_ptr->default_master_reverb = 0;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->default_master_reverb);
   }
   if ((3 < this_ptr->set_file_version) && (this_ptr->set_file_version < 10)) {
     core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(this_ptr,p_Var4);
@@ -276,7 +282,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   else {
     _fgets(local_228,0xff,p_Var4);
     iVar10 = 0;
-    _fscanf(p_Var4,"%d\n");
+    _fscanf(p_Var4,"%d\n",&this_ptr->vdir_box_count);
     if (0 < this_ptr->vdir_box_count) {
       local_34 = this_ptr->vdir_boxes;
       pCVar8 = &this_ptr->vdir_boxes[0].rotation_matrix;
@@ -286,9 +292,10 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
       local_24 = &this_ptr->vdir_boxes[0].position.y;
       local_14 = &this_ptr->vdir_boxes[0].position.z;
       do {
-        _fscanf(p_Var4,"%f,%f,%f\n");
-        _fscanf(p_Var4,"%f,%f,%f\n");
-        _fscanf(p_Var4,"%f,%f,%f\n");
+        _fscanf(p_Var4,"%f,%f,%f\n",local_34 + iVar10,local_24,local_14)
+        ;
+        _fscanf(p_Var4,"%f,%f,%f\n",local_1c,local_3c,local_30);
+        _fscanf(p_Var4,"%f,%f,%f\n",&local_60,&local_60.z,&local_60.y);
         iVar10 = iVar10 + 1;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(pCVar8,&local_60);
         pCVar8 = (CMatrix3x3f *)((int)(pCVar8 + 1) + 0x20);

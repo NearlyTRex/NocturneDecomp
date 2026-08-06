@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,27 +62,9 @@
         "message": "use of undeclared identifier '_DAT_02dd10cc'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 28,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 46,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 49,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 50,
+        "column": 58,
+        "line": 51,
         "message": "use of undeclared identifier 'stack0xffffffc4'"
       }
     ],
@@ -92,32 +74,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 121,
+    "complexity_score": 87,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "vector_type_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 138
+    "total_lines": 139
   },
   "cross_references": [
+    {
+      "addr": "00509a80",
+      "from_addr": "00509de0",
+      "name": "core_set.cpp_CDemonSet_FUN_00509a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00507c80",
       "from_addr": "00507de6",
       "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00509a80",
-      "from_addr": "00509de0",
-      "name": "core_set.cpp_FUN_00509a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -175,9 +156,9 @@
     },
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005ba8ec",
@@ -215,7 +196,7 @@
       {
         "call_addr": "00509de0",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00509a80",
+        "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -358,43 +339,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(DAT_005ae704,&local_30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3i *)&local_30);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 44,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "(DAT_005ae704,(CVector3f *)&stack0xffffffc4);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffc4);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3f *)&stack0xffffffc4);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Vector type-pun \u2014 `local_30` is declared `CVector3f` but its address is cast to `(CVector3i *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
-      "line": 40,
+      "line": 41,
       "match": "(CVector3i *)&local_30",
       "severity": "moderate",
-      "text": "(DAT_005ae704,(CVector3i *)&local_30);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&local_30);",
       "type": "vector_type_pun"
     }
   ]

@@ -39,6 +39,6 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void)
   if (iVar1 == 0) {
     (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
   }
-  wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(DAT_005b761c,DAT_005b7620,DAT_005b7624);
+  wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,DAT_005b7624);
   return;
 }

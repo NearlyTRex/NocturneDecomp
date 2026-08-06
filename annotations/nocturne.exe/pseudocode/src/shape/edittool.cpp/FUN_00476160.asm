@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[6]:
+;   core_game.cpp_CGame_FUN_004a4b50 at 004a50e4
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd03
-;   core_game.cpp_FUN_004a4b50 at 004a50e4
-;   core_script.cpp_FUN_004fe500 at 004fe52d
-;   core_script.cpp_FUN_004febd0 at 004fed2f
-;   core_script.cpp_FUN_004fef60 at 004fef83
+;   core_script.cpp_CScript_FUN_004fe500 at 004fe52d
+;   core_script.cpp_CScript_FUN_004febd0 at 004fed2f
+;   core_script.cpp_CScript_FUN_004fef60 at 004fef83
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d04
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005638d0
+;   crt_memory.c_free_FUN_005638d0
 ;   shape_edittool.cpp_CStrList_clear_FUN_00473c50
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     RET                                 ; 00476183
     PUSH EDX                            ; 00476184
         ;   Label: LAB_00476184
-    CALL crt_unknown.c_FUN_005638d0     ; 00476185
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
+    CALL crt_memory.c_free_FUN_005638d0 ; 00476185
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 0047618a
     MOV dword ptr [EBX + 0x134],0x0     ; 0047618d
     JMP 0x0047616f                      ; 00476197

@@ -11,7 +11,7 @@
 void __cdecl engine_2d_c_drawText_FUN_00402600(char *text,int x,int y)
 
 {
-  if (DAT_005acaa4 != 0) {
+  if (g_ResolutionTable[7].width != 0) {
     engine_2d_c_drawTextWrapped_FUN_00402290(text,x,y,_DAT_01c00c60,_DAT_01c00c64);
     return;
   }

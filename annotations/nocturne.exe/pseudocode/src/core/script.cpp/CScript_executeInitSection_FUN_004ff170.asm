@@ -23,14 +23,14 @@
 ;   TerminatedCString s_Infinite_loop_detected_i_0058e461
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CGame g_CGame_01c775ec
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e56418
 ;   undefined4 DAT_01e56c24
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_script.cpp_CScript_findLabelIndex_FUN_00504c10
 ;   core_script.cpp_CScript_step_FUN_004ff2c0
 ;
@@ -126,27 +126,27 @@ section .text
         ;   Label: LAB_004ff22a
     MOV EAX,0x41c                       ; 004ff22f
     PUSH 0x58e3bf                       ; 004ff234 | = "Script has \"initSection\" label, but..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004ff239 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ff23f | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ff244
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004ff239 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004ff23f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ff244
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ff249
     JMP 0x004ff1c0                      ; 004ff24c
         ;   XREF to: 004ff1c0 (UNCONDITIONAL_JUMP)  ; LAB_004ff1c0
     MOV EAX,0x58e3fe                    ; 004ff251 | = "..\\core\\script.cpp"
         ;   Label: LAB_004ff251
     MOV EDX,0x438                       ; 004ff256
-    MOV [0x01cc4800],EAX                ; 004ff25b | g_CHAR_PTR_01cc4800
+    MOV [0x01cc4800],EAX                ; 004ff25b | g_CurrentFilename
     MOV EAX,dword ptr [EBX + 0x2c]      ; 004ff260
-    MOV dword ptr [0x01cc4804],EDX      ; 004ff263 | g_INT_01cc4804
+    MOV dword ptr [0x01cc4804],EDX      ; 004ff263 | g_CurrentLineNumber
     PUSH 0x1e56420                      ; 004ff269
     MOV ECX,dword ptr [EAX + EDI*0x8 + 0x4] ; 004ff26e
     PUSH ECX                            ; 004ff272
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 004ff273
     PUSH EDX                            ; 004ff276
     PUSH 0x58e411                       ; 004ff277 | = "Error processing script.\nLine: %d\nT..."
-    CALL core_main.c_FUN_004c8440       ; 004ff27c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ff27c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x10                        ; 004ff281
     JMP 0x004ff1f2                      ; 004ff284
         ;   XREF to: 004ff1f2 (UNCONDITIONAL_JUMP)  ; LAB_004ff1f2
@@ -158,10 +158,10 @@ section .text
     MOV EDI,0x58e44e                    ; 004ff296 | = "..\\core\\script.cpp"
     MOV EAX,0x44a                       ; 004ff29b
     PUSH 0x58e461                       ; 004ff2a0 | = "Infinite loop detected in initSection.\n"
-    MOV dword ptr [0x01cc4800],EDI      ; 004ff2a5 | g_CHAR_PTR_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ff2ab | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 004ff2b0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004ff2a5 | g_CurrentFilename
+    MOV [0x01cc4804],EAX                ; 004ff2ab | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004ff2b0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004ff2b5
     JMP 0x004ff1d4                      ; 004ff2b8
         ;   XREF to: 004ff1d4 (UNCONDITIONAL_JUMP)  ; LAB_004ff1d4

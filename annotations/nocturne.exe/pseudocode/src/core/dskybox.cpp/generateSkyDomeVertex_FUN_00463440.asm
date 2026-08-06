@@ -28,7 +28,7 @@
 ;   double DOUBLE_0057df96 = 5.18065378653631E-315
 ;   double DOUBLE_0057df9e = 0.5
 ;   double DOUBLE_0057dfa6 = 256
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b0678
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5038
@@ -106,7 +106,7 @@ section .text
     FMULP                               ; 004634e8
     MOV ESI,dword ptr [EBP + 0x20]      ; 004634ea
     LEA EAX,[ESP + 0x4]                 ; 004634ed
-    MOV EDX,dword ptr [0x005ae704]      ; 004634f1 | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 004634f1 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 004634f7
     FXCH                                ; 004634f8
     CALL crt_math.c_round_FUN_00563a30  ; 004634fa

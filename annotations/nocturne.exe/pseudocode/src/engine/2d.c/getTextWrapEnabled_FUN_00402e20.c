@@ -9,5 +9,5 @@
 int __cdecl engine_2d_c_getTextWrapEnabled_FUN_00402e20(void)
 
 {
-  return DAT_005acaa4;
+  return g_ResolutionTable[7].width;
 }

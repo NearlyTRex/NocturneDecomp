@@ -17,15 +17,15 @@
 ;   undefined4 DAT_005ad550
 ;   undefined4 DAT_005b7650
 ;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
@@ -125,10 +125,10 @@ section .text
     MOV ECX,0x580fed                    ; 004820fc | = "..\\core\\filmreel.cpp"
     MOV EDI,0x11e                       ; 00482101
     PUSH 0x581002                       ; 00482106 | = "CFilmProjector::Need to put CFilmReel..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0048210b | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00482111 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00482117
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0048210b | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00482111 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00482117
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0048211c
     LEA EAX,[ESI + 0x2d0]               ; 0048211f
         ;   Label: LAB_0048211f

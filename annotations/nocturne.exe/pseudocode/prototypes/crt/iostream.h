@@ -11,6 +11,10 @@ _istream * __cdecl istream::get(_istream *this_ptr,char *c);
 // Address: 00564ce5
 _ostream * __cdecl ostream::put(_ostream *this_ptr,int character);
 
+// Original: crt_iostream.cpp_ios_clear_FUN_00565e94
+// Address: 00565e94
+uint __cdecl ios::clear(ios *this_ptr,uint state_flags);
+
 // Original: crt_iostream.cpp_ostream_ctor_FUN_0056b4a9
 // Address: 0056b4a9
 _ostream * __cdecl ostream::ctor(_ostream *this_ptr,uint c1);

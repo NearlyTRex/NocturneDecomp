@@ -26,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_0042d6c0(void *sprite_da
   int iStack_18;
   
   iVar1 = _DAT_01bd2fa4 - _DAT_01bd2fa0;
-  iVar7 = src_x + DAT_005b761c / 2;
+  iVar7 = src_x + g_WindowWidth / 2;
   iVar8 = iVar7 + 1;
   if (sprite_data != (void *)0x0) {
     sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);

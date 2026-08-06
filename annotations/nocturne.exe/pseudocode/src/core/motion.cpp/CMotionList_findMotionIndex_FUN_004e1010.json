@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 33,
-        "message": "no matching function for call to 'core_main_c_FUN_004c8440'"
       }
     ],
     "success": false,
@@ -118,7 +112,7 @@
     {
       "addr": "004ba740",
       "from_addr": "004ba7a2",
-      "name": "core_icepick.cpp_FUN_004ba740",
+      "name": "core_icepick.cpp_CIcePick_FUN_004ba740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -152,6 +146,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005384d0",
+      "from_addr": "0053966b",
+      "name": "core_stranger.cpp_CStranger_FUN_005384d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0053a260",
       "from_addr": "0053a34a",
       "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260",
@@ -167,12 +167,6 @@
       "addr": "00535450",
       "from_addr": "0053563f",
       "name": "core_stranger.cpp_CStranger_setup_FUN_00535450",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005384d0",
-      "from_addr": "0053966b",
-      "name": "core_stranger.cpp_FUN_005384d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -204,7 +198,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004c8440"
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "00564520",
@@ -227,13 +221,13 @@
     },
     {
       "addr": "01cc4800",
-      "name": "g_CHAR_PTR_01cc4800",
+      "name": "g_CurrentFilename",
       "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "g_INT_01cc4804",
+      "name": "g_CurrentLineNumber",
       "type": "int",
       "value": null
     }
@@ -277,7 +271,7 @@
       {
         "call_addr": "004ba7a2",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004ba740",
+        "caller": "core_icepick.cpp_CIcePick_FUN_004ba740",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +293,7 @@
       {
         "call_addr": "0053966b",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

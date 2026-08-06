@@ -12,7 +12,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,c
   char cVar1;
   int iVar2;
   _FILE *stream;
-  _FILE *file_handle;
+  _FILE *file;
   char *pcVar3;
   uint uVar4;
   char *pcVar5;
@@ -31,9 +31,9 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,c
   }
   stream = _fopen(filename,"rt");
   if (stream == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
-    g_INT_01cc4804 = 0x182;
-    core_main_c_FUN_004c8440("cIni::writeProfileString: Unable to open input");
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 386;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("cIni::writeProfileString: Unable to open input");
   }
   pcVar3 = acStack_216;
   pcVar5 = filename;
@@ -55,48 +55,48 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(CIni *this_ptr,c
     pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   acStack_216[~uVar4] = 'x';
-  file_handle = _fopen(acStack_216 + 2,"wt");
-  if (file_handle == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\ini.cpp";
-    g_INT_01cc4804 = 0x186;
-    core_main_c_FUN_004c8440("cIni::writeProfileString: Unable to open output");
+  file = _fopen(acStack_216 + 2,"wt");
+  if (file == (_FILE *)0x0) {
+    g_CurrentFilename = "..\\engine\\ini.cpp";
+    g_CurrentLineNumber = 390;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
-    _sprintf(local_114,"[%s]\n");
+    _sprintf(local_114,"[%s]\n",section);
     bVar6 = (byte)stream->_flag;
     while (((bVar6 & 0x10) == 0 &&
            (pcVar3 = _fgets(local_314,0xff,stream), pcVar3 != (char *)0x0)))
     {
-      _fprintf(file_handle,local_314);
+      _fprintf(file,local_314);
       iVar2 = _strcmp(local_114,local_314);
       if (iVar2 == 0) {
-        _fprintf(file_handle,"%s=%s\n",key,value);
+        _fprintf(file,"%s=%s\n",key,value);
         local_14 = 1;
       }
       bVar6 = (byte)stream->_flag;
     }
     if (local_14 == 0) {
-      _fprintf(file_handle,local_114);
-      _fprintf(file_handle,"%s=%s\n",key,value);
+      _fprintf(file,local_114);
+      _fprintf(file,"%s=%s\n",key,value);
     }
   }
   else {
     for (; -1 < iVar2; iVar2 = iVar2 + -1) {
       _fgets(local_314,0xff,stream);
-      _fprintf(file_handle,local_314);
+      _fprintf(file,local_314);
     }
-    _fprintf(file_handle,"%s=%s\n",key,value);
+    _fprintf(file,"%s=%s\n",key,value);
     _fgets(local_314,0xff,stream);
     bVar6 = (byte)stream->_flag;
     while (((bVar6 & 0x10) == 0 &&
            (pcVar3 = _fgets(local_314,0xff,stream), pcVar3 != (char *)0x0)))
     {
-      _fprintf(file_handle,local_314);
+      _fprintf(file,local_314);
       bVar6 = (byte)stream->_flag;
     }
   }
   _fclose(stream);
-  _fclose(file_handle);
+  _fclose(file);
   remove(filename);
   rename(acStack_216 + 2,filename);
   return 1;

@@ -23,12 +23,12 @@
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00640
 ;   undefined4 DAT_01c00644
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 ;
@@ -74,10 +74,10 @@ section .text
     MOV ESI,0x597a16                    ; 00553672 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x2b0                       ; 00553677
     PUSH 0x597a2d                       ; 0055367c | = "setColorTable16 - Unable to unlock ba..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00553681 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00553687 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 0055368d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00553681 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00553687 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0055368d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553692
     POP ESI                             ; 00553695
     POP EDI                             ; 00553696
@@ -120,10 +120,10 @@ section .text
         ;   Label: LAB_005536e0
     MOV EBX,0x2ae                       ; 005536e5
     PUSH 0x5979e8                       ; 005536ea | = "setColorTable16 - Unable to lock back..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005536ef | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005536f5 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 005536fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005536ef | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EBX      ; 005536f5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 005536fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00553700
     JMP 0x0055365c                      ; 00553703
         ;   XREF to: 0055365c (UNCONDITIONAL_JUMP)  ; LAB_0055365c

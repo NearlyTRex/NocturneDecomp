@@ -11,7 +11,7 @@ CLever * __cdecl core_lever_cpp_factoryFunc_FUN_004c6010(void)
 {
   CLever *pCVar1;
   
-  pCVar1 = (CLever *)FUN_0056497c(0x80c);
+  pCVar1 = operator_new(0x80c);
   if (pCVar1 == (CLever *)0x0) {
     return (CLever *)0x0;
   }

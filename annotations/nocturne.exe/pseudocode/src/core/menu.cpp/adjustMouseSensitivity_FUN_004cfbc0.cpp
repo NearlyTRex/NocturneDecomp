@@ -19,11 +19,11 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_
   char *format_string;
   CKeys *pCVar6;
   
-  iVar3 = DAT_005b761c * 3 >> 0x1f;
+  iVar3 = g_WindowWidth * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (g_CEditorTools_PTR_005b6d50,
-             (int)((DAT_005b761c * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,0x2c,window_title,
-             0);
+             (int)((g_WindowWidth * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,0x2c,window_title
+             ,0);
   iVar3 = *sensitivity_value_ptr;
   if (iVar3 < 0x4000) {
     *sensitivity_value_ptr = 0x4000;
@@ -41,13 +41,13 @@ LAB_004cfc23:
   iVar3 = *sensitivity_value_ptr;
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60
-            ((int)(((longlong)(DAT_005b761c + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
+            ((int)(((longlong)(g_WindowWidth + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
              _DAT_01bd1d90);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
     if (_DAT_01bd1d8c != pCVar6) {
-      iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(DAT_005b761c + -1)) +
+      iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) +
               0x4000;
     }
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);

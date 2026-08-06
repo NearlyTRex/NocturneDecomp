@@ -7,7 +7,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005acab0
+;   undefined4 g_ResolutionTable[8].height
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
@@ -25,8 +25,8 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   engine_3d.c_FUN_00404680
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
+;   engine_3d.c_lookupLitColor_FUN_00404680
 ;   engine_clipper.c_FUN_00432cd0
 ;   engine_light.cpp_calculateLighting_FUN_004c6cc0
 ;
@@ -124,7 +124,7 @@ section .text
     JNZ 0x00407b7e                      ; 00407b31
         ;   XREF to: 00407b7e (CONDITIONAL_JUMP)  ; LAB_00407b7e
     MOV dword ptr [0x01c00c7c],0x5300ec ; 00407b33 | DAT_01c00c7c
-    CMP dword ptr [0x005acab0],0x0      ; 00407b3d | DAT_005acab0
+    CMP dword ptr [0x005acab0],0x0      ; 00407b3d | g_ResolutionTable[8].height
         ;   Label: LAB_00407b3d
     JNZ 0x00407bd8                      ; 00407b44
         ;   XREF to: 00407bd8 (CONDITIONAL_JUMP)  ; LAB_00407bd8
@@ -204,8 +204,8 @@ section .text
     PUSH EBX                            ; 00407c3e
     MOV EAX,[0x006b0260]                ; 00407c3f | DAT_006b0260
     PUSH EAX                            ; 00407c44
-    CALL engine_3d.c_FUN_00404680       ; 00407c45
-        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00404680()
+    CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00407c45
+        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; int engine_3d.c_lookupLitColor_FUN_00404680(int color_index, int light_level)
     ADD ESP,0x8                         ; 00407c4a
     MOV [0x01c00c70],EAX                ; 00407c4d | DAT_01c00c70
     JMP 0x00407a8d                      ; 00407c52

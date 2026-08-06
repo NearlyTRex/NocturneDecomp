@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_texture_cpp_FUN_005458d0(void)
+; void __cdecl engine_texture_cpp_FUN_005458d0(void)
 ;
 ;
 ; XREF[1]:
@@ -11,9 +11,9 @@
 ;   undefined4 DAT_02dd0f84
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60
-;   engine_texture.cpp_FUN_00544e50
+;   engine_texture.cpp_CTextureCache_FUN_00544e50
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_texture.cpp_FUN_005458d0
     MOV EDX,dword ptr [0x02dd0f84]      ; 005458d1 | DAT_02dd0f84
     PUSH EDX                            ; 005458d7
-    CALL engine_texture.cpp_FUN_00544e50 ; 005458d8
-        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_00544e50(CTextureCache * this_ptr)
+    CALL engine_texture.cpp_CTextureCache_FUN_00544e50 ; 005458d8
+        ;   XREF to: 00544e50 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_FUN_00544e50(CTextureCache * this_ptr)
     MOV ECX,dword ptr [0x02dd0f84]      ; 005458dd | DAT_02dd0f84
     ADD ESP,0x4                         ; 005458e3
     TEST ECX,ECX                        ; 005458e6
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 00544e60 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_freeTextures_FUN_00544e60(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 005458fc
     PUSH EBX                            ; 005458ff
-    CALL crt_unknown.c_FUN_00564494     ; 00545900
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 00545900
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 00545905
     XOR EBX,EBX                         ; 00545908
     MOV dword ptr [0x02dd0f84],EBX      ; 0054590a | DAT_02dd0f84

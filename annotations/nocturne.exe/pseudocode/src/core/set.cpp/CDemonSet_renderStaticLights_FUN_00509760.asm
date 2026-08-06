@@ -20,8 +20,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049ceb1
+;   core_set.cpp_CDemonSet_FUN_00509a80 at 00509ad1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508cf0
-;   core_set.cpp_FUN_00509a80 at 00509ad1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_renderStaticLights_3_2f_005904fa
@@ -29,7 +29,7 @@
 ;   double DOUBLE_00590522 = 0.0000152587890625
 ;   double DOUBLE_0059052a = 1000
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
@@ -48,10 +48,10 @@
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650
 ;   core_gore.cpp_CGore_renderParticles_FUN_004afe00
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
+;   core_set.cpp_CDemonSet_FUN_0050e080
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
-;   core_set.cpp_FUN_0050e080
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
@@ -204,8 +204,8 @@ section .text
         ;   Label: LAB_005098e3
     PUSH EBX                            ; 005098e5
     PUSH ESI                            ; 005098e6
-    CALL core_set.cpp_FUN_0050e080      ; 005098e7
-        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_FUN_0050e080 ; 005098e7
+        ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e080(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 005098ec
     MOV EAX,dword ptr [EDI + 0x15f300]  ; 005098ef
     PUSH EAX                            ; 005098f5
@@ -223,7 +223,7 @@ section .text
         ;   XREF to: 005098e3 (CONDITIONAL_JUMP)  ; LAB_005098e3
     PUSH 0x1                            ; 00509916
         ;   Label: LAB_00509916
-    MOV EAX,[0x005ae704]                ; 00509918 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 00509918 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0050991d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050991e
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
@@ -290,7 +290,7 @@ section .text
     OR byte ptr [EBX + 0x140],0x22      ; 005099c0
     PUSH 0x1                            ; 005099c7
         ;   Label: LAB_005099c7
-    MOV EAX,[0x005ae704]                ; 005099c9 | DAT_005ae704
+    MOV EAX,[0x005ae704]                ; 005099c9 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 005099ce | DAT_01b4d738
     ADD EDI,0x4                         ; 005099cf
     INC EBP                             ; 005099d2

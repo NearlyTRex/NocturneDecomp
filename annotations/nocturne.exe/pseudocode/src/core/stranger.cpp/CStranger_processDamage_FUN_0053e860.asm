@@ -41,7 +41,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_actor.cpp_randomChance_FUN_0040dea0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510
-;   core_game.cpp_FUN_004a3a90
+;   core_game.cpp_CGame_FUN_004a3a90
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670
 ;   core_hero.cpp_CHero_stopNearbyInteraction_FUN_004b5920
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350
@@ -344,8 +344,8 @@ section .text
         ;   XREF to: 0053eb95 (CONDITIONAL_JUMP)  ; LAB_0053eb95
     MOV EAX,[0x005b9354]                ; 0053eb87 | g_CGame_PTR_005b9354
     PUSH EAX                            ; 0053eb8c | g_CGame_01c775ec
-    CALL core_game.cpp_FUN_004a3a90     ; 0053eb8d
-        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004a3a90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_FUN_004a3a90 ; 0053eb8d
+        ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0053eb92
     PUSH ESI                            ; 0053eb95
         ;   Label: LAB_0053eb95

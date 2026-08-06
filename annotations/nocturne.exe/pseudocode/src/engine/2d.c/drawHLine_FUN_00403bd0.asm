@@ -26,11 +26,11 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c70
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -142,10 +142,10 @@ section .text
         ;   Label: LAB_00403cb2
     MOV EDX,0x8a4                       ; 00403cb7
     PUSH 0x577318                       ; 00403cbc | = "hLine - invalid bitsPerPixel"
-    MOV [0x01cc4800],EAX                ; 00403cc1 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00403cc6 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00403ccc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00403cc1 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDX      ; 00403cc6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00403ccc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00403cd1
     POP EBP                             ; 00403cd4
     POP EDI                             ; 00403cd5

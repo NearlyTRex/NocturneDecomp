@@ -40,35 +40,35 @@ void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
   local_87 = 5;
   local_85 = 8;
   local_44 = 1;
-  local_80 = (short)DAT_005b761c + -1;
+  local_80 = (short)g_WindowWidth + -1;
   local_86 = 1;
   local_47 = 1;
-  local_7e = (short)DAT_005b7620 + -1;
+  local_7e = (short)g_WindowHeight + -1;
   local_84 = 0;
-  local_46 = (short)DAT_005b761c;
-  local_42 = (short)DAT_005b761c;
+  local_46 = (short)g_WindowWidth;
+  local_42 = (short)g_WindowWidth;
   local_82 = 0;
-  local_40 = (short)DAT_005b7620;
-  if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {
+  local_40 = (short)g_WindowHeight;
+  if ((g_WindowWidth == 0x280) && (g_WindowHeight == 0xf0)) {
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
   file = _fopen(filename,"wb");
   if (file == (_FILE *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\engine\\pcx.c";
-    g_INT_01cc4804 = 0xee;
-    core_main_c_FUN_004c8440("Cannot write .PCX");
+    g_CurrentFilename = "..\\engine\\pcx.c";
+    g_CurrentLineNumber = 238;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Cannot write .PCX");
   }
   iVar2 = 0;
   _fwrite(&local_88,1,0x80,file);
-  if (0 < DAT_005b7620) {
+  if (0 < g_WindowHeight) {
     do {
       engine_pcx_c_writePCXScanline_FUN_004f2550(iVar2,file);
-      if ((DAT_005b761c == 0x280) && (DAT_005b7620 == 0xf0)) {
+      if ((g_WindowWidth == 0x280) && (g_WindowHeight == 0xf0)) {
         engine_pcx_c_writePCXScanline_FUN_004f2550(iVar2,file);
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < DAT_005b7620);
+    } while (iVar2 < g_WindowHeight);
   }
   if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
     *file->_ptr = '\f';
@@ -89,7 +89,7 @@ LAB_004f2afe:
   iVar2 = 0;
   do {
     if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
-      *file->_ptr = (&DAT_01c00648)[iVar2];
+      *file->_ptr = g_SourcePaletteData[iVar2];
       if (*file->_ptr == '\n') {
         character = 10;
         goto LAB_004f2b14;
@@ -100,7 +100,7 @@ LAB_004f2afe:
       *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
     }
     else {
-      character = (uint)(byte)(&DAT_01c00648)[iVar2];
+      character = (uint)g_SourcePaletteData[iVar2];
 LAB_004f2b14:
       _fputc(character,file);
     }

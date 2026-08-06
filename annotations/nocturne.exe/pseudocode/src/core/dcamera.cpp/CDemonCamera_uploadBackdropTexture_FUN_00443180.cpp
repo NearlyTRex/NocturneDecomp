@@ -42,7 +42,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
     iVar7 = iVar7 + 0x1e0;
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);
   puVar6 = (uint *)&DAT_0145b290;
   puVar8 = _DAT_01c02580;
   for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -68,6 +68,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180(CD
     puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);
   }
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
-            (DAT_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,(SRGBColorPalette *)&DAT_00b0daf8);
+            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,
+             (SRGBColorPalette *)&DAT_00b0daf8);
   return;
 }

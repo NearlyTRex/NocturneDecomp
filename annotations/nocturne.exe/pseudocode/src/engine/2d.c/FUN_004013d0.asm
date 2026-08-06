@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_2d_c_FUN_004013d0(int param_1,int param_2,int param_3,byte param_4)
+; int __cdecl engine_2d_c_FUN_004013d0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6 ,byte param_7)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
+; int              Stack[0xc]:4   param_3
+; undefined4       Stack[0x10]:4   param_4
+; int              Stack[0x14]:4   param_5
+; undefined4       Stack[0x18]:4   param_6
+; byte             Stack[0x1c]:1   param_7
 ;
 ; XREF[1]:
 ;   engine_2d.c_FUN_004014a0 at 004014d2
@@ -26,7 +34,7 @@ section .text
     PUSH EDX                            ; 004013e3
     PUSH EBX                            ; 004013e4
     CALL engine_2d.c_FUN_004012d0       ; 004013e5
-        ;   XREF to: 004012d0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004012d0()
+        ;   XREF to: 004012d0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004012d0(int param_1, int param_2, int param_3)
     ADD ESP,0xc                         ; 004013ea
     CMP EBX,0x20                        ; 004013ed
     JL 0x0040148a                       ; 004013f0

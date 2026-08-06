@@ -10,6 +10,7 @@ void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirec
 
 {
   uint error_code;
+  char *pcVar1;
   CSfxSample *in_stack_00000014;
   int *piStack_1b8;
   int iStack_1b4;
@@ -33,8 +34,9 @@ void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_0052adc0(CDirec
     if (error_code == 0) {
       return in_stack_00000014->locked_ptr1;
     }
-    sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
-    _sprintf((char *)&piStack_1b8,"DirectSux: Unable to %s.  (%s)");
+    pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
+    _sprintf((char *)&piStack_1b8,"DirectSux: Unable to %s.  (%s)",
+               "Lock hw sample buffer",pcVar1);
     sound_sndmain_cpp_FUN_00529980(&piStack_1b8);
     return (void *)0x0;
   }

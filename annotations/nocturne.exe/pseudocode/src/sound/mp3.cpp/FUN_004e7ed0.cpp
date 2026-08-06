@@ -44,7 +44,7 @@ int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,
   }
   pcVar3 = (this_ptr->file_bitstream).buffer;
   if (pcVar3 != (char *)0x0) {
-    FUN_005638d0(pcVar3);
+    free(pcVar3);
     (this_ptr->file_bitstream).buffer = (char *)0x0;
   }
   pCVar8->file_handle = file_handle;
@@ -55,9 +55,9 @@ int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,
   pcVar3 = (char *)malloc(local_1c);
   (this_ptr->file_bitstream).buffer = pcVar3;
   if (pcVar3 == (char *)0x0) {
-    g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-    g_INT_01cc4804 = 0x1ff;
-    core_main_c_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
+    g_CurrentFilename = "..\\sound\\mp3.cpp";
+    g_CurrentLineNumber = 511;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory.  File: %s");
   }
   _fseek(pCVar8->file_handle,(this_ptr->file_bitstream).stream_start_position,0);
   (this_ptr->file_bitstream).current_byte_index = 0;
@@ -114,9 +114,9 @@ int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,
       iVar6 = 4;
     }
     if (iVar6 != *(int *)(local_24 + 0xc)) {
-      g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-      g_INT_01cc4804 = 0x1a1;
-      core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28);
+      g_CurrentFilename = "..\\sound\\mp3.cpp";
+      g_CurrentLineNumber = 417;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
     }
     local_30 = local_1c;
   }
@@ -128,9 +128,9 @@ int __cdecl sound_mp3_cpp_FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,
     iVar6 = pSVar1->layer;
     iVar5 = pSVar1->mode_extension;
     if ((((iVar6 < 1) || (3 < iVar6)) || (iVar5 < 0)) || (3 < iVar5)) {
-      g_CHAR_PTR_01cc4800 = "..\\sound\\mp3.cpp";
-      g_INT_01cc4804 = 0x1b1;
-      core_main_c_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s",iVar6,iVar5,&DAT_01cd8b28);
+      g_CurrentFilename = "..\\sound\\mp3.cpp";
+      g_CurrentLineNumber = 433;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s");
     }
     local_34 = *(ulong *)("$CMotionController$$" + iVar5 * 4 + iVar6 * 0x10 + 10);
   }

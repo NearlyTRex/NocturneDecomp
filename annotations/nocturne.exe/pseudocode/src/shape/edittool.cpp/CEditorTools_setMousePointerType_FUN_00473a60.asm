@@ -14,14 +14,14 @@
 ;   TerminatedCString s_CEditorTools_setMousePoi_0057eb28
 ;   undefined4 DAT_005b6d54
 ;   undefined4 DAT_005b6d58
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
+;   int g_WindowWidth = 0x140
+;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd9c0
-;   char* g_CHAR_PTR_01cc4800
-;   int g_INT_01cc4804
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_main.c_FUN_004c8440
+;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -68,10 +68,10 @@ section .text
         ;   XREF to: 00473a87 (UNCONDITIONAL_JUMP)  ; LAB_00473a87
     MOV EBX,dword ptr [ESP + 0x10]      ; 00473ab8
         ;   Label: LAB_00473ab8
-    IMUL EBX,dword ptr [0x005b761c]     ; 00473abc | DAT_005b761c
+    IMUL EBX,dword ptr [0x005b761c]     ; 00473abc | g_WindowWidth
     LEA EDX,[EBX*0x4 + 0x0]             ; 00473ac3
     SUB EDX,EBX                         ; 00473aca
-    MOV ECX,dword ptr [0x005b7620]      ; 00473acc | DAT_005b7620
+    MOV ECX,dword ptr [0x005b7620]      ; 00473acc | g_WindowHeight
     MOV EAX,EDX                         ; 00473ad2
     SAR EDX,0x1f                        ; 00473ad4
     IDIV ECX                            ; 00473ad7
@@ -120,10 +120,10 @@ section .text
     MOV ESI,0x57eb12                    ; 00473b23 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x93b                       ; 00473b28
     PUSH 0x57eb28                       ; 00473b2d | = "CEditorTools::setMousePointerType - i..."
-    MOV dword ptr [0x01cc4800],ESI      ; 00473b32 | g_CHAR_PTR_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473b38 | g_INT_01cc4804
-    CALL core_main.c_FUN_004c8440       ; 00473b3e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00473b32 | g_CurrentFilename
+    MOV dword ptr [0x01cc4804],EDI      ; 00473b38 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00473b3e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00473b43
     POP ESI                             ; 00473b46
     POP EDI                             ; 00473b47

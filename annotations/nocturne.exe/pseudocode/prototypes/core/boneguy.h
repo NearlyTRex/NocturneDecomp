@@ -47,9 +47,9 @@ void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 // Address: 004194b0
 void __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_boneguy.cpp_FUN_004196b0
+// Original: core_boneguy.cpp_CBoneGuy_FUN_004196b0
 // Address: 004196b0
-int __cdecl FUN_004196b0(CBoneGuy *this_ptr,float delta_time);
+int __cdecl CBoneGuy(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419bf0
 // Address: 00419bf0
@@ -101,4 +101,4 @@ SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0
 // Address: 0041a4f0
-SBoneGuyBox * __cdecl SBoneGuyBox::arrdtor(SBoneGuyBox *objs,uint flags);
+SBoneGuyBox * __cdecl SBoneGuyBox::arrdtor(SBoneGuyBox *this_ptr,uint flags);

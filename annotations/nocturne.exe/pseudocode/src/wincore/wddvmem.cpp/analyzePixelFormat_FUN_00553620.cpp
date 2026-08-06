@@ -22,15 +22,15 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_00553620(void)
   local_70[0] = 0x6c;
   iVar1 = (**(code **)(*_DAT_02ddf558 + 100))(_DAT_02ddf558,0,local_70,1,0);
   if (iVar1 != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01cc4804 = 0x2ae;
-    core_main_c_FUN_004c8440("setColorTable16 - Unable to lock back buffer!");
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 686;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("setColorTable16 - Unable to lock back buffer!");
   }
   iVar1 = (**(code **)(*_DAT_02ddf558 + 0x80))(_DAT_02ddf558,0);
   if (iVar1 != 0) {
-    g_CHAR_PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    g_INT_01cc4804 = 0x2b0;
-    core_main_c_FUN_004c8440("setColorTable16 - Unable to unlock back buffer!");
+    g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
+    g_CurrentLineNumber = 688;
+    core_main_c_displayErrorAndQuit_FUN_004c8440("setColorTable16 - Unable to unlock back buffer!");
   }
   _DAT_01c00624 = 0;
   for (uVar2 = uStack_34; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1) {

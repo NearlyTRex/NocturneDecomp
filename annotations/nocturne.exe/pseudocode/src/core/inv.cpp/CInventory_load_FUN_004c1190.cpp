@@ -30,14 +30,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
   core_inv_cpp_CInventory_initialize_FUN_004bef10(this_ptr);
   _fgets(local_1dc,0xff,file_handle);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n");
+  _fscanf(file_handle,"%d\n",&this_ptr->save_version);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n");
+  _fscanf(file_handle,"%d\n",&this_ptr->item_count);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,"%d\n");
+  _fscanf(file_handle,"%d\n",&local_14);
   if (0 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
-    _fscanf(file_handle,"%f\n");
+    _fscanf(file_handle,"%f\n",this_ptr);
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar7 = 0;
@@ -58,7 +58,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
         piVar8 = piVar8 + (uint)bVar11 * -2 + 1;
         piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
       }
-      _fscanf(file_handle," %s \"%[^\"]\"\n");
+      _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,&local_78);
       if (g_CDemonMission_PTR_005baf90->has_inventory_actors == 0) {
         pcVar9 = (char *)&local_78;
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040d540((char *)local_dc);
@@ -105,9 +105,9 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(CInventory *this_ptr,_FIL
                        (this_ptr->items[local_14],g_CWeaponActorType_02ddf970.name_hash);
     this_ptr->selected_weapon = pCVar4;
     if (this_ptr->selected_weapon == (CWeapon *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\inv.cpp";
-      g_INT_01cc4804 = 0x54b;
-      core_main_c_FUN_004c8440("CInventory::load - Can't find your weapon");
+      g_CurrentFilename = "..\\core\\inv.cpp";
+      g_CurrentLineNumber = 1355;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CInventory::load - Can't find your weapon");
     }
   }
   core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(this_ptr,999);

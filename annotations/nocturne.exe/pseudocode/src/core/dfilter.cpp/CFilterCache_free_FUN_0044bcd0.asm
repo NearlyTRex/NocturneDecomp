@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00
-;   crt_unknown.c_FUN_00564494
+;   crt_memory.c_operator_delete_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 0044bf00 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00(CDemonFilter * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044bd07
     PUSH EAX                            ; 0044bd0a
-    CALL crt_unknown.c_FUN_00564494     ; 0044bd0b
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
+    CALL crt_memory.c_operator_delete_FUN_00564494 ; 0044bd0b
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; void crt_memory.c_operator_delete_FUN_00564494(void * ptr)
     ADD ESP,0x4                         ; 0044bd10
     JMP 0x0044bceb                      ; 0044bd13
         ;   XREF to: 0044bceb (UNCONDITIONAL_JUMP)  ; LAB_0044bceb

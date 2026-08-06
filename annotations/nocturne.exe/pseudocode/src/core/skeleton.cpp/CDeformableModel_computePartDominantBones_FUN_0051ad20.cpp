@@ -78,15 +78,15 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_005
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(this_ptr);
     pCVar5 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(this_ptr);
     local_24 = pCVar5->bone_count;
-    pCVar6 = (CDeformableModelInstance *)FUN_0056497c(0x22b4);
+    pCVar6 = operator_new(0x22b4);
     local_20 = (CDeformableModelInstance *)0x0;
     if (pCVar6 != (CDeformableModelInstance *)0x0) {
       local_20 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(pCVar6);
     }
     if (local_20 == (CDeformableModelInstance *)0x0) {
-      g_CHAR_PTR_01cc4800 = "..\\core\\skeleton.cpp";
-      g_INT_01cc4804 = 0x7d3;
-      core_main_c_FUN_004c8440("CDeformableModel::computePartDominantBones - out of memory!");
+      g_CurrentFilename = "..\\core\\skeleton.cpp";
+      g_CurrentLineNumber = 2003;
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::computePartDominantBones - out of memory!");
     }
     pCVar6 = local_20;
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00(local_20,this_ptr);

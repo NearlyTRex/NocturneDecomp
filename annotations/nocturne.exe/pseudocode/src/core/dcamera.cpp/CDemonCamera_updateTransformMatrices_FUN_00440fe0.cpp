@@ -11,7 +11,7 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(CDemonCamera *this_ptr)
 
 {
-  uint uVar1;
+  CDemonRenderer *pCVar1;
   uint *puVar2;
   byte bVar3;
   int aiStackY_1000 [1017];
@@ -25,10 +25,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(
   (this_ptr->source_matrix).m[1].y = _DAT_01c039f8;
   (this_ptr->source_matrix).m[1].z = _DAT_01c039fc;
   (this_ptr->source_matrix).m[2].x = _DAT_01c03a00;
-  uVar1 = DAT_005ae704;
+  pCVar1 = g_CDemonRenderer_PTR_005ae704;
   (this_ptr->source_matrix).m[2].y = _DAT_01c03a04;
   (this_ptr->source_matrix).m[2].z = _DAT_01c03a08;
-  engine_drender_cpp_FUN_00460d10(uVar1);
+  engine_drender_cpp_FUN_00460d10(pCVar1);
   puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);
   (this_ptr->camera_origin).x = local_18;
   *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);

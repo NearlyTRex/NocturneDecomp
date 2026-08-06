@@ -20,7 +20,7 @@ section .text
     ADD EAX,0x3c                        ; 004cbef6
     PUSH EAX                            ; 004cbef9
     CALL core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000 ; 004cbefa
-        ;   XREF to: 004cc000 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000(CDemonTriangle * objs, uint flags)
+        ;   XREF to: 004cc000 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000(CDemonTriangle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbeff
     SUB EAX,0x3c                        ; 004cbf02
     RET                                 ; 004cbf05

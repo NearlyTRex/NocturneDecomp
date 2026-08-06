@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -62,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 554,
+    "complexity_score": 555,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 50,
     "suspect_count": 49,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 159
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -115,7 +115,7 @@
     {
       "addr": "004ca410",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_FUN_004ca410"
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca410"
     },
     {
       "addr": "005644a7",
@@ -434,12 +434,12 @@
       "line": 50,
       "match": "(CMansionPuzzleCircle *)((int)pvVar4",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338));",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(CMansionPuzzleCircle *)((int)pvVar4",
       "severity": "moderate",
       "text": "return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1338);",
@@ -626,12 +626,12 @@
       "line": 50,
       "match": "(int)pvVar4",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338));",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca410((CMansionPuzzleCircle *)((int)pvVar4 + -0x1338))",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 52,
       "match": "(int)pvVar4",
       "severity": "moderate",
       "text": "return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1338);",

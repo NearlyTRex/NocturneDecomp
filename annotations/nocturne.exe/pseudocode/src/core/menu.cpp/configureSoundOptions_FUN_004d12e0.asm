@@ -794,13 +794,13 @@ section .text
         ;   XREF to: 005281c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getAudioChannelCount_FUN_005281c0()
     MOV EBX,EAX                         ; 004d19bf
     MOV dword ptr [ESP + 0x7f0],EAX     ; 004d19c1
-    MOV EAX,[0x005b761c]                ; 004d19c8 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004d19c8 | g_WindowWidth
     MOV EDX,EAX                         ; 004d19cd
     MOV ESI,0x14                        ; 004d19cf
     SAR EDX,0x1f                        ; 004d19d4
     IDIV ESI                            ; 004d19d7
     MOV dword ptr [ESP + 0x7f4],EAX     ; 004d19d9
-    MOV EAX,[0x005b761c]                ; 004d19e0 | DAT_005b761c
+    MOV EAX,[0x005b761c]                ; 004d19e0 | g_WindowWidth
     MOV EDX,EAX                         ; 004d19e5
     SAR EDX,0x1f                        ; 004d19e7
     IDIV EBX                            ; 004d19ea
@@ -856,10 +856,10 @@ section .text
     MOV dword ptr [ESP + 0x808],EAX     ; 004d1a94
     FLD float ptr [ESP + 0x808]         ; 004d1a9b
     ADD ESP,0xc                         ; 004d1aa2
-    FILD dword ptr [0x005b7620]         ; 004d1aa5 | DAT_005b7620
+    FILD dword ptr [0x005b7620]         ; 004d1aa5 | g_WindowHeight
     FXCH                                ; 004d1aab
     FMUL ST1                            ; 004d1aad
-    MOV EAX,[0x005b7620]                ; 004d1aaf | DAT_005b7620
+    MOV EAX,[0x005b7620]                ; 004d1aaf | g_WindowHeight
     FMUL float ptr [0x00588c87]         ; 004d1ab4 | FLOAT_00588c87
     DEC EAX                             ; 004d1aba
     FSUBP                               ; 004d1abb

@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae704
+;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 00414e75
     LEA EAX,[EBX + 0x20]                ; 00414e79
     PUSH EAX                            ; 00414e7c
-    MOV EDX,dword ptr [0x005ae704]      ; 00414e7d | DAT_005ae704
+    MOV EDX,dword ptr [0x005ae704]      ; 00414e7d | g_CDemonRenderer_PTR_005ae704
     PUSH EDX                            ; 00414e83 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 00414e84
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
@@ -38,7 +38,7 @@ section .text
     PUSH 0x0                            ; 00414e8c
     LEA EAX,[EBX + 0x30]                ; 00414e8e
     PUSH EAX                            ; 00414e91
-    MOV ECX,dword ptr [0x005ae704]      ; 00414e92 | DAT_005ae704
+    MOV ECX,dword ptr [0x005ae704]      ; 00414e92 | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 00414e98 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 00414e99
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
@@ -58,7 +58,7 @@ section .text
     TEST EAX,EAX                        ; 00414ec0
     JNZ 0x00414edb                      ; 00414ec2
         ;   XREF to: 00414edb (CONDITIONAL_JUMP)  ; LAB_00414edb
-    MOV EBX,dword ptr [0x005ae704]      ; 00414ec4 | DAT_005ae704
+    MOV EBX,dword ptr [0x005ae704]      ; 00414ec4 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00414ec4
     PUSH EBX                            ; 00414eca | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00414ecb

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30
-;   crt_unknown.c_FUN_0056497c
+;   crt_memory.c_operator_new_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x588                          ; 004c6e00
         ;   Label: core_lightgun.cpp_factoryFunc_FUN_004c6e00
-    CALL crt_unknown.c_FUN_0056497c     ; 004c6e05
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004c6e05
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
     ADD ESP,0x4                         ; 004c6e0a
     TEST EAX,EAX                        ; 004c6e0d
     JNZ 0x004c6e12                      ; 004c6e0f

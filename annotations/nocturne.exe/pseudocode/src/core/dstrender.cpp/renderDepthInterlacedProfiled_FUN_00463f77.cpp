@@ -49,7 +49,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77
       uVar9 = uVar9 + (int)((ulonglong)
                             ((longlong)
                              ((left_edge->base).depth_current - (pSVar8->base).depth_current) *
-                            (longlong)*(int *)(&DAT_01c00c80 + (iVar4 + 1) * 4)) >> 0x20) * 2;
+                            (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
       piVar7 = piVar7 + 2;
       iVar6 = iVar5 + -2;
       bVar1 = 1 < iVar5;

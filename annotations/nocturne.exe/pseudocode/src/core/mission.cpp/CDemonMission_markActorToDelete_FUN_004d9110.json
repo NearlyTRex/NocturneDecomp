@@ -1,0 +1,380 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 60,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "00418a00",
+      "from_addr": "00418ced",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043cdb0",
+      "from_addr": "0043ce46",
+      "name": "core_crate.cpp_CCrate_explode_FUN_0043cdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048e5a0",
+      "from_addr": "0048e61f",
+      "name": "core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6770",
+      "from_addr": "004b6802",
+      "name": "core_hiram.cpp_CHiram_process_FUN_004b6770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bf360",
+      "from_addr": "004c00bd",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d5e20",
+      "from_addr": "004d5ee4",
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_004d5e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ef890",
+      "from_addr": "004ef9d1",
+      "name": "core_passngr.cpp_CPassenger_process_FUN_004ef890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555c60",
+      "from_addr": "00555da8",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_00555c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d9110",
+    "address_range": [
+      [
+        "004d9110",
+        "004d9170"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00589cfb",
+      "name": "s_core_mission_cpp_00589cfb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00589d0f",
+      "name": "s_CDemonMission_markActorT_00589d0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "004c00bd",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c015e",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c0220",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c0451",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c048a",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c054c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_addItem_FUN_004bf360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043ce46",
+        "call_type": "direct",
+        "caller": "core_crate.cpp_CCrate_explode_FUN_0043cdb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00418ced",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_00418a00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048e61f",
+        "call_type": "direct",
+        "caller": "core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b6802",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_process_FUN_004b6770",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 21,
+      "INT_ADD": 17,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 10,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 90
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "this_ptr->delete_queue_actors[this_ptr->delete_queue_count] = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "this_ptr->delete_queue_flags[this_ptr->delete_queue_count] = param_3;",
+      "type": "unnamed_param"
+    }
+  ]
+}

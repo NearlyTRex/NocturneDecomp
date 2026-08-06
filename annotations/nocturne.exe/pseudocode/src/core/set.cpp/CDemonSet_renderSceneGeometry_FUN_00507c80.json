@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 526,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 526,
+        "line": 516,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 527,
+        "line": 517,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 527,
+        "line": 517,
         "message": "exponent has no digits"
       },
       {
@@ -56,51 +56,21 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 20,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00460c70'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 41,
+        "column": 58,
         "line": 21,
         "message": "use of undeclared identifier 'DAT_005be36c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 22,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 51,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 53,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 56,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
         "line": 58,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 59,
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
@@ -110,10 +80,40 @@
         "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 61,
+        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 62,
+        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
+      },
+      {
         "category": "incompatible_types",
         "column": 9,
-        "line": 61,
-        "message": "no matching function for call to 'engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00'"
+        "line": 69,
+        "message": "no matching function for call to 'core_dskybox_cpp_renderSkyDome_FUN_00463580'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 11,
+        "line": 73,
+        "message": "no matching function for call to 'core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800'"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 74,
+        "message": "member reference type 'int' is not a pointer"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 75,
+        "message": "no matching function for call to 'core_water_cpp_CWater_render_FUN_00550cb0'"
       }
     ],
     "success": false,
@@ -122,22 +122,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 243,
+    "complexity_score": 205,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 12,
+    "pseudocode_lines": 105,
+    "suspect_count": 8,
     "suspect_types": [
       "raw_address_constant",
       "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 388
+    "total_lines": 390
   },
   "cross_references": [
+    {
+      "addr": "0050a260",
+      "from_addr": "0050a3cf",
+      "name": "core_set.cpp_CDemonSet_FUN_0050a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005084c0",
       "from_addr": "00508634",
@@ -163,15 +169,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050a260",
-      "from_addr": "0050a3cf",
-      "name": "core_set.cpp_FUN_0050a260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00513720",
       "from_addr": "00513809",
-      "name": "core_setdir.cpp_FUN_00513720",
+      "name": "core_setdir.cpp_CDemonSet_FUN_00513720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -216,7 +216,7 @@
     {
       "addr": "004ac7c0",
       "is_variadic": false,
-      "name": "core_glass.cpp_FUN_004ac7c0"
+      "name": "core_glass.cpp_CGlass_FUN_004ac7c0"
     },
     {
       "addr": "004d7980",
@@ -229,14 +229,14 @@
       "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210"
     },
     {
+      "addr": "0050e080",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_FUN_0050e080"
+    },
+    {
       "addr": "0050e190",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190"
-    },
-    {
-      "addr": "0050e080",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0050e080"
     },
     {
       "addr": "00549310",
@@ -277,9 +277,9 @@
   "globals": [
     {
       "addr": "005ae704",
-      "name": "DAT_005ae704",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
     },
     {
       "addr": "005b0674",
@@ -386,7 +386,7 @@
       {
         "call_addr": "0050a3cf",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -397,7 +397,7 @@
       {
         "call_addr": "0050a5dc",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0050a260",
+        "caller": "core_set.cpp_CDemonSet_FUN_0050a260",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -408,7 +408,7 @@
       {
         "call_addr": "00513809",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00513720",
+        "caller": "core_setdir.cpp_CDemonSet_FUN_00513720",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -528,46 +528,14 @@
     {
       "description": "Undefined global data reference",
       "line": 14,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3i *)&DAT_005be36c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
       "match": "DAT_005be36c",
       "severity": "mild",
-      "text": "(DAT_005ae704,(CVector3i *)&DAT_005be36c);",
+      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_005be36c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_00460c40(DAT_005ae704,0.25);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_005ae704",
-      "severity": "mild",
-      "text": "(DAT_005ae704,&local_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
+      "line": 92,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "else if ((DAT_005be378 != 0) &&",
@@ -575,7 +543,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 64,
+      "line": 66,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "(core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(0x02DD1210),",
@@ -583,7 +551,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 65,
+      "line": 67,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "0x02DD1210->wave_animation_enabled == 0)) {",
@@ -591,7 +559,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 66,
+      "line": 68,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,1);",
@@ -599,7 +567,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 88,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
@@ -607,7 +575,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 101,
+      "line": 103,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
