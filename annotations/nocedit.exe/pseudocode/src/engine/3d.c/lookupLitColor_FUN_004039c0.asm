@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int color_value,int lighting_value)
+; uint __cdecl engine_3d_c_lookupLitColor_FUN_004039c0(int color_value,int lighting_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color_value
@@ -19,7 +19,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004039c0
-        ;   Label: engine_3d.c_makeGrayscaleColor_FUN_004039c0
+        ;   Label: engine_3d.c_lookupLitColor_FUN_004039c0
     TEST EAX,EAX                        ; 004039c4
     JL 0x004039e1                       ; 004039c6
         ;   XREF to: 004039e1 (CONDITIONAL_JUMP)  ; LAB_004039e1

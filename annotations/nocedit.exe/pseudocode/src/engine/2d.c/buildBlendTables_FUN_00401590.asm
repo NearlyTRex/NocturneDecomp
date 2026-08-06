@@ -1,20 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c__utime_00600c1e(char *filename,_utimbuf *timestamps)
+; void __cdecl engine_2d_c_buildBlendTables_FUN_00401590(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; _utimbuf *       Stack[0x8]:4   timestamps
 ;
-; XREF[1]:
-;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910 at 00481945
+; XREF[2]:
+;   shape_design.c_loadPalette_FUN_0046e810 at 0046e9f7
+;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f2e6
 ;
 ; *****************************************************************************
 
 section .text
 
-    JMP 0x00608160                      ; 00600c1e
-        ;   XREF to: 00608160 (UNCONDITIONAL_JUMP)
-        ;   Label: crt_io.c__utime_00600c1e
+    RET                                 ; 00401590
+        ;   Label: engine_2d.c_buildBlendTables_FUN_00401590
 

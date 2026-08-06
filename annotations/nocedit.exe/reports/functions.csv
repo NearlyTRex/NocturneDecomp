@@ -7,7 +7,7 @@ engine_2d.c_drawLine_FUN_004011b0,004011b0,engine/2d.c,59,0,,59
 engine_2d.c_plotPixelWithDepth_FUN_00401290,00401290,engine/2d.c,21,0,,21
 engine_2d.c_drawLine3D_FUN_00401320,00401320,engine/2d.c,67,0,,67
 engine_2d.c_findBestPaletteMatch_FUN_00401460,00401460,engine/2d.c,43,0,,43
-engine_2d.c_doNothing1_FUN_00401590,00401590,engine/2d.c,4,0,,4
+engine_2d.c_buildBlendTables_FUN_00401590,00401590,engine/2d.c,4,0,,4
 engine_2d.c_loadPaletteFile_FUN_004015a0,004015a0,engine/2d.c,13,0,,13
 engine_2d.c_drawCharacter_FUN_00401610,00401610,engine/2d.c,89,0,,89
 engine_2d.c_project3DPointToScreen_FUN_00401770,00401770,engine/2d.c,9,0,,9
@@ -56,7 +56,7 @@ engine_2d.c_enableTextWrap_FUN_00402810,00402810,engine/2d.c,5,0,,5
 engine_2d.c_disableTextWrap_FUN_00402820,00402820,engine/2d.c,5,0,,5
 engine_2d.c_getTextColor_FUN_00402830,00402830,engine/2d.c,4,0,,4
 engine_2d.c_setTextColor_FUN_00402840,00402840,engine/2d.c,5,0,,5
-engine_2d.c_doNothing2_FUN_00402860,00402860,engine/2d.c,4,0,,4
+engine_2d.c_loadLightTable_FUN_00402860,00402860,engine/2d.c,4,0,,4
 engine_2d.c_buildColorLookupTable_FUN_00402870,00402870,engine/2d.c,51,0,,51
 engine_2d.c_loadOrBuildColorMap_FUN_00402930,00402930,engine/2d.c,55,0,,55
 engine_2d.c_resetGraphicsSystem_FUN_00402a70,00402a70,engine/2d.c,5,0,,5
@@ -83,7 +83,7 @@ engine_3d.c_badMRGLStruct_FUN_004037b0,004037b0,engine/3d.c,7,0,,7
 engine_3d.c_processCameraRelativePoint_FUN_004037e0,004037e0,engine/3d.c,10,0,,10
 engine_3d.c_transformAndBufferVertices_FUN_00403840,00403840,engine/3d.c,37,0,,37
 engine_3d.c_isVisiblePlane_FUN_00403950,00403950,engine/3d.c,22,0,,22
-engine_3d.c_makeGrayscaleColor_FUN_004039c0,004039c0,engine/3d.c,7,0,,7
+engine_3d.c_lookupLitColor_FUN_004039c0,004039c0,engine/3d.c,7,0,,7
 engine_3d.c_calculatePolygonLighting_FUN_00403a00,00403a00,engine/3d.c,7,0,,7
 engine_3d.c_processVertexLighting_FUN_00403a20,00403a20,engine/3d.c,18,0,,18
 engine_3d.c_processTextureCoordinates_FUN_00403a80,00403a80,engine/3d.c,16,0,,16
@@ -108,7 +108,7 @@ engine_3d.c_drawLineStrip2D_FUN_00404570,00404570,engine/3d.c,139,0,,139
 engine_3d.c_drawLineStrip3D_FUN_00404600,00404600,engine/3d.c,139,0,,139
 engine_3d.c_oldFunction7_FUN_00404690,00404690,engine/3d.c,7,0,,7
 engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0,004046c0,engine/3d.c,50,0,,50
-engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840,00404840,engine/3d.c,92,0,,92
+engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840,00404840,engine/3d.c,91,0,,91
 engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40,00404a40,engine/3d.c,26,0,,26
 engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0,00404ae0,engine/3d.c,76,0,,76
 engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60,00404c60,engine/3d.c,38,0,,38
@@ -143,7 +143,7 @@ engine_3d.c_renderPolygonSolidTexturedLitOp48_FUN_004060a0,004060a0,engine/3d.c,
 engine_3d.c_renderPolygonTexturedDepthLitOp49_FUN_00406150,00406150,engine/3d.c,26,0,,26
 engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_004061f0,004061f0,engine/3d.c,25,0,,25
 engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290,00406290,engine/3d.c,74,0,,74
-engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430,00406430,engine/3d.c,109,0,,109
+engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430,00406430,engine/3d.c,108,0,,108
 engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066d0,004066d0,engine/3d.c,31,0,,31
 engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067a0,004067a0,engine/3d.c,29,0,,29
 engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860,00406860,engine/3d.c,77,0,,77
@@ -6550,7 +6550,7 @@ crt_watcom.c__heapchk_FUN_00600ad0,00600ad0,crt/watcom.c,42,0,,42
 crt_math.c_asin_FUN_00600b94,00600b94,crt/math.c,8,2,warning_inlined_function|warning_unreachable,38
 crt_memory.c___arrcopy_FUN_00600bc2,00600bc2,crt/memory.c,15,3,pointer_cast|pointer_truncation,55
 crt_io.c_getFileStat_FUN_00600c18,00600c18,crt/io.c,6,0,,6
-crt_io.c__utime_00600c1e,00600c1e,crt/io.c,6,0,,6
+crt_io.c__utime_FUN_00600c1e,00600c1e,crt/io.c,6,0,,6
 engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30,00600c30,engine/dosio.cpp,20,0,,20
 crt_unknown.c_FUN_00600c80,00600c80,crt/unknown.c,19,12,unnamed_param,144
 crt_io.c_chsize_FUN_00600cf0,00600cf0,crt/io.c,47,8,unaffected_reg,132

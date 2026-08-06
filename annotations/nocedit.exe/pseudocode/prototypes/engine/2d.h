@@ -31,9 +31,9 @@ void __cdecl drawLine3D(int x1,int y1,uint z1,int x2,int y2,uint z2);
 // Address: 00401460
 int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int end_index);
 
-// Original: engine_2d.c_doNothing1_FUN_00401590
+// Original: engine_2d.c_buildBlendTables_FUN_00401590
 // Address: 00401590
-void __cdecl doNothing1(char *filename);
+void __cdecl buildBlendTables(char *filename);
 
 // Original: engine_2d.c_loadPaletteFile_FUN_004015a0
 // Address: 004015a0
@@ -227,9 +227,9 @@ int __cdecl getTextColor(void);
 // Address: 00402840
 void __cdecl setTextColor(int color);
 
-// Original: engine_2d.c_doNothing2_FUN_00402860
+// Original: engine_2d.c_loadLightTable_FUN_00402860
 // Address: 00402860
-void __cdecl doNothing2(char *filename);
+void __cdecl loadLightTable(char *filename);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00402870
 // Address: 00402870

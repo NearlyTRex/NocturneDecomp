@@ -82,8 +82,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
                   ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i)
         ;
         g_ActiveRenderColor =
-             engine_3d_c_makeGrayscaleColor_FUN_004039c0
-                       (g_CurrentPolygonColor,g_CurrentLightingValue);
+             engine_3d_c_lookupLitColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {

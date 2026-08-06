@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
-;   engine_3d.c_makeGrayscaleColor_FUN_004039c0
+;   engine_3d.c_lookupLitColor_FUN_004039c0
 ;   engine_clipper.c_clipAndRasterize_FUN_004371b0
 ;   engine_light.cpp_calculateLighting_FUN_00505780
 ;
@@ -76,8 +76,8 @@ section .text
     MOV ECX,dword ptr [0x00772a5c]      ; 00404b52 | g_CurrentPolygonColor
     PUSH ECX                            ; 00404b58
     MOV [0x02d02574],EAX                ; 00404b59 | g_CurrentLightingValue
-    CALL engine_3d.c_makeGrayscaleColor_FUN_004039c0 ; 00404b5e
-        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int color_value, int lighting_value)
+    CALL engine_3d.c_lookupLitColor_FUN_004039c0 ; 00404b5e
+        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_004039c0(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00404b63
     PUSH EDI                            ; 00404b66
     MOV EDI,dword ptr [EBX + 0x4]       ; 00404b67

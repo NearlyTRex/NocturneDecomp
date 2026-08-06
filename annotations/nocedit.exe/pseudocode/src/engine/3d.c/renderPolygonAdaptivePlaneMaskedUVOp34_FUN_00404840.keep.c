@@ -62,8 +62,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34
                   ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
                    (primitive->surface_normal).C.i);
         g_ActiveRenderColor =
-             engine_3d_c_makeGrayscaleColor_FUN_004039c0
-                       (g_CurrentPolygonColor,g_CurrentLightingValue);
+             engine_3d_c_lookupLitColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {

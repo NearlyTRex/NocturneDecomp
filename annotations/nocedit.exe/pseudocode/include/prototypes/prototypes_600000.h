@@ -46,7 +46,7 @@ int __cdecl crt_watcom_c__heapchk_FUN_00600ad0(void);
 float10 __fpustack_safe crt_math_c_asin_FUN_00600b94(float10 sine_value);
 void * __cdecl crt_memory_c___arrcopy_FUN_00600bc2(void *dest,void *source,int count,WatcomTypeInfo *type_info);
 int __cdecl crt_io_c_getFileStat_FUN_00600c18(char *filename,_stat *file_info);
-int __cdecl crt_io_c__utime_00600c1e(char *filename,_utimbuf *timestamps);
+int __cdecl crt_io_c__utime_FUN_00600c1e(char *filename,_utimbuf *timestamps);
 DWORD __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD file_attributes);
 void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3);
 int __cdecl crt_io_c_chsize_FUN_00600cf0(int file_handle,long new_size);

@@ -34,7 +34,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403
                    ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
                     (primitive->surface_normal).C.i);
     g_ActiveRenderColor =
-         engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
+         engine_3d_c_lookupLitColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)(primitive + 1));
   }
   return (SMRGLHeaderExtended *)(&primitive[1].base.type + (primitive->base).count);

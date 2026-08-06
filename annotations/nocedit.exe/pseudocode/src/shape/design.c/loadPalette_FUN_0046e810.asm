@@ -32,11 +32,11 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005ffef0
+;   engine_2d.c_buildBlendTables_FUN_00401590
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
-;   engine_2d.c_doNothing1_FUN_00401590
-;   engine_2d.c_doNothing2_FUN_00402860
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
+;   engine_2d.c_loadLightTable_FUN_00402860
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402930
 ;   engine_2d.c_loadPaletteFile_FUN_004015a0
 ;   engine_dosio.cpp_getFileSize_FUN_00481880
@@ -269,8 +269,8 @@ section .text
     ADD ESP,0x4                         ; 0046e9d8
     LEA EAX,[EBP + -0x58]               ; 0046e9db
     PUSH EAX                            ; 0046e9de
-    CALL engine_2d.c_doNothing2_FUN_00402860 ; 0046e9df
-        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing2_FUN_00402860(char * filename)
+    CALL engine_2d.c_loadLightTable_FUN_00402860 ; 0046e9df
+        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadLightTable_FUN_00402860(char * filename)
     ADD ESP,0x4                         ; 0046e9e4
     LEA EAX,[EBP + -0x58]               ; 0046e9e7
     PUSH EAX                            ; 0046e9ea
@@ -279,8 +279,8 @@ section .text
     ADD ESP,0x4                         ; 0046e9f0
     LEA EAX,[EBP + -0x58]               ; 0046e9f3
     PUSH EAX                            ; 0046e9f6
-    CALL engine_2d.c_doNothing1_FUN_00401590 ; 0046e9f7
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing1_FUN_00401590(char * filename)
+    CALL engine_2d.c_buildBlendTables_FUN_00401590 ; 0046e9f7
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_buildBlendTables_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0046e9fc
     JMP 0x0046eb51                      ; 0046e9ff
         ;   XREF to: 0046eb51 (UNCONDITIONAL_JUMP)  ; LAB_0046eb51
@@ -418,8 +418,8 @@ section .text
     ADD ESP,0x4                         ; 0046eaff
     MOV EAX,0x61e025                    ; 0046eb02 | = "vga.lte"
     PUSH EAX                            ; 0046eb07 | = "vga.lte"
-    CALL engine_2d.c_doNothing2_FUN_00402860 ; 0046eb08
-        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing2_FUN_00402860(char * filename)
+    CALL engine_2d.c_loadLightTable_FUN_00402860 ; 0046eb08
+        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadLightTable_FUN_00402860(char * filename)
     ADD ESP,0x4                         ; 0046eb0d
     MOV EAX,0x61e02d                    ; 0046eb10 | = "vga.act"
     PUSH EAX                            ; 0046eb15 | = "vga.act"
@@ -428,8 +428,8 @@ section .text
     ADD ESP,0x4                         ; 0046eb1b
     MOV EAX,0x61e035                    ; 0046eb1e | = "vga.act"
     PUSH EAX                            ; 0046eb23 | = "vga.act"
-    CALL engine_2d.c_doNothing1_FUN_00401590 ; 0046eb24
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing1_FUN_00401590(char * filename)
+    CALL engine_2d.c_buildBlendTables_FUN_00401590 ; 0046eb24
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_buildBlendTables_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0046eb29
     JMP 0x0046eb51                      ; 0046eb2c
         ;   XREF to: 0046eb51 (UNCONDITIONAL_JUMP)  ; LAB_0046eb51
