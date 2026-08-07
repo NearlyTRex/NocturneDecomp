@@ -28,10 +28,10 @@
 ;   undefined4 DAT_01bcde10
 ;   undefined4 DAT_01bcde14
 ;   undefined4 DAT_01bcde18
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -58,7 +58,7 @@ section .text
     PUSH EDX                            ; 004759e0
     CALL shape_edittool.cpp_FUN_004722b0 ; 004759e1
         ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
-    MOV EAX,[0x01c00c58]                ; 004759e6 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 004759e6 | g_ClipLeft
     ADD ESP,0x4                         ; 004759eb
     MOV dword ptr [ESP + 0x134],EAX     ; 004759ee
     MOV EAX,dword ptr [ESP + 0x160]     ; 004759f5
@@ -71,7 +71,7 @@ section .text
     TEST EBX,EBX                        ; 00475a1f
     JLE 0x00475ae2                      ; 00475a21
         ;   XREF to: 00475ae2 (CONDITIONAL_JUMP)  ; LAB_00475ae2
-    MOV EAX,[0x01c00c5c]                ; 00475a27 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 00475a27 | g_ClipTop
         ;   Label: LAB_00475a27
     MOV dword ptr [ESP + 0x140],EAX     ; 00475a2c
     MOV EAX,dword ptr [ESP + 0x160]     ; 00475a33
@@ -91,20 +91,20 @@ section .text
         ;   Label: LAB_00475a63
     JLE 0x00475aa1                      ; 00475a6b
         ;   XREF to: 00475aa1 (CONDITIONAL_JUMP)  ; LAB_00475aa1
-    MOV EDI,dword ptr [0x01c00c64]      ; 00475a6d | DAT_01c00c64
+    MOV EDI,dword ptr [0x01c00c64]      ; 00475a6d | g_ClipBottom
     MOV EBP,dword ptr [ESP + 0x134]     ; 00475a73
     PUSH EDI                            ; 00475a7a
-    MOV ESI,dword ptr [0x01c00c70]      ; 00475a7b | DAT_01c00c70
+    MOV ESI,dword ptr [0x01c00c70]      ; 00475a7b | g_ActiveRenderColor
     MOV EAX,[0x01bcde18]                ; 00475a81 | DAT_01bcde18
     PUSH EBP                            ; 00475a86
-    MOV [0x01c00c70],EAX                ; 00475a87 | DAT_01c00c70
-    MOV EAX,[0x01c00c5c]                ; 00475a8c | DAT_01c00c5c
+    MOV [0x01c00c70],EAX                ; 00475a87 | g_ActiveRenderColor
+    MOV EAX,[0x01c00c5c]                ; 00475a8c | g_ClipTop
     PUSH EAX                            ; 00475a91
     PUSH EBP                            ; 00475a92
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00475a93
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00475a98
-    MOV dword ptr [0x01c00c70],ESI      ; 00475a9b | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ESI      ; 00475a9b | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0x160]     ; 00475aa1
         ;   Label: LAB_00475aa1
     MOV ESI,dword ptr [ESP + 0x134]     ; 00475aa8

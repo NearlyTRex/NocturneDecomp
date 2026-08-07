@@ -26,14 +26,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
   _DAT_01c039dc = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc558c);
   _DAT_01c039e0 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc55b4);
   _DAT_01c039e4 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc55dc);
-  _DAT_01c00c48 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc53d4);
-  _DAT_01c00c4c = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc53fc);
-  _DAT_01c00c50 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5424);
-  _DAT_01c00c54 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc544c);
+  g_Projection.half_width_fixed = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc53d4);
+  g_Projection.neg_half_height_fixed = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc53fc);
+  g_Projection.center_x_fixed = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5424);
+  g_Projection.center_y_fixed = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc544c);
   DAT_005b7648 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5474);
-  _DAT_01c00c58 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5604);
-  _DAT_01c00c60 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc562c);
-  _DAT_01c00c5c = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5654);
-  _DAT_01c00c64 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc567c);
+  g_ClipLeft = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5604);
+  g_ClipRight = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc562c);
+  g_ClipTop = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5654);
+  g_ClipBottom = *(int *)(_DAT_01cc53d0 * 4 + 0x1cc567c);
   return;
 }

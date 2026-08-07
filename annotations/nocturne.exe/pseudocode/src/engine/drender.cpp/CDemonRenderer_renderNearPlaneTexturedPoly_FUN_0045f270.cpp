@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0045f270(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -50,14 +48,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0
         }
       }
       if (this_ptr->face_count == 0) {
-        _DAT_01c039a0 = 0xc1;
-        _DAT_01c039a4 = 3;
-        _DAT_01c00c7c = core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 3;
+        g_ScanlineRenderFunc =
+             (MainScanlineFunc *)core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200;
       }
       else {
-        _DAT_01c039a0 = 0;
-        _DAT_01c039a4 = 0;
-        _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

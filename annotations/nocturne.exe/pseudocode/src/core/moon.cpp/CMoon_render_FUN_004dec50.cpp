@@ -118,7 +118,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   local_2c = g_CAlphaBitmap_01ccdc50.raw;
   local_28 = 0;
   do {
-    local_20 = *(ulonglong **)(&DAT_01bd2fa0 + local_28 * 4);
+    local_20 = g_ScreenBufferArray[local_28];
     uVar3 = 0;
     puVar5 = local_20;
     do {

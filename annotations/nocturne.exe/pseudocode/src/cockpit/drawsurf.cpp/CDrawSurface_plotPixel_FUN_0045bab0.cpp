@@ -23,22 +23,21 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
     return;
   }
   iVar2 = iVar3 * 2;
-  iVar4 = iVar4 * 4;
   iVar1 = iVar3 * 4;
   if (_DAT_01b4d71c == 0) {
-    if (DAT_005b7624 < 0x10) {
-      if (DAT_005b7624 == 8) {
-        *(byte *)(iVar3 + *(int *)(&DAT_01bd2fa0 + iVar4)) = DAT_01b4d710;
+    if ((uint)g_BitsPerPixel < 0x10) {
+      if (g_BitsPerPixel == 8) {
+        *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = DAT_01b4d710;
         return;
       }
     }
     else {
-      if (DAT_005b7624 < 0x11) {
-        *(ushort *)(iVar2 + *(int *)(&DAT_01bd2fa0 + iVar4)) = _DAT_01b4d710;
+      if ((uint)g_BitsPerPixel < 0x11) {
+        *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = _DAT_01b4d710;
         return;
       }
-      if (DAT_005b7624 == 0x20) {
-        *(uint *)(iVar1 + *(int *)(&DAT_01bd2fa0 + iVar4)) = _DAT_01b4d710;
+      if (g_BitsPerPixel == 0x20) {
+        *(uint *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = _DAT_01b4d710;
         return;
       }
     }
@@ -47,23 +46,23 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
     core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel!");
     return;
   }
-  if (DAT_005b7624 < 0x10) {
-    if (DAT_005b7624 == 8) {
-      *(byte *)(iVar3 + *(int *)(&DAT_01bd2fa0 + iVar4)) =
-           g_LightTable[8][*(byte *)(iVar3 + *(int *)(&DAT_01bd2fa0 + iVar4))];
+  if ((uint)g_BitsPerPixel < 0x10) {
+    if (g_BitsPerPixel == 8) {
+      *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) =
+           g_LightTable[8][*(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4])];
       return;
     }
   }
   else {
-    if (DAT_005b7624 < 0x11) {
-      *(ushort *)(iVar2 + *(int *)(&DAT_01bd2fa0 + iVar4)) =
-           *(ushort *)(iVar2 + *(int *)(&DAT_01bd2fa0 + iVar4)) >> (DAT_01b4d720 & 0x1f) &
+    if ((uint)g_BitsPerPixel < 0x11) {
+      *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =
+           *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> (DAT_01b4d720 & 0x1f) &
            (ushort)_DAT_01b4d730;
       return;
     }
-    if (DAT_005b7624 == 0x20) {
-      *(uint *)(*(int *)(&DAT_01bd2fa0 + iVar4) + iVar1) =
-           *(uint *)(*(int *)(&DAT_01bd2fa0 + iVar4) + iVar1) >> (DAT_01b4d720 & 0x1f) &
+    if (g_BitsPerPixel == 0x20) {
+      *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =
+           *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> (DAT_01b4d720 & 0x1f) &
            _DAT_01b4d730;
       return;
     }

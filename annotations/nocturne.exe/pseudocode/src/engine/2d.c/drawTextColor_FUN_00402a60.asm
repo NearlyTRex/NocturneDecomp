@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   undefined4 g_ResolutionTable[7].width
 ;   undefined4 g_ResolutionTable[7].height
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultilineColor_FUN_00402570
@@ -43,9 +43,9 @@ section .text
     PUSH EBX                            ; 00402a78
     MOV EBX,dword ptr [0x005acaa8]      ; 00402a79 | g_ResolutionTable[7].height
     PUSH EBX                            ; 00402a7f
-    MOV ESI,dword ptr [0x01c00c64]      ; 00402a80 | DAT_01c00c64
+    MOV ESI,dword ptr [0x01c00c64]      ; 00402a80 | g_ClipBottom
     PUSH ESI                            ; 00402a86
-    MOV EDI,dword ptr [0x01c00c60]      ; 00402a87 | DAT_01c00c60
+    MOV EDI,dword ptr [0x01c00c60]      ; 00402a87 | g_ClipRight
     PUSH EDI                            ; 00402a8d
     PUSH ECX                            ; 00402a8e
     PUSH EAX                            ; 00402a8f
@@ -61,9 +61,9 @@ section .text
     MOV ESI,dword ptr [0x005acaa8]      ; 00402a9e | g_ResolutionTable[7].height
         ;   Label: LAB_00402a9e
     PUSH ESI                            ; 00402aa4
-    MOV EDI,dword ptr [0x01c00c64]      ; 00402aa5 | DAT_01c00c64
+    MOV EDI,dword ptr [0x01c00c64]      ; 00402aa5 | g_ClipBottom
     PUSH EDI                            ; 00402aab
-    MOV EBP,dword ptr [0x01c00c60]      ; 00402aac | DAT_01c00c60
+    MOV EBP,dword ptr [0x01c00c60]      ; 00402aac | g_ClipRight
     PUSH EBP                            ; 00402ab2
     PUSH ECX                            ; 00402ab3
     PUSH EAX                            ; 00402ab4

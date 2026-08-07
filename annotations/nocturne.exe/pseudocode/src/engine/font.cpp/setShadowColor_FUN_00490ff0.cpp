@@ -12,20 +12,20 @@
 void __cdecl engine_font_cpp_setShadowColor_FUN_00490ff0(uint red,uint green,uint blue)
 
 {
-  if (DAT_005b7624 == 8) {
+  if (g_BitsPerPixel == 8) {
     DAT_01c70f5c = g_ColorCubeLookup
                    [((int)green >> 3) * 0x20 + ((int)red >> 3) * 0x400 + ((int)blue >> 3)];
   }
-  else if (DAT_005b7624 == 0x10) {
+  else if (g_BitsPerPixel == 0x10) {
     _DAT_01c70f5e =
-         (ushort)(red / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-         (ushort)(green / _DAT_01c00634 << (DAT_01c00630 & 0x1f)) |
-         (ushort)(blue / _DAT_01c00640 << (DAT_01c0063c & 0x1f));
+         (ushort)(red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+         (ushort)(green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)) |
+         (ushort)(blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f));
   }
-  else if (DAT_005b7624 == 0x20) {
+  else if (g_BitsPerPixel == 0x20) {
     _DAT_01c70f60 =
-         blue << (DAT_01c0063c & 0x1f) |
-         green << (DAT_01c00630 & 0x1f) | red << (DAT_01c00624 & 0x1f);
+         blue << (g_BlueBitPosition.bytes[0] & 0x1f) |
+         green << (g_GreenBitPosition.bytes[0] & 0x1f) | red << (g_RedBitPosition.bytes[0] & 0x1f);
   }
   else {
     g_CurrentFilename = "..\\engine\\font.cpp";

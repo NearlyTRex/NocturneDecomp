@@ -13,8 +13,8 @@
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471e40
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c02594
+;   int g_BitsPerPixel = 0x8
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d98
 ;   undefined4 DAT_02dc9e20
 ;
@@ -22,7 +22,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532320 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532320 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_FUN_00532320
     JNZ 0x0053232c                      ; 00532327
         ;   XREF to: 0053232c (CONDITIONAL_JUMP)  ; LAB_0053232c
@@ -30,7 +30,7 @@ section .text
     RET                                 ; 0053232b
     MOV EAX,[0x02dc9e20]                ; 0053232c | DAT_02dc9e20
         ;   Label: LAB_0053232c
-    MOV [0x005b7624],EAX                ; 00532331 | DAT_005b7624
+    MOV [0x005b7624],EAX                ; 00532331 | g_BitsPerPixel
     CALL dword ptr [0x02dc9d98]         ; 00532336 | DAT_02dc9d98
     RET                                 ; 0053233c
 

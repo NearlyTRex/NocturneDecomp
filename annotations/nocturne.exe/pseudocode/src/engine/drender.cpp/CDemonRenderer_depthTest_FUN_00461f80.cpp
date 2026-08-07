@@ -18,16 +18,15 @@ int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRende
   if (this_ptr->face_count == 0) {
     engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertex_ptr,1);
   }
-  iVar1 = ((vertex_ptr->projected_vertex).screen_x >> 0x10) * 4;
-  iVar2 = ((vertex_ptr->projected_vertex).screen_y >> 0x10) * 4;
+  iVar1 = (vertex_ptr->projected_vertex).screen_x >> 0x10;
+  iVar2 = (vertex_ptr->projected_vertex).screen_y >> 0x10;
   if (this_ptr->face_count == 0) {
-    if ((vertex_ptr->projected_vertex).transformed_z <
-        *(int *)(*(int *)(&DAT_01bd4260 + iVar2) + iVar1)) {
+    if ((vertex_ptr->projected_vertex).transformed_z < (int)g_ZBufferScanlineArray[iVar2][iVar1]) {
       return 0;
     }
   }
   else if ((vertex_ptr->projected_vertex).transformed_z <
-           *(int *)(*(int *)(&DAT_01bd2fa0 + iVar2) + iVar1)) {
+           *(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {
     return 0;
   }
   return 1;

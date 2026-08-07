@@ -79,9 +79,9 @@ undefined4 FUN_00432b48(void);
 // Address: 00432bd8
 undefined4 FUN_00432bd8(void);
 
-// Original: engine_clipper.c_FUN_00432cd0
+// Original: engine_clipper.c_clipAndRasterize_FUN_00432cd0
 // Address: 00432cd0
-void FUN_00432cd0(uint param_1,int *param_2);
+void __cdecl clipAndRasterize(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_copyMemory_FUN_00433770
 // Address: 00433770

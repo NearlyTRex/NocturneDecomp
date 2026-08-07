@@ -1,0 +1,165 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 155,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 60,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "00456950",
+      "from_addr": "00456985",
+      "name": "engine_dosio.cpp_copyFileTimestamp_FUN_00456950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565dc6",
+    "address_range": [
+      [
+        "00565dc6",
+        "00565dca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c__utime_FUN_00565dc6",
+    "signature": "int __cdecl crt_io_c__utime_FUN_00565dc6(char *filename,_utimbuf *timestamps)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00456985",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_copyFileTimestamp_FUN_00456950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCH": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "timestamps",
+        "offset": 8,
+        "size": 4,
+        "type": "_utimbuf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_18._0_4_ = _time((time_t *)0x0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_18._4_4_ = auStack_18._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_18._4_4_ = auStack_18._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "auStack_40._0_2_ = SStack_50.wYear;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "auStack_40._2_2_ = SStack_50.wMonth;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._6_2_",
+      "severity": "mild",
+      "text": "auStack_40._6_2_ = SStack_50.wDay;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._8_2_",
+      "severity": "mild",
+      "text": "auStack_40._8_2_ = SStack_50.wHour;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._10_2_",
+      "severity": "mild",
+      "text": "auStack_40._10_2_ = SStack_50.wMinute;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._12_2_",
+      "severity": "mild",
+      "text": "auStack_40._12_2_ = SStack_50.wSecond;",
+      "type": "unknown_field"
+    }
+  ]
+}

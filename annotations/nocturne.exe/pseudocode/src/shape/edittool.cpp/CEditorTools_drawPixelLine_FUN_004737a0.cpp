@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004737a0(CEditorTools *this_ptr,int start_x,int start_y,int length)
 
 {
@@ -17,8 +15,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004737a0(CEditorT
   int y_00;
   
   if (((((-1 < start_x) && (-1 < start_y)) && (start_x < g_WindowWidth)) &&
-      ((start_y < g_WindowHeight && (_DAT_01c00c58 <= start_x)))) &&
-     ((start_x < _DAT_01c00c60 && ((_DAT_01c00c5c <= start_y && (start_y < _DAT_01c00c64)))))) {
+      ((start_y < g_WindowHeight && (g_ClipLeft <= start_x)))) &&
+     ((start_x < g_ClipRight && ((g_ClipTop <= start_y && (start_y < g_ClipBottom)))))) {
     engine_2d_c_plotPixel_FUN_00401530(start_x,start_y);
   }
   y_00 = start_y + -length;
@@ -27,23 +25,23 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004737a0(CEditorT
   y = length + start_y;
   while (start_y < y) {
     if ((((-1 < x) && (-1 < y_00)) && (x < g_WindowWidth)) &&
-       (((y_00 < g_WindowHeight && (_DAT_01c00c58 <= x)) &&
-        ((x < _DAT_01c00c60 && ((_DAT_01c00c5c <= y_00 && (y_00 < _DAT_01c00c64)))))))) {
+       (((y_00 < g_WindowHeight && (g_ClipLeft <= x)) &&
+        ((x < g_ClipRight && ((g_ClipTop <= y_00 && (y_00 < g_ClipBottom)))))))) {
       engine_2d_c_plotPixel_FUN_00401530(x,y_00);
     }
     if (((((-1 < x_00) && (-1 < y_00)) && (x_00 < g_WindowWidth)) &&
-        ((y_00 < g_WindowHeight && (_DAT_01c00c58 <= x_00)))) &&
-       ((x_00 < _DAT_01c00c60 && ((_DAT_01c00c5c <= y_00 && (y_00 < _DAT_01c00c64)))))) {
+        ((y_00 < g_WindowHeight && (g_ClipLeft <= x_00)))) &&
+       ((x_00 < g_ClipRight && ((g_ClipTop <= y_00 && (y_00 < g_ClipBottom)))))) {
       engine_2d_c_plotPixel_FUN_00401530(x_00,y_00);
     }
     if ((((((-1 < x) && (-1 < y)) && (x < g_WindowWidth)) &&
-         ((y < g_WindowHeight && (_DAT_01c00c58 <= x)))) && (x < _DAT_01c00c60)) &&
-       ((_DAT_01c00c5c <= y && (y < _DAT_01c00c64)))) {
+         ((y < g_WindowHeight && (g_ClipLeft <= x)))) && (x < g_ClipRight)) &&
+       ((g_ClipTop <= y && (y < g_ClipBottom)))) {
       engine_2d_c_plotPixel_FUN_00401530(x,y);
     }
     if ((((x_00 < 0) || (y < 0)) || (g_WindowWidth <= x_00)) ||
-       (((g_WindowHeight <= y || (x_00 < _DAT_01c00c58)) ||
-        ((_DAT_01c00c60 <= x_00 || ((y < _DAT_01c00c5c || (_DAT_01c00c64 <= y)))))))) {
+       (((g_WindowHeight <= y || (x_00 < g_ClipLeft)) ||
+        ((g_ClipRight <= x_00 || ((y < g_ClipTop || (g_ClipBottom <= y)))))))) {
       x = x + 1;
       x_00 = x_00 + -1;
       y = y + -1;

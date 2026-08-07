@@ -116,10 +116,10 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 00512612 | g_CDemonRenderer_PTR_005ae704
     XOR EDX,EDX                         ; 00512618
     MOV dword ptr [EAX + 0x15aacc],0x0  ; 0051261a
-    MOV EAX,[0x01c02594]                ; 00512624 | DAT_01c02594
+    MOV EAX,[0x01c02594]                ; 00512624 | g_UseExternalRenderer
     PUSH ECX                            ; 00512629 | DAT_01b4d738
     MOV dword ptr [ESP + 0x23c],EAX     ; 0051262a
-    MOV dword ptr [0x01c02594],EDX      ; 00512631 | DAT_01c02594
+    MOV dword ptr [0x01c02594],EDX      ; 00512631 | g_UseExternalRenderer
     CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090 ; 00512637
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0051263c
@@ -305,7 +305,7 @@ section .text
     XOR EAX,EAX                         ; 005128e1
     ADD EAX,0x4                         ; 005128e3
         ;   Label: LAB_005128e3
-    MOV EDX,dword ptr [EAX + 0x1bd425c] ; 005128e6 | DAT_01bd4260
+    MOV EDX,dword ptr [EAX + 0x1bd425c] ; 005128e6 | g_ZBufferScanlineArray
     MOV dword ptr [ESP + EAX*0x1 + 0x8],EDX ; 005128ec
     CMP EAX,0xc0                        ; 005128f0
     JNZ 0x005128e3                      ; 005128f5
@@ -353,7 +353,7 @@ section .text
     ADD EAX,0x4                         ; 0051298d
         ;   Label: LAB_0051298d
     MOV EDX,dword ptr [ESP + EAX*0x1 + 0x8] ; 00512990
-    MOV dword ptr [EAX + 0x1bd425c],EDX ; 00512994 | DAT_01bd4260
+    MOV dword ptr [EAX + 0x1bd425c],EDX ; 00512994 | g_ZBufferScanlineArray
     CMP EAX,0xc0                        ; 0051299a
     JNZ 0x0051298d                      ; 0051299f
         ;   XREF to: 0051298d (CONDITIONAL_JUMP)  ; LAB_0051298d
@@ -371,7 +371,7 @@ section .text
     ADD ESP,0x8                         ; 005129c4
     MOV EAX,dword ptr [ESP + 0x238]     ; 005129c7
     MOV EDX,dword ptr [EBP + 0x14]      ; 005129ce
-    MOV [0x01c02594],EAX                ; 005129d1 | DAT_01c02594
+    MOV [0x01c02594],EAX                ; 005129d1 | g_UseExternalRenderer
     MOV EDI,dword ptr [EDX]             ; 005129d6
     CMP EDI,dword ptr [0x020875f4]      ; 005129d8 | DAT_020875f4
     JG 0x00512a91                       ; 005129de
@@ -986,7 +986,7 @@ section .text
     MOV ESI,0x20875f8                   ; 0051318d
     ADD ESI,EAX                         ; 00513192
     XOR EAX,EAX                         ; 00513194
-    MOV dword ptr [EAX + 0x1bd4260],ESI ; 00513196 | DAT_01bd4260
+    MOV dword ptr [EAX + 0x1bd4260],ESI ; 00513196 | g_ZBufferScanlineArray
         ;   Label: LAB_00513196
     ADD EAX,0x4                         ; 0051319c
     ADD ESI,0x100                       ; 0051319f
@@ -1044,7 +1044,7 @@ section .text
     MOV ECX,0x100                       ; 0051324e
         ;   Label: LAB_0051324e
     MOV EDI,EBX                         ; 00513253
-    MOV ESI,dword ptr [EDX + 0x1bd4260] ; 00513255 | DAT_01bd4260
+    MOV ESI,dword ptr [EDX + 0x1bd4260] ; 00513255 | g_ZBufferScanlineArray
     ADD EDX,0x4                         ; 0051325b
     PUSH EDI                            ; 0051325e
     MOV EAX,ECX                         ; 0051325f
@@ -1054,7 +1054,7 @@ section .text
     AND CL,0x3                          ; 00513268
     MOVSB.REP ES:EDI,ESI                ; 0051326b
     POP EDI                             ; 0051326d
-    MOV dword ptr [EDX + 0x1bd425c],EBX ; 0051326e | DAT_01bd4260
+    MOV dword ptr [EDX + 0x1bd425c],EBX ; 0051326e | g_ZBufferScanlineArray
     ADD EBX,0x100                       ; 00513274
     CMP EDX,0xc0                        ; 0051327a
     JNZ 0x0051324e                      ; 00513280
@@ -1133,7 +1133,7 @@ section .text
     POP EDI                             ; 00513363
     MOV ESI,EDI                         ; 00513364
     XOR EAX,EAX                         ; 00513366
-    MOV dword ptr [EAX + 0x1bd4260],ESI ; 00513368 | DAT_01bd4260 | DAT_020845f4
+    MOV dword ptr [EAX + 0x1bd4260],ESI ; 00513368 | g_ZBufferScanlineArray | DAT_020845f4
         ;   Label: LAB_00513368
     ADD EAX,0x4                         ; 0051336e
     ADD ESI,0x100                       ; 00513371

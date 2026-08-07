@@ -33,10 +33,10 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00766c6c
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042f8c0
@@ -66,14 +66,14 @@ section .text
     CMP dword ptr [0x00766c6c],0x0      ; 0042f35a | DAT_00766c6c
     JNZ 0x0042f39f                      ; 0042f361
         ;   XREF to: 0042f39f (CONDITIONAL_JUMP)  ; LAB_0042f39f
-    MOV ECX,dword ptr [0x01c00c58]      ; 0042f363 | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 0042f363 | g_ClipLeft
     CMP EDI,ECX                         ; 0042f369
     JGE 0x0042f375                      ; 0042f36b
         ;   XREF to: 0042f375 (CONDITIONAL_JUMP)  ; LAB_0042f375
     CMP EBX,ECX                         ; 0042f36d
     JL 0x0042f3d0                       ; 0042f36f
         ;   XREF to: 0042f3d0 (CONDITIONAL_JUMP)  ; LAB_0042f3d0
-    MOV ECX,dword ptr [0x01c00c60]      ; 0042f375 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 0042f375 | g_ClipRight
         ;   Label: LAB_0042f375
     CMP EDI,ECX                         ; 0042f37b
     JLE 0x0042f383                      ; 0042f37d
@@ -81,7 +81,7 @@ section .text
     CMP EBX,ECX                         ; 0042f37f
     JG 0x0042f3d0                       ; 0042f381
         ;   XREF to: 0042f3d0 (CONDITIONAL_JUMP)  ; LAB_0042f3d0
-    MOV ECX,dword ptr [0x01c00c5c]      ; 0042f383 | DAT_01c00c5c
+    MOV ECX,dword ptr [0x01c00c5c]      ; 0042f383 | g_ClipTop
         ;   Label: LAB_0042f383
     CMP ESI,ECX                         ; 0042f389
     JGE 0x0042f391                      ; 0042f38b
@@ -89,7 +89,7 @@ section .text
     CMP EAX,ECX                         ; 0042f38d
     JL 0x0042f3d0                       ; 0042f38f
         ;   XREF to: 0042f3d0 (CONDITIONAL_JUMP)  ; LAB_0042f3d0
-    MOV ECX,dword ptr [0x01c00c64]      ; 0042f391 | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0042f391 | g_ClipBottom
         ;   Label: LAB_0042f391
     CMP ESI,ECX                         ; 0042f397
     JLE 0x0042f39f                      ; 0042f399

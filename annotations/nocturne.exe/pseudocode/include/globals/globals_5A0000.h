@@ -20,6 +20,7 @@
 #include "types/classes/CSmiley_full_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
+#include "types/structs/SFontGlyph.h"
 #include "types/structs/SResolutionEntry.h"
 
 // =============================================================================
@@ -109,6 +110,9 @@ extern CWeapon_full_vtable g_CShovelVTable;
 extern CWeapon_full_vtable g_CTommyGunVTable;
 extern CWeapon_full_vtable g_CTurretVTable;
 extern CWeapon_full_vtable g_CWeaponVTable;
+
+// SFontGlyph[224]
+extern SFontGlyph g_FontTable[224];
 
 // SResolutionEntry[9]
 extern SResolutionEntry g_ResolutionTable[9];

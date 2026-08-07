@@ -27,7 +27,7 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_0054592
     }
     _DAT_02dd0f80 = texture_index;
     engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(_DAT_02dd0f84,texture_index);
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
       if (bVar1) {
         engine_special_cpp_updateTexture_FUN_00532440(texture,_DAT_01c00020);
         return (SMRGLHeaderExtended *)(texture + 1);

@@ -18,7 +18,7 @@ char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(char **cursor,char *o
   int iVar6;
   
   pcVar2 = *cursor;
-  while (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 2) != 0) {
     pcVar2 = pcVar2 + 1;
   }
   *cursor = pcVar2;
@@ -66,18 +66,18 @@ code_r0x0047a6e9:
   if (0 < (int)n) {
     pcVar2 = out_buf + n;
     do {
-      if (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar2 = pcVar2 + -1;
     } while (0 < (int)n);
   }
   out_buf[n] = '\0';
-  while (((&DAT_005c168c)[(byte)(*out_buf + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*out_buf + 1)] & 2) != 0) {
     memmove(out_buf,out_buf + 1,n);
     n = n - 1;
   }
   pcVar2 = *cursor;
-  while (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 2) != 0) {
     pcVar2 = pcVar2 + 1;
   }
   *cursor = pcVar2;

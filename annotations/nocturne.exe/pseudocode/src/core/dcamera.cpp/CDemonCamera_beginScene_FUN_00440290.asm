@@ -169,7 +169,7 @@ section .text
     PUSH EDX                            ; 00440403 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40 ; 00440404
         ;   XREF to: 00460e40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40(CDemonRenderer * this_ptr, int x, int y, int width, ...)
-    MOV EDX,dword ptr [0x01c00c50]      ; 00440409 | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 00440409 | g_Projection.center_x_fixed
     ADD ESP,0x14                        ; 0044040f
     MOV EAX,dword ptr [ESI + 0x144]     ; 00440412
     MOV EBX,dword ptr [ESI + 0x144]     ; 00440418
@@ -178,7 +178,7 @@ section .text
     MOV dword ptr [ESI + 0x1d0],0x0     ; 0044042a
     ADD EBX,ECX                         ; 00440434
     MOV dword ptr [ESI + 0x11d4],EAX    ; 00440436
-    MOV ECX,dword ptr [0x01c00c54]      ; 0044043c | DAT_01c00c54
+    MOV ECX,dword ptr [0x01c00c54]      ; 0044043c | g_Projection.center_y_fixed
     MOV EAX,dword ptr [ESI + 0x148]     ; 00440442
     DEC EBX                             ; 00440448
     MOV dword ptr [ESI + 0x11d8],EAX    ; 00440449
@@ -198,8 +198,8 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 0044047f | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [ESI + 0x168],EDI     ; 00440485
     PUSH EBX                            ; 0044048b | DAT_01b4d738
-    MOV dword ptr [0x01c00c50],EDX      ; 0044048c | DAT_01c00c50
-    MOV dword ptr [0x01c00c54],ECX      ; 00440492 | DAT_01c00c54
+    MOV dword ptr [0x01c00c50],EDX      ; 0044048c | g_Projection.center_x_fixed
+    MOV dword ptr [0x01c00c54],ECX      ; 00440492 | g_Projection.center_y_fixed
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 00440498
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0044049d
@@ -229,7 +229,7 @@ section .text
         ;   Label: LAB_004404dc
     CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004404e1
         ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearZBufferNative_FUN_0052eed4()
-    CMP dword ptr [0x01c02594],0x0      ; 004404e6 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 004404e6 | g_UseExternalRenderer
     JZ 0x004404f9                       ; 004404ed
         ;   XREF to: 004404f9 (CONDITIONAL_JUMP)  ; LAB_004404f9
     CALL engine_special.cpp_clear_FUN_005329a0 ; 004404ef

@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       }
     ],
     "success": false,
@@ -74,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 79,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 3,
+    "pseudocode_lines": 41,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 127
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -123,8 +110,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -207,8 +194,8 @@
       "diagnostics": [
         {
           "check_id": "nullPointer",
-          "column": 62,
-          "line": 44,
+          "column": 50,
+          "line": 46,
           "message": "Possible null pointer dereference: pcVar2",
           "severity": "warning"
         }
@@ -219,24 +206,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (pcVar3 = output_buffer, ((&DAT_005c168c)[(byte)(*input_line + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while ((output_buffer < pcVar2 && (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 13,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -244,10 +215,10 @@
     },
     {
       "description": "Possible null pointer dereference: pcVar2",
-      "line": 44,
+      "line": 46,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
-      "text": "while ((output_buffer < pcVar2 && (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
+      "text": "((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
       "type": "static_null_pointer"
     }
   ]

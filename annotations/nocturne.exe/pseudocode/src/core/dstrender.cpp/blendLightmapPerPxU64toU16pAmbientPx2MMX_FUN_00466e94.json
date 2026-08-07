@@ -75,30 +75,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 88,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01c039a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c039a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c039a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c039a8'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 24,
         "line": 38,
         "message": "use of undeclared identifier 'DAT_00b0e1fc'"
@@ -114,6 +90,30 @@
         "column": 30,
         "line": 40,
         "message": "use of undeclared identifier 'int3'; did you mean 'int'?"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 40,
+        "message": "unknown type name 'uint7'; did you mean 'uint'?"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 43,
+        "message": "unknown type name 'uint5'; did you mean 'uint'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 52,
+        "message": "use of undeclared identifier '_DAT_005b64f8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 70,
+        "message": "use of undeclared identifier 'DAT_00b0e1fc'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 469,
+    "complexity_score": 470,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 105,
     "suspect_count": 34,
     "suspect_types": [
       "concat_reconstruction",
@@ -136,7 +136,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 278
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -187,20 +187,20 @@
     },
     {
       "addr": "005bf5d0",
-      "name": "DAT_005bf5d0",
-      "type": "undefined4",
+      "name": "g_RedMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5f0",
-      "name": "DAT_005bf5f0",
-      "type": "undefined4",
+      "name": "g_GreenMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf610",
-      "name": "DAT_005bf610",
-      "type": "undefined4",
+      "name": "g_BlueMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -229,8 +229,8 @@
     },
     {
       "addr": "01c039a8",
-      "name": "DAT_01c039a8",
-      "type": "undefined4",
+      "name": "g_SolidColorMode",
+      "type": "ulong",
       "value": null
     }
   ],
@@ -355,7 +355,7 @@
       "line": 23,
       "match": "uint7",
       "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
@@ -363,7 +363,7 @@
       "line": 23,
       "match": "uint7",
       "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "nonstandard_int"
     },
     {
@@ -475,7 +475,7 @@
       "line": 23,
       "match": "CONCAT52",
       "severity": "moderate",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
       "type": "concat_reconstruction"
     },
     {

@@ -14,11 +14,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c60
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_ClipLeft
+;   int g_ClipRight
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -35,12 +35,12 @@ section .text
     SUB ESP,0x1c                        ; 0042db54
     MOV EBX,dword ptr [ESP + 0x30]      ; 0042db57
     MOV EBP,dword ptr [ESP + 0x34]      ; 0042db5b
-    MOV EAX,[0x01c00c60]                ; 0042db5f | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 0042db5f | g_ClipRight
     SUB EAX,EBP                         ; 0042db64
-    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042db66 | DAT_01bd2fa0
+    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042db66 | g_ScreenBufferArray
     MOV dword ptr [ESP],EAX             ; 0042db6c
-    MOV EAX,[0x01bd2fa4]                ; 0042db6f | DAT_01bd2fa4
-    MOV ESI,dword ptr [0x01c00c58]      ; 0042db74 | DAT_01c00c58
+    MOV EAX,[0x01bd2fa4]                ; 0042db6f | g_ScreenBufferArray[1]
+    MOV ESI,dword ptr [0x01c00c58]      ; 0042db74 | g_ClipLeft
     SUB EAX,EDX                         ; 0042db7a
     SUB ESI,EBP                         ; 0042db7c
     MOV dword ptr [ESP + 0x14],EAX      ; 0042db7e
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
         ;   Label: LAB_0042db98
     MOV ECX,dword ptr [ESP + 0x38]      ; 0042db9d
-    MOV EDI,dword ptr [0x005b7624]      ; 0042dba1 | DAT_005b7624
+    MOV EDI,dword ptr [0x005b7624]      ; 0042dba1 | g_BitsPerPixel
     MOV dword ptr [ESP + 0x18],EAX      ; 0042dba7
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0042dbab
     SHL ECX,0x2                         ; 0042dbaf
@@ -68,7 +68,7 @@ section .text
     CMP EDI,0x8                         ; 0042dbb3
     JNZ 0x0042dc1d                      ; 0042dbb6
         ;   XREF to: 0042dc1d (CONDITIONAL_JUMP)  ; LAB_0042dc1d
-    MOV EDI,dword ptr [ECX + 0x1bd2fa0] ; 0042dbb8 | DAT_01bd2fa0
+    MOV EDI,dword ptr [ECX + 0x1bd2fa0] ; 0042dbb8 | g_ScreenBufferArray
     MOV ECX,EAX                         ; 0042dbbe
     ADD EDI,EBP                         ; 0042dbc0
     XOR EBP,EBP                         ; 0042dbc2
@@ -121,7 +121,7 @@ section .text
     POP ESI                             ; 0042dc1a
     POP EBX                             ; 0042dc1b
     RET                                 ; 0042dc1c
-    MOV EDI,dword ptr [ECX + 0x1bd2fa0] ; 0042dc1d | DAT_01bd2fa0
+    MOV EDI,dword ptr [ECX + 0x1bd2fa0] ; 0042dc1d | g_ScreenBufferArray
         ;   Label: LAB_0042dc1d
     ADD EBP,EBP                         ; 0042dc23
     MOV ECX,EAX                         ; 0042dc25

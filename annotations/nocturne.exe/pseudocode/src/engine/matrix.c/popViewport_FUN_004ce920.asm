@@ -12,14 +12,14 @@
 ;   TerminatedCString s_engine_matrix_c_005882ea
 ;   TerminatedCString s_s_3D_Window_unbalance_005882fd
 ;   undefined4 DAT_005b7648
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   undefined4 DAT_01c039c4
 ;   undefined4 DAT_01c039c8
 ;   undefined4 DAT_01c039cc
@@ -61,23 +61,23 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc55dc] ; 004ce9a2
     MOV dword ptr [0x01c039e4],EDX      ; 004ce9a9 | DAT_01c039e4
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc53d4] ; 004ce9af
-    MOV dword ptr [0x01c00c48],EDX      ; 004ce9b6 | DAT_01c00c48
+    MOV dword ptr [0x01c00c48],EDX      ; 004ce9b6 | g_Projection
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc53fc] ; 004ce9bc
-    MOV dword ptr [0x01c00c4c],EDX      ; 004ce9c3 | DAT_01c00c4c
+    MOV dword ptr [0x01c00c4c],EDX      ; 004ce9c3 | g_Projection.neg_half_height_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5424] ; 004ce9c9
-    MOV dword ptr [0x01c00c50],EDX      ; 004ce9d0 | DAT_01c00c50
+    MOV dword ptr [0x01c00c50],EDX      ; 004ce9d0 | g_Projection.center_x_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc544c] ; 004ce9d6
-    MOV dword ptr [0x01c00c54],EDX      ; 004ce9dd | DAT_01c00c54
+    MOV dword ptr [0x01c00c54],EDX      ; 004ce9dd | g_Projection.center_y_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5474] ; 004ce9e3
     MOV dword ptr [0x005b7648],EDX      ; 004ce9ea | DAT_005b7648
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5604] ; 004ce9f0
-    MOV dword ptr [0x01c00c58],EDX      ; 004ce9f7 | DAT_01c00c58
+    MOV dword ptr [0x01c00c58],EDX      ; 004ce9f7 | g_ClipLeft
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc562c] ; 004ce9fd
-    MOV dword ptr [0x01c00c60],EDX      ; 004cea04 | DAT_01c00c60
+    MOV dword ptr [0x01c00c60],EDX      ; 004cea04 | g_ClipRight
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5654] ; 004cea0a
     MOV EAX,dword ptr [EAX*0x4 + 0x1cc567c] ; 004cea11
-    MOV dword ptr [0x01c00c5c],EDX      ; 004cea18 | DAT_01c00c5c
-    MOV [0x01c00c64],EAX                ; 004cea1e | DAT_01c00c64
+    MOV dword ptr [0x01c00c5c],EDX      ; 004cea18 | g_ClipTop
+    MOV [0x01c00c64],EAX                ; 004cea1e | g_ClipBottom
     RET                                 ; 004cea23
     PUSH ESI                            ; 004cea24
         ;   Label: LAB_004cea24

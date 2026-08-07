@@ -39,8 +39,8 @@ void shape_edittool_cpp_FUN_0046fe60(CEditorTools *param_1,char *param_2)
   shape_edittool_cpp_FUN_004722b0(param_1);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
-            (_DAT_01bcd070,(char *)0x1bca8d0,((_DAT_01c00c58 + _DAT_01c00c60) - iVar2) / 2,
-             ((_DAT_01c00c5c + _DAT_01c00c64) - iVar3) / 2,_DAT_01bcddd8,-1);
+            (_DAT_01bcd070,(char *)0x1bca8d0,((g_ClipLeft + g_ClipRight) - iVar2) / 2,
+             ((g_ClipTop + g_ClipBottom) - iVar3) / 2,_DAT_01bcddd8,-1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);

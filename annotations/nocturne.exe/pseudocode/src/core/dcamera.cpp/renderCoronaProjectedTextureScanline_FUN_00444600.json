@@ -57,19 +57,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 33,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_01bd4260'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
+        "column": 52,
         "line": 32,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
+        "column": 27,
         "line": 33,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
@@ -114,6 +108,12 @@
         "column": 28,
         "line": 47,
         "message": "use of undeclared identifier '_DAT_012b0634'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 49,
+        "message": "use of undeclared identifier '_DAT_012b0634'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 260,
+    "complexity_score": 250,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -205,8 +205,8 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     }
   ],
@@ -414,17 +414,9 @@
     {
       "description": "Undefined global data reference",
       "line": 25,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (scanline_y << (DAT_012b0660 & 0x1f)) * 4) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (scanline_y << (DAT_012b0660 & 0x1f)) * 4) +",
+      "text": "local_20 = g_ZBufferScanlineArray[scanline_y << (DAT_012b0660 & 0x1f)] +",
       "type": "undefined_data"
     },
     {
@@ -432,7 +424,7 @@
       "line": 26,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "(x_start << (DAT_012b0660 & 0x1f)) * 4);",
+      "text": "(x_start << (DAT_012b0660 & 0x1f));",
       "type": "undefined_data"
     },
     {

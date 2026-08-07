@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c02594
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d7c
 ;   undefined4 DAT_02dc9e24
 ;
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 00532ba0
         ;   Label: engine_special.cpp_FUN_00532ba0
     SUB ESP,0x4                         ; 00532ba1
-    CMP dword ptr [0x01c02594],0x0      ; 00532ba4 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532ba4 | g_UseExternalRenderer
     JZ 0x00532c60                       ; 00532bab
         ;   XREF to: 00532c60 (CONDITIONAL_JUMP)  ; LAB_00532c60
     PUSH EDI                            ; 00532bb1
@@ -42,14 +42,14 @@ section .text
     PUSH ESI                            ; 00532bbf
     PUSH EBX                            ; 00532bc0
     MOV EDX,dword ptr [0x005b761c]      ; 00532bc1 | g_WindowWidth
-    MOV ESI,dword ptr [0x005b7624]      ; 00532bc7 | DAT_005b7624
+    MOV ESI,dword ptr [0x005b7624]      ; 00532bc7 | g_BitsPerPixel
     IMUL EDX,ESI                        ; 00532bcd
     MOV EAX,EDX                         ; 00532bd0
     SAR EDX,0x1f                        ; 00532bd2
     SHL EDX,0x3                         ; 00532bd5
     SBB EAX,EDX                         ; 00532bd8
     SAR EAX,0x3                         ; 00532bda
-    MOV EBX,dword ptr [0x01bd2fa0]      ; 00532bdd | DAT_01bd2fa0
+    MOV EBX,dword ptr [0x01bd2fa0]      ; 00532bdd | g_ScreenBufferArray
     XOR EDI,EDI                         ; 00532be3
     MOV EBP,EAX                         ; 00532be5
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 00532be7
@@ -65,7 +65,7 @@ section .text
     MOV ECX,EBP                         ; 00532c00
         ;   Label: LAB_00532c00
     MOV ESI,EBX                         ; 00532c02
-    MOV EDI,dword ptr [EDX + 0x1bd2fa0] ; 00532c04 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDI,dword ptr [EDX + 0x1bd2fa0] ; 00532c04 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 00532c0a
     MOV EAX,ECX                         ; 00532c0b
     SHR ECX,0x2                         ; 00532c0d

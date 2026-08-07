@@ -19,7 +19,7 @@
 ;   void* PTR_DAT_005ae700 = 01b4d738
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 DAT_020875f8
 ;   undefined4 DAT_020875fc
 ;   undefined4 DAT_020875fd
@@ -128,7 +128,7 @@ section .text
     MOV ECX,0x100                       ; 00513817
         ;   Label: LAB_00513817
     MOV EDI,EDX                         ; 0051381c
-    MOV ESI,dword ptr [EBX + 0x1bd4260] ; 0051381e | DAT_01bd4260
+    MOV ESI,dword ptr [EBX + 0x1bd4260] ; 0051381e | g_ZBufferScanlineArray
     PUSH EDI                            ; 00513824
     MOV EAX,ECX                         ; 00513825
     SHR ECX,0x2                         ; 00513827

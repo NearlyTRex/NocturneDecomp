@@ -58,44 +58,8 @@
       {
         "category": "type_error",
         "column": 34,
-        "line": 34,
+        "line": 32,
         "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
       }
     ],
     "success": false,
@@ -104,19 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 79,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -190,13 +153,13 @@
     },
     {
       "addr": "01c00c48",
-      "name": "DAT_01c00c48",
-      "type": "undefined4",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "01c00c4c",
-      "name": "DAT_01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     }
@@ -361,16 +324,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 24,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "transformed_z * (float)0.00390625) / ((float)DAT_005b7648 * fVar2)) *",
@@ -378,7 +333,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 25,
       "match": "._0_4_",
       "severity": "mild",
       "text": "5.1640756954075245e-315._0_4_;",

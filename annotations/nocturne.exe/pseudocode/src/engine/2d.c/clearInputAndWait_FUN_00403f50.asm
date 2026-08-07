@@ -12,7 +12,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6ead
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de84
 ;   core_main.c_FUN_004c8510 at 004c8557
-;   core_main.c_FUN_004c90e0 at 004c9123
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9123
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8ed4
 ;   core_menu.cpp_FUN_004d23d0 at 004d246d
 ;   ... and 18 more

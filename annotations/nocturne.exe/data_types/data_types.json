@@ -2773,6 +2773,10 @@
       "type":"typedef"
     },
     {
+      "name":"MainScanlineFunc",
+      "type":"function_definition"
+    },
+    {
       "name":"MathErrorContext",
       "type":"struct"
     },
@@ -17337,6 +17341,28 @@
         }
       ],
       "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__edi_esi_ebx",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"MainScanlineFunc",
+      "parameters":[
+        {
+          "name":"left",
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right",
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
       "type":"function_definition"
     },
     {

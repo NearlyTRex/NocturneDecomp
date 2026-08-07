@@ -17,7 +17,7 @@
 ;   engine_drender.cpp_FUN_00461720 at 004619dd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_01e52ef8
 ;   undefined4 DAT_02dc9dac
 ;   undefined4 DAT_02dc9db4
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0xc                         ; 005327c4
     MOV EDI,dword ptr [ESP + 0x20]      ; 005327c7
     MOV EDX,dword ptr [ESP + 0x24]      ; 005327cb
-    CMP dword ptr [0x01c02594],0x0      ; 005327cf | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 005327cf | g_UseExternalRenderer
     JZ 0x005328cf                       ; 005327d6
         ;   XREF to: 005328cf (CONDITIONAL_JUMP)  ; LAB_005328cf
     MOV EBX,dword ptr [ESP + 0x28]      ; 005327dc

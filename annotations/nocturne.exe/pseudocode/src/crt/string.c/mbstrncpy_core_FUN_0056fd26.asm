@@ -12,7 +12,7 @@
 ;   crt_stdio.c_stream_setup_FUN_0056b227 at 0056b25e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_buffered_FUN_00571c60
@@ -40,7 +40,7 @@ section .text
     MOV AL,DL                           ; 0056fd44
     INC AL                              ; 0056fd46
     AND EAX,0xff                        ; 0056fd48
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0056fd4d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0056fd4d | g_CharacterClassificationTable
     JNZ 0x0056fd5a                      ; 0056fd54
         ;   XREF to: 0056fd5a (CONDITIONAL_JUMP)  ; LAB_0056fd5a
     MOV EAX,EBX                         ; 0056fd56

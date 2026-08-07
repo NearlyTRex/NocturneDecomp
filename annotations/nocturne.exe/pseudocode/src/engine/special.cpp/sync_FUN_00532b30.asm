@@ -10,14 +10,14 @@
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0 at 0050e06c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dd0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532b30 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532b30 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_sync_FUN_00532b30
     JNZ 0x00532b3c                      ; 00532b37
         ;   XREF to: 00532b3c (CONDITIONAL_JUMP)  ; LAB_00532b3c

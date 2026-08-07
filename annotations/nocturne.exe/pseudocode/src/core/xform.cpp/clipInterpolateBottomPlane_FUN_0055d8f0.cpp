@@ -10,7 +10,7 @@ void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVerte
 
 {
   longlong lVar1;
-  byte bVar2;
+  byte uVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -45,9 +45,9 @@ void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVerte
   (vertex_out->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
        (vertex_a->projected_vertex).transformed_x;
-  bVar2 = DAT_01c039a0;
+  uVar2 = g_RenderStateFlags.bytes[0];
   (vertex_out->projected_vertex).screen_x = -1;
-  if ((bVar2 & 4) == 0) {
+  if ((uVar2 & 4) == 0) {
     return;
   }
   lVar1 = (longlong)(vertex_b->r - vertex_a->r) * (longlong)iVar5;

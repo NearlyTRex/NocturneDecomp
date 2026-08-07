@@ -6,25 +6,23 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_004f4310(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height)
 
 {
   if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
-    if (dest_x < _DAT_01c00c58) {
-      src_left = src_left + (_DAT_01c00c58 - dest_x);
-      dest_x = _DAT_01c00c58;
+    if (dest_x < g_ClipLeft) {
+      src_left = src_left + (g_ClipLeft - dest_x);
+      dest_x = g_ClipLeft;
     }
-    if (dest_y < _DAT_01c00c5c) {
-      src_top = src_top + (_DAT_01c00c5c - dest_y);
-      dest_y = _DAT_01c00c5c;
+    if (dest_y < g_ClipTop) {
+      src_top = src_top + (g_ClipTop - dest_y);
+      dest_y = g_ClipTop;
     }
-    if (_DAT_01c00c60 < (width + dest_x) - src_left) {
-      width = (_DAT_01c00c60 - dest_x) + src_left;
+    if (g_ClipRight < (width + dest_x) - src_left) {
+      width = (g_ClipRight - dest_x) + src_left;
     }
-    if (_DAT_01c00c64 < (dest_y + height) - src_top) {
-      height = (_DAT_01c00c64 - dest_y) + src_top;
+    if (g_ClipBottom < (dest_y + height) - src_top) {
+      height = (g_ClipBottom - dest_y) + src_top;
     }
     if ((((src_left <= width) && (src_top <= height)) && (0 < width)) &&
        (((0 < height && (src_left < this_ptr->width)) && (src_top < this_ptr->height)))) {

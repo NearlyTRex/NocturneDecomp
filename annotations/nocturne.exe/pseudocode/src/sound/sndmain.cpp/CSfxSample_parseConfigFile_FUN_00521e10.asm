@@ -243,7 +243,7 @@ section .text
         ;   Label: LAB_00521fff
     INC CL                              ; 00522002
     AND ECX,0xff                        ; 00522004
-    TEST byte ptr [ECX + 0x5c168c],0x2  ; 0052200a | DAT_005c168c
+    TEST byte ptr [ECX + 0x5c168c],0x2  ; 0052200a | g_CharacterClassificationTable
     JNZ 0x00522044                      ; 00522011
         ;   XREF to: 00522044 (CONDITIONAL_JUMP)  ; LAB_00522044
     LEA ESI,[EBX + 0x1]                 ; 00522013
@@ -253,7 +253,7 @@ section .text
         ;   Label: LAB_00522019
     INC AL                              ; 0052201b
     AND EAX,0xff                        ; 0052201d
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00522022 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00522022 | g_CharacterClassificationTable
     JZ 0x0052204b                       ; 00522029
         ;   XREF to: 0052204b (CONDITIONAL_JUMP)  ; LAB_0052204b
     MOV EDI,EBX                         ; 0052202b

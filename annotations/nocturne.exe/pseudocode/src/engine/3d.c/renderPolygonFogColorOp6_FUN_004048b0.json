@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c00c78'; did you mean 'DAT_00400178'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 18,
-        "message": "invalid operands to binary expression ('IMAGE_SECTION_HEADER' and 'int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
       }
     ],
     "success": false,
@@ -122,18 +62,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 106,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 147
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 146
   },
   "cross_references": [],
   "function": {
@@ -155,51 +92,51 @@
       "name": "engine_3d.c_isVisiblePlane_FUN_00404610"
     },
     {
+      "addr": "00432cd0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0"
+    },
+    {
       "addr": "004349a0",
       "is_variadic": false,
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0"
-    },
-    {
-      "addr": "00432cd0",
-      "is_variadic": false,
-      "name": "engine_clipper.c_FUN_00432cd0"
     }
   ],
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c00c78",
-      "name": "DAT_01c00c78",
-      "type": "undefined4",
+      "name": "g_AdvancedClippingEnabled",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
       "addr": "01c03948",
-      "name": "DAT_01c03948",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -257,48 +194,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

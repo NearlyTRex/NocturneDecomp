@@ -16,12 +16,12 @@ __asm {
         mov EAX,dword ptr [EBP + 0x18]
         shl EAX,0x2
         mov EDX,dword ptr [EBP + 0x14]
-        mov ECX,dword ptr [DAT_01bd4260 + EAX]
+        mov ECX,dword ptr [g_ZBufferScanlineArray + EAX]
         shl EDX,0x2
         mov EBX,dword ptr [EBP + 0x1c]
         cmp EBX,dword ptr [ECX + EDX*0x1]
         jbe LAB_0048f3ec
-        cmp dword ptr [DAT_005b7624],0x20
+        cmp dword ptr [g_BitsPerPixel],0x20
         jz LAB_0048f3f3
     LAB_0048f3ec:
         mov ESP,EBP
@@ -31,11 +31,11 @@ __asm {
         pop EBX
         ret
     LAB_0048f3f3:
-        mov EAX,dword ptr [DAT_01bd2fa0 + EAX]
+        mov EAX,dword ptr [g_ScreenBufferArray + EAX]
         add EAX,EDX
         mov dword ptr [EBP + -0x4],EAX
         mov EDI,dword ptr [EBP + 0xfffffffc]
-        movd MM0,dword ptr [DAT_01c00c70]
+        movd MM0,dword ptr [g_ActiveRenderColor]
         pxor MM7,MM7
         movd MM1,dword ptr [EDI]
         movd MM2,dword ptr [DAT_01c70754]

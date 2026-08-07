@@ -17,7 +17,7 @@
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 00545987
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_005b762c
 ;   undefined1 DAT_005bf550
 ;   undefined1 DAT_005bf570
@@ -26,12 +26,12 @@
 ;   undefined4 DAT_01c00020
 ;   undefined4 DAT_01c00024
 ;   undefined4 DAT_01c00028
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c00634
-;   undefined4 DAT_01c0063c
-;   undefined4 DAT_01c00640
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -60,18 +60,18 @@ section .text
     LEA ECX,[ESI + 0x13008]             ; 00545456
     MOV dword ptr [0x01c0258c],EDX      ; 0054545c | DAT_01c0258c
     ADD ECX,EAX                         ; 00545462
-    MOV EBX,dword ptr [0x01c02594]      ; 00545464 | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 00545464 | g_UseExternalRenderer
     MOV dword ptr [0x01c00020],ECX      ; 0054546a | DAT_01c00020
     TEST EBX,EBX                        ; 00545470
     JNZ 0x005454ce                      ; 00545472
         ;   XREF to: 005454ce (CONDITIONAL_JUMP)  ; LAB_005454ce
-    MOV ESI,dword ptr [0x005b7624]      ; 00545474 | DAT_005b7624
+    MOV ESI,dword ptr [0x005b7624]      ; 00545474 | g_BitsPerPixel
     MOV EBX,ECX                         ; 0054547a
     CMP ESI,0x20                        ; 0054547c
     JNZ 0x005454fb                      ; 0054547f
         ;   XREF to: 005454fb (CONDITIONAL_JUMP)  ; LAB_005454fb
     XOR EAX,EAX                         ; 00545485
-    MOV ECX,dword ptr [0x005b7624]      ; 00545487 | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 00545487 | g_BitsPerPixel
         ;   Label: LAB_00545487
     MOVZX EDI,byte ptr [EBX + 0x1]      ; 0054548d
     MOVZX EBP,byte ptr [EBX]            ; 00545491
@@ -79,11 +79,11 @@ section .text
     CMP ECX,0x20                        ; 00545498
     JNZ 0x005454ed                      ; 0054549b
         ;   XREF to: 005454ed (CONDITIONAL_JUMP)  ; LAB_005454ed
-    MOV CL,byte ptr [0x01c00624]        ; 0054549d | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 0054549d | g_RedBitPosition
     SHL EBP,CL                          ; 005454a3
-    MOV CL,byte ptr [0x01c00630]        ; 005454a5 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 005454a5 | g_GreenBitPosition
     SHL EDI,CL                          ; 005454ab
-    MOV CL,byte ptr [0x01c0063c]        ; 005454ad | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 005454ad | g_BlueBitPosition
     SHL ESI,CL                          ; 005454b3
     OR EDI,EBP                          ; 005454b5
     MOV ECX,ESI                         ; 005454b7
@@ -126,35 +126,35 @@ section .text
     MOV AL,byte ptr [EBX]               ; 00545501
     XOR EDX,EDX                         ; 00545503
     MOV dword ptr [ESP],EAX             ; 00545505
-    DIV dword ptr [0x01c00628]          ; 00545508 | DAT_01c00628
+    DIV dword ptr [0x01c00628]          ; 00545508 | g_RedScaleFactor
     MOVZX EDI,byte ptr [EBX + 0x1]      ; 0054550e
     MOV dword ptr [ESP + 0x4],EDI       ; 00545512
     MOV dword ptr [ESP],EAX             ; 00545516
     XOR EDX,EDX                         ; 00545519
     MOV EAX,EDI                         ; 0054551b
-    DIV dword ptr [0x01c00634]          ; 0054551d | DAT_01c00634
+    DIV dword ptr [0x01c00634]          ; 0054551d | g_GreenScaleFactor
     XOR ECX,ECX                         ; 00545523
     MOV CL,byte ptr [EBX + 0x2]         ; 00545525
     MOV dword ptr [ESP + 0x8],ECX       ; 00545528
     MOV dword ptr [ESP + 0x4],EAX       ; 0054552c
     XOR EDX,EDX                         ; 00545530
     MOV EAX,ECX                         ; 00545532
-    DIV dword ptr [0x01c00640]          ; 00545534 | DAT_01c00640
+    DIV dword ptr [0x01c00640]          ; 00545534 | g_BlueScaleFactor
     MOV EDI,dword ptr [ESP]             ; 0054553a
     MOV EDX,dword ptr [ESP + 0x4]       ; 0054553d
-    MOV CL,byte ptr [0x01c00624]        ; 00545541 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00545541 | g_RedBitPosition
     MOV dword ptr [ESP + 0x8],EAX       ; 00545547
     SHL EDI,CL                          ; 0054554b
-    MOV CL,byte ptr [0x01c00630]        ; 0054554d | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 0054554d | g_GreenBitPosition
     MOV EAX,dword ptr [ESP + 0x8]       ; 00545553
     SHL EDX,CL                          ; 00545557
-    MOV CL,byte ptr [0x01c0063c]        ; 00545559 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 00545559 | g_BlueBitPosition
     OR EDI,EDX                          ; 0054555f
     SHL EAX,CL                          ; 00545561
     OR EAX,EDI                          ; 00545563
     XOR ECX,ECX                         ; 00545565
     MOV word ptr [ESI + 0x1c00424],AX   ; 00545567
-    MOV EDX,dword ptr [0x005b7624]      ; 0054556e | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0054556e | g_BitsPerPixel
     MOV CL,byte ptr [EBX + 0x1]         ; 00545574
     MOVZX EDI,byte ptr [EBX]            ; 00545577
     XOR EAX,EAX                         ; 0054557a
@@ -163,12 +163,12 @@ section .text
     CMP EDX,0x20                        ; 00545583
     JNZ 0x005455ca                      ; 00545586
         ;   XREF to: 005455ca (CONDITIONAL_JUMP)  ; LAB_005455ca
-    MOV CL,byte ptr [0x01c00624]        ; 00545588 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00545588 | g_RedBitPosition
     MOV EDX,dword ptr [ESP + 0xc]       ; 0054558e
     SHL EDI,CL                          ; 00545592
-    MOV CL,byte ptr [0x01c00630]        ; 00545594 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 00545594 | g_GreenBitPosition
     SHL EDX,CL                          ; 0054559a
-    MOV CL,byte ptr [0x01c0063c]        ; 0054559c | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 0054559c | g_BlueBitPosition
     OR EDI,EDX                          ; 005455a2
     SHL EAX,CL                          ; 005455a4
     MOV ECX,EDI                         ; 005455a6

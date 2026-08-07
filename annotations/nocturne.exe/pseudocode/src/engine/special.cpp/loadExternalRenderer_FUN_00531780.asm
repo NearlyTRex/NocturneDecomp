@@ -771,23 +771,23 @@ section .text
     MOV EAX,0x1c00634                   ; 005320b9
     ADD ESP,0xc                         ; 005320be
     MOV EDX,0x1c00638                   ; 005320c1
-    MOV dword ptr [ESP + 0x3b90],ECX    ; 005320c6 | DAT_01c00624
-    MOV dword ptr [ESP + 0x3b94],ESI    ; 005320cd | DAT_01c00628
-    MOV dword ptr [ESP + 0x3b98],EDI    ; 005320d4 | DAT_01c0062c
-    MOV dword ptr [ESP + 0x3b9c],EBP    ; 005320db | DAT_01c00630
-    MOV dword ptr [ESP + 0x3ba0],EAX    ; 005320e2 | DAT_01c00634
-    MOV dword ptr [ESP + 0x3ba4],EDX    ; 005320e9 | DAT_01c00638
+    MOV dword ptr [ESP + 0x3b90],ECX    ; 005320c6 | g_RedBitPosition
+    MOV dword ptr [ESP + 0x3b94],ESI    ; 005320cd | g_RedScaleFactor
+    MOV dword ptr [ESP + 0x3b98],EDI    ; 005320d4 | g_RedDitherShift
+    MOV dword ptr [ESP + 0x3b9c],EBP    ; 005320db | g_GreenBitPosition
+    MOV dword ptr [ESP + 0x3ba0],EAX    ; 005320e2 | g_GreenScaleFactor
+    MOV dword ptr [ESP + 0x3ba4],EDX    ; 005320e9 | g_GreenDitherShift
     MOV ECX,0x1c0063c                   ; 005320f0
     MOV ESI,0x1c00640                   ; 005320f5
     MOV EDI,0x1c00644                   ; 005320fa
     MOV EBP,0x1c03998                   ; 005320ff
     MOV EAX,0x1c00c74                   ; 00532104
     MOV EDX,0x5b763c                    ; 00532109 | DAT_005b763c
-    MOV dword ptr [ESP + 0x3ba8],ECX    ; 0053210e | DAT_01c0063c
-    MOV dword ptr [ESP + 0x3bac],ESI    ; 00532115 | DAT_01c00640
-    MOV dword ptr [ESP + 0x3bb0],EDI    ; 0053211c | DAT_01c00644
+    MOV dword ptr [ESP + 0x3ba8],ECX    ; 0053210e | g_BlueBitPosition
+    MOV dword ptr [ESP + 0x3bac],ESI    ; 00532115 | g_BlueScaleFactor
+    MOV dword ptr [ESP + 0x3bb0],EDI    ; 0053211c | g_BlueDitherShift
     MOV dword ptr [ESP + 0x3bb4],EBP    ; 00532123 | DAT_01c03998
-    MOV dword ptr [ESP + 0x3bb8],EAX    ; 0053212a | DAT_01c00c74
+    MOV dword ptr [ESP + 0x3bb8],EAX    ; 0053212a | g_CurrentLightingValue
     MOV dword ptr [ESP + 0x3bbc],EDX    ; 00532131 | DAT_005b763c
     MOV ECX,0x1c00c70                   ; 00532138
     MOV ESI,0x1c00c58                   ; 0053213d
@@ -795,11 +795,11 @@ section .text
     MOV EBP,0x1c00c60                   ; 00532147
     MOV EAX,0x1c00c64                   ; 0053214c
     MOV EDX,0x5b7628                    ; 00532151 | DAT_005b7628
-    MOV dword ptr [ESP + 0x3bc0],ECX    ; 00532156 | DAT_01c00c70
-    MOV dword ptr [ESP + 0x3bc4],ESI    ; 0053215d | DAT_01c00c58
-    MOV dword ptr [ESP + 0x3bc8],EDI    ; 00532164 | DAT_01c00c5c
-    MOV dword ptr [ESP + 0x3bcc],EBP    ; 0053216b | DAT_01c00c60
-    MOV dword ptr [ESP + 0x3bd0],EAX    ; 00532172 | DAT_01c00c64
+    MOV dword ptr [ESP + 0x3bc0],ECX    ; 00532156 | g_ActiveRenderColor
+    MOV dword ptr [ESP + 0x3bc4],ESI    ; 0053215d | g_ClipLeft
+    MOV dword ptr [ESP + 0x3bc8],EDI    ; 00532164 | g_ClipTop
+    MOV dword ptr [ESP + 0x3bcc],EBP    ; 0053216b | g_ClipRight
+    MOV dword ptr [ESP + 0x3bd0],EAX    ; 00532172 | g_ClipBottom
     MOV dword ptr [ESP + 0x3bd4],EDX    ; 00532179 | DAT_005b7628
     MOV ECX,0x5b762c                    ; 00532180 | DAT_005b762c
     MOV ESI,0x1c02590                   ; 00532185

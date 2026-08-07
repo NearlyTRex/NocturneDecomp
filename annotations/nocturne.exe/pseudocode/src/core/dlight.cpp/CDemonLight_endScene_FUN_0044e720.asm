@@ -21,8 +21,8 @@
 ;   double DOUBLE_0057c6d6 = 0.00390625
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -100,7 +100,7 @@ section .text
     MOV EDX,ESI                         ; 0044e7b6
     MOV ECX,dword ptr [EDX + 0x1cd4]    ; 0044e7b8
         ;   Label: LAB_0044e7b8
-    MOV dword ptr [EAX*0x4 + 0x1bd2fa0],ECX ; 0044e7be | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV dword ptr [EAX*0x4 + 0x1bd2fa0],ECX ; 0044e7be | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0044e7c5
     MOV EDI,dword ptr [ESI + 0x1cc4]    ; 0044e7c6
     ADD EDX,0x4                         ; 0044e7cc

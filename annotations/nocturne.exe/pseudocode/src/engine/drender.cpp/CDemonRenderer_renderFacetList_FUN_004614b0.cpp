@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
@@ -22,15 +20,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
   if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
      (DAT_006b0280 != 0)) {
     if (this_ptr->face_count == 0) {
-      if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+      if (g_BitsPerPixel == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
       }
-      _DAT_01c039a0 = render_flags;
-      _DAT_01c039a4 = 6;
-      if (_DAT_01c02594 == 0) {
+      g_RenderStateFlags.dword = render_flags;
+      g_VertexPreprocessMode = 6;
+      if (g_UseExternalRenderer == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
           local_28.x = primitive_array->vertices[0].vertex_index;
           local_28.y = primitive_array->vertices[1].vertex_index;
@@ -87,15 +85,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_00532680
                     (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)&DAT_005ae70c,iVar3,
-                     _DAT_01c039a0);
+                     g_RenderStateFlags.dword);
           return;
         }
       }
     }
     else {
-      _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
-      _DAT_01c039a0 = 0;
-      _DAT_01c039a4 = _DAT_01c039a0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28.x = primitive_array->vertices[0].vertex_index;
         local_28.y = primitive_array->vertices[1].vertex_index;

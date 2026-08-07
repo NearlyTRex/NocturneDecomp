@@ -60,7 +60,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   uVar19 = 0;
-  _DAT_01c00c70 = text_color;
+  g_ActiveRenderColor = text_color;
   local_18[0] = 0;
   pCVar12 = (CVector3i *)0x472e40;
   dVar8 = round((double)(scale_factor * (float)256));

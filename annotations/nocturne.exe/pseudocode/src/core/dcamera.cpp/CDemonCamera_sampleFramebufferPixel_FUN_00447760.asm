@@ -11,9 +11,9 @@
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50 at 0048314c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c0063c
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -43,15 +43,15 @@ section .text
     ADD EDX,ECX                         ; 00447797
     MOV ECX,dword ptr [EBX + 0x158]     ; 00447799
     MOV EDX,dword ptr [ECX + EDX*0x4]   ; 0044779f
-    MOV CL,byte ptr [0x01c00624]        ; 004477a2 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004477a2 | g_RedBitPosition
     MOV EBX,EDX                         ; 004477a8
     SHR EBX,CL                          ; 004477aa
     MOV ESI,EDX                         ; 004477ac
     AND EBX,0xff                        ; 004477ae
-    MOV CL,byte ptr [0x01c00630]        ; 004477b4 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004477b4 | g_GreenBitPosition
     SHL EBX,0x8                         ; 004477ba
     SHR ESI,CL                          ; 004477bd
-    MOV CL,byte ptr [0x01c0063c]        ; 004477bf | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004477bf | g_BlueBitPosition
     AND ESI,0xff                        ; 004477c5
     MOV dword ptr [EAX + 0x20],EBX      ; 004477cb
     SHR EDX,CL                          ; 004477ce

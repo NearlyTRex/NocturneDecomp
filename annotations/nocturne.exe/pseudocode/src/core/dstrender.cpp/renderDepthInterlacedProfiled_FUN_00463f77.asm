@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005ae708
 ;   undefined4 DAT_01b4d764
 ;   undefined4 DAT_01b4d768
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@ section .text
     SHR EAX,0x10                        ; 00463f92
         ;   Label: LAB_00463f92
     SHR ECX,0x10                        ; 00463f95
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463f98 | DAT_01bd4260
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463f98 | g_ZBufferScanlineArray
     SUB ECX,EAX                         ; 00463f9f
     JLE 0x00463fd0                      ; 00463fa1
         ;   XREF to: 00463fd0 (CONDITIONAL_JUMP)  ; LAB_00463fd0

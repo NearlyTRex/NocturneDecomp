@@ -24,10 +24,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e952
 ;   TerminatedCString s_CEditorTools_closeWindow_0057e968
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01bcd07c
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 004721a0 (CONDITIONAL_JUMP)  ; LAB_004721a0
     MOV ESI,dword ptr [EDX]             ; 00472103
     MOV EAX,dword ptr [EDX + 0x8]       ; 00472105
-    MOV EDX,dword ptr [0x005b7624]      ; 00472108 | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 00472108 | g_BitsPerPixel
     SUB EAX,ESI                         ; 0047210e
     IMUL EDX,EAX                        ; 00472110
     MOV EAX,EDX                         ; 00472113
@@ -85,7 +85,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0047213a
     MOV EDX,dword ptr [ESP + 0x4]       ; 0047213e
         ;   Label: LAB_0047213e
-    MOV EAX,[0x005b7624]                ; 00472142 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 00472142 | g_BitsPerPixel
     MOV EDX,dword ptr [EDX]             ; 00472147
     IMUL EDX,EAX                        ; 00472149
     MOV EAX,EDX                         ; 0047214c
@@ -96,7 +96,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x8]       ; 00472159
     MOV ECX,dword ptr [ESP]             ; 0047215d
     MOV ESI,EBX                         ; 00472160
-    MOV EDI,dword ptr [EDI + 0x1bd2fa0] ; 00472162 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDI,dword ptr [EDI + 0x1bd2fa0] ; 00472162 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EBP                             ; 00472168
     ADD EDI,EAX                         ; 00472169
     MOV EDX,dword ptr [ESP]             ; 0047216b

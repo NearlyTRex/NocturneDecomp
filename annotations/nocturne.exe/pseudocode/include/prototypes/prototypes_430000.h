@@ -75,7 +75,7 @@ void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00432150(void);
 undefined4 engine_clipper_c_FUN_00432210(uint param_1,int *param_2);
 undefined4 engine_clipper_c_FUN_00432b48(void);
 undefined4 engine_clipper_c_FUN_00432bd8(void);
-void engine_clipper_c_FUN_00432cd0(uint param_1,int *param_2);
+void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_copyMemory_FUN_00433770(void *dest_ptr,void *src_ptr,int byte_count);
 void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_004337a0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_004338d0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);

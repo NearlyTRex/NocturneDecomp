@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -29,14 +27,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0
       } while (iVar3 < (poly->base).base.count);
     }
     if (this_ptr->face_count == 0) {
-      _DAT_01c039a0 = 0xc0;
-      _DAT_01c039a4 = 6;
-      _DAT_01c00c7c = core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = 6;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00463d98;
     }
     else {
-      _DAT_01c039a0 = 0;
-      _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = 0;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
               (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ddf550
-;   undefined4 DAT_02ddf554
-;   undefined4 DAT_02ddf558
-;   undefined4 DAT_02ddf55c
+;   IDirectDraw* g_DirectDrawObject
+;   IDirectDrawSurface* g_DirectDrawSurface
+;   IDirectDrawSurface* g_SoftwareRenderSurface
+;   IUnknown* g_DirectDrawUnknown
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
@@ -22,11 +22,11 @@ section .text
         ;   Label: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0
     PUSH EDI                            ; 005528e1
     PUSH EBP                            ; 005528e2
-    MOV EDX,dword ptr [0x02ddf55c]      ; 005528e3 | DAT_02ddf55c
+    MOV EDX,dword ptr [0x02ddf55c]      ; 005528e3 | g_DirectDrawUnknown
     TEST EDX,EDX                        ; 005528e9
     JNZ 0x00552959                      ; 005528eb
         ;   XREF to: 00552959 (CONDITIONAL_JUMP)  ; LAB_00552959
-    MOV EBX,dword ptr [0x02ddf558]      ; 005528ed | DAT_02ddf558
+    MOV EBX,dword ptr [0x02ddf558]      ; 005528ed | g_SoftwareRenderSurface
         ;   Label: LAB_005528ed
     TEST EBX,EBX                        ; 005528f3
     JZ 0x00552907                       ; 005528f5
@@ -36,9 +36,9 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 005528f9
     XOR ESI,ESI                         ; 005528fb
     CALL dword ptr [EDX + 0x8]          ; 005528fd
-    MOV dword ptr [0x02ddf558],ESI      ; 00552900 | DAT_02ddf558
+    MOV dword ptr [0x02ddf558],ESI      ; 00552900 | g_SoftwareRenderSurface
     POP ESI                             ; 00552906
-    MOV EDI,dword ptr [0x02ddf554]      ; 00552907 | DAT_02ddf554
+    MOV EDI,dword ptr [0x02ddf554]      ; 00552907 | g_DirectDrawSurface
         ;   Label: LAB_00552907
     TEST EDI,EDI                        ; 0055290d
     JZ 0x0055291f                       ; 0055290f
@@ -47,8 +47,8 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 00552912
     XOR EBP,EBP                         ; 00552914
     CALL dword ptr [EDX + 0x8]          ; 00552916
-    MOV dword ptr [0x02ddf554],EBP      ; 00552919 | DAT_02ddf554
-    MOV EAX,[0x02ddf550]                ; 0055291f | DAT_02ddf550
+    MOV dword ptr [0x02ddf554],EBP      ; 00552919 | g_DirectDrawSurface
+    MOV EAX,[0x02ddf550]                ; 0055291f | g_DirectDrawObject
         ;   Label: LAB_0055291f
     TEST EAX,EAX                        ; 00552924
     JZ 0x00552941                       ; 00552926
@@ -56,12 +56,12 @@ section .text
     PUSH EAX                            ; 00552928
     MOV EDX,dword ptr [EAX]             ; 00552929
     CALL dword ptr [EDX + 0x4c]         ; 0055292b
-    MOV EAX,[0x02ddf550]                ; 0055292e | DAT_02ddf550
+    MOV EAX,[0x02ddf550]                ; 0055292e | g_DirectDrawObject
     PUSH EAX                            ; 00552933
     MOV EDX,dword ptr [EAX]             ; 00552934
     CALL dword ptr [EDX + 0x8]          ; 00552936
     XOR EDX,EDX                         ; 00552939
-    MOV dword ptr [0x02ddf550],EDX      ; 0055293b | DAT_02ddf550
+    MOV dword ptr [0x02ddf550],EDX      ; 0055293b | g_DirectDrawObject
     PUSH 0x0                            ; 00552941
         ;   Label: LAB_00552941
     PUSH 0x2ddf550                      ; 00552943
@@ -83,13 +83,13 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 0055295c
     CALL dword ptr [EDX + 0x8]          ; 0055295e
     XOR ECX,ECX                         ; 00552961
-    MOV dword ptr [0x02ddf55c],ECX      ; 00552963 | DAT_02ddf55c
+    MOV dword ptr [0x02ddf55c],ECX      ; 00552963 | g_DirectDrawUnknown
     JMP 0x005528ed                      ; 00552969
         ;   XREF to: 005528ed (UNCONDITIONAL_JUMP)  ; LAB_005528ed
     PUSH 0x11                           ; 0055296b
         ;   Label: LAB_0055296b
     MOV ECX,dword ptr [0x02de2098]      ; 0055296d | DAT_02de2098
-    MOV EAX,[0x02ddf550]                ; 00552973 | DAT_02ddf550
+    MOV EAX,[0x02ddf550]                ; 00552973 | g_DirectDrawObject
     PUSH ECX                            ; 00552978
     MOV EDX,dword ptr [EAX]             ; 00552979
     PUSH EAX                            ; 0055297b

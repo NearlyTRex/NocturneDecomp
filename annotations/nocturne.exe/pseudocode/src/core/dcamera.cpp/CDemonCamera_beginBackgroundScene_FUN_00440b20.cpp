@@ -13,7 +13,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  void **ppvVar3;
   uint *puVar4;
   byte bVar5;
   
@@ -25,34 +25,34 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(CDe
   }
   _DAT_0140efa8 = _DAT_0140efa8 + 1;
   if (_DAT_0140efa8 == 1) {
-    _DAT_0140efac = DAT_005b7624;
-    _DAT_0140efb0 = _DAT_01c02594;
-    puVar3 = (uint *)&DAT_01bd2fa0;
+    _DAT_0140efac = g_BitsPerPixel;
+    _DAT_0140efb0 = g_UseExternalRenderer;
+    ppvVar3 = g_ScreenBufferArray;
     puVar4 = (uint *)&DAT_0140efb4;
     for (uVar1 = g_WindowHeight & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+      *puVar4 = *ppvVar3;
+      ppvVar3 = ppvVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar4 = *(byte *)puVar3;
-      puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);
+      *(byte *)puVar4 = *(byte *)ppvVar3;
+      ppvVar3 = (void **)((int)ppvVar3 + (uint)bVar5 * -2 + 1);
       puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
     }
-    _DAT_01410274 = _DAT_01c00624;
-    DAT_005b7624 = 0x20;
-    _DAT_01410278 = _DAT_01c00630;
-    _DAT_01c02594 = 0;
-    _DAT_0141027c = _DAT_01c0063c;
-    _DAT_01c00630 = 8;
-    _DAT_01c0063c = 0;
-    _DAT_01c00624 = 0x10;
+    _DAT_01410274 = g_RedBitPosition;
+    g_BitsPerPixel = 0x20;
+    _DAT_01410278 = g_GreenBitPosition;
+    g_UseExternalRenderer = 0;
+    _DAT_0141027c = g_BlueBitPosition;
+    g_GreenBitPosition.dword = 8;
+    g_BlueBitPosition.dword = 0;
+    g_RedBitPosition.dword = 0x10;
     iVar2 = 0;
     if (0 < (int)this_ptr->max_distance) {
       do {
-        *(int *)(&DAT_01bd2fa0 + (this_ptr->framebuffer_height + iVar2) * 4) =
-             (int)this_ptr->framebuffer_aligned +
-             this_ptr->framebuffer_width * -4 + this_ptr->screen_width * iVar2 * 4;
+        g_ScreenBufferArray[this_ptr->framebuffer_height + iVar2] =
+             (void *)((int)this_ptr->framebuffer_aligned +
+                     this_ptr->framebuffer_width * -4 + this_ptr->screen_width * iVar2 * 4);
         iVar2 = iVar2 + 1;
       } while (iVar2 < (int)this_ptr->max_distance);
       return;

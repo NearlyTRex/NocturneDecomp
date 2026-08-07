@@ -93,12 +93,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 10,
-        "line": 99,
-        "message": "use of undeclared identifier 'DAT_01c039a1'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 115,
         "message": "use of undeclared identifier '_DAT_01b4cd30'"
@@ -116,13 +110,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 462,
+    "complexity_score": 452,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 107,
-    "suspect_count": 34,
+    "suspect_count": 33,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
@@ -177,7 +171,7 @@
     },
     {
       "addr": "01c039a1",
-      "name": "DAT_01c039a1",
+      "name": "g_RenderStateFlags+1",
       "type": "undefined4",
       "value": null
     }
@@ -476,14 +470,6 @@
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 8);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_01c039a1",
-      "severity": "mild",
-      "text": "if ((DAT_01c039a1 & 2) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

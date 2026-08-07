@@ -9,14 +9,14 @@
 ;   engine_special.cpp_clearScreen_FUN_0052ee70 at 0052ee7b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dc8
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 005329a0 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 005329a0 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_clear_FUN_005329a0
     JNZ 0x005329ac                      ; 005329a7
         ;   XREF to: 005329ac (CONDITIONAL_JUMP)  ; LAB_005329ac

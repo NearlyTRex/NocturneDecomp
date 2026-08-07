@@ -27,23 +27,23 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
   bVar11 = 0;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar2 != 0) {
-    if (_DAT_01c03948 == 0) {
-      if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+    if (g_MMXSupported == 0) {
+      if (g_BitsPerPixel == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
       }
       else {
-        _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
       }
     }
-    else if (DAT_005b7624 == 0x20) {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+    else if (g_BitsPerPixel == 0x20) {
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
     }
     else {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
     }
     piVar6 = &DAT_006b029c;
-    _DAT_01c039a0 = 0x1e7;
-    _DAT_01c039a4 = 1;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_ALPHA_FROM_VERTEX);
+    g_VertexPreprocessMode = 1;
     pSVar3 = prim + 1;
     for (iVar2 = 0; iVar4 = DAT_006b0264, iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
       *piVar6 = (pSVar3->base).type + DAT_006b0264;
@@ -55,7 +55,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
     }
     if (((DAT_006b494c == 0) || (0x9c3 < DAT_006b4950)) || (iVar2 = (prim->base).count, 4 < iVar2))
     {
-      engine_clipper_c_FUN_00432cd0((prim->base).count,&DAT_006b029c);
+      engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,&DAT_006b029c);
     }
     else {
       iVar8 = 0;

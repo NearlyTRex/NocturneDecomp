@@ -15,7 +15,7 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_00440610 at 004406fc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dec
 ;
 ; *****************************************************************************
@@ -24,7 +24,7 @@ section .text
 
     PUSH EBP                            ; 00532c90
         ;   Label: engine_special.cpp_restoreZBuffer_FUN_00532c90
-    CMP dword ptr [0x01c02594],0x0      ; 00532c91 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532c91 | g_UseExternalRenderer
     JNZ 0x00532c9e                      ; 00532c98
         ;   XREF to: 00532c9e (CONDITIONAL_JUMP)  ; LAB_00532c9e
     XOR EAX,EAX                         ; 00532c9a

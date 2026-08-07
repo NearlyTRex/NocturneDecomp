@@ -19,9 +19,9 @@
 ;   undefined4 DAT_01b4d764
 ;   undefined4 DAT_01b4d76c
 ;   undefined4 DAT_01b4d770
-;   undefined4 DAT_01c00c7c
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a4
+;   MainScanlineFunc* g_ScanlineRenderFunc
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -128,9 +128,9 @@ section .text
         ;   Label: LAB_0045f15f
     MOV ECX,0x6                         ; 0045f164
     MOV EAX,0x464075                    ; 0045f169
-    MOV dword ptr [0x01c039a0],EDX      ; 0045f16e | DAT_01c039a0
-    MOV dword ptr [0x01c039a4],ECX      ; 0045f174 | DAT_01c039a4
-    MOV [0x01c00c7c],EAX                ; 0045f17a | DAT_01c00c7c
+    MOV dword ptr [0x01c039a0],EDX      ; 0045f16e | g_RenderStateFlags
+    MOV dword ptr [0x01c039a4],ECX      ; 0045f174 | g_VertexPreprocessMode
+    MOV [0x01c00c7c],EAX                ; 0045f17a | g_ScanlineRenderFunc
     JMP 0x0045f126                      ; 0045f17f
         ;   XREF to: 0045f126 (UNCONDITIONAL_JUMP)  ; LAB_0045f126
 

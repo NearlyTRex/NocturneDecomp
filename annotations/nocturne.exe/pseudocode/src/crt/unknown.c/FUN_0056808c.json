@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 1013,
+    "complexity_score": 998,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 208,
-    "suspect_count": 76,
+    "suspect_count": 75,
     "suspect_types": [
       "carry_arith_idiom",
       "concat_reconstruction",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "undefined_ptr_cast",
       "unknown_field",
       "unnamed_param"
@@ -72,8 +71,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -358,14 +357,6 @@
       "severity": "mild",
       "text": "local_24 = FUN_00567540(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)((char)local_24 + 1)] & 2) == 0) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

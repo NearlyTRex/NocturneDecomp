@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_clipper.c_FUN_00432cd0 at 00432ee5
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0 at 00432ee5
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f9da8 = 004f9ee1
@@ -22,13 +22,13 @@
 ;   int INT_005be1e4 = 0x4b0
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c02594
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a4
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_UseExternalRenderer
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52a68
 ;   undefined4 DAT_01e52a6c
 ;   undefined4 DAT_01e52eec
@@ -74,20 +74,20 @@ section .text
     SAR EDX,0x1f                        ; 004f9e02
     IDIV EBX                            ; 004f9e05
     MOV dword ptr [ECX + 0xc],EAX       ; 004f9e07
-    MOV EDX,dword ptr [0x01c00c48]      ; 004f9e0a | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 004f9e0a | g_Projection
     MOV EBX,dword ptr [ECX + 0x8]       ; 004f9e10
     MOV EAX,dword ptr [ECX]             ; 004f9e13
     IMUL EDX                            ; 004f9e15
     IDIV EBX                            ; 004f9e17
-    MOV EDX,dword ptr [0x01c00c50]      ; 004f9e19 | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 004f9e19 | g_Projection.center_x_fixed
     ADD EAX,EDX                         ; 004f9e1f
     MOV EBX,dword ptr [ECX + 0x8]       ; 004f9e21
     MOV dword ptr [ECX + 0x10],EAX      ; 004f9e24
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004f9e27 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004f9e27 | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [ECX + 0x4]       ; 004f9e2d
     IMUL EDX                            ; 004f9e30
     IDIV EBX                            ; 004f9e32
-    MOV EDX,dword ptr [0x01c00c54]      ; 004f9e34 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004f9e34 | g_Projection.center_y_fixed
     ADD EAX,EDX                         ; 004f9e3a
     MOV dword ptr [ECX + 0x14],EAX      ; 004f9e3c
     INC ESI                             ; 004f9e3f
@@ -142,7 +142,7 @@ section .text
     MOV EDX,dword ptr [0x01e52ef8]      ; 004f9eac | DAT_01e52ef8
         ;   Label: LAB_004f9eac
     INC EDX                             ; 004f9eb2
-    MOV ECX,dword ptr [0x01c02594]      ; 004f9eb3 | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 004f9eb3 | g_UseExternalRenderer
     MOV dword ptr [0x01e52ef8],EDX      ; 004f9eb9 | DAT_01e52ef8
     TEST ECX,ECX                        ; 004f9ebf
     JZ 0x004f9ed0                       ; 004f9ec1
@@ -150,7 +150,7 @@ section .text
     CMP dword ptr [0x006b0278],0x0      ; 004f9ec3 | DAT_006b0278
     JZ 0x004f9f99                       ; 004f9eca
         ;   XREF to: 004f9f99 (CONDITIONAL_JUMP)  ; LAB_004f9f99
-    MOV EAX,[0x01c039a4]                ; 004f9ed0 | DAT_01c039a4
+    MOV EAX,[0x01c039a4]                ; 004f9ed0 | g_VertexPreprocessMode
         ;   Label: LAB_004f9ed0
     CMP EAX,0x6                         ; 004f9ed5
     JA 0x004f9ee1                       ; 004f9ed8
@@ -239,7 +239,7 @@ section .text
     POP ESI                             ; 004f9f96
     POP EBX                             ; 004f9f97
     RET                                 ; 004f9f98
-    MOV EDI,dword ptr [0x01c039a0]      ; 004f9f99 | DAT_01c039a0
+    MOV EDI,dword ptr [0x01c039a0]      ; 004f9f99 | g_RenderStateFlags
         ;   Label: LAB_004f9f99
     PUSH EDI                            ; 004f9f9f
     MOV EBP,dword ptr [ESP + 0x30]      ; 004f9fa0

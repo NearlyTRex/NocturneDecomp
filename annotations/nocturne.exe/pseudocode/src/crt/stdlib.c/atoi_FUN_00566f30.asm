@@ -13,7 +13,7 @@
 ;   wincore_winvideo.cpp_openMovie_FUN_0055a210 at 0055a291
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
         ;   Label: LAB_00566f35
     INC DL                              ; 00566f37
     AND EDX,0xff                        ; 00566f39
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00566f3f | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00566f3f | g_CharacterClassificationTable
     JZ 0x00566f4b                       ; 00566f46
         ;   XREF to: 00566f4b (CONDITIONAL_JUMP)  ; LAB_00566f4b
     INC EAX                             ; 00566f48
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_00566f5a
     INC BL                              ; 00566f5c
     AND EBX,0xff                        ; 00566f5e
-    TEST byte ptr [EBX + 0x5c168c],0x20 ; 00566f64 | DAT_005c168c
+    TEST byte ptr [EBX + 0x5c168c],0x20 ; 00566f64 | g_CharacterClassificationTable
     JZ 0x00566f7c                       ; 00566f6b
         ;   XREF to: 00566f7c (CONDITIONAL_JUMP)  ; LAB_00566f7c
     IMUL EDX,EDX,0xa                    ; 00566f6d

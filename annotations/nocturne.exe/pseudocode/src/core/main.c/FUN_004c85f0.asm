@@ -135,7 +135,7 @@ section .text
     ADD ESP,0x4                         ; 004c86fe
     CALL core_mmx.c_detectCPUFeatures_FUN_004d9e70 ; 004c8701
         ;   XREF to: 004d9e70 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_004d9e70()
-    CMP dword ptr [0x01c03948],0x0      ; 004c8706 | DAT_01c03948
+    CMP dword ptr [0x01c03948],0x0      ; 004c8706 | g_MMXSupported
     JNZ 0x004c873b                      ; 004c870d
         ;   XREF to: 004c873b (CONDITIONAL_JUMP)  ; LAB_004c873b
     MOV EDX,0x587bcf                    ; 004c870f | = "..\\core\\main.c"

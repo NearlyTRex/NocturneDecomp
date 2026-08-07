@@ -29,8 +29,8 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_00444600(
   local_24 = (CVector3i *)(scanline_y * 0xf00 + 0x8d9278 + x_start * 0xc);
   local_18 = (char *)(x_start + scanline_y * 0x140 + 0xa9d078);
   local_1c = (uint *)(scanline_y * 0x500 + 0x146ba10 + x_start * 4);
-  local_20 = (uint *)(*(int *)(&DAT_01bd4260 + (scanline_y << (DAT_012b0660 & 0x1f)) * 4) +
-                     (x_start << (DAT_012b0660 & 0x1f)) * 4);
+  local_20 = g_ZBufferScanlineArray[scanline_y << (DAT_012b0660 & 0x1f)] +
+             (x_start << (DAT_012b0660 & 0x1f));
   pCVar2 = g_CVector3f_ARRAY_009bb178 + scanline_y * 0x140 + x_start;
   for (; x_start < x_end; x_start = x_start + 1) {
     if ((*local_20 < *local_1c) &&

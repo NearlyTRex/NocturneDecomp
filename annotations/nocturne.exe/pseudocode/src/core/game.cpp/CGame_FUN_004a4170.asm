@@ -382,13 +382,13 @@ section .text
     ADD ESP,0x8                         ; 004a4506
     LEA EAX,[ESP + 0x4d0]               ; 004a4509
     PUSH EAX                            ; 004a4510
-    CALL crt_stdio.c_fflush_FUN_00565e59 ; 004a4511
-        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00565e59(_FILE * stream)
+    CALL crt_iostream.cpp_ostream_flush_FUN_00565e59 ; 004a4511
+        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_ostream_flush_FUN_00565e59(void * this_ptr)
     ADD ESP,0x4                         ; 004a4516
     LEA EAX,[ESP + 0x550]               ; 004a4519
     PUSH EAX                            ; 004a4520
-    CALL crt_stdio.c_fflush_FUN_00565e59 ; 004a4521
-        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00565e59(_FILE * stream)
+    CALL crt_iostream.cpp_ostream_flush_FUN_00565e59 ; 004a4521
+        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_ostream_flush_FUN_00565e59(void * this_ptr)
     ADD ESP,0x4                         ; 004a4526
     CMP dword ptr [ESP + 0x604],0x0     ; 004a4529
     JNZ 0x004a4741                      ; 004a4531

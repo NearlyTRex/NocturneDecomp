@@ -13,14 +13,14 @@
 ;   engine_special.cpp_fillDepthRegion_FUN_0052efc2 at 0052efdc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dd8
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532b70 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532b70 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_clearZBox_FUN_00532b70
     JNZ 0x00532b7c                      ; 00532b77
         ;   XREF to: 00532b7c (CONDITIONAL_JUMP)  ; LAB_00532b7c

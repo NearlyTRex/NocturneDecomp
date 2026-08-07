@@ -20,8 +20,8 @@ __asm {
     LAB_004649ed:
         shr ECX,0x10
         shr EAX,0x10
-        mov EBP,dword ptr [DAT_01bd4260 + EBX*0x4]
-        mov EBX,dword ptr [DAT_01bd2fa0 + EBX*0x4]
+        mov EBP,dword ptr [g_ZBufferScanlineArray + EBX*0x4]
+        mov EBX,dword ptr [g_ScreenBufferArray + EBX*0x4]
         sub ECX,EAX
         jle LAB_00464af6
         lea EBX,[EBX + EAX*0x4]

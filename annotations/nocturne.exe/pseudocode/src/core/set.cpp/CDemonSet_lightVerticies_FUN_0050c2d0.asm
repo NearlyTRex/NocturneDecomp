@@ -93,7 +93,7 @@
 ;   TerminatedCString s_Need_more_normals_for_pa_00590767
 ;   double DOUBLE_00590792 = 65535
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005c5010
+;   void* g_BackBuffer
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
 ;   undefined4 DAT_005c501c
@@ -546,7 +546,7 @@ section .text
         ;   XREF to: 0050b7f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     MOV EAX,[0x01c038f4]                ; 0050c79a | DAT_01c038f4
     ADD ESP,0x14                        ; 0050c79f
-    MOV dword ptr [EBX + 0x5c5010],EAX  ; 0050c7a2 | DAT_005c5040 | DAT_005c5010
+    MOV dword ptr [EBX + 0x5c5010],EAX  ; 0050c7a2 | DAT_005c5040 | g_BackBuffer
     LEA EAX,[ESI + 0x1]                 ; 0050c7a8
     MOV EDX,dword ptr [EBP + 0x18]      ; 0050c7ab
     MOV dword ptr [ESP + 0x13c],EAX     ; 0050c7ae
@@ -1187,7 +1187,7 @@ section .text
     ADD EDX,0x30                        ; 0050d00c
     MOV EBX,dword ptr [EBP + 0x18]      ; 0050d00f
     MOV dword ptr [ESP + 0x11c],ECX     ; 0050d012
-    MOV dword ptr [EDX + 0x5c5010],EAX  ; 0050d019 | DAT_005c5040 | DAT_005c5010
+    MOV dword ptr [EDX + 0x5c5010],EAX  ; 0050d019 | DAT_005c5040 | g_BackBuffer
     MOV dword ptr [ESP + 0x124],EDX     ; 0050d01f
     CMP EDI,EBX                         ; 0050d026
     JL 0x0050cf71                       ; 0050d028

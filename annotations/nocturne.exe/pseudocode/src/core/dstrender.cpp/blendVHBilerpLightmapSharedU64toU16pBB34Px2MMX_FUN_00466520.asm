@@ -18,14 +18,14 @@
 ;   undefined8 DAT_005b47c0
 ;   undefined4 DAT_005b5d00
 ;   undefined4 DAT_005b64f8
-;   undefined4 DAT_005bf5d0
-;   undefined4 DAT_005bf5f0
-;   undefined4 DAT_005bf610
+;   _MMX_INTEGER g_RedMask32
+;   _MMX_INTEGER g_GreenMask32
+;   _MMX_INTEGER g_BlueMask32
 ;   undefined4 DAT_005bf618
 ;   undefined4 DAT_005bf638
 ;   undefined4 DAT_005bf658
 ;   undefined4 DAT_00b0e1fc
-;   undefined4 DAT_01c039a8
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 0046652f
     MOV EBP,dword ptr [EBP + 0x14]      ; 00466532
     PXOR MM7,MM7                        ; 00466535
-    MOVD MM5,dword ptr [0x01c039a8]     ; 00466538 | DAT_01c039a8
+    MOVD MM5,dword ptr [0x01c039a8]     ; 00466538 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 0046653f
     PSLLW MM5,0x6                       ; 00466542
     MOV EAX,dword ptr [ESI]             ; 00466546
@@ -180,9 +180,9 @@ section .text
     PACKUSWB MM1,MM7                    ; 004667f5
     MOVQ MM2,MM0                        ; 004667f8
     MOVQ MM3,MM0                        ; 004667fb
-    PAND MM0,qword ptr [0x005bf610]     ; 004667fe | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 00466805 | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 0046680c | DAT_005bf5d0
+    PAND MM0,qword ptr [0x005bf610]     ; 004667fe | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 00466805 | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 0046680c | g_RedMask32
     PSRLQ MM0,qword ptr [0x005bf658]    ; 00466813 | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 0046681a | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 00466821 | DAT_005bf618
@@ -190,9 +190,9 @@ section .text
     POR MM0,MM3                         ; 0046682b
     MOVQ MM2,MM1                        ; 0046682e
     MOVQ MM3,MM1                        ; 00466831
-    PAND MM1,qword ptr [0x005bf610]     ; 00466834 | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 0046683b | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 00466842 | DAT_005bf5d0
+    PAND MM1,qword ptr [0x005bf610]     ; 00466834 | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 0046683b | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 00466842 | g_RedMask32
     PSRLQ MM1,qword ptr [0x005bf658]    ; 00466849 | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 00466850 | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 00466857 | DAT_005bf618

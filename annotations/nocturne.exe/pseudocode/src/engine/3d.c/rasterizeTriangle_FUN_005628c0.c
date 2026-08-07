@@ -29,20 +29,22 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_bu
   if ((DAT_005b7644 != 0) && (iVar10 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
       if ((int)((pSVar6->projected_vertex).screen_x & -0x80000000) != 0) {
-        if ((_DAT_01c039a4 & 6) != 0) {
+        if ((g_VertexPreprocessMode & 6U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
-        if ((_DAT_01c039a4 & 1) != 0) {
+        if ((g_VertexPreprocessMode & 1U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
         (pSVar6->projected_vertex).screen_x =
-             (int)(((longlong)(pSVar6->projected_vertex).transformed_x * (longlong)_DAT_01c00c48) /
-                  (longlong)(pSVar6->projected_vertex).transformed_z) + _DAT_01c00c50;
+             (int)(((longlong)(pSVar6->projected_vertex).transformed_x *
+                   (longlong)g_Projection.half_width_fixed) /
+                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_Projection.center_x_fixed;
         (pSVar6->projected_vertex).screen_y =
-             (int)(((longlong)(pSVar6->projected_vertex).transformed_y * (longlong)_DAT_01c00c4c) /
-                  (longlong)(pSVar6->projected_vertex).transformed_z) + _DAT_01c00c54;
+             (int)(((longlong)(pSVar6->projected_vertex).transformed_y *
+                   (longlong)g_Projection.neg_half_height_fixed) /
+                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_Projection.center_y_fixed;
       }
       iVar10 = iVar10 + 1;
       pSVar6 = pSVar6 + 1;
@@ -54,15 +56,16 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_bu
     return;
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_00532620(vertex_buffer,vertex_count,_DAT_01c039a0);
+  if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
+    engine_special_cpp_drawPolygon_FUN_00532620(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
+    ;
     return;
   }
-  if (_DAT_01c039a4 != 0) {
-    if (_DAT_01c039a4 < 2) {
+  if (g_VertexPreprocessMode != 0) {
+    if ((uint)g_VertexPreprocessMode < 2) {
       engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertex_buffer,vertex_count);
     }
-    else if (_DAT_01c039a4 == 6) {
+    else if (g_VertexPreprocessMode == 6) {
       engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertex_buffer,vertex_count);
     }
   }

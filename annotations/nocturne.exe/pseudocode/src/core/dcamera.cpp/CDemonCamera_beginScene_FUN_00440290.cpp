@@ -100,8 +100,8 @@ switchD_004402a8_caseD_3:
   (this_ptr->viewport_rect).x_max = this_ptr->framebuffer_height;
   uVar4 = _DAT_012ceb70;
   (this_ptr->viewport_rect).y_min = iVar5 + iVar1 + -1;
-  _DAT_01c00c50 = _DAT_01c00c50 + uVar4 * 0x10000;
-  _DAT_01c00c54 = _DAT_01c00c54 + _DAT_012ceb74 * -0x10000;
+  g_Projection.center_x_fixed = g_Projection.center_x_fixed + uVar4 * 0x10000;
+  g_Projection.center_y_fixed = g_Projection.center_y_fixed + _DAT_012ceb74 * -0x10000;
   (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + (int)fVar2 + -1;
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
@@ -117,7 +117,7 @@ switchD_004402a8_caseD_3:
     }
     engine_special_cpp_clearScreen_FUN_0052ee70();
     engine_special_cpp_clearZBufferNative_FUN_0052eed4();
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
       engine_special_cpp_clear_FUN_005329a0();
       engine_special_cpp_clearZBuffer_FUN_00532b50();
     }

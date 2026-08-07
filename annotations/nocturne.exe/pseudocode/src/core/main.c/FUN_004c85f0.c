@@ -65,7 +65,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   engine_dosio_cpp_FUN_00456750();
   support_newmsg_cpp_FUN_004edfc0();
   core_mmx_c_detectCPUFeatures_FUN_004d9e70();
-  if (_DAT_01c03948 == 0) {
+  if (g_MMXSupported == 0) {
     g_CurrentFilename = "..\\core\\main.c";
     g_CurrentLineNumber = 695;
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("This CPU does not have an MMX unit.")

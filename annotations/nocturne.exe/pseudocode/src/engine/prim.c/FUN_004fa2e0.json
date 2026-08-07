@@ -69,12 +69,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 8,
-        "line": 69,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 70,
         "message": "use of undeclared identifier '_DAT_01e52ef0'"
@@ -114,6 +108,12 @@
         "column": 60,
         "line": 89,
         "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 95,
+        "message": "use of undeclared identifier '_DAT_01e52a68'"
       }
     ],
     "success": false,
@@ -140,7 +140,7 @@
     {
       "addr": "00432cd0",
       "from_addr": "00432ded",
-      "name": "engine_clipper.c_FUN_00432cd0",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -253,8 +253,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -265,14 +265,14 @@
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
@@ -312,7 +312,7 @@
       {
         "call_addr": "00432ded",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432cd0",
+        "caller": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -500,7 +500,7 @@
       "line": 62,
       "match": "DAT_006b0278",
       "severity": "mild",
-      "text": "if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {",
+      "text": "if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {",
       "type": "undefined_data"
     },
     {

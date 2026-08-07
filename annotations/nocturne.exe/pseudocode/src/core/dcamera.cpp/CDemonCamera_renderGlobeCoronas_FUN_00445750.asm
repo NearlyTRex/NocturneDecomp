@@ -54,7 +54,7 @@
 ;   undefined4 DAT_014b8460
 ;   undefined4 DAT_014b8464
 ;   undefined4 DAT_014b8468
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;   CGame g_CGame_01c775ec
 ;   undefined4 g_CGame_01c775ec.halo_mode
 ;
@@ -339,7 +339,7 @@ section .text
     MOV EDX,ESI                         ; 00445ae1
     SHL EAX,CL                          ; 00445ae3
     SHL EDX,CL                          ; 00445ae5
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445ae7 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445ae7 | g_ZBufferScanlineArray
     SHL EDX,0x2                         ; 00445aee
     ADD EAX,EDX                         ; 00445af1
     MOV EDI,ESI                         ; 00445af3
@@ -653,7 +653,7 @@ section .text
     MOV EDX,ESI                         ; 00445e7e
     SHL EAX,CL                          ; 00445e80
     SHL EDX,CL                          ; 00445e82
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445e84 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445e84 | g_ZBufferScanlineArray
     SHL EDX,0x2                         ; 00445e8b
     ADD EBX,EDI                         ; 00445e8e
     ADD EAX,EDX                         ; 00445e90

@@ -53,7 +53,7 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_00477390(CEdCheck *this_ptr)
       return;
     }
   }
-  _DAT_01c00c70 = 0;
+  g_ActiveRenderColor = 0;
   engine_2d_c_clipLineGlobal_FUN_00403940(left + 1,iVar1 + 1,iVar2 + -2,local_14 + -2);
   engine_2d_c_clipLineGlobal_FUN_00403940(iVar2 + -2,iVar1 + 1,left + 1,local_14 + -2);
   return;

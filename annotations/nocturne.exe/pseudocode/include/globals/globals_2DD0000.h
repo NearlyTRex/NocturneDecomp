@@ -2,6 +2,8 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/ddraw.h"
+#include "system/unknwn.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWater.h"
@@ -38,6 +40,19 @@ extern CWater g_CWater_02dd1210;
 // CWeather
 extern CWeather g_CWeather_02ddf9f0;
 
+// IDirectDraw*
+extern IDirectDraw* g_DirectDrawObject;
+
+// IDirectDrawSurface*
+extern IDirectDrawSurface* g_DirectDrawSurface;
+extern IDirectDrawSurface* g_SoftwareRenderSurface;
+
+// IUnknown*
+extern IUnknown* g_DirectDrawUnknown;
+
 // SCollisionInfo[100]
 extern SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100];
+
+// void*
+extern void* g_SoftwareFrameBuffer;
 

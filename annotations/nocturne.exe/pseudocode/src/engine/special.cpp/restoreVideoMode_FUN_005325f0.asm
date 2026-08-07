@@ -9,7 +9,7 @@
 ;   wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70 at 00553b84
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d88
 ;
 ; *****************************************************************************
@@ -18,12 +18,12 @@ section .text
 
     PUSH EBX                            ; 005325f0
         ;   Label: engine_special.cpp_restoreVideoMode_FUN_005325f0
-    CMP dword ptr [0x01c02594],0x0      ; 005325f1 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 005325f1 | g_UseExternalRenderer
     JZ 0x0053260c                       ; 005325f8
         ;   XREF to: 0053260c (CONDITIONAL_JUMP)  ; LAB_0053260c
     XOR ECX,ECX                         ; 005325fa
     MOV EBX,dword ptr [0x02dc9d88]      ; 005325fc | DAT_02dc9d88
-    MOV dword ptr [0x01c02594],ECX      ; 00532602 | DAT_01c02594
+    MOV dword ptr [0x01c02594],ECX      ; 00532602 | g_UseExternalRenderer
     TEST EBX,EBX                        ; 00532608
     JNZ 0x00532610                      ; 0053260a
         ;   XREF to: 00532610 (CONDITIONAL_JUMP)  ; LAB_00532610

@@ -17,12 +17,12 @@
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597954
 ;   TerminatedCString s_openScreenDevice_Unable_0059796b
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c02594
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02ddf558
+;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   undefined4 DAT_02ddf56c
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     TEST EDX,EDX                        ; 0055347b
     JNZ 0x00553490                      ; 0055347d
         ;   XREF to: 00553490 (CONDITIONAL_JUMP)  ; LAB_00553490
-    CMP dword ptr [0x01c02594],0x0      ; 0055347f | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0055347f | g_UseExternalRenderer
     JZ 0x00553496                       ; 00553486
         ;   XREF to: 00553496 (CONDITIONAL_JUMP)  ; LAB_00553496
     LEA EAX,[EAX]                       ; 00553488
@@ -64,7 +64,7 @@ section .text
     LEA ECX,[ESP + 0x8]                 ; 005534aa
     MOV EBX,0x6c                        ; 005534ae
     PUSH ECX                            ; 005534b3
-    MOV EAX,[0x02ddf558]                ; 005534b4 | DAT_02ddf558
+    MOV EAX,[0x02ddf558]                ; 005534b4 | g_SoftwareRenderSurface
     MOV dword ptr [ESP + 0xc],EBX       ; 005534b9
     PUSH 0x0                            ; 005534bd
     MOV EDX,dword ptr [EAX]             ; 005534bf
@@ -94,7 +94,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005534fe
     LEA ECX,[EBP*0x4 + 0x0]             ; 00553502
     XOR EAX,EAX                         ; 00553509
-    MOV dword ptr [EAX + 0x1bd2fa0],EDX ; 0055350b | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV dword ptr [EAX + 0x1bd2fa0],EDX ; 0055350b | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0055350b
     ADD EAX,0x4                         ; 00553511
     ADD EDX,EBX                         ; 00553514

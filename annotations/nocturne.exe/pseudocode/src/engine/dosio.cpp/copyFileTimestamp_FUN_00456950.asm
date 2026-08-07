@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   modtime
 ;
 ; Called Functions:
-;   crt_io.c__utime_00600c1e_FUN_00565dc6
+;   crt_io.c__utime_FUN_00565dc6
 ;   crt_io.c_getFileStat_FUN_00565dc0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 0045697f
     MOV ECX,dword ptr [ESP + 0x58]      ; 00456980
     PUSH ECX                            ; 00456984
-    CALL crt_io.c__utime_00600c1e_FUN_00565dc6 ; 00456985
-        ;   XREF to: 00565dc6 (UNCONDITIONAL_CALL)  ; int crt_io.c__utime_00600c1e_FUN_00565dc6(char * filename, _utimbuf * timestamps)
+    CALL crt_io.c__utime_FUN_00565dc6   ; 00456985
+        ;   XREF to: 00565dc6 (UNCONDITIONAL_CALL)  ; int crt_io.c__utime_FUN_00565dc6(char * filename, _utimbuf * timestamps)
     ADD ESP,0x8                         ; 0045698a
     TEST EAX,EAX                        ; 0045698d
     SETZ AL                             ; 0045698f

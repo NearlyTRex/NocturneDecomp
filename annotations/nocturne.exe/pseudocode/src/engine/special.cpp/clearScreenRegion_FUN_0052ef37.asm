@@ -7,12 +7,12 @@
 ; int              Stack[0x4]:4   color
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c02594
+;   int g_BitsPerPixel = 0x8
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005329c0
@@ -26,7 +26,7 @@ section .text
     MOV EBP,ESP                         ; 0052ef38
     PUSH ESI                            ; 0052ef3a
     PUSH EDI                            ; 0052ef3b
-    CMP dword ptr [0x01c02594],0x0      ; 0052ef3c | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0052ef3c | g_UseExternalRenderer
     JZ 0x0052ef52                       ; 0052ef43
         ;   XREF to: 0052ef52 (CONDITIONAL_JUMP)  ; LAB_0052ef52
     PUSH dword ptr [EBP + 0x8]          ; 0052ef45
@@ -42,30 +42,30 @@ section .text
     CLD                                 ; 0052ef53
     PUSH DS                             ; 0052ef54
     POP ES                              ; 0052ef55
-    MOV ECX,dword ptr [0x01c00c60]      ; 0052ef56 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 0052ef56 | g_ClipRight
     MOV EAX,dword ptr [EBP + 0x8]       ; 0052ef5c
-    SUB ECX,dword ptr [0x01c00c58]      ; 0052ef5f | DAT_01c00c58
-    MOV EBX,dword ptr [0x01c00c5c]      ; 0052ef65 | DAT_01c00c5c
+    SUB ECX,dword ptr [0x01c00c58]      ; 0052ef5f | g_ClipLeft
+    MOV EBX,dword ptr [0x01c00c5c]      ; 0052ef65 | g_ClipTop
     INC ECX                             ; 0052ef6b
     XOR EAX,EAX                         ; 0052ef6c
     PUSH EBX                            ; 0052ef6e
         ;   Label: LAB_0052ef6e
     PUSH ECX                            ; 0052ef6f
     MOV EDI,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 0052ef70
-    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef77 | DAT_01c00c58
-    CMP dword ptr [0x005b7624],0x8      ; 0052ef7d | DAT_005b7624
+    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef77 | g_ClipLeft
+    CMP dword ptr [0x005b7624],0x8      ; 0052ef7d | g_BitsPerPixel
     JZ 0x0052efb0                       ; 0052ef84
         ;   XREF to: 0052efb0 (CONDITIONAL_JUMP)  ; LAB_0052efb0
-    CMP dword ptr [0x005b7624],0x10     ; 0052ef86 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x10     ; 0052ef86 | g_BitsPerPixel
     JZ 0x0052efa5                       ; 0052ef8d
         ;   XREF to: 0052efa5 (CONDITIONAL_JUMP)  ; LAB_0052efa5
-    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef8f | DAT_01c00c58
-    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef95 | DAT_01c00c58
-    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef9b | DAT_01c00c58
+    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef8f | g_ClipLeft
+    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef95 | g_ClipLeft
+    ADD EDI,dword ptr [0x01c00c58]      ; 0052ef9b | g_ClipLeft
     STOSD.REP ES:EDI                    ; 0052efa1
     JMP 0x0052efb2                      ; 0052efa3
         ;   XREF to: 0052efb2 (UNCONDITIONAL_JUMP)  ; LAB_0052efb2
-    ADD EDI,dword ptr [0x01c00c58]      ; 0052efa5 | DAT_01c00c58
+    ADD EDI,dword ptr [0x01c00c58]      ; 0052efa5 | g_ClipLeft
         ;   Label: LAB_0052efa5
     STOSW.REP ES:EDI                    ; 0052efab
     JMP 0x0052efb2                      ; 0052efae
@@ -76,7 +76,7 @@ section .text
         ;   Label: LAB_0052efb2
     POP EBX                             ; 0052efb3
     INC EBX                             ; 0052efb4
-    CMP EBX,dword ptr [0x01c00c64]      ; 0052efb5 | DAT_01c00c64
+    CMP EBX,dword ptr [0x01c00c64]      ; 0052efb5 | g_ClipBottom
     JBE 0x0052ef6e                      ; 0052efbb
         ;   XREF to: 0052ef6e (CONDITIONAL_JUMP)  ; LAB_0052ef6e
     POPAD                               ; 0052efbd

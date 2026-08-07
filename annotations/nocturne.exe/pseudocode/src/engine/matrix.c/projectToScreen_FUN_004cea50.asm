@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7648
-;   undefined4 DAT_01c00c4c
+;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -47,7 +47,7 @@ section .text
     JLE 0x004ceac8                      ; 004cea8b
         ;   XREF to: 004ceac8 (CONDITIONAL_JUMP)  ; LAB_004ceac8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cea8d
-    FILD dword ptr [0x01c00c4c]         ; 004cea90 | DAT_01c00c4c
+    FILD dword ptr [0x01c00c4c]         ; 004cea90 | g_Projection.neg_half_height_fixed
     MOV dword ptr [ESP + 0x34],EAX      ; 004cea96
     MOV dword ptr [ESP + 0x38],EBX      ; 004cea9a
     FILD dword ptr [ESP + 0x34]         ; 004cea9e

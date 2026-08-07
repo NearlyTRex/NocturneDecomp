@@ -57,63 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 41,
-        "line": 72,
+        "line": 70,
         "message": "use of undeclared identifier 'DAT_005ae70c'; did you mean 'DAT_005ae708'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
-        "line": 89,
-        "message": "use of undeclared identifier 'DAT_005ae70c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 90,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 96,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
+        "line": 87,
+        "message": "use of undeclared identifier 'DAT_005ae70c'; did you mean 'DAT_005ae708'?"
       }
     ],
     "success": false,
@@ -122,19 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 214,
+    "complexity_score": 188,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 8,
+    "pseudocode_lines": 118,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 364
+    "total_lines": 363
   },
   "cross_references": [
     {
@@ -215,9 +166,9 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "006b0280",
@@ -227,26 +178,26 @@
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
@@ -414,16 +365,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 14,
       "match": "DAT_006b0280",
       "severity": "mild",
       "text": "(DAT_006b0280 != 0)) {",
@@ -431,15 +374,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
+      "line": 63,
       "match": "DAT_005ae70c",
       "severity": "mild",
       "text": "*(SMRGLPrimitiveQuad **)(&DAT_005ae70c + local_18) = primitive_array;",
@@ -447,7 +382,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 80,
       "match": "DAT_005ae70c",
       "severity": "mild",
       "text": "(this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)&DAT_005ae70c,iVar3,",
@@ -455,7 +390,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
@@ -463,7 +398,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
@@ -471,7 +406,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.",

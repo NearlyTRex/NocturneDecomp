@@ -17,14 +17,14 @@
 ;   TerminatedCString s_engine_matrix_c_005882c3
 ;   TerminatedCString s_Too_many_3D_windows_005882d6
 ;   undefined4 DAT_005b7648
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   undefined4 DAT_01c039c4
 ;   undefined4 DAT_01c039c8
 ;   undefined4 DAT_01c039cc
@@ -60,23 +60,23 @@ section .text
     MOV dword ptr [EAX*0x4 + 0x1cc55b4],EDX ; 004ce827
     MOV EDX,dword ptr [0x01c039e4]      ; 004ce82e | DAT_01c039e4
     MOV dword ptr [EAX*0x4 + 0x1cc55dc],EDX ; 004ce834
-    MOV EDX,dword ptr [0x01c00c48]      ; 004ce83b | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 004ce83b | g_Projection
     MOV dword ptr [EAX*0x4 + 0x1cc53d4],EDX ; 004ce841
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004ce848 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004ce848 | g_Projection.neg_half_height_fixed
     MOV dword ptr [EAX*0x4 + 0x1cc53fc],EDX ; 004ce84e
-    MOV EDX,dword ptr [0x01c00c50]      ; 004ce855 | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 004ce855 | g_Projection.center_x_fixed
     MOV dword ptr [EAX*0x4 + 0x1cc5424],EDX ; 004ce85b
-    MOV EDX,dword ptr [0x01c00c54]      ; 004ce862 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004ce862 | g_Projection.center_y_fixed
     MOV dword ptr [EAX*0x4 + 0x1cc544c],EDX ; 004ce868
     MOV EDX,dword ptr [0x005b7648]      ; 004ce86f | DAT_005b7648
     MOV dword ptr [EAX*0x4 + 0x1cc5474],EDX ; 004ce875
-    MOV EDX,dword ptr [0x01c00c58]      ; 004ce87c | DAT_01c00c58
+    MOV EDX,dword ptr [0x01c00c58]      ; 004ce87c | g_ClipLeft
     MOV dword ptr [EAX*0x4 + 0x1cc5604],EDX ; 004ce882
-    MOV EDX,dword ptr [0x01c00c60]      ; 004ce889 | DAT_01c00c60
+    MOV EDX,dword ptr [0x01c00c60]      ; 004ce889 | g_ClipRight
     MOV dword ptr [EAX*0x4 + 0x1cc562c],EDX ; 004ce88f
-    MOV EDX,dword ptr [0x01c00c5c]      ; 004ce896 | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 004ce896 | g_ClipTop
     MOV dword ptr [EAX*0x4 + 0x1cc5654],EDX ; 004ce89c
-    MOV EDX,dword ptr [0x01c00c64]      ; 004ce8a3 | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 004ce8a3 | g_ClipBottom
     MOV dword ptr [EAX*0x4 + 0x1cc567c],EDX ; 004ce8a9
     LEA EDX,[EAX + 0x1]                 ; 004ce8b0
     MOV dword ptr [0x01cc53d0],EDX      ; 004ce8b3 | DAT_01cc53d0

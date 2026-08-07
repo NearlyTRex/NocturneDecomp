@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 13,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 12,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -74,15 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 106,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 6,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_param"
     ],
     "total_lines": 16
@@ -104,8 +93,8 @@
   "globals": [
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     }
   ],
@@ -172,11 +161,19 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(byte *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_ScreenBufferArray[param_3] + param_2) =",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2) =",
+      "text": "*(byte *)((int)g_ScreenBufferArray[param_3] + param_2) =",
       "type": "unnamed_param"
     },
     {
@@ -184,23 +181,23 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2) =",
+      "text": "*(byte *)((int)g_ScreenBufferArray[param_3] + param_2) =",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2) =",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 6,
+      "match": "(byte *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "g_LightTable[4][*(byte *)((int)g_ScreenBufferArray[param_3] + param_2)];",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_3",
       "severity": "mild",
-      "text": "g_LightTable[4][*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2)];",
+      "text": "g_LightTable[4][*(byte *)((int)g_ScreenBufferArray[param_3] + param_2)];",
       "type": "unnamed_param"
     },
     {
@@ -208,16 +205,24 @@
       "line": 6,
       "match": "param_2",
       "severity": "mild",
-      "text": "g_LightTable[4][*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2)];",
+      "text": "g_LightTable[4][*(byte *)((int)g_ScreenBufferArray[param_3] + param_2)];",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `g_ScreenBufferArray[param_3]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 5,
+      "match": "(int)g_ScreenBufferArray[param_3]",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_ScreenBufferArray[param_3] + param_2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_3]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 6,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "g_LightTable[4][*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2)];",
-      "type": "undefined_data"
+      "match": "(int)g_ScreenBufferArray[param_3]",
+      "severity": "moderate",
+      "text": "g_LightTable[4][*(byte *)((int)g_ScreenBufferArray[param_3] + param_2)];",
+      "type": "pointer_truncation"
     }
   ]
 }

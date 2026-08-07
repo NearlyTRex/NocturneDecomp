@@ -35,6 +35,6 @@ void __cdecl waitWithSkip(int duration_ms);
 // Address: 004c8eb0
 void __cdecl showPromoScreen(void);
 
-// Original: core_main.c_FUN_004c90e0
+// Original: core_main.c_finalizeGameSystems_FUN_004c90e0
 // Address: 004c90e0
-void __cdecl FUN_004c90e0(void);
+void __cdecl finalizeGameSystems(void);

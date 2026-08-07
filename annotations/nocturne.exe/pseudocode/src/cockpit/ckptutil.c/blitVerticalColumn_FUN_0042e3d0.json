@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 37,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -74,16 +62,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 97,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 136
   },
@@ -116,19 +104,19 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     }
@@ -245,20 +233,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 19,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -269,12 +249,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 30,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -283,6 +263,22 @@
       "severity": "moderate",
       "text": "(*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar3 + start_x + (int)sprite_data),count",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_truncation"
     }
   ]
 }

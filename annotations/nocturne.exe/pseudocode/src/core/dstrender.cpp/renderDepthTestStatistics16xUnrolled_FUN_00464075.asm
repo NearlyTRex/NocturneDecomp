@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d764
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     SHR EAX,0x10                        ; 00464085
         ;   Label: LAB_00464085
     SHR ECX,0x10                        ; 00464088
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 0046408b | DAT_01bd4260
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00464092 | DAT_01bd2fa0
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 0046408b | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00464092 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00464099
     JLE 0x004641fc                      ; 0046409b
         ;   XREF to: 004641fc (CONDITIONAL_JUMP)  ; LAB_004641fc

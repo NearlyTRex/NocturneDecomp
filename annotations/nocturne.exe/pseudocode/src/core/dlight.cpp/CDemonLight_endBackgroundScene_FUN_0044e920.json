@@ -84,12 +84,6 @@
         "column": 21,
         "line": 24,
         "message": "use of undeclared identifier 'DAT_01ab99f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -98,13 +92,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 142,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -180,19 +174,19 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bd2fa5",
-      "name": "DAT_01bd2fa5",
+      "name": "g_ScreenBufferArray[1]+1",
       "type": "undefined4",
       "value": null
     }
@@ -283,14 +277,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_01bd2fa0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(uint *)((int)puVar3",
@@ -301,9 +287,9 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(uint *)((int)puVar4",
+      "match": "(void **)((int)ppvVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "text": "ppvVar4 = (void **)((int)ppvVar4 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -315,27 +301,19 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `ppvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)puVar4",
+      "match": "(int)ppvVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "text": "ppvVar4 = (void **)((int)ppvVar4 + 1);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 19,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
-      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0044e950, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 20,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 0044e950: MOVSD.REP ES:EDI,ESI  ; DAT_01ab99f4 | DAT_01bd2fa0 | DAT_01ab99f8",
+      "text": "// 0044e950: MOVSD.REP ES:EDI,ESI  ; DAT_01ab99f4 | g_ScreenBufferArray | DAT_01ab99f8",
       "type": "unrolled_memcpy"
     }
   ]

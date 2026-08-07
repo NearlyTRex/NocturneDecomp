@@ -24,16 +24,16 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d8cd
 ;   TerminatedCString s_Invalid_bitsPerPixel_in_0057d8e5
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d714
 ;   undefined4 DAT_01b4d71c
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c00634
-;   undefined4 DAT_01c0063c
-;   undefined4 DAT_01c00640
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,7 +70,7 @@ section .text
     MOV CL,byte ptr [EDI + 0x1bf7720]   ; 0045b83f
     XOR EDX,EDX                         ; 0045b845
     MOV dword ptr [0x01b4d714],ECX      ; 0045b847 | DAT_01b4d714
-    MOV ECX,dword ptr [0x005b7624]      ; 0045b84d | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0045b84d | g_BitsPerPixel
     MOV dword ptr [0x01b4d71c],EDX      ; 0045b853 | DAT_01b4d71c
     CMP ECX,0x10                        ; 0045b859
     JNC 0x0045b92b                      ; 0045b85c
@@ -87,26 +87,26 @@ section .text
     POP ESI                             ; 0045b87d
     POP EBX                             ; 0045b87e
     RET                                 ; 0045b87f
-    DIV dword ptr [0x01c00628]          ; 0045b880 | DAT_01c00628
+    DIV dword ptr [0x01c00628]          ; 0045b880 | g_RedScaleFactor
         ;   Label: LAB_0045b880
     MOV dword ptr [ESP],ESI             ; 0045b886
     MOV EDI,EAX                         ; 0045b889
     XOR EDX,EDX                         ; 0045b88b
     MOV EAX,ESI                         ; 0045b88d
-    DIV dword ptr [0x01c00634]          ; 0045b88f | DAT_01c00634
-    MOV EBP,dword ptr [0x01c00640]      ; 0045b895 | DAT_01c00640
+    DIV dword ptr [0x01c00634]          ; 0045b88f | g_GreenScaleFactor
+    MOV EBP,dword ptr [0x01c00640]      ; 0045b895 | g_BlueScaleFactor
     MOV dword ptr [ESP],EAX             ; 0045b89b
     XOR EDX,EDX                         ; 0045b89e
     MOV EAX,EBX                         ; 0045b8a0
     DIV EBP                             ; 0045b8a2
-    MOV CL,byte ptr [0x01c00624]        ; 0045b8a4 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 0045b8a4 | g_RedBitPosition
     MOV dword ptr [ESP + 0x4],EBX       ; 0045b8aa
     SHL EDI,CL                          ; 0045b8ae
-    MOV CL,byte ptr [0x01c00630]        ; 0045b8b0 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 0045b8b0 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x4],EAX       ; 0045b8b6
     MOV EAX,dword ptr [ESP]             ; 0045b8ba
     SHL EAX,CL                          ; 0045b8bd
-    MOV CL,byte ptr [0x01c0063c]        ; 0045b8bf | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 0045b8bf | g_BlueBitPosition
     OR EDI,EAX                          ; 0045b8c5
     MOV EAX,dword ptr [ESP + 0x4]       ; 0045b8c7
     SHL EAX,CL                          ; 0045b8cb
@@ -123,11 +123,11 @@ section .text
         ;   Label: LAB_0045b8e1
     JNZ 0x0045b911                      ; 0045b8e3
         ;   XREF to: 0045b911 (CONDITIONAL_JUMP)  ; LAB_0045b911
-    MOV CL,byte ptr [0x01c00624]        ; 0045b8e5 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 0045b8e5 | g_RedBitPosition
     SHL EAX,CL                          ; 0045b8eb
-    MOV CL,byte ptr [0x01c00630]        ; 0045b8ed | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 0045b8ed | g_GreenBitPosition
     SHL ESI,CL                          ; 0045b8f3
-    MOV CL,byte ptr [0x01c0063c]        ; 0045b8f5 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 0045b8f5 | g_BlueBitPosition
     SHL EBX,CL                          ; 0045b8fb
     OR EAX,ESI                          ; 0045b8fd
     MOV ECX,EBX                         ; 0045b8ff

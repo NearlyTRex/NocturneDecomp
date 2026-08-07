@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 0042df07
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0042df0b
     MOV EDI,dword ptr [ESP + 0x40]      ; 0042df0f
-    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042df13 | DAT_01bd2fa0
-    MOV EBP,dword ptr [0x01bd2fa4]      ; 0042df19 | DAT_01bd2fa4
+    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042df13 | g_ScreenBufferArray
+    MOV EBP,dword ptr [0x01bd2fa4]      ; 0042df19 | g_ScreenBufferArray[1]
     SUB EBP,EDX                         ; 0042df1f
     MOV dword ptr [ESP + 0x8],EBP       ; 0042df21
     TEST EBX,EBX                        ; 0042df25
@@ -54,13 +54,13 @@ section .text
         ;   Label: LAB_0042df38
     MOV dword ptr [ESP + 0xc],EAX       ; 0042df3d
     MOV EAX,dword ptr [ESP + 0x38]      ; 0042df41
-    MOV ECX,dword ptr [0x005b7624]      ; 0042df45 | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0042df45 | g_BitsPerPixel
     SHL EAX,0x2                         ; 0042df4b
     CMP ECX,0x8                         ; 0042df4e
     JNZ 0x0042df90                      ; 0042df51
         ;   XREF to: 0042df90 (CONDITIONAL_JUMP)  ; LAB_0042df90
     MOV ECX,dword ptr [ESP + 0x34]      ; 0042df53
-    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042df57 | DAT_01bd2fa0
+    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042df57 | g_ScreenBufferArray
     XOR EAX,EAX                         ; 0042df5d
     ADD EBP,ECX                         ; 0042df5f
     MOV dword ptr [ESP + 0x14],EAX      ; 0042df61
@@ -93,7 +93,7 @@ section .text
     JNZ 0x0042dfed                      ; 0042df93
         ;   XREF to: 0042dfed (CONDITIONAL_JUMP)  ; LAB_0042dfed
     MOV EDX,dword ptr [ESP + 0x34]      ; 0042df95
-    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042df99 | DAT_01bd2fa0
+    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042df99 | g_ScreenBufferArray
     ADD EDX,EDX                         ; 0042df9f
     MOV EAX,dword ptr [ESP + 0x8]       ; 0042dfa1
     ADD EBP,EDX                         ; 0042dfa5
@@ -132,7 +132,7 @@ section .text
     RET                                 ; 0042dfec
     MOV EDX,dword ptr [ESP + 0x34]      ; 0042dfed
         ;   Label: LAB_0042dfed
-    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042dff1 | DAT_01bd2fa0
+    MOV EBP,dword ptr [EAX + 0x1bd2fa0] ; 0042dff1 | g_ScreenBufferArray
     SHL EDX,0x2                         ; 0042dff7
     MOV EAX,dword ptr [ESP + 0x8]       ; 0042dffa
     ADD EBP,EDX                         ; 0042dffe

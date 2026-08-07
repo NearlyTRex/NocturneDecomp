@@ -16,14 +16,14 @@
 ;   engine_texture.cpp_CTextureCache_FUN_00545700 at 005457e4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9da8
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532620 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532620 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_drawPolygon_FUN_00532620
     JNZ 0x0053262c                      ; 00532627
         ;   XREF to: 0053262c (CONDITIONAL_JUMP)  ; LAB_0053262c

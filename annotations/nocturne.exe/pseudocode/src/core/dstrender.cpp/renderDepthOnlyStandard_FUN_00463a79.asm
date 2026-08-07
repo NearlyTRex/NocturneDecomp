@@ -18,7 +18,7 @@
 ;   ... and 8 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     SHR EAX,0x10                        ; 00463a88
         ;   Label: LAB_00463a88
     SHR ECX,0x10                        ; 00463a8b
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463a8e | DAT_01bd2fa0
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463a8e | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00463a95
     JLE 0x00463ac4                      ; 00463a97
         ;   XREF to: 00463ac4 (CONDITIONAL_JUMP)  ; LAB_00463ac4

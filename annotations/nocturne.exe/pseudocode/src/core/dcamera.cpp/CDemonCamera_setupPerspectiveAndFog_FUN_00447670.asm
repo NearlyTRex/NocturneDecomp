@@ -29,14 +29,14 @@
 ;   undefined4 DAT_005ad450
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_00b0e2fc
 ;   undefined4 DAT_0140efa8
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c0063c
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   undefined4 DAT_01c038f4
-;   undefined4 DAT_01c039a8
+;   ulong g_SolidColorMode
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
@@ -88,7 +88,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0 ; 004476d4
         ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera * this_ptr, CVector3i * world_position, SProjectedVertex * projected_vertex)
     MOV EDX,dword ptr [0x005ad454]      ; 004476d9 | DAT_005ad454
-    MOV EDI,dword ptr [0x005b7624]      ; 004476df | DAT_005b7624
+    MOV EDI,dword ptr [0x005b7624]      ; 004476df | g_BitsPerPixel
     ADD ESP,0xc                         ; 004476e5
     MOV ESI,EAX                         ; 004476e8
     MOV EAX,[0x005ad458]                ; 004476ea | DAT_005ad458
@@ -102,18 +102,18 @@ section .text
     CMP EDI,0x20                        ; 0044771b
     JNZ 0x00447752                      ; 0044771e
         ;   XREF to: 00447752 (CONDITIONAL_JUMP)  ; LAB_00447752
-    MOV CL,byte ptr [0x01c00624]        ; 00447720 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00447720 | g_RedBitPosition
     SHL EDX,CL                          ; 00447726
-    MOV CL,byte ptr [0x01c00630]        ; 00447728 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 00447728 | g_GreenBitPosition
     SHL EBX,CL                          ; 0044772e
-    MOV CL,byte ptr [0x01c0063c]        ; 00447730 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 00447730 | g_BlueBitPosition
     OR EDX,EBX                          ; 00447736
     SHL EAX,CL                          ; 00447738
     MOV ECX,EDX                         ; 0044773a
     OR ECX,EAX                          ; 0044773c
         ;   Label: LAB_0044773c
     MOV dword ptr [0x01c038f4],ESI      ; 0044773e | DAT_01c038f4
-    MOV dword ptr [0x01c039a8],ECX      ; 00447744 | DAT_01c039a8
+    MOV dword ptr [0x01c039a8],ECX      ; 00447744 | g_SolidColorMode
     POP EBX                             ; 0044774a
     POP ESI                             ; 0044774b
     POP EDI                             ; 0044774c

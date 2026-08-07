@@ -16,16 +16,16 @@
 ;   TerminatedCString s_closeScreenDevice_Unable_005979ac
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_005c5010
-;   undefined4 DAT_006af62c
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c02594
+;   int g_BitsPerPixel = 0x8
+;   void* g_BackBuffer
+;   void* g_SoftwareZBuffer
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02ddf558
+;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
 ;
@@ -41,7 +41,7 @@ section .text
     CMP dword ptr [0x02ddf56c],0x0      ; 00553521 | DAT_02ddf56c
     JNZ 0x005535ea                      ; 00553528
         ;   XREF to: 005535ea (CONDITIONAL_JUMP)  ; LAB_005535ea
-    MOV ECX,dword ptr [0x01c02594]      ; 0055352e | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 0055352e | g_UseExternalRenderer
     TEST ECX,ECX                        ; 00553534
     JNZ 0x005535ec                      ; 00553536
         ;   XREF to: 005535ec (CONDITIONAL_JUMP)  ; LAB_005535ec
@@ -51,7 +51,7 @@ section .text
     JLE 0x005535a7                      ; 00553545
         ;   XREF to: 005535a7 (CONDITIONAL_JUMP)  ; LAB_005535a7
     PUSH EBX                            ; 00553547
-    MOV EAX,[0x005b7624]                ; 00553548 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 00553548 | g_BitsPerPixel
     MOV EDX,EAX                         ; 0055354d
     SAR EDX,0x1f                        ; 0055354f
     SHL EDX,0x3                         ; 00553552
@@ -66,14 +66,14 @@ section .text
         ;   Label: LAB_0055356e
     IMUL ESI,ECX                        ; 00553574
     IMUL ESI,EDI                        ; 00553577
-    MOV EBX,dword ptr [0x005c5010]      ; 0055357a | DAT_005c5010
+    MOV EBX,dword ptr [0x005c5010]      ; 0055357a | g_BackBuffer
     ADD EBX,ESI                         ; 00553580
-    MOV dword ptr [EAX + 0x1bd2fa0],EBX ; 00553582 | DAT_01bd2fa0 | DAT_01bd2fa4
-    MOV EBX,dword ptr [0x006af62c]      ; 00553588 | DAT_006af62c
+    MOV dword ptr [EAX + 0x1bd2fa0],EBX ; 00553582 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    MOV EBX,dword ptr [0x006af62c]      ; 00553588 | g_SoftwareZBuffer
     ADD EAX,0x4                         ; 0055358e
     ADD EBX,EDX                         ; 00553591
     INC ECX                             ; 00553593
-    MOV dword ptr [EAX + 0x1bd425c],EBX ; 00553594 | DAT_01bd4260
+    MOV dword ptr [EAX + 0x1bd425c],EBX ; 00553594 | g_ZBufferScanlineArray
     MOV EBX,dword ptr [0x005b7620]      ; 0055359a | g_WindowHeight
     ADD EDX,EBP                         ; 005535a0
     CMP ECX,EBX                         ; 005535a2
@@ -82,7 +82,7 @@ section .text
     POP EBX                             ; 005535a6
     PUSH 0x0                            ; 005535a7
         ;   Label: LAB_005535a7
-    MOV EAX,[0x02ddf558]                ; 005535a9 | DAT_02ddf558
+    MOV EAX,[0x02ddf558]                ; 005535a9 | g_SoftwareRenderSurface
     PUSH EAX                            ; 005535ae
     MOV EDX,dword ptr [EAX]             ; 005535af
     CALL dword ptr [EDX + 0x80]         ; 005535b1

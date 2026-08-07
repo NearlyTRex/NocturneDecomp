@@ -84,7 +84,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
   if (this_ptr->cached_string_height < (int)CStack_24) {
     CStack_24 = this_ptr->cached_string_height;
   }
-  if (DAT_005b7624 == 0x10) {
+  if (g_BitsPerPixel == 0x10) {
     CStack_18 = 0;
     if (0 < (int)CStack_24) {
       iStack_1c = y;
@@ -93,17 +93,19 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
         if ((-1 < iVar4) && (iVar4 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar3) {
-            puVar9 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar4 * 4) + x * 2);
+            puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar4] + x * 2);
             do {
               uVar2 = *(ushort *)
                        ((int)this_ptr->ppv_bits + (CStack_18 * this_ptr->right + iVar5) * 2);
               if (uVar2 != 0x7c1f) {
-                *puVar9 = (ushort)((byte)((char)uVar2 << 3) >> (DAT_01c00644 & 0x1f)) <<
-                          (DAT_01c0063c & 0x1f) |
-                          (ushort)(((((int)(uint)uVar2 >> 10 & 0x1fU) << 3) >> (DAT_01c0062c & 0x1f)
-                                   ) << (DAT_01c00624 & 0x1f)) |
-                          (ushort)(((((int)(uint)uVar2 >> 5 & 0x1fU) << 3) >> (DAT_01c00638 & 0x1f))
-                                  << (DAT_01c00630 & 0x1f));
+                *puVar9 = (ushort)((byte)((char)uVar2 << 3) >> (g_BlueDitherShift.bytes[0] & 0x1f))
+                          << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                          (ushort)(((((int)(uint)uVar2 >> 10 & 0x1fU) << 3) >>
+                                   (g_RedDitherShift.bytes[0] & 0x1f)) <<
+                                  (g_RedBitPosition.bytes[0] & 0x1f)) |
+                          (ushort)(((((int)(uint)uVar2 >> 5 & 0x1fU) << 3) >>
+                                   (g_GreenDitherShift.bytes[0] & 0x1f)) <<
+                                  (g_GreenBitPosition.bytes[0] & 0x1f));
               }
               iVar5 = iVar5 + 1;
               puVar9 = puVar9 + 1;
@@ -124,7 +126,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFo
         if ((-1 < iVar5) && (iVar5 < g_WindowHeight)) {
           iVar6 = 0;
           if (0 < iVar3) {
-            piVar10 = (int *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar5 * 4));
+            piVar10 = (int *)(x * 4 + (int)g_ScreenBufferArray[iVar5]);
             do {
               iVar5 = *(int *)((this_ptr->right * iVar4 + iVar6) * 4 + (int)this_ptr->ppv_bits);
               if (iVar5 != 0xff00ff) {

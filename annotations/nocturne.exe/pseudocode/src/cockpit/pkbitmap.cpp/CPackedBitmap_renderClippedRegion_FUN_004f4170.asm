@@ -26,9 +26,9 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_004f4310 at 004f43e9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 004f419f
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004f41a3
     SUB EAX,EBX                         ; 004f41a7
-    MOV ESI,dword ptr [0x005b7624]      ; 004f41a9 | DAT_005b7624
+    MOV ESI,dword ptr [0x005b7624]      ; 004f41a9 | g_BitsPerPixel
     MOV dword ptr [ESP + 0x4],EAX       ; 004f41af
     CMP ESI,0x10                        ; 004f41b3
     JNZ 0x004f41bf                      ; 004f41b6
@@ -91,7 +91,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 004f4207
     ADD EBX,EDX                         ; 004f420b
     MOV EDX,dword ptr [ESP + 0x4]       ; 004f420d
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 004f4211 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 004f4211 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,EAX                         ; 004f4217
     MOV EAX,dword ptr [ESP + 0x20]      ; 004f4219
     MOV dword ptr [ESP + 0x18],EDX      ; 004f421d
@@ -153,7 +153,7 @@ section .text
         ;   XREF to: 004f42c0 (CONDITIONAL_JUMP)  ; LAB_004f42c0
     MOV EDI,dword ptr [ESP + 0x18]      ; 004f4292
         ;   Label: LAB_004f4292
-    MOV EBP,dword ptr [0x005b7624]      ; 004f4296 | DAT_005b7624
+    MOV EBP,dword ptr [0x005b7624]      ; 004f4296 | g_BitsPerPixel
     ADD EDI,EAX                         ; 004f429c
     CMP EBP,0x10                        ; 004f429e
     JNZ 0x004f42a5                      ; 004f42a1

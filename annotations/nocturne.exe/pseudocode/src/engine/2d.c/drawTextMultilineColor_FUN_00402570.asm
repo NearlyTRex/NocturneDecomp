@@ -17,7 +17,7 @@
 ;   engine_2d.c_drawTextColor_FUN_00402a60 at 00402ab6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4b80
+;   SFontGlyph[224] g_FontTable
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacterMaskedColor_FUN_00402040
@@ -70,7 +70,7 @@ section .text
     CALL engine_2d.c_drawCharacterMaskedColor_FUN_00402040 ; 004025bf
         ;   XREF to: 00402040 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMaskedColor_FUN_00402040(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 004025c4
-    MOV BL,byte ptr [EBX + 0x5a4b80]    ; 004025c7 | DAT_005a4b80
+    MOV BL,byte ptr [EBX + 0x5a4b80]    ; 004025c7 | g_FontTable
     AND EBX,0xff                        ; 004025cd
     INC EBX                             ; 004025d3
     ADD EBP,EBX                         ; 004025d4

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width,int height,int bits_per_pixel,int stride)
 
 {
@@ -51,25 +49,25 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
   }
   DAT_006b023c = g_WindowWidth;
   DAT_006b0240 = g_WindowHeight;
-  DAT_006b0244 = _DAT_01c00c58;
+  DAT_006b0244 = g_ClipLeft;
   g_WindowWidth = width;
-  DAT_006b0248 = _DAT_01c00c5c;
-  DAT_006b024c = _DAT_01c00c60;
+  DAT_006b0248 = g_ClipTop;
+  DAT_006b024c = g_ClipRight;
   g_WindowHeight = height;
-  DAT_006b0250 = _DAT_01c00c64;
-  _DAT_01c00c58 = 0;
-  DAT_006b0254 = DAT_005b7624;
-  _DAT_01c00c5c = 0;
-  DAT_006b0258 = _DAT_01bd2fa0;
-  DAT_006b025c = _DAT_01bd2fa4 - _DAT_01bd2fa0;
-  DAT_005b7624 = bits_per_pixel;
+  DAT_006b0250 = g_ClipBottom;
+  g_ClipLeft = 0;
+  DAT_006b0254 = g_BitsPerPixel;
+  g_ClipTop = 0;
+  DAT_006b0258 = g_ScreenBufferArray[0];
+  DAT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  g_BitsPerPixel = bits_per_pixel;
   iVar1 = height + -1;
-  _DAT_01c00c60 = width + -1;
-  _DAT_01c00c64 = iVar1;
+  g_ClipRight = width + -1;
+  g_ClipBottom = iVar1;
   if (0 < height) {
     iVar1 = 0;
     do {
-      *(void **)(&DAT_01bd2fa0 + iVar1) = frame_buffer;
+      *(void **)((int)g_ScreenBufferArray + iVar1) = frame_buffer;
       iVar1 = iVar1 + 4;
       frame_buffer = (void *)((int)frame_buffer + stride);
     } while (iVar1 < height * 4);

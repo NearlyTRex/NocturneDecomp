@@ -24,23 +24,23 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,
   ushort uVar11;
   uint5 uVar12;
   
-  if ((*(uint *)(*(int *)(&DAT_01bd4260 + screen_y * 4) + screen_x * 4) < (uint)z_depth) &&
-     (DAT_005b7624 == 0x20)) {
-    puVar3 = (uint *)(*(int *)(&DAT_01bd2fa0 + screen_y * 4) + screen_x * 4);
+  if ((g_ZBufferScanlineArray[screen_y][screen_x] < (uint)z_depth) && (g_BitsPerPixel == 0x20)) {
+    puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);
     uVar1 = *puVar3;
-    uVar9 = (ushort)(((uint7)(byte)((uint)_DAT_01c00c70 >> 0x18) << 0x30) >> 0x28);
+    uVar9 = (ushort)(((uint7)(byte)((uint)g_ActiveRenderColor >> 0x18) << 0x30) >> 0x28);
     uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
                                                    0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar12 = (uint5)uVar2 & 0xffffffff00;
     uVar5 = (ushort)(((uint7)(byte)((uint)_DAT_01c70754 >> 0x18) << 0x30) >> 0x28);
     uVar7 = (ushort)(((uint7)(byte)((uint)_DAT_01c70758 >> 0x18) << 0x30) >> 0x28);
-    uVar4 = (ushort)(byte)_DAT_01c00c70 * ((ushort)_DAT_01c70758 & 0xff) +
+    uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)_DAT_01c70758 & 0xff) +
             ((ushort)uVar1 & 0xff) * (ushort)(byte)_DAT_01c70754;
-    uVar6 = (ushort)(byte)((uint)_DAT_01c00c70 >> 8) * (ushort)(byte)((uint)_DAT_01c70758 >> 8) +
+    uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) *
+            (ushort)(byte)((uint)_DAT_01c70758 >> 8) +
             ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &
             0xff) * (ushort)(byte)((uint)_DAT_01c70754 >> 8);
-    uVar8 = (short)CONCAT21(uVar9,(char)((uint)_DAT_01c00c70 >> 0x10)) *
+    uVar8 = (short)CONCAT21(uVar9,(char)((uint)g_ActiveRenderColor >> 0x10)) *
             (short)CONCAT21(uVar7,(char)((uint)_DAT_01c70758 >> 0x10)) +
             (short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)_DAT_01c70754 >> 0x10));
     uVar10 = (uVar9 >> 8) * (uVar7 >> 8) + (short)(uVar12 >> 0x18) * (uVar5 >> 8);

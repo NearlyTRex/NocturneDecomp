@@ -27,11 +27,11 @@
 ;   undefined4 DAT_005bf4e8
 ;   undefined4 DAT_005bf4ec
 ;   undefined4 DAT_005bf4f0
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c03948
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_MMXSupported
 ;   undefined4 DAT_01c039c4
 ;   undefined4 DAT_01c039c8
 ;   undefined4 DAT_01c039cc
@@ -42,7 +42,7 @@
 
 section .text
 
-    TEST dword ptr [0x01c03948],0xffffffff ; 00530a25 | DAT_01c03948
+    TEST dword ptr [0x01c03948],0xffffffff ; 00530a25 | g_MMXSupported
         ;   Label: engine_special.cpp_transformPoint_FUN_00530a25
     JZ 0x00530b73                       ; 00530a2f
         ;   XREF to: 00530b73 (CONDITIONAL_JUMP)  ; LAB_00530b73
@@ -140,14 +140,14 @@ section .text
     IDIV ECX                            ; 00530b3d
     MOV dword ptr [EBX + 0xc],EAX       ; 00530b3f
     MOVD EAX,MM4                        ; 00530b42
-    IMUL dword ptr [0x01c00c48]         ; 00530b45 | DAT_01c00c48
+    IMUL dword ptr [0x01c00c48]         ; 00530b45 | g_Projection
     IDIV ECX                            ; 00530b4b
-    ADD EAX,dword ptr [0x01c00c50]      ; 00530b4d | DAT_01c00c50
+    ADD EAX,dword ptr [0x01c00c50]      ; 00530b4d | g_Projection.center_x_fixed
     MOV dword ptr [EBX + 0x10],EAX      ; 00530b53
     MOVD EAX,MM5                        ; 00530b56
-    IMUL dword ptr [0x01c00c4c]         ; 00530b59 | DAT_01c00c4c
+    IMUL dword ptr [0x01c00c4c]         ; 00530b59 | g_Projection.neg_half_height_fixed
     IDIV ECX                            ; 00530b5f
-    ADD EAX,dword ptr [0x01c00c54]      ; 00530b61 | DAT_01c00c54
+    ADD EAX,dword ptr [0x01c00c54]      ; 00530b61 | g_Projection.center_y_fixed
     MOV dword ptr [EBX + 0x14],EAX      ; 00530b67
     EMMS                                ; 00530b6a
     RET                                 ; 00530b6c
@@ -253,14 +253,14 @@ section .text
     IDIV ECX                            ; 00530ca6
     MOV dword ptr [EDI + 0xc],EAX       ; 00530ca8
     MOV EAX,[0x005bf4e8]                ; 00530cab | DAT_005bf4e8
-    IMUL dword ptr [0x01c00c48]         ; 00530cb0 | DAT_01c00c48
+    IMUL dword ptr [0x01c00c48]         ; 00530cb0 | g_Projection
     IDIV ECX                            ; 00530cb6
-    ADD EAX,dword ptr [0x01c00c50]      ; 00530cb8 | DAT_01c00c50
+    ADD EAX,dword ptr [0x01c00c50]      ; 00530cb8 | g_Projection.center_x_fixed
     MOV dword ptr [EDI + 0x10],EAX      ; 00530cbe
     MOV EAX,[0x005bf4ec]                ; 00530cc1 | DAT_005bf4ec
-    IMUL dword ptr [0x01c00c4c]         ; 00530cc6 | DAT_01c00c4c
+    IMUL dword ptr [0x01c00c4c]         ; 00530cc6 | g_Projection.neg_half_height_fixed
     IDIV ECX                            ; 00530ccc
-    ADD EAX,dword ptr [0x01c00c54]      ; 00530cce | DAT_01c00c54
+    ADD EAX,dword ptr [0x01c00c54]      ; 00530cce | g_Projection.center_y_fixed
     MOV dword ptr [EDI + 0x14],EAX      ; 00530cd4
     POP EDI                             ; 00530cd7
     POP ESI                             ; 00530cd8

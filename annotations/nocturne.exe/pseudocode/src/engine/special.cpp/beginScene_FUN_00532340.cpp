@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_beginScene_FUN_00532340(void)
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9d8c)();

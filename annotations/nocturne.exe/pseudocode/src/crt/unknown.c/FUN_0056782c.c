@@ -21,13 +21,13 @@ byte * FUN_0056782c(byte *param_1,int param_2)
     *(byte *)(param_2 + 0x10) = *(byte *)(param_2 + 0x10) & 0xfe;
   }
   bVar1 = *param_1;
-  if (((&DAT_005c168c)[(byte)(bVar1 + 1)] & 0x20) != 0) {
+  if ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20) != 0) {
     iVar2 = 0;
     do {
       iVar2 = iVar2 * 10 + (bVar1 - 0x30);
       bVar1 = param_1[1];
       param_1 = param_1 + 1;
-    } while (((&DAT_005c168c)[(byte)(bVar1 + 1)] & 0x20) != 0);
+    } while ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0x20) != 0);
     *(int *)(param_2 + 0xc) = iVar2;
   }
   if (*param_1 == 0x4e) {

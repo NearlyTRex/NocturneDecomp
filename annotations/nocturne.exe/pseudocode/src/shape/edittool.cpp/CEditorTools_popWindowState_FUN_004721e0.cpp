@@ -24,15 +24,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditor
     free(*(void **)(iVar1 + 0x1bcd248));
     *(uint *)(iVar1 + 0x1bcd248) = 0;
   }
-  _DAT_01c00c58 = *(uint *)(iVar1 + 0x1bcd090);
-  _DAT_01c00c5c = *(uint *)(iVar1 + 0x1bcd094);
-  _DAT_01c00c60 = *(uint *)(iVar1 + 0x1bcd098);
-  _DAT_01c00c64 = *(uint *)(iVar1 + 0x1bcd09c);
-  _DAT_01c00c48 = *(uint *)(iVar1 + 0x1bcd0a0);
-  _DAT_01c00c4c = *(uint *)(iVar1 + 0x1bcd0a4);
-  _DAT_01c00c50 = *(uint *)(iVar1 + 0x1bcd0a8);
-  _DAT_01c00c54 = *(uint *)(iVar1 + 0x1bcd0ac);
-  _DAT_01c00c68 = *(uint *)(iVar1 + 0x1bcd0b0);
-  _DAT_01c00c6c = *(uint *)(iVar1 + 0x1bcd0b4);
+  g_ClipLeft = *(int *)(iVar1 + 0x1bcd090);
+  g_ClipTop = *(int *)(iVar1 + 0x1bcd094);
+  g_ClipRight = *(int *)(iVar1 + 0x1bcd098);
+  g_ClipBottom = *(int *)(iVar1 + 0x1bcd09c);
+  g_Projection.half_width_fixed = *(int *)(iVar1 + 0x1bcd0a0);
+  g_Projection.neg_half_height_fixed = *(int *)(iVar1 + 0x1bcd0a4);
+  g_Projection.center_x_fixed = *(int *)(iVar1 + 0x1bcd0a8);
+  g_Projection.center_y_fixed = *(int *)(iVar1 + 0x1bcd0ac);
+  g_ViewportWidth = *(int *)(iVar1 + 0x1bcd0b0);
+  g_ViewportHeight = *(int *)(iVar1 + 0x1bcd0b4);
   return;
 }

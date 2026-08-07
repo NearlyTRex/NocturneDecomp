@@ -19,34 +19,34 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24
   if (iVar1 == 0) goto LAB_00405cb0;
   engine_3d_c_calculatePolygonLighting_FUN_00404710(primitive);
   if (_DAT_01c038f4 == 0) {
-    if (_DAT_01c03948 == 0) {
-      if (DAT_005b7624 == 0x20) goto LAB_00405d06;
-      _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+    if (g_MMXSupported == 0) {
+      if (g_BitsPerPixel == 0x20) goto LAB_00405d06;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
     }
     else {
-      if (DAT_005b7624 != 0x20) goto LAB_00405d98;
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+      if (g_BitsPerPixel != 0x20) goto LAB_00405d98;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
     }
   }
-  else if (_DAT_01c03948 == 0) {
-    if (DAT_005b7624 == 0x20) {
+  else if (g_MMXSupported == 0) {
+    if (g_BitsPerPixel == 0x20) {
 LAB_00405d06:
-      _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
     }
     else {
-      _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
     }
   }
-  else if (DAT_005b7624 == 0x20) {
-    _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+  else if (g_BitsPerPixel == 0x20) {
+    g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
   }
   else {
 LAB_00405d98:
-    _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
   }
   piVar3 = &DAT_006b029c;
-  _DAT_01c039a4 = 1;
-  _DAT_01c039a0 = 0xd9;
+  g_VertexPreprocessMode = 1;
+  g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
   pSVar2 = primitive + 1;
   for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
     *piVar3 = (pSVar2->base).type + DAT_006b0264;
@@ -56,7 +56,7 @@ LAB_00405d98:
          (pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_FUN_00432cd0((primitive->base).count,&DAT_006b029c);
+  engine_clipper_c_clipAndRasterize_FUN_00432cd0((primitive->base).count,&DAT_006b029c);
 LAB_00405cb0:
   return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

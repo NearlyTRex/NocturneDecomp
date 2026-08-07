@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
       }
     ],
     "success": false,
@@ -122,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 65,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 256
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 255
   },
   "cross_references": [
     {
@@ -176,26 +114,26 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     }
   ],
@@ -291,14 +229,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

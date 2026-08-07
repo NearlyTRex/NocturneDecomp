@@ -21,8 +21,8 @@
 ;   undefined1 DAT_005bf570
 ;   undefined4 DAT_005bf590
 ;   undefined4 DAT_005bf5b0
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     SHR ECX,0x10                        ; 004649ed
         ;   Label: LAB_004649ed
     SHR EAX,0x10                        ; 004649f0
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 004649f3 | DAT_01bd4260
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 004649fa | DAT_01bd2fa0
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 004649f3 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 004649fa | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00464a01
     JLE 0x00464af6                      ; 00464a03
         ;   XREF to: 00464af6 (CONDITIONAL_JUMP)  ; LAB_00464af6

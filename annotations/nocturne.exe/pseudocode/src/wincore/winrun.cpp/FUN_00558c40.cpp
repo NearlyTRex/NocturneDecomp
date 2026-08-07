@@ -27,23 +27,22 @@ void wincore_winrun_cpp_FUN_00558c40(void)
     INT_005c1654 = -8;
     _DAT_02de0858 = 0xff;
   }
-  _DAT_01c00c70 =
-       (uint)g_ColorCubeLookup
-             [((int)((_DAT_02de0858 + (_DAT_02de0858 >> 0x1f) * -8) -
-                    (uint)((_DAT_02de0858 >> 0x1f) << 2 < 0)) >> 3) * 0x20];
+  g_ActiveRenderColor =
+       (int)g_ColorCubeLookup
+            [((int)((_DAT_02de0858 + (_DAT_02de0858 >> 0x1f) * -8) -
+                   (uint)((_DAT_02de0858 >> 0x1f) << 2 < 0)) >> 3) * 0x20];
   iVar1 = -5;
   do {
     y = _DAT_01bd1d90 + iVar1;
-    if ((((_DAT_01c00c58 < x) && (_DAT_01c00c5c < y)) && (x < _DAT_01c00c60)) && (y < _DAT_01c00c64)
-       ) {
+    if ((((g_ClipLeft < x) && (g_ClipTop < y)) && (x < g_ClipRight)) && (y < g_ClipBottom)) {
       engine_2d_c_plotPixel_FUN_00401530(x,y);
     }
     iVar1 = iVar1 + 1;
   } while (iVar1 < 6);
   iVar1 = x + -5;
   do {
-    while (((_DAT_01c00c58 < iVar1 && (_DAT_01c00c5c < _DAT_01bd1d90)) &&
-           ((iVar1 < _DAT_01c00c60 && (_DAT_01bd1d90 < _DAT_01c00c64))))) {
+    while (((g_ClipLeft < iVar1 && (g_ClipTop < _DAT_01bd1d90)) &&
+           ((iVar1 < g_ClipRight && (_DAT_01bd1d90 < g_ClipBottom))))) {
       engine_2d_c_plotPixel_FUN_00401530(iVar1,_DAT_01bd1d90);
       iVar1 = iVar1 + 1;
       if (iVar1 == x + 6) {

@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004657b6
     MOV EBP,dword ptr [EBP + 0x14]      ; 004657b9
     PXOR MM7,MM7                        ; 004657bc
-    MOVD MM5,dword ptr [0x01c039a8]     ; 004657bf | DAT_01c039a8
+    MOVD MM5,dword ptr [0x01c039a8]     ; 004657bf | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 004657c6
     PSLLW MM5,0x6                       ; 004657c9
     MOV EAX,dword ptr [EBX]             ; 004657cd

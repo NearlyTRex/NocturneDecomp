@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x210]:1  local_210
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004c90e0 at 004c938e
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c938e
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2315
 ;
 ; Referenced Globals:

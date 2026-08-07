@@ -37,8 +37,8 @@
 ;   undefined4 DAT_01b4d1b8
 ;   undefined4 DAT_01b4d1fc
 ;   undefined4 DAT_01b4d768
-;   undefined4 DAT_01c02594
-;   undefined4 DAT_01c039a0
+;   int g_UseExternalRenderer
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
         ;   XREF to: 00458113 (CONDITIONAL_JUMP)  ; LAB_00458113
     MOV ECX,dword ptr [0x01e52ef8]      ; 0045809e | DAT_01e52ef8
         ;   Label: LAB_0045809e
-    MOV EBX,dword ptr [0x01c02594]      ; 004580a4 | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 004580a4 | g_UseExternalRenderer
     INC ECX                             ; 004580aa
     MOV EBP,dword ptr [0x01b4cd30]      ; 004580ab | DAT_01b4cd30
     MOV dword ptr [0x01e52ef8],ECX      ; 004580b1 | DAT_01e52ef8
@@ -90,7 +90,7 @@ section .text
     JL 0x004580d5                       ; 004580e8
         ;   XREF to: 004580d5 (CONDITIONAL_JUMP)  ; LAB_004580d5
     LEA EAX,[EAX]                       ; 004580ea
-    MOV EBX,dword ptr [0x01c039a0]      ; 004580f0 | DAT_01c039a0
+    MOV EBX,dword ptr [0x01c039a0]      ; 004580f0 | g_RenderStateFlags
         ;   Label: LAB_004580f0
     PUSH EBX                            ; 004580f6
     PUSH EDI                            ; 004580f7
@@ -374,7 +374,7 @@ section .text
         ;   XREF to: 004583e8 (CONDITIONAL_JUMP)  ; LAB_004583e8
     JMP 0x004581b0                      ; 00458403
         ;   XREF to: 004581b0 (UNCONDITIONAL_JUMP)  ; LAB_004581b0
-    MOV EAX,[0x01c039a4]                ; 00458408 | DAT_01c039a4
+    MOV EAX,[0x01c039a4]                ; 00458408 | g_VertexPreprocessMode
         ;   Label: LAB_00458408
     CMP EAX,0x1                         ; 0045840d
     JC 0x004581b0                       ; 00458410

@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 462,
+    "complexity_score": 422,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 29,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 92,
-    "suspect_count": 35,
+    "suspect_count": 31,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
@@ -139,8 +139,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -509,25 +509,9 @@
     {
       "description": "Undefined global data reference",
       "line": 54,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "for (; (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 && (*DAT_005c1ccc != '\\0'));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
       "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "for (; (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 && (*DAT_005c1ccc != '\\0'));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_005c1ccc",
-      "severity": "mild",
-      "text": "for (; (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 && (*DAT_005c1ccc != '\\0'));",
+      "text": "for (; ((g_CharacterClassificationTable[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 &&",
       "type": "undefined_data"
     },
     {
@@ -535,7 +519,7 @@
       "line": 55,
       "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "DAT_005c1ccc = DAT_005c1ccc + 1) {",
+      "text": "(*DAT_005c1ccc != '\\0')); DAT_005c1ccc = DAT_005c1ccc + 1) {",
       "type": "undefined_data"
     },
     {
@@ -543,15 +527,15 @@
       "line": 55,
       "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "DAT_005c1ccc = DAT_005c1ccc + 1) {",
+      "text": "(*DAT_005c1ccc != '\\0')); DAT_005c1ccc = DAT_005c1ccc + 1) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005c168c",
+      "line": 55,
+      "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) != 0) {",
+      "text": "(*DAT_005c1ccc != '\\0')); DAT_005c1ccc = DAT_005c1ccc + 1) {",
       "type": "undefined_data"
     },
     {
@@ -559,7 +543,7 @@
       "line": 58,
       "match": "DAT_005c1ccc",
       "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) != 0) {",
+      "text": "while ((g_CharacterClassificationTable[(byte)(*DAT_005c1ccc + 1)] & 2) != 0) {",
       "type": "undefined_data"
     },
     {
@@ -584,22 +568,6 @@
       "match": "DAT_00598b2c",
       "severity": "mild",
       "text": "_DAT_005c1cd8 = (short *)&DAT_00598b2c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "for (; (((&DAT_005c168c)[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) == 0 &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) != 0) {",
       "type": "undefined_data"
     },
     {

@@ -93,18 +93,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 57,
-        "line": 58,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 59,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 68,
         "message": "use of undeclared identifier '_DAT_01b4d1fc'"
@@ -122,16 +110,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 117,
+    "complexity_score": 92,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 213
@@ -254,13 +241,13 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -425,22 +412,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "pCVar3->saved_screen_buffer_rows[0] = *(void **)(&DAT_01bd2fa0 + iVar2 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(ushort **)(&DAT_01bd2fa0 + iVar2 * 4) =",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

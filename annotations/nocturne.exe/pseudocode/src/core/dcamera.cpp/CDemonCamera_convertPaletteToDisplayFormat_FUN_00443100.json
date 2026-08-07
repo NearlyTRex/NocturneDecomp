@@ -63,24 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 54,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_01c00624'; did you mean 'DAT_02DF0624'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_01c00630'; did you mean 'DAT_02DF0630'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_01c0063c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 29,
         "line": 26,
         "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b06f8'?"
@@ -92,13 +74,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 90,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
@@ -121,9 +103,9 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "00b0daf8",
@@ -145,20 +127,20 @@
     },
     {
       "addr": "01c00624",
-      "name": "DAT_01c00624",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00630",
-      "name": "DAT_01c00630",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c0063c",
-      "name": "DAT_01c0063c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     }
   ],
@@ -219,42 +201,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "uVar2 = (uint)*(byte *)(iVar1 + 0xb0dafa) << (DAT_01c0063c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_00b0daf8",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_00b0daf8)[iVar1] << (DAT_01c00624 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "(uint)(byte)(&DAT_00b0daf8)[iVar1] << (DAT_01c00624 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "(uint)*(byte *)(iVar1 + 0xb0daf9) << (DAT_01c00630 & 0x1f);",
+      "text": "(uint)(byte)(&DAT_00b0daf8)[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f) |",
       "type": "undefined_data"
     },
     {

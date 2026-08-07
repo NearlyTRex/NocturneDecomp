@@ -58,44 +58,8 @@
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 20,
+        "line": 19,
         "message": "use of undeclared identifier '_DAT_02ddf56c'; did you mean 'DAT_006af56c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 24,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 24,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02ddf558'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02ddf558'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -112,8 +76,8 @@
     "pseudocode_lines": 31,
     "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 103
@@ -195,20 +159,20 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -225,8 +189,8 @@
     },
     {
       "addr": "02ddf558",
-      "name": "DAT_02ddf558",
-      "type": "undefined4",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
@@ -281,23 +245,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "openScreenDevice_FUN_00553470.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 43,
-          "line": 34,
-          "message": "Uninitialized variable: iStack_64",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -308,28 +255,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(LPVOID *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02ddf558 + 100))(_DAT_02ddf558,0,local_74,1);",
-      "type": "unresolved_funcptr"
+      "text": "*(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bd2fa0 + iVar2) = iStack_64;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: iStack_64",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(int *)(&DAT_01bd2fa0 + iVar2) = iStack_64;",
-      "type": "static_uninitvar"
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;",
+      "type": "pointer_truncation"
     }
   ]
 }

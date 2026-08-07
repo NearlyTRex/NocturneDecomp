@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   rect_y
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; *****************************************************************************
 
@@ -24,20 +24,20 @@ section .text
     PUSH EBP                            ; 0048fd01
     MOV EDX,dword ptr [ESP + 0x14]      ; 0048fd02
     MOV ECX,dword ptr [ESP + 0x18]      ; 0048fd06
-    CMP EDX,dword ptr [0x01c00c58]      ; 0048fd0a | DAT_01c00c58
+    CMP EDX,dword ptr [0x01c00c58]      ; 0048fd0a | g_ClipLeft
     JL 0x0048fd3a                       ; 0048fd10
         ;   XREF to: 0048fd3a (CONDITIONAL_JUMP)  ; LAB_0048fd3a
-    CMP ECX,dword ptr [0x01c00c5c]      ; 0048fd12 | DAT_01c00c5c
+    CMP ECX,dword ptr [0x01c00c5c]      ; 0048fd12 | g_ClipTop
     JL 0x0048fd3a                       ; 0048fd18
         ;   XREF to: 0048fd3a (CONDITIONAL_JUMP)  ; LAB_0048fd3a
-    MOV EAX,[0x01c00c60]                ; 0048fd1a | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 0048fd1a | g_ClipRight
     MOV EDI,dword ptr [ESP + 0xc]       ; 0048fd1f
     INC EAX                             ; 0048fd23
     SUB EAX,EDI                         ; 0048fd24
     CMP EDX,EAX                         ; 0048fd26
     JG 0x0048fd3a                       ; 0048fd28
         ;   XREF to: 0048fd3a (CONDITIONAL_JUMP)  ; LAB_0048fd3a
-    MOV EAX,[0x01c00c64]                ; 0048fd2a | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 0048fd2a | g_ClipBottom
     MOV EBP,dword ptr [ESP + 0x10]      ; 0048fd2f
     INC EAX                             ; 0048fd33
     SUB EAX,EBP                         ; 0048fd34

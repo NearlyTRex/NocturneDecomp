@@ -27,11 +27,11 @@
 ;   undefined4 DAT_00581ac5
 ;   TerminatedCString s_maxCharHght_d_00581ad0
 ;   undefined4 DAT_00581ae0
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -70,13 +70,13 @@ section .text
     ADD EDX,EAX                         ; 00493798
     PUSH 0x0                            ; 0049379a
     MOV dword ptr [EBP + -0x2c],EDX     ; 0049379c
-    MOV EDX,dword ptr [0x01c00c64]      ; 0049379f | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 0049379f | g_ClipBottom
     PUSH EDX                            ; 004937a5
-    MOV ECX,dword ptr [0x01c00c60]      ; 004937a6 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 004937a6 | g_ClipRight
     PUSH ECX                            ; 004937ac
-    MOV EAX,[0x01c00c5c]                ; 004937ad | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 004937ad | g_ClipTop
     PUSH EAX                            ; 004937b2
-    MOV EDX,dword ptr [0x01c00c58]      ; 004937b3 | DAT_01c00c58
+    MOV EDX,dword ptr [0x01c00c58]      ; 004937b3 | g_ClipLeft
     MOV EDI,0xa                         ; 004937b9
     PUSH EDX                            ; 004937be
     MOV EBX,EDI                         ; 004937bf
@@ -123,13 +123,13 @@ section .text
     PUSH EAX                            ; 0049381f
     MOV EDI,0x4                         ; 00493820
     PUSH 0x3                            ; 00493825
-    MOV dword ptr [0x01c00c70],EDI      ; 00493827 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDI      ; 00493827 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049382d
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493832
     PUSH 0xc5                           ; 00493835
     PUSH ESI                            ; 0049383a
-    MOV dword ptr [0x01c00c70],EDI      ; 0049383b | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDI      ; 0049383b | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493841
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493846
@@ -147,7 +147,7 @@ section .text
     PUSH 0x3                            ; 00493861
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493863
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
-    MOV dword ptr [0x01c00c70],0x4      ; 00493868 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],0x4      ; 00493868 | g_ActiveRenderColor
     MOV EAX,dword ptr [ESI + 0x316c]    ; 00493872
     ADD ESP,0x10                        ; 00493878
     ADD EAX,EBX                         ; 0049387b
@@ -177,7 +177,7 @@ section .text
         ;   XREF to: 00493929 (CONDITIONAL_JUMP)  ; LAB_00493929
     MOV EDI,0x4                         ; 004938b3
     LEA EAX,[EBX + -0x1]                ; 004938b8
-    MOV dword ptr [0x01c00c70],EDI      ; 004938bb | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDI      ; 004938bb | g_ActiveRenderColor
     MOV EDI,dword ptr [EBP + 0x18]      ; 004938c1
     PUSH EAX                            ; 004938c4
     DEC EDI                             ; 004938c5
@@ -190,7 +190,7 @@ section .text
     PUSH 0xc5                           ; 004938d2
     MOV EAX,0x4                         ; 004938d7
     PUSH ESI                            ; 004938dc
-    MOV [0x01c00c70],EAX                ; 004938dd | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 004938dd | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004938e2
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004938e7
@@ -215,7 +215,7 @@ section .text
     PUSH EAX                            ; 00493913
     MOV EDX,0x4                         ; 00493914
     PUSH 0x3                            ; 00493919
-    MOV dword ptr [0x01c00c70],EDX      ; 0049391b | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 0049391b | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493921
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493926
@@ -560,7 +560,7 @@ section .text
     POP ESI                             ; 00493c45
     POP EBX                             ; 00493c46
     RET                                 ; 00493c47
-    MOV dword ptr [0x01c00c70],0x4      ; 00493c48 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],0x4      ; 00493c48 | g_ActiveRenderColor
         ;   Label: LAB_00493c48
     LEA EAX,[EBX + -0x1]                ; 00493c52
     MOV EDI,dword ptr [EBP + 0x18]      ; 00493c55
@@ -575,7 +575,7 @@ section .text
     PUSH 0xc5                           ; 00493c66
     MOV EDX,0x4                         ; 00493c6b
     PUSH ESI                            ; 00493c70
-    MOV dword ptr [0x01c00c70],EDX      ; 00493c71 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493c71 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493c77
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493c7c
@@ -600,7 +600,7 @@ section .text
     PUSH EAX                            ; 00493ca8
     MOV ECX,0x4                         ; 00493ca9
     PUSH 0x3                            ; 00493cae
-    MOV dword ptr [0x01c00c70],ECX      ; 00493cb0 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493cb0 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493cb6
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493cbb
@@ -609,7 +609,7 @@ section .text
     MOV EDI,0x4                         ; 00493cc3
         ;   Label: LAB_00493cc3
     LEA EAX,[EBX + -0x1]                ; 00493cc8
-    MOV dword ptr [0x01c00c70],EDI      ; 00493ccb | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDI      ; 00493ccb | g_ActiveRenderColor
     MOV EDI,dword ptr [EBP + 0x18]      ; 00493cd1
     PUSH EAX                            ; 00493cd4
     DEC EDI                             ; 00493cd5
@@ -622,7 +622,7 @@ section .text
     PUSH 0xc5                           ; 00493ce2
     MOV EAX,0x4                         ; 00493ce7
     PUSH ESI                            ; 00493cec
-    MOV [0x01c00c70],EAX                ; 00493ced | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00493ced | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493cf2
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493cf7
@@ -647,7 +647,7 @@ section .text
     PUSH EAX                            ; 00493d23
     MOV EDX,0x4                         ; 00493d24
     PUSH 0x3                            ; 00493d29
-    MOV dword ptr [0x01c00c70],EDX      ; 00493d2b | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493d2b | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493d31
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493d36
@@ -662,14 +662,14 @@ section .text
     PUSH EAX                            ; 00493d47
     MOV ECX,0x4                         ; 00493d48
     PUSH 0x3                            ; 00493d4d
-    MOV dword ptr [0x01c00c70],ECX      ; 00493d4f | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493d4f | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493d55
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493d5a
     PUSH 0xc5                           ; 00493d5d
     MOV EAX,0x4                         ; 00493d62
     PUSH ESI                            ; 00493d67
-    MOV [0x01c00c70],EAX                ; 00493d68 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00493d68 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493d6d
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493d72
@@ -694,7 +694,7 @@ section .text
     PUSH EAX                            ; 00493d9e
     MOV EDX,0x4                         ; 00493d9f
     PUSH 0x3                            ; 00493da4
-    MOV dword ptr [0x01c00c70],EDX      ; 00493da6 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493da6 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493dac
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493db1
@@ -709,14 +709,14 @@ section .text
     PUSH EAX                            ; 00493dc2
     MOV ECX,0x4                         ; 00493dc3
     PUSH 0x3                            ; 00493dc8
-    MOV dword ptr [0x01c00c70],ECX      ; 00493dca | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493dca | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493dd0
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493dd5
     PUSH 0xc5                           ; 00493dd8
     MOV EAX,0x4                         ; 00493ddd
     PUSH ESI                            ; 00493de2
-    MOV [0x01c00c70],EAX                ; 00493de3 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00493de3 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493de8
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493ded
@@ -741,7 +741,7 @@ section .text
     PUSH EAX                            ; 00493e19
     MOV EDX,0x4                         ; 00493e1a
     PUSH 0x3                            ; 00493e1f
-    MOV dword ptr [0x01c00c70],EDX      ; 00493e21 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493e21 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493e27
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493e2c
@@ -756,14 +756,14 @@ section .text
     PUSH EAX                            ; 00493e3d
     MOV ECX,0x4                         ; 00493e3e
     PUSH 0x3                            ; 00493e43
-    MOV dword ptr [0x01c00c70],ECX      ; 00493e45 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493e45 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493e4b
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493e50
     PUSH 0xc5                           ; 00493e53
     MOV EAX,0x4                         ; 00493e58
     PUSH ESI                            ; 00493e5d
-    MOV [0x01c00c70],EAX                ; 00493e5e | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00493e5e | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493e63
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493e68
@@ -788,13 +788,13 @@ section .text
     PUSH EAX                            ; 00493e94
     MOV EDX,0x4                         ; 00493e95
     PUSH 0x3                            ; 00493e9a
-    MOV dword ptr [0x01c00c70],EDX      ; 00493e9c | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493e9c | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493ea2
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493ea7
     JMP 0x00493ae4                      ; 00493eaa
         ;   XREF to: 00493ae4 (UNCONDITIONAL_JUMP)  ; LAB_00493ae4
-    MOV dword ptr [0x01c00c70],0x4      ; 00493eaf | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],0x4      ; 00493eaf | g_ActiveRenderColor
         ;   Label: LAB_00493eaf
     LEA EAX,[EBX + -0x1]                ; 00493eb9
     MOV EDI,dword ptr [EBP + 0x18]      ; 00493ebc
@@ -809,7 +809,7 @@ section .text
     PUSH 0xc5                           ; 00493ecd
     MOV EDX,0x4                         ; 00493ed2
     PUSH ESI                            ; 00493ed7
-    MOV dword ptr [0x01c00c70],EDX      ; 00493ed8 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493ed8 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493ede
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493ee3
@@ -834,7 +834,7 @@ section .text
     PUSH EAX                            ; 00493f0f
     MOV ECX,0x4                         ; 00493f10
     PUSH 0x3                            ; 00493f15
-    MOV dword ptr [0x01c00c70],ECX      ; 00493f17 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493f17 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493f1d
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493f22
@@ -849,14 +849,14 @@ section .text
     PUSH EAX                            ; 00493f33
     MOV ECX,0x4                         ; 00493f34
     PUSH 0x3                            ; 00493f39
-    MOV dword ptr [0x01c00c70],ECX      ; 00493f3b | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 00493f3b | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493f41
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493f46
     PUSH 0xc5                           ; 00493f49
     MOV EAX,0x4                         ; 00493f4e
     PUSH ESI                            ; 00493f53
-    MOV [0x01c00c70],EAX                ; 00493f54 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00493f54 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493f59
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493f5e
@@ -881,13 +881,13 @@ section .text
     PUSH EAX                            ; 00493f8a
     MOV EDX,0x4                         ; 00493f8b
     PUSH 0x3                            ; 00493f90
-    MOV dword ptr [0x01c00c70],EDX      ; 00493f92 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493f92 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00493f98
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00493f9d
     JMP 0x00493b78                      ; 00493fa0
         ;   XREF to: 00493b78 (UNCONDITIONAL_JUMP)  ; LAB_00493b78
-    MOV dword ptr [0x01c00c70],0x4      ; 00493fa5 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],0x4      ; 00493fa5 | g_ActiveRenderColor
         ;   Label: LAB_00493fa5
     LEA EAX,[EBX + -0x1]                ; 00493faf
     MOV EDI,dword ptr [EBP + 0x18]      ; 00493fb2
@@ -902,7 +902,7 @@ section .text
     PUSH 0xc5                           ; 00493fc3
     MOV EDX,0x4                         ; 00493fc8
     PUSH ESI                            ; 00493fcd
-    MOV dword ptr [0x01c00c70],EDX      ; 00493fce | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00493fce | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00493fd4
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00493fd9
@@ -927,7 +927,7 @@ section .text
     PUSH EAX                            ; 00494005
     MOV ECX,0x4                         ; 00494006
     PUSH 0x3                            ; 0049400b
-    MOV dword ptr [0x01c00c70],ECX      ; 0049400d | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 0049400d | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 00494013
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00494018

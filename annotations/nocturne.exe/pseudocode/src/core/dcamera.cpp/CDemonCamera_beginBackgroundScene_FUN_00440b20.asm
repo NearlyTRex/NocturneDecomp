@@ -14,7 +14,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057b741
 ;   TerminatedCString s_CDemonCamera_beginBackgr_0057b755
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_0140efa8
 ;   undefined4 DAT_0140efac
 ;   undefined4 DAT_0140efb0
@@ -23,9 +23,9 @@
 ;   undefined4 DAT_01410274
 ;   undefined4 DAT_01410278
 ;   undefined4 DAT_0141027c
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c00624
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   _BIT_INTEGER32 g_RedBitPosition
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -75,35 +75,35 @@ section .text
         ;   Label: LAB_00440b7a
     MOV EDI,0x140efb4                   ; 00440b7f
     MOV EDX,0x8                         ; 00440b84
-    MOV EAX,[0x005b7624]                ; 00440b89 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 00440b89 | g_BitsPerPixel
     MOV ECX,dword ptr [0x005b7620]      ; 00440b8e | g_WindowHeight
     MOV [0x0140efac],EAX                ; 00440b94 | DAT_0140efac
-    MOV EAX,[0x01c02594]                ; 00440b99 | DAT_01c02594
+    MOV EAX,[0x01c02594]                ; 00440b99 | g_UseExternalRenderer
     SHL ECX,0x2                         ; 00440b9e
     MOV [0x0140efb0],EAX                ; 00440ba1 | DAT_0140efb0
     PUSH EDI                            ; 00440ba6
     MOV EAX,ECX                         ; 00440ba7
     SHR ECX,0x2                         ; 00440ba9
-    MOVSD.REP ES:EDI,ESI                ; 00440bac | DAT_01bd2fa0 | DAT_0140efb4 | DAT_01bd2fa4
+    MOVSD.REP ES:EDI,ESI                ; 00440bac | g_ScreenBufferArray | DAT_0140efb4 | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 00440bae
     AND CL,0x3                          ; 00440bb0
-    MOVSB.REP ES:EDI,ESI                ; 00440bb3 | DAT_01bd2fa4 | DAT_0140efb8
+    MOVSB.REP ES:EDI,ESI                ; 00440bb3 | g_ScreenBufferArray[1] | DAT_0140efb8
     POP EDI                             ; 00440bb5
     MOV ESI,0x20                        ; 00440bb6
-    MOV EAX,[0x01c00624]                ; 00440bbb | DAT_01c00624
+    MOV EAX,[0x01c00624]                ; 00440bbb | g_RedBitPosition
     MOV EBP,dword ptr [EBX + 0x140]     ; 00440bc0
     XOR ECX,ECX                         ; 00440bc6
     MOV [0x01410274],EAX                ; 00440bc8 | DAT_01410274
-    MOV dword ptr [0x005b7624],ESI      ; 00440bcd | DAT_005b7624
-    MOV EAX,[0x01c00630]                ; 00440bd3 | DAT_01c00630
-    MOV dword ptr [0x01c02594],ECX      ; 00440bd8 | DAT_01c02594
+    MOV dword ptr [0x005b7624],ESI      ; 00440bcd | g_BitsPerPixel
+    MOV EAX,[0x01c00630]                ; 00440bd3 | g_GreenBitPosition
+    MOV dword ptr [0x01c02594],ECX      ; 00440bd8 | g_UseExternalRenderer
     MOV [0x01410278],EAX                ; 00440bde | DAT_01410278
-    MOV EAX,[0x01c0063c]                ; 00440be3 | DAT_01c0063c
-    MOV dword ptr [0x01c00630],EDX      ; 00440be8 | DAT_01c00630
+    MOV EAX,[0x01c0063c]                ; 00440be3 | g_BlueBitPosition
+    MOV dword ptr [0x01c00630],EDX      ; 00440be8 | g_GreenBitPosition
     MOV [0x0141027c],EAX                ; 00440bee | DAT_0141027c
     MOV EAX,0x10                        ; 00440bf3
-    MOV dword ptr [0x01c0063c],ECX      ; 00440bf8 | DAT_01c0063c
-    MOV [0x01c00624],EAX                ; 00440bfe | DAT_01c00624
+    MOV dword ptr [0x01c0063c],ECX      ; 00440bf8 | g_BlueBitPosition
+    MOV [0x01c00624],EAX                ; 00440bfe | g_RedBitPosition
     XOR EAX,EAX                         ; 00440c03
     TEST EBP,EBP                        ; 00440c05
     JLE 0x00440b50                      ; 00440c07
@@ -120,7 +120,7 @@ section .text
     MOV EDX,ECX                         ; 00440c2c
     MOV ECX,dword ptr [EBX + 0x148]     ; 00440c2e
     ADD ECX,EAX                         ; 00440c34
-    MOV dword ptr [ECX*0x4 + 0x1bd2fa0],EDX ; 00440c36 | DAT_01bd2fa0
+    MOV dword ptr [ECX*0x4 + 0x1bd2fa0],EDX ; 00440c36 | g_ScreenBufferArray
     INC EAX                             ; 00440c3d
     CMP EAX,dword ptr [EBX + 0x140]     ; 00440c3e
     JL 0x00440c0d                       ; 00440c44

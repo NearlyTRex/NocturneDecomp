@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_005b763c
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   engine_clipper.c_FUN_00432cd0
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;   engine_texture.cpp_getCurrentTexture_FUN_00545ad0
 ;
 ; *****************************************************************************
@@ -52,19 +52,19 @@ section .text
     TEST EAX,EAX                        ; 00408a7e
     JZ 0x00408b98                       ; 00408a80
         ;   XREF to: 00408b98 (CONDITIONAL_JUMP)  ; LAB_00408b98
-    CMP dword ptr [0x01c03948],0x0      ; 00408a86 | DAT_01c03948
+    CMP dword ptr [0x01c03948],0x0      ; 00408a86 | g_MMXSupported
     JNZ 0x00408bcf                      ; 00408a8d
         ;   XREF to: 00408bcf (CONDITIONAL_JUMP)  ; LAB_00408bcf
-    CMP dword ptr [0x005b7624],0x20     ; 00408a93 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00408a93 | g_BitsPerPixel
     JNZ 0x00408bc0                      ; 00408a9a
         ;   XREF to: 00408bc0 (CONDITIONAL_JUMP)  ; LAB_00408bc0
-    MOV dword ptr [0x01c00c7c],0x5300ec ; 00408aa0 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x5300ec ; 00408aa0 | g_ScanlineRenderFunc
     MOV ESI,0x1                         ; 00408aaa
         ;   Label: LAB_00408aaa
     MOV ECX,0x1e7                       ; 00408aaf
     MOV EDI,dword ptr [0x006b494c]      ; 00408ab4 | DAT_006b494c
-    MOV dword ptr [0x01c039a4],ESI      ; 00408aba | DAT_01c039a4
-    MOV dword ptr [0x01c039a0],ECX      ; 00408ac0 | DAT_01c039a0
+    MOV dword ptr [0x01c039a4],ESI      ; 00408aba | g_VertexPreprocessMode
+    MOV dword ptr [0x01c039a0],ECX      ; 00408ac0 | g_RenderStateFlags
     TEST EDI,EDI                        ; 00408ac6
     JZ 0x00408bf6                       ; 00408ac8
         ;   XREF to: 00408bf6 (CONDITIONAL_JUMP)  ; LAB_00408bf6
@@ -147,18 +147,18 @@ section .text
     POP ESI                             ; 00408bbd
     POP EBX                             ; 00408bbe
     RET                                 ; 00408bbf
-    MOV dword ptr [0x01c00c7c],0x530322 ; 00408bc0 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x530322 ; 00408bc0 | g_ScanlineRenderFunc
         ;   Label: LAB_00408bc0
     JMP 0x00408aaa                      ; 00408bca
         ;   XREF to: 00408aaa (UNCONDITIONAL_JUMP)  ; LAB_00408aaa
-    CMP dword ptr [0x005b7624],0x20     ; 00408bcf | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00408bcf | g_BitsPerPixel
         ;   Label: LAB_00408bcf
     JNZ 0x00408be7                      ; 00408bd6
         ;   XREF to: 00408be7 (CONDITIONAL_JUMP)  ; LAB_00408be7
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 00408bd8 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 00408bd8 | g_ScanlineRenderFunc
     JMP 0x00408aaa                      ; 00408be2
         ;   XREF to: 00408aaa (UNCONDITIONAL_JUMP)  ; LAB_00408aaa
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 00408be7 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 00408be7 | g_ScanlineRenderFunc
         ;   Label: LAB_00408be7
     JMP 0x00408aaa                      ; 00408bf1
         ;   XREF to: 00408aaa (UNCONDITIONAL_JUMP)  ; LAB_00408aaa
@@ -167,8 +167,8 @@ section .text
     PUSH EBX                            ; 00408bfa
     MOV ECX,dword ptr [EAX + 0x4]       ; 00408bfb
     PUSH ECX                            ; 00408bfe
-    CALL engine_clipper.c_FUN_00432cd0  ; 00408bff
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
+    CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00408bff
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00408c04
     JMP 0x00408b98                      ; 00408c07
         ;   XREF to: 00408b98 (UNCONDITIONAL_JUMP)  ; LAB_00408b98

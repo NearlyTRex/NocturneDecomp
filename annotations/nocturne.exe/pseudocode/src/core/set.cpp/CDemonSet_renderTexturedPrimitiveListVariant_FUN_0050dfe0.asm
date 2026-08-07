@@ -16,7 +16,7 @@
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 g_CGame_01c775ec.scripted_sequence_active
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     JL 0x0050e014                       ; 0050e02a
         ;   XREF to: 0050e014 (CONDITIONAL_JUMP)  ; LAB_0050e014
     LEA EAX,[EAX]                       ; 0050e02c
-    CMP dword ptr [0x01c02594],0x0      ; 0050e030 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0050e030 | g_UseExternalRenderer
         ;   Label: LAB_0050e030
     JNZ 0x0050e06c                      ; 0050e037
         ;   XREF to: 0050e06c (CONDITIONAL_JUMP)  ; LAB_0050e06c
@@ -91,7 +91,7 @@ section .text
     CMP ESI,EDI                         ; 0050e05a
     JL 0x0050e046                       ; 0050e05c
         ;   XREF to: 0050e046 (CONDITIONAL_JUMP)  ; LAB_0050e046
-    CMP dword ptr [0x01c02594],0x0      ; 0050e05e | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0050e05e | g_UseExternalRenderer
     JNZ 0x0050e06c                      ; 0050e065
         ;   XREF to: 0050e06c (CONDITIONAL_JUMP)  ; LAB_0050e06c
     POP EBP                             ; 0050e067

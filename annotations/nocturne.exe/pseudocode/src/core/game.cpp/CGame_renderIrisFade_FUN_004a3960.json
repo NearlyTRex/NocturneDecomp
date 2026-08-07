@@ -93,12 +93,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 34,
-        "line": 30,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 22,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_01c78b10'"
@@ -114,6 +108,12 @@
         "column": 22,
         "line": 36,
         "message": "use of undeclared identifier '_DAT_01c78b0c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_01c78b0c'"
       }
     ],
     "success": false,
@@ -122,7 +122,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 98,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
@@ -131,7 +131,8 @@
     "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 139
@@ -188,19 +189,19 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -319,20 +320,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 23,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar2 = *(uint **)(&DAT_01bd2fa0 + iVar3);",
-      "type": "undefined_data"
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f7fffff is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",

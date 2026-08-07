@@ -34,10 +34,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(
   *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
   puVar2[(uint)bVar3 * -2 + 1] =
        *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  (this_ptr->cached_projection).half_width_fixed = _DAT_01c00c48;
-  (this_ptr->cached_projection).neg_half_height_fixed = _DAT_01c00c4c;
-  (this_ptr->cached_projection).center_x_fixed = _DAT_01c00c50;
-  (this_ptr->cached_projection).center_y_fixed = _DAT_01c00c54;
+  (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
+  (this_ptr->cached_projection).neg_half_height_fixed = g_Projection.neg_half_height_fixed;
+  (this_ptr->cached_projection).center_x_fixed = g_Projection.center_x_fixed;
+  (this_ptr->cached_projection).center_y_fixed = g_Projection.center_y_fixed;
   core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40(this_ptr);
   return;
 }

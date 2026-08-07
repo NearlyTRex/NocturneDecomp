@@ -46,7 +46,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
       iVar3 = 0;
       puVar2 = local_18;
       do {
-        puVar5 = *(uint **)(&DAT_01bd4260 + iVar3);
+        puVar5 = *(uint **)((int)g_ZBufferScanlineArray + iVar3);
         puVar6 = puVar2;
         for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
           *puVar6 = *puVar5;

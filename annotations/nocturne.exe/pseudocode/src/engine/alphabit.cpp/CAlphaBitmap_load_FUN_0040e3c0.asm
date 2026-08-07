@@ -20,7 +20,7 @@
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004befe6
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5730
 ;   core_main.c_FUN_004c85f0 at 004c8c3d
-;   core_main.c_FUN_004c90e0 at 004c9158
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9158
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f09
 ;   core_menu.cpp_FUN_004d23d0 at 004d240a
 ;   ... and 3 more
@@ -203,16 +203,16 @@ section .text
     MOV EDI,EAX                         ; 0040e585
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040e587
         ;   XREF to: 00564570 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_00564570(_FILE * file)
-    MOV ECX,dword ptr [0x005b7624]      ; 0040e58c | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0040e58c | g_BitsPerPixel
     ADD ESP,0x4                         ; 0040e592
     CMP ECX,0x20                        ; 0040e595
     JNZ 0x0040e6ae                      ; 0040e598
         ;   XREF to: 0040e6ae (CONDITIONAL_JUMP)  ; LAB_0040e6ae
-    MOV CL,byte ptr [0x01c00624]        ; 0040e59e | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 0040e59e | g_RedBitPosition
     SHL EBP,CL                          ; 0040e5a4
-    MOV CL,byte ptr [0x01c00630]        ; 0040e5a6 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 0040e5a6 | g_GreenBitPosition
     SHL EDI,CL                          ; 0040e5ac
-    MOV CL,byte ptr [0x01c0063c]        ; 0040e5ae | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 0040e5ae | g_BlueBitPosition
     OR EDI,EBP                          ; 0040e5b4
     SHL EAX,CL                          ; 0040e5b6
     MOV ECX,EDI                         ; 0040e5b8

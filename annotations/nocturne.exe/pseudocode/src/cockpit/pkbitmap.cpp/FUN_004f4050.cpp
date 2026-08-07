@@ -24,7 +24,7 @@ void cockpit_pkbitmap_cpp_FUN_004f4050(int param_1,int param_2,int param_3)
   
   if ((*(int *)(param_1 + 0x20) != 0) && (*(int *)(param_1 + 0x14) != 0)) {
     local_1c = 0;
-    if (DAT_005b7624 == 0x10) {
+    if (g_BitsPerPixel == 0x10) {
       param_2 = param_2 * 2;
     }
     pCVar5 = cockpit_ckptutil_c_FUN_0042d130();
@@ -34,14 +34,14 @@ void cockpit_pkbitmap_cpp_FUN_004f4050(int param_1,int param_2,int param_3)
     do {
       iVar3 = *(int *)(*(int *)(param_1 + 0x20) + local_24 + 4);
       iVar4 = *(int *)(param_1 + 0x14);
-      iVar6 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);
+      iVar6 = param_2 + *(int *)((int)g_ScreenBufferArray + local_20);
       while (puVar7 < (ushort *)(iVar4 + iVar3)) {
         puVar1 = puVar7 + 1;
         src_buffer = puVar7 + 2;
         uVar2 = *puVar7;
         puVar7 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));
         dest_buffer = (void *)(iVar6 + (uint)uVar2);
-        if (DAT_005b7624 == 0x10) {
+        if (g_BitsPerPixel == 0x10) {
           dest_buffer = (void *)((int)dest_buffer + (uint)uVar2);
         }
         (*pCVar5)(dest_buffer,src_buffer,(uint)*puVar1);

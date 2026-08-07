@@ -87,11 +87,12 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSampl
     } while (*pcVar8 != '\0');
     pcVar8 = (char *)0x0;
 joined_r0x00521ffd:
-    while ((local_46c < pcVar8 && (((&DAT_005c168c)[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {
+    while ((local_46c < pcVar8 &&
+           ((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {
       pcVar8 = pcVar8 + -1;
     }
     *pcVar8 = '\0';
-    while (((&DAT_005c168c)[(byte)(local_46c[0] + 1)] & 2) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(local_46c[0] + 1)] & 2) != 0) {
       uVar9 = 0xffffffff;
       pcVar7 = local_46c;
       do {

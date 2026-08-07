@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_005a4b80'"
       }
     ],
     "success": false,
@@ -68,15 +62,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 66,
+    "complexity_score": 51,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 80
@@ -153,8 +146,8 @@
   "globals": [
     {
       "addr": "005a4b80",
-      "name": "DAT_005a4b80",
-      "type": "undefined4",
+      "name": "g_FontTable",
+      "type": "SFontGlyph[224]",
       "value": null
     }
   ],
@@ -325,14 +318,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005a4b80",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + (byte)(&DAT_005a4b80)[(bVar2 - 0x20) * 0x91] + 1;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 19,

@@ -14,21 +14,21 @@ void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)
   bool bVar1;
   int iVar2;
   int iVar3;
-  ulonglong *puVar4;
+  uint *puVar4;
   
   _DAT_005bf494 = DAT_005bf48c;
-  puVar4 = (ulonglong *)(_DAT_01bd4260 + _DAT_01c00c5c * g_WindowWidth * 4);
-  iVar2 = ((_DAT_01c00c64 - _DAT_01c00c5c) + 1) * g_WindowWidth;
+  puVar4 = g_ZBufferScanlineArray[0] + g_ClipTop * g_WindowWidth;
+  iVar2 = ((g_ClipBottom - g_ClipTop) + 1) * g_WindowWidth;
   do {
-    *puVar4 = _DAT_005bf494;
-    puVar4[1] = _DAT_005bf494;
-    puVar4[2] = _DAT_005bf494;
-    puVar4[3] = _DAT_005bf494;
-    puVar4[4] = _DAT_005bf494;
-    puVar4[5] = _DAT_005bf494;
-    puVar4[6] = _DAT_005bf494;
-    puVar4[7] = _DAT_005bf494;
-    puVar4 = puVar4 + 8;
+    *(ulonglong *)puVar4 = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 2) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 4) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 6) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 8) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 10) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 0xc) = _DAT_005bf494;
+    *(ulonglong *)(puVar4 + 0xe) = _DAT_005bf494;
+    puVar4 = puVar4 + 0x10;
     iVar3 = iVar2 + -0x10;
     bVar1 = 0xf < iVar2;
     iVar2 = iVar3;

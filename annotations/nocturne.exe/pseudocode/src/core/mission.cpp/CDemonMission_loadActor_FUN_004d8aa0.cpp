@@ -23,7 +23,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
   }
   do {
     iVar2 = _fgetc(file);
-  } while (((&DAT_005c168c)[(byte)((char)iVar2 + 1)] & 2) != 0);
+  } while ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 2) != 0);
   if (iVar2 == 0x22) {
     iVar2 = _fgetc(file);
     if (iVar2 != 0x22) {

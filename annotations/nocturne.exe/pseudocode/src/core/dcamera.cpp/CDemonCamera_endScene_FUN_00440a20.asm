@@ -18,8 +18,8 @@
 ;   TerminatedCString s_CDemonCamera_endScene_Sc_0057b718
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c02594
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int INT_02dc9d60
@@ -59,7 +59,7 @@ section .text
     CMP dword ptr [ESP + 0x14],0x0      ; 00440a5a
     JNZ 0x00440ac0                      ; 00440a5f
         ;   XREF to: 00440ac0 (CONDITIONAL_JUMP)  ; LAB_00440ac0
-    CMP dword ptr [0x01c02594],0x0      ; 00440a61 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00440a61 | g_UseExternalRenderer
     JNZ 0x00440b04                      ; 00440a68
         ;   XREF to: 00440b04 (CONDITIONAL_JUMP)  ; LAB_00440b04
     MOV ECX,dword ptr [EBX + 0x140]     ; 00440a6e
@@ -76,7 +76,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x144]     ; 00440a8a
     ADD EDX,ESI                         ; 00440a90
     SHL ECX,0x2                         ; 00440a92
-    MOV EDX,dword ptr [EDX*0x4 + 0x1bd4260] ; 00440a95 | DAT_01bd4260
+    MOV EDX,dword ptr [EDX*0x4 + 0x1bd4260] ; 00440a95 | g_ZBufferScanlineArray
     ADD EDX,ECX                         ; 00440a9c
     MOV ECX,dword ptr [EBX + 0x13c]     ; 00440a9e
     IMUL ECX,ESI                        ; 00440aa4

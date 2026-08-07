@@ -9,14 +9,14 @@
 ;   uchar[768] g_SourcePaletteData
 ;   undefined4 DAT_01c02580
 ;   undefined4 DAT_01c02584
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9da0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 005323c0 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 005323c0 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_FUN_005323c0
     JNZ 0x005323cc                      ; 005323c7
         ;   XREF to: 005323cc (CONDITIONAL_JUMP)  ; LAB_005323cc

@@ -74,7 +74,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x40]      ; 00472e21
     MOV dword ptr [ESP + 0x14],ESI      ; 00472e25
     MOV dword ptr [ESP + 0x18],ESI      ; 00472e29
-    MOV [0x01c00c70],EAX                ; 00472e2d | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00472e2d | g_ActiveRenderColor
     LEA EAX,[ESP + 0x14]                ; 00472e32
     MOV dword ptr [ESP + 0x1c],ESI      ; 00472e36
     PUSH EAX                            ; 00472e3a

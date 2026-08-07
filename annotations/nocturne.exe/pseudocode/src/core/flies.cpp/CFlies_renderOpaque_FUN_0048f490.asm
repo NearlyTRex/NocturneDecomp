@@ -18,7 +18,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b9214
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_01c038f4
 ;   undefined4 DAT_01c70714
 ;   undefined4 DAT_01c70754
@@ -115,7 +115,7 @@ section .text
     JL 0x0048f51b                       ; 0048f54d
         ;   XREF to: 0048f51b (CONDITIONAL_JUMP)  ; LAB_0048f51b
     MOV dword ptr [0x01c70714],0x1      ; 0048f54f | DAT_01c70714
-    MOV EAX,[0x01c02594]                ; 0048f559 | DAT_01c02594
+    MOV EAX,[0x01c02594]                ; 0048f559 | g_UseExternalRenderer
         ;   Label: LAB_0048f559
     TEST EAX,EAX                        ; 0048f55e
     JZ 0x0048f761                       ; 0048f560
@@ -293,7 +293,7 @@ section .text
     MOV dword ptr [ESP + 0x84],EBX      ; 0048f7ae
     JMP 0x0048f69c                      ; 0048f7b5
         ;   XREF to: 0048f69c (UNCONDITIONAL_JUMP)  ; LAB_0048f69c
-    MOV EDX,dword ptr [0x01c02594]      ; 0048f7ba | DAT_01c02594
+    MOV EDX,dword ptr [0x01c02594]      ; 0048f7ba | g_UseExternalRenderer
         ;   Label: LAB_0048f7ba
     MOV EDI,dword ptr [EBX + 0x14]      ; 0048f7c0
     MOV ESI,dword ptr [EBX + 0x10]      ; 0048f7c3

@@ -102,18 +102,6 @@
         "column": 5,
         "line": 40,
         "message": "no matching function for call to 'shape_edittool_cpp_FUN_004722b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 80,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
       }
     ],
     "success": false,
@@ -122,13 +110,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 332,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -285,8 +273,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -309,14 +297,14 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
@@ -564,14 +552,6 @@
       "match": "DAT_005b7630",
       "severity": "mild",
       "text": "DAT_005b7630 = uVar2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "else if (((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 8) != 0) {",
       "type": "undefined_data"
     },
     {

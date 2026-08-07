@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -29,7 +29,7 @@ section .text
     PUSH EAX                            ; 0049a969
     PUSH EDX                            ; 0049a96a
     PUSH EDX                            ; 0049a96b
-    MOV dword ptr [0x01c00c70],EDX      ; 0049a96c | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 0049a96c | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0049a972
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0049a977

@@ -13,11 +13,11 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 at 0045d176
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d720
 ;   undefined4 DAT_01b4d730
 ;   undefined4 DAT_01b4d734
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
 
@@ -30,12 +30,12 @@ section .text
     MOV EDI,dword ptr [0x01b4d730]      ; 0045bc23 | DAT_01b4d730
     MOV ESI,dword ptr [ESP + 0x14]      ; 0045bc29
     MOV EBX,dword ptr [ESP + 0x18]      ; 0045bc2d
-    MOV EDX,dword ptr [0x005b7624]      ; 0045bc31 | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0045bc31 | g_BitsPerPixel
     SHL EBX,0x2                         ; 0045bc37
     CMP EDX,0x8                         ; 0045bc3a
     JNZ 0x0045bc7a                      ; 0045bc3d
         ;   XREF to: 0045bc7a (CONDITIONAL_JUMP)  ; LAB_0045bc7a
-    MOV ECX,dword ptr [EBX + 0x1bd2fa0] ; 0045bc3f | DAT_01bd2fa0
+    MOV ECX,dword ptr [EBX + 0x1bd2fa0] ; 0045bc3f | g_ScreenBufferArray
     MOV EBX,dword ptr [ESP + 0x10]      ; 0045bc45
     MOV EDX,EBX                         ; 0045bc49
     ADD ECX,EBX                         ; 0045bc4b
@@ -65,7 +65,7 @@ section .text
     JNZ 0x0045bcfe                      ; 0045bc7d
         ;   XREF to: 0045bcfe (CONDITIONAL_JUMP)  ; LAB_0045bcfe
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045bc83
-    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045bc87 | DAT_01bd2fa0
+    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045bc87 | g_ScreenBufferArray
     ADD EAX,EAX                         ; 0045bc8d
     ADD EAX,EDX                         ; 0045bc8f
     MOV DL,byte ptr [ESP + 0x10]        ; 0045bc91
@@ -118,7 +118,7 @@ section .text
     JNZ 0x0045bc70                      ; 0045bd01
         ;   XREF to: 0045bc70 (CONDITIONAL_JUMP)  ; LAB_0045bc70
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045bd07
-    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045bd0b | DAT_01bd2fa0
+    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045bd0b | g_ScreenBufferArray
     SHL EAX,0x2                         ; 0045bd11
     MOV EBX,dword ptr [ESP + 0x10]      ; 0045bd14
     ADD EAX,EDX                         ; 0045bd18

@@ -37,10 +37,10 @@
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d714
 ;   undefined4 DAT_01b4d718
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_disableTextWrap_FUN_00402e50
@@ -81,27 +81,27 @@ section .text
     MOV EDX,dword ptr [EAX + 0xc]       ; 0045d786
     ADD EBX,EDX                         ; 0045d789
     ADD EBP,EDX                         ; 0045d78b
-    MOV EDX,dword ptr [0x01c00c58]      ; 0045d78d | DAT_01c00c58
+    MOV EDX,dword ptr [0x01c00c58]      ; 0045d78d | g_ClipLeft
     MOV dword ptr [ESP + 0x4],EDX       ; 0045d793
-    MOV EDX,dword ptr [0x01c00c60]      ; 0045d797 | DAT_01c00c60
+    MOV EDX,dword ptr [0x01c00c60]      ; 0045d797 | g_ClipRight
     MOV dword ptr [ESP + 0x14],EDX      ; 0045d79d
-    MOV EDX,dword ptr [0x01c00c5c]      ; 0045d7a1 | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 0045d7a1 | g_ClipTop
     MOV dword ptr [ESP + 0x8],EDX       ; 0045d7a7
-    MOV EDX,dword ptr [0x01c00c64]      ; 0045d7ab | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 0045d7ab | g_ClipBottom
     MOV dword ptr [ESP + 0x10],EDX      ; 0045d7b1
     MOV EDX,dword ptr [EAX + 0x10]      ; 0045d7b5
-    MOV dword ptr [0x01c00c58],EDX      ; 0045d7b8 | DAT_01c00c58
+    MOV dword ptr [0x01c00c58],EDX      ; 0045d7b8 | g_ClipLeft
     MOV EDX,dword ptr [EAX + 0x18]      ; 0045d7be
-    MOV dword ptr [0x01c00c60],EDX      ; 0045d7c1 | DAT_01c00c60
+    MOV dword ptr [0x01c00c60],EDX      ; 0045d7c1 | g_ClipRight
     MOV EDX,dword ptr [EAX + 0x14]      ; 0045d7c7
     MOV EAX,dword ptr [EAX + 0x1c]      ; 0045d7ca
-    MOV [0x01c00c64],EAX                ; 0045d7cd | DAT_01c00c64
+    MOV [0x01c00c64],EAX                ; 0045d7cd | g_ClipBottom
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0045d7d2
     SHL EAX,0x2                         ; 0045d7d6
     MOV dword ptr [ESP + 0x40],ECX      ; 0045d7d9
     MOV dword ptr [ESP + 0x1c],EAX      ; 0045d7dd
     MOV EAX,[0x01b4d718]                ; 0045d7e1 | DAT_01b4d718
-    MOV dword ptr [0x01c00c5c],EDX      ; 0045d7e6 | DAT_01c00c5c
+    MOV dword ptr [0x01c00c5c],EDX      ; 0045d7e6 | g_ClipTop
     TEST EAX,EAX                        ; 0045d7ec
     JZ 0x0045d9eb                       ; 0045d7ee
         ;   XREF to: 0045d9eb (CONDITIONAL_JUMP)  ; LAB_0045d9eb
@@ -140,13 +140,13 @@ section .text
     ADD ESP,0x4                         ; 0045d83c
         ;   Label: LAB_0045d83c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0045d83f
-    MOV [0x01c00c58],EAX                ; 0045d843 | DAT_01c00c58
+    MOV [0x01c00c58],EAX                ; 0045d843 | g_ClipLeft
     MOV EAX,dword ptr [ESP + 0x14]      ; 0045d848
-    MOV [0x01c00c60],EAX                ; 0045d84c | DAT_01c00c60
+    MOV [0x01c00c60],EAX                ; 0045d84c | g_ClipRight
     MOV EAX,dword ptr [ESP + 0x8]       ; 0045d851
-    MOV [0x01c00c5c],EAX                ; 0045d855 | DAT_01c00c5c
+    MOV [0x01c00c5c],EAX                ; 0045d855 | g_ClipTop
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045d85a
-    MOV [0x01c00c64],EAX                ; 0045d85e | DAT_01c00c64
+    MOV [0x01c00c64],EAX                ; 0045d85e | g_ClipBottom
     ADD ESP,0x20                        ; 0045d863
     POP EBP                             ; 0045d866
     POP EDI                             ; 0045d867

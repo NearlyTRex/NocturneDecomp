@@ -12,7 +12,7 @@
 ;   core_script.cpp_parseArgument_FUN_004fe090 at 004fe09f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
         ;   Label: LAB_004fe074
     INC DL                              ; 004fe076
     AND EDX,0xff                        ; 004fe078
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 004fe07e | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 004fe07e | g_CharacterClassificationTable
     JZ 0x004fe04e                       ; 004fe085
         ;   XREF to: 004fe04e (CONDITIONAL_JUMP)  ; LAB_004fe04e
     INC EAX                             ; 004fe087

@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 7,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01bcd9c0'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 24,
+        "column": 17,
+        "line": 22,
         "message": "use of undeclared identifier '_DAT_01bd1d8c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 64,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
+        "column": 41,
+        "line": 22,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 48,
-        "line": 24,
+        "column": 11,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_01bd1d8c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 12,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
+        "column": 45,
+        "line": 23,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
+        "column": 27,
         "line": 25,
-        "message": "use of undeclared identifier '_DAT_01bd1d90'; did you mean 'DAT_005c1d90'?"
+        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 65,
+        "column": 45,
         "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
+        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01bd1d90'; did you mean 'DAT_005c1d90'?"
+        "column": 25,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 45,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 738,
-    "complexity_score": 243,
+    "complexity_score": 244,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 164,
     "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 901
+    "total_lines": 902
   },
   "cross_references": [
     {
@@ -235,32 +235,32 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {
@@ -400,7 +400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_005b6d54",
       "severity": "mild",
       "text": "for (iVar3 = 1; iVar3 <= DAT_005b6d54 / 2; iVar3 = iVar3 + 1) {",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_005b6d58",
       "severity": "mild",
       "text": "while (iVar3 <= DAT_005b6d58 / 2) {",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005b6d58",
       "severity": "mild",
       "text": "iVar4 = _DAT_01bd1d90 - DAT_005b6d58 / 2;",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_005b6d58",
       "severity": "mild",
       "text": "iVar1 = DAT_005b6d58 + iVar4 + -1;",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_005b6d54",
       "severity": "mild",
       "text": "while (iVar3 <= DAT_005b6d54 / 2) {",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 122,
       "match": "DAT_005b6d54",
       "severity": "mild",
       "text": "while (iVar3 <= DAT_005b6d54 / 2) {",

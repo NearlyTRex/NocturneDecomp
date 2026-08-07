@@ -128,7 +128,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(CWater *this_ptr,int rend
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (g_CDemonSet_PTR_005be368,&local_6c,&local_30,3);
         if (this_ptr->wave_animation_enabled == 0) {
-          if (_DAT_01c02594 == 0) {
+          if (g_UseExternalRenderer == 0) {
             if (render_mode == 0) {
               engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0
                         (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&DAT_005c1374);

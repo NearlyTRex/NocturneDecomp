@@ -54,60 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
       }
     ],
     "success": false,
@@ -116,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 117,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 6,
+    "pseudocode_lines": 41,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memset",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memset"
     ],
-    "total_lines": 105
+    "total_lines": 104
   },
   "cross_references": [],
   "function": {
@@ -154,38 +100,38 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     }
   ],
@@ -244,36 +190,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(byte *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar4 = (byte *)(*(int *)(&DAT_01bd2fa0 + uVar3 * 4) + _DAT_01c00c58);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ScreenBufferArray[uVar3]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)g_ScreenBufferArray[uVar3]",
+      "severity": "moderate",
+      "text": "puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom inline memset (REP STOSD at 0052efa1, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",

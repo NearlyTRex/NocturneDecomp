@@ -38,12 +38,12 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MM
   uint5 uVar25;
   
   uVar24 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8
-                                                                                >> 0x18) << 0x30) >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
+                                                                                0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)((uint)_DAT_01c039a8 >> 0x10)) <<
-                                         0x20) >> 0x18),(char)((uint)_DAT_01c039a8 >> 8)),
-                          (ushort)(byte)_DAT_01c039a8),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar1 = *texture_buffer;
     uVar2 = *(uint *)

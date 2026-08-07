@@ -25,14 +25,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_00581954
 ;   TerminatedCString s_CBitFont_remapPalette_In_00581967
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   uchar[32768] g_ColorCubeLookup
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c00634
-;   undefined4 DAT_01c0063c
-;   undefined4 DAT_01c00640
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -64,7 +64,7 @@ section .text
     XOR EBP,EBP                         ; 004931db
     MOV dword ptr [ESP + 0x28],EAX      ; 004931dd
     MOV dword ptr [ESP + 0x20],EAX      ; 004931e1
-    MOV ECX,dword ptr [0x005b7624]      ; 004931e5 | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 004931e5 | g_BitsPerPixel
         ;   Label: LAB_004931e5
     LEA EDX,[EBP*0x4 + 0x0]             ; 004931eb
     MOVZX ESI,byte ptr [EDI + 0x166]    ; 004931f2
@@ -123,7 +123,7 @@ section .text
     POP ESI                             ; 0049329b
     POP EBX                             ; 0049329c
     RET                                 ; 0049329d
-    MOV ECX,dword ptr [0x01c00628]      ; 0049329e | DAT_01c00628
+    MOV ECX,dword ptr [0x01c00628]      ; 0049329e | g_RedScaleFactor
         ;   Label: LAB_0049329e
     XOR EDX,EDX                         ; 004932a4
     MOV dword ptr [ESP],EAX             ; 004932a6
@@ -132,20 +132,20 @@ section .text
     MOV dword ptr [ESP],EAX             ; 004932af
     XOR EDX,EDX                         ; 004932b2
     MOV EAX,EBX                         ; 004932b4
-    DIV dword ptr [0x01c00634]          ; 004932b6 | DAT_01c00634
+    DIV dword ptr [0x01c00634]          ; 004932b6 | g_GreenScaleFactor
     MOV dword ptr [ESP + 0xc],ESI       ; 004932bc
     MOV dword ptr [ESP + 0x4],EAX       ; 004932c0
     XOR EDX,EDX                         ; 004932c4
     MOV EAX,ESI                         ; 004932c6
-    DIV dword ptr [0x01c00640]          ; 004932c8 | DAT_01c00640
-    MOV CL,byte ptr [0x01c00624]        ; 004932ce | DAT_01c00624
+    DIV dword ptr [0x01c00640]          ; 004932c8 | g_BlueScaleFactor
+    MOV CL,byte ptr [0x01c00624]        ; 004932ce | g_RedBitPosition
     MOV EBX,dword ptr [ESP]             ; 004932d4
     SHL EBX,CL                          ; 004932d7
-    MOV CL,byte ptr [0x01c00630]        ; 004932d9 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004932d9 | g_GreenBitPosition
     MOV dword ptr [ESP + 0xc],EAX       ; 004932df
     MOV EAX,dword ptr [ESP + 0x4]       ; 004932e3
     SHL EAX,CL                          ; 004932e7
-    MOV CL,byte ptr [0x01c0063c]        ; 004932e9 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004932e9 | g_BlueBitPosition
     OR EBX,EAX                          ; 004932ef
     MOV EAX,dword ptr [ESP + 0xc]       ; 004932f1
     SHL EAX,CL                          ; 004932f5
@@ -167,14 +167,14 @@ section .text
     MOV dword ptr [EAX + 0xd64],ECX     ; 0049331b
     JMP 0x0049324c                      ; 00493321
         ;   XREF to: 0049324c (UNCONDITIONAL_JUMP)  ; LAB_0049324c
-    MOV CL,byte ptr [0x01c00624]        ; 00493326 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00493326 | g_RedBitPosition
         ;   Label: LAB_00493326
     SHL EAX,CL                          ; 0049332c
-    MOV CL,byte ptr [0x01c00630]        ; 0049332e | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 0049332e | g_GreenBitPosition
     MOV dword ptr [ESP + 0x10],EAX      ; 00493334
     MOV EAX,EBX                         ; 00493338
     SHL EAX,CL                          ; 0049333a
-    MOV CL,byte ptr [0x01c0063c]        ; 0049333c | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 0049333c | g_BlueBitPosition
     MOV EDX,dword ptr [ESP + 0x10]      ; 00493342
     SHL ESI,CL                          ; 00493346
     OR EAX,EDX                          ; 00493348

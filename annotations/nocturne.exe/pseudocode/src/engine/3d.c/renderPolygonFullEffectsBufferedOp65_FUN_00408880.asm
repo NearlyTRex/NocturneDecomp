@@ -13,7 +13,7 @@
 ;   engine_3d.c_FUN_00408fc0 at 00409167
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_005b763c
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   engine_clipper.c_FUN_00432cd0
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;   engine_texture.cpp_getCurrentTexture_FUN_00545ad0
 ;
 ; *****************************************************************************
@@ -55,20 +55,20 @@ section .text
     TEST EAX,EAX                        ; 0040889a
     JZ 0x00408a2f                       ; 0040889c
         ;   XREF to: 00408a2f (CONDITIONAL_JUMP)  ; LAB_00408a2f
-    CMP dword ptr [0x01c03948],0x0      ; 004088a2 | DAT_01c03948
+    CMP dword ptr [0x01c03948],0x0      ; 004088a2 | g_MMXSupported
     JNZ 0x00408932                      ; 004088a9
         ;   XREF to: 00408932 (CONDITIONAL_JUMP)  ; LAB_00408932
-    CMP dword ptr [0x005b7624],0x20     ; 004088af | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 004088af | g_BitsPerPixel
     JNZ 0x00408926                      ; 004088b6
         ;   XREF to: 00408926 (CONDITIONAL_JUMP)  ; LAB_00408926
-    MOV dword ptr [0x01c00c7c],0x5300ec ; 004088b8 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x5300ec ; 004088b8 | g_ScanlineRenderFunc
     MOV EBX,0x1e7                       ; 004088c2
         ;   Label: LAB_004088c2
     MOV EDI,0x1                         ; 004088c7
     MOV ECX,0x6b029c                    ; 004088cc | DAT_006b029c
     MOV EAX,ESI                         ; 004088d1
-    MOV dword ptr [0x01c039a0],EBX      ; 004088d3 | DAT_01c039a0
-    MOV dword ptr [0x01c039a4],EDI      ; 004088d9 | DAT_01c039a4
+    MOV dword ptr [0x01c039a0],EBX      ; 004088d3 | g_RenderStateFlags
+    MOV dword ptr [0x01c039a4],EDI      ; 004088d9 | g_VertexPreprocessMode
     XOR EBX,EBX                         ; 004088df
     MOV EDX,dword ptr [EBP + 0x4]       ; 004088e1
         ;   Label: LAB_004088e1
@@ -97,18 +97,18 @@ section .text
     MOV dword ptr [ESI + 0x5c5030],EDX  ; 0040891e | DAT_005c5030
     JMP 0x004088e1                      ; 00408924
         ;   XREF to: 004088e1 (UNCONDITIONAL_JUMP)  ; LAB_004088e1
-    MOV dword ptr [0x01c00c7c],0x530322 ; 00408926 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x530322 ; 00408926 | g_ScanlineRenderFunc
         ;   Label: LAB_00408926
     JMP 0x004088c2                      ; 00408930
         ;   XREF to: 004088c2 (UNCONDITIONAL_JUMP)  ; LAB_004088c2
-    CMP dword ptr [0x005b7624],0x20     ; 00408932 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00408932 | g_BitsPerPixel
         ;   Label: LAB_00408932
     JNZ 0x0040894a                      ; 00408939
         ;   XREF to: 0040894a (CONDITIONAL_JUMP)  ; LAB_0040894a
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 0040893b | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 0040893b | g_ScanlineRenderFunc
     JMP 0x004088c2                      ; 00408945
         ;   XREF to: 004088c2 (UNCONDITIONAL_JUMP)  ; LAB_004088c2
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 0040894a | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 0040894a | g_ScanlineRenderFunc
         ;   Label: LAB_0040894a
     JMP 0x004088c2                      ; 00408954
         ;   XREF to: 004088c2 (UNCONDITIONAL_JUMP)  ; LAB_004088c2
@@ -196,8 +196,8 @@ section .text
         ;   Label: LAB_00408a4b
     MOV EBX,dword ptr [EBP + 0x4]       ; 00408a50
     PUSH EBX                            ; 00408a53
-    CALL engine_clipper.c_FUN_00432cd0  ; 00408a54
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
+    CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00408a54
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00408a59
     JMP 0x00408a2f                      ; 00408a5c
         ;   XREF to: 00408a2f (UNCONDITIONAL_JUMP)  ; LAB_00408a2f

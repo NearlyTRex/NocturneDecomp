@@ -86,7 +86,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
       } while (cVar1 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
-                (_DAT_01bcd070,local_360,_DAT_01c00c58,_DAT_01c00c5c,_DAT_01bcddf0,-1);
+                (_DAT_01bcd070,local_360,g_ClipLeft,g_ClipTop,_DAT_01bcddf0,-1);
     }
     iVar3 = _DAT_01bcddf0;
     if (local_14 != 0) {
@@ -94,14 +94,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
     }
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     color_value = -1;
-    y = _DAT_01c00c5c + _DAT_01bcd9bc;
-    iVar4 = _DAT_01c00c58;
+    y = g_ClipTop + _DAT_01bcd9bc;
+    iVar4 = g_ClipLeft;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Filename: ");
     engine_font_cpp_CBitFont_drawText_FUN_00490980(_DAT_01bcd070,pcVar8,iVar4,y,iVar3,color_value);
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Filename: ");
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,pcVar8);
     shape_edittool_cpp_CInputString_draw_FUN_0046f680
-              (&local_158,iVar3 + _DAT_01c00c58,_DAT_01c00c5c + _DAT_01bcd9bc);
+              (&local_158,iVar3 + g_ClipLeft,g_ClipTop + _DAT_01bcd9bc);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     if (local_14 != 0) break;
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
@@ -189,8 +189,9 @@ LAB_004711e7:
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0046f2a0(&local_158);
       }
-      else if ((((((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&
-               (iVar3 != 0x3a)) && (((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 2) == 0)) {
+      else if (((((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) &&
+                (iVar3 != 0x5c)) && (iVar3 != 0x3a)) &&
+              ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 2) == 0)) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0046f250(&local_158);
         shape_edittool_cpp_CInputString_insertChar_FUN_0046f150(&local_158,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(&local_158);

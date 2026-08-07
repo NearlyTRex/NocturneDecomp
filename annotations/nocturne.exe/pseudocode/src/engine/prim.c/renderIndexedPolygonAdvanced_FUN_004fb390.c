@@ -66,8 +66,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
     }
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {
-    switch(_DAT_01c039a4) {
+  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+    switch(g_VertexPreprocessMode) {
     case 1:
       iVar5 = 0;
       piVar6 = vertex_indices;
@@ -200,7 +200,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
           *(uint *)(iVar11 + 0x1e52f30) =
                puVar7[0xb] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          if (_DAT_01c039a4 == 1) {
+          if (g_VertexPreprocessMode == 1) {
             if (_DAT_01c0399c == 0) {
               local_20 = puVar7[3];
               iVar8 = puVar12[3];
@@ -343,7 +343,7 @@ LAB_004fb790:
         iVar5 = iVar11;
       } while (iVar11 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00532650(local_68,vertex_count,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon2_FUN_00532650(local_68,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

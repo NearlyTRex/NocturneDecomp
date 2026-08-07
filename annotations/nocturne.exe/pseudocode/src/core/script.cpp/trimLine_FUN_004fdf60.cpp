@@ -14,7 +14,8 @@ void __cdecl core_script_cpp_trimLine_FUN_004fdf60(char *input_line,char *output
   char *pcVar3;
   
   *output_buffer = '\0';
-  while (pcVar3 = output_buffer, ((&DAT_005c168c)[(byte)(*input_line + 1)] & 2) != 0) {
+  while (pcVar3 = output_buffer, (g_CharacterClassificationTable[(byte)(*input_line + 1)] & 2) != 0)
+  {
     input_line = input_line + 1;
   }
   do {
@@ -41,7 +42,8 @@ void __cdecl core_script_cpp_trimLine_FUN_004fdf60(char *input_line,char *output
   } while (*pcVar2 != '\0');
   pcVar2 = (char *)0x0;
 joined_r0x004fdfd4:
-  while ((output_buffer < pcVar2 && (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+  while ((output_buffer < pcVar2 &&
+         ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
     pcVar2[-1] = '\0';
     pcVar2 = pcVar2 + -1;
   }

@@ -96,7 +96,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_00473190(CE
       *(float *)(&stack0xfffffef8 + iVar2) = fStack_18;
       if (7 < (int)uVar1) {
         uStack_20 = 0;
-        _DAT_01c00c70 = color_value;
+        g_ActiveRenderColor = color_value;
         do {
           iVar2 = (uStack_20 ^ 1) * 0xc;
           auStack_8c._0_4_ = (int)ROUND(*pfVar3 * _DAT_0059ca4c);

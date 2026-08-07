@@ -26,8 +26,8 @@
 ;   TerminatedCString s_CDemonRenderer_clipAndFi_0057db88
 ;   undefined4 DAT_00766c70
 ;   undefined4 DAT_00766c74
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a1
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   undefined4 g_RenderStateFlags+1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -35,8 +35,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
-;   engine_clipper.c_FUN_00432cd0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
 ;
@@ -62,10 +62,10 @@ section .text
     CMP dword ptr [EDI + 0x4],0x0       ; 0045ed9c
     JZ 0x0045edab                       ; 0045eda0
         ;   XREF to: 0045edab (CONDITIONAL_JUMP)  ; LAB_0045edab
-    TEST byte ptr [0x01c039a0],0x1      ; 0045eda2 | DAT_01c039a0
+    TEST byte ptr [0x01c039a0],0x1      ; 0045eda2 | g_RenderStateFlags
     JZ 0x0045edb4                       ; 0045eda9
         ;   XREF to: 0045edb4 (CONDITIONAL_JUMP)  ; LAB_0045edb4
-    TEST byte ptr [0x01c039a0],0x5      ; 0045edab | DAT_01c039a0
+    TEST byte ptr [0x01c039a0],0x5      ; 0045edab | g_RenderStateFlags
         ;   Label: LAB_0045edab
     JNZ 0x0045ede8                      ; 0045edb2
         ;   XREF to: 0045ede8 (CONDITIONAL_JUMP)  ; LAB_0045ede8
@@ -104,14 +104,14 @@ section .text
         ;   Label: LAB_0045edf1
     JZ 0x0045ee00                       ; 0045edf5
         ;   XREF to: 0045ee00 (CONDITIONAL_JUMP)  ; LAB_0045ee00
-    TEST byte ptr [0x01c039a0],0x1      ; 0045edf7 | DAT_01c039a0
+    TEST byte ptr [0x01c039a0],0x1      ; 0045edf7 | g_RenderStateFlags
     JZ 0x0045ee21                       ; 0045edfe
         ;   XREF to: 0045ee21 (CONDITIONAL_JUMP)  ; LAB_0045ee21
-    TEST byte ptr [0x01c039a0],0x5      ; 0045ee00 | DAT_01c039a0
+    TEST byte ptr [0x01c039a0],0x5      ; 0045ee00 | g_RenderStateFlags
         ;   Label: LAB_0045ee00
     JZ 0x0045ee21                       ; 0045ee07
         ;   XREF to: 0045ee21 (CONDITIONAL_JUMP)  ; LAB_0045ee21
-    TEST byte ptr [0x01c039a1],0x2      ; 0045ee09 | DAT_01c039a1
+    TEST byte ptr [0x01c039a1],0x2      ; 0045ee09 | g_RenderStateFlags+1
     JZ 0x0045ee49                       ; 0045ee10
         ;   XREF to: 0045ee49 (CONDITIONAL_JUMP)  ; LAB_0045ee49
     PUSH ESI                            ; 0045ee12
@@ -147,8 +147,8 @@ section .text
     PUSH ESI                            ; 0045ee49
         ;   Label: LAB_0045ee49
     PUSH EBX                            ; 0045ee4a
-    CALL engine_clipper.c_FUN_00432cd0  ; 0045ee4b
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
+    CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 0045ee4b
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0045ee50
     POP EBP                             ; 0045ee53
     POP EDI                             ; 0045ee54

@@ -28,13 +28,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710(
   float local_18;
   int local_14;
   
-  if (_DAT_01c02594 != 0) {
+  if (g_UseExternalRenderer != 0) {
     engine_special_cpp_restoreZBuffer_FUN_00532c90(0,0,0,g_WindowWidth + -1,g_WindowHeight + -1);
     return;
   }
   if (0x100 < this_ptr->rect_array_count) {
-    local_3c.x_min = _DAT_01c02594;
-    local_3c.y_min = _DAT_01c02594;
+    local_3c.x_min = g_UseExternalRenderer;
+    local_3c.y_min = g_UseExternalRenderer;
     local_3c.x_max = this_ptr->screen_width + -1;
     local_3c.y_max = (int)this_ptr->max_distance + -1;
     core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00440610(this_ptr,&local_3c);
@@ -135,7 +135,7 @@ LAB_0044089a:
           iVar7 = iVar7 + 4;
           iVar8 = iVar8 + 1;
           core_dstrender_cpp_memcpyMMX_FUN_00465341
-                    ((void *)(*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4),
+                    ((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),
                      (void *)((int)this_ptr->zbuffer_aligned +
                              ((((int)local_18 - this_ptr->framebuffer_height) *
                                this_ptr->screen_width + *piVar2) - this_ptr->framebuffer_width) * 4)

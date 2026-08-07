@@ -17,10 +17,10 @@
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
 ;   undefined4 DAT_01bd1d94
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920
@@ -113,7 +113,7 @@ section .text
     JLE 0x0047531c                      ; 00475314
         ;   XREF to: 0047531c (CONDITIONAL_JUMP)  ; LAB_0047531c
     MOV dword ptr [EBX + 0x118],EDX     ; 00475316
-    MOV ECX,dword ptr [0x01c00c58]      ; 0047531c | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 0047531c | g_ClipLeft
         ;   Label: LAB_0047531c
     MOV EAX,[0x01bd1d8c]                ; 00475322 | DAT_01bd1d8c
     MOV EDX,dword ptr [0x01bd1d90]      ; 00475327 | DAT_01bd1d90
@@ -121,19 +121,19 @@ section .text
     JGE 0x00475333                      ; 0047532f
         ;   XREF to: 00475333 (CONDITIONAL_JUMP)  ; LAB_00475333
     MOV EAX,ECX                         ; 00475331
-    MOV ESI,dword ptr [0x01c00c60]      ; 00475333 | DAT_01c00c60
+    MOV ESI,dword ptr [0x01c00c60]      ; 00475333 | g_ClipRight
         ;   Label: LAB_00475333
     CMP EAX,ESI                         ; 00475339
     JLE 0x0047533f                      ; 0047533b
         ;   XREF to: 0047533f (CONDITIONAL_JUMP)  ; LAB_0047533f
     MOV EAX,ESI                         ; 0047533d
-    MOV EDI,dword ptr [0x01c00c5c]      ; 0047533f | DAT_01c00c5c
+    MOV EDI,dword ptr [0x01c00c5c]      ; 0047533f | g_ClipTop
         ;   Label: LAB_0047533f
     CMP EDX,EDI                         ; 00475345
     JGE 0x0047534b                      ; 00475347
         ;   XREF to: 0047534b (CONDITIONAL_JUMP)  ; LAB_0047534b
     MOV EDX,EDI                         ; 00475349
-    MOV ECX,dword ptr [0x01c00c64]      ; 0047534b | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0047534b | g_ClipBottom
         ;   Label: LAB_0047534b
     CMP EDX,ECX                         ; 00475351
     JLE 0x00475357                      ; 00475353

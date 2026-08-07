@@ -13,7 +13,7 @@
 ;   TerminatedCString s_core_game_cpp_0058276a
 ;   TerminatedCString s_CGame_setGameRes_Unable_0058277b
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   CBitFont* g_CBitFont_PTR_014b9904
 ;   undefined4 DAT_01bcd070
 ;   char* g_CurrentFilename
@@ -112,7 +112,7 @@ section .text
     ADD ESP,0x4                         ; 0049d92e
     JMP 0x0049d886                      ; 0049d931
         ;   XREF to: 0049d886 (UNCONDITIONAL_JUMP)  ; LAB_0049d886
-    MOV EDI,dword ptr [0x005b7624]      ; 0049d936 | DAT_005b7624
+    MOV EDI,dword ptr [0x005b7624]      ; 0049d936 | g_BitsPerPixel
         ;   Label: LAB_0049d936
     CMP EDI,dword ptr [EBX + 0x8]       ; 0049d93c
     JNZ 0x0049d894                      ; 0049d93f

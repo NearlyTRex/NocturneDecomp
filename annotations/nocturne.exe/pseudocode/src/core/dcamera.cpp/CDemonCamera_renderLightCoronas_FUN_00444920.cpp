@@ -90,8 +90,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00444920(CDemo
         local_24 = (CVector3i *)(local_3c + local_20 * 0xc);
         local_1c = (char *)(iStack_48 + local_20);
         local_2c = (uint *)(iStack_44 + local_20 * 4);
-        local_28 = (uint *)(*(int *)(&DAT_01bd4260 + (local_38 << (DAT_012b0660 & 0x1f)) * 4) +
-                           (local_20 << (DAT_012b0660 & 0x1f)) * 4);
+        local_28 = g_ZBufferScanlineArray[local_38 << (DAT_012b0660 & 0x1f)] +
+                   (local_20 << (DAT_012b0660 & 0x1f));
         pCVar6 = local_40 + local_20;
         iVar5 = local_20 - local_30;
         bVar10 = SBORROW4(local_20,local_30);

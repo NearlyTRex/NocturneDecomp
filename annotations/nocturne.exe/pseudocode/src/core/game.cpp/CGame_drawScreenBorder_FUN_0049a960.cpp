@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(CGame *this_ptr)
 
 {
-  _DAT_01c00c70 = 0;
+  g_ActiveRenderColor = 0;
   engine_2d_c_drawLine_FUN_004015a0(0,0,g_WindowWidth + -1,0);
   engine_2d_c_drawLine_FUN_004015a0(1,1,g_WindowWidth + -2,1);
   engine_2d_c_drawLine_FUN_004015a0(0,g_WindowHeight + -1,g_WindowWidth + -1,g_WindowHeight + -1);

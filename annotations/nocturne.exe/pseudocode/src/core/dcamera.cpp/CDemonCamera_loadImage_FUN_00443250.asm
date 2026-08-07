@@ -480,7 +480,7 @@ section .text
     XOR EDX,EDX                         ; 004436f8
         ;   Label: LAB_004436f8
     XOR EAX,EAX                         ; 004436fa
-    MOV ECX,dword ptr [0x005b7624]      ; 004436fc | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 004436fc | g_BitsPerPixel
         ;   Label: LAB_004436fc
     MOVZX ESI,byte ptr [EAX + 0xb0dafa] ; 00443702
     XOR EBX,EBX                         ; 00443709
@@ -489,11 +489,11 @@ section .text
     CMP ECX,0x20                        ; 00443718
     JNZ 0x00443afd                      ; 0044371b
         ;   XREF to: 00443afd (CONDITIONAL_JUMP)  ; LAB_00443afd
-    MOV CL,byte ptr [0x01c00624]        ; 00443721 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00443721 | g_RedBitPosition
     SHL EDI,CL                          ; 00443727
-    MOV CL,byte ptr [0x01c00630]        ; 00443729 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 00443729 | g_GreenBitPosition
     SHL EBX,CL                          ; 0044372f
-    MOV CL,byte ptr [0x01c0063c]        ; 00443731 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 00443731 | g_BlueBitPosition
     SHL ESI,CL                          ; 00443737
     OR EBX,EDI                          ; 00443739
     MOV ECX,ESI                         ; 0044373b

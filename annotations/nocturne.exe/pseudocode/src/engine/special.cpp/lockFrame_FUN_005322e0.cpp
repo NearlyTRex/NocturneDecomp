@@ -13,10 +13,10 @@ int __cdecl engine_special_cpp_lockFrame_FUN_005322e0(void)
 {
   int iVar1;
   
-  if ((_DAT_01c02594 != 0) && (iVar1 = (*_DAT_02dc9d94)(), iVar1 != 0)) {
-    _DAT_02dc9e20 = DAT_005b7624;
+  if ((g_UseExternalRenderer != 0) && (iVar1 = (*_DAT_02dc9d94)(), iVar1 != 0)) {
+    _DAT_02dc9e20 = g_BitsPerPixel;
     _DAT_02dc9e24 = 1;
-    DAT_005b7624 = _DAT_02dc9e1c;
+    g_BitsPerPixel = _DAT_02dc9e1c;
     return 1;
   }
   return 0;

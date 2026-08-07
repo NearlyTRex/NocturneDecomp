@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_00566cc0
@@ -30,7 +30,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004f2558
     MOV EDX,dword ptr [0x005b761c]      ; 004f255c | g_WindowWidth
     XOR EDI,EDI                         ; 004f2562
-    MOV ESI,dword ptr [ESI*0x4 + 0x1bd2fa0] ; 004f2564 | DAT_01bd2fa0
+    MOV ESI,dword ptr [ESI*0x4 + 0x1bd2fa0] ; 004f2564 | g_ScreenBufferArray
     TEST EDX,EDX                        ; 004f256b
     JLE 0x004f25ae                      ; 004f256d
         ;   XREF to: 004f25ae (CONDITIONAL_JUMP)  ; LAB_004f25ae

@@ -38,7 +38,7 @@
 ;   void* PTR_SetBkColor_005753c0 = 001757ac
 ;   void* PTR_SetBkMode_005753c4 = 001757ba
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;
 ; Called Functions:
 ;   CreateBrushIndirect
@@ -86,7 +86,7 @@ section .text
     MOVZX EBP,DL                        ; 00558510
     MOV ECX,dword ptr [EBX + 0x128]     ; 00558513
     OR EAX,EBP                          ; 00558519
-    CMP ECX,dword ptr [0x005b7624]      ; 0055851b | DAT_005b7624
+    CMP ECX,dword ptr [0x005b7624]      ; 0055851b | g_BitsPerPixel
     SETNZ DL                            ; 00558521
     MOVZX EBP,DL                        ; 00558524
     OR EAX,EBP                          ; 00558527
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 0055858b
     MOV dword ptr [ESP + 0x8],ESI       ; 0055858f
     NEG ECX                             ; 00558593
-    MOV AX,[0x005b7624]                 ; 00558595 | DAT_005b7624
+    MOV AX,[0x005b7624]                 ; 00558595 | g_BitsPerPixel
     XOR EBP,EBP                         ; 0055859b
     MOV dword ptr [ESP + 0x8],ECX       ; 0055859d
     PUSH EBP                            ; 005585a1
@@ -202,7 +202,7 @@ section .text
     MOV dword ptr [EBX + 0x10],EAX      ; 00558666
     MOV dword ptr [EBX + 0x120],EDI     ; 00558669
     MOV dword ptr [EBX + 0x124],ESI     ; 0055866f
-    MOV EAX,[0x005b7624]                ; 00558675 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 00558675 | g_BitsPerPixel
     MOV EDX,dword ptr [EBX + 0x4]       ; 0055867a
     MOV dword ptr [EBX + 0x128],EAX     ; 0055867d
     TEST EDX,EDX                        ; 00558683

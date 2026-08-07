@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   uchar[768] g_SourcePaletteData
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dcc
 ;   undefined4 DAT_02dc9e0c
 ;   undefined4 DAT_02dc9e10
@@ -33,7 +33,7 @@ section .text
     MOV dword ptr [0x02dc9e10],EDX      ; 00532aa3 | DAT_02dc9e10
     MOV AL,byte ptr [EAX + 0x1c0064a]   ; 00532aa9
     AND EAX,0xff                        ; 00532aaf
-    MOV EDX,dword ptr [0x01c02594]      ; 00532ab4 | DAT_01c02594
+    MOV EDX,dword ptr [0x01c02594]      ; 00532ab4 | g_UseExternalRenderer
     MOV [0x02dc9e14],EAX                ; 00532aba | DAT_02dc9e14
     TEST EDX,EDX                        ; 00532abf
     JNZ 0x00532ac6                      ; 00532ac1

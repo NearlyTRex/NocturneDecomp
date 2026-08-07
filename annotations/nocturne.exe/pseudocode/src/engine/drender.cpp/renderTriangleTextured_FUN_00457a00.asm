@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00457a97 (CONDITIONAL_JUMP)  ; LAB_00457a97
     MOV ECX,dword ptr [0x01e52ef8]      ; 00457a1a | DAT_01e52ef8
         ;   Label: LAB_00457a1a
-    MOV EBX,dword ptr [0x01c02594]      ; 00457a20 | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 00457a20 | g_UseExternalRenderer
     INC ECX                             ; 00457a26
     MOV EBP,dword ptr [0x01b4cd30]      ; 00457a27 | DAT_01b4cd30
     MOV dword ptr [0x01e52ef8],ECX      ; 00457a2d | DAT_01e52ef8
@@ -87,7 +87,7 @@ section .text
     JL 0x00457a56                       ; 00457a6d
         ;   XREF to: 00457a56 (CONDITIONAL_JUMP)  ; LAB_00457a56
     NOP                                 ; 00457a6f
-    MOV ECX,dword ptr [0x01c039a0]      ; 00457a70 | DAT_01c039a0
+    MOV ECX,dword ptr [0x01c039a0]      ; 00457a70 | g_RenderStateFlags
         ;   Label: LAB_00457a70
     PUSH ECX                            ; 00457a76
     MOV EBX,dword ptr [ESP + 0x78]      ; 00457a77
@@ -349,7 +349,7 @@ section .text
     MOV dword ptr [EDX + 0x28],ESI      ; 00457d52
     ADD EDI,EAX                         ; 00457d55
     MOV dword ptr [EDX + 0x30],EDI      ; 00457d57
-    MOV DL,byte ptr [0x01c039a1]        ; 00457d5a | DAT_01c039a1
+    MOV DL,byte ptr [0x01c039a1]        ; 00457d5a | g_RenderStateFlags+1
     MOV EBP,dword ptr [0x01b4cd30]      ; 00457d60 | DAT_01b4cd30
     TEST DL,0x2                         ; 00457d66
     JNZ 0x0045802d                      ; 00457d69
@@ -508,7 +508,7 @@ section .text
     ADD EAX,EDX                         ; 00457f1e
         ;   Label: LAB_00457f1e
     MOV dword ptr [ECX + 0x28],EAX      ; 00457f20
-    TEST byte ptr [0x01c039a1],0x2      ; 00457f23 | DAT_01c039a1
+    TEST byte ptr [0x01c039a1],0x2      ; 00457f23 | g_RenderStateFlags+1
     JZ 0x00457f8c                       ; 00457f2a
         ;   XREF to: 00457f8c (CONDITIONAL_JUMP)  ; LAB_00457f8c
     MOV EAX,dword ptr [ESP + 0x50]      ; 00457f2c

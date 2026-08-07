@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_inv.cpp_freeInventory_FUN_004bf270 at 004bf275
-;   core_main.c_FUN_004c90e0 at 004c92f3
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c92f3
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c9093
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004d0040
 ;   core_moon.cpp_CMoon_free_FUN_004dea60 at 004deaab

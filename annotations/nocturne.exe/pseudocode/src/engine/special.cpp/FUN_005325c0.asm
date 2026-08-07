@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bff720
+;   ushort[256] g_ColorTable16
 ;   uchar[768] g_SourcePaletteData
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9ddc
 ;
 ; Called Functions:
@@ -17,7 +17,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 005325c0 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 005325c0 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_FUN_005325c0
     JNZ 0x005325cc                      ; 005325c7
         ;   XREF to: 005325cc (CONDITIONAL_JUMP)  ; LAB_005325cc
@@ -25,7 +25,7 @@ section .text
     RET                                 ; 005325cb
     PUSH EBX                            ; 005325cc
         ;   Label: LAB_005325cc
-    PUSH 0x1bff720                      ; 005325cd | DAT_01bff720
+    PUSH 0x1bff720                      ; 005325cd | g_ColorTable16
     PUSH 0x1c00648                      ; 005325d2 | g_SourcePaletteData
     CALL dword ptr [0x02dc9ddc]         ; 005325d7 | DAT_02dc9ddc
     ADD ESP,0x8                         ; 005325dd

@@ -10,8 +10,8 @@
 ;
 ; XREF[8]:
 ;   engine_clipper.c_FUN_00432210 at 0043236c
-;   engine_clipper.c_FUN_00432cd0 at 00432e3f
 ;   engine_clipper.c_FUN_00434210 at 0043434a
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0 at 00432e3f
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434ae0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 004580fd
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00 at 00457a81
@@ -19,14 +19,14 @@
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390 at 004fb471
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dac
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532650 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532650 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_drawPolygon2_FUN_00532650
     JNZ 0x0053265c                      ; 00532657
         ;   XREF to: 0053265c (CONDITIONAL_JUMP)  ; LAB_0053265c

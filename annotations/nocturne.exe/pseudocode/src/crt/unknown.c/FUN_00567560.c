@@ -26,7 +26,7 @@ int FUN_00567560(int param_1,byte *param_2,uint *param_3)
     pbVar1 = param_2 + 1;
     uVar5 = (uint)*param_2;
     if (uVar5 == 0) goto LAB_00567810;
-    if (((&DAT_005c168c)[(byte)(*param_2 + 1)] & 2) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {
       param_2 = pbVar1;
       iVar3 = FUN_00567928(param_1);
       iVar7 = iVar7 + iVar3;

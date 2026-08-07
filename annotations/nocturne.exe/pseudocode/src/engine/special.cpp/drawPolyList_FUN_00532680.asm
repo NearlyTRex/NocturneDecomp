@@ -20,7 +20,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 00461702
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_01e52ef8
 ;   undefined4 DAT_02dc9dac
 ;   undefined4 DAT_02dc9db0
@@ -38,7 +38,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 00532687
     MOV EDX,dword ptr [ESP + 0x28]      ; 0053268b
     MOV EBP,dword ptr [ESP + 0x2c]      ; 0053268f
-    CMP dword ptr [0x01c02594],0x0      ; 00532693 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532693 | g_UseExternalRenderer
     JZ 0x00532778                       ; 0053269a
         ;   XREF to: 00532778 (CONDITIONAL_JUMP)  ; LAB_00532778
     MOV EAX,[0x01e52ef8]                ; 005326a0 | DAT_01e52ef8

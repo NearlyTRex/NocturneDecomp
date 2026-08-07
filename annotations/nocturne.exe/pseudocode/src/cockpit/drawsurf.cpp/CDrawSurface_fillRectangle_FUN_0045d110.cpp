@@ -40,10 +40,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawS
       if (_DAT_01b4d71c == 0) {
         iVar3 = iVar3 * 4;
         iVar4 = iVar4 * 4;
-        if (DAT_005b7624 < 0x10) {
-          if (DAT_005b7624 == 8) {
+        if ((uint)g_BitsPerPixel < 0x10) {
+          if (g_BitsPerPixel == 8) {
             do {
-              piVar1 = (int *)(&DAT_01bd2fa0 + iVar4);
+              piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
               iVar4 = iVar4 + 4;
               memset
                         ((void *)(*piVar1 + start_x),_DAT_01b4d710,(end_x - start_x) + 1);
@@ -56,11 +56,11 @@ LAB_0045d27e:
           core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel!");
           return;
         }
-        if (DAT_005b7624 < 0x11) {
+        if ((uint)g_BitsPerPixel < 0x11) {
           do {
             if (start_x <= end_x) {
               iVar5 = start_x;
-              puVar2 = (ushort *)(start_x * 2 + *(int *)(&DAT_01bd2fa0 + iVar4));
+              puVar2 = (ushort *)(start_x * 2 + *(int *)((int)g_ScreenBufferArray + iVar4));
               do {
                 iVar5 = iVar5 + 1;
                 *puVar2 = _DAT_01b4d710;
@@ -71,10 +71,10 @@ LAB_0045d27e:
           } while (iVar4 <= iVar3);
         }
         else {
-          if (DAT_005b7624 != 0x20) goto LAB_0045d27e;
+          if (g_BitsPerPixel != 0x20) goto LAB_0045d27e;
           do {
             if (start_x <= end_x) {
-              piVar1 = (int *)(start_x * 4 + *(int *)(&DAT_01bd2fa0 + iVar4));
+              piVar1 = (int *)(start_x * 4 + *(int *)((int)g_ScreenBufferArray + iVar4));
               iVar5 = start_x;
               do {
                 iVar5 = iVar5 + 1;

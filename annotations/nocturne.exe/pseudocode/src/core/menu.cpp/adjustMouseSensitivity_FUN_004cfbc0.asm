@@ -21,10 +21,10 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -144,21 +144,21 @@ section .text
     JGE 0x004cfe3a                      ; 004cfcce
         ;   XREF to: 004cfe3a (CONDITIONAL_JUMP)  ; LAB_004cfe3a
     MOV ESI,0x4000                      ; 004cfcd4
-    MOV EAX,[0x01c00c5c]                ; 004cfcd9 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 004cfcd9 | g_ClipTop
         ;   Label: LAB_004cfcd9
     INC EAX                             ; 004cfcde
     PUSH 0xff                           ; 004cfcdf
     MOV dword ptr [ESP + 0x4],EAX       ; 004cfce4
-    MOV EAX,[0x01c00c64]                ; 004cfce8 | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 004cfce8 | g_ClipBottom
     PUSH 0x0                            ; 004cfced
     DEC EAX                             ; 004cfcef
-    MOV EBX,dword ptr [0x01c00c60]      ; 004cfcf0 | DAT_01c00c60
+    MOV EBX,dword ptr [0x01c00c60]      ; 004cfcf0 | g_ClipRight
     PUSH EAX                            ; 004cfcf6
     DEC EBX                             ; 004cfcf7
     MOV dword ptr [ESP + 0x10],EAX      ; 004cfcf8
     PUSH EBX                            ; 004cfcfc
     MOV EAX,dword ptr [ESP + 0x10]      ; 004cfcfd
-    MOV EDI,dword ptr [0x01c00c58]      ; 004cfd01 | DAT_01c00c58
+    MOV EDI,dword ptr [0x01c00c58]      ; 004cfd01 | g_ClipLeft
     PUSH EAX                            ; 004cfd07
     INC EDI                             ; 004cfd08
     PUSH EDI                            ; 004cfd09
@@ -190,10 +190,10 @@ section .text
     PUSH 0x58853d                       ; 004cfd51 | = "%4.2f"
     PUSH 0x0                            ; 004cfd56
     PUSH 0xff                           ; 004cfd58
-    MOV EDX,dword ptr [0x01c00c5c]      ; 004cfd5d | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 004cfd5d | g_ClipTop
     PUSH 0x41                           ; 004cfd63
     MOV EDI,dword ptr [0x01bcd070]      ; 004cfd65 | DAT_01bcd070
-    MOV EBX,dword ptr [0x01c00c64]      ; 004cfd6b | DAT_01c00c64
+    MOV EBX,dword ptr [0x01c00c64]      ; 004cfd6b | g_ClipBottom
     PUSH EDI                            ; 004cfd71
     ADD EBX,EDX                         ; 004cfd72
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 004cfd74
@@ -206,9 +206,9 @@ section .text
     SAR EAX,0x1                         ; 004cfd84
     ADD ESP,0x8                         ; 004cfd86
     PUSH EAX                            ; 004cfd89
-    MOV EAX,[0x01c00c60]                ; 004cfd8a | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 004cfd8a | g_ClipRight
     PUSH EAX                            ; 004cfd8f
-    MOV EDX,dword ptr [0x01c00c58]      ; 004cfd90 | DAT_01c00c58
+    MOV EDX,dword ptr [0x01c00c58]      ; 004cfd90 | g_ClipLeft
     PUSH EDX                            ; 004cfd96
     MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | DAT_01bcd070
     PUSH ECX                            ; 004cfd9d

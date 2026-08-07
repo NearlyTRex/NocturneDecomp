@@ -35,9 +35,9 @@ void FUN_00552af0(void);
 // Address: 00552b40
 int __cdecl initializeGraphicsSystem(int width,int height);
 
-// Original: wincore_wddvmem.cpp_FUN_00552cb0
+// Original: wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_00552cb0
 // Address: 00552cb0
-void __cdecl FUN_00552cb0(void);
+void __cdecl cleanupGraphicsSystem(void);
 
 // Original: wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00552d70
 // Address: 00552d70

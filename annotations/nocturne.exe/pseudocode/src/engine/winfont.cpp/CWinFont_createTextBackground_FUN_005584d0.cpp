@@ -24,7 +24,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
     height = 100;
   }
   if (((this_ptr->device_context_handle == (HDC)0x0 || this_ptr->right < width) ||
-      this_ptr->top < height) || this_ptr->bpp != DAT_005b7624) {
+      this_ptr->top < height) || this_ptr->bpp != g_BitsPerPixel) {
     engine_winfont_cpp_CWinFont_reset_FUN_005586a0(this_ptr);
     pHVar2 = CreateCompatibleDC((HDC)0x0);
     this_ptr->device_context_handle = (HDC)pHVar2;
@@ -34,7 +34,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
     local_48.bmiHeader.biSizeImage = 0;
     local_48.bmiHeader.biClrUsed = 0;
     local_48.bmiHeader.biHeight = -height;
-    local_48.bmiHeader.biBitCount = (WORD)DAT_005b7624;
+    local_48.bmiHeader.biBitCount = (WORD)g_BitsPerPixel;
     local_48.bmiHeader.biCompression = 0;
     local_48.bmiHeader.biXPelsPerMeter = 0;
     local_48.bmiHeader.biYPelsPerMeter = 0;
@@ -59,7 +59,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
       this_ptr->object_handle = pvVar3;
       this_ptr->right = width;
       this_ptr->top = height;
-      this_ptr->bpp = DAT_005b7624;
+      this_ptr->bpp = g_BitsPerPixel;
       return (uint)(this_ptr->device_context_handle != (HDC)0x0);
     }
   }

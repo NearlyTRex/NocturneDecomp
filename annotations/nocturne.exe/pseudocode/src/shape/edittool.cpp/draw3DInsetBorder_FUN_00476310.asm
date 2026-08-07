@@ -15,7 +15,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 00476681
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00403bd0
@@ -35,7 +35,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 0047631c
     MOV EDI,dword ptr [ESP + 0x28]      ; 00476320
     XOR EDX,EDX                         ; 00476324
-    MOV dword ptr [0x01c00c70],EDX      ; 00476326 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00476326 | g_ActiveRenderColor
     TEST EDI,EDI                        ; 0047632c
     JNZ 0x00476395                      ; 0047632e
         ;   XREF to: 00476395 (CONDITIONAL_JUMP)  ; LAB_00476395

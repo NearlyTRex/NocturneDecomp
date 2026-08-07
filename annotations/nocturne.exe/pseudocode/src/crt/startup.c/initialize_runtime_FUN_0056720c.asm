@@ -19,7 +19,7 @@
 ;   void* PTR_GetModuleFileNameA_00575524 = 00175d90
 ;   void* PTR_GetVersion_00575540 = 00175e18
 ;   undefined4 DAT_00598b2c
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_005c1ccc
 ;   undefined4 DAT_005c1cd0
 ;   undefined4 DAT_005c1cd4
@@ -149,7 +149,7 @@ section .text
         ;   Label: LAB_0056733a
     INC DL                              ; 0056733c
     AND EDX,0xff                        ; 0056733e
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00567344 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00567344 | g_CharacterClassificationTable
     JNZ 0x00567355                      ; 0056734b
         ;   XREF to: 00567355 (CONDITIONAL_JUMP)  ; LAB_00567355
     CMP byte ptr [EAX],0x0              ; 0056734d
@@ -162,7 +162,7 @@ section .text
         ;   Label: LAB_00567355
     INC DL                              ; 00567357
     AND EDX,0xff                        ; 00567359
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0056735f | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0056735f | g_CharacterClassificationTable
     JZ 0x0056736b                       ; 00567366
         ;   XREF to: 0056736b (CONDITIONAL_JUMP)  ; LAB_0056736b
     INC EAX                             ; 00567368
@@ -211,7 +211,7 @@ section .text
         ;   Label: LAB_005673c7
     INC DL                              ; 005673c9
     AND EDX,0xff                        ; 005673cb
-    TEST byte ptr [EDX + 0x5c168c],BL   ; 005673d1 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],BL   ; 005673d1 | g_CharacterClassificationTable
     JNZ 0x005673e4                      ; 005673d7
         ;   XREF to: 005673e4 (CONDITIONAL_JUMP)  ; LAB_005673e4
     CMP word ptr [EAX],0x0              ; 005673d9
@@ -226,7 +226,7 @@ section .text
         ;   Label: LAB_005673e9
     INC DL                              ; 005673eb
     AND EDX,0xff                        ; 005673ed
-    TEST byte ptr [EDX + 0x5c168c],BL   ; 005673f3 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],BL   ; 005673f3 | g_CharacterClassificationTable
     JZ 0x00567405                       ; 005673f9
         ;   XREF to: 00567405 (CONDITIONAL_JUMP)  ; LAB_00567405
     ADD EAX,0x2                         ; 005673fb

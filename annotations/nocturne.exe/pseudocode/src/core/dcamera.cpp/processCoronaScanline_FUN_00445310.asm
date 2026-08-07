@@ -28,7 +28,7 @@
 ;   undefined4 DAT_014b8460
 ;   undefined4 DAT_014b8464
 ;   undefined4 DAT_014b8468
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 
@@ -68,7 +68,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x44]      ; 00445370
     SHL EAX,CL                          ; 00445374
     SHL EDX,CL                          ; 00445376
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445378 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00445378 | g_ZBufferScanlineArray
     SHL EDX,0x2                         ; 0044537f
     ADD EAX,EDX                         ; 00445382
     MOV EDX,dword ptr [ESP + 0x40]      ; 00445384

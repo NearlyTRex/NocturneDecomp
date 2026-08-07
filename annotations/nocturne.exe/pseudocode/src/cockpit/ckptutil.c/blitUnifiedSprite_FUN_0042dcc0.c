@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
@@ -25,13 +23,13 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(void *sprite_data
   void *pvStack_1c;
   void *pvStack_18;
   
-  iVar6 = _DAT_01c00c60 - dest_x;
-  iVar1 = _DAT_01bd2fa4 - _DAT_01bd2fa0;
-  iVar8 = _DAT_01c00c58 - dest_x;
+  iVar6 = g_ClipRight - dest_x;
+  iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  iVar8 = g_ClipLeft - dest_x;
   if (sprite_data != (void *)0x0) {
     pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
-    if (DAT_005b7624 == 8) {
-      pvStack_18 = (void *)(dest_x + *(int *)(&DAT_01bd2fa0 + dest_y * 4));
+    if (g_BitsPerPixel == 8) {
+      pvStack_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);
       if (0 < height) {
         iStack_28 = 0;
         do {
@@ -64,7 +62,7 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(void *sprite_data
       }
     }
     else {
-      pvStack_1c = (void *)(*(int *)(&DAT_01bd2fa0 + dest_y * 4) + dest_x * 2);
+      pvStack_1c = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
       if (0 < height) {
         iStack_2c = 0;
         do {

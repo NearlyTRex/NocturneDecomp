@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20(SMRGLHeaderPrimitive *prim)
 
 {
@@ -19,83 +17,90 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
   if (iVar1 != 0) {
     if (DAT_006b0278 == 0) {
       if (DAT_006b0274 == 0) {
-        if (_DAT_01c03948 == 0) {
-          if (DAT_005b7624 == 0x20) {
-            _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+        if (g_MMXSupported == 0) {
+          if (g_BitsPerPixel == 0x20) {
+            g_ScanlineRenderFunc =
+                 (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
           }
           else {
-            _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+            g_ScanlineRenderFunc =
+                 (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
           }
         }
-        else if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        else if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
         if (g_ResolutionTable[8].height == 0) {
-          if (_DAT_01c03948 == 0) {
-            if (DAT_005b7624 == 0x20) {
-              _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+          if (g_MMXSupported == 0) {
+            if (g_BitsPerPixel == 0x20) {
+              g_ScanlineRenderFunc =
+                   (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
             }
             else {
-              _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+              g_ScanlineRenderFunc =
+                   (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
             }
           }
-          else if (DAT_005b7624 == 0x20) {
-            _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+          else if (g_BitsPerPixel == 0x20) {
+            g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
           }
           else {
-            _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+            g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
           }
-          _DAT_01c039a4 = 0;
-          _DAT_01c039a0 = 0xc1;
+          g_VertexPreprocessMode = 0;
+          g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         }
         else {
-          _DAT_01c039a4 = 1;
-          _DAT_01c039a0 = 0xc1;
+          g_VertexPreprocessMode = 1;
+          g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         }
       }
       else {
-        if (_DAT_01c03948 == 0) {
-          if (DAT_005b7624 == 0x20) {
-            _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+        if (g_MMXSupported == 0) {
+          if (g_BitsPerPixel == 0x20) {
+            g_ScanlineRenderFunc =
+                 (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
           }
           else {
-            _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+            g_ScanlineRenderFunc =
+                 (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
           }
         }
-        else if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        else if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
-        _DAT_01c039a0 = 0xc0;
-        _DAT_01c039a4 = 1;
+        g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = 1;
         engine_light_cpp_calculateLighting_FUN_004c6cc0
                   ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i)
         ;
-        _DAT_01c00c70 = engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,_DAT_01c00c74);
+        g_ActiveRenderColor =
+             engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,g_CurrentLightingValue);
       }
     }
     else {
-      if (_DAT_01c03948 == 0) {
-        if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+      if (g_MMXSupported == 0) {
+        if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
         }
       }
-      else if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+      else if (g_BitsPerPixel == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
       }
-      _DAT_01c039a0 = 0;
-      _DAT_01c039a4 = 0;
+      g_RenderStateFlags.dword = 0;
+      g_VertexPreprocessMode = 0;
     }
     piVar3 = &DAT_006b029c;
     pSVar2 = prim + 1;
@@ -107,7 +112,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
            (pSVar2->surface_normal).A;
       pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
-    engine_clipper_c_FUN_00432cd0((prim->base).count,&DAT_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,&DAT_006b029c);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

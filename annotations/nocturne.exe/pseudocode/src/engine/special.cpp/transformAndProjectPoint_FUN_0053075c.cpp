@@ -20,7 +20,7 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
   int iVar7;
   int iVar8;
   
-  if (_DAT_01c03948 != 0) {
+  if (g_MMXSupported != 0) {
     iVar2 = input->x - _DAT_01c039b8;
     iVar7 = input->y - _DAT_01c039bc;
     iVar8 = input->z - _DAT_01c039c0;
@@ -55,11 +55,11 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
     if (uVar6 == 0) {
       output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar5);
       output->screen_x =
-           (int)(((longlong)(int)uVar3 * (longlong)_DAT_01c00c48) / (longlong)(int)uVar5) +
-           _DAT_01c00c50;
+           (int)(((longlong)(int)uVar3 * (longlong)g_Projection.half_width_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_x_fixed;
       output->screen_y =
-           (int)(((longlong)(int)uVar4 * (longlong)_DAT_01c00c4c) / (longlong)(int)uVar5) +
-           _DAT_01c00c54;
+           (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_y_fixed;
       return;
     }
     output->screen_x = uVar6;
@@ -104,11 +104,11 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
     output->transformed_z = uVar4;
     output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar4);
     output->screen_x =
-         (int)(((longlong)(int)DAT_005bf4e8 * (longlong)_DAT_01c00c48) / (longlong)(int)uVar4) +
-         _DAT_01c00c50;
+         (int)(((longlong)(int)DAT_005bf4e8 * (longlong)g_Projection.half_width_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_x_fixed;
     output->screen_y =
-         (int)(((longlong)(int)DAT_005bf4ec * (longlong)_DAT_01c00c4c) / (longlong)(int)uVar4) +
-         _DAT_01c00c54;
+         (int)(((longlong)(int)DAT_005bf4ec * (longlong)g_Projection.neg_half_height_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_y_fixed;
     return;
   }
   output->transformed_x = DAT_005bf4e8;

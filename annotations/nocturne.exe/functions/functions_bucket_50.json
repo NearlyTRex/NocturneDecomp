@@ -10,12 +10,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_FUN_004012d0",
+    "name":"engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"char_code",
           "storage":{
             "offset":4,
             "size":4,
@@ -31,7 +31,7 @@
           "type":"int"
         },
         {
-          "name":"param_2",
+          "name":"x_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -47,7 +47,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"y_pos",
           "storage":{
             "offset":12,
             "size":4,
@@ -76,12 +76,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_FUN_004013d0",
+    "name":"engine_2d.c_drawAntialiasedChar_FUN_004013d0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"char_code",
           "storage":{
             "offset":4,
             "size":4,
@@ -97,7 +97,7 @@
           "type":"int"
         },
         {
-          "name":"param_2",
+          "name":"x_pos",
           "storage":{
             "offset":8,
             "size":4,
@@ -113,7 +113,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"y_pos",
           "storage":{
             "offset":12,
             "size":4,
@@ -129,7 +129,7 @@
           "type":"int"
         },
         {
-          "name":"param_4",
+          "name":"intensity_shift",
           "storage":{
             "offset":16,
             "size":4,
@@ -142,55 +142,7 @@
               }
             ]
           },
-          "type":"undefined4"
-        },
-        {
-          "name":"param_5",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
           "type":"int"
-        },
-        {
-          "name":"param_6",
-          "storage":{
-            "offset":24,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x18]",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"param_7",
-          "storage":{
-            "offset":28,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x1c]",
-                "offset":28,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
         }
       ],
       "ret_storage":{
@@ -7934,9 +7886,10 @@
         "start":"00432cd0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_clipper.c_FUN_00432cd0",
-    "ret":"undefined1",
+    "name":"engine_clipper.c_clipAndRasterize_FUN_00432cd0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -8260,9 +8213,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"vertex_count",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_indices",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ]
     }
   },
   {

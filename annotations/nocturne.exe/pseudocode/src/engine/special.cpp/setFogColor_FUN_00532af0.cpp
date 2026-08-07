@@ -16,7 +16,7 @@ int __cdecl engine_special_cpp_setFogColor_FUN_00532af0(int red,int green,int bl
   _DAT_02dc9e10 = green;
   _DAT_02dc9e14 = blue;
   _DAT_02dc9e0c = red;
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9dcc)(red,green,blue);

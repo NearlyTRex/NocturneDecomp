@@ -88,7 +88,7 @@ int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_00552990(void);
 void wincore_wddvmem_cpp_FUN_00552a20(void);
 void wincore_wddvmem_cpp_FUN_00552af0(void);
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00552b40(int width,int height);
-void __cdecl wincore_wddvmem_cpp_FUN_00552cb0(void);
+void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_00552cb0(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_00552d70(void);
 int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int width,int height,int bits_per_pixel);
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void);

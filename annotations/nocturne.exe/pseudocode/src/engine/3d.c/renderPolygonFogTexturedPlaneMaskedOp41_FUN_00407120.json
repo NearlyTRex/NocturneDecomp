@@ -62,58 +62,22 @@
         "message": "use of undeclared identifier '_DAT_01c038f4'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
+        "category": "pointer_type",
+        "column": 14,
+        "line": 55,
+        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       },
       {
         "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
+        "column": 27,
+        "line": 61,
+        "message": "use of undeclared identifier 'DAT_005c5030'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 65,
+        "message": "no matching function for call to 'engine_clipper_c_clipAndRasterize_FUN_00432cd0'"
       }
     ],
     "success": false,
@@ -122,13 +86,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 232,
+    "complexity_score": 192,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 15,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -173,15 +137,15 @@
     {
       "addr": "00432cd0",
       "is_variadic": false,
-      "name": "engine_clipper.c_FUN_00432cd0"
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0"
     }
   ],
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "005c502c",
@@ -215,8 +179,8 @@
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
@@ -227,20 +191,20 @@
     },
     {
       "addr": "01c03948",
-      "name": "DAT_01c03948",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -344,38 +308,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_006b029c",
       "severity": "mild",
@@ -427,7 +359,7 @@
       "line": 58,
       "match": "DAT_006b029c",
       "severity": "mild",
-      "text": "engine_clipper_c_FUN_00432cd0((prim->base).count,&DAT_006b029c);",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,&DAT_006b029c);",
       "type": "undefined_data"
     },
     {

@@ -22,7 +22,7 @@
 ;   TerminatedCString s_core_actor_cpp_00577975
 ;   TerminatedCString s_Dangling_corrupt_actor_p_00577987
 ;   undefined4 DAT_005779d5
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_00763e10
 ;   undefined1 DAT_00763e14
 ;   undefined4 DAT_0078a123
@@ -259,7 +259,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0040bfd2
     INC AL                              ; 0040bfd4
     AND EAX,0xff                        ; 0040bfd6
-    TEST byte ptr [EAX + 0x5c168c],0x8  ; 0040bfdb | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x8  ; 0040bfdb | g_CharacterClassificationTable
     JNZ 0x0040bf6f                      ; 0040bfe2
         ;   XREF to: 0040bf6f (CONDITIONAL_JUMP)  ; LAB_0040bf6f
     JMP 0x0040bef2                      ; 0040bfe4

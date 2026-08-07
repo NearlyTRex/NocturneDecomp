@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9db8
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532900 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532900 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_FUN_00532900
     JNZ 0x0053290c                      ; 00532907
         ;   XREF to: 0053290c (CONDITIONAL_JUMP)  ; LAB_0053290c

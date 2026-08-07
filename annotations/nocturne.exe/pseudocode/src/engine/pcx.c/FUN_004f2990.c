@@ -27,11 +27,11 @@ void __cdecl engine_pcx_c_FUN_004f2990(char *filename)
   short local_42;
   short local_40;
   
-  if (DAT_005b7624 == 0x10) {
+  if (g_BitsPerPixel == 0x10) {
     engine_pcx_c_saveScreenRaw16_FUN_004f2620(filename);
     return;
   }
-  if (DAT_005b7624 == 0x20) {
+  if (g_BitsPerPixel == 0x20) {
     engine_pcx_c_saveScreenRaw32_FUN_004f27e0(filename);
     return;
   }

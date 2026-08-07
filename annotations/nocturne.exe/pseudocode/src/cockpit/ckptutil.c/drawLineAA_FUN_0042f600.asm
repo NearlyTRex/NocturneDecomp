@@ -15,10 +15,10 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad280
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042fd60
@@ -48,14 +48,14 @@ section .text
         ;   Label: LAB_0042f625
     JNZ 0x0042f67a                      ; 0042f62c
         ;   XREF to: 0042f67a (CONDITIONAL_JUMP)  ; LAB_0042f67a
-    CMP ESI,dword ptr [0x01c00c58]      ; 0042f62e | DAT_01c00c58
+    CMP ESI,dword ptr [0x01c00c58]      ; 0042f62e | g_ClipLeft
     JGE 0x0042f645                      ; 0042f634
         ;   XREF to: 0042f645 (CONDITIONAL_JUMP)  ; LAB_0042f645
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0042f636
-    CMP EAX,dword ptr [0x01c00c58]      ; 0042f639 | DAT_01c00c58
+    CMP EAX,dword ptr [0x01c00c58]      ; 0042f639 | g_ClipLeft
     JL 0x0042f6c0                       ; 0042f63f
         ;   XREF to: 0042f6c0 (CONDITIONAL_JUMP)  ; LAB_0042f6c0
-    MOV ECX,dword ptr [0x01c00c60]      ; 0042f645 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 0042f645 | g_ClipRight
         ;   Label: LAB_0042f645
     CMP ESI,ECX                         ; 0042f64b
     JLE 0x0042f658                      ; 0042f64d
@@ -63,15 +63,15 @@ section .text
     CMP ECX,dword ptr [EBP + 0x1c]      ; 0042f64f
     JL 0x0042f6c0                       ; 0042f652
         ;   XREF to: 0042f6c0 (CONDITIONAL_JUMP)  ; LAB_0042f6c0
-    CMP EBX,dword ptr [0x01c00c5c]      ; 0042f658 | DAT_01c00c5c
+    CMP EBX,dword ptr [0x01c00c5c]      ; 0042f658 | g_ClipTop
         ;   Label: LAB_0042f658
     JGE 0x0042f66b                      ; 0042f65e
         ;   XREF to: 0042f66b (CONDITIONAL_JUMP)  ; LAB_0042f66b
     MOV EAX,dword ptr [EBP + 0x20]      ; 0042f660
-    CMP EAX,dword ptr [0x01c00c5c]      ; 0042f663 | DAT_01c00c5c
+    CMP EAX,dword ptr [0x01c00c5c]      ; 0042f663 | g_ClipTop
     JL 0x0042f6c0                       ; 0042f669
         ;   XREF to: 0042f6c0 (CONDITIONAL_JUMP)  ; LAB_0042f6c0
-    MOV ECX,dword ptr [0x01c00c64]      ; 0042f66b | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0042f66b | g_ClipBottom
         ;   Label: LAB_0042f66b
     CMP EBX,ECX                         ; 0042f671
     JLE 0x0042f67a                      ; 0042f673

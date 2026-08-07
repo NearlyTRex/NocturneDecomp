@@ -101,50 +101,54 @@ LAB_004912b7:
   iVar11 = (bottom_y + 1) * 0x10000;
   local_24 = y * 0x10000 + -0x1000;
   iVar12 = iVar11 + 0x1000;
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     iVar12 = iVar11 + 0x9000;
     iVar8 = iVar5 + 0x9000;
   }
   DAT_006af554 = (uint)
                  ((longlong)
-                  ((((longlong)(local_20 - _DAT_01c00c50) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(local_20 - _DAT_01c00c50) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c48);
+                  ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10)
+                   << 0x20 |
+                  (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.half_width_fixed);
   DAT_006af558 = (uint)
                  ((longlong)
-                  ((((longlong)(local_24 - _DAT_01c00c54) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(local_24 - _DAT_01c00c54) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c4c);
+                  ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10)
+                   << 0x20 |
+                  (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.neg_half_height_fixed);
   DAT_006af584 = (uint)
                  ((longlong)
-                  ((((longlong)(iVar8 - _DAT_01c00c50) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(iVar8 - _DAT_01c00c50) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c48);
+                  ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
+                   0x20 | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.half_width_fixed);
   DAT_006af588 = (uint)
                  ((longlong)
-                  ((((longlong)(local_24 - _DAT_01c00c54) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(local_24 - _DAT_01c00c54) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c4c);
+                  ((((longlong)(local_24 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10)
+                   << 0x20 |
+                  (longlong)(local_24 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.neg_half_height_fixed);
   DAT_006af5b4 = (uint)
                  ((longlong)
-                  ((((longlong)(iVar8 - _DAT_01c00c50) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(iVar8 - _DAT_01c00c50) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c48);
+                  ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) <<
+                   0x20 | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.half_width_fixed);
   DAT_006af5b8 = (uint)
                  ((longlong)
-                  ((((longlong)(iVar12 - _DAT_01c00c54) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(iVar12 - _DAT_01c00c54) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c4c);
+                  ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
+                   0x20 | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU)
+                 / (longlong)g_Projection.neg_half_height_fixed);
   DAT_006af5e4 = (uint)
                  ((longlong)
-                  ((((longlong)(local_20 - _DAT_01c00c50) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(local_20 - _DAT_01c00c50) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c48);
+                  ((((longlong)(local_20 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10)
+                   << 0x20 |
+                  (longlong)(local_20 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+                 (longlong)g_Projection.half_width_fixed);
   DAT_006af5e8 = (uint)
                  ((longlong)
-                  ((((longlong)(iVar12 - _DAT_01c00c54) & 0xffffffffffffU) >> 0x10) << 0x20 |
-                  (longlong)(iVar12 - _DAT_01c00c54) * 0x10000 & 0xffffffffU) /
-                 (longlong)_DAT_01c00c4c);
+                  ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) <<
+                   0x20 | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU)
+                 / (longlong)g_Projection.neg_half_height_fixed);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(0x4e1c);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(local_14);
   engine_matrix_c_projectCachedPoint_FUN_004cd240(0x4e1e);
@@ -156,7 +160,7 @@ LAB_004912b7:
   iVar11 = (iVar11 / local_2c) * 0x10000 + -0x1000;
   DAT_006af5cc = (iVar5 + iVar8) - local_20;
   iVar8 = (iVar11 + iVar12) - local_24;
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     iVar8 = iVar8 + 0x8000;
     DAT_006af5cc = DAT_006af5cc + 0x8000;
   }

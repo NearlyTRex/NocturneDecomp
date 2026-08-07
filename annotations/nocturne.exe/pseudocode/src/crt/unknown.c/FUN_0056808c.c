@@ -38,7 +38,7 @@ int FUN_0056808c(int param_1,int *param_2,int param_3,int param_4)
   while( true ) {
     local_24 = FUN_00567540(param_1);
     iVar6 = local_24;
-    if (((&DAT_005c168c)[(byte)((char)local_24 + 1)] & 2) == 0) break;
+    if ((g_CharacterClassificationTable[(byte)((char)local_24 + 1)] & 2) == 0) break;
     local_1c = local_1c + 1;
     local_24 = iVar6;
   }

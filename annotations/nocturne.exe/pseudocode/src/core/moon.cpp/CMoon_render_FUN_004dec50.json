@@ -80,10 +80,10 @@
         "message": "use of undeclared identifier '_DAT_01ccdec0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 33,
+        "category": "incompatible_types",
+        "column": 16,
         "line": 121,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
+        "message": "assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 494,
+    "complexity_score": 484,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 149,
-    "suspect_count": 31,
+    "suspect_count": 30,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
@@ -336,8 +336,8 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
@@ -701,14 +701,6 @@
       "severity": "mild",
       "text": "local_5c.x = 7.156918e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "local_20 = *(ulonglong **)(&DAT_01bd2fa0 + local_28 * 4);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

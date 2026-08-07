@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00761ec4
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
@@ -23,7 +23,7 @@ section .text
     JZ 0x00408f96                       ; 00408f59
         ;   XREF to: 00408f96 (CONDITIONAL_JUMP)  ; LAB_00408f96
     PUSH ESI                            ; 00408f5b
-    CMP dword ptr [0x01c02594],0x0      ; 00408f5c | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00408f5c | g_UseExternalRenderer
     JNZ 0x00408f98                      ; 00408f63
         ;   XREF to: 00408f98 (CONDITIONAL_JUMP)  ; LAB_00408f98
     XOR ESI,ESI                         ; 00408f65

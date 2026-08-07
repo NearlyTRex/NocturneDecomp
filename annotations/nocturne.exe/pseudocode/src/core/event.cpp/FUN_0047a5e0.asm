@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_0047a5fc
     INC DL                              ; 0047a5ff
     AND EDX,0xff                        ; 0047a601
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a607 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a607 | g_CharacterClassificationTable
     JNZ 0x0047a62f                      ; 0047a60e
         ;   XREF to: 0047a62f (CONDITIONAL_JUMP)  ; LAB_0047a62f
     LEA EAX,[ESI + EBX*0x1]             ; 0047a610
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0047a619
     INC AL                              ; 0047a61b
     AND EAX,0xff                        ; 0047a61d
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a622 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a622 | g_CharacterClassificationTable
     JNZ 0x0047a637                      ; 0047a629
         ;   XREF to: 0047a637 (CONDITIONAL_JUMP)  ; LAB_0047a637
     POP EDI                             ; 0047a62b

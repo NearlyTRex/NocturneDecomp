@@ -12,7 +12,7 @@
 ;   undefined1 DAT_005bb118
 ;   undefined1 DAT_005bb11c
 ;   undefined1 DAT_005bb121
-;   undefined4 DAT_01c03948
+;   int g_MMXSupported
 ;   undefined4 DAT_01c0394c
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
         ;   XREF to: 004d9f59 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_004d9f59()
     XOR EAX,EAX                         ; 004d9e7b
     MOV AL,[0x005bb121]                 ; 004d9e7d | DAT_005bb121
-    MOV [0x01c03948],EAX                ; 004d9e82 | DAT_01c03948
+    MOV [0x01c03948],EAX                ; 004d9e82 | g_MMXSupported
     XOR EAX,EAX                         ; 004d9e87
     MOV AL,[0x005bb118]                 ; 004d9e89 | DAT_005bb118
     MOV [0x005b7638],EAX                ; 004d9e8e | DAT_005b7638

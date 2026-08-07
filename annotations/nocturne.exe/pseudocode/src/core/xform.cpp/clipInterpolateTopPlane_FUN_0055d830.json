@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_01c039a0'"
       }
     ],
     "success": false,
@@ -68,17 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 112,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "carry_arith_idiom",
-      "concat_reconstruction",
-      "undefined_data"
+      "concat_reconstruction"
     ],
     "total_lines": 138
   },
@@ -112,8 +105,8 @@
   "globals": [
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     }
   ],
@@ -256,14 +249,6 @@
       "severity": "moderate",
       "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_01c039a0",
-      "severity": "mild",
-      "text": "bVar2 = DAT_01c039a0;",
-      "type": "undefined_data"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",

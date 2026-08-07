@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 {
@@ -52,14 +50,14 @@ LAB_00507d51:
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar1 == 0) {
-    if (_DAT_01c02594 == 0.0) {
+    if (g_UseExternalRenderer == 0) {
       core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(this_ptr);
     }
-    if (_DAT_01c02594 == 0.0) {
+    if (g_UseExternalRenderer == 0) {
       if (this_ptr->use_enviro_model != 0) {
-        local_1c.x = _DAT_01c02594;
-        local_1c.y = _DAT_01c02594;
-        local_1c.z = _DAT_01c02594;
+        local_1c.x = (float)g_UseExternalRenderer;
+        local_1c.y = (float)g_UseExternalRenderer;
+        local_1c.z = (float)g_UseExternalRenderer;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (g_CDemonRenderer_PTR_005ae704,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040

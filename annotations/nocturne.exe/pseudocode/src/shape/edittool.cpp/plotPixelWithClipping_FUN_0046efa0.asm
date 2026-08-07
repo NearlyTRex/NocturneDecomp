@@ -11,10 +11,10 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
@@ -41,16 +41,16 @@ section .text
     CMP dword ptr [ESP + 0xc],0x0       ; 0046efc0
     JZ 0x0046efe8                       ; 0046efc5
         ;   XREF to: 0046efe8 (CONDITIONAL_JUMP)  ; LAB_0046efe8
-    CMP EDX,dword ptr [0x01c00c58]      ; 0046efc7 | DAT_01c00c58
+    CMP EDX,dword ptr [0x01c00c58]      ; 0046efc7 | g_ClipLeft
     JL 0x0046efe7                       ; 0046efcd
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
-    CMP EDX,dword ptr [0x01c00c60]      ; 0046efcf | DAT_01c00c60
+    CMP EDX,dword ptr [0x01c00c60]      ; 0046efcf | g_ClipRight
     JGE 0x0046efe7                      ; 0046efd5
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
-    CMP EAX,dword ptr [0x01c00c5c]      ; 0046efd7 | DAT_01c00c5c
+    CMP EAX,dword ptr [0x01c00c5c]      ; 0046efd7 | g_ClipTop
     JL 0x0046efe7                       ; 0046efdd
         ;   XREF to: 0046efe7 (CONDITIONAL_JUMP)  ; LAB_0046efe7
-    CMP EAX,dword ptr [0x01c00c64]      ; 0046efdf | DAT_01c00c64
+    CMP EAX,dword ptr [0x01c00c64]      ; 0046efdf | g_ClipBottom
     JL 0x0046efe8                       ; 0046efe5
         ;   XREF to: 0046efe8 (CONDITIONAL_JUMP)  ; LAB_0046efe8
     RET                                 ; 0046efe7

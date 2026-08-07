@@ -26,11 +26,11 @@
 ;   ... and 5 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00403bd0
@@ -49,12 +49,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00403e6b
     MOV EDI,dword ptr [ESP + 0x20]      ; 00403e6f
     MOV ESI,dword ptr [ESP + 0x24]      ; 00403e73
-    MOV EDX,dword ptr [0x01c00c58]      ; 00403e77 | DAT_01c00c58
+    MOV EDX,dword ptr [0x01c00c58]      ; 00403e77 | g_ClipLeft
     CMP EBP,EDX                         ; 00403e7d
     JGE 0x00403e83                      ; 00403e7f
         ;   XREF to: 00403e83 (CONDITIONAL_JUMP)  ; LAB_00403e83
     MOV EBP,EDX                         ; 00403e81
-    MOV ECX,dword ptr [0x01c00c60]      ; 00403e83 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 00403e83 | g_ClipRight
         ;   Label: LAB_00403e83
     CMP EDI,ECX                         ; 00403e89
     JLE 0x00403e8f                      ; 00403e8b
@@ -64,12 +64,12 @@ section .text
         ;   Label: LAB_00403e8f
     JG 0x00403ee8                       ; 00403e91
         ;   XREF to: 00403ee8 (CONDITIONAL_JUMP)  ; LAB_00403ee8
-    MOV EAX,[0x01c00c5c]                ; 00403e93 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 00403e93 | g_ClipTop
     CMP EBX,EAX                         ; 00403e98
     JGE 0x00403e9e                      ; 00403e9a
         ;   XREF to: 00403e9e (CONDITIONAL_JUMP)  ; LAB_00403e9e
     MOV EBX,EAX                         ; 00403e9c
-    MOV EDX,dword ptr [0x01c00c64]      ; 00403e9e | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 00403e9e | g_ClipBottom
         ;   Label: LAB_00403e9e
     CMP ESI,EDX                         ; 00403ea4
     JLE 0x00403eaa                      ; 00403ea6
@@ -79,10 +79,10 @@ section .text
         ;   Label: LAB_00403eaa
     JG 0x00403ee8                       ; 00403eac
         ;   XREF to: 00403ee8 (CONDITIONAL_JUMP)  ; LAB_00403ee8
-    MOV EAX,[0x01c00c70]                ; 00403eae | DAT_01c00c70
+    MOV EAX,[0x01c00c70]                ; 00403eae | g_ActiveRenderColor
     MOV dword ptr [ESP],EAX             ; 00403eb3
     MOV EAX,dword ptr [ESP + 0x28]      ; 00403eb6
-    MOV [0x01c00c70],EAX                ; 00403eba | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00403eba | g_ActiveRenderColor
     JG 0x00403ee0                       ; 00403ebf
         ;   XREF to: 00403ee0 (CONDITIONAL_JUMP)  ; LAB_00403ee0
     PUSH EDI                            ; 00403ec1
@@ -101,7 +101,7 @@ section .text
     LEA EAX,[EAX]                       ; 00403edd
     MOV EAX,dword ptr [ESP]             ; 00403ee0
         ;   Label: LAB_00403ee0
-    MOV [0x01c00c70],EAX                ; 00403ee3 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00403ee3 | g_ActiveRenderColor
     ADD ESP,0x4                         ; 00403ee8
         ;   Label: LAB_00403ee8
     POP EBP                             ; 00403eeb

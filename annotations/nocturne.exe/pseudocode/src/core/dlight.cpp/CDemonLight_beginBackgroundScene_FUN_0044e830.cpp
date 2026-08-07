@@ -14,7 +14,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
   uint uVar1;
   int iVar2;
   int iVar3;
-  uint *puVar4;
+  void **ppvVar4;
   uint *puVar5;
   byte bVar6;
   
@@ -26,16 +26,16 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
   }
   _DAT_01ab99f0 = _DAT_01ab99f0 + 1;
   if (_DAT_01ab99f0 == 1) {
-    puVar4 = (uint *)&DAT_01bd2fa0;
+    ppvVar4 = g_ScreenBufferArray;
     puVar5 = (uint *)&DAT_01ab99f4;
     for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+      *puVar5 = *ppvVar4;
+      ppvVar4 = ppvVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar5 = *(byte *)puVar4;
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);
+      *(byte *)puVar5 = *(byte *)ppvVar4;
+      ppvVar4 = (void **)((int)ppvVar4 + (uint)bVar6 * -2 + 1);
       puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
     }
     if (this_ptr->master_zbuffer == (void *)0x0) {
@@ -47,7 +47,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044e830(CDemo
     if (0 < this_ptr->shadow_map_height) {
       iVar3 = 0;
       do {
-        *(void **)(&DAT_01bd2fa0 + iVar3) =
+        *(void **)((int)g_ScreenBufferArray + iVar3) =
              (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;

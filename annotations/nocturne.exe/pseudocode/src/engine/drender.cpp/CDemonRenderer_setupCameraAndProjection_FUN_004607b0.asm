@@ -22,10 +22,10 @@
 ;   double DOUBLE_0057dc15 = 32768
 ;   double DOUBLE_0057dc1d = 65536
 ;   undefined4 DAT_005b7648
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   undefined4 DAT_01c039d0
 ;   undefined4 DAT_01c039d4
 ;   undefined4 DAT_01c039d8
@@ -148,10 +148,10 @@ section .text
     FISTP dword ptr [0x01c039d8]        ; 00460900 | DAT_01c039d8
     IMUL EDX                            ; 00460906
     IDIV EBX                            ; 00460908
-    MOV EDX,dword ptr [0x01c00c60]      ; 0046090a | DAT_01c00c60
-    MOV ECX,dword ptr [0x01c00c58]      ; 00460910 | DAT_01c00c58
-    MOV EBX,dword ptr [0x01c00c64]      ; 00460916 | DAT_01c00c64
-    MOV EDI,dword ptr [0x01c00c5c]      ; 0046091c | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c60]      ; 0046090a | g_ClipRight
+    MOV ECX,dword ptr [0x01c00c58]      ; 00460910 | g_ClipLeft
+    MOV EBX,dword ptr [0x01c00c64]      ; 00460916 | g_ClipBottom
+    MOV EDI,dword ptr [0x01c00c5c]      ; 0046091c | g_ClipTop
     SUB EDX,ECX                         ; 00460922
     MOV dword ptr [ESI + 0x24],EAX      ; 00460924
     INC EDX                             ; 00460927

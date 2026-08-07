@@ -19,7 +19,7 @@ float __cdecl core_sound_cpp_CSound_FUN_0052ebc0(CSound *this_ptr,char *param_2)
   pCVar3 = &local_138;
   cVar1 = *param_2;
   while ((((cVar1 != '\0' && (cVar1 = *param_2, cVar1 != '@')) && (cVar1 != '*')) &&
-         (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 2) == 0))) {
+         ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) == 0))) {
     cVar1 = *param_2;
     param_2 = param_2 + 1;
     pCVar3->name[0] = cVar1;

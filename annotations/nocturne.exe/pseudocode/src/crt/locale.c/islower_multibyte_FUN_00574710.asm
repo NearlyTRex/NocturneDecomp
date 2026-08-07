@@ -10,7 +10,7 @@
 ;   crt_locale.c_fullwidth_toupper_FUN_00574520 at 00574526
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_locale.c_ismultibyte_FUN_00574760
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_0057473d
     INC AL                              ; 0057473f
     AND EAX,0xff                        ; 00574741
-    MOV AL,byte ptr [EAX + 0x5c168c]    ; 00574746 | DAT_005c168c
+    MOV AL,byte ptr [EAX + 0x5c168c]    ; 00574746 | g_CharacterClassificationTable
     AND AL,0x80                         ; 0057474c
     AND EAX,0xff                        ; 0057474e
     POP EBX                             ; 00574753

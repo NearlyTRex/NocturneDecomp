@@ -45,5 +45,7 @@ extern undefined4 DAT_006af5f4;
 extern undefined4 DAT_006af5f8;
 extern undefined4 DAT_006af5fc;
 extern undefined4 DAT_006af600;
-extern undefined4 DAT_006af62c;
+
+// void*
+extern void* g_SoftwareZBuffer;
 

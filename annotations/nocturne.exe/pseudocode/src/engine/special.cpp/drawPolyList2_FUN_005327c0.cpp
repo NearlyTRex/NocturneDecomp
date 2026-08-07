@@ -17,7 +17,7 @@ int __cdecl engine_special_cpp_drawPolyList2_FUN_005327c0(SRenderVertex *vertex_
   SRenderVertex *local_18;
   SRenderVertex *local_14;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + polygon_count;

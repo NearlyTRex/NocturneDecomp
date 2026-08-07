@@ -38,14 +38,14 @@ __asm {
         pxor MM2,qword ptr [DAT_005c0668]
         movzx EAX,word ptr [EDI]
         movd MM3,EAX
-        pand MM3,qword ptr [DAT_005bf5c8]
+        pand MM3,qword ptr [g_BlueMask16]
         psllq MM3,qword ptr [DAT_005bf658]
         movd MM4,EAX
-        pand MM4,qword ptr [DAT_005bf5c0]
+        pand MM4,qword ptr [g_GreenMask16]
         psllq MM4,qword ptr [DAT_005bf638]
         por MM3,MM4
         movd MM5,EAX
-        pand MM5,qword ptr [DAT_005bf5b8]
+        pand MM5,qword ptr [g_RedMask16]
         psllq MM5,qword ptr [DAT_005bf618]
         por MM3,MM5
         punpcklbw MM3,MM7
@@ -66,9 +66,9 @@ __asm {
     LAB_005306c3:
         movq MM2,MM0
         movq MM4,MM0
-        pand MM0,qword ptr [DAT_005bf610]
-        pand MM2,qword ptr [DAT_005bf5f0]
-        pand MM4,qword ptr [DAT_005bf5d0]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM4,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [DAT_005bf658]
         psrlq MM2,qword ptr [DAT_005bf638]
         psrlq MM4,qword ptr [DAT_005bf618]

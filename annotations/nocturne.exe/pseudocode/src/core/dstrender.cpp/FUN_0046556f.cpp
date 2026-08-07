@@ -34,12 +34,12 @@ void core_dstrender_cpp_FUN_0046556f(ulonglong *param_1,ulonglong *param_2,byte 
   ulonglong uVar21;
   
   uVar21 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8
-                                                                                >> 0x18) << 0x30) >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
+                                                                                0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)((uint)_DAT_01c039a8 >> 0x10)) <<
-                                         0x20) >> 0x18),(char)((uint)_DAT_01c039a8 >> 8)),
-                          (ushort)(byte)_DAT_01c039a8),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar11 = *param_2;
     uVar1 = *(uint *)(&DAT_00b0e1fc + (uint)*param_3 * 4);

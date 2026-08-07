@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -39,7 +39,7 @@ section .text
     JZ 0x004f4163                       ; 004f406d
         ;   XREF to: 004f4163 (CONDITIONAL_JUMP)  ; LAB_004f4163
     MOV EDX,dword ptr [ESP + 0x38]      ; 004f4073
-    MOV EDI,dword ptr [0x005b7624]      ; 004f4077 | DAT_005b7624
+    MOV EDI,dword ptr [0x005b7624]      ; 004f4077 | g_BitsPerPixel
     XOR ESI,ESI                         ; 004f407d
     MOV dword ptr [ESP],EAX             ; 004f407f
     MOV dword ptr [ESP + 0x10],ESI      ; 004f4082
@@ -74,7 +74,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f40d5
     MOV EDI,dword ptr [ESP + 0x30]      ; 004f40d9
     MOV EDX,dword ptr [ESP]             ; 004f40dd
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 004f40e0 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 004f40e0 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV EDI,dword ptr [EDI + 0x14]      ; 004f40e6
     ADD EDX,EAX                         ; 004f40e9
     ADD EDI,ECX                         ; 004f40eb
@@ -92,7 +92,7 @@ section .text
     MOV CX,word ptr [EBX]               ; 004f4105
     LEA EBX,[EDX + EAX*0x1]             ; 004f4108
     MOV EAX,dword ptr [ESP + 0x18]      ; 004f410b
-    MOV EBP,dword ptr [0x005b7624]      ; 004f410f | DAT_005b7624
+    MOV EBP,dword ptr [0x005b7624]      ; 004f410f | g_BitsPerPixel
     ADD EAX,ECX                         ; 004f4115
     CMP EBP,0x10                        ; 004f4117
     JNZ 0x004f411e                      ; 004f411a

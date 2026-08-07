@@ -93,12 +93,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 3,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 27,
         "line": 71,
         "message": "use of undeclared identifier 'stack0xffffffe4'"
@@ -114,6 +108,12 @@
         "column": 21,
         "line": 85,
         "message": "use of undeclared identifier 'stack0xffffff78'; did you mean 'in_stack_ffffff78'?"
+      },
+      {
+        "category": "type_error",
+        "column": 56,
+        "line": 95,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       }
     ],
     "success": false,
@@ -352,8 +352,8 @@
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {

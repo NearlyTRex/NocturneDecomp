@@ -85,7 +85,7 @@ section .text
     IMUL EAX,dword ptr [EDX + 0x14c]    ; 004421f4
     ADD EAX,dword ptr [EDX + 0x148]     ; 004421fb
     MOV EDX,dword ptr [EDX + 0x144]     ; 00442201
-    MOV EBX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00442207 | DAT_01bd2fa0
+    MOV EBX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00442207 | g_ScreenBufferArray
     MOV EAX,0x1                         ; 0044220e
     SHL EDX,0x2                         ; 00442213
     MOV dword ptr [ESP + 0x58],EAX      ; 00442216
@@ -299,7 +299,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x64]      ; 004424a5
     ADD EAX,dword ptr [EDX + 0x148]     ; 004424a9
     MOV EBX,dword ptr [ESP + 0x50]      ; 004424af
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004424b3 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004424b3 | g_ZBufferScanlineArray
     MOV EDX,dword ptr [EDX + 0x144]     ; 004424ba
     ADD EAX,EBX                         ; 004424c0
     MOV EBX,dword ptr [EAX + EDX*0x4]   ; 004424c2

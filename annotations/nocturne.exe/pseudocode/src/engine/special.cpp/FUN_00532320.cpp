@@ -13,10 +13,10 @@ uint engine_special_cpp_FUN_00532320(void)
 {
   uint uVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  DAT_005b7624 = _DAT_02dc9e20;
+  g_BitsPerPixel = _DAT_02dc9e20;
   uVar1 = (*_DAT_02dc9d98)();
   return uVar1;
 }

@@ -110,10 +110,10 @@
         "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 358,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 370,
+        "message": "no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'"
       }
     ],
     "success": false,
@@ -336,14 +336,14 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -1798,7 +1798,7 @@
       "line": 390,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);",
+      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);",
       "type": "unnamed_param"
     },
     {
@@ -1806,7 +1806,7 @@
       "line": 390,
       "match": "DAT_00767274",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);",
+      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);",
       "type": "undefined_data"
     },
     {

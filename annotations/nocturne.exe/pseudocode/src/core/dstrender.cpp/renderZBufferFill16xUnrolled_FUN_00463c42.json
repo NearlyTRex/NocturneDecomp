@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
       }
     ],
     "success": false,
@@ -68,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 97,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 82,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 228
   },
   "cross_references": [
@@ -104,14 +96,14 @@
   "globals": [
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
@@ -122,8 +114,8 @@
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {
@@ -183,14 +175,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar1 * 4);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

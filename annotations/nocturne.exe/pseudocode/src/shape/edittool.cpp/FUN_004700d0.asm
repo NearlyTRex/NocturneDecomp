@@ -13,8 +13,8 @@
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcddec
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   int g_ClipLeft
+;   int g_ClipTop
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -74,9 +74,9 @@ section .text
     PUSH -0x1                           ; 00470141
     MOV EAX,[0x01bcddec]                ; 00470143 | DAT_01bcddec
     PUSH EAX                            ; 00470148
-    MOV EDX,dword ptr [0x01c00c5c]      ; 00470149 | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 00470149 | g_ClipTop
     PUSH EDX                            ; 0047014f
-    MOV ECX,dword ptr [0x01c00c58]      ; 00470150 | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 00470150 | g_ClipLeft
     PUSH ECX                            ; 00470156
     PUSH 0x1bcb0d0                      ; 00470157
     MOV EBX,dword ptr [0x01bcd070]      ; 0047015c | DAT_01bcd070

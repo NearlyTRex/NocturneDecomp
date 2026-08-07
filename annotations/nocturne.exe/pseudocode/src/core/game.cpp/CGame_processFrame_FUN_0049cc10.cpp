@@ -82,7 +82,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGame_PTR_005bdee0);
     return;
   }
-  if (_DAT_01c02594 != 0) {
+  if (g_UseExternalRenderer != 0) {
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
     local_40 = 1;
   }
@@ -218,7 +218,8 @@ LAB_0049cf70:
                     local_2c = iVar8 << 2;
                     do {
                       if (local_28 < local_20) {
-                        puVar10 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));
+                        puVar10 = (uint *)(local_28 * 4 +
+                                          *(int *)((int)g_ScreenBufferArray + local_24));
                         iVar6 = local_28;
                         do {
                           uVar7 = *puVar10;

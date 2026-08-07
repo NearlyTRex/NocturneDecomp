@@ -54,54 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 49,
-        "message": "no matching function for call to 'engine_clipper_c_FUN_00432cd0'"
       }
     ],
     "success": false,
@@ -110,22 +62,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 291,
+    "complexity_score": 250,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 22,
+    "pseudocode_lines": 40,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -154,7 +104,7 @@
     {
       "addr": "00432cd0",
       "is_variadic": false,
-      "name": "engine_clipper.c_FUN_00432cd0"
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0"
     },
     {
       "addr": "004cde10",
@@ -165,32 +115,32 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
       "addr": "01c03948",
-      "name": "DAT_01c03948",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -273,16 +223,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int * engine_3d_c_FUN_00406a00(SMRGLHeaderPrimitive *param_1)",
@@ -290,7 +232,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 7,
       "match": "aUStackY_1010",
       "severity": "moderate",
       "text": "UIntegerFloat aUStackY_1010 [1016];",
@@ -298,7 +240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28.x = *(int *)&(param_1->surface_normal).A;",
@@ -306,7 +248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28.y = *(int *)&(param_1->surface_normal).B;",
@@ -314,7 +256,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28.z = *(int *)&(param_1->surface_normal).C;",
@@ -322,31 +264,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&param_1->surface_normal);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);",
@@ -354,23 +280,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_clipper_c_FUN_00432cd0((param_1->base).count,param_1 + 1);",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00432cd0((param_1->base).count,(int *)(param_1 + 1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00432cd0((param_1->base).count,(int *)(param_1 + 1));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_FUN_00432cd0((param_1->base).count,param_1 + 1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "return &param_1[1].base.type + (param_1->base).count;",
@@ -378,7 +304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "return &param_1[1].base.type + (param_1->base).count;",
@@ -386,7 +312,7 @@
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =",
@@ -394,7 +320,7 @@
     },
     {
       "description": "Pointer value `&local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "(int)&local_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);",
@@ -402,7 +328,7 @@
     },
     {
       "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&local_28",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -410,7 +336,7 @@
     },
     {
       "description": "Pointer value `&local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "(int)&local_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -418,7 +344,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =",
@@ -426,7 +352,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);",
@@ -434,7 +360,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -442,7 +368,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",

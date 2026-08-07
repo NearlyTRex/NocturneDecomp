@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_restoreZBuffer_FUN_00532c90(int left,int top,int 
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9dec)(left,top,mode,right,bottom);

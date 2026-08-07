@@ -15,13 +15,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_00581912
 ;   TerminatedCString s_Invalid_bitsPerPixel_in_00581925
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c00634
-;   undefined4 DAT_01c0063c
-;   undefined4 DAT_01c00640
+;   int g_BitsPerPixel = 0x8
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   int g_GreenScaleFactor
+;   _BIT_INTEGER32 g_BlueBitPosition
+;   int g_BlueScaleFactor
 ;   undefined4 DAT_01c70f5c
 ;   undefined4 DAT_01c70f5e
 ;   undefined4 DAT_01c70f60
@@ -46,7 +46,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x20]      ; 00490ff7
     MOV EBX,dword ptr [ESP + 0x24]      ; 00490ffb
     MOV EDI,dword ptr [ESP + 0x28]      ; 00490fff
-    MOV EDX,dword ptr [0x005b7624]      ; 00491003 | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 00491003 | g_BitsPerPixel
     CMP EDX,0x8                         ; 00491009
     JZ 0x00491068                       ; 0049100c
         ;   XREF to: 00491068 (CONDITIONAL_JUMP)  ; LAB_00491068
@@ -59,13 +59,13 @@ section .text
     CMP EDX,EDX                         ; 0049101c
     JNZ 0x004910f9                      ; 0049101e
         ;   XREF to: 004910f9 (CONDITIONAL_JUMP)  ; LAB_004910f9
-    MOV CL,byte ptr [0x01c00624]        ; 00491024 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00491024 | g_RedBitPosition
     MOV EDX,ESI                         ; 0049102a
     MOV EAX,EBX                         ; 0049102c
     SHL EDX,CL                          ; 0049102e
-    MOV CL,byte ptr [0x01c00630]        ; 00491030 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 00491030 | g_GreenBitPosition
     SHL EAX,CL                          ; 00491036
-    MOV CL,byte ptr [0x01c0063c]        ; 00491038 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 00491038 | g_BlueBitPosition
     OR EAX,EDX                          ; 0049103e
     MOV EDX,EDI                         ; 00491040
     SHL EDX,CL                          ; 00491042
@@ -97,32 +97,32 @@ section .text
     MOV [0x01c70f5c],AL                 ; 00491086 | DAT_01c70f5c
     JMP 0x0049104e                      ; 0049108b
         ;   XREF to: 0049104e (UNCONDITIONAL_JUMP)  ; LAB_0049104e
-    MOV EBP,dword ptr [0x01c00628]      ; 0049108d | DAT_01c00628
+    MOV EBP,dword ptr [0x01c00628]      ; 0049108d | g_RedScaleFactor
         ;   Label: LAB_0049108d
     MOV EAX,ESI                         ; 00491093
     XOR EDX,EDX                         ; 00491095
     DIV EBP                             ; 00491097
     MOV dword ptr [ESP],ESI             ; 00491099
-    MOV ECX,dword ptr [0x01c00634]      ; 0049109c | DAT_01c00634
+    MOV ECX,dword ptr [0x01c00634]      ; 0049109c | g_GreenScaleFactor
     MOV dword ptr [ESP],EAX             ; 004910a2
     XOR EDX,EDX                         ; 004910a5
     MOV EAX,EBX                         ; 004910a7
     DIV ECX                             ; 004910a9
     MOV dword ptr [ESP + 0x4],EBX       ; 004910ab
-    MOV EBP,dword ptr [0x01c00640]      ; 004910af | DAT_01c00640
+    MOV EBP,dword ptr [0x01c00640]      ; 004910af | g_BlueScaleFactor
     MOV dword ptr [ESP + 0x4],EAX       ; 004910b5
     XOR EDX,EDX                         ; 004910b9
     MOV EAX,EDI                         ; 004910bb
     DIV EBP                             ; 004910bd
     MOV dword ptr [ESP + 0x8],EDI       ; 004910bf
-    MOV CL,byte ptr [0x01c00624]        ; 004910c3 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004910c3 | g_RedBitPosition
     MOV dword ptr [ESP + 0x8],EAX       ; 004910c9
     MOV EAX,dword ptr [ESP]             ; 004910cd
     MOV EDX,dword ptr [ESP + 0x4]       ; 004910d0
     SHL EAX,CL                          ; 004910d4
-    MOV CL,byte ptr [0x01c00630]        ; 004910d6 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004910d6 | g_GreenBitPosition
     SHL EDX,CL                          ; 004910dc
-    MOV CL,byte ptr [0x01c0063c]        ; 004910de | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004910de | g_BlueBitPosition
     OR EAX,EDX                          ; 004910e4
     MOV EDX,dword ptr [ESP + 0x8]       ; 004910e6
     SHL EDX,CL                          ; 004910ea

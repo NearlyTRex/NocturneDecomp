@@ -93,27 +93,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 46,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
+        "column": 3,
+        "line": 89,
+        "message": "use of undeclared identifier '_DAT_01c039e8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 83,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
+        "column": 3,
+        "line": 93,
+        "message": "use of undeclared identifier '_DAT_01c039ec'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
+        "column": 3,
+        "line": 100,
+        "message": "use of undeclared identifier '_DAT_01c039f4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
+        "column": 3,
+        "line": 104,
+        "message": "use of undeclared identifier '_DAT_01c039f8'"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 191,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 112,
     "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 365
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -193,38 +193,38 @@
     },
     {
       "addr": "01c00c48",
-      "name": "DAT_01c00c48",
-      "type": "undefined4",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "01c00c4c",
-      "name": "DAT_01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     },
     {
@@ -401,7 +401,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 18,
-          "line": 86,
+          "line": 87,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -421,7 +421,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 85,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)iVar6) / (longlong)DAT_005b7648);",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 92,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)DAT_005b7648);",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)iVar6) / (longlong)DAT_005b7648);",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)iVar6) / (longlong)DAT_005b7648);",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)iVar6) / (longlong)DAT_005b7648);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 113,
       "match": "DAT_005b7648",
       "severity": "mild",
       "text": "(longlong)DAT_005b7648);",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 86,
+      "line": 87,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar12 = iVar6 >> 0x1f;",

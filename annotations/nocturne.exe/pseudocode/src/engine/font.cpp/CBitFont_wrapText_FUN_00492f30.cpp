@@ -30,8 +30,8 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_00492f30(CBitFont *this_ptr,ch
   if (0 < max_lines) {
     local_18 = dest_buffer;
     do {
-      for (; (((&DAT_005c168c)[(byte)(*source_text + 1)] & 2) != 0 && (*source_text != '\n'));
-          source_text = source_text + 1) {
+      for (; ((g_CharacterClassificationTable[(byte)(*source_text + 1)] & 2) != 0 &&
+             (*source_text != '\n')); source_text = source_text + 1) {
       }
       if (*source_text == '\0') {
         return local_24;
@@ -43,7 +43,7 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_00492f30(CBitFont *this_ptr,ch
       while( true ) {
         cVar1 = *pcVar6;
         if ((cVar1 == '\n') || (cVar1 == '\0')) goto LAB_00492fe4;
-        if (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 2) != 0) {
+        if ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0) {
           local_14 = uVar5;
         }
         if (line_width + -1 <= (int)uVar5) break;
@@ -62,7 +62,7 @@ LAB_00492fe4:
       if (0 < (int)uVar5) {
         pcVar6 = source_text + uVar5;
         do {
-          if (((&DAT_005c168c)[(byte)(pcVar6[-1] + 1)] & 2) == 0) break;
+          if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2) == 0) break;
           uVar4 = uVar4 - 1;
           pcVar6 = pcVar6 + -1;
         } while (0 < (int)uVar4);

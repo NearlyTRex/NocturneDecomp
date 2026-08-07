@@ -27,7 +27,7 @@
 ;   CBitFont* g_CBitFont_PTR_014b98fc
 ;   CBitFont* g_CBitFont_PTR_014b9904
 ;   CBitFont* g_CBitFont_PTR_014b990c
-;   undefined4 DAT_01c00c5c
+;   int g_ClipTop
 ;   CGame g_CGame_01c775ec
 ;   undefined4 g_CGame_01c775ec.subtitle_mode
 ;   undefined4 g_CGame_01c775ec.letterbox_mode
@@ -132,7 +132,7 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004fe83a
         ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004fe83f
-    MOV EAX,[0x01c00c5c]                ; 004fe842 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 004fe842 | g_ClipTop
         ;   Label: LAB_004fe842
     MOV dword ptr [ESP + 0x4],EAX       ; 004fe847
     MOV EAX,EBX                         ; 004fe84b
@@ -248,7 +248,7 @@ section .text
     MOV EBX,EBX                         ; 004fe97e
     MOV EAX,dword ptr [ESP + 0x4]       ; 004fe980
         ;   Label: LAB_004fe980
-    MOV [0x01c00c5c],EAX                ; 004fe984 | DAT_01c00c5c
+    MOV [0x01c00c5c],EAX                ; 004fe984 | g_ClipTop
     ADD ESP,0x20                        ; 004fe989
     POP EBP                             ; 004fe98c
     POP EDI                             ; 004fe98d

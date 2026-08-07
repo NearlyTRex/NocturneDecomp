@@ -420,6 +420,14 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50 = {
     .object_instance = (void *)&g_CStrList_02dc9610
 };
 
+// _MMX_INTEGER
+_MMX_INTEGER g_RedMask16 = {0x000000000000F800ULL};
+_MMX_INTEGER g_GreenMask16 = {0x00000000000007E0ULL};
+_MMX_INTEGER g_BlueMask16 = {0x000000000000001FULL};
+_MMX_INTEGER g_RedMask32 = {0x0000000000F80000ULL};
+_MMX_INTEGER g_GreenMask32 = {0x000000000000FC00ULL};
+_MMX_INTEGER g_BlueMask32 = {0x00000000000000F8ULL};
+
 // int
 int g_INT_005b064c = 0x6;
 int g_INT_005b0660 = 0x2;
@@ -427,6 +435,7 @@ int INT_005b75dc = 0x7;
 int INT_005b7604 = 0xA;
 int g_WindowWidth = 0x140;
 int g_WindowHeight = 0xC8;
+int g_BitsPerPixel = 0x8;
 int INT_005b8018 = 0x2;
 int INT_005b801c = 0x2;
 int g_INT_005b91c0 = 0x7;
@@ -558,7 +567,6 @@ undefined4 DAT_005b7278 = 0x00000000;
 undefined4 DAT_005b727c = 0x00000000;
 undefined4 DAT_005b7478 = 0x00000000;
 undefined4 DAT_005b747c = 0x00000000;
-undefined4 DAT_005b7624 = 0x00000008;
 undefined4 DAT_005b762c = 0x00000100;
 undefined4 DAT_005b7630 = 0x0000007F;
 undefined4 DAT_005b7638 = 0x00000005;
@@ -634,9 +642,6 @@ undefined4 DAT_005bf4e8 = 0x00000000;
 undefined4 DAT_005bf4ec = 0x00000000;
 undefined4 DAT_005bf4f0 = 0x00000000;
 undefined4 DAT_005bf540 = 0x00000000;
-undefined4 DAT_005bf5b8 = 0x0000F800;
-undefined4 DAT_005bf5c0 = 0x000007E0;
-undefined4 DAT_005bf5c8 = 0x0000001F;
 
 // undefined8
 undefined8 DAT_005b4748 = 0x0000000000000000;

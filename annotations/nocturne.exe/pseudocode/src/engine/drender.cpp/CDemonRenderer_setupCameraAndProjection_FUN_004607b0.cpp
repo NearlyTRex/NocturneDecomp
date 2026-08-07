@@ -82,12 +82,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046
   dVar20 = round((double)(local_20.x * fVar10 * fVar9));
   dVar21 = round((double)(local_20.z * fVar12 * fVar11));
   dVar22 = round((double)(local_20.y * fVar14 * fVar13));
-  iVar17 = _DAT_01c00c64;
-  iVar18 = _DAT_01c00c5c;
+  iVar17 = g_ClipBottom;
+  iVar18 = g_ClipTop;
   _DAT_01c039d0 = (int)ROUND(dVar20);
   _DAT_01c039d4 = (int)ROUND(dVar21);
   _DAT_01c039d8 = (int)ROUND(dVar22);
-  iVar19 = _DAT_01c00c60 - _DAT_01c00c58;
+  iVar19 = g_ClipRight - g_ClipLeft;
   this_ptr->projection_reciprocal = (int)(0x100000000 / (longlong)iVar16);
   iVar16 = DAT_005b7648;
   iVar18 = ((iVar19 + 1) * 0x10000) / ((iVar17 - iVar18) + 1);

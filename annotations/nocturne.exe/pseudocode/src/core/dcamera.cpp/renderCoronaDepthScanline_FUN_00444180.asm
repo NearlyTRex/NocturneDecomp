@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_012b0660
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   int g_ClipLeft
+;   int g_ClipTop
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 00444184
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00444188
     MOV ECX,dword ptr [ESP + 0x14]      ; 0044418c
-    SUB ECX,dword ptr [0x01c00c5c]      ; 00444190 | DAT_01c00c5c
+    SUB ECX,dword ptr [0x01c00c5c]      ; 00444190 | g_ClipTop
     MOV EBX,dword ptr [0x012b0660]      ; 00444196 | DAT_012b0660
     MOV dword ptr [ESP + 0x14],ECX      ; 0044419c
     CMP EBX,0x1                         ; 004441a0
@@ -48,7 +48,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 004441c4
         ;   Label: LAB_004441c4
     MOV CL,byte ptr [0x012b0660]        ; 004441c8 | DAT_012b0660
-    MOV EAX,[0x01c00c58]                ; 004441ce | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 004441ce | g_ClipLeft
     MOV EBX,dword ptr [EDI + 0x8]       ; 004441d3
     MOV ESI,dword ptr [EDX + 0x8]       ; 004441d6
     SAR EBX,0x10                        ; 004441d9

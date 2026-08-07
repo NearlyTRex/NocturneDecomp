@@ -13,10 +13,10 @@
 ;   engine_matrix.c_projectCachedPoint_FUN_004cd240 at 004cd256
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;
 ; *****************************************************************************
 
@@ -74,20 +74,20 @@ section .text
     SAR EDX,0x1f                        ; 004cd2b4
     IDIV ECX                            ; 004cd2b7
     MOV EBX,ECX                         ; 004cd2b9
-    MOV EDX,dword ptr [0x01c00c48]      ; 004cd2bb | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 004cd2bb | g_Projection
     MOV dword ptr [ESI + 0xc],EAX       ; 004cd2c1
     MOV EAX,EDI                         ; 004cd2c4
     IMUL EDX                            ; 004cd2c6
     IDIV EBX                            ; 004cd2c8
-    MOV EDX,dword ptr [0x01c00c50]      ; 004cd2ca | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 004cd2ca | g_Projection.center_x_fixed
     MOV EBX,ECX                         ; 004cd2d0
     ADD EAX,EDX                         ; 004cd2d2
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004cd2d4 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004cd2d4 | g_Projection.neg_half_height_fixed
     MOV dword ptr [ESI + 0x10],EAX      ; 004cd2da
     MOV EAX,EBP                         ; 004cd2dd
     IMUL EDX                            ; 004cd2df
     IDIV EBX                            ; 004cd2e1
-    MOV EDX,dword ptr [0x01c00c54]      ; 004cd2e3 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004cd2e3 | g_Projection.center_y_fixed
     ADD EAX,EDX                         ; 004cd2e9
     MOV dword ptr [ESI + 0x14],EAX      ; 004cd2eb
     POP EBX                             ; 004cd2ee

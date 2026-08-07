@@ -13,7 +13,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
 __asm {
         mov EBP,ESP
         sub ESP,0x7c
-        mov EDX,dword ptr [DAT_01c02594]
+        mov EDX,dword ptr [g_UseExternalRenderer]
         test EDX,EDX
         jnz LAB_005539d2
         mov ECX,dword ptr [DAT_02ddf564]
@@ -21,7 +21,7 @@ __asm {
         jnz LAB_005539b0
         cmp dword ptr [DAT_02ddf56c],0x0
         jz LAB_005539eb
-        mov EBX,dword ptr [DAT_005c5010]
+        mov EBX,dword ptr [g_BackBuffer]
         mov dword ptr [DAT_02ddf56c],EDX
         call wincore_wddvmem_cpp_openScreenDevice_FUN_00553470
         mov ESI,dword ptr [g_WindowHeight]
@@ -31,7 +31,7 @@ __asm {
         xor ESI,ESI
     LAB_00553961:
         mov ECX,dword ptr [g_WindowWidth]
-        mov EAX,dword ptr [DAT_01bd2fa0 + ESI]
+        mov EAX,dword ptr [g_ScreenBufferArray + ESI]
         xor EDX,EDX
         test ECX,ECX
         jle LAB_00553994
@@ -58,7 +58,7 @@ __asm {
         call wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520
         mov dword ptr [DAT_02ddf56c],0x1
     LAB_005539b0:
-        mov EBX,dword ptr [DAT_02ddf554]
+        mov EBX,dword ptr [g_DirectDrawSurface]
         test EBX,EBX
         jnz LAB_00553b2f
     LAB_005539be:
@@ -83,9 +83,9 @@ __asm {
         pop EBX
         ret
     LAB_005539eb:
-        mov EAX,[DAT_005c5010]
+        mov EAX,[g_BackBuffer]
         mov dword ptr [EBP + -0x10],EAX
-        mov EAX,[DAT_005b7624]
+        mov EAX,[g_BitsPerPixel]
         mov EDX,EAX
         sar EDX,0x1f
         shl EDX,0x3
@@ -105,7 +105,7 @@ __asm {
         lea EDX,[EBP + -0x7c]
         mov ESI,0x6c
         push EDX
-        mov EAX,[DAT_02ddf554]
+        mov EAX,[g_DirectDrawSurface]
         mov dword ptr [EBP + -0x7c],ESI
         push 0x0
         mov EBX,dword ptr [EAX]
@@ -161,7 +161,7 @@ __asm {
         mov EAX,EAX
     LAB_00553ae0:
         push 0x0
-        mov EAX,[DAT_02ddf554]
+        mov EAX,[g_DirectDrawSurface]
         push EAX
         mov EDX,dword ptr [EAX]
         call dword ptr [EDX + 0x80]

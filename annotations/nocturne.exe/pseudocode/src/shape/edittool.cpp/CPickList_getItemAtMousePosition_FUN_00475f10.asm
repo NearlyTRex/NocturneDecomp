@@ -12,8 +12,8 @@
 ;   shape_edittool.cpp_FUN_00475230 at 0047537f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   int g_ClipLeft
+;   int g_ClipTop
 ;
 ; *****************************************************************************
 
@@ -27,12 +27,12 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 00475f14
     MOV ESI,dword ptr [ESP + 0x18]      ; 00475f18
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00475f1c
-    SUB EDX,dword ptr [0x01c00c5c]      ; 00475f20 | DAT_01c00c5c
+    SUB EDX,dword ptr [0x01c00c5c]      ; 00475f20 | g_ClipTop
     MOV EBP,dword ptr [ECX + 0x110]     ; 00475f26
     MOV EAX,EDX                         ; 00475f2c
     SAR EDX,0x1f                        ; 00475f2e
     IDIV EBP                            ; 00475f31
-    SUB ESI,dword ptr [0x01c00c58]      ; 00475f33 | DAT_01c00c58
+    SUB ESI,dword ptr [0x01c00c58]      ; 00475f33 | g_ClipLeft
     MOV EBX,EAX                         ; 00475f39
     MOV EDX,ESI                         ; 00475f3b
     MOV EAX,ESI                         ; 00475f3d

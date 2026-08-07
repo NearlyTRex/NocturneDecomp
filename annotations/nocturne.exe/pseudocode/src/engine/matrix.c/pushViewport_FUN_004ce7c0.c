@@ -20,15 +20,15 @@ void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc558c) = _DAT_01c039dc;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc55b4) = _DAT_01c039e0;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc55dc) = _DAT_01c039e4;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc53d4) = _DAT_01c00c48;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc53fc) = _DAT_01c00c4c;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5424) = _DAT_01c00c50;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc544c) = _DAT_01c00c54;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc53d4) = g_Projection.half_width_fixed;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc53fc) = g_Projection.neg_half_height_fixed;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5424) = g_Projection.center_x_fixed;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc544c) = g_Projection.center_y_fixed;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5474) = DAT_005b7648;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5604) = _DAT_01c00c58;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc562c) = _DAT_01c00c60;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5654) = _DAT_01c00c5c;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc567c) = _DAT_01c00c64;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5604) = g_ClipLeft;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc562c) = g_ClipRight;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc5654) = g_ClipTop;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc567c) = g_ClipBottom;
   _DAT_01cc53d0 = _DAT_01cc53d0 + 1;
   if (9 < _DAT_01cc53d0) {
     g_CurrentFilename = "..\\engine\\matrix.c";

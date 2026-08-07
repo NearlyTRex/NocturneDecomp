@@ -60,8 +60,8 @@
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005651ca
 ;   crt_fstream.cpp_openFile_FUN_00565eb5
 ;   crt_fstream.cpp_ostream_write_FUN_00565a13
+;   crt_iostream.cpp_ostream_flush_FUN_00565e59
 ;   crt_stdio.c_fclose_FUN_00563380
-;   crt_stdio.c_fflush_FUN_00565e59
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   ... and 16 more
 ;
@@ -404,13 +404,13 @@ section .text
     ADD ESP,0x8                         ; 004a3f5f
     LEA EAX,[ESP + 0x40c]               ; 004a3f62
     PUSH EAX                            ; 004a3f69
-    CALL crt_stdio.c_fflush_FUN_00565e59 ; 004a3f6a
-        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00565e59(_FILE * stream)
+    CALL crt_iostream.cpp_ostream_flush_FUN_00565e59 ; 004a3f6a
+        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_ostream_flush_FUN_00565e59(void * this_ptr)
     ADD ESP,0x4                         ; 004a3f6f
     LEA EAX,[ESP + 0x48c]               ; 004a3f72
     PUSH EAX                            ; 004a3f79
-    CALL crt_stdio.c_fflush_FUN_00565e59 ; 004a3f7a
-        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00565e59(_FILE * stream)
+    CALL crt_iostream.cpp_ostream_flush_FUN_00565e59 ; 004a3f7a
+        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_ostream_flush_FUN_00565e59(void * this_ptr)
     ADD ESP,0x4                         ; 004a3f7f
     PUSH EBP                            ; 004a3f82
     LEA EAX,[ESP + 0x510]               ; 004a3f83

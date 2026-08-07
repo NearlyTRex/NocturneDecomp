@@ -169,38 +169,38 @@
   "globals": [
     {
       "addr": "005bf5b8",
-      "name": "DAT_005bf5b8",
-      "type": "undefined4",
+      "name": "g_RedMask16",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5c0",
-      "name": "DAT_005bf5c0",
-      "type": "undefined4",
+      "name": "g_GreenMask16",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5c8",
-      "name": "DAT_005bf5c8",
-      "type": "undefined4",
+      "name": "g_BlueMask16",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5d0",
-      "name": "DAT_005bf5d0",
-      "type": "undefined4",
+      "name": "g_RedMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5f0",
-      "name": "DAT_005bf5f0",
-      "type": "undefined4",
+      "name": "g_GreenMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf610",
-      "name": "DAT_005bf610",
-      "type": "undefined4",
+      "name": "g_BlueMask32",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -445,7 +445,7 @@
       "line": 47,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar24 = (uint7)((uVar6 & _DAT_005bf5c8) << _DAT_005bf658) |",
+      "text": "uVar24 = (uint7)((uVar6 & g_BlueMask16.mm) << _DAT_005bf658) |",
       "type": "nonstandard_int"
     },
     {
@@ -453,7 +453,7 @@
       "line": 48,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & _DAT_005bf5c0) << _DAT_005bf638) |",
+      "text": "(uint7)((uVar6 & g_GreenMask16.mm) << _DAT_005bf638) |",
       "type": "nonstandard_int"
     },
     {
@@ -461,7 +461,7 @@
       "line": 49,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar6 & _DAT_005bf5b8) << _DAT_005bf618);",
+      "text": "(uint7)((uVar6 & g_RedMask16.mm) << _DAT_005bf618);",
       "type": "nonstandard_int"
     },
     {

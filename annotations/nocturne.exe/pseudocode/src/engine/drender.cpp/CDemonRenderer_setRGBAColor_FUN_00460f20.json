@@ -54,60 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_01c00624'; did you mean 'DAT_02DF0624'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 72,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_01c00630'; did you mean 'DAT_02DF0630'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 16,
-        "message": "use of undeclared identifier 'DAT_01c0063c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
       }
     ],
     "success": false,
@@ -116,17 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 89,
+    "complexity_score": 19,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -177,38 +120,38 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c00624",
-      "name": "DAT_01c00624",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00630",
-      "name": "DAT_01c00630",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c0063c",
-      "name": "DAT_01c0063c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     }
   ],
@@ -339,54 +282,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "uVar1 = blue_component << (DAT_01c0063c & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "red_component << (DAT_01c00624 & 0x1f) | green_component << (DAT_01c00630 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "red_component << (DAT_01c00624 & 0x1f) | green_component << (DAT_01c00630 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

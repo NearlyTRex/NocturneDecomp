@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00558c00(int x_coord,int y_coord)
 
 {
-  if ((((_DAT_01c00c58 < x_coord) && (_DAT_01c00c5c < y_coord)) && (x_coord < _DAT_01c00c60)) &&
-     (y_coord < _DAT_01c00c64)) {
+  if ((((g_ClipLeft < x_coord) && (g_ClipTop < y_coord)) && (x_coord < g_ClipRight)) &&
+     (y_coord < g_ClipBottom)) {
     engine_2d_c_plotPixel_FUN_00401530(x_coord,y_coord);
     return;
   }

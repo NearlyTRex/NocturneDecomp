@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b0260
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine3D_FUN_00401710
@@ -39,7 +39,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0xa4]      ; 004610aa
     MOV EAX,[0x006b0260]                ; 004610b1 | DAT_006b0260
     MOV EBX,dword ptr [ESP + 0xa8]      ; 004610b6
-    MOV [0x01c00c70],EAX                ; 004610bd | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 004610bd | g_ActiveRenderColor
     LEA EAX,[EBX*0x4 + 0x0]             ; 004610c2
     MOV ECX,0xc                         ; 004610c9
     SUB EAX,EBX                         ; 004610ce

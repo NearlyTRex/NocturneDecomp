@@ -18,7 +18,7 @@ CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040d4d0(char *
     bVar1 = *className;
     className = className + 1;
     if (bVar1 == 0) break;
-    if (((&DAT_005c168c)[(byte)(bVar1 + 1)] & 0xe0) != 0) {
+    if ((g_CharacterClassificationTable[(byte)(bVar1 + 1)] & 0xe0) != 0) {
       iVar2 = tolower((uint)bVar1);
       uVar3 = iVar2 * 0x20001 + uVar3 * 0x80 + (uVar3 >> 0x19);
     }

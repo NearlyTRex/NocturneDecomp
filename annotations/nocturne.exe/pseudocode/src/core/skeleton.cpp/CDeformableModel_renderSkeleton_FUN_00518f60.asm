@@ -29,7 +29,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00518130
@@ -109,7 +109,7 @@ section .text
     XOR EDX,EDX                         ; 00519004
     MOV ECX,dword ptr [EBP + 0x28558]   ; 00519006
     MOV dword ptr [ESP + 0x38],EDX      ; 0051900c
-    MOV [0x01c00c70],EAX                ; 00519010 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00519010 | g_ActiveRenderColor
     TEST ECX,ECX                        ; 00519015
     JLE 0x0051907d                      ; 00519017
         ;   XREF to: 0051907d (CONDITIONAL_JUMP)  ; LAB_0051907d

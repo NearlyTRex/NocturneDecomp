@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
         "line": 29,
         "message": "use of undeclared identifier '_DAT_012b0660'"
@@ -72,24 +66,6 @@
         "column": 57,
         "line": 29,
         "message": "use of undeclared identifier '_DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 42,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +90,30 @@
         "column": 32,
         "line": 47,
         "message": "use of undeclared identifier '_DAT_014b7190'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 48,
+        "message": "use of undeclared identifier '_DAT_014b7190'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_012b0660'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 50,
+        "message": "use of undeclared identifier '_DAT_0140d780'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 51,
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 157,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 67,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -177,20 +177,20 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     }
   ],
@@ -320,14 +320,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "local_14 = (uint *)(*(int *)(&DAT_01bd4260 + uVar7 * 4) + iVar11 * 4);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

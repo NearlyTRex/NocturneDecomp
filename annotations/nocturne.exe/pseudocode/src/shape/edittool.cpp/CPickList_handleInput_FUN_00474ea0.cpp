@@ -125,7 +125,7 @@ LAB_0047509f:
         }
       }
       cStack_14 = (char)iVar2;
-      if (((&DAT_005c168c)[(byte)(cStack_14 + 1)] & 0xe0) != 0) {
+      if ((g_CharacterClassificationTable[(byte)(cStack_14 + 1)] & 0xe0) != 0) {
         uVar5 = 0xffffffff;
         pcVar3 = str1;
         do {

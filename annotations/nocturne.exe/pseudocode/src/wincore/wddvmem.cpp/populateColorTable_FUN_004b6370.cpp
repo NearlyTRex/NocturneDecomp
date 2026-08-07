@@ -17,10 +17,10 @@ void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (DAT_005b7624 == 0x20) {
-      uVar2 = (uint)g_SourcePaletteData[iVar1 + 2] << (DAT_01c0063c & 0x1f) |
-              (uint)g_SourcePaletteData[iVar1] << (DAT_01c00624 & 0x1f) |
-              (uint)g_SourcePaletteData[iVar1 + 1] << (DAT_01c00630 & 0x1f);
+    if (g_BitsPerPixel == 0x20) {
+      uVar2 = (uint)g_SourcePaletteData[iVar1 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+              (uint)g_SourcePaletteData[iVar1] << (g_RedBitPosition.bytes[0] & 0x1f) |
+              (uint)g_SourcePaletteData[iVar1 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f);
     }
     else {
       uVar2 = (uint)g_SourcePaletteData[iVar1] << 0x10 | (uint)g_SourcePaletteData[iVar1 + 1] << 8 |
@@ -28,7 +28,7 @@ void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004b6370(void)
     }
     iVar4 = iVar3 + 4;
     iVar1 = iVar1 + 3;
-    *(uint *)(iVar3 + 0x1bff920) = uVar2;
+    *(uint *)((int)g_ColorTable32 + iVar3) = uVar2;
     iVar3 = iVar4;
   } while (iVar4 != 0x400);
   return;

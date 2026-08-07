@@ -142,23 +142,23 @@ section .text
     PUSH -0x1                           ; 00471835
     MOV EDI,dword ptr [0x01bcddec]      ; 00471837 | DAT_01bcddec
     PUSH EDI                            ; 0047183d
-    MOV EAX,[0x01c00c5c]                ; 0047183e | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 0047183e | g_ClipTop
     PUSH EAX                            ; 00471843
-    MOV EDX,dword ptr [0x01c00c60]      ; 00471844 | DAT_01c00c60
+    MOV EDX,dword ptr [0x01c00c60]      ; 00471844 | g_ClipRight
     PUSH EDX                            ; 0047184a
-    MOV ECX,dword ptr [0x01c00c58]      ; 0047184b | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 0047184b | g_ClipLeft
     PUSH ECX                            ; 00471851
     MOV EBX,dword ptr [0x01bcd070]      ; 00471852 | DAT_01bcd070
     PUSH EBX                            ; 00471858
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 00471859
         ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     MOV EAX,[0x01bcd9bc]                ; 0047185e | DAT_01bcd9bc
-    MOV EDI,dword ptr [0x01c00c5c]      ; 00471863 | DAT_01c00c5c
+    MOV EDI,dword ptr [0x01c00c5c]      ; 00471863 | g_ClipTop
     ADD EAX,EAX                         ; 00471869
     ADD EAX,EDI                         ; 0047186b
     LEA EDI,[EAX + 0x1]                 ; 0047186d
     MOV EAX,[0x01bcd9bc]                ; 00471870 | DAT_01bcd9bc
-    MOV EDX,dword ptr [0x01c00c5c]      ; 00471875 | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 00471875 | g_ClipTop
     SHL EAX,0x2                         ; 0047187b
     ADD ESP,0x20                        ; 0047187e
     ADD EAX,EDX                         ; 00471881
@@ -169,11 +169,11 @@ section .text
     MOV EAX,[0x01bcddf8]                ; 0047188f | DAT_01bcddf8
     PUSH EAX                            ; 00471894
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00471895
-    MOV ESI,dword ptr [0x01c00c60]      ; 00471899 | DAT_01c00c60
+    MOV ESI,dword ptr [0x01c00c60]      ; 00471899 | g_ClipRight
     PUSH EDX                            ; 0047189f
     DEC ESI                             ; 004718a0
     PUSH ESI                            ; 004718a1
-    MOV EBX,dword ptr [0x01c00c58]      ; 004718a2 | DAT_01c00c58
+    MOV EBX,dword ptr [0x01c00c58]      ; 004718a2 | g_ClipLeft
     PUSH EDI                            ; 004718a8
     INC EBX                             ; 004718a9
     PUSH EBX                            ; 004718aa
@@ -290,13 +290,13 @@ section .text
     MOV EDX,dword ptr [0x01bcddec]      ; 004719e9 | DAT_01bcddec
     PUSH -0x1                           ; 004719ef
     MOV ECX,dword ptr [0x01bcd9bc]      ; 004719f1 | DAT_01bcd9bc
-    MOV EAX,[0x01c00c64]                ; 004719f7 | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 004719f7 | g_ClipBottom
     PUSH EDX                            ; 004719fc
     SUB EAX,ECX                         ; 004719fd
     PUSH EAX                            ; 004719ff
-    MOV EBX,dword ptr [0x01c00c60]      ; 00471a00 | DAT_01c00c60
+    MOV EBX,dword ptr [0x01c00c60]      ; 00471a00 | g_ClipRight
     PUSH EBX                            ; 00471a06
-    MOV ESI,dword ptr [0x01c00c58]      ; 00471a07 | DAT_01c00c58
+    MOV ESI,dword ptr [0x01c00c58]      ; 00471a07 | g_ClipLeft
     PUSH ESI                            ; 00471a0d
     MOV EDI,dword ptr [0x01bcd070]      ; 00471a0e | DAT_01bcd070
     PUSH EDI                            ; 00471a14

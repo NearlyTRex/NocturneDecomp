@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_0140efa8
 ;   undefined4 DAT_0140efac
 ;   undefined4 DAT_0140efb0
@@ -22,11 +22,11 @@
 ;   undefined4 DAT_01410274
 ;   undefined4 DAT_01410278
 ;   undefined4 DAT_0141027c
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   uint*[1200] g_ZBufferScanlineArray
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -59,25 +59,25 @@ section .text
     MOV EDI,0x1bd2fa0                   ; 00440c71
     MOV EAX,[0x0140efac]                ; 00440c76 | DAT_0140efac
     MOV ECX,dword ptr [0x005b7620]      ; 00440c7b | g_WindowHeight
-    MOV [0x005b7624],EAX                ; 00440c81 | DAT_005b7624
+    MOV [0x005b7624],EAX                ; 00440c81 | g_BitsPerPixel
     MOV EAX,[0x0140efb0]                ; 00440c86 | DAT_0140efb0
     SHL ECX,0x2                         ; 00440c8b
-    MOV [0x01c02594],EAX                ; 00440c8e | DAT_01c02594
-    PUSH EDI                            ; 00440c93 | DAT_01bd2fa0
+    MOV [0x01c02594],EAX                ; 00440c8e | g_UseExternalRenderer
+    PUSH EDI                            ; 00440c93 | g_ScreenBufferArray
     MOV EAX,ECX                         ; 00440c94
     SHR ECX,0x2                         ; 00440c96
-    MOVSD.REP ES:EDI,ESI                ; 00440c99 | DAT_0140efb4 | DAT_01bd2fa0 | DAT_0140efb8
+    MOVSD.REP ES:EDI,ESI                ; 00440c99 | DAT_0140efb4 | g_ScreenBufferArray | DAT_0140efb8
     MOV CL,AL                           ; 00440c9b
     AND CL,0x3                          ; 00440c9d
-    MOVSB.REP ES:EDI,ESI                ; 00440ca0 | DAT_0140efb8 | DAT_01bd2fa4
+    MOVSB.REP ES:EDI,ESI                ; 00440ca0 | DAT_0140efb8 | g_ScreenBufferArray[1]
     POP EDI                             ; 00440ca2
     MOV EAX,[0x01410274]                ; 00440ca3 | DAT_01410274
-    MOV [0x01c00624],EAX                ; 00440ca8 | DAT_01c00624
+    MOV [0x01c00624],EAX                ; 00440ca8 | g_RedBitPosition
     MOV EAX,[0x01410278]                ; 00440cad | DAT_01410278
-    MOV [0x01c00630],EAX                ; 00440cb2 | DAT_01c00630
+    MOV [0x01c00630],EAX                ; 00440cb2 | g_GreenBitPosition
     MOV EAX,[0x0141027c]                ; 00440cb7 | DAT_0141027c
     MOV EBX,dword ptr [ESP + 0x18]      ; 00440cbc
-    MOV [0x01c0063c],EAX                ; 00440cc0 | DAT_01c0063c
+    MOV [0x01c0063c],EAX                ; 00440cc0 | g_BlueBitPosition
     TEST EBX,EBX                        ; 00440cc5
     JZ 0x00440c67                       ; 00440cc7
         ;   XREF to: 00440c67 (CONDITIONAL_JUMP)  ; LAB_00440c67
@@ -95,7 +95,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x13c]     ; 00440ced
     MOV EBX,dword ptr [EBP + 0x15c]     ; 00440cf3
     SHL EAX,0x2                         ; 00440cf9
-    MOV ECX,dword ptr [ECX + 0x1bd4260] ; 00440cfc | DAT_01bd4260
+    MOV ECX,dword ptr [ECX + 0x1bd4260] ; 00440cfc | g_ZBufferScanlineArray
     PUSH EAX                            ; 00440d02
     ADD ECX,EAX                         ; 00440d03
     SHL EDX,0x2                         ; 00440d05
@@ -111,7 +111,7 @@ section .text
     JL 0x00440cd5                       ; 00440d1d
         ;   XREF to: 00440cd5 (CONDITIONAL_JUMP)  ; LAB_00440cd5
     NOP                                 ; 00440d1f
-    CMP dword ptr [0x01c02594],0x0      ; 00440d20 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00440d20 | g_UseExternalRenderer
         ;   Label: LAB_00440d20
     JZ 0x00440c67                       ; 00440d27
         ;   XREF to: 00440c67 (CONDITIONAL_JUMP)  ; LAB_00440c67

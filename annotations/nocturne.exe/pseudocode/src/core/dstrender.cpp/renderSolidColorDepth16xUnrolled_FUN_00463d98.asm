@@ -9,9 +9,9 @@
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0 at 0045ef72
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00c70
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_ActiveRenderColor
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     SHR EAX,0x10                        ; 00463da8
         ;   Label: LAB_00463da8
     SHR ECX,0x10                        ; 00463dab
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463dae | DAT_01bd4260
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463db5 | DAT_01bd2fa0
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463dae | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463db5 | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00463dbc
     JLE 0x00463f73                      ; 00463dbe
         ;   XREF to: 00463f73 (CONDITIONAL_JUMP)  ; LAB_00463f73
@@ -48,7 +48,7 @@ section .text
     MOV EBX,EBP                         ; 00463ddb
     DEC ECX                             ; 00463ddd
     MOV ESI,dword ptr [ESI + 0x28]      ; 00463dde
-    MOV EAX,[0x01c00c70]                ; 00463de1 | DAT_01c00c70
+    MOV EAX,[0x01c00c70]                ; 00463de1 | g_ActiveRenderColor
     SUB ECX,0x4                         ; 00463de6
         ;   Label: LAB_00463de6
     JL 0x00463f37                       ; 00463de9

@@ -38,12 +38,12 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_F
   uint5 uVar25;
   
   uVar24 = psllw((ulonglong)
-                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c039a8
-                                                                                >> 0x18) << 0x30) >>
+                 CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>
+                                                                                0x18) << 0x30) >>
                                                                  0x28),
-                                                          (char)((uint)_DAT_01c039a8 >> 0x10)) <<
-                                         0x20) >> 0x18),(char)((uint)_DAT_01c039a8 >> 8)),
-                          (ushort)(byte)_DAT_01c039a8),6);
+                                                          (char)(g_SolidColorMode >> 0x10)) << 0x20)
+                                        >> 0x18),(char)(g_SolidColorMode >> 8)),
+                          (ushort)(byte)g_SolidColorMode),6);
   do {
     uVar9 = *texture_buffer;
     uVar1 = *(uint *)
@@ -121,12 +121,12 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_F
     texture_indices = texture_indices + 1;
     lightmap_indices = lightmap_indices + 1;
     *output_buffer =
-         (uint)((uVar9 & _DAT_005bf610) >> _DAT_005bf658) |
-         (uint)((uVar9 & _DAT_005bf5f0) >> _DAT_005bf638) |
-         (uint)((uVar9 & _DAT_005bf5d0) >> _DAT_005bf618) |
-         (uint)(((uVar18 & _DAT_005bf610) >> _DAT_005bf658 |
-                 (uVar18 & _DAT_005bf5f0) >> _DAT_005bf638 |
-                (uVar18 & _DAT_005bf5d0) >> _DAT_005bf618) << 0x10);
+         (uint)((uVar9 & g_BlueMask32.mm) >> _DAT_005bf658) |
+         (uint)((uVar9 & g_GreenMask32.mm) >> _DAT_005bf638) |
+         (uint)((uVar9 & g_RedMask32.mm) >> _DAT_005bf618) |
+         (uint)(((uVar18 & g_BlueMask32.mm) >> _DAT_005bf658 |
+                 (uVar18 & g_GreenMask32.mm) >> _DAT_005bf638 |
+                (uVar18 & g_RedMask32.mm) >> _DAT_005bf618) << 0x10);
     output_buffer = output_buffer + 1;
     iVar6 = pixel_count + -2;
     bVar3 = 1 < pixel_count;

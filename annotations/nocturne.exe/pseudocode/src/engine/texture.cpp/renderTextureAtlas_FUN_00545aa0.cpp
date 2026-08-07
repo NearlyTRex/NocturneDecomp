@@ -11,7 +11,7 @@
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_00545aa0(void)
 
 {
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return;
   }
   wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();

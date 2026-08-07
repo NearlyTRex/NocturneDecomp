@@ -87,20 +87,22 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
     iVar3 = 0;
     local_20 = 0;
     do {
-      if (DAT_005b7624 == 0x10) {
+      if (g_BitsPerPixel == 0x10) {
         local_30 = (uint)local_630[iVar2 + 1];
-        local_30 = local_630[iVar2 + 1] / _DAT_01c00634;
-        local_2c = local_630[iVar2 + 2] / _DAT_01c00640;
+        local_30 = (uint)local_630[iVar2 + 1] / (uint)g_GreenScaleFactor;
+        local_2c = (uint)local_630[iVar2 + 2] / (uint)g_BlueScaleFactor;
         *(ushort *)((int)auStack_330 + iVar3) =
-             (ushort)(local_630[iVar2 + 2] / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
-             (ushort)(local_630[iVar2] / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-             (ushort)(local_30 << (DAT_01c00630 & 0x1f));
+             (ushort)((uint)local_630[iVar2 + 2] / (uint)g_BlueScaleFactor <<
+                     (g_BlueBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)local_630[iVar2] / (uint)g_RedScaleFactor <<
+                     (g_RedBitPosition.bytes[0] & 0x1f)) |
+             (ushort)(local_30 << (g_GreenBitPosition.bytes[0] & 0x1f));
       }
-      else if (DAT_005b7624 == 0x20) {
+      else if (g_BitsPerPixel == 0x20) {
         *(uint *)((int)auStack_a30 + local_20) =
-             (uint)local_630[iVar2] << (DAT_01c00624 & 0x1f) |
-             (uint)local_630[iVar2 + 1] << (DAT_01c00630 & 0x1f) |
-             (uint)local_630[iVar2 + 2] << (DAT_01c0063c & 0x1f);
+             (uint)local_630[iVar2] << (g_RedBitPosition.bytes[0] & 0x1f) |
+             (uint)local_630[iVar2 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+             (uint)local_630[iVar2 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
         *(uint *)((int)auStack_a30 + local_20) =
@@ -142,12 +144,13 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
             do {
               pbVar5 = (byte *)((int)local_18 +
                                (this_ptr->bitmap_width * iVar2) / g_WindowWidth + local_14);
-              if (DAT_005b7624 == 0x10) {
-                local_28 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_24) + iVar7);
-                *(ushort *)(*(int *)(&DAT_01bd2fa0 + local_24) + iVar7) = auStack_330[*pbVar5];
+              if (g_BitsPerPixel == 0x10) {
+                local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);
+                *local_28 = auStack_330[*pbVar5];
               }
               else {
-                *(uint *)(iVar3 + *(int *)(&DAT_01bd2fa0 + local_24)) = auStack_a30[*pbVar5];
+                *(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =
+                     auStack_a30[*pbVar5];
               }
               iVar3 = iVar3 + 4;
               iVar2 = iVar2 + 1;

@@ -13,7 +13,7 @@
 ;   engine_clipper.c_FUN_004320dc at 00432131
 ;   engine_clipper.c_FUN_00432b48 at 00432bbb
 ;   engine_clipper.c_FUN_00432bd8 at 00432c29
-;   engine_clipper.c_FUN_00432cd0 at 004336a7
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0 at 004336a7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad284

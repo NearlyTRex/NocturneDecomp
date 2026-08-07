@@ -49,11 +49,11 @@
 // =============================================================================
 
 void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void);
-void __cdecl engine_2d_c_FUN_004012a0(void);
-void __cdecl engine_2d_c_FUN_004012d0(int param_1,int param_2,int param_3);
-int __cdecl engine_2d_c_FUN_004013d0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6 ,byte param_7);
-void __cdecl engine_2d_c_FUN_004014a0(byte *param_1,int param_2,int param_3,undefined4 param_4);
-int __cdecl engine_2d_c_FUN_004014f0(byte *param_1);
+void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_004012a0(void);
+void __cdecl engine_2d_c_drawAntialiasedCharShadow_FUN_004012d0(int char_code,int x_pos,int y_pos);
+int __cdecl engine_2d_c_drawAntialiasedChar_FUN_004013d0(int char_code,int x_pos,int y_pos,int intensity_shift);
+void __cdecl engine_2d_c_drawAntialiasedString_FUN_004014a0(char *text,int x_pos,int y_pos,int intensity_shift);
+int __cdecl engine_2d_c_getAntialiasedStringWidth_FUN_004014f0(uchar *text);
 void __cdecl engine_2d_c_plotPixel_FUN_00401530(int x,int y);
 void __cdecl engine_2d_c_drawLine_FUN_004015a0(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_plotPixelWithDepth_FUN_00401680(int x_coord,int y_coord,uint depth_value);
@@ -108,15 +108,15 @@ int __cdecl engine_2d_c_getTextColor_FUN_00402e60(void);
 void __cdecl engine_2d_c_setTextColor_FUN_00402e70(int color);
 void engine_2d_c_FUN_00402e90(int param_1);
 void engine_2d_c_FUN_00403070(char *param_1,int param_2);
-void engine_2d_c_FUN_00403130(char *param_1);
+void __cdecl engine_2d_c_FUN_00403130(char *filename);
 void engine_2d_c_FUN_004031a0(int param_1);
 void __cdecl engine_2d_c_loadLightTable_FUN_00403460(char *filename);
-void engine_2d_c_FUN_00403500(char *param_1);
+void __cdecl engine_2d_c_FUN_00403500(char *filename);
 void __cdecl engine_2d_c_buildColorLookupTable_FUN_00403570(void);
 void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00403630(char *filename);
 void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00403760(void);
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void);
-void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3);
+void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00403780(int x_3d,int y_3d,int z_depth);
 int __cdecl engine_2d_c_computeOutcode_FUN_00403900(int x,int y,int x_min,int y_min,int x_max,int y_max);
 void __cdecl engine_2d_c_clipLineGlobal_FUN_00403940(int x1,int y1,int x2,int y2);
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max);

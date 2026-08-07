@@ -19,21 +19,21 @@ void __cdecl clearScreenRegion(int color);
 // Address: 0052efc2
 void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
-// Original: engine_special.cpp_FUN_0052f031
+// Original: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031
 // Address: 0052f031
-void FUN_0052f031(void);
+void __edi_esi_ebx renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_0052f823
+// Original: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823
 // Address: 0052f823
-void FUN_0052f823(void);
+void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_005300ec
+// Original: engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_005300ec
 // Address: 005300ec
-int * FUN_005300ec(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
-// Original: engine_special.cpp_FUN_00530322
+// Original: engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322
 // Address: 00530322
-int * FUN_00530322(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderAlphaRow32_FUN_0053055c
 // Address: 0053055c

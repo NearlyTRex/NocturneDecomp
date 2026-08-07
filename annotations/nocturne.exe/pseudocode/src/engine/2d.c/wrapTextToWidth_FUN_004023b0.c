@@ -41,8 +41,8 @@ void __cdecl engine_2d_c_wrapTextToWidth_FUN_004023b0(char *input_text,int max_w
     if (max_width < iVar2) {
       do {
         cVar1 = *output_buffer;
-        if (((cVar1 == '\0') || (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 2) != 0)) || (cVar1 == '\n'))
-        {
+        if (((cVar1 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0)) ||
+           (cVar1 == '\n')) {
           uVar4 = (int)output_buffer - (int)pcVar5;
           pcVar6 = pcVar5;
           pcVar7 = acStack_114;

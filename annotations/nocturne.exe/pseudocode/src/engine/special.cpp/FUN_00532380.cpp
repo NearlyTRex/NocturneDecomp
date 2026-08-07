@@ -14,7 +14,7 @@ uint engine_special_cpp_FUN_00532380(void)
 {
   uint uVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   uVar1 = (*_DAT_02dc9d9c)();

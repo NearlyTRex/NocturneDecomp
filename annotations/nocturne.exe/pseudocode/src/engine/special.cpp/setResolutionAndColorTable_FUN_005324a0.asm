@@ -13,10 +13,10 @@
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 at 00553240
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
 ;   uchar[768] g_SourcePaletteData
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d70
 ;   undefined4 DAT_02dc9d84
 ;   undefined4 DAT_02dc9dcc
@@ -62,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 005324d2
     JZ 0x00532580                       ; 005324d4
         ;   XREF to: 00532580 (CONDITIONAL_JUMP)  ; LAB_00532580
-    PUSH 0x1bd2fa0                      ; 005324da | DAT_01bd2fa0
+    PUSH 0x1bd2fa0                      ; 005324da | g_ScreenBufferArray
         ;   Label: LAB_005324da
     PUSH EBX                            ; 005324df
     MOV EDI,dword ptr [ESP + 0x20]      ; 005324e0
@@ -89,15 +89,15 @@ section .text
     MOV EDI,0x1                         ; 00532528
     CALL dword ptr [0x02dc9dcc]         ; 0053252d | DAT_02dc9dcc
     ADD ESP,0xc                         ; 00532533
-    MOV dword ptr [0x01c02594],EDI      ; 00532536 | DAT_01c02594
+    MOV dword ptr [0x01c02594],EDI      ; 00532536 | g_UseExternalRenderer
     MOV dword ptr [0x02dc9e1c],EBX      ; 0053253c | DAT_02dc9e1c
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00532542
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
-    MOV EBP,dword ptr [0x005b7624]      ; 00532547 | DAT_005b7624
+    MOV EBP,dword ptr [0x005b7624]      ; 00532547 | g_BitsPerPixel
     CMP EBP,0x10                        ; 0053254d
     JNZ 0x00532585                      ; 00532550
         ;   XREF to: 00532585 (CONDITIONAL_JUMP)  ; LAB_00532585
-    MOV EAX,[0x01bd2fa0]                ; 00532552 | DAT_01bd2fa0
+    MOV EAX,[0x01bd2fa0]                ; 00532552 | g_ScreenBufferArray
     MOV DX,word ptr [EAX]               ; 00532557
     MOV word ptr [EAX],0xabcd           ; 0053255a
     CMP word ptr [EAX],0xabcd           ; 0053255f
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_00532585
     JNZ 0x00532576                      ; 00532588
         ;   XREF to: 00532576 (CONDITIONAL_JUMP)  ; LAB_00532576
-    MOV EAX,[0x01bd2fa0]                ; 0053258a | DAT_01bd2fa0
+    MOV EAX,[0x01bd2fa0]                ; 0053258a | g_ScreenBufferArray
     MOV EDX,dword ptr [EAX]             ; 0053258f
     MOV dword ptr [EAX],0xaabbccdd      ; 00532591
     CMP dword ptr [EAX],0xaabbccdd      ; 00532597
@@ -129,7 +129,7 @@ section .text
     MOV dword ptr [EAX],EDX             ; 005325a6
     JMP 0x00532570                      ; 005325a8
         ;   XREF to: 00532570 (UNCONDITIONAL_JUMP)  ; LAB_00532570
-    MOV [0x01c02594],EAX                ; 005325aa | DAT_01c02594
+    MOV [0x01c02594],EAX                ; 005325aa | g_UseExternalRenderer
         ;   Label: LAB_005325aa
     POP EBP                             ; 005325af
     POP EDI                             ; 005325b0

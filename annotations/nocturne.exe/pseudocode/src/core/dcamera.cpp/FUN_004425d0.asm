@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;
 ; *****************************************************************************
 
@@ -14,7 +14,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004425d0
         ;   Label: core_dcamera.cpp_FUN_004425d0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004425d4
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 004425d8 | DAT_01bd2fa0
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 004425d8 | g_ScreenBufferArray
     ADD EAX,EDX                         ; 004425df
     XOR EDX,EDX                         ; 004425e1
     MOV DL,byte ptr [EAX]               ; 004425e3

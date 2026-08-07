@@ -15,12 +15,12 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040e8c0 at 0040e9ab
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bf5b8
-;   undefined4 DAT_005bf5c0
-;   undefined4 DAT_005bf5c8
-;   undefined4 DAT_005bf5d0
-;   undefined4 DAT_005bf5f0
-;   undefined4 DAT_005bf610
+;   _MMX_INTEGER g_RedMask16
+;   _MMX_INTEGER g_GreenMask16
+;   _MMX_INTEGER g_BlueMask16
+;   _MMX_INTEGER g_RedMask32
+;   _MMX_INTEGER g_GreenMask32
+;   _MMX_INTEGER g_BlueMask32
 ;   undefined4 DAT_005bf618
 ;   undefined4 DAT_005bf638
 ;   undefined4 DAT_005bf658
@@ -66,14 +66,14 @@ section .text
     PXOR MM2,qword ptr [0x005c0668]     ; 00530651 | DAT_005c0668
     MOVZX EAX,word ptr [EDI]            ; 00530658
     MOVD MM3,EAX                        ; 0053065b
-    PAND MM3,qword ptr [0x005bf5c8]     ; 0053065e | DAT_005bf5c8
+    PAND MM3,qword ptr [0x005bf5c8]     ; 0053065e | g_BlueMask16
     PSLLQ MM3,qword ptr [0x005bf658]    ; 00530665 | DAT_005bf658
     MOVD MM4,EAX                        ; 0053066c
-    PAND MM4,qword ptr [0x005bf5c0]     ; 0053066f | DAT_005bf5c0
+    PAND MM4,qword ptr [0x005bf5c0]     ; 0053066f | g_GreenMask16
     PSLLQ MM4,qword ptr [0x005bf638]    ; 00530676 | DAT_005bf638
     POR MM3,MM4                         ; 0053067d
     MOVD MM5,EAX                        ; 00530680
-    PAND MM5,qword ptr [0x005bf5b8]     ; 00530683 | DAT_005bf5b8
+    PAND MM5,qword ptr [0x005bf5b8]     ; 00530683 | g_RedMask16
     PSLLQ MM5,qword ptr [0x005bf618]    ; 0053068a | DAT_005bf618
     POR MM3,MM5                         ; 00530691
     PUNPCKLBW MM3,MM7                   ; 00530694
@@ -96,9 +96,9 @@ section .text
     MOVQ MM2,MM0                        ; 005306c3
         ;   Label: LAB_005306c3
     MOVQ MM4,MM0                        ; 005306c6
-    PAND MM0,qword ptr [0x005bf610]     ; 005306c9 | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 005306d0 | DAT_005bf5f0
-    PAND MM4,qword ptr [0x005bf5d0]     ; 005306d7 | DAT_005bf5d0
+    PAND MM0,qword ptr [0x005bf610]     ; 005306c9 | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 005306d0 | g_GreenMask32
+    PAND MM4,qword ptr [0x005bf5d0]     ; 005306d7 | g_RedMask32
     PSRLQ MM0,qword ptr [0x005bf658]    ; 005306de | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 005306e5 | DAT_005bf638
     PSRLQ MM4,qword ptr [0x005bf618]    ; 005306ec | DAT_005bf618

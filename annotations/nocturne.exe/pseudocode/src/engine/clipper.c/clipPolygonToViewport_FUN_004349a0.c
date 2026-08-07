@@ -60,7 +60,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
     }
     else {
       if (iVar9 == 0) {
-        if (_DAT_01c02594 != 0) {
+        if (g_UseExternalRenderer != 0) {
           iVar2 = 0;
           if (0 < vertex_count) {
             do {
@@ -99,7 +99,8 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
             }
           }
           _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-          engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,vertex_count,_DAT_01c039a0);
+          engine_special_cpp_drawPolygon2_FUN_00532650
+                    (&DAT_00767274,vertex_count,g_RenderStateFlags.dword);
           return;
         }
         DAT_00766c70 = vertex_count;

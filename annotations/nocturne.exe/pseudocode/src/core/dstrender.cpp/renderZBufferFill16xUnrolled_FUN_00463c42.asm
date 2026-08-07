@@ -8,10 +8,10 @@
 ;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90 at 0045f071
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 DAT_01c00024
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;   uint[1600] g_ReciprocalLookupTable
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     SHR EAX,0x10                        ; 00463c52
         ;   Label: LAB_00463c52
     SHR ECX,0x10                        ; 00463c55
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463c58 | DAT_01bd4260
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463c5f | DAT_01bd2fa0
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00463c58 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 00463c5f | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00463c66
     JLE 0x00463d94                      ; 00463c68
         ;   XREF to: 00463d94 (CONDITIONAL_JUMP)  ; LAB_00463d94
@@ -49,7 +49,7 @@ section .text
     DEC ECX                             ; 00463c87
     MOV ESI,dword ptr [ESI + 0x28]      ; 00463c88
     XOR EAX,EAX                         ; 00463c8b
-    MOV AL,[0x01c00c70]                 ; 00463c8d | DAT_01c00c70
+    MOV AL,[0x01c00c70]                 ; 00463c8d | g_ActiveRenderColor
     MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 00463c92 | DAT_01c00024
     SUB ECX,0x4                         ; 00463c99
         ;   Label: LAB_00463c99

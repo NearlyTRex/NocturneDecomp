@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520(void *sprite_data,void *span_data)
 
 {
@@ -27,13 +25,13 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
   int iStack_2c;
   
   pCVar4 = cockpit_ckptutil_c_FUN_0042d130();
-  if (DAT_005b7624 == 8) {
-    iStack_2c = _DAT_01c00c5c;
-    if (_DAT_01c00c5c <= _DAT_01c00c64) {
-      iStack_34 = _DAT_01c00c5c * 0x84;
-      iStack_38 = _DAT_01c00c5c << 2;
+  if (g_BitsPerPixel == 8) {
+    iStack_2c = g_ClipTop;
+    if (g_ClipTop <= g_ClipBottom) {
+      iStack_34 = g_ClipTop * 0x84;
+      iStack_38 = g_ClipTop << 2;
       do {
-        iVar2 = *(int *)(&DAT_01bd2fa0 + iStack_38);
+        iVar2 = *(int *)((int)g_ScreenBufferArray + iStack_38);
         iVar5 = iStack_2c * g_WindowWidth;
         iVar8 = 0;
         for (iVar7 = 0; piVar6 = (int *)(iStack_34 + (int)span_data), iVar7 < *piVar6;
@@ -47,16 +45,16 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
         iStack_34 = iStack_34 + 0x84;
         iStack_38 = iStack_38 + 4;
         iStack_2c = iStack_2c + 1;
-      } while (iStack_2c <= _DAT_01c00c64);
+      } while (iStack_2c <= g_ClipBottom);
     }
   }
   else {
-    iStack_30 = _DAT_01c00c5c;
-    if (_DAT_01c00c5c <= _DAT_01c00c64) {
-      iStack_3c = _DAT_01c00c5c * 0x84;
-      iStack_40 = _DAT_01c00c5c << 2;
+    iStack_30 = g_ClipTop;
+    if (g_ClipTop <= g_ClipBottom) {
+      iStack_3c = g_ClipTop * 0x84;
+      iStack_40 = g_ClipTop << 2;
       do {
-        iVar2 = *(int *)(&DAT_01bd2fa0 + iStack_40);
+        iVar2 = *(int *)((int)g_ScreenBufferArray + iStack_40);
         iVar5 = iStack_30 * g_WindowWidth;
         iVar7 = 0;
         for (iVar8 = 0; piVar6 = (int *)(iStack_3c + (int)span_data), iVar8 < *piVar6;
@@ -70,7 +68,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
         iStack_3c = iStack_3c + 0x84;
         iStack_40 = iStack_40 + 4;
         iStack_30 = iStack_30 + 1;
-      } while (iStack_30 <= _DAT_01c00c64);
+      } while (iStack_30 <= g_ClipBottom);
     }
   }
   return;

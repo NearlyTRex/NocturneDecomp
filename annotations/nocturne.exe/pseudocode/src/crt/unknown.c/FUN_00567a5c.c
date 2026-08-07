@@ -52,7 +52,7 @@ int FUN_00567a5c(int param_1,int *param_2)
   }
   iVar7 = 0;
   while (uVar4 = FUN_00567540(param_1),
-        ((&DAT_005c168c)[(byte)((char)uVar4 + 1)] & 2) != 0) {
+        (g_CharacterClassificationTable[(byte)((char)uVar4 + 1)] & 2) != 0) {
     iVar7 = iVar7 + 1;
   }
   if ((*(byte *)(param_1 + 0x10) & 2) == 0) {
@@ -81,7 +81,7 @@ int FUN_00567a5c(int param_1,int *param_2)
         }
         uVar4 = FUN_00568528(param_1);
         if (uVar4 == 0xffffffff) goto LAB_00567b98;
-      } while (((&DAT_005c168c)[(byte)((char)uVar4 + 1)] & 2) == 0);
+      } while ((g_CharacterClassificationTable[(byte)((char)uVar4 + 1)] & 2) == 0);
     }
     FUN_0056754c(uVar4,param_1);
   }

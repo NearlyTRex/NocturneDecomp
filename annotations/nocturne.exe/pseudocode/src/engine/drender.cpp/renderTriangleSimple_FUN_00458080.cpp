@@ -40,9 +40,9 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *ver
     return;
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {
-    if (_DAT_01c039a4 != 0) {
-      if (_DAT_01c039a4 < 2) {
+  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
+    if (g_VertexPreprocessMode != 0) {
+      if ((uint)g_VertexPreprocessMode < 2) {
         iVar3 = 0;
         pCVar8 = vertex_indices;
         if (0 < vertex_count) {
@@ -54,7 +54,8 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *ver
           } while (iVar3 < vertex_count);
         }
       }
-      else if ((_DAT_01c039a4 == 6) && (iVar3 = 0, pCVar8 = vertex_indices, 0 < vertex_count)) {
+      else if ((g_VertexPreprocessMode == 6) &&
+              (iVar3 = 0, pCVar8 = vertex_indices, 0 < vertex_count)) {
         do {
           iVar3 = iVar3 + 1;
           engine_prim_c_replaceWWithDepth_FUN_004f99d0
@@ -217,7 +218,7 @@ LAB_00458358:
         iVar3 = iVar9;
       } while (iVar9 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00532650(local_74,vertex_count,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon2_FUN_00532650(local_74,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

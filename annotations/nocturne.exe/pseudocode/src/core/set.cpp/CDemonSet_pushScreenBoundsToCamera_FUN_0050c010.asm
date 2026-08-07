@@ -23,10 +23,10 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_007f7374
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_pushRect_FUN_004405d0
@@ -46,18 +46,18 @@ section .text
     PUSH EBX                            ; 0050c023
     MOV EBX,dword ptr [ESP + 0x34]      ; 0050c024
     MOV EAX,[0x005ae704]                ; 0050c028 | g_CDemonRenderer_PTR_005ae704
-    MOV EDI,dword ptr [0x01c00c50]      ; 0050c02d | DAT_01c00c50
-    MOV ECX,dword ptr [0x01c00c48]      ; 0050c033 | DAT_01c00c48
+    MOV EDI,dword ptr [0x01c00c50]      ; 0050c02d | g_Projection.center_x_fixed
+    MOV ECX,dword ptr [0x01c00c48]      ; 0050c033 | g_Projection
     MOV ESI,dword ptr [EAX]             ; 0050c039 | DAT_01b4d738
-    MOV EAX,[0x01c00c50]                ; 0050c03b | DAT_01c00c50
-    MOV EBP,dword ptr [0x01c00c54]      ; 0050c040 | DAT_01c00c54
+    MOV EAX,[0x01c00c50]                ; 0050c03b | g_Projection.center_x_fixed
+    MOV EBP,dword ptr [0x01c00c54]      ; 0050c040 | g_Projection.center_y_fixed
     SUB EAX,ECX                         ; 0050c046
-    MOV EDX,dword ptr [0x01c00c4c]      ; 0050c048 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 0050c048 | g_Projection.neg_half_height_fixed
     MOV dword ptr [ESP + 0x20],EAX      ; 0050c04e
-    MOV EAX,[0x01c00c4c]                ; 0050c052 | DAT_01c00c4c
+    MOV EAX,[0x01c00c4c]                ; 0050c052 | g_Projection.neg_half_height_fixed
     ADD EDI,ECX                         ; 0050c057
     SUB EBP,EAX                         ; 0050c059
-    MOV EAX,[0x01c00c54]                ; 0050c05b | DAT_01c00c54
+    MOV EAX,[0x01c00c54]                ; 0050c05b | g_Projection.center_y_fixed
     XOR ECX,ECX                         ; 0050c060
     ADD EAX,EDX                         ; 0050c062
     MOV dword ptr [ESP + 0x1c],ECX      ; 0050c064
@@ -83,10 +83,10 @@ section .text
         ;   XREF to: 0050c0bc (CONDITIONAL_JUMP)  ; LAB_0050c0bc
     MOV EBX,EDX                         ; 0050c094
     MOV EAX,dword ptr [ESI]             ; 0050c096
-    MOV EDX,dword ptr [0x01c00c48]      ; 0050c098 | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 0050c098 | g_Projection
     IMUL EDX                            ; 0050c09e
     IDIV EBX                            ; 0050c0a0
-    MOV EBX,dword ptr [0x01c00c50]      ; 0050c0a2 | DAT_01c00c50
+    MOV EBX,dword ptr [0x01c00c50]      ; 0050c0a2 | g_Projection.center_x_fixed
     MOV EDX,dword ptr [ESP + 0x20]      ; 0050c0a8
     ADD EAX,EBX                         ; 0050c0ac
     CMP EAX,EDX                         ; 0050c0ae
@@ -111,10 +111,10 @@ section .text
         ;   XREF to: 0050c0f8 (CONDITIONAL_JUMP)  ; LAB_0050c0f8
     MOV EBX,EDX                         ; 0050c0cf
     MOV EAX,dword ptr [ECX + 0x4]       ; 0050c0d1
-    MOV EDX,dword ptr [0x01c00c4c]      ; 0050c0d4 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 0050c0d4 | g_Projection.neg_half_height_fixed
     IMUL EDX                            ; 0050c0da
     IDIV EBX                            ; 0050c0dc
-    MOV EBX,dword ptr [0x01c00c54]      ; 0050c0de | DAT_01c00c54
+    MOV EBX,dword ptr [0x01c00c54]      ; 0050c0de | g_Projection.center_y_fixed
     MOV EDX,dword ptr [ESP + 0x24]      ; 0050c0e4
     ADD EAX,EBX                         ; 0050c0e8
     CMP EAX,EDX                         ; 0050c0ea
@@ -131,8 +131,8 @@ section .text
     CMP EBX,dword ptr [ECX]             ; 0050c0fb
     JG 0x0050c110                       ; 0050c0fd
         ;   XREF to: 0050c110 (CONDITIONAL_JUMP)  ; LAB_0050c110
-    MOV EDX,dword ptr [0x01c00c50]      ; 0050c0ff | DAT_01c00c50
-    MOV EAX,[0x01c00c48]                ; 0050c105 | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c50]      ; 0050c0ff | g_Projection.center_x_fixed
+    MOV EAX,[0x01c00c48]                ; 0050c105 | g_Projection
     ADD EAX,EDX                         ; 0050c10a
     MOV dword ptr [ESP + 0x20],EAX      ; 0050c10c
     MOV EAX,dword ptr [ECX + 0x8]       ; 0050c110
@@ -142,16 +142,16 @@ section .text
     CMP EAX,EBX                         ; 0050c117
     JL 0x0050c128                       ; 0050c119
         ;   XREF to: 0050c128 (CONDITIONAL_JUMP)  ; LAB_0050c128
-    MOV EAX,[0x01c00c48]                ; 0050c11b | DAT_01c00c48
-    MOV EDI,dword ptr [0x01c00c50]      ; 0050c120 | DAT_01c00c50
+    MOV EAX,[0x01c00c48]                ; 0050c11b | g_Projection
+    MOV EDI,dword ptr [0x01c00c50]      ; 0050c120 | g_Projection.center_x_fixed
     SUB EDI,EAX                         ; 0050c126
     MOV EDX,dword ptr [ECX + 0x8]       ; 0050c128
         ;   Label: LAB_0050c128
     CMP EDX,dword ptr [ECX + 0x4]       ; 0050c12b
     JG 0x0050c13e                       ; 0050c12e
         ;   XREF to: 0050c13e (CONDITIONAL_JUMP)  ; LAB_0050c13e
-    MOV EBX,dword ptr [0x01c00c54]      ; 0050c130 | DAT_01c00c54
-    MOV EBP,dword ptr [0x01c00c4c]      ; 0050c136 | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c54]      ; 0050c130 | g_Projection.center_y_fixed
+    MOV EBP,dword ptr [0x01c00c4c]      ; 0050c136 | g_Projection.neg_half_height_fixed
     ADD EBP,EBX                         ; 0050c13c
     MOV EAX,dword ptr [ECX + 0x8]       ; 0050c13e
         ;   Label: LAB_0050c13e
@@ -160,8 +160,8 @@ section .text
     CMP EAX,EDX                         ; 0050c146
     JL 0x0050c15b                       ; 0050c148
         ;   XREF to: 0050c15b (CONDITIONAL_JUMP)  ; LAB_0050c15b
-    MOV ECX,dword ptr [0x01c00c4c]      ; 0050c14a | DAT_01c00c4c
-    MOV EAX,[0x01c00c54]                ; 0050c150 | DAT_01c00c54
+    MOV ECX,dword ptr [0x01c00c4c]      ; 0050c14a | g_Projection.neg_half_height_fixed
+    MOV EAX,[0x01c00c54]                ; 0050c150 | g_Projection.center_y_fixed
     SUB EAX,ECX                         ; 0050c155
     MOV dword ptr [ESP + 0x24],EAX      ; 0050c157
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0050c15b

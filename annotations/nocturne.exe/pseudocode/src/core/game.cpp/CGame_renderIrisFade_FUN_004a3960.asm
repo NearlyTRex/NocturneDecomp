@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 DAT_01c78b04
 ;   undefined4 DAT_01c78b08
 ;   undefined4 DAT_01c78b0c
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 004a3a21 (CONDITIONAL_JUMP)  ; LAB_004a3a21
     CALL core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 ; 004a399d
         ;   XREF to: 004a3860 (UNCONDITIONAL_CALL)  ; void core_game.cpp_calculateIrisFadeCenter_FUN_004a3860()
-    CMP dword ptr [0x005b7624],0x20     ; 004a39a2 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 004a39a2 | g_BitsPerPixel
     JNZ 0x004a3a13                      ; 004a39a9
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
     FLD float ptr [0x01c78b08]          ; 004a39ab | DAT_01c78b08
@@ -69,7 +69,7 @@ section .text
     XOR EBP,EBP                         ; 004a39c6
     MOV EDI,dword ptr [0x005b761c]      ; 004a39c8 | g_WindowWidth
         ;   Label: LAB_004a39c8
-    MOV EDX,dword ptr [EBP + 0x1bd2fa0] ; 004a39ce | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDX,dword ptr [EBP + 0x1bd2fa0] ; 004a39ce | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EAX,EAX                         ; 004a39d4
     TEST EDI,EDI                        ; 004a39d6
     JLE 0x004a39ff                      ; 004a39d8

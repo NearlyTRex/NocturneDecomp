@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00465fd8
     MOV EBP,dword ptr [EBP + 0x14]      ; 00465fdb
     PXOR MM7,MM7                        ; 00465fde
-    MOVD MM5,dword ptr [0x01c039a8]     ; 00465fe1 | DAT_01c039a8
+    MOVD MM5,dword ptr [0x01c039a8]     ; 00465fe1 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00465fe8
     PSLLW MM5,0x6                       ; 00465feb
     MOV EAX,dword ptr [EBX]             ; 00465fef
@@ -284,9 +284,9 @@ section .text
     PACKUSWB MM1,MM7                    ; 0046648f
     MOVQ MM2,MM0                        ; 00466492
     MOVQ MM3,MM0                        ; 00466495
-    PAND MM0,qword ptr [0x005bf610]     ; 00466498 | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 0046649f | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 004664a6 | DAT_005bf5d0
+    PAND MM0,qword ptr [0x005bf610]     ; 00466498 | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 0046649f | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 004664a6 | g_RedMask32
     PSRLQ MM0,qword ptr [0x005bf658]    ; 004664ad | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 004664b4 | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 004664bb | DAT_005bf618
@@ -294,9 +294,9 @@ section .text
     POR MM0,MM3                         ; 004664c5
     MOVQ MM2,MM1                        ; 004664c8
     MOVQ MM3,MM1                        ; 004664cb
-    PAND MM1,qword ptr [0x005bf610]     ; 004664ce | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 004664d5 | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 004664dc | DAT_005bf5d0
+    PAND MM1,qword ptr [0x005bf610]     ; 004664ce | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 004664d5 | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 004664dc | g_RedMask32
     PSRLQ MM1,qword ptr [0x005bf658]    ; 004664e3 | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 004664ea | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 004664f1 | DAT_005bf618

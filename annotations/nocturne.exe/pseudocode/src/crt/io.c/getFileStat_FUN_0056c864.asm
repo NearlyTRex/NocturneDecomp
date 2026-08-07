@@ -31,7 +31,7 @@
 ;   void* PTR_FindClose_005754c8 = 00175bf0
 ;   void* PTR_FindFirstFileA_005754cc = 00175bfc
 ;   TerminatedCString s_anon_00598be4
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_00564860
@@ -103,7 +103,7 @@ section .text
     MOV AL,byte ptr [ESP + 0x140]       ; 0056c8d9
     INC AL                              ; 0056c8e0
     AND EAX,0xff                        ; 0056c8e2
-    TEST byte ptr [EAX + 0x5c168c],0xc0 ; 0056c8e7 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xc0 ; 0056c8e7 | g_CharacterClassificationTable
     JZ 0x0056c913                       ; 0056c8ee
         ;   XREF to: 0056c913 (CONDITIONAL_JUMP)  ; LAB_0056c913
     CMP byte ptr [ESP + 0x141],0x3a     ; 0056c8f0

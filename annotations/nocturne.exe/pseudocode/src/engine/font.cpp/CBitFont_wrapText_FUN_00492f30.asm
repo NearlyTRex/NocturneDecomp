@@ -28,7 +28,7 @@
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471ce5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_00492f7f
     INC AL                              ; 00492f81
     AND EAX,0xff                        ; 00492f83
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00492f88 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00492f88 | g_CharacterClassificationTable
     JZ 0x00492fa3                       ; 00492f8f
         ;   XREF to: 00492fa3 (CONDITIONAL_JUMP)  ; LAB_00492fa3
     CMP byte ptr [EBX],0xa              ; 00492f91
@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_00492fed
     INC AL                              ; 00492ff0
     AND EAX,0xff                        ; 00492ff2
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00492ff7 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00492ff7 | g_CharacterClassificationTable
     JZ 0x00493006                       ; 00492ffe
         ;   XREF to: 00493006 (CONDITIONAL_JUMP)  ; LAB_00493006
     DEC EDX                             ; 00493000
@@ -174,7 +174,7 @@ section .text
     MOV AL,byte ptr [ESP + 0xc]         ; 0049304e
     INC AL                              ; 00493052
     AND EAX,0xff                        ; 00493054
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00493059 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00493059 | g_CharacterClassificationTable
     JZ 0x00493066                       ; 00493060
         ;   XREF to: 00493066 (CONDITIONAL_JUMP)  ; LAB_00493066
     MOV dword ptr [ESP + 0x18],EBP      ; 00493062

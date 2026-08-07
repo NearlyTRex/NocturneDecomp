@@ -111,7 +111,6 @@ extern undefined4 DAT_005c206c;
 extern undefined4 DAT_005c20d0;
 extern undefined4 DAT_005c20d4;
 extern undefined4 DAT_005c2144;
-extern undefined4 DAT_005c5010;
 extern undefined4 DAT_005c5014;
 extern undefined4 DAT_005c5018;
 extern undefined4 DAT_005c501c;
@@ -146,4 +145,7 @@ extern undefined4 DAT_005c50e4;
 extern undefined4 DAT_005c5114;
 extern undefined4 DAT_005c5144;
 extern undefined4 DAT_005c5174;
+
+// void*
+extern void* g_BackBuffer;
 

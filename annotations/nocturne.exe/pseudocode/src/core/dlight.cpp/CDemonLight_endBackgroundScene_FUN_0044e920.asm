@@ -16,9 +16,9 @@
 ;   undefined4 DAT_01ab99f8
 ;   undefined4 DAT_01ab99f9
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01bd2fa5
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
@@ -43,13 +43,13 @@ section .text
     MOV ECX,dword ptr [ECX + 0x1cc4]    ; 0044e93c
     MOV EDI,0x1bd2fa0                   ; 0044e942
     SHL ECX,0x2                         ; 0044e947
-    PUSH EDI                            ; 0044e94a | DAT_01bd2fa0
+    PUSH EDI                            ; 0044e94a | g_ScreenBufferArray
     MOV EAX,ECX                         ; 0044e94b
     SHR ECX,0x2                         ; 0044e94d
-    MOVSD.REP ES:EDI,ESI                ; 0044e950 | DAT_01ab99f4 | DAT_01bd2fa0 | DAT_01ab99f8
+    MOVSD.REP ES:EDI,ESI                ; 0044e950 | DAT_01ab99f4 | g_ScreenBufferArray | DAT_01ab99f8
     MOV CL,AL                           ; 0044e952
     AND CL,0x3                          ; 0044e954
-    MOVSB.REP ES:EDI,ESI                ; 0044e957 | DAT_01ab99f8 | DAT_01bd2fa4 | DAT_01ab99f9
+    MOVSB.REP ES:EDI,ESI                ; 0044e957 | DAT_01ab99f8 | g_ScreenBufferArray[1] | DAT_01ab99f9
     POP EDI                             ; 0044e959
     PUSH EDX                            ; 0044e95a
     MOV EBX,dword ptr [0x005ae704]      ; 0044e95b | g_CDemonRenderer_PTR_005ae704

@@ -59,7 +59,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
       engine_2d_c_drawText_FUN_00402600("Ready",300,0x21);
       engine_2d_c_drawText_FUN_00402600("heroType",400,0x21);
       engine_2d_c_drawText_FUN_00402600("gameSettings",500,0x21);
-      _DAT_01c00c70 = 0xff;
+      g_ActiveRenderColor = 0xff;
       engine_2d_c_drawHLine_FUN_00403bd0(0,0x31,g_WindowWidth + -1);
       iVar4 = 0x37;
       iStack_24 = 0;

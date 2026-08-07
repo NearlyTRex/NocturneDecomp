@@ -54,7 +54,7 @@ section .text
     ADD ESP,0x4                         ; 0040349a
     PUSH ESI                            ; 0040349d
     CALL engine_2d.c_FUN_00403500       ; 0040349e
-        ;   XREF to: 00403500 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403500()
+        ;   XREF to: 00403500 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00403500(char * filename)
     ADD ESP,0x4                         ; 004034a3
         ;   Label: LAB_004034a3
     XOR EAX,EAX                         ; 004034a6

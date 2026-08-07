@@ -49,7 +49,7 @@
 ;   undefined4 DAT_005c1374
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_01c038f4
 ;   ... and 12 more
 ;
@@ -427,7 +427,7 @@ section .text
     MOV dword ptr [0x02dd925c],EBX      ; 00551132 | DAT_02dd925c
     JMP 0x00550d38                      ; 00551138
         ;   XREF to: 00550d38 (UNCONDITIONAL_JUMP)  ; LAB_00550d38
-    CMP dword ptr [0x01c02594],0x0      ; 0055113d | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0055113d | g_UseExternalRenderer
         ;   Label: LAB_0055113d
     JNZ 0x0055115f                      ; 00551144
         ;   XREF to: 0055115f (CONDITIONAL_JUMP)  ; LAB_0055115f

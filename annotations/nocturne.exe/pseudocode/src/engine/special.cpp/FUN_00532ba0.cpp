@@ -21,14 +21,14 @@ uint engine_special_cpp_FUN_00532ba0(void)
   byte bVar8;
   int local_8;
   
-  puVar5 = _DAT_01bd2fa0;
+  puVar5 = g_ScreenBufferArray[0];
   bVar8 = 0;
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   if (_DAT_02dc9e24 == 0) {
-    iVar4 = g_WindowWidth * DAT_005b7624 >> 0x1f;
-    uVar1 = (int)((g_WindowWidth * DAT_005b7624 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+    iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+    uVar1 = (int)((g_WindowWidth * g_BitsPerPixel + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
     engine_special_cpp_lockFrame_FUN_005322e0();
     local_8 = 0;
@@ -36,7 +36,7 @@ uint engine_special_cpp_FUN_00532ba0(void)
       iVar4 = 0;
       do {
         puVar6 = puVar5;
-        puVar7 = *(uint **)(&DAT_01bd2fa0 + iVar4);
+        puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);
         for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar7 = *puVar6;
           puVar6 = puVar6 + (uint)bVar8 * -2 + 1;

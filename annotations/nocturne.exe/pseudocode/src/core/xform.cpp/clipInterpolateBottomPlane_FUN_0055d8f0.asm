@@ -14,7 +14,7 @@
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040 at 0055e6a9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c039a0
+;   _BIT_INTEGER32 g_RenderStateFlags
 ;
 ; *****************************************************************************
 
@@ -84,7 +84,7 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 0055d96d
     ADD EAX,EDX                         ; 0055d96f
     MOV dword ptr [EDI],EAX             ; 0055d971
-    MOV AH,byte ptr [0x01c039a0]        ; 0055d973 | DAT_01c039a0
+    MOV AH,byte ptr [0x01c039a0]        ; 0055d973 | g_RenderStateFlags
     MOV dword ptr [EDI + 0x10],0xffffffff ; 0055d979
     TEST AH,0x4                         ; 0055d980
     JNZ 0x0055d98a                      ; 0055d983

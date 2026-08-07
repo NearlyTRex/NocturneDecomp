@@ -7,16 +7,16 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00c7c
-;   undefined4 DAT_01c03948
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a4
+;   int g_BitsPerPixel = 0x8
+;   MainScanlineFunc* g_ScanlineRenderFunc
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00404710
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   engine_clipper.c_FUN_00432cd0
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -36,28 +36,28 @@ section .text
     TEST EAX,EAX                        ; 00407756
     JZ 0x004077a4                       ; 00407758
         ;   XREF to: 004077a4 (CONDITIONAL_JUMP)  ; LAB_004077a4
-    CMP dword ptr [0x01c03948],0x0      ; 0040775a | DAT_01c03948
+    CMP dword ptr [0x01c03948],0x0      ; 0040775a | g_MMXSupported
     JNZ 0x004077bf                      ; 00407761
         ;   XREF to: 004077bf (CONDITIONAL_JUMP)  ; LAB_004077bf
-    CMP dword ptr [0x005b7624],0x20     ; 00407763 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00407763 | g_BitsPerPixel
     JNZ 0x004077b3                      ; 0040776a
         ;   XREF to: 004077b3 (CONDITIONAL_JUMP)  ; LAB_004077b3
-    MOV dword ptr [0x01c00c7c],0x5300ec ; 0040776c | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x5300ec ; 0040776c | g_ScanlineRenderFunc
     PUSH EDI                            ; 00407776
         ;   Label: LAB_00407776
     MOV EDI,0xc1                        ; 00407777
     MOV EBP,0x1                         ; 0040777c
     PUSH EBX                            ; 00407781
-    MOV dword ptr [0x01c039a0],EDI      ; 00407782 | DAT_01c039a0
-    MOV dword ptr [0x01c039a4],EBP      ; 00407788 | DAT_01c039a4
+    MOV dword ptr [0x01c039a0],EDI      ; 00407782 | g_RenderStateFlags
+    MOV dword ptr [0x01c039a4],EBP      ; 00407788 | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 0040778e
         ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00407793
     PUSH ESI                            ; 00407796
     MOV EAX,dword ptr [EBX + 0x4]       ; 00407797
     PUSH EAX                            ; 0040779a
-    CALL engine_clipper.c_FUN_00432cd0  ; 0040779b
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
+    CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 0040779b
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 004077a0
     POP EDI                             ; 004077a3
     MOV EAX,dword ptr [EBX + 0x4]       ; 004077a4
@@ -69,18 +69,18 @@ section .text
     POP ESI                             ; 004077b0
     POP EBX                             ; 004077b1
     RET                                 ; 004077b2
-    MOV dword ptr [0x01c00c7c],0x530322 ; 004077b3 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x530322 ; 004077b3 | g_ScanlineRenderFunc
         ;   Label: LAB_004077b3
     JMP 0x00407776                      ; 004077bd
         ;   XREF to: 00407776 (UNCONDITIONAL_JUMP)  ; LAB_00407776
-    CMP dword ptr [0x005b7624],0x20     ; 004077bf | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 004077bf | g_BitsPerPixel
         ;   Label: LAB_004077bf
     JNZ 0x004077d4                      ; 004077c6
         ;   XREF to: 004077d4 (CONDITIONAL_JUMP)  ; LAB_004077d4
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 004077c8 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 004077c8 | g_ScanlineRenderFunc
     JMP 0x00407776                      ; 004077d2
         ;   XREF to: 00407776 (UNCONDITIONAL_JUMP)  ; LAB_00407776
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 004077d4 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 004077d4 | g_ScanlineRenderFunc
         ;   Label: LAB_004077d4
     JMP 0x00407776                      ; 004077de
         ;   XREF to: 00407776 (UNCONDITIONAL_JUMP)  ; LAB_00407776

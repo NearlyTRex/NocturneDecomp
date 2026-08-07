@@ -21,13 +21,13 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004a3960(CGame *this_ptr)
     if (((_DAT_01c78b04 < 4) && (_DAT_01c78b04 != 1)) && (0x3f7fffff < (int)_DAT_01c78b08)) {
       core_game_cpp_calculateIrisFadeCenter_FUN_004a3860();
       iVar3 = g_WindowHeight;
-      if (DAT_005b7624 == 0x20) {
+      if (g_BitsPerPixel == 0x20) {
         iVar4 = 0;
         dVar5 = round((double)(_DAT_01c78b08 * _DAT_01c78b08));
         if (0 < iVar3) {
           iVar3 = 0;
           do {
-            puVar2 = *(uint **)(&DAT_01bd2fa0 + iVar3);
+            puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);
             iVar1 = 0;
             if (0 < g_WindowWidth) {
               do {

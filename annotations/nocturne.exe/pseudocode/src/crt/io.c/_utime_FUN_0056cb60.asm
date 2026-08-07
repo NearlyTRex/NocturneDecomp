@@ -8,7 +8,7 @@
 ; _utimbuf *       Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
-;   crt_io.c__utime_00600c1e_FUN_00565dc6 at 00565dc6
+;   crt_io.c__utime_FUN_00565dc6 at 00565dc6
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c

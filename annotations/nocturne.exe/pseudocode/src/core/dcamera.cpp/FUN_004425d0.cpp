@@ -9,7 +9,7 @@
 void core_dcamera_cpp_FUN_004425d0(uint param_1,int param_2,int param_3)
 
 {
-  *(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2) =
-       g_LightTable[4][*(byte *)(*(int *)(&DAT_01bd2fa0 + param_3 * 4) + param_2)];
+  *(byte *)((int)g_ScreenBufferArray[param_3] + param_2) =
+       g_LightTable[4][*(byte *)((int)g_ScreenBufferArray[param_3] + param_2)];
   return;
 }

@@ -63,57 +63,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'; did you mean 'DAT_006af55c'?"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 30,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 31,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'; did you mean 'DAT_006af55c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'; did you mean 'DAT_006af55c'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 32,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'int *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_02ddf558'"
+        "column": 79,
+        "line": 71,
+        "message": "use of undeclared identifier '_DAT_02de2098'"
       }
     ],
     "success": false,
@@ -122,16 +74,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 242,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 67,
-    "suspect_count": 16,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 268
@@ -238,14 +188,14 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -256,26 +206,26 @@
     },
     {
       "addr": "02ddf550",
-      "name": "DAT_02ddf550",
-      "type": "undefined4",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
       "value": null
     },
     {
       "addr": "02ddf554",
-      "name": "DAT_02ddf554",
-      "type": "undefined4",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02ddf558",
-      "name": "DAT_02ddf558",
-      "type": "undefined4",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02ddf55c",
-      "name": "DAT_02ddf55c",
-      "type": "undefined4",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
       "value": null
     },
     {
@@ -344,126 +294,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 < 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf55c + 8))(_DAT_02ddf55c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf558 + 8))(_DAT_02ddf558);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 32,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf554 + 8))(_DAT_02ddf554);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf550 + 0x4c))(_DAT_02ddf550);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf550 + 8))(_DAT_02ddf550);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(g_WindowWidth,g_WindowHeight,DAT_005b7624);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf55c + 8))(_DAT_02ddf55c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf558 + 8))(_DAT_02ddf558);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf554 + 8))(_DAT_02ddf554);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf550 + 0x4c))(_DAT_02ddf550);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf550 + 8))(_DAT_02ddf550);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_02ddf550",
-      "severity": "mild",
-      "text": "iVar1 = DirectDrawCreate(0,&DAT_02ddf550,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(g_WindowWidth,g_WindowHeight,DAT_005b7624);",
-      "type": "undefined_data"
     }
   ]
 }

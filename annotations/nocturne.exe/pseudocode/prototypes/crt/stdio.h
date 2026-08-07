@@ -63,10 +63,6 @@ int __watcallStack remove(char *filename);
 // Address: 0056582c
 int __cdecl fseek(_FILE *file,long offset,int whence);
 
-// Original: crt_stdio.c_fflush_FUN_00565e59
-// Address: 00565e59
-int __cdecl fflush(_FILE *stream);
-
 // Original: crt_stdio.c_sscanf_FUN_00566b5c
 // Address: 00566b5c
 int __cdecl sscanf(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));

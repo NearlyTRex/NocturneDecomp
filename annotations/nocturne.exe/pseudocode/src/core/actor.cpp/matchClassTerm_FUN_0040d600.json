@@ -54,30 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 53,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       }
     ],
     "success": false,
@@ -86,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 91,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 194
   },
   "cross_references": [
@@ -138,8 +112,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -240,38 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(**parse_pos + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(**parse_pos + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 0xe0) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "} while (((&DAT_005c168c)[(byte)(pcVar2[1] + 1)] & 0xe0) != 0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

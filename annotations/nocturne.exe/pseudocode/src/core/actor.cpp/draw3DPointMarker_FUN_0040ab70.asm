@@ -17,7 +17,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0040abd3
     SAR ESI,0x10                        ; 0040abd7
     MOV EBX,dword ptr [EBX + 0xea5e4]   ; 0040abda
-    MOV [0x01c00c70],EAX                ; 0040abe0 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 0040abe0 | g_ActiveRenderColor
     SAR EBX,0x10                        ; 0040abe5
     TEST ESI,ESI                        ; 0040abe8
     JL 0x0040abfc                       ; 0040abea

@@ -31,9 +31,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar4 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
-    DAT_005b06e0 = *(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar1 * 4;
+    DAT_005b06e0 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
     DAT_005b06e4 = iVar2 * 4;
-    DAT_005b06e8 = *(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar1 * 4;
+    DAT_005b06e8 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     uVar3 = (pSVar5->base).u_current;
     _DAT_005b06d4 =
          (int)((ulonglong)
@@ -54,8 +54,8 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
     DAT_005b06bc = uVar4;
     DAT_005b06c4 = iVar6;
     while( true ) {
-      if (*(int *)(DAT_005b06e8 + uVar1) <= iVar6) {
-        *(uint *)(DAT_005b06e0 + uVar1) =
+      if (*(int *)((int)DAT_005b06e8 + uVar1) <= iVar6) {
+        *(uint *)((int)DAT_005b06e0 + uVar1) =
              *(uint *)
               (&DAT_01c00024 +
               (uint)*(byte *)((uVar3 >> _DAT_005bf550 & (uint)_DAT_005bf590) +

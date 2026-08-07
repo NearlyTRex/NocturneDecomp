@@ -34,10 +34,10 @@
 ;   TerminatedCString s_g_00590c5c
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd30e0
+;   int g_BitsPerPixel = 0x8
+;   undefined4 g_ScreenBufferArray[80]
 ;   undefined4 g_ColorCubeLookup+0x7fff
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;   undefined4 DAT_026714b8
 ;   undefined4 DAT_026714bc
 ;
@@ -155,7 +155,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x26714b4] ; 00513a10 | DAT_026714b8
     MOV dword ptr [ESP + 0x88],EAX      ; 00513a16
     IMUL EAX,EAX,0x3000                 ; 00513a1d
-    CMP dword ptr [0x005b7624],0x20     ; 00513a23 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00513a23 | g_BitsPerPixel
     JZ 0x00513c2a                       ; 00513a2a
         ;   XREF to: 00513c2a (CONDITIONAL_JUMP)  ; LAB_00513c2a
     MOV dword ptr [ESP + 0x94],EAX      ; 00513a30
@@ -196,7 +196,7 @@ section .text
     PUSH EDI                            ; 00513abd
     AND EAX,0xff                        ; 00513abe
     PUSH ESI                            ; 00513ac3
-    MOV [0x01c00c70],EAX                ; 00513ac4 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00513ac4 | g_ActiveRenderColor
     CALL engine_2d.c_plotPixel_FUN_00401530 ; 00513ac9
         ;   XREF to: 00401530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401530(int x, int y)
     ADD ESP,0x8                         ; 00513ace
@@ -323,7 +323,7 @@ section .text
     ADD ECX,0x4                         ; 00513c88
     ADD EDX,EAX                         ; 00513c8b
     SHL EAX,0x10                        ; 00513c8d
-    MOV ESI,dword ptr [EBP + 0x1bd2fa0] ; 00513c90 | DAT_01bd30e0
+    MOV ESI,dword ptr [EBP + 0x1bd2fa0] ; 00513c90 | g_ScreenBufferArray[80]
     ADD EDX,EAX                         ; 00513c96
     ADD EBX,0x4                         ; 00513c98
     MOV dword ptr [ECX + ESI*0x1 + -0x4],EDX ; 00513c9b

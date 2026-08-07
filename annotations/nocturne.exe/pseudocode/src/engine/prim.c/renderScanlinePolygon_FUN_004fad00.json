@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 84,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c00c48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 84,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_01c00c54'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 3,
-        "line": 74,
+        "line": 76,
         "message": "use of undeclared identifier '_DAT_01e52ef8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 74,
+        "line": 76,
         "message": "use of undeclared identifier '_DAT_01e52ef8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 8,
-        "line": 75,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
+        "column": 3,
+        "line": 97,
+        "message": "use of undeclared identifier '_DAT_01e53384'; did you mean 'DAT_02DF3384'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 76,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
+        "category": "other",
+        "column": 17,
+        "line": 97,
+        "message": "no viable overloaded '='"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_01e53384'; did you mean 'DAT_02DF3384'?"
+        "line": 98,
+        "message": "use of undeclared identifier '_DAT_01e52efc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 100,
+        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 120,
+        "message": "use of undeclared identifier '_DAT_01e52efc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 121,
+        "message": "use of undeclared identifier 'DAT_01e52f00'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 122,
+        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 125,
+        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 649,
-    "complexity_score": 375,
+    "complexity_score": 377,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 275,
+    "pseudocode_lines": 277,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 924
+    "total_lines": 926
   },
   "cross_references": [
     {
@@ -219,44 +219,44 @@
     },
     {
       "addr": "01c00c48",
-      "name": "DAT_01c00c48",
-      "type": "undefined4",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "01c00c4c",
-      "name": "DAT_01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c00c50",
-      "name": "DAT_01c00c50",
+      "name": "g_Projection.center_x_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c00c54",
-      "name": "DAT_01c00c54",
+      "name": "g_Projection.center_y_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
@@ -424,7 +424,7 @@
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 29,
-          "line": 249,
+          "line": 251,
           "message": "Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.",
           "severity": "warning"
         }
@@ -452,7 +452,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_006b0280",
       "severity": "mild",
       "text": "if (DAT_006b0280 != 0) {",
@@ -460,15 +460,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 70,
       "match": "DAT_006b0278",
       "severity": "mild",
-      "text": "if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {",
+      "text": "if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 114,
       "match": "DAT_01e52f00",
       "severity": "mild",
       "text": "*(int *)(&DAT_01e52f00 + iVar3) = iVar8;",
@@ -476,7 +476,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 192,
       "match": "DAT_01e52f00",
       "severity": "mild",
       "text": "right = (SSoftwareEdge *)&DAT_01e52f00;",
@@ -484,7 +484,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 206,
       "match": "DAT_01e52f00",
       "severity": "mild",
       "text": "local_14 = (SSoftwareEdge *)&DAT_01e52f00;",
@@ -492,7 +492,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 220,
+      "line": 222,
       "match": "DAT_01e52f00",
       "severity": "mild",
       "text": "right = (SSoftwareEdge *)&DAT_01e52f00;",
@@ -500,7 +500,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 237,
+      "line": 239,
       "match": "DAT_01e52f00",
       "severity": "mild",
       "text": "local_14 = (SSoftwareEdge *)&DAT_01e52f00;",
@@ -508,7 +508,7 @@
     },
     {
       "description": "Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.",
-      "line": 249,
+      "line": 251,
       "match": "Cppcheck: redundant null check or possible null dereference",
       "severity": "moderate",
       "text": "while ((iVar8 != (local_14->base).y_min || (local_14 == right))) {",

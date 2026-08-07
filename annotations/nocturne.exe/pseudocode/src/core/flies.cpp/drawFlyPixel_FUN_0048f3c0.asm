@@ -14,10 +14,10 @@
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 at 0048f878
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00c70
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_ActiveRenderColor
 ;   undefined4 DAT_01c70754
 ;   undefined4 DAT_01c70758
 ;
@@ -35,13 +35,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0048f3c9
     SHL EAX,0x2                         ; 0048f3cc
     MOV EDX,dword ptr [EBP + 0x14]      ; 0048f3cf
-    MOV ECX,dword ptr [EAX + 0x1bd4260] ; 0048f3d2 | DAT_01bd4260
+    MOV ECX,dword ptr [EAX + 0x1bd4260] ; 0048f3d2 | g_ZBufferScanlineArray
     SHL EDX,0x2                         ; 0048f3d8
     MOV EBX,dword ptr [EBP + 0x1c]      ; 0048f3db
     CMP EBX,dword ptr [ECX + EDX*0x1]   ; 0048f3de
     JBE 0x0048f3ec                      ; 0048f3e1
         ;   XREF to: 0048f3ec (CONDITIONAL_JUMP)  ; LAB_0048f3ec
-    CMP dword ptr [0x005b7624],0x20     ; 0048f3e3 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 0048f3e3 | g_BitsPerPixel
     JZ 0x0048f3f3                       ; 0048f3ea
         ;   XREF to: 0048f3f3 (CONDITIONAL_JUMP)  ; LAB_0048f3f3
     MOV ESP,EBP                         ; 0048f3ec
@@ -51,12 +51,12 @@ section .text
     POP ESI                             ; 0048f3f0
     POP EBX                             ; 0048f3f1
     RET                                 ; 0048f3f2
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0048f3f3 | DAT_01bd2fa0
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0048f3f3 | g_ScreenBufferArray
         ;   Label: LAB_0048f3f3
     ADD EAX,EDX                         ; 0048f3f9
     MOV dword ptr [EBP + -0x4],EAX      ; 0048f3fb
     MOV EDI,dword ptr [EBP + 0xfffffffc] ; 0048f3fe
-    MOVD MM0,dword ptr [0x01c00c70]     ; 0048f404 | DAT_01c00c70
+    MOVD MM0,dword ptr [0x01c00c70]     ; 0048f404 | g_ActiveRenderColor
     PXOR MM7,MM7                        ; 0048f40b
     MOVD MM1,dword ptr [EDI]            ; 0048f40e
     MOVD MM2,dword ptr [0x01c70754]     ; 0048f411 | DAT_01c70754

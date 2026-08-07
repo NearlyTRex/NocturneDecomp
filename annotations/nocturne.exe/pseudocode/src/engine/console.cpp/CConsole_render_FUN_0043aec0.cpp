@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(CConsole *this_ptr)
 
 {
@@ -53,7 +51,7 @@ void __cdecl engine_console_cpp_CConsole_render_FUN_0043aec0(CConsole *this_ptr)
   iVar1 = this_ptr->console_height;
   iVar3 = iVar5 + this_ptr->console_width * 7;
   y1 = iVar2 + -1;
-  _DAT_01c00c70 = 0xf8;
+  g_ActiveRenderColor = 0xf8;
   engine_2d_c_drawLine_FUN_004015a0(iVar5,y1,iVar3,y1);
   iVar2 = iVar2 + iVar1 * 0xb + 1;
   engine_2d_c_drawLine_FUN_004015a0(iVar5,iVar2,iVar3,iVar2);

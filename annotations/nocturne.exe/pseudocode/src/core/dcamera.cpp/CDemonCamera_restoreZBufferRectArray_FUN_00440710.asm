@@ -25,8 +25,8 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_0140e7a4
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c02594
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_00440610
@@ -44,7 +44,7 @@ section .text
     PUSH EBP                            ; 00440713
     SUB ESP,0x2c                        ; 00440714
     MOV EDI,dword ptr [ESP + 0x40]      ; 00440717
-    MOV EDX,dword ptr [0x01c02594]      ; 0044071b | DAT_01c02594
+    MOV EDX,dword ptr [0x01c02594]      ; 0044071b | g_UseExternalRenderer
     TEST EDX,EDX                        ; 00440721
     JNZ 0x00440964                      ; 00440723
         ;   XREF to: 00440964 (CONDITIONAL_JUMP)  ; LAB_00440964
@@ -211,7 +211,7 @@ section .text
         ;   Label: LAB_004408ca
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004408d0
     SHL EAX,0x2                         ; 004408d4
-    MOV EDX,dword ptr [EDX + 0x1bd4260] ; 004408d7 | DAT_01bd4260
+    MOV EDX,dword ptr [EDX + 0x1bd4260] ; 004408d7 | g_ZBufferScanlineArray
     LEA ECX,[EDX + EAX*0x1]             ; 004408dd
     MOV EAX,dword ptr [ESP + 0x24]      ; 004408e0
     MOV EDX,dword ptr [EDI + 0x148]     ; 004408e4

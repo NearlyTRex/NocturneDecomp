@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   undefined8 DAT_005bf48c
 ;   undefined4 DAT_005bf494
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   engine_special.cpp_clearZBox_FUN_00532b70
@@ -26,7 +26,7 @@ section .text
     MOV EBP,ESP                         ; 0052efc3
     PUSH ESI                            ; 0052efc5
     PUSH EDI                            ; 0052efc6
-    CMP dword ptr [0x01c02594],0x0      ; 0052efc7 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0052efc7 | g_UseExternalRenderer
     JZ 0x0052efe9                       ; 0052efce
         ;   XREF to: 0052efe9 (CONDITIONAL_JUMP)  ; LAB_0052efe9
     PUSH dword ptr [EBP + 0x14]         ; 0052efd0

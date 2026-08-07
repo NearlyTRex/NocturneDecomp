@@ -44,7 +44,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
 ====================================================================================================
 
   engine_2d.c_wrapTextToWidth_FUN_004023b0
-    File: engine/2d.c, Suspects: 5
+    File: engine/2d.c, Suspects: 4
     - [alt_frame_pointer] at 0040243d: MOV EDI,ESP
 
   engine_2d.c_loadOrBuildColorMap_FUN_00403630
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 13.3 suspects/function
-  Without stack patterns: avg 4.7 suspects/function
+  With stack patterns:    avg 13.0 suspects/function
+  Without stack patterns: avg 4.5 suspects/function

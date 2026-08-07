@@ -16,7 +16,7 @@
 ;   engine_2d.c_drawText_FUN_00402600 at 00402648
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4b80
+;   SFontGlyph[224] g_FontTable
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacter_FUN_00401c40
@@ -67,7 +67,7 @@ section .text
     CALL engine_2d.c_drawCharacter_FUN_00401c40 ; 0040236a
         ;   XREF to: 00401c40 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401c40(int char_code, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040236f
-    MOV BL,byte ptr [EBX + 0x5a4b80]    ; 00402372 | DAT_005a4b80
+    MOV BL,byte ptr [EBX + 0x5a4b80]    ; 00402372 | g_FontTable
     AND EBX,0xff                        ; 00402378
     INC EBX                             ; 0040237e
     ADD EBP,EBX                         ; 0040237f

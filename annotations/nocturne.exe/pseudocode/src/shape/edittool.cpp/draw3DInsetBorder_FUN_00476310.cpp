@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,int right,int bottom,int inner_y,int style)
 
 {
@@ -17,7 +15,7 @@ void __cdecl shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(int left,int top,
   int iVar4;
   int iVar5;
   
-  _DAT_01c00c70 = 0;
+  g_ActiveRenderColor = 0;
   if ((style == 0) || (style == 1)) {
     iVar3 = (left + right + -1) / 2 + inner_y;
     iVar2 = (bottom - top) / 3;

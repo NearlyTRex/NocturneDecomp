@@ -15,18 +15,18 @@
 ;   engine_2d.c_FUN_00402710 at 00402747
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4b80
-;   undefined4 DAT_005a4b81
-;   undefined4 DAT_005a4b82
-;   undefined4 DAT_005a4b83
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01bff91e
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   SFontGlyph[224] g_FontTable
+;   undefined4 g_FontTable[0].bitmap[0]
+;   undefined4 g_FontTable[0].bitmap[1]
+;   undefined4 g_FontTable[0].bitmap[2]
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ColorTable16[255]
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; *****************************************************************************
 
@@ -45,28 +45,28 @@ section .text
     ADD EAX,EDX                         ; 004021bc
     SHL EAX,0x4                         ; 004021be
     ADD EAX,EDX                         ; 004021c1
-    ADD EAX,0x5a4b80                    ; 004021c3 | DAT_005a4b80
-    MOV EDX,dword ptr [0x01c00c58]      ; 004021c8 | DAT_01c00c58
-    MOVZX ESI,byte ptr [EAX]            ; 004021ce | DAT_005a4b80
+    ADD EAX,0x5a4b80                    ; 004021c3 | g_FontTable
+    MOV EDX,dword ptr [0x01c00c58]      ; 004021c8 | g_ClipLeft
+    MOVZX ESI,byte ptr [EAX]            ; 004021ce | g_FontTable
     CMP EBP,EDX                         ; 004021d1
     JL 0x00402257                       ; 004021d3
         ;   XREF to: 00402257 (CONDITIONAL_JUMP)  ; LAB_00402257
-    CMP EDI,dword ptr [0x01c00c5c]      ; 004021d9 | DAT_01c00c5c
+    CMP EDI,dword ptr [0x01c00c5c]      ; 004021d9 | g_ClipTop
     JL 0x00402257                       ; 004021df
         ;   XREF to: 00402257 (CONDITIONAL_JUMP)  ; LAB_00402257
-    MOV EDX,dword ptr [0x01c00c60]      ; 004021e5 | DAT_01c00c60
+    MOV EDX,dword ptr [0x01c00c60]      ; 004021e5 | g_ClipRight
     INC EDX                             ; 004021eb
     SUB EDX,ESI                         ; 004021ec
     CMP EBP,EDX                         ; 004021ee
     JG 0x00402257                       ; 004021f0
         ;   XREF to: 00402257 (CONDITIONAL_JUMP)  ; LAB_00402257
-    MOV EDX,dword ptr [0x01c00c64]      ; 004021f2 | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 004021f2 | g_ClipBottom
     SUB EDX,0xa                         ; 004021f8
     CMP EDI,EDX                         ; 004021fb
     JG 0x00402257                       ; 004021fd
         ;   XREF to: 00402257 (CONDITIONAL_JUMP)  ; LAB_00402257
     PUSH EBX                            ; 004021ff
-    MOV EBX,dword ptr [0x005b7624]      ; 00402200 | DAT_005b7624
+    MOV EBX,dword ptr [0x005b7624]      ; 00402200 | g_BitsPerPixel
     SHL EDI,0x2                         ; 00402206
     INC EAX                             ; 00402209
     LEA EDX,[EDI + 0x2c]                ; 0040220a
@@ -75,19 +75,19 @@ section .text
         ;   XREF to: 0040225b (CONDITIONAL_JUMP)  ; LAB_0040225b
     MOV dword ptr [ESP + 0x4],EDX       ; 00402212
     ADD EBP,EBP                         ; 00402216
-    MOV EDX,dword ptr [EDI + 0x1bd2fa0] ; 00402218 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDX,dword ptr [EDI + 0x1bd2fa0] ; 00402218 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_00402218
     XOR ECX,ECX                         ; 0040221e
     ADD EDX,EBP                         ; 00402220
     TEST ESI,ESI                        ; 00402222
     JLE 0x0040223f                      ; 00402224
         ;   XREF to: 0040223f (CONDITIONAL_JUMP)  ; LAB_0040223f
-    MOV BL,byte ptr [EAX]               ; 00402226 | DAT_005a4b81 | DAT_005a4b82 | DAT_005a4b83
+    MOV BL,byte ptr [EAX]               ; 00402226 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[2]
         ;   Label: LAB_00402226
     TEST BL,BL                          ; 00402228
     JZ 0x00402236                       ; 0040222a
         ;   XREF to: 00402236 (CONDITIONAL_JUMP)  ; LAB_00402236
-    MOV BX,word ptr [0x01bff91e]        ; 0040222c | DAT_01bff91e
+    MOV BX,word ptr [0x01bff91e]        ; 0040222c | g_ColorTable16[255]
     MOV word ptr [EDX],BX               ; 00402233
     INC EAX                             ; 00402236
         ;   Label: LAB_00402236
@@ -119,14 +119,14 @@ section .text
     MOV BH,0xff                         ; 0040225b
         ;   Label: LAB_0040225b
     MOV dword ptr [ESP + 0x8],EDX       ; 0040225d
-    MOV ECX,dword ptr [EDI + 0x1bd2fa0] ; 00402261 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV ECX,dword ptr [EDI + 0x1bd2fa0] ; 00402261 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_00402261
     XOR EDX,EDX                         ; 00402267
     ADD ECX,EBP                         ; 00402269
     TEST ESI,ESI                        ; 0040226b
     JLE 0x0040227e                      ; 0040226d
         ;   XREF to: 0040227e (CONDITIONAL_JUMP)  ; LAB_0040227e
-    MOV BL,byte ptr [EAX]               ; 0040226f | DAT_005a4b81 | DAT_005a4b82 | DAT_005a4b83
+    MOV BL,byte ptr [EAX]               ; 0040226f | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[2]
         ;   Label: LAB_0040226f
     TEST BL,BL                          ; 00402271
     JZ 0x00402277                       ; 00402273

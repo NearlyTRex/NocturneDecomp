@@ -34,25 +34,26 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
               (&g_SFogGrid_0140d784,_DAT_0140d778,_DAT_0140d77c);
   }
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810(this_ptr);
-  if (DAT_005b7624 == 0x20) {
-    _DAT_01c039a8 =
-         (*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff) << (DAT_01c0063c & 0x1f) |
-         (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << (DAT_01c00630 & 0x1f) |
-         (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << (DAT_01c00624 & 0x1f);
+  if (g_BitsPerPixel == 0x20) {
+    g_SolidColorMode =
+         (*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff) << (g_BlueBitPosition.bytes[0] & 0x1f)
+         | (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) <<
+           (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) <<
+           (g_RedBitPosition.bytes[0] & 0x1f);
   }
   else {
-    _DAT_01c039a8 =
+    g_SolidColorMode =
          (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << 8 |
          (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << 0x10 |
          *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff;
   }
-  if (DAT_005b7624 == 0x10) {
+  if (g_BitsPerPixel == 0x10) {
     uVar8 = 1;
     while ((int)uVar8 < (int)this_ptr->max_distance + -1) {
-      puVar5 = (uint *)(this_ptr->framebuffer_width * 2 +
-                        *(int *)(&DAT_01bd2fa0 +
-                                ((this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74) * 4) +
-                       _DAT_012ceb70 * 2);
+      puVar5 = (uint *)((int)g_ScreenBufferArray
+                             [(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74] +
+                       _DAT_012ceb70 * 2 + this_ptr->framebuffer_width * 2);
       puVar6 = (ulonglong *)
                ((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
       iVar3 = ((int)uVar8 >> (DAT_012b0660 & 0x1f)) * 0x140;
@@ -101,10 +102,8 @@ LAB_0044729d:
     uVar8 = 1;
     while ((int)uVar8 < (int)this_ptr->max_distance + -1) {
       puVar6 = (ulonglong *)
-               (this_ptr->framebuffer_width * 4 +
-                *(int *)(&DAT_01bd2fa0 +
-                        ((this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74) * 4) +
-               _DAT_012ceb70 * 4);
+               ((int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74] +
+               _DAT_012ceb70 * 4 + this_ptr->framebuffer_width * 4);
       texture_buffer =
            (ulonglong *)((int)this_ptr->framebuffer_aligned + this_ptr->screen_width * uVar8 * 4);
       iVar3 = ((int)uVar8 >> (DAT_012b0660 & 0x1f)) * 0x140;

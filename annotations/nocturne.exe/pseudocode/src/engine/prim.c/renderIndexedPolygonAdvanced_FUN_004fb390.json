@@ -69,18 +69,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 8,
-        "line": 69,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 70,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 131,
         "message": "use of undeclared identifier '_DAT_01e53384'; did you mean 'DAT_02DF3384'?"
@@ -113,6 +101,18 @@
         "category": "undeclared_identifier",
         "column": 28,
         "line": 145,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 150,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 59,
+        "line": 150,
         "message": "use of undeclared identifier 'DAT_005c5028'"
       }
     ],
@@ -279,8 +279,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -291,14 +291,14 @@
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     },
     {
@@ -540,7 +540,7 @@
       "line": 62,
       "match": "DAT_006b0278",
       "severity": "mild",
-      "text": "if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {",
+      "text": "if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {",
       "type": "undefined_data"
     },
     {

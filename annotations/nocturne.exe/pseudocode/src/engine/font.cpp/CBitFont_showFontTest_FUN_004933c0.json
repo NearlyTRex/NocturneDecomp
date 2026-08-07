@@ -57,50 +57,26 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 42,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 84,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 32,
-        "line": 56,
+        "line": 54,
         "message": "use of undeclared identifier 'DAT_00581999'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 60,
+        "line": 58,
         "message": "use of undeclared identifier 'DAT_0058199f'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 65,
+        "line": 63,
         "message": "use of undeclared identifier 'DAT_005819a7'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 69,
+        "line": 67,
         "message": "use of undeclared identifier 'DAT_005819ae'"
       }
     ],
@@ -110,19 +86,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 186,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 101,
-    "suspect_count": 7,
+    "pseudocode_lines": 100,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 476
+    "total_lines": 475
   },
   "cross_references": [],
   "function": {
@@ -260,26 +235,26 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     }
   ],
@@ -360,16 +335,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 47,
       "match": "DAT_00581999",
       "severity": "mild",
       "text": "(this_ptr,&DAT_00581999,iVar3 + 10,iVar2,6,-1);",
@@ -377,7 +344,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_0058199f",
       "severity": "mild",
       "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_0058199f,iVar5,iVar2,6,-1);",
@@ -385,7 +352,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_005819a7",
       "severity": "mild",
       "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819a7,iVar5,iVar2,6,-1);",
@@ -393,7 +360,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 60,
       "match": "DAT_005819ae",
       "severity": "mild",
       "text": "iVar3 = engine_font_cpp_CBitFont_drawText_FUN_00490980(this_ptr,&DAT_005819ae,iVar5,iVar2,6,-1);",
@@ -401,7 +368,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 80,
+      "line": 78,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {",

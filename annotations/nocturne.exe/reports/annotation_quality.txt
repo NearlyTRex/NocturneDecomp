@@ -12,18 +12,18 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,942
-  Unnamed functions (FUN_):          578 (11.7%)
-  Functions with unnamed params:     29 ( 0.6%)
-  Functions with type issues:        1,760 (35.6%)
+  Unnamed functions (FUN_):          565 (11.4%)
+  Functions with unnamed params:     25 ( 0.5%)
+  Functions with type issues:        1,755 (35.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
     Missing register params:           34
-    Wrong calling convention:          78
-    Undefined types in variables:      1617
-    Unresolved stack params:           168
+    Wrong calling convention:          73
+    Undefined types in variables:      1615
+    Unresolved stack params:           169
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -35,37 +35,6 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  engine/clipper.c (29 unnamed)
-    0x00432cd0  unknown       53 callers
-    0x00431520  unknown       0 callers
-    0x00431f50  unknown       0 callers
-    0x00432057  unknown       0 callers
-    0x004320dc  unknown       0 callers
-    0x00432210  unknown       0 callers
-    0x00432b48  unknown       0 callers
-    0x00432bd8  unknown       0 callers
-    0x00433c70  unknown       0 callers
-    0x00433cd7  unknown       0 callers
-    0x00433d43  unknown       0 callers
-    0x00433db0  unknown       0 callers
-    0x00433e1d  unknown       0 callers
-    0x00433e8d  unknown       0 callers
-    0x00433ef0  unknown       0 callers
-    0x00433f58  unknown       0 callers
-    0x00433fc8  unknown       0 callers
-    0x00434030  unknown       0 callers
-    0x0043409e  unknown       0 callers
-    0x0043410e  unknown       0 callers
-    0x00434160  unknown       0 callers
-    0x00434210  unknown       0 callers
-    0x00434492  unknown       0 callers
-    0x00434541  unknown       0 callers
-    0x0043469b  unknown       0 callers
-    0x0043474d  unknown       0 callers
-    0x004347cc  unknown       0 callers
-    0x0043484b  unknown       0 callers
-    0x004348ca  unknown       0 callers
 
   core/charactr.cpp (14 unnamed)
     0x004259f0  __cdecl       38 callers
@@ -223,17 +192,13 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0050e370  __cdecl       1 callers
     0x0050dd60  __cdecl       0 callers
 
-  engine/special.cpp (23 unnamed)
+  engine/special.cpp (19 unnamed)
     0x00532320  unknown       6 callers
     0x00530d40  unknown       3 callers
     0x00532ba0  unknown       1 callers
     0x00532cd0  unknown       1 callers
     0x00532d20  unknown       1 callers
     0x00532f50  unknown       1 callers
-    0x0052f031  unknown       0 callers
-    0x0052f823  unknown       0 callers
-    0x005300ec  unknown       0 callers
-    0x00530322  unknown       0 callers
     0x00530cf0  unknown       0 callers
     0x00530d30  unknown       0 callers
     0x00530e60  unknown       0 callers
@@ -356,21 +321,16 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005458a0  __cdecl       0 callers
     0x005458d0  __cdecl       0 callers
 
-  engine/2d.c (31 unnamed)
-    0x004012a0  __cdecl       2 callers
+  engine/2d.c (25 unnamed)
     0x004027f0  __cdecl       2 callers
     0x004028b0  __cdecl       2 callers
     0x00402980  __cdecl       2 callers
-    0x004012d0  __cdecl       1 callers
-    0x004013d0  __cdecl       1 callers
     0x00402760  __cdecl       1 callers
     0x00402d30  __cdecl       1 callers
     0x00402e90  unknown       1 callers
-    0x00403130  unknown       1 callers
+    0x00403130  __cdecl       1 callers
     0x004031a0  unknown       1 callers
-    0x00403500  unknown       1 callers
-    0x004014a0  __cdecl       0 callers
-    0x004014f0  __cdecl       0 callers
+    0x00403500  __cdecl       1 callers
     0x00402710  unknown       0 callers
     0x00402780  unknown       0 callers
     0x00402820  unknown       0 callers
@@ -387,7 +347,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00402c80  unknown       0 callers
     0x00402d60  unknown       0 callers
     0x00403070  unknown       0 callers
-    0x00403780  unknown       0 callers
 
   core/ammobox.cpp (1 unnamed)
     0x0040f1a0  __cdecl       2 callers
@@ -483,10 +442,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00540a40  unknown       0 callers
     0x00540a70  unknown       0 callers
 
-  wincore/wddvmem.cpp (6 unnamed)
+  wincore/wddvmem.cpp (5 unnamed)
     0x00553ba0  __cdecl       2 callers
     0x00553d30  __cdecl       2 callers
-    0x00552cb0  __cdecl       1 callers
     0x00553ca0  __cdecl       1 callers
     0x00552a20  unknown       0 callers
     0x00552af0  unknown       0 callers
@@ -577,10 +535,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/level.cpp (1 unnamed)
     0x004c5630  __cdecl       1 callers
 
-  core/main.c (3 unnamed)
+  core/main.c (2 unnamed)
     0x004c8510  unknown       1 callers
     0x004c85f0  __cdecl       1 callers
-    0x004c90e0  __cdecl       1 callers
 
   core/manpuz.cpp (4 unnamed)
     0x004ca410  __cdecl       1 callers
@@ -697,6 +654,36 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/chain.cpp (2 unnamed)
     0x0042cd00  unknown       0 callers
     0x0042cd10  unknown       0 callers
+
+  engine/clipper.c (28 unnamed)
+    0x00431520  unknown       0 callers
+    0x00431f50  unknown       0 callers
+    0x00432057  unknown       0 callers
+    0x004320dc  unknown       0 callers
+    0x00432210  unknown       0 callers
+    0x00432b48  unknown       0 callers
+    0x00432bd8  unknown       0 callers
+    0x00433c70  unknown       0 callers
+    0x00433cd7  unknown       0 callers
+    0x00433d43  unknown       0 callers
+    0x00433db0  unknown       0 callers
+    0x00433e1d  unknown       0 callers
+    0x00433e8d  unknown       0 callers
+    0x00433ef0  unknown       0 callers
+    0x00433f58  unknown       0 callers
+    0x00433fc8  unknown       0 callers
+    0x00434030  unknown       0 callers
+    0x0043409e  unknown       0 callers
+    0x0043410e  unknown       0 callers
+    0x00434160  unknown       0 callers
+    0x00434210  unknown       0 callers
+    0x00434492  unknown       0 callers
+    0x00434541  unknown       0 callers
+    0x0043469b  unknown       0 callers
+    0x0043474d  unknown       0 callers
+    0x004347cc  unknown       0 callers
+    0x0043484b  unknown       0 callers
+    0x004348ca  unknown       0 callers
 
   core/course.cpp (2 unnamed)
     0x0043b500  unknown       0 callers
@@ -826,10 +813,6 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  FUN_004013d0
-    Address: 0x004013d0  File: engine/2d.c
-    Unnamed: param_1 (int), param_2 (int), param_3 (int), param_4 (undefined4), param_5 (int), param_6 (undefined4), param_7 (byte)
-
   CGabriella
     Address: 0x00499b00  File: core/gabriela.cpp
     Unnamed: param_2 (float), param_3 (float *), param_4 (int), param_5 (int), param_6 (CVector3f *)
@@ -845,18 +828,10 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (float), param_3 (float), param_4 (float), param_5 (float)
     Named:   this_ptr (CDemonSet *)
 
-  FUN_004014a0
-    Address: 0x004014a0  File: engine/2d.c
-    Unnamed: param_1 (byte *), param_2 (int), param_3 (int), param_4 (undefined4)
-
   CDemonSet
     Address: 0x005090f0  File: core/set.cpp
     Unnamed: param_2 (undefined4), param_3 (undefined4), param_4 (int)
     Named:   this_ptr (CDemonSet *)
-
-  FUN_004012d0
-    Address: 0x004012d0  File: engine/2d.c
-    Unnamed: param_1 (int), param_2 (int), param_3 (int)
 
   CFileBitStream
     Address: 0x004e28a0  File: sound/mp3.cpp
@@ -954,10 +929,6 @@ Sorted by number of unnamed parameters (most unnamed first).
   CWaterActor
     Address: 0x005519c0  File: core/wateract.cpp
     Unnamed: param_1 (CWaterActor *)
-
-  FUN_004014f0
-    Address: 0x004014f0  File: engine/2d.c
-    Unnamed: param_1 (byte *)
 
   CBitFont
     Address: 0x00490210  File: engine/font.cpp
@@ -1199,14 +1170,8 @@ Missing register parameters (likely wrong calling convention) (34)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (78)
+Wrong calling convention (unaffected register usage) (73)
 --------------------------------------------------------------------------------
-
-  FUN_004014a0
-    Address: 0x004014a0  File: engine/2d.c
-    Evidence: unaff_EBP, unaff_ESI, unaff_EDI, unaff_EBP, unaff_EDI, unaff_ESI
-    Signature: void __cdecl engine_2d_c_FUN_004014a0(byte *param_1,int param_2,int param_3,undefined4 param_4)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   drawLine3D
     Address: 0x00401710  File: engine/2d.c
@@ -1580,30 +1545,6 @@ Wrong calling convention (unaffected register usage) (78)
     Signature: int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0052bbd0(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_0052f031
-    Address: 0x0052f031  File: engine/special.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void engine_special_cpp_FUN_0052f031(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0052f823
-    Address: 0x0052f823  File: engine/special.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void engine_special_cpp_FUN_0052f823(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005300ec
-    Address: 0x005300ec  File: engine/special.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: int * engine_special_cpp_FUN_005300ec(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00530322
-    Address: 0x00530322  File: engine/special.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: int * engine_special_cpp_FUN_00530322(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   renderScanlineSwapped
     Address: 0x00530716  File: engine/special.cpp
     Evidence: unaff_EBX, unaff_EBX
@@ -1671,8 +1612,14 @@ Wrong calling convention (unaffected register usage) (78)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (168)
+Unresolved stack parameters (missing from signature) (169)
 --------------------------------------------------------------------------------
+
+  drawAntialiasedChar
+    Address: 0x004013d0  File: engine/2d.c
+    Evidence: in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c
+    Signature: int __cdecl engine_2d_c_drawAntialiasedChar_FUN_004013d0(int char_code,int x_pos,int y_pos,int intensity_shift)
+    Suggested: Signature is missing stack parameters entirely
 
   FUN_00404430
     Address: 0x00404430  File: engine/3d.c
@@ -2683,7 +2630,7 @@ Unresolved stack parameters (missing from signature) (168)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1617)
+Undefined types in variables (1615)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -3746,7 +3693,7 @@ Undefined types in variables (1617)
     Locals:  local_c0 (undefined), local_90 (undefined), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00432cd0
+  clipAndRasterize
     Address: 0x00432cd0  File: engine/clipper.c
     Locals:  local_150 (undefined4), local_14c (undefined4), local_d0 (undefined4), local_cc (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8144,11 +8091,6 @@ Undefined types in variables (1617)
     Locals:  local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004013d0
-    Address: 0x004013d0  File: engine/2d.c
-    Params:  param_4 (undefined4), param_6 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   FUN_00402780
     Address: 0x00402780  File: engine/2d.c
     Locals:  local_100c (undefined), local_c (undefined4)
@@ -9571,14 +9513,14 @@ Undefined types in variables (1617)
     Locals:  local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004c90e0
-    Address: 0x004c90e0  File: core/main.c
-    Locals:  local_110 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
   displayErrorAndQuit
     Address: 0x004c8440  File: core/main.c
     Locals:  local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  finalizeGameSystems
+    Address: 0x004c90e0  File: core/main.c
+    Locals:  local_110 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   showPromoScreen
@@ -10219,11 +10161,6 @@ Undefined types in variables (1617)
   CZombie_setup
     Address: 0x0055ec20  File: core/zombie.cpp
     Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004014a0
-    Address: 0x004014a0  File: engine/2d.c
-    Params:  param_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   buildColorLookupTable
@@ -11096,10 +11033,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004c45a0  (CLadder *this_ptr)
     0x004c46b0  (CLadder *this_ptr)
 
-  core_main.c  (3 functions)
+  core_main.c  (2 functions)
     0x004c8510  (void)
     0x004c85f0  (int argc,char **argv)
-    0x004c90e0  (void)
 
   core_manpuz.cpp_CMansionPuzzleCircle  (4 functions)
     0x004ca410  (CMansionPuzzleCircle *this_ptr)
@@ -11277,12 +11213,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0055df19  (void)
     0x0055df90  (void)
 
-  engine_2d.c  (31 functions)
-    0x004012a0  (void)
-    0x004012d0  (int param_1,int param_2,int param_3)
-    0x004013d0  (int param_1,int param_2,int param_3,undefined4 param_4,in...)
-    0x004014a0  (byte *param_1,int param_2,int param_3,undefined4 param_4)
-    0x004014f0  (byte *param_1)
+  engine_2d.c  (25 functions)
     0x00402710  (byte *param_1,int param_2,int param_3)
     0x00402760  (int x,int y,char *text)
     0x00402780  (int param_1,int param_2,char *param_3)
@@ -11305,10 +11236,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00402d60  (int param_1,int param_2,int param_3,char *param_4)
     0x00402e90  (int param_1)
     0x00403070  (char *param_1,int param_2)
-    0x00403130  (char *param_1)
+    0x00403130  (char *filename)
     0x004031a0  (int param_1)
-    0x00403500  (char *param_1)
-    0x00403780  (int param_1,int param_2,int param_3)
+    0x00403500  (char *filename)
 
   engine_3d.c  (18 functions)
     0x00404430  (void)
@@ -11330,7 +11260,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00409510  (int param_1,int param_2)
     0x00562880  (int param_1,int *param_2)
 
-  engine_clipper.c  (29 functions)
+  engine_clipper.c  (28 functions)
     0x00431520  (void)
     0x00431f50  (void)
     0x00432057  (void)
@@ -11338,7 +11268,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00432210  (uint param_1,int *param_2)
     0x00432b48  (void)
     0x00432bd8  (void)
-    0x00432cd0  (uint param_1,int *param_2)
     0x00433c70  (void)
     0x00433cd7  (void)
     0x00433d43  (void)
@@ -11411,11 +11340,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fa2e0  (int *vertex_indices,int vertex_count)
     0x004faca0  (void)
 
-  engine_special.cpp  (23 functions)
-    0x0052f031  (void)
-    0x0052f823  (void)
-    0x005300ec  (void)
-    0x00530322  (void)
+  engine_special.cpp  (19 functions)
     0x00530cf0  (int *param_1,int param_2)
     0x00530d30  (void)
     0x00530d40  (void)
@@ -11522,10 +11447,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00529a40  (CSfxOptions *this_ptr,uint flags)
     0x00529a50  (CSfxOptions *this_ptr,uint flags)
 
-  wincore_wddvmem.cpp  (6 functions)
+  wincore_wddvmem.cpp  (5 functions)
     0x00552a20  (void)
     0x00552af0  (void)
-    0x00552cb0  (void)
     0x00553ba0  (void)
     0x00553ca0  (void)
     0x00553d30  (LPCSTR lpLibFileName)

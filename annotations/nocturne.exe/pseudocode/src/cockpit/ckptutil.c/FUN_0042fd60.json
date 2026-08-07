@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 36,
-        "message": "use of undeclared identifier 'DAT_01c0062c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 65,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 67,
-        "message": "use of undeclared identifier 'DAT_01c00624'; did you mean 'DAT_02DF0624'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 67,
-        "message": "use of undeclared identifier 'DAT_01c0062c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 68,
-        "message": "use of undeclared identifier 'DAT_01c00630'; did you mean 'DAT_02DF0630'?"
       }
     ],
     "success": false,
@@ -122,20 +62,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 726,
+    "complexity_score": 590,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 96,
-    "suspect_count": 61,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 100,
+    "suspect_count": 47,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param"
     ],
-    "total_lines": 407
+    "total_lines": 411
   },
   "cross_references": [
     {
@@ -168,68 +108,68 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01c00624",
-      "name": "DAT_01c00624",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c0062c",
-      "name": "DAT_01c0062c",
-      "type": "undefined4",
+      "name": "g_RedDitherShift",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00630",
-      "name": "DAT_01c00630",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00638",
-      "name": "DAT_01c00638",
-      "type": "undefined4",
+      "name": "g_GreenDitherShift",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c0063c",
-      "name": "DAT_01c0063c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00644",
-      "name": "DAT_01c00644",
-      "type": "undefined4",
+      "name": "g_BlueDitherShift",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     }
   ],
@@ -377,21 +317,21 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 52,
+          "line": 49,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 56,
+          "line": 53,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 36,
-          "line": 60,
+          "line": 57,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -402,16 +342,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int param_4)",
@@ -419,7 +351,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int param_4)",
@@ -427,7 +359,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int param_4)",
@@ -435,42 +367,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_01c0062c",
-      "severity": "mild",
-      "text": "bVar4 = DAT_01c0062c;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
+      "text": "if ((((g_ClipLeft <= param_1) && (param_1 <= g_ClipRight)) && (g_ClipTop <= param_2)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
+      "text": "if ((((g_ClipLeft <= param_1) && (param_1 <= g_ClipRight)) && (g_ClipTop <= param_2)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&",
+      "text": "if ((((g_ClipLeft <= param_1) && (param_1 <= g_ClipRight)) && (g_ClipTop <= param_2)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 <= g_ClipBottom)) {",
       "type": "unnamed_param"
     },
     {
@@ -478,39 +410,39 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 <= _DAT_01c00c64)) {",
+      "text": "pvVar5 = g_ScreenBufferArray[param_2];",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(byte *)((int)pvVar5",
+      "severity": "moderate",
+      "text": "iVar1 = (uint)*(byte *)((int)pvVar5 + param_1) * 3;",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 32,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_2 * 4;",
+      "text": "iVar1 = (uint)*(byte *)((int)pvVar5 + param_1) * 3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Unnamed function parameter",
       "line": 34,
-      "match": "DAT_01bd2fa0",
+      "match": "param_4",
       "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_01bd2fa0 + iVar1);",
-      "type": "undefined_data"
+      "text": "bVar3 = g_SourcePaletteData[param_4 * 3 + 1];",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
-      "match": "param_1",
+      "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = (uint)*(byte *)(iVar6 + param_1) * 3;",
+      "text": "fVar8 = 1.0 - param_3;",
       "type": "unnamed_param"
     },
     {
@@ -518,7 +450,7 @@
       "line": 37,
       "match": "param_4",
       "severity": "mild",
-      "text": "bVar2 = g_SourcePaletteData[param_4 * 3 + 1];",
+      "text": "((double)((float)g_SourcePaletteData[param_4 * 3] * fVar8 +",
       "type": "unnamed_param"
     },
     {
@@ -526,15 +458,7 @@
       "line": 38,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar9 = 1.0 - param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "((double)((float)g_SourcePaletteData[param_4 * 3] * fVar9 +",
+      "text": "(float)g_SourcePaletteData[iVar1] * param_3));",
       "type": "unnamed_param"
     },
     {
@@ -542,164 +466,84 @@
       "line": 41,
       "match": "param_3",
       "severity": "mild",
-      "text": "(float)g_SourcePaletteData[iVar1] * param_3));",
+      "text": "((double)((float)bVar2 * fVar8 + (float)bVar3 * param_3));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
-      "text": "((double)((float)bVar4 * fVar9 + (float)bVar2 * param_3));",
+      "text": "((double)((float)bVar3 * fVar8 + (float)sStack_2c * param_3));",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((double)((float)bVar2 * fVar9 + (float)sStack_2c * param_3));",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(byte *)((int)pvVar5",
+      "severity": "moderate",
+      "text": "*(byte *)((int)pvVar5 + param_1) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(iVar6 + param_1) =",
+      "text": "*(byte *)((int)pvVar5 + param_1) =",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(ushort *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "uVar4 = *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 55,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = *(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 2);",
+      "text": "uVar4 = *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "uVar5 = *(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "uVar10 = (uint)(uVar5 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_01c0062c",
-      "severity": "mild",
-      "text": "uVar10 = (uint)(uVar5 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "uVar11 = (uint)(uVar5 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_01c00638",
-      "severity": "mild",
-      "text": "uVar11 = (uint)(uVar5 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(uint *)(param_1 * 4 + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)(param_1 * 4 + (int)g_ScreenBufferArray[param_2]);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar15 = (uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar1));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar15 = (uint *)(param_1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar1));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "uVar10 = (*puVar15 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_01c0062c",
-      "severity": "mild",
-      "text": "uVar10 = (*puVar15 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "uVar11 = (*puVar15 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_01c00638",
-      "severity": "mild",
-      "text": "uVar11 = (*puVar15 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "bVar8 = DAT_01c0063c & 0x1f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_01c00644",
-      "severity": "mild",
-      "text": "bVar7 = DAT_01c00644 & 0x1f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 * 3;",
+      "text": "puVar15 = (uint *)(param_1 * 4 + (int)g_ScreenBufferArray[param_2]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar15 = (uint *)(param_1 * 4 + (int)g_ScreenBufferArray[param_2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = param_4 * 3;",
@@ -710,20 +554,28 @@
       "line": 72,
       "match": "param_4",
       "severity": "mild",
-      "text": "bVar2 = g_SourcePaletteData[param_4 + 1];",
+      "text": "param_4 = param_4 * 3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 73,
-      "match": "param_3",
+      "match": "param_4",
       "severity": "mild",
-      "text": "fVar9 = 1.0 - param_3;",
+      "text": "bVar2 = g_SourcePaletteData[param_4 + 1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 74,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fVar8 = 1.0 - param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
       "match": "param_4",
       "severity": "mild",
       "text": "bVar3 = g_SourcePaletteData[param_4 + 2];",
@@ -731,15 +583,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_4",
       "severity": "mild",
-      "text": "((double)((float)g_SourcePaletteData[param_4] * fVar9 +",
+      "text": "((double)((float)g_SourcePaletteData[param_4] * fVar8 +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 78,
       "match": "param_3",
       "severity": "mild",
       "text": "(float)(uVar10 & 0xff) * param_3));",
@@ -747,139 +599,115 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 80,
       "match": "param_3",
       "severity": "mild",
-      "text": "((double)((float)bVar2 * fVar9 + (float)(uVar11 & 0xff) * param_3));",
+      "text": "((double)((float)bVar2 * fVar8 + (float)(uVar11 & 0xff) * param_3));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_3",
       "severity": "mild",
-      "text": "(float)((uVar12 >> bVar8) << bVar7 & 0xff) * param_3));",
+      "text": "(float)((uVar12 >> bVar7) << bVar6 & 0xff) * param_3));",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_01c00638",
-      "severity": "mild",
-      "text": "uStack_4c = uStack_4c >> (DAT_01c00638 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01c00644",
-      "severity": "mild",
-      "text": "uStack_40 = uStack_40 >> (DAT_01c00644 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 != 0x10) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(uint *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 91,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
+      "text": "*(uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
+      "text": "*(uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) =",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "uStack_44 << (DAT_01c00624 & 0x1f) | uStack_4c << (DAT_01c00630 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "uStack_44 << (DAT_01c00624 & 0x1f) | uStack_4c << (DAT_01c00630 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "uStack_40 << (DAT_01c0063c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "(ushort)(uStack_4c << (DAT_01c00630 & 0x1f)) | (ushort)(uStack_44 << (DAT_01c00624 & 0x1f))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "(ushort)(uStack_4c << (DAT_01c00630 & 0x1f)) | (ushort)(uStack_44 << (DAT_01c00624 & 0x1f))",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 97,
-      "match": "DAT_01c0063c",
+      "match": "(ushort *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_2",
       "severity": "mild",
-      "text": "| (ushort)(uStack_40 << (DAT_01c0063c & 0x1f));",
-      "type": "undefined_data"
+      "text": "*(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)pvVar5",
+      "severity": "moderate",
+      "text": "iVar1 = (uint)*(byte *)((int)pvVar5 + param_1) * 3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)pvVar5",
+      "severity": "moderate",
+      "text": "*(byte *)((int)pvVar5 + param_1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_2]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)g_ScreenBufferArray[param_2]",
+      "severity": "moderate",
+      "text": "uVar4 = *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_2]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)g_ScreenBufferArray[param_2]",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)(param_1 * 4 + (int)g_ScreenBufferArray[param_2]);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_2]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)g_ScreenBufferArray[param_2]",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_2]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)g_ScreenBufferArray[param_2]",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2) =",
+      "type": "pointer_truncation"
     },
     {
       "call_site_count": 4,
@@ -894,7 +722,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 52,
+      "line": 49,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar13 = (int)ROUND(dVar16) >> 0x1f;",
@@ -902,7 +730,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 56,
+      "line": 53,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar14 = (int)ROUND(dVar17) >> 0x1f;",
@@ -910,7 +738,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 60,
+      "line": 57,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400",

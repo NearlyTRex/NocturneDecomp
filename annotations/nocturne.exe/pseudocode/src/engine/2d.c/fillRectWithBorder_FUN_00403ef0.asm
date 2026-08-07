@@ -20,7 +20,7 @@
 ;   shape_edittool.cpp_FUN_004722b0 at 0047237b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawRect_FUN_00403e10
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 00403e60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403e60(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00403f11
     MOV EAX,dword ptr [ESP + 0x24]      ; 00403f14
-    MOV EBX,dword ptr [0x01c00c70]      ; 00403f18 | DAT_01c00c70
-    MOV [0x01c00c70],EAX                ; 00403f1e | DAT_01c00c70
+    MOV EBX,dword ptr [0x01c00c70]      ; 00403f18 | g_ActiveRenderColor
+    MOV [0x01c00c70],EAX                ; 00403f1e | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00403f23
     INC EAX                             ; 00403f27
     PUSH EAX                            ; 00403f28
@@ -63,7 +63,7 @@ section .text
     CALL engine_2d.c_drawRect_FUN_00403e10 ; 00403f37
         ;   XREF to: 00403e10 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403e10(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00403f3c
-    MOV dword ptr [0x01c00c70],EBX      ; 00403f3f | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EBX      ; 00403f3f | g_ActiveRenderColor
     POP EDI                             ; 00403f45
     POP ESI                             ; 00403f46
     POP EBX                             ; 00403f47

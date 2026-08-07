@@ -18,7 +18,7 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040c6d0(char *string_buffer,char 
   }
   do {
     iVar1 = _fgetc(DAT_00763e84);
-  } while (((&DAT_005c168c)[(byte)((char)iVar1 + 1)] & 2) != 0);
+  } while ((g_CharacterClassificationTable[(byte)((char)iVar1 + 1)] & 2) != 0);
   if (iVar1 != 0x22) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("String",property_type);
   }

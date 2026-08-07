@@ -15,12 +15,12 @@
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fb29f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c7c
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 
 section .text
 
-    JMP dword ptr [0x01c00c7c]          ; 00530710 | DAT_01c00c7c
+    JMP dword ptr [0x01c00c7c]          ; 00530710 | g_ScanlineRenderFunc
         ;   Label: engine_special.cpp_renderScanline_FUN_00530710
 

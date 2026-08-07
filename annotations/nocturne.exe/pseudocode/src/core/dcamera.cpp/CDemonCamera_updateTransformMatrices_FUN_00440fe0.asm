@@ -15,10 +15,10 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   undefined4 DAT_01c039e8
 ;   undefined4 DAT_01c039ec
 ;   undefined4 DAT_01c039f0
@@ -72,13 +72,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00441073
     MOVSD ES:EDI,ESI                    ; 00441074
     MOVSD ES:EDI,ESI                    ; 00441075
-    MOV ESI,dword ptr [0x01c00c48]      ; 00441076 | DAT_01c00c48
+    MOV ESI,dword ptr [0x01c00c48]      ; 00441076 | g_Projection
     MOV dword ptr [EBX + 0x1c0],ESI     ; 0044107c
-    MOV ESI,dword ptr [0x01c00c4c]      ; 00441082 | DAT_01c00c4c
+    MOV ESI,dword ptr [0x01c00c4c]      ; 00441082 | g_Projection.neg_half_height_fixed
     MOV dword ptr [EBX + 0x1c4],ESI     ; 00441088
-    MOV ESI,dword ptr [0x01c00c50]      ; 0044108e | DAT_01c00c50
+    MOV ESI,dword ptr [0x01c00c50]      ; 0044108e | g_Projection.center_x_fixed
     MOV dword ptr [EBX + 0x1c8],ESI     ; 00441094
-    MOV ESI,dword ptr [0x01c00c54]      ; 0044109a | DAT_01c00c54
+    MOV ESI,dword ptr [0x01c00c54]      ; 0044109a | g_Projection.center_y_fixed
     PUSH EBX                            ; 004410a0
     MOV dword ptr [EBX + 0x1cc],ESI     ; 004410a1
     CALL core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40 ; 004410a7

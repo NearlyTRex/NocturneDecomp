@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 64,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -72,12 +66,12 @@
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
     "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
+      "pointer_truncation",
       "unnamed_param"
     ],
     "total_lines": 287
@@ -130,8 +124,8 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
@@ -519,16 +513,8 @@
       "line": 57,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01bd2fa0 + (param_3 + iVar5 / iVar1) * 4)) =",
+      "text": "(int)g_ScreenBufferArray[param_3 + iVar5 / iVar1]) =",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01bd2fa0 + (param_3 + iVar5 / iVar1) * 4)) =",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -577,6 +563,14 @@
       "severity": "mild",
       "text": "engine_2d_c_FUN_00402d30(param_2,param_2 + param_4,param_3 + param_4 + -0xb,param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[param_3 + iVar5 / iVar1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)g_ScreenBufferArray[param_3 + iVar5 / iVar1]",
+      "severity": "moderate",
+      "text": "(int)g_ScreenBufferArray[param_3 + iVar5 / iVar1]) =",
+      "type": "pointer_truncation"
     },
     {
       "call_site_count": 2,

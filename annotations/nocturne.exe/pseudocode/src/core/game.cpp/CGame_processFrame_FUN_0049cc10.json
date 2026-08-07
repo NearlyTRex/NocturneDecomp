@@ -63,12 +63,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 85,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 28,
         "line": 99,
         "message": "use of undeclared identifier 'PTR_DAT_005b9284'"
@@ -114,6 +108,12 @@
         "column": 43,
         "line": 120,
         "message": "use of undeclared identifier '_DAT_01bd1d8c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 120,
+        "message": "use of undeclared identifier '_DAT_01bd1d90'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 813,
+    "complexity_score": 824,
     "cross_reference_count": 1,
     "function_call_count": 54,
     "global_count": 66,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 363,
-    "suspect_count": 41,
+    "pseudocode_lines": 364,
+    "suspect_count": 42,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -139,7 +139,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1458
+    "total_lines": 1459
   },
   "cross_references": [
     {
@@ -695,13 +695,13 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
@@ -713,8 +713,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -1259,16 +1259,16 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 214,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)(local_28 * 4 + *(int *)(&DAT_01bd2fa0 + local_24));",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
+      "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 265,
+      "line": 266,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_sprintf(local_2dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),",
@@ -1276,7 +1276,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 266,
+      "line": 267,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)_DAT_01c71e38 / _DAT_01c71e30),0),",
@@ -1284,7 +1284,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 274,
+      "line": 275,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)*(float *)(iVar6 + 0x24)),0),",
@@ -1292,7 +1292,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 276,
+      "line": 277,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)*(float *)(iVar6 + 0x28)),0),",
@@ -1300,7 +1300,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 277,
+      "line": 278,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)(double)*(float *)(iVar6 + 0x28) >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0),",
@@ -1308,7 +1308,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 278,
+      "line": 279,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),",
@@ -1316,7 +1316,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 279,
+      "line": 280,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20));",
@@ -1324,7 +1324,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 287,
+      "line": 288,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_sprintf(local_2dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar2->x),0),",
@@ -1332,7 +1332,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 288,
+      "line": 289,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)(double)pCVar2->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar2->y),0),",
@@ -1340,7 +1340,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 289,
+      "line": 290,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)(double)pCVar2->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar2->z),0),",
@@ -1348,7 +1348,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 330,
+      "line": 331,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);",
@@ -1356,7 +1356,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 340,
+      "line": 341,
       "match": "(char *)((int)piVar13",
       "severity": "moderate",
       "text": "*(char *)((int)piVar13 + 1) = cVar1;",
@@ -1364,7 +1364,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 342,
       "match": "(int *)((int)piVar13",
       "severity": "moderate",
       "text": "piVar13 = (int *)((int)piVar13 + 2);",
@@ -1435,11 +1435,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 340,
-      "match": "(int)piVar13",
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 215,
+      "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "*(char *)((int)piVar13 + 1) = cVar1;",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_truncation"
     },
     {
@@ -1447,12 +1447,20 @@
       "line": 341,
       "match": "(int)piVar13",
       "severity": "moderate",
+      "text": "*(char *)((int)piVar13 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 342,
+      "match": "(int)piVar13",
+      "severity": "moderate",
       "text": "piVar13 = (int *)((int)piVar13 + 2);",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 250,
+      "line": 251,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_script_cpp_CScript_FUN_004fe770(0x01E56DA0);",
@@ -1460,7 +1468,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 321,
+      "line": 322,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_script_cpp_CScript_FUN_004fe9d0(0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1)",

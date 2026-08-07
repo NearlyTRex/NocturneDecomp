@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0045fce0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
@@ -35,14 +33,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0045fce
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
-        if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
-        _DAT_01c039a4 = 6;
-        _DAT_01c039a0 = 999;
+        g_VertexPreprocessMode = 6;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_ALPHA_FROM_VERTEX | RENDER_COLOR_FROM_VERTEX);
         if ((this_ptr->skip_uv_extraction == 0) && (iVar4 = 0, 0 < (poly->base).base.count)) {
           iVar3 = 0;
           pSVar2 = poly;
@@ -57,9 +55,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0045fce
         }
       }
       else {
-        _DAT_01c039a0 = 1;
-        _DAT_01c039a4 = 0;
-        _DAT_01c00c7c = core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27;
+        g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

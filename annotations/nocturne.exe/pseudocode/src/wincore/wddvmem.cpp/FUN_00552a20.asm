@@ -11,12 +11,12 @@
 ;   TerminatedCString s_WDDVMEM_Fatal_out_of_Z_b_0059781f
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_005c5010
-;   undefined4 DAT_006af62c
+;   int g_BitsPerPixel = 0x8
+;   void* g_BackBuffer
+;   void* g_SoftwareZBuffer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02ddf560
+;   void* g_SoftwareFrameBuffer
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 00552a21
     MOV ECX,dword ptr [0x005b761c]      ; 00552a22 | g_WindowWidth
     IMUL ECX,dword ptr [0x005b7620]     ; 00552a28 | g_WindowHeight
-    MOV EAX,[0x005b7624]                ; 00552a2f | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 00552a2f | g_BitsPerPixel
     MOV EDX,EAX                         ; 00552a34
     SAR EDX,0x1f                        ; 00552a36
     SHL EDX,0x3                         ; 00552a39
@@ -42,7 +42,7 @@ section .text
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552a45
         ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552a4a
-    MOV [0x005c5010],EAX                ; 00552a4d | DAT_005c5010
+    MOV [0x005c5010],EAX                ; 00552a4d | g_BackBuffer
     TEST EAX,EAX                        ; 00552a52
     JNZ 0x00552a7b                      ; 00552a54
         ;   XREF to: 00552a7b (CONDITIONAL_JUMP)  ; LAB_00552a7b
@@ -65,14 +65,14 @@ section .text
     CALL crt_memory.c_malloc_FUN_005635b0 ; 00552a8e
         ;   XREF to: 005635b0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005635b0(ulong size)
     ADD ESP,0x4                         ; 00552a93
-    MOV [0x02ddf560],EAX                ; 00552a96 | DAT_02ddf560
+    MOV [0x02ddf560],EAX                ; 00552a96 | g_SoftwareFrameBuffer
     TEST EAX,EAX                        ; 00552a9b
     JZ 0x00552ab1                       ; 00552a9d
         ;   XREF to: 00552ab1 (CONDITIONAL_JUMP)  ; LAB_00552ab1
-    MOV EAX,[0x02ddf560]                ; 00552a9f | DAT_02ddf560
+    MOV EAX,[0x02ddf560]                ; 00552a9f | g_SoftwareFrameBuffer
     ADD EAX,0x10                        ; 00552aa4
     AND AL,0xf0                         ; 00552aa7
-    MOV [0x006af62c],EAX                ; 00552aa9 | DAT_006af62c
+    MOV [0x006af62c],EAX                ; 00552aa9 | g_SoftwareZBuffer
     POP EBP                             ; 00552aae
     POP EDI                             ; 00552aaf
     RET                                 ; 00552ab0
@@ -85,10 +85,10 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00552acc
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00552ad1
-    MOV EAX,[0x02ddf560]                ; 00552ad4 | DAT_02ddf560
+    MOV EAX,[0x02ddf560]                ; 00552ad4 | g_SoftwareFrameBuffer
     ADD EAX,0x10                        ; 00552ad9
     AND AL,0xf0                         ; 00552adc
-    MOV [0x006af62c],EAX                ; 00552ade | DAT_006af62c
+    MOV [0x006af62c],EAX                ; 00552ade | g_SoftwareZBuffer
     POP EBP                             ; 00552ae3
     POP EDI                             ; 00552ae4
     RET                                 ; 00552ae5

@@ -186,7 +186,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv);
 void __cdecl core_main_c_drawCenteredText_FUN_004c8dc0(char *text,int x,int y,int color_mode);
 void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms);
 void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void);
-void __cdecl core_main_c_FUN_004c90e0(void);
+void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void);
 void __cdecl core_manpuz_cpp_staticInit_FUN_004c93b0(void);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFunc_FUN_004c9400(void);
 CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_004c9420(CMansionPuzzleCircle *this_ptr);

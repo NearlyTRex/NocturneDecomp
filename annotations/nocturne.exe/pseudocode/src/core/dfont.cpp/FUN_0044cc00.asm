@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c90e0 at 004c9375
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9375
 ;
 ; Referenced Globals:
 ;   CBitFont* g_CBitFont_PTR_014b98f8

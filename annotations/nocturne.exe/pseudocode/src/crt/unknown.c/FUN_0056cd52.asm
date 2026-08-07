@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_filebuf_dtor_FUN_00570449 at 0057047c
-;   crt_stdio.c_fflush_FUN_00565e59 at 00565e6d
+;   crt_iostream.cpp_ostream_flush_FUN_00565e59 at 00565e6d
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00570a70

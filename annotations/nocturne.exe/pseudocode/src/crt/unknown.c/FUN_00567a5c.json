@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 491,
+    "complexity_score": 466,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
-    "suspect_count": 37,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_truncation",
       "unaffected_reg",
-      "undefined_data",
       "undefined_ptr_cast",
       "unnamed_param",
       "warning_overlapping_globals"
@@ -64,8 +63,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -302,14 +301,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "((&DAT_005c168c)[(byte)((char)uVar4 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 51,
       "match": "param_1",
@@ -388,14 +379,6 @@
       "severity": "mild",
       "text": "uVar4 = FUN_00568528(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "} while (((&DAT_005c168c)[(byte)((char)uVar4 + 1)] & 2) == 0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

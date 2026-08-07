@@ -7,9 +7,9 @@
 // Address: 00565dc0
 int __cdecl getFileStat(char *filename,_stat *file_info);
 
-// Original: crt_io.c__utime_00600c1e_FUN_00565dc6
+// Original: crt_io.c__utime_FUN_00565dc6
 // Address: 00565dc6
-int __cdecl ::utime_00600c1e(char *filename,_utimbuf *timestamps);
+int __cdecl ::utime(char *filename,_utimbuf *timestamps);
 
 // Original: crt_io.c_chdir_FUN_00566570
 // Address: 00566570

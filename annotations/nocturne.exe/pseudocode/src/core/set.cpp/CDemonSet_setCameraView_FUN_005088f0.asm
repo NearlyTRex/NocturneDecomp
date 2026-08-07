@@ -46,7 +46,7 @@
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_005c15b8
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_01c038f4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -324,7 +324,7 @@ section .text
     PUSH 0x1fb8508                      ; 00508bc7
     CALL core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00440c50 ; 00508bcc
         ;   XREF to: 00440c50 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemonCamera * this_ptr, int restore_zbuffer)
-    MOV ECX,dword ptr [0x01c02594]      ; 00508bd1 | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 00508bd1 | g_UseExternalRenderer
     ADD ESP,0x8                         ; 00508bd7
     TEST ECX,ECX                        ; 00508bda
     JZ 0x00508c0e                       ; 00508bdc

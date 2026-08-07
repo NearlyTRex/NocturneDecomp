@@ -55,8 +55,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
   pCVar3 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {
     do {
-      pCVar3->saved_screen_buffer_rows[0] = *(void **)(&DAT_01bd2fa0 + iVar2 * 4);
-      *(ushort **)(&DAT_01bd2fa0 + iVar2 * 4) =
+      pCVar3->saved_screen_buffer_rows[0] = g_ScreenBufferArray[iVar2];
+      g_ScreenBufferArray[iVar2] =
            this_ptr->shadow_depth_buffer + this_ptr->shadow_map_width * iVar2;
       iVar2 = iVar2 + 1;
       pCVar3 = (CDemonLight *)((pCVar3->base).camera_name + 4);

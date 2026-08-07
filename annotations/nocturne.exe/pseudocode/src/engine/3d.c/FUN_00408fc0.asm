@@ -16,7 +16,7 @@
 ;   undefined4 DAT_00761ec4
 ;   undefined4 DAT_00761ec8
 ;   undefined4 DAT_00761ecc
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -85,7 +85,7 @@ section .text
     TEST ECX,ECX                        ; 00409026
     JZ 0x00409058                       ; 00409028
         ;   XREF to: 00409058 (CONDITIONAL_JUMP)  ; LAB_00409058
-    MOV EBX,dword ptr [0x01c02594]      ; 0040902a | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 0040902a | g_UseExternalRenderer
     TEST EBX,EBX                        ; 00409030
     JZ 0x004091df                       ; 00409032
         ;   XREF to: 004091df (CONDITIONAL_JUMP)  ; LAB_004091df
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 004090c1 (CONDITIONAL_JUMP)  ; LAB_004090c1
     JZ 0x004090c1                       ; 00409096
         ;   XREF to: 004090c1 (CONDITIONAL_JUMP)  ; LAB_004090c1
-    CMP dword ptr [0x01c02594],0x0      ; 00409098 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00409098 | g_UseExternalRenderer
     JZ 0x004090cf                       ; 0040909f
         ;   XREF to: 004090cf (CONDITIONAL_JUMP)  ; LAB_004090cf
     PUSH 0xcd                           ; 004090a1

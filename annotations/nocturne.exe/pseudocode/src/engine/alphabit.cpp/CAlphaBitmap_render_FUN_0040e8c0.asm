@@ -25,9 +25,9 @@
 ;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2c53
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0
@@ -68,7 +68,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 0040e900
     LEA EDX,[EBX*0x4 + 0x0]             ; 0040e904
     SHL EAX,0x2                         ; 0040e90b
-    MOV ECX,dword ptr [0x005b7624]      ; 0040e90e | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0040e90e | g_BitsPerPixel
     ADD EDX,EAX                         ; 0040e914
     CMP ECX,0x20                        ; 0040e916
     JNZ 0x0040e978                      ; 0040e919
@@ -89,7 +89,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0040e93b
     PUSH ESI                            ; 0040e93f
     MOV EBX,dword ptr [ESP + 0x14]      ; 0040e940
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0040e944 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0040e944 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 0040e94a
     ADD EAX,EBX                         ; 0040e94b
     PUSH EAX                            ; 0040e94d
@@ -131,7 +131,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 0040e998
     PUSH ESI                            ; 0040e99c
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040e99d
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0040e9a1 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0040e9a1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 0040e9a7
     ADD EAX,EBX                         ; 0040e9a8
     PUSH EAX                            ; 0040e9aa

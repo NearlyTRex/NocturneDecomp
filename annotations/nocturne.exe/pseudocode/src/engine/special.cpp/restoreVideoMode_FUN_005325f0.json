@@ -57,31 +57,19 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 8,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
+        "column": 85,
         "line": 16,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 75,
+        "column": 91,
         "line": 16,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
-        "column": 51,
+        "column": 67,
         "line": 16,
         "message": "use of undeclared identifier '_DAT_02dc9d88'"
       },
@@ -141,8 +129,8 @@
   "globals": [
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -229,7 +217,7 @@
       "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((_DAT_01c02594 != 0) && (_DAT_01c02594 = 0, _DAT_02dc9d88 != (code *)0x0)) {",
+      "text": "if ((g_UseExternalRenderer != 0) && (g_UseExternalRenderer = 0, _DAT_02dc9d88 != (code *)0x0)) {",
       "type": "unresolved_funcptr"
     }
   ]

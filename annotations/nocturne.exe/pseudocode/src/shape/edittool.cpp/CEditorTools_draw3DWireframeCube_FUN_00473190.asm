@@ -16,7 +16,7 @@
 ;   float FLOAT_0057eaaa = 0.2000000
 ;   double DOUBLE_0057eaae = 0.0000305175853213768
 ;   undefined4 DAT_0059ca4c
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -75,7 +75,7 @@ section .text
     XOR EDX,EDX                         ; 00473222
     MOV EBP,ESP                         ; 00473224
     MOV dword ptr [ESP + 0xf0],EDX      ; 00473226
-    MOV [0x01c00c70],EAX                ; 0047322d | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 0047322d | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0xf0]      ; 00473232
         ;   Label: LAB_00473232
     XOR AL,0x1                          ; 00473239

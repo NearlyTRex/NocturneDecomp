@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_0057f57d
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   CConsole g_CConsole_0077ad0c
 ;   undefined4 DAT_01c08b5c
 ;   undefined4 DAT_01c08b60
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_0047ab9f
     INC AL                              ; 0047aba1
     AND EAX,0xff                        ; 0047aba3
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047aba8 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047aba8 | g_CharacterClassificationTable
     JZ 0x0047abb4                       ; 0047abaf
         ;   XREF to: 0047abb4 (CONDITIONAL_JUMP)  ; LAB_0047abb4
     INC EDX                             ; 0047abb1
@@ -74,7 +74,7 @@ section .text
     MOV DL,byte ptr [EAX + -0x1]        ; 0047abda
     INC DL                              ; 0047abdd
     AND EDX,0xff                        ; 0047abdf
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047abe5 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047abe5 | g_CharacterClassificationTable
     JZ 0x0047abf9                       ; 0047abec
         ;   XREF to: 0047abf9 (CONDITIONAL_JUMP)  ; LAB_0047abf9
     DEC EAX                             ; 0047abee

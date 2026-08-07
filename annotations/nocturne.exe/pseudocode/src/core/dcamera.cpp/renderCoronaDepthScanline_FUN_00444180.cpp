@@ -21,12 +21,12 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180(int scanlin
   int iVar8;
   uint uVar9;
   
-  uVar4 = scanline_y - _DAT_01c00c5c;
+  uVar4 = scanline_y - g_ClipTop;
   if (((_DAT_012b0660 != 1) || ((uVar4 & 1) == 0)) && ((_DAT_012b0660 != 2 || ((uVar4 & 3) == 0))))
   {
     iVar8 = (int)uVar4 >> (DAT_012b0660 & 0x1f);
-    uVar7 = ((right->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);
-    uVar9 = ((left->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);
+    uVar7 = ((right->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);
+    uVar9 = ((left->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);
     pSVar5 = left;
     uVar4 = uVar7;
     if ((int)uVar9 < (int)uVar7) {

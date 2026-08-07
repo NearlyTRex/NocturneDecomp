@@ -11,7 +11,7 @@
 ;   core_actor.cpp_matchClassExpression_FUN_0040d720 at 0040d763
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_checkNameHash_FUN_0040d810
@@ -35,7 +35,7 @@ section .text
     MOV DL,byte ptr [EAX]               ; 0040d610
     INC DL                              ; 0040d612
     AND EDX,0xff                        ; 0040d614
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040d61a | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040d61a | g_CharacterClassificationTable
     JNZ 0x0040d655                      ; 0040d621
         ;   XREF to: 0040d655 (CONDITIONAL_JUMP)  ; LAB_0040d655
     MOV EDI,dword ptr [EBX]             ; 0040d623
@@ -89,7 +89,7 @@ section .text
     MOV DL,byte ptr [EAX]               ; 0040d671
     INC DL                              ; 0040d673
     AND EDX,0xff                        ; 0040d675
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040d67b | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040d67b | g_CharacterClassificationTable
     JZ 0x0040d693                       ; 0040d682
         ;   XREF to: 0040d693 (CONDITIONAL_JUMP)  ; LAB_0040d693
     INC EAX                             ; 0040d684
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_0040d6a4
     INC AL                              ; 0040d6a6
     AND EAX,0xff                        ; 0040d6a8
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0040d6ad | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0040d6ad | g_CharacterClassificationTable
     JZ 0x0040d70a                       ; 0040d6b4
         ;   XREF to: 0040d70a (CONDITIONAL_JUMP)  ; LAB_0040d70a
     XOR ESI,ESI                         ; 0040d6b6
@@ -147,7 +147,7 @@ section .text
     MOV ESI,EAX                         ; 0040d6e4
     INC DL                              ; 0040d6e6
     AND EDX,0xff                        ; 0040d6e8
-    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d6ee | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d6ee | g_CharacterClassificationTable
     JNZ 0x0040d6b8                      ; 0040d6f5
         ;   XREF to: 0040d6b8 (CONDITIONAL_JUMP)  ; LAB_0040d6b8
     PUSH EAX                            ; 0040d6f7

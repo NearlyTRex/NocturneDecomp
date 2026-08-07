@@ -98,22 +98,16 @@
         "message": "no matching conversion for C-style cast from 'int' to 'UStrListVTable'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 136,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
+        "category": "cast_error",
+        "column": 28,
+        "line": 160,
+        "message": "no matching conversion for C-style cast from 'int' to 'UStrListVTable'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
-        "line": 136,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 137,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
+        "column": 3,
+        "line": 167,
+        "message": "use of undeclared identifier '_DAT_01bcde20'"
       }
     ],
     "success": false,
@@ -257,26 +251,26 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     },
     {
@@ -879,7 +873,7 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,_DAT_01c00c60,_DAT_01c00c64);",
+      "text": "((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,g_ClipRight,g_ClipBottom);",
       "type": "unnamed_param"
     },
     {

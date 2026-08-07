@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00530710(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)
 
 {
                     /* WARNING: Could not recover jumptable at 0x00530710. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*_DAT_01c00c7c)();
+  (*g_ScanlineRenderFunc)(left,right,scanline_y);
   return;
 }

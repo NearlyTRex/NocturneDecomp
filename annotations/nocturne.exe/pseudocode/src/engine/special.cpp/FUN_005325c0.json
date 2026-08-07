@@ -57,21 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 13,
         "line": 20,
         "message": "use of undeclared identifier '_DAT_02dc9ddc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 20,
-        "message": "use of undeclared identifier 'DAT_01bff720'"
       }
     ],
     "success": false,
@@ -80,15 +68,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 36
@@ -116,8 +103,8 @@
   "globals": [
     {
       "addr": "01bff720",
-      "name": "DAT_01bff720",
-      "type": "undefined4",
+      "name": "g_ColorTable16",
+      "type": "ushort[256]",
       "value": null
     },
     {
@@ -128,8 +115,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -190,14 +177,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01bff720",
-      "severity": "mild",
-      "text": "iVar1 = (*_DAT_02dc9ddc)(g_SourcePaletteData,&DAT_01bff720);",
-      "type": "undefined_data"
     }
   ]
 }

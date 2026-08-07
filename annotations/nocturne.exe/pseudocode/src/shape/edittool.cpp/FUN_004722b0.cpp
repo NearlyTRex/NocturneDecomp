@@ -13,8 +13,8 @@ void shape_edittool_cpp_FUN_004722b0(void)
 {
   char *text;
   int iVar1;
-  uint uVar2;
-  uint uVar3;
+  int iVar2;
+  int iVar3;
   int y;
   int iVar4;
   int iVar5;
@@ -35,7 +35,7 @@ void shape_edittool_cpp_FUN_004722b0(void)
     g_CurrentLineNumber = 1865;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::paintWindow() called but no window was opened!");
   }
-  uVar3 = _DAT_01c00c70;
+  iVar3 = g_ActiveRenderColor;
   iVar6 = (_DAT_01bcd07c + -1) * 0x1d8;
   piVar7 = (int *)(iVar6 + 0x1bcd080);
   engine_matrix_c_pushViewport_FUN_004ce7c0
@@ -45,12 +45,12 @@ void shape_edittool_cpp_FUN_004722b0(void)
             (*piVar7 + 1,*(int *)(iVar6 + 0x1bcd084) + 1,*(int *)(iVar6 + 0x1bcd088) + -2,
              *(int *)(iVar6 + 0x1bcd08c) + -2,_DAT_01bcddc8,_DAT_01bcddcc);
   engine_matrix_c_popViewport_FUN_004ce920();
-  uVar2 = _DAT_01c00c5c;
+  iVar2 = g_ClipTop;
   if (*(char *)(iVar6 + 0x1bcd0b8) == '\0') {
-    _DAT_01c00c70 = uVar3;
+    g_ActiveRenderColor = iVar3;
     return;
   }
-  _DAT_01c00c5c = *(uint *)(iVar6 + 0x1bcd084);
+  g_ClipTop = *(int *)(iVar6 + 0x1bcd084);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   color_value = -1;
   iVar5 = *piVar7;
@@ -61,12 +61,12 @@ void shape_edittool_cpp_FUN_004722b0(void)
   iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,text);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
             (_DAT_01bcd070,text,((iVar5 + iVar1) - iVar4) / 2,y,color_mode,color_value);
-  _DAT_01c00c70 = _DAT_01bcddcc;
+  g_ActiveRenderColor = _DAT_01bcddcc;
   iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,text);
   engine_2d_c_drawHLine_FUN_00403bd0
             (*piVar7 + 1,iVar5 + *(int *)(iVar6 + 0x1bcd084) + _DAT_01bcd9bc,
              *(int *)(iVar6 + 0x1bcd088) + -2);
-  _DAT_01c00c5c = uVar2;
-  _DAT_01c00c70 = uVar3;
+  g_ClipTop = iVar2;
+  g_ActiveRenderColor = iVar3;
   return;
 }

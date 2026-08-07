@@ -33,10 +33,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
       iVar4 = iVar4 * 4;
       iVar3 = iVar3 * 4;
       if (_DAT_01b4d71c != 0) {
-        if (DAT_005b7624 < 0x10) {
-          if (DAT_005b7624 == 8) {
+        if ((uint)g_BitsPerPixel < 0x10) {
+          if (g_BitsPerPixel == 8) {
             do {
-              piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);
+              piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
               iVar3 = iVar3 + 4;
               *(uchar *)(iVar5 + *piVar1) = g_LightTable[8][*(byte *)(iVar5 + *piVar1)];
             } while (iVar3 <= iVar4);
@@ -44,18 +44,18 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
           }
         }
         else {
-          if (DAT_005b7624 < 0x11) {
+          if ((uint)g_BitsPerPixel < 0x11) {
             do {
-              piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);
+              piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
               iVar3 = iVar3 + 4;
               *(ushort *)(*piVar1 + iVar2) =
                    *(ushort *)(*piVar1 + iVar2) >> (DAT_01b4d720 & 0x1f) & (ushort)_DAT_01b4d730;
             } while (iVar3 <= iVar4);
             return;
           }
-          if (DAT_005b7624 == 0x20) {
+          if (g_BitsPerPixel == 0x20) {
             do {
-              puVar6 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar3) + iVar5 * 4);
+              puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);
               iVar3 = iVar3 + 4;
               *puVar6 = *puVar6 >> (DAT_01b4d720 & 0x1f) & _DAT_01b4d730;
             } while (iVar3 <= iVar4);
@@ -67,8 +67,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0045c850(CDr
         core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid bitsPerPixel!");
         return;
       }
-      if (DAT_005b7624 < 0x10) {
-        if (DAT_005b7624 != 8) {
+      if ((uint)g_BitsPerPixel < 0x10) {
+        if (g_BitsPerPixel != 8) {
 LAB_0045c933:
           g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
           g_CurrentLineNumber = 987;
@@ -76,22 +76,22 @@ LAB_0045c933:
           return;
         }
         do {
-          piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
           *(byte *)(*piVar1 + iVar5) = DAT_01b4d710;
         } while (iVar3 <= iVar4);
       }
-      else if (DAT_005b7624 < 0x11) {
+      else if ((uint)g_BitsPerPixel < 0x11) {
         do {
-          piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
           *(ushort *)(*piVar1 + iVar2) = _DAT_01b4d710;
         } while (iVar3 <= iVar4);
       }
       else {
-        if (DAT_005b7624 != 0x20) goto LAB_0045c933;
+        if (g_BitsPerPixel != 0x20) goto LAB_0045c933;
         do {
-          piVar1 = (int *)(&DAT_01bd2fa0 + iVar3);
+          piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);
           iVar3 = iVar3 + 4;
           *(uint *)(*piVar1 + iVar5 * 4) = _DAT_01b4d710;
         } while (iVar3 <= iVar4);

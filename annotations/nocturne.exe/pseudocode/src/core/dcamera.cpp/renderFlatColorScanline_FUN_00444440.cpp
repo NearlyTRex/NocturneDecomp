@@ -25,11 +25,11 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_00444440(int scanline_
   int local_18;
   uint *local_14;
   
-  uVar7 = scanline_y - _DAT_01c00c5c;
+  uVar7 = scanline_y - g_ClipTop;
   if (((_DAT_012b0660 != 1) || ((uVar7 & 1) == 0)) && ((_DAT_012b0660 != 2 || ((uVar7 & 3) == 0))))
   {
-    iVar10 = ((right->base).x_current >> 0x10) - _DAT_01c00c58;
-    local_18 = ((left->base).x_current >> 0x10) - _DAT_01c00c58;
+    iVar10 = ((right->base).x_current >> 0x10) - g_ClipLeft;
+    local_18 = ((left->base).x_current >> 0x10) - g_ClipLeft;
     pSVar8 = left;
     iVar11 = iVar10;
     if (local_18 < iVar10) {
@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_00444440(int scanline_
       local_18 = iVar10;
     }
     iVar10 = (right->base).depth_current;
-    local_14 = (uint *)(*(int *)(&DAT_01bd4260 + uVar7 * 4) + iVar11 * 4);
+    local_14 = g_ZBufferScanlineArray[uVar7] + iVar11;
     local_18 = local_18 >> (DAT_012b0660 & 0x1f);
     iVar11 = iVar11 >> (DAT_012b0660 & 0x1f);
     iVar3 = ((pSVar8->base).depth_current - iVar10) / ((local_18 - iVar11) + 1);

@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_0043225e
     JNZ 0x0043240d                      ; 00432260
         ;   XREF to: 0043240d (CONDITIONAL_JUMP)  ; LAB_0043240d
-    CMP dword ptr [0x01c02594],0x0      ; 00432266 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00432266 | g_UseExternalRenderer
     JZ 0x00432384                       ; 0043226d
         ;   XREF to: 00432384 (CONDITIONAL_JUMP)  ; LAB_00432384
     CMP dword ptr [0x006b0278],0x0      ; 00432273 | DAT_006b0278
@@ -187,7 +187,7 @@ section .text
     TEST EAX,EAX                        ; 0043234e
     JMP 0x0043230e                      ; 00432350
         ;   XREF to: 0043230e (UNCONDITIONAL_JUMP)  ; LAB_0043230e
-    MOV EBX,dword ptr [0x01c039a0]      ; 00432352 | DAT_01c039a0
+    MOV EBX,dword ptr [0x01c039a0]      ; 00432352 | g_RenderStateFlags
         ;   Label: LAB_00432352
     PUSH EBX                            ; 00432358
     MOV ESI,dword ptr [0x01e52ef8]      ; 00432359 | DAT_01e52ef8

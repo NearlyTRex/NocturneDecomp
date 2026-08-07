@@ -17,10 +17,10 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
@@ -115,17 +115,17 @@ section .text
         ;   Label: LAB_0047384d
     JGE 0x004737c3                      ; 00473853
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
-    CMP EBX,dword ptr [0x01c00c58]      ; 00473859 | DAT_01c00c58
+    CMP EBX,dword ptr [0x01c00c58]      ; 00473859 | g_ClipLeft
     JL 0x004737c3                       ; 0047385f
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
-    CMP EBX,dword ptr [0x01c00c60]      ; 00473865 | DAT_01c00c60
+    CMP EBX,dword ptr [0x01c00c60]      ; 00473865 | g_ClipRight
     JGE 0x004737c3                      ; 0047386b
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
     MOV EAX,EDX                         ; 00473871
-    CMP EAX,dword ptr [0x01c00c5c]      ; 00473873 | DAT_01c00c5c
+    CMP EAX,dword ptr [0x01c00c5c]      ; 00473873 | g_ClipTop
     JL 0x004737c3                       ; 00473879
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
-    CMP EAX,dword ptr [0x01c00c64]      ; 0047387f | DAT_01c00c64
+    CMP EAX,dword ptr [0x01c00c64]      ; 0047387f | g_ClipBottom
     JGE 0x004737c3                      ; 00473885
         ;   XREF to: 004737c3 (CONDITIONAL_JUMP)  ; LAB_004737c3
     MOV ESI,EAX                         ; 0047388b
@@ -140,16 +140,16 @@ section .text
         ;   Label: LAB_0047389c
     JGE 0x00473802                      ; 004738a2
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EBP,dword ptr [0x01c00c58]      ; 004738a8 | DAT_01c00c58
+    CMP EBP,dword ptr [0x01c00c58]      ; 004738a8 | g_ClipLeft
     JL 0x00473802                       ; 004738ae
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EBP,dword ptr [0x01c00c60]      ; 004738b4 | DAT_01c00c60
+    CMP EBP,dword ptr [0x01c00c60]      ; 004738b4 | g_ClipRight
     JGE 0x00473802                      ; 004738ba
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EDI,dword ptr [0x01c00c5c]      ; 004738c0 | DAT_01c00c5c
+    CMP EDI,dword ptr [0x01c00c5c]      ; 004738c0 | g_ClipTop
     JL 0x00473802                       ; 004738c6
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
-    CMP EDI,dword ptr [0x01c00c64]      ; 004738cc | DAT_01c00c64
+    CMP EDI,dword ptr [0x01c00c64]      ; 004738cc | g_ClipBottom
     JGE 0x00473802                      ; 004738d2
         ;   XREF to: 00473802 (CONDITIONAL_JUMP)  ; LAB_00473802
     PUSH EDI                            ; 004738d8
@@ -163,16 +163,16 @@ section .text
         ;   Label: LAB_004738e7
     JGE 0x00473816                      ; 004738ed
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
-    CMP ESI,dword ptr [0x01c00c58]      ; 004738f3 | DAT_01c00c58
+    CMP ESI,dword ptr [0x01c00c58]      ; 004738f3 | g_ClipLeft
     JL 0x00473816                       ; 004738f9
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
-    CMP ESI,dword ptr [0x01c00c60]      ; 004738ff | DAT_01c00c60
+    CMP ESI,dword ptr [0x01c00c60]      ; 004738ff | g_ClipRight
     JGE 0x00473816                      ; 00473905
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
-    CMP EDI,dword ptr [0x01c00c5c]      ; 0047390b | DAT_01c00c5c
+    CMP EDI,dword ptr [0x01c00c5c]      ; 0047390b | g_ClipTop
     JL 0x00473816                       ; 00473911
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
-    CMP EDI,dword ptr [0x01c00c64]      ; 00473917 | DAT_01c00c64
+    CMP EDI,dword ptr [0x01c00c64]      ; 00473917 | g_ClipBottom
     JGE 0x00473816                      ; 0047391d
         ;   XREF to: 00473816 (CONDITIONAL_JUMP)  ; LAB_00473816
     PUSH EDI                            ; 00473923
@@ -186,16 +186,16 @@ section .text
         ;   Label: LAB_00473932
     JGE 0x0047382a                      ; 00473938
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBP,dword ptr [0x01c00c58]      ; 0047393e | DAT_01c00c58
+    CMP EBP,dword ptr [0x01c00c58]      ; 0047393e | g_ClipLeft
     JL 0x0047382a                       ; 00473944
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBP,dword ptr [0x01c00c60]      ; 0047394a | DAT_01c00c60
+    CMP EBP,dword ptr [0x01c00c60]      ; 0047394a | g_ClipRight
     JGE 0x0047382a                      ; 00473950
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBX,dword ptr [0x01c00c5c]      ; 00473956 | DAT_01c00c5c
+    CMP EBX,dword ptr [0x01c00c5c]      ; 00473956 | g_ClipTop
     JL 0x0047382a                       ; 0047395c
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
-    CMP EBX,dword ptr [0x01c00c64]      ; 00473962 | DAT_01c00c64
+    CMP EBX,dword ptr [0x01c00c64]      ; 00473962 | g_ClipBottom
     JGE 0x0047382a                      ; 00473968
         ;   XREF to: 0047382a (CONDITIONAL_JUMP)  ; LAB_0047382a
     PUSH EBX                            ; 0047396e
@@ -209,16 +209,16 @@ section .text
         ;   Label: LAB_0047397d
     JGE 0x0047383e                      ; 00473983
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
-    CMP ESI,dword ptr [0x01c00c58]      ; 00473989 | DAT_01c00c58
+    CMP ESI,dword ptr [0x01c00c58]      ; 00473989 | g_ClipLeft
     JL 0x0047383e                       ; 0047398f
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
-    CMP ESI,dword ptr [0x01c00c60]      ; 00473995 | DAT_01c00c60
+    CMP ESI,dword ptr [0x01c00c60]      ; 00473995 | g_ClipRight
     JGE 0x0047383e                      ; 0047399b
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
-    CMP EBX,dword ptr [0x01c00c5c]      ; 004739a1 | DAT_01c00c5c
+    CMP EBX,dword ptr [0x01c00c5c]      ; 004739a1 | g_ClipTop
     JL 0x0047383e                       ; 004739a7
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
-    CMP EBX,dword ptr [0x01c00c64]      ; 004739ad | DAT_01c00c64
+    CMP EBX,dword ptr [0x01c00c64]      ; 004739ad | g_ClipBottom
     JGE 0x0047383e                      ; 004739b3
         ;   XREF to: 0047383e (CONDITIONAL_JUMP)  ; LAB_0047383e
     PUSH EBX                            ; 004739b9

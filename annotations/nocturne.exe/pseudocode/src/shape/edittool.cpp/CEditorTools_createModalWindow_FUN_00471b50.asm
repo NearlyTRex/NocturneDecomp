@@ -33,12 +33,12 @@
 ;   TerminatedCString s_out_of_memory_to_open_ed_0057e92d
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -228,7 +228,7 @@ section .text
         ;   Label: LAB_00471d9f
     JNZ 0x0047209c                      ; 00471da7
         ;   XREF to: 0047209c (CONDITIONAL_JUMP)  ; LAB_0047209c
-    CMP dword ptr [0x01c02594],0x0      ; 00471dad | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00471dad | g_UseExternalRenderer
     JZ 0x00471e45                       ; 00471db4
         ;   XREF to: 00471e45 (CONDITIONAL_JUMP)  ; LAB_00471e45
     CMP dword ptr [0x005b7620],0x0      ; 00471dba | g_WindowHeight
@@ -239,7 +239,7 @@ section .text
     SHL EBX,0x2                         ; 00471dcb
     ADD EAX,0x4                         ; 00471dce
         ;   Label: LAB_00471dce
-    MOV EDX,dword ptr [EAX + 0x1bd2f9c] ; 00471dd1 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDX,dword ptr [EAX + 0x1bd2f9c] ; 00471dd1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV dword ptr [ESP + EAX*0x1 + -0x4],EDX ; 00471dd7
     CMP EAX,EBX                         ; 00471ddb
     JL 0x00471dce                       ; 00471ddd
@@ -249,7 +249,7 @@ section .text
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
         ;   Label: LAB_00471de0
     MOV EDX,dword ptr [0x005b761c]      ; 00471de5 | g_WindowWidth
-    MOV ECX,dword ptr [0x005b7624]      ; 00471deb | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 00471deb | g_BitsPerPixel
     IMUL EDX,ECX                        ; 00471df1
     MOV EAX,EDX                         ; 00471df4
     SAR EDX,0x1f                        ; 00471df6
@@ -265,7 +265,7 @@ section .text
     XOR EDX,EDX                         ; 00471e0f
     MOV ECX,EBP                         ; 00471e11
         ;   Label: LAB_00471e11
-    MOV ESI,dword ptr [EDX + 0x1bd2fa0] ; 00471e13 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV ESI,dword ptr [EDX + 0x1bd2fa0] ; 00471e13 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV EDI,dword ptr [ESP + EDX*0x1]   ; 00471e19
     PUSH EDI                            ; 00471e1c
     MOV EAX,ECX                         ; 00471e1d
@@ -288,7 +288,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x12f8]    ; 00471e45
         ;   Label: LAB_00471e45
     MOV EBP,dword ptr [ESP + 0x12f0]    ; 00471e4c
-    MOV ECX,dword ptr [0x005b7624]      ; 00471e53 | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 00471e53 | g_BitsPerPixel
     SUB EDX,EBP                         ; 00471e59
     IMUL EDX,ECX                        ; 00471e5b
     MOV EBX,dword ptr [ESP + 0x12fc]    ; 00471e5e
@@ -330,7 +330,7 @@ section .text
     MOV dword ptr [ESP + 0x12d0],EAX    ; 00471eec
     MOV EDX,dword ptr [ESP + 0x12f0]    ; 00471ef3
         ;   Label: LAB_00471ef3
-    MOV ECX,dword ptr [0x005b7624]      ; 00471efa | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 00471efa | g_BitsPerPixel
     IMUL EDX,ECX                        ; 00471f00
     MOV EAX,EDX                         ; 00471f03
     SAR EDX,0x1f                        ; 00471f05
@@ -338,7 +338,7 @@ section .text
     SBB EAX,EDX                         ; 00471f0b
     SAR EAX,0x3                         ; 00471f0d
     MOV EDI,EBP                         ; 00471f10
-    MOV ESI,dword ptr [EBX + 0x1bd2fa0] ; 00471f12 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV ESI,dword ptr [EBX + 0x1bd2fa0] ; 00471f12 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV ECX,dword ptr [ESP + 0x12d4]    ; 00471f18
     ADD ESI,EAX                         ; 00471f1f
     ADD EBX,0x4                         ; 00471f21
@@ -360,25 +360,25 @@ section .text
     MOV EDX,EDX                         ; 00471f4e
     MOV EDX,dword ptr [ESP + 0x12cc]    ; 00471f50
         ;   Label: LAB_00471f50
-    MOV EAX,[0x01c00c58]                ; 00471f57 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 00471f57 | g_ClipLeft
     MOV dword ptr [EDX + 0x10],EAX      ; 00471f5c
-    MOV EAX,[0x01c00c5c]                ; 00471f5f | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 00471f5f | g_ClipTop
     MOV dword ptr [EDX + 0x14],EAX      ; 00471f64
-    MOV EAX,[0x01c00c60]                ; 00471f67 | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 00471f67 | g_ClipRight
     MOV dword ptr [EDX + 0x18],EAX      ; 00471f6c
-    MOV EAX,[0x01c00c64]                ; 00471f6f | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 00471f6f | g_ClipBottom
     MOV dword ptr [EDX + 0x1c],EAX      ; 00471f74
-    MOV EAX,[0x01c00c48]                ; 00471f77 | DAT_01c00c48
+    MOV EAX,[0x01c00c48]                ; 00471f77 | g_Projection
     MOV dword ptr [EDX + 0x20],EAX      ; 00471f7c
-    MOV EAX,[0x01c00c4c]                ; 00471f7f | DAT_01c00c4c
+    MOV EAX,[0x01c00c4c]                ; 00471f7f | g_Projection.neg_half_height_fixed
     MOV dword ptr [EDX + 0x24],EAX      ; 00471f84
-    MOV EAX,[0x01c00c50]                ; 00471f87 | DAT_01c00c50
+    MOV EAX,[0x01c00c50]                ; 00471f87 | g_Projection.center_x_fixed
     MOV dword ptr [EDX + 0x28],EAX      ; 00471f8c
-    MOV EAX,[0x01c00c54]                ; 00471f8f | DAT_01c00c54
+    MOV EAX,[0x01c00c54]                ; 00471f8f | g_Projection.center_y_fixed
     MOV dword ptr [EDX + 0x2c],EAX      ; 00471f94
-    MOV EAX,[0x01c00c68]                ; 00471f97 | DAT_01c00c68
+    MOV EAX,[0x01c00c68]                ; 00471f97 | g_ViewportWidth
     MOV dword ptr [EDX + 0x30],EAX      ; 00471f9c
-    MOV EAX,[0x01c00c6c]                ; 00471f9f | DAT_01c00c6c
+    MOV EAX,[0x01c00c6c]                ; 00471f9f | g_ViewportHeight
     MOV dword ptr [EDX + 0x34],EAX      ; 00471fa4
     MOV EAX,dword ptr [ESP + 0x12f0]    ; 00471fa7
     MOV dword ptr [EDX],EAX             ; 00471fae

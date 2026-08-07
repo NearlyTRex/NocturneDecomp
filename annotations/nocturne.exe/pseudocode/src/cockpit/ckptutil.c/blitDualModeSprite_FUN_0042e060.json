@@ -54,30 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01bd2fa4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 58,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -86,20 +62,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 365,
+    "complexity_score": 374,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 27,
+    "pseudocode_lines": 74,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 254
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -131,19 +105,19 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     }
@@ -262,32 +236,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "pvStack_18 = (void *)(dest_x + *(int *)(&DAT_01bd2fa0 + dest_y * 4));",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(void *)(dest_x + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "pvStack_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 31,
       "match": "(int *)((int)span_data",
       "severity": "moderate",
       "text": "for (iVar7 = 0; piVar6 = (int *)((int)span_data + iStack_28), iVar7 < *piVar6;",
@@ -295,7 +253,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(void *)((int)pvStack_18",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)((int)pvStack_18 + *(int *)(iVar3 + (int)piVar6)),",
@@ -303,7 +261,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(int *)(iVar3 + (int)piVar6",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)((int)pvStack_18 + *(int *)(iVar3 + (int)piVar6)),",
@@ -311,7 +269,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 38,
       "match": "(int *)(iVar2 + (int)piVar6",
       "severity": "moderate",
       "text": "(void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),",
@@ -319,7 +277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(int *)(iVar1 + (int)piVar6",
       "severity": "moderate",
       "text": "*(int *)(iVar1 + (int)piVar6));",
@@ -327,7 +285,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 43,
       "match": "(void *)((int)pvStack_18",
       "severity": "moderate",
       "text": "pvStack_18 = (void *)((int)pvStack_18 + iVar4);",
@@ -335,23 +293,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(void *)((int)sprite_data",
       "severity": "moderate",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "pvStack_14 = (void *)(*(int *)(&DAT_01bd2fa0 + dest_y * 4) + dest_x * 2);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(void *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "pvStack_14 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(int *)((int)span_data",
       "severity": "moderate",
       "text": "for (iVar7 = 0; piVar6 = (int *)((int)span_data + iStack_24), iVar7 < *piVar6;",
@@ -359,7 +317,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(int *)(iVar3 + (int)piVar6",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)pvStack_14),",
@@ -367,7 +325,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(int *)(iVar2 + (int)piVar6",
       "severity": "moderate",
       "text": "(void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),",
@@ -375,7 +333,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 66,
       "match": "(int *)(iVar1 + (int)piVar6",
       "severity": "moderate",
       "text": "*(int *)(iVar1 + (int)piVar6));",
@@ -383,7 +341,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 70,
       "match": "(void *)((int)pvStack_14",
       "severity": "moderate",
       "text": "pvStack_14 = (void *)((int)pvStack_14 + (iVar4 / 2) * 2);",
@@ -391,15 +349,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 71,
       "match": "(void *)((int)sprite_data",
       "severity": "moderate",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_ScreenBufferArray[1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_ScreenBufferArray[1]",
+      "severity": "moderate",
+      "text": "iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)g_ScreenBufferArray[0]",
+      "severity": "moderate",
+      "text": "iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[dest_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)g_ScreenBufferArray[dest_y]",
+      "severity": "moderate",
+      "text": "pvStack_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `pvStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "(int)pvStack_18",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)((int)pvStack_18 + *(int *)(iVar3 + (int)piVar6)),",
@@ -407,7 +389,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)((int)pvStack_18 + *(int *)(iVar3 + (int)piVar6)),",
@@ -415,7 +397,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 38,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "(void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),",
@@ -423,7 +405,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "*(int *)(iVar1 + (int)piVar6));",
@@ -431,15 +413,23 @@
     },
     {
       "description": "Pointer value `pvStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "(int)pvStack_18",
       "severity": "moderate",
       "text": "pvStack_18 = (void *)((int)pvStack_18 + iVar4);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `g_ScreenBufferArray[dest_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)g_ScreenBufferArray[dest_y]",
+      "severity": "moderate",
+      "text": "pvStack_14 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)pvStack_14),",
@@ -447,7 +437,7 @@
     },
     {
       "description": "Pointer value `pvStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "(int)pvStack_14",
       "severity": "moderate",
       "text": "(*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)pvStack_14),",
@@ -455,7 +445,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "(void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),",
@@ -463,7 +453,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "*(int *)(iVar1 + (int)piVar6));",
@@ -471,7 +461,7 @@
     },
     {
       "description": "Pointer value `pvStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "(int)pvStack_14",
       "severity": "moderate",
       "text": "pvStack_14 = (void *)((int)pvStack_14 + (iVar4 / 2) * 2);",

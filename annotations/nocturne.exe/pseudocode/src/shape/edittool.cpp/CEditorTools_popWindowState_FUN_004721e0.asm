@@ -14,16 +14,16 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e9a5
 ;   TerminatedCString s_CEditorTools_popWindow_c_0057e9bb
 ;   undefined4 DAT_01bcd07c
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c68
-;   undefined4 DAT_01c00c6c
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ViewportWidth
+;   int g_ViewportHeight
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -59,25 +59,25 @@ section .text
         ;   XREF to: 00472298 (CONDITIONAL_JUMP)  ; LAB_00472298
     MOV EAX,dword ptr [EBX + 0x10]      ; 0047221c
         ;   Label: LAB_0047221c
-    MOV [0x01c00c58],EAX                ; 0047221f | DAT_01c00c58
+    MOV [0x01c00c58],EAX                ; 0047221f | g_ClipLeft
     MOV EAX,dword ptr [EBX + 0x14]      ; 00472224
-    MOV [0x01c00c5c],EAX                ; 00472227 | DAT_01c00c5c
+    MOV [0x01c00c5c],EAX                ; 00472227 | g_ClipTop
     MOV EAX,dword ptr [EBX + 0x18]      ; 0047222c
-    MOV [0x01c00c60],EAX                ; 0047222f | DAT_01c00c60
+    MOV [0x01c00c60],EAX                ; 0047222f | g_ClipRight
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00472234
-    MOV [0x01c00c64],EAX                ; 00472237 | DAT_01c00c64
+    MOV [0x01c00c64],EAX                ; 00472237 | g_ClipBottom
     MOV EAX,dword ptr [EBX + 0x20]      ; 0047223c
-    MOV [0x01c00c48],EAX                ; 0047223f | DAT_01c00c48
+    MOV [0x01c00c48],EAX                ; 0047223f | g_Projection
     MOV EAX,dword ptr [EBX + 0x24]      ; 00472244
-    MOV [0x01c00c4c],EAX                ; 00472247 | DAT_01c00c4c
+    MOV [0x01c00c4c],EAX                ; 00472247 | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [EBX + 0x28]      ; 0047224c
-    MOV [0x01c00c50],EAX                ; 0047224f | DAT_01c00c50
+    MOV [0x01c00c50],EAX                ; 0047224f | g_Projection.center_x_fixed
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00472254
-    MOV [0x01c00c54],EAX                ; 00472257 | DAT_01c00c54
+    MOV [0x01c00c54],EAX                ; 00472257 | g_Projection.center_y_fixed
     MOV EAX,dword ptr [EBX + 0x30]      ; 0047225c
-    MOV [0x01c00c68],EAX                ; 0047225f | DAT_01c00c68
+    MOV [0x01c00c68],EAX                ; 0047225f | g_ViewportWidth
     MOV EAX,dword ptr [EBX + 0x34]      ; 00472264
-    MOV [0x01c00c6c],EAX                ; 00472267 | DAT_01c00c6c
+    MOV [0x01c00c6c],EAX                ; 00472267 | g_ViewportHeight
     POP EDI                             ; 0047226c
     POP ESI                             ; 0047226d
     POP EBX                             ; 0047226e

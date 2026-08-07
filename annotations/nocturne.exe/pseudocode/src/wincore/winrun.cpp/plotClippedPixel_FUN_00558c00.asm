@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   y_coord
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
@@ -23,16 +23,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00558c00
         ;   Label: wincore_winrun.cpp_plotClippedPixel_FUN_00558c00
     MOV EAX,dword ptr [ESP + 0x8]       ; 00558c04
-    CMP EDX,dword ptr [0x01c00c58]      ; 00558c08 | DAT_01c00c58
+    CMP EDX,dword ptr [0x01c00c58]      ; 00558c08 | g_ClipLeft
     JLE 0x00558c28                      ; 00558c0e
         ;   XREF to: 00558c28 (CONDITIONAL_JUMP)  ; LAB_00558c28
-    CMP EAX,dword ptr [0x01c00c5c]      ; 00558c10 | DAT_01c00c5c
+    CMP EAX,dword ptr [0x01c00c5c]      ; 00558c10 | g_ClipTop
     JLE 0x00558c28                      ; 00558c16
         ;   XREF to: 00558c28 (CONDITIONAL_JUMP)  ; LAB_00558c28
-    CMP EDX,dword ptr [0x01c00c60]      ; 00558c18 | DAT_01c00c60
+    CMP EDX,dword ptr [0x01c00c60]      ; 00558c18 | g_ClipRight
     JGE 0x00558c28                      ; 00558c1e
         ;   XREF to: 00558c28 (CONDITIONAL_JUMP)  ; LAB_00558c28
-    CMP EAX,dword ptr [0x01c00c64]      ; 00558c20 | DAT_01c00c64
+    CMP EAX,dword ptr [0x01c00c64]      ; 00558c20 | g_ClipBottom
     JL 0x00558c29                       ; 00558c26
         ;   XREF to: 00558c29 (CONDITIONAL_JUMP)  ; LAB_00558c29
     RET                                 ; 00558c28

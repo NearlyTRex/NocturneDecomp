@@ -52,7 +52,7 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(CInputString *thi
   ;
   uVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
   if ((uVar1 & 0x40000) != 0) {
-    _DAT_01c00c70 = _DAT_01bcdde4;
+    g_ActiveRenderColor = _DAT_01bcdde4;
     iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_0046f5c0(this_ptr,this_ptr->cursor_position);
     engine_2d_c_drawLine_FUN_004015a0(iVar3 + x_pos,y_pos,iVar3 + x_pos,y2);
     return;

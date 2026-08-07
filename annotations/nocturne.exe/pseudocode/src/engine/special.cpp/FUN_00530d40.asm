@@ -10,7 +10,7 @@
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780 at 0053226f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d74
 ;   undefined4 DAT_02dc9d78
 ;   undefined4 DAT_02dc9d7c
@@ -39,7 +39,7 @@ section .text
     PUSH EBP                            ; 00530d41
     XOR EDX,EDX                         ; 00530d42
     MOV EBX,dword ptr [0x02dc9e08]      ; 00530d44 | DAT_02dc9e08
-    MOV dword ptr [0x01c02594],EDX      ; 00530d4a | DAT_01c02594
+    MOV dword ptr [0x01c02594],EDX      ; 00530d4a | g_UseExternalRenderer
     MOV dword ptr [0x02dc9e04],EDX      ; 00530d50 | INT_02dc9e04
     TEST EBX,EBX                        ; 00530d56
     JNZ 0x00530e3b                      ; 00530d58

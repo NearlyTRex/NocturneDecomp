@@ -9,7 +9,7 @@
 ;   TerminatedCString s_unmapFrameBuffer_frame_b_00577498
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_006b023c
 ;   undefined4 DAT_006b0240
 ;   undefined4 DAT_006b0244
@@ -19,7 +19,7 @@
 ;   undefined4 DAT_006b0254
 ;   undefined4 DAT_006b0258
 ;   undefined4 DAT_006b025c
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -43,24 +43,24 @@ section .text
     MOV EAX,[0x006b0240]                ; 00404380 | DAT_006b0240
     MOV [0x005b7620],EAX                ; 00404385 | g_WindowHeight
     MOV EAX,[0x006b0244]                ; 0040438a | DAT_006b0244
-    MOV [0x01c00c58],EAX                ; 0040438f | DAT_01c00c58
+    MOV [0x01c00c58],EAX                ; 0040438f | g_ClipLeft
     MOV EAX,[0x006b0248]                ; 00404394 | DAT_006b0248
-    MOV [0x01c00c5c],EAX                ; 00404399 | DAT_01c00c5c
+    MOV [0x01c00c5c],EAX                ; 00404399 | g_ClipTop
     MOV EAX,[0x006b024c]                ; 0040439e | DAT_006b024c
     MOV EDX,dword ptr [0x006b0258]      ; 004043a3 | DAT_006b0258
-    MOV [0x01c00c60],EAX                ; 004043a9 | DAT_01c00c60
+    MOV [0x01c00c60],EAX                ; 004043a9 | g_ClipRight
     MOV EAX,[0x006b0250]                ; 004043ae | DAT_006b0250
     MOV EBX,dword ptr [0x006b025c]      ; 004043b3 | DAT_006b025c
-    MOV [0x01c00c64],EAX                ; 004043b9 | DAT_01c00c64
+    MOV [0x01c00c64],EAX                ; 004043b9 | g_ClipBottom
     MOV EAX,[0x006b0254]                ; 004043be | DAT_006b0254
     MOV EDI,dword ptr [0x005b7620]      ; 004043c3 | g_WindowHeight
-    MOV [0x005b7624],EAX                ; 004043c9 | DAT_005b7624
+    MOV [0x005b7624],EAX                ; 004043c9 | g_BitsPerPixel
     TEST EDI,EDI                        ; 004043ce
     JLE 0x004043f0                      ; 004043d0
         ;   XREF to: 004043f0 (CONDITIONAL_JUMP)  ; LAB_004043f0
     LEA ECX,[EDI*0x4 + 0x0]             ; 004043d2
     XOR EAX,EAX                         ; 004043d9
-    MOV dword ptr [EAX + 0x1bd2fa0],EDX ; 004043db | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV dword ptr [EAX + 0x1bd2fa0],EDX ; 004043db | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_004043db
     ADD EAX,0x4                         ; 004043e1
     ADD EDX,EBX                         ; 004043e4

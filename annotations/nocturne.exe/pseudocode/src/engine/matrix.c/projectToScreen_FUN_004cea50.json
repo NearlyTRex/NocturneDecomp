@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c00c4c'"
       }
     ],
     "success": false,
@@ -68,20 +62,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 120,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -118,7 +111,7 @@
     },
     {
       "addr": "01c00c4c",
-      "name": "DAT_01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     }
@@ -209,16 +202,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 7,
       "match": "aiStackY_1038",
       "severity": "moderate",
       "text": "int aiStackY_1038 [1017];",
@@ -226,7 +211,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + -8) =",
@@ -234,7 +219,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + 4);",
@@ -242,7 +227,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + -4) =",
@@ -250,7 +235,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 22,
       "match": "(uint *)((int)aCStack_44",
       "severity": "moderate",
       "text": "*(uint *)((int)aCStack_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
@@ -258,10 +243,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_005b7648",
       "severity": "mild",
-      "text": "(double)DAT_005b7648);",
+      "text": "(double)CStack_50.z) / (double)DAT_005b7648);",
       "type": "undefined_data"
     }
   ]

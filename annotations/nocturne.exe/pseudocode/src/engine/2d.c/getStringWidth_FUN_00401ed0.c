@@ -38,7 +38,7 @@ int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(char *text)
       pbVar4 = pbVar4 + 1;
     }
     else {
-      iVar6 = iVar6 + (byte)(&DAT_005a4b80)[(bVar2 - 0x20) * 0x91] + 1;
+      iVar6 = iVar6 + g_FontTable[bVar2 - 0x20].width + 1;
       uVar5 = uVar5 + 1;
       pbVar4 = pbVar4 + 1;
     }

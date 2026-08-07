@@ -15,7 +15,7 @@
 ;   TerminatedCString s_No_opening_parenthesis_0057f4ac
 ;   TerminatedCString s_Argument_too_long_0057f4c3
 ;   TerminatedCString s_Can_t_find_closing_paren_0057f4d5
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170
@@ -36,7 +36,7 @@ section .text
         ;   Label: LAB_0047a65e
     INC AL                              ; 0047a660
     AND EAX,0xff                        ; 0047a662
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a667 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a667 | g_CharacterClassificationTable
     JZ 0x0047a673                       ; 0047a66e
         ;   XREF to: 0047a673 (CONDITIONAL_JUMP)  ; LAB_0047a673
     INC ECX                             ; 0047a670
@@ -131,7 +131,7 @@ section .text
         ;   Label: LAB_0047a6f9
     INC DL                              ; 0047a6fc
     AND EDX,0xff                        ; 0047a6fe
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a704 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a704 | g_CharacterClassificationTable
     JNZ 0x0047a737                      ; 0047a70b
         ;   XREF to: 0047a737 (CONDITIONAL_JUMP)  ; LAB_0047a737
     LEA EAX,[EBX + EBP*0x1]             ; 0047a70d
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_0047a716
     INC AL                              ; 0047a719
     AND EAX,0xff                        ; 0047a71b
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a720 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0047a720 | g_CharacterClassificationTable
     JZ 0x0047a73f                       ; 0047a727
         ;   XREF to: 0047a73f (CONDITIONAL_JUMP)  ; LAB_0047a73f
     PUSH EBX                            ; 0047a729
@@ -169,7 +169,7 @@ section .text
     XOR ECX,ECX                         ; 0047a743
     INC BL                              ; 0047a745
     MOV CL,BL                           ; 0047a747
-    TEST byte ptr [ECX + 0x5c168c],0x2  ; 0047a749 | DAT_005c168c
+    TEST byte ptr [ECX + 0x5c168c],0x2  ; 0047a749 | g_CharacterClassificationTable
     JZ 0x0047a755                       ; 0047a750
         ;   XREF to: 0047a755 (CONDITIONAL_JUMP)  ; LAB_0047a755
     INC EAX                             ; 0047a752

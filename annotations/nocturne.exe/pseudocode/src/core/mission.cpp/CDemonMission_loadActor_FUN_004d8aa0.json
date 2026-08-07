@@ -56,12 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
         "category": "incompatible_types",
         "column": 13,
         "line": 41,
@@ -80,16 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 171,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
-      "unaffected_reg",
-      "undefined_data"
+      "unaffected_reg"
     ],
     "total_lines": 208
   },
@@ -207,8 +200,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -347,14 +340,6 @@
       "severity": "moderate",
       "text": "CDemonActor *unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "} while (((&DAT_005c168c)[(byte)((char)iVar2 + 1)] & 2) != 0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",

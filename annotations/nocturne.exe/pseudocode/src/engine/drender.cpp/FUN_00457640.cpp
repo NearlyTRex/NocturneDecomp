@@ -96,7 +96,7 @@ void engine_drender_cpp_FUN_00457640(int param_1,int param_2)
       iVar3 = *(int *)(param_1 + 8);
     }
     *(uint *)(iVar2 + 0x1b4cd5c) = iVar3 + uVar5;
-    if ((DAT_01c039a1 & 2) != 0) {
+    if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
       lVar1 = (longlong)iVar7 * (longlong)(*(int *)(iVar6 + 0x24) - *(int *)(param_1 + 0x24));
       uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       *(uint *)(iVar2 + 0x1b4cd70) = uVar5;

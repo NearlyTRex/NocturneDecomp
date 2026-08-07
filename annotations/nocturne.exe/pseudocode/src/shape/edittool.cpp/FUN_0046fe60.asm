@@ -26,10 +26,10 @@
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
 ;   undefined4 DAT_01bcddd8
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   CKeys g_CKeys_01cc30e4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -147,17 +147,17 @@ section .text
     ADD ESP,0x4                         ; 0046ff61
     PUSH -0x1                           ; 0046ff64
     MOV EDX,dword ptr [0x01bcddd8]      ; 0046ff66 | DAT_01bcddd8
-    MOV ECX,dword ptr [0x01c00c64]      ; 0046ff6c | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0046ff6c | g_ClipBottom
     PUSH EDX                            ; 0046ff72
-    MOV EDX,dword ptr [0x01c00c5c]      ; 0046ff73 | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 0046ff73 | g_ClipTop
     ADD EDX,ECX                         ; 0046ff79
     SUB EDX,EBX                         ; 0046ff7b
     MOV EAX,EDX                         ; 0046ff7d
     SAR EDX,0x1f                        ; 0046ff7f
     SUB EAX,EDX                         ; 0046ff82
     SAR EAX,0x1                         ; 0046ff84
-    MOV EBX,dword ptr [0x01c00c60]      ; 0046ff86 | DAT_01c00c60
-    MOV EDX,dword ptr [0x01c00c58]      ; 0046ff8c | DAT_01c00c58
+    MOV EBX,dword ptr [0x01c00c60]      ; 0046ff86 | g_ClipRight
+    MOV EDX,dword ptr [0x01c00c58]      ; 0046ff8c | g_ClipLeft
     ADD EDX,EBX                         ; 0046ff92
     SUB EDX,EBP                         ; 0046ff94
     PUSH EAX                            ; 0046ff96

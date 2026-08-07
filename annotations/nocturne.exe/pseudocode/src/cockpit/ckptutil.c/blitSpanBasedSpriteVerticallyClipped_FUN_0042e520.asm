@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c64
+;   int g_BitsPerPixel = 0x8
+;   int g_ClipTop
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -29,13 +29,13 @@ section .text
     MOV EBP,dword ptr [ESP + 0x48]      ; 0042e527
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e52b
         ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
-    MOV EDX,dword ptr [0x005b7624]      ; 0042e530 | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0042e530 | g_BitsPerPixel
     MOV EDI,EAX                         ; 0042e536
     CMP EDX,0x8                         ; 0042e538
     JNZ 0x0042e601                      ; 0042e53b
         ;   XREF to: 0042e601 (CONDITIONAL_JUMP)  ; LAB_0042e601
-    MOV EAX,[0x01c00c5c]                ; 0042e541 | DAT_01c00c5c
-    MOV EBX,dword ptr [0x01c00c64]      ; 0042e546 | DAT_01c00c64
+    MOV EAX,[0x01c00c5c]                ; 0042e541 | g_ClipTop
+    MOV EBX,dword ptr [0x01c00c64]      ; 0042e546 | g_ClipBottom
     MOV dword ptr [ESP + 0x14],EAX      ; 0042e54c
     CMP EAX,EBX                         ; 0042e550
     JG 0x0042e5d6                       ; 0042e552
@@ -71,7 +71,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0042e5aa
     MOV EBX,dword ptr [ESP + 0x8]       ; 0042e5ae
     MOV ESI,dword ptr [ESP + 0x14]      ; 0042e5b2
-    MOV EDX,dword ptr [0x01c00c64]      ; 0042e5b6 | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 0042e5b6 | g_ClipBottom
     ADD ECX,0x84                        ; 0042e5bc
     ADD EBX,0x4                         ; 0042e5c2
     INC ESI                             ; 0042e5c5
@@ -104,9 +104,9 @@ section .text
     ADD ESP,0xc                         ; 0042e5fc
     JMP 0x0042e5a0                      ; 0042e5ff
         ;   XREF to: 0042e5a0 (UNCONDITIONAL_JUMP)  ; LAB_0042e5a0
-    MOV EAX,[0x01c00c5c]                ; 0042e601 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 0042e601 | g_ClipTop
         ;   Label: LAB_0042e601
-    MOV ECX,dword ptr [0x01c00c64]      ; 0042e606 | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0042e606 | g_ClipBottom
     MOV dword ptr [ESP + 0x10],EAX      ; 0042e60c
     CMP EAX,ECX                         ; 0042e610
     JG 0x0042e5d6                       ; 0042e612
@@ -142,7 +142,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x4]       ; 0042e664
     MOV EAX,dword ptr [ESP]             ; 0042e668
     MOV EDX,dword ptr [ESP + 0x10]      ; 0042e66b
-    MOV ECX,dword ptr [0x01c00c64]      ; 0042e66f | DAT_01c00c64
+    MOV ECX,dword ptr [0x01c00c64]      ; 0042e66f | g_ClipBottom
     ADD ESI,0x84                        ; 0042e675
     ADD EAX,0x4                         ; 0042e67b
     INC EDX                             ; 0042e67e

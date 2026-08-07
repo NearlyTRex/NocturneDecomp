@@ -15,7 +15,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDem
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRenderer::clipAndFillPoly - Bad projection mode");
   }
   if (this_ptr->face_capture_enabled == 0) {
-    if (((this_ptr->face_count == 0) || ((DAT_01c039a0 & 1) != 0)) && ((DAT_01c039a0 & 5) != 0)) {
+    if (((this_ptr->face_count == 0) || ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) != 0)) &&
+       ((g_RenderStateFlags.dword & (RENDER_TEX_ENABLE | RENDER_FOG_COLOR)) != 0)) {
       engine_drender_cpp_renderTriangleTextured_FUN_00457a00(vertex_indices,vertex_count);
     }
     else {
@@ -24,9 +25,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDem
     }
   }
   else {
-    if (((this_ptr->face_count == 0) || ((DAT_01c039a0 & 1) != 0)) && ((DAT_01c039a0 & 5) != 0)) {
-      if ((DAT_01c039a1 & 2) == 0) {
-        engine_clipper_c_FUN_00432cd0(vertex_count,vertex_indices);
+    if (((this_ptr->face_count == 0) || ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) != 0)) &&
+       ((g_RenderStateFlags.dword & (RENDER_TEX_ENABLE | RENDER_FOG_COLOR)) != 0)) {
+      if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
+        engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,vertex_indices);
         return;
       }
       engine_clipper_c_clipPolygonToViewport_FUN_004349a0(vertex_count,vertex_indices);

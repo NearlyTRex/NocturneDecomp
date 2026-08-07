@@ -18,12 +18,12 @@
 ;   int g_WindowWidth = 0x140
 ;   undefined4 DAT_005b7630
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   int g_ClipLeft
+;   int g_ClipTop
 ;   CKeys g_CKeys_01cc30e4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -113,9 +113,9 @@ section .text
     CALL shape_edittool.cpp_FUN_004722b0 ; 0046f8a2
         ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
     ADD ESP,0x4                         ; 0046f8a7
-    MOV EDX,dword ptr [0x01c00c5c]      ; 0046f8aa | DAT_01c00c5c
+    MOV EDX,dword ptr [0x01c00c5c]      ; 0046f8aa | g_ClipTop
     PUSH EDX                            ; 0046f8b0
-    MOV ECX,dword ptr [0x01c00c58]      ; 0046f8b1 | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 0046f8b1 | g_ClipLeft
     PUSH ECX                            ; 0046f8b7
     LEA EAX,[ESP + 0x8]                 ; 0046f8b8
     PUSH EAX                            ; 0046f8bc
@@ -226,7 +226,7 @@ section .text
     INC AL                              ; 0046f9a2
         ;   Label: LAB_0046f9a2
     AND EAX,0xff                        ; 0046f9a4
-    TEST byte ptr [EAX + 0x5c168c],0x8  ; 0046f9a9 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x8  ; 0046f9a9 | g_CharacterClassificationTable
     JZ 0x0046f8ca                       ; 0046f9b0
         ;   XREF to: 0046f8ca (CONDITIONAL_JUMP)  ; LAB_0046f8ca
     MOV EAX,ESP                         ; 0046f9b6

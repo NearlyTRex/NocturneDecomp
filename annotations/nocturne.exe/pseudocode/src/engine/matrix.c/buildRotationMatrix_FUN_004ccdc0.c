@@ -65,8 +65,9 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,
   }
   _DAT_01cc5170 = 0x10000;
 LAB_004ccf3c:
-  iVar6 = (g_WindowWidth * -(int)(((longlong)_DAT_01c00c4c * 0x10000) / (longlong)_DAT_01c00c48) * 3
-          ) / (g_WindowHeight << 2);
+  iVar6 = (g_WindowWidth *
+           -(int)(((longlong)g_Projection.neg_half_height_fixed * 0x10000) /
+                 (longlong)g_Projection.half_width_fixed) * 3) / (g_WindowHeight << 2);
   lVar1 = (longlong)iVar6 *
           (longlong)
           (int)(((uint)((longlong)iVar9 * (longlong)iVar11) >> 0x10 |
@@ -81,8 +82,8 @@ LAB_004ccf3c:
           (int)(((uint)((longlong)iVar9 * (longlong)-iVar10) >> 0x10 |
                 (int)((ulonglong)((longlong)iVar9 * (longlong)-iVar10) >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
-  iVar6 = ((((_DAT_01c00c60 - _DAT_01c00c58) * 0x280) / g_WindowWidth) * 0x30000) /
-          (((_DAT_01c00c64 - _DAT_01c00c5c) * 0x1e0) / g_WindowHeight);
+  iVar6 = ((((g_ClipRight - g_ClipLeft) * 0x280) / g_WindowWidth) * 0x30000) /
+          (((g_ClipBottom - g_ClipTop) * 0x1e0) / g_WindowHeight);
   iVar12 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
   _DAT_01c039e8 =

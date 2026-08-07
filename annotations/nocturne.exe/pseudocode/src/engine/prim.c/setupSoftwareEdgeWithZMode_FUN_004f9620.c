@@ -82,7 +82,7 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
     *(uint *)(iVar2 + 0x1e52a9c) =
          start_vertex->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    if (_DAT_01c039a4 != 1) {
+    if (g_VertexPreprocessMode != 1) {
       lVar1 = (longlong)iVar7 *
               (longlong)
               ((pSVar5->projected_vertex).transformed_z -

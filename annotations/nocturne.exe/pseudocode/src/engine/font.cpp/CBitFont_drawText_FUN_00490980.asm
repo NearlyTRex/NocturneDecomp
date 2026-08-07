@@ -22,8 +22,8 @@
 ;   core_game.cpp_drawKeyBindingEntry_FUN_0049b420 at 0049b473
 ;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2650
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f60
-;   core_main.c_FUN_004c90e0 at 004c91b5
 ;   core_main.c_drawCenteredText_FUN_004c8dc0 at 004c8e01
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c91b5
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f66
 ;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf962
 ;   ... and 18 more

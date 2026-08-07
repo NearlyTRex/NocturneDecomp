@@ -11,7 +11,7 @@
 int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
-        test dword ptr [DAT_01c03948],0xffffffff
+        test dword ptr [g_MMXSupported],0xffffffff
         jz LAB_00530b73
         mov EBX,dword ptr [ESP + 0x8]
         mov EAX,dword ptr [EBX]
@@ -101,14 +101,14 @@ __asm {
         idiv ECX
         mov dword ptr [EBX + 0xc],EAX
         movd EAX,MM4
-        imul dword ptr [DAT_01c00c48]
+        imul dword ptr [g_Projection]
         idiv ECX
-        add EAX,dword ptr [DAT_01c00c50]
+        add EAX,dword ptr [g_Projection.center_x_fixed]
         mov dword ptr [EBX + 0x10],EAX
         movd EAX,MM5
-        imul dword ptr [DAT_01c00c4c]
+        imul dword ptr [g_Projection.neg_half_height_fixed]
         idiv ECX
-        add EAX,dword ptr [DAT_01c00c54]
+        add EAX,dword ptr [g_Projection.center_y_fixed]
         mov dword ptr [EBX + 0x14],EAX
         emms
         ret
@@ -208,14 +208,14 @@ __asm {
         idiv ECX
         mov dword ptr [EDI + 0xc],EAX
         mov EAX,[DAT_005bf4e8]
-        imul dword ptr [DAT_01c00c48]
+        imul dword ptr [g_Projection]
         idiv ECX
-        add EAX,dword ptr [DAT_01c00c50]
+        add EAX,dword ptr [g_Projection.center_x_fixed]
         mov dword ptr [EDI + 0x10],EAX
         mov EAX,[DAT_005bf4ec]
-        imul dword ptr [DAT_01c00c4c]
+        imul dword ptr [g_Projection.neg_half_height_fixed]
         idiv ECX
-        add EAX,dword ptr [DAT_01c00c54]
+        add EAX,dword ptr [g_Projection.center_y_fixed]
         mov dword ptr [EDI + 0x14],EAX
         pop EDI
         pop ESI

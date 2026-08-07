@@ -23,8 +23,8 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_ResolutionTable[7].width
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextMultiline_FUN_00402320
@@ -45,9 +45,9 @@ section .text
     JZ 0x00402637                       ; 00402616
         ;   XREF to: 00402637 (CONDITIONAL_JUMP)  ; LAB_00402637
     PUSH EBX                            ; 00402618
-    MOV EBP,dword ptr [0x01c00c64]      ; 00402619 | DAT_01c00c64
+    MOV EBP,dword ptr [0x01c00c64]      ; 00402619 | g_ClipBottom
     PUSH EBP                            ; 0040261f
-    MOV EBX,dword ptr [0x01c00c60]      ; 00402620 | DAT_01c00c60
+    MOV EBX,dword ptr [0x01c00c60]      ; 00402620 | g_ClipRight
     PUSH EBX                            ; 00402626
     PUSH EDX                            ; 00402627
     PUSH ECX                            ; 00402628
@@ -60,10 +60,10 @@ section .text
     POP EDI                             ; 00402634
     POP ESI                             ; 00402635
     RET                                 ; 00402636
-    MOV ESI,dword ptr [0x01c00c64]      ; 00402637 | DAT_01c00c64
+    MOV ESI,dword ptr [0x01c00c64]      ; 00402637 | g_ClipBottom
         ;   Label: LAB_00402637
     PUSH ESI                            ; 0040263d
-    MOV EDI,dword ptr [0x01c00c60]      ; 0040263e | DAT_01c00c60
+    MOV EDI,dword ptr [0x01c00c60]      ; 0040263e | g_ClipRight
     PUSH EDI                            ; 00402644
     PUSH EDX                            ; 00402645
     PUSH ECX                            ; 00402646

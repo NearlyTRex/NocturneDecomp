@@ -13,7 +13,7 @@
 ;   crt_unknown.c_FUN_00567560 at 00567762
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_02de5c30
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     MOV EBX,EAX                         ; 00567aca
     INC AL                              ; 00567acc
     AND EAX,0xff                        ; 00567ace
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00567ad3 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00567ad3 | g_CharacterClassificationTable
     JZ 0x00567adf                       ; 00567ada
         ;   XREF to: 00567adf (CONDITIONAL_JUMP)  ; LAB_00567adf
     INC EBP                             ; 00567adc
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 00567b98 (CONDITIONAL_JUMP)  ; LAB_00567b98
     INC AL                              ; 00567b7a
     AND EAX,0xff                        ; 00567b7c
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00567b81 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 00567b81 | g_CharacterClassificationTable
     JZ 0x00567afd                       ; 00567b88
         ;   XREF to: 00567afd (CONDITIONAL_JUMP)  ; LAB_00567afd
     PUSH ESI                            ; 00567b8e

@@ -13,7 +13,7 @@ int __cdecl atoi(char *string_ptr)
   byte bVar2;
   int iVar3;
   
-  while (((&DAT_005c168c)[(byte)(*string_ptr + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*string_ptr + 1)] & 2) != 0) {
     string_ptr = string_ptr + 1;
   }
   bVar1 = *string_ptr;
@@ -21,7 +21,7 @@ int __cdecl atoi(char *string_ptr)
     string_ptr = string_ptr + 1;
   }
   iVar3 = 0;
-  while (((&DAT_005c168c)[(byte)(*string_ptr + 1)] & 0x20) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*string_ptr + 1)] & 0x20) != 0) {
     bVar2 = *string_ptr;
     string_ptr = string_ptr + 1;
     iVar3 = iVar3 * 10 + (uint)bVar2 + -0x30;

@@ -69,12 +69,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 8,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 41,
         "message": "use of undeclared identifier '_DAT_01b4cd30'"
@@ -114,6 +108,12 @@
         "column": 59,
         "line": 60,
         "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 66,
+        "message": "use of undeclared identifier '_DAT_01b4cd30'"
       }
     ],
     "success": false,
@@ -301,19 +301,19 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a1",
-      "name": "DAT_01c039a1",
+      "name": "g_RenderStateFlags+1",
       "type": "undefined4",
       "value": null
     },
@@ -530,7 +530,7 @@
       "line": 33,
       "match": "DAT_006b0278",
       "severity": "mild",
-      "text": "if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {",
+      "text": "if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {",
       "type": "undefined_data"
     },
     {

@@ -134,8 +134,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
               local_5c = local_80;
               local_20 = (int *)(local_68 + local_88 * 0xc);
               local_2c = (uint *)(local_70 + local_88 * 4);
-              local_24 = (uint *)(*(int *)(&DAT_01bd4260 + (local_54 << (DAT_012b0660 & 0x1f)) * 4)
-                                 + (local_88 << (DAT_012b0660 & 0x1f)) * 4);
+              local_24 = g_ZBufferScanlineArray[local_54 << (DAT_012b0660 & 0x1f)] +
+                         (local_88 << (DAT_012b0660 & 0x1f));
               local_30 = *local_6c + local_88;
               for (; local_88 < local_50; local_88 = local_88 + 1) {
                 local_14 = '\0';
@@ -234,8 +234,8 @@ LAB_00445beb:
           pcVar11 = (char *)(local_7c + local_28);
           local_34 = (uint *)(local_78 + local_28 * 4);
           piVar10 = (int *)(local_28 * 0xc + local_74);
-          local_38 = (uint *)(*(int *)(&DAT_01bd4260 + (local_64 << (DAT_012b0660 & 0x1f)) * 4) +
-                             (local_28 << (DAT_012b0660 & 0x1f)) * 4);
+          local_38 = g_ZBufferScanlineArray[local_64 << (DAT_012b0660 & 0x1f)] +
+                     (local_28 << (DAT_012b0660 & 0x1f));
           iVar2 = local_28 - iVar5;
           while (SBORROW4(local_28,iVar5) != iVar2 < 0) {
             if ((((*local_38 < *local_34) &&

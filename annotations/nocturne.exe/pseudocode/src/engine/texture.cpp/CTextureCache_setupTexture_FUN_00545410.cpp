@@ -24,14 +24,14 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTexture
   _DAT_01c0258c = 0;
   ppuVar4 = cache->texture_palette_ptrs + texture_index * 0xc0;
   _DAT_01c00020 = ppuVar4;
-  if (_DAT_01c02594 == 0) {
-    if (DAT_005b7624 == 0x20) {
+  if (g_UseExternalRenderer == 0) {
+    if (g_BitsPerPixel == 0x20) {
       iVar1 = 0;
       do {
-        if (DAT_005b7624 == 0x20) {
-          uVar3 = (uint)*(byte *)((int)ppuVar4 + 2) << (DAT_01c0063c & 0x1f) |
-                  (uint)*(byte *)((int)ppuVar4 + 1) << (DAT_01c00630 & 0x1f) |
-                  (uint)*(byte *)ppuVar4 << (DAT_01c00624 & 0x1f);
+        if (g_BitsPerPixel == 0x20) {
+          uVar3 = (uint)*(byte *)((int)ppuVar4 + 2) << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                  (uint)*(byte *)((int)ppuVar4 + 1) << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                  (uint)*(byte *)ppuVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar3 = (uint)*(byte *)((int)ppuVar4 + 1) << 8 | (uint)*(byte *)ppuVar4 << 0x10 |
@@ -48,14 +48,17 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTexture
       iVar1 = 0;
       do {
         *(ushort *)(iVar2 + 0x1c00424) =
-             (ushort)(*(byte *)((int)ppuVar4 + 2) / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
-             (ushort)(*(byte *)ppuVar4 / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-             (ushort)(*(byte *)((int)ppuVar4 + 1) / _DAT_01c00634 << (DAT_01c00630 & 0x1f));
+             (ushort)((uint)*(byte *)((int)ppuVar4 + 2) / (uint)g_BlueScaleFactor <<
+                     (g_BlueBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)*(byte *)ppuVar4 / (uint)g_RedScaleFactor <<
+                     (g_RedBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)*(byte *)((int)ppuVar4 + 1) / (uint)g_GreenScaleFactor <<
+                     (g_GreenBitPosition.bytes[0] & 0x1f));
         uVar3 = (uint)*(byte *)((int)ppuVar4 + 2);
-        if (DAT_005b7624 == 0x20) {
-          uVar5 = (uint)*(byte *)ppuVar4 << (DAT_01c00624 & 0x1f) |
-                  (uint)*(byte *)((int)ppuVar4 + 1) << (DAT_01c00630 & 0x1f);
-          uVar3 = uVar3 << (DAT_01c0063c & 0x1f);
+        if (g_BitsPerPixel == 0x20) {
+          uVar5 = (uint)*(byte *)ppuVar4 << (g_RedBitPosition.bytes[0] & 0x1f) |
+                  (uint)*(byte *)((int)ppuVar4 + 1) << (g_GreenBitPosition.bytes[0] & 0x1f);
+          uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar5 = (uint)*(byte *)((int)ppuVar4 + 1) << 8 | (uint)*(byte *)ppuVar4 << 0x10;

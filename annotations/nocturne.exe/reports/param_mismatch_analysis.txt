@@ -14,14 +14,14 @@ Mismatches may indicate:
 SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5389
-Functions with no callers: 2669
-Parameter mismatches detected: 208
-Signature accuracy rate: 92.4%
+Functions with no callers: 2670
+Parameter mismatches detected: 205
+Signature accuracy rate: 92.5%
 
 Mismatches by confidence:
   High confidence:   12 (multiple call sites agree)
   Medium confidence: 51 (some agreement)
-  Low confidence:    145 (limited data)
+  Low confidence:    142 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -208,37 +208,37 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  145 functions with low-confidence mismatches
+  142 functions with low-confidence mismatches
   Sample:
-    engine_2d.c_FUN_004013d0                      declared:7 est:4 (-3)
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_2d.c_FUN_00402e90                      declared:0 est:1 (+1)
-    engine_2d.c_FUN_00403130                      declared:0 est:1 (+1)
     engine_2d.c_FUN_004031a0                      declared:0 est:2 (+2)
-    engine_2d.c_FUN_00403500                      declared:0 est:1 (+1)
     engine_3d.c_FUN_004059c0                      declared:0 est:3 (+3)
     engine_3d.c_FUN_00405ab0                      declared:0 est:3 (+3)
     engine_3d.c_FUN_00408e80                      declared:0 est:4 (+4)
     core_actor.cpp_checkNameHash_FUN_0040d810     declared:2 est:1 (-1)
+    core_actor.cpp_matchesClassName_FUN_0040d840  declared:2 est:1 (-1)
+    core_box.cpp_CBox_processPhysics_FUN_0041ad10 declared:2 est:1 (-1)
+    core_charactr.cpp_CCharacter_renderCollision_ declared:1 est:0 (-1)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 45
+Functions where declaration has MORE params than estimated: 44
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 163
+Functions where declaration has FEWER params than estimated: 161
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 1 functions
   -4 params: 1 functions
-  -3 params: 4 functions
+  -3 params: 3 functions
   -2 params: 7 functions
   -1 params: 31 functions
-  +1 params: 49 functions
+  +1 params: 47 functions
   +2 params: 29 functions
   +3 params: 32 functions
   +4 params: 19 functions

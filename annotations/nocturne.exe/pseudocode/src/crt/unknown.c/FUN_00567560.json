@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 688,
+    "complexity_score": 673,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 153,
-    "suspect_count": 52,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 499
@@ -97,8 +96,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -259,16 +258,8 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(*param_2 + 1)] & 2) != 0) {",
+      "text": "if ((g_CharacterClassificationTable[(byte)(*param_2 + 1)] & 2) != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(*param_2 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

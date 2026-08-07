@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int y1,int color)
 
 {
@@ -28,10 +26,9 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int
     y1 = iVar5;
   }
   if ((DAT_005ad280 != 0) ||
-     (((((_DAT_01c00c58 <= x || (_DAT_01c00c58 <= x1)) &&
-        ((x <= _DAT_01c00c60 || (x1 <= _DAT_01c00c60)))) &&
-       ((_DAT_01c00c5c <= y0 || (_DAT_01c00c5c <= y1)))) &&
-      ((y0 <= _DAT_01c00c64 || (y1 <= _DAT_01c00c64)))))) {
+     (((((g_ClipLeft <= x || (g_ClipLeft <= x1)) && ((x <= g_ClipRight || (x1 <= g_ClipRight)))) &&
+       ((g_ClipTop <= y0 || (g_ClipTop <= y1)))) && ((y0 <= g_ClipBottom || (y1 <= g_ClipBottom)))))
+     ) {
     cockpit_ckptutil_c_putPixel_FUN_00430140(x,y0,color);
     uVar1 = x1 - x;
     if ((int)uVar1 < 0) {

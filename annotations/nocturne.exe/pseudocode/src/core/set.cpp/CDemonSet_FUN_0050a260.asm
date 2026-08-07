@@ -40,7 +40,7 @@
 ;   undefined4 DAT_005be378
 ;   undefined4 DAT_005c15b8
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   CDemonLight g_CDemonLight_01c74640
 ;   ... and 17 more
 ;
@@ -355,8 +355,8 @@ section .text
     MOV EDI,dword ptr [0x005ae704]      ; 0050a579 | g_CDemonRenderer_PTR_005ae704
     XOR EBX,EBX                         ; 0050a57f
     PUSH EDI                            ; 0050a581 | DAT_01b4d738
-    MOV ESI,dword ptr [0x01c02594]      ; 0050a582 | DAT_01c02594
-    MOV dword ptr [0x01c02594],EBX      ; 0050a588 | DAT_01c02594
+    MOV ESI,dword ptr [0x01c02594]      ; 0050a582 | g_UseExternalRenderer
+    MOV dword ptr [0x01c02594],EBX      ; 0050a588 | g_UseExternalRenderer
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 0050a58e
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0050a593
@@ -386,7 +386,7 @@ section .text
         ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 0050a5e1
     MOV dword ptr [0x01fba938],EDI      ; 0050a5e4 | g_CDemonRaytrace_01fba938
-    MOV dword ptr [0x01c02594],ESI      ; 0050a5ea | DAT_01c02594
+    MOV dword ptr [0x01c02594],ESI      ; 0050a5ea | g_UseExternalRenderer
     MOV ESP,EBP                         ; 0050a5f0
     POP EBP                             ; 0050a5f2
     POP EDI                             ; 0050a5f3

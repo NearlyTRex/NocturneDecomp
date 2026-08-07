@@ -14,7 +14,7 @@ int __watcallStack islower_multibyte(wchar_t character)
   
   iVar1 = ismultibyte(character);
   if (iVar1 == 0) {
-    return (uint)((&DAT_005c168c)[(byte)((char)character + 1)] & 0x80);
+    return (uint)(g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x80);
   }
   if ((0x8280 < _character) && (_character < 0x829b)) {
     return 1;

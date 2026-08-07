@@ -34,7 +34,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepth16BitConditional_FUN_00463ac7(S
   uVar5 = uVar5 >> 0x10;
   iVar7 = (uVar6 >> 0x10) - uVar5;
   if (iVar7 != 0 && uVar5 <= uVar6 >> 0x10) {
-    psVar9 = (short *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar5 * 2);
+    psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);
     iVar2 = (left_edge->base).depth_current;
     iVar3 = (pSVar10->base).depth_current;
     uVar1 = g_ReciprocalLookupTable[iVar7 + 1];

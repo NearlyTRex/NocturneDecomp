@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 39,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 17,
         "line": 36,
         "message": "use of undeclared identifier 'DAT_01e56420'"
@@ -86,13 +80,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 95,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen"
@@ -153,8 +147,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -259,14 +253,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
-      "type": "undefined_data"
-    },
     {
       "description": "Undefined global data reference",
       "line": 29,

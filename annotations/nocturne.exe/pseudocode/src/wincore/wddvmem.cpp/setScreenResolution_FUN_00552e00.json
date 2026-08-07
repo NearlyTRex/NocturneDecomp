@@ -57,63 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'; did you mean 'DAT_006af55c'?"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 31,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'int *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 33,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 33,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'"
+        "column": 3,
+        "line": 43,
+        "message": "use of undeclared identifier '_DAT_02ddf56c'; did you mean 'DAT_006af56c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_02ddf55c'; did you mean 'DAT_006af55c'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 34,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'int *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_02ddf558'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 38,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 38,
-        "message": "expected expression"
+        "line": 80,
+        "message": "use of undeclared identifier '_DAT_02ddf56c'; did you mean 'DAT_006af56c'?"
       }
     ],
     "success": false,
@@ -122,21 +74,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 325,
-    "complexity_score": 565,
+    "complexity_score": 269,
     "cross_reference_count": 7,
     "function_call_count": 8,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 140,
-    "suspect_count": 40,
+    "pseudocode_lines": 129,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
       "pointer_truncation",
-      "raw_address_constant",
-      "undefined_data",
-      "unresolved_funcptr",
+      "signed_shift_global_idiom",
       "warning_overlapping_globals"
     ],
-    "total_lines": 465
+    "total_lines": 454
   },
   "cross_references": [
     {
@@ -287,38 +238,38 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "005c5010",
-      "name": "DAT_005c5010",
-      "type": "undefined4",
+      "name": "g_BackBuffer",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "006af62c",
-      "name": "DAT_006af62c",
-      "type": "undefined4",
+      "name": "g_SoftwareZBuffer",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
@@ -335,32 +286,32 @@
     },
     {
       "addr": "02ddf550",
-      "name": "DAT_02ddf550",
-      "type": "undefined4",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
       "value": null
     },
     {
       "addr": "02ddf554",
-      "name": "DAT_02ddf554",
-      "type": "undefined4",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02ddf558",
-      "name": "DAT_02ddf558",
-      "type": "undefined4",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
       "value": null
     },
     {
       "addr": "02ddf55c",
-      "name": "DAT_02ddf55c",
-      "type": "undefined4",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
       "value": null
     },
     {
       "addr": "02ddf560",
-      "name": "DAT_02ddf560",
-      "type": "undefined4",
+      "name": "g_SoftwareFrameBuffer",
+      "type": "void*",
       "value": null
     },
     {
@@ -437,30 +388,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "setScreenResolution_FUN_00552e00.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 59,
-          "line": 137,
-          "message": "Uninitialized variable: iStack_28",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 74,
-          "line": 137,
-          "message": "Uninitialized variable: iStack_24",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -471,332 +398,92 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(void *)((int)g_SoftwareFrameBuffer",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf55c + 8))();",
-      "type": "unresolved_funcptr"
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf558 + 8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02ddf554 + 8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "DAT_005b7624 = bits_per_pixel;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "if (DAT_005c5010 != (void *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "free(DAT_005c5010);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "DAT_005c5010 = (void *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_006af62c",
-      "severity": "mild",
-      "text": "DAT_006af62c = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "DAT_005c5010 = malloc",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "if (DAT_005c5010 == (void *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_006af62c",
-      "severity": "mild",
-      "text": "DAT_006af62c = (int)_DAT_02ddf560 + 0x10U & 0xfffffff0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02ddf550 + 0x54))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 85,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02ddf550 + 0x54))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02ddf550 + 0x18))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*_DAT_02ddf550 + 0x18))(_DAT_02ddf550,&piStack_a4,&DAT_02ddf554,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_02ddf554",
-      "severity": "mild",
-      "text": "iVar3 = (**(code **)(*_DAT_02ddf550 + 0x18))(_DAT_02ddf550,&piStack_a4,&DAT_02ddf554,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 102,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar3 = (**(code **)(*_DAT_02ddf550 + 0x18))(_DAT_02ddf550,&piStack_a4,&DAT_02ddf554,0),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_02ddf554",
-      "severity": "mild",
-      "text": "(iVar3 = (**(code **)(*_DAT_02ddf550 + 0x18))(_DAT_02ddf550,&piStack_a4,&DAT_02ddf554,0),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*_DAT_02ddf554 + 0x30))(_DAT_02ddf554,auStack_38,&DAT_02ddf558);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_02ddf558",
-      "severity": "mild",
-      "text": "iVar4 = (**(code **)(*_DAT_02ddf554 + 0x30))(_DAT_02ddf554,auStack_38,&DAT_02ddf558);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 110,
-      "match": "DAT_005c5010",
-      "severity": "mild",
-      "text": "pvVar2 = DAT_005c5010;",
-      "type": "undefined_data"
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar4) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "iVar7 = DAT_005b7624 >> 0x1f;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(int *)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "iVar1 = DAT_005b7624 + iVar7 * -8;",
-      "type": "undefined_data"
+      "description": "Pointer value `g_SoftwareFrameBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)g_SoftwareFrameBuffer",
+      "severity": "moderate",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(void **)(&DAT_01bd2fa0 + iVar6) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01bd4260 + iVar6) = DAT_006af62c + iVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_006af62c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01bd4260 + iVar6) = DAT_006af62c + iVar8;",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar4) =",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 112,
       "match": "(int)pvVar2",
       "severity": "moderate",
       "text": "(int)pvVar2);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x552f9f assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 25,
-      "match": "0x552f9f",
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
-      "text": "iStack_8c = 0x552f9f;",
-      "type": "raw_address_constant"
+      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x552e2e assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 30,
-      "match": "0x552e2e",
+      "description": "Pointer value `g_SoftwareZBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)g_SoftwareZBuffer",
       "severity": "moderate",
-      "text": "iStack_8c = 0x552e2e;",
-      "type": "raw_address_constant"
+      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x552e45 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 35,
-      "match": "0x552e45",
-      "severity": "moderate",
-      "text": "iStack_8c = 0x552e45;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x552e95 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
       "line": 47,
-      "match": "0x552e95",
+      "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "iStack_8c = 0x552e95;",
-      "type": "raw_address_constant"
+      "text": "(((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
     },
     {
-      "description": "Raw hex address 0x552eb0 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
-      "match": "0x552eb0",
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 48,
+      "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "iStack_8c = 0x552eb0;",
-      "type": "raw_address_constant"
+      "text": "(uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *",
+      "type": "signed_shift_global_idiom"
     },
     {
-      "description": "Raw hex address 0x552ee4 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 56,
-      "match": "0x552ee4",
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 104,
+      "match": "g_Global >> 0x1f",
       "severity": "moderate",
-      "text": "iStack_8c = 0x552ee4;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x552f10 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 64,
-      "match": "0x552f10",
-      "severity": "moderate",
-      "text": "iStack_8c = 0x552f10;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x552f2b assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 67,
-      "match": "0x552f2b",
-      "severity": "moderate",
-      "text": "iStack_8c = 0x552f2b;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x552f56 assigned to bare local `iStack_8c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_8c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 72,
-      "match": "0x552f56",
-      "severity": "moderate",
-      "text": "iStack_8c = 0x552f56;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: iStack_28",
-      "line": 137,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "engine_2d_c_setupViewportAndClipping_FUN_00401e30(0,0,iStack_28 + -1,iStack_24 + -1);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_24",
-      "line": 137,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "engine_2d_c_setupViewportAndClipping_FUN_00401e30(0,0,iStack_28 + -1,iStack_24 + -1);",
-      "type": "static_uninitvar"
+      "text": "iVar6 = g_BitsPerPixel >> 0x1f;",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

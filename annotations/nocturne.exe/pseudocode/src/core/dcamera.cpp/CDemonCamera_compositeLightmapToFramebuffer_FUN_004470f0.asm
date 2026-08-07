@@ -20,7 +20,7 @@
 ;   undefined4 DAT_005ad450
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_00b0e2fc
 ;   undefined4 DAT_012b0660
 ;   undefined4 DAT_012b0664
@@ -29,9 +29,9 @@
 ;   undefined4 DAT_0140d778
 ;   undefined4 DAT_0140d77c
 ;   undefined4 DAT_01bd1d80
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
+;   void*[1200] g_ScreenBufferArray
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 00444810 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810(CDemonCamera * this_ptr)
     MOV EAX,[0x005ad458]                ; 00447160 | DAT_005ad458
     MOV ECX,dword ptr [0x005ad450]      ; 00447165 | DAT_005ad450
-    MOV EDX,dword ptr [0x005b7624]      ; 0044716b | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0044716b | g_BitsPerPixel
     ADD ESP,0x4                         ; 00447171
     MOV EBP,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447174 | DAT_00b0e2fc
     MOV EAX,[0x005ad454]                ; 0044717b | DAT_005ad454
@@ -104,18 +104,18 @@ section .text
     CMP EDX,0x20                        ; 0044719f
     JNZ 0x004472a3                      ; 004471a2
         ;   XREF to: 004472a3 (CONDITIONAL_JUMP)  ; LAB_004472a3
-    MOV CL,byte ptr [0x01c00624]        ; 004471a8 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004471a8 | g_RedBitPosition
     SHL EBX,CL                          ; 004471ae
-    MOV CL,byte ptr [0x01c00630]        ; 004471b0 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004471b0 | g_GreenBitPosition
     SHL EAX,CL                          ; 004471b6
-    MOV CL,byte ptr [0x01c0063c]        ; 004471b8 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004471b8 | g_BlueBitPosition
     SHL EBP,CL                          ; 004471be
     OR EAX,EBX                          ; 004471c0
     MOV ECX,EBP                         ; 004471c2
     OR ECX,EAX                          ; 004471c4
-    MOV dword ptr [0x01c039a8],ECX      ; 004471c6 | DAT_01c039a8
+    MOV dword ptr [0x01c039a8],ECX      ; 004471c6 | g_SolidColorMode
         ;   Label: LAB_004471c6
-    CMP dword ptr [0x005b7624],0x10     ; 004471cc | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x10     ; 004471cc | g_BitsPerPixel
     JNZ 0x0044735e                      ; 004471d3
         ;   XREF to: 0044735e (CONDITIONAL_JUMP)  ; LAB_0044735e
     MOV EBP,0x1                         ; 004471d9
@@ -131,7 +131,7 @@ section .text
     MOV EBX,dword ptr [EDI + 0x144]     ; 004471fb
     SUB EAX,ECX                         ; 00447201
     ADD EBX,EBX                         ; 00447203
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00447205 | DAT_01bd2fa0
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00447205 | g_ScreenBufferArray
     ADD EBX,EAX                         ; 0044720c
     MOV EAX,[0x012ceb70]                ; 0044720e | DAT_012ceb70
     ADD EAX,EAX                         ; 00447213
@@ -273,7 +273,7 @@ section .text
     ADD EAX,EBP                         ; 0044737e
     SUB EAX,EBX                         ; 00447380
     MOV EBX,dword ptr [EDI + 0x144]     ; 00447382
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00447388 | DAT_01bd2fa0
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 00447388 | g_ScreenBufferArray
     SHL EBX,0x2                         ; 0044738f
     ADD EBX,EAX                         ; 00447392
     MOV EAX,[0x012ceb70]                ; 00447394 | DAT_012ceb70

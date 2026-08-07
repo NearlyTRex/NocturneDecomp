@@ -34,11 +34,13 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vert
         (pSVar5->projected_vertex).inv_z =
              (int)(0x7fffffff / (longlong)(pSVar5->projected_vertex).transformed_z);
         (pSVar5->projected_vertex).screen_x =
-             (int)(((longlong)(pSVar5->projected_vertex).transformed_x * (longlong)_DAT_01c00c48) /
-                  (longlong)(pSVar5->projected_vertex).transformed_z) + _DAT_01c00c50;
+             (int)(((longlong)(pSVar5->projected_vertex).transformed_x *
+                   (longlong)g_Projection.half_width_fixed) /
+                  (longlong)(pSVar5->projected_vertex).transformed_z) + g_Projection.center_x_fixed;
         (pSVar5->projected_vertex).screen_y =
-             (int)(((longlong)(pSVar5->projected_vertex).transformed_y * (longlong)_DAT_01c00c4c) /
-                  (longlong)(pSVar5->projected_vertex).transformed_z) + _DAT_01c00c54;
+             (int)(((longlong)(pSVar5->projected_vertex).transformed_y *
+                   (longlong)g_Projection.neg_half_height_fixed) /
+                  (longlong)(pSVar5->projected_vertex).transformed_z) + g_Projection.center_y_fixed;
       }
       iVar10 = iVar10 + 1;
       pSVar5 = pSVar5 + 1;
@@ -50,7 +52,7 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vert
     return;
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  switch(_DAT_01c039a4) {
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertex_buffer,vertex_count);
     break;

@@ -58,24 +58,6 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
         "line": 86,
         "message": "use of undeclared identifier '_DAT_0140e7a4'"
       },
@@ -111,9 +93,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 138,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
+        "column": 26,
+        "line": 143,
+        "message": "use of undeclared identifier '_DAT_0140e7a4'"
       }
     ],
     "success": false,
@@ -122,16 +104,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 304,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 439
@@ -194,14 +176,14 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     }
   ],
@@ -363,12 +345,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 131,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "((void *)(*(int *)(&DAT_01bd4260 + local_20) + *piVar1 * 4),",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -377,6 +359,14 @@
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->zbuffer_aligned +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),",
+      "type": "pointer_truncation"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",

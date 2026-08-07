@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_01bff720'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
       }
     ],
     "success": false,
@@ -122,18 +62,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 159,
+    "complexity_score": 126,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 173
+    "total_lines": 170
   },
   "cross_references": [
     {
@@ -212,44 +152,44 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {
@@ -437,76 +377,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)(x1 + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 < 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 != 8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 33,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "((void *)(x1 + *(int *)(&DAT_01bd2fa0 + iVar3)),_DAT_01c00c70,count);",
-      "type": "undefined_data"
+      "match": "(ushort *)(x1 * 2 + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 < 0x11) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)(x1 * 4 + (int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_01bff720",
-      "severity": "mild",
-      "text": "uVar1 = *(ushort *)(&DAT_01bff720 + _DAT_01c00c70 * 2);",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "severity": "moderate",
+      "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar4 = (ushort *)(x1 * 2 + *(int *)(&DAT_01bd2fa0 + iVar3));",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 != 0x20) goto LAB_00403cb2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)(x1 * 4 + *(int *)(&DAT_01bd2fa0 + iVar3));",
-      "type": "undefined_data"
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_truncation"
     }
   ]
 }

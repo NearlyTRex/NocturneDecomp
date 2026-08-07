@@ -59,18 +59,18 @@ LAB_004752e0:
     this_ptr->current_index = this_ptr->scroll_top;
   }
   iVar1 = _DAT_01bd1d8c;
-  if (_DAT_01bd1d8c < _DAT_01c00c58) {
-    iVar1 = _DAT_01c00c58;
+  if (_DAT_01bd1d8c < g_ClipLeft) {
+    iVar1 = g_ClipLeft;
   }
-  if (_DAT_01c00c60 < iVar1) {
-    iVar1 = _DAT_01c00c60;
+  if (g_ClipRight < iVar1) {
+    iVar1 = g_ClipRight;
   }
   iVar2 = _DAT_01bd1d90;
-  if (_DAT_01bd1d90 < _DAT_01c00c5c) {
-    iVar2 = _DAT_01c00c5c;
+  if (_DAT_01bd1d90 < g_ClipTop) {
+    iVar2 = g_ClipTop;
   }
-  if (_DAT_01c00c64 < iVar2) {
-    iVar2 = _DAT_01c00c64;
+  if (g_ClipBottom < iVar2) {
+    iVar2 = g_ClipBottom;
   }
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60(iVar1,iVar2);
   iVar1 = _DAT_01bcde20;

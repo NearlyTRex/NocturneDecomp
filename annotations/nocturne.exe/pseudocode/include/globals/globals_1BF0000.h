@@ -13,3 +13,9 @@ extern uchar g_ColorCubeLookup[32768];
 // uchar[34][256]
 extern uchar g_LightTable[34][256];
 
+// uint[256]
+extern uint g_ColorTable32[256];
+
+// ushort[256]
+extern ushort g_ColorTable16[256];
+

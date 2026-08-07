@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004859a0(float depth,float min_size)
 
 {
@@ -33,8 +31,8 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_004859a0(float depth,floa
                    transformed_z * (float)0.00390625) / ((float)DAT_005b7648 * fVar2)) *
           5.1640756954075245e-315._0_4_;
   local_8 = min_size;
-  fVar3 = ABS(fVar1 / ((float)_DAT_01c00c48 * fVar2));
-  fVar1 = ABS(fVar1 / ((float)_DAT_01c00c4c * fVar2));
+  fVar3 = ABS(fVar1 / ((float)g_Projection.half_width_fixed * fVar2));
+  fVar1 = ABS(fVar1 / ((float)g_Projection.neg_half_height_fixed * fVar2));
   if (min_size < fVar3) {
     local_8 = fVar3;
   }

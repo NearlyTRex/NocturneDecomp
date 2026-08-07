@@ -61,16 +61,16 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
   local_c8 = this_ptr->char_bitmap_index[character_code];
   iVar12 = this_ptr->bitmap_widths[local_c8];
   if (this_ptr->rendering_ready == 0) {
-    if (x < _DAT_01c00c58) {
+    if (x < g_ClipLeft) {
       return iVar2;
     }
-    if (y < _DAT_01c00c5c) {
+    if (y < g_ClipTop) {
       return iVar2;
     }
-    if ((_DAT_01c00c60 + 1) - this_ptr->char_widths[character_code] < x) {
+    if ((g_ClipRight + 1) - this_ptr->char_widths[character_code] < x) {
       return iVar2;
     }
-    if ((_DAT_01c00c64 + 1) - this_ptr->char_heights[character_code] < y) {
+    if ((g_ClipBottom + 1) - this_ptr->char_heights[character_code] < y) {
       return iVar2;
     }
   }
@@ -83,18 +83,18 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
   }
   iVar6 = local_c8;
   local_c4 = iVar12 - ((local_d0 - x) + 1);
-  if ((this_ptr->use_3d_rendering != 0) && (_DAT_01c02594 != 0)) {
+  if ((this_ptr->use_3d_rendering != 0) && (g_UseExternalRenderer != 0)) {
     engine_font_cpp_CBitFont_render3DCharacter_FUN_004911f0
               (this_ptr,character_code,x,y,local_d0,local_cc,color_mode);
     return iVar2;
   }
-  if (DAT_005b7624 == 8) {
+  if (g_BitsPerPixel == 8) {
     if (color_mode == -1) {
       local_c0 = y;
       if (y <= local_cc) {
         iVar12 = y * 4;
         do {
-          pbVar3 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          pbVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);
           for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *pbVar3 = *local_d4;
@@ -113,7 +113,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
       if (y <= local_cc) {
         iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);
           for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = DAT_01c70f5c;
@@ -132,7 +132,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
       if (y <= local_cc) {
         iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);
           for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = DAT_01c70f70;
@@ -151,7 +151,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
       if (y <= local_cc) {
         iVar12 = y * 4;
         do {
-          puVar7 = (byte *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x);
+          puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x);
           for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
             if ((uint)*local_d4 != this_ptr->load_flags) {
               *puVar7 = (byte)color_mode;
@@ -168,13 +168,13 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
   }
   else {
     iVar12 = y << 2;
-    if (DAT_005b7624 == 0x10) {
+    if (g_BitsPerPixel == 0x10) {
       if (color_mode == -1) {
         if (this_ptr->is_initialized == 0) {
           if (y <= local_cc) {
             iVar12 = y * 4;
             do {
-              puVar5 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 2);
+              puVar5 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);
               for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar5 = (short)this_ptr->palettes_display[local_c8][*local_d4];
@@ -193,7 +193,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             local_28 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_28) + x * 2);
+              puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 uVar4 = (uint)*local_d4;
                 iVar6 = DAT_005b763c *
@@ -203,24 +203,31 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                 if (iVar6 != 0) {
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5c0
-                                         ) >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
-                                     << (DAT_01c00630 & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5b8
-                                         ) >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
-                                     << (DAT_01c00624 & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] & DAT_005bf5c8
-                                         ) >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f) & 0xff
-                                       ) * iVar6 +
-                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
-                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
-                                     << (DAT_01c0063c & 0x1f));
+                  *puVar11 = (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                         g_GreenMask16.u32[0]) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_GreenMask16.u32[0] & uVar9) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_GreenScaleFactor <<
+                                     (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                             (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                         g_RedMask16.u32[0]) >> (g_RedBitPosition.bytes[0] & 0x1f))
+                                        << (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_RedMask16.u32[0] & uVar9) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+                             | (ushort)(((((this_ptr->palettes_display[local_c8][uVar4] &
+                                           g_BlueMask16.u32[0]) >>
+                                          (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                          (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                         iVar8 * (((g_BlueMask16.u32[0] & uVar9) >>
+                                                  (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                                  (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) >> 8)
+                                        / (uint)g_BlueScaleFactor <<
+                                       (g_BlueBitPosition.bytes[0] & 0x1f));
                 }
                 puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
@@ -237,7 +244,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             iVar12 = y * 4;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 2);
+              puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 2);
               for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar11 = _DAT_01c70f5e;
@@ -256,7 +263,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             local_2c = y << 2;
             do {
-              puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + local_2c));
+              puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 iVar6 = DAT_005b763c *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
@@ -266,21 +273,29 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                   uVar4 = (uint)_DAT_01c70f5e;
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
-                                     << (DAT_01c00630 & 0x1f)) |
-                             (ushort)(((((DAT_005bf5b8 & uVar4) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
-                                     << (DAT_01c00624 & 0x1f)) |
-                             (ushort)(((((DAT_005bf5c8 & uVar4) >> (DAT_01c0063c & 0x1f)) <<
-                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
-                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
-                                     << (DAT_01c0063c & 0x1f));
+                  *puVar11 = (ushort)(((((g_GreenMask16.u32[0] & uVar4) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_GreenMask16.u32[0] & uVar9) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_GreenScaleFactor <<
+                                     (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                             (ushort)(((((g_RedMask16.u32[0] & uVar4) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_RedMask16.u32[0] & uVar9) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+                             | (ushort)(((((g_BlueMask16.u32[0] & uVar4) >>
+                                          (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                          (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                         iVar8 * (((g_BlueMask16.u32[0] & uVar9) >>
+                                                  (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                                  (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) >> 8)
+                                        / (uint)g_BlueScaleFactor <<
+                                       (g_BlueBitPosition.bytes[0] & 0x1f));
                 }
                 puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
@@ -297,7 +312,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             iVar12 = y * 4;
             do {
-              puVar5 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + iVar12));
+              puVar5 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));
               for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
                 if ((uint)*local_d4 != this_ptr->load_flags) {
                   *puVar5 = _DAT_01c70f70;
@@ -316,7 +331,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             local_30 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_30) + x * 2);
+              puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 iVar6 = DAT_005b763c *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
@@ -325,21 +340,29 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                 if (iVar6 != 0) {
                   uVar4 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((_DAT_01c70f70 & DAT_005bf5b8) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar4 & DAT_005bf5b8) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
-                                     << (DAT_01c00624 & 0x1f)) |
-                             (ushort)(((((DAT_005bf5c0 & _DAT_01c70f70) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
-                                       (((uVar4 & DAT_005bf5c0) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
-                                     << (DAT_01c00630 & 0x1f)) |
-                             (ushort)(((((_DAT_01c70f70 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
-                                        (DAT_01c00644 & 0x1f) & 0xff) * iVar6 +
-                                       iVar8 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
-                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
-                                     << (DAT_01c0063c & 0x1f));
+                  *puVar11 = (ushort)(((((_DAT_01c70f70 & g_RedMask16.u32[0]) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((uVar4 & g_RedMask16.u32[0]) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+                             | (ushort)(((((g_GreenMask16.u32[0] & _DAT_01c70f70) >>
+                                          (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                          (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                         (((uVar4 & g_GreenMask16.u32[0]) >>
+                                          (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                          (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8)
+                                        / (uint)g_GreenScaleFactor <<
+                                       (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                             (ushort)(((((_DAT_01c70f70 & g_BlueMask16.u32[0]) >>
+                                        (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       iVar8 * (((uVar4 & g_BlueMask16.u32[0]) >>
+                                                (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                                (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) >> 8) /
+                                      (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f)
+                                     );
                 }
                 puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
@@ -352,10 +375,10 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
         }
       }
       else {
-        uVar1 = *(ushort *)(&DAT_01bff720 + color_mode * 2);
+        uVar1 = g_ColorTable16[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar11 = (ushort *)(x * 2 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));
             for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar11 = uVar1;
@@ -372,7 +395,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             local_34 = y << 2;
             do {
-              puVar11 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_34) + x * 2);
+              puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 iVar6 = DAT_005b763c *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
@@ -382,21 +405,29 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
                   uVar4 = (uint)uVar1;
                   uVar9 = (uint)*puVar11;
                   iVar8 = 0xff - iVar6;
-                  *puVar11 = (ushort)(((((DAT_005bf5c0 & uVar4) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_005bf5c0 & uVar9) >> (DAT_01c00630 & 0x1f)) <<
-                                        (DAT_01c00638 & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00634
-                                     << (DAT_01c00630 & 0x1f)) |
-                             (ushort)(((((DAT_005bf5b8 & uVar4) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar6 +
-                                       (((DAT_005bf5b8 & uVar9) >> (DAT_01c00624 & 0x1f)) <<
-                                        (DAT_01c0062c & 0x1f) & 0xff) * iVar8 >> 8) / _DAT_01c00628
-                                     << (DAT_01c00624 & 0x1f)) |
-                             (ushort)((iVar6 * (((uVar4 & DAT_005bf5c8) >> (DAT_01c0063c & 0x1f)) <<
-                                                (DAT_01c00644 & 0x1f) & 0xff) +
-                                       iVar8 * (((DAT_005bf5c8 & uVar9) >> (DAT_01c0063c & 0x1f)) <<
-                                                (DAT_01c00644 & 0x1f) & 0xff) >> 8) / _DAT_01c00640
-                                     << (DAT_01c0063c & 0x1f));
+                  *puVar11 = (ushort)(((((g_GreenMask16.u32[0] & uVar4) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_GreenMask16.u32[0] & uVar9) >>
+                                        (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_GreenDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_GreenScaleFactor <<
+                                     (g_GreenBitPosition.bytes[0] & 0x1f)) |
+                             (ushort)(((((g_RedMask16.u32[0] & uVar4) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar6 +
+                                       (((g_RedMask16.u32[0] & uVar9) >>
+                                        (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                                        (g_RedDitherShift.bytes[0] & 0x1f) & 0xff) * iVar8 >> 8) /
+                                      (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+                             | (ushort)((iVar6 * (((uVar4 & g_BlueMask16.u32[0]) >>
+                                                  (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                                  (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) +
+                                         iVar8 * (((g_BlueMask16.u32[0] & uVar9) >>
+                                                  (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+                                                  (g_BlueDitherShift.bytes[0] & 0x1f) & 0xff) >> 8)
+                                        / (uint)g_BlueScaleFactor <<
+                                       (g_BlueBitPosition.bytes[0] & 0x1f));
                 }
                 puVar11 = puVar11 + 1;
                 local_d4 = local_d4 + 1;
@@ -409,12 +440,12 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
         }
       }
     }
-    else if (DAT_005b7624 == 0x20) {
+    else if (g_BitsPerPixel == 0x20) {
       color_table = this_ptr->palettes_display + local_c8;
       if (color_mode == -1) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4);
+            puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);
             for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar10 = this_ptr->palettes_display[local_c8][*local_d4];
@@ -431,8 +462,9 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4),local_d4,*color_table,
-                         (local_d0 - x) + 1,this_ptr->palettes_display[iVar6][*local_d4]);
+                        ((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,
+                         *color_table,(local_d0 - x) + 1,
+                         this_ptr->palettes_display[iVar6][*local_d4]);
               iVar12 = iVar12 + 4;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
               iVar8 = iVar8 + 1;
@@ -444,7 +476,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
       else if (color_mode == -2) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));
             for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar10 = _DAT_01c70f60;
@@ -461,8 +493,8 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12)),local_d4,*color_table,
-                         (local_d0 - x) + 1,_DAT_01c70f60);
+                        ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,
+                         *color_table,(local_d0 - x) + 1,_DAT_01c70f60);
               iVar12 = iVar12 + 4;
               iVar6 = iVar6 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
@@ -474,7 +506,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
       else if (color_mode == -3) {
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12));
+            puVar10 = (uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));
             for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar10 = _DAT_01c70f70;
@@ -491,8 +523,8 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4),local_d4,*color_table,
-                         (local_d0 - x) + 1,_DAT_01c70f70);
+                        ((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4),local_d4,
+                         *color_table,(local_d0 - x) + 1,_DAT_01c70f70);
               iVar12 = iVar12 + 4;
               iVar6 = iVar6 + 1;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
@@ -502,10 +534,10 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
         }
       }
       else {
-        uVar4 = *(uint *)(color_mode * 4 + 0x1bff920);
+        uVar4 = g_ColorTable32[color_mode];
         if (this_ptr->is_initialized == 0) {
           for (; y <= local_cc; y = y + 1) {
-            puVar10 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar12) + x * 4);
+            puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x * 4);
             for (iVar6 = x; iVar6 <= local_d0; iVar6 = iVar6 + 1) {
               if ((uint)*local_d4 != this_ptr->load_flags) {
                 *puVar10 = uVar4;
@@ -522,8 +554,8 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
           if (y <= local_cc) {
             do {
               engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160
-                        ((uint *)(x * 4 + *(int *)(&DAT_01bd2fa0 + iVar12)),local_d4,*color_table,
-                         (local_d0 - x) + 1,uVar4);
+                        ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,
+                         *color_table,(local_d0 - x) + 1,uVar4);
               iVar12 = iVar12 + 4;
               local_d4 = local_d4 + local_c4 + (local_d0 - x) + 1;
               iVar6 = iVar6 + 1;

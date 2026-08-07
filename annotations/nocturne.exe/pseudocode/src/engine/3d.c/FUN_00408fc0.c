@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
 
 {
@@ -23,7 +21,7 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
   do {
     if (cVar2 == '\0') {
       if (DAT_00761ec4 != 0) {
-        if (_DAT_01c02594 == 0) {
+        if (g_UseExternalRenderer == 0) {
           iVar5 = 0;
           iVar4 = 0;
           if (0 < DAT_00761ec4) {
@@ -70,7 +68,7 @@ LAB_004091a2:
       else {
         if (bVar3 != 0xd) goto LAB_004091a2;
         if (DAT_00761ec4 != 0) {
-          if (_DAT_01c02594 == 0) {
+          if (g_UseExternalRenderer == 0) {
             iVar4 = 0;
             if (0 < DAT_00761ec4) {
               iVar5 = 0;

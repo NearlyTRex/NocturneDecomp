@@ -45,13 +45,13 @@ section .text
     MOV EBP,ESP                         ; 004933c4
     SUB ESP,0x20                        ; 004933c6
     PUSH 0x0                            ; 004933c9
-    MOV EDX,dword ptr [0x01c00c64]      ; 004933cb | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 004933cb | g_ClipBottom
     PUSH EDX                            ; 004933d1
-    MOV ECX,dword ptr [0x01c00c60]      ; 004933d2 | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 004933d2 | g_ClipRight
     PUSH ECX                            ; 004933d8
-    MOV EBX,dword ptr [0x01c00c5c]      ; 004933d9 | DAT_01c00c5c
+    MOV EBX,dword ptr [0x01c00c5c]      ; 004933d9 | g_ClipTop
     PUSH EBX                            ; 004933df
-    MOV ESI,dword ptr [0x01c00c58]      ; 004933e0 | DAT_01c00c58
+    MOV ESI,dword ptr [0x01c00c58]      ; 004933e0 | g_ClipLeft
     PUSH ESI                            ; 004933e6
     MOV EDI,0x20                        ; 004933e7
     CALL engine_2d.c_fillRectColor_FUN_00403e60 ; 004933ec

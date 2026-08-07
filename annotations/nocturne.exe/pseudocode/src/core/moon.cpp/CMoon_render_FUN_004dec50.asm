@@ -43,7 +43,7 @@
 ;   undefined4 DAT_005bb210
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   undefined4 DAT_01c00024
 ;   CAlphaBitmap g_CAlphaBitmap_01ccdc50
 ;   undefined4 DAT_01ccdebc
@@ -273,7 +273,7 @@ section .text
         ;   XREF to: 004defd0 (CONDITIONAL_JUMP)  ; LAB_004defd0
     MOV EAX,dword ptr [EBP + -0x18]     ; 004deefa
         ;   Label: LAB_004deefa
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 004deefd | DAT_01bd2fa0
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 004deefd | g_ScreenBufferArray
     MOV dword ptr [EBP + -0x10],EAX     ; 004def04
     XOR ECX,ECX                         ; 004def07
     MOV EDI,dword ptr [EBP + 0xfffffff0] ; 004def09

@@ -18,27 +18,27 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005533a0(void)
     return;
   }
   engine_special_cpp_restoreVideoMode_FUN_005325f0();
-  if (_DAT_02ddf55c != (int *)0x0) {
-    (**(code **)(*_DAT_02ddf55c + 8))(_DAT_02ddf55c);
-    _DAT_02ddf55c = (int *)0x0;
+  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+    (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+    g_DirectDrawUnknown = (IUnknown *)0x0;
   }
-  if (_DAT_02ddf558 != (int *)0x0) {
-    (**(code **)(*_DAT_02ddf558 + 8))(_DAT_02ddf558);
-    _DAT_02ddf558 = (int *)0x0;
+  if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+    (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+    g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02ddf554 != (int *)0x0) {
-    (**(code **)(*_DAT_02ddf554 + 8))(_DAT_02ddf554);
-    _DAT_02ddf554 = (int *)0x0;
+  if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+    (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+    g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
   }
-  if (_DAT_02ddf550 != (int *)0x0) {
-    (**(code **)(*_DAT_02ddf550 + 0x4c))(_DAT_02ddf550);
-    (**(code **)(*_DAT_02ddf550 + 8))(_DAT_02ddf550);
-    _DAT_02ddf550 = (int *)0x0;
+  if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+    (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+    (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+    g_DirectDrawObject = (IDirectDraw *)0x0;
   }
-  iVar1 = DirectDrawCreate(0,&DAT_02ddf550,0);
+  iVar1 = DirectDrawCreate(0,&g_DirectDrawObject,0);
   if (iVar1 == 0) {
-    (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
+    (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,_DAT_02de2098,0x11);
   }
-  wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,DAT_005b7624);
+  wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
   return;
 }

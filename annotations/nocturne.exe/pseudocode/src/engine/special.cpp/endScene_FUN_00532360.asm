@@ -8,14 +8,14 @@
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 at 00440a47
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d90
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00532360 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532360 | g_UseExternalRenderer
         ;   Label: engine_special.cpp_endScene_FUN_00532360
     JNZ 0x0053236c                      ; 00532367
         ;   XREF to: 0053236c (CONDITIONAL_JUMP)  ; LAB_0053236c

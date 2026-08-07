@@ -20,12 +20,12 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057da05
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057da1b
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057da33
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
 ;   undefined4 DAT_01b4d720
 ;   undefined4 DAT_01b4d730
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -82,7 +82,7 @@ section .text
     TEST EBP,EBP                        ; 0045c8ba
     JNZ 0x0045c9fa                      ; 0045c8bc
         ;   XREF to: 0045c9fa (CONDITIONAL_JUMP)  ; LAB_0045c9fa
-    MOV ECX,dword ptr [0x005b7624]      ; 0045c8c2 | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0045c8c2 | g_BitsPerPixel
     CMP ECX,0x10                        ; 0045c8c8
     JNC 0x0045c95e                      ; 0045c8cb
         ;   XREF to: 0045c95e (CONDITIONAL_JUMP)  ; LAB_0045c95e
@@ -92,7 +92,7 @@ section .text
     MOV EDI,EBX                         ; 0045c8d6
     MOV BL,byte ptr [0x01b4d710]        ; 0045c8d8 | DAT_01b4d710
         ;   Label: LAB_0045c8d8
-    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c8de | DAT_01bd2fa0
+    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c8de | g_ScreenBufferArray
     ADD EDX,0x4                         ; 0045c8e4
     INC EAX                             ; 0045c8e7
     MOV byte ptr [ECX + ESI*0x1],BL     ; 0045c8e8
@@ -112,7 +112,7 @@ section .text
     MOV ESI,EBX                         ; 0045c8fb
     MOV BX,word ptr [0x01b4d710]        ; 0045c8fd | DAT_01b4d710
         ;   Label: LAB_0045c8fd
-    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c904 | DAT_01bd2fa0
+    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c904 | g_ScreenBufferArray
     ADD EDX,0x4                         ; 0045c90a
     INC EAX                             ; 0045c90d
     MOV word ptr [ECX + EDI*0x1],BX     ; 0045c90e
@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_0045c918
     MOV EBX,dword ptr [0x01b4d710]      ; 0045c91a | DAT_01b4d710
         ;   Label: LAB_0045c91a
-    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c920 | DAT_01bd2fa0
+    MOV ECX,dword ptr [EDX + 0x1bd2fa0] ; 0045c920 | g_ScreenBufferArray
     ADD EDX,0x4                         ; 0045c926
     INC EAX                             ; 0045c929
     MOV dword ptr [ECX + EDI*0x1],EBX   ; 0045c92a
@@ -159,7 +159,7 @@ section .text
         ;   XREF to: 0045c933 (UNCONDITIONAL_JUMP)  ; LAB_0045c933
     MOV EDI,EBX                         ; 0045c967
         ;   Label: LAB_0045c967
-    MOV EBX,dword ptr [EDX + 0x1bd2fa0] ; 0045c969 | DAT_01bd2fa0
+    MOV EBX,dword ptr [EDX + 0x1bd2fa0] ; 0045c969 | g_ScreenBufferArray
         ;   Label: LAB_0045c969
     XOR ECX,ECX                         ; 0045c96f
     MOV CL,byte ptr [ESI + EBX*0x1]     ; 0045c971
@@ -179,7 +179,7 @@ section .text
     MOV EBP,dword ptr [ESP]             ; 0045c98d
         ;   Label: LAB_0045c98d
     MOV EDI,EBX                         ; 0045c990
-    MOV EBX,dword ptr [EDX + 0x1bd2fa0] ; 0045c992 | DAT_01bd2fa0
+    MOV EBX,dword ptr [EDX + 0x1bd2fa0] ; 0045c992 | g_ScreenBufferArray
         ;   Label: LAB_0045c992
     XOR ESI,ESI                         ; 0045c998
     MOV CL,byte ptr [0x01b4d720]        ; 0045c99a | DAT_01b4d720
@@ -203,7 +203,7 @@ section .text
         ;   Label: LAB_0045c9c2
     MOV EBP,dword ptr [ESP + 0x4]       ; 0045c9c6
     MOV EDI,EBX                         ; 0045c9ca
-    MOV ESI,dword ptr [EDX + 0x1bd2fa0] ; 0045c9cc | DAT_01bd2fa0
+    MOV ESI,dword ptr [EDX + 0x1bd2fa0] ; 0045c9cc | g_ScreenBufferArray
         ;   Label: LAB_0045c9cc
     ADD ESI,EBP                         ; 0045c9d2
     MOV CL,byte ptr [0x01b4d720]        ; 0045c9d4 | DAT_01b4d720
@@ -224,7 +224,7 @@ section .text
     POP ESI                             ; 0045c9f7
     POP EBX                             ; 0045c9f8
     RET                                 ; 0045c9f9
-    MOV ECX,dword ptr [0x005b7624]      ; 0045c9fa | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0045c9fa | g_BitsPerPixel
         ;   Label: LAB_0045c9fa
     CMP ECX,0x10                        ; 0045ca00
     JNC 0x0045ca10                      ; 0045ca03

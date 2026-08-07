@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_masterZBuffer_FUN_00532c70(int z_buffer_mode)
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9de8)(z_buffer_mode);

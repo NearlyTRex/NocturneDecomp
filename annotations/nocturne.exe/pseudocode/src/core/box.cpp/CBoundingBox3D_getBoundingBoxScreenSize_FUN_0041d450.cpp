@@ -27,7 +27,7 @@ float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex,&local_34);
   iVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[19999].projected_vertex.transformed_z;
   if (0 < iVar1) {
-    return ABS(((float)_DAT_01c00c4c *
+    return ABS(((float)g_Projection.neg_half_height_fixed *
                (((this_ptr->max).y - (this_ptr->min).y) / ((float)iVar1 * (float)0.00390625)))
                / (float)DAT_005b7648);
   }

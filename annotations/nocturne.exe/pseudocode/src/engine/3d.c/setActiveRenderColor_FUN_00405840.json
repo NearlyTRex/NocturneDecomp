@@ -57,21 +57,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 15,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 15,
+        "column": 37,
+        "line": 13,
         "message": "use of undeclared identifier 'DAT_005acbc4'; did you mean 'DAT_005acab4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
       }
     ],
     "success": false,
@@ -80,18 +68,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 70,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 25
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -135,8 +122,8 @@
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     }
   ],
@@ -202,16 +189,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 7,
+      "line": 5,
       "match": "DAT_006b0260",
       "severity": "mild",
       "text": "if (-1 < DAT_006b0260) {",
@@ -219,26 +198,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 6,
       "match": "DAT_005acbc4",
       "severity": "mild",
-      "text": "_DAT_01c00c70 = *(uint *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
+      "text": "g_ActiveRenderColor = *(int *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 6,
       "match": "DAT_006b0260",
       "severity": "mild",
-      "text": "_DAT_01c00c70 = *(uint *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
+      "text": "g_ActiveRenderColor = *(int *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_006b0260",
       "severity": "mild",
-      "text": "_DAT_01c00c70 = -DAT_006b0260;",
+      "text": "g_ActiveRenderColor = -DAT_006b0260;",
       "type": "undefined_data"
     }
   ]

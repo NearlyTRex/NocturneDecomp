@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dd0f84
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@
 
 section .text
 
-    CMP dword ptr [0x01c02594],0x0      ; 00545aa0 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00545aa0 | g_UseExternalRenderer
         ;   Label: engine_texture.cpp_renderTextureAtlas_FUN_00545aa0
     JNZ 0x00545aaa                      ; 00545aa7
         ;   XREF to: 00545aaa (CONDITIONAL_JUMP)  ; LAB_00545aaa

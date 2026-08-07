@@ -64,10 +64,10 @@ LAB_004cfc23:
     else if (0x40000 < iVar3) {
       iVar3 = 0x40000;
     }
-    iVar1 = _DAT_01c00c5c + 1;
-    iVar2 = _DAT_01c00c64 + -1;
-    iVar4 = _DAT_01c00c60 + -1;
-    iVar5 = _DAT_01c00c58 + 1;
+    iVar1 = g_ClipTop + 1;
+    iVar2 = g_ClipBottom + -1;
+    iVar4 = g_ClipRight + -1;
+    iVar5 = g_ClipLeft + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403ef0(iVar5,iVar1,iVar4,iVar2,0,0xff);
     engine_2d_c_fillRectColor_FUN_00403e60
               (iVar5,iVar1,
@@ -76,11 +76,10 @@ LAB_004cfc23:
     format_string = "%4.2f";
     iVar5 = 0;
     iVar4 = 0xff;
-    iVar2 = _DAT_01c00c64 + _DAT_01c00c5c;
+    iVar2 = g_ClipBottom + g_ClipTop;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,(iVar2 - iVar1) / 2,iVar4,iVar5,
-               format_string);
+              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     pCVar6 = g_CKeys_PTR_005bac64;
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);

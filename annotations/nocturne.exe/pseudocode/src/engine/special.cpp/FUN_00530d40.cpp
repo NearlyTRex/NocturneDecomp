@@ -11,7 +11,7 @@
 void engine_special_cpp_FUN_00530d40(void)
 
 {
-  _DAT_01c02594 = 0;
+  g_UseExternalRenderer = 0;
   INT_02dc9e04 = 0;
   if (_DAT_02dc9e08 != (HMODULE)0x0) {
     wincore_wddvmem_cpp_freeLibrary_FUN_00553d20(_DAT_02dc9e08);

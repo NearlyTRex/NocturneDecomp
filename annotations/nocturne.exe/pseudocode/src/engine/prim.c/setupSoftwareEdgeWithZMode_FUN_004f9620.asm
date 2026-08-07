@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c0399c
-;   undefined4 DAT_01c039a4
+;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52a68
 ;   undefined4 DAT_01e52a6c
 ;   undefined4 DAT_01e52eec
@@ -161,7 +161,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 004f978c
     ADD EAX,EDX                         ; 004f978f
     MOV dword ptr [ECX + 0x30],EAX      ; 004f9791
-    CMP dword ptr [0x01c039a4],0x1      ; 004f9794 | DAT_01c039a4
+    CMP dword ptr [0x01c039a4],0x1      ; 004f9794 | g_VertexPreprocessMode
     JNZ 0x004f97f9                      ; 004f979b
         ;   XREF to: 004f97f9 (CONDITIONAL_JUMP)  ; LAB_004f97f9
     CMP dword ptr [0x01c0399c],0x0      ; 004f979d | DAT_01c0399c

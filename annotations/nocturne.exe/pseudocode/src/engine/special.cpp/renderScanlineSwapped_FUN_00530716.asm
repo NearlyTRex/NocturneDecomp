@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005bf4a8
 ;   undefined4 DAT_005bf4ac
 ;   undefined4 DAT_005bf4b0
-;   undefined4 DAT_01c00c7c
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8]       ; 00530732
     MOV ESI,dword ptr [EBP + 0xc]       ; 00530735
     MOV EDI,dword ptr [EBP + 0x10]      ; 00530738
-    CALL dword ptr [0x01c00c7c]         ; 0053073b | DAT_01c00c7c
+    CALL dword ptr [0x01c00c7c]         ; 0053073b | g_ScanlineRenderFunc
     MOV EAX,[0x005bf4a4]                ; 00530741 | DAT_005bf4a4
     MOV EBX,dword ptr [0x005bf4a8]      ; 00530746 | DAT_005bf4a8
     MOV ECX,dword ptr [0x005bf4ac]      ; 0053074c | DAT_005bf4ac

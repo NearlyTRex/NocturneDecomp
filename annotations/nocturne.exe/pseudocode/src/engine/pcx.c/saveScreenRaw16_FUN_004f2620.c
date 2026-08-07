@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_004f2620(char *filename)
 
 {
@@ -73,13 +71,14 @@ LAB_004f2663:
     local_18 = 0;
     do {
       iVar3 = 0;
-      puVar6 = *(ushort **)(&DAT_01bd2fa0 + local_18);
+      puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_WindowWidth) {
         do {
           uVar2 = *puVar6;
-          local_20 = (uint)(uVar2 >> (DAT_01c00624 & 0x1f)) * _DAT_01c00628 & 0xff;
-          local_1c = (uint)(uVar2 >> (DAT_01c00630 & 0x1f)) * _DAT_01c00634 & 0xff;
-          uVar4 = (uint)(uVar2 >> (DAT_01c0063c & 0x1f)) * _DAT_01c00640;
+          local_20 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) * g_RedScaleFactor & 0xff;
+          local_1c = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor &
+                     0xff;
+          uVar4 = (uint)(uVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor;
           _fputc(local_20,file);
           _fputc(local_1c,file);
           puVar6 = puVar6 + 1;

@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_drawPolygon2_FUN_00532650(SRenderVertex **vertex_
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9dac)(vertex_array,vertex_count,render_flags);

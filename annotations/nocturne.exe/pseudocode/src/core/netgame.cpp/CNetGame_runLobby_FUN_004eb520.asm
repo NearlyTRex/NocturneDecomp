@@ -173,7 +173,7 @@ section .text
     PUSH 0x31                           ; 004eb68f
     MOV EDI,0xff                        ; 004eb691
     PUSH 0x0                            ; 004eb696
-    MOV dword ptr [0x01c00c70],EDI      ; 004eb698 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDI      ; 004eb698 | g_ActiveRenderColor
     CALL engine_2d.c_drawHLine_FUN_00403bd0 ; 004eb69e
         ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00403bd0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 004eb6a3

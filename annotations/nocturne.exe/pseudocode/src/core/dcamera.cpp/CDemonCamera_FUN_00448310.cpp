@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00448310(CDemonCamera *this_ptr)
       iVar3 = iVar3 + 1;
       _memcpy
                 ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                 (void *)(*(int *)(&DAT_01bd4260 + iVar2 * 4) + this_ptr->framebuffer_width * 4),
+                 g_ZBufferScanlineArray[iVar2] + this_ptr->framebuffer_width,
                  this_ptr->screen_width << 2);
     } while (iVar3 < (int)this_ptr->max_distance);
   }

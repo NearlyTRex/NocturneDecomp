@@ -20,7 +20,7 @@
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057d92c
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d942
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057d95a
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
 ;   undefined4 DAT_01b4d720
@@ -67,7 +67,7 @@ section .text
     TEST EDI,EDI                        ; 0045baf7
     JNZ 0x0045bbde                      ; 0045baf9
         ;   XREF to: 0045bbde (CONDITIONAL_JUMP)  ; LAB_0045bbde
-    MOV EDX,dword ptr [0x005b7624]      ; 0045baff | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0045baff | g_BitsPerPixel
     CMP EDX,0x10                        ; 0045bb05
     JNC 0x0045bb76                      ; 0045bb08
         ;   XREF to: 0045bb76 (CONDITIONAL_JUMP)  ; LAB_0045bb76
@@ -164,7 +164,7 @@ section .text
     POP ESI                             ; 0045bbdb
     POP EBX                             ; 0045bbdc
     RET                                 ; 0045bbdd
-    MOV EDX,dword ptr [0x005b7624]      ; 0045bbde | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0045bbde | g_BitsPerPixel
         ;   Label: LAB_0045bbde
     CMP EDX,0x10                        ; 0045bbe4
     JNC 0x0045bbf0                      ; 0045bbe7

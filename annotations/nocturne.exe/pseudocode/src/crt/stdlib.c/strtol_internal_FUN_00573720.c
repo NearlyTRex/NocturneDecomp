@@ -21,7 +21,7 @@ long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed)
   if (endptr != (char **)0x0) {
     *endptr = str;
   }
-  while (((&DAT_005c168c)[(byte)(*pcVar4 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2) != 0) {
     pcVar4 = pcVar4 + 1;
   }
   cVar1 = *pcVar4;

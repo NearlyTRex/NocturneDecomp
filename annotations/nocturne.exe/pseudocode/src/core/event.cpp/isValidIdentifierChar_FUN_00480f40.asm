@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047adfb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     MOV AL,DL                           ; 00480f44
     INC AL                              ; 00480f46
     AND EAX,0xff                        ; 00480f48
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00480f4d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00480f4d | g_CharacterClassificationTable
     JNZ 0x00480f64                      ; 00480f54
         ;   XREF to: 00480f64 (CONDITIONAL_JUMP)  ; LAB_00480f64
     CMP EDX,0x5f                        ; 00480f56

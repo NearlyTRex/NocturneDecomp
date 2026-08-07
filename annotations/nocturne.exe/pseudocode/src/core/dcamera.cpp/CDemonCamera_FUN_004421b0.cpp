@@ -47,10 +47,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_004421b0(CDemonCamera *this_ptr)
     aiStack_48[3] = 0xf00;
     do {
       local_28 = 1;
-      puVar4 = (uint *)(*(int *)(&DAT_01bd2fa0 +
-                                (aiStack_48[4] * this_ptr->scale_factor +
-                                this_ptr->framebuffer_height) * 4) + this_ptr->framebuffer_width * 4
-                       );
+      puVar4 = (uint *)((int)g_ScreenBufferArray
+                             [aiStack_48[4] * this_ptr->scale_factor + this_ptr->framebuffer_height]
+                       + this_ptr->framebuffer_width * 4);
       if (1 < this_ptr->display_width) {
         aiStack_48[5] = aiStack_48[3] + 0xc;
         local_2c = aiStack_48[2] + 4;
@@ -127,8 +126,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_004421b0(CDemonCamera *this_ptr)
       for (; (int)uVar11 < this_ptr->screen_width + this_ptr->scale_factor * -2; uVar11 = uVar11 + 1
           ) {
         if ((_DAT_012b0664 < 10000) && (((uVar11 & 1) != 0 || ((local_1c & 1) != 0)))) {
-          iVar5 = *(int *)(*(int *)(&DAT_01bd4260 + (local_1c + this_ptr->framebuffer_height) * 4) +
-                           local_30 + this_ptr->framebuffer_width * 4);
+          iVar5 = *(int *)((int)g_ZBufferScanlineArray[local_1c + this_ptr->framebuffer_height] +
+                          this_ptr->framebuffer_width * 4 + local_30);
           iVar8 = 0x7fffffff;
           if (iVar5 == 0) {
             iVar5 = 0x7fffffff;

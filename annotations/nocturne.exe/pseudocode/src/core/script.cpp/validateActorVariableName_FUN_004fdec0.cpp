@@ -26,8 +26,8 @@ int __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *variabl
     if (~uVar3 - 1 < 0x1f) {
       iVar4 = 1;
       pcVar2 = variable_name;
-      while ((pcVar2 = pcVar2 + 1, ((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||
-             (*pcVar2 == '_'))) {
+      while ((pcVar2 = pcVar2 + 1, (g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 0xe0) != 0
+             || (*pcVar2 == '_'))) {
         iVar4 = iVar4 + 1;
       }
       if ((iVar4 != 1) && (*pcVar2 == '\0')) {

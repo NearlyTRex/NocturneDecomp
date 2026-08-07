@@ -18,7 +18,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventLi
   char local_6c [100];
   
   do {
-    while (((&DAT_005c168c)[(byte)(*command_string + 1)] & 2) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*command_string + 1)] & 2) != 0) {
       command_string = command_string + 1;
     }
     cVar1 = *command_string;
@@ -35,7 +35,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0047ab90(CEventLi
       pcVar4 = pcVar4 + 1;
     }
     while ((command_string = pcVar4 + 1, local_6c < pcVar2 &&
-           (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+           ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
       pcVar2 = pcVar2 + -1;
     }
     if (local_6c < pcVar2) {

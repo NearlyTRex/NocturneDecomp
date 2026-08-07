@@ -19,11 +19,11 @@
 ; Referenced Globals:
 ;   void* switchdataD_00562db8 = 00562e57
 ;   undefined4 DAT_006b0280
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c039a4
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52ef8
 ;   undefined4 DAT_02de497c
 ;   undefined4 DAT_02de4980
@@ -79,7 +79,7 @@ section .text
         ;   Label: LAB_00562e33
     MOV ESI,dword ptr [0x02de497c]      ; 00562e39 | DAT_02de497c
     INC EDX                             ; 00562e3f
-    MOV EAX,[0x01c039a4]                ; 00562e40 | DAT_01c039a4
+    MOV EAX,[0x01c039a4]                ; 00562e40 | g_VertexPreprocessMode
     MOV dword ptr [0x01e52ef8],EDX      ; 00562e45 | DAT_01e52ef8
     CMP EAX,0x6                         ; 00562e4b
     JA 0x00562e57                       ; 00562e4e
@@ -243,20 +243,20 @@ section .text
     SAR EDX,0x1f                        ; 00562fec
     IDIV EBX                            ; 00562fef
     MOV dword ptr [ECX + 0xc],EAX       ; 00562ff1
-    MOV EDX,dword ptr [0x01c00c48]      ; 00562ff4 | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 00562ff4 | g_Projection
     MOV EBX,dword ptr [ECX + 0x8]       ; 00562ffa
     MOV EAX,dword ptr [ECX]             ; 00562ffd
     IMUL EDX                            ; 00562fff
     IDIV EBX                            ; 00563001
-    MOV EDX,dword ptr [0x01c00c50]      ; 00563003 | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 00563003 | g_Projection.center_x_fixed
     ADD EAX,EDX                         ; 00563009
     MOV EBX,dword ptr [ECX + 0x8]       ; 0056300b
     MOV dword ptr [ECX + 0x10],EAX      ; 0056300e
-    MOV EDX,dword ptr [0x01c00c4c]      ; 00563011 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 00563011 | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [ECX + 0x4]       ; 00563017
     IMUL EDX                            ; 0056301a
     IDIV EBX                            ; 0056301c
-    MOV EDX,dword ptr [0x01c00c54]      ; 0056301e | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 0056301e | g_Projection.center_y_fixed
     ADD EAX,EDX                         ; 00563024
     MOV dword ptr [ECX + 0x14],EAX      ; 00563026
     JMP 0x00562e0d                      ; 00563029

@@ -25,7 +25,7 @@
 ;   core_inv.cpp_CInventory_FUN_004c2470 at 004c2b14
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5744
 ;   core_main.c_FUN_004c85f0 at 004c8c56
-;   core_main.c_FUN_004c90e0 at 004c9173
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9173
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f24
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50 at 004cfeea
 ;   ... and 2 more
@@ -33,8 +33,8 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0
@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x4                         ; 0040e755
     MOV EAX,dword ptr [ESI]             ; 0040e758
     MOV dword ptr [ESP + 0x18],EAX      ; 0040e75a
-    MOV EAX,[0x005b7624]                ; 0040e75e | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 0040e75e | g_BitsPerPixel
     MOV EBP,dword ptr [ESI + 0x4]       ; 0040e763
     CMP EAX,0x20                        ; 0040e766
     JNZ 0x0040e815                      ; 0040e769
@@ -107,7 +107,7 @@ section .text
     CMP ECX,dword ptr [0x005b7620]      ; 0040e797 | g_WindowHeight
     JGE 0x0040e7df                      ; 0040e79d
         ;   XREF to: 0040e7df (CONDITIONAL_JUMP)  ; LAB_0040e7df
-    MOV ECX,dword ptr [ECX*0x4 + 0x1bd2fa0] ; 0040e79f | DAT_01bd2fa0
+    MOV ECX,dword ptr [ECX*0x4 + 0x1bd2fa0] ; 0040e79f | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 0040e7a6
     XOR EDX,EDX                         ; 0040e7a9
     TEST EDI,EDI                        ; 0040e7ab
@@ -177,7 +177,7 @@ section .text
     CMP ECX,dword ptr [0x005b7620]      ; 0040e83c | g_WindowHeight
     JGE 0x0040e883                      ; 0040e842
         ;   XREF to: 0040e883 (CONDITIONAL_JUMP)  ; LAB_0040e883
-    MOV ECX,dword ptr [ECX*0x4 + 0x1bd2fa0] ; 0040e844 | DAT_01bd2fa0
+    MOV ECX,dword ptr [ECX*0x4 + 0x1bd2fa0] ; 0040e844 | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 0040e84b
     XOR EDX,EDX                         ; 0040e84e
     TEST EDI,EDI                        ; 0040e850

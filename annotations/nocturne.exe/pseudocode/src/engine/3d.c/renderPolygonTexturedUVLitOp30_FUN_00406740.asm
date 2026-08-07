@@ -7,20 +7,20 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_006b029c
 ;   undefined4 DAT_006b02a0
-;   undefined4 DAT_01c00c7c
-;   undefined4 DAT_01c03948
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a4
+;   MainScanlineFunc* g_ScanlineRenderFunc
+;   int g_MMXSupported
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00404710
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   engine_clipper.c_FUN_00432cd0
+;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;
 ; *****************************************************************************
 
@@ -39,21 +39,21 @@ section .text
     TEST EAX,EAX                        ; 00406755
     JZ 0x00406819                       ; 00406757
         ;   XREF to: 00406819 (CONDITIONAL_JUMP)  ; LAB_00406819
-    CMP dword ptr [0x01c03948],0x0      ; 0040675d | DAT_01c03948
+    CMP dword ptr [0x01c03948],0x0      ; 0040675d | g_MMXSupported
     JNZ 0x004067e5                      ; 00406764
         ;   XREF to: 004067e5 (CONDITIONAL_JUMP)  ; LAB_004067e5
-    CMP dword ptr [0x005b7624],0x20     ; 0040676a | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 0040676a | g_BitsPerPixel
     JNZ 0x004067d9                      ; 00406771
         ;   XREF to: 004067d9 (CONDITIONAL_JUMP)  ; LAB_004067d9
-    MOV dword ptr [0x01c00c7c],0x5300ec ; 00406773 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x5300ec ; 00406773 | g_ScanlineRenderFunc
     PUSH EDI                            ; 0040677d
         ;   Label: LAB_0040677d
     PUSH EBX                            ; 0040677e
     MOV EBX,0x1                         ; 0040677f
     PUSH EBP                            ; 00406784
     XOR EDI,EDI                         ; 00406785
-    MOV dword ptr [0x01c039a0],EBX      ; 00406787 | DAT_01c039a0
-    MOV dword ptr [0x01c039a4],EDI      ; 0040678d | DAT_01c039a4
+    MOV dword ptr [0x01c039a0],EBX      ; 00406787 | g_RenderStateFlags
+    MOV dword ptr [0x01c039a4],EDI      ; 0040678d | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 00406793
         ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406798
@@ -81,26 +81,26 @@ section .text
     MOV dword ptr [EDI + 0x5c5030],ESI  ; 004067d1 | DAT_005c5030
     JMP 0x004067a3                      ; 004067d7
         ;   XREF to: 004067a3 (UNCONDITIONAL_JUMP)  ; LAB_004067a3
-    MOV dword ptr [0x01c00c7c],0x530322 ; 004067d9 | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x530322 ; 004067d9 | g_ScanlineRenderFunc
         ;   Label: LAB_004067d9
     JMP 0x0040677d                      ; 004067e3
         ;   XREF to: 0040677d (UNCONDITIONAL_JUMP)  ; LAB_0040677d
-    CMP dword ptr [0x005b7624],0x20     ; 004067e5 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 004067e5 | g_BitsPerPixel
         ;   Label: LAB_004067e5
     JNZ 0x004067fa                      ; 004067ec
         ;   XREF to: 004067fa (CONDITIONAL_JUMP)  ; LAB_004067fa
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 004067ee | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 004067ee | g_ScanlineRenderFunc
     JMP 0x0040677d                      ; 004067f8
         ;   XREF to: 0040677d (UNCONDITIONAL_JUMP)  ; LAB_0040677d
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 004067fa | DAT_01c00c7c
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 004067fa | g_ScanlineRenderFunc
         ;   Label: LAB_004067fa
     JMP 0x0040677d                      ; 00406804
         ;   XREF to: 0040677d (UNCONDITIONAL_JUMP)  ; LAB_0040677d
     PUSH 0x6b029c                       ; 00406809 | DAT_006b029c
         ;   Label: LAB_00406809
     PUSH EBX                            ; 0040680e
-    CALL engine_clipper.c_FUN_00432cd0  ; 0040680f
-        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_FUN_00432cd0()
+    CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 0040680f
+        ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00406814
     POP EBX                             ; 00406817
     POP EDI                             ; 00406818

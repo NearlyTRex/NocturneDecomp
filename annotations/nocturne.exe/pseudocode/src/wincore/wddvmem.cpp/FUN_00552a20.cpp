@@ -6,29 +6,29 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
 void wincore_wddvmem_cpp_FUN_00552a20(void)
 
 {
-  DAT_005c5010 = malloc
-                           (((int)((DAT_005b7624 + (DAT_005b7624 >> 0x1f) * -8) -
-                                  (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
+  g_BackBuffer = malloc
+                           (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
+                                  (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
                             g_WindowWidth * g_WindowHeight);
-  if (DAT_005c5010 == (void *)0x0) {
+  if (g_BackBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
     g_CurrentLineNumber = 234;
     core_main_c_displayErrorAndQuit_FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
   }
-  _DAT_02ddf560 = malloc(g_WindowWidth * g_WindowHeight * 4 + 0x40);
-  if (_DAT_02ddf560 != (void *)0x0) {
-    DAT_006af62c = (int)_DAT_02ddf560 + 0x10U & 0xfffffff0;
+  g_SoftwareFrameBuffer =
+       malloc(g_WindowWidth * g_WindowHeight * 4 + 0x40);
+  if (g_SoftwareFrameBuffer != (void *)0x0) {
+    g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
     return;
   }
   g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
   g_CurrentLineNumber = 239;
   core_main_c_displayErrorAndQuit_FUN_004c8440("WDDVMEM: Fatal - out of Z buffer memory");
-  DAT_006af62c = (int)_DAT_02ddf560 + 0x10U & 0xfffffff0;
+  g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
   return;
 }

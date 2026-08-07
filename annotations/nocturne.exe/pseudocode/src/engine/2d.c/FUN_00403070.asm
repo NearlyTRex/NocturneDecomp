@@ -84,7 +84,7 @@ section .text
     ADD ESP,0x4                         ; 004030eb
     PUSH EDI                            ; 004030ee
     CALL engine_2d.c_FUN_00403130       ; 004030ef
-        ;   XREF to: 00403130 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403130()
+        ;   XREF to: 00403130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00403130(char * filename)
     ADD ESP,0x4                         ; 004030f4
     PUSH 0x577193                       ; 004030f7 | = "rb"
     PUSH EDI                            ; 004030fc

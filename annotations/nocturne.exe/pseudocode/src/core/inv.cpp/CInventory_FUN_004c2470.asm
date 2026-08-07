@@ -109,13 +109,13 @@ section .text
     CMP EBX,dword ptr [0x01cc30a0]      ; 004c24b0 | DAT_01cc30a0
     JNZ 0x004c2dd3                      ; 004c24b6
         ;   XREF to: 004c2dd3 (CONDITIONAL_JUMP)  ; LAB_004c2dd3
-    MOV EAX,[0x01c02594]                ; 004c24bc | DAT_01c02594
+    MOV EAX,[0x01c02594]                ; 004c24bc | g_UseExternalRenderer
         ;   Label: LAB_004c24bc
     MOV EDI,dword ptr [0x005b7620]      ; 004c24c1 | g_WindowHeight
     XOR ESI,ESI                         ; 004c24c7
     MOV dword ptr [ESP + 0x61c],EAX     ; 004c24c9
     MOV EAX,[0x014b9904]                ; 004c24d0 | g_CBitFont_PTR_014b9904
-    MOV dword ptr [0x01c02594],ESI      ; 004c24d5 | DAT_01c02594
+    MOV dword ptr [0x01c02594],ESI      ; 004c24d5 | g_UseExternalRenderer
     MOV dword ptr [ESP + 0x644],EAX     ; 004c24db
     CMP EDI,0x180                       ; 004c24e2
     JGE 0x004c24fa                      ; 004c24e8
@@ -807,7 +807,7 @@ section .text
     MOV EDX,EDX                         ; 004c2dbe
     MOV EAX,dword ptr [ESP + 0x61c]     ; 004c2dc0
         ;   Label: LAB_004c2dc0
-    MOV [0x01c02594],EAX                ; 004c2dc7 | DAT_01c02594
+    MOV [0x01c02594],EAX                ; 004c2dc7 | g_UseExternalRenderer
     MOV ESP,EBP                         ; 004c2dcc
         ;   Label: LAB_004c2dcc
     POP EBP                             ; 004c2dce

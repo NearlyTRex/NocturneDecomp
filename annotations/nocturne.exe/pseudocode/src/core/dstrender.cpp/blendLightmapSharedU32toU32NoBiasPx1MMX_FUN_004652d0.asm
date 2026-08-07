@@ -16,7 +16,7 @@
 ;   undefined4 DAT_005b5d00
 ;   undefined4 DAT_005b64f8
 ;   undefined4 DAT_00b0e1fc
-;   undefined4 DAT_01c039a8
+;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
 
@@ -33,7 +33,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004652dc
     MOV EBP,dword ptr [EBP + 0x14]      ; 004652df
     PXOR MM7,MM7                        ; 004652e2
-    MOVD MM5,dword ptr [0x01c039a8]     ; 004652e5 | DAT_01c039a8
+    MOVD MM5,dword ptr [0x01c039a8]     ; 004652e5 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 004652ec
     PSLLW MM5,0x6                       ; 004652ef
     MOVZX EDX,byte ptr [EBX]            ; 004652f3

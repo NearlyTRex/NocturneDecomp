@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
         "line": 35,
         "message": "use of undeclared identifier '_DAT_012b0660'"
@@ -81,25 +75,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 50,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
+        "column": 65,
         "line": 38,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
+        "column": 64,
         "line": 39,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
@@ -111,9 +93,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
+        "column": 48,
         "line": 58,
-        "message": "use of undeclared identifier 'DAT_01bd4260'"
+        "message": "use of undeclared identifier 'DAT_012b0660'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 59,
+        "message": "use of undeclared identifier 'DAT_012ceb78'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 63,
+        "message": "use of undeclared identifier '_DAT_012b0230'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 64,
+        "message": "use of undeclared identifier '_DAT_012b0230'"
       }
     ],
     "success": false,
@@ -122,14 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 161,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -178,20 +180,20 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     }
   ],
@@ -367,7 +369,7 @@
       "line": 31,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "iVar15 = ((right->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);",
+      "text": "iVar15 = ((right->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -375,7 +377,7 @@
       "line": 32,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "iVar18 = ((left->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);",
+      "text": "iVar18 = ((left->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -389,17 +391,9 @@
     {
       "description": "Undefined global data reference",
       "line": 51,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_01bd4260 + (iVar17 << (DAT_012b0660 & 0x1f)) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_01bd4260 + (iVar17 << (DAT_012b0660 & 0x1f)) * 4);",
+      "text": "puVar2 = g_ZBufferScanlineArray[iVar17 << (DAT_012b0660 & 0x1f)];",
       "type": "undefined_data"
     },
     {
@@ -409,6 +403,22 @@
       "severity": "mild",
       "text": "pbVar7 = &DAT_012ceb78 + iVar16 + iVar17 * 0x140;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(int *)((int)puVar2",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)puVar2 + iVar18 + (iVar16 << bVar4) * 4) < iVar6) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)puVar2 + iVar18 + (iVar16 << bVar4) * 4) < iVar6) {",
+      "type": "pointer_truncation"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",

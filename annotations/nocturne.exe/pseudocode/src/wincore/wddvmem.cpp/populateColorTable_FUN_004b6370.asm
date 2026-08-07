@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c0063c
+;   int g_BitsPerPixel = 0x8
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;   uchar[768] g_SourcePaletteData
 ;   undefined4 g_SourcePaletteData+4
 ;   undefined4 g_SourcePaletteData+5
@@ -22,7 +22,7 @@ section .text
     PUSH ESI                            ; 004b6371
     PUSH EDI                            ; 004b6372
     PUSH EBP                            ; 004b6373
-    MOV EBP,dword ptr [0x005b7624]      ; 004b6374 | DAT_005b7624
+    MOV EBP,dword ptr [0x005b7624]      ; 004b6374 | g_BitsPerPixel
     XOR EDX,EDX                         ; 004b637a
     XOR EAX,EAX                         ; 004b637c
     MOVZX ESI,byte ptr [EAX + 0x1c00649] ; 004b637e | g_SourcePaletteData+4
@@ -33,11 +33,11 @@ section .text
     CMP EBP,0x20                        ; 004b6394
     JNZ 0x004b63e1                      ; 004b6397
         ;   XREF to: 004b63e1 (CONDITIONAL_JUMP)  ; LAB_004b63e1
-    MOV CL,byte ptr [0x01c00624]        ; 004b6399 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004b6399 | g_RedBitPosition
     SHL EDI,CL                          ; 004b639f
-    MOV CL,byte ptr [0x01c00630]        ; 004b63a1 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004b63a1 | g_GreenBitPosition
     SHL ESI,CL                          ; 004b63a7
-    MOV CL,byte ptr [0x01c0063c]        ; 004b63a9 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004b63a9 | g_BlueBitPosition
     SHL EBX,CL                          ; 004b63af
     OR EDI,ESI                          ; 004b63b1
     MOV ECX,EBX                         ; 004b63b3
@@ -49,7 +49,7 @@ section .text
     CMP EDX,0x400                       ; 004b63c3
     JNZ 0x004b637e                      ; 004b63c9
         ;   XREF to: 004b637e (CONDITIONAL_JUMP)  ; LAB_004b637e
-    MOV dword ptr [0x005b7624],EBP      ; 004b63cb | DAT_005b7624
+    MOV dword ptr [0x005b7624],EBP      ; 004b63cb | g_BitsPerPixel
     POP EBP                             ; 004b63d1
     POP EDI                             ; 004b63d2
     POP ESI                             ; 004b63d3

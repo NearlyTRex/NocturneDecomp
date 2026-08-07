@@ -24,7 +24,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
   int iVar10;
   uint *puVar12;
   int iVar13;
-  int *piVar14;
+  uint *puVar14;
   SSoftwareEdge *pSVar15;
   int iVar16;
   uint uVar17;
@@ -43,8 +43,8 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
   uVar3 = uVar3 >> 0x10;
   iVar5 = (uVar4 >> 0x10) - uVar3;
   if (iVar5 != 0 && uVar3 <= uVar4 >> 0x10) {
-    DAT_005b06e0 = (uint *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar3 * 4);
-    DAT_005b06e8 = (int *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar3 * 4);
+    DAT_005b06e0 = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 4);
+    DAT_005b06e8 = g_ZBufferScanlineArray[scanline_y] + uVar3;
     DAT_005b0680 = (pSVar15->base).u_current;
     DAT_005b0698 = (left_edge->base).u_current;
     _DAT_005b06a4 =
@@ -336,64 +336,64 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
     }
     puVar12 = &DAT_005b06ec;
     iVar6 = DAT_005b06ac >> 8;
-    iVar7 = iVar1 >> 4;
+    uVar17 = iVar1 >> 4;
     iVar5 = DAT_005b06e4;
-    piVar14 = DAT_005b06e8;
+    puVar14 = DAT_005b06e8;
     puVar18 = DAT_005b06e0;
     DAT_005b0688 = iVar1;
     while (-1 < iVar5 + -4) {
-      if (*piVar14 <= iVar7) {
+      if ((int)*puVar14 <= (int)uVar17) {
         uVar2 = *puVar12;
-        *piVar14 = iVar7;
+        *puVar14 = uVar17;
         *puVar18 = uVar2;
       }
-      iVar7 = iVar7 + iVar6;
-      if (piVar14[1] <= iVar7) {
+      uVar17 = uVar17 + iVar6;
+      if ((int)puVar14[1] <= (int)uVar17) {
         uVar2 = puVar12[1];
-        piVar14[1] = iVar7;
+        puVar14[1] = uVar17;
         puVar18[1] = uVar2;
       }
-      iVar7 = iVar7 + iVar6;
-      if (piVar14[2] <= iVar7) {
+      uVar17 = uVar17 + iVar6;
+      if ((int)puVar14[2] <= (int)uVar17) {
         uVar2 = puVar12[2];
-        piVar14[2] = iVar7;
+        puVar14[2] = uVar17;
         puVar18[2] = uVar2;
       }
-      iVar7 = iVar7 + iVar6;
-      if (piVar14[3] <= iVar7) {
+      uVar17 = uVar17 + iVar6;
+      if ((int)puVar14[3] <= (int)uVar17) {
         uVar2 = puVar12[3];
-        piVar14[3] = iVar7;
+        puVar14[3] = uVar17;
         puVar18[3] = uVar2;
       }
-      iVar7 = iVar7 + iVar6;
+      uVar17 = uVar17 + iVar6;
       puVar12 = puVar12 + 4;
       puVar18 = puVar18 + 4;
-      piVar14 = piVar14 + 4;
+      puVar14 = puVar14 + 4;
       iVar5 = iVar5 + -4;
     }
     if (-1 < iVar5) {
-      if (*piVar14 <= iVar7) {
+      if ((int)*puVar14 <= (int)uVar17) {
         uVar2 = *puVar12;
-        *piVar14 = iVar7;
+        *puVar14 = uVar17;
         *puVar18 = uVar2;
       }
-      iVar7 = iVar7 + iVar6;
+      uVar17 = uVar17 + iVar6;
       if (-1 < iVar5 + -1) {
-        if (piVar14[1] <= iVar7) {
+        if ((int)puVar14[1] <= (int)uVar17) {
           uVar2 = puVar12[1];
-          piVar14[1] = iVar7;
+          puVar14[1] = uVar17;
           puVar18[1] = uVar2;
         }
-        iVar7 = iVar7 + iVar6;
+        uVar17 = uVar17 + iVar6;
         if (-1 < iVar5 + -2) {
-          if (piVar14[2] <= iVar7) {
+          if ((int)puVar14[2] <= (int)uVar17) {
             uVar2 = puVar12[2];
-            piVar14[2] = iVar7;
+            puVar14[2] = uVar17;
             puVar18[2] = uVar2;
           }
-          if ((-1 < iVar5 + -3) && (piVar14[3] <= iVar7 + iVar6)) {
+          if ((-1 < iVar5 + -3) && ((int)puVar14[3] <= (int)(uVar17 + iVar6))) {
             uVar2 = puVar12[3];
-            piVar14[3] = iVar7 + iVar6;
+            puVar14[3] = uVar17 + iVar6;
             puVar18[3] = uVar2;
           }
         }

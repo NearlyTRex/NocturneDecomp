@@ -33,11 +33,13 @@ void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count
         (pSVar4->projected_vertex).inv_z =
              (int)(0x7fffffff / (longlong)(pSVar4->projected_vertex).transformed_z);
         (pSVar4->projected_vertex).screen_x =
-             (int)(((longlong)(pSVar4->projected_vertex).transformed_x * (longlong)_DAT_01c00c48) /
-                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c00c50;
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_x *
+                   (longlong)g_Projection.half_width_fixed) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + g_Projection.center_x_fixed;
         (pSVar4->projected_vertex).screen_y =
-             (int)(((longlong)(pSVar4->projected_vertex).transformed_y * (longlong)_DAT_01c00c4c) /
-                  (longlong)(pSVar4->projected_vertex).transformed_z) + _DAT_01c00c54;
+             (int)(((longlong)(pSVar4->projected_vertex).transformed_y *
+                   (longlong)g_Projection.neg_half_height_fixed) /
+                  (longlong)(pSVar4->projected_vertex).transformed_z) + g_Projection.center_y_fixed;
       }
       iVar8 = iVar8 + 1;
       pSVar4 = pSVar4 + 1;
@@ -73,11 +75,11 @@ void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count
     }
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    engine_special_cpp_drawPolygon_FUN_00532620(vertices,vertex_count,_DAT_01c039a0);
+  if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
+    engine_special_cpp_drawPolygon_FUN_00532620(vertices,vertex_count,g_RenderStateFlags.dword);
     return;
   }
-  switch(_DAT_01c039a4) {
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertices,vertex_count);
     break;

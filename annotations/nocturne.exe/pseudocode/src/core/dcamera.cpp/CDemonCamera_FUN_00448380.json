@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
       }
     ],
     "success": false,
@@ -68,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 48,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 54
   },
@@ -111,8 +104,8 @@
   "globals": [
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     }
   ],
@@ -186,14 +179,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "((void *)(this_ptr->framebuffer_width * 4 + *(int *)(&DAT_01bd4260 + iVar1 * 4)),",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 17,

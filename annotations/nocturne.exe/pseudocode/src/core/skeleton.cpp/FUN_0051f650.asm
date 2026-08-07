@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_main.c_FUN_004c90e0 at 004c9357
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9357
 ;   core_mission.cpp_FUN_004d9900 at 004d990a
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 at 0051f737
 ;

@@ -29,10 +29,10 @@
 ;   TerminatedCString s_saveScreenRaw16_Unable_t_0058cf2c
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -143,30 +143,30 @@ section .text
         ;   Label: LAB_004f26de
     MOV EBP,dword ptr [0x005b761c]      ; 004f26e2 | g_WindowWidth
     XOR EBX,EBX                         ; 004f26e8
-    MOV ESI,dword ptr [ESI + 0x1bd2fa0] ; 004f26ea | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV ESI,dword ptr [ESI + 0x1bd2fa0] ; 004f26ea | g_ScreenBufferArray | g_ScreenBufferArray[1]
     TEST EBP,EBP                        ; 004f26f0
     JLE 0x004f2784                      ; 004f26f2
         ;   XREF to: 004f2784 (CONDITIONAL_JUMP)  ; LAB_004f2784
     XOR EAX,EAX                         ; 004f26f8
         ;   Label: LAB_004f26f8
     MOV AX,word ptr [ESI]               ; 004f26fa
-    MOV CL,byte ptr [0x01c00624]        ; 004f26fd | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004f26fd | g_RedBitPosition
     MOV EDX,EAX                         ; 004f2703
     SHR EDX,CL                          ; 004f2705
-    IMUL EDX,dword ptr [0x01c00628]     ; 004f2707 | DAT_01c00628
+    IMUL EDX,dword ptr [0x01c00628]     ; 004f2707 | g_RedScaleFactor
     AND EDX,0xff                        ; 004f270e
-    MOV CL,byte ptr [0x01c00630]        ; 004f2714 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004f2714 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x50],EDX      ; 004f271a
     MOV EDX,EAX                         ; 004f271e
-    MOV EBP,dword ptr [0x01c00634]      ; 004f2720 | DAT_01c00634
+    MOV EBP,dword ptr [0x01c00634]      ; 004f2720 | g_GreenScaleFactor
     SHR EDX,CL                          ; 004f2726
     IMUL EDX,EBP                        ; 004f2728
-    MOV CL,byte ptr [0x01c0063c]        ; 004f272b | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004f272b | g_BlueBitPosition
     AND EDX,0xff                        ; 004f2731
     MOV EBP,EAX                         ; 004f2737
     MOV dword ptr [ESP + 0x54],EDX      ; 004f2739
     SHR EBP,CL                          ; 004f273d
-    IMUL EBP,dword ptr [0x01c00640]     ; 004f273f | DAT_01c00640
+    IMUL EBP,dword ptr [0x01c00640]     ; 004f273f | g_BlueScaleFactor
     PUSH EDI                            ; 004f2746
     MOV ECX,dword ptr [ESP + 0x54]      ; 004f2747
     PUSH ECX                            ; 004f274b

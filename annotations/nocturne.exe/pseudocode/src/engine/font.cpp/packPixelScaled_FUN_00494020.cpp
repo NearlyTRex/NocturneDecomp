@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl engine_font_cpp_packPixelScaled_FUN_00494020(int red,int green,int blue)
 
 {
-  return (uint)blue / _DAT_01c00640 << (DAT_01c0063c & 0x1f) |
-         (uint)green / _DAT_01c00634 << (DAT_01c00630 & 0x1f) |
-         (uint)red / _DAT_01c00628 << (DAT_01c00624 & 0x1f);
+  return (uint)blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f) |
+         (uint)green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f) |
+         (uint)red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f);
 }

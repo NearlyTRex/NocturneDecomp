@@ -20,6 +20,6 @@ void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_
   _DAT_005bf4a8 = unaff_EBX;
   _DAT_005bf4ac = in_ECX;
   _DAT_005bf4b0 = in_EDX;
-  (*_DAT_01c00c7c)();
+  (*g_ScanlineRenderFunc)((SSoftwareEdge *)left,(SSoftwareEdge *)right,scanline_y);
   return;
 }

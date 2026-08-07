@@ -14,7 +14,7 @@
 ;   engine_2d.c_setSolidColor_FUN_00404090 at 00404108
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9dcc
 ;   undefined4 DAT_02dc9e0c
 ;   undefined4 DAT_02dc9e10
@@ -29,7 +29,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00532af1
     MOV EDX,dword ptr [ESP + 0xc]       ; 00532af5
     MOV ECX,dword ptr [ESP + 0x10]      ; 00532af9
-    MOV EBX,dword ptr [0x01c02594]      ; 00532afd | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 00532afd | g_UseExternalRenderer
     MOV dword ptr [0x02dc9e10],EDX      ; 00532b03 | DAT_02dc9e10
     MOV dword ptr [0x02dc9e14],ECX      ; 00532b09 | DAT_02dc9e14
     MOV [0x02dc9e0c],EAX                ; 00532b0f | DAT_02dc9e0c

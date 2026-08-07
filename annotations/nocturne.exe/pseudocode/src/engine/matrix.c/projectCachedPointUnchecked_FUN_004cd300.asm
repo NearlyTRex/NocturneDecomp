@@ -18,10 +18,10 @@
 ;   undefined4 DAT_005c5020
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5028
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;
 ; *****************************************************************************
 
@@ -41,20 +41,20 @@ section .text
     SAR EDX,0x1f                        ; 004cd320
     IDIV EBX                            ; 004cd323
     MOV dword ptr [ECX + 0x5c5020],EAX  ; 004cd325 | DAT_005c5020
-    MOV EDX,dword ptr [0x01c00c48]      ; 004cd32b | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 004cd32b | g_Projection
     MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd331 | DAT_005c501c
     MOV EAX,dword ptr [ECX + 0x5c5014]  ; 004cd337 | DAT_005c5014
     IMUL EDX                            ; 004cd33d
     IDIV EBX                            ; 004cd33f
-    MOV ESI,dword ptr [0x01c00c50]      ; 004cd341 | DAT_01c00c50
+    MOV ESI,dword ptr [0x01c00c50]      ; 004cd341 | g_Projection.center_x_fixed
     ADD EAX,ESI                         ; 004cd347
     MOV dword ptr [ECX + 0x5c5024],EAX  ; 004cd349 | DAT_005c5024
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004cd34f | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004cd34f | g_Projection.neg_half_height_fixed
     MOV EBX,dword ptr [ECX + 0x5c501c]  ; 004cd355 | DAT_005c501c
     MOV EAX,dword ptr [ECX + 0x5c5018]  ; 004cd35b | DAT_005c5018
     IMUL EDX                            ; 004cd361
     IDIV EBX                            ; 004cd363
-    MOV EDI,dword ptr [0x01c00c54]      ; 004cd365 | DAT_01c00c54
+    MOV EDI,dword ptr [0x01c00c54]      ; 004cd365 | g_Projection.center_y_fixed
     ADD EAX,EDI                         ; 004cd36b
     MOV dword ptr [ECX + 0x5c5028],EAX  ; 004cd36d | DAT_005c5028
     POP EDI                             ; 004cd373

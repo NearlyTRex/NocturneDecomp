@@ -37,7 +37,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FU
   uVar2 = uVar2 >> 0x10;
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
-    puVar7 = (ushort *)(*(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar2 * 2);
+    puVar7 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 2);
     uVar9 = (pSVar8->base).depth_current;
     iVar5 = iVar4;
     do {

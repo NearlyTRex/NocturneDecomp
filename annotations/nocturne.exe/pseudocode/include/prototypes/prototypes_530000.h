@@ -35,8 +35,8 @@
 // FUNCTION PROTOTYPES - Range 0x530000
 // =============================================================================
 
-int * engine_special_cpp_FUN_005300ec(void);
-int * engine_special_cpp_FUN_00530322(void);
+void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_0053055c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005305f7(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_00530710(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);

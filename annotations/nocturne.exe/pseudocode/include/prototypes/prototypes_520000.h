@@ -20,6 +20,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SMixBuffer.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/SStereoBuffers.h"
 #include "types/structs/SStereoGains.h"
@@ -298,6 +299,6 @@ void __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void);
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_0052ef37(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_0052efc2(int left,int right,int top,int bottom);
-void engine_special_cpp_FUN_0052f031(void);
-void engine_special_cpp_FUN_0052f823(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 

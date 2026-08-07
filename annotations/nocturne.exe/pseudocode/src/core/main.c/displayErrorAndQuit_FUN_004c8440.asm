@@ -30,7 +30,7 @@
 ;   core_sound.cpp_FUN_00527e10
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
-;   engine_2d.c_FUN_004012a0
+;   engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
 ;   wincore_winrun.cpp_endPeriod_FUN_00558a20
 ;   wincore_winrun.cpp_FUN_00559500
 ;
@@ -94,8 +94,8 @@ section .text
     CALL core_sound.cpp_FUN_00527e10    ; 004c84b1
         ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c84b6
-    CALL engine_2d.c_FUN_004012a0       ; 004c84b9
-        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_004012a0()
+    CALL engine_2d.c_cleanupGraphicsSystem_FUN_004012a0 ; 004c84b9
+        ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     PUSH 0x1cc3700                      ; 004c84c3

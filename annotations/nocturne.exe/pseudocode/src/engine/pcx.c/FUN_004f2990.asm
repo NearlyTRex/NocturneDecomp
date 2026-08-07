@@ -29,7 +29,7 @@
 ;   TerminatedCString s_Cannot_write_PCX_0058cfd6
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -53,7 +53,7 @@ section .text
     PUSH EBP                            ; 004f2991
     SUB ESP,0x80                        ; 004f2992
     MOV EBX,dword ptr [ESP + 0x8c]      ; 004f2998
-    MOV EDX,dword ptr [0x005b7624]      ; 004f299f | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 004f299f | g_BitsPerPixel
     CMP EDX,0x10                        ; 004f29a5
     JZ 0x004f2b39                       ; 004f29a8
         ;   XREF to: 004f2b39 (CONDITIONAL_JUMP)  ; LAB_004f2b39

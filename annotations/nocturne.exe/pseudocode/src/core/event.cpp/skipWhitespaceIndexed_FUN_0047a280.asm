@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   parse_position
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
     MOV DL,byte ptr [ECX + EDX*0x1]     ; 0047a28a
     INC DL                              ; 0047a28d
     AND EDX,0xff                        ; 0047a28f
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a295 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0047a295 | g_CharacterClassificationTable
     JZ 0x0047a250                       ; 0047a29c
         ;   XREF to: 0047a250 (CONDITIONAL_JUMP)  ; LAB_0047a250
     INC dword ptr [EAX]                 ; 0047a29e

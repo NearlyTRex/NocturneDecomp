@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 24,
         "line": 24,
         "message": "use of undeclared identifier '_DAT_01c039b8'"
@@ -114,6 +108,12 @@
         "column": 41,
         "line": 31,
         "message": "use of undeclared identifier '_DAT_01c03a04'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 41,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_01c039fc'"
       }
     ],
     "success": false,
@@ -585,32 +585,32 @@
     },
     {
       "addr": "01c00c48",
-      "name": "DAT_01c00c48",
-      "type": "undefined4",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "01c00c4c",
-      "name": "DAT_01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c00c50",
-      "name": "DAT_01c00c50",
+      "name": "g_Projection.center_x_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c00c54",
-      "name": "DAT_01c00c54",
+      "name": "g_Projection.center_y_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03948",
-      "name": "DAT_01c03948",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
@@ -1025,7 +1025,7 @@
       "line": 100,
       "match": "DAT_005bf4e8",
       "severity": "mild",
-      "text": "(int)(((longlong)(int)DAT_005bf4e8 * (longlong)_DAT_01c00c48) / (longlong)(int)uVar4) +",
+      "text": "(int)(((longlong)(int)DAT_005bf4e8 * (longlong)g_Projection.half_width_fixed) /",
       "type": "undefined_data"
     },
     {
@@ -1033,7 +1033,7 @@
       "line": 103,
       "match": "DAT_005bf4ec",
       "severity": "mild",
-      "text": "(int)(((longlong)(int)DAT_005bf4ec * (longlong)_DAT_01c00c4c) / (longlong)(int)uVar4) +",
+      "text": "(int)(((longlong)(int)DAT_005bf4ec * (longlong)g_Projection.neg_half_height_fixed) /",
       "type": "undefined_data"
     },
     {

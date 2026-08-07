@@ -39,8 +39,8 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
     getcwd((char *)local_124,0x104);
     pcVar2 = _fullpath(&local_228,filename,0x104);
     if ((pcVar2 != (char *)0x0) &&
-       ((((((&DAT_005c168c)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
-         (local_226 == '\\')) && (local_225 == '\0')))) {
+       (((((g_CharacterClassificationTable[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')
+          ) && (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }
     pcVar4 = mbtowc_next(filename);

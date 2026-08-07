@@ -36,7 +36,7 @@
 ;   undefined4 s_d_0057e751+1
 ;   undefined4 DAT_005b7630
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   ... and 8 more
@@ -197,9 +197,9 @@ section .text
     PUSH -0x1                           ; 00471025
     MOV EDX,dword ptr [0x01bcddf0]      ; 00471027 | DAT_01bcddf0
     PUSH EDX                            ; 0047102d
-    MOV ECX,dword ptr [0x01c00c5c]      ; 0047102e | DAT_01c00c5c
+    MOV ECX,dword ptr [0x01c00c5c]      ; 0047102e | g_ClipTop
     PUSH ECX                            ; 00471034
-    MOV EBX,dword ptr [0x01c00c58]      ; 00471035 | DAT_01c00c58
+    MOV EBX,dword ptr [0x01c00c58]      ; 00471035 | g_ClipLeft
     PUSH EBX                            ; 0047103b
     LEA EAX,[ESP + 0x10]                ; 0047103c
     PUSH EAX                            ; 00471040
@@ -219,12 +219,12 @@ section .text
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0047106e
     PUSH -0x1                           ; 00471071
-    MOV EAX,[0x01c00c5c]                ; 00471073 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 00471073 | g_ClipTop
     MOV EDX,dword ptr [0x01bcd9bc]      ; 00471078 | DAT_01bcd9bc
     PUSH EBX                            ; 0047107e
     ADD EAX,EDX                         ; 0047107f
     PUSH EAX                            ; 00471081
-    MOV ECX,dword ptr [0x01c00c58]      ; 00471082 | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 00471082 | g_ClipLeft
     PUSH ECX                            ; 00471088
     PUSH 0x57e739                       ; 00471089 | = "Filename: "
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 0047108e
@@ -247,11 +247,11 @@ section .text
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     MOV EDI,dword ptr [0x01bcd9bc]      ; 004710c0 | DAT_01bcd9bc
     MOV ECX,EAX                         ; 004710c6
-    MOV EAX,[0x01c00c5c]                ; 004710c8 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 004710c8 | g_ClipTop
     ADD ESP,0x8                         ; 004710cd
     ADD EAX,EDI                         ; 004710d0
     PUSH EAX                            ; 004710d2
-    ADD ECX,dword ptr [0x01c00c58]      ; 004710d3 | DAT_01c00c58
+    ADD ECX,dword ptr [0x01c00c58]      ; 004710d3 | g_ClipLeft
     PUSH ECX                            ; 004710d9
     LEA EAX,[ESP + 0x210]               ; 004710da
     PUSH EAX                            ; 004710e1
@@ -440,7 +440,7 @@ section .text
     MOV AL,BL                           ; 00471296
     INC AL                              ; 00471298
     AND EAX,0xff                        ; 0047129a
-    MOV CH,byte ptr [EAX + 0x5c168c]    ; 0047129f | DAT_005c168c
+    MOV CH,byte ptr [EAX + 0x5c168c]    ; 0047129f | g_CharacterClassificationTable
     TEST CH,0x8                         ; 004712a5
     JZ 0x004710f9                       ; 004712a8
         ;   XREF to: 004710f9 (CONDITIONAL_JUMP)  ; LAB_004710f9

@@ -12,29 +12,29 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_00553470(void)
 
 {
   int iVar1;
-  int iVar2;
+  HRESULT HVar2;
   int iVar3;
-  uint local_74 [4];
-  int iStack_64;
+  DDSURFACEDESC local_74;
   
-  if ((_DAT_02ddf56c == 0) && (_DAT_01c02594 == 0)) {
-    memset(local_74,0,0x6c);
-    iVar3 = 0;
-    local_74[0] = 0x6c;
-    iVar1 = (**(code **)(*_DAT_02ddf558 + 100))(_DAT_02ddf558,0,local_74,1);
-    if (iVar1 != 0) {
+  if ((_DAT_02ddf56c == 0) && (g_UseExternalRenderer == 0)) {
+    memset(&local_74,0,0x6c);
+    local_74.dwSize = 0x6c;
+    HVar2 = (*g_SoftwareRenderSurface->vtable->Lock)
+                      (g_SoftwareRenderSurface,(RECT *)0x0,&local_74,1,(void *)0x0);
+    if (HVar2 != 0) {
       g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
       g_CurrentLineNumber = 597;
       core_main_c_displayErrorAndQuit_FUN_004c8440("openScreenDevice - Unable to lock screen!");
     }
     if (0 < g_WindowHeight) {
       iVar1 = g_WindowHeight * 4;
-      iVar2 = 0;
+      iVar3 = 0;
       do {
-        *(int *)(&DAT_01bd2fa0 + iVar2) = iStack_64;
-        iVar2 = iVar2 + 4;
-        iStack_64 = iStack_64 + iVar3;
-      } while (iVar2 < iVar1);
+        *(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;
+        iVar3 = iVar3 + 4;
+        local_74.lpSurface = (LPVOID)((int)local_74.lpSurface + local_74.dwPitchOrLinearSize.lPitch)
+        ;
+      } while (iVar3 < iVar1);
       return;
     }
   }

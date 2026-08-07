@@ -46,8 +46,8 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
     cVar5 = *sound_name;
     local_14 = sound_name;
     pcVar7 = local_170;
-    while ((((cVar5 != '\0' && (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0)) &&
-            (cVar5 = *local_14, cVar5 != '@')) && (cVar5 != '*'))) {
+    while ((((cVar5 != '\0' && ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0))
+            && (cVar5 = *local_14, cVar5 != '@')) && (cVar5 != '*'))) {
       if (cVar5 == '[') {
         local_34 = -1;
         sscanf(local_14,"[%d,%d]%n");
@@ -185,7 +185,7 @@ LAB_0052d202:
     local_178 = 1.0;
     cVar5 = *local_14;
     while (cVar5 != '\0') {
-      if (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0) {
+      if ((g_CharacterClassificationTable[(byte)(*local_14 + 1)] & 2) == 0) {
         if (*local_14 == '@') {
           local_24 = -1;
           sscanf(local_14,"@%f%n",&local_178);

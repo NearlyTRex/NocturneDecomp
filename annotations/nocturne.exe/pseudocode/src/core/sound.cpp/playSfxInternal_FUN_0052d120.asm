@@ -116,7 +116,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0052d16b
     INC AL                              ; 0052d16d
     AND EAX,0xff                        ; 0052d16f
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0052d174 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0052d174 | g_CharacterClassificationTable
     JZ 0x0052d378                       ; 0052d17b
         ;   XREF to: 0052d378 (CONDITIONAL_JUMP)  ; LAB_0052d378
     MOV DL,0x2e                         ; 0052d181
@@ -266,7 +266,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0052d2dd
     INC AL                              ; 0052d2df
     AND EAX,0xff                        ; 0052d2e1
-    TEST byte ptr [EAX + 0x5c168c],BL   ; 0052d2e6 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],BL   ; 0052d2e6 | g_CharacterClassificationTable
     JZ 0x0052d580                       ; 0052d2ec
         ;   XREF to: 0052d580 (CONDITIONAL_JUMP)  ; LAB_0052d580
     INC dword ptr [ESP + 0x164]         ; 0052d2f2

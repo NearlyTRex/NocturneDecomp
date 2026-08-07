@@ -19,6 +19,6 @@ int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00456950(char *source_file,ui
   if (iVar1 == 0) {
     _Stack_8.actime = _Stack_50._st_atime;
   }
-  iVar1 = _utime_00600c1e(source_file,&_Stack_8);
+  iVar1 = _utime(source_file,&_Stack_8);
   return (uint)(iVar1 == 0);
 }

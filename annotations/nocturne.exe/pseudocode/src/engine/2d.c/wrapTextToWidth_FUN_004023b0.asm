@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_00401ed0
@@ -77,7 +77,7 @@ section .text
     MOV AL,DL                           ; 00402425
     INC AL                              ; 00402427
     AND EAX,0xff                        ; 00402429
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0040242e | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 0040242e | g_CharacterClassificationTable
     JZ 0x004024c6                       ; 00402435
         ;   XREF to: 004024c6 (CONDITIONAL_JUMP)  ; LAB_004024c6
     MOV EDX,EBX                         ; 0040243b

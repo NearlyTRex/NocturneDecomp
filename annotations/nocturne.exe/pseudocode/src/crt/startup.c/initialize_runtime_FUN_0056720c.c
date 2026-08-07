@@ -58,11 +58,11 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
       }
     }
     else {
-      for (; (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 && (*DAT_005c1ccc != '\0'));
-          DAT_005c1ccc = DAT_005c1ccc + 1) {
+      for (; ((g_CharacterClassificationTable[(byte)(*DAT_005c1ccc + 1)] & 2) == 0 &&
+             (*DAT_005c1ccc != '\0')); DAT_005c1ccc = DAT_005c1ccc + 1) {
       }
     }
-    while (((&DAT_005c168c)[(byte)(*DAT_005c1ccc + 1)] & 2) != 0) {
+    while ((g_CharacterClassificationTable[(byte)(*DAT_005c1ccc + 1)] & 2) != 0) {
       DAT_005c1ccc = DAT_005c1ccc + 1;
     }
     pWVar6 = GetCommandLineW();
@@ -84,11 +84,11 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
         }
       }
       else {
-        for (; (((&DAT_005c168c)[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) == 0 &&
+        for (; ((g_CharacterClassificationTable[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) == 0 &&
                (*_DAT_005c1cd8 != 0)); _DAT_005c1cd8 = _DAT_005c1cd8 + 1) {
         }
       }
-      while (((&DAT_005c168c)[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) != 0) {
+      while ((g_CharacterClassificationTable[(byte)((char)*_DAT_005c1cd8 + 1)] & 2) != 0) {
         _DAT_005c1cd8 = _DAT_005c1cd8 + 1;
       }
     }

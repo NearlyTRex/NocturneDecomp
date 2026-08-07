@@ -165,7 +165,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00491346 | DAT_006af554 | DAT_006af5e4 | DAT_006af558
     MOV EAX,dword ptr [ESP + 0x60]      ; 00491348
     MOV EDI,dword ptr [ESP + 0x68]      ; 0049134c
-    MOV ECX,dword ptr [0x01c02594]      ; 00491350 | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 00491350 | g_UseExternalRenderer
     SHL EAX,0x10                        ; 00491356
     INC EDI                             ; 00491359
     SUB EAX,0x1000                      ; 0049135a
@@ -186,8 +186,8 @@ section .text
         ;   XREF to: 004916a3 (CONDITIONAL_JUMP)  ; LAB_004916a3
     MOV EAX,dword ptr [ESP + 0x34]      ; 00491395
         ;   Label: LAB_00491395
-    MOV EDX,dword ptr [0x01c00c50]      ; 00491399 | DAT_01c00c50
-    MOV EBX,dword ptr [0x01c00c48]      ; 0049139f | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c50]      ; 00491399 | g_Projection.center_x_fixed
+    MOV EBX,dword ptr [0x01c00c48]      ; 0049139f | g_Projection
     SUB EAX,EDX                         ; 004913a5
     MOV EDX,0x10000                     ; 004913a7
     IMUL EDX                            ; 004913ac
@@ -196,19 +196,19 @@ section .text
     LEA ECX,[EDX*0x4 + 0x0]             ; 004913b4
     SUB ECX,EDX                         ; 004913bb
     SHL ECX,0x4                         ; 004913bd
-    MOV EDX,dword ptr [0x01c00c54]      ; 004913c0 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004913c0 | g_Projection.center_y_fixed
     MOV dword ptr [ECX + 0x5c5014],EAX  ; 004913c6 | DAT_006af554
     MOV EAX,dword ptr [ESP + 0x30]      ; 004913cc
-    MOV EBX,dword ptr [0x01c00c4c]      ; 004913d0 | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c4c]      ; 004913d0 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004913d6
     MOV EDX,0x10000                     ; 004913d8
     IMUL EDX                            ; 004913dd
     IDIV EBX                            ; 004913df
     MOV EDX,0x10000                     ; 004913e1
     MOV dword ptr [ECX + 0x5c5018],EAX  ; 004913e6 | DAT_006af558
-    MOV ECX,dword ptr [0x01c00c50]      ; 004913ec | DAT_01c00c50
+    MOV ECX,dword ptr [0x01c00c50]      ; 004913ec | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 004913f2
-    MOV EBX,dword ptr [0x01c00c48]      ; 004913f4 | DAT_01c00c48
+    MOV EBX,dword ptr [0x01c00c48]      ; 004913f4 | g_Projection
     SUB EAX,ECX                         ; 004913fa
     IMUL EDX                            ; 004913fc
     IDIV EBX                            ; 004913fe
@@ -219,27 +219,27 @@ section .text
     SHL ECX,0x4                         ; 0049140f
     MOV EAX,dword ptr [ESP + 0x30]      ; 00491412
     MOV dword ptr [ECX + 0x5c5014],EDX  ; 00491416 | DAT_006af584
-    MOV EDX,dword ptr [0x01c00c54]      ; 0049141c | DAT_01c00c54
-    MOV EBX,dword ptr [0x01c00c4c]      ; 00491422 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c54]      ; 0049141c | g_Projection.center_y_fixed
+    MOV EBX,dword ptr [0x01c00c4c]      ; 00491422 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 00491428
     MOV EDX,0x10000                     ; 0049142a
     IMUL EDX                            ; 0049142f
     IDIV EBX                            ; 00491431
     MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491433 | DAT_006af588
-    MOV ECX,dword ptr [0x01c00c50]      ; 00491439 | DAT_01c00c50
+    MOV ECX,dword ptr [0x01c00c50]      ; 00491439 | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 0049143f
     MOV EDX,0x10000                     ; 00491441
     SUB EAX,ECX                         ; 00491446
     LEA ECX,[EBP*0x4 + 0x0]             ; 00491448
-    MOV EBX,dword ptr [0x01c00c48]      ; 0049144f | DAT_01c00c48
+    MOV EBX,dword ptr [0x01c00c48]      ; 0049144f | g_Projection
     SUB ECX,EBP                         ; 00491455
     IMUL EDX                            ; 00491457
     IDIV EBX                            ; 00491459
     SHL ECX,0x4                         ; 0049145b
-    MOV EDX,dword ptr [0x01c00c54]      ; 0049145e | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 0049145e | g_Projection.center_y_fixed
     MOV dword ptr [ECX + 0x5c5014],EAX  ; 00491464 | DAT_006af5b4
     MOV EAX,EDI                         ; 0049146a
-    MOV EBX,dword ptr [0x01c00c4c]      ; 0049146c | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c4c]      ; 0049146c | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 00491472
     MOV EDX,0x10000                     ; 00491474
     IMUL EDX                            ; 00491479
@@ -247,8 +247,8 @@ section .text
     MOV EDX,0x10000                     ; 0049147d
     MOV dword ptr [ECX + 0x5c5018],EAX  ; 00491482 | DAT_006af5b8
     MOV EAX,dword ptr [ESP + 0x34]      ; 00491488
-    MOV ECX,dword ptr [0x01c00c50]      ; 0049148c | DAT_01c00c50
-    MOV EBX,dword ptr [0x01c00c48]      ; 00491492 | DAT_01c00c48
+    MOV ECX,dword ptr [0x01c00c50]      ; 0049148c | g_Projection.center_x_fixed
+    MOV EBX,dword ptr [0x01c00c48]      ; 00491492 | g_Projection
     SUB EAX,ECX                         ; 00491498
     IMUL EDX                            ; 0049149a
     IDIV EBX                            ; 0049149c
@@ -257,9 +257,9 @@ section .text
     SUB ECX,EDX                         ; 004914a9
     SHL ECX,0x4                         ; 004914ab
     MOV dword ptr [ECX + 0x5c5014],EAX  ; 004914ae | DAT_006af5e4
-    MOV EDX,dword ptr [0x01c00c54]      ; 004914b4 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004914b4 | g_Projection.center_y_fixed
     MOV EAX,EDI                         ; 004914ba
-    MOV EBX,dword ptr [0x01c00c4c]      ; 004914bc | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c4c]      ; 004914bc | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004914c2
     MOV EDX,0x10000                     ; 004914c4
     IMUL EDX                            ; 004914c9
@@ -314,7 +314,7 @@ section .text
     SUB EAX,dword ptr [ESP + 0x34]      ; 00491562
     LEA ESI,[EDX + EDI*0x1]             ; 00491566
     MOV EDI,dword ptr [ESP + 0x30]      ; 00491569
-    MOV ECX,dword ptr [0x01c02594]      ; 0049156d | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 0049156d | g_UseExternalRenderer
     SUB ESI,EDI                         ; 00491573
     TEST ECX,ECX                        ; 00491575
     JNZ 0x00491584                      ; 00491577

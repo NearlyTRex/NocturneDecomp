@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 13,
         "line": 19,
         "message": "use of undeclared identifier '_DAT_02dc9dac'"
@@ -94,15 +88,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00432cd0",
-      "from_addr": "00432e3f",
-      "name": "engine_clipper.c_FUN_00432cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00434210",
       "from_addr": "0043434a",
       "name": "engine_clipper.c_FUN_00434210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432cd0",
+      "from_addr": "00432e3f",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -152,8 +146,8 @@
   "globals": [
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -169,7 +163,7 @@
       {
         "call_addr": "00432e3f",
         "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00432cd0",
+        "caller": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

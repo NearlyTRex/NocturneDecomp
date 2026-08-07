@@ -22,7 +22,7 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f68
 ;   core_main.c_FUN_004c8510 at 004c8552
 ;   core_main.c_FUN_004c85f0 at 004c8c5e
-;   core_main.c_FUN_004c90e0 at 004c9207
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9207
 ;   ... and 34 more
 ;
 ; Referenced Globals:
@@ -32,14 +32,14 @@
 ;   TerminatedCString s_Unable_to_unlock_front_b_00597b2a
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_005c5010
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c02594
+;   int g_BitsPerPixel = 0x8
+;   void* g_BackBuffer
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02ddf554
+;   IDirectDrawSurface* g_DirectDrawSurface
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
 ;
@@ -63,7 +63,7 @@ section .text
     PUSH EBP                            ; 00553913
     MOV EBP,ESP                         ; 00553914
     SUB ESP,0x7c                        ; 00553916
-    MOV EDX,dword ptr [0x01c02594]      ; 00553919 | DAT_01c02594
+    MOV EDX,dword ptr [0x01c02594]      ; 00553919 | g_UseExternalRenderer
     TEST EDX,EDX                        ; 0055391f
     JNZ 0x005539d2                      ; 00553921
         ;   XREF to: 005539d2 (CONDITIONAL_JUMP)  ; LAB_005539d2
@@ -74,7 +74,7 @@ section .text
     CMP dword ptr [0x02ddf56c],0x0      ; 00553935 | DAT_02ddf56c
     JZ 0x005539eb                       ; 0055393c
         ;   XREF to: 005539eb (CONDITIONAL_JUMP)  ; LAB_005539eb
-    MOV EBX,dword ptr [0x005c5010]      ; 00553942 | DAT_005c5010
+    MOV EBX,dword ptr [0x005c5010]      ; 00553942 | g_BackBuffer
     MOV dword ptr [0x02ddf56c],EDX      ; 00553948 | DAT_02ddf56c
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 ; 0055394e
         ;   XREF to: 00553470 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_00553470()
@@ -86,7 +86,7 @@ section .text
     XOR ESI,ESI                         ; 0055395f
     MOV ECX,dword ptr [0x005b761c]      ; 00553961 | g_WindowWidth
         ;   Label: LAB_00553961
-    MOV EAX,dword ptr [ESI + 0x1bd2fa0] ; 00553967 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [ESI + 0x1bd2fa0] ; 00553967 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     XOR EDX,EDX                         ; 0055396d
     TEST ECX,ECX                        ; 0055396f
     JLE 0x00553994                      ; 00553971
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
         ;   Label: LAB_005539a1
     MOV dword ptr [0x02ddf56c],0x1      ; 005539a6 | DAT_02ddf56c
-    MOV EBX,dword ptr [0x02ddf554]      ; 005539b0 | DAT_02ddf554
+    MOV EBX,dword ptr [0x02ddf554]      ; 005539b0 | g_DirectDrawSurface
         ;   Label: LAB_005539b0
     TEST EBX,EBX                        ; 005539b6
     JNZ 0x00553b2f                      ; 005539b8
@@ -145,10 +145,10 @@ section .text
     POP ESI                             ; 005539e8
     POP EBX                             ; 005539e9
     RET                                 ; 005539ea
-    MOV EAX,[0x005c5010]                ; 005539eb | DAT_005c5010
+    MOV EAX,[0x005c5010]                ; 005539eb | g_BackBuffer
         ;   Label: LAB_005539eb
     MOV dword ptr [EBP + -0x10],EAX     ; 005539f0
-    MOV EAX,[0x005b7624]                ; 005539f3 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 005539f3 | g_BitsPerPixel
     MOV EDX,EAX                         ; 005539f8
     SAR EDX,0x1f                        ; 005539fa
     SHL EDX,0x3                         ; 005539fd
@@ -169,7 +169,7 @@ section .text
     LEA EDX,[EBP + -0x7c]               ; 00553a24
     MOV ESI,0x6c                        ; 00553a27
     PUSH EDX                            ; 00553a2c
-    MOV EAX,[0x02ddf554]                ; 00553a2d | DAT_02ddf554
+    MOV EAX,[0x02ddf554]                ; 00553a2d | g_DirectDrawSurface
     MOV dword ptr [EBP + -0x7c],ESI     ; 00553a32
     PUSH 0x0                            ; 00553a35
     MOV EBX,dword ptr [EAX]             ; 00553a37
@@ -230,7 +230,7 @@ section .text
     MOV EAX,EAX                         ; 00553ade
     PUSH 0x0                            ; 00553ae0
         ;   Label: LAB_00553ae0
-    MOV EAX,[0x02ddf554]                ; 00553ae2 | DAT_02ddf554
+    MOV EAX,[0x02ddf554]                ; 00553ae2 | g_DirectDrawSurface
     PUSH EAX                            ; 00553ae7
     MOV EDX,dword ptr [EAX]             ; 00553ae8
     CALL dword ptr [EDX + 0x80]         ; 00553aea

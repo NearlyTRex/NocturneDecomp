@@ -15,16 +15,16 @@
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 at 00553136
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c68
-;   undefined4 DAT_01c00c6c
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ViewportWidth
+;   int g_ViewportHeight
 ;
 ; *****************************************************************************
 
@@ -38,10 +38,10 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00401e37
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00401e3b
     MOV EAX,dword ptr [ESP + 0x14]      ; 00401e3f
-    MOV dword ptr [0x01c00c60],EBX      ; 00401e43 | DAT_01c00c60
-    MOV dword ptr [0x01c00c64],ECX      ; 00401e49 | DAT_01c00c64
+    MOV dword ptr [0x01c00c60],EBX      ; 00401e43 | g_ClipRight
+    MOV dword ptr [0x01c00c64],ECX      ; 00401e49 | g_ClipBottom
     SUB EBX,EDI                         ; 00401e4f
-    MOV [0x01c00c5c],EAX                ; 00401e51 | DAT_01c00c5c
+    MOV [0x01c00c5c],EAX                ; 00401e51 | g_ClipTop
     INC EBX                             ; 00401e56
     SUB ECX,EAX                         ; 00401e57
     MOV EDX,EBX                         ; 00401e59
@@ -57,9 +57,9 @@ section .text
     MOV EAX,ECX                         ; 00401e72
     SUB EAX,EDX                         ; 00401e74
     SAR EAX,0x1                         ; 00401e76
-    MOV dword ptr [0x01c00c58],EDI      ; 00401e78 | DAT_01c00c58
-    MOV dword ptr [0x01c00c68],EBX      ; 00401e7e | DAT_01c00c68
-    MOV dword ptr [0x01c00c6c],ECX      ; 00401e84 | DAT_01c00c6c
+    MOV dword ptr [0x01c00c58],EDI      ; 00401e78 | g_ClipLeft
+    MOV dword ptr [0x01c00c68],EBX      ; 00401e7e | g_ViewportWidth
+    MOV dword ptr [0x01c00c6c],ECX      ; 00401e84 | g_ViewportHeight
     AND EAX,0xffff                      ; 00401e8a
     MOV EDX,ESI                         ; 00401e8f
     ADD ESI,EDI                         ; 00401e91
@@ -67,8 +67,8 @@ section .text
     INC ESI                             ; 00401e94
     SHL EDX,0x10                        ; 00401e95
     SHL ESI,0x10                        ; 00401e98
-    MOV dword ptr [0x01c00c48],EDX      ; 00401e9b | DAT_01c00c48
-    MOV dword ptr [0x01c00c50],ESI      ; 00401ea1 | DAT_01c00c50
+    MOV dword ptr [0x01c00c48],EDX      ; 00401e9b | g_Projection
+    MOV dword ptr [0x01c00c50],ESI      ; 00401ea1 | g_Projection.center_x_fixed
     MOV ESI,dword ptr [ESP + 0x14]      ; 00401ea7
     MOV EDX,EAX                         ; 00401eab
     ADD EAX,ESI                         ; 00401ead
@@ -76,8 +76,8 @@ section .text
     INC EAX                             ; 00401eb1
     SHL EDX,0x10                        ; 00401eb2
     SHL EAX,0x10                        ; 00401eb5
-    MOV dword ptr [0x01c00c4c],EDX      ; 00401eb8 | DAT_01c00c4c
-    MOV [0x01c00c54],EAX                ; 00401ebe | DAT_01c00c54
+    MOV dword ptr [0x01c00c4c],EDX      ; 00401eb8 | g_Projection.neg_half_height_fixed
+    MOV [0x01c00c54],EAX                ; 00401ebe | g_Projection.center_y_fixed
     POP EDI                             ; 00401ec3
     POP ESI                             ; 00401ec4
     POP EBX                             ; 00401ec5

@@ -95,23 +95,24 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     bottom = g_WindowHeight;
   }
   if ((window_flags & 1) == 0) {
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
       if (0 < g_WindowHeight) {
         iVar1 = 0;
         do {
           iVar9 = iVar1 + 4;
-          *(uint *)((int)local_12e8 + iVar1) = *(uint *)(&DAT_01bd2fa0 + iVar1);
+          *(uint *)((int)local_12e8 + iVar1) =
+               *(uint *)((int)g_ScreenBufferArray + iVar1);
           iVar1 = iVar9;
         } while (iVar9 < g_WindowHeight * 4);
       }
       engine_special_cpp_lockFrame_FUN_005322e0();
-      iVar1 = g_WindowWidth * DAT_005b7624 >> 0x1f;
-      uVar3 = (int)((g_WindowWidth * DAT_005b7624 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
+      iVar1 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+      uVar3 = (int)((g_WindowWidth * g_BitsPerPixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
       iVar1 = 0;
       if (0 < g_WindowHeight) {
         iVar9 = 0;
         do {
-          puVar8 = *(uint **)(&DAT_01bd2fa0 + iVar9);
+          puVar8 = *(uint **)((int)g_ScreenBufferArray + iVar9);
           puVar10 = *(uint **)((int)local_12e8 + iVar9);
           for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
             *puVar10 = *puVar8;
@@ -129,7 +130,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
       }
       engine_special_cpp_FUN_00532320();
     }
-    iVar1 = (right - left) * DAT_005b7624;
+    iVar1 = (right - left) * g_BitsPerPixel;
     iVar9 = iVar1 >> 0x1f;
     local_14 = (int)((iVar1 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
     pvVar4 = malloc((bottom - top) * local_14);
@@ -144,12 +145,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
       iVar1 = top * 4;
       local_18 = bottom * 4;
       do {
-        iVar9 = left * DAT_005b7624 >> 0x1f;
-        piVar6 = (int *)(&DAT_01bd2fa0 + iVar1);
+        iVar9 = left * g_BitsPerPixel >> 0x1f;
+        piVar6 = (int *)((int)g_ScreenBufferArray + iVar1);
         iVar1 = iVar1 + 4;
         puVar10 = (uint *)
                   (*piVar6 +
-                  ((int)((left * DAT_005b7624 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3));
+                  ((int)((left * g_BitsPerPixel + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3));
         puVar11 = puVar8;
         for (uVar3 = local_14 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar11 = *puVar10;
@@ -168,16 +169,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   else {
     local_1c[0x72] = 0;
   }
-  local_1c[4] = _DAT_01c00c58;
-  local_1c[5] = _DAT_01c00c5c;
-  local_1c[6] = _DAT_01c00c60;
-  local_1c[7] = _DAT_01c00c64;
-  local_1c[8] = _DAT_01c00c48;
-  local_1c[9] = _DAT_01c00c4c;
-  local_1c[10] = _DAT_01c00c50;
-  local_1c[0xb] = _DAT_01c00c54;
-  local_1c[0xc] = _DAT_01c00c68;
-  local_1c[0xd] = _DAT_01c00c6c;
+  local_1c[4] = g_ClipLeft;
+  local_1c[5] = g_ClipTop;
+  local_1c[6] = g_ClipRight;
+  local_1c[7] = g_ClipBottom;
+  local_1c[8] = g_Projection.half_width_fixed;
+  local_1c[9] = g_Projection.neg_half_height_fixed;
+  local_1c[10] = g_Projection.center_x_fixed;
+  local_1c[0xb] = g_Projection.center_y_fixed;
+  local_1c[0xc] = g_ViewportWidth;
+  local_1c[0xd] = g_ViewportHeight;
   *local_1c = left;
   local_1c[1] = top;
   local_1c[2] = right;

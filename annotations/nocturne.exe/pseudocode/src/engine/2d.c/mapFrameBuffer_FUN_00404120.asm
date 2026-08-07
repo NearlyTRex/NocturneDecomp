@@ -28,7 +28,7 @@
 ;   TerminatedCString s_mapFrameBuffer_invalid_b_00577468
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   ... and 17 more
 ;
 ; Called Functions:
@@ -145,34 +145,34 @@ section .text
         ;   Label: LAB_0040424c
     MOV [0x006b023c],EAX                ; 00404251 | DAT_006b023c
     MOV EAX,[0x005b7620]                ; 00404256 | g_WindowHeight
-    MOV EDX,dword ptr [0x01bd2fa0]      ; 0040425b | DAT_01bd2fa0
+    MOV EDX,dword ptr [0x01bd2fa0]      ; 0040425b | g_ScreenBufferArray
     MOV [0x006b0240],EAX                ; 00404261 | DAT_006b0240
-    MOV EAX,[0x01c00c58]                ; 00404266 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 00404266 | g_ClipLeft
     XOR ECX,ECX                         ; 0040426b
     MOV [0x006b0244],EAX                ; 0040426d | DAT_006b0244
-    MOV EAX,[0x01c00c5c]                ; 00404272 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 00404272 | g_ClipTop
     MOV dword ptr [0x005b761c],EBP      ; 00404277 | g_WindowWidth
     MOV [0x006b0248],EAX                ; 0040427d | DAT_006b0248
-    MOV EAX,[0x01c00c60]                ; 00404282 | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 00404282 | g_ClipRight
     DEC EBP                             ; 00404287
     MOV [0x006b024c],EAX                ; 00404288 | DAT_006b024c
-    MOV EAX,[0x01c00c64]                ; 0040428d | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 0040428d | g_ClipBottom
     MOV dword ptr [0x005b7620],EDI      ; 00404292 | g_WindowHeight
     MOV [0x006b0250],EAX                ; 00404298 | DAT_006b0250
-    MOV EAX,[0x005b7624]                ; 0040429d | DAT_005b7624
-    MOV dword ptr [0x01c00c58],ECX      ; 004042a2 | DAT_01c00c58
+    MOV EAX,[0x005b7624]                ; 0040429d | g_BitsPerPixel
+    MOV dword ptr [0x01c00c58],ECX      ; 004042a2 | g_ClipLeft
     MOV [0x006b0254],EAX                ; 004042a8 | DAT_006b0254
-    MOV EAX,[0x01bd2fa0]                ; 004042ad | DAT_01bd2fa0
-    MOV dword ptr [0x01c00c5c],ECX      ; 004042b2 | DAT_01c00c5c
+    MOV EAX,[0x01bd2fa0]                ; 004042ad | g_ScreenBufferArray
+    MOV dword ptr [0x01c00c5c],ECX      ; 004042b2 | g_ClipTop
     MOV [0x006b0258],EAX                ; 004042b8 | DAT_006b0258
-    MOV EAX,[0x01bd2fa4]                ; 004042bd | DAT_01bd2fa4
-    MOV dword ptr [0x01c00c60],EBP      ; 004042c2 | DAT_01c00c60
+    MOV EAX,[0x01bd2fa4]                ; 004042bd | g_ScreenBufferArray[1]
+    MOV dword ptr [0x01c00c60],EBP      ; 004042c2 | g_ClipRight
     SUB EAX,EDX                         ; 004042c8
-    MOV dword ptr [0x005b7624],ESI      ; 004042ca | DAT_005b7624
+    MOV dword ptr [0x005b7624],ESI      ; 004042ca | g_BitsPerPixel
     MOV [0x006b025c],EAX                ; 004042d0 | DAT_006b025c
     LEA EAX,[EDI + -0x1]                ; 004042d5
     MOV EDX,dword ptr [ESP + 0x14]      ; 004042d8
-    MOV [0x01c00c64],EAX                ; 004042dc | DAT_01c00c64
+    MOV [0x01c00c64],EAX                ; 004042dc | g_ClipBottom
     TEST EDI,EDI                        ; 004042e1
     JLE 0x00404300                      ; 004042e3
         ;   XREF to: 00404300 (CONDITIONAL_JUMP)  ; LAB_00404300

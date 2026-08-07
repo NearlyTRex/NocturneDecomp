@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_flushRenderQueue_FUN_00408f50(void)
 
 {
@@ -16,7 +14,7 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00408f50(void)
   int iVar3;
   
   if (DAT_00761ec4 != 0) {
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
       engine_special_cpp_drawPolyList_FUN_00532680
                 ((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,
                  DAT_00761ec4,0xcd);

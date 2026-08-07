@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 0046693f
     MOV EBP,dword ptr [EBP + 0x14]      ; 00466942
     PXOR MM7,MM7                        ; 00466945
-    MOVD MM5,dword ptr [0x01c039a8]     ; 00466948 | DAT_01c039a8
+    MOVD MM5,dword ptr [0x01c039a8]     ; 00466948 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 0046694f
     PSLLW MM5,0x6                       ; 00466952
     MOV EAX,dword ptr [EBX]             ; 00466956
@@ -268,9 +268,9 @@ section .text
     PACKUSWB MM0,MM7                    ; 00466db0
     MOVQ MM2,MM0                        ; 00466db3
     MOVQ MM3,MM0                        ; 00466db6
-    PAND MM0,qword ptr [0x005bf610]     ; 00466db9 | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 00466dc0 | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 00466dc7 | DAT_005bf5d0
+    PAND MM0,qword ptr [0x005bf610]     ; 00466db9 | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 00466dc0 | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 00466dc7 | g_RedMask32
     PSRLQ MM0,qword ptr [0x005bf658]    ; 00466dce | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 00466dd5 | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 00466ddc | DAT_005bf618
@@ -301,9 +301,9 @@ section .text
     PACKUSWB MM0,MM7                    ; 00466e39
     MOVQ MM2,MM0                        ; 00466e3c
     MOVQ MM3,MM0                        ; 00466e3f
-    PAND MM0,qword ptr [0x005bf610]     ; 00466e42 | DAT_005bf610
-    PAND MM2,qword ptr [0x005bf5f0]     ; 00466e49 | DAT_005bf5f0
-    PAND MM3,qword ptr [0x005bf5d0]     ; 00466e50 | DAT_005bf5d0
+    PAND MM0,qword ptr [0x005bf610]     ; 00466e42 | g_BlueMask32
+    PAND MM2,qword ptr [0x005bf5f0]     ; 00466e49 | g_GreenMask32
+    PAND MM3,qword ptr [0x005bf5d0]     ; 00466e50 | g_RedMask32
     PSRLQ MM0,qword ptr [0x005bf658]    ; 00466e57 | DAT_005bf658
     PSRLQ MM2,qword ptr [0x005bf638]    ; 00466e5e | DAT_005bf638
     PSRLQ MM3,qword ptr [0x005bf618]    ; 00466e65 | DAT_005bf618

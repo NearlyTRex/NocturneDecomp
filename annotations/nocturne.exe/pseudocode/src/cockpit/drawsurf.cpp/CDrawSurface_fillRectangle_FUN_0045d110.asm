@@ -22,11 +22,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057da56
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057da6e
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -120,7 +120,7 @@ section .text
         ;   Label: LAB_0045d1a2
     PUSH EDX                            ; 0045d1a5
     MOV ECX,dword ptr [0x01b4d710]      ; 0045d1a6 | DAT_01b4d710
-    MOV EAX,dword ptr [EBX + 0x1bd2fa0] ; 0045d1ac | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EBX + 0x1bd2fa0] ; 0045d1ac | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH ECX                            ; 0045d1b2
     ADD EAX,EDI                         ; 0045d1b3
     PUSH EAX                            ; 0045d1b5
@@ -140,7 +140,7 @@ section .text
     RET                                 ; 0045d1cd
     MOV dword ptr [ESP + 0x8],EDX       ; 0045d1ce
         ;   Label: LAB_0045d1ce
-    MOV EAX,dword ptr [EBP + 0x1bd2fa0] ; 0045d1d2 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EBP + 0x1bd2fa0] ; 0045d1d2 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0045d1d2
     MOV dword ptr [ESP + 0x10],EAX      ; 0045d1d8
     MOV EAX,EDI                         ; 0045d1dc
@@ -169,7 +169,7 @@ section .text
         ;   XREF to: 0045d1d2 (UNCONDITIONAL_JUMP)  ; LAB_0045d1d2
     MOV dword ptr [ESP + 0x4],EDX       ; 0045d20c
         ;   Label: LAB_0045d20c
-    MOV EAX,dword ptr [EBP + 0x1bd2fa0] ; 0045d210 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EBP + 0x1bd2fa0] ; 0045d210 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0045d210
     MOV EDX,EDI                         ; 0045d216
     MOV dword ptr [ESP + 0xc],EAX       ; 0045d218
@@ -198,7 +198,7 @@ section .text
         ;   XREF to: 0045d210 (UNCONDITIONAL_JUMP)  ; LAB_0045d210
     LEA EDX,[EBP*0x4 + 0x0]             ; 0045d250
         ;   Label: LAB_0045d250
-    MOV EAX,[0x005b7624]                ; 0045d257 | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 0045d257 | g_BitsPerPixel
     LEA EBP,[ESI*0x4 + 0x0]             ; 0045d25c
     CMP EAX,0x10                        ; 0045d263
     JNC 0x0045d273                      ; 0045d266

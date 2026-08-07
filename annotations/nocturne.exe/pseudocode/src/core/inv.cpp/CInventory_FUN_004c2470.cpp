@@ -38,7 +38,7 @@ void __cdecl core_inv_cpp_CInventory_FUN_004c2470(CInventory *this_ptr)
   int iStack_80;
   int iStack_7c;
   int local_78;
-  char local_70 [4];
+  int local_70;
   int local_6c;
   int local_68;
   int local_64;
@@ -72,8 +72,8 @@ void __cdecl core_inv_cpp_CInventory_FUN_004c2470(CInventory *this_ptr)
   if (g_WindowHeight != _DAT_01cc30a0) {
     core_inv_cpp_loadAssets_FUN_004befa0();
   }
-  local_6c = _DAT_01c02594;
-  _DAT_01c02594 = 0;
+  local_6c = g_UseExternalRenderer;
+  g_UseExternalRenderer = 0;
   local_44 = g_CBitFont_PTR_014b9904;
   if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
     local_44 = g_CBitFont_PTR_014b990c;
@@ -390,9 +390,6 @@ LAB_004c27a0:
       } while (iVar12 < local_20);
     }
   }
-  DAT_01c02594 = local_70[0];
-  DAT_01c02594_1._0_1_ = local_70[1];
-  DAT_01c02594_1._1_1_ = local_70[2];
-  DAT_01c02594_1._2_1_ = local_70[3];
+  g_UseExternalRenderer = local_70;
   return;
 }

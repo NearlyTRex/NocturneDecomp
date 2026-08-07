@@ -31,15 +31,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(C
        core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
                  (this_ptr,&local_10,projected_vertex);
   uVar1 = *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff;
-  if (DAT_005b7624 == 0x20) {
-    uVar2 = (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << (DAT_01c00624 & 0x1f) |
-            (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << (DAT_01c00630 & 0x1f);
-    uVar1 = uVar1 << (DAT_01c0063c & 0x1f);
+  if (g_BitsPerPixel == 0x20) {
+    uVar2 = (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) <<
+            (g_RedBitPosition.bytes[0] & 0x1f) |
+            (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) <<
+            (g_GreenBitPosition.bytes[0] & 0x1f);
+    uVar1 = uVar1 << (g_BlueBitPosition.bytes[0] & 0x1f);
   }
   else {
     uVar2 = (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << 0x10 |
             (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << 8;
   }
-  _DAT_01c039a8 = uVar2 | uVar1;
+  g_SolidColorMode = uVar2 | uVar1;
   return;
 }

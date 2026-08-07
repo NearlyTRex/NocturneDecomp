@@ -37,20 +37,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0(C
   _DAT_01b4d770 = (uint)(face->vertex_indices).vertex_index_1;
   _DAT_01b4d774 = (uint)(face->vertex_indices).vertex_index_2;
   if (this_ptr->face_count == 0) {
-    if (DAT_005b7624 == 0x20) {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+    if (g_BitsPerPixel == 0x20) {
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
     }
     else {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
     }
-    _DAT_01c039a0 = render_flags;
-    _DAT_01c039a4 = 6;
+    g_RenderStateFlags.dword = render_flags;
+    g_VertexPreprocessMode = 6;
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(this_ptr,3,(int *)&DAT_01b4d76c);
     return;
   }
-  _DAT_01c039a0 = 0;
-  _DAT_01c039a4 = 0;
-  _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+  g_RenderStateFlags.dword = 0;
+  g_VertexPreprocessMode = 0;
+  g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
   engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(this_ptr,3,(int *)&DAT_01b4d76c);
   return;
 }

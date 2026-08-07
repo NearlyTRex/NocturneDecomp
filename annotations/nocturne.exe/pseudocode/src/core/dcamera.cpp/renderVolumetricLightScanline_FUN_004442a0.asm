@@ -23,9 +23,9 @@
 ;   undefined4 DAT_012b022c
 ;   undefined4 DAT_012b0230
 ;   undefined4 DAT_012b0660
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_ClipLeft
+;   int g_ClipTop
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     SUB ESP,0x1c                        ; 004442a6
     MOV EDI,dword ptr [EBP + 0x18]      ; 004442a9
     MOV EDX,dword ptr [EBP + 0x14]      ; 004442ac
-    SUB EDX,dword ptr [0x01c00c5c]      ; 004442af | DAT_01c00c5c
+    SUB EDX,dword ptr [0x01c00c5c]      ; 004442af | g_ClipTop
     MOV ECX,dword ptr [0x012b0660]      ; 004442b5 | DAT_012b0660
     MOV dword ptr [EBP + 0x14],EDX      ; 004442bb
     CMP ECX,0x1                         ; 004442be
@@ -62,7 +62,7 @@ section .text
     SAR ESI,CL                          ; 004442e9
     MOV dword ptr [EBP + 0x14],ESI      ; 004442eb
     MOV ESI,dword ptr [EBP + 0x1c]      ; 004442ee
-    MOV EAX,[0x01c00c58]                ; 004442f1 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 004442f1 | g_ClipLeft
     MOV EBX,dword ptr [EDI + 0x8]       ; 004442f6
     MOV ESI,dword ptr [ESI + 0x8]       ; 004442f9
     SAR EBX,0x10                        ; 004442fc
@@ -127,7 +127,7 @@ section .text
     SHL EDX,CL                          ; 0044438e
     SHL EAX,CL                          ; 00444390
     SHL EDX,0x2                         ; 00444392
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00444395 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00444395 | g_ZBufferScanlineArray
     ADD EAX,EDX                         ; 0044439c
     MOV dword ptr [EBP + -0xc],EAX      ; 0044439e
     MOV EDX,dword ptr [EBP + 0x14]      ; 004443a1

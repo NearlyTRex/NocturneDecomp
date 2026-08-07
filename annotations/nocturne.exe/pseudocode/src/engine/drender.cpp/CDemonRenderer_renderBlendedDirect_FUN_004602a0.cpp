@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
@@ -29,19 +27,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(
     }
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
-        if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
-        _DAT_01c039a4 = 6;
-        _DAT_01c039a0 = 0x267;
+        g_VertexPreprocessMode = 6;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_COLOR_FROM_VERTEX);
       }
       else {
-        _DAT_01c039a0 = 0;
-        _DAT_01c039a4 = 0;
-        _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (this_ptr,(prim->base).count,(int *)(prim + 1));

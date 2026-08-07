@@ -66,9 +66,10 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap *th
     iVar3 = _fgetc(local_14);
     iVar4 = _fgetc(local_14);
     uVar5 = _fgetc(local_14);
-    if (DAT_005b7624 == 0x20) {
-      uVar8 = iVar4 << (DAT_01c00630 & 0x1f) | iVar3 << (DAT_01c00624 & 0x1f);
-      uVar5 = uVar5 << (DAT_01c0063c & 0x1f);
+    if (g_BitsPerPixel == 0x20) {
+      uVar8 = iVar4 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+              iVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar5 = uVar5 << (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     else {
       uVar8 = iVar3 << 0x10 | iVar4 << 8;

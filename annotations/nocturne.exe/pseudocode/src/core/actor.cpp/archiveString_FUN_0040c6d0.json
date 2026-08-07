@@ -68,12 +68,6 @@
         "message": "no matching function for call to '_fgetc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
         "category": "incompatible_types",
         "column": 11,
         "line": 25,
@@ -104,13 +98,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 129,
+    "complexity_score": 119,
     "cross_reference_count": 54,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 34,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data"
     ],
@@ -513,8 +507,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -729,14 +723,6 @@
       "match": "DAT_00763e84",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_00763e84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "} while (((&DAT_005c168c)[(byte)((char)iVar1 + 1)] & 2) != 0);",
       "type": "undefined_data"
     },
     {

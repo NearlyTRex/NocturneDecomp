@@ -29,8 +29,8 @@
 ;   undefined4 DAT_01bcddc8
 ;   undefined4 DAT_01bcddcc
 ;   undefined4 DAT_01bcddd0
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c70
+;   int g_ClipTop
+;   int g_ActiveRenderColor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -90,7 +90,7 @@ section .text
     SHL EBX,0x2                         ; 00472321
     SUB EBX,EDX                         ; 00472324
     SHL EBX,0x3                         ; 00472326
-    MOV EAX,[0x01c00c70]                ; 00472329 | DAT_01c00c70
+    MOV EAX,[0x01c00c70]                ; 00472329 | g_ActiveRenderColor
     ADD EBX,0x1bcd080                   ; 0047232e
     MOV dword ptr [ESP],EAX             ; 00472334
     MOV EDX,dword ptr [EBX + 0xc]       ; 00472337
@@ -133,7 +133,7 @@ section .text
     JNZ 0x004723c6                      ; 0047238c
         ;   XREF to: 004723c6 (CONDITIONAL_JUMP)  ; LAB_004723c6
     MOV EAX,dword ptr [ESP]             ; 0047238e
-    MOV [0x01c00c70],EAX                ; 00472391 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00472391 | g_ActiveRenderColor
     ADD ESP,0x4                         ; 00472396
         ;   Label: LAB_00472396
     POP EBP                             ; 00472399
@@ -155,8 +155,8 @@ section .text
     PUSH 0xffff                         ; 004723c6
         ;   Label: LAB_004723c6
     MOV EAX,dword ptr [EBX + 0x4]       ; 004723cb
-    MOV EDI,dword ptr [0x01c00c5c]      ; 004723ce | DAT_01c00c5c
-    MOV [0x01c00c5c],EAX                ; 004723d4 | DAT_01c00c5c
+    MOV EDI,dword ptr [0x01c00c5c]      ; 004723ce | g_ClipTop
+    MOV [0x01c00c5c],EAX                ; 004723d4 | g_ClipTop
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004723d9
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 004723de
@@ -198,7 +198,7 @@ section .text
     MOV ECX,dword ptr [0x01bcd070]      ; 00472435 | DAT_01bcd070
     MOV EAX,[0x01bcddcc]                ; 0047243b | DAT_01bcddcc
     PUSH ECX                            ; 00472440
-    MOV [0x01c00c70],EAX                ; 00472441 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00472441 | g_ActiveRenderColor
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00472446
         ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)
     MOV EBP,dword ptr [0x01bcd9bc]      ; 0047244b | DAT_01bcd9bc
@@ -216,9 +216,9 @@ section .text
     CALL engine_2d.c_drawHLine_FUN_00403bd0 ; 00472467
         ;   XREF to: 00403bd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00403bd0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 0047246c
-    MOV dword ptr [0x01c00c5c],EDI      ; 0047246f | DAT_01c00c5c
+    MOV dword ptr [0x01c00c5c],EDI      ; 0047246f | g_ClipTop
     MOV EAX,dword ptr [ESP]             ; 00472475
-    MOV [0x01c00c70],EAX                ; 00472478 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00472478 | g_ActiveRenderColor
     ADD ESP,0x4                         ; 0047247d
     POP EBP                             ; 00472480
     POP EDI                             ; 00472481

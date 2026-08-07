@@ -34,9 +34,9 @@ void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filenam
   char local_430 [256];
   char local_330 [256];
   char local_230 [200];
-  _FILE local_168 [2];
+  byte local_168 [68];
   _istream local_124;
-  _FILE local_e8 [2];
+  byte local_e8 [68];
   _ostream local_a4;
   CLZWDecompress local_6c;
   byte local_3c [4];
@@ -188,8 +188,8 @@ LAB_004a43cc:
       support_codec_cpp_CLZWDecompress_process_FUN_00439a70
                 (&local_6c,&local_124,&local_34,&local_a4);
       support_codec_cpp_CLZWDecompress_finalize_FUN_00439af0(&local_6c,&local_a4);
-      _fflush(local_168);
-      _fflush(local_e8);
+      crt_iostream_cpp_ostream_flush_FUN_00565e59(local_168);
+      crt_iostream_cpp_ostream_flush_FUN_00565e59(local_e8);
       if (local_34 != 0) {
         pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("Error writing temp file to load saved game.");

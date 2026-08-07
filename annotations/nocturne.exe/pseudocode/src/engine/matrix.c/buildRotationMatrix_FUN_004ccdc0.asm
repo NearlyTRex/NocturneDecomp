@@ -18,12 +18,12 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_005b7648
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;   undefined4 DAT_01c039e8
 ;   undefined4 DAT_01c039ec
 ;   undefined4 DAT_01c039f0
@@ -175,8 +175,8 @@ section .text
     MOV dword ptr [0x01cc5170],0x15555  ; 004ccf32 | DAT_01cc5170
     MOV EAX,0x10000                     ; 004ccf3c
         ;   Label: LAB_004ccf3c
-    MOV EBX,dword ptr [0x01c00c48]      ; 004ccf41 | DAT_01c00c48
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004ccf47 | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c48]      ; 004ccf41 | g_Projection
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004ccf47 | g_Projection.neg_half_height_fixed
     IMUL EDX                            ; 004ccf4d
     IDIV EBX                            ; 004ccf4f
     MOV ECX,EAX                         ; 004ccf51
@@ -204,9 +204,9 @@ section .text
     MOV EAX,ECX                         ; 004ccfa3
     IMUL EDX                            ; 004ccfa5
     SHRD EAX,EDX,0x10                   ; 004ccfa7
-    MOV ESI,dword ptr [0x01c00c58]      ; 004ccfab | DAT_01c00c58
+    MOV ESI,dword ptr [0x01c00c58]      ; 004ccfab | g_ClipLeft
     MOV [0x01c03a00],EAX                ; 004ccfb1 | DAT_01c03a00
-    MOV EAX,[0x01c00c60]                ; 004ccfb6 | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 004ccfb6 | g_ClipRight
     SUB EAX,ESI                         ; 004ccfbb
     LEA EDX,[EAX*0x4 + 0x0]             ; 004ccfbd
     ADD EDX,EAX                         ; 004ccfc4
@@ -215,8 +215,8 @@ section .text
     MOV EAX,EDX                         ; 004ccfcf
     SAR EDX,0x1f                        ; 004ccfd1
     IDIV EDI                            ; 004ccfd4
-    MOV ECX,dword ptr [0x01c00c64]      ; 004ccfd6 | DAT_01c00c64
-    SUB ECX,dword ptr [0x01c00c5c]      ; 004ccfdc | DAT_01c00c5c
+    MOV ECX,dword ptr [0x01c00c64]      ; 004ccfd6 | g_ClipBottom
+    SUB ECX,dword ptr [0x01c00c5c]      ; 004ccfdc | g_ClipTop
     SHL ECX,0x5                         ; 004ccfe2
     MOV EDX,ECX                         ; 004ccfe5
     LEA EBX,[EAX*0x4 + 0x0]             ; 004ccfe7

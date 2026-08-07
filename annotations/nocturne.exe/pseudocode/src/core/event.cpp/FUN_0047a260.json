@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 16,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       }
     ],
     "success": false,
@@ -68,16 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 69,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 21
   },
@@ -98,8 +91,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -144,7 +137,7 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 35,
+          "column": 50,
           "line": 16,
           "message": "Uninitialized variable: in_stack_00000004",
           "severity": "error"
@@ -168,16 +161,8 @@
       "line": 9,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "while (((&DAT_005c168c)[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {",
+      "text": "while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -200,7 +185,7 @@
       "line": 16,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "while (((&DAT_005c168c)[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {",
+      "text": "while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2) != 0) {",
       "type": "static_uninitvar"
     }
   ]

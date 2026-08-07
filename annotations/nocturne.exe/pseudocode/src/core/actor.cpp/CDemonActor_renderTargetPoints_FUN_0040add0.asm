@@ -16,7 +16,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01b4d738
 ;   undefined4 g_ColorCubeLookup+0x7c00
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -102,7 +102,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x88]      ; 0040ae98
     SAR EBX,0x10                        ; 0040ae9f
     MOV ESI,dword ptr [ESI + 0xea5e4]   ; 0040aea2
-    MOV [0x01c00c70],EAX                ; 0040aea8 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 0040aea8 | g_ActiveRenderColor
     SAR ESI,0x10                        ; 0040aead
     TEST EBX,EBX                        ; 0040aeb0
     JL 0x0040aec4                       ; 0040aeb2

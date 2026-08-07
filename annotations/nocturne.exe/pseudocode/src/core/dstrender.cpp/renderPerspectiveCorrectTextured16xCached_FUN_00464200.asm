@@ -43,8 +43,8 @@ section .text
     SHR EAX,0x10                        ; 00464210
         ;   Label: LAB_00464210
     SHR ECX,0x10                        ; 00464213
-    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00464216 | DAT_01bd4260
-    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 0046421d | DAT_01bd2fa0
+    MOV EBP,dword ptr [EBX*0x4 + 0x1bd4260] ; 00464216 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 0046421d | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00464224
     JLE 0x004649d9                      ; 00464226
         ;   XREF to: 004649d9 (CONDITIONAL_JUMP)  ; LAB_004649d9

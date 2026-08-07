@@ -66,7 +66,7 @@ void __cdecl engine_prim_c_FUN_004fa2e0(int *vertex_indices,int vertex_count)
     }
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-  if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {
+  if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
     _DAT_01e52ef0 = 0;
     _DAT_01e52a68 = 0;
     local_1c = 0;
@@ -139,7 +139,7 @@ void __cdecl engine_prim_c_FUN_004fa2e0(int *vertex_indices,int vertex_count)
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
           local_24 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           *(uint *)(iVar11 + 0x1e52a9c) = puVar7[0xb] + local_24;
-          if (_DAT_01c039a4 == 1) {
+          if (g_VertexPreprocessMode == 1) {
             if (_DAT_01c0399c == 0) {
               iVar9 = puVar12[3];
               iVar2 = puVar7[3];
@@ -227,7 +227,7 @@ void __cdecl engine_prim_c_FUN_004fa2e0(int *vertex_indices,int vertex_count)
         iVar3 = iVar11;
       } while (iVar11 < vertex_count);
     }
-    engine_special_cpp_drawPolygon2_FUN_00532650(local_64,vertex_count,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon2_FUN_00532650(local_64,vertex_count,g_RenderStateFlags.dword);
   }
   return;
 }

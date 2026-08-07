@@ -28,7 +28,7 @@
 ;   undefined4 DAT_005c1144
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   CDemonRaytrace g_CDemonRaytrace_01fba938
 ;   CWater g_CWater_02dd1210
 ;
@@ -134,14 +134,14 @@ section .text
     TEST EAX,EAX                        ; 00507d5f
     JNZ 0x00507ef1                      ; 00507d61
         ;   XREF to: 00507ef1 (CONDITIONAL_JUMP)  ; LAB_00507ef1
-    CMP dword ptr [0x01c02594],0x0      ; 00507d67 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00507d67 | g_UseExternalRenderer
     JNZ 0x00507d79                      ; 00507d6e
         ;   XREF to: 00507d79 (CONDITIONAL_JUMP)  ; LAB_00507d79
     PUSH EBX                            ; 00507d70
     CALL core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210 ; 00507d71
         ;   XREF to: 0050e210 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00507d76
-    MOV EDI,dword ptr [0x01c02594]      ; 00507d79 | DAT_01c02594
+    MOV EDI,dword ptr [0x01c02594]      ; 00507d79 | g_UseExternalRenderer
         ;   Label: LAB_00507d79
     TEST EDI,EDI                        ; 00507d7f
     JNZ 0x00507dee                      ; 00507d81

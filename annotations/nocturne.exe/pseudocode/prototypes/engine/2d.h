@@ -7,25 +7,25 @@
 // Address: 00401010
 void __cdecl initGraphicsSystem(void);
 
-// Original: engine_2d.c_FUN_004012a0
+// Original: engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
 // Address: 004012a0
-void __cdecl FUN_004012a0(void);
+void __cdecl cleanupGraphicsSystem(void);
 
-// Original: engine_2d.c_FUN_004012d0
+// Original: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
 // Address: 004012d0
-void __cdecl FUN_004012d0(int param_1,int param_2,int param_3);
+void __cdecl drawAntialiasedCharShadow(int char_code,int x_pos,int y_pos);
 
-// Original: engine_2d.c_FUN_004013d0
+// Original: engine_2d.c_drawAntialiasedChar_FUN_004013d0
 // Address: 004013d0
-int __cdecl FUN_004013d0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,undefined4 param_6 ,byte param_7);
+int __cdecl drawAntialiasedChar(int char_code,int x_pos,int y_pos,int intensity_shift);
 
-// Original: engine_2d.c_FUN_004014a0
+// Original: engine_2d.c_drawAntialiasedString_FUN_004014a0
 // Address: 004014a0
-void __cdecl FUN_004014a0(byte *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl drawAntialiasedString(char *text,int x_pos,int y_pos,int intensity_shift);
 
-// Original: engine_2d.c_FUN_004014f0
+// Original: engine_2d.c_getAntialiasedStringWidth_FUN_004014f0
 // Address: 004014f0
-int __cdecl FUN_004014f0(byte *param_1);
+int __cdecl getAntialiasedStringWidth(uchar *text);
 
 // Original: engine_2d.c_plotPixel_FUN_00401530
 // Address: 00401530
@@ -245,7 +245,7 @@ void FUN_00403070(char *param_1,int param_2);
 
 // Original: engine_2d.c_FUN_00403130
 // Address: 00403130
-void FUN_00403130(char *param_1);
+void __cdecl FUN_00403130(char *filename);
 
 // Original: engine_2d.c_FUN_004031a0
 // Address: 004031a0
@@ -257,7 +257,7 @@ void __cdecl loadLightTable(char *filename);
 
 // Original: engine_2d.c_FUN_00403500
 // Address: 00403500
-void FUN_00403500(char *param_1);
+void __cdecl FUN_00403500(char *filename);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00403570
 // Address: 00403570
@@ -275,9 +275,9 @@ void __cdecl resetGraphicsSystem(void);
 // Address: 00403770
 void __cdecl reinitializeGraphicsSystem(void);
 
-// Original: engine_2d.c_FUN_00403780
+// Original: engine_2d.c_draw320x200SizeDot_FUN_00403780
 // Address: 00403780
-void FUN_00403780(int param_1,int param_2,int param_3);
+void __cdecl draw320x200SizeDot(int x_3d,int y_3d,int z_depth);
 
 // Original: engine_2d.c_computeOutcode_FUN_00403900
 // Address: 00403900

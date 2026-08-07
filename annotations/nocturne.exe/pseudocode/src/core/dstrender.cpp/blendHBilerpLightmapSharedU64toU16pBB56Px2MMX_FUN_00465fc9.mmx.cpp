@@ -17,7 +17,7 @@ __asm {
         mov EBX,dword ptr [EBP + 0x10]
         mov EBP,dword ptr [EBP + 0x14]
         pxor MM7,MM7
-        movd MM5,dword ptr [DAT_01c039a8]
+        movd MM5,dword ptr [g_SolidColorMode]
         punpcklbw MM5,MM7
         psllw MM5,0x6
         mov EAX,dword ptr [EBX]
@@ -253,9 +253,9 @@ __asm {
         packuswb MM1,MM7
         movq MM2,MM0
         movq MM3,MM0
-        pand MM0,qword ptr [DAT_005bf610]
-        pand MM2,qword ptr [DAT_005bf5f0]
-        pand MM3,qword ptr [DAT_005bf5d0]
+        pand MM0,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
         psrlq MM0,qword ptr [DAT_005bf658]
         psrlq MM2,qword ptr [DAT_005bf638]
         psrlq MM3,qword ptr [DAT_005bf618]
@@ -263,9 +263,9 @@ __asm {
         por MM0,MM3
         movq MM2,MM1
         movq MM3,MM1
-        pand MM1,qword ptr [DAT_005bf610]
-        pand MM2,qword ptr [DAT_005bf5f0]
-        pand MM3,qword ptr [DAT_005bf5d0]
+        pand MM1,qword ptr [g_BlueMask32]
+        pand MM2,qword ptr [g_GreenMask32]
+        pand MM3,qword ptr [g_RedMask32]
         psrlq MM1,qword ptr [DAT_005bf658]
         psrlq MM2,qword ptr [DAT_005bf638]
         psrlq MM3,qword ptr [DAT_005bf618]

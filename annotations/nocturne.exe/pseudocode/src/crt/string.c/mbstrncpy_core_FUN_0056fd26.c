@@ -14,7 +14,7 @@ char * __watcallStack mbstrncpy_core(char *dest,char *src,int count)
   while( true ) {
     iVar1 = fgetc_buffered((_FILE *)dest);
     if (((*(uint *)(dest + *(int *)(*(int *)dest + 4) + 0x10) & 3) != 0) ||
-       (((&DAT_005c168c)[(byte)((char)iVar1 + 1)] & 2) == 0)) break;
+       ((g_CharacterClassificationTable[(byte)((char)iVar1 + 1)] & 2) == 0)) break;
     FUN_00571cc6(dest);
   }
   return dest;

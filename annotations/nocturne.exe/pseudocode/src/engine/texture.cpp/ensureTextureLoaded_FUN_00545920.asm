@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_01c00020
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dd0f80
 ;   undefined4 DAT_02dd0f84
 ;
@@ -86,7 +86,7 @@ section .text
     MOV [0x02dd0f80],EAX                ; 00545982 | DAT_02dd0f80
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410 ; 00545987
         ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * cache, int texture_index)
-    MOV EAX,[0x01c02594]                ; 0054598c | DAT_01c02594
+    MOV EAX,[0x01c02594]                ; 0054598c | g_UseExternalRenderer
     ADD ESP,0x8                         ; 00545991
     TEST EAX,EAX                        ; 00545994
     JZ 0x005459ac                       ; 00545996

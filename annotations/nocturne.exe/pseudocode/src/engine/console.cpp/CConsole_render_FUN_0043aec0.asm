@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d56d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -115,7 +115,7 @@ section .text
     PUSH EDI                            ; 0043afac
     MOV ECX,0xf8                        ; 0043afad
     PUSH ESI                            ; 0043afb2
-    MOV dword ptr [0x01c00c70],ECX      ; 0043afb3 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],ECX      ; 0043afb3 | g_ActiveRenderColor
     CALL engine_2d.c_drawLine_FUN_004015a0 ; 0043afb9
         ;   XREF to: 004015a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004015a0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0043afbe

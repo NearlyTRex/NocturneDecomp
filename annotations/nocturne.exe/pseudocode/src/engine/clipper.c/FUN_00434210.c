@@ -355,7 +355,7 @@ uint engine_clipper_c_FUN_00434210(uint param_1,int *param_2)
     }
     return 0;
   }
-  if (_DAT_01c02594 != 0) {
+  if (g_UseExternalRenderer != 0) {
     iVar7 = 0;
     if (0 < (int)param_1) {
       do {
@@ -394,7 +394,7 @@ uint engine_clipper_c_FUN_00434210(uint param_1,int *param_2)
       }
     }
     _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
-    engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);
     return 1;
   }
   DAT_00766c70 = param_1;

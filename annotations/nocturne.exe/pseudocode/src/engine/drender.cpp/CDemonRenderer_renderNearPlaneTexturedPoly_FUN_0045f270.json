@@ -58,55 +58,19 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 29,
+        "line": 27,
         "message": "use of undeclared identifier 'DAT_01b4d76c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 43,
+        "line": 41,
         "message": "use of undeclared identifier 'DAT_01b4d76c'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 54,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 59,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 59,
-        "line": 63,
+        "line": 62,
         "message": "use of undeclared identifier 'DAT_01b4d76c'"
       }
     ],
@@ -116,17 +80,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 131,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
     "total_lines": 186
   },
@@ -170,20 +133,20 @@
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -259,16 +222,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
       "match": "DAT_01b4d76c",
       "severity": "mild",
       "text": "*(int *)(&DAT_01b4d76c + iVar4) = iVar1;",
@@ -276,7 +231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_01b4d76c",
       "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_01b4d76c + iVar3);",
@@ -284,7 +239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_01b4d76c",
       "severity": "mild",
       "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);",
@@ -292,7 +247,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
+      "line": 23,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
@@ -300,7 +255,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 39,
+      "line": 37,
       "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",

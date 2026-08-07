@@ -21,13 +21,13 @@
 ;   undefined4 DAT_005b7644
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
-;   undefined4 DAT_01c02594
-;   undefined4 DAT_01c039a0
-;   undefined4 DAT_01c039a4
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
+;   int g_UseExternalRenderer
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52ef8
 ;   undefined4 DAT_01e52efc
 ;   undefined4 DAT_01e52f00
@@ -73,20 +73,20 @@ section .text
     SAR EDX,0x1f                        ; 004fad32
     IDIV EBX                            ; 004fad35
     MOV dword ptr [ECX + 0xc],EAX       ; 004fad37
-    MOV EDX,dword ptr [0x01c00c48]      ; 004fad3a | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 004fad3a | g_Projection
     MOV EBX,dword ptr [ECX + 0x8]       ; 004fad40
     MOV EAX,dword ptr [ECX]             ; 004fad43
     IMUL EDX                            ; 004fad45
     IDIV EBX                            ; 004fad47
-    MOV EDX,dword ptr [0x01c00c50]      ; 004fad49 | DAT_01c00c50
+    MOV EDX,dword ptr [0x01c00c50]      ; 004fad49 | g_Projection.center_x_fixed
     ADD EAX,EDX                         ; 004fad4f
     MOV EBX,dword ptr [ECX + 0x8]       ; 004fad51
     MOV dword ptr [ECX + 0x10],EAX      ; 004fad54
-    MOV EDX,dword ptr [0x01c00c4c]      ; 004fad57 | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 004fad57 | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [ECX + 0x4]       ; 004fad5d
     IMUL EDX                            ; 004fad60
     IDIV EBX                            ; 004fad62
-    MOV EDX,dword ptr [0x01c00c54]      ; 004fad64 | DAT_01c00c54
+    MOV EDX,dword ptr [0x01c00c54]      ; 004fad64 | g_Projection.center_y_fixed
     ADD EAX,EDX                         ; 004fad6a
     MOV dword ptr [ECX + 0x14],EAX      ; 004fad6c
     INC ESI                             ; 004fad6f
@@ -141,7 +141,7 @@ section .text
     MOV EDX,dword ptr [0x01e52ef8]      ; 004faddc | DAT_01e52ef8
         ;   Label: LAB_004faddc
     INC EDX                             ; 004fade2
-    MOV ECX,dword ptr [0x01c02594]      ; 004fade3 | DAT_01c02594
+    MOV ECX,dword ptr [0x01c02594]      ; 004fade3 | g_UseExternalRenderer
     MOV dword ptr [0x01e52ef8],EDX      ; 004fade9 | DAT_01e52ef8
     TEST ECX,ECX                        ; 004fadef
     JZ 0x004fae00                       ; 004fadf1
@@ -149,7 +149,7 @@ section .text
     CMP dword ptr [0x006b0278],0x0      ; 004fadf3 | DAT_006b0278
     JZ 0x004fafc8                       ; 004fadfa
         ;   XREF to: 004fafc8 (CONDITIONAL_JUMP)  ; LAB_004fafc8
-    MOV EAX,[0x01c039a4]                ; 004fae00 | DAT_01c039a4
+    MOV EAX,[0x01c039a4]                ; 004fae00 | g_VertexPreprocessMode
         ;   Label: LAB_004fae00
     CMP EAX,0x6                         ; 004fae05
     JA 0x004fae11                       ; 004fae08
@@ -324,7 +324,7 @@ section .text
     POP ESI                             ; 004fafc5
     POP EBX                             ; 004fafc6
     RET                                 ; 004fafc7
-    MOV EDI,dword ptr [0x01c039a0]      ; 004fafc8 | DAT_01c039a0
+    MOV EDI,dword ptr [0x01c039a0]      ; 004fafc8 | g_RenderStateFlags
         ;   Label: LAB_004fafc8
     PUSH EDI                            ; 004fafce
     MOV EBP,dword ptr [ESP + 0x30]      ; 004fafcf

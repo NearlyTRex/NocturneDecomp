@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01bcdddc
 ;   undefined4 DAT_01bcdde0
 ;   undefined4 DAT_01bcdde4
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 0046f735 (UNCONDITIONAL_JUMP)  ; LAB_0046f735
     MOV EAX,[0x01bcdde4]                ; 0046f7aa | DAT_01bcdde4
         ;   Label: LAB_0046f7aa
-    MOV [0x01c00c70],EAX                ; 0046f7af | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 0046f7af | g_ActiveRenderColor
     MOV EAX,dword ptr [EBX + 0x134]     ; 0046f7b4
     PUSH EAX                            ; 0046f7ba
     PUSH EBX                            ; 0046f7bb

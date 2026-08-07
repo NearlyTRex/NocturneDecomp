@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count)
 
 {
@@ -23,7 +21,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050d
                     (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)prim);
           prim = (SMRGLHeaderPrimitive *)(((SMRGLPrimitivePoly *)prim)->vertices + 4);
         } while (iVar1 < count);
-        if (_DAT_01c02594 == 0) {
+        if (g_UseExternalRenderer == 0) {
           return;
         }
         goto LAB_0050e06c;
@@ -40,7 +38,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050d
         } while (iVar1 < count);
       }
     }
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
 LAB_0050e06c:
       engine_special_cpp_sync_FUN_00532b30();
       return;

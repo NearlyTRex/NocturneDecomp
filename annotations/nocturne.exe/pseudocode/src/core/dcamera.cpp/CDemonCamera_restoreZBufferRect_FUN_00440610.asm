@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c02594
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_memcpyMMX_FUN_00465341
@@ -50,7 +50,7 @@ section .text
     CMP EBP,dword ptr [ESI + 0x8]       ; 00440651
     JLE 0x004406e0                      ; 00440654
         ;   XREF to: 004406e0 (CONDITIONAL_JUMP)  ; LAB_004406e0
-    CMP dword ptr [0x01c02594],0x0      ; 0044065a | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0044065a | g_UseExternalRenderer
     JNZ 0x004406e8                      ; 00440661
         ;   XREF to: 004406e8 (CONDITIONAL_JUMP)  ; LAB_004406e8
     MOV EDX,dword ptr [ESI + 0xc]       ; 00440667
@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_0044067f
     MOV EAX,dword ptr [ESP]             ; 00440681
     SHL ECX,0x2                         ; 00440684
-    MOV EAX,dword ptr [EAX + 0x1bd4260] ; 00440687 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX + 0x1bd4260] ; 00440687 | g_ZBufferScanlineArray
     MOV EBX,dword ptr [EDI + 0x148]     ; 0044068d
     ADD ECX,EAX                         ; 00440693
     MOV EAX,EBP                         ; 00440695

@@ -61,7 +61,7 @@ LAB_0044eea7:
                          * 2);
           if ((uVar2 < 0xffff) && (uVar2 != 0)) {
             *(int *)((iVar3 / iVar1 + param_2) * 4 +
-                    *(int *)(&DAT_01bd2fa0 + (param_3 + iVar5 / iVar1) * 4)) =
+                    (int)g_ScreenBufferArray[param_3 + iVar5 / iVar1]) =
                  ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
           }
         }

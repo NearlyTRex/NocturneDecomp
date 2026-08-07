@@ -86,15 +86,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 124
@@ -167,9 +166,9 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "014b9904",
@@ -284,14 +283,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (((g_WindowHeight != this_ptr->game_pixy) || (DAT_005b7624 != this_ptr->game_bpp)) &&",
-      "type": "undefined_data"
     }
   ]
 }

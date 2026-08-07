@@ -17,9 +17,9 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -57,7 +57,7 @@ section .text
     CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e408
         ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
         ;   Label: LAB_0042e408
-    MOV ECX,dword ptr [0x005b7624]      ; 0042e40d | DAT_005b7624
+    MOV ECX,dword ptr [0x005b7624]      ; 0042e40d | g_BitsPerPixel
     MOV dword ptr [ESP + 0x8],EAX       ; 0042e413
     LEA EAX,[ESI*0x4 + 0x0]             ; 0042e417
     CMP ECX,0x8                         ; 0042e41e
@@ -76,7 +76,7 @@ section .text
     ADD EAX,EDI                         ; 0042e43b
     PUSH ECX                            ; 0042e43d
     ADD EDX,EAX                         ; 0042e43e
-    MOV EAX,dword ptr [ESI + 0x1bd2fa0] ; 0042e440 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [ESI + 0x1bd2fa0] ; 0042e440 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDX                            ; 0042e446
     ADD EAX,EDI                         ; 0042e447
     PUSH EAX                            ; 0042e449
@@ -108,7 +108,7 @@ section .text
     ADD EAX,EDI                         ; 0042e47b
     MOV ECX,dword ptr [ESP]             ; 0042e47d
     ADD EAX,EDX                         ; 0042e480
-    MOV EDX,dword ptr [ESI + 0x1bd2fa0] ; 0042e482 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDX,dword ptr [ESI + 0x1bd2fa0] ; 0042e482 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,ECX                         ; 0042e488
     MOV ECX,dword ptr [ESP + 0x4]       ; 0042e48a
     PUSH ECX                            ; 0042e48e

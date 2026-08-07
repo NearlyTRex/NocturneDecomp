@@ -25,7 +25,7 @@
 ;   TerminatedCString s_s_s_00577c66
 ;   TerminatedCString s_String_005acc58
 ;   undefined1 DAT_005acc90
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_00763e84
 ;   undefined4 DAT_00763e88
 ;
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0x4                         ; 0040c6f7
     INC DL                              ; 0040c6fa
     AND EDX,0xff                        ; 0040c6fc
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040c702 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 0040c702 | g_CharacterClassificationTable
     JNZ 0x0040c6e9                      ; 0040c709
         ;   XREF to: 0040c6e9 (CONDITIONAL_JUMP)  ; LAB_0040c6e9
     CMP EAX,0x22                        ; 0040c70b

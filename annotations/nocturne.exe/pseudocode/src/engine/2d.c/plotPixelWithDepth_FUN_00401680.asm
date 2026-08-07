@@ -12,8 +12,8 @@
 ;   engine_2d.c_drawLine3D_FUN_00401710 at 0040179a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00c70
+;   int g_BitsPerPixel = 0x8
+;   int g_ActiveRenderColor
 ;
 ; *****************************************************************************
 
@@ -33,12 +33,12 @@ section .text
     CMP EDI,dword ptr [ECX]             ; 004016a1
     JBE 0x004016d9                      ; 004016a3
         ;   XREF to: 004016d9 (CONDITIONAL_JUMP)  ; LAB_004016d9
-    MOV EBP,dword ptr [0x005b7624]      ; 004016a5 | DAT_005b7624
+    MOV EBP,dword ptr [0x005b7624]      ; 004016a5 | g_BitsPerPixel
     MOV dword ptr [ECX],EDI             ; 004016ab
     CMP EBP,0x8                         ; 004016ad
     JZ 0x004016dd                       ; 004016b0
         ;   XREF to: 004016dd (CONDITIONAL_JUMP)  ; LAB_004016dd
-    MOV ECX,dword ptr [0x01c00c70]      ; 004016b2 | DAT_01c00c70
+    MOV ECX,dword ptr [0x01c00c70]      ; 004016b2 | g_ActiveRenderColor
     AND ECX,0xff                        ; 004016b8
     CMP EBP,0x10                        ; 004016be
     JNZ 0x004016f1                      ; 004016c1
@@ -56,7 +56,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 004016dd
         ;   Label: LAB_004016dd
     LEA EDX,[EAX + EBX*0x1]             ; 004016e3
-    MOV AL,[0x01c00c70]                 ; 004016e6 | DAT_01c00c70
+    MOV AL,[0x01c00c70]                 ; 004016e6 | g_ActiveRenderColor
     MOV byte ptr [EDX],AL               ; 004016eb
     POP EBP                             ; 004016ed
     POP EDI                             ; 004016ee

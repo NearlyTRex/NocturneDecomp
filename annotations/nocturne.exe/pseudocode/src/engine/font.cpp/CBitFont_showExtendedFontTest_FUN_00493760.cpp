@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont *this_ptr,int screen_width,int screen_height)
 
 {
@@ -28,7 +26,7 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
   iVar5 = this_ptr->max_char_height + this_ptr->line_spacing + (uint)(screen_height * 0xc) / 0x1e0;
   iVar7 = 10;
   iVar6 = 10;
-  engine_2d_c_fillRectColor_FUN_00403e60(_DAT_01c00c58,_DAT_01c00c5c,_DAT_01c00c60,_DAT_01c00c64,0);
+  engine_2d_c_fillRectColor_FUN_00403e60(g_ClipLeft,g_ClipTop,g_ClipRight,g_ClipBottom,0);
   local_14 = 0;
   iVar4 = screen_width + -1;
   do {
@@ -37,16 +35,16 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
     iVar1 = iVar4;
     if ((uint)screen_width < this_ptr->char_spacing + iVar7 + this_ptr->max_char_width + 1U) {
       if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-        _DAT_01c00c70 = 4;
+        g_ActiveRenderColor = 4;
         engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar4,iVar6 + -1);
-        _DAT_01c00c70 = 4;
+        g_ActiveRenderColor = 4;
         iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
         iVar2 = iVar2 + iVar6;
         iVar7 = iVar4;
         iVar1 = iVar4;
         iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
         engine_2d_c_drawLine_FUN_004015a0(3,iVar3 + iVar6,iVar7,iVar2);
-        _DAT_01c00c70 = 4;
+        g_ActiveRenderColor = 4;
         iVar7 = this_ptr->max_char_height + iVar6;
         engine_2d_c_drawLine_FUN_004015a0(3,iVar7,iVar4,iVar7);
       }
@@ -57,32 +55,32 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
     iVar4 = iVar1;
   } while (local_14 < 0x7f);
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar2 = screen_width + -1;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar2,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar7 = iVar7 + iVar6;
     iVar4 = iVar2;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar1 + iVar6,iVar4,iVar7);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar2,iVar4);
   }
   iVar6 = iVar6 + iVar5;
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar2 = screen_width + -1;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar2,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar7 = iVar7 + iVar6;
     iVar4 = iVar2;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar1 + iVar6,iVar4,iVar7);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar2,iVar4);
   }
   iVar4 = 0x7f;
@@ -96,17 +94,17 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
   engine_font_cpp_CBitFont_drawText_FUN_00490980
             (this_ptr,&DAT_00581aa2,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar2 = screen_width + -1;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar2,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar7 = iVar7 + iVar6;
     iVar4 = iVar2;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar1 + iVar6,iVar4,iVar7);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar2,iVar4);
   }
   iVar4 = 0x90;
@@ -121,16 +119,16 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
             (this_ptr,&DAT_00581ab0,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
     iVar2 = screen_width + -1;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar2,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar7 = iVar7 + iVar6;
     iVar4 = iVar2;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar1 + iVar6,iVar4,iVar7);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar2,iVar4);
   }
   iVar4 = 0xa0;
@@ -145,16 +143,16 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
             (this_ptr,&DAT_00581ac5,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
     iVar2 = screen_width + -1;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar2,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar7 = iVar7 + iVar6;
     iVar4 = iVar2;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar1 + iVar6,iVar4,iVar7);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar2,iVar4);
   }
   iVar4 = 0xb0;
@@ -169,16 +167,16 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
             (this_ptr,(uint)screen_width >> 1,iVar6 - iVar5,1,6,"maxCharHght: %d");
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
     iVar1 = screen_width + -1;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar1,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar5 = iVar5 + iVar6;
     iVar4 = iVar1;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar7 + iVar6,iVar4,iVar5);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar1,iVar4);
   }
   iVar4 = 0xc0;
@@ -189,17 +187,17 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
   } while (iVar4 < 0xd0);
   iVar6 = iVar6 + iVar5;
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar1 = screen_width + -1;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar1,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar5 = iVar5 + iVar6;
     iVar4 = iVar1;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar7 + iVar6,iVar4,iVar5);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar1,iVar4);
   }
   iVar4 = 0xd0;
@@ -211,16 +209,16 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
   iVar6 = iVar6 + iVar5;
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
     iVar1 = screen_width + -1;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar1,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar5 = iVar5 + iVar6;
     iVar4 = iVar1;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar7 + iVar6,iVar4,iVar5);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar1,iVar4);
   }
   iVar4 = 0xe0;
@@ -231,17 +229,17 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont
   } while (iVar4 < 0xf0);
   iVar6 = iVar6 + iVar5;
   if ((uint)(this_ptr->max_char_height + iVar6) < (uint)screen_height) {
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar1 = screen_width + -1;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar6 + -1,iVar1,iVar6 + -1);
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     iVar5 = iVar5 + iVar6;
     iVar4 = iVar1;
     iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004015a0(3,iVar7 + iVar6,iVar4,iVar5);
     iVar4 = this_ptr->max_char_height + iVar6;
-    _DAT_01c00c70 = 4;
+    g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004015a0(3,iVar4,iVar1,iVar4);
   }
   iVar4 = 0xf0;

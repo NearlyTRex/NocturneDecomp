@@ -196,7 +196,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
                 puVar11 = &DAT_020845f4;
                 iVar6 = 0;
                 do {
-                  *(byte **)(&DAT_01bd4260 + iVar6) = puVar11;
+                  *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;
                   iVar6 = iVar6 + 4;
                   puVar11 = puVar11 + 0x100;
                 } while (iVar6 != 0xc0);
@@ -255,7 +255,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
         puVar11 = &DAT_020875f8 + param_4 * 0x3000;
         iVar6 = 0;
         do {
-          *(byte **)(&DAT_01bd4260 + iVar6) = puVar11;
+          *(byte **)((int)g_ZBufferScanlineArray + iVar6) = puVar11;
           iVar6 = iVar6 + 4;
           puVar11 = puVar11 + 0x100;
         } while (iVar6 != 0xc0);
@@ -281,7 +281,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
         iVar6 = 0;
         do {
           iVar8 = iVar6 + 4;
-          puVar12 = *(uint **)(&DAT_01bd4260 + iVar6);
+          puVar12 = *(uint **)((int)g_ZBufferScanlineArray + iVar6);
           puVar14 = puVar9;
           for (iVar10 = 0x40; iVar10 != 0; iVar10 = iVar10 + -1) {
             *puVar14 = *puVar12;
@@ -293,7 +293,7 @@ float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGL
             puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
             puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
           }
-          *(uint **)(&DAT_01bd4260 + iVar6) = puVar9;
+          *(uint **)((int)g_ZBufferScanlineArray + iVar6) = puVar9;
           puVar9 = puVar9 + 0x40;
           iVar6 = iVar8;
         } while (iVar8 != 0xc0);

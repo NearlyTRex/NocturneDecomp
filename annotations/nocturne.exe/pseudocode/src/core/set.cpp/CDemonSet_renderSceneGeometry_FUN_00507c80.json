@@ -58,62 +58,38 @@
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 21,
+        "line": 19,
         "message": "use of undeclared identifier 'DAT_005be36c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 69,
+        "line": 67,
         "message": "no matching function for call to 'core_dskybox_cpp_renderSkyDome_FUN_00463580'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 73,
+        "line": 71,
         "message": "no matching function for call to 'core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800'"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 74,
+        "line": 72,
         "message": "member reference type 'int' is not a pointer"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 75,
+        "line": 73,
         "message": "no matching function for call to 'core_water_cpp_CWater_render_FUN_00550cb0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 76,
+        "message": "no matching function for call to 'core_terrain_cpp_CTerrain_render_FUN_00549310'"
       }
     ],
     "success": false,
@@ -122,20 +98,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 205,
+    "complexity_score": 189,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 8,
+    "pseudocode_lines": 104,
+    "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
       "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 390
+    "total_lines": 389
   },
   "cross_references": [
     {
@@ -319,8 +294,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -518,16 +493,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_005be36c",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_005be36c);",
@@ -535,7 +502,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 90,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "else if ((DAT_005be378 != 0) &&",
@@ -543,7 +510,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 66,
+      "line": 64,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "(core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(0x02DD1210),",
@@ -551,7 +518,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 67,
+      "line": 65,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "0x02DD1210->wave_animation_enabled == 0)) {",
@@ -559,7 +526,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 68,
+      "line": 66,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,1);",
@@ -567,7 +534,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 88,
+      "line": 86,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
@@ -575,7 +542,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 103,
+      "line": 101,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

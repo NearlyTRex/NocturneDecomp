@@ -20,7 +20,7 @@
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cd7b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     ADD EAX,ESI                         ; 004410e8
     SHL EDX,0x2                         ; 004410ea
     MOV ESI,EAX                         ; 004410ed
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004410ef | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004410ef | g_ZBufferScanlineArray
     ADD EDX,EAX                         ; 004410f6
     MOV EAX,dword ptr [EBX + 0x144]     ; 004410f8
     SHL ESI,0x10                        ; 004410fe

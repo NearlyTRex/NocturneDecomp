@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 11,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_01b4d764'"
@@ -92,13 +86,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 89,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -147,8 +141,8 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
@@ -216,14 +210,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "piVar7 = (int *)(*(int *)(&DAT_01bd4260 + scanline_y * 4) + uVar2 * 4);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

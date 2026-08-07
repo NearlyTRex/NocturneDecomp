@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CEditorTools.h"
@@ -121,6 +122,14 @@ extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea30;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50;
 
+// _MMX_INTEGER
+extern _MMX_INTEGER g_RedMask16;
+extern _MMX_INTEGER g_GreenMask16;
+extern _MMX_INTEGER g_BlueMask16;
+extern _MMX_INTEGER g_RedMask32;
+extern _MMX_INTEGER g_GreenMask32;
+extern _MMX_INTEGER g_BlueMask32;
+
 // int
 extern int g_INT_005b064c;
 extern int g_INT_005b0660;
@@ -128,6 +137,7 @@ extern int INT_005b75dc;
 extern int INT_005b7604;
 extern int g_WindowWidth;
 extern int g_WindowHeight;
+extern int g_BitsPerPixel;
 extern int INT_005b8018;
 extern int INT_005b801c;
 extern int g_INT_005b91c0;
@@ -259,7 +269,6 @@ extern undefined4 DAT_005b7278;
 extern undefined4 DAT_005b727c;
 extern undefined4 DAT_005b7478;
 extern undefined4 DAT_005b747c;
-extern undefined4 DAT_005b7624;
 extern undefined4 DAT_005b762c;
 extern undefined4 DAT_005b7630;
 extern undefined4 DAT_005b7638;
@@ -335,9 +344,6 @@ extern undefined4 DAT_005bf4e8;
 extern undefined4 DAT_005bf4ec;
 extern undefined4 DAT_005bf4f0;
 extern undefined4 DAT_005bf540;
-extern undefined4 DAT_005bf5b8;
-extern undefined4 DAT_005bf5c0;
-extern undefined4 DAT_005bf5c8;
 
 // undefined8
 extern undefined8 DAT_005b4748;

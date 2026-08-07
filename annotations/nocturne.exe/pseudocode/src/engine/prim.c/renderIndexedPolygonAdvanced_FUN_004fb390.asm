@@ -33,7 +33,7 @@
 ;   undefined4 DAT_005c5040
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   ... and 9 more
 ;
 ; Called Functions:
@@ -100,7 +100,7 @@ section .text
     MOV ECX,dword ptr [0x01e52ef8]      ; 004fb3fd | DAT_01e52ef8
         ;   Label: LAB_004fb3fd
     INC ECX                             ; 004fb403
-    MOV EBX,dword ptr [0x01c02594]      ; 004fb404 | DAT_01c02594
+    MOV EBX,dword ptr [0x01c02594]      ; 004fb404 | g_UseExternalRenderer
     MOV dword ptr [0x01e52ef8],ECX      ; 004fb40a | DAT_01e52ef8
     TEST EBX,EBX                        ; 004fb410
     JZ 0x004fb86f                       ; 004fb412
@@ -129,7 +129,7 @@ section .text
         ;   XREF to: 004fb437 (CONDITIONAL_JUMP)  ; LAB_004fb437
     LEA EAX,[EAX]                       ; 004fb456
     LEA EDX,[EDX]                       ; 004fb45c
-    MOV EBP,dword ptr [0x01c039a0]      ; 004fb460 | DAT_01c039a0
+    MOV EBP,dword ptr [0x01c039a0]      ; 004fb460 | g_RenderStateFlags
         ;   Label: LAB_004fb460
     PUSH EBP                            ; 004fb466
     MOV EAX,dword ptr [ESP + 0x74]      ; 004fb467
@@ -525,7 +525,7 @@ section .text
     MOV dword ptr [EBP + 0x30],EBX      ; 004fb867
     JMP 0x004fb701                      ; 004fb86a
         ;   XREF to: 004fb701 (UNCONDITIONAL_JUMP)  ; LAB_004fb701
-    MOV EAX,[0x01c039a4]                ; 004fb86f | DAT_01c039a4
+    MOV EAX,[0x01c039a4]                ; 004fb86f | g_VertexPreprocessMode
         ;   Label: LAB_004fb86f
     CMP EAX,0x6                         ; 004fb874
     JA 0x004fb5f0                       ; 004fb877
@@ -654,7 +654,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 004fb9cc | DAT_005c5040
     ADD EAX,EDX                         ; 004fb9cf
     MOV dword ptr [EBP + 0x30],EAX      ; 004fb9d1
-    CMP dword ptr [0x01c039a4],0x1      ; 004fb9d4 | DAT_01c039a4
+    CMP dword ptr [0x01c039a4],0x1      ; 004fb9d4 | g_VertexPreprocessMode
     JNZ 0x004fbab2                      ; 004fb9db
         ;   XREF to: 004fbab2 (CONDITIONAL_JUMP)  ; LAB_004fbab2
     CMP dword ptr [0x01c0399c],0x0      ; 004fb9e1 | DAT_01c0399c

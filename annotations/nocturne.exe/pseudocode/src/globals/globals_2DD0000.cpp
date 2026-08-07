@@ -30,6 +30,19 @@ CWater g_CWater_02dd1210 = {};
 // CWeather
 CWeather g_CWeather_02ddf9f0 = {};
 
+// IDirectDraw*
+IDirectDraw* g_DirectDrawObject = {};
+
+// IDirectDrawSurface*
+IDirectDrawSurface* g_DirectDrawSurface = {};
+IDirectDrawSurface* g_SoftwareRenderSurface = {};
+
+// IUnknown*
+IUnknown* g_DirectDrawUnknown = {};
+
 // SCollisionInfo[100]
 SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100] = {};
+
+// void*
+void* g_SoftwareFrameBuffer = {};
 

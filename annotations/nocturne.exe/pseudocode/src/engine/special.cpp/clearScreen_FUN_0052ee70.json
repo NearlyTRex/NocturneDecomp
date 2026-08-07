@@ -57,21 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 5,
         "line": 26,
         "message": "use of undeclared identifier '_DAT_005bf494'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 31,
+        "category": "incompatible_types",
+        "column": 14,
         "line": 27,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
+        "message": "assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
@@ -104,13 +98,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 81,
+    "complexity_score": 61,
     "cross_reference_count": 28,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -187,7 +181,7 @@
     {
       "addr": "004c90e0",
       "from_addr": "004c9160",
-      "name": "core_main.c_FUN_004c90e0",
+      "name": "core_main.c_finalizeGameSystems_FUN_004c90e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -321,9 +315,9 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "005bf48c",
@@ -339,20 +333,20 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     }
   ],
@@ -411,22 +405,6 @@
       "match": "DAT_005bf48c",
       "severity": "mild",
       "text": "_DAT_005bf494 = DAT_005bf48c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar5 = *(ulonglong **)(&DAT_01bd2fa0 + iVar4 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "uVar2 = (uint)(g_WindowWidth * DAT_005b7624) >> 3;",
       "type": "undefined_data"
     }
   ]

@@ -38,9 +38,9 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f09
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->face_count == 0) {
-      _DAT_01c039a0 = 0xc0;
-      _DAT_01c039a4 = 6;
-      _DAT_01c00c7c = core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = 6;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00464075;
     }
     else {
       g_CurrentFilename = "..\\engine\\drender.cpp";

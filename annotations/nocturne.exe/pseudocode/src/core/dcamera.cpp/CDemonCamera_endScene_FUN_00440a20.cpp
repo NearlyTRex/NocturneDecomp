@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *this_ptr,int skip_zbuffer_copy)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *t
     engine_special_cpp_endScene_FUN_00532360();
   }
   if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {
-    if (_DAT_01c02594 != 0) {
+    if (g_UseExternalRenderer != 0) {
       engine_special_cpp_masterZBuffer_FUN_00532c70(0);
     }
     iVar3 = 0;
@@ -38,7 +36,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *t
         iVar3 = iVar3 + 1;
         _memcpy
                   ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
-                   (void *)(*(int *)(&DAT_01bd4260 + iVar2 * 4) + this_ptr->framebuffer_width * 4),
+                   g_ZBufferScanlineArray[iVar2] + this_ptr->framebuffer_width,
                    this_ptr->screen_width << 2);
       } while (iVar3 < (int)this_ptr->max_distance);
     }

@@ -19,8 +19,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d1fc
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 DAT_01c039ec
 ;   undefined4 DAT_01c039f8
 ;   undefined4 DAT_01c03a04
@@ -127,7 +127,7 @@ section .text
     JLE 0x0044e5d0                      ; 0044e595
         ;   XREF to: 0044e5d0 (CONDITIONAL_JUMP)  ; LAB_0044e5d0
     MOV EDX,EBX                         ; 0044e597
-    MOV ESI,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 0044e599 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV ESI,dword ptr [EAX*0x4 + 0x1bd2fa0] ; 0044e599 | g_ScreenBufferArray | g_ScreenBufferArray[1]
         ;   Label: LAB_0044e599
     MOV dword ptr [EDX + 0x1cd4],ESI    ; 0044e5a0
     MOV ESI,dword ptr [EBX + 0x1cc0]    ; 0044e5a6
@@ -135,7 +135,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2f94]    ; 0044e5af
     ADD ESI,ESI                         ; 0044e5b5
     ADD ESI,EDI                         ; 0044e5b7
-    MOV dword ptr [EAX*0x4 + 0x1bd2fa0],ESI ; 0044e5b9 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV dword ptr [EAX*0x4 + 0x1bd2fa0],ESI ; 0044e5b9 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0044e5c0
     MOV ECX,dword ptr [EBX + 0x1cc4]    ; 0044e5c1
     ADD EDX,0x4                         ; 0044e5c7

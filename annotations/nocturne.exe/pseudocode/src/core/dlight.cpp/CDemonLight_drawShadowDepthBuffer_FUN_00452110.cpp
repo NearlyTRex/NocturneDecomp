@@ -40,16 +40,17 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
   if (0 < g_WindowHeight) {
     iVar5 = 0;
     do {
-      iVar4 = g_WindowWidth * DAT_005b7624 >> 0x1f;
-      puVar1 = (uint *)(&DAT_01bd2fa0 + iVar5);
+      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+      puVar1 = (uint *)((int)g_ScreenBufferArray + iVar5);
       iVar5 = iVar5 + 4;
       iVar6 = iVar6 + 1;
       memset
                 ((void *)*puVar1,0,
-                 (int)((g_WindowWidth * DAT_005b7624 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3);
+                 (int)((g_WindowWidth * g_BitsPerPixel + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3)
+      ;
     } while (iVar6 < g_WindowHeight);
   }
-  if (DAT_005b7624 == 0x20) {
+  if (g_BitsPerPixel == 0x20) {
     local_30 = 0;
     if (0 < this_ptr->shadow_map_height) {
       do {
@@ -59,7 +60,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
         }
         iVar6 = iVar6 + screen_y;
         if ((-1 < iVar6) && (iVar6 < g_WindowHeight)) {
-          puVar7 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar6 * 4) + screen_x * 4);
+          puVar7 = (uint *)((int)g_ScreenBufferArray[iVar6] + screen_x * 4);
           local_18 = this_ptr->shadow_depth_buffer + local_30 * this_ptr->shadow_map_width;
           local_24 = 0;
           local_20 = 0;
@@ -82,9 +83,10 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
                 }
                 local_24 = uVar3 + local_24 >> 1;
                 uVar3 = local_24 * 3 >> 2;
-                if (DAT_005b7624 == 0x20) {
-                  uVar3 = local_24 << (DAT_01c0063c & 0x1f) |
-                          uVar3 << (DAT_01c00630 & 0x1f) | uVar3 << (DAT_01c00624 & 0x1f);
+                if (g_BitsPerPixel == 0x20) {
+                  uVar3 = local_24 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                          uVar3 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                          uVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
                 }
                 else {
                   uVar3 = uVar3 << 0x10 | uVar3 << 8 | local_24;
@@ -119,7 +121,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
         }
         iVar6 = iVar6 + screen_y;
         if ((-1 < iVar6) && (iVar6 < g_WindowHeight)) {
-          puVar8 = (ushort *)(*(int *)(&DAT_01bd2fa0 + iVar6 * 4) + screen_x * 2);
+          puVar8 = (ushort *)((int)g_ScreenBufferArray[iVar6] + screen_x * 2);
           local_14 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_28 = 0;
           local_1c = 0;
@@ -141,9 +143,12 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDem
                 }
                 local_28 = uVar3 + local_28 >> 1;
                 uVar3 = local_28 * 3 >> 2;
-                uVar2 = (ushort)(local_28 / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
-                        (ushort)(uVar3 / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
-                        (ushort)(uVar3 / _DAT_01c00634 << (DAT_01c00630 & 0x1f));
+                uVar2 = (ushort)(local_28 / (uint)g_BlueScaleFactor <<
+                                (g_BlueBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar3 / (uint)g_RedScaleFactor <<
+                                (g_RedBitPosition.bytes[0] & 0x1f)) |
+                        (ushort)(uVar3 / (uint)g_GreenScaleFactor <<
+                                (g_GreenBitPosition.bytes[0] & 0x1f));
                 *puVar8 = uVar2;
                 if (0x140 < g_WindowWidth) {
                   puVar8[1] = uVar2;

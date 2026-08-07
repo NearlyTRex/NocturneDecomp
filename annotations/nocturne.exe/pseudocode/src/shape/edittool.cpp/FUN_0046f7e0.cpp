@@ -38,7 +38,7 @@ uint shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byt
   DAT_005b7630 = 0x7f;
   do {
     shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
-    shape_edittool_cpp_CInputString_draw_FUN_0046f680(&local_150,_DAT_01c00c58,_DAT_01c00c5c);
+    shape_edittool_cpp_CInputString_draw_FUN_0046f680(&local_150,g_ClipLeft,g_ClipTop);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
       iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
@@ -52,7 +52,7 @@ uint shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byt
       if (iVar3 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0046f2a0(&local_150);
       }
-      else if (((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 8) != 0) {
+      else if ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0046f250(&local_150);
         shape_edittool_cpp_CInputString_insertChar_FUN_0046f150(&local_150,(char)iVar3,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0046f130(&local_150);

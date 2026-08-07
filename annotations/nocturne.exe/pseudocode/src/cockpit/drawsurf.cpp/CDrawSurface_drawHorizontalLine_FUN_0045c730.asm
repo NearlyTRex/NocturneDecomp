@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d9bf
 ;   TerminatedCString s_Invalid_bitsPerPixel_0057d9d7
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
-;   undefined4 DAT_01bd2fa0
+;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,7 +70,7 @@ section .text
     CMP dword ptr [0x01b4d71c],0x0      ; 0045c774 | DAT_01b4d71c
     JNZ 0x0045c7c5                      ; 0045c77b
         ;   XREF to: 0045c7c5 (CONDITIONAL_JUMP)  ; LAB_0045c7c5
-    MOV EDX,dword ptr [0x005b7624]      ; 0045c77d | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0045c77d | g_BitsPerPixel
     SHL EBX,0x2                         ; 0045c783
     CMP EDX,0x10                        ; 0045c786
     JNC 0x0045c81d                      ; 0045c789
@@ -82,7 +82,7 @@ section .text
     INC ECX                             ; 0045c79a
     PUSH ECX                            ; 0045c79b
     MOV ECX,dword ptr [0x01b4d710]      ; 0045c79c | DAT_01b4d710
-    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7a2 | DAT_01bd2fa0
+    MOV EDX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7a2 | g_ScreenBufferArray
     PUSH ECX                            ; 0045c7a8
     ADD EDX,EAX                         ; 0045c7a9
     PUSH EDX                            ; 0045c7ab
@@ -111,7 +111,7 @@ section .text
     RET                                 ; 0045c7d4
     LEA EDX,[EAX + EAX*0x1]             ; 0045c7d5
         ;   Label: LAB_0045c7d5
-    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7d8 | DAT_01bd2fa0
+    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7d8 | g_ScreenBufferArray
     ADD EDX,EBX                         ; 0045c7de
     ADD EDX,0x2                         ; 0045c7e0
         ;   Label: LAB_0045c7e0
@@ -128,7 +128,7 @@ section .text
     RET                                 ; 0045c7f7
     LEA EDX,[EAX*0x4 + 0x0]             ; 0045c7f8
         ;   Label: LAB_0045c7f8
-    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7ff | DAT_01bd2fa0
+    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 0045c7ff | g_ScreenBufferArray
     ADD EDX,EBX                         ; 0045c805
     ADD EDX,0x4                         ; 0045c807
         ;   Label: LAB_0045c807

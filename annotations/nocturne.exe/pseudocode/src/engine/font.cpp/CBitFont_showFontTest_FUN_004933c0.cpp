@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_ptr,int screen_height)
 
 {
@@ -23,7 +21,7 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_p
   
   bVar7 = 0;
   iVar5 = 0x20;
-  engine_2d_c_fillRectColor_FUN_00403e60(_DAT_01c00c58,_DAT_01c00c5c,_DAT_01c00c60,_DAT_01c00c64,0);
+  engine_2d_c_fillRectColor_FUN_00403e60(g_ClipLeft,g_ClipTop,g_ClipRight,g_ClipBottom,0);
   iVar3 = 10;
   local_14 = this_ptr->max_char_height + this_ptr->line_spacing;
   iVar2 = 10;

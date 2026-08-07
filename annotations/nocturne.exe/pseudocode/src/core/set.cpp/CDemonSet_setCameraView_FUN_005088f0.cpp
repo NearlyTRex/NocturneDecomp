@@ -140,7 +140,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCamera_01fb8508,&stack0xffffff10);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
   core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCamera_01fb8508,0);
-  if (_DAT_01c02594 != 0) {
+  if (g_UseExternalRenderer != 0) {
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
     if (0x02DD1210->wave_animation_enabled == 0) {
       core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);

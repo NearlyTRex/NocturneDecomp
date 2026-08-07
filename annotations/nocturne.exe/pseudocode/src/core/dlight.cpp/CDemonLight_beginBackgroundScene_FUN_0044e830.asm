@@ -20,9 +20,9 @@
 ;   undefined4 DAT_01ab99f8
 ;   undefined4 DAT_01ab99f9
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01bd2fa5
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   undefined4 g_ScreenBufferArray[1]+1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -57,10 +57,10 @@ section .text
     PUSH EDI                            ; 0044e86e | DAT_01ab99f4
     MOV EAX,ECX                         ; 0044e86f
     SHR ECX,0x2                         ; 0044e871
-    MOVSD.REP ES:EDI,ESI                ; 0044e874 | DAT_01bd2fa0 | DAT_01ab99f4 | DAT_01bd2fa4
+    MOVSD.REP ES:EDI,ESI                ; 0044e874 | g_ScreenBufferArray | DAT_01ab99f4 | g_ScreenBufferArray[1]
     MOV CL,AL                           ; 0044e876
     AND CL,0x3                          ; 0044e878
-    MOVSB.REP ES:EDI,ESI                ; 0044e87b | DAT_01bd2fa4 | DAT_01ab99f8 | DAT_01bd2fa5
+    MOVSB.REP ES:EDI,ESI                ; 0044e87b | g_ScreenBufferArray[1] | DAT_01ab99f8 | g_ScreenBufferArray[1]+1
     POP EDI                             ; 0044e87d
     CMP dword ptr [EBX + 0x2f9c],0x0    ; 0044e87e
     JNZ 0x0044e8aa                      ; 0044e885
@@ -86,7 +86,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 0044e8c1
     ADD ESI,ESI                         ; 0044e8c7
     ADD ECX,ESI                         ; 0044e8c9
-    MOV dword ptr [EDX + 0x1bd2fa0],ECX ; 0044e8cb | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV dword ptr [EDX + 0x1bd2fa0],ECX ; 0044e8cb | g_ScreenBufferArray | g_ScreenBufferArray[1]
     INC EAX                             ; 0044e8d1
     MOV EDI,dword ptr [EBX + 0x1cc4]    ; 0044e8d2
     ADD EDX,0x4                         ; 0044e8d8

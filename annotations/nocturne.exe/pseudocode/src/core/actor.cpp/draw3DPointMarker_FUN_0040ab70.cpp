@@ -25,7 +25,7 @@ void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_posi
   iVar3 = *(int *)PTR_DAT_005ae700;
   if ((*(byte *)(iVar3 + 0xea5e3) & 0x80) == 0) {
     iVar4 = *(int *)(iVar3 + 0xea5e0) >> 0x10;
-    _DAT_01c00c70 = marker_color;
+    g_ActiveRenderColor = marker_color;
     iVar3 = *(int *)(iVar3 + 0xea5e4) >> 0x10;
     if ((((-1 < iVar4) && (-1 < iVar3)) && (iVar4 < g_WindowWidth)) && (iVar3 < g_WindowHeight)) {
       engine_2d_c_plotPixel_FUN_00401530(iVar4,iVar3);

@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 533,
+    "complexity_score": 514,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 203,
-    "suspect_count": 29,
+    "pseudocode_lines": 204,
+    "suspect_count": 27,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -139,7 +139,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 641
+    "total_lines": 642
   },
   "cross_references": [
     {
@@ -343,8 +343,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -379,14 +379,14 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
@@ -667,23 +667,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "else if ((((((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 8) != 0) && (iVar3 != 0x5c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 186,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "(iVar3 != 0x3a)) && (((&DAT_005c168c)[(byte)((char)iVar3 + 1)] & 2) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_005b7630",
       "severity": "mild",
       "text": "DAT_005b7630 = local_18;",
@@ -763,7 +747,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 195,
+      "line": 196,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

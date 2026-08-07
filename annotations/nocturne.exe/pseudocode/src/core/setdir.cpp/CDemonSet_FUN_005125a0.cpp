@@ -65,7 +65,7 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
   float fStack_d8;
   CVector3f CStack_d0;
   int iStack_c0;
-  uint local_bc;
+  int local_bc;
   int local_b8;
   float local_b4;
   int iStack_b0;
@@ -127,8 +127,8 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
 LAB_0051260f:
   this_ptr_01 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->camera_switch_cooldown = 0.0;
-  local_b8 = _DAT_01c02594;
-  _DAT_01c02594 = 0;
+  local_b8 = g_UseExternalRenderer;
+  g_UseExternalRenderer = 0;
   local_b4 = (float)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(this_ptr_01);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
@@ -203,7 +203,8 @@ LAB_0051260f:
   iVar13 = 0;
   do {
     iVar6 = iVar13 + 4;
-    *(uint *)((int)auStack_2e8 + iVar13) = *(uint *)(&DAT_01bd4260 + iVar13);
+    *(uint *)((int)auStack_2e8 + iVar13) =
+         *(uint *)((int)g_ZBufferScanlineArray + iVar13);
     iVar13 = iVar6;
   } while (iVar6 != 0xc0);
   iVar13 = 0;
@@ -245,13 +246,14 @@ LAB_0051260f:
       iVar13 = 0;
       do {
         iVar6 = iVar13 + 4;
-        *(uint *)(&DAT_01bd4260 + iVar13) = *(uint *)((int)auStack_2e8 + iVar13);
+        *(uint *)((int)g_ZBufferScanlineArray + iVar13) =
+             *(uint *)((int)auStack_2e8 + iVar13);
         iVar13 = iVar6;
       } while (iVar6 != 0xc0);
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
       engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
                 (g_CDemonRenderer_PTR_005ae704,local_b8);
-      _DAT_01c02594 = local_bc;
+      g_UseExternalRenderer = local_bc;
       if (this_ptr->camera_count <= _DAT_020875f4) {
         fStack_2f0 = -1.0;
         iVar13 = -1;
@@ -426,7 +428,7 @@ LAB_0051260f:
                       puVar14 = &DAT_020845f4;
                       iVar13 = 0;
                       do {
-                        *(byte **)(&DAT_01bd4260 + iVar13) = puVar14;
+                        *(byte **)((int)g_ZBufferScanlineArray + iVar13) = puVar14;
                         iVar13 = iVar13 + 4;
                         puVar14 = puVar14 + 0x100;
                       } while (iVar13 != 0xc0);
@@ -485,7 +487,7 @@ LAB_0051260f:
               puVar14 = &DAT_020875f8 + iStack_90 * 0x3000;
               iVar13 = 0;
               do {
-                *(byte **)(&DAT_01bd4260 + iVar13) = puVar14;
+                *(byte **)((int)g_ZBufferScanlineArray + iVar13) = puVar14;
                 iVar13 = iVar13 + 4;
                 puVar14 = puVar14 + 0x100;
               } while (iVar13 != 0xc0);
@@ -511,7 +513,7 @@ LAB_0051260f:
               iVar13 = 0;
               do {
                 iVar9 = iVar13 + 4;
-                puVar15 = *(uint **)(&DAT_01bd4260 + iVar13);
+                puVar15 = *(uint **)((int)g_ZBufferScanlineArray + iVar13);
                 puVar17 = puVar10;
                 for (iVar6 = 0x40; iVar6 != 0; iVar6 = iVar6 + -1) {
                   *puVar17 = *puVar15;
@@ -523,7 +525,7 @@ LAB_0051260f:
                   puVar15 = (uint *)((int)puVar15 + (uint)bVar18 * -2 + 1);
                   puVar17 = (uint *)((int)puVar17 + (uint)bVar18 * -2 + 1);
                 }
-                *(uint **)(&DAT_01bd4260 + iVar13) = puVar10;
+                *(uint **)((int)g_ZBufferScanlineArray + iVar13) = puVar10;
                 puVar10 = puVar10 + 0x40;
                 iVar13 = iVar9;
               } while (iVar9 != 0xc0);

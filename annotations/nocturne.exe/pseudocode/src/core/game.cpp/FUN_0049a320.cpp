@@ -76,7 +76,8 @@ void core_game_cpp_FUN_0049a320(void)
                   iStack_24 = iVar3 << 2;
                   do {
                     if (iStack_20 < iStack_18) {
-                      puVar4 = (uint *)(iStack_20 * 4 + *(int *)(&DAT_01bd2fa0 + iStack_1c));
+                      puVar4 = (uint *)(iStack_20 * 4 +
+                                       *(int *)((int)g_ScreenBufferArray + iStack_1c));
                       iVar2 = iStack_20;
                       do {
                         uVar1 = *puVar4;

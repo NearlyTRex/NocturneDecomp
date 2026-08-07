@@ -56,12 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 77,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 19,
         "line": 123,
@@ -86,10 +80,10 @@
         "message": "use of undeclared identifier '_DAT_01e52ef8'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 74,
+        "category": "incompatible_types",
+        "column": 7,
         "line": 150,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
+        "message": "no matching function for call to 'engine_special_cpp_drawPolygon2_FUN_00532650'"
       },
       {
         "category": "incompatible_types",
@@ -113,6 +107,12 @@
         "category": "undeclared_identifier",
         "column": 74,
         "line": 212,
+        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 57,
+        "line": 214,
         "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
       }
     ],
@@ -496,14 +496,14 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -826,7 +826,7 @@
       "line": 70,
       "match": "DAT_006b0278",
       "severity": "mild",
-      "text": "if ((_DAT_01c02594 == 0) || (DAT_006b0278 != 0)) {",
+      "text": "if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {",
       "type": "undefined_data"
     },
     {
@@ -1090,7 +1090,7 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);",
+      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);",
       "type": "unnamed_param"
     },
     {
@@ -1098,7 +1098,7 @@
       "line": 143,
       "match": "DAT_00767274",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,_DAT_01c039a0);",
+      "text": "engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);",
       "type": "undefined_data"
     },
     {

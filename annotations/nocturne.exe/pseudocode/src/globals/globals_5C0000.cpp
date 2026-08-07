@@ -960,7 +960,6 @@ undefined4 DAT_005c206c = 0x00000000;
 undefined4 DAT_005c20d0 = 0xFFFFFFFF;
 undefined4 DAT_005c20d4 = 0xFFFFFFFF;
 undefined4 DAT_005c2144 = 0x00000001;
-undefined4 DAT_005c5010 = {};
 undefined4 DAT_005c5014 = {};
 undefined4 DAT_005c5018 = {};
 undefined4 DAT_005c501c = {};
@@ -995,4 +994,7 @@ undefined4 DAT_005c50e4 = {};
 undefined4 DAT_005c5114 = {};
 undefined4 DAT_005c5144 = {};
 undefined4 DAT_005c5174 = {};
+
+// void*
+void* g_BackBuffer = {};
 

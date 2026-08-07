@@ -58,62 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 18,
+        "line": 20,
         "message": "use of undeclared identifier '_DAT_02dc9d70'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 23,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_02dc9e18'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dc9d84'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
         "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_02dc9ddc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01bff720'"
+        "message": "use of undeclared identifier '_DAT_02dc9d84'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
         "line": 33,
+        "message": "use of undeclared identifier '_DAT_02dc9ddc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9dcc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 33,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9e0c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 33,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_02dc9e10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_02dc9e14'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_02dc9e1c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 53,
+        "message": "use of undeclared identifier '_DAT_02dc9d70'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 104,
+    "complexity_score": 61,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 5,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 142
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -186,14 +185,14 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
@@ -204,8 +203,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -366,38 +365,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "iVar2 = (*_DAT_02dc9d84)(width,height,bits_per_pixel,&DAT_01bd2fa0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_01bff720",
-      "severity": "mild",
-      "text": "(*_DAT_02dc9ddc)(g_SourcePaletteData,&DAT_01bff720);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 != 0x20) goto LAB_00532576;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   blue
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00630
-;   undefined4 DAT_01c0063c
+;   int g_BitsPerPixel = 0x8
+;   _BIT_INTEGER32 g_RedBitPosition
+;   _BIT_INTEGER32 g_GreenBitPosition
+;   _BIT_INTEGER32 g_BlueBitPosition
 ;
 ; *****************************************************************************
 
@@ -21,14 +21,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00494080
         ;   Label: engine_font.cpp_packPixelNative_FUN_00494080
     MOV EDX,dword ptr [ESP + 0x8]       ; 00494084
-    CMP dword ptr [0x005b7624],0x20     ; 00494088 | DAT_005b7624
+    CMP dword ptr [0x005b7624],0x20     ; 00494088 | g_BitsPerPixel
     JNZ 0x004940b6                      ; 0049408f
         ;   XREF to: 004940b6 (CONDITIONAL_JUMP)  ; LAB_004940b6
-    MOV CL,byte ptr [0x01c00624]        ; 00494091 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 00494091 | g_RedBitPosition
     SHL EAX,CL                          ; 00494097
-    MOV CL,byte ptr [0x01c00630]        ; 00494099 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 00494099 | g_GreenBitPosition
     SHL EDX,CL                          ; 0049409f
-    MOV CL,byte ptr [0x01c0063c]        ; 004940a1 | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004940a1 | g_BlueBitPosition
     OR EAX,EDX                          ; 004940a7
     MOV EDX,dword ptr [ESP + 0xc]       ; 004940a9
     SHL EDX,CL                          ; 004940ad

@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0f8c
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -33,21 +33,21 @@ section .text
     PUSH EAX                            ; 005329d1
     CALL crt_memory.c_memset_FUN_00563cc0 ; 005329d2
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    MOV EAX,[0x01c00c58]                ; 005329d7 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 005329d7 | g_ClipLeft
     ADD ESP,0xc                         ; 005329dc
     SHL EAX,0x10                        ; 005329df
     MOV dword ptr [ESP + 0x10],EAX      ; 005329e2
-    MOV EAX,[0x01c00c5c]                ; 005329e6 | DAT_01c00c5c
+    MOV EAX,[0x01c00c5c]                ; 005329e6 | g_ClipTop
     SHL EAX,0x10                        ; 005329eb
     MOV dword ptr [ESP + 0x14],EAX      ; 005329ee
-    MOV EAX,[0x01c00c60]                ; 005329f2 | DAT_01c00c60
+    MOV EAX,[0x01c00c60]                ; 005329f2 | g_ClipRight
     SHL EAX,0x10                        ; 005329f7
     MOV dword ptr [ESP + 0x40],EAX      ; 005329fa
     MOV EAX,dword ptr [ESP + 0x14]      ; 005329fe
     MOV dword ptr [ESP + 0x44],EAX      ; 00532a02
     MOV EAX,dword ptr [ESP + 0x40]      ; 00532a06
     MOV dword ptr [ESP + 0x70],EAX      ; 00532a0a
-    MOV EAX,[0x01c00c64]                ; 00532a0e | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 00532a0e | g_ClipBottom
     SHL EAX,0x10                        ; 00532a13
     MOV dword ptr [ESP + 0x74],EAX      ; 00532a16
     MOV EAX,dword ptr [ESP + 0x10]      ; 00532a1a
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x9c],EAX      ; 00532a43
     MOV EAX,dword ptr [ESP + 0xc8]      ; 00532a4a
     PUSH 0x4                            ; 00532a51
-    MOV [0x01c00c70],EAX                ; 00532a53 | DAT_01c00c70
+    MOV [0x01c00c70],EAX                ; 00532a53 | g_ActiveRenderColor
     LEA EAX,[ESP + 0x8]                 ; 00532a58
     PUSH EAX                            ; 00532a5c
     CALL engine_special.cpp_drawPolygon_FUN_00532620 ; 00532a5d

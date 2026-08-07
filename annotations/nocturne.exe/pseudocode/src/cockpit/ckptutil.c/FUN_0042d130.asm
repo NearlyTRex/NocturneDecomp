@@ -18,13 +18,13 @@
 ;   ... and 1 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x005b7624]      ; 0042d130 | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0042d130 | g_BitsPerPixel
         ;   Label: cockpit_ckptutil.c_FUN_0042d130
     CMP EDX,0x8                         ; 0042d136
     JZ 0x0042d150                       ; 0042d139

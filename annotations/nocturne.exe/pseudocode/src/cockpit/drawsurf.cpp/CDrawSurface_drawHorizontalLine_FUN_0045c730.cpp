@@ -15,12 +15,12 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
   int end_x_00;
   ushort *puVar1;
   int *piVar2;
-  int iVar3;
+  int y_00;
   
   end_x_00 = end_x + this_ptr->x;
   start_x_00 = start_x + this_ptr->x;
-  iVar3 = y + this_ptr->y;
-  if ((this_ptr->clip_top <= iVar3) && (iVar3 <= this_ptr->clip_bottom)) {
+  y_00 = y + this_ptr->y;
+  if ((this_ptr->clip_top <= y_00) && (y_00 <= this_ptr->clip_bottom)) {
     if (start_x_00 < this_ptr->clip_left) {
       start_x_00 = this_ptr->clip_left;
     }
@@ -29,21 +29,20 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
     }
     if (start_x_00 <= end_x_00) {
       if (_DAT_01b4d71c != 0) {
-        cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(start_x_00,end_x_00,iVar3);
+        cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_0045bc20(start_x_00,end_x_00,y_00);
         return;
       }
-      iVar3 = iVar3 * 4;
-      if (DAT_005b7624 < 0x10) {
-        if (DAT_005b7624 == 8) {
+      if ((uint)g_BitsPerPixel < 0x10) {
+        if (g_BitsPerPixel == 8) {
           memset
-                    ((void *)(*(int *)(&DAT_01bd2fa0 + iVar3) + start_x_00),_DAT_01b4d710,
+                    ((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),_DAT_01b4d710,
                      (end_x_00 - start_x_00) + 1);
           return;
         }
       }
       else {
-        if (DAT_005b7624 < 0x11) {
-          puVar1 = (ushort *)(start_x_00 * 2 + *(int *)(&DAT_01bd2fa0 + iVar3));
+        if ((uint)g_BitsPerPixel < 0x11) {
+          puVar1 = (ushort *)(start_x_00 * 2 + (int)g_ScreenBufferArray[y_00]);
           do {
             start_x_00 = start_x_00 + 1;
             *puVar1 = _DAT_01b4d710;
@@ -51,8 +50,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(C
           } while (start_x_00 <= end_x_00);
           return;
         }
-        if (DAT_005b7624 == 0x20) {
-          piVar2 = (int *)(start_x_00 * 4 + *(int *)(&DAT_01bd2fa0 + iVar3));
+        if (g_BitsPerPixel == 0x20) {
+          piVar2 = (int *)(start_x_00 * 4 + (int)g_ScreenBufferArray[y_00]);
           do {
             start_x_00 = start_x_00 + 1;
             *piVar2 = _DAT_01b4d710;

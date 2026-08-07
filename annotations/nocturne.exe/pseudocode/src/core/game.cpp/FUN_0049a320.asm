@@ -14,8 +14,8 @@
 ;   undefined4 DAT_005b9364
 ;   undefined4 DAT_005b9368
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 DAT_01c78ac8
 ;   undefined4 DAT_01c78acc
 ;   undefined4 DAT_01c78ad0
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 0049a53d (CONDITIONAL_JUMP)  ; LAB_0049a53d
     MOV EAX,dword ptr [ESP + 0x144]     ; 0049a4e6
     LEA EDX,[ECX*0x4 + 0x0]             ; 0049a4ed
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0049a4f4 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0049a4f4 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,EAX                         ; 0049a4fa
     MOV EAX,dword ptr [EDX]             ; 0049a4fc
         ;   Label: LAB_0049a4fc

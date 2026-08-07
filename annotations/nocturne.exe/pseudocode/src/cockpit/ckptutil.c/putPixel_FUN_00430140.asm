@@ -13,11 +13,11 @@
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042f600 at 0042f680
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_BitsPerPixel = 0x8
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; *****************************************************************************
 
@@ -28,19 +28,19 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 00430141
     MOV EDX,dword ptr [ESP + 0xc]       ; 00430145
     MOV EBX,dword ptr [ESP + 0x10]      ; 00430149
-    CMP ECX,dword ptr [0x01c00c58]      ; 0043014d | DAT_01c00c58
+    CMP ECX,dword ptr [0x01c00c58]      ; 0043014d | g_ClipLeft
     JL 0x0043017f                       ; 00430153
         ;   XREF to: 0043017f (CONDITIONAL_JUMP)  ; LAB_0043017f
-    CMP ECX,dword ptr [0x01c00c60]      ; 00430155 | DAT_01c00c60
+    CMP ECX,dword ptr [0x01c00c60]      ; 00430155 | g_ClipRight
     JG 0x0043017f                       ; 0043015b
         ;   XREF to: 0043017f (CONDITIONAL_JUMP)  ; LAB_0043017f
-    CMP EDX,dword ptr [0x01c00c5c]      ; 0043015d | DAT_01c00c5c
+    CMP EDX,dword ptr [0x01c00c5c]      ; 0043015d | g_ClipTop
     JL 0x0043017f                       ; 00430163
         ;   XREF to: 0043017f (CONDITIONAL_JUMP)  ; LAB_0043017f
-    CMP EDX,dword ptr [0x01c00c64]      ; 00430165 | DAT_01c00c64
+    CMP EDX,dword ptr [0x01c00c64]      ; 00430165 | g_ClipBottom
     JG 0x0043017f                       ; 0043016b
         ;   XREF to: 0043017f (CONDITIONAL_JUMP)  ; LAB_0043017f
-    MOV EAX,[0x005b7624]                ; 0043016d | DAT_005b7624
+    MOV EAX,[0x005b7624]                ; 0043016d | g_BitsPerPixel
     SHL EDX,0x2                         ; 00430172
     CMP EAX,0x10                        ; 00430175
     JNC 0x004301b9                      ; 00430178

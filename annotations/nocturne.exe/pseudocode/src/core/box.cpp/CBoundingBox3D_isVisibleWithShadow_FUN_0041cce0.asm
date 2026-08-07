@@ -21,10 +21,10 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_014b9920
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
-;   undefined4 DAT_01c00c50
-;   undefined4 DAT_01c00c54
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0
@@ -43,16 +43,16 @@ section .text
     PUSH ESI                            ; 0041ccf2
     PUSH EBX                            ; 0041ccf3
     MOV EDX,dword ptr [0x005ae704]      ; 0041ccf4 | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,[0x01c00c50]                ; 0041ccfa | DAT_01c00c50
-    MOV ECX,dword ptr [0x01c00c48]      ; 0041ccff | DAT_01c00c48
-    MOV EDI,dword ptr [0x01c00c50]      ; 0041cd05 | DAT_01c00c50
-    MOV ESI,dword ptr [0x01c00c4c]      ; 0041cd0b | DAT_01c00c4c
-    MOV EBP,dword ptr [0x01c00c54]      ; 0041cd11 | DAT_01c00c54
+    MOV EAX,[0x01c00c50]                ; 0041ccfa | g_Projection.center_x_fixed
+    MOV ECX,dword ptr [0x01c00c48]      ; 0041ccff | g_Projection
+    MOV EDI,dword ptr [0x01c00c50]      ; 0041cd05 | g_Projection.center_x_fixed
+    MOV ESI,dword ptr [0x01c00c4c]      ; 0041cd0b | g_Projection.neg_half_height_fixed
+    MOV EBP,dword ptr [0x01c00c54]      ; 0041cd11 | g_Projection.center_y_fixed
     MOV EDX,dword ptr [EDX]             ; 0041cd17 | DAT_01b4d738
     ADD EAX,ECX                         ; 0041cd19
     SUB EDI,ECX                         ; 0041cd1b
     MOV dword ptr [ESP + 0x20],EAX      ; 0041cd1d
-    MOV EAX,[0x01c00c54]                ; 0041cd21 | DAT_01c00c54
+    MOV EAX,[0x01c00c54]                ; 0041cd21 | g_Projection.center_y_fixed
     ADD EBP,ESI                         ; 0041cd26
     SUB EAX,ESI                         ; 0041cd28
     MOV ESI,EDX                         ; 0041cd2a
@@ -75,11 +75,11 @@ section .text
     CMP EDX,EBX                         ; 0041cd56
     JGE 0x0041cd7c                      ; 0041cd58
         ;   XREF to: 0041cd7c (CONDITIONAL_JUMP)  ; LAB_0041cd7c
-    MOV EDX,dword ptr [0x01c00c48]      ; 0041cd5a | DAT_01c00c48
+    MOV EDX,dword ptr [0x01c00c48]      ; 0041cd5a | g_Projection
     MOV EAX,dword ptr [ESI]             ; 0041cd60
     IMUL EDX                            ; 0041cd62
     IDIV EBX                            ; 0041cd64
-    ADD EAX,dword ptr [0x01c00c50]      ; 0041cd66 | DAT_01c00c50
+    ADD EAX,dword ptr [0x01c00c50]      ; 0041cd66 | g_Projection.center_x_fixed
     CMP EAX,EDI                         ; 0041cd6c
     JLE 0x0041cd72                      ; 0041cd6e
         ;   XREF to: 0041cd72 (CONDITIONAL_JUMP)  ; LAB_0041cd72
@@ -100,11 +100,11 @@ section .text
     CMP EDX,EBX                         ; 0041cd8b
     JGE 0x0041cdb2                      ; 0041cd8d
         ;   XREF to: 0041cdb2 (CONDITIONAL_JUMP)  ; LAB_0041cdb2
-    MOV EDX,dword ptr [0x01c00c4c]      ; 0041cd8f | DAT_01c00c4c
+    MOV EDX,dword ptr [0x01c00c4c]      ; 0041cd8f | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [ECX + 0x4]       ; 0041cd95
     IMUL EDX                            ; 0041cd98
     IDIV EBX                            ; 0041cd9a
-    ADD EAX,dword ptr [0x01c00c54]      ; 0041cd9c | DAT_01c00c54
+    ADD EAX,dword ptr [0x01c00c54]      ; 0041cd9c | g_Projection.center_y_fixed
     CMP EAX,EBP                         ; 0041cda2
     JLE 0x0041cda8                      ; 0041cda4
         ;   XREF to: 0041cda8 (CONDITIONAL_JUMP)  ; LAB_0041cda8
@@ -119,8 +119,8 @@ section .text
     CMP EDX,dword ptr [ECX]             ; 0041cdb5
     JG 0x0041cdc7                       ; 0041cdb7
         ;   XREF to: 0041cdc7 (CONDITIONAL_JUMP)  ; LAB_0041cdc7
-    MOV EBX,dword ptr [0x01c00c50]      ; 0041cdb9 | DAT_01c00c50
-    MOV EDI,dword ptr [0x01c00c48]      ; 0041cdbf | DAT_01c00c48
+    MOV EBX,dword ptr [0x01c00c50]      ; 0041cdb9 | g_Projection.center_x_fixed
+    MOV EDI,dword ptr [0x01c00c48]      ; 0041cdbf | g_Projection
     ADD EDI,EBX                         ; 0041cdc5
     MOV EAX,dword ptr [ECX + 0x8]       ; 0041cdc7
         ;   Label: LAB_0041cdc7
@@ -129,8 +129,8 @@ section .text
     CMP EAX,EDX                         ; 0041cdce
     JL 0x0041cde3                       ; 0041cdd0
         ;   XREF to: 0041cde3 (CONDITIONAL_JUMP)  ; LAB_0041cde3
-    MOV EBX,dword ptr [0x01c00c48]      ; 0041cdd2 | DAT_01c00c48
-    MOV EAX,[0x01c00c50]                ; 0041cdd8 | DAT_01c00c50
+    MOV EBX,dword ptr [0x01c00c48]      ; 0041cdd2 | g_Projection
+    MOV EAX,[0x01c00c50]                ; 0041cdd8 | g_Projection.center_x_fixed
     SUB EAX,EBX                         ; 0041cddd
     MOV dword ptr [ESP + 0x20],EAX      ; 0041cddf
     MOV EDX,dword ptr [ECX + 0x8]       ; 0041cde3
@@ -138,8 +138,8 @@ section .text
     CMP EDX,dword ptr [ECX + 0x4]       ; 0041cde6
     JG 0x0041cdfc                       ; 0041cde9
         ;   XREF to: 0041cdfc (CONDITIONAL_JUMP)  ; LAB_0041cdfc
-    MOV EBX,dword ptr [0x01c00c54]      ; 0041cdeb | DAT_01c00c54
-    MOV EAX,[0x01c00c4c]                ; 0041cdf1 | DAT_01c00c4c
+    MOV EBX,dword ptr [0x01c00c54]      ; 0041cdeb | g_Projection.center_y_fixed
+    MOV EAX,[0x01c00c4c]                ; 0041cdf1 | g_Projection.neg_half_height_fixed
     ADD EAX,EBX                         ; 0041cdf6
     MOV dword ptr [ESP + 0x24],EAX      ; 0041cdf8
     MOV EAX,dword ptr [ECX + 0x8]       ; 0041cdfc
@@ -149,8 +149,8 @@ section .text
     CMP EAX,EDX                         ; 0041ce04
     JL 0x0041ce16                       ; 0041ce06
         ;   XREF to: 0041ce16 (CONDITIONAL_JUMP)  ; LAB_0041ce16
-    MOV ECX,dword ptr [0x01c00c4c]      ; 0041ce08 | DAT_01c00c4c
-    MOV EBP,dword ptr [0x01c00c54]      ; 0041ce0e | DAT_01c00c54
+    MOV ECX,dword ptr [0x01c00c4c]      ; 0041ce08 | g_Projection.neg_half_height_fixed
+    MOV EBP,dword ptr [0x01c00c54]      ; 0041ce0e | g_Projection.center_y_fixed
     SUB EBP,ECX                         ; 0041ce14
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0041ce16
         ;   Label: LAB_0041ce16

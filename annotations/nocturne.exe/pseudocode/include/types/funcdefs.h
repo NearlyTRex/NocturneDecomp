@@ -269,6 +269,7 @@
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
+#include "types/funcdefs/MainScanlineFunc.h"
 #include "types/funcdefs/MessageHandlerFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"
 

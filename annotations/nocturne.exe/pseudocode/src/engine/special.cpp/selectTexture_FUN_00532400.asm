@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005b762c
 ;   undefined4 DAT_01c02580
 ;   undefined4 DAT_01c02584
-;   undefined4 DAT_01c02594
+;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d9c
 ;
 ; *****************************************************************************
@@ -23,7 +23,7 @@ section .text
 
     PUSH EBP                            ; 00532400
         ;   Label: engine_special.cpp_selectTexture_FUN_00532400
-    CMP dword ptr [0x01c02594],0x0      ; 00532401 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 00532401 | g_UseExternalRenderer
     JNZ 0x0053240e                      ; 00532408
         ;   XREF to: 0053240e (CONDITIONAL_JUMP)  ; LAB_0053240e
     XOR EAX,EAX                         ; 0053240a

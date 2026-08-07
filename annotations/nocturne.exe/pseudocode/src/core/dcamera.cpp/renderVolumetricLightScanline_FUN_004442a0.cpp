@@ -12,7 +12,7 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_004442a0(int sca
 
 {
   int *piVar1;
-  int iVar2;
+  uint *puVar2;
   bool bVar3;
   byte bVar4;
   SSoftwareEdge *pSVar5;
@@ -31,12 +31,12 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_004442a0(int sca
   int iVar18;
   
   pSVar5 = left;
-  uVar9 = scanline_y - _DAT_01c00c5c;
+  uVar9 = scanline_y - g_ClipTop;
   if (((_DAT_012b0660 != 1) || ((uVar9 & 1) == 0)) && ((_DAT_012b0660 != 2 || ((uVar9 & 3) == 0))))
   {
     iVar17 = (int)uVar9 >> (DAT_012b0660 & 0x1f);
-    iVar15 = ((right->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);
-    iVar18 = ((left->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);
+    iVar15 = ((right->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);
+    iVar18 = ((left->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);
     iVar16 = iVar15;
     if (iVar18 < iVar15) {
       left = right;
@@ -55,11 +55,11 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_004442a0(int sca
     iVar14 = (right->base).red_current;
     iVar13 = (left->base).red_current - iVar14;
     bVar4 = DAT_012b0660 & 0x1f;
-    iVar2 = *(int *)(&DAT_01bd4260 + (iVar17 << (DAT_012b0660 & 0x1f)) * 4);
+    puVar2 = g_ZBufferScanlineArray[iVar17 << (DAT_012b0660 & 0x1f)];
     pbVar7 = &DAT_012ceb78 + iVar16 + iVar17 * 0x140;
     iVar18 = (iVar18 - iVar16) * 4;
     do {
-      if (*(int *)(iVar18 + iVar2 + (iVar16 << bVar4) * 4) < iVar6) {
+      if (*(int *)((int)puVar2 + iVar18 + (iVar16 << bVar4) * 4) < iVar6) {
         piVar1 = (int *)(_DAT_012b0230 + 0x12b0234);
         _DAT_012b0230 = _DAT_012b0230 + 4 & 0x3fc;
         uVar9 = (uint)*pbVar7 * 0x100 + iVar14 + *piVar1 >> 8;

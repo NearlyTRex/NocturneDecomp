@@ -57,19 +57,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 31,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_01bd4260'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
+        "column": 44,
         "line": 31,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 33,
+        "column": 26,
         "line": 32,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
@@ -114,6 +108,12 @@
         "column": 30,
         "line": 57,
         "message": "use of undeclared identifier '_DAT_014b8458'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 73,
+        "line": 57,
+        "message": "use of undeclared identifier '_DAT_014b8458'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 162,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 82,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -188,8 +188,8 @@
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     }
   ],
@@ -361,7 +361,7 @@
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 25,
+          "column": 24,
           "line": 69,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
@@ -383,17 +383,9 @@
     {
       "description": "Undefined global data reference",
       "line": 24,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)(&DAT_01bd4260 + (row << (DAT_012b0660 & 0x1f)) * 4) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)(&DAT_01bd4260 + (row << (DAT_012b0660 & 0x1f)) * 4) +",
+      "text": "puVar13 = g_ZBufferScanlineArray[row << (DAT_012b0660 & 0x1f)] +",
       "type": "undefined_data"
     },
     {
@@ -401,7 +393,7 @@
       "line": 25,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "(x_start << (DAT_012b0660 & 0x1f)) * 4);",
+      "text": "(x_start << (DAT_012b0660 & 0x1f));",
       "type": "undefined_data"
     },
     {
@@ -433,7 +425,7 @@
       "line": 69,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "iVar11 = iVar10 >> 0x1f;",
+      "text": "iVar10 = iVar9 >> 0x1f;",
       "type": "static_shift_too_many_bits"
     }
   ]

@@ -75,45 +75,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 43,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_01c00634'; did you mean 'DAT_02DF0634'?"
+        "column": 16,
+        "line": 175,
+        "message": "use of undeclared identifier '_DAT_01bd1d94'; did you mean 'DAT_005c1d94'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 43,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01c00640'; did you mean 'DAT_02DF0640'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 96,
-        "message": "use of undeclared identifier 'DAT_01c00624'; did you mean 'DAT_02DF0624'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 97,
-        "message": "use of undeclared identifier 'DAT_01c00630'; did you mean 'DAT_02DF0630'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_01c00640'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 95,
-        "message": "use of undeclared identifier 'DAT_01c0063c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 96,
-        "message": "use of undeclared identifier '_DAT_01c00628'"
+        "column": 15,
+        "line": 176,
+        "message": "use of undeclared identifier '_DAT_01bd1d94'; did you mean 'DAT_005c1d94'?"
       }
     ],
     "success": false,
@@ -122,23 +92,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 428,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 183,
-    "suspect_count": 21,
+    "pseudocode_lines": 186,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 647
+    "total_lines": 650
   },
   "cross_references": [
     {
@@ -367,9 +336,9 @@
     },
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "005bac64",
@@ -385,44 +354,44 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01c00624",
-      "name": "DAT_01c00624",
-      "type": "undefined4",
+      "name": "g_RedBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00628",
-      "name": "DAT_01c00628",
-      "type": "undefined4",
+      "name": "g_RedScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00630",
-      "name": "DAT_01c00630",
-      "type": "undefined4",
+      "name": "g_GreenBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00634",
-      "name": "DAT_01c00634",
-      "type": "undefined4",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c0063c",
-      "name": "DAT_01c0063c",
-      "type": "undefined4",
+      "name": "g_BlueBitPosition",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c00640",
-      "name": "DAT_01c00640",
-      "type": "undefined4",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
       "value": null
     },
     {
@@ -608,14 +577,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(ushort *)((int)auStack_330",
@@ -624,72 +585,8 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "(ushort)(local_630[iVar2 + 2] / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "(ushort)(local_630[iVar2] / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "(ushort)(local_30 << (DAT_01c00630 & 0x1f));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)auStack_a30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_a30 + local_20) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_01c00624",
-      "severity": "mild",
-      "text": "(uint)local_630[iVar2] << (DAT_01c00624 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 95,
-      "match": "DAT_01c00630",
-      "severity": "mild",
-      "text": "(uint)local_630[iVar2 + 1] << (DAT_01c00630 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_01c0063c",
-      "severity": "mild",
-      "text": "(uint)local_630[iVar2 + 2] << (DAT_01c0063c & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
       "match": "(uint *)((int)auStack_a30",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_a30 + local_20) =",
@@ -697,50 +594,58 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 101,
+      "match": "(uint *)((int)auStack_a30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
       "match": "(byte *)((int)local_18",
       "severity": "moderate",
       "text": "pbVar5 = (byte *)((int)local_18 +",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 139,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "local_28 = (ushort *)(*(int *)(&DAT_01bd2fa0 + local_24) + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 140,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01bd2fa0 + local_24) + iVar7) = auStack_330[*pbVar5];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "*(uint *)(iVar3 + *(int *)(&DAT_01bd2fa0 + local_24)) = auStack_a30[*pbVar5];",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 136,
+      "line": 138,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "pbVar5 = (byte *)((int)local_18 +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
       "type": "pointer_truncation"
     },
     {

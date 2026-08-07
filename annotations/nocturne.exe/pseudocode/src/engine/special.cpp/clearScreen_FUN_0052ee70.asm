@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005b7624
+;   int g_BitsPerPixel = 0x8
 ;   undefined8 DAT_005bf48c
 ;   undefined4 DAT_005bf494
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c02594
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   int g_UseExternalRenderer
 ;
 ; Called Functions:
 ;   engine_special.cpp_clear_FUN_005329a0
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 0052ee70
         ;   Label: engine_special.cpp_clearScreen_FUN_0052ee70
     PUSH EDI                            ; 0052ee71
-    CMP dword ptr [0x01c02594],0x0      ; 0052ee72 | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0052ee72 | g_UseExternalRenderer
     JZ 0x0052ee83                       ; 0052ee79
         ;   XREF to: 0052ee83 (CONDITIONAL_JUMP)  ; LAB_0052ee83
     CALL engine_special.cpp_clear_FUN_005329a0 ; 0052ee7b
@@ -54,10 +54,10 @@ section .text
     MOV EBX,0x0                         ; 0052ee8c
     MOV EAX,[0x005b761c]                ; 0052ee91 | g_WindowWidth
         ;   Label: LAB_0052ee91
-    IMUL dword ptr [0x005b7624]         ; 0052ee96 | DAT_005b7624
+    IMUL dword ptr [0x005b7624]         ; 0052ee96 | g_BitsPerPixel
     SHR EAX,0x3                         ; 0052ee9c
     MOV ECX,EAX                         ; 0052ee9f
-    MOV EDI,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 0052eea1 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EDI,dword ptr [EBX*0x4 + 0x1bd2fa0] ; 0052eea1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     FLD double ptr [0x005bf48c]         ; 0052eea8 | DAT_005bf48c
     FST double ptr [EDI]                ; 0052eeae
         ;   Label: LAB_0052eeae

@@ -254,10 +254,10 @@ LAB_00443363:
       iVar21 = 0;
       iVar7 = 0;
       do {
-        if (DAT_005b7624 == 0x20) {
-          uVar14 = (uint)*(byte *)(iVar21 + 0xb0dafa) << (DAT_01c0063c & 0x1f) |
-                   (uint)*(byte *)(iVar21 + 0xb0daf9) << (DAT_01c00630 & 0x1f) |
-                   (uint)(byte)(&DAT_00b0daf8)[iVar21] << (DAT_01c00624 & 0x1f);
+        if (g_BitsPerPixel == 0x20) {
+          uVar14 = (uint)*(byte *)(iVar21 + 0xb0dafa) << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                   (uint)*(byte *)(iVar21 + 0xb0daf9) << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                   (uint)(byte)(&DAT_00b0daf8)[iVar21] << (g_RedBitPosition.bytes[0] & 0x1f);
         }
         else {
           uVar14 = (uint)*(byte *)(iVar21 + 0xb0daf9) << 8 |

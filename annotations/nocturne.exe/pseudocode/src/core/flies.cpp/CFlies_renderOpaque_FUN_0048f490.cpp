@@ -61,7 +61,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
       _DAT_01c70714 = 1;
     }
     pCVar2 = g_CDemonRenderer_PTR_005ae704;
-    if (_DAT_01c02594 == 0) {
+    if (g_UseExternalRenderer == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
                 (g_CDemonRenderer_PTR_005ae704,0,0,0);
       uVar5 = _DAT_01c038f4 >> 8;
@@ -112,7 +112,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
         if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
           iVar6 = (vertices->projected_vertex).screen_y >> 0x10;
           iVar4 = (vertices->projected_vertex).screen_x >> 0x10;
-          if (_DAT_01c02594 == 0) {
+          if (g_UseExternalRenderer == 0) {
             engine_prim_c_replaceWWithDepth_FUN_004f99d0(vertices,1);
             if ((((-1 < iVar4) && (iVar4 < g_WindowWidth)) && (-1 < iVar6)) &&
                (iVar6 < g_WindowHeight)) {

@@ -10,11 +10,11 @@
 ; int              Stack[0x10]:4   y_offset
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004015a0
@@ -32,7 +32,7 @@ section .text
     MOV EDX,0xfb                        ; 0042ef67
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0042ef6c
     XOR EDI,EDI                         ; 0042ef70
-    MOV dword ptr [0x01c00c70],EDX      ; 0042ef72 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 0042ef72 | g_ActiveRenderColor
     TEST ECX,ECX                        ; 0042ef78
     JLE 0x0042f03d                      ; 0042ef7a
         ;   XREF to: 0042f03d (CONDITIONAL_JUMP)  ; LAB_0042f03d
@@ -41,13 +41,13 @@ section .text
         ;   Label: LAB_0042ef84
     MOV EBP,dword ptr [ESP + 0x20]      ; 0042ef87
     MOVSX ECX,AX                        ; 0042ef8b
-    MOV EAX,[0x01c00c58]                ; 0042ef8e | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 0042ef8e | g_ClipLeft
     ADD ECX,EBP                         ; 0042ef93
     CMP ECX,EAX                         ; 0042ef95
     JGE 0x0042ef9b                      ; 0042ef97
         ;   XREF to: 0042ef9b (CONDITIONAL_JUMP)  ; LAB_0042ef9b
     MOV ECX,EAX                         ; 0042ef99
-    MOV EDX,dword ptr [0x01c00c60]      ; 0042ef9b | DAT_01c00c60
+    MOV EDX,dword ptr [0x01c00c60]      ; 0042ef9b | g_ClipRight
         ;   Label: LAB_0042ef9b
     CMP ECX,EDX                         ; 0042efa1
     JL 0x0042efa7                       ; 0042efa3
@@ -57,13 +57,13 @@ section .text
         ;   Label: LAB_0042efa7
     MOV ESI,dword ptr [ESP + 0x24]      ; 0042efab
     MOVSX EDX,AX                        ; 0042efaf
-    MOV EBP,dword ptr [0x01c00c5c]      ; 0042efb2 | DAT_01c00c5c
+    MOV EBP,dword ptr [0x01c00c5c]      ; 0042efb2 | g_ClipTop
     ADD EDX,ESI                         ; 0042efb8
     CMP EDX,EBP                         ; 0042efba
     JGE 0x0042efc0                      ; 0042efbc
         ;   XREF to: 0042efc0 (CONDITIONAL_JUMP)  ; LAB_0042efc0
     MOV EDX,EBP                         ; 0042efbe
-    MOV EAX,[0x01c00c64]                ; 0042efc0 | DAT_01c00c64
+    MOV EAX,[0x01c00c64]                ; 0042efc0 | g_ClipBottom
         ;   Label: LAB_0042efc0
     CMP EDX,EAX                         ; 0042efc5
     JL 0x0042efcb                       ; 0042efc7
@@ -73,13 +73,13 @@ section .text
         ;   Label: LAB_0042efcb
     MOV EBP,dword ptr [ESP + 0x20]      ; 0042efcf
     MOVSX ESI,AX                        ; 0042efd3
-    MOV EAX,[0x01c00c58]                ; 0042efd6 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 0042efd6 | g_ClipLeft
     ADD ESI,EBP                         ; 0042efdb
     CMP ESI,EAX                         ; 0042efdd
     JGE 0x0042efe3                      ; 0042efdf
         ;   XREF to: 0042efe3 (CONDITIONAL_JUMP)  ; LAB_0042efe3
     MOV ESI,EAX                         ; 0042efe1
-    MOV EBP,dword ptr [0x01c00c60]      ; 0042efe3 | DAT_01c00c60
+    MOV EBP,dword ptr [0x01c00c60]      ; 0042efe3 | g_ClipRight
         ;   Label: LAB_0042efe3
     CMP ESI,EBP                         ; 0042efe9
     JL 0x0042efef                       ; 0042efeb
@@ -94,12 +94,12 @@ section .text
     MOV EBP,dword ptr [ESP + 0x24]      ; 0042f000
     SAR EAX,0x10                        ; 0042f004
     ADD EAX,EBP                         ; 0042f007
-    MOV EBP,dword ptr [0x01c00c5c]      ; 0042f009 | DAT_01c00c5c
+    MOV EBP,dword ptr [0x01c00c5c]      ; 0042f009 | g_ClipTop
     CMP EAX,EBP                         ; 0042f00f
     JGE 0x0042f015                      ; 0042f011
         ;   XREF to: 0042f015 (CONDITIONAL_JUMP)  ; LAB_0042f015
     MOV EAX,EBP                         ; 0042f013
-    MOV EBP,dword ptr [0x01c00c64]      ; 0042f015 | DAT_01c00c64
+    MOV EBP,dword ptr [0x01c00c64]      ; 0042f015 | g_ClipBottom
         ;   Label: LAB_0042f015
     CMP EAX,EBP                         ; 0042f01b
     JL 0x0042f021                       ; 0042f01d

@@ -56,12 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
         "category": "format_error",
         "column": 28,
         "line": 53,
@@ -72,12 +66,6 @@
         "column": 25,
         "line": 160,
         "message": "invalid operands to binary expression ('float' and 'int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 188,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       },
       {
         "category": "format_error",
@@ -98,13 +86,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 351,
+    "complexity_score": 331,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 231,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy",
@@ -389,8 +377,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -817,26 +805,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while ((((cVar5 != '\\0' && (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 103,
       "match": "DAT_005bef20",
       "severity": "mild",
       "text": "puVar8 = &DAT_005bef20;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 181,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(*local_14 + 1)] & 2) == 0) {",
       "type": "undefined_data"
     },
     {

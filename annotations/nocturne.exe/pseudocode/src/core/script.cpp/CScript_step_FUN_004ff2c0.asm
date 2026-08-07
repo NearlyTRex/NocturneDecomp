@@ -350,7 +350,7 @@ section .text
         ;   Label: LAB_004ff3fa
     INC DL                              ; 004ff3fc
     AND EDX,0xff                        ; 004ff3fe
-    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 004ff404 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 004ff404 | g_CharacterClassificationTable
     JZ 0x004ff455                       ; 004ff40b
         ;   XREF to: 004ff455 (CONDITIONAL_JUMP)  ; LAB_004ff455
     MOV DL,byte ptr [EAX + 0x1]         ; 004ff40d
@@ -446,7 +446,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff4f3
     INC AL                              ; 004ff4f6
     AND EAX,0xff                        ; 004ff4f8
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff4fd | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff4fd | g_CharacterClassificationTable
     JZ 0x005005cb                       ; 004ff504
         ;   XREF to: 005005cb (CONDITIONAL_JUMP)  ; LAB_005005cb
     PUSH 0xe                            ; 004ff50a
@@ -462,7 +462,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xe]         ; 004ff51e
     INC AL                              ; 004ff521
     AND EAX,0xff                        ; 004ff523
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff528 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff528 | g_CharacterClassificationTable
     JZ 0x005005ee                       ; 004ff52f
         ;   XREF to: 005005ee (CONDITIONAL_JUMP)  ; LAB_005005ee
     CMP dword ptr [0x01e56418],0x2      ; 004ff535 | DAT_01e56418
@@ -481,7 +481,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x12]        ; 004ff556
     INC AL                              ; 004ff559
     AND EAX,0xff                        ; 004ff55b
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff560 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff560 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff567
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xf                            ; 004ff56d
@@ -497,7 +497,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 004ff581
     INC AL                              ; 004ff584
     AND EAX,0xff                        ; 004ff586
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff58b | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff58b | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff592
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xb                            ; 004ff598
@@ -513,7 +513,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 004ff5ac
     INC AL                              ; 004ff5af
     AND EAX,0xff                        ; 004ff5b1
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff5b6 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff5b6 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff5bd
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xd                            ; 004ff5c3
@@ -529,7 +529,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff5d7
     INC AL                              ; 004ff5da
     AND EAX,0xff                        ; 004ff5dc
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff5e1 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff5e1 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff5e8
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xd                            ; 004ff5ee
@@ -545,7 +545,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff602
     INC AL                              ; 004ff605
     AND EAX,0xff                        ; 004ff607
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff60c | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff60c | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff613
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xa                            ; 004ff619
@@ -561,7 +561,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ff62d
     INC AL                              ; 004ff630
     AND EAX,0xff                        ; 004ff632
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff637 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff637 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff63e
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x7                            ; 004ff644
@@ -577,7 +577,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ff658
     INC AL                              ; 004ff65b
     AND EAX,0xff                        ; 004ff65d
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff662 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff662 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff669
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x10                           ; 004ff66f
@@ -593,7 +593,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x10]        ; 004ff683
     INC AL                              ; 004ff686
     AND EAX,0xff                        ; 004ff688
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff68d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff68d | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff694
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x6                            ; 004ff69a
@@ -609,7 +609,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 004ff6ae
     INC AL                              ; 004ff6b1
     AND EAX,0xff                        ; 004ff6b3
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff6b8 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff6b8 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff6bf
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x7                            ; 004ff6c5
@@ -625,7 +625,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ff6d9
     INC AL                              ; 004ff6dc
     AND EAX,0xff                        ; 004ff6de
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff6e3 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff6e3 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff6ea
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xa                            ; 004ff6f0
@@ -641,7 +641,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ff704
     INC AL                              ; 004ff707
     AND EAX,0xff                        ; 004ff709
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff70e | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff70e | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff715
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xb                            ; 004ff71b
@@ -657,7 +657,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 004ff72f
     INC AL                              ; 004ff732
     AND EAX,0xff                        ; 004ff734
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff739 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff739 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff740
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xd                            ; 004ff746
@@ -673,7 +673,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff75a
     INC AL                              ; 004ff75d
     AND EAX,0xff                        ; 004ff75f
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff764 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff764 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff76b
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x8                            ; 004ff771
@@ -689,7 +689,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x8]         ; 004ff785
     INC AL                              ; 004ff788
     AND EAX,0xff                        ; 004ff78a
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff78f | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff78f | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff796
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x7                            ; 004ff79c
@@ -705,7 +705,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ff7b0
     INC AL                              ; 004ff7b3
     AND EAX,0xff                        ; 004ff7b5
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff7ba | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff7ba | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff7c1
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x9                            ; 004ff7c7
@@ -721,7 +721,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 004ff7db
     INC AL                              ; 004ff7de
     AND EAX,0xff                        ; 004ff7e0
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff7e5 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff7e5 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff7ec
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x7                            ; 004ff7f2
@@ -737,7 +737,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ff806
     INC AL                              ; 004ff809
     AND EAX,0xff                        ; 004ff80b
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff810 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff810 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff817
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x10                           ; 004ff81d
@@ -753,7 +753,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x10]        ; 004ff831
     INC AL                              ; 004ff834
     AND EAX,0xff                        ; 004ff836
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff83b | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff83b | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff842
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xa                            ; 004ff848
@@ -769,7 +769,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ff85c
     INC AL                              ; 004ff85f
     AND EAX,0xff                        ; 004ff861
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff866 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff866 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff86d
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xf                            ; 004ff873
@@ -785,7 +785,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 004ff887
     INC AL                              ; 004ff88a
     AND EAX,0xff                        ; 004ff88c
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff891 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff891 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff898
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x13                           ; 004ff89e
@@ -801,7 +801,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x13]        ; 004ff8b2
     INC AL                              ; 004ff8b5
     AND EAX,0xff                        ; 004ff8b7
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff8bc | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff8bc | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff8c3
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xd                            ; 004ff8c9
@@ -817,7 +817,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff8dd
     INC AL                              ; 004ff8e0
     AND EAX,0xff                        ; 004ff8e2
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff8e7 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff8e7 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff8ee
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xd                            ; 004ff8f4
@@ -833,7 +833,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004ff908
     INC AL                              ; 004ff90b
     AND EAX,0xff                        ; 004ff90d
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff912 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff912 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff919
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x8                            ; 004ff91f
@@ -849,7 +849,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x8]         ; 004ff933
     INC AL                              ; 004ff936
     AND EAX,0xff                        ; 004ff938
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff93d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff93d | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff944
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xa                            ; 004ff94a
@@ -865,7 +865,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ff95e
     INC AL                              ; 004ff961
     AND EAX,0xff                        ; 004ff963
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff968 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff968 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff96f
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0xb                            ; 004ff975
@@ -881,7 +881,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 004ff989
     INC AL                              ; 004ff98c
     AND EAX,0xff                        ; 004ff98e
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff993 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff993 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff99a
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x11                           ; 004ff9a0
@@ -897,7 +897,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x11]        ; 004ff9b4
     INC AL                              ; 004ff9b7
     AND EAX,0xff                        ; 004ff9b9
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff9be | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff9be | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff9c5
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x6                            ; 004ff9cb
@@ -913,7 +913,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 004ff9df
     INC AL                              ; 004ff9e2
     AND EAX,0xff                        ; 004ff9e4
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff9e9 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ff9e9 | g_CharacterClassificationTable
     JZ 0x00500611                       ; 004ff9f0
         ;   XREF to: 00500611 (CONDITIONAL_JUMP)  ; LAB_00500611
     PUSH 0x12                           ; 004ff9f6
@@ -929,7 +929,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x12]        ; 004ffa0a
     INC AL                              ; 004ffa0d
     AND EAX,0xff                        ; 004ffa0f
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa14 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa14 | g_CharacterClassificationTable
     JZ 0x00500673                       ; 004ffa1b
         ;   XREF to: 00500673 (CONDITIONAL_JUMP)  ; LAB_00500673
     PUSH 0xe                            ; 004ffa21
@@ -945,7 +945,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xe]         ; 004ffa35
     INC AL                              ; 004ffa38
     AND EAX,0xff                        ; 004ffa3a
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa3f | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa3f | g_CharacterClassificationTable
     JZ 0x00500795                       ; 004ffa46
         ;   XREF to: 00500795 (CONDITIONAL_JUMP)  ; LAB_00500795
     PUSH 0x10                           ; 004ffa4c
@@ -961,7 +961,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x10]        ; 004ffa60
     INC AL                              ; 004ffa63
     AND EAX,0xff                        ; 004ffa65
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa6a | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa6a | g_CharacterClassificationTable
     JZ 0x005008d0                       ; 004ffa71
         ;   XREF to: 005008d0 (CONDITIONAL_JUMP)  ; LAB_005008d0
     PUSH 0x11                           ; 004ffa77
@@ -977,7 +977,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x11]        ; 004ffa8b
     INC AL                              ; 004ffa8e
     AND EAX,0xff                        ; 004ffa90
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa95 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffa95 | g_CharacterClassificationTable
     JZ 0x00500938                       ; 004ffa9c
         ;   XREF to: 00500938 (CONDITIONAL_JUMP)  ; LAB_00500938
     PUSH 0xf                            ; 004ffaa2
@@ -993,7 +993,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 004ffab6
     INC AL                              ; 004ffab9
     AND EAX,0xff                        ; 004ffabb
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffac0 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffac0 | g_CharacterClassificationTable
     JZ 0x005009ae                       ; 004ffac7
         ;   XREF to: 005009ae (CONDITIONAL_JUMP)  ; LAB_005009ae
     PUSH 0x15                           ; 004ffacd
@@ -1009,7 +1009,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x15]        ; 004ffae1
     INC AL                              ; 004ffae4
     AND EAX,0xff                        ; 004ffae6
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffaeb | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffaeb | g_CharacterClassificationTable
     JZ 0x00500a16                       ; 004ffaf2
         ;   XREF to: 00500a16 (CONDITIONAL_JUMP)  ; LAB_00500a16
     PUSH 0xb                            ; 004ffaf8
@@ -1025,7 +1025,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 004ffb0c
     INC AL                              ; 004ffb0f
     AND EAX,0xff                        ; 004ffb11
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb16 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb16 | g_CharacterClassificationTable
     JZ 0x00500b2f                       ; 004ffb1d
         ;   XREF to: 00500b2f (CONDITIONAL_JUMP)  ; LAB_00500b2f
     PUSH 0xc                            ; 004ffb23
@@ -1041,7 +1041,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 004ffb37
     INC AL                              ; 004ffb3a
     AND EAX,0xff                        ; 004ffb3c
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb41 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb41 | g_CharacterClassificationTable
     JZ 0x00500b63                       ; 004ffb48
         ;   XREF to: 00500b63 (CONDITIONAL_JUMP)  ; LAB_00500b63
     PUSH 0xa                            ; 004ffb4e
@@ -1057,7 +1057,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ffb62
     INC AL                              ; 004ffb65
     AND EAX,0xff                        ; 004ffb67
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb6c | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb6c | g_CharacterClassificationTable
     JZ 0x00500b98                       ; 004ffb73
         ;   XREF to: 00500b98 (CONDITIONAL_JUMP)  ; LAB_00500b98
     PUSH 0x10                           ; 004ffb79
@@ -1073,7 +1073,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x10]        ; 004ffb8d
     INC AL                              ; 004ffb90
     AND EAX,0xff                        ; 004ffb92
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb97 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffb97 | g_CharacterClassificationTable
     JZ 0x00500bfe                       ; 004ffb9e
         ;   XREF to: 00500bfe (CONDITIONAL_JUMP)  ; LAB_00500bfe
     PUSH 0xc                            ; 004ffba4
@@ -1089,7 +1089,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 004ffbb8
     INC AL                              ; 004ffbbb
     AND EAX,0xff                        ; 004ffbbd
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffbc2 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffbc2 | g_CharacterClassificationTable
     JZ 0x00500c33                       ; 004ffbc9
         ;   XREF to: 00500c33 (CONDITIONAL_JUMP)  ; LAB_00500c33
     PUSH 0xe                            ; 004ffbcf
@@ -1105,7 +1105,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xe]         ; 004ffbe3
     INC AL                              ; 004ffbe6
     AND EAX,0xff                        ; 004ffbe8
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffbed | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffbed | g_CharacterClassificationTable
     JZ 0x00500d5a                       ; 004ffbf4
         ;   XREF to: 00500d5a (CONDITIONAL_JUMP)  ; LAB_00500d5a
     PUSH 0x12                           ; 004ffbfa
@@ -1121,7 +1121,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x12]        ; 004ffc0e
     INC AL                              ; 004ffc11
     AND EAX,0xff                        ; 004ffc13
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc18 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc18 | g_CharacterClassificationTable
     JZ 0x00500dfa                       ; 004ffc1f
         ;   XREF to: 00500dfa (CONDITIONAL_JUMP)  ; LAB_00500dfa
     PUSH 0x5                            ; 004ffc25
@@ -1137,7 +1137,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x5]         ; 004ffc39
     INC AL                              ; 004ffc3c
     AND EAX,0xff                        ; 004ffc3e
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc43 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc43 | g_CharacterClassificationTable
     JZ 0x00500e97                       ; 004ffc4a
         ;   XREF to: 00500e97 (CONDITIONAL_JUMP)  ; LAB_00500e97
     PUSH 0xa                            ; 004ffc50
@@ -1153,7 +1153,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 004ffc64
     INC AL                              ; 004ffc67
     AND EAX,0xff                        ; 004ffc69
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc6e | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc6e | g_CharacterClassificationTable
     JZ 0x00501063                       ; 004ffc75
         ;   XREF to: 00501063 (CONDITIONAL_JUMP)  ; LAB_00501063
     PUSH 0x5                            ; 004ffc7b
@@ -1169,7 +1169,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x5]         ; 004ffc8f
     INC AL                              ; 004ffc92
     AND EAX,0xff                        ; 004ffc94
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc99 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffc99 | g_CharacterClassificationTable
     JZ 0x005011e1                       ; 004ffca0
         ;   XREF to: 005011e1 (CONDITIONAL_JUMP)  ; LAB_005011e1
     PUSH 0x9                            ; 004ffca6
@@ -1185,7 +1185,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 004ffcba
     INC AL                              ; 004ffcbd
     AND EAX,0xff                        ; 004ffcbf
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffcc4 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffcc4 | g_CharacterClassificationTable
     JZ 0x0050124f                       ; 004ffccb
         ;   XREF to: 0050124f (CONDITIONAL_JUMP)  ; LAB_0050124f
     PUSH 0x7                            ; 004ffcd1
@@ -1201,7 +1201,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ffce5
     INC AL                              ; 004ffce8
     AND EAX,0xff                        ; 004ffcea
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffcef | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffcef | g_CharacterClassificationTable
     JZ 0x00501569                       ; 004ffcf6
         ;   XREF to: 00501569 (CONDITIONAL_JUMP)  ; LAB_00501569
     PUSH 0x4                            ; 004ffcfc
@@ -1217,7 +1217,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x4]         ; 004ffd10
     INC AL                              ; 004ffd13
     AND EAX,0xff                        ; 004ffd15
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd1a | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd1a | g_CharacterClassificationTable
     JZ 0x005015b5                       ; 004ffd21
         ;   XREF to: 005015b5 (CONDITIONAL_JUMP)  ; LAB_005015b5
     PUSH 0xc                            ; 004ffd27
@@ -1233,7 +1233,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 004ffd3b
     INC AL                              ; 004ffd3e
     AND EAX,0xff                        ; 004ffd40
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd45 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd45 | g_CharacterClassificationTable
     JZ 0x00501602                       ; 004ffd4c
         ;   XREF to: 00501602 (CONDITIONAL_JUMP)  ; LAB_00501602
     PUSH 0x11                           ; 004ffd52
@@ -1249,7 +1249,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x11]        ; 004ffd66
     INC AL                              ; 004ffd69
     AND EAX,0xff                        ; 004ffd6b
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd70 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd70 | g_CharacterClassificationTable
     JZ 0x00501751                       ; 004ffd77
         ;   XREF to: 00501751 (CONDITIONAL_JUMP)  ; LAB_00501751
     PUSH 0xf                            ; 004ffd7d
@@ -1265,7 +1265,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 004ffd91
     INC AL                              ; 004ffd94
     AND EAX,0xff                        ; 004ffd96
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd9b | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffd9b | g_CharacterClassificationTable
     JZ 0x0050185b                       ; 004ffda2
         ;   XREF to: 0050185b (CONDITIONAL_JUMP)  ; LAB_0050185b
     PUSH 0x3                            ; 004ffda8
@@ -1281,7 +1281,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x3]         ; 004ffdbc
     INC AL                              ; 004ffdbf
     AND EAX,0xff                        ; 004ffdc1
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffdc6 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffdc6 | g_CharacterClassificationTable
     JZ 0x005019b6                       ; 004ffdcd
         ;   XREF to: 005019b6 (CONDITIONAL_JUMP)  ; LAB_005019b6
     PUSH 0x6                            ; 004ffdd3
@@ -1297,7 +1297,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 004ffde7
     INC AL                              ; 004ffdea
     AND EAX,0xff                        ; 004ffdec
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffdf1 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffdf1 | g_CharacterClassificationTable
     JZ 0x005019e9                       ; 004ffdf8
         ;   XREF to: 005019e9 (CONDITIONAL_JUMP)  ; LAB_005019e9
     PUSH 0x7                            ; 004ffdfe
@@ -1313,7 +1313,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ffe12
     INC AL                              ; 004ffe15
     AND EAX,0xff                        ; 004ffe17
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe1c | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe1c | g_CharacterClassificationTable
     JZ 0x00501a6e                       ; 004ffe23
         ;   XREF to: 00501a6e (CONDITIONAL_JUMP)  ; LAB_00501a6e
     PUSH 0x7                            ; 004ffe29
@@ -1329,7 +1329,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 004ffe3d
     INC AL                              ; 004ffe40
     AND EAX,0xff                        ; 004ffe42
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe47 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe47 | g_CharacterClassificationTable
     JZ 0x00501ae3                       ; 004ffe4e
         ;   XREF to: 00501ae3 (CONDITIONAL_JUMP)  ; LAB_00501ae3
     PUSH 0x9                            ; 004ffe54
@@ -1345,7 +1345,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 004ffe68
     INC AL                              ; 004ffe6b
     AND EAX,0xff                        ; 004ffe6d
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe72 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe72 | g_CharacterClassificationTable
     JZ 0x00501c35                       ; 004ffe79
         ;   XREF to: 00501c35 (CONDITIONAL_JUMP)  ; LAB_00501c35
     PUSH 0xf                            ; 004ffe7f
@@ -1361,7 +1361,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 004ffe93
     INC AL                              ; 004ffe96
     AND EAX,0xff                        ; 004ffe98
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe9d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffe9d | g_CharacterClassificationTable
     JZ 0x00501d56                       ; 004ffea4
         ;   XREF to: 00501d56 (CONDITIONAL_JUMP)  ; LAB_00501d56
     PUSH 0x5                            ; 004ffeaa
@@ -1377,7 +1377,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x5]         ; 004ffebe
     INC AL                              ; 004ffec1
     AND EAX,0xff                        ; 004ffec3
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffec8 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffec8 | g_CharacterClassificationTable
     JZ 0x00501e67                       ; 004ffecf
         ;   XREF to: 00501e67 (CONDITIONAL_JUMP)  ; LAB_00501e67
     PUSH 0x4                            ; 004ffed5
@@ -1393,7 +1393,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x4]         ; 004ffee9
     INC AL                              ; 004ffeec
     AND EAX,0xff                        ; 004ffeee
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffef3 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffef3 | g_CharacterClassificationTable
     JZ 0x00501f18                       ; 004ffefa
         ;   XREF to: 00501f18 (CONDITIONAL_JUMP)  ; LAB_00501f18
     PUSH 0x4                            ; 004fff00
@@ -1409,7 +1409,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x4]         ; 004fff14
     INC AL                              ; 004fff17
     AND EAX,0xff                        ; 004fff19
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff1e | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff1e | g_CharacterClassificationTable
     JZ 0x00501f7f                       ; 004fff25
         ;   XREF to: 00501f7f (CONDITIONAL_JUMP)  ; LAB_00501f7f
     PUSH 0xd                            ; 004fff2b
@@ -1425,7 +1425,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 004fff3f
     INC AL                              ; 004fff42
     AND EAX,0xff                        ; 004fff44
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff49 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff49 | g_CharacterClassificationTable
     JZ 0x00501ffc                       ; 004fff50
         ;   XREF to: 00501ffc (CONDITIONAL_JUMP)  ; LAB_00501ffc
     PUSH 0x4                            ; 004fff56
@@ -1441,7 +1441,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x4]         ; 004fff6a
     INC AL                              ; 004fff6d
     AND EAX,0xff                        ; 004fff6f
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff74 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff74 | g_CharacterClassificationTable
     JZ 0x0050222e                       ; 004fff7b
         ;   XREF to: 0050222e (CONDITIONAL_JUMP)  ; LAB_0050222e
     PUSH 0x2                            ; 004fff81
@@ -1457,7 +1457,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x2]         ; 004fff95
     INC AL                              ; 004fff98
     AND EAX,0xff                        ; 004fff9a
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff9f | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fff9f | g_CharacterClassificationTable
     JZ 0x00502259                       ; 004fffa6
         ;   XREF to: 00502259 (CONDITIONAL_JUMP)  ; LAB_00502259
     PUSH 0xb                            ; 004fffac
@@ -1473,7 +1473,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 004fffc0
     INC AL                              ; 004fffc3
     AND EAX,0xff                        ; 004fffc5
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fffca | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004fffca | g_CharacterClassificationTable
     JZ 0x00502312                       ; 004fffd1
         ;   XREF to: 00502312 (CONDITIONAL_JUMP)  ; LAB_00502312
     PUSH 0x9                            ; 004fffd7
@@ -1489,7 +1489,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 004fffeb
     INC AL                              ; 004fffee
     AND EAX,0xff                        ; 004ffff0
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffff5 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 004ffff5 | g_CharacterClassificationTable
     JZ 0x005023a9                       ; 004ffffc
         ;   XREF to: 005023a9 (CONDITIONAL_JUMP)  ; LAB_005023a9
     PUSH 0xe                            ; 00500002
@@ -1505,7 +1505,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xe]         ; 00500016
     INC AL                              ; 00500019
     AND EAX,0xff                        ; 0050001b
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500020 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500020 | g_CharacterClassificationTable
     JZ 0x0050254c                       ; 00500027
         ;   XREF to: 0050254c (CONDITIONAL_JUMP)  ; LAB_0050254c
     PUSH 0x6                            ; 0050002d
@@ -1521,7 +1521,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 00500041
     INC AL                              ; 00500044
     AND EAX,0xff                        ; 00500046
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050004b | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050004b | g_CharacterClassificationTable
     JZ 0x005025ab                       ; 00500052
         ;   XREF to: 005025ab (CONDITIONAL_JUMP)  ; LAB_005025ab
     PUSH 0xc                            ; 00500058
@@ -1537,7 +1537,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 0050006c
     INC AL                              ; 0050006f
     AND EAX,0xff                        ; 00500071
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500076 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500076 | g_CharacterClassificationTable
     JZ 0x0050275c                       ; 0050007d
         ;   XREF to: 0050275c (CONDITIONAL_JUMP)  ; LAB_0050275c
     PUSH 0x8                            ; 00500083
@@ -1553,7 +1553,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x8]         ; 00500097
     INC AL                              ; 0050009a
     AND EAX,0xff                        ; 0050009c
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000a1 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000a1 | g_CharacterClassificationTable
     JZ 0x0050289a                       ; 005000a8
         ;   XREF to: 0050289a (CONDITIONAL_JUMP)  ; LAB_0050289a
     PUSH 0xb                            ; 005000ae
@@ -1569,7 +1569,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 005000c2
     INC AL                              ; 005000c5
     AND EAX,0xff                        ; 005000c7
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000cc | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000cc | g_CharacterClassificationTable
     JZ 0x005029ff                       ; 005000d3
         ;   XREF to: 005029ff (CONDITIONAL_JUMP)  ; LAB_005029ff
     PUSH 0x5                            ; 005000d9
@@ -1585,7 +1585,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x5]         ; 005000ed
     INC AL                              ; 005000f0
     AND EAX,0xff                        ; 005000f2
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000f7 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005000f7 | g_CharacterClassificationTable
     JZ 0x00502b3c                       ; 005000fe
         ;   XREF to: 00502b3c (CONDITIONAL_JUMP)  ; LAB_00502b3c
     PUSH 0xd                            ; 00500104
@@ -1601,7 +1601,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 00500118
     INC AL                              ; 0050011b
     AND EAX,0xff                        ; 0050011d
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500122 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500122 | g_CharacterClassificationTable
     JZ 0x00502bef                       ; 00500129
         ;   XREF to: 00502bef (CONDITIONAL_JUMP)  ; LAB_00502bef
     PUSH 0x1b                           ; 0050012f
@@ -1617,7 +1617,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x1b]        ; 00500143
     INC AL                              ; 00500146
     AND EAX,0xff                        ; 00500148
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050014d | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050014d | g_CharacterClassificationTable
     JZ 0x00502d2b                       ; 00500154
         ;   XREF to: 00502d2b (CONDITIONAL_JUMP)  ; LAB_00502d2b
     PUSH 0x17                           ; 0050015a
@@ -1633,7 +1633,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x17]        ; 0050016e
     INC AL                              ; 00500171
     AND EAX,0xff                        ; 00500173
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500178 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500178 | g_CharacterClassificationTable
     JZ 0x00502dfd                       ; 0050017f
         ;   XREF to: 00502dfd (CONDITIONAL_JUMP)  ; LAB_00502dfd
     PUSH 0xa                            ; 00500185
@@ -1649,7 +1649,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 00500199
     INC AL                              ; 0050019c
     AND EAX,0xff                        ; 0050019e
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001a3 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001a3 | g_CharacterClassificationTable
     JZ 0x00502f17                       ; 005001aa
         ;   XREF to: 00502f17 (CONDITIONAL_JUMP)  ; LAB_00502f17
     PUSH 0x6                            ; 005001b0
@@ -1665,7 +1665,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 005001c4
     INC AL                              ; 005001c7
     AND EAX,0xff                        ; 005001c9
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001ce | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001ce | g_CharacterClassificationTable
     JZ 0x00502fd7                       ; 005001d5
         ;   XREF to: 00502fd7 (CONDITIONAL_JUMP)  ; LAB_00502fd7
     PUSH 0xb                            ; 005001db
@@ -1681,7 +1681,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 005001ef
     INC AL                              ; 005001f2
     AND EAX,0xff                        ; 005001f4
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001f9 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005001f9 | g_CharacterClassificationTable
     JZ 0x0050303b                       ; 00500200
         ;   XREF to: 0050303b (CONDITIONAL_JUMP)  ; LAB_0050303b
     PUSH 0x3                            ; 00500206
@@ -1697,7 +1697,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x3]         ; 0050021a
     INC AL                              ; 0050021d
     AND EAX,0xff                        ; 0050021f
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500224 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500224 | g_CharacterClassificationTable
     JZ 0x005030d2                       ; 0050022b
         ;   XREF to: 005030d2 (CONDITIONAL_JUMP)  ; LAB_005030d2
     PUSH 0xc                            ; 00500231
@@ -1713,7 +1713,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 00500245
     INC AL                              ; 00500248
     AND EAX,0xff                        ; 0050024a
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050024f | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050024f | g_CharacterClassificationTable
     JZ 0x00503245                       ; 00500256
         ;   XREF to: 00503245 (CONDITIONAL_JUMP)  ; LAB_00503245
     PUSH 0x10                           ; 0050025c
@@ -1729,7 +1729,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x10]        ; 00500270
     INC AL                              ; 00500273
     AND EAX,0xff                        ; 00500275
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050027a | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050027a | g_CharacterClassificationTable
     JZ 0x005033df                       ; 00500281
         ;   XREF to: 005033df (CONDITIONAL_JUMP)  ; LAB_005033df
     PUSH 0xf                            ; 00500287
@@ -1745,7 +1745,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xf]         ; 0050029b
     INC AL                              ; 0050029e
     AND EAX,0xff                        ; 005002a0
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002a5 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002a5 | g_CharacterClassificationTable
     JZ 0x005034ec                       ; 005002ac
         ;   XREF to: 005034ec (CONDITIONAL_JUMP)  ; LAB_005034ec
     PUSH 0xe                            ; 005002b2
@@ -1761,7 +1761,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xe]         ; 005002c6
     INC AL                              ; 005002c9
     AND EAX,0xff                        ; 005002cb
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002d0 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002d0 | g_CharacterClassificationTable
     JZ 0x0050354a                       ; 005002d7
         ;   XREF to: 0050354a (CONDITIONAL_JUMP)  ; LAB_0050354a
     PUSH 0x12                           ; 005002dd
@@ -1777,7 +1777,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x12]        ; 005002f1
     INC AL                              ; 005002f4
     AND EAX,0xff                        ; 005002f6
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002fb | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005002fb | g_CharacterClassificationTable
     JZ 0x00503643                       ; 00500302
         ;   XREF to: 00503643 (CONDITIONAL_JUMP)  ; LAB_00503643
     PUSH 0xd                            ; 00500308
@@ -1793,7 +1793,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 0050031c
     INC AL                              ; 0050031f
     AND EAX,0xff                        ; 00500321
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500326 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500326 | g_CharacterClassificationTable
     JZ 0x00503722                       ; 0050032d
         ;   XREF to: 00503722 (CONDITIONAL_JUMP)  ; LAB_00503722
     PUSH 0xb                            ; 00500333
@@ -1809,7 +1809,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xb]         ; 00500347
     INC AL                              ; 0050034a
     AND EAX,0xff                        ; 0050034c
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500351 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500351 | g_CharacterClassificationTable
     JZ 0x005037c2                       ; 00500358
         ;   XREF to: 005037c2 (CONDITIONAL_JUMP)  ; LAB_005037c2
     PUSH 0x9                            ; 0050035e
@@ -1825,7 +1825,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 00500372
     INC AL                              ; 00500375
     AND EAX,0xff                        ; 00500377
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050037c | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050037c | g_CharacterClassificationTable
     JZ 0x0050396a                       ; 00500383
         ;   XREF to: 0050396a (CONDITIONAL_JUMP)  ; LAB_0050396a
     PUSH 0x12                           ; 00500389
@@ -1841,7 +1841,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x12]        ; 0050039d
     INC AL                              ; 005003a0
     AND EAX,0xff                        ; 005003a2
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003a7 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003a7 | g_CharacterClassificationTable
     JZ 0x00503a39                       ; 005003ae
         ;   XREF to: 00503a39 (CONDITIONAL_JUMP)  ; LAB_00503a39
     PUSH 0xc                            ; 005003b4
@@ -1857,7 +1857,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 005003c8
     INC AL                              ; 005003cb
     AND EAX,0xff                        ; 005003cd
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003d2 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003d2 | g_CharacterClassificationTable
     JZ 0x00503b31                       ; 005003d9
         ;   XREF to: 00503b31 (CONDITIONAL_JUMP)  ; LAB_00503b31
     PUSH 0xa                            ; 005003df
@@ -1873,7 +1873,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 005003f3
     INC AL                              ; 005003f6
     AND EAX,0xff                        ; 005003f8
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003fd | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005003fd | g_CharacterClassificationTable
     JZ 0x00503bd4                       ; 00500404
         ;   XREF to: 00503bd4 (CONDITIONAL_JUMP)  ; LAB_00503bd4
     PUSH 0xd                            ; 0050040a
@@ -1889,7 +1889,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xd]         ; 0050041e
     INC AL                              ; 00500421
     AND EAX,0xff                        ; 00500423
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500428 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500428 | g_CharacterClassificationTable
     JZ 0x00503c79                       ; 0050042f
         ;   XREF to: 00503c79 (CONDITIONAL_JUMP)  ; LAB_00503c79
     PUSH 0x9                            ; 00500435
@@ -1905,7 +1905,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x9]         ; 00500449
     INC AL                              ; 0050044c
     AND EAX,0xff                        ; 0050044e
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500453 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500453 | g_CharacterClassificationTable
     JZ 0x00503d56                       ; 0050045a
         ;   XREF to: 00503d56 (CONDITIONAL_JUMP)  ; LAB_00503d56
     PUSH 0xa                            ; 00500460
@@ -1921,7 +1921,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 00500474
     INC AL                              ; 00500477
     AND EAX,0xff                        ; 00500479
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050047e | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050047e | g_CharacterClassificationTable
     JZ 0x00503f27                       ; 00500485
         ;   XREF to: 00503f27 (CONDITIONAL_JUMP)  ; LAB_00503f27
     PUSH 0x8                            ; 0050048b
@@ -1937,7 +1937,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x8]         ; 0050049f
     INC AL                              ; 005004a2
     AND EAX,0xff                        ; 005004a4
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004a9 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004a9 | g_CharacterClassificationTable
     JZ 0x00504076                       ; 005004b0
         ;   XREF to: 00504076 (CONDITIONAL_JUMP)  ; LAB_00504076
     PUSH 0xc                            ; 005004b6
@@ -1953,7 +1953,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 005004ca
     INC AL                              ; 005004cd
     AND EAX,0xff                        ; 005004cf
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004d4 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004d4 | g_CharacterClassificationTable
     JZ 0x0050419f                       ; 005004db
         ;   XREF to: 0050419f (CONDITIONAL_JUMP)  ; LAB_0050419f
     PUSH 0xc                            ; 005004e1
@@ -1969,7 +1969,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xc]         ; 005004f5
     INC AL                              ; 005004f8
     AND EAX,0xff                        ; 005004fa
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004ff | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005004ff | g_CharacterClassificationTable
     JZ 0x005043a2                       ; 00500506
         ;   XREF to: 005043a2 (CONDITIONAL_JUMP)  ; LAB_005043a2
     PUSH 0xa                            ; 0050050c
@@ -1985,7 +1985,7 @@ section .text
     MOV AL,byte ptr [ESI + 0xa]         ; 00500520
     INC AL                              ; 00500523
     AND EAX,0xff                        ; 00500525
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050052a | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 0050052a | g_CharacterClassificationTable
     JZ 0x005044ba                       ; 00500531
         ;   XREF to: 005044ba (CONDITIONAL_JUMP)  ; LAB_005044ba
     PUSH 0x4                            ; 00500537
@@ -2001,7 +2001,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x4]         ; 0050054b
     INC AL                              ; 0050054e
     AND EAX,0xff                        ; 00500550
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500555 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500555 | g_CharacterClassificationTable
     JZ 0x005045da                       ; 0050055c
         ;   XREF to: 005045da (CONDITIONAL_JUMP)  ; LAB_005045da
     PUSH 0x7                            ; 00500562
@@ -2017,7 +2017,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x7]         ; 00500576
     INC AL                              ; 00500579
     AND EAX,0xff                        ; 0050057b
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500580 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 00500580 | g_CharacterClassificationTable
     JZ 0x00504678                       ; 00500587
         ;   XREF to: 00504678 (CONDITIONAL_JUMP)  ; LAB_00504678
     PUSH 0x6                            ; 0050058d
@@ -2033,7 +2033,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x6]         ; 005005a1
     INC AL                              ; 005005a4
     AND EAX,0xff                        ; 005005a6
-    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005005ab | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0xe0 ; 005005ab | g_CharacterClassificationTable
     JZ 0x005046e2                       ; 005005b2
         ;   XREF to: 005046e2 (CONDITIONAL_JUMP)  ; LAB_005046e2
     PUSH ESI                            ; 005005b8

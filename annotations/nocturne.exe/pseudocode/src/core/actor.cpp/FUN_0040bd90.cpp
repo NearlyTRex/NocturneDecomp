@@ -73,7 +73,7 @@ void core_actor_cpp_FUN_0040bd90(char *param_1)
   local_18 = 0;
   pcVar2 = param_1;
   while (cVar1 != '\0') {
-    if ((0x1c < local_18) || (((&DAT_005c168c)[(byte)(*pcVar2 + 1)] & 8) == 0)) {
+    if ((0x1c < local_18) || ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 8) == 0)) {
       g_CurrentFilename = "..\\core\\actor.cpp";
       g_CurrentLineNumber = 1856;
       memset(&DAT_00763e10,0,0x32);

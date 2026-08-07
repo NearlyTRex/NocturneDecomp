@@ -40,7 +40,7 @@
 ;   undefined4 DAT_012b064c
 ;   undefined4 DAT_012b0658
 ;   undefined4 DAT_012b0660
-;   undefined4 DAT_01bd4260
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
@@ -202,7 +202,7 @@ section .text
     MOV EDX,ESI                         ; 00444afe
     SHL EAX,CL                          ; 00444b00
     SHL EDX,CL                          ; 00444b02
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00444b04 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 00444b04 | g_ZBufferScanlineArray
     SHL EDX,0x2                         ; 00444b0b
     ADD EAX,EDX                         ; 00444b0e
     MOV dword ptr [ESP + 0x40],EAX      ; 00444b10

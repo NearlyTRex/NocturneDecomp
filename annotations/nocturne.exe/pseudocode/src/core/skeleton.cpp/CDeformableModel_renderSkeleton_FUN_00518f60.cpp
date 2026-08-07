@@ -61,7 +61,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
       } while (iVar5 < pCVar2->bone_count);
     }
     local_14 = 0;
-    _DAT_01c00c70 = color;
+    g_ActiveRenderColor = color;
     if (0 < pCVar2->bone_count) {
       iVar5 = 0;
       local_18 = pCVar2;

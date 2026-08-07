@@ -68,18 +68,6 @@
         "message": "use of undeclared identifier '_DAT_01cc30a0'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 75,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 76,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
         "category": "format_error",
         "column": 30,
         "line": 148,
@@ -114,6 +102,18 @@
         "column": 30,
         "line": 276,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 36,
+        "line": 286,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 334,
+        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -122,26 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 707,
+    "complexity_score": 654,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 387,
-    "suspect_count": 27,
+    "pseudocode_lines": 384,
+    "suspect_count": 23,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
-      "undefined_data",
-      "unknown_field",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1465
+    "total_lines": 1462
   },
   "cross_references": [
     {
@@ -404,8 +402,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -860,38 +858,6 @@
       "severity": "moderate",
       "text": "if (this_ptr->owner != *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 386,
-      "match": "DAT_01c02594",
-      "severity": "mild",
-      "text": "DAT_01c02594 = local_70[0];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 387,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "DAT_01c02594_1._0_1_ = local_70[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 388,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "DAT_01c02594_1._1_1_ = local_70[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 389,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "DAT_01c02594_1._2_1_ = local_70[3];",
-      "type": "unknown_field"
     },
     {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

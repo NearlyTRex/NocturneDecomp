@@ -14,10 +14,10 @@ int engine_special_cpp_FUN_005325c0(void)
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02dc9ddc)(g_SourcePaletteData,&DAT_01bff720);
+  iVar1 = (*_DAT_02dc9ddc)(g_SourcePaletteData,g_ColorTable16);
   if (iVar1 != 0) {
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0();
   }

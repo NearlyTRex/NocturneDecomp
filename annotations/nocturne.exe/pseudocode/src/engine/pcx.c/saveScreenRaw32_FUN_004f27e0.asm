@@ -28,10 +28,10 @@
 ;   TerminatedCString s_saveScreenRaw32_Unable_t_0058cf9b
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01c00624
-;   undefined4 DAT_01c00628
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
+;   _BIT_INTEGER32 g_RedBitPosition
+;   int g_RedScaleFactor
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -142,24 +142,24 @@ section .text
         ;   Label: LAB_004f289e
     MOV EBP,dword ptr [0x005b761c]      ; 004f28a2 | g_WindowWidth
     XOR ESI,ESI                         ; 004f28a8
-    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 004f28aa | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EBX,dword ptr [EBX + 0x1bd2fa0] ; 004f28aa | g_ScreenBufferArray | g_ScreenBufferArray[1]
     TEST EBP,EBP                        ; 004f28b0
     JLE 0x004f292d                      ; 004f28b2
         ;   XREF to: 004f292d (CONDITIONAL_JUMP)  ; LAB_004f292d
-    MOV CL,byte ptr [0x01c00624]        ; 004f28b4 | DAT_01c00624
+    MOV CL,byte ptr [0x01c00624]        ; 004f28b4 | g_RedBitPosition
         ;   Label: LAB_004f28b4
     MOV EAX,dword ptr [EBX]             ; 004f28ba
-    MOV EDX,dword ptr [0x01c00628]      ; 004f28bc | DAT_01c00628
+    MOV EDX,dword ptr [0x01c00628]      ; 004f28bc | g_RedScaleFactor
     SHR EAX,CL                          ; 004f28c2
     IMUL EDX,EAX                        ; 004f28c4
     MOV EBP,dword ptr [EBX]             ; 004f28c7
-    MOV CL,byte ptr [0x01c00630]        ; 004f28c9 | DAT_01c00630
+    MOV CL,byte ptr [0x01c00630]        ; 004f28c9 | g_GreenBitPosition
     SHR EBP,CL                          ; 004f28cf
-    IMUL EBP,dword ptr [0x01c00634]     ; 004f28d1 | DAT_01c00634
+    IMUL EBP,dword ptr [0x01c00634]     ; 004f28d1 | g_GreenScaleFactor
     MOV EAX,dword ptr [EBX]             ; 004f28d8
-    MOV CL,byte ptr [0x01c0063c]        ; 004f28da | DAT_01c0063c
+    MOV CL,byte ptr [0x01c0063c]        ; 004f28da | g_BlueBitPosition
     SHR EAX,CL                          ; 004f28e0
-    IMUL EAX,dword ptr [0x01c00640]     ; 004f28e2 | DAT_01c00640
+    IMUL EAX,dword ptr [0x01c00640]     ; 004f28e2 | g_BlueScaleFactor
     PUSH EDI                            ; 004f28e9
     AND EDX,0xff                        ; 004f28ea
     AND EAX,0xff                        ; 004f28f0

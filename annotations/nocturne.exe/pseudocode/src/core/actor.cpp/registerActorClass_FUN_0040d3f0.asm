@@ -27,7 +27,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00577f3b
 ;   TerminatedCString s_Too_many_actor_types_00577f4d
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_00763e94
 ;   undefined4 DAT_00763e98
 ;   char* g_CurrentFilename
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_0040d46e
     INC DL                              ; 0040d470
     AND EDX,0xff                        ; 0040d472
-    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d478 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d478 | g_CharacterClassificationTable
     JZ 0x0040d438                       ; 0040d47f
         ;   XREF to: 0040d438 (CONDITIONAL_JUMP)  ; LAB_0040d438
     PUSH EAX                            ; 0040d481

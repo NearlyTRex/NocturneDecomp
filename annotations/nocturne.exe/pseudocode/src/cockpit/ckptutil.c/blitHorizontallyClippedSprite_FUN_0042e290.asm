@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd2fa4
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042d130
@@ -45,9 +45,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 0042e2a3
     SUB EAX,ESI                         ; 0042e2a7
     INC EAX                             ; 0042e2a9
-    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042e2aa | DAT_01bd2fa0
+    MOV EDX,dword ptr [0x01bd2fa0]      ; 0042e2aa | g_ScreenBufferArray
     MOV dword ptr [ESP + 0x14],EAX      ; 0042e2b0
-    MOV EAX,[0x01bd2fa4]                ; 0042e2b4 | DAT_01bd2fa4
+    MOV EAX,[0x01bd2fa4]                ; 0042e2b4 | g_ScreenBufferArray[1]
     SUB EAX,EDX                         ; 0042e2b9
     MOV dword ptr [ESP + 0x10],EAX      ; 0042e2bb
     TEST EBX,EBX                        ; 0042e2bf
@@ -77,7 +77,7 @@ section .text
     ADD ECX,EBX                         ; 0042e2f6
     ADD EAX,ECX                         ; 0042e2f8
     LEA EBX,[EAX + ESI*0x1]             ; 0042e2fa
-    MOV EDX,dword ptr [0x005b7624]      ; 0042e2fd | DAT_005b7624
+    MOV EDX,dword ptr [0x005b7624]      ; 0042e2fd | g_BitsPerPixel
     MOV EAX,dword ptr [ESP + 0x34]      ; 0042e303
     MOV ECX,dword ptr [ESP + 0x3c]      ; 0042e307
     ADD EAX,EDI                         ; 0042e30b
@@ -86,7 +86,7 @@ section .text
     CMP EDX,0x8                         ; 0042e312
     JNZ 0x0042e35c                      ; 0042e315
         ;   XREF to: 0042e35c (CONDITIONAL_JUMP)  ; LAB_0042e35c
-    MOV EDI,dword ptr [EAX + 0x1bd2fa0] ; 0042e317 | DAT_01bd2fa0
+    MOV EDI,dword ptr [EAX + 0x1bd2fa0] ; 0042e317 | g_ScreenBufferArray
     ADD EDI,ESI                         ; 0042e31d
     MOV ESI,dword ptr [ESP + 0x34]      ; 0042e31f
     MOV dword ptr [ESP + 0x8],ECX       ; 0042e323
@@ -118,7 +118,7 @@ section .text
     POP ESI                             ; 0042e359
     POP EBX                             ; 0042e35a
     RET                                 ; 0042e35b
-    MOV EDI,dword ptr [EAX + 0x1bd2fa0] ; 0042e35c | DAT_01bd2fa0
+    MOV EDI,dword ptr [EAX + 0x1bd2fa0] ; 0042e35c | g_ScreenBufferArray
         ;   Label: LAB_0042e35c
     MOV EAX,dword ptr [ESP + 0x10]      ; 0042e362
     MOV EDX,EAX                         ; 0042e366

@@ -6,15 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_FUN_00461720(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags)
 
 {
-  uint uVar1;
-  uint uVar2;
+  _BIT_INTEGER32 _Var1;
+  int iVar2;
   int iVar3;
-  int iVar4;
   CVector3i local_24;
   int local_18;
   int local_14;
@@ -26,15 +23,15 @@ void __cdecl engine_drender_cpp_FUN_00461720(CDemonRenderer *this_ptr,SInputFace
     if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
        (DAT_006b0280 != 0)) {
       if (this_ptr->face_count == 0) {
-        if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+        if (g_BitsPerPixel == 0x20) {
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+          g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
-        _DAT_01c039a0 = render_flags;
-        _DAT_01c039a4 = 6;
-        if (_DAT_01c02594 == 0) {
+        g_RenderStateFlags.dword = render_flags;
+        g_VertexPreprocessMode = 6;
+        if (g_UseExternalRenderer == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
             local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
             local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
@@ -52,19 +49,19 @@ void __cdecl engine_drender_cpp_FUN_00461720(CDemonRenderer *this_ptr,SInputFace
           }
         }
         else {
-          iVar4 = 0;
+          iVar3 = 0;
           local_18 = 0;
           if (0 < face_count) {
             local_14 = 0;
             do {
-              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
+              iVar2 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
                                 (&face_array->vertex_indices);
-              if (iVar3 != 0) {
-                iVar4 = iVar4 + 1;
-                iVar3 = local_14 + 4;
+              if (iVar2 != 0) {
+                iVar3 = iVar3 + 1;
+                iVar2 = local_14 + 4;
                 *(SInputFace **)(&DAT_005ae70c + local_14) = face_array;
-                local_14 = iVar3;
-                if (1999 < iVar4) {
+                local_14 = iVar2;
+                if (1999 < iVar3) {
                   g_CurrentFilename = "..\\engine\\drender.cpp";
                   g_CurrentLineNumber = 2529;
                   core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d");
@@ -74,58 +71,59 @@ void __cdecl engine_drender_cpp_FUN_00461720(CDemonRenderer *this_ptr,SInputFace
               face_array = face_array + 1;
             } while (local_18 < face_count);
           }
-          if (0 < iVar4) {
+          if (0 < iVar3) {
             engine_special_cpp_drawPolyList2_FUN_005327c0
-                      (this_ptr->vertex_buffer_ptr,(ushort **)&DAT_005ae70c,iVar4,_DAT_01c039a0);
+                      (this_ptr->vertex_buffer_ptr,(ushort **)&DAT_005ae70c,iVar3,
+                       g_RenderStateFlags.dword);
             return;
           }
         }
       }
       else {
-        _DAT_01c00c7c = core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
-        _DAT_01c039a0 = 0;
-        _DAT_01c039a4 = 0;
-        uVar1 = 0;
-        uVar2 = 0;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+        g_RenderStateFlags.dword = 0;
+        g_VertexPreprocessMode = 0;
+        _Var1.dword = 0;
+        iVar3 = 0;
         if (0 < face_count) {
           do {
-            _DAT_01c039a4 = uVar2;
-            _DAT_01c039a0 = uVar1;
+            g_VertexPreprocessMode = iVar3;
+            g_RenderStateFlags = _Var1;
             local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
             local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
             local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
             face_array = face_array + 1;
             engine_drender_cpp_renderTriangleSimple_FUN_00458080(&local_24,3);
-            uVar1 = _DAT_01c039a0;
-            uVar2 = _DAT_01c039a4;
+            _Var1 = g_RenderStateFlags;
+            iVar3 = g_VertexPreprocessMode;
           } while (0 < face_count);
           return;
         }
       }
     }
     else {
-      iVar4 = 0;
+      iVar3 = 0;
       if (0 < face_count) {
         do {
-          iVar4 = iVar4 + 1;
+          iVar3 = iVar3 + 1;
           engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
                     (this_ptr,face_array,render_flags);
           face_array = face_array + 1;
-        } while (iVar4 < face_count);
+        } while (iVar3 < face_count);
         return;
       }
     }
   }
   else {
-    iVar4 = 0;
+    iVar3 = 0;
     if (0 < face_count) {
       do {
-        iVar4 = iVar4 + 1;
+        iVar3 = iVar3 + 1;
         engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0
                   (this_ptr,&face_array->vertex_indices,render_flags);
         face_array = face_array + 1;
-      } while (iVar4 < face_count);
+      } while (iVar3 < face_count);
     }
   }
   return;

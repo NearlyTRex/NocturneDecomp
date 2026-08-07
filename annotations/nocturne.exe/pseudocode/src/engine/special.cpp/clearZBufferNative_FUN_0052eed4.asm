@@ -15,9 +15,9 @@
 ;   int g_WindowWidth = 0x140
 ;   undefined8 DAT_005bf48c
 ;   undefined4 DAT_005bf494
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c64
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_ClipTop
+;   int g_ClipBottom
 ;
 ; *****************************************************************************
 
@@ -30,14 +30,14 @@ section .text
     CLD                                 ; 0052eed7
     PUSH DS                             ; 0052eed8
     POP ES                              ; 0052eed9
-    MOV EDI,dword ptr [0x01bd4260]      ; 0052eeda | DAT_01bd4260
-    MOV EAX,[0x01c00c5c]                ; 0052eee0 | DAT_01c00c5c
+    MOV EDI,dword ptr [0x01bd4260]      ; 0052eeda | g_ZBufferScanlineArray
+    MOV EAX,[0x01c00c5c]                ; 0052eee0 | g_ClipTop
     MOV ECX,dword ptr [0x005b761c]      ; 0052eee5 | g_WindowWidth
     MUL ECX                             ; 0052eeeb
     SHL EAX,0x2                         ; 0052eeed
     ADD EDI,EAX                         ; 0052eef0
-    MOV EAX,[0x01c00c64]                ; 0052eef2 | DAT_01c00c64
-    SUB EAX,dword ptr [0x01c00c5c]      ; 0052eef7 | DAT_01c00c5c
+    MOV EAX,[0x01c00c64]                ; 0052eef2 | g_ClipBottom
+    SUB EAX,dword ptr [0x01c00c5c]      ; 0052eef7 | g_ClipTop
     INC EAX                             ; 0052eefd
     MOV ECX,dword ptr [0x005b761c]      ; 0052eefe | g_WindowWidth
     MUL ECX                             ; 0052ef04

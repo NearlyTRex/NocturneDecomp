@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00403940
@@ -144,7 +144,7 @@ section .text
     ADD EBP,EAX                         ; 00477480
     XOR EDX,EDX                         ; 00477482
     PUSH EBP                            ; 00477484
-    MOV dword ptr [0x01c00c70],EDX      ; 00477485 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EDX      ; 00477485 | g_ActiveRenderColor
     CALL engine_2d.c_clipLineGlobal_FUN_00403940 ; 0047748b
         ;   XREF to: 00403940 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00403940(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 00477490

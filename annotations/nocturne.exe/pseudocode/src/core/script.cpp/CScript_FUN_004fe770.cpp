@@ -12,7 +12,7 @@ void __cdecl core_script_cpp_CScript_FUN_004fe770(CScript *this_ptr)
 
 {
   int iVar1;
-  uint uVar2;
+  int iVar2;
   float fVar3;
   int iVar4;
   int iVar5;
@@ -46,7 +46,7 @@ void __cdecl core_script_cpp_CScript_FUN_004fe770(CScript *this_ptr)
     }
     engine_2d_c_fillRectColor_FUN_00403e60(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
   }
-  uVar2 = _DAT_01c00c5c;
+  iVar2 = g_ClipTop;
   if ((this_ptr->current_message[0] != '\0') && (g_CGame_PTR_005b9354->subtitle_mode != 0)) {
     this_ptr_00 = g_CBitFont_PTR_014b98f8;
     if (g_WindowHeight < 0x1e0) {
@@ -78,6 +78,6 @@ void __cdecl core_script_cpp_CScript_FUN_004fe770(CScript *this_ptr)
       } while (iVar8 < iVar5);
     }
   }
-  _DAT_01c00c5c = uVar2;
+  g_ClipTop = iVar2;
   return;
 }

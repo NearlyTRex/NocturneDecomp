@@ -32,7 +32,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b2
   iVar2 = (uVar4 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
     DAT_005b06e4 = iVar2 * 2;
-    DAT_005b06e8 = *(int *)(&DAT_01bd2fa0 + scanline_y * 4) + uVar1 * 2;
+    DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
     uVar3 = (pSVar5->base).u_current;
     _DAT_005b06d4 =
          (int)((ulonglong)
@@ -53,14 +53,14 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b2
     DAT_005b06bc = uVar4;
     DAT_005b06c4 = uVar1;
     while( true ) {
-      if (uVar1 < *(ushort *)(DAT_005b06e8 + uVar6)) {
+      if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar6)) {
         iVar2 = _DAT_01c02584;
         if (_DAT_01c02584 == 0) {
           iVar2 = _DAT_01c02580;
         }
         if (*(char *)((uVar3 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
                       (uVar4 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + iVar2) != '\0') {
-          *(ushort *)(DAT_005b06e8 + uVar6) = (ushort)uVar1;
+          *(ushort *)((int)DAT_005b06e8 + uVar6) = (ushort)uVar1;
         }
       }
       uVar6 = uVar6 + 2;

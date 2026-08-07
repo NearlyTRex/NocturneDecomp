@@ -16,7 +16,7 @@
 ;   shape_edittool.cpp_FUN_00476f40 at 00476f5c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c70
+;   int g_ActiveRenderColor
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00403bd0
@@ -39,7 +39,7 @@ section .text
     JZ 0x004762f5                       ; 00476272
         ;   XREF to: 004762f5 (CONDITIONAL_JUMP)  ; LAB_004762f5
     MOV EBX,0xf8                        ; 00476278
-    MOV dword ptr [0x01c00c70],EBX      ; 0047627d | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EBX      ; 0047627d | g_ActiveRenderColor
         ;   Label: LAB_0047627d
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00476283
     DEC EBX                             ; 00476287
@@ -63,7 +63,7 @@ section .text
     MOV EBX,0xff                        ; 004762a7
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004762ac
         ;   Label: LAB_004762ac
-    MOV dword ptr [0x01c00c70],EBX      ; 004762b0 | DAT_01c00c70
+    MOV dword ptr [0x01c00c70],EBX      ; 004762b0 | g_ActiveRenderColor
     DEC ESI                             ; 004762b6
     MOV EBX,dword ptr [ESP + 0x20]      ; 004762b7
     PUSH ESI                            ; 004762bb

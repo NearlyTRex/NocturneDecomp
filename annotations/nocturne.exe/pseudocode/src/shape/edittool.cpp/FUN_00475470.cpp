@@ -133,21 +133,21 @@ void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (g_CEditorTools_PTR_005b6d50,iVar10,iVar9,param_2,param_3);
-  iVar10 = (_DAT_01c00c60 - _DAT_01c00c58) + 1;
-  iVar9 = (_DAT_01c00c64 - _DAT_01c00c5c) + 1;
+  iVar10 = (g_ClipRight - g_ClipLeft) + 1;
+  iVar9 = (g_ClipBottom - g_ClipTop) + 1;
   if (param_1[0x16].vtable._us == (CStrList_vtable *)0x1) {
     iVar10 = iVar10 - local_18;
-    iVar6 = (_DAT_01c00c60 - local_18) + 1;
-    top_pos = _DAT_01c00c5c;
+    iVar6 = (g_ClipRight - local_18) + 1;
+    top_pos = g_ClipTop;
   }
   else {
     if (param_1[0x16].vtable._us != (CStrList_vtable *)0x2) goto LAB_0047587b;
-    top_pos = (_DAT_01c00c64 - iVar7) + 1;
+    top_pos = (g_ClipBottom - iVar7) + 1;
     iVar9 = iVar9 - iVar7;
-    iVar6 = _DAT_01c00c58;
+    iVar6 = g_ClipLeft;
   }
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0
-            ((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,_DAT_01c00c60,_DAT_01c00c64);
+            ((CEdScrollBar *)&param_1[0x13].data_array,iVar6,top_pos,g_ClipRight,g_ClipBottom);
 LAB_0047587b:
   param_1[0x12].capacity = iVar9 / param_1[0x11].item_count;
   param_1[0x12].vtable._us = (CStrList_vtable *)(iVar10 / (int)param_1[0x12].data_array);

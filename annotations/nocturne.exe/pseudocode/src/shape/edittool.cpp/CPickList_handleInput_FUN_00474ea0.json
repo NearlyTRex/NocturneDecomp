@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 128,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       }
     ],
     "success": false,
@@ -68,17 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 349,
-    "complexity_score": 208,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 148,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 497
@@ -147,8 +140,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -216,14 +209,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 121,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(cStack_14 + 1)] & 0xe0) != 0) {",
-      "type": "undefined_data"
-    },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 117,

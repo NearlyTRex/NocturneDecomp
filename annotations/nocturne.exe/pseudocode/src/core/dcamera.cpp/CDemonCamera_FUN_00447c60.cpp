@@ -16,10 +16,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447c60(CDemonCamera *this_ptr,i
   iVar2 = (screen_y / this_ptr->scale_factor) * 0x140;
   core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
             ((ushort *)
-             (this_ptr->framebuffer_width * 2 +
-              *(int *)(&DAT_01bd2fa0 + (this_ptr->framebuffer_height + screen_y) * 4) + screen_x * 2
-             ),(uint *)((int)this_ptr->framebuffer_aligned +
-                       screen_x * 4 + this_ptr->screen_width * screen_y * 4),
+             ((int)g_ScreenBufferArray[this_ptr->framebuffer_height + screen_y] +
+             screen_x * 2 + this_ptr->framebuffer_width * 2),
+             (uint *)((int)this_ptr->framebuffer_aligned +
+                     screen_x * 4 + this_ptr->screen_width * screen_y * 4),
              (byte *)(iVar2 + 0xaafdb8 + iVar1 + offset),&DAT_012ceb78 + offset + iVar1 + iVar2);
   return;
 }

@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_00567560 at 005675ad
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00567540
@@ -31,7 +31,7 @@ section .text
     ADD ESP,0x4                         ; 00567938
     INC DL                              ; 0056793b
     AND EDX,0xff                        ; 0056793d
-    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00567943 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0x2  ; 00567943 | g_CharacterClassificationTable
     JZ 0x0056794f                       ; 0056794a
         ;   XREF to: 0056794f (CONDITIONAL_JUMP)  ; LAB_0056794f
     INC EBX                             ; 0056794c

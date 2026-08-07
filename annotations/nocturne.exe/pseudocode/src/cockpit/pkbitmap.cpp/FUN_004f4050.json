@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 37,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
       }
     ],
     "success": false,
@@ -68,17 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 275,
+    "complexity_score": 260,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 153
@@ -106,19 +99,19 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd2fa4",
-      "name": "DAT_01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
       "type": "undefined4",
       "value": null
     }
@@ -262,14 +255,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param_2",
@@ -326,20 +311,20 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "iVar6 = param_2 + *(int *)((int)g_ScreenBufferArray + local_20);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar6 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
+      "text": "iVar6 = param_2 + *(int *)((int)g_ScreenBufferArray + local_20);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "iVar6 = param_2 + *(int *)(&DAT_01bd2fa0 + local_20);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -348,14 +333,6 @@
       "severity": "moderate",
       "text": "puVar7 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x10) {",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -372,6 +349,14 @@
       "severity": "mild",
       "text": "} while (local_1c < *(int *)(param_1 + 0x1c));",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "iVar6 = param_2 + *(int *)((int)g_ScreenBufferArray + local_20);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

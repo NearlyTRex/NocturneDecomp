@@ -17,12 +17,12 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_0052efc2(int left,int right,
   ulonglong *puVar4;
   
   uVar2 = DAT_005bf48c;
-  if (_DAT_01c02594 != 0) {
+  if (g_UseExternalRenderer != 0) {
     engine_special_cpp_clearZBox_FUN_00532b70(left,right,top,bottom);
     return;
   }
   do {
-    puVar4 = (ulonglong *)(*(int *)(&DAT_01bd4260 + top * 4) + left * 4 & 0xfffffff8);
+    puVar4 = (ulonglong *)((uint)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);
     uVar3 = (right - left) + 1U >> 1;
     do {
       *puVar4 = uVar2;

@@ -57,57 +57,15 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c03948'; did you mean 'DAT_02DF3948'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c7c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c039a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c039a4'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 27,
-        "line": 48,
+        "line": 46,
         "message": "use of undeclared identifier 'DAT_005c5030'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 51,
-        "message": "no matching function for call to 'engine_clipper_c_FUN_00432cd0'"
+        "line": 49,
+        "message": "no matching function for call to 'engine_clipper_c_clipAndRasterize_FUN_00432cd0'"
       }
     ],
     "success": false,
@@ -116,21 +74,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 188,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "pseudocode_lines": 42,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 131
+    "total_lines": 130
   },
   "cross_references": [],
   "function": {
@@ -159,15 +116,15 @@
     {
       "addr": "00432cd0",
       "is_variadic": false,
-      "name": "engine_clipper.c_FUN_00432cd0"
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0"
     }
   ],
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "005c502c",
@@ -195,26 +152,26 @@
     },
     {
       "addr": "01c00c7c",
-      "name": "DAT_01c00c7c",
-      "type": "undefined4",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
       "value": null
     },
     {
       "addr": "01c03948",
-      "name": "DAT_01c03948",
-      "type": "undefined4",
+      "name": "g_MMXSupported",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039a0",
-      "name": "DAT_01c039a0",
-      "type": "undefined4",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c039a4",
-      "name": "DAT_01c039a4",
-      "type": "undefined4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -275,32 +232,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "else if (DAT_005b7624 == 0x20) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_006b029c",
       "severity": "mild",
       "text": "*(int *)((int)&DAT_006b029c + iVar2) = iVar1;",
@@ -308,7 +241,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 36,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "(&DAT_005c502c)[iVar1 * 0xc] = (pSVar3->base).count;",
@@ -316,7 +249,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 39,
       "match": "DAT_005c5030",
       "severity": "mild",
       "text": "*(UIntegerFloat *)(&DAT_005c5030 + (pSVar3->base).type * 0x30) = (pSVar3->surface_normal).A;",
@@ -324,15 +257,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_006b029c",
       "severity": "mild",
-      "text": "engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,&DAT_006b029c);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&DAT_006b029c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "(int)&DAT_006b029c",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_006b029c + iVar2) = iVar1;",
@@ -340,7 +273,7 @@
     },
     {
       "description": "Pointer value `&prim[1].base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&prim[1].base",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
@@ -348,7 +281,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_006b029c + iVar2) = iVar1;",
@@ -356,7 +289,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
@@ -364,7 +297,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 42,
+      "line": 40,
       "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;",

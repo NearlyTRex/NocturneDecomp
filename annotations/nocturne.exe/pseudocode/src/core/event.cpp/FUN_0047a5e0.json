@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
       }
     ],
     "success": false,
@@ -74,15 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 145,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unrolled_strlen"
     ],
@@ -111,8 +98,8 @@
   "globals": [
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     }
   ],
@@ -191,14 +178,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
@@ -211,16 +190,8 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "text": "while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2) != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

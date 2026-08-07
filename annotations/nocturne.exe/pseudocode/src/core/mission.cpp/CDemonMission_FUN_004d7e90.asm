@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c90e0 at 004c933c
+;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c933c
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_FUN_004d7ea0

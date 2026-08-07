@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01b4cd34
 ;   undefined4 DAT_01b4d1b4
 ;   undefined4 DAT_01b4d1b8
-;   undefined4 DAT_01c039a1
+;   undefined4 g_RenderStateFlags+1
 ;
 ; *****************************************************************************
 
@@ -179,7 +179,7 @@ section .text
     ADD EAX,EDX                         ; 004577e9
         ;   Label: LAB_004577e9
     MOV dword ptr [ECX + 0x28],EAX      ; 004577eb
-    TEST byte ptr [0x01c039a1],0x2      ; 004577ee | DAT_01c039a1
+    TEST byte ptr [0x01c039a1],0x2      ; 004577ee | g_RenderStateFlags+1
     JZ 0x00457849                       ; 004577f5
         ;   XREF to: 00457849 (CONDITIONAL_JUMP)  ; LAB_00457849
     MOV EAX,dword ptr [EBP + 0x24]      ; 004577f7

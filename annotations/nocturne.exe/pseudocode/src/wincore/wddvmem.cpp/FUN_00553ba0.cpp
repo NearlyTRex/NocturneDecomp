@@ -12,14 +12,15 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
 
 {
   int iVar1;
+  HRESULT HVar2;
   
   if ((INT_02dc9d60 == 0) || (_DAT_02ddf568 == 0)) {
-    if (_DAT_02ddf554 != (int *)0x0) {
-      (**(code **)(*_DAT_02ddf554 + 0x6c))(_DAT_02ddf554);
-      (**(code **)(*_DAT_02ddf558 + 0x6c))(_DAT_02ddf558);
-      if (_DAT_02ddf55c != (int *)0x0) {
-        iVar1 = (**(code **)(*_DAT_02ddf554 + 0x7c))(_DAT_02ddf554,_DAT_02ddf55c);
-        if (iVar1 != 0) {
+    if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+      (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
+      (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);
+      if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+        HVar2 = (*g_DirectDrawSurface->vtable->SetPalette)(g_DirectDrawSurface,g_DirectDrawUnknown);
+        if (HVar2 != 0) {
           g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
           g_CurrentLineNumber = 991;
           core_main_c_displayErrorAndQuit_FUN_004c8440("videoRestore - Unable to set front buffer palette");
@@ -30,32 +31,33 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
   }
   else {
     iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005324a0
-                      (g_WindowWidth,g_WindowHeight,DAT_005b7624);
+                      (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
       INT_02dc9d60 = iVar1;
-      if (_DAT_02ddf55c != (int *)0x0) {
-        (**(code **)(*_DAT_02ddf55c + 8))(_DAT_02ddf55c);
-        _DAT_02ddf55c = (int *)0x0;
+      if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+        (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
+        g_DirectDrawUnknown = (IUnknown *)0x0;
       }
-      if (_DAT_02ddf558 != (int *)0x0) {
-        (**(code **)(*_DAT_02ddf558 + 8))(_DAT_02ddf558);
-        _DAT_02ddf558 = (int *)0x0;
+      if (g_SoftwareRenderSurface != (IDirectDrawSurface *)0x0) {
+        (*g_SoftwareRenderSurface->vtable->Release)((IUnknown *)g_SoftwareRenderSurface);
+        g_SoftwareRenderSurface = (IDirectDrawSurface *)0x0;
       }
-      if (_DAT_02ddf554 != (int *)0x0) {
-        (**(code **)(*_DAT_02ddf554 + 8))(_DAT_02ddf554);
-        _DAT_02ddf554 = (int *)0x0;
+      if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+        (*g_DirectDrawSurface->vtable->Release)((IUnknown *)g_DirectDrawSurface);
+        g_DirectDrawSurface = (IDirectDrawSurface *)0x0;
       }
-      if (_DAT_02ddf550 != (int *)0x0) {
-        (**(code **)(*_DAT_02ddf550 + 0x4c))(_DAT_02ddf550);
-        (**(code **)(*_DAT_02ddf550 + 8))(_DAT_02ddf550);
-        _DAT_02ddf550 = (int *)0x0;
+      if (g_DirectDrawObject != (IDirectDraw *)0x0) {
+        (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
+        (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
+        g_DirectDrawObject = (IDirectDraw *)0x0;
       }
-      iVar1 = DirectDrawCreate(0,&DAT_02ddf550,0);
+      iVar1 = DirectDrawCreate(0,&g_DirectDrawObject,0);
       if (iVar1 == 0) {
-        (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
+        (*g_DirectDrawObject->vtable->SetCooperativeLevel)
+                  (g_DirectDrawObject,(HWND)_DAT_02de2098,0x11);
       }
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
-                (g_WindowWidth,g_WindowHeight,DAT_005b7624);
+                (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     }
     SetFocus(_DAT_02de2098);
   }

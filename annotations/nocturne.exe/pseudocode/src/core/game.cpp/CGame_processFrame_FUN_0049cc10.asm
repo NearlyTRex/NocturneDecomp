@@ -167,7 +167,7 @@ section .text
     ADD ESP,0x4                         ; 0049ccd7
     JMP 0x0049ccae                      ; 0049ccda
         ;   XREF to: 0049ccae (UNCONDITIONAL_JUMP)  ; LAB_0049ccae
-    CMP dword ptr [0x01c02594],0x0      ; 0049ccdc | DAT_01c02594
+    CMP dword ptr [0x01c02594],0x0      ; 0049ccdc | g_UseExternalRenderer
         ;   Label: LAB_0049ccdc
     JZ 0x0049ccf1                       ; 0049cce3
         ;   XREF to: 0049ccf1 (CONDITIONAL_JUMP)  ; LAB_0049ccf1
@@ -1082,7 +1082,7 @@ section .text
         ;   XREF to: 0049d7a4 (CONDITIONAL_JUMP)  ; LAB_0049d7a4
     MOV EAX,dword ptr [EBP + 0x6a]      ; 0049d75c
     LEA ECX,[EDX*0x4 + 0x0]             ; 0049d75f
-    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0049d766 | DAT_01bd2fa0 | DAT_01bd2fa4
+    MOV EAX,dword ptr [EAX + 0x1bd2fa0] ; 0049d766 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD ECX,EAX                         ; 0049d76c
     MOV EAX,dword ptr [ECX]             ; 0049d76e
         ;   Label: LAB_0049d76e

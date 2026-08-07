@@ -16,7 +16,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
   if (_DAT_01cc64a4 != 0) {
     engine_special_cpp_selectCard_FUN_00532d00(_DAT_01cc64a4);
   }
-  if (((g_WindowHeight != this_ptr->game_pixy) || (DAT_005b7624 != this_ptr->game_bpp)) &&
+  if (((g_WindowHeight != this_ptr->game_pixy) || (g_BitsPerPixel != this_ptr->game_bpp)) &&
      (iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
                         (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp), iVar1 == 0)) {
     this_ptr->game_pixy = 0x1e0;

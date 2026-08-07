@@ -11,7 +11,7 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d81db
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_00763e94
 ;   undefined4 DAT_00763e98
 ;   undefined4 DAT_00763e9c
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_0040d507
     INC DL                              ; 0040d509
     AND EDX,0xff                        ; 0040d50b
-    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d511 | DAT_005c168c
+    TEST byte ptr [EDX + 0x5c168c],0xe0 ; 0040d511 | g_CharacterClassificationTable
     JZ 0x0040d4d8                       ; 0040d518
         ;   XREF to: 0040d4d8 (CONDITIONAL_JUMP)  ; LAB_0040d4d8
     PUSH EAX                            ; 0040d51a

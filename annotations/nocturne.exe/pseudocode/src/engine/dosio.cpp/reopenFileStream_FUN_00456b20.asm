@@ -20,7 +20,7 @@
 ;   crt_fstream.cpp_istream_seekg_FUN_00565f14
 ;   crt_fstream.cpp_openFile_FUN_00565eb5
 ;   crt_iostream.cpp_ios_clear_FUN_00565e94
-;   crt_stdio.c_fflush_FUN_00565e59
+;   crt_iostream.cpp_ostream_flush_FUN_00565e59
 ;   crt_watcom.c__mkdir_FUN_00565e40
 ;   engine_dosio.cpp_findFile_FUN_004567a0
 ;   engine_dosio.cpp_getRelativeFilePath_FUN_00456700
@@ -37,8 +37,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x224]     ; 00456b29
     MOV EBX,dword ptr [ESP + 0x230]     ; 00456b30
     PUSH EBX                            ; 00456b37
-    CALL crt_stdio.c_fflush_FUN_00565e59 ; 00456b38
-        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00565e59(_FILE * stream)
+    CALL crt_iostream.cpp_ostream_flush_FUN_00565e59 ; 00456b38
+        ;   XREF to: 00565e59 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_ostream_flush_FUN_00565e59(void * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 00456b3d
     ADD ESP,0x4                         ; 00456b3f
     MOV EAX,dword ptr [EAX + 0x4]       ; 00456b42

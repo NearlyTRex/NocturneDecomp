@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 24,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 9,
         "line": 25,
         "message": "use of undeclared identifier '_DAT_012b0660'"
@@ -81,25 +75,13 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
+        "column": 64,
         "line": 28,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 48,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
+        "column": 63,
         "line": 29,
         "message": "use of undeclared identifier 'DAT_012b0660'"
       }
@@ -159,14 +141,14 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     }
   ],
@@ -266,7 +248,7 @@
       "line": 21,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "uVar7 = ((right->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);",
+      "text": "uVar7 = ((right->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -274,7 +256,7 @@
       "line": 22,
       "match": "DAT_012b0660",
       "severity": "mild",
-      "text": "uVar9 = ((left->base).x_current >> 0x10) - _DAT_01c00c58 >> (DAT_012b0660 & 0x1f);",
+      "text": "uVar9 = ((left->base).x_current >> 0x10) - g_ClipLeft >> (DAT_012b0660 & 0x1f);",
       "type": "undefined_data"
     }
   ]

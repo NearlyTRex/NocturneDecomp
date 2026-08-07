@@ -28,8 +28,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b7648
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c00c48
-;   undefined4 DAT_01c00c4c
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
@@ -72,7 +72,7 @@ section .text
     FILD dword ptr [0x005b7648]         ; 00485a05 | DAT_005b7648
     FMUL ST1                            ; 00485a0b
     FDIVP ST2,ST0                       ; 00485a0d
-    FILD dword ptr [0x01c00c48]         ; 00485a0f | DAT_01c00c48
+    FILD dword ptr [0x01c00c48]         ; 00485a0f | g_Projection
     FMUL ST1                            ; 00485a15
     ADD ESP,0x8                         ; 00485a17
     FXCH ST2                            ; 00485a1a
@@ -82,7 +82,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00485a26
     MOV dword ptr [ESP + 0x2c],EAX      ; 00485a2a
     FABS                                ; 00485a2e
-    FILD dword ptr [0x01c00c4c]         ; 00485a30 | DAT_01c00c4c
+    FILD dword ptr [0x01c00c4c]         ; 00485a30 | g_Projection.neg_half_height_fixed
     FMULP ST2                           ; 00485a36
     FXCH                                ; 00485a38
     FDIVP ST2,ST0                       ; 00485a3a

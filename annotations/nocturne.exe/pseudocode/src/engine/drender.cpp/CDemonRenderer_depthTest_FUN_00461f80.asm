@@ -16,8 +16,8 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_00555020 at 005551cc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01bd4260
+;   void*[1200] g_ScreenBufferArray
+;   uint*[1200] g_ZBufferScanlineArray
 ;
 ; Called Functions:
 ;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
@@ -49,7 +49,7 @@ section .text
     TEST ESI,ESI                        ; 00461faf
     JNZ 0x00461fd3                      ; 00461fb1
         ;   XREF to: 00461fd3 (CONDITIONAL_JUMP)  ; LAB_00461fd3
-    MOV EDX,dword ptr [EDX + 0x1bd4260] ; 00461fb3 | DAT_01bd4260
+    MOV EDX,dword ptr [EDX + 0x1bd4260] ; 00461fb3 | g_ZBufferScanlineArray
     MOV EAX,dword ptr [EDX + EAX*0x1]   ; 00461fb9
     CMP EAX,dword ptr [EBX + 0x8]       ; 00461fbc
     JLE 0x00461fe6                      ; 00461fbf
@@ -67,7 +67,7 @@ section .text
     ADD ESP,0x8                         ; 00461fce
     JMP 0x00461f96                      ; 00461fd1
         ;   XREF to: 00461f96 (UNCONDITIONAL_JUMP)  ; LAB_00461f96
-    MOV EDX,dword ptr [EDX + 0x1bd2fa0] ; 00461fd3 | DAT_01bd2fa0
+    MOV EDX,dword ptr [EDX + 0x1bd2fa0] ; 00461fd3 | g_ScreenBufferArray
         ;   Label: LAB_00461fd3
     MOV EAX,dword ptr [EDX + EAX*0x1]   ; 00461fd9
     CMP EAX,dword ptr [EBX + 0x8]       ; 00461fdc

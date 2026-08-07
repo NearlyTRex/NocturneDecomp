@@ -56,12 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 39,
-        "message": "use of undeclared identifier 'DAT_005c168c'"
-      },
-      {
         "category": "incompatible_types",
         "column": 35,
         "line": 50,
@@ -74,13 +68,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 138,
+    "complexity_score": 128,
     "cross_reference_count": 106,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "displaced_global_access",
       "undefined_data",
@@ -765,8 +759,8 @@
     },
     {
       "addr": "005c168c",
-      "name": "DAT_005c168c",
-      "type": "undefined4",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
       "value": null
     },
     {
@@ -1003,14 +997,6 @@
       "match": "DAT_00763e94",
       "severity": "mild",
       "text": "iVar3 = DAT_00763e94;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "if (((&DAT_005c168c)[(byte)(bVar2 + 1)] & 0xe0) != 0) {",
       "type": "undefined_data"
     },
     {

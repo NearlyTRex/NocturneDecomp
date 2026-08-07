@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_01c02594'; did you mean 'DAT_02DF2594'?"
       }
     ],
     "success": false,
@@ -74,18 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 78,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 3,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 117
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -151,8 +138,8 @@
     },
     {
       "addr": "01c02594",
-      "name": "DAT_01c02594",
-      "type": "undefined4",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
       "value": null
     },
     {
@@ -242,16 +229,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `primitive_array` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*primitive_array) + offsetof(subfield)` equals the real array stride. Replace `primitive_array->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 17,
+      "line": 15,
       "match": "primitive_array = (T *)&primitive_array[N].SUBFIELD",
       "severity": "moderate",
       "text": "primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;",
@@ -259,7 +238,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `primitive_array` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*primitive_array) + offsetof(subfield)` equals the real array stride. Replace `primitive_array->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 31,
+      "line": 29,
       "match": "primitive_array = (T *)&primitive_array[N].SUBFIELD",
       "severity": "moderate",
       "text": "primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;",

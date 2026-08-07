@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 118,
+    "complexity_score": 103,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 103,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 106
   },
   "cross_references": [
@@ -210,14 +208,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005c168c",
-      "severity": "mild",
-      "text": "((((((&DAT_005c168c)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

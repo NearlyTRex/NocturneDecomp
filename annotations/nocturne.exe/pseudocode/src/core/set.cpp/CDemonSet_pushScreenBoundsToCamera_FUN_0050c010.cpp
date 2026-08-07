@@ -22,10 +22,10 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
   
   if (_DAT_007f7374 != (CDemonCamera *)0x0) {
     pSVar4 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
-    local_c = _DAT_01c00c50 - _DAT_01c00c48;
-    iVar5 = _DAT_01c00c50 + _DAT_01c00c48;
-    iVar3 = _DAT_01c00c54 - _DAT_01c00c4c;
-    local_8 = _DAT_01c00c54 + _DAT_01c00c4c;
+    local_c = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
+    iVar5 = g_Projection.center_x_fixed + g_Projection.half_width_fixed;
+    iVar3 = g_Projection.center_y_fixed - g_Projection.neg_half_height_fixed;
+    local_8 = g_Projection.center_y_fixed + g_Projection.neg_half_height_fixed;
     local_10 = 0;
     if (0 < vertex_count) {
       do {
@@ -52,7 +52,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
           if ((-(pSVar4->projected_vertex).transformed_z < iVar2) &&
              (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar2 < iVar1)) {
             iVar2 = (int)(((longlong)(pSVar4->projected_vertex).transformed_x *
-                          (longlong)_DAT_01c00c48) / (longlong)iVar1) + _DAT_01c00c50;
+                          (longlong)g_Projection.half_width_fixed) / (longlong)iVar1) +
+                    g_Projection.center_x_fixed;
             if (local_c < iVar2) {
               local_c = iVar2;
             }
@@ -64,7 +65,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
           if ((-(pSVar4->projected_vertex).transformed_z < iVar2) &&
              (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar2 < iVar1)) {
             iVar2 = (int)(((longlong)(pSVar4->projected_vertex).transformed_y *
-                          (longlong)_DAT_01c00c4c) / (longlong)iVar1) + _DAT_01c00c54;
+                          (longlong)g_Projection.neg_half_height_fixed) / (longlong)iVar1) +
+                    g_Projection.center_y_fixed;
             if (local_8 < iVar2) {
               local_8 = iVar2;
             }
@@ -74,19 +76,19 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
           }
           if ((pSVar4->projected_vertex).transformed_z <= (pSVar4->projected_vertex).transformed_x)
           {
-            local_c = _DAT_01c00c48 + _DAT_01c00c50;
+            local_c = g_Projection.half_width_fixed + g_Projection.center_x_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_x <= -(pSVar4->projected_vertex).transformed_z)
           {
-            iVar5 = _DAT_01c00c50 - _DAT_01c00c48;
+            iVar5 = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_z <= (pSVar4->projected_vertex).transformed_y)
           {
-            iVar3 = _DAT_01c00c4c + _DAT_01c00c54;
+            iVar3 = g_Projection.neg_half_height_fixed + g_Projection.center_y_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_y <= -(pSVar4->projected_vertex).transformed_z)
           {
-            local_8 = _DAT_01c00c54 - _DAT_01c00c4c;
+            local_8 = g_Projection.center_y_fixed - g_Projection.neg_half_height_fixed;
           }
         }
         local_10 = local_10 + 1;

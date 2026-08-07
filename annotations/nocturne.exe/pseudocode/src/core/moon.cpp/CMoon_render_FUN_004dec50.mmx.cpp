@@ -186,7 +186,7 @@ __asm {
         jge LAB_004defd0
     LAB_004deefa:
         mov EAX,dword ptr [EBP + -0x18]
-        mov EAX,dword ptr [DAT_01bd2fa0 + EAX*0x4]
+        mov EAX,dword ptr [g_ScreenBufferArray + EAX*0x4]
         mov dword ptr [EBP + -0x10],EAX
         xor ECX,ECX
         mov EDI,dword ptr [EBP + 0xfffffff0]

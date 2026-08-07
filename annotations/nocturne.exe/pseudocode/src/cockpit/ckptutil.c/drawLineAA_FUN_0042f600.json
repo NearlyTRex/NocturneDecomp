@@ -54,54 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01c00c60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c00c5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c00c64'"
       }
     ],
     "success": false,
@@ -110,18 +62,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 120,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "pseudocode_lines": 88,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 405
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -165,26 +116,26 @@
     },
     {
       "addr": "01c00c58",
-      "name": "DAT_01c00c58",
-      "type": "undefined4",
+      "name": "g_ClipLeft",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c5c",
-      "name": "DAT_01c00c5c",
-      "type": "undefined4",
+      "name": "g_ClipTop",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c60",
-      "name": "DAT_01c00c60",
-      "type": "undefined4",
+      "name": "g_ClipRight",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c00c64",
-      "name": "DAT_01c00c64",
-      "type": "undefined4",
+      "name": "g_ClipBottom",
+      "type": "int",
       "value": null
     }
   ],
@@ -319,14 +270,14 @@
         {
           "check_id": "legacyUninitvar",
           "column": 80,
-          "line": 64,
+          "line": 61,
           "message": "Uninitialized variable: fStack_34",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 80,
-          "line": 78,
+          "line": 75,
           "message": "Uninitialized variable: fStack_34",
           "severity": "error"
         }
@@ -337,16 +288,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 21,
       "match": "DAT_005ad280",
       "severity": "mild",
       "text": "if ((DAT_005ad280 != 0) ||",
@@ -354,7 +297,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_34",
-      "line": 64,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "cockpit_ckptutil_c_FUN_0042fd60(x,y0,((float)(uVar4 >> 8) + 1.0) * fStack_34,color);",
@@ -362,7 +305,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_34",
-      "line": 78,
+      "line": 75,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "cockpit_ckptutil_c_FUN_0042fd60(x,y0,((float)(uVar4 >> 8) + 1.0) * fStack_34,color);",

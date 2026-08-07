@@ -26,7 +26,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
   
   if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
     iVar1 = dest_x - clip_left;
-    if (DAT_005b7624 == 0x10) {
+    if (g_BitsPerPixel == 0x10) {
       iVar1 = iVar1 * 2;
     }
     pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
@@ -37,7 +37,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
       piVar4 = (int *)((int)this_ptr->row_offsets + local_20);
       puVar5 = (ushort *)(piVar4[1] + (int)this_ptr->packed_data);
       puVar8 = (ushort *)(*piVar4 + (int)this_ptr->packed_data);
-      iVar7 = iVar1 + *(int *)(&DAT_01bd2fa0 + local_24);
+      iVar7 = iVar1 + *(int *)((int)g_ScreenBufferArray + local_24);
       do {
         if (puVar5 <= puVar8) goto LAB_004f4239;
         uVar6 = (uint)*puVar8;
@@ -54,7 +54,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
       }
       while( true ) {
         dest_buffer = (void *)(iVar7 + uVar6);
-        if (DAT_005b7624 == 0x10) {
+        if (g_BitsPerPixel == 0x10) {
           dest_buffer = (void *)((int)dest_buffer + uVar6);
         }
         if (clip_right < iVar9) break;

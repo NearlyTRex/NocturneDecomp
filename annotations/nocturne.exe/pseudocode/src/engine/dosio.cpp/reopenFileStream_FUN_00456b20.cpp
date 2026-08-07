@@ -12,7 +12,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *directory_path
   int iVar1;
   SFoundFileInfo local_220;
   
-  _fflush((_FILE *)file_stream);
+  crt_iostream_cpp_ostream_flush_FUN_00565e59(file_stream);
   crt_iostream_cpp_ios_clear_FUN_00565e94
             ((ios *)((file_stream->_fstreambase_core)._filebuf.__unbuffered_get_area +
                     *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);

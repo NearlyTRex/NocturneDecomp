@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_setdir_cpp_FUN_005138e0(int *param_1)
 
 {
@@ -85,7 +83,7 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
     do {
       local_3c = *(int *)(local_38 + 0x26714b4);
       iVar6 = local_3c * 0x3000;
-      if (DAT_005b7624 == 0x20) {
+      if (g_BitsPerPixel == 0x20) {
         local_1c = local_48;
         local_34 = local_58;
         local_24 = iVar6;
@@ -99,7 +97,7 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
             }
             iVar5 = iVar6 + 4;
             iVar3 = iVar3 + 4;
-            *(uint *)(iVar6 + *(int *)(&DAT_01bd2fa0 + local_1c)) = uVar4 * 0x10101;
+            *(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_1c)) = uVar4 * 0x10101;
             iVar6 = iVar5;
           } while (iVar5 != local_2c * 4 + 0x100);
           local_1c = local_1c + 4;
@@ -121,7 +119,7 @@ void core_setdir_cpp_FUN_005138e0(int *param_1)
             if (0xff < uVar4) {
               uVar4 = 0xff;
             }
-            _DAT_01c00c70 = (uint)g_ColorCubeLookup[(uVar4 >> 3) * 0x421];
+            g_ActiveRenderColor = (int)g_ColorCubeLookup[(uVar4 >> 3) * 0x421];
             engine_2d_c_plotPixel_FUN_00401530(iVar3,iVar6);
             iVar5 = iVar5 + 4;
             iVar3 = iVar3 + 1;

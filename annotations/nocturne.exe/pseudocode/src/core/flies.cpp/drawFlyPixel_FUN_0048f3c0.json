@@ -62,46 +62,40 @@
         "message": "unknown type name 'uint5'; did you mean 'uint'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_01bd4260'; did you mean 'DAT_02DF4260'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
-      },
-      {
         "category": "other",
         "column": 24,
-        "line": 31,
+        "line": 30,
         "message": "unknown type name 'uint7'; did you mean 'uint'?"
       },
       {
         "category": "undeclared_identifier",
-        "column": 43,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c00c70'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 30,
-        "line": 32,
+        "line": 31,
         "message": "use of undeclared identifier 'int3'; did you mean 'int'?"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 32,
+        "line": 31,
         "message": "unknown type name 'uint7'; did you mean 'uint'?"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 35,
+        "line": 34,
         "message": "unknown type name 'uint5'; did you mean 'uint'?"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 35,
+        "message": "unknown type name 'uint7'; did you mean 'uint'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_01c70754'"
       },
       {
         "category": "other",
@@ -113,7 +107,13 @@
         "category": "undeclared_identifier",
         "column": 43,
         "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c70754'"
+        "message": "use of undeclared identifier '_DAT_01c70758'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 58,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_01c70758'"
       }
     ],
     "success": false,
@@ -122,17 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 269,
+    "complexity_score": 264,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
-      "undefined_data",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 102
@@ -162,26 +163,26 @@
   "globals": [
     {
       "addr": "005b7624",
-      "name": "DAT_005b7624",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "01bd4260",
-      "name": "DAT_01bd4260",
-      "type": "undefined4",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
       "value": null
     },
     {
       "addr": "01c00c70",
-      "name": "DAT_01c00c70",
-      "type": "undefined4",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
       "value": null
     },
     {
@@ -306,40 +307,24 @@
       "type": "nonstandard_int"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_01bd4260",
-      "severity": "mild",
-      "text": "if ((*(uint *)(*(int *)(&DAT_01bd4260 + screen_y * 4) + screen_x * 4) < (uint)z_depth) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 21,
-      "match": "DAT_005b7624",
-      "severity": "mild",
-      "text": "(DAT_005b7624 == 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)(*(int *)(&DAT_01bd2fa0 + screen_y * 4) + screen_x * 4);",
-      "type": "undefined_data"
+      "match": "(uint *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 24,
+      "line": 23,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar9 = (ushort)(((uint7)(byte)((uint)_DAT_01c00c70 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar9 = (ushort)(((uint7)(byte)((uint)g_ActiveRenderColor >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 25,
+      "line": 24,
       "match": "int3",
       "severity": "mild",
       "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
@@ -347,7 +332,7 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 25,
+      "line": 24,
       "match": "uint7",
       "severity": "mild",
       "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
@@ -355,7 +340,7 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 28,
+      "line": 27,
       "match": "uint5",
       "severity": "mild",
       "text": "uVar12 = (uint5)uVar2 & 0xffffffff00;",
@@ -363,7 +348,7 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 29,
+      "line": 28,
       "match": "uint7",
       "severity": "mild",
       "text": "uVar5 = (ushort)(((uint7)(byte)((uint)_DAT_01c70754 >> 0x18) << 0x30) >> 0x28);",
@@ -371,15 +356,23 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 30,
+      "line": 29,
       "match": "uint7",
       "severity": "mild",
       "text": "uVar7 = (ushort)(((uint7)(byte)((uint)_DAT_01c70758 >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
     },
     {
+      "description": "Pointer value `g_ScreenBufferArray[screen_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)g_ScreenBufferArray[screen_y]",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT34 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 25,
+      "line": 24,
       "match": "CONCAT34",
       "severity": "moderate",
       "text": "uVar2 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>",
@@ -387,7 +380,7 @@
     },
     {
       "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "CONCAT14",
       "severity": "moderate",
       "text": "0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)",
@@ -406,7 +399,7 @@
       "line": 36,
       "match": "CONCAT21",
       "severity": "moderate",
-      "text": "uVar8 = (short)CONCAT21(uVar9,(char)((uint)_DAT_01c00c70 >> 0x10)) *",
+      "text": "uVar8 = (short)CONCAT21(uVar9,(char)((uint)g_ActiveRenderColor >> 0x10)) *",
       "type": "concat_reconstruction"
     },
     {

@@ -19,13 +19,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00577309
 ;   TerminatedCString s_hLine_invalid_bitsPerPix_00577318
-;   undefined4 DAT_005b7624
-;   undefined4 DAT_01bd2fa0
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01c00c70
+;   int g_BitsPerPixel = 0x8
+;   void*[1200] g_ScreenBufferArray
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
+;   int g_ActiveRenderColor
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -44,18 +44,18 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00403bd3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00403bd7
     MOV EAX,dword ptr [ESP + 0x18]      ; 00403bdb
-    CMP ECX,dword ptr [0x01c00c5c]      ; 00403bdf | DAT_01c00c5c
+    CMP ECX,dword ptr [0x01c00c5c]      ; 00403bdf | g_ClipTop
     JL 0x00403c50                       ; 00403be5
         ;   XREF to: 00403c50 (CONDITIONAL_JUMP)  ; LAB_00403c50
-    CMP ECX,dword ptr [0x01c00c64]      ; 00403be7 | DAT_01c00c64
+    CMP ECX,dword ptr [0x01c00c64]      ; 00403be7 | g_ClipBottom
     JG 0x00403c50                       ; 00403bed
         ;   XREF to: 00403c50 (CONDITIONAL_JUMP)  ; LAB_00403c50
-    MOV EDI,dword ptr [0x01c00c58]      ; 00403bef | DAT_01c00c58
+    MOV EDI,dword ptr [0x01c00c58]      ; 00403bef | g_ClipLeft
     CMP EDX,EDI                         ; 00403bf5
     JGE 0x00403bfb                      ; 00403bf7
         ;   XREF to: 00403bfb (CONDITIONAL_JUMP)  ; LAB_00403bfb
     MOV EDX,EDI                         ; 00403bf9
-    MOV EBP,dword ptr [0x01c00c60]      ; 00403bfb | DAT_01c00c60
+    MOV EBP,dword ptr [0x01c00c60]      ; 00403bfb | g_ClipRight
         ;   Label: LAB_00403bfb
     CMP EAX,EBP                         ; 00403c01
     JLE 0x00403c07                      ; 00403c03
@@ -67,7 +67,7 @@ section .text
     CMP EAX,0x1                         ; 00403c0a
     JL 0x00403c50                       ; 00403c0d
         ;   XREF to: 00403c50 (CONDITIONAL_JUMP)  ; LAB_00403c50
-    MOV EBX,dword ptr [0x005b7624]      ; 00403c0f | DAT_005b7624
+    MOV EBX,dword ptr [0x005b7624]      ; 00403c0f | g_BitsPerPixel
     SHL ECX,0x2                         ; 00403c15
     CMP EBX,0x10                        ; 00403c18
     JNC 0x00403cab                      ; 00403c1b
@@ -76,8 +76,8 @@ section .text
     JNZ 0x00403cb2                      ; 00403c24
         ;   XREF to: 00403cb2 (CONDITIONAL_JUMP)  ; LAB_00403cb2
     PUSH EAX                            ; 00403c2a
-    MOV EBX,dword ptr [0x01c00c70]      ; 00403c2b | DAT_01c00c70
-    MOV EAX,dword ptr [ECX + 0x1bd2fa0] ; 00403c31 | DAT_01bd2fa0
+    MOV EBX,dword ptr [0x01c00c70]      ; 00403c2b | g_ActiveRenderColor
+    MOV EAX,dword ptr [ECX + 0x1bd2fa0] ; 00403c31 | g_ScreenBufferArray
     PUSH EBX                            ; 00403c37
     ADD EDX,EAX                         ; 00403c38
     PUSH EDX                            ; 00403c3a
@@ -92,9 +92,9 @@ section .text
     POP EDI                             ; 00403c51
     POP EBX                             ; 00403c52
     RET                                 ; 00403c53
-    MOV EBX,dword ptr [0x01c00c70]      ; 00403c54 | DAT_01c00c70
+    MOV EBX,dword ptr [0x01c00c70]      ; 00403c54 | g_ActiveRenderColor
         ;   Label: LAB_00403c54
-    MOV ECX,dword ptr [ECX + 0x1bd2fa0] ; 00403c5a | DAT_01bd2fa0
+    MOV ECX,dword ptr [ECX + 0x1bd2fa0] ; 00403c5a | g_ScreenBufferArray
     ADD EDX,EDX                         ; 00403c60
     MOV BX,word ptr [EBX*0x2 + 0x1bff720] ; 00403c62
     ADD EDX,ECX                         ; 00403c6a
@@ -112,10 +112,10 @@ section .text
     POP EDI                             ; 00403c7d
     POP EBX                             ; 00403c7e
     RET                                 ; 00403c7f
-    MOV EBX,dword ptr [0x01c00c70]      ; 00403c80 | DAT_01c00c70
+    MOV EBX,dword ptr [0x01c00c70]      ; 00403c80 | g_ActiveRenderColor
         ;   Label: LAB_00403c80
     SHL EDX,0x2                         ; 00403c86
-    MOV ECX,dword ptr [ECX + 0x1bd2fa0] ; 00403c89 | DAT_01bd2fa0
+    MOV ECX,dword ptr [ECX + 0x1bd2fa0] ; 00403c89 | g_ScreenBufferArray
     MOV EBX,dword ptr [EBX*0x4 + 0x1bff920] ; 00403c8f
     ADD EDX,ECX                         ; 00403c96
     TEST EAX,EAX                        ; 00403c98

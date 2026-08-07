@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_clearZBox_FUN_00532b70(int left,int right,int top
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9dd8)(left,right,top,bottom);

@@ -22,9 +22,9 @@
 ;   undefined4 DAT_012b0660
 ;   undefined4 DAT_0140d780
 ;   undefined4 DAT_014b7190
-;   undefined4 DAT_01bd4260
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
+;   uint*[1200] g_ZBufferScanlineArray
+;   int g_ClipLeft
+;   int g_ClipTop
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x30]      ; 0044444d
     MOV EDX,dword ptr [ESP + 0x34]      ; 00444451
     MOV ECX,dword ptr [ESP + 0x2c]      ; 00444455
-    SUB ECX,dword ptr [0x01c00c5c]      ; 00444459 | DAT_01c00c5c
+    SUB ECX,dword ptr [0x01c00c5c]      ; 00444459 | g_ClipTop
     MOV EBX,dword ptr [0x012b0660]      ; 0044445f | DAT_012b0660
     MOV dword ptr [ESP + 0x2c],ECX      ; 00444465
     CMP EBX,0x1                         ; 00444469
@@ -58,11 +58,11 @@ section .text
         ;   XREF to: 004445eb (CONDITIONAL_JUMP)  ; LAB_004445eb
     MOV EDI,dword ptr [EBP + 0x8]       ; 0044448d
         ;   Label: LAB_0044448d
-    MOV EAX,[0x01c00c58]                ; 00444490 | DAT_01c00c58
+    MOV EAX,[0x01c00c58]                ; 00444490 | g_ClipLeft
     SAR EDI,0x10                        ; 00444495
     SUB EDI,EAX                         ; 00444498
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044449a
-    MOV ECX,dword ptr [0x01c00c58]      ; 0044449d | DAT_01c00c58
+    MOV ECX,dword ptr [0x01c00c58]      ; 0044449d | g_ClipLeft
     SAR EAX,0x10                        ; 004444a3
     SUB EAX,ECX                         ; 004444a6
     MOV dword ptr [ESP + 0x10],EAX      ; 004444a8
@@ -80,7 +80,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004444c4
     LEA ECX,[EDI*0x4 + 0x0]             ; 004444c8
     MOV EBP,dword ptr [EBP + 0x28]      ; 004444cf
-    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004444d2 | DAT_01bd4260
+    MOV EAX,dword ptr [EAX*0x4 + 0x1bd4260] ; 004444d2 | g_ZBufferScanlineArray
     MOV EDX,dword ptr [EDX + 0x28]      ; 004444d9
     ADD EAX,ECX                         ; 004444dc
     MOV CL,byte ptr [0x012b0660]        ; 004444de | DAT_012b0660

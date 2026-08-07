@@ -13,7 +13,7 @@ int __cdecl engine_special_cpp_updateTexture_FUN_00532440(SMRGLTextureBasic *tex
 {
   int iVar1;
   
-  if (_DAT_01c02594 == 0) {
+  if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*_DAT_02dc9da0)(tex,DAT_005b762c,_DAT_01c02580,palette_data,_DAT_01c02584);

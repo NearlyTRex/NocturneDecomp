@@ -13,10 +13,10 @@
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00477390 at 0047748b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00c58
-;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01c00c60
-;   undefined4 DAT_01c00c64
+;   int g_ClipLeft
+;   int g_ClipTop
+;   int g_ClipRight
+;   int g_ClipBottom
 ;
 ; Called Functions:
 ;   engine_2d.c_clipAndDrawLine_FUN_00403990
@@ -30,13 +30,13 @@ section .text
     PUSH ESI                            ; 00403941
     PUSH EDI                            ; 00403942
     PUSH EBP                            ; 00403943
-    MOV EDX,dword ptr [0x01c00c64]      ; 00403944 | DAT_01c00c64
+    MOV EDX,dword ptr [0x01c00c64]      ; 00403944 | g_ClipBottom
     PUSH EDX                            ; 0040394a
-    MOV ECX,dword ptr [0x01c00c60]      ; 0040394b | DAT_01c00c60
+    MOV ECX,dword ptr [0x01c00c60]      ; 0040394b | g_ClipRight
     PUSH ECX                            ; 00403951
-    MOV EBX,dword ptr [0x01c00c5c]      ; 00403952 | DAT_01c00c5c
+    MOV EBX,dword ptr [0x01c00c5c]      ; 00403952 | g_ClipTop
     PUSH EBX                            ; 00403958
-    MOV ESI,dword ptr [0x01c00c58]      ; 00403959 | DAT_01c00c58
+    MOV ESI,dword ptr [0x01c00c58]      ; 00403959 | g_ClipLeft
     PUSH ESI                            ; 0040395f
     MOV EDI,dword ptr [ESP + 0x30]      ; 00403960
     PUSH EDI                            ; 00403964

@@ -50,13 +50,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     shape_edittool_cpp_FUN_004722b0(this_ptr,uVar7);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c5c,_DAT_01bcddec,-1,
-               "%d%% complete");
-    iVar3 = _DAT_01c00c60;
-    iVar1 = _DAT_01bcd9bc * 2 + _DAT_01c00c5c + 1;
-    y2 = _DAT_01bcd9bc * 4 + _DAT_01c00c5c + -1;
-    x2_00 = _DAT_01c00c60 + -1;
-    x1 = _DAT_01c00c58 + 1;
+              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,_DAT_01bcddec,-1,"%d%% complete"
+              );
+    iVar3 = g_ClipRight;
+    iVar1 = _DAT_01bcd9bc * 2 + g_ClipTop + 1;
+    y2 = _DAT_01bcd9bc * 4 + g_ClipTop + -1;
+    x2_00 = g_ClipRight + -1;
+    x1 = g_ClipLeft + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403ef0(x1,iVar1,x2_00,y2,_DAT_01bcddf8,_DAT_01bcde00);
     dVar5 = round
                       ((double)((float)((x2_00 - x1) + 1) * local_30 + (float)0.5));
@@ -80,8 +80,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
           round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar7)) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-                    (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c64 - _DAT_01bcd9bc,
-                     _DAT_01bcddec,-1,"%d:%02d elapsed, approximately %d:%02d remaining");
+                    (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipBottom - _DAT_01bcd9bc,_DAT_01bcddec
+                     ,-1,"%d:%02d elapsed, approximately %d:%02d remaining");
         }
       }
     }

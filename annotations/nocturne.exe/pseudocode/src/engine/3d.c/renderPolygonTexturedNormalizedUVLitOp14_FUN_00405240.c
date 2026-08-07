@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240(SMRGLHeaderPrimitive *prim)
 
 {
@@ -15,28 +13,28 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp
   int iVar2;
   SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
-  int iVar5;
+  int vertex_count;
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar2 != 0) {
-    if (_DAT_01c03948 == 0) {
-      if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
+    if (g_MMXSupported == 0) {
+      if (g_BitsPerPixel == 0x20) {
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_005300ec;
       }
       else {
-        _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
       }
     }
-    else if (DAT_005b7624 == 0x20) {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
+    else if (g_BitsPerPixel == 0x20) {
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
     }
     else {
-      _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
     }
-    _DAT_01c039a0 = 1;
-    _DAT_01c039a4 = 2;
+    g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+    g_VertexPreprocessMode = 2;
     engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
-    iVar5 = 0;
+    vertex_count = 0;
     iVar2 = 0;
     pSVar3 = prim + 1;
     for (iVar4 = 0; iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
@@ -44,11 +42,11 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp
       *(int *)((int)&DAT_006b029c + iVar2) = iVar1;
       (&DAT_005c502c)[iVar1 * 0xc] = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
-      iVar5 = iVar5 + 1;
+      vertex_count = vertex_count + 1;
       *(UIntegerFloat *)(&DAT_005c5030 + (pSVar3->base).type * 0x30) = (pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
-    engine_clipper_c_FUN_00432cd0(iVar5,&DAT_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0(vertex_count,&DAT_006b029c);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

@@ -11,7 +11,7 @@
 ;   crt_unknown.c_vsscanf_FUN_00566b20 at 00566b4e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c168c
+;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00567540
@@ -55,7 +55,7 @@ section .text
     MOV AL,BL                           ; 0056759a
     INC AL                              ; 0056759c
     AND EAX,0xff                        ; 0056759e
-    TEST byte ptr [EAX + 0x5c168c],0x2  ; 005675a3 | DAT_005c168c
+    TEST byte ptr [EAX + 0x5c168c],0x2  ; 005675a3 | g_CharacterClassificationTable
     JZ 0x005675bc                       ; 005675aa
         ;   XREF to: 005675bc (CONDITIONAL_JUMP)  ; LAB_005675bc
     PUSH ESI                            ; 005675ac

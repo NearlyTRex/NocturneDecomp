@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int param_4)
 
 {
@@ -15,106 +13,114 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
   byte bVar2;
   byte bVar3;
   ushort uVar4;
-  int iVar5;
+  void *pvVar5;
   float fVar6;
   float fVar7;
   float fVar8;
-  uint uVar9;
+  byte uVar9;
   uint uVar10;
   uint uVar11;
   uint uVar12;
-  int iVar13;
+  uint uVar13;
   int iVar14;
-  uint *puVar15;
-  uint uVar16;
-  double dVar17;
+  int iVar15;
+  uint *puVar16;
+  uint uVar17;
   double dVar18;
   double dVar19;
+  double dVar20;
   uint local_54;
   uint uStack_50;
   uint local_4c;
   int iStack_44;
   short local_2c;
   
-  bVar2 = DAT_01c0062c;
-  if ((((_DAT_01c00c58 <= param_1) && (param_1 <= _DAT_01c00c60)) && (_DAT_01c00c5c <= param_2)) &&
-     (param_2 <= _DAT_01c00c64)) {
-    iVar1 = param_2 * 4;
-    if (DAT_005b7624 == 8) {
-      iVar5 = *(int *)(&DAT_01bd2fa0 + iVar1);
-      iVar1 = (uint)*(byte *)(iVar5 + param_1) * 3;
+  uVar9 = g_RedDitherShift.bytes[0];
+  if ((((g_ClipLeft <= param_1) && (param_1 <= g_ClipRight)) && (g_ClipTop <= param_2)) &&
+     (param_2 <= g_ClipBottom)) {
+    if (g_BitsPerPixel == 8) {
+      pvVar5 = g_ScreenBufferArray[param_2];
+      iVar1 = (uint)*(byte *)((int)pvVar5 + param_1) * 3;
       bVar2 = g_SourcePaletteData[iVar1 + 1];
       bVar3 = g_SourcePaletteData[iVar1 + 2];
       fVar6 = 1.0 - param_3;
-      dVar17 = round
+      dVar18 = round
                          ((double)((float)g_SourcePaletteData[param_4 * 3] * fVar6 +
                                   (float)g_SourcePaletteData[iVar1] * param_3));
-      iVar1 = (int)ROUND(dVar17);
-      dVar17 = round
-                         ((double)((float)bVar2 * fVar6 + (float)bVar3 * param_3));
-      iVar13 = (int)ROUND(dVar17) >> 0x1f;
-      local_2c = (short)iVar1;
+      iVar1 = (int)ROUND(dVar18);
       dVar18 = round
-                         ((double)((float)bVar2 * fVar6 + (float)local_2c * param_3));
+                         ((double)((float)bVar2 * fVar6 + (float)bVar3 * param_3));
       iVar14 = (int)ROUND(dVar18) >> 0x1f;
-      *(byte *)(iVar5 + param_1) =
+      local_2c = (short)iVar1;
+      dVar19 = round
+                         ((double)((float)bVar2 * fVar6 + (float)local_2c * param_3));
+      iVar15 = (int)ROUND(dVar19) >> 0x1f;
+      *(byte *)((int)pvVar5 + param_1) =
            g_ColorCubeLookup
-           [((int)(((int)ROUND(dVar18) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) +
+           [((int)(((int)ROUND(dVar19) + iVar15 * -8) - (uint)(iVar15 << 2 < 0)) >> 3) +
             ((int)((iVar1 + (iVar1 >> 0x1f) * -8) - (uint)((iVar1 >> 0x1f) << 2 < 0)) >> 3) * 0x400
-            + ((int)(((int)ROUND(dVar17) + iVar13 * -8) - (uint)(iVar13 << 2 < 0)) >> 3) * 0x20];
+            + ((int)(((int)ROUND(dVar18) + iVar14 * -8) - (uint)(iVar14 << 2 < 0)) >> 3) * 0x20];
       return;
     }
-    if (DAT_005b7624 == 0x10) {
-      uVar4 = *(ushort *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 2);
-      uVar9 = (uint)(uVar4 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);
-      uVar10 = (uint)(uVar4 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);
-      uVar11 = (uint)(uVar4 >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f);
+    if (g_BitsPerPixel == 0x10) {
+      uVar4 = *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2);
+      uVar10 = (uint)(uVar4 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+               (g_RedDitherShift.bytes[0] & 0x1f);
+      uVar11 = (uint)(uVar4 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+               (g_GreenDitherShift.bytes[0] & 0x1f);
+      uVar12 = (uint)(uVar4 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+               (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
-      puVar15 = (uint *)(*(int *)(&DAT_01bd2fa0 + iVar1) + param_1 * 4);
-      uVar9 = *puVar15 >> (DAT_01c00624 & 0x1f);
-      uVar10 = *puVar15 >> (DAT_01c00630 & 0x1f);
-      uVar11 = *puVar15 >> (DAT_01c0063c & 0x1f);
+      puVar16 = (uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4);
+      uVar10 = *puVar16 >> (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar11 = *puVar16 >> (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar12 = *puVar16 >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
-    if (DAT_005b7624 == 0x10) {
+    if (g_BitsPerPixel == 0x10) {
       uVar4 = *(ushort *)(param_4 * 2 + 0x1c00424);
-      uStack_50 = (uint)(uVar4 >> (DAT_01c00624 & 0x1f)) << (DAT_01c0062c & 0x1f);
-      uVar16 = (uint)(uVar4 >> (DAT_01c00630 & 0x1f)) << (DAT_01c00638 & 0x1f);
-      uVar12 = (uint)(uVar4 >> (DAT_01c0063c & 0x1f)) << (DAT_01c00644 & 0x1f);
+      uStack_50 = (uint)(uVar4 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
+                  (g_RedDitherShift.bytes[0] & 0x1f);
+      uVar17 = (uint)(uVar4 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
+               (g_GreenDitherShift.bytes[0] & 0x1f);
+      uVar13 = (uint)(uVar4 >> (g_BlueBitPosition.bytes[0] & 0x1f)) <<
+               (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
-      uStack_50 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (DAT_01c00624 & 0x1f);
-      uVar16 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (DAT_01c00630 & 0x1f);
-      uVar12 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (DAT_01c0063c & 0x1f);
+      uStack_50 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar17 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar13 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     uStack_50 = uStack_50 & 0xff;
     fVar6 = 1.0 - param_3;
-    fVar8 = (float)uStack_50 * fVar6 + (float)(uVar9 & 0xff) * param_3;
-    fVar7 = (float)(uVar16 & 0xff) * fVar6 + (float)(uVar10 & 0xff) * param_3;
-    fVar6 = (float)(uVar12 & 0xff) * fVar6 + (float)(uVar11 & 0xff) * param_3;
-    if (DAT_005b7624 != 0x10) {
-      dVar17 = round((double)fVar8);
-      dVar18 = round((double)fVar7);
-      dVar19 = round((double)fVar6);
-      iStack_44 = (int)(longlong)ROUND(dVar18);
-      local_4c = (uint)(longlong)ROUND(dVar19);
-      local_54 = (uint)(longlong)ROUND(dVar17);
-      *(uint *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) =
-           iStack_44 << (DAT_01c00630 & 0x1f) | local_54 << (DAT_01c00624 & 0x1f) |
-           local_4c << (DAT_01c0063c & 0x1f);
+    fVar8 = (float)uStack_50 * fVar6 + (float)(uVar10 & 0xff) * param_3;
+    fVar7 = (float)(uVar17 & 0xff) * fVar6 + (float)(uVar11 & 0xff) * param_3;
+    fVar6 = (float)(uVar13 & 0xff) * fVar6 + (float)(uVar12 & 0xff) * param_3;
+    if (g_BitsPerPixel != 0x10) {
+      dVar18 = round((double)fVar8);
+      dVar19 = round((double)fVar7);
+      dVar20 = round((double)fVar6);
+      iStack_44 = (int)(longlong)ROUND(dVar19);
+      local_4c = (uint)(longlong)ROUND(dVar20);
+      local_54 = (uint)(longlong)ROUND(dVar18);
+      *(uint *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) =
+           iStack_44 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           local_54 << (g_RedBitPosition.bytes[0] & 0x1f) |
+           local_4c << (g_BlueBitPosition.bytes[0] & 0x1f);
       return;
     }
-    dVar17 = round((double)fVar8);
-    dVar18 = round((double)fVar7);
-    dVar19 = round((double)fVar6);
-    local_4c = (uint)(longlong)ROUND(dVar17);
-    local_54 = (uint)(longlong)ROUND(dVar18);
-    uVar10 = local_54 >> (DAT_01c00638 & 0x1f);
+    dVar18 = round((double)fVar8);
+    dVar19 = round((double)fVar7);
+    dVar20 = round((double)fVar6);
+    local_4c = (uint)(longlong)ROUND(dVar18);
     local_54 = (uint)(longlong)ROUND(dVar19);
-    *(ushort *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 2) =
-         (ushort)(uVar10 << (DAT_01c00630 & 0x1f)) |
-         (ushort)((local_4c >> (bVar2 & 0x1f)) << (DAT_01c00624 & 0x1f)) |
-         (ushort)((local_54 >> (DAT_01c00644 & 0x1f)) << (DAT_01c0063c & 0x1f));
+    uVar11 = local_54 >> (g_GreenDitherShift.bytes[0] & 0x1f);
+    local_54 = (uint)(longlong)ROUND(dVar20);
+    *(ushort *)((int)g_ScreenBufferArray[param_2] + param_1 * 2) =
+         (ushort)(uVar11 << (g_GreenBitPosition.bytes[0] & 0x1f)) |
+         (ushort)((local_4c >> (uVar9 & 0x1f)) << (g_RedBitPosition.bytes[0] & 0x1f)) |
+         (ushort)((local_54 >> (g_BlueDitherShift.bytes[0] & 0x1f)) <<
+                 (g_BlueBitPosition.bytes[0] & 0x1f));
   }
   return;
 }

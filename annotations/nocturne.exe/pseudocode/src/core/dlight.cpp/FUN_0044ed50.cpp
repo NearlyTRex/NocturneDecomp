@@ -9,6 +9,6 @@
 void core_dlight_cpp_FUN_0044ed50(int param_1,int param_2,int param_3)
 
 {
-  *(int *)(*(int *)(&DAT_01bd2fa0 + param_2 * 4) + param_1 * 4) = param_3 * 0x10101;
+  *(int *)((int)g_ScreenBufferArray[param_2] + param_1 * 4) = param_3 * 0x10101;
   return;
 }

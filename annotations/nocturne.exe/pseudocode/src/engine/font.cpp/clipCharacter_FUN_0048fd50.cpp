@@ -6,36 +6,34 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_font_cpp_clipCharacter_FUN_0048fd50(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width )
 
 {
-  if (*left_x < _DAT_01c00c58) {
-    if (*right_x < _DAT_01c00c58) {
+  if (*left_x < g_ClipLeft) {
+    if (*right_x < g_ClipLeft) {
       return 1;
     }
-    *bitmap_offset = *bitmap_offset + (_DAT_01c00c58 - *left_x);
-    *left_x = _DAT_01c00c58;
+    *bitmap_offset = *bitmap_offset + (g_ClipLeft - *left_x);
+    *left_x = g_ClipLeft;
   }
-  if (_DAT_01c00c60 < *right_x) {
-    if (_DAT_01c00c60 < *left_x) {
+  if (g_ClipRight < *right_x) {
+    if (g_ClipRight < *left_x) {
       return 1;
     }
-    *right_x = _DAT_01c00c60;
+    *right_x = g_ClipRight;
   }
-  if (*top_y < _DAT_01c00c5c) {
-    if (*bottom_y < _DAT_01c00c5c) {
+  if (*top_y < g_ClipTop) {
+    if (*bottom_y < g_ClipTop) {
       return 1;
     }
-    *bitmap_offset = *bitmap_offset + (_DAT_01c00c5c - *top_y) * bitmap_width;
-    *top_y = _DAT_01c00c5c;
+    *bitmap_offset = *bitmap_offset + (g_ClipTop - *top_y) * bitmap_width;
+    *top_y = g_ClipTop;
   }
-  if (_DAT_01c00c64 < *bottom_y) {
-    if (_DAT_01c00c64 < *top_y) {
+  if (g_ClipBottom < *bottom_y) {
+    if (g_ClipBottom < *top_y) {
       return 1;
     }
-    *bottom_y = _DAT_01c00c64;
+    *bottom_y = g_ClipBottom;
   }
   return 0;
 }

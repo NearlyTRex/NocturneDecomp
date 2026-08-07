@@ -26,13 +26,13 @@ void core_event_cpp_FUN_0047a5e0(char *param_1)
   if (0 < (int)n) {
     pcVar2 = param_1 + n;
     do {
-      if (((&DAT_005c168c)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
+      if ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;
       n = n - 1;
       pcVar2 = pcVar2 + -1;
     } while (0 < (int)n);
   }
   param_1[n] = '\0';
-  while (((&DAT_005c168c)[(byte)(*param_1 + 1)] & 2) != 0) {
+  while ((g_CharacterClassificationTable[(byte)(*param_1 + 1)] & 2) != 0) {
     memmove(param_1,param_1 + 1,n);
     n = n - 1;
   }

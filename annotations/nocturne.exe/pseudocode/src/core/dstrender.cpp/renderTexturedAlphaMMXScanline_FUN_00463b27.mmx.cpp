@@ -20,7 +20,7 @@ __asm {
     LAB_00463b37:
         shr ECX,0x10
         shr EAX,0x10
-        mov EBP,dword ptr [DAT_01bd2fa0 + EBX*0x4]
+        mov EBP,dword ptr [g_ScreenBufferArray + EBX*0x4]
         sub ECX,EAX
         jle LAB_00463c3c
         shl ECX,0x1

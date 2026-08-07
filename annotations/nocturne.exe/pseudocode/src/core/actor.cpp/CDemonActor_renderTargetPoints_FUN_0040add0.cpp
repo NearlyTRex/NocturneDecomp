@@ -37,7 +37,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonAc
       iVar5 = *(int *)PTR_DAT_005ae700;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;
-        _DAT_01c00c70 = uStack_14;
+        g_ActiveRenderColor = uStack_14;
         iVar5 = *(int *)(iVar5 + 0xea5e4) >> 0x10;
         if ((((-1 < iVar3) && (-1 < iVar5)) && (iVar3 < g_WindowWidth)) && (iVar5 < g_WindowHeight))
         {

@@ -56,10 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 24,
+        "category": "incompatible_types",
+        "column": 12,
         "line": 18,
-        "message": "use of undeclared identifier 'DAT_01bd2fa0'"
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -68,17 +68,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 135,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 164
   },
@@ -118,8 +117,8 @@
     },
     {
       "addr": "01bd2fa0",
-      "name": "DAT_01bd2fa0",
-      "type": "undefined4",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
       "value": null
     }
   ],
@@ -208,14 +207,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01bd2fa0",
-      "severity": "mild",
-      "text": "pbVar1 = *(byte **)(&DAT_01bd2fa0 + row_index * 4);",
-      "type": "undefined_data"
-    },
     {
       "description": "Pointer value `&pcx_file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 19,
