@@ -402,7 +402,7 @@ section .text
     CALL dll_dx7.cpp_setRenderStateCached_FUN_100037e0 ; 1000427a
         ;   XREF to: 100037e0 (UNCONDITIONAL_CALL)  ; void dll_dx7.cpp_setRenderStateCached_FUN_100037e0(uint render_state, DWORD value)
     ADD ESP,0x8                         ; 1000427f
-    MOV EAX,[0x10226908]                ; 10004282 | g_ExternalRendererBridge.system_memory_size
+    MOV EAX,[0x10226908]                ; 10004282 | g_ExternalRendererBridge.full_screen_quad_depth
         ;   Label: LAB_10004282
     MOV dword ptr [0x10014218],ESI      ; 10004287 | g_PrevRenderFlags
     MOV ECX,dword ptr [EAX]             ; 1000428d

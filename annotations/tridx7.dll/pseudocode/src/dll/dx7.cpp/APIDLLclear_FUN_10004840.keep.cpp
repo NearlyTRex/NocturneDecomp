@@ -29,10 +29,10 @@ int __cdecl dll_dx7_cpp_APIDLLclear_FUN_10004840(void)
     quad[1].projected_vertex.screen_y = 0;
     quad[2].projected_vertex.screen_y = g_ScreenHeight << 0x10;
     quad[3].projected_vertex.screen_x = 0;
-    quad[0].projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
-    quad[1].projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
-    quad[2].projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
-    quad[3].projected_vertex.transformed_z = *g_ExternalRendererBridge.system_memory_size;
+    quad[0].projected_vertex.transformed_z = *g_ExternalRendererBridge.full_screen_quad_depth;
+    quad[1].projected_vertex.transformed_z = *g_ExternalRendererBridge.full_screen_quad_depth;
+    quad[2].projected_vertex.transformed_z = *g_ExternalRendererBridge.full_screen_quad_depth;
+    quad[3].projected_vertex.transformed_z = *g_ExternalRendererBridge.full_screen_quad_depth;
     *g_ExternalRendererBridge.console_text_color = 0;
     quad[2].projected_vertex.screen_x = quad[1].projected_vertex.screen_x;
     quad[3].projected_vertex.screen_y = quad[2].projected_vertex.screen_y;

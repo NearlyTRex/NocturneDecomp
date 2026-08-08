@@ -43,10 +43,10 @@ int __cdecl dll_dx7_cpp_APIDLLclear_FUN_10004840(void)
     local_c0.dwAlphaDestConst = 0;
     local_4c = g_ScreenHeight << 0x10;
     local_20 = 0;
-    local_c0.dwROP = *g_ExternalRendererBridge.system_memory_size;
-    local_c0.dwAlphaEdgeBlend = *g_ExternalRendererBridge.system_memory_size;
-    local_58 = *g_ExternalRendererBridge.system_memory_size;
-    local_28 = *g_ExternalRendererBridge.system_memory_size;
+    local_c0.dwROP = *g_ExternalRendererBridge.full_screen_quad_depth;
+    local_c0.dwAlphaEdgeBlend = *g_ExternalRendererBridge.full_screen_quad_depth;
+    local_58 = *g_ExternalRendererBridge.full_screen_quad_depth;
+    local_28 = *g_ExternalRendererBridge.full_screen_quad_depth;
     *g_ExternalRendererBridge.console_text_color = 0;
     local_50 = local_c0.dwAlphaDestConstBitDepth;
     local_1c = local_4c;

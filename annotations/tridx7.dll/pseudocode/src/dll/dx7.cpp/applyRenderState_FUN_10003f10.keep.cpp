@@ -13,7 +13,7 @@ void __cdecl dll_dx7_cpp_applyRenderState_FUN_10003f10(uint render_flags)
 {
   int iVar1;
   DWORD DVar2;
-  
+
   if ((g_TextureOpacity != (uchar *)0x0) && ((render_flags & 1) != 0)) {
     render_flags = render_flags | 0x22;
   }
@@ -140,7 +140,7 @@ LAB_1000426c:
   dll_dx7_cpp_setRenderStateCached_FUN_100037e0(0x17,DVar2);
 LAB_10004282:
   g_PrevRenderFlags = render_flags;
-  iVar1 = *g_ExternalRendererBridge.system_memory_size;
+  iVar1 = *g_ExternalRendererBridge.full_screen_quad_depth;
   if (g_PrevSystemMemorySize != iVar1) {
     g_PrevSystemMemorySize = iVar1;
     if (*g_ExternalRendererBridge.processor_type == 0) {

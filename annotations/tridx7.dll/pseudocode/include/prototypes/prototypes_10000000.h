@@ -21,7 +21,8 @@
 #include "types/classes/CDX7TextureCache.h"
 #include "types/classes/CExternalRenderer.h"
 #include "types/classes/CExternalRendererBridge.h"
-#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SInputFace.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMRGLVertex.h"
 #include "types/structs/SRenderVertex.h"
@@ -99,9 +100,9 @@ void __cdecl dll_dx7_cpp_APIDLLGetDisplayContext_FUN_10004d30(HDC *hdc);
 void __cdecl dll_dx7_cpp_APIDLLReleaseDisplayContext_FUN_10004da0(HDC hdc);
 int __cdecl dll_dx7_cpp_APIDLLmasterZBuffer_FUN_10004e10(int z_buffer_mode);
 int __cdecl dll_dx7_cpp_APIDLLrestoreZBuffer_FUN_10004e90(int left,int top,int mode,int right,int bottom);
-int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
+int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 uint __cdecl dll_dx7_cpp_getOrAddVertex_FUN_10005010(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array,uint render_flags);
-int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
+int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );
 int __cdecl dll_dx7_cpp_APIDLLgetVideoMemory_FUN_10005280(int *total_memory,int *available_memory,int *memory_type);
 int __cdecl dll_dx7_cpp_APIDLLselectCard_FUN_100052c0(int card_index);
 int __cdecl dll_dx7_cpp_APIDLLbuildCardList_FUN_100052e0(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);

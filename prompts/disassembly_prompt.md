@@ -156,9 +156,33 @@ Whenever you use the sibling binary, state it explicitly in your analysis:
 
 When you tell the user to change something that **already exists** in an already-decompiled binary, ambiguity is unacceptable. The user has to find that exact symbol in Ghidra and edit it. **Never** describe such a change in prose alone, and **never** bury it in a paragraph.
 
-Emit one block per change, in this exact shape:
+Emit one block per change. Every block is **enclosed by horizontal rules**, so that a run of twenty corrections stays scannable in a terminal.
+
+#### Divider
+
+A run of **74** `─` (U+2500) characters on its own line. Emit one **before the first block and after every block**, so each block is fully enclosed and consecutive blocks are separated by exactly one rule. No blank line between a rule and the block it borders.
+
+#### Always Fence the Block
+
+**Every emitted block MUST be wrapped in a plain triple-backtick code fence.** This is not optional and not cosmetic - unfenced, the renderer treats the block as markdown and *silently destroys C declarations*:
+
+- `**` (pointer-to-pointer) is consumed as a bold marker, so `SInputFace **polygons` renders as `SInputFace polygons`. A `CURRENT SIG:` / `CHANGE SIG TO:` pair that differs only by one `*` then renders **identically**, which is the exact failure the pair exists to prevent. This happened in practice.
+- Single `*` pairs across a line can open and close emphasis, silently eating both.
+- Runs of spaces collapse, destroying the aligned value column.
+- `_` in identifiers can italicise.
+
+A fence makes every character literal and preserves the alignment, and costs nothing.
+
+#### No Colour
+
+**Do not colour these blocks.** ANSI escape sequences are *silently stripped* in this harness: they do not render as colour and they do not show up as visible garbage either, so a coloured block is indistinguishable from a plain one and every escape byte is wasted output. This was tested; do not try it again. (Colour would not survive a fence anyway - another reason the fence is free.)
+
+Structure carries the emphasis instead - the dividers, the fixed field order, the aligned value column, and the `<- WRONG` / `<- APPLY THIS` markers. Keep the value column aligned with spaces exactly as the template shows.
+
+#### Template
 
 ```
+──────────────────────────────────────────────────────────────────────────
 FIX IN: nocedit.exe
   SYMBOL:    engine_2d.c_doNothing1_FUN_00401590
   LOCATION:  0x00401590  (annotations/nocedit.exe/pseudocode/src/engine/2d.c/)
@@ -172,7 +196,10 @@ FIX IN: nocedit.exe
   EVIDENCE:  nocturne 00401990 body; identical 4-call sequence in nocedit
              shape_design.c loadPalette_FUN_0046e810:215-218
   CONFIDENCE: high - call-site argument strings match positionally
+──────────────────────────────────────────────────────────────────────────
 ```
+
+Emit the block exactly like that, **fence included** - the dividers go inside the fence. Consecutive blocks may share one fence, with a single divider between them.
 
 Rules for these blocks:
 
@@ -196,6 +223,8 @@ Rules for these blocks:
    When the only defect is in the signature and the name is already correct, that is still a change block - use `KIND: prototype change` with `CURRENT:` and `CHANGE TO:` both set to the unchanged name.
 8. **`CONFIDENCE:`** is required, and say what would confirm it if it is not high. Derived-but-unverified addresses must be labeled as such **inside the block**, not only in surrounding prose.
 9. **Separate new work from corrections.** Group blocks under a heading that makes clear whether you are asking the user to *fix something wrong* or to *name something new*. Corrections to an already-solved binary are the more urgent of the two and go first.
+10. **Dividers are mandatory, not decorative.** A block without its enclosing rules is malformed - re-emit it. With colour unavailable, the divider and the aligned `CURRENT:`/`CHANGE TO:` pair are the *only* things stopping the user from pasting the wrong side of the change into Ghidra, so neither may be dropped or abbreviated.
+11. **Always wrap a change block in a plain code fence, and never colour it.** The fence is mandatory: unfenced, markdown eats `**` in pointer-to-pointer declarations and collapses the aligned column, which can make `CURRENT SIG:` and `CHANGE SIG TO:` render identically. Do not add markdown emphasis (`**bold**`, backticks) inside the block either - inside a fence it would appear literally as punctuation.
 
 ### Output Location: Terminal Only
 
@@ -1128,7 +1157,7 @@ class CDemonActor {
 
 0. **Sibling Check First**: Before analyzing from scratch, look for the function's counterpart in the sibling binary (`nocedit.exe` <-> `nocturne.exe`). Transfer names/signatures/purpose; re-derive struct offsets and vtable slots from the target's own assembly. Report what was transferred vs. independently derived.
 0a. **Back-Port Corrections**: The already-solved binary is not exempt. If the binary you are analyzing reveals that the *other* binary's annotation is dummied out, misnamed, placeholder, or guessed over - report it as a correction, unprompted. Stubbed functions (bare `RET`, `doNothing*`) and the data globals they were supposed to fill are the highest-value cases. Before calling a stubbed feature absent, look for its **replacement implementation** in that build. Transfer existing sibling names rather than coining new ones, and **never place a global by address arithmetic** - no reference means no answer.
-0b. **Change-Block Format**: Any change to a symbol that already exists in a decompiled binary MUST use the `FIX IN:` block with `CURRENT:` / `CHANGE TO:` / `KIND:` / `CONFIDENCE:`. Never prose-only, never folded together. **Function changes must carry `CURRENT SIG:` / `CHANGE SIG TO:`** unless the signature is character-for-character identical AND free of every `undefined`, `param_N`, and `unknown` convention - which a rename never is.
+0b. **Change-Block Format**: Any change to a symbol that already exists in a decompiled binary MUST use the `FIX IN:` block with `CURRENT:` / `CHANGE TO:` / `KIND:` / `CONFIDENCE:`. Never prose-only, never folded together. **Function changes must carry `CURRENT SIG:` / `CHANGE SIG TO:`** unless the signature is character-for-character identical AND free of every `undefined`, `param_N`, and `unknown` convention - which a rename never is. **Every block is enclosed by a 74-column `─` divider and wrapped in a plain code fence** - the fence is mandatory, because unfenced markdown eats `**` in pointer-to-pointer declarations and can make the `CURRENT SIG:` / `CHANGE SIG TO:` pair render identically. Never coloured (ANSI is silently stripped here), never dressed up with markdown emphasis.
 0c. **Terminal Only**: Findings go in the terminal response. Do not write spec files, worklists, or reports to disk unless explicitly asked.
 0d. **Collision-Resistant Global Names**: Never name a global after the shape of the idiom that touches it (`Zero`, `Scratch`, `Temp`, `Saved`, `Flag`, `Count`, `Buffer`). Every name needs an **owner** prefix plus a **discriminator** unique to that address. Grep both binaries for the exact name *and* the prefix family before proposing it, and confirm which TU owns any prefix you adopt. Self-test: if a second unrelated address would also fit the name, it is too generic.
 1. **Function Names**: ALWAYS use `folder_file.ext_FunctionName_FUN_address` format

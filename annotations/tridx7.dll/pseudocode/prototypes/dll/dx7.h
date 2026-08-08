@@ -277,7 +277,7 @@ int __cdecl APIDLLrestoreZBuffer(int left,int top,int mode,int right,int bottom)
 
 // Original: dll_dx7.cpp_APIDLLdrawPolyList_FUN_10004f00
 // Address: 10004f00
-int __cdecl APIDLLdrawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
+int __cdecl APIDLLdrawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 
 // Original: dll_dx7.cpp_getOrAddVertex_FUN_10005010
 // Address: 10005010
@@ -285,7 +285,7 @@ uint __cdecl getOrAddVertex(SMRGLVertex *poly_vertex,SRenderVertex *vertex_array
 
 // Original: dll_dx7.cpp_APIDLLdrawPolyList2_FUN_10005130
 // Address: 10005130
-int __cdecl APIDLLdrawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
+int __cdecl APIDLLdrawPolyList2(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags);
 
 // Original: dll_dx7.cpp_APIDLLgetVideoMemory_FUN_10005280
 // Address: 10005280

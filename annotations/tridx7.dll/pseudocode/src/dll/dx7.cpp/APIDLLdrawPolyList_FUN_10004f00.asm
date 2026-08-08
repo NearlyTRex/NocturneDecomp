@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
+; int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer
-; SMRGLPrimitiveTriangle * * Stack[0x8]:4   polygons
+; SMRGLPrimitiveQuad * * Stack[0x8]:4   polygons
 ; int              Stack[0xc]:4   polygon_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:

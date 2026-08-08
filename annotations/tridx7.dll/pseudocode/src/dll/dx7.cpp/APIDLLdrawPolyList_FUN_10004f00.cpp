@@ -2,19 +2,19 @@
 // Address: 10004f00
 // Address Range: [[10004f00, 10004fe4] [10004fe8, 10005008]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
+int __cdecl dll_dx7_cpp_APIDLLdrawPolyList_FUN_10004f00(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 
 {
-  SMRGLPrimitiveTriangle *pSVar1;
+  SMRGLPrimitiveQuad *pSVar1;
   int iVar2;
   uint uVar3;
   SMRGLVertex *poly_vertex;
   int local_c;
-  SMRGLPrimitiveTriangle **local_8;
+  SMRGLPrimitiveQuad **local_8;
   int local_4;
   
                     /* 0x4f00  11  APIDLLdrawPolyList */

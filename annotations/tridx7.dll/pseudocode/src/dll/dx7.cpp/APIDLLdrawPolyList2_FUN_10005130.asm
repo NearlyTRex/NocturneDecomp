@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+; int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer
-; ushort * *       Stack[0x8]:4   polygons
+; SInputFace * *   Stack[0x8]:4   polygons
 ; int              Stack[0xc]:4   polygon_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:

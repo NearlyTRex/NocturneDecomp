@@ -933,6 +933,14 @@
       "type":"struct"
     },
     {
+      "name":"STrianglePackedIndices",
+      "type":"struct"
+    },
+    {
+      "name":"SInputFace",
+      "type":"struct"
+    },
+    {
       "name":"SectionFlags",
       "type":"enum"
     },
@@ -1106,6 +1114,10 @@
     },
     {
       "name":"SMRGLHeaderPrimitive",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLPrimitiveQuad",
       "type":"struct"
     },
     {
@@ -6635,7 +6647,7 @@
         },
         {
           "len":4,
-          "name":"system_memory_size",
+          "name":"full_screen_quad_depth",
           "offset":80,
           "type":"int*"
         },
@@ -11592,6 +11604,60 @@
       "desc":"",
       "fields":[
         {
+          "len":6,
+          "name":"vertex_indices",
+          "offset":0,
+          "type":"STrianglePackedIndices"
+        },
+        {
+          "len":2,
+          "name":"u_coord_0",
+          "offset":6,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"u_coord_1",
+          "offset":8,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"u_coord_2",
+          "offset":10,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"v_coord_0",
+          "offset":12,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"v_coord_1",
+          "offset":14,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"v_coord_2",
+          "offset":16,
+          "type":"ushort"
+        }
+      ],
+      "importable":true,
+      "len":18,
+      "name":"SInputFace",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"type",
           "offset":0,
@@ -11631,6 +11697,30 @@
       "importable":true,
       "len":24,
       "name":"SMRGLHeaderPrimitive",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
+          "len":48,
+          "name":"vertices",
+          "offset":24,
+          "type":"SMRGLVertex[4]"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "name":"SMRGLPrimitiveQuad",
       "pack":false,
       "type":"struct"
     },
@@ -11871,6 +11961,36 @@
       "importable":true,
       "len":32,
       "name":"SScreenVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
+          "name":"vertex_index_0",
+          "offset":0,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"vertex_index_1",
+          "offset":2,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"vertex_index_2",
+          "offset":4,
+          "type":"ushort"
+        }
+      ],
+      "importable":true,
+      "len":6,
+      "name":"STrianglePackedIndices",
       "pack":false,
       "type":"struct"
     },
