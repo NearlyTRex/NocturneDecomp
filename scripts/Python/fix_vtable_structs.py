@@ -9,8 +9,8 @@
 # wrong offset, and so is every composite that embeds the struct by value.
 #
 # Expected sizes are derived from the measured contract
-# (research/14-actor_vtable_contract), not hardcoded, so this stays honest if
-# the contract is regenerated.
+# (annotations/nocturne.exe/reports/actor_vtable_contract.json), not hardcoded,
+# so this stays honest if the contract is regenerated.
 #
 # Composites are rebuilt rather than patched: recomputing two or three offsets
 # by hand is how the offsets got wrong in the first place.

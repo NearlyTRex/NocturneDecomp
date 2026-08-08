@@ -414,8 +414,9 @@ def prop_vtables(ev, a_img, b_img, mapping, use_lcs=True):
 
     So tables are paired by *shared anchored slots* rather than by count, and
     aligned with an LCS so an insertion on either side becomes a gap instead of
-    breaking everything after it. See research/14-actor_vtable_contract for the
-    derived contract this mirrors.
+    breaking everything after it. See
+    annotations/nocturne.exe/reports/actor_vtable_contract.json for the derived
+    contract this mirrors.
 
     `use_lcs=False` restores the old same-count positional rule for A/B.
     """

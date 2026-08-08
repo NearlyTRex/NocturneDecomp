@@ -42,7 +42,7 @@ Function **addresses differ between the two binaries** - never look up by addres
    ls annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/ | grep resetSceneCamera
    grep -rl "resetSceneCamera" annotations/nocedit.exe/pseudocode/src/
    ```
-3. **Use the precomputed mapping** when name lookup fails or when you need the confidence of a match. `research/13-sibling_struct_layout_diff/verified_mapping.json` records 4707 matched pairs:
+3. **Use the precomputed mapping** when name lookup fails or when you need the confidence of a match. `annotations/nocturne.exe/reports/sibling_verified_mapping.json` records 4707 matched pairs:
    ```json
    {"a": "00401010",            // nocedit.exe virtual address
     "b": "00401010",            // nocturne.exe virtual address
@@ -74,7 +74,7 @@ Treat `verified_mapping.json` as a **snapshot**, not live truth. If a lookup con
 - **Global variable *meaning*** - but not its address, which differs.
 
 **NOT SAFE to carry over (must be re-derived from the target binary's own `.asm`):**
-- **Struct and class layouts.** 112 classes have different sizes between the two builds, in 17 shift groups (`research/13-sibling_struct_layout_diff/reports/drift_spec.md`). `CDemonActor` is 344 bytes in nocedit and 336 in nocturne; `CCharacter`-derived classes shift by -0x198. **Never state a field offset for one binary based on the other binary's header.**
+- **Struct and class layouts.** 112 classes have different sizes between the two builds, in 17 shift groups (`annotations/nocturne.exe/reports/sibling_struct_drift_spec.md`). `CDemonActor` is 344 bytes in nocedit and 336 in nocturne; `CCharacter`-derived classes shift by -0x198. **Never state a field offset for one binary based on the other binary's header.**
 - **Field *order*.** Some drift is a reorder that **preserves total size**, so a matching `sizeof` does not prove a matching layout (e.g. `CDemonCamera` swapped fields). A named field being accessed at sub-offsets in the disassembly is the tell.
 - **Vtable slot indices.** The editor build inserts a block of 7 editor-only methods. Align vtables by method *identity* (shape and translation unit), never positionally, and never fill a gap by index.
 - **Addresses.** Function VAs, global VAs, and string literal addresses all differ. **Never bridge them with a delta** - a constant offset measured between two confirmed globals is valid at those two points only, because `.bss` follows per-TU declaration order and diverges wherever the builds do. Place a global only from a real reference in the target binary.

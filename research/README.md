@@ -311,6 +311,31 @@ Ghidra source location: `~/Repositories/Ghidra/`
 
 ## Changelog
 
+### 2026-07-27 (transfer)
+- **Names, signatures and struct sizes transferred into nocturne and exported.** nocturne is now **94.1% named** (5302/5633), **2437 functions carry a USER_DEFINED signature**, 2004 have typed parameters (4534 total), and **184 of 231 struct layouts match their own RTTI**
+- `shift_struct_fields.py`: closed the gaps a resized base leaves in its subclasses — **128 structures**, every edit checked against RTTI, cascading to a fixpoint (`CDemonActor` → 43 direct subclasses → `CFlame`/`CCharacter` −400 → the whole enemy tree). The `CDemonActor` cascade is fully resolved with zero residual
+- `import_sibling_types.py`: 35 missing types imported (+74 with dependencies), which took full-prototype transfers from **261 → 1718** in one pass
+- `transfer_custom_storage.py`: 50 functions where nocedit hand-assigned storage (`ST0:10`/`ST1:10` for the Watcom FPU conventions, plus 33 `__cdecl` overrides). **I broke 7 `crt_math.c` functions first** by setting a calling convention after a failed `updateFunction`, making them throw on any parameter access; diagnosed, repaired, and the tool now resets storage instead
+- `find_junk_functions.py`: 5 junk functions removed from nocturne (4 alignment-padding, 1 phase-shifted decode). Needed tail-merge awareness — a function can legitimately fall through into the next one's `RET` — which cut false positives from 46 to 14
+- **Known remaining:** 3629 functions still have no declared parameters, so the decompiler invents `param_N`. Not a name-transfer bug — nocedit supplies real names for 3860/3862 parameters; the gate is too narrow. ~1660 more are unlockable — widen the confidence gate in `apply_sibling_annotations.py`
+
+### 2026-07-27 (later)
+- **Signature transfer unblocked.** It was paused on struct drift; that never applied. Of 4615 matched pairs, 1576 name a drifted class in their signature and **100% do so by pointer, 0 by value** — parameter count, types, stack offsets, convention and return type are all drift-invariant. Only *field naming inside bodies* depends on the layouts
+- **Code caves were corrupting every body comparison.** Caves live only in the Ghidra DB, but an allocated cave attaches to its borrowing function as an extra body fragment: 287 nocedit functions contaminated, **108 lost their shape entirely** (a cave in the unmapped `RUNTIME_HEAP` block sank the whole function to `None`). Now excluded via `code_caves.json`; whole-mapping `identical` 51.3%→53.7%, `size_mismatch` 2.9%→2.0%, `unshaped` 7.2%→4.9%, +92 exact seeds
+- **Fixed an off-by-one bug in order matching**, found by nocturne's hand-assigned names disagreeing — a 35-function bracket where an add and a remove kept the counts equal while shifting every slot. Neither the holdout test nor the pin oracle could see it (wrong population, same source file). `bracket_aligns()` now validates a bracket as a whole
+- `apply_sibling_annotations.py` reworked for hand-assigned units: transfers **only the class-and-method core**, preserves nocturne's TU, and blocks on unit disagreement (`SKIP_TU`). Its `is_unnamed()` check would have skipped all 2192 `<tu>_FUN_<addr>` functions
+
+### 2026-07-27
+- Added **order-constrained function matching** to `map_sibling_functions.py` (`order` / `order_multi` signals, `--no-order` to A/B). A translation unit's functions keep their source order in both builds, so two matched functions bracket a region and an equal-count bracket fixes the alignment without consulting similarity at all — the only signal here that can match a function whose *body was edited*. 3986 → 4615 pairs (70.7% → 81.9% of nocturne). Validated two independent ways: 883 held-out exact pairs recovered with **0 errors**, and **0 conflicts** against the `__FILE__` pin oracle, 15 of which are pin-confirmed edited functions
+- `CPickList` resolved: `char[100]` + `hotkey_capacity`/`hotkey_array` (8) + a 460-byte tail of two `CEdButton`s and one int = 568 exactly. Supersedes the earlier "468-byte tail" split
+- 343 functions are now *positively* editor-only (bracketed by matched neighbours with nothing between them), not merely unmatched
+- `sibling_match.py` gained `tu_of()` / `Image.tu_groups()` — the shared translation-unit partition, measured at 216 of 252 units contiguous and 98.3% order-preserving
+
+### 2026-07-26
+- Sibling struct-layout diff (reports now in `annotations/nocturne.exe/reports/sibling_*`): nocturne.exe now carries its own WatcomTypeInfo RTTI, so sibling struct sizes are measured rather than inferred. 127 differing classes reduce to **14 roots**; `CDemonActor`, `CKeyFramedModel`, `CDeformableModel`, `CTextureList` and `CSkeleton` resolved to concrete edits. New tooling: `compare_sibling_struct_sizes.py`, `diff_sibling_layout.py`, `validate_drift_against_rtti.py`, `emit_layouts_json.py`
+- **Fixed two bugs in `derive_struct_drift.py`** that made it report confident wrong shifts: `[esp+N]` stack slots (47% of observations) and `call [edx+N]` vtable dispatch were both counted as struct field offsets. Re-derive anything from before this date
+- Gated the `export_annotations.py` struct-size assertion on `--strict` so exports complete and record `typeinfo_size` (the 32-bit ground truth) rather than aborting
+
 ### 2026-07-14
 - Added `11-tridx7_3d_renderer_dll/`: applied 27/37 `APIDLL*` export signatures to `tridx7.dll` from nocedit's `g_APIDLL_*` funcdefs (`apply_apidll_signatures.py`), derived the 3 nocedit-untyped exports from DLL asm, and verified `CExternalRendererBridge` against the DLL — size/layout confirmed (35 dwords), with 3 mislabeled fields and 11 DLL-unreferenced fields flagged
 - Added `10-tridx7_crt_identification/` to the indexes: 248 statically-linked MSVC CRT functions named + 200 signatured with snake_case params; catalog (`crt_functions.md`/`.tsv`) + tooling (`name_crt_functions.py`, `apply_crt_signatures.py`, `extract_crt_catalog.py`)

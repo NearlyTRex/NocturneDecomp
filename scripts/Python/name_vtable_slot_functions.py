@@ -4,9 +4,9 @@
 This does NOT match functions between the two binaries. A vtable slot's index
 already determines which method it is, given two things we now have:
 
-  * the slot -> method contract (research/14-actor_vtable_contract), derived once
-    from nocedit and covering the CDemonActor/CCharacter/CNPC/CEnemy/CHero
-    lineages;
+  * the slot -> method contract (annotations/nocturne.exe/reports/
+    actor_vtable_contract.json), derived once from nocedit and covering the
+    CDemonActor/CCharacter/CNPC/CEnemy/CHero lineages;
   * the real class hierarchy, recovered from the registerActorClass() calls
     (scripts/Python/actor_class_tree.py).
 
@@ -61,7 +61,8 @@ import actor_class_tree as act
 
 REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
 DEFAULT_CONTRACT = os.path.join(
-    REPO_ROOT, "research", "14-actor_vtable_contract", "actor_vtable_contract.json")
+    REPO_ROOT, "annotations", "nocturne.exe", "reports",
+    "actor_vtable_contract.json")
 
 
 def _slots(table):
