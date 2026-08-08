@@ -860,7 +860,7 @@ RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6] = {
 };
 
 // TerminatedCString
-TerminatedCString s_d3d_dll_005c0e83 = "d3d.dll";
+TerminatedCString s_trid3d_dll_005c0e80 = "trid3d.dll";
 
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8 = {
@@ -894,9 +894,6 @@ int INT_005c1668 = -1;
 int INT_005c166c = 0xB;
 
 // undefined1
-undefined1 DAT_005c0e80 = 0x74;
-undefined1 DAT_005c0e81 = 0x72;
-undefined1 DAT_005c0e82 = 0x69;
 undefined1 DAT_005c1a9c = 0x61;
 undefined1 DAT_005c1b23 = 0x00;
 undefined1 DAT_005c1b24 = 0x00;

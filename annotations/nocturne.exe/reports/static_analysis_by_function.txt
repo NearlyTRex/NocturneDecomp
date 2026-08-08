@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 375
-  Total diagnostics: 1025
+  Functions with findings: 377
+  Total diagnostics: 1040
   Functions flagged by multiple tools: 2
-  .keep.cpp files: 0, raw .cpp files: 375
+  .keep.cpp files: 0, raw .cpp files: 377
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -141,6 +141,25 @@ core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00  [.cpp] [Cppche
   Line  164: [legacyUninitvar] Uninitialized variable: local_64
   Line  165: [legacyUninitvar] Uninitialized variable: local_5c
   Line  166: [legacyUninitvar] Uninitialized variable: local_58
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureGraphicsOptions_FUN_004d0080  [.cpp] [Cppcheck (quick)]
+  File: core/menu.cpp  (14 diagnostics)
+
+  Line   73: [staticStringCompare] Unnecessary comparison of static strings.
+  Line   77: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
+  Line  101: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  105: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
+  Line  202: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  207: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  212: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  217: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  360: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  526: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  530: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
+  Line  542: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  547: [staticStringCompare] Unnecessary comparison of static strings.
+  Line  552: [staticStringCompare] Unnecessary comparison of static strings.
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_004f0790  [.cpp] [Cppcheck (quick)]
@@ -2706,19 +2725,25 @@ engine_prim.c_renderScanlinePolygon_FUN_004fad00  [.cpp] [Cppcheck (quick)]
 engine_special.cpp_FUN_00530d30  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
-  Line   17: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   15: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_FUN_00532f30  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   15: [uninitvar] Uninitialized variable: in_stack_00000004
+
+----------------------------------------------------------------------------------------------------
+engine_special.cpp_FUN_00532f50  [.cpp] [Cppcheck (quick)]
+  File: engine/special.cpp  (1 diagnostics)
+
+  Line   18: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_FUN_00532fa0  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
-  Line   17: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
 engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410  [.cpp] [Cppcheck (quick)]

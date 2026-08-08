@@ -7,7 +7,7 @@
 ; LPCSTR           Stack[0x4]:4   lpLibFileName
 ;
 ; XREF[2]:
-;   engine_special.cpp_FUN_00530e60 at 00530e6d
+;   engine_special.cpp_initializeExternalRenderer_FUN_00530e60 at 00530e6d
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780 at 005317be
 ;
 ; Referenced Globals:

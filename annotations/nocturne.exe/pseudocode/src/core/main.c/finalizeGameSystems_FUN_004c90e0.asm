@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Press_any_key_to_continu_00587ea7
 ;   TerminatedCString s_rb_00587ec4
 ;   TerminatedCString s_enemy_pod_00587ec7
-;   undefined4 DAT_00587ed1
+;   char g_CHAR_00587ed1 = \x00
 ;   void* PTR_DAT_005b9284 = 01c70f74
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
@@ -57,7 +57,7 @@ section .text
     SUB ESP,0x100                       ; 004c90e4
     PUSH 0x587ec4                       ; 004c90ea | = "rb"
     PUSH 0x587ec7                       ; 004c90ef | = "enemy.pod"
-    PUSH 0x587ed1                       ; 004c90f4 | DAT_00587ed1
+    PUSH 0x587ed1                       ; 004c90f4 | g_CHAR_00587ed1
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004c90f9
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004c90fe
@@ -266,8 +266,8 @@ section .text
     ADD ESP,0x4                         ; 004c9323
     MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMouse_PTR_005be060
     PUSH EDI                            ; 004c932c
-    CALL engine_ncursfx.cpp_FUN_004ee680 ; 004c932d
-        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_FUN_004ee680(CMouse * this_ptr)
+    CALL engine_ncursfx.cpp_CMouse_FUN_004ee680 ; 004c932d
+        ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_FUN_004ee680(CMouse * this_ptr)
     ADD ESP,0x4                         ; 004c9332
     MOV EBP,dword ptr [0x005baf90]      ; 004c9335 | g_CDemonMission_PTR_005baf90
     PUSH EBP                            ; 004c933b

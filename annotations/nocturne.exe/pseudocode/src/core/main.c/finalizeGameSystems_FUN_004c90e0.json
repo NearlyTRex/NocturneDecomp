@@ -57,12 +57,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_00587ed1'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 15,
         "line": 29,
         "message": "use of undeclared identifier 'stack0xfffffef0'"
@@ -116,16 +110,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 139,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 351
@@ -264,7 +257,7 @@
     {
       "addr": "004ee680",
       "is_variadic": false,
-      "name": "engine_ncursfx.cpp_FUN_004ee680"
+      "name": "engine_ncursfx.cpp_CMouse_FUN_004ee680"
     },
     {
       "addr": "004f8b40",
@@ -351,9 +344,9 @@
     },
     {
       "addr": "00587ed1",
-      "name": "DAT_00587ed1",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CHAR_00587ed1",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "005b9284",
@@ -512,14 +505,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00587ed1",
-      "severity": "mild",
-      "text": "(&DAT_00587ed1,\"enemy.pod\",\"rb\");",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

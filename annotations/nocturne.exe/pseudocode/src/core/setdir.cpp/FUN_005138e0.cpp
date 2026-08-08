@@ -1,12 +1,12 @@
 // Name: core_setdir.cpp_FUN_005138e0
 // Address: 005138e0
 // Address Range: [[005138e0, 00513cdb]]
-// Convention: unknown
-// Signature: void core_setdir_cpp_FUN_005138e0(int *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)
 
 #include "nocturne.h"
 
-void core_setdir_cpp_FUN_005138e0(int *param_1)
+void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)
 
 {
   int iVar1;

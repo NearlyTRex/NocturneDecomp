@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_light_cpp_FUN_004c6a00(void)
+; undefined4 __cdecl engine_light_cpp_FUN_004c6a00(void)
 ;
 ;
 ; Referenced Globals:

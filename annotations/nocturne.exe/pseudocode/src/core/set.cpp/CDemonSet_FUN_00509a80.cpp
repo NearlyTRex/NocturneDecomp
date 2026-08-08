@@ -268,7 +268,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00509a80(CDemonSet *this_ptr,int skip_pr
               (g_CConsole_PTR_005ad350,"comp: %3.2f/%3.2f actren : %3.2f\n");
   }
   if (g_CGame_PTR_005b9354->debug_toggle_flag != 0) {
-    core_setdir_cpp_FUN_005138e0();
+    core_setdir_cpp_FUN_005138e0(&this_ptr->camera_count);
   }
   iVar6 = 0;
   pCVar5 = this_ptr;

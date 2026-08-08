@@ -12,8 +12,8 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,942
-  Unnamed functions (FUN_):          565 (11.4%)
-  Functions with unnamed params:     25 ( 0.5%)
+  Unnamed functions (FUN_):          551 (11.1%)
+  Functions with unnamed params:     30 ( 0.6%)
   Functions with type issues:        1,755 (35.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
@@ -22,8 +22,8 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   2
     Missing register params:           34
     Wrong calling convention:          73
-    Undefined types in variables:      1615
-    Unresolved stack params:           169
+    Undefined types in variables:      1616
+    Unresolved stack params:           168
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -77,7 +77,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00527200  unknown       0 callers
     0x00527570  unknown       0 callers
     0x00527950  unknown       0 callers
-    0x00529a00  unknown       0 callers
+    0x00529a00  __cdecl       0 callers
 
   xxx/unk.c (2 unnamed)
     0x004940d0  unknown       24 callers
@@ -192,27 +192,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0050e370  __cdecl       1 callers
     0x0050dd60  __cdecl       0 callers
 
-  engine/special.cpp (19 unnamed)
-    0x00532320  unknown       6 callers
-    0x00530d40  unknown       3 callers
-    0x00532ba0  unknown       1 callers
-    0x00532cd0  unknown       1 callers
-    0x00532d20  unknown       1 callers
-    0x00532f50  unknown       1 callers
-    0x00530cf0  unknown       0 callers
-    0x00530d30  unknown       0 callers
-    0x00530e60  unknown       0 callers
-    0x00532380  unknown       0 callers
-    0x005323c0  unknown       0 callers
-    0x00532480  unknown       0 callers
-    0x005325c0  unknown       0 callers
-    0x00532900  unknown       0 callers
-    0x00532930  unknown       0 callers
-    0x00532950  unknown       0 callers
-    0x00532980  unknown       0 callers
-    0x00532f30  unknown       0 callers
-    0x00532fa0  unknown       0 callers
-
   engine/3d.c (18 unnamed)
     0x00408e80  unknown       5 callers
     0x00404480  __cdecl       1 callers
@@ -235,9 +214,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/setdir.cpp (9 unnamed)
     0x005125a0  __cdecl       5 callers
-    0x00513670  unknown       1 callers
+    0x00513670  __cdecl       1 callers
     0x00513720  __cdecl       1 callers
-    0x005138e0  unknown       1 callers
+    0x005138e0  __cdecl       1 callers
     0x00511d80  unknown       0 callers
     0x00513e20  __cdecl       0 callers
     0x00514390  unknown       0 callers
@@ -536,7 +515,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004c5630  __cdecl       1 callers
 
   core/main.c (2 unnamed)
-    0x004c8510  unknown       1 callers
+    0x004c8510  __cdecl       1 callers
     0x004c85f0  __cdecl       1 callers
 
   core/manpuz.cpp (4 unnamed)
@@ -588,7 +567,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004fa2e0  __cdecl       1 callers
     0x004f942e  unknown       0 callers
     0x004f9440  unknown       0 callers
-    0x004f9bc0  unknown       0 callers
+    0x004f9bc0  __cdecl       0 callers
     0x004faca0  unknown       0 callers
 
   core/scat.cpp (5 unnamed)
@@ -600,6 +579,13 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/slew.cpp (1 unnamed)
     0x0051f930  __cdecl       1 callers
+
+  engine/special.cpp (5 unnamed)
+    0x00532f50  __cdecl       1 callers
+    0x00530cf0  __cdecl       0 callers
+    0x00530d30  __cdecl       0 callers
+    0x00532f30  __cdecl       0 callers
+    0x00532fa0  __cdecl       0 callers
 
   core/spike.cpp (1 unnamed)
     0x00533750  __cdecl       1 callers
@@ -753,7 +739,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004bc7c0  unknown       0 callers
 
   engine/light.cpp (3 unnamed)
-    0x004c6a00  unknown       0 callers
+    0x004c6a00  __cdecl       0 callers
     0x004c6a40  unknown       0 callers
     0x004c6d70  unknown       0 callers
 
@@ -877,6 +863,14 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int), param_3 (CVector3f *)
     Named:   this_ptr (CDemonSet *)
 
+  FUN_00530cf0
+    Address: 0x00530cf0  File: engine/special.cpp
+    Unnamed: param_1 (int *), param_2 (int)
+
+  FUN_00532f50
+    Address: 0x00532f50  File: engine/special.cpp
+    Unnamed: param_1 (char *), param_2 (undefined4)
+
   CPackedBitmap
     Address: 0x004f4b30  File: cockpit/pkbitmap.cpp
     Unnamed: param_2 (char *)
@@ -912,6 +906,15 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (CVector3f *)
     Named:   this_ptr (CDemonSet *)
 
+  CDemonSet
+    Address: 0x00513670  File: core/setdir.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (CDemonSet *)
+
+  FUN_005138e0
+    Address: 0x005138e0  File: core/setdir.cpp
+    Unnamed: param_1 (int *)
+
   CSound
     Address: 0x0052ebc0  File: core/sound.cpp
     Unnamed: param_2 (char *)
@@ -934,6 +937,10 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x00490210  File: engine/font.cpp
     Unnamed: param_2 (char *)
     Named:   this_ptr (CBitFont *)
+
+  FUN_004f9bc0
+    Address: 0x004f9bc0  File: engine/prim.c
+    Unnamed: param_1 (int)
 
 ====================================================================================================
 TYPE CORRECTNESS ISSUES (heuristic-based)
@@ -1612,7 +1619,7 @@ Wrong calling convention (unaffected register usage) (73)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (169)
+Unresolved stack parameters (missing from signature) (168)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -2431,12 +2438,6 @@ Unresolved stack parameters (missing from signature) (169)
     Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00529a00
-    Address: 0x00529a00  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int sound_sndmain_cpp_FUN_00529a00(void)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_0052ad30
     Address: 0x0052ad30  File: sound/snddx.cpp
     Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
@@ -2482,19 +2483,19 @@ Unresolved stack parameters (missing from signature) (169)
   FUN_00530d30
     Address: 0x00530d30  File: engine/special.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void engine_special_cpp_FUN_00530d30(void)
+    Signature: void __cdecl engine_special_cpp_FUN_00530d30(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00532f30
     Address: 0x00532f30  File: engine/special.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void engine_special_cpp_FUN_00532f30(void)
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
+    Signature: void __cdecl engine_special_cpp_FUN_00532f30(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00532fa0
     Address: 0x00532fa0  File: engine/special.cpp
     Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined1 * engine_special_cpp_FUN_00532fa0(void)
+    Signature: char * __cdecl engine_special_cpp_FUN_00532fa0(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00534f90
@@ -2630,7 +2631,7 @@ Unresolved stack parameters (missing from signature) (169)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1615)
+Undefined types in variables (1616)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -10473,14 +10474,19 @@ Undefined types in variables (1615)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00532ba0
-    Address: 0x00532ba0  File: engine/special.cpp
-    Locals:  local_8 (undefined4)
+  FUN_00532f50
+    Address: 0x00532f50  File: engine/special.cpp
+    Params:  param_2 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   loadExternalRenderer
     Address: 0x00531780  File: engine/special.cpp
     Locals:  local_1e64 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  toggle
+    Address: 0x00532ba0  File: engine/special.cpp
+    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CWinFont_getStringWidth
@@ -11130,16 +11136,16 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00511a10  (CDemonSet *this_ptr,CDemonActor *actor)
     0x00511aa0  (CDemonSet *this_ptr,CDemonActor *actor)
 
-  core_setdir.cpp  (6 functions)
+  core_setdir.cpp  (5 functions)
     0x00511d80  (CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePol...)
-    0x00513670  (SIZE_T *param_1,char *param_2)
     0x005138e0  (int *param_1)
     0x00514390  (void)
     0x005143a0  (void)
     0x005143b0  (void)
 
-  core_setdir.cpp_CDemonSet  (3 functions)
+  core_setdir.cpp_CDemonSet  (4 functions)
     0x005125a0  (CDemonSet *this_ptr,CDemonActor *param_2,int param_3)
+    0x00513670  (CDemonSet *this_ptr,char *param_2)
     0x00513720  (CDemonSet *this_ptr)
     0x00513e20  (CDemonSet *this_ptr,int param_2,CVector3f *param_3)
 
@@ -11340,23 +11346,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fa2e0  (int *vertex_indices,int vertex_count)
     0x004faca0  (void)
 
-  engine_special.cpp  (19 functions)
+  engine_special.cpp  (5 functions)
     0x00530cf0  (int *param_1,int param_2)
     0x00530d30  (void)
-    0x00530d40  (void)
-    0x00530e60  (void)
-    0x00532320  (void)
-    0x00532380  (void)
-    0x005323c0  (void)
-    0x00532480  (void)
-    0x005325c0  (void)
-    0x00532900  (void)
-    0x00532930  (void)
-    0x00532950  (void)
-    0x00532980  (void)
-    0x00532ba0  (void)
-    0x00532cd0  (undefined4 param_1,undefined4 param_2,undefined4 param_3)
-    0x00532d20  (undefined4 param_1,undefined4 param_2,undefined4 param_3,...)
     0x00532f30  (void)
     0x00532f50  (char *param_1,undefined4 param_2)
     0x00532fa0  (void)
@@ -11416,7 +11408,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004e2980  (CFileBitStream *this_ptr)
     0x004e2c50  (CFileBitStream *this_ptr)
 
-  sound_sndmain.cpp  (25 functions)
+  sound_sndmain.cpp  (24 functions)
     0x00521bf0  (void)
     0x00521c50  (void)
     0x005229f0  (int param_1,char *param_2)
@@ -11441,7 +11433,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00527950  (char *param_1,int param_2)
     0x00527d80  (void)
     0x00529980  (char *param_1)
-    0x00529a00  (void)
 
   sound_sndmain.cpp_CSfxOptions_dtor  (2 functions)
     0x00529a40  (CSfxOptions *this_ptr,uint flags)

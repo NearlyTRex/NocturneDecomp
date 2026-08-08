@@ -72,7 +72,7 @@ __asm {
         pop EBX
         ret
     LAB_005539d2:
-        call engine_special_cpp_FUN_00532ba0
+        call engine_special_cpp_toggle_FUN_00532ba0
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0

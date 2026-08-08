@@ -12,6 +12,6 @@ void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00545a10(SMRGLTextu
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_00545920(texture);
-  engine_special_cpp_updateTexture_FUN_00532440(texture,_DAT_01c00020);
+  engine_special_cpp_updateTextureFromPalette_FUN_00532440(texture,_DAT_01c00020);
   return;
 }

@@ -15,15 +15,15 @@
 ;   int g_WindowHeight = 0xc8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int INT_02dc9d60
+;   int g_UseDirect3D
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_special.cpp_beginScene_FUN_00532340
-;   engine_special.cpp_FUN_00532320
 ;   engine_special.cpp_lockFrame_FUN_005322e0
 ;   engine_special.cpp_lockHoldBuffer_FUN_00532d60
+;   engine_special.cpp_unlockFrame_FUN_00532320
 ;   engine_special.cpp_unlockHoldBuffer_FUN_00532d80
 ;
 ; *****************************************************************************
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 00445091 (CONDITIONAL_JUMP)  ; LAB_00445091
     CALL engine_special.cpp_unlockHoldBuffer_FUN_00532d80 ; 0044504e
         ;   XREF to: 00532d80 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockHoldBuffer_FUN_00532d80()
-    CMP dword ptr [0x02dc9d60],0x0      ; 00445053 | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00445053 | g_UseDirect3D
     JNZ 0x004450a2                      ; 0044505a
         ;   XREF to: 004450a2 (CONDITIONAL_JUMP)  ; LAB_004450a2
     POP EDI                             ; 0044505c
@@ -75,10 +75,10 @@ section .text
     POP EBX                             ; 0044508e
     JMP 0x00445033                      ; 0044508f
         ;   XREF to: 00445033 (UNCONDITIONAL_JUMP)  ; LAB_00445033
-    CALL engine_special.cpp_FUN_00532320 ; 00445091
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
+    CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00445091
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
         ;   Label: LAB_00445091
-    CMP dword ptr [0x02dc9d60],0x0      ; 00445096 | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00445096 | g_UseDirect3D
     JNZ 0x004450a2                      ; 0044509d
         ;   XREF to: 004450a2 (CONDITIONAL_JUMP)  ; LAB_004450a2
     POP EDI                             ; 0044509f

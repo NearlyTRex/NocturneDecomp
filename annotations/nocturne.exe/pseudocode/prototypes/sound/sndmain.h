@@ -623,9 +623,9 @@ void FUN_00529980(char *param_1);
 // Address: 005299e0
 CSfxOptions * __cdecl CSfxOptions::ctor(CSfxOptions *this_ptr);
 
-// Original: sound_sndmain.cpp_FUN_00529a00
+// Original: sound_sndmain.cpp_CSfxSample_FUN_00529a00
 // Address: 00529a00
-int FUN_00529a00(void);
+int __cdecl CSfxSample(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_00529a20
 // Address: 00529a20

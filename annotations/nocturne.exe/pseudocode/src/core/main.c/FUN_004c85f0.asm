@@ -835,7 +835,7 @@ section .text
     MOV dword ptr [EAX],0x280           ; 004c8d88 | g_CGame_01c775ec
     MOV dword ptr [0x01cae37c],ESI      ; 004c8d8e | DAT_01cae37c
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004c8d94 | g_CGame_01c775ec.game_pixy
-    MOV dword ptr [0x02dc9d60],ESI      ; 004c8d9b | INT_02dc9d60
+    MOV dword ptr [0x02dc9d60],ESI      ; 004c8d9b | g_UseDirect3D
     MOV dword ptr [EAX + 0x8],0x20      ; 004c8da1 | g_CGame_01c775ec.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_004cffa0 ; 004c8da8
         ;   XREF to: 004cffa0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_004cffa0()

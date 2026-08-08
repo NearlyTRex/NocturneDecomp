@@ -53,8 +53,8 @@
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
-;   engine_special.cpp_FUN_00532320
 ;   engine_special.cpp_lockFrame_FUN_005322e0
+;   engine_special.cpp_unlockFrame_FUN_00532320
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -204,8 +204,8 @@ section .text
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a5989
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
-    CALL engine_special.cpp_FUN_00532320 ; 004a598e
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
+    CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 004a598e
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 004a5993
         ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004a5998

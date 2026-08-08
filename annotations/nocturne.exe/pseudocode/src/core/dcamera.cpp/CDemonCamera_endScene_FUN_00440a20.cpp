@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *t
   else {
     this_ptr->scene_open_flag = 0;
   }
-  if (INT_02dc9d60 != 0) {
+  if (g_UseDirect3D != 0) {
     engine_special_cpp_endScene_FUN_00532360();
   }
   if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {

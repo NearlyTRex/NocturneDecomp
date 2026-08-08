@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 200
 Total functions: 4942
-Clean functions: 2365 (47.9%)
+Clean functions: 2394 (48.4%)
 Files at 100%: 5
 Files at 90%+: 8
 Files at 50%+: 128
@@ -1251,6 +1251,40 @@ FILES BELOW 50%
            - core_frankgen.cpp_findLeader_FUN_00495240 (23 lines) [pointer_cast]
            - core_frankgen.cpp_FUN_00495410 (6 lines) [stack_param]
            - core_frankgen.cpp_FUN_00495420 (6 lines) [stack_param]
+   46.7% | engine/special.cpp
+         28/60 clean, 32 remaining
+           - engine_special.cpp_clearScreenRegion_FUN_0052ef37 (41 lines) [pointer_cast, pointer_truncation, unrolled_memset]
+           - engine_special.cpp_fillDepthRegion_FUN_0052efc2 (25 lines) [pointer_truncation]
+           - engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (571 lines) [concat_reconstruction, fnstsw_flag_artifact, nonstandard_int, pointer_cast, pointer_truncation, undefined_data, undefined_ram, undefined_type, unknown_field, warning_overlapping_globals]
+           - engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (589 lines) [concat_reconstruction, fnstsw_flag_artifact, nonstandard_int, pointer_cast, pointer_truncation, undefined_data, undefined_ram, undefined_type, unknown_field, warning_overlapping_globals]
+           - engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_005300ec (113 lines) [concat_reconstruction, pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322 (117 lines) [concat_reconstruction, pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_renderAlphaRow32_FUN_0053055c (105 lines) [concat_reconstruction, nonstandard_int, undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_renderAlphaRow16_FUN_005305f7 (113 lines) [concat_reconstruction, nonstandard_int, undefined_data, undefined_type, warning_overlapping_globals]
+           - engine_special.cpp_renderScanline_FUN_00530710 (7 lines) [warning_indirect_jump, warning_jumptable]
+           - engine_special.cpp_renderScanlineSwapped_FUN_00530716 (14 lines) [register_param, unaffected_reg, warning_overlapping_globals]
+           - engine_special.cpp_transformAndProjectPoint_FUN_0053075c (108 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_transformPoint_FUN_00530a25 (108 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_FUN_00530cf0 (11 lines) [unnamed_param]
+           - engine_special.cpp_FUN_00530d30 (7 lines) [stack_param]
+           - engine_special.cpp_loadExternalRenderer_FUN_00531780 (389 lines) [mem_magic_size, undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_lockFrame_FUN_005322e0 (12 lines) [warning_overlapping_globals]
+           - engine_special.cpp_unlockFrame_FUN_00532320 (11 lines) [warning_overlapping_globals]
+           - engine_special.cpp_selectTexture_FUN_00532380 (11 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_updateTexture_FUN_005323c0 (11 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_selectTextureFromPalette_FUN_00532400 (11 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_updateTextureFromPalette_FUN_00532440 (11 lines) [undefined_data, warning_overlapping_globals]
+           - engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 (46 lines) [warning_overlapping_globals]
+           - engine_special.cpp_drawPolyList_FUN_00532680 (44 lines) [warning_overlapping_globals]
+           - engine_special.cpp_drawPolyList2_FUN_005327c0 (36 lines) [warning_overlapping_globals]
+           - engine_special.cpp_drawFullScreenQuad_FUN_005329c0 (30 lines) [warning_overlapping_globals]
+           - engine_special.cpp_setFogColorFromPalette_FUN_00532a80 (14 lines) [warning_overlapping_globals]
+           - engine_special.cpp_setFogColor_FUN_00532af0 (13 lines) [warning_overlapping_globals]
+           - engine_special.cpp_toggle_FUN_00532ba0 (48 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, unrolled_memcpy]
+           - engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 (59 lines) [shadow_pointer_walk, unknown_field]
+           - engine_special.cpp_FUN_00532f30 (7 lines) [stack_param]
+           - engine_special.cpp_FUN_00532f50 (20 lines) [unnamed_param, unrolled_strcpy, warning_overlapping_globals]
+           - engine_special.cpp_FUN_00532fa0 (7 lines) [stack_param, warning_overlapping_globals]
    46.5% | core/bodypart.cpp
          20/43 clean, 23 remaining
            - core_bodypart.cpp_createBodyPart_FUN_00415b30 (64 lines) [unrolled_memcpy]
@@ -1725,9 +1759,9 @@ FILES BELOW 50%
            - core_setdir.cpp_FUN_00511d80 (307 lines) [pointer_cast, pointer_truncation, undefined_data, unnamed_param, unrolled_memcpy, warning_overlapping_globals]
            - core_setdir.cpp_CDemonSet_FUN_005125a0 (563 lines) [pointer_cast, pointer_truncation, undefined_data, unknown_field, unnamed_param, unrolled_memcpy, warning_overlapping_globals]
            - core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610 (13 lines) [undefined_data]
-           - core_setdir.cpp_FUN_00513670 (20 lines) [undefined_data, unnamed_param]
+           - core_setdir.cpp_CDemonSet_FUN_00513670 (20 lines) [undefined_data, unnamed_param]
            - core_setdir.cpp_CDemonSet_FUN_00513720 (63 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
-           - core_setdir.cpp_FUN_005138e0 (144 lines) [param_count_too_few, pointer_cast, pointer_truncation, undefined_data, unnamed_param]
+           - core_setdir.cpp_FUN_005138e0 (144 lines) [pointer_cast, pointer_truncation, undefined_data, unnamed_param]
            - core_setdir.cpp_CDemonSet_FUN_00513e20 (21 lines) [unnamed_param]
            - core_setdir.cpp_testOBBIntersection_FUN_00513e80 (141 lines) [unrolled_memcpy]
            - core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0 (50 lines) [pointer_cast, shadow_pointer_walk]
@@ -1739,6 +1773,23 @@ FILES BELOW 50%
            - engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 (103 lines) [pointer_cast, shadow_pointer_walk]
            - engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 (167 lines) [pointer_cast, shadow_pointer_walk, warning_overlapping_globals]
            - engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080 (55 lines) [pointer_cast]
+   40.0% | wincore/wddvmem.cpp
+         10/25 clean, 15 remaining
+           - wincore_wddvmem.cpp_initializeColorMasks_FUN_004b6220 (42 lines) [pointer_cast, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_populateColorTable_FUN_004b6370 (25 lines) [pointer_cast]
+           - wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 (61 lines) [pointer_cast, warning_overlapping_globals, warning_unreachable]
+           - wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0 (32 lines) [warning_overlapping_globals]
+           - wincore_wddvmem.cpp_FUN_00552a20 (24 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom]
+           - wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40 (45 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00552d70 (27 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom]
+           - wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 (129 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 (67 lines) [warning_overlapping_globals]
+           - wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0 (33 lines) [warning_overlapping_globals]
+           - wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 (31 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 (42 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_swapBuffers_FUN_00553910 (121 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
+           - wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70 (10 lines) [warning_overlapping_globals]
+           - wincore_wddvmem.cpp_FUN_00553ba0 (54 lines) [warning_overlapping_globals]
    39.3% | core/dtri.cpp
          11/28 clean, 17 remaining
            - core_dtri.cpp_FUN_0046c3c0 (8 lines) [pointer_cast, unnamed_param]
@@ -1941,24 +1992,6 @@ FILES BELOW 50%
            - core_xform.cpp_FUN_0055df19 (117 lines) [pointer_cast, pointer_truncation, register_param, shadow_pointer_walk, unaffected_reg, undefined_data, unknown_field, warning_overlapping_instructions]
            - core_xform.cpp_FUN_0055df90 (43 lines) [undefined_data]
            - core_xform.cpp_transformAndClipGeometry_FUN_0055e040 (455 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unknown_field, warning_overlapping_globals, warning_unreachable]
-   36.0% | wincore/wddvmem.cpp
-         9/25 clean, 16 remaining
-           - wincore_wddvmem.cpp_initializeColorMasks_FUN_004b6220 (42 lines) [pointer_cast, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_populateColorTable_FUN_004b6370 (25 lines) [pointer_cast]
-           - wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 (61 lines) [pointer_cast, warning_overlapping_globals, warning_unreachable]
-           - wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0 (32 lines) [warning_overlapping_globals]
-           - wincore_wddvmem.cpp_FUN_00552a20 (24 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom]
-           - wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40 (45 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_initializeScanlinePointers_FUN_00552d70 (27 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom]
-           - wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 (129 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 (67 lines) [warning_overlapping_globals]
-           - wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0 (33 lines) [warning_overlapping_globals]
-           - wincore_wddvmem.cpp_openScreenDevice_FUN_00553470 (31 lines) [pointer_cast, pointer_truncation, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 (42 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 (49 lines) [warning_overlapping_globals]
-           - wincore_wddvmem.cpp_swapBuffers_FUN_00553910 (121 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, warning_overlapping_globals]
-           - wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70 (10 lines) [warning_overlapping_globals]
-           - wincore_wddvmem.cpp_FUN_00553ba0 (54 lines) [warning_overlapping_globals]
    35.7% | engine/pod.cpp
          10/28 clean, 18 remaining
            - engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0 (31 lines) [undefined_data]
@@ -2002,7 +2035,7 @@ FILES BELOW 50%
            - core_main.c_FUN_004c85f0 (507 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
            - core_main.c_waitWithSkip_FUN_004c8e10 (35 lines) [warning_overlapping_globals]
            - core_main.c_showPromoScreen_FUN_004c8eb0 (58 lines) [warning_overlapping_globals]
-           - core_main.c_finalizeGameSystems_FUN_004c90e0 (84 lines) [stack_ref, undefined_data, warning_overlapping_globals]
+           - core_main.c_finalizeGameSystems_FUN_004c90e0 (84 lines) [stack_ref, warning_overlapping_globals]
    33.3% | core/scat.cpp
          8/24 clean, 16 remaining
            - core_scat.cpp_FUN_004fbb70 (9 lines) [stack_param]
@@ -2302,7 +2335,7 @@ FILES BELOW 50%
            - core_menu.cpp_calibrateGamepad_FUN_004cf8d0 (85 lines) [warning_overlapping_globals]
            - core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 (84 lines) [warning_overlapping_globals]
            - core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50 (57 lines) [unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - core_menu.cpp_configureGraphicsOptions_FUN_004d0080 (600 lines) [dropped_loop_counter, raw_address_constant, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals, warning_type_propagation, warning_unreachable]
+           - core_menu.cpp_configureGraphicsOptions_FUN_004d0080 (603 lines) [dropped_loop_counter, raw_address_constant, undefined_data, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals, warning_unreachable]
            - core_menu.cpp_configureCustomKeys_FUN_004d0d20 (244 lines) [raw_address_constant, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
            - core_menu.cpp_configureSoundOptions_FUN_004d12e0 (792 lines) [bitcast_double_pair, concat_reconstruction, pointer_cast, pointer_truncation, raw_address_constant, raw_address_pointer_store, stack_param, sub84_truncation, undefined_data, unknown_field, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_overlapping_globals]
            - core_menu.cpp_showOptionsScreen_FUN_004d21c0 (67 lines) [raw_address_constant]
@@ -2601,8 +2634,8 @@ FILES BELOW 50%
            - core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_0046bd90 (80 lines) [unrolled_memcpy]
            - core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0046bfe0 (51 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, undefined_data]
            - core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100 (54 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_ref, undefined_data]
-   18.8% | sound/sndmain.cpp
-         30/160 clean, 130 remaining
+   19.4% | sound/sndmain.cpp
+         31/160 clean, 129 remaining
            - sound_sndmain.cpp_computeComplexFFT_FUN_005211f0 (110 lines) [warning_overlapping_globals]
            - sound_sndmain.cpp_computeFFT_FUN_005214e0 (106 lines) [warning_overlapping_globals, warning_unreachable]
            - sound_sndmain.cpp_parseWavFile_FUN_00521830 (119 lines) [unknown_field]
@@ -2732,7 +2765,6 @@ FILES BELOW 50%
            - sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 (161 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, raw_address_pointer_store, stack_param, stack_ref, undefined_data, unknown_field, unrolled_memcpy, warning_overlapping_globals]
            - sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810 (36 lines) [undefined_data, warning_overlapping_globals]
            - sound_sndmain.cpp_FUN_00529980 (10 lines) [param_count_too_few, stack_ref, unnamed_param]
-           - sound_sndmain.cpp_FUN_00529a00 (8 lines) [stack_param]
    14.3% | engine/prim.c
          3/21 clean, 18 remaining
            - engine_prim.c_FUN_004f942e (7 lines) [pointer_truncation, register_param]
@@ -2835,67 +2867,6 @@ FILES BELOW 50%
            - sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0052bdf0 (11 lines) [undefined_data, unresolved_funcptr, warning_overlapping_globals]
            - sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0052be40 (22 lines) [undefined_data]
            - sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0 (71 lines) [raw_address_constant, undefined_data, unresolved_funcptr, warning_overlapping_globals]
-    1.7% | engine/special.cpp
-         1/60 clean, 59 remaining
-           - engine_special.cpp_clearScreen_FUN_0052ee70 (31 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_clearZBufferNative_FUN_0052eed4 (26 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_clearScreenRegion_FUN_0052ef37 (41 lines) [pointer_cast, pointer_truncation, unrolled_memset]
-           - engine_special.cpp_fillDepthRegion_FUN_0052efc2 (26 lines) [pointer_truncation, undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (569 lines) [concat_reconstruction, fnstsw_flag_artifact, nonstandard_int, pointer_cast, pointer_truncation, undefined_data, undefined_ram, undefined_type, unknown_field, warning_overlapping_globals]
-           - engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (587 lines) [concat_reconstruction, fnstsw_flag_artifact, nonstandard_int, pointer_cast, pointer_truncation, undefined_data, undefined_ram, undefined_type, unknown_field, warning_overlapping_globals]
-           - engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_005300ec (113 lines) [concat_reconstruction, pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322 (117 lines) [concat_reconstruction, pointer_cast, pointer_truncation, undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_renderAlphaRow32_FUN_0053055c (105 lines) [concat_reconstruction, nonstandard_int, undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_renderAlphaRow16_FUN_005305f7 (113 lines) [concat_reconstruction, nonstandard_int, undefined_data, undefined_type, warning_overlapping_globals]
-           - engine_special.cpp_renderScanline_FUN_00530710 (7 lines) [warning_indirect_jump, warning_jumptable]
-           - engine_special.cpp_renderScanlineSwapped_FUN_00530716 (14 lines) [register_param, unaffected_reg, warning_overlapping_globals]
-           - engine_special.cpp_transformAndProjectPoint_FUN_0053075c (108 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_transformPoint_FUN_00530a25 (108 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_FUN_00530cf0 (11 lines) [unnamed_param]
-           - engine_special.cpp_FUN_00530d30 (8 lines) [stack_param]
-           - engine_special.cpp_FUN_00530d40 (47 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00530e60 (292 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_loadExternalRenderer_FUN_00531780 (376 lines) [raw_address_constant, undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_kill_FUN_005322b0 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_lockFrame_FUN_005322e0 (12 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532320 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_beginScene_FUN_00532340 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_endScene_FUN_00532360 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532380 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_005323c0 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_selectTexture_FUN_00532400 (10 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_updateTexture_FUN_00532440 (10 lines) [undefined_data, warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532480 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 (46 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_005325c0 (14 lines) [warning_overlapping_globals]
-           - engine_special.cpp_restoreVideoMode_FUN_005325f0 (10 lines) [unresolved_funcptr, warning_overlapping_globals]
-           - engine_special.cpp_drawPolygon_FUN_00532620 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_drawPolygon2_FUN_00532650 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_drawPolyList_FUN_00532680 (44 lines) [unresolved_funcptr, warning_overlapping_globals]
-           - engine_special.cpp_drawPolyList2_FUN_005327c0 (36 lines) [unresolved_funcptr, warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532900 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532930 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532950 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532980 (11 lines) [warning_overlapping_globals]
-           - engine_special.cpp_clear_FUN_005329a0 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_drawFullScreenQuad_FUN_005329c0 (30 lines) [warning_overlapping_globals]
-           - engine_special.cpp_setFogColorFromPalette_FUN_00532a80 (14 lines) [warning_overlapping_globals]
-           - engine_special.cpp_setFogColor_FUN_00532af0 (13 lines) [warning_overlapping_globals]
-           - engine_special.cpp_sync_FUN_00532b30 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_clearZBuffer_FUN_00532b50 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_clearZBox_FUN_00532b70 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532ba0 (50 lines) [pointer_cast, pointer_truncation, signed_shift_global_idiom, unrolled_memcpy, warning_overlapping_globals]
-           - engine_special.cpp_masterZBuffer_FUN_00532c70 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_restoreZBuffer_FUN_00532c90 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532cd0 (10 lines) [param_count_too_few, unnamed_param, warning_overlapping_globals]
-           - engine_special.cpp_selectCard_FUN_00532d00 (10 lines) [warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532d20 (10 lines) [param_count_too_few, unnamed_param, warning_overlapping_globals]
-           - engine_special.cpp_lockHoldBuffer_FUN_00532d60 (10 lines) [unresolved_funcptr, warning_overlapping_globals]
-           - engine_special.cpp_unlockHoldBuffer_FUN_00532d80 (10 lines) [unresolved_funcptr, warning_overlapping_globals]
-           - engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 (59 lines) [shadow_pointer_walk, unknown_field]
-           - engine_special.cpp_FUN_00532f30 (7 lines) [stack_param]
-           - engine_special.cpp_FUN_00532f50 (20 lines) [undefined_data, unnamed_param, unrolled_strcpy, warning_overlapping_globals]
-           - engine_special.cpp_FUN_00532fa0 (8 lines) [stack_param, undefined_data, warning_overlapping_globals]
     0.0% | core/console.cpp
          0/1 clean, 1 remaining
            - core_console.cpp_staticInit_FUN_0043abb0 (8 lines) [raw_address_constant]
@@ -2916,7 +2887,7 @@ FILES BELOW 50%
     0.0% | core/inivar.cpp
          0/2 clean, 2 remaining
            - core_inivar.cpp_FUN_004bdb80 (145 lines) [undefined_data, warning_overlapping_globals]
-           - core_inivar.cpp_writeIniData_FUN_004be2d0 (129 lines) [undefined_data, warning_overlapping_globals]
+           - core_inivar.cpp_writeIniData_FUN_004be2d0 (129 lines) [warning_overlapping_globals]
     0.0% | core/mmx.c
          0/4 clean, 4 remaining
            - core_mmx.c_detectCPUFeatures_FUN_004d9e70 (10 lines) [undefined_data, warning_overlapping_globals]
@@ -2985,7 +2956,7 @@ FILES BELOW 50%
     0.0% | engine/light.cpp
          0/9 clean, 9 remaining
            - engine_light.cpp_setAmbientLightLevel_FUN_004c69d0 (12 lines) [undefined_data]
-           - engine_light.cpp_FUN_004c6a00 (5 lines) [undefined_data]
+           - engine_light.cpp_FUN_004c6a00 (4 lines) [undefined_data]
            - engine_light.cpp_setDirectionalLightVector_FUN_004c6a10 (11 lines) [warning_overlapping_globals]
            - engine_light.cpp_FUN_004c6a40 (7 lines) [stack_param, undefined_data]
            - engine_light.cpp_setLightingMultipliers_FUN_004c6a50 (6 lines) [undefined_data]

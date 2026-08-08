@@ -53,7 +53,7 @@ int __cdecl getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
 
 // Original: engine_prim.c_FUN_004f9bc0
 // Address: 004f9bc0
-bool FUN_004f9bc0(int param_1);
+int __cdecl FUN_004f9bc0(int param_1);
 
 // Original: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
 // Address: 004f9cb0

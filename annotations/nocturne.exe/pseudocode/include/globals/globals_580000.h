@@ -82,6 +82,7 @@ extern byte BYTE_ARRAY_00582f76[65];
 extern char CHAR_1_0058153c;
 extern char CHAR_00h_00583c06;
 extern char CHAR_00h_00583dcc;
+extern char g_CHAR_00587ed1;
 extern char CHAR_00h_0058869e;
 extern char CHAR_00h_005886ab;
 extern char CHAR_00h_0058c059;

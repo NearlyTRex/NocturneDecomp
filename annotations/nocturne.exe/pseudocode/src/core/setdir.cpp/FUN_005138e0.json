@@ -80,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 319,
+    "complexity_score": 304,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 144,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
@@ -112,9 +111,9 @@
         "00513cdb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_setdir.cpp_FUN_005138e0",
-    "signature": "void core_setdir_cpp_FUN_005138e0(int *param_1)"
+    "signature": "void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)"
   },
   "function_calls": [
     {
@@ -196,21 +195,19 @@
         "call_addr": "0050a08e",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_FUN_00509a80",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.0,
@@ -255,10 +252,10 @@
     "pcode_op_count": 1488
   },
   "stack_frame": {
-    "frame_size": 208,
+    "frame_size": 212,
     "local_size": 208,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -414,6 +411,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_1",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
       }
     ]
   },
@@ -423,7 +427,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_setdir_cpp_FUN_005138e0(int *param_1)",
+      "text": "void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -529,17 +533,6 @@
       "severity": "moderate",
       "text": "*(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_1c)) = uVar4 * 0x10101;",
       "type": "pointer_truncation"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

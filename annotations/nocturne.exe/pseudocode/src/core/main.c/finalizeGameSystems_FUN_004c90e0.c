@@ -20,7 +20,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
   int iVar5;
   
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60
-                          (&DAT_00587ed1,"enemy.pod","rb");
+                          (&g_CHAR_00587ed1,"enemy.pod","rb");
   if (file_handle == (_FILE *)0x0) {
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_014b9900,0x58);
     wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -77,7 +77,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(g_CNetGame_PTR_005bdee0);
   xxx_unk_c_FUN_004940d0();
-  engine_ncursfx_cpp_FUN_004ee680(g_CMouse_PTR_005be060);
+  engine_ncursfx_cpp_CMouse_FUN_004ee680(g_CMouse_PTR_005be060);
   core_mission_cpp_CDemonMission_FUN_004d7e90(g_CDemonMission_PTR_005baf90);
   core_sound_cpp_FUN_00527e10(g_CSound_PTR_005bed68);
   core_dmodel_cpp_FUN_00454460();

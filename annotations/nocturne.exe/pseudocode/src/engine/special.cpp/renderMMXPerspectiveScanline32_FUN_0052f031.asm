@@ -28,7 +28,7 @@
 ;   undefined4 DAT_005bf480
 ;   undefined4 DAT_005bf484
 ;   undefined4 DAT_005bf488
-;   undefined8 DAT_005bf48c
+;   double g_BufferFillZeroQword = 0.0
 ;   undefined8 DAT_005bf500
 ;   undefined4 DAT_005bf508
 ;   undefined4 DAT_005bf510
@@ -343,7 +343,7 @@ section .text
     ADD EDX,dword ptr [0x005bf484]      ; 0052f4b6 | DAT_005bf484
     MOVQ MM0,MM5                        ; 0052f4bc
     ADD ESI,dword ptr [0x005bf488]      ; 0052f4bf | DAT_005bf488
-    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f4c5 | DAT_005bf48c
+    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f4c5 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x005bf548]      ; 0052f4cc | DAT_005bf548
     PAND MM5,MM0                        ; 0052f4d2
     JMP 0x0052f39c                      ; 0052f4d5
@@ -455,7 +455,7 @@ section .text
     ADD EDX,dword ptr [0x005bf484]      ; 0052f646 | DAT_005bf484
     MOVQ MM0,MM5                        ; 0052f64c
     ADD ESI,dword ptr [0x005bf488]      ; 0052f64f | DAT_005bf488
-    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f655 | DAT_005bf48c
+    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f655 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x005bf548]      ; 0052f65c | DAT_005bf548
     PAND MM5,MM0                        ; 0052f662
     JMP 0x0052f4f0                      ; 0052f665
@@ -540,7 +540,7 @@ section .text
     ADD EDX,dword ptr [0x005bf484]      ; 0052f785 | DAT_005bf484
     MOVQ MM0,MM5                        ; 0052f78b
     ADD ESI,dword ptr [0x005bf488]      ; 0052f78e | DAT_005bf488
-    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f794 | DAT_005bf48c
+    PCMPGTW MM5,qword ptr [0x005bf48c]  ; 0052f794 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x005bf548]      ; 0052f79b | DAT_005bf548
     PAND MM5,MM0                        ; 0052f7a1
     JMP 0x0052f69b                      ; 0052f7a4

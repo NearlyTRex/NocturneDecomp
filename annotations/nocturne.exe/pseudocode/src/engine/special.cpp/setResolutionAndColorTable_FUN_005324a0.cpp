@@ -21,18 +21,18 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((INT_02dc9e04 == 0) &&
+  if ((g_LoadedExternalDLLRenderer == 0) &&
      (iVar4 = engine_special_cpp_loadExternalRenderer_FUN_00531780(_DAT_02dc9e18), iVar4 == 0)) {
     return 0;
   }
-  iVar4 = (*_DAT_02dc9d84)(width,height,bits_per_pixel,g_ScreenBufferArray);
+  iVar4 = (*g_APIDLL_setVideoMode2)(width,height,bits_per_pixel,g_ScreenBufferArray);
   if (iVar4 == 0) {
     g_UseExternalRenderer = iVar4;
     return 0;
   }
-  (*_DAT_02dc9ddc)(g_SourcePaletteData,g_ColorTable16);
+  (*g_APIDLL_setColorTable16)(g_SourcePaletteData,g_ColorTable16);
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0();
-  (*_DAT_02dc9dcc)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
+  (*g_APIDLL_setFogColor)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
   g_UseExternalRenderer = 1;
   _DAT_02dc9e1c = bits_per_pixel;
   engine_special_cpp_lockFrame_FUN_005322e0();
@@ -52,6 +52,6 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   }
   _DAT_02dc9d70 = (uint)bVar5;
 LAB_00532576:
-  engine_special_cpp_FUN_00532320();
+  engine_special_cpp_unlockFrame_FUN_00532320();
   return 1;
 }

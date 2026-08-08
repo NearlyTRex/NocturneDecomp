@@ -8,7 +8,7 @@
 ; LPCSTR           Stack[0x8]:4   lpProcName
 ;
 ; XREF[2]:
-;   engine_special.cpp_FUN_00530e60 at 00530e92
+;   engine_special.cpp_initializeExternalRenderer_FUN_00530e60 at 00530e92
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780 at 005317e7
 ;
 ; Referenced Globals:

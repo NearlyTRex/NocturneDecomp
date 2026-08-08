@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
 ;   undefined4 DAT_01e52ef8
-;   undefined4 DAT_02dc9dac
-;   undefined4 DAT_02dc9db0
+;   APIDLL_drawPolygon2* g_APIDLL_drawPolygon2
+;   APIDLL_drawPolyList* g_APIDLL_drawPolyList
 ;
 ; *****************************************************************************
 
@@ -42,7 +42,7 @@ section .text
     JZ 0x00532778                       ; 0053269a
         ;   XREF to: 00532778 (CONDITIONAL_JUMP)  ; LAB_00532778
     MOV EAX,[0x01e52ef8]                ; 005326a0 | DAT_01e52ef8
-    MOV ESI,dword ptr [0x02dc9db0]      ; 005326a5 | DAT_02dc9db0
+    MOV ESI,dword ptr [0x02dc9db0]      ; 005326a5 | g_APIDLL_drawPolyList
     ADD EAX,EBP                         ; 005326ab
     TEST ESI,ESI                        ; 005326ad
     JNZ 0x00532794                      ; 005326af
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 00532753
     ADD ESI,0x4                         ; 00532754
     INC EDI                             ; 00532757
-    CALL dword ptr [0x02dc9dac]         ; 00532758 | DAT_02dc9dac
+    CALL dword ptr [0x02dc9dac]         ; 00532758 | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 0053275e
     CMP EDI,EBP                         ; 00532761
     JL 0x005326c6                       ; 00532763
@@ -140,7 +140,7 @@ section .text
     PUSH EDX                            ; 0053279a
     PUSH EBX                            ; 0053279b
     MOV [0x01e52ef8],EAX                ; 0053279c | DAT_01e52ef8
-    CALL dword ptr [0x02dc9db0]         ; 005327a1 | DAT_02dc9db0
+    CALL dword ptr [0x02dc9db0]         ; 005327a1 | g_APIDLL_drawPolyList
     ADD ESP,0x10                        ; 005327a7
     MOV EDX,EAX                         ; 005327aa
     MOV EAX,EDX                         ; 005327ac

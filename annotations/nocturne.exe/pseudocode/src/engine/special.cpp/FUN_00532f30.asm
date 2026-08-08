@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_FUN_00532f30(void)
+; void __cdecl engine_special_cpp_FUN_00532f30(void)
 ;
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@ section .text
     ADD EAX,0x1dc8                      ; 00532f39
     PUSH EAX                            ; 00532f3e
     CALL engine_special.cpp_FUN_00532f50 ; 00532f3f
-        ;   XREF to: 00532f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532f50()
+        ;   XREF to: 00532f50 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00532f50(char * param_1, undefined4 param_2)
     ADD ESP,0x8                         ; 00532f44
     RET                                 ; 00532f47
 

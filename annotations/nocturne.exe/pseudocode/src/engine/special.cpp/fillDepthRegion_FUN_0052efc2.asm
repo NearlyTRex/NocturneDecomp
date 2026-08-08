@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   bottom
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005bf48c
-;   undefined4 DAT_005bf494
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     INC ECX                             ; 0052effb
     MOV EDX,dword ptr [EBP + 0x8]       ; 0052effc
     SHL EDX,0x2                         ; 0052efff
-    FLD double ptr [0x005bf48c]         ; 0052f002 | DAT_005bf48c
+    FLD double ptr [0x005bf48c]         ; 0052f002 | g_BufferFillZeroQword
     PUSH ECX                            ; 0052f008
         ;   Label: LAB_0052f008
     MOV EDI,dword ptr [EBX*0x4 + 0x1bd4260] ; 0052f009
@@ -73,7 +73,7 @@ section .text
     CMP EBX,dword ptr [EBP + 0x14]      ; 0052f021
     JBE 0x0052f008                      ; 0052f024
         ;   XREF to: 0052f008 (CONDITIONAL_JUMP)  ; LAB_0052f008
-    FSTP double ptr [0x005bf494]        ; 0052f026 | DAT_005bf494
+    FSTP double ptr [0x005bf494]        ; 0052f026 | g_BufferFillFpuPopST0
     POPAD                               ; 0052f02c
     POP EDI                             ; 0052f02d
     POP ESI                             ; 0052f02e

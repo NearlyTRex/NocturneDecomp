@@ -1,12 +1,12 @@
 // Name: core_main.c_FUN_004c8510
 // Address: 004c8510
 // Address Range: [[004c8510, 004c85da]]
-// Convention: unknown
-// Signature: void core_main_c_FUN_004c8510(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_main_c_FUN_004c8510(void)
 
 #include "nocturne.h"
 
-void core_main_c_FUN_004c8510(void)
+void __cdecl core_main_c_FUN_004c8510(void)
 
 {
   uint uVar1;

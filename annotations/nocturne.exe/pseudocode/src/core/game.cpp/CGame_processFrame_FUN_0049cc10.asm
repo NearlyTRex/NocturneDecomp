@@ -926,8 +926,8 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 ; 0049d5a3
         ;   XREF to: 004724e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0049d5a8
-    CALL engine_special.cpp_FUN_00532320 ; 0049d5ab
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
+    CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 0049d5ab
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
         ;   Label: LAB_0049d5ab
     CMP dword ptr [EBP + 0x4e],0x0      ; 0049d5b0
         ;   Label: LAB_0049d5b0

@@ -22,7 +22,7 @@
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int INT_02dc9d60
+;   int g_UseDirect3D
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
@@ -45,7 +45,7 @@ section .text
     JZ 0x00440adc                       ; 00440a2e
         ;   XREF to: 00440adc (CONDITIONAL_JUMP)  ; LAB_00440adc
     MOV dword ptr [EBX + 0x11e4],0x0    ; 00440a34
-    CMP dword ptr [0x02dc9d60],0x0      ; 00440a3e | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00440a3e | g_UseDirect3D
         ;   Label: LAB_00440a3e
     JZ 0x00440a4c                       ; 00440a45
         ;   XREF to: 00440a4c (CONDITIONAL_JUMP)  ; LAB_00440a4c

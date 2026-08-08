@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dac
+;   APIDLL_drawPolygon2* g_APIDLL_drawPolygon2
 ;
 ; *****************************************************************************
 
@@ -41,7 +41,7 @@ section .text
     PUSH EBX                            ; 00532667
     MOV ESI,dword ptr [ESP + 0x14]      ; 00532668
     PUSH ESI                            ; 0053266c
-    CALL dword ptr [0x02dc9dac]         ; 0053266d | DAT_02dc9dac
+    CALL dword ptr [0x02dc9dac]         ; 0053266d | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 00532673
     POP EBX                             ; 00532676
     POP ESI                             ; 00532677

@@ -61,19 +61,19 @@ int __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
 
 // Original: engine_special.cpp_FUN_00530cf0
 // Address: 00530cf0
-void FUN_00530cf0(int *param_1,int param_2);
+void __cdecl FUN_00530cf0(int *param_1,int param_2);
 
 // Original: engine_special.cpp_FUN_00530d30
 // Address: 00530d30
-void FUN_00530d30(void);
+void __cdecl FUN_00530d30(void);
 
-// Original: engine_special.cpp_FUN_00530d40
+// Original: engine_special.cpp_shutdownExternalRenderer_FUN_00530d40
 // Address: 00530d40
-void FUN_00530d40(void);
+void __cdecl shutdownExternalRenderer(void);
 
-// Original: engine_special.cpp_FUN_00530e60
+// Original: engine_special.cpp_initializeExternalRenderer_FUN_00530e60
 // Address: 00530e60
-undefined4 FUN_00530e60(void);
+int __cdecl initializeExternalRenderer(void);
 
 // Original: engine_special.cpp_loadExternalRenderer_FUN_00531780
 // Address: 00531780
@@ -87,9 +87,9 @@ int __cdecl kill(void);
 // Address: 005322e0
 int __cdecl lockFrame(void);
 
-// Original: engine_special.cpp_FUN_00532320
+// Original: engine_special.cpp_unlockFrame_FUN_00532320
 // Address: 00532320
-undefined4 FUN_00532320(void);
+int __cdecl unlockFrame(void);
 
 // Original: engine_special.cpp_beginScene_FUN_00532340
 // Address: 00532340
@@ -99,33 +99,33 @@ int __cdecl beginScene(void);
 // Address: 00532360
 int __cdecl endScene(void);
 
-// Original: engine_special.cpp_FUN_00532380
+// Original: engine_special.cpp_selectTexture_FUN_00532380
 // Address: 00532380
-undefined4 FUN_00532380(void);
+int __cdecl selectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
-// Original: engine_special.cpp_FUN_005323c0
+// Original: engine_special.cpp_updateTexture_FUN_005323c0
 // Address: 005323c0
-undefined4 FUN_005323c0(void);
+int __cdecl updateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
 
-// Original: engine_special.cpp_selectTexture_FUN_00532400
+// Original: engine_special.cpp_selectTextureFromPalette_FUN_00532400
 // Address: 00532400
-int __cdecl selectTexture(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl selectTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
-// Original: engine_special.cpp_updateTexture_FUN_00532440
+// Original: engine_special.cpp_updateTextureFromPalette_FUN_00532440
 // Address: 00532440
-int __cdecl updateTexture(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl updateTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
-// Original: engine_special.cpp_FUN_00532480
+// Original: engine_special.cpp_setMipMapLevel_FUN_00532480
 // Address: 00532480
-undefined4 FUN_00532480(void);
+int __cdecl setMipMapLevel(int mipmap_level);
 
 // Original: engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
 // Address: 005324a0
 int __cdecl setResolutionAndColorTable(int width,int height,int bits_per_pixel);
 
-// Original: engine_special.cpp_FUN_005325c0
+// Original: engine_special.cpp_setColorTable16_FUN_005325c0
 // Address: 005325c0
-int FUN_005325c0(void);
+int __cdecl setColorTable16(uchar *source_palette,ushort *color_table);
 
 // Original: engine_special.cpp_restoreVideoMode_FUN_005325f0
 // Address: 005325f0
@@ -147,21 +147,21 @@ int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **p
 // Address: 005327c0
 int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
 
-// Original: engine_special.cpp_FUN_00532900
+// Original: engine_special.cpp_addParticle_FUN_00532900
 // Address: 00532900
-undefined4 FUN_00532900(void);
+int __cdecl addParticle(void *particle_data,int particle_type);
 
-// Original: engine_special.cpp_FUN_00532930
+// Original: engine_special.cpp_flushParticleList_FUN_00532930
 // Address: 00532930
-undefined4 FUN_00532930(void);
+int __cdecl flushParticleList(void);
 
-// Original: engine_special.cpp_FUN_00532950
+// Original: engine_special.cpp_add3dLine_FUN_00532950
 // Address: 00532950
-undefined4 FUN_00532950(void);
+int __cdecl add3dLine(void *start_point,void *end_point,int line_style);
 
-// Original: engine_special.cpp_FUN_00532980
+// Original: engine_special.cpp_flushLineList_FUN_00532980
 // Address: 00532980
-undefined4 FUN_00532980(void);
+int __cdecl flushLineList(void);
 
 // Original: engine_special.cpp_clear_FUN_005329a0
 // Address: 005329a0
@@ -191,9 +191,9 @@ int __cdecl clearZBuffer(void);
 // Address: 00532b70
 int __cdecl clearZBox(int left,int right,int top,int bottom);
 
-// Original: engine_special.cpp_FUN_00532ba0
+// Original: engine_special.cpp_toggle_FUN_00532ba0
 // Address: 00532ba0
-undefined4 FUN_00532ba0(void);
+int __cdecl toggle(void);
 
 // Original: engine_special.cpp_masterZBuffer_FUN_00532c70
 // Address: 00532c70
@@ -203,17 +203,17 @@ int __cdecl masterZBuffer(int z_buffer_mode);
 // Address: 00532c90
 int __cdecl restoreZBuffer(int left,int top,int mode,int right,int bottom);
 
-// Original: engine_special.cpp_FUN_00532cd0
+// Original: engine_special.cpp_getVideoMemory_FUN_00532cd0
 // Address: 00532cd0
-undefined4 FUN_00532cd0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl getVideoMemory(int *total_memory,int *available_memory,int *memory_type);
 
 // Original: engine_special.cpp_selectCard_FUN_00532d00
 // Address: 00532d00
 int __cdecl selectCard(int card_index);
 
-// Original: engine_special.cpp_FUN_00532d20
+// Original: engine_special.cpp_buildCardList_FUN_00532d20
 // Address: 00532d20
-undefined4 FUN_00532d20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+int __cdecl buildCardList(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 
 // Original: engine_special.cpp_lockHoldBuffer_FUN_00532d60
 // Address: 00532d60
@@ -233,12 +233,12 @@ int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRen
 
 // Original: engine_special.cpp_FUN_00532f30
 // Address: 00532f30
-void FUN_00532f30(void);
+void __cdecl FUN_00532f30(void);
 
 // Original: engine_special.cpp_FUN_00532f50
 // Address: 00532f50
-void FUN_00532f50(char *param_1,undefined4 param_2);
+void __cdecl FUN_00532f50(char *param_1,undefined4 param_2);
 
 // Original: engine_special.cpp_FUN_00532fa0
 // Address: 00532fa0
-undefined1 * FUN_00532fa0(void);
+char * __cdecl FUN_00532fa0(void);

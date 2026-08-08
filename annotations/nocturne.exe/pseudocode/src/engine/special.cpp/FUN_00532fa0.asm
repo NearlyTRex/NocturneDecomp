@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * engine_special_cpp_FUN_00532fa0(void)
+; char * __cdecl engine_special_cpp_FUN_00532fa0(void)
 ;
 ;
 ; Referenced Globals:
-;   undefined1 DAT_005c0e80
+;   TerminatedCString s_trid3d_dll_005c0e80
 ;   undefined4 DAT_02dc9d64
 ;
 ; *****************************************************************************
@@ -16,6 +16,6 @@ section .text
         ;   Label: engine_special.cpp_FUN_00532fa0
     MOV EAX,[0x02dc9d64]                ; 00532fa4 | DAT_02dc9d64
     MOV dword ptr [EDX],EAX             ; 00532fa9
-    MOV EAX,0x5c0e80                    ; 00532fab | DAT_005c0e80
+    MOV EAX,0x5c0e80                    ; 00532fab | = "trid3d.dll"
     RET                                 ; 00532fb0
 

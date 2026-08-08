@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setdir_cpp_FUN_005138e0(int *param_1)
+; void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined8       Stack[-0xcc]:8  local_cc
 ; undefined        Stack[-0xc4]:1  local_c4

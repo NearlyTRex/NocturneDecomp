@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0(void)
 
 {
@@ -17,7 +15,7 @@ void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0(void)
   int iVar2;
   
   if (g_UseExternalRenderer != 0) {
-    (*_DAT_02dc9ddc)(g_SourcePaletteData,g_ColorTable16);
+    (*g_APIDLL_setColorTable16)(g_SourcePaletteData,g_ColorTable16);
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0();
     return;
   }

@@ -24,7 +24,7 @@ int __cdecl core_menu_cpp_FUN_004d23d0(void)
   if (g_WindowHeight < 0x1e0) {
     return 1;
   }
-  if ((INT_02dc9d60 == 0) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
+  if ((g_UseDirect3D == 0) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
     g_CGame_PTR_005b9354->game_pixy = 0x1e0;
     pCVar2->game_pixx = 0x280;
   }

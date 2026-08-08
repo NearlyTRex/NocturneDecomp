@@ -9,7 +9,6 @@
 /* WARNING: Removing unreachable block (ram,0x004d03ba) */
 /* WARNING: Removing unreachable block (ram,0x004d075e) */
 /* WARNING: Removing unreachable block (ram,0x004d03d0) */
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
@@ -42,14 +41,16 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
     iVar5 = iVar5 + 4;
     iVar6 = iVar6 + 0x100;
   } while (iVar5 != 0x24);
-  engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
+  engine_special_cpp_buildCardList_FUN_00532d20
+            ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,
+             (int *)0x1cc656c);
   if (_DAT_01cc64a8 <= _DAT_01cc64a4) {
     _DAT_01cc64a4 = 0;
   }
   local_1c[0] = 0;
   local_1c[1] = 0;
   local_1c[2] = 0;
-  engine_special_cpp_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
+  engine_special_cpp_getVideoMemory_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
   iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058869e,"tridx6.dll");
   bVar2 = false;
   iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_005886ab,"tri3dfx.dll");
@@ -63,17 +64,17 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
               (&g_CMoon_01cc5780,g_CGame_PTR_005b9354->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoon_01cc5780);
     pCVar3 = g_CGame_PTR_005b9354;
-    if ((0 < _DAT_01cc64a8) && (INT_02dc9d60 != 0)) {
+    if ((0 < _DAT_01cc64a8) && (g_UseDirect3D != 0)) {
       if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&
          (*(int *)(_DAT_01cc64a4 * 4 + 0x1cc656c) < 6)) {
         g_CGame_PTR_005b9354->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
-        iVar6 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
+        iVar6 = _stricmp("trid3d.dll","tri3dfx.dll");
         iVar5 = _DAT_01cc64a8;
         if (iVar6 != 0) {
           pcVar8 = "tri3dfx.dll";
-          pcVar10 = &DAT_005c0e80;
+          pcVar10 = "trid3d.dll";
           do {
             cVar1 = *pcVar8;
             *pcVar10 = cVar1;
@@ -85,22 +86,23 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
           } while (cVar1 != '\0');
           engine_special_cpp_kill_FUN_005322b0();
           engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
-          iVar5 = INT_02dc9d60;
-          if (INT_02dc9d60 != 0) {
+          iVar5 = g_UseDirect3D;
+          if (g_UseDirect3D != 0) {
 LAB_004d0249:
-            engine_special_cpp_FUN_00532d20
-                      (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-            engine_special_cpp_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
+            engine_special_cpp_buildCardList_FUN_00532d20
+                      ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+                       (int *)&DAT_01cc652c,(int *)0x1cc656c);
+            engine_special_cpp_getVideoMemory_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
             iVar5 = _DAT_01cc64a8;
           }
         }
       }
       else {
-        iVar6 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
+        iVar6 = _stricmp("trid3d.dll","tri3dfx.dll");
         iVar5 = _DAT_01cc64a8;
         if (iVar6 == 0) {
           pcVar8 = "tridx6.dll";
-          pcVar10 = &DAT_005c0e80;
+          pcVar10 = "trid3d.dll";
           do {
             cVar1 = *pcVar8;
             *pcVar10 = cVar1;
@@ -112,8 +114,8 @@ LAB_004d0249:
           } while (cVar1 != '\0');
           engine_special_cpp_kill_FUN_005322b0();
           engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
-          if (INT_02dc9d60 != 0) goto LAB_004d0249;
-          _DAT_01cc64a8 = INT_02dc9d60;
+          if (g_UseDirect3D != 0) goto LAB_004d0249;
+          _DAT_01cc64a8 = g_UseDirect3D;
           iVar5 = _DAT_01cc64a8;
         }
       }
@@ -141,7 +143,7 @@ LAB_004d0249:
       }
     }
     pCVar3 = g_CGame_PTR_005b9354;
-    if ((INT_02dc9d60 == 0) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
+    if ((g_UseDirect3D == 0) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
       g_CGame_PTR_005b9354->game_pixy = 0x1e0;
       pCVar3->game_pixx = 0x280;
     }
@@ -189,7 +191,7 @@ LAB_004d039c:
         goto LAB_004d039c;
       }
     }
-    if (INT_02dc9d60 == 0) {
+    if (g_UseDirect3D == 0) {
       pcVar8 = "3D Hardware : Off";
     }
     else {
@@ -197,22 +199,22 @@ LAB_004d039c:
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
     _sprintf((char *)0x1cc5d80,pcVar8);
-    iVar5 = _stricmp(&DAT_005c0e80,"trid3d.dll");
+    iVar5 = _stricmp("trid3d.dll","trid3d.dll");
     if (iVar5 == 0) {
       pcVar8 = "3D API : DirectX 5";
     }
     else {
-      iVar5 = _stricmp(&DAT_005c0e80,"tridx6.dll");
+      iVar5 = _stricmp("trid3d.dll","tridx6.dll");
       if (iVar5 == 0) {
         pcVar8 = "3D API : DirectX 6";
       }
       else {
-        iVar5 = _stricmp(&DAT_005c0e80,"tridx7.dll");
+        iVar5 = _stricmp("trid3d.dll","tridx7.dll");
         if (iVar5 == 0) {
           pcVar8 = "3D API : DirectX 7";
         }
         else {
-          iVar5 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
+          iVar5 = _stricmp("trid3d.dll","tri3dfx.dll");
           if (iVar5 == 0) {
             if (bVar2) {
               pcVar8 = "3D API : DirectX 6";
@@ -355,7 +357,7 @@ LAB_004d039c:
     iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440
                       ((char **)0x1cc6480,iVar5,&local_20,0xfa,pcVar9);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar6 = _stricmp(&DAT_005c0e80,"trid3d.dll");
+    iVar6 = _stricmp("trid3d.dll","trid3d.dll");
     pCVar3 = g_CGame_PTR_005b9354;
     bVar12 = iVar6 != 0;
     if ((!bVar12) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
@@ -498,21 +500,22 @@ LAB_004d0a84:
       }
       break;
     case 2:
-      INT_02dc9d60 = 1 - INT_02dc9d60;
-      iVar4 = INT_02dc9d60;
-      if (INT_02dc9d60 != 0) {
+      g_UseDirect3D = 1 - g_UseDirect3D;
+      iVar4 = g_UseDirect3D;
+      if (g_UseDirect3D != 0) {
         engine_special_cpp_kill_FUN_005322b0();
         engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
-        if (INT_02dc9d60 == 0) {
-          _DAT_01cc64a8 = INT_02dc9d60;
+        if (g_UseDirect3D == 0) {
+          _DAT_01cc64a8 = g_UseDirect3D;
           iVar6 = _DAT_01cc64a4;
           iVar4 = _DAT_01cc64a8;
         }
         else {
 LAB_004d0af9:
-          engine_special_cpp_FUN_00532d20
-                    (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-          engine_special_cpp_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
+          engine_special_cpp_buildCardList_FUN_00532d20
+                    ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+                     (int *)&DAT_01cc652c,(int *)0x1cc656c);
+          engine_special_cpp_getVideoMemory_FUN_00532cd0(local_1c,local_1c + 1,local_1c + 2);
           iVar6 = _DAT_01cc64a4;
           iVar4 = _DAT_01cc64a8;
         }
@@ -520,11 +523,11 @@ LAB_004d0af9:
       break;
     case 3:
       if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {
-        iVar5 = _stricmp(&DAT_005c0e80,"trid3d.dll");
+        iVar5 = _stricmp("trid3d.dll","trid3d.dll");
         if (iVar5 == 0) {
           pcVar9 = "tridx6.dll";
 LAB_004d0b7a:
-          pcVar8 = &DAT_005c0e80;
+          pcVar8 = "trid3d.dll";
           do {
             cVar1 = *pcVar9;
             *pcVar8 = cVar1;
@@ -536,17 +539,17 @@ LAB_004d0b7a:
           } while (cVar1 != '\0');
         }
         else {
-          iVar5 = _stricmp(&DAT_005c0e80,"tridx6.dll");
+          iVar5 = _stricmp("trid3d.dll","tridx6.dll");
           if (iVar5 == 0) {
             pcVar9 = "tridx7.dll";
             goto LAB_004d0b7a;
           }
-          iVar5 = _stricmp(&DAT_005c0e80,"tridx7.dll");
+          iVar5 = _stricmp("trid3d.dll","tridx7.dll");
           if (iVar5 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_004d0b7a;
           }
-          iVar5 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
+          iVar5 = _stricmp("trid3d.dll","tri3dfx.dll");
           if (iVar5 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_004d0b7a;
@@ -555,8 +558,8 @@ LAB_004d0b7a:
         engine_special_cpp_kill_FUN_005322b0();
         engine_special_cpp_loadExternalRenderer_FUN_00531780(0);
         iVar6 = _DAT_01cc64a4;
-        iVar4 = INT_02dc9d60;
-        if (INT_02dc9d60 != 0) goto LAB_004d0af9;
+        iVar4 = g_UseDirect3D;
+        if (g_UseDirect3D != 0) goto LAB_004d0af9;
       }
       break;
     case 4:

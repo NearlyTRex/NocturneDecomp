@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_sync_FUN_00532b30(void)
 
 {
@@ -16,6 +14,6 @@ int __cdecl engine_special_cpp_sync_FUN_00532b30(void)
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02dc9dd0)();
+  iVar1 = (*g_APIDLL_sync)();
   return iVar1;
 }

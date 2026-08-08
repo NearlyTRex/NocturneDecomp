@@ -14,7 +14,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void)
   int iVar1;
   
   _DAT_02ddf568 = 1;
-  if (INT_02dc9d60 != 0) {
+  if (g_UseDirect3D != 0) {
     if (g_BitsPerPixel < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,0x10);
       engine_special_cpp_clearScreen_FUN_0052ee70();
@@ -48,7 +48,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void)
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
       g_UseExternalRenderer = iVar1;
-      INT_02dc9d60 = iVar1;
+      g_UseDirect3D = iVar1;
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
         g_DirectDrawUnknown = (IUnknown *)0x0;

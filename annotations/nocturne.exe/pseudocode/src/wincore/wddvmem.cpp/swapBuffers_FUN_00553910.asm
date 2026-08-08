@@ -46,7 +46,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
-;   engine_special.cpp_FUN_00532ba0
+;   engine_special.cpp_toggle_FUN_00532ba0
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
 ;   wincore_wddvmem.cpp_FUN_00553ba0
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
@@ -132,8 +132,8 @@ section .text
     POP ESI                             ; 005539cf
     POP EBX                             ; 005539d0
     RET                                 ; 005539d1
-    CALL engine_special.cpp_FUN_00532ba0 ; 005539d2
-        ;   XREF to: 00532ba0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532ba0()
+    CALL engine_special.cpp_toggle_FUN_00532ba0 ; 005539d2
+        ;   XREF to: 00532ba0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_toggle_FUN_00532ba0()
         ;   Label: LAB_005539d2
     XOR ESI,ESI                         ; 005539d7
     MOV dword ptr [0x02ddf564],ESI      ; 005539d9 | DAT_02ddf564

@@ -58,62 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 57,
+        "line": 23,
         "message": "use of undeclared identifier '_DAT_02dc9e18'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 59,
+        "line": 25,
         "message": "use of undeclared identifier '_DAT_02dc9e18'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 60,
+        "line": 26,
         "message": "use of undeclared identifier '_DAT_02dc9e18'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 64,
-        "message": "no matching function for call to 'wincore_wddvmem_cpp_FUN_00553d30'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_02dc9e08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 65,
-        "message": "use of undeclared identifier '_DAT_02dc9e08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 66,
-        "message": "use of undeclared identifier '_DAT_02dc9e08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 70,
-        "message": "use of undeclared identifier '_DAT_02dc9e08'"
       },
       {
         "category": "cast_error",
         "column": 17,
-        "line": 71,
+        "line": 37,
         "message": "C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed"
       },
       {
-        "category": "undeclared_identifier",
+        "category": "argument_error",
         "column": 15,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_02dc9e08'"
+        "line": 38,
+        "message": "too many arguments to function call, expected 0, have 2"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 358,
+        "message": "use of undeclared identifier 'DAT_01c03998'; did you mean 'DAT_02DF3998'?"
+      },
+      {
+        "category": "pointer_type",
+        "column": 33,
+        "line": 360,
+        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 45,
+        "line": 366,
+        "message": "use of undeclared identifier 'DAT_005b7628'"
+      },
+      {
+        "category": "pointer_type",
+        "column": 37,
+        "line": 367,
+        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 368,
+        "message": "use of undeclared identifier 'DAT_01c02590'; did you mean 'DAT_02DF2590'?"
       }
     ],
     "success": false,
@@ -122,19 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 828,
-    "complexity_score": 541,
+    "complexity_score": 544,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 110,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 376,
-    "suspect_count": 15,
+    "pseudocode_lines": 389,
+    "suspect_count": 14,
     "suspect_types": [
-      "raw_address_constant",
+      "mem_magic_size",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1204
+    "total_lines": 1217
   },
   "cross_references": [
     {
@@ -196,14 +196,14 @@
       "name": "engine_special.cpp_CExternalRenderer_validate_FUN_00532df0"
     },
     {
-      "addr": "00530d40",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00530d40"
-    },
-    {
       "addr": "00532d00",
       "is_variadic": false,
       "name": "engine_special.cpp_selectCard_FUN_00532d00"
+    },
+    {
+      "addr": "00530d40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_shutdownExternalRenderer_FUN_00530d40"
     },
     {
       "addr": "00553d30",
@@ -477,8 +477,8 @@
     },
     {
       "addr": "005c0e80",
-      "name": "DAT_005c0e80",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -627,7 +627,7 @@
     },
     {
       "addr": "02dc9d60",
-      "name": "INT_02dc9d60",
+      "name": "g_UseDirect3D",
       "type": "int",
       "value": null
     },
@@ -645,230 +645,230 @@
     },
     {
       "addr": "02dc9d74",
-      "name": "DAT_02dc9d74",
-      "type": "undefined4",
+      "name": "g_APIDLL_init",
+      "type": "APIDLL_init*",
       "value": null
     },
     {
       "addr": "02dc9d78",
-      "name": "DAT_02dc9d78",
-      "type": "undefined4",
+      "name": "g_APIDLL_kill",
+      "type": "APIDLL_kill*",
       "value": null
     },
     {
       "addr": "02dc9d7c",
-      "name": "DAT_02dc9d7c",
-      "type": "undefined4",
+      "name": "g_APIDLL_toggle",
+      "type": "APIDLL_toggle*",
       "value": null
     },
     {
       "addr": "02dc9d80",
-      "name": "DAT_02dc9d80",
-      "type": "undefined4",
+      "name": "g_APIDLL_setVideoMode",
+      "type": "APIDLL_setVideoMode*",
       "value": null
     },
     {
       "addr": "02dc9d84",
-      "name": "DAT_02dc9d84",
-      "type": "undefined4",
+      "name": "g_APIDLL_setVideoMode2",
+      "type": "APIDLL_setVideoMode2*",
       "value": null
     },
     {
       "addr": "02dc9d88",
-      "name": "DAT_02dc9d88",
-      "type": "undefined4",
+      "name": "g_APIDLL_restoreVideoMode",
+      "type": "APIDLL_restoreVideoMode*",
       "value": null
     },
     {
       "addr": "02dc9d8c",
-      "name": "DAT_02dc9d8c",
-      "type": "undefined4",
+      "name": "g_APIDLL_beginScene",
+      "type": "APIDLL_beginScene*",
       "value": null
     },
     {
       "addr": "02dc9d90",
-      "name": "DAT_02dc9d90",
-      "type": "undefined4",
+      "name": "g_APIDLL_endScene",
+      "type": "APIDLL_endScene*",
       "value": null
     },
     {
       "addr": "02dc9d94",
-      "name": "DAT_02dc9d94",
-      "type": "undefined4",
+      "name": "g_APIDLL_lockFrame",
+      "type": "APIDLL_lockFrame*",
       "value": null
     },
     {
       "addr": "02dc9d98",
-      "name": "DAT_02dc9d98",
-      "type": "undefined4",
+      "name": "g_APIDLL_unlockFrame",
+      "type": "APIDLL_unlockFrame*",
       "value": null
     },
     {
       "addr": "02dc9d9c",
-      "name": "DAT_02dc9d9c",
-      "type": "undefined4",
+      "name": "g_APIDLL_selectTexture",
+      "type": "APIDLL_selectTexture*",
       "value": null
     },
     {
       "addr": "02dc9da0",
-      "name": "DAT_02dc9da0",
-      "type": "undefined4",
+      "name": "g_APIDLL_updateTexture",
+      "type": "APIDLL_updateTexture*",
       "value": null
     },
     {
       "addr": "02dc9da4",
-      "name": "DAT_02dc9da4",
-      "type": "undefined4",
+      "name": "g_APIDLL_setMipMapLevel",
+      "type": "APIDLL_setMipMapLevel*",
       "value": null
     },
     {
       "addr": "02dc9da8",
-      "name": "DAT_02dc9da8",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolygon",
+      "type": "APIDLL_drawPolygon*",
       "value": null
     },
     {
       "addr": "02dc9dac",
-      "name": "DAT_02dc9dac",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
       "value": null
     },
     {
       "addr": "02dc9db0",
-      "name": "DAT_02dc9db0",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolyList",
+      "type": "APIDLL_drawPolyList*",
       "value": null
     },
     {
       "addr": "02dc9db4",
-      "name": "DAT_02dc9db4",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolyList2",
+      "type": "APIDLL_drawPolyList2*",
       "value": null
     },
     {
       "addr": "02dc9db8",
-      "name": "DAT_02dc9db8",
-      "type": "undefined4",
+      "name": "g_APIDLL_addParticle",
+      "type": "APIDLL_addParticle*",
       "value": null
     },
     {
       "addr": "02dc9dbc",
-      "name": "DAT_02dc9dbc",
-      "type": "undefined4",
+      "name": "g_APIDLL_flushParticleList",
+      "type": "APIDLL_flushParticleList*",
       "value": null
     },
     {
       "addr": "02dc9dc0",
-      "name": "DAT_02dc9dc0",
-      "type": "undefined4",
+      "name": "g_APIDLL_add3dLine",
+      "type": "APIDLL_add3dLine*",
       "value": null
     },
     {
       "addr": "02dc9dc4",
-      "name": "DAT_02dc9dc4",
-      "type": "undefined4",
+      "name": "g_APIDLL_flushLineList",
+      "type": "APIDLL_flushLineList*",
       "value": null
     },
     {
       "addr": "02dc9dc8",
-      "name": "DAT_02dc9dc8",
-      "type": "undefined4",
+      "name": "g_APIDLL_clear",
+      "type": "APIDLL_clear*",
       "value": null
     },
     {
       "addr": "02dc9dcc",
-      "name": "DAT_02dc9dcc",
-      "type": "undefined4",
+      "name": "g_APIDLL_setFogColor",
+      "type": "APIDLL_setFogColor*",
       "value": null
     },
     {
       "addr": "02dc9dd0",
-      "name": "DAT_02dc9dd0",
-      "type": "undefined4",
+      "name": "g_APIDLL_sync",
+      "type": "APIDLL_sync*",
       "value": null
     },
     {
       "addr": "02dc9dd4",
-      "name": "DAT_02dc9dd4",
-      "type": "undefined4",
+      "name": "g_APIDLL_clearZBuffer",
+      "type": "APIDLL_clearZBuffer*",
       "value": null
     },
     {
       "addr": "02dc9dd8",
-      "name": "DAT_02dc9dd8",
-      "type": "undefined4",
+      "name": "g_APIDLL_clearZBox",
+      "type": "APIDLL_clearZBox*",
       "value": null
     },
     {
       "addr": "02dc9ddc",
-      "name": "DAT_02dc9ddc",
-      "type": "undefined4",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "APIDLL_setColorTable16*",
       "value": null
     },
     {
       "addr": "02dc9de0",
-      "name": "DAT_02dc9de0",
-      "type": "undefined4",
+      "name": "g_APIDLL_getDisplayContext",
+      "type": "APIDLL_getDisplayContext*",
       "value": null
     },
     {
       "addr": "02dc9de4",
-      "name": "DAT_02dc9de4",
-      "type": "undefined4",
+      "name": "g_APIDLL_releaseDisplayContext",
+      "type": "APIDLL_releaseDisplayContext*",
       "value": null
     },
     {
       "addr": "02dc9de8",
-      "name": "DAT_02dc9de8",
-      "type": "undefined4",
+      "name": "g_APIDLL_masterZBuffer",
+      "type": "APIDLL_masterZBuffer*",
       "value": null
     },
     {
       "addr": "02dc9dec",
-      "name": "DAT_02dc9dec",
-      "type": "undefined4",
+      "name": "g_APIDLL_restoreZBuffer",
+      "type": "APIDLL_restoreZBuffer*",
       "value": null
     },
     {
       "addr": "02dc9df0",
-      "name": "DAT_02dc9df0",
-      "type": "undefined4",
+      "name": "g_APIDLL_getVideoMemory",
+      "type": "APIDLL_getVideoMemory*",
       "value": null
     },
     {
       "addr": "02dc9df4",
-      "name": "DAT_02dc9df4",
-      "type": "undefined4",
+      "name": "g_APIDLL_selectCard",
+      "type": "APIDLL_selectCard*",
       "value": null
     },
     {
       "addr": "02dc9df8",
-      "name": "DAT_02dc9df8",
-      "type": "undefined4",
+      "name": "g_APIDLL_buildCardList",
+      "type": "APIDLL_buildCardList*",
       "value": null
     },
     {
       "addr": "02dc9dfc",
-      "name": "DAT_02dc9dfc",
-      "type": "undefined4",
+      "name": "g_APIDLL_lockHoldBuffer",
+      "type": "APIDLL_lockHoldBuffer*",
       "value": null
     },
     {
       "addr": "02dc9e00",
-      "name": "DAT_02dc9e00",
-      "type": "undefined4",
+      "name": "g_APIDLL_unlockHoldBuffer",
+      "type": "APIDLL_unlockHoldBuffer*",
       "value": null
     },
     {
       "addr": "02dc9e04",
-      "name": "INT_02dc9e04",
+      "name": "g_LoadedExternalDLLRenderer",
       "type": "int",
       "value": null
     },
     {
       "addr": "02dc9e08",
-      "name": "DAT_02dc9e08",
-      "type": "undefined4",
+      "name": "g_RendererDLLHandle",
+      "type": "HMODULE",
       "value": null
     },
     {
@@ -939,115 +939,107 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "_DAT_02dc9e08 = wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 342,
+      "line": 351,
       "match": "DAT_01c03998",
       "severity": "mild",
-      "text": "puStack_78 = &DAT_01c03998;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 344,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "puStack_70 = &DAT_005b763c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_005b7628",
-      "severity": "mild",
-      "text": "puStack_58 = &DAT_005b7628;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 351,
-      "match": "DAT_005b762c",
-      "severity": "mild",
-      "text": "puStack_54 = &DAT_005b762c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 352,
-      "match": "DAT_01c02590",
-      "severity": "mild",
-      "text": "puStack_50 = &DAT_01c02590;",
+      "text": "CStack_9c.blend_mode = (int *)&DAT_01c03998;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 353,
-      "match": "DAT_005c0f8c",
+      "match": "DAT_005b763c",
       "severity": "mild",
-      "text": "puStack_4c = &DAT_005c0f8c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 354,
-      "match": "DAT_005c0f84",
-      "severity": "mild",
-      "text": "puStack_48 = &DAT_005c0f84;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 355,
-      "match": "DAT_005c0f88",
-      "severity": "mild",
-      "text": "puStack_44 = &DAT_005c0f88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 357,
-      "match": "DAT_005c0f80",
-      "severity": "mild",
-      "text": "puStack_3c = &DAT_005c0f80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 358,
-      "match": "DAT_02dc9d6c",
-      "severity": "mild",
-      "text": "puStack_38 = &DAT_02dc9d6c;",
+      "text": "CStack_9c.current_alpha = &DAT_005b763c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 359,
-      "match": "DAT_01c0399c",
+      "match": "DAT_005b7628",
       "severity": "mild",
-      "text": "puStack_34 = &DAT_01c0399c;",
+      "text": "CStack_9c.texture_filtering = (int *)&DAT_005b7628;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 360,
-      "match": "DAT_005b7640",
+      "match": "DAT_005b762c",
       "severity": "mild",
-      "text": "puStack_30 = &DAT_005b7640;",
+      "text": "CStack_9c.texture_dimension = &DAT_005b762c;",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x2dc9d68 assigned to bare local `uStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 356,
-      "match": "0x2dc9d68",
+      "description": "Undefined global data reference",
+      "line": 361,
+      "match": "DAT_01c02590",
+      "severity": "mild",
+      "text": "CStack_9c.texture_bits = (int *)&DAT_01c02590;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 362,
+      "match": "DAT_005c0f8c",
+      "severity": "mild",
+      "text": "CStack_9c.system_memory_size = (int *)&DAT_005c0f8c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 363,
+      "match": "DAT_005c0f84",
+      "severity": "mild",
+      "text": "CStack_9c.video_memory_size = (int *)&DAT_005c0f84;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 364,
+      "match": "DAT_005c0f88",
+      "severity": "mild",
+      "text": "CStack_9c.max_texture_size = (int *)&DAT_005c0f88;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 366,
+      "match": "DAT_005c0f80",
+      "severity": "mild",
+      "text": "CStack_9c.system_initialized = (int *)&DAT_005c0f80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 367,
+      "match": "DAT_02dc9d6c",
+      "severity": "mild",
+      "text": "CStack_9c.agp_texture_mode = (int *)&DAT_02dc9d6c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 368,
+      "match": "DAT_01c0399c",
+      "severity": "mild",
+      "text": "CStack_9c.processor_type = (int *)&DAT_01c0399c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 369,
+      "match": "DAT_005b7640",
+      "severity": "mild",
+      "text": "CStack_9c.rendering_quality = (int *)&DAT_005b7640;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "memset size hardcodes 0x8c == sizeof(CExternalRendererBridge), whose dest resolves to that struct. CExternalRendererBridge is 64-bit-unstable (contains a pointer), so the struct grows past 0x8c once pointers are 8 bytes and memset covers only its leading 0x8c bytes, leaving the grown tail untouched. Replace the magic with sizeof(CExternalRendererBridge) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 341,
+      "match": "memset(dest) size 0x8c == sizeof(CExternalRendererBridge)",
       "severity": "moderate",
-      "text": "uStack_40 = 0x2dc9d68;",
-      "type": "raw_address_constant"
+      "text": "memset(&CStack_9c,0,0x8c)",
+      "type": "mem_magic_size"
     }
   ]
 }

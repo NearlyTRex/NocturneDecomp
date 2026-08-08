@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   uchar[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dcc
+;   APIDLL_setFogColor* g_APIDLL_setFogColor
 ;   undefined4 DAT_02dc9e0c
 ;   undefined4 DAT_02dc9e10
 ;   undefined4 DAT_02dc9e14
@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 00532acf
     MOV ESI,dword ptr [0x02dc9e0c]      ; 00532ad0 | DAT_02dc9e0c
     PUSH ESI                            ; 00532ad6
-    CALL dword ptr [0x02dc9dcc]         ; 00532ad7 | DAT_02dc9dcc
+    CALL dword ptr [0x02dc9dcc]         ; 00532ad7 | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00532add
     POP EBX                             ; 00532ae0
     POP ESI                             ; 00532ae1

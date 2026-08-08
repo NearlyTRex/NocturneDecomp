@@ -58,7 +58,7 @@
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 17,
+        "line": 16,
         "message": "use of undeclared identifier '_DAT_02dc9d64'"
       }
     ],
@@ -68,19 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 63,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 14
+    "total_lines": 13
   },
   "cross_references": [],
   "function": {
@@ -91,16 +90,16 @@
         "00532fb0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_special.cpp_FUN_00532fa0",
-    "signature": "undefined1 * engine_special_cpp_FUN_00532fa0(void)"
+    "signature": "char * __cdecl engine_special_cpp_FUN_00532fa0(void)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "005c0e80",
-      "name": "DAT_005c0e80",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -147,7 +146,7 @@
         {
           "check_id": "uninitvar",
           "column": 4,
-          "line": 17,
+          "line": 16,
           "message": "Uninitialized variable: in_stack_00000004",
           "severity": "error"
         }
@@ -167,7 +166,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "uint *in_stack_00000004;",
@@ -175,23 +174,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = _DAT_02dc9d64;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "return &DAT_005c0e80;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Uninitialized variable: in_stack_00000004",
-      "line": 17,
+      "line": 16,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*in_stack_00000004 = _DAT_02dc9d64;",

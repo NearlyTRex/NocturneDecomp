@@ -85,7 +85,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be348
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be34d
-    MOV ESI,dword ptr [0x02dc9d60]      ; 004be350 | INT_02dc9d60
+    MOV ESI,dword ptr [0x02dc9d60]      ; 004be350 | g_UseDirect3D
     PUSH ESI                            ; 004be356
     PUSH 0x586a36                       ; 004be357 | = "useDirect3D"
     LEA EAX,[ESP + 0x8]                 ; 004be35c
@@ -101,7 +101,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be37a
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be37f
-    PUSH 0x5c0e80                       ; 004be382 | DAT_005c0e80
+    PUSH 0x5c0e80                       ; 004be382 | = "trid3d.dll"
     PUSH 0x586a4d                       ; 004be387 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x8]                 ; 004be38c
     PUSH EAX                            ; 004be390

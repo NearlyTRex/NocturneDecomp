@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_02dc9d78'"
       }
     ],
     "success": false,
@@ -68,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 25,
+    "complexity_score": 9,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 22
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
   },
   "cross_references": [
     {
@@ -116,19 +108,19 @@
     {
       "addr": "00530d40",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00530d40"
+      "name": "engine_special.cpp_shutdownExternalRenderer_FUN_00530d40"
     }
   ],
   "globals": [
     {
       "addr": "02dc9d78",
-      "name": "DAT_02dc9d78",
-      "type": "undefined4",
+      "name": "g_APIDLL_kill",
+      "type": "APIDLL_kill*",
       "value": null
     },
     {
       "addr": "02dc9e04",
-      "name": "INT_02dc9e04",
+      "name": "g_LoadedExternalDLLRenderer",
       "type": "int",
       "value": null
     }
@@ -164,14 +156,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

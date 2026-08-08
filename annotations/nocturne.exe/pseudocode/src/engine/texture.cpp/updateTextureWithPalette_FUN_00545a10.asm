@@ -10,7 +10,7 @@
 ;   undefined4 DAT_01c00020
 ;
 ; Called Functions:
-;   engine_special.cpp_updateTexture_FUN_00532440
+;   engine_special.cpp_updateTextureFromPalette_FUN_00532440
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     PUSH ECX                            ; 00545a24
     MOV EBX,dword ptr [ESP + 0xc]       ; 00545a25
     PUSH EBX                            ; 00545a29
-    CALL engine_special.cpp_updateTexture_FUN_00532440 ; 00545a2a
-        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTexture_FUN_00532440(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_updateTextureFromPalette_FUN_00532440 ; 00545a2a
+        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTextureFromPalette_FUN_00532440(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 00545a2f
     POP EBX                             ; 00545a32
     RET                                 ; 00545a33

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9de8
+;   APIDLL_masterZBuffer* g_APIDLL_masterZBuffer
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00532c7c
         ;   Label: LAB_00532c7c
     PUSH ECX                            ; 00532c80
-    CALL dword ptr [0x02dc9de8]         ; 00532c81 | DAT_02dc9de8
+    CALL dword ptr [0x02dc9de8]         ; 00532c81 | g_APIDLL_masterZBuffer
     ADD ESP,0x4                         ; 00532c87
     RET                                 ; 00532c8a
 

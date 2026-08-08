@@ -13,7 +13,7 @@ void __cdecl displayErrorAndQuit(char *format);
 
 // Original: core_main.c_FUN_004c8510
 // Address: 004c8510
-void FUN_004c8510(void);
+void __cdecl FUN_004c8510(void);
 
 // Original: core_main.c_enterMainGameMenu_FUN_004c85e0
 // Address: 004c85e0

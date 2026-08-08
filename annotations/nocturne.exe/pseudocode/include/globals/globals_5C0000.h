@@ -21,7 +21,7 @@ extern RuntimeHandlerEntry g_InitHandlers[160];
 extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 
 // TerminatedCString
-extern TerminatedCString s_d3d_dll_005c0e83;
+extern TerminatedCString s_trid3d_dll_005c0e80;
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8;
@@ -45,9 +45,6 @@ extern int INT_005c1668;
 extern int INT_005c166c;
 
 // undefined1
-extern undefined1 DAT_005c0e80;
-extern undefined1 DAT_005c0e81;
-extern undefined1 DAT_005c0e82;
 extern undefined1 DAT_005c1a9c;
 extern undefined1 DAT_005c1b23;
 extern undefined1 DAT_005c1b24;

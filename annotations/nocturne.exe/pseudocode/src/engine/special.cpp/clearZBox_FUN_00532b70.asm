@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dd8
+;   APIDLL_clearZBox* g_APIDLL_clearZBox
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 00532b8d
     MOV EDI,dword ptr [ESP + 0x1c]      ; 00532b8e
     PUSH EDI                            ; 00532b92
-    CALL dword ptr [0x02dc9dd8]         ; 00532b93 | DAT_02dc9dd8
+    CALL dword ptr [0x02dc9dd8]         ; 00532b93 | g_APIDLL_clearZBox
     ADD ESP,0x10                        ; 00532b99
     POP EBX                             ; 00532b9c
     POP ESI                             ; 00532b9d

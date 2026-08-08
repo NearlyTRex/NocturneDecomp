@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool engine_prim_c_FUN_004f9bc0(int param_1)
+; int __cdecl engine_prim_c_FUN_004f9bc0(int param_1)
 ;
+; Parameters:
+; int              Stack[0x4]:4   param_1
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

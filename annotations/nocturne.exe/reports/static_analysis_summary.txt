@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 375
+  Functions with static analysis data: 377
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   11
 
   Cppcheck (quick):
-    Files analyzed:      369
-    Files with findings: 369
-    Total diagnostics:   1014
+    Files analyzed:      371
+    Files with findings: 371
+    Total diagnostics:   1029
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -41,10 +41,10 @@ TOP FINDINGS - Cppcheck (quick)
   invalidscanf                                               41
   objectIndex                                                27
   invalidPointerCast                                         15
+  staticStringCompare                                        11
   nullPointer                                                 9
   shiftNegativeLHS                                            7
   pointerOutOfBounds                                          4
   nullPointerRedundantCheck                                   4
   identicalInnerCondition                                     4
-  arrayIndexOutOfBoundsCond                                   3
-  arrayIndexOutOfBounds                                       3
+  stringLiteralWrite                                          4

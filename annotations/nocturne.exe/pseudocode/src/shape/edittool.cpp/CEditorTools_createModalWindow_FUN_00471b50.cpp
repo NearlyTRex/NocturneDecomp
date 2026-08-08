@@ -128,7 +128,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
           iVar9 = iVar9 + 4;
         } while (iVar1 < g_WindowHeight);
       }
-      engine_special_cpp_FUN_00532320();
+      engine_special_cpp_unlockFrame_FUN_00532320();
     }
     iVar1 = (right - left) * g_BitsPerPixel;
     iVar9 = iVar1 >> 0x1f;

@@ -14,7 +14,7 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
   int iVar1;
   HRESULT HVar2;
   
-  if ((INT_02dc9d60 == 0) || (_DAT_02ddf568 == 0)) {
+  if ((g_UseDirect3D == 0) || (_DAT_02ddf568 == 0)) {
     if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
       (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
       (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);
@@ -33,7 +33,7 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
     iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005324a0
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
-      INT_02dc9d60 = iVar1;
+      g_UseDirect3D = iVar1;
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
         g_DirectDrawUnknown = (IUnknown *)0x0;

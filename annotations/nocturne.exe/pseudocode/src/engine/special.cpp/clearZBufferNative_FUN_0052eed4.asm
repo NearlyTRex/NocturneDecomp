@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
-;   undefined8 DAT_005bf48c
-;   undefined4 DAT_005bf494
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipTop
 ;   int g_ClipBottom
@@ -42,7 +42,7 @@ section .text
     MOV ECX,dword ptr [0x005b761c]      ; 0052eefe | g_WindowWidth
     MUL ECX                             ; 0052ef04
     MOV ECX,EAX                         ; 0052ef06
-    FLD double ptr [0x005bf48c]         ; 0052ef08 | DAT_005bf48c
+    FLD double ptr [0x005bf48c]         ; 0052ef08 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 0052ef0e
         ;   Label: LAB_0052ef0e
     FST double ptr [EDI + 0x8]          ; 0052ef10
@@ -56,7 +56,7 @@ section .text
     SUB ECX,0x10                        ; 0052ef28
     JG 0x0052ef0e                       ; 0052ef2b
         ;   XREF to: 0052ef0e (CONDITIONAL_JUMP)  ; LAB_0052ef0e
-    FSTP double ptr [0x005bf494]        ; 0052ef2d | DAT_005bf494
+    FSTP double ptr [0x005bf494]        ; 0052ef2d | g_BufferFillFpuPopST0
     POPAD                               ; 0052ef33
     POP EDI                             ; 0052ef34
     POP ESI                             ; 0052ef35

@@ -66,36 +66,6 @@
         "column": 19,
         "line": 23,
         "message": "use of undeclared identifier '_DAT_01e52ef8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02dc9db4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 24,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 31,
-        "line": 24,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_02dc9db4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_02dc9dac'"
       }
     ],
     "success": false,
@@ -104,15 +74,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 66,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 155
@@ -153,14 +122,14 @@
     },
     {
       "addr": "02dc9dac",
-      "name": "DAT_02dc9dac",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
       "value": null
     },
     {
       "addr": "02dc9db4",
-      "name": "DAT_02dc9db4",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolyList2",
+      "type": "APIDLL_drawPolyList2*",
       "value": null
     }
   ],
@@ -283,14 +252,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (_DAT_02dc9db4 != (code *)0x0) {",
-      "type": "unresolved_funcptr"
     }
   ]
 }

@@ -49,8 +49,8 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
 ;   engine_font.cpp_CBitFont_wrapText_FUN_00492f30
-;   engine_special.cpp_FUN_00532320
 ;   engine_special.cpp_lockFrame_FUN_005322e0
+;   engine_special.cpp_unlockFrame_FUN_00532320
 ;
 ; *****************************************************************************
 
@@ -282,8 +282,8 @@ section .text
     JL 0x00471e11                       ; 00471e38
         ;   XREF to: 00471e11 (CONDITIONAL_JUMP)  ; LAB_00471e11
     LEA EAX,[EAX]                       ; 00471e3a
-    CALL engine_special.cpp_FUN_00532320 ; 00471e40
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
+    CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00471e40
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
         ;   Label: LAB_00471e40
     MOV EDX,dword ptr [ESP + 0x12f8]    ; 00471e45
         ;   Label: LAB_00471e45

@@ -112,7 +112,7 @@ switchD_004402a8_caseD_3:
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
             (g_CDemonRenderer_PTR_005ae704,&this_ptr->rotation_matrix);
   if (skip_clear_buffers == 0) {
-    if (INT_02dc9d60 != 0) {
+    if (g_UseDirect3D != 0) {
       engine_special_cpp_beginScene_FUN_00532340();
     }
     engine_special_cpp_clearScreen_FUN_0052ee70();

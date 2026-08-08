@@ -219,7 +219,7 @@ section .text
     TEST EDI,EDI                        ; 004404ca
     JNZ 0x004404f9                      ; 004404cc
         ;   XREF to: 004404f9 (CONDITIONAL_JUMP)  ; LAB_004404f9
-    CMP dword ptr [0x02dc9d60],0x0      ; 004404ce | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004404ce | g_UseDirect3D
     JZ 0x004404dc                       ; 004404d5
         ;   XREF to: 004404dc (CONDITIONAL_JUMP)  ; LAB_004404dc
     CALL engine_special.cpp_beginScene_FUN_00532340 ; 004404d7

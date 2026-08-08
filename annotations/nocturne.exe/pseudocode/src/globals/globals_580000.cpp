@@ -325,6 +325,7 @@ byte BYTE_ARRAY_00582f76[65] = {
 char CHAR_1_0058153c = 0x01;
 char CHAR_00h_00583c06 = '\0';
 char CHAR_00h_00583dcc = '\0';
+char g_CHAR_00587ed1 = '\0';
 char CHAR_00h_0058869e = '\0';
 char CHAR_00h_005886ab = '\0';
 char CHAR_00h_0058c059 = '\0';

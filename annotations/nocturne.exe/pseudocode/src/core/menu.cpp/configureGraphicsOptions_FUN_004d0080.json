@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 36,
+        "column": 22,
         "line": 45,
         "message": "use of undeclared identifier 'DAT_01cc64a8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 60,
+        "column": 64,
         "line": 45,
         "message": "use of undeclared identifier 'DAT_01cc64ec'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
+        "column": 85,
         "line": 45,
         "message": "use of undeclared identifier 'DAT_01cc652c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 46,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01cc64a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 46,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01cc64a4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 47,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_01cc64a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 52,
-        "message": "no matching function for call to 'engine_special_cpp_FUN_00532cd0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 66,
+        "line": 67,
         "message": "use of undeclared identifier '_DAT_01cc64a8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 68,
+        "line": 69,
         "message": "use of undeclared identifier '_DAT_01cc64a4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 67,
+        "line": 68,
         "message": "use of undeclared identifier 'DAT_01cc652c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 68,
+        "message": "use of undeclared identifier '_DAT_01cc64a4'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1110,
-    "complexity_score": 1225,
+    "complexity_score": 1073,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 104,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 600,
-    "suspect_count": 58,
+    "pseudocode_lines": 603,
+    "suspect_count": 43,
     "suspect_types": [
       "dropped_loop_counter",
       "raw_address_constant",
@@ -137,10 +137,9 @@
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals",
-      "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 1710
+    "total_lines": 1713
   },
   "cross_references": [
     {
@@ -209,14 +208,14 @@
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
     },
     {
-      "addr": "00532cd0",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00532cd0"
-    },
-    {
       "addr": "00532d20",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00532d20"
+      "name": "engine_special.cpp_buildCardList_FUN_00532d20"
+    },
+    {
+      "addr": "00532cd0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_getVideoMemory_FUN_00532cd0"
     },
     {
       "addr": "005322b0",
@@ -649,26 +648,26 @@
     },
     {
       "addr": "005c0e80",
-      "name": "DAT_005c0e80",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c0e81",
-      "name": "DAT_005c0e81",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c0e82",
-      "name": "DAT_005c0e82",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c0e83",
       "name": "s_d3d_dll_005c0e83",
-      "type": "TerminatedCString",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -865,7 +864,7 @@
     },
     {
       "addr": "02dc9d60",
-      "name": "INT_02dc9d60",
+      "name": "g_UseDirect3D",
       "type": "int",
       "value": null
     }
@@ -1001,6 +1000,114 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "configureGraphicsOptions_FUN_004d0080.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 14,
+      "diagnostics": [
+        {
+          "check_id": "stringLiteralWrite",
+          "column": 21,
+          "line": 77,
+          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
+          "severity": "error"
+        },
+        {
+          "check_id": "stringLiteralWrite",
+          "column": 21,
+          "line": 105,
+          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
+          "severity": "error"
+        },
+        {
+          "check_id": "stringLiteralWrite",
+          "column": 20,
+          "line": 530,
+          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
+          "severity": "error"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 17,
+          "line": 73,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 17,
+          "line": 101,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 13,
+          "line": 202,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 15,
+          "line": 207,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 17,
+          "line": 212,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 19,
+          "line": 217,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 13,
+          "line": 360,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 17,
+          "line": 526,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 19,
+          "line": 542,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 19,
+          "line": 547,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "staticStringCompare",
+          "column": 19,
+          "line": 552,
+          "message": "Unnecessary comparison of static strings.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Unreachable code block removed",
@@ -1027,16 +1134,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Type propagation did not converge",
-      "line": 5,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 6,
+      "line": 5,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -1047,7 +1146,7 @@
       "line": 38,
       "match": "DAT_01cc64a8",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,",
       "type": "undefined_data"
     },
     {
@@ -1055,7 +1154,7 @@
       "line": 38,
       "match": "DAT_01cc64ec",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,",
       "type": "undefined_data"
     },
     {
@@ -1063,12 +1162,12 @@
       "line": 38,
       "match": "DAT_01cc652c",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&",
@@ -1076,63 +1175,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar6 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_005c0e80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01cc64a8",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01cc64ec",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 87,
       "match": "DAT_01cc652c",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "(int *)&DAT_01cc652c,(int *)0x1cc656c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar6 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_005c0e80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
+      "line": 117,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x8086) &&",
@@ -1140,7 +1207,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 124,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&",
@@ -1148,7 +1215,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 131,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&",
@@ -1156,39 +1223,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 193,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 198,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx6.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx7.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 208,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 228,
+      "line": 230,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cc5f80,pcVar8);",
@@ -1196,7 +1231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 232,
+      "line": 234,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc5f80;",
@@ -1204,7 +1239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 242,
+      "line": 244,
       "match": "DAT_01cc64ec",
       "severity": "mild",
       "text": "pcVar8 = *(char **)(&DAT_01cc64ec + _DAT_01cc64a4 * 4);",
@@ -1212,7 +1247,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 244,
+      "line": 246,
       "match": "DAT_01cc5f80",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc5f80;",
@@ -1220,7 +1255,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 265,
+      "line": 267,
       "match": "DAT_01cc6080",
       "severity": "mild",
       "text": "pcVar10 = &DAT_01cc6080;",
@@ -1228,7 +1263,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
+      "line": 279,
       "match": "DAT_01cc6080",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6080;",
@@ -1236,7 +1271,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 305,
+      "line": 307,
       "match": "DAT_01cc6280",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6280;",
@@ -1244,7 +1279,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 318,
+      "line": 320,
       "match": "DAT_01cc6380",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6380;",
@@ -1252,7 +1287,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 331,
+      "line": 333,
       "match": "DAT_01cc6380",
       "severity": "mild",
       "text": "pcVar8 = &DAT_01cc6380;",
@@ -1260,87 +1295,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 351,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar6 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 507,
+      "line": 509,
       "match": "DAT_01cc64a8",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 507,
+      "line": 509,
       "match": "DAT_01cc64ec",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 507,
+      "line": 510,
       "match": "DAT_01cc652c",
       "severity": "mild",
-      "text": "(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);",
+      "text": "(int *)&DAT_01cc652c,(int *)0x1cc656c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 515,
+      "line": 518,
       "match": "DAT_01cc652c",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 516,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"trid3d.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 520,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_005c0e80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 532,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx6.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 537,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tridx7.dll\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 542,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "iVar5 = _stricmp(&DAT_005c0e80,\"tri3dfx.dll\");",
-      "type": "undefined_data"
-    },
-    {
       "description": "Raw hex address 0x1cc5b80 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 31,
+      "line": 30,
       "match": "0x1cc5b80",
       "severity": "moderate",
       "text": "iVar6 = 0x1cc5b80;",
@@ -1348,7 +1335,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 70,
+      "line": 71,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1356,7 +1343,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 97,
+      "line": 99,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1364,7 +1351,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 233,
+      "line": 235,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1372,7 +1359,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 254,
+      "line": 256,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1380,7 +1367,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 266,
+      "line": 268,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1388,7 +1375,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 287,
+      "line": 289,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1396,7 +1383,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 306,
+      "line": 308,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1404,7 +1391,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 319,
+      "line": 321,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1412,7 +1399,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 332,
+      "line": 334,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1420,7 +1407,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 521,
+      "line": 524,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1428,7 +1415,7 @@
     },
     {
       "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
-      "line": 603,
+      "line": 606,
       "match": "} while( true );",
       "severity": "moderate",
       "text": "} while( true );",
@@ -1436,7 +1423,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 245,
+      "line": 247,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1444,7 +1431,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 278,
+      "line": 280,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1452,7 +1439,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 245,
+      "line": 247,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1460,7 +1447,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 278,
+      "line": 280,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

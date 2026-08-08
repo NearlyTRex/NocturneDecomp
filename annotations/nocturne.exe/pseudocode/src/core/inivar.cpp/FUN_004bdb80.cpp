@@ -29,11 +29,11 @@ void __cdecl core_inivar_cpp_FUN_004bdb80(void)
             (&local_204,"gamePIXY",&g_CGame_PTR_005b9354->game_pixy);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"gameBPP",&g_CGame_PTR_005b9354->game_bpp);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useDirect3D",&INT_02dc9d60);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(&local_204,"useDirect3D",&g_UseDirect3D);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"useAGPFlag",(int *)&DAT_02dc9d6c);
   engine_ini_cpp_CIniFile_getString_FUN_004bd910
-            (&local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
+            (&local_204,"rendererDLLPath","trid3d.dll",0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (&local_204,"gamma",&g_CGame_PTR_005b9354->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20

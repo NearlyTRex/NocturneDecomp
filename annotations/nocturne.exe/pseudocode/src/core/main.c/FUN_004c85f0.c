@@ -458,7 +458,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
     g_CGame_PTR_005b9354->game_pixx = 0x280;
     _DAT_01cae37c = 0;
     pCVar4->game_pixy = 0x1e0;
-    INT_02dc9d60 = 0;
+    g_UseDirect3D = 0;
     pCVar4->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }

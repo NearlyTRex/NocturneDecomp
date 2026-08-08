@@ -19,9 +19,9 @@ CMouse * __cdecl CMouse::dtor(CMouse *this_ptr,uint flags);
 // Address: 004ee5a0
 void __cdecl CMouse::load(CMouse *this_ptr);
 
-// Original: engine_ncursfx.cpp_FUN_004ee680
+// Original: engine_ncursfx.cpp_CMouse_FUN_004ee680
 // Address: 004ee680
-void __cdecl FUN_004ee680(CMouse *this_ptr);
+void __cdecl CMouse(CMouse *this_ptr);
 
 // Original: engine_ncursfx.cpp_CMouse_startEffect_FUN_004ee690
 // Address: 004ee690

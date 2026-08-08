@@ -666,7 +666,7 @@ section .text
         ;   XREF to: 0050a096 (CONDITIONAL_JUMP)  ; LAB_0050a096
     PUSH EBX                            ; 0050a08d
     CALL core_setdir.cpp_FUN_005138e0   ; 0050a08e
-        ;   XREF to: 005138e0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005138e0()
+        ;   XREF to: 005138e0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_005138e0(int * param_1)
     ADD ESP,0x4                         ; 0050a093
     MOV EAX,dword ptr [EBX + 0x14cd6c]  ; 0050a096
         ;   Label: LAB_0050a096

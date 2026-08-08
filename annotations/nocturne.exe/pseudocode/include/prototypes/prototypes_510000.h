@@ -80,9 +80,9 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(CDemonSet *this_ptr,char *filename);
-void core_setdir_cpp_FUN_00513670(SIZE_T *param_1,char *param_2);
+void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2);
 void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr);
-void core_setdir_cpp_FUN_005138e0(int *param_1);
+void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_00513e20(CDemonSet *this_ptr,int param_2,CVector3f *param_3);

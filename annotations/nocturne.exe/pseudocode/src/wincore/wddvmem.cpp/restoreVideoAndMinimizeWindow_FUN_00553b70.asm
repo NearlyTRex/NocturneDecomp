@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_ShowWindow_0057547c = 00175aa2
-;   int INT_02dc9d60
+;   int g_UseDirect3D
 ;   undefined4 DAT_02ddf568
 ;   undefined4 DAT_02de2098
 ;
@@ -21,7 +21,7 @@
 
 section .text
 
-    CMP dword ptr [0x02dc9d60],0x0      ; 00553b70 | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00553b70 | g_UseDirect3D
         ;   Label: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70
     JZ 0x00553b82                       ; 00553b77
         ;   XREF to: 00553b82 (CONDITIONAL_JUMP)  ; LAB_00553b82

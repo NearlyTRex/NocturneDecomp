@@ -68,40 +68,10 @@
         "message": "use of undeclared identifier '_DAT_01e52ef8'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_02dc9db0'; did you mean 'INT_02dc9d60'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 25,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 31,
-        "line": 25,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dc9db0'"
-      },
-      {
         "category": "incompatible_types",
         "column": 23,
         "line": 47,
         "message": "cannot convert 'UIntegerFloat' to 'int' without a conversion operator"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_02dc9dac'"
       }
     ],
     "success": false,
@@ -110,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 74,
+    "complexity_score": 59,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 165
@@ -171,14 +140,14 @@
     },
     {
       "addr": "02dc9dac",
-      "name": "DAT_02dc9dac",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
       "value": null
     },
     {
       "addr": "02dc9db0",
-      "name": "DAT_02dc9db0",
-      "type": "undefined4",
+      "name": "g_APIDLL_drawPolyList",
+      "type": "APIDLL_drawPolyList*",
       "value": null
     }
   ],
@@ -340,14 +309,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (_DAT_02dc9db0 != (code *)0x0) {",
-      "type": "unresolved_funcptr"
     }
   ]
 }

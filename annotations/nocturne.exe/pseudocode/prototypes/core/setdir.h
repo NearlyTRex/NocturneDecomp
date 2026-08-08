@@ -27,9 +27,9 @@ void __cdecl CDemonSet::clearCameraSwitchCooldown(CDemonSet *this_ptr);
 // Address: 00513610
 void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_FUN_00513670
+// Original: core_setdir.cpp_CDemonSet_FUN_00513670
 // Address: 00513670
-void FUN_00513670(SIZE_T *param_1,char *param_2);
+void __cdecl CDemonSet(CDemonSet *this_ptr,char *param_2);
 
 // Original: core_setdir.cpp_CDemonSet_FUN_00513720
 // Address: 00513720
@@ -37,7 +37,7 @@ void __cdecl CDemonSet(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_FUN_005138e0
 // Address: 005138e0
-void FUN_005138e0(int *param_1);
+void __cdecl FUN_005138e0(int *param_1);
 
 // Original: core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0
 // Address: 00513ce0

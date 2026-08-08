@@ -20,6 +20,6 @@ int __cdecl engine_special_cpp_setFogColorFromPalette_FUN_00532a80(int palette_i
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02dc9dcc)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
+  iVar1 = (*g_APIDLL_setFogColor)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
   return iVar1;
 }

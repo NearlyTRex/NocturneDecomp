@@ -1,0 +1,264 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_01c02580'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 75,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_01c02584'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 41,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "00545920",
+      "from_addr": "005459bc",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_00545920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545a40",
+      "from_addr": "00545a58",
+      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545a10",
+      "from_addr": "00545a2a",
+      "name": "engine_texture.cpp_updateTextureWithPalette_FUN_00545a10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00532440",
+    "address_range": [
+      [
+        "00532440",
+        "0053247d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_updateTextureFromPalette_FUN_00532440",
+    "signature": "int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_00532440(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b762c",
+      "name": "DAT_005b762c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02580",
+      "name": "DAT_01c02580",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02584",
+      "name": "DAT_01c02584",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02594",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dc9da0",
+      "name": "g_APIDLL_updateTexture",
+      "type": "APIDLL_updateTexture*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005459bc",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_ensureTextureLoaded_FUN_00545920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545a58",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545a2a",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_updateTextureWithPalette_FUN_00545a10",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6923076923076925,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 96
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "tex",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SRGBColorPalette *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005b762c",
+      "severity": "mild",
+      "text": "(tex,DAT_005b762c,_DAT_01c02580,(uchar *)palette_data,_DAT_01c02584);",
+      "type": "undefined_data"
+    }
+  ]
+}

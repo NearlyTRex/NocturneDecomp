@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9d90
+;   APIDLL_endScene* g_APIDLL_endScene
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   XREF to: 0053236c (CONDITIONAL_JUMP)  ; LAB_0053236c
     XOR EAX,EAX                         ; 00532369
     RET                                 ; 0053236b
-    CALL dword ptr [0x02dc9d90]         ; 0053236c | DAT_02dc9d90
+    CALL dword ptr [0x02dc9d90]         ; 0053236c | g_APIDLL_endScene
         ;   Label: LAB_0053236c
     RET                                 ; 00532372
 

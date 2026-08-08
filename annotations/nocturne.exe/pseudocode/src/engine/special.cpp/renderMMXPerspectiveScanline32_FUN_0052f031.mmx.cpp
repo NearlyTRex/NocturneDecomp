@@ -284,7 +284,7 @@ __asm {
         add EDX,dword ptr [DAT_005bf484]
         movq MM0,MM5
         add ESI,dword ptr [DAT_005bf488]
-        pcmpgtw MM5,qword ptr [DAT_005bf48c]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [DAT_005bf548]
         pand MM5,MM0
         jmp LAB_0052f39c
@@ -383,7 +383,7 @@ __asm {
         add EDX,dword ptr [DAT_005bf484]
         movq MM0,MM5
         add ESI,dword ptr [DAT_005bf488]
-        pcmpgtw MM5,qword ptr [DAT_005bf48c]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [DAT_005bf548]
         pand MM5,MM0
         jmp LAB_0052f4f0
@@ -460,7 +460,7 @@ __asm {
         add EDX,dword ptr [DAT_005bf484]
         movq MM0,MM5
         add ESI,dword ptr [DAT_005bf488]
-        pcmpgtw MM5,qword ptr [DAT_005bf48c]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [DAT_005bf548]
         pand MM5,MM0
         jmp LAB_0052f69b

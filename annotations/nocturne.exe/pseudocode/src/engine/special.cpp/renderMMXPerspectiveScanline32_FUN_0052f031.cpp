@@ -304,11 +304,12 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f03
         uVar7 = uVar7 + _DAT_005bf484;
         iVar15 = iVar15 + DAT_005bf488;
         iVar9 = iVar9 + _DAT_005bf548;
-        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-                          CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-                                   CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-                                                     sVar41),-(ushort)((short)DAT_005bf48c < sVar38)
-                                           ))) &
+        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar43),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar42),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar41),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar38)))) &
                  CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
       }
     }
@@ -451,13 +452,13 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f03
           uVar7 = uVar7 + _DAT_005bf484;
           iVar15 = iVar15 + DAT_005bf488;
           iVar9 = iVar9 + _DAT_005bf548;
-          uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
+          uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) <
                                      (short)(uVar18 + sVar48)),
-                            CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
+                            CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
                                               (short)(uVar50 + sVar47)),
-                                     CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-                                                       (short)(uVar49 + sVar46)),
-                                              -(ushort)((short)DAT_005bf48c <
+                                     CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                               0x10) < (short)(uVar49 + sVar46)),
+                                              -(ushort)(SUB82(g_BufferFillZeroQword,0) <
                                                        (short)(uVar39 + sVar44))))) &
                    CONCAT26(uVar18 + sVar48,
                             CONCAT24(uVar50 + sVar47,CONCAT22(uVar49 + sVar46,uVar39 + sVar44)));
@@ -567,11 +568,12 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f03
         uVar7 = uVar7 + _DAT_005bf484;
         iVar15 = iVar15 + DAT_005bf488;
         iVar9 = iVar9 + _DAT_005bf548;
-        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-                          CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-                                   CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-                                                     sVar41),-(ushort)((short)DAT_005bf48c < sVar38)
-                                           ))) &
+        uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar43),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+                                            sVar42),
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+                                                             0x10) < sVar41),
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar38)))) &
                  CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
       }
     }

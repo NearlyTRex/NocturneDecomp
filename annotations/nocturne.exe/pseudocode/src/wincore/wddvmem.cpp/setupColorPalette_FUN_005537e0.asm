@@ -20,7 +20,7 @@
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc9ddc
+;   APIDLL_setColorTable16* g_APIDLL_setColorTable16
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IUnknown* g_DirectDrawUnknown
@@ -115,7 +115,7 @@ section .text
     PUSH 0x1bff720                      ; 005538d0
         ;   Label: LAB_005538d0
     PUSH 0x1c00648                      ; 005538d5 | g_SourcePaletteData
-    CALL dword ptr [0x02dc9ddc]         ; 005538da | DAT_02dc9ddc
+    CALL dword ptr [0x02dc9ddc]         ; 005538da | g_APIDLL_setColorTable16
     ADD ESP,0x8                         ; 005538e0
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 005538e3
         ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()

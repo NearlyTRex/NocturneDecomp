@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   engine_special.cpp_FUN_005325c0 at 005325e6
+;   engine_special.cpp_setColorTable16_FUN_005325c0 at 005325e6
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 at 0053250e
 ;   wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620 at 005537ba
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 at 005538e3

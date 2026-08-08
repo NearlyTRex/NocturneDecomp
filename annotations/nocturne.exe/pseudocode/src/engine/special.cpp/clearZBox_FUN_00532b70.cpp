@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_clearZBox_FUN_00532b70(int left,int right,int top,int bottom)
 
 {
@@ -16,6 +14,6 @@ int __cdecl engine_special_cpp_clearZBox_FUN_00532b70(int left,int right,int top
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*_DAT_02dc9dd8)(left,right,top,bottom);
+  iVar1 = (*g_APIDLL_clearZBox)(left,right,top,bottom);
   return iVar1;
 }

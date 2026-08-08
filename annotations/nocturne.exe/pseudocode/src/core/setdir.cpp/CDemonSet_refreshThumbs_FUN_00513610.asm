@@ -15,8 +15,8 @@
 ;   TerminatedCString s_data_00590c08
 ;
 ; Called Functions:
+;   core_setdir.cpp_CDemonSet_FUN_00513670
 ;   core_setdir.cpp_CDemonSet_FUN_00513720
-;   core_setdir.cpp_FUN_00513670
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0051363c
     PUSH EBX                            ; 00513640
     PUSH ESI                            ; 00513641
-    CALL core_setdir.cpp_FUN_00513670   ; 00513642
-        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00513670()
+    CALL core_setdir.cpp_CDemonSet_FUN_00513670 ; 00513642
+        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_FUN_00513670(CDemonSet * this_ptr, char * param_2)
     ADD ESP,0x8                         ; 00513647
     POP ESI                             ; 0051364a
     POP EBX                             ; 0051364b

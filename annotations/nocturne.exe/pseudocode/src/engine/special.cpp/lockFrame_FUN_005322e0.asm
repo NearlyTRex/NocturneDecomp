@@ -8,17 +8,17 @@
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 at 0044502e
 ;   core_game.cpp_CGame_FUN_004a57c0 at 004a5984
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cf3b
-;   engine_special.cpp_FUN_00532ba0 at 00532bec
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 at 00532542
+;   engine_special.cpp_toggle_FUN_00532ba0 at 00532bec
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471de0
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9d94
+;   APIDLL_lockFrame* g_APIDLL_lockFrame
 ;   undefined4 DAT_02dc9e1c
 ;   undefined4 DAT_02dc9e20
-;   undefined4 DAT_02dc9e24
+;   int INT_02dc9e24
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     XOR EAX,EAX                         ; 005322e9
     RET                                 ; 005322eb
         ;   Label: LAB_005322eb
-    CALL dword ptr [0x02dc9d94]         ; 005322ec | DAT_02dc9d94
+    CALL dword ptr [0x02dc9d94]         ; 005322ec | g_APIDLL_lockFrame
         ;   Label: LAB_005322ec
     TEST EAX,EAX                        ; 005322f2
     JZ 0x005322eb                       ; 005322f4
@@ -40,7 +40,7 @@ section .text
     MOV ECX,0x1                         ; 005322fb
     MOV [0x02dc9e20],EAX                ; 00532300 | DAT_02dc9e20
     MOV EAX,[0x02dc9e1c]                ; 00532305 | DAT_02dc9e1c
-    MOV dword ptr [0x02dc9e24],ECX      ; 0053230a | DAT_02dc9e24
+    MOV dword ptr [0x02dc9e24],ECX      ; 0053230a | INT_02dc9e24
     MOV [0x005b7624],EAX                ; 00532310 | g_BitsPerPixel
     MOV EAX,ECX                         ; 00532315
     RET                                 ; 00532317

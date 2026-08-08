@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 5637
-  Functions with suspicious globals: 542
-  Total suspicious global references: 1279
+  Functions with suspicious globals: 541
+  Total suspicious global references: 1278
 
   Most commonly misresolved globals:
     g_CDemonActorActorType_00763e48                    44 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CCrater_ARRAY_01c625f8                           7 functions
     DAT_00768d4c                                       7 functions
 
-  Raw .cpp files with issues: 542
+  Raw .cpp files with issues: 541
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -671,10 +671,6 @@ core_main.c_enterMainGameMenu_FUN_004c85e0  [.cpp]  (14 suspicious globals)
     Used at lines: 91
     NOT found in function reference list
 
-  INT_02dc9d60
-    Used at lines: 27
-    NOT found in function reference list
-
   g_CAlphaBitmap_01cc5b20
     Used at lines: 41
     NOT found in function reference list
@@ -705,6 +701,10 @@ core_main.c_enterMainGameMenu_FUN_004c85e0  [.cpp]  (14 suspicious globals)
 
   g_CSound_PTR_005bed68
     Used at lines: 118, 144, 150, 165, 173, ...
+    NOT found in function reference list
+
+  g_UseDirect3D
+    Used at lines: 27
     NOT found in function reference list
 
   g_WindowHeight
@@ -1191,10 +1191,6 @@ core_fire.cpp_CFireEffect_init_FUN_0048a150  [.cpp]  (9 suspicious globals)
 engine_2d.c_resetGraphicsSystem_FUN_00403760  [.cpp]  (9 suspicious globals)
   File: engine/2d.c
 
-  INT_02dc9d60
-    Used at lines: 17, 51
-    NOT found in function reference list
-
   g_BitsPerPixel
     Used at lines: 18, 48, 74
     NOT found in function reference list
@@ -1213,6 +1209,10 @@ engine_2d.c_resetGraphicsSystem_FUN_00403760  [.cpp]  (9 suspicious globals)
 
   g_SoftwareRenderSurface
     Used at lines: 34, 35, 35, 36, 56, ...
+    NOT found in function reference list
+
+  g_UseDirect3D
+    Used at lines: 17, 51
     NOT found in function reference list
 
   g_UseExternalRenderer
@@ -1339,10 +1339,6 @@ core_main.c_staticInit_FUN_004c83d0  [.cpp]  (8 suspicious globals)
 engine_2d.c_reinitializeGraphicsSystem_FUN_00403770  [.cpp]  (8 suspicious globals)
   File: engine/2d.c
 
-  INT_02dc9d60
-    Used at lines: 17
-    NOT found in function reference list
-
   g_BitsPerPixel
     Used at lines: 42
     NOT found in function reference list
@@ -1361,6 +1357,10 @@ engine_2d.c_reinitializeGraphicsSystem_FUN_00403770  [.cpp]  (8 suspicious globa
 
   g_SoftwareRenderSurface
     Used at lines: 25, 26, 26, 27
+    NOT found in function reference list
+
+  g_UseDirect3D
+    Used at lines: 17
     NOT found in function reference list
 
   g_WindowHeight
@@ -6004,7 +6004,7 @@ core_menu.cpp_configureGraphicsOptions_FUN_004d0080  [.cpp]  (1 suspicious globa
   File: core/menu.cpp
 
   g_CMoon_01cc5780
-    Used at lines: 63, 64
+    Used at lines: 64, 65
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6408,6 +6408,14 @@ core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0  [.cpp]  (1 suspiciou
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CDemonSet_FUN_00513670  [.cpp]  (1 suspicious globals)
+  File: core/setdir.cpp
+
+  DAT_020875f8
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610  [.cpp]  (1 suspicious globals)
   File: core/setdir.cpp
 
@@ -6421,14 +6429,6 @@ core_setdir.cpp_FUN_00511d80  [.cpp]  (1 suspicious globals)
 
   g_CBoundingBox3D_ARRAY_02665930
     Used at lines: 149
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_setdir.cpp_FUN_00513670  [.cpp]  (1 suspicious globals)
-  File: core/setdir.cpp
-
-  DAT_020875f8
-    Used at lines: 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6992,14 +6992,6 @@ engine_prim.c_setupColoredSoftwareEdge_FUN_004faa20  [.cpp]  (1 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_special.cpp_FUN_00530e60  [.cpp]  (1 suspicious globals)
-  File: engine/special.cpp
-
-  DAT_005c0e80
-    Used at lines: 19
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_special.cpp_clearScreenRegion_FUN_0052ef37  [.cpp]  (1 suspicious globals)
   File: engine/special.cpp
 
@@ -7012,7 +7004,7 @@ engine_special.cpp_fillDepthRegion_FUN_0052efc2  [.cpp]  (1 suspicious globals)
   File: engine/special.cpp
 
   g_ZBufferScanlineArray
-    Used at lines: 25
+    Used at lines: 23
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7308,7 +7300,7 @@ wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0  [.cpp]  (1 suspicious global
   File: wincore/wddvmem.cpp
 
   g_ColorTable16
-    Used at lines: 20
+    Used at lines: 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dd4
+;   APIDLL_clearZBuffer* g_APIDLL_clearZBuffer
 ;
 ; *****************************************************************************
 
@@ -21,7 +21,7 @@ section .text
         ;   XREF to: 00532b5c (CONDITIONAL_JUMP)  ; LAB_00532b5c
     XOR EAX,EAX                         ; 00532b59
     RET                                 ; 00532b5b
-    CALL dword ptr [0x02dc9dd4]         ; 00532b5c | DAT_02dc9dd4
+    CALL dword ptr [0x02dc9dd4]         ; 00532b5c | g_APIDLL_clearZBuffer
         ;   Label: LAB_00532b5c
     RET                                 ; 00532b62
 

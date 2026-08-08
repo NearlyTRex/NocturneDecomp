@@ -235,7 +235,7 @@ void __cdecl engine_ncursfx_cpp_staticInit_FUN_004ee4e0(void);
 CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *ptr);
 CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(CMouse *this_ptr,uint flags);
 void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr);
-void __cdecl engine_ncursfx_cpp_FUN_004ee680(CMouse *this_ptr);
+void __cdecl engine_ncursfx_cpp_CMouse_FUN_004ee680(CMouse *this_ptr);
 int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(CMouse *this_ptr,uint button_mask);
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y);

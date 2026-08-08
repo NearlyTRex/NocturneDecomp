@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dd0
+;   APIDLL_sync* g_APIDLL_sync
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
         ;   XREF to: 00532b3c (CONDITIONAL_JUMP)  ; LAB_00532b3c
     XOR EAX,EAX                         ; 00532b39
     RET                                 ; 00532b3b
-    CALL dword ptr [0x02dc9dd0]         ; 00532b3c | DAT_02dc9dd0
+    CALL dword ptr [0x02dc9dd0]         ; 00532b3c | g_APIDLL_sync
         ;   Label: LAB_00532b3c
     RET                                 ; 00532b42
 

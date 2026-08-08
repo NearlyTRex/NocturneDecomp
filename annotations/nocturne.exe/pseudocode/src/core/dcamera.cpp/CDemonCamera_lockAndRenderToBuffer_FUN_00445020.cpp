@@ -24,14 +24,14 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(CDe
   }
   core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0(this_ptr);
   if (g_WindowHeight < 0x1e1) {
-    iVar1 = engine_special_cpp_FUN_00532320();
-    if (INT_02dc9d60 == 0) {
+    iVar1 = engine_special_cpp_unlockFrame_FUN_00532320();
+    if (g_UseDirect3D == 0) {
       return iVar1;
     }
   }
   else {
     iVar1 = engine_special_cpp_unlockHoldBuffer_FUN_00532d80();
-    if (INT_02dc9d60 == 0) {
+    if (g_UseDirect3D == 0) {
       return iVar1;
     }
   }

@@ -130,6 +130,10 @@ extern _MMX_INTEGER g_RedMask32;
 extern _MMX_INTEGER g_GreenMask32;
 extern _MMX_INTEGER g_BlueMask32;
 
+// double
+extern double g_BufferFillZeroQword;
+extern double g_BufferFillFpuPopST0;
+
 // int
 extern int g_INT_005b064c;
 extern int g_INT_005b0660;
@@ -349,7 +353,6 @@ extern undefined4 DAT_005bf540;
 extern undefined8 DAT_005b4748;
 extern undefined8 DAT_005b4788;
 extern undefined8 DAT_005b47a8;
-extern undefined8 DAT_005bf48c;
 extern undefined8 DAT_005bf500;
 extern undefined8 DAT_005bf520;
 extern undefined8 DAT_005bfe70;

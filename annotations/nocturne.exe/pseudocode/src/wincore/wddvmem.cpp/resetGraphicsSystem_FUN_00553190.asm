@@ -17,7 +17,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   int g_UseExternalRenderer
-;   int INT_02dc9d60
+;   int g_UseDirect3D
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 00553192
     PUSH EBP                            ; 00553193
     MOV EDX,0x1                         ; 00553194
-    MOV ECX,dword ptr [0x02dc9d60]      ; 00553199 | INT_02dc9d60
+    MOV ECX,dword ptr [0x02dc9d60]      ; 00553199 | g_UseDirect3D
     MOV dword ptr [0x02ddf568],EDX      ; 0055319f | DAT_02ddf568
     TEST ECX,ECX                        ; 005531a5
     JZ 0x005532fc                       ; 005531a7
@@ -113,7 +113,7 @@ section .text
     JNZ 0x005532fc                      ; 0055324a
         ;   XREF to: 005532fc (CONDITIONAL_JUMP)  ; LAB_005532fc
     MOV EDI,dword ptr [0x02ddf55c]      ; 00553250 | g_DirectDrawUnknown
-    MOV [0x02dc9d60],EAX                ; 00553256 | INT_02dc9d60
+    MOV [0x02dc9d60],EAX                ; 00553256 | g_UseDirect3D
     MOV [0x01c02594],EAX                ; 0055325b | g_UseExternalRenderer
     TEST EDI,EDI                        ; 00553260
     JNZ 0x00553382                      ; 00553262

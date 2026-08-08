@@ -108,6 +108,7 @@
 #include "types/classes/CEventList.h"
 #include "types/classes/CExplosion.h"
 #include "types/classes/CExternalRenderer.h"
+#include "types/classes/CExternalRendererBridge.h"
 #include "types/classes/CFileBitStream.h"
 #include "types/classes/CFileFinder.h"
 #include "types/classes/CFilmProjector.h"

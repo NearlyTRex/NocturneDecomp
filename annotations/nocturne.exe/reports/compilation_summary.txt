@@ -10,17 +10,18 @@ Failed: 4942
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44702
-  undeclared_identifier           6362
-  incompatible_types               443
+  other                          44701
+  undeclared_identifier           6279
+  incompatible_types               436
   type_error                       371
   format_error                     229
-  cast_error                       220
-  syntax_error                     116
-  pointer_type                      52
+  cast_error                       219
+  syntax_error                     111
+  pointer_type                      54
+  argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44702 errors)
+CATEGORY: other (44701 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_FUN_0042d130
@@ -87,7 +88,7 @@ CATEGORY: other (44702 errors)
   ... and 4912 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (6362 errors)
+CATEGORY: undeclared_identifier (6279 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -102,8 +103,6 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 54: use of undeclared identifier 'DAT_00581999'...
   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760
     Line 95: use of undeclared identifier 'DAT_00581aa2'...
-  core_main.c_finalizeGameSystems_FUN_004c90e0
-    Line 23: use of undeclared identifier 'DAT_00587ed1'...
   engine_pod.cpp_FUN_004f7980
     Line 20: use of undeclared identifier 'DAT_0058d9a8'...
   engine_pod.cpp_FUN_004f8eb0
@@ -150,11 +149,13 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 90: use of undeclared identifier 'DAT_005b8bbc'; did you mean 'DAT_005b8bdc'?...
   core_flame.cpp_CFlame_setup_FUN_0048d050
     Line 19: use of undeclared identifier 'DAT_005b8ec0'; did you mean 'DAT_005b5ec0'?...
+  engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0
+    Line 52: use of undeclared identifier 'DAT_005b9250'...
 
-  ... and 1566 more errors
+  ... and 1536 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (443 errors)
+CATEGORY: incompatible_types (436 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -177,6 +178,8 @@ CATEGORY: incompatible_types (443 errors)
     Line 121: assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]'...
   shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380
     Line 39: assigning to 'char *' from incompatible type 'void *'...
+  engine_special.cpp_clearScreen_FUN_0052ee70
+    Line 25: assigning to 'double *' from incompatible type 'void *'...
   cockpit_ckptutil.c_FUN_0042e7b0
     Line 29: assigning to 'int *' from incompatible type 'void *'...
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0
@@ -205,20 +208,18 @@ CATEGORY: incompatible_types (443 errors)
     Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
     Line 34: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
-  engine_special.cpp_FUN_00532ba0
-    Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
+  engine_special.cpp_toggle_FUN_00532ba0
+    Line 21: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
     Line 176: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   core_moon.cpp_CMoon_render_FUN_004dec50
     Line 121: assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type '...
-  engine_special.cpp_clearScreen_FUN_0052ee70
-    Line 27: assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type '...
   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
     Line 56: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
     Line 39: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
 
-  ... and 227 more errors
+  ... and 220 more errors
 
 ====================================================================================================
 CATEGORY: type_error (371 errors)
@@ -355,7 +356,7 @@ CATEGORY: format_error (229 errors)
   ... and 38 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (220 errors)
+CATEGORY: cast_error (219 errors)
 ====================================================================================================
 
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
@@ -414,15 +415,15 @@ CATEGORY: cast_error (220 errors)
     Line 74: C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed...
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0
     Line 518: C-style cast from 'int *' to 'double' is not allowed...
-  engine_special.cpp_FUN_00530e60
-    Line 26: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
+  engine_special.cpp_initializeExternalRenderer_FUN_00530e60
+    Line 24: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
   engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 71: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
+    Line 37: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
 
   ... and 70 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (116 errors)
+CATEGORY: syntax_error (111 errors)
 ====================================================================================================
 
   core_anvil.cpp_CAnvil_process_FUN_0040f610
@@ -486,10 +487,10 @@ CATEGORY: syntax_error (116 errors)
   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
     Line 127: expected expression...
 
-  ... and 60 more errors
+  ... and 55 more errors
 
 ====================================================================================================
-CATEGORY: pointer_type (52 errors)
+CATEGORY: pointer_type (54 errors)
 ====================================================================================================
 
   core_mmx.c_detectIntelProcessor_FUN_004d9eac
@@ -536,6 +537,8 @@ CATEGORY: pointer_type (52 errors)
     Line 174: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_normalizeClippedVertices_FUN_00432150
     Line 20: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_special.cpp_loadExternalRenderer_FUN_00531780
+    Line 360: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40
     Line 16: cannot initialize a parameter of type 'long' with an lvalue of type 'HANDLE' (ak...
   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
@@ -552,10 +555,19 @@ CATEGORY: pointer_type (52 errors)
     Line 15: cannot initialize return object of type 'int' with an lvalue of type 'FARPROC' (...
 
 ====================================================================================================
+CATEGORY: argument_error (2 errors)
+====================================================================================================
+
+  engine_special.cpp_initializeExternalRenderer_FUN_00530e60
+    Line 25: too many arguments to function call, expected 0, have 2...
+  engine_special.cpp_loadExternalRenderer_FUN_00531780
+    Line 38: too many arguments to function call, expected 0, have 2...
+
+====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 5.04
+Average suspects in failed compilations: 5.02
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

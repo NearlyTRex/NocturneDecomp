@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4942
-Clean: 2337 (47.3%)
-With suspects: 2605
-Total suspects: 25764
+Clean: 2366 (47.9%)
+With suspects: 2576
+Total suspects: 25660
 
 ====================================================================================================
 cockpit_ckptutil.c_FUN_0042d180 (24 suspects)
@@ -15320,21 +15320,19 @@ core_imp.cpp_FUN_004bc7c0 (11 suspects)
   Line 19 [static_uninitvar]: *in_stack_00000004 = in_stack_00000008;
 
 ====================================================================================================
-core_inivar.cpp_FUN_004bdb80 (5 suspects)
+core_inivar.cpp_FUN_004bdb80 (4 suspects)
   File: core/inivar.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
   Line 27 [undefined_data]: (&local_204,"useAGPFlag",(int *)&DAT_02dc9d6c);
-  Line 29 [undefined_data]: (&local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
   Line 37 [undefined_data]: (&local_204,"firstTimeFlag",(int *)&DAT_01cae37c);
   Line 58 [undefined_data]: (&local_204,"currentBoard",(int *)&DAT_01cc64a4);
 
 ====================================================================================================
-core_inivar.cpp_writeIniData_FUN_004be2d0 (2 suspects)
+core_inivar.cpp_writeIniData_FUN_004be2d0 (1 suspect)
   File: core/inivar.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 20 [undefined_data]: (&local_210,"rendererDLLPath",&DAT_005c0e80);
 
 ====================================================================================================
 core_inv.cpp_CInventory_FUN_004c0640 (7 suspects)
@@ -16053,11 +16051,10 @@ core_main.c_enterMainGameMenu_FUN_004c85e0 (12 suspects)
   Line 98 [raw_address_pointer_store]: *(byte **)(iVar4 + 0x1cc8110) = puVar5;
 
 ====================================================================================================
-core_main.c_finalizeGameSystems_FUN_004c90e0 (4 suspects)
+core_main.c_finalizeGameSystems_FUN_004c90e0 (3 suspects)
   File: core/main.c
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 16 [undefined_data]: (&DAT_00587ed1,"enemy.pod","rb");
   Line 22 [stack_ref]: _sprintf(&stack0xfffffef0,"load%d",(uVar2 & 3) + 1);
   Line 24 [stack_ref]: (&g_CAlphaBitmap_01cc480c,&stack0xfffffef0,0x280,0x1e0);
 
@@ -16545,67 +16542,52 @@ core_menu.cpp_configureCustomKeys_FUN_004d0d20 (10 suspects)
   Line 145 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_menu.cpp_configureGraphicsOptions_FUN_004d0080 (58 suspects)
+core_menu.cpp_configureGraphicsOptions_FUN_004d0080 (43 suspects)
   File: core/menu.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004d03ba) */
   Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004d075e) */
   Line 4 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004d03d0) */
-  Line 5 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 6 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 31 [raw_address_constant]: iVar6 = 0x1cc5b80;
-  Line 38 [undefined_data]: engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 38 [undefined_data]: engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 38 [undefined_data]: engine_special_cpp_FUN_00532d20(&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 60 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&
-  Line 65 [undefined_data]: iVar6 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
-  Line 69 [undefined_data]: pcVar10 = &DAT_005c0e80;
-  Line 70 [unrolled_strcpy]: do {
-  Line 85 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 85 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 85 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 92 [undefined_data]: iVar6 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
-  Line 96 [undefined_data]: pcVar10 = &DAT_005c0e80;
-  Line 97 [unrolled_strcpy]: do {
-  Line 115 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x8086) &&
-  Line 122 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&
-  Line 129 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&
-  Line 193 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"trid3d.dll");
-  Line 198 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tridx6.dll");
-  Line 203 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tridx7.dll");
-  Line 208 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
-  Line 228 [undefined_data]: _sprintf(&DAT_01cc5f80,pcVar8);
-  Line 232 [undefined_data]: pcVar10 = &DAT_01cc5f80;
-  Line 233 [unrolled_strcpy]: do {
-  Line 242 [undefined_data]: pcVar8 = *(char **)(&DAT_01cc64ec + _DAT_01cc64a4 * 4);
-  Line 244 [undefined_data]: pcVar10 = &DAT_01cc5f80;
-  Line 245 [unrolled_strlen]: do {
-  Line 245 [unrolled_strcat]: do {
-  Line 254 [unrolled_strcpy]: do {
-  Line 265 [undefined_data]: pcVar10 = &DAT_01cc6080;
-  Line 266 [unrolled_strcpy]: do {
-  Line 277 [undefined_data]: pcVar8 = &DAT_01cc6080;
-  Line 278 [unrolled_strlen]: do {
-  Line 278 [unrolled_strcat]: do {
-  Line 287 [unrolled_strcpy]: do {
-  Line 305 [undefined_data]: pcVar8 = &DAT_01cc6280;
-  Line 306 [unrolled_strcpy]: do {
-  Line 318 [undefined_data]: pcVar8 = &DAT_01cc6380;
-  Line 319 [unrolled_strcpy]: do {
-  Line 331 [undefined_data]: pcVar8 = &DAT_01cc6380;
-  Line 332 [unrolled_strcpy]: do {
-  Line 351 [undefined_data]: iVar6 = _stricmp(&DAT_005c0e80,"trid3d.dll");
-  Line 507 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 507 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 507 [undefined_data]: (&DAT_01cc64a8,0x1cc64ac,&DAT_01cc64ec,&DAT_01cc652c,0x1cc656c);
-  Line 515 [undefined_data]: if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {
-  Line 516 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"trid3d.dll");
-  Line 520 [undefined_data]: pcVar8 = &DAT_005c0e80;
-  Line 521 [unrolled_strcpy]: do {
-  Line 532 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tridx6.dll");
-  Line 537 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tridx7.dll");
-  Line 542 [undefined_data]: iVar5 = _stricmp(&DAT_005c0e80,"tri3dfx.dll");
-  Line 603 [dropped_loop_counter]: } while( true );
+  Line 5 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 30 [raw_address_constant]: iVar6 = 0x1cc5b80;
+  Line 38 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,
+  Line 38 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,
+  Line 38 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,(int *)&DAT_01cc652c,
+  Line 61 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x121a) &&
+  Line 71 [unrolled_strcpy]: do {
+  Line 86 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+  Line 86 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+  Line 87 [undefined_data]: (int *)&DAT_01cc652c,(int *)0x1cc656c);
+  Line 99 [unrolled_strcpy]: do {
+  Line 117 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x8086) &&
+  Line 124 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&
+  Line 131 [undefined_data]: if ((*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) == 0x12d2) &&
+  Line 230 [undefined_data]: _sprintf(&DAT_01cc5f80,pcVar8);
+  Line 234 [undefined_data]: pcVar10 = &DAT_01cc5f80;
+  Line 235 [unrolled_strcpy]: do {
+  Line 244 [undefined_data]: pcVar8 = *(char **)(&DAT_01cc64ec + _DAT_01cc64a4 * 4);
+  Line 246 [undefined_data]: pcVar10 = &DAT_01cc5f80;
+  Line 247 [unrolled_strlen]: do {
+  Line 247 [unrolled_strcat]: do {
+  Line 256 [unrolled_strcpy]: do {
+  Line 267 [undefined_data]: pcVar10 = &DAT_01cc6080;
+  Line 268 [unrolled_strcpy]: do {
+  Line 279 [undefined_data]: pcVar8 = &DAT_01cc6080;
+  Line 280 [unrolled_strlen]: do {
+  Line 280 [unrolled_strcat]: do {
+  Line 289 [unrolled_strcpy]: do {
+  Line 307 [undefined_data]: pcVar8 = &DAT_01cc6280;
+  Line 308 [unrolled_strcpy]: do {
+  Line 320 [undefined_data]: pcVar8 = &DAT_01cc6380;
+  Line 321 [unrolled_strcpy]: do {
+  Line 333 [undefined_data]: pcVar8 = &DAT_01cc6380;
+  Line 334 [unrolled_strcpy]: do {
+  Line 509 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+  Line 509 [undefined_data]: ((int *)&DAT_01cc64a8,(char **)0x1cc64ac,(char **)&DAT_01cc64ec,
+  Line 510 [undefined_data]: (int *)&DAT_01cc652c,(int *)0x1cc656c);
+  Line 518 [undefined_data]: if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {
+  Line 524 [unrolled_strcpy]: do {
+  Line 606 [dropped_loop_counter]: } while( true );
 
 ====================================================================================================
 core_menu.cpp_configureSoundOptions_FUN_004d12e0 (76 suspects)
@@ -21143,6 +21125,14 @@ core_setdir.cpp_CDemonSet_FUN_005125a0 (87 suspects)
   Line 1067 [unrolled_memcpy]: // 0051335a: MOVSD.REP ES:EDI,ESI  ; DAT_020845f4 | DAT_020845f8
 
 ====================================================================================================
+core_setdir.cpp_CDemonSet_FUN_00513670 (3 suspects)
+  File: core/setdir.cpp
+====================================================================================================
+  Line 2 [unnamed_param]: void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2)
+  Line 7 [unnamed_param]: file = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"wb");
+  Line 13 [undefined_data]: _fwrite(&DAT_020875f8,0x3000,this_ptr->camera_count,file);
+
+====================================================================================================
 core_setdir.cpp_CDemonSet_FUN_00513720 (12 suspects)
   File: core/setdir.cpp
 ====================================================================================================
@@ -21261,21 +21251,10 @@ core_setdir.cpp_FUN_00511d80 (74 suspects)
   Line 527 [unrolled_memcpy]: // 005123ed: MOVSD.REP ES:EDI,ESI  ; DAT_020875f8 | DAT_020845f4 | DAT_020875fc
 
 ====================================================================================================
-core_setdir.cpp_FUN_00513670 (5 suspects)
+core_setdir.cpp_FUN_005138e0 (14 suspects)
   File: core/setdir.cpp
 ====================================================================================================
-  Line 2 [unnamed_param]: void core_setdir_cpp_FUN_00513670(SIZE_T *param_1,char *param_2)
-  Line 2 [unnamed_param]: void core_setdir_cpp_FUN_00513670(SIZE_T *param_1,char *param_2)
-  Line 7 [unnamed_param]: file = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"wb");
-  Line 13 [unnamed_param]: _fwrite(&DAT_020875f8,0x3000,*param_1,file);
-  Line 13 [undefined_data]: _fwrite(&DAT_020875f8,0x3000,*param_1,file);
-
-====================================================================================================
-core_setdir.cpp_FUN_005138e0 (15 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
-  Line 2 [unnamed_param]: void core_setdir_cpp_FUN_005138e0(int *param_1)
+  Line 2 [unnamed_param]: void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1)
   Line 37 [unnamed_param]: if (0 < *param_1) {
   Line 43 [unnamed_param]: } while (iVar6 < *param_1);
   Line 46 [unnamed_param]: for (iVar6 = 0; iVar6 < *param_1 + -1; iVar6 = iVar6 + 1) {
@@ -32372,7 +32351,7 @@ engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 (2 suspects)
 engine_light.cpp_FUN_004c6a00 (1 suspect)
   File: engine/light.cpp
 ====================================================================================================
-  Line 7 [undefined_data]: return DAT_005bacd0;
+  Line 5 [undefined_data]: return DAT_005bacd0;
 
 ====================================================================================================
 engine_light.cpp_FUN_004c6a40 (3 suspects)
@@ -33028,7 +33007,7 @@ engine_prim.c_FUN_004f9440 (3 suspects)
 engine_prim.c_FUN_004f9bc0 (23 suspects)
   File: engine/prim.c
 ====================================================================================================
-  Line 2 [unnamed_param]: bool engine_prim_c_FUN_004f9bc0(int param_1)
+  Line 2 [unnamed_param]: int __cdecl engine_prim_c_FUN_004f9bc0(int param_1)
   Line 15 [unnamed_param]: iVar1 = *(int *)(param_1 + 0x18);
   Line 16 [unnamed_param]: iVar4 = *(int *)(param_1 + 0x24);
   Line 17 [unnamed_param]: iVar5 = *(int *)(param_1 + 0x30);
@@ -33049,8 +33028,8 @@ engine_prim.c_FUN_004f9bc0 (23 suspects)
   Line 28 [undefined_data]: local_24 = (&DAT_005c5024)[iVar5 * 0xc] - (&DAT_005c5024)[iVar4 * 0xc];
   Line 29 [undefined_data]: local_20 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);
   Line 29 [undefined_data]: local_20 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);
-  Line 36 [sign_compare_idiom]: return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
-  Line 36 [sign_compare_idiom]: return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
+  Line 36 [sign_compare_idiom]: return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
+  Line 36 [sign_compare_idiom]: return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
 
 ====================================================================================================
 engine_prim.c_FUN_004f9dd0 (7 suspects)
@@ -33269,8 +33248,8 @@ engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 (6 suspects)
 engine_special.cpp_FUN_00530cf0 (5 suspects)
   File: engine/special.cpp
 ====================================================================================================
-  Line 2 [unnamed_param]: void engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
-  Line 2 [unnamed_param]: void engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
+  Line 2 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
+  Line 2 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
   Line 5 [unnamed_param]: *param_1 = param_2;
   Line 5 [unnamed_param]: *param_1 = param_2;
   Line 6 [unnamed_param]: if (param_2 != 0) {
@@ -33279,143 +33258,29 @@ engine_special.cpp_FUN_00530cf0 (5 suspects)
 engine_special.cpp_FUN_00530d30 (5 suspects)
   File: engine/special.cpp
 ====================================================================================================
-  Line 7 [stack_param]: uint *in_stack_00000004;
-  Line 8 [stack_param]: uint in_stack_00000008;
-  Line 10 [stack_param]: *in_stack_00000004 = in_stack_00000008;
-  Line 10 [stack_param]: *in_stack_00000004 = in_stack_00000008;
-  Line 17 [static_uninitvar]: *in_stack_00000004 = in_stack_00000008;
+  Line 5 [stack_param]: uint *in_stack_00000004;
+  Line 6 [stack_param]: uint in_stack_00000008;
+  Line 8 [stack_param]: *in_stack_00000004 = in_stack_00000008;
+  Line 8 [stack_param]: *in_stack_00000004 = in_stack_00000008;
+  Line 15 [static_uninitvar]: *in_stack_00000004 = in_stack_00000008;
 
 ====================================================================================================
-engine_special.cpp_FUN_00530d40 (1 suspect)
+engine_special.cpp_FUN_00532f30 (5 suspects)
+  File: engine/special.cpp
+====================================================================================================
+  Line 5 [stack_param]: int in_stack_00000004;
+  Line 6 [stack_param]: uint in_stack_00000008;
+  Line 8 [stack_param]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
+  Line 8 [stack_param]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
+  Line 15 [static_uninitvar]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
+
+====================================================================================================
+engine_special.cpp_FUN_00532f50 (9 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00530e60 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 12 [undefined_data]: _DAT_02dc9e08 = wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);
-
-====================================================================================================
-engine_special.cpp_FUN_00532320 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532380 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_005323c0 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532480 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_005325c0 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532900 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532930 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532950 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532980 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_FUN_00532ba0 (13 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 23 [signed_shift_global_idiom]: iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
-  Line 32 [pointer_cast]: puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);
-  Line 32 [pointer_truncation]: puVar7 = *(uint **)((int)g_ScreenBufferArray + iVar4);
-  Line 33 [unrolled_memcpy]: for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 38 [unrolled_memcpy]: for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-  Line 40 [pointer_cast]: puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
-  Line 40 [pointer_truncation]: puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);
-  Line 41 [pointer_cast]: puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);
-  Line 41 [pointer_truncation]: puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);
-  Line 41 [unrolled_memcpy]: // 00532c10: MOVSD.REP ES:EDI,ESI
-  Line 45 [pointer_cast]: puVar5 = (uint *)((int)puVar5 + uVar1);
-  Line 45 [pointer_truncation]: puVar5 = (uint *)((int)puVar5 + uVar1);
-
-====================================================================================================
-engine_special.cpp_FUN_00532cd0 (8 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 4 (4 missing)
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532cd0(uint param_1,uint param_2,uint param_3)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532cd0(uint param_1,uint param_2,uint param_3)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532cd0(uint param_1,uint param_2,uint param_3)
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df0)(param_1,param_2,param_3);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df0)(param_1,param_2,param_3);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df0)(param_1,param_2,param_3);
-
-====================================================================================================
-engine_special.cpp_FUN_00532d20 (12 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 8 (8 missing)
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532d20(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532d20(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532d20(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532d20(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
-  Line 4 [unnamed_param]: uint engine_special_cpp_FUN_00532d20(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df8)(param_1,param_2,param_3,param_4,param_5);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df8)(param_1,param_2,param_3,param_4,param_5);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df8)(param_1,param_2,param_3,param_4,param_5);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df8)(param_1,param_2,param_3,param_4,param_5);
-  Line 12 [unnamed_param]: uVar1 = (*_DAT_02dc9df8)(param_1,param_2,param_3,param_4,param_5);
-
-====================================================================================================
-engine_special.cpp_FUN_00532f30 (3 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 7 [stack_param]: int in_stack_00000004;
-  Line 9 [stack_param]: engine_special_cpp_FUN_00532f50(in_stack_00000004 + 0x1dc8);
-  Line 16 [static_uninitvar]: engine_special_cpp_FUN_00532f50(in_stack_00000004 + 0x1dc8);
-
-====================================================================================================
-engine_special.cpp_FUN_00532f50 (10 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void engine_special_cpp_FUN_00532f50(char *param_1,uint param_2)
-  Line 4 [unnamed_param]: void engine_special_cpp_FUN_00532f50(char *param_1,uint param_2)
-  Line 11 [undefined_data]: pcVar2 = &DAT_005c0e80;
+  Line 4 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,uint param_2)
+  Line 4 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,uint param_2)
   Line 12 [unnamed_param]: _DAT_02dc9d64 = param_2;
   Line 13 [unrolled_strcpy]: do {
   Line 14 [unnamed_param]: cVar1 = *param_1;
@@ -33424,20 +33289,13 @@ engine_special.cpp_FUN_00532f50 (10 suspects)
   Line 18 [unnamed_param]: param_1 = param_1 + 2;
 
 ====================================================================================================
-engine_special.cpp_FUN_00532fa0 (5 suspects)
+engine_special.cpp_FUN_00532fa0 (4 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 8 [stack_param]: uint *in_stack_00000004;
-  Line 10 [stack_param]: *in_stack_00000004 = _DAT_02dc9d64;
-  Line 11 [undefined_data]: return &DAT_005c0e80;
-  Line 17 [static_uninitvar]: *in_stack_00000004 = _DAT_02dc9d64;
-
-====================================================================================================
-engine_special.cpp_beginScene_FUN_00532340 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 7 [stack_param]: uint *in_stack_00000004;
+  Line 9 [stack_param]: *in_stack_00000004 = _DAT_02dc9d64;
+  Line 16 [static_uninitvar]: *in_stack_00000004 = _DAT_02dc9d64;
 
 ====================================================================================================
 engine_special.cpp_clearScreenRegion_FUN_0052ef37 (4 suspects)
@@ -33449,124 +33307,50 @@ engine_special.cpp_clearScreenRegion_FUN_0052ef37 (4 suspects)
   Line 47 [unrolled_memset]: // 0052efab: STOSW.REP ES:EDI
 
 ====================================================================================================
-engine_special.cpp_clearScreen_FUN_0052ee70 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 19 [undefined_data]: _DAT_005bf494 = DAT_005bf48c;
-
-====================================================================================================
-engine_special.cpp_clearZBox_FUN_00532b70 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_clearZBufferNative_FUN_0052eed4 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 12 [undefined_data]: _DAT_005bf494 = DAT_005bf48c;
-
-====================================================================================================
-engine_special.cpp_clearZBuffer_FUN_00532b50 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_clear_FUN_005329a0 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
 engine_special.cpp_drawFullScreenQuad_FUN_005329c0 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-engine_special.cpp_drawPolyList2_FUN_005327c0 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 17 [unresolved_funcptr]: if (_DAT_02dc9db4 != (code *)0x0) {
-
-====================================================================================================
-engine_special.cpp_drawPolyList_FUN_00532680 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 18 [unresolved_funcptr]: if (_DAT_02dc9db0 != (code *)0x0) {
-
-====================================================================================================
-engine_special.cpp_drawPolygon2_FUN_00532650 (1 suspect)
+engine_special.cpp_drawPolyList2_FUN_005327c0 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-engine_special.cpp_drawPolygon_FUN_00532620 (1 suspect)
+engine_special.cpp_drawPolyList_FUN_00532680 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-engine_special.cpp_endScene_FUN_00532360 (1 suspect)
+engine_special.cpp_fillDepthRegion_FUN_0052efc2 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 16 [pointer_truncation]: pdVar4 = (double *)((uint)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);
 
 ====================================================================================================
-engine_special.cpp_fillDepthRegion_FUN_0052efc2 (3 suspects)
+engine_special.cpp_loadExternalRenderer_FUN_00531780 (14 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 12 [undefined_data]: uVar2 = DAT_005bf48c;
-  Line 18 [pointer_truncation]: puVar4 = (ulonglong *)((uint)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);
-
-====================================================================================================
-engine_special.cpp_kill_FUN_005322b0 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_loadExternalRenderer_FUN_00531780 (15 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 57 [undefined_data]: _DAT_02dc9e08 = wincore_wddvmem_cpp_FUN_00553d30(&DAT_005c0e80);
-  Line 342 [undefined_data]: puStack_78 = &DAT_01c03998;
-  Line 344 [undefined_data]: puStack_70 = &DAT_005b763c;
-  Line 350 [undefined_data]: puStack_58 = &DAT_005b7628;
-  Line 351 [undefined_data]: puStack_54 = &DAT_005b762c;
-  Line 352 [undefined_data]: puStack_50 = &DAT_01c02590;
-  Line 353 [undefined_data]: puStack_4c = &DAT_005c0f8c;
-  Line 354 [undefined_data]: puStack_48 = &DAT_005c0f84;
-  Line 355 [undefined_data]: puStack_44 = &DAT_005c0f88;
-  Line 356 [raw_address_constant]: uStack_40 = 0x2dc9d68;
-  Line 357 [undefined_data]: puStack_3c = &DAT_005c0f80;
-  Line 358 [undefined_data]: puStack_38 = &DAT_02dc9d6c;
-  Line 359 [undefined_data]: puStack_34 = &DAT_01c0399c;
-  Line 360 [undefined_data]: puStack_30 = &DAT_005b7640;
+  Line 341 [mem_magic_size]: memset(&CStack_9c,0,0x8c)
+  Line 351 [undefined_data]: CStack_9c.blend_mode = (int *)&DAT_01c03998;
+  Line 353 [undefined_data]: CStack_9c.current_alpha = &DAT_005b763c;
+  Line 359 [undefined_data]: CStack_9c.texture_filtering = (int *)&DAT_005b7628;
+  Line 360 [undefined_data]: CStack_9c.texture_dimension = &DAT_005b762c;
+  Line 361 [undefined_data]: CStack_9c.texture_bits = (int *)&DAT_01c02590;
+  Line 362 [undefined_data]: CStack_9c.system_memory_size = (int *)&DAT_005c0f8c;
+  Line 363 [undefined_data]: CStack_9c.video_memory_size = (int *)&DAT_005c0f84;
+  Line 364 [undefined_data]: CStack_9c.max_texture_size = (int *)&DAT_005c0f88;
+  Line 366 [undefined_data]: CStack_9c.system_initialized = (int *)&DAT_005c0f80;
+  Line 367 [undefined_data]: CStack_9c.agp_texture_mode = (int *)&DAT_02dc9d6c;
+  Line 368 [undefined_data]: CStack_9c.processor_type = (int *)&DAT_01c0399c;
+  Line 369 [undefined_data]: CStack_9c.rendering_quality = (int *)&DAT_005b7640;
 
 ====================================================================================================
 engine_special.cpp_lockFrame_FUN_005322e0 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_lockHoldBuffer_FUN_00532d60 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 9 [unresolved_funcptr]: if (_DAT_02dc9dfc == (code *)0x0) {
-
-====================================================================================================
-engine_special.cpp_masterZBuffer_FUN_00532c70 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -33642,7 +33426,7 @@ engine_special.cpp_renderAlphaRow32_FUN_0053055c (28 suspects)
   Line 87 [concat_reconstruction]: CONCAT11((uVar10 != 0) * (uVar10 < 0x100) * (char)(uVar9 >> 8) -
 
 ====================================================================================================
-engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (223 suspects)
+engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (211 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -33753,124 +33537,112 @@ engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (223 suspects)
   Line 294 [undefined_data]: *(int *)((int)DAT_005bf07c + uVar20) = iVar18;
   Line 298 [undefined_data]: if (DAT_005bf014 <= uVar20) break;
   Line 305 [undefined_data]: iVar18 = iVar18 + DAT_005bf488;
-  Line 307 [undefined_data]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar45),
-  Line 307 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar45),
-  Line 308 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar44),
-  Line 308 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar44),
-  Line 309 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 309 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 310 [undefined_data]: sVar43),-(ushort)((short)DAT_005bf48c < sVar40)
-  Line 312 [concat_reconstruction]: CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
-  Line 316 [undefined_data]: iVar11 = DAT_005bf540;
-  Line 318 [undefined_data]: iVar11 = DAT_005b763c << 8;
-  Line 321 [undefined_data]: uVar12 = DAT_005bf050;
-  Line 322 [undefined_data]: uVar10 = DAT_005bf054;
-  Line 330 [pointer_cast]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) {
-  Line 330 [undefined_data]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) {
-  Line 333 [undefined_data]: uVar2 = *(uint *)(&DAT_01c00024 + (uint)*pbVar15 * 4);
-  Line 335 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 335 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 335 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 337 [concat_reconstruction]: CONCAT14((char)((uint)uVar2 >> 0x10),uVar2)) >>
-  Line 344 [undefined_data]: uVar16 = (uint)*(ushort *)((uVar20 >> 1) + (int)DAT_005bf078);
-  Line 345 [nonstandard_int]: uVar39 = (uint7)((uVar16 & g_BlueMask16.mm) << _DAT_005bf658) |
-  Line 346 [nonstandard_int]: (uint7)((uVar16 & g_GreenMask16.mm) << _DAT_005bf638) |
-  Line 347 [nonstandard_int]: (uint7)((uVar16 & g_RedMask16.mm) << _DAT_005bf618);
-  Line 349 [concat_reconstruction]: uVar8 = CONCAT21(uVar25,(char)(uVar39 >> 0x10));
-  Line 350 [nonstandard_int]: uVar9 = CONCAT41((int)(((uint7)uVar8 << 0x20) >> 0x18),(char)(uVar39 >> 8));
-  Line 350 [concat_reconstruction]: uVar9 = CONCAT41((int)(((uint7)uVar8 << 0x20) >> 0x18),(char)(uVar39 >> 8));
-  Line 352 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
-  Line 353 [concat_reconstruction]: CONCAT24(uVar52 >> 3,
-  Line 354 [concat_reconstruction]: CONCAT22(uVar51 >> 3,uVar41 >> 3))));
-  Line 355 [undefined_data]: uVar42 = (&DAT_005bfe70)[uVar14 * iVar11 >> 0x10];
-  Line 361 [nonstandard_int]: uVar30 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
-  Line 371 [concat_reconstruction]: sVar40 = (short)CONCAT21(uVar30,(0 < sVar44) * (sVar44 < 0x100) *
-  Line 376 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
-  Line 377 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
-  Line 378 [concat_reconstruction]: CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
-  Line 380 [concat_reconstruction]: CONCAT26((uVar25 >> 8) * (short)(uVar47 >> 0x30),
-  Line 381 [concat_reconstruction]: CONCAT24((short)uVar8 * (short)(uVar47 >> 0x20),
-  Line 382 [fnstsw_flag_artifact]: CONCAT22((short)uVar9 * (short)(uVar47 >> 0x10)
-  Line 390 [concat_reconstruction]: CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
-  Line 392 [concat_reconstruction]: CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
-  Line 394 [concat_reconstruction]: CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
-  Line 402 [concat_reconstruction]: uVar24 = psllw((ulonglong)CONCAT52(uVar9,(ushort)(byte)uVar39),8);
-  Line 403 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
-  Line 404 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
-  Line 405 [concat_reconstruction]: CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
-  Line 412 [concat_reconstruction]: CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
-  Line 414 [concat_reconstruction]: CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
-  Line 416 [concat_reconstruction]: CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
-  Line 426 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
-  Line 427 [concat_reconstruction]: CONCAT24(uVar52 >> 3,
-  Line 428 [concat_reconstruction]: CONCAT22(uVar51 >> 3,uVar41 >> 3))));
-  Line 434 [concat_reconstruction]: CONCAT13((0 < sVar45) * (sVar45 < 0x100) *
-  Line 436 [concat_reconstruction]: CONCAT12((0 < sVar44) * (sVar44 < 0x100) *
-  Line 438 [concat_reconstruction]: CONCAT11((0 < sVar43) * (sVar43 < 0x100) *
-  Line 444 [undefined_data]: *(ushort *)((uVar20 >> 1) + (int)DAT_005bf078) =
-  Line 449 [pointer_cast]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
-  Line 449 [undefined_data]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
-  Line 454 [undefined_data]: if (DAT_005bf014 <= uVar20) break;
-  Line 457 [undefined_data]: iVar18 = iVar18 + DAT_005bf488;
-  Line 459 [undefined_data]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
-  Line 459 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
-  Line 461 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
-  Line 461 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
-  Line 463 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 463 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 465 [undefined_data]: -(ushort)((short)DAT_005bf48c <
-  Line 467 [concat_reconstruction]: CONCAT26(uVar21 + sVar50,
-  Line 468 [concat_reconstruction]: CONCAT24(uVar52 + sVar49,CONCAT22(uVar51 + sVar48,uVar41 + sVar46)));
-  Line 477 [pointer_cast]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) &&
-  Line 477 [undefined_data]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) &&
-  Line 478 [undefined_data]: (iVar23 = *(int *)(&DAT_01c00024 +
-  Line 484 [undefined_data]: uVar14 = (uint)*(ushort *)((uVar20 >> 1) + (int)DAT_005bf078);
-  Line 485 [nonstandard_int]: uVar39 = (uint7)((uVar14 & g_BlueMask16.mm) << _DAT_005bf658) |
-  Line 486 [nonstandard_int]: (uint7)((uVar14 & g_GreenMask16.mm) << _DAT_005bf638) |
-  Line 487 [nonstandard_int]: (uint7)((uVar14 & g_RedMask16.mm) << _DAT_005bf618);
-  Line 489 [nonstandard_int]: CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar39 >> 0x18) << 0x30) >>
-  Line 489 [concat_reconstruction]: CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar39 >> 0x18) << 0x30) >>
-  Line 495 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 495 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 495 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 497 [concat_reconstruction]: CONCAT14((char)((uint)iVar23 >> 0x10),iVar23)) >>
-  Line 500 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar52 >> 3,
-  Line 501 [concat_reconstruction]: CONCAT24(uVar51 >> 3,
-  Line 502 [concat_reconstruction]: CONCAT22(uVar41 >> 3,(ushort)uVar42 >> 3))));
-  Line 503 [undefined_data]: uVar1 = (&DAT_005bfe70)[iVar11 >> 8];
-  Line 509 [nonstandard_int]: uVar25 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
-  Line 518 [concat_reconstruction]: sVar40 = (short)CONCAT21(uVar25,(0 < sVar44) * (sVar44 < 0x100) *
-  Line 522 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
-  Line 523 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
-  Line 524 [concat_reconstruction]: CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
-  Line 525 [concat_reconstruction]: CONCAT26((short)(uVar47 >> 0x30) * (short)(uVar38 >> 0x30),
-  Line 526 [concat_reconstruction]: CONCAT24((short)(uVar47 >> 0x20) * (short)(uVar38 >> 0x20),
-  Line 527 [fnstsw_flag_artifact]: CONCAT22((short)(uVar47 >> 0x10) *
-  Line 534 [concat_reconstruction]: uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
-  Line 536 [concat_reconstruction]: CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
-  Line 538 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 545 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
-  Line 546 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
-  Line 547 [concat_reconstruction]: CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
-  Line 553 [concat_reconstruction]: uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
-  Line 555 [concat_reconstruction]: CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
-  Line 557 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 563 [undefined_data]: *(ushort *)((uVar20 >> 1) + (int)DAT_005bf078) =
-  Line 568 [pointer_cast]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
-  Line 568 [undefined_data]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
-  Line 572 [undefined_data]: if (DAT_005bf014 <= uVar20) break;
-  Line 579 [undefined_data]: iVar18 = iVar18 + DAT_005bf488;
-  Line 581 [undefined_data]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar45),
-  Line 581 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar45),
-  Line 582 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar44),
-  Line 582 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar44),
-  Line 583 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 583 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 584 [undefined_data]: sVar43),-(ushort)((short)DAT_005bf48c < sVar40)
-  Line 586 [concat_reconstruction]: CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
+  Line 307 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar45),
+  Line 308 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 310 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 313 [concat_reconstruction]: CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
+  Line 317 [undefined_data]: iVar11 = DAT_005bf540;
+  Line 319 [undefined_data]: iVar11 = DAT_005b763c << 8;
+  Line 322 [undefined_data]: uVar12 = DAT_005bf050;
+  Line 323 [undefined_data]: uVar10 = DAT_005bf054;
+  Line 331 [pointer_cast]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) {
+  Line 331 [undefined_data]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) {
+  Line 334 [undefined_data]: uVar2 = *(uint *)(&DAT_01c00024 + (uint)*pbVar15 * 4);
+  Line 336 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 336 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 336 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 338 [concat_reconstruction]: CONCAT14((char)((uint)uVar2 >> 0x10),uVar2)) >>
+  Line 345 [undefined_data]: uVar16 = (uint)*(ushort *)((uVar20 >> 1) + (int)DAT_005bf078);
+  Line 346 [nonstandard_int]: uVar39 = (uint7)((uVar16 & g_BlueMask16.mm) << _DAT_005bf658) |
+  Line 347 [nonstandard_int]: (uint7)((uVar16 & g_GreenMask16.mm) << _DAT_005bf638) |
+  Line 348 [nonstandard_int]: (uint7)((uVar16 & g_RedMask16.mm) << _DAT_005bf618);
+  Line 350 [concat_reconstruction]: uVar8 = CONCAT21(uVar25,(char)(uVar39 >> 0x10));
+  Line 351 [nonstandard_int]: uVar9 = CONCAT41((int)(((uint7)uVar8 << 0x20) >> 0x18),(char)(uVar39 >> 8));
+  Line 351 [concat_reconstruction]: uVar9 = CONCAT41((int)(((uint7)uVar8 << 0x20) >> 0x18),(char)(uVar39 >> 8));
+  Line 353 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
+  Line 354 [concat_reconstruction]: CONCAT24(uVar52 >> 3,
+  Line 355 [concat_reconstruction]: CONCAT22(uVar51 >> 3,uVar41 >> 3))));
+  Line 356 [undefined_data]: uVar42 = (&DAT_005bfe70)[uVar14 * iVar11 >> 0x10];
+  Line 362 [nonstandard_int]: uVar30 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
+  Line 372 [concat_reconstruction]: sVar40 = (short)CONCAT21(uVar30,(0 < sVar44) * (sVar44 < 0x100) *
+  Line 377 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
+  Line 378 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
+  Line 379 [concat_reconstruction]: CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
+  Line 381 [concat_reconstruction]: CONCAT26((uVar25 >> 8) * (short)(uVar47 >> 0x30),
+  Line 382 [concat_reconstruction]: CONCAT24((short)uVar8 * (short)(uVar47 >> 0x20),
+  Line 383 [fnstsw_flag_artifact]: CONCAT22((short)uVar9 * (short)(uVar47 >> 0x10)
+  Line 391 [concat_reconstruction]: CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
+  Line 393 [concat_reconstruction]: CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
+  Line 395 [concat_reconstruction]: CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
+  Line 403 [concat_reconstruction]: uVar24 = psllw((ulonglong)CONCAT52(uVar9,(ushort)(byte)uVar39),8);
+  Line 404 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar30 * sVar37,
+  Line 405 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
+  Line 406 [concat_reconstruction]: CONCAT22(uVar31 * sVar45,uVar27 * (short)uVar42
+  Line 413 [concat_reconstruction]: CONCAT13((uVar31 != 0) * (uVar31 < 0x100) *
+  Line 415 [concat_reconstruction]: CONCAT12((uVar30 != 0) * (uVar30 < 0x100) *
+  Line 417 [concat_reconstruction]: CONCAT11((uVar27 != 0) * (uVar27 < 0x100) *
+  Line 427 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar21 >> 3,
+  Line 428 [concat_reconstruction]: CONCAT24(uVar52 >> 3,
+  Line 429 [concat_reconstruction]: CONCAT22(uVar51 >> 3,uVar41 >> 3))));
+  Line 435 [concat_reconstruction]: CONCAT13((0 < sVar45) * (sVar45 < 0x100) *
+  Line 437 [concat_reconstruction]: CONCAT12((0 < sVar44) * (sVar44 < 0x100) *
+  Line 439 [concat_reconstruction]: CONCAT11((0 < sVar43) * (sVar43 < 0x100) *
+  Line 445 [undefined_data]: *(ushort *)((uVar20 >> 1) + (int)DAT_005bf078) =
+  Line 450 [pointer_cast]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
+  Line 450 [undefined_data]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
+  Line 455 [undefined_data]: if (DAT_005bf014 <= uVar20) break;
+  Line 458 [undefined_data]: iVar18 = iVar18 + DAT_005bf488;
+  Line 460 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) <
+  Line 462 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 464 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 468 [concat_reconstruction]: CONCAT26(uVar21 + sVar50,
+  Line 469 [concat_reconstruction]: CONCAT24(uVar52 + sVar49,CONCAT22(uVar51 + sVar48,uVar41 + sVar46)));
+  Line 478 [pointer_cast]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) &&
+  Line 478 [undefined_data]: (*(int *)(uVar20 + (int)DAT_005bf07c) <= iVar18)) &&
+  Line 479 [undefined_data]: (iVar23 = *(int *)(&DAT_01c00024 +
+  Line 485 [undefined_data]: uVar14 = (uint)*(ushort *)((uVar20 >> 1) + (int)DAT_005bf078);
+  Line 486 [nonstandard_int]: uVar39 = (uint7)((uVar14 & g_BlueMask16.mm) << _DAT_005bf658) |
+  Line 487 [nonstandard_int]: (uint7)((uVar14 & g_GreenMask16.mm) << _DAT_005bf638) |
+  Line 488 [nonstandard_int]: (uint7)((uVar14 & g_RedMask16.mm) << _DAT_005bf618);
+  Line 490 [nonstandard_int]: CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar39 >> 0x18) << 0x30) >>
+  Line 490 [concat_reconstruction]: CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar39 >> 0x18) << 0x30) >>
+  Line 496 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 496 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 496 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 498 [concat_reconstruction]: CONCAT14((char)((uint)iVar23 >> 0x10),iVar23)) >>
+  Line 501 [concat_reconstruction]: uVar24 = pmulhw(uVar24,CONCAT26(uVar52 >> 3,
+  Line 502 [concat_reconstruction]: CONCAT24(uVar51 >> 3,
+  Line 503 [concat_reconstruction]: CONCAT22(uVar41 >> 3,(ushort)uVar42 >> 3))));
+  Line 504 [undefined_data]: uVar1 = (&DAT_005bfe70)[iVar11 >> 8];
+  Line 510 [nonstandard_int]: uVar25 = (ushort)(((uint7)(byte)((0 < sVar45) * (sVar45 < 0x100) *
+  Line 519 [concat_reconstruction]: sVar40 = (short)CONCAT21(uVar25,(0 < sVar44) * (sVar44 < 0x100) *
+  Line 523 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
+  Line 524 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
+  Line 525 [concat_reconstruction]: CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
+  Line 526 [concat_reconstruction]: CONCAT26((short)(uVar47 >> 0x30) * (short)(uVar38 >> 0x30),
+  Line 527 [concat_reconstruction]: CONCAT24((short)(uVar47 >> 0x20) * (short)(uVar38 >> 0x20),
+  Line 528 [fnstsw_flag_artifact]: CONCAT22((short)(uVar47 >> 0x10) *
+  Line 535 [concat_reconstruction]: uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
+  Line 537 [concat_reconstruction]: CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
+  Line 539 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 546 [concat_reconstruction]: uVar24 = paddusw(CONCAT26(uVar25 * sVar37,
+  Line 547 [concat_reconstruction]: CONCAT24(sVar40 * sVar36,
+  Line 548 [concat_reconstruction]: CONCAT22(uVar27 * sVar45,uVar21 * (short)uVar1))),
+  Line 554 [concat_reconstruction]: uVar14 = CONCAT13((uVar30 != 0) * (uVar30 < 0x100) * (char)((ulonglong)uVar24 >> 0x38) -
+  Line 556 [concat_reconstruction]: CONCAT12((uVar27 != 0) * (uVar27 < 0x100) *
+  Line 558 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 564 [undefined_data]: *(ushort *)((uVar20 >> 1) + (int)DAT_005bf078) =
+  Line 569 [pointer_cast]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
+  Line 569 [undefined_data]: *(int *)(uVar20 + (int)DAT_005bf07c) = iVar18;
+  Line 573 [undefined_data]: if (DAT_005bf014 <= uVar20) break;
+  Line 580 [undefined_data]: iVar18 = iVar18 + DAT_005bf488;
+  Line 582 [concat_reconstruction]: uVar42 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar45),
+  Line 583 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 585 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 588 [concat_reconstruction]: CONCAT26(sVar45,CONCAT24(sVar44,CONCAT22(sVar43,sVar40)));
 
 ====================================================================================================
-engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (223 suspects)
+engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (211 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -33979,123 +33751,111 @@ engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (223 suspects)
   Line 287 [undefined_data]: *(int *)((int)DAT_005bf07c + uVar17) = iVar15;
   Line 291 [undefined_data]: if (DAT_005bf014 <= uVar17) break;
   Line 298 [undefined_data]: iVar15 = iVar15 + DAT_005bf488;
-  Line 300 [undefined_data]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-  Line 300 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-  Line 301 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-  Line 301 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-  Line 302 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 302 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 303 [undefined_data]: sVar41),-(ushort)((short)DAT_005bf48c < sVar38)
-  Line 305 [concat_reconstruction]: CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
-  Line 309 [undefined_data]: iVar9 = DAT_005bf540;
-  Line 311 [undefined_data]: iVar9 = DAT_005b763c << 8;
-  Line 314 [undefined_data]: uVar10 = DAT_005bf050;
-  Line 315 [undefined_data]: uVar7 = DAT_005bf054;
-  Line 323 [pointer_cast]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
-  Line 323 [undefined_data]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
-  Line 326 [undefined_data]: uVar20 = *(uint *)(&DAT_01c00024 + (uint)*pbVar13 * 4);
-  Line 328 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 328 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 328 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 330 [concat_reconstruction]: CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)) >>
-  Line 337 [pointer_cast]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
-  Line 337 [undefined_data]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
-  Line 338 [nonstandard_int]: uVar23 = (ushort)(((uint7)(byte)((uint)uVar20 >> 0x18) << 0x30) >> 0x28);
-  Line 340 [nonstandard_int]: CONCAT34((int3)(CONCAT25(uVar23,CONCAT14((char)((uint)uVar20 >> 0x10),
-  Line 340 [concat_reconstruction]: CONCAT34((int3)(CONCAT25(uVar23,CONCAT14((char)((uint)uVar20 >> 0x10),
-  Line 343 [nonstandard_int]: uVar6 = CONCAT51((int5)(uVar37 >> 0x18),(char)((uint)uVar20 >> 8));
-  Line 343 [concat_reconstruction]: uVar6 = CONCAT51((int5)(uVar37 >> 0x18),(char)((uint)uVar20 >> 8));
-  Line 345 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar18 >> 3,
-  Line 346 [concat_reconstruction]: CONCAT24(uVar50 >> 3,
-  Line 347 [concat_reconstruction]: CONCAT22(uVar49 >> 3,uVar39 >> 3))));
-  Line 348 [undefined_data]: uVar40 = (&DAT_005bfe70)[uVar8 * iVar9 >> 0x10];
-  Line 354 [nonstandard_int]: uVar28 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
-  Line 364 [concat_reconstruction]: sVar38 = (short)CONCAT21(uVar28,(0 < sVar42) * (sVar42 < 0x100) *
-  Line 369 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
-  Line 370 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
-  Line 371 [concat_reconstruction]: CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
-  Line 373 [concat_reconstruction]: CONCAT26((uVar23 >> 8) * (short)(uVar45 >> 0x30),
-  Line 374 [concat_reconstruction]: CONCAT24((short)(uVar37 >> 0x20) *
-  Line 376 [fnstsw_flag_artifact]: CONCAT22((short)uVar6 * (short)(uVar45 >> 0x10)
-  Line 383 [concat_reconstruction]: uVar20 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
-  Line 385 [concat_reconstruction]: CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
-  Line 387 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 395 [concat_reconstruction]: uVar22 = psllw(CONCAT62(uVar6,(ushort)(byte)uVar20),8);
-  Line 396 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
-  Line 397 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
-  Line 398 [concat_reconstruction]: CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
-  Line 404 [concat_reconstruction]: uVar20 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
-  Line 406 [concat_reconstruction]: CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
-  Line 408 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 418 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar18 >> 3,
-  Line 419 [concat_reconstruction]: CONCAT24(uVar50 >> 3,
-  Line 420 [concat_reconstruction]: CONCAT22(uVar49 >> 3,uVar39 >> 3))));
-  Line 425 [concat_reconstruction]: uVar20 = CONCAT13((0 < sVar43) * (sVar43 < 0x100) *
-  Line 427 [concat_reconstruction]: CONCAT12((0 < sVar42) * (sVar42 < 0x100) *
-  Line 429 [concat_reconstruction]: CONCAT11((0 < sVar41) * (sVar41 < 0x100) *
-  Line 435 [pointer_cast]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
-  Line 435 [undefined_data]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
-  Line 437 [pointer_cast]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
-  Line 437 [undefined_data]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
-  Line 442 [undefined_data]: if (DAT_005bf014 <= uVar17) break;
-  Line 445 [undefined_data]: iVar15 = iVar15 + DAT_005bf488;
-  Line 447 [undefined_data]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
-  Line 447 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) <
-  Line 449 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
-  Line 449 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) <
-  Line 451 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 451 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 453 [undefined_data]: -(ushort)((short)DAT_005bf48c <
-  Line 455 [concat_reconstruction]: CONCAT26(uVar18 + sVar48,
-  Line 456 [concat_reconstruction]: CONCAT24(uVar50 + sVar47,CONCAT22(uVar49 + sVar46,uVar39 + sVar44)));
-  Line 465 [pointer_cast]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) &&
-  Line 465 [undefined_data]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) &&
-  Line 466 [undefined_data]: (iVar21 = *(int *)(&DAT_01c00024 +
-  Line 472 [pointer_cast]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
-  Line 472 [undefined_data]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
-  Line 474 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 474 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 474 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
-  Line 476 [concat_reconstruction]: CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)) >>
-  Line 481 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 481 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 481 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
-  Line 483 [concat_reconstruction]: CONCAT14((char)((uint)iVar21 >> 0x10),iVar21)) >>
-  Line 486 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar50 >> 3,
-  Line 487 [concat_reconstruction]: CONCAT24(uVar49 >> 3,
-  Line 488 [concat_reconstruction]: CONCAT22(uVar39 >> 3,(ushort)uVar40 >> 3))));
-  Line 489 [undefined_data]: uVar37 = (&DAT_005bfe70)[iVar9 >> 8];
-  Line 495 [nonstandard_int]: uVar23 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
-  Line 504 [concat_reconstruction]: sVar38 = (short)CONCAT21(uVar23,(0 < sVar42) * (sVar42 < 0x100) *
-  Line 508 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
-  Line 509 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
-  Line 510 [concat_reconstruction]: CONCAT22(uVar25 * sVar43,uVar18 * (short)uVar37))),
-  Line 511 [concat_reconstruction]: CONCAT26((short)(uVar45 >> 0x30) * (short)(uVar36 >> 0x30),
-  Line 512 [concat_reconstruction]: CONCAT24((short)(uVar45 >> 0x20) * (short)(uVar36 >> 0x20),
-  Line 513 [fnstsw_flag_artifact]: CONCAT22((short)(uVar45 >> 0x10) *
-  Line 520 [concat_reconstruction]: uVar20 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
-  Line 522 [concat_reconstruction]: CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 524 [concat_reconstruction]: CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
-  Line 531 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
-  Line 532 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
-  Line 533 [concat_reconstruction]: CONCAT22(uVar25 * sVar43,uVar18 * (short)uVar37))),
-  Line 539 [concat_reconstruction]: uVar20 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
-  Line 541 [concat_reconstruction]: CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
-  Line 543 [concat_reconstruction]: CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
-  Line 548 [pointer_cast]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
-  Line 548 [undefined_data]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
-  Line 550 [pointer_cast]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
-  Line 550 [undefined_data]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
-  Line 554 [undefined_data]: if (DAT_005bf014 <= uVar17) break;
-  Line 561 [undefined_data]: iVar15 = iVar15 + DAT_005bf488;
-  Line 563 [undefined_data]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-  Line 563 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x30) < sVar43),
-  Line 564 [undefined_data]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-  Line 564 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x20) < sVar42),
-  Line 565 [fnstsw_flag_artifact]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 565 [undefined_data]: CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10) <
-  Line 566 [undefined_data]: sVar41),-(ushort)((short)DAT_005bf48c < sVar38)
-  Line 568 [concat_reconstruction]: CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
+  Line 300 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar43),
+  Line 301 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 303 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 306 [concat_reconstruction]: CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
+  Line 310 [undefined_data]: iVar9 = DAT_005bf540;
+  Line 312 [undefined_data]: iVar9 = DAT_005b763c << 8;
+  Line 315 [undefined_data]: uVar10 = DAT_005bf050;
+  Line 316 [undefined_data]: uVar7 = DAT_005bf054;
+  Line 324 [pointer_cast]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
+  Line 324 [undefined_data]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) {
+  Line 327 [undefined_data]: uVar20 = *(uint *)(&DAT_01c00024 + (uint)*pbVar13 * 4);
+  Line 329 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 329 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 329 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 331 [concat_reconstruction]: CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)) >>
+  Line 338 [pointer_cast]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
+  Line 338 [undefined_data]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
+  Line 339 [nonstandard_int]: uVar23 = (ushort)(((uint7)(byte)((uint)uVar20 >> 0x18) << 0x30) >> 0x28);
+  Line 341 [nonstandard_int]: CONCAT34((int3)(CONCAT25(uVar23,CONCAT14((char)((uint)uVar20 >> 0x10),
+  Line 341 [concat_reconstruction]: CONCAT34((int3)(CONCAT25(uVar23,CONCAT14((char)((uint)uVar20 >> 0x10),
+  Line 344 [nonstandard_int]: uVar6 = CONCAT51((int5)(uVar37 >> 0x18),(char)((uint)uVar20 >> 8));
+  Line 344 [concat_reconstruction]: uVar6 = CONCAT51((int5)(uVar37 >> 0x18),(char)((uint)uVar20 >> 8));
+  Line 346 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar18 >> 3,
+  Line 347 [concat_reconstruction]: CONCAT24(uVar50 >> 3,
+  Line 348 [concat_reconstruction]: CONCAT22(uVar49 >> 3,uVar39 >> 3))));
+  Line 349 [undefined_data]: uVar40 = (&DAT_005bfe70)[uVar8 * iVar9 >> 0x10];
+  Line 355 [nonstandard_int]: uVar28 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
+  Line 365 [concat_reconstruction]: sVar38 = (short)CONCAT21(uVar28,(0 < sVar42) * (sVar42 < 0x100) *
+  Line 370 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
+  Line 371 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
+  Line 372 [concat_reconstruction]: CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
+  Line 374 [concat_reconstruction]: CONCAT26((uVar23 >> 8) * (short)(uVar45 >> 0x30),
+  Line 375 [concat_reconstruction]: CONCAT24((short)(uVar37 >> 0x20) *
+  Line 377 [fnstsw_flag_artifact]: CONCAT22((short)uVar6 * (short)(uVar45 >> 0x10)
+  Line 384 [concat_reconstruction]: uVar20 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
+  Line 386 [concat_reconstruction]: CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
+  Line 388 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 396 [concat_reconstruction]: uVar22 = psllw(CONCAT62(uVar6,(ushort)(byte)uVar20),8);
+  Line 397 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar28 * sVar35,
+  Line 398 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
+  Line 399 [concat_reconstruction]: CONCAT22(uVar29 * sVar43,uVar25 * (short)uVar40
+  Line 405 [concat_reconstruction]: uVar20 = CONCAT13((uVar29 != 0) * (uVar29 < 0x100) *
+  Line 407 [concat_reconstruction]: CONCAT12((uVar28 != 0) * (uVar28 < 0x100) *
+  Line 409 [concat_reconstruction]: CONCAT11((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 419 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar18 >> 3,
+  Line 420 [concat_reconstruction]: CONCAT24(uVar50 >> 3,
+  Line 421 [concat_reconstruction]: CONCAT22(uVar49 >> 3,uVar39 >> 3))));
+  Line 426 [concat_reconstruction]: uVar20 = CONCAT13((0 < sVar43) * (sVar43 < 0x100) *
+  Line 428 [concat_reconstruction]: CONCAT12((0 < sVar42) * (sVar42 < 0x100) *
+  Line 430 [concat_reconstruction]: CONCAT11((0 < sVar41) * (sVar41 < 0x100) *
+  Line 436 [pointer_cast]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
+  Line 436 [undefined_data]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
+  Line 438 [pointer_cast]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
+  Line 438 [undefined_data]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
+  Line 443 [undefined_data]: if (DAT_005bf014 <= uVar17) break;
+  Line 446 [undefined_data]: iVar15 = iVar15 + DAT_005bf488;
+  Line 448 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) <
+  Line 450 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 452 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 456 [concat_reconstruction]: CONCAT26(uVar18 + sVar48,
+  Line 457 [concat_reconstruction]: CONCAT24(uVar50 + sVar47,CONCAT22(uVar49 + sVar46,uVar39 + sVar44)));
+  Line 466 [pointer_cast]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) &&
+  Line 466 [undefined_data]: (*(int *)(uVar17 + (int)DAT_005bf07c) <= iVar15)) &&
+  Line 467 [undefined_data]: (iVar21 = *(int *)(&DAT_01c00024 +
+  Line 473 [pointer_cast]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
+  Line 473 [undefined_data]: uVar20 = *(uint *)(uVar17 + (int)DAT_005bf078);
+  Line 475 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 475 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 475 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)
+  Line 477 [concat_reconstruction]: CONCAT14((char)((uint)uVar20 >> 0x10),uVar20)) >>
+  Line 482 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 482 [nonstandard_int]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 482 [concat_reconstruction]: CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((
+  Line 484 [concat_reconstruction]: CONCAT14((char)((uint)iVar21 >> 0x10),iVar21)) >>
+  Line 487 [concat_reconstruction]: uVar22 = pmulhw(uVar22,CONCAT26(uVar50 >> 3,
+  Line 488 [concat_reconstruction]: CONCAT24(uVar49 >> 3,
+  Line 489 [concat_reconstruction]: CONCAT22(uVar39 >> 3,(ushort)uVar40 >> 3))));
+  Line 490 [undefined_data]: uVar37 = (&DAT_005bfe70)[iVar9 >> 8];
+  Line 496 [nonstandard_int]: uVar23 = (ushort)(((uint7)(byte)((0 < sVar43) * (sVar43 < 0x100) *
+  Line 505 [concat_reconstruction]: sVar38 = (short)CONCAT21(uVar23,(0 < sVar42) * (sVar42 < 0x100) *
+  Line 509 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
+  Line 510 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
+  Line 511 [concat_reconstruction]: CONCAT22(uVar25 * sVar43,uVar18 * (short)uVar37))),
+  Line 512 [concat_reconstruction]: CONCAT26((short)(uVar45 >> 0x30) * (short)(uVar36 >> 0x30),
+  Line 513 [concat_reconstruction]: CONCAT24((short)(uVar45 >> 0x20) * (short)(uVar36 >> 0x20),
+  Line 514 [fnstsw_flag_artifact]: CONCAT22((short)(uVar45 >> 0x10) *
+  Line 521 [concat_reconstruction]: uVar20 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
+  Line 523 [concat_reconstruction]: CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 525 [concat_reconstruction]: CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
+  Line 532 [concat_reconstruction]: uVar22 = paddusw(CONCAT26(uVar23 * sVar35,
+  Line 533 [concat_reconstruction]: CONCAT24(sVar38 * sVar34,
+  Line 534 [concat_reconstruction]: CONCAT22(uVar25 * sVar43,uVar18 * (short)uVar37))),
+  Line 540 [concat_reconstruction]: uVar20 = CONCAT13((uVar28 != 0) * (uVar28 < 0x100) * (char)((ulonglong)uVar22 >> 0x38) -
+  Line 542 [concat_reconstruction]: CONCAT12((uVar25 != 0) * (uVar25 < 0x100) *
+  Line 544 [concat_reconstruction]: CONCAT11((uVar23 != 0) * (uVar23 < 0x100) *
+  Line 549 [pointer_cast]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
+  Line 549 [undefined_data]: *(uint *)(uVar17 + (int)DAT_005bf078) = uVar20;
+  Line 551 [pointer_cast]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
+  Line 551 [undefined_data]: *(int *)(uVar17 + (int)DAT_005bf07c) = iVar15;
+  Line 555 [undefined_data]: if (DAT_005bf014 <= uVar17) break;
+  Line 562 [undefined_data]: iVar15 = iVar15 + DAT_005bf488;
+  Line 564 [concat_reconstruction]: uVar40 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar43),
+  Line 565 [concat_reconstruction]: CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
+  Line 567 [concat_reconstruction]: CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
+  Line 570 [concat_reconstruction]: CONCAT26(sVar43,CONCAT24(sVar42,CONCAT22(sVar41,sVar38)));
 
 ====================================================================================================
 engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322 (38 suspects)
@@ -34207,30 +33967,18 @@ engine_special.cpp_renderScanline_FUN_00530710 (2 suspects)
   Line 6 [warning_indirect_jump]: /* WARNING: Treating indirect jump as call */
 
 ====================================================================================================
-engine_special.cpp_restoreVideoMode_FUN_005325f0 (2 suspects)
+engine_special.cpp_selectTextureFromPalette_FUN_00532400 (2 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 9 [unresolved_funcptr]: if ((g_UseExternalRenderer != 0) && (g_UseExternalRenderer = 0, _DAT_02dc9d88 != (code *)0x0)) {
+  Line 13 [undefined_data]: (tex,DAT_005b762c,_DAT_01c02580,(uchar *)palette_data,_DAT_01c02584);
 
 ====================================================================================================
-engine_special.cpp_restoreZBuffer_FUN_00532c90 (1 suspect)
+engine_special.cpp_selectTexture_FUN_00532380 (2 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_selectCard_FUN_00532d00 (1 suspect)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
-engine_special.cpp_selectTexture_FUN_00532400 (2 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 12 [undefined_data]: iVar1 = (*_DAT_02dc9d9c)(tex,DAT_005b762c,_DAT_01c02580,palette_data,_DAT_01c02584);
+  Line 13 [undefined_data]: (texture_info,DAT_005b762c,_DAT_01c02580,g_SourcePaletteData,_DAT_01c02584);
 
 ====================================================================================================
 engine_special.cpp_setFogColorFromPalette_FUN_00532a80 (1 suspect)
@@ -34251,10 +33999,21 @@ engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-engine_special.cpp_sync_FUN_00532b30 (1 suspect)
+engine_special.cpp_toggle_FUN_00532ba0 (12 suspects)
   File: engine/special.cpp
 ====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 20 [signed_shift_global_idiom]: iVar3 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+  Line 29 [pointer_cast]: puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar3);
+  Line 29 [pointer_truncation]: puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar3);
+  Line 30 [unrolled_memcpy]: for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
+  Line 35 [unrolled_memcpy]: for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
+  Line 37 [pointer_cast]: puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
+  Line 37 [pointer_truncation]: puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);
+  Line 38 [pointer_cast]: puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
+  Line 38 [pointer_truncation]: puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);
+  Line 41 [unrolled_memcpy]: // 00532c10: MOVSD.REP ES:EDI,ESI
+  Line 42 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + uVar1);
+  Line 42 [pointer_truncation]: puVar4 = (uint *)((int)puVar4 + uVar1);
 
 ====================================================================================================
 engine_special.cpp_transformAndProjectPoint_FUN_0053075c (22 suspects)
@@ -34311,18 +34070,24 @@ engine_special.cpp_transformPoint_FUN_00530a25 (22 suspects)
   Line 107 [undefined_data]: output->transformed_x = DAT_005bf4e8;
 
 ====================================================================================================
-engine_special.cpp_unlockHoldBuffer_FUN_00532d80 (2 suspects)
+engine_special.cpp_unlockFrame_FUN_00532320 (1 suspect)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 9 [unresolved_funcptr]: if (_DAT_02dc9e00 == (code *)0x0) {
 
 ====================================================================================================
-engine_special.cpp_updateTexture_FUN_00532440 (2 suspects)
+engine_special.cpp_updateTextureFromPalette_FUN_00532440 (2 suspects)
   File: engine/special.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 12 [undefined_data]: iVar1 = (*_DAT_02dc9da0)(tex,DAT_005b762c,_DAT_01c02580,palette_data,_DAT_01c02584);
+  Line 13 [undefined_data]: (tex,DAT_005b762c,_DAT_01c02580,(uchar *)palette_data,_DAT_01c02584);
+
+====================================================================================================
+engine_special.cpp_updateTexture_FUN_005323c0 (2 suspects)
+  File: engine/special.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+  Line 13 [undefined_data]: (texture_info,DAT_005b762c,_DAT_01c02580,g_SourcePaletteData,_DAT_01c02584);
 
 ====================================================================================================
 engine_texture.cpp_CTextureCache_FUN_00544de0 (5 suspects)
@@ -37428,14 +37193,6 @@ sound_sndmain.cpp_FUN_00529980 (4 suspects)
   Line 9 [unnamed_param]: _vsprintf(local_408,param_1,(va_list_t)&local_8);
 
 ====================================================================================================
-sound_sndmain.cpp_FUN_00529a00 (3 suspects)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 8 [stack_param]: CSfxSample *in_stack_00000004;
-  Line 10 [stack_param]: iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000004);
-  Line 11 [stack_param]: return iVar1 * in_stack_00000004->streaming_buffer_size;
-
-====================================================================================================
 sound_sndmain.cpp_allocMixBuffers_FUN_00522f10 (9 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -38578,12 +38335,6 @@ wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00 (12 suspects)
   Line 113 [pointer_cast]: *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
   Line 113 [pointer_truncation]: *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
   Line 113 [pointer_truncation]: *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
-
-====================================================================================================
-wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0 (1 suspect)
-  File: wincore/wddvmem.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
 wincore_wddvmem.cpp_swapBuffers_FUN_00553910 (11 suspects)

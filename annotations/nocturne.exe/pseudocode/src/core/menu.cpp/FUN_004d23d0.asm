@@ -57,7 +57,7 @@ section .text
     CMP dword ptr [0x005b7620],0x1e0    ; 004d23d4 | g_WindowHeight
     JL 0x004d2792                       ; 004d23de
         ;   XREF to: 004d2792 (CONDITIONAL_JUMP)  ; LAB_004d2792
-    CMP dword ptr [0x02dc9d60],0x0      ; 004d23e4 | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004d23e4 | g_UseDirect3D
     JZ 0x004d279c                       ; 004d23eb
         ;   XREF to: 004d279c (CONDITIONAL_JUMP)  ; LAB_004d279c
     PUSH EDI                            ; 004d23f1
@@ -384,7 +384,7 @@ section .text
         ;   XREF to: 0052e9c0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0052e9c0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004d270a
     CALL core_main.c_FUN_004c8510       ; 004d270d
-        ;   XREF to: 004c8510 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8510()
+        ;   XREF to: 004c8510 (UNCONDITIONAL_CALL)  ; void core_main.c_FUN_004c8510()
     MOV ECX,dword ptr [0x005bed68]      ; 004d2712 | g_CSound_PTR_005bed68
     PUSH ECX                            ; 004d2718
     CALL core_sound.cpp_CSound_configure_FUN_0052e850 ; 004d2719

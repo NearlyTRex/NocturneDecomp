@@ -27,8 +27,8 @@
 ;   undefined4 DAT_02dd0f84
 ;
 ; Called Functions:
-;   engine_special.cpp_selectTexture_FUN_00532400
-;   engine_special.cpp_updateTexture_FUN_00532440
+;   engine_special.cpp_selectTextureFromPalette_FUN_00532400
+;   engine_special.cpp_updateTextureFromPalette_FUN_00532440
 ;   engine_texture.cpp_CTextureCache_findTexture_FUN_00545390
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0
 ;   engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410
@@ -97,8 +97,8 @@ section .text
     MOV ECX,dword ptr [0x01c00020]      ; 0054599c | DAT_01c00020
     PUSH ECX                            ; 005459a2
     PUSH EBX                            ; 005459a3
-    CALL engine_special.cpp_selectTexture_FUN_00532400 ; 005459a4
-        ;   XREF to: 00532400 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectTexture_FUN_00532400(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_selectTextureFromPalette_FUN_00532400 ; 005459a4
+        ;   XREF to: 00532400 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectTextureFromPalette_FUN_00532400(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005459a9
     LEA EAX,[EBX + 0x18]                ; 005459ac
         ;   Label: LAB_005459ac
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_005459b4
     PUSH EDX                            ; 005459ba
     PUSH EBX                            ; 005459bb
-    CALL engine_special.cpp_updateTexture_FUN_00532440 ; 005459bc
-        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTexture_FUN_00532440(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_updateTextureFromPalette_FUN_00532440 ; 005459bc
+        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTextureFromPalette_FUN_00532440(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005459c1
     LEA EAX,[EBX + 0x18]                ; 005459c4
     POP ESI                             ; 005459c7

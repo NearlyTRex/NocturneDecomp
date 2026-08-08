@@ -146,7 +146,7 @@ ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004c68d0(CLeve
 int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004c68f0(CLever *this_ptr,CVector3f *world_position);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004c6970(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004c69d0(int light_level);
-undefined4 engine_light_cpp_FUN_004c6a00(void);
+undefined4 __cdecl engine_light_cpp_FUN_004c6a00(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x,int dir_y,int dir_z);
 void engine_light_cpp_FUN_004c6a40(void);
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004c6a50(int diffuse_multiplier,int specular_multiplier);
@@ -180,7 +180,7 @@ ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004c837
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004c8380(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_004c83d0(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format);
-void core_main_c_FUN_004c8510(void);
+void __cdecl core_main_c_FUN_004c8510(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void);
 void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv);
 void __cdecl core_main_c_drawCenteredText_FUN_004c8dc0(char *text,int x,int y,int color_mode);

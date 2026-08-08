@@ -17,7 +17,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int INT_02dc9d60
+;   int g_UseDirect3D
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -40,7 +40,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_FUN_00553ba0
     PUSH ESI                            ; 00553ba1
     PUSH EBP                            ; 00553ba2
-    CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | INT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | g_UseDirect3D
     JZ 0x00553cb7                       ; 00553baa
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
     CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | DAT_02ddf568
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00553c81 (CONDITIONAL_JUMP)  ; LAB_00553c81
     PUSH EDI                            ; 00553be2
     MOV EDI,dword ptr [0x02ddf55c]      ; 00553be3 | g_DirectDrawUnknown
-    MOV [0x02dc9d60],EAX                ; 00553be9 | INT_02dc9d60
+    MOV [0x02dc9d60],EAX                ; 00553be9 | g_UseDirect3D
     TEST EDI,EDI                        ; 00553bee
     JZ 0x00553c00                       ; 00553bf0
         ;   XREF to: 00553c00 (CONDITIONAL_JUMP)  ; LAB_00553c00

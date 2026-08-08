@@ -1,12 +1,12 @@
 // Name: engine_prim.c_FUN_004f9bc0
 // Address: 004f9bc0
 // Address Range: [[004f9bc0, 004f9cab]]
-// Convention: unknown
-// Signature: bool engine_prim_c_FUN_004f9bc0(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl engine_prim_c_FUN_004f9bc0(int param_1)
 
 #include "nocturne.h"
 
-bool engine_prim_c_FUN_004f9bc0(int param_1)
+int __cdecl engine_prim_c_FUN_004f9bc0(int param_1)
 
 {
   int iVar1;
@@ -40,5 +40,5 @@ bool engine_prim_c_FUN_004f9bc0(int param_1)
   uVar2 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar1 = iVar5 - iVar4;
-  return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
+  return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
 }

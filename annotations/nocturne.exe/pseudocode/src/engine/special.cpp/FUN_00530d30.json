@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 53,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 7,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 13
+    "total_lines": 12
   },
   "cross_references": [],
   "function": {
@@ -83,9 +83,9 @@
         "00530d3a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_special.cpp_FUN_00530d30",
-    "signature": "void engine_special_cpp_FUN_00530d30(void)"
+    "signature": "void __cdecl engine_special_cpp_FUN_00530d30(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -126,7 +126,7 @@
         {
           "check_id": "uninitvar",
           "column": 4,
-          "line": 17,
+          "line": 15,
           "message": "Uninitialized variable: in_stack_00000004",
           "severity": "error"
         }
@@ -138,7 +138,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "uint *in_stack_00000004;",
@@ -146,7 +146,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "uint in_stack_00000008;",
@@ -154,7 +154,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = in_stack_00000008;",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "*in_stack_00000004 = in_stack_00000008;",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Uninitialized variable: in_stack_00000004",
-      "line": 17,
+      "line": 15,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*in_stack_00000004 = in_stack_00000008;",

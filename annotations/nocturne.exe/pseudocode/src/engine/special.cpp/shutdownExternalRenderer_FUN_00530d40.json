@@ -1,0 +1,437 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 517,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 517,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 46,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 39,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 108
+  },
+  "cross_references": [
+    {
+      "addr": "00530e60",
+      "from_addr": "00531750",
+      "name": "engine_special.cpp_initializeExternalRenderer_FUN_00530e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005322b0",
+      "from_addr": "005322c5",
+      "name": "engine_special.cpp_kill_FUN_005322b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00531780",
+      "from_addr": "0053226f",
+      "name": "engine_special.cpp_loadExternalRenderer_FUN_00531780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00530d40",
+    "address_range": [
+      [
+        "00530d40",
+        "00530e52"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_shutdownExternalRenderer_FUN_00530d40",
+    "signature": "void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00530d40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00553d20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_freeLibrary_FUN_00553d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c02594",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dc9d74",
+      "name": "g_APIDLL_init",
+      "type": "APIDLL_init*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d78",
+      "name": "g_APIDLL_kill",
+      "type": "APIDLL_kill*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d7c",
+      "name": "g_APIDLL_toggle",
+      "type": "APIDLL_toggle*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d80",
+      "name": "g_APIDLL_setVideoMode",
+      "type": "APIDLL_setVideoMode*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d84",
+      "name": "g_APIDLL_setVideoMode2",
+      "type": "APIDLL_setVideoMode2*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d88",
+      "name": "g_APIDLL_restoreVideoMode",
+      "type": "APIDLL_restoreVideoMode*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d8c",
+      "name": "g_APIDLL_beginScene",
+      "type": "APIDLL_beginScene*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d90",
+      "name": "g_APIDLL_endScene",
+      "type": "APIDLL_endScene*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d94",
+      "name": "g_APIDLL_lockFrame",
+      "type": "APIDLL_lockFrame*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d98",
+      "name": "g_APIDLL_unlockFrame",
+      "type": "APIDLL_unlockFrame*",
+      "value": null
+    },
+    {
+      "addr": "02dc9d9c",
+      "name": "g_APIDLL_selectTexture",
+      "type": "APIDLL_selectTexture*",
+      "value": null
+    },
+    {
+      "addr": "02dc9da0",
+      "name": "g_APIDLL_updateTexture",
+      "type": "APIDLL_updateTexture*",
+      "value": null
+    },
+    {
+      "addr": "02dc9da4",
+      "name": "g_APIDLL_setMipMapLevel",
+      "type": "APIDLL_setMipMapLevel*",
+      "value": null
+    },
+    {
+      "addr": "02dc9da8",
+      "name": "g_APIDLL_drawPolygon",
+      "type": "APIDLL_drawPolygon*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dac",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
+      "value": null
+    },
+    {
+      "addr": "02dc9db0",
+      "name": "g_APIDLL_drawPolyList",
+      "type": "APIDLL_drawPolyList*",
+      "value": null
+    },
+    {
+      "addr": "02dc9db4",
+      "name": "g_APIDLL_drawPolyList2",
+      "type": "APIDLL_drawPolyList2*",
+      "value": null
+    },
+    {
+      "addr": "02dc9db8",
+      "name": "g_APIDLL_addParticle",
+      "type": "APIDLL_addParticle*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dbc",
+      "name": "g_APIDLL_flushParticleList",
+      "type": "APIDLL_flushParticleList*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dc0",
+      "name": "g_APIDLL_add3dLine",
+      "type": "APIDLL_add3dLine*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dc4",
+      "name": "g_APIDLL_flushLineList",
+      "type": "APIDLL_flushLineList*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dc8",
+      "name": "g_APIDLL_clear",
+      "type": "APIDLL_clear*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dcc",
+      "name": "g_APIDLL_setFogColor",
+      "type": "APIDLL_setFogColor*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dd0",
+      "name": "g_APIDLL_sync",
+      "type": "APIDLL_sync*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dd4",
+      "name": "g_APIDLL_clearZBuffer",
+      "type": "APIDLL_clearZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dd8",
+      "name": "g_APIDLL_clearZBox",
+      "type": "APIDLL_clearZBox*",
+      "value": null
+    },
+    {
+      "addr": "02dc9ddc",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "APIDLL_setColorTable16*",
+      "value": null
+    },
+    {
+      "addr": "02dc9de0",
+      "name": "g_APIDLL_getDisplayContext",
+      "type": "APIDLL_getDisplayContext*",
+      "value": null
+    },
+    {
+      "addr": "02dc9de4",
+      "name": "g_APIDLL_releaseDisplayContext",
+      "type": "APIDLL_releaseDisplayContext*",
+      "value": null
+    },
+    {
+      "addr": "02dc9de8",
+      "name": "g_APIDLL_masterZBuffer",
+      "type": "APIDLL_masterZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dec",
+      "name": "g_APIDLL_restoreZBuffer",
+      "type": "APIDLL_restoreZBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02dc9df0",
+      "name": "g_APIDLL_getVideoMemory",
+      "type": "APIDLL_getVideoMemory*",
+      "value": null
+    },
+    {
+      "addr": "02dc9df4",
+      "name": "g_APIDLL_selectCard",
+      "type": "APIDLL_selectCard*",
+      "value": null
+    },
+    {
+      "addr": "02dc9df8",
+      "name": "g_APIDLL_buildCardList",
+      "type": "APIDLL_buildCardList*",
+      "value": null
+    },
+    {
+      "addr": "02dc9dfc",
+      "name": "g_APIDLL_lockHoldBuffer",
+      "type": "APIDLL_lockHoldBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02dc9e00",
+      "name": "g_APIDLL_unlockHoldBuffer",
+      "type": "APIDLL_unlockHoldBuffer*",
+      "value": null
+    },
+    {
+      "addr": "02dc9e04",
+      "name": "g_LoadedExternalDLLRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dc9e08",
+      "name": "g_RendererDLLHandle",
+      "type": "HMODULE",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005322c5",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_kill_FUN_005322b0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0053226f",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_loadExternalRenderer_FUN_00531780",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00531750",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_initializeExternalRenderer_FUN_00530e60",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00531765",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_initializeExternalRenderer_FUN_00530e60",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.107142857142857,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 58,
+      "INT_ADD": 5,
+      "INT_AND": 11,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 3,
+      "LOAD": 4,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 118
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

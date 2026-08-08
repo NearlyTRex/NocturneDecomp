@@ -31,7 +31,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
   
   puVar9 = g_BackBuffer;
   if (g_UseExternalRenderer != 0) {
-    engine_special_cpp_FUN_00532ba0();
+    engine_special_cpp_toggle_FUN_00532ba0();
     _DAT_02ddf564 = 0;
     wincore_winrun_cpp_processWindowMessages_FUN_005591c0();
     return;

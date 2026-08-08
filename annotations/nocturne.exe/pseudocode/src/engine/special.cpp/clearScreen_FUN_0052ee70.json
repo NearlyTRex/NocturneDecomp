@@ -56,40 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_005bf494'"
-      },
-      {
         "category": "incompatible_types",
         "column": 14,
-        "line": 27,
-        "message": "assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_005bf494'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_005bf494'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_005bf494'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_005bf494'"
+        "line": 25,
+        "message": "assigning to 'double *' from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -98,18 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 61,
+    "complexity_score": 30,
     "cross_reference_count": 28,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -321,15 +288,15 @@
     },
     {
       "addr": "005bf48c",
-      "name": "DAT_005bf48c",
-      "type": "undefined8",
-      "value": null
+      "name": "g_BufferFillZeroQword",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "005bf494",
-      "name": "DAT_005bf494",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BufferFillFpuPopST0",
+      "type": "double",
+      "value": "0.0"
     },
     {
       "addr": "01bd2fa0",
@@ -390,22 +357,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_005bf48c",
-      "severity": "mild",
-      "text": "_DAT_005bf494 = DAT_005bf48c;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

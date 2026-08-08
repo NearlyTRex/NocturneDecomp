@@ -18,10 +18,10 @@
 ;   uchar[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dc9d70
-;   undefined4 DAT_02dc9d84
-;   undefined4 DAT_02dc9dcc
-;   undefined4 DAT_02dc9ddc
-;   int INT_02dc9e04
+;   APIDLL_setVideoMode2* g_APIDLL_setVideoMode2
+;   APIDLL_setFogColor* g_APIDLL_setFogColor
+;   APIDLL_setColorTable16* g_APIDLL_setColorTable16
+;   int g_LoadedExternalDLLRenderer
 ;   undefined4 DAT_02dc9e0c
 ;   undefined4 DAT_02dc9e10
 ;   undefined4 DAT_02dc9e14
@@ -29,9 +29,9 @@
 ;   undefined4 DAT_02dc9e1c
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00532320
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780
 ;   engine_special.cpp_lockFrame_FUN_005322e0
+;   engine_special.cpp_unlockFrame_FUN_00532320
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 ;
 ; *****************************************************************************
@@ -50,7 +50,7 @@ section .text
     JGE 0x005324ba                      ; 005324b3
         ;   XREF to: 005324ba (CONDITIONAL_JUMP)  ; LAB_005324ba
     MOV EBX,0x10                        ; 005324b5
-    CMP dword ptr [0x02dc9e04],0x0      ; 005324ba | INT_02dc9e04
+    CMP dword ptr [0x02dc9e04],0x0      ; 005324ba | g_LoadedExternalDLLRenderer
         ;   Label: LAB_005324ba
     JNZ 0x005324da                      ; 005324c1
         ;   XREF to: 005324da (CONDITIONAL_JUMP)  ; LAB_005324da
@@ -69,14 +69,14 @@ section .text
     PUSH EDI                            ; 005324e4
     MOV EBP,dword ptr [ESP + 0x20]      ; 005324e5
     PUSH EBP                            ; 005324e9
-    CALL dword ptr [0x02dc9d84]         ; 005324ea | DAT_02dc9d84
+    CALL dword ptr [0x02dc9d84]         ; 005324ea | g_APIDLL_setVideoMode2
     ADD ESP,0x10                        ; 005324f0
     TEST EAX,EAX                        ; 005324f3
     JZ 0x005325aa                       ; 005324f5
         ;   XREF to: 005325aa (CONDITIONAL_JUMP)  ; LAB_005325aa
     PUSH 0x1bff720                      ; 005324fb
     PUSH 0x1c00648                      ; 00532500 | g_SourcePaletteData
-    CALL dword ptr [0x02dc9ddc]         ; 00532505 | DAT_02dc9ddc
+    CALL dword ptr [0x02dc9ddc]         ; 00532505 | g_APIDLL_setColorTable16
     ADD ESP,0x8                         ; 0053250b
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 0053250e
         ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
@@ -87,7 +87,7 @@ section .text
     MOV ESI,dword ptr [0x02dc9e0c]      ; 00532521 | DAT_02dc9e0c
     PUSH ESI                            ; 00532527
     MOV EDI,0x1                         ; 00532528
-    CALL dword ptr [0x02dc9dcc]         ; 0053252d | DAT_02dc9dcc
+    CALL dword ptr [0x02dc9dcc]         ; 0053252d | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00532533
     MOV dword ptr [0x01c02594],EDI      ; 00532536 | g_UseExternalRenderer
     MOV dword ptr [0x02dc9e1c],EBX      ; 0053253c | DAT_02dc9e1c
@@ -106,8 +106,8 @@ section .text
     MOV word ptr [EAX],DX               ; 0053256d
     MOV dword ptr [0x02dc9d70],EBX      ; 00532570 | DAT_02dc9d70
         ;   Label: LAB_00532570
-    CALL engine_special.cpp_FUN_00532320 ; 00532576
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
+    CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00532576
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
         ;   Label: LAB_00532576
     MOV EAX,0x1                         ; 0053257b
     POP EBP                             ; 00532580

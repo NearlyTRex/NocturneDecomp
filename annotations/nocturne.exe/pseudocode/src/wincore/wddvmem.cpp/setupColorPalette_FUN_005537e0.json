@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_02dc9ddc'"
       }
     ],
     "success": false,
@@ -68,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 64,
+    "complexity_score": 48,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 153
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -192,8 +184,8 @@
     },
     {
       "addr": "02dc9ddc",
-      "name": "DAT_02dc9ddc",
-      "type": "undefined4",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "APIDLL_setColorTable16*",
       "value": null
     },
     {
@@ -283,14 +275,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

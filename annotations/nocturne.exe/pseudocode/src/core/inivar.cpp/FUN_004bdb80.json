@@ -62,12 +62,6 @@
         "message": "use of undeclared identifier 'DAT_02dc9d6c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 35,
-        "message": "no matching function for call to 'engine_ini_cpp_CIniFile_getString_FUN_004bd910'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 49,
         "line": 44,
@@ -92,13 +86,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 205,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 92,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 145,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -578,8 +572,8 @@
     },
     {
       "addr": "005c0e80",
-      "name": "DAT_005c0e80",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -710,7 +704,7 @@
     },
     {
       "addr": "02dc9d60",
-      "name": "INT_02dc9d60",
+      "name": "g_UseDirect3D",
       "type": "int",
       "value": null
     },
@@ -799,14 +793,6 @@
       "match": "DAT_02dc9d6c",
       "severity": "mild",
       "text": "(&local_204,\"useAGPFlag\",(int *)&DAT_02dc9d6c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "(&local_204,\"rendererDLLPath\",&DAT_005c0e80,0xfa);",
       "type": "undefined_data"
     },
     {

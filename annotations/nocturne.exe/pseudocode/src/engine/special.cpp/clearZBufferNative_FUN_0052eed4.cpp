@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void)
 
 {
   bool bVar1;
   int iVar2;
   int iVar3;
-  uint *puVar4;
+  double *pdVar4;
   
-  _DAT_005bf494 = DAT_005bf48c;
-  puVar4 = g_ZBufferScanlineArray[0] + g_ClipTop * g_WindowWidth;
+  g_BufferFillFpuPopST0 = g_BufferFillZeroQword;
+  pdVar4 = (double *)(g_ZBufferScanlineArray[0] + g_ClipTop * g_WindowWidth);
   iVar2 = ((g_ClipBottom - g_ClipTop) + 1) * g_WindowWidth;
   do {
-    *(ulonglong *)puVar4 = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 2) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 4) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 6) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 8) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 10) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 0xc) = _DAT_005bf494;
-    *(ulonglong *)(puVar4 + 0xe) = _DAT_005bf494;
-    puVar4 = puVar4 + 0x10;
+    *pdVar4 = g_BufferFillFpuPopST0;
+    pdVar4[1] = g_BufferFillFpuPopST0;
+    pdVar4[2] = g_BufferFillFpuPopST0;
+    pdVar4[3] = g_BufferFillFpuPopST0;
+    pdVar4[4] = g_BufferFillFpuPopST0;
+    pdVar4[5] = g_BufferFillFpuPopST0;
+    pdVar4[6] = g_BufferFillFpuPopST0;
+    pdVar4[7] = g_BufferFillFpuPopST0;
+    pdVar4 = pdVar4 + 8;
     iVar3 = iVar2 + -0x10;
     bVar1 = 0xf < iVar2;
     iVar2 = iVar3;

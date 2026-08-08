@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dcc
+;   APIDLL_setFogColor* g_APIDLL_setFogColor
 ;   undefined4 DAT_02dc9e0c
 ;   undefined4 DAT_02dc9e10
 ;   undefined4 DAT_02dc9e14
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_00532b1c
     PUSH EDX                            ; 00532b1d
     PUSH EAX                            ; 00532b1e
-    CALL dword ptr [0x02dc9dcc]         ; 00532b1f | DAT_02dc9dcc
+    CALL dword ptr [0x02dc9dcc]         ; 00532b1f | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00532b25
     POP EBX                             ; 00532b28
     RET                                 ; 00532b29

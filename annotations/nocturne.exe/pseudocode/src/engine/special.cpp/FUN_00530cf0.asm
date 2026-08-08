@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
+; void __cdecl engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   param_1
+; int              Stack[0x8]:4   param_2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_special_c_00594d27

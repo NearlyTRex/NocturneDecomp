@@ -10,17 +10,18 @@ Failed: 4942
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44702
-  undeclared_identifier           6362
-  incompatible_types               443
+  other                          44701
+  undeclared_identifier           6279
+  incompatible_types               436
   type_error                       371
   format_error                     229
-  cast_error                       220
-  syntax_error                     116
-  pointer_type                      52
+  cast_error                       219
+  syntax_error                     111
+  pointer_type                      54
+  argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44702 errors)
+CATEGORY: other (44701 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_FUN_0042d130
@@ -6023,6 +6024,8 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
   core_setdir.cpp_CDemonSet_FUN_005125a0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  core_setdir.cpp_CDemonSet_FUN_00513670
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   core_setdir.cpp_CDemonSet_FUN_00513720
     Line 25: unknown type name '_EXCEPTION_RECORD'
   core_setdir.cpp_CDemonSet_FUN_00513e20
@@ -6044,8 +6047,6 @@ CATEGORY: other (44702 errors)
   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0
     Line 25: unknown type name '_EXCEPTION_RECORD'
   core_setdir.cpp_FUN_00511d80
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  core_setdir.cpp_FUN_00513670
     Line 25: unknown type name '_EXCEPTION_RECORD'
   core_setdir.cpp_FUN_005138e0
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -8503,6 +8504,8 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_ncursfx.cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_ncursfx.cpp_CMouse_FUN_004ee680
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_ncursfx.cpp_CMouse_consumeButton_FUN_004ee6c0
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_ncursfx.cpp_CMouse_ctor_FUN_004ee500
@@ -8516,8 +8519,6 @@ CATEGORY: other (44702 errors)
   engine_ncursfx.cpp_CMouse_render_FUN_004ee740
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_ncursfx.cpp_CMouse_startEffect_FUN_004ee690
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_ncursfx.cpp_FUN_004ee680
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_ncursfx.cpp_staticInit_FUN_004ee4e0
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -8643,41 +8644,19 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_FUN_00530d30
     Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00530d40
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00530e60
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532320
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532380
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_005323c0
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532480
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_005325c0
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532900
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532930
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532950
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532980
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532ba0
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532cd0
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_FUN_00532d20
-    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_FUN_00532f30
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_FUN_00532f50
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_FUN_00532fa0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_add3dLine_FUN_00532950
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_addParticle_FUN_00532900
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_beginScene_FUN_00532340
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_buildCardList_FUN_00532d20
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_clearScreenRegion_FUN_0052ef37
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -8704,6 +8683,14 @@ CATEGORY: other (44702 errors)
   engine_special.cpp_endScene_FUN_00532360
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_fillDepthRegion_FUN_0052efc2
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_flushLineList_FUN_00532980
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_flushParticleList_FUN_00532930
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_getVideoMemory_FUN_00532cd0
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_initializeExternalRenderer_FUN_00530e60
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_kill_FUN_005322b0
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -8737,23 +8724,37 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_selectCard_FUN_00532d00
     Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_selectTexture_FUN_00532400
+  engine_special.cpp_selectTextureFromPalette_FUN_00532400
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_selectTexture_FUN_00532380
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_setColorTable16_FUN_005325c0
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_setFogColorFromPalette_FUN_00532a80
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_setFogColor_FUN_00532af0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_setMipMapLevel_FUN_00532480
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_shutdownExternalRenderer_FUN_00530d40
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_sync_FUN_00532b30
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_toggle_FUN_00532ba0
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_transformPoint_FUN_00530a25
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_unlockFrame_FUN_00532320
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_special.cpp_unlockHoldBuffer_FUN_00532d80
     Line 25: unknown type name '_EXCEPTION_RECORD'
-  engine_special.cpp_updateTexture_FUN_00532440
+  engine_special.cpp_updateTextureFromPalette_FUN_00532440
+    Line 25: unknown type name '_EXCEPTION_RECORD'
+  engine_special.cpp_updateTexture_FUN_005323c0
     Line 25: unknown type name '_EXCEPTION_RECORD'
   engine_texture.cpp_CTextureCache_FUN_00544de0
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -9277,6 +9278,8 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
   sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0
     Line 25: unknown type name '_EXCEPTION_RECORD'
+  sound_sndmain.cpp_CSfxSample_FUN_00529a00
+    Line 25: unknown type name '_EXCEPTION_RECORD'
   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910
     Line 25: unknown type name '_EXCEPTION_RECORD'
   sound_sndmain.cpp_CSfxSample_arrdtor_FUN_00529a60
@@ -9382,8 +9385,6 @@ CATEGORY: other (44702 errors)
   sound_sndmain.cpp_FUN_00527d80
     Line 25: unknown type name '_EXCEPTION_RECORD'
   sound_sndmain.cpp_FUN_00529980
-    Line 25: unknown type name '_EXCEPTION_RECORD'
-  sound_sndmain.cpp_FUN_00529a00
     Line 25: unknown type name '_EXCEPTION_RECORD'
   sound_sndmain.cpp_allocMixBuffers_FUN_00522f10
     Line 25: unknown type name '_EXCEPTION_RECORD'
@@ -9909,7 +9910,7 @@ CATEGORY: other (44702 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (6362 errors)
+CATEGORY: undeclared_identifier (6279 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -9924,8 +9925,6 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 54: use of undeclared identifier 'DAT_00581999'
   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760
     Line 95: use of undeclared identifier 'DAT_00581aa2'
-  core_main.c_finalizeGameSystems_FUN_004c90e0
-    Line 23: use of undeclared identifier 'DAT_00587ed1'
   engine_pod.cpp_FUN_004f7980
     Line 20: use of undeclared identifier 'DAT_0058d9a8'
   engine_pod.cpp_FUN_004f8eb0
@@ -10354,11 +10353,11 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 21: use of undeclared identifier 'DAT_020842b4'
   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
     Line 15: use of undeclared identifier 'DAT_020842b4'
+  core_setdir.cpp_CDemonSet_FUN_00513670
+    Line 20: use of undeclared identifier 'DAT_020875f8'
   core_setdir.cpp_CDemonSet_FUN_00513720
     Line 34: use of undeclared identifier 'DAT_020875f8'
   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610
-    Line 20: use of undeclared identifier 'DAT_020875f8'
-  core_setdir.cpp_FUN_00513670
     Line 20: use of undeclared identifier 'DAT_020875f8'
   core_setdir.cpp_FUN_005138e0
     Line 59: use of undeclared identifier 'DAT_02663604'
@@ -10826,12 +10825,6 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 64: use of undeclared identifier '_DAT_005bf480'
   engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_005300ec
     Line 63: use of undeclared identifier '_DAT_005bf480'
-  engine_special.cpp_clearScreen_FUN_0052ee70
-    Line 26: use of undeclared identifier '_DAT_005bf494'
-  engine_special.cpp_clearZBufferNative_FUN_0052eed4
-    Line 19: use of undeclared identifier '_DAT_005bf494'
-  engine_special.cpp_fillDepthRegion_FUN_0052efc2
-    Line 35: use of undeclared identifier '_DAT_005bf494'
   engine_special.cpp_renderScanlineSwapped_FUN_00530716
     Line 19: use of undeclared identifier '_DAT_005bf4a4'
   wincore_wddvmem.cpp_initializeColorMasks_FUN_004b6220
@@ -10917,7 +10910,7 @@ CATEGORY: undeclared_identifier (6362 errors)
   core_dcube.cpp_FUN_00448660
     Line 20: use of undeclared identifier '_DAT_014b848c'
   core_dcube.cpp_FUN_0044a150
-    Line 25: use of undeclared identifier '_DAT_014b848c'; did you mean 'DAT_005bf48c'?
+    Line 25: use of undeclared identifier '_DAT_014b848c'
   core_dcube.cpp_FUN_004487c0
     Line 20: use of undeclared identifier '_DAT_014b8550'
   core_dcube.cpp_FUN_00448930
@@ -11180,6 +11173,14 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 15: use of undeclared identifier '_DAT_01c00020'
   engine_2d.c_mapTextureFrameBuffer_FUN_00404340
     Line 17: use of undeclared identifier '_DAT_01c02580'
+  engine_special.cpp_selectTextureFromPalette_FUN_00532400
+    Line 20: use of undeclared identifier '_DAT_01c02580'
+  engine_special.cpp_selectTexture_FUN_00532380
+    Line 20: use of undeclared identifier '_DAT_01c02580'
+  engine_special.cpp_updateTextureFromPalette_FUN_00532440
+    Line 20: use of undeclared identifier '_DAT_01c02580'
+  engine_special.cpp_updateTexture_FUN_005323c0
+    Line 20: use of undeclared identifier '_DAT_01c02580'
   core_glass.cpp_CGlass_onLaserHit_FUN_004add80
     Line 58: use of undeclared identifier '_DAT_01c02580'; did you mean 'DAT_02DF2580'?
   engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410
@@ -12123,81 +12124,23 @@ CATEGORY: undeclared_identifier (6362 errors)
   engine_special.cpp_FUN_00532f50
     Line 19: use of undeclared identifier '_DAT_02dc9d64'
   engine_special.cpp_FUN_00532fa0
-    Line 17: use of undeclared identifier '_DAT_02dc9d64'
+    Line 16: use of undeclared identifier '_DAT_02dc9d64'
   core_inivar.cpp_writeIniData_FUN_004be2d0
     Line 25: use of undeclared identifier '_DAT_02dc9d6c'
   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
     Line 20: use of undeclared identifier '_DAT_02dc9d70'
-  engine_special.cpp_kill_FUN_005322b0
-    Line 17: use of undeclared identifier '_DAT_02dc9d78'
-  engine_special.cpp_beginScene_FUN_00532340
-    Line 19: use of undeclared identifier '_DAT_02dc9d8c'
-  engine_special.cpp_endScene_FUN_00532360
-    Line 19: use of undeclared identifier '_DAT_02dc9d90'
-  engine_special.cpp_lockFrame_FUN_005322e0
-    Line 16: use of undeclared identifier '_DAT_02dc9d94'
-  engine_special.cpp_FUN_00532380
-    Line 20: use of undeclared identifier '_DAT_02dc9d9c'
-  engine_special.cpp_selectTexture_FUN_00532400
-    Line 19: use of undeclared identifier '_DAT_02dc9d9c'
-  engine_special.cpp_FUN_005323c0
-    Line 20: use of undeclared identifier '_DAT_02dc9da0'
-  engine_special.cpp_updateTexture_FUN_00532440
-    Line 19: use of undeclared identifier '_DAT_02dc9da0'
-  engine_special.cpp_FUN_00532480
-    Line 20: use of undeclared identifier '_DAT_02dc9da4'
-  engine_special.cpp_drawPolygon_FUN_00532620
-    Line 19: use of undeclared identifier '_DAT_02dc9da8'
-  engine_special.cpp_drawPolygon2_FUN_00532650
-    Line 19: use of undeclared identifier '_DAT_02dc9dac'
-  engine_special.cpp_FUN_00532900
-    Line 20: use of undeclared identifier '_DAT_02dc9db8'
-  engine_special.cpp_FUN_00532930
-    Line 20: use of undeclared identifier '_DAT_02dc9dbc'
-  engine_special.cpp_FUN_00532950
-    Line 20: use of undeclared identifier '_DAT_02dc9dc0'
-  engine_special.cpp_FUN_00532980
-    Line 20: use of undeclared identifier '_DAT_02dc9dc4'
-  engine_special.cpp_clear_FUN_005329a0
-    Line 19: use of undeclared identifier '_DAT_02dc9dc8'
-  engine_special.cpp_sync_FUN_00532b30
-    Line 19: use of undeclared identifier '_DAT_02dc9dd0'
-  engine_special.cpp_clearZBuffer_FUN_00532b50
-    Line 19: use of undeclared identifier '_DAT_02dc9dd4'
-  engine_special.cpp_clearZBox_FUN_00532b70
-    Line 19: use of undeclared identifier '_DAT_02dc9dd8'
-  engine_special.cpp_FUN_005325c0
-    Line 20: use of undeclared identifier '_DAT_02dc9ddc'
-  wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0
-    Line 20: use of undeclared identifier '_DAT_02dc9ddc'
-  engine_special.cpp_masterZBuffer_FUN_00532c70
-    Line 19: use of undeclared identifier '_DAT_02dc9de8'
-  engine_special.cpp_restoreZBuffer_FUN_00532c90
-    Line 19: use of undeclared identifier '_DAT_02dc9dec'
-  engine_special.cpp_FUN_00532cd0
-    Line 19: use of undeclared identifier '_DAT_02dc9df0'
-  engine_special.cpp_selectCard_FUN_00532d00
-    Line 19: use of undeclared identifier '_DAT_02dc9df4'
-  engine_special.cpp_FUN_00532d20
-    Line 19: use of undeclared identifier '_DAT_02dc9df8'
-  engine_special.cpp_lockHoldBuffer_FUN_00532d60
-    Line 16: use of undeclared identifier '_DAT_02dc9dfc'; did you mean 'DAT_005c1dfc'?
-  engine_special.cpp_FUN_00530d40
-    Line 16: use of undeclared identifier '_DAT_02dc9e08'
-  engine_special.cpp_FUN_00530e60
-    Line 19: use of undeclared identifier '_DAT_02dc9e08'
   engine_special.cpp_setFogColorFromPalette_FUN_00532a80
-    Line 17: use of undeclared identifier '_DAT_02dc9e0c'; did you mean 'INT_02dc9e04'?
+    Line 17: use of undeclared identifier '_DAT_02dc9e0c'
   engine_special.cpp_setFogColor_FUN_00532af0
     Line 16: use of undeclared identifier '_DAT_02dc9e10'
   engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 57: use of undeclared identifier '_DAT_02dc9e18'
-  engine_special.cpp_FUN_00532320
+    Line 23: use of undeclared identifier '_DAT_02dc9e18'
+  engine_special.cpp_lockFrame_FUN_005322e0
+    Line 17: use of undeclared identifier '_DAT_02dc9e20'
+  engine_special.cpp_unlockFrame_FUN_00532320
     Line 19: use of undeclared identifier '_DAT_02dc9e20'
-  engine_special.cpp_FUN_00532ba0
-    Line 29: use of undeclared identifier '_DAT_02dc9e24'
   shape_spotview.cpp_CSpotView_ctor_FUN_00534200
-    Line 19: use of undeclared identifier '_DAT_02dc9ea4'; did you mean 'INT_02dc9e04'?
+    Line 19: use of undeclared identifier '_DAT_02dc9ea4'; did you mean 'INT_02dc9e24'?
   core_stranger.cpp_CStranger_FUN_005396d0
     Line 39: use of undeclared identifier '_DAT_02dc9f50'
   core_stranger.cpp_CStranger_setup_FUN_00535450
@@ -12374,10 +12317,6 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 20: use of undeclared identifier 'code'
   engine_3d.c_FUN_00408e80
     Line 18: use of undeclared identifier 'code'
-  engine_special.cpp_restoreVideoMode_FUN_005325f0
-    Line 16: use of undeclared identifier 'code'
-  engine_special.cpp_unlockHoldBuffer_FUN_00532d80
-    Line 16: use of undeclared identifier 'code'
   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
     Line 26: use of undeclared identifier 'code'
   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0
@@ -13026,6 +12965,8 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 115: use of undeclared identifier 'stack0xfffffeb0'
   core_gun.cpp_CGun_fire_FUN_004b27c0
     Line 167: use of undeclared identifier 'stack0xfffffec0'
+  core_main.c_finalizeGameSystems_FUN_004c90e0
+    Line 29: use of undeclared identifier 'stack0xfffffef0'
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
     Line 74: use of undeclared identifier 'stack0xfffffef0'
   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00
@@ -13106,7 +13047,7 @@ CATEGORY: undeclared_identifier (6362 errors)
     Line 22: use of undeclared identifier 'waveOutGetDevCapsA'
 
 ====================================================================================================
-CATEGORY: incompatible_types (443 errors)
+CATEGORY: incompatible_types (436 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -13129,6 +13070,8 @@ CATEGORY: incompatible_types (443 errors)
     Line 121: assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]')
   shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380
     Line 39: assigning to 'char *' from incompatible type 'void *'
+  engine_special.cpp_clearScreen_FUN_0052ee70
+    Line 25: assigning to 'double *' from incompatible type 'void *'
   cockpit_ckptutil.c_FUN_0042e7b0
     Line 29: assigning to 'int *' from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0
@@ -13157,14 +13100,12 @@ CATEGORY: incompatible_types (443 errors)
     Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
     Line 34: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  engine_special.cpp_FUN_00532ba0
-    Line 24: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  engine_special.cpp_toggle_FUN_00532ba0
+    Line 21: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
     Line 176: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_moon.cpp_CMoon_render_FUN_004dec50
     Line 121: assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'
-  engine_special.cpp_clearScreen_FUN_0052ee70
-    Line 27: assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'
   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290
     Line 56: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'float'
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
@@ -13455,8 +13396,6 @@ CATEGORY: incompatible_types (443 errors)
     Line 17: no matching function for call to 'core_script_cpp_CScript_FUN_004febd0'
   core_game.cpp_CGame_renderOverlay_FUN_0049ab50
     Line 67: no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'
-  core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00513610
-    Line 17: no matching function for call to 'core_setdir_cpp_FUN_00513670'
   core_set.cpp_CDemonSet_clear_FUN_00506ec0
     Line 20: no matching function for call to 'core_terrain_cpp_CTerrain_free_FUN_005492f0'
   core_set.cpp_CDemonSet_loadAssets_FUN_0050d280
@@ -13521,10 +13460,6 @@ CATEGORY: incompatible_types (443 errors)
     Line 37: no matching function for call to 'engine_drender_cpp_FUN_00460d90'
   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0
     Line 75: no matching function for call to 'engine_drender_cpp_FUN_00460d90'
-  core_inivar.cpp_FUN_004bdb80
-    Line 35: no matching function for call to 'engine_ini_cpp_CIniFile_getString_FUN_004bd910'
-  core_inivar.cpp_writeIniData_FUN_004be2d0
-    Line 26: no matching function for call to 'engine_ini_cpp_CIniFile_setString_FUN_004bd9a0'
   engine_clipper.c_FUN_00432210
     Line 123: no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'
   engine_clipper.c_FUN_00434210
@@ -13533,10 +13468,6 @@ CATEGORY: incompatible_types (443 errors)
     Line 93: no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'
   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
     Line 75: no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'
-  core_menu.cpp_configureGraphicsOptions_FUN_004d0080
-    Line 52: no matching function for call to 'engine_special_cpp_FUN_00532cd0'
-  engine_special.cpp_FUN_00532f30
-    Line 16: no matching function for call to 'engine_special_cpp_FUN_00532f50'
   core_game.cpp_setupMovieRecording_FUN_0049a240
     Line 26: no matching function for call to 'shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360'
   shape_edittool.cpp_CEditorTools_ctor_FUN_0046f9f0
@@ -13619,10 +13550,6 @@ CATEGORY: incompatible_types (443 errors)
     Line 49: no matching function for call to 'sound_sndmain_cpp_FUN_00529980'
   sound_sndmain.cpp_getSampleInfo_FUN_005279e0
     Line 94: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_00521830'
-  engine_special.cpp_FUN_00530e60
-    Line 19: no matching function for call to 'wincore_wddvmem_cpp_FUN_00553d30'
-  engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 64: no matching function for call to 'wincore_wddvmem_cpp_FUN_00553d30'
 
 ====================================================================================================
 CATEGORY: type_error (371 errors)
@@ -13989,7 +13916,7 @@ CATEGORY: format_error (229 errors)
     Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: cast_error (220 errors)
+CATEGORY: cast_error (219 errors)
 ====================================================================================================
 
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
@@ -14048,10 +13975,10 @@ CATEGORY: cast_error (220 errors)
     Line 74: C-style cast from 'double' to 'byte[8]' (aka 'unsigned char[8]') is not allowed
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0
     Line 518: C-style cast from 'int *' to 'double' is not allowed
-  engine_special.cpp_FUN_00530e60
-    Line 26: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed
+  engine_special.cpp_initializeExternalRenderer_FUN_00530e60
+    Line 24: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed
   engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 71: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed
+    Line 37: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004b5750
     Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
@@ -14194,7 +14121,7 @@ CATEGORY: cast_error (220 errors)
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
 
 ====================================================================================================
-CATEGORY: syntax_error (116 errors)
+CATEGORY: syntax_error (111 errors)
 ====================================================================================================
 
   core_anvil.cpp_CAnvil_process_FUN_0040f610
@@ -14263,16 +14190,6 @@ CATEGORY: syntax_error (116 errors)
     Line 18: expected expression
   engine_dosio.cpp_findFile_FUN_004567a0
     Line 26: expected expression
-  engine_special.cpp_drawPolyList2_FUN_005327c0
-    Line 24: expected expression
-  engine_special.cpp_drawPolyList_FUN_00532680
-    Line 25: expected expression
-  engine_special.cpp_lockHoldBuffer_FUN_00532d60
-    Line 16: expected expression
-  engine_special.cpp_restoreVideoMode_FUN_005325f0
-    Line 16: expected expression
-  engine_special.cpp_unlockHoldBuffer_FUN_00532d80
-    Line 16: expected expression
   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60
     Line 60: expected expression
   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50
@@ -14379,7 +14296,7 @@ CATEGORY: syntax_error (116 errors)
     Line 23: expected expression
 
 ====================================================================================================
-CATEGORY: pointer_type (52 errors)
+CATEGORY: pointer_type (54 errors)
 ====================================================================================================
 
   core_mmx.c_detectIntelProcessor_FUN_004d9eac
@@ -14426,6 +14343,8 @@ CATEGORY: pointer_type (52 errors)
     Line 174: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   engine_clipper.c_normalizeClippedVertices_FUN_00432150
     Line 20: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
+  engine_special.cpp_loadExternalRenderer_FUN_00531780
+    Line 360: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40
     Line 16: cannot initialize a parameter of type 'long' with an lvalue of type 'HANDLE' (aka 'void *')
   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
@@ -14440,3 +14359,12 @@ CATEGORY: pointer_type (52 errors)
     Line 57: cannot initialize return object of type 'CDemonActor *' with an rvalue of type 'int'
   wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
     Line 15: cannot initialize return object of type 'int' with an lvalue of type 'FARPROC' (aka 'int ()')
+
+====================================================================================================
+CATEGORY: argument_error (2 errors)
+====================================================================================================
+
+  engine_special.cpp_initializeExternalRenderer_FUN_00530e60
+    Line 25: too many arguments to function call, expected 0, have 2
+  engine_special.cpp_loadExternalRenderer_FUN_00531780
+    Line 38: too many arguments to function call, expected 0, have 2

@@ -365,7 +365,7 @@ LAB_0049cf70:
   if (this_ptr->is_paused != 0) {
     shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(g_CEditorTools_PTR_005b6d50,0);
   }
-  engine_special_cpp_FUN_00532320();
+  engine_special_cpp_unlockFrame_FUN_00532320();
 LAB_0049d5b0:
   if (local_40 == 0) {
     return;

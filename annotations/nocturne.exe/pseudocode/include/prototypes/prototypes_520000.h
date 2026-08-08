@@ -194,7 +194,7 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void);
 void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode);
 void sound_sndmain_cpp_FUN_00529980(char *param_1);
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_ctor_FUN_005299e0(CSfxOptions *this_ptr);
-int sound_sndmain_cpp_FUN_00529a00(void);
+int __cdecl sound_sndmain_cpp_CSfxSample_FUN_00529a00(CSfxSample *this_ptr);
 CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20(CSfxSlot *this_ptr);
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a40(CSfxOptions *this_ptr,uint flags);
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a50(CSfxOptions *this_ptr,uint flags);

@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9dec
+;   APIDLL_restoreZBuffer* g_APIDLL_restoreZBuffer
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 00532cb4
     MOV EBP,dword ptr [ESP + 0x24]      ; 00532cb5
     PUSH EBP                            ; 00532cb9
-    CALL dword ptr [0x02dc9dec]         ; 00532cba | DAT_02dc9dec
+    CALL dword ptr [0x02dc9dec]         ; 00532cba | g_APIDLL_restoreZBuffer
     ADD ESP,0x14                        ; 00532cc0
     POP EBX                             ; 00532cc3
     POP ESI                             ; 00532cc4

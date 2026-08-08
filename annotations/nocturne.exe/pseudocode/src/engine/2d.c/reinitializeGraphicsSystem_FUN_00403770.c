@@ -14,7 +14,7 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void)
   int iVar1;
   
   _DAT_02ddf568 = 0;
-  if (INT_02dc9d60 == 0) {
+  if (g_UseDirect3D == 0) {
     return;
   }
   engine_special_cpp_restoreVideoMode_FUN_005325f0();

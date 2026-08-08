@@ -479,6 +479,66 @@ All global variables should use the `g_PascalCase` format:
 - `g_SoundEnabled` (instead of DAT_0040ABCD)
 - `g_WindowHandle` (instead of DAT_0040EF12)
 
+### CRITICAL: Global Names Must Be Collision-Resistant
+
+A global name is a permanent identifier in a namespace of thousands - `nocedit.exe` alone has ~2657 named globals. The failure mode is naming a global after **the shape of the idiom that touches it** instead of after **evidence unique to that address**. Idiom-shaped names are magnets: the next zero constant, the next scratch slot, the next dirty flag you analyze will fit the same name equally well, and you will either duplicate it or coin a near-synonym for it. **Two addresses that both plausibly deserve the same name is a defect you are introducing.**
+
+#### Idiom-Shaped Tokens Are Never Sufficient Alone
+
+`Zero`, `One`, `Scratch`, `Temp`, `Dummy`, `Saved`, `Spill`, `Flag`, `Count`, `Counter`, `Index`, `Buffer`, `Data`, `Value`, `State`, `Ptr`, `Result`, `Enabled`, `Current`.
+
+Each of these describes a pattern that recurs at dozens of addresses across the binary. They may appear *in* a name; they may never be the part that distinguishes it.
+
+#### Every Name Needs Owner + Discriminator
+
+1. **Owner** - the subsystem, module, or class the global belongs to. This codebase already works this way: `g_Moon*`, `g_Cloth*`, `g_Course*`, `g_Actor*`, `g_ViewportStack*`, `g_MatrixStack*`, `g_WaveIn*` / `g_WaveOut*`, `g_DirectSound*`, `g_CameraShake*`, `g_FireEffect*`.
+2. **Discriminator** - the fact that makes *this* address different from every other instance of the same idiom: which routine consumes it, which register / channel / axis / colour component it carries, which buffer it feeds, what its single initialised value is.
+
+#### Verify the Prefix Before Committing to It
+
+An owner prefix that already exists **belongs to whichever translation unit established it**. Joining that family asserts your global lives there too. Check where the existing members are actually referenced:
+
+```bash
+# What does this prefix family already contain?
+grep -rhoE "\bg_Rast[A-Za-z0-9_]*" annotations/*/pseudocode/ | sort -u
+# Which TU owns it?
+grep -rl "g_RasterizerEdgeArray" annotations/nocedit.exe/pseudocode/src/ --include=*.asm \
+  | sed 's|.*/src/||' | cut -d/ -f1-2 | sort -u
+```
+
+`g_Rasterizer*` looks like the obvious prefix for a software-rasterizer global in `engine/special.cpp` - but all five existing members are `engine/3d.c` statics, so adopting it would file the global under the wrong translation unit.
+
+#### Required Checks Before Proposing Any Global Name
+
+Run these against **both** binaries - a global's name must be identical across the sibling pair, so a collision in either one is a collision.
+
+```bash
+# 1. Is the exact name already taken?
+grep -rn "g_ProposedName" annotations/*/pseudocode/include/globals/
+# 2. Is the prefix family taken, and by which TU?
+grep -rhoE "\bg_Prefix[A-Za-z0-9_]*" annotations/*/pseudocode/ | sort -u
+# 3. Read the namespace you are adding to before adding to it
+grep -rhoE "\bg_[A-Za-z0-9_]+" annotations/nocedit.exe/pseudocode/src/<tu>/*.asm | sort -u
+```
+
+#### The Self-Test
+
+*If I met a second, unrelated address tomorrow that this exact name also fit, would the name be wrong?* If yes, it is too generic - add the discriminator now, not after the collision.
+
+#### Do Not Extend a Family You Have Not Verified
+
+`g_SavedRegisterEAX` / `EBX` / `ECX` / `EDX` (nocedit `globals_680000.cpp`) have **zero xrefs anywhere in the binary** - they were named from adjacency to nearby rasterizer statics, not from evidence. Extending an unverified family propagates the original guess and lends it false weight. Check that a family's existing members are evidence-backed before joining it.
+
+#### Example
+
+```
+BAD:   g_ZeroQword           - fits every zero constant in the binary
+BAD:   g_FpuPopScratch       - fits every FSTP dump slot in the binary
+BAD:   g_RasterZeroQword     - prefix collides with engine/3d.c's g_Rasterizer* family
+GOOD:  g_BufferFillZeroQword - the qword the three special.cpp fill loops broadcast
+GOOD:  g_BufferFillFpuPopST0 - the ST0 dump that terminates those same loops
+```
+
 ### New vs. Existing Globals
 When analyzing globals, clearly distinguish:
 
@@ -1070,6 +1130,7 @@ class CDemonActor {
 0a. **Back-Port Corrections**: The already-solved binary is not exempt. If the binary you are analyzing reveals that the *other* binary's annotation is dummied out, misnamed, placeholder, or guessed over - report it as a correction, unprompted. Stubbed functions (bare `RET`, `doNothing*`) and the data globals they were supposed to fill are the highest-value cases. Before calling a stubbed feature absent, look for its **replacement implementation** in that build. Transfer existing sibling names rather than coining new ones, and **never place a global by address arithmetic** - no reference means no answer.
 0b. **Change-Block Format**: Any change to a symbol that already exists in a decompiled binary MUST use the `FIX IN:` block with `CURRENT:` / `CHANGE TO:` / `KIND:` / `CONFIDENCE:`. Never prose-only, never folded together. **Function changes must carry `CURRENT SIG:` / `CHANGE SIG TO:`** unless the signature is character-for-character identical AND free of every `undefined`, `param_N`, and `unknown` convention - which a rename never is.
 0c. **Terminal Only**: Findings go in the terminal response. Do not write spec files, worklists, or reports to disk unless explicitly asked.
+0d. **Collision-Resistant Global Names**: Never name a global after the shape of the idiom that touches it (`Zero`, `Scratch`, `Temp`, `Saved`, `Flag`, `Count`, `Buffer`). Every name needs an **owner** prefix plus a **discriminator** unique to that address. Grep both binaries for the exact name *and* the prefix family before proposing it, and confirm which TU owns any prefix you adopt. Self-test: if a second unrelated address would also fit the name, it is too generic.
 1. **Function Names**: ALWAYS use `folder_file.ext_FunctionName_FUN_address` format
 2. **Local Variables**: Use `lowerCamelCase` naming with descriptive purposes
 3. **Stack Frame Analysis**: Distinguish between parameters, locals, and temporaries

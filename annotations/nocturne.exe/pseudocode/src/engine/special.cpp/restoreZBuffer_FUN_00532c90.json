@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02dc9dec'"
       }
     ],
     "success": false,
@@ -68,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 25,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 39
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
   },
   "cross_references": [
     {
@@ -116,8 +108,8 @@
     },
     {
       "addr": "02dc9dec",
-      "name": "DAT_02dc9dec",
-      "type": "undefined4",
+      "name": "g_APIDLL_restoreZBuffer",
+      "type": "APIDLL_restoreZBuffer*",
       "value": null
     }
   ],
@@ -222,14 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

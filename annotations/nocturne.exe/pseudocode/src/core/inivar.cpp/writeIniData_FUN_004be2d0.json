@@ -62,12 +62,6 @@
         "message": "use of undeclared identifier '_DAT_02dc9d6c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'engine_ini_cpp_CIniFile_setString_FUN_004bd9a0'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 78,
         "line": 34,
@@ -86,15 +80,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 581,
-    "complexity_score": 159,
+    "complexity_score": 144,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 125,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 129,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 710
@@ -551,8 +544,8 @@
     },
     {
       "addr": "005c0e80",
-      "name": "DAT_005c0e80",
-      "type": "undefined1",
+      "name": "s_trid3d_dll_005c0e80",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -893,7 +886,7 @@
     },
     {
       "addr": "02dc9d60",
-      "name": "INT_02dc9d60",
+      "name": "g_UseDirect3D",
       "type": "int",
       "value": null
     },
@@ -952,14 +945,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c0e80",
-      "severity": "mild",
-      "text": "(&local_210,\"rendererDLLPath\",&DAT_005c0e80);",
-      "type": "undefined_data"
     }
   ]
 }
