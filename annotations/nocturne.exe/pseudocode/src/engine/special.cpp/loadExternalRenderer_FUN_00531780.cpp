@@ -25,7 +25,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
   if (g_UseDirect3D == 0) {
     return 0;
   }
-  g_RendererDLLHandle = wincore_wddvmem_cpp_FUN_00553d30("trid3d.dll");
+  g_RendererDLLHandle = wincore_wddvmem_cpp_FUN_00553d30(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
     g_UseDirect3D = (int)g_RendererDLLHandle;
     return 0;
@@ -385,7 +385,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
         acStack_3c2c[1] = '\"';
         acStack_3c2c[2] = 'S';
         acStack_3c2c[3] = '\0';
-        engine_special_cpp_selectCard_FUN_00532d00(g_RendererHandle);
+        engine_special_cpp_selectCard_FUN_00532d00(g_RendererCardIndex);
         return 1;
       }
       g_UseDirect3D = iVar3;

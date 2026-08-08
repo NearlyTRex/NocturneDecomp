@@ -101,7 +101,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be37a
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be37f
-    PUSH 0x5c0e80                       ; 004be382 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004be382 | g_RendererDllPath
     PUSH 0x586a4d                       ; 004be387 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x8]                 ; 004be38c
     PUSH EAX                            ; 004be390

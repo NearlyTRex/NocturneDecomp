@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00402710 at 00402747
+;   engine_2d.c_drawStringHighlighted_FUN_00402710 at 00402747
 ;
 ; Referenced Globals:
 ;   SFontGlyph[224] g_FontTable

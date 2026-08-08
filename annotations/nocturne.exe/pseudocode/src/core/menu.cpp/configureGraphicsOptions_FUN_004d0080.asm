@@ -158,7 +158,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 004d01db | g_CGame_01c775ec.game_bpp
     PUSH 0x5886ac                       ; 004d01e2 | = "tri3dfx.dll"
     MOV dword ptr [EAX],0x280           ; 004d01e7 | g_CGame_01c775ec
-    PUSH 0x5c0e80                       ; 004d01ed | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d01ed | g_RendererDllPath
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004d01f2 | g_CGame_01c775ec.game_pixy
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d01f9
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
@@ -167,17 +167,17 @@ section .text
     JZ 0x004d028a                       ; 004d0203
         ;   XREF to: 004d028a (CONDITIONAL_JUMP)  ; LAB_004d028a
     MOV ESI,0x5886b8                    ; 004d0209 | = "tri3dfx.dll"
-    MOV EDI,0x5c0e80                    ; 004d020e | = "trid3d.dll"
-    PUSH EDI                            ; 004d0213 | = "trid3d.dll"
+    MOV EDI,0x5c0e80                    ; 004d020e | g_RendererDllPath
+    PUSH EDI                            ; 004d0213 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 004d0214 | = "tri3dfx.dll" | s_tri3dfx_dll_005886b8+2
         ;   Label: LAB_004d0214
-    MOV byte ptr [EDI],AL               ; 004d0216 | = "trid3d.dll" | s_trid3d_dll_005c0e80+2
+    MOV byte ptr [EDI],AL               ; 004d0216 | g_RendererDllPath | g_RendererDllPath+2
     CMP AL,0x0                          ; 004d0218
     JZ 0x004d022c                       ; 004d021a
         ;   XREF to: 004d022c (CONDITIONAL_JUMP)  ; LAB_004d022c
     MOV AL,byte ptr [ESI + 0x1]         ; 004d021c | s_tri3dfx_dll_005886b8+1 | s_tri3dfx_dll_005886b8+3
     ADD ESI,0x2                         ; 004d021f
-    MOV byte ptr [EDI + 0x1],AL         ; 004d0222 | s_trid3d_dll_005c0e80+1 | s_d3d_dll_005c0e83
+    MOV byte ptr [EDI + 0x1],AL         ; 004d0222 | g_RendererDllPath+1 | s_d3d_dll_005c0e83
     ADD EDI,0x2                         ; 004d0225
     CMP AL,0x0                          ; 004d0228
     JNZ 0x004d0214                      ; 004d022a
@@ -316,7 +316,7 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d03e8
     PUSH 0x588825                       ; 004d03eb | = "trid3d.dll"
-    PUSH 0x5c0e80                       ; 004d03f0 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d03f0 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d03f5
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d03fa
@@ -467,7 +467,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004d0563
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x588964                       ; 004d0568 | = "trid3d.dll"
-    PUSH 0x5c0e80                       ; 004d056d | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d056d | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d0572
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0577
@@ -551,7 +551,7 @@ section .text
         ;   XREF to: 004d028a (UNCONDITIONAL_JUMP)  ; LAB_004d028a
     PUSH 0x5886c4                       ; 004d0662 | = "tri3dfx.dll"
         ;   Label: LAB_004d0662
-    PUSH 0x5c0e80                       ; 004d0667 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d0667 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d066c
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0671
@@ -559,17 +559,17 @@ section .text
     JNZ 0x004d028a                      ; 004d0676
         ;   XREF to: 004d028a (CONDITIONAL_JUMP)  ; LAB_004d028a
     MOV ESI,0x5886d0                    ; 004d067c | = "tridx6.dll"
-    MOV EDI,0x5c0e80                    ; 004d0681 | = "trid3d.dll"
-    PUSH EDI                            ; 004d0686 | = "trid3d.dll"
+    MOV EDI,0x5c0e80                    ; 004d0681 | g_RendererDllPath
+    PUSH EDI                            ; 004d0686 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 004d0687 | = "tridx6.dll" | s_tridx6_dll_005886d0+2
         ;   Label: LAB_004d0687
-    MOV byte ptr [EDI],AL               ; 004d0689 | = "trid3d.dll" | s_trid3d_dll_005c0e80+2
+    MOV byte ptr [EDI],AL               ; 004d0689 | g_RendererDllPath | g_RendererDllPath+2
     CMP AL,0x0                          ; 004d068b
     JZ 0x004d069f                       ; 004d068d
         ;   XREF to: 004d069f (CONDITIONAL_JUMP)  ; LAB_004d069f
     MOV AL,byte ptr [ESI + 0x1]         ; 004d068f | s_tridx6_dll_005886d0+1 | s_tridx6_dll_005886d0+3
     ADD ESI,0x2                         ; 004d0692
-    MOV byte ptr [EDI + 0x1],AL         ; 004d0695 | s_trid3d_dll_005c0e80+1 | s_d3d_dll_005c0e83
+    MOV byte ptr [EDI + 0x1],AL         ; 004d0695 | g_RendererDllPath+1 | s_d3d_dll_005c0e83
     ADD EDI,0x2                         ; 004d0698
     CMP AL,0x0                          ; 004d069b
     JNZ 0x004d0687                      ; 004d069d
@@ -668,7 +668,7 @@ section .text
         ;   XREF to: 004d03d5 (UNCONDITIONAL_JUMP)  ; LAB_004d03d5
     PUSH 0x588843                       ; 004d0785 | = "tridx6.dll"
         ;   Label: LAB_004d0785
-    PUSH 0x5c0e80                       ; 004d078a | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d078a | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d078f
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0794
@@ -680,7 +680,7 @@ section .text
         ;   XREF to: 004d040a (UNCONDITIONAL_JUMP)  ; LAB_004d040a
     PUSH 0x588861                       ; 004d07a5 | = "tridx7.dll"
         ;   Label: LAB_004d07a5
-    PUSH 0x5c0e80                       ; 004d07aa | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d07aa | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d07af
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d07b4
@@ -692,7 +692,7 @@ section .text
         ;   XREF to: 004d040a (UNCONDITIONAL_JUMP)  ; LAB_004d040a
     PUSH 0x58887f                       ; 004d07c5 | = "tri3dfx.dll"
         ;   Label: LAB_004d07c5
-    PUSH 0x5c0e80                       ; 004d07ca | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d07ca | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d07cf
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d07d4
@@ -1029,7 +1029,7 @@ section .text
     JZ 0x004d062b                       ; 004d0b59
         ;   XREF to: 004d062b (CONDITIONAL_JUMP)  ; default
     PUSH 0x58896f                       ; 004d0b5f | = "trid3d.dll"
-    PUSH 0x5c0e80                       ; 004d0b64 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d0b64 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d0b69
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0b6e
@@ -1037,18 +1037,18 @@ section .text
     JNZ 0x004d0bc1                      ; 004d0b73
         ;   XREF to: 004d0bc1 (CONDITIONAL_JUMP)  ; LAB_004d0bc1
     MOV ESI,0x58897a                    ; 004d0b75 | = "tridx6.dll"
-    MOV EDI,0x5c0e80                    ; 004d0b7a | = "trid3d.dll"
+    MOV EDI,0x5c0e80                    ; 004d0b7a | g_RendererDllPath
         ;   Label: LAB_004d0b7a
-    PUSH EDI                            ; 004d0b7f | = "trid3d.dll"
+    PUSH EDI                            ; 004d0b7f | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 004d0b80 | = "tridx6.dll" | s_tridx6_dll_0058897a+2 | s_trid3d_dll_005889a6
         ;   Label: LAB_004d0b80
-    MOV byte ptr [EDI],AL               ; 004d0b82 | = "trid3d.dll" | s_trid3d_dll_005c0e80+2
+    MOV byte ptr [EDI],AL               ; 004d0b82 | g_RendererDllPath | g_RendererDllPath+2
     CMP AL,0x0                          ; 004d0b84
     JZ 0x004d0b98                       ; 004d0b86
         ;   XREF to: 004d0b98 (CONDITIONAL_JUMP)  ; LAB_004d0b98
     MOV AL,byte ptr [ESI + 0x1]         ; 004d0b88 | s_tridx6_dll_0058897a+1 | s_tridx6_dll_0058897a+3 | s_trid3d_dll_005889a6+1
     ADD ESI,0x2                         ; 004d0b8b
-    MOV byte ptr [EDI + 0x1],AL         ; 004d0b8e | s_trid3d_dll_005c0e80+1 | s_d3d_dll_005c0e83
+    MOV byte ptr [EDI + 0x1],AL         ; 004d0b8e | g_RendererDllPath+1 | s_d3d_dll_005c0e83
     ADD EDI,0x2                         ; 004d0b91
     CMP AL,0x0                          ; 004d0b94
     JNZ 0x004d0b80                      ; 004d0b96
@@ -1071,7 +1071,7 @@ section .text
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x588985                       ; 004d0bc1 | = "tridx6.dll"
         ;   Label: LAB_004d0bc1
-    PUSH 0x5c0e80                       ; 004d0bc6 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d0bc6 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d0bcb
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0bd0
@@ -1079,7 +1079,7 @@ section .text
     JZ 0x004d0bf4                       ; 004d0bd5
         ;   XREF to: 004d0bf4 (CONDITIONAL_JUMP)  ; LAB_004d0bf4
     PUSH 0x58899b                       ; 004d0bd7 | = "tridx7.dll"
-    PUSH 0x5c0e80                       ; 004d0bdc | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d0bdc | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d0be1
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0be6
@@ -1095,7 +1095,7 @@ section .text
         ;   XREF to: 004d0b7a (UNCONDITIONAL_JUMP)  ; LAB_004d0b7a
     PUSH 0x5889b1                       ; 004d0bfe | = "tri3dfx.dll"
         ;   Label: LAB_004d0bfe
-    PUSH 0x5c0e80                       ; 004d0c03 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004d0c03 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_00564520 ; 004d0c08
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_00564520(char * str1, char * str2)
     ADD ESP,0x8                         ; 004d0c0d

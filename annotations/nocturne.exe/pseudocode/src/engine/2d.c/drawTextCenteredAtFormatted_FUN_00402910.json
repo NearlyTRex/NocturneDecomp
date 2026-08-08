@@ -1,0 +1,201 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 259,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 268,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 515,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 515,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 15,
+        "message": "use of undeclared identifier 'stack0x00000010'"
+      },
+      {
+        "category": "cast_error",
+        "column": 38,
+        "line": 16,
+        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00402910",
+    "address_range": [
+      [
+        "00402910",
+        "00402971"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910",
+    "signature": "void __cdecl engine_2d_c_drawTextCenteredAtFormatted_FUN_00402910(int x,int y,char *format_string,...)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a08",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_00563a08"
+    },
+    {
+      "addr": "004028b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextCenteredAt_FUN_004028b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.037037037037037,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 23,
+      "INT_ADD": 15,
+      "INT_AND": 10,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 109
+  },
+  "stack_frame": {
+    "frame_size": 4124,
+    "local_size": 4112,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_100c",
+        "offset": -4108,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format_string",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 8,
+      "match": "&stack0x00000010",
+      "severity": "moderate",
+      "text": "local_c = &stack0x00000010;",
+      "type": "stack_ref"
+    }
+  ]
+}

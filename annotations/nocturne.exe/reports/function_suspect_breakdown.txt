@@ -4,19 +4,19 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 2423 functions
-  1 suspects: 704 functions
-  2 suspects: 385 functions
+  0 suspects: 2428 functions
+  1 suspects: 710 functions
+  2 suspects: 384 functions
   3 suspects: 191 functions
-  4 suspects: 159 functions
+  4 suspects: 158 functions
   5 suspects: 134 functions
-  6 suspects: 116 functions
-  7 suspects: 94 functions
-  8 suspects: 89 functions
-  9 suspects: 56 functions
+  6 suspects: 114 functions
+  7 suspects: 91 functions
+  8 suspects: 87 functions
+  9 suspects: 55 functions
   10 suspects: 57 functions
   11 suspects: 52 functions
-  12 suspects: 37 functions
+  12 suspects: 36 functions
   13 suspects: 28 functions
   14 suspects: 27 functions
   15 suspects: 21 functions
@@ -1106,7 +1106,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_CDeformableModelInstance_findClo ( 83 lines)
       local_3c = (CSkeleton *)((local_3c->motion_list).state_names...
 
-  [unrolled_strcpy] (41 functions)
+  [unrolled_strcpy] (42 functions)
   ------------------------------------------------------------
     core_dmodel.cpp_CKeyFramedModelInstance_setModelNa ( 18 lines)
       do {...
@@ -1117,6 +1117,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_ini.cpp_initIniFile_FUN_004bd890            ( 20 lines)
       do {...
     core_skeleton.cpp_CDeformableModelInstance_init_FU ( 20 lines)
+      do {...
+    engine_special.cpp_switchRenderer_FUN_00532f50     ( 20 lines)
       do {...
     core_dskybox.cpp_initializeSkyboxTexture_FUN_00463 ( 21 lines)
       do {...
@@ -1425,7 +1427,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_CDeformableModel_loadStream_FUN_ (264 lines)
       this_ptr->bbox_pool[0].min.z = 0.0;...
 
-  [unrolled_strlen] (15 functions)
+  [unrolled_strlen] (16 functions)
   ------------------------------------------------------------
     engine_2d.c_drawAntialiasedString_FUN_004014a0     ( 28 lines)
       do {...
@@ -1438,6 +1440,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_2d.c_drawStringMasked_FUN_00402660          ( 30 lines)
       do {...
     engine_2d.c_drawString_FUN_004026b0                ( 30 lines)
+      do {...
+    engine_2d.c_drawStringHighlighted_FUN_00402710     ( 30 lines)
       do {...
     core_script.cpp_trimString_FUN_004fe000            ( 30 lines)
       do {...
@@ -1500,6 +1504,21 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00 ( 53 lines)
       pvVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(element_count ...
 
+  [stack_ref] (6 functions)
+  ------------------------------------------------------------
+    engine_font.cpp_CBitFont_printCenterF_FUN_00490f50 (  8 lines)
+      local_14 = &stack0x00000018;...
+    engine_2d.c_drawTextFormatted_FUN_00402780         ( 10 lines)
+      local_c = &stack0x00000010;...
+    engine_2d.c_drawTextRightAlignedFormatted_FUN_0040 ( 10 lines)
+      local_c = &stack0x00000010;...
+    engine_2d.c_drawTextCenteredAtFormatted_FUN_004029 ( 10 lines)
+      local_c = &stack0x00000010;...
+    engine_2d.c_drawTextCenteredFormatted_FUN_004029f0 ( 10 lines)
+      local_10 = &stack0x00000014;...
+    support_trisock.cpp_convertSockAddr_FUN_00548d50   ( 16 lines)
+      ((uint *)&stack0xfffffff0,(uint *)&src_addr->sin_addr);...
+
   [unknown_field] (6 functions)
   ------------------------------------------------------------
     core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_ ( 26 lines)
@@ -1554,13 +1573,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 0 params but call sites push 2 (2 missing)...
     core_mission.cpp_FUN_004d9900                      (  8 lines)
       Function declares 0 params but call sites push 1 (1 missing)...
-
-  [stack_ref] (2 functions)
-  ------------------------------------------------------------
-    engine_font.cpp_CBitFont_printCenterF_FUN_00490f50 (  8 lines)
-      local_14 = &stack0x00000018;...
-    support_trisock.cpp_convertSockAddr_FUN_00548d50   ( 16 lines)
-      ((uint *)&stack0xfffffff0,(uint *)&src_addr->sin_addr);...
 
   [warning_unreachable] (2 functions)
   ------------------------------------------------------------
@@ -1635,8 +1647,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/pkbmpset.cpp, Lines: 6, Types: ['stack_param']
   core_skeleton.cpp_SVert_ctor_FUN_0051f840
     File: core/skeleton.cpp, Lines: 6, Types: ['pointer_cast', 'pointer_truncation']
-  engine_special.cpp_FUN_00532fa0
-    File: engine/special.cpp, Lines: 6, Types: ['stack_param']
   core_stranger.cpp_FUN_00540a10
     File: core/stranger.cpp, Lines: 6, Types: ['stack_param']
   core_stranger.cpp_FUN_00540a20

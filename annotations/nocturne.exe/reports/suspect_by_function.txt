@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4942
-Clean: 2395 (48.5%)
-With suspects: 2547
-Total suspects: 25226
+Clean: 2400 (48.6%)
+With suspects: 2542
+Total suspects: 25154
 
 ====================================================================================================
 cockpit_ckptutil.c_FUN_0042d180 (24 suspects)
@@ -26201,108 +26201,6 @@ core_zombie.cpp_CZombie_setup_FUN_0055ec20 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-engine_2d.c_FUN_00402710 (12 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402710(byte *param_1,int param_2,int param_3)
-  Line 12 [unnamed_param]: pbVar5 = param_1;
-  Line 13 [unrolled_strlen]: do {
-  Line 22 [unnamed_param]: bVar1 = *param_1;
-  Line 24 [unnamed_param]: iVar2 = engine_2d_c_drawCharacterHighlighted_FUN_004021a0((uint)bVar1,param_2,param_3);
-  Line 24 [unnamed_param]: iVar2 = engine_2d_c_drawCharacterHighlighted_FUN_004021a0((uint)bVar1,param_2,param_3);
-  Line 25 [unnamed_param]: param_2 = param_2 + iVar2;
-  Line 25 [unnamed_param]: param_2 = param_2 + iVar2;
-  Line 28 [unnamed_param]: param_1 = param_1 + 1;
-  Line 28 [unnamed_param]: param_1 = param_1 + 1;
-
-====================================================================================================
-engine_2d.c_FUN_00402780 (7 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402780(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402780(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402780(int param_1,int param_2,char *param_3)
-  Line 8 [stack_ref]: local_c = &stack0x00000010;
-  Line 9 [unnamed_param]: _vsprintf(local_100c,param_3,(va_list_t)&local_c);
-  Line 11 [unnamed_param]: engine_2d_c_drawText_FUN_00402600(local_100c,param_1,param_2);
-  Line 11 [unnamed_param]: engine_2d_c_drawText_FUN_00402600(local_100c,param_1,param_2);
-
-====================================================================================================
-engine_2d.c_FUN_00402820 (6 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402820(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402820(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402820(int param_1,int param_2,char *param_3)
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004027f0(param_3,param_1,param_2);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004027f0(param_3,param_1,param_2);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004027f0(param_3,param_1,param_2);
-
-====================================================================================================
-engine_2d.c_FUN_00402840 (7 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402840(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402840(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402840(int param_1,int param_2,char *param_3)
-  Line 8 [stack_ref]: local_c = &stack0x00000010;
-  Line 9 [unnamed_param]: _vsprintf(local_100c,param_3,(va_list_t)&local_c);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_004027f0(local_100c,param_1,param_2);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_004027f0(local_100c,param_1,param_2);
-
-====================================================================================================
-engine_2d.c_FUN_004028f0 (6 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004028f0(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004028f0(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004028f0(int param_1,int param_2,char *param_3)
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004028b0(param_3,param_1,param_2);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004028b0(param_3,param_1,param_2);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_004028b0(param_3,param_1,param_2);
-
-====================================================================================================
-engine_2d.c_FUN_00402910 (7 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402910(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402910(int param_1,int param_2,char *param_3)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_00402910(int param_1,int param_2,char *param_3)
-  Line 8 [stack_ref]: local_c = &stack0x00000010;
-  Line 9 [unnamed_param]: _vsprintf(local_100c,param_3,(va_list_t)&local_c);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_004028b0(local_100c,param_1,param_2);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_004028b0(local_100c,param_1,param_2);
-
-====================================================================================================
-engine_2d.c_FUN_004029c0 (8 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029c0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029c0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029c0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029c0(int param_1,int param_2,int param_3,char *param_4)
-  Line 5 [unnamed_param]: engine_2d_c_FUN_00402980(param_4,param_1,param_2,param_3);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_00402980(param_4,param_1,param_2,param_3);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_00402980(param_4,param_1,param_2,param_3);
-  Line 5 [unnamed_param]: engine_2d_c_FUN_00402980(param_4,param_1,param_2,param_3);
-
-====================================================================================================
-engine_2d.c_FUN_004029f0 (9 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029f0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029f0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029f0(int param_1,int param_2,int param_3,char *param_4)
-  Line 2 [unnamed_param]: void engine_2d_c_FUN_004029f0(int param_1,int param_2,int param_3,char *param_4)
-  Line 8 [stack_ref]: local_10 = &stack0x00000014;
-  Line 9 [unnamed_param]: _vsprintf(local_1010,param_4,(va_list_t)&local_10);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_00402980(local_1010,param_1,param_2,param_3);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_00402980(local_1010,param_1,param_2,param_3);
-  Line 11 [unnamed_param]: engine_2d_c_FUN_00402980(local_1010,param_1,param_2,param_3);
-
-====================================================================================================
 engine_2d.c_FUN_00402ad0 (6 suspects)
   File: engine/2d.c
 ====================================================================================================
@@ -26575,6 +26473,12 @@ engine_2d.c_drawLine3D_FUN_00401710 (18 suspects)
   Line 67 [static_uninitvar]: z1 = z1 + iStack_1c;
 
 ====================================================================================================
+engine_2d.c_drawStringHighlighted_FUN_00402710 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
 engine_2d.c_drawStringMasked_FUN_00402660 (1 suspect)
   File: engine/2d.c
 ====================================================================================================
@@ -26587,6 +26491,24 @@ engine_2d.c_drawString_FUN_004026b0 (1 suspect)
   Line 14 [unrolled_strlen]: do {
 
 ====================================================================================================
+engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 8 [stack_ref]: local_c = &stack0x00000010;
+
+====================================================================================================
+engine_2d.c_drawTextCenteredFormatted_FUN_004029f0 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 8 [stack_ref]: local_10 = &stack0x00000014;
+
+====================================================================================================
+engine_2d.c_drawTextFormatted_FUN_00402780 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 8 [stack_ref]: local_c = &stack0x00000010;
+
+====================================================================================================
 engine_2d.c_drawTextMultilineColor_FUN_00402570 (1 suspect)
   File: engine/2d.c
 ====================================================================================================
@@ -26597,6 +26519,12 @@ engine_2d.c_drawTextMultiline_FUN_00402320 (1 suspect)
   File: engine/2d.c
 ====================================================================================================
   Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 8 [stack_ref]: local_c = &stack0x00000010;
 
 ====================================================================================================
 engine_2d.c_drawTextWrappedColor_FUN_004024e0 (1 suspect)
@@ -33059,37 +32987,6 @@ engine_special.cpp_CExternalRenderer_validate_FUN_00532df0 (6 suspects)
   Line 55 [shadow_pointer_walk]: capabilities = (CExternalRenderer *)(capabilities->description + 4);
 
 ====================================================================================================
-engine_special.cpp_FUN_00532f30 (5 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 5 [stack_param]: int in_stack_00000004;
-  Line 6 [stack_param]: uint in_stack_00000008;
-  Line 8 [stack_param]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
-  Line 8 [stack_param]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
-  Line 15 [static_uninitvar]: engine_special_cpp_FUN_00532f50((char *)(in_stack_00000004 + 0x1dc8),in_stack_00000008);
-
-====================================================================================================
-engine_special.cpp_FUN_00532f50 (8 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,int param_2)
-  Line 2 [unnamed_param]: void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,int param_2)
-  Line 10 [unnamed_param]: g_RendererHandle = param_2;
-  Line 11 [unrolled_strcpy]: do {
-  Line 12 [unnamed_param]: cVar1 = *param_1;
-  Line 15 [unnamed_param]: cVar1 = param_1[1];
-  Line 16 [unnamed_param]: param_1 = param_1 + 2;
-  Line 16 [unnamed_param]: param_1 = param_1 + 2;
-
-====================================================================================================
-engine_special.cpp_FUN_00532fa0 (3 suspects)
-  File: engine/special.cpp
-====================================================================================================
-  Line 5 [stack_param]: int *in_stack_00000004;
-  Line 7 [stack_param]: *in_stack_00000004 = g_RendererHandle;
-  Line 14 [static_uninitvar]: *in_stack_00000004 = g_RendererHandle;
-
-====================================================================================================
 engine_special.cpp_clearScreenRegion_FUN_0052ef37 (4 suspects)
   File: engine/special.cpp
 ====================================================================================================
@@ -33541,6 +33438,12 @@ engine_special.cpp_renderScanline_FUN_00530710 (2 suspects)
 ====================================================================================================
   Line 5 [warning_jumptable]: /* WARNING: Could not recover jumptable at 0x00530710. Too many branches */
   Line 6 [warning_indirect_jump]: /* WARNING: Treating indirect jump as call */
+
+====================================================================================================
+engine_special.cpp_switchRenderer_FUN_00532f50 (1 suspect)
+  File: engine/special.cpp
+====================================================================================================
+  Line 12 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_special.cpp_toggle_FUN_00532ba0 (12 suspects)

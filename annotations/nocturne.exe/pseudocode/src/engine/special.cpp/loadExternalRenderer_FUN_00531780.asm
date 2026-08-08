@@ -10,8 +10,8 @@
 ;
 ; XREF[4]:
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0234
-;   engine_special.cpp_FUN_00532f50 at 00532f8a
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 at 005324ca
+;   engine_special.cpp_switchRenderer_FUN_00532f50 at 00532f8a
 ;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40 at 00552c55
 ;
 ; Referenced Globals:
@@ -72,7 +72,7 @@ section .text
         ;   Label: LAB_005317b1
     JMP 0x0053179b                      ; 005317b7
         ;   XREF to: 0053179b (UNCONDITIONAL_JUMP)  ; LAB_0053179b
-    PUSH 0x5c0e80                       ; 005317b9 | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 005317b9 | g_RendererDllPath
         ;   Label: LAB_005317b9
     CALL wincore_wddvmem.cpp_FUN_00553d30 ; 005317be
         ;   XREF to: 00553d30 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_FUN_00553d30(LPCSTR lpLibFileName)
@@ -861,7 +861,7 @@ section .text
     POP ESI                             ; 00532284
     POP EBX                             ; 00532285
     RET                                 ; 00532286
-    MOV EDX,dword ptr [0x02dc9d64]      ; 00532287 | g_RendererHandle
+    MOV EDX,dword ptr [0x02dc9d64]      ; 00532287 | g_RendererCardIndex
         ;   Label: LAB_00532287
     PUSH EDX                            ; 0053228d
     CALL engine_special.cpp_selectCard_FUN_00532d00 ; 0053228e

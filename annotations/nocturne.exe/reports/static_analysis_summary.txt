@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 376
+  Functions with static analysis data: 372
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   11
 
   Cppcheck (quick):
-    Files analyzed:      370
-    Files with findings: 370
-    Total diagnostics:   1028
+    Files analyzed:      366
+    Files with findings: 366
+    Total diagnostics:   1011
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -33,7 +33,7 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                 494  [likely decompiler artifact]
+  uninitvar                                                 492  [likely decompiler artifact]
   shiftTooManyBitsSigned                                    200  [likely decompiler artifact]
   legacyUninitvar                                            93
   ignoredReturnValue                                         58
@@ -41,10 +41,10 @@ TOP FINDINGS - Cppcheck (quick)
   invalidscanf                                               41
   objectIndex                                                27
   invalidPointerCast                                         15
-  staticStringCompare                                        11
   nullPointer                                                 9
   shiftNegativeLHS                                            7
   pointerOutOfBounds                                          4
   nullPointerRedundantCheck                                   4
   identicalInnerCondition                                     4
-  stringLiteralWrite                                          4
+  arrayIndexOutOfBoundsCond                                   3
+  arrayIndexOutOfBounds                                       3

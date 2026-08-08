@@ -88,27 +88,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004027f0",
-      "from_addr": "004027fb",
-      "name": "engine_2d.c_FUN_004027f0",
+      "addr": "00402c20",
+      "from_addr": "00402c2b",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004028b0",
       "from_addr": "004028bb",
-      "name": "engine_2d.c_FUN_004028b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402980",
-      "from_addr": "00402996",
-      "name": "engine_2d.c_FUN_00402980",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402c20",
-      "from_addr": "00402c2b",
-      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402c20",
+      "name": "engine_2d.c_drawTextCenteredAt_FUN_004028b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -118,9 +106,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00402980",
+      "from_addr": "00402996",
+      "name": "engine_2d.c_drawTextCentered_FUN_00402980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00402b60",
       "from_addr": "00402b6b",
       "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004027f0",
+      "from_addr": "004027fb",
+      "name": "engine_2d.c_drawTextRightAligned_FUN_004027f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -212,7 +212,7 @@
       {
         "call_addr": "004027fb",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004027f0",
+        "caller": "engine_2d.c_drawTextRightAligned_FUN_004027f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -223,7 +223,7 @@
       {
         "call_addr": "004028bb",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004028b0",
+        "caller": "engine_2d.c_drawTextCenteredAt_FUN_004028b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -234,7 +234,7 @@
       {
         "call_addr": "00402996",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402980",
+        "caller": "engine_2d.c_drawTextCentered_FUN_00402980",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

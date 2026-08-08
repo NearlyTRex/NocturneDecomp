@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,942
-  Unnamed functions (FUN_):          549 (11.1%)
-  Functions with unnamed params:     29 ( 0.6%)
-  Functions with type issues:        1,754 (35.5%)
+  Unnamed functions (FUN_):          534 (10.8%)
+  Functions with unnamed params:     28 ( 0.6%)
+  Functions with type issues:        1,751 (35.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,8 +22,8 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   2
     Missing register params:           34
     Wrong calling convention:          73
-    Undefined types in variables:      1616
-    Unresolved stack params:           167
+    Undefined types in variables:      1615
+    Unresolved stack params:           165
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -300,33 +300,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005458a0  __cdecl       0 callers
     0x005458d0  __cdecl       0 callers
 
-  engine/2d.c (25 unnamed)
-    0x004027f0  __cdecl       2 callers
-    0x004028b0  __cdecl       2 callers
-    0x00402980  __cdecl       2 callers
-    0x00402760  __cdecl       1 callers
-    0x00402d30  __cdecl       1 callers
-    0x00402e90  unknown       1 callers
-    0x00403130  __cdecl       1 callers
-    0x004031a0  unknown       1 callers
-    0x00403500  __cdecl       1 callers
-    0x00402710  unknown       0 callers
-    0x00402780  unknown       0 callers
-    0x00402820  unknown       0 callers
-    0x00402840  unknown       0 callers
-    0x004028f0  unknown       0 callers
-    0x00402910  unknown       0 callers
-    0x004029c0  unknown       0 callers
-    0x004029f0  unknown       0 callers
-    0x00402ad0  unknown       0 callers
-    0x00402af0  unknown       0 callers
-    0x00402b90  unknown       0 callers
-    0x00402bb0  unknown       0 callers
-    0x00402c60  unknown       0 callers
-    0x00402c80  unknown       0 callers
-    0x00402d60  unknown       0 callers
-    0x00403070  unknown       0 callers
-
   core/ammobox.cpp (1 unnamed)
     0x0040f1a0  __cdecl       2 callers
 
@@ -427,6 +400,21 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00553ca0  __cdecl       1 callers
     0x00552a20  unknown       0 callers
     0x00552af0  unknown       0 callers
+
+  engine/2d.c (13 unnamed)
+    0x00402d30  __cdecl       1 callers
+    0x00402e90  unknown       1 callers
+    0x00403130  __cdecl       1 callers
+    0x004031a0  unknown       1 callers
+    0x00403500  __cdecl       1 callers
+    0x00402ad0  unknown       0 callers
+    0x00402af0  unknown       0 callers
+    0x00402b90  unknown       0 callers
+    0x00402bb0  unknown       0 callers
+    0x00402c60  unknown       0 callers
+    0x00402c80  unknown       0 callers
+    0x00402d60  unknown       0 callers
+    0x00403070  unknown       0 callers
 
   core/baron.cpp (1 unnamed)
     0x00410cc0  __cdecl       1 callers
@@ -579,11 +567,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/slew.cpp (1 unnamed)
     0x0051f930  __cdecl       1 callers
-
-  engine/special.cpp (3 unnamed)
-    0x00532f50  __cdecl       1 callers
-    0x00532f30  __cdecl       0 callers
-    0x00532fa0  __cdecl       0 callers
 
   core/spike.cpp (1 unnamed)
     0x00533750  __cdecl       1 callers
@@ -860,10 +843,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x00513e20  File: core/setdir.cpp
     Unnamed: param_2 (int), param_3 (CVector3f *)
     Named:   this_ptr (CDemonSet *)
-
-  FUN_00532f50
-    Address: 0x00532f50  File: engine/special.cpp
-    Unnamed: param_1 (char *), param_2 (undefined4)
 
   CPackedBitmap
     Address: 0x004f4b30  File: cockpit/pkbitmap.cpp
@@ -1613,7 +1592,7 @@ Wrong calling convention (unaffected register usage) (73)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (167)
+Unresolved stack parameters (missing from signature) (165)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -2474,18 +2453,6 @@ Unresolved stack parameters (missing from signature) (167)
     Signature: undefined4 * core_sound_cpp_FUN_0052ee40(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00532f30
-    Address: 0x00532f30  File: engine/special.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl engine_special_cpp_FUN_00532f30(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00532fa0
-    Address: 0x00532fa0  File: engine/special.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: char * __cdecl engine_special_cpp_FUN_00532fa0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_00534f90
     Address: 0x00534f90  File: core/stranger.cpp
     Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
@@ -2619,7 +2586,7 @@ Unresolved stack parameters (missing from signature) (167)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1616)
+Undefined types in variables (1615)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -8080,26 +8047,6 @@ Undefined types in variables (1616)
     Locals:  local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00402780
-    Address: 0x00402780  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00402840
-    Address: 0x00402840  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00402910
-    Address: 0x00402910  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004029f0
-    Address: 0x004029f0  File: engine/2d.c
-    Locals:  local_1010 (undefined), local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   FUN_00402af0
     Address: 0x00402af0  File: engine/2d.c
     Locals:  local_100c (undefined), local_c (undefined4)
@@ -8128,6 +8075,26 @@ Undefined types in variables (1616)
   drawCharacterMasked
     Address: 0x00401f30  File: engine/2d.c
     Locals:  local_14 (undefined4), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextCenteredAtFormatted
+    Address: 0x00402910  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextCenteredFormatted
+    Address: 0x004029f0  File: engine/2d.c
+    Locals:  local_1010 (undefined), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextFormatted
+    Address: 0x00402780  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextRightAlignedFormatted
+    Address: 0x00402840  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   getInputWithPrompt
@@ -10462,11 +10429,6 @@ Undefined types in variables (1616)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00532f50
-    Address: 0x00532f50  File: engine/special.cpp
-    Params:  param_2 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   loadExternalRenderer
     Address: 0x00531780  File: engine/special.cpp
     Locals:  local_1e64 (undefined)
@@ -11207,19 +11169,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0055df19  (void)
     0x0055df90  (void)
 
-  engine_2d.c  (25 functions)
-    0x00402710  (byte *param_1,int param_2,int param_3)
-    0x00402760  (int x,int y,char *text)
-    0x00402780  (int param_1,int param_2,char *param_3)
-    0x004027f0  (char *text,int x,int y)
-    0x00402820  (int param_1,int param_2,char *param_3)
-    0x00402840  (int param_1,int param_2,char *param_3)
-    0x004028b0  (char *text,int x,int y)
-    0x004028f0  (int param_1,int param_2,char *param_3)
-    0x00402910  (int param_1,int param_2,char *param_3)
-    0x00402980  (char *text,int left_x,int right_x,int y)
-    0x004029c0  (int param_1,int param_2,int param_3,char *param_4)
-    0x004029f0  (int param_1,int param_2,int param_3,char *param_4)
+  engine_2d.c  (13 functions)
     0x00402ad0  (int param_1,int param_2,char *param_3)
     0x00402af0  (int param_1,int param_2,char *param_3)
     0x00402b90  (int param_1,int param_2,char *param_3)
@@ -11334,10 +11284,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fa2e0  (int *vertex_indices,int vertex_count)
     0x004faca0  (void)
 
-  engine_special.cpp  (3 functions)
-    0x00532f30  (void)
-    0x00532f50  (char *param_1,int param_2)
-    0x00532fa0  (void)
+  engine_special.cpp_switchRenderer  (2 functions)
+    0x00532f30  (CExternalRenderer *renderer,int card_index)
+    0x00532f50  (char *new_dll_name,int card_index)
 
   engine_texture.cpp  (3 functions)
     0x005458a0  (void)

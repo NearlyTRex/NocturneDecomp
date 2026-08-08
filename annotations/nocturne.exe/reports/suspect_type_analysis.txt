@@ -4,18 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  undefined_data                  4851 ( 19.2%)
-  pointer_cast                    3739 ( 14.8%)
+  undefined_data                  4851 ( 19.3%)
+  pointer_cast                    3739 ( 14.9%)
   pointer_truncation              3094 ( 12.3%)
-  unnamed_param                   2084 (  8.3%)
+  unnamed_param                   2020 (  8.0%)
   unrolled_memcpy                 1568 (  6.2%)
-  stack_param                     1141 (  4.5%)
+  stack_param                     1135 (  4.5%)
   warning_overlapping_globals      930 (  3.7%)
   unknown_field                    734 (  2.9%)
   concat_reconstruction            666 (  2.6%)
   unaffected_reg                   664 (  2.6%)
   shadow_pointer_walk              550 (  2.2%)
-  static_uninitvar                 494 (  2.0%)
+  static_uninitvar                 492 (  2.0%)
   unrolled_strcpy                  483 (  1.9%)
   stack_ref                        459 (  1.8%)
   negative_offset                  458 (  1.8%)
@@ -2163,14 +2163,14 @@ Functions:
   wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
-TYPE: unnamed_param (2084 occurrences)
+TYPE: unnamed_param (2020 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   926x  param_1
-   602x  param_2
-   259x  param_3
-   177x  param_4
+   902x  param_1
+   582x  param_2
+   243x  param_3
+   173x  param_4
     76x  param_5
     25x  param_6
     14x  param_7
@@ -2295,14 +2295,6 @@ Functions:
   core_wateract.cpp_CWaterActor_FUN_005519c0
   core_xform.cpp_FUN_0055d5e0
   core_xform.cpp_FUN_0055d660
-  engine_2d.c_FUN_00402710
-  engine_2d.c_FUN_00402780
-  engine_2d.c_FUN_00402820
-  engine_2d.c_FUN_00402840
-  engine_2d.c_FUN_004028f0
-  engine_2d.c_FUN_00402910
-  engine_2d.c_FUN_004029c0
-  engine_2d.c_FUN_004029f0
   engine_2d.c_FUN_00402ad0
   engine_2d.c_FUN_00402af0
   engine_2d.c_FUN_00402b90
@@ -2347,7 +2339,6 @@ Functions:
   engine_pod.cpp_FUN_004f7980
   engine_pod.cpp_FUN_004f8eb0
   engine_prim.c_FUN_004f9bc0
-  engine_special.cpp_FUN_00532f50
   shape_edittool.cpp_FUN_0046f7e0
   shape_edittool.cpp_FUN_0046fb40
   shape_edittool.cpp_FUN_0046fcd0
@@ -2934,12 +2925,12 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: stack_param (1141 occurrences)
+TYPE: stack_param (1135 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   263x  in_stack_00000004
-   154x  in_stack_00000008
+   259x  in_stack_00000004
+   152x  in_stack_00000008
     62x  in_stack_0000000c
     48x  in_stack_00000010
     41x  in_stack_fffffc88
@@ -3095,8 +3086,6 @@ Functions:
   engine_pod.cpp_FUN_004f9100
   engine_prim.c_FUN_004f9440
   engine_prim.c_FUN_004faca0
-  engine_special.cpp_FUN_00532f30
-  engine_special.cpp_FUN_00532fa0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
@@ -4719,11 +4708,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: static_uninitvar (494 occurrences)
+TYPE: static_uninitvar (492 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   494x  Cppcheck: uninitialized variable
+   492x  Cppcheck: uninitialized variable
 
 Functions:
   cockpit_ckptutil.c_FUN_0042d180
@@ -4924,8 +4913,6 @@ Functions:
   engine_prim.c_FUN_004f942e
   engine_prim.c_FUN_004f9440
   engine_prim.c_FUN_004faca0
-  engine_special.cpp_FUN_00532f30
-  engine_special.cpp_FUN_00532fa0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
@@ -5140,7 +5127,7 @@ Functions:
   engine_pod.cpp_CPod_initSearch_FUN_004f8d50
   engine_pod.cpp_CPod_remount_FUN_004f8970
   engine_pod.cpp_findFilesByExtension_FUN_004f8b90
-  engine_special.cpp_FUN_00532f50
+  engine_special.cpp_switchRenderer_FUN_00532f50
   engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0
   engine_texture.cpp_getCurrentTexture_FUN_00545ad0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
@@ -5308,14 +5295,14 @@ Functions:
   core_weapon.cpp_CWeapon_onDropped_FUN_00554310
   core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0
   core_werewolf.cpp_CWerewolf_process_FUN_00555c60
-  engine_2d.c_FUN_00402780
-  engine_2d.c_FUN_00402840
-  engine_2d.c_FUN_00402910
-  engine_2d.c_FUN_004029f0
   engine_2d.c_FUN_00402af0
   engine_2d.c_FUN_00402bb0
   engine_2d.c_FUN_00402c80
   engine_2d.c_FUN_00402d60
+  engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910
+  engine_2d.c_drawTextCenteredFormatted_FUN_004029f0
+  engine_2d.c_drawTextFormatted_FUN_00402780
+  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840
   engine_3d.c_FUN_00409210
   engine_3d.c_FUN_00409510
   engine_3d.c_drawLineStrip2D_FUN_00405870
@@ -5800,8 +5787,8 @@ Functions:
   core_script.cpp_validateActorVariableName_FUN_004fdec0
   core_sound.cpp_playSfxInternal_FUN_0052d120
   core_texlist.cpp_CTextureList_load_FUN_00544950
-  engine_2d.c_FUN_00402710
   engine_2d.c_drawAntialiasedString_FUN_004014a0
+  engine_2d.c_drawStringHighlighted_FUN_00402710
   engine_2d.c_drawStringMasked_FUN_00402660
   engine_2d.c_drawString_FUN_004026b0
   engine_2d.c_drawTextMultilineColor_FUN_00402570

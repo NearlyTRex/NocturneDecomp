@@ -230,6 +230,94 @@ Rules for these blocks:
 
 **Report all findings directly in the terminal response. Do NOT write spec files, worklist files, markdown reports, or any other artifact to disk unless the user explicitly asks for one.** The analysis is the deliverable. Do not offer to write one up as a file, and do not create `*_spec.md` or worklist entries on your own initiative.
 
+The **transfer file** below is the single exception, and only when the user asks for one. It is not a report - it is machine input, consumed and then thrown away.
+
+### Transfer Files: Applying a Batch of Change Blocks Mechanically
+
+A change block is for a human to hand-apply in Ghidra. Once a session produces more than a handful, retyping them by hand is the error-prone step. A **transfer file** is the same information in a form `apply_sibling_signatures.py --source ledger` can write directly.
+
+**These files are disposable.** Write one, apply it, delete it. Do not accumulate them, do not treat one as a record of what was decided - the decisions live in the terminal analysis and in the Ghidra database. Only this spec is permanent. Never put explanatory prose inside the file; it belongs here.
+
+Write one **only when asked**, and it never replaces the change blocks - emit those in the terminal as usual, then offer the file as the way to apply them.
+
+#### Format
+
+Any path; `--ledger <path>` points the tool at it. One entry per function.
+
+```json
+{
+  "schema": 1,
+  "entries": [
+    {
+      "program": "nocturne.exe",
+      "address": "00402780",
+      "name": "engine_2d.c_drawTextFormatted_FUN_00402780",
+      "ret": "void",
+      "conv": "__cdecl",
+      "varargs": true,
+      "params": [
+        {"name": "x", "type": "int"},
+        {"name": "y", "type": "int"},
+        {"name": "format_string", "type": "char *"}
+      ],
+      "expect": {"name": "engine_2d.c_FUN_00402780", "range": ["00402780", "004027e1"]},
+      "source": {
+        "program": "nocedit.exe",
+        "address": "00402150",
+        "name": "engine_2d.c_drawTextFormatted_FUN_00402150",
+        "method": "asm-diff-identical",
+        "confidence": "high",
+        "note": "SUB ESP,0x1004 = 4096-byte buffer + va_list slot; LEA EAX,[ESP+0x101c] is va_start."
+      }
+    }
+  ]
+}
+```
+
+| Field | Meaning |
+|---|---|
+| `program` / `address` | Which binary, and the function entry in **that** binary. Lowercase hex, no `0x`. |
+| `name` | Full desired name. Written **verbatim** - the tool never computes the `_FUN_` suffix, so this must carry the **target's** address, never the sibling's. |
+| `ret` / `conv` / `params` | The corrected prototype. Ghidra-compatible types only - no `const`, no `long double`. |
+| `varargs` | `true` only with a `va_start` idiom in the assembly to prove it. Omit if you have not checked. |
+| `expect` | Staleness guards. See below - getting these wrong is the most common failure. |
+| `source` | Where it came from. `note` is **required**: an entry with no stated evidence is a guess wearing a ledger's clothes. |
+
+#### `expect.name` Is the Ghidra Symbol Name, Not the Export Filename
+
+The pseudocode exporter **drops the translation-unit prefix from its filenames**. The file is `FUN_00402780.c`, but the symbol in Ghidra is `engine_2d.c_FUN_00402780`. Reading the expected name off a directory listing produces an entry that is wrong for every function in the batch, and the whole run comes back `STALE` having written nothing.
+
+Read it from the `// Name:` header **inside** the `.c`, never from the filename.
+
+#### What the Guards Do
+
+- **`expect.name`** - the function must currently be named either this, or the desired `name` (the already-applied case). Anything else means somebody changed it since the analysis, so the entry is skipped as `STALE` rather than applied over. Not overridable.
+- **`expect.range`** - the function's body extent, from the `// Address Range:` header. If it no longer matches, a boundary-fix pass reshaped the function and the entry would now be retyping a *different* body: skipped as `DRIFT`. `--ignore-drift` overrides, only if you have re-checked the assembly.
+
+#### Workflow
+
+```bash
+# 1. structural check - instant, no Ghidra, catches sibling addresses in names
+apply_sibling_signatures.py --source ledger --ledger <path> --lint
+
+# 2. snapshot before any headless mutation
+snapshot_project.py <abs projects dir> NocturneEdit --tag pre-transfer
+
+# 3. dry run - diffs against LIVE Ghidra and prints the changed fields
+GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
+  apply_sibling_signatures.py --source ledger --ledger <path> --show 20
+
+# 4. apply, then re-run step 3: it must report everything ALREADY
+GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
+  apply_sibling_signatures.py --source ledger --ledger <path> --apply
+```
+
+Ghidra must be **closed** - it holds the project lock and the run dies before touching anything.
+
+Only fields that actually differ are written. If a name is all that changed, the signature is not touched at all, so a hand-tuned prototype is never silently re-derived.
+
+**Read the dry run before applying.** The exported annotations can be stale relative to the live database - a function the `.json` still shows as `Convention: unknown` may already be fully typed. The dry run is the only trustworthy statement of what is actually about to change.
+
 ## CRITICAL: Focus on Data Structures, Not Decompiler Aesthetics
 
 **IMPORTANT**: The goal of analysis is to identify correct data structures and function signatures that can be applied in Ghidra - NOT to make the decompiler output look pretty.
@@ -1158,7 +1246,7 @@ class CDemonActor {
 0. **Sibling Check First**: Before analyzing from scratch, look for the function's counterpart in the sibling binary (`nocedit.exe` <-> `nocturne.exe`). Transfer names/signatures/purpose; re-derive struct offsets and vtable slots from the target's own assembly. Report what was transferred vs. independently derived.
 0a. **Back-Port Corrections**: The already-solved binary is not exempt. If the binary you are analyzing reveals that the *other* binary's annotation is dummied out, misnamed, placeholder, or guessed over - report it as a correction, unprompted. Stubbed functions (bare `RET`, `doNothing*`) and the data globals they were supposed to fill are the highest-value cases. Before calling a stubbed feature absent, look for its **replacement implementation** in that build. Transfer existing sibling names rather than coining new ones, and **never place a global by address arithmetic** - no reference means no answer.
 0b. **Change-Block Format**: Any change to a symbol that already exists in a decompiled binary MUST use the `FIX IN:` block with `CURRENT:` / `CHANGE TO:` / `KIND:` / `CONFIDENCE:`. Never prose-only, never folded together. **Function changes must carry `CURRENT SIG:` / `CHANGE SIG TO:`** unless the signature is character-for-character identical AND free of every `undefined`, `param_N`, and `unknown` convention - which a rename never is. **Every block is enclosed by a 74-column `─` divider and wrapped in a plain code fence** - the fence is mandatory, because unfenced markdown eats `**` in pointer-to-pointer declarations and can make the `CURRENT SIG:` / `CHANGE SIG TO:` pair render identically. Never coloured (ANSI is silently stripped here), never dressed up with markdown emphasis.
-0c. **Terminal Only**: Findings go in the terminal response. Do not write spec files, worklists, or reports to disk unless explicitly asked.
+0c. **Terminal Only**: Findings go in the terminal response. Do not write spec files, worklists, or reports to disk unless explicitly asked. The one exception is a **transfer file** (see *Transfer Files*), and only on request: it is disposable machine input for `apply_sibling_signatures.py --source ledger`, never a record, never prose, and never a substitute for emitting the change blocks. Its `name` is written verbatim, so it must carry the **target's** address; its `expect.name` is the TU-prefixed Ghidra symbol from the `// Name:` header, **not** the export filename.
 0d. **Collision-Resistant Global Names**: Never name a global after the shape of the idiom that touches it (`Zero`, `Scratch`, `Temp`, `Saved`, `Flag`, `Count`, `Buffer`). Every name needs an **owner** prefix plus a **discriminator** unique to that address. Grep both binaries for the exact name *and* the prefix family before proposing it, and confirm which TU owns any prefix you adopt. Self-test: if a second unrelated address would also fit the name, it is too generic.
 1. **Function Names**: ALWAYS use `folder_file.ext_FunctionName_FUN_address` format
 2. **Local Variables**: Use `lowerCamelCase` naming with descriptive purposes

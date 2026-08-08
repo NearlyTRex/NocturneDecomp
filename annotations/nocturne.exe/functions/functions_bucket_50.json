@@ -60730,12 +60730,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_special.cpp_FUN_00532f50",
-    "ret":"void",
+    "name":"engine_special.cpp_switchRenderer_FUN_00532f50",
+    "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"new_dll_name",
           "storage":{
             "offset":4,
             "size":4,
@@ -60751,7 +60751,7 @@
           "type":"char*"
         },
         {
-          "name":"param_2",
+          "name":"card_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -60764,9 +60764,19 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

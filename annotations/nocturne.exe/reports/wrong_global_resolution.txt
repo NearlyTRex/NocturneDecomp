@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 5637
-  Functions with suspicious globals: 548
-  Total suspicious global references: 1297
+  Functions with suspicious globals: 549
+  Total suspicious global references: 1298
 
   Most commonly misresolved globals:
     g_CDemonActorActorType_00763e48                    44 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_Hardware16BitPalette                             7 functions
     g_CCrater_ARRAY_01c625f8                           7 functions
 
-  Raw .cpp files with issues: 548
+  Raw .cpp files with issues: 549
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -7085,6 +7085,14 @@ engine_special.cpp_fillDepthRegion_FUN_0052efc2  [.cpp]  (1 suspicious globals)
 
   g_ZBufferScanlineArray
     Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_special.cpp_initializeExternalRenderer_FUN_00530e60  [.cpp]  (1 suspicious globals)
+  File: engine/special.cpp
+
+  g_RendererDllPath
+    Used at lines: 17
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

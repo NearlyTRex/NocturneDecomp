@@ -619,12 +619,13 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_moloch.cpp_CMoloch_dtor_FUN_004dd9f0                              ( 25 lines)
     core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_004cbe20                 ( 26 lines)
 
-  [unrolled_strcpy] - 32 functions
+  [unrolled_strcpy] - 33 functions
     core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580      ( 18 lines)
     engine_pod.cpp_CPod_initSearch_FUN_004f8d50                            ( 19 lines)
     engine_dosio.cpp_getRelativeFilePath_FUN_00456700                      ( 20 lines)
     engine_ini.cpp_initIniFile_FUN_004bd890                                ( 20 lines)
     core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0           ( 20 lines)
+    engine_special.cpp_switchRenderer_FUN_00532f50                         ( 20 lines)
     core_dskybox.cpp_initializeSkyboxTexture_FUN_00463400                  ( 21 lines)
     engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0                     ( 22 lines)
     core_cloth.cpp_CClothList_add_FUN_00438390                             ( 23 lines)
@@ -676,13 +677,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_2d.c_buildColorLookupTable_FUN_00403570                         ( 48 lines)
     core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0              ( 48 lines)
 
-  [unrolled_strlen] - 14 functions
+  [unrolled_strlen] - 15 functions
     engine_2d.c_drawAntialiasedString_FUN_004014a0                         ( 28 lines)
     engine_winfont.cpp_CWinFont_getStringWidth_FUN_00558710                ( 29 lines)
     engine_winfont.cpp_CWinFont_getStringHeight_FUN_00558770               ( 29 lines)
     engine_2d.c_getAntialiasedStringWidth_FUN_004014f0                     ( 30 lines)
     engine_2d.c_drawStringMasked_FUN_00402660                              ( 30 lines)
     engine_2d.c_drawString_FUN_004026b0                                    ( 30 lines)
+    engine_2d.c_drawStringHighlighted_FUN_00402710                         ( 30 lines)
     core_script.cpp_trimString_FUN_004fe000                                ( 30 lines)
     engine_2d.c_drawTextMultiline_FUN_00402320                             ( 34 lines)
     engine_2d.c_drawTextMultilineColor_FUN_00402570                        ( 34 lines)
@@ -716,6 +718,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0                    ( 31 lines)
     core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310                      ( 41 lines)
 
+  [stack_ref] - 6 functions
+    engine_font.cpp_CBitFont_printCenterF_FUN_00490f50                     (  8 lines)
+    engine_2d.c_drawTextFormatted_FUN_00402780                             ( 10 lines)
+    engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840                 ( 10 lines)
+    engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910                   ( 10 lines)
+    engine_2d.c_drawTextCenteredFormatted_FUN_004029f0                     ( 10 lines)
+    support_trisock.cpp_convertSockAddr_FUN_00548d50                       ( 16 lines)
+
   [alloc_magic_size] - 6 functions
     core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00467250              ( 15 lines)
     core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330           ( 19 lines)
@@ -745,10 +755,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [param_count_too_few] - 2 functions
     xxx_unk.c_FUN_004940d0                                                 (  4 lines)
     core_mission.cpp_FUN_004d9900                                          (  8 lines)
-
-  [stack_ref] - 2 functions
-    engine_font.cpp_CBitFont_printCenterF_FUN_00490f50                     (  8 lines)
-    support_trisock.cpp_convertSockAddr_FUN_00548d50                       ( 16 lines)
 
   [warning_unreachable] - 2 functions
     core_course.cpp_CCourse_allocMemory_FUN_0043b610                       ( 22 lines)
@@ -797,6 +803,7 @@ ALL REMAINING FILES
   core/ammo.cpp                                                 78.6%  (11/14 clean, 3 remaining)
   core/ammobox.cpp                                              78.6%  (11/14 clean, 3 remaining)
   core/conveyor.cpp                                             76.9%  (10/13 clean, 3 remaining)
+  engine/special.cpp                                            76.7%  (46/60 clean, 14 remaining)
   core/armour.cpp                                               76.5%  (13/17 clean, 4 remaining)
   core/beast.cpp                                                75.0%  (9/12 clean, 3 remaining)
   core/drip.cpp                                                 75.0%  (9/12 clean, 3 remaining)
@@ -807,7 +814,6 @@ ALL REMAINING FILES
   core/motion.cpp                                               73.5%  (25/34 clean, 9 remaining)
   core/baron.cpp                                                73.3%  (22/30 clean, 8 remaining)
   core/colonel.cpp                                              73.3%  (11/15 clean, 4 remaining)
-  engine/special.cpp                                            73.3%  (44/60 clean, 16 remaining)
   core/anvil.cpp                                                72.7%  (8/11 clean, 3 remaining)
   core/crate.cpp                                                72.2%  (13/18 clean, 5 remaining)
   engine/ini.cpp                                                72.2%  (13/18 clean, 5 remaining)
@@ -903,6 +909,7 @@ ALL REMAINING FILES
   engine/winfont.cpp                                            44.4%  (4/9 clean, 5 remaining)
   shape/edittool.cpp                                            44.4%  (59/133 clean, 74 remaining)
   core/svetlana.cpp                                             43.8%  (7/16 clean, 9 remaining)
+  engine/2d.c                                                   43.4%  (36/83 clean, 47 remaining)
   core/box.cpp                                                  43.3%  (13/30 clean, 17 remaining)
   core/gabriela.cpp                                             42.9%  (15/35 clean, 20 remaining)
   core/moon.cpp                                                 42.9%  (6/14 clean, 8 remaining)
@@ -917,7 +924,6 @@ ALL REMAINING FILES
   engine/matrix.c                                               40.0%  (12/30 clean, 18 remaining)
   core/mimic.cpp                                                40.0%  (8/20 clean, 12 remaining)
   core/setdir.cpp                                               40.0%  (8/20 clean, 12 remaining)
-  engine/2d.c                                                   39.8%  (33/83 clean, 50 remaining)
   core/dtri.cpp                                                 39.3%  (11/28 clean, 17 remaining)
   wincore/winrun.cpp                                            37.9%  (11/29 clean, 18 remaining)
   core/netgame.cpp                                              37.5%  (24/64 clean, 40 remaining)

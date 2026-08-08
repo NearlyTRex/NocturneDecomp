@@ -70,11 +70,11 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004d0080(void)
         g_CGame_PTR_005b9354->game_bpp = 0x10;
         pCVar3->game_pixx = 0x280;
         pCVar3->game_pixy = 0x1e0;
-        iVar6 = _stricmp("trid3d.dll","tri3dfx.dll");
+        iVar6 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
         iVar5 = _DAT_01cc64a8;
         if (iVar6 != 0) {
           pcVar8 = "tri3dfx.dll";
-          pcVar10 = "trid3d.dll";
+          pcVar10 = g_RendererDllPath;
           do {
             cVar1 = *pcVar8;
             *pcVar10 = cVar1;
@@ -98,11 +98,11 @@ LAB_004d0249:
         }
       }
       else {
-        iVar6 = _stricmp("trid3d.dll","tri3dfx.dll");
+        iVar6 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
         iVar5 = _DAT_01cc64a8;
         if (iVar6 == 0) {
           pcVar8 = "tridx6.dll";
-          pcVar10 = "trid3d.dll";
+          pcVar10 = g_RendererDllPath;
           do {
             cVar1 = *pcVar8;
             *pcVar10 = cVar1;
@@ -199,22 +199,22 @@ LAB_004d039c:
     }
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar8);
     _sprintf((char *)0x1cc5d80,pcVar8);
-    iVar5 = _stricmp("trid3d.dll","trid3d.dll");
+    iVar5 = _stricmp(g_RendererDllPath,"trid3d.dll");
     if (iVar5 == 0) {
       pcVar8 = "3D API : DirectX 5";
     }
     else {
-      iVar5 = _stricmp("trid3d.dll","tridx6.dll");
+      iVar5 = _stricmp(g_RendererDllPath,"tridx6.dll");
       if (iVar5 == 0) {
         pcVar8 = "3D API : DirectX 6";
       }
       else {
-        iVar5 = _stricmp("trid3d.dll","tridx7.dll");
+        iVar5 = _stricmp(g_RendererDllPath,"tridx7.dll");
         if (iVar5 == 0) {
           pcVar8 = "3D API : DirectX 7";
         }
         else {
-          iVar5 = _stricmp("trid3d.dll","tri3dfx.dll");
+          iVar5 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
           if (iVar5 == 0) {
             if (bVar2) {
               pcVar8 = "3D API : DirectX 6";
@@ -357,7 +357,7 @@ LAB_004d039c:
     iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440
                       ((char **)0x1cc6480,iVar5,&local_20,0xfa,pcVar9);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar6 = _stricmp("trid3d.dll","trid3d.dll");
+    iVar6 = _stricmp(g_RendererDllPath,"trid3d.dll");
     pCVar3 = g_CGame_PTR_005b9354;
     bVar12 = iVar6 != 0;
     if ((!bVar12) && (0x1e0 < g_CGame_PTR_005b9354->game_pixy)) {
@@ -523,11 +523,11 @@ LAB_004d0af9:
       break;
     case 3:
       if (*(int *)(&DAT_01cc652c + _DAT_01cc64a4 * 4) != 0x121a) {
-        iVar5 = _stricmp("trid3d.dll","trid3d.dll");
+        iVar5 = _stricmp(g_RendererDllPath,"trid3d.dll");
         if (iVar5 == 0) {
           pcVar9 = "tridx6.dll";
 LAB_004d0b7a:
-          pcVar8 = "trid3d.dll";
+          pcVar8 = g_RendererDllPath;
           do {
             cVar1 = *pcVar9;
             *pcVar8 = cVar1;
@@ -539,17 +539,17 @@ LAB_004d0b7a:
           } while (cVar1 != '\0');
         }
         else {
-          iVar5 = _stricmp("trid3d.dll","tridx6.dll");
+          iVar5 = _stricmp(g_RendererDllPath,"tridx6.dll");
           if (iVar5 == 0) {
             pcVar9 = "tridx7.dll";
             goto LAB_004d0b7a;
           }
-          iVar5 = _stricmp("trid3d.dll","tridx7.dll");
+          iVar5 = _stricmp(g_RendererDllPath,"tridx7.dll");
           if (iVar5 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_004d0b7a;
           }
-          iVar5 = _stricmp("trid3d.dll","tri3dfx.dll");
+          iVar5 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
           if (iVar5 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_004d0b7a;

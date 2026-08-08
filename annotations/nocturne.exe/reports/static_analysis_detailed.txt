@@ -61,11 +61,11 @@ cert-flp30-c (5)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (1028 diagnostics)
+Cppcheck (quick) (1011 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (494)
+uninitvar (492)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_FUN_0042d180                    line 23
@@ -1819,14 +1819,6 @@ uninitvar (494)
   engine_prim.c_FUN_004faca0                         line 24
     File: engine/prim.c
     Uninitialized variable: in_stack_00000008
-
-  engine_special.cpp_FUN_00532f30                    line 15
-    File: engine/special.cpp
-    Uninitialized variable: in_stack_00000004
-
-  engine_special.cpp_FUN_00532fa0                    line 14
-    File: engine/special.cpp
-    Uninitialized variable: in_stack_00000004
 
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FU line 62
     File: engine/winfont.cpp
@@ -3973,54 +3965,6 @@ invalidPointerCast (15)
     Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-staticStringCompare (11)
-----------------------------------------------------------------------------------------------------
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 73
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 101
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 202
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 207
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 212
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 217
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 360
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 526
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 542
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 547
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 552
-    File: core/menu.cpp
-    Unnecessary comparison of static strings.
-
-----------------------------------------------------------------------------------------------------
 nullPointer (9)
 ----------------------------------------------------------------------------------------------------
 
@@ -4151,26 +4095,6 @@ identicalInnerCondition (4)
   engine_texture.cpp_CTextureCache_setupTexture_FUN_ line 32
     File: engine/texture.cpp
     Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-stringLiteralWrite (4)
-----------------------------------------------------------------------------------------------------
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 77
-    File: core/menu.cpp
-    Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 105
-    File: core/menu.cpp
-    Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_004d008 line 530
-    File: core/menu.cpp
-    Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
-
-  engine_special.cpp_FUN_00532f50                    line 16
-    File: engine/special.cpp
-    Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBoundsCond (3)

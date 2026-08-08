@@ -648,19 +648,19 @@
     },
     {
       "addr": "005c0e80",
-      "name": "s_trid3d_dll_005c0e80",
-      "type": "TerminatedCString",
+      "name": "g_RendererDllPath",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "005c0e81",
-      "name": "s_trid3d_dll_005c0e80+1",
+      "name": "g_RendererDllPath+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c0e82",
-      "name": "s_trid3d_dll_005c0e80+2",
+      "name": "g_RendererDllPath+2",
       "type": "undefined4",
       "value": null
     },
@@ -999,114 +999,6 @@
       }
     ],
     "severity": "medium"
-  },
-  "static_analysis": {
-    "analyzed_file": "configureGraphicsOptions_FUN_004d0080.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 14,
-      "diagnostics": [
-        {
-          "check_id": "stringLiteralWrite",
-          "column": 21,
-          "line": 77,
-          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
-          "severity": "error"
-        },
-        {
-          "check_id": "stringLiteralWrite",
-          "column": 21,
-          "line": 105,
-          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
-          "severity": "error"
-        },
-        {
-          "check_id": "stringLiteralWrite",
-          "column": 20,
-          "line": 530,
-          "message": "Modifying string literal \"trid3d.dll\" directly or indirectly is undefined behaviour.",
-          "severity": "error"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 17,
-          "line": 73,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 17,
-          "line": 101,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 13,
-          "line": 202,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 15,
-          "line": 207,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 17,
-          "line": 212,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 19,
-          "line": 217,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 13,
-          "line": 360,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 17,
-          "line": 526,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 19,
-          "line": 542,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 19,
-          "line": 547,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "staticStringCompare",
-          "column": 19,
-          "line": 552,
-          "message": "Unnecessary comparison of static strings.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {

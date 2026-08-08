@@ -859,9 +859,6 @@ RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6] = {
     }
 };
 
-// TerminatedCString
-TerminatedCString s_trid3d_dll_005c0e80 = "trid3d.dll";
-
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8 = {
     .next = nullptr,
@@ -875,6 +872,9 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CWater_02dd1210
 };
+
+// char[256]
+char g_RendererDllPath[256] = "trid3d.dll";
 
 // int
 int g_SystemInitialized = 0x1;

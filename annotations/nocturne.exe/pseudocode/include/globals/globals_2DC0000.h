@@ -203,7 +203,7 @@ extern STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10];
 
 // int
 extern int g_UseDirect3D;
-extern int g_RendererHandle;
+extern int g_RendererCardIndex;
 extern int g_AGPTextureMode;
 extern int g_FrameBufferTestResult;
 extern int g_LoadedExternalDLLRenderer;

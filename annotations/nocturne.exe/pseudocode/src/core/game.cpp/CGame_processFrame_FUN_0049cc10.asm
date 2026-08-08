@@ -771,8 +771,8 @@ section .text
     PUSH EAX                            ; 0049d3ff
     PUSH ESI                            ; 0049d400
     PUSH 0x0                            ; 0049d401
-    CALL engine_2d.c_FUN_00402760       ; 0049d403
-        ;   XREF to: 00402760 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402760(int x, int y, char * text)
+    CALL engine_2d.c_drawTextXY_FUN_00402760 ; 0049d403
+        ;   XREF to: 00402760 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextXY_FUN_00402760(int x, int y, char * text)
     ADD ESI,0xb                         ; 0049d408
     ADD ESP,0xc                         ; 0049d40b
     PUSH EBX                            ; 0049d40e

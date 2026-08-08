@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4942
-Clean functions: 2423 (49.0%)
-Functions with suspects: 2519 (51.0%)
+Clean functions: 2428 (49.1%)
+Functions with suspects: 2514 (50.9%)
 
-Total suspect patterns: 25226
-Average suspects per function: 5.10
+Total suspect patterns: 25154
+Average suspects per function: 5.09
 
 Virtual files: 200 total, 5 at 100%, 8 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3330, Average: 44.9
 
-Average complexity score: 100.4
+Average complexity score: 100.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -31,15 +31,15 @@ SUSPECT PATTERN BREAKDOWN
   undefined_data            4851
   pointer_cast              3739
   pointer_truncation        3094
-  unnamed_param             2084
+  unnamed_param             2020
   unrolled_memcpy           1568
-  stack_param               1141
+  stack_param               1135
   warning_overlapping_globals 930
   unknown_field             734
   concat_reconstruction     666
   unaffected_reg            664
   shadow_pointer_walk       550
-  static_uninitvar          494
+  static_uninitvar          492
   unrolled_strcpy           483
   stack_ref                 459
   negative_offset           458
@@ -157,7 +157,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2373 more
+  ... and 2378 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -234,18 +234,18 @@ FUNCTIONS BY SUSPECT TYPE
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
     ... and 558 more
 
-  unnamed_param (198 functions):
-    00402710: engine_2d.c_FUN_00402710
-    00402780: engine_2d.c_FUN_00402780
-    00402820: engine_2d.c_FUN_00402820
-    00402840: engine_2d.c_FUN_00402840
-    004028f0: engine_2d.c_FUN_004028f0
-    00402910: engine_2d.c_FUN_00402910
-    004029c0: engine_2d.c_FUN_004029c0
-    004029f0: engine_2d.c_FUN_004029f0
+  unnamed_param (189 functions):
     00402ad0: engine_2d.c_FUN_00402ad0
     00402af0: engine_2d.c_FUN_00402af0
-    ... and 188 more
+    00402b90: engine_2d.c_FUN_00402b90
+    00402bb0: engine_2d.c_FUN_00402bb0
+    00402c60: engine_2d.c_FUN_00402c60
+    00402c80: engine_2d.c_FUN_00402c80
+    00402d60: engine_2d.c_FUN_00402d60
+    00402e90: engine_2d.c_FUN_00402e90
+    00403070: engine_2d.c_FUN_00403070
+    004031a0: engine_2d.c_FUN_004031a0
+    ... and 179 more
 
   unrolled_memcpy (542 functions):
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
@@ -260,7 +260,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 532 more
 
-  stack_param (167 functions):
+  stack_param (165 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
     00404430: engine_3d.c_FUN_00404430
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
@@ -271,7 +271,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     0041ceb0: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     00423d20: core_bugs.cpp_FUN_00423d20
-    ... and 157 more
+    ... and 155 more
 
   warning_overlapping_globals (930 functions):
     00402e90: engine_2d.c_FUN_00402e90
@@ -354,10 +354,10 @@ FUNCTIONS BY SUSPECT TYPE
     ... and 191 more
 
   stack_ref (157 functions):
-    00402780: engine_2d.c_FUN_00402780
-    00402840: engine_2d.c_FUN_00402840
-    00402910: engine_2d.c_FUN_00402910
-    004029f0: engine_2d.c_FUN_004029f0
+    00402780: engine_2d.c_drawTextFormatted_FUN_00402780
+    00402840: engine_2d.c_drawTextRightAlignedFormatted_FUN_00402840
+    00402910: engine_2d.c_drawTextCenteredAtFormatted_FUN_00402910
+    004029f0: engine_2d.c_drawTextCenteredFormatted_FUN_004029f0
     00402af0: engine_2d.c_FUN_00402af0
     00402bb0: engine_2d.c_FUN_00402bb0
     00402c80: engine_2d.c_FUN_00402c80
@@ -428,7 +428,7 @@ FUNCTIONS BY SUSPECT TYPE
     00402570: engine_2d.c_drawTextMultilineColor_FUN_00402570
     00402660: engine_2d.c_drawStringMasked_FUN_00402660
     004026b0: engine_2d.c_drawString_FUN_004026b0
-    00402710: engine_2d.c_FUN_00402710
+    00402710: engine_2d.c_drawStringHighlighted_FUN_00402710
     ... and 61 more
 
   unrolled_memset (91 functions):

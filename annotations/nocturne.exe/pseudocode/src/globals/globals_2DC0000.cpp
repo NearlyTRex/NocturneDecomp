@@ -155,7 +155,7 @@ STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10] = {};
 
 // int
 int g_UseDirect3D = {};
-int g_RendererHandle = {};
+int g_RendererCardIndex = {};
 int g_AGPTextureMode = {};
 int g_FrameBufferTestResult = {};
 int g_LoadedExternalDLLRenderer = {};

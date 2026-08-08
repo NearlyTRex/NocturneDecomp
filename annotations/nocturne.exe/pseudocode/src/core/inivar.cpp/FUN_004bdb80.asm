@@ -110,7 +110,7 @@ section .text
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004bda20(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004bdc44
     PUSH 0xfa                           ; 004bdc47
-    PUSH 0x5c0e80                       ; 004bdc4c | = "trid3d.dll"
+    PUSH 0x5c0e80                       ; 004bdc4c | g_RendererDllPath
     PUSH 0x5867b0                       ; 004bdc51 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x18]                ; 004bdc56
     PUSH EAX                            ; 004bdc5a

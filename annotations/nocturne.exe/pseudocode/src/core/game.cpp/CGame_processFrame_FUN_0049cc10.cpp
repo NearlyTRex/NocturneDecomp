@@ -318,7 +318,7 @@ LAB_0049cf70:
       sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(&local_604);
       iVar8 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uVar7,&local_604);
       if (iVar8 != 0) {
-        engine_2d_c_FUN_00402760(0,iVar6,(char *)&local_604);
+        engine_2d_c_drawTextXY_FUN_00402760(0,iVar6,(char *)&local_604);
         iVar6 = iVar6 + 0xb;
       }
     }
