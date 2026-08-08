@@ -57,7 +57,7 @@ void __cdecl transformAndProjectPoint(SProjectedVertex *output,CVector3i *input)
 
 // Original: engine_special.cpp_transformPoint_FUN_005b5a25
 // Address: 005b5a25
-int __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
+void __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
 
 // Original: engine_special.cpp_bindRequiredDllFunction_FUN_005b5cf0
 // Address: 005b5cf0
@@ -153,15 +153,15 @@ int __cdecl drawPolygon2(SRenderVertex **vertex_array,int vertex_count,int rende
 
 // Original: engine_special.cpp_drawPolyList_FUN_005b7640
 // Address: 005b7640
-int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList2_FUN_005b7780
 // Address: 005b7780
-int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList3_FUN_005b78c0
 // Address: 005b78c0
-int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_addParticle_FUN_005b7990
 // Address: 005b7990

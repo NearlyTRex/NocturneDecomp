@@ -24,7 +24,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   CAlphaBitmap loading_bitmap;
 
   g_ProcessorType = 0;
-  g_SystemMemorySize = 0x10000;
+  g_FullScreenQuadDepth = 0x10000;
   g_SystemInitialized = 1;
   pcVar8 = getenv("PROCESSOR_LEVEL");
   if (pcVar8 == (char *)0x0) {

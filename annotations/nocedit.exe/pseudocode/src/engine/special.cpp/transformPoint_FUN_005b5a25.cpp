@@ -2,11 +2,11 @@
 // Address: 005b5a25
 // Address Range: [[005b5a25, 005b5ced]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
+// Signature: void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
+void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 
 {
   longlong lVar1;
@@ -58,13 +58,13 @@ int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *out
       output->screen_x =
            (int)(((longlong)(int)uVar3 * (longlong)g_Projection.half_width_fixed) /
                 (longlong)(int)uVar5) + g_Projection.center_x_fixed;
-      iVar2 = (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
-                   (longlong)(int)uVar5) + g_Projection.center_y_fixed;
-      output->screen_y = iVar2;
-      return iVar2;
+      output->screen_y =
+           (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_y_fixed;
+      return;
     }
     output->screen_x = uVar6;
-    return uVar6;
+    return;
   }
   g_TempX = input->x - g_CameraOriginX;
   g_TempY = input->y - g_CameraOriginY;
@@ -107,14 +107,14 @@ int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *out
     output->screen_x =
          (int)(((longlong)g_TempTransformedX * (longlong)g_Projection.half_width_fixed) /
               (longlong)(int)uVar4) + g_Projection.center_x_fixed;
-    iVar2 = (int)(((longlong)g_TempTransformedY * (longlong)g_Projection.neg_half_height_fixed) /
-                 (longlong)(int)uVar4) + g_Projection.center_y_fixed;
-    output->screen_y = iVar2;
-    return iVar2;
+    output->screen_y =
+         (int)(((longlong)g_TempTransformedY * (longlong)g_Projection.neg_half_height_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_y_fixed;
+    return;
   }
   output->transformed_x = g_TempTransformedX;
   output->transformed_y = uVar3;
   output->transformed_z = uVar4;
   output->screen_x = uVar5;
-  return uVar5;
+  return;
 }

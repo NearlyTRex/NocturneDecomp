@@ -81,7 +81,7 @@ section .text
     PUSH EDI                            ; 004ef421
     MOV dword ptr [ESP + 0xc],EBX       ; 004ef422
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004ef426
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     MOV dword ptr [EDI + 0x20],0x3fff   ; 004ef42b | g_RenderVertexBuffer[0].r
     MOV dword ptr [EDI + 0x24],0x3fff   ; 004ef432 | g_RenderVertexBuffer[0].g
     ADD ESP,0x8                         ; 004ef439

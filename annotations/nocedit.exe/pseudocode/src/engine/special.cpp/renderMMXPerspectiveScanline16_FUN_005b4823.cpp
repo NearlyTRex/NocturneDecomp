@@ -169,14 +169,14 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         uVar19 = (uint)((ulonglong)
                         ((longlong)(int)(uVar19 * 8 + uVar12 * -8) *
                         (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
-        g_VertexRedStart = uVar9 & 0xffff;
-        g_VertexRedDelta = uVar19 & 0xffff;
-        uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff;
-        uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-                 CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;
+        g_VertexRedStart.u32[0] = uVar9 & 0xffff;
+        g_VertexRedDelta.u32[0] = uVar19 & 0xffff;
+        uVar38 = ((CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff;
+        uVar43 = ((CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |
+                 CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff;
       }
     }
     else {
@@ -184,26 +184,26 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
       uVar19 = (uint)((ulonglong)
                       ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar10) *
                       (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
-      g_VertexRedStart = uVar10 & 0xffff;
-      g_VertexRedDelta = uVar19 & 0xffff;
+      g_VertexRedStart.u32[0] = uVar10 & 0xffff;
+      g_VertexRedDelta.u32[0] = uVar19 & 0xffff;
       uVar15 = (uint)pSVar16->green_current >> 1;
       uVar12 = (uint)((ulonglong)
                       ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar15) *
                       (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
-      g_VertexGreenStart = uVar15 & 0xffff;
-      g_VertexGreenDelta = uVar12 & 0xffff;
+      g_VertexGreenStart.u32[0] = uVar15 & 0xffff;
+      g_VertexGreenDelta.u32[0] = uVar12 & 0xffff;
       uVar14 = (uint)pSVar16->blue_current >> 1;
       uVar9 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar14) *
                      (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
-      g_VertexBlueStart = uVar14 & 0xffff;
-      g_VertexBlueDelta = uVar9 & 0xffff;
-      uVar38 = ((CONCAT44(uRam00682694,uVar10) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0068269c,uVar15) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;
-      uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam006826bc,uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam006826c4,uVar9) & 0xffffffff0000ffff;
+      g_VertexBlueStart.u32[0] = uVar14 & 0xffff;
+      g_VertexBlueDelta.u32[0] = uVar9 & 0xffff;
+      uVar38 = ((CONCAT44(g_VertexRedStart.u32[1],uVar10) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexGreenStart.u32[1],uVar15) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexBlueStart.u32[1],uVar14) & 0xffffffff0000ffff;
+      uVar43 = ((CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexGreenDelta.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_VertexBlueDelta.u32[1],uVar9) & 0xffffffff0000ffff;
     }
     uVar19 = 0;
     sVar42 = (short)uVar43;

@@ -92,7 +92,7 @@ section .text
     PUSH EAX                            ; 004ebb0c
     PUSH ESI                            ; 004ebb0d
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004ebb0e
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     MOV AH,byte ptr [ESI + 0x13]        ; 004ebb13
     ADD ESP,0x8                         ; 004ebb16
     TEST AH,0x80                        ; 004ebb19

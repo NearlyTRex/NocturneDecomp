@@ -568,38 +568,38 @@
     {
       "addr": "00682690",
       "name": "g_VertexRedStart",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00682698",
       "name": "g_VertexGreenStart",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006826a0",
       "name": "g_VertexBlueStart",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006826b0",
       "name": "g_VertexRedDelta",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006826b8",
       "name": "g_VertexGreenDelta",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006826c0",
       "name": "g_VertexBlueDelta",
-      "type": "int",
-      "value": "0x0"
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "006826d0",
@@ -885,114 +885,6 @@
       "severity": "moderate",
       "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar9 * 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 167,
-      "match": "uRam00682694",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 168,
-      "match": "uRam00682694",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 169,
-      "match": "uRam00682694",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 170,
-      "match": "uRam006826b4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 171,
-      "match": "uRam006826b4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 172,
-      "match": "uRam006826b4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 194,
-      "match": "uRam00682694",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar10) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 195,
-      "match": "uRam0068269c",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam0068269c,uVar15) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 196,
-      "match": "uRam006826a4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 197,
-      "match": "uRam006826b4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 198,
-      "match": "uRam006826bc",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826bc,uVar12) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 199,
-      "match": "uRam006826c4",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826c4,uVar9) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -1423,7 +1315,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "uVar38 = ((CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1432,7 +1324,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1441,7 +1333,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_VertexRedStart.u32[1],uVar9) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {
@@ -1450,7 +1342,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "uVar43 = ((CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1459,7 +1351,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1468,7 +1360,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {
@@ -1477,7 +1369,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar10) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "uVar38 = ((CONCAT44(g_VertexRedStart.u32[1],uVar10) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1486,7 +1378,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam0068269c,uVar15) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_VertexGreenStart.u32[1],uVar15) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1495,7 +1387,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_VertexBlueStart.u32[1],uVar14) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {
@@ -1504,7 +1396,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "uVar43 = ((CONCAT44(g_VertexRedDelta.u32[1],uVar19) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1513,7 +1405,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam006826bc,uVar12) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_VertexGreenDelta.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1522,7 +1414,7 @@
       "match": "CONCAT44",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "CONCAT44(uRam006826c4,uVar9) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_VertexBlueDelta.u32[1],uVar9) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {

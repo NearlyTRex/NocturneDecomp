@@ -29,10 +29,10 @@
 ;   int g_HardwareDeltaTextureV = 0x0
 ;   int g_HardwareDeltaDepthZ = 0x0
 ;   double g_BufferFillZeroQword = 0.0
-;   int g_VertexRedStart = 0x0
-;   int g_VertexGreenStart = 0x0
-;   int g_VertexBlueStart = 0x0
-;   int g_VertexRedDelta = 0x0
+;   _MMX_INTEGER g_VertexRedStart
+;   _MMX_INTEGER g_VertexGreenStart
+;   _MMX_INTEGER g_VertexBlueStart
+;   _MMX_INTEGER g_VertexRedDelta
 ;   ... and 23 more
 ;
 ; *****************************************************************************

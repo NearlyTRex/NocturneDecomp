@@ -106,7 +106,7 @@ section .text
     PUSH EDI                            ; 004ed4b0 | g_RenderVertexBuffer | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     ADD ESI,0xc                         ; 004ed4b1
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004ed4b4
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004ed4b9
     ADD EDI,0x30                        ; 004ed4bc
     CMP ESI,EBP                         ; 004ed4bf

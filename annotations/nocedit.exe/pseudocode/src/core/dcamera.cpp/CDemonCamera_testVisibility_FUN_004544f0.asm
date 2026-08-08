@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_0045452d
     PUSH EDI                            ; 0045452e | g_RenderVertexBuffer | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 0045452f
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESI,0xc                         ; 00454534
     ADD ESP,0x8                         ; 00454537
     ADD EDI,0x30                        ; 0045453a

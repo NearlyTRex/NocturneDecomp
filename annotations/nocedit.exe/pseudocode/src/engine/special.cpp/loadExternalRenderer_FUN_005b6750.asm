@@ -775,13 +775,13 @@ section .text
     MOV dword ptr [ESP + 0x3bd4],EDX    ; 005b70c5 | g_TextureFilteringEnabled
     MOV ECX,0x6793a4                    ; 005b70cc | g_CurrentTextureDimension
     MOV ESI,0x2d03e90                   ; 005b70d1 | g_TextureBits
-    MOV EDI,0x68411c                    ; 005b70d6 | g_SystemMemorySize
+    MOV EDI,0x68411c                    ; 005b70d6 | g_FullScreenQuadDepth
     MOV EBP,0x684114                    ; 005b70db | g_VideoMemorySize
     MOV EAX,0x684118                    ; 005b70e0 | g_MaxTextureSize
     MOV EDX,0x3f6b880                   ; 005b70e5 | g_FrameBufferPtr
     MOV dword ptr [ESP + 0x3bd8],ECX    ; 005b70ea | g_CurrentTextureDimension
     MOV dword ptr [ESP + 0x3bdc],ESI    ; 005b70f1 | g_TextureBits
-    MOV dword ptr [ESP + 0x3be0],EDI    ; 005b70f8 | g_SystemMemorySize
+    MOV dword ptr [ESP + 0x3be0],EDI    ; 005b70f8 | g_FullScreenQuadDepth
     MOV dword ptr [ESP + 0x3be4],EBP    ; 005b70ff | g_VideoMemorySize
     MOV dword ptr [ESP + 0x3be8],EAX    ; 005b7106 | g_MaxTextureSize
     MOV dword ptr [ESP + 0x3bec],EDX    ; 005b710d | g_FrameBufferPtr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
+; void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 ;
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   output

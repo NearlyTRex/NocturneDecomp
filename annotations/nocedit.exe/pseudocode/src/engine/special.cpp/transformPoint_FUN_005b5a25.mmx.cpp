@@ -2,11 +2,11 @@
 // Address: 005b5a25
 // Address Range: [[005b5a25, 005b5ced]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
+// Signature: void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
+void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
         test dword ptr [g_MMXSupported],0xffffffff

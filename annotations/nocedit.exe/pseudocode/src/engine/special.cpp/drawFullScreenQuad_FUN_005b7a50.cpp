@@ -9,22 +9,22 @@
 int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
 
 {
-  SRenderVertex local_c0;
-  int local_88;
-  int local_80;
-  int local_7c;
-  int local_58;
-  int local_50;
-  int local_4c;
-  int local_28;
-  int local_20;
-  int local_1c;
+  SRenderVertex local_c0 [4];
   
-  memset(&local_c0,0,0xc0);
-  local_c0.projected_vertex.screen_x = g_ClipLeft << 0x10;
-  local_c0.projected_vertex.screen_y = g_ClipTop << 0x10;
-  local_c0.projected_vertex.transformed_z = g_SystemMemorySize;
+  memset(local_c0,0,0xc0);
+  local_c0[0].projected_vertex.screen_x = g_ClipLeft << 0x10;
+  local_c0[0].projected_vertex.screen_y = g_ClipTop << 0x10;
+  local_c0[1].projected_vertex.screen_x = g_ClipRight << 0x10;
+  local_c0[2].projected_vertex.screen_y = g_ClipBottom << 0x10;
+  local_c0[0].projected_vertex.transformed_z = g_FullScreenQuadDepth;
+  local_c0[1].projected_vertex.transformed_z = g_FullScreenQuadDepth;
+  local_c0[2].projected_vertex.transformed_z = g_FullScreenQuadDepth;
+  local_c0[3].projected_vertex.transformed_z = g_FullScreenQuadDepth;
   g_ActiveRenderColor = color;
-  engine_special_cpp_drawPolygon_FUN_005b75e0(&local_c0,4,0x10);
+  local_c0[1].projected_vertex.screen_y = local_c0[0].projected_vertex.screen_y;
+  local_c0[2].projected_vertex.screen_x = local_c0[1].projected_vertex.screen_x;
+  local_c0[3].projected_vertex.screen_x = local_c0[0].projected_vertex.screen_x;
+  local_c0[3].projected_vertex.screen_y = local_c0[2].projected_vertex.screen_y;
+  engine_special_cpp_drawPolygon_FUN_005b75e0(local_c0,4,0x10);
   return 1;
 }

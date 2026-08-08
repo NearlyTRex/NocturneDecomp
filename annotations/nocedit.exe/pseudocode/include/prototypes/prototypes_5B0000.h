@@ -30,8 +30,9 @@
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SHardwareEdge.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
-#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
@@ -41,6 +42,7 @@
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/STrainNoise.h"
+#include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5B0000
@@ -136,7 +138,7 @@ void __cdecl engine_special_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels
 void __edi_esi_ebx engine_special_cpp_renderScanline_FUN_005b5710(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_005b5716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input);
-int __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input);
+void __cdecl engine_special_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_bindRequiredDllFunction_FUN_005b5cf0(void **slot,void *proc);
 void __cdecl engine_special_cpp_bindDllFunction_FUN_005b5d10(void **slot,void *proc);
 void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_005b5d20(void);
@@ -160,9 +162,9 @@ int __cdecl engine_special_cpp_setColorTable16_FUN_005b7580(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_005b75b0(void);
 int __cdecl engine_special_cpp_drawPolygon_FUN_005b75e0(SRenderVertex *vertices,int vertex_count,int render_flags);
 int __cdecl engine_special_cpp_drawPolygon2_FUN_005b7610(SRenderVertex **vertex_array,int vertex_count,int render_flags);
-int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
-int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
-int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );
+int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
 int __cdecl engine_special_cpp_addParticle_FUN_005b7990(void *particle_data,int particle_type);
 int __cdecl engine_special_cpp_flushParticleList_FUN_005b79c0(void);
 int __cdecl engine_special_cpp_add3dLine_FUN_005b79e0(void *start_point,void *end_point,int line_style);

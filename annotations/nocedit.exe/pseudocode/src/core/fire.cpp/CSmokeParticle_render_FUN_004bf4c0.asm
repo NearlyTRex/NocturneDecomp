@@ -81,7 +81,7 @@ section .text
     PUSH EAX                            ; 004bf500
     PUSH ESI                            ; 004bf501
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004bf502
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004bf507
     PUSH ESI                            ; 004bf50a
     MOV EDX,dword ptr [0x006703ec]      ; 004bf50b | g_CDemonRendererPtr2

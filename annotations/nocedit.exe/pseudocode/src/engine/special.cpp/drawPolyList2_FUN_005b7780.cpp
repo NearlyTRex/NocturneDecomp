@@ -2,11 +2,11 @@
 // Address: 005b7780
 // Address Range: [[005b7780, 005b78bc]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 
 {
   int iVar1;
@@ -27,7 +27,7 @@ int __cdecl engine_special_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_
   if (0 < polygon_count) {
     iVar2 = 0;
     do {
-      puVar1 = *polygons;
+      puVar1 = (ushort *)*polygons;
       local_1c = vertex_buffer + *puVar1;
       local_18 = vertex_buffer + puVar1[1];
       local_14 = vertex_buffer + puVar1[2];

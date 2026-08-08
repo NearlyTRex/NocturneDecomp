@@ -419,7 +419,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.texture_filtering = &g_TextureFilteringEnabled;
       CStack_9c.texture_dimension = &g_CurrentTextureDimension;
       CStack_9c.texture_bits = &g_TextureBits;
-      CStack_9c.system_memory_size = &g_SystemMemorySize;
+      CStack_9c.full_screen_quad_depth = &g_FullScreenQuadDepth;
       CStack_9c.video_memory_size = &g_VideoMemorySize;
       CStack_9c.max_texture_size = &g_MaxTextureSize;
       CStack_9c.frame_buffer_ptr = &g_FrameBufferPtr;

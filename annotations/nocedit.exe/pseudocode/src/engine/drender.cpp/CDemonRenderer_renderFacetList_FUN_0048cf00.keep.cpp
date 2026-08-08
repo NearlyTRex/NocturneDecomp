@@ -76,7 +76,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
         }
         if (0 < polygon_count) {
           engine_special_cpp_drawPolyList_FUN_005b7640
-                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)g_VisibleFacePointers,
+                    (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,
                      polygon_count,g_RenderStateFlags.dword);
           return;
         }

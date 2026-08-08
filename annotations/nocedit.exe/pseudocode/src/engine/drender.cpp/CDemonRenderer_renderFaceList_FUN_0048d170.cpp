@@ -76,7 +76,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
           }
           if (0 < iVar4) {
             engine_special_cpp_drawPolyList2_FUN_005b7780
-                      (this_ptr->vertex_buffer_ptr,(ushort **)g_VisibleFacePointers,iVar4,
+                      (this_ptr->vertex_buffer_ptr,(SInputFace **)g_VisibleFacePointers,iVar4,
                        g_RenderStateFlags.dword);
             return;
           }

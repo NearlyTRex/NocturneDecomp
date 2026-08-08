@@ -70,7 +70,7 @@ section .text
     PUSH EAX                            ; 004c624f
     PUSH EDI                            ; 004c6250
     CALL engine_special.cpp_transformPoint_FUN_005b5a25 ; 004c6251
-        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c6256
     PUSH EDI                            ; 004c6259
     MOV EDX,dword ptr [0x006703ec]      ; 004c625a | g_CDemonRendererPtr2

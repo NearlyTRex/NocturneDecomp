@@ -32,7 +32,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   
   bVar13 = 0;
   g_ProcessorType = 0;
-  g_SystemMemorySize = 0x10000;
+  g_FullScreenQuadDepth = 0x10000;
   g_SystemInitialized = 1;
   pcVar6 = getenv("PROCESSOR_LEVEL");
   if (pcVar6 == (char *)0x0) {

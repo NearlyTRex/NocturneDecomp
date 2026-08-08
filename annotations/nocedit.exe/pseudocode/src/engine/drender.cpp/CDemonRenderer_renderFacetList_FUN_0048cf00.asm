@@ -275,7 +275,7 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 0048d14f
     PUSH EDI                            ; 0048d151
     CALL engine_special.cpp_drawPolyList_FUN_005b7640 ; 0048d152
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0048d157
     ADD ESP,0x18                        ; 0048d15a
     POP EBP                             ; 0048d15d

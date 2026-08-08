@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[005b7640, 005b7775]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
+int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_b
   SRenderVertex *local_1c;
   SRenderVertex *local_18;
   SRenderVertex *local_14;
-  SMRGLPrimitiveTriangle *pSVar1;
+  SMRGLPrimitiveQuad *pSVar1;
   
   if (g_UseExternalRenderer == 0) {
     return 0;
@@ -34,7 +34,7 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_b
       local_1c = vertex_buffer + pSVar1->vertices[1].vertex_index;
       local_18 = vertex_buffer + pSVar1->vertices[2].vertex_index;
       if ((pSVar1->base).base.count == 4) {
-        local_14 = vertex_buffer + pSVar1[1].base.base.type;
+        local_14 = vertex_buffer + pSVar1->vertices[3].vertex_index;
       }
       local_20->u = pSVar1->vertices[0].texture_u;
       local_20->v = pSVar1->vertices[0].texture_v;
@@ -43,8 +43,8 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_b
       local_18->u = pSVar1->vertices[2].texture_u;
       local_18->v = pSVar1->vertices[2].texture_v;
       if ((pSVar1->base).base.count == 4) {
-        local_14->u = pSVar1[1].base.base.count;
-        local_14->v = pSVar1[1].base.surface_normal.A.i;
+        local_14->u = pSVar1->vertices[3].texture_u;
+        local_14->v = pSVar1->vertices[3].texture_v;
       }
       polygons = polygons + 1;
       iVar2 = iVar2 + 1;

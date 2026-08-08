@@ -63,7 +63,7 @@ section .text
     PUSH 0x820074                       ; 00407a7e | g_RenderFaceArray
     PUSH 0x688014                       ; 00407a83 | g_RenderVertexBuffer
     CALL engine_special.cpp_drawPolyList_FUN_005b7640 ; 00407a88
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00407a8d
     XOR EAX,EAX                         ; 00407a90
     MOV [0x00820070],EAX                ; 00407a92 | g_RenderFaceCount

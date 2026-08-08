@@ -69,7 +69,7 @@ section .text
     XOR EDX,EDX                         ; 00507a79
     PUSH 0x635290                       ; 00507a7b | = "PROCESSOR_LEVEL"
     MOV dword ptr [0x02d0529c],EDX      ; 00507a80 | g_ProcessorType
-    MOV dword ptr [0x0068411c],ECX      ; 00507a86 | g_SystemMemorySize
+    MOV dword ptr [0x0068411c],ECX      ; 00507a86 | g_FullScreenQuadDepth
     MOV dword ptr [0x00684110],EBX      ; 00507a8c | g_SystemInitialized
     CALL crt_env.c_getenv_FUN_006013f0  ; 00507a92
         ;   XREF to: 006013f0 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_006013f0(char * name)

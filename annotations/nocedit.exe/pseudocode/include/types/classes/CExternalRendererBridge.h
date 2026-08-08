@@ -26,7 +26,7 @@ typedef struct CExternalRendererBridge {
     int* texture_filtering; // 0x44
     int* texture_dimension; // 0x48
     int* texture_bits; // 0x4c
-    int* system_memory_size; // 0x50
+    int* full_screen_quad_depth; // 0x50
     int* video_memory_size; // 0x54
     int* max_texture_size; // 0x58
     void** frame_buffer_ptr; // 0x5c

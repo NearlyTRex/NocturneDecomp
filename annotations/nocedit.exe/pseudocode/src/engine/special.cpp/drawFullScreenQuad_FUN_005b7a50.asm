@@ -6,23 +6,14 @@
 ; Parameters:
 ; int              Stack[0x4]:4   color
 ; Local Variables:
-; SRenderVertex    Stack[-0xc0]:48  local_c0
-; int              Stack[-0x88]:4  local_88
-; int              Stack[-0x80]:4  local_80
-; int              Stack[-0x7c]:4  local_7c
-; int              Stack[-0x58]:4  local_58
-; int              Stack[-0x50]:4  local_50
-; int              Stack[-0x4c]:4  local_4c
-; int              Stack[-0x28]:4  local_28
-; int              Stack[-0x20]:4  local_20
-; int              Stack[-0x1c]:4  local_1c
+; SRenderVertex[4] Stack[-0xc0]:192  local_c0
 ;
 ; XREF[2]:
 ;   engine_special.cpp_clearScreenRegion_FUN_005b3f37 at 005b3f48
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f3de
 ;
 ; Referenced Globals:
-;   int g_SystemMemorySize = 0x3c000
+;   int g_FullScreenQuadDepth = 0x3c000
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -66,7 +57,7 @@ section .text
     MOV dword ptr [ESP + 0xa0],EAX      ; 005b7aae
     MOV EAX,dword ptr [ESP + 0x74]      ; 005b7ab5
     MOV dword ptr [ESP + 0xa4],EAX      ; 005b7ab9
-    MOV EAX,[0x0068411c]                ; 005b7ac0 | g_SystemMemorySize
+    MOV EAX,[0x0068411c]                ; 005b7ac0 | g_FullScreenQuadDepth
     PUSH 0x10                           ; 005b7ac5
     MOV dword ptr [ESP + 0xc],EAX       ; 005b7ac7
     MOV dword ptr [ESP + 0x3c],EAX      ; 005b7acb

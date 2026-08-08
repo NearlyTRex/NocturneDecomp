@@ -129,9 +129,9 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     blue_d  = (uint)(int)(((longlong)(int)(((uint)hi->blue_current >> 1)
                                            - ((uint)lo->blue_current >> 1))
                            * (longlong)recip) >> 32) & 0xffff;
-    g_VertexRedStart   = red_s;   g_VertexRedDelta   = red_d;
-    g_VertexGreenStart = green_s; g_VertexGreenDelta = green_d;
-    g_VertexBlueStart  = blue_s;  g_VertexBlueDelta  = blue_d;
+    g_VertexRedStart.u32[0]   = red_s;   g_VertexRedDelta.u32[0]   = red_d;
+    g_VertexGreenStart.u32[0] = green_s; g_VertexGreenDelta.u32[0] = green_d;
+    g_VertexBlueStart.u32[0]  = blue_s;  g_VertexBlueDelta.u32[0]  = blue_d;
     color_current = ((ulonglong)red_s   << 32) | ((ulonglong)green_s << 16) | blue_s;
     color_delta   = ((ulonglong)red_d   << 32) | ((ulonglong)green_d << 16) | blue_d;
   }
@@ -144,8 +144,8 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     lo_val <<= 3;
     red_s = lo_val & 0xffff;
     red_d = (uint)(int)(((longlong)(int)(hi_val - lo_val) * (longlong)recip) >> 32) & 0xffff;
-    g_VertexRedStart = red_s;
-    g_VertexRedDelta = red_d;
+    g_VertexRedStart.u32[0] = red_s;
+    g_VertexRedDelta.u32[0] = red_d;
     color_current = ((ulonglong)red_s << 32) | ((ulonglong)red_s << 16) | red_s;
     color_delta   = ((ulonglong)red_d << 32) | ((ulonglong)red_d << 16) | red_d;
   }

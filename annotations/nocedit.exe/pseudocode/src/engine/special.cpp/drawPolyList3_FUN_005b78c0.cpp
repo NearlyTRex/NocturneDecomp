@@ -2,11 +2,11 @@
 // Address: 005b78c0
 // Address Range: [[005b78c0, 005b7984]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags)
+int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags)
 
 {
   int iVar2;
@@ -26,10 +26,10 @@ int __cdecl engine_special_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_
   iVar1 = 0;
   if (0 < polygon_count) {
     do {
-      local_1c = vertex_buffer + *polygons;
-      local_18 = vertex_buffer + polygons[1];
-      local_14 = vertex_buffer + polygons[2];
-      polygons = polygons + 3;
+      local_1c = vertex_buffer + polygons->vertex_index_0;
+      local_18 = vertex_buffer + polygons->vertex_index_1;
+      local_14 = vertex_buffer + polygons->vertex_index_2;
+      polygons = polygons + 1;
       iVar1 = iVar1 + 1;
       (*g_APIDLL_drawPolygon2)(&local_1c,3,render_flags);
     } while (iVar1 < polygon_count);
