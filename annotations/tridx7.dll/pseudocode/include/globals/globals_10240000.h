@@ -124,7 +124,7 @@ extern float g_TextureLodScale;
 // int
 extern int g_LightingOverflow;
 extern int g_HWGreenShift;
-extern int g_PrevSystemMemorySize;
+extern int g_PrevFullScreenQuadDepth;
 extern int g_FlyModeDepthBias;
 
 // uchar*

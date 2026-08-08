@@ -139,7 +139,7 @@ float g_TextureLodScale = 0.0f;
 // int
 int g_LightingOverflow = 0;
 int g_HWGreenShift = 0;
-int g_PrevSystemMemorySize = 0;
+int g_PrevFullScreenQuadDepth = 0;
 int g_FlyModeDepthBias = 0;
 
 // uchar*

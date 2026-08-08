@@ -406,7 +406,7 @@ section .text
         ;   Label: LAB_10004282
     MOV dword ptr [0x10014218],ESI      ; 10004287 | g_PrevRenderFlags
     MOV ECX,dword ptr [EAX]             ; 1000428d
-    CMP dword ptr [0x10240624],ECX      ; 1000428f | g_PrevSystemMemorySize
+    CMP dword ptr [0x10240624],ECX      ; 1000428f | g_PrevFullScreenQuadDepth
     JZ 0x10004302                       ; 10004295
         ;   XREF to: 10004302 (CONDITIONAL_JUMP)  ; LAB_10004302
     MOV EAX,[0x10226920]                ; 10004297 | g_ExternalRendererBridge.processor_type
@@ -442,7 +442,7 @@ section .text
     FIDIV dword ptr [ESP + 0x4]         ; 100042f2
     FSTP float ptr [0x10240614]         ; 100042f6 | g_TextureLodScale
         ;   Label: LAB_100042f6
-    MOV dword ptr [0x10240624],ECX      ; 100042fc | g_PrevSystemMemorySize
+    MOV dword ptr [0x10240624],ECX      ; 100042fc | g_PrevFullScreenQuadDepth
     TEST ESI,0x10                       ; 10004302
         ;   Label: LAB_10004302
     JZ 0x1000435f                       ; 10004308

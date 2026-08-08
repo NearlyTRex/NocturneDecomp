@@ -141,8 +141,8 @@ LAB_1000426c:
 LAB_10004282:
   g_PrevRenderFlags = render_flags;
   iVar1 = *g_ExternalRendererBridge.full_screen_quad_depth;
-  if (g_PrevSystemMemorySize != iVar1) {
-    g_PrevSystemMemorySize = iVar1;
+  if (g_PrevFullScreenQuadDepth != iVar1) {
+    g_PrevFullScreenQuadDepth = iVar1;
     if (*g_ExternalRendererBridge.processor_type == 0) {
       g_TextureLodScale = 256.0 / (float)iVar1;
     }
