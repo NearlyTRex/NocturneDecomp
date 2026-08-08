@@ -23,7 +23,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   uchar[32768] g_ColorCubeLookup
-;   undefined4 DAT_01c00024
+;   uint[256] g_Hardware32BitPalette
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_RedDitherShift
 ;   _BIT_INTEGER32 g_GreenBitPosition
@@ -358,13 +358,13 @@ section .text
     MOV EDX,dword ptr [EBP + 0x20]      ; 0042fcac
         ;   Label: LAB_0042fcac
     MOV CL,byte ptr [0x01c00624]        ; 0042fcaf | g_RedBitPosition
-    MOV EBX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcb5 | DAT_01c00024
+    MOV EBX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcb5 | g_Hardware32BitPalette
     SHR EBX,CL                          ; 0042fcbc
     AND EBX,0xff                        ; 0042fcbe
     MOV CL,byte ptr [0x01c00630]        ; 0042fcc4 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x8],EBX       ; 0042fcca
-    MOV EBX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcce | DAT_01c00024
-    MOV EDX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcd5 | DAT_01c00024
+    MOV EBX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcce | g_Hardware32BitPalette
+    MOV EDX,dword ptr [EDX*0x4 + 0x1c00024] ; 0042fcd5 | g_Hardware32BitPalette
     SHR EBX,CL                          ; 0042fcdc
     MOV CL,byte ptr [0x01c0063c]        ; 0042fcde | g_BlueBitPosition
     SHR EDX,CL                          ; 0042fce4

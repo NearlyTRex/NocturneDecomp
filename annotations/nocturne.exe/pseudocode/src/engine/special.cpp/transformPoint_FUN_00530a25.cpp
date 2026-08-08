@@ -2,13 +2,11 @@
 // Address: 00530a25
 // Address Range: [[00530a25, 00530ced]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
+// Signature: void __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
+void __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *output,CVector3i *input)
 
 {
   longlong lVar1;
@@ -21,17 +19,20 @@ int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *out
   int iVar8;
   
   if (g_MMXSupported != 0) {
-    iVar2 = input->x - _DAT_01c039c4;
-    iVar7 = input->y - _DAT_01c039c8;
-    iVar8 = input->z - _DAT_01c039cc;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039f4 + (longlong)iVar2 * (longlong)_DAT_01c039e8 +
-            (longlong)iVar8 * (longlong)_DAT_01c03a00;
+    iVar2 = input->x - g_CameraOriginX;
+    iVar7 = input->y - g_CameraOriginY;
+    iVar8 = input->z - g_CameraOriginZ;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].x +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].x +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].x;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039f8 + (longlong)iVar2 * (longlong)_DAT_01c039ec +
-            (longlong)iVar8 * (longlong)_DAT_01c03a04;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].y +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].y +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].y;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039fc + (longlong)iVar2 * (longlong)_DAT_01c039f0 +
-            (longlong)iVar8 * (longlong)_DAT_01c03a08;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].z +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].z +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].z;
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     uVar6 = 0;
     if ((int)uVar5 < (int)uVar3) {
@@ -57,34 +58,34 @@ int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *out
       output->screen_x =
            (int)(((longlong)(int)uVar3 * (longlong)g_Projection.half_width_fixed) /
                 (longlong)(int)uVar5) + g_Projection.center_x_fixed;
-      iVar2 = (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
-                   (longlong)(int)uVar5) + g_Projection.center_y_fixed;
-      output->screen_y = iVar2;
-      return iVar2;
+      output->screen_y =
+           (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_y_fixed;
+      return;
     }
     output->screen_x = uVar6;
-    return uVar6;
+    return;
   }
-  DAT_005bf4d8 = input->x - _DAT_01c039c4;
-  DAT_005bf4dc = input->y - _DAT_01c039c8;
-  DAT_005bf4e0 = input->z - _DAT_01c039cc;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039f4 +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039e8 +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a00;
-  DAT_005bf4e8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039f8 +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039ec +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a04;
+  g_TempX = input->x - g_CameraOriginX;
+  g_TempY = input->y - g_CameraOriginY;
+  g_TempZ = input->z - g_CameraOriginZ;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].x +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].x +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].x;
+  g_TempTransformedX = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].y +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].y +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].y;
   uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039fc +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039f0 +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a08;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].z +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].z +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].z;
   uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   uVar5 = 0;
-  if ((int)uVar4 < (int)DAT_005bf4e8) {
+  if ((int)uVar4 < g_TempTransformedX) {
     uVar5 = 0x80000001;
   }
-  if ((int)DAT_005bf4e8 < (int)-uVar4) {
+  if (g_TempTransformedX < (int)-uVar4) {
     uVar5 = uVar5 | 0x80000002;
   }
   if ((int)uVar4 < (int)uVar3) {
@@ -96,24 +97,24 @@ int __cdecl engine_special_cpp_transformPoint_FUN_00530a25(SProjectedVertex *out
   if ((int)uVar4 < 1) {
     uVar5 = uVar5 | 0x80000010;
   }
-  DAT_005bf4ec = uVar3;
-  DAT_005bf4f0 = uVar4;
+  g_TempTransformedY = uVar3;
+  g_TempTransformedZ = uVar4;
   if (uVar5 == 0) {
-    output->transformed_x = DAT_005bf4e8;
+    output->transformed_x = g_TempTransformedX;
     output->transformed_y = uVar3;
     output->transformed_z = uVar4;
     output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar4);
     output->screen_x =
-         (int)(((longlong)(int)DAT_005bf4e8 * (longlong)g_Projection.half_width_fixed) /
+         (int)(((longlong)g_TempTransformedX * (longlong)g_Projection.half_width_fixed) /
               (longlong)(int)uVar4) + g_Projection.center_x_fixed;
-    iVar2 = (int)(((longlong)(int)DAT_005bf4ec * (longlong)g_Projection.neg_half_height_fixed) /
-                 (longlong)(int)uVar4) + g_Projection.center_y_fixed;
-    output->screen_y = iVar2;
-    return iVar2;
+    output->screen_y =
+         (int)(((longlong)g_TempTransformedY * (longlong)g_Projection.neg_half_height_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_y_fixed;
+    return;
   }
-  output->transformed_x = DAT_005bf4e8;
+  output->transformed_x = g_TempTransformedX;
   output->transformed_y = uVar3;
   output->transformed_z = uVar4;
   output->screen_x = uVar5;
-  return uVar5;
+  return;
 }

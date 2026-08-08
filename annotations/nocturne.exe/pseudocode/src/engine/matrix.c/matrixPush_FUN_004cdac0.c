@@ -11,21 +11,21 @@
 void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 {
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = _DAT_01c039b8;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5308) = _DAT_01c039bc;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5330) = _DAT_01c039c0;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5308) = g_RelativeY;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5330) = g_RelativeZ;
   *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5358) = _DAT_01c039dc;
   *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5380) = _DAT_01c039e0;
   *(uint *)(_DAT_01cc5174 * 4 + 0x1cc53a8) = _DAT_01c039e4;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5178) = _DAT_01c039e8;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc51a0) = _DAT_01c039ec;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc51c8) = _DAT_01c039f0;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc51f0) = _DAT_01c039f4;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5218) = _DAT_01c039f8;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5240) = _DAT_01c039fc;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5268) = _DAT_01c03a00;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5290) = _DAT_01c03a04;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc52b8) = _DAT_01c03a08;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) = g_TransformMatrix.m[0].x;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) = g_TransformMatrix.m[0].y;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) = g_TransformMatrix.m[0].z;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) = g_TransformMatrix.m[1].x;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) = g_TransformMatrix.m[1].y;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) = g_TransformMatrix.m[1].z;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) = g_TransformMatrix.m[2].x;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) = g_TransformMatrix.m[2].y;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) = g_TransformMatrix.m[2].z;
   _DAT_01cc5174 = _DAT_01cc5174 + 1;
   if (_DAT_01cc5174 < 10) {
     return;

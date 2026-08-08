@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -69,7 +69,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 62,
+        "column": 68,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_01b4d764'"
       },
@@ -86,15 +86,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 112
@@ -123,9 +122,9 @@
   "globals": [
     {
       "addr": "005ae708",
-      "name": "DAT_005ae708",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005ae708",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01b4d764",
@@ -210,14 +209,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005ae708",
-      "severity": "mild",
-      "text": "(_DAT_01b4d764 = _DAT_01b4d764 + 1, DAT_005ae708 <= _DAT_01b4d764)) {",
-      "type": "undefined_data"
     }
   ]
 }

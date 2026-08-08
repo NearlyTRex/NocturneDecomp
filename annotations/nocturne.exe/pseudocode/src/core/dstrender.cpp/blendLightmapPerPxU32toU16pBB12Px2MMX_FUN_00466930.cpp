@@ -112,12 +112,12 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_004669
                                         (uVar7 != 0) * (uVar7 < 0x100) * (char)uVar7 -
                                         (0xff < uVar7))));
     *output_buffer =
-         (uint)(((uVar10 & g_BlueMask32.mm) >> _DAT_005bf658 |
-                 (uVar10 & g_GreenMask32.mm) >> _DAT_005bf638 |
-                (uVar10 & g_RedMask32.mm) >> _DAT_005bf618) << 0x10) |
-         (uint)((uVar9 & g_BlueMask32.mm) >> _DAT_005bf658) |
-         (uint)((uVar9 & g_GreenMask32.mm) >> _DAT_005bf638) |
-         (uint)((uVar9 & g_RedMask32.mm) >> _DAT_005bf618);
+         (uint)(((uVar10 & g_BlueMask32.mm) >> g_BlueBitShift.mm |
+                 (uVar10 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm |
+                (uVar10 & g_RedMask32.mm) >> g_TotalDitherShift.mm) << 0x10) |
+         (uint)((uVar9 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+         (uint)((uVar9 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+         (uint)((uVar9 & g_RedMask32.mm) >> g_TotalDitherShift.mm);
     texture_buffer = texture_buffer + 2;
     texture_indices = texture_indices + 2;
     lightmap_indices = lightmap_indices + 2;

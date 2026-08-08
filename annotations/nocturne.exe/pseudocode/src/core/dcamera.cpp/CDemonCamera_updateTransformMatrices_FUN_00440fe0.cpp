@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(CDemonCamera *this_ptr)
 
 {
@@ -18,16 +16,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(
   int local_18;
   
   bVar3 = 0;
-  (this_ptr->source_matrix).m[0].x = _DAT_01c039e8;
-  (this_ptr->source_matrix).m[0].y = _DAT_01c039ec;
-  (this_ptr->source_matrix).m[0].z = _DAT_01c039f0;
-  (this_ptr->source_matrix).m[1].x = _DAT_01c039f4;
-  (this_ptr->source_matrix).m[1].y = _DAT_01c039f8;
-  (this_ptr->source_matrix).m[1].z = _DAT_01c039fc;
-  (this_ptr->source_matrix).m[2].x = _DAT_01c03a00;
+  (this_ptr->source_matrix).m[0].x = g_TransformMatrix.m[0].x;
+  (this_ptr->source_matrix).m[0].y = g_TransformMatrix.m[0].y;
+  (this_ptr->source_matrix).m[0].z = g_TransformMatrix.m[0].z;
+  (this_ptr->source_matrix).m[1].x = g_TransformMatrix.m[1].x;
+  (this_ptr->source_matrix).m[1].y = g_TransformMatrix.m[1].y;
+  (this_ptr->source_matrix).m[1].z = g_TransformMatrix.m[1].z;
+  (this_ptr->source_matrix).m[2].x = g_TransformMatrix.m[2].x;
   pCVar1 = g_CDemonRenderer_PTR_005ae704;
-  (this_ptr->source_matrix).m[2].y = _DAT_01c03a04;
-  (this_ptr->source_matrix).m[2].z = _DAT_01c03a08;
+  (this_ptr->source_matrix).m[2].y = g_TransformMatrix.m[2].y;
+  (this_ptr->source_matrix).m[2].z = g_TransformMatrix.m[2].z;
   engine_drender_cpp_FUN_00460d10(pCVar1);
   puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);
   (this_ptr->camera_origin).x = local_18;

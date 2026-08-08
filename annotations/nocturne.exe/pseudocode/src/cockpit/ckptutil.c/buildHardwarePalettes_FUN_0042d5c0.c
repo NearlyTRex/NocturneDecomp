@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0042d62d) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042d5c0(SRGBColorPalette *rgb_palette_data)
 
@@ -18,7 +17,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042d5c0(SRGBColorPale
   int iVar4;
   int iVar5;
   
-  _DAT_01c00020 = rgb_palette_data;
+  g_CurrentPalette = rgb_palette_data;
   if (g_BitsPerPixel != 0x20) {
     iVar4 = 0;
     do {
@@ -27,7 +26,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042d5c0(SRGBColorPale
       puVar2 = &rgb_palette_data->colors[0].b;
       iVar5 = iVar4 + 2;
       rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-      *(ushort *)(iVar4 + 0x1c00424) =
+      *(ushort *)((int)g_Hardware16BitPalette + iVar4) =
            (ushort)((uint)*puVar1 / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)
                    ) |
            (ushort)((uint)pSVar3->r / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
@@ -44,7 +43,7 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042d5c0(SRGBColorPale
     puVar2 = &rgb_palette_data->colors[0].b;
     iVar5 = iVar4 + 4;
     rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-    *(uint *)(&DAT_01c00024 + iVar4) =
+    *(uint *)((int)g_Hardware32BitPalette + iVar4) =
          (uint)*puVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
          (uint)pSVar3->r << (g_RedBitPosition.bytes[0] & 0x1f) |
          (uint)*puVar1 << (g_GreenBitPosition.bytes[0] & 0x1f);

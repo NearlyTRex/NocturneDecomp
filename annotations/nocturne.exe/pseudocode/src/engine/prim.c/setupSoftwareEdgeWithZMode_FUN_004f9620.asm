@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c0399c
+;   int g_ProcessorType
 ;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52a68
 ;   undefined4 DAT_01e52a6c
@@ -164,7 +164,7 @@ section .text
     CMP dword ptr [0x01c039a4],0x1      ; 004f9794 | g_VertexPreprocessMode
     JNZ 0x004f97f9                      ; 004f979b
         ;   XREF to: 004f97f9 (CONDITIONAL_JUMP)  ; LAB_004f97f9
-    CMP dword ptr [0x01c0399c],0x0      ; 004f979d | DAT_01c0399c
+    CMP dword ptr [0x01c0399c],0x0      ; 004f979d | g_ProcessorType
     JZ 0x004f97f1                       ; 004f97a4
         ;   XREF to: 004f97f1 (CONDITIONAL_JUMP)  ; LAB_004f97f1
     MOV EAX,0x7fffffff                  ; 004f97a6

@@ -8,8 +8,8 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 - Rewrites applied: **5**
 - Functions touched: **5**
-- Pools indexed: **137**
-- Adjacency pairs in lookup: **137**
+- Pools indexed: **140**
+- Adjacency pairs in lookup: **140**
 
 ## Rewrites by function
 

@@ -56,7 +56,7 @@ section .text
     TEST EBX,EBX                        ; 00531791
     JNZ 0x005317b1                      ; 00531793
         ;   XREF to: 005317b1 (CONDITIONAL_JUMP)  ; LAB_005317b1
-    MOV EBX,dword ptr [0x02dc9e18]      ; 00531795 | DAT_02dc9e18
+    MOV EBX,dword ptr [0x02dc9e18]      ; 00531795 | g_StoredWindowHandle
     CMP dword ptr [0x02dc9d60],0x0      ; 0053179b | g_UseDirect3D
         ;   Label: LAB_0053179b
     JNZ 0x005317b9                      ; 005317a2
@@ -68,7 +68,7 @@ section .text
     POP ESI                             ; 005317ae
     POP EBX                             ; 005317af
     RET                                 ; 005317b0
-    MOV dword ptr [0x02dc9e18],EBX      ; 005317b1 | DAT_02dc9e18
+    MOV dword ptr [0x02dc9e18],EBX      ; 005317b1 | g_StoredWindowHandle
         ;   Label: LAB_005317b1
     JMP 0x0053179b                      ; 005317b7
         ;   XREF to: 0053179b (UNCONDITIONAL_JUMP)  ; LAB_0053179b
@@ -782,47 +782,47 @@ section .text
     MOV EDI,0x1c00644                   ; 005320fa
     MOV EBP,0x1c03998                   ; 005320ff
     MOV EAX,0x1c00c74                   ; 00532104
-    MOV EDX,0x5b763c                    ; 00532109 | DAT_005b763c
+    MOV EDX,0x5b763c                    ; 00532109 | g_CurrentAlphaValue
     MOV dword ptr [ESP + 0x3ba8],ECX    ; 0053210e | g_BlueBitPosition
     MOV dword ptr [ESP + 0x3bac],ESI    ; 00532115 | g_BlueScaleFactor
     MOV dword ptr [ESP + 0x3bb0],EDI    ; 0053211c | g_BlueDitherShift
-    MOV dword ptr [ESP + 0x3bb4],EBP    ; 00532123 | DAT_01c03998
+    MOV dword ptr [ESP + 0x3bb4],EBP    ; 00532123 | g_BlendMode
     MOV dword ptr [ESP + 0x3bb8],EAX    ; 0053212a | g_CurrentLightingValue
-    MOV dword ptr [ESP + 0x3bbc],EDX    ; 00532131 | DAT_005b763c
+    MOV dword ptr [ESP + 0x3bbc],EDX    ; 00532131 | g_CurrentAlphaValue
     MOV ECX,0x1c00c70                   ; 00532138
     MOV ESI,0x1c00c58                   ; 0053213d
     MOV EDI,0x1c00c5c                   ; 00532142
     MOV EBP,0x1c00c60                   ; 00532147
     MOV EAX,0x1c00c64                   ; 0053214c
-    MOV EDX,0x5b7628                    ; 00532151 | DAT_005b7628
+    MOV EDX,0x5b7628                    ; 00532151 | g_TextureFilteringEnabled
     MOV dword ptr [ESP + 0x3bc0],ECX    ; 00532156 | g_ActiveRenderColor
     MOV dword ptr [ESP + 0x3bc4],ESI    ; 0053215d | g_ClipLeft
     MOV dword ptr [ESP + 0x3bc8],EDI    ; 00532164 | g_ClipTop
     MOV dword ptr [ESP + 0x3bcc],EBP    ; 0053216b | g_ClipRight
     MOV dword ptr [ESP + 0x3bd0],EAX    ; 00532172 | g_ClipBottom
-    MOV dword ptr [ESP + 0x3bd4],EDX    ; 00532179 | DAT_005b7628
-    MOV ECX,0x5b762c                    ; 00532180 | DAT_005b762c
+    MOV dword ptr [ESP + 0x3bd4],EDX    ; 00532179 | g_TextureFilteringEnabled
+    MOV ECX,0x5b762c                    ; 00532180 | g_CurrentTextureDimension
     MOV ESI,0x1c02590                   ; 00532185
-    MOV EDI,0x5c0f8c                    ; 0053218a | DAT_005c0f8c
-    MOV EBP,0x5c0f84                    ; 0053218f | DAT_005c0f84
-    MOV EAX,0x5c0f88                    ; 00532194 | DAT_005c0f88
+    MOV EDI,0x5c0f8c                    ; 0053218a | g_FullScreenQuadDepth
+    MOV EBP,0x5c0f84                    ; 0053218f | g_VideoMemorySize
+    MOV EAX,0x5c0f88                    ; 00532194 | g_MaxTextureSize
     MOV EDX,0x2dc9d68                   ; 00532199
-    MOV dword ptr [ESP + 0x3bd8],ECX    ; 0053219e | DAT_005b762c
-    MOV dword ptr [ESP + 0x3bdc],ESI    ; 005321a5 | DAT_01c02590
-    MOV dword ptr [ESP + 0x3be0],EDI    ; 005321ac | DAT_005c0f8c
-    MOV dword ptr [ESP + 0x3be4],EBP    ; 005321b3 | DAT_005c0f84
-    MOV dword ptr [ESP + 0x3be8],EAX    ; 005321ba | DAT_005c0f88
+    MOV dword ptr [ESP + 0x3bd8],ECX    ; 0053219e | g_CurrentTextureDimension
+    MOV dword ptr [ESP + 0x3bdc],ESI    ; 005321a5 | g_TextureBits
+    MOV dword ptr [ESP + 0x3be0],EDI    ; 005321ac | g_FullScreenQuadDepth
+    MOV dword ptr [ESP + 0x3be4],EBP    ; 005321b3 | g_VideoMemorySize
+    MOV dword ptr [ESP + 0x3be8],EAX    ; 005321ba | g_MaxTextureSize
     MOV dword ptr [ESP + 0x3bec],EDX    ; 005321c1
-    MOV ECX,0x5c0f80                    ; 005321c8 | DAT_005c0f80
+    MOV ECX,0x5c0f80                    ; 005321c8 | g_SystemInitialized
     MOV ESI,0x2dc9d6c                   ; 005321cd
     MOV EDI,0x1c0399c                   ; 005321d2
-    MOV EBP,0x5b7640                    ; 005321d7 | DAT_005b7640
+    MOV EBP,0x5b7640                    ; 005321d7 | g_RenderingQuality
     MOV EAX,0x30                        ; 005321dc
     MOV EDX,0x2c                        ; 005321e1
-    MOV dword ptr [ESP + 0x3bf0],ECX    ; 005321e6 | DAT_005c0f80
-    MOV dword ptr [ESP + 0x3bf4],ESI    ; 005321ed | DAT_02dc9d6c
-    MOV dword ptr [ESP + 0x3bf8],EDI    ; 005321f4 | DAT_01c0399c
-    MOV dword ptr [ESP + 0x3bfc],EBP    ; 005321fb | DAT_005b7640
+    MOV dword ptr [ESP + 0x3bf0],ECX    ; 005321e6 | g_SystemInitialized
+    MOV dword ptr [ESP + 0x3bf4],ESI    ; 005321ed | g_AGPTextureMode
+    MOV dword ptr [ESP + 0x3bf8],EDI    ; 005321f4 | g_ProcessorType
+    MOV dword ptr [ESP + 0x3bfc],EBP    ; 005321fb | g_RenderingQuality
     MOV dword ptr [ESP + 0x3c00],EAX    ; 00532202
     MOV dword ptr [ESP + 0x3c04],EDX    ; 00532209
     MOV dword ptr [ESP + 0x3c18],EDX    ; 00532210
@@ -861,7 +861,7 @@ section .text
     POP ESI                             ; 00532284
     POP EBX                             ; 00532285
     RET                                 ; 00532286
-    MOV EDX,dword ptr [0x02dc9d64]      ; 00532287 | DAT_02dc9d64
+    MOV EDX,dword ptr [0x02dc9d64]      ; 00532287 | g_RendererHandle
         ;   Label: LAB_00532287
     PUSH EDX                            ; 0053228d
     CALL engine_special.cpp_selectCard_FUN_00532d00 ; 0053228e

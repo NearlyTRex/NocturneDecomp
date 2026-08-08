@@ -17,7 +17,7 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_UseExternalRenderer
 ;   APIDLL_toggle* g_APIDLL_toggle
-;   int INT_02dc9e24
+;   int g_ExternalFrameLocked
 ;
 ; Called Functions:
 ;   engine_special.cpp_lockFrame_FUN_005322e0
@@ -36,7 +36,7 @@ section .text
     JZ 0x00532c60                       ; 00532bab
         ;   XREF to: 00532c60 (CONDITIONAL_JUMP)  ; LAB_00532c60
     PUSH EDI                            ; 00532bb1
-    CMP dword ptr [0x02dc9e24],0x0      ; 00532bb2 | INT_02dc9e24
+    CMP dword ptr [0x02dc9e24],0x0      ; 00532bb2 | g_ExternalFrameLocked
     JNZ 0x00532c4c                      ; 00532bb9
         ;   XREF to: 00532c4c (CONDITIONAL_JUMP)  ; LAB_00532c4c
     PUSH ESI                            ; 00532bbf
@@ -95,7 +95,7 @@ section .text
     POP ESI                             ; 00532c4b
     XOR EDI,EDI                         ; 00532c4c
         ;   Label: LAB_00532c4c
-    MOV dword ptr [0x02dc9e24],EDI      ; 00532c4e | INT_02dc9e24
+    MOV dword ptr [0x02dc9e24],EDI      ; 00532c4e | g_ExternalFrameLocked
     CALL dword ptr [0x02dc9d7c]         ; 00532c54 | g_APIDLL_toggle
     POP EDI                             ; 00532c5a
     ADD ESP,0x4                         ; 00532c5b

@@ -8,7 +8,6 @@
 
 /* WARNING: Removing unreachable block (ram,0x004335a5) */
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int *vertex_indices)
 
@@ -51,7 +50,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
   uint uVar7;
   
   bVar18 = 0;
-  if (DAT_005b7644 == 0) {
+  if (INT_005b7644 == 0) {
     engine_prim_c_FUN_004fa2e0(vertex_indices,vertex_count);
   }
   else {
@@ -117,7 +116,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
               }
             }
           }
-          _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+          g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
           engine_special_cpp_drawPolygon2_FUN_00532650
                     (&DAT_00767274,vertex_count,g_RenderStateFlags.dword);
           return;

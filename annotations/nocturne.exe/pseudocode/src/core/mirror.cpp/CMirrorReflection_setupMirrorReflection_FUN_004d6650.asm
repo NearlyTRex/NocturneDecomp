@@ -133,15 +133,15 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058960a = 0.0000152587890625
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
-;   undefined4 DAT_01c03a04
-;   undefined4 DAT_01c03a08
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
+;   undefined4 g_TransformMatrix.m[2].y
+;   undefined4 g_TransformMatrix.m[2].z
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -767,28 +767,28 @@ section .text
     FSTP float ptr [ESP + 0x11c]        ; 004d70b3
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0 ; 004d70ba
         ;   XREF to: 0055abf0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0(CMatrix3x4f * matrix)
-    FILD dword ptr [0x01c039e8]         ; 004d70bf | DAT_01c039e8
+    FILD dword ptr [0x01c039e8]         ; 004d70bf | g_TransformMatrix
     FMUL double ptr [0x0058960a]        ; 004d70c5 | DOUBLE_0058960a
-    FILD dword ptr [0x01c039ec]         ; 004d70cb | DAT_01c039ec
+    FILD dword ptr [0x01c039ec]         ; 004d70cb | g_TransformMatrix.m[0].y
     FMUL double ptr [0x0058960a]        ; 004d70d1 | DOUBLE_0058960a
-    FILD dword ptr [0x01c039f0]         ; 004d70d7 | DAT_01c039f0
+    FILD dword ptr [0x01c039f0]         ; 004d70d7 | g_TransformMatrix.m[0].z
     FMUL double ptr [0x0058960a]        ; 004d70dd | DOUBLE_0058960a
-    FILD dword ptr [0x01c039f4]         ; 004d70e3 | DAT_01c039f4
+    FILD dword ptr [0x01c039f4]         ; 004d70e3 | g_TransformMatrix.m[1].x
     FMUL double ptr [0x0058960a]        ; 004d70e9 | DOUBLE_0058960a
-    FILD dword ptr [0x01c039f8]         ; 004d70ef | DAT_01c039f8
+    FILD dword ptr [0x01c039f8]         ; 004d70ef | g_TransformMatrix.m[1].y
     FMUL double ptr [0x0058960a]        ; 004d70f5 | DOUBLE_0058960a
-    FILD dword ptr [0x01c039fc]         ; 004d70fb | DAT_01c039fc
+    FILD dword ptr [0x01c039fc]         ; 004d70fb | g_TransformMatrix.m[1].z
     FMUL double ptr [0x0058960a]        ; 004d7101 | DOUBLE_0058960a
-    FILD dword ptr [0x01c03a00]         ; 004d7107 | DAT_01c03a00
+    FILD dword ptr [0x01c03a00]         ; 004d7107 | g_TransformMatrix.m[2].x
     ADD ESP,0x4                         ; 004d710d
     FMUL double ptr [0x0058960a]        ; 004d7110 | DOUBLE_0058960a
     FXCH ST6                            ; 004d7116
     FSTP float ptr [ESP + 0x20c]        ; 004d7118
-    FILD dword ptr [0x01c03a04]         ; 004d711f | DAT_01c03a04
+    FILD dword ptr [0x01c03a04]         ; 004d711f | g_TransformMatrix.m[2].y
     FMUL double ptr [0x0058960a]        ; 004d7125 | DOUBLE_0058960a
     FXCH ST5                            ; 004d712b
     FSTP float ptr [ESP + 0x21c]        ; 004d712d
-    FILD dword ptr [0x01c03a08]         ; 004d7134 | DAT_01c03a08
+    FILD dword ptr [0x01c03a08]         ; 004d7134 | g_TransformMatrix.m[2].z
     FMUL double ptr [0x0058960a]        ; 004d713a | DOUBLE_0058960a
     LEA EAX,[ESP + 0x20c]               ; 004d7140
     LEA ESI,[ESP + 0x2c]                ; 004d7147

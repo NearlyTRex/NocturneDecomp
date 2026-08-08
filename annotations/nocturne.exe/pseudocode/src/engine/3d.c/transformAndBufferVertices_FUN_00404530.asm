@@ -12,7 +12,7 @@
 ;   engine_3d.c_FUN_00408fc0 at 00408ffd
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5024+3
 ;   undefined4 DAT_005c5040
@@ -46,7 +46,7 @@ section .text
     SUB EAX,ESI                         ; 0040455a
     MOV ESI,0x5c5014                    ; 0040455c | DAT_005c5014
     SHL EAX,0x4                         ; 00404561
-    MOV dword ptr [0x005b7644],EDX      ; 00404564 | DAT_005b7644
+    MOV dword ptr [0x005b7644],EDX      ; 00404564 | INT_005b7644
     ADD ESI,EAX                         ; 0040456a
     MOV EAX,dword ptr [ESP + 0x18]      ; 0040456c
     ADD EDI,0xc                         ; 00404570
@@ -110,7 +110,7 @@ section .text
         ;   XREF to: 0040459d (UNCONDITIONAL_JUMP)  ; LAB_0040459d
     XOR EBP,EBP                         ; 004045f8
         ;   Label: LAB_004045f8
-    MOV dword ptr [0x005b7644],EBP      ; 004045fa | DAT_005b7644
+    MOV dword ptr [0x005b7644],EBP      ; 004045fa | INT_005b7644
     JMP 0x004045cb                      ; 00404600
         ;   XREF to: 004045cb (UNCONDITIONAL_JUMP)  ; LAB_004045cb
 

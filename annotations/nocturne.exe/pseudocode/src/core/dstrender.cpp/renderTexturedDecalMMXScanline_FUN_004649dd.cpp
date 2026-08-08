@@ -56,10 +56,10 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649d
     while( true ) {
       if (*(int *)((int)DAT_005b06e8 + uVar1) <= iVar6) {
         *(uint *)((int)DAT_005b06e0 + uVar1) =
-             *(uint *)
-              (&DAT_01c00024 +
-              (uint)*(byte *)((uVar3 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
-                              (uVar4 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + _DAT_01c02580) * 4);
+             g_Hardware32BitPalette
+             [g_CurrentTextureData
+              [(uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+               (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0])]];
       }
       uVar1 = uVar1 + 4;
       if (DAT_005b06e4 < uVar1) break;

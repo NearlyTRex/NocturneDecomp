@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_special_cpp_FUN_00530cf0(int *param_1,int param_2)
+; void __cdecl engine_special_cpp_bindRequiredDllFunction_FUN_00530cf0(void **slot,void *proc)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   param_1
-; int              Stack[0x8]:4   param_2
+; void * *         Stack[0x4]:4   slot
+; void *           Stack[0x8]:4   proc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_special_c_00594d27
@@ -21,7 +21,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 00530cf0
-        ;   Label: engine_special.cpp_FUN_00530cf0
+        ;   Label: engine_special.cpp_bindRequiredDllFunction_FUN_00530cf0
     MOV EDX,dword ptr [ESP + 0x4]       ; 00530cf4
     MOV dword ptr [EDX],EAX             ; 00530cf8
     TEST EAX,EAX                        ; 00530cfa

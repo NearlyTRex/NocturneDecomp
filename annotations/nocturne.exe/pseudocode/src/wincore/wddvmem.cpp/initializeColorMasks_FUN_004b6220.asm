@@ -14,9 +14,9 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   undefined4 DAT_005bf618
-;   undefined4 DAT_005bf638
-;   undefined4 DAT_005bf658
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
+;   _MMX_INTEGER g_BlueBitShift
 ;   ushort[256] g_ColorTable16
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
@@ -109,10 +109,10 @@ section .text
     SHL EBX,0x8                         ; 004b6330
     ADD EAX,ECX                         ; 004b6333
     MOV dword ptr [0x005bf5f0],EBX      ; 004b6335 | g_GreenMask32
-    MOV [0x005bf618],EAX                ; 004b633b | DAT_005bf618
+    MOV [0x005bf618],EAX                ; 004b633b | g_TotalDitherShift
     LEA EAX,[EDX + ECX*0x1]             ; 004b6340
-    MOV dword ptr [0x005bf658],ECX      ; 004b6343 | DAT_005bf658
-    MOV [0x005bf638],EAX                ; 004b6349 | DAT_005bf638
+    MOV dword ptr [0x005bf658],ECX      ; 004b6343 | g_BlueBitShift
+    MOV [0x005bf638],EAX                ; 004b6349 | g_GreenBlueDitherShift
     ADD ESP,0x8                         ; 004b634e
     POP EBP                             ; 004b6351
     POP EDI                             ; 004b6352

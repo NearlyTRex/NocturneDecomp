@@ -613,7 +613,7 @@ section .text
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ESI,0x145b290                   ; 004438dd
     ADD ESP,0x8                         ; 004438e2
-    MOV EDI,dword ptr [0x01c02580]      ; 004438e5 | DAT_01c02580
+    MOV EDI,dword ptr [0x01c02580]      ; 004438e5 | g_CurrentTextureData
     MOV ECX,EBP                         ; 004438eb
     PUSH EDI                            ; 004438ed
     MOV EAX,ECX                         ; 004438ee
@@ -625,7 +625,7 @@ section .text
     POP EDI                             ; 004438fc
     MOV ECX,0x300                       ; 004438fd
     MOV ESI,0xb0daf8                    ; 00443902
-    MOV EDI,dword ptr [0x01c00020]      ; 00443907 | DAT_01c00020
+    MOV EDI,dword ptr [0x01c00020]      ; 00443907 | g_CurrentPalette
     PUSH EDI                            ; 0044390d
     MOV EAX,ECX                         ; 0044390e
     SHR ECX,0x2                         ; 00443910

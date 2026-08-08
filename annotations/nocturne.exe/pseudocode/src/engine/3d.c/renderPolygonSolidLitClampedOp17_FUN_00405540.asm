@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_006b027c
@@ -61,7 +61,7 @@ section .text
     MOV EDI,0x13                        ; 00405598
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 0040559d
         ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
-    MOV EAX,[0x005b763c]                ; 004055a2 | DAT_005b763c
+    MOV EAX,[0x005b763c]                ; 004055a2 | g_CurrentAlphaValue
     ADD ESP,0x4                         ; 004055a7
     MOV dword ptr [0x01c039a0],EDI      ; 004055aa | g_RenderStateFlags
     CMP EAX,0xff                        ; 004055b0

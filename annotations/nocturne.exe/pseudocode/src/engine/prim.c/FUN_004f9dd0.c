@@ -27,7 +27,7 @@ void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count
   int local_1c;
   SSoftwareEdge *local_14;
   
-  if ((DAT_005b7644 != 0) && (iVar8 = 0, pSVar4 = vertices, 0 < vertex_count)) {
+  if ((INT_005b7644 != 0) && (iVar8 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
       if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
         (pSVar4->projected_vertex).inv_z =
@@ -74,7 +74,7 @@ void __cdecl engine_prim_c_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count
       }
     }
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
     engine_special_cpp_drawPolygon_FUN_00532620(vertices,vertex_count,g_RenderStateFlags.dword);
     return;

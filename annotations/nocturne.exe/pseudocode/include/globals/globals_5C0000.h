@@ -28,6 +28,11 @@ extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc;
 
 // int
+extern int g_SystemInitialized;
+extern int g_VideoMemorySize;
+extern int g_MaxTextureSize;
+extern int g_FullScreenQuadDepth;
+extern int g_INT_005c0f90;
 extern int INT_005c0ff0;
 extern int INT_005c10b0;
 extern int INT_005c1130;

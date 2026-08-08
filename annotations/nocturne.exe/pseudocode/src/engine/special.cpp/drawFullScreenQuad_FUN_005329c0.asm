@@ -5,12 +5,14 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color
+; Local Variables:
+; SRenderVertex[4] Stack[-0xc0]:192  SStack_c0
 ;
 ; XREF[1]:
 ;   engine_special.cpp_clearScreenRegion_FUN_0052ef37 at 0052ef48
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c0f8c
+;   int g_FullScreenQuadDepth = 0x3c000
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -54,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0xa0],EAX      ; 00532a1e
     MOV EAX,dword ptr [ESP + 0x74]      ; 00532a25
     MOV dword ptr [ESP + 0xa4],EAX      ; 00532a29
-    MOV EAX,[0x005c0f8c]                ; 00532a30 | DAT_005c0f8c
+    MOV EAX,[0x005c0f8c]                ; 00532a30 | g_FullScreenQuadDepth
     PUSH 0x10                           ; 00532a35
     MOV dword ptr [ESP + 0xc],EAX       ; 00532a37
     MOV dword ptr [ESP + 0x3c],EAX      ; 00532a3b

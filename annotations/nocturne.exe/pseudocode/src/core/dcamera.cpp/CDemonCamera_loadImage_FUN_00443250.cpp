@@ -36,12 +36,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   uint uVar23;
   char *pcVar24;
   char *pcVar25;
-  char *pcVar26;
-  int *piVar27;
-  uint *puVar28;
-  uint uVar29;
-  uint uVar30;
-  byte bVar31;
+  uchar *puVar26;
+  char *pcVar27;
+  int *piVar28;
+  uchar *puVar29;
+  SRGBColorPalette *pSVar30;
+  uint uVar31;
+  uint uVar32;
+  byte bVar33;
   char local_144 [80];
   char local_f4 [80];
   int local_a4;
@@ -82,18 +84,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(CDemonCamera *
   int iStack_18;
   _FILE *local_14;
   
-  bVar31 = 0;
-  pcVar26 = local_144;
+  bVar33 = 0;
+  pcVar27 = local_144;
   pcVar24 = filename;
   do {
     cVar5 = *pcVar24;
-    *pcVar26 = cVar5;
+    *pcVar27 = cVar5;
     pcVar25 = local_144;
     if (cVar5 == '\0') break;
     cVar5 = pcVar24[1];
     pcVar24 = pcVar24 + 2;
-    pcVar26[1] = cVar5;
-    pcVar26 = pcVar26 + 2;
+    pcVar27[1] = cVar5;
+    pcVar27 = pcVar27 + 2;
     pcVar25 = local_144;
   } while (cVar5 != '\0');
   do {
@@ -111,13 +113,13 @@ LAB_00443299:
     g_CurrentLineNumber = 2434;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
-  pcVar26 = ".ACT";
+  pcVar27 = ".ACT";
   do {
-    cVar5 = *pcVar26;
+    cVar5 = *pcVar27;
     *pcVar24 = cVar5;
     if (cVar5 == '\0') break;
-    cVar5 = pcVar26[1];
-    pcVar26 = pcVar26 + 2;
+    cVar5 = pcVar27[1];
+    pcVar27 = pcVar27 + 2;
     pcVar24[1] = cVar5;
     pcVar24 = pcVar24 + 2;
   } while (cVar5 != '\0');
@@ -128,28 +130,28 @@ LAB_00443299:
     _fread(&DAT_00b0daf8,0x100,3,p_Var6);
     _fclose(p_Var6);
     pcVar24 = local_f4;
-    pcVar26 = filename;
+    pcVar27 = filename;
     do {
-      cVar5 = *pcVar26;
+      cVar5 = *pcVar27;
       *pcVar24 = cVar5;
       if (cVar5 == '\0') break;
-      cVar5 = pcVar26[1];
-      pcVar26 = pcVar26 + 2;
+      cVar5 = pcVar27[1];
+      pcVar27 = pcVar27 + 2;
       pcVar24[1] = cVar5;
       pcVar24 = pcVar24 + 2;
     } while (cVar5 != '\0');
     pcVar24 = local_f4;
     do {
-      pcVar26 = pcVar24;
+      pcVar27 = pcVar24;
       if (*pcVar24 == '.') goto LAB_00443363;
       if (*pcVar24 == '\0') break;
-      pcVar26 = pcVar24 + 1;
-      if (*pcVar26 == '.') goto LAB_00443363;
+      pcVar27 = pcVar24 + 1;
+      if (*pcVar27 == '.') goto LAB_00443363;
       pcVar24 = pcVar24 + 2;
-    } while (*pcVar26 != '\0');
-    pcVar26 = (char *)0x0;
+    } while (*pcVar27 != '\0');
+    pcVar27 = (char *)0x0;
 LAB_00443363:
-    if (pcVar26 == (char *)0x0) {
+    if (pcVar27 == (char *)0x0) {
       g_CurrentFilename = "..\\core\\dcamera.cpp";
       g_CurrentLineNumber = 2453;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::loadImage - no ext");
@@ -157,12 +159,12 @@ LAB_00443363:
     pcVar24 = ".fog";
     do {
       cVar5 = *pcVar24;
-      *pcVar26 = cVar5;
+      *pcVar27 = cVar5;
       if (cVar5 == '\0') break;
       cVar5 = pcVar24[1];
       pcVar24 = pcVar24 + 2;
-      pcVar26[1] = cVar5;
-      pcVar26 = pcVar26 + 2;
+      pcVar27[1] = cVar5;
+      pcVar27 = pcVar27 + 2;
     } while (cVar5 != '\0');
     local_14 = engine_dosio_cpp_getFile_FUN_00456a60("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
@@ -276,15 +278,15 @@ LAB_00443363:
         do {
           local_94 = 0;
           pbVar8 = &DAT_01410290 + local_20;
-          piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
+          piVar28 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
           do {
             local_94 = local_94 + 1;
-            *piVar27 = ((*(uint *)((uint)*pbVar8 * 4 + 0xb0ddfc) & 0xfcfcfc) >> 2) +
+            *piVar28 = ((*(uint *)((uint)*pbVar8 * 4 + 0xb0ddfc) & 0xfcfcfc) >> 2) +
                        ((*(uint *)((uint)pbVar8[1] * 4 + 0xb0ddfc) & 0xfcfcfc) >> 2) +
                        ((*(uint *)((uint)pbVar8[0x280] * 4 + 0xb0ddfc) & 0xfcfcfc) >> 2) +
                        ((*(uint *)((uint)pbVar8[0x281] * 4 + 0xb0ddfc) & 0xfcfcfc) >> 2);
             pbVar8 = pbVar8 + 2;
-            piVar27 = piVar27 + 1;
+            piVar28 = piVar28 + 1;
           } while (local_94 < 0x140);
           local_20 = local_20 + 0x500;
         } while (local_20 != 0x4b000);
@@ -336,9 +338,9 @@ LAB_00443363:
                 local_58 = ((int)local_68 >> 8) * 0x280;
                 uVar10 = *(uint *)((uint)(byte)(&DAT_01410290)[local_58 + local_60] * 4 + 0xb0ddfc);
                 uVar13 = uVar10 >> 0x10 & 0xff;
-                uVar29 = uVar10 >> 8 & 0xff;
-                uVar30 = local_68 & 0xff;
-                local_54 = uVar29 * iVar7;
+                uVar31 = uVar10 >> 8 & 0xff;
+                uVar32 = local_68 & 0xff;
+                local_54 = uVar31 * iVar7;
                 uVar3 = *(uint *)((uint)(byte)(&DAT_01410290)[local_58 + local_5c] * 4 + 0xb0ddfc);
                 local_78 = uVar3 & 0xff;
                 local_70 = uVar3 >> 0x10 & 0xff;
@@ -346,12 +348,12 @@ LAB_00443363:
                 local_50 = local_74 * uVar23;
                 uVar14 = ((uVar14 & 0xff) * iVar17 + (uVar14 & 0xff) * iVar7 +
                           (uVar9 & 0xff) * uVar23 + (uVar9 & 0xff) * iVar17 +
-                          (uVar10 & 0xff) * iVar7 + (uVar10 & 0xff) * uVar30 +
-                         local_78 * uVar30 + local_78 * uVar23) / local_84;
+                          (uVar10 & 0xff) * iVar7 + (uVar10 & 0xff) * uVar32 +
+                         local_78 * uVar32 + local_78 * uVar23) / local_84;
                 uVar9 = (uVar20 * iVar17 + uVar20 * iVar7 + uVar22 * uVar23 + uVar22 * iVar17 +
-                         local_54 + uVar29 * uVar30 + local_74 * uVar30 + local_50) / local_84;
+                         local_54 + uVar31 * uVar32 + local_74 * uVar32 + local_50) / local_84;
                 uVar10 = (uVar11 * iVar17 + uVar11 * iVar7 + iVar17 * uVar12 + uVar12 * uVar23 +
-                          uVar13 * uVar30 + uVar13 * iVar7 + local_70 * uVar30 + uVar23 * local_70)
+                          uVar13 * uVar32 + uVar13 * iVar7 + local_70 * uVar32 + uVar23 * local_70)
                          / local_84;
                 if (0xff < uVar14) {
                   uVar14 = 0xff;
@@ -419,29 +421,29 @@ LAB_00443363:
       } while (iVar7 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                 (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);
-      puVar16 = (uint *)&DAT_0145b290;
-      puVar28 = _DAT_01c02580;
+      puVar26 = &DAT_0145b290;
+      puVar29 = g_CurrentTextureData;
       for (iVar7 = 0x4000; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar28 = *puVar16;
-        puVar16 = puVar16 + (uint)bVar31 * -2 + 1;
-        puVar28 = puVar28 + (uint)bVar31 * -2 + 1;
+        *(uint *)puVar29 = *(uint *)puVar26;
+        puVar26 = puVar26 + (uint)bVar33 * -8 + 4;
+        puVar29 = puVar29 + (uint)bVar33 * -8 + 4;
       }
       for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(byte *)puVar28 = *(byte *)puVar16;
-        puVar16 = (uint *)((int)puVar16 + (uint)bVar31 * -2 + 1);
-        puVar28 = (uint *)((int)puVar28 + (uint)bVar31 * -2 + 1);
+        *puVar29 = *puVar26;
+        puVar26 = puVar26 + (uint)bVar33 * -2 + 1;
+        puVar29 = puVar29 + (uint)bVar33 * -2 + 1;
       }
-      puVar16 = (uint *)&DAT_00b0daf8;
-      puVar28 = _DAT_01c00020;
+      puVar26 = &DAT_00b0daf8;
+      pSVar30 = g_CurrentPalette;
       for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar28 = *puVar16;
-        puVar16 = puVar16 + (uint)bVar31 * -2 + 1;
-        puVar28 = puVar28 + (uint)bVar31 * -2 + 1;
+        *(uint *)pSVar30->colors = *(uint *)puVar26;
+        puVar26 = puVar26 + ((uint)bVar33 * -2 + 1) * 4;
+        pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);
       }
       for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(byte *)puVar28 = *(byte *)puVar16;
-        puVar16 = (uint *)((int)puVar16 + (uint)bVar31 * -2 + 1);
-        puVar28 = (uint *)((int)puVar28 + (uint)bVar31 * -2 + 1);
+        pSVar30->colors[0].r = *puVar26;
+        puVar26 = puVar26 + (uint)bVar33 * -2 + 1;
+        pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60
                 (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,

@@ -41,7 +41,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0048c8ff
     PUSH EDX                            ; 0048c903
     CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 0048c904
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0048c909
     ADD ESP,0xc                         ; 0048c90c
     POP EBX                             ; 0048c90f

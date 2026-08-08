@@ -42,7 +42,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FU
     iVar5 = iVar4;
     do {
       if ((uVar9 >> 8 < (uint)*puVar7) &&
-         (_DAT_01b4d764 = _DAT_01b4d764 + 1, DAT_005ae708 <= _DAT_01b4d764)) {
+         (_DAT_01b4d764 = _DAT_01b4d764 + 1, (uint)INT_005ae708 <= _DAT_01b4d764)) {
         _DAT_01b4d768 = 1;
         return;
       }

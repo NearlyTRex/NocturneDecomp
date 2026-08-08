@@ -182,7 +182,7 @@ LAB_004912b7:
   local_54.surface_normal.A.i = 0;
   local_30 = local_1c;
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
-  if (_DAT_01c02584 == 0) {
+  if (g_CurrentTextureOpacityData == (uchar *)0x0) {
     iVar5 = 0x207;
   }
   else {

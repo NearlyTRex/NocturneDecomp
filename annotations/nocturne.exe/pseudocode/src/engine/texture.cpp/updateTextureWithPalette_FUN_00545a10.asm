@@ -7,7 +7,7 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00020
+;   SRGBColorPalette* g_CurrentPalette
 ;
 ; Called Functions:
 ;   engine_special.cpp_updateTextureFromPalette_FUN_00532440
@@ -24,7 +24,7 @@ section .text
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 00545a16
         ;   XREF to: 00545920 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_00545920(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 00545a1b
-    MOV ECX,dword ptr [0x01c00020]      ; 00545a1e | DAT_01c00020
+    MOV ECX,dword ptr [0x01c00020]      ; 00545a1e | g_CurrentPalette
     PUSH ECX                            ; 00545a24
     MOV EBX,dword ptr [ESP + 0xc]       ; 00545a25
     PUSH EBX                            ; 00545a29

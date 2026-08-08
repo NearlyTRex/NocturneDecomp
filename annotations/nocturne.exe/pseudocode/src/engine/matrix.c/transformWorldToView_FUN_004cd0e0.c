@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004cd0e0(CVector3i *input_coords,CVector3i *output_coords)
 
 {
@@ -21,22 +19,22 @@ CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_004cd0e0(CVecto
   int iVar8;
   int iVar9;
   
-  iVar9 = input_coords->x - _DAT_01c039b8;
-  iVar8 = input_coords->z - _DAT_01c039c0;
-  iVar7 = input_coords->y - _DAT_01c039bc;
-  lVar1 = (longlong)_DAT_01c039ec;
-  lVar2 = (longlong)_DAT_01c039f8;
-  lVar3 = (longlong)_DAT_01c03a04;
-  lVar4 = (longlong)_DAT_01c039f0;
-  lVar5 = (longlong)_DAT_01c039fc;
-  lVar6 = (longlong)_DAT_01c03a08;
+  iVar9 = input_coords->x - g_RelativeX;
+  iVar8 = input_coords->z - g_RelativeZ;
+  iVar7 = input_coords->y - g_RelativeY;
+  lVar1 = (longlong)g_TransformMatrix.m[0].y;
+  lVar2 = (longlong)g_TransformMatrix.m[1].y;
+  lVar3 = (longlong)g_TransformMatrix.m[2].y;
+  lVar4 = (longlong)g_TransformMatrix.m[0].z;
+  lVar5 = (longlong)g_TransformMatrix.m[1].z;
+  lVar6 = (longlong)g_TransformMatrix.m[2].z;
   output_coords->x =
-       ((uint)((longlong)_DAT_01c039e8 * (longlong)iVar9) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c039e8 * (longlong)iVar9) >> 0x20) << 0x10) +
-       ((uint)((longlong)_DAT_01c039f4 * (longlong)iVar7) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c039f4 * (longlong)iVar7) >> 0x20) << 0x10) +
-       ((uint)((longlong)_DAT_01c03a00 * (longlong)iVar8) >> 0x10 |
-       (int)((ulonglong)((longlong)_DAT_01c03a00 * (longlong)iVar8) >> 0x20) << 0x10);
+       ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[0].x * (longlong)iVar9) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[1].x * (longlong)iVar7) >> 0x20) << 0x10) +
+       ((uint)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_TransformMatrix.m[2].x * (longlong)iVar8) >> 0x20) << 0x10);
   output_coords->y =
        ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10) +
        ((uint)(lVar2 * iVar7) >> 0x10 | (int)((ulonglong)(lVar2 * iVar7) >> 0x20) << 0x10) +

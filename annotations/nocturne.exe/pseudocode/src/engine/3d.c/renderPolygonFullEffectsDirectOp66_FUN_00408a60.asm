@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
 ;   undefined4 DAT_006b494c
@@ -126,11 +126,11 @@ section .text
     MOV ESI,EAX                         ; 00408b6f
     LEA EDI,[EDI + 0xc4]                ; 00408b71
     MOV EDX,dword ptr [ESP]             ; 00408b77
-    MOV EAX,[0x005b763c]                ; 00408b7a | DAT_005b763c
+    MOV EAX,[0x005b763c]                ; 00408b7a | g_CurrentAlphaValue
     MOVSD.REP ES:EDI,ESI                ; 00408b7f | DAT_006b4a18 | DAT_006b4a1c
     MOV dword ptr [EDX + 0x10c],EAX     ; 00408b81 | DAT_006b4a60
     MOV dword ptr [EDX + 0x114],EBP     ; 00408b87 | DAT_006b4a68
-    MOV EAX,[0x01c03998]                ; 00408b8d | DAT_01c03998
+    MOV EAX,[0x01c03998]                ; 00408b8d | g_BlendMode
     MOV dword ptr [EDX + 0x110],EAX     ; 00408b92 | DAT_006b4a64
     MOV EDX,dword ptr [ESP + 0x18]      ; 00408b98
         ;   Label: LAB_00408b98

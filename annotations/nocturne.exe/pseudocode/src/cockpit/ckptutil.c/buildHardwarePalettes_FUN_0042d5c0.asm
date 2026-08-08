@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01c00020
-;   undefined4 DAT_01c00024
-;   undefined4 DAT_01c00028
+;   SRGBColorPalette* g_CurrentPalette
+;   uint[256] g_Hardware32BitPalette
+;   undefined4 g_Hardware32BitPalette[1]
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
 ;   _BIT_INTEGER32 g_GreenBitPosition
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x8                         ; 0042d5c4
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0042d5c7
     MOV EDX,dword ptr [0x005b7624]      ; 0042d5cb | g_BitsPerPixel
-    MOV dword ptr [0x01c00020],EBX      ; 0042d5d1 | DAT_01c00020
+    MOV dword ptr [0x01c00020],EBX      ; 0042d5d1 | g_CurrentPalette
     CMP EDX,0x20                        ; 0042d5d7
     JNZ 0x0042d63b                      ; 0042d5da
         ;   XREF to: 0042d63b (CONDITIONAL_JUMP)  ; LAB_0042d63b
@@ -58,7 +58,7 @@ section .text
     ADD EAX,0x4                         ; 0042d612
         ;   Label: LAB_0042d612
     ADD EBX,0x3                         ; 0042d615
-    MOV dword ptr [EAX + 0x1c00020],ECX ; 0042d618 | DAT_01c00024 | DAT_01c00028
+    MOV dword ptr [EAX + 0x1c00020],ECX ; 0042d618 | g_Hardware32BitPalette | g_Hardware32BitPalette[1]
     CMP EAX,0x400                       ; 0042d61e
     JNZ 0x0042d5e4                      ; 0042d623
         ;   XREF to: 0042d5e4 (CONDITIONAL_JUMP)  ; LAB_0042d5e4

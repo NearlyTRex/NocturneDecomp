@@ -205,7 +205,7 @@ __asm {
         add EAX,dword ptr [EBP + 0xffffffe4]
         movzx EAX,byte ptr [EAX]
         shr EAX,0x2
-        movd MM1,dword ptr [DAT_01c00024 + EAX*0x4]
+        movd MM1,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movq MM2,MM1
         psllq MM2,0x20
         por MM1,MM2
@@ -223,7 +223,7 @@ __asm {
         add EAX,dword ptr [EBP + 0xffffffe4]
         movzx EAX,byte ptr [EAX]
         shr EAX,0x2
-        movd MM1,dword ptr [DAT_01c00024 + EAX*0x4]
+        movd MM1,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         movq MM2,MM1
         psllq MM2,0x20
         por MM1,MM2

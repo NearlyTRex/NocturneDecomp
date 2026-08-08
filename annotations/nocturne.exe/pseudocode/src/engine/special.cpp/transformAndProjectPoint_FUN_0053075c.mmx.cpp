@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex *output,CVector3i *input)
 {
 __asm {
@@ -17,49 +15,49 @@ __asm {
         mov EAX,dword ptr [EBX]
         mov ECX,dword ptr [EBX + 0x4]
         mov EDX,dword ptr [EBX + 0x8]
-        sub EAX,dword ptr [DAT_01c039b8]
-        sub ECX,dword ptr [DAT_01c039bc]
-        sub EDX,dword ptr [DAT_01c039c0]
+        sub EAX,dword ptr [g_RelativeX]
+        sub ECX,dword ptr [g_RelativeY]
+        sub EDX,dword ptr [g_RelativeZ]
         movd MM0,EAX
         movd MM1,ECX
         movd MM2,EDX
-        imul dword ptr [DAT_01c039e8]
+        imul dword ptr [g_TransformMatrix]
         mov EBX,EAX
         mov ECX,EDX
         movd EAX,MM1
-        imul dword ptr [DAT_01c039f4]
+        imul dword ptr [0x01c039f4]
         add EBX,EAX
         adc ECX,EDX
         movd EAX,MM2
-        imul dword ptr [DAT_01c03a00]
+        imul dword ptr [0x01c03a00]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
         movd MM4,EAX
         movd EAX,MM0
-        imul dword ptr [DAT_01c039ec]
+        imul dword ptr [0x01c039ec]
         mov EBX,EAX
         mov ECX,EDX
         movd EAX,MM1
-        imul dword ptr [DAT_01c039f8]
+        imul dword ptr [0x01c039f8]
         add EBX,EAX
         adc ECX,EDX
         movd EAX,MM2
-        imul dword ptr [DAT_01c03a04]
+        imul dword ptr [0x01c03a04]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
         movd MM5,EAX
         movd EAX,MM0
-        imul dword ptr [DAT_01c039f0]
+        imul dword ptr [0x01c039f0]
         mov EBX,EAX
         mov ECX,EDX
         movd EAX,MM1
-        imul dword ptr [DAT_01c039fc]
+        imul dword ptr [0x01c039fc]
         add EBX,EAX
         adc ECX,EDX
         movd EAX,MM2
-        imul dword ptr [DAT_01c03a08]
+        imul dword ptr [0x01c03a08]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
@@ -124,58 +122,58 @@ __asm {
         mov EAX,dword ptr [ESI]
         mov EBX,dword ptr [ESI + 0x4]
         mov ECX,dword ptr [ESI + 0x8]
-        sub EAX,dword ptr [DAT_01c039b8]
-        sub EBX,dword ptr [DAT_01c039bc]
-        sub ECX,dword ptr [DAT_01c039c0]
-        mov [DAT_005bf4d8],EAX
-        mov dword ptr [DAT_005bf4dc],EBX
-        mov dword ptr [DAT_005bf4e0],ECX
-        imul dword ptr [DAT_01c039e8]
+        sub EAX,dword ptr [g_RelativeX]
+        sub EBX,dword ptr [g_RelativeY]
+        sub ECX,dword ptr [g_RelativeZ]
+        mov [g_TempX],EAX
+        mov dword ptr [g_TempY],EBX
+        mov dword ptr [g_TempZ],ECX
+        imul dword ptr [g_TransformMatrix]
         mov EBX,EAX
         mov ECX,EDX
-        mov EAX,[DAT_005bf4dc]
-        imul dword ptr [DAT_01c039f4]
+        mov EAX,[g_TempY]
+        imul dword ptr [0x01c039f4]
         add EBX,EAX
         adc ECX,EDX
-        mov EAX,[DAT_005bf4e0]
-        imul dword ptr [DAT_01c03a00]
+        mov EAX,[g_TempZ]
+        imul dword ptr [0x01c03a00]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
-        mov [DAT_005bf4e8],EAX
-        mov EAX,[DAT_005bf4d8]
-        imul dword ptr [DAT_01c039ec]
+        mov [g_TempTransformedX],EAX
+        mov EAX,[g_TempX]
+        imul dword ptr [0x01c039ec]
         mov EBX,EAX
         mov ECX,EDX
-        mov EAX,[DAT_005bf4dc]
-        imul dword ptr [DAT_01c039f8]
+        mov EAX,[g_TempY]
+        imul dword ptr [0x01c039f8]
         add EBX,EAX
         adc ECX,EDX
-        mov EAX,[DAT_005bf4e0]
-        imul dword ptr [DAT_01c03a04]
+        mov EAX,[g_TempZ]
+        imul dword ptr [0x01c03a04]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
-        mov [DAT_005bf4ec],EAX
-        mov EAX,[DAT_005bf4d8]
-        imul dword ptr [DAT_01c039f0]
+        mov [g_TempTransformedY],EAX
+        mov EAX,[g_TempX]
+        imul dword ptr [0x01c039f0]
         mov EBX,EAX
         mov ECX,EDX
-        mov EAX,[DAT_005bf4dc]
-        imul dword ptr [DAT_01c039fc]
+        mov EAX,[g_TempY]
+        imul dword ptr [0x01c039fc]
         add EBX,EAX
         adc ECX,EDX
-        mov EAX,[DAT_005bf4e0]
-        imul dword ptr [DAT_01c03a08]
+        mov EAX,[g_TempZ]
+        imul dword ptr [0x01c03a08]
         add EAX,EBX
         adc EDX,ECX
         shrd EAX,EDX,0x10
-        mov [DAT_005bf4f0],EAX
+        mov [g_TempTransformedZ],EAX
         neg EAX
         mov EDX,EAX
         xor EAX,EAX
-        mov EBX,dword ptr [DAT_005bf4e8]
-        mov ECX,dword ptr [DAT_005bf4f0]
+        mov EBX,dword ptr [g_TempTransformedX]
+        mov ECX,dword ptr [g_TempTransformedZ]
         cmp EBX,ECX
         jle LAB_00530997
         or EAX,0x80000001
@@ -184,7 +182,7 @@ __asm {
         jge LAB_005309a0
         or EAX,0x80000002
     LAB_005309a0:
-        mov EBX,dword ptr [DAT_005bf4ec]
+        mov EBX,dword ptr [g_TempTransformedY]
         cmp EBX,ECX
         jle LAB_005309af
         or EAX,0x80000004
@@ -199,7 +197,7 @@ __asm {
     LAB_005309c2:
         test EAX,0xffffffff
         jnz LAB_00530a11
-        mov EAX,[DAT_005bf4e8]
+        mov EAX,[g_TempTransformedX]
         mov dword ptr [EDI],EAX
         mov dword ptr [EDI + 0x4],EBX
         mov dword ptr [EDI + 0x8],ECX
@@ -207,12 +205,12 @@ __asm {
         xor EDX,EDX
         idiv ECX
         mov dword ptr [EDI + 0xc],EAX
-        mov EAX,[DAT_005bf4e8]
+        mov EAX,[g_TempTransformedX]
         imul dword ptr [g_Projection]
         idiv ECX
         add EAX,dword ptr [g_Projection.center_x_fixed]
         mov dword ptr [EDI + 0x10],EAX
-        mov EAX,[DAT_005bf4ec]
+        mov EAX,[g_TempTransformedY]
         imul dword ptr [g_Projection.neg_half_height_fixed]
         idiv ECX
         add EAX,dword ptr [g_Projection.center_y_fixed]
@@ -221,7 +219,7 @@ __asm {
         pop ESI
         ret
     LAB_00530a11:
-        mov EDX,dword ptr [DAT_005bf4e8]
+        mov EDX,dword ptr [g_TempTransformedX]
         mov dword ptr [EDI],EDX
         mov dword ptr [EDI + 0x4],EBX
         mov dword ptr [EDI + 0x8],ECX

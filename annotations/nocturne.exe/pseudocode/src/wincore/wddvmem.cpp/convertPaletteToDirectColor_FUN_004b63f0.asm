@@ -21,9 +21,9 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   undefined4 DAT_005bf618
-;   undefined4 DAT_005bf638
-;   undefined4 DAT_005bf658
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
+;   _MMX_INTEGER g_BlueBitShift
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor
 ;   _BIT_INTEGER32 g_RedDitherShift
@@ -116,13 +116,13 @@ section .text
     MOV EBX,dword ptr [0x01c00638]      ; 004b6504 | g_GreenDitherShift
     MOV ECX,dword ptr [0x01c00644]      ; 004b650a | g_BlueDitherShift
     ADD EAX,EBX                         ; 004b6510
-    MOV dword ptr [0x005bf658],ECX      ; 004b6512 | DAT_005bf658
+    MOV dword ptr [0x005bf658],ECX      ; 004b6512 | g_BlueBitShift
     ADD EAX,ECX                         ; 004b6518
     SHL ESI,CL                          ; 004b651a
-    MOV [0x005bf618],EAX                ; 004b651c | DAT_005bf618
+    MOV [0x005bf618],EAX                ; 004b651c | g_TotalDitherShift
     LEA EAX,[EBX + ECX*0x1]             ; 004b6521
     MOV dword ptr [0x005bf610],ESI      ; 004b6524 | g_BlueMask32
-    MOV [0x005bf638],EAX                ; 004b652a | DAT_005bf638
+    MOV [0x005bf638],EAX                ; 004b652a | g_GreenBlueDitherShift
     CMP dword ptr [0x005b7624],0x20     ; 004b652f | g_BitsPerPixel
         ;   Label: LAB_004b652f
     JNZ 0x004b658d                      ; 004b6536

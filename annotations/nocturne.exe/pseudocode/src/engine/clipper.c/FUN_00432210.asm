@@ -190,11 +190,11 @@ section .text
     MOV EBX,dword ptr [0x01c039a0]      ; 00432352 | g_RenderStateFlags
         ;   Label: LAB_00432352
     PUSH EBX                            ; 00432358
-    MOV ESI,dword ptr [0x01e52ef8]      ; 00432359 | DAT_01e52ef8
+    MOV ESI,dword ptr [0x01e52ef8]      ; 00432359 | g_RenderedTriangleCount
     PUSH EBP                            ; 0043235f
     INC ESI                             ; 00432360
     PUSH 0x767274                       ; 00432361 | DAT_00767274
-    MOV dword ptr [0x01e52ef8],ESI      ; 00432366 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ESI      ; 00432366 | g_RenderedTriangleCount
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 0043236c
         ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     MOV EAX,0x1                         ; 00432371

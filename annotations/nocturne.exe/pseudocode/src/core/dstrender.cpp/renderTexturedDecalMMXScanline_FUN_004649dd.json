@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -87,33 +87,21 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 60,
-        "message": "use of undeclared identifier 'DAT_01c00024'"
+        "column": 23,
+        "line": 66,
+        "message": "use of undeclared identifier '_DAT_005b06d4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_005bf550'"
+        "column": 23,
+        "line": 67,
+        "message": "use of undeclared identifier '_DAT_005b06d8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 63,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_005bf590'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_005bf570'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_005bf5b0'"
+        "column": 23,
+        "line": 68,
+        "message": "use of undeclared identifier '_DAT_005b06dc'"
       }
     ],
     "success": false,
@@ -122,13 +110,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 231,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -215,26 +203,26 @@
     },
     {
       "addr": "005bf550",
-      "name": "DAT_005bf550",
-      "type": "undefined1",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf570",
-      "name": "DAT_005bf570",
-      "type": "undefined1",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf590",
-      "name": "DAT_005bf590",
-      "type": "undefined4",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5b0",
-      "name": "DAT_005bf5b0",
-      "type": "undefined4",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -251,8 +239,8 @@
     },
     {
       "addr": "01c00024",
-      "name": "DAT_01c00024",
-      "type": "undefined4",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
       "value": null
     },
     {
@@ -263,8 +251,8 @@
     },
     {
       "addr": "01c02580",
-      "name": "DAT_01c02580",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     }
   ],
@@ -414,14 +402,6 @@
       "match": "DAT_005b06e0",
       "severity": "mild",
       "text": "*(uint *)((int)DAT_005b06e0 + uVar1) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "(&DAT_01c00024 +",
       "type": "undefined_data"
     },
     {

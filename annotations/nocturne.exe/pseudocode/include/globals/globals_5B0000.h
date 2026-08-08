@@ -16,6 +16,7 @@
 #include "types/classes/CNetGame.h"
 #include "types/classes/CPod.h"
 #include "types/classes/CSound.h"
+#include "types/structs/SAlphaEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5B0000
@@ -56,6 +57,9 @@ extern CPod* g_CPod_PTR_005be1cc;
 
 // CSound*
 extern CSound* g_CSound_PTR_005bed68;
+
+// SAlphaEntry[256]
+extern SAlphaEntry g_AlphaTable[256];
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40;
@@ -123,12 +127,25 @@ extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50;
 
 // _MMX_INTEGER
+extern _MMX_INTEGER g_VertexRedStart;
+extern _MMX_INTEGER g_VertexGreenStart;
+extern _MMX_INTEGER g_VertexBlueStart;
+extern _MMX_INTEGER g_VertexRedDelta;
+extern _MMX_INTEGER g_VertexGreenDelta;
+extern _MMX_INTEGER g_VertexBlueDelta;
+extern _MMX_INTEGER g_TextureShift1;
+extern _MMX_INTEGER g_TextureShift2;
+extern _MMX_INTEGER g_TextureMask1;
+extern _MMX_INTEGER g_TextureMask2;
 extern _MMX_INTEGER g_RedMask16;
 extern _MMX_INTEGER g_GreenMask16;
 extern _MMX_INTEGER g_BlueMask16;
 extern _MMX_INTEGER g_RedMask32;
 extern _MMX_INTEGER g_GreenMask32;
 extern _MMX_INTEGER g_BlueMask32;
+extern _MMX_INTEGER g_TotalDitherShift;
+extern _MMX_INTEGER g_GreenBlueDitherShift;
+extern _MMX_INTEGER g_BlueBitShift;
 
 // double
 extern double g_BufferFillZeroQword;
@@ -142,6 +159,14 @@ extern int INT_005b7604;
 extern int g_WindowWidth;
 extern int g_WindowHeight;
 extern int g_BitsPerPixel;
+extern int g_TextureFilteringEnabled;
+extern int g_CurrentTextureDimension;
+extern int INT_005b7630;
+extern int INT_005b7634;
+extern int INT_005b7638;
+extern int g_CurrentAlphaValue;
+extern int g_RenderingQuality;
+extern int INT_005b7644;
 extern int INT_005b8018;
 extern int INT_005b801c;
 extern int g_INT_005b91c0;
@@ -193,6 +218,26 @@ extern int g_INT_005be950;
 extern int g_INT_005be964;
 extern int g_INT_005bea0c;
 extern int g_INT_005bea40;
+extern int g_ScanlinePixelCount;
+extern int g_StartTextureU;
+extern int g_StartTextureV;
+extern int g_StartDepthW;
+extern int g_HardwareDeltaTextureU;
+extern int g_HardwareDeltaTextureV;
+extern int g_HardwareDeltaDepthZ;
+extern int g_TempX;
+extern int g_TempY;
+extern int g_TempZ;
+extern int g_TempTransformedX;
+extern int g_TempTransformedY;
+extern int g_TempTransformedZ;
+extern int g_VertexAlphaStart;
+extern int g_VertexAlphaDelta;
+extern int g_SpecialColor;
+
+// int*
+extern int* g_CurrentScreenPtr;
+extern int* g_CurrentZBufferPtr;
 
 // undefined1
 extern undefined1 DAT_005b9258;
@@ -203,8 +248,6 @@ extern undefined1 DAT_005bb118;
 extern undefined1 DAT_005bb11c;
 extern undefined1 DAT_005bb121;
 extern undefined1 DAT_005be184;
-extern undefined1 DAT_005bf550;
-extern undefined1 DAT_005bf570;
 
 // undefined2
 extern undefined2 DAT_005b8bdc;
@@ -273,11 +316,6 @@ extern undefined4 DAT_005b7278;
 extern undefined4 DAT_005b727c;
 extern undefined4 DAT_005b7478;
 extern undefined4 DAT_005b747c;
-extern undefined4 DAT_005b762c;
-extern undefined4 DAT_005b7630;
-extern undefined4 DAT_005b7638;
-extern undefined4 DAT_005b763c;
-extern undefined4 DAT_005b7644;
 extern undefined4 DAT_005b7648;
 extern undefined4 DAT_005b7658;
 extern undefined4 DAT_005b765c;
@@ -334,28 +372,11 @@ extern undefined4 DAT_005bef20;
 extern undefined4 DAT_005bef24;
 extern undefined4 DAT_005bef88;
 extern undefined4 DAT_005bef8c;
-extern undefined4 DAT_005bf014;
-extern undefined4 DAT_005bf050;
-extern undefined4 DAT_005bf054;
-extern undefined4 DAT_005bf05c;
-extern undefined4 DAT_005bf078;
-extern undefined4 DAT_005bf07c;
-extern undefined4 DAT_005bf488;
-extern undefined4 DAT_005bf4d8;
-extern undefined4 DAT_005bf4dc;
-extern undefined4 DAT_005bf4e0;
-extern undefined4 DAT_005bf4e8;
-extern undefined4 DAT_005bf4ec;
-extern undefined4 DAT_005bf4f0;
-extern undefined4 DAT_005bf540;
 
 // undefined8
 extern undefined8 DAT_005b4748;
 extern undefined8 DAT_005b4788;
 extern undefined8 DAT_005b47a8;
-extern undefined8 DAT_005bf500;
-extern undefined8 DAT_005bf520;
-extern undefined8 DAT_005bfe70;
 
 // void*
 extern void* switchdataD_005b7f90;

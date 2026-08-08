@@ -65,7 +65,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
       }
     }
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
     switch(g_VertexPreprocessMode) {
     case 1:
@@ -201,7 +201,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex
           *(uint *)(iVar11 + 0x1e52f30) =
                puVar7[0xb] + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           if (g_VertexPreprocessMode == 1) {
-            if (_DAT_01c0399c == 0) {
+            if (g_ProcessorType == 0) {
               local_20 = puVar7[3];
               iVar8 = puVar12[3];
             }

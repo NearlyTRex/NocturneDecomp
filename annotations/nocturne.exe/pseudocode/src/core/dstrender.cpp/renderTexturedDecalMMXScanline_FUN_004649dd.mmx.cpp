@@ -59,15 +59,15 @@ __asm {
         jl LAB_00464ad7
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_005bf550]
-        psrlq MM2,qword ptr [DAT_005bf570]
-        pand MM0,qword ptr [DAT_005bf590]
-        pand MM2,qword ptr [DAT_005bf5b0]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
-        add EBX,dword ptr [DAT_01c02580]
+        add EBX,dword ptr [g_CurrentTextureData]
         movzx EAX,byte ptr [EBX]
-        mov EAX,dword ptr [DAT_01c00024 + EAX*0x4]
+        mov EAX,dword ptr [g_Hardware32BitPalette + EAX*0x4]
         mov EBX,dword ptr [DAT_005b06e0]
         add EBX,EDI
         mov dword ptr [EBX],EAX

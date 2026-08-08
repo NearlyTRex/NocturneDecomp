@@ -17,10 +17,10 @@
 ;   undefined4 DAT_005b06e0
 ;   undefined4 DAT_005b06e4
 ;   undefined4 DAT_005b06e8
-;   undefined1 DAT_005bf550
-;   undefined1 DAT_005bf570
-;   undefined4 DAT_005bf590
-;   undefined4 DAT_005bf5b0
+;   _MMX_INTEGER g_TextureShift1
+;   _MMX_INTEGER g_TextureShift2
+;   _MMX_INTEGER g_TextureMask1
+;   _MMX_INTEGER g_TextureMask2
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   ... and 3 more
@@ -84,15 +84,15 @@ section .text
         ;   XREF to: 00464ad7 (CONDITIONAL_JUMP)  ; LAB_00464ad7
     MOVD MM0,ECX                        ; 00464a95
     MOVD MM2,EDX                        ; 00464a98
-    PSRLQ MM0,qword ptr [0x005bf550]    ; 00464a9b | DAT_005bf550
-    PSRLQ MM2,qword ptr [0x005bf570]    ; 00464aa2 | DAT_005bf570
-    PAND MM0,qword ptr [0x005bf590]     ; 00464aa9 | DAT_005bf590
-    PAND MM2,qword ptr [0x005bf5b0]     ; 00464ab0 | DAT_005bf5b0
+    PSRLQ MM0,qword ptr [0x005bf550]    ; 00464a9b | g_TextureShift1
+    PSRLQ MM2,qword ptr [0x005bf570]    ; 00464aa2 | g_TextureShift2
+    PAND MM0,qword ptr [0x005bf590]     ; 00464aa9 | g_TextureMask1
+    PAND MM2,qword ptr [0x005bf5b0]     ; 00464ab0 | g_TextureMask2
     PADDD MM0,MM2                       ; 00464ab7
     MOVD EBX,MM0                        ; 00464aba
-    ADD EBX,dword ptr [0x01c02580]      ; 00464abd | DAT_01c02580
+    ADD EBX,dword ptr [0x01c02580]      ; 00464abd | g_CurrentTextureData
     MOVZX EAX,byte ptr [EBX]            ; 00464ac3
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 00464ac6 | DAT_01c00024
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 00464ac6 | g_Hardware32BitPalette
     MOV EBX,dword ptr [0x005b06e0]      ; 00464acd | DAT_005b06e0
     ADD EBX,EDI                         ; 00464ad3
     MOV dword ptr [EBX],EAX             ; 00464ad5

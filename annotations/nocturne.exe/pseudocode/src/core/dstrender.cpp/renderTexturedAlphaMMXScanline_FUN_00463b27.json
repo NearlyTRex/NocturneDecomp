@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -58,62 +58,44 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 35,
+        "line": 36,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 37,
+        "line": 38,
         "message": "use of undeclared identifier '_DAT_005b06d4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 42,
+        "line": 43,
         "message": "use of undeclared identifier '_DAT_005b06d8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 47,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_005b06dc'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 57,
-        "message": "use of undeclared identifier '_DAT_01c02584'; did you mean 'DAT_02DF2584'?"
+        "column": 23,
+        "line": 69,
+        "message": "use of undeclared identifier '_DAT_005b06d4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 13,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01c02584'; did you mean 'DAT_02DF2584'?"
+        "column": 23,
+        "line": 70,
+        "message": "use of undeclared identifier '_DAT_005b06d8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 19,
-        "line": 59,
-        "message": "use of undeclared identifier '_DAT_01c02580'; did you mean 'DAT_02DF2580'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_005bf550'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_005bf590'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_005bf570'"
+        "column": 23,
+        "line": 71,
+        "message": "use of undeclared identifier '_DAT_005b06dc'"
       }
     ],
     "success": false,
@@ -122,12 +104,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 213,
+    "complexity_score": 214,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 64,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
@@ -135,7 +117,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 150
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -233,26 +215,26 @@
     },
     {
       "addr": "005bf550",
-      "name": "DAT_005bf550",
-      "type": "undefined1",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf570",
-      "name": "DAT_005bf570",
-      "type": "undefined1",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf590",
-      "name": "DAT_005bf590",
-      "type": "undefined4",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5b0",
-      "name": "DAT_005bf5b0",
-      "type": "undefined4",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -269,14 +251,14 @@
     },
     {
       "addr": "01c02580",
-      "name": "DAT_01c02580",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c02584",
-      "name": "DAT_01c02584",
-      "type": "undefined4",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
       "value": null
     }
   ],
@@ -342,15 +324,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_005b06e4",
       "severity": "mild",
-      "text": "DAT_005b06e4 = iVar2 * 2;",
+      "text": "DAT_005b06e4 = iVar3 * 2;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 29,
       "match": "(void *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
@@ -358,7 +340,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005b06e8",
       "severity": "mild",
       "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
@@ -366,23 +348,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 46,
       "match": "DAT_005b06b8",
       "severity": "mild",
-      "text": "DAT_005b06b8 = uVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_005b06bc",
-      "severity": "mild",
-      "text": "DAT_005b06bc = uVar4;",
+      "text": "DAT_005b06b8 = uVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 47,
+      "match": "DAT_005b06bc",
+      "severity": "mild",
+      "text": "DAT_005b06bc = uVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
       "match": "DAT_005b06c4",
       "severity": "mild",
       "text": "DAT_005b06c4 = uVar1;",
@@ -390,47 +372,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(ushort *)((int)DAT_005b06e8",
       "severity": "moderate",
-      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar6)) {",
+      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar7)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005b06e8",
       "severity": "mild",
-      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar6)) {",
+      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar7)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 57,
       "match": "(ushort *)((int)DAT_005b06e8",
       "severity": "moderate",
-      "text": "*(ushort *)((int)DAT_005b06e8 + uVar6) = (ushort)uVar1;",
+      "text": "*(ushort *)((int)DAT_005b06e8 + uVar7) = (ushort)uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_005b06e8",
       "severity": "mild",
-      "text": "*(ushort *)((int)DAT_005b06e8 + uVar6) = (ushort)uVar1;",
+      "text": "*(ushort *)((int)DAT_005b06e8 + uVar7) = (ushort)uVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_005b06e4",
       "severity": "mild",
-      "text": "if (DAT_005b06e4 < uVar6) break;",
+      "text": "if (DAT_005b06e4 < uVar7) break;",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 29,
       "match": "(int)g_ScreenBufferArray[scanline_y]",
       "severity": "moderate",
       "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",

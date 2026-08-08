@@ -20,7 +20,7 @@
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 at 0045ee3c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
 ;   undefined4 DAT_01b4d1fc
@@ -32,7 +32,7 @@
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
-;   undefined4 DAT_01e52ef8
+;   int g_RenderedTriangleCount
 ;   undefined4 DAT_02de497c
 ;   undefined4 DAT_02de4980
 ;   ... and 3 more
@@ -55,7 +55,7 @@ section .text
     PUSH EBP                            ; 005628c3
     SUB ESP,0x20                        ; 005628c4
     MOV EBP,dword ptr [0x02de497c]      ; 005628c7 | DAT_02de497c
-    CMP dword ptr [0x005b7644],0x0      ; 005628cd | DAT_005b7644
+    CMP dword ptr [0x005b7644],0x0      ; 005628cd | INT_005b7644
     JZ 0x00562983                       ; 005628d4
         ;   XREF to: 00562983 (CONDITIONAL_JUMP)  ; LAB_00562983
     MOV EBX,dword ptr [ESP + 0x38]      ; 005628da
@@ -122,11 +122,11 @@ section .text
     TEST EAX,EAX                        ; 0056298e
     JNZ 0x00562b6c                      ; 00562990
         ;   XREF to: 00562b6c (CONDITIONAL_JUMP)  ; LAB_00562b6c
-    MOV ECX,dword ptr [0x01e52ef8]      ; 00562996 | DAT_01e52ef8
+    MOV ECX,dword ptr [0x01e52ef8]      ; 00562996 | g_RenderedTriangleCount
         ;   Label: LAB_00562996
     INC ECX                             ; 0056299c
     MOV EBX,dword ptr [0x01c02594]      ; 0056299d | g_UseExternalRenderer
-    MOV dword ptr [0x01e52ef8],ECX      ; 005629a3 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ECX      ; 005629a3 | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 005629a9
     JZ 0x005629ba                       ; 005629ab
         ;   XREF to: 005629ba (CONDITIONAL_JUMP)  ; LAB_005629ba

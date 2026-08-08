@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1782,
-    "complexity_score": 1049,
+    "complexity_score": 1009,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 559,
-    "suspect_count": 47,
+    "suspect_count": 43,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -195,9 +195,9 @@
     },
     {
       "addr": "005b763c",
-      "name": "DAT_005b763c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
     },
     {
       "addr": "005bf5b8",
@@ -1011,14 +1011,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 192,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b763c *",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 240,
       "match": "(int *)((int)g_ScreenBufferArray",
@@ -1033,14 +1025,6 @@
       "severity": "moderate",
       "text": "puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 261,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b763c *",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1059,14 +1043,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 329,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b763c *",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 374,
       "match": "(int *)((int)g_ScreenBufferArray",
@@ -1081,14 +1057,6 @@
       "severity": "moderate",
       "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 393,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "iVar6 = DAT_005b763c *",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b762c
-;   undefined4 DAT_005b763c
+;   int g_CurrentTextureDimension = 0x100
+;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_006b029c
@@ -58,7 +58,7 @@ section .text
     MOV dword ptr [0x01c039a0],ECX      ; 00407ea1 | g_RenderStateFlags
     CALL engine_3d.c_calculatePolygonLighting_FUN_00404710 ; 00407ea7
         ;   XREF to: 00404710 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive * prim)
-    MOV ESI,dword ptr [0x005b763c]      ; 00407eac | DAT_005b763c
+    MOV ESI,dword ptr [0x005b763c]      ; 00407eac | g_CurrentAlphaValue
     ADD ESP,0x4                         ; 00407eb2
     CMP ESI,0xff                        ; 00407eb5
     JL 0x00407f84                       ; 00407ebb
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 00407fd2 (CONDITIONAL_JUMP)  ; LAB_00407fd2
     MOV EAX,dword ptr [ECX]             ; 00407ee6
     MOV dword ptr [ESI + 0x6b029c],EAX  ; 00407ee8 | DAT_006b029c | DAT_006b02a0
-    MOV EBP,dword ptr [0x005b762c]      ; 00407eee | DAT_005b762c
+    MOV EBP,dword ptr [0x005b762c]      ; 00407eee | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00407ef4
     MOV EDX,dword ptr [ECX + 0x8]       ; 00407ef7
     CMP EBP,0x40                        ; 00407efa

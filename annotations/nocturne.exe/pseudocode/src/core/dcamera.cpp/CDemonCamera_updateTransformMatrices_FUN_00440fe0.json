@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,22 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c039e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c039ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c039f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c039f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c039f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c039fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01c03a00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01c03a04'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01c03a08'"
-      },
-      {
         "category": "incompatible_types",
         "column": 3,
-        "line": 31,
+        "line": 29,
         "message": "no matching function for call to 'engine_drender_cpp_FUN_00460d10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 32,
+        "message": "use of undeclared identifier 'stack0xffffffec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 34,
+        "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
     "success": false,
@@ -122,21 +80,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 117,
+    "complexity_score": 111,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 31,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -215,55 +172,55 @@
     },
     {
       "addr": "01c039e8",
-      "name": "DAT_01c039e8",
-      "type": "undefined4",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01c039ec",
-      "name": "DAT_01c039ec",
+      "name": "g_TransformMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f0",
-      "name": "DAT_01c039f0",
+      "name": "g_TransformMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f4",
-      "name": "DAT_01c039f4",
+      "name": "g_TransformMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f8",
-      "name": "DAT_01c039f8",
+      "name": "g_TransformMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039fc",
-      "name": "DAT_01c039fc",
+      "name": "g_TransformMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a00",
-      "name": "DAT_01c03a00",
+      "name": "g_TransformMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a04",
-      "name": "DAT_01c03a04",
+      "name": "g_TransformMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a08",
-      "name": "DAT_01c03a08",
+      "name": "g_TransformMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -355,7 +312,7 @@
         {
           "check_id": "uninitvar",
           "column": 33,
-          "line": 33,
+          "line": 31,
           "message": "Uninitialized variable: local_18",
           "severity": "error"
         }
@@ -366,16 +323,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 8,
       "match": "aiStackY_1000",
       "severity": "moderate",
       "text": "int aiStackY_1000 [1017];",
@@ -383,7 +332,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);",
@@ -391,7 +340,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 27,
+      "line": 25,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
@@ -399,15 +348,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 27,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
+      "description": "Watcom field-by-field struct copy (7 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 12,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->source_matrix).m[0].x = g_TransformMatrix.m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 30,
+      "line": 28,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;",
@@ -415,7 +372,7 @@
     },
     {
       "description": "Uninitialized variable: local_18",
-      "line": 33,
+      "line": 31,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(this_ptr->camera_origin).x = local_18;",

@@ -16,7 +16,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c039c0
+;   int g_RelativeZ
 ;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
@@ -135,7 +135,7 @@ section .text
     PUSH EBX                            ; 0043f43f | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 ; 0043f440
         ;   XREF to: 00460fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(CDemonRenderer * this_ptr, int state_flag)
-    MOV EDI,dword ptr [0x01c039c0]      ; 0043f445 | DAT_01c039c0
+    MOV EDI,dword ptr [0x01c039c0]      ; 0043f445 | g_RelativeZ
     ADD ESP,0x8                         ; 0043f44b
     XOR EDX,EDX                         ; 0043f44e
     TEST EDI,EDI                        ; 0043f450

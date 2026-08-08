@@ -28,15 +28,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0(CDemo
   *puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);
   puVar3[(uint)bVar4 * -2 + 1] =
        *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
-  *(uint *)(iVar2 + 0x124c) = _DAT_01c039e8;
-  *(uint *)(iVar2 + 0x126c) = _DAT_01c039ec;
-  *(uint *)(iVar2 + 0x128c) = _DAT_01c039f0;
-  *(uint *)(iVar2 + 0x12ac) = _DAT_01c039f4;
-  *(uint *)(iVar2 + 0x12cc) = _DAT_01c039f8;
-  *(uint *)(iVar2 + 0x12ec) = _DAT_01c039fc;
-  *(uint *)(iVar2 + 0x130c) = _DAT_01c03a00;
-  *(uint *)(iVar2 + 0x132c) = _DAT_01c03a04;
-  *(uint *)(iVar2 + 0x134c) = _DAT_01c03a08;
+  *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0].x;
+  *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0].y;
+  *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0].z;
+  *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1].x;
+  *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1].y;
+  *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1].z;
+  *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2].x;
+  *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2].y;
+  *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2].z;
   *(uint *)(iVar2 + 0x136c) = _DAT_01cc5118;
   *(uint *)(iVar2 + 0x138c) = _DAT_01cc511c;
   *(uint *)(iVar2 + 0x13ac) = _DAT_01cc5120;

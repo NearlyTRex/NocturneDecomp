@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,942
-  Unnamed functions (FUN_):          551 (11.1%)
-  Functions with unnamed params:     30 ( 0.6%)
-  Functions with type issues:        1,755 (35.5%)
+  Unnamed functions (FUN_):          549 (11.1%)
+  Functions with unnamed params:     29 ( 0.6%)
+  Functions with type issues:        1,754 (35.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           34
     Wrong calling convention:          73
     Undefined types in variables:      1616
-    Unresolved stack params:           168
+    Unresolved stack params:           167
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -580,10 +580,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/slew.cpp (1 unnamed)
     0x0051f930  __cdecl       1 callers
 
-  engine/special.cpp (5 unnamed)
+  engine/special.cpp (3 unnamed)
     0x00532f50  __cdecl       1 callers
-    0x00530cf0  __cdecl       0 callers
-    0x00530d30  __cdecl       0 callers
     0x00532f30  __cdecl       0 callers
     0x00532fa0  __cdecl       0 callers
 
@@ -862,10 +860,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x00513e20  File: core/setdir.cpp
     Unnamed: param_2 (int), param_3 (CVector3f *)
     Named:   this_ptr (CDemonSet *)
-
-  FUN_00530cf0
-    Address: 0x00530cf0  File: engine/special.cpp
-    Unnamed: param_1 (int *), param_2 (int)
 
   FUN_00532f50
     Address: 0x00532f50  File: engine/special.cpp
@@ -1619,7 +1613,7 @@ Wrong calling convention (unaffected register usage) (73)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (168)
+Unresolved stack parameters (missing from signature) (167)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -2478,12 +2472,6 @@ Unresolved stack parameters (missing from signature) (168)
     Address: 0x0052ee40  File: core/sound.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
     Signature: undefined4 * core_sound_cpp_FUN_0052ee40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00530d30
-    Address: 0x00530d30  File: engine/special.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl engine_special_cpp_FUN_00530d30(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00532f30
@@ -11346,11 +11334,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fa2e0  (int *vertex_indices,int vertex_count)
     0x004faca0  (void)
 
-  engine_special.cpp  (5 functions)
-    0x00530cf0  (int *param_1,int param_2)
-    0x00530d30  (void)
+  engine_special.cpp  (3 functions)
     0x00532f30  (void)
-    0x00532f50  (char *param_1,undefined4 param_2)
+    0x00532f50  (char *param_1,int param_2)
     0x00532fa0  (void)
 
   engine_texture.cpp  (3 functions)

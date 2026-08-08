@@ -7,9 +7,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_00588336
 ;   TerminatedCString s_Matrix_unbalance4_00588349
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cc5174
@@ -31,11 +31,11 @@ section .text
     MOV EAX,[0x01cc5174]                ; 004ceba1 | DAT_01cc5174
         ;   Label: LAB_004ceba1
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc52e0] ; 004ceba6
-    MOV dword ptr [0x01c039b8],EDX      ; 004cebad | DAT_01c039b8
+    MOV dword ptr [0x01c039b8],EDX      ; 004cebad | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5308] ; 004cebb3
     MOV EAX,dword ptr [EAX*0x4 + 0x1cc5330] ; 004cebba
-    MOV dword ptr [0x01c039bc],EDX      ; 004cebc1 | DAT_01c039bc
-    MOV [0x01c039c0],EAX                ; 004cebc7 | DAT_01c039c0
+    MOV dword ptr [0x01c039bc],EDX      ; 004cebc1 | g_RelativeY
+    MOV [0x01c039c0],EAX                ; 004cebc7 | g_RelativeZ
     RET                                 ; 004cebcc
     PUSH ESI                            ; 004cebcd
         ;   Label: LAB_004cebcd

@@ -26,7 +26,7 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_bu
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   
-  if ((DAT_005b7644 != 0) && (iVar10 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
+  if ((INT_005b7644 != 0) && (iVar10 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
       if ((int)((pSVar6->projected_vertex).screen_x & -0x80000000) != 0) {
         if ((g_VertexPreprocessMode & 6U) != 0) {
@@ -55,7 +55,7 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_bu
                          (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar10 == 0)) {
     return;
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {
     engine_special_cpp_drawPolygon_FUN_00532620(vertex_buffer,vertex_count,g_RenderStateFlags.dword)
     ;

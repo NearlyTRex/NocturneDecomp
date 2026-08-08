@@ -44,7 +44,7 @@
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   void*[1200] g_ScreenBufferArray
-;   undefined4 DAT_01c00024
+;   uint[256] g_Hardware32BitPalette
 ;   CAlphaBitmap g_CAlphaBitmap_01ccdc50
 ;   undefined4 DAT_01ccdebc
 ;   ... and 9 more
@@ -292,7 +292,7 @@ section .text
     ADD EAX,dword ptr [EBP + 0xffffffe4] ; 004def3a
     MOVZX EAX,byte ptr [EAX]            ; 004def40
     SHR EAX,0x2                         ; 004def43
-    MOVD MM1,dword ptr [EAX*0x4 + 0x1c00024] ; 004def46 | DAT_01c00024
+    MOVD MM1,dword ptr [EAX*0x4 + 0x1c00024] ; 004def46 | g_Hardware32BitPalette
     MOVQ MM2,MM1                        ; 004def4e
     PSLLQ MM2,0x20                      ; 004def51
     POR MM1,MM2                         ; 004def55
@@ -310,7 +310,7 @@ section .text
     ADD EAX,dword ptr [EBP + 0xffffffe4] ; 004def85
     MOVZX EAX,byte ptr [EAX]            ; 004def8b
     SHR EAX,0x2                         ; 004def8e
-    MOVD MM1,dword ptr [EAX*0x4 + 0x1c00024] ; 004def91 | DAT_01c00024
+    MOVD MM1,dword ptr [EAX*0x4 + 0x1c00024] ; 004def91 | g_Hardware32BitPalette
     MOVQ MM2,MM1                        ; 004def99
     PSLLQ MM2,0x20                      ; 004def9c
     POR MM1,MM2                         ; 004defa0

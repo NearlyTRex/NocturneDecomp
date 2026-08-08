@@ -28,7 +28,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
-;   undefined4 DAT_005b7630
+;   int INT_005b7630 = 0x7f
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
@@ -89,9 +89,9 @@ section .text
     MOV EAX,0x7f                        ; 00474dd9
     PUSH EDX                            ; 00474dde
     MOV ECX,dword ptr [ESP + 0x24]      ; 00474ddf
-    MOV EBP,dword ptr [0x005b7630]      ; 00474de3 | DAT_005b7630
+    MOV EBP,dword ptr [0x005b7630]      ; 00474de3 | INT_005b7630
     PUSH ECX                            ; 00474de9
-    MOV [0x005b7630],EAX                ; 00474dea | DAT_005b7630
+    MOV [0x005b7630],EAX                ; 00474dea | INT_005b7630
     MOV EAX,[0x01bd1d90]                ; 00474def | DAT_01bd1d90
     PUSH ESI                            ; 00474df4
     MOV EDI,dword ptr [0x01bd1d8c]      ; 00474df5 | DAT_01bd1d8c
@@ -127,7 +127,7 @@ section .text
     CALL shape_edittool.cpp_FUN_004720c0 ; 00474e3e
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 00474e43
-    MOV dword ptr [0x005b7630],EBP      ; 00474e46 | DAT_005b7630
+    MOV dword ptr [0x005b7630],EBP      ; 00474e46 | INT_005b7630
     MOV EAX,EBX                         ; 00474e4c
     ADD ESP,0x4                         ; 00474e4e
     POP EBP                             ; 00474e51

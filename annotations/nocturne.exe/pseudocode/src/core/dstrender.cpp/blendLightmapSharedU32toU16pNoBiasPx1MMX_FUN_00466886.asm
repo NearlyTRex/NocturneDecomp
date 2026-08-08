@@ -18,9 +18,9 @@
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
-;   undefined4 DAT_005bf618
-;   undefined4 DAT_005bf638
-;   undefined4 DAT_005bf658
+;   _MMX_INTEGER g_TotalDitherShift
+;   _MMX_INTEGER g_GreenBlueDitherShift
+;   _MMX_INTEGER g_BlueBitShift
 ;   undefined4 DAT_00b0e1fc
 ;   ulong g_SolidColorMode
 ;
@@ -65,9 +65,9 @@ section .text
     PAND MM0,qword ptr [0x005bf610]     ; 004668f3 | g_BlueMask32
     PAND MM2,qword ptr [0x005bf5f0]     ; 004668fa | g_GreenMask32
     PAND MM3,qword ptr [0x005bf5d0]     ; 00466901 | g_RedMask32
-    PSRLQ MM0,qword ptr [0x005bf658]    ; 00466908 | DAT_005bf658
-    PSRLQ MM2,qword ptr [0x005bf638]    ; 0046690f | DAT_005bf638
-    PSRLQ MM3,qword ptr [0x005bf618]    ; 00466916 | DAT_005bf618
+    PSRLQ MM0,qword ptr [0x005bf658]    ; 00466908 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x005bf638]    ; 0046690f | g_GreenBlueDitherShift
+    PSRLQ MM3,qword ptr [0x005bf618]    ; 00466916 | g_TotalDitherShift
     POR MM0,MM2                         ; 0046691d
     POR MM0,MM3                         ; 00466920
     MOVD EAX,MM0                        ; 00466923

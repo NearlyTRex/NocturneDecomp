@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane)
 
 {
@@ -22,9 +20,9 @@ int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane)
   iVar4 = 1;
   if (((DAT_006b0280 == 0) &&
       ((((plane->A).i != 0 || (plane->B).i != 0) || (plane->C).i != 0) || (plane->D).i != 0)) &&
-     (lVar3 = (longlong)(plane->B).i * (longlong)_DAT_01c039bc +
-              (longlong)(plane->A).i * (longlong)_DAT_01c039b8 +
-              (longlong)(plane->C).i * (longlong)_DAT_01c039c0,
+     (lVar3 = (longlong)(plane->B).i * (longlong)g_RelativeY +
+              (longlong)(plane->A).i * (longlong)g_RelativeX +
+              (longlong)(plane->C).i * (longlong)g_RelativeZ,
      iVar5 = (int)((ulonglong)lVar3 >> 0x20), iVar6 = (plane->D).i >> 0x1f,
      uVar1 = (uint)((uint)(plane->D).i < (uint)lVar3), iVar2 = iVar6 - iVar5, iVar4 = 1,
      (SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {

@@ -20,3 +20,6 @@ CPickList g_CPickList_01e56c30 = {};
 // CScript
 CScript g_CScript_01e56da0 = {};
 
+// int
+int g_RenderedTriangleCount = {};
+

@@ -16,7 +16,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_UseExternalRenderer
 ;   APIDLL_unlockFrame* g_APIDLL_unlockFrame
-;   undefined4 DAT_02dc9e20
+;   int g_SavedBitsPerPixel
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
         ;   XREF to: 0053232c (CONDITIONAL_JUMP)  ; LAB_0053232c
     XOR EAX,EAX                         ; 00532329
     RET                                 ; 0053232b
-    MOV EAX,[0x02dc9e20]                ; 0053232c | DAT_02dc9e20
+    MOV EAX,[0x02dc9e20]                ; 0053232c | g_SavedBitsPerPixel
         ;   Label: LAB_0053232c
     MOV [0x005b7624],EAX                ; 00532331 | g_BitsPerPixel
     CALL dword ptr [0x02dc9d98]         ; 00532336 | g_APIDLL_unlockFrame

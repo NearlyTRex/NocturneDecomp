@@ -12,7 +12,7 @@ uint shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byt
 
 {
   char cVar1;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   CInputString *pCVar4;
   char *source_string;
@@ -33,9 +33,9 @@ uint shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byt
   shape_edittool_cpp_CInputString_init_FUN_0046f0a0(&local_150,source_string,param_3,param_5);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (g_CEditorTools_PTR_005b6d50,(g_WindowWidth << 2) / 5,_DAT_01bcd9bc,param_1,0);
-  uVar2 = DAT_005b7630;
+  iVar2 = INT_005b7630;
   pCVar4 = &local_150;
-  DAT_005b7630 = 0x7f;
+  INT_005b7630 = 0x7f;
   do {
     shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
     shape_edittool_cpp_CInputString_draw_FUN_0046f680(&local_150,g_ClipLeft,g_ClipTop);
@@ -45,7 +45,7 @@ uint shape_edittool_cpp_FUN_0046f7e0(char *param_1,char *param_2,int param_3,byt
       if (iVar3 == 0x1b) {
         shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
-        DAT_005b7630 = uVar2;
+        INT_005b7630 = iVar2;
         return 0;
       }
       if (iVar3 == 0xd) goto LAB_0046f968;
@@ -73,6 +73,6 @@ LAB_0046f968:
   }
   shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  DAT_005b7630 = uVar2;
+  INT_005b7630 = iVar2;
   return 1;
 }

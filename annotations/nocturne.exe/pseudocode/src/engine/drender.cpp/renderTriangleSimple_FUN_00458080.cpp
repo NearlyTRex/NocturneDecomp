@@ -39,7 +39,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *ver
                          (SRenderVertex *)(&DAT_005c5014 + vertex_indices->z * 0xc)), iVar3 == 0)) {
     return;
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
     if (g_VertexPreprocessMode != 0) {
       if ((uint)g_VertexPreprocessMode < 2) {

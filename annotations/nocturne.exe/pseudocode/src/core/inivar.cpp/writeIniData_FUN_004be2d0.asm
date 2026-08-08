@@ -93,7 +93,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be361
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004bda80(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004be366
-    MOV EDI,dword ptr [0x02dc9d6c]      ; 004be369 | DAT_02dc9d6c
+    MOV EDI,dword ptr [0x02dc9d6c]      ; 004be369 | g_AGPTextureMode
     PUSH EDI                            ; 004be36f
     PUSH 0x586a42                       ; 004be370 | = "useAGPFlag"
     LEA EAX,[ESP + 0x8]                 ; 004be375

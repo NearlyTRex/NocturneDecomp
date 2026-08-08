@@ -17,16 +17,16 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   uchar[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_02dc9d70
+;   int g_FrameBufferTestResult
 ;   APIDLL_setVideoMode2* g_APIDLL_setVideoMode2
 ;   APIDLL_setFogColor* g_APIDLL_setFogColor
 ;   APIDLL_setColorTable16* g_APIDLL_setColorTable16
 ;   int g_LoadedExternalDLLRenderer
-;   undefined4 DAT_02dc9e0c
-;   undefined4 DAT_02dc9e10
-;   undefined4 DAT_02dc9e14
-;   undefined4 DAT_02dc9e18
-;   undefined4 DAT_02dc9e1c
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
+;   HWND g_StoredWindowHandle
+;   int g_ExternalBitsPerPixel
 ;
 ; Called Functions:
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 005324a3
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005324a4
     XOR EDX,EDX                         ; 005324a8
-    MOV dword ptr [0x02dc9d70],EDX      ; 005324aa | DAT_02dc9d70
+    MOV dword ptr [0x02dc9d70],EDX      ; 005324aa | g_FrameBufferTestResult
     CMP EBX,0x10                        ; 005324b0
     JGE 0x005324ba                      ; 005324b3
         ;   XREF to: 005324ba (CONDITIONAL_JUMP)  ; LAB_005324ba
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_005324ba
     JNZ 0x005324da                      ; 005324c1
         ;   XREF to: 005324da (CONDITIONAL_JUMP)  ; LAB_005324da
-    MOV ESI,dword ptr [0x02dc9e18]      ; 005324c3 | DAT_02dc9e18
+    MOV ESI,dword ptr [0x02dc9e18]      ; 005324c3 | g_StoredWindowHandle
     PUSH ESI                            ; 005324c9
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 005324ca
         ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
@@ -80,17 +80,17 @@ section .text
     ADD ESP,0x8                         ; 0053250b
     CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0 ; 0053250e
         ;   XREF to: 004b63f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0()
-    MOV EDX,dword ptr [0x02dc9e14]      ; 00532513 | DAT_02dc9e14
+    MOV EDX,dword ptr [0x02dc9e14]      ; 00532513 | g_FogColorBlue
     PUSH EDX                            ; 00532519
-    MOV ECX,dword ptr [0x02dc9e10]      ; 0053251a | DAT_02dc9e10
+    MOV ECX,dword ptr [0x02dc9e10]      ; 0053251a | g_FogColorGreen
     PUSH ECX                            ; 00532520
-    MOV ESI,dword ptr [0x02dc9e0c]      ; 00532521 | DAT_02dc9e0c
+    MOV ESI,dword ptr [0x02dc9e0c]      ; 00532521 | g_FogColorRed
     PUSH ESI                            ; 00532527
     MOV EDI,0x1                         ; 00532528
     CALL dword ptr [0x02dc9dcc]         ; 0053252d | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00532533
     MOV dword ptr [0x01c02594],EDI      ; 00532536 | g_UseExternalRenderer
-    MOV dword ptr [0x02dc9e1c],EBX      ; 0053253c | DAT_02dc9e1c
+    MOV dword ptr [0x02dc9e1c],EBX      ; 0053253c | g_ExternalBitsPerPixel
     CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00532542
         ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_lockFrame_FUN_005322e0()
     MOV EBP,dword ptr [0x005b7624]      ; 00532547 | g_BitsPerPixel
@@ -104,7 +104,7 @@ section .text
     SETNZ BL                            ; 00532564
     AND EBX,0xff                        ; 00532567
     MOV word ptr [EAX],DX               ; 0053256d
-    MOV dword ptr [0x02dc9d70],EBX      ; 00532570 | DAT_02dc9d70
+    MOV dword ptr [0x02dc9d70],EBX      ; 00532570 | g_FrameBufferTestResult
         ;   Label: LAB_00532570
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00532576
         ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()

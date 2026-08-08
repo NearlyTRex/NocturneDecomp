@@ -34,7 +34,7 @@
 ;   undefined4 s_anon_0057e74f+1
 ;   TerminatedCString s_d_0057e751
 ;   undefined4 s_d_0057e751+1
-;   undefined4 DAT_005b7630
+;   int INT_005b7630 = 0x7f
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_01bcd070
@@ -125,10 +125,10 @@ section .text
         ;   XREF to: 0046f0a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_init_FUN_0046f0a0(CInputString * this_ptr, char * source_string, int max_length, int mask_mode)
     ADD ESP,0x10                        ; 00470f6f
     MOV EDI,0x7f                        ; 00470f72
-    MOV EAX,[0x005b7630]                ; 00470f77 | DAT_005b7630
+    MOV EAX,[0x005b7630]                ; 00470f77 | INT_005b7630
     XOR ESI,ESI                         ; 00470f7c
     MOV dword ptr [ESP + 0x348],EAX     ; 00470f7e
-    MOV dword ptr [0x005b7630],EDI      ; 00470f85 | DAT_005b7630
+    MOV dword ptr [0x005b7630],EDI      ; 00470f85 | INT_005b7630
     MOV dword ptr [ESP + 0x34c],ESI     ; 00470f8b
     MOV EAX,dword ptr [ESP + 0x364]     ; 00470f92
         ;   Label: LAB_00470f92
@@ -315,7 +315,7 @@ section .text
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 00471176
     MOV EAX,dword ptr [ESP + 0x348]     ; 00471179
-    MOV [0x005b7630],EAX                ; 00471180 | DAT_005b7630
+    MOV [0x005b7630],EAX                ; 00471180 | INT_005b7630
     MOV EAX,0x1                         ; 00471185
     ADD ESP,0x350                       ; 0047118a
     POP EBP                             ; 00471190
@@ -485,7 +485,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00471320
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EAX,dword ptr [ESP + 0x348]     ; 00471325
-    MOV [0x005b7630],EAX                ; 0047132c | DAT_005b7630
+    MOV [0x005b7630],EAX                ; 0047132c | INT_005b7630
     XOR EAX,EAX                         ; 00471331
     ADD ESP,0x350                       ; 00471333
     POP EBP                             ; 00471339

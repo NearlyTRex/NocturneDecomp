@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c02580'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c02584'"
       }
     ],
     "success": false,
@@ -74,17 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 41,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 36
   },
   "cross_references": [],
@@ -104,9 +89,9 @@
   "globals": [
     {
       "addr": "005b762c",
-      "name": "DAT_005b762c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentTextureDimension",
+      "type": "int",
+      "value": "0x100"
     },
     {
       "addr": "01c00648",
@@ -116,14 +101,14 @@
     },
     {
       "addr": "01c02580",
-      "name": "DAT_01c02580",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c02584",
-      "name": "DAT_01c02584",
-      "type": "undefined4",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
       "value": null
     },
     {
@@ -217,22 +202,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b762c",
-      "severity": "mild",
-      "text": "(texture_info,DAT_005b762c,_DAT_01c02580,g_SourcePaletteData,_DAT_01c02584);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

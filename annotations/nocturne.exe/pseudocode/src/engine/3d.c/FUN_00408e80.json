@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -74,16 +74,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 128,
+    "complexity_score": 113,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "wrong_global"
@@ -144,9 +143,9 @@
     },
     {
       "addr": "005b7644",
-      "name": "DAT_005b7644",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b7644",
+      "type": "int",
+      "value": "0x1"
     }
   ],
   "param_estimates": {
@@ -322,14 +321,6 @@
       "severity": "mild",
       "text": "param_1 = (int *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7644",
-      "severity": "mild",
-      "text": "DAT_005b7644 = 1;",
-      "type": "undefined_data"
     },
     {
       "description": "Scalar global g_MRGLBlockHandlerTable accessed via (&g_MRGLBlockHandlerTable)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005acc88 (at 0x005acc88, +464 bytes).",

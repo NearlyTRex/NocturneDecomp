@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
@@ -90,29 +88,29 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   fVar3 = (this_ptr->position).y;
   fVar4 = position->y;
   fVar5 = position->z;
-  _DAT_01c039e8 = (this_ptr->source_matrix).m[0].x;
-  _DAT_01c039ec = (this_ptr->source_matrix).m[0].y;
+  g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;
+  g_TransformMatrix.m[0].y = (this_ptr->source_matrix).m[0].y;
   CStack_13c.z = 0;
-  _DAT_01c039f0 = (this_ptr->source_matrix).m[0].z;
-  _DAT_01c039f4 = (this_ptr->source_matrix).m[1].x;
+  g_TransformMatrix.m[0].z = (this_ptr->source_matrix).m[0].z;
+  g_TransformMatrix.m[1].x = (this_ptr->source_matrix).m[1].x;
   CStack_13c.y = (int)orientation;
   iVar8 = (this_ptr->source_matrix).m[1].y;
   CStack_13c.x = 0x446087;
   dVar10 = round((double)(((this_ptr->position).x - position->x) * fVar7));
   iVar6 = (this_ptr->source_matrix).m[1].z;
   rotation = (CVector3f *)0x446099;
-  _DAT_01c039f8 = iVar8;
+  g_TransformMatrix.m[1].y = iVar8;
   dVar11 = round((double)((fVar3 - fVar4) * fVar7));
   iVar8 = (this_ptr->source_matrix).m[2].x;
   position_00 = (CVector3f *)0x4460ab;
-  _DAT_01c039fc = iVar6;
+  g_TransformMatrix.m[1].z = iVar6;
   dVar12 = round((double)((fVar2 - fVar5) * fVar7));
-  _DAT_01c03a04 = (this_ptr->source_matrix).m[2].y;
-  _DAT_01c039b8 = (int)ROUND(dVar10);
-  _DAT_01c03a08 = (this_ptr->source_matrix).m[2].z;
-  _DAT_01c039bc = (int)ROUND(dVar11);
-  _DAT_01c039c0 = (int)ROUND(dVar12);
-  _DAT_01c03a00 = iVar8;
+  g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
+  g_RelativeX = (int)ROUND(dVar10);
+  g_TransformMatrix.m[2].z = (this_ptr->source_matrix).m[2].z;
+  g_RelativeY = (int)ROUND(dVar11);
+  g_RelativeZ = (int)ROUND(dVar12);
+  g_TransformMatrix.m[2].x = iVar8;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,position_00,rotation);
   local_124 = bbox_max->x;

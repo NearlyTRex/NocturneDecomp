@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004facd8 = 004fae11
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
 ;   SProjectionParams g_Projection
@@ -28,7 +28,7 @@
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
-;   undefined4 DAT_01e52ef8
+;   int g_RenderedTriangleCount
 ;   undefined4 DAT_01e52efc
 ;   undefined4 DAT_01e52f00
 ;   undefined4 DAT_01e52f48
@@ -53,7 +53,7 @@ section .text
     PUSH EDI                            ; 004fad02
     PUSH EBP                            ; 004fad03
     SUB ESP,0x14                        ; 004fad04
-    CMP dword ptr [0x005b7644],0x0      ; 004fad07 | DAT_005b7644
+    CMP dword ptr [0x005b7644],0x0      ; 004fad07 | INT_005b7644
     JZ 0x004fad77                       ; 004fad0e
         ;   XREF to: 004fad77 (CONDITIONAL_JUMP)  ; LAB_004fad77
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004fad10
@@ -138,11 +138,11 @@ section .text
         ;   Label: LAB_004fadd2
     JZ 0x004faf9b                       ; 004fadd6
         ;   XREF to: 004faf9b (CONDITIONAL_JUMP)  ; LAB_004faf9b
-    MOV EDX,dword ptr [0x01e52ef8]      ; 004faddc | DAT_01e52ef8
+    MOV EDX,dword ptr [0x01e52ef8]      ; 004faddc | g_RenderedTriangleCount
         ;   Label: LAB_004faddc
     INC EDX                             ; 004fade2
     MOV ECX,dword ptr [0x01c02594]      ; 004fade3 | g_UseExternalRenderer
-    MOV dword ptr [0x01e52ef8],EDX      ; 004fade9 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],EDX      ; 004fade9 | g_RenderedTriangleCount
     TEST ECX,ECX                        ; 004fadef
     JZ 0x004fae00                       ; 004fadf1
         ;   XREF to: 004fae00 (CONDITIONAL_JUMP)  ; LAB_004fae00

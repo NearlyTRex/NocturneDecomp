@@ -1,84 +1,69 @@
 {
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 31,
+    "assembly_lines": 3,
     "complexity_score": 31,
     "cross_reference_count": 1,
-    "function_call_count": 1,
-    "global_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 47
+    "total_lines": 19
   },
   "cross_references": [
     {
-      "addr": "005713d0",
-      "from_addr": "005713d0",
-      "name": "crt_unknown.c_FUN_00571364",
-      "type": "UNCONDITIONAL_JUMP"
+      "addr": "0056e7fc",
+      "from_addr": "0056e83b",
+      "name": "crt_unknown.c_FUN_0056e7fc",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
-    "address": "00571364",
+    "address": "005713d0",
     "address_range": [
       [
-        "00571364",
-        "00571396"
+        "005713d0",
+        "005713d4"
       ]
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_00571364",
     "signature": "void crt_unknown_c_FUN_00571364(void)"
   },
-  "function_calls": [
-    {
-      "addr": "005638d0",
-      "is_variadic": false,
-      "name": "crt_memory.c_free_FUN_005638d0"
-    }
-  ],
-  "globals": [
-    {
-      "addr": "02de5d70",
-      "name": "DAT_02de5d70",
-      "type": "undefined4",
-      "value": null
-    }
-  ],
+  "function_calls": [],
+  "globals": [],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056e83b",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056e7fc",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 0,
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.0,
-    "instruction_count": 22,
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
     "opcode_distribution": {
-      "BOOL_NEGATE": 1,
-      "CALL": 2,
-      "CBRANCH": 3,
-      "COPY": 19,
-      "INT_ADD": 7,
-      "INT_AND": 13,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 10,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 5,
-      "INT_SUB": 6,
-      "LOAD": 6,
-      "POPCOUNT": 5,
-      "RETURN": 1,
-      "STORE": 6
+      "BRANCH": 1
     },
-    "pcode_op_count": 88
+    "pcode_op_count": 1
   },
   "stack_frame": {
     "frame_size": 4,

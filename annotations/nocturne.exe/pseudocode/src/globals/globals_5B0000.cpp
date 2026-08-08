@@ -40,6 +40,1546 @@ CPod* g_CPod_PTR_005be1cc = (CPod*)&g_CDemonPod_01e528d0;
 // CSound*
 CSound* g_CSound_PTR_005bed68 = (CSound*)&g_CSound_02dc9450;
 
+// SAlphaEntry[256]
+SAlphaEntry g_AlphaTable[256] = {
+    {
+        .red = 0x0000,
+        .green = 0x0000,
+        .blue = 0x0000,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0001,
+        .green = 0x0001,
+        .blue = 0x0001,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0002,
+        .green = 0x0002,
+        .blue = 0x0002,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0003,
+        .green = 0x0003,
+        .blue = 0x0003,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0004,
+        .green = 0x0004,
+        .blue = 0x0004,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0005,
+        .green = 0x0005,
+        .blue = 0x0005,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0006,
+        .green = 0x0006,
+        .blue = 0x0006,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0007,
+        .green = 0x0007,
+        .blue = 0x0007,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0008,
+        .green = 0x0008,
+        .blue = 0x0008,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0009,
+        .green = 0x0009,
+        .blue = 0x0009,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000A,
+        .green = 0x000A,
+        .blue = 0x000A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000B,
+        .green = 0x000B,
+        .blue = 0x000B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000C,
+        .green = 0x000C,
+        .blue = 0x000C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000D,
+        .green = 0x000D,
+        .blue = 0x000D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000E,
+        .green = 0x000E,
+        .blue = 0x000E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x000F,
+        .green = 0x000F,
+        .blue = 0x000F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0010,
+        .green = 0x0010,
+        .blue = 0x0010,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0011,
+        .green = 0x0011,
+        .blue = 0x0011,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0012,
+        .green = 0x0012,
+        .blue = 0x0012,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0013,
+        .green = 0x0013,
+        .blue = 0x0013,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0014,
+        .green = 0x0014,
+        .blue = 0x0014,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0015,
+        .green = 0x0015,
+        .blue = 0x0015,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0016,
+        .green = 0x0016,
+        .blue = 0x0016,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0017,
+        .green = 0x0017,
+        .blue = 0x0017,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0018,
+        .green = 0x0018,
+        .blue = 0x0018,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0019,
+        .green = 0x0019,
+        .blue = 0x0019,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001A,
+        .green = 0x001A,
+        .blue = 0x001A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001B,
+        .green = 0x001B,
+        .blue = 0x001B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001C,
+        .green = 0x001C,
+        .blue = 0x001C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001D,
+        .green = 0x001D,
+        .blue = 0x001D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001E,
+        .green = 0x001E,
+        .blue = 0x001E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x001F,
+        .green = 0x001F,
+        .blue = 0x001F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0020,
+        .green = 0x0020,
+        .blue = 0x0020,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0021,
+        .green = 0x0021,
+        .blue = 0x0021,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0022,
+        .green = 0x0022,
+        .blue = 0x0022,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0023,
+        .green = 0x0023,
+        .blue = 0x0023,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0024,
+        .green = 0x0024,
+        .blue = 0x0024,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0025,
+        .green = 0x0025,
+        .blue = 0x0025,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0026,
+        .green = 0x0026,
+        .blue = 0x0026,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0027,
+        .green = 0x0027,
+        .blue = 0x0027,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0028,
+        .green = 0x0028,
+        .blue = 0x0028,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0029,
+        .green = 0x0029,
+        .blue = 0x0029,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002A,
+        .green = 0x002A,
+        .blue = 0x002A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002B,
+        .green = 0x002B,
+        .blue = 0x002B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002C,
+        .green = 0x002C,
+        .blue = 0x002C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002D,
+        .green = 0x002D,
+        .blue = 0x002D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002E,
+        .green = 0x002E,
+        .blue = 0x002E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x002F,
+        .green = 0x002F,
+        .blue = 0x002F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0030,
+        .green = 0x0030,
+        .blue = 0x0030,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0031,
+        .green = 0x0031,
+        .blue = 0x0031,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0032,
+        .green = 0x0032,
+        .blue = 0x0032,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0033,
+        .green = 0x0033,
+        .blue = 0x0033,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0034,
+        .green = 0x0034,
+        .blue = 0x0034,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0035,
+        .green = 0x0035,
+        .blue = 0x0035,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0036,
+        .green = 0x0036,
+        .blue = 0x0036,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0037,
+        .green = 0x0037,
+        .blue = 0x0037,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0038,
+        .green = 0x0038,
+        .blue = 0x0038,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0039,
+        .green = 0x0039,
+        .blue = 0x0039,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003A,
+        .green = 0x003A,
+        .blue = 0x003A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003B,
+        .green = 0x003B,
+        .blue = 0x003B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003C,
+        .green = 0x003C,
+        .blue = 0x003C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003D,
+        .green = 0x003D,
+        .blue = 0x003D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003E,
+        .green = 0x003E,
+        .blue = 0x003E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x003F,
+        .green = 0x003F,
+        .blue = 0x003F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0040,
+        .green = 0x0040,
+        .blue = 0x0040,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0041,
+        .green = 0x0041,
+        .blue = 0x0041,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0042,
+        .green = 0x0042,
+        .blue = 0x0042,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0043,
+        .green = 0x0043,
+        .blue = 0x0043,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0044,
+        .green = 0x0044,
+        .blue = 0x0044,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0045,
+        .green = 0x0045,
+        .blue = 0x0045,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0046,
+        .green = 0x0046,
+        .blue = 0x0046,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0047,
+        .green = 0x0047,
+        .blue = 0x0047,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0048,
+        .green = 0x0048,
+        .blue = 0x0048,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0049,
+        .green = 0x0049,
+        .blue = 0x0049,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004A,
+        .green = 0x004A,
+        .blue = 0x004A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004B,
+        .green = 0x004B,
+        .blue = 0x004B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004C,
+        .green = 0x004C,
+        .blue = 0x004C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004D,
+        .green = 0x004D,
+        .blue = 0x004D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004E,
+        .green = 0x004E,
+        .blue = 0x004E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x004F,
+        .green = 0x004F,
+        .blue = 0x004F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0050,
+        .green = 0x0050,
+        .blue = 0x0050,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0051,
+        .green = 0x0051,
+        .blue = 0x0051,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0052,
+        .green = 0x0052,
+        .blue = 0x0052,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0053,
+        .green = 0x0053,
+        .blue = 0x0053,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0054,
+        .green = 0x0054,
+        .blue = 0x0054,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0055,
+        .green = 0x0055,
+        .blue = 0x0055,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0056,
+        .green = 0x0056,
+        .blue = 0x0056,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0057,
+        .green = 0x0057,
+        .blue = 0x0057,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0058,
+        .green = 0x0058,
+        .blue = 0x0058,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0059,
+        .green = 0x0059,
+        .blue = 0x0059,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005A,
+        .green = 0x005A,
+        .blue = 0x005A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005B,
+        .green = 0x005B,
+        .blue = 0x005B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005C,
+        .green = 0x005C,
+        .blue = 0x005C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005D,
+        .green = 0x005D,
+        .blue = 0x005D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005E,
+        .green = 0x005E,
+        .blue = 0x005E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x005F,
+        .green = 0x005F,
+        .blue = 0x005F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0060,
+        .green = 0x0060,
+        .blue = 0x0060,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0061,
+        .green = 0x0061,
+        .blue = 0x0061,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0062,
+        .green = 0x0062,
+        .blue = 0x0062,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0063,
+        .green = 0x0063,
+        .blue = 0x0063,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0064,
+        .green = 0x0064,
+        .blue = 0x0064,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0065,
+        .green = 0x0065,
+        .blue = 0x0065,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0066,
+        .green = 0x0066,
+        .blue = 0x0066,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0067,
+        .green = 0x0067,
+        .blue = 0x0067,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0068,
+        .green = 0x0068,
+        .blue = 0x0068,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0069,
+        .green = 0x0069,
+        .blue = 0x0069,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006A,
+        .green = 0x006A,
+        .blue = 0x006A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006B,
+        .green = 0x006B,
+        .blue = 0x006B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006C,
+        .green = 0x006C,
+        .blue = 0x006C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006D,
+        .green = 0x006D,
+        .blue = 0x006D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006E,
+        .green = 0x006E,
+        .blue = 0x006E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x006F,
+        .green = 0x006F,
+        .blue = 0x006F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0070,
+        .green = 0x0070,
+        .blue = 0x0070,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0071,
+        .green = 0x0071,
+        .blue = 0x0071,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0072,
+        .green = 0x0072,
+        .blue = 0x0072,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0073,
+        .green = 0x0073,
+        .blue = 0x0073,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0074,
+        .green = 0x0074,
+        .blue = 0x0074,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0075,
+        .green = 0x0075,
+        .blue = 0x0075,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0076,
+        .green = 0x0076,
+        .blue = 0x0076,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0077,
+        .green = 0x0077,
+        .blue = 0x0077,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0078,
+        .green = 0x0078,
+        .blue = 0x0078,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0079,
+        .green = 0x0079,
+        .blue = 0x0079,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007A,
+        .green = 0x007A,
+        .blue = 0x007A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007B,
+        .green = 0x007B,
+        .blue = 0x007B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007C,
+        .green = 0x007C,
+        .blue = 0x007C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007D,
+        .green = 0x007D,
+        .blue = 0x007D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007E,
+        .green = 0x007E,
+        .blue = 0x007E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x007F,
+        .green = 0x007F,
+        .blue = 0x007F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0080,
+        .green = 0x0080,
+        .blue = 0x0080,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0081,
+        .green = 0x0081,
+        .blue = 0x0081,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0082,
+        .green = 0x0082,
+        .blue = 0x0082,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0083,
+        .green = 0x0083,
+        .blue = 0x0083,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0084,
+        .green = 0x0084,
+        .blue = 0x0084,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0085,
+        .green = 0x0085,
+        .blue = 0x0085,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0086,
+        .green = 0x0086,
+        .blue = 0x0086,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0087,
+        .green = 0x0087,
+        .blue = 0x0087,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0088,
+        .green = 0x0088,
+        .blue = 0x0088,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0089,
+        .green = 0x0089,
+        .blue = 0x0089,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008A,
+        .green = 0x008A,
+        .blue = 0x008A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008B,
+        .green = 0x008B,
+        .blue = 0x008B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008C,
+        .green = 0x008C,
+        .blue = 0x008C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008D,
+        .green = 0x008D,
+        .blue = 0x008D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008E,
+        .green = 0x008E,
+        .blue = 0x008E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x008F,
+        .green = 0x008F,
+        .blue = 0x008F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0090,
+        .green = 0x0090,
+        .blue = 0x0090,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0091,
+        .green = 0x0091,
+        .blue = 0x0091,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0092,
+        .green = 0x0092,
+        .blue = 0x0092,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0093,
+        .green = 0x0093,
+        .blue = 0x0093,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0094,
+        .green = 0x0094,
+        .blue = 0x0094,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0095,
+        .green = 0x0095,
+        .blue = 0x0095,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0096,
+        .green = 0x0096,
+        .blue = 0x0096,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0097,
+        .green = 0x0097,
+        .blue = 0x0097,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0098,
+        .green = 0x0098,
+        .blue = 0x0098,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x0099,
+        .green = 0x0099,
+        .blue = 0x0099,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009A,
+        .green = 0x009A,
+        .blue = 0x009A,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009B,
+        .green = 0x009B,
+        .blue = 0x009B,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009C,
+        .green = 0x009C,
+        .blue = 0x009C,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009D,
+        .green = 0x009D,
+        .blue = 0x009D,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009E,
+        .green = 0x009E,
+        .blue = 0x009E,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x009F,
+        .green = 0x009F,
+        .blue = 0x009F,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A0,
+        .green = 0x00A0,
+        .blue = 0x00A0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A1,
+        .green = 0x00A1,
+        .blue = 0x00A1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A2,
+        .green = 0x00A2,
+        .blue = 0x00A2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A3,
+        .green = 0x00A3,
+        .blue = 0x00A3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A4,
+        .green = 0x00A4,
+        .blue = 0x00A4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A5,
+        .green = 0x00A5,
+        .blue = 0x00A5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A6,
+        .green = 0x00A6,
+        .blue = 0x00A6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A7,
+        .green = 0x00A7,
+        .blue = 0x00A7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A8,
+        .green = 0x00A8,
+        .blue = 0x00A8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00A9,
+        .green = 0x00A9,
+        .blue = 0x00A9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AA,
+        .green = 0x00AA,
+        .blue = 0x00AA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AB,
+        .green = 0x00AB,
+        .blue = 0x00AB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AC,
+        .green = 0x00AC,
+        .blue = 0x00AC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AD,
+        .green = 0x00AD,
+        .blue = 0x00AD,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AE,
+        .green = 0x00AE,
+        .blue = 0x00AE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00AF,
+        .green = 0x00AF,
+        .blue = 0x00AF,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B0,
+        .green = 0x00B0,
+        .blue = 0x00B0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B1,
+        .green = 0x00B1,
+        .blue = 0x00B1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B2,
+        .green = 0x00B2,
+        .blue = 0x00B2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B3,
+        .green = 0x00B3,
+        .blue = 0x00B3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B4,
+        .green = 0x00B4,
+        .blue = 0x00B4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B5,
+        .green = 0x00B5,
+        .blue = 0x00B5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B6,
+        .green = 0x00B6,
+        .blue = 0x00B6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B7,
+        .green = 0x00B7,
+        .blue = 0x00B7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B8,
+        .green = 0x00B8,
+        .blue = 0x00B8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00B9,
+        .green = 0x00B9,
+        .blue = 0x00B9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BA,
+        .green = 0x00BA,
+        .blue = 0x00BA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BB,
+        .green = 0x00BB,
+        .blue = 0x00BB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BC,
+        .green = 0x00BC,
+        .blue = 0x00BC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BD,
+        .green = 0x00BD,
+        .blue = 0x00BD,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BE,
+        .green = 0x00BE,
+        .blue = 0x00BE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00BF,
+        .green = 0x00BF,
+        .blue = 0x00BF,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C0,
+        .green = 0x00C0,
+        .blue = 0x00C0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C1,
+        .green = 0x00C1,
+        .blue = 0x00C1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C2,
+        .green = 0x00C2,
+        .blue = 0x00C2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C3,
+        .green = 0x00C3,
+        .blue = 0x00C3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C4,
+        .green = 0x00C4,
+        .blue = 0x00C4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C5,
+        .green = 0x00C5,
+        .blue = 0x00C5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C6,
+        .green = 0x00C6,
+        .blue = 0x00C6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C7,
+        .green = 0x00C7,
+        .blue = 0x00C7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C8,
+        .green = 0x00C8,
+        .blue = 0x00C8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00C9,
+        .green = 0x00C9,
+        .blue = 0x00C9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CA,
+        .green = 0x00CA,
+        .blue = 0x00CA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CB,
+        .green = 0x00CB,
+        .blue = 0x00CB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CC,
+        .green = 0x00CC,
+        .blue = 0x00CC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CD,
+        .green = 0x00CD,
+        .blue = 0x00CD,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CE,
+        .green = 0x00CE,
+        .blue = 0x00CE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00CF,
+        .green = 0x00CF,
+        .blue = 0x00CF,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D0,
+        .green = 0x00D0,
+        .blue = 0x00D0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D1,
+        .green = 0x00D1,
+        .blue = 0x00D1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D2,
+        .green = 0x00D2,
+        .blue = 0x00D2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D3,
+        .green = 0x00D3,
+        .blue = 0x00D3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D4,
+        .green = 0x00D4,
+        .blue = 0x00D4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D5,
+        .green = 0x00D5,
+        .blue = 0x00D5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D6,
+        .green = 0x00D6,
+        .blue = 0x00D6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D7,
+        .green = 0x00D7,
+        .blue = 0x00D7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D8,
+        .green = 0x00D8,
+        .blue = 0x00D8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00D9,
+        .green = 0x00D9,
+        .blue = 0x00D9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DA,
+        .green = 0x00DA,
+        .blue = 0x00DA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DB,
+        .green = 0x00DB,
+        .blue = 0x00DB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DC,
+        .green = 0x00DC,
+        .blue = 0x00DC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DD,
+        .green = 0x00DD,
+        .blue = 0x00DD,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DE,
+        .green = 0x00DE,
+        .blue = 0x00DE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00DF,
+        .green = 0x00DF,
+        .blue = 0x00DF,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E0,
+        .green = 0x00E0,
+        .blue = 0x00E0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E1,
+        .green = 0x00E1,
+        .blue = 0x00E1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E2,
+        .green = 0x00E2,
+        .blue = 0x00E2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E3,
+        .green = 0x00E3,
+        .blue = 0x00E3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E4,
+        .green = 0x00E4,
+        .blue = 0x00E4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E5,
+        .green = 0x00E5,
+        .blue = 0x00E5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E6,
+        .green = 0x00E6,
+        .blue = 0x00E6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E7,
+        .green = 0x00E7,
+        .blue = 0x00E7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E8,
+        .green = 0x00E8,
+        .blue = 0x00E8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00E9,
+        .green = 0x00E9,
+        .blue = 0x00E9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00EA,
+        .green = 0x00EA,
+        .blue = 0x00EA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00EB,
+        .green = 0x00EB,
+        .blue = 0x00EB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00EC,
+        .green = 0x00EC,
+        .blue = 0x00EC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00ED,
+        .green = 0x00ED,
+        .blue = 0x00ED,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00EE,
+        .green = 0x00EE,
+        .blue = 0x00EE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00EF,
+        .green = 0x00EF,
+        .blue = 0x00EF,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F0,
+        .green = 0x00F0,
+        .blue = 0x00F0,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F1,
+        .green = 0x00F1,
+        .blue = 0x00F1,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F2,
+        .green = 0x00F2,
+        .blue = 0x00F2,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F3,
+        .green = 0x00F3,
+        .blue = 0x00F3,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F4,
+        .green = 0x00F4,
+        .blue = 0x00F4,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F5,
+        .green = 0x00F5,
+        .blue = 0x00F5,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F6,
+        .green = 0x00F6,
+        .blue = 0x00F6,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F7,
+        .green = 0x00F7,
+        .blue = 0x00F7,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F8,
+        .green = 0x00F8,
+        .blue = 0x00F8,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00F9,
+        .green = 0x00F9,
+        .blue = 0x00F9,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FA,
+        .green = 0x00FA,
+        .blue = 0x00FA,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FB,
+        .green = 0x00FB,
+        .blue = 0x00FB,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FC,
+        .green = 0x00FC,
+        .blue = 0x00FC,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FD,
+        .green = 0x00FD,
+        .blue = 0x00FD,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FE,
+        .green = 0x00FE,
+        .blue = 0x00FE,
+        .alignment = 0x0000
+    },
+    {
+        .red = 0x00FF,
+        .green = 0x00FF,
+        .blue = 0x00FF,
+        .alignment = 0x0000
+    }
+};
+
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40 = {
     .next = nullptr,
@@ -421,12 +1961,25 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50 = {
 };
 
 // _MMX_INTEGER
+_MMX_INTEGER g_VertexRedStart = {};
+_MMX_INTEGER g_VertexGreenStart = {};
+_MMX_INTEGER g_VertexBlueStart = {};
+_MMX_INTEGER g_VertexRedDelta = {};
+_MMX_INTEGER g_VertexGreenDelta = {};
+_MMX_INTEGER g_VertexBlueDelta = {};
+_MMX_INTEGER g_TextureShift1 = {0x0000000000000010ULL};
+_MMX_INTEGER g_TextureShift2 = {0x0000000000000008ULL};
+_MMX_INTEGER g_TextureMask1 = {0x00000000000000FFULL};
+_MMX_INTEGER g_TextureMask2 = {0x000000000000FF00ULL};
 _MMX_INTEGER g_RedMask16 = {0x000000000000F800ULL};
 _MMX_INTEGER g_GreenMask16 = {0x00000000000007E0ULL};
 _MMX_INTEGER g_BlueMask16 = {0x000000000000001FULL};
 _MMX_INTEGER g_RedMask32 = {0x0000000000F80000ULL};
 _MMX_INTEGER g_GreenMask32 = {0x000000000000FC00ULL};
 _MMX_INTEGER g_BlueMask32 = {0x00000000000000F8ULL};
+_MMX_INTEGER g_TotalDitherShift = {0x0000000000000008ULL};
+_MMX_INTEGER g_GreenBlueDitherShift = {0x0000000000000005ULL};
+_MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
 
 // double
 double g_BufferFillZeroQword = 0;
@@ -440,6 +1993,14 @@ int INT_005b7604 = 0xA;
 int g_WindowWidth = 0x140;
 int g_WindowHeight = 0xC8;
 int g_BitsPerPixel = 0x8;
+int g_TextureFilteringEnabled = 0x1;
+int g_CurrentTextureDimension = 0x100;
+int INT_005b7630 = 0x7F;
+int INT_005b7634 = 0x4;
+int INT_005b7638 = 0x5;
+int g_CurrentAlphaValue = 0xFF;
+int g_RenderingQuality = 0x1;
+int INT_005b7644 = 0x1;
 int INT_005b8018 = 0x2;
 int INT_005b801c = 0x2;
 int g_INT_005b91c0 = 0x7;
@@ -491,6 +2052,26 @@ int g_INT_005be950 = 0x1;
 int g_INT_005be964 = 0x3;
 int g_INT_005bea0c = 0x1;
 int g_INT_005bea40 = 0x1;
+int g_ScanlinePixelCount = 0;
+int g_StartTextureU = 0;
+int g_StartTextureV = 0;
+int g_StartDepthW = 0;
+int g_HardwareDeltaTextureU = 0;
+int g_HardwareDeltaTextureV = 0;
+int g_HardwareDeltaDepthZ = 0;
+int g_TempX = 0;
+int g_TempY = 0;
+int g_TempZ = 0;
+int g_TempTransformedX = 0;
+int g_TempTransformedY = 0;
+int g_TempTransformedZ = 0;
+int g_VertexAlphaStart = 0;
+int g_VertexAlphaDelta = 0;
+int g_SpecialColor = 0xFFFFFF;
+
+// int*
+int* g_CurrentScreenPtr = nullptr;
+int* g_CurrentZBufferPtr = nullptr;
 
 // undefined1
 undefined1 DAT_005b9258 = 0x00;
@@ -501,8 +2082,6 @@ undefined1 DAT_005bb118 = 0x00;
 undefined1 DAT_005bb11c = 0x00;
 undefined1 DAT_005bb121 = 0x00;
 undefined1 DAT_005be184 = 0x00;
-undefined1 DAT_005bf550 = 0x10;
-undefined1 DAT_005bf570 = 0x08;
 
 // undefined2
 undefined2 DAT_005b8bdc = 0x0000;
@@ -571,11 +2150,6 @@ undefined4 DAT_005b7278 = 0x00000000;
 undefined4 DAT_005b727c = 0x00000000;
 undefined4 DAT_005b7478 = 0x00000000;
 undefined4 DAT_005b747c = 0x00000000;
-undefined4 DAT_005b762c = 0x00000100;
-undefined4 DAT_005b7630 = 0x0000007F;
-undefined4 DAT_005b7638 = 0x00000005;
-undefined4 DAT_005b763c = 0x000000FF;
-undefined4 DAT_005b7644 = 0x00000001;
 undefined4 DAT_005b7648 = 0x00010000;
 undefined4 DAT_005b7658 = 0x00000000;
 undefined4 DAT_005b765c = 0x00000000;
@@ -632,28 +2206,11 @@ undefined4 DAT_005bef20 = 0x00000000;
 undefined4 DAT_005bef24 = 0x00000000;
 undefined4 DAT_005bef88 = 0x00000000;
 undefined4 DAT_005bef8c = 0x00000000;
-undefined4 DAT_005bf014 = 0x00000000;
-undefined4 DAT_005bf050 = 0x00000000;
-undefined4 DAT_005bf054 = 0x00000000;
-undefined4 DAT_005bf05c = 0x00000000;
-undefined4 DAT_005bf078 = 0x00000000;
-undefined4 DAT_005bf07c = 0x00000000;
-undefined4 DAT_005bf488 = 0x00000000;
-undefined4 DAT_005bf4d8 = 0x00000000;
-undefined4 DAT_005bf4dc = 0x00000000;
-undefined4 DAT_005bf4e0 = 0x00000000;
-undefined4 DAT_005bf4e8 = 0x00000000;
-undefined4 DAT_005bf4ec = 0x00000000;
-undefined4 DAT_005bf4f0 = 0x00000000;
-undefined4 DAT_005bf540 = 0x00000000;
 
 // undefined8
 undefined8 DAT_005b4748 = 0x0000000000000000;
 undefined8 DAT_005b4788 = 0x0000000000000000;
 undefined8 DAT_005b47a8 = 0x0000000000000000;
-undefined8 DAT_005bf500 = 0x0000000000000000;
-undefined8 DAT_005bf520 = 0x0000000000000000;
-undefined8 DAT_005bfe70 = 0x0000000000000000;
 
 // void*
 void* switchdataD_005b7f90 = (void*)0x004819BC; // caseD_0

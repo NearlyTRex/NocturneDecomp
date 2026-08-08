@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
 ;   undefined4 DAT_005c502c
@@ -172,10 +172,10 @@ section .text
     MOV ESI,EAX                         ; 00408a02
     LEA EDI,[EDI + 0xc4]                ; 00408a04
     MOV EDX,dword ptr [ESP]             ; 00408a0a
-    MOV EAX,[0x005b763c]                ; 00408a0d | DAT_005b763c
+    MOV EAX,[0x005b763c]                ; 00408a0d | g_CurrentAlphaValue
     MOVSD.REP ES:EDI,ESI                ; 00408a12 | DAT_006b4a18 | DAT_006b4a1c
     MOV dword ptr [EDX + 0x10c],EAX     ; 00408a14 | DAT_006b4a60
-    MOV EAX,[0x01c03998]                ; 00408a1a | DAT_01c03998
+    MOV EAX,[0x01c03998]                ; 00408a1a | g_BlendMode
     MOV dword ptr [EDX + 0x110],EAX     ; 00408a1f | DAT_006b4a64
     MOV EAX,dword ptr [ESP + 0x4]       ; 00408a25
     MOV dword ptr [EDX + 0x114],EAX     ; 00408a29 | DAT_006b4a68

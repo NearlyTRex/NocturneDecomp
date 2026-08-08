@@ -96,7 +96,7 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_004f9620(SRenderVertex
       _DAT_01e52a68 = _DAT_01e52a68 + 1;
       return;
     }
-    if (_DAT_01c0399c == 0) {
+    if (g_ProcessorType == 0) {
       iVar3 = (pSVar5->projected_vertex).inv_z;
       iVar6 = (start_vertex->projected_vertex).inv_z;
     }

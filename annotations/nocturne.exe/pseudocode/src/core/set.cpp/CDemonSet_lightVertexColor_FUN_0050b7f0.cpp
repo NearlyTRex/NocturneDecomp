@@ -64,7 +64,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
       if (0x1000 < g_CDemonCamera_01fb8508.corona_blend_factor) {
         iVar10 = 0x1000;
       }
-      if (_DAT_01c039c4 < 0) {
+      if (g_CameraOriginX < 0) {
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = -((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
@@ -72,7 +72,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       }
-      if (_DAT_01c039cc < 0) {
+      if (g_CameraOriginZ < 0) {
         lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
         iVar8 = (iVar8 + uVar4) - ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {

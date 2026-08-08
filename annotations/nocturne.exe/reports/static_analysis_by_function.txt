@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 377
-  Total diagnostics: 1040
+  Functions with findings: 376
+  Total diagnostics: 1039
   Functions flagged by multiple tools: 2
-  .keep.cpp files: 0, raw .cpp files: 377
+  .keep.cpp files: 0, raw .cpp files: 376
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -502,8 +502,8 @@ core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200  [.cpp
   Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   77: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  188: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  190: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  167: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  169: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200  [.cpp] [Cppcheck (quick)]
@@ -757,10 +757,10 @@ core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480  [.cpp] [Cppcheck (quick)]
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (4 diagnostics)
 
-  Line  309: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  407: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  413: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  459: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  311: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  409: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  415: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  461: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcube.cpp_FUN_0044ae80  [.cpp] [Cppcheck (quick)]
@@ -902,27 +902,27 @@ engine_matrix.c_FUN_004cdfa0  [.cpp] [Cppcheck (quick)]
   File: engine/matrix.c  (4 diagnostics)
 
   Line   58: [ignoredReturnValue] Return value of function atan2() is not used.
-  Line  108: [uninitvar] Uninitialized variable: local_4c
-  Line  110: [uninitvar] Uninitialized variable: local_48
-  Line  112: [uninitvar] Uninitialized variable: local_44
+  Line  107: [uninitvar] Uninitialized variable: local_4c
+  Line  109: [uninitvar] Uninitialized variable: local_48
+  Line  111: [uninitvar] Uninitialized variable: local_44
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (4 diagnostics)
 
-  Line  104: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  110: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  114: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  120: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  101: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  107: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  112: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  118: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (4 diagnostics)
 
-  Line  102: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  108: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  112: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  118: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  100: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  106: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  111: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  117: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322  [.cpp] [Cppcheck (quick)]
@@ -930,17 +930,17 @@ engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00530322  [.cpp] [Cppc
 
   Line   61: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   71: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   77: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   72: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_005300ec  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (4 diagnostics)
 
-  Line   60: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   66: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   70: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   76: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   61: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   72: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_FUN_004771f0  [.cpp] [Cppcheck (quick)]
@@ -1515,8 +1515,8 @@ core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00446760  [.cpp] [Cppcheck (q
 core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
-  Line   31: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_FUN_00442d9c  [.cpp] [Cppcheck (quick)]
@@ -1711,8 +1711,8 @@ core_menu.cpp_configureSoundOptions_FUN_004d12e0  [.cpp] [Cppcheck (quick)]
 core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650  [.cpp] [Cppcheck (quick)]
   File: core/mirror.cpp  (2 diagnostics)
 
-  Line  120: [uninitvar] Uninitialized variable: local_18c
-  Line  120: [uninitvar] Uninitialized variable: local_190
+  Line  118: [uninitvar] Uninitialized variable: local_18c
+  Line  118: [uninitvar] Uninitialized variable: local_190
 
 ----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0  [.cpp] [Cppcheck (quick)]
@@ -2173,7 +2173,7 @@ core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0  [.cpp] [Cppcheck 
 core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (1 diagnostics)
 
-  Line   33: [uninitvar] Uninitialized variable: local_18
+  Line   31: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_processCoronaScanline_FUN_00445310  [.cpp] [Cppcheck (quick)]
@@ -2593,7 +2593,7 @@ engine_alphabit.cpp_FUN_0040eadd  [.cpp] [Cppcheck (quick)]
 engine_clipper.c_clipAndRasterize_FUN_00432cd0  [.cpp] [Cppcheck (quick)]
   File: engine/clipper.c  (1 diagnostics)
 
-  Line  176: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.
+  Line  175: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0  [.cpp] [Cppcheck (quick)]
@@ -2722,12 +2722,6 @@ engine_prim.c_renderScanlinePolygon_FUN_004fad00  [.cpp] [Cppcheck (quick)]
   Line  251: [nullPointerRedundantCheck] Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
-engine_special.cpp_FUN_00530d30  [.cpp] [Cppcheck (quick)]
-  File: engine/special.cpp  (1 diagnostics)
-
-  Line   15: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
 engine_special.cpp_FUN_00532f30  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
@@ -2737,19 +2731,19 @@ engine_special.cpp_FUN_00532f30  [.cpp] [Cppcheck (quick)]
 engine_special.cpp_FUN_00532f50  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
-  Line   18: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
+  Line   16: [stringLiteralWrite] Modifying string literal "trid3d.dll" directly or indirectly is undefined behaviour.
 
 ----------------------------------------------------------------------------------------------------
 engine_special.cpp_FUN_00532fa0  [.cpp] [Cppcheck (quick)]
   File: engine/special.cpp  (1 diagnostics)
 
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   14: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
 engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410  [.cpp] [Cppcheck (quick)]
   File: engine/texture.cpp  (1 diagnostics)
 
-  Line   31: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line   32: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0  [.cpp] [Cppcheck (quick)]

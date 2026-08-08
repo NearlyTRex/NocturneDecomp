@@ -57,16 +57,16 @@ __asm {
         jnc LAB_00463c1d
         movd MM0,ECX
         movd MM2,EDX
-        psrlq MM0,qword ptr [DAT_005bf550]
-        psrlq MM2,qword ptr [DAT_005bf570]
-        pand MM0,qword ptr [DAT_005bf590]
-        pand MM2,qword ptr [DAT_005bf5b0]
+        psrlq MM0,qword ptr [g_TextureShift1]
+        psrlq MM2,qword ptr [g_TextureShift2]
+        pand MM0,qword ptr [g_TextureMask1]
+        pand MM2,qword ptr [g_TextureMask2]
         paddd MM0,MM2
         movd EBX,MM0
-        mov EAX,[DAT_01c02584]
+        mov EAX,[g_CurrentTextureOpacityData]
         test EAX,0xffffffff
         jnz LAB_00463c0f
-        mov EAX,[DAT_01c02580]
+        mov EAX,[g_CurrentTextureData]
     LAB_00463c0f:
         add EBX,EAX
         movzx EAX,byte ptr [EBX]

@@ -36,7 +36,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_
                          (SRenderVertex *)(&DAT_005c5014 + vertex_indices[2] * 0xc)), iVar5 == 0)) {
     return;
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer == 0) || (DAT_006b0278 != 0)) {
     _DAT_01b4cd30 = 0;
     _DAT_01b4d1b8 = 0;

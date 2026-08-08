@@ -39,5 +39,5 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045
   if (g_UseExternalRenderer != 0) {
     engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(this_ptr,iVar1);
   }
-  return (uint)(DAT_005ae708 <= _DAT_01b4d764);
+  return (uint)(INT_005ae708 <= _DAT_01b4d764);
 }

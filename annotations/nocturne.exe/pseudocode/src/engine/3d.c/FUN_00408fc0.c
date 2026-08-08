@@ -36,12 +36,12 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
         }
         else {
           engine_special_cpp_drawPolyList_FUN_00532680
-                    ((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,
+                    ((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveQuad **)&DAT_00761ec8,
                      DAT_00761ec4,0xcd);
         }
         DAT_00761ec4 = 0;
       }
-      DAT_005b7644 = 1;
+      INT_005b7644 = 1;
       return;
     }
     bVar3 = (byte)(param_1->base).type;
@@ -49,7 +49,7 @@ void engine_3d_c_FUN_00408fc0(SMRGLHeaderPrimitive *param_1)
       if (bVar3 < 3) {
         if (bVar3 == 2) {
           engine_3d_c_transformAndBufferVertices_FUN_00404530((SMRGLHeaderExtended *)param_1);
-          if (DAT_005b7644 != 0) {
+          if (INT_005b7644 != 0) {
             engine_3d_c_FUN_00408e80(param_1);
             return;
           }
@@ -83,7 +83,7 @@ LAB_004091a2:
           }
           else {
             engine_special_cpp_drawPolyList_FUN_00532680
-                      ((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveTriangle **)&DAT_00761ec8,
+                      ((SRenderVertex *)&DAT_005c5014,(SMRGLPrimitiveQuad **)&DAT_00761ec8,
                        DAT_00761ec4,0xcd);
           }
           DAT_00761ec4 = 0;

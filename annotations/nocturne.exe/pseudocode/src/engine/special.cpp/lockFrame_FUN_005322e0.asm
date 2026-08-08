@@ -16,9 +16,9 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_UseExternalRenderer
 ;   APIDLL_lockFrame* g_APIDLL_lockFrame
-;   undefined4 DAT_02dc9e1c
-;   undefined4 DAT_02dc9e20
-;   int INT_02dc9e24
+;   int g_ExternalBitsPerPixel
+;   int g_SavedBitsPerPixel
+;   int g_ExternalFrameLocked
 ;
 ; *****************************************************************************
 
@@ -38,9 +38,9 @@ section .text
         ;   XREF to: 005322eb (CONDITIONAL_JUMP)  ; LAB_005322eb
     MOV EAX,[0x005b7624]                ; 005322f6 | g_BitsPerPixel
     MOV ECX,0x1                         ; 005322fb
-    MOV [0x02dc9e20],EAX                ; 00532300 | DAT_02dc9e20
-    MOV EAX,[0x02dc9e1c]                ; 00532305 | DAT_02dc9e1c
-    MOV dword ptr [0x02dc9e24],ECX      ; 0053230a | INT_02dc9e24
+    MOV [0x02dc9e20],EAX                ; 00532300 | g_SavedBitsPerPixel
+    MOV EAX,[0x02dc9e1c]                ; 00532305 | g_ExternalBitsPerPixel
+    MOV dword ptr [0x02dc9e24],ECX      ; 0053230a | g_ExternalFrameLocked
     MOV [0x005b7624],EAX                ; 00532310 | g_BitsPerPixel
     MOV EAX,ECX                         ; 00532315
     RET                                 ; 00532317

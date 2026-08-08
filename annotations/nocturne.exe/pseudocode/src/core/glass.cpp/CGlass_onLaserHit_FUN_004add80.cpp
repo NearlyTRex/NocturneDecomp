@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLaserInfo *laser_info)
 
 {
@@ -38,7 +36,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLas
     fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->broken_texture);
-    fVar6 = (float)DAT_005b762c;
+    fVar6 = (float)g_CurrentTextureDimension;
     dVar7 = round((double)((fVar3 / fVar4 + fVar5) * fVar6));
     dVar8 = round((double)((1.0 - fVar1 / fVar2) * fVar6));
     local_20 = (int)ROUND(dVar7);
@@ -46,16 +44,16 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLas
     if (local_20 < 0) {
       local_20 = 0;
     }
-    if (DAT_005b762c <= local_20) {
-      local_20 = DAT_005b762c + -1;
+    if (g_CurrentTextureDimension <= local_20) {
+      local_20 = g_CurrentTextureDimension + -1;
     }
     if (local_1c < 0) {
       local_1c = 0;
     }
-    if (DAT_005b762c <= local_1c) {
-      local_1c = DAT_005b762c + -1;
+    if (g_CurrentTextureDimension <= local_1c) {
+      local_1c = g_CurrentTextureDimension + -1;
     }
-    if (*(char *)(local_20 + local_1c * DAT_005b762c + _DAT_01c02580) == '\0') {
+    if (g_CurrentTextureData[local_20 + local_1c * g_CurrentTextureDimension] == '\0') {
       laser_info->transparency = 1.0;
       return;
     }

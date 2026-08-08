@@ -33,7 +33,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitOp62_FUN_00408010
     }
     g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR);
     engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
-    if (DAT_005b763c < 0xff) {
+    if (g_CurrentAlphaValue < 0xff) {
       g_RenderStateFlags.dword = g_RenderStateFlags.dword | RENDER_BLEND_READ_DEST;
     }
     vertex_count = 0;

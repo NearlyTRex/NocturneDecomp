@@ -877,6 +877,11 @@ WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc = {
 };
 
 // int
+int g_SystemInitialized = 0x1;
+int g_VideoMemorySize = 0x1;
+int g_MaxTextureSize = 0x40;
+int g_FullScreenQuadDepth = 0x3C000;
+int g_INT_005c0f90 = 0x1;
 int INT_005c0ff0 = 0x9;
 int INT_005c10b0 = 0x2;
 int INT_005c1130 = 0xB;

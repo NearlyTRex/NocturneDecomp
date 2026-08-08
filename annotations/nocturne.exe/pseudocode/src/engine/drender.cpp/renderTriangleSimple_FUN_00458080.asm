@@ -63,12 +63,12 @@ section .text
     CMP dword ptr [0x006b0280],0x0      ; 00458091 | DAT_006b0280
     JNZ 0x00458113                      ; 00458098
         ;   XREF to: 00458113 (CONDITIONAL_JUMP)  ; LAB_00458113
-    MOV ECX,dword ptr [0x01e52ef8]      ; 0045809e | DAT_01e52ef8
+    MOV ECX,dword ptr [0x01e52ef8]      ; 0045809e | g_RenderedTriangleCount
         ;   Label: LAB_0045809e
     MOV EBX,dword ptr [0x01c02594]      ; 004580a4 | g_UseExternalRenderer
     INC ECX                             ; 004580aa
     MOV EBP,dword ptr [0x01b4cd30]      ; 004580ab | DAT_01b4cd30
-    MOV dword ptr [0x01e52ef8],ECX      ; 004580b1 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ECX      ; 004580b1 | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 004580b7
     JZ 0x00458408                       ; 004580b9
         ;   XREF to: 00458408 (CONDITIONAL_JUMP)  ; LAB_00458408

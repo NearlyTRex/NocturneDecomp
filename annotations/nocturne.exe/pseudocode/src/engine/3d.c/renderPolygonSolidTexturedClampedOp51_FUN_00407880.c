@@ -43,7 +43,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_
       *(int *)((int)&DAT_006b029c + iVar2) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar5 = (pSVar4->surface_normal).A.i;
-      if (DAT_005b762c < 0x41) {
+      if (g_CurrentTextureDimension < 0x41) {
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;
         }

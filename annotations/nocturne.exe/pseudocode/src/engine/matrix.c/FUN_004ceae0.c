@@ -16,15 +16,15 @@ void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3)
   int iVar3;
   
   iVar3 = _DAT_01cc5174;
-  iVar1 = _DAT_01c039bc;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = _DAT_01c039b8;
-  iVar2 = _DAT_01c039c0;
-  *(int *)(iVar3 * 4 + 0x1cc5308) = _DAT_01c039bc;
-  *(int *)(iVar3 * 4 + 0x1cc5330) = _DAT_01c039c0;
+  iVar1 = g_RelativeY;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
+  iVar2 = g_RelativeZ;
+  *(int *)(iVar3 * 4 + 0x1cc5308) = g_RelativeY;
+  *(int *)(iVar3 * 4 + 0x1cc5330) = g_RelativeZ;
   _DAT_01cc5174 = _DAT_01cc5174 + 1;
-  _DAT_01c039b8 = _DAT_01c039b8 - param_1;
-  _DAT_01c039bc = iVar1 - param_2;
-  _DAT_01c039c0 = iVar2 - param_3;
+  g_RelativeX = g_RelativeX - param_1;
+  g_RelativeY = iVar1 - param_2;
+  g_RelativeZ = iVar2 - param_3;
   if (_DAT_01cc5174 < 10) {
     return;
   }

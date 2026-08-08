@@ -33,9 +33,9 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   int iStack_14;
   
   bVar13 = 0;
-  _DAT_01c0399c = 0;
-  _DAT_005c0f8c = 0x10000;
-  _DAT_005c0f80 = 1;
+  g_ProcessorType = 0;
+  g_FullScreenQuadDepth = 0x10000;
+  g_SystemInitialized = 1;
   pcVar5 = getenv("PROCESSOR_LEVEL");
   if (pcVar5 == (char *)0x0) {
     g_RenderingMode = 3;
@@ -59,7 +59,7 @@ void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv)
   g_RenderingMode = 3;
   xxx_unk_c_FUN_0048ee80();
   core_inivar_cpp_FUN_004bdb80();
-  _DAT_02dc9d6c = 2;
+  g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_004f8af0(g_CPod_PTR_005be1cc);
   engine_dosio_cpp_FUN_00456750();
   engine_dosio_cpp_FUN_00456750();

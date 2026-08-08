@@ -19,15 +19,15 @@
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
 ;   undefined4 g_Projection.center_y_fixed
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
-;   undefined4 DAT_01c03a04
-;   undefined4 DAT_01c03a08
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
+;   undefined4 g_TransformMatrix.m[2].y
+;   undefined4 g_TransformMatrix.m[2].z
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40
@@ -43,24 +43,24 @@ section .text
     PUSH EDI                            ; 00440fe2
     SUB ESP,0xc                         ; 00440fe3
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00440fe6
-    MOV ESI,dword ptr [0x01c039e8]      ; 00440fea | DAT_01c039e8
+    MOV ESI,dword ptr [0x01c039e8]      ; 00440fea | g_TransformMatrix
     MOV dword ptr [EBX + 0x178],ESI     ; 00440ff0
-    MOV ESI,dword ptr [0x01c039ec]      ; 00440ff6 | DAT_01c039ec
+    MOV ESI,dword ptr [0x01c039ec]      ; 00440ff6 | g_TransformMatrix.m[0].y
     MOV dword ptr [EBX + 0x17c],ESI     ; 00440ffc
-    MOV ESI,dword ptr [0x01c039f0]      ; 00441002 | DAT_01c039f0
+    MOV ESI,dword ptr [0x01c039f0]      ; 00441002 | g_TransformMatrix.m[0].z
     MOV dword ptr [EBX + 0x180],ESI     ; 00441008
-    MOV ESI,dword ptr [0x01c039f4]      ; 0044100e | DAT_01c039f4
+    MOV ESI,dword ptr [0x01c039f4]      ; 0044100e | g_TransformMatrix.m[1].x
     MOV dword ptr [EBX + 0x184],ESI     ; 00441014
-    MOV ESI,dword ptr [0x01c039f8]      ; 0044101a | DAT_01c039f8
+    MOV ESI,dword ptr [0x01c039f8]      ; 0044101a | g_TransformMatrix.m[1].y
     MOV dword ptr [EBX + 0x188],ESI     ; 00441020
-    MOV ESI,dword ptr [0x01c039fc]      ; 00441026 | DAT_01c039fc
+    MOV ESI,dword ptr [0x01c039fc]      ; 00441026 | g_TransformMatrix.m[1].z
     MOV dword ptr [EBX + 0x18c],ESI     ; 0044102c
-    MOV ESI,dword ptr [0x01c03a00]      ; 00441032 | DAT_01c03a00
+    MOV ESI,dword ptr [0x01c03a00]      ; 00441032 | g_TransformMatrix.m[2].x
     MOV dword ptr [EBX + 0x190],ESI     ; 00441038
-    MOV ESI,dword ptr [0x01c03a04]      ; 0044103e | DAT_01c03a04
+    MOV ESI,dword ptr [0x01c03a04]      ; 0044103e | g_TransformMatrix.m[2].y
     MOV EDX,dword ptr [0x005ae704]      ; 00441044 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [EBX + 0x194],ESI     ; 0044104a
-    MOV ESI,dword ptr [0x01c03a08]      ; 00441050 | DAT_01c03a08
+    MOV ESI,dword ptr [0x01c03a08]      ; 00441050 | g_TransformMatrix.m[2].z
     PUSH EDX                            ; 00441056 | DAT_01b4d738
     MOV dword ptr [EBX + 0x198],ESI     ; 00441057
     LEA ESI,[ESP + 0x4]                 ; 0044105d

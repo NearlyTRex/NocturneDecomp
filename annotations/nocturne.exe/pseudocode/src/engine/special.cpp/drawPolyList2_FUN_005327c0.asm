@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_drawPolyList2_FUN_005327c0(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+; int __cdecl engine_special_cpp_drawPolyList2_FUN_005327c0(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer
-; ushort * *       Stack[0x8]:4   polygons
+; SInputFace * *   Stack[0x8]:4   polygons
 ; int              Stack[0xc]:4   polygon_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:
@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_01e52ef8
+;   int g_RenderedTriangleCount
 ;   APIDLL_drawPolygon2* g_APIDLL_drawPolygon2
 ;   APIDLL_drawPolyList2* g_APIDLL_drawPolyList2
 ;
@@ -38,13 +38,13 @@ section .text
     JZ 0x005328cf                       ; 005327d6
         ;   XREF to: 005328cf (CONDITIONAL_JUMP)  ; LAB_005328cf
     MOV EBX,dword ptr [ESP + 0x28]      ; 005327dc
-    MOV EAX,[0x01e52ef8]                ; 005327e0 | DAT_01e52ef8
+    MOV EAX,[0x01e52ef8]                ; 005327e0 | g_RenderedTriangleCount
     MOV ESI,dword ptr [0x02dc9db4]      ; 005327e5 | g_APIDLL_drawPolyList2
     ADD EAX,EBX                         ; 005327eb
     TEST ESI,ESI                        ; 005327ed
     JNZ 0x005328db                      ; 005327ef
         ;   XREF to: 005328db (CONDITIONAL_JUMP)  ; LAB_005328db
-    MOV [0x01e52ef8],EAX                ; 005327f5 | DAT_01e52ef8
+    MOV [0x01e52ef8],EAX                ; 005327f5 | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 005327fa
     JLE 0x005328c0                      ; 005327fc
         ;   XREF to: 005328c0 (CONDITIONAL_JUMP)  ; LAB_005328c0
@@ -134,7 +134,7 @@ section .text
     PUSH EBX                            ; 005328e0
     PUSH EDX                            ; 005328e1
     PUSH EDI                            ; 005328e2
-    MOV [0x01e52ef8],EAX                ; 005328e3 | DAT_01e52ef8
+    MOV [0x01e52ef8],EAX                ; 005328e3 | g_RenderedTriangleCount
     CALL dword ptr [0x02dc9db4]         ; 005328e8 | g_APIDLL_drawPolyList2
     ADD ESP,0x10                        ; 005328ee
     MOV EDX,EAX                         ; 005328f1

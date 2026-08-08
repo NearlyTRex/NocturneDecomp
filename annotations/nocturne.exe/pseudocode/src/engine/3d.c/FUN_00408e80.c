@@ -17,7 +17,7 @@ void engine_3d_c_FUN_00408e80(int *param_1)
       if (((iVar1 == 0) || (iVar1 < 0)) || (0x42 < iVar1)) break;
       param_1 = (int *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(param_1);
     }
-    DAT_005b7644 = 1;
+    INT_005b7644 = 1;
   }
   return;
 }

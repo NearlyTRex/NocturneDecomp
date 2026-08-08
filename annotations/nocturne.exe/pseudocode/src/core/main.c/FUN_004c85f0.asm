@@ -62,9 +62,9 @@ section .text
     MOV EBX,0x1                         ; 004c8604
     XOR EDX,EDX                         ; 004c8609
     PUSH 0x587b55                       ; 004c860b | = "PROCESSOR_LEVEL"
-    MOV dword ptr [0x01c0399c],EDX      ; 004c8610 | DAT_01c0399c
-    MOV dword ptr [0x005c0f8c],ECX      ; 004c8616 | DAT_005c0f8c
-    MOV dword ptr [0x005c0f80],EBX      ; 004c861c | DAT_005c0f80
+    MOV dword ptr [0x01c0399c],EDX      ; 004c8610 | g_ProcessorType
+    MOV dword ptr [0x005c0f8c],ECX      ; 004c8616 | g_FullScreenQuadDepth
+    MOV dword ptr [0x005c0f80],EBX      ; 004c861c | g_SystemInitialized
     CALL crt_env.c_getenv_FUN_00566e10  ; 004c8622
         ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_00566e10(char * name)
     ADD ESP,0x4                         ; 004c8627
@@ -117,7 +117,7 @@ section .text
     MOV EDI,dword ptr [0x005be1cc]      ; 004c86c0 | g_CPod_PTR_005be1cc
     MOV ESI,0x2                         ; 004c86c6
     PUSH EDI                            ; 004c86cb
-    MOV dword ptr [0x02dc9d6c],ESI      ; 004c86cc | DAT_02dc9d6c
+    MOV dword ptr [0x02dc9d6c],ESI      ; 004c86cc | g_AGPTextureMode
     CALL engine_pod.cpp_CPod_init_FUN_004f8af0 ; 004c86d2
         ;   XREF to: 004f8af0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_004f8af0(CPod * this_ptr)
     ADD ESP,0x4                         ; 004c86d7

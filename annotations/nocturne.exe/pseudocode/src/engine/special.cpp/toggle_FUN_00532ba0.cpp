@@ -23,7 +23,7 @@ int __cdecl engine_special_cpp_toggle_FUN_00532ba0(void)
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  if (INT_02dc9e24 == 0) {
+  if (g_ExternalFrameLocked == 0) {
     iVar3 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
     uVar1 = (int)((g_WindowWidth * g_BitsPerPixel + iVar3 * -8) - (uint)(iVar3 << 2 < 0)) >> 3;
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
@@ -52,7 +52,7 @@ int __cdecl engine_special_cpp_toggle_FUN_00532ba0(void)
     engine_special_cpp_unlockFrame_FUN_00532320();
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
   }
-  INT_02dc9e24 = 0;
+  g_ExternalFrameLocked = 0;
   iVar3 = (*g_APIDLL_toggle)();
   return iVar3;
 }

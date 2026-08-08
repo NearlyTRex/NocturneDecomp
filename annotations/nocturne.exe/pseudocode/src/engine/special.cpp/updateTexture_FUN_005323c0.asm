@@ -11,10 +11,10 @@
 ; uchar *          Stack[0x14]:4   opacity_data
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b762c
+;   int g_CurrentTextureDimension = 0x100
 ;   uchar[768] g_SourcePaletteData
-;   undefined4 DAT_01c02580
-;   undefined4 DAT_01c02584
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   int g_UseExternalRenderer
 ;   APIDLL_updateTexture* g_APIDLL_updateTexture
 ;
@@ -32,12 +32,12 @@ section .text
         ;   Label: LAB_005323cc
     PUSH ESI                            ; 005323cd
     PUSH EBX                            ; 005323ce
-    MOV ECX,dword ptr [0x01c02584]      ; 005323cf | DAT_01c02584
+    MOV ECX,dword ptr [0x01c02584]      ; 005323cf | g_CurrentTextureOpacityData
     PUSH ECX                            ; 005323d5
     PUSH 0x1c00648                      ; 005323d6 | g_SourcePaletteData
-    MOV EBX,dword ptr [0x01c02580]      ; 005323db | DAT_01c02580
+    MOV EBX,dword ptr [0x01c02580]      ; 005323db | g_CurrentTextureData
     PUSH EBX                            ; 005323e1
-    MOV ESI,dword ptr [0x005b762c]      ; 005323e2 | DAT_005b762c
+    MOV ESI,dword ptr [0x005b762c]      ; 005323e2 | g_CurrentTextureDimension
     PUSH ESI                            ; 005323e8
     MOV EDI,dword ptr [ESP + 0x20]      ; 005323e9
     PUSH EDI                            ; 005323ed

@@ -12,9 +12,9 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040e8c0 at 0040e8e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00024
-;   undefined4 DAT_01c00028
-;   undefined4 DAT_01c00029
+;   uint[256] g_Hardware32BitPalette
+;   undefined4 g_Hardware32BitPalette[1]
+;   undefined4 g_Hardware32BitPalette[1]+1
 ;
 ; *****************************************************************************
 
@@ -30,10 +30,10 @@ section .text
     PUSH EDI                            ; 0040eac3
     MOV EAX,ECX                         ; 0040eac4
     SHR ECX,0x2                         ; 0040eac6
-    MOVSD.REP ES:EDI,ESI                ; 0040eac9 | DAT_01c00024 | DAT_01c00028
+    MOVSD.REP ES:EDI,ESI                ; 0040eac9 | g_Hardware32BitPalette | g_Hardware32BitPalette[1]
     MOV CL,AL                           ; 0040eacb
     AND CL,0x3                          ; 0040eacd
-    MOVSB.REP ES:EDI,ESI                ; 0040ead0 | DAT_01c00028 | DAT_01c00029
+    MOVSB.REP ES:EDI,ESI                ; 0040ead0 | g_Hardware32BitPalette[1] | g_Hardware32BitPalette[1]+1
     POP EDI                             ; 0040ead2
     POP EDI                             ; 0040ead3
     POP ESI                             ; 0040ead4

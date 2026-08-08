@@ -16,9 +16,9 @@
 ;   double DOUBLE_00585070 = 0.0000152590218966964
 ;   double DOUBLE_00585078 = 0.5
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b762c
+;   int g_CurrentTextureDimension = 0x100
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c02580
+;   uchar* g_CurrentTextureData
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_onLaserHit_FUN_0040ab10
@@ -75,7 +75,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004addf3
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004addf8
-    FILD dword ptr [0x005b762c]         ; 004addfb | DAT_005b762c
+    FILD dword ptr [0x005b762c]         ; 004addfb | g_CurrentTextureDimension
     FLD float ptr [ESP + 0x4]           ; 004ade01
     FMUL ST1                            ; 004ade05
     FLD float ptr [ESP + 0x8]           ; 004ade07
@@ -94,7 +94,7 @@ section .text
         ;   XREF to: 004ade8b (CONDITIONAL_JUMP)  ; LAB_004ade8b
     MOV EAX,dword ptr [ESP + 0xc]       ; 004ade2b
         ;   Label: LAB_004ade2b
-    MOV EDX,dword ptr [0x005b762c]      ; 004ade2f | DAT_005b762c
+    MOV EDX,dword ptr [0x005b762c]      ; 004ade2f | g_CurrentTextureDimension
     CMP EAX,EDX                         ; 004ade35
     JL 0x004ade40                       ; 004ade37
         ;   XREF to: 004ade40 (CONDITIONAL_JUMP)  ; LAB_004ade40
@@ -106,7 +106,7 @@ section .text
         ;   XREF to: 004ade93 (CONDITIONAL_JUMP)  ; LAB_004ade93
     MOV EAX,dword ptr [ESP + 0x10]      ; 004ade47
         ;   Label: LAB_004ade47
-    MOV EDI,dword ptr [0x005b762c]      ; 004ade4b | DAT_005b762c
+    MOV EDI,dword ptr [0x005b762c]      ; 004ade4b | g_CurrentTextureDimension
     CMP EAX,EDI                         ; 004ade51
     JL 0x004ade5c                       ; 004ade53
         ;   XREF to: 004ade5c (CONDITIONAL_JUMP)  ; LAB_004ade5c
@@ -114,10 +114,10 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 004ade58
     MOV EAX,dword ptr [ESP + 0x10]      ; 004ade5c
         ;   Label: LAB_004ade5c
-    IMUL EAX,dword ptr [0x005b762c]     ; 004ade60 | DAT_005b762c
+    IMUL EAX,dword ptr [0x005b762c]     ; 004ade60 | g_CurrentTextureDimension
     MOV EBX,dword ptr [ESP + 0xc]       ; 004ade67
     ADD EBX,EAX                         ; 004ade6b
-    MOV EAX,[0x01c02580]                ; 004ade6d | DAT_01c02580
+    MOV EAX,[0x01c02580]                ; 004ade6d | g_CurrentTextureData
     CMP byte ptr [EBX + EAX*0x1],0x0    ; 004ade72
     JNZ 0x004addb7                      ; 004ade76
         ;   XREF to: 004addb7 (CONDITIONAL_JUMP)  ; LAB_004addb7

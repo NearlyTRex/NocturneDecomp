@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setFogColorFromPalette_FUN_00532a80(int palette_index)
 
 {
   int iVar1;
   
   iVar1 = palette_index * 3;
-  _DAT_02dc9e0c = (uint)g_SourcePaletteData[iVar1];
-  _DAT_02dc9e10 = (uint)g_SourcePaletteData[iVar1 + 1];
-  _DAT_02dc9e14 = (uint)g_SourcePaletteData[iVar1 + 2];
+  g_FogColorRed = (int)g_SourcePaletteData[iVar1];
+  g_FogColorGreen = (int)g_SourcePaletteData[iVar1 + 1];
+  g_FogColorBlue = (int)g_SourcePaletteData[iVar1 + 2];
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  iVar1 = (*g_APIDLL_setFogColor)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
+  iVar1 = (*g_APIDLL_setFogColor)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);
   return iVar1;
 }

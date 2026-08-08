@@ -17,7 +17,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040453
   int local_14;
   
   iVar1 = 0;
-  DAT_005b7644 = 1;
+  INT_005b7644 = 1;
   output = (SProjectedVertex *)(&DAT_005c5014 + ((mrgl->base).count + DAT_006b0264) * 0xc);
   input = (CVector3i *)(mrgl + 1);
   local_14 = 0;
@@ -38,7 +38,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040453
     DAT_006b0268 = DAT_006b0264;
   }
   if (local_14 == mrgl->child_count) {
-    DAT_005b7644 = 0;
+    INT_005b7644 = 0;
   }
   return mrgl + mrgl->child_count + 1;
 }

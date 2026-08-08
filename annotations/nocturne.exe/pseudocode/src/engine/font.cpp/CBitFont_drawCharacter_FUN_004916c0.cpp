@@ -196,7 +196,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
               puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
                 uVar4 = (uint)*local_d4;
-                iVar6 = DAT_005b763c *
+                iVar6 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[uVar4 * 3 + local_c8 * 0x300];
                 iVar8 = iVar6 >> 0x1f;
                 iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
@@ -265,7 +265,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             do {
               puVar11 = (ushort *)(x * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_005b763c *
+                iVar6 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
                 iVar8 = iVar6 >> 0x1f;
                 iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
@@ -333,7 +333,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             do {
               puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_005b763c *
+                iVar6 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
                 iVar8 = iVar6 >> 0x1f;
                 iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;
@@ -397,7 +397,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
             do {
               puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x * 2);
               for (iVar12 = x; iVar12 <= local_d0; iVar12 = iVar12 + 1) {
-                iVar6 = DAT_005b763c *
+                iVar6 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
                 iVar8 = iVar6 >> 0x1f;
                 iVar6 = (int)((iVar6 + iVar8 * -0x100) - (uint)(iVar8 << 7 < 0)) >> 8;

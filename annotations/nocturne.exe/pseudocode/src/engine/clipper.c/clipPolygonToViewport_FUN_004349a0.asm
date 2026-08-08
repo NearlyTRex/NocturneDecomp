@@ -36,7 +36,7 @@
 ;   void* PTR_caseD_3_00434984 = 00434daf
 ;   void* PTR_caseD_1_0043498c = 0043503d
 ;   void* PTR_caseD_3_00434994 = 00434e5f
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c5018
 ;   undefined4 DAT_005c5024
@@ -67,7 +67,7 @@ section .text
     SUB ESP,0x20                        ; 004349a4
     MOV EDX,dword ptr [ESP + 0x34]      ; 004349a7
     MOV EBX,dword ptr [ESP + 0x38]      ; 004349ab
-    CMP dword ptr [0x005b7644],0x0      ; 004349af | DAT_005b7644
+    CMP dword ptr [0x005b7644],0x0      ; 004349af | INT_005b7644
     JZ 0x00434a8c                       ; 004349b6
         ;   XREF to: 00434a8c (CONDITIONAL_JUMP)  ; LAB_00434a8c
     MOV ECX,0xffffffff                  ; 004349bc
@@ -198,11 +198,11 @@ section .text
     MOV EBX,dword ptr [0x01c039a0]      ; 00434ac6 | g_RenderStateFlags
         ;   Label: LAB_00434ac6
     PUSH EBX                            ; 00434acc
-    MOV ESI,dword ptr [0x01e52ef8]      ; 00434acd | DAT_01e52ef8
+    MOV ESI,dword ptr [0x01e52ef8]      ; 00434acd | g_RenderedTriangleCount
     PUSH EBP                            ; 00434ad3
     INC ESI                             ; 00434ad4
     PUSH 0x767274                       ; 00434ad5 | DAT_00767274
-    MOV dword ptr [0x01e52ef8],ESI      ; 00434ada | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ESI      ; 00434ada | g_RenderedTriangleCount
     CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 00434ae0
         ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00532650(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00434ae5

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4942
-Clean functions: 2394 (48.4%)
-Functions with suspects: 2548 (51.6%)
+Clean functions: 2423 (49.0%)
+Functions with suspects: 2519 (51.0%)
 
-Total suspect patterns: 25660
-Average suspects per function: 5.19
+Total suspect patterns: 25226
+Average suspects per function: 5.10
 
 Virtual files: 200 total, 5 at 100%, 8 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3330, Average: 44.9
 
-Average complexity score: 101.4
+Average complexity score: 100.4
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,18 +28,18 @@ Failed: 4942
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  undefined_data            5210
-  pointer_cast              3747
-  pointer_truncation        3077
-  unnamed_param             2089
-  unrolled_memcpy           1567
-  stack_param               1145
-  warning_overlapping_globals 977
-  unknown_field             754
+  undefined_data            4851
+  pointer_cast              3739
+  pointer_truncation        3094
+  unnamed_param             2084
+  unrolled_memcpy           1568
+  stack_param               1141
+  warning_overlapping_globals 930
+  unknown_field             734
   concat_reconstruction     666
   unaffected_reg            664
   shadow_pointer_walk       550
-  static_uninitvar          495
+  static_uninitvar          494
   unrolled_strcpy           483
   stack_ref                 459
   negative_offset           458
@@ -73,7 +73,6 @@ SUSPECT PATTERN BREAKDOWN
   warning_overlapping_instructions 20
   signed_shift_global_idiom 17
   static_invalid_pointer_cast 15
-  undefined_ram             9
   static_null_pointer       9
   displaced_global_access   8
   preinc_loop_idiom         8
@@ -96,6 +95,7 @@ SUSPECT PATTERN BREAKDOWN
   vector_type_pun           2
   cpuid_intrinsic           2
   dropped_self_copy         2
+  undefined_ram             1
   wrong_global              1
   static_null_pointer_arithmetic 1
   unresolved_register       1
@@ -157,28 +157,27 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2344 more
+  ... and 2373 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   004ff2c0: core_script.cpp_CScript_step_FUN_004ff2c0 (score: 4735, suspects: 134, lines: 3330)
   004a0550: core_game.cpp_CGame_processCheatCodes_FUN_004a0550 (score: 3535, suspects: 131, lines: 2150)
   0047ac50: core_event.cpp_CEventList_executeCommand_FUN_0047ac50 (score: 3052, suspects: 84, lines: 2142)
-  00434210: engine_clipper.c_FUN_00434210 (score: 2767, suspects: 232, lines: 412)
+  00434210: engine_clipper.c_FUN_00434210 (score: 2751, suspects: 231, lines: 411)
   0050c2d0: core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 (score: 2732, suspects: 218, lines: 522)
-  0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2709, suspects: 207, lines: 589)
-  0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2691, suspects: 207, lines: 571)
-  00432210: engine_clipper.c_FUN_00432210 (score: 2685, suspects: 206, lines: 575)
-  004349a0: engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (score: 2645, suspects: 219, lines: 425)
+  00432210: engine_clipper.c_FUN_00432210 (score: 2669, suspects: 205, lines: 574)
+  004349a0: engine_clipper.c_clipPolygonToViewport_FUN_004349a0 (score: 2619, suspects: 217, lines: 424)
   004accf0: core_glass.cpp_CGlass_FUN_004accf0 (score: 2610, suspects: 221, lines: 390)
   0047e0d0: core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 (score: 2566, suspects: 94, lines: 1586)
-  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2454, suspects: 182, lines: 589)
+  00432cd0: engine_clipper.c_clipAndRasterize_FUN_00432cd0 (score: 2428, suspects: 180, lines: 588)
   004bf360: core_inv.cpp_CInventory_addItem_FUN_004bf360 (score: 2413, suspects: 125, lines: 1128)
   0043474d: engine_clipper.c_FUN_0043474d (score: 2352, suspects: 201, lines: 302)
   00434492: engine_clipper.c_FUN_00434492 (score: 2349, suspects: 201, lines: 299)
   00473190: shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 (score: 2266, suspects: 192, lines: 296)
   0051b920: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 (score: 2261, suspects: 178, lines: 456)
-  00464200: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (score: 1958, suspects: 154, lines: 393)
+  0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823 (score: 2042, suspects: 142, lines: 587)
+  0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031 (score: 2025, suspects: 142, lines: 570)
   00430630: cockpit_ckptutil.c_FUN_00430630 (score: 1954, suspects: 158, lines: 349)
   0053a760: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (score: 1937, suspects: 132, lines: 582)
   004347cc: engine_clipper.c_FUN_004347cc (score: 1911, suspects: 163, lines: 241)
@@ -189,16 +188,16 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004a9270: core_ghoul.cpp_CGhoul_process_FUN_004a9270 (score: 1779, suspects: 69, lines: 1039)
   004d2d00: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 (score: 1698, suspects: 76, lines: 903)
   004d12e0: core_menu.cpp_configureSoundOptions_FUN_004d12e0 (score: 1602, suspects: 74, lines: 792)
+  00464200: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200 (score: 1590, suspects: 122, lines: 345)
   00423f40: core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (score: 1488, suspects: 138, lines: 93)
   005125a0: core_setdir.cpp_CDemonSet_FUN_005125a0 (score: 1468, suspects: 87, lines: 563)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  undefined_data (737 functions):
+  undefined_data (704 functions):
     00403f50: engine_2d.c_clearInputAndWait_FUN_00403f50
     00404120: engine_2d.c_mapFrameBuffer_FUN_00404120
-    00404340: engine_2d.c_mapTextureFrameBuffer_FUN_00404340
     00404360: engine_2d.c_unmapFrameBuffer_FUN_00404360
     00404430: engine_3d.c_FUN_00404430
     004044d0: engine_3d.c_processCameraRelativePoint_FUN_004044d0
@@ -206,9 +205,10 @@ FUNCTIONS BY SUSPECT TYPE
     00404610: engine_3d.c_isVisiblePlane_FUN_00404610
     00404680: engine_3d.c_lookupLitColor_FUN_00404680
     00404730: engine_3d.c_processVertexLighting_FUN_00404730
-    ... and 727 more
+    00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
+    ... and 694 more
 
-  pointer_cast (724 functions):
+  pointer_cast (725 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -219,9 +219,9 @@ FUNCTIONS BY SUSPECT TYPE
     00401f30: engine_2d.c_drawCharacterMasked_FUN_00401f30
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
-    ... and 714 more
+    ... and 715 more
 
-  pointer_truncation (567 functions):
+  pointer_truncation (568 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -232,9 +232,9 @@ FUNCTIONS BY SUSPECT TYPE
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
-    ... and 557 more
+    ... and 558 more
 
-  unnamed_param (199 functions):
+  unnamed_param (198 functions):
     00402710: engine_2d.c_FUN_00402710
     00402780: engine_2d.c_FUN_00402780
     00402820: engine_2d.c_FUN_00402820
@@ -245,7 +245,7 @@ FUNCTIONS BY SUSPECT TYPE
     004029f0: engine_2d.c_FUN_004029f0
     00402ad0: engine_2d.c_FUN_00402ad0
     00402af0: engine_2d.c_FUN_00402af0
-    ... and 189 more
+    ... and 188 more
 
   unrolled_memcpy (542 functions):
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
@@ -260,7 +260,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040a540: core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
     ... and 532 more
 
-  stack_param (168 functions):
+  stack_param (167 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
     00404430: engine_3d.c_FUN_00404430
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
@@ -271,20 +271,20 @@ FUNCTIONS BY SUSPECT TYPE
     0040b300: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
     0041ceb0: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     00423d20: core_bugs.cpp_FUN_00423d20
-    ... and 158 more
+    ... and 157 more
 
-  warning_overlapping_globals (977 functions):
+  warning_overlapping_globals (930 functions):
     00402e90: engine_2d.c_FUN_00402e90
     00403760: engine_2d.c_resetGraphicsSystem_FUN_00403760
     00403770: engine_2d.c_reinitializeGraphicsSystem_FUN_00403770
-    00404340: engine_2d.c_mapTextureFrameBuffer_FUN_00404340
     00404480: engine_3d.c_FUN_005458a0
     00404490: engine_3d.c_FUN_005458d0
-    004044d0: engine_3d.c_processCameraRelativePoint_FUN_004044d0
     00404530: engine_3d.c_transformAndBufferVertices_FUN_00404530
-    00404610: engine_3d.c_isVisiblePlane_FUN_00404610
     00404b10: engine_3d.c_FUN_00404b10
-    ... and 967 more
+    004059c0: engine_3d.c_FUN_004059c0
+    00405b40: engine_3d.c_FUN_00405b40
+    00405c90: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
+    ... and 920 more
 
   unknown_field (129 functions):
     00403fb0: engine_2d.c_getInputWithPrompt_FUN_00403fb0
@@ -706,11 +706,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_invalid_pointer_cast (0 functions):
 
-  undefined_ram (3 functions):
-    00402e90: engine_2d.c_FUN_00402e90
-    0052f031: engine_special.cpp_renderMMXPerspectiveScanline32_FUN_0052f031
-    0052f823: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0052f823
-
   static_null_pointer (0 functions):
 
   displaced_global_access (8 functions):
@@ -806,6 +801,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   dropped_self_copy (1 functions):
     00543450: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00543450
+
+  undefined_ram (1 functions):
+    00402e90: engine_2d.c_FUN_00402e90
 
   wrong_global (1 functions):
     00408e80: engine_3d.c_FUN_00408e80

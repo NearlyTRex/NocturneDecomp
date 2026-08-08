@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7638
+;   int INT_005b7638 = 0x5
 ;
 ; *****************************************************************************
 
@@ -20,7 +20,7 @@ section .text
     MOV EBP,ESP                         ; 0042cde1
     PUSH ESI                            ; 0042cde3
     PUSH EDI                            ; 0042cde4
-    CMP dword ptr [0x005b7638],0x6      ; 0042cde5 | DAT_005b7638
+    CMP dword ptr [0x005b7638],0x6      ; 0042cde5 | INT_005b7638
     JNC 0x0042ce59                      ; 0042cdec
         ;   XREF to: 0042ce59 (CONDITIONAL_JUMP)  ; LAB_0042ce59
     PUSH EAX                            ; 0042cdee

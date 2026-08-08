@@ -20,9 +20,9 @@
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   undefined4 DAT_01c039c4
-;   undefined4 DAT_01c039c8
-;   undefined4 DAT_01c039cc
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;   undefined4 DAT_01c039d0
 ;   ... and 8 more
 ;
@@ -43,11 +43,11 @@ section .text
     MOV EAX,[0x01cc53d0]                ; 004ce935 | DAT_01cc53d0
         ;   Label: LAB_004ce935
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc549c] ; 004ce93a
-    MOV dword ptr [0x01c039c4],EDX      ; 004ce941 | DAT_01c039c4
+    MOV dword ptr [0x01c039c4],EDX      ; 004ce941 | g_CameraOriginX
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc54c4] ; 004ce947
-    MOV dword ptr [0x01c039c8],EDX      ; 004ce94e | DAT_01c039c8
+    MOV dword ptr [0x01c039c8],EDX      ; 004ce94e | g_CameraOriginY
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc54ec] ; 004ce954
-    MOV dword ptr [0x01c039cc],EDX      ; 004ce95b | DAT_01c039cc
+    MOV dword ptr [0x01c039cc],EDX      ; 004ce95b | g_CameraOriginZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5514] ; 004ce961
     MOV dword ptr [0x01c039d0],EDX      ; 004ce968 | DAT_01c039d0
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc553c] ; 004ce96e

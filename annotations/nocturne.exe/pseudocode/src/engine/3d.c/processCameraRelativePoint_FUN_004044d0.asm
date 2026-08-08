@@ -15,12 +15,12 @@
 ;   undefined4 DAT_006b028c
 ;   undefined4 DAT_006b0290
 ;   undefined4 DAT_006b0294
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
-;   undefined4 DAT_01c039c4
-;   undefined4 DAT_01c039c8
-;   undefined4 DAT_01c039cc
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;
 ; *****************************************************************************
 
@@ -37,18 +37,18 @@ section .text
     MOV EDX,dword ptr [EAX + 0xc]       ; 004044e8
     MOV ECX,dword ptr [EAX + 0x4]       ; 004044eb
     MOV dword ptr [0x006b0294],EDX      ; 004044ee | DAT_006b0294
-    MOV EDX,dword ptr [0x01c039c4]      ; 004044f4 | DAT_01c039c4
+    MOV EDX,dword ptr [0x01c039c4]      ; 004044f4 | g_CameraOriginX
     SUB EDX,ECX                         ; 004044fa
     MOV EBX,dword ptr [EAX + 0x8]       ; 004044fc
-    MOV dword ptr [0x01c039b8],EDX      ; 004044ff | DAT_01c039b8
-    MOV EDX,dword ptr [0x01c039c8]      ; 00404505 | DAT_01c039c8
+    MOV dword ptr [0x01c039b8],EDX      ; 004044ff | g_RelativeX
+    MOV EDX,dword ptr [0x01c039c8]      ; 00404505 | g_CameraOriginY
     SUB EDX,EBX                         ; 0040450b
     MOV ESI,dword ptr [EAX + 0xc]       ; 0040450d
-    MOV dword ptr [0x01c039bc],EDX      ; 00404510 | DAT_01c039bc
-    MOV EDX,dword ptr [0x01c039cc]      ; 00404516 | DAT_01c039cc
+    MOV dword ptr [0x01c039bc],EDX      ; 00404510 | g_RelativeY
+    MOV EDX,dword ptr [0x01c039cc]      ; 00404516 | g_CameraOriginZ
     SUB EDX,ESI                         ; 0040451c
     ADD EAX,0x10                        ; 0040451e
-    MOV dword ptr [0x01c039c0],EDX      ; 00404521 | DAT_01c039c0
+    MOV dword ptr [0x01c039c0],EDX      ; 00404521 | g_RelativeZ
     POP ESI                             ; 00404527
     POP EBX                             ; 00404528
     RET                                 ; 00404529

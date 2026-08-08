@@ -12,61 +12,62 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b2
 
 {
   uint uVar1;
-  int iVar2;
-  uint uVar3;
+  uchar *puVar2;
+  int iVar3;
   uint uVar4;
-  SSoftwareEdge *pSVar5;
-  uint uVar6;
+  uint uVar5;
+  SSoftwareEdge *pSVar6;
+  uint uVar7;
   
-  uVar3 = (right_edge->base).x_current;
-  uVar4 = (left_edge->base).x_current;
-  uVar1 = uVar3;
-  pSVar5 = right_edge;
-  if (uVar4 < uVar3) {
-    uVar1 = uVar4;
-    uVar4 = uVar3;
-    pSVar5 = left_edge;
+  uVar4 = (right_edge->base).x_current;
+  uVar5 = (left_edge->base).x_current;
+  uVar1 = uVar4;
+  pSVar6 = right_edge;
+  if (uVar5 < uVar4) {
+    uVar1 = uVar5;
+    uVar5 = uVar4;
+    pSVar6 = left_edge;
     left_edge = right_edge;
   }
   uVar1 = uVar1 >> 0x10;
-  iVar2 = (uVar4 >> 0x10) - uVar1;
-  if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
-    DAT_005b06e4 = iVar2 * 2;
+  iVar3 = (uVar5 >> 0x10) - uVar1;
+  if (iVar3 != 0 && uVar1 <= uVar5 >> 0x10) {
+    DAT_005b06e4 = iVar3 * 2;
     DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
-    uVar3 = (pSVar5->base).u_current;
+    uVar4 = (pSVar6->base).u_current;
     _DAT_005b06d4 =
          (int)((ulonglong)
-               ((longlong)(int)((left_edge->base).u_current - uVar3) *
-               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar4 = (pSVar5->base).v_current;
+               ((longlong)(int)((left_edge->base).u_current - uVar4) *
+               (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
+    uVar5 = (pSVar6->base).v_current;
     _DAT_005b06d8 =
          (int)((ulonglong)
-               ((longlong)(int)((left_edge->base).v_current - uVar4) *
-               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar1 = (pSVar5->base).depth_current;
+               ((longlong)(int)((left_edge->base).v_current - uVar5) *
+               (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
+    uVar1 = (pSVar6->base).depth_current;
     _DAT_005b06dc =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).depth_current - uVar1) *
-               (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar6 = 0;
-    DAT_005b06b8 = uVar3;
-    DAT_005b06bc = uVar4;
+               (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
+    uVar7 = 0;
+    DAT_005b06b8 = uVar4;
+    DAT_005b06bc = uVar5;
     DAT_005b06c4 = uVar1;
     while( true ) {
-      if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar6)) {
-        iVar2 = _DAT_01c02584;
-        if (_DAT_01c02584 == 0) {
-          iVar2 = _DAT_01c02580;
+      if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar7)) {
+        puVar2 = g_CurrentTextureOpacityData;
+        if (g_CurrentTextureOpacityData == (uchar *)0x0) {
+          puVar2 = g_CurrentTextureData;
         }
-        if (*(char *)((uVar3 >> _DAT_005bf550 & (uint)_DAT_005bf590) +
-                      (uVar4 >> _DAT_005bf570 & (uint)_DAT_005bf5b0) + iVar2) != '\0') {
-          *(ushort *)((int)DAT_005b06e8 + uVar6) = (ushort)uVar1;
+        if (puVar2[(uVar4 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+                   (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0])] != '\0') {
+          *(ushort *)((int)DAT_005b06e8 + uVar7) = (ushort)uVar1;
         }
       }
-      uVar6 = uVar6 + 2;
-      if (DAT_005b06e4 < uVar6) break;
-      uVar3 = uVar3 + _DAT_005b06d4;
-      uVar4 = uVar4 + _DAT_005b06d8;
+      uVar7 = uVar7 + 2;
+      if (DAT_005b06e4 < uVar7) break;
+      uVar4 = uVar4 + _DAT_005b06d4;
+      uVar5 = uVar5 + _DAT_005b06d8;
       uVar1 = uVar1 + _DAT_005b06dc;
     }
   }

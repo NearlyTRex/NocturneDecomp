@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
 {
@@ -26,17 +24,17 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_
   uint local_10;
   
   bVar6 = 0;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c039f4 +
-          (longlong)input_vector->x * (longlong)_DAT_01c039e8 +
-          (longlong)input_vector->z * (longlong)_DAT_01c03a00;
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].x +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].x +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].x;
   local_24 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c039f8 +
-          (longlong)input_vector->x * (longlong)_DAT_01c039ec +
-          (longlong)input_vector->z * (longlong)_DAT_01c03a04;
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].y +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].y +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].y;
   local_20 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)input_vector->y * (longlong)_DAT_01c039fc +
-          (longlong)input_vector->x * (longlong)_DAT_01c039f0 +
-          (longlong)input_vector->z * (longlong)_DAT_01c03a08;
+  lVar1 = (longlong)input_vector->y * (longlong)g_TransformMatrix.m[1].z +
+          (longlong)input_vector->x * (longlong)g_TransformMatrix.m[0].z +
+          (longlong)input_vector->z * (longlong)g_TransformMatrix.m[2].z;
   local_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(g_CDemonRenderer_PTR_005ae704)
   ;

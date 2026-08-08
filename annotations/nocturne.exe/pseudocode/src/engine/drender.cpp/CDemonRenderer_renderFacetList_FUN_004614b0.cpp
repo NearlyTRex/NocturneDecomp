@@ -67,7 +67,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
-              *(SMRGLPrimitiveQuad **)(&DAT_005ae70c + local_18) = primitive_array;
+              *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;
               local_18 = iVar2;
               if (1999 < iVar3) {
                 g_CurrentFilename = "..\\engine\\drender.cpp";
@@ -84,7 +84,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_00532680
-                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)&DAT_005ae70c,iVar3,
+                    (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
                      g_RenderStateFlags.dword);
           return;
         }

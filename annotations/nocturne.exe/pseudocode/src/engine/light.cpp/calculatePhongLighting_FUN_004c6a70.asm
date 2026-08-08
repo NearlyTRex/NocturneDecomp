@@ -21,9 +21,9 @@
 ;   undefined4 DAT_005bacd4
 ;   undefined4 DAT_005bacd8
 ;   undefined4 DAT_005bacdc
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   undefined4 DAT_01c039dc
 ;   undefined4 DAT_01c039e0
 ;   undefined4 DAT_01c039e4
@@ -117,17 +117,17 @@ section .text
     SUB EAX,EDI                         ; 004c6b4b
     MOV EDX,dword ptr [0x01cc3670]      ; 004c6b4d | DAT_01cc3670
     MOV dword ptr [ESP + 0x10],EAX      ; 004c6b53
-    CMP EDX,dword ptr [0x01c039b8]      ; 004c6b57 | DAT_01c039b8
+    CMP EDX,dword ptr [0x01c039b8]      ; 004c6b57 | g_RelativeX
     JZ 0x004c6c71                       ; 004c6b5d
         ;   XREF to: 004c6c71 (CONDITIONAL_JUMP)  ; LAB_004c6c71
-    MOV EAX,[0x01c039b8]                ; 004c6b63 | DAT_01c039b8
+    MOV EAX,[0x01c039b8]                ; 004c6b63 | g_RelativeX
         ;   Label: LAB_004c6b63
     PUSH 0x1cc3670                      ; 004c6b68 | DAT_01cc3670
     MOV [0x01cc3670],EAX                ; 004c6b6d | DAT_01cc3670
-    MOV EAX,[0x01c039bc]                ; 004c6b72 | DAT_01c039bc
+    MOV EAX,[0x01c039bc]                ; 004c6b72 | g_RelativeY
     LEA ESI,[ESP + 0x4]                 ; 004c6b77
     MOV [0x01cc3674],EAX                ; 004c6b7b | DAT_01cc3674
-    MOV EAX,[0x01c039c0]                ; 004c6b80 | DAT_01c039c0
+    MOV EAX,[0x01c039c0]                ; 004c6b80 | g_RelativeZ
     MOV EDI,0x1cc367c                   ; 004c6b85
     MOV [0x01cc3678],EAX                ; 004c6b8a | DAT_01cc3678
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_004cde90 ; 004c6b8f
@@ -221,11 +221,11 @@ section .text
         ;   XREF to: 004c6c38 (UNCONDITIONAL_JUMP)  ; LAB_004c6c38
     MOV ECX,dword ptr [0x01cc3674]      ; 004c6c71 | DAT_01cc3674
         ;   Label: LAB_004c6c71
-    CMP ECX,dword ptr [0x01c039bc]      ; 004c6c77 | DAT_01c039bc
+    CMP ECX,dword ptr [0x01c039bc]      ; 004c6c77 | g_RelativeY
     JNZ 0x004c6b63                      ; 004c6c7d
         ;   XREF to: 004c6b63 (CONDITIONAL_JUMP)  ; LAB_004c6b63
     MOV ESI,dword ptr [0x01cc3678]      ; 004c6c83 | DAT_01cc3678
-    CMP ESI,dword ptr [0x01c039c0]      ; 004c6c89 | DAT_01c039c0
+    CMP ESI,dword ptr [0x01c039c0]      ; 004c6c89 | g_RelativeZ
     JNZ 0x004c6b63                      ; 004c6c8f
         ;   XREF to: 004c6b63 (CONDITIONAL_JUMP)  ; LAB_004c6b63
     JMP 0x004c6b9e                      ; 004c6c95

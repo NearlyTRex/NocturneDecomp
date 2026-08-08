@@ -92,17 +92,17 @@
 ;   float FLOAT_0059bddc = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
-;   undefined4 DAT_01c03a04
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
+;   undefined4 g_TransformMatrix.m[2].y
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -146,42 +146,42 @@ section .text
     FMULP ST3                           ; 0044603f
     MOV EAX,dword ptr [EBX + 0x178]     ; 00446041
     ADD ESP,0x4                         ; 00446047
-    MOV [0x01c039e8],EAX                ; 0044604a | DAT_01c039e8
+    MOV [0x01c039e8],EAX                ; 0044604a | g_TransformMatrix
     MOV EAX,dword ptr [EBX + 0x17c]     ; 0044604f
     PUSH 0x0                            ; 00446055
-    MOV [0x01c039ec],EAX                ; 00446057 | DAT_01c039ec
+    MOV [0x01c039ec],EAX                ; 00446057 | g_TransformMatrix.m[0].y
     MOV EAX,dword ptr [EBX + 0x180]     ; 0044605c
     MOV ECX,dword ptr [ESP + 0x140]     ; 00446062
-    MOV [0x01c039f0],EAX                ; 00446069 | DAT_01c039f0
+    MOV [0x01c039f0],EAX                ; 00446069 | g_TransformMatrix.m[0].z
     MOV EAX,dword ptr [EBX + 0x184]     ; 0044606e
     PUSH ECX                            ; 00446074
-    MOV [0x01c039f4],EAX                ; 00446075 | DAT_01c039f4
+    MOV [0x01c039f4],EAX                ; 00446075 | g_TransformMatrix.m[1].x
     MOV EAX,dword ptr [EBX + 0x188]     ; 0044607a
     FXCH                                ; 00446080
     CALL crt_math.c_round_FUN_00563a30  ; 00446082
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    MOV [0x01c039f8],EAX                ; 00446087 | DAT_01c039f8
+    MOV [0x01c039f8],EAX                ; 00446087 | g_TransformMatrix.m[1].y
     MOV EAX,dword ptr [EBX + 0x18c]     ; 0044608c
     FXCH                                ; 00446092
     CALL crt_math.c_round_FUN_00563a30  ; 00446094
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    MOV [0x01c039fc],EAX                ; 00446099 | DAT_01c039fc
+    MOV [0x01c039fc],EAX                ; 00446099 | g_TransformMatrix.m[1].z
     MOV EAX,dword ptr [EBX + 0x190]     ; 0044609e
     FXCH ST2                            ; 004460a4
     CALL crt_math.c_round_FUN_00563a30  ; 004460a6
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    MOV [0x01c03a00],EAX                ; 004460ab | DAT_01c03a00
+    MOV [0x01c03a00],EAX                ; 004460ab | g_TransformMatrix.m[2].x
     MOV EAX,dword ptr [EBX + 0x194]     ; 004460b0
     FXCH                                ; 004460b6
-    FISTP dword ptr [0x01c039b8]        ; 004460b8 | DAT_01c039b8
-    MOV [0x01c03a04],EAX                ; 004460be | DAT_01c03a04
+    FISTP dword ptr [0x01c039b8]        ; 004460b8 | g_RelativeX
+    MOV [0x01c03a04],EAX                ; 004460be | g_TransformMatrix.m[2].y
     MOV EAX,dword ptr [EBX + 0x198]     ; 004460c3
     MOV EBX,dword ptr [0x005ae704]      ; 004460c9 | g_CDemonRenderer_PTR_005ae704
     FXCH                                ; 004460cf
-    FISTP dword ptr [0x01c039bc]        ; 004460d1 | DAT_01c039bc
+    FISTP dword ptr [0x01c039bc]        ; 004460d1 | g_RelativeY
     PUSH EBX                            ; 004460d7 | DAT_01b4d738
-    FISTP dword ptr [0x01c039c0]        ; 004460d8 | DAT_01c039c0
-    MOV [0x01c03a08],EAX                ; 004460de | DAT_01c03a08
+    FISTP dword ptr [0x01c039c0]        ; 004460d8 | g_RelativeZ
+    MOV [0x01c03a08],EAX                ; 004460de | g_TransformMatrix.m[2].z
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004460e3
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004460e8

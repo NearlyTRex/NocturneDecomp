@@ -13,9 +13,9 @@
 ;   uchar[768] g_SourcePaletteData
 ;   int g_UseExternalRenderer
 ;   APIDLL_setFogColor* g_APIDLL_setFogColor
-;   undefined4 DAT_02dc9e0c
-;   undefined4 DAT_02dc9e10
-;   undefined4 DAT_02dc9e14
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
 ;
 ; *****************************************************************************
 
@@ -27,14 +27,14 @@ section .text
     SUB EAX,EDX                         ; 00532a8b
     XOR EDX,EDX                         ; 00532a8d
     MOV DL,byte ptr [EAX + 0x1c00648]   ; 00532a8f | g_SourcePaletteData
-    MOV dword ptr [0x02dc9e0c],EDX      ; 00532a95 | DAT_02dc9e0c
+    MOV dword ptr [0x02dc9e0c],EDX      ; 00532a95 | g_FogColorRed
     XOR EDX,EDX                         ; 00532a9b
     MOV DL,byte ptr [EAX + 0x1c00649]   ; 00532a9d
-    MOV dword ptr [0x02dc9e10],EDX      ; 00532aa3 | DAT_02dc9e10
+    MOV dword ptr [0x02dc9e10],EDX      ; 00532aa3 | g_FogColorGreen
     MOV AL,byte ptr [EAX + 0x1c0064a]   ; 00532aa9
     AND EAX,0xff                        ; 00532aaf
     MOV EDX,dword ptr [0x01c02594]      ; 00532ab4 | g_UseExternalRenderer
-    MOV [0x02dc9e14],EAX                ; 00532aba | DAT_02dc9e14
+    MOV [0x02dc9e14],EAX                ; 00532aba | g_FogColorBlue
     TEST EDX,EDX                        ; 00532abf
     JNZ 0x00532ac6                      ; 00532ac1
         ;   XREF to: 00532ac6 (CONDITIONAL_JUMP)  ; LAB_00532ac6
@@ -44,9 +44,9 @@ section .text
         ;   Label: LAB_00532ac6
     PUSH EBX                            ; 00532ac7
     PUSH EAX                            ; 00532ac8
-    MOV EBX,dword ptr [0x02dc9e10]      ; 00532ac9 | DAT_02dc9e10
+    MOV EBX,dword ptr [0x02dc9e10]      ; 00532ac9 | g_FogColorGreen
     PUSH EBX                            ; 00532acf
-    MOV ESI,dword ptr [0x02dc9e0c]      ; 00532ad0 | DAT_02dc9e0c
+    MOV ESI,dword ptr [0x02dc9e0c]      ; 00532ad0 | g_FogColorRed
     PUSH ESI                            ; 00532ad6
     CALL dword ptr [0x02dc9dcc]         ; 00532ad7 | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 00532add

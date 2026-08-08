@@ -60,7 +60,7 @@ section .text
     PUSH EAX                            ; 004cc47d
     PUSH ESI                            ; 004cc47e
     CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004cc47f
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 004cc484 | g_CDemonRenderer_PTR_005ae704
     MOV ESI,dword ptr [EAX]             ; 004cc489 | DAT_01b4d738
     MOV ECX,0xc                         ; 004cc48b

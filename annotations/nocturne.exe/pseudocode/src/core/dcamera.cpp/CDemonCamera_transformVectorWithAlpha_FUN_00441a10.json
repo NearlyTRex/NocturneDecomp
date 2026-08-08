@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,27 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 49,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01c039f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01c039e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c03a00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c039f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c039ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c03a04'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01c039fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01c039f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_01c03a08'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 31,
-        "line": 58,
+        "line": 56,
         "message": "use of undeclared identifier 'stack0xffffffec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 58,
+        "message": "use of undeclared identifier 'stack0xfffffff0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 81,
+        "message": "use of undeclared identifier 'stack0xffffffec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 83,
+        "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
     "success": false,
@@ -122,21 +86,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 261,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 16,
+    "pseudocode_lines": 75,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
-      "warning_overlapping_globals"
+      "stack_ref"
     ],
-    "total_lines": 263
+    "total_lines": 262
   },
   "cross_references": [
     {
@@ -180,55 +143,55 @@
     },
     {
       "addr": "01c039e8",
-      "name": "DAT_01c039e8",
-      "type": "undefined4",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01c039ec",
-      "name": "DAT_01c039ec",
+      "name": "g_TransformMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f0",
-      "name": "DAT_01c039f0",
+      "name": "g_TransformMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f4",
-      "name": "DAT_01c039f4",
+      "name": "g_TransformMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f8",
-      "name": "DAT_01c039f8",
+      "name": "g_TransformMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039fc",
-      "name": "DAT_01c039fc",
+      "name": "g_TransformMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a00",
-      "name": "DAT_01c03a00",
+      "name": "g_TransformMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a04",
-      "name": "DAT_01c03a04",
+      "name": "g_TransformMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a08",
-      "name": "DAT_01c03a08",
+      "name": "g_TransformMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -389,16 +352,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 11,
       "match": "auStackY_1000",
       "severity": "moderate",
       "text": "uint auStackY_1000 [1014];",
@@ -406,7 +361,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(uint *)((int)output_vector",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
@@ -414,7 +369,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 49,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -422,7 +377,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 51,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -430,7 +385,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(uint *)((int)output_vector",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
@@ -438,7 +393,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 74,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -446,7 +401,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 76,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -454,7 +409,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -462,7 +417,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -470,7 +425,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -478,7 +433,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 76,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -486,7 +441,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -494,7 +449,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 53,
+      "line": 51,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -502,7 +457,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 76,
+      "line": 74,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -510,7 +465,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 78,
+      "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",

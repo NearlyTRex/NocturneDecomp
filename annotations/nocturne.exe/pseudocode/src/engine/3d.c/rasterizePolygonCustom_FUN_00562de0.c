@@ -51,7 +51,7 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vert
                          (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar10 == 0)) {
     return;
   }
-  _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+  g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_004f9870(vertex_buffer,vertex_count);

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* g_MRGLBlockHandlerTable = 004044a0
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;
 ; *****************************************************************************
 
@@ -35,7 +35,7 @@ section .text
     CMP EAX,0x43                        ; 00408e92
     JL 0x00408ea2                       ; 00408e95
         ;   XREF to: 00408ea2 (CONDITIONAL_JUMP)  ; LAB_00408ea2
-    MOV dword ptr [0x005b7644],0x1      ; 00408e97 | DAT_005b7644
+    MOV dword ptr [0x005b7644],0x1      ; 00408e97 | INT_005b7644
         ;   Label: LAB_00408e97
     RET                                 ; 00408ea1
         ;   Label: LAB_00408ea1

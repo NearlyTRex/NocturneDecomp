@@ -25,9 +25,9 @@
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   undefined4 DAT_01c039c4
-;   undefined4 DAT_01c039c8
-;   undefined4 DAT_01c039cc
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;   undefined4 DAT_01c039d0
 ;   ... and 8 more
 ;
@@ -42,11 +42,11 @@ section .text
     PUSH EBP                            ; 004ce7c0
         ;   Label: engine_matrix.c_pushViewport_FUN_004ce7c0
     MOV EAX,[0x01cc53d0]                ; 004ce7c1 | DAT_01cc53d0
-    MOV EDX,dword ptr [0x01c039c4]      ; 004ce7c6 | DAT_01c039c4
+    MOV EDX,dword ptr [0x01c039c4]      ; 004ce7c6 | g_CameraOriginX
     MOV dword ptr [EAX*0x4 + 0x1cc549c],EDX ; 004ce7cc
-    MOV EDX,dword ptr [0x01c039c8]      ; 004ce7d3 | DAT_01c039c8
+    MOV EDX,dword ptr [0x01c039c8]      ; 004ce7d3 | g_CameraOriginY
     MOV dword ptr [EAX*0x4 + 0x1cc54c4],EDX ; 004ce7d9
-    MOV EDX,dword ptr [0x01c039cc]      ; 004ce7e0 | DAT_01c039cc
+    MOV EDX,dword ptr [0x01c039cc]      ; 004ce7e0 | g_CameraOriginZ
     MOV dword ptr [EAX*0x4 + 0x1cc54ec],EDX ; 004ce7e6
     MOV EDX,dword ptr [0x01c039d0]      ; 004ce7ed | DAT_01c039d0
     MOV dword ptr [EAX*0x4 + 0x1cc5514],EDX ; 004ce7f3

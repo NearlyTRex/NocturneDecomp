@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c00024
+;   uint[256] g_Hardware32BitPalette
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     MOVZX EAX,byte ptr [ESI]            ; 0042cedf
         ;   Label: LAB_0042cedf
     INC ESI                             ; 0042cee2
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 0042cee3 | DAT_01c00024
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 0042cee3 | g_Hardware32BitPalette
     MOV dword ptr [EDI],EAX             ; 0042ceea
     ADD EDI,0x4                         ; 0042ceec
     DEC ECX                             ; 0042ceef

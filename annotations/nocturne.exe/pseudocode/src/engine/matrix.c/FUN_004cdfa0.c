@@ -39,22 +39,22 @@ void engine_matrix_c_FUN_004cdfa0(int param_1,uint param_2,int param_3)
   int local_44;
   
   iVar4 = _DAT_01cc5174;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = _DAT_01c039b8;
-  *(int *)(iVar4 * 4 + 0x1cc5308) = _DAT_01c039bc;
-  *(int *)(iVar4 * 4 + 0x1cc5330) = _DAT_01c039c0;
+  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
+  *(int *)(iVar4 * 4 + 0x1cc5308) = g_RelativeY;
+  *(int *)(iVar4 * 4 + 0x1cc5330) = g_RelativeZ;
   *(int *)(iVar4 * 4 + 0x1cc5358) = _DAT_01c039dc;
   *(int *)(iVar4 * 4 + 0x1cc5380) = _DAT_01c039e0;
   *(int *)(iVar4 * 4 + 0x1cc53a8) = _DAT_01c039e4;
-  *(int *)(iVar4 * 4 + 0x1cc5178) = _DAT_01c039e8;
-  *(int *)(iVar4 * 4 + 0x1cc51a0) = _DAT_01c039ec;
-  *(int *)(iVar4 * 4 + 0x1cc51c8) = _DAT_01c039f0;
-  *(int *)(iVar4 * 4 + 0x1cc51f0) = _DAT_01c039f4;
-  *(int *)(iVar4 * 4 + 0x1cc5218) = _DAT_01c039f8;
-  *(int *)(iVar4 * 4 + 0x1cc5240) = _DAT_01c039fc;
-  *(int *)(iVar4 * 4 + 0x1cc5268) = _DAT_01c03a00;
-  *(int *)(iVar4 * 4 + 0x1cc5290) = _DAT_01c03a04;
+  *(int *)(iVar4 * 4 + 0x1cc5178) = g_TransformMatrix.m[0].x;
+  *(int *)(iVar4 * 4 + 0x1cc51a0) = g_TransformMatrix.m[0].y;
+  *(int *)(iVar4 * 4 + 0x1cc51c8) = g_TransformMatrix.m[0].z;
+  *(int *)(iVar4 * 4 + 0x1cc51f0) = g_TransformMatrix.m[1].x;
+  *(int *)(iVar4 * 4 + 0x1cc5218) = g_TransformMatrix.m[1].y;
+  *(int *)(iVar4 * 4 + 0x1cc5240) = g_TransformMatrix.m[1].z;
+  *(int *)(iVar4 * 4 + 0x1cc5268) = g_TransformMatrix.m[2].x;
+  *(int *)(iVar4 * 4 + 0x1cc5290) = g_TransformMatrix.m[2].y;
   x = (float10)param_3;
-  *(int *)(iVar4 * 4 + 0x1cc52b8) = _DAT_01c03a08;
+  *(int *)(iVar4 * 4 + 0x1cc52b8) = g_TransformMatrix.m[2].z;
   atan2((float10)param_1,x);
   fVar18 = atan2((float10)param_1,x);
   fVar19 = (float10)_DAT_005882b3;
@@ -104,27 +104,24 @@ void engine_matrix_c_FUN_004cdfa0(int param_1,uint param_2,int param_3)
           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   uVar14 = (uint)((longlong)iVar5 * (longlong)iVar9) >> 0x10 |
            (int)((ulonglong)((longlong)iVar5 * (longlong)iVar9) >> 0x20) << 0x10;
-  _DAT_01c039b8 =
-       ((uint)((longlong)iVar15 * (longlong)local_4c) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar15 * (longlong)local_4c) >> 0x20) << 0x10) +
-       ((uint)((longlong)(int)uVar11 * (longlong)local_48) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar11 * (longlong)local_48) >> 0x20) << 0x10) +
-       ((uint)((longlong)iVar17 * (longlong)local_44) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar17 * (longlong)local_44) >> 0x20) << 0x10);
-  _DAT_01c039bc =
-       ((uint)((longlong)iVar16 * (longlong)local_4c) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar16 * (longlong)local_4c) >> 0x20) << 0x10) +
-       ((uint)((longlong)(int)uVar12 * (longlong)local_48) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar12 * (longlong)local_48) >> 0x20) << 0x10) +
-       ((uint)((longlong)iVar4 * (longlong)local_44) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar4 * (longlong)local_44) >> 0x20) << 0x10);
-  _DAT_01c039c0 =
-       ((uint)((longlong)(int)uVar10 * (longlong)local_4c) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar10 * (longlong)local_4c) >> 0x20) << 0x10) +
-       ((uint)((longlong)iVar13 * (longlong)local_48) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar13 * (longlong)local_48) >> 0x20) << 0x10) +
-       ((uint)((longlong)(int)uVar14 * (longlong)local_44) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar14 * (longlong)local_44) >> 0x20) << 0x10);
+  g_RelativeX = ((uint)((longlong)iVar15 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar15 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar11 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar11 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar17 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar17 * (longlong)local_44) >> 0x20) << 0x10);
+  g_RelativeY = ((uint)((longlong)iVar16 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar16 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar12 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar12 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar4 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar4 * (longlong)local_44) >> 0x20) << 0x10);
+  g_RelativeZ = ((uint)((longlong)(int)uVar10 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar10 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar13 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar13 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar14 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar14 * (longlong)local_44) >> 0x20) << 0x10);
   lVar1 = (longlong)iVar15 * (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5358);
   lVar2 = (longlong)(int)uVar11 * (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5380);
   lVar3 = (longlong)iVar17 * (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc53a8);
@@ -149,63 +146,63 @@ void engine_matrix_c_FUN_004cdfa0(int param_1,uint param_2,int param_3)
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) * (longlong)iVar15;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) * (longlong)(int)uVar11;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) * (longlong)iVar17;
-  _DAT_01c039e8 =
+  g_TransformMatrix.m[0].x =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) * (longlong)iVar15;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) * (longlong)(int)uVar11;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) * (longlong)iVar17;
-  _DAT_01c039ec =
+  g_TransformMatrix.m[0].y =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) * (longlong)iVar15;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) * (longlong)(int)uVar11;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) * (longlong)iVar17;
-  _DAT_01c039f0 =
+  g_TransformMatrix.m[0].z =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) * (longlong)iVar16;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) * (longlong)(int)uVar12;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) * (longlong)iVar4;
-  _DAT_01c039f4 =
+  g_TransformMatrix.m[1].x =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) * (longlong)iVar16;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) * (longlong)(int)uVar12;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) * (longlong)iVar4;
-  _DAT_01c039f8 =
+  g_TransformMatrix.m[1].y =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) * (longlong)iVar16;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) * (longlong)(int)uVar12;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) * (longlong)iVar4;
-  _DAT_01c039fc =
+  g_TransformMatrix.m[1].z =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) * (longlong)(int)uVar10;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) * (longlong)iVar13;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) * (longlong)(int)uVar14;
-  _DAT_01c03a00 =
+  g_TransformMatrix.m[2].x =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) * (longlong)(int)uVar10;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) * (longlong)iVar13;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) * (longlong)(int)uVar14;
-  _DAT_01c03a04 =
+  g_TransformMatrix.m[2].y =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
   lVar1 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) * (longlong)(int)uVar10;
   lVar2 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) * (longlong)iVar13;
   lVar3 = (longlong)*(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) * (longlong)(int)uVar14;
-  _DAT_01c03a08 =
+  g_TransformMatrix.m[2].z =
        ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
        ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);

@@ -20,15 +20,15 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
-;   undefined4 DAT_01c03a04
-;   undefined4 DAT_01c03a08
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
+;   undefined4 g_TransformMatrix.m[2].y
+;   undefined4 g_TransformMatrix.m[2].z
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
@@ -46,15 +46,15 @@ section .text
     MOV EDI,0x1c039e8                   ; 00441a18
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00441a1d
     MOV EAX,dword ptr [ESI]             ; 00441a21
-    IMUL dword ptr [EDI]                ; 00441a23 | DAT_01c039e8
+    IMUL dword ptr [EDI]                ; 00441a23 | g_TransformMatrix
     MOV EBX,EAX                         ; 00441a25
     MOV ECX,EDX                         ; 00441a27
     MOV EAX,dword ptr [ESI + 0x4]       ; 00441a29
-    IMUL dword ptr [EDI + 0xc]          ; 00441a2c | DAT_01c039f4
+    IMUL dword ptr [EDI + 0xc]          ; 00441a2c | g_TransformMatrix.m[1].x
     ADD EBX,EAX                         ; 00441a2f
     ADC ECX,EDX                         ; 00441a31
     MOV EAX,dword ptr [ESI + 0x8]       ; 00441a33
-    IMUL dword ptr [EDI + 0x18]         ; 00441a36 | DAT_01c03a00
+    IMUL dword ptr [EDI + 0x18]         ; 00441a36 | g_TransformMatrix.m[2].x
     ADD EAX,EBX                         ; 00441a39
     ADC EDX,ECX                         ; 00441a3b
     SHRD EAX,EDX,0x10                   ; 00441a3d
@@ -62,15 +62,15 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00441a46
     MOV dword ptr [ESP],EAX             ; 00441a4a
     MOV EAX,dword ptr [ESI]             ; 00441a4d
-    IMUL dword ptr [EDI]                ; 00441a4f | DAT_01c039ec
+    IMUL dword ptr [EDI]                ; 00441a4f | g_TransformMatrix.m[0].y
     MOV EBX,EAX                         ; 00441a51
     MOV ECX,EDX                         ; 00441a53
     MOV EAX,dword ptr [ESI + 0x4]       ; 00441a55
-    IMUL dword ptr [EDI + 0xc]          ; 00441a58 | DAT_01c039f8
+    IMUL dword ptr [EDI + 0xc]          ; 00441a58 | g_TransformMatrix.m[1].y
     ADD EBX,EAX                         ; 00441a5b
     ADC ECX,EDX                         ; 00441a5d
     MOV EAX,dword ptr [ESI + 0x8]       ; 00441a5f
-    IMUL dword ptr [EDI + 0x18]         ; 00441a62 | DAT_01c03a04
+    IMUL dword ptr [EDI + 0x18]         ; 00441a62 | g_TransformMatrix.m[2].y
     ADD EAX,EBX                         ; 00441a65
     ADC EDX,ECX                         ; 00441a67
     SHRD EAX,EDX,0x10                   ; 00441a69
@@ -78,15 +78,15 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00441a72
     MOV dword ptr [ESP + 0x4],EAX       ; 00441a76
     MOV EAX,dword ptr [ESI]             ; 00441a7a
-    IMUL dword ptr [EDI]                ; 00441a7c | DAT_01c039f0
+    IMUL dword ptr [EDI]                ; 00441a7c | g_TransformMatrix.m[0].z
     MOV EBX,EAX                         ; 00441a7e
     MOV ECX,EDX                         ; 00441a80
     MOV EAX,dword ptr [ESI + 0x4]       ; 00441a82
-    IMUL dword ptr [EDI + 0xc]          ; 00441a85 | DAT_01c039fc
+    IMUL dword ptr [EDI + 0xc]          ; 00441a85 | g_TransformMatrix.m[1].z
     ADD EBX,EAX                         ; 00441a88
     ADC ECX,EDX                         ; 00441a8a
     MOV EAX,dword ptr [ESI + 0x8]       ; 00441a8c
-    IMUL dword ptr [EDI + 0x18]         ; 00441a8f | DAT_01c03a08
+    IMUL dword ptr [EDI + 0x18]         ; 00441a8f | g_TransformMatrix.m[2].z
     ADD EAX,EBX                         ; 00441a92
     ADC EDX,ECX                         ; 00441a94
     SHRD EAX,EDX,0x10                   ; 00441a96

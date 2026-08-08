@@ -31,7 +31,7 @@
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
 ;   int g_UseExternalRenderer
-;   undefined4 DAT_01c0399c
+;   int g_ProcessorType
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   ... and 6 more
 ;
@@ -93,11 +93,11 @@ section .text
         ;   Label: LAB_004fa345
     JZ 0x004fa3b9                       ; 004fa347
         ;   XREF to: 004fa3b9 (CONDITIONAL_JUMP)  ; LAB_004fa3b9
-    MOV ECX,dword ptr [0x01e52ef8]      ; 004fa34d | DAT_01e52ef8
+    MOV ECX,dword ptr [0x01e52ef8]      ; 004fa34d | g_RenderedTriangleCount
         ;   Label: LAB_004fa34d
     INC ECX                             ; 004fa353
     MOV EBX,dword ptr [0x01c02594]      ; 004fa354 | g_UseExternalRenderer
-    MOV dword ptr [0x01e52ef8],ECX      ; 004fa35a | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ECX      ; 004fa35a | g_RenderedTriangleCount
     TEST EBX,EBX                        ; 004fa360
     JZ 0x004fa429                       ; 004fa362
         ;   XREF to: 004fa429 (CONDITIONAL_JUMP)  ; LAB_004fa429
@@ -461,7 +461,7 @@ section .text
     CMP dword ptr [0x01c039a4],0x1      ; 004fa73a | g_VertexPreprocessMode
     JNZ 0x004fa79c                      ; 004fa741
         ;   XREF to: 004fa79c (CONDITIONAL_JUMP)  ; LAB_004fa79c
-    CMP dword ptr [0x01c0399c],0x0      ; 004fa743 | DAT_01c0399c
+    CMP dword ptr [0x01c0399c],0x0      ; 004fa743 | g_ProcessorType
     JZ 0x004fa794                       ; 004fa74a
         ;   XREF to: 004fa794 (CONDITIONAL_JUMP)  ; LAB_004fa794
     MOV EAX,0x7fffffff                  ; 004fa74c

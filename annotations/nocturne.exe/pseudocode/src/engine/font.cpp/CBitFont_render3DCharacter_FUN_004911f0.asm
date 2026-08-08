@@ -368,7 +368,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 00491634
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00491638
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
-    MOV EDI,dword ptr [0x01c02584]      ; 0049163d | DAT_01c02584
+    MOV EDI,dword ptr [0x01c02584]      ; 0049163d | g_CurrentTextureOpacityData
     ADD ESP,0x4                         ; 00491643
     TEST EDI,EDI                        ; 00491646
     JZ 0x004916b4                       ; 00491648

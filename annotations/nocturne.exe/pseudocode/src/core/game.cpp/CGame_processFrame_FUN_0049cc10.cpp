@@ -67,7 +67,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     local_44 = wincore_winrun_cpp_getTime_FUN_00558a30();
   }
   this_ptr_00 = g_CNetGame_PTR_005bdee0;
-  _DAT_01e52ef8 = 0;
+  g_RenderedTriangleCount = 0;
   if ((this_ptr->cutscene_skippable != 0) || (g_CNetGame_PTR_005bdee0->has_pending_sim_frame != 0))
   {
     this_ptr->is_paused = 0;
@@ -272,7 +272,8 @@ LAB_0049cf70:
     dVar3 = 1.0 / (double)this_ptr->delta_time_float;
     _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),
                SUB84(__BITCAST_UINT64((double)_DAT_01c71e38 / _DAT_01c71e30),0),
-               (int)((ulonglong)((double)_DAT_01c71e38 / _DAT_01c71e30) >> 0x20),_DAT_01e52ef8);
+               (int)((ulonglong)((double)_DAT_01c71e38 / _DAT_01c71e30) >> 0x20),
+               g_RenderedTriangleCount);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0xb);
     iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     dVar5 = (double)*(float *)(iVar6 + 0x34) * 0.31830988619288902 * 180;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width,int height,int bits_per_pixel)
 
 {
@@ -17,12 +15,13 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   int iVar4;
   bool bVar5;
   
-  _DAT_02dc9d70 = 0;
+  g_FrameBufferTestResult = 0;
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
   if ((g_LoadedExternalDLLRenderer == 0) &&
-     (iVar4 = engine_special_cpp_loadExternalRenderer_FUN_00531780(_DAT_02dc9e18), iVar4 == 0)) {
+     (iVar4 = engine_special_cpp_loadExternalRenderer_FUN_00531780(g_StoredWindowHandle), iVar4 == 0
+     )) {
     return 0;
   }
   iVar4 = (*g_APIDLL_setVideoMode2)(width,height,bits_per_pixel,g_ScreenBufferArray);
@@ -32,9 +31,9 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   }
   (*g_APIDLL_setColorTable16)(g_SourcePaletteData,g_ColorTable16);
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0();
-  (*g_APIDLL_setFogColor)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
+  (*g_APIDLL_setFogColor)(g_FogColorRed,g_FogColorGreen,g_FogColorBlue);
   g_UseExternalRenderer = 1;
-  _DAT_02dc9e1c = bits_per_pixel;
+  g_ExternalBitsPerPixel = bits_per_pixel;
   engine_special_cpp_lockFrame_FUN_005322e0();
   pvVar3 = g_ScreenBufferArray[0];
   if (g_BitsPerPixel == 0x10) {
@@ -50,7 +49,7 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
     bVar5 = *(int *)pvVar3 != -0x55443323;
     *(uint *)pvVar3 = uVar2;
   }
-  _DAT_02dc9d70 = (uint)bVar5;
+  g_FrameBufferTestResult = (int)bVar5;
 LAB_00532576:
   engine_special_cpp_unlockFrame_FUN_00532320();
   return 1;

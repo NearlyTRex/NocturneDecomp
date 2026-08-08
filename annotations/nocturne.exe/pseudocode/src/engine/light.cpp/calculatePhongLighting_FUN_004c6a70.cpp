@@ -58,11 +58,11 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int world_x,int
   local_14 = ((uint)((longlong)world_z * (longlong)iVar3) >> 0x10 |
              (int)((ulonglong)((longlong)world_z * (longlong)iVar3) >> 0x20) << 0x10) * 2 -
              _DAT_01c039e4;
-  if (((_DAT_01cc3670 != _DAT_01c039b8) || (_DAT_01cc3674 != _DAT_01c039bc)) ||
-     (_DAT_01cc3678 != _DAT_01c039c0)) {
-    _DAT_01cc3670 = _DAT_01c039b8;
-    _DAT_01cc3674 = _DAT_01c039bc;
-    _DAT_01cc3678 = _DAT_01c039c0;
+  if (((_DAT_01cc3670 != g_RelativeX) || (_DAT_01cc3674 != g_RelativeY)) ||
+     (_DAT_01cc3678 != g_RelativeZ)) {
+    _DAT_01cc3670 = g_RelativeX;
+    _DAT_01cc3674 = g_RelativeY;
+    _DAT_01cc3678 = g_RelativeZ;
     engine_matrix_c_normalizeVector3DFloat_FUN_004cde90((CVector3i *)&DAT_01cc3670,&local_24);
     _DAT_01cc367c = local_24.x;
     *(uint *)(&DAT_01cc3680 + (uint)bVar6 * -8) =

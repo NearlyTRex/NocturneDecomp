@@ -18,7 +18,7 @@ void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042d100(void *output_bu
       bVar1 = *(byte *)input_buffer;
       input_buffer = (void *)((int)input_buffer + 1);
       uVar2 = uVar2 + 1;
-      *(ushort *)output_buffer = *(ushort *)((uint)bVar1 * 2 + 0x1c00424);
+      *(ushort *)output_buffer = g_Hardware16BitPalette[bVar1];
       output_buffer = (ushort *)((int)output_buffer + 2);
     } while (uVar2 < (uint)pixel_count);
   }

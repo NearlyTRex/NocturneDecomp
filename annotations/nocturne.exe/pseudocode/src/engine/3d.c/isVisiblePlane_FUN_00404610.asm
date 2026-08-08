@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   undefined4 DAT_006b026c
 ;   undefined4 DAT_006b0280
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;
 ; *****************************************************************************
 
@@ -48,15 +48,15 @@ section .text
     JZ 0x00404678                       ; 0040463c
         ;   XREF to: 00404678 (CONDITIONAL_JUMP)  ; LAB_00404678
     MOV EAX,dword ptr [ESI]             ; 0040463e
-    IMUL dword ptr [0x01c039b8]         ; 00404640 | DAT_01c039b8
+    IMUL dword ptr [0x01c039b8]         ; 00404640 | g_RelativeX
     MOV EBX,EAX                         ; 00404646
     MOV ECX,EDX                         ; 00404648
     MOV EAX,dword ptr [ESI + 0x4]       ; 0040464a
-    IMUL dword ptr [0x01c039bc]         ; 0040464d | DAT_01c039bc
+    IMUL dword ptr [0x01c039bc]         ; 0040464d | g_RelativeY
     ADD EBX,EAX                         ; 00404653
     ADC ECX,EDX                         ; 00404655
     MOV EAX,dword ptr [ESI + 0x8]       ; 00404657
-    IMUL dword ptr [0x01c039c0]         ; 0040465a | DAT_01c039c0
+    IMUL dword ptr [0x01c039c0]         ; 0040465a | g_RelativeZ
     ADD EBX,EAX                         ; 00404660
     ADC ECX,EDX                         ; 00404662
     MOV EAX,dword ptr [ESI + 0xc]       ; 00404664

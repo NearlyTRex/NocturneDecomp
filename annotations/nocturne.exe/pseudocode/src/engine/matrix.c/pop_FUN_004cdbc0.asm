@@ -11,19 +11,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_00588233
 ;   TerminatedCString s_Matrix_unbalance2_00588246
-;   undefined4 DAT_01c039b8
-;   undefined4 DAT_01c039bc
-;   undefined4 DAT_01c039c0
+;   int g_RelativeX
+;   int g_RelativeY
+;   int g_RelativeZ
 ;   undefined4 DAT_01c039dc
 ;   undefined4 DAT_01c039e0
 ;   undefined4 DAT_01c039e4
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -43,29 +43,29 @@ section .text
     MOV EAX,[0x01cc5174]                ; 004cdbd5 | DAT_01cc5174
         ;   Label: LAB_004cdbd5
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5178] ; 004cdbda
-    MOV dword ptr [0x01c039e8],EDX      ; 004cdbe1 | DAT_01c039e8
+    MOV dword ptr [0x01c039e8],EDX      ; 004cdbe1 | g_TransformMatrix
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc51a0] ; 004cdbe7
-    MOV dword ptr [0x01c039ec],EDX      ; 004cdbee | DAT_01c039ec
+    MOV dword ptr [0x01c039ec],EDX      ; 004cdbee | g_TransformMatrix.m[0].y
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc51c8] ; 004cdbf4
-    MOV dword ptr [0x01c039f0],EDX      ; 004cdbfb | DAT_01c039f0
+    MOV dword ptr [0x01c039f0],EDX      ; 004cdbfb | g_TransformMatrix.m[0].z
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc51f0] ; 004cdc01
-    MOV dword ptr [0x01c039f4],EDX      ; 004cdc08 | DAT_01c039f4
+    MOV dword ptr [0x01c039f4],EDX      ; 004cdc08 | g_TransformMatrix.m[1].x
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5218] ; 004cdc0e
-    MOV dword ptr [0x01c039f8],EDX      ; 004cdc15 | DAT_01c039f8
+    MOV dword ptr [0x01c039f8],EDX      ; 004cdc15 | g_TransformMatrix.m[1].y
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5240] ; 004cdc1b
-    MOV dword ptr [0x01c039fc],EDX      ; 004cdc22 | DAT_01c039fc
+    MOV dword ptr [0x01c039fc],EDX      ; 004cdc22 | g_TransformMatrix.m[1].z
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5268] ; 004cdc28
-    MOV dword ptr [0x01c03a00],EDX      ; 004cdc2f | DAT_01c03a00
+    MOV dword ptr [0x01c03a00],EDX      ; 004cdc2f | g_TransformMatrix.m[2].x
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5290] ; 004cdc35
-    MOV dword ptr [0x01c03a04],EDX      ; 004cdc3c | DAT_01c03a04
+    MOV dword ptr [0x01c03a04],EDX      ; 004cdc3c | g_TransformMatrix.m[2].y
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc52b8] ; 004cdc42
-    MOV dword ptr [0x01c03a08],EDX      ; 004cdc49 | DAT_01c03a08
+    MOV dword ptr [0x01c03a08],EDX      ; 004cdc49 | g_TransformMatrix.m[2].z
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc52e0] ; 004cdc4f
-    MOV dword ptr [0x01c039b8],EDX      ; 004cdc56 | DAT_01c039b8
+    MOV dword ptr [0x01c039b8],EDX      ; 004cdc56 | g_RelativeX
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5308] ; 004cdc5c
-    MOV dword ptr [0x01c039bc],EDX      ; 004cdc63 | DAT_01c039bc
+    MOV dword ptr [0x01c039bc],EDX      ; 004cdc63 | g_RelativeY
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5330] ; 004cdc69
-    MOV dword ptr [0x01c039c0],EDX      ; 004cdc70 | DAT_01c039c0
+    MOV dword ptr [0x01c039c0],EDX      ; 004cdc70 | g_RelativeZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5358] ; 004cdc76
     MOV dword ptr [0x01c039dc],EDX      ; 004cdc7d | DAT_01c039dc
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5380] ; 004cdc83

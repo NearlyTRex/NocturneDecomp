@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,undefined4 param_2)
+; void __cdecl engine_special_cpp_FUN_00532f50(char *param_1,int param_2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   param_1
@@ -15,8 +15,8 @@
 ;   undefined4 s_trid3d_dll_005c0e80+1
 ;   undefined4 s_trid3d_dll_005c0e80+2
 ;   undefined4 s_d3d_dll_005c0e83
-;   undefined4 DAT_02dc9d64
-;   undefined4 DAT_02dc9e18
+;   int g_RendererHandle
+;   HWND g_StoredWindowHandle
 ;
 ; Called Functions:
 ;   engine_special.cpp_kill_FUN_005322b0
@@ -34,7 +34,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00532f57
     MOV ESI,dword ptr [ESP + 0xc]       ; 00532f5b
     MOV EDI,0x5c0e80                    ; 00532f5f | = "trid3d.dll"
-    MOV [0x02dc9d64],EAX                ; 00532f64 | DAT_02dc9d64
+    MOV [0x02dc9d64],EAX                ; 00532f64 | g_RendererHandle
     PUSH EDI                            ; 00532f69 | = "trid3d.dll"
     MOV AL,byte ptr [ESI]               ; 00532f6a
         ;   Label: LAB_00532f6a
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 00532f6a (CONDITIONAL_JUMP)  ; LAB_00532f6a
     POP EDI                             ; 00532f82
         ;   Label: LAB_00532f82
-    MOV EDX,dword ptr [0x02dc9e18]      ; 00532f83 | DAT_02dc9e18
+    MOV EDX,dword ptr [0x02dc9e18]      ; 00532f83 | g_StoredWindowHandle
     PUSH EDX                            ; 00532f89
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 00532f8a
         ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)

@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dcfa
 ;   TerminatedCString s_CDemonRenderer_demonGZFa_0057dd10
-;   undefined4 DAT_005ae70c
+;   SMRGLPrimitiveQuad*[2000] g_VisibleFacePointers
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_006b0280
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -284,7 +284,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00461978
     INC EBP                             ; 0046197c
     LEA EDX,[EAX + 0x4]                 ; 0046197d
-    MOV dword ptr [EAX + 0x5ae70c],EBX  ; 00461980 | DAT_005ae70c
+    MOV dword ptr [EAX + 0x5ae70c],EBX  ; 00461980 | g_VisibleFacePointers
     MOV dword ptr [ESP + 0x10],EDX      ; 00461986
     CMP EBP,0x7d0                       ; 0046198a
     JL 0x004619b5                       ; 00461990
@@ -313,11 +313,11 @@ section .text
     MOV EBX,dword ptr [0x01c039a0]      ; 004619cd | g_RenderStateFlags
     PUSH EBX                            ; 004619d3
     PUSH EBP                            ; 004619d4
-    PUSH 0x5ae70c                       ; 004619d5 | DAT_005ae70c
+    PUSH 0x5ae70c                       ; 004619d5 | g_VisibleFacePointers
     MOV EDI,dword ptr [ESI]             ; 004619da
     PUSH EDI                            ; 004619dc
     CALL engine_special.cpp_drawPolyList2_FUN_005327c0 ; 004619dd
-        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_005327c0(SRenderVertex * vertex_buffer, ushort * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_005327c0(SRenderVertex * vertex_buffer, SInputFace * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004619e2
     ADD ESP,0x14                        ; 004619e5
     POP EBP                             ; 004619e8

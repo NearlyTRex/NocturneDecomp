@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,16 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 36,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'void *'"
+        "category": "type_error",
+        "column": 52,
+        "line": 110,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 39,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_005bf480'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 73,
-        "message": "use of undeclared identifier '_DAT_005bf484'; did you mean 'DAT_005bf488'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 82,
-        "message": "use of undeclared identifier '_DAT_005bf480'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 87,
-        "message": "use of undeclared identifier '_DAT_005bf484'; did you mean 'DAT_005bf488'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_01c02584'; did you mean 'DAT_02DF2584'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 105,
-        "message": "use of undeclared identifier 'DAT_01c00024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 106,
-        "message": "use of undeclared identifier '_DAT_005bf590'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 107,
-        "message": "use of undeclared identifier '_DAT_01c02580'"
+        "category": "type_error",
+        "column": 52,
+        "line": 111,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,21 +74,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 498,
+    "complexity_score": 277,
     "cross_reference_count": 51,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
-    "suspect_count": 36,
+    "pseudocode_lines": 117,
+    "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 284
+    "total_lines": 288
   },
   "cross_references": [
     {
@@ -462,80 +413,80 @@
   "globals": [
     {
       "addr": "005bf014",
-      "name": "DAT_005bf014",
-      "type": "undefined4",
-      "value": null
+      "name": "g_ScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf050",
-      "name": "DAT_005bf050",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartTextureU",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf054",
-      "name": "DAT_005bf054",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartTextureV",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf05c",
-      "name": "DAT_005bf05c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_StartDepthW",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf078",
-      "name": "DAT_005bf078",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentScreenPtr",
+      "type": "int*",
+      "value": "00000000"
     },
     {
       "addr": "005bf07c",
-      "name": "DAT_005bf07c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentZBufferPtr",
+      "type": "int*",
+      "value": "00000000"
     },
     {
       "addr": "005bf480",
-      "name": "DAT_005bf480",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaTextureU",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf484",
-      "name": "DAT_005bf484",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaTextureV",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf488",
-      "name": "DAT_005bf488",
-      "type": "undefined4",
-      "value": null
+      "name": "g_HardwareDeltaDepthZ",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "005bf550",
-      "name": "DAT_005bf550",
-      "type": "undefined1",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf570",
-      "name": "DAT_005bf570",
-      "type": "undefined1",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf590",
-      "name": "DAT_005bf590",
-      "type": "undefined4",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "005bf5b0",
-      "name": "DAT_005bf5b0",
-      "type": "undefined4",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -552,8 +503,8 @@
     },
     {
       "addr": "01c00024",
-      "name": "DAT_01c00024",
-      "type": "undefined4",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
       "value": null
     },
     {
@@ -570,14 +521,14 @@
     },
     {
       "addr": "01c02580",
-      "name": "DAT_01c02580",
-      "type": "undefined4",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
       "value": null
     },
     {
       "addr": "01c02584",
-      "name": "DAT_01c02584",
-      "type": "undefined4",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
       "value": null
     },
     {
@@ -654,29 +605,29 @@
       "diagnostics": [
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 50,
-          "line": 60,
+          "column": 40,
+          "line": 61,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 52,
-          "line": 66,
+          "column": 48,
+          "line": 67,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 50,
-          "line": 70,
+          "column": 40,
+          "line": 72,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 52,
-          "line": 76,
+          "column": 48,
+          "line": 78,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -687,323 +638,147 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 29,
-      "match": "(void *)((int)g_ScreenBufferArray",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "DAT_005bf078 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005bf078",
-      "severity": "mild",
-      "text": "DAT_005bf078 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005bf014",
-      "severity": "mild",
-      "text": "DAT_005bf014 = iVar3 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005bf07c",
-      "severity": "mild",
-      "text": "DAT_005bf07c = puVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005bf014",
-      "severity": "mild",
-      "text": "uVar4 = DAT_005bf014;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005bf05c",
-      "severity": "mild",
-      "text": "DAT_005bf05c = uVar8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005bf488",
-      "severity": "mild",
-      "text": "DAT_005bf488 = iVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005bf050",
-      "severity": "mild",
-      "text": "DAT_005bf050 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_005bf050",
-      "severity": "mild",
-      "text": "(longlong)(left_vertex->base).depth_current) - DAT_005bf050) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005bf054",
-      "severity": "mild",
-      "text": "DAT_005bf054 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005bf054",
-      "severity": "mild",
-      "text": "(longlong)(left_vertex->base).depth_current) - DAT_005bf054) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_005bf050",
-      "severity": "mild",
-      "text": "DAT_005bf050 = (pSVar5->base).u_current;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 77,
-      "match": "DAT_005bf050",
-      "severity": "mild",
-      "text": "((longlong)(int)((left_vertex->base).u_current - DAT_005bf050) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_005bf054",
-      "severity": "mild",
-      "text": "DAT_005bf054 = (pSVar5->base).v_current;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_005bf054",
-      "severity": "mild",
-      "text": "((longlong)(int)((left_vertex->base).v_current - DAT_005bf054) *",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_005bf488",
-      "severity": "mild",
-      "text": "DAT_005bf488 = (int)((ulonglong)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_005bf05c",
-      "severity": "mild",
-      "text": "DAT_005bf05c = iVar6;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_005bf054",
-      "severity": "mild",
-      "text": "(uVar4 = DAT_005bf054, uVar2 = DAT_005bf050, (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_005bf050",
-      "severity": "mild",
-      "text": "(uVar4 = DAT_005bf054, uVar2 = DAT_005bf050, (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(int *)(uVar8 + (int)DAT_005bf07c",
-      "severity": "moderate",
-      "text": "(*(int *)(uVar8 + (int)DAT_005bf07c) <= iVar6)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_005bf07c",
-      "severity": "mild",
-      "text": "(*(int *)(uVar8 + (int)DAT_005bf07c) <= iVar6)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 98,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(&DAT_01c00024 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_005bf550",
-      "severity": "mild",
-      "text": "(uint)*(byte *)((uVar2 >> (DAT_005bf550 & 0x1f) & _DAT_005bf590) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 101,
-      "match": "DAT_005bf570",
-      "severity": "mild",
-      "text": "(uVar4 >> (DAT_005bf570 & 0x1f) & _DAT_005bf5b0)) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(int *)((int)DAT_005bf078",
+      "match": "(int *)(uVar10 + (int)g_CurrentZBufferPtr",
       "severity": "moderate",
-      "text": "*(int *)((int)DAT_005bf078 + uVar8) = iVar3;",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unknown/mangled field access",
       "line": 103,
-      "match": "DAT_005bf078",
+      "match": "._0_1_",
       "severity": "mild",
-      "text": "*(int *)((int)DAT_005bf078 + uVar8) = iVar3;",
-      "type": "undefined_data"
+      "text": "[(uVar6 >> (g_TextureShift2.mm._0_1_ & 0x1f) & g_TextureMask2.u32[0]) +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "(uVar2 >> (g_TextureShift1.mm._0_1_ & 0x1f) & g_TextureMask1.u32[0])]];",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(int *)((int)DAT_005bf07c",
+      "line": 106,
+      "match": "(uint *)((int)g_CurrentScreenPtr",
       "severity": "moderate",
-      "text": "*(int *)((int)DAT_005bf07c + uVar8) = iVar6;",
+      "text": "*(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_005bf07c",
-      "severity": "mild",
-      "text": "*(int *)((int)DAT_005bf07c + uVar8) = iVar6;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_005bf014",
-      "severity": "mild",
-      "text": "if (DAT_005bf014 <= uVar8) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_005bf488",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + DAT_005bf488;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(int *)((int)g_CurrentZBufferPtr",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 29,
       "match": "(int)g_ScreenBufferArray[scanline_y]",
       "severity": "moderate",
-      "text": "DAT_005bf078 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)g_CurrentZBufferPtr",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentScreenPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)g_CurrentScreenPtr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentZBufferPtr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)g_CurrentZBufferPtr",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_truncation"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 53,
+      "line": 54,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "DAT_005bf050 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "concat_reconstruction"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 59,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 63,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "DAT_005bf054 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 69,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
       "line": 60,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 65,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 71,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 61,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "DAT_005bf050 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 66,
+      "line": 67,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 70,
+      "line": 72,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "DAT_005bf054 = (uint)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
+      "text": "(int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "static_shift_too_many_bits"
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 76,
+      "line": 78,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
-      "text": "(int)((int)(CONCAT44(((int)uVar8 >> 0x1f) << 0x18 | uVar8 >> 8,uVar8 << 0x18) /",
+      "text": "((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /",
       "type": "static_shift_too_many_bits"
     }
   ]

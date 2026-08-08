@@ -42,11 +42,11 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0
                   (g_CDemonRenderer_PTR_005ae704,(uint)(local_18 == 0));
         engine_matrix_c_matrixPush_FUN_004cdac0();
-        _DAT_01c039b8 = -_DAT_01c039b8;
+        g_RelativeX = -g_RelativeX;
         _DAT_01c039dc = -_DAT_01c039dc;
-        _DAT_01c039e8 = -_DAT_01c039e8;
-        _DAT_01c039ec = -_DAT_01c039ec;
-        _DAT_01c039f0 = -_DAT_01c039f0;
+        g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;
+        g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
+        g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
         core_cloth_cpp_CCloth_render_FUN_00437db0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);

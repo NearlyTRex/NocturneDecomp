@@ -28,8 +28,8 @@
 ;   undefined4 DAT_005c503c
 ;   undefined4 DAT_005c5040
 ;   undefined4 DAT_01c038f4
-;   undefined4 DAT_01c039c4
-;   undefined4 DAT_01c039cc
+;   int g_CameraOriginX
+;   int g_CameraOriginZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
@@ -302,7 +302,7 @@ section .text
     JLE 0x0050bab8                      ; 0050bab1
         ;   XREF to: 0050bab8 (CONDITIONAL_JUMP)  ; LAB_0050bab8
     MOV ESI,0x1000                      ; 0050bab3
-    CMP dword ptr [0x01c039c4],0x0      ; 0050bab8 | DAT_01c039c4
+    CMP dword ptr [0x01c039c4],0x0      ; 0050bab8 | g_CameraOriginX
         ;   Label: LAB_0050bab8
     JL 0x0050baf2                       ; 0050babf
         ;   XREF to: 0050baf2 (CONDITIONAL_JUMP)  ; LAB_0050baf2
@@ -311,7 +311,7 @@ section .text
     IMUL EDX                            ; 0050bac5
     SHRD EAX,EDX,0x10                   ; 0050bac7
     ADD ECX,EAX                         ; 0050bacb
-    CMP dword ptr [0x01c039cc],0x0      ; 0050bacd | DAT_01c039cc
+    CMP dword ptr [0x01c039cc],0x0      ; 0050bacd | g_CameraOriginZ
         ;   Label: LAB_0050bacd
     JL 0x0050bb00                       ; 0050bad4
         ;   XREF to: 0050bb00 (CONDITIONAL_JUMP)  ; LAB_0050bb00

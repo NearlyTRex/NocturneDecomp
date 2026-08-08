@@ -13,33 +13,33 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTexture
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
-  uchar **ppuVar4;
+  SRGBColor *pSVar3;
+  uint uVar4;
   uint uVar5;
   
-  _DAT_01c02580 = cache->texture_data_ptrs[texture_index];
-  DAT_005b762c = cache->texture_dimensions[texture_index];
+  g_CurrentTextureData = cache->texture_data_ptrs[texture_index];
+  g_CurrentTextureDimension = cache->texture_dimensions[texture_index];
   _DAT_01c02588 = 0;
-  _DAT_01c02584 = cache->texture_opacity_ptrs[texture_index];
+  g_CurrentTextureOpacityData = cache->texture_opacity_ptrs[texture_index];
   _DAT_01c0258c = 0;
-  ppuVar4 = cache->texture_palette_ptrs + texture_index * 0xc0;
-  _DAT_01c00020 = ppuVar4;
+  pSVar3 = (SRGBColor *)(cache->texture_palette_ptrs + texture_index * 0xc0);
+  g_CurrentPalette = (SRGBColorPalette *)pSVar3;
   if (g_UseExternalRenderer == 0) {
     if (g_BitsPerPixel == 0x20) {
       iVar1 = 0;
       do {
+        uVar4 = (uint)((SRGBColor *)&pSVar3->r)->r;
         if (g_BitsPerPixel == 0x20) {
-          uVar3 = (uint)*(byte *)((int)ppuVar4 + 2) << (g_BlueBitPosition.bytes[0] & 0x1f) |
-                  (uint)*(byte *)((int)ppuVar4 + 1) << (g_GreenBitPosition.bytes[0] & 0x1f) |
-                  (uint)*(byte *)ppuVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
+          uVar4 = (uint)pSVar3->b << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                  (uint)pSVar3->g << (g_GreenBitPosition.bytes[0] & 0x1f) |
+                  uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
         }
         else {
-          uVar3 = (uint)*(byte *)((int)ppuVar4 + 1) << 8 | (uint)*(byte *)ppuVar4 << 0x10 |
-                  (uint)*(byte *)((int)ppuVar4 + 2);
+          uVar4 = (uint)pSVar3->g << 8 | uVar4 << 0x10 | (uint)pSVar3->b;
         }
         iVar2 = iVar1 + 4;
-        ppuVar4 = (uchar **)((int)ppuVar4 + 3);
-        *(uint *)(&DAT_01c00024 + iVar1) = uVar3;
+        pSVar3 = pSVar3 + 1;
+        *(uint *)((int)g_Hardware32BitPalette + iVar1) = uVar4;
         iVar1 = iVar2;
       } while (iVar2 != 0x400);
     }
@@ -47,63 +47,63 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTexture
       iVar2 = 0;
       iVar1 = 0;
       do {
-        *(ushort *)(iVar2 + 0x1c00424) =
-             (ushort)((uint)*(byte *)((int)ppuVar4 + 2) / (uint)g_BlueScaleFactor <<
+        *(ushort *)((int)g_Hardware16BitPalette + iVar2) =
+             (ushort)((uint)pSVar3->b / (uint)g_BlueScaleFactor <<
                      (g_BlueBitPosition.bytes[0] & 0x1f)) |
-             (ushort)((uint)*(byte *)ppuVar4 / (uint)g_RedScaleFactor <<
-                     (g_RedBitPosition.bytes[0] & 0x1f)) |
-             (ushort)((uint)*(byte *)((int)ppuVar4 + 1) / (uint)g_GreenScaleFactor <<
+             (ushort)((uint)pSVar3->r / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)
+                     ) |
+             (ushort)((uint)pSVar3->g / (uint)g_GreenScaleFactor <<
                      (g_GreenBitPosition.bytes[0] & 0x1f));
-        uVar3 = (uint)*(byte *)((int)ppuVar4 + 2);
+        uVar4 = (uint)pSVar3->b;
         if (g_BitsPerPixel == 0x20) {
-          uVar5 = (uint)*(byte *)ppuVar4 << (g_RedBitPosition.bytes[0] & 0x1f) |
-                  (uint)*(byte *)((int)ppuVar4 + 1) << (g_GreenBitPosition.bytes[0] & 0x1f);
-          uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
+          uVar5 = (uint)pSVar3->r << (g_RedBitPosition.bytes[0] & 0x1f) |
+                  (uint)pSVar3->g << (g_GreenBitPosition.bytes[0] & 0x1f);
+          uVar4 = uVar4 << (g_BlueBitPosition.bytes[0] & 0x1f);
         }
         else {
-          uVar5 = (uint)*(byte *)((int)ppuVar4 + 1) << 8 | (uint)*(byte *)ppuVar4 << 0x10;
+          uVar5 = (uint)pSVar3->g << 8 | (uint)pSVar3->r << 0x10;
         }
-        ppuVar4 = (uchar **)((int)ppuVar4 + 3);
+        pSVar3 = pSVar3 + 1;
         iVar2 = iVar2 + 2;
-        *(uint *)(&DAT_01c00024 + iVar1) = uVar5 | uVar3;
+        *(uint *)((int)g_Hardware32BitPalette + iVar1) = uVar5 | uVar4;
         iVar1 = iVar1 + 4;
       } while (iVar2 != 0x200);
     }
   }
-  if (DAT_005b762c < 0x40) {
-    if (DAT_005b762c == 0x20) {
-      _DAT_005bf550 = 0x13;
-      _DAT_005bf570 = 0xe;
-      _DAT_005bf590 = 0x1f;
-      _DAT_005bf5b0 = 0x3e0;
-      _DAT_01c02590 = 5;
+  if ((uint)g_CurrentTextureDimension < 0x40) {
+    if (g_CurrentTextureDimension == 0x20) {
+      g_TextureShift1.u32[0] = 0x13;
+      g_TextureShift2.u32[0] = 0xe;
+      g_TextureMask1.u32[0] = 0x1f;
+      g_TextureMask2.u32[0] = 0x3e0;
+      g_TextureBits = 5;
       return;
     }
   }
   else {
-    if (DAT_005b762c < 0x41) {
-      _DAT_005bf550 = 0x12;
-      _DAT_005bf570 = 0xc;
-      _DAT_005bf590 = 0x3f;
-      _DAT_005bf5b0 = 0xfc0;
-      _DAT_01c02590 = 6;
+    if ((uint)g_CurrentTextureDimension < 0x41) {
+      g_TextureShift1.u32[0] = 0x12;
+      g_TextureShift2.u32[0] = 0xc;
+      g_TextureMask1.u32[0] = 0x3f;
+      g_TextureMask2.u32[0] = 0xfc0;
+      g_TextureBits = 6;
       return;
     }
-    if (0x7f < DAT_005b762c) {
-      if (DAT_005b762c < 0x81) {
-        _DAT_005bf550 = 0x11;
-        _DAT_005bf570 = 10;
-        _DAT_005bf590 = 0x7f;
-        _DAT_005bf5b0 = 0x3f80;
-        _DAT_01c02590 = 7;
+    if (0x7f < (uint)g_CurrentTextureDimension) {
+      if ((uint)g_CurrentTextureDimension < 0x81) {
+        g_TextureShift1.u32[0] = 0x11;
+        g_TextureShift2.u32[0] = 10;
+        g_TextureMask1.u32[0] = 0x7f;
+        g_TextureMask2.u32[0] = 0x3f80;
+        g_TextureBits = 7;
         return;
       }
-      if (DAT_005b762c == 0x100) {
-        _DAT_005bf550 = 0x10;
-        _DAT_005bf570 = 8;
-        _DAT_005bf590 = 0xff;
-        _DAT_005bf5b0 = 0xff00;
-        _DAT_01c02590 = 8;
+      if (g_CurrentTextureDimension == 0x100) {
+        g_TextureShift1.u32[0] = 0x10;
+        g_TextureShift2.u32[0] = 8;
+        g_TextureMask1.u32[0] = 0xff;
+        g_TextureMask2.u32[0] = 0xff00;
+        g_TextureBits = 8;
         return;
       }
       return;

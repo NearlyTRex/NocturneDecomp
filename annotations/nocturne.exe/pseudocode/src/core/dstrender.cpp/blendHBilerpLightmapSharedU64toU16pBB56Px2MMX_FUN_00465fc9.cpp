@@ -118,12 +118,12 @@ void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FU
     texture_indices = texture_indices + 1;
     lightmap_indices = lightmap_indices + 1;
     *output_buffer =
-         (uint)((uVar9 & g_BlueMask32.mm) >> _DAT_005bf658) |
-         (uint)((uVar9 & g_GreenMask32.mm) >> _DAT_005bf638) |
-         (uint)((uVar9 & g_RedMask32.mm) >> _DAT_005bf618) |
-         (uint)(((uVar18 & g_BlueMask32.mm) >> _DAT_005bf658 |
-                 (uVar18 & g_GreenMask32.mm) >> _DAT_005bf638 |
-                (uVar18 & g_RedMask32.mm) >> _DAT_005bf618) << 0x10);
+         (uint)((uVar9 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
+         (uint)((uVar9 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm) |
+         (uint)((uVar9 & g_RedMask32.mm) >> g_TotalDitherShift.mm) |
+         (uint)(((uVar18 & g_BlueMask32.mm) >> g_BlueBitShift.mm |
+                 (uVar18 & g_GreenMask32.mm) >> g_GreenBlueDitherShift.mm |
+                (uVar18 & g_RedMask32.mm) >> g_TotalDitherShift.mm) << 0x10);
     output_buffer = output_buffer + 1;
     iVar6 = pixel_count + -2;
     bVar3 = 1 < pixel_count;

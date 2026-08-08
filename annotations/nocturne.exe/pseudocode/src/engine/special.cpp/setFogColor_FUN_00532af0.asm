@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   int g_UseExternalRenderer
 ;   APIDLL_setFogColor* g_APIDLL_setFogColor
-;   undefined4 DAT_02dc9e0c
-;   undefined4 DAT_02dc9e10
-;   undefined4 DAT_02dc9e14
+;   int g_FogColorRed
+;   int g_FogColorGreen
+;   int g_FogColorBlue
 ;
 ; *****************************************************************************
 
@@ -30,9 +30,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00532af5
     MOV ECX,dword ptr [ESP + 0x10]      ; 00532af9
     MOV EBX,dword ptr [0x01c02594]      ; 00532afd | g_UseExternalRenderer
-    MOV dword ptr [0x02dc9e10],EDX      ; 00532b03 | DAT_02dc9e10
-    MOV dword ptr [0x02dc9e14],ECX      ; 00532b09 | DAT_02dc9e14
-    MOV [0x02dc9e0c],EAX                ; 00532b0f | DAT_02dc9e0c
+    MOV dword ptr [0x02dc9e10],EDX      ; 00532b03 | g_FogColorGreen
+    MOV dword ptr [0x02dc9e14],ECX      ; 00532b09 | g_FogColorBlue
+    MOV [0x02dc9e0c],EAX                ; 00532b0f | g_FogColorRed
     TEST EBX,EBX                        ; 00532b14
     JNZ 0x00532b1c                      ; 00532b16
         ;   XREF to: 00532b1c (CONDITIONAL_JUMP)  ; LAB_00532b1c

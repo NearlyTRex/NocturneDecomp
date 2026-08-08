@@ -95,7 +95,6 @@ static TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0 = "0123456789abcdef
 static TerminatedCString s_s_0123456789abcdefghijkl_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 // int constants
-static int DAT_005C0F90 = 0x1;
 static int DAT_005C0FC4 = 0x2;
 static int DAT_005C0FD8 = 0x1;
 static int DAT_005C1008 = 0x1;
@@ -284,7 +283,4 @@ static undefined4 DAT_005c20e0 = 0x00000002;
 static undefined4 DAT_005c20e4 = 0xFFFFFFFF;
 static undefined4 DAT_005c20e8 = 0x00000001;
 static undefined4 DAT_005c20ec = 0xFFFFFFFF;
-
-// undefined8 constants
-static undefined8 DAT_005c0668 = 0x000000FF00FF00FF;
 

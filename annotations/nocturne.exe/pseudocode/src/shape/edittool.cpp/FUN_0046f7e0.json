@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -110,17 +110,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 322,
+    "complexity_score": 277,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 23,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -261,9 +260,9 @@
     },
     {
       "addr": "005b7630",
-      "name": "DAT_005b7630",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b7630",
+      "type": "int",
+      "value": "0x7f"
     },
     {
       "addr": "005bac64",
@@ -531,30 +530,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005b7630",
-      "severity": "mild",
-      "text": "uVar2 = DAT_005b7630;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_005b7630",
-      "severity": "mild",
-      "text": "DAT_005b7630 = 0x7f;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005b7630",
-      "severity": "mild",
-      "text": "DAT_005b7630 = uVar2;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 57,
       "match": "(char *)((int)pCVar4",
@@ -601,14 +576,6 @@
       "severity": "mild",
       "text": "*param_2 = cVar1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_005b7630",
-      "severity": "mild",
-      "text": "DAT_005b7630 = uVar2;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

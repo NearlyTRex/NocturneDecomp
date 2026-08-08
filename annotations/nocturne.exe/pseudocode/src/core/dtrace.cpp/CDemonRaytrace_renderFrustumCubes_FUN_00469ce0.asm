@@ -562,7 +562,7 @@ section .text
     MOV EDI,dword ptr [0x005ae700]      ; 0046a263 | PTR_DAT_005ae700
     XOR ESI,ESI                         ; 0046a269
     PUSH EDI                            ; 0046a26b | DAT_01b4d738
-    MOV dword ptr [0x01e52ef8],ESI      ; 0046a26c | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],ESI      ; 0046a26c | g_RenderedTriangleCount
     CALL engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 ; 0046a272
         ;   XREF to: 004609d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0(CDemonRenderer * this_ptr, CVector3f * input_point)
     ADD ESP,0x8                         ; 0046a277

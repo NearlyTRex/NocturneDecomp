@@ -30,15 +30,15 @@
 ; Referenced Globals:
 ;   double DOUBLE_005881db = 0.0000152587890625
 ;   double DOUBLE_005881e3 = 65536
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c039fc
-;   undefined4 DAT_01c03a00
-;   undefined4 DAT_01c03a04
-;   undefined4 DAT_01c03a08
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[1].z
+;   undefined4 g_TransformMatrix.m[2].x
+;   undefined4 g_TransformMatrix.m[2].y
+;   undefined4 g_TransformMatrix.m[2].z
 ;   undefined4 DAT_01cc5118
 ;   undefined4 DAT_01cc511c
 ;   undefined4 DAT_01cc5120
@@ -57,27 +57,27 @@ section .text
     MOV EBP,ESP                         ; 004ccae1
     SUB ESP,0x54                        ; 004ccae3
     AND ESP,0xfffffff8                  ; 004ccae6
-    FILD dword ptr [0x01c039e8]         ; 004ccae9 | DAT_01c039e8
+    FILD dword ptr [0x01c039e8]         ; 004ccae9 | g_TransformMatrix
     FMUL double ptr [0x005881db]        ; 004ccaef | DOUBLE_005881db
-    FILD dword ptr [0x01c039ec]         ; 004ccaf5 | DAT_01c039ec
+    FILD dword ptr [0x01c039ec]         ; 004ccaf5 | g_TransformMatrix.m[0].y
     FMUL double ptr [0x005881db]        ; 004ccafb | DOUBLE_005881db
-    FILD dword ptr [0x01c039f0]         ; 004ccb01 | DAT_01c039f0
+    FILD dword ptr [0x01c039f0]         ; 004ccb01 | g_TransformMatrix.m[0].z
     FMUL double ptr [0x005881db]        ; 004ccb07 | DOUBLE_005881db
-    FILD dword ptr [0x01c039f4]         ; 004ccb0d | DAT_01c039f4
+    FILD dword ptr [0x01c039f4]         ; 004ccb0d | g_TransformMatrix.m[1].x
     FMUL double ptr [0x005881db]        ; 004ccb13 | DOUBLE_005881db
-    FILD dword ptr [0x01c039f8]         ; 004ccb19 | DAT_01c039f8
+    FILD dword ptr [0x01c039f8]         ; 004ccb19 | g_TransformMatrix.m[1].y
     FMUL double ptr [0x005881db]        ; 004ccb1f | DOUBLE_005881db
-    FILD dword ptr [0x01c039fc]         ; 004ccb25 | DAT_01c039fc
+    FILD dword ptr [0x01c039fc]         ; 004ccb25 | g_TransformMatrix.m[1].z
     FMUL double ptr [0x005881db]        ; 004ccb2b | DOUBLE_005881db
-    FILD dword ptr [0x01c03a00]         ; 004ccb31 | DAT_01c03a00
+    FILD dword ptr [0x01c03a00]         ; 004ccb31 | g_TransformMatrix.m[2].x
     FMUL double ptr [0x005881db]        ; 004ccb37 | DOUBLE_005881db
     FXCH ST6                            ; 004ccb3d
     FSTP float ptr [ESP + 0x48]         ; 004ccb3f
-    FILD dword ptr [0x01c03a04]         ; 004ccb43 | DAT_01c03a04
+    FILD dword ptr [0x01c03a04]         ; 004ccb43 | g_TransformMatrix.m[2].y
     FMUL double ptr [0x005881db]        ; 004ccb49 | DOUBLE_005881db
     FXCH ST2                            ; 004ccb4f
     FSTP float ptr [ESP + 0x3c]         ; 004ccb51
-    FILD dword ptr [0x01c03a08]         ; 004ccb55 | DAT_01c03a08
+    FILD dword ptr [0x01c03a08]         ; 004ccb55 | g_TransformMatrix.m[2].z
     FMUL double ptr [0x005881db]        ; 004ccb5b | DOUBLE_005881db
     FXCH                                ; 004ccb61
     FSTP float ptr [ESP + 0x34]         ; 004ccb63
@@ -117,47 +117,47 @@ section .text
     FMUL float ptr [ESP + 0x38]         ; 004ccbd9
     FXCH                                ; 004ccbdd
     FSUBP ST6,ST0                       ; 004ccbdf
-    MOV EAX,[0x01c039e8]                ; 004ccbe1 | DAT_01c039e8
+    MOV EAX,[0x01c039e8]                ; 004ccbe1 | g_TransformMatrix
     FLD float ptr [ESP + 0x50]          ; 004ccbe6
     FMUL ST6                            ; 004ccbea
     MOV [0x01cc5140],EAX                ; 004ccbec | DAT_01cc5140
     FSUBP ST3,ST0                       ; 004ccbf1
-    MOV EAX,[0x01c039ec]                ; 004ccbf3 | DAT_01c039ec
+    MOV EAX,[0x01c039ec]                ; 004ccbf3 | g_TransformMatrix.m[0].y
     FLD float ptr [ESP + 0x44]          ; 004ccbf8
     FMUL float ptr [ESP + 0x40]         ; 004ccbfc
     MOV [0x01cc5144],EAX                ; 004ccc00 | DAT_01cc5144
-    MOV EAX,[0x01c039f0]                ; 004ccc05 | DAT_01c039f0
+    MOV EAX,[0x01c039f0]                ; 004ccc05 | g_TransformMatrix.m[0].z
     FSTP float ptr [ESP + 0x18]         ; 004ccc0a
     FLD float ptr [ESP + 0x3c]          ; 004ccc0e
     FMUL float ptr [ESP + 0x38]         ; 004ccc12
     MOV [0x01cc5148],EAX                ; 004ccc16 | DAT_01cc5148
     FSUBR float ptr [ESP + 0x18]        ; 004ccc1b
-    MOV EAX,[0x01c039f4]                ; 004ccc1f | DAT_01c039f4
+    MOV EAX,[0x01c039f4]                ; 004ccc1f | g_TransformMatrix.m[1].x
     FSTP float ptr [ESP + 0x30]         ; 004ccc24
     FLD float ptr [ESP + 0x4c]          ; 004ccc28
     FMUL float ptr [ESP + 0x30]         ; 004ccc2c
     MOV [0x01cc514c],EAX                ; 004ccc30 | DAT_01cc514c
     FXCH ST2                            ; 004ccc35
     FSUBP ST4,ST0                       ; 004ccc37
-    MOV EAX,[0x01c039f8]                ; 004ccc39 | DAT_01c039f8
+    MOV EAX,[0x01c039f8]                ; 004ccc39 | g_TransformMatrix.m[1].y
     FSUBP ST4,ST0                       ; 004ccc3e
     MOV [0x01cc5150],EAX                ; 004ccc40 | DAT_01cc5150
-    MOV EAX,[0x01c039fc]                ; 004ccc45 | DAT_01c039fc
+    MOV EAX,[0x01c039fc]                ; 004ccc45 | g_TransformMatrix.m[1].z
     FXCH ST2                            ; 004ccc4a
     FCHS                                ; 004ccc4c
     MOV [0x01cc5154],EAX                ; 004ccc4e | DAT_01cc5154
-    MOV EAX,[0x01c03a00]                ; 004ccc53 | DAT_01c03a00
+    MOV EAX,[0x01c03a00]                ; 004ccc53 | g_TransformMatrix.m[2].x
     FXCH ST3                            ; 004ccc58
     FSTP float ptr [ESP + 0x28]         ; 004ccc5a
     MOV [0x01cc5158],EAX                ; 004ccc5e | DAT_01cc5158
-    MOV EAX,[0x01c03a04]                ; 004ccc63 | DAT_01c03a04
+    MOV EAX,[0x01c03a04]                ; 004ccc63 | g_TransformMatrix.m[2].y
     FXCH ST2                            ; 004ccc68
     FSTP float ptr [ESP + 0x24]         ; 004ccc6a
     MOV [0x01cc515c],EAX                ; 004ccc6e | DAT_01cc515c
     FXCH ST2                            ; 004ccc73
     FCHS                                ; 004ccc75
     FSTP float ptr [ESP + 0x20]         ; 004ccc77
-    MOV EAX,[0x01c03a08]                ; 004ccc7b | DAT_01c03a08
+    MOV EAX,[0x01c03a08]                ; 004ccc7b | g_TransformMatrix.m[2].z
     FADDP                               ; 004ccc80
     MOV [0x01cc5160],EAX                ; 004ccc82 | DAT_01cc5160
     FSTP float ptr [ESP]                ; 004ccc87

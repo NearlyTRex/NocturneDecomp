@@ -11,7 +11,7 @@
 int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 
 {
-  uint uVar1;
+  int iVar1;
   int x;
   int y;
   int iVar2;
@@ -25,9 +25,9 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   y = _DAT_01bd1d90;
   x = _DAT_01bd1d8c;
-  uVar1 = DAT_005b7630;
+  iVar1 = INT_005b7630;
   if (0 < (this_ptr->base).item_count) {
-    DAT_005b7630 = 0x7f;
+    INT_005b7630 = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
               (this_ptr,dialog_title,initial_selected_index,0);
     do {
@@ -38,7 +38,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
-    DAT_005b7630 = uVar1;
+    INT_005b7630 = iVar1;
     return iVar2;
   }
   return -1;

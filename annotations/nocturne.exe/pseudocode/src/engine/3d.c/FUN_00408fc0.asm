@@ -11,7 +11,7 @@
 ;   TerminatedCString s_renderFaceList_too_many_0057752b
 ;   TerminatedCString s_Unknown_primitive_d_0057754b
 ;   TerminatedCString s_engine_3d_c_00577562
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_00761ec4
 ;   undefined4 DAT_00761ec8
@@ -65,7 +65,7 @@ section .text
     PUSH EDI                            ; 00408ffc
     CALL engine_3d.c_transformAndBufferVertices_FUN_00404530 ; 00408ffd
         ;   XREF to: 00404530 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended * mrgl)
-    MOV ESI,dword ptr [0x005b7644]      ; 00409002 | DAT_005b7644
+    MOV ESI,dword ptr [0x005b7644]      ; 00409002 | INT_005b7644
     ADD ESP,0x4                         ; 00409008
     TEST ESI,ESI                        ; 0040900b
     JNZ 0x0040906d                      ; 0040900d
@@ -94,12 +94,12 @@ section .text
     PUSH 0x761ec8                       ; 0040903e | DAT_00761ec8
     PUSH 0x5c5014                       ; 00409043 | DAT_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00409048
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0040904d
     XOR EDX,EDX                         ; 00409050
         ;   Label: LAB_00409050
     MOV dword ptr [0x00761ec4],EDX      ; 00409052 | DAT_00761ec4
-    MOV dword ptr [0x005b7644],0x1      ; 00409058 | DAT_005b7644
+    MOV dword ptr [0x005b7644],0x1      ; 00409058 | INT_005b7644
         ;   Label: LAB_00409058
     ADD ESP,0x100                       ; 00409062
     POP EBP                             ; 00409068
@@ -140,7 +140,7 @@ section .text
     PUSH 0x761ec8                       ; 004090a7 | DAT_00761ec8
     PUSH 0x5c5014                       ; 004090ac | DAT_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 004090b1
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004090b6
     XOR EDX,EDX                         ; 004090b9
         ;   Label: LAB_004090b9

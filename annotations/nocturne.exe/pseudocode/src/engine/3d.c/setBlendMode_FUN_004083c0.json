@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01c03998'; did you mean 'DAT_02DF3998'?"
       }
     ],
     "success": false,
@@ -68,17 +62,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 21,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 10
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [
     {
@@ -116,8 +108,8 @@
   "globals": [
     {
       "addr": "01c03998",
-      "name": "DAT_01c03998",
-      "type": "undefined4",
+      "name": "g_BlendMode",
+      "type": "int",
       "value": null
     }
   ],
@@ -148,14 +140,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

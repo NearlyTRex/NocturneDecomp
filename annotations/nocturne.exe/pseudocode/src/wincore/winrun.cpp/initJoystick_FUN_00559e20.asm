@@ -17,7 +17,7 @@
 ;   void* PTR_GetProcAddress_00575534 = 00175ddc
 ;   TerminatedCString s_winmm_dll_00598168
 ;   TerminatedCString s_joyGetPosEx_00598172
-;   undefined4 DAT_005b7634
+;   int INT_005b7634 = 0x4
 ;   undefined4 DAT_01c0390c
 ;   undefined4 DAT_01c0391c
 ;   undefined4 DAT_02de3114
@@ -58,7 +58,7 @@ section .text
     AND EAX,0xff                        ; 00559e6c
     MOV [0x01c0391c],EAX                ; 00559e71 | DAT_01c0391c
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00559e76
-    MOV [0x005b7634],EAX                ; 00559e7a | DAT_005b7634
+    MOV [0x005b7634],EAX                ; 00559e7a | INT_005b7634
     CMP EAX,0x8                         ; 00559e7f
     JG 0x00559e9d                       ; 00559e82
         ;   XREF to: 00559e9d (CONDITIONAL_JUMP)  ; LAB_00559e9d
@@ -72,7 +72,7 @@ section .text
     POP EBX                             ; 00559e9a
     JMP 0x00559e84                      ; 00559e9b
         ;   XREF to: 00559e84 (UNCONDITIONAL_JUMP)  ; LAB_00559e84
-    MOV dword ptr [0x005b7634],0x8      ; 00559e9d | DAT_005b7634
+    MOV dword ptr [0x005b7634],0x8      ; 00559e9d | INT_005b7634
         ;   Label: LAB_00559e9d
     ADD ESP,0x194                       ; 00559ea7
     RET                                 ; 00559ead

@@ -24,7 +24,7 @@
 ;   undefined4 g_Projection.center_x_fixed
 ;   undefined4 g_Projection.center_y_fixed
 ;   int g_VertexPreprocessMode
-;   undefined4 DAT_01e52ef8
+;   int g_RenderedTriangleCount
 ;   undefined4 DAT_02de497c
 ;   undefined4 DAT_02de4980
 ;   undefined4 DAT_02de49c8
@@ -75,12 +75,12 @@ section .text
     TEST EDI,EDI                        ; 00562e2b
     JNZ 0x0056302e                      ; 00562e2d
         ;   XREF to: 0056302e (CONDITIONAL_JUMP)  ; LAB_0056302e
-    MOV EDX,dword ptr [0x01e52ef8]      ; 00562e33 | DAT_01e52ef8
+    MOV EDX,dword ptr [0x01e52ef8]      ; 00562e33 | g_RenderedTriangleCount
         ;   Label: LAB_00562e33
     MOV ESI,dword ptr [0x02de497c]      ; 00562e39 | DAT_02de497c
     INC EDX                             ; 00562e3f
     MOV EAX,[0x01c039a4]                ; 00562e40 | g_VertexPreprocessMode
-    MOV dword ptr [0x01e52ef8],EDX      ; 00562e45 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],EDX      ; 00562e45 | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 00562e4b
     JA 0x00562e57                       ; 00562e4e
         ;   XREF to: 00562e57 (CONDITIONAL_JUMP)  ; caseD_4

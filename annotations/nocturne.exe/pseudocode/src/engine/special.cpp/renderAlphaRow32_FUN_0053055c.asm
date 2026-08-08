@@ -15,10 +15,10 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040e8c0 at 0040e94e
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005bfe70
-;   undefined8 DAT_005c0668
-;   undefined4 DAT_01c00024
-;   undefined4 DAT_01c03998
+;   SAlphaEntry[256] g_AlphaTable
+;   undefined4 g_AlphaTable[255].red
+;   uint[256] g_Hardware32BitPalette
+;   int g_BlendMode
 ;
 ; *****************************************************************************
 
@@ -37,10 +37,10 @@ section .text
     SHR EBP,0x8                         ; 00530572
     MOVZX EAX,byte ptr [ESI]            ; 00530575
         ;   Label: LAB_00530575
-    MOVD MM0,dword ptr [EAX*0x4 + 0x1c00024] ; 00530578 | DAT_01c00024
+    MOVD MM0,dword ptr [EAX*0x4 + 0x1c00024] ; 00530578 | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 00530580
     IMUL EAX,EBP                        ; 00530583
-    CMP dword ptr [0x01c03998],0x1      ; 00530586 | DAT_01c03998
+    CMP dword ptr [0x01c03998],0x1      ; 00530586 | g_BlendMode
     JZ 0x0053059d                       ; 0053058d
         ;   XREF to: 0053059d (CONDITIONAL_JUMP)  ; LAB_0053059d
     CMP EAX,0xfde8                      ; 0053058f
@@ -52,12 +52,12 @@ section .text
     SHR EAX,0x8                         ; 0053059d
         ;   Label: LAB_0053059d
     PUNPCKLBW MM0,MM7                   ; 005305a0
-    MOVQ MM1,qword ptr [EAX*0x8 + 0x5bfe70] ; 005305a3 | DAT_005bfe70
+    MOVQ MM1,qword ptr [EAX*0x8 + 0x5bfe70] ; 005305a3 | g_AlphaTable
     MOVQ MM2,MM1                        ; 005305ab
-    PXOR MM2,qword ptr [0x005c0668]     ; 005305ae | DAT_005c0668
+    PXOR MM2,qword ptr [0x005c0668]     ; 005305ae | g_AlphaTable[255].red
     MOVD MM3,dword ptr [EDI]            ; 005305b5
     PUNPCKLBW MM3,MM7                   ; 005305b8
-    CMP dword ptr [0x01c03998],0x1      ; 005305bb | DAT_01c03998
+    CMP dword ptr [0x01c03998],0x1      ; 005305bb | g_BlendMode
     JZ 0x005305d6                       ; 005305c2
         ;   XREF to: 005305d6 (CONDITIONAL_JUMP)  ; LAB_005305d6
     PMULLW MM0,MM1                      ; 005305c4

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_02dc9e20'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02dc9e1c'"
       }
     ],
     "success": false,
@@ -74,17 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 27,
+    "complexity_score": 11,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 32
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -158,19 +144,19 @@
     },
     {
       "addr": "02dc9e1c",
-      "name": "DAT_02dc9e1c",
-      "type": "undefined4",
+      "name": "g_ExternalBitsPerPixel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9e20",
-      "name": "DAT_02dc9e20",
-      "type": "undefined4",
+      "name": "g_SavedBitsPerPixel",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc9e24",
-      "name": "INT_02dc9e24",
+      "name": "g_ExternalFrameLocked",
       "type": "int",
       "value": null
     }
@@ -206,14 +192,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

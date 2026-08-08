@@ -60,7 +60,7 @@
 ;   undefined4 DAT_005a3e8c
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005ae708
+;   int INT_005ae708 = 0x1
 ;   undefined4 DAT_005c5024
 ;   undefined4 DAT_005c5054
 ;   undefined4 DAT_005c5084
@@ -397,8 +397,8 @@ section .text
     MOV EBX,0x3                         ; 00550c1e
     MOV EAX,0x10                        ; 00550c23
     MOV dword ptr [ESP + 0x24],EBX      ; 00550c28
-    MOV EBX,dword ptr [0x005ae708]      ; 00550c2c | DAT_005ae708
-    MOV [0x005ae708],EAX                ; 00550c32 | DAT_005ae708
+    MOV EBX,dword ptr [0x005ae708]      ; 00550c2c | INT_005ae708
+    MOV [0x005ae708],EAX                ; 00550c32 | INT_005ae708
     MOV EAX,ESP                         ; 00550c37
     MOV dword ptr [ESP + 0x1c],EDX      ; 00550c39
     PUSH EAX                            ; 00550c3d
@@ -429,7 +429,7 @@ section .text
     MOV dword ptr [EAX*0x4 + 0x2dd1238],EBP ; 00550c90 | DAT_02dd1238
     MOV dword ptr [EAX*0x4 + 0x2dd5238],ESI ; 00550c97 | DAT_02dd5238
     MOV dword ptr [0x02dd1234],ECX      ; 00550c9e | DAT_02dd1234
-    MOV dword ptr [0x005ae708],EBX      ; 00550ca4 | DAT_005ae708
+    MOV dword ptr [0x005ae708],EBX      ; 00550ca4 | INT_005ae708
         ;   Label: LAB_00550ca4
     JMP 0x00550b9f                      ; 00550caa
         ;   XREF to: 00550b9f (UNCONDITIONAL_JUMP)  ; LAB_00550b9f

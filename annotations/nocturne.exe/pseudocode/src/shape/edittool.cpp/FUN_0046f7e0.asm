@@ -16,7 +16,7 @@
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_005b7630
+;   int INT_005b7630 = 0x7f
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   uchar[257] g_CharacterClassificationTable
 ;   undefined4 DAT_01bcd070
@@ -104,9 +104,9 @@ section .text
     MOV EBX,0x7f                        ; 0046f883
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 0046f888
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
-    MOV EBP,dword ptr [0x005b7630]      ; 0046f88d | DAT_005b7630
+    MOV EBP,dword ptr [0x005b7630]      ; 0046f88d | INT_005b7630
     ADD ESP,0x14                        ; 0046f893
-    MOV dword ptr [0x005b7630],EBX      ; 0046f896 | DAT_005b7630
+    MOV dword ptr [0x005b7630],EBX      ; 0046f896 | INT_005b7630
     MOV EAX,[0x005b6d50]                ; 0046f89c | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_0046f89c
     PUSH EAX                            ; 0046f8a1
@@ -185,7 +185,7 @@ section .text
     ADD ESP,0x4                         ; 0046f94a
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046f94d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV dword ptr [0x005b7630],EBP      ; 0046f952 | DAT_005b7630
+    MOV dword ptr [0x005b7630],EBP      ; 0046f952 | INT_005b7630
     XOR EAX,EAX                         ; 0046f958
     ADD ESP,0x140                       ; 0046f95a
         ;   Label: LAB_0046f95a
@@ -220,7 +220,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046f990
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EAX,0x1                         ; 0046f995
-    MOV dword ptr [0x005b7630],EBP      ; 0046f99a | DAT_005b7630
+    MOV dword ptr [0x005b7630],EBP      ; 0046f99a | INT_005b7630
     JMP 0x0046f95a                      ; 0046f9a0
         ;   XREF to: 0046f95a (UNCONDITIONAL_JUMP)  ; LAB_0046f95a
     INC AL                              ; 0046f9a2

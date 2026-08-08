@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 617,
+    "complexity_score": 607,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 45,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -216,9 +216,9 @@
     },
     {
       "addr": "005b763c",
-      "name": "DAT_005b763c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
     },
     {
       "addr": "005b9354",
@@ -626,14 +626,6 @@
       "match": "DAT_005be680",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be680);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005b763c",
-      "severity": "mild",
-      "text": "alpha = DAT_005b763c << 8;",
       "type": "undefined_data"
     },
     {

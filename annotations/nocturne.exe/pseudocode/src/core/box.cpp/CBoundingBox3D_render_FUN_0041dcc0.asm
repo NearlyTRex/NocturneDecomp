@@ -40,8 +40,8 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c02580
-;   undefined4 DAT_01c02584
+;   uchar* g_CurrentTextureData
+;   uchar* g_CurrentTextureOpacityData
 ;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
@@ -141,8 +141,8 @@ section .text
     TEST EAX,EAX                        ; 0041ddc4
     JNZ 0x0041debb                      ; 0041ddc6
         ;   XREF to: 0041debb (CONDITIONAL_JUMP)  ; LAB_0041debb
-    MOV [0x01c02584],EAX                ; 0041ddcc | DAT_01c02584
-    MOV [0x01c02580],EAX                ; 0041ddd1 | DAT_01c02580
+    MOV [0x01c02584],EAX                ; 0041ddcc | g_CurrentTextureOpacityData
+    MOV [0x01c02580],EAX                ; 0041ddd1 | g_CurrentTextureData
     MOV EAX,[0x005ae704]                ; 0041ddd6 | g_CDemonRenderer_PTR_005ae704
     MOV EBX,dword ptr [EAX]             ; 0041dddb | DAT_01b4d738
     MOV dword ptr [EBX + 0x20],0x7fff   ; 0041dddd

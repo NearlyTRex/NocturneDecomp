@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c039bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c039b8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01c039c0'"
       }
     ],
     "success": false,
@@ -80,19 +62,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 98,
+    "complexity_score": 82,
     "cross_reference_count": 79,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 6,
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
     "suspect_types": [
       "sign_compare_idiom",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -598,20 +579,20 @@
     },
     {
       "addr": "01c039b8",
-      "name": "DAT_01c039b8",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039bc",
-      "name": "DAT_01c039bc",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039c0",
-      "name": "DAT_01c039c0",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     }
   ],
@@ -784,16 +765,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_006b026c",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "DAT_006b026c = DAT_006b026c + 1;",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_006b026c",
       "severity": "mild",
       "text": "DAT_006b026c = DAT_006b026c + 1;",
@@ -802,14 +783,6 @@
     {
       "description": "Undefined global data reference",
       "line": 14,
-      "match": "DAT_006b026c",
-      "severity": "mild",
-      "text": "DAT_006b026c = DAT_006b026c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
       "match": "DAT_006b0280",
       "severity": "mild",
       "text": "if (((DAT_006b0280 == 0) &&",
@@ -817,7 +790,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "(SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {",
@@ -825,7 +798,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "(SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {",

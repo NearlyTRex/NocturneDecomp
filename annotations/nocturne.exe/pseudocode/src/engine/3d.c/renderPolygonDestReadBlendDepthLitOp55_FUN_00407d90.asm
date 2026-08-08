@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -47,7 +47,7 @@ section .text
     PUSH EDI                            ; 00407dca
         ;   Label: LAB_00407dca
     MOV EDI,0xc3                        ; 00407dcb
-    MOV EBP,dword ptr [0x005b763c]      ; 00407dd0 | DAT_005b763c
+    MOV EBP,dword ptr [0x005b763c]      ; 00407dd0 | g_CurrentAlphaValue
     MOV dword ptr [0x01c039a0],EDI      ; 00407dd6 | g_RenderStateFlags
     CMP EBP,0xff                        ; 00407ddc
     JGE 0x00407dee                      ; 00407de2

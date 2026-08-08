@@ -48,7 +48,7 @@ LAB_00405670:
   }
   engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
   g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR);
-  if (DAT_005b763c < 0xff) {
+  if (g_CurrentAlphaValue < 0xff) {
     g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR | RENDER_BLEND_READ_DEST);
   }
   vertex_count = 0;

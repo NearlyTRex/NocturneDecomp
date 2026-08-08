@@ -83,7 +83,7 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_004faa20(SRenderVertex *
     *(uint *)(iVar2 + 0x1e52f30) =
          vertex0->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     if (g_VertexPreprocessMode == 1) {
-      if (_DAT_01c0399c == 0) {
+      if (g_ProcessorType == 0) {
         iStack_14 = (vertex0->projected_vertex).inv_z;
         iVar3 = (pSVar6->projected_vertex).inv_z;
       }

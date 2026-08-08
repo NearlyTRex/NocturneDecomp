@@ -15,9 +15,9 @@
 ;   engine_drender.cpp_FUN_00460d10 at 00460d1b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c039c4
-;   undefined4 DAT_01c039c8
-;   undefined4 DAT_01c039cc
+;   int g_CameraOriginX
+;   int g_CameraOriginY
+;   int g_CameraOriginZ
 ;
 ; *****************************************************************************
 
@@ -27,12 +27,12 @@ section .text
         ;   Label: engine_matrix.c_getCameraOrigin_FUN_004ce760
     SUB ESP,0xc                         ; 004ce761
     MOV EAX,ESI                         ; 004ce764
-    MOV EDX,dword ptr [0x01c039c4]      ; 004ce766 | DAT_01c039c4
+    MOV EDX,dword ptr [0x01c039c4]      ; 004ce766 | g_CameraOriginX
     MOV dword ptr [ESP],EDX             ; 004ce76c
-    MOV EDX,dword ptr [0x01c039c8]      ; 004ce76f | DAT_01c039c8
+    MOV EDX,dword ptr [0x01c039c8]      ; 004ce76f | g_CameraOriginY
     MOV EDI,ESI                         ; 004ce775
     MOV dword ptr [ESP + 0x4],EDX       ; 004ce777
-    MOV EDX,dword ptr [0x01c039cc]      ; 004ce77b | DAT_01c039cc
+    MOV EDX,dword ptr [0x01c039cc]      ; 004ce77b | g_CameraOriginZ
     MOV ESI,ESP                         ; 004ce781
     MOV dword ptr [ESP + 0x8],EDX       ; 004ce783
     MOVSD ES:EDI,ESI                    ; 004ce787

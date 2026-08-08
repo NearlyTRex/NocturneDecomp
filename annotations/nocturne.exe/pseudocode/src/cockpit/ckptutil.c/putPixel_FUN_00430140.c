@@ -12,15 +12,13 @@ void __cdecl cockpit_ckptutil_c_putPixel_FUN_00430140(int x,int y,int color)
   if ((((g_ClipLeft <= x) && (x <= g_ClipRight)) && (g_ClipTop <= y)) && (y <= g_ClipBottom)) {
     if (0xf < (uint)g_BitsPerPixel) {
       if ((uint)g_BitsPerPixel < 0x11) {
-        *(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) =
-             *(ushort *)(color * 2 + 0x1c00424);
+        *(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_Hardware16BitPalette[color];
         return;
       }
       if (g_BitsPerPixel != 0x20) {
         return;
       }
-      *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) =
-           *(uint *)(&DAT_01c00024 + color * 4);
+      *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_Hardware32BitPalette[color];
       return;
     }
     if (g_BitsPerPixel == 8) {

@@ -24,7 +24,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
   int color_value;
   char local_360 [520];
   CInputString local_158;
-  uint local_18;
+  int local_18;
   int local_14;
   
   bVar9 = 0;
@@ -45,8 +45,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
     pcVar8 = (char *)0x0;
   }
   shape_edittool_cpp_CInputString_init_FUN_0046f0a0(&local_158,pcVar8,0x14,0);
-  local_18 = DAT_005b7630;
-  DAT_005b7630 = 0x7f;
+  local_18 = INT_005b7630;
+  INT_005b7630 = 0x7f;
   local_14 = 0;
   do {
     shape_edittool_cpp_FUN_004722b0(this_ptr);
@@ -111,7 +111,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
         shape_edittool_cpp_FUN_004720c0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-        DAT_005b7630 = local_18;
+        INT_005b7630 = local_18;
         return 0;
       }
       if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
@@ -210,6 +210,6 @@ LAB_004711e7:
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_FUN_004720c0(this_ptr);
-  DAT_005b7630 = local_18;
+  INT_005b7630 = local_18;
   return 1;
 }

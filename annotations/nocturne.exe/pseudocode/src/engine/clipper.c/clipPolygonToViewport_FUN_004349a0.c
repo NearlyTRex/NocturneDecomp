@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_count,int *vertex_indices)
 
 {
@@ -34,7 +32,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
   uint uVar6;
   
   bVar15 = 0;
-  if (DAT_005b7644 == 0) {
+  if (INT_005b7644 == 0) {
     engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(vertex_indices,vertex_count);
   }
   else {
@@ -98,7 +96,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
               }
             }
           }
-          _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+          g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
           engine_special_cpp_drawPolygon2_FUN_00532650
                     (&DAT_00767274,vertex_count,g_RenderStateFlags.dword);
           return;

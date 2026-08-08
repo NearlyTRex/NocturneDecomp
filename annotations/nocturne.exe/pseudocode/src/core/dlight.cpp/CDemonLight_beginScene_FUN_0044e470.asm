@@ -21,9 +21,9 @@
 ;   undefined4 DAT_01b4d738
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f8
-;   undefined4 DAT_01c03a04
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[1].y
+;   undefined4 g_TransformMatrix.m[2].y
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -102,21 +102,21 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0 ; 0044e536
         ;   XREF to: 004607b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix)
     ADD ESP,0x8                         ; 0044e53b
-    MOV EDX,dword ptr [0x01c039ec]      ; 0044e53e | DAT_01c039ec
+    MOV EDX,dword ptr [0x01c039ec]      ; 0044e53e | g_TransformMatrix.m[0].y
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044e544
     IMUL EDX                            ; 0044e54a
     SHRD EAX,EDX,0x10                   ; 0044e54c
-    MOV EDX,dword ptr [0x01c039f8]      ; 0044e550 | DAT_01c039f8
-    MOV [0x01c039ec],EAX                ; 0044e556 | DAT_01c039ec
+    MOV EDX,dword ptr [0x01c039f8]      ; 0044e550 | g_TransformMatrix.m[1].y
+    MOV [0x01c039ec],EAX                ; 0044e556 | g_TransformMatrix.m[0].y
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044e55b
     IMUL EDX                            ; 0044e561
     SHRD EAX,EDX,0x10                   ; 0044e563
-    MOV EDX,dword ptr [0x01c03a04]      ; 0044e567 | DAT_01c03a04
-    MOV [0x01c039f8],EAX                ; 0044e56d | DAT_01c039f8
+    MOV EDX,dword ptr [0x01c03a04]      ; 0044e567 | g_TransformMatrix.m[2].y
+    MOV [0x01c039f8],EAX                ; 0044e56d | g_TransformMatrix.m[1].y
     MOV EAX,dword ptr [EBX + 0x2fa4]    ; 0044e572
     IMUL EDX                            ; 0044e578
     SHRD EAX,EDX,0x10                   ; 0044e57a
-    MOV [0x01c03a04],EAX                ; 0044e57e | DAT_01c03a04
+    MOV [0x01c03a04],EAX                ; 0044e57e | g_TransformMatrix.m[2].y
     TEST EDI,EDI                        ; 0044e583
     JZ 0x0044e629                       ; 0044e585
         ;   XREF to: 0044e629 (CONDITIONAL_JUMP)  ; LAB_0044e629

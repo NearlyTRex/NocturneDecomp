@@ -8,7 +8,7 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c0399c
+;   int g_ProcessorType
 ;   int g_VertexPreprocessMode
 ;   undefined4 DAT_01e52efc
 ;   undefined4 DAT_01e53380
@@ -161,7 +161,7 @@ section .text
     CMP dword ptr [0x01c039a4],0x1      ; 004fab94 | g_VertexPreprocessMode
     JNZ 0x004fac6a                      ; 004fab9b
         ;   XREF to: 004fac6a (CONDITIONAL_JUMP)  ; LAB_004fac6a
-    CMP dword ptr [0x01c0399c],0x0      ; 004faba1 | DAT_01c0399c
+    CMP dword ptr [0x01c0399c],0x0      ; 004faba1 | g_ProcessorType
     JZ 0x004fac5b                       ; 004faba8
         ;   XREF to: 004fac5b (CONDITIONAL_JUMP)  ; LAB_004fac5b
     MOV EAX,0x7fffffff                  ; 004fabae

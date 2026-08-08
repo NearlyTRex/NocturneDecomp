@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b0278
-;   undefined4 DAT_01c00020
+;   SRGBColorPalette* g_CurrentPalette
 ;   int g_UseExternalRenderer
 ;   undefined4 DAT_02dd0f80
 ;   undefined4 DAT_02dd0f84
@@ -94,7 +94,7 @@ section .text
     TEST EDI,EDI                        ; 00545998
     JNZ 0x005459b4                      ; 0054599a
         ;   XREF to: 005459b4 (CONDITIONAL_JUMP)  ; LAB_005459b4
-    MOV ECX,dword ptr [0x01c00020]      ; 0054599c | DAT_01c00020
+    MOV ECX,dword ptr [0x01c00020]      ; 0054599c | g_CurrentPalette
     PUSH ECX                            ; 005459a2
     PUSH EBX                            ; 005459a3
     CALL engine_special.cpp_selectTextureFromPalette_FUN_00532400 ; 005459a4
@@ -107,7 +107,7 @@ section .text
     POP EDI                             ; 005459b1
     POP EBX                             ; 005459b2
     RET                                 ; 005459b3
-    MOV EDX,dword ptr [0x01c00020]      ; 005459b4 | DAT_01c00020
+    MOV EDX,dword ptr [0x01c00020]      ; 005459b4 | g_CurrentPalette
         ;   Label: LAB_005459b4
     PUSH EDX                            ; 005459ba
     PUSH EBX                            ; 005459bb

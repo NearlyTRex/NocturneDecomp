@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_004ce710(int x,int y,int z)
 
 {
-  _DAT_01c039c4 = x;
-  _DAT_01c039c8 = y;
-  _DAT_01c039cc = z;
+  g_CameraOriginX = x;
+  g_CameraOriginY = y;
+  g_CameraOriginZ = z;
   return;
 }

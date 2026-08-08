@@ -2,21 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2620
-Filtered out (inside named data): 323
+Total DAT_ globals found: 2539
+Filtered out (inside named data): 312
 Immediate constants (not real globals): 62
-Real globals remaining: 2235
+Real globals remaining: 2165
 
 Current type breakdown:
-  undefined4                     2180
-  undefined1                     30
-  undefined8                     14
+  undefined4                     2114
+  undefined1                     28
+  undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 676 / 2235
+DAT_ globals with type hints: 633 / 2165
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (474)
+HIGH CONFIDENCE INFERENCES (440)
 --------------------------------------------------------------------------------
   DAT_0057919e                    addr=0057919e    current=undefined4      likely=float           refs=1
     nearby: s_Bip01_Head_005791a2 (TerminatedCString) at offset -4
@@ -179,8 +179,6 @@ HIGH CONFIDENCE INFERENCES (474)
     nearby: PTR_DAT_005ae700 (void*) at offset -12
   DAT_005ae6f8                    addr=005ae6f8    current=undefined4      likely=float           refs=5
     nearby: PTR_DAT_005ae700 (void*) at offset -8
-  DAT_005ae70c                    addr=005ae70c    current=undefined4      likely=SMRGLPrimitiveTriangle **  refs=2
-    nearby: g_CDemonRenderer_PTR_005ae704 (CDemonRenderer*) at offset +8
   DAT_005b0678                    addr=005b0678    current=undefined4      likely=float           refs=2
     nearby: g_INT_005b0660 (int) at offset +24
   DAT_005b0680                    addr=005b0680    current=undefined4      likely=int             refs=1
@@ -210,16 +208,8 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_005b4748                    addr=005b4748    current=undefined8      likely=uint            refs=1
   DAT_005b4788                    addr=005b4788    current=undefined8      likely=short           refs=4
   DAT_005b47a8                    addr=005b47a8    current=undefined8      likely=short           refs=1
-  DAT_005b7628                    addr=005b7628    current=undefined4      likely=int *           refs=1
-    nearby: g_BitsPerPixel (int) at offset +4
-  DAT_005b762c                    addr=005b762c    current=undefined4      likely=float           refs=11
-    nearby: g_BitsPerPixel (int) at offset +8
-  DAT_005b763c                    addr=005b763c    current=undefined4      likely=int             refs=13
-    nearby: g_BitsPerPixel (int) at offset +24
-  DAT_005b7640                    addr=005b7640    current=undefined4      likely=int *           refs=1
-    nearby: g_BitsPerPixel (int) at offset +28
   DAT_005b7648                    addr=005b7648    current=undefined4      likely=float           refs=10
-    nearby: g_BitsPerPixel (int) at offset +36
+    nearby: INT_005b7644 (int) at offset +4
   DAT_005b7790                    addr=005b7790    current=undefined4      likely=double          refs=1
   DAT_005b8b14                    addr=005b8b14    current=undefined4      likely=SMRGLTextureBasic *  refs=2
   DAT_005b8ba4                    addr=005b8ba4    current=undefined4      likely=SMRGLTextureBasic *  refs=2
@@ -264,30 +254,10 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_005be774                    addr=005be774    current=undefined4      likely=SMRGLPrimitivePoly *  refs=1
   DAT_005be924                    addr=005be924    current=undefined4      likely=SMRGLTextureBasic *  refs=2
     nearby: g_INT_005be964 (int) at offset -64
-  DAT_005bf078                    addr=005bf078    current=undefined4      likely=int             refs=4
-  DAT_005bf07c                    addr=005bf07c    current=undefined4      likely=int             refs=4
-  DAT_005bf4d8                    addr=005bf4d8    current=undefined4      likely=longlong        refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +68
-  DAT_005bf4dc                    addr=005bf4dc    current=undefined4      likely=longlong        refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +72
-  DAT_005bf4e0                    addr=005bf4e0    current=undefined4      likely=longlong        refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +76
-  DAT_005bf4e8                    addr=005bf4e8    current=undefined4      likely=int             refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +84
-  DAT_005bf4ec                    addr=005bf4ec    current=undefined4      likely=int             refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +88
-  DAT_005c0f80                    addr=005c0f80    current=undefined4      likely=int *           refs=2
-    nearby: INT_005c0ff0 (int) at offset -112
-  DAT_005c0f84                    addr=005c0f84    current=undefined4      likely=int *           refs=1
-    nearby: INT_005c0ff0 (int) at offset -108
-  DAT_005c0f88                    addr=005c0f88    current=undefined4      likely=int *           refs=1
-    nearby: INT_005c0ff0 (int) at offset -104
-  DAT_005c0f8c                    addr=005c0f8c    current=undefined4      likely=int *           refs=3
-    nearby: INT_005c0ff0 (int) at offset -100
   DAT_005c0fa8                    addr=005c0fa8    current=undefined4      likely=float           refs=1
-    nearby: INT_005c0ff0 (int) at offset -72
+    nearby: g_FullScreenQuadDepth (int) at offset +28
   DAT_005c0fac                    addr=005c0fac    current=undefined4      likely=float           refs=1
-    nearby: INT_005c0ff0 (int) at offset -68
+    nearby: g_FullScreenQuadDepth (int) at offset +32
   DAT_005c11f4                    addr=005c11f4    current=undefined4      likely=SMRGLTextureBasic *  refs=2
     nearby: g_INT_005c11c4 (int) at offset +48
   DAT_005c1374                    addr=005c1374    current=undefined4      likely=SMRGLTextureBasic *  refs=2
@@ -440,7 +410,6 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_01410280                    addr=01410280    current=undefined4      likely=int *           refs=3
   DAT_01410288                    addr=01410288    current=undefined4      likely=float           refs=3
   DAT_01410290                    addr=01410290    current=undefined4      likely=byte            refs=1
-  DAT_0145b290                    addr=0145b290    current=undefined4      likely=uint *          refs=2
   DAT_014b846c                    addr=014b846c    current=undefined4      likely=CVector3f *     refs=1
     nearby: g_CVector3f_ARRAY_014b8490 (CVector3f[16]) at offset -36
   DAT_014b8470                    addr=014b8470    current=undefined4      likely=float           refs=1
@@ -461,9 +430,6 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_01bc9960                    addr=01bc9960    current=undefined4      likely=float           refs=1
     nearby: g_CVector3f_ARRAY_01bc9970 (CVector3f[16]) at offset -16
   DAT_01bd1d80                    addr=01bd1d80    current=undefined4      likely=float           refs=25
-  DAT_01c00024                    addr=01c00024    current=undefined4      likely=uint *          refs=14
-  DAT_01c02590                    addr=01c02590    current=undefined4      likely=int *           refs=2
-    nearby: g_UseExternalRenderer (int) at offset -4
   DAT_01c02598                    addr=01c02598    current=undefined4      likely=uint *          refs=7
     nearby: g_UseExternalRenderer (int) at offset +4
   DAT_01c038f8                    addr=01c038f8    current=undefined4      likely=char *          refs=5
@@ -472,40 +438,12 @@ HIGH CONFIDENCE INFERENCES (474)
     nearby: g_MMXSupported (int) at offset -76
   DAT_01c03908                    addr=01c03908    current=undefined4      likely=char *          refs=4
     nearby: g_MMXSupported (int) at offset -64
-  DAT_01c03998                    addr=01c03998    current=undefined4      likely=int *           refs=8
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -8
-  DAT_01c0399c                    addr=01c0399c    current=undefined4      likely=int *           refs=7
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -4
-  DAT_01c039b8                    addr=01c039b8    current=undefined4      likely=float           refs=17
-    nearby: g_SolidBlueComponent (int) at offset +4
-  DAT_01c039bc                    addr=01c039bc    current=undefined4      likely=float           refs=15
-    nearby: g_SolidBlueComponent (int) at offset +8
-  DAT_01c039c0                    addr=01c039c0    current=undefined4      likely=float           refs=16
-    nearby: g_SolidBlueComponent (int) at offset +12
   DAT_01c039d0                    addr=01c039d0    current=undefined4      likely=float           refs=5
-    nearby: g_SolidBlueComponent (int) at offset +28
+    nearby: g_CameraOriginZ (int) at offset +4
   DAT_01c039d4                    addr=01c039d4    current=undefined4      likely=float           refs=5
-    nearby: g_SolidBlueComponent (int) at offset +32
+    nearby: g_CameraOriginZ (int) at offset +8
   DAT_01c039d8                    addr=01c039d8    current=undefined4      likely=float           refs=5
-    nearby: g_SolidBlueComponent (int) at offset +36
-  DAT_01c039e8                    addr=01c039e8    current=undefined4      likely=float           refs=18
-    nearby: g_SolidBlueComponent (int) at offset +52
-  DAT_01c039ec                    addr=01c039ec    current=undefined4      likely=float           refs=19
-    nearby: g_SolidBlueComponent (int) at offset +56
-  DAT_01c039f0                    addr=01c039f0    current=undefined4      likely=float           refs=19
-    nearby: g_SolidBlueComponent (int) at offset +60
-  DAT_01c039f4                    addr=01c039f4    current=undefined4      likely=float           refs=16
-    nearby: g_SolidBlueComponent (int) at offset +64
-  DAT_01c039f8                    addr=01c039f8    current=undefined4      likely=float           refs=17
-    nearby: g_SolidBlueComponent (int) at offset +68
-  DAT_01c039fc                    addr=01c039fc    current=undefined4      likely=float           refs=17
-    nearby: g_SolidBlueComponent (int) at offset +72
-  DAT_01c03a00                    addr=01c03a00    current=undefined4      likely=float           refs=16
-    nearby: g_SolidBlueComponent (int) at offset +76
-  DAT_01c03a04                    addr=01c03a04    current=undefined4      likely=float           refs=17
-    nearby: g_SolidBlueComponent (int) at offset +80
-  DAT_01c03a08                    addr=01c03a08    current=undefined4      likely=float           refs=17
-    nearby: g_SolidBlueComponent (int) at offset +84
+    nearby: g_CameraOriginZ (int) at offset +12
   DAT_01c08b60                    addr=01c08b60    current=undefined4      likely=char *          refs=11
   DAT_01c08d08                    addr=01c08d08    current=undefined4      likely=CVector3i *     refs=5
     nearby: g_CFilmReelActorType_01c08c8c.name_hash (undefined4) at offset +68
@@ -618,6 +556,7 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_01e52a6c                    addr=01e52a6c    current=undefined4      likely=SSoftwareEdge *  refs=5
     nearby: g_CDemonPod_01e528d0.vtable (undefined4) at offset +8
   DAT_01e52f00                    addr=01e52f00    current=undefined4      likely=int *           refs=4
+    nearby: g_RenderedTriangleCount (int) at offset +8
   DAT_01e56420                    addr=01e56420    current=undefined4      likely=char *          refs=4
   DAT_01e56c20                    addr=01e56c20    current=undefined4      likely=float           refs=5
   DAT_01fb9b54                    addr=01fb9b54    current=undefined4      likely=char *          refs=9
@@ -708,8 +647,6 @@ HIGH CONFIDENCE INFERENCES (474)
     nearby: g_UseDirect3D (int) at offset -20
   DAT_02dc9d50                    addr=02dc9d50    current=undefined4      likely=float           refs=2
     nearby: g_UseDirect3D (int) at offset -16
-  DAT_02dc9d6c                    addr=02dc9d6c    current=undefined4      likely=int *           refs=4
-    nearby: g_APIDLL_init (APIDLL_init*) at offset -8
   DAT_02dc9ea0                    addr=02dc9ea0    current=undefined4      likely=float           refs=1
     nearby: g_CSpikeActorType_02dc9e28.name_hash (undefined4) at offset +64
   DAT_02dc9ea4                    addr=02dc9ea4    current=undefined4      likely=float           refs=1
@@ -768,11 +705,11 @@ HIGH CONFIDENCE INFERENCES (474)
   DAT_02de4980                    addr=02de4980    current=undefined4      likely=int *           refs=4
   DAT_02de4e20                    addr=02de4e20    current=undefined4      likely=uint *          refs=7
   DAT_02de4e24                    addr=02de4e24    current=undefined4      likely=uint *          refs=5
-  DAT_02de5d70                    addr=02de5d70    current=undefined4      likely=uint *          refs=4
+  DAT_02de5d70                    addr=02de5d70    current=undefined4      likely=uint *          refs=3
   DAT_02de5d80                    addr=02de5d80    current=undefined4      likely=int *           refs=1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (202)
+MEDIUM CONFIDENCE INFERENCES (193)
 --------------------------------------------------------------------------------
   DAT_005acc8e                    addr=005acc8e    current=undefined4      likely=byte            refs=1
     nearby: g_INT_005acc88 (int) at offset +6
@@ -793,26 +730,6 @@ MEDIUM CONFIDENCE INFERENCES (202)
     nearby: s_CART_Precision_Racing_v1_005b9268 (TerminatedCString) at offset -15
   DAT_005bb11b                    addr=005bb11b    current=undefined4      likely=byte            refs=1
     nearby: g_INT_005bb124 (int) at offset -9
-  DAT_005bf500                    addr=005bf500    current=undefined8      likely=short           refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +108
-  DAT_005bf508                    addr=005bf508    current=undefined4      likely=short           refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +116
-  DAT_005bf510                    addr=005bf510    current=undefined4      likely=short           refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +124
-  DAT_005bf520                    addr=005bf520    current=undefined8      likely=short           refs=2
-    nearby: g_BufferFillFpuPopST0 (double) at offset +140
-  DAT_005bf528                    addr=005bf528    current=undefined4      likely=short           refs=2
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -144
-  DAT_005bf530                    addr=005bf530    current=undefined4      likely=short           refs=2
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -136
-  DAT_005bf550                    addr=005bf550    current=undefined1      likely=short           refs=7
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -104
-  DAT_005bf570                    addr=005bf570    current=undefined1      likely=short           refs=7
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -72
-  DAT_005bf590                    addr=005bf590    current=undefined4      likely=short           refs=7
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -40
-  DAT_005bf5b0                    addr=005bf5b0    current=undefined4      likely=short           refs=7
-    nearby: g_RedMask16 (_MMX_INTEGER) at offset -8
   DAT_005c1680                    addr=005c1680    current=undefined4      likely=array           refs=10
     nearby: g_CharacterClassificationTable (uchar[257]) at offset -12
   DAT_005c18a0                    addr=005c18a0    current=undefined1      likely=byte            refs=2
@@ -879,6 +796,7 @@ MEDIUM CONFIDENCE INFERENCES (202)
   DAT_012e18b8                    addr=012e18b8    current=undefined4      likely=byte            refs=4
   DAT_01410282                    addr=01410282    current=undefined4      likely=short           refs=1
   DAT_01410286                    addr=01410286    current=undefined4      likely=short           refs=1
+  DAT_0145b290                    addr=0145b290    current=undefined4      likely=byte            refs=2
   DAT_014b7194                    addr=014b7194    current=undefined4      likely=array           refs=1
   DAT_014b8458                    addr=014b8458    current=undefined4      likely=array           refs=4
     nearby: g_CVector3f_ARRAY_014b8490 (CVector3f[16]) at offset -56
@@ -905,13 +823,13 @@ MEDIUM CONFIDENCE INFERENCES (202)
   DAT_01c03970                    addr=01c03970    current=undefined4      likely=short           refs=1
     nearby: g_MMXSupported (int) at offset +40
   DAT_01c03978                    addr=01c03978    current=undefined4      likely=short           refs=1
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -40
+    nearby: g_BlendMode (int) at offset -32
   DAT_01c03980                    addr=01c03980    current=undefined4      likely=short           refs=1
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -32
+    nearby: g_BlendMode (int) at offset -24
   DAT_01c03988                    addr=01c03988    current=undefined4      likely=short           refs=1
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -24
+    nearby: g_BlendMode (int) at offset -16
   DAT_01c03990                    addr=01c03990    current=undefined4      likely=short           refs=1
-    nearby: g_RenderStateFlags (_BIT_INTEGER32) at offset -16
+    nearby: g_BlendMode (int) at offset -8
   DAT_01c08b61                    addr=01c08b61    current=undefined4      likely=byte            refs=5
   DAT_01c70f5e                    addr=01c70f5e    current=undefined4      likely=short           refs=2
   DAT_01c71354                    addr=01c71354    current=undefined4      likely=byte            refs=1
@@ -1058,7 +976,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1559)
+NO TYPE HINTS (1532)
 --------------------------------------------------------------------------------
   DAT_0057c8be                    addr=0057c8be    type=undefined4      refs=1  nearby: DOUBLE_0057c8c6 at -8
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  nearby: g_CEnemyVTable at -12
@@ -1106,7 +1024,6 @@ NO TYPE HINTS (1559)
   DAT_005ae4b8                    addr=005ae4b8    type=undefined4      refs=1
   DAT_005ae4d4                    addr=005ae4d4    type=undefined4      refs=1
   DAT_005ae6fc                    addr=005ae6fc    type=undefined4      refs=1  nearby: PTR_DAT_005ae700 at -4
-  DAT_005ae708                    addr=005ae708    type=undefined4      refs=4  nearby: g_CDemonRenderer_PTR_005ae704 at +4
   DAT_005b0674                    addr=005b0674    type=undefined4      refs=2  nearby: g_INT_005b0660 at +20
   DAT_005b0688                    addr=005b0688    type=undefined4      refs=1  nearby: g_INT_005b0660 at +40
   DAT_005b06a4                    addr=005b06a4    type=undefined4      refs=1  nearby: g_INT_005b0660 at +68
@@ -1228,15 +1145,11 @@ NO TYPE HINTS (1559)
   DAT_005b727c                    addr=005b727c    type=undefined4      refs=1
   DAT_005b7478                    addr=005b7478    type=undefined4      refs=1
   DAT_005b747c                    addr=005b747c    type=undefined4      refs=1
-  DAT_005b7630                    addr=005b7630    type=undefined4      refs=5  nearby: g_BitsPerPixel at +12
-  DAT_005b7634                    addr=005b7634    type=undefined4      refs=1  nearby: g_BitsPerPixel at +16
-  DAT_005b7638                    addr=005b7638    type=undefined4      refs=2  nearby: g_BitsPerPixel at +20
-  DAT_005b7644                    addr=005b7644    type=undefined4      refs=9  nearby: g_BitsPerPixel at +32
-  DAT_005b7650                    addr=005b7650    type=undefined4      refs=73  nearby: g_BitsPerPixel at +44
-  DAT_005b7658                    addr=005b7658    type=undefined4      refs=1  nearby: g_BitsPerPixel at +52
-  DAT_005b765c                    addr=005b765c    type=undefined4      refs=1  nearby: g_BitsPerPixel at +56
-  DAT_005b7720                    addr=005b7720    type=undefined4      refs=1  nearby: g_BitsPerPixel at +252
-  DAT_005b7724                    addr=005b7724    type=undefined4      refs=1  nearby: g_BitsPerPixel at +256
+  DAT_005b7650                    addr=005b7650    type=undefined4      refs=73  nearby: INT_005b7644 at +12
+  DAT_005b7658                    addr=005b7658    type=undefined4      refs=1  nearby: INT_005b7644 at +20
+  DAT_005b765c                    addr=005b765c    type=undefined4      refs=1  nearby: INT_005b7644 at +24
+  DAT_005b7720                    addr=005b7720    type=undefined4      refs=1  nearby: INT_005b7644 at +220
+  DAT_005b7724                    addr=005b7724    type=undefined4      refs=1  nearby: INT_005b7644 at +224
   DAT_005b7fd0                    addr=005b7fd0    type=undefined4      refs=1  nearby: switchdataD_005b7fd4 at -4
   DAT_005b8014                    addr=005b8014    type=undefined4      refs=1  nearby: INT_005b8018 at -4
   DAT_005b8b2c                    addr=005b8b2c    type=undefined4      refs=1
@@ -1339,24 +1252,14 @@ NO TYPE HINTS (1559)
   DAT_005bed70                    addr=005bed70    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +4
   DAT_005bed74                    addr=005bed74    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +8
   DAT_005bed78                    addr=005bed78    type=undefined4      refs=1  nearby: PTR_s_OFF_00594c3d_005bed6c at +12
-  DAT_005bef20                    addr=005bef20    type=undefined4      refs=1
-  DAT_005bef24                    addr=005bef24    type=undefined4      refs=1
-  DAT_005bef88                    addr=005bef88    type=undefined4      refs=1
-  DAT_005bef8c                    addr=005bef8c    type=undefined4      refs=1
-  DAT_005bf014                    addr=005bf014    type=undefined4      refs=4
-  DAT_005bf050                    addr=005bf050    type=undefined4      refs=4
-  DAT_005bf054                    addr=005bf054    type=undefined4      refs=4
-  DAT_005bf05c                    addr=005bf05c    type=undefined4      refs=4
-  DAT_005bf480                    addr=005bf480    type=undefined4      refs=4  nearby: g_BufferFillZeroQword at -12
-  DAT_005bf484                    addr=005bf484    type=undefined4      refs=4  nearby: g_BufferFillZeroQword at -8
-  DAT_005bf488                    addr=005bf488    type=undefined4      refs=4  nearby: g_BufferFillZeroQword at -4
+  DAT_005bef20                    addr=005bef20    type=undefined4      refs=1  nearby: g_ScanlinePixelCount at -244
+  DAT_005bef24                    addr=005bef24    type=undefined4      refs=1  nearby: g_ScanlinePixelCount at -240
+  DAT_005bef88                    addr=005bef88    type=undefined4      refs=1  nearby: g_ScanlinePixelCount at -140
+  DAT_005bef8c                    addr=005bef8c    type=undefined4      refs=1  nearby: g_ScanlinePixelCount at -136
   DAT_005bf4a4                    addr=005bf4a4    type=undefined4      refs=1  nearby: g_BufferFillFpuPopST0 at +16
   DAT_005bf4a8                    addr=005bf4a8    type=undefined4      refs=1  nearby: g_BufferFillFpuPopST0 at +20
   DAT_005bf4ac                    addr=005bf4ac    type=undefined4      refs=1  nearby: g_BufferFillFpuPopST0 at +24
   DAT_005bf4b0                    addr=005bf4b0    type=undefined4      refs=1  nearby: g_BufferFillFpuPopST0 at +28
-  DAT_005bf4f0                    addr=005bf4f0    type=undefined4      refs=2  nearby: g_BufferFillFpuPopST0 at +92
-  DAT_005bf540                    addr=005bf540    type=undefined4      refs=2  nearby: g_RedMask16 at -120
-  DAT_005bf548                    addr=005bf548    type=undefined4      refs=2  nearby: g_RedMask16 at -112
   DAT_005c1144                    addr=005c1144    type=undefined4      refs=5  nearby: INT_005c1130 at +20
   DAT_005c11ec                    addr=005c11ec    type=undefined4      refs=8  nearby: g_INT_005c11c4 at +40
   DAT_005c11f0                    addr=005c11f0    type=undefined4      refs=1  nearby: g_INT_005c11c4 at +44
@@ -1831,13 +1734,8 @@ NO TYPE HINTS (1559)
   DAT_01bd1d84                    addr=01bd1d84    type=undefined4      refs=3
   DAT_01bd1d8c                    addr=01bd1d8c    type=undefined4      refs=14
   DAT_01bd1d90                    addr=01bd1d90    type=undefined4      refs=14
-  DAT_01c00020                    addr=01c00020    type=undefined4      refs=6
-  DAT_01c00028                    addr=01c00028    type=undefined4      refs=3
-  DAT_01c00029                    addr=01c00029    type=undefined4      refs=1
-  DAT_01c02580                    addr=01c02580    type=undefined4      refs=17  nearby: g_UseExternalRenderer at -20
-  DAT_01c02584                    addr=01c02584    type=undefined4      refs=12  nearby: g_UseExternalRenderer at -16
-  DAT_01c02588                    addr=01c02588    type=undefined4      refs=1  nearby: g_UseExternalRenderer at -12
-  DAT_01c0258c                    addr=01c0258c    type=undefined4      refs=1  nearby: g_UseExternalRenderer at -8
+  DAT_01c02588                    addr=01c02588    type=undefined4      refs=1  nearby: g_CurrentTextureOpacityData at +4
+  DAT_01c0258c                    addr=01c0258c    type=undefined4      refs=1  nearby: g_TextureBits at -4
   DAT_01c0259c                    addr=01c0259c    type=undefined4      refs=1  nearby: g_UseExternalRenderer at +8
   DAT_01c038f0                    addr=01c038f0    type=undefined4      refs=1  nearby: g_MMXSupported at -88
   DAT_01c038f4                    addr=01c038f4    type=undefined4      refs=29  nearby: g_MMXSupported at -84
@@ -1850,12 +1748,9 @@ NO TYPE HINTS (1559)
   DAT_01c03920                    addr=01c03920    type=undefined4      refs=1  nearby: g_MMXSupported at -40
   DAT_01c0394c                    addr=01c0394c    type=undefined4      refs=1  nearby: g_MMXSupported at +4
   DAT_01c03950                    addr=01c03950    type=undefined4      refs=1  nearby: g_MMXSupported at +8
-  DAT_01c039c4                    addr=01c039c4    type=undefined4      refs=7  nearby: g_SolidBlueComponent at +16
-  DAT_01c039c8                    addr=01c039c8    type=undefined4      refs=6  nearby: g_SolidBlueComponent at +20
-  DAT_01c039cc                    addr=01c039cc    type=undefined4      refs=7  nearby: g_SolidBlueComponent at +24
-  DAT_01c039dc                    addr=01c039dc    type=undefined4      refs=14  nearby: g_SolidBlueComponent at +40
-  DAT_01c039e0                    addr=01c039e0    type=undefined4      refs=12  nearby: g_SolidBlueComponent at +44
-  DAT_01c039e4                    addr=01c039e4    type=undefined4      refs=12  nearby: g_SolidBlueComponent at +48
+  DAT_01c039dc                    addr=01c039dc    type=undefined4      refs=14  nearby: g_TransformMatrix at -12
+  DAT_01c039e0                    addr=01c039e0    type=undefined4      refs=12  nearby: g_TransformMatrix at -8
+  DAT_01c039e4                    addr=01c039e4    type=undefined4      refs=12  nearby: g_TransformMatrix at -4
   DAT_01c08b5c                    addr=01c08b5c    type=undefined4      refs=6
   DAT_01c08b62                    addr=01c08b62    type=undefined4      refs=5
   DAT_01c08b63                    addr=01c08b63    type=undefined4      refs=5
@@ -2284,11 +2179,10 @@ NO TYPE HINTS (1559)
   DAT_01e428d1                    addr=01e428d1    type=undefined4      refs=5  nearby: g_CPlatformActorType_01e42894.name_hash at +5
   DAT_01e52a68                    addr=01e52a68    type=undefined4      refs=5  nearby: g_CDemonPod_01e528d0.vtable at +4
   DAT_01e52ab4                    addr=01e52ab4    type=undefined4      refs=1  nearby: g_CDemonPod_01e528d0.vtable at +80
-  DAT_01e52eec                    addr=01e52eec    type=undefined4      refs=4
-  DAT_01e52ef0                    addr=01e52ef0    type=undefined4      refs=4
-  DAT_01e52ef8                    addr=01e52ef8    type=undefined4      refs=16
-  DAT_01e52efc                    addr=01e52efc    type=undefined4      refs=5
-  DAT_01e52f48                    addr=01e52f48    type=undefined4      refs=3
+  DAT_01e52eec                    addr=01e52eec    type=undefined4      refs=4  nearby: g_RenderedTriangleCount at -12
+  DAT_01e52ef0                    addr=01e52ef0    type=undefined4      refs=4  nearby: g_RenderedTriangleCount at -8
+  DAT_01e52efc                    addr=01e52efc    type=undefined4      refs=5  nearby: g_RenderedTriangleCount at +4
+  DAT_01e52f48                    addr=01e52f48    type=undefined4      refs=3  nearby: g_RenderedTriangleCount at +80
   DAT_01e53380                    addr=01e53380    type=undefined4      refs=4
   DAT_01e53384                    addr=01e53384    type=undefined4      refs=4
   DAT_01e53388                    addr=01e53388    type=undefined4      refs=2
@@ -2490,9 +2384,6 @@ NO TYPE HINTS (1559)
   DAT_02dc9d54                    addr=02dc9d54    type=undefined4      refs=4  nearby: g_UseDirect3D at -12
   DAT_02dc9d58                    addr=02dc9d58    type=undefined4      refs=4  nearby: g_UseDirect3D at -8
   DAT_02dc9d5c                    addr=02dc9d5c    type=undefined4      refs=4  nearby: g_UseDirect3D at -4
-  DAT_02dc9d64                    addr=02dc9d64    type=undefined4      refs=3  nearby: g_UseDirect3D at +4
-  DAT_02dc9d70                    addr=02dc9d70    type=undefined4      refs=1  nearby: g_APIDLL_init at -4
-  DAT_02dc9e20                    addr=02dc9e20    type=undefined4      refs=2  nearby: INT_02dc9e24 at -4
   DAT_02dc9f24                    addr=02dc9f24    type=undefined4      refs=1  nearby: CVector3f_02dc9f34 at -16
   DAT_02dc9f28                    addr=02dc9f28    type=undefined4      refs=1  nearby: CVector3f_02dc9f34 at -12
   DAT_02dc9f2c                    addr=02dc9f2c    type=undefined4      refs=1  nearby: CVector3f_02dc9f34 at -8
@@ -2625,7 +2516,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
   DAT_01b4d738                    addr=01b4d738    refs=223   type=undefined4      likely=CDemonRenderer *
   DAT_01cae0e8                    addr=01cae0e8    refs=82    type=undefined4      likely=char *  nearby: g_CHealthItemActorType_01cae098.name_hash(+24)
-  DAT_005b7650                    addr=005b7650    refs=73    type=undefined4      nearby: g_BitsPerPixel(+44)
+  DAT_005b7650                    addr=005b7650    refs=73    type=undefined4      nearby: INT_005b7644(+12)
   DAT_02dd1184                    addr=02dd1184    refs=63    type=undefined4      likely=float  nearby: g_CTVBatActorType_02dd110c.name_hash(+64)
   DAT_01bcd070                    addr=01bcd070    refs=33    type=undefined4    
   DAT_005c502c                    addr=005c502c    refs=33    type=undefined4      nearby: g_BackBuffer(+28)
@@ -2641,31 +2532,17 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_006b0280                    addr=006b0280    refs=20    type=undefined4    
   DAT_02dc1b74                    addr=02dc1b74    refs=20    type=undefined4      likely=CSfxSlot *
   DAT_007f7370                    addr=007f7370    refs=19    type=undefined4    
-  DAT_01c039ec                    addr=01c039ec    refs=19    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+56)
-  DAT_01c039f0                    addr=01c039f0    refs=19    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+60)
   DAT_005c5038                    addr=005c5038    refs=19    type=undefined4      likely=int  nearby: g_BackBuffer(+40)
   DAT_005c503c                    addr=005c503c    refs=19    type=undefined4      likely=int  nearby: g_BackBuffer(+44)
   DAT_01cc9454                    addr=01cc9454    refs=18    type=undefined4    
-  DAT_01c039e8                    addr=01c039e8    refs=18    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+52)
   DAT_01bcd9b8                    addr=01bcd9b8    refs=18    type=undefined4    
   DAT_005acc90                    addr=005acc90    refs=17    type=undefined1      likely=byte  nearby: g_INT_005acc88(+8)
   DAT_01cc9450                    addr=01cc9450    refs=17    type=undefined4    
-  DAT_01c02580                    addr=01c02580    refs=17    type=undefined4      nearby: g_UseExternalRenderer(-20)
-  DAT_01c039b8                    addr=01c039b8    refs=17    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+4)
-  DAT_01c039f8                    addr=01c039f8    refs=17    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+68)
-  DAT_01c039fc                    addr=01c039fc    refs=17    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+72)
-  DAT_01c03a04                    addr=01c03a04    refs=17    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+80)
-  DAT_01c03a08                    addr=01c03a08    refs=17    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+84)
   DAT_005be220                    addr=005be220    refs=16    type=undefined4      nearby: s_none_005be228(-8)
-  DAT_01c039c0                    addr=01c039c0    refs=16    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+12)
-  DAT_01c039f4                    addr=01c039f4    refs=16    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+64)
-  DAT_01c03a00                    addr=01c03a00    refs=16    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+76)
   DAT_005c5024                    addr=005c5024    refs=16    type=undefined4      nearby: g_BackBuffer(+20)
-  DAT_01e52ef8                    addr=01e52ef8    refs=16    type=undefined4    
   DAT_02de5c30                    addr=02de5c30    refs=16    type=undefined4    
   DAT_006b0278                    addr=006b0278    refs=16    type=undefined4    
   DAT_02dc84bc                    addr=02dc84bc    refs=16    type=undefined4    
-  DAT_01c039bc                    addr=01c039bc    refs=15    type=undefined4      likely=float  nearby: g_SolidBlueComponent(+8)
   DAT_005c505c                    addr=005c505c    refs=15    type=undefined4      nearby: g_BackBuffer(+76)
   DAT_005c5060                    addr=005c5060    refs=15    type=undefined4      nearby: g_BackBuffer(+80)
   DAT_005c508c                    addr=005c508c    refs=15    type=undefined4      nearby: g_BackBuffer(+124)
@@ -2673,6 +2550,20 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00766c78                    addr=00766c78    refs=15    type=undefined4      likely=double
   DAT_01b4d76c                    addr=01b4d76c    refs=15    type=undefined4      likely=int *
   DAT_01b4d770                    addr=01b4d770    refs=15    type=undefined4    
+  DAT_005c50bc                    addr=005c50bc    refs=14    type=undefined4      nearby: g_BackBuffer(+172)
+  DAT_005c50c0                    addr=005c50c0    refs=14    type=undefined4      nearby: g_BackBuffer(+176)
+  DAT_01bd1d8c                    addr=01bd1d8c    refs=14    type=undefined4    
+  DAT_01bd1d90                    addr=01bd1d90    refs=14    type=undefined4    
+  DAT_01c039dc                    addr=01c039dc    refs=14    type=undefined4      nearby: g_TransformMatrix(-12)
+  DAT_005c5018                    addr=005c5018    refs=14    type=undefined4      likely=double  nearby: g_BackBuffer(+8)
+  DAT_02de2098                    addr=02de2098    refs=14    type=undefined4    
+  DAT_02dd1188                    addr=02dd1188    refs=13    type=undefined4      likely=float  nearby: g_CVehicleActorType_02dd1190.name_hash(-64)
+  DAT_02dd118c                    addr=02dd118c    refs=13    type=undefined4      likely=float  nearby: g_CVehicleActorType_02dd1190.name_hash(-60)
+  DAT_005c5040                    addr=005c5040    refs=13    type=undefined4      likely=int  nearby: g_BackBuffer(+48)
+  DAT_00b0e1fc                    addr=00b0e1fc    refs=12    type=undefined4    
+  DAT_005b64f8                    addr=005b64f8    refs=12    type=undefined4      likely=short
+  DAT_005c5064                    addr=005c5064    refs=12    type=undefined4      nearby: g_BackBuffer(+84)
+  DAT_005c5068                    addr=005c5068    refs=12    type=undefined4      nearby: g_BackBuffer(+88)
 
 --------------------------------------------------------------------------------
 IMMEDIATE CONSTANTS - NOT REAL GLOBALS (62)
@@ -2744,7 +2635,7 @@ They appear only as inline constant values.
   DAT_80000002                    value=0x80000002      refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (323)
+FILTERED OUT - INSIDE NAMED DATA (312)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -2906,12 +2797,6 @@ string, array, or struct and are not standalone globals.
   DAT_005beaa4                    inside g_WatcomStaticDestructorNode_005bea44
   DAT_005beba0                    inside g_WatcomStaticDestructorNode_005bea44
   DAT_005beba4                    inside g_WatcomStaticDestructorNode_005bea44
-  DAT_005bf618                    inside g_BlueMask32
-  DAT_005bf638                    inside g_BlueMask32
-  DAT_005bf658                    inside g_BlueMask32
-  DAT_005bf660                    inside g_BlueMask32
-  DAT_005bfe70                    inside g_BlueMask32
-  DAT_005c0668                    inside g_BlueMask32
   DAT_005c1794                    inside g_CharacterClassificationTable
   DAT_005c1795                    inside g_CharacterClassificationTable
   DAT_005c1ab8                    inside s_Stack_Overflow_005c1aa4
@@ -3044,11 +2929,6 @@ string, array, or struct and are not standalone globals.
   DAT_01cea408                    inside g_CNetGame_01cea280
   DAT_01cea40c                    inside g_CNetGame_01cea280
   DAT_02dc9620                    inside g_CStrList_02dc9610
-  DAT_02dc9e0c                    inside g_RendererDLLHandle
-  DAT_02dc9e10                    inside g_RendererDLLHandle
-  DAT_02dc9e14                    inside g_RendererDLLHandle
-  DAT_02dc9e18                    inside g_RendererDLLHandle
-  DAT_02dc9e1c                    inside g_RendererDLLHandle
   DAT_02dc9f50                    inside CVector3f_02dc9f40
   DAT_02dc9f54                    inside CVector3f_02dc9f40
   DAT_02dc9f58                    inside CVector3f_02dc9f40

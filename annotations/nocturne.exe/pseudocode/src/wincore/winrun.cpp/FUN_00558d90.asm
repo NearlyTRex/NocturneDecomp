@@ -18,7 +18,7 @@
 ;   void* PTR_SetCursor_0057546c = 00175a64
 ;   void* PTR_GetCurrentProcess_005754f8 = 00175cbe
 ;   void* PTR_SetThreadPriority_005755b0 = 00176034
-;   undefined4 DAT_005b7630
+;   int INT_005b7630 = 0x7f
 ;   undefined4 DAT_005c1660
 ;   int INT_005c1668 = -0x1
 ;   undefined4 DAT_01bd1d8c
@@ -180,7 +180,7 @@ section .text
         ;   XREF to: 00558ddf (UNCONDITIONAL_JUMP)  ; LAB_00558ddf
     MOV EAX,ESI                         ; 00558ede
         ;   Label: LAB_00558ede
-    MOV EDI,dword ptr [0x005b7630]      ; 00558ee0 | DAT_005b7630
+    MOV EDI,dword ptr [0x005b7630]      ; 00558ee0 | INT_005b7630
     SAR EAX,0x10                        ; 00558ee6
     AND EAX,EDI                         ; 00558ee9
     MOV byte ptr [EAX + 0x1c02598],0x1  ; 00558eeb | DAT_01c02598
@@ -394,7 +394,7 @@ section .text
         ;   XREF to: 00558ede (CONDITIONAL_JUMP)  ; LAB_00558ede
     MOV EAX,ESI                         ; 0055915c
         ;   Label: LAB_0055915c
-    MOV EDX,dword ptr [0x005b7630]      ; 0055915e | DAT_005b7630
+    MOV EDX,dword ptr [0x005b7630]      ; 0055915e | INT_005b7630
     SAR EAX,0x10                        ; 00559164
     AND EAX,EDX                         ; 00559167
     MOV dword ptr [EAX*0x4 + 0x2de20b0],0x1 ; 00559169

@@ -195,11 +195,25 @@ extern CVector3f CVector3f_02dc9f40;
 // HMODULE
 extern HMODULE g_RendererDLLHandle;
 
+// HWND
+extern HWND g_StoredWindowHandle;
+
 // STrainNoise[10]
 extern STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10];
 
 // int
 extern int g_UseDirect3D;
+extern int g_RendererHandle;
+extern int g_AGPTextureMode;
+extern int g_FrameBufferTestResult;
 extern int g_LoadedExternalDLLRenderer;
-extern int INT_02dc9e24;
+extern int g_FogColorRed;
+extern int g_FogColorGreen;
+extern int g_FogColorBlue;
+extern int g_ExternalBitsPerPixel;
+extern int g_SavedBitsPerPixel;
+extern int g_ExternalFrameLocked;
+
+// void*
+extern void* g_FrameBufferPtr;
 

@@ -504,7 +504,6 @@ static undefined4 DAT_005be7c4 = 0x00000001;
 static undefined4 DAT_005be7d4 = 0x00000001;
 static undefined4 DAT_005be978 = 0x00000003;
 static undefined4 DAT_005be97c = 0x00000007;
-static undefined4 DAT_005bf660 = 0x00FFFFFF;
 
 // undefined8 constants
 static undefined8 DAT_005b4790 = 0x0008000800080008;

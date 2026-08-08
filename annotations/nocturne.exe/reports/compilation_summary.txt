@@ -10,10 +10,10 @@ Failed: 4942
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44701
-  undeclared_identifier           6279
-  incompatible_types               436
-  type_error                       371
+  other                          44703
+  undeclared_identifier           6019
+  incompatible_types               437
+  type_error                       374
   format_error                     229
   cast_error                       219
   syntax_error                     111
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44701 errors)
+CATEGORY: other (44703 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_FUN_0042d130
@@ -88,7 +88,7 @@ CATEGORY: other (44701 errors)
   ... and 4912 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (6279 errors)
+CATEGORY: undeclared_identifier (6019 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -125,10 +125,6 @@ CATEGORY: undeclared_identifier (6279 errors)
     Line 62: use of undeclared identifier 'DAT_005ae458'...
   core_dlight.cpp_captureLightTextures_FUN_004504e0
     Line 14: use of undeclared identifier 'DAT_005ae488'; did you mean 'DAT_005ae4a8'?...
-  engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0
-    Line 70: use of undeclared identifier 'DAT_005ae70c'; did you mean 'DAT_005ae708'?...
-  engine_drender.cpp_FUN_00461720
-    Line 62: use of undeclared identifier 'DAT_005ae70c'; did you mean 'DAT_005ae708'?...
   core_fire.cpp_CSmokeParticle_render_FUN_00482950
     Line 46: use of undeclared identifier 'DAT_005b80f4'...
   core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70
@@ -151,11 +147,15 @@ CATEGORY: undeclared_identifier (6279 errors)
     Line 19: use of undeclared identifier 'DAT_005b8ec0'; did you mean 'DAT_005b5ec0'?...
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0
     Line 52: use of undeclared identifier 'DAT_005b9250'...
+  core_gore.cpp_CGore_loadAssets_FUN_004b04b0
+    Line 16: use of undeclared identifier 'DAT_005b96ec'; did you mean 'DAT_005b06ec'?...
+  core_gore.cpp_CBloodPool_render_FUN_004af340
+    Line 38: use of undeclared identifier 'DAT_005b9d4c'...
 
-  ... and 1536 more errors
+  ... and 1492 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (436 errors)
+CATEGORY: incompatible_types (437 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -219,10 +219,10 @@ CATEGORY: incompatible_types (436 errors)
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
     Line 39: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
 
-  ... and 220 more errors
+  ... and 216 more errors
 
 ====================================================================================================
-CATEGORY: type_error (371 errors)
+CATEGORY: type_error (374 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -286,7 +286,7 @@ CATEGORY: type_error (371 errors)
   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
     Line 36: invalid suffix '._0_4_' on floating constant...
 
-  ... and 79 more errors
+  ... and 80 more errors
 
 ====================================================================================================
 CATEGORY: format_error (229 errors)
@@ -418,7 +418,7 @@ CATEGORY: cast_error (219 errors)
   engine_special.cpp_initializeExternalRenderer_FUN_00530e60
     Line 24: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
   engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 37: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
+    Line 35: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
 
   ... and 70 more errors
 
@@ -514,9 +514,9 @@ CATEGORY: pointer_type (54 errors)
   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
     Line 55: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00408880
-    Line 44: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+    Line 41: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00408a60
-    Line 58: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+    Line 55: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
     Line 47: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340
@@ -532,13 +532,11 @@ CATEGORY: pointer_type (54 errors)
   engine_clipper.c_FUN_00434160
     Line 18: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_FUN_00434210
-    Line 103: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+    Line 101: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
-    Line 174: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+    Line 172: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_normalizeClippedVertices_FUN_00432150
     Line 20: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 360: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40
     Line 16: cannot initialize a parameter of type 'long' with an lvalue of type 'HANDLE' (ak...
   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
@@ -561,13 +559,13 @@ CATEGORY: argument_error (2 errors)
   engine_special.cpp_initializeExternalRenderer_FUN_00530e60
     Line 25: too many arguments to function call, expected 0, have 2...
   engine_special.cpp_loadExternalRenderer_FUN_00531780
-    Line 38: too many arguments to function call, expected 0, have 2...
+    Line 36: too many arguments to function call, expected 0, have 2...
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 5.02
+Average suspects in failed compilations: 4.93
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

@@ -8,7 +8,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 at 0045f24a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae708
+;   int INT_005ae708 = 0x1
 ;   undefined4 DAT_01b4d764
 ;   undefined4 DAT_01b4d768
 ;   uint*[1200] g_ZBufferScanlineArray
@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_00463fd4
     INC EAX                             ; 00463fd9
     MOV [0x01b4d764],EAX                ; 00463fda | DAT_01b4d764
-    CMP EAX,dword ptr [0x005ae708]      ; 00463fdf | DAT_005ae708
+    CMP EAX,dword ptr [0x005ae708]      ; 00463fdf | INT_005ae708
     JC 0x00463fc5                       ; 00463fe5
         ;   XREF to: 00463fc5 (CONDITIONAL_JUMP)  ; LAB_00463fc5
     MOV dword ptr [0x01b4d768],0x1      ; 00463fe7 | DAT_01b4d768

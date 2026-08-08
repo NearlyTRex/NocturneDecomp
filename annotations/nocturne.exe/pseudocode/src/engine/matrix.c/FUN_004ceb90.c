@@ -18,8 +18,8 @@ void engine_matrix_c_FUN_004ceb90(void)
     g_CurrentLineNumber = 1494;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Matrix unbalance4");
   }
-  _DAT_01c039b8 = *(uint *)(_DAT_01cc5174 * 4 + 0x1cc52e0);
-  _DAT_01c039bc = *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5308);
-  _DAT_01c039c0 = *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5330);
+  g_RelativeX = *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0);
+  g_RelativeY = *(int *)(_DAT_01cc5174 * 4 + 0x1cc5308);
+  g_RelativeZ = *(int *)(_DAT_01cc5174 * 4 + 0x1cc5330);
   return;
 }

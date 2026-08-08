@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004b6595) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0(void)
 
@@ -47,10 +46,11 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004b63f0(void)
     g_BlueMask16.u32[0] = uVar9 << (g_BlueBitPosition.bytes[0] & 0x1f);
     g_RedMask32.u32[0] = (uVar4 << (g_RedDitherShift.bytes[0] & 0x1f)) << 0x10;
     g_GreenMask32.u32[0] = (uVar7 << (g_GreenDitherShift.bytes[0] & 0x1f)) << 8;
-    _DAT_005bf658 = g_BlueDitherShift;
-    _DAT_005bf618 = g_RedDitherShift.dword + g_GreenDitherShift.dword + g_BlueDitherShift.dword;
+    g_BlueBitShift.b32[0] = g_BlueDitherShift;
+    g_TotalDitherShift.u32[0] =
+         g_RedDitherShift.dword + g_GreenDitherShift.dword + g_BlueDitherShift.dword;
     g_BlueMask32.u32[0] = uVar9 << (g_BlueDitherShift.bytes[0] & 0x1f);
-    _DAT_005bf638 = g_GreenDitherShift.dword + g_BlueDitherShift.dword;
+    g_GreenBlueDitherShift.u32[0] = g_GreenDitherShift.dword + g_BlueDitherShift.dword;
   }
   if (g_BitsPerPixel == 0x20) {
     iVar6 = 0;

@@ -12,10 +12,10 @@ void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
 
 {
   engine_matrix_c_matrixPush_FUN_004cdac0();
-  _DAT_01c039b8 = -_DAT_01c039b8;
+  g_RelativeX = -g_RelativeX;
   _DAT_01c039dc = -_DAT_01c039dc;
-  _DAT_01c039e8 = -_DAT_01c039e8;
-  _DAT_01c039ec = -_DAT_01c039ec;
-  _DAT_01c039f0 = -_DAT_01c039f0;
+  g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;
+  g_TransformMatrix.m[0].y = -g_TransformMatrix.m[0].y;
+  g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
   return;
 }

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c00020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_01c00024'; did you mean 'DAT_02DF0024'?"
       }
     ],
     "success": false,
@@ -74,20 +62,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 113,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 42,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [],
   "function": {
@@ -112,19 +98,19 @@
     },
     {
       "addr": "01c00020",
-      "name": "DAT_01c00020",
-      "type": "undefined4",
+      "name": "g_CurrentPalette",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
       "addr": "01c00024",
-      "name": "DAT_01c00024",
-      "type": "undefined4",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
       "value": null
     },
     {
       "addr": "01c00028",
-      "name": "DAT_01c00028",
+      "name": "g_Hardware32BitPalette[1]",
       "type": "undefined4",
       "value": null
     },
@@ -246,16 +232,24 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SRGBColorPalette *)((int)rgb_palette_data",
+      "severity": "moderate",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 22,
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
       "match": "(SRGBColorPalette *)((int)rgb_palette_data",
       "severity": "moderate",
       "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
@@ -264,18 +258,10 @@
     {
       "description": "Complex pointer cast",
       "line": 39,
-      "match": "(SRGBColorPalette *)((int)rgb_palette_data",
+      "match": "(uint *)((int)g_Hardware32BitPalette",
       "severity": "moderate",
-      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c00024 + iVar4) =",
-      "type": "undefined_data"
     }
   ]
 }

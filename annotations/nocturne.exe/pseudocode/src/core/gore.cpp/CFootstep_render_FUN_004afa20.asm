@@ -108,7 +108,7 @@ section .text
     PUSH EDI                            ; 004afb10 | DAT_005c5014 | DAT_005c5044
     ADD ESI,0xc                         ; 004afb11
     CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004afb14
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformPoint_FUN_00530a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004afb19
     ADD EDI,0x30                        ; 004afb1c
     CMP ESI,EBP                         ; 004afb1f

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
-;   undefined4 DAT_01c00024
+;   uint[256] g_Hardware32BitPalette
 ;   int g_ActiveRenderColor
 ;   uint[1600] g_ReciprocalLookupTable
 ;
@@ -50,7 +50,7 @@ section .text
     MOV ESI,dword ptr [ESI + 0x28]      ; 00463c88
     XOR EAX,EAX                         ; 00463c8b
     MOV AL,[0x01c00c70]                 ; 00463c8d | g_ActiveRenderColor
-    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 00463c92 | DAT_01c00024
+    MOV EAX,dword ptr [EAX*0x4 + 0x1c00024] ; 00463c92 | g_Hardware32BitPalette
     SUB ECX,0x4                         ; 00463c99
         ;   Label: LAB_00463c99
     JL 0x00463d6e                       ; 00463c9c

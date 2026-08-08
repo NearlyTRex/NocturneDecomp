@@ -12,7 +12,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
 
 {
   CDemonRenderer *pCVar1;
-  int iVar2;
+  uchar *puVar2;
   uint corner_index;
   CVector3i *pCVar3;
   CVector3i local_b0 [8];
@@ -50,12 +50,12 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(CBoundingBox3D *thi
   local_10 = (int)ROUND((this_ptr->max).x * _DAT_0059aa80);
   local_c = (int)ROUND((this_ptr->max).y * _DAT_0059aa80);
   local_8.i = (int)ROUND((this_ptr->max).z * _DAT_0059aa80);
-  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
-  ;
+  puVar2 = (uchar *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
+                              (g_CDemonRenderer_PTR_005ae704);
   pCVar1 = g_CDemonRenderer_PTR_005ae704;
-  if (iVar2 == 0) {
-    _DAT_01c02580 = iVar2;
-    _DAT_01c02584 = iVar2;
+  if (puVar2 == (uchar *)0x0) {
+    g_CurrentTextureData = puVar2;
+    g_CurrentTextureOpacityData = puVar2;
     g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0x7fff;
     pCVar1->vertex_buffer_ptr->g = 0;
     pCVar1->vertex_buffer_ptr->b = 0;

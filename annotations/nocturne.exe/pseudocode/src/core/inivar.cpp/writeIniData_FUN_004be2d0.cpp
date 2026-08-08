@@ -22,7 +22,8 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80
             (&local_210,"gameBPP",g_CGame_PTR_005b9354->game_bpp);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(&local_210,"useDirect3D",g_UseDirect3D);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(&local_210,"useAGPFlag",_DAT_02dc9d6c);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(&local_210,"useAGPFlag",g_AGPTextureMode)
+  ;
   engine_ini_cpp_CIniFile_setString_FUN_004bd9a0
             (&local_210,"rendererDLLPath","trid3d.dll");
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80

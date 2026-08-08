@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 90,
-        "message": "use of undeclared identifier 'DAT_01c00024'; did you mean 'DAT_02DF0024'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 91,
-        "message": "use of undeclared identifier 'DAT_01c00024'; did you mean 'DAT_02DF0024'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 92,
-        "message": "use of undeclared identifier 'DAT_01c00024'; did you mean 'DAT_02DF0024'?"
       }
     ],
     "success": false,
@@ -80,18 +62,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 367,
-    "complexity_score": 621,
+    "complexity_score": 586,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 116,
-    "suspect_count": 48,
+    "suspect_count": 45,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 483
@@ -145,8 +126,8 @@
     },
     {
       "addr": "01c00024",
-      "name": "DAT_01c00024",
-      "type": "undefined4",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
       "value": null
     },
     {
@@ -658,7 +639,7 @@
       "line": 74,
       "match": "param_4",
       "severity": "mild",
-      "text": "uVar4 = *(ushort *)(param_4 * 2 + 0x1c00424);",
+      "text": "uVar4 = g_Hardware16BitPalette[param_4];",
       "type": "unnamed_param"
     },
     {
@@ -666,48 +647,24 @@
       "line": 83,
       "match": "param_4",
       "severity": "mild",
-      "text": "uStack_50 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_RedBitPosition.bytes[0] & 0x1f);",
+      "text": "uStack_50 = g_Hardware32BitPalette[param_4] >> (g_RedBitPosition.bytes[0] & 0x1f);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "uStack_50 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_RedBitPosition.bytes[0] & 0x1f);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 84,
       "match": "param_4",
       "severity": "mild",
-      "text": "uVar17 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_GreenBitPosition.bytes[0] & 0x1f);",
+      "text": "uVar17 = g_Hardware32BitPalette[param_4] >> (g_GreenBitPosition.bytes[0] & 0x1f);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "uVar17 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_GreenBitPosition.bytes[0] & 0x1f);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 85,
       "match": "param_4",
       "severity": "mild",
-      "text": "uVar13 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_BlueBitPosition.bytes[0] & 0x1f);",
+      "text": "uVar13 = g_Hardware32BitPalette[param_4] >> (g_BlueBitPosition.bytes[0] & 0x1f);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_01c00024",
-      "severity": "mild",
-      "text": "uVar13 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_BlueBitPosition.bytes[0] & 0x1f);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

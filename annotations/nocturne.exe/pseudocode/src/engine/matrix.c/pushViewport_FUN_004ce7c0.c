@@ -11,9 +11,9 @@
 void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height)
 
 {
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc549c) = _DAT_01c039c4;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc54c4) = _DAT_01c039c8;
-  *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc54ec) = _DAT_01c039cc;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc549c) = g_CameraOriginX;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc54c4) = g_CameraOriginY;
+  *(int *)(_DAT_01cc53d0 * 4 + 0x1cc54ec) = g_CameraOriginZ;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5514) = _DAT_01c039d0;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc553c) = _DAT_01c039d4;
   *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc5564) = _DAT_01c039d8;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_00532440(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 
 {
@@ -17,6 +15,7 @@ int __cdecl engine_special_cpp_updateTextureFromPalette_FUN_00532440(SMRGLTextur
     return 0;
   }
   iVar1 = (*g_APIDLL_updateTexture)
-                    (tex,DAT_005b762c,_DAT_01c02580,(uchar *)palette_data,_DAT_01c02584);
+                    (tex,g_CurrentTextureDimension,g_CurrentTextureData,(uchar *)palette_data,
+                     g_CurrentTextureOpacityData);
   return iVar1;
 }

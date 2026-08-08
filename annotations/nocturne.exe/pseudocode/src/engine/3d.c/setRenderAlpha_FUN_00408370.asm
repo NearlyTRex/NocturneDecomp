@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005acab4
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 DAT_006b0284
 ;
 ; *****************************************************************************
@@ -50,7 +50,7 @@ section .text
     XOR EAX,0xffffff                    ; 0040839a
     MOV dword ptr [0x005acab4],ECX      ; 0040839f | DAT_005acab4
     MOV [0x006b0284],EAX                ; 004083a5 | DAT_006b0284
-    MOV dword ptr [0x005b763c],EDX      ; 004083aa | DAT_005b763c
+    MOV dword ptr [0x005b763c],EDX      ; 004083aa | g_CurrentAlphaValue
     RET                                 ; 004083b0
     XOR EDX,EDX                         ; 004083b1
         ;   Label: LAB_004083b1

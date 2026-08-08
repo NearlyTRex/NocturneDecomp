@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)
 
 {
@@ -16,7 +14,7 @@ int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
-  g_BitsPerPixel = _DAT_02dc9e20;
+  g_BitsPerPixel = g_SavedBitsPerPixel;
   iVar1 = (*g_APIDLL_unlockFrame)();
   return iVar1;
 }

@@ -44,7 +44,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a18f0
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   undefined4 DAT_005be680
 ;   undefined4 DAT_01b4d738
@@ -90,7 +90,7 @@ section .text
     CMP ECX,0x2                         ; 0050d93e
     JNZ 0x0050dcd2                      ; 0050d941
         ;   XREF to: 0050dcd2 (CONDITIONAL_JUMP)  ; LAB_0050dcd2
-    MOV EAX,[0x005b763c]                ; 0050d947 | DAT_005b763c
+    MOV EAX,[0x005b763c]                ; 0050d947 | g_CurrentAlphaValue
     SHL EAX,0x8                         ; 0050d94c
     MOV dword ptr [EBP + 0x20],EAX      ; 0050d94f
     MOV EAX,[0x005ae704]                ; 0050d952 | g_CDemonRenderer_PTR_005ae704

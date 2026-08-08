@@ -38,10 +38,10 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,
           (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar10;
-  _DAT_01c039f0 =
+  g_TransformMatrix.m[0].z =
        (uint)((longlong)iVar7 * (longlong)iVar10) >> 0x10 |
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar10) >> 0x20) << 0x10;
-  _DAT_01c039fc = -iVar6;
+  g_TransformMatrix.m[1].z = -iVar6;
   lVar3 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
@@ -50,7 +50,7 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004ccdc0(int pitch,int yaw,
           (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
           (longlong)iVar11;
-  _DAT_01c03a08 =
+  g_TransformMatrix.m[2].z =
        (uint)((longlong)iVar7 * (longlong)iVar11) >> 0x10 |
        (int)((ulonglong)((longlong)iVar7 * (longlong)iVar11) >> 0x20) << 0x10;
   if (199 < (uint)g_WindowHeight) {
@@ -86,38 +86,32 @@ LAB_004ccf3c:
           (((g_ClipBottom - g_ClipTop) * 0x1e0) / g_WindowHeight);
   iVar12 = iVar6 >> 0x1f;
   iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
-  _DAT_01c039e8 =
-       (uint)
-       (((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_005b7648);
-  _DAT_01c039ec =
-       (uint)
-       (((longlong)
-         (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
-              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) * (longlong)iVar6) /
-       (longlong)DAT_005b7648);
-  _DAT_01c039f4 =
-       (uint)
-       (((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_005b7648);
-  _DAT_01c039f8 =
-       (uint)
-       (((longlong)
-         (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_005b7648);
-  _DAT_01c03a00 =
-       (uint)
-       (((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
-        (longlong)iVar6) / (longlong)DAT_005b7648);
-  _DAT_01c03a04 =
-       (uint)
-       (((longlong)
-         (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
-              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) * (longlong)iVar6) /
-       (longlong)DAT_005b7648);
+  g_TransformMatrix.m[0].x =
+       (int)(((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
+  g_TransformMatrix.m[0].y =
+       (int)(((longlong)
+              (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
+                   ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
+  g_TransformMatrix.m[1].x =
+       (int)(((longlong)(int)((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
+  g_TransformMatrix.m[1].y =
+       (int)(((longlong)
+              (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
+                   (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
+  g_TransformMatrix.m[2].x =
+       (int)(((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
+  g_TransformMatrix.m[2].y =
+       (int)(((longlong)
+              (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
+                   ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) *
+             (longlong)iVar6) / (longlong)DAT_005b7648);
   engine_matrix_c_invertTransformMatrix_FUN_004ccae0();
   return;
 }

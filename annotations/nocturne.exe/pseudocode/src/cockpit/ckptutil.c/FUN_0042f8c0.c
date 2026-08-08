@@ -78,7 +78,7 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
       uVar12 = *puVar16 >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     if (g_BitsPerPixel == 0x10) {
-      uVar4 = *(ushort *)(param_4 * 2 + 0x1c00424);
+      uVar4 = g_Hardware16BitPalette[param_4];
       uStack_50 = (uint)(uVar4 >> (g_RedBitPosition.bytes[0] & 0x1f)) <<
                   (g_RedDitherShift.bytes[0] & 0x1f);
       uVar17 = (uint)(uVar4 >> (g_GreenBitPosition.bytes[0] & 0x1f)) <<
@@ -87,9 +87,9 @@ void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int p
                (g_BlueDitherShift.bytes[0] & 0x1f);
     }
     else {
-      uStack_50 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_RedBitPosition.bytes[0] & 0x1f);
-      uVar17 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_GreenBitPosition.bytes[0] & 0x1f);
-      uVar13 = *(uint *)(&DAT_01c00024 + param_4 * 4) >> (g_BlueBitPosition.bytes[0] & 0x1f);
+      uStack_50 = g_Hardware32BitPalette[param_4] >> (g_RedBitPosition.bytes[0] & 0x1f);
+      uVar17 = g_Hardware32BitPalette[param_4] >> (g_GreenBitPosition.bytes[0] & 0x1f);
+      uVar13 = g_Hardware32BitPalette[param_4] >> (g_BlueBitPosition.bytes[0] & 0x1f);
     }
     uStack_50 = uStack_50 & 0xff;
     fVar6 = 1.0 - param_3;

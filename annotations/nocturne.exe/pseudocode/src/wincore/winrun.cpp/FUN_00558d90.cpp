@@ -146,7 +146,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_00558d90(HWND hWnd,UINT message,WPARAM 
     if (message < 0x100) goto LAB_00558ddf;
     if (message < 0x101) {
 LAB_00558ede:
-      uVar3 = lParam >> 0x10 & DAT_005b7630;
+      uVar3 = lParam >> 0x10 & INT_005b7630;
       (&DAT_01c02598)[uVar3] = 1;
       if (uVar3 == 0x3e) {
         return 0;
@@ -165,7 +165,7 @@ LAB_00558ede:
     if (message < 0x105) goto LAB_00558ede;
     if (message != 0x105) goto LAB_00558ddf;
   }
-  *(uint *)((lParam >> 0x10 & DAT_005b7630) * 4 + 0x2de20b0) = 1;
+  *(uint *)((lParam >> 0x10 & INT_005b7630) * 4 + 0x2de20b0) = 1;
 LAB_00558ddf:
   LVar2 = DefWindowProcA((HWND)hWnd,message,wParam,lParam);
   return LVar2;

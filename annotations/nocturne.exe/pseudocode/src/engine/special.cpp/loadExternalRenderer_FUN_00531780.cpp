@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_handle)
 
 {
@@ -20,10 +18,10 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
   
   HVar1 = window_handle;
   if (window_handle == 0) {
-    HVar1 = _DAT_02dc9e18;
+    HVar1 = g_StoredWindowHandle;
   }
-  _DAT_02dc9e18 = HVar1;
-  HVar1 = _DAT_02dc9e18;
+  g_StoredWindowHandle = HVar1;
+  HVar1 = g_StoredWindowHandle;
   if (g_UseDirect3D == 0) {
     return 0;
   }
@@ -355,25 +353,25 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
       CStack_9c.blue_bit_position = (int *)&g_BlueBitPosition;
       CStack_9c.blue_scale_factor = &g_BlueScaleFactor;
       CStack_9c.blue_dither_shift = (int *)&g_BlueDitherShift;
-      CStack_9c.blend_mode = (int *)&DAT_01c03998;
+      CStack_9c.blend_mode = &g_BlendMode;
       CStack_9c.current_lighting = &g_CurrentLightingValue;
-      CStack_9c.current_alpha = &DAT_005b763c;
+      CStack_9c.current_alpha = &g_CurrentAlphaValue;
       CStack_9c.console_text_color = &g_ActiveRenderColor;
       CStack_9c.clip_left = &g_ClipLeft;
       CStack_9c.clip_top = &g_ClipTop;
       CStack_9c.clip_right = &g_ClipRight;
       CStack_9c.clip_bottom = &g_ClipBottom;
-      CStack_9c.texture_filtering = (int *)&DAT_005b7628;
-      CStack_9c.texture_dimension = &DAT_005b762c;
-      CStack_9c.texture_bits = (int *)&DAT_01c02590;
-      CStack_9c.system_memory_size = (int *)&DAT_005c0f8c;
-      CStack_9c.video_memory_size = (int *)&DAT_005c0f84;
-      CStack_9c.max_texture_size = (int *)&DAT_005c0f88;
-      CStack_9c.frame_buffer_ptr = (void **)0x2dc9d68;
-      CStack_9c.system_initialized = (int *)&DAT_005c0f80;
-      CStack_9c.agp_texture_mode = (int *)&DAT_02dc9d6c;
-      CStack_9c.processor_type = (int *)&DAT_01c0399c;
-      CStack_9c.rendering_quality = (int *)&DAT_005b7640;
+      CStack_9c.texture_filtering = &g_TextureFilteringEnabled;
+      CStack_9c.texture_dimension = &g_CurrentTextureDimension;
+      CStack_9c.texture_bits = &g_TextureBits;
+      CStack_9c.full_screen_quad_depth = &g_FullScreenQuadDepth;
+      CStack_9c.video_memory_size = &g_VideoMemorySize;
+      CStack_9c.max_texture_size = &g_MaxTextureSize;
+      CStack_9c.frame_buffer_ptr = &g_FrameBufferPtr;
+      CStack_9c.system_initialized = &g_SystemInitialized;
+      CStack_9c.agp_texture_mode = &g_AGPTextureMode;
+      CStack_9c.processor_type = &g_ProcessorType;
+      CStack_9c.rendering_quality = &g_RenderingQuality;
       CStack_9c.sizeof1 = 0x30;
       CStack_9c.sizeof2 = 0x2c;
       CStack_9c.sizeof3 = 0x2c;
@@ -387,7 +385,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
         acStack_3c2c[1] = '\"';
         acStack_3c2c[2] = 'S';
         acStack_3c2c[3] = '\0';
-        engine_special_cpp_selectCard_FUN_00532d00(_DAT_02dc9d64);
+        engine_special_cpp_selectCard_FUN_00532d00(g_RendererHandle);
         return 1;
       }
       g_UseDirect3D = iVar3;

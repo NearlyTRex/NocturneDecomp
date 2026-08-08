@@ -29,10 +29,10 @@
 ;   undefined4 DAT_01c039d0
 ;   undefined4 DAT_01c039d4
 ;   undefined4 DAT_01c039d8
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
-;   undefined4 DAT_01c039f4
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
+;   undefined4 g_TransformMatrix.m[1].x
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -83,31 +83,31 @@ section .text
     FXCH ST6                            ; 00460826
     CALL crt_math.c_round_FUN_00563a30  ; 00460828
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01c039e8]        ; 0046082d | DAT_01c039e8
+    FISTP dword ptr [0x01c039e8]        ; 0046082d | g_TransformMatrix
     FLD float ptr [EBX + 0x10]          ; 00460833
     FMUL double ptr [0x0057dc1d]        ; 00460836 | DOUBLE_0057dc1d
     FXCH ST5                            ; 0046083c
     CALL crt_math.c_round_FUN_00563a30  ; 0046083e
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01c039ec]        ; 00460843 | DAT_01c039ec
+    FISTP dword ptr [0x01c039ec]        ; 00460843 | g_TransformMatrix.m[0].y
     FLD float ptr [EBX + 0x14]          ; 00460849
     FMUL double ptr [0x0057dc1d]        ; 0046084c | DOUBLE_0057dc1d
     FXCH ST4                            ; 00460852
     CALL crt_math.c_round_FUN_00563a30  ; 00460854
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01c039f0]        ; 00460859 | DAT_01c039f0
+    FISTP dword ptr [0x01c039f0]        ; 00460859 | g_TransformMatrix.m[0].z
     FLD float ptr [EBX + 0x18]          ; 0046085f
     FMUL double ptr [0x0057dc1d]        ; 00460862 | DOUBLE_0057dc1d
     FXCH ST3                            ; 00460868
     CALL crt_math.c_round_FUN_00563a30  ; 0046086a
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01c039f4]        ; 0046086f | DAT_01c039f4
+    FISTP dword ptr [0x01c039f4]        ; 0046086f | g_TransformMatrix.m[1].x
     FLD float ptr [EBX + 0x1c]          ; 00460875
     FMUL double ptr [0x0057dc1d]        ; 00460878 | DOUBLE_0057dc1d
     FXCH ST5                            ; 0046087e
     CALL crt_math.c_round_FUN_00563a30  ; 00460880
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x01c039f8]        ; 00460885 | DAT_01c039f8
+    FISTP dword ptr [0x01c039f8]        ; 00460885 | g_TransformMatrix.m[1].y
     FLD float ptr [EBX + 0x20]          ; 0046088b
     FMUL double ptr [0x0057dc1d]        ; 0046088e | DOUBLE_0057dc1d
     MOV EDX,0x10000                     ; 00460894
@@ -126,12 +126,12 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 004608b8
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH ST3                            ; 004608bd
-    FISTP dword ptr [0x01c039fc]        ; 004608bf | DAT_01c039fc
+    FISTP dword ptr [0x01c039fc]        ; 004608bf | g_TransformMatrix.m[1].z
     FXCH ST4                            ; 004608c5
-    FISTP dword ptr [0x01c03a00]        ; 004608c7 | DAT_01c03a00
+    FISTP dword ptr [0x01c03a00]        ; 004608c7 | g_TransformMatrix.m[2].x
     FXCH ST2                            ; 004608cd
-    FISTP dword ptr [0x01c03a04]        ; 004608cf | DAT_01c03a04
-    FISTP dword ptr [0x01c03a08]        ; 004608d5 | DAT_01c03a08
+    FISTP dword ptr [0x01c03a04]        ; 004608cf | g_TransformMatrix.m[2].y
+    FISTP dword ptr [0x01c03a08]        ; 004608d5 | g_TransformMatrix.m[2].z
     FXCH                                ; 004608db
     CALL crt_math.c_round_FUN_00563a30  ; 004608dd
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
@@ -167,36 +167,36 @@ section .text
     IMUL EDX                            ; 00460943
     IDIV EBX                            ; 00460945
     MOV dword ptr [ESI + 0x28],EAX      ; 00460947
-    MOV EDX,dword ptr [0x01c039e8]      ; 0046094a | DAT_01c039e8
+    MOV EDX,dword ptr [0x01c039e8]      ; 0046094a | g_TransformMatrix
     MOV EAX,dword ptr [ESI + 0x24]      ; 00460950
     IMUL EDX                            ; 00460953
     SHRD EAX,EDX,0x10                   ; 00460955
-    MOV [0x01c039e8],EAX                ; 00460959 | DAT_01c039e8
-    MOV EDX,dword ptr [0x01c039f4]      ; 0046095e | DAT_01c039f4
+    MOV [0x01c039e8],EAX                ; 00460959 | g_TransformMatrix
+    MOV EDX,dword ptr [0x01c039f4]      ; 0046095e | g_TransformMatrix.m[1].x
     MOV EAX,dword ptr [ESI + 0x24]      ; 00460964
     IMUL EDX                            ; 00460967
     SHRD EAX,EDX,0x10                   ; 00460969
-    MOV EDX,dword ptr [0x01c03a00]      ; 0046096d | DAT_01c03a00
-    MOV [0x01c039f4],EAX                ; 00460973 | DAT_01c039f4
+    MOV EDX,dword ptr [0x01c03a00]      ; 0046096d | g_TransformMatrix.m[2].x
+    MOV [0x01c039f4],EAX                ; 00460973 | g_TransformMatrix.m[1].x
     MOV EAX,dword ptr [ESI + 0x24]      ; 00460978
     IMUL EDX                            ; 0046097b
     SHRD EAX,EDX,0x10                   ; 0046097d
-    MOV EDX,dword ptr [0x01c039ec]      ; 00460981 | DAT_01c039ec
-    MOV [0x01c03a00],EAX                ; 00460987 | DAT_01c03a00
+    MOV EDX,dword ptr [0x01c039ec]      ; 00460981 | g_TransformMatrix.m[0].y
+    MOV [0x01c03a00],EAX                ; 00460987 | g_TransformMatrix.m[2].x
     MOV EAX,dword ptr [ESI + 0x28]      ; 0046098c
     IMUL EDX                            ; 0046098f
     SHRD EAX,EDX,0x10                   ; 00460991
-    MOV EDX,dword ptr [0x01c039f8]      ; 00460995 | DAT_01c039f8
-    MOV [0x01c039ec],EAX                ; 0046099b | DAT_01c039ec
+    MOV EDX,dword ptr [0x01c039f8]      ; 00460995 | g_TransformMatrix.m[1].y
+    MOV [0x01c039ec],EAX                ; 0046099b | g_TransformMatrix.m[0].y
     MOV EAX,dword ptr [ESI + 0x28]      ; 004609a0
     IMUL EDX                            ; 004609a3
     SHRD EAX,EDX,0x10                   ; 004609a5
-    MOV EDX,dword ptr [0x01c03a04]      ; 004609a9 | DAT_01c03a04
-    MOV [0x01c039f8],EAX                ; 004609af | DAT_01c039f8
+    MOV EDX,dword ptr [0x01c03a04]      ; 004609a9 | g_TransformMatrix.m[2].y
+    MOV [0x01c039f8],EAX                ; 004609af | g_TransformMatrix.m[1].y
     MOV EAX,dword ptr [ESI + 0x28]      ; 004609b4
     IMUL EDX                            ; 004609b7
     SHRD EAX,EDX,0x10                   ; 004609b9
-    MOV [0x01c03a04],EAX                ; 004609bd | DAT_01c03a04
+    MOV [0x01c03a04],EAX                ; 004609bd | g_TransformMatrix.m[2].y
     CALL engine_matrix.c_invertTransformMatrix_FUN_004ccae0 ; 004609c2
         ;   XREF to: 004ccae0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_invertTransformMatrix_FUN_004ccae0()
     MOV ESP,EBP                         ; 004609c7

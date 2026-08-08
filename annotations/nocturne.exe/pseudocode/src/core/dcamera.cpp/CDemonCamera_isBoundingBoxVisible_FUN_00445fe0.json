@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01c039e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_01c039ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 96,
-        "message": "use of undeclared identifier '_DAT_01c039f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_01c039f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 104,
-        "message": "use of undeclared identifier '_DAT_01c039f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 108,
-        "message": "use of undeclared identifier '_DAT_01c039fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 110,
-        "message": "use of undeclared identifier '_DAT_01c03a04'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 111,
-        "message": "use of undeclared identifier '_DAT_01c039b8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 112,
-        "message": "use of undeclared identifier '_DAT_01c03a08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 113,
-        "message": "use of undeclared identifier '_DAT_01c039bc'"
       }
     ],
     "success": false,
@@ -122,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 256,
+    "complexity_score": 240,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
-    "suspect_count": 3,
+    "pseudocode_lines": 210,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 573
+    "total_lines": 572
   },
   "cross_references": [
     {
@@ -216,73 +155,73 @@
     },
     {
       "addr": "01c039b8",
-      "name": "DAT_01c039b8",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039bc",
-      "name": "DAT_01c039bc",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039c0",
-      "name": "DAT_01c039c0",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e8",
-      "name": "DAT_01c039e8",
-      "type": "undefined4",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01c039ec",
-      "name": "DAT_01c039ec",
+      "name": "g_TransformMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f0",
-      "name": "DAT_01c039f0",
+      "name": "g_TransformMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f4",
-      "name": "DAT_01c039f4",
+      "name": "g_TransformMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f8",
-      "name": "DAT_01c039f8",
+      "name": "g_TransformMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039fc",
-      "name": "DAT_01c039fc",
+      "name": "g_TransformMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a00",
-      "name": "DAT_01c03a00",
+      "name": "g_TransformMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a04",
-      "name": "DAT_01c03a04",
+      "name": "g_TransformMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a08",
-      "name": "DAT_01c03a08",
+      "name": "g_TransformMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -911,16 +850,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Pointer value `g_CDemonRenderer_PTR_005ae704` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 76,
       "match": "(int)g_CDemonRenderer_PTR_005ae704",
       "severity": "moderate",
       "text": "CStack_13c.z = (int)g_CDemonRenderer_PTR_005ae704;",
@@ -928,7 +859,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 203,
+      "line": 201,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",

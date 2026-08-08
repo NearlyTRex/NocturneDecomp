@@ -69,7 +69,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b763c
+;   int g_CurrentAlphaValue = 0xff
 ;   _MMX_INTEGER g_RedMask16
 ;   _MMX_INTEGER g_GreenMask16
 ;   _MMX_INTEGER g_BlueMask16
@@ -550,7 +550,7 @@ section .text
     LEA EAX,[ECX + ECX*0x2]             ; 00491c18
     ADD EAX,ESI                         ; 00491c1b
     MOV AL,byte ptr [EAX + 0x164]       ; 00491c1d
-    MOV EDX,dword ptr [0x005b763c]      ; 00491c23 | DAT_005b763c
+    MOV EDX,dword ptr [0x005b763c]      ; 00491c23 | g_CurrentAlphaValue
     AND EAX,0xff                        ; 00491c29
     IMUL EDX,EAX                        ; 00491c2e
     MOV EAX,EDX                         ; 00491c31
@@ -788,7 +788,7 @@ section .text
     LEA EAX,[EAX + EAX*0x2]             ; 00491f73
     ADD EAX,ECX                         ; 00491f76
     MOV AL,byte ptr [EAX + 0x164]       ; 00491f78
-    MOV EDX,dword ptr [0x005b763c]      ; 00491f7e | DAT_005b763c
+    MOV EDX,dword ptr [0x005b763c]      ; 00491f7e | g_CurrentAlphaValue
     AND EAX,0xff                        ; 00491f84
     IMUL EDX,EAX                        ; 00491f89
     MOV EAX,EDX                         ; 00491f8c
@@ -1023,7 +1023,7 @@ section .text
     LEA EAX,[EAX + EAX*0x2]             ; 004922b9
     ADD EAX,ECX                         ; 004922bc
     MOV AL,byte ptr [EAX + 0x164]       ; 004922be
-    MOV EDX,dword ptr [0x005b763c]      ; 004922c4 | DAT_005b763c
+    MOV EDX,dword ptr [0x005b763c]      ; 004922c4 | g_CurrentAlphaValue
     AND EAX,0xff                        ; 004922ca
     IMUL EDX,EAX                        ; 004922cf
     MOV EAX,EDX                         ; 004922d2
@@ -1253,7 +1253,7 @@ section .text
     LEA EAX,[EAX + EAX*0x2]             ; 004925fc
     ADD EAX,ECX                         ; 004925ff
     MOV AL,byte ptr [EAX + 0x164]       ; 00492601
-    MOV EDX,dword ptr [0x005b763c]      ; 00492607 | DAT_005b763c
+    MOV EDX,dword ptr [0x005b763c]      ; 00492607 | g_CurrentAlphaValue
     AND EAX,0xff                        ; 0049260d
     IMUL EDX,EAX                        ; 00492612
     MOV EAX,EDX                         ; 00492615

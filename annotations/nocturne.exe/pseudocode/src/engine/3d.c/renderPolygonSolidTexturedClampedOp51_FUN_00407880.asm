@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_005b762c
+;   int g_CurrentTextureDimension = 0x100
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_006b029c
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 004079e4 (CONDITIONAL_JUMP)  ; LAB_004079e4
     MOV EAX,dword ptr [ECX]             ; 00407904
     MOV dword ptr [EBX + 0x6b029c],EAX  ; 00407906 | DAT_006b029c | DAT_006b02a0
-    MOV EBP,dword ptr [0x005b762c]      ; 0040790c | DAT_005b762c
+    MOV EBP,dword ptr [0x005b762c]      ; 0040790c | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00407912
     MOV EDX,dword ptr [ECX + 0x8]       ; 00407915
     CMP EBP,0x40                        ; 00407918

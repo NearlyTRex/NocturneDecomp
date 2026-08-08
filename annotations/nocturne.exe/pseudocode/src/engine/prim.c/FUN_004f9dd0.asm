@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f9da8 = 004f9ee1
-;   undefined4 DAT_005b7644
+;   int INT_005b7644 = 0x1
 ;   int INT_005be1e4 = 0x4b0
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
@@ -54,7 +54,7 @@ section .text
     PUSH EDI                            ; 004f9dd2
     PUSH EBP                            ; 004f9dd3
     SUB ESP,0x14                        ; 004f9dd4
-    CMP dword ptr [0x005b7644],0x0      ; 004f9dd7 | DAT_005b7644
+    CMP dword ptr [0x005b7644],0x0      ; 004f9dd7 | INT_005b7644
     JZ 0x004f9e47                       ; 004f9dde
         ;   XREF to: 004f9e47 (CONDITIONAL_JUMP)  ; LAB_004f9e47
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004f9de0
@@ -139,11 +139,11 @@ section .text
         ;   Label: LAB_004f9ea2
     JZ 0x004f9f6c                       ; 004f9ea6
         ;   XREF to: 004f9f6c (CONDITIONAL_JUMP)  ; LAB_004f9f6c
-    MOV EDX,dword ptr [0x01e52ef8]      ; 004f9eac | DAT_01e52ef8
+    MOV EDX,dword ptr [0x01e52ef8]      ; 004f9eac | g_RenderedTriangleCount
         ;   Label: LAB_004f9eac
     INC EDX                             ; 004f9eb2
     MOV ECX,dword ptr [0x01c02594]      ; 004f9eb3 | g_UseExternalRenderer
-    MOV dword ptr [0x01e52ef8],EDX      ; 004f9eb9 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],EDX      ; 004f9eb9 | g_RenderedTriangleCount
     TEST ECX,ECX                        ; 004f9ebf
     JZ 0x004f9ed0                       ; 004f9ec1
         ;   XREF to: 004f9ed0 (CONDITIONAL_JUMP)  ; LAB_004f9ed0

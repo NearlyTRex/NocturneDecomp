@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -74,13 +74,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 123,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -117,9 +117,9 @@
   "globals": [
     {
       "addr": "005b7644",
-      "name": "DAT_005b7644",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b7644",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005c5014",
@@ -250,14 +250,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005b7644",
-      "severity": "mild",
-      "text": "DAT_005b7644 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_005c5014",
       "severity": "mild",
@@ -294,14 +286,6 @@
       "match": "DAT_006b0264",
       "severity": "mild",
       "text": "DAT_006b0268 = DAT_006b0264;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_005b7644",
-      "severity": "mild",
-      "text": "DAT_005b7644 = 0;",
       "type": "undefined_data"
     }
   ],

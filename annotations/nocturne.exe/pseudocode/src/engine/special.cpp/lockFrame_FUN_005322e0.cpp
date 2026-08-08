@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_special_cpp_lockFrame_FUN_005322e0(void)
 
 {
   int iVar1;
   
   if ((g_UseExternalRenderer != 0) && (iVar1 = (*g_APIDLL_lockFrame)(), iVar1 != 0)) {
-    _DAT_02dc9e20 = g_BitsPerPixel;
-    INT_02dc9e24 = 1;
-    g_BitsPerPixel = _DAT_02dc9e1c;
+    g_SavedBitsPerPixel = g_BitsPerPixel;
+    g_ExternalFrameLocked = 1;
+    g_BitsPerPixel = g_ExternalBitsPerPixel;
     return 1;
   }
   return 0;

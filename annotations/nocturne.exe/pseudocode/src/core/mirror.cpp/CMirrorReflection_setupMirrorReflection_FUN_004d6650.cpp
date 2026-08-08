@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d6650(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)
 
 {
@@ -330,15 +328,15 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004d665
   local_3e4.m[1].z = -(this_ptr->camera_origin).y;
   local_3e4.m[2].z = -(this_ptr->camera_origin).z;
   core_xform_cpp_setIdentityMatrix3x4_FUN_0055abf0(&local_2c4);
-  local_2c4.m[0].w = (float)_DAT_01c039e8 * (float)1.52587890625e-05;
-  local_2c4.m[1].w = (float)_DAT_01c039ec * (float)1.52587890625e-05;
-  local_2c4.m[2].w = (float)_DAT_01c039f0 * (float)1.52587890625e-05;
-  local_2c4.m[0].x = (float)_DAT_01c039f4 * (float)1.52587890625e-05;
-  local_2c4.m[1].x = (float)_DAT_01c039f8 * (float)1.52587890625e-05;
-  local_2c4.m[2].x = (float)_DAT_01c039fc * (float)1.52587890625e-05;
-  local_2c4.m[0].y = (float)_DAT_01c03a00 * (float)1.52587890625e-05;
-  local_2c4.m[1].y = (float)_DAT_01c03a04 * (float)1.52587890625e-05;
-  local_2c4.m[2].y = (float)_DAT_01c03a08 * (float)1.52587890625e-05;
+  local_2c4.m[0].w = (float)g_TransformMatrix.m[0].x * (float)1.52587890625e-05;
+  local_2c4.m[1].w = (float)g_TransformMatrix.m[0].y * (float)1.52587890625e-05;
+  local_2c4.m[2].w = (float)g_TransformMatrix.m[0].z * (float)1.52587890625e-05;
+  local_2c4.m[0].x = (float)g_TransformMatrix.m[1].x * (float)1.52587890625e-05;
+  local_2c4.m[1].x = (float)g_TransformMatrix.m[1].y * (float)1.52587890625e-05;
+  local_2c4.m[2].x = (float)g_TransformMatrix.m[1].z * (float)1.52587890625e-05;
+  local_2c4.m[0].y = (float)g_TransformMatrix.m[2].x * (float)1.52587890625e-05;
+  local_2c4.m[1].y = (float)g_TransformMatrix.m[2].y * (float)1.52587890625e-05;
+  local_2c4.m[2].y = (float)g_TransformMatrix.m[2].z * (float)1.52587890625e-05;
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(&local_3e4,&local_2c4,&local_4a4);
   pCVar7 = &local_4a4;
   pCVar6 = &local_324;

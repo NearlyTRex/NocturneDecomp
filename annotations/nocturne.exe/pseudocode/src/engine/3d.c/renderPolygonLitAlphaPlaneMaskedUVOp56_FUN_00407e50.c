@@ -36,7 +36,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56
     }
     g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     engine_3d_c_calculatePolygonLighting_FUN_00404710(prim);
-    if (DAT_005b763c < 0xff) {
+    if (g_CurrentAlphaValue < 0xff) {
       g_RenderStateFlags.dword = g_RenderStateFlags.dword | RENDER_BLEND_READ_DEST;
     }
     iVar6 = 0;
@@ -46,7 +46,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp56
       *(int *)((int)&DAT_006b029c + iVar6) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar5 = (pSVar4->surface_normal).A.i;
-      if (DAT_005b762c < 0x41) {
+      if (g_CurrentTextureDimension < 0x41) {
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;
         }

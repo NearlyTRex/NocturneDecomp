@@ -20,13 +20,13 @@
 ;   undefined4 DAT_005b06dc
 ;   undefined4 DAT_005b06e4
 ;   undefined4 DAT_005b06e8
-;   undefined1 DAT_005bf550
-;   undefined1 DAT_005bf570
-;   undefined4 DAT_005bf590
-;   undefined4 DAT_005bf5b0
+;   _MMX_INTEGER g_TextureShift1
+;   _MMX_INTEGER g_TextureShift2
+;   _MMX_INTEGER g_TextureMask1
+;   _MMX_INTEGER g_TextureMask2
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ReciprocalLookupTable[1]
-;   undefined4 DAT_01c02580
+;   uchar* g_CurrentTextureData
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -86,17 +86,17 @@ section .text
         ;   XREF to: 00463c1d (CONDITIONAL_JUMP)  ; LAB_00463c1d
     MOVD MM0,ECX                        ; 00463bd6
     MOVD MM2,EDX                        ; 00463bd9
-    PSRLQ MM0,qword ptr [0x005bf550]    ; 00463bdc | DAT_005bf550
-    PSRLQ MM2,qword ptr [0x005bf570]    ; 00463be3 | DAT_005bf570
-    PAND MM0,qword ptr [0x005bf590]     ; 00463bea | DAT_005bf590
-    PAND MM2,qword ptr [0x005bf5b0]     ; 00463bf1 | DAT_005bf5b0
+    PSRLQ MM0,qword ptr [0x005bf550]    ; 00463bdc | g_TextureShift1
+    PSRLQ MM2,qword ptr [0x005bf570]    ; 00463be3 | g_TextureShift2
+    PAND MM0,qword ptr [0x005bf590]     ; 00463bea | g_TextureMask1
+    PAND MM2,qword ptr [0x005bf5b0]     ; 00463bf1 | g_TextureMask2
     PADDD MM0,MM2                       ; 00463bf8
     MOVD EBX,MM0                        ; 00463bfb
-    MOV EAX,[0x01c02584]                ; 00463bfe | DAT_01c02584
+    MOV EAX,[0x01c02584]                ; 00463bfe | g_CurrentTextureOpacityData
     TEST EAX,0xffffffff                 ; 00463c03
     JNZ 0x00463c0f                      ; 00463c08
         ;   XREF to: 00463c0f (CONDITIONAL_JUMP)  ; LAB_00463c0f
-    MOV EAX,[0x01c02580]                ; 00463c0a | DAT_01c02580
+    MOV EAX,[0x01c02580]                ; 00463c0a | g_CurrentTextureData
     ADD EBX,EAX                         ; 00463c0f
         ;   Label: LAB_00463c0f
     MOVZX EAX,byte ptr [EBX]            ; 00463c11

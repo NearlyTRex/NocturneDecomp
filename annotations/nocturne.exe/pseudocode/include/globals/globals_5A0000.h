@@ -21,6 +21,7 @@
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 #include "types/structs/SFontGlyph.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SResolutionEntry.h"
 
 // =============================================================================
@@ -113,6 +114,9 @@ extern CWeapon_full_vtable g_CWeaponVTable;
 
 // SFontGlyph[224]
 extern SFontGlyph g_FontTable[224];
+
+// SMRGLPrimitiveQuad*[2000]
+extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
 
 // SResolutionEntry[9]
 extern SResolutionEntry g_ResolutionTable[9];
@@ -296,6 +300,7 @@ extern int g_INT_005ad4bc;
 extern int g_INT_005ae678;
 extern int g_INT_005ae690;
 extern int g_INT_005ae6c8;
+extern int INT_005ae708;
 
 // strstreambuf_vtable
 extern strstreambuf_vtable g_StrstreambufVTable;
@@ -331,5 +336,4 @@ extern undefined4 DAT_005ad8bc;
 extern undefined4 DAT_005ad8c0;
 extern undefined4 DAT_005ae6f4;
 extern undefined4 DAT_005ae6f8;
-extern undefined4 DAT_005ae708;
 

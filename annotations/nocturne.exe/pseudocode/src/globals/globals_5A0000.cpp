@@ -3998,6 +3998,9 @@ SFontGlyph g_FontTable[224] = {
     }
 };
 
+// SMRGLPrimitiveQuad*[2000]
+SMRGLPrimitiveQuad* g_VisibleFacePointers[2000] = {};
+
 // SResolutionEntry[9]
 SResolutionEntry g_ResolutionTable[9] = {
     {.width = 0x00000140, .height = 0x000000C8},
@@ -5024,6 +5027,7 @@ int g_INT_005ad4bc = 0x4;
 int g_INT_005ae678 = 0x2;
 int g_INT_005ae690 = 0xB;
 int g_INT_005ae6c8 = 0x9;
+int INT_005ae708 = 0x1;
 
 // strstreambuf_vtable
 strstreambuf_vtable g_StrstreambufVTable = {
@@ -5071,5 +5075,4 @@ undefined4 DAT_005ad8bc = 0x00000000;
 undefined4 DAT_005ad8c0 = 0x00000000;
 undefined4 DAT_005ae6f4 = 0x00000001;
 undefined4 DAT_005ae6f8 = 0x3DCCCCCD;
-undefined4 DAT_005ae708 = 0x00000001;
 

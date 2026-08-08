@@ -21,9 +21,9 @@ void __cdecl wincore_winrun_cpp_initJoystick_FUN_00559e20(void)
   MVar1 = joyGetDevCapsA(0,&local_194,0x194);
   if (MVar1 == 0) {
     _DAT_01c0391c = (uint)(((byte)local_194.wCaps & 0x10) != 0);
-    _DAT_005b7634 = local_194.wMaxButtons;
+    INT_005b7634 = local_194.wMaxButtons;
     if (8 < (int)local_194.wMaxButtons) {
-      _DAT_005b7634 = 8;
+      INT_005b7634 = 8;
       return;
     }
   }

@@ -17,7 +17,7 @@
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004faff3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c0399c
+;   int g_ProcessorType
 ;
 ; *****************************************************************************
 
@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 004f9871
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f9872
     MOV EBX,dword ptr [ESP + 0x10]      ; 004f9876
-    MOV EDX,dword ptr [0x01c0399c]      ; 004f987a | DAT_01c0399c
+    MOV EDX,dword ptr [0x01c0399c]      ; 004f987a | g_ProcessorType
     TEST EDX,EDX                        ; 004f9880
     JZ 0x004f98af                       ; 004f9882
         ;   XREF to: 004f98af (CONDITIONAL_JUMP)  ; LAB_004f98af

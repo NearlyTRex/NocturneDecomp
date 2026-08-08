@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -54,42 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c039f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c039b8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c039fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c039bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c03a08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c039c0'"
       }
     ],
     "success": false,
@@ -98,17 +62,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 28,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 45
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -127,37 +89,37 @@
   "globals": [
     {
       "addr": "01c039b8",
-      "name": "DAT_01c039b8",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039bc",
-      "name": "DAT_01c039bc",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039c0",
-      "name": "DAT_01c039c0",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039f0",
-      "name": "DAT_01c039f0",
+      "name": "g_TransformMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039fc",
-      "name": "DAT_01c039fc",
+      "name": "g_TransformMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a08",
-      "name": "DAT_01c03a08",
+      "name": "g_TransformMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -217,14 +179,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

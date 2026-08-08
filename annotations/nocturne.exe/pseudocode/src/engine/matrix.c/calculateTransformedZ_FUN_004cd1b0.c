@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl engine_matrix_c_calculateTransformedZ_FUN_004cd1b0(int *input_coords)
 
 {
@@ -15,9 +13,9 @@ int __cdecl engine_matrix_c_calculateTransformedZ_FUN_004cd1b0(int *input_coords
   longlong lVar2;
   longlong lVar3;
   
-  lVar1 = (longlong)_DAT_01c039f0 * (longlong)(*input_coords - _DAT_01c039b8);
-  lVar2 = (longlong)_DAT_01c039fc * (longlong)(input_coords[1] - _DAT_01c039bc);
-  lVar3 = (longlong)_DAT_01c03a08 * (longlong)(input_coords[2] - _DAT_01c039c0);
+  lVar1 = (longlong)g_TransformMatrix.m[0].z * (longlong)(*input_coords - g_RelativeX);
+  lVar2 = (longlong)g_TransformMatrix.m[1].z * (longlong)(input_coords[1] - g_RelativeY);
+  lVar3 = (longlong)g_TransformMatrix.m[2].z * (longlong)(input_coords[2] - g_RelativeZ);
   return ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

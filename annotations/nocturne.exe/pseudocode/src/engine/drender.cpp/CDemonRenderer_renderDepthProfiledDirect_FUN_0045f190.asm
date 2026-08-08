@@ -15,7 +15,7 @@
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800 at 00550c4e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ae708
+;   int INT_005ae708 = 0x1
 ;   undefined4 DAT_01b4d764
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
@@ -82,7 +82,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070 ; 0045f206
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0045f20b
-    MOV EBX,dword ptr [0x005ae708]      ; 0045f20e | DAT_005ae708
+    MOV EBX,dword ptr [0x005ae708]      ; 0045f20e | INT_005ae708
         ;   Label: LAB_0045f20e
     MOV EAX,[0x01b4d764]                ; 0045f214 | DAT_01b4d764
     CMP EAX,EBX                         ; 0045f219

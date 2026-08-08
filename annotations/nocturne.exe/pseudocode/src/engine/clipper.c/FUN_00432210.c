@@ -8,7 +8,6 @@
 
 /* WARNING: Removing unreachable block (ram,0x00432ab1) */
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
 
@@ -146,7 +145,7 @@ uint engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
           return 1;
         }
       }
-      _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
+      g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
       engine_special_cpp_drawPolygon2_FUN_00532650(&DAT_00767274,param_1,g_RenderStateFlags.dword);
       return 1;
     }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex *output,CVector3i *input)
 
 {
@@ -21,17 +19,20 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
   int iVar8;
   
   if (g_MMXSupported != 0) {
-    iVar2 = input->x - _DAT_01c039b8;
-    iVar7 = input->y - _DAT_01c039bc;
-    iVar8 = input->z - _DAT_01c039c0;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039f4 + (longlong)iVar2 * (longlong)_DAT_01c039e8 +
-            (longlong)iVar8 * (longlong)_DAT_01c03a00;
+    iVar2 = input->x - g_RelativeX;
+    iVar7 = input->y - g_RelativeY;
+    iVar8 = input->z - g_RelativeZ;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].x +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].x +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].x;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039f8 + (longlong)iVar2 * (longlong)_DAT_01c039ec +
-            (longlong)iVar8 * (longlong)_DAT_01c03a04;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].y +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].y +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].y;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar7 * (longlong)_DAT_01c039fc + (longlong)iVar2 * (longlong)_DAT_01c039f0 +
-            (longlong)iVar8 * (longlong)_DAT_01c03a08;
+    lVar1 = (longlong)iVar7 * (longlong)g_TransformMatrix.m[1].z +
+            (longlong)iVar2 * (longlong)g_TransformMatrix.m[0].z +
+            (longlong)iVar8 * (longlong)g_TransformMatrix.m[2].z;
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     uVar6 = 0;
     if ((int)uVar5 < (int)uVar3) {
@@ -65,26 +66,26 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
     output->screen_x = uVar6;
     return;
   }
-  DAT_005bf4d8 = input->x - _DAT_01c039b8;
-  DAT_005bf4dc = input->y - _DAT_01c039bc;
-  DAT_005bf4e0 = input->z - _DAT_01c039c0;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039f4 +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039e8 +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a00;
-  DAT_005bf4e8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039f8 +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039ec +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a04;
+  g_TempX = input->x - g_RelativeX;
+  g_TempY = input->y - g_RelativeY;
+  g_TempZ = input->z - g_RelativeZ;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].x +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].x +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].x;
+  g_TempTransformedX = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].y +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].y +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].y;
   uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)DAT_005bf4dc * (longlong)_DAT_01c039fc +
-          (longlong)DAT_005bf4d8 * (longlong)_DAT_01c039f0 +
-          (longlong)DAT_005bf4e0 * (longlong)_DAT_01c03a08;
+  lVar1 = (longlong)g_TempY * (longlong)g_TransformMatrix.m[1].z +
+          (longlong)g_TempX * (longlong)g_TransformMatrix.m[0].z +
+          (longlong)g_TempZ * (longlong)g_TransformMatrix.m[2].z;
   uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   uVar5 = 0;
-  if ((int)uVar4 < (int)DAT_005bf4e8) {
+  if ((int)uVar4 < g_TempTransformedX) {
     uVar5 = 0x80000001;
   }
-  if ((int)DAT_005bf4e8 < (int)-uVar4) {
+  if (g_TempTransformedX < (int)-uVar4) {
     uVar5 = uVar5 | 0x80000002;
   }
   if ((int)uVar4 < (int)uVar3) {
@@ -96,22 +97,22 @@ void __cdecl engine_special_cpp_transformAndProjectPoint_FUN_0053075c(SProjected
   if ((int)uVar4 < 1) {
     uVar5 = uVar5 | 0x80000010;
   }
-  DAT_005bf4ec = uVar3;
-  DAT_005bf4f0 = uVar4;
+  g_TempTransformedY = uVar3;
+  g_TempTransformedZ = uVar4;
   if (uVar5 == 0) {
-    output->transformed_x = DAT_005bf4e8;
+    output->transformed_x = g_TempTransformedX;
     output->transformed_y = uVar3;
     output->transformed_z = uVar4;
     output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar4);
     output->screen_x =
-         (int)(((longlong)(int)DAT_005bf4e8 * (longlong)g_Projection.half_width_fixed) /
+         (int)(((longlong)g_TempTransformedX * (longlong)g_Projection.half_width_fixed) /
               (longlong)(int)uVar4) + g_Projection.center_x_fixed;
     output->screen_y =
-         (int)(((longlong)(int)DAT_005bf4ec * (longlong)g_Projection.neg_half_height_fixed) /
+         (int)(((longlong)g_TempTransformedY * (longlong)g_Projection.neg_half_height_fixed) /
               (longlong)(int)uVar4) + g_Projection.center_y_fixed;
     return;
   }
-  output->transformed_x = DAT_005bf4e8;
+  output->transformed_x = g_TempTransformedX;
   output->transformed_y = uVar3;
   output->transformed_z = uVar4;
   output->screen_x = uVar5;

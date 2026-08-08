@@ -110,7 +110,7 @@ section .text
         ;   Label: LAB_0049cc38
     XOR EBX,EBX                         ; 0049cc3e
     MOV ESI,dword ptr [EAX + 0xcc]      ; 0049cc40
-    MOV dword ptr [0x01e52ef8],EBX      ; 0049cc46 | DAT_01e52ef8
+    MOV dword ptr [0x01e52ef8],EBX      ; 0049cc46 | g_RenderedTriangleCount
     TEST ESI,ESI                        ; 0049cc4c
     JNZ 0x0049cc62                      ; 0049cc4e
         ;   XREF to: 0049cc62 (CONDITIONAL_JUMP)  ; LAB_0049cc62
@@ -526,7 +526,7 @@ section .text
     FLD1                                ; 0049d132
     FDIVRP ST2,ST0                      ; 0049d134
     ADD ESP,0xc                         ; 0049d136
-    MOV EBX,dword ptr [0x01e52ef8]      ; 0049d139 | DAT_01e52ef8
+    MOV EBX,dword ptr [0x01e52ef8]      ; 0049d139 | g_RenderedTriangleCount
     PUSH EBX                            ; 0049d13f
     SUB ESP,0x8                         ; 0049d140
     FSTP double ptr [ESP]               ; 0049d143

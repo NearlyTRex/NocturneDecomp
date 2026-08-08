@@ -30,11 +30,11 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
-;   undefined4 DAT_01c039b8
+;   int g_RelativeX
 ;   undefined4 DAT_01c039dc
-;   undefined4 DAT_01c039e8
-;   undefined4 DAT_01c039ec
-;   undefined4 DAT_01c039f0
+;   CMatrix3x3i g_TransformMatrix
+;   undefined4 g_TransformMatrix.m[0].y
+;   undefined4 g_TransformMatrix.m[0].z
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01cc9094
 ;   undefined4 DAT_01cd4318
@@ -143,11 +143,11 @@ section .text
     CALL engine_matrix.c_matrixPush_FUN_004cdac0 ; 004d5911
         ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0()
     PUSH 0x0                            ; 004d5916
-    MOV ESI,dword ptr [0x01c039b8]      ; 004d5918 | DAT_01c039b8
+    MOV ESI,dword ptr [0x01c039b8]      ; 004d5918 | g_RelativeX
     MOV EDI,dword ptr [0x01c039dc]      ; 004d591e | DAT_01c039dc
-    MOV EAX,[0x01c039e8]                ; 004d5924 | DAT_01c039e8
-    MOV EDX,dword ptr [0x01c039ec]      ; 004d5929 | DAT_01c039ec
-    MOV ECX,dword ptr [0x01c039f0]      ; 004d592f | DAT_01c039f0
+    MOV EAX,[0x01c039e8]                ; 004d5924 | g_TransformMatrix
+    MOV EDX,dword ptr [0x01c039ec]      ; 004d5929 | g_TransformMatrix.m[0].y
+    MOV ECX,dword ptr [0x01c039f0]      ; 004d592f | g_TransformMatrix.m[0].z
     PUSH 0x1                            ; 004d5935
     NEG ESI                             ; 004d5937
     NEG EDI                             ; 004d5939
@@ -155,14 +155,14 @@ section .text
     NEG EDX                             ; 004d593d
     NEG ECX                             ; 004d593f
     PUSH -0x1                           ; 004d5941
-    MOV dword ptr [0x01c039b8],ESI      ; 004d5943 | DAT_01c039b8
-    MOV [0x01c039e8],EAX                ; 004d5949 | DAT_01c039e8
+    MOV dword ptr [0x01c039b8],ESI      ; 004d5943 | g_RelativeX
+    MOV [0x01c039e8],EAX                ; 004d5949 | g_TransformMatrix
     PUSH -0x1                           ; 004d594e
     LEA EAX,[EBX + 0x150]               ; 004d5950
     MOV dword ptr [0x01c039dc],EDI      ; 004d5956 | DAT_01c039dc
     PUSH EAX                            ; 004d595c
-    MOV dword ptr [0x01c039ec],EDX      ; 004d595d | DAT_01c039ec
-    MOV dword ptr [0x01c039f0],ECX      ; 004d5963 | DAT_01c039f0
+    MOV dword ptr [0x01c039ec],EDX      ; 004d595d | g_TransformMatrix.m[0].y
+    MOV dword ptr [0x01c039f0],ECX      ; 004d5963 | g_TransformMatrix.m[0].z
     CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0 ; 004d5969
         ;   XREF to: 0051d9d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 004d596e

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 515,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 515,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 517,
+        "line": 516,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 517,
+        "line": 516,
         "message": "exponent has no digits"
       },
       {
@@ -69,24 +69,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 45,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_01c039b8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_01c039bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01c039c0'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 37,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_01c039dc'"
@@ -105,15 +87,33 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_01c039e8'"
+        "column": 21,
+        "line": 60,
+        "message": "use of undeclared identifier '_DAT_005882b3'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
-        "line": 49,
-        "message": "use of undeclared identifier '_DAT_01c039ec'"
+        "column": 21,
+        "line": 61,
+        "message": "use of undeclared identifier '_DAT_005882bb'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 125,
+        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 126,
+        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 127,
+        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
       }
     ],
     "success": false,
@@ -122,18 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 289,
+    "complexity_score": 286,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 209,
+    "pseudocode_lines": 206,
     "suspect_count": 7,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 727
+    "total_lines": 724
   },
   "cross_references": [],
   "function": {
@@ -202,20 +202,20 @@
     },
     {
       "addr": "01c039b8",
-      "name": "DAT_01c039b8",
-      "type": "undefined4",
+      "name": "g_RelativeX",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039bc",
-      "name": "DAT_01c039bc",
-      "type": "undefined4",
+      "name": "g_RelativeY",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039c0",
-      "name": "DAT_01c039c0",
-      "type": "undefined4",
+      "name": "g_RelativeZ",
+      "type": "int",
       "value": null
     },
     {
@@ -238,55 +238,55 @@
     },
     {
       "addr": "01c039e8",
-      "name": "DAT_01c039e8",
-      "type": "undefined4",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01c039ec",
-      "name": "DAT_01c039ec",
+      "name": "g_TransformMatrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f0",
-      "name": "DAT_01c039f0",
+      "name": "g_TransformMatrix.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f4",
-      "name": "DAT_01c039f4",
+      "name": "g_TransformMatrix.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039f8",
-      "name": "DAT_01c039f8",
+      "name": "g_TransformMatrix.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c039fc",
-      "name": "DAT_01c039fc",
+      "name": "g_TransformMatrix.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a00",
-      "name": "DAT_01c03a00",
+      "name": "g_TransformMatrix.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a04",
-      "name": "DAT_01c03a04",
+      "name": "g_TransformMatrix.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c03a08",
-      "name": "DAT_01c03a08",
+      "name": "g_TransformMatrix.m[2].z",
       "type": "undefined4",
       "value": null
     },
@@ -479,22 +479,22 @@
         },
         {
           "check_id": "uninitvar",
-          "column": 45,
-          "line": 108,
+          "column": 54,
+          "line": 107,
           "message": "Uninitialized variable: local_4c",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 50,
-          "line": 110,
+          "column": 59,
+          "line": 109,
           "message": "Uninitialized variable: local_48",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
-          "column": 45,
-          "line": 112,
+          "column": 54,
+          "line": 111,
           "message": "Uninitialized variable: local_44",
           "severity": "error"
         }
@@ -562,15 +562,15 @@
     },
     {
       "description": "Uninitialized variable: local_4c",
-      "line": 108,
+      "line": 107,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "((uint)((longlong)iVar15 * (longlong)local_4c) >> 0x10 |",
+      "text": "g_RelativeX = ((uint)((longlong)iVar15 * (longlong)local_4c) >> 0x10 |",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_48",
-      "line": 110,
+      "line": 109,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "((uint)((longlong)(int)uVar11 * (longlong)local_48) >> 0x10 |",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Uninitialized variable: local_44",
-      "line": 112,
+      "line": 111,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "((uint)((longlong)iVar17 * (longlong)local_44) >> 0x10 |",

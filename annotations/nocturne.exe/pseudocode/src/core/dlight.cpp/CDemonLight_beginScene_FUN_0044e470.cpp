@@ -40,12 +40,12 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(CDemonLight *th
             (g_CDemonRenderer_PTR_005ae704,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
             (g_CDemonRenderer_PTR_005ae704,&(this_ptr->base).rotation_matrix);
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039ec;
-  _DAT_01c039ec = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c039f8;
-  _DAT_01c039f8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c03a04;
-  _DAT_01c03a04 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
+  g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;
+  g_TransformMatrix.m[1].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+  lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[2].y;
+  g_TransformMatrix.m[2].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (skip_clear_buffers == 0) {
     _memset
               (this_ptr->shadow_depth_buffer,0xff,
