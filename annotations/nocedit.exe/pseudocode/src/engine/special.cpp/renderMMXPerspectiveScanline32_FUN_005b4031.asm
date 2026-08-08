@@ -28,7 +28,7 @@
 ;   int g_HardwareDeltaTextureU = 0x0
 ;   int g_HardwareDeltaTextureV = 0x0
 ;   int g_HardwareDeltaDepthZ = 0x0
-;   double g_SelectedClearColor = 0.0
+;   double g_BufferFillZeroQword = 0.0
 ;   int g_VertexRedStart = 0x0
 ;   int g_VertexGreenStart = 0x0
 ;   int g_VertexBlueStart = 0x0
@@ -343,7 +343,7 @@ section .text
     ADD EDX,dword ptr [0x00682614]      ; 005b44b6 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b44bc
     ADD ESI,dword ptr [0x00682618]      ; 005b44bf | g_HardwareDeltaDepthZ
-    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b44c5 | g_SelectedClearColor
+    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b44c5 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x006826d8]      ; 005b44cc | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b44d2
     JMP 0x005b439c                      ; 005b44d5
@@ -455,7 +455,7 @@ section .text
     ADD EDX,dword ptr [0x00682614]      ; 005b4646 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b464c
     ADD ESI,dword ptr [0x00682618]      ; 005b464f | g_HardwareDeltaDepthZ
-    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4655 | g_SelectedClearColor
+    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4655 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x006826d8]      ; 005b465c | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b4662
     JMP 0x005b44f0                      ; 005b4665
@@ -540,7 +540,7 @@ section .text
     ADD EDX,dword ptr [0x00682614]      ; 005b4785 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b478b
     ADD ESI,dword ptr [0x00682618]      ; 005b478e | g_HardwareDeltaDepthZ
-    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4794 | g_SelectedClearColor
+    PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4794 | g_BufferFillZeroQword
     ADD EBP,dword ptr [0x006826d8]      ; 005b479b | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b47a1
     JMP 0x005b469b                      ; 005b47a4

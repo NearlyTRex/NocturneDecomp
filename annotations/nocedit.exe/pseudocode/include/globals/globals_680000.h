@@ -330,8 +330,8 @@ extern char g_TempDirectoryBuffer[260];
 // double
 extern double g_Cached3DDistanceFactor;
 extern double g_Cached3DDistanceFactorInverse;
-extern double g_SelectedClearColor;
-extern double g_ClearColor;
+extern double g_BufferFillZeroQword;
+extern double g_BufferFillFpuPopST0;
 
 // dst_rule
 extern dst_rule g_DstStartRule;

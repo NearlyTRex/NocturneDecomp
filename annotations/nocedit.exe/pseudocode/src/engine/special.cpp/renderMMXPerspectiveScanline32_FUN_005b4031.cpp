@@ -304,12 +304,12 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         uVar8 = uVar8 + g_HardwareDeltaTextureV;
         iVar16 = iVar16 + g_HardwareDeltaDepthZ;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar40),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+        uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar40),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
                                             sVar39),
-                                   CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
                                                              0x10) < sVar38),
-                                            -(ushort)(SUB82(g_SelectedClearColor,0) < sVar35)))) &
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar35)))) &
                  CONCAT26(sVar40,CONCAT24(sVar39,CONCAT22(sVar38,sVar35)));
       }
     }
@@ -454,13 +454,13 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b403
           uVar8 = uVar8 + g_HardwareDeltaTextureV;
           iVar16 = iVar16 + g_HardwareDeltaDepthZ;
           iVar10 = iVar10 + g_VertexAlphaDelta;
-          uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) <
+          uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) <
                                      (short)(uVar19 + sVar45)),
-                            CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+                            CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
                                               (short)(uVar47 + sVar44)),
-                                     CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                     CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
                                                                0x10) < (short)(uVar46 + sVar43)),
-                                              -(ushort)(SUB82(g_SelectedClearColor,0) <
+                                              -(ushort)(SUB82(g_BufferFillZeroQword,0) <
                                                        (short)(uVar36 + sVar41))))) &
                    CONCAT26(uVar19 + sVar45,
                             CONCAT24(uVar47 + sVar44,CONCAT22(uVar46 + sVar43,uVar36 + sVar41)));
@@ -567,12 +567,12 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         uVar8 = uVar8 + g_HardwareDeltaTextureV;
         iVar16 = iVar16 + g_HardwareDeltaDepthZ;
         iVar10 = iVar10 + g_VertexAlphaDelta;
-        uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar40),
-                          CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
+        uVar37 = CONCAT26(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x30) < sVar40),
+                          CONCAT24(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >> 0x20) <
                                             sVar39),
-                                   CONCAT22(-(ushort)((short)((ulonglong)g_SelectedClearColor >>
+                                   CONCAT22(-(ushort)((short)((ulonglong)g_BufferFillZeroQword >>
                                                              0x10) < sVar38),
-                                            -(ushort)(SUB82(g_SelectedClearColor,0) < sVar35)))) &
+                                            -(ushort)(SUB82(g_BufferFillZeroQword,0) < sVar35)))) &
                  CONCAT26(sVar40,CONCAT24(sVar39,CONCAT22(sVar38,sVar35)));
       }
     }

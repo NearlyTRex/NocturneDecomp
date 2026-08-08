@@ -179,7 +179,7 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
   int cur_w     = g_StartDepthW;
   int cur_alpha = g_VertexAlphaStart;
   int edi       = 0;   // pixel cursor, strides by 4 per pixel
-  ulonglong clear_bits = __BITCAST_UINT64(g_SelectedClearColor);
+  ulonglong zero_bits = __BITCAST_UINT64(g_BufferFillZeroQword);
 
   // Render-path dispatch (LAB_005b4b17 fall-through).
   if (g_CurrentTextureOpacityData == (void *)0x0 && (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0) {
@@ -267,8 +267,8 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           ushort chan       = (ushort)((color_current >> (c * 16)) & 0xffff);
           ushort delta_chan = (ushort)((color_delta   >> (c * 16)) & 0xffff);
           ushort new_chan   = chan + delta_chan;
-          short  clear_chan = (short)((clear_bits     >> (c * 16)) & 0xffff);
-          if ((short)new_chan > clear_chan) {
+          short  zero_chan  = (short)((zero_bits      >> (c * 16)) & 0xffff);
+          if ((short)new_chan > zero_chan) {
             stepped |= ((ulonglong)new_chan << (c * 16));
           }
         }
@@ -383,8 +383,8 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           ushort chan       = (ushort)((color_current >> (c * 16)) & 0xffff);
           ushort delta_chan = (ushort)((color_delta   >> (c * 16)) & 0xffff);
           ushort new_chan   = chan + delta_chan;
-          short  clear_chan = (short)((clear_bits     >> (c * 16)) & 0xffff);
-          if ((short)new_chan > clear_chan) {
+          short  zero_chan  = (short)((zero_bits      >> (c * 16)) & 0xffff);
+          if ((short)new_chan > zero_chan) {
             stepped |= ((ulonglong)new_chan << (c * 16));
           }
         }
@@ -478,8 +478,8 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         ushort chan       = (ushort)((color_current >> (c * 16)) & 0xffff);
         ushort delta_chan = (ushort)((color_delta   >> (c * 16)) & 0xffff);
         ushort new_chan   = chan + delta_chan;
-        short  clear_chan = (short)((clear_bits     >> (c * 16)) & 0xffff);
-        if ((short)new_chan > clear_chan) {
+        short  zero_chan  = (short)((zero_bits      >> (c * 16)) & 0xffff);
+        if ((short)new_chan > zero_chan) {
           stepped |= ((ulonglong)new_chan << (c * 16));
         }
       }

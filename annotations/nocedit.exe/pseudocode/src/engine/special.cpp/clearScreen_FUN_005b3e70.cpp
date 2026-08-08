@@ -21,14 +21,14 @@ void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void)
   }
   iVar4 = 0;
   do {
-    g_ClearColor = g_SelectedClearColor;
+    g_BufferFillFpuPopST0 = g_BufferFillZeroQword;
     pdVar5 = g_ScreenBufferArray[iVar4];
     uVar2 = (uint)(g_WindowWidth * g_BitsPerPixel) >> 3;
     do {
-      *pdVar5 = g_ClearColor;
-      pdVar5[1] = g_ClearColor;
-      pdVar5[2] = g_ClearColor;
-      pdVar5[3] = g_ClearColor;
+      *pdVar5 = g_BufferFillFpuPopST0;
+      pdVar5[1] = g_BufferFillFpuPopST0;
+      pdVar5[2] = g_BufferFillFpuPopST0;
+      pdVar5[3] = g_BufferFillFpuPopST0;
       pdVar5 = pdVar5 + 4;
       uVar3 = uVar2 - 0x20;
       bVar1 = 0x1f < (int)uVar2;

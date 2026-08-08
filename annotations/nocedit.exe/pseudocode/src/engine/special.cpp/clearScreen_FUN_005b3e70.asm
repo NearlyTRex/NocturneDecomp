@@ -21,8 +21,8 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   double g_SelectedClearColor = 0.0
-;   double g_ClearColor = 0.0
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   int g_UseExternalRenderer
@@ -58,7 +58,7 @@ section .text
     SHR EAX,0x3                         ; 005b3e9c
     MOV ECX,EAX                         ; 005b3e9f
     MOV EDI,dword ptr [EBX*0x4 + 0x2cf6a9c] ; 005b3ea1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
-    FLD double ptr [0x0068261c]         ; 005b3ea8 | g_SelectedClearColor
+    FLD double ptr [0x0068261c]         ; 005b3ea8 | g_BufferFillZeroQword
     FST double ptr [EDI]                ; 005b3eae
         ;   Label: LAB_005b3eae
     FST double ptr [EDI + 0x8]          ; 005b3eb0
@@ -68,7 +68,7 @@ section .text
     SUB ECX,0x20                        ; 005b3ebc
     JG 0x005b3eae                       ; 005b3ebf
         ;   XREF to: 005b3eae (CONDITIONAL_JUMP)  ; LAB_005b3eae
-    FSTP double ptr [0x00682624]        ; 005b3ec1 | g_ClearColor
+    FSTP double ptr [0x00682624]        ; 005b3ec1 | g_BufferFillFpuPopST0
     INC EBX                             ; 005b3ec7
     CMP EBX,dword ptr [0x00679398]      ; 005b3ec8 | g_WindowHeight
     JL 0x005b3e91                       ; 005b3ece

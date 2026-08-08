@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   bottom
 ;
 ; Referenced Globals:
-;   double g_SelectedClearColor = 0.0
-;   double g_ClearColor = 0.0
+;   double g_BufferFillZeroQword = 0.0
+;   double g_BufferFillFpuPopST0 = 0.0
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_UseExternalRenderer
 ;
@@ -56,7 +56,7 @@ section .text
     INC ECX                             ; 005b3ffb
     MOV EDX,dword ptr [EBP + 0x8]       ; 005b3ffc
     SHL EDX,0x2                         ; 005b3fff
-    FLD double ptr [0x0068261c]         ; 005b4002 | g_SelectedClearColor
+    FLD double ptr [0x0068261c]         ; 005b4002 | g_BufferFillZeroQword
     PUSH ECX                            ; 005b4008
         ;   Label: LAB_005b4008
     MOV EDI,dword ptr [EBX*0x4 + 0x2cf7d5c] ; 005b4009 | g_ZBufferScanlineArray
@@ -74,7 +74,7 @@ section .text
     CMP EBX,dword ptr [EBP + 0x14]      ; 005b4021
     JBE 0x005b4008                      ; 005b4024
         ;   XREF to: 005b4008 (CONDITIONAL_JUMP)  ; LAB_005b4008
-    FSTP double ptr [0x00682624]        ; 005b4026 | g_ClearColor
+    FSTP double ptr [0x00682624]        ; 005b4026 | g_BufferFillFpuPopST0
     POPAD                               ; 005b402c
     POP EDI                             ; 005b402d
     POP ESI                             ; 005b402e

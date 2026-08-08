@@ -14,8 +14,8 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,
   double dVar2;
   uint uVar3;
   double *pdVar4;
-  
-  dVar2 = g_SelectedClearColor;
+
+  dVar2 = g_BufferFillZeroQword;
   if (g_UseExternalRenderer != 0) {
     engine_special_cpp_clearZBox_FUN_005b7c00(left,right,top,bottom);
     return;
@@ -31,6 +31,6 @@ void __cdecl engine_special_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,
     } while (bVar1);
     top = top + 1;
   } while ((uint)top <= (uint)bottom);
-  g_ClearColor = dVar2;
+  g_BufferFillFpuPopST0 = dVar2;
   return;
 }

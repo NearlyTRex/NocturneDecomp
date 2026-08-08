@@ -3835,8 +3835,8 @@ char g_TempDirectoryBuffer[260] = "";
 // double
 double g_Cached3DDistanceFactor = 1;
 double g_Cached3DDistanceFactorInverse = 1;
-double g_SelectedClearColor = 0;
-double g_ClearColor = 0;
+double g_BufferFillZeroQword = 0;
+double g_BufferFillFpuPopST0 = 0;
 
 // dst_rule
 dst_rule g_DstStartRule = {

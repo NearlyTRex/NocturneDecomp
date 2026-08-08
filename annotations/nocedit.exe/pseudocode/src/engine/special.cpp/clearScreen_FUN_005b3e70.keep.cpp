@@ -1,8 +1,9 @@
 // Name: engine_special.cpp_clearScreen_FUN_005b3e70
 // Address: 005b3e70
 // MANUAL RECONSTRUCTION
-// Clears the entire screen buffer by filling each scanline with g_ClearColor.
-// Original uses 8-byte writes (movq-style) to fill 32 bytes per iteration.
+// Address Range: [[005b3e70, 005b3ed3]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void)
 
 #include "nocturne.h"
 
@@ -18,17 +19,18 @@ void __cdecl engine_special_cpp_clearScreen_FUN_005b3e70(void)
 
     y = 0;
     do {
-        g_ClearColor = g_SelectedClearColor;
+        double fill_value = g_BufferFillZeroQword;
         byte *dest = (byte *)g_ScreenBufferArray[y];
         bytes_per_row = (uint)(g_WindowWidth * g_BitsPerPixel) >> 3;
-        while (bytes_per_row > 0x1f) {
-            *(double *)dest = g_ClearColor;
-            *(double *)(dest + 8) = g_ClearColor;
-            *(double *)(dest + 16) = g_ClearColor;
-            *(double *)(dest + 24) = g_ClearColor;
+        do {
+            *(double *)dest = fill_value;
+            *(double *)(dest + 8) = fill_value;
+            *(double *)(dest + 16) = fill_value;
+            *(double *)(dest + 24) = fill_value;
             dest = dest + 32;
             bytes_per_row = bytes_per_row - 0x20;
-        }
+        } while ((int)bytes_per_row > 0);
+        g_BufferFillFpuPopST0 = fill_value;
         y = y + 1;
     } while (y < g_WindowHeight);
     return;

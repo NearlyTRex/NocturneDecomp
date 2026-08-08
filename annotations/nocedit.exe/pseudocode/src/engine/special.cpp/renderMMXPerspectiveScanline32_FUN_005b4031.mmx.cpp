@@ -284,7 +284,7 @@ __asm {
         add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
         add ESI,dword ptr [g_HardwareDeltaDepthZ]
-        pcmpgtw MM5,qword ptr [g_SelectedClearColor]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
         jmp LAB_005b439c
@@ -383,7 +383,7 @@ __asm {
         add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
         add ESI,dword ptr [g_HardwareDeltaDepthZ]
-        pcmpgtw MM5,qword ptr [g_SelectedClearColor]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
         jmp LAB_005b44f0
@@ -460,7 +460,7 @@ __asm {
         add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
         add ESI,dword ptr [g_HardwareDeltaDepthZ]
-        pcmpgtw MM5,qword ptr [g_SelectedClearColor]
+        pcmpgtw MM5,qword ptr [g_BufferFillZeroQword]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
         jmp LAB_005b469b
