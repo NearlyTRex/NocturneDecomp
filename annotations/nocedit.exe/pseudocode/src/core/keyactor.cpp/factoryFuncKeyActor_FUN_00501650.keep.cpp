@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00501650, 00501672]]
 // Convention: __cdecl
-// Signature: CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_00501650(CKeyActor *__return_storage_ptr__)
+// Signature: CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_00501650(void)
 
 #include "nocturne.h"
 
-CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_00501650(CKeyActor *__return_storage_ptr__)
+CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_00501650(void)
 
 {
   CKeyActor *pCVar1;

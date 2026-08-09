@@ -16,8 +16,8 @@
 ;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
-;   engine_3d.c_rasterizePolygonHardware_FUN_004d1340
 ;   engine_clipper.c_clipAndRasterize_FUN_004371b0
+;   engine_fpoly.c_rasterizePolygonHardware_FUN_004d1340
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     MOV ECX,dword ptr [EDX + 0x4]       ; 00405a44
     PUSH ECX                            ; 00405a47
     PUSH EAX                            ; 00405a48
-    CALL engine_3d.c_rasterizePolygonHardware_FUN_004d1340 ; 00405a49
-        ;   XREF to: 004d1340 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)
+    CALL engine_fpoly.c_rasterizePolygonHardware_FUN_004d1340 ; 00405a49
+        ;   XREF to: 004d1340 (UNCONDITIONAL_CALL)  ; void engine_fpoly.c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00405a4e
     MOV EAX,0x772a84                    ; 00405a51 | g_RenderResult
     POP EBP                             ; 00405a56

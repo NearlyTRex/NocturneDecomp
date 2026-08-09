@@ -31,11 +31,11 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005f8550
-;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0
 ;   engine_clipper.c_clipAndRasterize_FUN_004371b0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00438420
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+;   engine_zraster.c_rasterizeTriangle_FUN_005fcfc0
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 0048d4f4 (CONDITIONAL_JUMP)  ; LAB_0048d4f4
     PUSH EDI                            ; 0048d4e6
     PUSH 0x824e28                       ; 0048d4e7 | g_ClippedVertexBuffer
-    CALL engine_3d.c_rasterizeTriangle_FUN_005fcfc0 ; 0048d4ec
-        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005fcfc0 ; 0048d4ec
+        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0048d4f1
         ;   Label: LAB_0048d4f1
     MOV EDX,dword ptr [ESP + 0x50]      ; 0048d4f4
@@ -322,8 +322,8 @@ section .text
         ;   XREF to: 0048d5d6 (CONDITIONAL_JUMP)  ; LAB_0048d5d6
     PUSH EAX                            ; 0048d6a3
     PUSH 0x824e28                       ; 0048d6a4 | g_ClippedVertexBuffer
-    CALL engine_3d.c_rasterizeTriangle_FUN_005fcfc0 ; 0048d6a9
-        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005fcfc0 ; 0048d6a9
+        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count)
     JMP 0x0048d5d3                      ; 0048d6ae
         ;   XREF to: 0048d5d3 (UNCONDITIONAL_JUMP)  ; LAB_0048d5d3
 

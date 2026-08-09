@@ -121,7 +121,7 @@ void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004f3930(CHero *this_ptr,int ai_t
 CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004f3b20(CHero *this_ptr);
-CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004f3bc0(void);
+CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004f3bc0(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004f3bf0(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder *this_ptr,uint flags);
@@ -136,7 +136,7 @@ void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void);
-CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void);
+CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004f43b0(void);
 CDemonActorType * __cdecl core_hiram_cpp_CHiram_getActorType_FUN_004f43e0(CHiram *this_ptr);
 CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004f43f0(CHiram *this_ptr);
 CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004f4450(CHiram *this_ptr,uint flags);

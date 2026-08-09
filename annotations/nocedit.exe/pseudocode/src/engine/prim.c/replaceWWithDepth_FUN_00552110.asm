@@ -11,13 +11,13 @@
 ;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443b8d
 ;   core_course.cpp_renderCoursePoint_FUN_004436d0 at 00443732
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc6b0
-;   engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 at 005fd7c7
-;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2e7
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 at 0048cda2
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 at 0048dc99
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0 at 00483d67
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10 at 00553d4f
 ;   engine_prim.c_renderPolygonSoftware_FUN_00552510 at 00552774
+;   engine_prim.c_renderScanlinePolygon_FUN_00553470 at 005537cf
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005fd4e0 at 005fd7c7
 ;   ... and 1 more
 ;
 ; *****************************************************************************

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   int INT_02d7a7b4
+;   float g_FastSqrtMagicSeedOne
 ;   int g_FastSqrtMagic
 ;   int g_FastInvSqrtMagic
 ;
@@ -17,7 +17,7 @@ section .text
         ;   Label: core_flattn.cpp_staticInit_FUN_004cbcb0
     MOV EDX,0x3f800000                  ; 004cbcb3
     MOV dword ptr [ESP],EDX             ; 004cbcb8
-    MOV dword ptr [0x02d7a7b4],EDX      ; 004cbcbb | INT_02d7a7b4
+    MOV dword ptr [0x02d7a7b4],EDX      ; 004cbcbb | g_FastSqrtMagicSeedOne
     MOV ECX,dword ptr [ESP]             ; 004cbcc1
     SAR EDX,0x1                         ; 004cbcc4
     ADD ECX,EDX                         ; 004cbcc6

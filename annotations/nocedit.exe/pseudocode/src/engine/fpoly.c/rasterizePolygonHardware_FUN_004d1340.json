@@ -1,0 +1,255 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 333,
+    "complexity_score": 170,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 13,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 170,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 503
+  },
+  "cross_references": [
+    {
+      "addr": "00405aa0",
+      "from_addr": "00405af6",
+      "name": "engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00405aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00405a00",
+      "from_addr": "00405a49",
+      "name": "engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405a00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d1340",
+    "address_range": [
+      [
+        "004d1340",
+        "004d16a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fpoly.c_rasterizePolygonHardware_FUN_004d1340",
+    "signature": "void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex **vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b5710",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderScanline_FUN_005b5710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02d7b428",
+      "name": "g_EdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b42c",
+      "name": "g_HardwareEdgeTable",
+      "type": "SHardwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "02d7b430",
+      "name": "g_HardwareEdgeTable[0].y_max",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b434",
+      "name": "g_HardwareEdgeTable[0].x_current",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b438",
+      "name": "g_HardwareEdgeTable[0].x_gradient",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b444",
+      "name": "g_HardwareEdgeTable[0].u_current",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b448",
+      "name": "g_HardwareEdgeTable[0].u_gradient",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b44c",
+      "name": "g_HardwareEdgeTable[0].v_current",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b450",
+      "name": "g_HardwareEdgeTable[0].v_gradient",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b464",
+      "name": "g_HardwareEdgeTable[1].y_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7b7ac",
+      "name": "g_EdgeListMinY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b7b0",
+      "name": "g_EdgeListMaxY",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00405a49",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405a00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00405af6",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00405aa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.738636363636363,
+    "instruction_count": 264,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 52,
+      "BOOL_OR": 6,
+      "BRANCH": 7,
+      "CALL": 1,
+      "CBRANCH": 30,
+      "COPY": 223,
+      "INT_ADD": 110,
+      "INT_AND": 284,
+      "INT_CARRY": 17,
+      "INT_DIV": 1,
+      "INT_EQUAL": 179,
+      "INT_LEFT": 9,
+      "INT_LESS": 25,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 47,
+      "INT_OR": 50,
+      "INT_REM": 1,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 25,
+      "INT_SEXT": 21,
+      "INT_SLESS": 98,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 45,
+      "INT_XOR": 21,
+      "INT_ZEXT": 3,
+      "LOAD": 77,
+      "POPCOUNT": 84,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 1515
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "SHardwareEdge *"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "SHardwareEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

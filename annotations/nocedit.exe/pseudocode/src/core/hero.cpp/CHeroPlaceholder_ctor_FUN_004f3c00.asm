@@ -7,7 +7,7 @@
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_factoryFunc_FUN_004f3bc0 at 004f3bdd
+;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004f3bc0 at 004f3bdd
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 at 00524d0d
 ;
 ; Referenced Globals:

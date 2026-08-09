@@ -19,12 +19,6 @@
   },
   "cross_references": [
     {
-      "addr": "005fcfc0",
-      "from_addr": "005fd2b0",
-      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00552510",
       "from_addr": "005526fe",
       "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
@@ -46,6 +40,12 @@
       "addr": "005dd580",
       "from_addr": "005dd664",
       "name": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fcfc0",
+      "from_addr": "005fd2b0",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005fcfc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,7 +104,7 @@
       {
         "call_addr": "005fd2b0",
         "call_type": "direct",
-        "caller": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_005fcfc0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

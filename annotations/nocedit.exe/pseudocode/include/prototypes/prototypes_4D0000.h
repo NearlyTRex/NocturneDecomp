@@ -43,9 +43,9 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
 void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont *this_ptr,int screen_width,int screen_height);
 uint __cdecl engine_font_cpp_packPixelScaled_FUN_004d1110(int red,int green,int blue);
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red,int green,int blue);
-void __cdecl engine_3d_c_addPolygonEdge_FUN_004d11c0(SRenderVertex *vertex1,SRenderVertex *vertex2);
-SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge);
-void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex **vertices,int vertex_count);
+void __cdecl engine_fpoly_c_addPolygonEdge_FUN_004d11c0(SRenderVertex *vertex1,SRenderVertex *vertex2);
+SHardwareEdge * __cdecl engine_fpoly_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004d16b0(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004d16e0(void);
 CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_004d1710(CFrankenstienMachine *this_ptr);

@@ -9,12 +9,12 @@
 ;
 ; XREF[7]:
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00408070 at 004082d1
-;   engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 at 005fd76b
-;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2d0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0 at 00483b0a
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10 at 00553c82
 ;   engine_prim.c_renderPolygonSoftware_FUN_00552510 at 00552718
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470 at 00553773
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005fd4e0 at 005fd76b
+;   engine_zraster.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2d0
 ;
 ; Referenced Globals:
 ;   int g_ProcessorType

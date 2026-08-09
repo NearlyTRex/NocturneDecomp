@@ -69,6 +69,7 @@ extern char g_ActStatsTextBuffer2[5120];
 extern double DOUBLE_02d7c2e0;
 
 // float
+extern float g_FastSqrtMagicSeedOne;
 extern float FLOAT_02d7b7f0;
 extern float FLOAT_02d7b808;
 extern float FLOAT_02d7b80c;
@@ -88,7 +89,6 @@ extern int g_TrailAllocIndex;
 extern int g_ShellAllocIndex;
 extern int g_PopcornAllocIndex;
 extern int g_RainDropAllocIndex;
-extern int INT_02d7a7b4;
 extern int g_FastSqrtMagic;
 extern int g_FastInvSqrtMagic;
 extern int INT_02d7a7c0;

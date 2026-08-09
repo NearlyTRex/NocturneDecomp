@@ -37,18 +37,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005fd4e0",
-      "from_addr": "005fd7c7",
-      "name": "engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005fcfc0",
-      "from_addr": "005fd2e7",
-      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0048caf0",
       "from_addr": "0048cda2",
       "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0",
@@ -82,6 +70,18 @@
       "addr": "00553470",
       "from_addr": "005537cf",
       "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fd4e0",
+      "from_addr": "005fd7c7",
+      "name": "engine_zraster.c_rasterizePolygonCustom_FUN_005fd4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005fcfc0",
+      "from_addr": "005fd2e7",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005fcfc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -127,7 +127,7 @@
       {
         "call_addr": "005fd2e7",
         "call_type": "direct",
-        "caller": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_005fcfc0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +138,7 @@
       {
         "call_addr": "005fd7c7",
         "call_type": "direct",
-        "caller": "engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0",
+        "caller": "engine_zraster.c_rasterizePolygonCustom_FUN_005fd4e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

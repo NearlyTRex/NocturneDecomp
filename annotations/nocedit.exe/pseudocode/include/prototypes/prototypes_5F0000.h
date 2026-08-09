@@ -191,15 +191,15 @@ void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_
 void __cdecl core_zombie_cpp_CZombie_randomize_FUN_005fcb70(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_addFilesToExtract_FUN_005fcc20(CZombie *this_ptr,_FILE *file_handle);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,uint flags);
-int * __cdecl core_zombie_cpp_assignInt_FUN_005fcd10(int *dest,int *src);
-void __cdecl engine_3d_c_addRasterizerEdge_FUN_005fcd20(SRenderVertex *v0,SRenderVertex *v1);
-void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *v0,SRenderVertex *v1);
-SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_005fcf80(int y_start,SSoftwareEdge *exclude_edge);
-void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count);
-void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
+int * __cdecl engine_zraster_c_assignInt_FUN_005fcd10(int *dest,int *src);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_005fcd20(SRenderVertex *v0,SRenderVertex *v1);
+void __cdecl engine_zraster_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *v0,SRenderVertex *v1);
+SSoftwareEdge * __cdecl engine_zraster_c_findRasterizerEdge_FUN_005fcf80(int y_start,SSoftwareEdge *exclude_edge);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
-inline void engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
-    engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(vertex_buffer, vertex_count, (CustomScanlineFunc *)scanline_renderer);
+inline void engine_zraster_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
+    engine_zraster_c_rasterizePolygonCustom_FUN_005fd4e0(vertex_buffer, vertex_count, (CustomScanlineFunc *)scanline_renderer);
 }
 SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character);

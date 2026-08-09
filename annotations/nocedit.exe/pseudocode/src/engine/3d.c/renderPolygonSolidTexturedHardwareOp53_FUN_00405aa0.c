@@ -27,7 +27,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedHardwareOp53
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   g_VertexPreprocessMode = PREPROCESS_NONE;
   if (g_BypassClipping != 0) {
-    engine_3d_c_rasterizePolygonHardware_FUN_004d1340
+    engine_fpoly_c_rasterizePolygonHardware_FUN_004d1340
               ((SRenderVertex **)(prim + 1),(prim->base).count);
     return (SMRGLHeaderExtended *)&g_RenderResult;
   }

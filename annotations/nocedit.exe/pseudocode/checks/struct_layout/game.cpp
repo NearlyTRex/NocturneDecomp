@@ -3052,8 +3052,8 @@ static_assert(__builtin_offsetof(CExternalRendererBridge, texture_dimension) == 
               "offsetof(CExternalRendererBridge, texture_dimension) != 72");
 static_assert(__builtin_offsetof(CExternalRendererBridge, texture_bits) == 76,
               "offsetof(CExternalRendererBridge, texture_bits) != 76");
-static_assert(__builtin_offsetof(CExternalRendererBridge, system_memory_size) == 80,
-              "offsetof(CExternalRendererBridge, system_memory_size) != 80");
+static_assert(__builtin_offsetof(CExternalRendererBridge, full_screen_quad_depth) == 80,
+              "offsetof(CExternalRendererBridge, full_screen_quad_depth) != 80");
 static_assert(__builtin_offsetof(CExternalRendererBridge, video_memory_size) == 84,
               "offsetof(CExternalRendererBridge, video_memory_size) != 84");
 static_assert(__builtin_offsetof(CExternalRendererBridge, max_texture_size) == 88,
@@ -3191,15 +3191,15 @@ static_assert(__builtin_offsetof(CFilterCache, filter_names) == 4,
 static_assert(__builtin_offsetof(CFilterCache, filters) == 2564,
               "offsetof(CFilterCache, filters) != 2564");
 
-// ---- CFilterFx (12 bytes) ----
-static_assert(sizeof(CFilterFx) == 12,
-              "sizeof(CFilterFx) != 12");
-static_assert(__builtin_offsetof(CFilterFx, frame_count) == 0,
-              "offsetof(CFilterFx, frame_count) != 0");
-static_assert(__builtin_offsetof(CFilterFx, movie_data) == 4,
-              "offsetof(CFilterFx, movie_data) != 4");
-static_assert(__builtin_offsetof(CFilterFx, current_frame) == 8,
-              "offsetof(CFilterFx, current_frame) != 8");
+// ---- CFilterFX (12 bytes) ----
+static_assert(sizeof(CFilterFX) == 12,
+              "sizeof(CFilterFX) != 12");
+static_assert(__builtin_offsetof(CFilterFX, frame_count) == 0,
+              "offsetof(CFilterFX, frame_count) != 0");
+static_assert(__builtin_offsetof(CFilterFX, movie_data) == 4,
+              "offsetof(CFilterFX, movie_data) != 4");
+static_assert(__builtin_offsetof(CFilterFX, current_frame) == 8,
+              "offsetof(CFilterFX, current_frame) != 8");
 
 // ---- CFireEffect (4 bytes) ----
 static_assert(sizeof(CFireEffect) == 4,

@@ -97,8 +97,8 @@ static void write_screenshot_metadata(const char *path, const PixelStats *s)
     std::fprintf(f, "g_ClippedVertexCount:    %d\n\n", g_ClippedVertexCount);
 
     std::fprintf(f, "== Vertex / Lighting ==\n");
-    std::fprintf(f, "g_VertexRedStart:    %d\n", g_VertexRedStart);
-    std::fprintf(f, "g_VertexRedDelta:    %d\n", g_VertexRedDelta);
+    std::fprintf(f, "g_VertexRedStart:    %u\n", g_VertexRedStart.u32[0]);
+    std::fprintf(f, "g_VertexRedDelta:    %u\n", g_VertexRedDelta.u32[0]);
     std::fprintf(f, "g_VertexAlphaStart:  %d\n", g_VertexAlphaStart);
     std::fprintf(f, "g_VertexAlphaDelta:  %d\n", g_VertexAlphaDelta);
     std::fprintf(f, "g_AmbientLightLevel: %d\n", g_AmbientLightLevel);
@@ -719,12 +719,12 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
     std::fprintf(f, "\n");
 
     std::fprintf(f, "[Per-vertex color gradient (driven into rasterizer)]\n");
-    std::fprintf(f, "g_VertexRedStart  : %d\n", g_VertexRedStart);
-    std::fprintf(f, "g_VertexRedDelta  : %d\n", g_VertexRedDelta);
-    std::fprintf(f, "g_VertexGreenStart: %d\n", g_VertexGreenStart);
-    std::fprintf(f, "g_VertexGreenDelta: %d\n", g_VertexGreenDelta);
-    std::fprintf(f, "g_VertexBlueStart : %d\n", g_VertexBlueStart);
-    std::fprintf(f, "g_VertexBlueDelta : %d\n", g_VertexBlueDelta);
+    std::fprintf(f, "g_VertexRedStart  : %u\n", g_VertexRedStart.u32[0]);
+    std::fprintf(f, "g_VertexRedDelta  : %u\n", g_VertexRedDelta.u32[0]);
+    std::fprintf(f, "g_VertexGreenStart: %u\n", g_VertexGreenStart.u32[0]);
+    std::fprintf(f, "g_VertexGreenDelta: %u\n", g_VertexGreenDelta.u32[0]);
+    std::fprintf(f, "g_VertexBlueStart : %u\n", g_VertexBlueStart.u32[0]);
+    std::fprintf(f, "g_VertexBlueDelta : %u\n", g_VertexBlueDelta.u32[0]);
     std::fprintf(f, "g_VertexAlphaStart: %d\n", g_VertexAlphaStart);
     std::fprintf(f, "g_VertexAlphaDelta: %d\n", g_VertexAlphaDelta);
     std::fprintf(f, "\n");

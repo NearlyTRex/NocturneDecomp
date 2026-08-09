@@ -56,6 +56,7 @@ char g_ActStatsTextBuffer2[5120] = {};
 double DOUBLE_02d7c2e0 = {};
 
 // float
+float g_FastSqrtMagicSeedOne = {};
 float FLOAT_02d7b7f0 = {};
 float FLOAT_02d7b808 = {};
 float FLOAT_02d7b80c = {};
@@ -75,7 +76,6 @@ int g_TrailAllocIndex = {};
 int g_ShellAllocIndex = {};
 int g_PopcornAllocIndex = {};
 int g_RainDropAllocIndex = {};
-int INT_02d7a7b4 = {};
 int g_FastSqrtMagic = {};
 int g_FastInvSqrtMagic = {};
 int INT_02d7a7c0 = {};

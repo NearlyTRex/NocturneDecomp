@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[5]:
-;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2b0
 ;   engine_prim.c_renderPolygonSoftware_FUN_00552510 at 005526fe
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470 at 00553748
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005b7a50 at 005b7aed
 ;   engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580 at 005dd664
+;   engine_zraster.c_rasterizeTriangle_FUN_005fcfc0 at 005fd2b0
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer

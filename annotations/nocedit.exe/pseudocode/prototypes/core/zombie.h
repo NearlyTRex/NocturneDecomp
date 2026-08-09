@@ -126,7 +126,3 @@ void __cdecl CZombie::addFilesToExtract(CZombie *this_ptr,_FILE *file_handle);
 // Original: core_zombie.cpp_CZombie_dtor_FUN_005fcc50
 // Address: 005fcc50
 CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
-
-// Original: core_zombie.cpp_assignInt_FUN_005fcd10
-// Address: 005fcd10
-int * __cdecl assignInt(int *dest,int *src);
