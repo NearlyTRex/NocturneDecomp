@@ -7,7 +7,7 @@
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_elephant.cpp_factoryFunc_FUN_004776e0 at 004776f3
+;   core_elephant.cpp_factoryFuncElephantGun_FUN_004776e0 at 004776f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_0057f109

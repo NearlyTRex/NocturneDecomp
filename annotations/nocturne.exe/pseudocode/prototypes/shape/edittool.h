@@ -279,9 +279,9 @@ void __cdecl CStrList::remove(CStrList *this_ptr,int start_index,int end_index);
 // Address: 00473fd0
 void __cdecl CStrList::sortAll(CStrList *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00473ff0
+// Original: shape_edittool.cpp_qsortByString_FUN_00473ff0
 // Address: 00473ff0
-void FUN_00473ff0(undefined4 *param_1,undefined4 *param_2);
+int __cdecl qsortByString(char *a,char *b);
 
 // Original: shape_edittool.cpp_CStrList_sort_FUN_00474010
 // Address: 00474010
@@ -411,9 +411,9 @@ void __cdecl draw3DInsetBorder(int left,int top,int right,int bottom,int inner_y
 // Address: 00476450
 CEdScrollBar * __cdecl CEdScrollBar::ctor(CEdScrollBar *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00476490
+// Original: shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490
 // Address: 00476490
-CEdScrollBar * __cdecl FUN_00476490(CEdScrollBar *this_ptr,uint flags);
+CEdScrollBar * __cdecl CEdScrollBar::dtor(CEdScrollBar *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004764b0
 // Address: 004764b0
@@ -483,17 +483,17 @@ int __cdecl calculateButtonHeight(char *button_text);
 // Address: 00477190
 CEdCheck * __cdecl CEdCheck::ctor(CEdCheck *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_004771d0
+// Original: shape_edittool.cpp_CEdCheck_dtor_FUN_004771d0
 // Address: 004771d0
-CEdCheck * FUN_004771d0(void);
+CEdCheck * __cdecl CEdCheck::dtor(CEdCheck *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_FUN_004771f0
 // Address: 004771f0
 void FUN_004771f0(void);
 
-// Original: shape_edittool.cpp_FUN_004772e0
+// Original: shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004772e0
 // Address: 004772e0
-void __cdecl FUN_004772e0(CEdCheck *this_ptr);
+void __cdecl CEdCheck::clearActiveButtonIfMatch(CEdCheck *this_ptr);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300
 // Address: 00477300
@@ -526,10 +526,6 @@ int __cdecl CStrList::getItemCount(CStrList *this_ptr);
 // Original: shape_edittool.cpp_getFontMaxCharHeight_FUN_00477670
 // Address: 00477670
 int __cdecl getFontMaxCharHeight(CBitFont *font_ptr);
-
-// Original: shape_edittool.cpp_FUN_0047767b
-// Address: 0047767b
-void FUN_0047767b(void);
 
 // Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_00477690
 // Address: 00477690

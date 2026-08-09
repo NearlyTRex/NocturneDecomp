@@ -7,7 +7,7 @@
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dracbrid.cpp_factoryFunc_FUN_00458610 at 00458623
+;   core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00458610 at 00458623
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nbride2_dfm_0057d4ac

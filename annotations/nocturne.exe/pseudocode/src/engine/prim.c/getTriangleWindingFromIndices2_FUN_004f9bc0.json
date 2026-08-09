@@ -1,0 +1,415 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 515,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 515,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 28,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 28,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 30,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 67,
+        "line": 30,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 34,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 34,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 36,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 67,
+        "line": 36,
+        "message": "use of undeclared identifier 'DAT_005c5028'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 234,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 19,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "undefined_data"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f9bc0",
+    "address_range": [
+      [
+        "004f9bc0",
+        "004f9cab"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0",
+    "signature": "int __cdecl engine_prim_c_getTriangleWindingFromIndices2_FUN_004f9bc0(SMRGLPrimitiveTriangle *triangle_indices)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005c5014",
+      "name": "DAT_005c5014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5024",
+      "name": "DAT_005c5024",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5028",
+      "name": "DAT_005c5028",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006b0280",
+      "name": "DAT_006b0280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.756410256410256,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 61,
+      "INT_ADD": 45,
+      "INT_AND": 75,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 6,
+      "INT_LESS": 16,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 6,
+      "INT_SLESS": 27,
+      "INT_SUB": 23,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 30,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 13,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 449
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_indices",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLPrimitiveTriangle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_006b0280",
+      "severity": "mild",
+      "text": "if (DAT_006b0280 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_24 = (&DAT_005c5024)[iVar4 * 0xc] - (&DAT_005c5024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_24 = (&DAT_005c5024)[iVar4 * 0xc] - (&DAT_005c5024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_20 = *(int *)(&DAT_005c5028 + iVar3) - *(int *)(&DAT_005c5028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_20 = *(int *)(&DAT_005c5028 + iVar3) - *(int *)(&DAT_005c5028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_1c = (&DAT_005c5024)[iVar5 * 0xc] - (&DAT_005c5024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_1c = (&DAT_005c5024)[iVar5 * 0xc] - (&DAT_005c5024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_18 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_18 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_1c = (&DAT_005c5024)[iVar4 * 0xc] - (&DAT_005c5024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_1c = (&DAT_005c5024)[iVar4 * 0xc] - (&DAT_005c5024)[iVar1 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_18 = *(int *)(&DAT_005c5028 + iVar3) - *(int *)(&DAT_005c5028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_18 = *(int *)(&DAT_005c5028 + iVar3) - *(int *)(&DAT_005c5028 + iVar1 * 0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_24 = (&DAT_005c5024)[iVar5 * 0xc] - (&DAT_005c5024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005c5024",
+      "severity": "mild",
+      "text": "local_24 = (&DAT_005c5024)[iVar5 * 0xc] - (&DAT_005c5024)[iVar4 * 0xc];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_20 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005c5028",
+      "severity": "mild",
+      "text": "local_20 = *(int *)(&DAT_005c5028 + iVar5 * 0x30) - *(int *)(&DAT_005c5028 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 36,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 36,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

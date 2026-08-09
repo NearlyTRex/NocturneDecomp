@@ -67,7 +67,8 @@ LAB_0044eea7:
         }
       }
       if (g_CGame_PTR_005b9354->camera_debug_enabled != 0) {
-        engine_2d_c_FUN_00402d30(param_2,param_2 + param_4,param_3 + param_4 + -0xb,param_1);
+        engine_2d_c_drawTextCenteredXYColor_FUN_00402d30
+                  (param_2,param_2 + param_4,param_3 + param_4 + -0xb,param_1);
         return;
       }
     }

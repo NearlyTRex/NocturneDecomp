@@ -7,7 +7,7 @@
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vessel.cpp_factoryFunc_FUN_0054f8f0 at 0054f903
+;   core_vessel.cpp_factoryFuncCryptVessel_FUN_0054f8f0 at 0054f903
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vsslbase_kfm_00597448

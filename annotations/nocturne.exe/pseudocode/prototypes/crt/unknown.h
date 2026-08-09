@@ -463,10 +463,6 @@ void FUN_0056a6ad(void);
 // Address: 0056a6c4
 void FUN_0056a6c4(void);
 
-// Original: crt_unknown.c_FUN_0056a6dc
-// Address: 0056a6dc
-undefined2 FUN_0056a6dc(void);
-
 // Original: crt_unknown.c_FUN_0056a827
 // Address: 0056a827
 void FUN_0056a827(uint *param_1,char *param_2,uint param_3,uint param_4,char *param_5);

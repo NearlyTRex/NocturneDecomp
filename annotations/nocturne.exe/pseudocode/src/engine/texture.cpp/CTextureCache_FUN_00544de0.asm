@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   max_texture_count
 ;
 ; XREF[1]:
-;   engine_texture.cpp_FUN_005458a0 at 005458bd
+;   engine_texture.cpp_initTextureCache_FUN_005458a0 at 005458bd
 ;
 ; *****************************************************************************
 

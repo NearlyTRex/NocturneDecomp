@@ -7,9 +7,9 @@
 // Address: 004ef480
 void __cdecl staticInit(void);
 
-// Original: core_passngr.cpp_factoryFunc_FUN_004ef4b0
+// Original: core_passngr.cpp_factoryFuncPassenger_FUN_004ef4b0
 // Address: 004ef4b0
-CPassenger * __cdecl factoryFunc(void);
+CPassenger * __cdecl factoryFuncPassenger(void);
 
 // Original: core_passngr.cpp_CPassenger_getActorType_FUN_004ef4d0
 // Address: 004ef4d0

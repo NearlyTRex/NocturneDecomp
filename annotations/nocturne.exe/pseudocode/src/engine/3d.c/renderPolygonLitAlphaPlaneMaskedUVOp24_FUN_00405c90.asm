@@ -7,8 +7,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00405b40 at 00405bbb
-;   engine_3d.c_FUN_00408fc0 at 00409159
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 00409159
+;   engine_3d.c_renderSortedPolygonList_FUN_00405b40 at 00405bbb
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

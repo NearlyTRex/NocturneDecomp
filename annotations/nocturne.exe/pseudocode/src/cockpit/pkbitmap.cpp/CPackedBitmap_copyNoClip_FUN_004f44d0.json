@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -62,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 114,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 45,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 152
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -99,7 +99,7 @@
     {
       "addr": "0042d170",
       "is_variadic": false,
-      "name": "cockpit_ckptutil.c_FUN_0042d170"
+      "name": "cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042d170"
     },
     {
       "addr": "0042d150",
@@ -228,7 +228,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 27,
       "match": "(ushort *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar5 = (ushort *)((int)this_ptr->packed_data + *this_ptr->row_offsets);",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)this_ptr->row_offsets + local_20 + 4);",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(ushort *)(iVar4 + (int)puVar3",
       "severity": "moderate",
       "text": "while (puVar5 < (ushort *)(iVar4 + (int)puVar3)) {",
@@ -252,7 +252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 35,
       "match": "(ushort *)((int)src_buffer",
       "severity": "moderate",
       "text": "puVar5 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));",
@@ -260,7 +260,7 @@
     },
     {
       "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "(int)puVar3",
       "severity": "moderate",
       "text": "while (puVar5 < (ushort *)(iVar4 + (int)puVar3)) {",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "(int)src_buffer",
       "severity": "moderate",
       "text": "puVar5 = (ushort *)((int)src_buffer + (*puVar1 + 3 & 0xfffffffc));",

@@ -11,7 +11,7 @@ void __cdecl core_pendulum_cpp_staticInit_FUN_004f2bd0(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CPendulumActorType_01e42858,"CPendulum",
-             core_pendulum_cpp_factoryFunc_FUN_004f2c00,&INT_005be164,8,
+             core_pendulum_cpp_factoryFuncPendulum_FUN_004f2c00,&INT_005be164,8,
              &g_CDemonActorActorType_00763e48);
   return;
 }

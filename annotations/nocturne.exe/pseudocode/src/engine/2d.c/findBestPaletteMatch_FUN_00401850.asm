@@ -19,9 +19,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   engine_2d.c_FUN_00402e90 at 00402ff2
-;   engine_2d.c_FUN_004031a0 at 0040330a
 ;   engine_2d.c_buildColorLookupTable_FUN_00403570 at 004035f2
+;   engine_2d.c_buildFogTable_FUN_00402e90 at 00402ff2
+;   engine_2d.c_buildLightTable_FUN_004031a0 at 0040330a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057712c = 0.577350270000000

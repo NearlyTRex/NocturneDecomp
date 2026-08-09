@@ -61,11 +61,11 @@ cert-flp30-c (5)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (1011 diagnostics)
+Cppcheck (quick) (991 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (492)
+uninitvar (471)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_FUN_0042d180                    line 23
@@ -79,10 +79,6 @@ uninitvar (492)
   cockpit_ckptutil.c_FUN_0042d180                    line 34
     File: cockpit/ckptutil.c
     Uninitialized variable: in_stack_00000010
-
-  cockpit_ckptutil.c_FUN_004301f0                    line 16
-    File: cockpit/ckptutil.c
-    Uninitialized variable: in_stack_00000004
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370    line 19
     File: cockpit/ckptutil.c
@@ -103,6 +99,18 @@ uninitvar (492)
   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedL line 28
     File: cockpit/drawsurf.cpp
     Uninitialized variable: in_stack_00000018
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashe line 28
+    File: cockpit/drawsurf.cpp
+    Uninitialized variable: in_stack_00000038
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashe line 29
+    File: cockpit/drawsurf.cpp
+    Uninitialized variable: in_stack_00000034
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashe line 30
+    File: cockpit/drawsurf.cpp
+    Uninitialized variable: in_stack_00000030
 
   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_ line 28
     File: cockpit/drawsurf.cpp
@@ -167,42 +175,6 @@ uninitvar (492)
   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCor line 35
     File: cockpit/drawsurf.cpp
     Uninitialized variable: in_stack_00000058
-
-  cockpit_drawsurf.cpp_FUN_0045c050                  line 29
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000038
-
-  cockpit_drawsurf.cpp_FUN_0045c050                  line 30
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000034
-
-  cockpit_drawsurf.cpp_FUN_0045c050                  line 31
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000030
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 22
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000018
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 22
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000008
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 23
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000010
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 26
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000014
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 26
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000004
-
-  cockpit_drawsurf.cpp_FUN_0045c400                  line 29
-    File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_0000000c
 
   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e3 line 190
     File: cockpit/drawsurf.cpp
@@ -560,7 +532,7 @@ uninitvar (492)
     File: core/dcamera.cpp
     Uninitialized variable: local_114
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 193
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 195
     File: core/dcamera.cpp
     Uninitialized variable: iStack_120
 
@@ -1079,10 +1051,6 @@ uninitvar (492)
   core_fire.cpp_FUN_0048c920                         line 16
     File: core/fire.cpp
     Uninitialized variable: in_stack_00000004
-
-  core_fire.cpp_FUN_0048c93c                         line 14
-    File: core/fire.cpp
-    Uninitialized variable: in_EAX
 
   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 76
     File: core/flame.cpp
@@ -1676,7 +1644,7 @@ uninitvar (492)
     File: core/xform.cpp
     Uninitialized variable: extraout_EDX
 
-  engine_2d.c_FUN_00402e90                           line 75
+  engine_2d.c_buildFogTable_FUN_00402e90             line 73
     File: engine/2d.c
     Uninitialized variable: unaff_SI
 
@@ -1704,29 +1672,9 @@ uninitvar (492)
     File: engine/2d.c
     Uninitialized variable: iStack_1c
 
-  engine_3d.c_FUN_00404430                           line 15
-    File: engine/3d.c
-    Uninitialized variable: in_stack_00000004
-
   engine_alphabit.cpp_FUN_0040eadd                   line 19
     File: engine/alphabit.cpp
     Uninitialized variable: unaff_retaddr
-
-  engine_clipper.c_FUN_00432057                      line 30
-    File: engine/clipper.c
-    Uninitialized variable: unaff_EDI
-
-  engine_clipper.c_FUN_00432057                      line 32
-    File: engine/clipper.c
-    Uninitialized variable: in_EDX
-
-  engine_clipper.c_FUN_00432057                      line 56
-    File: engine/clipper.c
-    Uninitialized variable: unaff_EBX
-
-  engine_clipper.c_FUN_00432057                      line 58
-    File: engine/clipper.c
-    Uninitialized variable: unaff_EBP
 
   engine_drender.cpp_FUN_0045ed40                    line 17
     File: engine/drender.cpp
@@ -1804,22 +1752,6 @@ uninitvar (492)
     File: engine/pod.cpp
     Uninitialized variable: unaff_ESI
 
-  engine_prim.c_FUN_004f942e                         line 14
-    File: engine/prim.c
-    Uninitialized variable: in_EAX
-
-  engine_prim.c_FUN_004f9440                         line 16
-    File: engine/prim.c
-    Uninitialized variable: in_stack_00000004
-
-  engine_prim.c_FUN_004faca0                         line 24
-    File: engine/prim.c
-    Uninitialized variable: in_stack_00000004
-
-  engine_prim.c_FUN_004faca0                         line 24
-    File: engine/prim.c
-    Uninitialized variable: in_stack_00000008
-
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FU line 62
     File: engine/winfont.cpp
     Uninitialized variable: in_stack_0000002c
@@ -1875,22 +1807,6 @@ uninitvar (492)
   shape_edittool.cpp_FUN_004771f0                    line 31
     File: shape/edittool.cpp
     Uninitialized variable: in_stack_0000000c
-
-  shape_edittool.cpp_FUN_0047767b                    line 17
-    File: shape/edittool.cpp
-    Uninitialized variable: in_EAX
-
-  shape_edittool.cpp_FUN_0047767b                    line 19
-    File: shape/edittool.cpp
-    Uninitialized variable: unaff_EBX
-
-  shape_edittool.cpp_FUN_0047767b                    line 19
-    File: shape/edittool.cpp
-    Uninitialized variable: in_CL
-
-  shape_edittool.cpp_FUN_0047767b                    line 20
-    File: shape/edittool.cpp
-    Uninitialized variable: in_EDX
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 143
     File: sound/mp3.cpp
@@ -4077,6 +3993,26 @@ nullPointerRedundantCheck (4)
     Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
+arrayIndexOutOfBoundsCond (4)
+----------------------------------------------------------------------------------------------------
+
+  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 124
+    File: core/gabriela.cpp
+    Either the condition 'uStack_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 9, which is out of bounds.
+
+  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 127
+    File: core/gabriela.cpp
+    Either the condition 'uStack_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
+
+  engine_clipper.c_clipAndRasterize_FUN_00432cd0     line 175
+    File: engine/clipper.c
+    Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 170
+    File: engine/clipper.c
+    Either the condition '0<vertex_count' is redundant or the array 'auStack_d0[33]' is accessed at index 33, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
 identicalInnerCondition (4)
 ----------------------------------------------------------------------------------------------------
 
@@ -4095,22 +4031,6 @@ identicalInnerCondition (4)
   engine_texture.cpp_CTextureCache_setupTexture_FUN_ line 32
     File: engine/texture.cpp
     Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBoundsCond (3)
-----------------------------------------------------------------------------------------------------
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 124
-    File: core/gabriela.cpp
-    Either the condition 'uStack_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 9, which is out of bounds.
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 127
-    File: core/gabriela.cpp
-    Either the condition 'uStack_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
-
-  engine_clipper.c_clipAndRasterize_FUN_00432cd0     line 175
-    File: engine/clipper.c
-    Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (3)

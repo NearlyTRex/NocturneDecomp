@@ -63,7 +63,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr);
 CSlew * __cdecl core_game_cpp_CSlew_ctor_FUN_004a72a0(CSlew *this_ptr);
 CSlew * __cdecl core_game_cpp_CSlew_dtor_FUN_004a72b0(CSlew *this_ptr,uint flags);
 void __cdecl core_gargoyle_cpp_staticInit_FUN_004a72f0(void);
-CGargoyle * __cdecl core_gargoyle_cpp_factoryFunc_FUN_004a7320(void);
+CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004a7320(void);
 CDemonActorType * __cdecl core_gargoyle_cpp_CGargoyle_getActorType_FUN_004a7340(CGargoyle *this_ptr);
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(CGargoyle *this_ptr);
 void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450(CGargoyle *this_ptr);
@@ -77,7 +77,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(CGargoyle *
 ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004a88d0(CGargoyle *this_ptr,SCollisionInfo *collision_info);
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004a88f0(CGargoyle *this_ptr,uint flags);
 void __cdecl core_gasmask_cpp_staticInit_FUN_004a89b0(void);
-CGasMask * __cdecl core_gasmask_cpp_factoryFunc_FUN_004a89e0(void);
+CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004a89e0(void);
 CDemonActorType * __cdecl core_gasmask_cpp_CGasMask_getActorType_FUN_004a8a00(CGasMask *this_ptr);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004a8a10(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_setup_FUN_004a8a60(CGasMask *this_ptr);
@@ -89,7 +89,7 @@ ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004a8b60(C
 CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004a8b70(CGasMask *this_ptr,CBoundingBox3D *out_box);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004a8bc0(CGasMask *this_ptr,uint flags);
 void __cdecl core_ghoul_cpp_staticInit_FUN_004a8c10(void);
-CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004a8c70(void);
+CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004a8c70(void);
 CDemonActorType * __cdecl core_ghoul_cpp_CGhoul_getActorType_FUN_004a8c90(CGhoul *this_ptr);
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(CGhoul *this_ptr);
 void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(CGhoul *this_ptr);
@@ -104,7 +104,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004ab450(CGhoul *this_ptr,S
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004ab830(CGhoul *this_ptr,CVector3f *out_points_array);
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004aba30(CGhoul *this_ptr,uint flags);
 void __cdecl core_glass_cpp_staticInit_FUN_004abaf0(void);
-CGlass * __cdecl core_glass_cpp_factoryFunc_FUN_004abb20(void);
+CGlass * __cdecl core_glass_cpp_factoryFuncGlass_FUN_004abb20(void);
 CDemonActorType * __cdecl core_glass_cpp_CGlass_getActorType_FUN_004abb40(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004abb50(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr);

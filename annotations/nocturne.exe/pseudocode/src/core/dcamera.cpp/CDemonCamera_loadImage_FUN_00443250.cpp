@@ -171,7 +171,7 @@ LAB_00443363:
       _fread(&g_SFogGrid_0140d784,0x1000,1,local_14);
       p_Var6 = local_14;
       if (g_SFogGrid_0140d784.density_multiplier == 0) {
-        memset((void *)0x12e1778,0,0x12c000);
+        memset(&g_VOID_PTR_012e1778,0,0x12c000);
       }
       else {
         _DAT_0140d780 = 0x10;
@@ -201,7 +201,7 @@ LAB_00443363:
           local_98 = _DAT_0140d780 * 0x12c00;
           iVar7 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
                             (&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,
-                             (char *)0x12e1778,&local_98,1);
+                             (char *)&g_VOID_PTR_012e1778,&local_98,1);
           if (iVar7 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2500;
@@ -225,10 +225,10 @@ LAB_00443363:
                   iVar21 = (*(int *)(iVar17 + local_48 + 0x12e1775) >> 0x18) + iVar21;
                   cVar5 = (char)iVar21 * '\x04';
                   if (0 < local_a4) {
-                    cVar5 = cVar5 + *(char *)(local_44 + iVar17 + 0x12e1778);
+                    cVar5 = cVar5 + *(char *)((int)&g_VOID_PTR_012e1778 + local_44 + iVar17);
                   }
                   iVar17 = iVar17 + 1;
-                  *(char *)(iVar7 + 0x12e1778) = cVar5;
+                  *(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar5;
                   iVar7 = iVar7 + 1;
                 } while (iVar17 < 0x140);
                 local_44 = local_44 + 0x140;
@@ -244,7 +244,7 @@ LAB_00443363:
         }
         else {
           _fseek(p_Var6,-3,1);
-          _fread((void *)0x12e1778,0x12c00,_DAT_0140d780,p_Var6);
+          _fread(&g_VOID_PTR_012e1778,0x12c00,_DAT_0140d780,p_Var6);
         }
       }
       _fclose(local_14);
@@ -463,7 +463,8 @@ LAB_00443363:
               iVar19 = iStack_1c + iVar21;
               do {
                 iVar17 = iVar17 + 1;
-                *(byte *)(iVar19 + 0x12e1778) = *(byte *)(iVar15 + 0x12e1778);
+                *(byte *)((int)&g_VOID_PTR_012e1778 + iVar19) =
+                     *(byte *)((int)&g_VOID_PTR_012e1778 + iVar15);
                 iVar15 = iVar15 + 0x12c00;
                 iVar19 = iVar19 + 0x12c00;
               } while (iVar17 < (int)_DAT_0140d780);

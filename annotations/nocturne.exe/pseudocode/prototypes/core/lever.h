@@ -7,9 +7,9 @@
 // Address: 004c5fe0
 void __cdecl staticInit(void);
 
-// Original: core_lever.cpp_factoryFunc_FUN_004c6010
+// Original: core_lever.cpp_factoryFuncLever_FUN_004c6010
 // Address: 004c6010
-CLever * __cdecl factoryFunc(void);
+CLever * __cdecl factoryFuncLever(void);
 
 // Original: core_lever.cpp_CLever_getActorType_FUN_004c6030
 // Address: 004c6030

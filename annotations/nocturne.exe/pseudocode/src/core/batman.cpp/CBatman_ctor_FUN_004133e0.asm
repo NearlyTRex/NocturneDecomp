@@ -7,7 +7,7 @@
 ; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_batman.cpp_factoryFunc_FUN_004133b0 at 004133c3
+;   core_batman.cpp_factoryFuncBatman_FUN_004133b0 at 004133c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batman_dfm_00578a97

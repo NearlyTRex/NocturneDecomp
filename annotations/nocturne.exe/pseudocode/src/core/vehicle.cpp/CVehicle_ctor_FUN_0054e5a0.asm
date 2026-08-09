@@ -7,7 +7,7 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vehicle.cpp_factoryFunc_FUN_0054e570 at 0054e583
+;   core_vehicle.cpp_factoryFuncVehicle_FUN_0054e570 at 0054e583
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_32ford_kfm_005972c1

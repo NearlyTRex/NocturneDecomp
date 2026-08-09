@@ -7,9 +7,9 @@
 // Address: 00532fc0
 void __cdecl staticInit(void);
 
-// Original: core_spike.cpp_factoryFunc_FUN_00532ff0
+// Original: core_spike.cpp_factoryFuncSpike_FUN_00532ff0
 // Address: 00532ff0
-CSpike * __cdecl factoryFunc(void);
+CSpike * __cdecl factoryFuncSpike(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_00533010
 // Address: 00533010

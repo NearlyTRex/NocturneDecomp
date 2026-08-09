@@ -7,9 +7,9 @@
 // Address: 004b0ae0
 void __cdecl staticInit(void);
 
-// Original: core_grave.cpp_factoryFunc_FUN_004b0b10
+// Original: core_grave.cpp_factoryFuncGrave_FUN_004b0b10
 // Address: 004b0b10
-CGrave * __cdecl factoryFunc(void);
+CGrave * __cdecl factoryFuncGrave(void);
 
 // Original: core_grave.cpp_CGrave_getActorType_FUN_004b0b30
 // Address: 004b0b30

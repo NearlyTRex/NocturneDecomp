@@ -18,7 +18,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_004f45e0 at 004f461b
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d170
+;   cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042d170
 ;   cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_0042d150
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004f45bb
     JMP 0x004f450e                      ; 004f45bf
         ;   XREF to: 004f450e (UNCONDITIONAL_JUMP)  ; LAB_004f450e
-    CALL cockpit_ckptutil.c_FUN_0042d170 ; 004f45c4
-        ;   XREF to: 0042d170 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d170()
+    CALL cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042d170 ; 004f45c4
+        ;   XREF to: 0042d170 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042d170()
         ;   Label: LAB_004f45c4
     MOV dword ptr [ESP + 0x8],EAX       ; 004f45c9
     JMP 0x004f4519                      ; 004f45cd

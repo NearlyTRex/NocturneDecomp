@@ -7,7 +7,7 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_curtain.cpp_factoryFunc_FUN_0043d930 at 0043d943
+;   core_curtain.cpp_factoryFuncCurtain_FUN_0043d930 at 0043d943
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SGLASS_RAW_0057b4c7

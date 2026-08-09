@@ -503,10 +503,6 @@ int FUN_0048c920(void);
 // Address: 0048c930
 void __cdecl CBulletTrail::reset(CBulletTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_0048c93c
-// Address: 0048c93c
-void FUN_0048c93c(undefined4 *param_1);
-
 // Original: core_fire.cpp_CRaindrop_ctor_FUN_0048c960
 // Address: 0048c960
 CRainDrop * __cdecl CRaindrop::ctor(CRainDrop *this_ptr);

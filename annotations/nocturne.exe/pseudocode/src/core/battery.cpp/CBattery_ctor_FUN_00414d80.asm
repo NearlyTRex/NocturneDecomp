@@ -7,7 +7,7 @@
 ; CBattery *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_battery.cpp_factoryFunc_FUN_00414d50 at 00414d63
+;   core_battery.cpp_factoryFuncBattery_FUN_00414d50 at 00414d63
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00578d60

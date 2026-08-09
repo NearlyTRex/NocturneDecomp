@@ -7,9 +7,9 @@
 // Address: 00481bb0
 void __cdecl staticInit(void);
 
-// Original: core_filmreel.cpp_factoryFunc_FUN_00481c00
+// Original: core_filmreel.cpp_factoryFuncFilmReel_FUN_00481c00
 // Address: 00481c00
-CFilmReel * __cdecl factoryFunc(void);
+CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00481c20
 // Address: 00481c20

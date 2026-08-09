@@ -31,7 +31,7 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d3bc
-;   engine_3d.c_FUN_00405b40 at 00405c07
+;   engine_3d.c_renderSortedPolygonList_FUN_00405b40 at 00405c07
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 at 00461e0d
 ;   shape_edittool.cpp_CStrList_sort_FUN_00474010 at 00474069
 ;

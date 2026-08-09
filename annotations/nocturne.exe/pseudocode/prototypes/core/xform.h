@@ -235,14 +235,6 @@ void __cdecl clipPolygonStage3(void);
 // Address: 0055de20
 void FUN_0055de20(void);
 
-// Original: core_xform.cpp_FUN_0055de8e
-// Address: 0055de8e
-void FUN_0055de8e(void);
-
-// Original: core_xform.cpp_FUN_0055df19
-// Address: 0055df19
-void FUN_0055df19(void);
-
 // Original: core_xform.cpp_FUN_0055df90
 // Address: 0055df90
 void FUN_0055df90(void);

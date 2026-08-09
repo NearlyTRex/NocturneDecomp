@@ -7,9 +7,9 @@
 // Address: 0048e960
 void __cdecl staticInit(void);
 
-// Original: core_flamegun.cpp_factoryFunc_FUN_0048e990
+// Original: core_flamegun.cpp_factoryFuncFlameThrower_FUN_0048e990
 // Address: 0048e990
-CFlameThrower * __cdecl factoryFunc(void);
+CFlameThrower * __cdecl factoryFuncFlameThrower(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_getActorType_FUN_0048e9b0
 // Address: 0048e9b0

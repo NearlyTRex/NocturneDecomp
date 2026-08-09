@@ -11,7 +11,7 @@ void __cdecl core_teleport_cpp_staticInit_FUN_005437c0(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CTeleportDestActorType_02dca158,"CTeleportDest",
-             core_teleport_cpp_factoryFunc_FUN_00543810,&INT_005c107c,1,
+             core_teleport_cpp_factoryFuncTeleportDest_FUN_00543810,&INT_005c107c,1,
              &g_CDemonActorActorType_00763e48);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CTeleportActorType_02dca194,"CTeleport",

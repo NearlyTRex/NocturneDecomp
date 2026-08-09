@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_factoryFunc_FUN_004182a0 at 004182b3
+;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_004182a0 at 004182b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_boneguy_dfm_00579186

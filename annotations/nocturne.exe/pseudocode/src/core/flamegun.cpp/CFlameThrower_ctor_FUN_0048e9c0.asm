@@ -7,7 +7,7 @@
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_flamegun.cpp_factoryFunc_FUN_0048e990 at 0048e9a3
+;   core_flamegun.cpp_factoryFuncFlameThrower_FUN_0048e990 at 0048e9a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0058169c

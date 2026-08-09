@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1BD0000
 // =============================================================================
 
+// uchar[18][256]
+uchar g_FogTable[18][256] = {};
+
 // uchar[256][256]
 uchar g_BlendTableAvg[256][256] = {};
 

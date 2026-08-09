@@ -7,9 +7,9 @@
 // Address: 004b9cc0
 void __cdecl staticInit(void);
 
-// Original: core_icepick.cpp_factoryFunc_FUN_004b9cf0
+// Original: core_icepick.cpp_factoryFuncIcePick_FUN_004b9cf0
 // Address: 004b9cf0
-CIcePick * __cdecl factoryFunc(void);
+CIcePick * __cdecl factoryFuncIcePick(void);
 
 // Original: core_icepick.cpp_CIcePick_getActorType_FUN_004b9d10
 // Address: 004b9d10

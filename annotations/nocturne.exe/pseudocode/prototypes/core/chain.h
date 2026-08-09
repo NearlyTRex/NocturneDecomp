@@ -7,9 +7,9 @@
 // Address: 0042b6f0
 void __cdecl staticInit(void);
 
-// Original: core_chain.cpp_factoryFunc_FUN_0042b720
+// Original: core_chain.cpp_factoryFuncChain_FUN_0042b720
 // Address: 0042b720
-CChain * __cdecl factoryFunc(void);
+CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_0042b740
 // Address: 0042b740

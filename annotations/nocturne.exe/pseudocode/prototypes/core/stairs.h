@@ -7,9 +7,9 @@
 // Address: 00534750
 void __cdecl staticInit(void);
 
-// Original: core_stairs.cpp_factoryFunc_FUN_00534780
+// Original: core_stairs.cpp_factoryFuncStairs_FUN_00534780
 // Address: 00534780
-CStairs * __cdecl factoryFunc(void);
+CStairs * __cdecl factoryFuncStairs(void);
 
 // Original: core_stairs.cpp_CStairs_getActorType_FUN_005347a0
 // Address: 005347a0

@@ -7,9 +7,9 @@
 // Address: 0048ed00
 void __cdecl staticInit(void);
 
-// Original: core_flashlit.cpp_factoryFunc_FUN_0048ed30
+// Original: core_flashlit.cpp_factoryFuncFlashlight_FUN_0048ed30
 // Address: 0048ed30
-CFlashlight * __cdecl factoryFunc(void);
+CFlashlight * __cdecl factoryFuncFlashlight(void);
 
 // Original: core_flashlit.cpp_CFlashlight_getActorType_FUN_0048ed50
 // Address: 0048ed50

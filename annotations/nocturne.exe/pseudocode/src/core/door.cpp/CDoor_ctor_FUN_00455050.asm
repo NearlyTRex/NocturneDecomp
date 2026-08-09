@@ -7,7 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_door.cpp_factoryFunc_FUN_00455020 at 00455033
+;   core_door.cpp_factoryFuncDoor_FUN_00455020 at 00455033
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_churchd01_kfm_0057d008

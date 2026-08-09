@@ -91,7 +91,7 @@ int __cdecl engine_special_cpp_switchRenderer_FUN_00532f30(CExternalRenderer *re
 int __cdecl engine_special_cpp_switchRenderer_FUN_00532f50(char *new_dll_name,int card_index);
 char * __cdecl engine_special_cpp_getCurrentRenderer_FUN_00532fa0(int *card_index_out);
 void __cdecl core_spike_cpp_staticInit_FUN_00532fc0(void);
-CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_00532ff0(void);
+CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00532ff0(void);
 CDemonActorType * __cdecl core_spike_cpp_CSpike_getActorType_FUN_00533010(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00533020(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_setup_FUN_00533160(CSpike *this_ptr);
@@ -116,7 +116,7 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *th
 void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00534590(CSpotView *this_ptr);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_dtor_FUN_00534740(CSpotView *this_ptr,uint flags);
 void __cdecl core_stairs_cpp_staticInit_FUN_00534750(void);
-CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_00534780(void);
+CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00534780(void);
 CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005347a0(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1);
 void __cdecl core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *this_ptr);
@@ -133,7 +133,7 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(CStairs *this_p
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00534c10(CStairs *this_ptr,uint flags);
 SFly * __cdecl core_stairs_cpp_SFly_arrdtor_FUN_00534c80(SFly *this_ptr,uint flags);
 void __cdecl core_stone_cpp_staticInit_FUN_00534ca0(void);
-CTempleStone * __cdecl core_stone_cpp_factoryFunc_FUN_00534cd0(void);
+CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_00534cd0(void);
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_00534cf0(CTempleStone *this_ptr);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_00534d00(CTempleStone *this_ptr);
 void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00534d30(CTempleStone *this_ptr);
@@ -143,7 +143,7 @@ void __cdecl core_stranger_cpp_staticInit_FUN_00534e30(void);
 float __cdecl core_stranger_cpp_motionBlendWeightFunc_FUN_00534e90(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 bool core_stranger_cpp_FUN_00534f90(void);
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object);
-CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_00535090(void);
+CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00535090(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005350b0(CStranger *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005350c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr);

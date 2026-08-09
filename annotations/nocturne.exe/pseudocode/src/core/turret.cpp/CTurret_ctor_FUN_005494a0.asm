@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_turret.cpp_factoryFunc_FUN_00549470 at 00549483
+;   core_turret.cpp_factoryFuncTurret_FUN_00549470 at 00549483
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gturret_head_kfm_00596ce5

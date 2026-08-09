@@ -7,9 +7,9 @@
 // Address: 004abaf0
 void __cdecl staticInit(void);
 
-// Original: core_glass.cpp_factoryFunc_FUN_004abb20
+// Original: core_glass.cpp_factoryFuncGlass_FUN_004abb20
 // Address: 004abb20
-CGlass * __cdecl factoryFunc(void);
+CGlass * __cdecl factoryFuncGlass(void);
 
 // Original: core_glass.cpp_CGlass_getActorType_FUN_004abb40
 // Address: 004abb40

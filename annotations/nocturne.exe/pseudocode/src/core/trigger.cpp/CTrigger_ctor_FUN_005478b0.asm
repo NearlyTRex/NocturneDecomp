@@ -7,7 +7,7 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_trigger.cpp_factoryFunc_FUN_00547880 at 00547893
+;   core_trigger.cpp_factoryFuncTrigger_FUN_00547880 at 00547893
 ;   core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0 at 005524d5
 ;
 ; Referenced Globals:

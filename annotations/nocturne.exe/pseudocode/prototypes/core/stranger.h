@@ -19,9 +19,9 @@ bool FUN_00534f90(void);
 // Address: 00534fc0
 float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
-// Original: core_stranger.cpp_factoryFunc_FUN_00535090
+// Original: core_stranger.cpp_factoryFuncStranger_FUN_00535090
 // Address: 00535090
-CStranger * __cdecl factoryFunc(void);
+CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_005350b0
 // Address: 005350b0

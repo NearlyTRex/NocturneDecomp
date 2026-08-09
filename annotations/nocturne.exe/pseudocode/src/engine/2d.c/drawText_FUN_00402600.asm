@@ -22,7 +22,7 @@
 ;   ... and 14 more
 ;
 ; Referenced Globals:
-;   undefined4 g_ResolutionTable[7].width
+;   int INT_005acaa4 = 0x1
 ;   int g_ClipRight
 ;   int g_ClipBottom
 ;
@@ -41,7 +41,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00402603
     MOV ECX,dword ptr [ESP + 0x14]      ; 00402607
     MOV EDX,dword ptr [ESP + 0x18]      ; 0040260b
-    CMP dword ptr [0x005acaa4],0x0      ; 0040260f | g_ResolutionTable[7].width
+    CMP dword ptr [0x005acaa4],0x0      ; 0040260f | INT_005acaa4
     JZ 0x00402637                       ; 00402616
         ;   XREF to: 00402637 (CONDITIONAL_JUMP)  ; LAB_00402637
     PUSH EBX                            ; 00402618

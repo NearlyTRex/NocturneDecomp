@@ -17,8 +17,8 @@
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
-;   engine_2d.c_FUN_004031a0
-;   engine_2d.c_FUN_00403500
+;   engine_2d.c_buildLightTable_FUN_004031a0
+;   engine_2d.c_saveLightTable_FUN_00403500
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
 ;
@@ -49,12 +49,12 @@ section .text
     JNZ 0x004034d4                      ; 00403492
         ;   XREF to: 004034d4 (CONDITIONAL_JUMP)  ; LAB_004034d4
     PUSH EAX                            ; 00403494
-    CALL engine_2d.c_FUN_004031a0       ; 00403495
-        ;   XREF to: 004031a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004031a0()
+    CALL engine_2d.c_buildLightTable_FUN_004031a0 ; 00403495
+        ;   XREF to: 004031a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_buildLightTable_FUN_004031a0(int base_color_index)
     ADD ESP,0x4                         ; 0040349a
     PUSH ESI                            ; 0040349d
-    CALL engine_2d.c_FUN_00403500       ; 0040349e
-        ;   XREF to: 00403500 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00403500(char * filename)
+    CALL engine_2d.c_saveLightTable_FUN_00403500 ; 0040349e
+        ;   XREF to: 00403500 (UNCONDITIONAL_CALL)  ; void engine_2d.c_saveLightTable_FUN_00403500(char * filename)
     ADD ESP,0x4                         ; 004034a3
         ;   Label: LAB_004034a3
     XOR EAX,EAX                         ; 004034a6
@@ -72,8 +72,8 @@ section .text
     RET                                 ; 004034ca
     PUSH 0x0                            ; 004034cb
         ;   Label: LAB_004034cb
-    CALL engine_2d.c_FUN_004031a0       ; 004034cd
-        ;   XREF to: 004031a0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_004031a0()
+    CALL engine_2d.c_buildLightTable_FUN_004031a0 ; 004034cd
+        ;   XREF to: 004031a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_buildLightTable_FUN_004031a0(int base_color_index)
     JMP 0x004034a3                      ; 004034d2
         ;   XREF to: 004034a3 (UNCONDITIONAL_JUMP)  ; LAB_004034a3
     PUSH EAX                            ; 004034d4

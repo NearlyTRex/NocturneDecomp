@@ -7,7 +7,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00408fc0 at 004090e7
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 004090e7
 ;   engine_3d.c_flushRenderQueue_FUN_00408f50 at 00408f7a
 ;
 ; Referenced Globals:

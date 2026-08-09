@@ -4001,17 +4001,15 @@ SFontGlyph g_FontTable[224] = {
 // SMRGLPrimitiveQuad*[2000]
 SMRGLPrimitiveQuad* g_VisibleFacePointers[2000] = {};
 
-// SResolutionEntry[9]
-SResolutionEntry g_ResolutionTable[9] = {
+// SResolutionEntry[7]
+SResolutionEntry g_ResolutionTable[7] = {
     {.width = 0x00000140, .height = 0x000000C8},
     {.width = 0x00000140, .height = 0x000000F0},
     {.width = 0x00000140, .height = 0x00000190},
     {.width = 0x00000280, .height = 0x000001E0},
     {.width = 0x00000320, .height = 0x00000258},
     {.width = 0x00000400, .height = 0x00000300},
-    {.width = 0x00000500, .height = 0x00000400},
-    {.width = 0x00000001, .height = 0x000000F8},
-    {.width = 0x00000001, .height = 0x00000001}
+    {.width = 0x00000500, .height = 0x00000400}
 };
 
 // WatcomDestructorCall
@@ -4994,6 +4992,11 @@ float FLOAT_005a2158 = 0.0f;
 float FLOAT_005a2160 = 0.0f;
 
 // int
+int INT_005acaa4 = 0x1;
+int INT_005acaa8 = 0xF8;
+int INT_005acaac = 0x1;
+int INT_005acab0 = 0x1;
+int INT_005acab4 = 0xFFFFFF;
 int g_INT_005acc88 = 0x7;
 int g_INT_005acea0 = 0x1;
 int g_INT_005aceb4 = 0x4;
@@ -5055,7 +5058,6 @@ undefined1* g_MRGLBlockHandlerTable = (undefined1*)engine_3d_c_badMRGLStruct_FUN
 
 // undefined4
 undefined4 DAT_005a4b78 = 0x00000000;
-undefined4 DAT_005acab4 = 0x00FFFFFF;
 undefined4 DAT_005accf8 = 0x00000000;
 undefined4 DAT_005accfc = 0x00000000;
 undefined4 DAT_005ad280 = 0x00000001;

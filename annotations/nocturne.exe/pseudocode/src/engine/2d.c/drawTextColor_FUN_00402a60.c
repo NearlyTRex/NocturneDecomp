@@ -9,12 +9,10 @@
 void __cdecl engine_2d_c_drawTextColor_FUN_00402a60(char *text,int x,int y)
 
 {
-  if (g_ResolutionTable[7].width != 0) {
-    engine_2d_c_drawTextWrappedColor_FUN_004024e0
-              (text,x,y,g_ClipRight,g_ClipBottom,g_ResolutionTable[7].height);
+  if (INT_005acaa4 != 0) {
+    engine_2d_c_drawTextWrappedColor_FUN_004024e0(text,x,y,g_ClipRight,g_ClipBottom,INT_005acaa8);
     return;
   }
-  engine_2d_c_drawTextMultilineColor_FUN_00402570
-            (text,x,y,g_ClipRight,g_ClipBottom,g_ResolutionTable[7].height);
+  engine_2d_c_drawTextMultilineColor_FUN_00402570(text,x,y,g_ClipRight,g_ClipBottom,INT_005acaa8);
   return;
 }

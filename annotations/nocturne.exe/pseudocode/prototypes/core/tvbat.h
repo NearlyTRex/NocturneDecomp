@@ -7,9 +7,9 @@
 // Address: 0054b0b0
 void __cdecl staticInit(void);
 
-// Original: core_tvbat.cpp_factoryFunc_FUN_0054b0e0
+// Original: core_tvbat.cpp_factoryFuncTVBat_FUN_0054b0e0
 // Address: 0054b0e0
-CTVBat * __cdecl factoryFunc(void);
+CTVBat * __cdecl factoryFuncTVBat(void);
 
 // Original: core_tvbat.cpp_CTVBat_getActorType_FUN_0054b100
 // Address: 0054b100

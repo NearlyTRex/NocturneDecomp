@@ -18,7 +18,7 @@ int __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int alpha_color_value)
   else if (0xff < g_CurrentAlphaValue) {
     g_CurrentAlphaValue = 0xff;
   }
-  DAT_005acab4 = g_CurrentAlphaValue | g_CurrentAlphaValue << 8 | g_CurrentAlphaValue << 0x10;
-  _DAT_006b0284 = DAT_005acab4 ^ 0xffffff;
+  INT_005acab4 = g_CurrentAlphaValue | g_CurrentAlphaValue << 8 | g_CurrentAlphaValue << 0x10;
+  _DAT_006b0284 = INT_005acab4 ^ 0xffffff;
   return _DAT_006b0284;
 }

@@ -3,13 +3,13 @@
 // Function prototypes for engine/3d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_3d.c_FUN_00404430
+// Original: engine_3d.c_abortRemovedMRGLHandler_FUN_00404430
 // Address: 00404430
-char * __cdecl FUN_00404430(void);
+SMRGLHeaderExtended * __cdecl abortRemovedMRGLHandler(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_FUN_005458a0
 // Address: 00404480
-void __cdecl FUN_005458a0(void);
+CTextureCache * __cdecl FUN_005458a0(void);
 
 // Original: engine_3d.c_FUN_005458d0
 // Address: 00404490
@@ -63,9 +63,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedLitOp7(SMRGLHeaderPrimitive *
 // Address: 00404a70
 SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedWrappedOp8(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_FUN_00404b10
+// Original: engine_3d.c_renderRotatedMRGLSubChain_FUN_00404b10
 // Address: 00404b10
-int FUN_00404b10(int param_1);
+SMRGLHeaderExtended * __cdecl renderRotatedMRGLSubChain(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_processPolygonColor_FUN_00405140
 // Address: 00405140
@@ -75,9 +75,9 @@ SMRGLHeaderExtended * __cdecl processPolygonColor(SMRGLHeaderPrimitive *prim);
 // Address: 004051e0
 SMRGLHeaderExtended * __cdecl oldFunction3(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_FUN_00405200
+// Original: engine_3d.c_renderBSPNode_FUN_00405200
 // Address: 00405200
-int FUN_00405200(int param_1);
+SMRGLHeaderExtended * __cdecl renderBSPNode(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240
 // Address: 00405240
@@ -99,9 +99,9 @@ SMRGLHeaderExtended * __cdecl oldFunction5(SMRGLHeaderExtended *primitive);
 // Address: 00405540
 SMRGLHeaderExtended * __cdecl renderPolygonSolidLitClampedOp17(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_FUN_00405740
+// Original: engine_3d.c_skipMRGLPrimitive_FUN_00405740
 // Address: 00405740
-int FUN_00405740(int param_1);
+SMRGLHeaderExtended * __cdecl skipMRGLPrimitive(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_setRelativeCoord_FUN_00405750
 // Address: 00405750
@@ -127,25 +127,25 @@ SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 // Address: 00405990
 SMRGLHeaderExtended * __cdecl oldFunction7(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_FUN_004059c0
+// Original: engine_3d.c_computeSortedPolygonKey_FUN_004059c0
 // Address: 004059c0
-void FUN_004059c0(int param_1);
+void __cdecl computeSortedPolygonKey(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_FUN_00405a60
+// Original: engine_3d.c_compareSortedPolygonDepth_FUN_00405a60
 // Address: 00405a60
-uint FUN_00405a60(int *param_1,int *param_2);
+int __cdecl compareSortedPolygonDepth(void **entry_a,void **entry_b);
 
-// Original: engine_3d.c_FUN_00405ab0
+// Original: engine_3d.c_queueSortedPolygon_FUN_00405ab0
 // Address: 00405ab0
-void FUN_00405ab0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl queueSortedPolygon(SMRGLHeaderExtended *primitive,SMRGLHeaderExtended *owner_block,SMRGLHeaderExtended *chain_root);
 
-// Original: engine_3d.c_FUN_00405b30
+// Original: engine_3d.c_flushSortedPolygons_FUN_00405b30
 // Address: 00405b30
-void FUN_00405b30(void);
+void __cdecl flushSortedPolygons(void);
 
-// Original: engine_3d.c_FUN_00405b40
+// Original: engine_3d.c_renderSortedPolygonList_FUN_00405b40
 // Address: 00405b40
-SMRGLHeaderExtended * FUN_00405b40(SMRGLHeaderExtended *param_1);
+SMRGLHeaderExtended * __cdecl renderSortedPolygonList(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
 // Address: 00405c90
@@ -195,17 +195,17 @@ SMRGLHeaderExtended * __cdecl renderPolygonDestReadBlendOp33(SMRGLHeaderPrimitiv
 // Address: 00406920
 SMRGLHeaderExtended * __cdecl renderPolygonTexturedUVLit(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_FUN_00406a00
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00406a00
 // Address: 00406a00
-int * FUN_00406a00(SMRGLHeaderPrimitive *param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit2(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00406ae0
 // Address: 00406ae0
 SMRGLHeaderExtended * __cdecl renderPolygonAlphaTexturedNormalizedLit(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_FUN_00406b80
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00406b80
 // Address: 00406b80
-int * FUN_00406b80(SMRGLHeaderPrimitive *param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60
 // Address: 00406c60
@@ -343,29 +343,29 @@ void __cdecl renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive,int re
 // Address: 00408d10
 void __cdecl renderPolygonWithRenderFlagsUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
-// Original: engine_3d.c_FUN_00408e80
+// Original: engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80
 // Address: 00408e80
-void FUN_00408e80(int *param_1);
+void __cdecl dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 
 // Original: engine_3d.c_flushRenderQueue_FUN_00408f50
 // Address: 00408f50
 void __cdecl flushRenderQueue(void);
 
-// Original: engine_3d.c_FUN_00408fc0
+// Original: engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0
 // Address: 00408fc0
-void FUN_00408fc0(SMRGLHeaderPrimitive *param_1);
+void __cdecl dispatchMRGLToRenderer(SMRGLHeaderExtended *mrgl);
 
-// Original: engine_3d.c_FUN_00409210
+// Original: engine_3d.c_drawLine2DFromIndices_FUN_00409210
 // Address: 00409210
-void FUN_00409210(int param_1,int param_2);
+void __cdecl drawLine2DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine2D_FUN_00409290
 // Address: 00409290
 void __cdecl clipAndDrawLine2D(SRenderVertex vertex1,SRenderVertex vertex2);
 
-// Original: engine_3d.c_FUN_00409510
+// Original: engine_3d.c_drawLine3DFromIndices_FUN_00409510
 // Address: 00409510
-void FUN_00409510(int param_1,int param_2);
+void __cdecl drawLine3DFromIndices(int vertex_index1,int vertex_index2);
 
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00409590
 // Address: 00409590
@@ -391,9 +391,9 @@ void __cdecl addRasterizerEdge(SRenderVertex *v0,SRenderVertex *v1);
 // Address: 00562740
 void __cdecl addRasterizerEdgeWithDepth(SRenderVertex *v0,SRenderVertex *v1);
 
-// Original: engine_3d.c_FUN_00562880
+// Original: engine_3d.c_findRasterizerEdge_FUN_00562880
 // Address: 00562880
-int * FUN_00562880(int param_1,int *param_2);
+SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);
 
 // Original: engine_3d.c_rasterizeTriangle_FUN_005628c0
 // Address: 005628c0

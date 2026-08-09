@@ -7,7 +7,7 @@
 ; CBeast *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_beast.cpp_factoryFunc_FUN_00415020 at 00415033
+;   core_beast.cpp_factoryFuncBeast_FUN_00415020 at 00415033
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_beast_dfm_00578d9f

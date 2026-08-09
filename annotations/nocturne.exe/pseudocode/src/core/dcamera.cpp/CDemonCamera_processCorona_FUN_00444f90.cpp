@@ -26,7 +26,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00444f90(CDemonCame
   if (_DAT_012b022c == 0) {
     return;
   }
-  _memcpy(&DAT_012ceb78,(void *)0x12e1778,0x12c00);
+  _memcpy(&DAT_012ceb78,&g_VOID_PTR_012e1778,0x12c00);
   _DAT_012b022c = 0;
   return;
 }

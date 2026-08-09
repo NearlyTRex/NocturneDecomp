@@ -7,9 +7,9 @@
 // Address: 0040efe0
 void __cdecl staticInit(void);
 
-// Original: core_ammobox.cpp_factoryFunc_FUN_0040f010
+// Original: core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040f010
 // Address: 0040f010
-CAmmoBox * __cdecl factoryFunc(void);
+CAmmoBox * __cdecl factoryFuncAmmoBox(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_getActorType_FUN_0040f030
 // Address: 0040f030

@@ -7,10 +7,6 @@
 // GLOBAL VARIABLES - Range 0x550000
 // =============================================================================
 
-// string
-extern string caseD_0;
-extern string caseD_2;
-
 // undefined1*
 extern undefined1* switchdataD_00551a6c;
 extern undefined1* switchdataD_0055d9ac;

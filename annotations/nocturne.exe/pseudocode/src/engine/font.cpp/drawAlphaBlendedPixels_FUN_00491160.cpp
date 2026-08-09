@@ -31,10 +31,10 @@ void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_00491160(uint *dest_buff
   ulonglong uVar20;
   byte bVar21;
   
-  uVar8 = (uint)DAT_005acab4 >> 0x10;
-  uVar4 = (ushort)(((uint7)(byte)((uint)DAT_005acab4 >> 0x18) << 0x30) >> 0x28);
-  uVar7 = (uint)DAT_005acab4 >> 8;
-  bVar21 = (byte)DAT_005acab4;
+  uVar8 = (uint)INT_005acab4 >> 0x10;
+  uVar4 = (ushort)(((uint7)(byte)((uint)INT_005acab4 >> 0x18) << 0x30) >> 0x28);
+  uVar7 = (uint)INT_005acab4 >> 8;
+  bVar21 = (byte)INT_005acab4;
   do {
     if (*src_indices != 0) {
       uVar1 = color_table[*src_indices];

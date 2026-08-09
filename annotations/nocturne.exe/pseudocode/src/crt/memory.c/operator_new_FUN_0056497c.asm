@@ -7,16 +7,16 @@
 ; ulong            Stack[0x4]:4   size
 ;
 ; XREF[129]:
-;   core_ammo.cpp_factoryFunc_FUN_0040eb40 at 0040eb45
+;   core_ammo.cpp_factoryFuncAmmo_FUN_0040eb40 at 0040eb45
 ;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1e8
-;   core_ammobox.cpp_factoryFunc_FUN_0040f010 at 0040f015
-;   core_anvil.cpp_factoryFunc_FUN_0040f530 at 0040f535
-;   core_armour.cpp_factoryFunc_FUN_0040f930 at 0040f935
-;   core_backgnd.cpp_factoryFunc_FUN_0040fea0 at 0040fea5
-;   core_baron.cpp_factoryFunc_FUN_004101a0 at 004101a5
+;   core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040f010 at 0040f015
+;   core_anvil.cpp_factoryFuncAnvil_FUN_0040f530 at 0040f535
+;   core_armour.cpp_factoryFuncArmour_FUN_0040f930 at 0040f935
+;   core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040fea0 at 0040fea5
+;   core_baron.cpp_factoryFuncBaron_FUN_004101a0 at 004101a5
 ;   core_baron.cpp_factoryFunc_FUN_00411320 at 00411325
-;   core_barrier.cpp_factoryFunc_FUN_004116e0 at 004116e5
-;   core_bat.cpp_factoryFunc_FUN_004119e0 at 004119e5
+;   core_barrier.cpp_factoryFuncBarrier_FUN_004116e0 at 004116e5
+;   core_bat.cpp_factoryFuncBat_FUN_004119e0 at 004119e5
 ;   ... and 119 more
 ;
 ; Referenced Globals:

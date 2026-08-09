@@ -27,7 +27,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_004f44d0(CPackedB
       local_18 = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042d150();
     }
     if (row_stride == 0x10) {
-      local_18 = (OptimizedMemcpyFunc *)cockpit_ckptutil_c_FUN_0042d170();
+      local_18 = (OptimizedMemcpyFunc *)cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042d170()
+      ;
     }
     local_20 = 0;
     puVar5 = (ushort *)((int)this_ptr->packed_data + *this_ptr->row_offsets);

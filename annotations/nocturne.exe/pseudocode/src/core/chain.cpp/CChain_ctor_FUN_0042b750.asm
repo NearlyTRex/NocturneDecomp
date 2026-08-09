@@ -7,7 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_chain.cpp_factoryFunc_FUN_0042b720 at 0042b733
+;   core_chain.cpp_factoryFuncChain_FUN_0042b720 at 0042b733
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHAINLINK_RAW_0057a55d

@@ -118,8 +118,8 @@ extern SFontGlyph g_FontTable[224];
 // SMRGLPrimitiveQuad*[2000]
 extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
 
-// SResolutionEntry[9]
-extern SResolutionEntry g_ResolutionTable[9];
+// SResolutionEntry[7]
+extern SResolutionEntry g_ResolutionTable[7];
 
 // WatcomDestructorCall
 extern WatcomDestructorCall g_WatcomDestructorCall_005a0510;
@@ -267,6 +267,11 @@ extern float FLOAT_005a2158;
 extern float FLOAT_005a2160;
 
 // int
+extern int INT_005acaa4;
+extern int INT_005acaa8;
+extern int INT_005acaac;
+extern int INT_005acab0;
+extern int INT_005acab4;
 extern int g_INT_005acc88;
 extern int g_INT_005acea0;
 extern int g_INT_005aceb4;
@@ -316,7 +321,6 @@ extern undefined1* g_MRGLBlockHandlerTable;
 
 // undefined4
 extern undefined4 DAT_005a4b78;
-extern undefined4 DAT_005acab4;
 extern undefined4 DAT_005accf8;
 extern undefined4 DAT_005accfc;
 extern undefined4 DAT_005ad280;

@@ -4,10 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x550000
 // =============================================================================
 
-// string
-string caseD_0 = "k=plv";
-string caseD_2 = "k=plv";
-
 // undefined1*
 undefined1* switchdataD_00551a6c = (undefined1*)0x00551BAC; // caseD_0
 undefined1* switchdataD_0055d9ac = (undefined1*)0x0055DA21; // caseD_0

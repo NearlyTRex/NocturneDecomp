@@ -7,7 +7,7 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_factoryFunc_FUN_0054c280 at 0054c293
+;   core_vampboss.cpp_factoryFuncVampireBoss_FUN_0054c280 at 0054c293
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nosfer_dfm_0059702a

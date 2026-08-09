@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   palette_index
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00403070 at 004030da
+;   engine_2d.c_loadOrBuildFogTable_FUN_00403070 at 004030da
 ;
 ; Referenced Globals:
 ;   uchar[768] g_SourcePaletteData

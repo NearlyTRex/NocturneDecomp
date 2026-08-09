@@ -7,7 +7,7 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_factoryFunc_FUN_005524a0 at 005524b3
+;   core_waypoint.cpp_factoryFuncWayPoint_FUN_005524a0 at 005524b3
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CWayPointVTable

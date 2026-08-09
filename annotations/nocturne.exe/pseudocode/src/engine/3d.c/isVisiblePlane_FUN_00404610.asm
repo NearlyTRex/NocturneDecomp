@@ -8,15 +8,15 @@
 ;
 ; XREF[79]:
 ;   core_box.cpp_CBoundingBox3D_FUN_0041d050 at 0041d191
-;   engine_3d.c_FUN_00405200 at 00405209
-;   engine_3d.c_FUN_00405ab0 at 00405ac7
-;   engine_3d.c_FUN_00406a00 at 00406a40
-;   engine_3d.c_FUN_00406b80 at 00406bc0
-;   engine_3d.c_FUN_00408fc0 at 00409100
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 00409100
+;   engine_3d.c_queueSortedPolygon_FUN_00405ab0 at 00405ac7
+;   engine_3d.c_renderBSPNode_FUN_00405200 at 00405209
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 004060c5
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407a34
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405e1d
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 0040852a
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 004083ea
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60 at 00406c6e
 ;   ... and 69 more
 ;
 ; Referenced Globals:

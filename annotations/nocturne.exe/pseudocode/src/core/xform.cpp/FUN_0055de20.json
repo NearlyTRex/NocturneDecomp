@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -121,11 +121,11 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 48,
+    "assembly_lines": 159,
     "complexity_score": 593,
     "cross_reference_count": 0,
-    "function_call_count": 0,
-    "global_count": 10,
+    "function_call_count": 1,
+    "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 103,
     "suspect_count": 46,
@@ -137,7 +137,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 151
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -145,14 +145,20 @@
     "address_range": [
       [
         "0055de20",
-        "0055de87"
+        "0055df83"
       ]
     ],
     "convention": "unknown",
     "name": "core_xform.cpp_FUN_0055de20",
     "signature": "void core_xform_cpp_FUN_0055de20(void)"
   },
-  "function_calls": [],
+  "function_calls": [
+    {
+      "addr": "0055d8f0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0"
+    }
+  ],
   "globals": [
     {
       "addr": "0055de10",
@@ -173,27 +179,9 @@
       "value": "0055decd"
     },
     {
-      "addr": "0055de88",
-      "name": "caseD_0",
-      "type": "string",
-      "value": null
-    },
-    {
-      "addr": "0055decd",
-      "name": "caseD_3",
+      "addr": "00766c70",
+      "name": "DAT_00766c70",
       "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0055deed",
-      "name": "caseD_1",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0055df13",
-      "name": "caseD_2",
-      "type": "string",
       "value": null
     },
     {
@@ -225,35 +213,42 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.054054054054054,
-    "instruction_count": 37,
+    "avg_pcode_per_instr": 5.658333333333333,
+    "instruction_count": 120,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
-      "BOOL_OR": 2,
+      "BOOL_OR": 8,
+      "BRANCH": 4,
       "BRANCHIND": 1,
-      "CBRANCH": 5,
-      "COPY": 31,
+      "CALL": 2,
+      "CBRANCH": 16,
+      "COPY": 121,
+      "INT2FLOAT": 2,
       "INT_2COMP": 2,
-      "INT_ADD": 7,
-      "INT_AND": 29,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 28,
-      "INT_LESS": 5,
-      "INT_MULT": 2,
-      "INT_NOTEQUAL": 6,
+      "INT_ADD": 43,
+      "INT_AND": 87,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 84,
+      "INT_LESS": 12,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 19,
       "INT_OR": 1,
-      "INT_SBORROW": 7,
-      "INT_SCARRY": 2,
-      "INT_SEXT": 3,
-      "INT_SLESS": 14,
-      "INT_SUB": 9,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 15,
+      "INT_SLESS": 42,
+      "INT_SUB": 36,
       "INT_XOR": 3,
-      "LOAD": 6,
-      "POPCOUNT": 14,
-      "STORE": 5,
-      "SUBPIECE": 2
+      "INT_ZEXT": 12,
+      "LOAD": 20,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 22,
+      "SUBPIECE": 10,
+      "TRUNC": 2
     },
-    "pcode_op_count": 187
+    "pcode_op_count": 679
   },
   "stack_frame": {
     "frame_size": 24,
@@ -325,7 +320,7 @@
       "line": 42,
       "match": "DAT_00766c78",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -333,7 +328,7 @@
       "line": 42,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -453,7 +448,7 @@
       "line": 76,
       "match": "DAT_00766c78",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -461,7 +456,7 @@
       "line": 76,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {

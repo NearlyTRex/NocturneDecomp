@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 00411940
 float FUN_00411940(float param_1,float param_2);
 
-// Original: core_bat.cpp_factoryFunc_FUN_004119e0
+// Original: core_bat.cpp_factoryFuncBat_FUN_004119e0
 // Address: 004119e0
-CBat * __cdecl factoryFunc(void);
+CBat * __cdecl factoryFuncBat(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_00411a00
 // Address: 00411a00

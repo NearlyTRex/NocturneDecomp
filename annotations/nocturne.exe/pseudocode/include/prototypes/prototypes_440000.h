@@ -147,7 +147,7 @@ CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(CVector3f *thi
 void __cdecl core_dcube_cpp_FUN_0044b660(char *filename);
 void core_dcube_cpp_FUN_0044b720(void);
 void __cdecl core_dest_cpp_staticInit_FUN_0044b740(void);
-CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0044b770(void);
+CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_0044b770(void);
 CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0044b790(CActorDestination *this_ptr);
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0044b810(CActorDestination *this_ptr);

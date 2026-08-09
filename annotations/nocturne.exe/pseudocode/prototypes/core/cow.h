@@ -7,9 +7,9 @@
 // Address: 0043bb80
 void __cdecl staticInit(void);
 
-// Original: core_cow.cpp_factoryFunc_FUN_0043bbb0
+// Original: core_cow.cpp_factoryFuncZombieCow_FUN_0043bbb0
 // Address: 0043bbb0
-CZombieCow * __cdecl factoryFunc(void);
+CZombieCow * __cdecl factoryFuncZombieCow(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_0043bbd0
 // Address: 0043bbd0

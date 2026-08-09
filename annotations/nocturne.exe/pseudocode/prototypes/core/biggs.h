@@ -7,9 +7,9 @@
 // Address: 00415310
 void __cdecl staticInit(void);
 
-// Original: core_biggs.cpp_factoryFunc_FUN_00415340
+// Original: core_biggs.cpp_factoryFuncBiggs_FUN_00415340
 // Address: 00415340
-CBiggs * __cdecl factoryFunc(void);
+CBiggs * __cdecl factoryFuncBiggs(void);
 
 // Original: core_biggs.cpp_CBiggs_getActorType_FUN_00415360
 // Address: 00415360

@@ -103,7 +103,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemo
 void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr);
 void __cdecl core_drip_cpp_staticInit_FUN_00461ff0(void);
-CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_00462030(void);
+CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_00462030(void);
 CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_00462050(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_00462060(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_setup_FUN_00462140(CDrip *this_ptr);
@@ -115,7 +115,7 @@ CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_004627a0(CDrip *
 ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_00462880(CDrip *this_ptr,SCollisionInfo *collision_info);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_00462890(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_004628e0(void);
-CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_00462910(void);
+CDrone * __cdecl core_drone_cpp_factoryFuncDrone_FUN_00462910(void);
 CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_00462930(CDrone *this_ptr);
 CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_00462940(CDrone *this_ptr);
 void __cdecl core_drone_cpp_CDrone_setup_FUN_004629b0(CDrone *this_ptr);
@@ -227,7 +227,7 @@ CVector3f * core_dtri_cpp_FUN_0046e9e0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0046e9f0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0046eb40(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0046eb60(void);
-CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0046eba0(void);
+CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_0046eba0(void);
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0046ebc0(CDynamite *this_ptr);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(CDynamite *this_ptr);
 undefined4 core_dynamite_cpp_FUN_0046ec80(CWeapon *param_1);

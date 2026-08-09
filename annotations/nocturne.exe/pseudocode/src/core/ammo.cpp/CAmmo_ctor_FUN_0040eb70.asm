@@ -7,7 +7,7 @@
 ; CAmmo *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_ammo.cpp_factoryFunc_FUN_0040eb40 at 0040eb53
+;   core_ammo.cpp_factoryFuncAmmo_FUN_0040eb40 at 0040eb53
 ;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1f5
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b25
 ;   core_game.cpp_FUN_004a03a0 at 004a03bb

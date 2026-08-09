@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -2046,24 +2046,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00403070",
-      "from_addr": "00403129",
-      "name": "engine_2d.c_FUN_00403070",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00403130",
-      "from_addr": "0040318a",
-      "name": "engine_2d.c_FUN_00403130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00403500",
-      "from_addr": "0040355a",
-      "name": "engine_2d.c_FUN_00403500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00403990",
       "from_addr": "00403a3c",
       "name": "engine_2d.c_clipAndDrawLine_FUN_00403990",
@@ -2100,6 +2082,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00403070",
+      "from_addr": "00403129",
+      "name": "engine_2d.c_loadOrBuildFogTable_FUN_00403070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00401bd0",
       "from_addr": "00401c2a",
       "name": "engine_2d.c_loadPaletteFile_FUN_00401bd0",
@@ -2112,6 +2100,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00403130",
+      "from_addr": "0040318a",
+      "name": "engine_2d.c_saveFogTable_FUN_00403130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403500",
+      "from_addr": "0040355a",
+      "name": "engine_2d.c_saveLightTable_FUN_00403500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00404360",
       "from_addr": "0040441e",
       "name": "engine_2d.c_unmapFrameBuffer_FUN_00404360",
@@ -2120,19 +2120,19 @@
     {
       "addr": "00404430",
       "from_addr": "00404466",
-      "name": "engine_3d.c_FUN_00404430",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00408fc0",
-      "from_addr": "00409136",
-      "name": "engine_3d.c_FUN_00408fc0",
+      "name": "engine_3d.c_abortRemovedMRGLHandler_FUN_00404430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004044a0",
       "from_addr": "004044bb",
       "name": "engine_3d.c_badMRGLStruct_FUN_004044a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408fc0",
+      "from_addr": "00409136",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2190,12 +2190,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00432210",
-      "from_addr": "0043278f",
-      "name": "engine_clipper.c_FUN_00432210",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004314b0",
       "from_addr": "004314f4",
       "name": "engine_clipper.c_allocateClipVertex_FUN_004314b0",
@@ -2223,6 +2217,12 @@
       "addr": "00431b90",
       "from_addr": "00431c33",
       "name": "engine_clipper.c_clipPolygonRightPlane_FUN_00431b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432210",
+      "from_addr": "0043278f",
+      "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210",
       "type": "UNCONDITIONAL_CALL"
     },
     {

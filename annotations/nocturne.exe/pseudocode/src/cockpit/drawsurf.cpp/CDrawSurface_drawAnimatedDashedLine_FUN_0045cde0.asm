@@ -14,10 +14,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedCenteredRectangle_FUN_0045cff0 at 0045d050
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_0045cfd0 at 0045cfe2
+;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_0045d070 at 0045d0bc
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70 at 0045ccb6
-;   cockpit_drawsurf.cpp_FUN_0045cff0 at 0045d050
-;   cockpit_drawsurf.cpp_FUN_0045d070 at 0045d0bc
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057da4e = 0.0000152587890625

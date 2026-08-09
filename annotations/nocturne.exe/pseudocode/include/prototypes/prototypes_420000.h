@@ -46,7 +46,7 @@ int __cdecl core_bride_cpp_CBride_getTargetPoints_FUN_00420e20(CBride *this_ptr,
 CVector3f * __cdecl core_bride_cpp_CBride_getTargetPoint_FUN_00420eb0(CBride *this_ptr,CVector3f *out_point);
 CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00420f20(CBride *this_ptr,uint flags);
 void __cdecl core_bugs_cpp_staticInit_FUN_00420fe0(void);
-CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00421010(void);
+CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_00421010(void);
 CDemonActorType * __cdecl core_bugs_cpp_CBugs_getActorType_FUN_00421030(CBugs *this_ptr);
 CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00421040(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_setup_FUN_004211e0(CBugs *this_ptr);
@@ -193,7 +193,7 @@ undefined4 * core_charactr_cpp_FUN_0042b6c0(void);
 undefined4 * core_charactr_cpp_FUN_0042b6d0(void);
 undefined4 * core_charactr_cpp_FUN_0042b6e0(void);
 void __cdecl core_chain_cpp_staticInit_FUN_0042b6f0(void);
-CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042b720(void);
+CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_0042b720(void);
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042b740(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042b750(CChain *this_ptr);
 CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890(CChain *this_ptr,CVector3f *out_point);
@@ -218,7 +218,7 @@ void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(void *dest_buffe
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042d100(void *output_buffer,void *input_buffer,int pixel_count);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_FUN_0042d130(void);
 OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042d150(void);
-ColorConversionFunc * __cdecl cockpit_ckptutil_c_FUN_0042d170(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042d170(void);
 void * cockpit_ckptutil_c_FUN_0042d180(void);
 void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_0042d200(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,void *buffer,int size);

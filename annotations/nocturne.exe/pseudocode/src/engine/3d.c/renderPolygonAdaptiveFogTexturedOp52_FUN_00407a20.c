@@ -33,7 +33,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
         else {
           g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
         }
-        if (g_ResolutionTable[8].height == 0) {
+        if (INT_005acab0 == 0) {
           if (g_MMXSupported == 0) {
             if (g_BitsPerPixel == 0x20) {
               g_ScanlineRenderFunc =

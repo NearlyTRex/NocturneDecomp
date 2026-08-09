@@ -11,8 +11,8 @@
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e47
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0044d060 at 0044d159
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490 at 0048f637
-;   engine_3d.c_FUN_00405b40 at 00405c2c
-;   engine_3d.c_FUN_00408fc0 at 004090c2
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 004090c2
+;   engine_3d.c_renderSortedPolygonList_FUN_00405b40 at 00405c2c
 ;   engine_3d.c_updateAnimatedTexture_FUN_00406690 at 004066fd
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 at 00461eb7
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 0049124d
@@ -76,7 +76,7 @@ section .text
     PUSH ESI                            ; 00545969
     MOV EDI,0x1                         ; 0054596a
     CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0 ; 0054596f
-        ;   XREF to: 00544ef0 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache * cache, char * texture_name)
+        ;   XREF to: 00544ef0 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache * this_ptr, char * texture_name)
     ADD ESP,0x8                         ; 00545974
     MOV dword ptr [EBX + 0x4],EAX       ; 00545977
     PUSH EAX                            ; 0054597a

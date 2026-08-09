@@ -2,11 +2,11 @@
 // Address: 00544ef0
 // Address Range: [[00544ef0, 00545385]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
+// Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name)
 
 #include "nocturne.h"
 
-int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
+int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name)
 
 {
   char cVar1;
@@ -88,7 +88,8 @@ LAB_00544f77:
   p_Var3 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     puVar4 = g_SourcePaletteData;
-    ppuVar12 = cache->texture_palette_ptrs + *(int *)(cache[10].texture_names[0x1fe] + 8) * 0xc0;
+    ppuVar12 = this_ptr->texture_palette_ptrs +
+               *(int *)(this_ptr[10].texture_names[0x1fe] + 8) * 0xc0;
     for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
       *ppuVar12 = *(uchar **)puVar4;
       puVar4 = puVar4 + ((uint)bVar13 * -2 + 1) * 4;
@@ -101,11 +102,11 @@ LAB_00544f77:
     }
   }
   else {
-    _fread(cache->texture_palette_ptrs + *(int *)(cache[10].texture_names[0x1fe] + 8) * 0xc0,
-               0x100,3,p_Var3);
+    _fread(this_ptr->texture_palette_ptrs +
+               *(int *)(this_ptr[10].texture_names[0x1fe] + 8) * 0xc0,0x100,3,p_Var3);
     _fclose(p_Var3);
   }
-  pacVar11 = cache->texture_names + *(int *)(cache[10].texture_names[0x1fe] + 8);
+  pacVar11 = this_ptr->texture_names + *(int *)(this_ptr[10].texture_names[0x1fe] + 8);
   pcVar7 = texture_name;
   do {
     cVar1 = *pcVar7;
@@ -116,23 +117,25 @@ LAB_00544f77:
     (*pacVar11)[1] = cVar1;
     pacVar11 = (char (*) [64])(*pacVar11 + 2);
   } while (cVar1 != '\0');
-  iVar6 = *(int *)(cache[10].texture_names[0x1fe] + 8);
+  iVar6 = *(int *)(this_ptr[10].texture_names[0x1fe] + 8);
   pcVar7 = texture_name;
   pcVar10 = local_114;
-  if (unaff_EBP != cache->texture_dimensions[iVar6]) {
-    if (cache->texture_data_ptrs[iVar6] != (uchar *)0x0) {
-      free(cache->texture_data_ptrs[iVar6]);
-      if (cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] != (uchar *)0x0)
-      {
+  if (unaff_EBP != this_ptr->texture_dimensions[iVar6]) {
+    if (this_ptr->texture_data_ptrs[iVar6] != (uchar *)0x0) {
+      free(this_ptr->texture_data_ptrs[iVar6]);
+      if (this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] !=
+          (uchar *)0x0) {
         free
-                  (cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)]);
-        cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] = (uchar *)0x0;
+                  (this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)]);
+        this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] =
+             (uchar *)0x0;
       }
     }
     puVar4 = (uchar *)malloc(local_14);
-    cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] = puVar4;
+    this_ptr->texture_data_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] = puVar4;
     pcVar10 = local_114;
-    if (cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] == (uchar *)0x0) {
+    if (this_ptr->texture_data_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] == (uchar *)0x0
+       ) {
       g_CurrentFilename = "..\\engine\\texture.cpp";
       g_CurrentLineNumber = 277;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
@@ -164,13 +167,13 @@ LAB_0054511b:
   p_Var3 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     memset
-              (cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],0,
+              (this_ptr->texture_data_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)],0,
                unaff_EBP * unaff_EBP);
     pcVar9 = local_114;
   }
   else {
-    _fread(cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,
-               unaff_EBP,p_Var3);
+    _fread(this_ptr->texture_data_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)],
+               unaff_EBP,unaff_EBP,p_Var3);
     _fclose(p_Var3);
   }
   do {
@@ -197,33 +200,35 @@ LAB_005451a6:
   _sprintf(pcVar9,".opa");
   p_Var3 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
-    if (cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] != (uchar *)0x0) {
+    if (this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] !=
+        (uchar *)0x0) {
       free
-                (cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)]);
-      cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] = (uchar *)0x0;
+                (this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)]);
+      this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] = (uchar *)0x0
+      ;
     }
   }
   else {
-    iVar6 = *(int *)(cache[10].texture_names[0x1fe] + 8);
-    if (unaff_EBP != cache->texture_dimensions[iVar6]) {
-      if (cache->texture_opacity_ptrs[iVar6] != (uchar *)0x0) {
-        free(cache->texture_opacity_ptrs[iVar6]);
+    iVar6 = *(int *)(this_ptr[10].texture_names[0x1fe] + 8);
+    if (unaff_EBP != this_ptr->texture_dimensions[iVar6]) {
+      if (this_ptr->texture_opacity_ptrs[iVar6] != (uchar *)0x0) {
+        free(this_ptr->texture_opacity_ptrs[iVar6]);
       }
       puVar4 = (uchar *)malloc(local_14);
-      cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)] = puVar4;
+      this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] = puVar4;
     }
-    _fread(cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,
-               unaff_EBP,p_Var3);
+    _fread(this_ptr->texture_opacity_ptrs[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)],
+               unaff_EBP,unaff_EBP,p_Var3);
     _fclose(p_Var3);
   }
-  cache->texture_dimensions[*(int *)(cache[10].texture_names[0x1fe] + 8)] = unaff_EBP;
-  iVar5 = *(int *)(cache[10].texture_names[0x1fe] + 8);
+  this_ptr->texture_dimensions[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] = unaff_EBP;
+  iVar5 = *(int *)(this_ptr[10].texture_names[0x1fe] + 8);
   iVar6 = iVar5 + 1;
-  iVar2 = cache->max_texture_count;
-  *(int *)(cache[10].texture_names[0x1fe] + 8) = iVar6;
+  iVar2 = this_ptr->max_texture_count;
+  *(int *)(this_ptr[10].texture_names[0x1fe] + 8) = iVar6;
   if (iVar2 <= iVar6) {
-    cache->wrap_indicator = 1;
-    pacVar11 = cache[10].texture_names;
+    this_ptr->wrap_indicator = 1;
+    pacVar11 = this_ptr[10].texture_names;
     *(char *)((int)(pacVar11 + 0x1fe) + 8) = '\0';
     *(char *)((int)(pacVar11 + 0x1fe) + 9) = '\0';
     *(char *)((int)(pacVar11 + 0x1fe) + 10) = '\0';

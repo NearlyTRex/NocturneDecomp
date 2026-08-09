@@ -7,9 +7,9 @@
 // Address: 004c4820
 void __cdecl staticInit(void);
 
-// Original: core_larva.cpp_factoryFunc_FUN_004c4850
+// Original: core_larva.cpp_factoryFuncLarva_FUN_004c4850
 // Address: 004c4850
-CLarva * __cdecl factoryFunc(void);
+CLarva * __cdecl factoryFuncLarva(void);
 
 // Original: core_larva.cpp_CLarva_getActorType_FUN_004c4870
 // Address: 004c4870

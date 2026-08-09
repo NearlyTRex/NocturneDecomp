@@ -149,9 +149,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr)
               iVar6 = local_30;
               iVar7 = local_44;
               do {
-                uVar1 = (uint)*(byte *)(iVar11 + 0x12e1778 + local_50 + local_30);
+                uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);
                 if (0 < local_20) {
-                  uVar1 = uVar1 - *(byte *)(iVar11 + 0x12e1778 + local_4c + local_30);
+                  uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11
+                                           );
                 }
                 iVar2 = ((int)uVar1 >> 2) - iVar10;
                 if (iVar2 < -0x20) {
@@ -164,9 +165,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr)
                 iVar10 = iVar2 + iVar10;
                 cVar3 = (char)iVar10 * '\x04';
                 if (0 < local_20) {
-                  cVar3 = cVar3 + *(char *)(iVar11 + 0x12e1778 + local_4c + local_30);
+                  cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11
+                                           );
                 }
-                *(char *)(iVar7 + 0x12e1778) = cVar3;
+                *(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;
                 iVar6 = iVar6 + 1;
                 iVar11 = iVar11 + 1;
                 iVar7 = iVar7 + 1;

@@ -7,9 +7,9 @@
 // Address: 0041e260
 void __cdecl staticInit(void);
 
-// Original: core_boxactor.cpp_factoryFunc_FUN_0041e2d0
+// Original: core_boxactor.cpp_factoryFuncBoxActor_FUN_0041e2d0
 // Address: 0041e2d0
-CBoxActor * __cdecl factoryFunc(void);
+CBoxActor * __cdecl factoryFuncBoxActor(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_0041e2f0
 // Address: 0041e2f0

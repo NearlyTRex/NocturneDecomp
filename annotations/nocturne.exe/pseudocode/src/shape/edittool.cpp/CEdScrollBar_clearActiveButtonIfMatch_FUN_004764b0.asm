@@ -7,7 +7,7 @@
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00476490 at 00476496
+;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490 at 00476496
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bcde24

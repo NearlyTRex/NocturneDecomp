@@ -7,9 +7,9 @@
 // Address: 004b3040
 void __cdecl staticInit(void);
 
-// Original: core_haystack.cpp_factoryFunc_FUN_004b3070
+// Original: core_haystack.cpp_factoryFuncHaystack_FUN_004b3070
 // Address: 004b3070
-CHaystack * __cdecl factoryFunc(void);
+CHaystack * __cdecl factoryFuncHaystack(void);
 
 // Original: core_haystack.cpp_CHaystack_getActorType_FUN_004b3090
 // Address: 004b3090

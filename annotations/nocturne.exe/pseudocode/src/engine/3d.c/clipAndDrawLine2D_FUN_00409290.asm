@@ -11,7 +11,7 @@
 ;
 ; XREF[6]:
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 00519054
-;   engine_3d.c_FUN_00409210 at 00409275
+;   engine_3d.c_drawLine2DFromIndices_FUN_00409210 at 00409275
 ;   engine_3d.c_drawLineStrip2D_FUN_00405870 at 004058f6
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 at 00472e8e
 ;   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190 at 00473380

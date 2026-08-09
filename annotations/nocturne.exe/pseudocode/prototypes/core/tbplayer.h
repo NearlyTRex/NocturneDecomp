@@ -7,9 +7,9 @@
 // Address: 005430d0
 void __cdecl staticInit(void);
 
-// Original: core_tbplayer.cpp_factoryFunc_FUN_00543120
+// Original: core_tbplayer.cpp_factoryFuncBassPlayer_FUN_00543120
 // Address: 00543120
-CBassPlayer * __cdecl factoryFunc(void);
+CBassPlayer * __cdecl factoryFuncBassPlayer(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_00543140
 // Address: 00543140

@@ -11,19 +11,19 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          4,942
-  Unnamed functions (FUN_):          534 (10.8%)
-  Functions with unnamed params:     28 ( 0.6%)
-  Functions with type issues:        1,751 (35.4%)
+  Total functions analyzed:          4,921
+  Unnamed functions (FUN_):          427 ( 8.7%)
+  Functions with unnamed params:     27 ( 0.5%)
+  Functions with type issues:        1,718 (34.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
-    Missing register params:           34
-    Wrong calling convention:          73
-    Undefined types in variables:      1615
-    Unresolved stack params:           165
+    Missing register params:           10
+    Wrong calling convention:          51
+    Undefined types in variables:      1609
+    Unresolved stack params:           148
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -83,7 +83,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004940d0  unknown       24 callers
     0x0048ee80  unknown       1 callers
 
-  shape/edittool.cpp (30 unnamed)
+  shape/edittool.cpp (25 unnamed)
     0x0046fcd0  unknown       21 callers
     0x004720c0  unknown       11 callers
     0x004722b0  unknown       9 callers
@@ -96,9 +96,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004759d0  __cdecl       2 callers
     0x0046fa80  unknown       1 callers
     0x00475470  unknown       1 callers
-    0x00476490  __cdecl       1 callers
     0x00476e90  unknown       1 callers
-    0x004772e0  __cdecl       1 callers
     0x0046f000  unknown       0 callers
     0x004700d0  unknown       0 callers
     0x004701a0  unknown       0 callers
@@ -106,18 +104,14 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004703f0  unknown       0 callers
     0x00470730  unknown       0 callers
     0x00472fd0  unknown       0 callers
-    0x00473ff0  unknown       0 callers
     0x00474ae0  unknown       0 callers
     0x00476e70  unknown       0 callers
     0x00476f40  unknown       0 callers
     0x00476fd0  unknown       0 callers
-    0x004771d0  unknown       0 callers
     0x004771f0  unknown       0 callers
-    0x0047767b  unknown       0 callers
 
-  cockpit/ckptutil.c (14 unnamed)
+  cockpit/ckptutil.c (11 unnamed)
     0x0042d130  __cdecl       11 callers
-    0x0042d170  __cdecl       1 callers
     0x0042f8c0  unknown       1 callers
     0x0042fd60  unknown       1 callers
     0x00431260  __cdecl       1 callers
@@ -125,8 +119,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042e7b0  unknown       0 callers
     0x0042ee00  unknown       0 callers
     0x0042f050  unknown       0 callers
-    0x004301d0  unknown       0 callers
-    0x004301f0  unknown       0 callers
     0x00430210  unknown       0 callers
     0x004303d0  unknown       0 callers
     0x00430630  unknown       0 callers
@@ -159,11 +151,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00454460  __cdecl       2 callers
     0x00452560  unknown       0 callers
 
-  core/fire.cpp (4 unnamed)
+  core/fire.cpp (3 unnamed)
     0x0048c0d0  __cdecl       6 callers
     0x0048b6f0  __cdecl       3 callers
     0x0048c920  unknown       0 callers
-    0x0048c93c  unknown       0 callers
 
   cockpit/pkbitmap.cpp (10 unnamed)
     0x004f5320  __cdecl       6 callers
@@ -191,26 +182,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0050d910  __cdecl       1 callers
     0x0050e370  __cdecl       1 callers
     0x0050dd60  __cdecl       0 callers
-
-  engine/3d.c (18 unnamed)
-    0x00408e80  unknown       5 callers
-    0x00404480  __cdecl       1 callers
-    0x00404490  __cdecl       1 callers
-    0x004059c0  unknown       1 callers
-    0x00405ab0  unknown       1 callers
-    0x00405b40  unknown       1 callers
-    0x00404430  __cdecl       0 callers
-    0x00404b10  unknown       0 callers
-    0x00405200  unknown       0 callers
-    0x00405740  unknown       0 callers
-    0x00405a60  unknown       0 callers
-    0x00405b30  unknown       0 callers
-    0x00406a00  unknown       0 callers
-    0x00406b80  unknown       0 callers
-    0x00408fc0  unknown       0 callers
-    0x00409210  unknown       0 callers
-    0x00409510  unknown       0 callers
-    0x00562880  unknown       0 callers
 
   core/setdir.cpp (9 unnamed)
     0x005125a0  __cdecl       5 callers
@@ -291,14 +262,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00514470  __cdecl       1 callers
     0x00515410  __cdecl       1 callers
     0x00515c40  __cdecl       1 callers
-
-  engine/texture.cpp (6 unnamed)
-    0x005459f0  __cdecl       3 callers
-    0x00544de0  __cdecl       1 callers
-    0x00544e50  __cdecl       1 callers
-    0x00545700  __cdecl       1 callers
-    0x005458a0  __cdecl       0 callers
-    0x005458d0  __cdecl       0 callers
 
   core/ammobox.cpp (1 unnamed)
     0x0040f1a0  __cdecl       2 callers
@@ -401,20 +364,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00552a20  unknown       0 callers
     0x00552af0  unknown       0 callers
 
-  engine/2d.c (13 unnamed)
-    0x00402d30  __cdecl       1 callers
-    0x00402e90  unknown       1 callers
-    0x00403130  __cdecl       1 callers
-    0x004031a0  unknown       1 callers
-    0x00403500  __cdecl       1 callers
-    0x00402ad0  unknown       0 callers
-    0x00402af0  unknown       0 callers
-    0x00402b90  unknown       0 callers
-    0x00402bb0  unknown       0 callers
-    0x00402c60  unknown       0 callers
-    0x00402c80  unknown       0 callers
-    0x00402d60  unknown       0 callers
-    0x00403070  unknown       0 callers
+  engine/3d.c (2 unnamed)
+    0x00404480  __cdecl       1 callers
+    0x00404490  __cdecl       1 callers
 
   core/baron.cpp (1 unnamed)
     0x00410cc0  __cdecl       1 callers
@@ -550,13 +502,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004f7360  __cdecl       1 callers
     0x004f76c0  unknown       0 callers
 
-  engine/prim.c (6 unnamed)
+  engine/prim.c (2 unnamed)
     0x004f9dd0  __cdecl       1 callers
     0x004fa2e0  __cdecl       1 callers
-    0x004f942e  unknown       0 callers
-    0x004f9440  unknown       0 callers
-    0x004f9bc0  __cdecl       0 callers
-    0x004faca0  unknown       0 callers
 
   core/scat.cpp (5 unnamed)
     0x004fcd90  __cdecl       1 callers
@@ -573,6 +521,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/svetlana.cpp (1 unnamed)
     0x005423c0  __cdecl       1 callers
+
+  engine/texture.cpp (3 unnamed)
+    0x00544de0  __cdecl       1 callers
+    0x00544e50  __cdecl       1 callers
+    0x00545700  __cdecl       1 callers
 
   core/tvbat.cpp (1 unnamed)
     0x0054bfc0  __cdecl       1 callers
@@ -622,36 +575,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042cd00  unknown       0 callers
     0x0042cd10  unknown       0 callers
 
-  engine/clipper.c (28 unnamed)
-    0x00431520  unknown       0 callers
-    0x00431f50  unknown       0 callers
-    0x00432057  unknown       0 callers
-    0x004320dc  unknown       0 callers
-    0x00432210  unknown       0 callers
-    0x00432b48  unknown       0 callers
-    0x00432bd8  unknown       0 callers
-    0x00433c70  unknown       0 callers
-    0x00433cd7  unknown       0 callers
-    0x00433d43  unknown       0 callers
-    0x00433db0  unknown       0 callers
-    0x00433e1d  unknown       0 callers
-    0x00433e8d  unknown       0 callers
-    0x00433ef0  unknown       0 callers
-    0x00433f58  unknown       0 callers
-    0x00433fc8  unknown       0 callers
-    0x00434030  unknown       0 callers
-    0x0043409e  unknown       0 callers
-    0x0043410e  unknown       0 callers
-    0x00434160  unknown       0 callers
-    0x00434210  unknown       0 callers
-    0x00434492  unknown       0 callers
-    0x00434541  unknown       0 callers
-    0x0043469b  unknown       0 callers
-    0x0043474d  unknown       0 callers
-    0x004347cc  unknown       0 callers
-    0x0043484b  unknown       0 callers
-    0x004348ca  unknown       0 callers
-
   core/course.cpp (2 unnamed)
     0x0043b500  unknown       0 callers
     0x0043b5b0  unknown       0 callers
@@ -661,40 +584,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/door.cpp (1 unnamed)
     0x00456690  unknown       0 callers
-
-  cockpit/drawsurf.cpp (32 unnamed)
-    0x0045b960  __cdecl       0 callers
-    0x0045b970  __cdecl       0 callers
-    0x0045b990  __cdecl       0 callers
-    0x0045b9b0  __cdecl       0 callers
-    0x0045b9d0  __cdecl       0 callers
-    0x0045b9f0  __cdecl       0 callers
-    0x0045ba10  __cdecl       0 callers
-    0x0045ba30  __cdecl       0 callers
-    0x0045ba50  __cdecl       0 callers
-    0x0045ba60  __cdecl       0 callers
-    0x0045ba80  __cdecl       0 callers
-    0x0045c050  unknown       0 callers
-    0x0045c400  unknown       0 callers
-    0x0045cb90  unknown       0 callers
-    0x0045cc10  unknown       0 callers
-    0x0045cce0  unknown       0 callers
-    0x0045cd00  unknown       0 callers
-    0x0045cd80  unknown       0 callers
-    0x0045cff0  unknown       0 callers
-    0x0045d070  unknown       0 callers
-    0x0045d0d0  unknown       0 callers
-    0x0045d0e0  unknown       0 callers
-    0x0045d0f0  unknown       0 callers
-    0x0045d100  unknown       0 callers
-    0x0045db30  unknown       0 callers
-    0x0045dcd0  unknown       0 callers
-    0x0045dda0  unknown       0 callers
-    0x0045df50  unknown       0 callers
-    0x0045e110  unknown       0 callers
-    0x0045e130  unknown       0 callers
-    0x0045e1d0  unknown       0 callers
-    0x0045e1f0  unknown       0 callers
 
   core/dstrender.cpp (2 unnamed)
     0x0046556f  unknown       0 callers
@@ -765,13 +654,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/wateract.cpp (1 unnamed)
     0x005519c0  __cdecl       0 callers
 
-  core/xform.cpp (7 unnamed)
+  core/xform.cpp (5 unnamed)
     0x0055b0b0  unknown       0 callers
     0x0055d5e0  unknown       0 callers
     0x0055d660  unknown       0 callers
     0x0055de20  unknown       0 callers
-    0x0055de8e  unknown       0 callers
-    0x0055df19  unknown       0 callers
     0x0055df90  unknown       0 callers
 
 ====================================================================================================
@@ -911,10 +798,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (char *)
     Named:   this_ptr (CBitFont *)
 
-  FUN_004f9bc0
-    Address: 0x004f9bc0  File: engine/prim.c
-    Unnamed: param_1 (int)
-
 ====================================================================================================
 TYPE CORRECTNESS ISSUES (heuristic-based)
 ====================================================================================================
@@ -942,7 +825,7 @@ Wrong return type (64-bit return via EDX:EAX) (2)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (34)
+Missing register parameters (likely wrong calling convention) (10)
 --------------------------------------------------------------------------------
 
   FUN_0040e1cc
@@ -981,120 +864,6 @@ Missing register parameters (likely wrong calling convention) (34)
     Signature: void core_bodypart_cpp_FUN_00417fec(void)
     Suggested: Likely register-based calling convention
 
-  FUN_00432057
-    Address: 0x00432057  File: engine/clipper.c
-    Evidence: in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX
-    Signature: void engine_clipper_c_FUN_00432057(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_004320dc
-    Address: 0x004320dc  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_004320dc(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00432b48
-    Address: 0x00432b48  File: engine/clipper.c
-    Evidence: in_ECX, in_ECX, in_ECX, in_ECX, in_ECX, in_ECX, in_ECX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_00432b48(void)
-    Suggested: Likely __thiscall (ECX = this pointer)
-
-  FUN_00432bd8
-    Address: 0x00432bd8  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_00432bd8(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433cd7
-    Address: 0x00433cd7  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433cd7(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433d43
-    Address: 0x00433d43  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433d43(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433e1d
-    Address: 0x00433e1d  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433e1d(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433e8d
-    Address: 0x00433e8d  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433e8d(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433f58
-    Address: 0x00433f58  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433f58(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00433fc8
-    Address: 0x00433fc8  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_00433fc8(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0043409e
-    Address: 0x0043409e  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_0043409e(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0043410e
-    Address: 0x0043410e  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void engine_clipper_c_FUN_0043410e(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00434492
-    Address: 0x00434492  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_00434492(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_00434541
-    Address: 0x00434541  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_00434541(undefined4 param_1,undefined4 param_2,int param_3)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0043469b
-    Address: 0x0043469b  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_0043469b(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0043474d
-    Address: 0x0043474d  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_0043474d(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_004347cc
-    Address: 0x004347cc  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_004347cc(undefined4 param_1,undefined4 param_2,int param_3)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0043484b
-    Address: 0x0043484b  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_0043484b(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_004348ca
-    Address: 0x004348ca  File: engine/clipper.c
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: undefined4 engine_clipper_c_FUN_004348ca(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
   FUN_00442d9c
     Address: 0x00442d9c  File: core/dcamera.cpp
     Evidence: in_EDX, in_EDX, in_EDX
@@ -1107,28 +876,10 @@ Missing register parameters (likely wrong calling convention) (34)
     Signature: int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
     Suggested: Likely register-based calling convention
 
-  FUN_0047767b
-    Address: 0x0047767b  File: shape/edittool.cpp
-    Evidence: in_EAX, in_CL, in_EDX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_CL, in_EDX, in_EAX
-    Signature: void shape_edittool_cpp_FUN_0047767b(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_0048c93c
-    Address: 0x0048c93c  File: core/fire.cpp
-    Evidence: in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX
-    Signature: void core_fire_cpp_FUN_0048c93c(undefined4 *param_1)
-    Suggested: Likely register-based calling convention
-
   detectIntelProcessor
     Address: 0x004d9eac  File: core/mmx.c
     Evidence: in_CF, in_PF, in_AF, in_ZF, in_SF, in_TF, in_IF, in_OF, in_NT, in_AC, in_VIF, in_VIP, in_ID, in_NT, in_OF, in_IF, in_TF, in_SF, in_ZF, in_AF, in_PF, in_CF, in_ID, in_VIP, in_VIF, in_AC
     Signature: void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_004f942e
-    Address: 0x004f942e  File: engine/prim.c
-    Evidence: in_EAX, in_EAX, in_EAX, in_EAX
-    Signature: void engine_prim_c_FUN_004f942e(void)
     Suggested: Likely register-based calling convention
 
   renderScanlineSwapped
@@ -1137,20 +888,8 @@ Missing register parameters (likely wrong calling convention) (34)
     Signature: void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
     Suggested: Likely __fastcall (ECX, EDX params)
 
-  FUN_0055de8e
-    Address: 0x0055de8e  File: core/xform.cpp
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void core_xform_cpp_FUN_0055de8e(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
-  FUN_0055df19
-    Address: 0x0055df19  File: core/xform.cpp
-    Evidence: in_ECX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_ECX, in_ECX, in_ECX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_EDX, in_ECX
-    Signature: void core_xform_cpp_FUN_0055df19(void)
-    Suggested: Likely __fastcall (ECX, EDX params)
-
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (73)
+Wrong calling convention (unaffected register usage) (51)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -1165,10 +904,10 @@ Wrong calling convention (unaffected register usage) (73)
     Signature: int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401850(int red,int green,int blue,int start_index,int end_index)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_00402e90
+  buildFogTable
     Address: 0x00402e90  File: engine/2d.c
     Evidence: unaff_SI, unaff_SI, unaff_SI
-    Signature: void engine_2d_c_FUN_00402e90(int param_1)
+    Signature: void __cdecl engine_2d_c_buildFogTable_FUN_00402e90(int fog_color_index)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   clipAndDrawLine
@@ -1177,10 +916,10 @@ Wrong calling convention (unaffected register usage) (73)
     Signature: void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_00405b40
+  renderSortedPolygonList
     Address: 0x00405b40  File: engine/3d.c
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: SMRGLHeaderExtended * engine_3d_c_FUN_00405b40(SMRGLHeaderExtended *param_1)
+    Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(SMRGLHeaderExtended *primitive)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   FUN_0040e1cc
@@ -1223,120 +962,6 @@ Wrong calling convention (unaffected register usage) (73)
     Address: 0x00429220  File: core/charactr.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_00429220(CCharacter *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00432057
-    Address: 0x00432057  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00432057(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_004320dc
-    Address: 0x004320dc  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_004320dc(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00432b48
-    Address: 0x00432b48  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_00432b48(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00432bd8
-    Address: 0x00432bd8  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_00432bd8(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433cd7
-    Address: 0x00433cd7  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433cd7(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433d43
-    Address: 0x00433d43  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433d43(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433e1d
-    Address: 0x00433e1d  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433e1d(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433e8d
-    Address: 0x00433e8d  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433e8d(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433f58
-    Address: 0x00433f58  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433f58(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00433fc8
-    Address: 0x00433fc8  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_00433fc8(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0043409e
-    Address: 0x0043409e  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void engine_clipper_c_FUN_0043409e(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0043410e
-    Address: 0x0043410e  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void engine_clipper_c_FUN_0043410e(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00434492
-    Address: 0x00434492  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_00434492(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00434541
-    Address: 0x00434541  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_00434541(undefined4 param_1,undefined4 param_2,int param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0043469b
-    Address: 0x0043469b  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_0043469b(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0043474d
-    Address: 0x0043474d  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_0043474d(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_004347cc
-    Address: 0x004347cc  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_004347cc(undefined4 param_1,undefined4 param_2,int param_3)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0043484b
-    Address: 0x0043484b  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_0043484b(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_004348ca
-    Address: 0x004348ca  File: engine/clipper.c
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: undefined4 engine_clipper_c_FUN_004348ca(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CCloth
@@ -1421,12 +1046,6 @@ Wrong calling convention (unaffected register usage) (73)
     Address: 0x00476eb0  File: shape/edittool.cpp
     Evidence: unaff_EDI, unaff_EDI
     Signature: void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0047767b
-    Address: 0x0047767b  File: shape/edittool.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void shape_edittool_cpp_FUN_0047767b(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CGabriella_tryFireWeapon
@@ -1552,7 +1171,7 @@ Wrong calling convention (unaffected register usage) (73)
   CTextureCache_loadTexture
     Address: 0x00544ef0  File: engine/texture.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
+    Signature: int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   acceptConnection
@@ -1579,32 +1198,14 @@ Wrong calling convention (unaffected register usage) (73)
     Signature: void core_xform_cpp_FUN_0055d660(CVector3f *param_1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_0055de8e
-    Address: 0x0055de8e  File: core/xform.cpp
-    Evidence: unaff_EBX, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EDI
-    Signature: void core_xform_cpp_FUN_0055de8e(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0055df19
-    Address: 0x0055df19  File: core/xform.cpp
-    Evidence: unaff_EBX, unaff_EBP, unaff_EDI, unaff_EBX, unaff_EDI, unaff_EDI, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EBX, unaff_EBP, unaff_EDI
-    Signature: void core_xform_cpp_FUN_0055df19(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (165)
+Unresolved stack parameters (missing from signature) (148)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
     Address: 0x004013d0  File: engine/2d.c
     Evidence: in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c
     Signature: int __cdecl engine_2d_c_drawAntialiasedChar_FUN_004013d0(int char_code,int x_pos,int y_pos,int intensity_shift)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00404430
-    Address: 0x00404430  File: engine/3d.c
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: char * __cdecl engine_3d_c_FUN_00404430(void)
     Suggested: Signature is missing stack parameters entirely
 
   drawLineStrip2D
@@ -1619,16 +1220,16 @@ Unresolved stack parameters (missing from signature) (165)
     Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00405900(SLineStrip *line_strip)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00409210
+  drawLine2DFromIndices
     Address: 0x00409210  File: engine/3d.c
     Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
-    Signature: void engine_3d_c_FUN_00409210(int param_1,int param_2)
+    Signature: void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00409210(int vertex_index1,int vertex_index2)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00409510
+  drawLine3DFromIndices
     Address: 0x00409510  File: engine/3d.c
     Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
-    Signature: void engine_3d_c_FUN_00409510(int param_1,int param_2)
+    Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00409510(int vertex_index1,int vertex_index2)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_rayIntersect
@@ -1721,54 +1322,6 @@ Unresolved stack parameters (missing from signature) (165)
     Signature: void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(char *filename,uchar *output_palette)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_004301f0
-    Address: 0x004301f0  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void cockpit_ckptutil_c_FUN_004301f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00432b48
-    Address: 0x00432b48  File: engine/clipper.c
-    Evidence: in_stack_00000138, in_stack_00000138, in_stack_00000138, in_stack_00000138
-    Signature: undefined4 engine_clipper_c_FUN_00432b48(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00432bd8
-    Address: 0x00432bd8  File: engine/clipper.c
-    Evidence: in_stack_00000138, in_stack_00000138, in_stack_00000138, in_stack_00000138
-    Signature: undefined4 engine_clipper_c_FUN_00432bd8(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00434492
-    Address: 0x00434492  File: engine/clipper.c
-    Evidence: in_stack_00000018, in_stack_00000018, in_stack_00000018, in_stack_00000018
-    Signature: undefined4 engine_clipper_c_FUN_00434492(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0043469b
-    Address: 0x0043469b  File: engine/clipper.c
-    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
-    Signature: undefined4 engine_clipper_c_FUN_0043469b(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0043474d
-    Address: 0x0043474d  File: engine/clipper.c
-    Evidence: in_stack_00000018, in_stack_00000018, in_stack_00000018, in_stack_00000018
-    Signature: undefined4 engine_clipper_c_FUN_0043474d(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0043484b
-    Address: 0x0043484b  File: engine/clipper.c
-    Evidence: in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
-    Signature: undefined4 engine_clipper_c_FUN_0043484b(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004348ca
-    Address: 0x004348ca  File: engine/clipper.c
-    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
-    Signature: undefined4 engine_clipper_c_FUN_004348ca(void)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_0043b500
     Address: 0x0043b500  File: core/course.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
@@ -1853,46 +1406,16 @@ Unresolved stack parameters (missing from signature) (165)
     Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0045c050
+  CDrawSurface_drawClippedDashedLine
     Address: 0x0045c050  File: cockpit/drawsurf.cpp
     Evidence: in_stack_0000002c, in_stack_00000030, in_stack_00000034, in_stack_00000038, in_stack_00000038, in_stack_00000034, in_stack_00000030, in_stack_0000002c, in_stack_00000030, in_stack_00000034, in_stack_00000038
-    Signature: void cockpit_drawsurf_cpp_FUN_0045c050(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0045c400
-    Address: 0x0045c400  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000018, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000014, in_stack_00000004, in_stack_00000004, in_stack_0000000c
-    Signature: byte cockpit_drawsurf_cpp_FUN_0045c400(void)
+    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedDashedLine_FUN_0045c050(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
     Suggested: Signature is missing stack parameters entirely
 
   CDrawSurface_drawAntiAliasedLine
     Address: 0x0045ca50  File: cockpit/drawsurf.cpp
     Evidence: in_stack_00000018, in_stack_00000018
     Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_0045ca50(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0045cce0
-    Address: 0x0045cce0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void cockpit_drawsurf_cpp_FUN_0045cce0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0045d0f0
-    Address: 0x0045d0f0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void cockpit_drawsurf_cpp_FUN_0045d0f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0045d100
-    Address: 0x0045d100  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void cockpit_drawsurf_cpp_FUN_0045d100(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0045e1d0
-    Address: 0x0045e1d0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008
-    Signature: void cockpit_drawsurf_cpp_FUN_0045e1d0(void)
     Suggested: Signature is missing stack parameters entirely
 
   testDrawingSurface
@@ -1965,12 +1488,6 @@ Unresolved stack parameters (missing from signature) (165)
     Address: 0x00476fd0  File: shape/edittool.cpp
     Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: undefined4 shape_edittool_cpp_FUN_00476fd0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004771d0
-    Address: 0x004771d0  File: shape/edittool.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: CEdCheck * shape_edittool_cpp_FUN_004771d0(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004771f0
@@ -2241,18 +1758,6 @@ Unresolved stack parameters (missing from signature) (165)
     Address: 0x004f9100  File: engine/pod.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: int engine_pod_cpp_FUN_004f9100(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004f9440
-    Address: 0x004f9440  File: engine/prim.c
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void engine_prim_c_FUN_004f9440(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004faca0
-    Address: 0x004faca0  File: engine/prim.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: int * engine_prim_c_FUN_004faca0(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_004fbb70
@@ -2586,7 +2091,7 @@ Unresolved stack parameters (missing from signature) (165)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1615)
+Undefined types in variables (1609)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -3279,7 +2784,7 @@ Undefined types in variables (1615)
     Locals:  local_208 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00404b10
+  renderRotatedMRGLSubChain
     Address: 0x00404b10  File: engine/3d.c
     Locals:  local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3714,12 +3219,12 @@ Undefined types in variables (1615)
     Locals:  local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004031a0
+  buildLightTable
     Address: 0x004031a0  File: engine/2d.c
     Locals:  local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00432210
+  clipPolygonToViewFrustum
     Address: 0x00432210  File: engine/clipper.c
     Locals:  local_14c (undefined4), local_148 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4259,14 +3764,14 @@ Undefined types in variables (1615)
     Locals:  local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined8), local_28 (undefined8), local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00402e90
-    Address: 0x00402e90  File: engine/2d.c
-    Locals:  local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   buildBlendTables
     Address: 0x00401990  File: engine/2d.c
     Locals:  local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  buildFogTable
+    Address: 0x00402e90  File: engine/2d.c
+    Locals:  local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CBitFont_parseCharacterMetrics
@@ -5460,7 +4965,7 @@ Undefined types in variables (1615)
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00434210
+  clipPolygonToViewFrustumAdvanced
     Address: 0x00434210  File: engine/clipper.c
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6186,11 +5691,6 @@ Undefined types in variables (1615)
     Locals:  local_2c (undefined4), local_28 (undefined), local_27 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f9bc0
-    Address: 0x004f9bc0  File: engine/prim.c
-    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   FUN_004f9dd0
     Address: 0x004f9dd0  File: engine/prim.c
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -6203,6 +5703,11 @@ Undefined types in variables (1615)
 
   getTriangleWindingFromIndices1
     Address: 0x004f9ad0  File: engine/prim.c
+    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  getTriangleWindingFromIndices2
+    Address: 0x004f9bc0  File: engine/prim.c
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -6566,19 +6071,19 @@ Undefined types in variables (1615)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00406a00
+  rasterizePolygonCustom
+    Address: 0x00562de0  File: engine/3d.c
+    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  renderPolygonTexturedNormalizedUVLit2
     Address: 0x00406a00  File: engine/3d.c
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00406b80
+  renderPolygonTexturedNormalizedUVLit
     Address: 0x00406b80  File: engine/3d.c
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  rasterizePolygonCustom
-    Address: 0x00562de0  File: engine/3d.c
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   renderPolygonTexturedUVLit
@@ -7436,6 +6941,16 @@ Undefined types in variables (1615)
     Locals:  local_1010 (undefined), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CDrawSurface_drawTextCenteredFullHeightPrintf
+    Address: 0x0045e1f0  File: cockpit/drawsurf.cpp
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDrawSurface_drawTextCenteredFullWidthPrintf
+    Address: 0x0045e130  File: cockpit/drawsurf.cpp
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDrawSurface_drawTextCenteredInAreaPrintf
     Address: 0x0045df80  File: cockpit/drawsurf.cpp
     Locals:  local_1014 (undefined), local_14 (undefined4)
@@ -7474,16 +6989,6 @@ Undefined types in variables (1615)
   CDrawSurface_getCharWidth
     Address: 0x0045e2e0  File: cockpit/drawsurf.cpp
     Locals:  local_4 (undefined1), local_3 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0045e130
-    Address: 0x0045e130  File: cockpit/drawsurf.cpp
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0045e1f0
-    Address: 0x0045e1f0  File: cockpit/drawsurf.cpp
-    Locals:  local_100c (undefined), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPackedBitmapSet
@@ -8047,26 +7552,6 @@ Undefined types in variables (1615)
     Locals:  local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00402af0
-    Address: 0x00402af0  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00402bb0
-    Address: 0x00402bb0  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00402c80
-    Address: 0x00402c80  File: engine/2d.c
-    Locals:  local_100c (undefined), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00402d60
-    Address: 0x00402d60  File: engine/2d.c
-    Locals:  local_1010 (undefined), local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   drawCharacterHighlighted
     Address: 0x004021a0  File: engine/2d.c
     Locals:  local_14 (undefined4), local_10 (undefined4)
@@ -8077,9 +7562,19 @@ Undefined types in variables (1615)
     Locals:  local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  drawTextCenteredAtColorFormatted
+    Address: 0x00402c80  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   drawTextCenteredAtFormatted
     Address: 0x00402910  File: engine/2d.c
     Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextCenteredColorFormatted
+    Address: 0x00402d60  File: engine/2d.c
+    Locals:  local_1010 (undefined), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   drawTextCenteredFormatted
@@ -8087,8 +7582,18 @@ Undefined types in variables (1615)
     Locals:  local_1010 (undefined), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  drawTextColorFormatted
+    Address: 0x00402af0  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   drawTextFormatted
     Address: 0x00402780  File: engine/2d.c
+    Locals:  local_100c (undefined), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawTextRightAlignedColorFormatted
+    Address: 0x00402bb0  File: engine/2d.c
     Locals:  local_100c (undefined), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -8107,12 +7612,12 @@ Undefined types in variables (1615)
     Locals:  local_5c (undefined1), local_5b (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00409210
+  drawLine2DFromIndices
     Address: 0x00409210  File: engine/3d.c
     Locals:  local_68 (undefined), local_38 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00409510
+  drawLine3DFromIndices
     Address: 0x00409510  File: engine/3d.c
     Locals:  local_68 (undefined), local_38 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -10064,11 +9569,6 @@ Undefined types in variables (1615)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0055de8e
-    Address: 0x0055de8e  File: core/xform.cpp
-    Params:  local_res0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   clipPolygonStage1
     Address: 0x0055d9c0  File: core/xform.cpp
     Locals:  local_14 (undefined4)
@@ -10154,19 +9654,19 @@ Undefined types in variables (1615)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00404430
+  abortRemovedMRGLHandler
     Address: 0x00404430  File: engine/3d.c
     Locals:  local_54 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00408fc0
-    Address: 0x00408fc0  File: engine/3d.c
-    Locals:  local_110 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   clipAndDrawLine2D
     Address: 0x00409290  File: engine/3d.c
     Locals:  local_40 (undefined)
+    Suggested: Resolve undefined types to concrete types
+
+  dispatchMRGLToRenderer
+    Address: 0x00408fc0  File: engine/3d.c
+    Locals:  local_110 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   oldFunction5
@@ -10194,54 +9694,29 @@ Undefined types in variables (1615)
     Locals:  local_3c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00431f50
-    Address: 0x00431f50  File: engine/clipper.c
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004320dc
-    Address: 0x004320dc  File: engine/clipper.c
-    Params:  local_res0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00433c70
-    Address: 0x00433c70  File: engine/clipper.c
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00433cd7
-    Address: 0x00433cd7  File: engine/clipper.c
-    Params:  local_res0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00433db0
-    Address: 0x00433db0  File: engine/clipper.c
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00433e1d
-    Address: 0x00433e1d  File: engine/clipper.c
-    Params:  local_res0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00433ef0
+  clipPolygonHorizontalPlanes
     Address: 0x00433ef0  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00433f58
-    Address: 0x00433f58  File: engine/clipper.c
-    Params:  local_res0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00434030
-    Address: 0x00434030  File: engine/clipper.c
+  clipPolygonLeftPlaneGlobal
+    Address: 0x00433c70  File: engine/clipper.c
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0043409e
-    Address: 0x0043409e  File: engine/clipper.c
-    Params:  local_res0 (undefined4)
+  clipPolygonNearPlane
+    Address: 0x00431f50  File: engine/clipper.c
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  clipPolygonRightPlaneGlobal
+    Address: 0x00433db0  File: engine/clipper.c
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  clipPolygonVerticalPlanes
+    Address: 0x00434030  File: engine/clipper.c
+    Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CConsole_scrollUp
@@ -10686,61 +10161,24 @@ These were likely renamed or moved and the name suffix was not updated.
     FUN_ says: 0x00527e10   actual: 0x0052dd80   file: core/sound.cpp
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (94 groups)
+DUPLICATE FUNCTION NAMES (83 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
 Some are legitimate overloads, others may need disambiguating names.
 
-  cockpit_ckptutil.c  (14 functions)
+  cockpit_ckptutil.c  (11 functions)
     0x0042d130  (void)
-    0x0042d170  (void)
     0x0042d180  (void)
     0x0042e7b0  (int param_1,int param_2,int param_3,int param_4,int *para...)
     0x0042ee00  (char *param_1,int param_2,int param_3)
     0x0042f050  (int param_1,short *param_2,int param_3,int param_4,int pa...)
     0x0042f8c0  (int param_1,int param_2,float param_3,int param_4)
     0x0042fd60  (int param_1,int param_2,float param_3,int param_4)
-    0x004301d0  (void)
-    0x004301f0  (void)
     0x00430210  (char *param_1,void *param_2,uint param_3,uint param_4,int...)
     0x004303d0  (undefined4 *param_1,int param_2,uint param_3,uint param_4)
     0x00430630  (int param_1,int *param_2,void *param_3,int *param_4,int p...)
     0x00431260  (void *bitmap_buffer,char *filename,SScanlineSpans *span_o...)
-
-  cockpit_drawsurf.cpp  (32 functions)
-    0x0045b960  (void)
-    0x0045b970  (void)
-    0x0045b990  (void)
-    0x0045b9b0  (void)
-    0x0045b9d0  (void)
-    0x0045b9f0  (void)
-    0x0045ba10  (void)
-    0x0045ba30  (void)
-    0x0045ba50  (void)
-    0x0045ba60  (void)
-    0x0045ba80  (void)
-    0x0045c050  (CDrawSurface *param_1,int param_2,int param_3,int param_4...)
-    0x0045c400  (void)
-    0x0045cb90  (CDrawSurface *param_1,int param_2,int param_3,uint param_...)
-    0x0045cc10  (CDrawSurface *param_1,int param_2,int param_3,int param_4...)
-    0x0045cce0  (void)
-    0x0045cd00  (CDrawSurface *param_1,int param_2,int param_3,uint param_...)
-    0x0045cd80  (CDrawSurface *param_1,int param_2,int param_3,int param_4...)
-    0x0045cff0  (CDrawSurface *param_1,int param_2,int param_3,uint param_...)
-    0x0045d070  (CDrawSurface *param_1,int param_2,int param_3,int param_4...)
-    0x0045d0d0  (void)
-    0x0045d0e0  (void)
-    0x0045d0f0  (void)
-    0x0045d100  (void)
-    0x0045db30  (CDrawSurface *param_1,int param_2,int param_3,char *param_4)
-    0x0045dcd0  (CDrawSurface *param_1,int param_2,int param_3,char *param_4)
-    0x0045dda0  (CDrawSurface *param_1,int param_2,int param_3,char *param_4)
-    0x0045df50  (CDrawSurface *param_1,int param_2,int param_3,int param_4...)
-    0x0045e110  (CDrawSurface *param_1,int param_2,char *param_3)
-    0x0045e130  (CDrawSurface *param_1,int param_2,char *param_3)
-    0x0045e1d0  (void)
-    0x0045e1f0  (CDrawSurface *param_1,int param_2,char *param_3)
 
   cockpit_pkbitmap.cpp  (3 functions)
     0x004f4050  (int param_1,int param_2,int param_3)
@@ -10775,10 +10213,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0040a130  (CDemonActor *this_ptr)
     0x0044ba10  (CDemonActor *this_ptr)
 
-  core_baron.cpp_factoryFunc  (2 functions)
-    0x004101a0  (void)
-    0x00411320  (void)
-
   core_bat.cpp  (4 functions)
     0x00411940  (float param_1,float param_2)
     0x0041206c  (void)
@@ -10793,10 +10227,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00418180  (float *param_1,int param_2)
     0x004181f0  (CVector3f *param_1,CDemonActor *param_2)
     0x004182cd  (float *param_1)
-
-  core_boxactor.cpp_factoryFunc  (2 functions)
-    0x0041e2d0  (void)
-    0x0041f2e0  (void)
 
   core_bugs.cpp_CBugs  (3 functions)
     0x004219f0  (CBugs *this_ptr,int tri_count,SInputFace *triangles)
@@ -10929,14 +10359,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00481960  (void)
     0x00481970  (void)
 
-  core_filmreel.cpp_factoryFunc  (2 functions)
-    0x00481c00  (void)
-    0x00481ee0  (void)
-
-  core_fire.cpp  (2 functions)
-    0x0048c920  (void)
-    0x0048c93c  (undefined4 *param_1)
-
   core_fire.cpp_CFireEffect  (2 functions)
     0x0048b6f0  (CFireEffect *this_ptr,CVector3f *origin,CVector3f *direct...)
     0x0048c0d0  (CFireEffect *this_ptr,CVector3f *position,float scale,flo...)
@@ -10998,10 +10420,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004ca710  (CMansionPuzzleCircle *this_ptr,int param_2)
     0x004ca790  (CMansionPuzzleCircle *this_ptr,int gem_index)
     0x004cb010  (CMansionPuzzleCircle *this_ptr,int gem_index,float delta_...)
-
-  core_manpuz.cpp_factoryFunc  (2 functions)
-    0x004c9400  (void)
-    0x004cbad0  (void)
 
   core_menu.cpp  (2 functions)
     0x004d23d0  (void)
@@ -11152,87 +10570,16 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0053ffe0  (CStranger *this_ptr,float delta_time)
     0x005402f0  (CStranger *this_ptr)
 
-  core_tbplayer.cpp_factoryFunc  (2 functions)
-    0x00543120  (void)
-    0x00543370  (void)
-
-  core_teleport.cpp_factoryFunc  (2 functions)
-    0x00543810  (void)
-    0x005438a0  (void)
-
-  core_xform.cpp  (7 functions)
+  core_xform.cpp  (5 functions)
     0x0055b0b0  (void)
     0x0055d5e0  (CVector3f *param_1,CQuaternion4f *param_2)
     0x0055d660  (CVector3f *param_1)
     0x0055de20  (void)
-    0x0055de8e  (void)
-    0x0055df19  (void)
     0x0055df90  (void)
 
-  engine_2d.c  (13 functions)
-    0x00402ad0  (int param_1,int param_2,char *param_3)
-    0x00402af0  (int param_1,int param_2,char *param_3)
-    0x00402b90  (int param_1,int param_2,char *param_3)
-    0x00402bb0  (int param_1,int param_2,char *param_3)
-    0x00402c60  (int param_1,int param_2,char *param_3)
-    0x00402c80  (int param_1,int param_2,char *param_3)
-    0x00402d30  (int left_x,int right_x,int y,char *text)
-    0x00402d60  (int param_1,int param_2,int param_3,char *param_4)
-    0x00402e90  (int param_1)
-    0x00403070  (char *param_1,int param_2)
-    0x00403130  (char *filename)
-    0x004031a0  (int param_1)
-    0x00403500  (char *filename)
-
-  engine_3d.c  (18 functions)
-    0x00404430  (void)
+  engine_3d.c  (2 functions)
     0x00404480  (void)
     0x00404490  (void)
-    0x00404b10  (int param_1)
-    0x00405200  (int param_1)
-    0x00405740  (int param_1)
-    0x004059c0  (int param_1)
-    0x00405a60  (int *param_1,int *param_2)
-    0x00405ab0  (int param_1,undefined4 param_2,undefined4 param_3)
-    0x00405b30  (void)
-    0x00405b40  (SMRGLHeaderExtended *param_1)
-    0x00406a00  (SMRGLHeaderPrimitive *param_1)
-    0x00406b80  (SMRGLHeaderPrimitive *param_1)
-    0x00408e80  (int *param_1)
-    0x00408fc0  (SMRGLHeaderPrimitive *param_1)
-    0x00409210  (int param_1,int param_2)
-    0x00409510  (int param_1,int param_2)
-    0x00562880  (int param_1,int *param_2)
-
-  engine_clipper.c  (28 functions)
-    0x00431520  (void)
-    0x00431f50  (void)
-    0x00432057  (void)
-    0x004320dc  (void)
-    0x00432210  (uint param_1,int *param_2)
-    0x00432b48  (void)
-    0x00432bd8  (void)
-    0x00433c70  (void)
-    0x00433cd7  (void)
-    0x00433d43  (void)
-    0x00433db0  (void)
-    0x00433e1d  (void)
-    0x00433e8d  (void)
-    0x00433ef0  (void)
-    0x00433f58  (void)
-    0x00433fc8  (void)
-    0x00434030  (void)
-    0x0043409e  (void)
-    0x0043410e  (void)
-    0x00434160  (void)
-    0x00434210  (uint param_1,int *param_2)
-    0x00434492  (void)
-    0x00434541  (undefined4 param_1,undefined4 param_2,int param_3)
-    0x0043469b  (void)
-    0x0043474d  (void)
-    0x004347cc  (undefined4 param_1,undefined4 param_2,int param_3)
-    0x0043484b  (void)
-    0x004348ca  (void)
 
   engine_drender.cpp  (11 functions)
     0x004574e0  (int param_1)
@@ -11276,29 +10623,20 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004f8eb0  (undefined4 param_1,char *param_2)
     0x004f9100  (void)
 
-  engine_prim.c  (6 functions)
-    0x004f942e  (void)
-    0x004f9440  (void)
-    0x004f9bc0  (int param_1)
+  engine_prim.c  (2 functions)
     0x004f9dd0  (SRenderVertex *vertices,int vertex_count)
     0x004fa2e0  (int *vertex_indices,int vertex_count)
-    0x004faca0  (void)
 
   engine_special.cpp_switchRenderer  (2 functions)
     0x00532f30  (CExternalRenderer *renderer,int card_index)
     0x00532f50  (char *new_dll_name,int card_index)
-
-  engine_texture.cpp  (3 functions)
-    0x005458a0  (void)
-    0x005458d0  (void)
-    0x005459f0  (void)
 
   engine_texture.cpp_CTextureCache  (3 functions)
     0x00544de0  (CTextureCache *this_ptr,int max_texture_count)
     0x00544e50  (CTextureCache *this_ptr)
     0x00545700  (CTextureCache *this_ptr)
 
-  shape_edittool.cpp  (30 functions)
+  shape_edittool.cpp  (25 functions)
     0x0046f000  (void)
     0x0046f7e0  (char *param_1,char *param_2,int param_3,byte param_4,int ...)
     0x0046fa80  (void)
@@ -11314,21 +10652,16 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004720c0  (CEditorTools *param_1)
     0x004722b0  (void)
     0x00472fd0  (CEditorTools *param_1,float param_2,int param_3,float *pa...)
-    0x00473ff0  (undefined4 *param_1,undefined4 *param_2)
     0x00474ae0  (CStrList *param_1,char *param_2,char *param_3)
     0x00475230  (CPickList *this_ptr)
     0x00475470  (CStrList *param_1,char *param_2,uint param_3)
     0x004759d0  (CPickList *this_ptr)
     0x00476160  (CStrList *param_1)
-    0x00476490  (CEdScrollBar *this_ptr,uint flags)
     0x00476e70  (undefined4 param_1)
     0x00476e90  (int param_1)
     0x00476f40  (int param_1)
     0x00476fd0  (void)
-    0x004771d0  (void)
     0x004771f0  (void)
-    0x004772e0  (CEdCheck *this_ptr)
-    0x0047767b  (void)
 
   sound_mp3.cpp  (6 functions)
     0x004e2480  (int *param_1)

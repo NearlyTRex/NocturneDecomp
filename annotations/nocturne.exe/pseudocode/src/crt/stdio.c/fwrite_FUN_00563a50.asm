@@ -15,9 +15,9 @@
 ;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00448f40 at 00448f86
 ;   core_dtri.cpp_FUN_0046c410 at 0046c420
 ;   core_setdir.cpp_CDemonSet_FUN_00513670 at 005136c7
-;   engine_2d.c_FUN_00403130 at 0040315b
-;   engine_2d.c_FUN_00403500 at 0040352b
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00403630 at 00403718
+;   engine_2d.c_saveFogTable_FUN_00403130 at 0040315b
+;   engine_2d.c_saveLightTable_FUN_00403500 at 0040352b
 ;   engine_pcx.c_FUN_004f2990 at 004f2aa4
 ;   engine_pod.cpp_FUN_004f8eb0 at 004f9081
 ;

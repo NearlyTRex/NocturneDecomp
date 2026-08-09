@@ -7,9 +7,9 @@
 // Address: 004c4230
 void __cdecl staticInit(void);
 
-// Original: core_ladder.cpp_factoryFunc_FUN_004c4260
+// Original: core_ladder.cpp_factoryFuncLadder_FUN_004c4260
 // Address: 004c4260
-CLadder * __cdecl factoryFunc(void);
+CLadder * __cdecl factoryFuncLadder(void);
 
 // Original: core_ladder.cpp_CLadder_getActorType_FUN_004c4280
 // Address: 004c4280

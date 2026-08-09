@@ -49,7 +49,7 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00505820(CScript *this_
 CVector3f * __cdecl core_script_cpp_makeVector_FUN_00505880(CVector3f *out,float x,float y,float z);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(CDeformableModel *model_ptr);
 void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void);
-CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_005058f0(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_005058f0(void);
 CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00505910(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00505920(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00505990(CSentinel *this_ptr);

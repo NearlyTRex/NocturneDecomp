@@ -23,7 +23,7 @@
 ;   undefined4 g_CGame_01c775ec.camera_debug_enabled
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00402d30
+;   engine_2d.c_drawTextCenteredXYColor_FUN_00402d30
 ;
 ; *****************************************************************************
 
@@ -241,8 +241,8 @@ section .text
     PUSH EAX                            ; 0044ef95
     MOV EDI,dword ptr [ESP + 0x40]      ; 0044ef96
     PUSH EDI                            ; 0044ef9a
-    CALL engine_2d.c_FUN_00402d30       ; 0044ef9b
-        ;   XREF to: 00402d30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402d30(int left_x, int right_x, int y, char * text)
+    CALL engine_2d.c_drawTextCenteredXYColor_FUN_00402d30 ; 0044ef9b
+        ;   XREF to: 00402d30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredXYColor_FUN_00402d30(int left_x, int right_x, int y, char * text)
     ADD ESP,0x10                        ; 0044efa0
     ADD ESP,0x1c                        ; 0044efa3
     POP EBP                             ; 0044efa6

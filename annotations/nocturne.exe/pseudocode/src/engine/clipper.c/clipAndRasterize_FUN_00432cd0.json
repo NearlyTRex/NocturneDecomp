@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -142,18 +142,6 @@
     "total_lines": 1607
   },
   "cross_references": [
-    {
-      "addr": "00406a00",
-      "from_addr": "00406a8c",
-      "name": "engine_3d.c_FUN_00406a00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00406b80",
-      "from_addr": "00406c0c",
-      "name": "engine_3d.c_FUN_00406b80",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004060b0",
       "from_addr": "00406140",
@@ -401,9 +389,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00406a00",
+      "from_addr": "00406a8c",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00406a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00405240",
       "from_addr": "00405312",
       "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00406b80",
+      "from_addr": "00406c0c",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00406b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -691,7 +691,7 @@
     {
       "addr": "00766c78",
       "name": "DAT_00766c78",
-      "type": "undefined4",
+      "type": "undefined1",
       "value": null
     },
     {
@@ -1981,7 +1981,7 @@
       "line": 485,
       "match": "DAT_00766c78",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -1989,7 +1989,7 @@
       "line": 485,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -2109,7 +2109,7 @@
       "line": 519,
       "match": "DAT_00766c78",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {
@@ -2117,7 +2117,7 @@
       "line": 519,
       "match": "DAT_00766c70",
       "severity": "mild",
-      "text": "plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);",
+      "text": "plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);",
       "type": "undefined_data"
     },
     {

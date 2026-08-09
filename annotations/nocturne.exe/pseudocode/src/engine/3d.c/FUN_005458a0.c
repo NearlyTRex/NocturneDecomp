@@ -2,13 +2,13 @@
 // Address: 00404480
 // Address Range: [[00404480, 00404484]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_FUN_005458a0(void)
+// Signature: CTextureCache * __cdecl engine_3d_c_FUN_005458a0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_3d_c_FUN_005458a0(void)
+CTextureCache * __cdecl engine_3d_c_FUN_005458a0(void)
 
 {
   CTextureCache *this_ptr;
@@ -16,8 +16,8 @@ void __cdecl engine_3d_c_FUN_005458a0(void)
   this_ptr = operator_new(0xd300c);
   if (this_ptr == (CTextureCache *)0x0) {
     _DAT_02dd0f84 = this_ptr;
-    return;
+    return (CTextureCache *)0x0;
   }
   _DAT_02dd0f84 = engine_texture_cpp_CTextureCache_FUN_00544de0(this_ptr,0x400);
-  return;
+  return _DAT_02dd0f84;
 }

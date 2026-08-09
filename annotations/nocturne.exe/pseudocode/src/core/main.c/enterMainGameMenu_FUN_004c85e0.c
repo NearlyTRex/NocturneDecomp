@@ -45,7 +45,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
             (&g_CAlphaBitmap_01cc5b48,"fblurr",0x68,0x46);
   iVar6 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  engine_texture_cpp_FUN_005459f0();
+  engine_texture_cpp_clearTextureCache_FUN_005459f0();
   iStack_c = 0;
   core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
   iStack_8 = 1;
@@ -133,7 +133,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
       }
       core_game_cpp_CGame_FUN_004a4b50(g_CGame_PTR_005b9354,iVar4);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
-      engine_texture_cpp_FUN_005459f0();
+      engine_texture_cpp_clearTextureCache_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
       goto LAB_004d2665;
     case 1:
@@ -144,7 +144,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
       core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
       core_game_cpp_CGame_FUN_004a4170(g_CGame_PTR_005b9354,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
-      engine_texture_cpp_FUN_005459f0();
+      engine_texture_cpp_clearTextureCache_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoon_01cc5780);
 LAB_004d2665:
       core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);

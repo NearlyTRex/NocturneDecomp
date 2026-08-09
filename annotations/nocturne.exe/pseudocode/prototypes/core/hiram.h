@@ -7,9 +7,9 @@
 // Address: 004b65b0
 void __cdecl staticInit(void);
 
-// Original: core_hiram.cpp_factoryFunc_FUN_004b65e0
+// Original: core_hiram.cpp_factoryFuncHiram_FUN_004b65e0
 // Address: 004b65e0
-CHiram * __cdecl factoryFunc(void);
+CHiram * __cdecl factoryFuncHiram(void);
 
 // Original: core_hiram.cpp_CHiram_getActorType_FUN_004b6600
 // Address: 004b6600

@@ -1,0 +1,285 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 515,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 515,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 41,
+        "line": 18,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 47,
+        "line": 18,
+        "message": "expected expression"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 43,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "wrong_global"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "00408fc0",
+      "from_addr": "0040906e",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004051e0",
+      "from_addr": "004051eb",
+      "name": "engine_3d.c_oldFunction3_FUN_004051e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00405200",
+      "from_addr": "0040521b",
+      "name": "engine_3d.c_renderBSPNode_FUN_00405200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00404b10",
+      "from_addr": "00405098",
+      "name": "engine_3d.c_renderRotatedMRGLSubChain_FUN_00404b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c3c90",
+      "from_addr": "004c4011",
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408e80",
+    "address_range": [
+      [
+        "00408e80",
+        "00408eb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80",
+    "signature": "void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00408e80(SMRGLHeaderExtended *chain)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005acab8",
+      "name": "g_MRGLBlockHandlerTable",
+      "type": "undefined1*",
+      "value": "004044a0"
+    },
+    {
+      "addr": "005b7644",
+      "name": "INT_005b7644",
+      "type": "int",
+      "value": "0x1"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "00405098",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderRotatedMRGLSubChain_FUN_00404b10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004051eb",
+        "call_type": "direct",
+        "caller": "engine_3d.c_oldFunction3_FUN_004051e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040521b",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderBSPNode_FUN_00405200",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00405230",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderBSPNode_FUN_00405200",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c4011",
+        "call_type": "direct",
+        "caller": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040906e",
+        "call_type": "direct",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 12,
+      "INT_ADD": 4,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 65
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "chain",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(chain);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Scalar global g_MRGLBlockHandlerTable accessed via (&g_MRGLBlockHandlerTable)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_005acc88 (at 0x005acc88, +464 bytes).",
+      "line": 11,
+      "match": "g_MRGLBlockHandlerTable",
+      "severity": "moderate",
+      "text": "chain = (SMRGLHeaderExtended *)(*(code *)(&g_MRGLBlockHandlerTable)[iVar1])(chain);",
+      "type": "wrong_global"
+    }
+  ]
+}

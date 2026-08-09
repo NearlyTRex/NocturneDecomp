@@ -7,7 +7,7 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_factoryFunc_FUN_00555a60 at 00555a73
+;   core_werewolf.cpp_factoryFuncWerewolf_FUN_00555a60 at 00555a73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_00597cd3

@@ -1,0 +1,30 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_00555a60(void)
+;
+;
+; Called Functions:
+;   core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90
+;   crt_memory.c_operator_new_FUN_0056497c
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0xbd6c                         ; 00555a60
+        ;   Label: core_werewolf.cpp_factoryFuncWerewolf_FUN_00555a60
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 00555a65
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
+    ADD ESP,0x4                         ; 00555a6a
+    TEST EAX,EAX                        ; 00555a6d
+    JNZ 0x00555a72                      ; 00555a6f
+        ;   XREF to: 00555a72 (CONDITIONAL_JUMP)  ; LAB_00555a72
+    RET                                 ; 00555a71
+    PUSH EAX                            ; 00555a72
+        ;   Label: LAB_00555a72
+    CALL core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90 ; 00555a73
+        ;   XREF to: 00555a90 (UNCONDITIONAL_CALL)  ; CWerewolf * core_werewolf.cpp_CWerewolf_ctor_FUN_00555a90(CWerewolf * this_ptr)
+    ADD ESP,0x4                         ; 00555a78
+    RET                                 ; 00555a7b
+

@@ -10,7 +10,8 @@ void __cdecl core_beast_cpp_staticInit_FUN_00414ff0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CBeastActorType_007646b0,"CBeast",core_beast_cpp_factoryFunc_FUN_00415020,
-             &g_INT_005acfe4,1,&g_CEnemyActorType_01bcdebc);
+            (&g_CBeastActorType_007646b0,"CBeast",
+             core_beast_cpp_factoryFuncBeast_FUN_00415020,&g_INT_005acfe4,1,
+             &g_CEnemyActorType_01bcdebc);
   return;
 }

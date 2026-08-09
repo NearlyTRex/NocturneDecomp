@@ -49,6 +49,7 @@
 import os
 import sys
 import argparse
+import subprocess
 
 # Add library path
 this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +66,47 @@ CATEGORY_NAMES = [
     "cross_references", "entry_points", "memory_layout",
     "metadata", "type_info", "vtables", "pseudocode",
 ]
+
+SIBLING_PAIR = ("nocedit.exe", "nocturne.exe")
+
+
+def maybe_refresh_sibling_mapping(exported_names, enabled):
+    """Regenerate the sibling mapping from the trees this export just wrote.
+
+    The mapping is derived from annotations/, so every export leaves it a
+    little further out of date -- stale sibling names, pairs pointing at
+    function entries a boundary repair has since deleted, and missed matches
+    that the export's newly named functions would now anchor. Refreshing here
+    means the mapping is never older than the tree it describes.
+
+    Runs as a subprocess AFTER the JVM work is finished: the refresh needs
+    neither Ghidra nor a JVM, and isolating it means a failure cannot damage an
+    export that has already succeeded. For the same reason a failure warns and
+    never changes the export's exit code -- the annotations are the product,
+    the mapping is a derived artifact that can be rebuilt at any time.
+    """
+    if not enabled:
+        return
+    if not set(exported_names) & set(SIBLING_PAIR):
+        print("\n[sibling-mapping] no sibling program in this export; skipping refresh")
+        return
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "refresh_sibling_mapping.py")
+    if not os.path.exists(script):
+        print("\n[sibling-mapping] refresh_sibling_mapping.py not found; skipping")
+        return
+    print("\n[sibling-mapping] regenerating from the freshly exported trees...")
+    sys.stdout.flush()
+    try:
+        rc = subprocess.call([sys.executable, "-u", script, "-q"])
+    except Exception as exc:
+        print("[sibling-mapping] WARNING: could not launch refresh: %s" % exc)
+        return
+    if rc:
+        print("[sibling-mapping] WARNING: refresh exited %d. The mapping is now "
+              "STALE relative to this export -- re-run "
+              "scripts/Python/refresh_sibling_mapping.py before trusting it." % rc)
+
 
 def get_export_categories():
     """Get export categories map - must be called after PyGhidra starts"""
@@ -242,6 +284,11 @@ Available categories:
                         help="Export every program in the project. In this mode program_name is "
                              "ignored and output_folder is treated as a parent directory: each "
                              "program is exported to <output_folder>/<program_name>.")
+    parser.add_argument("--no-refresh-mapping", action="store_true",
+                        help="skip regenerating the sibling function mapping after "
+                             "the export. It is refreshed by default so it can never "
+                             "be older than the annotations it describes; the refresh "
+                             "needs no JVM and cannot affect the export's exit code.")
     args = parser.parse_args()
 
     # Import pyghidra
@@ -264,6 +311,7 @@ Available categories:
     # Open the project
     print("Opening project: %s/%s" % (args.project_path, args.project_name))
     exit_code = 0
+    exported_ok = []
     project = None
     try:
         project = pyghidra.open_project(args.project_path, args.project_name)
@@ -284,6 +332,7 @@ Available categories:
         # (matching the existing annotations/<program_name> layout). In single-
         # program mode output_folder is used verbatim for backward compatibility.
         for pathname, name in program_paths:
+            ok = True
             if args.all_programs:
                 out_folder = os.path.join(args.output_folder, name)
             else:
@@ -303,11 +352,15 @@ Available categories:
                 code = e.code if isinstance(e.code, int) else 1
                 print("ERROR exporting '%s': export exited with code %s" % (name, code))
                 exit_code = code or 1
-            except Exception as e:
+                ok = False
+            except Exception as e:  # noqa: BLE001 - one bad program must not abort the batch
                 print("ERROR exporting '%s': %s" % (name, str(e)))
                 import traceback
                 traceback.print_exc()
                 exit_code = 1
+                ok = False
+            if ok:
+                exported_ok.append(name)
     except Exception as e:
         print("ERROR: %s" % str(e))
         import traceback
@@ -317,7 +370,12 @@ Available categories:
         if project is not None:
             project.close()
 
+    # Derived artifacts, after the JVM is done with the project.
+    maybe_refresh_sibling_mapping(exported_ok, not args.no_refresh_mapping)
+
     # Force exit - JVM shutdown can hang
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(exit_code)
 
 if __name__ == "__main__":

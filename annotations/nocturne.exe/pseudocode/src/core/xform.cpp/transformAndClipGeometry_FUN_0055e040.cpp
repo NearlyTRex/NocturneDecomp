@@ -360,7 +360,7 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_cou
                 pSVar18 = pSVar17;
                 plVar14 = plVar19;
                 if (((uint)plVar19 & 7) != 0) {
-                  plVar14 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar22 * -2);
+                  plVar14 = (longlong *)(&DAT_00766c78 + (uint)bVar22 * -8 + DAT_00766c70 * 0x30);
                   pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
                   *(int *)plVar19 = (pSVar17->projected_vertex).transformed_x;
                   iVar11 = 0x2c;
@@ -394,7 +394,7 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_cou
                 pSVar18 = pSVar17;
                 plVar14 = plVar19;
                 if (((uint)plVar19 & 7) != 0) {
-                  plVar14 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar22 * -2);
+                  plVar14 = (longlong *)(&DAT_00766c78 + (uint)bVar22 * -8 + DAT_00766c70 * 0x30);
                   pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
                   *(int *)plVar19 = (pSVar17->projected_vertex).transformed_x;
                   iVar16 = 0x2c;

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)
+; int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name)
 ;
 ; Parameters:
-; CTextureCache *  Stack[0x4]:4   cache
+; CTextureCache *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   texture_name
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114

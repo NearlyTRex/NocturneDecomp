@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 372
+  Functions with static analysis data: 364
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   11
 
   Cppcheck (quick):
-    Files analyzed:      366
-    Files with findings: 366
-    Total diagnostics:   1011
+    Files analyzed:      358
+    Files with findings: 358
+    Total diagnostics:   991
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -33,7 +33,7 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                 492  [likely decompiler artifact]
+  uninitvar                                                 471  [likely decompiler artifact]
   shiftTooManyBitsSigned                                    200  [likely decompiler artifact]
   legacyUninitvar                                            93
   ignoredReturnValue                                         58
@@ -45,6 +45,6 @@ TOP FINDINGS - Cppcheck (quick)
   shiftNegativeLHS                                            7
   pointerOutOfBounds                                          4
   nullPointerRedundantCheck                                   4
+  arrayIndexOutOfBoundsCond                                   4
   identicalInnerCondition                                     4
-  arrayIndexOutOfBoundsCond                                   3
   arrayIndexOutOfBounds                                       3

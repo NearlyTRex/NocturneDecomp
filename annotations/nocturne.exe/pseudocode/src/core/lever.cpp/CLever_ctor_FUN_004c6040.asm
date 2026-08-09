@@ -7,7 +7,7 @@
 ; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_lever.cpp_factoryFunc_FUN_004c6010 at 004c6023
+;   core_lever.cpp_factoryFuncLever_FUN_004c6010 at 004c6023
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_glever_kfm_005878f4

@@ -7,9 +7,9 @@
 // Address: 004116b0
 void __cdecl staticInit(void);
 
-// Original: core_barrier.cpp_factoryFunc_FUN_004116e0
+// Original: core_barrier.cpp_factoryFuncBarrier_FUN_004116e0
 // Address: 004116e0
-CBarrier * __cdecl factoryFunc(void);
+CBarrier * __cdecl factoryFuncBarrier(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_00411700
 // Address: 00411700

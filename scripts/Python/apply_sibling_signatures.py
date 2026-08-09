@@ -298,6 +298,8 @@ def build_plan_namecore(src_prog, dst_prog):
             "varargs": None,
             "expect_name": None,
             "expect_range": None,
+            "basis": "sibling",
+            "confidence": None,
             "receiver": name_cls,
             "corroborated": bool(name_cls and virtual),
         })
@@ -308,6 +310,30 @@ def build_plan_namecore(src_prog, dst_prog):
 LEDGER_PATH = os.path.join(REPO, "annotations", "verified_transfers.json")
 
 REQUIRED_ENTRY_KEYS = ("program", "address", "ret", "conv", "params")
+
+# How an entry knows what it knows.
+#
+#   sibling   the answer already existed in the other binary and was verified
+#             against this one's assembly. The name is a transfer.
+#   derived   no counterpart exists -- the function is unique to this build, or
+#             the sibling's version is a stub carrying no evidence. The name was
+#             reasoned out from this binary's own assembly: assert strings, call
+#             graph, constants. It is a proposal, not a transfer.
+#
+# The distinction matters because the two fail differently. A wrong transfer
+# means the pairing was wrong and the whole entry is suspect. A wrong derived
+# name is just a name -- the signature beside it can still be perfectly good.
+# Keeping them separable lets you apply the transfers and hold the proposals.
+BASES = ("sibling", "derived")
+CONF_RANK = {"high": 3, "medium": 2, "low": 1}
+
+
+def basis_of(entry):
+    """Explicit `basis`, else inferred from whether a source binary is named."""
+    b = entry.get("basis")
+    if b:
+        return b
+    return "sibling" if (entry.get("source") or {}).get("program") else "derived"
 
 
 def load_ledger(path):
@@ -346,6 +372,14 @@ def lint_ledger(entries, path):
         for j, p in enumerate(e.get("params") or []):
             if not isinstance(p, dict) or not p.get("name") or not p.get("type"):
                 problems.append(f"{where}: params[{j}] needs both 'name' and 'type'")
+                continue
+            # Auto-parameters are Ghidra's, not the prototype's. They show up in
+            # exported signature strings, but getParameters() excludes them and
+            # FORMAL_PARAMS cannot set them, so an entry carrying one never
+            # converges: every run reports the same diff and re-applies it.
+            if p["name"] == "__return_storage_ptr__" or p["name"].startswith("__auto"):
+                problems.append(f"{where}: params[{j}] is the Ghidra auto-parameter "
+                                f"{p['name']!r}, not a formal parameter -- drop it")
         # The name is written verbatim, so a name copied wholesale from the
         # sibling would stamp the sibling's address onto a nocturne function --
         # silently, and in the one field that is supposed to identify it.
@@ -359,9 +393,35 @@ def lint_ledger(entries, path):
                 hint = "  <- that is the sibling's address" if m.group(1).lower() == sib else ""
                 problems.append(f"{where}: name suffix _FUN_{m.group(1)} does not match"
                                 f" address {addr}{hint}")
-        if not (e.get("source") or {}).get("note"):
+
+        src = e.get("source") or {}
+        if not src.get("note"):
             problems.append(f"{where}: source.note is required -- an entry without"
                             " stated evidence is a guess wearing a ledger's clothes")
+        if e.get("basis") is not None and e["basis"] not in BASES:
+            problems.append(f"{where}: basis must be one of {BASES}, got {e['basis']!r}")
+        basis = basis_of(e)
+        conf = src.get("confidence")
+        if conf is not None and conf not in CONF_RANK:
+            problems.append(f"{where}: source.confidence must be one of"
+                            f" {tuple(CONF_RANK)}, got {conf!r}")
+        if basis == "sibling":
+            # A transfer has to say what it transferred FROM, or it is really a
+            # derived name wearing a transfer's clothes and cannot be re-checked.
+            for k in ("program", "address", "name"):
+                if not src.get(k):
+                    problems.append(f"{where}: basis 'sibling' requires source.{k}")
+        else:
+            # Half-filled provenance is worse than none: it reads as a verified
+            # transfer at a glance while nothing actually corroborates the name.
+            present = [k for k in ("program", "address", "name") if src.get(k)]
+            if present:
+                problems.append(f"{where}: basis 'derived' must not set source."
+                                f"{'/'.join(present)} -- a derived name has no"
+                                " counterpart to transfer from")
+            if conf is None:
+                problems.append(f"{where}: basis 'derived' requires source.confidence"
+                                " -- a proposed name must state how sure it is")
         exp = e.get("expect") or {}
         rng = exp.get("range")
         if rng is not None and (not isinstance(rng, list) or len(rng) != 2):
@@ -375,8 +435,9 @@ def lint_ledger(entries, path):
     return 1 if problems else 0
 
 
-def build_plan_ledger(entries, program, only=None):
+def build_plan_ledger(entries, program, only=None, basis=None, min_conf=None):
     plan, skipped = [], Counter()
+    floor = CONF_RANK.get(min_conf, 0)
     for e in entries:
         if e.get("program") != program:
             skipped["other_program"] += 1
@@ -384,10 +445,20 @@ def build_plan_ledger(entries, program, only=None):
         if only and only not in (e.get("name") or "") and only not in e.get("address", ""):
             skipped["filtered_out"] += 1
             continue
+        b = basis_of(e)
+        if basis and b != basis:
+            skipped[f"basis_{b}"] += 1
+            continue
+        conf = (e.get("source") or {}).get("confidence")
+        if floor and CONF_RANK.get(conf, 0) < floor:
+            skipped[f"below_confidence({conf})"] += 1
+            continue
         exp = e.get("expect") or {}
         plan.append({
             "core": e.get("name") or e["address"],
             "origin": "ledger",
+            "basis": b,
+            "confidence": conf,
             "src_name": (e.get("source") or {}).get("name"),
             "dst_name": e.get("name") or f"FUN_{e['address']}",
             "addr": e["address"],
@@ -766,9 +837,14 @@ def report_live(plan, counts, args):
 
     todo = [i for i in plan if i["action"] == "APPLY"]
     if todo:
-        print(f"\n  APPLY -- {len(todo)} function(s), changed fields only:")
+        by_basis = Counter(i.get("basis") or "?" for i in todo)
+        breakdown = "  ".join(f"{k}={v}" for k, v in sorted(by_basis.items()))
+        print(f"\n  APPLY -- {len(todo)} function(s) [{breakdown}], changed fields only:")
         for i in todo[:args.show]:
-            print(f"    {i['addr']}  {i['dst_name']}")
+            tag = i.get("basis") or "?"
+            conf = i.get("confidence")
+            tag += f"/{conf}" if conf else ""
+            print(f"    {i['addr']}  {i['dst_name']}   ({tag})")
             for field, cur, want in i["_diffs"]:
                 print(f"        {field:14} {cur!r}  ->  {want!r}")
         if len(todo) > args.show:
@@ -788,6 +864,12 @@ def main():
     ap.add_argument("--project-name", default="NocturneEdit")
     ap.add_argument("--show", type=int, default=15)
     ap.add_argument("--only", help="ledger: substring filter on name or address")
+    ap.add_argument("--basis", choices=BASES,
+                    help="ledger: apply only transfers from the sibling ('sibling') "
+                         "or only names reasoned out from this binary ('derived'). "
+                         "Default: both.")
+    ap.add_argument("--min-confidence", choices=tuple(CONF_RANK),
+                    help="ledger: skip entries below this source.confidence")
     ap.add_argument("--out", help="write the plan as JSON")
     ap.add_argument("--lint", action="store_true",
                     help="ledger: structural check only, no Ghidra")
@@ -814,7 +896,8 @@ def main():
         entries = load_ledger(args.ledger)
         if args.lint:
             return lint_ledger(entries, args.ledger)
-        plan, skipped = build_plan_ledger(entries, args.dst, args.only)
+        plan, skipped = build_plan_ledger(entries, args.dst, args.only,
+                                          args.basis, args.min_confidence)
         print(f"ledger {args.ledger}: {len(plan)} entr(ies) for {args.dst}"
               + (f"  (skipped: {dict(skipped)})" if skipped else ""))
         if not plan:

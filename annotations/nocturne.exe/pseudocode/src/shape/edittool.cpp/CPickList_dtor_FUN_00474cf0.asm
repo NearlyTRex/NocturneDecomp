@@ -27,9 +27,9 @@
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
+;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00473b80
 ;   shape_edittool.cpp_FUN_00476160
-;   shape_edittool.cpp_FUN_00476490
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH 0x0                            ; 00474d0c
     ADD EBX,0x138                       ; 00474d0e
     PUSH EBX                            ; 00474d14
-    CALL shape_edittool.cpp_FUN_00476490 ; 00474d15
-        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_FUN_00476490(CEdScrollBar * this_ptr, uint flags)
+    CALL shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490 ; 00474d15
+        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_dtor_FUN_00476490(CEdScrollBar * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00474d1a
     PUSH 0x1                            ; 00474d1d
     LEA EBX,[EAX + 0xfffffec8]          ; 00474d1f

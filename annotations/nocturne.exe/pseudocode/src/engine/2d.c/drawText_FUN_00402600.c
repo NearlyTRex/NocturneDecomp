@@ -9,7 +9,7 @@
 void __cdecl engine_2d_c_drawText_FUN_00402600(char *text,int x,int y)
 
 {
-  if (g_ResolutionTable[7].width != 0) {
+  if (INT_005acaa4 != 0) {
     engine_2d_c_drawTextWrapped_FUN_00402290(text,x,y,g_ClipRight,g_ClipBottom);
     return;
   }

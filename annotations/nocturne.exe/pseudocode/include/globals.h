@@ -5,6 +5,7 @@
 // =============================================================================
 
 #include "globals/globals_12C0000.h"
+#include "globals/globals_12E0000.h"
 #include "globals/globals_1400000.h"
 #include "globals/globals_14B0000.h"
 #include "globals/globals_1AB0000.h"

@@ -16,7 +16,8 @@ void __cdecl core_bride_cpp_staticInit_FUN_0041fb20(void)
   CVector3f_00764ae4.y = 0.0;
   CVector3f_00764ae4.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CBrideActorType_00764af0,"CBride",core_bride_cpp_factoryFunc_FUN_0041fb80,
-             &g_INT_005ad0e0,4,&g_CEnemyActorType_01bcdebc);
+            (&g_CBrideActorType_00764af0,"CBride",
+             core_bride_cpp_factoryFuncBride_FUN_0041fb80,&g_INT_005ad0e0,4,
+             &g_CEnemyActorType_01bcdebc);
   return;
 }

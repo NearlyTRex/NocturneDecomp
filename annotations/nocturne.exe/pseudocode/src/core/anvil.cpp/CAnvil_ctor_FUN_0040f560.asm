@@ -7,7 +7,7 @@
 ; CAnvil *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_anvil.cpp_factoryFunc_FUN_0040f530 at 0040f543
+;   core_anvil.cpp_factoryFuncAnvil_FUN_0040f530 at 0040f543
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_005783ef

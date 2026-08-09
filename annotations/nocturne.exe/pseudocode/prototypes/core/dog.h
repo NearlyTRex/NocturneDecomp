@@ -7,9 +7,9 @@
 // Address: 00454600
 void __cdecl staticInit(void);
 
-// Original: core_dog.cpp_factoryFunc_FUN_00454630
+// Original: core_dog.cpp_factoryFuncZombieDog_FUN_00454630
 // Address: 00454630
-CZombieDog * __cdecl factoryFunc(void);
+CZombieDog * __cdecl factoryFuncZombieDog(void);
 
 // Original: core_dog.cpp_CZombieDog_getActorType_FUN_00454650
 // Address: 00454650

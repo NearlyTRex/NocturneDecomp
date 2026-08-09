@@ -7,7 +7,7 @@
 ; CLarva *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_larva.cpp_factoryFunc_FUN_004c4850 at 004c4863
+;   core_larva.cpp_factoryFuncLarva_FUN_004c4850 at 004c4863
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_worm_dfm_0058777b

@@ -7,9 +7,9 @@
 // Address: 0040fe70
 void __cdecl staticInit(void);
 
-// Original: core_backgnd.cpp_factoryFunc_FUN_0040fea0
+// Original: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040fea0
 // Address: 0040fea0
-CBackgroundActor * __cdecl factoryFunc(void);
+CBackgroundActor * __cdecl factoryFuncBackgroundActor(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_0040fec0
 // Address: 0040fec0

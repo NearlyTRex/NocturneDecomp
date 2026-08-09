@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f315
-;   core_boxactor.cpp_factoryFunc_FUN_0041e2d0 at 0041e2e3
+;   core_boxactor.cpp_factoryFuncBoxActor_FUN_0041e2d0 at 0041e2e3
 ;   core_stone.cpp_CTempleStone_ctor_FUN_00534d00 at 00534d05
 ;
 ; Referenced Globals:

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 12,
-        "message": "no matching function for call to 'engine_3d_c_FUN_00408e80'"
       }
     ],
     "success": false,
@@ -68,17 +62,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 20,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -97,7 +91,7 @@
     {
       "addr": "00408e80",
       "is_variadic": false,
-      "name": "engine_3d.c_FUN_00408e80"
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80"
     }
   ],
   "globals": [],
@@ -149,10 +143,10 @@
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 5,
+      "line": 6,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "engine_3d_c_FUN_00408e80((int)&(primitive->base).type + (primitive->base).count);",
+      "text": "((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));",
       "type": "pointer_cast"
     }
   ],

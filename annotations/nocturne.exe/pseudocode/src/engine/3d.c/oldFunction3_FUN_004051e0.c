@@ -9,6 +9,7 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction3_FUN_004051e0(SMRGLHeaderExtended *primitive)
 
 {
-  engine_3d_c_FUN_00408e80((int)&(primitive->base).type + (primitive->base).count);
+  engine_3d_c_dispatchMRGLBlockChain_FUN_00408e80
+            ((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));
   return (SMRGLHeaderExtended *)&primitive->child_count;
 }

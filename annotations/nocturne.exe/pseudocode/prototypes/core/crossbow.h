@@ -7,9 +7,9 @@
 // Address: 0043ceb0
 void __cdecl staticInit(void);
 
-// Original: core_crossbow.cpp_factoryFunc_FUN_0043cee0
+// Original: core_crossbow.cpp_factoryFuncCrossbow_FUN_0043cee0
 // Address: 0043cee0
-CCrossbow * __cdecl factoryFunc(void);
+CCrossbow * __cdecl factoryFuncCrossbow(void);
 
 // Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_0043cf00
 // Address: 0043cf00

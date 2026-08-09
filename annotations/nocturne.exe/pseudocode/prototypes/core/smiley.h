@@ -7,9 +7,9 @@
 // Address: 0051fc90
 void __cdecl staticInit(void);
 
-// Original: core_smiley.cpp_factoryFunc_FUN_0051fcc0
+// Original: core_smiley.cpp_factoryFuncSmiley_FUN_0051fcc0
 // Address: 0051fcc0
-CSmiley * __cdecl factoryFunc(void);
+CSmiley * __cdecl factoryFuncSmiley(void);
 
 // Original: core_smiley.cpp_CSmiley_getActorType_FUN_0051fce0
 // Address: 0051fce0

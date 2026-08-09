@@ -489,7 +489,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
                   pSVar15 = pSVar11;
                   plVar9 = plVar17;
                   if (((uint)plVar17 & 7) != 0) {
-                    plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);
+                    plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);
                     pSVar15 = (SRenderVertex *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
                     *(int *)plVar17 = (pSVar11->projected_vertex).transformed_x;
                     iVar8 = 0x2c;
@@ -523,7 +523,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
                   pSVar15 = pSVar11;
                   plVar9 = plVar17;
                   if (((uint)plVar17 & 7) != 0) {
-                    plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar18 * -2);
+                    plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar18 * -8 + DAT_00766c70 * 0x30);
                     pSVar15 = (SRenderVertex *)((int)pSVar11 + (uint)bVar18 * -8 + 4);
                     *(int *)plVar17 = (pSVar11->projected_vertex).transformed_x;
                     iVar8 = 0x2c;

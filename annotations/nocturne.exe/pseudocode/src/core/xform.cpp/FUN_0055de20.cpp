@@ -1,6 +1,6 @@
 // Name: core_xform.cpp_FUN_0055de20
 // Address: 0055de20
-// Address Range: [[0055de20, 0055de87]]
+// Address Range: [[0055de20, 0055df83]]
 // Convention: unknown
 // Signature: void core_xform_cpp_FUN_0055de20(void)
 
@@ -46,7 +46,7 @@ void core_xform_cpp_FUN_0055de20(void)
         pSVar7 = vertex_a;
         plVar9 = plVar8;
         if (((uint)plVar8 & 7) != 0) {
-          plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);
+          plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);
           pSVar7 = (SRenderVertex *)((int)vertex_a + (uint)bVar10 * -8 + 4);
           *(int *)plVar8 = (vertex_a->projected_vertex).transformed_x;
           iVar5 = 0x2c;
@@ -80,7 +80,7 @@ void core_xform_cpp_FUN_0055de20(void)
         pSVar7 = vertex_a;
         plVar9 = plVar8;
         if (((uint)plVar8 & 7) != 0) {
-          plVar9 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar10 * -2);
+          plVar9 = (longlong *)(&DAT_00766c78 + (uint)bVar10 * -8 + DAT_00766c70 * 0x30);
           pSVar7 = (SRenderVertex *)((int)vertex_a + (uint)bVar10 * -8 + 4);
           *(int *)plVar8 = (vertex_a->projected_vertex).transformed_x;
           iVar6 = 0x2c;

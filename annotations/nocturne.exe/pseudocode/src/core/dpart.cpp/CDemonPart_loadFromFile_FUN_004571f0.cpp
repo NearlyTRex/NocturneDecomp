@@ -49,7 +49,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *thi
   }
   else {
     iVar7 = 0;
-    _fread((void *)0x1af4ef0,0x48,this_ptr->face_count,file_handle);
+    _fread(&g_VOID_PTR_01af4ef0,0x48,this_ptr->face_count,file_handle);
     if (0 < this_ptr->face_count) {
       iVar6 = 0;
       iVar5 = 0;

@@ -7,6 +7,9 @@
 // GLOBAL VARIABLES - Range 0x1BD0000
 // =============================================================================
 
+// uchar[18][256]
+extern uchar g_FogTable[18][256];
+
 // uchar[256][256]
 extern uchar g_BlendTableAvg[256][256];
 

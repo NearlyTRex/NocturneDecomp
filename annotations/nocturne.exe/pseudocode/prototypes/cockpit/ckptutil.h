@@ -31,9 +31,9 @@ ColorConversionFunc * __cdecl FUN_0042d130(void);
 // Address: 0042d150
 OptimizedMemcpyFunc * __cdecl getOptimizedMemcpyFunction(void);
 
-// Original: cockpit_ckptutil.c_FUN_0042d170
+// Original: cockpit_ckptutil.c_get16BitConversionFunction_FUN_0042d170
 // Address: 0042d170
-ColorConversionFunc * __cdecl FUN_0042d170(void);
+ColorConversionFunc * __cdecl get16BitConversionFunction(void);
 
 // Original: cockpit_ckptutil.c_FUN_0042d180
 // Address: 0042d180
@@ -179,17 +179,17 @@ void FUN_0042fd60(int param_1,int param_2,float param_3,int param_4);
 // Address: 00430140
 void __cdecl putPixel(int x,int y,int color);
 
-// Original: cockpit_ckptutil.c_FUN_004301d0
+// Original: cockpit_ckptutil.c_isLineBlendingDisabled_FUN_004301d0
 // Address: 004301d0
-undefined4 FUN_004301d0(void);
+int __cdecl isLineBlendingDisabled(void);
 
 // Original: cockpit_ckptutil.c_isLineClippingDisabled_FUN_004301e0
 // Address: 004301e0
 int __cdecl isLineClippingDisabled(void);
 
-// Original: cockpit_ckptutil.c_FUN_004301f0
+// Original: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_004301f0
 // Address: 004301f0
-void FUN_004301f0(void);
+void __cdecl setLineBlendingDisabled(int disabled);
 
 // Original: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00430200
 // Address: 00430200

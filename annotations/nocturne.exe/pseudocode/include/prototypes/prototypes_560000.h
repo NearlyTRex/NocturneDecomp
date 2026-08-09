@@ -23,6 +23,7 @@
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x560000
@@ -48,7 +49,7 @@ void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(CZombie *this_
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_00562550(CZombie *this_ptr,uint flags);
 void __cdecl engine_3d_c_addRasterizerEdge_FUN_00562620(SRenderVertex *v0,SRenderVertex *v1);
 void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_00562740(SRenderVertex *v0,SRenderVertex *v1);
-int * engine_3d_c_FUN_00562880(int param_1,int *param_2);
+SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_00562880(int y_start,SSoftwareEdge *exclude_edge);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_buffer,int vertex_count);
 void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
@@ -281,7 +282,6 @@ uint crt_unknown_c_FUN_0056a388(uint *param_1,int *param_2,undefined1 *param_3);
 void crt_unknown_c_FUN_0056a697(void);
 void crt_unknown_c_FUN_0056a6ad(void);
 void crt_unknown_c_FUN_0056a6c4(void);
-undefined2 crt_unknown_c_FUN_0056a6dc(void);
 void crt_unknown_c_FUN_0056a827(uint *param_1,char *param_2,uint param_3,uint param_4,char *param_5);
 void crt_unknown_c_FUN_0056aa38(int *param_1,undefined4 *param_2,uint param_3,int param_4,undefined4 *param_5);
 void crt_unknown_c_FUN_0056ad3f(void);

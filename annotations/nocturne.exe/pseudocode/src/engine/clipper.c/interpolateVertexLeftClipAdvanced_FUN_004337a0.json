@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -63,7 +63,7 @@
   "complexity": {
     "assembly_lines": 134,
     "complexity_score": 155,
-    "cross_reference_count": 4,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -77,21 +77,15 @@
   },
   "cross_references": [
     {
-      "addr": "00433cd7",
+      "addr": "00433c70",
       "from_addr": "00433d26",
-      "name": "engine_clipper.c_FUN_00433cd7",
+      "name": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00433d43",
-      "from_addr": "00433d79",
-      "name": "engine_clipper.c_FUN_00433d43",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0043474d",
+      "addr": "00434210",
       "from_addr": "0043472d",
-      "name": "engine_clipper.c_FUN_0043474d",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -119,6 +113,50 @@
     "call_site_count": 6,
     "call_sites": [
       {
+        "call_addr": "00433d26",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00433d79",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043472d",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00434783",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
         "call_addr": "00434ecf",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
@@ -133,50 +171,6 @@
         "call_addr": "00434f25",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00433d26",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00433cd7",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "0043472d",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_0043474d",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00433d79",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_00433d43",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00434783",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_0043474d",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

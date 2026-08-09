@@ -65,7 +65,7 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_00444440(int scanline_
           iVar5 = iVar4 + iVar11;
           do {
             iVar9 = iVar9 + 1;
-            *(byte *)(iVar5 + 0x12e1778) = uVar2;
+            *(byte *)((int)&g_VOID_PTR_012e1778 + iVar5) = uVar2;
             iVar5 = iVar5 + 0x12c00;
           } while (iVar9 < _DAT_0140d780);
         }

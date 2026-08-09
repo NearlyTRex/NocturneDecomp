@@ -58,7 +58,7 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_004f8a10(CPod *this_ptr,char *file
         }
       } while (iVar3 < this_ptr->pod_file_count);
     }
-    engine_texture_cpp_FUN_005459f0();
+    engine_texture_cpp_clearTextureCache_FUN_005459f0();
   }
   return;
 }

@@ -7,9 +7,9 @@
 // Address: 00414d20
 void __cdecl staticInit(void);
 
-// Original: core_battery.cpp_factoryFunc_FUN_00414d50
+// Original: core_battery.cpp_factoryFuncBattery_FUN_00414d50
 // Address: 00414d50
-CBattery * __cdecl factoryFunc(void);
+CBattery * __cdecl factoryFuncBattery(void);
 
 // Original: core_battery.cpp_CBattery_getActorType_FUN_00414d70
 // Address: 00414d70

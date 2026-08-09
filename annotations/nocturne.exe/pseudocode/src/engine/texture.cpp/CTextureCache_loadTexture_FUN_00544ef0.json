@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -62,12 +62,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 554,
+    "complexity_score": 559,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 224,
+    "pseudocode_lines": 229,
     "suspect_count": 30,
     "suspect_types": [
       "pointer_cast",
@@ -77,7 +77,7 @@
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 682
+    "total_lines": 687
   },
   "cross_references": [
     {
@@ -97,7 +97,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0",
-    "signature": "int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *cache,char *texture_name)"
+    "signature": "int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name)"
   },
   "function_calls": [
     {
@@ -360,7 +360,7 @@
       },
       {
         "is_param": true,
-        "name": "cache",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CTextureCache *"
@@ -469,7 +469,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(uchar **)((int)ppuVar12",
       "severity": "moderate",
       "text": "ppuVar12 = (uchar **)((int)ppuVar12 + (uint)bVar13 * -2 + 1);",
@@ -477,15 +477,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 115,
+      "line": 116,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "if (unaff_EBP != cache->texture_dimensions[iVar6]) {",
+      "text": "if (unaff_EBP != this_ptr->texture_dimensions[iVar6]) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 161,
+      "line": 164,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP * unaff_EBP);",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 161,
+      "line": 164,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP * unaff_EBP);",
@@ -501,55 +501,55 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 165,
+      "line": 169,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_data_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,",
+      "text": "unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 166,
+      "line": 169,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "unaff_EBP,p_Var3);",
+      "text": "unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 201,
+      "line": 206,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "if (unaff_EBP != cache->texture_dimensions[iVar6]) {",
+      "text": "if (unaff_EBP != this_ptr->texture_dimensions[iVar6]) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 208,
+      "line": 214,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_opacity_ptrs[*(int *)(cache[10].texture_names[0x1fe] + 8)],unaff_EBP,",
+      "text": "unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 209,
+      "line": 214,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "unaff_EBP,p_Var3);",
+      "text": "unaff_EBP,unaff_EBP,p_Var3);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 212,
+      "line": 217,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "cache->texture_dimensions[*(int *)(cache[10].texture_names[0x1fe] + 8)] = unaff_EBP;",
+      "text": "this_ptr->texture_dimensions[*(int *)(this_ptr[10].texture_names[0x1fe] + 8)] = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 220,
+      "line": 225,
       "match": "(char *)((int)(pacVar11 + 0x1fe) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar11 + 0x1fe) + 8) = '\\0';",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 221,
+      "line": 226,
       "match": "(char *)((int)(pacVar11 + 0x1fe) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar11 + 0x1fe) + 9) = '\\0';",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 222,
+      "line": 227,
       "match": "(char *)((int)(pacVar11 + 0x1fe) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar11 + 0x1fe) + 10) = '\\0';",
@@ -573,7 +573,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 223,
+      "line": 228,
       "match": "(char *)((int)(pacVar11 + 0x1fe) +",
       "severity": "moderate",
       "text": "*(char *)((int)(pacVar11 + 0x1fe) + 0xb) = '\\0';",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Pointer value `ppuVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
+      "line": 94,
       "match": "(int)ppuVar12",
       "severity": "moderate",
       "text": "ppuVar12 = (uchar **)((int)ppuVar12 + (uint)bVar13 * -2 + 1);",
@@ -597,7 +597,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -605,7 +605,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 135,
+      "line": 138,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 169,
+      "line": 172,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 86,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -629,7 +629,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -645,7 +645,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 146,
+      "line": 149,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 180,
+      "line": 183,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

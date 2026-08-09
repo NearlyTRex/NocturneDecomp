@@ -7,9 +7,9 @@
 // Address: 004dd8d0
 void __cdecl staticInit(void);
 
-// Original: core_moloch.cpp_factoryFunc_FUN_004dd900
+// Original: core_moloch.cpp_factoryFuncMoloch_FUN_004dd900
 // Address: 004dd900
-CMoloch * __cdecl factoryFunc(void);
+CMoloch * __cdecl factoryFuncMoloch(void);
 
 // Original: core_moloch.cpp_CMoloch_getActorType_FUN_004dd920
 // Address: 004dd920

@@ -7,9 +7,9 @@
 // Address: 00478360
 void __cdecl staticInit(void);
 
-// Original: core_emitter.cpp_factoryFunc_FUN_00478390
+// Original: core_emitter.cpp_factoryFuncEmitter_FUN_00478390
 // Address: 00478390
-CEmitter * __cdecl factoryFunc(void);
+CEmitter * __cdecl factoryFuncEmitter(void);
 
 // Original: core_emitter.cpp_CEmitter_getActorType_FUN_004783b0
 // Address: 004783b0

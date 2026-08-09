@@ -7,9 +7,9 @@
 // Address: 0054c250
 void __cdecl staticInit(void);
 
-// Original: core_vampboss.cpp_factoryFunc_FUN_0054c280
+// Original: core_vampboss.cpp_factoryFuncVampireBoss_FUN_0054c280
 // Address: 0054c280
-CVampireBoss * __cdecl factoryFunc(void);
+CVampireBoss * __cdecl factoryFuncVampireBoss(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_getActorType_FUN_0054c2a0
 // Address: 0054c2a0

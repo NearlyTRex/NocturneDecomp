@@ -16,7 +16,7 @@
 ;   crt_string.c__stricmp_FUN_00564520
 ;   engine_dosio.cpp_findFileNormally_FUN_00456800
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
-;   engine_texture.cpp_FUN_005459f0
+;   engine_texture.cpp_clearTextureCache_FUN_005459f0
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_004f8ac9
     JL 0x004f8a66                       ; 004f8acc
         ;   XREF to: 004f8a66 (CONDITIONAL_JUMP)  ; LAB_004f8a66
-    CALL engine_texture.cpp_FUN_005459f0 ; 004f8ace
-        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_FUN_005459f0()
+    CALL engine_texture.cpp_clearTextureCache_FUN_005459f0 ; 004f8ace
+        ;   XREF to: 005459f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005459f0()
         ;   Label: LAB_004f8ace
     POP EBX                             ; 004f8ad3
     ADD ESP,0x214                       ; 004f8ad4

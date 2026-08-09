@@ -7,7 +7,7 @@
 ; CStairs *        Stack[0x4]:4   param_1
 ;
 ; XREF[1]:
-;   core_stairs.cpp_factoryFunc_FUN_00534780 at 00534793
+;   core_stairs.cpp_factoryFuncStairs_FUN_00534780 at 00534793
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080

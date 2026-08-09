@@ -171,49 +171,49 @@ void __cdecl drawTextCenteredFormatted(int left_x,int right_x,int y,char *format
 // Address: 00402a60
 void __cdecl drawTextColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_00402ad0
+// Original: engine_2d.c_drawTextColorWrapper_FUN_00402ad0
 // Address: 00402ad0
-void FUN_00402ad0(int param_1,int param_2,char *param_3);
+void __cdecl drawTextColorWrapper(int x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402af0
+// Original: engine_2d.c_drawTextColorFormatted_FUN_00402af0
 // Address: 00402af0
-void FUN_00402af0(int param_1,int param_2,char *param_3);
+void __cdecl drawTextColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextRightAlignedColor_FUN_00402b60
 // Address: 00402b60
 void __cdecl drawTextRightAlignedColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_00402b90
+// Original: engine_2d.c_drawTextRightAlignedColorWrapper_FUN_00402b90
 // Address: 00402b90
-void FUN_00402b90(int param_1,int param_2,char *param_3);
+void __cdecl drawTextRightAlignedColorWrapper(int x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402bb0
+// Original: engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402bb0
 // Address: 00402bb0
-void FUN_00402bb0(int param_1,int param_2,char *param_3);
+void __cdecl drawTextRightAlignedColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCenteredAtColor_FUN_00402c20
 // Address: 00402c20
 void __cdecl drawTextCenteredAtColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_00402c60
+// Original: engine_2d.c_drawTextCenteredAtColorWrapper_FUN_00402c60
 // Address: 00402c60
-void FUN_00402c60(int param_1,int param_2,char *param_3);
+void __cdecl drawTextCenteredAtColorWrapper(int x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402c80
+// Original: engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402c80
 // Address: 00402c80
-void FUN_00402c80(int param_1,int param_2,char *param_3);
+void __cdecl drawTextCenteredAtColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCenteredColor_FUN_00402cf0
 // Address: 00402cf0
 void __cdecl drawTextCenteredColor(char *text,int left_x,int right_x,int y);
 
-// Original: engine_2d.c_FUN_00402d30
+// Original: engine_2d.c_drawTextCenteredXYColor_FUN_00402d30
 // Address: 00402d30
-void __cdecl FUN_00402d30(int left_x,int right_x,int y,char *text);
+void __cdecl drawTextCenteredXYColor(int left_x,int right_x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402d60
+// Original: engine_2d.c_drawTextCenteredColorFormatted_FUN_00402d60
 // Address: 00402d60
-void FUN_00402d60(int param_1,int param_2,int param_3,char *param_4);
+void __cdecl drawTextCenteredColorFormatted(int left_x,int right_x,int y,char *format_string,...) __attribute__((format(printf, 4, 5)));
 
 // Original: engine_2d.c_getTextWrapEnabled_FUN_00402e20
 // Address: 00402e20
@@ -235,29 +235,29 @@ int __cdecl getTextColor(void);
 // Address: 00402e70
 void __cdecl setTextColor(int color);
 
-// Original: engine_2d.c_FUN_00402e90
+// Original: engine_2d.c_buildFogTable_FUN_00402e90
 // Address: 00402e90
-void FUN_00402e90(int param_1);
+void __cdecl buildFogTable(int fog_color_index);
 
-// Original: engine_2d.c_FUN_00403070
+// Original: engine_2d.c_loadOrBuildFogTable_FUN_00403070
 // Address: 00403070
-void FUN_00403070(char *param_1,int param_2);
+void __cdecl loadOrBuildFogTable(char *filename,int fog_color_index);
 
-// Original: engine_2d.c_FUN_00403130
+// Original: engine_2d.c_saveFogTable_FUN_00403130
 // Address: 00403130
-void __cdecl FUN_00403130(char *filename);
+void __cdecl saveFogTable(char *filename);
 
-// Original: engine_2d.c_FUN_004031a0
+// Original: engine_2d.c_buildLightTable_FUN_004031a0
 // Address: 004031a0
-void FUN_004031a0(int param_1);
+void __cdecl buildLightTable(int base_color_index);
 
 // Original: engine_2d.c_loadLightTable_FUN_00403460
 // Address: 00403460
 void __cdecl loadLightTable(char *filename);
 
-// Original: engine_2d.c_FUN_00403500
+// Original: engine_2d.c_saveLightTable_FUN_00403500
 // Address: 00403500
-void __cdecl FUN_00403500(char *filename);
+void __cdecl saveLightTable(char *filename);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00403570
 // Address: 00403570

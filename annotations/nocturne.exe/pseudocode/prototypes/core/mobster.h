@@ -15,9 +15,9 @@ float * FUN_004da000(void);
 // Address: 004da070
 CVector3f * FUN_004da070(CVector3f *param_1,CDemonActor *param_2);
 
-// Original: core_mobster.cpp_factoryFunc_FUN_004da120
+// Original: core_mobster.cpp_factoryFuncMobster_FUN_004da120
 // Address: 004da120
-CMobster * __cdecl factoryFunc(void);
+CMobster * __cdecl factoryFuncMobster(void);
 
 // Original: core_mobster.cpp_CMobster_getActorType_FUN_004da140
 // Address: 004da140

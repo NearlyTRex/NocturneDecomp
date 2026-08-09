@@ -9,6 +9,7 @@ float g_PaletteLuminanceCache[256] = {};
 
 // int
 int g_RenderingMode = {};
+int g_FogColorIndex = {};
 
 // int[256]
 int g_FontCharWidths[256] = {};

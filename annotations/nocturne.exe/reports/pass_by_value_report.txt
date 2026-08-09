@@ -2,7 +2,7 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-6 functions with pass-by-value parameters (413 MOVSD.REP scanned, 31 are pass-by-value)
+6 functions with pass-by-value parameters (414 MOVSD.REP scanned, 31 are pass-by-value)
 
 ====================================================================================================
 
@@ -10,7 +10,7 @@ engine_3d.c_clipAndDrawLine2D_FUN_00409290
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (10):
     core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 @ 0x00519054   2x SRenderVertex
-    engine_3d.c_FUN_00409210                 @ 0x00409275   2x SRenderVertex
+    engine_3d.c_drawLine2DFromIndices_FUN_00409210 @ 0x00409275   2x SRenderVertex
     engine_3d.c_drawLineStrip2D_FUN_00405870 @ 0x004058f6   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 @ 0x00472e8e   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 @ 0x00472ed9   2x SRenderVertex
@@ -25,7 +25,7 @@ engine_3d.c_clipAndDrawLine2D_FUN_00409290
 engine_3d.c_clipAndDrawLine3D_FUN_00409590
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (2):
-    engine_3d.c_FUN_00409510                 @ 0x00409575   2x SRenderVertex
+    engine_3d.c_drawLine3DFromIndices_FUN_00409510 @ 0x00409575   2x SRenderVertex
     engine_3d.c_drawLineStrip3D_FUN_00405900 @ 0x00405986   2x SRenderVertex
 
 --------------------------------------------------------------------------------
@@ -70,8 +70,8 @@ the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 current: 0x3c  required: 0x9c  (+0x60 for by-value args)
-  engine_3d.c_FUN_00409210                           current: 0x60  required: 0xc0  (+0x60 for by-value args)
-  engine_3d.c_FUN_00409510                           current: 0x60  required: 0xc0  (+0x60 for by-value args)
+  engine_3d.c_drawLine2DFromIndices_FUN_00409210     current: 0x60  required: 0xc0  (+0x60 for by-value args)
+  engine_3d.c_drawLine3DFromIndices_FUN_00409510     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLineStrip2D_FUN_00405870           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLineStrip3D_FUN_00405900           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0 current: 0x24  required: 0x84  (+0x60 for by-value args)

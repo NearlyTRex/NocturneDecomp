@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -62,33 +62,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 11,
+    "complexity_score": 9,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 9,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 56
+    "total_lines": 54
   },
   "cross_references": [
     {
       "addr": "0045d760",
       "from_addr": "0045d979",
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402ad0",
-      "from_addr": "00402ae0",
-      "name": "engine_2d.c_FUN_00402ad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402af0",
-      "from_addr": "00402b41",
-      "name": "engine_2d.c_FUN_00402af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,6 +89,18 @@
       "addr": "00402cf0",
       "from_addr": "00402d1f",
       "name": "engine_2d.c_drawTextCenteredColor_FUN_00402cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402af0",
+      "from_addr": "00402b41",
+      "name": "engine_2d.c_drawTextColorFormatted_FUN_00402af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402ad0",
+      "from_addr": "00402ae0",
+      "name": "engine_2d.c_drawTextColorWrapper_FUN_00402ad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -137,15 +137,15 @@
   "globals": [
     {
       "addr": "005acaa4",
-      "name": "g_ResolutionTable[7].width",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005acaa4",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005acaa8",
-      "name": "g_ResolutionTable[7].height",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005acaa8",
+      "type": "int",
+      "value": "0xf8"
     },
     {
       "addr": "01c00c60",
@@ -210,7 +210,7 @@
       {
         "call_addr": "00402ae0",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402ad0",
+        "caller": "engine_2d.c_drawTextColorWrapper_FUN_00402ad0",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -221,7 +221,7 @@
       {
         "call_addr": "00402b41",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402af0",
+        "caller": "engine_2d.c_drawTextColorFormatted_FUN_00402af0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -7,9 +7,9 @@
 // Address: 004f5d30
 void __cdecl staticInit(void);
 
-// Original: core_platfrm.cpp_factoryFunc_FUN_004f5d60
+// Original: core_platfrm.cpp_factoryFuncPlatform_FUN_004f5d60
 // Address: 004f5d60
-CPlatform * __cdecl factoryFunc(void);
+CPlatform * __cdecl factoryFuncPlatform(void);
 
 // Original: core_platfrm.cpp_CPlatform_getActorType_FUN_004f5d80
 // Address: 004f5d80

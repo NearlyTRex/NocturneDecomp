@@ -4,29 +4,33 @@ FUNCTION COMPILATION SUMMARY
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 4942
+Total functions compiled: 4921
 Successful: 0 (0.0%)
-Failed: 4942
+Failed: 4921
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44703
-  undeclared_identifier           6019
-  incompatible_types               437
-  type_error                       374
+  other                          44494
+  undeclared_identifier           6016
+  incompatible_types               430
+  type_error                       370
   format_error                     229
-  cast_error                       219
+  cast_error                       214
   syntax_error                     111
   pointer_type                      54
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44703 errors)
+CATEGORY: other (44494 errors)
 ====================================================================================================
 
-  cockpit_ckptutil.c_FUN_0042d130
+  FUN_00477680
     Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_0042d170
+  FUN_0048c940
+    Line 25: unknown type name '_EXCEPTION_RECORD'...
+  FUN_004f9430
+    Line 25: unknown type name '_EXCEPTION_RECORD'...
+  cockpit_ckptutil.c_FUN_0042d130
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_FUN_0042d180
     Line 25: unknown type name '_EXCEPTION_RECORD'...
@@ -39,10 +43,6 @@ CATEGORY: other (44703 errors)
   cockpit_ckptutil.c_FUN_0042f8c0
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_FUN_0042fd60
-    Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_004301d0
-    Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_004301f0
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_FUN_00430210
     Line 25: unknown type name '_EXCEPTION_RECORD'...
@@ -85,10 +85,10 @@ CATEGORY: other (44703 errors)
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_0042d5c0
     Line 25: unknown type name '_EXCEPTION_RECORD'...
 
-  ... and 4912 more errors
+  ... and 4891 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (6019 errors)
+CATEGORY: undeclared_identifier (6016 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -110,9 +110,9 @@ CATEGORY: undeclared_identifier (6019 errors)
   engine_winfont.cpp_CWinFont_dtor_FUN_00558000
     Line 16: use of undeclared identifier 'DAT_005a44a0'; did you mean 'DAT_005a47a0'?...
   engine_3d.c_lookupLitColor_FUN_00404680
-    Line 16: use of undeclared identifier 'DAT_005acbc4'; did you mean 'DAT_005acab4'?...
+    Line 16: use of undeclared identifier 'DAT_005acbc4'...
   engine_3d.c_setActiveRenderColor_FUN_00405840
-    Line 13: use of undeclared identifier 'DAT_005acbc4'; did you mean 'DAT_005acab4'?...
+    Line 13: use of undeclared identifier 'DAT_005acbc4'...
   core_charactr.cpp_CCharacter_FUN_0042af70
     Line 71: use of undeclared identifier 'DAT_005ad1d0'...
   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80
@@ -152,10 +152,10 @@ CATEGORY: undeclared_identifier (6019 errors)
   core_gore.cpp_CBloodPool_render_FUN_004af340
     Line 38: use of undeclared identifier 'DAT_005b9d4c'...
 
-  ... and 1492 more errors
+  ... and 1490 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (437 errors)
+CATEGORY: incompatible_types (430 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -219,10 +219,10 @@ CATEGORY: incompatible_types (437 errors)
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
     Line 39: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
 
-  ... and 216 more errors
+  ... and 212 more errors
 
 ====================================================================================================
-CATEGORY: type_error (374 errors)
+CATEGORY: type_error (370 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -286,7 +286,7 @@ CATEGORY: type_error (374 errors)
   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
     Line 36: invalid suffix '._0_4_' on floating constant...
 
-  ... and 80 more errors
+  ... and 79 more errors
 
 ====================================================================================================
 CATEGORY: format_error (229 errors)
@@ -356,7 +356,7 @@ CATEGORY: format_error (229 errors)
   ... and 38 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (219 errors)
+CATEGORY: cast_error (214 errors)
 ====================================================================================================
 
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
@@ -420,7 +420,7 @@ CATEGORY: cast_error (219 errors)
   engine_special.cpp_loadExternalRenderer_FUN_00531780
     Line 35: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
 
-  ... and 70 more errors
+  ... and 67 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (111 errors)
@@ -521,22 +521,22 @@ CATEGORY: pointer_type (54 errors)
     Line 47: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340
     Line 34: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00433c70
-    Line 39: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00433db0
-    Line 39: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00433ef0
+  engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00433ef0
     Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00434030
-    Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00434160
-    Line 18: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
-  engine_clipper.c_FUN_00434210
-    Line 101: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00433c70
+    Line 39: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00433db0
+    Line 39: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210
+    Line 100: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
     Line 172: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030
+    Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_clipper.c_normalizeClippedVertices_FUN_00432150
     Line 20: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
+  engine_clipper.c_perspectiveDivideVertices_FUN_00434160
+    Line 18: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00456d40
     Line 16: cannot initialize a parameter of type 'long' with an lvalue of type 'HANDLE' (ak...
   core_crossbow.cpp_CCrossbow_fire_FUN_0043d1c0
@@ -565,7 +565,7 @@ CATEGORY: argument_error (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 4.92
+Average suspects in failed compilations: 4.43
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

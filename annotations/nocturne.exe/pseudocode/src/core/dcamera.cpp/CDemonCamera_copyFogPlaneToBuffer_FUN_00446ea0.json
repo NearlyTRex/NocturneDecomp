@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -57,19 +57,19 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 60,
         "line": 26,
         "message": "use of undeclared identifier 'DAT_012ceb79'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
+        "column": 56,
         "line": 35,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
+        "column": 58,
         "line": 45,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
@@ -86,14 +86,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 88,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "suspect_count": 10,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data"
     ],
     "total_lines": 144
@@ -244,7 +246,7 @@
       "line": 19,
       "match": "DAT_012ceb79",
       "severity": "mild",
-      "text": "*(byte *)(iVar1 + 0x12e1779) = (&DAT_012ceb79)[iVar2];",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar1 + 1) = (&DAT_012ceb79)[iVar2];",
       "type": "undefined_data"
     },
     {
@@ -252,7 +254,7 @@
       "line": 28,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "*(byte *)(iVar5 + 0x12e1778) = (&DAT_012ceb78)[iVar4 * 0x140];",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar5) = (&DAT_012ceb78)[iVar4 * 0x140];",
       "type": "undefined_data"
     },
     {
@@ -260,7 +262,7 @@
       "line": 38,
       "match": "DAT_012ceb78",
       "severity": "mild",
-      "text": "*(byte *)(iVar4 + 0x12e1779) = (&DAT_012ceb78)[iVar5];",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar4 + 1) = (&DAT_012ceb78)[iVar5];",
       "type": "undefined_data"
     },
     {
@@ -270,6 +272,54 @@
       "severity": "mild",
       "text": "*(byte *)(iVar2 + plane_index * 0x12c00 + 0x12e1777 + iVar5) = (&DAT_012ceb78)[iVar1];",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar1 + 1) = (&DAT_012ceb79)[iVar2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar5) = (&DAT_012ceb78)[iVar4 * 0x140];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar4 + 1) = (&DAT_012ceb78)[iVar5];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar1 + 1) = (&DAT_012ceb79)[iVar2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar5) = (&DAT_012ceb78)[iVar4 * 0x140];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 38,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar4 + 1) = (&DAT_012ceb78)[iVar5];",
+      "type": "pointer_cast"
     }
   ]
 }

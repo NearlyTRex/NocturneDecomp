@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -77,21 +77,21 @@
   },
   "cross_references": [
     {
+      "addr": "00403570",
+      "from_addr": "004035f2",
+      "name": "engine_2d.c_buildColorLookupTable_FUN_00403570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00402e90",
       "from_addr": "00402ff2",
-      "name": "engine_2d.c_FUN_00402e90",
+      "name": "engine_2d.c_buildFogTable_FUN_00402e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004031a0",
       "from_addr": "0040330a",
-      "name": "engine_2d.c_FUN_004031a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00403570",
-      "from_addr": "004035f2",
-      "name": "engine_2d.c_buildColorLookupTable_FUN_00403570",
+      "name": "engine_2d.c_buildLightTable_FUN_004031a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,7 +152,7 @@
       {
         "call_addr": "0040330a",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004031a0",
+        "caller": "engine_2d.c_buildLightTable_FUN_004031a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -163,7 +163,7 @@
       {
         "call_addr": "00403413",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004031a0",
+        "caller": "engine_2d.c_buildLightTable_FUN_004031a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +185,7 @@
       {
         "call_addr": "00402ff2",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402e90",
+        "caller": "engine_2d.c_buildFogTable_FUN_00402e90",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

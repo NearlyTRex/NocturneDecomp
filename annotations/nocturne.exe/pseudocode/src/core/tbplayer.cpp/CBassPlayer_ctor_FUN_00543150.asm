@@ -7,7 +7,7 @@
 ; CBassPlayer *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tbplayer.cpp_factoryFunc_FUN_00543120 at 00543133
+;   core_tbplayer.cpp_factoryFuncBassPlayer_FUN_00543120 at 00543133
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bassplayer_dfm_00596491

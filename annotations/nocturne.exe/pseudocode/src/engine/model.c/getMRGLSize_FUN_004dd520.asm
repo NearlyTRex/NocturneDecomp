@@ -9,8 +9,8 @@
 ; undefined        Stack[-0x100]:1  local_100
 ;
 ; XREF[7]:
-;   engine_3d.c_FUN_00405b40 at 00405b6e
-;   engine_3d.c_FUN_00408fc0 at 00409010
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 00409010
+;   engine_3d.c_renderSortedPolygonList_FUN_00405b40 at 00405b6e
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c3ff4
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3abd
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080 at 004c40ea

@@ -7,7 +7,7 @@
 ; CFilmReel *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_factoryFunc_FUN_00481c00 at 00481c13
+;   core_filmreel.cpp_factoryFuncFilmReel_FUN_00481c00 at 00481c13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_filmreel_kfm_00580f8c

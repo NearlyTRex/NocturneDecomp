@@ -7,9 +7,9 @@
 // Address: 0048ee90
 void __cdecl staticInit(void);
 
-// Original: core_flies.cpp_factoryFunc_FUN_0048eec0
+// Original: core_flies.cpp_factoryFuncFlies_FUN_0048eec0
 // Address: 0048eec0
-CFlies * __cdecl factoryFunc(void);
+CFlies * __cdecl factoryFuncFlies(void);
 
 // Original: core_flies.cpp_CFlies_getActorType_FUN_0048eee0
 // Address: 0048eee0

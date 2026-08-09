@@ -14,9 +14,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   cockpit_drawsurf.cpp_FUN_0045cce0 at 0045ccf2
-;   cockpit_drawsurf.cpp_FUN_0045cd00 at 0045cd60
-;   cockpit_drawsurf.cpp_FUN_0045cd80 at 0045cdcc
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_0045cd00 at 0045cd60
+;   cockpit_drawsurf.cpp_CDrawSurface_drawFullSurface_FUN_0045cce0 at 0045ccf2
+;   cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_0045cd80 at 0045cdcc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae6f4

@@ -7,9 +7,9 @@
 // Address: 005437c0
 void __cdecl staticInit(void);
 
-// Original: core_teleport.cpp_factoryFunc_FUN_00543810
+// Original: core_teleport.cpp_factoryFuncTeleportDest_FUN_00543810
 // Address: 00543810
-CTeleportDest * __cdecl factoryFunc(void);
+CTeleportDest * __cdecl factoryFuncTeleportDest(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00543830
 // Address: 00543830

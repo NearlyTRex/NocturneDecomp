@@ -27,7 +27,7 @@ void __cdecl engine_2d_c_drawAntialiasedCharShadow_FUN_004012d0(int char_code,in
     do {
       puVar4 = (byte *)(*(int *)((int)g_ScreenBufferArray + iStack_14) + x_pos + -1);
       puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iStack_14 + 4) + x_pos + -1);
-      puVar5 = (byte *)(*(int *)(iStack_14 + 0x1bd2f9c) + x_pos + -1);
+      puVar5 = (byte *)(*(int *)(g_FogTable[0x11] + iStack_14 + 0xfc) + x_pos + -1);
       iVar6 = 0;
       if (0 < iVar1) {
         do {

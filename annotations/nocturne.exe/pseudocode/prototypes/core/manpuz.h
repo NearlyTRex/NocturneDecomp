@@ -7,9 +7,9 @@
 // Address: 004c93b0
 void __cdecl staticInit(void);
 
-// Original: core_manpuz.cpp_factoryFunc_FUN_004c9400
+// Original: core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_004c9400
 // Address: 004c9400
-CMansionPuzzleCircle * __cdecl factoryFunc(void);
+CMansionPuzzleCircle * __cdecl factoryFuncMansionPuzzleCircle(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_004c9420
 // Address: 004c9420

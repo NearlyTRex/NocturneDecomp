@@ -15,8 +15,8 @@
 ; int              Stack[0x24]:4   clip_bottom
 ;
 ; XREF[2]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_0045c050 at 0045c0b1
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0 at 0045c011
-;   cockpit_drawsurf.cpp_FUN_0045c050 at 0045c0b1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_0057d97e

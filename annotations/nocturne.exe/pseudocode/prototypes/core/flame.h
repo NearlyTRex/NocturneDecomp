@@ -7,9 +7,9 @@
 // Address: 0048cf00
 void __cdecl staticInit(void);
 
-// Original: core_flame.cpp_factoryFunc_FUN_0048cf30
+// Original: core_flame.cpp_factoryFuncFlame_FUN_0048cf30
 // Address: 0048cf30
-CFlame * __cdecl factoryFunc(void);
+CFlame * __cdecl factoryFuncFlame(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_0048cf50
 // Address: 0048cf50

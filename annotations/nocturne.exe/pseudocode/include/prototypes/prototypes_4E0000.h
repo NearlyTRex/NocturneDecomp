@@ -243,7 +243,7 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_004ee740(CMouse *this_ptr);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8b0(CAlphaBitmap *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
-CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_004ee920(void);
+CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_004ee920(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_004ee940(CNPC *this_ptr);
 CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_004ee950(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_setup_FUN_004ee9e0(CNPC *this_ptr);
@@ -265,7 +265,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_004ef120(CParticle *this_pt
 void __cdecl core_particle_cpp_CParticle_render_FUN_004ef440(CParticle *this_ptr);
 int __cdecl core_particle_cpp_CParticle_onCollision_FUN_004ef470(CParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_passngr_cpp_staticInit_FUN_004ef480(void);
-CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_004ef4b0(void);
+CPassenger * __cdecl core_passngr_cpp_factoryFuncPassenger_FUN_004ef4b0(void);
 CDemonActorType * __cdecl core_passngr_cpp_CPassenger_getActorType_FUN_004ef4d0(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_004ef5c0(CPassenger *this_ptr,uint flags);

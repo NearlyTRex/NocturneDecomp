@@ -19,15 +19,15 @@ Consecutive MOVSD groups:  412
   Unfixable:              96
   Est. cave space:        ~10353 bytes
 
-REP MOVSD sites:           413
+REP MOVSD sites:           414
   Fixable (struct copy):  208
   No artifacts (OK):      11
-  Too large (buffer):     71
-  Dynamic count:          91
+  Too large (buffer):     87
+  Dynamic count:          76
   Pass-by-value:          32
 
   REP MOVSD by copy size:
-    unknown count:        91 sites
+    unknown count:        76 sites
       4 dwords (  16 bytes): 2 sites
       6 dwords (  24 bytes): 2 sites
       7 dwords (  28 bytes): 3 sites
@@ -40,7 +40,7 @@ REP MOVSD sites:           413
      27 dwords ( 108 bytes): 4 sites
      30 dwords ( 120 bytes): 4 sites
      44 dwords ( 176 bytes): 1 sites
-     48 dwords ( 192 bytes): 12 sites
+     48 dwords ( 192 bytes): 28 sites
      49 dwords ( 196 bytes): 4 sites
      50 dwords ( 200 bytes): 3 sites
      64 dwords ( 256 bytes): 4 sites
@@ -59,7 +59,7 @@ REP MOVSD sites:           413
     3200 dwords (12800 bytes): 1 sites
     12288 dwords (49152 bytes): 2 sites
 
-Total MOVSD sites:         825
+Total MOVSD sites:         826
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 5x MOVSD SITES (20 bytes copy, 5 sites)
@@ -441,9 +441,9 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 104 sites)
     0x0051ded3  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CDeformableModel_dismember_FUN_00519ec0                                  1 sites  ~33 bytes
     0x0051a17f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  FUN_00406a00                                                             1 sites  ~33 bytes
+  renderPolygonTexturedNormalizedUVLit2_FUN_00406a00                       1 sites  ~33 bytes
     0x00406a36  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  FUN_00406b80                                                             1 sites  ~33 bytes
+  renderPolygonTexturedNormalizedUVLit_FUN_00406b80                        1 sites  ~33 bytes
     0x00406bb6  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   renderPolygonTexturedUVLit_FUN_00406920                                  1 sites  ~33 bytes
     0x00406956  3x MOVSD (12 bytes copy, 6 bytes borrowable)
@@ -619,7 +619,7 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x004336da  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x004336f6  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x004336fc  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_00432210                                                             9 sites
+  clipPolygonToViewFrustum_FUN_00432210                                   15 sites
     0x004323bb  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x004323d7  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x004323dd  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
@@ -629,6 +629,29 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x00432ab1  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00432acd  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00432ad3  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x00432b5e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432b7a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432b80  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x00432bee  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432c0a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432c10  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+  clipPolygonNearPlane_FUN_00431f50                                        9 sites
+    0x00431fc8  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00431fe4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00431fea  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x0043206c  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432088  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0043208e  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x004320f2  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0043210e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x00432114  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+  FUN_0055de20                                                             6 sites
+    0x0055dea4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055dec0  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055dec6  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x0055df2f  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055df4b  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055df51  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
   clipPolygonStage1_FUN_0055d9c0                                           6 sites
     0x0055da3d  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055da59  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
@@ -650,34 +673,6 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x0055ddb9  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055ddd5  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055dddb  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_0055de8e                                                             3 sites
-    0x0055dea4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055dec0  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055dec6  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_0055df19                                                             3 sites
-    0x0055df2f  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055df4b  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055df51  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_00431f50                                                             3 sites
-    0x00431fc8  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00431fe4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00431fea  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_00432057                                                             3 sites
-    0x0043206c  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432088  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0043208e  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_004320dc                                                             3 sites
-    0x004320f2  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0043210e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432114  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_00432b48                                                             3 sites
-    0x00432b5e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432b7a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432b80  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_00432bd8                                                             3 sites
-    0x00432bee  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432c0a  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x00432c10  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE REP MOVSD STRUCT COPIES (208 sites)
@@ -999,14 +994,25 @@ REP MOVSD — NO ARTIFACTS (decompiler handles OK) (11 sites)
     0x0055ca85  REP MOVSD 12 dwords (48 bytes)
   buildZFlipMatrix_FUN_0055ca90                                            1 sites
     0x0055cae4  REP MOVSD 12 dwords (48 bytes)
-  FUN_00409210                                                             1 sites
+  drawLine2DFromIndices_FUN_00409210                                       1 sites
     0x00409253  REP MOVSD 12 dwords (48 bytes)
-  FUN_00409510                                                             1 sites
+  drawLine3DFromIndices_FUN_00409510                                       1 sites
     0x00409553  REP MOVSD 12 dwords (48 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (71 sites)
+REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (87 sites)
 ----------------------------------------------------------------------------------------------------
+  clipPolygonToViewFrustumAdvanced_FUN_00434210                           10 sites
+    0x0043438c  REP MOVSD 48 dwords (192 bytes)
+    0x00434407  REP MOVSD 48 dwords (192 bytes)
+    0x004344a6  REP MOVSD 48 dwords (192 bytes)
+    0x00434555  REP MOVSD 48 dwords (192 bytes)
+    0x004345ff  REP MOVSD 48 dwords (192 bytes)
+    0x004346af  REP MOVSD 48 dwords (192 bytes)
+    0x00434761  REP MOVSD 48 dwords (192 bytes)
+    0x004347e0  REP MOVSD 48 dwords (192 bytes)
+    0x0043485f  REP MOVSD 48 dwords (192 bytes)
+    0x004348de  REP MOVSD 48 dwords (192 bytes)
   clipPolygonToViewport_FUN_004349a0                                      10 sites
     0x00434b1d  REP MOVSD 48 dwords (192 bytes)
     0x00434bb0  REP MOVSD 48 dwords (192 bytes)
@@ -1053,9 +1059,18 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (71 sites)
   FUN_00511d80                                                             2 sites
     0x005122f0  REP MOVSD 256 dwords (1024 bytes)
     0x005123ed  REP MOVSD 12288 dwords (49152 bytes)
-  FUN_00434210                                                             2 sites
-    0x0043438c  REP MOVSD 48 dwords (192 bytes)
-    0x00434407  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonHorizontalPlanes_FUN_00433ef0                                 2 sites
+    0x00433f6c  REP MOVSD 48 dwords (192 bytes)
+    0x00433fdc  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonLeftPlaneGlobal_FUN_00433c70                                  2 sites
+    0x00433ceb  REP MOVSD 48 dwords (192 bytes)
+    0x00433d57  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonRightPlaneGlobal_FUN_00433db0                                 2 sites
+    0x00433e31  REP MOVSD 48 dwords (192 bytes)
+    0x00433ea1  REP MOVSD 48 dwords (192 bytes)
+  clipPolygonVerticalPlanes_FUN_00434030                                   2 sites
+    0x004340b2  REP MOVSD 48 dwords (192 bytes)
+    0x00434122  REP MOVSD 48 dwords (192 bytes)
   startSfx_FUN_005265a0                                                    2 sites
     0x0052662f  REP MOVSD 27 dwords (108 bytes)
     0x005266c7  REP MOVSD 27 dwords (108 bytes)
@@ -1125,7 +1140,7 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (71 sites)
     0x00528ca8  REP MOVSD 64 dwords (256 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — DYNAMIC COUNT (ECX not immediate) (91 sites)
+REP MOVSD — DYNAMIC COUNT (ECX not immediate) (76 sites)
 ----------------------------------------------------------------------------------------------------
   FUN_0056a827                                                             4 sites
     0x0056a8f2  REP MOVSD (dynamic count)
@@ -1249,36 +1264,6 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (91 sites)
     0x0040244b  REP MOVSD (dynamic count)
   FUN_0040eadd                                                             1 sites
     0x0040eaf8  REP MOVSD (dynamic count)
-  FUN_00433cd7                                                             1 sites
-    0x00433ceb  REP MOVSD (dynamic count)
-  FUN_00433d43                                                             1 sites
-    0x00433d57  REP MOVSD (dynamic count)
-  FUN_00433e1d                                                             1 sites
-    0x00433e31  REP MOVSD (dynamic count)
-  FUN_00433e8d                                                             1 sites
-    0x00433ea1  REP MOVSD (dynamic count)
-  FUN_00433f58                                                             1 sites
-    0x00433f6c  REP MOVSD (dynamic count)
-  FUN_00433fc8                                                             1 sites
-    0x00433fdc  REP MOVSD (dynamic count)
-  FUN_0043409e                                                             1 sites
-    0x004340b2  REP MOVSD (dynamic count)
-  FUN_0043410e                                                             1 sites
-    0x00434122  REP MOVSD (dynamic count)
-  FUN_00434492                                                             1 sites
-    0x004344a6  REP MOVSD (dynamic count)
-  FUN_00434541                                                             1 sites
-    0x00434555  REP MOVSD (dynamic count)
-  FUN_0043469b                                                             1 sites
-    0x004346af  REP MOVSD (dynamic count)
-  FUN_0043474d                                                             1 sites
-    0x00434761  REP MOVSD (dynamic count)
-  FUN_004347cc                                                             1 sites
-    0x004347e0  REP MOVSD (dynamic count)
-  FUN_0043484b                                                             1 sites
-    0x0043485f  REP MOVSD (dynamic count)
-  FUN_004348ca                                                             1 sites
-    0x004348de  REP MOVSD (dynamic count)
   copyMemory_FUN_00433770                                                  1 sites
     0x00433784  REP MOVSD (dynamic count)
   CConsole_scrollUp_FUN_0043ae40                                           1 sites
@@ -1313,11 +1298,11 @@ REP MOVSD — PASS-BY-VALUE (32 sites)
     0x004734be  REP MOVSD 12 dwords (48 bytes)
     0x004735e4  REP MOVSD 12 dwords (48 bytes)
     0x004735f5  REP MOVSD 12 dwords (48 bytes)
-  FUN_00409210                                                             3 sites
+  drawLine2DFromIndices_FUN_00409210                                       3 sites
     0x00409232  REP MOVSD 12 dwords (48 bytes)
     0x00409263  REP MOVSD 12 dwords (48 bytes)
     0x00409273  REP MOVSD 12 dwords (48 bytes)
-  FUN_00409510                                                             3 sites
+  drawLine3DFromIndices_FUN_00409510                                       3 sites
     0x00409532  REP MOVSD 12 dwords (48 bytes)
     0x00409563  REP MOVSD 12 dwords (48 bytes)
     0x00409573  REP MOVSD 12 dwords (48 bytes)

@@ -173,6 +173,6 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
               ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
               (uVar20 & 0xfffffffc));
   } while ((texture->base).base.type != 0);
-  engine_3d_c_FUN_00408e80(keyframe_model->base_keyframes);
+  engine_3d_c_dispatchMRGLBlockChain_FUN_00408e80(&keyframe_model->base_keyframes->header);
   return &keyframe_model[1].header;
 }

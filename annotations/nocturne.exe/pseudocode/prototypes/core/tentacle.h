@@ -7,9 +7,9 @@
 // Address: 00543b00
 void __cdecl staticInit(void);
 
-// Original: core_tentacle.cpp_factoryFunc_FUN_00543b30
+// Original: core_tentacle.cpp_factoryFuncTentacle_FUN_00543b30
 // Address: 00543b30
-CTentacle * __cdecl factoryFunc(void);
+CTentacle * __cdecl factoryFuncTentacle(void);
 
 // Original: core_tentacle.cpp_CTentacle_getActorType_FUN_00543b50
 // Address: 00543b50

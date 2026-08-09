@@ -7,7 +7,7 @@
 ; CDrone *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_drone.cpp_factoryFunc_FUN_00462910 at 00462923
+;   core_drone.cpp_factoryFuncDrone_FUN_00462910 at 00462923
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drone_dfm_0057de8b

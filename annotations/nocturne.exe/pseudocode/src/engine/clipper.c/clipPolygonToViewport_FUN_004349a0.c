@@ -278,7 +278,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
                 }
                 bVar1 = (pSVar8->projected_vertex).transformed_z <=
                         (pSVar8->projected_vertex).transformed_y;
-                if ((int)(&DAT_00768754)[uVar6 * 0xc] <= (int)(&DAT_00768750)[uVar6 * 0xc]) {
+                if ((int)(&DAT_00768754)[uVar6 * 0xc] <= *(int *)(&DAT_00768750 + uVar6 * 0x30)) {
                   bVar1 = bVar1 | 2;
                 }
                 switch(bVar1) {
@@ -337,7 +337,8 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
                   }
                   bVar1 = (pSVar8->projected_vertex).transformed_y <=
                           -(pSVar8->projected_vertex).transformed_z;
-                  if ((int)(&DAT_00768d50)[uVar6 * 0xc] <= (int)-(&DAT_00768d54)[uVar6 * 0xc]) {
+                  if (*(int *)(&DAT_00768d50 + uVar6 * 0x30) <= (int)-(&DAT_00768d54)[uVar6 * 0xc])
+                  {
                     bVar1 = bVar1 | 2;
                   }
                   switch(bVar1) {

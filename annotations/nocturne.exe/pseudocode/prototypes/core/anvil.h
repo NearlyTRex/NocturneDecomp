@@ -7,9 +7,9 @@
 // Address: 0040f500
 void __cdecl staticInit(void);
 
-// Original: core_anvil.cpp_factoryFunc_FUN_0040f530
+// Original: core_anvil.cpp_factoryFuncAnvil_FUN_0040f530
 // Address: 0040f530
-CAnvil * __cdecl factoryFunc(void);
+CAnvil * __cdecl factoryFuncAnvil(void);
 
 // Original: core_anvil.cpp_CAnvil_getActorType_FUN_0040f550
 // Address: 0040f550

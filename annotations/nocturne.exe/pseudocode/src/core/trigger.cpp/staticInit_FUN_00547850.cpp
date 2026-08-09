@@ -11,7 +11,7 @@ void __cdecl core_trigger_cpp_staticInit_FUN_00547850(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CTriggerActorType_02dd1084,"CTrigger",
-             core_trigger_cpp_factoryFunc_FUN_00547880,&INT_005c1130,0xb,
+             core_trigger_cpp_factoryFuncTrigger_FUN_00547880,&INT_005c1130,0xb,
              &g_CDemonActorActorType_00763e48);
   return;
 }

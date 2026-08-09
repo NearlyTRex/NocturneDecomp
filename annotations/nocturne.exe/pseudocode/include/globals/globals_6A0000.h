@@ -12,6 +12,7 @@ extern float g_PaletteLuminanceCache[256];
 
 // int
 extern int g_RenderingMode;
+extern int g_FogColorIndex;
 
 // int[256]
 extern int g_FontCharWidths[256];

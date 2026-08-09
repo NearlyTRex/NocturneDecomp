@@ -7,7 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_factoryFunc_FUN_004c9400 at 004c9413
+;   core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_004c9400 at 004c9413
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_doorpuzz_kfm_00587ef3

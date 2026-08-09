@@ -11,7 +11,7 @@ void __cdecl core_boxactor_cpp_staticInit_FUN_0041e260(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CBoxActorActorType_00764800,"CBoxActor",
-             core_boxactor_cpp_factoryFunc_FUN_0041e2d0,&g_INT_005ad09c,0xf,
+             core_boxactor_cpp_factoryFuncBoxActor_FUN_0041e2d0,&g_INT_005ad09c,0xf,
              &g_CDemonActorActorType_00763e48);
   __arrinit
             (g_CDemonFilter_ARRAY_0076483c,8,&g_CDemonFilterTypeInfo_0059ac90);

@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(CStrList *this_ptr,in
     }
     _qsort
               (this_ptr->data_array + sort_type,(sort_order - sort_type) + 1,4,
-               shape_edittool_cpp_FUN_00473ff0);
+               shape_edittool_cpp_qsortByString_FUN_00473ff0);
   }
   return;
 }

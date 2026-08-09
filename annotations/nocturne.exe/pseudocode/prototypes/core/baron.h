@@ -7,9 +7,9 @@
 // Address: 00410140
 void __cdecl staticInit(void);
 
-// Original: core_baron.cpp_factoryFunc_FUN_004101a0
+// Original: core_baron.cpp_factoryFuncBaron_FUN_004101a0
 // Address: 004101a0
-CBaron * __cdecl factoryFunc(void);
+CBaron * __cdecl factoryFuncBaron(void);
 
 // Original: core_baron.cpp_CBaron_getActorType_FUN_004101c0
 // Address: 004101c0

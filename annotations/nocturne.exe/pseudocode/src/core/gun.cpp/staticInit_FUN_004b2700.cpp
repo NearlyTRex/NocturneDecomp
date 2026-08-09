@@ -10,7 +10,7 @@ void __cdecl core_gun_cpp_staticInit_FUN_004b2700(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&g_CGunActorType_01cadfdc,"CGun",core_gun_cpp_factoryFunc_FUN_004b2730,
+            (&g_CGunActorType_01cadfdc,"CGun",core_gun_cpp_factoryFuncGun_FUN_004b2730,
              &INT_005ba900,1,&g_CWeaponActorType_02ddf970);
   return;
 }

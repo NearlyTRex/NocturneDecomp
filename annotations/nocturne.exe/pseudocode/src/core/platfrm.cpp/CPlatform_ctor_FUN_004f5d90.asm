@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 at 0043b057
 ;   core_minecar.cpp_CMineCar_ctor_FUN_004d60b0 at 004d60b5
-;   core_minecar.cpp_factoryFunc_FUN_004d5fe0 at 004d5ff3
-;   core_platfrm.cpp_factoryFunc_FUN_004f5d60 at 004f5d73
+;   core_minecar.cpp_factoryFuncMineCar_FUN_004d5fe0 at 004d5ff3
+;   core_platfrm.cpp_factoryFuncPlatform_FUN_004f5d60 at 004f5d73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_slider1_kfm_0058d75f

@@ -17,6 +17,7 @@ void __cdecl core_stranger_cpp_staticInit_FUN_00534e30(void)
   CVector3f_02dc9f40.z = 0.126;
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CStrangerActorType_02dc9fac,"CStranger",
-             core_stranger_cpp_factoryFunc_FUN_00535090,&INT_005c0ff0,9,&g_CHeroActorType_01cae0ec);
+             core_stranger_cpp_factoryFuncStranger_FUN_00535090,&INT_005c0ff0,9,
+             &g_CHeroActorType_01cae0ec);
   return;
 }

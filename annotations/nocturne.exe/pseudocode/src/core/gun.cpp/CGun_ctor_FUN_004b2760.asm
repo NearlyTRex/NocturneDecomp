@@ -7,7 +7,7 @@
 ; CGun *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gun.cpp_factoryFunc_FUN_004b2730 at 004b2743
+;   core_gun.cpp_factoryFuncGun_FUN_004b2730 at 004b2743
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_00585402

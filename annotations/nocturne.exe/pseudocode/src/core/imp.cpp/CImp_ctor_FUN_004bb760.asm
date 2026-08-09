@@ -7,7 +7,7 @@
 ; CImp *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_imp.cpp_factoryFunc_FUN_004bb730 at 004bb743
+;   core_imp.cpp_factoryFuncImp_FUN_004bb730 at 004bb743
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_imp_dfm_00586282

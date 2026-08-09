@@ -1,0 +1,137 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 515,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 515,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 516,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 516,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00431520",
+    "address_range": [
+      [
+        "00431520",
+        "00431525"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_clipper.c_getNearPlaneDistance_FUN_00431520",
+    "signature": "int __cdecl engine_clipper_c_getNearPlaneDistance_FUN_00431520(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005ad284",
+      "name": "DAT_005ad284",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_005ad284",
+      "severity": "mild",
+      "text": "return DAT_005ad284;",
+      "type": "undefined_data"
+    }
+  ]
+}

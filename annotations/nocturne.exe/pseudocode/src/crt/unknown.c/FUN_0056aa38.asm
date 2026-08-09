@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_0056a6dc at 0056a814
+;   crt_unknown.c_FUN_0056a388 at 0056a814
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0056aa28 = 0056ac03

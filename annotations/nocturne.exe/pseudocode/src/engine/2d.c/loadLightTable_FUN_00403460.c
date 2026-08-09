@@ -15,13 +15,13 @@ void __cdecl engine_2d_c_loadLightTable_FUN_00403460(char *filename)
   
   iVar1 = engine_dosio_cpp_getFileSize_FUN_004568c0("fog",filename);
   if (iVar1 == 0x1000) {
-    engine_2d_c_FUN_004031a0(0);
+    engine_2d_c_buildLightTable_FUN_004031a0(0);
   }
   else {
     file = engine_dosio_cpp_getFile_FUN_00456a60("fog",filename,"rb");
     if (file == (_FILE *)0x0) {
-      engine_2d_c_FUN_004031a0(0);
-      engine_2d_c_FUN_00403500(filename);
+      engine_2d_c_buildLightTable_FUN_004031a0(0);
+      engine_2d_c_saveLightTable_FUN_00403500(filename);
     }
     else {
       _fread(g_LightTable + 1,0x100,0x20,file);

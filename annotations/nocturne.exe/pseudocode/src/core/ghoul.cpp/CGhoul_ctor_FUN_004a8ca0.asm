@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_factoryFunc_FUN_004a8c70 at 004a8c83
+;   core_ghoul.cpp_factoryFuncGhoul_FUN_004a8c70 at 004a8c83
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_guul_dfm_00584ac4

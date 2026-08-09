@@ -7,7 +7,7 @@
 ; CActorDestination * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dest.cpp_factoryFunc_FUN_0044b770 at 0044b783
+;   core_dest.cpp_factoryFuncActorDestination_FUN_0044b770 at 0044b783
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 at 00481f18
 ;
 ; Referenced Globals:

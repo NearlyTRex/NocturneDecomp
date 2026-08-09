@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   engine_3d.c_FUN_00406a00 at 00406a2a
-;   engine_3d.c_FUN_00406b80 at 00406baa
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00406a00 at 00406a2a
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_00406b80 at 00406baa
 ;   engine_3d.c_renderPolygonTexturedUVLit_FUN_00406920 at 0040694a
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 ; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_cow.cpp_factoryFunc_FUN_0043bbb0 at 0043bbc3
+;   core_cow.cpp_factoryFuncZombieCow_FUN_0043bbb0 at 0043bbc3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cow_dfm_0057b2d5

@@ -15,9 +15,9 @@ undefined4 FUN_004fbb70(void);
 // Address: 004fbbb0
 undefined4 FUN_004fbbb0(int param_1);
 
-// Original: core_scat.cpp_factoryFunc_FUN_004fbbd0
+// Original: core_scat.cpp_factoryFuncScat_FUN_004fbbd0
 // Address: 004fbbd0
-CScat * __cdecl factoryFunc(void);
+CScat * __cdecl factoryFuncScat(void);
 
 // Original: core_scat.cpp_CScat_getActorType_FUN_004fbbf0
 // Address: 004fbbf0

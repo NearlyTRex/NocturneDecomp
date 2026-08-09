@@ -7,9 +7,9 @@
 // Address: 00545b30
 void __cdecl staticInit(void);
 
-// Original: core_tommygun.cpp_factoryFunc_FUN_00545b60
+// Original: core_tommygun.cpp_factoryFuncTommyGun_FUN_00545b60
 // Address: 00545b60
-CTommyGun * __cdecl factoryFunc(void);
+CTommyGun * __cdecl factoryFuncTommyGun(void);
 
 // Original: core_tommygun.cpp_CTommyGun_getActorType_FUN_00545b80
 // Address: 00545b80

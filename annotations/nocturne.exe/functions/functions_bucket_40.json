@@ -819,12 +819,38 @@
         "start":"00405740"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_FUN_00405740",
-    "ret":"undefined1",
+    "name":"engine_3d.c_skipMRGLPrimitive_FUN_00405740",
+    "ret":"SMRGLHeaderExtended*",
     "vars":{
+      "params":[
+        {
+          "name":"primitive",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -851,13 +877,29 @@
         "start":"004059c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_FUN_004059c0",
-    "ret":"undefined1",
+    "name":"engine_3d.c_computeSortedPolygonKey_FUN_004059c0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"primitive",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        }
+      ]
     }
   },
   {
@@ -869,12 +911,38 @@
         "start":"00405b40"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_FUN_00405b40",
-    "ret":"undefined1",
+    "name":"engine_3d.c_renderSortedPolygonList_FUN_00405b40",
+    "ret":"SMRGLHeaderExtended*",
     "vars":{
+      "params":[
+        {
+          "name":"primitive",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -1159,9 +1227,10 @@
         "start":"00408fc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_FUN_00408fc0",
-    "ret":"undefined1",
+    "name":"engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -1181,9 +1250,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"mrgl",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        }
+      ]
     }
   },
   {
@@ -2763,7 +2847,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammo.cpp_factoryFunc_FUN_0040eb40",
+    "name":"core_ammo.cpp_factoryFuncAmmo_FUN_0040eb40",
     "ret":"CAmmo*",
     "vars":{
       "ret_storage":{
@@ -4474,7 +4558,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_biggs.cpp_factoryFunc_FUN_00415340",
+    "name":"core_biggs.cpp_factoryFuncBiggs_FUN_00415340",
     "ret":"CBiggs*",
     "vars":{
       "ret_storage":{
@@ -22162,6 +22246,24 @@
     }
   },
   {
+    "addr":"0048c940",
+    "body":[
+      {
+        "end":"0048c94a",
+        "size":11,
+        "start":"0048c940"
+      }
+    ],
+    "importable":true,
+    "name":"FUN_0048c940",
+    "ret":"undefined1",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
+      }
+    }
+  },
+  {
     "addr":"0048c9c0",
     "body":[
       {
@@ -22736,7 +22838,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flamecan.cpp_factoryFunc_FUN_0048e340",
+    "name":"core_flamecan.cpp_factoryFuncFlameCan_FUN_0048e340",
     "ret":"CFlameCan*",
     "vars":{
       "ret_storage":{
@@ -22806,7 +22908,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flies.cpp_factoryFunc_FUN_0048eec0",
+    "name":"core_flies.cpp_factoryFuncFlies_FUN_0048eec0",
     "ret":"CFlies*",
     "vars":{
       "ret_storage":{
@@ -27576,7 +27678,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_health.cpp_factoryFunc_FUN_004b41c0",
+    "name":"core_health.cpp_factoryFuncHealthItem_FUN_004b41c0",
     "ret":"CHealthItem*",
     "vars":{
       "ret_storage":{
@@ -27980,7 +28082,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hostage.cpp_factoryFunc_FUN_004b69c0",
+    "name":"core_hostage.cpp_factoryFuncHostage_FUN_004b69c0",
     "ret":"CHostage*",
     "vars":{
       "ret_storage":{
@@ -28072,7 +28174,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hpriest.cpp_factoryFunc_FUN_004b9ac0",
+    "name":"core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004b9ac0",
     "ret":"CHighPriestOfGardath*",
     "vars":{
       "ret_storage":{
@@ -30120,7 +30222,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_litecone.cpp_factoryFunc_FUN_004c80c0",
+    "name":"core_litecone.cpp_factoryFuncLightCone_FUN_004c80c0",
     "ret":"CLightCone*",
     "vars":{
       "ret_storage":{
@@ -38008,13 +38110,29 @@
         "start":"004f9440"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_prim.c_FUN_004f9440",
-    "ret":"undefined1",
+    "name":"engine_prim.c_setMaxViewportScanline_FUN_004f9440",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"max",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -38028,7 +38146,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_prim.c_FUN_004f9bc0",
+    "name":"engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -38115,7 +38233,7 @@
       ],
       "params":[
         {
-          "name":"param_1",
+          "name":"triangle_indices",
           "storage":{
             "offset":4,
             "size":4,
@@ -38128,7 +38246,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"SMRGLPrimitiveTriangle*"
         }
       ],
       "ret_storage":{
@@ -45728,7 +45846,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_smiley.cpp_factoryFunc_FUN_0051fcc0",
+    "name":"core_smiley.cpp_factoryFuncSmiley_FUN_0051fcc0",
     "ret":"CSmiley*",
     "vars":{
       "ret_storage":{

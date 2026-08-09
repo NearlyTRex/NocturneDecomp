@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_setTextColor_FUN_00402e70(int color)
 
 {
-  g_ResolutionTable[7].height = color;
+  INT_005acaa8 = color;
   return;
 }

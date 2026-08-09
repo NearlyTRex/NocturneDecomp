@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   blue
 ;
 ; XREF[12]:
-;   cockpit_drawsurf.cpp_FUN_0045b960 at 0045b966
-;   cockpit_drawsurf.cpp_FUN_0045b970 at 0045b97f
-;   cockpit_drawsurf.cpp_FUN_0045b990 at 0045b999
-;   cockpit_drawsurf.cpp_FUN_0045b9b0 at 0045b9b9
-;   cockpit_drawsurf.cpp_FUN_0045b9d0 at 0045b9d9
-;   cockpit_drawsurf.cpp_FUN_0045b9f0 at 0045b9fc
-;   cockpit_drawsurf.cpp_FUN_0045ba10 at 0045ba1c
-;   cockpit_drawsurf.cpp_FUN_0045ba30 at 0045ba3c
-;   cockpit_drawsurf.cpp_FUN_0045ba50 at 0045ba56
-;   cockpit_drawsurf.cpp_FUN_0045ba60 at 0045ba6f
+;   cockpit_drawsurf.cpp_setColorBlack_FUN_0045b960 at 0045b966
+;   cockpit_drawsurf.cpp_setColorBlue_FUN_0045b9d0 at 0045b9d9
+;   cockpit_drawsurf.cpp_setColorCyan_FUN_0045ba30 at 0045ba3c
+;   cockpit_drawsurf.cpp_setColorDarkGray_FUN_0045ba50 at 0045ba56
+;   cockpit_drawsurf.cpp_setColorGray_FUN_0045ba60 at 0045ba6f
+;   cockpit_drawsurf.cpp_setColorGreen_FUN_0045b9b0 at 0045b9b9
+;   cockpit_drawsurf.cpp_setColorLightGray_FUN_0045ba80 at 0045ba8f
+;   cockpit_drawsurf.cpp_setColorMagenta_FUN_0045ba10 at 0045ba1c
+;   cockpit_drawsurf.cpp_setColorRed_FUN_0045b990 at 0045b999
+;   cockpit_drawsurf.cpp_setColorWhite_FUN_0045b970 at 0045b97f
 ;   ... and 2 more
 ;
 ; Referenced Globals:

@@ -7,9 +7,9 @@
 // Address: 00541950
 void __cdecl staticInit(void);
 
-// Original: core_svetlana.cpp_factoryFunc_FUN_00541980
+// Original: core_svetlana.cpp_factoryFuncSvetlana_FUN_00541980
 // Address: 00541980
-CSvetlana * __cdecl factoryFunc(void);
+CSvetlana * __cdecl factoryFuncSvetlana(void);
 
 // Original: core_svetlana.cpp_CSvetlana_getActorType_FUN_005419a0
 // Address: 005419a0

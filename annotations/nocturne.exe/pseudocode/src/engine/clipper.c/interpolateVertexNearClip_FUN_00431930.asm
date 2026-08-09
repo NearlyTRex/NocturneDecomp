@@ -8,12 +8,10 @@
 ; SRenderVertex *  Stack[0x8]:4   v2
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[5]:
-;   engine_clipper.c_FUN_00432057 at 004320bf
-;   engine_clipper.c_FUN_004320dc at 00432131
-;   engine_clipper.c_FUN_00432b48 at 00432bbb
-;   engine_clipper.c_FUN_00432bd8 at 00432c29
+; XREF[3]:
 ;   engine_clipper.c_clipAndRasterize_FUN_00432cd0 at 004336a7
+;   engine_clipper.c_clipPolygonNearPlane_FUN_00431f50 at 004320bf
+;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 at 00432bbb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad284

@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -106,13 +106,13 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 163,
+        "line": 164,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 182,
+        "line": 184,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       }
     ],
@@ -122,20 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 381,
+    "complexity_score": 473,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 16,
+    "pseudocode_lines": 203,
+    "suspect_count": 24,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 651
+    "total_lines": 653
   },
   "cross_references": [
     {
@@ -711,7 +713,7 @@
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 193,
+          "line": 195,
           "message": "Uninitialized variable: iStack_120",
           "severity": "error"
         },
@@ -810,7 +812,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 157,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "(&DAT_012ceb78)[iVar6] = (char)iVar2;",
@@ -818,7 +820,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 166,
+      "line": 168,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_EDI->display_width);",
@@ -826,7 +828,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 171,
+      "line": 173,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_38 < unaff_EDI->display_height);",
@@ -834,11 +836,43 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 177,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 147,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 161,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
+      "match": "(int)&g_VOID_PTR_012e1778",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x444645 assigned to bare local `local_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -857,6 +891,38 @@
       "type": "raw_address_constant"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 145,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 147,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 161,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 164,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Uninitialized variable: local_114",
       "line": 71,
       "match": "Cppcheck: uninitialized variable",
@@ -866,7 +932,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_120",
-      "line": 193,
+      "line": 195,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (iStack_120 != 0) {",

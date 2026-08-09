@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00408fc0 at 00408ffd
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00408fc0 at 00408ffd
 ;
 ; Referenced Globals:
 ;   int INT_005b7644 = 0x1

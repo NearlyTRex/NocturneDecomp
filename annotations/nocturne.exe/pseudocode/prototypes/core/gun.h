@@ -7,9 +7,9 @@
 // Address: 004b2700
 void __cdecl staticInit(void);
 
-// Original: core_gun.cpp_factoryFunc_FUN_004b2730
+// Original: core_gun.cpp_factoryFuncGun_FUN_004b2730
 // Address: 004b2730
-CGun * __cdecl factoryFunc(void);
+CGun * __cdecl factoryFuncGun(void);
 
 // Original: core_gun.cpp_CGun_getActorType_FUN_004b2750
 // Address: 004b2750

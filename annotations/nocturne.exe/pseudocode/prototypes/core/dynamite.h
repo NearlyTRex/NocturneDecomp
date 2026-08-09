@@ -7,9 +7,9 @@
 // Address: 0046eb60
 void __cdecl staticInit(void);
 
-// Original: core_dynamite.cpp_factoryFunc_FUN_0046eba0
+// Original: core_dynamite.cpp_factoryFuncDynamite_FUN_0046eba0
 // Address: 0046eba0
-CDynamite * __cdecl factoryFunc(void);
+CDynamite * __cdecl factoryFuncDynamite(void);
 
 // Original: core_dynamite.cpp_CDynamite_getActorType_FUN_0046ebc0
 // Address: 0046ebc0

@@ -7,9 +7,9 @@
 // Address: 004a72f0
 void __cdecl staticInit(void);
 
-// Original: core_gargoyle.cpp_factoryFunc_FUN_004a7320
+// Original: core_gargoyle.cpp_factoryFuncGargoyle_FUN_004a7320
 // Address: 004a7320
-CGargoyle * __cdecl factoryFunc(void);
+CGargoyle * __cdecl factoryFuncGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_getActorType_FUN_004a7340
 // Address: 004a7340

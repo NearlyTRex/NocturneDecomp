@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
-;   engine_3d.c_FUN_00408e80
+;   engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0
@@ -359,8 +359,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c400a
     MOV ECX,dword ptr [EAX + 0x14]      ; 004c400d
     PUSH ECX                            ; 004c4010
-    CALL engine_3d.c_FUN_00408e80       ; 004c4011
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00408e80()
+    CALL engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80 ; 004c4011
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80(SMRGLHeaderExtended * chain)
     ADD ESP,0x4                         ; 004c4016
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c4019
     ADD EAX,0x158                       ; 004c401c

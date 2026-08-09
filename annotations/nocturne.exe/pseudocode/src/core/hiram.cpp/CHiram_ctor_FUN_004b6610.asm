@@ -7,7 +7,7 @@
 ; CHiram *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hiram.cpp_factoryFunc_FUN_004b65e0 at 004b65f3
+;   core_hiram.cpp_factoryFuncHiram_FUN_004b65e0 at 004b65f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hiram_dfm_005859cb

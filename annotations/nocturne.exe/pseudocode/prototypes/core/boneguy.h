@@ -15,9 +15,9 @@ float * FUN_00418180(float *param_1,int param_2);
 // Address: 004181f0
 CVector3f * FUN_004181f0(CVector3f *param_1,CDemonActor *param_2);
 
-// Original: core_boneguy.cpp_factoryFunc_FUN_004182a0
+// Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_004182a0
 // Address: 004182a0
-CBoneGuy * __cdecl factoryFunc(void);
+CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_004182c0
 // Address: 004182c0

@@ -74,7 +74,7 @@ void __cdecl engine_3d_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRen
 SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_00494220(int y_min,SHardwareEdge *exclude_edge);
 void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_00494260(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004945d0(void);
-CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_00494600(void);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_00494600(void);
 CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_00494620(CFrankenstienMachine *this_ptr);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(CFrankenstienMachine *this_ptr);
@@ -96,7 +96,7 @@ void __cdecl core_gabriela_cpp_staticInit_FUN_004954a0(void);
 float __cdecl core_gabriela_cpp_motionBlendWeightFunc_FUN_00495580(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004955c0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_00495610(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
-CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_00495670(void);
+CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_00495670(void);
 CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_00495690(CGabriella *this_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004957c0(CGabriella *this_ptr);

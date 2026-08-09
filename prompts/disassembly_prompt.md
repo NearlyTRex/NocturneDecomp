@@ -261,6 +261,7 @@ Any path; `--ledger <path>` points the tool at it. One entry per function.
         {"name": "format_string", "type": "char *"}
       ],
       "expect": {"name": "engine_2d.c_FUN_00402780", "range": ["00402780", "004027e1"]},
+      "basis": "sibling",
       "source": {
         "program": "nocedit.exe",
         "address": "00402150",
@@ -268,6 +269,22 @@ Any path; `--ledger <path>` points the tool at it. One entry per function.
         "method": "asm-diff-identical",
         "confidence": "high",
         "note": "SUB ESP,0x1004 = 4096-byte buffer + va_list slot; LEA EAX,[ESP+0x101c] is va_start."
+      }
+    },
+    {
+      "program": "nocturne.exe",
+      "address": "00403130",
+      "name": "engine_2d.c_saveFogTable_FUN_00403130",
+      "ret": "void",
+      "conv": "__cdecl",
+      "varargs": false,
+      "params": [{"name": "filename", "type": "char *"}],
+      "expect": {"name": "engine_2d.c_FUN_00403130", "range": ["00403130", "00403194"]},
+      "basis": "derived",
+      "source": {
+        "method": "nocturne-only",
+        "confidence": "high",
+        "note": "No nocedit counterpart - that build compiles the palette-LUT subsystem out. getFile(\"fog\", filename, \"wb\") then fwrite(0x01bd1ea0, 0x100, 0x10); assert string \"Unable to write fog tab\" at ..\\engine\\2d.c line 0x6b7 names it outright."
       }
     }
   ]
@@ -281,7 +298,24 @@ Any path; `--ledger <path>` points the tool at it. One entry per function.
 | `ret` / `conv` / `params` | The corrected prototype. Ghidra-compatible types only - no `const`, no `long double`. |
 | `varargs` | `true` only with a `va_start` idiom in the assembly to prove it. Omit if you have not checked. |
 | `expect` | Staleness guards. See below - getting these wrong is the most common failure. |
+| `basis` | `sibling` or `derived`. See below. Inferred from whether `source.program` is set if omitted. |
 | `source` | Where it came from. `note` is **required**: an entry with no stated evidence is a guess wearing a ledger's clothes. |
+
+#### `basis`: a Transfer and a Proposed Name Are Not the Same Claim
+
+Not every name comes from the sibling. A function unique to this build, or one whose counterpart is a stub carrying no evidence, has to be **named from its own assembly** - assert strings, call graph, constants, file/line pairs. That is a legitimate ledger entry, but it is a different kind of claim and must be labelled as one.
+
+- **`basis: "sibling"`** - the answer already existed in the other binary and you verified it against this one. Requires `source.program`, `source.address`, and `source.name`; without them the transfer cannot be re-checked by anyone else.
+- **`basis: "derived"`** - reasoned out from this binary alone. Must **not** set `source.program`/`address`/`name`; half-filled provenance reads as a verified transfer at a glance while nothing actually corroborates it. Requires `source.confidence` (`high`/`medium`/`low`), because a proposal has to say how sure it is.
+
+They fail differently, which is the point of separating them. A wrong transfer means the *pairing* was wrong, so the whole entry is suspect. A wrong derived name is just a name - the signature beside it can still be perfectly good. So apply the transfers first and hold the proposals:
+
+```bash
+--basis sibling                       # only what the other binary already knew
+--basis derived --min-confidence high # only proposals you would defend
+```
+
+State the confidence honestly. `high` means the assembly names it outright - an assert string, a `ClassName::method` debug string, an unambiguous idiom. `medium` means the purpose is certain but the exact word is a choice. `low` means you are naming it to stop it being `FUN_`, and you expect to revisit. A `low` entry is still worth writing; it just should not be applied in the same sweep as the transfers.
 
 #### `expect.name` Is the Ghidra Symbol Name, Not the Export Filename
 
@@ -308,8 +342,9 @@ GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
   apply_sibling_signatures.py --source ledger --ledger <path> --show 20
 
 # 4. apply, then re-run step 3: it must report everything ALREADY
+#    --basis / --min-confidence let you land the certain work first
 GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
-  apply_sibling_signatures.py --source ledger --ledger <path> --apply
+  apply_sibling_signatures.py --source ledger --ledger <path> --apply --basis sibling
 ```
 
 Ghidra must be **closed** - it holds the project lock and the run dies before touching anything.

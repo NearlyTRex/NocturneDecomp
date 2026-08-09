@@ -7,9 +7,9 @@
 // Address: 005467c0
 void __cdecl staticInit(void);
 
-// Original: core_trap.cpp_factoryFunc_FUN_005467f0
+// Original: core_trap.cpp_factoryFuncTrap_FUN_005467f0
 // Address: 005467f0
-CTrap * __cdecl factoryFunc(void);
+CTrap * __cdecl factoryFuncTrap(void);
 
 // Original: core_trap.cpp_CTrap_getActorType_FUN_00546810
 // Address: 00546810

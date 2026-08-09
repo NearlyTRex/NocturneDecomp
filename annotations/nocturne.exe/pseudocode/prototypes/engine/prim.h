@@ -3,13 +3,9 @@
 // Function prototypes for engine/prim.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_prim.c_FUN_004f942e
-// Address: 004f942e
-void FUN_004f942e(void);
-
-// Original: engine_prim.c_FUN_004f9440
+// Original: engine_prim.c_setMaxViewportScanline_FUN_004f9440
 // Address: 004f9440
-void FUN_004f9440(void);
+void __cdecl setMaxViewportScanline(int max);
 
 // Original: engine_prim.c_setCullingMode_FUN_004f9450
 // Address: 004f9450
@@ -51,9 +47,9 @@ int __cdecl calculateTriangleWindingOrder(SRenderVertex *v0,SRenderVertex *v1,SR
 // Address: 004f9ad0
 int __cdecl getTriangleWindingFromIndices1(SMRGLPrimitiveTriangle *triangle);
 
-// Original: engine_prim.c_FUN_004f9bc0
+// Original: engine_prim.c_getTriangleWindingFromIndices2_FUN_004f9bc0
 // Address: 004f9bc0
-int __cdecl FUN_004f9bc0(int param_1);
+int __cdecl getTriangleWindingFromIndices2(SMRGLPrimitiveTriangle *triangle_indices);
 
 // Original: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
 // Address: 004f9cb0
@@ -75,9 +71,9 @@ void __cdecl setupAdvancedSoftwareEdge(SRenderVertex *start_vertex,SRenderVertex
 // Address: 004faa20
 void __cdecl setupColoredSoftwareEdge(SRenderVertex *vertex0,SRenderVertex *vertex1);
 
-// Original: engine_prim.c_FUN_004faca0
+// Original: engine_prim.c_findEdgeInTable_FUN_004faca0
 // Address: 004faca0
-int * FUN_004faca0(void);
+SSoftwareEdge * __cdecl findEdgeInTable(int scanline,SSoftwareEdge *target_edge);
 
 // Original: engine_prim.c_renderScanlinePolygon_FUN_004fad00
 // Address: 004fad00

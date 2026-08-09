@@ -7,9 +7,9 @@
 // Address: 004776b0
 void __cdecl staticInit(void);
 
-// Original: core_elephant.cpp_factoryFunc_FUN_004776e0
+// Original: core_elephant.cpp_factoryFuncElephantGun_FUN_004776e0
 // Address: 004776e0
-CElephantGun * __cdecl factoryFunc(void);
+CElephantGun * __cdecl factoryFuncElephantGun(void);
 
 // Original: core_elephant.cpp_CElephantGun_getActorType_FUN_00477700
 // Address: 00477700

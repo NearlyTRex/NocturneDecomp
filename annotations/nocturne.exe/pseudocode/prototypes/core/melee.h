@@ -7,9 +7,9 @@
 // Address: 004cec00
 void __cdecl staticInit(void);
 
-// Original: core_melee.cpp_factoryFunc_FUN_004cec30
+// Original: core_melee.cpp_factoryFuncMelee_FUN_004cec30
 // Address: 004cec30
-CMelee * __cdecl factoryFunc(void);
+CMelee * __cdecl factoryFuncMelee(void);
 
 // Original: core_melee.cpp_CMelee_getActorType_FUN_004cec50
 // Address: 004cec50

@@ -7,7 +7,7 @@
 ; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_grave.cpp_factoryFunc_FUN_004b0b10 at 004b0b23
+;   core_grave.cpp_factoryFuncGrave_FUN_004b0b10 at 004b0b23
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_grave1_kfm_005851fd

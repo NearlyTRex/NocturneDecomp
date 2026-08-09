@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -63,7 +63,7 @@
   "complexity": {
     "assembly_lines": 134,
     "complexity_score": 154,
-    "cross_reference_count": 5,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -77,33 +77,21 @@
   },
   "cross_references": [
     {
-      "addr": "0043409e",
-      "from_addr": "004340f1",
-      "name": "engine_clipper.c_FUN_0043409e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0043410e",
-      "from_addr": "00434144",
-      "name": "engine_clipper.c_FUN_0043410e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0043484b",
+      "addr": "00434210",
       "from_addr": "004348aa",
-      "name": "engine_clipper.c_FUN_0043484b",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004348ca",
-      "from_addr": "00434900",
-      "name": "engine_clipper.c_FUN_004348ca",
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004349a0",
       "from_addr": "0043504c",
       "name": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434030",
+      "from_addr": "004340f1",
+      "name": "engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -125,6 +113,50 @@
     "call_site_count": 6,
     "call_sites": [
       {
+        "call_addr": "004340f1",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00434144",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonVerticalPlanes_FUN_00434030",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004348aa",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00434900",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
         "call_addr": "0043504c",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
@@ -139,50 +171,6 @@
         "call_addr": "004350a2",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_004349a0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "004340f1",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_0043409e",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "004348aa",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_0043484b",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00434144",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_0043410e",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00434900",
-        "call_type": "direct",
-        "caller": "engine_clipper.c_FUN_004348ca",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

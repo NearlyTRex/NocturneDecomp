@@ -16,13 +16,13 @@
       {
         "category": "other",
         "column": 85,
-        "line": 259,
+        "line": 260,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 268,
+        "line": 269,
         "message": "unknown type name 'code'"
       },
       {
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 349,
+    "complexity_score": 304,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 26,
+    "suspect_count": 22,
     "suspect_types": [
       "concat_reconstruction",
-      "nonstandard_int",
-      "undefined_data"
+      "nonstandard_int"
     ],
     "total_lines": 127
   },
@@ -161,9 +160,9 @@
   "globals": [
     {
       "addr": "005acab4",
-      "name": "DAT_005acab4",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005acab4",
+      "type": "int",
+      "value": "0xffffff"
     }
   ],
   "param_estimates": {
@@ -315,44 +314,12 @@
       "type": "nonstandard_int"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005acab4",
-      "severity": "mild",
-      "text": "uVar8 = (uint)DAT_005acab4 >> 0x10;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 28,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar4 = (ushort)(((uint7)(byte)((uint)DAT_005acab4 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar4 = (ushort)(((uint7)(byte)((uint)INT_005acab4 >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005acab4",
-      "severity": "mild",
-      "text": "uVar4 = (ushort)(((uint7)(byte)((uint)DAT_005acab4 >> 0x18) << 0x30) >> 0x28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005acab4",
-      "severity": "mild",
-      "text": "uVar7 = (uint)DAT_005acab4 >> 8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005acab4",
-      "severity": "mild",
-      "text": "bVar21 = (byte)DAT_005acab4;",
-      "type": "undefined_data"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",

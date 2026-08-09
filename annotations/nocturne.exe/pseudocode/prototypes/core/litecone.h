@@ -7,9 +7,9 @@
 // Address: 004c8090
 void __cdecl staticInit(void);
 
-// Original: core_litecone.cpp_factoryFunc_FUN_004c80c0
+// Original: core_litecone.cpp_factoryFuncLightCone_FUN_004c80c0
 // Address: 004c80c0
-CLightCone * __cdecl factoryFunc(void);
+CLightCone * __cdecl factoryFuncLightCone(void);
 
 // Original: core_litecone.cpp_CLightCone_getActorType_FUN_004c80e0
 // Address: 004c80e0

@@ -7,7 +7,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
-;   undefined4 g_ResolutionTable[8].height
+;   int INT_005acab0 = 0x1
 ;   int g_BitsPerPixel = 0x8
 ;   undefined4 DAT_006b0260
 ;   undefined4 DAT_006b0278
@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_00406175
     JMP 0x004060f9                      ; 0040617a
         ;   XREF to: 004060f9 (UNCONDITIONAL_JUMP)  ; LAB_004060f9
-    CMP dword ptr [0x005acab0],0x0      ; 0040617f | g_ResolutionTable[8].height
+    CMP dword ptr [0x005acab0],0x0      ; 0040617f | INT_005acab0
         ;   Label: LAB_0040617f
     JZ 0x004061d8                       ; 00406186
         ;   XREF to: 004061d8 (CONDITIONAL_JUMP)  ; LAB_004061d8

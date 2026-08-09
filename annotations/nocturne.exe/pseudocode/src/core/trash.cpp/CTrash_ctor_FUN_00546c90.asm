@@ -7,7 +7,7 @@
 ; CTrash *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_trash.cpp_factoryFunc_FUN_00546c60 at 00546c73
+;   core_trash.cpp_factoryFuncTrash_FUN_00546c60 at 00546c73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00596932

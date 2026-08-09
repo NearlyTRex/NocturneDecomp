@@ -7,7 +7,7 @@
 ; CShovel *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shovel.cpp_factoryFunc_FUN_005169e0 at 005169f3
+;   core_shovel.cpp_factoryFuncShovel_FUN_005169e0 at 005169f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_005910c5

@@ -11,7 +11,7 @@ void __cdecl core_gasmask_cpp_staticInit_FUN_004a89b0(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CGasMaskActorType_01c78b84,"CGasMask",
-             core_gasmask_cpp_factoryFunc_FUN_004a89e0,&INT_005b963c,1,
+             core_gasmask_cpp_factoryFuncGasMask_FUN_004a89e0,&INT_005b963c,1,
              &g_CDemonActorActorType_00763e48);
   return;
 }

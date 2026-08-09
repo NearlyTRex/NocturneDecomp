@@ -4260,13 +4260,6 @@
     "type":"CONDITIONAL_JUMP"
   },
   {
-    "from":"00432c21",
-    "importable":true,
-    "operand":1,
-    "to":"00766c74",
-    "type":"DATA"
-  },
-  {
     "from":"00432ce1",
     "importable":true,
     "operand":1,
@@ -4348,7 +4341,7 @@
     "from":"00433e41",
     "importable":true,
     "operand":1,
-    "to":"Stack[0x0]",
+    "to":"Stack[-0x14]",
     "type":"DATA"
   },
   {
@@ -4361,6 +4354,22 @@
   {
     "from":"00433ea1",
     "importable":true,
+    "operand":1,
+    "to":"00767b4c",
+    "type":"READ"
+  },
+  {
+    "from":"00433ea1",
+    "importable":true,
+    "non_primary":true,
+    "operand":1,
+    "to":"00767b50",
+    "type":"READ"
+  },
+  {
+    "from":"00433ea1",
+    "importable":true,
+    "non_primary":true,
     "operand":1,
     "to":"0076874c",
     "type":"DATA"
@@ -4445,7 +4454,7 @@
   {
     "from":"004344e1",
     "importable":true,
-    "to":"Stack[0xc]",
+    "to":"Stack[-0x20]",
     "type":"WRITE"
   },
   {
@@ -4459,7 +4468,7 @@
     "from":"004345a1",
     "importable":true,
     "operand":1,
-    "to":"Stack[0x10]",
+    "to":"Stack[-0x1c]",
     "type":"READ"
   },
   {
@@ -4478,23 +4487,42 @@
   {
     "from":"00434761",
     "importable":true,
-    "operand":1,
     "to":"00767b4c",
-    "type":"DATA"
+    "type":"WRITE"
+  },
+  {
+    "from":"00434761",
+    "importable":true,
+    "non_primary":true,
+    "to":"00767b50",
+    "type":"WRITE"
+  },
+  {
+    "from":"00434761",
+    "importable":true,
+    "operand":1,
+    "to":"0076817c",
+    "type":"READ"
   },
   {
     "from":"00434761",
     "importable":true,
     "non_primary":true,
     "operand":1,
-    "to":"00767b50",
-    "type":"DATA"
+    "to":"00768180",
+    "type":"READ"
   },
   {
     "from":"004347c1",
     "importable":true,
     "to":"00434565",
     "type":"UNCONDITIONAL_JUMP"
+  },
+  {
+    "from":"00434801",
+    "importable":true,
+    "to":"00767b4c",
+    "type":"DATA"
   },
   {
     "from":"00434881",
@@ -30829,13 +30857,6 @@
     "operand":1,
     "to":"00766c70",
     "type":"READ"
-  },
-  {
-    "from":"0055df21",
-    "importable":true,
-    "operand":1,
-    "to":"00766c74",
-    "type":"DATA"
   },
   {
     "from":"0055e121",
