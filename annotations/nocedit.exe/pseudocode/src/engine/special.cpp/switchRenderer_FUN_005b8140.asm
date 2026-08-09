@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int renderer_handle)
+; int __cdecl engine_special_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int card_index)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   new_dll_name
-; int              Stack[0x8]:4   renderer_handle
+; int              Stack[0x8]:4   card_index
 ;
 ; XREF[1]:
-;   engine_special.cpp_CExternalRenderer_switchRenderer_FUN_005b8120 at 005b812f
+;   engine_special.cpp_switchRenderer_FUN_005b8120 at 005b812f
 ;
 ; Referenced Globals:
 ;   char[256] g_RendererDllPath
 ;   undefined4 g_RendererDllPath+1
 ;   undefined4 s_id3d_dll_00684012
 ;   undefined4 s_d3d.dll_00684013
-;   int g_RendererHandle
+;   int g_RendererCardIndex
 ;   HWND g_StoredWindowHandle
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 005b8147
     MOV ESI,dword ptr [ESP + 0xc]       ; 005b814b
     MOV EDI,0x684010                    ; 005b814f | g_RendererDllPath
-    MOV [0x03f6b87c],EAX                ; 005b8154 | g_RendererHandle
+    MOV [0x03f6b87c],EAX                ; 005b8154 | g_RendererCardIndex
     PUSH EDI                            ; 005b8159 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 005b815a
         ;   Label: LAB_005b815a

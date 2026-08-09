@@ -11,7 +11,7 @@ void __cdecl core_batcreat_cpp_staticInit_FUN_00415080(void)
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CBatCreatureClassInfo,"CBatCreature",
-             core_batcreat_cpp_factoryFunc_FUN_004150b0,&g_CBatCreatureClassVersion,1,
+             core_batcreat_cpp_factoryFuncBatCreature_FUN_004150b0,&g_CBatCreatureClassVersion,1,
              &g_CEnemyClassInfo);
   return;
 }

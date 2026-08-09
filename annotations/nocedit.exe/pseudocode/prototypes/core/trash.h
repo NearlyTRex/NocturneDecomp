@@ -7,9 +7,9 @@
 // Address: 005deb00
 void __cdecl staticInit(void);
 
-// Original: core_trash.cpp_factoryFunc_FUN_005deb30
+// Original: core_trash.cpp_factoryFuncTrash_FUN_005deb30
 // Address: 005deb30
-CTrash * __cdecl factoryFunc(void);
+CTrash * __cdecl factoryFuncTrash(void);
 
 // Original: core_trash.cpp_CTrash_getActorType_FUN_005deb60
 // Address: 005deb60

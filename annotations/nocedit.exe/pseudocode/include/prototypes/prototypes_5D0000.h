@@ -177,7 +177,7 @@ SExpandedEdge * __cdecl shape_superopt_cpp_SExpandedEdge_copy_FUN_005d8710(SExpa
 CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr,uint flags);
 CP3D * __cdecl shape_superopt_cpp_CP3D_dtor_FUN_005d87d0(CP3D *this_ptr,uint flags);
 void __cdecl core_svetlana_cpp_staticInit_FUN_005d87e0(void);
-CSvetlana * __cdecl core_svetlana_cpp_factoryFunc_FUN_005d8810(void);
+CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_005d8810(void);
 CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005d8840(CSvetlana *this_ptr);
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr);
@@ -235,7 +235,7 @@ int __cdecl core_teleport_cpp_CTeleport_renderOpaque_FUN_005dae10(CTeleport *thi
 CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005dae50(CTeleport *this_ptr,uint flags);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTeleportDest *this_ptr,uint flags);
 void __cdecl core_tentacle_cpp_staticInit_FUN_005daef0(void);
-CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_005daf20(void);
+CTentacle * __cdecl core_tentacle_cpp_factoryFuncTentacle_FUN_005daf20(void);
 CDemonActorType * __cdecl core_tentacle_cpp_CTentacle_getActorType_FUN_005daf50(CTentacle *this_ptr);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_005daf60(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_005dafc0(CTentacle *this_ptr);
@@ -286,7 +286,7 @@ void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005dd970(char *output_b
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005dd990(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005dd9c0(void);
 void __cdecl core_tommygun_cpp_staticInit_FUN_005dda20(void);
-CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void);
+CTommyGun * __cdecl core_tommygun_cpp_factoryFuncTommyGun_FUN_005dda50(void);
 CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_005dda80(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr);
@@ -295,7 +295,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
 void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_005de5a0(CTommyGun *this_ptr,int weapon_state);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint flags);
 void __cdecl core_trap_cpp_staticInit_FUN_005de620(void);
-CTrap * __cdecl core_trap_cpp_factoryFunc_FUN_005de650(void);
+CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_005de650(void);
 CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_005de680(CTrap *this_ptr);
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_005de690(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_setup_FUN_005de6e0(CTrap *this_ptr);
@@ -312,7 +312,7 @@ void __cdecl core_trap_cpp_CTrap_getPropertyList_FUN_005dea50(CTrap *this_ptr,CA
 void __cdecl core_trap_cpp_CTrap_addFilesToExtract_FUN_005dea90(CTrap *this_ptr,_FILE *file_handle);
 CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_005deab0(CTrap *this_ptr,uint flags);
 void __cdecl core_trash_cpp_staticInit_FUN_005deb00(void);
-CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void);
+CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_005deb30(void);
 CDemonActorType * __cdecl core_trash_cpp_CTrash_getActorType_FUN_005deb60(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_005deb70(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_setup_FUN_005debc0(CTrash *this_ptr);
@@ -327,7 +327,7 @@ void __cdecl core_trash_cpp_CTrash_addFilesToExtract_FUN_005df720(CTrash *this_p
 void __cdecl core_trash_cpp_CTrash_processInEditor_FUN_005df750(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_005df780(CTrash *this_ptr,uint flags);
 void __cdecl core_trigger_cpp_staticInit_FUN_005df7d0(void);
-CTrigger * __cdecl core_trigger_cpp_factoryFunc_FUN_005df800(void);
+CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_005df800(void);
 CDemonActorType * __cdecl core_trigger_cpp_CTrigger_getActorType_FUN_005df830(CTrigger *this_ptr);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr);

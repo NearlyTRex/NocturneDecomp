@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 0051f130
 void __cdecl mirrorXTransform(void);
 
-// Original: core_mimic.cpp_factoryFunc_FUN_0051f190
+// Original: core_mimic.cpp_factoryFuncMimic_FUN_0051f190
 // Address: 0051f190
-CMimic * __cdecl factoryFunc(void);
+CMimic * __cdecl factoryFuncMimic(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_0051f1c0
 // Address: 0051f1c0

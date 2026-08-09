@@ -145,7 +145,7 @@ int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_004a6ee0(CBitFont *font_
 int __cdecl shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(CBitFont *font_ptr);
 int __cdecl shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(CBitFont *font_ptr);
 void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void);
-CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void);
+CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_004a6fa0(void);
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_004a6fd0(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time);
@@ -155,7 +155,7 @@ float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004a79b0(CElephantGun
 void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_004a79f0(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_004a7be0(CElephantGun *this_ptr,uint flags);
 void __cdecl core_emitter_cpp_staticInit_FUN_004a7c30(void);
-CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void);
+CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_004a7c60(void);
 CDemonActorType * __cdecl core_emitter_cpp_CEmitter_getActorType_FUN_004a7c90(CEmitter *this_ptr);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004a7ca0(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr);

@@ -13,7 +13,7 @@ void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void)
   __arrinit(SCollisionInfo_ARRAY_03f8fae8,100,&g_SCollisionInfoTypeInfo);
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CWaterActorClassInfo,"CWaterActor",
-             core_wateract_cpp_factoryFunc_FUN_005ea860,&g_CWaterActorVersion,6,
+             core_wateract_cpp_factoryFuncWaterActor_FUN_005ea860,&g_CWaterActorVersion,6,
              &g_CDemonActorClassInfo);
   return;
 }

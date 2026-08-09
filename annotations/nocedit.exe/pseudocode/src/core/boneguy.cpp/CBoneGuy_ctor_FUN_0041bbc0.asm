@@ -10,7 +10,7 @@
 ; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; XREF[1]:
-;   core_boneguy.cpp_factoryFunc_FUN_0041b820 at 0041b83a
+;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_0041b820 at 0041b83a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_boneguy_dfm_00615f7d

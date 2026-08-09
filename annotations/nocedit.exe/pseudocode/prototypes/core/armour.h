@@ -7,9 +7,9 @@
 // Address: 00412130
 void __cdecl staticInit(void);
 
-// Original: core_armour.cpp_factoryFunc_FUN_00412160
+// Original: core_armour.cpp_factoryFuncArmour_FUN_00412160
 // Address: 00412160
-CArmour * __cdecl factoryFunc(void);
+CArmour * __cdecl factoryFuncArmour(void);
 
 // Original: core_armour.cpp_CArmour_getActorType_FUN_00412190
 // Address: 00412190

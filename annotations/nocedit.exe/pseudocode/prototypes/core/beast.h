@@ -7,9 +7,9 @@
 // Address: 004181b0
 void __cdecl staticInit(void);
 
-// Original: core_beast.cpp_factoryFunc_FUN_004181e0
+// Original: core_beast.cpp_factoryFuncBeast_FUN_004181e0
 // Address: 004181e0
-CBeast * __cdecl factoryFunc(void);
+CBeast * __cdecl factoryFuncBeast(void);
 
 // Original: core_beast.cpp_CBeast_getActorType_FUN_00418210
 // Address: 00418210

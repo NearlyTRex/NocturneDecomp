@@ -7,7 +7,7 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_shotgun.cpp_factoryFunc_FUN_00587ea0 at 00587eba
+;   core_shotgun.cpp_factoryFuncShotgun_FUN_00587ea0 at 00587eba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00649afc

@@ -7,9 +7,9 @@
 // Address: 005df7d0
 void __cdecl staticInit(void);
 
-// Original: core_trigger.cpp_factoryFunc_FUN_005df800
+// Original: core_trigger.cpp_factoryFuncTrigger_FUN_005df800
 // Address: 005df800
-CTrigger * __cdecl factoryFunc(void);
+CTrigger * __cdecl factoryFuncTrigger(void);
 
 // Original: core_trigger.cpp_CTrigger_getActorType_FUN_005df830
 // Address: 005df830

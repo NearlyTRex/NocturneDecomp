@@ -7,7 +7,7 @@
 ; CFlashlight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_flashlit.cpp_factoryFunc_FUN_004cbb80 at 004cbb9a
+;   core_flashlit.cpp_factoryFuncFlashlight_FUN_004cbb80 at 004cbb9a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_kfm_0062a3c9

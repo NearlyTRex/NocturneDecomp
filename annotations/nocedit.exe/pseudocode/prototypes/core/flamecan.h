@@ -7,9 +7,9 @@
 // Address: 004cb0f0
 void __cdecl staticInit(void);
 
-// Original: core_flamecan.cpp_factoryFunc_FUN_004cb120
+// Original: core_flamecan.cpp_factoryFuncFlameCan_FUN_004cb120
 // Address: 004cb120
-CFlameCan * __cdecl factoryFunc(void);
+CFlameCan * __cdecl factoryFuncFlameCan(void);
 
 // Original: core_flamecan.cpp_CFlameCan_getActorType_FUN_004cb150
 // Address: 004cb150

@@ -7,7 +7,7 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_factoryFunc_FUN_004d2ae0 at 004d2afd
+;   core_gabriela.cpp_factoryFuncGabriella_FUN_004d2ae0 at 004d2afd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_0062acca

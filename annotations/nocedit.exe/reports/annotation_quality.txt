@@ -1200,7 +1200,12 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (0 groups)
+DUPLICATE FUNCTION NAMES (1 groups)
 ====================================================================================================
 
-  No duplicate names found.
+Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
+Some are legitimate overloads, others may need disambiguating names.
+
+  engine_special.cpp_switchRenderer  (2 functions)
+    0x005b8120  (CExternalRenderer *renderer,int card_index)
+    0x005b8140  (char *new_dll_name,int card_index)

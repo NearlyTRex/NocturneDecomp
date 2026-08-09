@@ -7,7 +7,7 @@
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ammobox.cpp_factoryFunc_FUN_00411560 at 0041157a
+;   core_ammobox.cpp_factoryFuncAmmoBox_FUN_00411560 at 0041157a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ammobag_kfm_00614bc0

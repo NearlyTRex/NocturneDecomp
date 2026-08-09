@@ -73,7 +73,7 @@ void __cdecl core_stranger_cpp_setWindVelocity_FUN_005c6970(CCloth *cloth_ptr,CV
 int __cdecl core_stranger_cpp_getCurrentMotionStateIndex_FUN_005c69a0(CCharacter *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags);
 void __cdecl core_succubus_cpp_staticInit_FUN_005c6a10(void);
-CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void);
+CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_005c6a40(void);
 CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_005c6a70(CSuccubus *this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr);

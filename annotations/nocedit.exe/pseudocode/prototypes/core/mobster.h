@@ -15,9 +15,9 @@ CVector3f * __cdecl getObjectGrabPointLocal(CVector3f *out,CDemonActor *actor);
 // Address: 00525110
 CVector3f * __cdecl getObjectGrabPointWorld(CVector3f *out,CDemonActor *actor);
 
-// Original: core_mobster.cpp_factoryFunc_FUN_005251c0
+// Original: core_mobster.cpp_factoryFuncMobster_FUN_005251c0
 // Address: 005251c0
-CMobster * __cdecl factoryFunc(void);
+CMobster * __cdecl factoryFuncMobster(void);
 
 // Original: core_mobster.cpp_CMobster_getActorType_FUN_005251f0
 // Address: 005251f0

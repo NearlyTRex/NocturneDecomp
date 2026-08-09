@@ -7,7 +7,7 @@
 ; CKeyActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_keyactor.cpp_factoryFunc_FUN_00501650 at 0050166a
+;   core_keyactor.cpp_factoryFuncKeyActor_FUN_00501650 at 0050166a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_key1_kfm_00630c34

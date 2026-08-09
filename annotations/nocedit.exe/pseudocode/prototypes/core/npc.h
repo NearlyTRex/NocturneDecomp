@@ -11,9 +11,9 @@ CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);
 // Address: 00544770
 void __cdecl staticInit(void);
 
-// Original: core_npc.cpp_factoryFunc_FUN_005447a0
+// Original: core_npc.cpp_factoryFuncNPC_FUN_005447a0
 // Address: 005447a0
-CNPC * __cdecl factoryFunc(void);
+CNPC * __cdecl factoryFuncNPC(void);
 
 // Original: core_npc.cpp_CNPC_getActorType_FUN_005447d0
 // Address: 005447d0

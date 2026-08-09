@@ -10,7 +10,7 @@ void __cdecl core_spike_cpp_staticInit_FUN_005b81b0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CSpikeClassInfo,"CSpike",core_spike_cpp_factoryFunc_FUN_005b81e0,
+            (&g_CSpikeClassInfo,"CSpike",core_spike_cpp_factoryFuncSpike_FUN_005b81e0,
              &g_CSpikeClassVersion,1,&g_CDemonActorClassInfo);
   return;
 }

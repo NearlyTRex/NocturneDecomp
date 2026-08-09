@@ -7,9 +7,9 @@
 // Address: 00505890
 void __cdecl staticInit(void);
 
-// Original: core_lightgun.cpp_factoryFunc_FUN_005058c0
+// Original: core_lightgun.cpp_factoryFuncLightGun_FUN_005058c0
 // Address: 005058c0
-CLightGun * __cdecl factoryFunc(void);
+CLightGun * __cdecl factoryFuncLightGun(void);
 
 // Original: core_lightgun.cpp_CLightGun_getActorType_FUN_005058f0
 // Address: 005058f0

@@ -7,9 +7,9 @@
 // Address: 0043f770
 void __cdecl staticInit(void);
 
-// Original: core_colonel.cpp_factoryFunc_FUN_0043f7a0
+// Original: core_colonel.cpp_factoryFuncColonel_FUN_0043f7a0
 // Address: 0043f7a0
-CColonel * __cdecl factoryFunc(void);
+CColonel * __cdecl factoryFuncColonel(void);
 
 // Original: core_colonel.cpp_CColonel_getActorType_FUN_0043f7d0
 // Address: 0043f7d0

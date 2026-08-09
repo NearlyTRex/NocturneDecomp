@@ -7,7 +7,7 @@
 ; CZombieDog *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dog.cpp_factoryFunc_FUN_0047f010 at 0047f02a
+;   core_dog.cpp_factoryFuncZombieDog_FUN_0047f010 at 0047f02a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dog_dfm_00620f9c

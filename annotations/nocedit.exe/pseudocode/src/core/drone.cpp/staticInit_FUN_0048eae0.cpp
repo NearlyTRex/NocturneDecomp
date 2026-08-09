@@ -10,7 +10,7 @@ void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CDroneClassInfo,"CDrone",core_drone_cpp_factoryFunc_FUN_0048eb10,
+            (&g_CDroneClassInfo,"CDrone",core_drone_cpp_factoryFuncDrone_FUN_0048eb10,
              &g_CDroneClassVersion,2,&g_CEnemyClassInfo);
   return;
 }

@@ -7,7 +7,7 @@
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_marquee.cpp_factoryFunc_FUN_0050bb20 at 0050bb3a
+;   core_marquee.cpp_factoryFuncMarquee_FUN_0050bb20 at 0050bb3a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_menu1_pth_006359b7

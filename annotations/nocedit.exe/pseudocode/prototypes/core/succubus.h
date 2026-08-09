@@ -7,9 +7,9 @@
 // Address: 005c6a10
 void __cdecl staticInit(void);
 
-// Original: core_succubus.cpp_factoryFunc_FUN_005c6a40
+// Original: core_succubus.cpp_factoryFuncSuccubus_FUN_005c6a40
 // Address: 005c6a40
-CSuccubus * __cdecl factoryFunc(void);
+CSuccubus * __cdecl factoryFuncSuccubus(void);
 
 // Original: core_succubus.cpp_CSuccubus_getActorType_FUN_005c6a70
 // Address: 005c6a70

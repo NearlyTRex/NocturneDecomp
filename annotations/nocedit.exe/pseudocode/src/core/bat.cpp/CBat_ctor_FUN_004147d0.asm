@@ -7,7 +7,7 @@
 ; CBat *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bat.cpp_factoryFunc_FUN_00414790 at 004147aa
+;   core_bat.cpp_factoryFuncBat_FUN_00414790 at 004147aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batpath_pth_006152db

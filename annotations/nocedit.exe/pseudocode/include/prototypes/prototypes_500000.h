@@ -60,7 +60,7 @@ void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory 
 void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_00501500(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570(CInventory *this_ptr);
 void __cdecl core_keyactor_cpp_staticInit_FUN_00501620(void);
-CKeyActor * __cdecl core_keyactor_cpp_factoryFunc_FUN_00501650(CKeyActor *__return_storage_ptr__);
+CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_00501650(void);
 CDemonActorType * __cdecl core_keyactor_cpp_CKeyActor_getActorType_FUN_00501680(CKeyActor *this_ptr);
 CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_00501690(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_005016f0(CKeyActor *this_ptr);
@@ -89,7 +89,7 @@ void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_00502490(CKeys *this_ptr,
 void __cdecl engine_keys_cpp_CKeys_clearKeyPressState_FUN_005024a0(CKeys *this_ptr,EInputCodeType key_code);
 void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys *this_ptr,int enable_extended);
 void __cdecl core_ladder_cpp_staticInit_FUN_005024d0(void);
-CLadder * __cdecl core_ladder_cpp_factoryFunc_FUN_00502500(void);
+CLadder * __cdecl core_ladder_cpp_factoryFuncLadder_FUN_00502500(void);
 CDemonActorType * __cdecl core_ladder_cpp_CLadder_getActorType_FUN_00502530(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_00502540(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_setup_FUN_005025f0(CLadder *this_ptr);
@@ -108,7 +108,7 @@ void __cdecl core_ladder_cpp_CLadder_onActorDeleted_FUN_00502e90(CLadder *this_p
 void __cdecl core_ladder_cpp_CLadder_addFilesToExtract_FUN_00502eb0(CLadder *this_ptr,_FILE *file_handle);
 CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_00502ed0(CLadder *this_ptr,uint flags);
 void __cdecl core_larva_cpp_staticInit_FUN_00502f20(void);
-CLarva * __cdecl core_larva_cpp_factoryFunc_FUN_00502f50(void);
+CLarva * __cdecl core_larva_cpp_factoryFuncLarva_FUN_00502f50(void);
 CDemonActorType * __cdecl core_larva_cpp_CLarva_getActorType_FUN_00502f80(CLarva *this_ptr);
 CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr);
 void __cdecl core_larva_cpp_CLarva_setup_FUN_00503020(CLarva *this_ptr);
@@ -127,7 +127,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader *this_ptr);
 void __cdecl core_level_cpp_CLevelLoader_setVersion_FUN_00504750(CLevelLoader *this_ptr,int value);
 void __cdecl core_lever_cpp_staticInit_FUN_00504760(void);
-CLever * __cdecl core_lever_cpp_factoryFunc_FUN_00504790(void);
+CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_00504790(void);
 CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_005047c0(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_005048a0(CLever *this_ptr);
@@ -159,7 +159,7 @@ int __cdecl engine_light_cpp_calculateLighting_FUN_00505780(int normal_x,int nor
 int __cdecl engine_light_cpp_calculateVertexLighting_FUN_00505830(int unused_param,CVector3i *vertex_position);
 void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index,CVector3i *vertex_position);
 void __cdecl core_lightgun_cpp_staticInit_FUN_00505890(void);
-CLightGun * __cdecl core_lightgun_cpp_factoryFunc_FUN_005058c0(void);
+CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_005058c0(void);
 CDemonActorType * __cdecl core_lightgun_cpp_CLightGun_getActorType_FUN_005058f0(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *this_ptr);
 int __cdecl core_lightgun_cpp_CLightGun_isVampireType_FUN_005059c0(CLightGun *this_ptr);
@@ -173,7 +173,7 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
 void __cdecl core_lightgun_cpp_CLightGun_addFilesToExtract_FUN_005066f0(CLightGun *this_ptr,_FILE *file_handle);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_00506a50(CLightGun *this_ptr,uint flags);
 void __cdecl core_litecone_cpp_staticInit_FUN_00506aa0(void);
-CLightCone * __cdecl core_litecone_cpp_factoryFunc_FUN_00506ad0(void);
+CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_00506ad0(void);
 CDemonActorType * __cdecl core_litecone_cpp_CLightCone_getActorType_FUN_00506b00(CLightCone *this_ptr);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_00506b10(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_00506bb0(CLightCone *this_ptr);
@@ -260,7 +260,7 @@ SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(SPanel *objs,uint f
 SGem * __cdecl core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(SGem *objs,uint flags);
 SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(SReflector *objs,uint flags);
 void __cdecl core_marquee_cpp_staticInit_FUN_0050baf0(void);
-CMarquee * __cdecl core_marquee_cpp_factoryFunc_FUN_0050bb20(void);
+CMarquee * __cdecl core_marquee_cpp_factoryFuncMarquee_FUN_0050bb20(void);
 CDemonActorType * __cdecl core_marquee_cpp_CMarquee_getActorType_FUN_0050bb50(CMarquee *this_ptr);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_0050bb60(CMarquee *this_ptr);
 void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_0050bc30(CMarquee *this_ptr);
@@ -306,7 +306,7 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value);
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_0050e6f0(void);
 void __cdecl core_melee_cpp_staticInit_FUN_0050e760(void);
-CMelee * __cdecl core_melee_cpp_factoryFunc_FUN_0050e790(void);
+CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_0050e790(void);
 CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_0050e7c0(CMelee *this_ptr);
 CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_archive_FUN_0050e920(CMelee *this_ptr);

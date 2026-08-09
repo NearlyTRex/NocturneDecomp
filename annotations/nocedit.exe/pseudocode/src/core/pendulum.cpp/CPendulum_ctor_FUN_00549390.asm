@@ -7,7 +7,7 @@
 ; CPendulum *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_pendulum.cpp_factoryFunc_FUN_00549350 at 0054936a
+;   core_pendulum.cpp_factoryFuncPendulum_FUN_00549350 at 0054936a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_pend_kfm_0063ec70

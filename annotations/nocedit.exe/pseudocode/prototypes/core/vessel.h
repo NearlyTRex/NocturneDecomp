@@ -7,9 +7,9 @@
 // Address: 005e8df0
 void __cdecl staticInit(void);
 
-// Original: core_vessel.cpp_factoryFunc_FUN_005e8e20
+// Original: core_vessel.cpp_factoryFuncCryptVessel_FUN_005e8e20
 // Address: 005e8e20
-CCryptVessel * __cdecl factoryFunc(void);
+CCryptVessel * __cdecl factoryFuncCryptVessel(void);
 
 // Original: core_vessel.cpp_CCryptVessel_getActorType_FUN_005e8e50
 // Address: 005e8e50

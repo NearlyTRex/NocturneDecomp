@@ -10,7 +10,8 @@ void __cdecl core_vehicle_cpp_staticInit_FUN_005e78d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CVehicleClassInfo,"CVehicle",core_vehicle_cpp_factoryFunc_FUN_005e7900,
-             &g_CVehicleClassVersion,3,&g_CDemonActorClassInfo);
+            (&g_CVehicleClassInfo,"CVehicle",
+             core_vehicle_cpp_factoryFuncVehicle_FUN_005e7900,&g_CVehicleClassVersion,3,
+             &g_CDemonActorClassInfo);
   return;
 }

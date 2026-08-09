@@ -140,7 +140,7 @@ CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *objs,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void);
-CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0049cd80(void);
+CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_0049cd80(void);
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0049cdb0(CDynamite *this_ptr);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr);

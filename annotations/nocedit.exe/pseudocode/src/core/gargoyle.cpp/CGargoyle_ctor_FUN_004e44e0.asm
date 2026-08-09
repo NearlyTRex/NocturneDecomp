@@ -7,7 +7,7 @@
 ; CGargoyle *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_gargoyle.cpp_factoryFunc_FUN_004e44a0 at 004e44ba
+;   core_gargoyle.cpp_factoryFuncGargoyle_FUN_004e44a0 at 004e44ba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_dfm_0062d7d6

@@ -7,9 +7,9 @@
 // Address: 0050baf0
 void __cdecl staticInit(void);
 
-// Original: core_marquee.cpp_factoryFunc_FUN_0050bb20
+// Original: core_marquee.cpp_factoryFuncMarquee_FUN_0050bb20
 // Address: 0050bb20
-CMarquee * __cdecl factoryFunc(void);
+CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_0050bb50
 // Address: 0050bb50

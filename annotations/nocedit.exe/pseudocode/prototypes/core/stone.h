@@ -7,9 +7,9 @@
 // Address: 005baca0
 void __cdecl staticInit(void);
 
-// Original: core_stone.cpp_factoryFunc_FUN_005bacd0
+// Original: core_stone.cpp_factoryFuncTempleStone_FUN_005bacd0
 // Address: 005bacd0
-CTempleStone * __cdecl factoryFunc(void);
+CTempleStone * __cdecl factoryFuncTempleStone(void);
 
 // Original: core_stone.cpp_CTempleStone_getActorType_FUN_005bad00
 // Address: 005bad00

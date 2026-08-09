@@ -7,9 +7,9 @@
 // Address: 004e5c90
 void __cdecl staticInit(void);
 
-// Original: core_gasmask.cpp_factoryFunc_FUN_004e5cc0
+// Original: core_gasmask.cpp_factoryFuncGasMask_FUN_004e5cc0
 // Address: 004e5cc0
-CGasMask * __cdecl factoryFunc(void);
+CGasMask * __cdecl factoryFuncGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_getActorType_FUN_004e5cf0
 // Address: 004e5cf0

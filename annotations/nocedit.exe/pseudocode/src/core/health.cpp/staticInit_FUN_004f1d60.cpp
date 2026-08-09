@@ -10,7 +10,8 @@ void __cdecl core_health_cpp_staticInit_FUN_004f1d60(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CHealthItemClassInfo,"CHealthItem",core_health_cpp_factoryFunc_FUN_004f1d90
-             ,&g_CHealthItemClassVersion,3,&g_CDemonActorClassInfo);
+            (&g_CHealthItemClassInfo,"CHealthItem",
+             core_health_cpp_factoryFuncHealthItem_FUN_004f1d90,&g_CHealthItemClassVersion,3,
+             &g_CDemonActorClassInfo);
   return;
 }

@@ -136,7 +136,7 @@ void __cdecl shape_design_c_smoothMesh_FUN_0046ed00(void);
 void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void);
 void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void);
 void __cdecl core_dest_cpp_staticInit_FUN_0046f890(void);
-CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0046f8c0(void);
+CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_0046f8c0(void);
 CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0046f8f0(CActorDestination *this_ptr);
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0046f900(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0046f970(CActorDestination *this_ptr);

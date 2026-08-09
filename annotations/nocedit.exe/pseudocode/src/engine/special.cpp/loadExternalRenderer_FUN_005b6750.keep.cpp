@@ -436,7 +436,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof7 = 0x28;
       iVar3 = (*g_APIDLL_init)(HVar1,&CStack_9c);
       if (iVar3 != 0) {
-        engine_special_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
+        engine_special_cpp_selectCard_FUN_005b7d90(g_RendererCardIndex);
         return 1;
       }
       g_UseDirect3D = iVar3;

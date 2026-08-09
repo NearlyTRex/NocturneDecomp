@@ -21,7 +21,7 @@
     {
       "addr": "005b8120",
       "from_addr": "005b812f",
-      "name": "engine_special.cpp_CExternalRenderer_switchRenderer_FUN_005b8120",
+      "name": "engine_special.cpp_switchRenderer_FUN_005b8120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_switchRenderer_FUN_005b8140",
-    "signature": "int __cdecl engine_special_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int renderer_handle)"
+    "signature": "int __cdecl engine_special_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,int card_index)"
   },
   "function_calls": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "addr": "03f6b87c",
-      "name": "g_RendererHandle",
+      "name": "g_RendererCardIndex",
       "type": "int",
       "value": null
     },
@@ -93,7 +93,7 @@
       {
         "call_addr": "005b812f",
         "call_type": "direct",
-        "caller": "engine_special.cpp_CExternalRenderer_switchRenderer_FUN_005b8120",
+        "caller": "engine_special.cpp_switchRenderer_FUN_005b8120",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -159,7 +159,7 @@
       },
       {
         "is_param": true,
-        "name": "renderer_handle",
+        "name": "card_index",
         "offset": 8,
         "size": 4,
         "type": "int"

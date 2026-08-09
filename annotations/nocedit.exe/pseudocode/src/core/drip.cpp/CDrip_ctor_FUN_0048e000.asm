@@ -7,7 +7,7 @@
 ; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_drip.cpp_factoryFunc_FUN_0048dfc0 at 0048dfda
+;   core_drip.cpp_factoryFuncDrip_FUN_0048dfc0 at 0048dfda
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stalag_kfm_00622216

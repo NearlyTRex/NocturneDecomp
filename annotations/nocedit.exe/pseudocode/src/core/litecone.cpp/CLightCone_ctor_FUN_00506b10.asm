@@ -7,7 +7,7 @@
 ; CLightCone *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_litecone.cpp_factoryFunc_FUN_00506ad0 at 00506aea
+;   core_litecone.cpp_factoryFuncLightCone_FUN_00506ad0 at 00506aea
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00631556

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004e0332
-;   core_gasmask.cpp_factoryFunc_FUN_004e5cc0 at 004e5cda
+;   core_gasmask.cpp_factoryFuncGasMask_FUN_004e5cc0 at 004e5cda
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gasmask_kfm_0062daa9

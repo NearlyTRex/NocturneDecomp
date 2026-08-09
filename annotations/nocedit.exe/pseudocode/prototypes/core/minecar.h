@@ -7,9 +7,9 @@
 // Address: 00520e20
 void __cdecl staticInit(void);
 
-// Original: core_minecar.cpp_factoryFunc_FUN_00520e50
+// Original: core_minecar.cpp_factoryFuncMineCar_FUN_00520e50
 // Address: 00520e50
-CMineCar * __cdecl factoryFunc(void);
+CMineCar * __cdecl factoryFuncMineCar(void);
 
 // Original: core_minecar.cpp_CMinecar_getActorType_FUN_00520e80
 // Address: 00520e80

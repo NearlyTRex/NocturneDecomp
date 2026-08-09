@@ -7,7 +7,7 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tentacle.cpp_factoryFunc_FUN_005daf20 at 005daf3a
+;   core_tentacle.cpp_factoryFuncTentacle_FUN_005daf20 at 005daf3a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tentacle_dfm_00654db3

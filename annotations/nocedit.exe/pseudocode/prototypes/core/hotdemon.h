@@ -7,9 +7,9 @@
 // Address: 004f6c30
 void __cdecl staticInit(void);
 
-// Original: core_hotdemon.cpp_factoryFunc_FUN_004f6c60
+// Original: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004f6c60
 // Address: 004f6c60
-CHotDemon * __cdecl factoryFunc(void);
+CHotDemon * __cdecl factoryFuncHotDemon(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004f6c90
 // Address: 004f6c90

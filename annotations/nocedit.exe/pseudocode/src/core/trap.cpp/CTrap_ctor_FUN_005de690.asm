@@ -7,7 +7,7 @@
 ; CTrap *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_trap.cpp_factoryFunc_FUN_005de650 at 005de66a
+;   core_trap.cpp_factoryFuncTrap_FUN_005de650 at 005de66a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_beartrap_kfm_0065552c

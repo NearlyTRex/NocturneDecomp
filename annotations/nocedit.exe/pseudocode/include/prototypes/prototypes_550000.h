@@ -120,7 +120,7 @@ void ** __cdecl shape_quantize_cpp_CBitmap_getRowTable_FUN_00556dd0(CBitmap *thi
 void * __cdecl shape_quantize_cpp_CBitmap_getPalette_FUN_00556de0(CBitmap *this_ptr);
 int __cdecl shape_quantize_cpp_getAbsoluteValue_FUN_00556df0(int value);
 void __cdecl core_scat_cpp_staticInit_FUN_00556e00(void);
-CScat * __cdecl core_scat_cpp_factoryFunc_FUN_00556e90(void);
+CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_00556e90(void);
 CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_00556ec0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_setup_FUN_00556f90(CScat *this_ptr);

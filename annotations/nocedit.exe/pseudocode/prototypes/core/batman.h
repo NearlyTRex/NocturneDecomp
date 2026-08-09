@@ -7,9 +7,9 @@
 // Address: 004163e0
 void __cdecl staticInit(void);
 
-// Original: core_batman.cpp_factoryFunc_FUN_00416410
+// Original: core_batman.cpp_factoryFuncBatman_FUN_00416410
 // Address: 00416410
-CBatman * __cdecl factoryFunc(void);
+CBatman * __cdecl factoryFuncBatman(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_00416440
 // Address: 00416440

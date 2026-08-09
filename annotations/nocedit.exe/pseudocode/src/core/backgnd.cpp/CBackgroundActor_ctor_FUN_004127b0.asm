@@ -7,7 +7,7 @@
 ; CBackgroundActor * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_backgnd.cpp_factoryFunc_FUN_00412770 at 0041278a
+;   core_backgnd.cpp_factoryFuncBackgroundActor_FUN_00412770 at 0041278a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_candle_kfm_00614e53

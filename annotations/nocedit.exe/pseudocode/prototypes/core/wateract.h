@@ -7,9 +7,9 @@
 // Address: 005ea810
 void __cdecl staticInit(void);
 
-// Original: core_wateract.cpp_factoryFunc_FUN_005ea860
+// Original: core_wateract.cpp_factoryFuncWaterActor_FUN_005ea860
 // Address: 005ea860
-CWaterActor * __cdecl factoryFunc(void);
+CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_005ea890
 // Address: 005ea890

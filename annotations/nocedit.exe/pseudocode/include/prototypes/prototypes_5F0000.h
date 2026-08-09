@@ -165,7 +165,7 @@ float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005f8cc0(CDemonActor *act
 CVector3f * __cdecl core_zombie_cpp_getObjectGrabPointLocal_FUN_005f8d30(CVector3f *out_point,CDemonActor *actor);
 CVector3f * __cdecl core_zombie_cpp_getObjectGrabPointWorld_FUN_005f8da0(CVector3f *out_point,CDemonActor *actor);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_005f8e50(CVector3f *dimensions);
-CZombie * __cdecl core_zombie_cpp_factoryFunc_FUN_005f8fa0(void);
+CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005f8fa0(void);
 CDemonActorType * __cdecl core_zombie_cpp_CZombie_getActorType_FUN_005f8fd0(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr);

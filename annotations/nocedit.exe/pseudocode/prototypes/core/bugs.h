@@ -7,9 +7,9 @@
 // Address: 00424c40
 void __cdecl staticInit(void);
 
-// Original: core_bugs.cpp_factoryFunc_FUN_00424c70
+// Original: core_bugs.cpp_factoryFuncBugs_FUN_00424c70
 // Address: 00424c70
-CBugs * __cdecl factoryFunc(void);
+CBugs * __cdecl factoryFuncBugs(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_00424ca0
 // Address: 00424ca0

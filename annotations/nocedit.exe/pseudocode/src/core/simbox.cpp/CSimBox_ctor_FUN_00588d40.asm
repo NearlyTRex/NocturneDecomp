@@ -7,7 +7,7 @@
 ; CSimBox *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_simbox.cpp_factoryFunc_FUN_00588d00 at 00588d1a
+;   core_simbox.cpp_factoryFuncSimBox_FUN_00588d00 at 00588d1a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00649bed

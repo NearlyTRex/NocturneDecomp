@@ -7,9 +7,9 @@
 // Address: 004d16b0
 void __cdecl staticInit(void);
 
-// Original: core_frankgen.cpp_factoryFunc_FUN_004d16e0
+// Original: core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004d16e0
 // Address: 004d16e0
-CFrankenstienMachine * __cdecl factoryFunc(void);
+CFrankenstienMachine * __cdecl factoryFuncFrankenstienMachine(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getActorType_FUN_004d1710
 // Address: 004d1710

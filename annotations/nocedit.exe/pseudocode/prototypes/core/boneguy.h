@@ -15,9 +15,9 @@ CVector3f * __cdecl getLocalBoundingBoxCenter(CVector3f *out,CDemonActor *actor)
 // Address: 0041b770
 CVector3f * __cdecl getWorldBoundingBoxCenter(CVector3f *out,CDemonActor *actor);
 
-// Original: core_boneguy.cpp_factoryFunc_FUN_0041b820
+// Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_0041b820
 // Address: 0041b820
-CBoneGuy * __cdecl factoryFunc(void);
+CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_0041b850
 // Address: 0041b850

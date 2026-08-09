@@ -10,7 +10,8 @@ void __cdecl core_conveyor_cpp_staticInit_FUN_00441c30(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CConveyorClassInfo,"CConveyor",core_conveyor_cpp_factoryFunc_FUN_00441c60,
-             &g_CConveyorClassVersion,2,&g_CPlatformClassInfo);
+            (&g_CConveyorClassInfo,"CConveyor",
+             core_conveyor_cpp_factoryFuncConveyor_FUN_00441c60,&g_CConveyorClassVersion,2,
+             &g_CPlatformClassInfo);
   return;
 }

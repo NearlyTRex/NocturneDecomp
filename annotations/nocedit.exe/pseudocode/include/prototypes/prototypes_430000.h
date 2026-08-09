@@ -230,7 +230,7 @@ int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZW
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint flags);
 void __cdecl core_colonel_cpp_staticInit_FUN_0043f770(void);
-CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void);
+CColonel * __cdecl core_colonel_cpp_factoryFuncColonel_FUN_0043f7a0(void);
 CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_0043f7d0(CColonel *this_ptr);
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_setup_FUN_0043f850(CColonel *this_ptr);

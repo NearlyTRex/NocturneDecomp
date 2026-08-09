@@ -462,7 +462,7 @@ extern int g_SoundAmbientSfxHandle;
 extern int g_SoundAudioInitialized;
 extern int g_TrainLastCameraIndex;
 extern int g_UseDirect3D;
-extern int g_RendererHandle;
+extern int g_RendererCardIndex;
 extern int g_AGPTextureMode;
 extern int g_FrameBufferTestResult;
 extern int g_LoadedExternalDLLRenderer;

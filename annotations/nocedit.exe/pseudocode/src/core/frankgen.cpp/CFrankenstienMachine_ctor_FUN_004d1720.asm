@@ -7,7 +7,7 @@
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_frankgen.cpp_factoryFunc_FUN_004d16e0 at 004d16fa
+;   core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004d16e0 at 004d16fa
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CFrankenstienMachineVTable

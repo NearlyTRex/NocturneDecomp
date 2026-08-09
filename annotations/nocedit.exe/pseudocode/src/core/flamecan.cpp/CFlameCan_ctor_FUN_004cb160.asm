@@ -7,7 +7,7 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_flamecan.cpp_factoryFunc_FUN_004cb120 at 004cb13a
+;   core_flamecan.cpp_factoryFuncFlameCan_FUN_004cb120 at 004cb13a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_0062a2c7

@@ -94,7 +94,7 @@ int __cdecl core_setutil_cpp_calculateVertexIndex_FUN_00587b30(int row_index,int
 void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight *this_ptr);
 int __cdecl core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(C3DSLight *this_ptr);
 void __cdecl core_shotgun_cpp_staticInit_FUN_00587e70(void);
-CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00587ea0(void);
+CShotgun * __cdecl core_shotgun_cpp_factoryFuncShotgun_FUN_00587ea0(void);
 CDemonActorType * __cdecl core_shotgun_cpp_CShotgun_getActorType_FUN_00587ed0(CShotgun *this_ptr);
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_00587ee0(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,float delta_time);
@@ -104,7 +104,7 @@ float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_005888b0(CShotgun *this_pt
 void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0(CShotgun *this_ptr);
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00588ae0(CShotgun *this_ptr,uint flags);
 void __cdecl core_shovel_cpp_staticInit_FUN_00588b30(void);
-CShovel * __cdecl core_shovel_cpp_factoryFunc_FUN_00588b60(void);
+CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_00588b60(void);
 CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00588b90(CShovel *this_ptr);
 CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00588ba0(CShovel *this_ptr);
 int __cdecl core_shovel_cpp_CShovel_fire_FUN_00588c20(CShovel *this_ptr);
@@ -112,7 +112,7 @@ float __cdecl core_shovel_cpp_CShovel_getDamage_FUN_00588c40(CShovel *this_ptr);
 void __cdecl core_shovel_cpp_CShovel_fireProjectile_FUN_00588c70(CShovel *this_ptr);
 CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00588c80(CShovel *this_ptr,uint flags);
 void __cdecl core_simbox_cpp_staticInit_FUN_00588cd0(void);
-CSimBox * __cdecl core_simbox_cpp_factoryFunc_FUN_00588d00(void);
+CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00588d00(void);
 CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00588d30(CSimBox *this_ptr);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_00588d40(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00588e00(CSimBox *this_ptr);

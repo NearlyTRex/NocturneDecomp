@@ -7,7 +7,7 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crossbow.cpp_factoryFunc_FUN_00448c30 at 00448c4a
+;   core_crossbow.cpp_factoryFuncCrossbow_FUN_00448c30 at 00448c4a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_crossbow_kfm_00619b79

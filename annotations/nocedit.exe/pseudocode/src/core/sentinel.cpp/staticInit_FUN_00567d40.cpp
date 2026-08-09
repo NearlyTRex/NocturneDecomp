@@ -10,7 +10,8 @@ void __cdecl core_sentinel_cpp_staticInit_FUN_00567d40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CSentinelClassInfo,"CSentinel",core_sentinel_cpp_factoryFunc_FUN_00567d70,
-             &g_CSentinelClassVersion,2,&g_CEnemyClassInfo);
+            (&g_CSentinelClassInfo,"CSentinel",
+             core_sentinel_cpp_factoryFuncSentinel_FUN_00567d70,&g_CSentinelClassVersion,2,
+             &g_CEnemyClassInfo);
   return;
 }

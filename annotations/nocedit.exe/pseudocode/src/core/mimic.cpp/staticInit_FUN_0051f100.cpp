@@ -10,7 +10,7 @@ void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CMimicClassInfo,"CMimic",core_mimic_cpp_factoryFunc_FUN_0051f190,
+            (&g_CMimicClassInfo,"CMimic",core_mimic_cpp_factoryFuncMimic_FUN_0051f190,
              &g_CMimicClassVersion,3,&g_CEnemyClassInfo);
   return;
 }

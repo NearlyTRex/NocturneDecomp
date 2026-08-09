@@ -7,9 +7,9 @@
 // Address: 0047fa60
 void __cdecl staticInit(void);
 
-// Original: core_door.cpp_factoryFunc_FUN_0047fa90
+// Original: core_door.cpp_factoryFuncDoor_FUN_0047fa90
 // Address: 0047fa90
-CDoor * __cdecl factoryFunc(void);
+CDoor * __cdecl factoryFuncDoor(void);
 
 // Original: core_door.cpp_CDoor_getActorType_FUN_0047fac0
 // Address: 0047fac0

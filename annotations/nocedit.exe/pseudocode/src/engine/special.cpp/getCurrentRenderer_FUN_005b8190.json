@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_getCurrentRenderer_FUN_005b8190",
-    "signature": "char * __cdecl engine_special_cpp_getCurrentRenderer_FUN_005b8190(int *renderer_handle)"
+    "signature": "char * __cdecl engine_special_cpp_getCurrentRenderer_FUN_005b8190(int *card_index_out)"
   },
   "function_calls": [],
   "globals": [
@@ -40,7 +40,7 @@
     },
     {
       "addr": "03f6b87c",
-      "name": "g_RendererHandle",
+      "name": "g_RendererCardIndex",
       "type": "int",
       "value": null
     }
@@ -75,7 +75,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "renderer_handle",
+        "name": "card_index_out",
         "offset": 4,
         "size": 4,
         "type": "int *"

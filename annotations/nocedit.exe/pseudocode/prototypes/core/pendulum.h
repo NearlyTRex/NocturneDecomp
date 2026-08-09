@@ -7,9 +7,9 @@
 // Address: 00549320
 void __cdecl staticInit(void);
 
-// Original: core_pendulum.cpp_factoryFunc_FUN_00549350
+// Original: core_pendulum.cpp_factoryFuncPendulum_FUN_00549350
 // Address: 00549350
-CPendulum * __cdecl factoryFunc(void);
+CPendulum * __cdecl factoryFuncPendulum(void);
 
 // Original: core_pendulum.cpp_CPendulum_getActorType_FUN_00549380
 // Address: 00549380

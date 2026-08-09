@@ -7,9 +7,9 @@
 // Address: 004f1d60
 void __cdecl staticInit(void);
 
-// Original: core_health.cpp_factoryFunc_FUN_004f1d90
+// Original: core_health.cpp_factoryFuncHealthItem_FUN_004f1d90
 // Address: 004f1d90
-CHealthItem * __cdecl factoryFunc(void);
+CHealthItem * __cdecl factoryFuncHealthItem(void);
 
 // Original: core_health.cpp_CHealthItem_getActorType_FUN_004f1dc0
 // Address: 004f1dc0

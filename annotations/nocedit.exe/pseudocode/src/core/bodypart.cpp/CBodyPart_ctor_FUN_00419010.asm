@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10 at 00418f19
-;   core_bodypart.cpp_factoryFunc_FUN_00418fd0 at 00418fea
+;   core_bodypart.cpp_factoryFuncBodyPart_FUN_00418fd0 at 00418fea
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBodyPartVTable

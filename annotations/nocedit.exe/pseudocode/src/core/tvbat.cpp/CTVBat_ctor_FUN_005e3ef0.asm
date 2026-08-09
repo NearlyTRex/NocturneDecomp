@@ -7,7 +7,7 @@
 ; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tvbat.cpp_factoryFunc_FUN_005e3e80 at 005e3e9a
+;   core_tvbat.cpp_factoryFuncTVBat_FUN_005e3e80 at 005e3e9a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bat_kfm_0065689b

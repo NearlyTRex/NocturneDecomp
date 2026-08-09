@@ -10,7 +10,7 @@ void __cdecl core_flies_cpp_staticInit_FUN_004cbcf0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CFliesClassInfo,"CFlies",core_flies_cpp_factoryFunc_FUN_004cbd20,
+            (&g_CFliesClassInfo,"CFlies",core_flies_cpp_factoryFuncFlies_FUN_004cbd20,
              &g_CFliesClassVersion,3,&g_CDemonActorClassInfo);
   return;
 }

@@ -7,9 +7,9 @@
 // Address: 00423700
 void __cdecl staticInit(void);
 
-// Original: core_bride.cpp_factoryFunc_FUN_00423760
+// Original: core_bride.cpp_factoryFuncBride_FUN_00423760
 // Address: 00423760
-CBride * __cdecl factoryFunc(void);
+CBride * __cdecl factoryFuncBride(void);
 
 // Original: core_bride.cpp_CBride_getActorType_FUN_00423790
 // Address: 00423790

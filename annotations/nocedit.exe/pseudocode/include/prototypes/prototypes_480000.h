@@ -123,7 +123,7 @@ SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanlin
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_indices,int vertex_count);
 void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void);
-CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void);
+CDraculaBride * __cdecl core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00483f80(void);
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483fb0(CDraculaBride *this_ptr);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_004840b0(CDraculaBride *this_ptr);
@@ -331,7 +331,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRende
 void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state);
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer *this_ptr,SCameraViewportState *output_state);
 void __cdecl core_drip_cpp_staticInit_FUN_0048df80(void);
-CDrip * __cdecl core_drip_cpp_factoryFunc_FUN_0048dfc0(void);
+CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_0048dfc0(void);
 CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0048dff0(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_setup_FUN_0048e0e0(CDrip *this_ptr);
@@ -348,7 +348,7 @@ void __cdecl core_drip_cpp_CDrip_processInEditor_FUN_0048ea30(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_addFilesToExtract_FUN_0048ea60(CDrip *this_ptr,_FILE *file_handle);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0048ea90(CDrip *this_ptr,uint flags);
 void __cdecl core_drone_cpp_staticInit_FUN_0048eae0(void);
-CDrone * __cdecl core_drone_cpp_factoryFunc_FUN_0048eb10(void);
+CDrone * __cdecl core_drone_cpp_factoryFuncDrone_FUN_0048eb10(void);
 CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_0048eb40(CDrone *this_ptr);
 CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr);
 void __cdecl core_drone_cpp_CDrone_setup_FUN_0048ebc0(CDrone *this_ptr);

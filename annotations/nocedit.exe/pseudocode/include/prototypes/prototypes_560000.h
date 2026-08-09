@@ -106,7 +106,7 @@ void __cdecl core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript
 CVector3f * __cdecl core_script_cpp_makeVector_FUN_00567d00(CVector3f *out,float x,float y,float z);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_00567d30(CDeformableModel *model_ptr);
 void __cdecl core_sentinel_cpp_staticInit_FUN_00567d40(void);
-CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_00567d70(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_00567d70(void);
 CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_00567da0(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00567e20(CSentinel *this_ptr);

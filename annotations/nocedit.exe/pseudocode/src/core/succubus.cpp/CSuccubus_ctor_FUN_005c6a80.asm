@@ -7,7 +7,7 @@
 ; CSuccubus *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_succubus.cpp_factoryFunc_FUN_005c6a40 at 005c6a5a
+;   core_succubus.cpp_factoryFuncSuccubus_FUN_005c6a40 at 005c6a5a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_succubus_dfm_00653fd8

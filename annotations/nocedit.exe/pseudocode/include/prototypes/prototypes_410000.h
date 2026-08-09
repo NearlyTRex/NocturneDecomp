@@ -79,7 +79,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(CAlphaBitmap *t
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap *this_ptr);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_00410d20(CAlphaBitmap *this_ptr);
 void __cdecl core_ammo_cpp_staticInit_FUN_00410d50(void);
-CAmmo * __cdecl core_ammo_cpp_factoryFunc_FUN_00410d80(void);
+CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_00410d80(void);
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_00410db0(CAmmo *this_ptr);
 CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(CAmmo *this_ptr);
 void __cdecl core_ammo_cpp_CAmmo_setup_FUN_00410e50(CAmmo *this_ptr);
@@ -97,7 +97,7 @@ void __cdecl core_ammo_cpp_CAmmo_getPropertyList_FUN_00411360(CAmmo *this_ptr,CA
 void __cdecl core_ammo_cpp_CAmmo_addFilesToExtract_FUN_004113e0(CAmmo *this_ptr,_FILE *file_handle);
 CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_004114e0(CAmmo *this_ptr,uint flags);
 void __cdecl core_ammobox_cpp_staticInit_FUN_00411530(void);
-CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_00411560(void);
+CAmmoBox * __cdecl core_ammobox_cpp_factoryFuncAmmoBox_FUN_00411560(void);
 CDemonActorType * __cdecl core_ammobox_cpp_CAmmoBox_getActorType_FUN_00411590(CAmmoBox *this_ptr);
 CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_ptr);
 void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_00411650(CAmmoBox *this_ptr);
@@ -115,7 +115,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *th
 void __cdecl core_ammobox_cpp_CAmmoBox_addFilesToExtract_FUN_00411c00(CAmmoBox *this_ptr,_FILE *file_handle);
 CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_dtor_FUN_00411c20(CAmmoBox *this_ptr,uint flags);
 void __cdecl core_anvil_cpp_staticInit_FUN_00411c70(void);
-CAnvil * __cdecl core_anvil_cpp_factoryFunc_FUN_00411ca0(void);
+CAnvil * __cdecl core_anvil_cpp_factoryFuncAnvil_FUN_00411ca0(void);
 CDemonActorType * __cdecl core_anvil_cpp_CAnvil_getActorType_FUN_00411cd0(CAnvil *this_ptr);
 CAnvil * __cdecl core_anvil_cpp_CAnvil_ctor_FUN_00411ce0(CAnvil *this_ptr);
 void __cdecl core_anvil_cpp_CAnvil_setup_FUN_00411d70(CAnvil *this_ptr);
@@ -128,7 +128,7 @@ void __cdecl core_anvil_cpp_CAnvil_getPropertyList_FUN_00412030(CAnvil *this_ptr
 void __cdecl core_anvil_cpp_CAnvil_addFilesToExtract_FUN_00412090(CAnvil *this_ptr,_FILE *file_handle);
 CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_004120e0(CAnvil *this_ptr,uint flags);
 void __cdecl core_armour_cpp_staticInit_FUN_00412130(void);
-CArmour * __cdecl core_armour_cpp_factoryFunc_FUN_00412160(void);
+CArmour * __cdecl core_armour_cpp_factoryFuncArmour_FUN_00412160(void);
 CDemonActorType * __cdecl core_armour_cpp_CArmour_getActorType_FUN_00412190(CArmour *this_ptr);
 CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr);
 void __cdecl core_armour_cpp_CArmour_setup_FUN_00412240(CArmour *this_ptr);
@@ -147,7 +147,7 @@ CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f *ob
 SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_00412700(SFire *objs,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *objs,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_00412740(void);
-CBackgroundActor * __cdecl core_backgnd_cpp_factoryFunc_FUN_00412770(void);
+CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_00412770(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_004127a0(CBackgroundActor *this_ptr);
 CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor *this_ptr);
 int __cdecl core_backgnd_cpp_CBackgroundActor_setup_FUN_00412810(CBackgroundActor *this_ptr);
@@ -196,7 +196,7 @@ ECollisionType __cdecl core_baron_cpp_CBaron_getCollisionType_FUN_004140a0(CBaro
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint flags);
 CBaron * __cdecl core_baron_cpp_CBaron_dtor_FUN_00414100(CBaron *this_ptr,uint flags);
 void __cdecl core_barrier_cpp_staticInit_FUN_00414150(void);
-CBarrier * __cdecl core_barrier_cpp_factoryFunc_FUN_00414180(void);
+CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_00414180(void);
 CDemonActorType * __cdecl core_barrier_cpp_CBarrier_getActorType_FUN_004141b0(CBarrier *this_ptr);
 CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_004141c0(CBarrier *this_ptr);
 void __cdecl core_barrier_cpp_CBarrier_setup_FUN_00414210(CBarrier *this_ptr);
@@ -211,7 +211,7 @@ void __cdecl core_barrier_cpp_CBarrier_showEditorHelp_FUN_00414610(CBarrier *thi
 CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_00414670(CBarrier *this_ptr,uint flags);
 void __cdecl core_bat_cpp_staticInit_FUN_004146c0(void);
 float __cdecl core_bat_cpp_fmodfPositive_FUN_004146f0(float value,float modulus);
-CBat * __cdecl core_bat_cpp_factoryFunc_FUN_00414790(void);
+CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_00414790(void);
 CDemonActorType * __cdecl core_bat_cpp_CBat_getActorType_FUN_004147c0(CBat *this_ptr);
 CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_004147d0(CBat *this_ptr);
 void __cdecl core_bat_cpp_CBat_setup_FUN_004148a0(CBat *this_ptr);
@@ -226,7 +226,7 @@ void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr);
 void __cdecl core_bat_cpp_CBat_showEditorHelp_FUN_00414fb0(CBat *this_ptr,int *y_pos);
 CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00414fe0(CBat *this_ptr,uint flags);
 void __cdecl core_batcreat_cpp_staticInit_FUN_00415080(void);
-CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004150b0(void);
+CBatCreature * __cdecl core_batcreat_cpp_factoryFuncBatCreature_FUN_004150b0(void);
 CDemonActorType * __cdecl core_batcreat_cpp_CBatCreature_getActorType_FUN_004150e0(CBatCreature *this_ptr);
 CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCreature *this_ptr);
 void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00415150(CBatCreature *this_ptr);
@@ -240,7 +240,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_getPropertyList_FUN_004162b0(CBatCre
 void __cdecl core_batcreat_cpp_CBatCreature_addFilesToExtract_FUN_004162f0(CBatCreature *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00416320(CBatCreature *this_ptr,uint flags);
 void __cdecl core_batman_cpp_staticInit_FUN_004163e0(void);
-CBatman * __cdecl core_batman_cpp_factoryFunc_FUN_00416410(void);
+CBatman * __cdecl core_batman_cpp_factoryFuncBatman_FUN_00416410(void);
 CDemonActorType * __cdecl core_batman_cpp_CBatman_getActorType_FUN_00416440(CBatman *this_ptr);
 CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr);
 void __cdecl core_batman_cpp_CBatman_setup_FUN_00416510(CBatman *this_ptr);
@@ -256,7 +256,7 @@ void __cdecl core_batman_cpp_CBatman_getPropertyList_FUN_00417cd0(CBatman *this_
 void __cdecl core_batman_cpp_CBatman_addFilesToExtract_FUN_00417d30(CBatman *this_ptr,_FILE *file_handle);
 CBatman * __cdecl core_batman_cpp_CBatman_dtor_FUN_00417d60(CBatman *this_ptr,uint flags);
 void __cdecl core_battery_cpp_staticInit_FUN_00417e20(void);
-CBattery * __cdecl core_battery_cpp_factoryFunc_FUN_00417e50(void);
+CBattery * __cdecl core_battery_cpp_factoryFuncBattery_FUN_00417e50(void);
 CDemonActorType * __cdecl core_battery_cpp_CBattery_getActorType_FUN_00417e80(CBattery *this_ptr);
 CBattery * __cdecl core_battery_cpp_CBattery_ctor_FUN_00417e90(CBattery *this_ptr);
 void __cdecl core_battery_cpp_CBattery_setup_FUN_00417ef0(CBattery *this_ptr);
@@ -273,7 +273,7 @@ void __cdecl core_battery_cpp_CBattery_getPropertyList_FUN_004180b0(CBattery *th
 void __cdecl core_battery_cpp_CBattery_addFilesToExtract_FUN_00418110(CBattery *this_ptr,_FILE *file_handle);
 CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00418160(CBattery *this_ptr,uint flags);
 void __cdecl core_beast_cpp_staticInit_FUN_004181b0(void);
-CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_004181e0(void);
+CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004181e0(void);
 CDemonActorType * __cdecl core_beast_cpp_CBeast_getActorType_FUN_00418210(CBeast *this_ptr);
 CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00418220(CBeast *this_ptr);
 void __cdecl core_beast_cpp_CBeast_setup_FUN_00418280(CBeast *this_ptr);
@@ -287,7 +287,7 @@ void __cdecl core_beast_cpp_CBeast_getPropertyList_FUN_00418420(CBeast *this_ptr
 void __cdecl core_beast_cpp_CBeast_addFilesToExtract_FUN_00418460(CBeast *this_ptr,_FILE *file_handle);
 CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00418490(CBeast *this_ptr,uint flags);
 void __cdecl core_biggs_cpp_staticInit_FUN_00418550(void);
-CBiggs * __cdecl core_biggs_cpp_factoryFunc_FUN_00418580(void);
+CBiggs * __cdecl core_biggs_cpp_factoryFuncBiggs_FUN_00418580(void);
 CDemonActorType * __cdecl core_biggs_cpp_CBiggs_getActorType_FUN_004185b0(CBiggs *this_ptr);
 CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr);
 void __cdecl core_biggs_cpp_CBiggs_setup_FUN_00418680(CBiggs *this_ptr);
@@ -302,7 +302,7 @@ void __cdecl core_biggs_cpp_CBiggs_addFilesToExtract_FUN_00418ce0(CBiggs *this_p
 CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint flags);
 void __cdecl core_bodypart_cpp_staticInit_FUN_00418de0(void);
 CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type);
-CBodyPart * __cdecl core_bodypart_cpp_factoryFunc_FUN_00418fd0(void);
+CBodyPart * __cdecl core_bodypart_cpp_factoryFuncBodyPart_FUN_00418fd0(void);
 CDemonActorType * __cdecl core_bodypart_cpp_CBodyPart_getActorType_FUN_00419000(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(CBodyPart *this_ptr);
 CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00419130(CBodyPart *this_ptr,uint flags);
@@ -348,7 +348,7 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_0041b6b0(SBo
 void __cdecl core_boneguy_cpp_staticInit_FUN_0041b6d0(void);
 CVector3f * __cdecl core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_0041b700(CVector3f *out,CDemonActor *actor);
 CVector3f * __cdecl core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b770(CVector3f *out,CDemonActor *actor);
-CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_0041b820(void);
+CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_0041b820(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_0041b850(CBoneGuy *this_ptr);
 CColor3f * __cdecl core_boneguy_cpp_rgbToHsv_FUN_0041b860(CColor3f *out_hsv,CColor3f *in_rgb);
 CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CColor3f *in_hsv);

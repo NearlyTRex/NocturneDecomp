@@ -44,14 +44,14 @@
 // =============================================================================
 
 void __cdecl core_gun_cpp_staticInit_FUN_004f0280(void);
-CGun * __cdecl core_gun_cpp_factoryFunc_FUN_004f02b0(void);
+CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004f02b0(void);
 CDemonActorType * __cdecl core_gun_cpp_CGun_getActorType_FUN_004f02e0(CGun *this_ptr);
 CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004f02f0(CGun *this_ptr);
 int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr);
 float __cdecl core_gun_cpp_CGun_getDamage_FUN_004f0b20(CGun *this_ptr);
 CGun * __cdecl core_gun_cpp_CGun_dtor_FUN_004f0b50(CGun *this_ptr,uint flags);
 void __cdecl core_haystack_cpp_staticInit_FUN_004f0ba0(void);
-CHaystack * __cdecl core_haystack_cpp_factoryFunc_FUN_004f0bd0(void);
+CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004f0bd0(void);
 CDemonActorType * __cdecl core_haystack_cpp_CHaystack_getActorType_FUN_004f0c00(CHaystack *this_ptr);
 CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004f0c10(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004f0c80(CHaystack *this_ptr);
@@ -69,7 +69,7 @@ void __cdecl core_haystack_cpp_CHaystack_getPropertyList_FUN_004f1cd0(CHaystack 
 void __cdecl core_haystack_cpp_CHaystack_addFilesToExtract_FUN_004f1cf0(CHaystack *this_ptr,_FILE *file_handle);
 CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004f1d10(CHaystack *this_ptr,uint flags);
 void __cdecl core_health_cpp_staticInit_FUN_004f1d60(void);
-CHealthItem * __cdecl core_health_cpp_factoryFunc_FUN_004f1d90(void);
+CHealthItem * __cdecl core_health_cpp_factoryFuncHealthItem_FUN_004f1d90(void);
 CDemonActorType * __cdecl core_health_cpp_CHealthItem_getActorType_FUN_004f1dc0(CHealthItem *this_ptr);
 CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004f1dd0(CHealthItem *this_ptr);
 void __cdecl core_health_cpp_CHealthItem_setup_FUN_004f1e30(CHealthItem *this_ptr);
@@ -147,7 +147,7 @@ void __cdecl core_hiram_cpp_CHiram_getPropertyList_FUN_004f46a0(CHiram *this_ptr
 void __cdecl core_hiram_cpp_CHiram_addFilesToExtract_FUN_004f46e0(CHiram *this_ptr,_FILE *file_handle);
 CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_004f4700(CNPC *this_ptr,uint flags);
 void __cdecl core_hostage_cpp_staticInit_FUN_004f47d0(void);
-CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void);
+CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004f4800(void);
 CDemonActorType * __cdecl core_hostage_cpp_CHostage_getActorType_FUN_004f4830(CHostage *this_ptr);
 CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_ptr);
 void __cdecl core_hostage_cpp_CHostage_setup_FUN_004f4970(CHostage *this_ptr);
@@ -165,7 +165,7 @@ void __cdecl core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0(CHostage *th
 void __cdecl core_hostage_cpp_CHostage_addFilesToExtract_FUN_004f6b30(CHostage *this_ptr,_FILE *file_handle);
 CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004f6b60(CHostage *this_ptr,uint flags);
 void __cdecl core_hotdemon_cpp_staticInit_FUN_004f6c30(void);
-CHotDemon * __cdecl core_hotdemon_cpp_factoryFunc_FUN_004f6c60(void);
+CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004f6c60(void);
 CDemonActorType * __cdecl core_hotdemon_cpp_CHotDemon_getActorType_FUN_004f6c90(CHotDemon *this_ptr);
 CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004f6d00(CHotDemon *this_ptr);
@@ -179,7 +179,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon 
 void __cdecl core_hotdemon_cpp_CHotDemon_addFilesToExtract_FUN_004f7a10(CHotDemon *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags);
 void __cdecl core_hpriest_cpp_staticInit_FUN_004f7b00(void);
-CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004f7b30(void);
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f7b30(void);
 CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004f7b60(CHighPriestOfGardath *this_ptr);
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f7b70(CHighPriestOfGardath *this_ptr);
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f7bd0(CHighPriestOfGardath *this_ptr);
@@ -188,7 +188,7 @@ void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004f7c50(CH
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_getPropertyList_FUN_004f7c70(CHighPriestOfGardath *this_ptr,CActorPropertyList *property_list);
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0(CHighPriestOfGardath *this_ptr,uint flags);
 void __cdecl core_icepick_cpp_staticInit_FUN_004f7d80(void);
-CIcePick * __cdecl core_icepick_cpp_factoryFunc_FUN_004f7db0(void);
+CIcePick * __cdecl core_icepick_cpp_factoryFuncIcePick_FUN_004f7db0(void);
 CDemonActorType * __cdecl core_icepick_cpp_CIcePick_getActorType_FUN_004f7de0(CIcePick *this_ptr);
 CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f7df0(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr);
@@ -211,7 +211,7 @@ void __cdecl core_icepick_cpp_CIcePick_getPropertyList_FUN_004f97a0(CIcePick *th
 void __cdecl core_icepick_cpp_CIcePick_addFilesToExtract_FUN_004f97c0(CIcePick *this_ptr,_FILE *file_handle);
 CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f97e0(CIcePick *this_ptr,uint flags);
 void __cdecl core_imp_cpp_staticInit_FUN_004f9830(void);
-CImp * __cdecl core_imp_cpp_factoryFunc_FUN_004f9860(void);
+CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004f9860(void);
 CDemonActorType * __cdecl core_imp_cpp_CImp_getActorType_FUN_004f9890(CImp *this_ptr);
 CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr);

@@ -9,7 +9,7 @@
 ; undefined4[3]    Stack[-0xc]:12  local_c
 ;
 ; XREF[2]:
-;   core_flies.cpp_factoryFunc_FUN_004cbd20 at 004cbd3a
+;   core_flies.cpp_factoryFuncFlies_FUN_004cbd20 at 004cbd3a
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004edf30 at 004ee015
 ;
 ; Referenced Globals:

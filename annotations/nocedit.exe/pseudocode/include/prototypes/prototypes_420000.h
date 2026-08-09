@@ -115,7 +115,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActo
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *this_ptr,uint flags);
 CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor_FUN_004236e0(CDemonFilter *objs,uint flags);
 void __cdecl core_bride_cpp_staticInit_FUN_00423700(void);
-CBride * __cdecl core_bride_cpp_factoryFunc_FUN_00423760(void);
+CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_00423760(void);
 CDemonActorType * __cdecl core_bride_cpp_CBride_getActorType_FUN_00423790(CBride *this_ptr);
 CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004237a0(CBride *this_ptr);
 void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr);
@@ -129,7 +129,7 @@ void __cdecl core_bride_cpp_CBride_getPropertyList_FUN_00424b10(CBride *this_ptr
 void __cdecl core_bride_cpp_CBride_addFilesToExtract_FUN_00424b50(CBride *this_ptr,_FILE *file_handle);
 CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_00424b80(CBride *this_ptr,uint flags);
 void __cdecl core_bugs_cpp_staticInit_FUN_00424c40(void);
-CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void);
+CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_00424c70(void);
 CDemonActorType * __cdecl core_bugs_cpp_CBugs_getActorType_FUN_00424ca0(CBugs *this_ptr);
 CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr);
@@ -288,7 +288,7 @@ float * __cdecl core_charactr_cpp_copyFloat1_FUN_0042fae0(float *dst,float *src)
 float * __cdecl core_charactr_cpp_copyFloat2_FUN_0042faf0(float *dst,float *src);
 float * __cdecl core_charactr_cpp_copyFloat3_FUN_0042fb00(float *dst,float *src);
 void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void);
-CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void);
+CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_0042fb40(void);
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042fb70(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042fb80(CChain *this_ptr);
 CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0(CChain *this_ptr,CVector3f *out_point);

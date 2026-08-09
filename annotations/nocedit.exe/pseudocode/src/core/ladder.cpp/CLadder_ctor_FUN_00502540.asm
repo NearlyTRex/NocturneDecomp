@@ -7,7 +7,7 @@
 ; CLadder *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ladder.cpp_factoryFunc_FUN_00502500 at 0050251a
+;   core_ladder.cpp_factoryFuncLadder_FUN_00502500 at 0050251a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_null_kfm_00630e0b

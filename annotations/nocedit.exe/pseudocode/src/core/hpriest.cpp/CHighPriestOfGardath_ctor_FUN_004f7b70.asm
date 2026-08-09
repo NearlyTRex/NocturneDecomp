@@ -7,7 +7,7 @@
 ; CHighPriestOfGardath * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hpriest.cpp_factoryFunc_FUN_004f7b30 at 004f7b4a
+;   core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004f7b30 at 004f7b4a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_priest_dfm_0062f55d

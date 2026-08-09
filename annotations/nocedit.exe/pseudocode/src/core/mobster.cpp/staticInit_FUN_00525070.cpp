@@ -10,7 +10,8 @@ void __cdecl core_mobster_cpp_staticInit_FUN_00525070(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CMobsterClassInfo,"CMobster",core_mobster_cpp_factoryFunc_FUN_005251c0,
-             &g_CMobsterClassVersion,7,&g_CEnemyClassInfo);
+            (&g_CMobsterClassInfo,"CMobster",
+             core_mobster_cpp_factoryFuncMobster_FUN_005251c0,&g_CMobsterClassVersion,7,
+             &g_CEnemyClassInfo);
   return;
 }

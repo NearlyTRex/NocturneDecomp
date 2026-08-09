@@ -7,9 +7,9 @@
 // Address: 00587e70
 void __cdecl staticInit(void);
 
-// Original: core_shotgun.cpp_factoryFunc_FUN_00587ea0
+// Original: core_shotgun.cpp_factoryFuncShotgun_FUN_00587ea0
 // Address: 00587ea0
-CShotgun * __cdecl factoryFunc(void);
+CShotgun * __cdecl factoryFuncShotgun(void);
 
 // Original: core_shotgun.cpp_CShotgun_getActorType_FUN_00587ed0
 // Address: 00587ed0

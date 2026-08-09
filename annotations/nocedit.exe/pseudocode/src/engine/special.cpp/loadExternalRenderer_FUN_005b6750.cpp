@@ -416,15 +416,15 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof7 = 0x28;
       iVar3 = (*g_APIDLL_init)(HVar1,&CStack_9c);
       if (iVar3 != 0) {
-        local_3c2c.description[4] = (byte)g_RendererHandle;
-        local_3c2c.description[5] = g_RendererHandle._1_1_;
-        local_3c2c.description[6] = g_RendererHandle._2_1_;
-        local_3c2c.description[7] = g_RendererHandle._3_1_;
+        local_3c2c.description[4] = (byte)g_RendererCardIndex;
+        local_3c2c.description[5] = g_RendererCardIndex._1_1_;
+        local_3c2c.description[6] = g_RendererCardIndex._2_1_;
+        local_3c2c.description[7] = g_RendererCardIndex._3_1_;
         local_3c2c.description[0] = -0x3b;
         local_3c2c.description[1] = 'q';
         local_3c2c.description[2] = '[';
         local_3c2c.description[3] = '\0';
-        engine_special_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
+        engine_special_cpp_selectCard_FUN_005b7d90(g_RendererCardIndex);
         return 1;
       }
       g_UseDirect3D = iVar3;

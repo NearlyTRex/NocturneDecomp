@@ -7,9 +7,9 @@
 // Address: 00483ef0
 void __cdecl staticInit(void);
 
-// Original: core_dracbrid.cpp_factoryFunc_FUN_00483f80
+// Original: core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00483f80
 // Address: 00483f80
-CDraculaBride * __cdecl factoryFunc(void);
+CDraculaBride * __cdecl factoryFuncDraculaBride(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getActorType_FUN_00483fb0
 // Address: 00483fb0

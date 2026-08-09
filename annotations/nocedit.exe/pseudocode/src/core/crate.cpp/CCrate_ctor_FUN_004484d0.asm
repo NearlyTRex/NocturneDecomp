@@ -7,7 +7,7 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crate.cpp_factoryFunc_FUN_00448490 at 004484aa
+;   core_crate.cpp_factoryFuncCrate_FUN_00448490 at 004484aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00619af3

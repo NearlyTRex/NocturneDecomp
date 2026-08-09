@@ -9,7 +9,7 @@
 ; XREF[5]:
 ;   core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620 at 0041b628
 ;   core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70 at 00448c84
-;   core_flame.cpp_factoryFunc_FUN_004c9a60 at 004c9a7a
+;   core_flame.cpp_factoryFuncFlame_FUN_004c9a60 at 004c9a7a
 ;   core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160 at 004cb184
 ;   core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60 at 005e8e84
 ;

@@ -7,9 +7,9 @@
 // Address: 00588b30
 void __cdecl staticInit(void);
 
-// Original: core_shovel.cpp_factoryFunc_FUN_00588b60
+// Original: core_shovel.cpp_factoryFuncShovel_FUN_00588b60
 // Address: 00588b60
-CShovel * __cdecl factoryFunc(void);
+CShovel * __cdecl factoryFuncShovel(void);
 
 // Original: core_shovel.cpp_CShovel_getActorType_FUN_00588b90
 // Address: 00588b90

@@ -279,14 +279,14 @@ void __cdecl CExternalRenderer::ctor(CExternalRenderer *this_ptr);
 // Address: 005b7fe0
 int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 
-// Original: engine_special.cpp_CExternalRenderer_switchRenderer_FUN_005b8120
+// Original: engine_special.cpp_switchRenderer_FUN_005b8120
 // Address: 005b8120
-int __cdecl CExternalRenderer::switchRenderer(CExternalRenderer *this_ptr,int renderer_handle);
+int __cdecl switchRenderer(CExternalRenderer *renderer,int card_index);
 
 // Original: engine_special.cpp_switchRenderer_FUN_005b8140
 // Address: 005b8140
-int __cdecl switchRenderer(char *new_dll_name,int renderer_handle);
+int __cdecl switchRenderer(char *new_dll_name,int card_index);
 
 // Original: engine_special.cpp_getCurrentRenderer_FUN_005b8190
 // Address: 005b8190
-char * __cdecl getCurrentRenderer(int *renderer_handle);
+char * __cdecl getCurrentRenderer(int *card_index_out);

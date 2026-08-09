@@ -7,7 +7,7 @@
 ; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_melee.cpp_factoryFunc_FUN_0050e790 at 0050e7aa
+;   core_melee.cpp_factoryFuncMelee_FUN_0050e790 at 0050e7aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_melee_kfm_00635bd6

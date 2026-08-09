@@ -10,7 +10,8 @@ void __cdecl core_litecone_cpp_staticInit_FUN_00506aa0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CLightConeClassInfo,"CLightCone",core_litecone_cpp_factoryFunc_FUN_00506ad0
-             ,&g_CLightConeClassVersion,2,&g_CDemonActorClassInfo);
+            (&g_CLightConeClassInfo,"CLightCone",
+             core_litecone_cpp_factoryFuncLightCone_FUN_00506ad0,&g_CLightConeClassVersion,2,
+             &g_CDemonActorClassInfo);
   return;
 }

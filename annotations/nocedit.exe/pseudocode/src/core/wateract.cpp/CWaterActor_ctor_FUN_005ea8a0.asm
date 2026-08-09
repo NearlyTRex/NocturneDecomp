@@ -7,7 +7,7 @@
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_wateract.cpp_factoryFunc_FUN_005ea860 at 005ea87a
+;   core_wateract.cpp_factoryFuncWaterActor_FUN_005ea860 at 005ea87a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00657268

@@ -821,7 +821,7 @@ section .text
     POP ESI                             ; 005b71b6
     POP EBX                             ; 005b71b7
     RET                                 ; 005b71b8
-    MOV EDX,dword ptr [0x03f6b87c]      ; 005b71b9 | g_RendererHandle
+    MOV EDX,dword ptr [0x03f6b87c]      ; 005b71b9 | g_RendererCardIndex
         ;   Label: LAB_005b71b9
     PUSH EDX                            ; 005b71bf
     CALL engine_special.cpp_selectCard_FUN_005b7d90 ; 005b71c0

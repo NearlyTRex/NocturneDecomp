@@ -19,9 +19,9 @@ float __cdecl flashlightBlendWeightCallback(int current_bone_index,int target_bo
 // Address: 004d2a80
 float __cdecl aimRotationBlendWeightCallback(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
 
-// Original: core_gabriela.cpp_factoryFunc_FUN_004d2ae0
+// Original: core_gabriela.cpp_factoryFuncGabriella_FUN_004d2ae0
 // Address: 004d2ae0
-CGabriella * __cdecl factoryFunc(void);
+CGabriella * __cdecl factoryFuncGabriella(void);
 
 // Original: core_gabriela.cpp_CGabriella_getActorType_FUN_004d2b10
 // Address: 004d2b10

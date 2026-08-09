@@ -10,7 +10,7 @@ void __cdecl core_door_cpp_staticInit_FUN_0047fa60(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CDoorClassInfo,"CDoor",core_door_cpp_factoryFunc_FUN_0047fa90,
+            (&g_CDoorClassInfo,"CDoor",core_door_cpp_factoryFuncDoor_FUN_0047fa90,
              &g_CDoorClassVersion,0xb,&g_CDemonActorClassInfo);
   return;
 }

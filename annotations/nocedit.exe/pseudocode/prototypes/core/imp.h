@@ -7,9 +7,9 @@
 // Address: 004f9830
 void __cdecl staticInit(void);
 
-// Original: core_imp.cpp_factoryFunc_FUN_004f9860
+// Original: core_imp.cpp_factoryFuncImp_FUN_004f9860
 // Address: 004f9860
-CImp * __cdecl factoryFunc(void);
+CImp * __cdecl factoryFuncImp(void);
 
 // Original: core_imp.cpp_CImp_getActorType_FUN_004f9890
 // Address: 004f9890

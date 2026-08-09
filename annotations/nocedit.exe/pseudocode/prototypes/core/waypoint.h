@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 005ebd40
 int __cdecl CWayPoint::isReachable(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 
-// Original: core_waypoint.cpp_factoryFunc_FUN_005ebe30
+// Original: core_waypoint.cpp_factoryFuncWayPoint_FUN_005ebe30
 // Address: 005ebe30
-CWayPoint * __cdecl factoryFunc(void);
+CWayPoint * __cdecl factoryFuncWayPoint(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_005ebe60
 // Address: 005ebe60

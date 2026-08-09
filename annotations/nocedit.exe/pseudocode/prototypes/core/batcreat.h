@@ -7,9 +7,9 @@
 // Address: 00415080
 void __cdecl staticInit(void);
 
-// Original: core_batcreat.cpp_factoryFunc_FUN_004150b0
+// Original: core_batcreat.cpp_factoryFuncBatCreature_FUN_004150b0
 // Address: 004150b0
-CBatCreature * __cdecl factoryFunc(void);
+CBatCreature * __cdecl factoryFuncBatCreature(void);
 
 // Original: core_batcreat.cpp_CBatCreature_getActorType_FUN_004150e0
 // Address: 004150e0

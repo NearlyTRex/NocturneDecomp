@@ -7,9 +7,9 @@
 // Address: 00556e00
 void __cdecl staticInit(void);
 
-// Original: core_scat.cpp_factoryFunc_FUN_00556e90
+// Original: core_scat.cpp_factoryFuncScat_FUN_00556e90
 // Address: 00556e90
-CScat * __cdecl factoryFunc(void);
+CScat * __cdecl factoryFuncScat(void);
 
 // Original: core_scat.cpp_CScat_getActorType_FUN_00556ec0
 // Address: 00556ec0

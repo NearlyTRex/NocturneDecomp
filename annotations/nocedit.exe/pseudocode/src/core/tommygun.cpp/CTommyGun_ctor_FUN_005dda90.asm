@@ -7,7 +7,7 @@
 ; CTommyGun *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_tommygun.cpp_factoryFunc_FUN_005dda50 at 005dda6a
+;   core_tommygun.cpp_factoryFuncTommyGun_FUN_005dda50 at 005dda6a
 ;   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 at 005e8453
 ;
 ; Referenced Globals:

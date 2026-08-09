@@ -76,7 +76,7 @@ void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,
 void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle);
 CQuaternion4f * __cdecl core_mimic_cpp_copyQuaternion_FUN_00520e00(CQuaternion4f *dest,CQuaternion4f *src);
 void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
-CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void);
+CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_00520e50(void);
 CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMinecar_setup_FUN_00520e90(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMinecar_process_FUN_00520eb0(CMineCar *this_ptr,float delta_time);
@@ -152,7 +152,7 @@ int __cdecl core_mmx_c_getCPUInfo_FUN_0052500f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_00525070(void);
 CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointLocal_FUN_005250a0(CVector3f *out,CDemonActor *actor);
 CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointWorld_FUN_00525110(CVector3f *out,CDemonActor *actor);
-CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void);
+CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_005251c0(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_005251f0(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_setup_FUN_00525340(CMobster *this_ptr);
@@ -184,7 +184,7 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *m
 void __cdecl engine_model_c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size);
 void __cdecl core_moloch_cpp_staticInit_FUN_00528ac0(void);
-CMoloch * __cdecl core_moloch_cpp_factoryFunc_FUN_00528af0(void);
+CMoloch * __cdecl core_moloch_cpp_factoryFuncMoloch_FUN_00528af0(void);
 CDemonActorType * __cdecl core_moloch_cpp_CMoloch_getActorType_FUN_00528b20(CMoloch *this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,uint flags);

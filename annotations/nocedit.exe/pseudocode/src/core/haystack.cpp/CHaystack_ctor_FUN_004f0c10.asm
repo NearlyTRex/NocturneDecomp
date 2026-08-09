@@ -7,7 +7,7 @@
 ; CHaystack *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_haystack.cpp_factoryFunc_FUN_004f0bd0 at 004f0bea
+;   core_haystack.cpp_factoryFuncHaystack_FUN_004f0bd0 at 004f0bea
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_haystack_dfm_0062e7fa

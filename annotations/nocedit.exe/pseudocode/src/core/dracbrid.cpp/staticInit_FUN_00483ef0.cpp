@@ -20,7 +20,7 @@ void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void)
   CVector3f_02c6d058.z = 0.0;
   core_actor_cpp_registerActorClass_FUN_0040c2e0
             (&g_CDraculaBrideClassInfo,"CDraculaBride",
-             core_dracbrid_cpp_factoryFunc_FUN_00483f80,&g_CDraculaBrideClassVersion,9,
+             core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00483f80,&g_CDraculaBrideClassVersion,9,
              &g_CEnemyClassInfo);
   __arrinit(SFreaky_ARRAY_02c6d0c0,6,&g_SFreakyTypeInfo);
   _atexit(&WatcomStaticDestructorNode_006703a0);

@@ -7,9 +7,9 @@
 // Address: 00441c30
 void __cdecl staticInit(void);
 
-// Original: core_conveyor.cpp_factoryFunc_FUN_00441c60
+// Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00441c60
 // Address: 00441c60
-CConveyor * __cdecl factoryFunc(void);
+CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00441c90
 // Address: 00441c90

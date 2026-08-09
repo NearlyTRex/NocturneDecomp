@@ -7,7 +7,7 @@
 ; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_icepick.cpp_factoryFunc_FUN_004f7db0 at 004f7dca
+;   core_icepick.cpp_factoryFuncIcePick_FUN_004f7db0 at 004f7dca
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_dfm_0062f5a8

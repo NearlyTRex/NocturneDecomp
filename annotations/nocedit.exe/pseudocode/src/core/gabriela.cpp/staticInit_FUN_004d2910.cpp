@@ -25,7 +25,8 @@ void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void)
   FLOAT_02d7b838 = 2.3;
   FLOAT_02d7b83c = 4.4;
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CGabriellaClassInfo,"CGabriella",core_gabriela_cpp_factoryFunc_FUN_004d2ae0
-             ,&g_CGabriellaClassVersion,3,&g_CHeroClassInfo);
+            (&g_CGabriellaClassInfo,"CGabriella",
+             core_gabriela_cpp_factoryFuncGabriella_FUN_004d2ae0,&g_CGabriellaClassVersion,3,
+             &g_CHeroClassInfo);
   return;
 }

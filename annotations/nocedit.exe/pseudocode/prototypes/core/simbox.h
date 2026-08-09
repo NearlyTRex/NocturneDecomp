@@ -7,9 +7,9 @@
 // Address: 00588cd0
 void __cdecl staticInit(void);
 
-// Original: core_simbox.cpp_factoryFunc_FUN_00588d00
+// Original: core_simbox.cpp_factoryFuncSimBox_FUN_00588d00
 // Address: 00588d00
-CSimBox * __cdecl factoryFunc(void);
+CSimBox * __cdecl factoryFuncSimBox(void);
 
 // Original: core_simbox.cpp_CSimBox_getActorType_FUN_00588d30
 // Address: 00588d30

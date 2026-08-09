@@ -7,9 +7,9 @@
 // Address: 00448460
 void __cdecl staticInit(void);
 
-// Original: core_crate.cpp_factoryFunc_FUN_00448490
+// Original: core_crate.cpp_factoryFuncCrate_FUN_00448490
 // Address: 00448490
-CCrate * __cdecl factoryFunc(void);
+CCrate * __cdecl factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_004484c0
 // Address: 004484c0

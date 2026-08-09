@@ -7,9 +7,9 @@
 // Address: 00501620
 void __cdecl staticInit(void);
 
-// Original: core_keyactor.cpp_factoryFunc_FUN_00501650
+// Original: core_keyactor.cpp_factoryFuncKeyActor_FUN_00501650
 // Address: 00501650
-CKeyActor * __cdecl factoryFunc(CKeyActor *__return_storage_ptr__);
+CKeyActor * __cdecl factoryFuncKeyActor(void);
 
 // Original: core_keyactor.cpp_CKeyActor_getActorType_FUN_00501680
 // Address: 00501680

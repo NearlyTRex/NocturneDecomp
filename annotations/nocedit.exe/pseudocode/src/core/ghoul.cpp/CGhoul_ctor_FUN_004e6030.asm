@@ -7,7 +7,7 @@
 ; CGhoul *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_factoryFunc_FUN_004e5ff0 at 004e600d
+;   core_ghoul.cpp_factoryFuncGhoul_FUN_004e5ff0 at 004e600d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_guul_dfm_0062dafb

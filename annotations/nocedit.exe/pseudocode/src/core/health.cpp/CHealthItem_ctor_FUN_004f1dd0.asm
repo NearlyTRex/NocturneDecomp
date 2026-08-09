@@ -7,7 +7,7 @@
 ; CHealthItem *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_health.cpp_factoryFunc_FUN_004f1d90 at 004f1daa
+;   core_health.cpp_factoryFuncHealthItem_FUN_004f1d90 at 004f1daa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_0062e9f0

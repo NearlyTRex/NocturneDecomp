@@ -7,9 +7,9 @@
 // Address: 0046f890
 void __cdecl staticInit(void);
 
-// Original: core_dest.cpp_factoryFunc_FUN_0046f8c0
+// Original: core_dest.cpp_factoryFuncActorDestination_FUN_0046f8c0
 // Address: 0046f8c0
-CActorDestination * __cdecl factoryFunc(void);
+CActorDestination * __cdecl factoryFuncActorDestination(void);
 
 // Original: core_dest.cpp_CActorDestination_getActorType_FUN_0046f8f0
 // Address: 0046f8f0

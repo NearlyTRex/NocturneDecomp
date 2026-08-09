@@ -7,9 +7,9 @@
 // Address: 00567d40
 void __cdecl staticInit(void);
 
-// Original: core_sentinel.cpp_factoryFunc_FUN_00567d70
+// Original: core_sentinel.cpp_factoryFuncSentinel_FUN_00567d70
 // Address: 00567d70
-CSentinel * __cdecl factoryFunc(void);
+CSentinel * __cdecl factoryFuncSentinel(void);
 
 // Original: core_sentinel.cpp_CSentinel_getActorType_FUN_00567da0
 // Address: 00567da0

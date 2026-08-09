@@ -7,9 +7,9 @@
 // Address: 005e2080
 void __cdecl staticInit(void);
 
-// Original: core_turret.cpp_factoryFunc_FUN_005e20b0
+// Original: core_turret.cpp_factoryFuncTurret_FUN_005e20b0
 // Address: 005e20b0
-CTurret * __cdecl factoryFunc(void);
+CTurret * __cdecl factoryFuncTurret(void);
 
 // Original: core_turret.cpp_CTurret_getActorType_FUN_005e20e0
 // Address: 005e20e0

@@ -165,7 +165,7 @@ CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *obj
 CVector3f * __cdecl shape_meshlod_cpp_CVector3f_arrdtor_FUN_0051f0e0(CVector3f *objs,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0051f130(void);
-CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void);
+CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_0051f190(void);
 CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0051f1c0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint flags);

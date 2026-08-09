@@ -7,7 +7,7 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_emitter.cpp_factoryFunc_FUN_004a7c60 at 004a7c7a
+;   core_emitter.cpp_factoryFuncEmitter_FUN_004a7c60 at 004a7c7a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00624067

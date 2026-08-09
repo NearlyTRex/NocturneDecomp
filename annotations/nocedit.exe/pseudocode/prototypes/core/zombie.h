@@ -23,9 +23,9 @@ CVector3f * __cdecl getObjectGrabPointWorld(CVector3f *out_point,CDemonActor *ac
 // Address: 005f8e50
 int __cdecl classifyObjectShape(CVector3f *dimensions);
 
-// Original: core_zombie.cpp_factoryFunc_FUN_005f8fa0
+// Original: core_zombie.cpp_factoryFuncZombie_FUN_005f8fa0
 // Address: 005f8fa0
-CZombie * __cdecl factoryFunc(void);
+CZombie * __cdecl factoryFuncZombie(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_005f8fd0
 // Address: 005f8fd0

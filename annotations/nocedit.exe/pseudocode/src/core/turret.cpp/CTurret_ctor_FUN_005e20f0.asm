@@ -10,7 +10,7 @@
 ; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
-;   core_turret.cpp_factoryFunc_FUN_005e20b0 at 005e20cd
+;   core_turret.cpp_factoryFuncTurret_FUN_005e20b0 at 005e20cd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gturret_head_kfm_006565c3

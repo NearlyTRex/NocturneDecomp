@@ -7,9 +7,9 @@
 // Address: 005e78d0
 void __cdecl staticInit(void);
 
-// Original: core_vehicle.cpp_factoryFunc_FUN_005e7900
+// Original: core_vehicle.cpp_factoryFuncVehicle_FUN_005e7900
 // Address: 005e7900
-CVehicle * __cdecl factoryFunc(void);
+CVehicle * __cdecl factoryFuncVehicle(void);
 
 // Original: core_vehicle.cpp_CVehicle_getActorType_FUN_005e7930
 // Address: 005e7930

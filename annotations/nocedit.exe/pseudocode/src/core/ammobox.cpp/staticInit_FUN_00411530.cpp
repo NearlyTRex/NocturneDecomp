@@ -10,7 +10,8 @@ void __cdecl core_ammobox_cpp_staticInit_FUN_00411530(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CAmmoBoxClassInfo,"CAmmoBox",core_ammobox_cpp_factoryFunc_FUN_00411560,
-             &g_CAmmoBoxClassVersion,4,&g_CDemonActorClassInfo);
+            (&g_CAmmoBoxClassInfo,"CAmmoBox",
+             core_ammobox_cpp_factoryFuncAmmoBox_FUN_00411560,&g_CAmmoBoxClassVersion,4,
+             &g_CDemonActorClassInfo);
   return;
 }

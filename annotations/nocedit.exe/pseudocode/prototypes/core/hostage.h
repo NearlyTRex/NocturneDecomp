@@ -7,9 +7,9 @@
 // Address: 004f47d0
 void __cdecl staticInit(void);
 
-// Original: core_hostage.cpp_factoryFunc_FUN_004f4800
+// Original: core_hostage.cpp_factoryFuncHostage_FUN_004f4800
 // Address: 004f4800
-CHostage * __cdecl factoryFunc(void);
+CHostage * __cdecl factoryFuncHostage(void);
 
 // Original: core_hostage.cpp_CHostage_getActorType_FUN_004f4830
 // Address: 004f4830

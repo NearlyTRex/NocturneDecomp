@@ -10,7 +10,8 @@ void __cdecl core_barrier_cpp_staticInit_FUN_00414150(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CBarrierClassInfo,"CBarrier",core_barrier_cpp_factoryFunc_FUN_00414180,
-             &g_CBarrierClassVersion,2,&g_CDemonActorClassInfo);
+            (&g_CBarrierClassInfo,"CBarrier",
+             core_barrier_cpp_factoryFuncBarrier_FUN_00414180,&g_CBarrierClassVersion,2,
+             &g_CDemonActorClassInfo);
   return;
 }

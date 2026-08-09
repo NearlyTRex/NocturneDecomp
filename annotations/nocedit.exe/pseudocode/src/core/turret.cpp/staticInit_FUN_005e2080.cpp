@@ -10,7 +10,7 @@ void __cdecl core_turret_cpp_staticInit_FUN_005e2080(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CTurretClassInfo,"CTurret",core_turret_cpp_factoryFunc_FUN_005e20b0,
+            (&g_CTurretClassInfo,"CTurret",core_turret_cpp_factoryFuncTurret_FUN_005e20b0,
              &g_CTurretClassVersion,2,&g_CWeaponClassInfo);
   return;
 }

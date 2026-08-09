@@ -10,7 +10,8 @@ void __cdecl core_flamecan_cpp_staticInit_FUN_004cb0f0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c2e0
-            (&g_CFlameCanClassInfo,"CFlameCan",core_flamecan_cpp_factoryFunc_FUN_004cb120,
-             &g_CFlameCanClassVersion,1,&g_CDemonActorClassInfo);
+            (&g_CFlameCanClassInfo,"CFlameCan",
+             core_flamecan_cpp_factoryFuncFlameCan_FUN_004cb120,&g_CFlameCanClassVersion,1,
+             &g_CDemonActorClassInfo);
   return;
 }

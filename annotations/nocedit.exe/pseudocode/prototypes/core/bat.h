@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 004146f0
 float __cdecl fmodfPositive(float value,float modulus);
 
-// Original: core_bat.cpp_factoryFunc_FUN_00414790
+// Original: core_bat.cpp_factoryFuncBat_FUN_00414790
 // Address: 00414790
-CBat * __cdecl factoryFunc(void);
+CBat * __cdecl factoryFuncBat(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_004147c0
 // Address: 004147c0

@@ -27,9 +27,9 @@ int __cdecl canPickupObject(CDemonActor *actor,CDemonActor *object);
 // Address: 005bb010
 float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
-// Original: core_stranger.cpp_factoryFunc_FUN_005bb0e0
+// Original: core_stranger.cpp_factoryFuncStranger_FUN_005bb0e0
 // Address: 005bb0e0
-CStranger * __cdecl factoryFunc(void);
+CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_005bb110
 // Address: 005bb110

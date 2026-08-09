@@ -7,9 +7,9 @@
 // Address: 00449610
 void __cdecl staticInit(void);
 
-// Original: core_curtain.cpp_factoryFunc_FUN_00449660
+// Original: core_curtain.cpp_factoryFuncCurtain_FUN_00449660
 // Address: 00449660
-CCurtain * __cdecl factoryFunc(void);
+CCurtain * __cdecl factoryFuncCurtain(void);
 
 // Original: core_curtain.cpp_CCurtain_getActorType_FUN_00449690
 // Address: 00449690

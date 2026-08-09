@@ -7,7 +7,7 @@
 ; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_spike.cpp_factoryFunc_FUN_005b81e0 at 005b81fa
+;   core_spike.cpp_factoryFuncSpike_FUN_005b81e0 at 005b81fa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bgate_kfm_00652de1
