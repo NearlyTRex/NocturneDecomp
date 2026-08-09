@@ -38,7 +38,7 @@
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0
 ;   core_charactr.cpp_CCharacter_FUN_00427730
 ;   core_charactr.cpp_CCharacter_FUN_00427a60
-;   core_charactr.cpp_CCharacter_FUN_004286d0
+;   core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
 ;   crt_math.c_round_FUN_00563a30
@@ -210,8 +210,8 @@ section .text
     PUSH 0x40000000                     ; 0042867e
         ;   Label: LAB_0042867e
     PUSH EBX                            ; 00428683
-    CALL core_charactr.cpp_CCharacter_FUN_004286d0 ; 00428684
-        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_004286d0(CCharacter * this_ptr, undefined4 param_2)
+    CALL core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0 ; 00428684
+        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0(CCharacter * this_ptr, float amount)
     ADD ESP,0x8                         ; 00428689
     JMP 0x00428579                      ; 0042868c
         ;   XREF to: 00428579 (UNCONDITIONAL_JUMP)  ; LAB_00428579

@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,921
-  Unnamed functions (FUN_):          422 ( 8.6%)
-  Functions with unnamed params:     27 ( 0.5%)
-  Functions with type issues:        1,719 (34.9%)
+  Unnamed functions (FUN_):          420 ( 8.5%)
+  Functions with unnamed params:     26 ( 0.5%)
+  Functions with type issues:        1,718 (34.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   2
     Missing register params:           10
     Wrong calling convention:          51
-    Undefined types in variables:      1610
+    Undefined types in variables:      1609
     Unresolved stack params:           148
 
   Excluded (.keep / MMX / by-value):   0 functions
@@ -36,14 +36,13 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  core/charactr.cpp (14 unnamed)
+  core/charactr.cpp (13 unnamed)
     0x004259f0  __cdecl       38 callers
     0x0042a150  __cdecl       37 callers
     0x00428c00  __cdecl       31 callers
     0x00427730  __cdecl       8 callers
     0x0042af70  __cdecl       4 callers
     0x00427a60  __cdecl       2 callers
-    0x004286d0  __cdecl       2 callers
     0x004270e0  __cdecl       1 callers
     0x00424780  unknown       0 callers
     0x0042b570  unknown       0 callers
@@ -360,9 +359,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
   engine/3d.c (2 unnamed)
     0x00404480  __cdecl       1 callers
     0x00404490  __cdecl       1 callers
-
-  core/baron.cpp (1 unnamed)
-    0x00410cc0  __cdecl       1 callers
 
   core/boneguy.cpp (4 unnamed)
     0x004196b0  __cdecl       1 callers
@@ -727,11 +723,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x004f4b30  File: cockpit/pkbitmap.cpp
     Unnamed: param_2 (char *)
     Named:   this_ptr (CPackedBitmap *)
-
-  CCharacter
-    Address: 0x004286d0  File: core/charactr.cpp
-    Unnamed: param_2 (undefined4)
-    Named:   this_ptr (CCharacter *)
 
   CInventory
     Address: 0x004c0640  File: core/inv.cpp
@@ -2083,7 +2074,7 @@ Unresolved stack parameters (missing from signature) (148)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1610)
+Undefined types in variables (1609)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -3671,7 +3662,7 @@ Undefined types in variables (1610)
     Locals:  local_1b4 (undefined), local_b0 (undefined), local_af (undefined1), local_ae (undefined1), local_ad (undefined1), local_ac (undefined1), local_ab (undefined1), local_aa (undefined1), local_30 (undefined), local_28 (undefined4), local_24 (undefined4), local_20 (undefined), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBaron
+  CBaron_performLightningAttack
     Address: 0x00410cc0  File: core/baron.cpp
     Locals:  local_150 (undefined8), local_148 (undefined), local_d0 (undefined), local_cc (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_7c (undefined), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_1c (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8227,11 +8218,6 @@ Undefined types in variables (1610)
     Suggested: Resolve undefined types to concrete types
 
   CCharacter
-    Address: 0x004286d0  File: core/charactr.cpp
-    Params:  param_2 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CCharacter
     Address: 0x00428c00  File: core/charactr.cpp
     Locals:  local_3c (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -10242,12 +10228,11 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0042b6d0  (void)
     0x0042b6e0  (void)
 
-  core_charactr.cpp_CCharacter  (8 functions)
+  core_charactr.cpp_CCharacter  (7 functions)
     0x004259f0  (CCharacter *this_ptr,float delta_time)
     0x004270e0  (CCharacter *this_ptr)
     0x00427730  (CCharacter *this_ptr,CVector3f *position,int fire_type,in...)
     0x00427a60  (CCharacter *this_ptr)
-    0x004286d0  (CCharacter *this_ptr,float param_2)
     0x00428c00  (CCharacter *this_ptr,float delta_time)
     0x0042a150  (CCharacter *this_ptr,float delta_time)
     0x0042af70  (CCharacter *this_ptr,float delta_time)

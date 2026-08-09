@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 203
 Total functions: 4921
-Clean functions: 2462 (50.0%)
+Clean functions: 2463 (50.1%)
 Files at 100%: 9
 Files at 90%+: 11
 Files at 50%+: 131
@@ -217,7 +217,7 @@ FILES AT 50-89%
            - core_baron.cpp_CBaron_setup_FUN_004102c0 (49 lines) [undefined_data, warning_overlapping_globals]
            - core_baron.cpp_CBaron_process_FUN_00410490 (230 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unresolved_funcptr, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 (50 lines) [unrolled_memcpy, warning_type_propagation]
-           - core_baron.cpp_CBaron_FUN_00410cc0 (96 lines) [undefined_data, unrolled_memcpy, warning_type_propagation]
+           - core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 (96 lines) [undefined_data, unrolled_memcpy, warning_type_propagation]
            - core_baron.cpp_CBaron_renderTransparent_FUN_004110f0 (78 lines) [undefined_data, warning_overlapping_globals]
            - core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 (34 lines) [pointer_cast]
    73.3% | core/colonel.cpp
@@ -842,16 +842,8 @@ FILES AT 50-89%
            - engine_ncursfx.cpp_CMouse_consumeButton_FUN_004ee6c0 (17 lines) [warning_overlapping_globals]
            - engine_ncursfx.cpp_CMouse_getPosition_FUN_004ee720 (7 lines) [warning_overlapping_globals]
            - engine_ncursfx.cpp_CMouse_render_FUN_004ee740 (47 lines) [warning_overlapping_globals]
-   53.8% | core/tentacle.cpp
-         7/13 clean, 6 remaining
-           - core_tentacle.cpp_CTentacle_setup_FUN_00543bc0 (19 lines) [warning_overlapping_globals]
-           - core_tentacle.cpp_CTentacle_process_FUN_00543c50 (267 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0 (36 lines) [pointer_cast, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0 (72 lines) [pointer_cast, pointer_truncation, unnamed_param, unrolled_memcpy]
-           - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760 (46 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_dtor_FUN_00544850 (31 lines) [negative_offset]
-   53.3% | core/charactr.cpp
-         56/105 clean, 49 remaining
+   54.3% | core/charactr.cpp
+         57/105 clean, 48 remaining
            - core_charactr.cpp_staticInit_FUN_00423ea0 (9 lines) [undefined_data]
            - core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 (18 lines) [unrolled_memset]
            - core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (93 lines) [pointer_cast, pointer_truncation, preinc_loop_idiom]
@@ -877,7 +869,6 @@ FILES AT 50-89%
            - core_charactr.cpp_CCharacter_dismember_FUN_00427b60 (77 lines) [unknown_field]
            - core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 (76 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
            - core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0 (77 lines) [unknown_field, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_FUN_004286d0 (9 lines) [unnamed_param]
            - core_charactr.cpp_CCharacter_followActor_FUN_00428780 (107 lines) [undefined_data]
            - core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0 (5 lines) [unnamed_param]
            - core_charactr.cpp_CCharacter_FUN_00428c00 (103 lines) [undefined_data, unrolled_memcpy]
@@ -901,6 +892,14 @@ FILES AT 50-89%
            - core_charactr.cpp_FUN_0042b6c0 (8 lines) [stack_param]
            - core_charactr.cpp_FUN_0042b6d0 (8 lines) [stack_param]
            - core_charactr.cpp_FUN_0042b6e0 (8 lines) [stack_param]
+   53.8% | core/tentacle.cpp
+         7/13 clean, 6 remaining
+           - core_tentacle.cpp_CTentacle_setup_FUN_00543bc0 (19 lines) [warning_overlapping_globals]
+           - core_tentacle.cpp_CTentacle_process_FUN_00543c50 (267 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005444f0 (36 lines) [pointer_cast, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0 (72 lines) [pointer_cast, pointer_truncation, unnamed_param, unrolled_memcpy]
+           - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_00544760 (46 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_dtor_FUN_00544850 (31 lines) [negative_offset]
    53.3% | core/lever.cpp
          8/15 clean, 7 remaining
            - core_lever.cpp_CLever_ctor_FUN_004c6040 (46 lines) [negative_offset, pointer_cast]

@@ -15,7 +15,7 @@
 ; XREF[76]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b656
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a828
-;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410cfd
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410cfd
 ;   core_boxactor.cpp_CBoxActor_FUN_0041f190 at 0041f1b1
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ef90 at 0041efab
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90 at 0042cb5f

@@ -57,7 +57,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
 void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(CBaron *this_ptr,CDemonActor *target);
 void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_00410bb0(CBaron *this_ptr,CDemonActor *target);
 void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(CBaron *this_ptr,float delta_time);
-void __cdecl core_baron_cpp_CBaron_FUN_00410cc0(CBaron *this_ptr);
+void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00411010(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_archive_FUN_00411080(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_004110e0(CBaron *this_ptr);

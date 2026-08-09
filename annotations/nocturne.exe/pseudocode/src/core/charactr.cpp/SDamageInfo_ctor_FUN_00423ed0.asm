@@ -9,7 +9,7 @@
 ; XREF[50]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300 at 0040b54b
 ;   core_anvil.cpp_CAnvil_process_FUN_0040f610 at 0040f6f5
-;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410dbb
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410dbb
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412750
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413ecc
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a93

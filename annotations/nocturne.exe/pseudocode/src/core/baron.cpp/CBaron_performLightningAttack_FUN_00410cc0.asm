@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_FUN_00410cc0(CBaron *this_ptr)
+; void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron *this_ptr)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
@@ -37,7 +37,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
-;   core_charactr.cpp_CCharacter_FUN_004286d0
+;   core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_fire.cpp_CFireEffect_createCrater_FUN_0048c370
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420
@@ -53,7 +53,7 @@
 section .text
 
     PUSH EBX                            ; 00410cc0
-        ;   Label: core_baron.cpp_CBaron_FUN_00410cc0
+        ;   Label: core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0
     PUSH ESI                            ; 00410cc1
     PUSH EDI                            ; 00410cc2
     PUSH EBP                            ; 00410cc3
@@ -162,8 +162,8 @@ section .text
     ADD ESP,0x8                         ; 00410e0a
     PUSH 0x40400000                     ; 00410e0d
     PUSH ESI                            ; 00410e12
-    CALL core_charactr.cpp_CCharacter_FUN_004286d0 ; 00410e13
-        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_004286d0(CCharacter * this_ptr, undefined4 param_2)
+    CALL core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0 ; 00410e13
+        ;   XREF to: 004286d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0(CCharacter * this_ptr, float amount)
     ADD ESP,0x8                         ; 00410e18
     MOV ESP,EBP                         ; 00410e1b
     POP EBP                             ; 00410e1d

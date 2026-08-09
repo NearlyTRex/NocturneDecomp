@@ -1,14 +1,14 @@
-// Name: core_baron.cpp_CBaron_FUN_00410cc0
+// Name: core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0
 // Address: 00410cc0
 // Address Range: [[00410cc0, 0041100b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_baron_cpp_CBaron_FUN_00410cc0(CBaron *this_ptr)
+// Signature: void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_baron_cpp_CBaron_FUN_00410cc0(CBaron *this_ptr)
+void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron *this_ptr)
 
 {
   CLocation *start_position;
@@ -102,6 +102,6 @@ void __cdecl core_baron_cpp_CBaron_FUN_00410cc0(CBaron *this_ptr)
     local_d0.wielder = (CDemonActor *)this_ptr;
   }
   (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_d0);
-  core_charactr_cpp_CCharacter_FUN_004286d0(&this_ptr_00->base,0x40400000);
+  core_charactr_cpp_CCharacter_setStaggerAmount_FUN_004286d0(&this_ptr_00->base,3.0);
   return;
 }

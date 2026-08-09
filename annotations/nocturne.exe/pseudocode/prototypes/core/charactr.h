@@ -199,9 +199,9 @@ int __cdecl CCharacter::testDamageLine(CCharacter *this_ptr,CVector3f *start,CVe
 // Address: 00428510
 void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_charactr.cpp_CCharacter_FUN_004286d0
+// Original: core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0
 // Address: 004286d0
-void __cdecl CCharacter(CCharacter *this_ptr,float param_2);
+void __cdecl CCharacter::setStaggerAmount(CCharacter *this_ptr,float amount);
 
 // Original: core_charactr.cpp_CCharacter_getDeathState_FUN_00428710
 // Address: 00428710

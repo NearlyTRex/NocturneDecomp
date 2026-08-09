@@ -13,7 +13,7 @@
 ;
 ; XREF[58]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 at 0040a00b
-;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410d4e
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410d4e
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004128ca
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 0041400e
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e749

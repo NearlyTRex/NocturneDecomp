@@ -39,9 +39,9 @@ void __cdecl CBaron::detachFromOwner(CBaron *this_ptr,CDemonActor *target);
 // Address: 00410bf0
 void __cdecl CBaron::updateMountedPosition(CBaron *this_ptr,float delta_time);
 
-// Original: core_baron.cpp_CBaron_FUN_00410cc0
+// Original: core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0
 // Address: 00410cc0
-void __cdecl CBaron(CBaron *this_ptr);
+void __cdecl CBaron::performLightningAttack(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_advanceMotion_FUN_00411010
 // Address: 00411010

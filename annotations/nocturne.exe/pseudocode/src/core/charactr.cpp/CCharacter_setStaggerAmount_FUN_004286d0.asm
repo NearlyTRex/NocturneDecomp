@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_FUN_004286d0(CCharacter *this_ptr,float param_2)
+; void __cdecl core_charactr_cpp_CCharacter_setStaggerAmount_FUN_004286d0(CCharacter *this_ptr,float amount)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   amount
 ;
 ; XREF[2]:
-;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410e13
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410e13
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428684
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@
 section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004286d0
-        ;   Label: core_charactr.cpp_CCharacter_FUN_004286d0
+        ;   Label: core_charactr.cpp_CCharacter_setStaggerAmount_FUN_004286d0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004286d4
     MOV dword ptr [EDX + 0xb648],EAX    ; 004286d8
     MOV EAX,[0x01cae0e8]                ; 004286de | g_LocalHeroIndex

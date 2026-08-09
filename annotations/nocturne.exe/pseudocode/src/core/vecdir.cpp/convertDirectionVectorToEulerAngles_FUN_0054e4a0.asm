@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[74]:
-;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410d15
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 at 00410d15
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004128b6
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413c58
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 at 00422949

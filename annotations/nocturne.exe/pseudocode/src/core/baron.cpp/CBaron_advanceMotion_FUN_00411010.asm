@@ -11,7 +11,7 @@
 ;   core_baron.cpp_CBaron_process_FUN_00410490 at 004105ca
 ;
 ; Called Functions:
-;   core_baron.cpp_CBaron_FUN_00410cc0
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 00411044
     PUSH EBX                            ; 00411045
         ;   Label: LAB_00411045
-    CALL core_baron.cpp_CBaron_FUN_00410cc0 ; 00411046
-        ;   XREF to: 00410cc0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_00410cc0(CBaron * this_ptr)
+    CALL core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0 ; 00411046
+        ;   XREF to: 00410cc0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_performLightningAttack_FUN_00410cc0(CBaron * this_ptr)
     ADD ESP,0x4                         ; 0041104b
     JMP 0x00411033                      ; 0041104e
         ;   XREF to: 00411033 (UNCONDITIONAL_JUMP)  ; LAB_00411033

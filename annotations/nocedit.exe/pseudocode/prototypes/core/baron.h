@@ -123,9 +123,9 @@ void __cdecl CBaron::getPropertyList(CBaron *this_ptr,CActorPropertyList *proper
 // Address: 00414070
 void __cdecl CBaron::addFilesToExtract(CBaron *this_ptr,_FILE *file_handle);
 
-// Original: core_baron.cpp_setStaggerAmount_FUN_00414090
+// Original: core_baron.cpp_CCharacter_setStaggerAmount_FUN_00414090
 // Address: 00414090
-void __cdecl setStaggerAmount(CCharacter *this_ptr,float amount);
+void __cdecl CCharacter::setStaggerAmount(CCharacter *this_ptr,float amount);
 
 // Original: core_baron.cpp_CBaron_getCollisionType_FUN_004140a0
 // Address: 004140a0

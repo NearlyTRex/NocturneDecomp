@@ -191,7 +191,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWe
 void __cdecl core_baron_cpp_CBaron_onActorDeleted_FUN_00413ff0(CBaron *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_baron_cpp_CBaron_getPropertyList_FUN_00414010(CBaron *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_baron_cpp_CBaron_addFilesToExtract_FUN_00414070(CBaron *this_ptr,_FILE *file_handle);
-void __cdecl core_baron_cpp_setStaggerAmount_FUN_00414090(CCharacter *this_ptr,float amount);
+void __cdecl core_baron_cpp_CCharacter_setStaggerAmount_FUN_00414090(CCharacter *this_ptr,float amount);
 ECollisionType __cdecl core_baron_cpp_CBaron_getCollisionType_FUN_004140a0(CBaron *this_ptr,SCollisionInfo *collision_info);
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_004140b0(CBaronWeapon *this_ptr,uint flags);
 CBaron * __cdecl core_baron_cpp_CBaron_dtor_FUN_00414100(CBaron *this_ptr,uint flags);

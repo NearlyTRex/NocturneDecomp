@@ -58,7 +58,7 @@ LAB_0042865c:
       }
       if (EVar4 != DAMAGE_TYPE_DECAL) goto LAB_00428579;
     }
-    core_charactr_cpp_CCharacter_FUN_004286d0(this_ptr,0x40000000);
+    core_charactr_cpp_CCharacter_setStaggerAmount_FUN_004286d0(this_ptr,2.0);
   }
 LAB_00428579:
   if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {

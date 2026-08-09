@@ -16,7 +16,7 @@ void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00411010(CBaron *this_ptr,f
                       (&(this_ptr->base).base.model.motion_controller,&delta_time);
     if (99 < uVar1) {
       if (uVar1 < 0x65) {
-        core_baron_cpp_CBaron_FUN_00410cc0(this_ptr);
+        core_baron_cpp_CBaron_performLightningAttack_FUN_00410cc0(this_ptr);
       }
       else if (uVar1 == 0x6e) {
         this_ptr->summoned = 0;

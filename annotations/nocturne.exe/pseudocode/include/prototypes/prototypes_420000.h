@@ -136,7 +136,7 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(CCharac
 int __cdecl core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260(CCharacter *this_ptr,CVector3f *world_point,float tolerance,SDamageInfo *damage_info);
 int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info,CVector3f *out_hit);
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(CCharacter *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_charactr_cpp_CCharacter_FUN_004286d0(CCharacter *this_ptr,float param_2);
+void __cdecl core_charactr_cpp_CCharacter_setStaggerAmount_FUN_004286d0(CCharacter *this_ptr,float amount);
 EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
