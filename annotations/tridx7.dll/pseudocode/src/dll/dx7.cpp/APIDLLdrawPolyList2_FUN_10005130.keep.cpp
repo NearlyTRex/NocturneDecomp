@@ -3,14 +3,14 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[10005130, 10005256] [1000525a, 10005278]]
 // Convention: __cdecl
-// Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 
 #include "nocturne.h"
 
-int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags)
+int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags )
 
 {
-  ushort *puVar1;
+  SInputFace *pSVar1;
   int iVar2;
   uint uVar3;
   SMRGLVertex local_10;
@@ -25,20 +25,20 @@ int __cdecl dll_dx7_cpp_APIDLLdrawPolyList2_FUN_10005130(SRenderVertex *vertex_b
   if (0 < polygon_count) {
     local_4 = polygon_count;
     do {
-      puVar1 = *polygons;
-      local_10.vertex_index = (int)*puVar1;
-      local_10.texture_u = (uint)puVar1[3] << 8;
-      local_10.texture_v = (uint)puVar1[6] << 8;
+      pSVar1 = *polygons;
+      local_10.vertex_index = (int)(pSVar1->vertex_indices).vertex_index_0;
+      local_10.texture_u = (uint)pSVar1->u_coord_0 << 8;
+      local_10.texture_v = (uint)pSVar1->v_coord_0 << 8;
       uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
       g_IndexBuffer[g_PendingIndexCount] = (WORD)uVar3;
-      local_10.vertex_index = (int)puVar1[1];
-      local_10.texture_u = (uint)puVar1[4] << 8;
-      local_10.texture_v = (uint)puVar1[7] << 8;
+      local_10.vertex_index = (int)(pSVar1->vertex_indices).vertex_index_1;
+      local_10.texture_u = (uint)pSVar1->u_coord_1 << 8;
+      local_10.texture_v = (uint)pSVar1->v_coord_1 << 8;
       uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
       g_IndexBuffer[g_PendingIndexCount + 1] = (WORD)uVar3;
-      local_10.vertex_index = (int)puVar1[2];
-      local_10.texture_u = (uint)puVar1[5] << 8;
-      local_10.texture_v = (uint)puVar1[8] << 8;
+      local_10.vertex_index = (int)(pSVar1->vertex_indices).vertex_index_2;
+      local_10.texture_u = (uint)pSVar1->u_coord_2 << 8;
+      local_10.texture_v = (uint)pSVar1->v_coord_2 << 8;
       uVar3 = dll_dx7_cpp_getOrAddVertex_FUN_10005010(&local_10,vertex_buffer,render_flags);
       iVar2 = g_PendingIndexCount;
       g_PendingIndexCount = g_PendingIndexCount + 3;
