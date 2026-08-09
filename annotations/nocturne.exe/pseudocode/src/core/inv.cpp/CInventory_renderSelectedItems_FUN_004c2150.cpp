@@ -23,7 +23,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(CInventory
   int local_20;
   
   if ((g_CGame_PTR_005b9354->letterbox_mode == 0) &&
-     (this_ptr->owner == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {
+     ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
     if (g_WindowHeight != _DAT_01cc30a0) {
       iStack_40 = 0x4c23d6;
       core_inv_cpp_loadAssets_FUN_004befa0();

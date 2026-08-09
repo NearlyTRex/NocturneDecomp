@@ -527,6 +527,10 @@ int __cdecl CStrList::getItemCount(CStrList *this_ptr);
 // Address: 00477670
 int __cdecl getFontMaxCharHeight(CBitFont *font_ptr);
 
+// Original: shape_edittool.cpp_FUN_00477680
+// Address: 00477680
+undefined4 * __cdecl FUN_00477680(undefined4 *param_1,undefined4 *param_2);
+
 // Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_00477690
 // Address: 00477690
 CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

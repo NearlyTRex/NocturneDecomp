@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
-;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0
+;   engine_zraster.c_rasterizePolygonCustom_FUN_00562de0
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH EDX                            ; 00460ef4
     PUSH EAX                            ; 00460ef5
     PUSH 0x766c74                       ; 00460ef6 | DAT_00766c74
-    CALL engine_3d.c_rasterizePolygonCustom_FUN_00562de0 ; 00460efb
-        ;   XREF to: 00562de0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
+    CALL engine_zraster.c_rasterizePolygonCustom_FUN_00562de0 ; 00460efb
+        ;   XREF to: 00562de0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00460f00
     POP EBP                             ; 00460f03
     POP EDI                             ; 00460f04

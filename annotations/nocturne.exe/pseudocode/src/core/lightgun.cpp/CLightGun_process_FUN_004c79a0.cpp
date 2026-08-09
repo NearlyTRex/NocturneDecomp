@@ -6,23 +6,20 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_ptr,float delta_time)
 
 {
   float base_frequency;
   float fVar1;
   int iVar2;
-  CDemonActor *pCVar3;
+  CHero *pCVar3;
   CDemonFilter *filter_ptr;
   uint uVar4;
   double dVar5;
   
   core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,delta_time);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
-                    ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),
-                     30.0f);
+                    (&g_HeroActors[g_LocalHeroIndex]->inventory,30.0f);
   fVar1 = (30.0f / fVar1) * delta_time + this_ptr->charge_level;
   this_ptr->charge_level = fVar1;
   if (30.0f < fVar1) {
@@ -51,10 +48,10 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_pt
       sound_sndmain_cpp_setSfxVolume_FUN_005270d0(this_ptr->sfx_handle,fVar1);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(this_ptr->sfx_handle,base_frequency);
     }
-    pCVar3 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0
-                (PTR_DAT_005b9284,
+    pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
+                (g_CForceFeedback_PTR_005b9284,
                  1.0f + (1.58f - 1.0f) * this_ptr->charge_ratio,
                  (0.45f - 0.3f) * this_ptr->charge_ratio + 0.3f);
     }
@@ -76,9 +73,9 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_pt
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
-  pCVar3 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+  pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+    engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   this_ptr->fire_flash_pending = 0;
   return;

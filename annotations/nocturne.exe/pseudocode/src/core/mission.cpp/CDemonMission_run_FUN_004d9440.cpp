@@ -24,17 +24,17 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
       g_CurrentLineNumber = 1223;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::run - hero list empty");
     }
-    if (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) == 0) {
+    if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 1224;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
-              (this_ptr,*(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2c));
+              (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);
     DAT_01ccbbf0 = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(g_CGame_PTR_005b9354);
-    this_ptr_00 = *(CHero **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
     core_mission_cpp_CDemonMission_FUN_004d8cd0(this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_FUN_004d7ea0(this_ptr);

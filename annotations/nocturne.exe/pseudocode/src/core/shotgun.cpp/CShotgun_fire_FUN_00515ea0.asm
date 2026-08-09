@@ -17,7 +17,7 @@
 ;   double DOUBLE_0059107d = 1.5
 ;   double DOUBLE_00591085 = 10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash
@@ -277,16 +277,16 @@ section .text
     PUSH EBX                            ; 005161f3
     MOV dword ptr [EBX + 0x2f8],0x3f2a7efa ; 005161f4
     CALL dword ptr [EAX + 0x8c]         ; 005161fe
-    MOV EDX,dword ptr [0x01cae0e8]      ; 00516204 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 00516204 | g_LocalHeroIndex
     MOV EBX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0051620a
     ADD ESP,0x4                         ; 00516211
     CMP EAX,EBX                         ; 00516214
     JNZ 0x00516227                      ; 00516216
         ;   XREF to: 00516227 (CONDITIONAL_JUMP)  ; LAB_00516227
-    MOV ESI,dword ptr [0x005b9284]      ; 00516218 | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 00516218 | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 0051621e
-    CALL xxx_unk.c_FUN_004940d0         ; 0051621f
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0051621f
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 00516224
     MOV EAX,0x1                         ; 00516227
         ;   Label: LAB_00516227

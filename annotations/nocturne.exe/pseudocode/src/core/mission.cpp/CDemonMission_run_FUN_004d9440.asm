@@ -25,7 +25,7 @@
 ;   CGame g_CGame_01c775ec
 ;   undefined4 g_CGame_01c775ec.act_completion_state
 ;   undefined4 DAT_01cae0d4
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   ... and 2 more
 ;
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_004d944d
     JG 0x004d9525                       ; 004d9453
         ;   XREF to: 004d9525 (CONDITIONAL_JUMP)  ; LAB_004d9525
-    MOV EAX,[0x01cae0e8]                ; 004d9459 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d9459 | g_LocalHeroIndex
         ;   Label: LAB_004d9459
     CMP dword ptr [EAX*0x4 + 0x1cae0d8],0x0 ; 004d945e
     JNZ 0x004d948a                      ; 004d9466
@@ -75,7 +75,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004d9482
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004d9487
-    MOV EAX,[0x01cae0e8]                ; 004d948a | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d948a | g_LocalHeroIndex
         ;   Label: LAB_004d948a
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d948f
     MOV ECX,dword ptr [EAX + 0x2c]      ; 004d9496
@@ -94,7 +94,7 @@ section .text
     PUSH ESI                            ; 004d94ba | g_CGame_01c775ec
     CALL core_game.cpp_CGame_runGameSession_FUN_0049da10 ; 004d94bb
         ;   XREF to: 0049da10 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_runGameSession_FUN_0049da10(CGame * this_ptr)
-    MOV ESI,dword ptr [0x01cae0e8]      ; 004d94c0 | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 004d94c0 | g_LocalHeroIndex
     ADD ESP,0x4                         ; 004d94c6
     MOV ESI,dword ptr [ESI*0x4 + 0x1cae0d8] ; 004d94c9
     PUSH ESI                            ; 004d94d0

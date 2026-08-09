@@ -22,7 +22,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_004270e0(CCharacter *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xc000);
-  if (this_ptr == *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
+  if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     dVar4 = round
                       ((double)((float)DAT_007658dc +
                                g_CGame_PTR_005b9354->delta_time_float * 8388608.0f));

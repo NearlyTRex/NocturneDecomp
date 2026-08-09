@@ -28,11 +28,11 @@
 ;   float FLOAT_0059749b = 1.700000
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
-;   core_fire.cpp_CFireEffect_FUN_0048c0d0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0
 ;   core_vessel.cpp_CCryptVessel_FUN_0054fc40
 ;
@@ -120,7 +120,7 @@ section .text
     CMP dword ptr [EAX + 0x17c],0x0     ; 0054fd5a
     JZ 0x0055018a                       ; 0054fd61
         ;   XREF to: 0055018a (CONDITIONAL_JUMP)  ; LAB_0055018a
-    MOV EAX,[0x01cae0e8]                ; 0054fd67 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054fd67 | g_LocalHeroIndex
         ;   Label: LAB_0054fd67
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054fd6c
     LEA ESI,[EBX + 0x20]                ; 0054fd73
@@ -434,8 +434,8 @@ section .text
     PUSH ESI                            ; 00550119
     MOV EAX,[0x005b80f0]                ; 0055011a | g_CFireEffect_PTR_005b80f0
     PUSH EAX                            ; 0055011f
-    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 00550120
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 ; 00550120
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     MOV EAX,dword ptr [EBX + 0x3a0]     ; 00550125
     MOV dword ptr [EBX + 0x3b4],0x3f800000 ; 0055012b
     MOV EDX,dword ptr [EAX + 0x20]      ; 00550135

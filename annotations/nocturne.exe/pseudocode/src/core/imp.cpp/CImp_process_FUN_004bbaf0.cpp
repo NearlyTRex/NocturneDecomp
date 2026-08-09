@@ -184,9 +184,9 @@ LAB_004bbb59:
   if (iVar12 == 0) {
     switch(iVar6) {
     case 0:
-      iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-      if (iVar6 == 0) {
+      EVar10 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                         (&g_HeroActors[g_LocalHeroIndex]->base);
+      if (EVar10 == DEATH_STATE_ALIVE) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
         if (pCVar3 == (CCharacter *)0x0) {

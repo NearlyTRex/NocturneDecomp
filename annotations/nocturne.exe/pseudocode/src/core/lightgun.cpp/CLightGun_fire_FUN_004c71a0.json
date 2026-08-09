@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,12 +58,24 @@
       {
         "category": "type_error",
         "column": 13,
-        "line": 65,
+        "line": 64,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 13,
+        "line": 68,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 57,
+        "line": 68,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 13,
         "line": 69,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
@@ -87,14 +99,8 @@
       },
       {
         "category": "type_error",
-        "column": 13,
-        "line": 71,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 71,
+        "column": 32,
+        "line": 72,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
@@ -108,12 +114,6 @@
         "column": 32,
         "line": 74,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 32,
-        "line": 75,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 470,
+    "complexity_score": 440,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 230,
-    "suspect_count": 21,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_pointer_store",
       "sub84_truncation",
       "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 874
   },
@@ -255,14 +253,14 @@
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
+      "addr": "004940d0",
+      "is_variadic": true,
+      "name": "engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0"
+    },
+    {
       "addr": "005270d0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setSfxVolume_FUN_005270d0"
-    },
-    {
-      "addr": "004940d0",
-      "is_variadic": false,
-      "name": "xxx_unk.c_FUN_004940d0"
     }
   ],
   "globals": [
@@ -370,8 +368,8 @@
     },
     {
       "addr": "005b9284",
-      "name": "PTR_DAT_005b9284",
-      "type": "void*",
+      "name": "g_CForceFeedback_PTR_005b9284",
+      "type": "CForceFeedback*",
       "value": "01c70f74"
     },
     {
@@ -412,8 +410,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -552,7 +550,7 @@
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 212,
+          "line": 211,
           "message": "Uninitialized variable: unaff_retaddr",
           "severity": "error"
         }
@@ -563,16 +561,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 57,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_6c._4_4_ = 0.0;",
@@ -580,7 +570,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 61,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
@@ -589,14 +587,14 @@
     {
       "description": "Unknown/mangled field access",
       "line": 62,
-      "match": "._0_4_",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "auStack_44._0_4_ = aCStack_a4[0].x + (float)auStack_8c._0_4_;",
+      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 62,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
@@ -605,14 +603,6 @@
     {
       "description": "Unknown/mangled field access",
       "line": 63,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_44._4_4_ = aCStack_a4[0].y + (float)auStack_8c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
@@ -620,7 +610,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 63,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_44._8_4_ = aCStack_a4[0].z + (float)auStack_8c._8_4_;",
@@ -628,7 +618,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 65,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_38 = (float)auStack_8c._0_4_ * fStack_2c;",
@@ -636,7 +626,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 67,
+      "line": 66,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fStack_34 = (float)auStack_8c._4_4_ * fStack_2c;",
@@ -644,7 +634,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 67,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fStack_30 = (float)auStack_8c._8_4_ * fStack_2c;",
@@ -652,23 +642,15 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 123,
+      "line": 122,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar8),0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),",
       "type": "sub84_truncation"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 147,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (pCVar6 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 153,
       "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);",
@@ -676,7 +658,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 188,
+      "line": 187,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
@@ -684,7 +666,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 191,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
@@ -692,7 +674,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 218,
+      "line": 217,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_fc._4_4_ = 0.1;",
@@ -700,7 +682,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 224,
+      "line": 223,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c8._0_4_ = this_ptr;",
@@ -708,7 +690,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 224,
       "match": "(code **)((int)pCVar3",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -716,7 +698,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 225,
+      "line": 224,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -724,7 +706,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 225,
+      "line": 224,
       "match": "code *",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -732,10 +714,10 @@
     },
     {
       "description": "Uninitialized variable: unaff_retaddr",
-      "line": 212,
+      "line": 211,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "if (pCVar6 == unaff_retaddr) {",
+      "text": "if (pCVar5 == unaff_retaddr) {",
       "type": "static_uninitvar"
     }
   ],

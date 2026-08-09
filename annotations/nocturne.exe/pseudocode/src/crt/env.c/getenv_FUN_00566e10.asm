@@ -7,10 +7,10 @@
 ; char *           Stack[0x4]:4   name
 ;
 ; XREF[8]:
-;   core_game.cpp_CGame_FUN_0049f930 at 0049fece
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d613
+;   core_game.cpp_CGame_processHotkeys_FUN_0049f930 at 0049fece
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dc1e
-;   core_main.c_FUN_004c85f0 at 004c8622
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8622
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e994a
 ;   crt_io.c_getTempDirectory_FUN_005687bc at 005687d4
 ;   crt_time.c_tzset_FUN_0056d608 at 0056d60d

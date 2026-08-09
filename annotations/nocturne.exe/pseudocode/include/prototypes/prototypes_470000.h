@@ -135,7 +135,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_004774b0(CEdCheck *this_
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_00477670(CBitFont *font_ptr);
-undefined4 * FUN_00477680(undefined4 *param_1,undefined4 *param_2);
+undefined4 * __cdecl shape_edittool_cpp_FUN_00477680(undefined4 *param_1,undefined4 *param_2);
 CVector3f * __cdecl shape_edittool_cpp_CVector3f_arrdtor_FUN_00477690(CVector3f *this_ptr,uint flags);
 void __cdecl core_elephant_cpp_staticInit_FUN_004776b0(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_004776e0(void);

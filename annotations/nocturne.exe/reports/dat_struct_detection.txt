@@ -2,15 +2,15 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2221
-Filtered out (inside named data): 312
+Total DAT_ globals found: 2219
+Filtered out (inside named data): 311
 Immediate constants (not real globals): 62
-Real globals remaining: 2159
-Clusters detected: 205
-DAT_ globals in clusters: 2085
+Real globals remaining: 2157
+Clusters detected: 204
+DAT_ globals in clusters: 2083
 
 Classification summary:
-  unknown              72 clusters
+  unknown              71 clusters
   vector_groups        48 clusters
   struct               48 clusters
   array                22 clusters
@@ -224,7 +224,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5b9214                       ; 0048f62c | DAT_005b9214
 
   DAT_005c18c8  value=0x5C18C8 (6035656)  refs=1
-    FUN_004c85f0
+    initializeGameSystems
       PUSH 0x5c18c8                       ; 004c8694 | DAT_005c18c8
 
   DAT_005badbc  value=0x5BADBC (6008252)  refs=1
@@ -584,11 +584,11 @@ MEDIUM CONFIDENCE (66 clusters)
       0x01c78ad4  DAT_01c78ad4  undefined4
       ... +70 more
 
-  0x01cae018 - 0x01cae37c  (63 items, 868 bytes span)
+  0x01cae018 - 0x01cae37c  (62 items, 868 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 19 groups of 3 consecutive ints found
-    Referenced by: 103 functions
+    Referenced by: 29 functions
      near: g_CHealthItemActorType_01cae098.name_hash (undefined4) at -184
       0x01cae018  DAT_01cae018  undefined4
       0x01cae01c  DAT_01cae01c  undefined4
@@ -596,7 +596,7 @@ MEDIUM CONFIDENCE (66 clusters)
       0x01cae024  DAT_01cae024  undefined4
       0x01cae028  DAT_01cae028  undefined4
       0x01cae02c  DAT_01cae02c  undefined4
-      ... +57 more
+      ... +56 more
 
   0x005b0674 - 0x005b0768  (57 items, 244 bytes span)
     Classification: vector_groups
@@ -1406,7 +1406,7 @@ MEDIUM CONFIDENCE (66 clusters)
       0x0058d030  DAT_0058d030  undefined4 [float]
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (121 clusters)
+LOW CONFIDENCE (120 clusters)
 --------------------------------------------------------------------------------
 
   0x005b5d00 - 0x005b64f8  (65 items, 2040 bytes span)
@@ -2190,6 +2190,16 @@ LOW CONFIDENCE (121 clusters)
       0x01c02799  DAT_01c02799  undefined4 [byte]
       0x01c027a4  DAT_01c027a4  undefined4 [byte]
 
+  0x01c70714 - 0x01c70758  (3 items, 68 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=68 bytes
+    Referenced by: 2 functions
+     near: g_FastInvSqrtMagic (int) at +4
+      0x01c70714  DAT_01c70714  undefined4
+      0x01c70754  DAT_01c70754  undefined4
+      0x01c70758  DAT_01c70758  undefined4
+
   0x01c71e30 - 0x01c71e38  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -2404,15 +2414,6 @@ LOW CONFIDENCE (121 clusters)
       0x005b7478  DAT_005b7478  undefined4
       0x005b747c  DAT_005b747c  undefined4
 
-  0x005b7fd0 - 0x005b8014  (2 items, 68 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=68 bytes
-    Referenced by: 2 functions
-     near: switchdataD_005b7fd4 (void*) at -4
-      0x005b7fd0  DAT_005b7fd0  undefined4
-      0x005b8014  DAT_005b8014  undefined4
-
   0x005b9d4c - 0x005b9d64  (2 items, 24 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -2528,15 +2529,6 @@ LOW CONFIDENCE (121 clusters)
      near: g_CStake_ARRAY_01c23d50[0].physics_box.is_valid (undefined4) at -608
       0x01c23d48  DAT_01c23d48  undefined4
       0x01c23d4c  DAT_01c23d4c  undefined4
-
-  0x01c70754 - 0x01c70758  (2 items, 4 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=4 bytes
-    Referenced by: 2 functions
-     near: g_CFliesActorType_01c70718.name_hash (undefined4) at +4
-      0x01c70754  DAT_01c70754  undefined4
-      0x01c70758  DAT_01c70758  undefined4
 
   0x01c781c0 - 0x01c781c4  (2 items, 4 bytes span)
     Classification: unknown
@@ -2686,9 +2678,9 @@ ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
   DAT_01abb658                    addr=01abb658    type=undefined4      refs=2
   DAT_0059c91c                    addr=0059c91c    type=undefined4      refs=2 [likely float]  near: g_CDynamiteVTable(-8)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
-  DAT_01c5d704                    addr=01c5d704    type=undefined4      refs=2  near: g_CExplosion_ARRAY_01c5d708[0].lifetime(-16)
   DAT_01c5d820                    addr=01c5d820    type=undefined4      refs=2  near: g_CExplosion_ARRAY_01c5d708[1].gore_multiplier(+232)
   DAT_01c625f4                    addr=01c625f4    type=undefined4      refs=2
+  DAT_01c5d704                    addr=01c5d704    type=undefined4      refs=2  near: g_CExplosion_ARRAY_01c5d708[0].lifetime(-16)
   DAT_01c58df8                    addr=01c58df8    type=undefined4      refs=2  near: g_CFireball_ARRAY_01c58dfc[0].base.lifetime_remaining(-28)
   DAT_01c4f088                    addr=01c4f088    type=undefined4      refs=2  near: g_CGlassParticle_ARRAY_01c4f08c[0].base.lifetime_remaining(-28)
   DAT_01c62eb8                    addr=01c62eb8    type=undefined4      refs=2  near: g_CGunFlame_ARRAY_01c62ebc(-4)
@@ -2721,7 +2713,7 @@ ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
   ... +24 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (312)
+FILTERED OUT - INSIDE NAMED DATA (311)
 --------------------------------------------------------------------------------
   DAT_005779d5                    inside s_Dangling_corrupt_actor_p_00577987
   DAT_00578e76                    inside s_CBodyPart_00578e6a
@@ -2967,7 +2959,6 @@ FILTERED OUT - INSIDE NAMED DATA (312)
   DAT_01bca0fc                    inside g_CVector3f_01bca0c4
   DAT_01bca100                    inside g_CVector3f_01bca0c4
   DAT_01bca104                    inside g_CVector3f_01bca0c4
-  DAT_01c70714                    inside CVector3f_01c70708
   DAT_01c71394                    inside CVector3f_01c71388
   DAT_01c71398                    inside CVector3f_01c71388
   DAT_01c7139c                    inside CVector3f_01c71388

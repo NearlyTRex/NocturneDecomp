@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_00535900 at 0053634d
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 0053634d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_L_Forearm_00595ebf

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_00535900 at 0053649d
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 0053649d
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0053ffb4 = 005400d4

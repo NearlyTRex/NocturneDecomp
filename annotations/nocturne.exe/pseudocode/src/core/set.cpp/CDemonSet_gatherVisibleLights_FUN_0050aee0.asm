@@ -53,7 +53,7 @@
 ;   float FLOAT_005905da = 0.6660000
 ;   double DOUBLE_005905e2 = 2
 ;   undefined4 DAT_005a18f0
-;   undefined4 CVector3f_01c70708.y
+;   int g_FastSqrtMagic
 ;   undefined4 DAT_01fb9b54
 ;   undefined4 DAT_01fb9b58
 ;   undefined4 DAT_01fba2d8
@@ -598,7 +598,7 @@ section .text
         ;   XREF to: 0050b392 (UNCONDITIONAL_JUMP)  ; LAB_0050b392
     MOV EAX,dword ptr [ESP + 0x88]      ; 0050b52c
         ;   Label: LAB_0050b52c
-    MOV ECX,dword ptr [0x01c7070c]      ; 0050b533 | CVector3f_01c70708.y
+    MOV ECX,dword ptr [0x01c7070c]      ; 0050b533 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0050b539
     ADD EAX,ECX                         ; 0050b53b
     MOV dword ptr [ESP + 0x78],EAX      ; 0050b53d

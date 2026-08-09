@@ -20,19 +20,18 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
   iVar4 = 0;
   do {
     iVar2 = iVar4 + 4;
-    *(uint *)(iVar4 + 0x1cae0d8) = 0;
+    *(uint *)((int)g_HeroActors + iVar4) = 0;
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
   if (g_CNetGame_PTR_005bdee0->connection_type == CONNECTION_NONE) {
     _DAT_01cae0d4 = 1;
-    _DAT_01cae0e8 = g_CNetGame_PTR_005bdee0->connection_type;
+    g_LocalHeroIndex = g_CNetGame_PTR_005bdee0->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
                       (this_ptr,0,g_CGame_PTR_005b9354->hero_number,existing_hero);
     if (iVar4 == 0) {
       return 0;
     }
-    *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) =
-         g_CGame_PTR_005b9354->aim_mode;
+    g_HeroActors[g_LocalHeroIndex]->aim_mode = g_CGame_PTR_005b9354->aim_mode;
   }
   else {
     _DAT_01cae0d4 = g_CNetGame_PTR_005bdee0->player_count;
@@ -53,17 +52,17 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
         if (iVar1 == 0) {
           return 0;
         }
-        *(uint *)(*(int *)(iVar2 + 0x1cae0d8) + 0xbc90) = 1;
+        *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0xbc90) = 1;
         iVar4 = iVar4 + 1;
-        *(uint *)(*(int *)(iVar2 + 0x1cae0d8) + 0x1f59c) =
+        *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f59c) =
              *(uint *)(g_CNetGame_PTR_005bdee0->players[0].name + iVar3 + 0x18);
         iVar3 = iVar3 + 0x78;
         iVar2 = iVar2 + 4;
       } while (iVar4 < _DAT_01cae0d4);
     }
-    _DAT_01cae0e8 = g_CNetGame_PTR_005bdee0->local_player_index;
+    g_LocalHeroIndex = g_CNetGame_PTR_005bdee0->local_player_index;
   }
-  *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0xbc90) = 0;
+  g_HeroActors[g_LocalHeroIndex]->control_type = HERO_CONTROL_PLAYER;
   actor_ptr = this_ptr->first_actor;
   while (actor_ptr != (CDemonActor *)0x0) {
     iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0(actor_ptr,"CHeroPlaceholder");

@@ -92,7 +92,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_00454750(CZombieDog *this_ptr,f
           local_6c = (pCVar3->base).location.position.z -
                      (this_ptr->base).base.base.location.position.z;
           local_24 = local_6c * local_6c + local_74 * local_74 + local_70 * local_70;
-          local_18 = (float)(((int)local_24 >> 1) + (int)CVector3f_01c70708.y);
+          local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);
           if (local_18 < 8.0f) {
             iVar4 = 1;
           }

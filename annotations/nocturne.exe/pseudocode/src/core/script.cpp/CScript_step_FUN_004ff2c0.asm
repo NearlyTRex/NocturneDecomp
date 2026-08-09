@@ -5436,7 +5436,7 @@ section .text
         ;   XREF to: 004ff36b (CONDITIONAL_JUMP)  ; LAB_004ff36b
     LEA EAX,[ESP + 0x1f94]              ; 00502ed6
     PUSH EAX                            ; 00502edd
-    MOV EAX,[0x01cae0e8]                ; 00502ede | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00502ede | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00502ee3
     ADD EAX,0x1f5a0                     ; 00502eea
     PUSH EAX                            ; 00502eef
@@ -5488,7 +5488,7 @@ section .text
     JNZ 0x004ff36b                      ; 00502f81
         ;   XREF to: 004ff36b (CONDITIONAL_JUMP)  ; LAB_004ff36b
     MOV ESI,dword ptr [ESP + 0x3f18]    ; 00502f87
-    MOV EAX,[0x01cae0e8]                ; 00502f8e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00502f8e | g_LocalHeroIndex
     PUSH ESI                            ; 00502f93
     MOV EDI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00502f94
     PUSH EDI                            ; 00502f9b

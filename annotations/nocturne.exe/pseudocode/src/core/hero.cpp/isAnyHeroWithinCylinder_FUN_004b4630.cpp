@@ -19,7 +19,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004b4630(CVector3f *point,
   if (0 < _DAT_01cae0d4) {
     iVar4 = 0;
     do {
-      iVar1 = *(int *)(iVar4 + 0x1cae0d8);
+      iVar1 = *(int *)((int)g_HeroActors + iVar4);
       if (iVar1 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - point->x;
         fVar3 = *(float *)(iVar1 + 0x28) - point->z;

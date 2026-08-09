@@ -1368,7 +1368,7 @@ section .text
     FADDP                               ; 004aa046
     FSTP float ptr [EBP + 0xe]          ; 004aa048
     MOV EAX,dword ptr [EBP + 0xe]       ; 004aa04b
-    MOV EDX,dword ptr [0x01c7070c]      ; 004aa04e | CVector3f_01c70708.y
+    MOV EDX,dword ptr [0x01c7070c]      ; 004aa04e | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004aa054
     ADD EAX,EDX                         ; 004aa056
     MOV dword ptr [EBP + 0x12],EAX      ; 004aa058
@@ -1594,7 +1594,7 @@ section .text
     JZ 0x004aa2f0                       ; 004aa2ed
         ;   XREF to: 004aa2f0 (CONDITIONAL_JUMP)  ; LAB_004aa2f0
     INC ESI                             ; 004aa2ef
-    MOV EAX,[0x01cae0e8]                ; 004aa2f0 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004aa2f0 | g_LocalHeroIndex
         ;   Label: LAB_004aa2f0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004aa2f5
     PUSH EAX                            ; 004aa2fc
@@ -1941,7 +1941,7 @@ section .text
     LEA EAX,[EBP + -0x5a]               ; 004aa6db
     XOR ECX,ECX                         ; 004aa6de
     PUSH EAX                            ; 004aa6e0
-    MOV EAX,[0x01cae0e8]                ; 004aa6e1 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004aa6e1 | g_LocalHeroIndex
     MOV dword ptr [EBP + -0x5a],ECX     ; 004aa6e6
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004aa6e9
     MOV dword ptr [EBP + -0x56],ECX     ; 004aa6f0
@@ -1954,7 +1954,7 @@ section .text
     PUSH ESI                            ; 004aa706
     LEA EAX,[EBP + 0xfffffef2]          ; 004aa707
     PUSH EAX                            ; 004aa70d
-    MOV EAX,[0x01cae0e8]                ; 004aa70e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004aa70e | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004aa713
     ADD EAX,0x150                       ; 004aa71a
     PUSH EAX                            ; 004aa71f
@@ -1964,7 +1964,7 @@ section .text
     PUSH EAX                            ; 004aa728
     LEA EAX,[EBP + 0xffffff3a]          ; 004aa729
     PUSH EAX                            ; 004aa72f
-    MOV EAX,[0x01cae0e8]                ; 004aa730 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004aa730 | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004aa735
     PUSH EDX                            ; 004aa73c
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004aa73d
@@ -1978,7 +1978,7 @@ section .text
     TEST EAX,EAX                        ; 004aa74f
     JLE 0x004a9d13                      ; 004aa751
         ;   XREF to: 004a9d13 (CONDITIONAL_JUMP)  ; caseD_10
-    MOV EAX,[0x01cae0e8]                ; 004aa757 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004aa757 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004aa75c
     PUSH EAX                            ; 004aa763
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004aa764

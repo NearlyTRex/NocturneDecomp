@@ -50,7 +50,8 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
     if ((this_ptr->base).location.position.y <
         this_ptr->ground_y - (local_78.max.y - local_78.min.y) * (float)0.84999999999999998) {
       if (this_ptr->is_visible != 0) {
-        core_set_cpp_CDemonSet_FUN_0050e660(g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
+        core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660
+                  (g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);
       }
       iVar4 = this_ptr->no_rock_flag;

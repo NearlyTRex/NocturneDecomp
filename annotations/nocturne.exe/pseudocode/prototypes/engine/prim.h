@@ -3,6 +3,10 @@
 // Function prototypes for engine/prim.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_prim.c_FUN_004f9430
+// Address: 004f9430
+void __cdecl FUN_004f9430(void);
+
 // Original: engine_prim.c_setMaxViewportScanline_FUN_004f9440
 // Address: 004f9440
 void __cdecl setMaxViewportScanline(int max);

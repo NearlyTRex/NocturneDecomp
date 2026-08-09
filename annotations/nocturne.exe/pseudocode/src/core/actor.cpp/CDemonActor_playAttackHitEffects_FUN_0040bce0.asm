@@ -13,11 +13,11 @@
 ;   core_melee.cpp_CMelee_playAttackHitEffects_FUN_004cefe0 at 004ceff8
 ;
 ; Referenced Globals:
-;   void* PTR_DAT_005b9284 = 01c70f74
-;   undefined4 DAT_01cae0e8
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
-;   xxx_unk.c_FUN_004940d0
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -30,7 +30,7 @@ section .text
     PUSH EDX                            ; 0040bce9
     MOV EAX,dword ptr [EDX + 0x14c]     ; 0040bcea
     CALL dword ptr [EAX + 0x8c]         ; 0040bcf0
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0040bcf6 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0040bcf6 | g_LocalHeroIndex
     MOV ECX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0040bcfc
     ADD ESP,0x4                         ; 0040bd03
     CMP EAX,ECX                         ; 0040bd06
@@ -47,20 +47,20 @@ section .text
     POP EBX                             ; 0040bd16
         ;   Label: LAB_0040bd16
     RET                                 ; 0040bd17
-    MOV EBX,dword ptr [0x005b9284]      ; 0040bd18 | PTR_DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 0040bd18 | g_CForceFeedback_PTR_005b9284
         ;   Label: LAB_0040bd18
     PUSH EBX                            ; 0040bd1e
-    CALL xxx_unk.c_FUN_004940d0         ; 0040bd1f
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0040bd1f
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0040bd24
     POP EBX                             ; 0040bd27
     RET                                 ; 0040bd28
     PUSH ESI                            ; 0040bd29
         ;   Label: LAB_0040bd29
-    MOV ESI,dword ptr [0x005b9284]      ; 0040bd2a | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0040bd2a | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 0040bd30
-    CALL xxx_unk.c_FUN_004940d0         ; 0040bd31
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0040bd31
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0040bd36
     POP ESI                             ; 0040bd39
     POP EBX                             ; 0040bd3a

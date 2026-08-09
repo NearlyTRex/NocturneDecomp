@@ -30,7 +30,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(CNetGam
     iVar4 = 0;
     pSVar1 = sim_frame;
     do {
-      piVar6 = (int *)(iVar4 + 0x1cae0d8);
+      piVar6 = (int *)((int)g_HeroActors + iVar4);
       iVar4 = iVar4 + 4;
       pSVar5 = pSVar1->player_input;
       piVar6 = (int *)(*piVar6 + 0xbc94);

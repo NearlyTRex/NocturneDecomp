@@ -20,7 +20,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
     g_CurrentLineNumber = 1523;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createOneHero - too many heros!");
   }
-  if (*(int *)(index * 4 + 0x1cae0d8) != 0) {
+  if (g_HeroActors[index] != (CHero *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 1524;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::createOneHero - hero already created!");
@@ -35,7 +35,7 @@ LAB_004d999a:
                   (g_CEditorTools_PTR_005b6d50,"Can't find hero placeholder for hero %d",index);
         return 0;
       }
-      *(CHero **)(index * 4 + 0x1cae0d8) = local_14;
+      g_HeroActors[index] = local_14;
       return 1;
     }
     this_ptr_00 = (CHeroPlaceholder *)

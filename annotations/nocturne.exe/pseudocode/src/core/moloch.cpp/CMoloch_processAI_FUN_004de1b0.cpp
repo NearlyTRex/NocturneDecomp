@@ -7,19 +7,19 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
   float fVar2;
-  int iVar3;
+  CHero *pCVar3;
   EHeroTask EVar4;
+  CHero *pCVar5;
   CPathMap *this_ptr_00;
-  CVector3f *pCVar5;
-  uint uVar6;
-  int iVar7;
+  int iVar6;
+  CVector3f *pCVar7;
+  uint uVar8;
   float fStack_78;
   CVector3f local_74;
   CVector3f CStack_68;
@@ -34,48 +34,52 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,fl
   
   local_20 = 0.25;
   local_24 = 0.7853982;
-  iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  pCVar3 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_input,0,0x2c);
+  iVar6 = g_LocalHeroIndex;
   EVar4 = (this_ptr->base).ai_task;
   if ((EVar4 != HERO_TASK_STAND) && (EVar4 == HERO_TASK_FOLLOW)) {
-    iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    pCVar5 = g_HeroActors[g_LocalHeroIndex];
     pCVar1 = &(this_ptr->base).base.base.location;
-    local_44.x = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
-    local_44.y = *(float *)(iVar3 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    local_44.z = *(float *)(iVar3 + 0x28) - (this_ptr->base).base.base.location.position.z;
-    local_74.x = (pCVar1->position).x - *(float *)(iVar7 + 0x20);
-    local_74.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar7 + 0x24);
-    local_74.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar7 + 0x28);
+    local_44.x = (pCVar3->base).base.location.position.x - (pCVar1->position).x;
+    local_44.y = (pCVar3->base).base.location.position.y -
+                 (this_ptr->base).base.base.location.position.y;
+    local_44.z = (pCVar3->base).base.location.position.z -
+                 (this_ptr->base).base.base.location.position.z;
+    local_74.x = (pCVar1->position).x - (pCVar5->base).base.location.position.x;
+    local_74.y = (this_ptr->base).base.base.location.position.y -
+                 (pCVar5->base).base.location.position.y;
+    local_74.z = (this_ptr->base).base.base.location.position.z -
+                 (pCVar5->base).base.location.position.z;
     if (&local_74 != &local_44) {
       local_74.x = local_44.x;
       local_74.y = local_44.y;
       local_74.z = local_44.z;
     }
-    iVar7 = _DAT_01cae0e8 * 4;
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_74.z * local_74.z + local_74.x * local_74.x + local_74.y * local_74.y) <=
         (float)6) {
-      iVar7 = *(int *)(iVar7 + 0x1cae0d8);
-      iVar7 = (**(code **)(*(int *)(iVar7 + 0x14c) + 0x140))(iVar7);
-      if ((iVar7 == 0) &&
-         (uVar6 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
-         uVar6 != 0)) {
-        if (uVar6 < 2) {
+      iVar6 = (*(((g_HeroActors[iVar6]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                        (g_HeroActors[iVar6]);
+      if ((iVar6 == 0) &&
+         (uVar8 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
+         uVar8 != 0)) {
+        if (uVar8 < 2) {
           (this_ptr->base).player_input.action_state.walk = 1;
         }
-        else if (uVar6 == 2) {
+        else if (uVar8 == 2) {
           (this_ptr->base).player_input.action_state.run = 1;
           (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
     else {
-      iVar7 = *(int *)(iVar7 + 0x1cae0d8);
-      this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar7 + 0x14c) + 0xbc))(iVar7);
-      iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
+      this_ptr_00 = (*((g_HeroActors[iVar6]->base).base.vtable._ub)->getPathMap)
+                              ((CDemonActor *)g_HeroActors[iVar6]);
+      iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_004f1600
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_68,
                          (this_ptr->base).base.base.direction_hint);
-      if (iVar7 != 0) {
+      if (iVar6 != 0) {
         fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                               (CStack_68.y - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = fStack_18 * (float)0.31830988619288902 * (float)4;
@@ -102,19 +106,22 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_004de1b0(CMoloch *this_ptr,fl
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
       (this_ptr->base).player_input.turn_speed = local_20;
     }
-    CStack_38.x = *(float *)(iVar3 + 0x20) - (this_ptr->base).base.base.location.position.x;
-    CStack_38.y = *(float *)(iVar3 + 0x24) - (this_ptr->base).base.base.location.position.y;
-    CStack_38.z = *(float *)(iVar3 + 0x28) - (this_ptr->base).base.base.location.position.z;
+    CStack_38.x = (pCVar3->base).base.location.position.x -
+                  (this_ptr->base).base.base.location.position.x;
+    CStack_38.y = (pCVar3->base).base.location.position.y -
+                  (this_ptr->base).base.base.location.position.y;
+    CStack_38.z = (pCVar3->base).base.location.position.z -
+                  (this_ptr->base).base.base.location.position.z;
     if (&local_74 != &CStack_38) {
       local_74.x = CStack_38.x;
       local_74.y = CStack_38.y;
       local_74.z = CStack_38.z;
     }
-    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_50,&local_74);
-    if (&local_74 != pCVar5) {
-      local_74.x = pCVar5->x;
-      local_74.y = pCVar5->y;
-      local_74.z = pCVar5->z;
+    pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&CStack_50,&local_74);
+    if (&local_74 != pCVar7) {
+      local_74.x = pCVar7->x;
+      local_74.y = pCVar7->y;
+      local_74.z = pCVar7->z;
     }
     fStack_58 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                           (local_74.y - (this_ptr->base).base.base.orient.vec.y);

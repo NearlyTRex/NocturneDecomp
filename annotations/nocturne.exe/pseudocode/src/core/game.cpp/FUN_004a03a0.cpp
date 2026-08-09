@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_FUN_004a03a0(char *param_1,EAmmoType param_2)
 
 {
@@ -26,7 +24,7 @@ void __cdecl core_game_cpp_FUN_004a03a0(char *param_1,EAmmoType param_2)
     core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pCVar1,param_1);
     pCVar1->ammo_count = 500;
     core_inv_cpp_CInventory_addItem_FUN_004bf360
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),&pCVar1->base,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,&pCVar1->base,1);
     return;
   }
   return;

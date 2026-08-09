@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 00496782
-;   core_stranger.cpp_CStranger_FUN_00535900 at 00536099
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00536099
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Open_pct_f_0057835e

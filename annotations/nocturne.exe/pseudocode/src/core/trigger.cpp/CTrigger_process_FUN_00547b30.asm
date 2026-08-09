@@ -27,7 +27,7 @@
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 CVector3f_01c70708.y
+;   int g_FastSqrtMagic
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cc9450
 ;   CDemonSet g_CDemonSet_01e57284
@@ -357,7 +357,7 @@ section .text
     PUSH 0x0                            ; 00547eac
     FSTP float ptr [ESP + 0xa8]         ; 00547eae
     MOV EAX,dword ptr [ESP + 0xa8]      ; 00547eb5
-    MOV EDI,dword ptr [0x01c7070c]      ; 00547ebc | CVector3f_01c70708.y
+    MOV EDI,dword ptr [0x01c7070c]      ; 00547ebc | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00547ec2
     PUSH 0x0                            ; 00547ec4
     ADD EAX,EDI                         ; 00547ec6

@@ -754,7 +754,7 @@ section .text
     ADD EDI,0x4                         ; 004bc1e2
     JMP 0x004bc18b                      ; 004bc1e5
         ;   XREF to: 004bc18b (UNCONDITIONAL_JUMP)  ; LAB_004bc18b
-    MOV EAX,[0x01cae0e8]                ; 004bc1e7 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004bc1e7 | g_LocalHeroIndex
         ;   Label: caseD_0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bc1ec
     PUSH EAX                            ; 004bc1f3

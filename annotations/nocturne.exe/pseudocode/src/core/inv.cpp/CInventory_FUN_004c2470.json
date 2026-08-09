@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 69,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "undeclared_identifier",
@@ -111,9 +105,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 38,
-        "line": 334,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
+        "column": 52,
+        "line": 381,
+        "message": "use of undeclared identifier '_DAT_01d16810'; did you mean 'DAT_02DE6810'?"
       }
     ],
     "success": false,
@@ -122,24 +116,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 654,
+    "complexity_score": 638,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 384,
-    "suspect_count": 23,
+    "pseudocode_lines": 383,
+    "suspect_count": 22,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_truncation",
       "raw_address_constant",
-      "raw_address_pointer_store",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1462
+    "total_lines": 1461
   },
   "cross_references": [
     {
@@ -444,8 +437,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -852,14 +845,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 62,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (this_ptr->owner != *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Pointer value `local_4c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 151,
       "match": "(int)local_4c",
@@ -933,7 +918,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 346,
+      "line": 345,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -941,7 +926,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 346,
+      "line": 345,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -949,7 +934,7 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 350,
+      "line": 349,
       "match": "(int)pCVar11",
       "severity": "moderate",
       "text": "(int)pCVar11);",
@@ -973,7 +958,7 @@
     },
     {
       "description": "Raw hex address 0x4c2c2e assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 343,
+      "line": 342,
       "match": "0x4c2c2e",
       "severity": "moderate",
       "text": "iVar3 = 0x4c2c2e;",

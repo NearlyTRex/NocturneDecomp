@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -60,12 +60,6 @@
         "column": 63,
         "line": 59,
         "message": "use of undeclared identifier 'stack0xffffffcc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 88,
-        "message": "use of undeclared identifier 'PTR_DAT_005b9284'"
       }
     ],
     "success": false,
@@ -74,18 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 414,
-    "complexity_score": 208,
+    "complexity_score": 209,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 159,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 572
+    "total_lines": 573
   },
   "cross_references": [],
   "function": {
@@ -168,6 +162,11 @@
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
+      "addr": "004940d0",
+      "is_variadic": true,
+      "name": "engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0"
+    },
+    {
       "addr": "00526c50",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00526c50"
@@ -176,11 +175,6 @@
       "addr": "00527230",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_killSfx_FUN_00527230"
-    },
-    {
-      "addr": "004940d0",
-      "is_variadic": false,
-      "name": "xxx_unk.c_FUN_004940d0"
     }
   ],
   "globals": [
@@ -246,8 +240,8 @@
     },
     {
       "addr": "005b9284",
-      "name": "PTR_DAT_005b9284",
-      "type": "void*",
+      "name": "g_CForceFeedback_PTR_005b9284",
+      "type": "CForceFeedback*",
       "value": "01c70f74"
     },
     {
@@ -441,7 +435,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 97,
+      "line": 98,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",
@@ -449,7 +443,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 100,
+      "line": 101,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",
@@ -457,7 +451,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 106,
+      "line": 107,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",

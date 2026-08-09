@@ -21,3 +21,9 @@ CDemonActorType g_CImpActorType_01cae33c = {};
 // CGround
 CGround g_CGround_01cadf80 = {};
 
+// CHero*[4]
+CHero* g_HeroActors[4] = {};
+
+// int
+int g_LocalHeroIndex = {};
+

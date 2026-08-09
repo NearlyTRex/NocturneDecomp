@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -92,28 +92,28 @@
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 428,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 429,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 429,
-        "message": "expected expression"
-      },
-      {
         "category": "incompatible_types",
         "column": 17,
         "line": 431,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 501,
+        "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 523,
+        "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 51,
+        "line": 538,
+        "message": "use of undeclared identifier 'DAT_02dd1184'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 1020,
+    "complexity_score": 995,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 47,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 745,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
       "unknown_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_overlapping_globals",
@@ -591,8 +590,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -1426,22 +1425,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 422,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x104))(iVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 514,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x104))(iVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 531,
       "match": "DAT_02dd1184",
@@ -1502,7 +1485,7 @@
       "line": 647,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = pCVar14->x;",
+      "text": "(pUVar1->vec).x = pCVar13->x;",
       "type": "unrolled_memcpy"
     },
     {

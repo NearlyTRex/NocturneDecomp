@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 
 {
@@ -60,10 +58,10 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor 
     this_ptr->blood_effect_timer = 0;
   }
 LAB_0040dc41:
-  if (this_ptr == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
+  if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     switch(ground_type) {
     default:
-      xxx_unk_c_FUN_004940d0();
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       break;
     case GROUND_TYPE_NONE:
     case GROUND_TYPE_WATER:
@@ -73,11 +71,11 @@ LAB_0040dc41:
     case GROUND_TYPE_DIRT:
     case GROUND_TYPE_GRASS:
     case GROUND_TYPE_METAL:
-      xxx_unk_c_FUN_004940d0();
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       break;
     case GROUND_TYPE_WOOD:
     case GROUND_TYPE_CARPET:
-      xxx_unk_c_FUN_004940d0();
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
     }
   }
   dVar7 = (double)volume;

@@ -19,8 +19,8 @@
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9c2
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004befe6
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5730
-;   core_main.c_FUN_004c85f0 at 004c8c3d
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9158
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c3d
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f09
 ;   core_menu.cpp_FUN_004d23d0 at 004d240a
 ;   ... and 3 more

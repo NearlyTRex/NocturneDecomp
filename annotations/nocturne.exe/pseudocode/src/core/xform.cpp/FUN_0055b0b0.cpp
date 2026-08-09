@@ -1,15 +1,14 @@
 // Name: core_xform.cpp_FUN_0055b0b0
 // Address: 0055b0b0
 // Address Range: [[0055b0b0, 0055b17d]]
-// Convention: unknown
-// Signature: float core_xform_cpp_FUN_0055b0b0(void)
+// Convention: __cdecl
+// Signature: float __cdecl core_xform_cpp_FUN_0055b0b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-float core_xform_cpp_FUN_0055b0b0(void)
+float __cdecl core_xform_cpp_FUN_0055b0b0(void)
 
 {
   float10 fVar1;

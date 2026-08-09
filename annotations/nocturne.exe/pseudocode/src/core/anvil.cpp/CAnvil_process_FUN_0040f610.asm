@@ -17,7 +17,7 @@
 ;   double DOUBLE_00578410 = 32
 ;   double DOUBLE_00578418 = 6
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
@@ -50,7 +50,7 @@ section .text
     FSUBR float ptr [EBX + 0x338]       ; 0040f645
     FST float ptr [EBX + 0x338]         ; 0040f64b
     FADD float ptr [EBX + 0x24]         ; 0040f651
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0040f654 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0040f654 | g_LocalHeroIndex
     FSTP float ptr [EBX + 0x24]         ; 0040f65a
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0040f65d
     FLD float ptr [EBX + 0x24]          ; 0040f664
@@ -62,7 +62,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x24]      ; 0040f66f
     MOV dword ptr [EBX + 0x24],EAX      ; 0040f672
     MOV dword ptr [EBX + 0x338],0x0     ; 0040f675
-    MOV EAX,[0x01cae0e8]                ; 0040f67f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0040f67f | g_LocalHeroIndex
         ;   Label: LAB_0040f67f
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0040f684
     FLD float ptr [EAX + 0x24]          ; 0040f68b
@@ -77,7 +77,7 @@ section .text
         ;   Label: LAB_0040f69e
     POP EBX                             ; 0040f6a1
     RET                                 ; 0040f6a2
-    MOV EAX,[0x01cae0e8]                ; 0040f6a3 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0040f6a3 | g_LocalHeroIndex
         ;   Label: LAB_0040f6a3
     MOV dword ptr [EBX + 0x334],0x1     ; 0040f6a8
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0040f6b2
@@ -106,7 +106,7 @@ section .text
         ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     LEA EDX,[ESP + 0xc]                 ; 0040f6fa
     ADD ESP,0x4                         ; 0040f6fe
-    MOV EAX,[0x01cae0e8]                ; 0040f701 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0040f701 | g_LocalHeroIndex
     MOV dword ptr [ESP + 0xc],ESI       ; 0040f706
     MOV dword ptr [ESP + 0x38],EDI      ; 0040f70a
     MOV dword ptr [ESP + 0x3c],EBX      ; 0040f70e

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(CNetGame *this_ptr)
 
 {
@@ -19,5 +17,5 @@ SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(CNet
     }
     return &this_ptr->players[this_ptr->local_player_index].player_input;
   }
-  return (SPlayerInput *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0xbc94);
+  return &g_HeroActors[g_LocalHeroIndex]->player_input;
 }

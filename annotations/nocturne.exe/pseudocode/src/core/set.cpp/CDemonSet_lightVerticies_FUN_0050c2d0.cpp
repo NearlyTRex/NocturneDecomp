@@ -170,7 +170,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                     local_44 = (float)iVar8 * local_a8 - (float)local_24 * local_9c;
                     local_3c = (float)local_24 * (float)local_1c - local_a4 * local_88;
                     local_90 = local_3c * local_3c + local_44 * local_44 + local_40 * local_40;
-                    local_8c = (float)((int)CVector3f_01c70708.z - ((int)local_90 >> 1));
+                    local_8c = (float)(g_FastInvSqrtMagic - ((int)local_90 >> 1));
                     fVar1 = local_8c * (float)65535;
                     puVar11 = puVar11 + 9;
                     iVar5 = iVar5 + 1;
@@ -232,7 +232,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                     fVar4 = (float)iVar14 * fVar2 - (float)local_20 * local_bc;
                     fVar3 = (float)local_20 * local_c0 - local_c4 * (float)local_1c;
                     local_2c = fVar3 * fVar3 + fVar4 * fVar4 + fVar1 * fVar1;
-                    local_28 = (float)((int)CVector3f_01c70708.z - ((int)local_2c >> 1));
+                    local_28 = (float)(g_FastInvSqrtMagic - ((int)local_2c >> 1));
                     fVar2 = local_28 * (float)65535;
                     *(float *)((int)pvVar7 + 8) = fVar1 * fVar2;
                     *(float *)((int)pvVar7 + 0xc) = fVar4 * fVar2;
@@ -301,7 +301,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                     pCVar13 = local_54;
                     local_74 = pfVar15[2] * pfVar15[2] +
                                *pfVar15 * *pfVar15 + pfVar15[1] * pfVar15[1];
-                    local_70 = (float)((int)CVector3f_01c70708.z - ((int)local_74 >> 1));
+                    local_70 = (float)(g_FastInvSqrtMagic - ((int)local_74 >> 1));
                     fVar1 = local_70 * (float)65535;
                     *pfVar15 = *pfVar15 * fVar1;
                     pfVar15[1] = pfVar15[1] * fVar1;
@@ -332,7 +332,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet *this_
                        (1.0 <= ABS(pfVar15[2]))) {
                       local_80 = pfVar15[2] * pfVar15[2] +
                                  *pfVar15 * *pfVar15 + pfVar15[1] * pfVar15[1];
-                      local_7c = (float)((int)CVector3f_01c70708.z - ((int)local_80 >> 1));
+                      local_7c = (float)(g_FastInvSqrtMagic - ((int)local_80 >> 1));
                       fVar1 = local_7c * (float)65535;
                       *pfVar15 = *pfVar15 * fVar1;
                       pfVar15[1] = pfVar15[1] * fVar1;

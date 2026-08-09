@@ -206,7 +206,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a06eb
     MOV dword ptr [EAX + 0x1d0],0x0     ; 004a06ee
     MOV dword ptr [EAX + 0x22c],0x1     ; 004a06f8
-    MOV EAX,[0x01cae0e8]                ; 004a0702 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a0702 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a0707
     FLD float ptr [EAX + 0x2434]        ; 004a070e
     FADD double ptr [0x00583aea]        ; 004a0714 | DOUBLE_00583aea
@@ -224,7 +224,7 @@ section .text
         ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40(CWeather * this_ptr, float flash_timer, int play_sound)
     ADD ESP,0xc                         ; 004a074c
     LEA ESI,[ESP + 0x164]               ; 004a074f
-    MOV EAX,[0x01cae0e8]                ; 004a0756 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a0756 | g_LocalHeroIndex
     PUSH ESI                            ; 004a075b
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a075c
     PUSH EAX                            ; 004a0763
@@ -731,7 +731,7 @@ section .text
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 004a0d23
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004a0d28
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004a0d2b | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004a0d2b | g_LocalHeroIndex
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a0d31
     MOV EBX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004a0d34
     MOV EAX,dword ptr [EAX + 0xc4]      ; 004a0d3b
@@ -805,7 +805,7 @@ section .text
     PUSH EBX                            ; 004a0e02
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 004a0e03
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
-    MOV EAX,[0x01cae0e8]                ; 004a0e08 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a0e08 | g_LocalHeroIndex
     ADD ESP,0xc                         ; 004a0e0d
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a0e10
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a0e17
@@ -1044,7 +1044,7 @@ section .text
     CMP EAX,dword ptr [ESP + 0x250]     ; 004a10b2
     JNZ 0x004a1186                      ; 004a10b9
         ;   XREF to: 004a1186 (CONDITIONAL_JUMP)  ; LAB_004a1186
-    MOV EAX,[0x01cae0e8]                ; 004a10bf | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a10bf | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a10c4
     PUSH 0x582f2c                       ; 004a10cb | = "Skeleton_key"
     ADD EAX,0x1f5a0                     ; 004a10d0
@@ -1092,7 +1092,7 @@ section .text
     CALL core_sound.cpp_CSound_playSound_FUN_0052ea40 ; 004a1142
         ;   XREF to: 0052ea40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0052ea40(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004a1147
-    MOV EAX,[0x01cae0e8]                ; 004a114a | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a114a | g_LocalHeroIndex
     PUSH 0x1                            ; 004a114f
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a1151
     PUSH EBX                            ; 004a1158
@@ -1180,7 +1180,7 @@ section .text
     PUSH EBX                            ; 004a123d
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a123e
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cae0e8]                ; 004a1243 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a1243 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a1248
     ADD ESP,0xc                         ; 004a124f
     MOV dword ptr [EAX + 0x2434],0x42c80000 ; 004a1252
@@ -2072,7 +2072,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a1c3b
     PUSH 0x5833d2                       ; 004a1c3e | = "cheat-1.wav"
     MOV dword ptr [EAX + 0x1d0],0x1     ; 004a1c43
-    MOV EAX,[0x01cae0e8]                ; 004a1c4d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a1c4d | g_LocalHeroIndex
     PUSH 0x0                            ; 004a1c52
     MOV ECX,dword ptr [0x005bed68]      ; 004a1c54 | g_CSound_PTR_005bed68
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a1c5a
@@ -2129,7 +2129,7 @@ section .text
         ;   Label: LAB_004a1cde
     JNZ 0x004a1d41                      ; 004a1ce5
         ;   XREF to: 004a1d41 (CONDITIONAL_JUMP)  ; LAB_004a1d41
-    MOV EAX,[0x01cae0e8]                ; 004a1ce7 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a1ce7 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a1cec
     XOR DL,DL                           ; 004a1cf3
     MOV EAX,dword ptr [EAX + 0x1f8d0]   ; 004a1cf5
@@ -2402,7 +2402,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a1fff
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a2004
-    MOV EAX,[0x01cae0e8]                ; 004a2007 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a2007 | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a200c
     PUSH 0x1                            ; 004a2016
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a2018
@@ -2431,7 +2431,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a2057
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a205c
-    MOV EAX,[0x01cae0e8]                ; 004a205f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a205f | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a2064
     PUSH 0x1                            ; 004a206e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a2070
@@ -2460,7 +2460,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a20af
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a20b4
-    MOV EAX,[0x01cae0e8]                ; 004a20b7 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a20b7 | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a20bc
     PUSH 0x1                            ; 004a20c6
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a20c8
@@ -2489,7 +2489,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a2106
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a210b
-    MOV EAX,[0x01cae0e8]                ; 004a210e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a210e | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a2113
     PUSH 0x1                            ; 004a211d
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a211f
@@ -2588,7 +2588,7 @@ section .text
     JGE 0x004a22f9                      ; 004a2220
         ;   XREF to: 004a22f9 (CONDITIONAL_JUMP)  ; LAB_004a22f9
     MOV EBX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 004a2226
-    MOV EAX,[0x01cae0e8]                ; 004a222d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a222d | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a2232
     LEA ESI,[EBX + 0x20]                ; 004a2239
     FLD float ptr [EAX + 0x20]          ; 004a223c
@@ -2973,7 +2973,7 @@ section .text
         ;   XREF to: 004a26e4 (CONDITIONAL_JUMP)  ; LAB_004a26e4
     XOR AH,AH                           ; 004a267a
     MOV byte ptr [0x01c78af0],AH        ; 004a267c | DAT_01c78af0
-    MOV EAX,[0x01cae0e8]                ; 004a2682 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a2682 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a2687
     MOV EBX,dword ptr [EAX + 0x1f8d0]   ; 004a268e
     TEST EBX,EBX                        ; 004a2694
@@ -3255,7 +3255,7 @@ section .text
     CMP EAX,dword ptr [ESP + 0x340]     ; 004a2995
     JNZ 0x004a29f1                      ; 004a299c
         ;   XREF to: 004a29f1 (CONDITIONAL_JUMP)  ; LAB_004a29f1
-    MOV EAX,[0x01cae0e8]                ; 004a299e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a299e | g_LocalHeroIndex
     PUSH 0x40a00000                     ; 004a29a3
     XOR BH,BH                           ; 004a29a8
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a29aa
@@ -3691,7 +3691,7 @@ section .text
         ;   XREF to: 004a2ec3 (UNCONDITIONAL_JUMP)  ; LAB_004a2ec3
     MOV ECX,dword ptr [0x02dc9fe4]      ; 004a2eff | g_CStrangerActorType_02dc9fac.name_hash
         ;   Label: LAB_004a2eff
-    MOV EAX,[0x01cae0e8]                ; 004a2f05 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a2f05 | g_LocalHeroIndex
     PUSH ECX                            ; 004a2f0a
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a2f0b
     PUSH EBX                            ; 004a2f12
@@ -3851,7 +3851,7 @@ section .text
     PUSH EBX                            ; 004a30b4
     CALL dword ptr [EAX]                ; 004a30b5
     ADD ESP,0x4                         ; 004a30b7
-    MOV EAX,[0x01cae0e8]                ; 004a30ba | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a30ba | g_LocalHeroIndex
     PUSH 0x1                            ; 004a30bf
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a30c1
     PUSH EBX                            ; 004a30c8
@@ -3919,7 +3919,7 @@ section .text
     CMP EAX,dword ptr [ESP + 0x3a0]     ; 004a3167
     JNZ 0x004a31ad                      ; 004a316e
         ;   XREF to: 004a31ad (CONDITIONAL_JUMP)  ; LAB_004a31ad
-    MOV EAX,[0x01cae0e8]                ; 004a3170 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a3170 | g_LocalHeroIndex
     PUSH 0x40a00000                     ; 004a3175
     XOR BH,BH                           ; 004a317a
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a317c
@@ -3984,7 +3984,7 @@ section .text
     JNZ 0x004a3282                      ; 004a3225
         ;   XREF to: 004a3282 (CONDITIONAL_JUMP)  ; LAB_004a3282
     MOV EBX,dword ptr [0x02dc9fe4]      ; 004a3227 | g_CStrangerActorType_02dc9fac.name_hash
-    MOV EAX,[0x01cae0e8]                ; 004a322d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a322d | g_LocalHeroIndex
     PUSH EBX                            ; 004a3232
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a3233
     XOR CL,CL                           ; 004a323a
@@ -4298,7 +4298,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a356b
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a3570
-    MOV EAX,[0x01cae0e8]                ; 004a3573 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a3573 | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a3578
     PUSH 0x1                            ; 004a3582
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a3584
@@ -4327,7 +4327,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a35c2
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a35c7
-    MOV EAX,[0x01cae0e8]                ; 004a35ca | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a35ca | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a35cf
     PUSH 0x1                            ; 004a35d9
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a35db
@@ -4356,7 +4356,7 @@ section .text
     CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 ; 004a3619
         ;   XREF to: 0040ed80 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004a361e
-    MOV EAX,[0x01cae0e8]                ; 004a3621 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a3621 | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a3626
     PUSH 0x1                            ; 004a3630
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a3632

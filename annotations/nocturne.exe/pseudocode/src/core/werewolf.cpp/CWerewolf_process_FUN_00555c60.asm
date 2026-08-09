@@ -585,7 +585,7 @@ section .text
     TEST EAX,EAX                        ; 00556126
     JNZ 0x005562d6                      ; 00556128
         ;   XREF to: 005562d6 (CONDITIONAL_JUMP)  ; LAB_005562d6
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0055612e | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0055612e | g_LocalHeroIndex
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 00556134
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0055613a
     JNZ 0x005562d6                      ; 00556141
@@ -715,7 +715,7 @@ section .text
     ADD ESP,0x10                        ; 005562d3
     MOV EDX,dword ptr [EBP + 0x72]      ; 005562d6
         ;   Label: LAB_005562d6
-    MOV EAX,[0x01cae0e8]                ; 005562d9 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 005562d9 | g_LocalHeroIndex
     LEA ESI,[EBX + 0xfd0]               ; 005562de
     SHL EAX,0x2                         ; 005562e4
     CMP EDX,0x4                         ; 005562e7
@@ -773,7 +773,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 00556377
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0055637c
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0055637f | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0055637f | g_LocalHeroIndex
         ;   Label: LAB_0055637f
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 00556385
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0055638b

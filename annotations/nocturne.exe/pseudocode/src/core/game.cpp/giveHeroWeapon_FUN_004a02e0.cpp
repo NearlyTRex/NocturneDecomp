@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name)
 
 {
@@ -24,8 +22,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name)
     core_main_c_displayErrorAndQuit_FUN_004c8440("giveHeroWeapon - This is not a weapon");
   }
   pCVar1[4].location.position.x = 7.00649e-43;
-  (*((actor->vtable)._ub)->pickup)(actor,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8));
-  core_inv_cpp_CInventory_addItem_FUN_004bf360
-            ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),actor,1);
+  (*((actor->vtable)._ub)->pickup)(actor,(CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+  core_inv_cpp_CInventory_addItem_FUN_004bf360(&g_HeroActors[g_LocalHeroIndex]->inventory,actor,1);
   return;
 }

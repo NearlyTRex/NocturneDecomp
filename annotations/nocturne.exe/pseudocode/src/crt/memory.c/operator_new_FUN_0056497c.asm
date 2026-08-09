@@ -13,8 +13,8 @@
 ;   core_anvil.cpp_factoryFuncAnvil_FUN_0040f530 at 0040f535
 ;   core_armour.cpp_factoryFuncArmour_FUN_0040f930 at 0040f935
 ;   core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040fea0 at 0040fea5
+;   core_baron.cpp_factoryFuncBaronWeapon_FUN_00411320 at 00411325
 ;   core_baron.cpp_factoryFuncBaron_FUN_004101a0 at 004101a5
-;   core_baron.cpp_factoryFunc_FUN_00411320 at 00411325
 ;   core_barrier.cpp_factoryFuncBarrier_FUN_004116e0 at 004116e5
 ;   core_bat.cpp_factoryFuncBat_FUN_004119e0 at 004119e5
 ;   ... and 119 more

@@ -114,7 +114,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 0047a409 | g_CNetGame_01cea280
     JNZ 0x0047a444                      ; 0047a40c
         ;   XREF to: 0047a444 (CONDITIONAL_JUMP)  ; LAB_0047a444
-    MOV ESI,dword ptr [0x01cae0e8]      ; 0047a40e | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 0047a40e | g_LocalHeroIndex
     MOV ESI,dword ptr [ESI*0x4 + 0x1cae0d8] ; 0047a414
     TEST ESI,ESI                        ; 0047a41b
     JZ 0x0047a3bd                       ; 0047a41d

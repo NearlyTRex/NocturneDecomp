@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDemonActor *actor_ptr)
 
 {
@@ -59,7 +57,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDe
         g_CurrentLineNumber = 1481;
         core_main_c_displayErrorAndQuit_FUN_004c8440("CInventory::select - Catch 22");
       }
-      if ((float)98 < *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434)) {
+      if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You have used : ");
@@ -117,7 +115,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDe
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,local_114,5.0);
       iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004b43f0
-                        (local_14,*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8));
+                        (local_14,&g_HeroActors[g_LocalHeroIndex]->base);
       if (iVar2 < 1) {
         core_inv_cpp_CInventory_removeItem_FUN_004c07b0(this_ptr,actor_ptr,1);
         return 1;

@@ -49,7 +49,7 @@ void __cdecl buildMatrixFromEulerAndPositionDirect(CMatrix3x4f *output_matrix,CV
 
 // Original: core_xform.cpp_FUN_0055b0b0
 // Address: 0055b0b0
-float FUN_0055b0b0(void);
+float __cdecl FUN_0055b0b0(void);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_0055b180
 // Address: 0055b180

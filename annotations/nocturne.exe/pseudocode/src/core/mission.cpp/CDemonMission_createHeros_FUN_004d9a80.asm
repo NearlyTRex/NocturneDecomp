@@ -21,7 +21,7 @@
 ;   undefined4 g_CGame_01c775ec.hero_number
 ;   undefined4 g_CGame_01c775ec.aim_mode
 ;   undefined4 DAT_01cae0d4
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGame_01cea280
@@ -102,8 +102,8 @@ section .text
     MOV EAX,[0x005bdee0]                ; 004d9b1e | g_CNetGame_PTR_005bdee0
         ;   Label: LAB_004d9b1e
     MOV EAX,dword ptr [EAX + 0x114]     ; 004d9b23 | g_CNetGame_01cea280.local_player_index
-    MOV [0x01cae0e8],EAX                ; 004d9b29 | DAT_01cae0e8
-    MOV EAX,[0x01cae0e8]                ; 004d9b2e | DAT_01cae0e8
+    MOV [0x01cae0e8],EAX                ; 004d9b29 | g_LocalHeroIndex
+    MOV EAX,[0x01cae0e8]                ; 004d9b2e | g_LocalHeroIndex
         ;   Label: LAB_004d9b2e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d9b33
     MOV dword ptr [EAX + 0xbc90],0x0    ; 004d9b3a
@@ -152,7 +152,7 @@ section .text
     PUSH ECX                            ; 004d9b9e
     MOV EDX,0x1                         ; 004d9b9f
     PUSH EBP                            ; 004d9ba4
-    MOV dword ptr [0x01cae0e8],ECX      ; 004d9ba5 | DAT_01cae0e8
+    MOV dword ptr [0x01cae0e8],ECX      ; 004d9ba5 | g_LocalHeroIndex
     MOV dword ptr [0x01cae0d4],EDX      ; 004d9bab | DAT_01cae0d4
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 ; 004d9bb1
         ;   XREF to: 004d9920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
@@ -160,7 +160,7 @@ section .text
     TEST EAX,EAX                        ; 004d9bb9
     JZ 0x004d9b88                       ; 004d9bbb
         ;   XREF to: 004d9b88 (CONDITIONAL_JUMP)  ; LAB_004d9b88
-    MOV EAX,[0x01cae0e8]                ; 004d9bbd | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d9bbd | g_LocalHeroIndex
     MOV EDX,dword ptr [0x005b9354]      ; 004d9bc2 | g_CGame_PTR_005b9354
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d9bc8
     MOV EAX,dword ptr [EDX + 0xc4]      ; 004d9bcf | g_CGame_01c775ec.aim_mode

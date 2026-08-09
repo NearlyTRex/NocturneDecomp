@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059063a
-;   undefined4 CVector3f_01c70708.z
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -108,7 +108,7 @@ section .text
     FXCH ST3                            ; 0050bca3
     FSTP float ptr [ESP + 0x20]         ; 0050bca5
     MOV EAX,dword ptr [ESP + 0x20]      ; 0050bca9
-    MOV ECX,dword ptr [0x01c70710]      ; 0050bcad | CVector3f_01c70708.z
+    MOV ECX,dword ptr [0x01c70710]      ; 0050bcad | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0050bcb3
     SUB ECX,EAX                         ; 0050bcb5
     MOV dword ptr [ESP + 0x24],ECX      ; 0050bcb7

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_0048ea60(CFlameThrower *this_ptr)
 
 {
   int *piVar1;
   float fVar2;
   CVector3f *input_local_point;
-  CDemonActor *pCVar3;
+  CHero *pCVar3;
   CVector3f CStack_14;
   
   if ((this_ptr->base).ammo_count < 1) {
@@ -32,9 +30,9 @@ int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_0048ea60(CFlameThrower *thi
     *piVar1 = *piVar1 + -1;
     this_ptr->fire_rate_timer = fVar2;
   }
-  pCVar3 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+  pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+    engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   this_ptr->is_firing = 1;
   return 1;

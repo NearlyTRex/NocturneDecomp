@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float delta_time)
 
 {
@@ -21,11 +19,11 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
     g_CurrentLineNumber = 304;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
-  iVar3 = _DAT_01cae0e8;
-  (this_ptr->base).base.base.scale.x = *(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x108);
-  (this_ptr->base).base.base.scale.y = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x10c);
+  iVar3 = g_LocalHeroIndex;
+  (this_ptr->base).base.base.scale.x = (g_HeroActors[g_LocalHeroIndex]->base).base.scale.x;
+  (this_ptr->base).base.base.scale.y = (g_HeroActors[iVar3]->base).base.scale.y;
   fVar1 = this_ptr->morph_blend;
-  (this_ptr->base).base.base.scale.z = *(int *)(*(int *)(iVar3 * 4 + 0x1cae0d8) + 0x110);
+  (this_ptr->base).base.base.scale.z = (g_HeroActors[iVar3]->base).base.scale.z;
   if (0.0 <= fVar1) {
     core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(this_ptr,delta_time);
     return;
@@ -43,7 +41,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_004d49f0(CMimic *this_ptr,float d
       if ((iVar3 != 0) && (core_mimic_cpp_CMimic_FUN_004d4ba0(this_ptr), this_ptr->attack_mode == 1)
          ) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                           ((CMotionController *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x150));
+                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
         uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_004d4b4a:

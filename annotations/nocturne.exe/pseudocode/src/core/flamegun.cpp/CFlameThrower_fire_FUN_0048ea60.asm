@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   float FLOAT_0059d7a0 = 4
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   void* PTR_DAT_005b9284 = 01c70f74
-;   undefined4 DAT_01cae0e8
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0
-;   xxx_unk.c_FUN_004940d0
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -70,16 +70,16 @@ section .text
         ;   Label: LAB_0048eac5
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0048eac6
     CALL dword ptr [EAX + 0x8c]         ; 0048eacc
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0048ead2 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0048ead2 | g_LocalHeroIndex
     MOV EBP,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0048ead8
     ADD ESP,0x4                         ; 0048eadf
     CMP EAX,EBP                         ; 0048eae2
     JNZ 0x0048eaf4                      ; 0048eae4
         ;   XREF to: 0048eaf4 (CONDITIONAL_JUMP)  ; LAB_0048eaf4
-    MOV EAX,[0x005b9284]                ; 0048eae6 | PTR_DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0048eae6 | g_CForceFeedback_PTR_005b9284
     PUSH EAX                            ; 0048eaeb
-    CALL xxx_unk.c_FUN_004940d0         ; 0048eaec
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0048eaec
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0048eaf1
     MOV EAX,0x1                         ; 0048eaf4
         ;   Label: LAB_0048eaf4

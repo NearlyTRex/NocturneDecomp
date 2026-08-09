@@ -56,12 +56,12 @@ cert-flp30-c (5)
     File: core/game.cpp
     loop induction expression should not have floating-point type
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 419
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 423
     File: core/vampboss.cpp
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (991 diagnostics)
+Cppcheck (quick) (994 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -928,7 +928,7 @@ uninitvar (471)
     File: core/elephant.cpp
     Uninitialized variable: fStack_4c
 
-  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 145
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 146
     File: core/elephant.cpp
     Uninitialized variable: fStack_44
 
@@ -1072,15 +1072,15 @@ uninitvar (471)
     File: core/frankgen.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 99
+  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 105
     File: core/gabriela.cpp
     Uninitialized variable: local_94
 
-  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 99
+  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 105
     File: core/gabriela.cpp
     Uninitialized variable: local_9c
 
-  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 99
+  core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 105
     File: core/gabriela.cpp
     Uninitialized variable: local_98
 
@@ -1088,11 +1088,11 @@ uninitvar (471)
     File: core/game.cpp
     Uninitialized variable: unaff_EDI
 
-  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 168
+  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 173
     File: core/ghoul.cpp
     Uninitialized variable: local_1c0
 
-  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 171
+  core_ghoul.cpp_CGhoul_process_FUN_004a9270         line 176
     File: core/ghoul.cpp
     Uninitialized variable: local_1c4
 
@@ -1148,7 +1148,7 @@ uninitvar (471)
     File: core/lightgun.cpp
     Uninitialized variable: fStack_30
 
-  core_lightgun.cpp_CLightGun_fire_FUN_004c71a0      line 212
+  core_lightgun.cpp_CLightGun_fire_FUN_004c71a0      line 211
     File: core/lightgun.cpp
     Uninitialized variable: unaff_retaddr
 
@@ -1456,14 +1456,6 @@ uninitvar (471)
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
-  core_stranger.cpp_CStranger_FUN_0053f310           line 61
-    File: core/stranger.cpp
-    Uninitialized variable: local_14
-
-  core_stranger.cpp_CStranger_FUN_0053f310           line 61
-    File: core/stranger.cpp
-    Uninitialized variable: local_38
-
   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053 line 128
     File: core/stranger.cpp
     Uninitialized variable: fStack_28
@@ -1475,6 +1467,14 @@ uninitvar (471)
   core_stranger.cpp_CStranger_processMotionEvents_FU line 209
     File: core/stranger.cpp
     Uninitialized variable: fStack_a4
+
+  core_stranger.cpp_CStranger_updateWeaponLayerActio line 61
+    File: core/stranger.cpp
+    Uninitialized variable: local_14
+
+  core_stranger.cpp_CStranger_updateWeaponLayerActio line 61
+    File: core/stranger.cpp
+    Uninitialized variable: local_38
 
   core_stranger.cpp_FUN_00534f90                     line 17
     File: core/stranger.cpp
@@ -1608,11 +1608,11 @@ uninitvar (471)
     File: core/werewolf.cpp
     Uninitialized variable: local_50
 
-  core_xform.cpp_FUN_0055b0b0                        line 21
+  core_xform.cpp_FUN_0055b0b0                        line 20
     File: core/xform.cpp
     Uninitialized variable: in_stack_00000004
 
-  core_xform.cpp_FUN_0055b0b0                        line 22
+  core_xform.cpp_FUN_0055b0b0                        line 21
     File: core/xform.cpp
     Uninitialized variable: in_stack_0000000c
 
@@ -2280,19 +2280,19 @@ shiftTooManyBitsSigned (200)
     File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_CEmitter_process_FUN_00478790     line 100
-    File: core/emitter.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_emitter.cpp_CEmitter_process_FUN_00478790     line 101
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_CEmitter_process_FUN_00478790     line 184
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 102
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_emitter.cpp_CEmitter_process_FUN_00478790     line 185
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 186
+    File: core/emitter.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_emitter.cpp_CEmitter_process_FUN_00478790     line 187
     File: core/emitter.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2508,7 +2508,7 @@ shiftTooManyBitsSigned (200)
     File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_set.cpp_CDemonSet_FUN_0050a260                line 116
+  core_set.cpp_CDemonSet_FUN_0050a260                line 115
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2924,11 +2924,11 @@ legacyUninitvar (93)
     File: core/dtrace.cpp
     Uninitialized variable: unaff_EDI
 
-  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 144
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 145
     File: core/elephant.cpp
     Uninitialized variable: in_stack_fffffec4
 
-  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 148
+  core_elephant.cpp_CElephantGun_fire_FUN_00477890   line 149
     File: core/elephant.cpp
     Uninitialized variable: pCStack_2c
 
@@ -2972,19 +2972,19 @@ legacyUninitvar (93)
     File: core/set.cpp
     Uninitialized variable: in_stack_00000008
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 88
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 96
     File: core/set.cpp
     Uninitialized variable: fStack_5c
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 90
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 98
     File: core/set.cpp
     Uninitialized variable: fStack_58
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 89
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 97
     File: core/set.cpp
     Uninitialized variable: fStack_54
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 88
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 96
     File: core/set.cpp
     Uninitialized variable: fStack_50
 
@@ -3004,11 +3004,11 @@ legacyUninitvar (93)
     File: core/set.cpp
     Uninitialized variable: iStack_18
 
-  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 146
+  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 147
     File: core/shotgun.cpp
     Uninitialized variable: in_stack_fffffec4
 
-  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 150
+  core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 151
     File: core/shotgun.cpp
     Uninitialized variable: pCStack_2c
 
@@ -3052,15 +3052,15 @@ legacyUninitvar (93)
     File: core/turret.cpp
     Uninitialized variable: fStack_98
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 201
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 205
     File: core/vampboss.cpp
     Uninitialized variable: local_ec
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 195
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 199
     File: core/vampboss.cpp
     Uninitialized variable: local_b4
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 173
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 177
     File: core/vampboss.cpp
     Uninitialized variable: local_b0
 
@@ -3068,7 +3068,7 @@ legacyUninitvar (93)
     File: core/wateract.cpp
     Uninitialized variable: local_18
 
-  core_xform.cpp_FUN_0055b0b0                        line 33
+  core_xform.cpp_FUN_0055b0b0                        line 32
     File: core/xform.cpp
     Uninitialized variable: in_stack_0000000c
 
@@ -3296,7 +3296,7 @@ ignoredReturnValue (58)
     File: core/path.cpp
     Return value of function round() is not used.
 
-  core_set.cpp_CDemonSet_FUN_0050aba0                line 31
+  core_set.cpp_CDemonSet_FUN_0050aba0                line 34
     File: core/set.cpp
     Return value of function atan2() is not used.
 
@@ -3304,11 +3304,11 @@ ignoredReturnValue (58)
     File: core/skeleton.cpp
     Return value of function round() is not used.
 
-  core_tvbat.cpp_CTVBat_process_FUN_0054b460         line 222
+  core_tvbat.cpp_CTVBat_process_FUN_0054b460         line 223
     File: core/tvbat.cpp
     Return value of function atan2() is not used.
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 200
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 204
     File: core/vampboss.cpp
     Return value of function atan2() is not used.
 
@@ -3372,143 +3372,143 @@ ignoredReturnValue (58)
 wrongPrintfScanfArgNum (41)
 ----------------------------------------------------------------------------------------------------
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 259
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 260
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 266
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 267
     File: core/event.cpp
     sscanf format string requires 4 parameters but only 3 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 269
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 270
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 323
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 324
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 391
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 392
     File: core/event.cpp
     sscanf format string requires 4 parameters but only 3 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 425
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 426
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 446
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 447
     File: core/event.cpp
     sscanf format string requires 4 parameters but only 3 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 581
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 582
     File: core/event.cpp
     sscanf format string requires 4 parameters but only 3 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 674
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 675
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 727
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 728
     File: core/event.cpp
     sscanf format string requires 7 parameters but only 6 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 734
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 735
     File: core/event.cpp
     sscanf format string requires 6 parameters but only 5 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 740
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 741
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 843
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 844
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 879
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 881
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 914
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 916
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 960
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 962
     File: core/event.cpp
     sscanf format string requires 1 parameter but only 0 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 983
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 985
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1027
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1029
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1129
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1131
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1194
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1196
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1230
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1232
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1267
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1269
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1301
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1303
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1351
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1353
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1458
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1460
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1568
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1570
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1644
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1646
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1723
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1725
     File: core/event.cpp
     sscanf format string requires 5 parameters but only 4 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1755
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1758
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1884
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1887
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1908
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1911
     File: core/event.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1953
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1956
     File: core/event.cpp
     sscanf format string requires 3 parameters but only 2 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2032
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2035
     File: core/event.cpp
     sscanf format string requires 7 parameters but only 6 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2044
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2047
     File: core/event.cpp
     sscanf format string requires 5 parameters but only 4 are given.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2057
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 2060
     File: core/event.cpp
     sscanf format string requires 4 parameters but only 3 are given.
 
@@ -3540,155 +3540,155 @@ wrongPrintfScanfArgNum (41)
 invalidscanf (41)
 ----------------------------------------------------------------------------------------------------
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 209
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 208
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 282
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 281
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 338
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 336
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 505
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 503
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 567
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 565
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 599
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 597
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 749
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 747
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 837
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 835
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 996
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 994
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1065
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1063
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1122
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1120
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1162
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1160
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1220
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1218
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1259
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1257
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1317
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1315
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1395
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1393
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 269
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 270
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 391
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 392
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 446
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 447
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 581
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 582
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 674
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 675
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 727
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 728
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 734
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 735
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 740
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 741
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 843
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 844
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 879
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 881
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 983
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 985
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1027
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1029
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1129
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1131
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1194
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1196
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1301
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1303
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1351
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1353
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1458
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1460
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1568
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1570
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1644
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1646
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1755
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1758
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1884
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1887
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1953
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1956
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -3844,7 +3844,7 @@ invalidPointerCast (15)
     File: core/charactr.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_mimic.cpp_CMimic_setupCloth_FUN_004d5770      line 37
+  core_mimic.cpp_CMimic_setupCloth_FUN_004d5770      line 35
     File: core/mimic.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -3921,6 +3921,38 @@ nullPointer (9)
     Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
+nullPointerRedundantCheck (7)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_FUN_0040bd90                        line 72
+    File: core/actor.cpp
+    Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 50
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 52
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 54
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 75
+    File: core/dtrace.cpp
+    Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.
+
+  engine_pod.cpp_CPod_init_FUN_004f8af0              line 23
+    File: engine/pod.cpp
+    Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  engine_prim.c_renderScanlinePolygon_FUN_004fad00   line 251
+    File: engine/prim.c
+    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (7)
 ----------------------------------------------------------------------------------------------------
 
@@ -3971,26 +4003,6 @@ pointerOutOfBounds (4)
   core_turret.cpp_CTurret_fire_FUN_0054ab10          line 156
     File: core/turret.cpp
     Undefined behaviour, pointer arithmetic 'auStack_cc+0x18' is out of bounds.
-
-----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (4)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_FUN_0040bd90                        line 72
-    File: core/actor.cpp
-    Either the condition 'param_1!=(char*)0x0' is redundant or there is possible null pointer dereference: param_1.
-
-  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 75
-    File: core/dtrace.cpp
-    Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.
-
-  engine_pod.cpp_CPod_init_FUN_004f8af0              line 23
-    File: engine/pod.cpp
-    Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  engine_prim.c_renderScanlinePolygon_FUN_004fad00   line 251
-    File: engine/prim.c
-    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBoundsCond (4)

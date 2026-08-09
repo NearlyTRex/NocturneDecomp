@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_00543910(CTeleport *this_ptr,float delta_time)
 
 {
@@ -19,7 +17,7 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_00543910(CTeleport *this_pt
   if (this_ptr->destination != (CDemonActor *)0x0) {
     pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                        (&this_ptr->base,&local_14,
-                        (CVector3f *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x20));
+                        &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position);
     pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_2c);
     if (((((pCVar2->min).x <= pCVar1->x) && ((pCVar2->min).y <= pCVar1->y)) &&
         ((pCVar2->min).z <= pCVar1->z)) &&

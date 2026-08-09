@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_0049f930 at 0049ff8a
+;   core_game.cpp_CGame_processHotkeys_FUN_0049f930 at 0049ff8a
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e38b
 ;
 ; Referenced Globals:
@@ -183,7 +183,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004a3cb2
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004a3cb7
-    MOV EAX,[0x01cae0e8]                ; 004a3cba | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a3cba | g_LocalHeroIndex
     PUSH EAX                            ; 004a3cbf
     MOV EDX,dword ptr [0x01cae0d4]      ; 004a3cc0 | DAT_01cae0d4
     PUSH EDX                            ; 004a3cc6

@@ -222,7 +222,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *t
             fVar2 = *(float *)(iVar4 + 0x10c) - (position->z + pCVar6->z);
             fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
             if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
-              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + (int)CVector3f_01c70708.y) *
+              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic) *
                              *(float *)(iVar4 + 0x11dc)) * 0.666f;
               fVar2 = (float)2;
               local_88 = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_88;

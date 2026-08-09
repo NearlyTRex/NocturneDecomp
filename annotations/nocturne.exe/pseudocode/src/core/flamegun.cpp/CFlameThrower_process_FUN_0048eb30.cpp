@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CFlameThrower *this_ptr,float delta_time)
 
 {
   float fVar1;
   float fVar2;
-  CDemonActor *pCVar3;
+  CHero *pCVar3;
   int iVar4;
   uint uVar5;
   
@@ -23,9 +21,9 @@ void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_0048eb30(CFlameThrower 
       core_sound_cpp_CSound_killSound_FUN_0052ebb0(g_CSound_PTR_005bed68,this_ptr->sfx_handle);
       this_ptr->sfx_handle = 0;
     }
-    pCVar3 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+    pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
     }
   }
   else {

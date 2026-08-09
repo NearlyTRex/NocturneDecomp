@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,55 +58,49 @@
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 81,
+        "line": 82,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 82,
+        "line": 83,
         "message": "use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 83,
+        "line": 84,
         "message": "use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 84,
+        "line": 85,
         "message": "use of undeclared identifier '_DAT_02dd118c'"
       },
       {
         "category": "cast_error",
         "column": 21,
-        "line": 141,
+        "line": 142,
         "message": "cannot cast from type 'float' to pointer type 'CVehicle *'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 172,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
         "category": "cast_error",
-        "column": 18,
-        "line": 187,
+        "column": 19,
+        "line": 188,
         "message": "cannot cast from type 'float' to pointer type 'CVehicle *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 213,
+        "line": 214,
         "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 218,
+        "line": 219,
         "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
       }
     ],
@@ -116,12 +110,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 425,
+    "complexity_score": 426,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 285,
+    "pseudocode_lines": 286,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -131,7 +125,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 967
+    "total_lines": 968
   },
   "cross_references": [],
   "function": {
@@ -332,8 +326,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -647,15 +641,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 75,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "if (pCVar8 != (CVector3f *)&DAT_02dd1184) {",
+      "text": "if (pCVar9 != (CVector3f *)&DAT_02dd1184) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 131,
       "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "pCVar7 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);",
@@ -663,23 +657,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 178,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar15),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 106,
+      "line": 107,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->local_velocity).x = pCVar8->x;",
+      "text": "(this_ptr->local_velocity).x = pCVar9->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 243,
+      "line": 244,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
@@ -687,7 +681,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 250,
+      "line": 251,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",
@@ -695,7 +689,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 254,
+      "line": 255,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
@@ -703,18 +697,18 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 261,
+      "line": 262,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 117,
-      "match": "pCVar9 = (T *)((pCVar9->FIELD).SUBFIELD...ARRAY + CONST)",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 118,
+      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar9 = (CVehicle *)((pCVar9->model).part_visibility_flags + 0x19);",
+      "text": "pCVar10 = (CVehicle *)((pCVar10->model).part_visibility_flags + 0x19);",
       "type": "shadow_pointer_walk"
     }
   ],

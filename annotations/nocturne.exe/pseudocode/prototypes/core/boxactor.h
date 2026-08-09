@@ -95,9 +95,9 @@ void __cdecl CBoxActor::setPositionAndOrientation(CBoxActor *this_ptr,CVector3f 
 // Address: 0041f2d0
 int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_factoryFunc_FUN_0041f2e0
+// Original: core_boxactor.cpp_factoryFuncLightActor_FUN_0041f2e0
 // Address: 0041f2e0
-CLightActor * __cdecl factoryFunc(void);
+CLightActor * __cdecl factoryFuncLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_getActorType_FUN_0041f300
 // Address: 0041f300

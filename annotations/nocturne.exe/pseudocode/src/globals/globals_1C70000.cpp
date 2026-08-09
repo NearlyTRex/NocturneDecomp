@@ -26,6 +26,9 @@ CDemonActorType g_CGlassActorType_01c78c40 = {};
 // CDemonLight
 CDemonLight g_CDemonLight_01c74640 = {};
 
+// CForceFeedback
+CForceFeedback g_CForceFeedback_01c70f74 = {};
+
 // CGame
 CGame g_CGame_01c775ec = {};
 
@@ -36,11 +39,17 @@ CGore g_CGore_01c78c7c = {};
 CPickList g_CPickList_01c78424 = {};
 
 // CVector3f
-CVector3f CVector3f_01c70708 = {};
 CVector3f CVector3f_01c71364 = {};
 CVector3f CVector3f_01c71370 = {};
 CVector3f CVector3f_01c7137c = {};
 CVector3f CVector3f_01c71388 = {};
 CVector3f CVector3f_01c78bc0 = {};
 CVector3f CVector3f_01c78bcc = {};
+
+// float
+float g_FastSqrtMagicSeedOne = {};
+
+// int
+int g_FastSqrtMagic = {};
+int g_FastInvSqrtMagic = {};
 

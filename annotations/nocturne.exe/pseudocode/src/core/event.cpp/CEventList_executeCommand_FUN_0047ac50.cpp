@@ -17,6 +17,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_0047ac50(CEventList *th
   CDeformableModelInstance *this_ptr_00;
   char cVar3;
   float fVar4;
+  CHero *this_ptr_01;
   int iVar5;
   int iVar6;
   CCharacter *pCVar7;
@@ -336,7 +337,7 @@ LAB_0047acd1:
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
-          core_fire_cpp_CFireEffect_FUN_0048c0d0
+          core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0
                     (g_CFireEffect_PTR_005b80f0,&local_128,local_e0,1500.0,local_dc);
         }
       }
@@ -859,9 +860,10 @@ LAB_0047aec8:
                                   return iVar5;
                                 }
                                 if ((local_f0 != 0) &&
-                                   (iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8), iVar5 != 0)) {
-                                  (**(code **)(*(int *)(iVar5 + 0x14c) + 0xd4))
-                                            (iVar5,local_90,0,0xbf800000);
+                                   (this_ptr_01 = g_HeroActors[g_LocalHeroIndex],
+                                   this_ptr_01 != (CHero *)0x0)) {
+                                  (*(((this_ptr_01->base).base.vtable._uc)->_uc).kill)
+                                            (&this_ptr_01->base,local_90,(CVector3f *)0x0,-1.0);
                                 }
                               }
                               else {
@@ -1732,9 +1734,10 @@ LAB_0047aec8:
                                                   }
                                                   local_ec = local_ec + local_24;
                                                   if (local_f0 != 0) {
-                                                    core_set_cpp_CDemonSet_FUN_0050e660
-                                                              (g_CDemonSet_PTR_005be368,local_30,
-                                                               local_2c,local_80,local_28);
+                                                                                                        
+                                                  core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660
+                                                            (g_CDemonSet_PTR_005be368,local_30,
+                                                             local_2c,local_80,local_28);
                                                   }
                                                   }
                                                   else {

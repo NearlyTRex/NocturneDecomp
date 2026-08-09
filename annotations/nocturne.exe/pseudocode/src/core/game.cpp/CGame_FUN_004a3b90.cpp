@@ -104,12 +104,12 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
   _fprintf(file,"%d\n",9);
   core_mission_cpp_CDemonMission_FUN_004d8720(g_CDemonMission_PTR_005baf90,file);
   _fprintf(file,"// Hero count, local hero index, hero list\n");
-  _fprintf(file,"%d, %d\n",_DAT_01cae0d4,_DAT_01cae0e8);
+  _fprintf(file,"%d, %d\n",_DAT_01cae0d4,g_LocalHeroIndex);
   iVar3 = 0;
   if (0 < _DAT_01cae0d4) {
     iVar6 = 0;
     do {
-      puVar1 = (uint *)(iVar6 + 0x1cae0d8);
+      puVar1 = (uint *)((int)g_HeroActors + iVar6);
       iVar6 = iVar6 + 4;
       iVar3 = iVar3 + 1;
       _fprintf(file,"%s\n",*puVar1);

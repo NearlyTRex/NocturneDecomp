@@ -31,7 +31,7 @@ void __fastcall _memcpy(void *dest,void *src,uint size)
       if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x00481abd. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_005b8014 + uVar2 * 4))();
+        (*(code *)(&PTR_LAB_005b8014)[uVar2])();
         return;
       }
       break;
@@ -42,7 +42,7 @@ void __fastcall _memcpy(void *dest,void *src,uint size)
       if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x00481aad. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_005b8014 + uVar2 * 4))();
+        (*(code *)(&PTR_LAB_005b8014)[uVar2])();
         return;
       }
       break;
@@ -52,7 +52,7 @@ void __fastcall _memcpy(void *dest,void *src,uint size)
       if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x00481a93. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_005b8014 + uVar2 * 4))();
+        (*(code *)(&PTR_LAB_005b8014)[uVar2])();
         return;
       }
       break;
@@ -65,7 +65,7 @@ void __fastcall _memcpy(void *dest,void *src,uint size)
       if (bVar6 || bVar7) {
                     /* WARNING: Could not recover jumptable at 0x00481a7b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(&DAT_005b8014 + uVar2 * 4))();
+        (*(code *)(&PTR_LAB_005b8014)[uVar2])();
         return;
       }
     }
@@ -82,6 +82,6 @@ void __fastcall _memcpy(void *dest,void *src,uint size)
   }
                     /* WARNING: Could not recover jumptable at 0x00481a5c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(&DAT_005b8014 + uVar2 * 4))();
+  (*(code *)(&PTR_LAB_005b8014)[uVar2])();
   return;
 }

@@ -29,7 +29,7 @@
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonSet_01e57284.enemy_count
 ;
@@ -190,7 +190,7 @@ section .text
         ;   XREF to: 00511990 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 0048d272
     LEA EDI,[ESP + 0x74]                ; 0048d275
-    MOV EAX,[0x01cae0e8]                ; 0048d279 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0048d279 | g_LocalHeroIndex
     PUSH EDI                            ; 0048d27e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0048d27f
     PUSH EAX                            ; 0048d286
@@ -200,7 +200,7 @@ section .text
     CMP EAX,0x2                         ; 0048d293
     JNZ 0x0048d385                      ; 0048d296
         ;   XREF to: 0048d385 (CONDITIONAL_JUMP)  ; LAB_0048d385
-    MOV EDI,dword ptr [0x01cae0e8]      ; 0048d29c | DAT_01cae0e8
+    MOV EDI,dword ptr [0x01cae0e8]      ; 0048d29c | g_LocalHeroIndex
     MOV EDI,dword ptr [EDI*0x4 + 0x1cae0d8] ; 0048d2a2
     LEA EAX,[EDI + 0x20]                ; 0048d2a9
     LEA EBX,[ESI + 0x20]                ; 0048d2ac

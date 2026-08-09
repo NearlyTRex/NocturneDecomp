@@ -34,11 +34,11 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040
-;   engine_3d.c_rasterizeTriangle_FUN_005628c0
 ;   engine_clipper.c_clipAndRasterize_FUN_00432cd0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
+;   engine_zraster.c_rasterizeTriangle_FUN_005628c0
 ;
 ; *****************************************************************************
 
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 0045edbe (CONDITIONAL_JUMP)  ; LAB_0045edbe
     PUSH ECX                            ; 0045ee36
     PUSH 0x766c74                       ; 0045ee37 | DAT_00766c74
-    CALL engine_3d.c_rasterizeTriangle_FUN_005628c0 ; 0045ee3c
-        ;   XREF to: 005628c0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005628c0(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL engine_zraster.c_rasterizeTriangle_FUN_005628c0 ; 0045ee3c
+        ;   XREF to: 005628c0 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizeTriangle_FUN_005628c0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0045ee41
     POP EBP                             ; 0045ee44
     POP EDI                             ; 0045ee45

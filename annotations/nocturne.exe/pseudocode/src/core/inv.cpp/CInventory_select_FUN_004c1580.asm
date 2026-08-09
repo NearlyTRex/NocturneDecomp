@@ -134,7 +134,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c1661
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c1666
-    MOV EAX,[0x01cae0e8]                ; 004c1669 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004c1669 | g_LocalHeroIndex
         ;   Label: LAB_004c1669
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c166e
     FLD float ptr [EAX + 0x2434]        ; 004c1675
@@ -249,7 +249,7 @@ section .text
     PUSH ESI                            ; 004c174c | g_CGame_01c775ec
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c174d
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
-    MOV EAX,[0x01cae0e8]                ; 004c1752 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004c1752 | g_LocalHeroIndex
     ADD ESP,0xc                         ; 004c1757
     MOV EDI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c175a
     PUSH EDI                            ; 004c1761

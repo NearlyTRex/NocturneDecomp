@@ -127,9 +127,9 @@ void __cdecl CMansionPuzzleCircle::updateReflectorPosition(CMansionPuzzleCircle 
 // Address: 004cba40
 int __cdecl CMansionPuzzleCircle::panelOccupied(CMansionPuzzleCircle *this_ptr,int panel_index);
 
-// Original: core_manpuz.cpp_factoryFunc_FUN_004cbad0
+// Original: core_manpuz.cpp_factoryFuncMirrorHack_FUN_004cbad0
 // Address: 004cbad0
-CMirrorHack * __cdecl factoryFunc(void);
+CMirrorHack * __cdecl factoryFuncMirrorHack(void);
 
 // Original: core_manpuz.cpp_CMirrorHack_getActorType_FUN_004cbaf0
 // Address: 004cbaf0

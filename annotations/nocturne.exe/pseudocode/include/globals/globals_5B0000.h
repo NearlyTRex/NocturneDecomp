@@ -8,6 +8,7 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CFireEffect.h"
+#include "types/classes/CForceFeedback.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CKeys.h"
@@ -33,6 +34,9 @@ extern CEditorTools* g_CEditorTools_PTR_005b6d50;
 
 // CFireEffect*
 extern CFireEffect* g_CFireEffect_PTR_005b80f0;
+
+// CForceFeedback*
+extern CForceFeedback* g_CForceFeedback_PTR_005b9284;
 
 // CGame*
 extern CGame* g_CGame_PTR_005b9354;
@@ -167,8 +171,8 @@ extern int INT_005b7638;
 extern int g_CurrentAlphaValue;
 extern int g_RenderingQuality;
 extern int INT_005b7644;
-extern int INT_005b8018;
-extern int INT_005b801c;
+extern int g_INT_005b8018;
+extern int g_INT_005b801c;
 extern int g_INT_005b91c0;
 extern int g_INT_005b91c4;
 extern int g_INT_005b91dc;

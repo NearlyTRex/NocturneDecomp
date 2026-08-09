@@ -22,7 +22,7 @@
 ;   CConsole g_CConsole_0077ad0c
 ;
 ; Called Functions:
-;   core_fire.cpp_CFireEffect_FUN_0048c0d0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;
@@ -79,8 +79,8 @@ section .text
     FADD float ptr [ESP + 0x34]         ; 0043ce2b
     PUSH ESI                            ; 0043ce2f
     FSTP float ptr [ESP + 0x38]         ; 0043ce30
-    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 0043ce34
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 ; 0043ce34
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0043ce39
     PUSH 0x1                            ; 0043ce3c
     PUSH EBX                            ; 0043ce3e

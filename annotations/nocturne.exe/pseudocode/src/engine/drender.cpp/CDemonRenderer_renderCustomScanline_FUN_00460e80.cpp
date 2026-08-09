@@ -31,7 +31,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
   if (DAT_00766c70 < 3) {
     return;
   }
-  engine_3d_c_rasterizePolygonCustom_FUN_00562de0
+  engine_zraster_c_rasterizePolygonCustom_FUN_00562de0
             ((SRenderVertex *)&DAT_00766c74,DAT_00766c70,scanline_renderer);
   return;
 }

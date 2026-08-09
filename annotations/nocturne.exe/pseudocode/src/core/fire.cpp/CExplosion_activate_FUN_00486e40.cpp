@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr
   this_ptr_00 = g_CDemonSet_PTR_005be368;
   this_ptr->lifetime = 1.0;
   this_ptr->scale = scale;
-  core_set_cpp_CDemonSet_FUN_0050e660(this_ptr_00,200.0,0.0,0.0,2.0);
+  core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(this_ptr_00,200.0,0.0,0.0,2.0);
   iVar2 = 0;
   iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
   this_ptr->flip_flag = iVar1;

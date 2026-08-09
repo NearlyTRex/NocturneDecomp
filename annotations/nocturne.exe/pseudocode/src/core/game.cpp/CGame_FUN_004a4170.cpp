@@ -250,7 +250,7 @@ LAB_004a43cc:
                   (g_CDemonMission_PTR_005baf90,file_handle,iVar5);
         _fgets(local_330,0xff,file_handle);
         iVar2 = 0;
-        _fscanf(file_handle,"%d, %d\n",&DAT_01cae0d4,&DAT_01cae0e8);
+        _fscanf(file_handle,"%d, %d\n",&DAT_01cae0d4,&g_LocalHeroIndex);
         local_14 = 0;
         if (0 < _DAT_01cae0d4) {
           do {
@@ -266,7 +266,7 @@ LAB_004a43cc:
             pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
                                (g_CDemonMission_PTR_005baf90,local_230);
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(pCVar3,uVar14);
-            *(CDemonActor **)(iVar2 + 0x1cae0d8) = pCVar3;
+            *(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;
             if (pCVar3 == (CDemonActor *)0x0) {
               _fclose(file_handle);
               shape_edittool_cpp_FUN_0046fcd0

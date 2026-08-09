@@ -14,7 +14,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_00535900 at 00535acd
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00535acd
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059580f = 0.5

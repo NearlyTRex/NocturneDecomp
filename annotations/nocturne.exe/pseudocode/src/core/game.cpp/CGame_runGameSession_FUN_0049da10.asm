@@ -42,13 +42,13 @@
 ;   core_game.cpp_CGame_beginFadeOut_FUN_004a3820
 ;   core_game.cpp_CGame_clearOverlay_FUN_0049aa90
 ;   core_game.cpp_CGame_fadeIn_FUN_004a3a50
-;   core_game.cpp_CGame_FUN_0049f930
 ;   core_game.cpp_CGame_FUN_004a3b90
 ;   core_game.cpp_CGame_FUN_004a57c0
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10
 ;   core_game.cpp_CGame_processFudge_FUN_0049b260
+;   core_game.cpp_CGame_processHotkeys_FUN_0049f930
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
 ;   ... and 42 more
@@ -309,7 +309,7 @@ section .text
     PUSH EAX                            ; 0049ddae
     CALL core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0 ; 0049ddaf
         ;   XREF to: 004c5fa0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0(CLevelLoader * this_ptr)
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0049ddb4 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0049ddb4 | g_LocalHeroIndex
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0049ddba
     MOV EAX,dword ptr [EBX + 0xc4]      ; 0049ddc1
     MOV dword ptr [EDX + 0x1f59c],EAX   ; 0049ddc7
@@ -333,8 +333,8 @@ section .text
     ADD ESP,0x8                         ; 0049de03
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049de06
     PUSH EAX                            ; 0049de09
-    CALL core_game.cpp_CGame_FUN_0049f930 ; 0049de0a
-        ;   XREF to: 0049f930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_0049f930(CGame * this_ptr)
+    CALL core_game.cpp_CGame_processHotkeys_FUN_0049f930 ; 0049de0a
+        ;   XREF to: 0049f930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processHotkeys_FUN_0049f930(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049de0f
     MOV EDX,dword ptr [EBP + 0x14]      ; 0049de12
     PUSH EDX                            ; 0049de15
@@ -404,7 +404,7 @@ section .text
         ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 0049debe
         ;   Label: LAB_0049debe
-    MOV EAX,[0x01cae0e8]                ; 0049dec1 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049dec1 | g_LocalHeroIndex
         ;   Label: LAB_0049dec1
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049dec6
     PUSH EAX                            ; 0049decd
@@ -489,10 +489,10 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049dfb3
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0052df90(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049dfb8
-    MOV ESI,dword ptr [0x005b9284]      ; 0049dfbb | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0049dfbb | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 0049dfc1
-    CALL xxx_unk.c_FUN_004940d0         ; 0049dfc2
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0049dfc2
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0049dfc7
     MOV EDI,dword ptr [EBP + 0x14]      ; 0049dfca
     PUSH EDI                            ; 0049dfcd
@@ -611,7 +611,7 @@ section .text
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049e10f
         ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0049e114
-    MOV EAX,[0x01cae0e8]                ; 0049e117 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049e117 | g_LocalHeroIndex
         ;   Label: LAB_0049e117
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049e11c
     PUSH EAX                            ; 0049e123
@@ -644,7 +644,7 @@ section .text
         ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049e173
     MOV dword ptr [EAX + 0x200],EBX     ; 0049e176
-    MOV EAX,[0x01cae0e8]                ; 0049e17c | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049e17c | g_LocalHeroIndex
     ADD ESP,0x4                         ; 0049e181
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049e184
     PUSH EAX                            ; 0049e18b
@@ -667,10 +667,10 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049e1c3
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0052df90(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049e1c8
-    MOV EAX,[0x005b9284]                ; 0049e1cb | PTR_DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0049e1cb | g_CForceFeedback_PTR_005b9284
     PUSH EAX                            ; 0049e1d0
-    CALL xxx_unk.c_FUN_004940d0         ; 0049e1d1
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0049e1d1
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0049e1d6
     LEA EAX,[EBP + 0xfffffd80]          ; 0049e1d9
     PUSH EAX                            ; 0049e1df
@@ -877,12 +877,12 @@ section .text
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049e3fb
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0052ddf0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049e400
-    MOV EAX,[0x005b9284]                ; 0049e403 | PTR_DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0049e403 | g_CForceFeedback_PTR_005b9284
     PUSH EAX                            ; 0049e408
-    CALL xxx_unk.c_FUN_004940d0         ; 0049e409
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0049e409
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0049e40e
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0049e411 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0049e411 | g_LocalHeroIndex
         ;   Label: LAB_0049e411
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049e417
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0049e41a
@@ -1064,10 +1064,10 @@ section .text
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049e5e5
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_init_FUN_0052ddf0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049e5ea
-    MOV EDX,dword ptr [0x005b9284]      ; 0049e5ed | PTR_DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0049e5ed | g_CForceFeedback_PTR_005b9284
     PUSH EDX                            ; 0049e5f3
-    CALL xxx_unk.c_FUN_004940d0         ; 0049e5f4
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0049e5f4
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0049e5f9
     JMP 0x0049dde4                      ; 0049e5fc
         ;   XREF to: 0049dde4 (UNCONDITIONAL_JUMP)  ; LAB_0049dde4

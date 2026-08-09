@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_0049f930 at 0049fcad
+;   core_game.cpp_CGame_processHotkeys_FUN_0049f930 at 0049fcad
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dce1
 ;
 ; Referenced Globals:

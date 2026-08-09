@@ -18,7 +18,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005905d2 = 4
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 g_CDemonCamera_01fb8508.rotation_matrix.m[0].x
 ;   undefined4 DAT_01fb9b54
 ;   undefined4 DAT_01fb9b58
@@ -50,7 +50,7 @@ section .text
     SUB EAX,EDX                         ; 0050abbc
     SHL EAX,0x2                         ; 0050abbe
     ADD EAX,EDX                         ; 0050abc1
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0050abc3 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0050abc3 | g_LocalHeroIndex
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0050abc9
     SHL EAX,0x5                         ; 0050abd0
     FLD float ptr [EDX + 0x20]          ; 0050abd3

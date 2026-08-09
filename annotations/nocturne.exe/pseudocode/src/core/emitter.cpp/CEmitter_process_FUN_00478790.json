@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,32 +58,14 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 52,
+        "line": 53,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 60,
+        "line": 61,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 147,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 156,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "type_error",
-        "column": 56,
-        "line": 206,
-        "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "type_error",
@@ -94,7 +76,13 @@
       {
         "category": "type_error",
         "column": 56,
-        "line": 209,
+        "line": 210,
+        "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "type_error",
+        "column": 56,
+        "line": 211,
         "message": "invalid suffix '._0_4_' on floating constant"
       }
     ],
@@ -104,20 +92,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 361,
+    "complexity_score": 338,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 251,
-    "suspect_count": 9,
+    "pseudocode_lines": 253,
+    "suspect_count": 7,
     "suspect_types": [
-      "raw_address_pointer_store",
       "unknown_field",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_type_propagation"
     ],
-    "total_lines": 912
+    "total_lines": 914
   },
   "cross_references": [],
   "function": {
@@ -324,8 +311,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -606,28 +593,28 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 29,
-          "line": 100,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
           "line": 101,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 102,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
           "column": 29,
-          "line": 184,
+          "line": 186,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
-          "line": 185,
+          "line": 187,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -638,32 +625,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 140,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
+      "match": "WARNING: Type propagation algorithm not settling",
       "severity": "moderate",
-      "text": "pCVar2 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 149,
-      "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "(*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,1.0,1);",
-      "type": "raw_address_pointer_store"
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 201,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.x = fStack_c4 * 5.2220990168285998e-315._0_4_;",
@@ -671,7 +642,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 203,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.y = fStack_c0 * 5.2220990168285998e-315._0_4_;",
@@ -679,7 +650,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 202,
+      "line": 204,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_88.z = fStack_bc * 5.2220990168285998e-315._0_4_;",
@@ -687,7 +658,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 104,
+      "line": 105,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_70.x = (pCVar1->position).x;",
@@ -695,7 +666,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 169,
+      "line": 171,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c[0].x = (pCVar1->position).x;",
@@ -703,7 +674,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 210,
+      "line": 212,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_58.x = CStack_7c.x;",
@@ -711,7 +682,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 100,
+      "line": 101,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);",
@@ -719,7 +690,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 101,
+      "line": 102,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar4 = iVar8 >> 0x1f;",
@@ -727,7 +698,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 184,
+      "line": 186,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);",
@@ -735,7 +706,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 185,
+      "line": 187,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar4 = iVar8 >> 0x1f;",

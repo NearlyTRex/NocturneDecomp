@@ -17,7 +17,7 @@
 ;   TerminatedCString s_rb_00587ec4
 ;   TerminatedCString s_enemy_pod_00587ec7
 ;   char g_CHAR_00587ed1 = \x00
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
@@ -259,10 +259,10 @@ section .text
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 ; 004c930f
         ;   XREF to: 004e99c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004c9314
-    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 004c931d
-    CALL xxx_unk.c_FUN_004940d0         ; 004c931e
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 004c931e
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 004c9323
     MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMouse_PTR_005be060
     PUSH EDI                            ; 004c932c

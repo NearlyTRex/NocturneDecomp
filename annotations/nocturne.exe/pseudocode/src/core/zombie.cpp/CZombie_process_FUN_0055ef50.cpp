@@ -8,7 +8,6 @@
 
 /* WARNING: Removing unreachable block (ram,0x00560989) */
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_zombie_cpp_CZombie_process_FUN_0055ef50(CZombie *this_ptr,float delta_time)
 
@@ -476,11 +475,11 @@ LAB_0055f021:
         }
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if (((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) {
-          iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-          iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-          if (iVar6 == 0) goto LAB_0055fc6b;
+          EVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                             (&g_HeroActors[g_LocalHeroIndex]->base);
+          if (EVar12 == DEATH_STATE_ALIVE) goto LAB_0055fc6b;
           g_CGame_PTR_005b9354->player_hit_flag = 1;
-          (this_ptr->base).victim = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+          (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
           core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(this_ptr);
@@ -503,10 +502,10 @@ LAB_0055f021:
         pCVar3 = (this_ptr->base).victim;
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) &&
-           (iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
-           iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6), iVar6 != 0)) {
+           (EVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState
+                     )(&g_HeroActors[g_LocalHeroIndex]->base), EVar12 != DEATH_STATE_ALIVE)) {
           g_CGame_PTR_005b9354->player_hit_flag = 1;
-          (this_ptr->base).victim = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+          (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
           iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(&this_ptr->base,delta_time);
@@ -780,9 +779,9 @@ LAB_00560776:
         }
       }
       else if ((uVar8 < 0x19) || (uVar8 < 0x1a)) {
-        iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-        if ((iVar6 == 0) &&
+        EVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                           (&g_HeroActors[g_LocalHeroIndex]->base);
+        if ((EVar12 == DEATH_STATE_ALIVE) &&
            ((*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
                       (&this_ptr->base,delta_time), (this_ptr->base).victim != (CCharacter *)0x0)) {
 LAB_0055fd59:
@@ -809,7 +808,7 @@ LAB_0055fd59:
             local_12c = local_24c;
           }
           local_1c = local_12c * local_12c + local_134 * local_134 + local_130 * local_130;
-          local_5c = (float)(((int)local_1c >> 1) + (int)CVector3f_01c70708.y);
+          local_5c = (float)(((int)local_1c >> 1) + g_FastSqrtMagic);
           if (local_5c <= (float)8) {
             local_30 = (this_ptr->base).base.collision_cylinder_top;
             if (local_30 < (this_ptr->base).base.collision_cylinder_bottom) {

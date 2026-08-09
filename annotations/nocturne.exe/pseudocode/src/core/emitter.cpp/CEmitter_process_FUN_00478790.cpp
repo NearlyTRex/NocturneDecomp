@@ -6,12 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Type propagation algorithm not settling */
 
 void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
+  CHero *this_ptr_00;
   CDemonActor *pCVar2;
   CDemonSet *pCVar3;
   int iVar4;
@@ -144,16 +145,17 @@ LAB_0047883d:
     core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_00479390(this_ptr,&local_b8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_0048c3c0
               (g_CFireEffect_PTR_005b80f0,&local_b8,&(this_ptr->base).orient.vec,2,1);
-    pCVar2 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
     pCVar1 = &(this_ptr->base).location;
-    local_ac = (pCVar2->location).position.x - (pCVar1->position).x;
-    local_a8 = (pCVar2->location).position.y - (this_ptr->base).location.position.y;
-    local_a4 = (pCVar2->location).position.z - (this_ptr->base).location.position.z;
+    local_ac = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
+    local_a8 = (this_ptr_00->base).base.location.position.y - (this_ptr->base).location.position.y;
+    local_a4 = (this_ptr_00->base).base.location.position.z - (this_ptr->base).location.position.z;
     if (SQRT(local_a4 * local_a4 + local_ac * local_ac + local_a8 * local_a8) <
         (float)2.5) {
-      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(pCVar2,&local_a0,&pCVar1->position);
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
+                ((CDemonActor *)this_ptr_00,&local_a0,&pCVar1->position);
       core_charactr_cpp_CCharacter_FUN_00427730
-                (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_a0,0,0,1.0,1);
+                (&g_HeroActors[g_LocalHeroIndex]->base,&local_a0,0,0,1.0,1);
     }
     break;
   case 6:

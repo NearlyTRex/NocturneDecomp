@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CTommyGun *this_ptr,float delta_time)
 
 {
@@ -15,7 +13,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CTommyGun *this_pt
   float fVar2;
   int iVar3;
   uint uVar4;
-  CDemonActor *pCVar5;
+  CHero *pCVar5;
   float10 fVar6;
   double dVar7;
   CSfxSample local_1b4;
@@ -57,9 +55,9 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CTommyGun *this_pt
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
       sound_sndmain_cpp_unlockSound_FUN_00528890();
     }
-    pCVar5 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+    pCVar5 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar5 == g_HeroActors[g_LocalHeroIndex]) {
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       return;
     }
   }
@@ -77,9 +75,9 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005464a0(CTommyGun *this_pt
                         ((CDemonActor *)this_ptr,(char *)&local_1b4.taken);
       this_ptr->sfx_handles[0] = uVar4;
     }
-    pCVar5 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+    pCVar5 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar5 == g_HeroActors[g_LocalHeroIndex]) {
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       return;
     }
   }

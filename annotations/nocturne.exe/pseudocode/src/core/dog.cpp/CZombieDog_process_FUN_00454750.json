@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -68,14 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 363,
+    "complexity_score": 378,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 278,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "fast_sqrt_inline",
       "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
@@ -312,8 +313,8 @@
     },
     {
       "addr": "01c7070c",
-      "name": "CVector3f_01c70708.y",
-      "type": "undefined4",
+      "name": "g_FastSqrtMagic",
+      "type": "int",
       "value": null
     },
     {
@@ -685,6 +686,14 @@
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 88,
+      "match": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",
+      "severity": "moderate",
+      "text": "local_18 = (float)(((int)local_24 >> 1) + g_FastSqrtMagic);",
+      "type": "fast_sqrt_inline"
     }
   ],
   "vtable_info": {

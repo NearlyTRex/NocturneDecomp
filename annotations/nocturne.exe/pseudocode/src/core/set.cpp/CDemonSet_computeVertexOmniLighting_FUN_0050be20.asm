@@ -32,7 +32,7 @@
 ;   undefined4 DAT_005c5034
 ;   undefined4 DAT_005c5038
 ;   undefined4 DAT_005c503c
-;   undefined4 CVector3f_01c70708.y
+;   int g_FastSqrtMagic
 ;   undefined4 DAT_01fba9a4
 ;   undefined4 DAT_01fba9a8
 ;   undefined4 DAT_01fba9ac
@@ -51,7 +51,7 @@ section .text
     MOV EBP,ESP                         ; 0050be23
     SUB ESP,0x34                        ; 0050be25
     AND ESP,0xfffffff8                  ; 0050be28
-    MOV ESI,dword ptr [0x01c7070c]      ; 0050be2b | CVector3f_01c70708.y
+    MOV ESI,dword ptr [0x01c7070c]      ; 0050be2b | g_FastSqrtMagic
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050be31
     MOV EAX,dword ptr [EBP + 0x18]      ; 0050be34
     XOR ECX,ECX                         ; 0050be37
@@ -142,7 +142,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x28]      ; 0050bf37
     SHL EAX,0x8                         ; 0050bf3b
     MOV dword ptr [EBX + 0x28],EAX      ; 0050bf3e | DAT_005c503c
-    MOV dword ptr [0x01c7070c],ESI      ; 0050bf41 | CVector3f_01c70708.y
+    MOV dword ptr [0x01c7070c],ESI      ; 0050bf41 | g_FastSqrtMagic
     MOV ESP,EBP                         ; 0050bf47
     POP EBP                             ; 0050bf49
     POP ESI                             ; 0050bf4a

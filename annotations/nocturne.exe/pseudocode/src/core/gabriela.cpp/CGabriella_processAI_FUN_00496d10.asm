@@ -45,7 +45,7 @@
 ;   float FLOAT_005820b2 = 0.5
 ;   float FLOAT_005820b6 = 3
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonSet_01e57284.collision_actor
 ;
@@ -87,7 +87,7 @@ section .text
     TEST ECX,ECX                        ; 00496d47
     JZ 0x00496f15                       ; 00496d49
         ;   XREF to: 00496f15 (CONDITIONAL_JUMP)  ; LAB_00496f15
-    MOV EAX,[0x01cae0e8]                ; 00496d4f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00496d4f | g_LocalHeroIndex
     LEA EDX,[EBX + 0x20]                ; 00496d54
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00496d57
     FLD float ptr [EDX]                 ; 00496d5e
@@ -455,7 +455,7 @@ section .text
     POP ESI                             ; 00497254
     POP EBX                             ; 00497255
     RET                                 ; 00497256
-    MOV EAX,[0x01cae0e8]                ; 00497257 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00497257 | g_LocalHeroIndex
         ;   Label: LAB_00497257
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049725c
     LEA EDX,[EAX + 0xbcc0]              ; 00497263
@@ -501,7 +501,7 @@ section .text
         ;   XREF to: 004972fb (CONDITIONAL_JUMP)  ; LAB_004972fb
     MOV EAX,dword ptr [ESP + 0x10c]     ; 004972ee
     MOV dword ptr [EBX + 0xbcb8],EAX    ; 004972f5
-    MOV EAX,[0x01cae0e8]                ; 004972fb | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004972fb | g_LocalHeroIndex
         ;   Label: LAB_004972fb
     MOV dword ptr [EBX + 0xbc94],0x1    ; 00497300
     LEA EDX,[EBX + 0x20]                ; 0049730a

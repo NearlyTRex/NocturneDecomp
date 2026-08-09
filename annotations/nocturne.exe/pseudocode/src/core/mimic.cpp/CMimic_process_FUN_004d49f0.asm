@@ -12,7 +12,7 @@
 ;   TerminatedCString s_CMimic_setup_can_t_use_m_005893e3
 ;   undefined4 DAT_005b7650
 ;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGame_01cea280
@@ -40,7 +40,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 004d49fb | g_CNetGame_01cea280
     JNZ 0x004d4a86                      ; 004d49fe
         ;   XREF to: 004d4a86 (CONDITIONAL_JUMP)  ; LAB_004d4a86
-    MOV EAX,[0x01cae0e8]                ; 004d4a04 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4a04 | g_LocalHeroIndex
         ;   Label: LAB_004d4a04
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4a09
     MOV EDX,dword ptr [EDX + 0x108]     ; 004d4a10
@@ -139,7 +139,7 @@ section .text
     CMP ECX,0x1                         ; 004d4b12
     JNZ 0x004d4a7a                      ; 004d4b15
         ;   XREF to: 004d4a7a (CONDITIONAL_JUMP)  ; LAB_004d4a7a
-    MOV EAX,[0x01cae0e8]                ; 004d4b1b | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4b1b | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4b20
     ADD EAX,0x150                       ; 004d4b27
     PUSH EAX                            ; 004d4b2c

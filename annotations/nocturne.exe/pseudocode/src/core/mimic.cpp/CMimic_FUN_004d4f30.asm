@@ -118,7 +118,7 @@ section .text
     PUSH 0x0                            ; 004d4f45
     LEA EAX,[EBP + 0xffffff7e]          ; 004d4f47
     PUSH EAX                            ; 004d4f4d
-    MOV EAX,[0x01cae0e8]                ; 004d4f4e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4f4e | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4f53
     ADD EAX,0x150                       ; 004d4f5a
     PUSH EAX                            ; 004d4f5f
@@ -128,12 +128,12 @@ section .text
     PUSH EAX                            ; 004d4f68
     LEA EAX,[EBP + -0xa]                ; 004d4f69
     PUSH EAX                            ; 004d4f6c
-    MOV EAX,[0x01cae0e8]                ; 004d4f6d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4f6d | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4f72
     PUSH EDX                            ; 004d4f79
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004d4f7a
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-    MOV EAX,[0x01cae0e8]                ; 004d4f7f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4f7f | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4f84
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d4f8b
     ADD ESP,0xc                         ; 004d4f8e
@@ -159,7 +159,7 @@ section .text
     MOV dword ptr [EBP + 0x72],EAX      ; 004d4fc5
     CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660 ; 004d4fc8
         ;   XREF to: 004e1660 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660(CMotionController * this_ptr)
-    MOV ESI,dword ptr [0x01cae0e8]      ; 004d4fcd | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 004d4fcd | g_LocalHeroIndex
     ADD ESP,0x4                         ; 004d4fd3
     MOV EAX,dword ptr [EAX + 0x24]      ; 004d4fd6
     SHL ESI,0x2                         ; 004d4fd9
@@ -169,7 +169,7 @@ section .text
     TEST EAX,EAX                        ; 004d4fe5
     JBE 0x004d510d                      ; 004d4fe7
         ;   XREF to: 004d510d (CONDITIONAL_JUMP)  ; LAB_004d510d
-    MOV EAX,[0x01cae0e8]                ; 004d4fed | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4fed | g_LocalHeroIndex
         ;   Label: LAB_004d4fed
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4ff2
     PUSH EAX                            ; 004d4ff9
@@ -292,7 +292,7 @@ section .text
     CMP dword ptr [EAX + 0x1d4],0x0     ; 004d5130 | g_CGame_01c775ec.freeze_enemies_enabled
     JNZ 0x004d5024                      ; 004d5137
         ;   XREF to: 004d5024 (CONDITIONAL_JUMP)  ; LAB_004d5024
-    MOV EAX,[0x01cae0e8]                ; 004d513d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d513d | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d5142
     FLD float ptr [EBX + 0x24]          ; 004d5149
     FSUB float ptr [EAX + 0x24]         ; 004d514c
@@ -492,7 +492,7 @@ section .text
     LEA EAX,[EBP + -0x5e]               ; 004d5387
     PUSH 0x3f800000                     ; 004d538a
     PUSH EAX                            ; 004d538f
-    MOV EAX,[0x01cae0e8]                ; 004d5390 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d5390 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d5395
     LEA EDX,[EAX + 0xbcc0]              ; 004d539c
     PUSH EDX                            ; 004d53a2
@@ -668,7 +668,7 @@ section .text
     LEA EAX,[EBP + 0x26]                ; 004d5567
     PUSH 0x40400000                     ; 004d556a
     PUSH EAX                            ; 004d556f
-    MOV EAX,[0x01cae0e8]                ; 004d5570 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d5570 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d5575
     LEA EDX,[EAX + 0xbcc0]              ; 004d557c
     PUSH EDX                            ; 004d5582

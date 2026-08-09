@@ -15,6 +15,7 @@ void __cdecl core_tbplayer_cpp_staticInit_FUN_005430d0(void)
              &g_CNPCActorType_01d46820);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CDrummerActorType_02dca11c,"CDrummer",
-             core_tbplayer_cpp_factoryFunc_FUN_00543370,&INT_005c1054,1,&g_CNPCActorType_01d46820);
+             core_tbplayer_cpp_factoryFuncDrummer_FUN_00543370,&INT_005c1054,1,
+             &g_CNPCActorType_01d46820);
   return;
 }

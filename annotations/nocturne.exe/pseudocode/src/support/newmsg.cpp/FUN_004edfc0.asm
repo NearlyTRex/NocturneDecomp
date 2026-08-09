@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c86f9
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c86f9
 ;
 ; Referenced Globals:
 ;   char CHAR_00h_0058c922 = \x00

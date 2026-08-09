@@ -8,10 +8,10 @@
 ; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[4]:
-;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 00563082
 ;   engine_prim.c_FUN_004f9dd0 at 004f9fdb
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390 at 004fb53c
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fb00a
+;   engine_zraster.c_rasterizePolygonCustom_FUN_00562de0 at 00563082
 ;
 ; *****************************************************************************
 

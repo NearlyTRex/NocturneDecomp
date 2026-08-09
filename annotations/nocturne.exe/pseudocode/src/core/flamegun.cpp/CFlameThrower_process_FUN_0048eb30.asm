@@ -12,15 +12,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_fl_throw_wav_005816a9
 ;   float FLOAT_0059d7a0 = 4
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_0052eba0
 ;   core_sound.cpp_CSound_killSound_FUN_0052ebb0
 ;   core_weapon.cpp_CWeapon_process_FUN_00554030
-;   xxx_unk.c_FUN_004940d0
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_0048eb79
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0048eb7a
     CALL dword ptr [EAX + 0x8c]         ; 0048eb80
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0048eb86 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0048eb86 | g_LocalHeroIndex
     MOV ECX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0048eb8c
     ADD ESP,0x4                         ; 0048eb93
     CMP EAX,ECX                         ; 0048eb96
@@ -121,11 +121,11 @@ section .text
     MOV dword ptr [EBX + 0x574],EAX     ; 0048ec37
     JMP 0x0048ebd4                      ; 0048ec3d
         ;   XREF to: 0048ebd4 (UNCONDITIONAL_JUMP)  ; LAB_0048ebd4
-    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | g_CForceFeedback_PTR_005b9284
         ;   Label: LAB_0048ec3f
     PUSH ESI                            ; 0048ec45
-    CALL xxx_unk.c_FUN_004940d0         ; 0048ec46
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0048ec46
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0048ec4b
     JMP 0x0048eb9e                      ; 0048ec4e
         ;   XREF to: 0048eb9e (UNCONDITIONAL_JUMP)  ; LAB_0048eb9e

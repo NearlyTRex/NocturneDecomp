@@ -34,7 +34,7 @@
 ;   double DOUBLE_0058df06 = 10
 ;   double DOUBLE_0058df0e = 3.14159265350000
 ;   double DOUBLE_0058df16 = -3.14159265350000
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -61,7 +61,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004fc61c
     MOV EDX,0x3e800000                  ; 004fc61f
     MOV ECX,0x3f490fdb                  ; 004fc624
-    MOV ESI,dword ptr [0x01cae0e8]      ; 004fc629 | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 004fc629 | g_LocalHeroIndex
     MOV EDI,dword ptr [EBX + 0x1fa38]   ; 004fc62f
     MOV dword ptr [ESP + 0x70],EDX      ; 004fc635
     MOV dword ptr [ESP + 0x74],ECX      ; 004fc639
@@ -82,7 +82,7 @@ section .text
     PUSH EAX                            ; 004fc659
     CALL crt_memory.c_memset_FUN_00563cc0 ; 004fc65a
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
-    MOV EAX,[0x01cae0e8]                ; 004fc65f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004fc65f | g_LocalHeroIndex
     LEA EDX,[EBX + 0x20]                ; 004fc664
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004fc667
     FLD float ptr [EDX]                 ; 004fc66e

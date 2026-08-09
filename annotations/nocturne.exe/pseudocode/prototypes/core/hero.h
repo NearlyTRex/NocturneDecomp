@@ -155,9 +155,9 @@ void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direc
 // Address: 004b5ec0
 void __cdecl CHero::reset(CHero *this_ptr);
 
-// Original: core_hero.cpp_factoryFunc_FUN_004b5f60
+// Original: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004b5f60
 // Address: 004b5f60
-CHeroPlaceholder * __cdecl factoryFunc(void);
+CHeroPlaceholder * __cdecl factoryFuncHeroPlaceholder(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004b5f80
 // Address: 004b5f80

@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_vampboss_cpp_0059726b
 ;   TerminatedCString s_CVampireBoss_chooseDestW_00597280
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_0054e255
     JZ 0x0054e2e5                       ; 0054e25c
         ;   XREF to: 0054e2e5 (CONDITIONAL_JUMP)  ; LAB_0054e2e5
-    MOV EAX,[0x01cae0e8]                ; 0054e262 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054e262 | g_LocalHeroIndex
         ;   Label: LAB_0054e262
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054e267
     MOV EAX,dword ptr [ESI + 0xbedb4]   ; 0054e26e

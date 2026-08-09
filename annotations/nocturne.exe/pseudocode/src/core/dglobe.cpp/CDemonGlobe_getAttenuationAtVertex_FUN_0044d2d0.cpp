@@ -33,7 +33,7 @@ int __cdecl core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(CDem
   local_20 = (float)this_ptr->intensity_multiplier *
              (this_ptr->radius_squared - fVar1) * this_ptr->inverse_radius_squared;
   if (surface_normal != (CVector3i *)0x0) {
-    fVar1 = (float)((int)CVector3f_01c70708.z - ((int)fVar1 >> 1));
+    fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar1 >> 1));
     fVar1 = local_28 * fVar1 * (float)surface_normal->z * _DAT_0059bffc +
             local_30 * fVar1 * (float)surface_normal->x * _DAT_0059bffc +
             local_2c * fVar1 * (float)surface_normal->y * _DAT_0059bffc;

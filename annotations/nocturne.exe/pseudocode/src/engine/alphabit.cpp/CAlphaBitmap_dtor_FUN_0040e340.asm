@@ -13,7 +13,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a715e
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9ec
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c57a2
-;   core_main.c_FUN_004c85f0 at 004c8c6d
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c6d
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360

@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float delta_time)
 
@@ -18,11 +17,11 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float del
   bool bVar3;
   float fVar4;
   int iVar5;
-  CEnemy *pCVar6;
+  CHero *pCVar6;
   CVector3f *pCVar7;
   SMotion *pSVar8;
   uint uVar9;
-  CEnemy *pCVar10;
+  CHero *pCVar10;
   float fStack_98;
   float fStack_8c;
   CVector3f CStack_84;
@@ -45,20 +44,23 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float del
   bVar3 = false;
   local_1c = 0.25;
   local_24 = 0.7853982;
-  pCVar10 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  pCVar10 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    local_6c.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar5 + 0x20);
-    local_6c.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar5 + 0x24);
-    local_6c.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar5 + 0x28);
+    pCVar6 = g_HeroActors[g_LocalHeroIndex];
+    local_6c.x = (this_ptr->base).base.base.location.position.x -
+                 (pCVar6->base).base.location.position.x;
+    local_6c.y = (this_ptr->base).base.base.location.position.y -
+                 (pCVar6->base).base.location.position.y;
+    local_6c.z = (this_ptr->base).base.base.location.position.z -
+                 (pCVar6->base).base.location.position.z;
     local_30 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
     if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
       local_30 = 0.0;
     }
     local_28 = 20.0;
-    iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);
+    iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                      (g_HeroActors[g_LocalHeroIndex]);
     if (iVar5 != 0) {
       local_28 = 30.0;
     }
@@ -66,8 +68,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float del
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       fStack_3c = 9999.9;
-      pCVar6 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&fStack_3c);
-      if ((pCVar6 == (CEnemy *)0x0) || (local_28 <= fStack_3c)) {
+      pCVar6 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&fStack_3c);
+      if ((pCVar6 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
@@ -97,10 +99,10 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float del
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
-        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        pCStack_20 = (CPathMap *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0xbc))(iVar5);
-        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);
+        pCStack_20 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
+                               ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+        iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (g_HeroActors[g_LocalHeroIndex]);
         if ((iVar5 == 0) &&
            (uVar9 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
            uVar9 != 0)) {
@@ -161,8 +163,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004baba0(CIcePick *this_ptr,float del
         if ((pSVar8->state_index == 10) && (this_ptr->guns_drawn != 0)) {
           (this_ptr->base).player_input.action_state.draw = 1;
         }
-        iVar5 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        iVar5 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0x140))(iVar5);
+        iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (g_HeroActors[g_LocalHeroIndex]);
         if ((iVar5 == 0) &&
            (uVar9 = core_charactr_cpp_CCharacter_FUN_0042af70((CCharacter *)this_ptr,delta_time),
            uVar9 != 0)) {

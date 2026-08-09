@@ -208,7 +208,7 @@ section .text
     PUSH EAX                            ; 0049cd4e
     CALL core_slew.cpp_CSlew_FUN_0051f930 ; 0049cd4f
         ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_FUN_0051f930(CSlew * this_ptr)
-    MOV EAX,[0x01cae0e8]                ; 0049cd54 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049cd54 | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cd59
     LEA EAX,[EBP + -0x22]               ; 0049cd60
     ADD EDX,0x20                        ; 0049cd63
@@ -222,7 +222,7 @@ section .text
     MOV dword ptr [EBP + -0x1e],EAX     ; 0049cd75
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049cd78
     MOV dword ptr [EBP + -0x1a],EAX     ; 0049cd7b
-    MOV EAX,[0x01cae0e8]                ; 0049cd7e | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049cd7e | g_LocalHeroIndex
         ;   Label: LAB_0049cd7e
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cd83
     LEA EAX,[EBP + -0x16]               ; 0049cd8a
@@ -243,7 +243,7 @@ section .text
         ;   XREF to: 0051f980 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_0051f980(CSlew * this_ptr)
     ADD ESP,0x4                         ; 0049cdae
     LEA EDX,[EBP + -0x16]               ; 0049cdb1
-    MOV EAX,[0x01cae0e8]                ; 0049cdb4 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049cdb4 | g_LocalHeroIndex
     PUSH EDX                            ; 0049cdb9
     LEA EDX,[EBP + -0x22]               ; 0049cdba
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cdbd
@@ -293,7 +293,7 @@ section .text
     FILD dword ptr [EAX + 0x8]          ; 0049ce40
     FMUL float ptr [0x0059de8c]         ; 0049ce43 | DAT_0059de8c
     FSTP float ptr [EBX + 0x8]          ; 0049ce49
-    MOV EAX,[0x01cae0e8]                ; 0049ce4c | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049ce4c | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049ce51
     LEA EDX,[EAX + 0x30]                ; 0049ce58
     PUSH EDX                            ; 0049ce5b
@@ -404,7 +404,7 @@ section .text
     CALL engine_pcx.c_FUN_004f2990      ; 0049cfa9
         ;   XREF to: 004f2990 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_FUN_004f2990(char * filename)
     ADD ESP,0x4                         ; 0049cfae
-    MOV EAX,[0x01cae0e8]                ; 0049cfb1 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049cfb1 | g_LocalHeroIndex
         ;   Label: LAB_0049cfb1
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cfb6
     ADD EAX,0x1f5a0                     ; 0049cfbd
@@ -546,7 +546,7 @@ section .text
     PUSH EAX                            ; 0049d171
     CALL engine_2d.c_drawText_FUN_00402600 ; 0049d172
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
-    MOV EAX,[0x01cae0e8]                ; 0049d177 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049d177 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049d17c
     FLD double ptr [0x00582752]         ; 0049d183 | DOUBLE_00582752
     FLD float ptr [EAX + 0x34]          ; 0049d189
@@ -836,7 +836,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00402600 ; 0049d4ae
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 0049d4b3
-    MOV EAX,[0x01cae0e8]                ; 0049d4b6 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0049d4b6 | g_LocalHeroIndex
         ;   Label: LAB_0049d4b6
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049d4bb
     PUSH EAX                            ; 0049d4c2
@@ -957,10 +957,10 @@ section .text
     CALL core_sound.cpp_CSound_FUN_0052dff0 ; 0049d5e9
         ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_FUN_0052dff0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049d5ee
-    MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 0049d5f7
-    CALL xxx_unk.c_FUN_004940d0         ; 0049d5f8
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0049d5f8
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0049d5fd
     JMP 0x0049ce7c                      ; 0049d600
         ;   XREF to: 0049ce7c (UNCONDITIONAL_JUMP)  ; LAB_0049ce7c

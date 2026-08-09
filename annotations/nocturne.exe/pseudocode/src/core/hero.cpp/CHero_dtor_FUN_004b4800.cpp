@@ -22,8 +22,8 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004b4800(CHero *this_ptr,uint flags
   (this_ptr->base).base.vtable._ub = &g_CHeroVTable._ub;
   iVar1 = 0;
   do {
-    if (this_ptr == *(CHero **)(iVar1 + 0x1cae0d8)) {
-      *(uint *)(iVar1 + 0x1cae0d8) = 0;
+    if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {
+      *(uint *)((int)g_HeroActors + iVar1) = 0;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);

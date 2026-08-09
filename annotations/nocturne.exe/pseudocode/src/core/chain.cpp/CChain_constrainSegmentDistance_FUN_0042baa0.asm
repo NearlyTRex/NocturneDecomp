@@ -35,7 +35,7 @@
 ;   core_chain.cpp_CChain_process_FUN_0042bca0 at 0042bfab
 ;
 ; Referenced Globals:
-;   undefined4 CVector3f_01c70708.y
+;   int g_FastSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -98,7 +98,7 @@ section .text
     FADDP                               ; 0042bb37
     FSTP float ptr [ESP + 0x48]         ; 0042bb39
     MOV EAX,dword ptr [ESP + 0x48]      ; 0042bb3d
-    MOV EDI,dword ptr [0x01c7070c]      ; 0042bb41 | CVector3f_01c70708.y
+    MOV EDI,dword ptr [0x01c7070c]      ; 0042bb41 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0042bb47
     ADD EAX,EDI                         ; 0042bb49
     MOV dword ptr [ESP + 0x54],EAX      ; 0042bb4b

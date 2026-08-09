@@ -33,12 +33,11 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004d4650(CMimic *this_ptr)
     g_CurrentLineNumber = 182;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
-  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  if (iVar7 == 0) {
+  if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
     model_name = "stranger.dfm";
   }
   else {
-    model_name = (char *)(iVar7 + 0x23b0);
+    model_name = (g_HeroActors[g_LocalHeroIndex]->base).model.model_name;
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (&(this_ptr->base).base.model,model_name);

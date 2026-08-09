@@ -44,7 +44,7 @@
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CGame_01c775ec.foul_language_flag
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
@@ -415,7 +415,7 @@ section .text
     PUSH ECX                            ; 00478bbd
     CALL core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0 ; 00478bbe
         ;   XREF to: 0048c3c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGunFlames_FUN_0048c3c0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_count, ...)
-    MOV ESI,dword ptr [0x01cae0e8]      ; 00478bc3 | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 00478bc3 | g_LocalHeroIndex
     MOV ESI,dword ptr [ESI*0x4 + 0x1cae0d8] ; 00478bc9
     LEA EAX,[ESI + 0x20]                ; 00478bd0
     LEA EDX,[EBX + 0x20]                ; 00478bd3
@@ -455,7 +455,7 @@ section .text
     PUSH 0x0                            ; 00478c32
     LEA EAX,[ESP + 0x58]                ; 00478c34
     PUSH EAX                            ; 00478c38
-    MOV EAX,[0x01cae0e8]                ; 00478c39 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00478c39 | g_LocalHeroIndex
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00478c3e
     PUSH ESI                            ; 00478c45
     CALL core_charactr.cpp_CCharacter_FUN_00427730 ; 00478c46

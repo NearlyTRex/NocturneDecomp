@@ -53,9 +53,9 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_00547b30(CTrigger *this_ptr,f
         iVar10 = 0;
         do {
           iVar5 = core_trigger_cpp_CTrigger_containsActor_FUN_005487b0
-                            (this_ptr,*(CDemonActor **)(iVar10 + 0x1cae0d8));
+                            (this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar10));
           if (iVar5 != 0) {
-            pCVar6 = *(CDemonActor **)(iVar10 + 0x1cae0d8);
+            pCVar6 = *(CDemonActor **)((int)g_HeroActors + iVar10);
             goto LAB_00547bbc;
           }
           iVar9 = iVar9 + 1;
@@ -131,8 +131,8 @@ LAB_00547bbc:
       local_1c = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                            (g_CFireEffect_PTR_005b80f0,&pCVar1->position,
-                            (float)(((int)local_1c >> 1) + (int)CVector3f_01c70708.y),
-                            (CVector3f *)0x0,(float *)0x0);
+                            (float)(((int)local_1c >> 1) + g_FastSqrtMagic),(CVector3f *)0x0,
+                            (float *)0x0);
     }
     break;
   case 7:

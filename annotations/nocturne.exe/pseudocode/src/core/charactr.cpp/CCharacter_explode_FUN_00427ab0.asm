@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60
-;   core_fire.cpp_CFireEffect_FUN_0048c0d0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 00427b2f
     MOV EDX,dword ptr [0x005b80f0]      ; 00427b30 | g_CFireEffect_PTR_005b80f0
     PUSH EDX                            ; 00427b36
-    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 00427b37
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 ; 00427b37
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 00427b3c
     PUSH 0x0                            ; 00427b3f
     MOV ECX,dword ptr [ESP + 0x4c]      ; 00427b41

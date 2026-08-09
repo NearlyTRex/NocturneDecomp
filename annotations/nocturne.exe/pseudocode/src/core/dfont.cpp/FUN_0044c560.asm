@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c878f
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c878f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dfont_cpp_0057c10d

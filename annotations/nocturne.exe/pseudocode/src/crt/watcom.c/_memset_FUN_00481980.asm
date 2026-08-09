@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b7790
 ;   void* switchdataD_005b7f90 = 004819bc
-;   undefined4 DAT_005b7fd0
+;   void* PTR_LAB_005b7fd0 = 004819f0
 ;
 ; *****************************************************************************
 
@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 004819bc (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 004819c8
         ;   Label: LAB_004819c8
-    JMP dword ptr [EAX*0x4 + 0x5b7fd0]  ; 004819c9 | DAT_005b7fd0
+    JMP dword ptr [EAX*0x4 + 0x5b7fd0]  ; 004819c9 | PTR_LAB_005b7fd0
     MOV byte ptr [ECX + -0x5],DL        ; 004819d0
         ;   Label: caseD_5
     MOV dword ptr [ECX + -0x4],EDX      ; 004819d3

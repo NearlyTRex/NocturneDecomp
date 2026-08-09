@@ -100,7 +100,7 @@ section .text
     JNZ 0x004c2dcc                      ; 004c248b
         ;   XREF to: 004c2dcc (CONDITIONAL_JUMP)  ; LAB_004c2dcc
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c2491
-    MOV EDX,dword ptr [0x01cae0e8]      ; 004c2494 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 004c2494 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX + 0x4]       ; 004c249a
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 004c249d
     JNZ 0x004c2dcc                      ; 004c24a4
@@ -625,7 +625,7 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 004c2b81
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x624]       ; 004c2b86
-    MOV EAX,[0x01cae0e8]                ; 004c2b8d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004c2b8d | g_LocalHeroIndex
         ;   Label: LAB_004c2b8d
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004c2b92
     FLD float ptr [EAX + 0x2434]        ; 004c2b99

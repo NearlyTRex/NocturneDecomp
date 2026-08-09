@@ -1309,7 +1309,7 @@ section .text
     ADD ESP,0xc                         ; 0055fc3f
     JMP 0x0055f994                      ; 0055fc42
         ;   XREF to: 0055f994 (UNCONDITIONAL_JUMP)  ; LAB_0055f994
-    MOV EAX,[0x01cae0e8]                ; 0055fc47 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0055fc47 | g_LocalHeroIndex
         ;   Label: LAB_0055fc47
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0055fc4c
     PUSH EAX                            ; 0055fc53
@@ -1446,7 +1446,7 @@ section .text
     FADDP                               ; 0055fe0f
     FSTP float ptr [EBP + 0x6e]         ; 0055fe11
     MOV EAX,dword ptr [EBP + 0x6e]      ; 0055fe14
-    MOV EDX,dword ptr [0x01c7070c]      ; 0055fe17 | CVector3f_01c70708.y
+    MOV EDX,dword ptr [0x01c7070c]      ; 0055fe17 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0055fe1d
     ADD EAX,EDX                         ; 0055fe1f
     MOV dword ptr [EBP + 0x2e],EAX      ; 0055fe21
@@ -1799,7 +1799,7 @@ section .text
     ADD ESP,0xc                         ; 0056021d
     JMP 0x0055fc6b                      ; 00560220
         ;   XREF to: 0055fc6b (UNCONDITIONAL_JUMP)  ; LAB_0055fc6b
-    MOV EAX,[0x01cae0e8]                ; 00560225 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00560225 | g_LocalHeroIndex
         ;   Label: LAB_00560225
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0056022a
     PUSH EAX                            ; 00560231
@@ -1811,7 +1811,7 @@ section .text
         ;   XREF to: 0055fc6b (CONDITIONAL_JUMP)  ; LAB_0055fc6b
     MOV EAX,[0x005b9354]                ; 00560249 | g_CGame_PTR_005b9354
     MOV dword ptr [EAX + 0x220],0x1     ; 0056024e | g_CGame_01c775ec.player_hit_flag
-    MOV EAX,[0x01cae0e8]                ; 00560258 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00560258 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0056025d
     MOV dword ptr [EBX + 0xbca4],EAX    ; 00560264
     JMP 0x005601b6                      ; 0056026a
@@ -1839,7 +1839,7 @@ section .text
     CMP dword ptr [EBP + 0x52],0x0      ; 005602b2
     JZ 0x005602f9                       ; 005602b6
         ;   XREF to: 005602f9 (CONDITIONAL_JUMP)  ; LAB_005602f9
-    MOV EAX,[0x01cae0e8]                ; 005602b8 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 005602b8 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 005602bd
     PUSH EAX                            ; 005602c4
     MOV EDX,dword ptr [EAX + 0x14c]     ; 005602c5
@@ -1850,7 +1850,7 @@ section .text
         ;   XREF to: 005602f9 (CONDITIONAL_JUMP)  ; LAB_005602f9
     MOV EAX,[0x005b9354]                ; 005602d8 | g_CGame_PTR_005b9354
     MOV dword ptr [EAX + 0x220],0x1     ; 005602dd | g_CGame_01c775ec.player_hit_flag
-    MOV EAX,[0x01cae0e8]                ; 005602e7 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 005602e7 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 005602ec
     MOV dword ptr [EBX + 0xbca4],EAX    ; 005602f3
     CMP dword ptr [EBX + 0xbca4],0x0    ; 005602f9

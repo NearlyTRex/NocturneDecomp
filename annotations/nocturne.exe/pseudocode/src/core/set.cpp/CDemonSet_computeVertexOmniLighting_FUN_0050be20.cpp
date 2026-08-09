@@ -14,7 +14,7 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
   int iVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
+  int iVar4;
   float fVar5;
   int iVar6;
   double dVar7;
@@ -23,7 +23,7 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
   float local_3c;
   float local_38;
   
-  fVar4 = CVector3f_01c70708.y;
+  iVar4 = g_FastSqrtMagic;
   iVar6 = 0;
   local_3c = 0.0;
   local_40 = 0.0;
@@ -36,7 +36,7 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
         fVar2 = *(float *)(iVar1 + 0x108) - (vertex_position->y + position_offset->y);
         fVar3 = *(float *)(iVar1 + 0x10c) - (vertex_position->z + position_offset->z);
         fVar5 = (float)(((int)(fVar3 * fVar3 + fVar5 * fVar5 + fVar2 * fVar2) >> 1) +
-                       (int)CVector3f_01c70708.y);
+                       g_FastSqrtMagic);
         if (fVar5 <= *(float *)(iVar1 + 0x11d4)) {
           fVar5 = 1.0 - fVar5 / *(float *)(iVar1 + 0x11d4);
           local_3c = *(float *)(iVar1 + 0x11c4) * fVar5 + local_3c;
@@ -67,6 +67,6 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
   dVar7 = round((double)local_38);
   (&DAT_005c5038)[vertex_index * 0xc] = (int)ROUND(dVar8) << 8;
   (&DAT_005c503c)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;
-  CVector3f_01c70708.y = fVar4;
+  g_FastSqrtMagic = iVar4;
   return;
 }

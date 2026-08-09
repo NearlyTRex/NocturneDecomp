@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
 
 {
@@ -16,11 +14,12 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
   CVector3f *pCVar2;
   int iVar3;
   float hit_points;
-  CDemonActor *pCVar4;
+  CHero *pCVar4;
   CCharacter *this_ptr_01;
   EDeathState EVar5;
   CTrigger *this_ptr_02;
   double dVar6;
+  CDemonActor *pCVar7;
   byte auStack_dc [28];
   float fStack_c0;
   float fStack_bc;
@@ -72,9 +71,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-  pCVar4 = (this_ptr->base).carried_by_actor;
-  if (pCVar4 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar4);
+  pCVar7 = (this_ptr->base).carried_by_actor;
+  if (pCVar7 != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar7);
   }
   CStack_20.y = 0.0;
   do {
@@ -131,7 +130,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
     else {
       iVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
       this_ptr_00 = g_CDemonSet_PTR_005be368;
-      pCVar4 = (CDemonActor *)((ulonglong)dVar6 >> 0x20);
+      pCVar7 = (CDemonActor *)((ulonglong)dVar6 >> 0x20);
       if (iVar3 != 0) {
         if (CStack_20.z == 0.0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
@@ -143,7 +142,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff14);
       auStack_dc._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar4,(int)hit_points);
+                     ((CCharacter *)this_ptr,pCVar7,(int)hit_points);
       auStack_dc._4_4_ = 0.4;
       CStack_a8.y = (g_CDemonSet_PTR_005be368->ray_target).x -
                     (g_CDemonSet_PTR_005be368->ray_origin).x;
@@ -199,9 +198,9 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_0043d1c0(CCrossbow *this_ptr)
             (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"bow-!.wav",aCStack_3c);
   pCVar1 = (this_ptr->base).base.vtable._ub;
   (this_ptr->base).fire_cooldown_timer = 0.666;
-  pCVar4 = (*pCVar1->getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar4 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+  pCVar4 = (CHero *)(*pCVar1->getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar4 == g_HeroActors[g_LocalHeroIndex]) {
+    engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   return 1;
 }

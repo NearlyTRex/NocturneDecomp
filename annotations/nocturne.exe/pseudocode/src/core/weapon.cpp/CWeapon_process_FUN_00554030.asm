@@ -25,7 +25,7 @@
 ;   undefined4 g_CDemonLight_01c74640.volumetric_intensity
 ;   CGame g_CGame_01c775ec
 ;   undefined4 g_CGame_01c775ec.flashlight_active
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSet_01e57284
 ;
 ; Called Functions:
@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_005540d1
     CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 ; 005540d2
         ;   XREF to: 0040a000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(CDemonActor * this_ptr)
-    MOV EAX,[0x01cae0e8]                ; 005540d7 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 005540d7 | g_LocalHeroIndex
     MOV EDX,dword ptr [EBX + 0x2fc]     ; 005540dc
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 005540e2
     ADD ESP,0x4                         ; 005540e9

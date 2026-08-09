@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float delta_time)
 
@@ -15,11 +14,11 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   EHeroTask EVar1;
   CWeapon *pCVar2;
   float fVar3;
-  CEnemy *pCVar4;
+  CHero *pCVar4;
   SMotion *pSVar5;
   CPathMap *this_ptr_00;
   CVector3f *pCVar6;
-  CEnemy *this_ptr_01;
+  CHero *this_ptr_01;
   int iVar7;
   float fStack_80;
   float local_7c;
@@ -38,23 +37,26 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float del
   
   local_20 = 0.25;
   local_1c = 0.7853982;
-  this_ptr_01 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  this_ptr_01 = g_HeroActors[g_LocalHeroIndex];
   if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
   memset(&(this_ptr->base).player_input,0,0x2c);
-  iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  local_3c.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar7 + 0x20);
-  local_3c.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar7 + 0x24);
-  local_3c.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar7 + 0x28);
+  pCVar4 = g_HeroActors[g_LocalHeroIndex];
+  local_3c.x = (this_ptr->base).base.base.location.position.x -
+               (pCVar4->base).base.location.position.x;
+  local_3c.y = (this_ptr->base).base.base.location.position.y -
+               (pCVar4->base).base.location.position.y;
+  local_3c.z = (this_ptr->base).base.base.location.position.z -
+               (pCVar4->base).base.location.position.z;
   EVar1 = (this_ptr->base).ai_task;
   iVar7 = 0;
   if ((((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) &&
       (pCVar2 = (this_ptr->base).inventory.selected_weapon, pCVar2 != (CWeapon *)0x0)) &&
      (0 < pCVar2->ammo_count)) {
     local_30 = 9999.9;
-    pCVar4 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_30);
-    if ((pCVar4 != (CEnemy *)0x0) && ((int)local_30 < 0x41f00000)) {
+    pCVar4 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_30);
+    if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
       iVar7 = 1;
       this_ptr_01 = pCVar4;
     }

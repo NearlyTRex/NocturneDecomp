@@ -873,7 +873,7 @@ section .text
         ;   Label: caseD_0
     JZ 0x004db096                       ; 004db05f
         ;   XREF to: 004db096 (CONDITIONAL_JUMP)  ; LAB_004db096
-    MOV EAX,[0x01cae0e8]                ; 004db061 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004db061 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004db066
     FLD float ptr [EBX + 0xbdf4]        ; 004db06d
     MOV dword ptr [EBX + 0xbca4],EAX    ; 004db073

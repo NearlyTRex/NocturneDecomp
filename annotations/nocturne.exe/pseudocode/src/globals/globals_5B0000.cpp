@@ -16,6 +16,9 @@ CEditorTools* g_CEditorTools_PTR_005b6d50 = (CEditorTools*)&g_CEditorTools_01bcd
 // CFireEffect*
 CFireEffect* g_CFireEffect_PTR_005b80f0 = (CFireEffect*)&g_CFireEffect_01c08d04;
 
+// CForceFeedback*
+CForceFeedback* g_CForceFeedback_PTR_005b9284 = (CForceFeedback*)&g_CForceFeedback_01c70f74;
+
 // CGame*
 CGame* g_CGame_PTR_005b9354 = (CGame*)&g_CGame_01c775ec;
 
@@ -2001,8 +2004,8 @@ int INT_005b7638 = 0x5;
 int g_CurrentAlphaValue = 0xFF;
 int g_RenderingQuality = 0x1;
 int INT_005b7644 = 0x1;
-int INT_005b8018 = 0x2;
-int INT_005b801c = 0x2;
+int g_INT_005b8018 = 0x2;
+int g_INT_005b801c = 0x2;
 int g_INT_005b91c0 = 0x7;
 int g_INT_005b91c4 = 0x1;
 int g_INT_005b91dc = 0x1;

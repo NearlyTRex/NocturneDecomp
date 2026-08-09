@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 20,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 3,
-        "line": 48,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01cc9094'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 50,
+        "line": 49,
         "message": "use of undeclared identifier '_DAT_01cc9098'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 52,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_01cc909c'; did you mean 'DAT_005c509c'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 54,
+        "line": 53,
         "message": "use of undeclared identifier '_DAT_01cc90a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01cc90a4'; did you mean 'DAT_005c50a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 58,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_01cc90a8'; did you mean 'DAT_005c50a8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 60,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01cc90ac'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 62,
+        "line": 61,
         "message": "use of undeclared identifier '_DAT_01cc90b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 64,
+        "line": 63,
         "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 65,
+        "message": "use of undeclared identifier '_DAT_01cc90b8'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 370,
+    "complexity_score": 369,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
+    "pseudocode_lines": 144,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -136,7 +136,7 @@
       "stack_ref",
       "warning_overlapping_globals"
     ],
-    "total_lines": 474
+    "total_lines": 473
   },
   "cross_references": [],
   "function": {
@@ -381,8 +381,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -609,7 +609,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 114,
+      "line": 113,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 114,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -625,7 +625,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 119,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
@@ -633,7 +633,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 120,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
+      "line": 125,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 127,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -657,7 +657,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
+      "line": 131,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
@@ -665,7 +665,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 134,
+      "line": 133,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
@@ -673,7 +673,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 117,
+      "line": 116,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[0].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 122,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Pointer value `&pSVar4->vertices[2].vertex_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 129,
+      "line": 128,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -705,7 +705,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
@@ -713,7 +713,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
@@ -721,7 +721,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
@@ -729,7 +729,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 117,
+      "line": 116,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -737,7 +737,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 123,
+      "line": 122,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
@@ -745,7 +745,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 129,
+      "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",

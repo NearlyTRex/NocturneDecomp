@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,50 +58,26 @@
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 39,
+        "line": 38,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 54,
+        "line": 53,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "type_error",
         "column": 84,
-        "line": 64,
+        "line": 63,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "format_error",
         "column": 44,
-        "line": 81,
+        "line": 80,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 95,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 95,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -110,23 +86,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 250,
+    "complexity_score": 207,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 7,
+    "pseudocode_lines": 147,
+    "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
-      "raw_address_pointer_store",
       "sub84_truncation",
       "unknown_field",
-      "unresolved_funcptr",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 528
+    "total_lines": 530
   },
   "cross_references": [
     {
@@ -302,8 +275,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -496,16 +469,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 56,
       "match": "._0_4_",
       "severity": "mild",
       "text": "this_ptr->animation_time = this_ptr->animation_time + 1.5997858892824123e-314._0_4_;",
@@ -513,31 +478,15 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 74,
+      "line": 73,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_sprintf(local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
       "type": "sub84_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 88,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 90,
-      "match": "*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40ffffff is the IEEE 754 bit pattern of 8f. Rewrite in a .keep as a plain float compare against 8f.",
-      "line": 56,
+      "line": 55,
       "match": "0x40ffffff < (int)this_ptr->animation_time)",
       "severity": "moderate",
       "text": "if (0x40ffffff < (int)this_ptr->animation_time) {",

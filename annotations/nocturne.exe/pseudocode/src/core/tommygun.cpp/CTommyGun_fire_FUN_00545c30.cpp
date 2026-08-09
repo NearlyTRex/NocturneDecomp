@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
 
 {
@@ -16,7 +14,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
   CDemonSet *this_ptr_00;
   CVector3f *pCVar3;
   int iVar4;
-  CDemonActor *pCVar5;
+  CHero *pCVar5;
   CKeyFramedModel *model_ptr;
   CCharacter *this_ptr_01;
   EDeathState EVar6;
@@ -24,6 +22,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
   CFlameCan *this_ptr_03;
   CDemonActor *pCVar7;
   double dVar8;
+  CDemonActor *pCVar9;
   float in_stack_fffffebc;
   byte auStack_130 [28];
   float fStack_114;
@@ -67,9 +66,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     (*((this_ptr->base).base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"45-dry-!.wav @2.0");
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handles[0]);
-    pCVar5 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-    if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+    pCVar5 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+    if (pCVar5 == g_HeroActors[g_LocalHeroIndex]) {
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
     }
     this_ptr->sfx_handles[0] = 0;
     return 0;
@@ -92,9 +91,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-  pCVar5 = (this_ptr->base).carried_by_actor;
-  if (pCVar5 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar5);
+  pCVar9 = (this_ptr->base).carried_by_actor;
+  if (pCVar9 != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar9);
   }
   fStack_1c = 0.0;
   do {
@@ -171,7 +170,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     }
     else {
       iVar4 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
-      pCVar5 = (CDemonActor *)((ulonglong)dVar8 >> 0x20);
+      pCVar9 = (CDemonActor *)((ulonglong)dVar8 >> 0x20);
       if ((iVar4 != 0) &&
          (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
                              ((this_ptr->base).carried_by_actor,g_CHeroActorType_01cae0ec.name_hash)
@@ -186,7 +185,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffec0);
       auStack_130._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar5,(int)in_stack_fffffebc);
+                     ((CCharacter *)this_ptr,pCVar9,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
       fStack_c4 = (g_CDemonSet_PTR_005be368->ray_target).x -
                   (g_CDemonSet_PTR_005be368->ray_origin).x;

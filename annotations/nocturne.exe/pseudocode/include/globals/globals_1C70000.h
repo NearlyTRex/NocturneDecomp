@@ -6,6 +6,7 @@
 #include "types/classes/CBloodSplat.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonLight.h"
+#include "types/classes/CForceFeedback.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
@@ -37,6 +38,9 @@ extern CDemonActorType g_CGlassActorType_01c78c40;
 // CDemonLight
 extern CDemonLight g_CDemonLight_01c74640;
 
+// CForceFeedback
+extern CForceFeedback g_CForceFeedback_01c70f74;
+
 // CGame
 extern CGame g_CGame_01c775ec;
 
@@ -47,11 +51,17 @@ extern CGore g_CGore_01c78c7c;
 extern CPickList g_CPickList_01c78424;
 
 // CVector3f
-extern CVector3f CVector3f_01c70708;
 extern CVector3f CVector3f_01c71364;
 extern CVector3f CVector3f_01c71370;
 extern CVector3f CVector3f_01c7137c;
 extern CVector3f CVector3f_01c71388;
 extern CVector3f CVector3f_01c78bc0;
 extern CVector3f CVector3f_01c78bcc;
+
+// float
+extern float g_FastSqrtMagicSeedOne;
+
+// int
+extern int g_FastSqrtMagic;
+extern int g_FastInvSqrtMagic;
 

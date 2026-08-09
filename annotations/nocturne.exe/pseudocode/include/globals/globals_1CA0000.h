@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CHero.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CA0000
@@ -25,4 +26,10 @@ extern CDemonActorType g_CImpActorType_01cae33c;
 
 // CGround
 extern CGround g_CGround_01cadf80;
+
+// CHero*[4]
+extern CHero* g_HeroActors[4];
+
+// int
+extern int g_LocalHeroIndex;
 

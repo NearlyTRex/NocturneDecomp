@@ -27,7 +27,7 @@
 ;   double DOUBLE_0058622a = 0.25
 ;   double DOUBLE_00586232 = 3.14159265350000
 ;   double DOUBLE_0058623a = -3.14159265350000
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -56,7 +56,7 @@ section .text
     MOV ECX,0x3f490fdb                  ; 004babb7
     PUSH 0x2c                           ; 004babbc
     XOR ESI,ESI                         ; 004babbe
-    MOV EDI,dword ptr [0x01cae0e8]      ; 004babc0 | DAT_01cae0e8
+    MOV EDI,dword ptr [0x01cae0e8]      ; 004babc0 | g_LocalHeroIndex
     PUSH ESI                            ; 004babc6
     LEA EAX,[EBX + 0xbc94]              ; 004babc7
     MOV dword ptr [ESP + 0xa4],EDX      ; 004babcd
@@ -70,7 +70,7 @@ section .text
     TEST EAX,EAX                        ; 004babf1
     JZ 0x004bafe7                       ; 004babf3
         ;   XREF to: 004bafe7 (CONDITIONAL_JUMP)  ; LAB_004bafe7
-    MOV EAX,[0x01cae0e8]                ; 004babf9 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004babf9 | g_LocalHeroIndex
     LEA EDX,[EBX + 0x20]                ; 004babfe
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bac01
     FLD float ptr [EDX]                 ; 004bac08
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [ESP + 0x88],ESI      ; 004bac4d
     MOV dword ptr [ESP + 0x90],0x41a00000 ; 004bac54
         ;   Label: LAB_004bac54
-    MOV EAX,[0x01cae0e8]                ; 004bac5f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004bac5f | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bac64
     PUSH EAX                            ; 004bac6b
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004bac6c
@@ -419,7 +419,7 @@ section .text
     JZ 0x004bb064                       ; 004bb058
         ;   XREF to: 004bb064 (CONDITIONAL_JUMP)  ; LAB_004bb064
     MOV dword ptr [EBX + 0xbcac],0x1    ; 004bb05a
-    MOV EAX,[0x01cae0e8]                ; 004bb064 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004bb064 | g_LocalHeroIndex
         ;   Label: LAB_004bb064
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bb069
     PUSH EAX                            ; 004bb070
@@ -459,14 +459,14 @@ section .text
     TEST ESI,ESI                        ; 004bb0da
     JNZ 0x004bb24f                      ; 004bb0dc
         ;   XREF to: 004bb24f (CONDITIONAL_JUMP)  ; LAB_004bb24f
-    MOV EAX,[0x01cae0e8]                ; 004bb0e2 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004bb0e2 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bb0e7
     PUSH EAX                            ; 004bb0ee
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004bb0ef
     CALL dword ptr [EDX + 0xbc]         ; 004bb0f5
     ADD ESP,0x4                         ; 004bb0fb
     MOV dword ptr [ESP + 0x98],EAX      ; 004bb0fe
-    MOV EAX,[0x01cae0e8]                ; 004bb105 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004bb105 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004bb10a
     PUSH EAX                            ; 004bb111
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004bb112

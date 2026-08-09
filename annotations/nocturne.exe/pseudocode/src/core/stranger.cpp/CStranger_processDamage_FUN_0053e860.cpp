@@ -85,7 +85,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
   local_28.x = local_28.x * local_18;
   local_28.y = local_28.y * local_18;
   local_28.z = local_28.z * local_18;
-  xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284,local_28.x);
+  engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
+            (g_CForceFeedback_PTR_005b9284,local_28.x);
   this_ptr_00 = &(this_ptr->base).base.model;
   if ((this_ptr->base).base.hit_points <= 0.0) {
     pCVar1 = (this_ptr->base).base.base.vtable._uc;

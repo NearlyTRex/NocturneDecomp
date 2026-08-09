@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5367
-Functions with no callers: 2647
-Parameter mismatches detected: 196
+Functions with parameter estimates: 5356
+Functions with no callers: 2636
+Parameter mismatches detected: 195
 Signature accuracy rate: 92.8%
 
 Mismatches by confidence:
   High confidence:   12 (multiple call sites agree)
   Medium confidence: 51 (some agreement)
-  Low confidence:    133 (limited data)
+  Low confidence:    132 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -208,7 +208,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  133 functions with low-confidence mismatches
+  132 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_3d.c_renderSortedPolygonList_FUN_00405 declared:1 est:0 (-1)
@@ -228,7 +228,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 45
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 151
+Functions where declaration has FEWER params than estimated: 150
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -239,7 +239,7 @@ Distribution of differences (estimated - declared):
   -2 params: 7 functions
   -1 params: 32 functions
   +1 params: 46 functions
-  +2 params: 27 functions
+  +2 params: 26 functions
   +3 params: 28 functions
   +4 params: 17 functions
   +5 params: 14 functions

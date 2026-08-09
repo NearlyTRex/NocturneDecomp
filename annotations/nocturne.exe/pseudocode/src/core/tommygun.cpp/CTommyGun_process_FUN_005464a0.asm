@@ -24,8 +24,8 @@
 ;   TerminatedCString s_m_gun_t_wav_005968e7
 ;   float FLOAT_005968f5 = 6
 ;   float FLOAT_005968f9 = 0.1666667
-;   void* PTR_DAT_005b9284 = 01c70f74
-;   undefined4 DAT_01cae0e8
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -33,6 +33,7 @@
 ;   crt_math.c_floor_FUN_005648c0
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_00525b70
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0
@@ -42,7 +43,6 @@
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005262d0
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130
-;   sound_sndmain.cpp_unlockSound_FUN_00528890
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -116,7 +116,7 @@ section .text
         ;   Label: LAB_00546568
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00546569
     CALL dword ptr [EAX + 0x8c]         ; 0054656f
-    MOV EBX,dword ptr [0x01cae0e8]      ; 00546575 | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 00546575 | g_LocalHeroIndex
     MOV ECX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 0054657b
     ADD ESP,0x4                         ; 00546582
     CMP EAX,ECX                         ; 00546585
@@ -129,11 +129,11 @@ section .text
     POP ESI                             ; 0054658d
     POP EBX                             ; 0054658e
     RET                                 ; 0054658f
-    MOV EBX,dword ptr [0x005b9284]      ; 00546590 | PTR_DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 00546590 | g_CForceFeedback_PTR_005b9284
         ;   Label: LAB_00546590
     PUSH EBX                            ; 00546596
-    CALL xxx_unk.c_FUN_004940d0         ; 00546597
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 00546597
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0054659c
     MOV ESP,EBP                         ; 0054659f
     POP EBP                             ; 005465a1
@@ -240,16 +240,16 @@ section .text
         ;   Label: LAB_005466e9
     MOV EAX,dword ptr [EBX + 0x14c]     ; 005466ea
     CALL dword ptr [EAX + 0x8c]         ; 005466f0
-    MOV EDX,dword ptr [0x01cae0e8]      ; 005466f6 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 005466f6 | g_LocalHeroIndex
     MOV ECX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 005466fc
     ADD ESP,0x4                         ; 00546703
     CMP EAX,ECX                         ; 00546706
     JNZ 0x00546589                      ; 00546708
         ;   XREF to: 00546589 (CONDITIONAL_JUMP)  ; LAB_00546589
-    MOV EBX,dword ptr [0x005b9284]      ; 0054670e | PTR_DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 0054670e | g_CForceFeedback_PTR_005b9284
     PUSH EBX                            ; 00546714
-    CALL xxx_unk.c_FUN_004940d0         ; 00546715
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 00546715
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0054671a
     MOV ESP,EBP                         ; 0054671d
     POP EBP                             ; 0054671f

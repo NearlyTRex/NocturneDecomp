@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x32]:4  local_32
 ;
 ; XREF[3]:
-;   core_main.c_FUN_004c85f0 at 004c86e7
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c86e7
 ;   engine_dosio.cpp_findFile_FUN_004567a0 at 004567e1
 ;   engine_pod.cpp_CPod_dismount_FUN_004f8a10 at 004f8a46
 ;

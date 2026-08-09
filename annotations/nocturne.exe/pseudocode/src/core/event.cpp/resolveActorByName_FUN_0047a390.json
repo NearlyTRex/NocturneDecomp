@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,49 +58,43 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 22,
+        "line": 20,
         "message": "use of undeclared identifier 'DAT_01c08b60'"
       },
       {
         "category": "incompatible_types",
-        "column": 17,
-        "line": 37,
+        "column": 26,
+        "line": 35,
         "message": "no matching function for call to 'core_event_cpp_CEventList_getActorByVarName_FUN_00480b30'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 45,
+        "line": 44,
         "message": "use of undeclared identifier 'DAT_01c08b60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier 'DAT_01c08b60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 54,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "pointer_type",
         "column": 12,
-        "line": 57,
+        "line": 56,
         "message": "cannot initialize return object of type 'CDemonActor *' with an rvalue of type 'int'"
       },
       {
         "category": "pointer_type",
         "column": 12,
-        "line": 65,
+        "line": 64,
         "message": "cannot initialize return object of type 'CDemonActor *' with an rvalue of type 'int'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 68,
+        "line": 67,
         "message": "use of undeclared identifier 'DAT_01c08b60'"
       }
     ],
@@ -110,18 +104,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 149,
+    "complexity_score": 119,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_pointer_store",
       "undefined_data",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 216
   },
@@ -288,8 +280,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -477,16 +469,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_01c08b60",
       "severity": "mild",
       "text": "pcVar4 = &DAT_01c08b60;",
@@ -494,7 +478,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_01c08b60",
       "severity": "mild",
       "text": "_sprintf(&DAT_01c08b60,\"Actor \\\"%s\\\" does not exist.\",name);",
@@ -502,23 +486,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_01c08b60",
       "severity": "mild",
       "text": "_sprintf(&DAT_01c08b60,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 47,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 60,
       "match": "DAT_01c08b60",
       "severity": "mild",
       "text": "_sprintf(&DAT_01c08b60,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",name,pcVar3,class_name);",
@@ -526,7 +502,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053f60d
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 at 0053f60d
 ;
 ; *****************************************************************************
 

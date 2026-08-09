@@ -28,7 +28,7 @@
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   CGame g_CGame_01c775ec
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -160,7 +160,7 @@ section .text
         ;   Label: LAB_004285fe
     JNZ 0x00428642                      ; 00428605
         ;   XREF to: 00428642 (CONDITIONAL_JUMP)  ; LAB_00428642
-    MOV EAX,[0x01cae0e8]                ; 00428607 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00428607 | g_LocalHeroIndex
     CMP EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0042860c
     JZ 0x00428642                       ; 00428613
         ;   XREF to: 00428642 (CONDITIONAL_JUMP)  ; LAB_00428642

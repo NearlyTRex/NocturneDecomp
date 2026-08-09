@@ -23,7 +23,7 @@ int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00484b60(CFireball *this_ptr
                 (g_CFireEffect_PTR_005b80f0,(CVector3f *)this_ptr,(CVector3f *)0x0,0x10000,0x10000,0
                  ,0xffff);
     } while (iVar1 < 8);
-    core_set_cpp_CDemonSet_FUN_0050e660(g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
+    core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
     sound_sndmain_cpp_setNextSfxStaticPosition_FUN_00525f50
               ((double)(this_ptr->base).position.x,(double)(this_ptr->base).position.y,

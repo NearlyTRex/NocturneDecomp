@@ -9,5 +9,5 @@
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_004388d0(CVector3f *v)
 
 {
-  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + (int)CVector3f_01c70708.y);
+  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqrtMagic);
 }

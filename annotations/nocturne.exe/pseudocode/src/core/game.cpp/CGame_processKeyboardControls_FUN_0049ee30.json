@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -122,21 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 708,
+    "complexity_score": 661,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 273,
-    "suspect_count": 41,
+    "pseudocode_lines": 266,
+    "suspect_count": 38,
     "suspect_types": [
       "raw_address_constant",
       "raw_address_pointer_store",
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 1034
+    "total_lines": 1027
   },
   "cross_references": [
     {
@@ -289,8 +287,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -469,14 +467,6 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_01c02598",
@@ -585,7 +575,7 @@
       "line": 125,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "bVar6 = (&DAT_01c02598)[this_ptr->key_run];",
+      "text": "bVar7 = (&DAT_01c02598)[this_ptr->key_run];",
       "type": "undefined_data"
     },
     {
@@ -593,7 +583,7 @@
       "line": 128,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "bVar6 = (&DAT_01c02598)[this_ptr->key_run] == '\\0';",
+      "text": "bVar7 = (&DAT_01c02598)[this_ptr->key_run] == '\\0';",
       "type": "undefined_data"
     },
     {
@@ -601,7 +591,7 @@
       "line": 132,
       "match": "DAT_01c781c0",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -609,7 +599,7 @@
       "line": 132,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -617,7 +607,7 @@
       "line": 133,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "(player_control->action_state).walk = (uint)(byte)(&DAT_01c02598)[iVar3];",
+      "text": "(player_control->action_state).walk = (uint)(byte)(&DAT_01c02598)[iVar4];",
       "type": "undefined_data"
     },
     {
@@ -625,7 +615,7 @@
       "line": 136,
       "match": "DAT_01c781c0",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -633,7 +623,7 @@
       "line": 136,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -641,23 +631,15 @@
       "line": 137,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "(player_control->action_state).backup = (uint)(byte)(&DAT_01c02598)[iVar3];",
+      "text": "(player_control->action_state).backup = (uint)(byte)(&DAT_01c02598)[iVar4];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 140,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
       "line": 143,
       "match": "DAT_01c781c0",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -665,7 +647,7 @@
       "line": 143,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -673,7 +655,7 @@
       "line": 144,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "(player_control->action_state).fire = (uint)(byte)(&DAT_01c02598)[iVar3];",
+      "text": "(player_control->action_state).fire = (uint)(byte)(&DAT_01c02598)[iVar4];",
       "type": "undefined_data"
     },
     {
@@ -697,7 +679,7 @@
       "line": 155,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "*piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_use_item];",
+      "text": "*piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_use_item];",
       "type": "undefined_data"
     },
     {
@@ -721,7 +703,7 @@
       "line": 162,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "*piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_light];",
+      "text": "*piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_light];",
       "type": "undefined_data"
     },
     {
@@ -745,7 +727,7 @@
       "line": 169,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "*piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_draw];",
+      "text": "*piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_draw];",
       "type": "undefined_data"
     },
     {
@@ -753,7 +735,7 @@
       "line": 173,
       "match": "DAT_01c781c0",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] == (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] == (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -761,7 +743,7 @@
       "line": 173,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "if ((&DAT_01c781c0)[iVar3] == (&DAT_01c02598)[iVar3]) {",
+      "text": "if ((&DAT_01c781c0)[iVar4] == (&DAT_01c02598)[iVar4]) {",
       "type": "undefined_data"
     },
     {
@@ -769,20 +751,12 @@
       "line": 177,
       "match": "DAT_01c02598",
       "severity": "mild",
-      "text": "*piVar5 = (uint)(byte)(&DAT_01c02598)[iVar3];",
+      "text": "*piVar6 = (uint)(byte)(&DAT_01c02598)[iVar4];",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 258,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3), iVar3 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 268,
+      "line": 260,
       "match": "*(CDemonActor **)(0x01E56DA0",
       "severity": "moderate",
       "text": "(g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);",
@@ -790,7 +764,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 268,
+      "line": 260,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "(g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);",

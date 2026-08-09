@@ -8,6 +8,7 @@
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CForceFeedback.h"
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
@@ -69,10 +70,10 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004933c0(CBitFont *this_p
 void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_00493760(CBitFont *this_ptr,int screen_width,int screen_height);
 uint __cdecl engine_font_cpp_packPixelScaled_FUN_00494020(int red,int green,int blue);
 uint __cdecl engine_font_cpp_packPixelNative_FUN_00494080(int red,int green,int blue);
-void xxx_unk_c_FUN_004940d0(void);
-void __cdecl engine_3d_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2);
-SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_00494220(int y_min,SHardwareEdge *exclude_edge);
-void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_00494260(SRenderVertex **vertices,int vertex_count);
+void __cdecl engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback *this_ptr,...);
+void __cdecl engine_fpoly_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2);
+SHardwareEdge * __cdecl engine_fpoly_c_findHardwareEdgeByYMin_FUN_00494220(int y_min,SHardwareEdge *exclude_edge);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_00494260(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004945d0(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_00494600(void);
 CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_00494620(CFrankenstienMachine *this_ptr);
@@ -160,5 +161,5 @@ void __cdecl core_game_cpp_dampControlAxis_FUN_0049edc0(float *axis_value,float 
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame *this_ptr,SPlayerInput *player_control);
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_0049f710(CGame *this_ptr,SPlayerInput *player_control);
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_FUN_0049f930(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr);
 

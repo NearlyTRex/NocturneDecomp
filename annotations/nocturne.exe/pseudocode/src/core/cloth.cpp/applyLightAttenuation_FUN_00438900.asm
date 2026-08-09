@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
-;   undefined4 CVector3f_01c70708.z
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     FADDP                               ; 00438917
     FSTP float ptr [ESP]                ; 00438919
     MOV EDX,dword ptr [ESP]             ; 0043891c
-    MOV ECX,dword ptr [0x01c70710]      ; 0043891f | CVector3f_01c70708.z
+    MOV ECX,dword ptr [0x01c70710]      ; 0043891f | g_FastInvSqrtMagic
     SAR EDX,0x1                         ; 00438925
     SUB ECX,EDX                         ; 00438927
     MOV dword ptr [ESP + 0x4],ECX       ; 00438929

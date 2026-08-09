@@ -15,9 +15,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   CKeys *this_ptr_00;
   char *pcVar2;
   int iVar3;
-  int iVar4;
-  uint uVar5;
-  CDemonLight *pCVar6;
+  EDeathState EVar4;
+  int iVar5;
+  uint uVar6;
+  CDemonLight *pCVar7;
   uint in_stack_fffffc00;
   CPickList local_290;
   char local_120 [256];
@@ -81,15 +82,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   }
   pcVar2 = "Flashlight";
   core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(&g_CDemonLight_01c74640);
-  pCVar6 = &g_CDemonLight_01c74640;
+  pCVar7 = &g_CDemonLight_01c74640;
   do {
     cVar1 = *pcVar2;
-    (pCVar6->base).camera_name[0] = cVar1;
+    (pCVar7->base).camera_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    (pCVar6->base).camera_name[1] = cVar1;
-    pCVar6 = (CDemonLight *)((pCVar6->base).camera_name + 2);
+    (pCVar7->base).camera_name[1] = cVar1;
+    pCVar7 = (CDemonLight *)((pCVar7->base).camera_name + 2);
   } while (cVar1 != '\0');
   g_CDemonLight_01c74640.light_enabled_flag = 0;
   g_CDemonLight_01c74640.base.fixed_point_scale = 64.0;
@@ -130,14 +131,14 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGame_PTR_005bdee0);
     core_level_cpp_CLevelLoader_cleanup_FUN_004c5fa0(g_CLevelLoader_PTR_005baca0);
-    *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
+    g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
     this_ptr->act_completion_state = 0;
     while( true ) {
       if ((this_ptr->is_paused != 0) || (iVar3 = 1, _DAT_01c78420 != 0)) {
         iVar3 = 0;
       }
       engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(g_CKeys_PTR_005bac64,iVar3);
-      core_game_cpp_CGame_FUN_0049f930(this_ptr);
+      core_game_cpp_CGame_processHotkeys_FUN_0049f930(this_ptr);
       core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(this_ptr);
       core_game_cpp_CGame_processFudge_FUN_0049b260(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);
@@ -155,25 +156,25 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       core_game_cpp_CGame_processFrame_FUN_0049cc10(this_ptr);
       iVar3 = _DAT_01c78420;
       if (_DAT_01c78420 == 0) {
-        iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+        iVar5 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                           (g_CKeys_PTR_005bac64,DIK_ESCAPE);
-        if (iVar4 != 0) {
+        if (iVar5 != 0) {
           shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
           this_ptr->wait_for_keypress = 0;
-          iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-          iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x104))(iVar4);
-          if (1 < iVar4) goto LAB_0049dec1;
+          EVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                            (&g_HeroActors[g_LocalHeroIndex]->base);
+          if (1 < (int)EVar4) goto LAB_0049dec1;
           if (g_CNetGame_PTR_005bdee0->connection_type == CONNECTION_CLIENT) {
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("Leave network game");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01c78424.base,pcVar2);
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01c78424.base,pcVar2);
-            uVar5 = 1;
+            uVar6 = 1;
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("You are connect to a network game.\nDo you want to leave the game?");
             shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
-                      (&g_CPickList_01c78424,pcVar2,iVar3,uVar5);
+                      (&g_CPickList_01c78424,pcVar2,iVar3,uVar6);
             _DAT_01c78420 = 1;
           }
           else if (g_CNetGame_PTR_005bdee0->connection_type == CONNECTION_HOST) {
@@ -182,16 +183,17 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01c78424.base,pcVar2);
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return to game");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01c78424.base,pcVar2);
-            uVar5 = 1;
+            uVar6 = 1;
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("You are hosting a network game.\nDo you want to abort the game?");
             shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
-                      (&g_CPickList_01c78424,pcVar2,iVar3,uVar5);
+                      (&g_CPickList_01c78424,pcVar2,iVar3,uVar6);
             _DAT_01c78420 = 1;
           }
           else {
             core_sound_cpp_CSound_shutdown_FUN_0052df90(g_CSound_PTR_005bed68);
-            xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+            engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284)
+            ;
             shape_edittool_cpp_CPickList_ctor_FUN_00474c90(&local_290);
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(&local_290.base,pcVar2);
@@ -237,8 +239,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             }
             if (iVar3 == 4) {
               pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-              iVar4 = shape_edittool_cpp_FUN_00470230(g_CEditorTools_PTR_005b6d50,pcVar2);
-              if (iVar4 != 0) {
+              iVar5 = shape_edittool_cpp_FUN_00470230(g_CEditorTools_PTR_005b6d50,pcVar2);
+              if (iVar5 != 0) {
                 shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_290,0);
                 goto LAB_0049dec1;
               }
@@ -250,9 +252,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             engine_2d_c_clearInputAndWait_FUN_00403f50();
             if (this_ptr->cutscene_skippable == 0) {
               core_sound_cpp_CSound_init_FUN_0052ddf0(g_CSound_PTR_005bed68);
-              xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+              engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
+                        (g_CForceFeedback_PTR_005b9284);
             }
-            *(EAimMode *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) = this_ptr->aim_mode;
+            g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
             shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_290,0);
           }
         }
@@ -286,15 +289,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
                   (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->selected_camera_index);
       }
-      iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-      if (iVar3 == 2) {
+      EVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                        (&g_HeroActors[g_LocalHeroIndex]->base);
+      if (EVar4 == DEATH_STATE_DEAD) {
         iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                           (g_CKeys_PTR_005bac64,DIK_RETURN);
         if (iVar3 != 0) goto LAB_0049dec1;
         if (local_14 < 0.0) {
-          uVar5 = core_game_cpp_CGame_fadeIn_FUN_004a3a50(this_ptr);
-          if (uVar5 != 0) goto LAB_0049dec1;
+          uVar6 = core_game_cpp_CGame_fadeIn_FUN_004a3a50(this_ptr);
+          if (uVar6 != 0) goto LAB_0049dec1;
         }
         else {
           local_14 = local_14 + this_ptr->delta_time_float;
@@ -316,15 +319,15 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       if (local_18 != 0) {
         local_18 = this_ptr->need_chapter_reload;
         core_sound_cpp_CSound_init_FUN_0052ddf0(g_CSound_PTR_005bed68);
-        xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+        engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       }
     }
     local_1c = 0;
   }
 LAB_0049dec1:
-  iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-  if ((iVar3 == 2) && (this_ptr->need_chapter_reload == 0)) {
+  EVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                    (&g_HeroActors[g_LocalHeroIndex]->base);
+  if ((EVar4 == DEATH_STATE_DEAD) && (this_ptr->need_chapter_reload == 0)) {
     shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffc00);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
     shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);
@@ -348,7 +351,7 @@ LAB_0049dec1:
   this_ptr->damageable_enemy_count = iVar3;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0052df90(g_CSound_PTR_005bed68);
-  xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+  engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
   (*g_CKeys_PTR_005bac64->vtable->clearKeyPresses)(g_CKeys_PTR_005bac64);
   core_set_cpp_CDemonSet_FUN_0050ad20(g_CDemonSet_PTR_005be368);

@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005b7fd4 = 00481a4b
-;   undefined4 DAT_005b8014
+;   void* PTR_LAB_005b8014 = 00481ac4
 ;
 ; *****************************************************************************
 
@@ -47,7 +47,7 @@ section .text
     FISTP qword ptr [ECX + -0x8]        ; 00481a58
     POP EBX                             ; 00481a5b
         ;   Label: LAB_00481a5b
-    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a5c | DAT_005b8014
+    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a5c | PTR_LAB_005b8014
     MOV BL,byte ptr [EDX + -0x7]        ; 00481a64
         ;   Label: caseD_7
     MOV byte ptr [ECX + -0x7],BL        ; 00481a67
@@ -60,7 +60,7 @@ section .text
     JA 0x00481a4b                       ; 00481a78
         ;   XREF to: 00481a4b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 00481a7a
-    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a7b | DAT_005b8014
+    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a7b | PTR_LAB_005b8014
     MOV BL,byte ptr [EDX + -0x5]        ; 00481a84
         ;   Label: caseD_5
     MOV byte ptr [ECX + -0x5],BL        ; 00481a87
@@ -69,7 +69,7 @@ section .text
     JA 0x00481a4b                       ; 00481a90
         ;   XREF to: 00481a4b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 00481a92
-    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a93 | DAT_005b8014
+    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481a93 | PTR_LAB_005b8014
     MOV BL,byte ptr [EDX + -0x3]        ; 00481a9c
         ;   Label: caseD_3
     MOV byte ptr [ECX + -0x3],BL        ; 00481a9f
@@ -79,12 +79,12 @@ section .text
     JA 0x00481a4b                       ; 00481aaa
         ;   XREF to: 00481a4b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 00481aac
-    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481aad | DAT_005b8014
+    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481aad | PTR_LAB_005b8014
     MOV BL,byte ptr [EDX + -0x1]        ; 00481ab4
         ;   Label: caseD_1
     MOV byte ptr [ECX + -0x1],BL        ; 00481ab7
     JA 0x00481a4b                       ; 00481aba
         ;   XREF to: 00481a4b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 00481abc
-    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481abd | DAT_005b8014
+    JMP dword ptr [EAX*0x4 + 0x5b8014]  ; 00481abd | PTR_LAB_005b8014
 

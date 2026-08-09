@@ -3,50 +3,6 @@
 // Function prototypes for crt/unknown.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_unknown.c_FUN_004819f0
-// Address: 004819f0
-void FUN_004819f0(void);
-
-// Original: crt_unknown.c_FUN_004819f8
-// Address: 004819f8
-void FUN_004819f8(void);
-
-// Original: crt_unknown.c_FUN_00481a08
-// Address: 00481a08
-void FUN_00481a08(void);
-
-// Original: crt_unknown.c_FUN_00481a14
-// Address: 00481a14
-void FUN_00481a14(void);
-
-// Original: crt_unknown.c_FUN_00481a20
-// Address: 00481a20
-void FUN_00481a20(void);
-
-// Original: crt_unknown.c_FUN_00481ac4
-// Address: 00481ac4
-void FUN_00481ac4(void);
-
-// Original: crt_unknown.c_FUN_00481acc
-// Address: 00481acc
-void FUN_00481acc(void);
-
-// Original: crt_unknown.c_FUN_00481ae4
-// Address: 00481ae4
-void FUN_00481ae4(void);
-
-// Original: crt_unknown.c_FUN_00481af4
-// Address: 00481af4
-void FUN_00481af4(void);
-
-// Original: crt_unknown.c_FUN_00481b04
-// Address: 00481b04
-void FUN_00481b04(void);
-
-// Original: crt_unknown.c_FUN_00481b0c
-// Address: 00481b0c
-void FUN_00481b0c(void);
-
 // Original: crt_unknown.c_getc_helper_FUN_00563290
 // Address: 00563290
 int __cdecl getc::helper(scanf_state_t *state);

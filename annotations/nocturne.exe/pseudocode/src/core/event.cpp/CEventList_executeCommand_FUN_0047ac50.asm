@@ -781,8 +781,8 @@ section .text
     PUSH EAX                            ; 0047b17f
     MOV ECX,dword ptr [0x005b80f0]      ; 0047b180 | g_CFireEffect_PTR_005b80f0
     PUSH ECX                            ; 0047b186
-    CALL core_fire.cpp_CFireEffect_FUN_0048c0d0 ; 0047b187
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 ; 0047b187
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0047b18c
     JMP 0x0047aead                      ; 0047b18f
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead
@@ -2259,7 +2259,7 @@ section .text
     CMP dword ptr [EBP + -0x62],0x0     ; 0047bf59
     JZ 0x0047aead                       ; 0047bf5d
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
-    MOV EAX,[0x01cae0e8]                ; 0047bf63 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0047bf63 | g_LocalHeroIndex
     SHL EAX,0x2                         ; 0047bf68
     MOV EBX,dword ptr [EAX + 0x1cae0d8] ; 0047bf6b
     TEST EBX,EBX                        ; 0047bf71
@@ -4396,8 +4396,8 @@ section .text
     MOV EDI,dword ptr [0x005be368]      ; 0047d34a | g_CDemonSet_PTR_005be368
     PUSH dword ptr [EBP + 0x5e]         ; 0047d350
     PUSH EDI                            ; 0047d353 | g_CDemonSet_01e57284
-    CALL core_set.cpp_CDemonSet_FUN_0050e660 ; 0047d354
-        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e660(CDemonSet * this_ptr, float param_2, float param_3, float param_4, ...)
+    CALL core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660 ; 0047d354
+        ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 0047d359
     JMP 0x0047aead                      ; 0047d35c
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead

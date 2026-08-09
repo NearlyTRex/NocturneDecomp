@@ -130,7 +130,7 @@ LAB_005593b7:
   GlobalMemoryStatus(&local_30);
   _DAT_02de20a8 = local_30.dwTotalPhys;
   _DAT_02de20ac = local_30.dwAvailPageFile;
-  core_main_c_FUN_004c85f0(_DAT_02de2d10,(char **)0x2de2d14);
+  core_main_c_initializeGameSystems_FUN_004c85f0(_DAT_02de2d10,(char **)0x2de2d14);
   core_main_c_enterMainGameMenu_FUN_004c85e0();
   core_main_c_finalizeGameSystems_FUN_004c90e0();
   return 0;

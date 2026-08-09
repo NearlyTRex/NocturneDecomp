@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaron_FUN_00410cc0 at 00410da6
-;   core_fire.cpp_CFireEffect_FUN_0048c0d0 at 0048c139
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0 at 0048c139
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c625f4

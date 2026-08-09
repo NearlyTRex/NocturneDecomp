@@ -7,7 +7,7 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_factoryFunc_FUN_0041f2e0 at 0041f2f3
+;   core_boxactor.cpp_factoryFuncLightActor_FUN_0041f2e0 at 0041f2f3
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CLightActorVTable

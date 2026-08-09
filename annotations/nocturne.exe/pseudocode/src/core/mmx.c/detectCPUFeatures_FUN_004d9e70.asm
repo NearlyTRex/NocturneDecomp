@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c8701
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8701
 ;
 ; Referenced Globals:
 ;   int INT_005b7638 = 0x5

@@ -2090,9 +2090,8 @@ joined_r0x00500ad6:
                                                   if ((_DAT_01e56418 == 0) &&
                                                      (pCVar12 = 
                                                   core_inv_cpp_CInventory_findItemByName_FUN_004c0710
-                                                            ((CInventory *)
-                                                             (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8
-                                                                      ) + 0x1f5a0),local_2014),
+                                                            (&g_HeroActors[g_LocalHeroIndex]->
+                                                              inventory,local_2014),
                                                   pCVar12 != (CDemonActor *)0x0)) {
                                                     core_inv_cpp_CInventory_removeItem_FUN_004c07b0
                                                               ((CInventory *)
@@ -2129,9 +2128,8 @@ joined_r0x00500ad6:
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
                                                   core_hero_cpp_CHero_removeMatchingKeys_FUN_004b5cb0
-                                                            (*(CHero **)
-                                                              (_DAT_01cae0e8 * 4 + 0x1cae0d8),
-                                                             local_90);
+                                                            (g_HeroActors[g_LocalHeroIndex],local_90
+                                                            );
                                                   }
                                                   }
                                                   else {

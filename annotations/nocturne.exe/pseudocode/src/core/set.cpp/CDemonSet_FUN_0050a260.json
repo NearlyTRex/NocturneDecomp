@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -57,21 +57,21 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 17,
-        "line": 51,
+        "line": 50,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 63,
+        "line": 62,
         "message": "use of undeclared identifier 'stack0x00000000'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 92,
+        "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
       },
       {
         "category": "undeclared_identifier",
@@ -84,18 +84,6 @@
         "column": 42,
         "line": 94,
         "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 110,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -104,23 +92,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 257,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 121,
     "suspect_count": 10,
     "suspect_types": [
       "raw_address_constant",
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
       "stack_ref",
       "undefined_data",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 475
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -423,8 +411,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -665,7 +653,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 39,
-          "line": 116,
+          "line": 115,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -676,24 +664,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 24,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 43,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[2].z) {",
@@ -701,7 +689,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 55,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((float *)&stack0x00000000 != &g_CDemonCamera_01fb8508.rotation_matrix.m[2].z) {",
@@ -709,7 +697,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "DAT_005be378 = 0;",
@@ -717,7 +705,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_005be378",
       "severity": "mild",
       "text": "DAT_005be378 = 1;",
@@ -725,7 +713,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 110,
+      "line": 109,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "iVar4 * 0x80 + *(int *)(0x02DDF9F0 + 0x24) * 0x8000);",
@@ -733,7 +721,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CDemonLight_01c74640.base.position.x = local_2c.x;",
@@ -741,7 +729,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CDemonCamera_01fb8508.position.x = local_2c.x;",
@@ -749,7 +737,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 80,
+      "line": 79,
       "match": "pCVar5 = (T *)pCVar5->ARRAY",
       "severity": "moderate",
       "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
@@ -757,7 +745,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 116,
+      "line": 115,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((int)((iVar3 + (iVar3 >> 0x1f) * -0x80) - (uint)((iVar3 >> 0x1f) << 6 < 0)) >> 7) +",

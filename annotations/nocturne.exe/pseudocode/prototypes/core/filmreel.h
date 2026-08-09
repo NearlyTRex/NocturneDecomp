@@ -63,9 +63,9 @@ ECollisionType __cdecl CFilmReel::getCollisionType(CFilmReel *this_ptr,SCollisio
 // Address: 00481e90
 CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_filmreel.cpp_factoryFunc_FUN_00481ee0
+// Original: core_filmreel.cpp_factoryFuncFilmProjector_FUN_00481ee0
 // Address: 00481ee0
-CFilmProjector * __cdecl factoryFunc(void);
+CFilmProjector * __cdecl factoryFuncFilmProjector(void);
 
 // Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_00481f00
 // Address: 00481f00

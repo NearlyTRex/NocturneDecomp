@@ -1107,7 +1107,7 @@ section .text
         ;   XREF to: 0047e8ea (CONDITIONAL_JUMP)  ; LAB_0047e8ea
     JMP 0x0047e902                      ; 0047e9a7
         ;   XREF to: 0047e902 (UNCONDITIONAL_JUMP)  ; LAB_0047e902
-    MOV EAX,[0x01cae0e8]                ; 0047e9ac | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0047e9ac | g_LocalHeroIndex
         ;   Label: LAB_0047e9ac
     SHL EAX,0x2                         ; 0047e9b1
     XOR EBX,EBX                         ; 0047e9b4
@@ -1366,7 +1366,7 @@ section .text
     TEST EAX,EDX                        ; 0047ec69
     JNZ 0x0047ed48                      ; 0047ec6b
         ;   XREF to: 0047ed48 (CONDITIONAL_JUMP)  ; LAB_0047ed48
-    MOV EAX,[0x01cae0e8]                ; 0047ec71 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0047ec71 | g_LocalHeroIndex
     XOR ECX,ECX                         ; 0047ec76
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0047ec78
     MOV dword ptr [ESP + 0x9b4],ECX     ; 0047ec7f

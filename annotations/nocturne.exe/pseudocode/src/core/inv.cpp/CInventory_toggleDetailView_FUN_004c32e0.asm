@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f216
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004c1d70
@@ -23,7 +23,7 @@ section .text
     PUSH EBX                            ; 004c32e0
         ;   Label: core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c32e1
-    MOV EDX,dword ptr [0x01cae0e8]      ; 004c32e5 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 004c32e5 | g_LocalHeroIndex
     MOV EAX,dword ptr [EBX + 0x4]       ; 004c32eb
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 004c32ee
     JNZ 0x004c332a                      ; 004c32f5

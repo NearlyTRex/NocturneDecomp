@@ -25,7 +25,7 @@
 ;   undefined4 g_CGame_01c775ec.letterbox_mode
 ;   undefined4 g_CGame_01c775ec.is_loading
 ;   undefined4 DAT_01cae0d4
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CScript g_CScript_01e56da0
 ;   CDemonSet g_CDemonSet_01e57284
 ;
@@ -54,7 +54,7 @@ section .text
     CMP dword ptr [0x01cae0d4],0x1      ; 004d9788 | DAT_01cae0d4
     JL 0x004d9847                       ; 004d978f
         ;   XREF to: 004d9847 (CONDITIONAL_JUMP)  ; LAB_004d9847
-    MOV EAX,[0x01cae0e8]                ; 004d9795 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d9795 | g_LocalHeroIndex
     CMP dword ptr [EAX*0x4 + 0x1cae0d8],0x0 ; 004d979a
     JZ 0x004d9862                       ; 004d97a2
         ;   XREF to: 004d9862 (CONDITIONAL_JUMP)  ; LAB_004d9862
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0047aa00(CEventList * this_ptr)
     MOV EAX,[0x005b9354]                ; 004d97df | g_CGame_PTR_005b9354
     MOV dword ptr [EAX + 0x228],0x0     ; 004d97e4 | g_CGame_01c775ec.letterbox_mode
-    MOV EAX,[0x01cae0e8]                ; 004d97ee | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d97ee | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d97f3
     ADD ESP,0x4                         ; 004d97fa
     MOV EDI,dword ptr [EAX + 0x2c]      ; 004d97fd

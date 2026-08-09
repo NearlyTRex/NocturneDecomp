@@ -13,7 +13,6 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
 {
   CLocation *pCVar1;
   UOrientationVector *pUVar2;
-  CCharacter *this_ptr_00;
   float fVar3;
   char *pcVar4;
   CDemonSet *pCVar5;
@@ -239,11 +238,12 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
         local_2c->y = _DAT_014b8a04;
         local_2c->z = _DAT_014b8a08;
       }
-      this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      if ((this_ptr == this_ptr_00) && (local_c8 < 1.0)) {
+      if (((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) && (local_c8 < 1.0)) {
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
-                  (&this_ptr_00->base,&CStack_c4,&g_CDemonSet_PTR_005be368->collision_normal);
-        xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284,CStack_c4.x,CStack_c4.z);
+                  ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&CStack_c4,
+                   &g_CDemonSet_PTR_005be368->collision_normal);
+        engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
+                  (g_CForceFeedback_PTR_005b9284,CStack_c4.x,CStack_c4.z);
       }
       if ((this_ptr->base).location.position.y < this_ptr->closest_distance_threshold) {
         (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;

@@ -30,7 +30,7 @@
 ;   int INT_005bab64 = 0x60
 ;   CGame g_CGame_01c775ec
 ;   undefined4 g_CGame_01c775ec.letterbox_mode
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 DAT_01cc30a0
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     CMP dword ptr [EAX + 0x228],0x0     ; 004c2160 | g_CGame_01c775ec.letterbox_mode
     JNZ 0x004c23c9                      ; 004c2167
         ;   XREF to: 004c23c9 (CONDITIONAL_JUMP)  ; LAB_004c23c9
-    MOV EDX,dword ptr [0x01cae0e8]      ; 004c216d | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 004c216d | g_LocalHeroIndex
     MOV EAX,dword ptr [EBX + 0x4]       ; 004c2173
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 004c2176
     JNZ 0x004c23c9                      ; 004c217d

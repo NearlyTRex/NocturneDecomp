@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 g_CDemonSet_01e57284.enemy_count
 ;
 ; Called Functions:
@@ -66,7 +66,7 @@ section .text
     TEST EAX,EAX                        ; 0047a1ac
     JNZ 0x0047a1c6                      ; 0047a1ae
         ;   XREF to: 0047a1c6 (CONDITIONAL_JUMP)  ; LAB_0047a1c6
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0047a1b0 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0047a1b0 | g_LocalHeroIndex
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 0047a1b6
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0047a1bc
     JNZ 0x0047a1c6                      ; 0047a1c3

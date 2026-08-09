@@ -148,7 +148,7 @@ CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005350b0(
 CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005350c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00535450(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_process_FUN_005357d0(CStranger *this_ptr,float delta_time);
-void __cdecl core_stranger_cpp_CStranger_FUN_00535900(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStranger *this_ptr,float delta_time);
 float __cdecl core_stranger_cpp_CStranger_FUN_005383e0(CStranger *this_ptr);
 float * __cdecl core_stranger_cpp_CStranger_FUN_00538440(CStranger *this_ptr,float *param_2);
@@ -177,7 +177,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStranger *this_ptr,float delta_time,int is_weapon_active);
 void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210(CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(CStranger *this_ptr,CVector3f *out_direction);
-void __cdecl core_stranger_cpp_CStranger_FUN_0053f310(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_FUN_0053fc60(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_0053ff50(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_0053ffe0(CStranger *this_ptr,float delta_time);

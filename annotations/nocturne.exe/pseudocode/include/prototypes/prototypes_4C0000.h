@@ -182,7 +182,7 @@ void __cdecl core_main_c_staticInit_FUN_004c83d0(void);
 void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format);
 void __cdecl core_main_c_FUN_004c8510(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void);
-void __cdecl core_main_c_FUN_004c85f0(int argc,char **argv);
+void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv);
 void __cdecl core_main_c_drawCenteredText_FUN_004c8dc0(char *text,int x,int y,int color_mode);
 void __cdecl core_main_c_waitWithSkip_FUN_004c8e10(int duration_ms);
 void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void);
@@ -218,7 +218,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0(
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_004cb900(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_004cb980(CMansionPuzzleCircle *this_ptr,int reflector_index);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_004cba40(CMansionPuzzleCircle *this_ptr,int panel_index);
-CMirrorHack * __cdecl core_manpuz_cpp_factoryFunc_FUN_004cbad0(void);
+CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_004cbad0(void);
 CDemonActorType * __cdecl core_manpuz_cpp_CMirrorHack_getActorType_FUN_004cbaf0(CMirrorHack *this_ptr);
 CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_004cbb00(CMirrorHack *this_ptr);
 void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_004cbb50(CMirrorHack *this_ptr);

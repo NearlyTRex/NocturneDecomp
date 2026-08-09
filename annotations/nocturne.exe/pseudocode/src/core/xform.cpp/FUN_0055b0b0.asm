@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_xform_cpp_FUN_0055b0b0(void)
+; float __cdecl core_xform_cpp_FUN_0055b0b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

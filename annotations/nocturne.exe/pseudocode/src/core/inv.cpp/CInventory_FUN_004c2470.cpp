@@ -66,7 +66,7 @@ void __cdecl core_inv_cpp_CInventory_FUN_004c2470(CInventory *this_ptr)
   if (g_CGame_PTR_005b9354->letterbox_mode != 0) {
     return;
   }
-  if (this_ptr->owner != *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
+  if ((CHero *)this_ptr->owner != g_HeroActors[g_LocalHeroIndex]) {
     return;
   }
   if (g_WindowHeight != _DAT_01cc30a0) {
@@ -331,8 +331,7 @@ LAB_004c27a0:
       dVar10 = round((double)(local_680 * 65535.0f));
       local_6c = (int)ROUND(dVar10);
     }
-    fStack_684 = *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434) *
-                 (float)0.01;
+    fStack_684 = (g_HeroActors[g_LocalHeroIndex]->base).hit_points * (float)0.01;
     if (fStack_684 < 0.0) {
       fStack_684 = 0.0;
     }

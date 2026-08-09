@@ -469,7 +469,7 @@ section .text
     FADDP                               ; 00454b95
     FSTP float ptr [EBP + 0x66]         ; 00454b97
     MOV EAX,dword ptr [EBP + 0x66]      ; 00454b9a
-    MOV EDX,dword ptr [0x01c7070c]      ; 00454b9d | CVector3f_01c70708.y
+    MOV EDX,dword ptr [0x01c7070c]      ; 00454b9d | g_FastSqrtMagic
     SAR EAX,0x1                         ; 00454ba3
     ADD EAX,EDX                         ; 00454ba5
     MOV dword ptr [EBP + 0x72],EAX      ; 00454ba7

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     PUSH 0x1                            ; 004a03ff
     MOV dword ptr [EBX + 0x30c],0x1f4   ; 004a0401
     PUSH EBX                            ; 004a040b
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004a040c | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004a040c | g_LocalHeroIndex
     MOV EBX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004a0412
     ADD EBX,0x1f5a0                     ; 004a0419
     PUSH EBX                            ; 004a041f

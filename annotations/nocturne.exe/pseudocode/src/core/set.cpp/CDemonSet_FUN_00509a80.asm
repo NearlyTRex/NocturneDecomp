@@ -559,7 +559,7 @@ section .text
     CMP EDI,EDX                         ; 00509f66
     JL 0x00509f3a                       ; 00509f68
         ;   XREF to: 00509f3a (CONDITIONAL_JUMP)  ; LAB_00509f3a
-    MOV EAX,[0x01cae0e8]                ; 00509f6a | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00509f6a | g_LocalHeroIndex
         ;   Label: LAB_00509f6a
     SHL EAX,0x2                         ; 00509f6f
     MOV ECX,dword ptr [EAX + 0x1cae0d8] ; 00509f72

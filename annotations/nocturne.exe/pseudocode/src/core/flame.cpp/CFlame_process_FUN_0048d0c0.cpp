@@ -7,18 +7,17 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float delta_time)
 
 {
   CLocation *pCVar1;
-  CCharacter *this_ptr_00;
+  CHero *this_ptr_00;
   CEnemy *this_ptr_01;
   float fVar2;
   int iVar3;
-  uint uVar4;
-  ECollisionType EVar5;
+  ECollisionType EVar4;
+  uint uVar5;
   double dVar6;
   char local_f8 [100];
   SCollisionInfo local_94;
@@ -84,21 +83,23 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
         iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
         sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005262d0((double)local_14,iVar3);
-        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
-        this_ptr->sfx_handle = uVar4;
+        uVar5 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,local_f8);
+        this_ptr->sfx_handle = uVar5;
         sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
       }
     }
     if (this_ptr->burn_hero != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&local_94);
-      iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x34))(iVar3,&local_94);
-      if (iVar3 == 2) {
-        this_ptr_00 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+      EVar4 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getCollisionType)
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94);
+      if (EVar4 == COLLISION_TYPE_CYLINDER) {
+        this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
         pCVar1 = &(this_ptr->base).location;
-        fStack_40 = (this_ptr_00->base).location.position.x - (pCVar1->position).x;
-        fStack_3c = (this_ptr_00->base).location.position.y - (this_ptr->base).location.position.y;
-        fStack_38 = (this_ptr_00->base).location.position.z - (this_ptr->base).location.position.z;
+        fStack_40 = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
+        fStack_3c = (this_ptr_00->base).base.location.position.y -
+                    (this_ptr->base).location.position.y;
+        fStack_38 = (this_ptr_00->base).base.location.position.z -
+                    (this_ptr->base).location.position.z;
         if (((float)-0.5 < fStack_3c) && (fStack_3c < local_94.cylinder_radius)) {
           dVar6 = round
                             ((double)(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
@@ -108,7 +109,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
           local_14 = fStack_18;
           if ((ABS(fStack_44) < local_94.cylinder_radius + fStack_1c) &&
              (ABS(fStack_3c) < local_94.cylinder_radius + fStack_1c)) {
-            core_charactr_cpp_CCharacter_FUN_00427730(this_ptr_00,&pCVar1->position,0,0,2.0,1);
+            core_charactr_cpp_CCharacter_FUN_00427730
+                      (&this_ptr_00->base,&pCVar1->position,0,0,2.0,1);
           }
         }
       }
@@ -123,9 +125,9 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
       if (0 < g_CDemonSet_PTR_005be368->enemy_count) {
         this_ptr_01 = g_CDemonSet_PTR_005be368->enemies[this_ptr->enemy_burn_index];
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_6c);
-        EVar5 = (*((this_ptr_01->base).base.vtable._ub)->getCollisionType)
+        EVar4 = (*((this_ptr_01->base).base.vtable._ub)->getCollisionType)
                           ((CDemonActor *)this_ptr_01,&SStack_6c);
-        if (EVar5 == COLLISION_TYPE_CYLINDER) {
+        if (EVar4 == COLLISION_TYPE_CYLINDER) {
           pCVar1 = &(this_ptr->base).location;
           fStack_38 = (this_ptr_01->base).base.location.position.x - (pCVar1->position).x;
           fVar2 = (this_ptr_01->base).base.location.position.y -

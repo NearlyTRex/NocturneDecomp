@@ -1149,7 +1149,7 @@ section .text
         ;   Label: caseD_10
     JMP 0x00458d60                      ; 00459690
         ;   XREF to: 00458d60 (UNCONDITIONAL_JUMP)  ; caseD_19
-    MOV EAX,[0x01cae0e8]                ; 00459695 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00459695 | g_LocalHeroIndex
         ;   Label: caseD_c
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0045969a
     PUSH EAX                            ; 004596a1
@@ -1178,7 +1178,7 @@ section .text
     ADD ESP,0xc                         ; 004596e7
     JMP 0x00458d60                      ; 004596ea
         ;   XREF to: 00458d60 (UNCONDITIONAL_JUMP)  ; caseD_19
-    MOV EAX,[0x01cae0e8]                ; 004596ef | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004596ef | g_LocalHeroIndex
         ;   Label: caseD_12
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004596f4
     PUSH EAX                            ; 004596fb

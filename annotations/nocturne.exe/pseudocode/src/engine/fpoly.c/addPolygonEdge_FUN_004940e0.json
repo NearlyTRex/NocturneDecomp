@@ -1,0 +1,253 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_01c70f78'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 34,
+        "message": "use of undeclared identifier 'DAT_01c70f7c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_01c712fc'; did you mean 'DAT_005c1dfc'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 38,
+        "message": "use of undeclared identifier '_DAT_01c712fc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_01c71300'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 41,
+        "message": "use of undeclared identifier '_DAT_01c71300'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 70,
+        "message": "use of undeclared identifier '_DAT_01c70f78'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 70,
+        "message": "use of undeclared identifier '_DAT_01c70f78'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 120,
+    "complexity_score": 95,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 65,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 185
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004940e0",
+    "address_range": [
+      [
+        "004940e0",
+        "00494214"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fpoly.c_addPolygonEdge_FUN_004940e0",
+    "signature": "void __cdecl engine_fpoly_c_addPolygonEdge_FUN_004940e0(SRenderVertex *vertex1,SRenderVertex *vertex2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c70f78",
+      "name": "DAT_01c70f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c70f7c",
+      "name": "DAT_01c70f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c712fc",
+      "name": "DAT_01c712fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c71300",
+      "name": "DAT_01c71300",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.429906542056075,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 51,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 5,
+      "COPY": 97,
+      "INT_ADD": 44,
+      "INT_AND": 175,
+      "INT_CARRY": 4,
+      "INT_DIV": 1,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 11,
+      "INT_LESS": 10,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 35,
+      "INT_OR": 55,
+      "INT_REM": 1,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 5,
+      "INT_SEXT": 18,
+      "INT_SLESS": 45,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 30,
+      "INT_XOR": 11,
+      "INT_ZEXT": 3,
+      "LOAD": 31,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 15,
+      "SUBPIECE": 14
+    },
+    "pcode_op_count": 795
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01c70f7c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01c70f7c + iVar3) = iVar5;",
+      "type": "undefined_data"
+    }
+  ]
+}

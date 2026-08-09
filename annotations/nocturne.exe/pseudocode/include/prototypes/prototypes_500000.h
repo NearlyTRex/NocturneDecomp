@@ -124,7 +124,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(CD
 void __cdecl core_set_cpp_CDemonSet_FUN_0050e550(CDemonSet *this_ptr,int param_2,int param_3);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580(CDemonSet *this_ptr,int group_id,int enabled);
 void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light);
-void __cdecl core_set_cpp_CDemonSet_FUN_0050e660(CDemonSet *this_ptr,float param_2,float param_3,float param_4,float param_5);
+void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(CDemonSet *this_ptr,int *light_state_buffer);

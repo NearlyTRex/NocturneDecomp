@@ -256,7 +256,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
       }
       else {
         fVar15 = this_ptr->firing_blend;
-        (this_ptr->base).victim = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+        (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         if (fVar15 <= (float)0.5) break;
       }
       core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(this_ptr);

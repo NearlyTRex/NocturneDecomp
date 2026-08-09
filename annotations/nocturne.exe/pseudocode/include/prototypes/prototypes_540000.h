@@ -104,7 +104,7 @@ void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CBassPlayer *this_
 void core_tbplayer_cpp_FUN_005431f0(void);
 void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(CBassPlayer *this_ptr,SDamageInfo *damage_info);
-CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_00543370(void);
+CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00543370(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CDrummer_getActorType_FUN_00543390(CDrummer *this_ptr);
 CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_005433a0(CDrummer *this_ptr);
 void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(CDrummer *this_ptr);
@@ -118,7 +118,7 @@ CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_00543
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00543840(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00543860(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_teleport_cpp_CTeleportDest_FUN_00543890(CDemonActor *this_ptr,SCollisionInfo *collision_info);
-CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005438a0(void);
+CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_005438a0(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_005438c0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_005438d0(CTeleport *this_ptr);
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_00543910(CTeleport *this_ptr,float delta_time);

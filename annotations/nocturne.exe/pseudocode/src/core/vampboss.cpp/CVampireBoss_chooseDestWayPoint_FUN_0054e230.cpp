@@ -7,12 +7,11 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(CVampireBoss *this_ptr)
 
 {
-  int iVar1;
+  CHero *pCVar1;
   CDemonActor *pCVar2;
   float fVar3;
   float fVar4;
@@ -34,14 +33,14 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(CVam
       g_CurrentLineNumber = 1059;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL");
     }
-    iVar1 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    pCVar1 = g_HeroActors[g_LocalHeroIndex];
     pCVar2 = pCVar10->way_point_0;
-    fVar3 = (pCVar2->location).position.x - *(float *)(iVar1 + 0x20);
+    fVar3 = (pCVar2->location).position.x - (pCVar1->base).base.location.position.x;
     fVar4 = (pCVar2->location).position.x - (this_ptr->base).base.base.location.position.x;
-    fVar8 = (pCVar2->location).position.y - *(float *)(iVar1 + 0x24);
+    fVar8 = (pCVar2->location).position.y - (pCVar1->base).base.location.position.y;
     fVar5 = (pCVar2->location).position.y - (this_ptr->base).base.base.location.position.y;
     fVar6 = (pCVar2->location).position.z - (this_ptr->base).base.base.location.position.z;
-    fVar7 = (pCVar2->location).position.z - *(float *)(iVar1 + 0x28);
+    fVar7 = (pCVar2->location).position.z - (pCVar1->base).base.location.position.z;
     fVar3 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
             fVar7 * fVar7 + fVar8 * fVar8 + fVar3 * fVar3;
     if (local_20 < fVar3) {

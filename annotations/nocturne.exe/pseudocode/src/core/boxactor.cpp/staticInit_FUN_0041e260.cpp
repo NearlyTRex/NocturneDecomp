@@ -18,7 +18,7 @@ void __cdecl core_boxactor_cpp_staticInit_FUN_0041e260(void)
   _atexit(&g_WatcomStaticDestructorNode_005ad08c);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CLightActorActorType_00764a9c,"CLightActor",
-             core_boxactor_cpp_factoryFunc_FUN_0041f2e0,&INT_005ad0a0,2,
+             core_boxactor_cpp_factoryFuncLightActor_FUN_0041f2e0,&INT_005ad0a0,2,
              &g_CBoxActorActorType_00764800);
   return;
 }

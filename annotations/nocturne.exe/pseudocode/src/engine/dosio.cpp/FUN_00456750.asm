@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c86df
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c86df
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_dosio_c_0057d2b7

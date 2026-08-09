@@ -39,9 +39,9 @@ void __cdecl CStranger::setup(CStranger *this_ptr);
 // Address: 005357d0
 void __cdecl CStranger::process(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_CStranger_FUN_00535900
+// Original: core_stranger.cpp_CStranger_processFrame_FUN_00535900
 // Address: 00535900
-void __cdecl CStranger(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger::processFrame(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0
 // Address: 00537cd0
@@ -155,9 +155,9 @@ void __stack2_esi CStranger::getCarryObjToBodyXForm(CStranger *this_ptr,int hand
 // Address: 0053f260
 CVector3f * __cdecl CStranger::getThrowDirection(CStranger *this_ptr,CVector3f *out_direction);
 
-// Original: core_stranger.cpp_CStranger_FUN_0053f310
+// Original: core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310
 // Address: 0053f310
-void __cdecl CStranger(CStranger *this_ptr,float delta_time);
+void __cdecl CStranger::updateWeaponLayerActions(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_FUN_0053fc60
 // Address: 0053fc60

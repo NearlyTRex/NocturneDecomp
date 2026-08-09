@@ -67,9 +67,9 @@ void __cdecl CBaron::processDamage(CBaron *this_ptr,SDamageInfo *damage_info);
 // Address: 00411310
 void CBaron::handlePureVirtualCall(void);
 
-// Original: core_baron.cpp_factoryFunc_FUN_00411320
+// Original: core_baron.cpp_factoryFuncBaronWeapon_FUN_00411320
 // Address: 00411320
-CBaronWeapon * __cdecl factoryFunc(void);
+CBaronWeapon * __cdecl factoryFuncBaronWeapon(void);
 
 // Original: core_baron.cpp_CBaronWeapon_getActorType_FUN_00411340
 // Address: 00411340

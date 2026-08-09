@@ -427,9 +427,9 @@ SLaserInfo * __cdecl SLaserInfo::ctor(SLaserInfo *this_ptr);
 // Address: 0048b6f0
 void __cdecl CFireEffect(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
 
-// Original: core_fire.cpp_CFireEffect_FUN_0048c0d0
+// Original: core_fire.cpp_CFireEffect_createExplosion_FUN_0048c0d0
 // Address: 0048c0d0
-void __cdecl CFireEffect(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
+void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
 
 // Original: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
 // Address: 0048c160
@@ -502,6 +502,10 @@ int FUN_0048c920(void);
 // Original: core_fire.cpp_CBulletTrail_reset_FUN_0048c930
 // Address: 0048c930
 void __cdecl CBulletTrail::reset(CBulletTrail *this_ptr);
+
+// Original: core_fire.cpp_FUN_0048c940
+// Address: 0048c940
+void FUN_0048c940(undefined4 *param_1);
 
 // Original: core_fire.cpp_CRaindrop_ctor_FUN_0048c960
 // Address: 0048c960

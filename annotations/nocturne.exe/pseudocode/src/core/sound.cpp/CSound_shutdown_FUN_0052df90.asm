@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_CGame_FUN_0049f930 at 0049f9b4
+;   core_game.cpp_CGame_processHotkeys_FUN_0049f930 at 0049f9b4
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dfb3
 ;
 ; Referenced Globals:

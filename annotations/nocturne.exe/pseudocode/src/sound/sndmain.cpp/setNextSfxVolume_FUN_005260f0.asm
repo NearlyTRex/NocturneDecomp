@@ -15,7 +15,7 @@
 ;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e625
 ;   core_sound.cpp_FUN_0052d790 at 0052da8f
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d33b
-;   core_stranger.cpp_CStranger_FUN_00535900 at 00537c8c
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00537c8c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc1b74

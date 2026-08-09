@@ -670,16 +670,16 @@ section .text
     MOV EAX,dword ptr [EDI + 0x14c]     ; 004c7947
     PUSH EDI                            ; 004c794d
     CALL dword ptr [EAX + 0x8c]         ; 004c794e
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004c7954 | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004c7954 | g_LocalHeroIndex
     MOV ESI,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004c795a
     ADD ESP,0x4                         ; 004c7961
     CMP EAX,ESI                         ; 004c7964
     JNZ 0x004c7977                      ; 004c7966
         ;   XREF to: 004c7977 (CONDITIONAL_JUMP)  ; LAB_004c7977
-    MOV EDI,dword ptr [0x005b9284]      ; 004c7968 | PTR_DAT_005b9284
+    MOV EDI,dword ptr [0x005b9284]      ; 004c7968 | g_CForceFeedback_PTR_005b9284
     PUSH EDI                            ; 004c796e
-    CALL xxx_unk.c_FUN_004940d0         ; 004c796f
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 004c796f
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 004c7974
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c7977
         ;   Label: LAB_004c7977

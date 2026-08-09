@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -56,34 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 62,
-        "message": "use of undeclared identifier 'PTR_DAT_005b9284'"
-      },
-      {
         "category": "format_error",
         "column": 65,
-        "line": 73,
+        "line": 71,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 81,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 82,
-        "message": "use of undeclared identifier 'PTR_DAT_005b9284'"
       }
     ],
     "success": false,
@@ -92,20 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 146,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 5,
+    "pseudocode_lines": 75,
+    "suspect_count": 2,
     "suspect_types": [
       "bitcast_double_pair",
-      "raw_address_pointer_store",
-      "sub84_truncation",
-      "warning_overlapping_globals"
+      "sub84_truncation"
     ],
-    "total_lines": 292
+    "total_lines": 291
   },
   "cross_references": [],
   "function": {
@@ -146,6 +120,11 @@
       "addr": "00563c90",
       "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "004940d0",
+      "is_variadic": true,
+      "name": "engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0"
     },
     {
       "addr": "00525b70",
@@ -196,11 +175,6 @@
       "addr": "00528890",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_unlockSound_FUN_00528890"
-    },
-    {
-      "addr": "004940d0",
-      "is_variadic": false,
-      "name": "xxx_unk.c_FUN_004940d0"
     }
   ],
   "globals": [
@@ -230,14 +204,14 @@
     },
     {
       "addr": "005b9284",
-      "name": "PTR_DAT_005b9284",
-      "type": "void*",
+      "name": "g_CForceFeedback_PTR_005b9284",
+      "type": "CForceFeedback*",
       "value": "01c70f74"
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     }
   ],
@@ -410,44 +384,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 40,
+      "line": 38,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_20 = __BITCAST_DOUBLE(CONCAT44((int)ROUND(dVar7),(uint)local_20));",
       "type": "bitcast_double_pair"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 54,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 66,
+      "line": 64,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_sprintf((char *)&local_1b4.taken,\"m-gun1.wav @ 2.3 * %f\",SUB84(__BITCAST_UINT64((double)fVar2),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 74,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (pCVar5 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
     }
   ],
   "vtable_info": {

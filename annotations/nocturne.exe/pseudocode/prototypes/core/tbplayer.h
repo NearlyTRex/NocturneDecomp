@@ -35,9 +35,9 @@ void __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int 
 // Address: 00543330
 void __cdecl CBassPlayer::processDamage(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_tbplayer.cpp_factoryFunc_FUN_00543370
+// Original: core_tbplayer.cpp_factoryFuncDrummer_FUN_00543370
 // Address: 00543370
-CDrummer * __cdecl factoryFunc(void);
+CDrummer * __cdecl factoryFuncDrummer(void);
 
 // Original: core_tbplayer.cpp_CDrummer_getActorType_FUN_00543390
 // Address: 00543390

@@ -6,17 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame *this_ptr,SPlayerInput *player_control)
 
 {
   float *pfVar1;
   float fVar2;
-  int iVar3;
-  uint uVar4;
-  int *piVar5;
-  byte bVar6;
+  CHero *this_ptr_00;
+  EDeathState EVar3;
+  int iVar4;
+  uint uVar5;
+  int *piVar6;
+  byte bVar7;
   
   if (this_ptr->screen_clear_condition != 0) {
     (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIM_LBUTTON);
@@ -129,140 +129,132 @@ LAB_0049ef39:
     }
   }
   if (this_ptr->always_run == 0) {
-    bVar6 = (&DAT_01c02598)[this_ptr->key_run];
+    bVar7 = (&DAT_01c02598)[this_ptr->key_run];
   }
   else {
-    bVar6 = (&DAT_01c02598)[this_ptr->key_run] == '\0';
+    bVar7 = (&DAT_01c02598)[this_ptr->key_run] == '\0';
   }
-  (player_control->action_state).run = (uint)bVar6;
-  iVar3 = this_ptr->key_walk;
-  if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {
-    (player_control->action_state).walk = (uint)(byte)(&DAT_01c02598)[iVar3];
+  (player_control->action_state).run = (uint)bVar7;
+  iVar4 = this_ptr->key_walk;
+  if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {
+    (player_control->action_state).walk = (uint)(byte)(&DAT_01c02598)[iVar4];
   }
-  iVar3 = this_ptr->key_backup;
-  if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {
-    (player_control->action_state).backup = (uint)(byte)(&DAT_01c02598)[iVar3];
+  iVar4 = this_ptr->key_backup;
+  if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {
+    (player_control->action_state).backup = (uint)(byte)(&DAT_01c02598)[iVar4];
   }
-  iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
-  if (iVar3 == 0) {
-    iVar3 = this_ptr->key_fire;
-    if ((&DAT_01c781c0)[iVar3] != (&DAT_01c02598)[iVar3]) {
-      (player_control->action_state).fire = (uint)(byte)(&DAT_01c02598)[iVar3];
+  EVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                    (&g_HeroActors[g_LocalHeroIndex]->base);
+  if (EVar3 == DEATH_STATE_ALIVE) {
+    iVar4 = this_ptr->key_fire;
+    if ((&DAT_01c781c0)[iVar4] != (&DAT_01c02598)[iVar4]) {
+      (player_control->action_state).fire = (uint)(byte)(&DAT_01c02598)[iVar4];
     }
   }
   else {
     (player_control->action_state).fire = 0;
   }
-  piVar5 = &(player_control->action_state).use_item;
+  piVar6 = &(player_control->action_state).use_item;
   if ((&DAT_01c781c0)[this_ptr->key_use_item] == (&DAT_01c02598)[this_ptr->key_use_item]) {
-    *piVar5 = 0;
+    *piVar6 = 0;
   }
   else {
-    *piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_use_item];
+    *piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_use_item];
   }
-  piVar5 = &(player_control->action_state).light;
+  piVar6 = &(player_control->action_state).light;
   if ((&DAT_01c781c0)[this_ptr->key_light] == (&DAT_01c02598)[this_ptr->key_light]) {
-    *piVar5 = 0;
+    *piVar6 = 0;
   }
   else {
-    *piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_light];
+    *piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_light];
   }
-  piVar5 = &(player_control->action_state).draw;
+  piVar6 = &(player_control->action_state).draw;
   if ((&DAT_01c781c0)[this_ptr->key_draw] == (&DAT_01c02598)[this_ptr->key_draw]) {
-    *piVar5 = 0;
+    *piVar6 = 0;
   }
   else {
-    *piVar5 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_draw];
+    *piVar6 = (uint)(byte)(&DAT_01c02598)[this_ptr->key_draw];
   }
-  iVar3 = this_ptr->key_jump;
-  piVar5 = &(player_control->action_state).jump;
-  if ((&DAT_01c781c0)[iVar3] == (&DAT_01c02598)[iVar3]) {
-    *piVar5 = 0;
+  iVar4 = this_ptr->key_jump;
+  piVar6 = &(player_control->action_state).jump;
+  if ((&DAT_01c781c0)[iVar4] == (&DAT_01c02598)[iVar4]) {
+    *piVar6 = 0;
   }
   else {
-    *piVar5 = (uint)(byte)(&DAT_01c02598)[iVar3];
+    *piVar6 = (uint)(byte)(&DAT_01c02598)[iVar4];
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_next_weapon);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               5,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_prev_weapon);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               5,-1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,-1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_next_item);
-  if (iVar3 != 0) {
-    core_inv_cpp_CInventory_selectItem_FUN_004c0950
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),1);
+  if (iVar4 != 0) {
+    core_inv_cpp_CInventory_selectItem_FUN_004c0950(&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_prev_item);
-  if (iVar3 != 0) {
-    core_inv_cpp_CInventory_selectItem_FUN_004c0950
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),-1);
+  if (iVar4 != 0) {
+    core_inv_cpp_CInventory_selectItem_FUN_004c0950(&g_HeroActors[g_LocalHeroIndex]->inventory,-1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_next_ammo);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_item_desc);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_toggleDetailView_FUN_004c32e0
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0));
+              (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_weapon_1);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               0,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,0,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_weapon_2);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               1,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,1,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_weapon_3);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               2,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,2,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_weapon_4);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               4,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,4,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_weapon_5);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
-              ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0),(CDemonActor *)0x0,
-               3,1);
+              (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,3,1);
   }
-  iVar3 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
+  iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                     (g_CKeys_PTR_005bac64,this_ptr->key_infrared);
-  if (iVar3 != 0) {
-    uVar4 = (uint)(this_ptr->goggles_active == 0);
-    this_ptr->goggles_active = uVar4;
-    if (((uVar4 == 0) || (iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8), iVar3 == 0)) ||
-       (iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3), iVar3 == 0)) {
+  if (iVar4 != 0) {
+    uVar5 = (uint)(this_ptr->goggles_active == 0);
+    this_ptr->goggles_active = uVar5;
+    if (((uVar5 == 0) || (this_ptr_00 = g_HeroActors[g_LocalHeroIndex], this_ptr_00 == (CHero *)0x0)
+        ) || (EVar3 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
+                                (&this_ptr_00->base), EVar3 == DEATH_STATE_ALIVE)) {
       if (this_ptr->goggles_active != 0) {
         return;
       }
@@ -270,11 +262,11 @@ LAB_0049ef39:
     else {
       this_ptr->goggles_active = 0;
     }
-    iVar3 = g_CDemonSet_PTR_005be368->selected_camera_index;
+    iVar4 = g_CDemonSet_PTR_005be368->selected_camera_index;
     core_setdir_cpp_CDemonSet_FUN_005125a0
               (g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);
     *(uint *)(0x01E56DA0 + 0x10) = 0;
-    if (iVar3 == g_CDemonSet_PTR_005be368->selected_camera_index) {
+    if (iVar4 == g_CDemonSet_PTR_005be368->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
                 (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->selected_camera_index);
       return;

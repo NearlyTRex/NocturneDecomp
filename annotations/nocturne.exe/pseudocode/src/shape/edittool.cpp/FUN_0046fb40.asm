@@ -8,13 +8,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_main.c_FUN_004c85f0 at 004c8a09
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8a09
 ;   core_script.cpp_CScript_loadState_FUN_005052c0 at 005055d4
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920 at 0050e990
 ;   core_stranger.cpp_CStranger_FUN_0053c800 at 0053cafe
-;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053fbb9
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 at 00538350
 ;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0 at 0053bf1e
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 at 0053fbb9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa

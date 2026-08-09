@@ -68,7 +68,7 @@
 ;   TerminatedCString s_noCollision_005ad1f0
 ;   undefined4 s_llision_005ad1f0+4
 ;   undefined4 s_ion_005ad1f0+8
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 DAT_006e6f69
@@ -87,7 +87,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
 ;   crt_string.c__strnicmp_FUN_00564bc0
-;   xxx_unk.c_FUN_004940d0
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -617,7 +617,7 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00425751
     MOV EDX,dword ptr [0x014b8a08]      ; 00425754 | DAT_014b8a08
     MOV dword ptr [EAX + 0x8],EDX       ; 0042575a
-    MOV EAX,[0x01cae0e8]                ; 0042575d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0042575d | g_LocalHeroIndex
         ;   Label: LAB_0042575d
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00425762
     CMP EBX,EDX                         ; 00425769
@@ -640,11 +640,11 @@ section .text
         ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 00425790
     PUSH dword ptr [ESP + 0x24]         ; 00425793
-    MOV ECX,dword ptr [0x005b9284]      ; 00425797 | PTR_DAT_005b9284
+    MOV ECX,dword ptr [0x005b9284]      ; 00425797 | g_CForceFeedback_PTR_005b9284
     PUSH dword ptr [ESP + 0x20]         ; 0042579d
     PUSH ECX                            ; 004257a1
-    CALL xxx_unk.c_FUN_004940d0         ; 004257a2
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 004257a2
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0xc                         ; 004257a7
     FLD float ptr [EBX + 0x24]          ; 004257aa
         ;   Label: LAB_004257aa

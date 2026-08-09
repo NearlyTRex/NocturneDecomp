@@ -259,9 +259,9 @@ void __cdecl CDemonSet::setCameraEnabledByGroup(CDemonSet *this_ptr,int group_id
 // Address: 0050e5d0
 void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light);
 
-// Original: core_set.cpp_CDemonSet_FUN_0050e660
+// Original: core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660
 // Address: 0050e660
-void __cdecl CDemonSet(CDemonSet *this_ptr,float param_2,float param_3,float param_4,float param_5);
+void __cdecl CDemonSet::initCameraShake(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 
 // Original: core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
 // Address: 0050e6b0

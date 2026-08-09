@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     POP ESI                             ; 00543925
     POP EBX                             ; 00543926
     RET                                 ; 00543927
-    MOV EDX,dword ptr [0x01cae0e8]      ; 00543928 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 00543928 | g_LocalHeroIndex
         ;   Label: LAB_00543928
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0054392e
     ADD EDX,0x20                        ; 00543935

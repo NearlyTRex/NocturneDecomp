@@ -20,7 +20,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
     ;
     return 0;
   }
-  if (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != 0) {
+  if (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) {
     core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(this_ptr);
     (this_ptr->pending_teleport).area_id = -1;
     this_ptr_00 = 0x01C03A10;
@@ -30,7 +30,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
     core_event_cpp_CEventList_reset_FUN_0047aa00(this_ptr_00);
     g_CGame_PTR_005b9354->letterbox_mode = 0;
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
-              (this_ptr,*(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2c));
+              (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);
     iVar1 = 0;
     text = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading script");
     core_level_cpp_CLevelLoader_update_FUN_004c59e0(g_CLevelLoader_PTR_005baca0,text,iVar1);

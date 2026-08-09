@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -62,14 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 318,
+    "complexity_score": 358,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 213,
-    "suspect_count": 8,
+    "suspect_count": 11,
     "suspect_types": [
+      "fast_inv_sqrt_inline",
+      "fast_sqrt_inline",
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
@@ -115,14 +117,14 @@
     },
     {
       "addr": "01c7070c",
-      "name": "CVector3f_01c70708.y",
-      "type": "undefined4",
+      "name": "g_FastSqrtMagic",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70710",
-      "name": "CVector3f_01c70708.z",
-      "type": "undefined4",
+      "name": "g_FastInvSqrtMagic",
+      "type": "int",
       "value": null
     }
   ],
@@ -820,6 +822,30 @@
       "severity": "moderate",
       "text": "local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 99,
+      "match": "local_24 = (float)(((int)local_5c >> 1) + g_FastSqrtMagic);",
+      "severity": "moderate",
+      "text": "local_24 = (float)(((int)local_5c >> 1) + g_FastSqrtMagic);",
+      "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 177,
+      "match": "local_54 = (float)(((int)local_58 >> 1) + g_FastSqrtMagic);",
+      "severity": "moderate",
+      "text": "local_54 = (float)(((int)local_58 >> 1) + g_FastSqrtMagic);",
+      "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 180,
+      "match": "local_44 = (float)(g_FastInvSqrtMagic - ((int)local_48 >> 1));",
+      "severity": "moderate",
+      "text": "local_44 = (float)(g_FastInvSqrtMagic - ((int)local_48 >> 1));",
+      "type": "fast_inv_sqrt_inline"
     },
     {
       "description": "Uninitialized variable: local_74",

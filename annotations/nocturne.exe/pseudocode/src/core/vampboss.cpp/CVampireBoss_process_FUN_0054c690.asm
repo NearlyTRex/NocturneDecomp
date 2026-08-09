@@ -190,7 +190,7 @@ section .text
     CMP ESI,0x3                         ; 0054c771
     JZ 0x0054c912                       ; 0054c774
         ;   XREF to: 0054c912 (CONDITIONAL_JUMP)  ; LAB_0054c912
-    MOV EAX,[0x01cae0e8]                ; 0054c77a | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054c77a | g_LocalHeroIndex
     LEA EDX,[EBX + 0x20]                ; 0054c77f
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054c782
     FLD float ptr [EDX]                 ; 0054c789
@@ -239,7 +239,7 @@ section .text
     ADD ESP,0x4                         ; 0054c822
     LEA EDX,[ESP + 0xc]                 ; 0054c825
     MOV dword ptr [ESP + 0x10],EAX      ; 0054c829
-    MOV EAX,[0x01cae0e8]                ; 0054c82d | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054c82d | g_LocalHeroIndex
     MOV dword ptr [ESP + 0x40],EBX      ; 0054c832
     PUSH EDX                            ; 0054c836
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054c837
@@ -311,7 +311,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 0054c90a
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0054c90f
-    MOV EAX,[0x01cae0e8]                ; 0054c912 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054c912 | g_LocalHeroIndex
         ;   Label: LAB_0054c912
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054c917
     LEA EAX,[ESP + 0x198]               ; 0054c91e
@@ -1292,7 +1292,7 @@ section .text
         ;   XREF to: 0054d3bc (CONDITIONAL_JUMP)  ; LAB_0054d3bc
     JMP 0x0054d1bb                      ; 0054d4c3
         ;   XREF to: 0054d1bb (UNCONDITIONAL_JUMP)  ; LAB_0054d1bb
-    MOV EDX,dword ptr [0x01cae0e8]      ; 0054d4c8 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 0054d4c8 | g_LocalHeroIndex
         ;   Label: LAB_0054d4c8
     MOV EDX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 0054d4ce
     LEA EAX,[EBX + 0x20]                ; 0054d4d5
@@ -1386,7 +1386,7 @@ section .text
     TEST EAX,EAX                        ; 0054d62a
     JNZ 0x0054d7d9                      ; 0054d62c
         ;   XREF to: 0054d7d9 (CONDITIONAL_JUMP)  ; LAB_0054d7d9
-    MOV EAX,[0x01cae0e8]                ; 0054d632 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054d632 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054d637
     FLD float ptr [EAX + 0x20]          ; 0054d63e
     FSUB float ptr [ESI]                ; 0054d641

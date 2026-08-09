@@ -15,8 +15,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:
-;   engine_3d.c_rasterizePolygonCustom_FUN_00562de0 at 00563043
-;   engine_3d.c_rasterizeTriangle_FUN_005628c0 at 00562b81
 ;   engine_clipper.c_clipAndRasterize_FUN_00432cd0 at 00432dc4
 ;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00434210 at 004342cc
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00432210 at 004322f4
@@ -25,6 +23,8 @@
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00 at 00457ae1
 ;   engine_prim.c_FUN_004f9dd0 at 004f9e83
 ;   engine_prim.c_FUN_004fa2e0 at 004fa32d
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390 at 004fb3dd
+;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fadb3
 ;   ... and 2 more
 ;
 ; Referenced Globals:

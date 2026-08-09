@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr,float delta_time)
 
@@ -17,12 +16,12 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr
   EHeroTask EVar2;
   bool bVar3;
   float fVar4;
-  CEnemy *pCVar5;
+  CHero *pCVar5;
   CVector3f *pCVar6;
   SMotion *pSVar7;
   CPathMap *this_ptr_01;
   int iVar8;
-  CEnemy *pCVar9;
+  CHero *pCVar9;
   float local_8c;
   float local_88;
   CVector3f local_84;
@@ -43,18 +42,22 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr
   bVar3 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  pCVar9 = *(CEnemy **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  pCVar9 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_input,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    local_54.x = (this_ptr->base).base.base.location.position.x - *(float *)(iVar8 + 0x20);
-    local_54.y = (this_ptr->base).base.base.location.position.y - *(float *)(iVar8 + 0x24);
-    local_54.z = (this_ptr->base).base.base.location.position.z - *(float *)(iVar8 + 0x28);
+    pCVar5 = g_HeroActors[g_LocalHeroIndex];
+    local_54.x = (this_ptr->base).base.base.location.position.x -
+                 (pCVar5->base).base.location.position.x;
+    local_54.y = (this_ptr->base).base.base.location.position.y -
+                 (pCVar5->base).base.location.position.y;
+    local_54.z = (this_ptr->base).base.base.location.position.z -
+                 (pCVar5->base).base.location.position.z;
     local_2c = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
     if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_2c < 5.4396864758631248e-315._0_4_)) &&
         ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
-       && ((pCVar5 = core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(&this_ptr->base,&local_88),
-           pCVar5 != (CEnemy *)0x0 && (local_88 < (float)20)))) {
+       && ((pCVar5 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004b5d00
+                                        (&this_ptr->base,&local_88), pCVar5 != (CHero *)0x0 &&
+           (local_88 < (float)20)))) {
       bVar3 = true;
       pCVar9 = pCVar5;
     }
@@ -74,8 +77,8 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043a470(CColonel *this_ptr
     if ((float)6 <= fVar1) {
       this_ptr_01 = (CPathMap *)0x0;
       if (!bVar3) {
-        iVar8 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-        this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(iVar8 + 0x14c) + 0xbc))(iVar8);
+        this_ptr_01 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
+                                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
         this_ptr_01 = core_path_cpp_getPathMap_FUN_004f1e00(&(pCVar9->base).base.location);

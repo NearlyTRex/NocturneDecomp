@@ -1,0 +1,30 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_004cbad0(void)
+;
+;
+; Called Functions:
+;   core_manpuz.cpp_CMirrorHack_ctor_FUN_004cbb00
+;   crt_memory.c_operator_new_FUN_0056497c
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x2d0                          ; 004cbad0
+        ;   Label: core_manpuz.cpp_factoryFuncMirrorHack_FUN_004cbad0
+    CALL crt_memory.c_operator_new_FUN_0056497c ; 004cbad5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; void * crt_memory.c_operator_new_FUN_0056497c(ulong size)
+    ADD ESP,0x4                         ; 004cbada
+    TEST EAX,EAX                        ; 004cbadd
+    JNZ 0x004cbae2                      ; 004cbadf
+        ;   XREF to: 004cbae2 (CONDITIONAL_JUMP)  ; LAB_004cbae2
+    RET                                 ; 004cbae1
+    PUSH EAX                            ; 004cbae2
+        ;   Label: LAB_004cbae2
+    CALL core_manpuz.cpp_CMirrorHack_ctor_FUN_004cbb00 ; 004cbae3
+        ;   XREF to: 004cbb00 (UNCONDITIONAL_CALL)  ; CMirrorHack * core_manpuz.cpp_CMirrorHack_ctor_FUN_004cbb00(CMirrorHack * this_ptr)
+    ADD ESP,0x4                         ; 004cbae8
+    RET                                 ; 004cbaeb
+

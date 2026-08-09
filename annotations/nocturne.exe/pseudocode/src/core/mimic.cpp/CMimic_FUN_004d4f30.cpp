@@ -17,7 +17,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
   float fVar3;
   CVector3f *pCVar4;
   SMotion *pSVar5;
-  int iVar6;
+  EDeathState EVar6;
   uint uVar7;
   CBoundingBox3D *pCVar8;
   CMatrix3x4f *pCVar9;
@@ -25,7 +25,8 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
   bool bVar11;
   byte bVar12;
   CDeformableModelInstance *pCVar13;
-  float fVar14;
+  int iVar14;
+  float fVar15;
   SDamageInfo *damage_info;
   SDamageInfo local_1e4;
   CMatrix3x4f local_1a8;
@@ -65,11 +66,10 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
   
   bVar12 = 0;
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-                     ((CDeformableModelInstance *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x150),
-                      &local_10c,0);
+                     (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_10c,0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-            (*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_94,pCVar4);
-  local_94.y = *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x24);
+            ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_94,pCVar4);
+  local_94.y = (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y;
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
             ((CDemonActor *)this_ptr,&local_88,&local_94);
   local_1c = -1.0;
@@ -82,12 +82,12 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
   uVar7 = pSVar5->state_index;
   if (uVar7 < 2) {
     if (uVar7 == 0) {
-      iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-      if (((iVar6 == 0) && (g_CGame_PTR_005b9354->freeze_enemies_enabled == 0)) &&
+      EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                        (&g_HeroActors[g_LocalHeroIndex]->base);
+      if (((EVar6 == DEATH_STATE_ALIVE) && (g_CGame_PTR_005b9354->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
-              *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x24)) <= (float)15)
-         ) {
+              (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
+          (float)15)) {
         pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
                            (&local_58,&local_70);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(pCVar4->y);
@@ -99,7 +99,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
           local_4c.y = 0.7;
           pCVar9 = &local_1a8;
           pCVar10 = &local_178;
-          for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+          for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
             pCVar10->m[0].w = pCVar9->m[0].w;
             pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);
             pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
@@ -109,9 +109,9 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
           pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_b8,&local_4c,&local_178);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr,&local_f4,pCVar4);
-          iVar6 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0
-                            (g_CDemonSet_PTR_005be368,&local_f4,&local_94);
-          if (iVar6 == 0) {
+          iVar14 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0
+                             (g_CDemonSet_PTR_005be368,&local_f4,&local_94);
+          if (iVar14 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&local_18->motion_controller,2,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -122,10 +122,10 @@ void __cdecl core_mimic_cpp_CMimic_FUN_004d4f30(CMimic *this_ptr,float delta_tim
       goto LAB_004d5024;
     }
 LAB_004d4fed:
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-    if ((iVar6 != 0) || (g_CGame_PTR_005b9354->freeze_enemies_enabled != 0)) {
-      iVar6 = 0;
+    EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                      (&g_HeroActors[g_LocalHeroIndex]->base);
+    if ((EVar6 != DEATH_STATE_ALIVE) || (g_CGame_PTR_005b9354->freeze_enemies_enabled != 0)) {
+      iVar14 = 0;
       goto LAB_004d5015;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
@@ -143,7 +143,7 @@ LAB_004d4fed:
       (this_ptr->base).base.walk_step_speed = local_14 * 4.242857f;
       local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                            (&pCVar13->motion_controller,2);
-      fVar14 = (this_ptr->base).speed;
+      fVar15 = (this_ptr->base).speed;
       fVar1 = (this_ptr->base).speed;
       fVar3 = (float)1.57079632675;
       (this_ptr->base).base.walk_step_speed =
@@ -151,27 +151,27 @@ LAB_004d4fed:
       local_e8.z = 2.5f;
       fVar2 = (this_ptr->base).base.walk_step_speed;
       (this_ptr->base).base.turn_speed = delta_time * fVar3 * fVar1;
-      (this_ptr->base).base.walk_step_speed = fVar14 * delta_time * fVar2;
-      iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+      (this_ptr->base).base.walk_step_speed = fVar15 * delta_time * fVar2;
       local_e8.x = 0.0;
       local_e8.y = 0.0;
-      iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
-                        ((CCharacter *)this_ptr,(CVector3f *)(iVar6 + 0x20),
-                         (CPathMap *)(iVar6 + 0xbcc0),&local_e8,1.0,0.17453292);
-      if (iVar6 < 0) {
-        iVar6 = 0;
+      iVar14 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                         ((CCharacter *)this_ptr,
+                          &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
+                          &g_HeroActors[g_LocalHeroIndex]->path_map,&local_e8,1.0,0.17453292);
+      if (iVar14 < 0) {
+        iVar14 = 0;
       }
       else {
-        if (0 < iVar6) {
+        if (0 < iVar14) {
           core_mimic_cpp_CMimic_beginMorph_FUN_004d5d00(this_ptr);
           goto LAB_004d5024;
         }
         if (ABS((this_ptr->base).base.turn_angle_accumulator) /
             (delta_time * (this_ptr->base).speed) <= (float)0.78539816337500001) {
-          iVar6 = 2;
+          iVar14 = 2;
         }
         else {
-          iVar6 = 1;
+          iVar14 = 1;
         }
       }
       goto LAB_004d501c;
@@ -183,7 +183,7 @@ LAB_004d4fed:
     if (0xb < uVar7) {
       if (0xc < uVar7) {
         if (uVar7 != 0x13) goto LAB_004d5527;
-        if (*(int *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2590) == 0) {
+        if ((g_HeroActors[g_LocalHeroIndex]->base).grabbed_by == (CDemonActor *)0x0) {
           local_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
                                (&local_18->motion_controller);
           local_38 = (double)local_20;
@@ -199,14 +199,14 @@ LAB_004d4fed:
               core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_1e4);
               local_1e4.damage_amount = local_24;
               damage_info = &local_1e4;
-              fVar14 = 0.2;
+              fVar15 = 0.2;
               local_1e4.attacker = (CDemonActor *)this_ptr;
               local_1e4.wielder = (CDemonActor *)this_ptr;
               pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                  ((CDemonActor *)this_ptr,&local_130,&local_ac);
-              iVar6 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
-                                (&this_ptr->base,pCVar4,fVar14,damage_info);
-              if (iVar6 != 0) {
+              iVar14 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
+                                 (&this_ptr->base,pCVar4,fVar15,damage_info);
+              if (iVar14 != 0) {
                 (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"gh-hits[1,4].wav");
               }
@@ -214,7 +214,7 @@ LAB_004d4fed:
           }
           goto LAB_004d5024;
         }
-        iVar6 = 0;
+        iVar14 = 0;
         pCVar13 = local_18;
         goto LAB_004d501c;
       }
@@ -230,27 +230,27 @@ LAB_004d4fed:
       goto LAB_004d5024;
     }
 LAB_004d5527:
-    iVar6 = 2;
+    iVar14 = 2;
 LAB_004d5015:
     pCVar13 = &(this_ptr->base).base.model;
 LAB_004d501c:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
-              (&pCVar13->motion_controller,iVar6,1);
+              (&pCVar13->motion_controller,iVar14,1);
   }
 LAB_004d5024:
   if (0.0 <= local_1c) {
-    fVar14 = (this_ptr->base).speed;
+    fVar15 = (this_ptr->base).speed;
     fVar1 = (float)3.1415926535000001;
-    (this_ptr->base).base.walk_step_speed = fVar14 * delta_time;
-    (this_ptr->base).base.turn_speed = delta_time * fVar1 * fVar14;
+    (this_ptr->base).base.walk_step_speed = fVar15 * delta_time;
+    (this_ptr->base).base.turn_speed = delta_time * fVar1 * fVar15;
     local_64.z = local_1c;
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     local_64.x = 0.0;
     local_64.y = 0.0;
-    iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
-                      ((CCharacter *)this_ptr,(CVector3f *)(iVar6 + 0x20),
-                       (CPathMap *)(iVar6 + 0xbcc0),&local_64,3.0,0.5235988);
-    if (iVar6 != 1) {
+    iVar14 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0
+                       ((CCharacter *)this_ptr,
+                        &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
+                        &g_HeroActors[g_LocalHeroIndex]->path_map,&local_64,3.0,0.5235988);
+    if (iVar14 != 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.motion_controller,2,1);
     }

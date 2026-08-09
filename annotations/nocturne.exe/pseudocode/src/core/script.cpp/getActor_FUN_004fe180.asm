@@ -26,7 +26,7 @@
 ;   undefined4 DAT_005b7650
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CNetGame g_CNetGame_01cea280
 ;   ... and 5 more
 ;
@@ -153,7 +153,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 004fe24e | g_CNetGame_01cea280
     JNZ 0x004fe288                      ; 004fe251
         ;   XREF to: 004fe288 (CONDITIONAL_JUMP)  ; LAB_004fe288
-    MOV ESI,dword ptr [0x01cae0e8]      ; 004fe253 | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 004fe253 | g_LocalHeroIndex
     MOV ESI,dword ptr [ESI*0x4 + 0x1cae0d8] ; 004fe259
     TEST ESI,ESI                        ; 004fe260
     JNZ 0x004fe200                      ; 004fe262

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
 
 {
@@ -18,12 +16,13 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
   float fVar2;
   CBoundingBox3D *pCVar3;
   EDeathState EVar4;
+  CDemonActor *pCVar5;
   CTrigger *this_ptr_02;
-  int iVar5;
-  CDemonActor *pCVar6;
-  int iVar7;
+  int iVar6;
+  CHero *pCVar7;
+  int iVar8;
   CDemonActor *unaff_retaddr;
-  double dVar8;
+  double dVar9;
   byte auStack_fc [8];
   float fStack_f4;
   float fStack_f0;
@@ -84,13 +83,13 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
               (g_CDemonSet_PTR_005be368,(this_ptr->base).carried_by_actor);
   }
-  iVar7 = 0;
+  iVar8 = 0;
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
   do {
     fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
                       (g_CDemonSet_PTR_005be368,&CStack_50,(CVector3f *)auStack_44);
-    dVar8 = (double)fVar2;
-    if ((dVar8 < 0.0) || (1.0 < dVar8)) break;
+    dVar9 = (double)fVar2;
+    if ((dVar9 < 0.0) || (1.0 < dVar9)) break;
     this_ptr->beam_length = (this_ptr->base).bolt_velocity * fVar2;
     pCStack_18 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
@@ -101,7 +100,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
        ) {
       uStack_14 = 0;
     }
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
+    pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                        (g_CDemonSet_PTR_005be368->collision_actor,
                         g_CGlassActorType_01c78c40.name_hash);
     this_ptr_02 = (CTrigger *)
@@ -110,9 +109,9 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
                              g_CTriggerActorType_02dd1084.name_hash);
     pCStack_28 = this_ptr_02;
     if (pCStack_18 != (CCharacter *)0x0) {
-      iVar5 = (*(((pCStack_18->base).vtable._uc)->_uc).canWalk)(pCStack_18);
+      iVar6 = (*(((pCStack_18->base).vtable._uc)->_uc).canWalk)(pCStack_18);
       this_ptr_01 = g_CDemonSet_PTR_005be368;
-      if ((iVar5 != 0) && (iVar7 == 0)) {
+      if ((iVar6 != 0) && (iVar8 == 0)) {
         this_ptr->charge_level = 30.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(this_ptr_01);
         core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
@@ -120,15 +119,15 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       }
       break;
     }
-    if (pCVar6 == (CDemonActor *)0x0) {
+    if (pCVar5 == (CDemonActor *)0x0) {
       if (this_ptr_02 != (CTrigger *)0x0) {
         core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(this_ptr_02);
-        iVar7 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0
+        iVar8 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005485a0
                           (this_ptr_02,(CDemonActor *)this_ptr);
-        if (iVar7 != 0) {
+        if (iVar8 != 0) {
           fVar2 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                   ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar8),0),
-                                    (int)((ulonglong)dVar8 >> 0x20));
+                                   ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),
+                                    (int)((ulonglong)dVar9 >> 0x20));
           core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(this_ptr_02,fVar2);
         }
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&pCStack_28->base);
@@ -136,10 +135,10 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       }
     }
     else {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar6);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar5);
     }
-    iVar7 = iVar7 + 1;
-  } while (iVar7 < 1);
+    iVar8 = iVar8 + 1;
+  } while (iVar8 < 1);
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
   core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(this_ptr);
   iStack_1c = 0;
@@ -150,41 +149,41 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                 (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"cre-fire.wav",aCStack_a4);
       sound_sndmain_cpp_setSfxVolume_FUN_005270d0(this_ptr->sfx_handle,2.0f);
-      pCVar6 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-      if (pCVar6 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-        xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+      pCVar7 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+      if (pCVar7 == g_HeroActors[g_LocalHeroIndex]) {
+        engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       }
       this_ptr->hit_enemy = 1;
       this_ptr->fire_flash_pending = 1;
       return 1;
     }
     this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);
-    iVar7 = (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
-    if (((iVar7 == 0) &&
-        ((((iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CGhoul"),
-           iVar7 != 0 ||
-           (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CTVBat"),
-           iVar7 != 0)) ||
-          (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatCreature")
-          , iVar7 != 0)) ||
-         ((iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CWerewolf"),
-          iVar7 != 0 ||
-          (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CSvetlana"),
-          iVar7 != 0)))))) ||
-       ((iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CDraculaBride"),
-        iVar7 != 0 ||
-        (((iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatman"),
-          iVar7 != 0 ||
-          (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatCreature")
-          , iVar7 != 0)) ||
-         (iVar7 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBride"),
-         iVar7 != 0)))))) {
+    iVar8 = (*(((this_ptr_00->base).vtable._uc)->_uc).canWalk)(this_ptr_00);
+    if (((iVar8 == 0) &&
+        ((((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CGhoul"),
+           iVar8 != 0 ||
+           (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CTVBat"),
+           iVar8 != 0)) ||
+          (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatCreature")
+          , iVar8 != 0)) ||
+         ((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CWerewolf"),
+          iVar8 != 0 ||
+          (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CSvetlana"),
+          iVar8 != 0)))))) ||
+       ((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CDraculaBride"),
+        iVar8 != 0 ||
+        (((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatman"),
+          iVar8 != 0 ||
+          (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBatCreature")
+          , iVar8 != 0)) ||
+         (iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CBride"),
+         iVar8 != 0)))))) {
       (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                 (&this_ptr_00->base,(CBoundingBox3D *)(auStack_c8 + 0x10));
-      iVar7 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
+      iVar8 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
                         (&g_CDemonLight_01c74640.base,&(this_ptr_00->base).location.position,
                          &(this_ptr_00->base).orient.vec,&CStack_b0,aCStack_a4);
-      if (iVar7 != 0) {
+      if (iVar8 != 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
                   (g_CConsole_PTR_005ad350,"%s in volume\n");
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
@@ -201,24 +200,24 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
         local_60.z = fStack_7c * 0.5f;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   (&this_ptr_00->base,(CVector3f *)auStack_6c,&local_60);
-        iVar7 = 0;
+        iVar8 = 0;
         bVar1 = false;
         do {
           core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
                     (g_CDemonSet_PTR_005be368,(CVector3f *)(auStack_44 + 8),(CVector3f *)auStack_6c)
           ;
-          pCVar6 = g_CDemonSet_PTR_005be368->collision_actor;
-          if (pCVar6 == (CDemonActor *)0x0) break;
-          if (pCVar6 == unaff_retaddr) {
+          pCVar5 = g_CDemonSet_PTR_005be368->collision_actor;
+          if (pCVar5 == (CDemonActor *)0x0) break;
+          if (pCVar5 == unaff_retaddr) {
             bVar1 = true;
             break;
           }
-          iVar5 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar6,"CTrigger || CGlass");
-          if (iVar5 == 0) break;
-          iVar7 = iVar7 + 1;
+          iVar6 = core_actor_cpp_isOfClass_FUN_0040d7e0(pCVar5,"CTrigger || CGlass");
+          if (iVar6 == 0) break;
+          iVar8 = iVar8 + 1;
           core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
                     (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
-        } while (iVar7 < 3);
+        } while (iVar8 < 3);
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
         if (bVar1) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_fc);

@@ -19,11 +19,11 @@
 ;   void* PTR_caseD_1_0040db24 = 0040dc6a
 ;   TerminatedCString s_footstep_s_s_wav_f_00578021
 ;   double DOUBLE_0057803d = 5.87890821882528E-39
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSet_01e57284
 ;   undefined4 g_CDemonCamera_01fb8508.position.x
 ;   undefined4 g_CDemonCamera_01fb8508.position.y
@@ -36,7 +36,7 @@
 ;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50
 ;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   xxx_unk.c_FUN_004940d0
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -127,7 +127,7 @@ section .text
     TEST EAX,EAX                        ; 0040dc39
     JL 0x0040dced                       ; 0040dc3b
         ;   XREF to: 0040dced (CONDITIONAL_JUMP)  ; LAB_0040dced
-    MOV EAX,[0x01cae0e8]                ; 0040dc41 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0040dc41 | g_LocalHeroIndex
         ;   Label: LAB_0040dc41
     CMP EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0040dc46
     JNZ 0x0040dc6a                      ; 0040dc4d
@@ -137,11 +137,11 @@ section .text
         ;   XREF to: 0040dc5b (CONDITIONAL_JUMP)  ; caseD_d
     JMP dword ptr [EDI*0x4 + 0x40db0c]  ; 0040dc54 | caseD_d | caseD_b | caseD_5
         ;   Label: switchD
-    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | PTR_DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | g_CForceFeedback_PTR_005b9284
         ;   Label: caseD_0
     PUSH EDX                            ; 0040dc61
-    CALL xxx_unk.c_FUN_004940d0         ; 0040dc62
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0040dc62
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 0040dc67
         ;   Label: LAB_0040dc67
     FLD float ptr [ESP + 0x9c]          ; 0040dc6a
@@ -200,18 +200,18 @@ section .text
         ;   Label: LAB_0040dced
     JMP 0x0040dc41                      ; 0040dcf7
         ;   XREF to: 0040dc41 (UNCONDITIONAL_JUMP)  ; LAB_0040dc41
-    MOV EAX,[0x005b9284]                ; 0040dcfc | PTR_DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0040dcfc | g_CForceFeedback_PTR_005b9284
         ;   Label: caseD_3
     PUSH EAX                            ; 0040dd01
-    CALL xxx_unk.c_FUN_004940d0         ; 0040dd02
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0040dd02
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     JMP 0x0040dc67                      ; 0040dd07
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
-    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | PTR_DAT_005b9284
+    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | g_CForceFeedback_PTR_005b9284
         ;   Label: caseD_7
     PUSH EBP                            ; 0040dd12
-    CALL xxx_unk.c_FUN_004940d0         ; 0040dd13
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0040dd13
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     JMP 0x0040dc67                      ; 0040dd18
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
 

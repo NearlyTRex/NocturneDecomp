@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -57,63 +57,63 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 61,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 71,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 85,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 86,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 86,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 31,
         "line": 98,
         "message": "use of undeclared identifier '_DAT_01cc9094'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 45,
+        "line": 197,
+        "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
+      },
+      {
+        "category": "type_error",
+        "column": 25,
+        "line": 198,
+        "message": "member reference base type 'float' is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 44,
+        "line": 198,
+        "message": "member reference base type 'float' is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 40,
+        "line": 267,
+        "message": "use of undeclared identifier '_DAT_01cc90b0'"
+      },
+      {
+        "category": "type_error",
+        "column": 21,
+        "line": 268,
+        "message": "member reference base type 'float' is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 40,
+        "line": 268,
+        "message": "member reference base type 'float' is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 275,
+        "message": "use of undeclared identifier '_DAT_01cc90b4'; did you mean 'DAT_005c50b4'?"
+      },
+      {
+        "category": "type_error",
+        "column": 20,
+        "line": 276,
+        "message": "member reference base type 'float' is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 40,
+        "line": 276,
+        "message": "member reference base type 'float' is not a structure or union"
       }
     ],
     "success": false,
@@ -122,19 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 749,
-    "complexity_score": 530,
+    "complexity_score": 490,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 320,
-    "suspect_count": 17,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "unknown_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -400,8 +398,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -921,22 +919,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 64,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),&local_94,pCVar4);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(CMatrix3x4f *)((int)pCVar9",
@@ -951,14 +933,6 @@
       "severity": "moderate",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1029,7 +1003,7 @@
       "line": 95,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

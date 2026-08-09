@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,14 +58,8 @@
       {
         "category": "type_error",
         "column": 29,
-        "line": 32,
+        "line": 30,
         "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       }
     ],
     "success": false,
@@ -74,20 +68,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 138,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 77,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_pointer_store",
       "suspect_float",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 250
+    "total_lines": 249
   },
   "cross_references": [],
   "function": {
@@ -135,8 +127,8 @@
     },
     {
       "addr": "004940d0",
-      "is_variadic": false,
-      "name": "xxx_unk.c_FUN_004940d0"
+      "is_variadic": true,
+      "name": "engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0"
     }
   ],
   "globals": [
@@ -160,8 +152,8 @@
     },
     {
       "addr": "005b9284",
-      "name": "PTR_DAT_005b9284",
-      "type": "void*",
+      "name": "g_CForceFeedback_PTR_005b9284",
+      "type": "CForceFeedback*",
       "value": "01c70f74"
     },
     {
@@ -184,8 +176,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -337,16 +329,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 25,
+      "line": 23,
       "match": "5.8789082188252795e-39",
       "severity": "mild",
       "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
@@ -354,19 +338,11 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 25,
+      "line": 23,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 56,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (this_ptr == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
     }
   ],
   "vtable_info": {

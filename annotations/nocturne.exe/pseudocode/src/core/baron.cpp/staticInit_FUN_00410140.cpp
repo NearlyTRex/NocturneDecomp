@@ -17,7 +17,7 @@ void __cdecl core_baron_cpp_staticInit_FUN_00410140(void)
             ((CKeyFramedModelInstance *)&DAT_0076436c);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CBaronWeaponActorType_007644e8,"CBaronWeapon",
-             core_baron_cpp_factoryFunc_FUN_00411320,&g_INT_005acf58,1,&g_CWeaponActorType_02ddf970)
-  ;
+             core_baron_cpp_factoryFuncBaronWeapon_FUN_00411320,&g_INT_005acf58,1,
+             &g_CWeaponActorType_02ddf970);
   return;
 }

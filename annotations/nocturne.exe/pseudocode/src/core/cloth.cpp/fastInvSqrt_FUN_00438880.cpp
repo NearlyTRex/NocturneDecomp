@@ -9,5 +9,5 @@
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_00438880(float dist_sq)
 
 {
-  return (float)((int)CVector3f_01c70708.z - ((int)dist_sq >> 1));
+  return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));
 }

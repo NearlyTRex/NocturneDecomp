@@ -267,7 +267,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0054b6b4
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0054b6b9
-    MOV EAX,[0x01cae0e8]                ; 0054b6bc | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054b6bc | g_LocalHeroIndex
         ;   Label: LAB_0054b6bc
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054b6c1
     LEA EAX,[ESP + 0x120]               ; 0054b6c8
@@ -284,7 +284,7 @@ section .text
     FLD float ptr [EBX + 0xbec8]        ; 0054b6f3
         ;   Label: LAB_0054b6f3
     FADD double ptr [0x00596fc5]        ; 0054b6f9 | DOUBLE_00596fc5
-    MOV EAX,[0x01cae0e8]                ; 0054b6ff | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054b6ff | g_LocalHeroIndex
     FLD float ptr [ESP + 0x124]         ; 0054b704
     FXCH                                ; 0054b70b
     FADD ST0,ST1                        ; 0054b70d
@@ -778,7 +778,7 @@ section .text
     POP ESI                             ; 0054be45
     POP EBX                             ; 0054be46
     RET                                 ; 0054be47
-    MOV EAX,[0x01cae0e8]                ; 0054be48 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054be48 | g_LocalHeroIndex
         ;   Label: LAB_0054be48
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054be4d
     MOV dword ptr [EBX + 0xbca4],EAX    ; 0054be54

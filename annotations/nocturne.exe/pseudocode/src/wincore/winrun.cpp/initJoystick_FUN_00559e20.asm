@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x128]:4  local_128
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c874f
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c874f
 ;
 ; Referenced Globals:
 ;   void* PTR_joyGetDevCapsA_005753d4 = 001757e2

@@ -47,14 +47,14 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00562440(CZombie *this_ptr,CD
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005624b0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_00562550(CZombie *this_ptr,uint flags);
-void __cdecl engine_3d_c_addRasterizerEdge_FUN_00562620(SRenderVertex *v0,SRenderVertex *v1);
-void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_00562740(SRenderVertex *v0,SRenderVertex *v1);
-SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_00562880(int y_start,SSoftwareEdge *exclude_edge);
-void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_buffer,int vertex_count);
-void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
+void __cdecl engine_zraster_c_addRasterizerEdge_FUN_00562620(SRenderVertex *v0,SRenderVertex *v1);
+void __cdecl engine_zraster_c_addRasterizerEdgeWithDepth_FUN_00562740(SRenderVertex *v0,SRenderVertex *v1);
+SSoftwareEdge * __cdecl engine_zraster_c_findRasterizerEdge_FUN_00562880(int y_start,SSoftwareEdge *exclude_edge);
+void __cdecl engine_zraster_c_rasterizeTriangle_FUN_005628c0(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_zraster_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
-inline void engine_3d_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
-    engine_3d_c_rasterizePolygonCustom_FUN_00562de0(vertex_buffer, vertex_count, (CustomScanlineFunc *)scanline_renderer);
+inline void engine_zraster_c_rasterizePolygonCustom_FUN_00562de0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
+    engine_zraster_c_rasterizePolygonCustom_FUN_00562de0(vertex_buffer, vertex_count, (CustomScanlineFunc *)scanline_renderer);
 }
 int __cdecl crt_unknown_c_getc_helper_FUN_00563290(scanf_state_t *state);
 int __watcallStack crt_unknown_c_ungetc_helper_FUN_005632b0(int character,scanf_state_t *state);

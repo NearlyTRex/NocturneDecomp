@@ -56,7 +56,7 @@ section .text
     CMP dword ptr [EAX],0x0             ; 004d4660 | g_CNetGame_01cea280
     JNZ 0x004d49ba                      ; 004d4663
         ;   XREF to: 004d49ba (CONDITIONAL_JUMP)  ; LAB_004d49ba
-    MOV EAX,[0x01cae0e8]                ; 004d4669 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4669 | g_LocalHeroIndex
         ;   Label: LAB_004d4669
     SHL EAX,0x2                         ; 004d466e
     MOV EDI,dword ptr [EAX + 0x1cae0d8] ; 004d4671

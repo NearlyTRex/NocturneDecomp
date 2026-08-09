@@ -89,18 +89,7 @@ undefined4 * core_event_cpp_FUN_00481950(undefined4 *param_1,undefined4 *param_2
 undefined4 * core_event_cpp_FUN_00481960(void);
 undefined4 * core_event_cpp_FUN_00481970(void);
 void __fastcall crt_watcom_c__memset_FUN_00481980(void *dest,int fill_byte,uint size);
-void crt_unknown_c_FUN_004819f0(void);
-void crt_unknown_c_FUN_004819f8(void);
-void crt_unknown_c_FUN_00481a08(void);
-void crt_unknown_c_FUN_00481a14(void);
-void crt_unknown_c_FUN_00481a20(void);
 void __fastcall crt_watcom_c__memcpy_FUN_00481a28(void *dest,void *src,uint size);
-void crt_unknown_c_FUN_00481ac4(void);
-void crt_unknown_c_FUN_00481acc(void);
-void crt_unknown_c_FUN_00481ae4(void);
-void crt_unknown_c_FUN_00481af4(void);
-void crt_unknown_c_FUN_00481b04(void);
-void crt_unknown_c_FUN_00481b0c(void);
 void __cdecl core_filmreel_cpp_staticInit_FUN_00481bb0(void);
 CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_00481c00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(CFilmReel *this_ptr);
@@ -116,7 +105,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_00481e00(CFilmReel
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_00481e20(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_00481e70(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_00481e90(CFilmReel *this_ptr,CBoundingBox3D *out_box);
-CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_00481ee0(void);
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00481ee0(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_00481f00(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00481f10(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0(CFilmProjector *this_ptr);
@@ -232,7 +221,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_0048b3e0(CFireEffect 
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
 SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(SLaserInfo *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_FUN_0048b6f0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth);
-void __cdecl core_fire_cpp_CFireEffect_FUN_0048c0d0(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
+void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_0048c0d0(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
 int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier);
 void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time,uint sfx_handle);
 int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310(CFireEffect *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time);
@@ -251,7 +240,7 @@ int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEff
 void __cdecl core_fire_cpp_transformWorldToScreen_FUN_0048c8d0(CVector3i *input,SProjectedVertex *output,CVector3f *world_position);
 int core_fire_cpp_FUN_0048c920(void);
 void __cdecl core_fire_cpp_CBulletTrail_reset_FUN_0048c930(CBulletTrail *this_ptr);
-void FUN_0048c940(undefined4 *param_1);
+void core_fire_cpp_FUN_0048c940(undefined4 *param_1);
 CRainDrop * __cdecl core_fire_cpp_CRaindrop_ctor_FUN_0048c960(CRainDrop *this_ptr);
 CRainDrop * __cdecl core_fire_cpp_CRaindrop_dtor_FUN_0048c980(CRainDrop *this_ptr,uint flags);
 CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_0048c990(CPopcorn *this_ptr);
@@ -351,8 +340,8 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(CFlashligh
 int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_0048ede0(CFlashlight *this_ptr);
 float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_0048edf0(CFlashlight *this_ptr);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_0048ee00(CFlashlight *this_ptr,uint flags);
-void __cdecl xxx_unk_c_staticInit_FUN_0048ee50(void);
-void xxx_unk_c_FUN_0048ee80(void);
+void __cdecl core_flattn_cpp_staticInit_FUN_0048ee50(void);
+void __cdecl core_flattn_cpp_doNothing_FUN_0048ee80(void);
 void __cdecl core_flies_cpp_staticInit_FUN_0048ee90(void);
 CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_0048eec0(void);
 CDemonActorType * __cdecl core_flies_cpp_CFlies_getActorType_FUN_0048eee0(CFlies *this_ptr);

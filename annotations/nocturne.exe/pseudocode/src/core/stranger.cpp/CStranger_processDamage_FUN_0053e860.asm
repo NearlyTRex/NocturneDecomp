@@ -27,7 +27,7 @@
 ;   float FLOAT_00595da7 = 50
 ;   float FLOAT_005a26f8 = 2
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CGame* g_CGame_PTR_005b9354 = 01c775ec
 ;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
 ;   CConsole g_CConsole_0077ad0c
@@ -48,8 +48,8 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
+;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
-;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -229,7 +229,7 @@ section .text
     FMUL ST2                            ; 0053ea21
     FLD float ptr [EBP + -0x10]         ; 0053ea23
     FMULP ST3                           ; 0053ea26
-    MOV EDI,dword ptr [0x005b9284]      ; 0053ea28 | PTR_DAT_005b9284
+    MOV EDI,dword ptr [0x005b9284]      ; 0053ea28 | g_CForceFeedback_PTR_005b9284
     FXCH ST2                            ; 0053ea2e
     FSTP float ptr [EBP + -0x10]        ; 0053ea30
     PUSH dword ptr [EBP + -0x10]        ; 0053ea33
@@ -237,8 +237,8 @@ section .text
     PUSH dword ptr [EBP + -0x18]        ; 0053ea39
     PUSH EDI                            ; 0053ea3c
     FSTP float ptr [EBP + -0x14]        ; 0053ea3d
-    CALL xxx_unk.c_FUN_004940d0         ; 0053ea40
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 0053ea40
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     FLD float ptr [EBX + 0x2434]        ; 0053ea45
     FLDZ                                ; 0053ea4b
     ADD ESP,0xc                         ; 0053ea4d

@@ -14,7 +14,7 @@
 ;   TerminatedCString s_core_game_cpp_00582b52
 ;   TerminatedCString s_giveHeroWeapon_This_is_n_00582b63
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
@@ -64,14 +64,14 @@ section .text
         ;   XREF to: 004a0371 (CONDITIONAL_JUMP)  ; LAB_004a0371
     MOV dword ptr [EBX + 0x560],0x1f4   ; 004a0327
         ;   Label: LAB_004a0327
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004a0331 | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004a0331 | g_LocalHeroIndex
     MOV EDX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004a0337
     PUSH EDX                            ; 004a033e
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004a033f
     PUSH ESI                            ; 004a0345
     CALL dword ptr [EAX + 0x80]         ; 004a0346
     ADD ESP,0x8                         ; 004a034c
-    MOV EAX,[0x01cae0e8]                ; 004a034f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004a034f | g_LocalHeroIndex
     PUSH 0x1                            ; 004a0354
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004a0356
     PUSH ESI                            ; 004a035d

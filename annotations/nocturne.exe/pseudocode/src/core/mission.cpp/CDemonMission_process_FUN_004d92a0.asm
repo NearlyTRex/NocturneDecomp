@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Insert_wipe_here_00589db7
 ;   undefined4 DAT_005be220
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 g_CScript_01e56da0.focus_actor_changed
 ;   CDemonSet g_CDemonSet_01e57284
 ;
@@ -74,7 +74,7 @@ section .text
     TEST ECX,ECX                        ; 004d92f9
     JL 0x004d935d                       ; 004d92fb
         ;   XREF to: 004d935d (CONDITIONAL_JUMP)  ; LAB_004d935d
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004d92fd | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004d92fd | g_LocalHeroIndex
     LEA ESI,[EDI + 0x51c]               ; 004d9303
     MOV EBX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004d9309
     MOV EAX,dword ptr [ESI]             ; 004d9310

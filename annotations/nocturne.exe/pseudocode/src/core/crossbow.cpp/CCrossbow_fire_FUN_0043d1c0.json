@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -58,37 +58,43 @@
       {
         "category": "cast_error",
         "column": 19,
-        "line": 102,
+        "line": 101,
         "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
       },
       {
         "category": "pointer_type",
         "column": 65,
-        "line": 117,
+        "line": 116,
         "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "cast_error",
         "column": 45,
-        "line": 122,
+        "line": 121,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 143,
+        "line": 142,
         "message": "use of undeclared identifier 'stack0xffffff14'"
       },
       {
         "category": "type_error",
         "column": 17,
-        "line": 144,
+        "line": 143,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "type_error",
         "column": 17,
-        "line": 147,
+        "line": 146,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 19,
+        "line": 160,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
@@ -106,13 +112,7 @@
       {
         "category": "type_error",
         "column": 19,
-        "line": 163,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 19,
-        "line": 169,
+        "line": 168,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       }
     ],
@@ -122,20 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 492,
-    "complexity_score": 346,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 196,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
-      "raw_address_pointer_store",
       "stack_ref",
       "sub84_truncation",
       "suspect_float",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
     "total_lines": 688
   },
@@ -241,8 +239,8 @@
     },
     {
       "addr": "004940d0",
-      "is_variadic": false,
-      "name": "xxx_unk.c_FUN_004940d0"
+      "is_variadic": true,
+      "name": "engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0"
     }
   ],
   "globals": [
@@ -272,8 +270,8 @@
     },
     {
       "addr": "005b9284",
-      "name": "PTR_DAT_005b9284",
-      "type": "void*",
+      "name": "g_CForceFeedback_PTR_005b9284",
+      "type": "CForceFeedback*",
       "value": "01c70f74"
     },
     {
@@ -302,8 +300,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -479,16 +477,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 110,
+      "line": 109,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
@@ -496,7 +486,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 136,
+      "line": 135,
       "match": "&stack0xffffff14",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff14);",
@@ -504,7 +494,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 136,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_dc._0_4_ =",
@@ -512,7 +502,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 140,
+      "line": 139,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_dc._4_4_ = 0.4;",
@@ -520,7 +510,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 154,
+      "line": 153,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_dc._8_4_ = fStack_44;",
@@ -528,7 +518,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 154,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_dc._12_4_ = fStack_40;",
@@ -536,7 +526,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 155,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_dc._16_4_ = aCStack_3c[0].x;",
@@ -544,7 +534,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 161,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_dc._24_4_ = pCVar2->x;",
@@ -552,7 +542,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 167,
+      "line": 166,
       "match": "1.45735e-43",
       "severity": "mild",
       "text": "fStack_b0 = 1.45735e-43;",
@@ -560,19 +550,11 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 172,
+      "line": 171,
       "match": "6.230251e-39",
       "severity": "mild",
       "text": "hit_points = 6.230251e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 196,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "if (pCVar4 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {",
-      "type": "raw_address_pointer_store"
     }
   ],
   "vtable_info": {

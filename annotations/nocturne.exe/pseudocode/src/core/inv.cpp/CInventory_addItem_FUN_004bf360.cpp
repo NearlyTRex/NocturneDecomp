@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)
 
 {
@@ -50,8 +48,8 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(CInventory *this_ptr,CD
     }
   }
   pcVar11 = acStack_334;
-  if (((this_ptr->owner == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) &&
-      (show_tutorial_message != 0)) && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
+  if ((((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) && (show_tutorial_message != 0))
+     && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
     pcStack_34 = core_inv_cpp_getItemDisplayName_FUN_004beca0(item_actor);
     core_inv_cpp_getItemIconName_FUN_004bed10(item_actor);
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890

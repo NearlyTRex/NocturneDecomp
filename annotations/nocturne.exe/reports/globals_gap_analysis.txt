@@ -2,13 +2,13 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12963
-  Named globals:             10430
-  DAT_ globals:              2533
-Gaps found:                  2039
+Total globals analyzed:      12965
+  Named globals:             10435
+  DAT_ globals:              2530
+Gaps found:                  2038
   With exact size bounds:    1593
-  With estimated bounds:     446
-Total gap bytes:             2,142,970,087
+  With estimated bounds:     445
+Total gap bytes:             2,142,970,076
   Exact gap bytes:           41,380,143
 Overlaps (size <= 0):        7150
 
@@ -16,7 +16,7 @@ Overlaps (size <= 0):        7150
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          403
-  5-16 bytes (small vars)                       262
+  5-16 bytes (small vars)                       261
   17-64 bytes (structs/small arrays)            607
   65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
@@ -600,7 +600,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
          232 bytes  at 0x02dc7958  between DAT_02dc7954                   and DAT_02dc7a40
          228 bytes  at 0x01c5d73c  between g_CExplosion_ARRAY_01c5d708[1] and DAT_01c5d820
          216 bytes  at 0x005be238  between DAT_005be234                   and INT_005be310
-         208 bytes  at 0x005b8020  between INT_005b801c                   and g_CFireEffect_PTR_005b80f0
+         208 bytes  at 0x005b8020  between g_INT_005b801c                 and g_CFireEffect_PTR_005b80f0
          203 bytes  at 0x005b9489  between DAT_005b9485                   and DAT_005b9554
          200 bytes  at 0x005ad288  between DAT_005ad284                   and g_CConsole_PTR_005ad350
          196 bytes  at 0x01c09e10  between DAT_01c09e0c                   and DAT_01c09ed4
@@ -633,7 +633,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
          124 bytes  at 0x01c4f0c4  between g_CGlassParticle_ARRAY_01c4f08 and g_CGlassParticle_ARRAY_01c4f08
          124 bytes  at 0x01c58e34  between g_CFireball_ARRAY_01c58dfc[0]. and g_CFireball_ARRAY_01c58dfc[1].
          120 bytes  at 0x005ba850  between DAT_005ba84c                   and INT_005ba8c8
-         120 bytes  at 0x01c70690  between g_CFlameCanActorType_01c70654. and CVector3f_01c70708
+         120 bytes  at 0x01c70690  between g_CFlameCanActorType_01c70654. and g_FastSqrtMagicSeedOne
          120 bytes  at 0x01cae210  between DAT_01cae20c                   and DAT_01cae288
          120 bytes  at 0x01cd4328  between DAT_01cd4324                   and DAT_01cd43a0
          120 bytes  at 0x02dc9ea8  between DAT_02dc9ea4                   and DAT_02dc9f20
@@ -724,8 +724,8 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           60 bytes  at 0x005a4294  between DAT_005a4290                   and DAT_005a42d0
           60 bytes  at 0x005a4ab4  between g_StreambufVTable              and g_strstreambufTypeInfo_005a4af
           60 bytes  at 0x005acf44  between DAT_005acf40                   and g_INT_005acf80
-          60 bytes  at 0x005b7f94  between switchdataD_005b7f90           and DAT_005b7fd0
-          60 bytes  at 0x005b7fd8  between switchdataD_005b7fd4           and DAT_005b8014
+          60 bytes  at 0x005b7f94  between switchdataD_005b7f90           and PTR_LAB_005b7fd0
+          60 bytes  at 0x005b7fd8  between switchdataD_005b7fd4           and PTR_LAB_005b8014
           60 bytes  at 0x005ba944  between g_INT_005ba940                 and g_INT_005ba980
           60 bytes  at 0x005bb214  between DAT_005bb210                   and s_CMotionController_005bb246+0
           60 bytes  at 0x005bb254  between s_CMotionController_005bb246+0 and DAT_005bb290
@@ -763,7 +763,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           56 bytes  at 0x01c71304  between DAT_01c71300                   and g_CFrankenstienMachineActorTyp
           56 bytes  at 0x01c713e8  between DAT_01c713e4                   and g_CGabriellaActorType_01c713e8
           56 bytes  at 0x01c78c40  between DAT_01c78c3c                   and g_CGlassActorType_01c78c40.nam
-          56 bytes  at 0x01cae0ec  between DAT_01cae0e8                   and g_CHeroActorType_01cae0ec.name
+          56 bytes  at 0x01cae0ec  between g_LocalHeroIndex               and g_CHeroActorType_01cae0ec.name
           56 bytes  at 0x01cae128  between g_CHeroActorType_01cae0ec.name and g_CHeroPlaceholderActorType_01
           56 bytes  at 0x01cae33c  between DAT_01cae338                   and g_CImpActorType_01cae33c.name_
           56 bytes  at 0x01cc30a8  between DAT_01cc30a4                   and g_CKeyActorActorType_01cc30a8.
@@ -897,7 +897,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           32 bytes  at 0x005a1eb4  between DAT_005a1eb0                   and g_CDeformableModelInstanceVTab
           32 bytes  at 0x005a3644  between DAT_005a3640                   and g_CTriggerVTable
           32 bytes  at 0x005a3ed4  between DAT_005a3ed0                   and g_CWaterActorVTable
-          32 bytes  at 0x005b9288  between PTR_DAT_005b9284               and INT_005b92a8
+          32 bytes  at 0x005b9288  between g_CForceFeedback_PTR_005b9284  and INT_005b92a8
           32 bytes  at 0x005ba8cc  between INT_005ba8c8                   and INT_005ba8ec
           32 bytes  at 0x005bac80  between INT_005bac7c                   and g_CLevelLoader_PTR_005baca0
           32 bytes  at 0x005be0ec  between DAT_005be0e8                   and DAT_005be10c
@@ -1129,7 +1129,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           20 bytes  at 0x005b8ba8  between DAT_005b8ba4                   and DAT_005b8bbc
           20 bytes  at 0x005b8dec  between DAT_005b8de8                   and DAT_005b8e00
           20 bytes  at 0x005b8e04  between DAT_005b8e00                   and DAT_005b8e18
-          20 bytes  at 0x005b9270  between s_CART_Precision_Racing_v1_005 and PTR_DAT_005b9284
+          20 bytes  at 0x005b9270  between s_CART_Precision_Racing_v1_005 and g_CForceFeedback_PTR_005b9284
           20 bytes  at 0x005b96d8  between DAT_005b96d4                   and DAT_005b96ec
           20 bytes  at 0x005b96f0  between DAT_005b96ec                   and DAT_005b9704
           20 bytes  at 0x005b9750  between DAT_005b974c                   and DAT_005b9764
@@ -1195,7 +1195,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           16 bytes  at 0x006af5d4  between DAT_006af5d0                   and DAT_006af5e4
           16 bytes  at 0x00769354  between DAT_00769350                   and DAT_00769364
           16 bytes  at 0x01c7ccf4  between DAT_01c7ccf0                   and g_CBloodSplat_ARRAY_01c7ccf4[0
-          16 bytes  at 0x01cae0d8  between DAT_01cae0d4                   and DAT_01cae0e8
+          16 bytes  at 0x01cae0d8  between DAT_01cae0d4                   and g_LocalHeroIndex
           16 bytes  at 0x01fba2dc  between DAT_01fba2d8                   and DAT_01fba2ec
           16 bytes  at 0x01ffb064  between DAT_01ffb060                   and DAT_01ffb074
           16 bytes  at 0x02dc9444  between DAT_02dc9440                   and DAT_02dc9454

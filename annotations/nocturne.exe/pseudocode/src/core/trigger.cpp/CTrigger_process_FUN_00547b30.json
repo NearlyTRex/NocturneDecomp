@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -104,16 +104,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 502,
-    "complexity_score": 301,
+    "complexity_score": 336,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 221,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
+      "fast_sqrt_inline",
       "pointer_cast",
-      "raw_address_pointer_store",
+      "pointer_truncation",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -237,8 +238,8 @@
     },
     {
       "addr": "01c7070c",
-      "name": "CVector3f_01c70708.y",
-      "type": "undefined4",
+      "name": "g_FastSqrtMagic",
+      "type": "int",
       "value": null
     },
     {
@@ -445,20 +446,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 49,
-      "match": "*(CDemonActor **)(iVar10 + 0x1cae0d8",
+      "match": "(CDemonActor **)((int)g_HeroActors",
       "severity": "moderate",
-      "text": "(this_ptr,*(CDemonActor **)(iVar10 + 0x1cae0d8));",
-      "type": "raw_address_pointer_store"
+      "text": "(this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar10));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 51,
-      "match": "*(CDemonActor **)(iVar10 + 0x1cae0d8",
+      "match": "(CDemonActor **)((int)g_HeroActors",
       "severity": "moderate",
-      "text": "pCVar6 = *(CDemonActor **)(iVar10 + 0x1cae0d8);",
-      "type": "raw_address_pointer_store"
+      "text": "pCVar6 = *(CDemonActor **)((int)g_HeroActors + iVar10);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -477,12 +478,36 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_HeroActors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)g_HeroActors",
+      "severity": "moderate",
+      "text": "(this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar10));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_HeroActors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)g_HeroActors",
+      "severity": "moderate",
+      "text": "pCVar6 = *(CDemonActor **)((int)g_HeroActors + iVar10);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 95,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_58[0].x = pCVar8->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `g_FastSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_00431350).",
+      "line": 125,
+      "match": "local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160 (g_CFireEff",
+      "severity": "moderate",
+      "text": "local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160 (g_CFireEffect_PTR_005b80f0,&pCVar1->position, (flo",
+      "type": "fast_sqrt_inline"
     }
   ],
   "vtable_info": {

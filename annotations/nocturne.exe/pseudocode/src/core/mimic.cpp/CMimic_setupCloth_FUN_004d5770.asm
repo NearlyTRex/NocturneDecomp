@@ -16,7 +16,7 @@
 ;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
 ;   CConsole g_CConsole_0077ad0c
 ;   undefined4 g_CGabriellaActorType_01c713e8.name_hash
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_setup_FUN_004359e0(CCloth * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 004d579b
     MOV EDX,dword ptr [0x01c71420]      ; 004d579e | g_CGabriellaActorType_01c713e8.name_hash
-    MOV EAX,[0x01cae0e8]                ; 004d57a4 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d57a4 | g_LocalHeroIndex
     PUSH EDX                            ; 004d57a9
     MOV ECX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d57aa
     PUSH ECX                            ; 004d57b1
@@ -58,7 +58,7 @@ section .text
     TEST EAX,EAX                        ; 004d57bc
     JNZ 0x004d581b                      ; 004d57be
         ;   XREF to: 004d581b (CONDITIONAL_JUMP)  ; LAB_004d581b
-    MOV EAX,[0x01cae0e8]                ; 004d57c0 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d57c0 | g_LocalHeroIndex
         ;   Label: LAB_004d57c0
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d57c5
     SUB ESP,0x4                         ; 004d57cc

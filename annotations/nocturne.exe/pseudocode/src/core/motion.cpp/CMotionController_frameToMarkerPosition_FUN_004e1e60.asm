@@ -15,8 +15,8 @@
 ;   core_gabriela.cpp_CGabriella_process_FUN_00495a20 at 004960a5
 ;   core_ghoul.cpp_CGhoul_process_FUN_004a9270 at 004aa8e2
 ;   core_mimic.cpp_CMimic_FUN_004d4f30 at 004d5429
-;   core_stranger.cpp_CStranger_FUN_00535900 at 00536075
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 00539c6d
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00536075
 ;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 00560881
 ;
 ; *****************************************************************************

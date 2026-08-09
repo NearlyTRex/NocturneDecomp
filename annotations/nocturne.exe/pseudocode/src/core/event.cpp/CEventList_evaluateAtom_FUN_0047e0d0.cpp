@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this_ptr,char *expression,int *parse_position)
 
@@ -321,11 +320,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
           memmove(pcVar17,local_b0,SVar16);
           SVar16 = SVar16 - 1;
         }
-        iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
         local_dc = 0;
-        if ((iVar7 != 0) &&
+        if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
            (pCVar11 = core_inv_cpp_CInventory_findItemByName_FUN_004c0710
-                                ((CInventory *)(iVar7 + 0x1f5a0),acStack_7f5 + 1),
+                                (&g_HeroActors[g_LocalHeroIndex]->inventory,acStack_7f5 + 1),
            pCVar11 != (CDemonActor *)0x0)) {
           local_dc = 1;
         }
@@ -489,11 +487,11 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             } while (cVar1 != '\0');
             return -1;
           }
-          iVar7 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
           local_dc = 0;
-          if ((iVar7 != 0) &&
+          if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
              (iVar7 = core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
-                                ((CInventory *)(iVar7 + 0x1f5a0),local_a0,0), iVar7 != 0)) {
+                                (&g_HeroActors[g_LocalHeroIndex]->inventory,local_a0,0), iVar7 != 0)
+             ) {
             local_dc = 1;
           }
           *parse_position = *parse_position + local_a4;

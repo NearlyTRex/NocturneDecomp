@@ -24,7 +24,7 @@ CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(CLocation *locatio
   if (0 < _DAT_01cae0d4) {
     iVar5 = 0;
     do {
-      pCVar1 = *(CHero **)(iVar5 + 0x1cae0d8);
+      pCVar1 = *(CHero **)((int)g_HeroActors + iVar5);
       if ((pCVar1 != (CHero *)0x0) &&
          (fVar2 = (pCVar1->base).base.location.position.x - (location->position).x,
          fVar4 = (pCVar1->base).base.location.position.y - (location->position).y,

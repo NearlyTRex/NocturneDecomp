@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   core_icepick.cpp_CIcePick_process_FUN_004b9fe0 at 004ba22f
 ;   core_scat.cpp_CScat_process_FUN_004fbf20 at 004fc13f
-;   core_stranger.cpp_CStranger_FUN_00535900 at 005364ac
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 005364ac
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00587409 = 100

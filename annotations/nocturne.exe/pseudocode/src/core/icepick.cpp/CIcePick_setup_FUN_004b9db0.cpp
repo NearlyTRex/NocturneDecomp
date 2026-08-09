@@ -11,8 +11,7 @@
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CIcePick *this_ptr)
 
 {
-  CIcePick *pCVar1;
-  int iVar2;
+  int iVar1;
   CSkeleton *this_ptr_00;
   
   core_hero_cpp_CHero_setup_FUN_004b48d0(&this_ptr->base);
@@ -59,11 +58,10 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004b9db0(CIcePick *this_ptr)
   this_ptr->guns_drawn = 0;
   (this_ptr->base).base.carry_hands[0].bone_index = _DAT_01cae2bc;
   (this_ptr->base).base.carry_hands[1].bone_index = _DAT_01cae2c0;
-  iVar2 = _DAT_01cae0e8;
+  iVar1 = g_LocalHeroIndex;
   this_ptr->pending_pickup_target = (CDemonActor *)0x0;
-  pCVar1 = *(CIcePick **)(iVar2 * 4 + 0x1cae0d8);
-  if (this_ptr == pCVar1) {
-    (pCVar1->base).base.collision_cylinder_radius = 1.5;
+  if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
+    (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->sfx_handles[1] = 0;
   this_ptr->sfx_handles[0] = 0;

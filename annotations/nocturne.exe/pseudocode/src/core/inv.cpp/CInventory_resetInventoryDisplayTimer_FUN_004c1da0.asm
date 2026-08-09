@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_FUN_004a3a90 at 004a3aa2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 004c1da0
         ;   Label: core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004c1da0
-    MOV EDX,dword ptr [0x01cae0e8]      ; 004c1da4 | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 004c1da4 | g_LocalHeroIndex
     MOV EAX,dword ptr [ECX + 0x4]       ; 004c1daa
     CMP EAX,dword ptr [EDX*0x4 + 0x1cae0d8] ; 004c1dad
     JZ 0x004c1db7                       ; 004c1db4

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
 
 {
@@ -15,12 +13,13 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
   CVector3f *pCVar1;
   int iVar2;
   CKeyFramedModel *model_ptr;
-  CDemonActor *pCVar3;
+  CHero *pCVar3;
   CCharacter *this_ptr_01;
   EDeathState EVar4;
   CTrigger *this_ptr_02;
   CFlameCan *this_ptr_03;
   double dVar5;
+  CDemonActor *pCVar6;
   float in_stack_fffffebc;
   byte auStack_130 [28];
   float fStack_114;
@@ -75,9 +74,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-  pCVar3 = (this_ptr->base).carried_by_actor;
-  if (pCVar3 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar3);
+  pCVar6 = (this_ptr->base).carried_by_actor;
+  if (pCVar6 != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar6);
   }
   iStack_20 = 0;
   do {
@@ -155,7 +154,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
     else {
       iVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
       this_ptr_00 = g_CDemonSet_PTR_005be368;
-      pCVar3 = (CDemonActor *)((ulonglong)dVar5 >> 0x20);
+      pCVar6 = (CDemonActor *)((ulonglong)dVar5 >> 0x20);
       if (iVar2 != 0) {
         if (pCStack_1c == (CGlass *)0x0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
@@ -167,7 +166,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffec0);
       auStack_130._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,pCVar3,(int)in_stack_fffffebc);
+                     ((CCharacter *)this_ptr,pCVar6,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
       CStack_38.y = (g_CDemonSet_PTR_005be368->ray_target).x -
                     (g_CDemonSet_PTR_005be368->ray_origin).x;
@@ -240,9 +239,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004b27c0(CGun *this_ptr)
   core_fire_cpp_CFireEffect_createShell_FUN_0048c6b0
             (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).base.location.position,
              &(this_ptr->base).base.orient.vec,aCStack_50,model_ptr);
-  pCVar3 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
-  if (pCVar3 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+  pCVar3 = (CHero *)(*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+  if (pCVar3 == g_HeroActors[g_LocalHeroIndex]) {
+    engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   return 1;
 }

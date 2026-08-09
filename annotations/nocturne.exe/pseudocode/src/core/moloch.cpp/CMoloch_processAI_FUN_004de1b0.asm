@@ -25,7 +25,7 @@
 ;   double DOUBLE_0058a822 = 4
 ;   double DOUBLE_0058a82a = 3.14159265350000
 ;   double DOUBLE_0058a832 = -3.14159265350000
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -50,7 +50,7 @@ section .text
     MOV EDX,0x3e800000                  ; 004de1bf
     PUSH 0x2c                           ; 004de1c4
     MOV ECX,0x3f490fdb                  ; 004de1c6
-    MOV ESI,dword ptr [0x01cae0e8]      ; 004de1cb | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 004de1cb | g_LocalHeroIndex
     PUSH 0x0                            ; 004de1d1
     LEA EAX,[EBX + 0xbc94]              ; 004de1d3
     MOV dword ptr [ESP + 0x78],EDX      ; 004de1d9
@@ -67,7 +67,7 @@ section .text
     CMP EDI,0x1                         ; 004de1ff
     JNZ 0x004de49f                      ; 004de202
         ;   XREF to: 004de49f (CONDITIONAL_JUMP)  ; LAB_004de49f
-    MOV EAX,[0x01cae0e8]                ; 004de208 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004de208 | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004de20d
     LEA EAX,[EBX + 0x20]                ; 004de214
     FLD float ptr [EAX]                 ; 004de217
@@ -104,7 +104,7 @@ section .text
     FMUL ST0                            ; 004de275
     FADDP                               ; 004de277
     FSQRT                               ; 004de279
-    MOV EDX,dword ptr [0x01cae0e8]      ; 004de27b | DAT_01cae0e8
+    MOV EDX,dword ptr [0x01cae0e8]      ; 004de27b | g_LocalHeroIndex
     SHL EDX,0x2                         ; 004de281
     MOV dword ptr [EBX + 0x2410],0x0    ; 004de284
     FCOMP double ptr [0x0058a812]       ; 004de28e | DOUBLE_0058a812

@@ -3,7 +3,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "constants.h"
-#include "prototypes/prototypes_480000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -332,22 +331,6 @@ static undefined1 DAT_005b9384 = 0x45;
 static undefined1 DAT_005b9385 = 0x46;
 
 // undefined1* constants
-static undefined1* DAT_005B7FB0 = (undefined1*)0x00481A01; // LAB_00481a01
-static undefined1* DAT_005B7FB4 = (undefined1*)crt_unknown_c_FUN_00481a20;
-static undefined1* DAT_005B7FB8 = (undefined1*)0x00481A17; // LAB_00481a17
-static undefined1* DAT_005B7FBC = (undefined1*)crt_unknown_c_FUN_00481a14;
-static undefined1* DAT_005B7FC0 = (undefined1*)0x004819FF; // LAB_004819ff
-static undefined1* DAT_005B7FC4 = (undefined1*)crt_unknown_c_FUN_00481a08;
-static undefined1* DAT_005B7FC8 = (undefined1*)0x004819FB; // LAB_004819fb
-static undefined1* DAT_005B7FCC = (undefined1*)crt_unknown_c_FUN_004819f8;
-static undefined1* DAT_005B7FF4 = (undefined1*)0x00481AC8; // LAB_00481ac8
-static undefined1* DAT_005B7FF8 = (undefined1*)crt_unknown_c_FUN_00481b04;
-static undefined1* DAT_005B7FFC = (undefined1*)0x00481AFA; // LAB_00481afa
-static undefined1* DAT_005B8000 = (undefined1*)crt_unknown_c_FUN_00481af4;
-static undefined1* DAT_005B8004 = (undefined1*)0x00481ADA; // LAB_00481ada
-static undefined1* DAT_005B8008 = (undefined1*)crt_unknown_c_FUN_00481ae4;
-static undefined1* DAT_005B800C = (undefined1*)0x00481AD2; // LAB_00481ad2
-static undefined1* DAT_005B8010 = (undefined1*)crt_unknown_c_FUN_00481acc;
 static undefined1* DAT_005B9458 = (undefined1*)s_forest_msn_005846f7;
 static undefined1* DAT_005B945C = (undefined1*)s_castle1_msn_00584702;
 static undefined1* DAT_005B9460 = (undefined1*)s_dungeon_msn_0058470e;
@@ -523,6 +506,14 @@ static void* DAT_005B7FA0 = (void*)0x004819B7; // caseD_4
 static void* DAT_005B7FA4 = (void*)0x004819D0; // caseD_5
 static void* DAT_005B7FA8 = (void*)0x004819B3; // caseD_6
 static void* DAT_005B7FAC = (void*)0x004819B0; // caseD_7
+static void* DAT_005B7FB0 = (void*)0x00481A01; // LAB_00481a01
+static void* DAT_005B7FB4 = (void*)0x00481A20; // LAB_00481a20
+static void* DAT_005B7FB8 = (void*)0x00481A17; // LAB_00481a17
+static void* DAT_005B7FBC = (void*)0x00481A14; // LAB_00481a14
+static void* DAT_005B7FC0 = (void*)0x004819FF; // LAB_004819ff
+static void* DAT_005B7FC4 = (void*)0x00481A08; // LAB_00481a08
+static void* DAT_005B7FC8 = (void*)0x004819FB; // LAB_004819fb
+static void* DAT_005B7FCC = (void*)0x004819F8; // LAB_004819f8
 static void* DAT_005B7FD8 = (void*)0x00481AB4; // caseD_1
 static void* DAT_005B7FDC = (void*)0x00481AA2; // caseD_2
 static void* DAT_005B7FE0 = (void*)0x00481A9C; // caseD_3
@@ -530,4 +521,12 @@ static void* DAT_005B7FE4 = (void*)0x00481A72; // caseD_4
 static void* DAT_005B7FE8 = (void*)0x00481A84; // caseD_5
 static void* DAT_005B7FEC = (void*)0x00481A6A; // caseD_6
 static void* DAT_005B7FF0 = (void*)0x00481A64; // caseD_7
+static void* DAT_005B7FF4 = (void*)0x00481AC8; // LAB_00481ac8
+static void* DAT_005B7FF8 = (void*)0x00481B04; // LAB_00481b04
+static void* DAT_005B7FFC = (void*)0x00481AFA; // LAB_00481afa
+static void* DAT_005B8000 = (void*)0x00481AF4; // LAB_00481af4
+static void* DAT_005B8004 = (void*)0x00481ADA; // LAB_00481ada
+static void* DAT_005B8008 = (void*)0x00481AE4; // LAB_00481ae4
+static void* DAT_005B800C = (void*)0x00481AD2; // LAB_00481ad2
+static void* DAT_005B8010 = (void*)0x00481ACC; // LAB_00481acc
 

@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -77,18 +77,6 @@
       "addr": "0048f490",
       "from_addr": "0048f842",
       "name": "core_flies.cpp_CFlies_renderOpaque_FUN_0048f490",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00562de0",
-      "from_addr": "005630c7",
-      "name": "engine_3d.c_rasterizePolygonCustom_FUN_00562de0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005628c0",
-      "from_addr": "00562be7",
-      "name": "engine_3d.c_rasterizeTriangle_FUN_005628c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -125,6 +113,18 @@
       "addr": "004fad00",
       "from_addr": "004fb04f",
       "name": "engine_prim.c_renderScanlinePolygon_FUN_004fad00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00562de0",
+      "from_addr": "005630c7",
+      "name": "engine_zraster.c_rasterizePolygonCustom_FUN_00562de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005628c0",
+      "from_addr": "00562be7",
+      "name": "engine_zraster.c_rasterizeTriangle_FUN_005628c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -170,7 +170,7 @@
       {
         "call_addr": "00562be7",
         "call_type": "direct",
-        "caller": "engine_3d.c_rasterizeTriangle_FUN_005628c0",
+        "caller": "engine_zraster.c_rasterizeTriangle_FUN_005628c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +181,7 @@
       {
         "call_addr": "005630c7",
         "call_type": "direct",
-        "caller": "engine_3d.c_rasterizePolygonCustom_FUN_00562de0",
+        "caller": "engine_zraster.c_rasterizePolygonCustom_FUN_00562de0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -64,7 +64,7 @@ int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_004110e0(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004110f0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_processDamage_FUN_004112f0(CBaron *this_ptr,SDamageInfo *damage_info);
 void core_baron_cpp_CBaron_handlePureVirtualCall_FUN_00411310(void);
-CBaronWeapon * __cdecl core_baron_cpp_factoryFunc_FUN_00411320(void);
+CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00411320(void);
 CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00411340(CBaronWeapon *this_ptr);
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_setup_FUN_004113b0(CBaronWeapon *this_ptr);
@@ -295,7 +295,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_onPickup_FUN_0041f170(CBoxActor *this_p
 void __cdecl core_boxactor_cpp_CBoxActor_FUN_0041f190(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041f2d0(CBoxActor *this_ptr);
-CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_0041f2e0(void);
+CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_0041f2e0(void);
 CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_0041f300(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *this_ptr);

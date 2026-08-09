@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c79b
 ;   TerminatedCString s_CNetGame_getMyControls_I_0058c7af
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -45,7 +45,7 @@ section .text
     ADD EAX,0x4c                        ; 004eda6a
     POP EBX                             ; 004eda6d
     RET                                 ; 004eda6e
-    MOV EAX,[0x01cae0e8]                ; 004eda6f | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004eda6f | g_LocalHeroIndex
         ;   Label: LAB_004eda6f
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004eda74
     ADD EAX,0xbc94                      ; 004eda7b

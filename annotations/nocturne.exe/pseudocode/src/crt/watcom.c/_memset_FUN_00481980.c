@@ -63,6 +63,6 @@ switchD_004819a9_caseD_0:
 LAB_004819c8:
                     /* WARNING: Could not recover jumptable at 0x004819c9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(&DAT_005b7fd0 + uVar3 * 4))();
+  (*(code *)(&PTR_LAB_005b7fd0)[uVar3])();
   return;
 }

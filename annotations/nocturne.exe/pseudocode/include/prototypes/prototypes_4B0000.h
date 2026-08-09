@@ -185,7 +185,7 @@ void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004b5cd0(CHero *this_ptr,int ai_t
 CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004b5e90(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004b5ec0(CHero *this_ptr);
-CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004b5f60(void);
+CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004b5f60(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004b5f80(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004b5fc0(CHeroPlaceholder *this_ptr,uint flags);

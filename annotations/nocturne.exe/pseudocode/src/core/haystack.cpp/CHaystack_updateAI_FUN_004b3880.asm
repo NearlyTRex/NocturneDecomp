@@ -51,7 +51,7 @@
 ;   double DOUBLE_005855f5 = 0.25
 ;   double DOUBLE_005855fd = 3.14159265350000
 ;   double DOUBLE_00585605 = -3.14159265350000
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
@@ -79,7 +79,7 @@ section .text
     MOV ECX,0x3f490fdb                  ; 004b3897
     PUSH 0x2c                           ; 004b389c
     XOR ESI,ESI                         ; 004b389e
-    MOV EDI,dword ptr [0x01cae0e8]      ; 004b38a0 | DAT_01cae0e8
+    MOV EDI,dword ptr [0x01cae0e8]      ; 004b38a0 | g_LocalHeroIndex
     PUSH ESI                            ; 004b38a6
     LEA EAX,[EBX + 0xbc94]              ; 004b38a7
     MOV dword ptr [ESP + 0x94],EDX      ; 004b38ad
@@ -93,7 +93,7 @@ section .text
     TEST EAX,EAX                        ; 004b38d1
     JZ 0x004b3c27                       ; 004b38d3
         ;   XREF to: 004b3c27 (CONDITIONAL_JUMP)  ; LAB_004b3c27
-    MOV EAX,[0x01cae0e8]                ; 004b38d9 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004b38d9 | g_LocalHeroIndex
     LEA EDX,[EBX + 0x20]                ; 004b38de
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004b38e1
     FLD float ptr [EDX]                 ; 004b38e8
@@ -424,7 +424,7 @@ section .text
     TEST ESI,ESI                        ; 004b3ccb
     JNZ 0x004b3ceb                      ; 004b3ccd
         ;   XREF to: 004b3ceb (CONDITIONAL_JUMP)  ; LAB_004b3ceb
-    MOV EAX,[0x01cae0e8]                ; 004b3ccf | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004b3ccf | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004b3cd4
     PUSH EAX                            ; 004b3cdb
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004b3cdc

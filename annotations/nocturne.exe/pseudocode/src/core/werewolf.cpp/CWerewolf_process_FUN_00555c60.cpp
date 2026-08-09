@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_ptr,float delta_time)
 
 {
@@ -158,7 +156,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
     EVar11 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr)
     ;
     if ((EVar11 == DEATH_STATE_ALIVE) &&
-       ((this_ptr->base).victim == *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {
+       ((CHero *)(this_ptr->base).victim == g_HeroActors[g_LocalHeroIndex])) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_2a8);
       local_2a8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
@@ -207,7 +205,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       if (local_18 == 0) goto LAB_00556301;
       if (1 < local_18) {
         if (2 < local_18) {
-          if (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != (this_ptr->base).victim) {
+          if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffce0);
             local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
             pSVar17 = (SDamageInfo *)&stack0xfffffce0;
@@ -494,7 +492,7 @@ LAB_005567aa:
           }
           goto LAB_00555e90;
         }
-        if (*(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != (this_ptr->base).victim) {
+        if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_230);
           local_230.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
           local_230.attacker = (CDemonActor *)this_ptr;
@@ -542,7 +540,7 @@ LAB_005567aa:
                     (&(this_ptr->base).base.model.motion_controller,7,1);
         }
 LAB_0055637f:
-        if ((this_ptr->base).victim != *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
+        if ((CHero *)(this_ptr->base).victim != g_HeroActors[g_LocalHeroIndex]) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_2e4);
           local_2e4.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(7.0,15.0);
           local_2e4.attacker = (CDemonActor *)this_ptr;

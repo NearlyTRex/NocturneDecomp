@@ -15,7 +15,7 @@ void __cdecl core_manpuz_cpp_staticInit_FUN_004c93b0(void)
              &g_CDemonActorActorType_00763e48);
   core_actor_cpp_registerActorClass_FUN_0040d3f0
             (&g_CMirrorHackActorType_01cc4898,"CMirrorHack",
-             core_manpuz_cpp_factoryFunc_FUN_004cbad0,&g_INT_005bad54,1,
+             core_manpuz_cpp_factoryFuncMirrorHack_FUN_004cbad0,&g_INT_005bad54,1,
              &g_CDemonActorActorType_00763e48);
   return;
 }

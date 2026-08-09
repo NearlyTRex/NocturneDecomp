@@ -6,12 +6,13 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_set_cpp_CDemonSet_FUN_0050a260(CDemonSet *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
+  CHero *this_ptr_00;
   int iVar1;
   int iVar2;
   CDemonLight *this_ptr_01;
@@ -20,6 +21,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050a260(CDemonSet *this_ptr)
   CVector3f *input_local_point;
   int iVar4;
   CDemonSet *pCVar5;
+  CMatrix3x4f *matrix;
   CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;
@@ -28,26 +30,23 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050a260(CDemonSet *this_ptr)
   CVector3f local_20;
   CDemonLight *local_14;
   
-  this_ptr_00 = *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+  this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
   local_14 = &g_CDemonLight_01c74640;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-                          ((CDeformableModelInstance *)(this_ptr_00 + 1));
+                          (&(this_ptr_00->base).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Head",0);
+  matrix = (this_ptr_00->base).model.bone_transform.bone_world_matrices + iVar3;
   local_44.y = 0.338;
   local_44.x = 0.0;
   local_44.z = 0.75;
-  input_local_point =
-       core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                 (&local_50,&local_44,
-                  (CMatrix3x4f *)(this_ptr_00[0xc].actor_name + iVar3 * 0x30 + 0x10));
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(this_ptr_00,&local_2c,input_local_point)
-  ;
-  core_xform_cpp_matrixToEulerAngles_FUN_0055b180
-            ((CMatrix3x4f *)(this_ptr_00[0xc].actor_name + iVar3 * 0x30 + 0x10),&local_38);
+  input_local_point = core_xform_cpp_transformVector3x4_FUN_0055a8b0(&local_50,&local_44,matrix);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+            ((CDemonActor *)this_ptr_00,&local_2c,input_local_point);
+  core_xform_cpp_matrixToEulerAngles_FUN_0055b180(matrix,&local_38);
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLight_01c74640.volumetric_enabled = 0;
-  local_20.y = local_38.y + (this_ptr_00->orient).vec.y;
+  local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
   if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[2].z) {
     g_CDemonLight_01c74640.base.position.x = local_2c.x;
     g_CDemonLight_01c74640.base.position.y = local_2c.y;
@@ -107,7 +106,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050a260(CDemonSet *this_ptr)
       iVar1 = local_14->shadow_map_width * -2;
       iVar2 = local_14->shadow_map_height * -2;
     }
-    if (*(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0) <= 0.0) {
+    if ((g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge <= 0.0) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
       return;
     }

@@ -179,7 +179,7 @@ section .text
     MOV dword ptr [ESI + 0x24a4],EAX    ; 004b9f6a
     MOV EAX,[0x01cae2c0]                ; 004b9f70 | DAT_01cae2c0
     MOV dword ptr [ESI + 0x24e8],EAX    ; 004b9f75
-    MOV EAX,[0x01cae0e8]                ; 004b9f7b | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004b9f7b | g_LocalHeroIndex
     MOV dword ptr [ESI + 0x1fa60],0x0   ; 004b9f80
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004b9f8a
     ADD ESP,0xc                         ; 004b9f91

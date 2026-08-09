@@ -52,7 +52,7 @@ section .text
     MOV dword ptr [EBX + 0x44],0xbf800000 ; 004ff005
     MOV dword ptr [EBX + 0x48],0xbf800000 ; 004ff00c
     MOV dword ptr [EBX],0x0             ; 004ff013
-    MOV EAX,[0x01cae0e8]                ; 004ff019 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004ff019 | g_LocalHeroIndex
     MOV dword ptr [EBX + 0x4],0x0       ; 004ff01e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004ff025
     MOV dword ptr [EBX + 0xc],EAX       ; 004ff02c

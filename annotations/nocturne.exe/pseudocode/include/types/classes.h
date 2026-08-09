@@ -125,6 +125,7 @@
 #include "types/classes/CFont.h"
 #include "types/classes/CFont_vtable.h"
 #include "types/classes/CFootstep.h"
+#include "types/classes/CForceFeedback.h"
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"

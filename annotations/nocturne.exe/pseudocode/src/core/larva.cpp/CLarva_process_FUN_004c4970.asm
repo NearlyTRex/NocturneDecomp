@@ -598,7 +598,7 @@ section .text
     FADDP                               ; 004c4edb
     FSTP float ptr [EBP + 0x36]         ; 004c4edd
     MOV EAX,dword ptr [EBP + 0x36]      ; 004c4ee0
-    MOV ECX,dword ptr [0x01c7070c]      ; 004c4ee3 | CVector3f_01c70708.y
+    MOV ECX,dword ptr [0x01c7070c]      ; 004c4ee3 | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004c4ee9
     ADD EAX,ECX                         ; 004c4eeb
     MOV dword ptr [EBP + 0x5e],EAX      ; 004c4eed
@@ -751,7 +751,7 @@ section .text
     FADDP                               ; 004c5097
     FSTP float ptr [EBP + 0x46]         ; 004c5099
     MOV EAX,dword ptr [EBP + 0x46]      ; 004c509c
-    MOV ESI,dword ptr [0x01c7070c]      ; 004c509f | CVector3f_01c70708.y
+    MOV ESI,dword ptr [0x01c7070c]      ; 004c509f | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004c50a5
     ADD EAX,ESI                         ; 004c50a7
     MOV dword ptr [EBP + 0x4a],EAX      ; 004c50a9

@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004c85f0 at 004c8d2c
+;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8d2c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_crsr_d_0058ca97

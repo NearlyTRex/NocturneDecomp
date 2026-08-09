@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -62,15 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 10,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 39
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
+    "suspect_types": [
+      "fast_inv_sqrt_inline"
+    ],
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -89,8 +91,8 @@
   "globals": [
     {
       "addr": "01c70710",
-      "name": "CVector3f_01c70708.z",
-      "type": "undefined4",
+      "name": "g_FastInvSqrtMagic",
+      "type": "int",
       "value": null
     }
   ],
@@ -159,5 +161,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `g_FastInvSqrtMagic`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Replace with `fastInvSqrt(<expr>)` in a .keep - the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 6,
+      "match": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v",
+      "severity": "moderate",
+      "text": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    }
+  ]
 }

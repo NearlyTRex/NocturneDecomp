@@ -35,7 +35,7 @@
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 DAT_01cc9094
 ;   undefined4 DAT_01cd4318
 ;   undefined4 g_CStrangerActorType_02dc9fac.name_hash
@@ -173,7 +173,7 @@ section .text
         ;   XREF to: 00437db0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_00437db0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 004d597f
     MOV ESI,dword ptr [0x02dc9fe4]      ; 004d5982 | g_CStrangerActorType_02dc9fac.name_hash
-    MOV EAX,[0x01cae0e8]                ; 004d5988 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d5988 | g_LocalHeroIndex
     PUSH ESI                            ; 004d598d
     MOV EDI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d598e
     PUSH EDI                            ; 004d5995

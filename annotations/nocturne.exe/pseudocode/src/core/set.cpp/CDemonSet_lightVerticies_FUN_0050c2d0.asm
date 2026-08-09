@@ -675,7 +675,7 @@ section .text
     FXCH ST3                            ; 0050c969
     FSTP float ptr [ESP + 0x144]        ; 0050c96b
     MOV EDX,dword ptr [ESP + 0x144]     ; 0050c972
-    MOV ECX,dword ptr [0x01c70710]      ; 0050c979 | CVector3f_01c70708.z
+    MOV ECX,dword ptr [0x01c70710]      ; 0050c979 | g_FastInvSqrtMagic
     SAR EDX,0x1                         ; 0050c97f
     SUB ECX,EDX                         ; 0050c981
     MOV dword ptr [ESP + 0x148],ECX     ; 0050c983
@@ -987,7 +987,7 @@ section .text
     FADDP                               ; 0050cda1
     FSTP float ptr [ESP + 0xe0]         ; 0050cda3
     MOV EAX,dword ptr [ESP + 0xe0]      ; 0050cdaa
-    MOV ECX,dword ptr [0x01c70710]      ; 0050cdb1 | CVector3f_01c70708.z
+    MOV ECX,dword ptr [0x01c70710]      ; 0050cdb1 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0050cdb7
     SUB ECX,EAX                         ; 0050cdb9
     MOV dword ptr [ESP + 0xe4],ECX      ; 0050cdbb
@@ -1090,7 +1090,7 @@ section .text
     FADDP                               ; 0050ced3
     FSTP float ptr [ESP + 0xf0]         ; 0050ced5
     MOV EAX,dword ptr [ESP + 0xf0]      ; 0050cedc
-    MOV EDX,dword ptr [0x01c70710]      ; 0050cee3 | CVector3f_01c70708.z
+    MOV EDX,dword ptr [0x01c70710]      ; 0050cee3 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0050cee9
     SUB EDX,EAX                         ; 0050ceeb
     MOV dword ptr [ESP + 0xf4],EDX      ; 0050ceed
@@ -1144,7 +1144,7 @@ section .text
     FADDP                               ; 0050cf81
     FSTP float ptr [ESP + 0xfc]         ; 0050cf83
     MOV EAX,dword ptr [ESP + 0xfc]      ; 0050cf8a
-    MOV EDX,dword ptr [0x01c70710]      ; 0050cf91 | CVector3f_01c70708.z
+    MOV EDX,dword ptr [0x01c70710]      ; 0050cf91 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0050cf97
     SUB EDX,EAX                         ; 0050cf99
     MOV dword ptr [ESP + 0x100],EDX     ; 0050cf9b

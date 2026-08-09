@@ -16,7 +16,7 @@
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d63
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d858e
 ;   core_passngr.cpp_CPassenger_process_FUN_004ef890 at 004ef9b6
-;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053f5a2
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 at 0053f5a2
 ;   core_succubus.cpp_CSuccubus_process_FUN_00540f50 at 005412f9
 ;   ... and 2 more
 ;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00428510(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
@@ -81,8 +79,7 @@ LAB_00428579:
               (g_CGore_PTR_005b96c4,(CVector3f *)(local_28 + 8),&damage_info->impact_point,
                (int)ROUND(dVar6) + 1,this_ptr->blood_type);
   }
-  if ((this_ptr->health_bar_mode == 1) &&
-     (this_ptr != *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {
+  if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
               (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
                (int)(this_ptr->hit_points / this_ptr->max_hit_points),5.0);

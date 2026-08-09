@@ -19,7 +19,7 @@
 ;
 ; XREF[2]:
 ;   core_scat.cpp_CScat_FUN_004fcd90 at 004fce41
-;   core_stranger.cpp_CStranger_FUN_0053f310 at 0053f434
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 at 0053f434
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a386

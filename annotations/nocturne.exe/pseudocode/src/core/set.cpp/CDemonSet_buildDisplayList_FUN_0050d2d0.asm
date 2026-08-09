@@ -112,7 +112,7 @@ section .text
     JLE 0x0050d3a9                      ; 0050d37f
         ;   XREF to: 0050d3a9 (CONDITIONAL_JUMP)  ; LAB_0050d3a9
     MOV ESI,EBP                         ; 0050d381
-    MOV EAX,[0x01cae0e8]                ; 0050d383 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0050d383 | g_LocalHeroIndex
         ;   Label: LAB_0050d383
     MOV EBX,dword ptr [ESI + 0x158908]  ; 0050d388
     CMP EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0050d38e
@@ -133,7 +133,7 @@ section .text
     PUSH 0x2080434                      ; 0050d3b7 | DAT_02080434
     CALL crt_stdlib.c__qsort_FUN_00563db8 ; 0050d3bc
         ;   XREF to: 00563db8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_00563db8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
-    MOV EBX,dword ptr [0x01cae0e8]      ; 0050d3c1 | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 0050d3c1 | g_LocalHeroIndex
     SHL EBX,0x2                         ; 0050d3c7
     MOV ESI,dword ptr [EBX + 0x1cae0d8] ; 0050d3ca
     ADD ESP,0x10                        ; 0050d3d0

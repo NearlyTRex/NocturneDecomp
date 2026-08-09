@@ -74,7 +74,7 @@ section .text
     MOV EBP,ESP                         ; 0050a264
     SUB ESP,0x4c                        ; 0050a266
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050a269
-    MOV EBX,dword ptr [0x01cae0e8]      ; 0050a26c | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 0050a26c | g_LocalHeroIndex
     MOV EBX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 0050a272
     LEA ESI,[EBX + 0x150]               ; 0050a279
     MOV EDX,0x1c74640                   ; 0050a27f
@@ -326,7 +326,7 @@ section .text
     SUB EAX,EDX                         ; 0050a53a
     SAR EAX,0x1                         ; 0050a53c
     MOV EDX,EAX                         ; 0050a53e
-    MOV EAX,[0x01cae0e8]                ; 0050a540 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0050a540 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0050a545
     FLD float ptr [EAX + 0x1f5a0]       ; 0050a54c
     FLDZ                                ; 0050a552

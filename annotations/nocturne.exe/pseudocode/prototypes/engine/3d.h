@@ -370,35 +370,3 @@ void __cdecl drawLine3DFromIndices(int vertex_index1,int vertex_index2);
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00409590
 // Address: 00409590
 void __cdecl clipAndDrawLine3D(SRenderVertex vertex1,SRenderVertex vertex2);
-
-// Original: engine_3d.c_addPolygonEdge_FUN_004940e0
-// Address: 004940e0
-void __cdecl addPolygonEdge(SRenderVertex *vertex1,SRenderVertex *vertex2);
-
-// Original: engine_3d.c_findHardwareEdgeByYMin_FUN_00494220
-// Address: 00494220
-SHardwareEdge * __cdecl findHardwareEdgeByYMin(int y_min,SHardwareEdge *exclude_edge);
-
-// Original: engine_3d.c_rasterizePolygonHardware_FUN_00494260
-// Address: 00494260
-void __cdecl rasterizePolygonHardware(SRenderVertex **vertices,int vertex_count);
-
-// Original: engine_3d.c_addRasterizerEdge_FUN_00562620
-// Address: 00562620
-void __cdecl addRasterizerEdge(SRenderVertex *v0,SRenderVertex *v1);
-
-// Original: engine_3d.c_addRasterizerEdgeWithDepth_FUN_00562740
-// Address: 00562740
-void __cdecl addRasterizerEdgeWithDepth(SRenderVertex *v0,SRenderVertex *v1);
-
-// Original: engine_3d.c_findRasterizerEdge_FUN_00562880
-// Address: 00562880
-SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);
-
-// Original: engine_3d.c_rasterizeTriangle_FUN_005628c0
-// Address: 005628c0
-void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);
-
-// Original: engine_3d.c_rasterizePolygonCustom_FUN_00562de0
-// Address: 00562de0
-void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

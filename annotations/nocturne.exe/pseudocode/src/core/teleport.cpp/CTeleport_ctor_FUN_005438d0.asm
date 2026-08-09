@@ -7,7 +7,7 @@
 ; CTeleport *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_teleport.cpp_factoryFunc_FUN_005438a0 at 005438b3
+;   core_teleport.cpp_factoryFuncTeleport_FUN_005438a0 at 005438b3
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CTeleportVTable

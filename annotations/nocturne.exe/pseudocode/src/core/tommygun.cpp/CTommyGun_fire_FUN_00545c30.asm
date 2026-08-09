@@ -16,13 +16,13 @@
 ;   float FLOAT_005968c1 = -0.125
 ;   double DOUBLE_005968c9 = 10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   void* PTR_DAT_005b9284 = 01c70f74
+;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   undefined4 g_CCrateActorType_0077bd40.name_hash
 ;   undefined4 g_CFlameCanActorType_01c70654.name_hash
 ;   undefined4 g_CGlassActorType_01c78c40.name_hash
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;   ... and 13 more
 ;
@@ -110,16 +110,16 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14c]     ; 00545cd4
     PUSH EBX                            ; 00545cda
     CALL dword ptr [EAX + 0x8c]         ; 00545cdb
-    MOV ESI,dword ptr [0x01cae0e8]      ; 00545ce1 | DAT_01cae0e8
+    MOV ESI,dword ptr [0x01cae0e8]      ; 00545ce1 | g_LocalHeroIndex
     MOV ECX,dword ptr [ESI*0x4 + 0x1cae0d8] ; 00545ce7
     ADD ESP,0x4                         ; 00545cee
     CMP EAX,ECX                         ; 00545cf1
     JNZ 0x00545d04                      ; 00545cf3
         ;   XREF to: 00545d04 (CONDITIONAL_JUMP)  ; LAB_00545d04
-    MOV ESI,dword ptr [0x005b9284]      ; 00545cf5 | PTR_DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 00545cf5 | g_CForceFeedback_PTR_005b9284
     PUSH ESI                            ; 00545cfb
-    CALL xxx_unk.c_FUN_004940d0         ; 00545cfc
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
+    CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 00545cfc
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 00545d01
     MOV dword ptr [EBX + 0x574],0x0     ; 00545d04
         ;   Label: LAB_00545d04

@@ -25,8 +25,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FU
     fVar4 = (float)world_pos->x * 0.00390625f - (light_source->base).position.x;
     fVar5 = (float)world_pos->y * 0.00390625f - (light_source->base).position.y;
     fVar6 = (float)world_pos->z * 0.00390625f - (light_source->base).position.z;
-    fVar8 = (float)((int)CVector3f_01c70708.z -
-                   ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
+    fVar8 = (float)(g_FastInvSqrtMagic - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1)
+                   );
     lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) * (longlong)light_direction->x;
     lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * 65536.0f) * (longlong)light_direction->y;
     lVar3 = (longlong)(int)ROUND(fVar6 * fVar8 * 65536.0f) * (longlong)light_direction->z;

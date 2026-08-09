@@ -20,7 +20,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,fl
   if (0 < _DAT_01cae0d4) {
     iVar5 = 0;
     do {
-      iVar1 = *(int *)(iVar5 + 0x1cae0d8);
+      iVar1 = *(int *)((int)g_HeroActors + iVar5);
       if (iVar1 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - point->x;
         fVar4 = *(float *)(iVar1 + 0x24) - point->y;

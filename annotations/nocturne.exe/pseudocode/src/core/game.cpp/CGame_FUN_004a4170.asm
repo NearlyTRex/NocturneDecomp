@@ -637,7 +637,7 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 004a47f1
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004a47f6
-    PUSH 0x1cae0e8                      ; 004a47f9 | DAT_01cae0e8
+    PUSH 0x1cae0e8                      ; 004a47f9 | g_LocalHeroIndex
     PUSH 0x1cae0d4                      ; 004a47fe | DAT_01cae0d4
     PUSH 0x583d76                       ; 004a4803 | = "%d, %d\n"
     PUSH EBX                            ; 004a4808

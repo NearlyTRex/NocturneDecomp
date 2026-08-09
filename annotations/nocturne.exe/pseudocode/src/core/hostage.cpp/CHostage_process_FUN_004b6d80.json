@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 187,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 235,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
-      },
-      {
         "category": "incompatible_types",
         "column": 24,
-        "line": 242,
+        "line": 245,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 248,
+        "line": 251,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 271,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 295,
+        "line": 298,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 305,
+        "line": 308,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 314,
-        "message": "use of undeclared identifier '_DAT_01cae0e8'"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 340,
+        "line": 343,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 389,
+        "line": 392,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 394,
+        "message": "no matching function for call to 'core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 21,
+        "line": 405,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonActor *' from 'uint32_t' (aka 'unsigned int')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 459,
+        "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 461,
+        "message": "no matching function for call to 'core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 890,
+    "complexity_score": 868,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 685,
-    "suspect_count": 16,
+    "pseudocode_lines": 688,
+    "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
-      "raw_address_pointer_store",
       "stack_param",
       "sub84_truncation",
       "suspect_float",
@@ -140,7 +139,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2341
+    "total_lines": 2344
   },
   "cross_references": [],
   "function": {
@@ -584,8 +583,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -1212,44 +1211,28 @@
       "line": 117,
       "match": "in_stack_fffffe40",
       "severity": "moderate",
-      "text": "while (pCVar20 = (CDemonActor *)in_stack_fffffe40, 0.0 < local_1a0) {",
+      "text": "while (pCVar21 = (CDemonActor *)in_stack_fffffe40, 0.0 < local_1a0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 181,
+      "line": 180,
       "match": "in_stack_fffffe40",
       "severity": "moderate",
-      "text": "in_stack_fffffe40 = CONCAT44(pCVar20,this_ptr_00);",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);",
       "type": "stack_param"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 264,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),5.0",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 307,
-      "match": "*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),4.0,",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 395,
+      "line": 398,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "pCVar20 = SUB84(__BITCAST_UINT64((double)fVar4),0);",
+      "text": "pCVar21 = SUB84(__BITCAST_UINT64((double)fVar4),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 528,
+      "line": 531,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_20 = 1.4013e-45;",
@@ -1257,18 +1240,18 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 671,
+      "line": 674,
       "match": "8.40779e-45",
       "severity": "mild",
-      "text": "(pCVar16->model).transformed_vertices[0x4f].z = 8.40779e-45;",
+      "text": "(pCVar17->model).transformed_vertices[0x4f].z = 8.40779e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 404,
+      "line": 407,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar14->x = pCVar18->x;",
+      "text": "pCVar15->x = pCVar19->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1281,18 +1264,10 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 529,
+      "line": 532,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 582,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
@@ -1300,15 +1275,23 @@
       "line": 585,
       "match": "cascade_constant_fill",
       "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 588,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 181,
+      "line": 180,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "in_stack_fffffe40 = CONCAT44(pCVar20,this_ptr_00);",
+      "text": "in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);",
       "type": "concat_reconstruction"
     },
     {

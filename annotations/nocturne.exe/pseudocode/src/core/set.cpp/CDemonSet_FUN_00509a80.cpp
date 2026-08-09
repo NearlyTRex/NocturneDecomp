@@ -246,9 +246,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00509a80(CDemonSet *this_ptr,int skip_pr
       local_30 = local_30 + 1;
     } while (local_30 < _DAT_01fba2d8);
   }
-  iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  if ((iVar6 != 0) && (g_CDemonMission_PTR_005baf90->is_in_editor == 0)) {
-    core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150((CInventory *)(iVar6 + 0x1f5a0));
+  if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
+     (g_CDemonMission_PTR_005baf90->is_in_editor == 0)) {
+    core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150
+              (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }
   iVar6 = 0;
   core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);

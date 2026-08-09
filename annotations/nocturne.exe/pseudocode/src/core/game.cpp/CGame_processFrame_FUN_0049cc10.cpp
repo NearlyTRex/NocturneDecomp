@@ -6,27 +6,34 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
 
 {
-  char cVar1;
-  CVector3f *pCVar2;
-  double dVar3;
-  double dVar4;
-  double dVar5;
+  double dVar1;
+  double dVar2;
+  char cVar3;
+  CHero *pCVar4;
+  CVector3f *pCVar5;
+  double dVar6;
+  double dVar7;
+  double dVar8;
   CNetGame *this_ptr_00;
   _FILE *file;
-  int iVar6;
-  uint uVar7;
-  int iVar8;
-  char *pcVar9;
-  uint *puVar10;
+  int iVar9;
+  uint uVar10;
   int iVar11;
-  int iVar12;
-  int *piVar13;
-  byte bVar14;
+  EDeathState EVar12;
+  char *pcVar13;
+  uint *puVar14;
+  CLocation *pCVar15;
+  UOrientationVector *pUVar16;
+  int iVar17;
+  int iVar18;
+  int *piVar19;
+  byte bVar20;
   uint auStackY_107c [656];
   CVector3i *input_ptr;
   CSfxSample local_604;
@@ -38,9 +45,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   CVector3i local_94;
   CVector3i local_88;
   CVector3i local_7c;
-  float local_70;
-  float local_6c;
-  float local_68;
+  CVector3f local_70;
   int local_5c;
   int local_58;
   int local_54;
@@ -61,7 +66,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   int local_18;
   int local_14;
   
-  bVar14 = 0;
+  bVar20 = 0;
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -96,46 +101,50 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   if (this_ptr->is_paused == 0) {
     core_game_cpp_CGame_process_FUN_004a6010(this_ptr);
     core_sound_cpp_CSound_FUN_0052dff0(g_CSound_PTR_005bed68);
-    xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+    engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   else {
     core_slew_cpp_CSlew_FUN_0051f930(&local_b0);
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    if (&local_b0 != (CSlew *)(iVar6 + 0x20)) {
-      local_b0.position.x = (((CSlew *)(iVar6 + 0x20))->position).x;
-      local_b0.position.y = *(float *)(iVar6 + 0x24);
-      local_b0.position.z = *(float *)(iVar6 + 0x28);
+    pCVar4 = g_HeroActors[g_LocalHeroIndex];
+    pCVar15 = &(pCVar4->base).base.location;
+    if (&local_b0 != (CSlew *)pCVar15) {
+      local_b0.position.x = (pCVar15->position).x;
+      local_b0.position.y = (pCVar4->base).base.location.position.y;
+      local_b0.position.z = (pCVar4->base).base.location.position.z;
     }
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    if (&local_b0.orientation != (UOrientationVector *)(iVar6 + 0x30)) {
-      local_b0.orientation.vec.x = (((UOrientationVector *)(iVar6 + 0x30))->vec).x;
-      local_b0.orientation.vec.y = *(float *)(iVar6 + 0x34);
-      local_b0.orientation.vec.z = *(float *)(iVar6 + 0x38);
+    pCVar4 = g_HeroActors[g_LocalHeroIndex];
+    pUVar16 = &(pCVar4->base).base.orient;
+    if (&local_b0.orientation != pUVar16) {
+      local_b0.orientation.vec.x = (pUVar16->vec).x;
+      local_b0.orientation.vec.y = (pCVar4->base).base.orient.vec.y;
+      local_b0.orientation.vec.z = (pCVar4->base).base.orient.vec.z;
     }
     core_slew_cpp_CSlew_processInput_FUN_0051f980(&local_b0);
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    (**(code **)(*(int *)(iVar6 + 0x14c) + 0x60))(iVar6,&local_b0,&local_b0.orientation);
+    (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
+              ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_b0.position,
+               (CVector3f *)&local_b0.orientation);
     if ((DAT_01bd1d94 & 1) != 0) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
                 (&g_CDemonCamera_01fb8508,_DAT_01bd1d8c,_DAT_01bd1d90,&local_88);
       input_ptr = &local_7c;
       local_7c.x = local_88.x;
-      *(uint *)((int)&local_7c + (uint)bVar14 * -8 + 4) =
-           *(uint *)((int)&local_88 + (uint)bVar14 * -8 + 4);
-      *(uint *)((int)&local_7c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-           *(uint *)((int)&local_88 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
+      *(uint *)((int)&local_7c + (uint)bVar20 * -8 + 4) =
+           *(uint *)((int)&local_88 + (uint)bVar20 * -8 + 4);
+      *(uint *)((int)&local_7c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
+           *(uint *)((int)&local_88 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);
       core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
                 (&g_CDemonCamera_01fb8508,input_ptr,&local_94);
       local_7c.x = local_94.x;
-      *(uint *)((int)&local_7c + (uint)bVar14 * -8 + 4) =
-           *(uint *)((int)&local_94 + (uint)bVar14 * -8 + 4);
-      *(uint *)((int)&local_7c + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =
-           *(uint *)((int)&local_94 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
-      local_70 = (float)local_7c.x * _DAT_0059de8c;
-      local_6c = (float)local_7c.y * _DAT_0059de8c;
-      local_68 = (float)local_7c.z * _DAT_0059de8c;
-      iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-      (**(code **)(*(int *)(iVar6 + 0x14c) + 0x60))(iVar6,&local_70,iVar6 + 0x30);
+      *(uint *)((int)&local_7c + (uint)bVar20 * -8 + 4) =
+           *(uint *)((int)&local_94 + (uint)bVar20 * -8 + 4);
+      *(uint *)((int)&local_7c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
+           *(uint *)((int)&local_94 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);
+      local_70.x = (float)local_7c.x * _DAT_0059de8c;
+      local_70.y = (float)local_7c.y * _DAT_0059de8c;
+      local_70.z = (float)local_7c.z * _DAT_0059de8c;
+      pCVar4 = g_HeroActors[g_LocalHeroIndex];
+      (*((pCVar4->base).base.vtable._ub)->setPositionAndOrientation)
+                ((CDemonActor *)pCVar4,&local_70,(CVector3f *)&(pCVar4->base).base.orient);
       DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
     }
   }
@@ -158,34 +167,33 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     core_set_cpp_CDemonSet_FUN_0050a260(g_CDemonSet_PTR_005be368);
   }
   if (this_ptr->developer_mode_enabled == 0) {
-    pcVar9 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
-    pcVar9 = getenv(pcVar9);
-    if (pcVar9 != (char *)0x0) goto LAB_0049cf70;
+    pcVar13 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
+    pcVar13 = getenv(pcVar13);
+    if (pcVar13 != (char *)0x0) goto LAB_0049cf70;
   }
   else {
 LAB_0049cf70:
-    iVar6 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F4);
-    if (iVar6 != 0) {
+    iVar9 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F4);
+    if (iVar9 != 0) {
       _DAT_01c780b8 = _DAT_01c780b8 + 1;
       _sprintf((char *)0x1c780c0,"demon%d.pcx",_DAT_01c780b8);
       engine_pcx_c_FUN_004f2990((char *)0x1c780c0);
     }
   }
-  core_inv_cpp_CInventory_FUN_004c2470
-            ((CInventory *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0));
+  core_inv_cpp_CInventory_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
   if (this_ptr->screen_clear_enabled != 0) {
     core_set_cpp_CDemonSet_FUN_0050aa70(g_CDemonSet_PTR_005be368);
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(this_ptr);
   if (_DAT_01c78ac8 != 0) {
-    iVar6 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
-    if ((iVar6 != 0) &&
-       (iVar6 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),
-       iVar6 != 0)) {
-      iVar6 = _DAT_01c78acc;
+    iVar9 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);
+    if ((iVar9 != 0) &&
+       (iVar9 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_V),
+       iVar9 != 0)) {
+      iVar9 = _DAT_01c78acc;
       if (_DAT_01c78acc == 0) {
         _DAT_01c78acc = 1;
-        _DAT_01c78ad4 = iVar6;
+        _DAT_01c78ad4 = iVar9;
       }
       else {
         _DAT_01c78acc = 0;
@@ -207,38 +215,38 @@ LAB_0049cf70:
                   file = local_34;
                   local_28 = (local_30 * g_WindowWidth) / 0x00000040;
                   local_20 = ((local_30 + 1) * g_WindowWidth) / 0x00000040;
-                  iVar6 = (local_38 * g_WindowHeight) / 0x00000040;
-                  iVar8 = (local_3c * g_WindowHeight) / 0x00000040;
-                  iVar11 = 0;
+                  iVar9 = (local_38 * g_WindowHeight) / 0x00000040;
+                  iVar11 = (local_3c * g_WindowHeight) / 0x00000040;
+                  iVar17 = 0;
                   local_18 = 0;
                   local_1c = 0;
-                  iVar12 = 0;
-                  if (iVar6 < iVar8) {
-                    local_24 = iVar6 * 4;
-                    local_2c = iVar8 << 2;
+                  iVar18 = 0;
+                  if (iVar9 < iVar11) {
+                    local_24 = iVar9 * 4;
+                    local_2c = iVar11 << 2;
                     do {
                       if (local_28 < local_20) {
-                        puVar10 = (uint *)(local_28 * 4 +
+                        puVar14 = (uint *)(local_28 * 4 +
                                           *(int *)((int)g_ScreenBufferArray + local_24));
-                        iVar6 = local_28;
+                        iVar9 = local_28;
                         do {
-                          uVar7 = *puVar10;
-                          puVar10 = puVar10 + 1;
-                          iVar12 = iVar12 + (uVar7 >> 0x10 & 0xff);
-                          iVar6 = iVar6 + 1;
-                          iVar11 = iVar11 + (uVar7 & 0xff);
-                          local_1c = local_1c + (uVar7 >> 8 & 0xff);
+                          uVar10 = *puVar14;
+                          puVar14 = puVar14 + 1;
+                          iVar18 = iVar18 + (uVar10 >> 0x10 & 0xff);
+                          iVar9 = iVar9 + 1;
+                          iVar17 = iVar17 + (uVar10 & 0xff);
+                          local_1c = local_1c + (uVar10 >> 8 & 0xff);
                           local_18 = local_18 + 1;
-                        } while (iVar6 < local_20);
+                        } while (iVar9 < local_20);
                       }
                       local_24 = local_24 + 4;
                     } while (local_24 < local_2c);
                   }
                   local_1c = local_1c / local_18;
-                  iVar11 = iVar11 / local_18;
-                  _fputc(iVar12 / local_18,local_34);
+                  iVar17 = iVar17 / local_18;
+                  _fputc(iVar18 / local_18,local_34);
                   _fputc(local_1c,file);
-                  _fputc(iVar11,file);
+                  _fputc(iVar17,file);
                   local_30 = local_30 + 1;
                 } while (local_30 < 0x00000040);
               }
@@ -269,34 +277,34 @@ LAB_0049cf70:
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0x16);
     _DAT_01c71e38 = _DAT_01c71e38 + 1;
     _DAT_01c71e30 = _DAT_01c71e30 + (double)this_ptr->delta_time_float;
-    dVar3 = 1.0 / (double)this_ptr->delta_time_float;
-    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),
+    dVar1 = 1.0 / (double)this_ptr->delta_time_float;
+    _sprintf(local_2dc,"FR: %f, AVG: %f, PC: %d",SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),
                SUB84(__BITCAST_UINT64((double)_DAT_01c71e38 / _DAT_01c71e30),0),
                (int)((ulonglong)((double)_DAT_01c71e38 / _DAT_01c71e30) >> 0x20),
                g_RenderedTriangleCount);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0xb);
-    iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    dVar5 = (double)*(float *)(iVar6 + 0x34) * 0.31830988619288902 * 180;
-    dVar4 = (double)*(float *)(iVar6 + 0x38) * 0.31830988619288902 * 180;
-    dVar3 = 180 * (double)*(float *)(iVar6 + 0x30) * 0.31830988619288902;
-    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",(double)*(float *)(iVar6 + 0x20),
-               SUB84(__BITCAST_UINT64((double)*(float *)(iVar6 + 0x24)),0),
-               (int)((ulonglong)(double)*(float *)(iVar6 + 0x24) >> 0x20),
-               SUB84(__BITCAST_UINT64((double)*(float *)(iVar6 + 0x28)),0),
-               (int)((ulonglong)(double)*(float *)(iVar6 + 0x28) >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0),
-               (int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),
-               SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20));
+    pCVar4 = g_HeroActors[g_LocalHeroIndex];
+    dVar8 = (double)(pCVar4->base).base.orient.vec.y * 0.31830988619288902 * 180;
+    dVar7 = (double)(pCVar4->base).base.orient.vec.z * 0.31830988619288902 * 180;
+    dVar6 = 180 * (double)(pCVar4->base).base.orient.vec.x * 0.31830988619288902;
+    dVar1 = (double)(pCVar4->base).base.location.position.z;
+    dVar2 = (double)(pCVar4->base).base.location.position.y;
+    _sprintf(local_2dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
+               (double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),
+               (int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),
+               SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),
+               (int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0);
     _sprintf(local_2dc,"Slew : %s, Virtual Director : %s",
                (&PTR_s_Off_005b9358)[this_ptr->is_paused],
                (&PTR_s_Off_005b9358)[this_ptr->is_game_active]);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,0xb);
-    pCVar2 = this_ptr->debug_fudge_target;
-    if (pCVar2 != (CVector3f *)0x0) {
-      _sprintf(local_2dc,"Fudge: %g,%g,%g",SUB84(__BITCAST_UINT64((double)pCVar2->x),0),
-                 (int)((ulonglong)(double)pCVar2->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar2->y),0),
-                 (int)((ulonglong)(double)pCVar2->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar2->z),0),
-                 (int)((ulonglong)(double)pCVar2->z >> 0x20));
+    pCVar5 = this_ptr->debug_fudge_target;
+    if (pCVar5 != (CVector3f *)0x0) {
+      _sprintf(local_2dc,"Fudge: %g,%g,%g",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),
+                 (int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),
+                 (int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),
+                 (int)((ulonglong)(double)pCVar5->z >> 0x20));
       engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0x4d);
     }
     sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70
@@ -312,14 +320,14 @@ LAB_0049cf70:
     engine_2d_c_drawText_FUN_00402600(this_ptr->debug_info_string,0,g_WindowHeight + -0x21);
   }
   if (_DAT_01c78ad8 != 0) {
-    uVar7 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0();
-    iVar6 = 0x37;
-    for (; uVar7 != 0; uVar7 = sound_sndmain_cpp_FUN_00527520(uVar7)) {
+    uVar10 = sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0();
+    iVar9 = 0x37;
+    for (; uVar10 != 0; uVar10 = sound_sndmain_cpp_FUN_00527520(uVar10)) {
       sound_sndmain_cpp_CSfxSample_init_FUN_00525b70(&local_604);
-      iVar8 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uVar7,&local_604);
-      if (iVar8 != 0) {
-        engine_2d_c_drawTextXY_FUN_00402760(0,iVar6,(char *)&local_604);
-        iVar6 = iVar6 + 0xb;
+      iVar11 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uVar10,&local_604);
+      if (iVar11 != 0) {
+        engine_2d_c_drawTextXY_FUN_00402760(0,iVar9,(char *)&local_604);
+        iVar9 = iVar9 + 0xb;
       }
     }
   }
@@ -335,20 +343,20 @@ LAB_0049cf70:
               (g_CEditorTools_PTR_005b6d50,local_3dc);
     engine_2d_c_drawText_FUN_00402600(local_3dc,0,g_WindowHeight + -0x42);
   }
-  iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6);
-  if (iVar6 == 2) {
-    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You're dead.  Game over.");
-    piVar13 = &local_604.taken;
+  EVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+                     (&g_HeroActors[g_LocalHeroIndex]->base);
+  if (EVar12 == DEATH_STATE_DEAD) {
+    pcVar13 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("You're dead.  Game over.");
+    piVar19 = &local_604.taken;
     do {
-      cVar1 = *pcVar9;
-      *(char *)piVar13 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      *(char *)((int)piVar13 + 1) = cVar1;
-      piVar13 = (int *)((int)piVar13 + 2);
-    } while (cVar1 != '\0');
+      cVar3 = *pcVar13;
+      *(char *)piVar19 = cVar3;
+      if (cVar3 == '\0') break;
+      cVar3 = pcVar13[1];
+      pcVar13 = pcVar13 + 2;
+      *(char *)((int)piVar19 + 1) = cVar3;
+      piVar19 = (int *)((int)piVar19 + 2);
+    } while (cVar3 != '\0');
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
               (g_CBitFont_PTR_014b98f8,0,g_WindowWidth,
                g_WindowHeight + g_CBitFont_PTR_014b98f8->max_char_height * -2,

@@ -51,7 +51,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
         core_cloth_cpp_CCloth_render_FUN_00437db0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
         local_14 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                             ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                               g_CStrangerActorType_02dc9fac.name_hash);
         if (local_14 != (CDemonActor *)0x0) {
           local_28.x = 0.0;

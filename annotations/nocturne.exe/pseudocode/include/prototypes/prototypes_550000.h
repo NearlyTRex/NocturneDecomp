@@ -210,7 +210,7 @@ void __cdecl core_xform_cpp_normalizeMatrix_FUN_0055acd0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_clearTranslation_FUN_0055ae60(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-float core_xform_cpp_FUN_0055b0b0(void);
+float __cdecl core_xform_cpp_FUN_0055b0b0(void);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f *matrix_in,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_getTranslation_FUN_0055bc00(CMatrix3x4f *matrix_in,CVector3f *vector_out);

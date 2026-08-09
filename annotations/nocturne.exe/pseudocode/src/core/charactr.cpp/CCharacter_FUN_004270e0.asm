@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d758
 ;   undefined4 g_CGame_01c775ec.delta_time_float
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0051a700
@@ -60,7 +60,7 @@ section .text
     PUSH ECX                            ; 0042710c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0042710d
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
-    MOV EAX,[0x01cae0e8]                ; 00427112 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 00427112 | g_LocalHeroIndex
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 00427117
     ADD ESP,0x8                         ; 0042711e
     CMP ESI,EBX                         ; 00427121

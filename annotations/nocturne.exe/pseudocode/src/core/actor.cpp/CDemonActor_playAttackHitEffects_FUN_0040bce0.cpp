@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 
 {
-  CDemonActor *pCVar1;
+  CHero *pCVar1;
   
-  pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
-  if ((pCVar1 == *(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) && (attack_flags != 0)) {
+  pCVar1 = (CHero *)(*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
+  if ((pCVar1 == g_HeroActors[g_LocalHeroIndex]) && (attack_flags != 0)) {
     if ((uint)attack_flags < 2) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       return;
     }
     if (attack_flags == 2) {
-      xxx_unk_c_FUN_004940d0(PTR_DAT_005b9284);
+      engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
       return;
     }
   }

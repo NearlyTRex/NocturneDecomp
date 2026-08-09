@@ -27,7 +27,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0059bde0 = 65536
 ;   float FLOAT_0059bde4 = 0.00390625
-;   undefined4 CVector3f_01c70708.z
+;   int g_FastInvSqrtMagic
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
@@ -92,7 +92,7 @@ section .text
     FADDP                               ; 00442cea
     FSTP float ptr [ESP + 0x24]         ; 00442cec
     MOV EAX,dword ptr [ESP + 0x24]      ; 00442cf0
-    MOV EDX,dword ptr [0x01c70710]      ; 00442cf4 | CVector3f_01c70708.z
+    MOV EDX,dword ptr [0x01c70710]      ; 00442cf4 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 00442cfa
     SUB EDX,EAX                         ; 00442cfc
     MOV dword ptr [ESP + 0x28],EDX      ; 00442cfe

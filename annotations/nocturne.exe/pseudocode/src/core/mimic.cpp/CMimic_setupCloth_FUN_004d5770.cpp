@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
 
 {
@@ -27,7 +25,7 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                     (*(CDemonActor **)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                     ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                       g_CGabriellaActorType_01c713e8.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
     pcVar4 = pCVar1[0x184].create_event + 0x5c;
@@ -44,10 +42,10 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(CMimic *this_ptr)
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
     }
   }
-  iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-  frame_number = *(float *)(iVar3 + 0x158);
+  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
+  ;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
-                          ((CMotionController *)(iVar3 + 0x150));
+                          (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
   this_ptr_00 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
             (&this_ptr_00->motion_controller,motion_name->motion_name,frame_number);

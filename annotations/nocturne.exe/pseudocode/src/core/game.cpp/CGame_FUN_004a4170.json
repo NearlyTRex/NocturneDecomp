@@ -28,25 +28,25 @@
       {
         "category": "other",
         "column": 35,
-        "line": 515,
+        "line": 498,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 515,
+        "line": 498,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 516,
+        "line": 499,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 516,
+        "line": 499,
         "message": "exponent has no digits"
       },
       {
@@ -122,7 +122,7 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 510,
+    "complexity_score": 515,
     "cross_reference_count": 2,
     "function_call_count": 46,
     "global_count": 59,
@@ -130,8 +130,9 @@
     "pseudocode_lines": 320,
     "suspect_count": 16,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
-      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
@@ -718,8 +719,8 @@
     },
     {
       "addr": "01cae0e8",
-      "name": "DAT_01cae0e8",
-      "type": "undefined4",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
       "value": null
     },
     {
@@ -1075,24 +1076,16 @@
       "line": 246,
       "match": "DAT_01cae0d4",
       "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01cae0d4,&DAT_01cae0e8);",
+      "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01cae0d4,&g_LocalHeroIndex);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 246,
-      "match": "DAT_01cae0e8",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01cae0d4,&DAT_01cae0e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 262,
-      "match": "*(CDemonActor **)(iVar2 + 0x1cae0d8",
+      "match": "(CDemonActor **)((int)g_HeroActors",
       "severity": "moderate",
-      "text": "*(CDemonActor **)(iVar2 + 0x1cae0d8) = pCVar3;",
-      "type": "raw_address_pointer_store"
+      "text": "*(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -1109,6 +1102,14 @@
       "severity": "mild",
       "text": "puVar6 = &DAT_01c786a0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `g_HeroActors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 262,
+      "match": "(int)g_HeroActors",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",

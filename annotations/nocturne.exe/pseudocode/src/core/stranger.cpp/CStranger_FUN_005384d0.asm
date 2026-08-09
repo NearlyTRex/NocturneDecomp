@@ -126,7 +126,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_stranger.cpp_CStranger_FUN_00535900 at 005362ed
+;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 005362ed
 ;   core_stranger.cpp_CStranger_setup_FUN_00535450 at 005356f7
 ;
 ; Referenced Globals:

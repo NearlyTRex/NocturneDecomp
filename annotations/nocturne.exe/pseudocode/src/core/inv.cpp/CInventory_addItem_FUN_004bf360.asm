@@ -104,7 +104,7 @@ section .text
     PUSH ESI                            ; 004bf3d7
     CALL dword ptr [EAX + 0x80]         ; 004bf3d8
     ADD ESP,0x8                         ; 004bf3de
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004bf3e1 | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004bf3e1 | g_LocalHeroIndex
         ;   Label: LAB_004bf3e1
     MOV EAX,dword ptr [EBP + 0x4]       ; 004bf3e7
     CMP EAX,dword ptr [EBX*0x4 + 0x1cae0d8] ; 004bf3ea

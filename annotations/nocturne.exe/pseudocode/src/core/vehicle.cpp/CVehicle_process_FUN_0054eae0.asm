@@ -451,7 +451,7 @@ section .text
     POP EBX                             ; 0054efab
     LEA EAX,[EAX]                       ; 0054efac
     RET                                 ; 0054efb0
-    MOV EAX,[0x01cae0e8]                ; 0054efb1 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 0054efb1 | g_LocalHeroIndex
         ;   Label: LAB_0054efb1
     LEA EDX,[EBX + 0x20]                ; 0054efb6
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0054efb9

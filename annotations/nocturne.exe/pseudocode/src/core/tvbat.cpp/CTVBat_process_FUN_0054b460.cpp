@@ -7,32 +7,32 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float delta_time)
 
 {
   float *pfVar1;
   float *pfVar2;
-  CLocation *pCVar3;
+  float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   float fVar7;
   float fVar8;
-  float fVar9;
-  CDemonActor *pCVar10;
+  CDemonActor *pCVar9;
+  CHero *pCVar10;
   CCharacter *pCVar11;
   int iVar12;
   CKeyFramedModel *pCVar13;
   uint uVar14;
   float fVar15;
   int iVar16;
-  int iVar17;
-  float10 fVar18;
+  CLocation *pCVar17;
+  int iVar18;
   float10 fVar19;
   float10 fVar20;
   float10 fVar21;
+  float10 fVar22;
   float local_178;
   float local_170;
   SDamageInfo local_16c;
@@ -74,7 +74,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
   
   if ((this_ptr->follow_orders != 0) && (this_ptr->boss_actor == (CDemonActor *)0x0)) {
     iVar16 = 0;
-    for (iVar17 = 0; iVar17 < g_CDemonSet_PTR_005be368->enemy_count; iVar17 = iVar17 + 1) {
+    for (iVar18 = 0; iVar18 < g_CDemonSet_PTR_005be368->enemy_count; iVar18 = iVar18 + 1) {
       iVar12 = core_actor_cpp_isOfClass_FUN_0040d7e0
                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),
                           "CVampireBoss");
@@ -86,11 +86,11 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
     }
   }
   if ((this_ptr->follow_orders != 0) &&
-     (pCVar10 = this_ptr->boss_actor, pCVar10 != (CDemonActor *)0x0)) {
-    if ((CLocation *)&this_ptr->home_pos != &pCVar10->location) {
-      (this_ptr->home_pos).x = (pCVar10->location).position.x;
-      (this_ptr->home_pos).y = (pCVar10->location).position.y;
-      (this_ptr->home_pos).z = (pCVar10->location).position.z;
+     (pCVar9 = this_ptr->boss_actor, pCVar9 != (CDemonActor *)0x0)) {
+    if ((CLocation *)&this_ptr->home_pos != &pCVar9->location) {
+      (this_ptr->home_pos).x = (pCVar9->location).position.x;
+      (this_ptr->home_pos).y = (pCVar9->location).position.y;
+      (this_ptr->home_pos).z = (pCVar9->location).position.z;
     }
     (this_ptr->home_pos).y = (this_ptr->home_pos).y + 4.0f;
   }
@@ -101,11 +101,11 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
   if (iVar16 == 3) {
     return;
   }
-  pCVar3 = &(this_ptr->base).base.base.location;
+  pCVar17 = &(this_ptr->base).base.base.location;
   pfVar1 = &(this_ptr->base).base.base.location.position.z;
   pfVar2 = &(this_ptr->base).base.base.location.position.y;
   if (iVar16 == 1) {
-    local_dc.x = (pCVar3->position).x;
+    local_dc.x = (pCVar17->position).x;
     local_dc.y = *pfVar2;
     local_dc.z = *pfVar1;
     (this_ptr->velocity).y = delta_time * (float)-32 + (this_ptr->velocity).y;
@@ -113,25 +113,25 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
     local_90 = (this_ptr->velocity).y * delta_time;
     local_8c = (this_ptr->velocity).z * delta_time;
     fVar15 = (this_ptr->base).base.base.location.position.y;
-    (pCVar3->position).x = (pCVar3->position).x + local_94;
-    fVar4 = (this_ptr->base).base.base.location.position.z;
+    (pCVar17->position).x = (pCVar17->position).x + local_94;
+    fVar3 = (this_ptr->base).base.base.location.position.z;
     (this_ptr->base).base.base.location.position.y = fVar15 + local_90;
-    (this_ptr->base).base.base.location.position.z = fVar4 + local_8c;
+    (this_ptr->base).base.base.location.position.z = fVar3 + local_8c;
     (this_ptr->base).base.base.orient.vec.z =
          delta_time * this_ptr->rot_speed * 2.0f + (this_ptr->base).base.base.orient.vec.z
     ;
     fVar15 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       (&g_CDemonRaytrace_01fba938,&local_dc,&pCVar3->position,&local_a0,(int *)0x0)
-    ;
+                       (&g_CDemonRaytrace_01fba938,&local_dc,&pCVar17->position,&local_a0,(int *)0x0
+                       );
     if ((0.0 <= fVar15) && (fVar15 < 1.0)) {
-      fVar4 = ((this_ptr->base).base.base.location.position.y - local_dc.y) * fVar15 *
+      fVar3 = ((this_ptr->base).base.base.location.position.y - local_dc.y) * fVar15 *
               0.8f;
-      fVar5 = ((this_ptr->base).base.base.location.position.z - local_dc.z) * fVar15 *
+      fVar4 = ((this_ptr->base).base.base.location.position.z - local_dc.z) * fVar15 *
               0.8f;
-      (pCVar3->position).x =
-           local_dc.x + ((pCVar3->position).x - local_dc.x) * fVar15 * 0.8f;
-      (this_ptr->base).base.base.location.position.y = local_dc.y + fVar4;
-      (this_ptr->base).base.base.location.position.z = local_dc.z + fVar5;
+      (pCVar17->position).x =
+           local_dc.x + ((pCVar17->position).x - local_dc.x) * fVar15 * 0.8f;
+      (this_ptr->base).base.base.location.position.y = local_dc.y + fVar3;
+      (this_ptr->base).base.base.location.position.z = local_dc.z + fVar4;
       (this_ptr->velocity).z = 0.0;
       (this_ptr->velocity).y = (this_ptr->velocity).z;
       (this_ptr->velocity).x = (this_ptr->velocity).y;
@@ -148,18 +148,18 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
     this_ptr->state = 2;
     return;
   }
-  local_7c = (pCVar3->position).x;
+  local_7c = (pCVar17->position).x;
   local_78 = *pfVar2;
   local_74 = *pfVar1;
   if (this_ptr->follow_orders == 0) {
-    pCVar11 = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    (this_ptr->base).victim = pCVar11;
-    if (pCVar11 != (CCharacter *)0x0) {
-      pCVar3 = &(pCVar11->base).location;
-      if ((CLocation *)&local_58 != pCVar3) {
-        local_58 = (pCVar3->position).x;
-        local_54 = (pCVar11->base).location.position.y;
-        local_50 = (pCVar11->base).location.position.z;
+    pCVar10 = g_HeroActors[g_LocalHeroIndex];
+    (this_ptr->base).victim = &pCVar10->base;
+    if (pCVar10 != (CHero *)0x0) {
+      pCVar17 = &(pCVar10->base).base.location;
+      if ((CLocation *)&local_58 != pCVar17) {
+        local_58 = (pCVar17->position).x;
+        local_54 = (pCVar10->base).base.location.position.y;
+        local_50 = (pCVar10->base).base.location.position.z;
       }
       local_18 = (this_ptr->base).base.base.direction_hint % 8 + -4;
       local_54 = (float)local_18 * (float)0.5 +
@@ -202,14 +202,15 @@ LAB_0054b592:
       g_CurrentLineNumber = 266;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
     }
-    iVar16 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    if (&local_58 != (float *)(iVar16 + 0x20)) {
-      local_58 = *(float *)(iVar16 + 0x20);
-      local_54 = *(float *)(iVar16 + 0x24);
-      local_50 = *(float *)(iVar16 + 0x28);
+    pCVar10 = g_HeroActors[g_LocalHeroIndex];
+    pCVar17 = &(pCVar10->base).base.location;
+    if ((CLocation *)&local_58 != pCVar17) {
+      local_58 = (pCVar17->position).x;
+      local_54 = (pCVar10->base).base.location.position.y;
+      local_50 = (pCVar10->base).base.location.position.z;
     }
     local_54 = this_ptr->height_offset + (float)4 + local_54;
-    (this_ptr->base).victim = *(CCharacter **)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
+    (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
   }
   local_70 = local_58 - (this_ptr->base).base.base.location.position.x;
   local_6c = local_54 - (this_ptr->base).base.base.location.position.y;
@@ -220,10 +221,10 @@ LAB_0054b592:
     local_80 = local_68;
   }
   atan2((float10)local_88,(float10)local_80);
-  fVar18 = SQRT((float10)local_8c * (float10)local_8c + (float10)local_84 * (float10)local_84);
-  fVar19 = atan2((float10)local_88,fVar18);
-  fStack_24 = (float)fVar18;
-  fStack_28 = (float)-fVar19;
+  fVar19 = SQRT((float10)local_8c * (float10)local_8c + (float10)local_84 * (float10)local_84);
+  fVar20 = atan2((float10)local_88,fVar19);
+  fStack_24 = (float)fVar19;
+  fStack_28 = (float)-fVar20;
   if (((this_ptr->base).victim != (CCharacter *)0x0) && (this_ptr->follow_orders != 0)) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_130);
     pCVar11 = (this_ptr->base).victim;
@@ -253,15 +254,15 @@ LAB_0054b592:
       }
     }
   }
-  fVar18 = (float10)(this_ptr->base).base.base.orient.vec.x;
-  fVar19 = (float10)fsin(fVar18);
-  fVar20 = (float10)(this_ptr->base).base.base.orient.vec.y;
-  fVar21 = (float10)fsin(fVar20);
-  fVar18 = (float10)fcos(fVar18);
-  fVar20 = (float10)fcos(fVar20);
-  fStack_38 = (float)-fVar19;
-  fStack_3c = (float)(fVar21 * fVar18);
-  fStack_44 = (float)(fVar20 * fVar18);
+  fVar19 = (float10)(this_ptr->base).base.base.orient.vec.x;
+  fVar20 = (float10)fsin(fVar19);
+  fVar21 = (float10)(this_ptr->base).base.base.orient.vec.y;
+  fVar22 = (float10)fsin(fVar21);
+  fVar19 = (float10)fcos(fVar19);
+  fVar21 = (float10)fcos(fVar21);
+  fStack_38 = (float)-fVar20;
+  fStack_3c = (float)(fVar22 * fVar19);
+  fStack_44 = (float)(fVar21 * fVar19);
   fStack_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                         (fStack_24 - (this_ptr->base).base.base.orient.vec.y);
   fVar15 = (this_ptr->base).base.base.orient.vec.x;
@@ -270,24 +271,24 @@ LAB_0054b592:
   local_20 = fStack_24;
   fStack_28 = core_actor_cpp_normalizeAngleToPi_FUN_0040df00(fStack_28 - fVar15);
   fVar15 = this_ptr->move_speed;
+  fVar3 = this_ptr->move_speed;
   fVar4 = this_ptr->move_speed;
   fVar5 = this_ptr->move_speed;
-  fVar6 = this_ptr->move_speed;
-  fVar9 = (float)0.33333333333333298;
-  fVar7 = this_ptr->rot_speed;
+  fVar8 = (float)0.33333333333333298;
+  fVar6 = this_ptr->rot_speed;
   (this_ptr->velocity).x = this_ptr->move_speed * fStack_3c;
-  fVar8 = this_ptr->move_speed;
+  fVar7 = this_ptr->move_speed;
   (this_ptr->velocity).y = fVar15 * fStack_38;
-  (this_ptr->velocity).z = fVar8 * fStack_44;
-  (this_ptr->base).base.base.orient.vec.z = -fStack_24 * fVar9;
+  (this_ptr->velocity).z = fVar7 * fStack_44;
+  (this_ptr->base).base.base.orient.vec.z = -fStack_24 * fVar8;
   fVar15 = (this_ptr->base).base.base.location.position.y;
-  fVar8 = (this_ptr->base).base.base.location.position.z;
-  fVar9 = (this_ptr->base).base.base.orient.vec.x;
+  fVar7 = (this_ptr->base).base.base.location.position.z;
+  fVar8 = (this_ptr->base).base.base.orient.vec.x;
   (this_ptr->base).base.base.location.position.x =
-       fStack_3c * fVar4 * delta_time + (this_ptr->base).base.base.location.position.x;
-  (this_ptr->base).base.base.location.position.y = fStack_38 * fVar5 * delta_time + fVar15;
-  (this_ptr->base).base.base.location.position.z = fStack_44 * fVar6 * delta_time + fVar8;
-  (this_ptr->base).base.base.orient.vec.x = fStack_28 * delta_time * fVar7 + fVar9;
+       fStack_3c * fVar3 * delta_time + (this_ptr->base).base.base.location.position.x;
+  (this_ptr->base).base.base.location.position.y = fStack_38 * fVar4 * delta_time + fVar15;
+  (this_ptr->base).base.base.location.position.z = fStack_44 * fVar5 * delta_time + fVar7;
+  (this_ptr->base).base.base.orient.vec.x = fStack_28 * delta_time * fVar6 + fVar8;
   local_cc = (this_ptr->base).base.base.location.position.x - local_84;
   local_c8 = (this_ptr->base).base.base.location.position.y - local_80;
   fStack_c4 = (this_ptr->base).base.base.location.position.z - local_7c;

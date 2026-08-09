@@ -34,7 +34,7 @@
 ;   core_mimic.cpp_CMimic_process_FUN_004d49f0 at 004d4b04
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cae0e8
+;   int g_LocalHeroIndex
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
@@ -69,7 +69,7 @@ section .text
     MOV dword ptr [ESP + 0x2bc],ECX     ; 004d4be0
     MOV EBP,ECX                         ; 004d4be7
     XOR EAX,EAX                         ; 004d4be9
-    MOV EBX,dword ptr [0x01cae0e8]      ; 004d4beb | DAT_01cae0e8
+    MOV EBX,dword ptr [0x01cae0e8]      ; 004d4beb | g_LocalHeroIndex
         ;   Label: LAB_004d4beb
     MOV ECX,dword ptr [ESP + 0x2b8]     ; 004d4bf1
     SHL EBX,0x2                         ; 004d4bf8
@@ -92,7 +92,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2d4]     ; 004d4c2f
         ;   Label: LAB_004d4c2f
     MOV dword ptr [EAX + 0x2380],0xffffffff ; 004d4c36
-    MOV EAX,[0x01cae0e8]                ; 004d4c40 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4c40 | g_LocalHeroIndex
     MOV ESI,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4c45
     MOV ESI,dword ptr [ESI + 0x2c20]    ; 004d4c4c
     MOV EDX,dword ptr [ESI + 0x104]     ; 004d4c52
@@ -182,7 +182,7 @@ section .text
     PUSH EAX                            ; 004d4d5e
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0 ; 004d4d5f
         ;   XREF to: 0055afb0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV EAX,[0x01cae0e8]                ; 004d4d64 | DAT_01cae0e8
+    MOV EAX,[0x01cae0e8]                ; 004d4d64 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d4d69
     ADD ESP,0xc                         ; 004d4d70
     LEA EDX,[EAX + 0x30]                ; 004d4d73
