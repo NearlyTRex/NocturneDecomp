@@ -7,7 +7,7 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ec11d
+;   core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005ebf70 at 005ec11d
 ;
 ; Referenced Globals:
 ;   int g_PathfindingMaxClimbHeight

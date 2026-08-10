@@ -3,9 +3,9 @@
 // Function prototypes for engine/3d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_3d.c_oldFunction1_FUN_00403740
+// Original: engine_3d.c_abortOldFuncNoOpcode_FUN_00403740
 // Address: 00403740
-void * __cdecl oldFunction1(SMRGLHeaderPrimitive *prim);
+void * __cdecl abortOldFuncNoOpcode(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004037b0
 // Address: 004037b0
@@ -55,21 +55,21 @@ SMRGLHeaderExtended * __cdecl renderPolygonTexturedLitOp7(SMRGLHeaderPrimitive *
 // Address: 00403d60
 SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedWrappedOp8(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_oldFunction2_FUN_00403e00
+// Original: engine_3d.c_abortOldFuncOp9_FUN_00403e00
 // Address: 00403e00
-SMRGLHeaderExtended * __cdecl oldFunction2(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp9(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_processPolygonColor_FUN_00403e30
 // Address: 00403e30
 SMRGLHeaderExtended * __cdecl processPolygonColor(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction3_FUN_00403ec0
+// Original: engine_3d.c_abortOldFuncOp11_FUN_00403ec0
 // Address: 00403ec0
-SMRGLHeaderExtended * __cdecl oldFunction3(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp11(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_oldFunction4_FUN_00403ef0
+// Original: engine_3d.c_abortOldFuncOp12_FUN_00403ef0
 // Address: 00403ef0
-SMRGLHeaderExtended * __cdecl oldFunction4(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp12(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f20
 // Address: 00403f20
@@ -83,17 +83,17 @@ void * __cdecl renderPolygonTexturedUVLitPlaneMasked(SMRGLHeaderPrimitive *prim)
 // Address: 00404120
 SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedOp15(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction5_FUN_004041d0
+// Original: engine_3d.c_abortOldFuncOp16_FUN_004041d0
 // Address: 004041d0
-SMRGLHeaderExtended * __cdecl oldFunction5(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp16(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220
 // Address: 00404220
 SMRGLHeaderExtended * __cdecl renderPolygonSolidLitClampedOp17(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction6_FUN_00404420
+// Original: engine_3d.c_abortOldFuncOp18_FUN_00404420
 // Address: 00404420
-SMRGLHeaderExtended * __cdecl oldFunction6(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp18(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_setRelativeCoord_FUN_00404450
 // Address: 00404450
@@ -115,9 +115,9 @@ SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 // Address: 00404600
 SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 
-// Original: engine_3d.c_oldFunction7_FUN_00404690
+// Original: engine_3d.c_abortOldFuncOp23_FUN_00404690
 // Address: 00404690
-SMRGLHeaderExtended * __cdecl oldFunction7(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp23(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0
 // Address: 004046c0
@@ -143,9 +143,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedOp26(SMRGLHeaderPr
 // Address: 00404d50
 SMRGLHeaderExtended * __cdecl renderPolygonFogColorDepthOp27(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction8_FUN_00404df0
+// Original: engine_3d.c_abortOldFuncOp28_FUN_00404df0
 // Address: 00404df0
-SMRGLHeaderExtended * __cdecl oldFunction8(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp28(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e40
 // Address: 00404e40

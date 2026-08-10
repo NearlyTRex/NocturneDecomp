@@ -1,0 +1,629 @@
+Fragmented Function Report
+============================================================
+Program: nocedit.exe
+Fragmented functions: 299
+  with HIGH (flows into undefined bytes): 8
+  MEDIUM only (orphan code / interior gap): 291
+Mode: report only
+
+0040abc0    HIGH    core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0  (1 issue)
+      FLOW_UNDEFINED from 0040ac10   -> 0040ac11    POP -> undefined
+00412810    HIGH    core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810  (1 issue)
+      FLOW_UNDEFINED from 00412824   -> 00412825    PUSH -> undefined
+00412b20    HIGH    core_baron.cpp_staticInit_FUN_00412b20  (1 issue)
+      FLOW_UNDEFINED from 00412b3b   -> 00412b40    CALL -> undefined
+00545760    HIGH    core_particle.cpp_CParticle_process_FUN_00545760  (1 issue)
+      FLOW_UNDEFINED from 00610865   -> 0054583c    JMP -> undefined
+00558010    HIGH    core_scat.cpp_CScat_isWeaponReady_FUN_00558010  (1 issue)
+      FLOW_UNDEFINED from 0055802e   -> 00556e44    JZ -> undefined
+005644e0    HIGH    core_script.cpp_clearSelections_FUN_005644e0  (1 issue)
+      FLOW_UNDEFINED from 005644eb   -> 005644f1    MOV -> undefined
+005de710    HIGH    core_trap.cpp_CTrap_canPickup_FUN_005de710  (1 issue)
+      FLOW_UNDEFINED from 005de71b   -> 005de71d    JZ -> undefined
+005e9e70    HIGH    core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  (1 issue)
+      FLOW_UNDEFINED from 005e9ec1   -> 005e9ec2    POP -> undefined
+00404600    MEDIUM  engine_3d.c_drawLineStrip3D_FUN_00404600  (1 issue)
+      BODY_HOLE      from 00404600   -> 0059952d    interior gap 0059952d-03fc2963
+00405350    MEDIUM  engine_3d.c_renderPolygonTexturedUVLit_FUN_00405350  (1 issue)
+      BODY_HOLE      from 00405350   -> 00405421    interior gap 00405421-00608cdf
+00405430    MEDIUM  engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405430  (1 issue)
+      BODY_HOLE      from 00405430   -> 00405504    interior gap 00405504-00608cc1
+004055b0    MEDIUM  engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055b0  (1 issue)
+      BODY_HOLE      from 004055b0   -> 00405684    interior gap 00405684-0060fca8
+004070c0    MEDIUM  engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0  (1 issue)
+      BODY_HOLE      from 004070c0   -> 00407281    interior gap 00407281-03fc38de
+00407290    MEDIUM  engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290  (1 issue)
+      BODY_HOLE      from 00407290   -> 0040746e    interior gap 0040746e-03fc381f
+00407470    MEDIUM  engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470  (1 issue)
+      BODY_HOLE      from 00407470   -> 00407619    interior gap 00407619-03fc387d
+00407cf0    MEDIUM  engine_3d.c_drawLine2DFromIndices_FUN_00407cf0  (1 issue)
+      BODY_HOLE      from 00407cf0   -> 00407d63    interior gap 00407d63-0060e84f
+00407d70    MEDIUM  engine_3d.c_clipAndDrawLine2D_FUN_00407d70  (1 issue)
+      BODY_HOLE      from 00407d70   -> 00407fee    interior gap 00407fee-03fc0eaf
+00407ff0    MEDIUM  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0  (1 issue)
+      BODY_HOLE      from 00407ff0   -> 00408063    interior gap 00408063-004b1b13
+00408070    MEDIUM  engine_3d.c_clipAndDrawLine3D_FUN_00408070  (1 issue)
+      BODY_HOLE      from 00408070   -> 0040831b    interior gap 0040831b-03fc124e
+0040d330    MEDIUM  core_actor.cpp_draw3DLineSegment_FUN_0040d330  (1 issue)
+      BODY_HOLE      from 0040d330   -> 0040d46a    interior gap 0040d46a-0060477f
+0040d470    MEDIUM  core_actor.cpp_drawBoundingBox_FUN_0040d470  (1 issue)
+      BODY_HOLE      from 0040d470   -> 0040d937    interior gap 0040d937-0060d1a4
+0040d940    MEDIUM  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940  (1 issue)
+      BODY_HOLE      from 0040d940   -> 0040debb    interior gap 0040debb-006027df
+00410e50    MEDIUM  core_ammo.cpp_CAmmo_setup_FUN_00410e50  (1 issue)
+      FLOW_ORPHAN    from 00410e67   -> 00410e6c    CALL -> orphan code
+00411650    MEDIUM  core_ammobox.cpp_CAmmoBox_setup_FUN_00411650  (1 issue)
+      FLOW_ORPHAN    from 00411650   -> 00411651    PUSH -> orphan code
+00412e80    MEDIUM  core_baron.cpp_CBaron_process_FUN_00412e80  (1 issue)
+      BODY_HOLE      from 00412e80   -> 00413464    interior gap 00413464-0060eb5a
+0041a630    MEDIUM  core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630  (1 issue)
+      BODY_HOLE      from 0041a630   -> 0041aa35    interior gap 0041aa35-03fc490d
+0041aa40    MEDIUM  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40  (1 issue)
+      BODY_HOLE      from 0041aa40   -> 0041adcc    interior gap 0041adcc-0060a1af
+0041bf90    MEDIUM  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90  (1 issue)
+      BODY_HOLE      from 0041bf90   -> 0041ca3d    interior gap 0041ca3d-0060eb38
+0041ca40    MEDIUM  core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40  (1 issue)
+      BODY_HOLE      from 0041ca40   -> 0041cc37    interior gap 0041cc37-03fc48aa
+0041d8a0    MEDIUM  core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0  (1 issue)
+      BODY_HOLE      from 0041d8a0   -> 0041d96e    interior gap 0041d96e-00604830
+0041dbe0    MEDIUM  engine_boss.c_modelStructNotSupported4_FUN_0041dbe0  (1 issue)
+      BODY_HOLE      from 0041dbe0   -> 0041dc1f    interior gap 0041dc1f-03fc37be
+00422a50    MEDIUM  core_boxactor.cpp_CLightActor_process_FUN_00422a50  (1 issue)
+      BODY_HOLE      from 00422a50   -> 00422c74    interior gap 00422c74-03fc4848
+00424aa0    MEDIUM  core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0  (1 issue)
+      BODY_HOLE      from 00424aa0   -> 00424b03    interior gap 00424b03-03fc47ed
+00425fe0    MEDIUM  core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0  (1 issue)
+      BODY_HOLE      from 00425fe0   -> 00426401    interior gap 00426401-03fc4785
+004270f0    MEDIUM  core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0  (1 issue)
+      BODY_HOLE      from 004270f0   -> 004272ed    interior gap 004272ed-0060a49a
+00428f40    MEDIUM  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40  (1 issue)
+      BODY_HOLE      from 00428f40   -> 004297da    interior gap 004297da-0060cad7
+0042a420    MEDIUM  core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420  (1 issue)
+      BODY_HOLE      from 0042a420   -> 0042a514    interior gap 0042a514-03fc4664
+0042bd30    MEDIUM  core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30  (1 issue)
+      BODY_HOLE      from 0042bd30   -> 0042bf27    interior gap 0042bf27-03fc4725
+0042ce80    MEDIUM  core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80  (1 issue)
+      BODY_HOLE      from 0042ce80   -> 0042cfdc    interior gap 0042cfdc-03fc2cdb
+0042d090    MEDIUM  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090  (1 issue)
+      BODY_HOLE      from 0042d090   -> 0042d2fb    interior gap 0042d2fb-03fc1e10
+0042d300    MEDIUM  core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300  (1 issue)
+      BODY_HOLE      from 0042d300   -> 0042d35f    interior gap 0042d35f-03fc46c6
+0042dcd0    MEDIUM  core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0  (1 issue)
+      BODY_HOLE      from 0042dcd0   -> 0042ddc9    interior gap 0042ddc9-0060554e
+0043a2b0    MEDIUM  core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0  (1 issue)
+      BODY_HOLE      from 0043a2b0   -> 0043a41d    interior gap 0043a41d-03fc2e0b
+0043bae0    MEDIUM  core_cloth.cpp_CCloth_render_FUN_0043bae0  (1 issue)
+      BODY_HOLE      from 0043bae0   -> 0043bf34    interior gap 0043bf34-0060c72e
+0043fa00    MEDIUM  core_colonel.cpp_CColonel_process_FUN_0043fa00  (1 issue)
+      BODY_HOLE      from 0043fa00   -> 0043ff17    interior gap 0043ff17-0060e529
+00441d60    MEDIUM  core_conveyor.cpp_CConveyor_setup_FUN_00441d60  (1 issue)
+      BODY_HOLE      from 00441d60   -> 00441ded    interior gap 00441ded-00604857
+00442710    MEDIUM  core_course.cpp_CCourse_evaluate_FUN_00442710  (1 issue)
+      BODY_HOLE      from 00442710   -> 00442795    interior gap 00442795-03fc45a2
+004427a0    MEDIUM  core_course.cpp_CCourse_interpolate_FUN_004427a0  (1 issue)
+      BODY_HOLE      from 004427a0   -> 00442a84    interior gap 00442a84-006054e3
+00442ea0    MEDIUM  core_course.cpp_CCourse_importMatrices_FUN_00442ea0  (1 issue)
+      BODY_HOLE      from 00442ea0   -> 0044303d    interior gap 0044303d-0060487e
+00443040    MEDIUM  core_course.cpp_CCourse_showEditorMenu_FUN_00443040  (1 issue)
+      BODY_HOLE      from 00443040   -> 004436c9    interior gap 004436c9-00605476
+00443bc0    MEDIUM  core_course.cpp_CCourse_preview_FUN_00443bc0  (1 issue)
+      BODY_HOLE      from 00443bc0   -> 004440ca    interior gap 004440ca-0060dcf4
+00448880    MEDIUM  core_crate.cpp_CCrate_renderOpaque_FUN_00448880  (1 issue)
+      FLOW_ORPHAN    from 004488d7   -> 004488dc    CALL -> orphan code
+0044c740    MEDIUM  core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740  (1 issue)
+      BODY_HOLE      from 0044c740   -> 0044c776    interior gap 0044c776-006048e8
+0044d1c0    MEDIUM  core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0  (1 issue)
+      BODY_HOLE      from 0044d1c0   -> 0044d296    interior gap 0044d296-0060c7ea
+0044d2a0    MEDIUM  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0  (1 issue)
+      BODY_HOLE      from 0044d2a0   -> 0044d30c    interior gap 0044d30c-0060a4d7
+0044d600    MEDIUM  core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600  (1 issue)
+      BODY_HOLE      from 0044d600   -> 0044d7c7    interior gap 0044d7c7-0060c7cb
+0044d7d0    MEDIUM  core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0  (1 issue)
+      BODY_HOLE      from 0044d7d0   -> 0044da87    interior gap 0044da87-0060a228
+0044da90    MEDIUM  core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90  (1 issue)
+      BODY_HOLE      from 0044da90   -> 0044dbc8    interior gap 0044dbc8-0060c367
+0044dbd0    MEDIUM  core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0  (1 issue)
+      BODY_HOLE      from 0044dbd0   -> 0044dddd    interior gap 0044dddd-0060a54f
+0044de10    MEDIUM  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10  (1 issue)
+      BODY_HOLE      from 0044de10   -> 0044e357    interior gap 0044e357-006048c3
+0044e360    MEDIUM  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360  (1 issue)
+      BODY_HOLE      from 0044e360   -> 0044e78a    interior gap 0044e78a-0060a09f
+004507a0    MEDIUM  core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0  (1 issue)
+      BODY_HOLE      from 004507a0   -> 004509a3    interior gap 004509a3-0060c80b
+00450ac0    MEDIUM  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0  (1 issue)
+      BODY_HOLE      from 00450ac0   -> 00450e28    interior gap 00450e28-0060c76c
+00451090    MEDIUM  core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090  (1 issue)
+      BODY_HOLE      from 00451090   -> 00451123    interior gap 00451123-006048a0
+00452900    MEDIUM  core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900  (1 issue)
+      BODY_HOLE      from 00452900   -> 00452995    interior gap 00452995-0060a511
+00453950    MEDIUM  core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950  (1 issue)
+      BODY_HOLE      from 00453950   -> 00453a64    interior gap 00453a64-0060c7aa
+00454060    MEDIUM  core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060  (1 issue)
+      BODY_HOLE      from 00454060   -> 00454442    interior gap 00454442-00609f1f
+00458170    MEDIUM  shape_design.c_loadModelBinary_FUN_00458170  (2 issues)
+      BODY_HOLE      from 00458170   -> 004587e4    interior gap 004587e4-004587e8
+      BODY_HOLE      from 00458170   -> 00458a0e    interior gap 00458a0e-03fc4abc
+0045bd10    MEDIUM  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  (1 issue)
+      BODY_HOLE      from 0045bd10   -> 0045be3e    interior gap 0045be3e-00608b6c
+0045c6c0    MEDIUM  shape_design.c_showPointEditor_FUN_0045c6c0  (2 issues)
+      BODY_HOLE      from 0045c6c0   -> 0045c842    interior gap 0045c842-0045c843
+      BODY_HOLE      from 0045c6c0   -> 0045ca47    interior gap 0045ca47-0045ca48
+0045d300    MEDIUM  shape_design.c_renderPolygonWireframe_FUN_0045d300  (1 issue)
+      BODY_HOLE      from 0045d300   -> 0045d463    interior gap 0045d463-00603047
+0045d470    MEDIUM  shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470  (1 issue)
+      BODY_HOLE      from 0045d470   -> 0045d5c8    interior gap 0045d5c8-03fc2a23
+00461ee0    MEDIUM  shape_design.c_calculatePolygonAngularArea_FUN_00461ee0  (1 issue)
+      BODY_HOLE      from 00461ee0   -> 00462049    interior gap 00462049-006052a3
+00462050    MEDIUM  shape_design.c_calculateVertexAngle_FUN_00462050  (1 issue)
+      BODY_HOLE      from 00462050   -> 00462123    interior gap 00462123-00608bb4
+004635b0    MEDIUM  shape_design.c_findSharedEdge_FUN_004635b0  (1 issue)
+      BODY_HOLE      from 004635b0   -> 004637c3    interior gap 004637c3-004637d7
+00464c90    MEDIUM  shape_design.c_polygonToolModeManager_FUN_00464c90  (3 issues)
+      BODY_HOLE      from 00464c90   -> 00464e25    interior gap 00464e25-00464e3b
+      BODY_HOLE      from 00464c90   -> 00464f09    interior gap 00464f09-00464f1f
+      BODY_HOLE      from 00464c90   -> 00465042    interior gap 00465042-00465057
+00465d50    MEDIUM  shape_design.c_duplicateSharedVertices_FUN_00465d50  (1 issue)
+      BODY_HOLE      from 00465d50   -> 00465e8f    interior gap 00465e8f-00604d55
+004680f0    MEDIUM  shape_design.c_applyVertexCentering_FUN_004680f0  (1 issue)
+      BODY_HOLE      from 004680f0   -> 0046819b    interior gap 0046819b-00608c29
+0046bb80    MEDIUM  shape_design.c_cramTextureList_FUN_0046bb80  (1 issue)
+      BODY_HOLE      from 0046bb80   -> 0046dfb2    interior gap 0046dfb2-0060c501
+0046e760    MEDIUM  shape_design.c_displayHeapStatus_FUN_0046e760  (1 issue)
+      BODY_HOLE      from 0046e760   -> 0046e7d7    interior gap 0046e7d7-0046e7e7
+0046eba0    MEDIUM  shape_design.c_detachFaces_FUN_0046eba0  (1 issue)
+      BODY_HOLE      from 0046eba0   -> 0046ecf2    interior gap 0046ecf2-004a6f0a
+0046f290    MEDIUM  shape_design.c_showShapeEditorMenu_FUN_0046f290  (1 issue)
+      BODY_HOLE      from 0046f290   -> 0046f7ba    interior gap 0046f7ba-0046f84f
+00473a20    MEDIUM  core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20  (1 issue)
+      BODY_HOLE      from 00473a20   -> 00473f88    interior gap 00473f88-0060c848
+00473f90    MEDIUM  core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90  (1 issue)
+      BODY_HOLE      from 00473f90   -> 0047471a    interior gap 0047471a-0060c867
+00474ad0    MEDIUM  core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0  (1 issue)
+      BODY_HOLE      from 00474ad0   -> 0047520d    interior gap 0047520d-0060c884
+004758d0    MEDIUM  core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0  (1 issue)
+      BODY_HOLE      from 004758d0   -> 00475fb8    interior gap 00475fb8-0060c82b
+00479f30    MEDIUM  core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30  (1 issue)
+      BODY_HOLE      from 00479f30   -> 0047a3a4    interior gap 0047a3a4-0060a317
+0047aa30    MEDIUM  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30  (1 issue)
+      BODY_HOLE      from 0047aa30   -> 0047ad96    interior gap 0047ad96-0060c3c1
+0047b1e0    MEDIUM  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  (2 issues)
+      BODY_HOLE      from 0047b1e0   -> 0047bbb5    interior gap 0047bbb5-00609dd0
+      BODY_HOLE      from 0047b1e0   -> 00609e51    interior gap 00609e51-0060c2df
+0047c5f0    MEDIUM  core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0  (1 issue)
+      BODY_HOLE      from 0047c5f0   -> 0047c92d    interior gap 0047c92d-0060c8a1
+00488cd0    MEDIUM  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0  (1 issue)
+      BODY_HOLE      from 00488cd0   -> 0048908e    interior gap 0048908e-0060516d
+0048c760    MEDIUM  engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760  (1 issue)
+      BODY_HOLE      from 0048c760   -> 0048c77d    interior gap 0048c77d-00608ca4
+0048c7e0    MEDIUM  engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0  (1 issue)
+      BODY_HOLE      from 0048c7e0   -> 0048c7fd    interior gap 0048c7fd-00608c87
+0048c8c0    MEDIUM  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0  (1 issue)
+      FLOW_ORPHAN    from 0048c8c0   -> 0048c8c5    CALL -> orphan code
+0048d8a0    MEDIUM  engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0  (1 issue)
+      BODY_HOLE      from 0048d8a0   -> 0048da12    interior gap 0048da12-00604d2f
+0048f770    MEDIUM  shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770  (1 issue)
+      BODY_HOLE      from 0048f770   -> 0048f959    interior gap 0048f959-00604dee
+0048f960    MEDIUM  shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960  (1 issue)
+      BODY_HOLE      from 0048f960   -> 0048fa4b    interior gap 0048fa4b-00604dca
+0048fed0    MEDIUM  shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0  (1 issue)
+      BODY_HOLE      from 0048fed0   -> 00490017    interior gap 00490017-03fc49f1
+0049077d    MEDIUM  core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d  (1 issue)
+      BODY_HOLE      from 0049077d   -> 004907d1    interior gap 004907d1-004907df
+004917bc    MEDIUM  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_004917bc  (1 issue)
+      BODY_HOLE      from 004917bc   -> 00491bf6    interior gap 00491bf6-00491bff
+00491c9a    MEDIUM  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00491c9a  (1 issue)
+      BODY_HOLE      from 00491c9a   -> 00491ed1    interior gap 00491ed1-00491edf
+00492f03    MEDIUM  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03  (1 issue)
+      BODY_HOLE      from 00492f03   -> 0049333d    interior gap 0049333d-0049333f
+00493450    MEDIUM  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00493450  (1 issue)
+      BODY_HOLE      from 00493450   -> 00493687    interior gap 00493687-0049368f
+004940e9    MEDIUM  core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9  (1 issue)
+      BODY_HOLE      from 004940e9   -> 004941c3    interior gap 004941c3-004941cf
+00497e50    MEDIUM  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50  (1 issue)
+      BODY_HOLE      from 00497e50   -> 00498e44    interior gap 00498e44-0060c3de
+004997d0    MEDIUM  core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0  (1 issue)
+      BODY_HOLE      from 004997d0   -> 00499872    interior gap 00499872-0060c958
+00499880    MEDIUM  core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880  (1 issue)
+      BODY_HOLE      from 00499880   -> 00499922    interior gap 00499922-0060c93b
+0049a160    MEDIUM  core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160  (1 issue)
+      BODY_HOLE      from 0049a160   -> 0049a27d    interior gap 0049a27d-0060a5c6
+0049a280    MEDIUM  core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280  (1 issue)
+      BODY_HOLE      from 0049a280   -> 0049a3ae    interior gap 0049a3ae-0060a589
+0049cee0    MEDIUM  core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0  (1 issue)
+      FLOW_ORPHAN    from 0049ceed   -> 0049cef2    CALL -> orphan code
+004a1ca0    MEDIUM  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0  (1 issue)
+      BODY_HOLE      from 004a1ca0   -> 004a1e8e    interior gap 004a1e8e-006029f3
+004a1f40    MEDIUM  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40  (1 issue)
+      BODY_HOLE      from 004a1f40   -> 004a204f    interior gap 004a204f-0060dda8
+004a2050    MEDIUM  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050  (1 issue)
+      BODY_HOLE      from 004a2050   -> 004a250b    interior gap 004a250b-00602c17
+004b19d0    MEDIUM  crt_watcom.c__memset_FUN_004b19d0  (2 issues)
+      BODY_HOLE      from 004b19d0   -> 004b1a2a    interior gap 004b1a2a-004b1a2b
+      BODY_HOLE      from 004b19d0   -> 004b1a37    interior gap 004b1a37-004b1a37
+004b1a78    MEDIUM  crt_watcom.c__memcpy_FUN_004b1a78  (4 issues)
+      BODY_HOLE      from 004b1a78   -> 004b1a96    interior gap 004b1a96-004b1a97
+      BODY_HOLE      from 004b1a78   -> 004b1ab3    interior gap 004b1ab3-004b1ab3
+      BODY_HOLE      from 004b1a78   -> 004b1ad2    interior gap 004b1ad2-004b1ad3
+      BODY_HOLE      from 004b1a78   -> 004b1aea    interior gap 004b1aea-004b1aeb
+004b6e10    MEDIUM  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10  (1 issue)
+      BODY_HOLE      from 004b6e10   -> 004b7458    interior gap 004b7458-0060f2ff
+004b76d0    MEDIUM  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0  (2 issues)
+      BODY_HOLE      from 004b76d0   -> 004b7ab6    interior gap 004b7ab6-005768b5
+      BODY_HOLE      from 004b76d0   -> 005768d9    interior gap 005768d9-0060e3d1
+004be810    MEDIUM  core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004be810  (1 issue)
+      FLOW_ORPHAN    from 004be867   -> 004be86c    CALL -> orphan code
+004bf1f0    MEDIUM  core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0  (1 issue)
+      BODY_HOLE      from 004bf1f0   -> 004bf2d3    interior gap 004bf2d3-00610902
+004bf7f0    MEDIUM  core_fire.cpp_CBulletHole_init_FUN_004bf7f0  (1 issue)
+      BODY_HOLE      from 004bf7f0   -> 004bf9f5    interior gap 004bf9f5-03fc453d
+004c0300    MEDIUM  core_fire.cpp_CSpark_setupRenderState_FUN_004c0300  (1 issue)
+      BODY_HOLE      from 004c0300   -> 004c041d    interior gap 004c041d-006108e1
+004c0d80    MEDIUM  core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80  (1 issue)
+      BODY_HOLE      from 004c0d80   -> 004c0e63    interior gap 004c0e63-0060c91e
+004c25c0    MEDIUM  core_fire.cpp_CLaserBeam_render_FUN_004c25c0  (1 issue)
+      BODY_HOLE      from 004c25c0   -> 004c386e    interior gap 004c386e-03fc55e3
+004c64c0    MEDIUM  core_fire.cpp_CPopcorn_render_FUN_004c64c0  (1 issue)
+      BODY_HOLE      from 004c64c0   -> 004c6828    interior gap 004c6828-0060c8fc
+004c6830    MEDIUM  core_fire.cpp_CRainDrop_render_FUN_004c6830  (1 issue)
+      BODY_HOLE      from 004c6830   -> 004c6bd2    interior gap 004c6bd2-0061091f
+004c76a0    MEDIUM  core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0  (1 issue)
+      BODY_HOLE      from 004c76a0   -> 004c77f2    interior gap 004c77f2-004c77ff
+004cc300    MEDIUM  core_flies.cpp_CFlies_renderOpaque_FUN_004cc300  (1 issue)
+      BODY_HOLE      from 004cc300   -> 004cc6f3    interior gap 004cc6f3-03fc53d7
+004ce2d0    MEDIUM  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0  (1 issue)
+      BODY_HOLE      from 004ce2d0   -> 004ce79c    interior gap 004ce79c-03fc3534
+004d04b0    MEDIUM  engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0  (1 issue)
+      BODY_HOLE      from 004d04b0   -> 004d0842    interior gap 004d0842-03fc377c
+004d2190    MEDIUM  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190  (1 issue)
+      BODY_HOLE      from 004d2190   -> 004d232d    interior gap 004d232d-006108c4
+004d4d80    MEDIUM  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80  (1 issue)
+      BODY_HOLE      from 004d4d80   -> 004d5548    interior gap 004d5548-00605401
+004d5550    MEDIUM  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550  (1 issue)
+      BODY_HOLE      from 004d5550   -> 004d586c    interior gap 004d586c-03fc18bb
+004d7120    MEDIUM  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120  (1 issue)
+      BODY_HOLE      from 004d7120   -> 004d758a    interior gap 004d758a-03fc2f36
+004da100    MEDIUM  core_game.cpp_CGame_processFrame_FUN_004da100  (1 issue)
+      BODY_HOLE      from 004da100   -> 004dadd3    interior gap 004dadd3-0060a648
+004e84a0    MEDIUM  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0  (1 issue)
+      BODY_HOLE      from 004e84a0   -> 004e8503    interior gap 004e8503-03fc4479
+004eb9d0    MEDIUM  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0  (1 issue)
+      BODY_HOLE      from 004eb9d0   -> 004ebab3    interior gap 004ebab3-006108a7
+004f0e40    MEDIUM  core_haystack.cpp_CHaystack_process_FUN_004f0e40  (1 issue)
+      BODY_HOLE      from 004f0e40   -> 004f13e8    interior gap 004f13e8-0060e4e5
+004f1e30    MEDIUM  core_health.cpp_CHealthItem_setup_FUN_004f1e30  (1 issue)
+      FLOW_ORPHAN    from 004f1e47   -> 004f1e4c    CALL -> orphan code
+004f6550    MEDIUM  core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550  (1 issue)
+      BODY_HOLE      from 004f6550   -> 004f69b9    interior gap 004f69b9-03fc52d6
+004f80b0    MEDIUM  core_icepick.cpp_CIcePick_process_FUN_004f80b0  (1 issue)
+      BODY_HOLE      from 004f80b0   -> 004f8808    interior gap 004f8808-00604910
+004f8810    MEDIUM  core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810  (1 issue)
+      BODY_HOLE      from 004f8810   -> 004f8968    interior gap 004f8968-00604935
+00502620    MEDIUM  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (1 issue)
+      BODY_HOLE      from 00502620   -> 005028b4    interior gap 005028b4-00602e33
+00502a70    MEDIUM  core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70  (1 issue)
+      BODY_HOLE      from 00502a70   -> 00502b75    interior gap 00502b75-03fc42f7
+00502b80    MEDIUM  core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80  (1 issue)
+      BODY_HOLE      from 00502b80   -> 00502c8a    interior gap 00502c8a-03fc4359
+00505530    MEDIUM  engine_light.cpp_calculatePhongLighting_FUN_00505530  (1 issue)
+      BODY_HOLE      from 00505530   -> 00505771    interior gap 00505771-0060c457
+00506f10    MEDIUM  core_main.c_displayErrorAndQuit_FUN_00506f10  (1 issue)
+      BODY_HOLE      from 00506f10   -> 00507031    interior gap 00507031-0050703a
+005073a0    MEDIUM  core_main.c_showDeveloperToolsMenu_FUN_005073a0  (1 issue)
+      BODY_HOLE      from 005073a0   -> 00507a47    interior gap 00507a47-0060c475
+0050bec0    MEDIUM  core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0  (1 issue)
+      BODY_HOLE      from 0050bec0   -> 0050c047    interior gap 0050c047-03fc2f9b
+0050d970    MEDIUM  engine_matrix.c_normalizeVector3DFixed_FUN_0050d970  (1 issue)
+      BODY_HOLE      from 0050d970   -> 0050d9e6    interior gap 0050d9e6-00608c6a
+0050d9f0    MEDIUM  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0  (1 issue)
+      BODY_HOLE      from 0050d9f0   -> 0050dac1    interior gap 0050dac1-0060ca9b
+0050e5b0    MEDIUM  engine_matrix.c_projectToScreen_FUN_0050e5b0  (1 issue)
+      BODY_HOLE      from 0050e5b0   -> 0050e63b    interior gap 0050e63b-00608c4b
+0050ea70    MEDIUM  core_melee.cpp_CMelee_getDamage_FUN_0050ea70  (1 issue)
+      FLOW_ORPHAN    from 0050ea83   -> 0050ea88    CALL -> orphan code
+005173f0    MEDIUM  shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0  (1 issue)
+      BODY_HOLE      from 005173f0   -> 0051752c    interior gap 0051752c-0060c51b
+0051b570    MEDIUM  shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570  (1 issue)
+      BODY_HOLE      from 0051b570   -> 0051b6ef    interior gap 0051b6ef-00604e5d
+0051bd30    MEDIUM  shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30  (1 issue)
+      BODY_HOLE      from 0051bd30   -> 0051c069    interior gap 0051c069-00608a47
+0051e770    MEDIUM  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770  (1 issue)
+      BODY_HOLE      from 0051e770   -> 0051e827    interior gap 0051e827-0060de5c
+0051e830    MEDIUM  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830  (1 issue)
+      BODY_HOLE      from 0051e830   -> 0051e984    interior gap 0051e984-0060df10
+0051ef20    MEDIUM  shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20  (1 issue)
+      BODY_HOLE      from 0051ef20   -> 0051efb9    interior gap 0051efb9-00604e39
+0051efe0    MEDIUM  shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0  (1 issue)
+      BODY_HOLE      from 0051efe0   -> 0051f07a    interior gap 0051f07a-00604e15
+0051f3e0    MEDIUM  core_mimic.cpp_CMimic_setup_FUN_0051f3e0  (1 issue)
+      BODY_HOLE      from 0051f3e0   -> 0051f77c    interior gap 0051f77c-0060a29c
+0051f930    MEDIUM  core_mimic.cpp_CMimic_updatePose_FUN_0051f930  (1 issue)
+      BODY_HOLE      from 0051f930   -> 0051fcb9    interior gap 0051fcb9-0060495a
+005205f0    MEDIUM  core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0  (1 issue)
+      BODY_HOLE      from 005205f0   -> 00520864    interior gap 00520864-03fc4297
+005214c0    MEDIUM  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0  (1 issue)
+      BODY_HOLE      from 005214c0   -> 005222ee    interior gap 005222ee-03fc1b1d
+005229b0    MEDIUM  core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0  (1 issue)
+      BODY_HOLE      from 005229b0   -> 00522a4f    interior gap 00522a4f-0061088a
+005267a0    MEDIUM  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0  (1 issue)
+      BODY_HOLE      from 005267a0   -> 00526afe    interior gap 00526afe-0060497e
+00526b20    MEDIUM  core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20  (1 issue)
+      BODY_HOLE      from 00526b20   -> 00526d8c    interior gap 00526d8c-03fc4238
+00528140    MEDIUM  engine_model.c_getMRGLBounds_FUN_00528140  (1 issue)
+      BODY_HOLE      from 00528140   -> 005285eb    interior gap 005285eb-03fc3672
+0052a2c0    MEDIUM  core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0  (1 issue)
+      BODY_HOLE      from 0052a2c0   -> 0052a3e1    interior gap 0052a3e1-00610869
+0052aac0    MEDIUM  core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0  (1 issue)
+      BODY_HOLE      from 0052aac0   -> 0052ac98    interior gap 0052ac98-0060a119
+0052e020    MEDIUM  core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020  (1 issue)
+      BODY_HOLE      from 0052e020   -> 0052e1cd    interior gap 0052e1cd-03fc41f8
+00535c60    MEDIUM  core_msnedit.cpp_screenToWorldPosition_FUN_00535c60  (1 issue)
+      BODY_HOLE      from 00535c60   -> 00535de9    interior gap 00535de9-0060c654
+005390f0    MEDIUM  core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0  (1 issue)
+      BODY_HOLE      from 005390f0   -> 0053af23    interior gap 0053af23-03fc30af
+0053bd80    MEDIUM  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  (1 issue)
+      BODY_HOLE      from 0053bd80   -> 0053c0a8    interior gap 0053c0a8-03fc5ae9
+0053e220    MEDIUM  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220  (1 issue)
+      BODY_HOLE      from 0053e220   -> 0053e9da    interior gap 0053e9da-0060c59f
+0053f900    MEDIUM  core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900  (1 issue)
+      BODY_HOLE      from 0053f900   -> 0053fbb6    interior gap 0053fbb6-0060c4cd
+005406a0    MEDIUM  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0  (1 issue)
+      BODY_HOLE      from 005406a0   -> 005411b3    interior gap 005411b3-0060caf9
+00542370    MEDIUM  core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370  (1 issue)
+      BODY_HOLE      from 00542370   -> 00542462    interior gap 00542462-0060c496
+00542470    MEDIUM  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470  (1 issue)
+      BODY_HOLE      from 00542470   -> 00542af2    interior gap 00542af2-006049a3
+00542dd0    MEDIUM  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0  (1 issue)
+      BODY_HOLE      from 00542dd0   -> 00542fe4    interior gap 00542fe4-0060c4e9
+00543150    MEDIUM  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150  (1 issue)
+      BODY_HOLE      from 00543150   -> 00543595    interior gap 00543595-03fc5168
+00543800    MEDIUM  core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800  (1 issue)
+      BODY_HOLE      from 00543800   -> 005438b8    interior gap 005438b8-03fc419a
+00543970    MEDIUM  core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970  (1 issue)
+      BODY_HOLE      from 00543970   -> 00543aa9    interior gap 00543aa9-03fc413f
+00543bb0    MEDIUM  core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0  (1 issue)
+      BODY_HOLE      from 00543bb0   -> 00543ca9    interior gap 00543ca9-006049c6
+00543cf0    MEDIUM  core_netgame.cpp_SNetPlayer_copy_FUN_00543cf0  (1 issue)
+      BODY_HOLE      from 00543cf0   -> 00543dae    interior gap 00543dae-006049e9
+00546a60    MEDIUM  core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60  (1 issue)
+      BODY_HOLE      from 00546a60   -> 00546b9c    interior gap 00546b9c-0060c618
+00547320    MEDIUM  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  (1 issue)
+      BODY_HOLE      from 00547320   -> 00547bff    interior gap 00547bff-0061082b
+00547fc0    MEDIUM  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0  (1 issue)
+      BODY_HOLE      from 00547fc0   -> 0054838b    interior gap 0054838b-0061080c
+00548390    MEDIUM  core_path.cpp_getOrCreatePathMap_FUN_00548390  (1 issue)
+      BODY_HOLE      from 00548390   -> 005484fb    interior gap 005484fb-006107ef
+00548680    MEDIUM  core_path.cpp_renderPathMapsAtPosition_FUN_00548680  (1 issue)
+      BODY_HOLE      from 00548680   -> 00548745    interior gap 00548745-006107ce
+0054c850    MEDIUM  core_platfrm.cpp_CPlatform_ctor_FUN_0054c850  (1 issue)
+      BODY_HOLE      from 0054c850   -> 0054ca1d    interior gap 0054ca1d-0060511b
+0054cab0    MEDIUM  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0  (1 issue)
+      BODY_HOLE      from 0054cab0   -> 0054cc0e    interior gap 0054cc0e-0060e49d
+0054cc30    MEDIUM  core_platfrm.cpp_CPlatform_process_FUN_0054cc30  (1 issue)
+      BODY_HOLE      from 0054cc30   -> 0054d688    interior gap 0054d688-03fc5095
+0054e1e0    MEDIUM  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0  (1 issue)
+      BODY_HOLE      from 0054e1e0   -> 0054e2d6    interior gap 0054e2d6-03fc40da
+0054e320    MEDIUM  core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320  (1 issue)
+      BODY_HOLE      from 0054e320   -> 0054e3e6    interior gap 0054e3e6-03fc4073
+0054ea00    MEDIUM  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00  (1 issue)
+      BODY_HOLE      from 0054ea00   -> 0054f059    interior gap 0054f059-006050a5
+00555ff0    MEDIUM  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0  (1 issue)
+      BODY_HOLE      from 00555ff0   -> 00556179    interior gap 00556179-0060f3fd
+005571f0    MEDIUM  core_scat.cpp_CScat_process_FUN_005571f0  (1 issue)
+      BODY_HOLE      from 005571f0   -> 005578de    interior gap 005578de-0060e47b
+005584a0    MEDIUM  core_scat.cpp_CScat_blendAimBones_FUN_005584a0  (1 issue)
+      BODY_HOLE      from 005584a0   -> 00558719    interior gap 00558719-006057a8
+00558fd0    MEDIUM  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0  (1 issue)
+      BODY_HOLE      from 00558fd0   -> 005590f2    interior gap 005590f2-03fc4fd0
+0056a470    MEDIUM  core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470  (1 issue)
+      BODY_HOLE      from 0056a470   -> 0056aa01    interior gap 0056aa01-00604a0c
+0056ae50    MEDIUM  core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50  (1 issue)
+      BODY_HOLE      from 0056ae50   -> 0056b78a    interior gap 0056b78a-00604a34
+0056db80    MEDIUM  core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80  (1 issue)
+      BODY_HOLE      from 0056db80   -> 0056dda5    interior gap 0056dda5-0060ca60
+0056eac0    MEDIUM  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0  (1 issue)
+      BODY_HOLE      from 0056eac0   -> 0056f93d    interior gap 0056f93d-00609fee
+005702b0    MEDIUM  core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0  (1 issue)
+      BODY_HOLE      from 005702b0   -> 005706f5    interior gap 005706f5-0060c3fd
+00578d80    MEDIUM  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  (1 issue)
+      BODY_HOLE      from 00578d80   -> 0057a0b5    interior gap 0057a0b5-00604acb
+0057b600    MEDIUM  core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600  (1 issue)
+      BODY_HOLE      from 0057b600   -> 0057b901    interior gap 0057b901-00604a5b
+0057b910    MEDIUM  core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910  (1 issue)
+      BODY_HOLE      from 0057b910   -> 0057bbad    interior gap 0057bbad-00604aa4
+0057fd00    MEDIUM  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00  (1 issue)
+      BODY_HOLE      from 0057fd00   -> 0057ff6c    interior gap 0057ff6c-0060c41b
+005800d0    MEDIUM  core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0  (1 issue)
+      BODY_HOLE      from 005800d0   -> 005801a3    interior gap 005801a3-0060c6af
+00582930    MEDIUM  core_setedit.cpp_drawCameraFrustum_FUN_00582930  (1 issue)
+      BODY_HOLE      from 00582930   -> 00582f24    interior gap 00582f24-00603675
+00583170    MEDIUM  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170  (1 issue)
+      BODY_HOLE      from 00583170   -> 005848f2    interior gap 005848f2-00603ef7
+00585870    MEDIUM  core_setutil.cpp_C3DSCamera_apply_FUN_00585870  (1 issue)
+      BODY_HOLE      from 00585870   -> 0058596f    interior gap 0058596f-03fc401e
+00588c40    MEDIUM  core_shovel.cpp_CShovel_getDamage_FUN_00588c40  (1 issue)
+      FLOW_ORPHAN    from 00588c4d   -> 00588c52    CALL -> orphan code
+0058ac80    MEDIUM  core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80  (1 issue)
+      BODY_HOLE      from 0058ac80   -> 0058ad2f    interior gap 0058ad2f-03fc4eb0
+0058aeb0    MEDIUM  core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0  (1 issue)
+      BODY_HOLE      from 0058aeb0   -> 0058af35    interior gap 0058af35-03fc3f62
+0058af40    MEDIUM  core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40  (1 issue)
+      BODY_HOLE      from 0058af40   -> 0058afd1    interior gap 0058afd1-03fc3fbf
+0058bd00    MEDIUM  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  (1 issue)
+      BODY_HOLE      from 0058bd00   -> 0058c189    interior gap 0058c189-03fc3e87
+0058c190    MEDIUM  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190  (1 issue)
+      BODY_HOLE      from 0058c190   -> 0058d783    interior gap 0058d783-03fc3eef
+0058e240    MEDIUM  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  (1 issue)
+      BODY_HOLE      from 0058e240   -> 0058e3d3    interior gap 0058e3d3-00608b26
+00592690    MEDIUM  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  (1 issue)
+      BODY_HOLE      from 00592690   -> 00595f24    interior gap 00595f24-00605061
+005968b0    MEDIUM  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  (1 issue)
+      BODY_HOLE      from 005968b0   -> 00598ed8    interior gap 00598ed8-006107b0
+0059b640    MEDIUM  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640  (1 issue)
+      BODY_HOLE      from 0059b640   -> 0059b7f8    interior gap 0059b7f8-0060dfc0
+0059c5e0    MEDIUM  core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0  (1 issue)
+      BODY_HOLE      from 0059c5e0   -> 0059cb9b    interior gap 0059cb9b-0060c439
+0059e0a0    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  (2 issues)
+      BODY_HOLE      from 0059e0a0   -> 0059eb44    interior gap 0059eb44-006089ad
+      BODY_HOLE      from 0059e0a0   -> 0060e289    interior gap 0060e289-0060f63a
+0059eb50    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50  (1 issue)
+      BODY_HOLE      from 0059eb50   -> 0059f222    interior gap 0059f222-006055bd
+0059f260    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260  (2 issues)
+      BODY_HOLE      from 0059f260   -> 0059f6dd    interior gap 0059f6dd-005b3e14
+      BODY_HOLE      from 0059f260   -> 005b3e62    interior gap 005b3e62-0060e437
+0059f6e0    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0  (1 issue)
+      BODY_HOLE      from 0059f6e0   -> 0059f741    interior gap 0059f741-0060fb78
+0059f750    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750  (1 issue)
+      BODY_HOLE      from 0059f750   -> 0059f81c    interior gap 0059f81c-00604af3
+0059f820    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820  (1 issue)
+      BODY_HOLE      from 0059f820   -> 0059fa1d    interior gap 0059fa1d-03fc4d23
+0059fa20    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20  (1 issue)
+      BODY_HOLE      from 0059fa20   -> 0059faf4    interior gap 0059faf4-03fc3d59
+0059fdd0    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0  (1 issue)
+      BODY_HOLE      from 0059fdd0   -> 0059ff15    interior gap 0059ff15-00605014
+0059ff20    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20  (1 issue)
+      BODY_HOLE      from 0059ff20   -> 005a00ee    interior gap 005a00ee-00604f9d
+005a05e0    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_005a05e0  (1 issue)
+      BODY_HOLE      from 005a05e0   -> 005a0798    interior gap 005a0798-0060c8c0
+005a1510    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510  (1 issue)
+      BODY_HOLE      from 005a1510   -> 005a15d9    interior gap 005a15d9-00604b63
+005a15e0    MEDIUM  core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0  (1 issue)
+      BODY_HOLE      from 005a15e0   -> 005a16bd    interior gap 005a16bd-00604b87
+005a1b70    MEDIUM  core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70  (1 issue)
+      BODY_HOLE      from 005a1b70   -> 005a1ce5    interior gap 005a1ce5-00604bab
+005b0120    MEDIUM  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120  (1 issue)
+      BODY_HOLE      from 005b0120   -> 005b033f    interior gap 005b033f-00604f30
+005b1870    MEDIUM  core_sound.cpp_updateListeners_FUN_005b1870  (1 issue)
+      BODY_HOLE      from 005b1870   -> 005b1ec7    interior gap 005b1ec7-0060c6ef
+005b2d60    MEDIUM  core_sound.cpp_CSound_dtor_FUN_005b2d60  (1 issue)
+      FLOW_ORPHAN    from 005b2d60   -> 005b2d65    CALL -> orphan code
+005b4031    MEDIUM  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031  (13 issues)
+      BODY_HOLE      from 005b4031   -> 005b41b2    interior gap 005b41b2-005b41bf
+      BODY_HOLE      from 005b4031   -> 005b427d    interior gap 005b427d-005b427f
+      BODY_HOLE      from 005b4031   -> 005b430c    interior gap 005b430c-005b430f
+      BODY_HOLE      from 005b4031   -> 005b433a    interior gap 005b433a-005b433f
+      BODY_HOLE      from 005b4031   -> 005b4465    interior gap 005b4465-005b446f
+      BODY_HOLE      from 005b4031   -> 005b44da    interior gap 005b44da-005b44df
+      BODY_HOLE      from 005b4031   -> 005b44e6    interior gap 005b44e6-005b44ef
+      BODY_HOLE      from 005b4031   -> 005b45c9    interior gap 005b45c9-005b45cf
+      ... +5 more
+005b4823    MEDIUM  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823  (1 issue)
+      BODY_HOLE      from 005b4823   -> 005b507f    interior gap 005b507f-005b5084
+005b9be0    MEDIUM  core_stairs.cpp_CStairs_setup_FUN_005b9be0  (1 issue)
+      FLOW_ORPHAN    from 005b9be5   -> 005b9bea    CALL -> orphan code
+005b9c10    MEDIUM  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  (1 issue)
+      BODY_HOLE      from 005b9c10   -> 005ba487    interior gap 005ba487-006031b3
+005be520    MEDIUM  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520  (2 issues)
+      BODY_HOLE      from 005be520   -> 005bf712    interior gap 005bf712-006056e1
+      BODY_HOLE      from 005be520   -> 0060cb8b    interior gap 0060cb8b-0060fa65
+005bf720    MEDIUM  core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720  (1 issue)
+      BODY_HOLE      from 005bf720   -> 005bf7ff    interior gap 005bf7ff-0060e415
+005bfb60    MEDIUM  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60  (1 issue)
+      BODY_HOLE      from 005bfb60   -> 005c02af    interior gap 005c02af-0060538c
+005c02b0    MEDIUM  core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0  (2 issues)
+      BODY_HOLE      from 005c02b0   -> 005c06a7    interior gap 005c06a7-0060d066
+      BODY_HOLE      from 005c02b0   -> 0060d0db    interior gap 0060d0db-0060f8d5
+005c06b0    MEDIUM  core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0  (1 issue)
+      BODY_HOLE      from 005c06b0   -> 005c07ad    interior gap 005c07ad-03fc4bee
+005c3150    MEDIUM  core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150  (1 issue)
+      BODY_HOLE      from 005c3150   -> 005c3701    interior gap 005c3701-03fc4cbd
+005c5170    MEDIUM  core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170  (1 issue)
+      BODY_HOLE      from 005c5170   -> 005c51b1    interior gap 005c51b1-03fc3cfa
+005c9340    MEDIUM  shape_superopt.cpp_CComplexPolygon_removeRedundantEdges_FUN_005c9340  (1 issue)
+      BODY_HOLE      from 005c9340   -> 005c94f6    interior gap 005c94f6-03fc2bf8
+005c9aa0    MEDIUM  shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0  (1 issue)
+      BODY_HOLE      from 005c9aa0   -> 005ca58e    interior gap 005ca58e-00608ab3
+005ca590    MEDIUM  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  (1 issue)
+      BODY_HOLE      from 005ca590   -> 005cb396    interior gap 005cb396-03fc2baf
+005ce580    MEDIUM  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580  (2 issues)
+      BODY_HOLE      from 005ce580   -> 005d0005    interior gap 005d0005-006058d8
+      BODY_HOLE      from 005ce580   -> 006059c1    interior gap 006059c1-0060f38e
+005d1230    MEDIUM  shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230  (1 issue)
+      BODY_HOLE      from 005d1230   -> 005d12c4    interior gap 005d12c4-03fc4975
+005d47b0    MEDIUM  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0  (1 issue)
+      BODY_HOLE      from 005d47b0   -> 005d57f4    interior gap 005d57f4-0060522b
+005d5e60    MEDIUM  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60  (1 issue)
+      BODY_HOLE      from 005d5e60   -> 005d601a    interior gap 005d601a-006051bc
+005d6020    MEDIUM  shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020  (1 issue)
+      BODY_HOLE      from 005d6020   -> 005d63cc    interior gap 005d63cc-00604eea
+005d64a0    MEDIUM  shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0  (1 issue)
+      BODY_HOLE      from 005d64a0   -> 005d64f8    interior gap 005d64f8-00604f0d
+005d77a0    MEDIUM  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0  (1 issue)
+      BODY_HOLE      from 005d77a0   -> 005d7dfc    interior gap 005d7dfc-0060cb49
+005d8350    MEDIUM  shape_superopt.cpp_CP2D_subtract_FUN_005d8350  (1 issue)
+      BODY_HOLE      from 005d8350   -> 005d8384    interior gap 005d8384-00604ec7
+005d8390    MEDIUM  shape_superopt.cpp_CP2D_add_FUN_005d8390  (1 issue)
+      BODY_HOLE      from 005d8390   -> 005d83c4    interior gap 005d83c4-00604e81
+005d83d0    MEDIUM  shape_superopt.cpp_CP2D_scale_FUN_005d83d0  (1 issue)
+      BODY_HOLE      from 005d83d0   -> 005d8401    interior gap 005d8401-00604ea4
+005d8ba0    MEDIUM  core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0  (1 issue)
+      BODY_HOLE      from 005d8ba0   -> 005d9257    interior gap 005d9257-00604bcf
+005da120    MEDIUM  core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120  (1 issue)
+      BODY_HOLE      from 005da120   -> 005da239    interior gap 005da239-03fc3c9b
+005da370    MEDIUM  core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370  (1 issue)
+      BODY_HOLE      from 005da370   -> 005da503    interior gap 005da503-03fc3c3c
+005db050    MEDIUM  core_tentacle.cpp_CTentacle_process_FUN_005db050  (1 issue)
+      BODY_HOLE      from 005db050   -> 005db83d    interior gap 005db83d-03fc21d9
+005db9d0    MEDIUM  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0  (1 issue)
+      BODY_HOLE      from 005db9d0   -> 005dbb2a    interior gap 005dbb2a-03fc2565
+005dbb70    MEDIUM  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70  (1 issue)
+      BODY_HOLE      from 005dbb70   -> 005dbc5c    interior gap 005dbc5c-03fc3212
+005e00d0    MEDIUM  core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0  (1 issue)
+      BODY_HOLE      from 005e00d0   -> 005e0624    interior gap 005e0624-03fc3340
+005e19d0    MEDIUM  support_trisock.cpp_buildSockaddrIn_FUN_005e19d0  (1 issue)
+      BODY_HOLE      from 005e19d0   -> 005e1a27    interior gap 005e1a27-00604f57
+005e1bd0    MEDIUM  support_trisock.cpp_connectSocket_FUN_005e1bd0  (1 issue)
+      BODY_HOLE      from 005e1bd0   -> 005e1c13    interior gap 005e1c13-00604f7a
+005e1c20    MEDIUM  support_trisock.cpp_receiveSocketData_FUN_005e1c20  (1 issue)
+      BODY_HOLE      from 005e1c20   -> 005e1c9b    interior gap 005e1c9b-0060c975
+005e1ca0    MEDIUM  support_trisock.cpp_performSocketOperation_FUN_005e1ca0  (1 issue)
+      BODY_HOLE      from 005e1ca0   -> 005e1d1b    interior gap 005e1d1b-0060e3ae
+005e1d80    MEDIUM  support_trisock.cpp_acceptConnection_FUN_005e1d80  (1 issue)
+      BODY_HOLE      from 005e1d80   -> 005e1de9    interior gap 005e1de9-0060c536
+005e1df0    MEDIUM  support_trisock.cpp_getSocketName_FUN_005e1df0  (1 issue)
+      BODY_HOLE      from 005e1df0   -> 005e1e43    interior gap 005e1e43-0060c551
+005e2430    MEDIUM  core_turret.cpp_CTurret_process_FUN_005e2430  (1 issue)
+      BODY_HOLE      from 005e2430   -> 005e290d    interior gap 005e290d-0060e3f3
+005e2910    MEDIUM  core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910  (1 issue)
+      BODY_HOLE      from 005e2910   -> 005e2b13    interior gap 005e2b13-03fc3bdf
+005e6b80    MEDIUM  core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80  (1 issue)
+      BODY_HOLE      from 005e6b80   -> 005e6c96    interior gap 005e6c96-03fc3b80
+005f1820    MEDIUM  core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820  (1 issue)
+      BODY_HOLE      from 005f1820   -> 005f1976    interior gap 005f1976-03fc3b27
+005f50c0    MEDIUM  core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0  (1 issue)
+      BODY_HOLE      from 005f50c0   -> 005f50f2    interior gap 005f50f2-03fc3a04
+005f6140    MEDIUM  core_xform.cpp_invertAndGetTranslation_FUN_005f6140  (1 issue)
+      BODY_HOLE      from 005f6140   -> 005f6181    interior gap 005f6181-03fc3a65
+005f6210    MEDIUM  core_xform.cpp_inverse_FUN_005f6210  (1 issue)
+      BODY_HOLE      from 005f6210   -> 005f6459    interior gap 005f6459-03fc3ac4
+005f7000    MEDIUM  core_xform.cpp_buildMirrorTransform_FUN_005f7000  (1 issue)
+      BODY_HOLE      from 005f7000   -> 005f713d    interior gap 005f713d-03fc2706
+005f7140    MEDIUM  core_xform.cpp_lerpMatrix3x4_FUN_005f7140  (1 issue)
+      BODY_HOLE      from 005f7140   -> 005f727e    interior gap 005f727e-00605318
+005f73e0    MEDIUM  core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0  (1 issue)
+      BODY_HOLE      from 005f73e0   -> 005f7419    interior gap 005f7419-03fc39a9
+005f7420    MEDIUM  core_xform.cpp_matrixToQuaternion_FUN_005f7420  (1 issue)
+      BODY_HOLE      from 005f7420   -> 005f75d6    interior gap 005f75d6-0060f469
+005f75e0    MEDIUM  core_xform.cpp_negateFirstComponent_FUN_005f75e0  (1 issue)
+      BODY_HOLE      from 005f75e0   -> 005f7615    interior gap 005f7615-00604c80
+005f7640    MEDIUM  core_xform.cpp_multiplyQuaternion_FUN_005f7640  (1 issue)
+      BODY_HOLE      from 005f7640   -> 005f76f2    interior gap 005f76f2-00604c5d
+005f7700    MEDIUM  core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700  (1 issue)
+      BODY_HOLE      from 005f7700   -> 005f772f    interior gap 005f772f-00604c3a
+005f79b0    MEDIUM  core_xform.cpp_quaternionFromAngleX_FUN_005f79b0  (1 issue)
+      BODY_HOLE      from 005f79b0   -> 005f79ea    interior gap 005f79ea-00604ca3
+005f79f0    MEDIUM  core_xform.cpp_quaternionFromAngleY_FUN_005f79f0  (1 issue)
+      BODY_HOLE      from 005f79f0   -> 005f7a2a    interior gap 005f7a2a-00604cc6
+005f7a30    MEDIUM  core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30  (1 issue)
+      BODY_HOLE      from 005f7a30   -> 005f7a6a    interior gap 005f7a6a-00604ce9
+005f7a70    MEDIUM  core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70  (1 issue)
+      BODY_HOLE      from 005f7a70   -> 005f7aba    interior gap 005f7aba-00604d0c
+005f7b20    MEDIUM  core_xform.cpp_eulerToQuaternion_FUN_005f7b20  (1 issue)
+      BODY_HOLE      from 005f7b20   -> 005f7b69    interior gap 005f7b69-00604c17
+005f7b70    MEDIUM  core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70  (1 issue)
+      BODY_HOLE      from 005f7b70   -> 005f7bb9    interior gap 005f7bb9-00604bf4
+005fb1f0    MEDIUM  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0  (1 issue)
+      BODY_HOLE      from 005fb1f0   -> 005fb522    interior gap 005fb522-03fc346a
+005fbe70    MEDIUM  core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70  (1 issue)
+      BODY_HOLE      from 005fbe70   -> 005fbfcf    interior gap 005fbfcf-03fc393f
+0060b500    MEDIUM  crt_debug.c_TriggerDebuggerBreak_FUN_0060b500  (1 issue)
+      BODY_HOLE      from 0060b500   -> 0060b517    interior gap 0060b517-0060b527

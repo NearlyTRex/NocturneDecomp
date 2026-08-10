@@ -149,12 +149,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedLitOp7_FUN_004049
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00404a70(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderRotatedMRGLSubChain_FUN_00404b10(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00405140(SMRGLHeaderPrimitive *prim);
-SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction3_FUN_004051e0(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderMRGLSubChain_FUN_004051e0(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderBSPNode_FUN_00405200(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240(SMRGLHeaderPrimitive *prim);
 void * __cdecl engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00405340(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00405440(SMRGLHeaderPrimitive *prim);
-SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction5_FUN_004054f0(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp16_FUN_004054f0(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_skipMRGLPrimitive_FUN_00405740(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00405750(SMRGLHeaderPrimitive *primitive);
@@ -162,7 +162,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedOp21_FU
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00405840(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00405870(SLineStrip *line_strip);
 SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00405900(SLineStrip *line_strip);
-SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction7_FUN_00405990(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp23_FUN_00405990(SMRGLHeaderExtended *primitive);
 void __cdecl engine_3d_c_computeSortedPolygonKey_FUN_004059c0(SMRGLHeaderExtended *primitive);
 int __cdecl engine_3d_c_compareSortedPolygonDepth_FUN_00405a60(void **entry_a,void **entry_b);
 void __cdecl engine_3d_c_queueSortedPolygon_FUN_00405ab0(SMRGLHeaderExtended *primitive,SMRGLHeaderExtended *owner_block,SMRGLHeaderExtended *chain_root);
@@ -174,7 +174,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_0040
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004060b0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00406320(SMRGLHeaderPrimitive *prim);
-SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction8_FUN_004063c0(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp28_FUN_004063c0(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00406690(SMRGLAnimatedTexture *texture);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00406840(SMRGLHeaderExtended *mrgl);

@@ -9,6 +9,13 @@ how much to believe each pair.
 
 Evidence is gathered from several independent signals, strongest first:
 
+  manual         a pair recorded by hand in the target program's ledger,
+                 annotations/<to>/sibling_manual_pairs.json, after a person
+                 read both bodies. Nothing here outranks that, and it
+                 is the only route in for a pair whose body was REWRITTEN
+                 between the builds and which order-matching cannot bracket --
+                 every other signal below is a similarity measure, and an
+                 edited function is not similar to itself.
   shape_strict   identical instruction shape once relocated addresses are
                  masked -- the function was not edited between the builds.
                  Exact, no inference.
@@ -55,6 +62,13 @@ import sibling_match as sm
 
 # Base confidence contributed by each signal on its own.
 SIGNAL_CONFIDENCE = {
+    # A pair a human read both bodies for and asserted. Above every derived
+    # signal by construction: this pass has no evidence that outranks somebody
+    # having looked. It is also the ONLY way a pair whose body was rewritten
+    # between the builds can enter the mapping when order-matching cannot
+    # bracket it -- every other signal here is a similarity measure, and an
+    # edited function is not similar to itself.
+    "manual":        1.00,
     "shape_strict":  0.99,
     "string":        0.97,
     "vtable":        0.90,
@@ -114,6 +128,10 @@ def fuse(signals):
     kinds = sorted({s for s, _ in signals}, key=lambda s: -SIGNAL_CONFIDENCE[s])
     if not kinds:
         return 0.0
+    if kinds[0] == "manual":
+        # Not subject to the 0.995 ceiling: the ceiling exists to admit that an
+        # inference could be wrong, and an asserted pair is not an inference.
+        return 1.0
     conf = SIGNAL_CONFIDENCE[kinds[0]]
     for _ in kinds[1:]:
         conf += (1.0 - conf) * 0.5
@@ -195,7 +213,12 @@ def resolve(ev, mapping):
     for s, a, b, signals in scored:
         if mapping.has_a(a) or mapping.has_b(b):
             continue
-        runner_up = max(second_a[a], second_b[b])
+        # An asserted pair is never ambiguous. A close runner-up means the
+        # automatic signals could not tell two candidates apart, which is
+        # exactly the situation a human resolved by hand; discounting for it
+        # would penalise the pair for the reason it was recorded.
+        manual = any(sig == "manual" for sig, _ in signals)
+        runner_up = 0.0 if manual else max(second_a[a], second_b[b])
         ambiguous = runner_up >= AMBIGUITY_RATIO * s
         conf = s * (AMBIGUITY_PENALTY if ambiguous else 1.0)
         mapping.add(a, b, conf,
@@ -209,6 +232,45 @@ def resolve(ev, mapping):
 # Seed signals
 # --------------------------------------------------------------------------
 
+def _contradicts(a_img, b_img, x, y):
+    """Do two already-identified functions claim to be different things?
+
+    A veto for the shape seeds, and narrow on purpose. It fires only when BOTH
+    sides carry a fully-qualified `Class_method` name, the units disagree, and
+    the names disagree -- three independent facts, none of which the shape hash
+    consulted. Requiring all three is what keeps it from rejecting real pairs:
+    unit disagreement alone rejects 88 seeds, 40 of them correct (nocturne
+    files most of the CRT under `crt_unknown.c`, so the unit legitimately
+    differs), and a bare class name with no method is a placeholder rather than
+    a competing claim.
+
+    Why this is needed at all: a Watcom destructor's ONLY build-invariant
+    constant is the object size it hands to `operator delete`. Every class in
+    this pair of builds shrank by 8 bytes, and sibling classes' sizes are
+    themselves 8 apart, so the sizes form a ladder that lines up one step out:
+
+        CFlies  360 (nocedit) == CStairs 360 (nocturne)
+        CStairs 368 (nocedit) == CBat    368 (nocturne)
+
+    The hash is genuinely UNIQUE on each side -- the uniqueness test passes --
+    and the match is still wrong, at 0.99, the strongest signal here. Any
+    same-shaped family whose sizes are separated by exactly the global drift
+    fails this way, so it is systematic, not a one-off.
+
+    Measured over the 2111 unique-both-sides strict seeds: rejects 3, and all
+    three are the destructor cross-matches above.
+    """
+    tu_a, core_a = sm.split_qualified_name((a_img.by_addr.get(x) or {}).get("name"))
+    tu_b, core_b = sm.split_qualified_name((b_img.by_addr.get(y) or {}).get("name"))
+    if not (tu_a and tu_b and tu_a != tu_b):
+        return False
+    # `_` separates class from method; a bare `CFoo` names no method and is a
+    # placeholder, which cannot contradict anything.
+    if not (core_a and core_b and "_" in core_a and "_" in core_b):
+        return False
+    return core_a != core_b
+
+
 def seed_shapes(ev, a_img, b_img, tier, signal):
     """Pair functions whose normalized shape is unique on both sides."""
     ia = sm.index_by(sm.shapes_for(a_img), tier)
@@ -216,8 +278,81 @@ def seed_shapes(ev, a_img, b_img, tier, signal):
     n = 0
     for h in set(ia) & set(ib):
         if len(ia[h]) == 1 and len(ib[h]) == 1:
+            if _contradicts(a_img, b_img, ia[h][0], ib[h][0]):
+                continue
             ev.add(ia[h][0], ib[h][0], signal, h[:8])
             n += 1
+    return n
+
+
+_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def default_ledger(b_prog):
+    """Where the hand-established pairs for `b_prog` live.
+
+    Beside the program they describe -- `annotations/<to>/` -- not in scripts/.
+    A pairing is a fact about one target program, so `--to tridx7.dll` gets its
+    own ledger rather than sharing nocturne's.
+
+    Deliberately NOT under `reports/`: everything there is regenerated from the
+    binaries, and this is the one file in the pipeline that cannot be. It is an
+    input, and losing it means re-reading the function bodies that produced it.
+    """
+    return os.path.join(_REPO, "annotations", b_prog, "sibling_manual_pairs.json")
+
+
+def seed_manual(ev, a_img, b_img, path, a_prog, b_prog, note=print):
+    """Seed pairs a human established by hand.
+
+    The matcher is deliberately blind to names -- every signal it has is
+    derived from bytes and layout -- so a pair that is obvious to a reader
+    (same class and method in both builds, body rewritten between them) can be
+    unreachable for it. Without somewhere to record such a pair, the work of
+    finding it is lost at the next refresh and has to be redone; worse, the
+    pair is also an ANCHOR, so losing it costs the neighbours that would have
+    propagated from it.
+
+    Entries are validated, never trusted blindly: an address that is no longer
+    a function entry, or a program name that does not match this run, is a
+    stale ledger rather than a mapping to apply. Report and skip.
+
+    Format (see report_sibling_gaps.py --emit-ledger for a skeleton):
+
+        {"schema": 1,
+         "pairs": [{"a": "004c95e0", "b": "0048cab0",
+                    "note": "CExplosion_dtor; 5-byte stub, too small to hash"}]}
+    """
+    if not path or not os.path.exists(path):
+        return 0
+    with open(path) as fh:
+        doc = json.load(fh)
+    for key, want in (("from", a_prog), ("to", b_prog)):
+        got = doc.get(key)
+        if got and got != want:
+            note(f"  manual       : SKIPPED -- ledger is {key}={got}, this run is {want}")
+            return 0
+
+    seen_a, seen_b, n, bad = set(), set(), 0, 0
+    for rec in doc.get("pairs", []):
+        a = (rec.get("a") or "").lower()
+        b = (rec.get("b") or "").lower()
+        why = rec.get("note", "")
+        if a not in a_img.by_addr or b not in b_img.by_addr:
+            note(f"  manual       : STALE {a}->{b} -- not a function entry in "
+                 f"{a_prog if a not in a_img.by_addr else b_prog}")
+            bad += 1
+            continue
+        if a in seen_a or b in seen_b:
+            note(f"  manual       : DUPLICATE {a}->{b} -- an address may appear once")
+            bad += 1
+            continue
+        seen_a.add(a)
+        seen_b.add(b)
+        ev.add(a, b, "manual", why[:60])
+        n += 1
+    if bad:
+        note(f"  manual       : {bad} entr{'y' if bad == 1 else 'ies'} rejected")
     return n
 
 
@@ -672,7 +807,9 @@ def prop_callers(ev, a_img, b_img, mapping):
 # --------------------------------------------------------------------------
 
 def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True,
-                  use_vtable_lcs=True):
+                  use_vtable_lcs=True, ledger="<default>"):
+    if ledger == "<default>":
+        ledger = default_ledger(b_img.program)
     ev = Evidence()
     mapping = Mapping()
     log = []
@@ -683,6 +820,7 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True,
             print(msg, file=sys.stderr)
 
     note("== seeding ==")
+    note(f"  manual       : {seed_manual(ev, a_img, b_img, ledger, a_img.program, b_img.program, note)} candidate pairs")
     note(f"  shape_strict : {seed_shapes(ev, a_img, b_img, 'strict', 'shape_strict')} candidate pairs")
     note(f"  string       : {seed_strings(ev, a_img, b_img)} candidate pairs")
     added = resolve(ev, mapping)
@@ -736,6 +874,11 @@ def main():
                     help="disable translation-unit order matching (for A/B)")
     ap.add_argument("--no-vtable-lcs", action="store_true",
                     help="use the old same-slot-count vtable rule (for A/B)")
+    ap.add_argument("--ledger", default="<default>",
+                    help="hand-established pairs to seed "
+                         "(default: annotations/<to>/sibling_manual_pairs.json)")
+    ap.add_argument("--no-ledger", action="store_true",
+                    help="ignore the manual pair ledger (for A/B)")
     ap.add_argument("-q", "--quiet", action="store_true")
     args = ap.parse_args()
 
@@ -747,7 +890,8 @@ def main():
 
     mapping, _, editor_only = build_mapping(a_img, b_img, verbose=not args.quiet,
                                             use_order=not args.no_order,
-                                            use_vtable_lcs=not args.no_vtable_lcs)
+                                            use_vtable_lcs=not args.no_vtable_lcs,
+                                            ledger=None if args.no_ledger else args.ledger)
 
     # ---- report ----------------------------------------------------------
     by_signal = Counter()

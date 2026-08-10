@@ -128,7 +128,7 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_00557150(CScat *this_pt
 void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20(CScat *this_ptr,float delta_time);
-void __cdecl core_scat_cpp_CSCat_archive_FUN_00557db0(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_archive_FUN_00557db0(CScat *this_ptr);
 int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_scat_cpp_CScat_isWeaponDrawn_FUN_00557ff0(CScat *this_ptr);

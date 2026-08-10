@@ -185,7 +185,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
 void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(CSvetlana *this_ptr,int bone_index);
-void __cdecl core_svetlana_cpp_CSVetlana_archive_FUN_005d9bb0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_archive_FUN_005d9bb0(CSvetlana *this_ptr);
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_svetlana_cpp_CSvetlana_getGrabbed_FUN_005d9ec0(CSvetlana *this_ptr,CDemonActor *grabber,int grab_type);

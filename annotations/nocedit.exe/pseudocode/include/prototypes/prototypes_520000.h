@@ -79,7 +79,7 @@ void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_00520e50(void);
 CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMinecar_setup_FUN_00520e90(CMineCar *this_ptr);
-void __cdecl core_minecar_cpp_CMinecar_process_FUN_00520eb0(CMineCar *this_ptr,float delta_time);
+void __cdecl core_minecar_cpp_CMineCar_process_FUN_00520eb0(CMineCar *this_ptr,float delta_time);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_00520f20(CMineCar *this_ptr);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_00520f40(CMineCar *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_00520fb0(void);

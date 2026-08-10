@@ -27,9 +27,9 @@ CWayPoint * __cdecl CWayPoint::ctor(CWayPoint *this_ptr);
 // Address: 005ebeb0
 void __cdecl CWaypoint::setup(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70
+// Original: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005ebf70
 // Address: 005ebf70
-int __cdecl CWaypoint::renderOpaque(CWayPoint *this_ptr);
+int __cdecl CWayPoint::renderOpaque(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_archive_FUN_005ec280
 // Address: 005ec280

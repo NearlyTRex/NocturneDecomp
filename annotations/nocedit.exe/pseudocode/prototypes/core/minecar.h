@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CMinecar::getActorType(CMineCar *this_ptr);
 // Address: 00520e90
 void __cdecl CMinecar::setup(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_CMinecar_process_FUN_00520eb0
+// Original: core_minecar.cpp_CMineCar_process_FUN_00520eb0
 // Address: 00520eb0
-void __cdecl CMinecar::process(CMineCar *this_ptr,float delta_time);
+void __cdecl CMineCar::process(CMineCar *this_ptr,float delta_time);
 
 // Original: core_minecar.cpp_CMineCar_ctor_FUN_00520f20
 // Address: 00520f20

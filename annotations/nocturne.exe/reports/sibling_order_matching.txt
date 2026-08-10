@@ -1,0 +1,65 @@
+
+matched 4615 pairs (81.9% of nocturne.exe's 5638 functions)
+  carrying a real name from nocedit.exe: 4615
+  ambiguous (runner-up close): 11
+
+by confidence band:
+   0.95+ : 2303
+   0.90+ : 468
+   0.80+ : 782
+   0.60+ : 1054
+   <0.60 : 8
+
+by supporting signal (pairs may have several):
+  callsite      : 3085
+  shape_strict  : 1987
+  order_multi   : 1247
+  caller        : 611
+  order         : 334
+  string        : 329
+  shape_relaxed : 266
+  vtable        : 168
+
+sample of 20 matches:
+  0.99 0043c0f0 -> 00438390  core_cloth.cpp_CClothList_add
+        shape_strict:be3317c8, string:CClothList::add - list is full
+  0.99 00477e60 -> 00453620  core_dmodel.cpp_CKeyFramedModel_calcNormals
+        shape_strict:d39897ae, string:CKeyFramedModel::calcNormals() - vertexNormalLis
+  0.99 004ff400 -> 004c1190  core_inv.cpp_CInventory_load
+        shape_strict:f4f2bc2b, string:CInventory::load - Can't find your weapon
+  0.99 004b0720 -> 004806d0  core_event.cpp_CEventList_setCounter
+        shape_strict:f76eee57, string:CEventList::setCounter - too many counters!
+  0.99 004f3d80 -> 004b6080  core_hero.cpp_CHeroPlaceholder_createHero
+        shape_strict:ac80a064, string:CHeroPlaceholder::createHero - invalid hero type, string:CHeroPlaceholder::creat
+  0.99 0052dc80 -> 004e1830  core_motion.cpp_CMotionController_findPatchToFrame
+        shape_strict:84895498, string:CMotionController::findPatchToFrame should never
+  0.99 00542cf0 -> 004ece70  core_netgame.cpp_CNetGame_gameSettingsChanged
+        shape_strict:6cd5ebf1, string:CNetGame::gameSettingsChanged - should only call
+  0.99 00541e40 -> 004ebfd0  core_netgame.cpp_CNetGame_processChatOut
+        shape_strict:47210527, string:CNetGame::processChatOut - too many pending outg
+  0.99 0052b680 -> 004e03c0  core_morph.cpp_CMorph_getReady
+        shape_strict:7067ef94, string:CMorph::getReady - can't do this unless we have 
+  0.99 005b3cc0 -> 0052ece0  core_sound.cpp_CSound_setReverbPreset
+        shape_strict:6157def0, string:CSound::setReverbPreset - invalid index
+  0.99 004b1680 -> 00481630  core_event.cpp_CRuleList_insert
+        shape_strict:3dfd8829, string:CRuleList::insert - list full, string:CRuleList::insert - invalid index
+  0.99 004b05a0 -> 00480550  core_event.cpp_CEventList_setTimerEvent
+        shape_strict:360c9409, string:CEventList::setTimerEvent - too many timers!, string:CEventList::setTimerEvent -
+  0.99 004729d0 -> 0044e3c0  core_dlight.cpp_CDemonLight_allocMasterZBuffer
+        shape_strict:00cedd37, string:CDemonLight::allocMasterZBuffer - We already hav
+  0.99 0052af70 -> 004dfcb0  core_morph.cpp_CMorphModel_rotatePoints
+        shape_strict:93dd4c74, string:CMorphModel::rotatePoints - too many points!
+  0.99 00478d80 -> 00454530  core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr
+        shape_strict:71ab51ec, string:Tried to do something with model %s, but modelPt
+  0.99 00471e10 -> 0044d880  core_dirmat.cpp_CMatrix3x3f_invert
+        shape_strict:23fd225a, string:CMatrix::invert - Singular matrix
+  0.99 0052db00 -> 004e16b0  core_motion.cpp_CMotionController_setDesiredState
+        shape_strict:90a40da0, string:CMotionController::setDesiredState - invalid sta
+  0.99 0052a920 -> 004df660  core_morph.cpp_CMorphModel_animateFromVertexBuffer
+        shape_strict:2dd4d125, string:CMorphModel::animate - invalid part index, string:CMorphModel::animate - invalid
+  0.99 00498e50 -> 0046ace0  core_dtrace.cpp_CDemonRaytrace_setPVS
+        shape_strict:9f0ef499, string:CDemonRaytrace::setPVS - Too many drawn cubes in
+  0.99 00541c80 -> 004ebe10  core_netgame.cpp_CNetGame_updatePing
+        shape_strict:9090c9f9, string:CNetGame::updatePing - invalid player index
+
+wrote /tmp/claude-1000/-home-aryie-Repositories-NocturneDecomp/be7d4264-c14a-4243-b2a7-887df99cc550/scratchpad/mapping_order.json (4615 pairs)

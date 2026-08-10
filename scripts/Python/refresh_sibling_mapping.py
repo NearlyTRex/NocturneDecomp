@@ -67,6 +67,21 @@ Stages (none needs Ghidra or a JVM -- all read annotations/ and the PEs):
                                    bytes and adds conv/ret/sig_verdict, then
                                    writes {**mapping, pairs: verified} -- which
                                    is the canonical file
+  7. report_sibling_gaps.py      the mapping's COMPLEMENT, into
+                                 reports/sibling_gaps.txt: what is still
+                                 unmatched on each side, which brackets the
+                                 order pass refused and why, and which matched
+                                 pairs disagree on signature. It goes stale with
+                                 exactly the same events as the mapping, so it
+                                 is regenerated with it rather than by hand.
+                                 Read-only; a failure here never blocks the
+                                 mapping. --no-gap-report to skip.
+
+Stage 1 also seeds `annotations/<to>/sibling_manual_pairs.json`, the pairs a
+human established by hand. That file is an INPUT and is never regenerated -- it
+is the only part of this pipeline that survives because somebody read two
+function bodies. It sits beside the program it describes rather than under
+`reports/`, which is wholly derived.
 
 The previous mapping is kept as <name>.prev.json and diffed, so a refresh
 reports what actually changed rather than silently replacing the file.
@@ -129,6 +144,14 @@ def merge_extra_pairs(base_path, vt_path, out_path):
     decided it with a stronger or equally strong signal and, more importantly,
     overwriting would break the 1:1 invariant every downstream consumer assumes.
     Sources already consumed are skipped for the same reason.
+
+    `unmatched_a` / `unmatched_b` / `editor_only` are stage 1's complement of
+    `pairs`, so every merge invalidates them and they have to be re-derived
+    here. Left alone they went stale silently and in the worst possible
+    direction -- a function the merge had just MATCHED stayed on the
+    unmatched list, so anything reading the list as a worklist re-derived
+    answers the file already contained. Measured before this: 167 addresses
+    present in both `pairs` and `unmatched_*` at once.
     """
     with open(base_path) as fh:
         base = json.load(fh)
@@ -145,9 +168,56 @@ def merge_extra_pairs(base_path, vt_path, out_path):
         seen_a.add(a); seen_b.add(b)
         added += 1
     base["pairs"].sort(key=lambda r: int(r["a"], 16))
+
+    base["unmatched_a"] = [x for x in base.get("unmatched_a", [])
+                           if x.lower() not in seen_a]
+    base["unmatched_b"] = [x for x in base.get("unmatched_b", [])
+                           if x.lower() not in seen_b]
+    # A function now matched was never editor-only, whatever the bracket said.
+    base["editor_only"] = [e for e in base.get("editor_only", [])
+                           if e.get("a", "").lower() not in seen_a]
+
     with open(out_path, "w") as fh:
         json.dump(base, fh, indent=1)
     return added
+
+
+def write_gap_report(b_prog, out_path, quiet):
+    """Regenerate the leftovers report beside the mapping it complements.
+
+    The mapping says what matched; this says what did not, and the two go stale
+    together -- every newly named function shifts both. Kept here rather than in
+    export_annotations.py so a hand-run refresh refreshes it too.
+
+    Read-only and derived, so a failure is reported and otherwise ignored: the
+    mapping is the product of this run and must not be held back by a report.
+    """
+    script = os.path.join(THIS_DIR, "report_sibling_gaps.py")
+    if not os.path.exists(script):
+        return
+    argv = [sys.executable, "-u", script, "--to", b_prog, "--show", "0"]
+    try:
+        p = subprocess.run(argv, capture_output=True, text=True,
+                           env=dict(os.environ, PYTHONHASHSEED="0"))
+    except Exception as exc:
+        print(f"\n[gap-report] WARNING: could not launch report_sibling_gaps.py: {exc}")
+        return
+    if p.returncode:
+        print(f"\n[gap-report] WARNING: report_sibling_gaps.py exited {p.returncode}; "
+              f"{out_path} left as it was")
+        if not quiet:
+            sys.stderr.write(p.stderr)
+        return
+    with open(out_path, "w") as fh:
+        fh.write(p.stdout)
+    # The counts are the reason to look, so surface them rather than a bare path.
+    head = [ln for ln in p.stdout.splitlines()
+            if ln.startswith(("  candidate pairs", "  genuine divergence",
+                              "  never transferred"))
+            or " pairable brackets covering" in ln]
+    print(f"\n[gap-report] wrote {out_path}")
+    for ln in head:
+        print(f"  {ln.strip()}")
 
 
 def load(path):
@@ -216,6 +286,15 @@ def main():
                          "mapping. Each conflict is a known-wrong pair.")
     ap.add_argument("--no-factory-pairs", action="store_true",
                     help="skip the static-init factory stage")
+    ap.add_argument("--ledger",
+                    help="manual pair ledger to seed stage 1 with "
+                         "(default: annotations/<to>/sibling_manual_pairs.json)")
+    ap.add_argument("--no-ledger", action="store_true",
+                    help="ignore the manual pair ledger")
+    ap.add_argument("--no-gap-report", action="store_true",
+                    help="skip regenerating reports/sibling_gaps.txt, the "
+                         "complement of the mapping (unmatched functions, "
+                         "unresolved brackets, signature divergence)")
     ap.add_argument("--no-vtable-slots", action="store_true",
                     help="skip drifted-vtable recovery (stage 2). Costs ~77 real "
                          "pairs in the actor hierarchy; for debugging only.")
@@ -234,10 +313,12 @@ def main():
     fc = os.path.join(tmpdir, "factory_pairs.json")
     verified = os.path.join(tmpdir, "verified.json")
     try:
+        ledger_argv = (["--no-ledger"] if args.no_ledger else
+                       ["--ledger", args.ledger] if args.ledger else [])
         run("map_sibling_functions.py",
             ["--from", args.a_prog, "--to", args.b_prog, "-o", raw,
              "--min-confidence", str(args.min_confidence)]
-            + (["-q"] if args.quiet else []), args.quiet)
+            + ledger_argv + (["-q"] if args.quiet else []), args.quiet)
 
         if args.no_vtable_slots:
             shutil.copy2(raw, merged)
@@ -302,6 +383,13 @@ def main():
             print(f"\nprevious kept at {out}.prev.json")
         shutil.copy2(verified, out)
         print(f"wrote {out}  ({len(new['pairs'])} pairs)")
+
+        # After the canonical file, never before: the report reads it.
+        if not args.no_gap_report:
+            write_gap_report(args.b_prog,
+                             os.path.join(os.path.dirname(out), "sibling_gaps.txt"),
+                             args.quiet)
+
         print("\nNEXT: re-run the per-TU sweep; pairs the old mapping missed "
               "may now resolve.")
         return 0

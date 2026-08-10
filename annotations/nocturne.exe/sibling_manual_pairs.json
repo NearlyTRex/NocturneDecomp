@@ -1,0 +1,22 @@
+{
+ "schema": 1,
+ "from": "nocedit.exe",
+ "to": "nocturne.exe",
+ "pairs": [
+  {
+   "a": "004cccb0",
+   "b": "0048fc30",
+   "note": "CFlies_dtor. core_flies.cpp and 101B on both sides. The strict shape hash cannot separate these destructors: their only build-invariant constant is the object size handed to operator delete, and sizeof(CFlies) in nocedit (360) equals sizeof(CStairs) in nocturne (360), so the seed matched one step along the size ladder."
+  },
+  {
+   "a": "005bac10",
+   "b": "00534c10",
+   "note": "CStairs_dtor. core_stairs.cpp and 101B on both sides. Same size-ladder collision: sizeof(CStairs) nocedit 368 == sizeof(CBat) nocturne 368."
+  },
+  {
+   "a": "00414fe0",
+   "b": "00412000",
+   "note": "CBat_dtor. core_bat.cpp and 101B on both sides. Third link of the same rotation; nocedit 376 -> nocturne 368."
+  }
+ ]
+}

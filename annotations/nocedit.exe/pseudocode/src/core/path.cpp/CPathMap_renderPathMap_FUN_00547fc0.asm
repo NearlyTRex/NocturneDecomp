@@ -30,7 +30,7 @@
 ; XREF[3]:
 ;   core_path.cpp_renderAllPathMaps_FUN_005485f0 at 0054866a
 ;   core_path.cpp_renderPathMapsAtPosition_FUN_00548680 at 0054873b
-;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ec138
+;   core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005ebf70 at 005ec138
 ;
 ; Referenced Globals:
 ;   float FLOAT_0063ea38 = 256

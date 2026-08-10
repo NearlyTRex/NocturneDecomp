@@ -1,0 +1,103 @@
+// Name: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005ebf70
+// Address: 005ebf70
+// MANUAL RECONSTRUCTION
+// Address Range: [[005ebf70, 005ec27d]]
+// Convention: __cdecl
+// Signature: int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr)
+
+#include "nocturne.h"
+
+int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr)
+
+{
+  int iVar1;
+  CWayPoint *pCVar1;
+  CBoundingBox3D *pCVar2;
+  CPathMap *this_ptr_01;
+  CBoundingBox3D *pCVar5;
+  CVector3f *pCVar3;
+  CVector3f *pCVar6;
+  int iVar7;
+  CBoundingBox3D CStack_ac;
+  CBoundingBox3D local_94;
+  CVector3i CStack_7c;
+  CVector3i CStack_70;
+  CVector3f CStack_64;
+  CVector3f CStack_58;
+  CVector3f CStack_40;
+  CVector3f CStack_28;
+  int iStack_1c;
+  int iStack_18;
+  CWayPoint *this_ptr_00;
+
+  if (((g_CDemonMissionPtr->is_in_editor != 0) &&
+      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+      iVar1 == 0)) &&
+     (pCVar1 = (CWayPoint *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
+                         (g_CDemonMissionPtr->selected_actor,g_CWayPointClassInfo.name_hash),
+     pCVar1 != (CWayPoint *)0x0)) {
+    core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
+    pCVar2 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
+                       ((CDemonActor *)this_ptr,&local_94);
+    CStack_64.x = ((pCVar2->min).x + (pCVar2->max).x) * 0.5f;
+    CStack_64.y = ((pCVar2->min).y + (pCVar2->max).y) * 0.5f;
+    CStack_64.z = ((pCVar2->min).z + (pCVar2->max).z) * 0.5f;
+    CStack_70.x = (int)ROUND(CStack_64.x * 256.0f);
+    CStack_70.y = (int)ROUND(CStack_64.y * 256.0f);
+    CStack_70.z = (int)ROUND(CStack_64.z * 256.0f);
+    iVar7 = 0;
+    engine_special_cpp_transformAndProjectPoint_FUN_005b575c
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_70);
+    if (0 < this_ptr->num_adjacent_waypoints) {
+      do {
+        this_ptr_00 = this_ptr->adjacency[iVar7].waypoint;
+        if (this_ptr <= this_ptr_00) {
+          g_ActiveRenderColor = 2;
+          if ((this_ptr == pCVar1) || (this_ptr_00 == pCVar1)) {
+            g_ActiveRenderColor = 0xfa;
+          }
+          pCVar5 = (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
+                             ((CDemonActor *)this_ptr_00,&CStack_ac);
+          CStack_58.x = ((pCVar5->min).x + (pCVar5->max).x) * 0.5f;
+          CStack_58.y = ((pCVar5->min).y + (pCVar5->max).y) * 0.5f;
+          CStack_58.z = ((pCVar5->min).z + (pCVar5->max).z) * 0.5f;
+          pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             ((CDemonActor *)this_ptr_00,&CStack_28,&CStack_58);
+          pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                             ((CDemonActor *)this_ptr,&CStack_40,pCVar3);
+          if (&CStack_64 != pCVar6) {
+            CStack_64 = *pCVar6;
+          }
+          CStack_7c.x = (int)ROUND(CStack_64.x * 256.0f);
+          CStack_7c.y = (int)ROUND(CStack_64.y * 256.0f);
+          CStack_7c.z = (int)ROUND(CStack_64.z * 256.0f);
+          engine_special_cpp_transformAndProjectPoint_FUN_005b575c
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_7c);
+          engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
+        }
+        iVar7 = iVar7 + 1;
+      } while (iVar7 < this_ptr->num_adjacent_waypoints);
+    }
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
+    if ((pCVar1 != (CWayPoint *)0x0) && (g_CDemonMissionPtr->show_waypoint_coverage != 0)) {
+      if ((this_ptr != pCVar1) && (g_CDemonMissionPtr->show_waypoint_coverage != 2)) {
+        return 0;
+      }
+      iStack_1c = 0xff;
+      iStack_18 = 0xff;
+      iVar7 = 0x40;
+      if (this_ptr == pCVar1) {
+        iVar7 = 0x80;
+        iStack_1c = 0;
+        iStack_18 = 0;
+      }
+      this_ptr_01 = core_path_cpp_getPathMap_FUN_00548500(&(this_ptr->base).base.location);
+      core_path_cpp_CPathMap_setupPathSearch_FUN_00548750(this_ptr_01);
+      core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(this_ptr_01,iStack_18,0xff,iStack_1c,iVar7);
+      return 0;
+    }
+  }
+  return 0;
+}

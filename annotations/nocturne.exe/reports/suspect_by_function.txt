@@ -26061,6 +26061,18 @@ engine_3d.c_FUN_005458d0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
+engine_3d.c_abortOldFuncOp16_FUN_004054f0 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 11 [undefined_data]: return (SMRGLHeaderExtended *)&DAT_006b0288;
+
+====================================================================================================
+engine_3d.c_abortOldFuncOp28_FUN_004063c0 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 11 [undefined_data]: return (SMRGLHeaderExtended *)&DAT_006b0288;
+
+====================================================================================================
 engine_3d.c_abortRemovedMRGLHandler_FUN_00404430 (1 suspect)
   File: engine/3d.c
 ====================================================================================================
@@ -26385,24 +26397,6 @@ engine_3d.c_lookupLitColor_FUN_00404680 (2 suspects)
   Line 15 [concat_reconstruction]: return CONCAT13(uVar1,CONCAT12(uVar1,CONCAT11(uVar1,uVar1)));
 
 ====================================================================================================
-engine_3d.c_oldFunction3_FUN_004051e0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 6 [pointer_cast]: ((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));
-
-====================================================================================================
-engine_3d.c_oldFunction5_FUN_004054f0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 11 [undefined_data]: return (SMRGLHeaderExtended *)&DAT_006b0288;
-
-====================================================================================================
-engine_3d.c_oldFunction8_FUN_004063c0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 11 [undefined_data]: return (SMRGLHeaderExtended *)&DAT_006b0288;
-
-====================================================================================================
 engine_3d.c_processCameraRelativePoint_FUN_004044d0 (3 suspects)
   File: engine/3d.c
 ====================================================================================================
@@ -26455,6 +26449,12 @@ engine_3d.c_renderBSPNode_FUN_00405200 (4 suspects)
   Line 11 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&(primitive->base).type + primitive[1].child_count);
   Line 14 [pointer_cast]: ((SMRGLHeaderExtended *)((int)&(primitive->base).type + primitive[1].child_count));
   Line 15 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&(primitive->base).type + primitive[2].base.type);
+
+====================================================================================================
+engine_3d.c_renderMRGLSubChain_FUN_004051e0 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 6 [pointer_cast]: ((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));
 
 ====================================================================================================
 engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 (3 suspects)

@@ -806,7 +806,7 @@ CDemonActor_vtable g_CMarqueeVTable = {
 };
 CDemonActor_vtable g_CMinecarVTable = {
     .setup = (CDemonActor_setup *)core_minecar_cpp_CMinecar_setup_FUN_00520e90,
-    .process = (CDemonActor_process *)core_minecar_cpp_CMinecar_process_FUN_00520eb0,
+    .process = (CDemonActor_process *)core_minecar_cpp_CMineCar_process_FUN_00520eb0,
     .renderOpaque = (CDemonActor_renderOpaque *)core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720,
     .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_CDemonActor_renderTransparent_FUN_00408ac0,
     .renderBackground = (CDemonActor_renderBackground *)core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0,
@@ -1722,7 +1722,7 @@ CDemonActor_vtable g_CWaterActorVTable = {
 CDemonActor_vtable g_CWayPointVTable = {
     .setup = (CDemonActor_setup *)core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0,
     .process = (CDemonActor_process *)core_trigger_cpp_CTrigger_process_FUN_005dfac0,
-    .renderOpaque = (CDemonActor_renderOpaque *)core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70,
+    .renderOpaque = (CDemonActor_renderOpaque *)core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70,
     .renderTransparent = (CDemonActor_renderTransparent *)core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0,
     .getBoundingBox = (CDemonActor_getBoundingBox *)core_trigger_cpp_CTrigger_getBoundingBox_FUN_005e0630,
@@ -3042,7 +3042,7 @@ CHero_full_vtable g_CScatVTable = {
         .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
         .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_scat_cpp_CScat_addFilesToExtract_FUN_00559140,
         .dtor = (CDemonActor_dtor *)core_scat_cpp_CScat_dtor_FUN_00559160,
-        .archive = (CDemonActor_archive *)core_scat_cpp_CSCat_archive_FUN_00557db0
+        .archive = (CDemonActor_archive *)core_scat_cpp_CScat_archive_FUN_00557db0
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
@@ -3236,7 +3236,7 @@ CHero_full_vtable g_CSvetlanaVTable = {
         .showEditorHelp = (CDemonActor_showEditorHelp *)core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150,
         .addFilesToExtract = (CDemonActor_addFilesToExtract *)core_svetlana_cpp_CSvetlana_addFilesToExtract_FUN_005d9f30,
         .dtor = (CDemonActor_dtor *)core_svetlana_cpp_CSvetlana_dtor_FUN_005d9f50,
-        .archive = (CDemonActor_archive *)core_svetlana_cpp_CSVetlana_archive_FUN_005d9bb0
+        .archive = (CDemonActor_archive *)core_svetlana_cpp_CSvetlana_archive_FUN_005d9bb0
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0,
@@ -4542,12 +4542,12 @@ CWeapon_full_vtable g_CWeaponVTable = {
 MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67] = {
     (MRGLBlockHandlerFunc*)engine_3d_c_badMRGLStruct_FUN_004037b0, (MRGLBlockHandlerFunc*)engine_3d_c_processCameraRelativePoint_FUN_004037e0, (MRGLBlockHandlerFunc*)engine_3d_c_transformAndBufferVertices_FUN_00403840, (MRGLBlockHandlerFunc*)engine_3d_c_processVertexLighting_FUN_00403a20,
     (MRGLBlockHandlerFunc*)engine_3d_c_processTextureCoordinates_FUN_00403a80, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403ad0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogColorOp6_FUN_00403ba0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403cc0,
-    (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d60, (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction2_FUN_00403e00, (MRGLBlockHandlerFunc*)engine_3d_c_processPolygonColor_FUN_00403e30, (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction3_FUN_00403ec0,
-    (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction4_FUN_00403ef0, (MRGLBlockHandlerFunc*)engine_texture_cpp_ensureTextureLoaded_FUN_005dd800, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f20, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404120,
-    (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction5_FUN_004041d0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404220, (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction6_FUN_00404420, (MRGLBlockHandlerFunc*)engine_3d_c_badMRGLStruct_FUN_004037b0,
-    (MRGLBlockHandlerFunc*)engine_3d_c_setRelativeCoord_FUN_00404450, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_004044a0, (MRGLBlockHandlerFunc*)engine_3d_c_drawLineStrip2D_FUN_00404570, (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction7_FUN_00404690,
+    (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogTexturedWrappedOp8_FUN_00403d60, (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp9_FUN_00403e00, (MRGLBlockHandlerFunc*)engine_3d_c_processPolygonColor_FUN_00403e30, (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp11_FUN_00403ec0,
+    (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp12_FUN_00403ef0, (MRGLBlockHandlerFunc*)engine_texture_cpp_ensureTextureLoaded_FUN_005dd800, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f20, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00404120,
+    (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp16_FUN_004041d0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00404220, (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp18_FUN_00404420, (MRGLBlockHandlerFunc*)engine_3d_c_badMRGLStruct_FUN_004037b0,
+    (MRGLBlockHandlerFunc*)engine_3d_c_setRelativeCoord_FUN_00404450, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedNormalizedOp21_FUN_004044a0, (MRGLBlockHandlerFunc*)engine_3d_c_drawLineStrip2D_FUN_00404570, (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp23_FUN_00404690,
     (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404d50,
-    (MRGLBlockHandlerFunc*)engine_3d_c_oldFunction8_FUN_00404df0, (MRGLBlockHandlerFunc*)engine_3d_c_updateAnimatedTexture_FUN_004050c0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00405170, (MRGLBlockHandlerFunc*)engine_3d_c_setVertexTextureU_FUN_00405270,
+    (MRGLBlockHandlerFunc*)engine_3d_c_abortOldFuncOp28_FUN_00404df0, (MRGLBlockHandlerFunc*)engine_3d_c_updateAnimatedTexture_FUN_004050c0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00405170, (MRGLBlockHandlerFunc*)engine_3d_c_setVertexTextureU_FUN_00405270,
     (MRGLBlockHandlerFunc*)engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004052b0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00404a40,
     (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0, (MRGLBlockHandlerFunc*)engine_boss_c_modelStructNotSupported1_FUN_0041db50, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_004058d0,
     (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405a00, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0, (MRGLBlockHandlerFunc*)engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00405d80,

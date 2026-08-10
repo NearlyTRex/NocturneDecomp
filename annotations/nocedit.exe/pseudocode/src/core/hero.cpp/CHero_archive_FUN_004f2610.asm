@@ -17,9 +17,9 @@
 ;   core_haystack.cpp_CHaystack_archive_FUN_004f1b50 at 004f1b55
 ;   core_icepick.cpp_CIcePick_archive_FUN_004f9590 at 004f9595
 ;   core_moloch.cpp_CMoloch_archive_FUN_00529880 at 00529886
-;   core_scat.cpp_CSCat_archive_FUN_00557db0 at 00557db5
+;   core_scat.cpp_CScat_archive_FUN_00557db0 at 00557db5
 ;   core_stranger.cpp_CStranger_archive_FUN_005c2fe0 at 005c2fe6
-;   core_svetlana.cpp_CSVetlana_archive_FUN_005d9bb0 at 005d9bb5
+;   core_svetlana.cpp_CSvetlana_archive_FUN_005d9bb0 at 005d9bb5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_motion_state_0062eaad

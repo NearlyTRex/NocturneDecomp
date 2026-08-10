@@ -39,9 +39,9 @@ void __cdecl CSvetlana::advanceMotion(CSvetlana *this_ptr,float delta_time);
 // Address: 005d9a10
 void __cdecl CSvetlana::performBladeAttack(CSvetlana *this_ptr,int bone_index);
 
-// Original: core_svetlana.cpp_CSVetlana_archive_FUN_005d9bb0
+// Original: core_svetlana.cpp_CSvetlana_archive_FUN_005d9bb0
 // Address: 005d9bb0
-void __cdecl CSVetlana::archive(CSvetlana *this_ptr);
+void __cdecl CSvetlana::archive(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0
 // Address: 005d9bc0

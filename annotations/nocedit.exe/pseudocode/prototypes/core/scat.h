@@ -39,9 +39,9 @@ void __cdecl CScat::updateAI(CScat *this_ptr,float delta_time);
 // Address: 00557d20
 void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_CSCat_archive_FUN_00557db0
+// Original: core_scat.cpp_CScat_archive_FUN_00557db0
 // Address: 00557db0
-void __cdecl CSCat::archive(CScat *this_ptr);
+void __cdecl CScat::archive(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_renderOpaque_FUN_00557df0
 // Address: 00557df0

@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; XREF[1]:
-;   core_minecar.cpp_CMinecar_process_FUN_00520eb0 at 00520eba
+;   core_minecar.cpp_CMineCar_process_FUN_00520eb0 at 00520eba
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0054cc10 = 0054cc81

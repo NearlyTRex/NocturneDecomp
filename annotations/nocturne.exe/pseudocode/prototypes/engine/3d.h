@@ -71,9 +71,9 @@ SMRGLHeaderExtended * __cdecl renderRotatedMRGLSubChain(SMRGLHeaderExtended *pri
 // Address: 00405140
 SMRGLHeaderExtended * __cdecl processPolygonColor(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction3_FUN_004051e0
+// Original: engine_3d.c_renderMRGLSubChain_FUN_004051e0
 // Address: 004051e0
-SMRGLHeaderExtended * __cdecl oldFunction3(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl renderMRGLSubChain(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderBSPNode_FUN_00405200
 // Address: 00405200
@@ -91,9 +91,9 @@ void * __cdecl renderPolygonTexturedUVLitPlaneMasked(SMRGLHeaderPrimitive *prim)
 // Address: 00405440
 SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedOp15(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction5_FUN_004054f0
+// Original: engine_3d.c_abortOldFuncOp16_FUN_004054f0
 // Address: 004054f0
-SMRGLHeaderExtended * __cdecl oldFunction5(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp16(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00405540
 // Address: 00405540
@@ -123,9 +123,9 @@ SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 // Address: 00405900
 SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 
-// Original: engine_3d.c_oldFunction7_FUN_00405990
+// Original: engine_3d.c_abortOldFuncOp23_FUN_00405990
 // Address: 00405990
-SMRGLHeaderExtended * __cdecl oldFunction7(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp23(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_computeSortedPolygonKey_FUN_004059c0
 // Address: 004059c0
@@ -171,9 +171,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedOp26(SMRGLHeaderPr
 // Address: 00406320
 SMRGLHeaderExtended * __cdecl renderPolygonFogColorDepthOp27(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_oldFunction8_FUN_004063c0
+// Original: engine_3d.c_abortOldFuncOp28_FUN_004063c0
 // Address: 004063c0
-SMRGLHeaderExtended * __cdecl oldFunction8(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl abortOldFuncOp28(SMRGLHeaderExtended *primitive);
 
 // Original: engine_3d.c_updateAnimatedTexture_FUN_00406690
 // Address: 00406690

@@ -1,0 +1,536 @@
+================================================================================
+CTextureList  nocedit 0x1a5ec (108012)  ->  nocturne 28004   must lose 80008 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0x5dc0     0x5dc0       +0        1/1      texture_entries : SMRGLTextureBasic[1000] @0x4
+  0x5dc4     0x5dc4       +0        3/3      texture_values : int[1000] @0x5dc4
+  0x6d64     -            REMOVED   1/1      master_texture_count : int @0x6d64
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x6d64    master_texture_count : int @0x6d64   (1 sighting(s))
+
+  candidate edits that account for exactly 80008 bytes:
+      truncate from 0x6d64: drop master_texture_count, master_texture_names, current_master_selection  (new size 0x6d64)
+      remove fields at 0x6d64: master_texture_count, master_texture_names, current_master_selection
+
+================================================================================
+CDeformableModel  nocedit 0x9000 (36864)  ->  nocturne 10944   must lose 25920 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        6/6      lod_info : SLod[5] @0x4
+  0x10       0x10         +0        4/4      lod_info : SLod[5] @0x4
+  0x14       0x14         +0        4/4      lod_info : SLod[5] @0x4
+  0x18       0x18         +0        2/2      lod_info : SLod[5] @0x4
+  0x1c       0x1c         +0        2/2      lod_info : SLod[5] @0x4
+  0x20       0x20         +0        1/1      lod_info : SLod[5] @0x4
+  0x28       0x28         +0        2/2      lod_info : SLod[5] @0x4
+  0x2c       0x2c         +0        16/17     vertex_count : int[5] @0x2c
+  0x34       0x34         +0        2/2      vertex_count : int[5] @0x2c
+  0x3c       0x3c         +0        1/1      vertex_count : int[5] @0x2c
+  0x40       0x40         +0        5/5      vertex_data_ptr : SVert*[5] @0x40
+  0x48       0x48         +0        2/2      vertex_data_ptr : SVert*[5] @0x40
+  0x50       0x50         +0        4/4      vertex_data_ptr : SVert*[5] @0x40
+  0x54       0x54         +0        8/8      tri_count : int[5] @0x54
+  0x5c       0x5c         +0        1/1      tri_count : int[5] @0x54
+  0x60       0x60         +0        1/1      tri_count : int[5] @0x54
+  0x64       0x64         +0        2/2      tri_count : int[5] @0x54
+  0x68       0x68         +0        5/5      cap_tri_count : int[5] @0x68
+  0x78       0x78         +0        1/1      cap_tri_count : int[5] @0x68
+  0x7c       0x7c         +0        15/16     tri_data_ptr : SInputFace*[5] @0x7c
+  0x8c       0x8c         +0        2/2      tri_data_ptr : SInputFace*[5] @0x7c
+  0x90       0x90         +0        9/9      index_data_ptr : int*[5] @0x90
+  0xa0       0xa0         +0        2/2      index_data_ptr : int*[5] @0x90
+  0xa4       0xa4         +0        6/6      cap_index_ptr : int*[5] @0xa4
+  0xb8       0xb8         +0        5/6      num_texture_sets : int @0xb8
+  0xbc       0xbc         +0        6/7      num_textures : int @0xbc
+  0xc0       0xc0         +0        4/4      texture_sets.textures.textures.base.type : int @0x0
+  0x2234     0x2234       +0        4/4      texture_sets : STextureSet[5] @0xc0
+  0x7118     0xbd8        -25920    1/1      texture_sets : STextureSet[5] @0xc0
+  0x7140     0xc00        -25920    21/21     num_parts : int @0x7140
+  0x7144     0xc04        -25920    7/7      parts.part_name : char[32] @0x0
+  0x7164     0xc24        -25920    5/8      parts.tri_counts : int[5] @0x20
+  0x7178     0xc38        -25920    3/3      parts.cap_tri_counts : int[5] @0x34
+  0x718c     0xc4c        -25920    2/2      parts.adj_part_count : int @0x48
+  0x71a0     0xc60        -25920    1/1      parts.dominant_bone : int @0x5c
+  0x7c84     0x1744       -25920    3/3      model_scale.x : float @0x0
+  0x7c88     0x1748       -25920    5/5      model_scale.y : float @0x4
+  0x7c8c     0x174c       -25920    5/5      model_scale.z : float @0x8
+  0x7c90     0x1750       -25920    2/2      vertex_pool.x : float @0x0
+  0x8140     0x1c00       -25920    3/3      bbox_pool.min.x : float @0x0
+  0x8144     0x1c04       -25920    1/1      bbox_pool.min.y : float @0x4
+  0x8148     0x1c08       -25920    1/1      bbox_pool.min.z : float @0x8
+  0x8aa8     0x2568       -25920    1/1      dead : char[12] @0x8aa0
+  0x8aac     0x256c       -25920    3/3      bone_flags : int[100] @0x8aac
+  0x8c38     0x26f8       -25920    1/2      bone_flags : int[100] @0x8aac
+  0x8c3c     0x26fc       -25920    1/1      bone_to_part_map : int[100] @0x8c3c
+  0x8dcc     0x288c       -25920    1/1      farthest_child_bone : int[100] @0x8dcc
+  0x8f5c     0x2a1c       -25920    3/3      model_name : char[80] @0x8f5c
+  0x8fac     0x2a6c       -25920    5/5      skeleton_ptr : CSkeleton* @0x8fac
+
+  removal window: after 0x2234 (last unshifted) and at/before 0x7118 (first shifted)
+
+  candidate edits that account for exactly 25920 bytes:
+      shrink texture_sets.textures : SMRGLTextureLod[80] -> [8]  (72 x 72 bytes x 5 STextureSet)
+
+================================================================================
+CKeyFramedModel  nocedit 0x56d8 (22232)  ->  nocturne 920   must lose 21312 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/2      model_filename : char[256] @0x0
+  0x10       0x10         +0        2/2      model_filename : char[256] @0x0
+  0x14       0x14         +0        1/1      model_filename : char[256] @0x0
+  0x18       0x18         +0        6/6      model_filename : char[256] @0x0
+  0x24       0x24         +0        3/3      model_filename : char[256] @0x0
+  0x100      0x100        +0        19/19     frame_count : int @0x100
+  0x104      0x104        +0        17/17     vertex_count : int @0x104
+  0x108      0x108        +0        8/8      vertex_normal_list : CVector3i* @0x108
+  0x10c      0x10c        +0        9/9      vertex_list : CVector3i* @0x10c
+  0x110      0x110        +0        26/26     poly_count : int @0x110
+  0x114      0x114        +0        14/14     poly_vert_list : SMRGLPrimitiveQuad* @0x114
+  0x118      0x118        +0        9/9      poly_texture_index_list : int* @0x118
+  0x11c      0x11c        +0        4/4      env_map_opac_list : uchar* @0x11c
+  0x120      0x120        +0        13/13     texture_count : int @0x120
+  0x124      0x124        +0        4/4      texture_list.textures.base.type : int @0x0
+  0x128      0x128        +0        1/1      texture_list.textures.base.count : int @0x4
+  0x12c      0x12c        +0        1/1      texture_list.textures.texture_name : char[16] @0x8
+  0x5584     0x244        -21312    9/9      part_count : int @0x5584
+  0x5588     0x248        -21312    2/2      part_list.vertex_count : int @0x0
+  0x558c     0x24c        -21312    2/2      part_list.poly_count : int @0x4
+  0x5678     0x338        -21312    1/1      bounds.min.x : float @0x0
+  0x5684     0x344        -21312    1/1      bounds.max.x : float @0x0
+  0x5690     0x350        -21312    4/4      frame_bounds : CBoundingBox3D* @0x5690
+  0x5694     0x354        -21312    12/12     collision_triangle_count : int @0x5694
+  0x5698     0x358        -21312    9/9      collision_triangle_list : CDemonTriangle* @0x5698
+  0x569c     0x35c        -21312    3/3      transparent_pixel_flag : int @0x569c
+  0x56a0     0x360        -21312    4/4      disable_backface_culling : int @0x56a0
+  0x56a4     0x364        -21312    2/2      transform_vector.x : float @0x0
+
+  removal window: after 0x12c (last unshifted) and at/before 0x5584 (first shifted)
+
+  candidate edits that account for exactly 21312 bytes:
+      shrink texture_list : SMRGLTextureLod[300] -> [4]  (296 x 72 bytes)
+
+================================================================================
+CSkeleton  nocedit 0x2982c (170028)  ->  nocturne 168828   must lose 1200 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/3      motion_list.state_names : char[80][30] @0x4
+  0x28558    0x28558      +0        12/14     bone_count : int @0x28558
+  0x2855c    0x2855c      +0        2/2      bone_list.bone_name : char[32] @0x0
+  0x2857c    0x2857c      +0        1/1      bone_list.parent_index : int @0x20
+  0x2936c    0x2936c      +0        13/13     frame_count : int @0x2936c
+  0x29370    0x29370      +0        5/5      bone_angle_frames : CQuaternion4f* @0x29370
+  0x29374    0x29374      +0        4/4      frame_positions_1 : CVector3f* @0x29374
+  0x29378    0x29378      +0        4/4      frame_positions_2 : CVector3f* @0x29378
+  0x2937c    -            REMOVED   2/2      bone_scales.x : float @0x0
+  0x29380    -            REMOVED   1/1      bone_scales.y : float @0x4
+  0x29384    -            REMOVED   1/1      bone_scales.z : float @0x8
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x2937c   bone_scales.x : float @0x0   (2 sighting(s))
+      0x29380   bone_scales.y : float @0x4   (1 sighting(s))
+      0x29384   bone_scales.z : float @0x8   (1 sighting(s))
+
+  candidate edits that account for exactly 1200 bytes:
+      truncate from 0x2937c: drop bone_scales  (new size 0x2937c)
+      remove field at 0x2937c: bone_scales
+
+================================================================================
+CPickList  nocedit 0x3a8 (936)  ->  nocturne 368   must lose 568 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/3      base.vtable : CStrList_vtable* @0xc
+  0x10       0x7c         +108      5/5      tab_column_widths : int[10] @0x10
+  0x38       0xa4         +108      6/6      tab_column_count : int @0x38
+  0x40       0x78         +56       1/1      state_flag : int @0x40
+  0x10c      0xa8         -100      1/1      search_text_buffer : char[100] @0x10c
+  0x170      0x10c        -100      4/4      confirmed_flag : int @0x170
+  0x174      0x110        -100      5/5      character_width : int @0x174
+  0x178      0x114        -100      1/1      column_padding : int @0x178
+  0x17c      0x118        -100      12/12     current_index : int @0x17c
+  0x180      0x11c        -100      27/27     scroll_top : int @0x180
+  0x184      0x120        -100      2/2      page_size : int @0x184
+  0x188      0x124        -100      25/25     vertical_page_size : int @0x188
+  0x18c      0x128        -100      9/9      total_content_width : int @0x18c
+  0x190      0x12c        -100      18/18     column_count : int @0x190
+  0x194      0x130        -100      4/4      enabled_capacity : int @0x194
+  0x198      0x134        -100      5/5      enabled_array : int* @0x198
+  0x19c      0x130        -108      1/1      hotkey_capacity : int @0x19c
+  0x1a4      0x138        -108      6/6      scrollbar.scroll_position : int @0x0
+  0x1a8      0x13c        -108      4/4      scrollbar.current_value : int @0x4
+  0x1ac      0x140        -108      3/3      scrollbar.max_value : int @0x8
+  0x1d8      0x16c        -108      5/5      dialog_result : int @0x1d8
+
+  removal window: after 0xc (last unshifted) and at/before 0x10 (first shifted)
+
+================================================================================
+CPodFile  nocedit 0x42c (1068)  ->  nocturne 540   must lose 528 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/2      filename : char[256] @0x4
+  0x100      0x100        +0        1/1      filename : char[256] @0x4
+  0x104      0x104        +0        1/1      timestamp : uint @0x104
+  0x200      0x200        +0        1/1      description : char[256] @0x108
+  0x204      0x204        +0        1/1      description : char[256] @0x108
+  0x208      0x208        +0        1/1      author_info : char[256] @0x208
+  0x20c      0x20c        +0        1/1      author_info : char[256] @0x208
+  0x210      0x210        +0        1/1      author_info : char[256] @0x208
+  0x410      0x208        -520      6/6      file_count : int @0x410
+  0x414      0x20c        -520      8/8      directory_entries : CPodDirectoryEntry* @0x414
+  0x418      0x210        -520      1/1      file_data_buffer : char* @0x418
+
+  removal window: after 0x210 (last unshifted) and at/before 0x410 (first shifted)
+
+================================================================================
+CDemonMission  nocedit 0x27d0 (10192)  ->  nocturne 10140   must lose 52 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        9/9      has_inventory_actors : int @0xc
+  0x10       0x10         +0        1/1      current_camera_index : int @0x10
+  0x1c       0x1c         +0        1/1      viewport.right : int @0x8
+  0x20       0x20         +0        4/4      viewport.bottom : int @0xc
+  0x24       0x24         +0        1/1      show_3d_viewport : int @0x24
+  0x28       0x28         +0        1/1      selected_actor : CDemonActor* @0x28
+  0x2c       0x2c         +0        4/5      hovered_actor : CDemonActor* @0x2c
+  0x30       0x30         +0        3/3      render_sky_in_editor : int @0x30
+  0x34       0x34         +0        2/2      render_water_in_editor : int @0x34
+  0x38       0x38         +0        1/1      full_light_in_editor : int @0x38
+  0x3c       -            REMOVED   1/1      skip_gore_load_flag : int @0x3c
+  0x44       0x10         -52       2/2      mission_name : char[256] @0x44
+  0x70       0x70         +0        4/4      mission_name : char[256] @0x44
+  0x74       0x74         +0        1/1      mission_name : char[256] @0x44
+  0x78       0x78         +0        2/2      mission_name : char[256] @0x44
+  0xc0       0xc0         +0        1/1      mission_name : char[256] @0x44
+  0xc4       0xc4         +0        1/1      mission_name : char[256] @0x44
+  0x114      0x114        +0        1/1      mission_name : char[256] @0x44
+  0x144      0x110        -52       7/7      num_sets : int @0x144
+  0x148      0x114        -52       4/4      set_names : char[4][256] @0x148
+  0x14c      0x144        -8        20/21     set_names : char[4][256] @0x148
+  0x150      0x148        -8        2/2      set_names : char[4][256] @0x148
+  0x154      0x14c        -8        4/4      set_names : char[4][256] @0x148
+  0x158      0x150        -8        3/3      set_names : char[4][256] @0x148
+  0x228      0x228        +0        1/1      set_names : char[4][256] @0x148
+  0x234      0x234        +0        1/1      set_names : char[4][256] @0x148
+  0x258      0x258        +0        1/1      set_names : char[4][256] @0x148
+  0x548      0x514        -52       21/21     first_actor : CDemonActor* @0x548
+  0x54c      0x518        -52       4/4      last_actor : CDemonActor* @0x54c
+  0x550      0x51c        -52       3/3      pending_teleport.position.x : float @0x0
+  0x554      0x520        -52       3/3      pending_teleport.position.y : float @0x4
+  0x558      0x524        -52       3/3      pending_teleport.position.z : float @0x8
+  0x55c      0x528        -52       6/6      pending_teleport.area_id : int @0xc
+  0x560      0x52c        -52       3/4      delete_queue_count : int @0x560
+  0x564      -            REMOVED   2/2      delete_queue_actors : CDemonActor*[100] @0x564
+  0x6f4      -            REMOVED   1/1      delete_queue_flags : uint[100] @0x6f4
+  0x884      0x850        -52       2/3      actors_prepared : int @0x884
+  0x888      0x854        -52       8/8      next_inventory_actor : CDemonActor* @0x888
+  0x88c      0x858        -52       13/15     actor_lookup_count : int @0x88c
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x3c      skip_gore_load_flag : int @0x3c   (1 sighting(s))
+      0x564     delete_queue_actors : CDemonActor*[100] @0x564   (2 sighting(s))
+      0x6f4     delete_queue_flags : uint[100] @0x6f4   (1 sighting(s))
+  removal window: after 0x38 (last unshifted) and at/before 0x44 (first shifted)
+
+================================================================================
+CSfxSample  nocedit 0x180 (384)  ->  nocturne 360   must lose 24 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        1/1      sample_info.name : char[256] @0x0
+  0x74       0x70         -4        1/1      sample_info.name : char[256] @0x0
+  0x78       0x74         -4        1/1      sample_info.name : char[256] @0x0
+  0x104      0x104        +0        4/4      sample_info.bit_depth : int @0x104
+  0x108      0x108        +0        4/4      sample_info.num_channels : int @0x108
+  0x10c      0x10c        +0        3/3      sample_info.sample_rate : int @0x10c
+  0x110      0x110        +0        4/7      sample_info.sample_count : int @0x110
+  0x114      0x114        +0        5/5      sample_info.reference_distance : float @0x114
+  0x118      0x118        +0        5/5      sample_info.reference_volume_distance : float @0x118
+  0x11c      0x11c        +0        2/3      sample_info.max_distance : float @0x11c
+  0x120      0x120        +0        7/7      sample_data : short* @0x120
+  0x124      0x124        +0        2/3      loop_marker_count : int @0x124
+  0x128      -            REMOVED   3/3      loop_endpoints : int[5] @0x128
+  0x13c      -            REMOVED   2/2      loop_destinations : int[5] @0x13c
+  0x150      0x128        -40       1/1      taken : int @0x150
+  0x154      0x154        +0        1/1      ref_count : int @0x154
+  0x158      0x130        -40       9/9      buffer_id : int @0x158
+  0x15c      0x134        -40       3/3      streaming_slot_index : int @0x15c
+  0x160      0x138        -40       11/11     streaming_buffer_size : int @0x160
+  0x164      0x13c        -40       9/9      stream_read_position : int @0x164
+  0x168      0x140        -40       8/8      stream_write_position : int @0x168
+  0x16c      0x144        -40       3/3      mp3_data : CMP3Decoder* @0x16c
+  0x170      0x148        -40       1/1      file_offset : int @0x170
+  0x174      0x14c        -40       6/6      file_handle : _FILE* @0x174
+  0x178      0x150        -40       3/3      locked_offset : int @0x178
+  0x17c      0x154        -40       4/5      locked_length : int @0x17c
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x128     loop_endpoints : int[5] @0x128   (3 sighting(s))
+      0x13c     loop_destinations : int[5] @0x13c   (2 sighting(s))
+  removal window: after 0xc (last unshifted) and at/before 0x74 (first shifted)
+
+================================================================================
+CDemonActor  nocedit 0x158 (344)  ->  nocturne 336   must lose 8 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        10/10     actor_name : char[32] @0x0
+  0x10       0x10         +0        4/4      actor_name : char[32] @0x0
+  0x14       0x14         +0        6/6      actor_name : char[32] @0x0
+  0x18       0x18         +0        3/3      actor_name : char[32] @0x0
+  0x1c       0x1c         +0        4/4      actor_name : char[32] @0x0
+  0x20       0x20         +0        22/22     location.position.x : float @0x0
+  0x24       0x24         +0        9/9      location.position.y : float @0x4
+  0x28       0x28         +0        7/7      location.position.z : float @0x8
+  0x2c       0x2c         +0        2/2      location.area_id : int @0xc
+  0x30       0x30         +0        9/9      orient.vec.x : float @0x0
+  0x34       0x34         +0        1/1      orient.vec.y : float @0x4
+  0x38       0x38         +0        3/3      orient.vec.z : float @0x8
+  0x3c       0x3c         +0        1/1      orient_matrix.m.x : float @0x0
+  0x64       0x64         +0        1/1      health : int @0x64
+  0x68       0x68         +0        3/3      validation_magic : uintptr_t @0x68
+  0x70       0x70         +0        3/3      lifecycle_state : EActorLifecycleState @0x70
+  0x74       0x74         +0        2/2      create_prob : float @0x74
+  0x78       0x78         +0        1/1      create_event : char[100] @0x78
+  0xdc       0xdc         +0        2/2      standing_platform : CPlatform* @0xdc
+  0xe0       0xe0         +0        1/1      platform_position_delta.x : float @0x0
+  0xec       0xec         +0        1/1      platform_orientation_delta.x : float @0x0
+  0xf8       0xf8         +0        1/1      is_renderable : int @0xf8
+  0xfc       0xfc         +0        1/1      is_transparent : int @0xfc
+  0x100      0x100        +0        1/1      collision_disabled : int @0x100
+  0x104      0x104        +0        1/1      process_disabled : int @0x104
+  0x108      0x108        +0        1/1      scale.x : int @0x0
+  0x10c      0x10c        +0        1/1      scale.y : int @0x4
+  0x110      0x110        +0        1/1      scale.z : int @0x8
+  0x114      0x114        +0        7/8      blood_effect_timer : int @0x114
+  0x118      0x118        +0        2/2      blood_effect_color : uint @0x118
+  0x11c      0x11c        +0        2/2      footstep_sound_code : char[4] @0x11c
+  0x148      -            REMOVED   1/1      is_editor_hidden : int @0x148
+  0x14c      0x144        -8        1/1      next_actor : CDemonActor* @0x14c
+  0x150      0x148        -8        1/1      prev_actor : CDemonActor* @0x150
+  0x154      0x14c        -8        36/36     vtable._ub : CDemonActor_vtable* @0x0
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x148     is_editor_hidden : int @0x148   (1 sighting(s))
+  removal window: after 0x11c (last unshifted) and at/before 0x14c (first shifted)
+
+  candidate edits that account for exactly 8 bytes:
+      remove fields at 0x11c: footstep_sound_code, dead1
+      remove fields at 0x120: dead1, dead2
+      remove fields at 0x144: render_needs_update, is_editor_hidden
+
+================================================================================
+CScript  nocedit 0x480 (1152)  ->  nocturne 1144   must lose 8 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xa        0xa          +0        10/10     ?
+  0xb        0xb          +0        8/8      ?
+  0xc        0xc          +0        16/16     focus_actor : CDemonActor* @0xc
+  0xd        0xd          +0        10/10     ?
+  0xe        0xe          +0        5/5      ?
+  0xf        0xf          +0        6/6      ?
+  0x10       0x10         +0        11/11     focus_actor_changed : int @0x10
+  0x11       0x11         +0        3/3      ?
+  0x12       0x12         +0        5/5      ?
+  0x13       0x13         +0        1/1      ?
+  0x14       0x14         +0        4/4      focus_actor_locked : int @0x14
+  0x15       0x15         +0        1/1      ?
+  0x17       0x17         +0        1/1      ?
+  0x18       0x18         +0        6/6      script_state : int @0x18
+  0x1b       0x1b         +0        1/1      ?
+  0x1c       0x1c         +0        8/8      dialog_entry_count : int @0x1c
+  0x20       0x20         +0        10/10     dialog_entries : SDialogEntry* @0x20
+  0x24       0x24         +0        2/2      current_sfx_handle : uint @0x24
+  0x30       0x28         -8        12/15     parsed_line_count : int @0x30
+  0x34       0x2c         -8        19/21     parsed_lines : SScriptLine* @0x34
+  0x38       0x30         -8        1/1      script_text.item_count : int @0x0
+  0x3c       0x3c         +0        2/2      script_text.capacity : int @0x4
+  0x48       0x40         -8        26/28     next_cmd : int @0x48
+  0x4c       0x44         -8        16/16     cmd_timer : float @0x4c
+  0x50       0x48         -8        15/15     dialog_wav_time : float @0x50
+  0x54       0x4c         -8        8/8      current_message : char[1024] @0x54
+  0x78       0x78         +0        2/2      current_message : char[1024] @0x54
+  0x96       0x96         +0        2/2      ?
+  0xcc       0xcc         +0        1/1      current_message : char[1024] @0x54
+  0x150      -            REMOVED   1/1      current_message : char[1024] @0x54
+  0x154      0x14c        -8        8/8      current_message : char[1024] @0x54
+  0x158      0x150        -8        1/1      current_message : char[1024] @0x54
+  0x1ec      0x1ec        +0        1/1      current_message : char[1024] @0x54
+  0x228      0x228        +0        8/8      current_message : char[1024] @0x54
+  0x22c      0x22c        +0        6/6      current_message : char[1024] @0x54
+  0x230      0x230        +0        4/4      current_message : char[1024] @0x54
+  0x238      0x238        +0        2/2      current_message : char[1024] @0x54
+  0x240      0x240        +0        2/2      current_message : char[1024] @0x54
+  0x258      0x258        +0        2/2      current_message : char[1024] @0x54
+  0x2fc      0x2f4        -8        1/1      current_message : char[1024] @0x54
+  0x454      0x44c        -8        4/4      message_duration : float @0x454
+  0x458      0x450        -8        5/5      saved_cmd_index : int @0x458
+  0x45c      0x454        -8        4/6      call_stack_count : int @0x45c
+  0x460      0x458        -8        2/2      call_stack : int[8] @0x460
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x150     current_message : char[1024] @0x54   (1 sighting(s))
+  removal window: after 0x24 (last unshifted) and at/before 0x30 (first shifted)
+
+  candidate edits that account for exactly 8 bytes:
+      remove fields at 0x24: current_sfx_handle, xref_count
+      remove fields at 0x28: xref_count, xref_entries
+
+================================================================================
+C3DSCamera  nocedit 0x1a4 (420)  ->  nocturne 416   must lose 4 bytes
+================================================================================
+  no matched method touches this class's fields -- not measurable this way
+
+  candidate edits that account for exactly 4 bytes:
+      truncate from 0x1a0: drop enabled  (new size 0x1a0)
+      shrink name : char[256] -> [252]  (4 x 1 bytes)
+      remove field at 0x13c: dead
+      remove field at 0x140: is_panning
+      remove field at 0x144: projection_scale
+      remove field at 0x148: ambient_value
+      remove field at 0x14c: camera_group
+      remove field at 0x150: fog_enabled
+      remove field at 0x178: reverb_preset
+      remove field at 0x194: pvs_count
+      remove field at 0x198: pvs_list
+      remove field at 0x19c: vdir_zone
+      remove field at 0x1a0: enabled
+
+================================================================================
+CPlatform  nocedit 0x72c (1836)  ->  nocturne 1824   must lose 12 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/2      base.actor_name : char[32] @0x0
+  0x10       0x10         +0        1/1      base.actor_name : char[32] @0x0
+  0x20       0x20         +0        2/2      base.location.position.x : float @0x0
+  0x24       0x24         +0        1/1      base.location.position.y : float @0x4
+  0x30       0x30         +0        4/4      base.orient.vec.x : float @0x0
+  0x38       0x38         +0        3/3      base.orient.vec.z : float @0x8
+  0x3c       -            REMOVED   1/1      base.orient_matrix.m.x : float @0x0
+  0x154      0x14c        -8        4/5      base.vtable._ub : CDemonActor_vtable* @0x0
+  0x158      0x150        -8        5/5      model.part_visibility_flags : int[30] @0x0
+  0x208      0x208        +0        2/2      model.model_name : char[256] @0x78
+  0x2d4      0x2cc        -8        3/4      state : EPlatformStateType @0x2d4
+  0x2d8      0x2d0        -8        1/1      ground_type : EGroundType @0x2d8
+  0x2dc      0x2d4        -8        9/10     param : float @0x2dc
+  0x2e0      0x2d8        -8        5/5      goal_param : float @0x2e0
+  0x2e4      0x2dc        -8        1/1      current_movement_rate : float @0x2e4
+  0x2e8      0x2e0        -8        1/1      travel_time_to_end : float @0x2e8
+  0x2ec      0x2e4        -8        1/1      travel_time_to_start : float @0x2ec
+  0x2f0      0x2e8        -8        5/5      course_filename : char[32] @0x2f0
+  0x310      0x308        -8        2/2      course.len : int @0x0
+  0x31c      0x314        -8        2/2      start_pos.x : float @0x0
+  0x328      0x320        -8        2/2      end_pos.x : float @0x0
+  0x334      0x32c        -8        1/1      orig_orient.w : float @0x0
+  0x344      0x33c        -8        2/2      end_orient.w : float @0x0
+  0x354      0x34c        -8        2/2      to_start_event : char[100] @0x354
+  0x3b8      0x3b0        -8        2/2      to_end_event : char[100] @0x3b8
+  0x41c      0x414        -8        1/1      stop_event : char[100] @0x41c
+  0x480      0x478        -8        3/3      start_sound : char[20] @0x480
+  0x494      0x48c        -8        1/1      stop_sound : char[20] @0x494
+  0x4a8      0x4a0        -8        1/1      active_sound : char[20] @0x4a8
+  0x4c0      0x4b8        -8        2/2      one_shot : int @0x4c0
+  0x4c4      0x4bc        -8        1/1      block_virtual_director_flag : int @0x4c4
+  0x4c8      0x4c0        -8        3/3      render_in_background_when_not_moving_flag : int @0x4c8
+  0x50c      0x504        -8        1/1      plot_as_box_in_shadow : int @0x50c
+  0x510      0x508        -8        1/1      push_flag : int @0x510
+  0x514      -            REMOVED   1/2      recompute_fog : int @0x514
+  0x51c      0x514        -8        8/8      attach_actors.actor : CDemonActor* @0x0
+  0x728      0x71c        -12       2/2      rendered_in_background : int @0x728
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x3c      base.orient_matrix.m.x : float @0x0   (1 sighting(s))
+      0x514     recompute_fog : int @0x514   (1 sighting(s))
+  removal window: after 0x38 (last unshifted) and at/before 0x154 (first shifted)
+
+================================================================================
+CSfxOptions  nocedit 0x70 (112)  ->  nocturne 108   must lose 4 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        2/2      position.y : double @0x8
+  0x14       0x14         +0        2/2      position.z : double @0x10
+  0x18       0x18         +0        1/1      position.z : double @0x10
+  0x1c       0x1c         +0        1/1      position_source_ptr : void* @0x1c
+  0x20       0x20         +0        1/1      position_format : int @0x20
+  0x24       0x24         +0        1/1      velocity.x : double @0x0
+  0x2c       0x2c         +0        2/2      velocity.y : double @0x8
+  0x34       0x34         +0        2/2      velocity.z : double @0x10
+  0x38       0x38         +0        1/1      velocity.z : double @0x10
+  0x3c       0x3c         +0        1/1      velocity_source_ptr : void* @0x3c
+  0x40       0x40         +0        1/1      velocity_format : int @0x40
+  0x44       0x44         +0        1/1      current_volume : float @0x44
+  0x48       0x48         +0        1/1      base_frequency : float @0x48
+  0x4c       0x4c         +0        1/1      delay_remaining : double @0x4c
+  0x54       0x54         +0        1/1      userdata : void*[2] @0x54
+  0x60       0x60         +0        1/1      trigger_time : double @0x60
+  0x64       0x64         +0        1/1      trigger_time : double @0x60
+  0x68       0x68         +0        1/1      trigger_id : int @0x68
+  0x6c       -            REMOVED   1/1      dead : int @0x6c
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x6c      dead : int @0x6c   (1 sighting(s))
+
+  candidate edits that account for exactly 4 bytes:
+      truncate from 0x6c: drop dead  (new size 0x6c)
+      remove field at 0x68: trigger_id
+      remove field at 0x6c: dead
+
+================================================================================
+CSfxSlot  nocedit 0x128 (296)  ->  nocturne 288   must lose 8 bytes
+================================================================================
+
+  nocedit    nocturne     shift     votes    field
+  0xc        0xc          +0        5/5      options.position.y : double @0x8
+  0x10       0x10         +0        2/2      options.position.y : double @0x8
+  0x14       0x14         +0        7/7      options.position.z : double @0x10
+  0x18       0x18         +0        1/1      options.position.z : double @0x10
+  0x1c       0x1c         +0        6/6      options.position_source_ptr : void* @0x1c
+  0x20       0x20         +0        2/2      options.position_format : int @0x20
+  0x24       0x24         +0        3/3      options.velocity.x : double @0x0
+  0x2c       0x2c         +0        3/3      options.velocity.y : double @0x8
+  0x34       0x34         +0        3/3      options.velocity.z : double @0x10
+  0x38       0x38         +0        1/1      options.velocity.z : double @0x10
+  0x3c       0x3c         +0        6/6      options.velocity_source_ptr : void* @0x3c
+  0x40       0x40         +0        2/2      options.velocity_format : int @0x40
+  0x44       0x44         +0        6/6      options.current_volume : float @0x44
+  0x48       0x48         +0        1/1      options.base_frequency : float @0x48
+  0x4c       0x4c         +0        4/4      options.delay_remaining : double @0x4c
+  0x50       0x50         +0        2/2      options.delay_remaining : double @0x4c
+  0x5c       0x5c         +0        5/5      options.flags : uint @0x5c
+  0x60       0x60         +0        18/22     options.trigger_time : double @0x60
+  0x64       0x64         +0        3/5      options.trigger_time : double @0x60
+  0x68       0x68         +0        3/3      options.trigger_id : int @0x68
+  0x70       0x6c         -4        5/6      hardware_buffer_handle : int @0x70
+  0x74       0x70         -4        3/4      playback_state : int @0x74
+  0x78       0x74         -4        29/39     sample : CSfxSample* @0x78
+  0x7c       0x78         -4        11/11     effective_frequency : float @0x7c
+  0x80       0x7c         -4        2/2      distance_to_speakers : float[8] @0x80
+  0x9c       0x98         -4        2/2      distance_to_speakers : float[8] @0x80
+  0xa0       0x9c         -4        7/7      channel_volumes : float[8] @0xa0
+  0xbc       0xb8         -4        2/2      channel_volumes : float[8] @0xa0
+  0xc0       0xbc         -4        5/5      channel_target_buffer_offsets : int[8] @0xc0
+  0xe0       0xdc         -4        4/4      channel_current_buffer_offsets : int[8] @0xe0
+  0x100      0x100        +0        1/1      reference_distance : float @0x100
+  0x104      0x104        +0        5/5      min_distance : float @0x104
+  0x108      0x108        +0        2/3      max_distance : float @0x108
+  0x10c      0x108        -4        2/3      fade_target_volume : float @0x10c
+  0x110      0x10c        -4        5/10     fade_time_remaining : float @0x110
+  0x114      0x110        -4        1/1      stop_after_fade : float @0x114
+  0x118      0x114        -4        12/13     is_active : int @0x118
+  0x11c      0x118        -4        4/7      prev_hardware_playback_pos : double @0x11c
+  0x120      0x120        +0        8/12     prev_hardware_playback_pos : double @0x11c
+  0x124      -            REMOVED   6/6      loop_marker_index : int @0x124
+
+  fields with NO counterpart in nocturne (initialised in nocedit only):
+      0x124     loop_marker_index : int @0x124   (6 sighting(s))
+  removal window: after 0x68 (last unshifted) and at/before 0x70 (first shifted)
+
