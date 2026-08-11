@@ -84,7 +84,7 @@
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
-;   crt_watcom.c__getcwd_FUN_00608d20
+;   crt_watcom.c__getcwd_FUN_0060128c
 ;   engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50
 ;   engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0
@@ -105,8 +105,8 @@ section .text
     PUSH 0x104                          ; 0049f42f
     LEA EAX,[ESP + 0x9fc]               ; 0049f434
     PUSH EAX                            ; 0049f43b
-    CALL crt_watcom.c__getcwd_FUN_00608d20 ; 0049f43c
-        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c__getcwd_FUN_0060128c ; 0049f43c
+        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_0060128c(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0049f441
     TEST EAX,EAX                        ; 0049f444
     JZ 0x0049f71b                       ; 0049f446
@@ -132,8 +132,8 @@ section .text
     MOV ESI,0x678b78                    ; 0049f492 | = "[ERROR: Can't get current directory.]"
     PUSH EAX                            ; 0049f497
     MOVSD.REP ES:EDI,ESI                ; 0049f498 | = "[ERROR: Can't get current directory.]" | s_OR:_Can't_get_current_directory._00678b7c
-    CALL crt_watcom.c__getcwd_FUN_00608d20 ; 0049f49a
-        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c__getcwd_FUN_0060128c ; 0049f49a
+        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_0060128c(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0049f49f
     LEA EAX,[ESP + 0x6f4]               ; 0049f4a2
     PUSH EAX                            ; 0049f4a9

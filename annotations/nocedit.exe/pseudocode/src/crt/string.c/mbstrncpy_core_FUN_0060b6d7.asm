@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0060b670(char *dest,char *src,int count)
+; char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0060b6d7(char *dest,char *src,int count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   dest
@@ -23,7 +23,7 @@
 section .text
 
     PUSH EBX                            ; 0060b6d7
-        ;   Label: crt_string.c_mbstrncpy_core_FUN_0060b670
+        ;   Label: crt_string.c_mbstrncpy_core_FUN_0060b6d7
     MOV EBX,dword ptr [ESP + 0x8]       ; 0060b6d8
     PUSH EBX                            ; 0060b6dc
         ;   Label: LAB_0060b6dc

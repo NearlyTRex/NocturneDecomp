@@ -75,7 +75,7 @@ int __watcallStack remove(char *filename);
 // Address: 005ffa70
 int __cdecl seek::within_buffer(int offset,_FILE *file);
 
-// Original: crt_stdio.c_seek_within_buffer_FUN_005ffa70
+// Original: crt_stdio.c_seek_within_buffer_FUN_005ffab4
 // Address: 005ffab4
 int __cdecl seek::within_buffer(_FILE *file);
 

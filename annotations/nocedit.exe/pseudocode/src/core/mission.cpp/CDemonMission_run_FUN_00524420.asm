@@ -44,7 +44,7 @@
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0
 ;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
-;   crt_string.c__stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_006020fc
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   ... and 5 more
 ;
@@ -152,8 +152,8 @@ section .text
     ADD EAX,0x14d0f0                    ; 00524537
     PUSH EAX                            ; 0052453c | g_CDemonSetInstance.geometry_filename[0]
     XOR EDI,EDI                         ; 0052453d
-    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0052453f
-        ;   XREF to: 006020fc (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_006020fc ; 0052453f
+        ;   XREF to: 006020fc (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_006020fc(char * str1, char * str2)
     ADD ESP,0x8                         ; 00524544
     TEST EAX,EAX                        ; 00524547
     JNZ 0x005245f7                      ; 00524549

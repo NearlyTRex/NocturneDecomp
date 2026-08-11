@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   stream
 ;
 ; XREF[1]:
-;   crt_string.c_mbstrncpy_core_FUN_0060b670 at 0060b6dd
+;   crt_string.c_mbstrncpy_core_FUN_0060b6d7 at 0060b6dd
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020

@@ -1,6 +1,6 @@
 // Name: crt_string.c__stricmp_FUN_005fe7f0
-// Address: 006020fc
-// Address Range: [[006020fc, 00602100]]
+// Address: 005fe7f0
+// Address Range: [[005fe7f0, 005fe830]]
 // Convention: __cdecl
 // Signature: int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2)
 
@@ -9,8 +9,21 @@
 int __cdecl _stricmp(char *str1,char *str2)
 
 {
-  int iVar1;
+  byte bVar1;
+  byte bVar2;
   
-  iVar1 = _stricmp(str1,str2);
-  return iVar1;
+  while( true ) {
+    bVar1 = *str1;
+    bVar2 = *str2;
+    if ((0x40 < bVar1) && (bVar1 < 0x5b)) {
+      bVar1 = bVar1 + 0x20;
+    }
+    if ((0x40 < bVar2) && (bVar2 < 0x5b)) {
+      bVar2 = bVar2 + 0x20;
+    }
+    if ((bVar1 != bVar2) || (bVar2 == 0)) break;
+    str1 = str1 + 1;
+    str2 = str2 + 1;
+  }
+  return (uint)bVar1 - (uint)bVar2;
 }

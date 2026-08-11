@@ -6472,6 +6472,7 @@ crt_stdio.c_getc_helper_FUN_005fe700,005fe700,crt/stdio.c,9,0,,9
 crt_stdio.c_ungetc_helper_FUN_005fe720,005fe720,crt/stdio.c,6,0,,6
 crt_stdio.c_vfscanf_FUN_005fe738,005fe738,crt/stdio.c,23,2,unresolved_funcptr,48
 crt_stdio.c_fscanf_FUN_005fe7c0,005fe7c0,crt/stdio.c,8,1,stack_ref,23
+crt_string.c__stricmp_FUN_005fe7f0,005fe7f0,crt/string.c,19,0,,19
 crt_stdio.c_fgetc_FUN_005fe840,005fe840,crt/stdio.c,53,0,,53
 crt_stdio.c_FillBufferAndGetChar_FUN_005fe910,005fe910,crt/stdio.c,13,0,,13
 crt_stdio.c_FillInputBuffer_FUN_005fe940,005fe940,crt/stdio.c,42,0,,42
@@ -6521,6 +6522,7 @@ crt_ctype.c_toupper_FUN_005ff9e0,005ff9e0,crt/ctype.c,7,0,,7
 crt_stack.c_stack_overflow_handler_FUN_005ffa22,005ffa22,crt/stack.c,18,1,stack_ref,33
 crt_stack.c_ProbeStackSpace_FUN_005ffa2f,005ffa2f,crt/stack.c,15,1,stack_ref,30
 crt_stdio.c_seek_within_buffer_FUN_005ffa70,005ffa70,crt/stdio.c,10,0,,10
+crt_stdio.c_seek_within_buffer_FUN_005ffab4,005ffab4,crt/stdio.c,9,0,,9
 crt_stdio.c_fseek_FUN_005ffacc,005ffacc,crt/stdio.c,79,1,warning_unreachable,94
 crt_fstream.cpp_ostream_write_FUN_005ffcb3,005ffcb3,crt/fstream.cpp,50,8,pointer_cast|pointer_truncation|unresolved_funcptr|unrolled_memcpy,150
 crt_math.c_pow_FUN_005ffd76,005ffd76,crt/math.c,90,23,bitcast_double_pair|concat_reconstruction|nan_function_artifact|raw_address_constant|stack_param|sub84_truncation|warning_unreachable,355
@@ -6565,7 +6567,7 @@ crt_stdlib.c__fullpath_FUN_00601140,00601140,crt/stdlib.c,38,3,unaffected_reg,73
 crt_memory.c___arrinit_dispatch_FUN_00601200,00601200,crt/memory.c,16,3,unresolved_funcptr,51
 crt_memory.c___vec_new_FUN_00601232,00601232,crt/memory.c,11,1,pointer_cast,26
 crt_memory.c___vec_new_FUN_00601272,00601272,crt/memory.c,6,0,,6
-crt_watcom.c__getcwd_FUN_00608d20,0060128c,crt/watcom.c,45,2,unrolled_memcpy,70
+crt_watcom.c__getcwd_FUN_0060128c,0060128c,crt/watcom.c,45,2,unrolled_memcpy,70
 crt_io.c_chdir_FUN_006012a0,006012a0,crt/io.c,13,0,,13
 crt_heap.c__heapwalk_FUN_006012c0,006012c0,crt/heap.c,6,0,,6
 crt_heap.c_heapWalk_FUN_006012d0,006012d0,crt/heap.c,47,6,pointer_cast|pointer_truncation|register_param,122
@@ -6601,7 +6603,7 @@ crt_string.c_hexDigitToChar_FUN_00601f0c,00601f0c,crt/string.c,9,0,,9
 crt_io.c__tempnam_FUN_00601f1c,00601f1c,crt/io.c,54,2,unrolled_strcpy|unrolled_strlen,84
 crt_stdio.c_fclose_FUN_00601fd0,00601fd0,crt/stdio.c,38,0,,38
 crt_memory.c___arr_op_FUN_006020c2,006020c2,crt/memory.c,11,3,pointer_cast|pointer_truncation,51
-crt_string.c__stricmp_FUN_005fe7f0,006020fc,crt/string.c,6,0,,6
+crt_string.c__stricmp_FUN_006020fc,006020fc,crt/string.c,6,0,,6
 crt_math.c_modf_FUN_00602102,00602102,crt/math.c,6,1,warning_inlined_function,21
 crt_stdlib.c_system_FUN_00602130,00602130,crt/stdlib.c,34,0,,34
 crt_stdio.c_fprintf_FUN_006021c0,006021c0,crt/stdio.c,6,2,stack_param,31
@@ -6817,12 +6819,12 @@ crt_unknown.c_FUN_0060b586,0060b586,crt/unknown.c,51,30,carry_arith_idiom|extra_
 crt_unknown.c_FUN_0060b5e8,0060b5e8,crt/unknown.c,35,22,carry_arith_idiom|fpu_register_input|unaffected_reg|unnamed_param,275
 crt_string.c_mbstring_termination_check_FUN_0060b630,0060b630,crt/string.c,11,0,,11
 crt_unknown.c_FUN_0060b670,0060b670,crt/unknown.c,18,18,param_count_too_few|unnamed_param,208
-crt_string.c_mbstrncpy_core_FUN_0060b670,0060b6d7,crt/string.c,11,0,,11
+crt_string.c_mbstrncpy_core_FUN_0060b6d7,0060b6d7,crt/string.c,11,0,,11
 crt_stdio.c_storeErrorState_FUN_0060b78e,0060b78e,crt/stdio.c,5,0,,5
 crt_stdio.c_get_standard_file_handle_FUN_0060b7a0,0060b7a0,crt/stdio.c,7,2,pointer_cast|pointer_truncation,37
 crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2,0060b7c2,crt/iostream.cpp,15,0,,15
 crt_strstream.cpp_strstreambuf_init_FUN_0060b815,0060b815,crt/strstream.cpp,59,2,pointer_truncation|unrolled_strlen,89
-crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815,0060b8da,crt/iostream.cpp,17,0,,17
+crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da,0060b8da,crt/iostream.cpp,17,0,,17
 crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932,0060b932,crt/iostream.cpp,47,6,pointer_cast|unresolved_funcptr|unrolled_memcpy,122
 crt_stdio.c_closeUnsupported_FUN_0060b9b7,0060b9b7,crt/stdio.c,4,0,,4
 crt_strstream.cpp_strstreambuf_overflow_FUN_0060b9bd,0060b9bd,crt/strstream.cpp,33,4,pointer_truncation,78

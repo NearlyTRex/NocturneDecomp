@@ -30,6 +30,7 @@
 ;   crt_io.c_tell_FUN_00606720
 ;   crt_stdio.c_lseek_FUN_00606690
 ;   crt_stdio.c_seek_within_buffer_FUN_005ffa70
+;   crt_stdio.c_seek_within_buffer_FUN_005ffab4
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -167,8 +168,8 @@ section .text
     RET                                 ; 005ffbdd
     PUSH EBX                            ; 005ffbde
         ;   Label: LAB_005ffbde
-    CALL crt_stdio.c_seek_within_buffer_FUN_005ffa70 ; 005ffbdf
-        ;   XREF to: 005ffab4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffa70(_FILE * file)
+    CALL crt_stdio.c_seek_within_buffer_FUN_005ffab4 ; 005ffbdf
+        ;   XREF to: 005ffab4 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_seek_within_buffer_FUN_005ffab4(_FILE * file)
     ADD ESP,0x4                         ; 005ffbe4
     JMP 0x005ffc9f                      ; 005ffbe7
         ;   XREF to: 005ffc9f (UNCONDITIONAL_JUMP)  ; LAB_005ffc9f

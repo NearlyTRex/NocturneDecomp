@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_watcom_c__getcwd_FUN_00608d20(char *buffer,SIZE_T size)
+; char * __cdecl crt_watcom_c__getcwd_FUN_0060128c(char *buffer,SIZE_T size)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
@@ -17,5 +17,5 @@ section .text
 
     JMP 0x00608d20                      ; 0060128c
         ;   XREF to: 00608d20 (UNCONDITIONAL_JUMP)
-        ;   Label: crt_watcom.c__getcwd_FUN_00608d20
+        ;   Label: crt_watcom.c__getcwd_FUN_0060128c
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815(streambuf *this_ptr,char *buffer_ptr)
+; void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b8da(streambuf *this_ptr,char *buffer_ptr)
 ;
 ; Parameters:
 ; streambuf *      Stack[0x4]:4   this_ptr
@@ -17,7 +17,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0060b8da
-        ;   Label: crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
+        ;   Label: crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da
     MOV dword ptr [EAX],0x0             ; 0060b8de
     MOV dword ptr [EAX + 0x10],0x0      ; 0060b8e4
     MOV dword ptr [EAX + 0xc],0x0       ; 0060b8eb

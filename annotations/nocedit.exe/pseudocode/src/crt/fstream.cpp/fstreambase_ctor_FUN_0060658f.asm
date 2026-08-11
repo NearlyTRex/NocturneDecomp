@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   crt_fstream.cpp_filebuf_ctor_FUN_0060bddd
 ;   crt_iostream.cpp_ios_ctor_FUN_006061fc
-;   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
+;   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 006065cf
     ADD EAX,EBX                         ; 006065d2
     PUSH EAX                            ; 006065d4
-    CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815 ; 006065d5
-        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr)
+    CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da ; 006065d5
+        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da(streambuf * this_ptr, char * buffer_ptr)
     ADD ESP,0x8                         ; 006065da
     MOV EAX,EBX                         ; 006065dd
     POP EBX                             ; 006065df

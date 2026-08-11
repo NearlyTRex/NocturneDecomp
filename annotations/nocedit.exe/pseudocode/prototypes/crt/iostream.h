@@ -55,7 +55,7 @@ int __watcallStack streambuf::do_sputn(streambuf *buffer,void *input_buffer,SIZE
 // Address: 0060b7c2
 streambuf * __cdecl streambuf::ctor(streambuf *this_ptr);
 
-// Original: crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
+// Original: crt_iostream.cpp_streambuf_initBuffer_FUN_0060b8da
 // Address: 0060b8da
 void __watcallStack streambuf::initBuffer(streambuf *this_ptr,char *buffer_ptr);
 

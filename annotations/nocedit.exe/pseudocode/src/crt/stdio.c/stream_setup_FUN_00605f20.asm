@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020
 ;   crt_stdio.c_stream_flush_FUN_006060bb
-;   crt_string.c_mbstrncpy_core_FUN_0060b670
+;   crt_string.c_mbstrncpy_core_FUN_0060b6d7
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     JZ 0x00605f79                       ; 00605f54
         ;   XREF to: 00605f79 (CONDITIONAL_JUMP)  ; LAB_00605f79
     PUSH EBX                            ; 00605f56
-    CALL crt_string.c_mbstrncpy_core_FUN_0060b670 ; 00605f57
-        ;   XREF to: 0060b6d7 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbstrncpy_core_FUN_0060b670(char * dest, char * src, int count)
+    CALL crt_string.c_mbstrncpy_core_FUN_0060b6d7 ; 00605f57
+        ;   XREF to: 0060b6d7 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbstrncpy_core_FUN_0060b6d7(char * dest, char * src, int count)
     MOV EAX,dword ptr [EBX]             ; 00605f5c
     MOV EAX,dword ptr [EAX + 0x4]       ; 00605f5e
     ADD EAX,EBX                         ; 00605f61

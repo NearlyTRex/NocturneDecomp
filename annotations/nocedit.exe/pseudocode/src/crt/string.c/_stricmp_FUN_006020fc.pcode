@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_string.c__stricmp_FUN_006020fc
+# Entry:       006020fc
+# Signature:   int __cdecl crt_string_c__stricmp_FUN_006020fc(char *str1,char *str2)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@006020fc [ESP:+0]  # JMP 0x005fe7f0
+BRANCH (ram,0x5fe7f0,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

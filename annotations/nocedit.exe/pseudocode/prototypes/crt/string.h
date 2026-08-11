@@ -55,7 +55,7 @@ char * __watcallStack strerror(int errnum);
 // Address: 00601f0c
 char __watcallStack hexDigitToChar(int digit);
 
-// Original: crt_string.c__stricmp_FUN_005fe7f0
+// Original: crt_string.c__stricmp_FUN_006020fc
 // Address: 006020fc
 int __cdecl ::stricmp(char *str1,char *str2);
 
@@ -103,7 +103,7 @@ int __cdecl ::mbstrnicmp(char *str1,char *str2,SIZE_T count);
 // Address: 0060b630
 int __watcallStack mbstring::termination_check(char *str);
 
-// Original: crt_string.c_mbstrncpy_core_FUN_0060b670
+// Original: crt_string.c_mbstrncpy_core_FUN_0060b6d7
 // Address: 0060b6d7
 char * __watcallStack mbstrncpy::core(char *dest,char *src,int count);
 

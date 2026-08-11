@@ -27,7 +27,7 @@ int __cdecl ::heapchk(void);
 // Address: 00600e10
 int __cdecl ::mkdir(char *path);
 
-// Original: crt_watcom.c__getcwd_FUN_00608d20
+// Original: crt_watcom.c__getcwd_FUN_0060128c
 // Address: 0060128c
 char * __cdecl ::getcwd(char *buffer,SIZE_T size);
 

@@ -278,7 +278,7 @@ int __cdecl crt_ctype_c_toupper_FUN_005ff9e0(int c);
 void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes);
 void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size);
 int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file);
-int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(_FILE *file);
+int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffab4(_FILE *file);
 int __cdecl crt_stdio_c_fseek_FUN_005ffacc(_FILE *file,long offset,int whence);
 _ostream * __cdecl crt_fstream_cpp_ostream_write_FUN_005ffcb3(_ostream *stream,void *buffer,SIZE_T count);
 float10 __fpustack_safe crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp);

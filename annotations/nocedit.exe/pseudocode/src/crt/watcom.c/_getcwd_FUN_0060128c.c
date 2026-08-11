@@ -1,8 +1,8 @@
-// Name: crt_watcom.c__getcwd_FUN_00608d20
+// Name: crt_watcom.c__getcwd_FUN_0060128c
 // Address: 0060128c
 // Address Range: [[0060128c, 00601290]]
 // Convention: __cdecl
-// Signature: char * __cdecl crt_watcom_c__getcwd_FUN_00608d20(char *buffer,SIZE_T size)
+// Signature: char * __cdecl crt_watcom_c__getcwd_FUN_0060128c(char *buffer,SIZE_T size)
 
 #include "nocturne.h"
 

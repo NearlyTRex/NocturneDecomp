@@ -28,7 +28,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0060658f(fstreambase 
   buffer_ptr[1]._streambuf.__b_lock = &g_FStreamBase_Destructor;
   *(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
-  crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
+  crt_iostream_cpp_streambuf_initBuffer_FUN_0060b8da
             ((streambuf *)
              ((pfVar1->base)._filebuf.__unbuffered_get_area +
              *(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr);

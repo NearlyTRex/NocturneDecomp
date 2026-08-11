@@ -1,8 +1,8 @@
-// Name: crt_string.c_mbstrncpy_core_FUN_0060b670
+// Name: crt_string.c_mbstrncpy_core_FUN_0060b6d7
 // Address: 0060b6d7
 // Address Range: [[0060b6d7, 0060b715]]
 // Convention: __watcallStack
-// Signature: char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0060b670(char *dest,char *src,int count)
+// Signature: char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0060b6d7(char *dest,char *src,int count)
 
 #include "nocturne.h"
 
