@@ -197,7 +197,7 @@ LAB_004aee48:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
   if (this_ptr->is_wall_splat == 1) {
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     return;
   }
   return;

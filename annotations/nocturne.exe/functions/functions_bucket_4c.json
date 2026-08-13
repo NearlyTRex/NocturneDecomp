@@ -250,6 +250,98 @@
     }
   },
   {
+    "addr":"005748cc",
+    "body":[
+      {
+        "end":"005748d1",
+        "size":6,
+        "start":"005748cc"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GetModuleHandleA",
+    "ret":"HMODULE",
+    "thtarget":"EXTERNAL:00000068",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpModuleName",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCSTR"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00574a4c",
+    "body":[
+      {
+        "end":"00574a51",
+        "size":6,
+        "start":"00574a4c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_winmm.c_waveOutReset",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:0000001f",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hwo",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWAVEOUT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"00574bcc",
     "body":[
       {
@@ -258,14 +350,56 @@
         "start":"00574bcc"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"Ordinal_13",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_listen",
+    "ret":"int",
     "thtarget":"EXTERNAL:0000009f",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"s",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_SOCKET"
+        },
+        {
+          "name":"backlog",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

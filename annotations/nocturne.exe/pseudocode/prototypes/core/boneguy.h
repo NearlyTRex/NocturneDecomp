@@ -7,13 +7,13 @@
 // Address: 00418150
 void __cdecl staticInit(void);
 
-// Original: core_boneguy.cpp_FUN_00418180
+// Original: core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00418180
 // Address: 00418180
-float * FUN_00418180(float *param_1,int param_2);
+CVector3f * __cdecl getLocalBoundingBoxCenter(CVector3f *out,CDemonActor *actor);
 
-// Original: core_boneguy.cpp_FUN_004181f0
+// Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_004181f0
 // Address: 004181f0
-CVector3f * FUN_004181f0(CVector3f *param_1,CDemonActor *param_2);
+CVector3f * __cdecl getWorldBoundingBoxCenter(CVector3f *out,CDemonActor *actor);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_004182a0
 // Address: 004182a0

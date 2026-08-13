@@ -96,12 +96,6 @@
         "column": 12,
         "line": 215,
         "message": "assigning to 'short *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 224,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
       }
     ],
     "success": false,
@@ -216,8 +210,8 @@
     },
     {
       "addr": "00529980",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00529980"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_00529980"
     }
   ],
   "globals": [
@@ -627,11 +621,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x523f55 assigned to bare local `iVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x523f55 assigned to bare local `iVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 61,
       "match": "0x523f55",
       "severity": "moderate",
-      "text": "iVar14 = 0x523f55;",
+      "text": "iVar13 = 0x523f55;",
       "type": "raw_address_constant"
     },
     {
@@ -639,7 +633,7 @@
       "line": 177,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar14 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar9 = local_20 * iVar13 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -647,7 +641,7 @@
       "line": 182,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar14 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar9 = local_20 * iVar13 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {

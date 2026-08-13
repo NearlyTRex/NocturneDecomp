@@ -13,6 +13,6 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(CEditor
 {
   _DAT_01bcd07c = 0;
   memset((void *)0x1bcd080,0,0x938);
-  shape_edittool_cpp_FUN_0046fa80(this_ptr);
+  shape_edittool_cpp_CEditorTools_init_FUN_0046fa80(this_ptr);
   return this_ptr;
 }

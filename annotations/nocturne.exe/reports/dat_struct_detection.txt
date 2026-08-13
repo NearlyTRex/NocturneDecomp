@@ -2,9 +2,9 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2219
-Filtered out (inside named data): 311
-Immediate constants (not real globals): 62
+Total DAT_ globals found: 2218
+Filtered out (inside named data): 310
+Immediate constants (not real globals): 61
 Real globals remaining: 2157
 Clusters detected: 204
 DAT_ globals in clusters: 2083
@@ -19,7 +19,7 @@ Classification summary:
   struct_array         3 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (62)
+LIKELY IMMEDIATE CONSTANTS (61)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -30,14 +30,14 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0041e4f1 | DAT_0078a123
     CDemonActor_ctor
       MOV dword ptr [EBX + 0x68],0x78a123 ; 00409e73 | DAT_0078a123
+    CDemonActor_doCheckForInvalidPointers
+      CMP EDI,0x78a123                    ; 0040bdde | DAT_0078a123
     CEnemy_releaseVictim
       CMP ECX,0x78a123                    ; 0047a0d6 | DAT_0078a123
     CHero_releaseFromGrab
       CMP dword ptr [ESI + 0x68],0x78a123 ; 004b4d59 | DAT_0078a123
     CWeapon_setupPhysicsBox
       CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
-    FUN_0040bd90
-      CMP EDI,0x78a123                    ; 0040bdde | DAT_0078a123
 
   DAT_005bdf50  value=0x5BDF50 (6020944)  refs=5
     FUN_0044c560
@@ -286,10 +286,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005a4738  value=0x5A4738 (5916472)  refs=1
     istrstream_ctor
       MOV dword ptr [EAX + -0x10],0x5a4738 ; 00564f96 | DAT_005a4738
-
-  DAT_005a48b0  value=0x5A48B0 (5916848)  refs=1
-    strstreambase_ctor
-      MOV dword ptr [EBX],0x5a48b0        ; 0056b47a | DAT_005a48b0
 
   DAT_005c17f8  value=0x5C17F8 (6035448)  refs=1
     _strftime
@@ -1174,7 +1170,7 @@ MEDIUM CONFIDENCE (66 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 7 functions
+    Referenced by: 8 functions
       0x02de5d50  DAT_02de5d50  undefined4
       0x02de5d54  DAT_02de5d54  undefined4
       0x02de5d58  DAT_02de5d58  undefined4
@@ -2713,7 +2709,7 @@ ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
   ... +24 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (311)
+FILTERED OUT - INSIDE NAMED DATA (310)
 --------------------------------------------------------------------------------
   DAT_005779d5                    inside s_Dangling_corrupt_actor_p_00577987
   DAT_00578e76                    inside s_CBodyPart_00578e6a
@@ -2845,7 +2841,6 @@ FILTERED OUT - INSIDE NAMED DATA (311)
   DAT_005a46b8                    inside g_CZombieTypeInfo_005a46a0
   DAT_005a46c0                    inside g_CZombieTypeInfo_005a46a0
   DAT_005a49b8                    inside g_iosTypeInfo_005a49a0
-  DAT_005a4a18                    inside g_istreamTypeInfo_005a4a00
   DAT_005a4a78                    inside g_fstreambaseTypeInfo_005a4a60.class_name+2
   DAT_005b9384                    inside s_save_SAVE_TMP_005b9370
   DAT_005b9385                    inside s_save_SAVE_TMP_005b9370

@@ -11,7 +11,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d8e
 ;
 ; Called Functions:
-;   Ordinal_12
+;   crt_wsock32.c_ioctlsocket
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH 0x8004667e                     ; 0054925a
     MOV ECX,dword ptr [EAX]             ; 0054925f
     PUSH ECX                            ; 00549261
-    CALL Ordinal_12                     ; 00549262
-        ;   XREF to: 00574bba (UNCONDITIONAL_CALL)  ; undefined Ordinal_12()
+    CALL crt_wsock32.c_ioctlsocket      ; 00549262
+        ;   XREF to: 00574bba (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_ioctlsocket(_SOCKET s, long cmd, uint * argp)
     TEST EAX,EAX                        ; 00549267
     SETZ AL                             ; 00549269
     AND EAX,0xff                        ; 0054926c

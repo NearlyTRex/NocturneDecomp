@@ -27,9 +27,9 @@ void __cdecl FUN_0052d030(CSound *this_ptr,char *out_result,char *wildcard_patte
 // Address: 0052d120
 uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
-// Original: core_sound.cpp_FUN_0052d710
+// Original: core_sound.cpp_resetTrainSounds_FUN_0052d710
 // Address: 0052d710
-void FUN_0052d710(void);
+void __cdecl resetTrainSounds(void);
 
 // Original: core_sound.cpp_FUN_0052d790
 // Address: 0052d790
@@ -47,9 +47,9 @@ CSound * __cdecl CSound::ctor(CSound *this_ptr);
 // Address: 0052dd20
 void __cdecl CSound::findAllSoundFiles(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_00527e10
+// Original: core_sound.cpp_FUN_0052dd80
 // Address: 0052dd80
-void __cdecl FUN_00527e10(CSound *this_ptr);
+void __cdecl FUN_0052dd80(CSound *this_ptr);
 
 // Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0052dd90
 // Address: 0052dd90

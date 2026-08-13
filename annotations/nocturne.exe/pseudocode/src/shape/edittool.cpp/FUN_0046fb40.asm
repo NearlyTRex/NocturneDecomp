@@ -44,8 +44,8 @@
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
-;   shape_edittool.cpp_FUN_004720c0
-;   shape_edittool.cpp_FUN_004722b0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;
 ; *****************************************************************************
@@ -137,8 +137,8 @@ section .text
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0046fc2b
     PUSH EDI                            ; 0046fc2e
-    CALL shape_edittool.cpp_FUN_004722b0 ; 0046fc2f
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 0046fc2f
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0046fc34
     PUSH 0xffff                         ; 0046fc37
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0046fc3c
@@ -181,8 +181,8 @@ section .text
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0046fcab
     PUSH EDI                            ; 0046fcae
-    CALL shape_edittool.cpp_FUN_004720c0 ; 0046fcaf
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 0046fcaf
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0046fcb4
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0046fcb7
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

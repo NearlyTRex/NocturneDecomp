@@ -1,0 +1,340 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 15,
+        "message": "use of undeclared identifier 'DAT_01c08b60'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 16,
+        "message": "use of undeclared identifier 'stack0x00000008'"
+      },
+      {
+        "category": "cast_error",
+        "column": 42,
+        "line": 17,
+        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 17,
+        "message": "use of undeclared identifier 'DAT_01c08b60'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0047ac50",
+      "from_addr": "0047ada7",
+      "name": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047a210",
+    "address_range": [
+      [
+        "0047a210",
+        "0047a250"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_formatEventError_FUN_0047a210",
+    "signature": "int __cdecl core_event_cpp_formatEventError_FUN_0047a210(char *format,...)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00563a08",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_00563a08"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057f397",
+      "name": "s_Event_command_parse_erro_0057f397",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01c08b60",
+      "name": "DAT_01c08b60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 28,
+    "call_sites": [
+      {
+        "call_addr": "0047ada7",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047ae0d",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047aeff",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047b02d",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b133",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b1d7",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b1f4",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b3b5",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b41e",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b433",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommand_FUN_0047ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.565217391304348,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 18,
+      "INT_ADD": 8,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 105
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_01c08b60",
+      "severity": "mild",
+      "text": "iVar1 = _sprintf(&DAT_01c08b60,\"Event command parse error:\\n\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 9,
+      "match": "&stack0x00000008",
+      "severity": "moderate",
+      "text": "local_8 = &stack0x00000008;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01c08b60",
+      "severity": "mild",
+      "text": "_vsprintf(&DAT_01c08b60 + iVar1,format,(va_list_t)&local_8);",
+      "type": "undefined_data"
+    }
+  ]
+}

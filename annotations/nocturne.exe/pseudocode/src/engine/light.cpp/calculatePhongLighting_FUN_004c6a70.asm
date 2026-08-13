@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_light.cpp_FUN_004c6d70 at 004c6d80
 ;   engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90 at 004c6da0
+;   engine_light.cpp_calculateVertexLighting_FUN_004c6d70 at 004c6d80
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bacd0

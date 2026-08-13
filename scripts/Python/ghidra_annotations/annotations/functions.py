@@ -14,6 +14,70 @@ from ghidra.program.model.symbol import SourceType
 from ghidra.program.disassemble import Disassembler
 from ghidra.util.task import TaskMonitor
 
+
+class FunctionNameAddressMismatchError(Exception):
+    """A function's _FUN_<addr> suffix disagrees with its entry point."""
+
+
+# folder_file.ext_functionName_FUN_<address> -- the trailing address is a
+# redundant copy of the entry point, which is exactly what makes it checkable.
+NAME_ADDRESS_SUFFIX = re.compile(r"_FUN_([0-9a-fA-F]{4,8})$")
+
+
+def is_import_thunk(func_data):
+    """A JMP straight into a DLL import stub.
+
+    Ghidra binds such a thunk's name to the external symbol, so it cannot be
+    given a label of its own: it inherits the import thunk's name, suffix and
+    all, and no rename will separate them. The address in that inherited suffix
+    is therefore someone else's by construction, not by mistake.
+
+    Thunks into a normal function of this program are deliberately NOT exempt --
+    those do take an independent label, so a mismatch on one is a real defect.
+    """
+    if not func_data.get("thunk"):
+        return False
+    return str(func_data.get("thtarget") or "").upper().startswith("EXTERNAL")
+
+
+def find_name_address_mismatches(functions):
+    """Functions whose _FUN_<addr> suffix does not match where they start.
+
+    The suffix is redundant with `addr`, so a disagreement can only mean a name
+    was applied to the wrong symbol -- typically when two candidates carried the
+    same placeholder (two Ordinal_116 thunks, two FUN_ stubs) and a rename hit
+    the wrong one. It is never a difference of opinion, EXCEPT for thunks into a
+    DLL import, where Ghidra owns the name; see is_import_thunk.
+
+    This is not cosmetic, which is why it fails the export rather than warning:
+
+      * the pseudocode exporter derives its filenames from the name, so a stolen
+        suffix puts two functions in one file and the loser is silently absent
+        from the tree;
+      * the sibling transfer ledger reads `expect.name` out of the header inside
+        that file, so a batch built from a collided export retypes the wrong
+        body while reporting success;
+      * every cross-binary lookup in this repo is by name, and a name carrying
+        another function's address sends the reader to the wrong place.
+
+    Returned strings are for the log; the caller decides whether to raise.
+    """
+    mismatches = []
+    for func_data in functions:
+        name = func_data.get("name") or ""
+        addr = (func_data.get("addr") or "").lower()
+        match = NAME_ADDRESS_SUFFIX.search(name)
+        if not match or not addr:
+            continue
+        if is_import_thunk(func_data):
+            continue
+        claimed = match.group(1).lower()
+        if claimed.lstrip("0") != addr.lstrip("0"):
+            mismatches.append(
+                "%s starts at %s but its name claims %s" % (name, addr, claimed))
+    return mismatches
+
+
 def is_function_external(currentProgram, function):
 
     # Direct external check
@@ -741,7 +805,7 @@ def import_functions(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
-def export_functions(currentProgram, path):
+def export_functions(currentProgram, path, allow_name_address_mismatch=False):
 
     # Load existing functions to preserve importable markings
     existing_importable = {}
@@ -847,3 +911,20 @@ def export_functions(currentProgram, path):
         addr_func = lambda x: x["addr"],
         bucket_bits = 7)
     log_info("Export complete")
+
+    # Checked after the write, so the offending entries are on disk to diagnose
+    # from. Raising here aborts the export before pseudocode runs, which is the
+    # point: a stolen address suffix collides two functions onto one pseudocode
+    # filename, and the tree it would produce is quietly missing a function.
+    mismatches = find_name_address_mismatches(functions)
+    if mismatches:
+        log_error("FUNCTION NAME/ADDRESS MISMATCHES (%d):" % len(mismatches))
+        for msg in mismatches:
+            log_error("  " + msg)
+    if mismatches and not allow_name_address_mismatch:
+        raise FunctionNameAddressMismatchError(
+            "Function name/address mismatch: %d function(s) carry a _FUN_<addr> "
+            "suffix that is not their entry point. A name was applied to the "
+            "wrong symbol. Fix the names in Ghidra before exporting, or pass "
+            "--allow-name-address-mismatch to export anyway.\n" % len(mismatches)
+            + "\n".join(mismatches))

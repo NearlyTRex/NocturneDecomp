@@ -110,7 +110,7 @@ void __cdecl core_cloth_cpp_CClothList_setup_FUN_00438510(CClothList *this_ptr,C
 void __cdecl core_cloth_cpp_CClothList_process_FUN_00438550(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_004385a0(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_applyRotation_FUN_00438620(CClothList *this_ptr,CVector3f *euler);
-void core_cloth_cpp_FUN_00438660(int *param_1,undefined4 *param_2);
+void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_00438660(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(CCloth *this_ptr,char *bone_name,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_resetState_FUN_00438750(CCloth *this_ptr,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_00438780(CCloth *this_ptr,CVector3f *euler);
@@ -230,7 +230,7 @@ CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_0043c810(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_setup_FUN_0043c870(CCrate *this_ptr);
 int __cdecl core_crate_cpp_CCrate_canPickup_FUN_0043c940(CCrate *this_ptr,CDemonActor *picker);
 void __cdecl core_crate_cpp_CCrate_pickup_FUN_0043c960(CCrate *this_ptr,CDemonActor *carrier);
-void core_crate_cpp_CCrate_onDropped_FUN_0043c970(int param_1);
+void __cdecl core_crate_cpp_CCrate_onDropped_FUN_0043c970(CCrate *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_0043c990(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_process_FUN_0043c9a0(CCrate *this_ptr,float delta_time);
 int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_0043cbc0(CCrate *this_ptr);

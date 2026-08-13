@@ -141,7 +141,7 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(CTempleStone *thi
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_00534dc0(CTempleStone *this_ptr,uint flags);
 void __cdecl core_stranger_cpp_staticInit_FUN_00534e30(void);
 float __cdecl core_stranger_cpp_motionBlendWeightFunc_FUN_00534e90(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
-bool core_stranger_cpp_FUN_00534f90(void);
+int __cdecl core_stranger_cpp_canPickupObject_FUN_00534f90(CDemonActor *actor,CDemonActor *object);
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(CDemonActor *object);
 CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00535090(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005350b0(CStranger *this_ptr);

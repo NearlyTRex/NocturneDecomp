@@ -41,7 +41,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera *t
       } while (iVar3 < (int)this_ptr->max_distance);
     }
   }
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
   core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00440270(this_ptr);
   return;
 }

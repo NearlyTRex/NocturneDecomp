@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   roll
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_00460760 at 00460770
+;   engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_00460760 at 00460770
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c039d0

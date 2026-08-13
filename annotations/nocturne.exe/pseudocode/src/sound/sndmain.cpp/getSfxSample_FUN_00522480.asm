@@ -271,8 +271,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x118]     ; 005226e3
     PUSH EAX                            ; 005226ea
     PUSH 0x59268c                       ; 005226eb | = "Failed to lock sample %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005226f0
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005226f0
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
         ;   Label: LAB_005226f0
     ADD ESP,0x8                         ; 005226f5
     PUSH 0x2da8ae0                      ; 005226f8

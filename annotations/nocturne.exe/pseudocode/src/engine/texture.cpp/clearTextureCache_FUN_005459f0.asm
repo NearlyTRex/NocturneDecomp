@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004d23d0 at 004d2472
-;   core_mission.cpp_FUN_004d9900 at 004d9900
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900 at 004d9900
 ;   engine_pod.cpp_CPod_dismount_FUN_004f8a10 at 004f8ace
 ;
 ; Referenced Globals:

@@ -10,7 +10,7 @@ CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00467220(CDemon
 
 {
   core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004672a0(this_ptr);
-  core_dtrace_cpp_FUN_004675e0(this_ptr);
-  core_dtrace_cpp_FUN_004673a0(this_ptr);
+  core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_004675e0(this_ptr);
+  core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_004673a0(this_ptr);
   return this_ptr;
 }

@@ -121,6 +121,6 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
             (g_CDemonRenderer_PTR_005ae704,&local_a0);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

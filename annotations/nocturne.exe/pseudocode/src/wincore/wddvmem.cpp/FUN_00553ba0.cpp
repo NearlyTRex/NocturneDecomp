@@ -51,8 +51,8 @@ void __cdecl wincore_wddvmem_cpp_FUN_00553ba0(void)
         (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
         g_DirectDrawObject = (IDirectDraw *)0x0;
       }
-      iVar1 = DirectDrawCreate(0,&g_DirectDrawObject,0);
-      if (iVar1 == 0) {
+      HVar2 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
+      if (HVar2 == 0) {
         (*g_DirectDrawObject->vtable->SetCooperativeLevel)
                   (g_DirectDrawObject,(HWND)_DAT_02de2098,0x11);
       }

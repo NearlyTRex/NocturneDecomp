@@ -15,7 +15,7 @@ int __cdecl support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(_SOCKET *so
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = Ordinal_3(*socket_handle);
+  iVar1 = closesocket(*socket_handle);
   *socket_handle = 0xffffffff;
   return (uint)(iVar1 == 0);
 }

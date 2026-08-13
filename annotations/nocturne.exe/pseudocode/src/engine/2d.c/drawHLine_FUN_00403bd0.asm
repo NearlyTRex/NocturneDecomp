@@ -12,7 +12,7 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb69e
 ;   engine_2d.c_drawRect_FUN_00403e10 at 00403e27
 ;   engine_2d.c_fillRectColor_FUN_00403e60 at 00403ec4
-;   shape_edittool.cpp_FUN_004722b0 at 00472467
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 at 00472467
 ;   shape_edittool.cpp_draw3DBorder_FUN_00476260 at 0047628b
 ;   shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 at 00476375
 ;

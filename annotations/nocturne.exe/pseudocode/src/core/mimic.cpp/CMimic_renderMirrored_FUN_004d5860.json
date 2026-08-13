@@ -75,6 +75,18 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 38,
+        "line": 68,
+        "message": "use of undeclared identifier 'stack0xffffff0c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 69,
+        "message": "use of undeclared identifier 'stack0xffffff0c'; did you mean 'in_stack_ffffff0c'?"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 14,
         "line": 85,
         "message": "use of undeclared identifier '_DAT_01cd4318'; did you mean 'DAT_02DF4318'?"
@@ -86,16 +98,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 200,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "stack_param",
+      "stack_ref",
       "unrolled_memcpy",
       "warning_overlapping_globals",
       "warning_type_propagation"
@@ -505,12 +519,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff0c",
       "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
+      "text": "CDemonRenderer *in_stack_ffffff0c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_ffffff0c",
+      "severity": "moderate",
+      "text": "engine_matrix_c_matrixPush_FUN_004cdac0(in_stack_ffffff0c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffff0c",
+      "severity": "moderate",
+      "text": "(CMatrix3x4f *)&stack0xffffff0c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xffffff0c",
+      "severity": "moderate",
+      "text": "pfVar2 = (float *)&stack0xffffff0c;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
@@ -519,14 +557,6 @@
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
-      "match": "(int)pCVar2",
-      "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

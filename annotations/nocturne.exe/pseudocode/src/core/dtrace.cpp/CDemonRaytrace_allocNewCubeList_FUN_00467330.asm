@@ -7,7 +7,7 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_004676c0 at 004677d7
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004676c0 at 004677d7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e010

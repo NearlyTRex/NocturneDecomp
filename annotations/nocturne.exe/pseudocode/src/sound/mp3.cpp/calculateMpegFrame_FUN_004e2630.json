@@ -1,0 +1,288 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 23,
+        "line": 26,
+        "message": "use of undeclared identifier 'DAT_005bbc88'; did you mean 'DAT_005bbc08'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 30,
+        "message": "use of undeclared identifier 'DAT_005bbc48'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 176,
+    "complexity_score": 89,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 64,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 240
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e2630",
+    "address_range": [
+      [
+        "004e2630",
+        "004e27e7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_calculateMpegFrame_FUN_004e2630",
+    "signature": "void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058b4e0",
+      "name": "s_sound_mp3_cpp_0058b4e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058b4f1",
+      "name": "s_MPEG_Layer_2_pick_table_0058b4f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058b52a",
+      "name": "s_sound_mp3_cpp_0058b52a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058b53b",
+      "name": "s_js_bound_bad_layer_modex_0058b53b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bb250",
+      "name": "s_CMotionController_005bb246+0xa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbc48",
+      "name": "DAT_005bbc48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbc88",
+      "name": "DAT_005bbc88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cd8b28",
+      "name": "DAT_01cd8b28",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.014705882352941,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 41,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "CALL": 3,
+      "CBRANCH": 16,
+      "COPY": 124,
+      "FLOAT2FLOAT": 1,
+      "INT_ADD": 53,
+      "INT_AND": 153,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 83,
+      "INT_LEFT": 13,
+      "INT_LESS": 20,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 35,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 6,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 49,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 41,
+      "INT_XOR": 7,
+      "INT_ZEXT": 2,
+      "LOAD": 36,
+      "POPCOUNT": 37,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 24,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 818
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "frame",
+        "offset": 4,
+        "size": 4,
+        "type": "SMpegFrame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005bbc88",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&DAT_005bbc88 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005bbc48",
+      "severity": "mild",
+      "text": "(*(double *)(&DAT_005bbc48 + pSVar3->sampling_rate_index * 8 + iVar2 * 0x20));",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -12,7 +12,7 @@
 ;   crt_unknown.c_FUN_0056e324
 ;   crt_unknown.c_FUN_0056e6c4
 ;   crt_unknown.c_FUN_0056f2d0
-;   crt_unknown.c_FUN_00571364
+;   crt_unknown.c_FUN_005713d0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     ADD ESP,0x4                         ; 0056e833
     CALL crt_unknown.c_FUN_0056e324     ; 0056e836
         ;   XREF to: 0056e324 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056e324()
-    CALL crt_unknown.c_FUN_00571364     ; 0056e83b
-        ;   XREF to: 005713d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571364()
+    CALL crt_unknown.c_FUN_005713d0     ; 0056e83b
+        ;   XREF to: 005713d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005713d0()
     CALL crt_unknown.c_FUN_0056f2d0     ; 0056e840
         ;   XREF to: 0056f2d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056f2d0()
     PUSH 0x2de55d0                      ; 0056e845

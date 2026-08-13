@@ -1,0 +1,292 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_01bc9c7c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_01bc9c7c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_01bc9c7c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 45,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_01bc9d40'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 94,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 195
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046dc10",
+    "address_range": [
+      [
+        "0046dc10",
+        "0046dd60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dtri.cpp_clipPolygonToNear_FUN_0046dc10",
+    "signature": "void __cdecl core_dtri_cpp_clipPolygonToNear_FUN_0046dc10(float z_near)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046d4e0",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_clipLineToPlane_FUN_0046d4e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0046dc04",
+      "name": "PTR_caseD_1_0046dc04",
+      "type": "undefined1*",
+      "value": "0046dcc4"
+    },
+    {
+      "addr": "0046dc0c",
+      "name": "PTR_caseD_3_0046dc0c",
+      "type": "undefined1*",
+      "value": "0046dca9"
+    },
+    {
+      "addr": "01bc9c7c",
+      "name": "DAT_01bc9c7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc9d40",
+      "name": "DAT_01bc9d40",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.137931034482759,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 162,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 33,
+      "INT_AND": 62,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 8,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 11,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 15,
+      "INT_SLESS": 25,
+      "INT_SUB": 32,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 596
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "z_near",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0046dc19",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 27,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01bc9d44[_DAT_01bc9d40].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 39,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_01bc9d44[_DAT_01bc9d40].x = point1_ptr->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

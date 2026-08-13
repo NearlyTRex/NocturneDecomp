@@ -53,7 +53,7 @@
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -258,8 +258,8 @@ section .text
         ;   XREF to: 005241e9 (CONDITIONAL_JUMP)  ; LAB_005241e9
     PUSH EBX                            ; 005240ec
     PUSH 0x592c53                       ; 005240ed | = "Error locking %s while streaming\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005240f2
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005240f2
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
         ;   Label: LAB_005240f2
     ADD ESP,0x8                         ; 005240f7
     MOV ECX,dword ptr [ESP + 0x10]      ; 005240fa
@@ -306,15 +306,15 @@ section .text
         ;   XREF to: 00523f0b (UNCONDITIONAL_JUMP)  ; LAB_00523f0b
     PUSH 0x592bac                       ; 0052415d | = "SfxSample::pollStream - no sound devi..."
         ;   Label: LAB_0052415d
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00524162
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00524162
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x4                         ; 00524167
     JMP 0x005240fa                      ; 0052416a
         ;   XREF to: 005240fa (UNCONDITIONAL_JUMP)  ; LAB_005240fa
     PUSH 0x592bd6                       ; 0052416c | = "SfxSample::pollStream - error querryi..."
         ;   Label: LAB_0052416c
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00524171
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00524171
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x4                         ; 00524176
     JMP 0x005240fa                      ; 00524179
         ;   XREF to: 005240fa (UNCONDITIONAL_JUMP)  ; LAB_005240fa

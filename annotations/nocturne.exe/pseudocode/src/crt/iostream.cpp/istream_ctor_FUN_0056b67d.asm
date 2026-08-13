@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a49b8
 ;   void* PTR_crt_iostream.cpp_istream_dtor_FUN_0056b6e8_005a49c4 = 0056b6e8
-;   void* PTR_crt_unknown.c_FUN_0056b6d0_005a49cc = 0056b6d0
+;   void* PTR_crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_0056b6d0_005a49cc = 0056b6d0
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_ios_ctor_FUN_0056b503
@@ -37,7 +37,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0056b693
     MOV dword ptr [EAX + 0x8],0x5a49c4  ; 0056b695 | PTR_crt_iostream.cpp_istream_dtor_FUN_0056b6e8_005a49c4
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056b69c
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a49cc ; 0056b69f | PTR_crt_unknown.c_FUN_0056b6d0_005a49cc
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a49cc ; 0056b69f | PTR_crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_0056b6d0_005a49cc
     MOV EDX,dword ptr [EAX]             ; 0056b6a7
     MOV dword ptr [EAX + 0x4],0x0       ; 0056b6a9
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056b6b0

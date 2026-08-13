@@ -142,7 +142,7 @@ void __cdecl core_dlight_cpp_CDemonLight_FUN_0044f0b0(CDemonLight *this_ptr)
                core_dcamera_cpp_renderCoronaDepthScanline_FUN_00444180);
     iVar4 = iVar5;
   } while (iVar5 < 0xe);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350(this_ptr);
   return;

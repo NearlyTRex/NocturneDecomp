@@ -67,7 +67,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
       local_14 = (CVector3f *)&local_14[0x22].z;
     } while (iVar4 < this_ptr->camera_count);
   }
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,value);
   return;
 }

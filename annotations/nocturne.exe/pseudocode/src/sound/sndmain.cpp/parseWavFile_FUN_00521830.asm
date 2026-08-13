@@ -44,7 +44,7 @@
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
         ;   Label: LAB_0052188c
     PUSH EAX                            ; 00521891 | = "\"RIFF\" ID not found at offset 00000..."
     PUSH 0x59215a                       ; 00521892 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521897
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521897
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 0052189c
     JMP 0x00521857                      ; 0052189f
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -139,8 +139,8 @@ section .text
         ;   Label: LAB_005218e2
     PUSH EAX                            ; 005218e7 | = "\"WAVE\" ID not found at offset 00000..."
     PUSH 0x59215a                       ; 005218e8 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005218ed
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005218ed
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 005218f2
     JMP 0x00521857                      ; 005218f5
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -197,8 +197,8 @@ section .text
     MOV EAX,0x59219b                    ; 0052196d | = "\"data\" chunk preceeds \"fmt\" chunk"
     PUSH EAX                            ; 00521972 | = "\"data\" chunk preceeds \"fmt\" chunk"
     PUSH 0x59215a                       ; 00521973 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521978
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521978
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 0052197d
     JMP 0x00521857                      ; 00521980
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -218,8 +218,8 @@ section .text
     MOV EAX,0x5921dc                    ; 005219a1 | = "File contains invalid \"fmt\" chunk"
     PUSH EAX                            ; 005219a6 | = "File contains invalid \"fmt\" chunk"
     PUSH 0x59215a                       ; 005219a7 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005219ac
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005219ac
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 005219b1
     JMP 0x00521857                      ; 005219b4
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -230,8 +230,8 @@ section .text
     MOV EAX,0x5921bd                    ; 005219c1 | = "Required \"fmt\" chunk not found"
     PUSH EAX                            ; 005219c6 | = "Required \"fmt\" chunk not found"
     PUSH 0x59215a                       ; 005219c7 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005219cc
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005219cc
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 005219d1
     JMP 0x00521857                      ; 005219d4
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -312,8 +312,8 @@ section .text
     MOV EAX,0x59229a                    ; 00521a9f | = "No \"data\" chunk found"
     PUSH EAX                            ; 00521aa4 | = "No \"data\" chunk found"
     PUSH 0x59215a                       ; 00521aa5 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521aaa
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521aaa
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00521aaf
     JMP 0x00521857                      ; 00521ab2
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -330,8 +330,8 @@ section .text
     ADD ESP,0xc                         ; 00521ad0
     PUSH EAX                            ; 00521ad3
     PUSH 0x59215a                       ; 00521ad4 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521ad9
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521ad9
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00521ade
     JMP 0x00521857                      ; 00521ae1
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -348,8 +348,8 @@ section .text
     ADD ESP,0xc                         ; 00521b01
     PUSH EAX                            ; 00521b04
     PUSH 0x59215a                       ; 00521b05 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521b0a
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521b0a
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00521b0f
     JMP 0x00521857                      ; 00521b12
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857
@@ -376,8 +376,8 @@ section .text
     ADD ESP,0x10                        ; 00521b4e
     PUSH EAX                            ; 00521b51
     PUSH 0x59215a                       ; 00521b52 | = "WAV file is invalid: %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00521b57
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00521b57
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00521b5c
     JMP 0x00521857                      ; 00521b5f
         ;   XREF to: 00521857 (UNCONDITIONAL_JUMP)  ; LAB_00521857

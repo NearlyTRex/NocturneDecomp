@@ -19,7 +19,7 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(_SOCKET *soc
   
   bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
-    iVar1 = Ordinal_19(*socket_handle,buffer,length,0);
+    iVar1 = send(*socket_handle,buffer,length,0);
     return iVar1;
   }
   support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(dest_addr,&local_2c);
@@ -31,6 +31,6 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_00549090(_SOCKET *soc
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  iVar1 = Ordinal_20(*socket_handle,buffer,length,0,&local_1c,0x10);
+  iVar1 = sendto(*socket_handle,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
   return iVar1;
 }

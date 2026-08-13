@@ -7,9 +7,9 @@
 // Address: 00517140
 void __cdecl staticInit(void);
 
-// Original: core_skeleton.cpp_FUN_00517190
+// Original: core_skeleton.cpp_skipToEndOfLine_FUN_00517190
 // Address: 00517190
-void FUN_00517190(_FILE *param_1);
+void __cdecl skipToEndOfLine(_FILE *file_ptr);
 
 // Original: core_skeleton.cpp_distancePointToLineSegment_FUN_005171b0
 // Address: 005171b0
@@ -438,10 +438,6 @@ void __cdecl freeAllSkeletons(void);
 // Original: core_skeleton.cpp_FUN_0051f760
 // Address: 0051f760
 void __cdecl FUN_0051f760(char *output_buffer);
-
-// Original: core_skeleton.cpp_FUN_0051f800
-// Address: 0051f800
-float FUN_0051f800(void);
 
 // Original: core_skeleton.cpp_SVert_ctor_FUN_0051f840
 // Address: 0051f840

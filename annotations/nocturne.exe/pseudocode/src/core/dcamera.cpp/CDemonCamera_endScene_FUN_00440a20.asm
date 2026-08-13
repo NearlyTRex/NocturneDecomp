@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_00440ac0
     PUSH EBP                            ; 00440ac6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 00440ac7
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00440acc
     PUSH EBX                            ; 00440acf
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270 ; 00440ad0

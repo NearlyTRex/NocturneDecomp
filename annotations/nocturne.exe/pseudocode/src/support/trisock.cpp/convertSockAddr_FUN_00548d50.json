@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 20,
-        "message": "use of undeclared identifier 'Ordinal_15'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
     "success": false,
@@ -74,16 +62,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -127,7 +113,7 @@
     {
       "addr": "00574c08",
       "is_variadic": false,
-      "name": "Ordinal_15"
+      "name": "crt_wsock32.c_ntohs"
     },
     {
       "addr": "00548ae0",
@@ -253,14 +239,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffff0",
-      "severity": "moderate",
-      "text": "((uint *)&stack0xfffffff0,(uint *)&src_addr->sin_addr);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

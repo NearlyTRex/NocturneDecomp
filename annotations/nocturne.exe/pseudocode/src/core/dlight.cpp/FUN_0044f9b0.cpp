@@ -214,7 +214,8 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
               pCVar5->vertex_buffer_ptr[3].g = 0xffff;
               pCVar5->vertex_buffer_ptr[3].b = 0xffff;
               engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0(pCVar5,&local_13c);
-              engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+              engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0
+                        (g_CDemonRenderer_PTR_005ae704);
               local_1c = local_1c + 1;
               texture = texture + 2;
             } while (local_1c < 9);

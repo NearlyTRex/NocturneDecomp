@@ -10,26 +10,24 @@ SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_00548dc0(SNetw
 
 {
   ushort uVar1;
-  ushort uVar2;
+  uint *puVar2;
   uint *puVar3;
-  uint *puVar4;
-  byte bVar5;
-  uint auStackY_17f8 [1524];
-  uint uStack_1c;
-  uint auStack_14 [3];
+  byte bVar4;
+  uint auStackY_17f4 [1524];
+  uint local_18;
+  uint auStack_10 [2];
   
-  bVar5 = 0;
-  uVar1 = net_addr->port;
-  uVar2 = Ordinal_9();
+  bVar4 = 0;
+  uVar1 = htons(net_addr->port);
   support_trisock_cpp_getIPAddress_FUN_00548d20(net_addr);
-  memset(auStack_14,0,8);
-  puVar3 = (uint *)((int)dest_buffer + (uint)bVar5 * -8 + 4);
-  dest_buffer->sin_family = uVar1;
-  dest_buffer->sin_port = uVar2;
-  puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-  *puVar3 = auStack_14[(uint)bVar5 * -2 + -1];
-  *puVar4 = auStack_14[(uint)bVar5 * -2 + (uint)bVar5 * -2];
-  puVar4[(uint)bVar5 * -2 + 1] =
-       (auStack_14 + (uint)bVar5 * -2 + (uint)bVar5 * -2)[(uint)bVar5 * -2 + 1];
+  memset(auStack_10,0,8);
+  puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);
+  dest_buffer->sin_family = 2;
+  dest_buffer->sin_port = uVar1;
+  puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+  *puVar2 = auStack_10[(uint)bVar4 * -2 + -1];
+  *puVar3 = auStack_10[(uint)bVar4 * -2 + (uint)bVar4 * -2];
+  puVar3[(uint)bVar4 * -2 + 1] =
+       (auStack_10 + (uint)bVar4 * -2 + (uint)bVar4 * -2)[(uint)bVar4 * -2 + 1];
   return dest_buffer;
 }

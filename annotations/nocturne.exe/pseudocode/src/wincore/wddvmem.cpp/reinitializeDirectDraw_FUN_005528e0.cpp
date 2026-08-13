@@ -11,8 +11,7 @@
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
 
 {
-  int iVar1;
-  HRESULT HVar2;
+  HRESULT HVar1;
   
   if (g_DirectDrawUnknown != (IUnknown *)0x0) {
     (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
@@ -31,11 +30,11 @@ int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
     (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
     g_DirectDrawObject = (IDirectDraw *)0x0;
   }
-  iVar1 = DirectDrawCreate(0,&g_DirectDrawObject,0);
-  if (iVar1 == 0) {
-    HVar2 = (*g_DirectDrawObject->vtable->SetCooperativeLevel)
+  HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
+  if (HVar1 == 0) {
+    HVar1 = (*g_DirectDrawObject->vtable->SetCooperativeLevel)
                       (g_DirectDrawObject,_DAT_02de2098,0x11);
-    if (HVar2 == 0) {
+    if (HVar1 == 0) {
       return 1;
     }
   }

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
-;   DirectDrawCreate
+;   crt_ddraw.c_DirectDrawCreate
 ;
 ; *****************************************************************************
 
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00552941
     PUSH 0x2ddf550                      ; 00552943
     PUSH 0x0                            ; 00552948
-    CALL DirectDrawCreate               ; 0055294a
-        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 0055294a
+        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 0055294f
     JZ 0x0055296b                       ; 00552951
         ;   XREF to: 0055296b (CONDITIONAL_JUMP)  ; LAB_0055296b

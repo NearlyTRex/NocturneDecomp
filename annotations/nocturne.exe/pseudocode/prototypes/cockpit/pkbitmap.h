@@ -119,9 +119,9 @@ void __cdecl CPackedBitmap::openPBMFile(CPackedBitmap *this_ptr,char *filename,i
 // Address: 004f4ef0
 void __cdecl CPackedBitmap::loadPBMFile(CPackedBitmap *this_ptr,int apply_palette_flag);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f4f10
+// Original: cockpit_pkbitmap.cpp_writePBGHeader_FUN_004f4f10
 // Address: 004f4f10
-void FUN_004f4f10(void);
+void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90
 // Address: 004f4f90
@@ -142,3 +142,7 @@ void __cdecl CPackedBitmapSet(CPackedBitmapSet *this_ptr);
 // Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320
 // Address: 004f5320
 void __cdecl CPackedBitmapSet(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_getWidth_FUN_004f5cf0
+// Address: 004f5cf0
+int __cdecl CPackedBitmap::getWidth(CPackedBitmap *this_ptr);

@@ -60,7 +60,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr)
     g_CurrentLineNumber = 799;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
   }
-  __arrinit(&local_c8,2,&g_CBoundingBox3D_005993f0);
+  __arrinit(&local_c8,2,&g_CBoundingBox3DTypeInfo_005993f0);
   local_38 = this_ptr;
   local_2c = 0;
   local_24 = &local_c8;

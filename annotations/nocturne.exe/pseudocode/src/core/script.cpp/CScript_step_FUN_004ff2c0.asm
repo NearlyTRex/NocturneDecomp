@@ -3088,8 +3088,8 @@ section .text
     PUSH 0x58e9ee                       ; 00501236 | = "Script debug message at line %d:\n%s"
     MOV ECX,dword ptr [0x005b6d50]      ; 0050123b | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 00501241
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 00501242
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 00501242
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00501247
     JMP 0x004ff36b                      ; 0050124a
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b

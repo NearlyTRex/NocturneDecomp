@@ -250,7 +250,7 @@ LAB_0051260f:
              *(uint *)((int)auStack_2e8 + iVar13);
         iVar13 = iVar6;
       } while (iVar6 != 0xc0);
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
       engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
                 (g_CDemonRenderer_PTR_005ae704,local_b8);
       g_UseExternalRenderer = local_bc;

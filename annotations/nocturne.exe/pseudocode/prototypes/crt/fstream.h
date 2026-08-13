@@ -41,7 +41,11 @@ _istream * __cdecl istream::seekg(void *this_ptr,int offset);
 
 // Original: crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d
 // Address: 0056b75d
-char * fstreambase::ctor(int *param_1,byte param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl fstreambase::ctor(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size);
+
+// Original: crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8
+// Address: 0056b7f8
+void __cdecl fstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_fstreambase_dtor_FUN_0056b810
 // Address: 0056b810

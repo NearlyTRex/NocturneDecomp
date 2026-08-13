@@ -22,7 +22,7 @@
 ;   engine_2d.c_drawText_FUN_00402600
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
-;   shape_edittool.cpp_FUN_0046fe60
+;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   wincore_winrun.cpp_getNextKeypress_FUN_00558b00
 ;
@@ -107,8 +107,8 @@ section .text
     PUSH EAX                            ; 004c85b5
     MOV ECX,dword ptr [0x005b6d50]      ; 004c85b6 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004c85bc
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004c85bd
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004c85bd
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c85c2
     JMP 0x004c857b                      ; 004c85c5
         ;   XREF to: 004c857b (UNCONDITIONAL_JUMP)  ; LAB_004c857b

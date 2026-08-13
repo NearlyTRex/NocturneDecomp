@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 535 / 5604
+Functions with stack patterns: 535 / 5534
 
 Pattern type counts:
   stack_alignment                  416
@@ -141,8 +141,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/baron.cpp, Suspects: 3
     - [stack_alignment] at 004110f9: AND ESP,0xfffffff8
 
-  core_bat.cpp_FUN_00411940
-    File: core/bat.cpp, Suspects: 17
+  core_bat.cpp_fmodfPositive_FUN_00411940
+    File: core/bat.cpp, Suspects: 0
     - [stack_alignment] at 00411946: AND ESP,0xfffffff8
 
   core_bat.cpp_CBat_process_FUN_00411c40
@@ -177,12 +177,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bodypart.cpp, Suspects: 24
     - [stack_alignment] at 0041773c: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_FUN_00418180
-    File: core/boneguy.cpp, Suspects: 10
+  core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_00418180
+    File: core/boneguy.cpp, Suspects: 1
     - [stack_alignment] at 00418187: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_FUN_004181f0
-    File: core/boneguy.cpp, Suspects: 8
+  core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_004181f0
+    File: core/boneguy.cpp, Suspects: 1
     - [stack_alignment] at 004181f8: AND ESP,0xfffffff8
 
   core_boneguy.cpp_FUN_004182cd
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 12.9 suspects/function
-  Without stack patterns: avg 3.9 suspects/function
+  With stack patterns:    avg 12.5 suspects/function
+  Without stack patterns: avg 3.7 suspects/function

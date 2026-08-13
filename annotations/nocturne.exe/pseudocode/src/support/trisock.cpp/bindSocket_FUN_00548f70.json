@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "type_error",
-        "column": 33,
-        "line": 19,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 20,
-        "message": "use of undeclared identifier 'Ordinal_9'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "use of undeclared identifier 'Ordinal_2'"
       }
     ],
     "success": false,
@@ -80,18 +62,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 55,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "concat_reconstruction",
-      "unknown_field"
-    ],
-    "total_lines": 40
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -117,12 +96,12 @@
     {
       "addr": "00574bf6",
       "is_variadic": false,
-      "name": "Ordinal_2"
+      "name": "crt_wsock32.c_bind"
     },
     {
       "addr": "00574c02",
       "is_variadic": false,
-      "name": "Ordinal_9"
+      "name": "crt_wsock32.c_htons"
     }
   ],
   "globals": [],
@@ -193,55 +172,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "bindSocket_FUN_00548f70.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 22,
-          "line": 23,
-          "message": "Uninitialized variable: unaff_retaddr",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 12,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "uStack_10 = CONCAT22(uStack_10._2_2_,2);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 12,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "uStack_10 = CONCAT22(uStack_10._2_2_,2);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 14,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "uStack_14 = CONCAT22(uVar1,(ushort)uStack_14);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Uninitialized variable: unaff_retaddr",
-      "line": 23,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar2 = Ordinal_2(*unaff_retaddr,&uStack_14,0x10);",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

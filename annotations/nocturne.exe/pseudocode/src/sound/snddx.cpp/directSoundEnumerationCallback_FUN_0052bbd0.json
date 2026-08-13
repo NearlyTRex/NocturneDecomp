@@ -56,58 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 35,
-        "message": "use of undeclared identifier 'Ordinal_1'"
-      },
-      {
-        "category": "format_error",
-        "column": 49,
-        "line": 38,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 39,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 45,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 45,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 48,
-        "message": "use of undeclared identifier 'stack0xfffffc5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0xfffffc5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 53,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 18,
-        "line": 53,
-        "message": "expected expression"
+        "category": "pointer_type",
+        "column": 36,
+        "line": 52,
+        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')"
       }
     ],
     "success": false,
@@ -116,22 +68,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 279,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 17,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 77,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
-      "unaffected_reg",
       "undefined_data",
-      "unresolved_funcptr",
-      "unrolled_strcpy"
+      "unrolled_strcpy",
+      "warning_max_restarts"
     ],
-    "total_lines": 267
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -155,6 +105,11 @@
   },
   "function_calls": [
     {
+      "addr": "00574c14",
+      "is_variadic": false,
+      "name": "crt_dsound.c_DirectSoundCreate"
+    },
+    {
       "addr": "00563cc0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_00563cc0"
@@ -165,19 +120,14 @@
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
-      "addr": "00574c14",
-      "is_variadic": false,
-      "name": "Ordinal_1"
-    },
-    {
       "addr": "00529a90",
       "is_variadic": false,
       "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90"
     },
     {
       "addr": "00529980",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00529980"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_00529980"
     }
   ],
   "globals": [
@@ -361,35 +311,14 @@
   "static_analysis": {
     "analyzed_file": "directSoundEnumerationCallback_FUN_0052bbd0.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 42,
-          "message": "Uninitialized variable: piStack_1c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 53,
-          "line": 73,
-          "message": "Uninitialized variable: iStack_6c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
+          "check_id": "identicalInnerCondition",
           "column": 18,
-          "line": 76,
-          "message": "Uninitialized variable: unaff_EBP",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 9,
-          "line": 52,
-          "message": "Uninitialized variable: piStack_24",
-          "severity": "error"
+          "line": 51,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
         }
       ],
       "error": null
@@ -398,56 +327,24 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "char *unaff_EBP;",
-      "type": "unaffected_reg"
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 22,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "if (0xb < DAT_005bed40) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*piStack_1c + 0x10))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xfffffc5c",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffc5c,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xfffffc5c",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00529980(&stack0xfffffc5c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piStack_24 + 8))(piStack_24);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "iVar3 = DAT_005bed40 * 0x11c;",
@@ -455,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 55,
       "match": "(uint *)((int)device_guid",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)device_guid + (uint)bVar9 * -8 + 4);",
@@ -463,7 +360,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 63,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "iVar3 = DAT_005bed40;",
@@ -471,47 +368,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 64,
       "match": "DAT_005bed40",
       "severity": "mild",
-      "text": "*(uint *)(DAT_005bed40 * 0x11c + 0x2dc85d8) = (uint)((bStack_80 & 0x20) != 0);",
+      "text": "*(uint *)(DAT_005bed40 * 0x11c + 0x2dc85d8) = (uint)(((byte)DStack_70.dwFlags & 0x20) != 0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 69,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "cVar1 = *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "cVar1 = unaff_EBP[1];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 73,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = unaff_EBP + 2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 73,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = unaff_EBP + 2;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 76,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "DAT_005bed40 = DAT_005bed40 + 1;",
@@ -519,7 +384,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 76,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "DAT_005bed40 = DAT_005bed40 + 1;",
@@ -527,43 +392,19 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Uninitialized variable: piStack_1c",
-      "line": 42,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (piStack_1c != (int *)0x0) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_6c",
-      "line": 73,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(uint *)(iVar3 * 0x11c + 0x2dc85dc) = (uint)(iStack_6c != 0);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EBP",
-      "line": 76,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "cVar1 = *unaff_EBP;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: piStack_24",
-      "line": 52,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (piStack_24 != (int *)0x0) {",
-      "type": "static_legacy_uninitvar"
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 51,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (local_10 != (LPDIRECTSOUND)0x0) {",
+      "type": "static_identical_inner_condition"
     }
   ]
 }

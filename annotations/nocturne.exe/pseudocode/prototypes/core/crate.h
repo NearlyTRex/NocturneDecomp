@@ -33,7 +33,7 @@ void __cdecl CCrate::pickup(CCrate *this_ptr,CDemonActor *carrier);
 
 // Original: core_crate.cpp_CCrate_onDropped_FUN_0043c970
 // Address: 0043c970
-void CCrate::onDropped(int param_1);
+void __cdecl CCrate::onDropped(CCrate *this_ptr,CVector3f *drop_position);
 
 // Original: core_crate.cpp_CCrate_getCarrier_FUN_0043c990
 // Address: 0043c990

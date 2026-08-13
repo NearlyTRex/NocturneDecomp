@@ -210,7 +210,7 @@ void __cdecl core_xform_cpp_normalizeMatrix_FUN_0055acd0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_clearTranslation_FUN_0055ae60(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-float __cdecl core_xform_cpp_FUN_0055b0b0(void);
+float __cdecl core_xform_cpp_angleFromSinCos_FUN_0055b0b0(double sin_value,double cos_value);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_0055b180(CMatrix3x4f *matrix_in,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_0055b6c0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_getTranslation_FUN_0055bc00(CMatrix3x4f *matrix_in,CVector3f *vector_out);
@@ -246,7 +246,7 @@ CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_0055d4e0(flo
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_0055d520(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_0055d560(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out);
 CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0(CVector3f *out_euler,CQuaternion4f *quat_in);
-CVector3f * core_xform_cpp_FUN_0055d5e0(CVector3f *param_1,CQuaternion4f *param_2);
+CVector3f * __cdecl core_xform_cpp_quaternionToEulerAnglesZYX_FUN_0055d5e0(CQuaternion4f *quat_in,CVector3f *vector_out);
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_0055d610(CVector3f *euler_angles,CQuaternion4f *quat_out);
 void core_xform_cpp_FUN_0055d660(CVector3f *param_1);
 void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_0055d6b0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
@@ -256,8 +256,8 @@ void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_0055d8f0(SRenderVerte
 void __cdecl core_xform_cpp_clipPolygonStage1_FUN_0055d9c0(void);
 void __cdecl core_xform_cpp_clipPolygonStage2_FUN_0055db30(void);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_0055dcb0(void);
-void core_xform_cpp_FUN_0055de20(void);
-void core_xform_cpp_FUN_0055df90(void);
+void __cdecl core_xform_cpp_clipPolygonStage4_FUN_0055de20(void);
+void __cdecl core_xform_cpp_clampClippedVertices_FUN_0055df90(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_0055e040(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_0055e780(void);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_0055e940(CVector3f *dimensions);

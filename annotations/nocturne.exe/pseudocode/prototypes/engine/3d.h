@@ -7,13 +7,13 @@
 // Address: 00404430
 SMRGLHeaderExtended * __cdecl abortRemovedMRGLHandler(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_FUN_005458a0
+// Original: engine_3d.c_FUN_00404480
 // Address: 00404480
-CTextureCache * __cdecl FUN_005458a0(void);
+CTextureCache * __cdecl FUN_00404480(void);
 
-// Original: engine_3d.c_FUN_005458d0
+// Original: engine_3d.c_FUN_00404490
 // Address: 00404490
-void __cdecl FUN_005458d0(void);
+void __cdecl FUN_00404490(void);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0

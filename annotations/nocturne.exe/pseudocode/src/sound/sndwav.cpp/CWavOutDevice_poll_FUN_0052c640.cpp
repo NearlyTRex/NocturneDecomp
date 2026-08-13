@@ -20,12 +20,12 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_poll_FUN_0052c640(CWavOutDevice *this
     iVar2 = 0;
     do {
       if ((*(int *)(iVar2 + 0x2dc93a8) == 0) || (*(int *)(iVar2 + 0x2dc93c8) == 0)) {
-        sound_sndmain_cpp_FUN_00529980("WavOutDevice::poll - NULL pointer??");
+        sound_sndmain_cpp_logSoundError_FUN_00529980("WavOutDevice::poll - NULL pointer??");
         return 0;
       }
       if (((*(byte *)(*(int *)(iVar2 + 0x2dc93a8) + 0x10) & 1) != 0) &&
          (iVar1 = sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(buffer_index), iVar1 == 0)) {
-        sound_sndmain_cpp_FUN_00529980("WavOutDevice::poll - sendBuffer failed");
+        sound_sndmain_cpp_logSoundError_FUN_00529980("WavOutDevice::poll - sendBuffer failed");
         return 0;
       }
       buffer_index = buffer_index + 1;

@@ -928,8 +928,8 @@ section .text
     MOV EBX,dword ptr [0x005b6d50]      ; 004a0f74 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a0f7a
     MOV ESI,0x1                         ; 004a0f7b
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004a0f80
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004a0f80
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a0f85
     MOV dword ptr [0x01c78ac8],ESI      ; 004a0f88 | DAT_01c78ac8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a0f8e

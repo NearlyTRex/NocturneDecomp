@@ -237,7 +237,8 @@ LAB_0052673b:
   g_CSfxSlot_ARRAY_02dbd374[uVar12].sample = pCVar11;
   pCVar11 = g_CSfxSlot_ARRAY_02dbd374[uVar12].sample;
   if (pCVar11 == (CSfxSample *)0x0) {
-    sound_sndmain_cpp_FUN_00529980("startSfx - can't get sample %s\n",&stack0xfffffc70);
+    sound_sndmain_cpp_logSoundError_FUN_00529980
+              ("startSfx - can't get sample %s\n",&stack0xfffffc70);
   }
   else {
     pCVar11->ref_count = pCVar11->ref_count + 1;

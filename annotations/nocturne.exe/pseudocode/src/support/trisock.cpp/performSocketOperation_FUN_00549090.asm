@@ -16,8 +16,8 @@
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0 at 004eb3dd
 ;
 ; Called Functions:
-;   Ordinal_19
-;   Ordinal_20
+;   crt_wsock32.c_send
+;   crt_wsock32.c_sendto
 ;   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH ECX                            ; 005490ad
     MOV EBX,dword ptr [ESI]             ; 005490ae
     PUSH EBX                            ; 005490b0
-    CALL Ordinal_19                     ; 005490b1
-        ;   XREF to: 00574bde (UNCONDITIONAL_CALL)  ; undefined Ordinal_19()
+    CALL crt_wsock32.c_send             ; 005490b1
+        ;   XREF to: 00574bde (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_send(_SOCKET s, char * buf, int len, int flags)
     MOV ESI,EAX                         ; 005490b6
     POP EBX                             ; 005490b8
     CMP ESI,-0x1                        ; 005490b9
@@ -76,8 +76,8 @@ section .text
     PUSH EDI                            ; 005490f4
     MOV EBP,dword ptr [ESI]             ; 005490f5
     PUSH EBP                            ; 005490f7
-    CALL Ordinal_20                     ; 005490f8
-        ;   XREF to: 00574bd8 (UNCONDITIONAL_CALL)  ; undefined Ordinal_20()
+    CALL crt_wsock32.c_sendto           ; 005490f8
+        ;   XREF to: 00574bd8 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_sendto(_SOCKET s, char * buf, int len, int flags, ...)
     MOV ESI,EAX                         ; 005490fd
     CMP ESI,-0x1                        ; 005490ff
     MOV EAX,ESI                         ; 00549102

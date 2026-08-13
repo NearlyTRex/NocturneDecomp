@@ -17,10 +17,10 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560
-;   core_dtrace.cpp_FUN_004675e0
+;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004675e0
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
-;   shape_edittool.cpp_FUN_004720c0
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 00471660 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 004673fc
     PUSH EBX                            ; 004673ff
-    CALL core_dtrace.cpp_FUN_004675e0   ; 00467400
-        ;   XREF to: 004675e0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_004675e0()
+    CALL core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004675e0 ; 00467400
+        ;   XREF to: 004675e0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004675e0(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 00467405
     MOV dword ptr [EBX + 0x4],0x0       ; 00467408
     XOR EAX,EAX                         ; 0046740f
@@ -169,8 +169,8 @@ section .text
     MOV EDI,dword ptr [0x005b6d50]      ; 00467547 | g_CEditorTools_PTR_005b6d50
         ;   Label: LAB_00467547
     PUSH EDI                            ; 0046754d
-    CALL shape_edittool.cpp_FUN_004720c0 ; 0046754e
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 0046754e
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00467553
     ADD ESP,0x10                        ; 00467556
     POP EBP                             ; 00467559

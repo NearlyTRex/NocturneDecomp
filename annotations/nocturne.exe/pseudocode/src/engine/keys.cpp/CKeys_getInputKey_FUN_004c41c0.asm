@@ -8,10 +8,10 @@
 ;
 ; XREF[5]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 0047119c
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f918
+;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 at 0046ffc6
 ;   shape_edittool.cpp_FUN_0046fb40 at 0046fca6
 ;   shape_edittool.cpp_FUN_0046fcd0 at 0046fe36
-;   shape_edittool.cpp_FUN_0046fe60 at 0046ffc6
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f918
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getNextKeypress_FUN_00558b00

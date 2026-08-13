@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 116,
+    "complexity_score": 101,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 69
   },
@@ -63,8 +62,8 @@
   "globals": [
     {
       "addr": "005a4a18",
-      "name": "DAT_005a4a18",
-      "type": "undefined4",
+      "name": "g_WatcomVirtualBaseDescriptor_005a4a18",
+      "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
@@ -75,7 +74,7 @@
     },
     {
       "addr": "005a4a2c",
-      "name": "PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c",
+      "name": "PTR_crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c",
       "type": "void*",
       "value": "0056b7f8"
     }
@@ -159,14 +158,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005a4a18",
-      "severity": "mild",
-      "text": "(this_ptr->base).layout_info = &DAT_005a4a18;",
-      "type": "undefined_data"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 14,

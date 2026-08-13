@@ -35,13 +35,13 @@
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
 ;   core_skeleton.cpp_FUN_0051f650
-;   core_sound.cpp_FUN_00527e10
+;   core_sound.cpp_FUN_0052dd80
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdlib.c_rand_FUN_0056488c
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
-;   engine_3d.c_FUN_005458d0
+;   engine_3d.c_FUN_00404490
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
 ;   ... and 17 more
 ;
@@ -276,8 +276,8 @@ section .text
     ADD ESP,0x4                         ; 004c9341
     MOV EAX,[0x005bed68]                ; 004c9344 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004c9349
-    CALL core_sound.cpp_FUN_00527e10    ; 004c934a
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
+    CALL core_sound.cpp_FUN_0052dd80    ; 004c934a
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052dd80(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c934f
     CALL core_dmodel.cpp_FUN_00454460   ; 004c9352
         ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00454460()
@@ -291,8 +291,8 @@ section .text
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_004012a0 ; 004c936b
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()
-    CALL engine_3d.c_FUN_005458d0       ; 004c9370
-        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_005458d0()
+    CALL engine_3d.c_FUN_00404490       ; 004c9370
+        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00404490()
     CALL core_dfont.cpp_FUN_0044cc00    ; 004c9375
         ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044cc00()
     CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a

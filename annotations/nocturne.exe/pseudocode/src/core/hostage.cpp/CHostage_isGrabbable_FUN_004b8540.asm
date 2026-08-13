@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hostage_cpp_CHostage_isGrabbable_FUN_004b8540(int param_1)
+; int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004b8540(CHostage *this_ptr,CDemonActor *grabber)
 ;
+; Parameters:
+; CHostage *       Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660

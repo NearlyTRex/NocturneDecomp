@@ -41,11 +41,11 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004161a0(CBodyPart *thi
           iVar2 = iVar2 + 1;
           position = (CVector3f *)&position[0x21].z;
           pSVar1 = (SBodyPartModel *)(&pSVar1->model + 1);
-          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         } while (iVar2 < this_ptr->attached_model_count);
       }
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
     return this_ptr->is_visible;
   }

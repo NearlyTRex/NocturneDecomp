@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   sample_name
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00527950 at 005279a4
+;   sound_sndmain.cpp_freeSampleByName_FUN_00527950 at 005279a4
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520

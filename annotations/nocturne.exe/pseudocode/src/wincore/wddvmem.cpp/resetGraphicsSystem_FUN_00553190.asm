@@ -26,7 +26,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   DirectDrawCreate
+;   crt_ddraw.c_DirectDrawCreate
 ;   engine_2d.c_drawText_FUN_00402600
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
@@ -156,8 +156,8 @@ section .text
         ;   Label: LAB_005532ba
     PUSH 0x2ddf550                      ; 005532bc | g_DirectDrawObject
     PUSH 0x0                            ; 005532c1
-    CALL DirectDrawCreate               ; 005532c3
-        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 005532c3
+        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 005532c8
     JNZ 0x005532e0                      ; 005532ca
         ;   XREF to: 005532e0 (CONDITIONAL_JUMP)  ; LAB_005532e0

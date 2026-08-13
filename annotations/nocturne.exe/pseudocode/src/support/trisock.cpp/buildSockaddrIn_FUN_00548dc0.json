@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "use of undeclared identifier 'Ordinal_9'"
       }
     ],
     "success": false,
@@ -68,18 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 55,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 23,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 63
+    "total_lines": 61
   },
   "cross_references": [
     {
@@ -116,7 +110,7 @@
     {
       "addr": "00574c02",
       "is_variadic": false,
-      "name": "Ordinal_9"
+      "name": "crt_wsock32.c_htons"
     },
     {
       "addr": "00548d20",
@@ -217,8 +211,8 @@
         {
           "check_id": "negativeIndex",
           "column": 23,
-          "line": 30,
-          "message": "Array 'auStack_14[3]' accessed at index -1, which is out of bounds.",
+          "line": 28,
+          "message": "Array 'auStack_10[2]' accessed at index -1, which is out of bounds.",
           "severity": "error"
         }
       ],
@@ -229,18 +223,18 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
-      "match": "auStackY_17f8",
+      "line": 9,
+      "match": "auStackY_17f4",
       "severity": "moderate",
-      "text": "uint auStackY_17f8 [1524];",
+      "text": "uint auStackY_17f4 [1524];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 17,
       "match": "(uint *)((int)dest_buffer",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)dest_buffer + (uint)bVar5 * -8 + 4);",
+      "text": "puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

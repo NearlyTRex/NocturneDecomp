@@ -41,8 +41,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
+;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70
-;   shape_edittool.cpp_FUN_004720c0
 ;   shape_edittool.cpp_FUN_00475230
 ;   shape_edittool.cpp_FUN_004759d0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV EDI,dword ptr [0x005b6d50]      ; 00474e37 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 00474e3d
-    CALL shape_edittool.cpp_FUN_004720c0 ; 00474e3e
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 00474e3e
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 00474e43
     MOV dword ptr [0x005b7630],EBP      ; 00474e46 | INT_005b7630
     MOV EAX,EBX                         ; 00474e4c

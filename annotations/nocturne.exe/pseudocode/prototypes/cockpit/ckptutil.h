@@ -147,9 +147,9 @@ void FUN_0042ee00(char *param_1,int param_2,int param_3);
 // Address: 0042ef60
 void __cdecl drawClippedEdges(SEdge *edges,int count,int x_offset,int y_offset);
 
-// Original: cockpit_ckptutil.c_FUN_0042f050
+// Original: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042f050
 // Address: 0042f050
-void FUN_0042f050(int param_1,short *param_2,int param_3,int param_4,int param_5);
+void __cdecl rasterizeEdgeEndpoints(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 
 // Original: cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_0042f190
 // Address: 0042f190
@@ -167,13 +167,13 @@ void __cdecl drawLineAAWithBlending(int x0,int y0,int x1,int y1,int base_color,u
 // Address: 0042f600
 void __cdecl drawLineAA(int x0,int y0,int x1,int y1,int color);
 
-// Original: cockpit_ckptutil.c_FUN_0042f8c0
+// Original: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0
 // Address: 0042f8c0
-void FUN_0042f8c0(int param_1,int param_2,float param_3,int param_4);
+void __cdecl blendPixelWithHardwarePalette(int x,int y,float alpha,int color);
 
-// Original: cockpit_ckptutil.c_FUN_0042fd60
+// Original: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042fd60
 // Address: 0042fd60
-void FUN_0042fd60(int param_1,int param_2,float param_3,int param_4);
+void __cdecl blendPixelWithSourcePalette(int x,int y,float blend_factor,int palette_index);
 
 // Original: cockpit_ckptutil.c_putPixel_FUN_00430140
 // Address: 00430140

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_02dc943c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;   sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     RET                                 ; 0052c684
     PUSH 0x594955                       ; 0052c685 | = "WavOutDevice::poll - NULL pointer??"
         ;   Label: LAB_0052c685
-    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c68a
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 0052c68a
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     XOR EDI,EDI                         ; 0052c68f
     ADD ESP,0x4                         ; 0052c691
     JMP 0x0052c67e                      ; 0052c694
@@ -75,8 +75,8 @@ section .text
     JNZ 0x0052c670                      ; 0052c6a1
         ;   XREF to: 0052c670 (CONDITIONAL_JUMP)  ; LAB_0052c670
     PUSH 0x594979                       ; 0052c6a3 | = "WavOutDevice::poll - sendBuffer failed"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c6a8
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 0052c6a8
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     XOR EDI,EDI                         ; 0052c6ad
     ADD ESP,0x4                         ; 0052c6af
     MOV EAX,EDI                         ; 0052c6b2

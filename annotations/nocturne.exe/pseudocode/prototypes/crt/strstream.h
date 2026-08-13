@@ -27,6 +27,10 @@ _istrstream * __cdecl istrstream::dtor(void *this_ptr,uint flags);
 // Address: 0056b405
 strstreambase * __cdecl strstreambase::ctor(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
 
+// Original: crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0056b491
+// Address: 0056b491
+void __cdecl strstreambase::destructor_thunk(ios *this_ptr,int dtor_flags);
+
 // Original: crt_strstream.cpp_strstreambase_dtor_FUN_0056b5ad
 // Address: 0056b5ad
 strstreambase * __cdecl strstreambase::dtor(strstreambase *this_ptr,uint flags);

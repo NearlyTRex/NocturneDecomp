@@ -321,7 +321,7 @@ CCharacter_full_vtable g_CHostageVTable = {
         .kill = (CCharacter_kill *)core_charactr_cpp_CCharacter_kill_FUN_00424f40,
         .canWalk = (CCharacter_canWalk *)core_npc_cpp_CNPC_isInvulnerable_FUN_004eef80,
         .isGrabbable = (CCharacter_isGrabbable *)core_hostage_cpp_CHostage_isGrabbable_FUN_004b8540,
-        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_hostage_cpp_CHostage_isGrabbable_FUN_004b8580,
+        .canBeGrabbed = (CCharacter_canBeGrabbed *)core_hostage_cpp_CHostage_canBeGrabbed_FUN_004b8580,
         .getGrabbed = (CCharacter_getGrabbed *)core_hostage_cpp_CHostage_getGrabbed_FUN_004b8590,
         .releaseFromGrab = (CCharacter_releaseFromGrab *)core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0,
         .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0,
@@ -4564,7 +4564,7 @@ CWeapon_full_vtable g_CDynamiteVTable = {
         .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_00554780,
         .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_00554560,
         .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
-        .fire = (CWeapon_fire *)core_dynamite_cpp_FUN_0046ec80,
+        .fire = (CWeapon_fire *)core_dynamite_cpp_CDynamite_fire_FUN_0046ec80,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
         .getDamage = (CWeapon_getDamage *)core_dynamite_cpp_FUN_0046ecf0,
         .fireProjectile = (CWeapon_fireProjectile *)core_dynamite_cpp_FUN_0046ed20,
@@ -5151,7 +5151,7 @@ WatcomTypeInfo g_CDemonActorTypeInfo_005993d0 = {
     .instance_size = (int)sizeof(CDemonActor),
     .class_name = (char *)s_CDemonActor_005ace74
 };
-WatcomTypeInfo g_CBoundingBox3D_005993f0 = {
+WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0 = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_actor_cpp_CBoundingBox3D_ctor_FUN_0040e230,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_actor_cpp_CBoundingBox3D_copy_FUN_0040e240,
@@ -5631,7 +5631,7 @@ WatcomTypeInfo g_CDoorTypeInfo_0059c360 = {
     .instance_size = (int)sizeof(CDoor),
     .class_name = (char *)s_CDoor_005ae698
 };
-WatcomTypeInfo g_CFileFinder_0059c380 = {
+WatcomTypeInfo g_CFileFinderTypeInfo_0059c380 = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
@@ -5897,9 +5897,9 @@ WatcomTypeInfo g_CPopcornTypeInfo_0059d520 = {
 };
 WatcomTypeInfo g_CRainDropTypeInfo_0059d540 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fire_cpp_CRaindrop_ctor_FUN_0048c960,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_fire_cpp_CRainDrop_ctor_FUN_0048c960,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualConstructor_FUN_00564905,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fire_cpp_CRaindrop_dtor_FUN_0048c980,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fire_cpp_CRainDrop_dtor_FUN_0048c980,
     .instance_size = (int)sizeof(CRainDrop),
     .class_name = (char *)s_CRainDrop_005b8c14
 };

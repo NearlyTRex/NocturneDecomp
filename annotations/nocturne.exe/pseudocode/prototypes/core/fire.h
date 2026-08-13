@@ -495,9 +495,9 @@ int __cdecl CFireEffect::hasActiveMuzzleFlash(CFireEffect *this_ptr);
 // Address: 0048c8d0
 void __cdecl transformWorldToScreen(CVector3i *input,SProjectedVertex *output,CVector3f *world_position);
 
-// Original: core_fire.cpp_FUN_0048c920
+// Original: core_fire.cpp_CKeyFramedModel_getBoundsMin_FUN_0048c920
 // Address: 0048c920
-int FUN_0048c920(void);
+CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *model_ptr);
 
 // Original: core_fire.cpp_CBulletTrail_reset_FUN_0048c930
 // Address: 0048c930
@@ -507,13 +507,13 @@ void __cdecl CBulletTrail::reset(CBulletTrail *this_ptr);
 // Address: 0048c940
 void FUN_0048c940(undefined4 *param_1);
 
-// Original: core_fire.cpp_CRaindrop_ctor_FUN_0048c960
+// Original: core_fire.cpp_CRainDrop_ctor_FUN_0048c960
 // Address: 0048c960
-CRainDrop * __cdecl CRaindrop::ctor(CRainDrop *this_ptr);
+CRainDrop * __cdecl CRainDrop::ctor(CRainDrop *this_ptr);
 
-// Original: core_fire.cpp_CRaindrop_dtor_FUN_0048c980
+// Original: core_fire.cpp_CRainDrop_dtor_FUN_0048c980
 // Address: 0048c980
-CRainDrop * __cdecl CRaindrop::dtor(CRainDrop *this_ptr,uint flags);
+CRainDrop * __cdecl CRainDrop::dtor(CRainDrop *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CPopcorn_ctor_FUN_0048c990
 // Address: 0048c990

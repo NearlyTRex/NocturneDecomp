@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004712e4
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330 at 0046f373
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f9c9
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f9c9
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170

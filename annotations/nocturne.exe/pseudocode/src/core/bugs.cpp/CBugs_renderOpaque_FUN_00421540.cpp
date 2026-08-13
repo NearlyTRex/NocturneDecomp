@@ -55,7 +55,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
                       (g_CDemonRenderer_PTR_005ae704,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                       (pCStack_10 + pSStack_8->model_index,0.0,0x2e7);
-            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
             position = (CVector3f *)&position[5].y;
             iVar1 = iVar1 + 1;
             rotation = (CVector3f *)&rotation[5].y;

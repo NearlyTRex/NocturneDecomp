@@ -7,12 +7,14 @@
 #include "types/classes/CBassPlayer.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CCloth.h"
 #include "types/classes/CCryptVessel.h"
+#include "types/classes/CDSEModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CMultiCram.h"
 #include "types/classes/CStranger.h"
 #include "types/classes/CSuccubus.h"
 #include "types/classes/CSvetlana.h"
@@ -59,14 +61,14 @@ EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00540890(CStra
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_00540920(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 float core_stranger_cpp_FUN_00540970(void);
-void core_stranger_cpp_FUN_005409a0(void);
+void __cdecl shape_meshlod_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
 float core_stranger_cpp_FUN_005409c0(float *param_1,float *param_2);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation);
-undefined4 core_stranger_cpp_FUN_00540a10(void);
-undefined4 core_stranger_cpp_FUN_00540a20(void);
+CDSEModel * __cdecl shape_multicrm_cpp_CMultiCram_getSecondModel_FUN_00540a10(CMultiCram *this_ptr);
+int __cdecl core_stranger_cpp_isProcessDisabled_FUN_00540a20(CDemonActor *actor);
 int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor);
-void core_stranger_cpp_FUN_00540a40(void);
-int core_stranger_cpp_FUN_00540a70(void);
+void __cdecl core_stranger_cpp_setWindVelocity_FUN_00540a40(CCloth *cloth_ptr,CVector3f *velocity);
+int __cdecl core_stranger_cpp_getCurrentMotionStateIndex_FUN_00540a70(CCharacter *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_00540a90(CStranger *this_ptr,uint flags);
 void __cdecl core_succubus_cpp_staticInit_FUN_00540ae0(void);
 CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_00540b10(void);
@@ -89,7 +91,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00541d00(CSvetlana *this_pt
 void __cdecl core_svetlana_cpp_CSvetlana_FUN_005423c0(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_00542ad0(CSvetlana *this_ptr,float delta_time);
 void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetlana *this_ptr,int bone_index);
-void core_svetlana_cpp_CSvetlana_archive_FUN_00542d10(CHero *param_1);
+void __cdecl core_svetlana_cpp_CSvetlana_archive_FUN_00542d10(CSvetlana *this_ptr);
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(CSvetlana *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_svetlana_cpp_CSvetlana_getGrabbed_FUN_00543020(CSvetlana *this_ptr,CDemonActor *grabber,int grab_type);
@@ -101,7 +103,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_factoryFuncBassPlayer_FUN_00543120(void)
 CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00543140(CBassPlayer *this_ptr);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_00543150(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_00543180(CBassPlayer *this_ptr);
-void core_tbplayer_cpp_FUN_005431f0(void);
+CVector3f * __cdecl core_tbplayer_cpp_setVector_FUN_005431f0(CVector3f *out,float x,float y,float z);
 void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00543330(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00543370(void);
@@ -135,7 +137,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
 int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_00544440(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00544470(CTentacle *this_ptr);
 int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle *this_ptr,char *class_name);
-undefined4 core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *param_1,CCharacter *param_2);
+int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character);
 int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720(CTentacle *this_ptr);
 CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(CTentacle *this_ptr,CMatrix3x4f *out_matrix);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_00544850(CTentacle *this_ptr,uint flags);
@@ -269,7 +271,7 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret *this_ptr,C
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_0054a870(CTurret *this_ptr,CDemonActor *user);
 int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
-void core_turret_cpp_CTurret_stopUsing_FUN_0054a900(int param_1,int param_2);
+void __cdecl core_turret_cpp_CTurret_stopUsing_FUN_0054a900(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time);
 float __cdecl core_turret_cpp_CTurret_getDamage_FUN_0054aab0(CTurret *this_ptr);
 CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_0054aae0(CTurret *this_ptr,CVector3f *out_point);
@@ -297,7 +299,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_factoryFuncVampireBoss_FUN_0054c280(voi
 CDemonActorType * __cdecl core_vampboss_cpp_CVampireBoss_getActorType_FUN_0054c2a0(CVampireBoss *this_ptr);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_0054c3e0(CVampireBoss *this_ptr);
-float core_vampboss_cpp_FUN_0054c5f0(void);
+float __cdecl core_vampboss_cpp_clampAngle_FUN_0054c5f0(float angle,float max_angle);
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(CVampireBoss *this_ptr,float delta_time);
 void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_0054d8a0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_0054d9c0(CVampireBoss *this_ptr,float delta_time);

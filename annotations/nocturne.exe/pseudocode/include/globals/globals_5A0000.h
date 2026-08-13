@@ -259,6 +259,10 @@ extern WatcomTypeInfo g_fstreambaseTypeInfo_005a4a60;
 extern WatcomTypeInfo g_strstreambufTypeInfo_005a4af0;
 extern WatcomTypeInfo g_filebufTypeInfo_005a4b60;
 
+// WatcomVirtualBaseDescriptor
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a48b0;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18;
+
 // filebuf_vtable
 extern filebuf_vtable g_FilebufVTable;
 

@@ -40,14 +40,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     }
     local_2c = current_progress / total_progress;
   }
-  uVar7 = 0x4717ca;
   dVar5 = round
                     ((double)(local_2c * (float)100 + (float)0.5));
   iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
   if (((int)ROUND(dVar5) != *(int *)(iVar1 + 0x1bcd250)) ||
      (0x47ffff < iVar4 - *(int *)(iVar1 + 0x1bcd254))) {
-    shape_edittool_cpp_FUN_004722b0(this_ptr,uVar7);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
               (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,_DAT_01bcddec,-1,"%d%% complete"

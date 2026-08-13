@@ -23,7 +23,7 @@ section .text
     PUSH ESI                            ; 004d43c1
     PUSH EDI                            ; 004d43c2
     CALL engine_matrix.c_matrixPush_FUN_004cdac0 ; 004d43c3
-        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0()
+        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0(CDemonRenderer * this_ptr)
     MOV EDX,dword ptr [0x01c039b8]      ; 004d43c8 | g_RelativeX
     MOV ECX,dword ptr [0x01c039dc]      ; 004d43ce | DAT_01c039dc
     MOV EBX,dword ptr [0x01c039e8]      ; 004d43d4 | g_TransformMatrix

@@ -9,6 +9,6 @@
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00514410(C3DSCamera *this_ptr,uint flags)
 
 {
-  core_setutil_cpp_C3DSCamera_FUN_00514430(this_ptr);
+  core_setutil_cpp_C3DSCamera_free_FUN_00514430(this_ptr);
   return this_ptr;
 }

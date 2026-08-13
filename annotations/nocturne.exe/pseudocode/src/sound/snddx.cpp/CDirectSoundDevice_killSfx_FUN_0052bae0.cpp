@@ -19,7 +19,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
      (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
-    sound_sndmain_cpp_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
+    sound_sndmain_cpp_logSoundError_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
   }
   else {
     piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);
@@ -29,7 +29,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
         _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)",
                    "Stop hardware sfx secondary buffer",pcVar3);
-        sound_sndmain_cpp_FUN_00529980(acStack_1a0);
+        sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_1a0);
         return;
       }
     }

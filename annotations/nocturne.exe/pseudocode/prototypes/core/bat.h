@@ -7,9 +7,9 @@
 // Address: 00411910
 void __cdecl staticInit(void);
 
-// Original: core_bat.cpp_FUN_00411940
+// Original: core_bat.cpp_fmodfPositive_FUN_00411940
 // Address: 00411940
-float FUN_00411940(float param_1,float param_2);
+float __cdecl fmodfPositive(float value,float modulus);
 
 // Original: core_bat.cpp_factoryFuncBat_FUN_004119e0
 // Address: 004119e0

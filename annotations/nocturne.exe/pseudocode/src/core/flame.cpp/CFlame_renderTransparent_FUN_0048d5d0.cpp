@@ -185,12 +185,12 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
                     (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&stack0xfffffebc);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000
                     (g_CDemonRenderer_PTR_005ae704,0);
-          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
           iVar5 = iVar5 + 1;
           CStack_c0.y = CStack_c0.y + 0x2aaa;
         } while (iVar5 < (int)fStack_18);
       }
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
     if ((this_ptr->which_flame == 1) &&
@@ -275,7 +275,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
                 (g_CDemonRenderer_PTR_005ae704,&SStack_118,0x163);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     }
     return this_ptr->is_visible;
   }

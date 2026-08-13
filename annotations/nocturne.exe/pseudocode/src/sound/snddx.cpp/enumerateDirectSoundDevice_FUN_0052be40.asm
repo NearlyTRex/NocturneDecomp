@@ -16,8 +16,8 @@
 ;   undefined4 DAT_005bed40
 ;
 ; Called Functions:
+;   crt_dsound.c_DirectSoundEnumerateA
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   Ordinal_2
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH ECX                            ; 0052be66
     PUSH 0x52bbd0                       ; 0052be67
     MOV dword ptr [0x005bed40],ECX      ; 0052be6c | DAT_005bed40
-    CALL Ordinal_2                      ; 0052be72
-        ;   XREF to: 00574c0e (UNCONDITIONAL_CALL)  ; undefined Ordinal_2()
+    CALL crt_dsound.c_DirectSoundEnumerateA ; 0052be72
+        ;   XREF to: 00574c0e (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
     JMP 0x0052be53                      ; 0052be77
         ;   XREF to: 0052be53 (UNCONDITIONAL_JUMP)  ; LAB_0052be53
     MOV dword ptr [EBX + 0x104],ESI     ; 0052be79

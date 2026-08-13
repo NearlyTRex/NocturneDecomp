@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   Ordinal_15
+;   crt_wsock32.c_ntohs
 ;   support_trisock.cpp_copyIPAddress_FUN_00548ae0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_00548d63
     MOV AX,word ptr [ESI + 0x2]         ; 00548d65
     PUSH EAX                            ; 00548d69
-    CALL Ordinal_15                     ; 00548d6a
-        ;   XREF to: 00574c08 (UNCONDITIONAL_CALL)  ; undefined Ordinal_15()
+    CALL crt_wsock32.c_ntohs            ; 00548d6a
+        ;   XREF to: 00574c08 (UNCONDITIONAL_CALL)  ; ushort crt_wsock32.c_ntohs(ushort netshort)
     MOV word ptr [EBX + 0x4],AX         ; 00548d6f
     LEA EAX,[ESI + 0x4]                 ; 00548d73
     PUSH EAX                            ; 00548d76

@@ -31,6 +31,7 @@
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFoundFileInfo.h"
@@ -40,6 +41,7 @@
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitivePoly.h"
 #include "types/structs/SPoint2i.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x450000
@@ -122,10 +124,14 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(CDoor *this
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00456460(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00456650(CDoor *this_ptr);
-CRuleList * core_door_cpp_FUN_00456690(void);
+CRuleList * __cdecl core_door_cpp_clearRuleList_FUN_00456690(CRuleList *rule_list);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_004566b0(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *dest_path,char *directory,char *filename);
-void engine_dosio_cpp_FUN_00456750(undefined4 param_1);
+void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(FileSearchHandlerFunc *handler);
+template<typename T_func0>
+inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(T_func0 handler) {
+    engine_dosio_cpp_addGetFileInfoHook_FUN_00456750((FileSearchHandlerFunc *)handler);
+}
 int __cdecl engine_dosio_cpp_findFile_FUN_004567a0(SFoundFileInfo *context);
 int __cdecl engine_dosio_cpp_findFileNormally_FUN_00456800(SFoundFileInfo *info);
 int __cdecl engine_dosio_cpp_getFileSize_FUN_004568c0(char *directory,char *filename);
@@ -151,8 +157,8 @@ void __cdecl core_dpart_cpp_CDemonPart_save_FUN_004570f0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00457120(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 void engine_drender_cpp_FUN_004574e0(int param_1);
-void engine_drender_cpp_FUN_00457640(int param_1,int param_2);
-void engine_drender_cpp_FUN_004578a0(int param_1,int param_2);
+void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00457640(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
+void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_004578a0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 int * engine_drender_cpp_FUN_004579c0(int param_1,int *param_2);
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_indices,int vertex_count);
 void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *vertex_indices,int vertex_count);
@@ -271,7 +277,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0045e340(CDrawSur
 void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font);
 void __cdecl engine_drender_cpp_staticInit_FUN_0045ecf0(void);
 CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0045ed00(CDemonRenderer *this_ptr);
-void engine_drender_cpp_FUN_0045ed40(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0045ed40(CDemonRenderer *this_ptr,int mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);

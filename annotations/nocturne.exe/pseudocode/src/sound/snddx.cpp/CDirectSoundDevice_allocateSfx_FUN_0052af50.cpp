@@ -56,7 +56,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(CDirectS
       pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar5);
       _sprintf(acStack_650,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
                  pcVar6);
-      sound_sndmain_cpp_FUN_00529980(acStack_650);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_650);
       goto LAB_0052b04d;
     }
   }
@@ -90,7 +90,7 @@ LAB_0052b04d:
         pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar5);
         _sprintf(acStack_4cc,"DirectSux: Unable to %s.  (%s)","get DirectSound3DBuffer interface from sfx secondary buffer"
                    ,pcVar6);
-        sound_sndmain_cpp_FUN_00529980(acStack_4cc);
+        sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_4cc);
       }
     }
   }
@@ -98,14 +98,14 @@ LAB_0052b04d:
     pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar5);
     _sprintf(acStack_33c,"DirectSux: Unable to %s.  (%s)","Duplicate sound buffer",
                pcVar6);
-    sound_sndmain_cpp_FUN_00529980(acStack_33c);
+    sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_33c);
   }
   piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);
   if ((piVar2 != (int *)0x0) && (uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2), uVar5 != 0)) {
     pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar5);
     _sprintf(acStack_1ac,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
                pcVar6);
-    sound_sndmain_cpp_FUN_00529980(acStack_1ac);
+    sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_1ac);
     return 0;
   }
   piVar8 = (int *)(iVar7 * 4 + 0x2dc9324);

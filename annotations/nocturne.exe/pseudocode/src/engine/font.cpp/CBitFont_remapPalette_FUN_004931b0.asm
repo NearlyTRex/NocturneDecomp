@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_dfont.cpp_FUN_0044cd80 at 0044cd87
+;   core_dfont.cpp_remapFonts_FUN_0044cd80 at 0044cd87
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049018d
 ;
 ; Referenced Globals:

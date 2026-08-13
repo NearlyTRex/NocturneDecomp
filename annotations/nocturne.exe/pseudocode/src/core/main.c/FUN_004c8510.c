@@ -29,7 +29,8 @@ void __cdecl core_main_c_FUN_004c8510(void)
     else if ((((0x34 < uVar1) && (0x40 < uVar1)) && (0x41 < uVar1)) && (uVar1 == 0x5a)) {
       shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
                 (g_CEditorTools_PTR_005b6d50,acStack_10c);
-      shape_edittool_cpp_FUN_0046fe60(g_CEditorTools_PTR_005b6d50,acStack_10c);
+      shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
+                (g_CEditorTools_PTR_005b6d50,acStack_10c);
     }
   } while (uVar1 != 0x1b);
   engine_2d_c_clearInputAndWait_FUN_00403f50();

@@ -64,56 +64,56 @@
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 47,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01bcd07c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 50,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_004722b0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01bcd070'"
       },
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 53,
+        "line": 52,
         "message": "use of undeclared identifier '_DAT_01bcddec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 56,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01bcd9bc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 10,
-        "line": 57,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_01bcd9bc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 67,
-        "line": 60,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01bcddf8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 81,
-        "line": 60,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_01bcde00'"
       },
       {
         "category": "undeclared_identifier",
         "column": 72,
-        "line": 68,
+        "line": 67,
         "message": "use of undeclared identifier '_DAT_01bcddfc'; did you mean 'DAT_005c1dfc'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 70,
+        "message": "use of undeclared identifier '_DAT_01bcd07c'"
       }
     ],
     "success": false,
@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 279,
-    "complexity_score": 153,
+    "complexity_score": 142,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 5,
+    "pseudocode_lines": 82,
+    "suspect_count": 4,
     "suspect_types": [
       "bitcast_double_pair",
       "raw_address_constant",
       "sub84_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 362
+    "total_lines": 361
   },
   "cross_references": [
     {
@@ -210,7 +210,7 @@
     {
       "addr": "004722b0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004722b0"
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0"
     },
     {
       "addr": "00553910",
@@ -582,14 +582,14 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 11,
-          "line": 80,
+          "line": 79,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 61,
-          "line": 62,
+          "line": 61,
           "message": "Uninitialized variable: local_30",
           "severity": "error"
         }
@@ -609,7 +609,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 73,
+      "line": 72,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar7)) + 0.5);",
@@ -617,23 +617,15 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 73,
+      "line": 72,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar7)) + 0.5);",
       "type": "sub84_truncation"
     },
     {
-      "description": "Raw hex address 0x4717ca assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 36,
-      "match": "0x4717ca",
-      "severity": "moderate",
-      "text": "uVar7 = 0x4717ca;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x471966 assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 68,
+      "line": 67,
       "match": "0x471966",
       "severity": "moderate",
       "text": "uVar7 = 0x471966;",
@@ -641,7 +633,7 @@
     },
     {
       "description": "Uninitialized variable: local_30",
-      "line": 62,
+      "line": 61,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "((double)((float)((x2_00 - x1) + 1) * local_30 + (float)0.5));",

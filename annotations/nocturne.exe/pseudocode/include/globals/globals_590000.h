@@ -176,7 +176,7 @@ extern WatcomDestructorCall g_WatcomDestructorCall_0059fff4;
 // WatcomTypeInfo
 extern WatcomTypeInfo g_CVectorTypeInfo_005993b0;
 extern WatcomTypeInfo g_CDemonActorTypeInfo_005993d0;
-extern WatcomTypeInfo g_CBoundingBox3D_005993f0;
+extern WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0;
 extern WatcomTypeInfo g_SDamageInfoTypeInfo_00599410;
 extern WatcomTypeInfo g_CAmmoTypeInfo_00599530;
 extern WatcomTypeInfo g_CAmmoBoxTypeInfo_00599650;
@@ -236,7 +236,7 @@ extern WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080;
 extern WatcomTypeInfo g_CKeyFramedModelTypeInfo_0059c0a0;
 extern WatcomTypeInfo g_CZombieDogTypeInfo_0059c240;
 extern WatcomTypeInfo g_CDoorTypeInfo_0059c360;
-extern WatcomTypeInfo g_CFileFinder_0059c380;
+extern WatcomTypeInfo g_CFileFinderTypeInfo_0059c380;
 extern WatcomTypeInfo g_SFreakyTypeInfo_0059c560;
 extern WatcomTypeInfo g_CDraculaBrideTypeInfo_0059c580;
 extern WatcomTypeInfo g_CDripTypeInfo_0059c6c0;

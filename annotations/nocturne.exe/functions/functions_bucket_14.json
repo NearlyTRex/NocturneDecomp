@@ -321,6 +321,88 @@
     }
   },
   {
+    "addr":"00574914",
+    "body":[
+      {
+        "end":"00574919",
+        "size":6,
+        "start":"00574914"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GlobalMemoryStatus",
+    "ret":"void",
+    "thtarget":"EXTERNAL:00000071",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lpBuffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPMEMORYSTATUS"
+        }
+      ]
+    }
+  },
+  {
+    "addr":"00574a94",
+    "body":[
+      {
+        "end":"00574a99",
+        "size":6,
+        "start":"00574a94"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_OpenClipboard",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000033",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hWndNewOwner",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWND"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"00574c14",
     "body":[
       {
@@ -329,14 +411,72 @@
         "start":"00574c14"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"Ordinal_1",
-    "ret":"undefined1",
+    "name":"crt_dsound.c_DirectSoundCreate",
+    "ret":"HRESULT",
     "thtarget":"EXTERNAL:000000ab",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"lp_guid",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPGUID"
+        },
+        {
+          "name":"pp_ds",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPDIRECTSOUND*"
+        },
+        {
+          "name":"p_unk_outer",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPUNKNOWN"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

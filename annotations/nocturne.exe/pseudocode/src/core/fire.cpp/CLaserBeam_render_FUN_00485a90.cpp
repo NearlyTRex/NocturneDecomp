@@ -293,7 +293,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
       pCVar3->vertex_buffer_ptr[3].v = 0x80000;
       engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(pCVar3,&local_24c);
       iVar5 = iVar5 + 1;
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     } while (iVar5 < 0x19);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
@@ -430,7 +430,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
         local_20 = local_20 + 1;
       } while (local_20 <= (int)local_24);
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   }
   if (0.0 < local_2f4) {
     local_130 = 1.0 / depth;
@@ -520,7 +520,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
               (g_CDemonRenderer_PTR_005ae704,local_20);
     engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370
               (g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)(local_2e0 + 0x4c));
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010

@@ -47,9 +47,9 @@ void __cdecl buildMatrixFromEulerAndPosition(CMatrix3x4f *output_matrix,CVector3
 // Address: 0055afb0
 void __cdecl buildMatrixFromEulerAndPositionDirect(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 
-// Original: core_xform.cpp_FUN_0055b0b0
+// Original: core_xform.cpp_angleFromSinCos_FUN_0055b0b0
 // Address: 0055b0b0
-float __cdecl FUN_0055b0b0(void);
+float __cdecl angleFromSinCos(double sin_value,double cos_value);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_0055b180
 // Address: 0055b180
@@ -191,9 +191,9 @@ CQuaternion4f * __stack2_esi quaternionFromAxisAngle(float angle_radians,CVector
 // Address: 0055d5b0
 CVector3f * __cdecl quaternionToEulerAngles(CVector3f *out_euler,CQuaternion4f *quat_in);
 
-// Original: core_xform.cpp_FUN_0055d5e0
+// Original: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_0055d5e0
 // Address: 0055d5e0
-CVector3f * FUN_0055d5e0(CVector3f *param_1,CQuaternion4f *param_2);
+CVector3f * __cdecl quaternionToEulerAnglesZYX(CQuaternion4f *quat_in,CVector3f *vector_out);
 
 // Original: core_xform.cpp_eulerToQuaternion_FUN_0055d610
 // Address: 0055d610
@@ -231,13 +231,13 @@ void __cdecl clipPolygonStage2(void);
 // Address: 0055dcb0
 void __cdecl clipPolygonStage3(void);
 
-// Original: core_xform.cpp_FUN_0055de20
+// Original: core_xform.cpp_clipPolygonStage4_FUN_0055de20
 // Address: 0055de20
-void FUN_0055de20(void);
+void __cdecl clipPolygonStage4(void);
 
-// Original: core_xform.cpp_FUN_0055df90
+// Original: core_xform.cpp_clampClippedVertices_FUN_0055df90
 // Address: 0055df90
-void FUN_0055df90(void);
+void __cdecl clampClippedVertices(void);
 
 // Original: core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 // Address: 0055e040

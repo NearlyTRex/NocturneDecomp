@@ -23,6 +23,10 @@ uint __cdecl ios::clear(ios *this_ptr,uint state_flags);
 // Address: 0056b4a9
 _ostream * __cdecl ostream::ctor(_ostream *this_ptr,uint c1);
 
+// Original: crt_iostream.cpp_ostream_destructor_thunk_FUN_0056b4eb
+// Address: 0056b4eb
+void __cdecl ostream::destructor_thunk(ios *this_ptr,int dtor_flags);
+
 // Original: crt_iostream.cpp_ios_ctor_FUN_0056b503
 // Address: 0056b503
 ios * __cdecl ios::ctor(ios *this_ptr);
@@ -38,6 +42,10 @@ ios * __cdecl ios::dtor(ios *this_ptr,uint flags);
 // Original: crt_iostream.cpp_istream_ctor_FUN_0056b67d
 // Address: 0056b67d
 _istream * __cdecl istream::ctor(_istream *this_ptr,uint c1);
+
+// Original: crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_0056b6d0
+// Address: 0056b6d0
+void __cdecl istream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_iostream.cpp_istream_dtor_FUN_0056b6e8
 // Address: 0056b6e8

@@ -11,6 +11,6 @@ int __cdecl support_trisock_cpp_listenSocket_FUN_00549150(_SOCKET *socket_handle
 {
   int iVar1;
   
-  iVar1 = Ordinal_13(*socket_handle,1);
+  iVar1 = listen(*socket_handle,1);
   return (uint)(iVar1 == 0);
 }

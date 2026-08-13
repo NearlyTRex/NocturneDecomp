@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[195]:
-;   cockpit_ckptutil.c_FUN_0042f8c0 at 0042fa9a
-;   cockpit_ckptutil.c_FUN_0042fd60 at 0042fecf
+;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0 at 0042fa9a
+;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042fd60 at 0042fecf
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0 at 0045ce0f
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c218
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70 at 0045ccc5

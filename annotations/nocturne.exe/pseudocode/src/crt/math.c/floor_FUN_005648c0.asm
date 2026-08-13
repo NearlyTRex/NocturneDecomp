@@ -13,7 +13,7 @@
 ; XREF[27]:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00 at 0040df4c
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20 at 00411f6c
-;   core_bat.cpp_FUN_00411940 at 00411969
+;   core_bat.cpp_fmodfPositive_FUN_00411940 at 00411969
 ;   core_boneguy.cpp_hsvToRgb_FUN_00418480 at 00418597
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e61f
 ;   core_bugs.cpp_CBugs_FUN_00421b80 at 00421c27

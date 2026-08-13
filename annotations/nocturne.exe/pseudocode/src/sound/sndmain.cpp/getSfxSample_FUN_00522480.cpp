@@ -181,7 +181,7 @@ LAB_005224ea:
       pcVar11 = "Error decoding file data from %s\n";
     }
   }
-  sound_sndmain_cpp_FUN_00529980(pcVar11,filename);
+  sound_sndmain_cpp_logSoundError_FUN_00529980(pcVar11,filename);
 LAB_005226f8:
   sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(&g_CMP3Decoder_02da8ae0);
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pCVar6);

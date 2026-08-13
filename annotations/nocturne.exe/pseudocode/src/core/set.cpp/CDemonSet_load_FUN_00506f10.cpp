@@ -355,7 +355,8 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     }
     else {
       _fclose(p_Var4);
-      core_dtrace_cpp_FUN_00467890(&g_CDemonRaytrace_01fba938,pcVar3);
+      core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890
+                (&g_CDemonRaytrace_01fba938,pcVar3);
     }
     core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   }

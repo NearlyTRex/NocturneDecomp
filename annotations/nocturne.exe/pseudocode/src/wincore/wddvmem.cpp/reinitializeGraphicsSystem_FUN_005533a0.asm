@@ -20,7 +20,7 @@
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
-;   DirectDrawCreate
+;   crt_ddraw.c_DirectDrawCreate
 ;   engine_special.cpp_restoreVideoMode_FUN_005325f0
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
 ;
@@ -91,8 +91,8 @@ section .text
         ;   Label: LAB_00553427
     PUSH 0x2ddf550                      ; 00553429 | g_DirectDrawObject
     PUSH 0x0                            ; 0055342e
-    CALL DirectDrawCreate               ; 00553430
-        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 00553430
+        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 00553435
     JNZ 0x0055344d                      ; 00553437
         ;   XREF to: 0055344d (CONDITIONAL_JUMP)  ; LAB_0055344d

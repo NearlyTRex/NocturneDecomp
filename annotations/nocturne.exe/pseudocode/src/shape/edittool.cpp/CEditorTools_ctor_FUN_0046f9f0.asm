@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
-;   shape_edittool.cpp_FUN_0046fa80
+;   shape_edittool.cpp_CEditorTools_init_FUN_0046fa80
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0046fa0d
     PUSH EBX                            ; 0046fa10
-    CALL shape_edittool.cpp_FUN_0046fa80 ; 0046fa11
-        ;   XREF to: 0046fa80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fa80()
+    CALL shape_edittool.cpp_CEditorTools_init_FUN_0046fa80 ; 0046fa11
+        ;   XREF to: 0046fa80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_init_FUN_0046fa80(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0046fa16
     MOV EAX,EBX                         ; 0046fa19
     POP EBX                             ; 0046fa1b

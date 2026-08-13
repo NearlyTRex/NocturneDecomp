@@ -2,21 +2,21 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      12965
-  Named globals:             10435
-  DAT_ globals:              2530
-Gaps found:                  2038
-  With exact size bounds:    1593
-  With estimated bounds:     445
-Total gap bytes:             2,142,970,076
-  Exact gap bytes:           41,380,143
+Total globals analyzed:      12955
+  Named globals:             10427
+  DAT_ globals:              2528
+Gaps found:                  2047
+  With exact size bounds:    1600
+  With estimated bounds:     447
+Total gap bytes:             2,142,970,122
+  Exact gap bytes:           41,380,167
 Overlaps (size <= 0):        7150
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          403
-  5-16 bytes (small vars)                       261
+  1-4 bytes (likely padding/alignment)          411
+  5-16 bytes (small vars)                       262
   17-64 bytes (structs/small arrays)            607
   65-256 bytes (medium data)                    295
   257-1024 bytes (large structs/arrays)         183
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: PTR_caseD_1_0040db24                     void*                at 0x0040db24
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1593) - size bounds are known precisely
+ALL EXACT GAPS (1600) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b0e608  between DAT_00b0e604                   and DAT_01216608
    6,753,148 bytes  at 0x02737ef8  between DAT_02737ef4                   and DAT_02da8a74
@@ -712,7 +712,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           68 bytes  at 0x01e52f04  between DAT_01e52f00                   and DAT_01e52f48
           68 bytes  at 0x02de4984  between DAT_02de4980                   and DAT_02de49c8
           64 bytes  at 0x005a3e90  between DAT_005a3e8c                   and DAT_005a3ed0
-          64 bytes  at 0x005a48c8  between PTR_crt_unknown.c_FUN_0056b491 and DAT_005a4908
+          64 bytes  at 0x005a48c8  between PTR_crt_strstream.cpp_strstrea and DAT_005a4908
           64 bytes  at 0x005ad0a0  between g_INT_005ad09c                 and g_INT_005ad0e0
           64 bytes  at 0x005c0fb0  between DAT_005c0fac                   and INT_005c0ff0
           64 bytes  at 0x006b4a20  between DAT_006b4a1c                   and DAT_006b4a60
@@ -785,8 +785,8 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           52 bytes  at 0x02dc8424  between DAT_02dc8420                   and DAT_02dc8458
           52 bytes  at 0x02dc8464  between DAT_02dc8460                   and DAT_02dc8498
           48 bytes  at 0x0059c000  between DAT_0059bffc                   and DAT_0059c030
-          48 bytes  at 0x005a49d0  between PTR_crt_unknown.c_FUN_0056b6d0 and g_istreamTypeInfo_005a4a00
-          48 bytes  at 0x005a4a30  between PTR_crt_unknown.c_FUN_0056b7f8 and g_fstreambaseTypeInfo_005a4a60
+          48 bytes  at 0x005a49d0  between PTR_crt_iostream.cpp_istream_d and g_istreamTypeInfo_005a4a00
+          48 bytes  at 0x005a4a30  between PTR_crt_fstream.cpp_fstream_de and g_fstreambaseTypeInfo_005a4a60
           48 bytes  at 0x005bbc10  between DAT_005bbc08                   and DAT_005bbc40
           47 bytes  at 0x00763e15  between DAT_00763e14                   and DAT_00763e44
           45 bytes  at 0x00587d07  between s_If_you_think_you_have_at_005 and s_anon_00587d34
@@ -814,7 +814,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           40 bytes  at 0x0059bde8  between FLOAT_0059bde4                 and DAT_0059be10
           40 bytes  at 0x0059c03c  between DAT_0059c038                   and DAT_0059c064
           40 bytes  at 0x0059fc00  between DAT_0059fbfc                   and DAT_0059fc28
-          40 bytes  at 0x005a4920  between PTR_crt_unknown.c_FUN_0056b4eb and PTR_crt_iostream.cpp_ios_dtor_
+          40 bytes  at 0x005a4920  between PTR_crt_iostream.cpp_ostream_d and PTR_crt_iostream.cpp_ios_dtor_
           40 bytes  at 0x005ad384  between g_INT_005ad380                 and g_INT_005ad3ac
           40 bytes  at 0x005ad3c8  between g_INT_005ad3c4                 and INT_005ad3f0
           40 bytes  at 0x005ad554  between DAT_005ad550                   and DAT_005ad57c
@@ -1062,7 +1062,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
           24 bytes  at 0x005c17fc  between DAT_005c17f8                   and PTR_s_Sunday_005c1814
           24 bytes  at 0x005c1818  between PTR_s_Sunday_005c1814          and DAT_005c1830
           24 bytes  at 0x005c1d64  between DAT_005c1d60                   and DAT_005c1d7c
-          24 bytes  at 0x005c214c  between DAT_005c2148                   and PTR_crt_unknown.c_FUN_00573ffb
+          24 bytes  at 0x005c214c  between DAT_005c2148                   and PTR_crt_unknown.c_FUN_00573650
           24 bytes  at 0x0076937c  between DAT_00769378                   and DAT_00769394
           24 bytes  at 0x01c49d54  between DAT_01c49d50                   and g_CSpark_ARRAY_01c49d54[0].bas
           24 bytes  at 0x01c49d70  between g_CSpark_ARRAY_01c49d54[0].bas and g_CSpark_ARRAY_01c49d54[0].bas
@@ -1277,6 +1277,7 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
            8 bytes  at 0x0055dc98  between switchdataD_0055dc94           and PTR_caseD_3_0055dca0
            8 bytes  at 0x0055e000  between switchdataD_0055dffc           and PTR_caseD_3_0055e008
            8 bytes  at 0x0055e020  between switchdataD_0055e01c           and PTR_caseD_3_0055e028
+           8 bytes  at 0x005754e0  between PTR_FreeLibrary_005754dc       and PTR_GetCommandLineA_005754e8
            8 bytes  at 0x0057a572  between s_chain_pull_wav_0057a56b+3    and s_chain_move_wav_0057a57a
            8 bytes  at 0x0057dc55  between DOUBLE_0057dc4d                and DOUBLE_0057dc5d
            8 bytes  at 0x0057eae0  between s_Heap_is_empty_0057ead9+3     and s_Memory_corruption_detect_005
@@ -1307,10 +1308,8 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
            8 bytes  at 0x005a473c  between DAT_005a4738                   and PTR_crt_strstream.cpp_istrstre
            8 bytes  at 0x005a47b0  between DAT_005a47ac                   and PTR_crt_fstream.cpp_ifstream_d
            8 bytes  at 0x005a481c  between DAT_005a4818                   and PTR_crt_fstream.cpp_ofstream_d
-           8 bytes  at 0x005a48b4  between DAT_005a48b0                   and PTR_crt_strstream.cpp_strstrea
            8 bytes  at 0x005a490c  between DAT_005a4908                   and PTR_crt_iostream.cpp_ostream_d
            8 bytes  at 0x005a49bc  between DAT_005a49b8                   and PTR_crt_iostream.cpp_istream_d
-           8 bytes  at 0x005a4a1c  between DAT_005a4a18                   and PTR_crt_fstream.cpp_fstreambas
            8 bytes  at 0x005ad544  between DAT_005ad540                   and DAT_005ad54c
            8 bytes  at 0x005ba834  between FLOAT_005ba830                 and FLOAT_005ba83c
            8 bytes  at 0x005bc064  between DAT_005bc060                   and DAT_005bc06c
@@ -1440,8 +1439,16 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
            4 bytes  at 0x005753d0  between PTR_TextOutA_005753cc          and PTR_joyGetDevCapsA_005753d4
            4 bytes  at 0x0057540c  between PTR_waveOutWrite_00575408      and PTR_BringWindowToTop_00575410
            4 bytes  at 0x00575488  between PTR_UpdateWindow_00575484      and PTR_CloseHandle_0057548c
+           4 bytes  at 0x005754a4  between PTR_CreateThread_005754a0      and PTR_DeleteFileA_005754a8
+           4 bytes  at 0x005754ac  between PTR_DeleteFileA_005754a8       and PTR_EnterCriticalSection_00575
+           4 bytes  at 0x005754d8  between PTR_FlushFileBuffers_005754d4  and PTR_FreeLibrary_005754dc
+           4 bytes  at 0x00575510  between PTR_GetFileAttributesA_0057550 and PTR_GetFileType_00575514
            4 bytes  at 0x00575520  between PTR_GetLastError_0057551c      and PTR_GetModuleFileNameA_0057552
+           4 bytes  at 0x00575530  between PTR_GetModuleHandleA_0057552c  and PTR_GetProcAddress_00575534
+           4 bytes  at 0x00575564  between PTR_LoadLibraryA_00575560      and PTR_MoveFileA_00575568
+           4 bytes  at 0x005755a4  between PTR_SetFilePointer_005755a0    and PTR_SetLastError_005755a8
            4 bytes  at 0x005755ac  between PTR_SetLastError_005755a8      and PTR_SetThreadPriority_005755b0
+           4 bytes  at 0x005755bc  between PTR_Sleep_005755b8             and PTR_TlsAlloc_005755c0
            4 bytes  at 0x00578045  between DOUBLE_0057803d                and FLOAT_00578049
            4 bytes  at 0x00579132  between DAT_0057912e                   and DAT_00579136
            4 bytes  at 0x0057913a  between DAT_00579136                   and DAT_0057913e
@@ -1639,10 +1646,10 @@ ALL EXACT GAPS (1593) - size bounds are known precisely
            4 bytes  at 0x005a4814  between DAT_005a4810                   and DAT_005a4818
            4 bytes  at 0x005a4828  between PTR_crt_fstream.cpp_ofstream_d and PTR_crt_unknown.c_FUN_0056519c
            4 bytes  at 0x005a4830  between PTR_crt_unknown.c_FUN_0056519c and PTR_crt_unknown.c_FUN_005651b2
-           4 bytes  at 0x005a48c0  between PTR_crt_strstream.cpp_strstrea and PTR_crt_unknown.c_FUN_0056b491
-           4 bytes  at 0x005a4918  between PTR_crt_iostream.cpp_ostream_d and PTR_crt_unknown.c_FUN_0056b4eb
-           4 bytes  at 0x005a49c8  between PTR_crt_iostream.cpp_istream_d and PTR_crt_unknown.c_FUN_0056b6d0
-           4 bytes  at 0x005a4a28  between PTR_crt_fstream.cpp_fstreambas and PTR_crt_unknown.c_FUN_0056b7f8
+           4 bytes  at 0x005a48c0  between PTR_crt_strstream.cpp_strstrea and PTR_crt_strstream.cpp_strstrea
+           4 bytes  at 0x005a4918  between PTR_crt_iostream.cpp_ostream_d and PTR_crt_iostream.cpp_ostream_d
+           4 bytes  at 0x005a49c8  between PTR_crt_iostream.cpp_istream_d and PTR_crt_iostream.cpp_istream_d
+           4 bytes  at 0x005a4a28  between PTR_crt_fstream.cpp_fstreambas and PTR_crt_fstream.cpp_fstream_de
            4 bytes  at 0x005ad1ec  between g_INT_005ad1e8                 and s_noCollision_005ad1f0
            4 bytes  at 0x005ad354  between g_CConsole_PTR_005ad350        and s_console_txt_005ad358
            4 bytes  at 0x005ae454  between DAT_005ae450                   and DAT_005ae458

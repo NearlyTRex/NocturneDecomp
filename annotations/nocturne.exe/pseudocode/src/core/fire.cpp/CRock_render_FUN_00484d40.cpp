@@ -32,6 +32,6 @@ void __cdecl core_fire_cpp_CRock_render_FUN_00484d40(CRock *this_ptr)
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
               (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

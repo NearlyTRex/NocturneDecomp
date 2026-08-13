@@ -13,6 +13,6 @@ int __cdecl support_trisock_cpp_setSocketBlocking_FUN_00549240(_SOCKET *socket_h
   uint uStack_4;
   
   uStack_4 = (uint)(blocking_mode == 0);
-  iVar1 = Ordinal_12(*socket_handle,0x8004667e,&uStack_4);
+  iVar1 = ioctlsocket(*socket_handle,-0x7ffb9982,&uStack_4);
   return (uint)(iVar1 == 0);
 }

@@ -56,15 +56,9 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier 'Ordinal_2'"
-      },
-      {
         "category": "format_error",
         "column": 57,
-        "line": 28,
+        "line": 29,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
@@ -74,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 57,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 23,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 78
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -114,14 +108,14 @@
   },
   "function_calls": [
     {
+      "addr": "00574c0e",
+      "is_variadic": false,
+      "name": "crt_dsound.c_DirectSoundEnumerateA"
+    },
+    {
       "addr": "00563c90",
       "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
-      "addr": "00574c0e",
-      "is_variadic": false,
-      "name": "Ordinal_2"
     }
   ],
   "globals": [
@@ -242,7 +236,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005bed40",
       "severity": "mild",
       "text": "if ((-1 < (int)device_id) && ((int)device_id < DAT_005bed40)) {",

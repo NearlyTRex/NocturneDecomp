@@ -284,8 +284,8 @@ LAB_004eb75b:
         core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(this_ptr,iVar4,2.0);
       }
     }
-    shape_edittool_cpp_FUN_0046fe60(g_CEditorTools_PTR_005b6d50,"You have been disconnected from the game.")
-    ;
+    shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
+              (g_CEditorTools_PTR_005b6d50,"You have been disconnected from the game.");
 LAB_004eb861:
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,1);

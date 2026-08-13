@@ -10,7 +10,7 @@
 ;   core_setutil.cpp_C3DSCamera_load_FUN_005144e0 at 005144f9
 ;
 ; Called Functions:
-;   core_setutil.cpp_C3DSCamera_FUN_00514430
+;   core_setutil.cpp_C3DSCamera_free_FUN_00514430
 ;   crt_memory.c_memset_FUN_00563cc0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_setutil.cpp_C3DSCamera_FUN_00514470
     MOV EBX,dword ptr [ESP + 0x8]       ; 00514471
     PUSH EBX                            ; 00514475
-    CALL core_setutil.cpp_C3DSCamera_FUN_00514430 ; 00514476
-        ;   XREF to: 00514430 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_FUN_00514430(C3DSCamera * this_ptr)
+    CALL core_setutil.cpp_C3DSCamera_free_FUN_00514430 ; 00514476
+        ;   XREF to: 00514430 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_free_FUN_00514430(C3DSCamera * this_ptr)
     ADD ESP,0x4                         ; 0051447b
     PUSH 0x1a0                          ; 0051447e
     PUSH 0x0                            ; 00514483

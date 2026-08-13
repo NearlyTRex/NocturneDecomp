@@ -22,7 +22,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_0056b810(fstreambase 
     *(byte ***)
      ((this_ptr->base)._filebuf.__unbuffered_get_area +
      *(int *)((int)(this_ptr->base).layout_info + 4) + -0x10) =
-         &PTR_crt_unknown_c_FUN_0056b7f8_005a4a2c;
+         &PTR_crt_fstream_cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c;
     pfVar2 = crt_fstream_cpp_filebuf_dtor_FUN_00570449(&(this_ptr->base)._filebuf,0);
     this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);
     if ((flags & 1) == 0) {

@@ -9,29 +9,24 @@
 int __cdecl support_trisock_cpp_acceptConnection_FUN_00549170(_SOCKET *listen_socket,SNetworkAddr *client_addr,_SOCKET *new_socket)
 
 {
-  int iVar1;
+  _SOCKET _Var1;
   SOCKADDR_IN *pSVar2;
-  int *unaff_EDI;
   byte bVar3;
-  byte auStack_2c [12];
-  byte local_20 [4];
-  SNetworkAddr aSStack_1c [2];
-  uint local_8;
+  SOCKADDR local_20;
+  SNetworkAddr SStack_10;
+  int local_8;
   
   bVar3 = 0;
-  auStack_2c._4_4_ = local_20;
-  auStack_2c._8_4_ = &local_8;
   local_8 = 0x10;
-  auStack_2c._0_4_ = *listen_socket;
-  iVar1 = Ordinal_1();
-  *unaff_EDI = iVar1;
-  if (iVar1 == -1) {
+  _Var1 = accept(*listen_socket,&local_20,&local_8);
+  client_addr->ip_address = _Var1;
+  if (_Var1 == 0xffffffff) {
     return 0;
   }
   if (new_socket == (_SOCKET *)0x0) {
     return 1;
   }
-  pSVar2 = support_trisock_cpp_convertSockAddr_FUN_00548d50(aSStack_1c,(SOCKADDR *)auStack_2c);
+  pSVar2 = support_trisock_cpp_convertSockAddr_FUN_00548d50(&SStack_10,&local_20);
   *new_socket = *(_SOCKET *)pSVar2;
   new_socket[(uint)bVar3 * -2 + 1] = *(_SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);
   return 1;

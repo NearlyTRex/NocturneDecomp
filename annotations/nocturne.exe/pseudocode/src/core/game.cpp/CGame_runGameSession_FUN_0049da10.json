@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 576,
+    "complexity_score": 577,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 351,
+    "pseudocode_lines": 352,
     "suspect_count": 19,
     "suspect_types": [
       "raw_address_constant",
@@ -138,7 +138,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1371
+    "total_lines": 1372
   },
   "cross_references": [
     {
@@ -373,6 +373,11 @@
       "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0"
     },
     {
+      "addr": "004720c0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0"
+    },
+    {
       "addr": "00474c90",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_00474c90"
@@ -406,11 +411,6 @@
       "addr": "00470230",
       "is_variadic": false,
       "name": "shape_edittool.cpp_FUN_00470230"
-    },
-    {
-      "addr": "004720c0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004720c0"
     },
     {
       "addr": "00475230",
@@ -1039,7 +1039,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 324,
+      "line": 325,
       "match": "&stack0xfffffc00",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_00474c90((CPickList *)&stack0xfffffc00);",
@@ -1047,7 +1047,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 326,
+      "line": 327,
       "match": "&stack0xfffffc00",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);",
@@ -1055,7 +1055,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 328,
+      "line": 329,
       "match": "&stack0xfffffc00",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_00473cb0((CStrList *)&stack0xfffffc00,pcVar2);",
@@ -1063,7 +1063,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 333,
+      "line": 334,
       "match": "in_stack_fffffc00",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffffc00,pcVar2,iVar3,in_stack_fffffc00);",
@@ -1071,7 +1071,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 333,
+      "line": 334,
       "match": "&stack0xfffffc00",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffffc00,pcVar2,iVar3,in_stack_fffffc00);",
@@ -1079,7 +1079,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 339,
+      "line": 340,
       "match": "&stack0xfffffc00",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffc00,0);",
@@ -1127,7 +1127,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 303,
+      "line": 304,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "if (0x01E56DA0->script_pause_flag != 0) {",

@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_popViewport_FUN_004ce920(void)
+; void __cdecl engine_matrix_c_popViewport_FUN_004ce920(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 at 00460e70
-;   shape_edittool.cpp_FUN_004722b0 at 00472383
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 at 00472383
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005882ea

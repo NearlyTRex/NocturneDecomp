@@ -41,7 +41,7 @@ int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
 // Original: core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0
 // Address: 005445c0
-undefined4 CTentacle::attractActorToward(CTentacle *param_1,CCharacter *param_2);
+int __cdecl CTentacle::attractActorToward(CTentacle *this_ptr,CCharacter *character);
 
 // Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_00544720
 // Address: 00544720

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   GlobalFree
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;   waveOutClose
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     JZ 0x0052c322                       ; 0052c311
         ;   XREF to: 0052c322 (CONDITIONAL_JUMP)  ; LAB_0052c322
     PUSH 0x59490e                       ; 0052c313 | = "waveOutClose failed."
-    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c318
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 0052c318
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     XOR ESI,ESI                         ; 0052c31d
     ADD ESP,0x4                         ; 0052c31f
     XOR EBX,EBX                         ; 0052c322

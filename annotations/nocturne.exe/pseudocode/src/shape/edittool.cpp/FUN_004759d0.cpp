@@ -27,7 +27,7 @@ void __cdecl shape_edittool_cpp_FUN_004759d0(CPickList *this_ptr)
   int local_18;
   char *local_14;
   
-  shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
   local_28 = g_ClipLeft;
   local_24 = this_ptr->scroll_top;
   local_30 = 0;

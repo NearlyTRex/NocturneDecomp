@@ -23,6 +23,6 @@ _ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_0056b4a9(_ostream *this_ptr
        (WatcomThunkedDestructor *)&PTR_crt_iostream_cpp_ostream_dtor_FUN_0056b538_005a4914;
   *(byte ***)
    ((this_ptr->_ios).padding + ((this_ptr->_ostream_core).layout_info)->offset_to_base + -5) =
-       &PTR_crt_unknown_c_FUN_0056b4eb_005a491c;
+       &PTR_crt_iostream_cpp_ostream_destructor_thunk_FUN_0056b4eb_005a491c;
   return this_ptr;
 }

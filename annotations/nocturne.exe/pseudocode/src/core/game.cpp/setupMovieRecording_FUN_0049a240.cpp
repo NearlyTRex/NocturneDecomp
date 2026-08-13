@@ -31,7 +31,7 @@ void __cdecl core_game_cpp_setupMovieRecording_FUN_0049a240(void)
                           (g_CEditorTools_PTR_005b6d50,"Enter image height",&DAT_005b9368,1
                            ,1,9999,1);
         if (iVar1 != 0) {
-          shape_edittool_cpp_FUN_0046fe60
+          shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                     (g_CEditorTools_PTR_005b6d50,"Press CTRL+V to begin recording.");
           _DAT_01c78ac8 = 1;
           return;

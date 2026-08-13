@@ -9,17 +9,12 @@
 int __cdecl support_trisock_cpp_bindSocket_FUN_00548f70(_SOCKET *socket_handle,uint16_t port)
 
 {
-  ushort uVar1;
-  int iVar2;
-  uint *unaff_retaddr;
-  uint uStack_14;
-  uint uStack_10;
+  int iVar1;
+  SOCKADDR SStack_10;
   
-  uStack_14 = (uint)port;
-  uStack_10 = CONCAT22(uStack_10._2_2_,2);
-  uVar1 = Ordinal_9();
-  uStack_14 = CONCAT22(uVar1,(ushort)uStack_14);
-  uStack_10 = 0;
-  iVar2 = Ordinal_2(*unaff_retaddr,&uStack_14,0x10);
-  return (uint)(iVar2 == 0);
+  SStack_10.sin_family = 2;
+  SStack_10.sin_port = htons(port);
+  SStack_10.sin_addr = 0;
+  iVar1 = bind(*socket_handle,&SStack_10,0x10);
+  return (uint)(iVar1 == 0);
 }

@@ -35,7 +35,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0(CDirectSoun
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(&stack0xfffffe5c,"DirectSux: Unable to %s.  (%s)",
                  "Play hardware sfx secondary buffer",pcVar4);
-      sound_sndmain_cpp_FUN_00529980(&stack0xfffffe5c);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(&stack0xfffffe5c);
       return 0;
     }
     iVar3 = 1;

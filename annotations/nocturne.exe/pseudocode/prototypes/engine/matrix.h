@@ -57,11 +57,11 @@ void __cdecl matrixPushAndTransform(int rot_x,int rot_y,int rot_z,int translate_
 
 // Original: engine_matrix.c_matrixPush_FUN_004cdac0
 // Address: 004cdac0
-void __cdecl matrixPush(void);
+void __cdecl matrixPush(CDemonRenderer *this_ptr);
 
 // Original: engine_matrix.c_pop_FUN_004cdbc0
 // Address: 004cdbc0
-void __cdecl pop(void);
+void __cdecl pop(CDemonRenderer *this_ptr);
 
 // Original: engine_matrix.c_calculate3DDistance_FUN_004cdcd0
 // Address: 004cdcd0
@@ -83,9 +83,9 @@ CVector3i * __stack_esi normalizeVector3DFloat(CVector3i *input_vector,CVector3i
 // Address: 004cdf70
 int __cdecl vectorLength3DToInt(CVector3i *vector_ptr);
 
-// Original: engine_matrix.c_FUN_004cdfa0
+// Original: engine_matrix.c_matrixPushAndRotate_FUN_004cdfa0
 // Address: 004cdfa0
-void FUN_004cdfa0(int param_1,undefined4 param_2,int param_3);
+void __cdecl matrixPushAndRotate(int rotation_x,int rotation_y,int rotation_z);
 
 // Original: engine_matrix.c_setCameraOrigin_FUN_004ce710
 // Address: 004ce710
@@ -109,16 +109,16 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 
 // Original: engine_matrix.c_popViewport_FUN_004ce920
 // Address: 004ce920
-void __cdecl popViewport(void);
+void __cdecl popViewport(CDemonRenderer *this_ptr);
 
 // Original: engine_matrix.c_projectToScreen_FUN_004cea50
 // Address: 004cea50
 int __cdecl projectToScreen(int input_value);
 
-// Original: engine_matrix.c_FUN_004ceae0
+// Original: engine_matrix.c_pushMatrixRelativeOffset_FUN_004ceae0
 // Address: 004ceae0
-void FUN_004ceae0(int param_1,int param_2,int param_3);
+void __cdecl pushMatrixRelativeOffset(int offset_x,int offset_y,int offset_z);
 
-// Original: engine_matrix.c_FUN_004ceb90
+// Original: engine_matrix.c_popMatrixRelativeOffset_FUN_004ceb90
 // Address: 004ceb90
-void FUN_004ceb90(void);
+void __cdecl popMatrixRelativeOffset(void);

@@ -87,9 +87,9 @@ int __cdecl CDoor::getMoveType(CDoor *this_ptr,CDemonActor *opener);
 // Address: 00456650
 uint __cdecl CDoor::onLocked(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00456690
+// Original: core_door.cpp_clearRuleList_FUN_00456690
 // Address: 00456690
-CRuleList * FUN_00456690(void);
+CRuleList * __cdecl clearRuleList(CRuleList *rule_list);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_004566b0
 // Address: 004566b0

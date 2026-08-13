@@ -648,7 +648,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
              (iVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
                                  (g_CEditorTools_PTR_005b6d50,"Enter image height",
                                   &DAT_005b9368,1,1,9999,1), iVar10 != 0)) {
-            shape_edittool_cpp_FUN_0046fe60
+            shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                       (g_CEditorTools_PTR_005b6d50,"Press CTRL+V to begin recording.");
             _DAT_01c78ac8 = 1;
           }

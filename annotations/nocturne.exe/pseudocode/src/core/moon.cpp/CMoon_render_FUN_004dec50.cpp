@@ -89,7 +89,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
                   (&g_CKeyFramedModel_01cce1bc,local_14,(CKeyFramedModelInstance *)0x0,render_flags)
         ;
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
         pCVar1 = g_CDemonSet_PTR_005be368;
         local_14 = g_CCourse_ARRAY_01ccdec8
                    [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len;

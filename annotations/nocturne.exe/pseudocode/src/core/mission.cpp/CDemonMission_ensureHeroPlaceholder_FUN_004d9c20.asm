@@ -33,12 +33,12 @@
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
 ;   crt_memory.c_operator_new_FUN_0056497c
+;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
-;   shape_edittool.cpp_FUN_0046fe60
 ;
 ; *****************************************************************************
 
@@ -183,8 +183,8 @@ section .text
     PUSH 0x58a0ff                       ; 004d9d6b | = "Replaced hero OK.  You will need to s..."
     MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004d9d76
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9d77
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004d9d77
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d9d7c
     PUSH 0x0                            ; 004d9d7f
     LEA EAX,[ESP + 0x8]                 ; 004d9d81
@@ -218,8 +218,8 @@ section .text
         ;   Label: LAB_004d9dbf
     MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d9dca
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9dcb
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004d9dcb
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d9dd0
     PUSH 0x0                            ; 004d9dd3
         ;   Label: LAB_004d9dd3

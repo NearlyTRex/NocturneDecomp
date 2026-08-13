@@ -571,7 +571,7 @@ section .text
     PUSH EAX                            ; 00450c5a | DAT_01b4d738
     INC ESI                             ; 00450c5b
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00450c5c
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00450c61
     CMP ESI,0x19                        ; 00450c64
     JL 0x0045081d                       ; 00450c67

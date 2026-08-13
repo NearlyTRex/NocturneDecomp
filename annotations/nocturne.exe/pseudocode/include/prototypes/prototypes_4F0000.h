@@ -8,7 +8,6 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
-#include "types/classes/CHero.h"
 #include "types/classes/CLocation.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CPackedBitmapSet.h"
@@ -102,7 +101,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0(CPacke
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_004f4f10(void);
+void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_004f4f10(int total_entries,_FILE *file_header);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f4f90(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5110(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5290(CPackedBitmapSet *this_ptr);
@@ -123,7 +122,7 @@ int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_004f5b
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_004f5c40(CPackedBitmapSet *this_ptr,char *filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_004f5c60(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c80(CPackedBitmapSet *this_ptr,int bitmap_index);
-undefined4 cockpit_pkbmpset_cpp_FUN_004f5cf0(int param_1);
+int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_004f5cf0(CPackedBitmap *this_ptr);
 undefined4 cockpit_pkbmpset_cpp_FUN_004f5d00(void);
 void cockpit_pkbmpset_cpp_FUN_004f5d10(void);
 void __cdecl core_platfrm_cpp_staticInit_FUN_004f5d30(void);
@@ -144,7 +143,7 @@ int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_004f7580(CPlatform *
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_004f75a0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_004f75b0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(CPlatform *this_ptr,CDemonActor *actor);
-void core_platfrm_cpp_FUN_004f76c0(void);
+void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_004f76c0(CPlatform *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(CPlatform *this_ptr);
 uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(uint current_crc,uchar data_byte);
 uint __cdecl engine_pod_cpp_crc32UpdateBuffer_FUN_004f7890(uchar *data_buffer,uint byte_count,uint initial_crc);
@@ -171,7 +170,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_004f8b90(CPod *pod,char *ext
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_004f8d50(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_004f8da0(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_004f8eb0(undefined4 param_1,char *param_2);
-int engine_pod_cpp_FUN_004f9100(void);
+int __cdecl engine_pod_cpp_CPod_verifyIntegrity_FUN_004f9100(CPod *this_ptr,char *pod_filename);
 CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_004f9170(CPod *this_ptr,char *base_path,char *filename,int *file_index_out);
 int __cdecl engine_pod_cpp_CPod_findFile_FUN_004f9200(CPod *this_ptr,SFoundFileInfo *found_file_info);
 void __cdecl core_podmain_cpp_staticInit_FUN_004f9280(void);
@@ -210,7 +209,7 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_004fbe80(CScat *this_pt
 void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_004fc610(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(CScat *this_ptr,float delta_time);
-void core_scat_cpp_CScat_archive_FUN_004fcae0(CHero *param_1);
+void __cdecl core_scat_cpp_CScat_archive_FUN_004fcae0(CScat *this_ptr);
 int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *this_ptr,SDamageInfo *damage_info);
 undefined4 core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd20(int param_1);

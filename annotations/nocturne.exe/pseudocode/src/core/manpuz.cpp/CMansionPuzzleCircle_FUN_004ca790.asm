@@ -370,7 +370,7 @@ section .text
         ;   Label: LAB_004caba4
     PUSH ECX                            ; 004cabaa | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004cabab
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004cabb0
     ADD ESP,0x98                        ; 004cabb3
     POP EBP                             ; 004cabb9

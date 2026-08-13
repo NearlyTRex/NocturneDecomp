@@ -1,12 +1,12 @@
 // Name: core_tentacle.cpp_CTentacle_attractActorToward_FUN_005445c0
 // Address: 005445c0
 // Address Range: [[005445c0, 00544719]]
-// Convention: unknown
-// Signature: undefined4 core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *param_1,CCharacter *param_2)
+// Convention: __cdecl
+// Signature: int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character)
 
 #include "nocturne.h"
 
-uint core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *param_1,CCharacter *param_2)
+int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *this_ptr,CCharacter *character)
 
 {
   CCharacter *pCVar1;
@@ -30,11 +30,12 @@ uint core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *para
   CVector3f local_10;
   
   bVar7 = 0;
-  if (param_2 != (param_1->base).victim) {
+  if (character != (this_ptr->base).victim) {
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_0055cc30
-            (&param_1->target_matrix,&param_1->prev_target_matrix,param_1->target_blend,&local_1cc);
+            (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend,
+             &local_1cc);
   pCVar5 = &local_1cc;
   pCVar4 = &local_16c;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -43,10 +44,10 @@ uint core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *para
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-            (&local_13c,&(param_1->base).base.base.location.position,
-             &(param_1->base).base.base.orient.vec);
+            (&local_13c,&(this_ptr->base).base.base.location.position,
+             &(this_ptr->base).base.base.orient.vec);
   pCVar5 = &local_13c;
-  core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(param_1,&local_4c);
+  core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_00544760(this_ptr,&local_4c);
   pCVar4 = &local_4c;
   pCVar6 = &local_dc;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -71,12 +72,12 @@ uint core_tentacle_cpp_CTentacle_attractActorToward_FUN_005445c0(CTentacle *para
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
   }
   pCVar2 = core_xform_cpp_getTranslation_FUN_0055bc00(&local_10c,&local_10);
-  pCVar1 = (param_1->base).victim;
+  pCVar1 = (this_ptr->base).victim;
   (pCVar1->base).location.position.x = pCVar2->x;
   (pCVar1->base).location.position.y = pCVar2->y;
   (pCVar1->base).location.position.z = pCVar2->z;
   orientation = (UOrientationVector *)
                 core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_10c,&local_1c);
-  core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060((param_1->base).victim,orientation);
+  core_charactr_cpp_CCharacter_setOrientation_FUN_0042a060((this_ptr->base).victim,orientation);
   return 1;
 }

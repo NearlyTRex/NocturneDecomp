@@ -11,7 +11,7 @@
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80 at 00517c97
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CBoundingBox3D_005993f0
+;   WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -20,7 +20,7 @@
 
 section .text
 
-    PUSH 0x5993f0                       ; 0051f900 | g_CBoundingBox3D_005993f0
+    PUSH 0x5993f0                       ; 0051f900 | g_CBoundingBox3DTypeInfo_005993f0
         ;   Label: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_0051f900
     PUSH 0x64                           ; 0051f905
     MOV EDX,dword ptr [ESP + 0xc]       ; 0051f907

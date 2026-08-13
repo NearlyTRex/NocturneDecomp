@@ -22,7 +22,7 @@ int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00529de0(int sfx_handl
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
       _sprintf(acStack_198,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer",
                  pcVar2);
-      sound_sndmain_cpp_FUN_00529980(acStack_198);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_198);
       return 0;
     }
   }

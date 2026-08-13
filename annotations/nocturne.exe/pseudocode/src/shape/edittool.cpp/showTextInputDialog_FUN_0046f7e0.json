@@ -1,0 +1,505 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 21,
+        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CBitFont *')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01bcd9b8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 26,
+        "message": "use of undeclared identifier '_DAT_01bcd070'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01bcd9bc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 71,
+        "line": 27,
+        "message": "use of undeclared identifier '_DAT_01bcd070'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 67,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_01bcd9bc'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 198,
+    "complexity_score": 134,
+    "cross_reference_count": 2,
+    "function_call_count": 16,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 267
+  },
+  "cross_references": [
+    {
+      "addr": "00471630",
+      "from_addr": "00471648",
+      "name": "shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_00471630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471600",
+      "from_addr": "00471618",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046f7e0",
+    "address_range": [
+      [
+        "0046f7e0",
+        "0046f9e0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0",
+    "signature": "int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_title,char *input_buffer,int max_length,int flags,int dialog_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00403f50",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403f50"
+    },
+    {
+      "addr": "004930e0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0"
+    },
+    {
+      "addr": "004c41c0",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0"
+    },
+    {
+      "addr": "00471a80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80"
+    },
+    {
+      "addr": "004722b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0"
+    },
+    {
+      "addr": "004720c0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0"
+    },
+    {
+      "addr": "0046f2a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_backspace_FUN_0046f2a0"
+    },
+    {
+      "addr": "0046f250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250"
+    },
+    {
+      "addr": "0046f680",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0046f680"
+    },
+    {
+      "addr": "0046f390",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390"
+    },
+    {
+      "addr": "0046f0a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_init_FUN_0046f0a0"
+    },
+    {
+      "addr": "0046f150",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_insertChar_FUN_0046f150"
+    },
+    {
+      "addr": "0046f130",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0046f130"
+    },
+    {
+      "addr": "00553910",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
+    },
+    {
+      "addr": "00558b70",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_00558b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057e4fa",
+      "name": "s_shape_edittool_cpp_0057e4fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057e510",
+      "name": "s_gEdFont_must_be_set_by_t_0057e510",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6d50",
+      "name": "g_CEditorTools_PTR_005b6d50",
+      "type": "CEditorTools*",
+      "value": "01bcd074"
+    },
+    {
+      "addr": "005b761c",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005b7630",
+      "name": "INT_005b7630",
+      "type": "int",
+      "value": "0x7f"
+    },
+    {
+      "addr": "005bac64",
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
+    },
+    {
+      "addr": "005c168c",
+      "name": "g_CharacterClassificationTable",
+      "type": "uchar[257]",
+      "value": null
+    },
+    {
+      "addr": "01bcd070",
+      "name": "DAT_01bcd070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcd9b8",
+      "name": "DAT_01bcd9b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcd9bc",
+      "name": "DAT_01bcd9bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c58",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c00c5c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01cc30e4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00471618",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600",
+        "estimated_params": 5,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00471648",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_00471630",
+        "estimated_params": 5,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.126666666666667,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BRANCH": 6,
+      "CALL": 19,
+      "CBRANCH": 9,
+      "COPY": 103,
+      "INT_ADD": 36,
+      "INT_AND": 90,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 66,
+      "INT_LEFT": 3,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 34,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 62,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 55,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 619
+  },
+  "stack_frame": {
+    "frame_size": 360,
+    "local_size": 340,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_150",
+        "offset": -336,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14f",
+        "offset": -335,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_title",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "input_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "max_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0046f965",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(char *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pCVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(CInputString *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CInputString *)((int)pCVar4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pCVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CInputString *)((int)pCVar4 + 2);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

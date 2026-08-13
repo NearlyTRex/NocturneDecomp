@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_00527e10 at 0052dd80
+;   core_sound.cpp_FUN_0052dd80 at 0052dd80
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dbd34c

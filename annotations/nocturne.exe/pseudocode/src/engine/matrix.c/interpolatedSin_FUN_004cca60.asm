@@ -10,8 +10,8 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0c0c
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5adc
 ;   engine_3d.c_renderRotatedMRGLSubChain_FUN_00404b10 at 00404bd0
-;   engine_matrix.c_FUN_004cdfa0 at 004ce0e3
 ;   engine_matrix.c_buildRotationMatrix_FUN_004ccdc0 at 004ccdd0
+;   engine_matrix.c_matrixPushAndRotate_FUN_004cdfa0 at 004ce0e3
 ;   engine_matrix.c_matrixPushAndTransform_FUN_004cd380 at 004cd4dc
 ;
 ; *****************************************************************************

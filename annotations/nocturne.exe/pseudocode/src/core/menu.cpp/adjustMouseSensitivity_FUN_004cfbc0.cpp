@@ -45,7 +45,7 @@ LAB_004cfc23:
              _DAT_01bd1d90);
   pCVar6 = (CKeys *)0x0;
   do {
-    shape_edittool_cpp_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
     if (_DAT_01bd1d8c != pCVar6) {
       iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) +
               0x4000;
@@ -90,6 +90,6 @@ LAB_004cfc23:
                              (g_CKeys_PTR_005bac64,DIM_LBUTTON), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_004cfdf5:
-  shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
   return;
 }

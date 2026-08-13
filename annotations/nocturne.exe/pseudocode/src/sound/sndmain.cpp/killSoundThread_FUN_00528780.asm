@@ -15,7 +15,7 @@
 ;   undefined4 DAT_02dc84b4
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;   wincore_winrun.cpp_sleep_FUN_00559cc0
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     RET                                 ; 005287db
     PUSH 0x5938ee                       ; 005287dc | = "killSoundThread - failed!\n"
         ;   Label: LAB_005287dc
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005287e1
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005287e1
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x4                         ; 005287e6
     CMP dword ptr [0x02dc84b0],0x0      ; 005287e9 | DAT_02dc84b0
     SETZ AL                             ; 005287f0

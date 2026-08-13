@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 186,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 14,
+    "pseudocode_lines": 27,
+    "suspect_count": 16,
     "suspect_types": [
+      "extra_output",
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 72
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -179,8 +180,16 @@
   },
   "suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005a47a4",
       "severity": "mild",
       "text": "*(byte **)this_ptr = &DAT_005a47a4;",
@@ -188,7 +197,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 14,
       "match": "(byte **)((int)this_ptr",
       "severity": "moderate",
       "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
@@ -196,7 +205,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_005a47ac",
       "severity": "mild",
       "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
@@ -204,79 +213,87 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 15,
       "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
-      "text": "piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "text": "piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
-      "match": "piVar5[-2].",
+      "line": 16,
+      "match": "piVar4[-2].",
       "severity": "mild",
-      "text": "this_ptr = &piVar5[-2].__tied_stream;",
+      "text": "this_ptr = &piVar4[-2].__tied_stream;",
       "type": "negative_offset"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 20,
-      "match": "p_Var3[-2].",
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "p_Var2 = crt_iostream_cpp_istream_ctor_FUN_0056b67d((_istream *)(extraout_EAX + 0x44),1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "p_Var2[-2].",
       "severity": "mild",
-      "text": "ppvVar4 = &p_Var3[-2]._ios.__i_lock;",
+      "text": "ppvVar3 = &p_Var2[-2]._ios.__i_lock;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(int *)((int)ppvVar4",
+      "line": 22,
+      "match": "(int *)((int)ppvVar3",
       "severity": "moderate",
-      "text": "*(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);",
+      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "p_Var3[-1].",
+      "line": 23,
+      "match": "p_Var2[-1].",
       "severity": "mild",
-      "text": "p_Var3[-1]._ios.cleanup_vtable = &PTR_crt_fstream_cpp_ifstream_dtor_FUN_00565264_005a47b8;",
+      "text": "p_Var2[-1]._ios.cleanup_vtable = &PTR_crt_fstream_cpp_ifstream_dtor_FUN_00565264_005a47b8;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 27,
       "match": "(int *)((int)pvVar1",
       "severity": "moderate",
-      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar4) =",
+      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `ppvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
-      "match": "(int)ppvVar4",
+      "description": "Pointer value `ppvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)ppvVar3",
       "severity": "moderate",
-      "text": "*(int *)((int)ppvVar4 + *(int *)((int)*ppvVar4 + 4) + -4) = *(int *)((int)*ppvVar4 + 4);",
+      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 27,
       "match": "(int)pvVar1",
       "severity": "moderate",
-      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar4) =",
+      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `ppvVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
-      "match": "(int)ppvVar4",
+      "description": "Pointer value `ppvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)ppvVar3",
       "severity": "moderate",
-      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar4) =",
+      "text": "*(byte ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 13,
+      "line": 14,
       "match": "(byte **)((int)this_ptr + 0x44)",
       "severity": "moderate",
       "text": "*(byte **)((int)this_ptr + 0x44) = &DAT_005a47ac;",
@@ -284,10 +301,10 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 14,
+      "line": 15,
       "match": "(ios *)((int)this_ptr + 0x54)",
       "severity": "moderate",
-      "text": "piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
+      "text": "piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));",
       "type": "pointer_cast"
     }
   ]

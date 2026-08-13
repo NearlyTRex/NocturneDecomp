@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 0047a1e0
 int __cdecl setEventError(char *source_file,int source_line,char *error_message);
 
-// Original: core_event.cpp_FUN_0047a210
+// Original: core_event.cpp_formatEventError_FUN_0047a210
 // Address: 0047a210
-undefined4 FUN_0047a210(char *param_1);
+int __cdecl formatEventError(char *format,...) __attribute__((format(printf, 1, 2)));
 
-// Original: core_event.cpp_FUN_0047a260
+// Original: core_event.cpp_skipWhitespace_FUN_0047a260
 // Address: 0047a260
-void FUN_0047a260(void);
+char * __cdecl skipWhitespace(char *str);
 
 // Original: core_event.cpp_skipWhitespaceIndexed_FUN_0047a280
 // Address: 0047a280
@@ -39,9 +39,9 @@ CDemonActor * __cdecl resolveActorByName(char *name,uint class_hash,char *class_
 // Address: 0047a4c0
 int __cdecl parseVectorLocation(char *buffer,int *offset,CVector3f *out_position);
 
-// Original: core_event.cpp_FUN_0047a5e0
+// Original: core_event.cpp_trimWhitespace_FUN_0047a5e0
 // Address: 0047a5e0
-void FUN_0047a5e0(char *param_1);
+void __cdecl trimWhitespace(char *str);
 
 // Original: core_event.cpp_extractParenArg_FUN_0047a650
 // Address: 0047a650

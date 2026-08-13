@@ -6,6 +6,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
@@ -148,11 +149,11 @@ CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004c6970(CLever *this_ptr,uint f
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004c69d0(int light_level);
 undefined4 __cdecl engine_light_cpp_FUN_004c6a00(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x,int dir_y,int dir_z);
-void engine_light_cpp_FUN_004c6a40(void);
+void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004c6a40(int enabled);
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004c6a50(int diffuse_multiplier,int specular_multiplier);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_004c6cc0(int normal_x,int normal_y,int normal_z);
-void engine_light_cpp_FUN_004c6d70(void);
+int __cdecl engine_light_cpp_calculateVertexLighting_FUN_004c6d70(int unused_param,CVector3i *vertex_position);
 void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004c6d90(int vertex_index,CVector3i *vertex_position);
 void __cdecl core_lightgun_cpp_staticInit_FUN_004c6dd0(void);
 CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004c6e00(void);
@@ -271,23 +272,23 @@ void __cdecl engine_matrix_c_projectCachedPoint_FUN_004cd240(int cacheIndex);
 void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004cd260(SProjectedVertex *point);
 void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(int cache_index);
 void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004cd380(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z);
-void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void);
-void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void);
+void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(CDemonRenderer *this_ptr);
+void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr);
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int x1,int y1,int z1,int x2,int y2,int z2);
 int __cdecl engine_matrix_c_integerSquareRoot_FUN_004cdd30(int value);
 CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(CVector3i *input_vector,CVector3i *output_vector);
 CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(CVector3i *input_vector,CVector3i *output_vector);
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004cdf70(CVector3i *vector_ptr);
-void engine_matrix_c_FUN_004cdfa0(int param_1,undefined4 param_2,int param_3);
+void __cdecl engine_matrix_c_matrixPushAndRotate_FUN_004cdfa0(int rotation_x,int rotation_y,int rotation_z);
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_004ce710(int x,int y,int z);
 void __cdecl engine_matrix_c_setCameraRotation_FUN_004ce730(int pitch,int yaw,int roll);
 void __esi engine_matrix_c_getCameraOrigin_FUN_004ce760(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_004ce790(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height);
-void __cdecl engine_matrix_c_popViewport_FUN_004ce920(void);
+void __cdecl engine_matrix_c_popViewport_FUN_004ce920(CDemonRenderer *this_ptr);
 int __cdecl engine_matrix_c_projectToScreen_FUN_004cea50(int input_value);
-void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3);
-void engine_matrix_c_FUN_004ceb90(void);
+void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ceae0(int offset_x,int offset_y,int offset_z);
+void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004ceb90(void);
 void __cdecl core_melee_cpp_staticInit_FUN_004cec00(void);
 CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004cec30(void);
 CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_004cec50(CMelee *this_ptr);

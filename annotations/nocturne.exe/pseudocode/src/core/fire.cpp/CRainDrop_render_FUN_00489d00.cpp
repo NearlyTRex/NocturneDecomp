@@ -118,6 +118,6 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
             (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff54);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

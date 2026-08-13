@@ -104,7 +104,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(CDirectSound
           pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
           _sprintf(acStack_3a0,"DirectSux: Unable to %s.  (%s)",
                      "Create temp secondary buffer for property set creation",pcVar2);
-          sound_sndmain_cpp_FUN_00529980(acStack_3a0);
+          sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_3a0);
         }
         if (_DAT_02dc9224 != (int *)0x0) {
           uStack_28 = 1;
@@ -142,20 +142,20 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0052a450(CDirectSound
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
         _sprintf(acStack_6b0,"DirectSux: Unable to %s.  (%s)",
                    "Create the secondary buffer",pcVar2);
-        sound_sndmain_cpp_FUN_00529980(acStack_6b0);
+        sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_6b0);
       }
       else {
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
         _sprintf(acStack_200,"DirectSux: Unable to %s.  (%s)",
                    "Get Primary buffer format",pcVar2);
-        sound_sndmain_cpp_FUN_00529980(acStack_200);
+        sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_200);
       }
     }
     else {
       pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uVar1);
       _sprintf(acStack_520,"DirectSux: Unable to %s.  (%s)","Set Primary buffer format",
                  pcVar2);
-      sound_sndmain_cpp_FUN_00529980(acStack_520);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_520);
     }
   }
   if (_DAT_02dc921c != (int *)0x0) {

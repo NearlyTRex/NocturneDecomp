@@ -15,9 +15,9 @@ undefined4 __cdecl FUN_004c6a00(void);
 // Address: 004c6a10
 void __cdecl setDirectionalLightVector(int dir_x,int dir_y,int dir_z);
 
-// Original: engine_light.cpp_FUN_004c6a40
+// Original: engine_light.cpp_setSpecularEnabled_FUN_004c6a40
 // Address: 004c6a40
-void FUN_004c6a40(void);
+void __cdecl setSpecularEnabled(int enabled);
 
 // Original: engine_light.cpp_setLightingMultipliers_FUN_004c6a50
 // Address: 004c6a50
@@ -31,9 +31,9 @@ int __cdecl calculatePhongLighting(int world_x,int world_y,int world_z);
 // Address: 004c6cc0
 int __cdecl calculateLighting(int normal_x,int normal_y,int normal_z);
 
-// Original: engine_light.cpp_FUN_004c6d70
+// Original: engine_light.cpp_calculateVertexLighting_FUN_004c6d70
 // Address: 004c6d70
-void FUN_004c6d70(void);
+int __cdecl calculateVertexLighting(int unused_param,CVector3i *vertex_position);
 
 // Original: engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90
 // Address: 004c6d90

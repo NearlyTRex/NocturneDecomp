@@ -10,9 +10,11 @@ void __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056511e(void *this_ptr,int ctor_
 
 {
   int iVar1;
+  int extraout_EAX;
   _ostream *p_Var2;
   char *pcVar3;
   ios *piVar4;
+  SIZE_T unaff_retaddr;
   
   if ((ctor_flags & 1U) == 0) {
     *(byte **)this_ptr = &DAT_005a4810;
@@ -20,9 +22,9 @@ void __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056511e(void *this_ptr,int ctor_
     piVar4 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x50));
     this_ptr = &piVar4[-2].__format_flags;
   }
-  iVar1 = crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d
-                    (this_ptr,1,filename,open_mode | 2,buffer_size);
-  p_Var2 = crt_iostream_cpp_ostream_ctor_FUN_0056b4a9((_ostream *)(iVar1 + 0x44),1);
+  crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d
+            (this_ptr,1,(int)filename,open_mode | 2,(char *)buffer_size,unaff_retaddr);
+  p_Var2 = crt_iostream_cpp_ostream_ctor_FUN_0056b4a9((_ostream *)(extraout_EAX + 0x44),1);
   pcVar3 = &p_Var2[-2]._ios.__fill_character;
   *(void **)(pcVar3 + (int)*(void **)(*(int *)pcVar3 + 4) + -4) = *(void **)(*(int *)pcVar3 + 4);
   p_Var2[-1]._ios.cleanup_vtable = &PTR_crt_fstream_cpp_ofstream_dtor_FUN_005651ca_005a4824;

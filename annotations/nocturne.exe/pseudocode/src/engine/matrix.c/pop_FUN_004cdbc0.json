@@ -158,7 +158,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_matrix.c_pop_FUN_004cdbc0",
-    "signature": "void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)"
+    "signature": "void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)"
   },
   "function_calls": [
     {
@@ -304,11 +304,11 @@
         "stack_params": 0
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 0,
-    "matches_declared": true
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.7346938775510203,
@@ -336,12 +336,20 @@
     "pcode_op_count": 134
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      }
+    ]
   },
   "suspects": [
     {

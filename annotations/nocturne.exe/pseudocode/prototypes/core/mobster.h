@@ -7,13 +7,13 @@
 // Address: 004d9fd0
 void __cdecl staticInit(void);
 
-// Original: core_mobster.cpp_FUN_004da000
+// Original: core_mobster.cpp_getObjectGrabPointLocal_FUN_004da000
 // Address: 004da000
-float * FUN_004da000(void);
+CVector3f * __cdecl getObjectGrabPointLocal(CVector3f *out,CDemonActor *actor);
 
-// Original: core_mobster.cpp_FUN_004da070
+// Original: core_mobster.cpp_getObjectGrabPointWorld_FUN_004da070
 // Address: 004da070
-CVector3f * FUN_004da070(CVector3f *param_1,CDemonActor *param_2);
+CVector3f * __cdecl getObjectGrabPointWorld(CVector3f *out,CDemonActor *actor);
 
 // Original: core_mobster.cpp_factoryFuncMobster_FUN_004da120
 // Address: 004da120
@@ -47,9 +47,9 @@ void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 // Address: 004db6f0
 void __cdecl CMobster::aimTommyGun(CMobster *this_ptr,float delta_time);
 
-// Original: core_mobster.cpp_FUN_004dba50
+// Original: core_mobster.cpp_setEulerAngles_FUN_004dba50
 // Address: 004dba50
-void FUN_004dba50(void);
+CVector3f * __cdecl setEulerAngles(CVector3f *out,float x,float z,float y);
 
 // Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70
 // Address: 004dba70

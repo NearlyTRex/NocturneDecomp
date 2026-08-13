@@ -114,7 +114,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_00518f60(CDef
                 (g_CEditorTools_PTR_005b6d50,0.5,0xff);
       iVar5 = iVar5 + 1;
       bone_matrices = bone_matrices + 1;
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     } while (iVar5 < pCVar2->bone_count);
   }
   return;

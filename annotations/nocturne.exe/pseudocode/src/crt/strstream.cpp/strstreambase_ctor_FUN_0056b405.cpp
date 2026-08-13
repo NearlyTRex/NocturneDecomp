@@ -15,7 +15,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(strstr
   short *psVar3;
   
   if ((ctor_flags & 1U) == 0) {
-    (this_ptr->_strstreambase_core).layout_info = (WatcomVirtualBaseDescriptor *)&DAT_005a48b0;
+    (this_ptr->_strstreambase_core).layout_info = &g_WatcomVirtualBaseDescriptor_005a48b0;
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)&(this_ptr->_ios).__tied_stream);
     this_ptr = (strstreambase *)&piVar2[-2].__error_state;
   }
@@ -30,7 +30,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_0056b405(strstr
   this_ptr_00[1]._streambuf.__reserve_base =
        (char *)&PTR_crt_strstream_cpp_strstreambase_dtor_FUN_0056b5ad_005a48bc;
   *(byte ***)((int)&(this_ptr_00->_streambuf).__flags + *(int *)(iVar1 + 4)) =
-       &PTR_crt_unknown_c_FUN_0056b491_005a48c4;
+       &PTR_crt_strstream_cpp_strstreambase_destructor_thunk_FUN_0056b491_005a48c4;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0056ff2a
             ((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);
   return (strstreambase *)psVar3;

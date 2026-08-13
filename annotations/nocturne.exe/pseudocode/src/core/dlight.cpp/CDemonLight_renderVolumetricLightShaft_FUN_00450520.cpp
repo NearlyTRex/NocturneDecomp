@@ -209,7 +209,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
             engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
                       (this_ptr_00,&local_130);
             iVar4 = iVar4 + 1;
-            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
           } while (iVar4 < 0x19);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000
                     (g_CDemonRenderer_PTR_005ae704,0);

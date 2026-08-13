@@ -235,14 +235,14 @@ LAB_004a43cc:
     iVar2 = _strnicmp(local_330,"CInventory",10);
     if (iVar2 == 0) {
       _fclose(file_handle);
-      shape_edittool_cpp_FUN_0046fe60
+      shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                 (g_CEditorTools_PTR_005b6d50,"Can't load old save game file %s.  Sorry.",local_534);
     }
     else {
       _fscanf(file_handle,"%d\n",&local_38);
       if (local_38 < 3) {
         _fclose(file_handle);
-        shape_edittool_cpp_FUN_0046fe60
+        shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                   (g_CEditorTools_PTR_005b6d50,"Can't load old save game file %s.  Sorry.",local_534);
       }
       else {

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00475470 at 004757ce
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470 at 004757ce
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

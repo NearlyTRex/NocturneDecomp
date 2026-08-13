@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
         ;   XREF to: 0052577b (CONDITIONAL_JUMP)  ; LAB_0052577b
     PUSH EAX                            ; 0052576d
     PUSH 0x5930c4                       ; 0052576e | = "Killing looped sfx %s, which died??\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00525773
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00525773
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00525778
     PUSH EBX                            ; 0052577b
         ;   Label: LAB_0052577b
@@ -134,8 +134,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x6c]      ; 005257bc
     PUSH EBP                            ; 005257bf
     PUSH 0x5930e9                       ; 005257c0 | = "Error setting hw sfx %d options (samp..."
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005257c5
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005257c5
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0xc                         ; 005257ca
     PUSH EBX                            ; 005257cd
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005257ce

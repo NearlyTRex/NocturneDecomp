@@ -7,14 +7,6 @@
 // Address: 004574e0
 void FUN_004574e0(int param_1);
 
-// Original: engine_drender.cpp_FUN_00457640
-// Address: 00457640
-void FUN_00457640(int param_1,int param_2);
-
-// Original: engine_drender.cpp_FUN_004578a0
-// Address: 004578a0
-void FUN_004578a0(int param_1,int param_2);
-
 // Original: engine_drender.cpp_FUN_004579c0
 // Address: 004579c0
 int * FUN_004579c0(int param_1,int *param_2);
@@ -35,9 +27,9 @@ void __cdecl staticInit(void);
 // Address: 0045ed00
 CDemonRenderer * __cdecl CDemonRenderer::ctor(CDemonRenderer *this_ptr);
 
-// Original: engine_drender.cpp_FUN_0045ed40
+// Original: engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0045ed40
 // Address: 0045ed40
-void FUN_0045ed40(void);
+void __cdecl CDemonRenderer::setProjectionMode(CDemonRenderer *this_ptr,int mode);
 
 // Original: engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
 // Address: 0045ed80
@@ -147,9 +139,9 @@ void __cdecl CDemonRenderer::setCameraOrigin(CDemonRenderer *this_ptr,CVector3i 
 // Address: 00460700
 void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 
-// Original: engine_drender.cpp_FUN_00460760
+// Original: engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_00460760
 // Address: 00460760
-void FUN_00460760(undefined4 param_1,int *param_2);
+void __cdecl CDemonRenderer::setCameraRotationFromPoint(CDemonRenderer *this_ptr,CVector3i *rotation);
 
 // Original: engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
 // Address: 00460780
@@ -177,11 +169,11 @@ void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVect
 
 // Original: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0
 // Address: 00460be0
-void __cdecl CDemonRenderer::matrixPush(void);
+void __cdecl CDemonRenderer::matrixPush(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 // Address: 00460bf0
-void __cdecl CDemonRenderer::matrixPop(void);
+void __cdecl CDemonRenderer::matrixPop(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
 // Address: 00460c00
@@ -229,7 +221,7 @@ void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,i
 
 // Original: engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
 // Address: 00460e70
-void __cdecl CDemonRenderer::popViewport(void);
+void __cdecl CDemonRenderer::popViewport(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
 // Address: 00460e80

@@ -214,8 +214,8 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
 int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(CHostage *this_ptr,float delta_time);
 void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(CHostage *this_ptr,int layer_flag);
 void __cdecl core_hostage_cpp_CHostage_archive_FUN_004b8320(CHostage *this_ptr);
-undefined4 core_hostage_cpp_CHostage_isGrabbable_FUN_004b8540(int param_1);
-undefined4 core_hostage_cpp_CHostage_isGrabbable_FUN_004b8580(void);
+int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004b8540(CHostage *this_ptr,CDemonActor *grabber);
+int __cdecl core_hostage_cpp_CHostage_canBeGrabbed_FUN_004b8580(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004b8590(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004b8600(CHostage *this_ptr,SDamageInfo *damage_info);
 CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004b8700(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
@@ -265,7 +265,7 @@ CDemonActorType * __cdecl core_imp_cpp_CImp_getActorType_FUN_004bb750(CImp *this
 CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004bb760(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004bb7d0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_process_FUN_004bbaf0(CImp *this_ptr,float delta_time);
-void core_imp_cpp_FUN_004bc7c0(void);
+CVector3f * __cdecl core_imp_cpp_setVector_FUN_004bc7c0(CVector3f *out,float x,float y,float z);
 void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_imp_cpp_CImp_attractActorToward_FUN_004bc9b0(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 void __cdecl core_imp_cpp_CImp_archive_FUN_004bc9c0(CImp *this_ptr);

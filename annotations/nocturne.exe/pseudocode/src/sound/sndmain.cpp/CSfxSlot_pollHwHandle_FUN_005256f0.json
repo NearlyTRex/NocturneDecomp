@@ -86,33 +86,33 @@
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 32,
-        "message": "no matching function for call to 'sound_sndmain_cpp_FUN_00529980'"
+        "category": "format_error",
+        "column": 58,
+        "line": 33,
+        "message": "format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 54,
+        "line": 55,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       }
     ],
@@ -122,18 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 91,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 3,
     "suspect_types": [
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 169
+    "total_lines": 170
   },
   "cross_references": [
     {
@@ -168,8 +168,8 @@
     },
     {
       "addr": "00529980",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00529980"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_00529980"
     }
   ],
   "globals": [
@@ -299,7 +299,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,uVar2);",

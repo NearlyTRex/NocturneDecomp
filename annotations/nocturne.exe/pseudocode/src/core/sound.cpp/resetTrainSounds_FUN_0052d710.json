@@ -1,0 +1,284 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 14,
+        "message": "use of undeclared identifier 'stack0x00000000'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 14,
+        "message": "use of undeclared identifier 'DAT_02dc9d50'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 15,
+        "message": "use of undeclared identifier '_DAT_02dc9d54'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 18,
+        "message": "use of undeclared identifier '_DAT_02dc9d44'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 19,
+        "message": "use of undeclared identifier '_DAT_02dc9d48'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_02dc9d4c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_02dc9d54'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 73,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_ref",
+      "tautological_addr_guard",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0052d710",
+    "address_range": [
+      [
+        "0052d710",
+        "0052d779"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_resetTrainSounds_FUN_0052d710",
+    "signature": "void __cdecl core_sound_cpp_resetTrainSounds_FUN_0052d710(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "01fb1afc",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1b00",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb1b04",
+      "name": "g_CDemonSet_01e57284.active_fog.scroll.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9d44",
+      "name": "DAT_02dc9d44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9d48",
+      "name": "DAT_02dc9d48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9d4c",
+      "name": "DAT_02dc9d4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9d54",
+      "name": "DAT_02dc9d54",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.230769230769231,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 67,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_NEG": 3,
+      "INT_ADD": 11,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 136
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 7,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_02dc9d50",
+      "severity": "mild",
+      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&DAT_02dc9d50` is always FALSE (the address of `DAT_02dc9d50` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
+      "line": 7,
+      "match": "if ((T *)0x0 == &DAT_02dc9d50)",
+      "severity": "moderate",
+      "text": "if (&stack0x00000000 == &DAT_02dc9d50) {",
+      "type": "tautological_addr_guard"
+    }
+  ]
+}

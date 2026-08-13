@@ -161,7 +161,7 @@ section .text
         ;   Label: LAB_0051387d
     PUSH EBP                            ; 00513883 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 00513884
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00513889
     MOV EAX,dword ptr [ESP]             ; 0051388c
     PUSH EAX                            ; 0051388f

@@ -67,9 +67,9 @@ void __cdecl CDemonLight::restoreDirtyRegions(CDemonLight *this_ptr);
 // Address: 0044ec60
 ushort * __cdecl CDemonLight::projectLightAndMarkVisibility(CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag);
 
-// Original: core_dlight.cpp_FUN_0044ed50
+// Original: core_dlight.cpp_drawGrayscalePixel_FUN_0044ed50
 // Address: 0044ed50
-void FUN_0044ed50(int param_1,int param_2,int param_3);
+void __cdecl drawGrayscalePixel(int x,int y,int grayscale_value);
 
 // Original: core_dlight.cpp_FUN_0044ed80
 // Address: 0044ed80

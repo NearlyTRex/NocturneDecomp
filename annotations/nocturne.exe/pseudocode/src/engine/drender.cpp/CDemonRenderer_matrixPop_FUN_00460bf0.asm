@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(void)
+; void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[62]:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 at 00409f67

@@ -1,0 +1,343 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_014b8860'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_014b8860'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_014b8860'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 45,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 46,
+        "message": "use of undeclared identifier '_DAT_014b8924'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 94,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 195
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00448d60",
+    "address_range": [
+      [
+        "00448d60",
+        "00448eb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00448d60",
+    "signature": "void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00448d60(float max_z_plane)"
+  },
+  "function_calls": [
+    {
+      "addr": "004484c0",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004484c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00448d48",
+      "name": "PTR_caseD_1_00448d48",
+      "type": "undefined1*",
+      "value": "00448e14"
+    },
+    {
+      "addr": "00448d50",
+      "name": "PTR_caseD_3_00448d50",
+      "type": "undefined1*",
+      "value": "00448df9"
+    },
+    {
+      "addr": "014b8860",
+      "name": "DAT_014b8860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8864",
+      "name": "g_CVector3f_ARRAY_014b8864",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b8868",
+      "name": "g_CVector3f_ARRAY_014b8864[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b886c",
+      "name": "g_CVector3f_ARRAY_014b8864[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8878",
+      "name": "g_CVector3f_ARRAY_014b8864[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8884",
+      "name": "g_CVector3f_ARRAY_014b8864[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8924",
+      "name": "DAT_014b8924",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.137931034482759,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 162,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 33,
+      "INT_AND": 62,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 8,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 11,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 15,
+      "INT_SLESS": 25,
+      "INT_SUB": 32,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 596
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "max_z_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00448d69",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 27,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 39,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = vertex1->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

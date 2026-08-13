@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CDynamite::getActorType(CDynamite *this_ptr);
 // Address: 0046ebd0
 CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0046ec80
+// Original: core_dynamite.cpp_CDynamite_fire_FUN_0046ec80
 // Address: 0046ec80
-undefined4 FUN_0046ec80(CWeapon *param_1);
+int __cdecl CDynamite::fire(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0046ecf0
 // Address: 0046ecf0

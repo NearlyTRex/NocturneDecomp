@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   check_hardware_playback
 ;
 ; XREF[16]:
-;   sound_sndmain.cpp_FUN_00526dd0 at 00526dd8
-;   sound_sndmain.cpp_FUN_00526f00 at 00526f08
-;   sound_sndmain.cpp_FUN_00526f60 at 00526f68
-;   sound_sndmain.cpp_FUN_00527060 at 00527068
-;   sound_sndmain.cpp_FUN_00527190 at 005271ca
-;   sound_sndmain.cpp_FUN_00527200 at 00527207
+;   sound_sndmain.cpp_getSfxOptions_FUN_00526dd0 at 00526dd8
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d22
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 at 00526cd7
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 at 00526c60
 ;   sound_sndmain.cpp_killSfx_FUN_00527230 at 00527237
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130 at 00527138
+;   sound_sndmain.cpp_setSfxFade_FUN_00527260 at 0052726a
+;   sound_sndmain.cpp_setSfxIsActive_FUN_00527200 at 00527207
+;   sound_sndmain.cpp_setSfxPosition_FUN_00526e10 at 00526e18
+;   sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_00526f00 at 00526f08
 ;   ... and 6 more
 ;
 ; Referenced Globals:

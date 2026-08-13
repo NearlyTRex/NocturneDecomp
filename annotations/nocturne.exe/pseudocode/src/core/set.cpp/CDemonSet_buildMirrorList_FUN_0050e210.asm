@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_0050e2cf
     PUSH EDX                            ; 0050e2d5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0050e2d6
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050e2db
     INC EBP                             ; 0050e2de
         ;   Label: LAB_0050e2de

@@ -23,6 +23,6 @@ int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004a8ab0(CGasMask *this_p
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,0.0,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return iVar1;
 }

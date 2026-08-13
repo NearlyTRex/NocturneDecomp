@@ -77,7 +77,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
               (g_CDemonRenderer_PTR_005ae704,&local_94,&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,0.0,-1);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
   }
   local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
@@ -213,7 +213,7 @@ LAB_0053d387:
               (g_CDemonRenderer_PTR_005ae704,&local_40,&local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&(local_1c->base).model,0.0,-1);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] == 0) &&

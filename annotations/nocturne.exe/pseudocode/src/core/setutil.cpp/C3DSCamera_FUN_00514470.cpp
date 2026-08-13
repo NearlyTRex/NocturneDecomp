@@ -11,7 +11,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_FUN_00514470(C3DSCamera *this_ptr)
 {
   float fVar1;
   
-  core_setutil_cpp_C3DSCamera_FUN_00514430(this_ptr);
+  core_setutil_cpp_C3DSCamera_free_FUN_00514430(this_ptr);
   memset(this_ptr,0,0x1a0);
   this_ptr->projection_scale = 28.0;
   (this_ptr->box).min.y = -300.0;

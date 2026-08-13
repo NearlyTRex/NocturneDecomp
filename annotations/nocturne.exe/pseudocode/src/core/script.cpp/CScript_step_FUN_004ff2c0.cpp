@@ -818,7 +818,7 @@ joined_r0x00504194:
                                                               (&local_118,local_3784,300);
                                           if (pcVar18 != (char *)0x0) goto LAB_00500e2e;
                                           if (_DAT_01e56418 == 0) {
-                                            shape_edittool_cpp_FUN_0046fe60
+                                            shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                                                       (g_CEditorTools_PTR_005b6d50,
                                                        "Script debug message at line %d:\n%s",local_11c,
                                                        local_3784);

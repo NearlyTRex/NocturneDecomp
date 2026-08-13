@@ -11,8 +11,8 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9da4
 ;
 ; Called Functions:
-;   Ordinal_2
-;   Ordinal_9
+;   crt_wsock32.c_bind
+;   crt_wsock32.c_htons
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV EDX,0x2                         ; 00548f7a
     PUSH EAX                            ; 00548f7f
     MOV word ptr [ESP + 0x4],DX         ; 00548f80
-    CALL Ordinal_9                      ; 00548f85
-        ;   XREF to: 00574c02 (UNCONDITIONAL_CALL)  ; undefined Ordinal_9()
+    CALL crt_wsock32.c_htons            ; 00548f85
+        ;   XREF to: 00574c02 (UNCONDITIONAL_CALL)  ; ushort crt_wsock32.c_htons(ushort hostshort)
     PUSH 0x10                           ; 00548f8a
     MOV word ptr [ESP + 0x6],AX         ; 00548f8c
     LEA EAX,[ESP + 0x4]                 ; 00548f91
@@ -36,8 +36,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 00548f9c
     MOV ECX,dword ptr [EAX]             ; 00548fa0
     PUSH ECX                            ; 00548fa2
-    CALL Ordinal_2                      ; 00548fa3
-        ;   XREF to: 00574bf6 (UNCONDITIONAL_CALL)  ; undefined Ordinal_2()
+    CALL crt_wsock32.c_bind             ; 00548fa3
+        ;   XREF to: 00574bf6 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_bind(_SOCKET s, SOCKADDR * addr, int namelen)
     TEST EAX,EAX                        ; 00548fa8
     SETZ AL                             ; 00548faa
     AND EAX,0xff                        ; 00548fad

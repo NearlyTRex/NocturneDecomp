@@ -38,7 +38,7 @@ int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005496d0(CTurret *this_ptr)
       fStack_10 = core_turret_cpp_CTurret_getCurFrame_FUN_00549ef0(this_ptr,1);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (&this_ptr->model,fStack_10,iVar3);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
       return iVar1;
     }
   }

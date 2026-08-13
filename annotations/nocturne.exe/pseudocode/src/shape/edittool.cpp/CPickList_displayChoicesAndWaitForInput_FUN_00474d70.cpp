@@ -37,7 +37,8 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
     } while (iVar2 == -2);
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);
     engine_2d_c_clearInputAndWait_FUN_00403f50();
-    shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+              (g_CEditorTools_PTR_005b6d50);
     INT_005b7630 = iVar1;
     return iVar2;
   }

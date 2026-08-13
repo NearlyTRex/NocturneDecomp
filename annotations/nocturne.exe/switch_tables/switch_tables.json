@@ -1,5 +1,5 @@
 {
-  "count":277,
+  "count":356,
   "switch_tables":[
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x40db0c]",
@@ -1152,7 +1152,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x448650]",
       "function_addr":"00448660",
-      "function_name":"core_dcube.cpp_FUN_00448660",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00448660",
       "switch_addr":"004486cc",
       "target_count":4,
       "targets":[
@@ -1177,7 +1177,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4487b0]",
       "function_addr":"004487c0",
-      "function_name":"core_dcube.cpp_FUN_004487c0",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMinY_FUN_004487c0",
       "switch_addr":"00448834",
       "target_count":4,
       "targets":[
@@ -1202,7 +1202,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x448914]",
       "function_addr":"00448930",
-      "function_name":"core_dcube.cpp_FUN_00448930",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00448930",
       "switch_addr":"0044899a",
       "target_count":4,
       "targets":[
@@ -1227,7 +1227,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x448a7c]",
       "function_addr":"00448a90",
-      "function_name":"core_dcube.cpp_FUN_00448a90",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMinX_FUN_00448a90",
       "switch_addr":"00448b02",
       "target_count":4,
       "targets":[
@@ -1252,7 +1252,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x448be0]",
       "function_addr":"00448bf0",
-      "function_name":"core_dcube.cpp_FUN_00448bf0",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00448bf0",
       "switch_addr":"00448c64",
       "target_count":4,
       "targets":[
@@ -1277,7 +1277,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x448d44]",
       "function_addr":"00448d60",
-      "function_name":"core_dcube.cpp_FUN_00448d60",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00448d60",
       "switch_addr":"00448dd4",
       "target_count":4,
       "targets":[
@@ -1815,7 +1815,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46d670]",
       "function_addr":"0046d680",
-      "function_name":"core_dtri.cpp_FUN_0046d680",
+      "function_name":"core_dtri.cpp_clipPolygonToTop_FUN_0046d680",
       "switch_addr":"0046d6ec",
       "target_count":4,
       "targets":[
@@ -1840,7 +1840,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46d7d0]",
       "function_addr":"0046d7e0",
-      "function_name":"core_dtri.cpp_FUN_0046d7e0",
+      "function_name":"core_dtri.cpp_clipPolygonToBottom_FUN_0046d7e0",
       "switch_addr":"0046d854",
       "target_count":4,
       "targets":[
@@ -1865,7 +1865,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46d934]",
       "function_addr":"0046d950",
-      "function_name":"core_dtri.cpp_FUN_0046d950",
+      "function_name":"core_dtri.cpp_clipPolygonToRight_FUN_0046d950",
       "switch_addr":"0046d9ba",
       "target_count":4,
       "targets":[
@@ -1890,7 +1890,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46da9c]",
       "function_addr":"0046dab0",
-      "function_name":"core_dtri.cpp_FUN_0046dab0",
+      "function_name":"core_dtri.cpp_clipPolygonToLeft_FUN_0046dab0",
       "switch_addr":"0046db22",
       "target_count":4,
       "targets":[
@@ -1915,7 +1915,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46dc00]",
       "function_addr":"0046dc10",
-      "function_name":"core_dtri.cpp_FUN_0046dc10",
+      "function_name":"core_dtri.cpp_clipPolygonToNear_FUN_0046dc10",
       "switch_addr":"0046dc84",
       "target_count":4,
       "targets":[
@@ -1940,7 +1940,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x46dd64]",
       "function_addr":"0046dd80",
-      "function_name":"core_dtri.cpp_FUN_0046dd80",
+      "function_name":"core_dtri.cpp_clipPolygonToFar_FUN_0046dd80",
       "switch_addr":"0046ddf4",
       "target_count":4,
       "targets":[
@@ -4990,7 +4990,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x55de10]",
       "function_addr":"0055de20",
-      "function_name":"core_xform.cpp_FUN_0055de20",
+      "function_name":"core_xform.cpp_clipPolygonStage4_FUN_0055de20",
       "switch_addr":"0055de81",
       "target_count":4,
       "targets":[
@@ -5287,264 +5287,438 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [0x0057553c]",
+      "function_addr":"00574818",
+      "function_name":"crt_kernel32.c_GetTimeZoneInformation",
+      "switch_addr":"00574818",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"0057553c",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [0x005755a4]",
-      "function_addr":"00574819",
-      "function_name":"crt_unknown.c_FUN_00574819",
+      "function_addr":"0057481e",
+      "function_name":"crt_kernel32.c_SetFileTime",
       "switch_addr":"0057481e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755a4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575564]",
+      "function_addr":"00574824",
+      "function_name":"crt_kernel32.c_LocalFileTimeToFileTime",
+      "switch_addr":"00574824",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000086",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575564",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755bc]",
-      "function_addr":"00574825",
-      "function_name":"crt_unknown.c_FUN_00574825",
+      "function_addr":"0057482a",
+      "function_name":"crt_kernel32.c_SystemTimeToFileTime",
       "switch_addr":"0057482a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755bc",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575510]",
+      "function_addr":"00574830",
+      "function_name":"crt_kernel32.c_GetFileTime",
+      "switch_addr":"00574830",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000008c",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575510",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575514]",
-      "function_addr":"00574831",
-      "function_name":"crt_unknown.c_FUN_00574831",
+      "function_addr":"00574836",
+      "function_name":"crt_kernel32.c_GetFileType",
       "switch_addr":"00574836",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575514",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057551c]",
+      "function_addr":"0057483c",
+      "function_name":"crt_kernel32.c_GetLastError",
+      "switch_addr":"0057483c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000062",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057551c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754a8]",
-      "function_addr":"0057483d",
-      "function_name":"crt_unknown.c_FUN_0057483d",
+      "function_addr":"00574842",
+      "function_name":"crt_kernel32.c_DeleteFileA",
       "switch_addr":"00574842",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754a8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575498]",
+      "function_addr":"00574848",
+      "function_name":"crt_kernel32.c_CreateFileA",
+      "switch_addr":"00574848",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000047",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575498",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755ec]",
-      "function_addr":"00574849",
-      "function_name":"crt_unknown.c_FUN_00574849",
+      "function_addr":"0057484e",
+      "function_name":"crt_kernel32.c_WriteFile",
       "switch_addr":"0057484e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755ec",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057557c]",
+      "function_addr":"00574854",
+      "function_name":"crt_kernel32.c_ReadFile",
+      "switch_addr":"00574854",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000098",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057557c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755d4]",
-      "function_addr":"00574855",
-      "function_name":"crt_unknown.c_FUN_00574855",
+      "function_addr":"0057485a",
+      "function_name":"crt_kernel32.c_VirtualAlloc",
       "switch_addr":"0057485a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755d4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057548c]",
+      "function_addr":"00574860",
+      "function_name":"crt_kernel32.c_CloseHandle",
+      "switch_addr":"00574860",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000092",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057548c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755a0]",
-      "function_addr":"00574861",
-      "function_name":"crt_unknown.c_FUN_00574861",
+      "function_addr":"00574866",
+      "function_name":"crt_kernel32.c_SetFilePointer",
       "switch_addr":"00574866",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755a0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754fc]",
+      "function_addr":"0057486c",
+      "function_name":"crt_kernel32.c_GetCurrentProcessId",
+      "switch_addr":"0057486c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000085",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754fc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754ec]",
-      "function_addr":"0057486d",
-      "function_name":"crt_unknown.c_FUN_0057486d",
+      "function_addr":"00574872",
+      "function_name":"crt_kernel32.c_GetCommandLineW",
       "switch_addr":"00574872",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754ec",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575540]",
+      "function_addr":"00574878",
+      "function_name":"crt_kernel32.c_GetVersion",
+      "switch_addr":"00574878",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000058",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575540",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575508]",
-      "function_addr":"00574879",
-      "function_name":"crt_unknown.c_FUN_00574879",
+      "function_addr":"0057487e",
+      "function_name":"crt_kernel32.c_GetEnvironmentStrings",
       "switch_addr":"0057487e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575508",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575568]",
+      "function_addr":"00574884",
+      "function_name":"crt_kernel32.c_MoveFileA",
+      "switch_addr":"00574884",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000005f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575568",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575490]",
-      "function_addr":"00574885",
-      "function_name":"crt_unknown.c_FUN_00574885",
+      "function_addr":"0057488a",
+      "function_name":"crt_kernel32.c_CreateDirectoryA",
       "switch_addr":"0057488a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575490",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057559c]",
+      "function_addr":"00574890",
+      "function_name":"crt_kernel32.c_SetFileAttributesA",
+      "switch_addr":"00574890",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000041",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057559c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575518]",
-      "function_addr":"00574891",
-      "function_name":"crt_unknown.c_FUN_00574891",
+      "function_addr":"00574896",
+      "function_name":"crt_kernel32.c_GetFullPathNameA",
       "switch_addr":"00574896",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575518",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753dc]",
+      "function_addr":"0057489c",
+      "function_name":"crt_winmm.c_mciGetErrorStringA",
+      "switch_addr":"0057489c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000063",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753dc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057543c]",
-      "function_addr":"0057489d",
-      "function_name":"crt_unknown.c_FUN_0057489d",
+      "function_addr":"005748a2",
+      "function_name":"crt_user32.c_InvalidateRect",
       "switch_addr":"005748a2",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057543c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575450]",
+      "function_addr":"005748a8",
+      "function_name":"crt_user32.c_MoveWindow",
+      "switch_addr":"005748a8",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000002d",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575450",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575478]",
-      "function_addr":"005748a9",
-      "function_name":"crt_unknown.c_FUN_005748a9",
+      "function_addr":"005748ae",
+      "function_name":"crt_user32.c_SetRectEmpty",
       "switch_addr":"005748ae",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575478",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753e0]",
+      "function_addr":"005748b4",
+      "function_name":"crt_winmm.c_mciSendStringA",
+      "switch_addr":"005748b4",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000003c",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753e0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057542c]",
-      "function_addr":"005748b5",
-      "function_name":"crt_unknown.c_FUN_005748b5",
+      "function_addr":"005748ba",
+      "function_name":"crt_user32.c_GetClientRect",
       "switch_addr":"005748ba",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057542c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753d8]",
+      "function_addr":"005748c0",
+      "function_name":"crt_winmm.c_joyGetPos",
+      "switch_addr":"005748c0",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000029",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753d8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753d4]",
-      "function_addr":"005748c1",
-      "function_name":"crt_unknown.c_FUN_005748c1",
+      "function_addr":"005748c6",
+      "function_name":"crt_winmm.c_joyGetDevCapsA",
       "switch_addr":"005748c6",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753d4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057552c]",
+      "function_addr":"005748cc",
+      "function_name":"crt_kernel32.c_GetModuleHandleA",
+      "switch_addr":"005748cc",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000014",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057552c",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575390]",
+      "function_addr":"005748d2",
+      "function_name":"crt_advapi32.c_RegSetValueExA",
+      "switch_addr":"005748d2",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"00575390",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575384]",
+      "function_addr":"005748d8",
+      "function_name":"crt_advapi32.c_RegCreateKeyExA",
+      "switch_addr":"005748d8",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"00575384",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575380]",
-      "function_addr":"005748d5",
-      "function_name":"crt_unknown.c_FUN_005748d5",
+      "function_addr":"005748de",
+      "function_name":"crt_advapi32.c_RegCloseKey",
       "switch_addr":"005748de",
       "target_count":1,
       "targets":[
@@ -5555,434 +5729,685 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [0x0057538c]",
+      "function_addr":"005748e4",
+      "function_name":"crt_advapi32.c_RegQueryValueExA",
+      "switch_addr":"005748e4",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"0057538c",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [0x00575388]",
-      "function_addr":"005748e5",
-      "function_name":"crt_unknown.c_FUN_005748e5",
+      "function_addr":"005748ea",
+      "function_name":"crt_advapi32.c_RegOpenKeyExA",
       "switch_addr":"005748ea",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575388",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754a0]",
+      "function_addr":"005748f0",
+      "function_name":"crt_kernel32.c_CreateThread",
+      "switch_addr":"005748f0",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000003",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754a0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575580]",
-      "function_addr":"005748f1",
-      "function_name":"crt_unknown.c_FUN_005748f1",
+      "function_addr":"005748f6",
+      "function_name":"crt_kernel32.c_ReleaseMutex",
       "switch_addr":"005748f6",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575580",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755e0]",
+      "function_addr":"005748fc",
+      "function_name":"crt_kernel32.c_WaitForSingleObject",
+      "switch_addr":"005748fc",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000007d",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755e0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057549c]",
-      "function_addr":"005748fd",
-      "function_name":"crt_unknown.c_FUN_005748fd",
+      "function_addr":"00574902",
+      "function_name":"crt_kernel32.c_CreateMutexA",
       "switch_addr":"00574902",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057549c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575434]",
+      "function_addr":"00574908",
+      "function_name":"crt_user32.c_GetKeyNameTextA",
+      "switch_addr":"00574908",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000044",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575434",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754b4]",
-      "function_addr":"00574909",
-      "function_name":"crt_unknown.c_FUN_00574909",
+      "function_addr":"0057490e",
+      "function_name":"crt_kernel32.c_ExitProcess",
       "switch_addr":"0057490e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754b4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575550]",
+      "function_addr":"00574914",
+      "function_name":"crt_kernel32.c_GlobalMemoryStatus",
+      "switch_addr":"00574914",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000004a",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575550",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575484]",
-      "function_addr":"00574915",
-      "function_name":"crt_unknown.c_FUN_00574915",
+      "function_addr":"0057491a",
+      "function_name":"crt_user32.c_UpdateWindow",
       "switch_addr":"0057491a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575484",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057541c]",
+      "function_addr":"00574920",
+      "function_name":"crt_user32.c_CreateWindowExA",
+      "switch_addr":"00574920",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000003f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057541c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575460]",
-      "function_addr":"00574921",
-      "function_name":"crt_unknown.c_FUN_00574921",
+      "function_addr":"00574926",
+      "function_name":"crt_user32.c_RegisterClassA",
       "switch_addr":"00574926",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575460",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753b0]",
+      "function_addr":"0057492c",
+      "function_name":"crt_gdi32.c_GetStockObject",
+      "switch_addr":"0057492c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000036",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753b0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575444]",
-      "function_addr":"0057492d",
-      "function_name":"crt_unknown.c_FUN_0057492d",
+      "function_addr":"00574932",
+      "function_name":"crt_user32.c_LoadCursorA",
       "switch_addr":"00574932",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575444",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575448]",
+      "function_addr":"00574938",
+      "function_name":"crt_user32.c_LoadIconA",
+      "switch_addr":"00574938",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000002f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575448",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057558c]",
-      "function_addr":"00574939",
-      "function_name":"crt_unknown.c_FUN_00574939",
+      "function_addr":"0057493e",
+      "function_name":"crt_kernel32.c_SetCurrentDirectoryA",
       "switch_addr":"0057493e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057558c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575524]",
+      "function_addr":"00574944",
+      "function_name":"crt_kernel32.c_GetModuleFileNameA",
+      "switch_addr":"00574944",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000080",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575524",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754f4]",
-      "function_addr":"00574945",
-      "function_name":"crt_unknown.c_FUN_00574945",
+      "function_addr":"0057494a",
+      "function_name":"crt_kernel32.c_GetCurrentDirectoryA",
       "switch_addr":"0057494a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754f4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754e8]",
+      "function_addr":"00574950",
+      "function_name":"crt_kernel32.c_GetCommandLineA",
+      "switch_addr":"00574950",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000005a",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754e8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575474]",
-      "function_addr":"00574951",
-      "function_name":"crt_unknown.c_FUN_00574951",
+      "function_addr":"00574956",
+      "function_name":"crt_user32.c_SetForegroundWindow",
       "switch_addr":"00574956",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575474",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575440]",
+      "function_addr":"0057495c",
+      "function_name":"crt_user32.c_IsIconic",
+      "switch_addr":"0057495c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000003b",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575440",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575410]",
-      "function_addr":"0057495d",
-      "function_name":"crt_unknown.c_FUN_0057495d",
+      "function_addr":"00574962",
+      "function_name":"crt_user32.c_BringWindowToTop",
       "switch_addr":"00574962",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575410",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575438]",
+      "function_addr":"00574968",
+      "function_name":"crt_user32.c_GetLastActivePopup",
+      "switch_addr":"00574968",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000022",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575438",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575428]",
-      "function_addr":"00574969",
-      "function_name":"crt_unknown.c_FUN_00574969",
+      "function_addr":"0057496e",
+      "function_name":"crt_user32.c_FindWindowA",
       "switch_addr":"0057496e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575428",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755b8]",
+      "function_addr":"00574974",
+      "function_name":"crt_kernel32.c_Sleep",
+      "switch_addr":"00574974",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000028",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755b8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575424]",
-      "function_addr":"00574975",
-      "function_name":"crt_unknown.c_FUN_00574975",
+      "function_addr":"0057497a",
+      "function_name":"crt_user32.c_DispatchMessageA",
       "switch_addr":"0057497a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575424",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575480]",
+      "function_addr":"00574980",
+      "function_name":"crt_user32.c_TranslateMessage",
+      "switch_addr":"00574980",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000027",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575480",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575458]",
-      "function_addr":"00574981",
-      "function_name":"crt_unknown.c_FUN_00574981",
+      "function_addr":"00574986",
+      "function_name":"crt_user32.c_PeekMessageA",
       "switch_addr":"00574986",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575458",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057546c]",
+      "function_addr":"0057498c",
+      "function_name":"crt_user32.c_SetCursor",
+      "switch_addr":"0057498c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000034",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057546c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755b0]",
-      "function_addr":"0057498d",
-      "function_name":"crt_unknown.c_FUN_0057498d",
+      "function_addr":"00574992",
+      "function_name":"crt_kernel32.c_SetThreadPriority",
       "switch_addr":"00574992",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755b0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754f8]",
+      "function_addr":"00574998",
+      "function_name":"crt_kernel32.c_GetCurrentProcess",
+      "switch_addr":"00574998",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000089",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754f8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575420]",
-      "function_addr":"00574999",
-      "function_name":"crt_unknown.c_FUN_00574999",
+      "function_addr":"0057499e",
+      "function_name":"crt_user32.c_DefWindowProcA",
       "switch_addr":"0057499e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575420",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057545c]",
+      "function_addr":"005749a4",
+      "function_name":"crt_user32.c_PostQuitMessage",
+      "switch_addr":"005749a4",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000026",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057545c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575468]",
-      "function_addr":"005749a5",
-      "function_name":"crt_unknown.c_FUN_005749a5",
+      "function_addr":"005749aa",
+      "function_name":"crt_user32.c_SetCursorPos",
       "switch_addr":"005749aa",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575468",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753ec]",
+      "function_addr":"005749b0",
+      "function_name":"crt_winmm.c_timeGetTime",
+      "switch_addr":"005749b0",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000038",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753ec",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753e8]",
-      "function_addr":"005749b1",
-      "function_name":"crt_unknown.c_FUN_005749b1",
+      "function_addr":"005749b6",
+      "function_name":"crt_winmm.c_timeEndPeriod",
       "switch_addr":"005749b6",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753e8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057544c]",
+      "function_addr":"005749bc",
+      "function_name":"crt_user32.c_MessageBoxA",
+      "switch_addr":"005749bc",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000019",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057544c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753e4]",
-      "function_addr":"005749bd",
-      "function_name":"crt_unknown.c_FUN_005749bd",
+      "function_addr":"005749c2",
+      "function_name":"crt_winmm.c_timeBeginPeriod",
       "switch_addr":"005749c2",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753e4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575570]",
+      "function_addr":"005749c8",
+      "function_name":"crt_kernel32.c_QueryPerformanceCounter",
+      "switch_addr":"005749c8",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000018",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575570",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575574]",
-      "function_addr":"005749c9",
-      "function_name":"crt_unknown.c_FUN_005749c9",
+      "function_addr":"005749ce",
+      "function_name":"crt_kernel32.c_QueryPerformanceFrequency",
       "switch_addr":"005749ce",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575574",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753b4]",
+      "function_addr":"005749d4",
+      "function_name":"crt_gdi32.c_GetTextExtentPoint32A",
+      "switch_addr":"005749d4",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000007a",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753b4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753a8]",
-      "function_addr":"005749d5",
-      "function_name":"crt_unknown.c_FUN_005749d5",
+      "function_addr":"005749da",
+      "function_name":"crt_gdi32.c_DeleteDC",
       "switch_addr":"005749da",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753a8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753ac]",
+      "function_addr":"005749e0",
+      "function_name":"crt_gdi32.c_DeleteObject",
+      "switch_addr":"005749e0",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000000a",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753ac",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753b8]",
-      "function_addr":"005749e1",
-      "function_name":"crt_unknown.c_FUN_005749e1",
+      "function_addr":"005749e6",
+      "function_name":"crt_gdi32.c_Rectangle",
       "switch_addr":"005749e6",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753b8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575398]",
+      "function_addr":"005749ec",
+      "function_name":"crt_gdi32.c_CreateBrushIndirect",
+      "switch_addr":"005749ec",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000000e",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575398",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753c0]",
-      "function_addr":"005749ed",
-      "function_name":"crt_unknown.c_FUN_005749ed",
+      "function_addr":"005749f2",
+      "function_name":"crt_gdi32.c_SetBkColor",
       "switch_addr":"005749f2",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753c0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753c4]",
+      "function_addr":"005749f8",
+      "function_name":"crt_gdi32.c_SetBkMode",
+      "switch_addr":"005749f8",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000010",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753c4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753bc]",
-      "function_addr":"005749f9",
-      "function_name":"crt_unknown.c_FUN_005749f9",
+      "function_addr":"005749fe",
+      "function_name":"crt_gdi32.c_SelectObject",
       "switch_addr":"005749fe",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753bc",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753a0]",
+      "function_addr":"00574a04",
+      "function_name":"crt_gdi32.c_CreateDIBSection",
+      "switch_addr":"00574a04",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000000f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753a0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057539c]",
-      "function_addr":"00574a05",
-      "function_name":"crt_unknown.c_FUN_00574a05",
+      "function_addr":"00574a0a",
+      "function_name":"crt_gdi32.c_CreateCompatibleDC",
       "switch_addr":"00574a0a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057539c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753cc]",
+      "function_addr":"00574a10",
+      "function_name":"crt_gdi32.c_TextOutA",
+      "switch_addr":"00574a10",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000007",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753cc",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753c8]",
+      "function_addr":"00574a16",
+      "function_name":"crt_gdi32.c_SetTextColor",
+      "switch_addr":"00574a16",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"005753c8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753a4]",
-      "function_addr":"00574a13",
-      "function_name":"crt_unknown.c_FUN_00574a13",
+      "function_addr":"00574a1c",
+      "function_name":"crt_gdi32.c_CreateFontA",
       "switch_addr":"00574a1c",
       "target_count":1,
       "targets":[
@@ -5993,264 +6418,425 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [0x00575534]",
+      "function_addr":"00574a22",
+      "function_name":"crt_kernel32.c_GetProcAddress",
+      "switch_addr":"00574a22",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"00575534",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [0x00575560]",
-      "function_addr":"00574a23",
-      "function_name":"crt_unknown.c_FUN_00574a23",
+      "function_addr":"00574a28",
+      "function_name":"crt_kernel32.c_LoadLibraryA",
       "switch_addr":"00574a28",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575560",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754dc]",
+      "function_addr":"00574a2e",
+      "function_name":"crt_kernel32.c_FreeLibrary",
+      "switch_addr":"00574a2e",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000075",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754dc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575470]",
-      "function_addr":"00574a2f",
-      "function_name":"crt_unknown.c_FUN_00574a2f",
+      "function_addr":"00574a34",
+      "function_name":"crt_user32.c_SetFocus",
       "switch_addr":"00574a34",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575470",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x0057547c]",
+      "function_addr":"00574a3a",
+      "function_name":"crt_user32.c_ShowWindow",
+      "switch_addr":"00574a3a",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000003a",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"0057547c",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005753f4]",
-      "function_addr":"00574a3b",
-      "function_name":"crt_unknown.c_FUN_00574a3b",
+      "function_addr":"00574a40",
+      "function_name":"crt_winmm.c_waveOutGetDevCapsA",
       "switch_addr":"00574a40",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005753f4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753f8]",
+      "function_addr":"00574a46",
+      "function_name":"crt_winmm.c_waveOutOpen",
+      "switch_addr":"00574a46",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000001c",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753f8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575400]",
-      "function_addr":"00574a47",
-      "function_name":"crt_unknown.c_FUN_00574a47",
+      "function_addr":"00574a4c",
+      "function_name":"crt_winmm.c_waveOutReset",
       "switch_addr":"00574a4c",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575400",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753f0]",
+      "function_addr":"00574a52",
+      "function_name":"crt_winmm.c_waveOutClose",
+      "switch_addr":"00574a52",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000001f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753f0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575408]",
-      "function_addr":"00574a53",
-      "function_name":"crt_unknown.c_FUN_00574a53",
+      "function_addr":"00574a58",
+      "function_name":"crt_winmm.c_waveOutWrite",
       "switch_addr":"00574a58",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575408",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005753fc]",
+      "function_addr":"00574a5e",
+      "function_name":"crt_winmm.c_waveOutPrepareHeader",
+      "switch_addr":"00574a5e",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000021",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005753fc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575404]",
-      "function_addr":"00574a5f",
-      "function_name":"crt_unknown.c_FUN_00574a5f",
+      "function_addr":"00574a64",
+      "function_name":"crt_winmm.c_waveOutUnprepareHeader",
       "switch_addr":"00574a64",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575404",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575548]",
+      "function_addr":"00574a6a",
+      "function_name":"crt_kernel32.c_GlobalFree",
+      "switch_addr":"00574a6a",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000020",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575548",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575464]",
-      "function_addr":"00574a6b",
-      "function_name":"crt_unknown.c_FUN_00574a6b",
+      "function_addr":"00574a70",
+      "function_name":"crt_user32.c_SetClipboardData",
       "switch_addr":"00574a70",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575464",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575554]",
+      "function_addr":"00574a76",
+      "function_name":"crt_kernel32.c_GlobalUnlock",
+      "switch_addr":"00574a76",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000037",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575554",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057554c]",
-      "function_addr":"00574a77",
-      "function_name":"crt_unknown.c_FUN_00574a77",
+      "function_addr":"00574a7c",
+      "function_name":"crt_kernel32.c_GlobalLock",
       "switch_addr":"00574a7c",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057554c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575544]",
+      "function_addr":"00574a82",
+      "function_name":"crt_kernel32.c_GlobalAlloc",
+      "switch_addr":"00574a82",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000070",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575544",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575418]",
-      "function_addr":"00574a83",
-      "function_name":"crt_unknown.c_FUN_00574a83",
+      "function_addr":"00574a88",
+      "function_name":"crt_user32.c_CloseClipboard",
       "switch_addr":"00574a88",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575418",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575430]",
+      "function_addr":"00574a8e",
+      "function_name":"crt_user32.c_GetClipboardData",
+      "switch_addr":"00574a8e",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000024",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575430",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575454]",
-      "function_addr":"00574a8f",
-      "function_name":"crt_unknown.c_FUN_00574a8f",
+      "function_addr":"00574a94",
+      "function_name":"crt_user32.c_OpenClipboard",
       "switch_addr":"00574a94",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575454",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754c4]",
+      "function_addr":"00574a9a",
+      "function_name":"crt_kernel32.c_FileTimeToSystemTime",
+      "switch_addr":"00574a9a",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000033",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754c4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754c0]",
-      "function_addr":"00574a9b",
-      "function_name":"crt_unknown.c_FUN_00574a9b",
+      "function_addr":"00574aa0",
+      "function_name":"crt_kernel32.c_FileTimeToLocalFileTime",
       "switch_addr":"00574aa0",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754c0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754c8]",
+      "function_addr":"00574aa6",
+      "function_name":"crt_kernel32.c_FindClose",
+      "switch_addr":"00574aa6",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000004d",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754c8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754d0]",
-      "function_addr":"00574aa7",
-      "function_name":"crt_unknown.c_FUN_00574aa7",
+      "function_addr":"00574aac",
+      "function_name":"crt_kernel32.c_FindNextFileA",
       "switch_addr":"00574aac",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754d0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754cc]",
+      "function_addr":"00574ab2",
+      "function_name":"crt_kernel32.c_FindFirstFileA",
+      "switch_addr":"00574ab2",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000051",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754cc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575594]",
-      "function_addr":"00574ab3",
-      "function_name":"crt_unknown.c_FUN_00574ab3",
+      "function_addr":"00574ab8",
+      "function_name":"crt_kernel32.c_SetEnvironmentVariableW",
       "switch_addr":"00574ab8",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575594",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754b8]",
+      "function_addr":"00574abe",
+      "function_name":"crt_kernel32.c_ExitThread",
+      "switch_addr":"00574abe",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000082",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754b8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575504]",
-      "function_addr":"00574abf",
-      "function_name":"crt_unknown.c_FUN_00574abf",
+      "function_addr":"00574ac4",
+      "function_name":"crt_kernel32.c_GetCurrentThread",
       "switch_addr":"00574ac4",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575504",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575598]",
+      "function_addr":"00574aca",
+      "function_name":"crt_kernel32.c_SetEvent",
+      "switch_addr":"00574aca",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000005e",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575598",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575414]",
-      "function_addr":"00574acb",
-      "function_name":"crt_unknown.c_FUN_00574acb",
+      "function_addr":"00574ad0",
+      "function_name":"crt_user32.c_CharUpperBuffA",
       "switch_addr":"00574ad0",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575414",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575590]",
+      "function_addr":"00574ad6",
+      "function_name":"crt_kernel32.c_SetEnvironmentVariableA",
+      "switch_addr":"00574ad6",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000023",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575590",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575520]",
+      "function_addr":"00574adc",
+      "function_name":"crt_kernel32.c_GetLocalTime",
+      "switch_addr":"00574adc",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"00575520",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754e4]",
-      "function_addr":"00574ad9",
-      "function_name":"crt_unknown.c_FUN_00574ad9",
+      "function_addr":"00574ae2",
+      "function_name":"crt_kernel32.c_GetCPInfo",
       "switch_addr":"00574ae2",
       "target_count":1,
       "targets":[
@@ -6261,179 +6847,295 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [0x00575530]",
+      "function_addr":"00574ae8",
+      "function_name":"crt_kernel32.c_GetOEMCP",
+      "switch_addr":"00574ae8",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"00575530",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [0x005754e0]",
-      "function_addr":"00574ae9",
-      "function_name":"crt_unknown.c_FUN_00574ae9",
+      "function_addr":"00574aee",
+      "function_name":"crt_kernel32.c_GetACP",
       "switch_addr":"00574aee",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754e0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575584]",
+      "function_addr":"00574af4",
+      "function_name":"crt_kernel32.c_SetConsoleCtrlHandler",
+      "switch_addr":"00574af4",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000055",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575584",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754d8]",
-      "function_addr":"00574af5",
-      "function_name":"crt_unknown.c_FUN_00574af5",
+      "function_addr":"00574afa",
+      "function_name":"crt_kernel32.c_FreeEnvironmentStringsA",
       "switch_addr":"00574afa",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754d8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754ac]",
+      "function_addr":"00574b00",
+      "function_name":"crt_kernel32.c_DosDateTimeToFileTime",
+      "switch_addr":"00574b00",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000053",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754ac",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005754bc]",
-      "function_addr":"00574b01",
-      "function_name":"crt_unknown.c_FUN_00574b01",
+      "function_addr":"00574b06",
+      "function_name":"crt_kernel32.c_FileTimeToDosDateTime",
       "switch_addr":"00574b06",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005754bc",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755e8]",
+      "function_addr":"00574b0c",
+      "function_name":"crt_kernel32.c_WriteConsoleA",
+      "switch_addr":"00574b0c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000004c",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755e8",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575588]",
-      "function_addr":"00574b0d",
-      "function_name":"crt_unknown.c_FUN_00574b0d",
+      "function_addr":"00574b12",
+      "function_name":"crt_kernel32.c_SetConsoleMode",
       "switch_addr":"00574b12",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575588",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754f0]",
+      "function_addr":"00574b18",
+      "function_name":"crt_kernel32.c_GetConsoleMode",
+      "switch_addr":"00574b18",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000007f",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754f0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575578]",
-      "function_addr":"00574b19",
-      "function_name":"crt_unknown.c_FUN_00574b19",
+      "function_addr":"00574b1e",
+      "function_name":"crt_kernel32.c_ReadConsoleInputA",
       "switch_addr":"00574b1e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575578",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755e4]",
+      "function_addr":"00574b24",
+      "function_name":"crt_kernel32.c_WideCharToMultiByte",
+      "switch_addr":"00574b24",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000007b",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755e4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755d8]",
-      "function_addr":"00574b25",
-      "function_name":"crt_unknown.c_FUN_00574b25",
+      "function_addr":"00574b2a",
+      "function_name":"crt_kernel32.c_VirtualFree",
       "switch_addr":"00574b2a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755d8",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754d4]",
+      "function_addr":"00574b30",
+      "function_name":"crt_kernel32.c_FlushFileBuffers",
+      "switch_addr":"00574b30",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000093",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754d4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057550c]",
-      "function_addr":"00574b31",
-      "function_name":"crt_unknown.c_FUN_00574b31",
+      "function_addr":"00574b36",
+      "function_name":"crt_kernel32.c_GetFileAttributesA",
       "switch_addr":"00574b36",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057550c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755b4]",
+      "function_addr":"00574b3c",
+      "function_name":"crt_kernel32.c_SetUnhandledExceptionFilter",
+      "switch_addr":"00574b3c",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000060",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755b4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755d0]",
-      "function_addr":"00574b3d",
-      "function_name":"crt_unknown.c_FUN_00574b3d",
+      "function_addr":"00574b42",
+      "function_name":"crt_kernel32.c_UnhandledExceptionFilter",
       "switch_addr":"00574b42",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755d0",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755dc]",
+      "function_addr":"00574b48",
+      "function_name":"crt_kernel32.c_VirtualQuery",
+      "switch_addr":"00574b48",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000091",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755dc",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057556c]",
-      "function_addr":"00574b49",
-      "function_name":"crt_unknown.c_FUN_00574b49",
+      "function_addr":"00574b4e",
+      "function_name":"crt_kernel32.c_MultiByteToWideChar",
       "switch_addr":"00574b4e",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057556c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575528]",
+      "function_addr":"00574b54",
+      "function_name":"crt_kernel32.c_GetModuleFileNameW",
+      "switch_addr":"00574b54",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000078",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575528",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755c4]",
-      "function_addr":"00574b55",
-      "function_name":"crt_unknown.c_FUN_00574b55",
+      "function_addr":"00574b5a",
+      "function_name":"crt_kernel32.c_TlsFree",
       "switch_addr":"00574b5a",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"005755c4",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755cc]",
+      "function_addr":"00574b60",
+      "function_name":"crt_kernel32.c_TlsSetValue",
+      "switch_addr":"00574b60",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000008e",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755cc",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755c0]",
+      "function_addr":"00574b66",
+      "function_name":"crt_kernel32.c_TlsAlloc",
+      "switch_addr":"00574b66",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"005755c0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755a8]",
-      "function_addr":"00574b63",
-      "function_name":"crt_unknown.c_FUN_00574b63",
+      "function_addr":"00574b6c",
+      "function_name":"crt_kernel32.c_SetLastError",
       "switch_addr":"00574b6c",
       "target_count":1,
       "targets":[
@@ -6444,77 +7146,126 @@
       ]
     },
     {
+      "assembly":"JMP dword ptr [0x005755c8]",
+      "function_addr":"00574b72",
+      "function_name":"crt_kernel32.c_TlsGetValue",
+      "switch_addr":"00574b72",
+      "target_count":1,
+      "targets":[
+        {
+          "addr":"005755c8",
+          "ref_type":"INDIRECTION"
+        }
+      ]
+    },
+    {
       "assembly":"JMP dword ptr [0x0057555c]",
-      "function_addr":"00574b73",
-      "function_name":"crt_unknown.c_FUN_00574b73",
+      "function_addr":"00574b78",
+      "function_name":"crt_kernel32.c_LeaveCriticalSection",
       "switch_addr":"00574b78",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"0057555c",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754b0]",
+      "function_addr":"00574b7e",
+      "function_name":"crt_kernel32.c_EnterCriticalSection",
+      "switch_addr":"00574b7e",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000074",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754b0",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575500]",
-      "function_addr":"00574b7f",
-      "function_name":"crt_unknown.c_FUN_00574b7f",
+      "function_addr":"00574b84",
+      "function_name":"crt_kernel32.c_GetCurrentThreadId",
       "switch_addr":"00574b84",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575500",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005754a4]",
+      "function_addr":"00574b8a",
+      "function_name":"crt_kernel32.c_DeleteCriticalSection",
+      "switch_addr":"00574b8a",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000005d",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005754a4",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575558]",
-      "function_addr":"00574b8b",
-      "function_name":"crt_unknown.c_FUN_00574b8b",
+      "function_addr":"00574b90",
+      "function_name":"crt_kernel32.c_InitializeCriticalSection",
       "switch_addr":"00574b90",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575558",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x00575494]",
+      "function_addr":"00574b96",
+      "function_name":"crt_kernel32.c_CreateEventA",
+      "switch_addr":"00574b96",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:00000073",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"00575494",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575538]",
-      "function_addr":"00574b97",
-      "function_name":"crt_unknown.c_FUN_00574b97",
+      "function_addr":"00574b9c",
+      "function_name":"crt_kernel32.c_GetStdHandle",
       "switch_addr":"00574b9c",
-      "target_count":2,
+      "target_count":1,
       "targets":[
         {
           "addr":"00575538",
           "ref_type":"INDIRECTION"
-        },
+        }
+      ]
+    },
+    {
+      "assembly":"JMP dword ptr [0x005755ac]",
+      "function_addr":"00574ba2",
+      "function_name":"crt_kernel32.c_SetStdHandle",
+      "switch_addr":"00574ba2",
+      "target_count":1,
+      "targets":[
         {
-          "addr":"EXTERNAL:0000006b",
-          "ref_type":"COMPUTED_JUMP"
+          "addr":"005755ac",
+          "ref_type":"INDIRECTION"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x005755f4]",
       "function_addr":"00574ba8",
-      "function_name":"DirectDrawCreate",
+      "function_name":"crt_ddraw.c_DirectDrawCreate",
       "switch_addr":"00574ba8",
       "target_count":2,
       "targets":[
@@ -6531,7 +7282,7 @@
     {
       "assembly":"JMP dword ptr [0x005755fc]",
       "function_addr":"00574bae",
-      "function_name":"Ordinal_116",
+      "function_name":"crt_wsock32.c_WSACleanup",
       "switch_addr":"00574bae",
       "target_count":2,
       "targets":[
@@ -6548,7 +7299,7 @@
     {
       "assembly":"JMP dword ptr [0x00575600]",
       "function_addr":"00574bb4",
-      "function_name":"Ordinal_115",
+      "function_name":"crt_wsock32.c_WSAStartup",
       "switch_addr":"00574bb4",
       "target_count":2,
       "targets":[
@@ -6565,33 +7316,41 @@
     {
       "assembly":"JMP dword ptr [0x00575604]",
       "function_addr":"00574bba",
-      "function_name":"Ordinal_12",
+      "function_name":"crt_wsock32.c_ioctlsocket",
       "switch_addr":"00574bba",
-      "target_count":1,
+      "target_count":2,
       "targets":[
         {
           "addr":"00575604",
           "ref_type":"INDIRECTION"
+        },
+        {
+          "addr":"EXTERNAL:0000009c",
+          "ref_type":"COMPUTED_JUMP"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575608]",
       "function_addr":"00574bc0",
-      "function_name":"Ordinal_6",
+      "function_name":"crt_wsock32.c_getsockname",
       "switch_addr":"00574bc0",
-      "target_count":1,
+      "target_count":2,
       "targets":[
         {
           "addr":"00575608",
           "ref_type":"INDIRECTION"
+        },
+        {
+          "addr":"EXTERNAL:0000009d",
+          "ref_type":"COMPUTED_JUMP"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x0057560c]",
       "function_addr":"00574bc6",
-      "function_name":"Ordinal_1",
+      "function_name":"crt_wsock32.c_accept",
       "switch_addr":"00574bc6",
       "target_count":2,
       "targets":[
@@ -6608,7 +7367,7 @@
     {
       "assembly":"JMP dword ptr [0x00575610]",
       "function_addr":"00574bcc",
-      "function_name":"Ordinal_13",
+      "function_name":"crt_wsock32.c_listen",
       "switch_addr":"00574bcc",
       "target_count":2,
       "targets":[
@@ -6625,7 +7384,7 @@
     {
       "assembly":"JMP dword ptr [0x00575614]",
       "function_addr":"00574bd2",
-      "function_name":"Ordinal_3",
+      "function_name":"crt_wsock32.c_closesocket",
       "switch_addr":"00574bd2",
       "target_count":2,
       "targets":[
@@ -6642,7 +7401,7 @@
     {
       "assembly":"JMP dword ptr [0x00575618]",
       "function_addr":"00574bd8",
-      "function_name":"Ordinal_20",
+      "function_name":"crt_wsock32.c_sendto",
       "switch_addr":"00574bd8",
       "target_count":2,
       "targets":[
@@ -6659,7 +7418,7 @@
     {
       "assembly":"JMP dword ptr [0x0057561c]",
       "function_addr":"00574bde",
-      "function_name":"Ordinal_19",
+      "function_name":"crt_wsock32.c_send",
       "switch_addr":"00574bde",
       "target_count":2,
       "targets":[
@@ -6676,7 +7435,7 @@
     {
       "assembly":"JMP dword ptr [0x00575620]",
       "function_addr":"00574be4",
-      "function_name":"Ordinal_17",
+      "function_name":"crt_wsock32.c_recvfrom",
       "switch_addr":"00574be4",
       "target_count":2,
       "targets":[
@@ -6693,7 +7452,7 @@
     {
       "assembly":"JMP dword ptr [0x00575624]",
       "function_addr":"00574bea",
-      "function_name":"Ordinal_16",
+      "function_name":"crt_wsock32.c_recv",
       "switch_addr":"00574bea",
       "target_count":2,
       "targets":[
@@ -6710,7 +7469,7 @@
     {
       "assembly":"JMP dword ptr [0x00575628]",
       "function_addr":"00574bf0",
-      "function_name":"Ordinal_4",
+      "function_name":"crt_wsock32.c_connect",
       "switch_addr":"00574bf0",
       "target_count":2,
       "targets":[
@@ -6727,33 +7486,41 @@
     {
       "assembly":"JMP dword ptr [0x0057562c]",
       "function_addr":"00574bf6",
-      "function_name":"Ordinal_2",
+      "function_name":"crt_wsock32.c_bind",
       "switch_addr":"00574bf6",
-      "target_count":1,
+      "target_count":2,
       "targets":[
         {
           "addr":"0057562c",
           "ref_type":"INDIRECTION"
+        },
+        {
+          "addr":"EXTERNAL:000000a6",
+          "ref_type":"COMPUTED_JUMP"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575630]",
       "function_addr":"00574bfc",
-      "function_name":"Ordinal_23",
+      "function_name":"crt_wsock32.c_socket",
       "switch_addr":"00574bfc",
-      "target_count":1,
+      "target_count":2,
       "targets":[
         {
           "addr":"00575630",
           "ref_type":"INDIRECTION"
+        },
+        {
+          "addr":"EXTERNAL:000000a7",
+          "ref_type":"COMPUTED_JUMP"
         }
       ]
     },
     {
       "assembly":"JMP dword ptr [0x00575634]",
       "function_addr":"00574c02",
-      "function_name":"Ordinal_9",
+      "function_name":"crt_wsock32.c_htons",
       "switch_addr":"00574c02",
       "target_count":2,
       "targets":[
@@ -6770,7 +7537,7 @@
     {
       "assembly":"JMP dword ptr [0x00575638]",
       "function_addr":"00574c08",
-      "function_name":"Ordinal_15",
+      "function_name":"crt_wsock32.c_ntohs",
       "switch_addr":"00574c08",
       "target_count":2,
       "targets":[
@@ -6787,7 +7554,7 @@
     {
       "assembly":"JMP dword ptr [0x00575640]",
       "function_addr":"00574c0e",
-      "function_name":"Ordinal_2",
+      "function_name":"crt_dsound.c_DirectSoundEnumerateA",
       "switch_addr":"00574c0e",
       "target_count":2,
       "targets":[
@@ -6804,7 +7571,7 @@
     {
       "assembly":"JMP dword ptr [0x00575644]",
       "function_addr":"00574c14",
-      "function_name":"Ordinal_1",
+      "function_name":"crt_dsound.c_DirectSoundCreate",
       "switch_addr":"00574c14",
       "target_count":2,
       "targets":[
@@ -6819,5 +7586,5 @@
       ]
     }
   ],
-  "total_targets":1081
+  "total_targets":1095
 }

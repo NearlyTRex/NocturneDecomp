@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 23,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 25,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 26,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 27,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'char *'"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 28,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 29,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 30,
-        "message": "use of undeclared identifier 'Ordinal_16'"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 33,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 34,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 35,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 209,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 15,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "unknown_field"
+      "pointer_truncation"
     ],
-    "total_lines": 110
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -166,12 +105,12 @@
     {
       "addr": "00574bea",
       "is_variadic": false,
-      "name": "Ordinal_16"
+      "name": "crt_wsock32.c_recv"
     },
     {
       "addr": "00574be4",
       "is_variadic": false,
-      "name": "Ordinal_17"
+      "name": "crt_wsock32.c_recvfrom"
     },
     {
       "addr": "00548d50",
@@ -293,112 +232,8 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_34._0_4_ = local_2c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_34._4_4_ = source_addr;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_34._0_4_ = (byte *)length;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 21,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_44._8_4_ = *socket_handle;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_44._4_4_ = 0x549036;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 26,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_34._4_4_ = (SNetworkAddr *)&local_14;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "uStack_38._0_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "uStack_38._1_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "uStack_38._2_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._3_1_",
-      "severity": "mild",
-      "text": "uStack_38._3_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_44._8_4_ = length;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_44._4_4_ = buffer;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_44._0_4_ = *socket_handle;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 23,
       "match": "(uint *)((int)pSVar3",
       "severity": "moderate",
       "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
@@ -406,7 +241,7 @@
     },
     {
       "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 23,
       "match": "(int)pSVar3",
       "severity": "moderate",
       "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",

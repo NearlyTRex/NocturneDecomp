@@ -65,7 +65,7 @@ int __cdecl CTurret::updateInteraction(CTurret *this_ptr,UOrientationVector *use
 
 // Original: core_turret.cpp_CTurret_stopUsing_FUN_0054a900
 // Address: 0054a900
-void CTurret::stopUsing(int param_1,int param_2);
+void __cdecl CTurret::stopUsing(CTurret *this_ptr,CDemonActor *user);
 
 // Original: core_turret.cpp_CTurret_updatePatrol_FUN_0054a920
 // Address: 0054a920

@@ -17,7 +17,7 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y
   uint local_28;
   uint local_24;
   int local_1c;
-  uchar local_18;
+  byte local_18;
   
   if ((y0 <= y1) &&
      ((DAT_00766c6c != 0 ||
@@ -33,7 +33,7 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y
       local_2c = 1;
     }
     local_28 = y1 - y0;
-    local_18 = (uchar)base_color;
+    local_18 = (byte)base_color;
     if (local_28 == 0) {
       while (local_24 = local_24 - 1, local_24 != 0) {
         x0 = x0 + local_2c;
@@ -63,12 +63,12 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y
           x0 = x0 + local_2c;
           uVar4 = uVar3;
           if (blend_mode == 0) {
-            cockpit_ckptutil_c_FUN_0042f8c0(x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,local_18)
-            ;
+            cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042f8c0
+                      (x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,(uint)local_18);
           }
           else {
-            cockpit_ckptutil_c_FUN_0042f8c0
-                      (x0,y0 + 1,(float)(uVar3 >> 8 ^ 0xff) * 0.00390625,local_18);
+            cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042f8c0
+                      (x0,y0 + 1,(float)(uVar3 >> 8 ^ 0xff) * 0.00390625,(uint)local_18);
           }
         }
       }
@@ -92,12 +92,12 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y
           y0 = y0 + 1;
           uVar4 = uVar3;
           if (bVar1) {
-            cockpit_ckptutil_c_FUN_0042f8c0
-                      (x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,blend_color);
+            cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042f8c0
+                      (x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,(uint)blend_color);
           }
           else {
-            cockpit_ckptutil_c_FUN_0042f8c0
-                      (local_2c + x0,y0,(float)(uVar3 >> 8 ^ 0xff) * 0.00390625,blend_color);
+            cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042f8c0
+                      (local_2c + x0,y0,(float)(uVar3 >> 8 ^ 0xff) * 0.00390625,(uint)blend_color);
           }
         }
       }

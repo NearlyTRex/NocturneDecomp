@@ -67,7 +67,7 @@ section .text
     PUSH EDI                            ; 0055026a | DAT_01b4d738
     MOV dword ptr [EBX + 0x7d8],EAX     ; 0055026b
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00550271
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     MOV EAX,dword ptr [EBX + 0x7d8]     ; 00550276
     ADD ESP,0x4                         ; 0055027c
     TEST EAX,EAX                        ; 0055027f
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_00550337
     PUSH ESI                            ; 0055033d | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0055033e
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00550343
     MOV EAX,dword ptr [EBX + 0x7d8]     ; 00550346
     MOV ESP,EBP                         ; 0055034c

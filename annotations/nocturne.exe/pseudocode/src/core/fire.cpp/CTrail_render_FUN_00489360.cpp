@@ -96,7 +96,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   DAT_005c50cc = 0xffff;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,&local_78);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

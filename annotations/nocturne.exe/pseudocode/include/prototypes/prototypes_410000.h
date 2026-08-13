@@ -90,7 +90,7 @@ ECollisionType __cdecl core_barrier_cpp_CBarrier_getCollisionType_FUN_00411860(C
 void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(CBarrier *this_ptr);
 CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_004118c0(CBarrier *this_ptr,uint flags);
 void __cdecl core_bat_cpp_staticInit_FUN_00411910(void);
-float core_bat_cpp_FUN_00411940(float param_1,float param_2);
+float __cdecl core_bat_cpp_fmodfPositive_FUN_00411940(float value,float modulus);
 CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_004119e0(void);
 CDemonActorType * __cdecl core_bat_cpp_CBat_getActorType_FUN_00411a00(CBat *this_ptr);
 CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_00411a10(CBat *this_ptr);
@@ -213,8 +213,8 @@ SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_00418100(SBod
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel *this_ptr,uint flags);
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire *this_ptr,uint flags);
 void __cdecl core_boneguy_cpp_staticInit_FUN_00418150(void);
-float * core_boneguy_cpp_FUN_00418180(float *param_1,int param_2);
-CVector3f * core_boneguy_cpp_FUN_004181f0(CVector3f *param_1,CDemonActor *param_2);
+CVector3f * __cdecl core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_00418180(CVector3f *out,CDemonActor *actor);
+CVector3f * __cdecl core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_004181f0(CVector3f *out,CDemonActor *actor);
 CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_004182a0(void);
 CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_004182c0(CBoneGuy *this_ptr);
 float * core_boneguy_cpp_FUN_004182cd(float *param_1);

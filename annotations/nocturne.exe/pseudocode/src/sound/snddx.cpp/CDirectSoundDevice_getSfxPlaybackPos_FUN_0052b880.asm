@@ -23,7 +23,7 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-;   sound_sndmain.cpp_FUN_00529980
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     ADD ESP,0x10                        ; 0052b96e
     LEA EAX,[ESP + 0x8]                 ; 0052b971
     PUSH EAX                            ; 0052b975
-    CALL sound_sndmain.cpp_FUN_00529980 ; 0052b976
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 0052b976
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x4                         ; 0052b97b
     XOR EAX,EAX                         ; 0052b97e
     MOV EDX,0xbff00000                  ; 0052b980

@@ -8,6 +8,7 @@
 #include "types/classes/CBugs.h"
 #include "types/classes/CChain.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModel.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -94,7 +95,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00424260(CCharacter *this_pt
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_004246e0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 float __cdecl core_charactr_cpp_clampFloat_FUN_00424730(float value,float limit);
-float core_charactr_cpp_FUN_00424780(void);
+float __cdecl core_charactr_cpp_clampNormalizedAngle_FUN_00424780(float angle,float limit);
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004247f0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00424e90(CCharacter *this_ptr,CVector3f *target);
 void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00424f40(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
@@ -181,8 +182,8 @@ void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042b490(CCh
 CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042b4d0(CVector3f *src,CVector3f *dst,float *scalar);
 void __cdecl core_charactr_cpp_setActorXPos_FUN_0042b500(CDemonActor *actor,float x);
 void __cdecl core_charactr_cpp_projectPointToVertex_FUN_0042b510(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position);
-void core_charactr_cpp_FUN_0042b570(void);
-undefined4 core_charactr_cpp_FUN_0042b5a0(void);
+void __cdecl core_charactr_cpp_getTranslationMatrix_FUN_0042b570(CMatrix3x4f *matrix,CVector3f *out_translation);
+int __cdecl core_charactr_cpp_getDeformableModelPartCount_FUN_0042b5a0(CDeformableModel *model_ptr);
 char * __cdecl core_charactr_cpp_getActorCreateEvent_FUN_0042b5b0(CDemonActor *actor);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(CGame *game_ptr);
 CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *this_ptr,uint flags);
@@ -247,11 +248,11 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042eb90(char *filename,SEd
 void __cdecl cockpit_ckptutil_c_loadSingleEdgeList_FUN_0042edc0(char *filename,void **edge_data_out,int *edge_count_out);
 void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042ef60(SEdge *edges,int count,int x_offset,int y_offset);
-void cockpit_ckptutil_c_FUN_0042f050(int param_1,short *param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_0042f050(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width);
 void __cdecl cockpit_ckptutil_c_drawLineListFromBitmap_FUN_0042f260(CPackedBitmap *bitmap,short *line_data,int line_count,int offset_x,int offset_y);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042f330(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int x0,int y0,int x1,int y1,int color);
-void cockpit_ckptutil_c_FUN_0042f8c0(int param_1,int param_2,float param_3,int param_4);
-void cockpit_ckptutil_c_FUN_0042fd60(int param_1,int param_2,float param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042f8c0(int x,int y,float alpha,int color);
+void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042fd60(int x,int y,float blend_factor,int palette_index);
 

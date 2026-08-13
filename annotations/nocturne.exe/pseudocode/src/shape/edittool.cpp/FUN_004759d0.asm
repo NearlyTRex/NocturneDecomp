@@ -39,10 +39,10 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
-;   shape_edittool.cpp_FUN_004722b0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     SUB ESP,0x14c                       ; 004759d4
     MOV EDX,dword ptr [0x005b6d50]      ; 004759da | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004759e0
-    CALL shape_edittool.cpp_FUN_004722b0 ; 004759e1
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 004759e1
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools * this_ptr)
     MOV EAX,[0x01c00c58]                ; 004759e6 | g_ClipLeft
     ADD ESP,0x4                         ; 004759eb
     MOV dword ptr [ESP + 0x134],EAX     ; 004759ee

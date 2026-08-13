@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00438660",
+    "address_range": [
+      [
+        "00438660",
+        "004386af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_setWindVelocity_FUN_00438660",
+    "signature": "void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_00438660(CClothList *this_ptr,CVector3f *wind_velocity)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 20,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "wind_velocity",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 16,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->wind_velocity).x = wind_velocity->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

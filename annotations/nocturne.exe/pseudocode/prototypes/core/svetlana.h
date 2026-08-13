@@ -41,7 +41,7 @@ void __cdecl CSvetlana::performBladeAttack(CSvetlana *this_ptr,int bone_index);
 
 // Original: core_svetlana.cpp_CSvetlana_archive_FUN_00542d10
 // Address: 00542d10
-void CSvetlana::archive(CHero *param_1);
+void __cdecl CSvetlana::archive(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20
 // Address: 00542d20

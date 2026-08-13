@@ -53,8 +53,8 @@
 ;   core_inv.cpp_CInventory_loadItems_FUN_004c14d0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900
 ;   core_mission.cpp_CDemonMission_FUN_004d7ea0
-;   core_mission.cpp_FUN_004d9900
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;
@@ -520,8 +520,8 @@ section .text
     RET                                 ; 004d84d0
     PUSH EBX                            ; 004d84d1
         ;   Label: LAB_004d84d1
-    CALL core_mission.cpp_FUN_004d9900  ; 004d84d2
-        ;   XREF to: 004d9900 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9900()
+    CALL core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900 ; 004d84d2
+        ;   XREF to: 004d9900 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d84d7
     JMP 0x004d8008                      ; 004d84da
         ;   XREF to: 004d8008 (UNCONDITIONAL_JUMP)  ; LAB_004d8008

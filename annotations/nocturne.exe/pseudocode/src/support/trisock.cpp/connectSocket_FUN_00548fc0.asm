@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; Called Functions:
-;   Ordinal_4
+;   crt_wsock32.c_connect
 ;   support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00548fea
     MOV ECX,dword ptr [EAX]             ; 00548feb
     PUSH ECX                            ; 00548fed
-    CALL Ordinal_4                      ; 00548fee
-        ;   XREF to: 00574bf0 (UNCONDITIONAL_CALL)  ; undefined Ordinal_4()
+    CALL crt_wsock32.c_connect          ; 00548fee
+        ;   XREF to: 00574bf0 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_connect(_SOCKET s, SOCKADDR * name, int namelen)
     TEST EAX,EAX                        ; 00548ff3
     SETZ AL                             ; 00548ff5
     AND EAX,0xff                        ; 00548ff8

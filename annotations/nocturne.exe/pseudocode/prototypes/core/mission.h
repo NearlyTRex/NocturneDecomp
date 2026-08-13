@@ -7,9 +7,9 @@
 // Address: 004d7dd0
 void __cdecl staticInit(void);
 
-// Original: core_mission.cpp_FUN_004d7de0
+// Original: core_mission.cpp_skipLine_FUN_004d7de0
 // Address: 004d7de0
-void FUN_004d7de0(void);
+void __cdecl skipLine(_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_FUN_004d7e00
 // Address: 004d7e00
@@ -131,13 +131,13 @@ void __cdecl CDemonMission::generateActorName(CDemonMission *this_ptr,CDemonActo
 // Address: 004d9780
 int __cdecl CDemonMission::startMission(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004d98c0
+// Original: core_mission.cpp_CDemonMission_calculateAllActorChecksums_FUN_004d98c0
 // Address: 004d98c0
-void FUN_004d98c0(int param_1,undefined4 param_2);
+void __cdecl CDemonMission::calculateAllActorChecksums(CDemonMission *this_ptr,uint *checksum);
 
-// Original: core_mission.cpp_FUN_004d9900
+// Original: core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900
 // Address: 004d9900
-void FUN_004d9900(void);
+void __cdecl CDemonMission::freeAllAssets(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920
 // Address: 004d9920

@@ -4972,6 +4972,10 @@ WatcomTypeInfo g_filebufTypeInfo_005a4b60 = {
     .class_name = (char *)s_filebuf_005c2060
 };
 
+// WatcomVirtualBaseDescriptor
+WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a48b0 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
+WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18 = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
+
 // filebuf_vtable
 filebuf_vtable g_FilebufVTable = {
     .do_sgetn = (cpp_streambuf_do_sgetn *)crt_iostream_cpp_streambuf_do_sgetn_FUN_0056ff82,

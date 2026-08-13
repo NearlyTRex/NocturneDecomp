@@ -190,7 +190,7 @@
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60
 ;   core_event.cpp_CEventList_validateCondition_FUN_0047dc90
 ;   core_event.cpp_extractParenArg_FUN_0047a650
-;   core_event.cpp_FUN_0047a210
+;   core_event.cpp_formatEventError_FUN_0047a210
 ;   core_event.cpp_isValidIdentifierChar_FUN_00480f40
 ;   core_event.cpp_parseDamageType_FUN_0047a8f0
 ;   ... and 38 more
@@ -364,8 +364,8 @@ section .text
     PUSH EBX                            ; 0047ada1
         ;   Label: LAB_0047ada1
     PUSH 0x57f587                       ; 0047ada2 | = "Event name %s is too long"
-    CALL core_event.cpp_FUN_0047a210    ; 0047ada7
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047ada7
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047adac
     LEA ESP,[EBP + 0x7e]                ; 0047adaf
     POP EBP                             ; 0047adb2
@@ -409,8 +409,8 @@ section .text
         ;   XREF to: 0047adde (CONDITIONAL_JUMP)  ; LAB_0047adde
     PUSH EBX                            ; 0047ae07
     PUSH 0x57f5c3                       ; 0047ae08 | = "Event name %s is not valid"
-    CALL core_event.cpp_FUN_0047a210    ; 0047ae0d
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047ae0d
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047ae12
     LEA ESP,[EBP + 0x7e]                ; 0047ae15
     POP EBP                             ; 0047ae18
@@ -520,8 +520,8 @@ section .text
         ;   Label: LAB_0047aef3
     PUSH EAX                            ; 0047aef9
     PUSH 0x57f5f1                       ; 0047aefa | = "SpotLight %s doesn't exist."
-    CALL core_event.cpp_FUN_0047a210    ; 0047aeff
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047aeff
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047af04
     LEA ESP,[EBP + 0x7e]                ; 0047af07
     POP EBP                             ; 0047af0a
@@ -639,8 +639,8 @@ section .text
         ;   XREF to: 0047b010 (UNCONDITIONAL_JUMP)  ; LAB_0047b010
     PUSH 0x57f680                       ; 0047b028 | = "Error parsing createExplosion() parms"
         ;   Label: LAB_0047b028
-    CALL core_event.cpp_FUN_0047a210    ; 0047b02d
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b02d
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b032
     LEA ESP,[EBP + 0x7e]                ; 0047b035
     POP EBP                             ; 0047b038
@@ -747,8 +747,8 @@ section .text
         ;   XREF to: 0047b000 (UNCONDITIONAL_JUMP)  ; LAB_0047b000
     PUSH 0x57f6c1                       ; 0047b12e | = "Error parsing createExplosion() parms"
         ;   Label: LAB_0047b12e
-    CALL core_event.cpp_FUN_0047a210    ; 0047b133
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b133
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b138
     LEA ESP,[EBP + 0x7e]                ; 0047b13b
     POP EBP                             ; 0047b13e
@@ -817,8 +817,8 @@ section .text
         ;   XREF to: 0047b1be (UNCONDITIONAL_JUMP)  ; LAB_0047b1be
     PUSH 0x57f6ef                       ; 0047b1d2 | = "Error parsing createExplosion() parms"
         ;   Label: LAB_0047b1d2
-    CALL core_event.cpp_FUN_0047a210    ; 0047b1d7
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b1d7
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b1dc
     LEA ESP,[EBP + 0x7e]                ; 0047b1df
     POP EBP                             ; 0047b1e2
@@ -832,8 +832,8 @@ section .text
         ;   XREF to: 0047b153 (UNCONDITIONAL_JUMP)  ; LAB_0047b153
     PUSH 0x57f715                       ; 0047b1ef | = "Error parsing createExplosion() parms..."
         ;   Label: LAB_0047b1ef
-    CALL core_event.cpp_FUN_0047a210    ; 0047b1f4
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b1f4
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b1f9
     LEA ESP,[EBP + 0x7e]                ; 0047b1fc
     POP EBP                             ; 0047b1ff
@@ -1003,8 +1003,8 @@ section .text
         ;   XREF to: 0047b39c (UNCONDITIONAL_JUMP)  ; LAB_0047b39c
     PUSH 0x57f781                       ; 0047b3b0 | = "Error parsing displayBitmap() parms"
         ;   Label: LAB_0047b3b0
-    CALL core_event.cpp_FUN_0047a210    ; 0047b3b5
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b3b5
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b3ba
     LEA ESP,[EBP + 0x7e]                ; 0047b3bd
     POP EBP                             ; 0047b3c0
@@ -1047,8 +1047,8 @@ section .text
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead
     PUSH 0x57f7a9                       ; 0047b419 | = "Bitmap doesn't exist"
         ;   Label: LAB_0047b419
-    CALL core_event.cpp_FUN_0047a210    ; 0047b41e
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b41e
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b423
     LEA ESP,[EBP + 0x7e]                ; 0047b426
     POP EBP                             ; 0047b429
@@ -1058,8 +1058,8 @@ section .text
     RET                                 ; 0047b42d
     PUSH 0x57f7be                       ; 0047b42e | = "Bitmap file size does not match speci..."
         ;   Label: LAB_0047b42e
-    CALL core_event.cpp_FUN_0047a210    ; 0047b433
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b433
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b438
     LEA ESP,[EBP + 0x7e]                ; 0047b43b
     POP EBP                             ; 0047b43e
@@ -1601,8 +1601,8 @@ section .text
         ;   XREF to: 0047b92a (UNCONDITIONAL_JUMP)  ; LAB_0047b92a
     PUSH 0x57f8b6                       ; 0047b94a | = "Syntax error in killHero() parms"
         ;   Label: LAB_0047b94a
-    CALL core_event.cpp_FUN_0047a210    ; 0047b94f
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047b94f
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047b954
     LEA ESP,[EBP + 0x7e]                ; 0047b957
     POP EBP                             ; 0047b95a
@@ -1729,8 +1729,8 @@ section .text
         ;   Label: LAB_0047ba5e
     PUSH EAX                            ; 0047ba64
     PUSH 0x57f8d7                       ; 0047ba65 | = "Unknown damage type \"%s\" in hurtCha..."
-    CALL core_event.cpp_FUN_0047a210    ; 0047ba6a
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047ba6a
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047ba6f
     LEA ESP,[EBP + 0x7e]                ; 0047ba72
     POP EBP                             ; 0047ba75
@@ -2022,8 +2022,8 @@ section .text
         ;   XREF to: 0047bc68 (UNCONDITIONAL_JUMP)  ; LAB_0047bc68
     PUSH 0x57f9ae                       ; 0047bd46 | = "Syntax error in killCharacter() parms"
         ;   Label: LAB_0047bd46
-    CALL core_event.cpp_FUN_0047a210    ; 0047bd4b
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047bd4b
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047bd50
     LEA ESP,[EBP + 0x7e]                ; 0047bd53
     POP EBP                             ; 0047bd56
@@ -2151,8 +2151,8 @@ section .text
         ;   Label: LAB_0047be63
     PUSH EAX                            ; 0047be69
     PUSH 0x57f9d4                       ; 0047be6a | = "Unknown death type \"%s\" in killChar..."
-    CALL core_event.cpp_FUN_0047a210    ; 0047be6f
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047be6f
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047be74
     LEA ESP,[EBP + 0x7e]                ; 0047be77
     POP EBP                             ; 0047be7a
@@ -2224,8 +2224,8 @@ section .text
         ;   XREF to: 0047bf01 (UNCONDITIONAL_JUMP)  ; LAB_0047bf01
     PUSH 0x57fa0f                       ; 0047bf15 | = "Can't use killHero command in multi-p..."
         ;   Label: LAB_0047bf15
-    CALL core_event.cpp_FUN_0047a210    ; 0047bf1a
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047bf1a
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047bf1f
     LEA ESP,[EBP + 0x7e]                ; 0047bf22
     POP EBP                             ; 0047bf25
@@ -2235,8 +2235,8 @@ section .text
     RET                                 ; 0047bf29
     PUSH 0x57fa46                       ; 0047bf2a | = "Syntax error in killHero() parms"
         ;   Label: LAB_0047bf2a
-    CALL core_event.cpp_FUN_0047a210    ; 0047bf2f
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047bf2f
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047bf34
     LEA ESP,[EBP + 0x7e]                ; 0047bf37
     POP EBP                             ; 0047bf3a
@@ -2279,8 +2279,8 @@ section .text
         ;   Label: LAB_0047bf99
     PUSH EAX                            ; 0047bf9f
     PUSH 0x57fa67                       ; 0047bfa0 | = "Unknown death type \"%s\" in killHero..."
-    CALL core_event.cpp_FUN_0047a210    ; 0047bfa5
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047bfa5
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047bfaa
     LEA ESP,[EBP + 0x7e]                ; 0047bfad
     POP EBP                             ; 0047bfb0
@@ -3502,8 +3502,8 @@ section .text
         ;   XREF to: 0047aead (UNCONDITIONAL_JUMP)  ; LAB_0047aead
     PUSH 0x57fd89                       ; 0047cb23 | = "Error parsing setLightFilterFrame parms"
         ;   Label: LAB_0047cb23
-    CALL core_event.cpp_FUN_0047a210    ; 0047cb28
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047cb28
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047cb2d
     LEA ESP,[EBP + 0x7e]                ; 0047cb30
     POP EBP                             ; 0047cb33
@@ -3515,8 +3515,8 @@ section .text
         ;   Label: LAB_0047cb38
     PUSH EAX                            ; 0047cb3e
     PUSH 0x57fdb1                       ; 0047cb3f | = "SpotLight %s doesn't exist."
-    CALL core_event.cpp_FUN_0047a210    ; 0047cb44
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047cb44
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047cb49
     LEA ESP,[EBP + 0x7e]                ; 0047cb4c
     POP EBP                             ; 0047cb4f
@@ -3531,8 +3531,8 @@ section .text
     LEA EAX,[EBP + 0xfffff89a]          ; 0047cb5e
     PUSH EAX                            ; 0047cb64
     PUSH 0x57fdcd                       ; 0047cb65 | = "Invalid filter frame, %s has %d filters"
-    CALL core_event.cpp_FUN_0047a210    ; 0047cb6a
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047cb6a
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0xc                         ; 0047cb6f
     LEA ESP,[EBP + 0x7e]                ; 0047cb72
     POP EBP                             ; 0047cb75
@@ -4710,8 +4710,8 @@ section .text
         ;   XREF to: 0047d628 (UNCONDITIONAL_JUMP)  ; LAB_0047d628
     PUSH 0x5800b9                       ; 0047d63c | = "Syntax error in switchCamera() parms"
         ;   Label: LAB_0047d63c
-    CALL core_event.cpp_FUN_0047a210    ; 0047d641
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047d641
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047d646
     LEA ESP,[EBP + 0x7e]                ; 0047d649
     POP EBP                             ; 0047d64c
@@ -4761,8 +4761,8 @@ section .text
         ;   Label: LAB_0047d6b2
     PUSH EAX                            ; 0047d6b8
     PUSH 0x5800de                       ; 0047d6b9 | = "Camera \"%s\" doesn't exist"
-    CALL core_event.cpp_FUN_0047a210    ; 0047d6be
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047d6be
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047d6c3
     LEA ESP,[EBP + 0x7e]                ; 0047d6c6
     POP EBP                             ; 0047d6c9
@@ -4802,8 +4802,8 @@ section .text
         ;   XREF to: 0047d6fc (UNCONDITIONAL_JUMP)  ; LAB_0047d6fc
     PUSH 0x5800fe                       ; 0047d710 | = "Syntax error in switchCamera() parms"
         ;   Label: LAB_0047d710
-    CALL core_event.cpp_FUN_0047a210    ; 0047d715
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047d715
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047d71a
     LEA ESP,[EBP + 0x7e]                ; 0047d71d
     POP EBP                             ; 0047d720
@@ -4817,8 +4817,8 @@ section .text
         ;   XREF to: 0047d67f (UNCONDITIONAL_JUMP)  ; LAB_0047d67f
     PUSH 0x580123                       ; 0047d72d | = "Missing ')' in switchCamera() statement"
         ;   Label: LAB_0047d72d
-    CALL core_event.cpp_FUN_0047a210    ; 0047d732
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047d732
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047d737
     LEA ESP,[EBP + 0x7e]                ; 0047d73a
     POP EBP                             ; 0047d73d
@@ -4916,8 +4916,8 @@ section .text
         ;   XREF to: 0047d7fc (UNCONDITIONAL_JUMP)  ; LAB_0047d7fc
     PUSH 0x580163                       ; 0047d81c | = "Error parsing warpTo command parms"
         ;   Label: LAB_0047d81c
-    CALL core_event.cpp_FUN_0047a210    ; 0047d821
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047d821
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047d826
     LEA ESP,[EBP + 0x7e]                ; 0047d829
     POP EBP                             ; 0047d82c
@@ -5220,8 +5220,8 @@ section .text
         ;   XREF to: 0047d959 (UNCONDITIONAL_JUMP)  ; LAB_0047d959
     PUSH 0x5801b3                       ; 0047db4a | = "Error parsing warpTo command parms"
         ;   Label: LAB_0047db4a
-    CALL core_event.cpp_FUN_0047a210    ; 0047db4f
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047db4f
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047db54
     LEA ESP,[EBP + 0x7e]                ; 0047db57
     POP EBP                             ; 0047db5a
@@ -5232,8 +5232,8 @@ section .text
     PUSH EBX                            ; 0047db5f
         ;   Label: LAB_0047db5f
     PUSH 0x5801d6                       ; 0047db60 | = "Unknown meta-function starting at %s"
-    CALL core_event.cpp_FUN_0047a210    ; 0047db65
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047db65
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x8                         ; 0047db6a
     LEA ESP,[EBP + 0x7e]                ; 0047db6d
     POP EBP                             ; 0047db70
@@ -5247,8 +5247,8 @@ section .text
     JZ 0x0047ac76                       ; 0047db7b
         ;   XREF to: 0047ac76 (CONDITIONAL_JUMP)  ; LAB_0047ac76
     PUSH 0x5801fb                       ; 0047db81 | = "Extra characters found"
-    CALL core_event.cpp_FUN_0047a210    ; 0047db86
-        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0047a210()
+    CALL core_event.cpp_formatEventError_FUN_0047a210 ; 0047db86
+        ;   XREF to: 0047a210 (UNCONDITIONAL_CALL)  ; int core_event.cpp_formatEventError_FUN_0047a210(char * format)
     ADD ESP,0x4                         ; 0047db8b
     LEA ESP,[EBP + 0x7e]                ; 0047db8e
     POP EBP                             ; 0047db91

@@ -10,6 +10,6 @@ void __cdecl core_setdir_cpp_staticInit_FUN_00511d60(void)
 
 {
   __arrinit
-            (g_CBoundingBox3D_ARRAY_02665930,2000,&g_CBoundingBox3D_005993f0);
+            (g_CBoundingBox3D_ARRAY_02665930,2000,&g_CBoundingBox3DTypeInfo_005993f0);
   return;
 }

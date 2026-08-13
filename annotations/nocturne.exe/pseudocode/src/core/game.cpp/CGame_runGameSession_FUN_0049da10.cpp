@@ -267,7 +267,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         iVar3 = shape_edittool_cpp_FUN_00475230(&g_CPickList_01c78424);
         if (iVar3 != -2) {
           engine_2d_c_clearInputAndWait_FUN_00403f50();
-          shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+          shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+                    (g_CEditorTools_PTR_005b6d50);
           shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
           _DAT_01c78420 = 0;
         }

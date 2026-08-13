@@ -49,7 +49,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
   INT_005b7630 = 0x7f;
   local_14 = 0;
   do {
-    shape_edittool_cpp_FUN_004722b0(this_ptr);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(this_ptr);
     strupr(local_158.string_data);
     if (*directory_path != '\0') {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Directory: ");
@@ -108,7 +108,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0
       iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
       if (iVar3 == 0x1b) {
         *output_buffer = '\0';
-        shape_edittool_cpp_FUN_004720c0(this_ptr);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         INT_005b7630 = local_18;
@@ -209,7 +209,7 @@ LAB_004711e7:
     output_buffer[1] = cVar1;
     output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
-  shape_edittool_cpp_FUN_004720c0(this_ptr);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(this_ptr);
   INT_005b7630 = local_18;
   return 1;
 }

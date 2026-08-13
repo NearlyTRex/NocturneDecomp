@@ -39,7 +39,7 @@
 ;   int g_ClipBottom
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042f8c0
+;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0
 ;   cockpit_ckptutil.c_putPixel_FUN_00430140
 ;
 ; *****************************************************************************
@@ -225,8 +225,8 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 0042f4ad
     PUSH ESI                            ; 0042f4b1
     PUSH EDI                            ; 0042f4b2
-    CALL cockpit_ckptutil.c_FUN_0042f8c0 ; 0042f4b3
-        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f8c0()
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0 ; 0042f4b3
+        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 0042f4b8
     JMP 0x0042f45b                      ; 0042f4bb
         ;   XREF to: 0042f45b (UNCONDITIONAL_JUMP)  ; LAB_0042f45b
@@ -250,8 +250,8 @@ section .text
     PUSH dword ptr [ESP + 0x34]         ; 0042f4e7
     PUSH EAX                            ; 0042f4eb
     PUSH EDI                            ; 0042f4ec
-    CALL cockpit_ckptutil.c_FUN_0042f8c0 ; 0042f4ed
-        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f8c0()
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0 ; 0042f4ed
+        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 0042f4f2
     JMP 0x0042f45b                      ; 0042f4f5
         ;   XREF to: 0042f45b (UNCONDITIONAL_JUMP)  ; LAB_0042f45b
@@ -313,8 +313,8 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 0042f58a
     PUSH ESI                            ; 0042f58e
     PUSH EDI                            ; 0042f58f
-    CALL cockpit_ckptutil.c_FUN_0042f8c0 ; 0042f590
-        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f8c0()
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0 ; 0042f590
+        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 0042f595
     JMP 0x0042f537                      ; 0042f598
         ;   XREF to: 0042f537 (UNCONDITIONAL_JUMP)  ; LAB_0042f537
@@ -349,8 +349,8 @@ section .text
     PUSH ESI                            ; 0042f5e2
     ADD EAX,EDI                         ; 0042f5e3
     PUSH EAX                            ; 0042f5e5
-    CALL cockpit_ckptutil.c_FUN_0042f8c0 ; 0042f5e6
-        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f8c0()
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0 ; 0042f5e6
+        ;   XREF to: 0042f8c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 0042f5eb
     JMP 0x0042f537                      ; 0042f5ee
         ;   XREF to: 0042f537 (UNCONDITIONAL_JUMP)  ; LAB_0042f537

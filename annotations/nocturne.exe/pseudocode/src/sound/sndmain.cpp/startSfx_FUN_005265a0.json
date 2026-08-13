@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 552,
-    "complexity_score": 545,
+    "complexity_score": 546,
     "cross_reference_count": 15,
     "function_call_count": 27,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 281,
     "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
@@ -140,7 +140,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 832
+    "total_lines": 833
   },
   "cross_references": [
     {
@@ -343,11 +343,6 @@
       "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80"
     },
     {
-      "addr": "00529980",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00529980"
-    },
-    {
       "addr": "00522480",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480"
@@ -371,6 +366,11 @@
       "addr": "00528800",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_lockSound_FUN_00528800"
+    },
+    {
+      "addr": "00529980",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_00529980"
     },
     {
       "addr": "00521830",
@@ -873,15 +873,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 233,
+      "line": 234,
       "match": "&stack0xfffffc70",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00529980(\"startSfx - can't get sample %s\\n\",&stack0xfffffc70);",
+      "text": "(\"startSfx - can't get sample %s\\n\",&stack0xfffffc70);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 269,
+      "line": 270,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*_DAT_02dc8318 + 0x3c))",
@@ -889,7 +889,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 273,
+      "line": 274,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar6 = (**(code **)(*_DAT_02dc8318 + 0x48))(_DAT_02dc8318,this_ptr_00), iVar6 == 0))",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar4 = pCVar4;` self-assign or two-var `tmp = &pCVar4->field; pCVar4 = tmp;` ping-pong \u2014 plus a constant-index store on `pCVar4`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 244,
+      "line": 245,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

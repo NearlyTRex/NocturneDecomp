@@ -14,6 +14,7 @@
 #include "types/classes/CSfxSlot.h"
 #include "types/classes/CSmiley.h"
 #include "types/classes/CSound.h"
+#include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWavOutDevice.h"
 #include "types/enums/ECollisionType.h"
@@ -43,8 +44,8 @@ void __cdecl sound_sndmain_cpp_staticInit_FUN_00521190(void);
 void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005211f0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size);
 void __cdecl sound_sndmain_cpp_computeFFT_FUN_005214e0(float *input,int size,float *output_real,float *output_imag);
 int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample);
-int sound_sndmain_cpp_FUN_00521bf0(void);
-CSfxSample * sound_sndmain_cpp_FUN_00521c50(void);
+int __cdecl sound_sndmain_cpp_getActiveSfxCount_FUN_00521bf0(void);
+CSfxSample * __cdecl sound_sndmain_cpp_findFreeSfxSample_FUN_00521c50(void);
 int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int requested_bytes);
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_00521d80(char *line);
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(CSfxSample *this_ptr);
@@ -52,14 +53,14 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
 int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_00522970(char *filename);
 CSfxSample * sound_sndmain_cpp_FUN_005229f0(int param_1,char *param_2);
 void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10(void);
-int sound_sndmain_cpp_FUN_00522e00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_00522e00(int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_00522ea0(float distance,float reference_distance,float min_distance,float max_distance);
 void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_00522f10(int requested_size,int num_buffers);
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005230d0(void);
-void sound_sndmain_cpp_FUN_00523170(void);
+void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_00523170(void);
 void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride);
 CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint sfx_handle,int check_hardware_playback);
-void sound_sndmain_cpp_FUN_00523550(void);
+void __cdecl sound_sndmain_cpp_generateSilence_FUN_00523550(void *buffer,uint bits_per_sample,uint num_samples);
 void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005235b0(double input,int *out_integer_part,int *out_fractional_part);
 double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00523610(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_00523750(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
@@ -117,17 +118,17 @@ int __cdecl sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0(void);
 int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(int enable);
 int __cdecl sound_sndmain_cpp_getSfxSampleInfo_FUN_00526cd0(uint sfx_handle,CSfxSample *output_buffer);
 double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint sfx_handle,uint output_format);
-undefined4 sound_sndmain_cpp_FUN_00526dd0(void);
+int __cdecl sound_sndmain_cpp_getSfxOptions_FUN_00526dd0(uint sfx_handle,CSfxOptions *output_options);
 int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00526e10(uint sfx_handle,double pos_x,double pos_y,double pos_z);
 int __cdecl sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0(uint sfx_handle,CVector3f *position_source_ptr);
-undefined4 sound_sndmain_cpp_FUN_00526f00(void);
-undefined4 sound_sndmain_cpp_FUN_00526f60(void);
+int __cdecl sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_00526f00(uint sfx_handle,CVector3d *position_source_ptr);
+int __cdecl sound_sndmain_cpp_setSfxVelocity_FUN_00526f60(uint sfx_handle,double vel_x,double vel_y,double vel_z);
 int __cdecl sound_sndmain_cpp_setSfxTrackedFloatVelocity_FUN_00526ff0(uint sfx_handle,CVector3f *velocity_source_ptr);
-undefined4 sound_sndmain_cpp_FUN_00527060(void);
+int __cdecl sound_sndmain_cpp_setSfxTrackedDoubleVelocity_FUN_00527060(uint sfx_handle,CVector3d *velocity_source_ptr);
 int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005270d0(uint sfx_handle,float volume);
 int __cdecl sound_sndmain_cpp_setSfxBaseFrequency_FUN_00527130(uint sfx_handle,float base_frequency);
-undefined4 sound_sndmain_cpp_FUN_00527190(void);
-undefined4 sound_sndmain_cpp_FUN_00527200(void);
+int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_00527190(uint sfx_handle,int index,void *value);
+int __cdecl sound_sndmain_cpp_setSfxIsActive_FUN_00527200(uint sfx_handle,int active);
 int __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(uint sfx_handle);
 int __cdecl sound_sndmain_cpp_setSfxFade_FUN_00527260(uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade);
 void __cdecl sound_sndmain_cpp_killAllSfx_FUN_005272b0(void);
@@ -138,7 +139,7 @@ void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_00527410(int channel_index,i
 int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(int channel_index);
 uint __cdecl sound_sndmain_cpp_getFirstActiveSfx_FUN_005274e0(void);
 uint __cdecl sound_sndmain_cpp_FUN_00527520(uint current_sfx_handle);
-void sound_sndmain_cpp_FUN_00527570(char *param_1);
+void __cdecl sound_sndmain_cpp_formatActiveSounds_FUN_00527570(char *output_buffer);
 int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_005275e0(void);
 void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_00527610(double pos_x,double pos_y,double pos_z);
 void __cdecl sound_sndmain_cpp_set3DListenerOrient_FUN_00527690(double front_x,double front_y,double front_z,double up_x,double up_y,double up_z,double right_x,double right_y,double right_z);
@@ -146,7 +147,7 @@ void __cdecl sound_sndmain_cpp_set3DListenerVelocity_FUN_005277b0(double x_veloc
 int __cdecl sound_sndmain_cpp_isWithinListenerRadius_FUN_00527880(double pos_x,double pos_y,double pos_z,double radius);
 void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005278e0(char *sample_name);
 void __cdecl sound_sndmain_cpp_setMemoryBudget_FUN_00527930(int min_bytes,int max_bytes);
-void sound_sndmain_cpp_FUN_00527950(char *param_1,int param_2);
+void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_00527950(char *sample_name,int kill_active_slots);
 int __cdecl sound_sndmain_cpp_isSampleLoaded_FUN_005279b0(char *sample_name);
 int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005279e0(CSfxSample *out_sample);
 void __cdecl sound_sndmain_cpp_freeAllSamples_FUN_00527c30(void);
@@ -192,7 +193,7 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005293f0(int channel,float *
 void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align);
 void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void);
 void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode);
-void sound_sndmain_cpp_FUN_00529980(char *param_1);
+void __cdecl sound_sndmain_cpp_logSoundError_FUN_00529980(char *format,...) __attribute__((format(printf, 1, 2)));
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_ctor_FUN_005299e0(CSfxOptions *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSample_FUN_00529a00(CSfxSample *this_ptr);
 CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00529a20(CSfxSlot *this_ptr);
@@ -261,12 +262,12 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
 void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void);
 void __cdecl core_sound_cpp_FUN_0052d030(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
-void core_sound_cpp_FUN_0052d710(void);
+void __cdecl core_sound_cpp_resetTrainSounds_FUN_0052d710(void);
 uint core_sound_cpp_FUN_0052d790(void);
 void __watcallRegister core_sound_cpp_stopTrainSounds_FUN_0052dcc0(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0052dd00(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20(CSound *this_ptr);
-void __cdecl core_sound_cpp_FUN_00527e10(CSound *this_ptr);
+void __cdecl core_sound_cpp_FUN_0052dd80(CSound *this_ptr);
 void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0052dd90(void);
 void __cdecl core_sound_cpp_CSound_init_FUN_0052ddf0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_0052df90(CSound *this_ptr);

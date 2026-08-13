@@ -15,12 +15,12 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[7]:
-;   core_dtri.cpp_FUN_0046d680 at 0046d75c
-;   core_dtri.cpp_FUN_0046d7e0 at 0046d8c2
-;   core_dtri.cpp_FUN_0046d950 at 0046da2a
-;   core_dtri.cpp_FUN_0046dab0 at 0046db90
-;   core_dtri.cpp_FUN_0046dc10 at 0046dcf2
-;   core_dtri.cpp_FUN_0046dd80 at 0046de62
+;   core_dtri.cpp_clipPolygonToBottom_FUN_0046d7e0 at 0046d8c2
+;   core_dtri.cpp_clipPolygonToFar_FUN_0046dd80 at 0046de62
+;   core_dtri.cpp_clipPolygonToLeft_FUN_0046dab0 at 0046db90
+;   core_dtri.cpp_clipPolygonToNear_FUN_0046dc10 at 0046dcf2
+;   core_dtri.cpp_clipPolygonToRight_FUN_0046d950 at 0046da2a
+;   core_dtri.cpp_clipPolygonToTop_FUN_0046d680 at 0046d75c
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_0046df40 at 0046e553
 ;
 ; Referenced Globals:

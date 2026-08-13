@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CBoundingBox3D_005993f0
+;   WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x5993f0                       ; 005143c0 | g_CBoundingBox3D_005993f0
+    PUSH 0x5993f0                       ; 005143c0 | g_CBoundingBox3DTypeInfo_005993f0
         ;   Label: core_setdir.cpp_CBoundingBox3D_arrdtor_FUN_005143c0
     PUSH 0x7d0                          ; 005143c5
     MOV EDX,dword ptr [ESP + 0xc]       ; 005143ca

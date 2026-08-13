@@ -71,7 +71,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(CWavOutDevice *t
     *out_buffer_size = _DAT_02dc9434;
     return 1;
   }
-  sound_sndmain_cpp_FUN_00529980("waveOutOpen failed");
+  sound_sndmain_cpp_logSoundError_FUN_00529980("waveOutOpen failed");
 LAB_0052c613:
   (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   return 0;

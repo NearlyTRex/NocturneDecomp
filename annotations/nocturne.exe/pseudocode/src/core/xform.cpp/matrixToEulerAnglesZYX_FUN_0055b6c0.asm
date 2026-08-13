@@ -31,7 +31,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004175b4
-;   core_xform.cpp_FUN_0055d5e0 at 0055d600
+;   core_xform.cpp_quaternionToEulerAnglesZYX_FUN_0055d5e0 at 0055d600
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005982c6 = -1

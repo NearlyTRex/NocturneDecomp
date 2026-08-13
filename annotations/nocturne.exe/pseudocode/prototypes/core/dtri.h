@@ -15,13 +15,13 @@ void __cdecl CDemonTriangle::readDataCSV(CDemonTriangle *this_ptr,_FILE *file_ha
 // Address: 0046c350
 void __cdecl CDemonTriangle::writeDataCSV(CDemonTriangle *this_ptr,_FILE *file_handle);
 
-// Original: core_dtri.cpp_FUN_0046c3c0
+// Original: core_dtri.cpp_CDemonTriangle_readDataBinary_FUN_0046c3c0
 // Address: 0046c3c0
-void FUN_0046c3c0(void *param_1,_FILE *param_2);
+void __cdecl CDemonTriangle::readDataBinary(CDemonTriangle *this_ptr,_FILE *file_handle);
 
-// Original: core_dtri.cpp_FUN_0046c410
+// Original: core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0046c410
 // Address: 0046c410
-void FUN_0046c410(void *param_1,_FILE *param_2);
+void __cdecl CDemonTriangle::writeDataBinary(CDemonTriangle *this_ptr,_FILE *file_handle);
 
 // Original: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0046c460
 // Address: 0046c460
@@ -55,37 +55,37 @@ int __cdecl rayEdgeHeightTest(CVector3f *vertex1,CVector3f *vertex2,float ray_ra
 // Address: 0046d110
 int __cdecl rayTriangleFloorTest(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 
-// Original: core_dtri.cpp_FUN_0046d4c0
+// Original: core_dtri.cpp_copyVector3_FUN_0046d4c0
 // Address: 0046d4c0
-void FUN_0046d4c0(void);
+void __cdecl copyVector3(CVector3f *dest_ptr,CVector3f *src_ptr);
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
 // Address: 0046d4e0
 void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
-// Original: core_dtri.cpp_FUN_0046d680
+// Original: core_dtri.cpp_clipPolygonToTop_FUN_0046d680
 // Address: 0046d680
-void FUN_0046d680(float param_1);
+void __cdecl clipPolygonToTop(float y_max);
 
-// Original: core_dtri.cpp_FUN_0046d7e0
+// Original: core_dtri.cpp_clipPolygonToBottom_FUN_0046d7e0
 // Address: 0046d7e0
-void FUN_0046d7e0(float param_1);
+void __cdecl clipPolygonToBottom(float y_min);
 
-// Original: core_dtri.cpp_FUN_0046d950
+// Original: core_dtri.cpp_clipPolygonToRight_FUN_0046d950
 // Address: 0046d950
-void FUN_0046d950(float param_1);
+void __cdecl clipPolygonToRight(float x_max);
 
-// Original: core_dtri.cpp_FUN_0046dab0
+// Original: core_dtri.cpp_clipPolygonToLeft_FUN_0046dab0
 // Address: 0046dab0
-void FUN_0046dab0(float param_1);
+void __cdecl clipPolygonToLeft(float x_min);
 
-// Original: core_dtri.cpp_FUN_0046dc10
+// Original: core_dtri.cpp_clipPolygonToNear_FUN_0046dc10
 // Address: 0046dc10
-void FUN_0046dc10(float param_1);
+void __cdecl clipPolygonToNear(float z_near);
 
-// Original: core_dtri.cpp_FUN_0046dd80
+// Original: core_dtri.cpp_clipPolygonToFar_FUN_0046dd80
 // Address: 0046dd80
-void FUN_0046dd80(float param_1);
+void __cdecl clipPolygonToFar(float z_far);
 
 // Original: core_dtri.cpp_clipTriangleToBounds_FUN_0046df40
 // Address: 0046df40

@@ -603,8 +603,8 @@ section .text
         ;   Label: LAB_00526c1e
     PUSH EAX                            ; 00526c20
     PUSH 0x59356d                       ; 00526c21 | = "startSfx - can't get sample %s\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 00526c26
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 00526c26
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x8                         ; 00526c2b
     PUSH EBP                            ; 00526c2e | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
         ;   Label: LAB_00526c2e

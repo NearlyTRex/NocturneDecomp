@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5356
-Functions with no callers: 2636
-Parameter mismatches detected: 195
-Signature accuracy rate: 92.8%
+Functions with parameter estimates: 5286
+Functions with no callers: 2564
+Parameter mismatches detected: 180
+Signature accuracy rate: 93.4%
 
 Mismatches by confidence:
-  High confidence:   12 (multiple call sites agree)
-  Medium confidence: 51 (some agreement)
-  Low confidence:    132 (limited data)
+  High confidence:   10 (multiple call sites agree)
+  Medium confidence: 48 (some agreement)
+  Low confidence:    122 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -117,26 +117,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_unknown.c_FUN_005740b0 at 005741d4: 0 reg [], 1 stack (4 bytes, via add_esp)
       crt_env.c_putenv_internal_FUN_ at 00573aec: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 50, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(void)
-    Sample call sites:
-      core_moon.cpp_CMoon_render_FUN at 004dee46: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_actor.cpp_CDemonActor_res at 00409f67: 0 reg [], 1 stack (4 bytes, via push_count)
-      core_fire.cpp_CBulletHole_rend at 004831b5: 0 reg [], 1 stack (4 bytes, via add_esp)
-
-  engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 6, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
-    Sample call sites:
-      core_level.cpp_CLevelLoader_up at 004c5e19: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_dlight.cpp_CDemonLight_en at 0044e7a2: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_dcamera.cpp_CDemonCamera_ at 00440ac7: 0 reg [], 1 stack (4 bytes, via add_esp)
-
   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
     Declared: 4 params (16 bytes), Estimated: 3 stack slots (12 bytes) [-1]
     Call sites: 18, Confidence: high
@@ -151,8 +131,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d      declared:0 est:8 (+8) [2 calls]
-  shape_edittool.cpp_FUN_0046f7e0                    declared:0 est:8 (+8) [2 calls]
   crt_unknown.c_FUN_00567560                         declared:0 est:7 (+7) [2 calls]
   crt_unknown.c_FUN_00568f70                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005698b0                         declared:0 est:5 (+5) [2 calls]
@@ -170,7 +148,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0056e608                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0056f278                         declared:0 est:2 (+2) [6 calls]
   crt_unknown.c_FUN_00571160                         declared:0 est:2 (+2) [1 calls]
-  crt_unknown.c_FUN_00571b2c                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_00571b8e                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_00572d90                         declared:0 est:2 (+2) [2 calls]
   engine_keyframe.c_calculatePackedSurfaceNormal_FUN declared:2 est:0 (-2) [2 calls]
@@ -186,7 +163,6 @@ MEDIUM CONFIDENCE MISMATCHES
   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0     declared:3 est:2 (-1) [2 calls]
   core_actor.cpp_registerActorClass_FUN_0040d3f0     declared:6 est:5 (-1) [50 calls]
   core_dlight.cpp_FUN_0044f9b0                       declared:0 est:1 (+1) [2 calls]
-  core_dtrace.cpp_FUN_004675e0                       declared:0 est:1 (+1) [2 calls]
   core_fire.cpp_CFireEffect_renderDecals_FUN_0048a97 declared:3 est:2 (-1) [2 calls]
   core_gore.cpp_CBloodPool_render_FUN_004af340       declared:2 est:1 (-1) [2 calls]
   core_gore.cpp_CBloodSplat_render_FUN_004aeb70      declared:2 est:1 (-1) [2 calls]
@@ -194,21 +170,21 @@ MEDIUM CONFIDENCE MISMATCHES
   core_gore.cpp_CGore_renderDecals_FUN_004afe80      declared:3 est:2 (-1) [2 calls]
   core_particle.cpp_CParticle_dtor_FUN_004ef030      declared:2 est:1 (-1) [8 calls]
   crt_exception.c_installExceptionHandler_FUN_0056ee declared:0 est:1 (+1) [2 calls]
+  crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d      declared:6 est:5 (-1) [2 calls]
   crt_heap.c_CoalesceAndAddFreeBlock_FUN_00568bb0    declared:3 est:2 (-1) [1 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_00571d9f declared:1 est:2 (+1) [2 calls]
   crt_stdio.c_CreateFileVariadic_FUN_0056b934        declared:3 est:4 (+1) [2 calls]
   crt_unknown.c_FUN_005684f8                         declared:0 est:1 (+1) [4 calls]
   crt_unknown.c_FUN_0056dfc0                         declared:0 est:1 (+1) [1 calls]
   crt_unknown.c_FUN_0056e664                         declared:0 est:1 (+1) [2 calls]
-  engine_dosio.cpp_FUN_00456750                      declared:0 est:1 (+1) [2 calls]
-
-  ... and 1 more
+  engine_drender.cpp_CDemonRenderer_renderFacetList_ declared:5 est:4 (-1) [2 calls]
+  engine_matrix.c_matrixPush_FUN_004cdac0            declared:1 est:0 (-1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  132 functions with low-confidence mismatches
+  122 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_3d.c_renderSortedPolygonList_FUN_00405 declared:1 est:0 (-1)
@@ -217,18 +193,18 @@ LOW CONFIDENCE MISMATCHES (limited data)
     core_box.cpp_CBox_processPhysics_FUN_0041ad10 declared:2 est:1 (-1)
     core_charactr.cpp_CCharacter_renderCollision_ declared:1 est:0 (-1)
     core_charactr.cpp_CCharacter_getCarryObjToBod declared:3 est:2 (-1)
-    cockpit_ckptutil.c_FUN_0042f8c0               declared:0 est:7 (+7)
-    cockpit_ckptutil.c_FUN_0042fd60               declared:0 est:7 (+7)
     engine_console.cpp_CConsole_printf_FUN_0043ac declared:2 est:3 (+1)
+    core_dcamera.cpp_generateFogGrid_FUN_0043fa50 declared:1 est:0 (-1)
+    core_dlight.cpp_FUN_0044ed80                  declared:0 est:7 (+7)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 45
+Functions where declaration has MORE params than estimated: 50
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 150
+Functions where declaration has FEWER params than estimated: 130
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -236,14 +212,14 @@ Distribution of differences (estimated - declared):
   -5 params: 1 functions
   -4 params: 1 functions
   -3 params: 3 functions
-  -2 params: 7 functions
-  -1 params: 32 functions
-  +1 params: 46 functions
-  +2 params: 26 functions
-  +3 params: 28 functions
+  -2 params: 8 functions
+  -1 params: 36 functions
+  +1 params: 38 functions
+  +2 params: 23 functions
+  +3 params: 24 functions
   +4 params: 17 functions
   +5 params: 14 functions
-  +6 params: 8 functions
-  +7 params: 7 functions
-  +8 params: 3 functions
+  +6 params: 7 functions
+  +7 params: 5 functions
+  +8 params: 1 functions
   +10 params: 1 functions

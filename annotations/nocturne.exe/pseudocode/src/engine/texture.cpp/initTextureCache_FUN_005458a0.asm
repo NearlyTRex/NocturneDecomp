@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_005458a0 at 00404480
+;   engine_3d.c_FUN_00404480 at 00404480
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dd0f84

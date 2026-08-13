@@ -242,13 +242,45 @@
         "start":"00571b2c"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00571b2c",
-    "ret":"undefined1",
+    "name":"crt_unknown.c_None_FUN_00571b2c",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"param_1",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined8*"
+        }
+      ]
     }
   },
   {
@@ -313,6 +345,114 @@
             ]
           },
           "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"0057492c",
+    "body":[
+      {
+        "end":"00574931",
+        "size":6,
+        "start":"0057492c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_gdi32.c_GetStockObject",
+    "ret":"HGDIOBJ",
+    "thtarget":"EXTERNAL:0000000c",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"i",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00574aac",
+    "body":[
+      {
+        "end":"00574ab1",
+        "size":6,
+        "start":"00574aac"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FindNextFileA",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000051",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hFindFile",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        },
+        {
+          "name":"lpFindFileData",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWIN32_FIND_DATAA"
         }
       ],
       "ret_storage":{

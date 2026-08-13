@@ -14,8 +14,8 @@
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474dff
 ;
 ; Called Functions:
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470
 ;   shape_edittool.cpp_CPickList_validateScrollBounds_FUN_00475db0
-;   shape_edittool.cpp_FUN_00475470
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 00474e7a
     PUSH ECX                            ; 00474e7e
     PUSH EBX                            ; 00474e7f
-    CALL shape_edittool.cpp_FUN_00475470 ; 00474e80
-        ;   XREF to: 00475470 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00475470()
+    CALL shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470 ; 00474e80
+        ;   XREF to: 00475470 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470(CPickList * this_ptr, char * dialog_title, uint window_flags)
     ADD ESP,0xc                         ; 00474e85
     MOV EAX,dword ptr [ESP + 0x10]      ; 00474e88
     PUSH EBX                            ; 00474e8c

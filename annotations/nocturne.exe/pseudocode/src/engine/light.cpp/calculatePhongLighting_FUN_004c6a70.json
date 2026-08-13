@@ -140,15 +140,15 @@
   },
   "cross_references": [
     {
-      "addr": "004c6d70",
-      "from_addr": "004c6d80",
-      "name": "engine_light.cpp_FUN_004c6d70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c6d90",
       "from_addr": "004c6da0",
       "name": "engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6d70",
+      "from_addr": "004c6d80",
+      "name": "engine_light.cpp_calculateVertexLighting_FUN_004c6d70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -286,7 +286,7 @@
       {
         "call_addr": "004c6d80",
         "call_type": "direct",
-        "caller": "engine_light.cpp_FUN_004c6d70",
+        "caller": "engine_light.cpp_calculateVertexLighting_FUN_004c6d70",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "method": "push_count",

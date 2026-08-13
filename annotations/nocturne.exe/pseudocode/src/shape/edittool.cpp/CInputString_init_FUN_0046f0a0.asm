@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 00470f6a
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f848
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f848
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

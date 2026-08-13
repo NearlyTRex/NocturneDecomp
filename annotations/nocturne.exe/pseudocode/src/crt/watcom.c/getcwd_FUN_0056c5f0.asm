@@ -11,7 +11,7 @@
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c8b7
 ;   crt_io.c_getTempDirectory_FUN_005687bc at 00568828
 ;   crt_stdlib.c__fullpath_FUN_00565d00 at 00565d49
-;   crt_watcom.c_getcwd_FUN_0056c5f0 at 00566440
+;   crt_watcom.c_getcwd_FUN_00566440 at 00566440
 ;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentDirectoryA_005754f4 = 00175ca6

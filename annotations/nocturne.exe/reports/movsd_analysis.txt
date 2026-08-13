@@ -531,14 +531,14 @@ NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 16 sites — decompiler handles OK)
     0x004cdf33  3x MOVSD (12 bytes copy)
   CDemonCamera_restoreAlphaTransform_FUN_00447910                          1 sites
     0x00447a64  3x MOVSD (12 bytes copy)
+  CDemonCamera_restoreTransform_FUN_00443050                               1 sites
+    0x0044306e  3x MOVSD (12 bytes copy)
   CDemonCamera_screenToWorldTransform_FUN_004411b0                         1 sites
     0x004412a5  3x MOVSD (12 bytes copy)
   CDemonCamera_worldToScreenCoord_FUN_00441150                             1 sites
     0x004411a1  3x MOVSD (12 bytes copy)
   FUN_00442d9c                                                             1 sites
     0x00442db7  3x MOVSD (12 bytes copy)
-  FUN_00443050                                                             1 sites
-    0x0044306e  3x MOVSD (12 bytes copy)
   sampleFogAlongRay_FUN_0043fc80                                           1 sites
     0x0043fd0c  3x MOVSD (12 bytes copy)
   CGame_beginFadeIn_FUN_004a37e0                                           1 sites
@@ -645,13 +645,6 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x004320f2  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0043210e  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x00432114  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-  FUN_0055de20                                                             6 sites
-    0x0055dea4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055dec0  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055dec6  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
-    0x0055df2f  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055df4b  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
-    0x0055df51  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
   clipPolygonStage1_FUN_0055d9c0                                           6 sites
     0x0055da3d  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055da59  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
@@ -673,6 +666,13 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 93 sites)
     0x0055ddb9  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055ddd5  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
     0x0055dddb  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+  clipPolygonStage4_FUN_0055de20                                           6 sites
+    0x0055dea4  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055dec0  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055dec6  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
+    0x0055df2f  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055df4b  1x MOVSD (4 bytes copy)  only 4 bytes available (need 5)
+    0x0055df51  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE REP MOVSD STRUCT COPIES (208 sites)
@@ -1024,7 +1024,7 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (87 sites)
     0x00434f82  REP MOVSD 48 dwords (192 bytes)
     0x00435001  REP MOVSD 48 dwords (192 bytes)
     0x00435080  REP MOVSD 48 dwords (192 bytes)
-  FUN_0040bd90                                                             3 sites
+  CDemonActor_doCheckForInvalidPointers_FUN_0040bd90                       3 sites
     0x0040be1f  REP MOVSD 49 dwords (196 bytes)
     0x0040beb5  REP MOVSD 49 dwords (196 bytes)
     0x0040bf4a  REP MOVSD 49 dwords (196 bytes)
@@ -1120,14 +1120,14 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (87 sites)
     0x00545301  REP MOVSD 768 dwords (3072 bytes)
   CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200                      1 sites
     0x004e5557  REP MOVSD 2050 dwords (8200 bytes)
-  FUN_004e78b0                                                             1 sites
-    0x004e7986  REP MOVSD 2050 dwords (8200 bytes)
-  FUN_004e7b00                                                             1 sites
+  initializeHuffmanTablesOnce_FUN_004e7b00                                 1 sites
     0x004e7be7  REP MOVSD 2050 dwords (8200 bytes)
-  FUN_00526dd0                                                             1 sites
-    0x00526dfd  REP MOVSD 27 dwords (108 bytes)
+  initializeHuffmanTables_FUN_004e78b0                                     1 sites
+    0x004e7986  REP MOVSD 2050 dwords (8200 bytes)
   getSampleInfo_FUN_005279e0                                               1 sites
     0x00527a51  REP MOVSD 74 dwords (296 bytes)
+  getSfxOptions_FUN_00526dd0                                               1 sites
+    0x00526dfd  REP MOVSD 27 dwords (108 bytes)
   getSfxSampleInfo_FUN_00526cd0                                            1 sites
     0x00526cf2  REP MOVSD 74 dwords (296 bytes)
   getSoundDeviceInfo_FUN_005282c0                                          1 sites
@@ -1274,7 +1274,7 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (76 sites)
     0x00532c10  REP MOVSD (dynamic count)
   CEditorTools_getClipboardText_FUN_00472c90                               1 sites
     0x00472cf7  REP MOVSD (dynamic count)
-  FUN_004720c0                                                             1 sites
+  CEditorTools_restoreWindowAndCleanup_FUN_004720c0                        1 sites
     0x00472174  REP MOVSD (dynamic count)
   CMP3Decoder_read_FUN_004e82d0                                            1 sites
     0x004e834b  REP MOVSD (dynamic count)
@@ -1321,11 +1321,11 @@ REP MOVSD — PASS-BY-VALUE (32 sites)
   CMP3Decoder_decodeFrame_FUN_004e85b0                                     2 sites
     0x004e8e95  REP MOVSD 7 dwords (28 bytes)
     0x004e8f5e  REP MOVSD 7 dwords (28 bytes)
-  FUN_004f4f10                                                             1 sites
+  writePBGHeader_FUN_004f4f10                                              1 sites
     0x004f4f2b  REP MOVSD 4 dwords (16 bytes)
   archiveLocalizedString_FUN_0040c7f0                                      1 sites
     0x0040c80b  REP MOVSD 75 dwords (300 bytes)
-  FUN_00523170                                                             1 sites
+  nextMixingBuffer_FUN_00523170                                            1 sites
     0x005232be  REP MOVSD 11 dwords (44 bytes)
   pollAndMixSfx_FUN_005294f0                                               1 sites
     0x005296e0  REP MOVSD 11 dwords (44 bytes)

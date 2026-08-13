@@ -140,9 +140,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr_00,0.0,-1);
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     g_CDemonSet_PTR_005be368->rendering_mode = 0;
   }
   return;

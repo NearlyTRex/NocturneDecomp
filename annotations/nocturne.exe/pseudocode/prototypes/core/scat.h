@@ -49,7 +49,7 @@ void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time
 
 // Original: core_scat.cpp_CScat_archive_FUN_004fcae0
 // Address: 004fcae0
-void CScat::archive(CHero *param_1);
+void __cdecl CScat::archive(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_renderOpaque_FUN_004fcb20
 // Address: 004fcb20

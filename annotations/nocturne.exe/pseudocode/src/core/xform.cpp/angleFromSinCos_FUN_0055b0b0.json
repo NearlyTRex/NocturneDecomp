@@ -1,0 +1,304 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 8,
+        "line": 18,
+        "message": "use of undeclared identifier '_DAT_0059825e'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 18,
+        "message": "use of undeclared identifier '_DAT_00598266'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 10,
+        "line": 19,
+        "message": "use of undeclared identifier '_DAT_0059826e'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 31,
+        "message": "use of undeclared identifier '_DAT_00598276'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 24,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_0059827e'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 25,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_00598286'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_00598276'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 38,
+        "message": "use of undeclared identifier '_DAT_0059828a'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 96,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 126
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055b0b0",
+    "address_range": [
+      [
+        "0055b0b0",
+        "0055b17d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_xform.cpp_angleFromSinCos_FUN_0055b0b0",
+    "signature": "float __cdecl core_xform_cpp_angleFromSinCos_FUN_0055b0b0(double sin_value,double cos_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "00565ca4",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_00565ca4"
+    },
+    {
+      "addr": "00565c76",
+      "is_variadic": false,
+      "name": "crt_math.c_asin_FUN_00565c76"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0059825e",
+      "name": "DAT_0059825e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00598266",
+      "name": "DAT_00598266",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0059826e",
+      "name": "DAT_0059826e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00598276",
+      "name": "DAT_00598276",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0059827e",
+      "name": "DAT_0059827e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00598286",
+      "name": "DAT_00598286",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0059828a",
+      "name": "DAT_0059828a",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 16,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.453333333333333,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 14,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 272,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_NAN": 16,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 13,
+      "INT_AND": 49,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 32,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 40,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 4,
+      "INT_XOR": 2,
+      "INT_ZEXT": 32,
+      "LOAD": 23,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 634
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sin_value",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "cos_value",
+        "offset": 12,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0055b0b6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

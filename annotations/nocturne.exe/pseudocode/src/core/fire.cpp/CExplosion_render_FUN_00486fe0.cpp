@@ -103,6 +103,6 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(CExplosion *this_ptr)
   engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&iStack_98,0x123);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

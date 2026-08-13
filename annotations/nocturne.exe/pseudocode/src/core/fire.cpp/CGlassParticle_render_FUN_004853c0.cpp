@@ -65,6 +65,6 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004853c0(CGlassParticle *th
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,&SStack_68);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

@@ -46,13 +46,13 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
               iVar5 = iVar5 + local_14 + 8;
               if (((local_18 == 'd') && (local_17 == 'a')) &&
                  ((local_16 == 't' && (local_15 == 'a')))) {
-                sound_sndmain_cpp_FUN_00529980
+                sound_sndmain_cpp_logSoundError_FUN_00529980
                           ("WAV file is invalid: %s\n","\"data\" chunk preceeds \"fmt\" chunk");
                 goto LAB_00521857;
               }
               if (((local_18 == 'f') && (local_17 == 'm')) && (local_16 == 't')) {
                 if (local_14 < 10) {
-                  sound_sndmain_cpp_FUN_00529980
+                  sound_sndmain_cpp_logSoundError_FUN_00529980
                             ("WAV file is invalid: %s\n","File contains invalid \"fmt\" chunk");
                   goto LAB_00521857;
                 }
@@ -60,12 +60,14 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
                 if (SVar3 != 1) goto LAB_00521857;
                 if ((short)local_24 != 1) {
                   _sprintf(&local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)",local_24 & 0xffff);
-                  sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
+                  sound_sndmain_cpp_logSoundError_FUN_00529980
+                            ("WAV file is invalid: %s\n",&local_88);
                   goto LAB_00521857;
                 }
                 if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {
                   _sprintf(&local_88,"Invalid number of channels: %u  (must be 1 or 2)",(uint)local_24._2_2_);
-                  sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
+                  sound_sndmain_cpp_logSoundError_FUN_00529980
+                            ("WAV file is invalid: %s\n",&local_88);
                   goto LAB_00521857;
                 }
                 sVar1 = local_24._2_2_ * (short)local_20;
@@ -79,21 +81,22 @@ int __cdecl sound_sndmain_cpp_parseWavFile_FUN_00521830(_FILE *file_handle,int *
                 }
                 _sprintf(&local_88,"Invalid bytes/sec value: %u (%04Xh)",local_1c & 0xffff,
                            local_1c & 0xffff);
-                sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n",&local_88);
+                sound_sndmain_cpp_logSoundError_FUN_00529980
+                          ("WAV file is invalid: %s\n",&local_88);
                 goto LAB_00521857;
               }
             } while (iVar5 <= iVar2);
-            sound_sndmain_cpp_FUN_00529980
+            sound_sndmain_cpp_logSoundError_FUN_00529980
                       ("WAV file is invalid: %s\n","Required \"fmt\" chunk not found");
           }
           else {
-            sound_sndmain_cpp_FUN_00529980
+            sound_sndmain_cpp_logSoundError_FUN_00529980
                       ("WAV file is invalid: %s\n","\"WAVE\" ID not found at offset 00000008h");
           }
         }
       }
       else {
-        sound_sndmain_cpp_FUN_00529980
+        sound_sndmain_cpp_logSoundError_FUN_00529980
                   ("WAV file is invalid: %s\n","\"RIFF\" ID not found at offset 00000000h");
       }
     }
@@ -120,7 +123,8 @@ LAB_00521a3e:
     iVar4 = _fseek(file_handle,*file_offset_ptr + iVar5,0);
     if (iVar4 != 0) goto LAB_00521857;
   }
-  sound_sndmain_cpp_FUN_00529980("WAV file is invalid: %s\n","No \"data\" chunk found");
+  sound_sndmain_cpp_logSoundError_FUN_00529980
+            ("WAV file is invalid: %s\n","No \"data\" chunk found");
 LAB_00521857:
   if (file_handle != (_FILE *)0x0) {
     _fclose(file_handle);

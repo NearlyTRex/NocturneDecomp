@@ -73,7 +73,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00550370(CCryptVe
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&this_ptr->orb_model,0.0,0x267);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return 1;
 }

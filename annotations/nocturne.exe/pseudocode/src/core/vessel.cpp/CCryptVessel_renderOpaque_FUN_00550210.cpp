@@ -10,7 +10,8 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel 
 
 {
   UOrientationVector *position;
-  CBoundingBox3D *this_ptr_00;
+  CDemonRenderer *this_ptr_00;
+  CBoundingBox3D *this_ptr_01;
   int iVar1;
   double dVar2;
   CBoundingBox3D local_30;
@@ -20,10 +21,11 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel 
   position = &(this_ptr->base).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,&position->vec,(CVector3f *)0x0);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_30);
-  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
+  this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_30);
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_01);
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->is_visible = iVar1;
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(this_ptr_00);
   if (this_ptr->is_visible == 0) {
     return this_ptr->is_visible;
   }
@@ -48,6 +50,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_00550210(CCryptVessel 
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
               (g_CDemonRenderer_PTR_005ae704);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return this_ptr->is_visible;
 }

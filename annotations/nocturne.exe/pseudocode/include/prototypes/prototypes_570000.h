@@ -2,23 +2,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
-#include "system/excpt.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
 #include "system/math.h"
-#include "system/mmsystem.h"
 #include "system/signal.h"
 #include "system/stdio.h"
 #include "system/strstream.h"
 #include "system/time.h"
 #include "system/watcom.h"
 #include "system/winbase.h"
-#include "system/wincon.h"
 #include "system/windef.h"
 #include "system/winnt.h"
-#include "system/winreg.h"
-#include "system/winuser.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x570000
@@ -73,7 +67,7 @@ undefined4 crt_unknown_c_FUN_00571280(undefined4 param_1,int param_2);
 void crt_unknown_c_FUN_005712ec(int param_1);
 void crt_unknown_c_FUN_00571364(void);
 void crt_unknown_c_FUN_005713a0(ThreadData *param_1);
-void crt_unknown_c_FUN_00571364(void);
+void crt_unknown_c_FUN_005713d0(void);
 int crt_unknown_c_FUN_005713e0(short *param_1);
 undefined4 * crt_unknown_c_FUN_00571410(undefined4 *param_1,undefined4 *param_2,uint param_3);
 undefined4 crt_unknown_c_FUN_00571440(short *param_1);
@@ -96,7 +90,7 @@ undefined2 crt_unknown_c_FUN_00571858(void);
 void crt_unknown_c_FUN_0057189c(void);
 void crt_unknown_c_FUN_005718c4(void);
 ulonglong __watcallRegister crt_math_c_udivmod64_FUN_00571a9d(ulonglong dividend,ulonglong divisor);
-void crt_unknown_c_FUN_00571b2c(void);
+void __cdecl crt_unknown_c_None_FUN_00571b2c(byte *param_1,undefined8 *param_2);
 void crt_unknown_c_FUN_00571b8e(void);
 int crt_unknown_c_FUN_00571bd0(void);
 undefined4 crt_unknown_c_FUN_00571bdc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 *param_5,int param_6,undefined4 param_7);
@@ -132,7 +126,7 @@ uint crt_unknown_c_FUN_00572ef0(uint param_1,uint param_2);
 int __cdecl crt_io_c_extend_file_for_append_FUN_00572f40(int fd);
 int __cdecl crt_io_c_write_FUN_0057301c(int fd,void *buffer,SIZE_T count);
 uint crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *param_2,DWORD param_3);
-undefined4 crt_unknown_c_FUN_00573ffb(void);
+undefined4 crt_unknown_c_FUN_00573650(void);
 int __cdecl crt_stdio_c_fputs_FUN_00573660(char *str,_FILE *file);
 long __cdecl crt_stdlib_c_strtol_internal_FUN_00573720(char *str,char **endptr,int base,int is_signed);
 long __cdecl crt_stdlib_c_strtol_FUN_005738ac(char *str,char **endptr,int base);
@@ -160,77 +154,4 @@ int __watcallStack crt_locale_c_ismultibyte_FUN_00574760(wchar_t character);
 int __watcallStack crt_locale_c_istrailbyte_FUN_005747b0(uchar byte_value);
 undefined4 crt_iostream_cpp_streambuf_seekoff_FUN_005747f0(void);
 int __watcallStack crt_iostream_cpp_streambuf_sync_FUN_005747f6(streambuf *streambuf_ptr);
-void crt_unknown_c_FUN_00574819(HANDLE param_1,FILETIME *param_2,FILETIME *param_3,FILETIME *param_4);
-void crt_unknown_c_FUN_00574825(SYSTEMTIME *param_1,LPFILETIME param_2);
-void crt_unknown_c_FUN_00574831(HANDLE param_1);
-void crt_unknown_c_FUN_0057483d(LPCSTR param_1);
-void crt_unknown_c_FUN_00574849(HANDLE param_1,LPCVOID param_2,DWORD param_3,LPDWORD param_4,LPOVERLAPPED param_5);
-void crt_unknown_c_FUN_00574855(LPVOID param_1,SIZE_T param_2,DWORD param_3,DWORD param_4);
-void crt_unknown_c_FUN_00574861(HANDLE param_1,LONG param_2,PLONG param_3,DWORD param_4);
-void crt_unknown_c_FUN_0057486d(void);
-void crt_unknown_c_FUN_00574879(void);
-void crt_unknown_c_FUN_00574885(LPCSTR param_1,LPSECURITY_ATTRIBUTES param_2);
-void crt_unknown_c_FUN_00574891(LPCSTR param_1,DWORD param_2,LPSTR param_3,LPSTR *param_4);
-void crt_unknown_c_FUN_0057489d(HWND param_1,RECT *param_2,BOOL param_3);
-void crt_unknown_c_FUN_005748a9(LPRECT param_1);
-void crt_unknown_c_FUN_005748b5(HWND param_1,LPRECT param_2);
-void crt_unknown_c_FUN_005748c1(UINT_PTR param_1,LPJOYCAPSA param_2,UINT param_3);
-void crt_unknown_c_FUN_005748d5(void);
-void crt_unknown_c_FUN_005748e5(HKEY param_1,LPCSTR param_2,DWORD param_3,REGSAM param_4,PHKEY param_5);
-void crt_unknown_c_FUN_005748f1(HANDLE param_1);
-void crt_unknown_c_FUN_005748fd(LPSECURITY_ATTRIBUTES param_1,BOOL param_2,LPCSTR param_3);
-void crt_unknown_c_FUN_00574909(UINT param_1);
-void crt_unknown_c_FUN_00574915(HWND param_1);
-void crt_unknown_c_FUN_00574921(WNDCLASSA *param_1);
-void crt_unknown_c_FUN_0057492d(HINSTANCE param_1,LPCSTR param_2);
-void crt_unknown_c_FUN_00574939(LPCSTR param_1);
-void crt_unknown_c_FUN_00574945(DWORD param_1,LPSTR param_2);
-void crt_unknown_c_FUN_00574951(HWND param_1);
-void crt_unknown_c_FUN_0057495d(HWND param_1);
-void crt_unknown_c_FUN_00574969(LPCSTR param_1,LPCSTR param_2);
-void crt_unknown_c_FUN_00574975(MSG *param_1);
-void crt_unknown_c_FUN_00574981(LPMSG param_1,HWND param_2,UINT param_3,UINT param_4,UINT param_5);
-void crt_unknown_c_FUN_0057498d(HANDLE param_1,int param_2);
-void crt_unknown_c_FUN_00574999(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4);
-void crt_unknown_c_FUN_005749a5(int param_1,int param_2);
-void crt_unknown_c_FUN_005749b1(UINT param_1);
-void crt_unknown_c_FUN_005749bd(UINT param_1);
-void crt_unknown_c_FUN_005749c9(LARGE_INTEGER *param_1);
-void crt_unknown_c_FUN_005749d5(HDC param_1);
-void crt_unknown_c_FUN_005749e1(HDC param_1,int param_2,int param_3,int param_4,int param_5);
-void crt_unknown_c_FUN_005749ed(HDC param_1,COLORREF param_2);
-void crt_unknown_c_FUN_005749f9(HDC param_1,HGDIOBJ param_2);
-void crt_unknown_c_FUN_00574a05(HDC param_1);
-void crt_unknown_c_FUN_00574a13(int param_1,int param_2,int param_3,DWORD param_4,DWORD param_5,DWORD param_6,DWORD param_7,DWORD param_8,DWORD param_9,DWORD param_10,DWORD param_11,LPCSTR param_12);
-void crt_unknown_c_FUN_00574a23(LPCSTR param_1);
-void crt_unknown_c_FUN_00574a2f(HWND param_1);
-void crt_unknown_c_FUN_00574a3b(UINT_PTR param_1,LPWAVEOUTCAPSA param_2,UINT param_3);
-void crt_unknown_c_FUN_00574a47(HWAVEOUT param_1);
-void crt_unknown_c_FUN_00574a53(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
-void crt_unknown_c_FUN_00574a5f(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
-void crt_unknown_c_FUN_00574a6b(UINT param_1,HANDLE param_2);
-void crt_unknown_c_FUN_00574a77(HGLOBAL param_1);
-void crt_unknown_c_FUN_00574a83(void);
-void crt_unknown_c_FUN_00574a8f(HWND param_1);
-void crt_unknown_c_FUN_00574a9b(FILETIME *param_1,LPFILETIME param_2);
-void crt_unknown_c_FUN_00574aa7(HANDLE param_1,LPWIN32_FIND_DATAA param_2);
-void crt_unknown_c_FUN_00574ab3(LPCWSTR param_1,LPCWSTR param_2);
-void crt_unknown_c_FUN_00574abf(void);
-void crt_unknown_c_FUN_00574acb(LPSTR param_1,DWORD param_2);
-void crt_unknown_c_FUN_00574ad9(void);
-void crt_unknown_c_FUN_00574ae9(void);
-void crt_unknown_c_FUN_00574af5(LPCH param_1);
-void crt_unknown_c_FUN_00574b01(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
-void crt_unknown_c_FUN_00574b0d(HANDLE param_1,DWORD param_2);
-void crt_unknown_c_FUN_00574b19(HANDLE param_1,PINPUT_RECORD param_2,DWORD param_3,LPDWORD param_4);
-void crt_unknown_c_FUN_00574b25(LPVOID param_1,SIZE_T param_2,DWORD param_3);
-void crt_unknown_c_FUN_00574b31(LPCSTR param_1);
-void crt_unknown_c_FUN_00574b3d(_EXCEPTION_POINTERS *param_1);
-void crt_unknown_c_FUN_00574b49(UINT param_1,DWORD param_2,LPCSTR param_3,int param_4,LPWSTR param_5,int param_6);
-void crt_unknown_c_FUN_00574b55(DWORD param_1);
-void crt_unknown_c_FUN_00574b63(void);
-void crt_unknown_c_FUN_00574b73(LPCRITICAL_SECTION param_1);
-void crt_unknown_c_FUN_00574b7f(void);
-void crt_unknown_c_FUN_00574b8b(LPCRITICAL_SECTION param_1);
-void crt_unknown_c_FUN_00574b97(DWORD param_1);
 

@@ -7,37 +7,37 @@
 // Address: 00448410
 void __cdecl staticInit(void);
 
-// Original: core_dcube.cpp_FUN_004484a0
+// Original: core_dcube.cpp_copyVector3_FUN_004484a0
 // Address: 004484a0
-void FUN_004484a0(void);
+void __cdecl copyVector3(CVector3f *dest,CVector3f *src);
 
 // Original: core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
 // Address: 004484c0
 void __cdecl clipEdgeToPlane(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
-// Original: core_dcube.cpp_FUN_00448660
+// Original: core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00448660
 // Address: 00448660
-void FUN_00448660(float param_1);
+void __cdecl clipPolygonAgainstMaxY(float max_y_plane);
 
-// Original: core_dcube.cpp_FUN_004487c0
+// Original: core_dcube.cpp_clipPolygonAgainstMinY_FUN_004487c0
 // Address: 004487c0
-void FUN_004487c0(float param_1);
+void __cdecl clipPolygonAgainstMinY(float min_y_plane);
 
-// Original: core_dcube.cpp_FUN_00448930
+// Original: core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00448930
 // Address: 00448930
-void FUN_00448930(float param_1);
+void __cdecl clipPolygonAgainstMaxX(float max_x_plane);
 
-// Original: core_dcube.cpp_FUN_00448a90
+// Original: core_dcube.cpp_clipPolygonAgainstMinX_FUN_00448a90
 // Address: 00448a90
-void FUN_00448a90(float param_1);
+void __cdecl clipPolygonAgainstMinX(float min_x_plane);
 
-// Original: core_dcube.cpp_FUN_00448bf0
+// Original: core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00448bf0
 // Address: 00448bf0
-void FUN_00448bf0(float param_1);
+void __cdecl clipPolygonAgainstMinZ(float min_z_plane);
 
-// Original: core_dcube.cpp_FUN_00448d60
+// Original: core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00448d60
 // Address: 00448d60
-void FUN_00448d60(float param_1);
+void __cdecl clipPolygonAgainstMaxZ(float max_z_plane);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0
 // Address: 00448ec0

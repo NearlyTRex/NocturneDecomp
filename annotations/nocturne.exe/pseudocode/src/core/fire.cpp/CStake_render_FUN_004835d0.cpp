@@ -36,6 +36,6 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&g_CKeyFramedModelInstance_01c08d48,0.0,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

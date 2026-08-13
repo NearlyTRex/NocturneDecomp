@@ -14,13 +14,13 @@
 ;   crt_math.c_process_math_error_FUN_005706dd at 005707b4
 ;
 ; Referenced Globals:
-;   void* PTR_crt_unknown.c_FUN_00573ffb_005c2164 = 00573650
+;   void* PTR_crt_unknown.c_FUN_00573650_005c2164 = 00573650
 ;
 ; Called Functions:
 ;   crt_math.c_print_error_message_FUN_005729e8
 ;   crt_math.c_set_domain_error_errno_FUN_00568e90
 ;   crt_math.c_set_range_error_errno_FUN_00568e9c
-;   crt_unknown.c_FUN_00573ffb
+;   crt_unknown.c_FUN_00573650
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x8                         ; 00572a3a
     MOV EBX,dword ptr [EBP + 0x8]       ; 00572a3d
     PUSH EBX                            ; 00572a40
-    CALL dword ptr [0x005c2164]         ; 00572a41 | PTR_crt_unknown.c_FUN_00573ffb_005c2164
+    CALL dword ptr [0x005c2164]         ; 00572a41 | PTR_crt_unknown.c_FUN_00573650_005c2164
     ADD ESP,0x4                         ; 00572a47
     TEST EAX,EAX                        ; 00572a4a
     JNZ 0x00572a70                      ; 00572a4c

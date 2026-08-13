@@ -19,9 +19,9 @@ CVector3f * __cdecl CMatrix3x3f::transformVector(CMatrix3x3f *this_ptr,CVector3f
 // Address: 0044daa0
 CVector3f * __cdecl CMatrix3x3f::transformVectorTranspose(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);
 
-// Original: core_dirmat.cpp_FUN_0044db00
+// Original: core_dirmat.cpp_angleFromSinCos_FUN_0044db00
 // Address: 0044db00
-float FUN_0044db00(void);
+float __cdecl angleFromSinCos(double y,double x);
 
 // Original: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
 // Address: 0044dbd0

@@ -26,6 +26,6 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0(C
             (&this_ptr->reflector_model,
              (float)(pCVar1->frame_count + -1) * this_ptr->reflectors[reflector_index].interp_factor
              ,render_flags);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

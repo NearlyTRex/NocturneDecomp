@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_CTurret_stopUsing_FUN_0054a900(int param_1,int param_2)
+; void __cdecl core_turret_cpp_CTurret_stopUsing_FUN_0054a900(CTurret *this_ptr,CDemonActor *user)
 ;
+; Parameters:
+; CTurret *        Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   user
 ;
 ; *****************************************************************************
 

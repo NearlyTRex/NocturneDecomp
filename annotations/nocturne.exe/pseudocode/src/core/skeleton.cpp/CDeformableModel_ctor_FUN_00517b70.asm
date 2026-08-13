@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   WatcomTypeInfo g_CBoundingBox3D_005993f0
+;   WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -28,7 +28,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00517b83
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00517b88
-    PUSH 0x5993f0                       ; 00517b8b | g_CBoundingBox3D_005993f0
+    PUSH 0x5993f0                       ; 00517b8b | g_CBoundingBox3DTypeInfo_005993f0
     PUSH 0x64                           ; 00517b90
     ADD EAX,0x4bc                       ; 00517b92
     PUSH EAX                            ; 00517b97

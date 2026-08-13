@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_00484dbd
     PUSH EBP                            ; 00484dc3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00484dc4
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00484dc9
     ADD ESP,0x18                        ; 00484dcc
     POP EBP                             ; 00484dcf

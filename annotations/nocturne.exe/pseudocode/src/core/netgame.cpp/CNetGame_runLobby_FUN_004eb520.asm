@@ -335,8 +335,8 @@ section .text
         ;   Label: LAB_004eb84d
     MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004eb858
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004eb859
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004eb859
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004eb85e
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004eb861
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()

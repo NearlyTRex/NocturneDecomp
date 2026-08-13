@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 004613c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 004d590e
     CALL engine_matrix.c_matrixPush_FUN_004cdac0 ; 004d5911
-        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0()
+        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0(CDemonRenderer * this_ptr)
     PUSH 0x0                            ; 004d5916
     MOV ESI,dword ptr [0x01c039b8]      ; 004d5918 | g_RelativeX
     MOV EDI,dword ptr [0x01c039dc]      ; 004d591e | DAT_01c039dc
@@ -255,7 +255,7 @@ section .text
     MOV ESI,dword ptr [0x005ae704]      ; 004d5a65 | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 004d5a6b | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004d5a6c
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004d5a71
     PUSH EBX                            ; 004d5a74
         ;   Label: LAB_004d5a74
@@ -288,7 +288,7 @@ section .text
         ;   Label: LAB_004d5ab2
     PUSH EDX                            ; 004d5ab8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004d5ab9
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004d5abe
     MOV ECX,dword ptr [EBP + 0x76]      ; 004d5ac1
     PUSH ECX                            ; 004d5ac4

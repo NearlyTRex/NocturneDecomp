@@ -11,7 +11,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9dce
 ;
 ; Called Functions:
-;   Ordinal_6
+;   crt_wsock32.c_getsockname
 ;   support_trisock.cpp_convertSockAddr_FUN_00548d50
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     MOV dword ptr [ESP + 0x20],EDX      ; 005491f6
     MOV ECX,dword ptr [EAX]             ; 005491fa
     PUSH ECX                            ; 005491fc
-    CALL Ordinal_6                      ; 005491fd
-        ;   XREF to: 00574bc0 (UNCONDITIONAL_CALL)  ; undefined Ordinal_6()
+    CALL crt_wsock32.c_getsockname      ; 005491fd
+        ;   XREF to: 00574bc0 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_getsockname(_SOCKET s, SOCKADDR * name, int * namelen)
     TEST EAX,EAX                        ; 00549202
     JZ 0x0054920c                       ; 00549204
         ;   XREF to: 0054920c (CONDITIONAL_JUMP)  ; LAB_0054920c

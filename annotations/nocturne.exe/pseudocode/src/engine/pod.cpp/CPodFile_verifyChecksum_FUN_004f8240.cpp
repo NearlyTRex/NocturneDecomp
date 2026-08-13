@@ -56,7 +56,8 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
         iVar4 = iVar4 + 0x14;
       } while (iVar9 < this_ptr->file_count);
     }
-    shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+              (g_CEditorTools_PTR_005b6d50);
     if (in_stack_fffffe68 != 0) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
                 ((CPickList *)&stack0xfffffe68,"!!!CRC CHECK FAILED!! on these files:",-1,

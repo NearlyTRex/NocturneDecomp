@@ -30,8 +30,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
+;   crt_ddraw.c_DirectDrawCreate
 ;   crt_memory.c_malloc_FUN_005635b0
-;   DirectDrawCreate
 ;   engine_special.cpp_loadExternalRenderer_FUN_00531780
 ;
 ; *****************************************************************************
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_00552c3c
     PUSH 0x2ddf550                      ; 00552c3e | g_DirectDrawObject
     PUSH 0x0                            ; 00552c43
-    CALL DirectDrawCreate               ; 00552c45
-        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 00552c45
+        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 00552c4a
     JZ 0x00552c8f                       ; 00552c4c
         ;   XREF to: 00552c8f (CONDITIONAL_JUMP)  ; LAB_00552c8f

@@ -49,7 +49,7 @@
 ;   engine_2d.c_fillRectWithBorder_FUN_00403ef0
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-;   shape_edittool.cpp_FUN_004722b0
+;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
@@ -129,8 +129,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00471812
         ;   Label: LAB_00471812
     PUSH EBX                            ; 00471815
-    CALL shape_edittool.cpp_FUN_004722b0 ; 00471816
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
+    CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 00471816
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047181b
     PUSH 0xffff                         ; 0047181e
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00471823

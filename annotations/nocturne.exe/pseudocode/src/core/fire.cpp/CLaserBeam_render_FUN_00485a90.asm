@@ -724,7 +724,7 @@ section .text
     PUSH EDX                            ; 00486215 | DAT_01b4d738
     INC ESI                             ; 00486216
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00486217
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048621c
     CMP ESI,0x19                        ; 0048621f
     JL 0x00485d79                       ; 00486222
@@ -922,7 +922,7 @@ section .text
         ;   Label: LAB_00486514
     PUSH ESI                            ; 0048651a | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0048651b
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00486520
     FLD float ptr [ESP + 0x1c]          ; 00486523
         ;   Label: LAB_00486523
@@ -1479,7 +1479,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 00486d2a | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 00486d30 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00486d31
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00486d36
     JMP 0x00486534                      ; 00486d39
         ;   XREF to: 00486534 (UNCONDITIONAL_JUMP)  ; LAB_00486534

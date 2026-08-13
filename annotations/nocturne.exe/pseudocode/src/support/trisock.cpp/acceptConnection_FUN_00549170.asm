@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
-;   Ordinal_1
+;   crt_wsock32.c_accept
 ;   support_trisock.cpp_convertSockAddr_FUN_00548d50
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     MOV dword ptr [ESP + 0x20],EDX      ; 0054918b
     MOV ECX,dword ptr [EAX]             ; 0054918f
     PUSH ECX                            ; 00549191
-    CALL Ordinal_1                      ; 00549192
-        ;   XREF to: 00574bc6 (UNCONDITIONAL_CALL)  ; undefined Ordinal_1()
+    CALL crt_wsock32.c_accept           ; 00549192
+        ;   XREF to: 00574bc6 (UNCONDITIONAL_CALL)  ; _SOCKET crt_wsock32.c_accept(_SOCKET s, SOCKADDR * addr, int * addrlen)
     MOV EDX,dword ptr [ESP + 0x28]      ; 00549197
     MOV dword ptr [EDX],EAX             ; 0054919b
     CMP EAX,-0x1                        ; 0054919d

@@ -1,0 +1,272 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 17,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 19,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 26,
+        "line": 19,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 19,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 26,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 62,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00522e00",
+    "address_range": [
+      [
+        "00522e00",
+        "00522e92"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_allocateHwSample_FUN_00522e00",
+    "signature": "int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_00522e00(int bits_per_sample,int channel_count,int sample_rate,int sample_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60"
+    },
+    {
+      "addr": "00529980",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_00529980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005927ce",
+      "name": "s_allocateHwSample_failed_005927ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02dc1ed8",
+      "name": "DAT_02dc1ed8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc216c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc2170",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc2174",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].buffer_id",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc8318",
+      "name": "DAT_02dc8318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.018867924528302,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 43,
+      "INT_ADD": 19,
+      "INT_AND": 35,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 34,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 3,
+      "INT_SLESS": 17,
+      "INT_SUB": 21,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 14,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 266
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channel_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02dc8318 + 0x2c))",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

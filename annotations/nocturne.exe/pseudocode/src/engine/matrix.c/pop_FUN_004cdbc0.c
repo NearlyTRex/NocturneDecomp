@@ -2,13 +2,13 @@
 // Address: 004cdbc0
 // Address Range: [[004cdbc0, 004cdcc8]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)
+// Signature: void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)
+void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)
 
 {
   _DAT_01cc5174 = _DAT_01cc5174 + -1;

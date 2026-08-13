@@ -36,6 +36,6 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(CBoxActor *thi
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,this_ptr->anim_frame,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0((CDemonRenderer *)PTR_DAT_005ae700);
   return iVar2;
 }

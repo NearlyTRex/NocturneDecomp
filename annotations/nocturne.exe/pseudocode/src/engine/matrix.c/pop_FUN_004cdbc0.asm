@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)
+; void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 at 00460bf0

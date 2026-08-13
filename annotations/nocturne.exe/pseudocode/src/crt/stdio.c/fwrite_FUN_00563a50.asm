@@ -11,9 +11,9 @@
 ;
 ; XREF[10]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 at 004f4c0d
-;   cockpit_pkbitmap.cpp_FUN_004f4f10 at 004f4f47
+;   cockpit_pkbitmap.cpp_writePBGHeader_FUN_004f4f10 at 004f4f47
 ;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00448f40 at 00448f86
-;   core_dtri.cpp_FUN_0046c410 at 0046c420
+;   core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0046c410 at 0046c420
 ;   core_setdir.cpp_CDemonSet_FUN_00513670 at 005136c7
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00403630 at 00403718
 ;   engine_2d.c_saveFogTable_FUN_00403130 at 0040315b

@@ -11,13 +11,13 @@
 ; XREF[531]:
 ;   cockpit_ckptutil.c_FUN_0042e7b0 at 0042e96f
 ;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee5e
-;   cockpit_ckptutil.c_FUN_0042f050 at 0042f0e8
 ;   cockpit_ckptutil.c_FUN_00430210 at 004302c4
 ;   cockpit_ckptutil.c_FUN_004303d0 at 004304e8
 ;   cockpit_ckptutil.c_FUN_00430630 at 0043075b
 ;   cockpit_ckptutil.c_FUN_00431260 at 004313a3
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d575
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebea
+;   cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042f050 at 0042f0e8
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d29b
 ;   ... and 521 more
 ;
@@ -27,7 +27,7 @@
 ;   undefined4 DAT_01cc4808
 ;
 ; Called Functions:
-;   core_sound.cpp_FUN_00527e10
+;   core_sound.cpp_FUN_0052dd80
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
@@ -91,8 +91,8 @@ section .text
         ;   XREF to: 004c84e0 (CONDITIONAL_JUMP)  ; LAB_004c84e0
     MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | g_CSound_PTR_005bed68
     PUSH EDI                            ; 004c84b0
-    CALL core_sound.cpp_FUN_00527e10    ; 004c84b1
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00527e10(CSound * this_ptr)
+    CALL core_sound.cpp_FUN_0052dd80    ; 004c84b1
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052dd80(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c84b6
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_004012a0 ; 004c84b9
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()

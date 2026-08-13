@@ -10,18 +10,18 @@ Failed: 4921
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                          44496
-  undeclared_identifier           5869
-  incompatible_types               442
-  type_error                       377
-  format_error                     229
-  cast_error                       223
-  syntax_error                      95
-  pointer_type                      54
+  other                          44497
+  undeclared_identifier           5851
+  incompatible_types               403
+  type_error                       364
+  format_error                     234
+  cast_error                       218
+  syntax_error                      90
+  pointer_type                      56
   argument_error                     2
 
 ====================================================================================================
-CATEGORY: other (44496 errors)
+CATEGORY: other (44497 errors)
 ====================================================================================================
 
   cockpit_ckptutil.c_FUN_0042d130
@@ -31,12 +31,6 @@ CATEGORY: other (44496 errors)
   cockpit_ckptutil.c_FUN_0042e7b0
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_FUN_0042ee00
-    Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_0042f050
-    Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_0042f8c0
-    Line 25: unknown type name '_EXCEPTION_RECORD'...
-  cockpit_ckptutil.c_FUN_0042fd60
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_FUN_00430210
     Line 25: unknown type name '_EXCEPTION_RECORD'...
@@ -51,6 +45,10 @@ CATEGORY: other (44496 errors)
   cockpit_ckptutil.c_applyColorPalette_FUN_0042d200
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042d100
+    Line 25: unknown type name '_EXCEPTION_RECORD'...
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0
+    Line 25: unknown type name '_EXCEPTION_RECORD'...
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042fd60
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_blitDualModeSprite_FUN_0042e060
     Line 25: unknown type name '_EXCEPTION_RECORD'...
@@ -84,11 +82,13 @@ CATEGORY: other (44496 errors)
     Line 25: unknown type name '_EXCEPTION_RECORD'...
   cockpit_ckptutil.c_drawClippedEdges_FUN_0042ef60
     Line 25: unknown type name '_EXCEPTION_RECORD'...
+  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_0042f330
+    Line 25: unknown type name '_EXCEPTION_RECORD'...
 
   ... and 4891 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (5869 errors)
+CATEGORY: undeclared_identifier (5851 errors)
 ====================================================================================================
 
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005584d0
@@ -152,10 +152,10 @@ CATEGORY: undeclared_identifier (5869 errors)
   core_gore.cpp_CBloodPool_render_FUN_004af340
     Line 38: use of undeclared identifier 'DAT_005b9d4c'...
 
-  ... and 1448 more errors
+  ... and 1429 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (442 errors)
+CATEGORY: incompatible_types (403 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
@@ -219,10 +219,10 @@ CATEGORY: incompatible_types (442 errors)
   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_0044b430
     Line 39: assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'floa...
 
-  ... and 213 more errors
+  ... and 187 more errors
 
 ====================================================================================================
-CATEGORY: type_error (377 errors)
+CATEGORY: type_error (364 errors)
 ====================================================================================================
 
   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
@@ -286,10 +286,10 @@ CATEGORY: type_error (377 errors)
   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
     Line 36: invalid suffix '._0_4_' on floating constant...
 
-  ... and 80 more errors
+  ... and 76 more errors
 
 ====================================================================================================
-CATEGORY: format_error (229 errors)
+CATEGORY: format_error (234 errors)
 ====================================================================================================
 
   core_setutil.cpp_C3DSCamera_load_FUN_005144e0
@@ -319,7 +319,7 @@ CATEGORY: format_error (229 errors)
   core_mission.cpp_CDemonMission_FUN_004d8720
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werro...
   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0
-    Line 75: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werro...
+    Line 74: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werro...
   core_motion.cpp_CMotionList_save_FUN_004e0d20
     Line 34: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror...
   core_event.cpp_CEventList_render_FUN_0047dd80
@@ -329,8 +329,12 @@ CATEGORY: format_error (229 errors)
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470
     Line 52: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror...
   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0052be40
-    Line 28: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat...
-  sound_sndmain.cpp_FUN_00527570
+    Line 29: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat...
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0
+    Line 33: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
+  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
+    Line 21: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
+  sound_sndmain.cpp_formatActiveSounds_FUN_00527570
     Line 22: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
   core_game.cpp_CGame_FUN_004a3b90
     Line 115: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned i...
@@ -348,15 +352,11 @@ CATEGORY: format_error (229 errors)
     Line 40: format specifies type 'float *' but the argument has type 'CInventory *' [-Werro...
   core_event.cpp_parseVectorLocation_FUN_0047a4c0
     Line 18: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror...
-  core_gore.cpp_CBloodPool_load_FUN_004af7c0
-    Line 14: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror...
-  core_gore.cpp_CBloodSplat_load_FUN_004af160
-    Line 14: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror...
 
-  ... and 38 more errors
+  ... and 39 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (223 errors)
+CATEGORY: cast_error (218 errors)
 ====================================================================================================
 
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
@@ -420,14 +420,12 @@ CATEGORY: cast_error (223 errors)
   engine_special.cpp_loadExternalRenderer_FUN_00531780
     Line 35: C-style cast from 'int' to 'FARPROC' (aka 'int ()') is not allowed...
 
-  ... and 68 more errors
+  ... and 67 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (95 errors)
+CATEGORY: syntax_error (90 errors)
 ====================================================================================================
 
-  core_boneguy.cpp_FUN_00418180
-    Line 21: expected expression...
   core_curtain.cpp_CCurtain_process_FUN_0043ebf0
     Line 122: expected expression...
   core_door.cpp_CDoor_process_FUN_00455640
@@ -450,18 +448,12 @@ CATEGORY: syntax_error (95 errors)
     Line 48: expected expression...
   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
     Line 28: expected expression...
-  core_mission.cpp_FUN_004d98c0
-    Line 15: expected expression...
-  core_mobster.cpp_FUN_004da000
-    Line 24: expected expression...
   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640
     Line 31: expected expression...
   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0
     Line 31: expected expression...
   core_smiley.cpp_CSmiley_process_FUN_005200c0
     Line 122: expected expression...
-  core_stranger.cpp_FUN_00534f90
-    Line 20: expected expression...
   core_zombie.cpp_CZombie_process_FUN_0055ef50
     Line 738: expected expression...
   engine_3d.c_dispatchMRGLBlockChain_FUN_00408e80
@@ -486,11 +478,19 @@ CATEGORY: syntax_error (95 errors)
     Line 25: expected expression...
   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0
     Line 27: expected expression...
+  sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0
+    Line 33: expected expression...
+  sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970
+    Line 29: expected expression...
+  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0
+    Line 27: expected expression...
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_0052ab30
+    Line 17: expected expression...
 
-  ... and 43 more errors
+  ... and 38 more errors
 
 ====================================================================================================
-CATEGORY: pointer_type (54 errors)
+CATEGORY: pointer_type (56 errors)
 ====================================================================================================
 
   core_mmx.c_detectIntelProcessor_FUN_004d9eac
@@ -499,11 +499,13 @@ CATEGORY: pointer_type (54 errors)
     Line 70: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0
     Line 28: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
+  cockpit_pkbitmap.cpp_writePBGHeader_FUN_004f4f10
+    Line 27: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   core_inv.cpp_CInventory_load_FUN_004c1190
     Line 55: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   engine_pod.cpp_CPodFile_FUN_004f7ae0
     Line 197: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
-  core_xform.cpp_FUN_0055df90
+  core_xform.cpp_clampClippedVertices_FUN_0055df90
     Line 18: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   engine_3d.c_clipAndDrawLine2D_FUN_00409290
     Line 126: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
@@ -547,10 +549,12 @@ CATEGORY: pointer_type (54 errors)
     Line 156: cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of t...
   core_turret.cpp_CTurret_fire_FUN_0054ab10
     Line 100: cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of t...
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0
+    Line 52: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type...
   core_event.cpp_resolveActorByName_FUN_0047a390
     Line 56: cannot initialize return object of type 'CDemonActor *' with an rvalue of type '...
-  wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
-    Line 15: cannot initialize return object of type 'int' with an lvalue of type 'FARPROC' (...
+
+  ... and 1 more errors
 
 ====================================================================================================
 CATEGORY: argument_error (2 errors)
@@ -565,7 +569,7 @@ CATEGORY: argument_error (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in failed compilations: 4.42
+Average suspects in failed compilations: 4.21
 
 Functions that compile but have suspect patterns: 0
 (These may have runtime issues even though syntax is valid)

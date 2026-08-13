@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   DirectDrawCreate
+;   crt_ddraw.c_DirectDrawCreate
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
 ;   SetFocus
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_00553c52
     PUSH 0x2ddf550                      ; 00553c54 | g_DirectDrawObject
     PUSH 0x0                            ; 00553c59
-    CALL DirectDrawCreate               ; 00553c5b
-        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 00553c5b
+        ;   XREF to: 00574ba8 (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 00553c60
     JZ 0x00553ca1                       ; 00553c62
         ;   XREF to: 00553ca1 (CONDITIONAL_JUMP)  ; LAB_00553ca1

@@ -62,7 +62,7 @@ LAB_00411169:
               (g_CDemonRenderer_PTR_005ae704,&CStack_2c,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               ((CKeyFramedModelInstance *)&DAT_0076436c,0.0,0x23);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)

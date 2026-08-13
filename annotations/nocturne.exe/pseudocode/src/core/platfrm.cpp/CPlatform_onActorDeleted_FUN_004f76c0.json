@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f76c0",
+    "address_range": [
+      [
+        "004f76c0",
+        "004f76f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_onActorDeleted_FUN_004f76c0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_004f76c0(CPlatform *this_ptr,CDemonActor *deleted_actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.333333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 3,
+      "COPY": 7,
+      "INT_ADD": 9,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 80
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 11,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 11,
+      "match": "this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 16,
+      "match": "this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

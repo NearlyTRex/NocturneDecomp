@@ -108,9 +108,9 @@ void __cdecl core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_00
 void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_004e2220(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(CMotionController *this_ptr,CDemonActor *actor);
-int sound_mp3_cpp_FUN_004e2480(int *param_1);
-undefined4 sound_mp3_cpp_FUN_004e25c0(int param_1,int param_2);
-void sound_mp3_cpp_FUN_004e2630(int *param_1);
+int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_004e2480(SMpegFrame *frame);
+void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_004e25c0(int layer,int mode_extension);
+void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_fillBuffer_FUN_004e27f0(CFileBitStream *this_ptr);
 void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(CFileBitStream *this_ptr);
 void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
@@ -153,8 +153,8 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_004e7030(float *input_sampl
 void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_004e7210(float *input_samples,float *output_samples,int mpeg_block_type);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_004e7720(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
 int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_004e77d0(SMpegFrame frame_info);
-int sound_mp3_cpp_FUN_004e78b0(void);
-void sound_mp3_cpp_FUN_004e7b00(void);
+int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_004e78b0(void);
+void __cdecl sound_mp3_cpp_initializeHuffmanTablesOnce_FUN_004e7b00(void);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_004e7dd0(CMP3Decoder *this_ptr,uint flags);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder *this_ptr,char *filename);

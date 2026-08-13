@@ -21,7 +21,6 @@
 #include "types/classes/CMoloch.h"
 #include "types/classes/CMoon.h"
 #include "types/classes/CMorphModel.h"
-#include "types/classes/CPlatform.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -51,7 +50,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_cen
 void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems);
 int __cdecl core_menu_cpp_FUN_004d23d0(void);
-void core_menu_cpp_FUN_004d2880(void);
+void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004d2880(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description);
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void);
@@ -81,7 +80,7 @@ void __cdecl core_minecar_cpp_staticInit_FUN_004d5fb0(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_004d5fe0(void);
 CDemonActorType * core_minecar_cpp_CMineCar_getActorType_FUN_004d6010(void);
 void __cdecl core_minecar_cpp_CMinecar_setup_FUN_004d6020(CMineCar *this_ptr);
-void core_minecar_cpp_CMineCar_process_FUN_004d6040(CPlatform *param_1,float param_2);
+void __cdecl core_minecar_cpp_CMineCar_process_FUN_004d6040(CMineCar *this_ptr,float delta_time);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_004d60b0(CMineCar *this_ptr);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_004d60d0(CMineCar *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_004d6140(void);
@@ -107,7 +106,7 @@ SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_004d7d80(SClipPlane *th
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane *this_ptr,uint flags);
 CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_004d7db0(CVector3f *this_ptr,uint flags);
 void __cdecl core_mission_cpp_staticInit_FUN_004d7dd0(void);
-void core_mission_cpp_FUN_004d7de0(void);
+void __cdecl core_mission_cpp_skipLine_FUN_004d7de0(_FILE *file_handle);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d7e00(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d7e90(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d7ea0(CDemonMission *this_ptr);
@@ -138,8 +137,8 @@ void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650(CDemonMi
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004d9680(CDemonMission *this_ptr,char *out_buf,char *base_name);
 void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004d98c0(int param_1,undefined4 param_2);
-void core_mission_cpp_FUN_004d9900(void);
+void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_004d98c0(CDemonMission *this_ptr,uint *checksum);
+void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004d9900(CDemonMission *this_ptr);
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(CDemonMission *this_ptr);
@@ -151,8 +150,8 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_004d9eac(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004d9f59(void);
 int __cdecl core_mmx_c_getCPUInfo_FUN_004d9f6f(SCPUInfo *cpu_info);
 void __cdecl core_mobster_cpp_staticInit_FUN_004d9fd0(void);
-float * core_mobster_cpp_FUN_004da000(void);
-CVector3f * core_mobster_cpp_FUN_004da070(CVector3f *param_1,CDemonActor *param_2);
+CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointLocal_FUN_004da000(CVector3f *out,CDemonActor *actor);
+CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointWorld_FUN_004da070(CVector3f *out,CDemonActor *actor);
 CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_004da120(void);
 CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_004da140(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004da150(CMobster *this_ptr);
@@ -161,7 +160,7 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004da5a0(CMobster *
 void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004da670(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(CMobster *this_ptr,float delta_time);
-void core_mobster_cpp_FUN_004dba50(void);
+CVector3f * __cdecl core_mobster_cpp_setEulerAngles_FUN_004dba50(CVector3f *out,float x,float z,float y);
 void __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004dba70(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004dbce0(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004dc110(CMobster *this_ptr);

@@ -423,17 +423,17 @@ section .text
         ;   Label: LAB_004c0f0f
     PUSH EBX                            ; 004c0f15 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004c0f16
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c0f1b
     MOV ESI,dword ptr [0x005ae704]      ; 004c0f1e | g_CDemonRenderer_PTR_005ae704
     PUSH ESI                            ; 004c0f24 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004c0f25
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c0f2a
     MOV EDI,dword ptr [0x005ae704]      ; 004c0f2d | g_CDemonRenderer_PTR_005ae704
     PUSH EDI                            ; 004c0f33 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 004c0f34
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     MOV EAX,[0x005be368]                ; 004c0f39 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
     ADD ESP,0x4                         ; 004c0f3e
     MOV dword ptr [EAX + 0x15aa88],0x0  ; 004c0f41 | g_CDemonSet_01e57284.rendering_mode

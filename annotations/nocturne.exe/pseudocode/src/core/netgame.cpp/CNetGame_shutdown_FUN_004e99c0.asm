@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90
-;   Ordinal_116
+;   crt_wsock32.c_WSACleanup
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110
 ;
 ; *****************************************************************************

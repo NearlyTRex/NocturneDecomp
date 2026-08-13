@@ -44,6 +44,98 @@
     }
   },
   {
+    "addr":"005748ae",
+    "body":[
+      {
+        "end":"005748b3",
+        "size":6,
+        "start":"005748ae"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_user32.c_SetRectEmpty",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000003c",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"lprc",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPRECT"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00574a2e",
+    "body":[
+      {
+        "end":"00574a33",
+        "size":6,
+        "start":"00574a2e"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_FreeLibrary",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000054",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hLibModule",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HMODULE"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"00574bae",
     "body":[
       {
@@ -52,14 +144,22 @@
         "start":"00574bae"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"Ordinal_116",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_WSACleanup",
+    "ret":"int",
     "thtarget":"EXTERNAL:0000009a",
     "thunk":true,
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

@@ -119,6 +119,6 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCir
               (g_CDemonRenderer_PTR_005ae704,1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

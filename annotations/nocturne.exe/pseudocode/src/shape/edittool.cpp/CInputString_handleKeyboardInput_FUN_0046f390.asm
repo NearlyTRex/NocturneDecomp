@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 0047110e
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8d6
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f8d6
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4

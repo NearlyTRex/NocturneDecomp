@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9352
-;   core_mission.cpp_FUN_004d9900 at 004d9905
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004d9900 at 004d9905
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01abb658

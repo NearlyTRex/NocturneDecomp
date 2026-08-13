@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_00477370 at 00477375
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00477390 at 004773bf
-;   shape_edittool.cpp_FUN_004771f0 at 00477278
+;   shape_edittool.cpp_CEdCheck_setupWithText_FUN_004771f0 at 00477278
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

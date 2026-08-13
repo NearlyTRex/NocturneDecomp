@@ -46,8 +46,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
                     (g_CDemonRenderer_PTR_005ae704,pCStack_14,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                     (this_ptr_00,0.0,-1);
-          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
           pCStack_14 = (CVector3f *)&pCStack_14[0x24].y;
           iVar2 = iVar2 + 1;
           pCVar3 = (CVector3f *)&pCVar3[0x24].y;

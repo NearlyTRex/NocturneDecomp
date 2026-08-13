@@ -6,11 +6,11 @@
 ;
 ; XREF[16]:
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 005465dd
-;   sound_sndmain.cpp_FUN_00527570 at 00527574
-;   sound_sndmain.cpp_FUN_00527950 at 00527957
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527452
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e78
+;   sound_sndmain.cpp_formatActiveSounds_FUN_00527570 at 00527574
 ;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c32
+;   sound_sndmain.cpp_freeSampleByName_FUN_00527950 at 00527957
 ;   sound_sndmain.cpp_getChannelLevels_FUN_005293f0 at 00529437
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 005279f1
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 at 005234fb

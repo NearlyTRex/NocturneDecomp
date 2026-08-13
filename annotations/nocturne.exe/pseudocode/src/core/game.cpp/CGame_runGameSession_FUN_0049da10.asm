@@ -384,8 +384,8 @@ section .text
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
     MOV ECX,dword ptr [0x005b6d50]      ; 0049de89 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 0049de8f
-    CALL shape_edittool.cpp_FUN_004720c0 ; 0049de90
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 0049de90
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049de95
     PUSH EDI                            ; 0049de98 | g_CPickList_01c78424
     CALL shape_edittool.cpp_FUN_00476160 ; 0049de99

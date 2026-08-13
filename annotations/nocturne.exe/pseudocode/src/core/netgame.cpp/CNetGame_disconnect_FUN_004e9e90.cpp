@@ -39,7 +39,8 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame *this_pt
       _DAT_01cea3f8 = iVar2;
       if (this_ptr->server_player_index < 0) {
 LAB_004ea004:
-        shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+                  (g_CEditorTools_PTR_005b6d50);
       }
       else {
         do {
@@ -59,7 +60,7 @@ LAB_004ea004:
           }
           _DAT_01cea3f4 = iVar1;
           if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
-            shape_edittool_cpp_FUN_0046fe60
+            shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                       (g_CEditorTools_PTR_005b6d50,"Couldn't contact server to disconnect.");
             goto LAB_004ea004;
           }
@@ -90,7 +91,8 @@ LAB_004ea004:
           iVar3 = _DAT_01cea3f8;
           core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
         } while (-1 < this_ptr->server_player_index);
-        shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+                  (g_CEditorTools_PTR_005b6d50);
       }
     }
     if (this_ptr->connection_type == CONNECTION_HOST) {
@@ -111,7 +113,8 @@ LAB_004ea004:
       _DAT_01cea3f8 = iVar2;
       if (this_ptr->player_count < 2) {
 LAB_004ea227:
-        shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+                  (g_CEditorTools_PTR_005b6d50);
       }
       else {
         do {
@@ -131,7 +134,7 @@ LAB_004ea227:
           }
           _DAT_01cea3f4 = iVar1;
           if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
-            shape_edittool_cpp_FUN_0046fe60
+            shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                       (g_CEditorTools_PTR_005b6d50,"Couldn't connect to all clients to disconnect.");
             goto LAB_004ea227;
           }
@@ -171,7 +174,8 @@ LAB_004ea227:
           iVar3 = _DAT_01cea3f8;
           core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(this_ptr);
         } while (1 < this_ptr->player_count);
-        shape_edittool_cpp_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+                  (g_CEditorTools_PTR_005b6d50);
       }
     }
   }

@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 00534e90
 float __cdecl motionBlendWeightFunc(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
-// Original: core_stranger.cpp_FUN_00534f90
+// Original: core_stranger.cpp_canPickupObject_FUN_00534f90
 // Address: 00534f90
-bool FUN_00534f90(void);
+int __cdecl canPickupObject(CDemonActor *actor,CDemonActor *object);
 
 // Original: core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
 // Address: 00534fc0
@@ -211,10 +211,6 @@ void __cdecl CStranger::drop(CStranger *this_ptr,CDemonActor *carrier,CVector3f 
 // Address: 00540970
 float FUN_00540970(void);
 
-// Original: core_stranger.cpp_FUN_005409a0
-// Address: 005409a0
-void FUN_005409a0(void);
-
 // Original: core_stranger.cpp_FUN_005409c0
 // Address: 005409c0
 float FUN_005409c0(float *param_1,float *param_2);
@@ -223,25 +219,21 @@ float FUN_005409c0(float *param_1,float *param_2);
 // Address: 005409f0
 void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 
-// Original: core_stranger.cpp_FUN_00540a10
-// Address: 00540a10
-undefined4 FUN_00540a10(void);
-
-// Original: core_stranger.cpp_FUN_00540a20
+// Original: core_stranger.cpp_isProcessDisabled_FUN_00540a20
 // Address: 00540a20
-undefined4 FUN_00540a20(void);
+int __cdecl isProcessDisabled(CDemonActor *actor);
 
 // Original: core_stranger.cpp_getScaleY_FUN_00540a30
 // Address: 00540a30
 int __cdecl getScaleY(CDemonActor *actor);
 
-// Original: core_stranger.cpp_FUN_00540a40
+// Original: core_stranger.cpp_setWindVelocity_FUN_00540a40
 // Address: 00540a40
-void FUN_00540a40(void);
+void __cdecl setWindVelocity(CCloth *cloth_ptr,CVector3f *velocity);
 
-// Original: core_stranger.cpp_FUN_00540a70
+// Original: core_stranger.cpp_getCurrentMotionStateIndex_FUN_00540a70
 // Address: 00540a70
-int FUN_00540a70(void);
+int __cdecl getCurrentMotionStateIndex(CCharacter *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_dtor_FUN_00540a90
 // Address: 00540a90

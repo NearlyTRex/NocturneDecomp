@@ -2,18 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 180,
+    "complexity_score": 336,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
-    "suspect_count": 5,
+    "pseudocode_lines": 126,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 367
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -45,7 +49,7 @@
     {
       "addr": "00571b2c",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00571b2c"
+      "name": "crt_unknown.c_None_FUN_00571b2c"
     }
   ],
   "globals": [],
@@ -136,16 +140,48 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xffffffbf",
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "uStackY_44",
       "severity": "moderate",
-      "text": "for (; (0 < iVar5 && ((&stack0xffffffbf)[iVar5] == '0')); iVar5 = iVar5 + -1) {",
+      "text": "uint uStackY_44;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "byte *in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffffc4",
+      "severity": "moderate",
+      "text": "ulonglong *in_stack_ffffffc4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[iVar9] = bVar1;",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "StackY array variable (stack alignment artifact)",
       "line": 92,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
       "match": "(ushort *)((int)result",
       "severity": "moderate",
       "text": "*(ushort *)((int)result + 8) = 0;",
@@ -153,15 +189,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 97,
       "match": "(uint *)((int)result",
       "severity": "moderate",
       "text": "*(uint *)((int)result + 4) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc0)[iVar9] = 0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 103,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "uStackY_44 = 0x56f7f5;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "None(in_stack_ffffffc0,in_stack_ffffffc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_ffffffc4",
+      "severity": "moderate",
+      "text": "None(in_stack_ffffffc0,in_stack_ffffffc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
       "line": 106,
+      "match": "uStackY_44",
+      "severity": "moderate",
+      "text": "uStackY_44 = 0x56f803;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
       "match": "(ushort *)((int)result",
       "severity": "moderate",
       "text": "*(ushort *)((int)result + 8) = uStack_24;",
@@ -169,10 +245,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 113,
       "match": "(uint *)((int)result",
       "severity": "moderate",
       "text": "*(uint *)((int)result + 4) = uStack_28;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&uStackY_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)&uStackY_44",
+      "severity": "moderate",
+      "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x56f7f5 assigned to bare local `uStackY_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 103,
+      "match": "0x56f7f5",
+      "severity": "moderate",
+      "text": "uStackY_44 = 0x56f7f5;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x56f803 assigned to bare local `uStackY_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 106,
+      "match": "0x56f803",
+      "severity": "moderate",
+      "text": "uStackY_44 = 0x56f803;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
       "type": "pointer_cast"
     }
   ]

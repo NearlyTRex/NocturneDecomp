@@ -28,8 +28,8 @@
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_00523b20
 ;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0
-;   sound_sndmain.cpp_FUN_00529980
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
+;   sound_sndmain.cpp_logSoundError_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -106,8 +106,8 @@ section .text
     JL 0x00523973                       ; 005239b4
         ;   XREF to: 00523973 (CONDITIONAL_JUMP)  ; LAB_00523973
     PUSH 0x5927ce                       ; 005239b6 | = "allocateHwSample - failed\n"
-    CALL sound_sndmain.cpp_FUN_00529980 ; 005239bb
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
+    CALL sound_sndmain.cpp_logSoundError_FUN_00529980 ; 005239bb
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_00529980(char * format)
     ADD ESP,0x4                         ; 005239c0
     XOR EAX,EAX                         ; 005239c3
         ;   Label: LAB_005239c3

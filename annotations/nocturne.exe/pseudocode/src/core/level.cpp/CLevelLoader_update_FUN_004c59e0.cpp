@@ -146,7 +146,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
               (&g_CKeyFramedModel_01cc3290,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70();
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     }
     g_CDemonSet_PTR_005be368->rendering_mode = 0;
     local_10 = g_CBitFont_PTR_014b9900;

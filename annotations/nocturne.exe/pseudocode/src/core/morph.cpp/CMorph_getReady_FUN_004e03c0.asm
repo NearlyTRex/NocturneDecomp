@@ -62,7 +62,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ad78
 ;   TerminatedCString s_CMorph_getReady_can_t_do_0058ad8a
-;   WatcomTypeInfo g_CBoundingBox3D_005993f0
+;   WatcomTypeInfo g_CBoundingBox3DTypeInfo_005993f0
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -89,7 +89,7 @@ section .text
     CMP dword ptr [EAX + 0x65c],0x3     ; 004e03db
     JL 0x004e048f                       ; 004e03e2
         ;   XREF to: 004e048f (CONDITIONAL_JUMP)  ; LAB_004e048f
-    PUSH 0x5993f0                       ; 004e03e8 | g_CBoundingBox3D_005993f0
+    PUSH 0x5993f0                       ; 004e03e8 | g_CBoundingBox3DTypeInfo_005993f0
         ;   Label: LAB_004e03e8
     PUSH 0x2                            ; 004e03ed
     LEA EAX,[ESP + 0x8]                 ; 004e03ef

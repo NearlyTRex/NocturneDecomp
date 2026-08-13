@@ -6,15 +6,15 @@
 ;
 ; XREF[32]:
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005464a0 at 005466e4
-;   sound_sndmain.cpp_FUN_00526dd0 at 00526dff
-;   sound_sndmain.cpp_FUN_00526f00 at 00526f4f
-;   sound_sndmain.cpp_FUN_00526f60 at 00526fe1
-;   sound_sndmain.cpp_FUN_00527060 at 005270b7
-;   sound_sndmain.cpp_FUN_00527190 at 005271e5
-;   sound_sndmain.cpp_FUN_00527200 at 0052721e
-;   sound_sndmain.cpp_FUN_00527570 at 00527596
-;   sound_sndmain.cpp_FUN_00527950 at 0052799a
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 0052747d
+;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 0052805d
+;   sound_sndmain.cpp_formatActiveSounds_FUN_00527570 at 00527596
+;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c5a
+;   sound_sndmain.cpp_freeSampleByName_FUN_00527950 at 0052799a
+;   sound_sndmain.cpp_getChannelLevels_FUN_005293f0 at 00529480
+;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527a0f
+;   sound_sndmain.cpp_getSfxOptions_FUN_00526dd0 at 00526dff
+;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d78
 ;   ... and 22 more
 ;
 ; Referenced Globals:

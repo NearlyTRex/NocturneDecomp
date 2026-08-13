@@ -71,13 +71,13 @@ void __cdecl verticalBlur3TapMMXStride320(ulonglong *output_buffer,ulonglong *in
 // Address: 004654c5
 void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pixel_count);
 
-// Original: core_dstrender.cpp_FUN_0046556f
+// Original: core_dstrender.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0046556f
 // Address: 0046556f
-void FUN_0046556f(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pBB12Px4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrender.cpp_FUN_0046568b
+// Original: core_dstrender.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_0046568b
 // Address: 0046568b
-void FUN_0046568b(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pAmbientPx4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
 // Address: 004657a7

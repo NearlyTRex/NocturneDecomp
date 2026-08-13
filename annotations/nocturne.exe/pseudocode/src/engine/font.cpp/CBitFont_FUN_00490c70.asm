@@ -15,7 +15,7 @@
 ; undefined        Stack[-0x1010]:1  local_1010
 ;
 ; XREF[1]:
-;   engine_font.cpp_CBitFont_FUN_00490c20 at 00490c4f
+;   engine_font.cpp_CBitFont_printF_FUN_00490c20 at 00490c4f
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08

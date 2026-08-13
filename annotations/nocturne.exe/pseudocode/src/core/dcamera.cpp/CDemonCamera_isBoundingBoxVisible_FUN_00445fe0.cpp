@@ -23,13 +23,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   double dVar12;
   CVector3f *position_00;
   CVector3f *rotation;
-  CVector3i CStack_13c;
-  float local_130;
-  float local_12c;
-  float local_128;
-  float local_124;
-  float local_120;
-  float local_11c;
+  int iStack_13c;
+  CVector3f *pCStack_138;
   CVector3i local_118;
   float local_10c;
   float local_108;
@@ -80,9 +75,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   float local_24;
   float local_20;
   
-  CStack_13c.z = (int)g_CDemonRenderer_PTR_005ae704;
-  CStack_13c.y = 0x446012;
-  engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0();
+  pCStack_138 = (CVector3f *)0x446012;
+  engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0(g_CDemonRenderer_PTR_005ae704);
   fVar7 = (float)256;
   fVar2 = (this_ptr->position).z;
   fVar3 = (this_ptr->position).y;
@@ -90,12 +84,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   fVar5 = position->z;
   g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;
   g_TransformMatrix.m[0].y = (this_ptr->source_matrix).m[0].y;
-  CStack_13c.z = 0;
   g_TransformMatrix.m[0].z = (this_ptr->source_matrix).m[0].z;
   g_TransformMatrix.m[1].x = (this_ptr->source_matrix).m[1].x;
-  CStack_13c.y = (int)orientation;
+  pCStack_138 = orientation;
   iVar8 = (this_ptr->source_matrix).m[1].y;
-  CStack_13c.x = 0x446087;
+  iStack_13c = 0x446087;
   dVar10 = round((double)(((this_ptr->position).x - position->x) * fVar7));
   iVar6 = (this_ptr->source_matrix).m[1].z;
   rotation = (CVector3f *)0x446099;
@@ -113,15 +106,12 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   g_TransformMatrix.m[2].x = iVar8;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,position_00,rotation);
-  local_124 = bbox_max->x;
-  local_120 = bbox_min->y;
-  local_11c = bbox_max->z;
-  local_f4.x = (int)ROUND(local_124 * 256.0f);
-  local_f4.y = (int)ROUND(local_120 * 256.0f);
-  local_f4.z = (int)ROUND(local_11c * 256.0f);
-  local_78 = local_124;
-  local_74 = local_120;
-  local_60 = local_11c;
+  local_78 = bbox_max->x;
+  local_74 = bbox_min->y;
+  local_60 = bbox_max->z;
+  local_f4.x = (int)ROUND(local_78 * 256.0f);
+  local_f4.y = (int)ROUND(local_74 * 256.0f);
+  local_f4.z = (int)ROUND(local_60 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[0x4e18].projected_vertex,&local_f4);
   local_e8 = bbox_min->x;
@@ -146,29 +136,25 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   local_34 = local_8c;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_100);
-  local_130 = bbox_max->x;
-  local_12c = bbox_min->y;
-  local_128 = bbox_min->z;
-  local_118.x = (int)ROUND(local_130 * 256.0f);
-  local_118.y = (int)ROUND(local_12c * 256.0f);
-  local_118.z = (int)ROUND(local_128 * 256.0f);
-  local_64 = local_12c;
-  local_24 = local_130;
-  local_20 = local_128;
+  local_24 = bbox_max->x;
+  local_64 = bbox_min->y;
+  local_20 = bbox_min->z;
+  local_118.x = (int)ROUND(local_24 * 256.0f);
+  local_118.y = (int)ROUND(local_64 * 256.0f);
+  local_118.z = (int)ROUND(local_20 * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_118);
   local_ac = bbox_max->x;
   local_a8 = bbox_max->y;
   local_a4 = bbox_max->z;
-  CStack_13c.x = (int)ROUND(local_ac * 256.0f);
-  CStack_13c.y = (int)ROUND(local_a8 * 256.0f);
-  CStack_13c.z = (int)ROUND(local_a4 * 256.0f);
+  iStack_13c = (int)ROUND(local_ac * 256.0f);
+  pCStack_138 = (CVector3f *)(int)ROUND(local_a8 * 256.0f);
   local_5c = local_a4;
   local_48 = local_ac;
   local_44 = local_a8;
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[0x4e1c].projected_vertex,&CStack_13c)
-  ;
+            (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[0x4e1c].projected_vertex,
+             (CVector3i *)&iStack_13c);
   local_a0 = bbox_min->x;
   local_9c = bbox_max->y;
   local_98 = bbox_max->z;
@@ -214,7 +200,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0(CDem
   if (((uVar9 & 0x80000000) != 0) && ((char)uVar9 != '\0')) {
     iVar8 = 0;
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return iVar8;
 }

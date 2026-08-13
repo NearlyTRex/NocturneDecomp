@@ -9,6 +9,6 @@
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor *this_ptr)
 
 {
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

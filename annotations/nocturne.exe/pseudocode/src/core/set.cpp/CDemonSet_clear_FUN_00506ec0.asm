@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_FUN_00452f10
-;   core_setutil.cpp_C3DSCamera_FUN_00514430
+;   core_setutil.cpp_C3DSCamera_free_FUN_00514430
 ;   core_terrain.cpp_CTerrain_free_FUN_005492f0
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     ADD ESI,0x19640                     ; 00506ed8
     PUSH EBX                            ; 00506ede
         ;   Label: LAB_00506ede
-    CALL core_setutil.cpp_C3DSCamera_FUN_00514430 ; 00506edf
-        ;   XREF to: 00514430 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_FUN_00514430(C3DSCamera * this_ptr)
+    CALL core_setutil.cpp_C3DSCamera_free_FUN_00514430 ; 00506edf
+        ;   XREF to: 00514430 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_free_FUN_00514430(C3DSCamera * this_ptr)
     ADD EBX,0x1a0                       ; 00506ee4
     ADD ESP,0x4                         ; 00506eea
     CMP EBX,ESI                         ; 00506eed

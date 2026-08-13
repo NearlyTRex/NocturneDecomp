@@ -11,7 +11,7 @@ double __cdecl report_math_error(MathErrorContext *errorCtx)
 {
   int iVar1;
   
-  iVar1 = (*(code *)PTR_crt_unknown_c_FUN_00573ffb_005c2164)(errorCtx);
+  iVar1 = (*(code *)PTR_crt_unknown_c_FUN_00573650_005c2164)(errorCtx);
   if (iVar1 == 0) {
     print_error_message(errorCtx->errorType,errorCtx->errorData);
     if (errorCtx->errorType == 1) {

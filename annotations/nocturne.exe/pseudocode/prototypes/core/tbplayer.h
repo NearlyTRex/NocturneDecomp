@@ -23,9 +23,9 @@ CBassPlayer * __cdecl CBassPlayer::ctor(CBassPlayer *this_ptr);
 // Address: 00543180
 void __cdecl CBassPlayer::setup(CBassPlayer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_005431f0
+// Original: core_tbplayer.cpp_setVector_FUN_005431f0
 // Address: 005431f0
-void FUN_005431f0(void);
+CVector3f * __cdecl setVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00543210
 // Address: 00543210

@@ -222,7 +222,7 @@ section .text
     MOV ECX,dword ptr [0x005ae704]      ; 004dee3f | g_CDemonRenderer_PTR_005ae704
     PUSH ECX                            ; 004dee45 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004dee46
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     IMUL EAX,dword ptr [EBX + 0x1ccdeec],0xc ; 004dee4b
     MOV EAX,dword ptr [ESI + EAX*0x1]   ; 004dee52
     MOV dword ptr [EBP + -0x4],EAX      ; 004dee55

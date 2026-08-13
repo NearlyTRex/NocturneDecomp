@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
+; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 at 00440ac7

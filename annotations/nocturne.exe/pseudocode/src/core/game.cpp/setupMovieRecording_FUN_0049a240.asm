@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360
-;   shape_edittool.cpp_FUN_0046fe60
+;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     PUSH 0x582365                       ; 0049a2fa | = "Press CTRL+V to begin recording."
     MOV EAX,[0x005b6d50]                ; 0049a2ff | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0049a304
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 0049a305
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 0049a305
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 0049a30a
     ADD ESP,0x8                         ; 0049a30f
     MOV dword ptr [0x01c78ac8],EDX      ; 0049a312 | DAT_01c78ac8

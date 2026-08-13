@@ -107,9 +107,9 @@ void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *m
 // Address: 00438620
 void __cdecl CClothList::applyRotation(CClothList *this_ptr,CVector3f *euler);
 
-// Original: core_cloth.cpp_FUN_00438660
+// Original: core_cloth.cpp_CClothList_setWindVelocity_FUN_00438660
 // Address: 00438660
-void FUN_00438660(int *param_1,undefined4 *param_2);
+void __cdecl CClothList::setWindVelocity(CClothList *this_ptr,CVector3f *wind_velocity);
 
 // Original: core_cloth.cpp_CCloth_grabCloth_FUN_004386b0
 // Address: 004386b0

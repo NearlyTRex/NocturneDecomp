@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_minecar_cpp_CMineCar_process_FUN_004d6040(CPlatform *param_1,float param_2)
+; void __cdecl core_minecar_cpp_CMineCar_process_FUN_004d6040(CMineCar *this_ptr,float delta_time)
 ;
+; Parameters:
+; CMineCar *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04

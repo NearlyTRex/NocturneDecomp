@@ -383,6 +383,114 @@
     }
   },
   {
+    "addr":"005748fc",
+    "body":[
+      {
+        "end":"00574901",
+        "size":6,
+        "start":"005748fc"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_WaitForSingleObject",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:00000095",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hHandle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HANDLE"
+        },
+        {
+          "name":"dwMilliseconds",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00574a7c",
+    "body":[
+      {
+        "end":"00574a81",
+        "size":6,
+        "start":"00574a7c"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_GlobalLock",
+    "ret":"LPVOID",
+    "thtarget":"EXTERNAL:00000070",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hMem",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HGLOBAL"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
     "addr":"00574bfc",
     "body":[
       {
@@ -391,14 +499,72 @@
         "start":"00574bfc"
       }
     ],
+    "conv":"__stdcall",
     "importable":true,
-    "name":"Ordinal_23",
-    "ret":"undefined1",
+    "name":"crt_wsock32.c_socket",
+    "ret":"int",
     "thtarget":"EXTERNAL:000000a7",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"af",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"type",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"protocol",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   }

@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_watcom.c_getcwd_FUN_00566440
+# Entry:       00566440
+# Signature:   char * __cdecl crt_watcom_c_getcwd_FUN_00566440(char *buffer,SIZE_T size)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00566440 [ESP:+0]  # JMP 0x0056c5f0
+BRANCH (ram,0x56c5f0,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

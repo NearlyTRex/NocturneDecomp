@@ -14,7 +14,7 @@
 ;   support_trisock.cpp_createUDPSocket_FUN_00548f30 at 00548f36
 ;
 ; Called Functions:
-;   Ordinal_3
+;   crt_wsock32.c_closesocket
 ;   support_trisock.cpp_isSocketValid_FUN_00548f60
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 00549129
         ;   Label: LAB_00549129
     PUSH EDX                            ; 0054912b
-    CALL Ordinal_3                      ; 0054912c
-        ;   XREF to: 00574bd2 (UNCONDITIONAL_CALL)  ; undefined Ordinal_3()
+    CALL crt_wsock32.c_closesocket      ; 0054912c
+        ;   XREF to: 00574bd2 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_closesocket(_SOCKET s)
     TEST EAX,EAX                        ; 00549131
     SETZ AL                             ; 00549133
     AND EAX,0xff                        ; 00549136

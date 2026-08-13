@@ -17,8 +17,8 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 at 004ea7ad
 ;
 ; Called Functions:
-;   Ordinal_16
-;   Ordinal_17
+;   crt_wsock32.c_recv
+;   crt_wsock32.c_recvfrom
 ;   support_trisock.cpp_convertSockAddr_FUN_00548d50
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     PUSH ECX                            ; 0054902d
     MOV ECX,dword ptr [EDX]             ; 0054902e
     PUSH ECX                            ; 00549030
-    CALL Ordinal_16                     ; 00549031
-        ;   XREF to: 00574bea (UNCONDITIONAL_CALL)  ; undefined Ordinal_16()
+    CALL crt_wsock32.c_recv             ; 00549031
+        ;   XREF to: 00574bea (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recv(_SOCKET s, char * buf, int len, int flags)
     MOV EBX,EAX                         ; 00549036
     CMP EBX,-0x1                        ; 00549038
         ;   Label: LAB_00549038
@@ -67,8 +67,8 @@ section .text
     PUSH ECX                            ; 0054905b
     MOV EBP,dword ptr [EDX]             ; 0054905c
     PUSH EBP                            ; 0054905e
-    CALL Ordinal_17                     ; 0054905f
-        ;   XREF to: 00574be4 (UNCONDITIONAL_CALL)  ; undefined Ordinal_17()
+    CALL crt_wsock32.c_recvfrom         ; 0054905f
+        ;   XREF to: 00574be4 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_recvfrom(_SOCKET s, char * buf, int len, int flags, ...)
     MOV EBX,EAX                         ; 00549064
     TEST EAX,EAX                        ; 00549066
     JLE 0x00549038                      ; 00549068

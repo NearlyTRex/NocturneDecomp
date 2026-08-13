@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)
+; void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,undefined4 param_4,float *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 00472de0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00473065
     CALL engine_matrix.c_pop_FUN_004cdbc0 ; 00473068
-        ;   XREF to: 004cdbc0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004cdbc0()
+        ;   XREF to: 004cdbc0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004cdbc0(CDemonRenderer * this_ptr)
     ADD ESP,0x1c                        ; 0047306d
     POP EDI                             ; 00473070
     POP ESI                             ; 00473071

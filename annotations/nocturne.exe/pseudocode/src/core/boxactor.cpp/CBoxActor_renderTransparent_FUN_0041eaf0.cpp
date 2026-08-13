@@ -36,6 +36,6 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041eaf0(CBoxActor
   if (this_ptr->dont_use_normals != 0) {
     g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0((CDemonRenderer *)PTR_DAT_005ae700);
   return iVar2;
 }

@@ -54,30 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 21,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 22,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 24,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 25,
-        "message": "use of undeclared identifier 'Ordinal_6'"
       }
     ],
     "success": false,
@@ -86,19 +62,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 88,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "unknown_field"
+      "pointer_truncation"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -124,7 +99,7 @@
     {
       "addr": "00574bc0",
       "is_variadic": false,
-      "name": "Ordinal_6"
+      "name": "crt_wsock32.c_getsockname"
     },
     {
       "addr": "00548d50",
@@ -205,43 +180,19 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_28._4_4_ = auStack_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_28._8_4_ = &puStack_4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_28._0_4_ = *socket_handle;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)pSVar2",
+      "line": 21,
+      "match": "(uint *)((int)pSVar3",
       "severity": "moderate",
-      "text": "puStack_4[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
-      "match": "(int)pSVar2",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "puStack_4[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_truncation"
     }
   ]

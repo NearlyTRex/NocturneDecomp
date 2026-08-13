@@ -417,7 +417,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0048dac0 | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0048dac5 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0048dac6
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048dacb
     MOV EDX,dword ptr [ESP + 0x90]      ; 0048dace
     INC ESI                             ; 0048dad5
@@ -431,7 +431,7 @@ section .text
         ;   Label: LAB_0048daf2
     PUSH EBX                            ; 0048daf8 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0048daf9
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048dafe
     PUSH EBP                            ; 0048db01
         ;   Label: LAB_0048db01
@@ -677,7 +677,7 @@ section .text
     MOV EAX,[0x005ae704]                ; 0048deaa | g_CDemonRenderer_PTR_005ae704
     PUSH EAX                            ; 0048deaf | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0048deb0
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0048deb5
     MOV EAX,dword ptr [EBP + 0x288]     ; 0048deb8
         ;   Label: LAB_0048deb8

@@ -79,7 +79,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
                &local_e0.min,&local_e0.max,(CMatrix3x3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(this_ptr_00,0.0,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   if ((iVar4 != 0) &&
      (iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704), iVar4 == 0)) {
@@ -158,7 +158,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
               (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c08d20);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     if ((this_ptr->lighting_active != 1) && (this_ptr->lighting_active != 2)) {
       local_50.x = (this_ptr->base).position.x;
       local_50.y = (this_ptr->base).position.y;
@@ -243,7 +243,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_00484390(CFireball *this_ptr)
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0)
         ;
         iVar4 = iVar4 + 1;
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
       } while (iVar4 < 3);
     }
   }

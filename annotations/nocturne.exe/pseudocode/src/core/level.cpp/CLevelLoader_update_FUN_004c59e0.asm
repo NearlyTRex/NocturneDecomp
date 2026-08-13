@@ -410,7 +410,7 @@ section .text
     MOV EBP,dword ptr [0x005ae704]      ; 004c5e12 | g_CDemonRenderer_PTR_005ae704
     PUSH EBP                            ; 004c5e18 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 ; 004c5e19
-        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70()
+        ;   XREF to: 00460e70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c5e1e
     MOV EAX,[0x005be368]                ; 004c5e21 | g_CDemonSet_PTR_005be368
         ;   Label: LAB_004c5e21

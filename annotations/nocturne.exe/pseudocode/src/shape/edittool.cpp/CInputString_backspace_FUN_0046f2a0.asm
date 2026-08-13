@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 00471346
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f934
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f934
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0

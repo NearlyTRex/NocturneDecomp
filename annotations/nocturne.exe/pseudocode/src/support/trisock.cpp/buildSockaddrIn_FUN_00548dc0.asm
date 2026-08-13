@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
-;   Ordinal_9
+;   crt_wsock32.c_htons
 ;   support_trisock.cpp_getIPAddress_FUN_00548d20
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     MOV word ptr [ESP],DX               ; 00548dd2
     MOV AX,word ptr [ESI + 0x4]         ; 00548dd6
     PUSH EAX                            ; 00548dda
-    CALL Ordinal_9                      ; 00548ddb
-        ;   XREF to: 00574c02 (UNCONDITIONAL_CALL)  ; undefined Ordinal_9()
+    CALL crt_wsock32.c_htons            ; 00548ddb
+        ;   XREF to: 00574c02 (UNCONDITIONAL_CALL)  ; ushort crt_wsock32.c_htons(ushort hostshort)
     PUSH ESI                            ; 00548de0
     MOV word ptr [ESP + 0x6],AX         ; 00548de1
     CALL support_trisock.cpp_getIPAddress_FUN_00548d20 ; 00548de6

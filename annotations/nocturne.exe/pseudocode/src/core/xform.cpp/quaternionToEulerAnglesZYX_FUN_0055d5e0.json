@@ -1,0 +1,156 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055d5e0",
+    "address_range": [
+      [
+        "0055d5e0",
+        "0055d60e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_quaternionToEulerAnglesZYX_FUN_0055d5e0",
+    "signature": "CVector3f * __cdecl core_xform_cpp_quaternionToEulerAnglesZYX_FUN_0055d5e0(CQuaternion4f *quat_in,CVector3f *vector_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055b6c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0"
+    },
+    {
+      "addr": "0055cd70",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_0055cd70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 9,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 75
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "quat_in",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "vector_out",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

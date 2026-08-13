@@ -27,8 +27,8 @@
 // FUNCTION PROTOTYPES - Range 0x470000
 // =============================================================================
 
-void shape_edittool_cpp_FUN_004700d0(undefined4 param_1,char *param_2);
-void shape_edittool_cpp_FUN_004701a0(CEditorTools *param_1,char *param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_004701a0(CEditorTools *this_ptr,char *dialog_text);
 bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,char *param_2);
 bool shape_edittool_cpp_FUN_00470310(undefined4 param_1,char *param_2);
 undefined4 shape_edittool_cpp_FUN_004703f0(undefined4 param_1,char *param_2);
@@ -44,15 +44,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
 void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEditorTools *this_ptr,float current_progress,float total_progress);
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags);
-void shape_edittool_cpp_FUN_004720c0(CEditorTools *param_1);
+void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools *this_ptr);
-void shape_edittool_cpp_FUN_004722b0(void);
+void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools *this_ptr);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00472c90(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools *this_ptr,char *text_data);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools *this_ptr,float scale_factor,int text_color);
-void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5);
+void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,undefined4 param_4,float *param_5);
 void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_00473080(CVector3f *start_point,CVector3f *end_point);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_00473190(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_00473650(CEditorTools *this_ptr,CVector3f *dimensions,int color_value);
@@ -92,7 +92,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
 void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
 int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(CPickList *this_ptr);
 int __cdecl shape_edittool_cpp_FUN_00475230(CPickList *this_ptr);
-void shape_edittool_cpp_FUN_00475470(CStrList *param_1,char *param_2,uint param_3);
+void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470(CPickList *this_ptr,char *dialog_title,uint window_flags);
 void __cdecl shape_edittool_cpp_FUN_004759d0(CPickList *this_ptr);
 void __cdecl shape_edittool_cpp_CPickList_validateScrollBounds_FUN_00475db0(CPickList *this_ptr);
 int __cdecl shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_00475f10(CPickList *this_ptr,int mouse_x,int mouse_y);
@@ -120,12 +120,12 @@ void shape_edittool_cpp_FUN_00476e90(int param_1);
 void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text);
 void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00476ef0(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text);
 void shape_edittool_cpp_FUN_00476f40(int param_1);
-undefined4 shape_edittool_cpp_FUN_00476fd0(void);
+int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00476fd0(CEdButton *this_ptr);
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_00477080(char *button_text);
 int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00477100(char *button_text);
 CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(CEdCheck *this_ptr);
 CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_dtor_FUN_004771d0(CEdCheck *this_ptr,uint flags);
-void shape_edittool_cpp_FUN_004771f0(void);
+void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004771f0(CEdCheck *this_ptr,int x_pos,int y_pos,char *checkbox_text);
 void __cdecl shape_edittool_cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004772e0(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00477300(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_00477340(CEdCheck *this_ptr);
@@ -182,14 +182,14 @@ void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_0047a120(CEnemy *this_ptr,CD
 int __cdecl core_enemy_cpp_CEnemy_FUN_0047a150(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_0047a1d0(void);
 int __cdecl core_event_cpp_setEventError_FUN_0047a1e0(char *source_file,int source_line,char *error_message);
-undefined4 core_event_cpp_FUN_0047a210(char *param_1);
-void core_event_cpp_FUN_0047a260(void);
+int __cdecl core_event_cpp_formatEventError_FUN_0047a210(char *format,...) __attribute__((format(printf, 1, 2)));
+char * __cdecl core_event_cpp_skipWhitespace_FUN_0047a260(char *str);
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_0047a280(char *expression,int *parse_position);
 int __cdecl core_event_cpp_parseComparisonOp_FUN_0047a2b0(char *str);
 int __cdecl core_event_cpp_parseIntOrCounter_FUN_0047a350(char *str);
 CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,uint class_hash,char *class_name);
 int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *offset,CVector3f *out_position);
-void core_event_cpp_FUN_0047a5e0(char *param_1);
+void __cdecl core_event_cpp_trimWhitespace_FUN_0047a5e0(char *str);
 char * __cdecl core_event_cpp_extractParenArg_FUN_0047a650(char **cursor,char *out_buf,int max_len);
 int __cdecl core_event_cpp_parseDeathType_FUN_0047a760(char *type_name,int *out_type_id);
 int __cdecl core_event_cpp_parseDamageType_FUN_0047a8f0(char *type_name,int *out_type_id);

@@ -135,7 +135,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_00488bf0(CLightningBolt *th
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_18);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
               (g_CDemonRenderer_PTR_005ae704,&local_dc);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   }
   else {
     local_9c.x = (int)ROUND(world_position->x * 256.0f);

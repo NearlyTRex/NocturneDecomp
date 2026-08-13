@@ -122,12 +122,12 @@ section .text
         ;   XREF to: 004f8af0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_004f8af0(CPod * this_ptr)
     ADD ESP,0x4                         ; 004c86d7
     PUSH 0x4f9250                       ; 004c86da | LAB_004f9250
-    CALL engine_dosio.cpp_FUN_00456750  ; 004c86df
-        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00456750()
+    CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00456750 ; 004c86df
+        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00456750(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004c86e4
     PUSH 0x456800                       ; 004c86e7
-    CALL engine_dosio.cpp_FUN_00456750  ; 004c86ec
-        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00456750()
+    CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00456750 ; 004c86ec
+        ;   XREF to: 00456750 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00456750(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004c86f1
     PUSH 0x587bc3                       ; 004c86f4 | = "msglist.txt"
     CALL support_newmsg.cpp_FUN_004edfc0 ; 004c86f9
@@ -153,8 +153,8 @@ section .text
     CALL engine_matrix.c_initializeTrigTables_FUN_004cc9d0 ; 004c873b
         ;   XREF to: 004cc9d0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_initializeTrigTables_FUN_004cc9d0()
         ;   Label: LAB_004c873b
-    CALL engine_3d.c_FUN_005458a0       ; 004c8740
-        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_FUN_005458a0()
+    CALL engine_3d.c_FUN_00404480       ; 004c8740
+        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_FUN_00404480()
     CALL engine_2d.c_initGraphicsSystem_FUN_00401010 ; 004c8745
         ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; void engine_2d.c_initGraphicsSystem_FUN_00401010()
     CALL wincore_winrun.cpp_calibrateCPUSpeed_FUN_005587f0 ; 004c874a

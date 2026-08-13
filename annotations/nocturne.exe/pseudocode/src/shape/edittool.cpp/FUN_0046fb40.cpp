@@ -36,7 +36,7 @@ void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2)
   iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(_DAT_01bcd070,(char *)0x1bca0d0);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
             (param_1,_DAT_01bcd9b8 * 4 + iVar1,_DAT_01bcd9bc * 2 + iVar3,local_14,0);
-  shape_edittool_cpp_FUN_004722b0(param_1);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(param_1);
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   engine_font_cpp_CBitFont_drawText_FUN_00490980
             (_DAT_01bcd070,(char *)0x1bca0d0,((g_ClipLeft + g_ClipRight) - iVar2) / 2,
@@ -44,7 +44,7 @@ void shape_edittool_cpp_FUN_0046fb40(CEditorTools *param_1,char *param_2)
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
-  shape_edittool_cpp_FUN_004720c0(param_1);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(param_1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   return;

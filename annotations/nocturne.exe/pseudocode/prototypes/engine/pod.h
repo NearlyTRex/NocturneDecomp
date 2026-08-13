@@ -103,9 +103,9 @@ int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_c
 // Address: 004f8eb0
 void FUN_004f8eb0(undefined4 param_1,char *param_2);
 
-// Original: engine_pod.cpp_FUN_004f9100
+// Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_004f9100
 // Address: 004f9100
-int FUN_004f9100(void);
+int __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_locateFile_FUN_004f9170
 // Address: 004f9170

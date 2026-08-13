@@ -12,7 +12,7 @@
 ; uint             Stack[0x18]:4   sfx_handle
 ;
 ; XREF[1]:
-;   core_dynamite.cpp_FUN_0046ec80 at 0046ecb8
+;   core_dynamite.cpp_CDynamite_fire_FUN_0046ec80 at 0046ecb8
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058151c = 0.000100000000000000

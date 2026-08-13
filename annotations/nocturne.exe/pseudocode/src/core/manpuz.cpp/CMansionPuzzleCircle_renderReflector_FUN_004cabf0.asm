@@ -88,7 +88,7 @@ section .text
     MOV EBX,dword ptr [0x005ae704]      ; 004cac76 | g_CDemonRenderer_PTR_005ae704
     PUSH EBX                            ; 004cac7c | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004cac7d
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004cac82
     MOV ESP,EBP                         ; 004cac85
     POP EBP                             ; 004cac87

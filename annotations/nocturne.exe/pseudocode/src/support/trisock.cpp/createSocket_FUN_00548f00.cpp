@@ -12,7 +12,7 @@ int __cdecl support_trisock_cpp_createSocket_FUN_00548f00(_SOCKET *socket_handle
   _SOCKET _Var1;
   
   support_trisock_cpp_bindAndInvalidateSocket_FUN_00549110(socket_handle);
-  _Var1 = Ordinal_23(2,1,0);
+  _Var1 = socket(2,1,0);
   *socket_handle = _Var1;
   return (uint)(_Var1 != 0xffffffff);
 }

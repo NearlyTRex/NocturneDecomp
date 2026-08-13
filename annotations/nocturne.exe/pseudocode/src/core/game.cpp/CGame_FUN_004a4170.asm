@@ -463,8 +463,8 @@ section .text
     PUSH 0x583d1e                       ; 004a4605 | = "Can't load old save game file %s.  So..."
     MOV ECX,dword ptr [0x005b6d50]      ; 004a460a | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004a4610
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4611
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004a4611
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a4616
     JMP 0x004a4289                      ; 004a4619
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289
@@ -848,8 +848,8 @@ section .text
     PUSH 0x583d4c                       ; 004a4a85 | = "Can't load old save game file %s.  So..."
     MOV EDX,dword ptr [0x005b6d50]      ; 004a4a8a | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004a4a90
-    CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4a91
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
+    CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004a4a91
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a4a96
     JMP 0x004a4289                      ; 004a4a99
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289

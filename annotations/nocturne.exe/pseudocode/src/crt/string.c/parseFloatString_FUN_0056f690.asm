@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0056a320
-;   crt_unknown.c_FUN_00571b2c
+;   crt_unknown.c_None_FUN_00571b2c
 ;
 ; *****************************************************************************
 
@@ -219,8 +219,8 @@ section .text
     LEA EDX,[EBP + -0x28]               ; 0056f7e6
     MOV byte ptr [EBX + EBP*0x1 + -0x3c],AL ; 0056f7e9
     LEA EAX,[EBP + -0x3c]               ; 0056f7ed
-    CALL crt_unknown.c_FUN_00571b2c     ; 0056f7f0
-        ;   XREF to: 00571b2c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571b2c()
+    CALL crt_unknown.c_None_FUN_00571b2c ; 0056f7f0
+        ;   XREF to: 00571b2c (UNCONDITIONAL_CALL)  ; void crt_unknown.c_None_FUN_00571b2c(byte * param_1, undefined8 * param_2)
     TEST ESI,ESI                        ; 0056f7f5
     JZ 0x0056f806                       ; 0056f7f7
         ;   XREF to: 0056f806 (CONDITIONAL_JUMP)  ; LAB_0056f806

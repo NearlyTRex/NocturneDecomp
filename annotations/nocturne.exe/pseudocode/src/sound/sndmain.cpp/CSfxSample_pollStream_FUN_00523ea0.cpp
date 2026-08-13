@@ -28,9 +28,9 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
   uint *puVar10;
   byte bVar11;
   double dVar12;
-  char *pcVar13;
+  char *format;
   _FILE *file;
-  int iVar14;
+  int iVar13;
   SIZE_T local_34;
   CSfxSlot *local_30;
   int local_28;
@@ -42,30 +42,30 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
     g_CurrentLineNumber = 1982;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
-  iVar14 = this_ptr->streaming_slot_index;
-  if (-1 < iVar14) {
-    if ((g_CSfxSlot_ARRAY_02dbd374[iVar14].playback_state == 0) ||
-       (this_ptr != g_CSfxSlot_ARRAY_02dbd374[iVar14].sample)) {
+  iVar13 = this_ptr->streaming_slot_index;
+  if (-1 < iVar13) {
+    if ((g_CSfxSlot_ARRAY_02dbd374[iVar13].playback_state == 0) ||
+       (this_ptr != g_CSfxSlot_ARRAY_02dbd374[iVar13].sample)) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 1995;
       core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSample::pollStream - my sfx isn't active with me!");
     }
     if (_DAT_02dc8318 == 0) {
-      sound_sndmain_cpp_FUN_00529980("SfxSample::pollStream - no sound device?\n");
+      sound_sndmain_cpp_logSoundError_FUN_00529980("SfxSample::pollStream - no sound device?\n");
       goto LAB_005240fa;
     }
-    if (g_CSfxSlot_ARRAY_02dbd374[iVar14].hardware_buffer_handle != 0) {
+    if (g_CSfxSlot_ARRAY_02dbd374[iVar13].hardware_buffer_handle != 0) {
       iVar4 = sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0
-                        (g_CSfxSlot_ARRAY_02dbd374 + iVar14);
+                        (g_CSfxSlot_ARRAY_02dbd374 + iVar13);
       if (iVar4 == 0) {
-        sound_sndmain_cpp_FUN_00529980("SfxSample::pollStream - error querrying hw playback position\n");
+        sound_sndmain_cpp_logSoundError_FUN_00529980("SfxSample::pollStream - error querrying hw playback position\n");
         goto LAB_005240fa;
       }
       if (((this_ptr->loop_marker_count == 0) && (-1 < (this_ptr->sample_info).sample_count)) &&
          ((double)(this_ptr->sample_info).sample_count <=
-          g_CSfxSlot_ARRAY_02dbd374[iVar14].options.trigger_time)) goto LAB_005240fa;
+          g_CSfxSlot_ARRAY_02dbd374[iVar13].options.trigger_time)) goto LAB_005240fa;
     }
-    iVar14 = 0x523f55;
+    iVar13 = 0x523f55;
     round
               ((double)((float)(this_ptr->sample_info).sample_rate * time_window));
     dVar12 = round
@@ -74,7 +74,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
     if ((int)local_34 < 0) {
       local_34 = local_34 + this_ptr->streaming_buffer_size;
     }
-    if ((int)local_34 < iVar14) {
+    if ((int)local_34 < iVar13) {
       local_30 = (CSfxSlot *)0x5f5e0ff;
       if (this_ptr->buffer_id != 0) {
         iVar4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
@@ -87,7 +87,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
       if (iVar5 < (int)ROUND(dVar12)) {
         iVar4 = iVar5;
       }
-      SVar6 = iVar4 - iVar14;
+      SVar6 = iVar4 - iVar13;
       while( true ) {
         if ((int)SVar6 < 1) {
           return 1;
@@ -105,11 +105,11 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
         if ((int)local_34 < (int)lock_length) {
           lock_length = local_34;
         }
-        iVar14 = (this_ptr->sample_info).sample_count;
+        iVar13 = (this_ptr->sample_info).sample_count;
         bVar3 = false;
-        if (-1 < iVar14) {
-          if (this_ptr->stream_read_position < iVar14) {
-            SVar7 = iVar14 - this_ptr->stream_read_position;
+        if (-1 < iVar13) {
+          if (this_ptr->stream_read_position < iVar13) {
+            SVar7 = iVar13 - this_ptr->stream_read_position;
             if ((int)SVar7 < (int)lock_length) {
               lock_length = SVar7;
             }
@@ -164,7 +164,7 @@ LAB_00524219:
           local_20 = _fread(output_buffer,size,SVar7,file);
           if ((this_ptr->file_handle->_flag & 0x20) != 0) {
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(this_ptr);
-            pcVar13 = "Error reading %s while streaming\n";
+            format = "Error reading %s while streaming\n";
             goto LAB_005240f2;
           }
         }
@@ -176,17 +176,17 @@ LAB_00524219:
           puVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
                              (this_ptr,this_ptr->stream_write_position,local_20);
           if (puVar8 == (uint *)0x0) {
-            pcVar13 = "Error locking %s while streaming\n";
+            format = "Error locking %s while streaming\n";
             goto LAB_005240f2;
           }
-          iVar14 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
+          iVar13 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
           puVar10 = (uint *)&DAT_02db1118;
-          for (uVar9 = local_20 * iVar14 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+          for (uVar9 = local_20 * iVar13 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
             *puVar8 = *puVar10;
             puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
             puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
           }
-          for (uVar9 = local_20 * iVar14 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+          for (uVar9 = local_20 * iVar13 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
             *(byte *)puVar8 = *(byte *)puVar10;
             puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
             puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);
@@ -204,10 +204,10 @@ LAB_00524292:
           (this_ptr->sample_info).sample_count = this_ptr->stream_read_position + local_20;
         }
         SVar6 = SVar6 - local_20;
-        iVar14 = this_ptr->stream_write_position + local_20;
+        iVar13 = this_ptr->stream_write_position + local_20;
         this_ptr->stream_read_position = this_ptr->stream_read_position + local_20;
-        this_ptr->stream_write_position = iVar14;
-        if (this_ptr->streaming_buffer_size <= iVar14) {
+        this_ptr->stream_write_position = iVar13;
+        if (this_ptr->streaming_buffer_size <= iVar13) {
           this_ptr->stream_write_position = 0;
         }
       }
@@ -219,9 +219,9 @@ LAB_00524292:
         bVar1 = false;
         goto LAB_005241ef;
       }
-      pcVar13 = "Error locking %s while streaming\n";
+      format = "Error locking %s while streaming\n";
 LAB_005240f2:
-      sound_sndmain_cpp_FUN_00529980(pcVar13,this_ptr);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(format,this_ptr);
 LAB_005240fa:
       sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(local_30);
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);

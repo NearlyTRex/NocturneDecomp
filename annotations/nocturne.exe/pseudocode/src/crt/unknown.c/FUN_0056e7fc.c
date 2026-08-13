@@ -19,7 +19,7 @@ void FUN_0056e7fc(void)
   } while (iVar1 != 0x2de55d0);
   (*(code *)PTR_crt_unknown_c_FUN_0056e250_005c1f68)(0x2de5c00);
   FUN_0056e324();
-  FUN_00571364();
+  FUN_005713d0();
   FUN_0056f2d0();
   (*(code *)PTR_crt_unknown_c_FUN_0056e250_005c1f68)(0x2de55d0);
   (*(code *)PTR_crt_unknown_c_FUN_0056e250_005c1f68)(0x2de54c0);

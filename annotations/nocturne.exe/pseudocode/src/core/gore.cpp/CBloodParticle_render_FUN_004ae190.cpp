@@ -141,7 +141,7 @@ LAB_004ae466:
             (g_CDemonRenderer_PTR_005ae704,0xffff - _DAT_01c038f4);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   local_dc.x = (this_ptr->base).position.x;
   local_dc.y = (this_ptr->base).position.y;
   local_dc.z = (this_ptr->base).position.z;
@@ -225,7 +225,7 @@ LAB_004ae466:
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
               (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)0x1c78c80);
     iVar5 = iVar5 + 1;
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   } while (iVar5 < 3);
   return;
 }

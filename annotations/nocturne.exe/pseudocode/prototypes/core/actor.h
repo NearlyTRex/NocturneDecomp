@@ -211,9 +211,9 @@ void __cdecl CDemonActor::playAttackHitEffects(CDemonActor *this_ptr,int attack_
 // Address: 0040bd40
 char * __cdecl copyToActorDebugBuffer(char *source_string);
 
-// Original: core_actor.cpp_FUN_0040bd90
+// Original: core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90
 // Address: 0040bd90
-void FUN_0040bd90(char *param_1);
+void __cdecl CDemonActor::doCheckForInvalidPointers(CDemonActor *this_ptr,char *context_file,int context_line);
 
 // Original: core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
 // Address: 0040bff0

@@ -9,6 +9,7 @@
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_ptr)
 
 {
+  CDemonRenderer *this_ptr_00;
   uint uVar1;
   CVector3f local_34;
   CVector3f local_28;
@@ -44,7 +45,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
             (g_CDemonRenderer_PTR_005ae704,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&g_CKeyFramedModelInstance_01c09338,0.0,99);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   local_34.x = 0.0;
   local_34.y = 0.0;
   local_34.z = 0.7853982;
@@ -52,10 +53,11 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
             (g_CDemonRenderer_PTR_005ae704,&local_34,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&g_CKeyFramedModelInstance_01c09338,0.0,99);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   g_CDemonSet_PTR_005be368->lighting_quality_mode = 0;
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(this_ptr_00);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   return;
 }

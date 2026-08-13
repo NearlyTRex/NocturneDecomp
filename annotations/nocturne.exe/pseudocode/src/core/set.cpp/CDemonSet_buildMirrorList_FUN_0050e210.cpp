@@ -38,7 +38,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet *this
             core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
       }
       iVar2 = iVar2 + 1;
       pCVar3 = (CDemonSet *)pCVar3->cameras;

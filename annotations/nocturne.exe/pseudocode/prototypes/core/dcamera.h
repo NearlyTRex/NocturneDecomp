@@ -151,9 +151,9 @@ int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this
 // Address: 00442d9c
 void FUN_00442d9c(void);
 
-// Original: core_dcamera.cpp_FUN_00443050
+// Original: core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_00443050
 // Address: 00443050
-void FUN_00443050(int param_1);
+void __cdecl CDemonCamera::restoreTransform(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_00443100
 // Address: 00443100

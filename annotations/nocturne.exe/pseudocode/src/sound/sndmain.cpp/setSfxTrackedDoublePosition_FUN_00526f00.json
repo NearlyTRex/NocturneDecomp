@@ -1,0 +1,219 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 51,
+        "line": 23,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 24,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 16,
+        "line": 24,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_02dc8318'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00526f00",
+    "address_range": [
+      [
+        "00526f00",
+        "00526f5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_00526f00",
+    "signature": "int __cdecl sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_00526f00(uint sfx_handle,CVector3d *position_source_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00524830",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830"
+    },
+    {
+      "addr": "005234b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0"
+    },
+    {
+      "addr": "00528890",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00528890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02dc8318",
+      "name": "DAT_02dc8318",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8333333333333335,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 31,
+      "INT_ADD": 14,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 13,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "position_source_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3d *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,2);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

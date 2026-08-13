@@ -59,7 +59,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(CDirectSoundDe
                  pcVar3);
       pcVar3 = acStack_1a0;
     }
-    sound_sndmain_cpp_FUN_00529980(pcVar3);
+    sound_sndmain_cpp_logSoundError_FUN_00529980(pcVar3);
   }
 LAB_0052a05b:
   (*((this_ptr->base).vtable)->reset)(&this_ptr->base);

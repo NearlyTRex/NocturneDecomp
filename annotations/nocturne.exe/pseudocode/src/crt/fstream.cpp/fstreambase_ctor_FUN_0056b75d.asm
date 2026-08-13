@@ -1,17 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d(int *param_1,byte param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5 )
+; void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0056b75d(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size )
 ;
+; Parameters:
+; fstreambase *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   ctor_flags
+; int              Stack[0xc]:4   fd
+; int              Stack[0x10]:4   mode
+; char *           Stack[0x14]:4   buffer
+; SIZE_T           Stack[0x18]:4   buffer_size
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_ifstream_ctor_FUN_00565072 at 00565092
 ;   crt_fstream.cpp_ofstream_ctor_FUN_0056511e at 0056513e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4a18
+;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18
 ;   void* PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24 = 0056b810
-;   void* PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c = 0056b7f8
+;   void* PTR_crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c = 0056b7f8
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_filebuf_ctor_FUN_0057042d
@@ -32,7 +39,7 @@ section .text
     TEST byte ptr [ESP + 0x14],0x1      ; 0056b764
     JNZ 0x0056b780                      ; 0056b769
         ;   XREF to: 0056b780 (CONDITIONAL_JUMP)  ; LAB_0056b780
-    MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | DAT_005a4a18
+    MOV dword ptr [EBX],0x5a4a18        ; 0056b76b | g_WatcomVirtualBaseDescriptor_005a4a18
     ADD EBX,0x48                        ; 0056b771
     PUSH EBX                            ; 0056b774
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 0056b775
@@ -52,7 +59,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0056b797
     MOV dword ptr [EBX + 0x40],0x5a4a24 ; 0056b799 | PTR_crt_fstream.cpp_fstreambase_dtor_FUN_0056b810_005a4a24
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b7a0
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_crt_unknown.c_FUN_0056b7f8_005a4a2c
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_0056b7f8_005a4a2c
     MOV EAX,dword ptr [EBX]             ; 0056b7ab
     ADD ESP,0x4                         ; 0056b7ad
     LEA ESI,[EBX + 0x4]                 ; 0056b7b0

@@ -11,6 +11,6 @@ CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005143c0(CBo
 {
   CBoundingBox3D *pCVar1;
   
-  pCVar1 = (CBoundingBox3D *)__arrfini(this_ptr,2000,&g_CBoundingBox3D_005993f0);
+  pCVar1 = (CBoundingBox3D *)__arrfini(this_ptr,2000,&g_CBoundingBox3DTypeInfo_005993f0);
   return pCVar1;
 }

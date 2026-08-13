@@ -23,7 +23,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(C
   while( true ) {
     if (pCVar3 == (CDemonActor *)0x0) {
       if ((int)in_stack_fffffe84 < 1) {
-        shape_edittool_cpp_FUN_0046fe60
+        shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                   (g_CEditorTools_PTR_005b6d50,"Warning: mission has no hero placeholders, and no heros.");
       }
       else {
@@ -58,7 +58,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(C
           core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(this_ptr,&actor->base);
           core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(this_ptr,pCVar3,1);
           core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(this_ptr,&actor->base);
-          shape_edittool_cpp_FUN_0046fe60
+          shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                     (g_CEditorTools_PTR_005b6d50,"Replaced hero OK.  You will need to save the mission for changes to be perminent.");
           shape_edittool_cpp_CPickList_dtor_FUN_00474cf0((CPickList *)&stack0xfffffe84,0);
           return;

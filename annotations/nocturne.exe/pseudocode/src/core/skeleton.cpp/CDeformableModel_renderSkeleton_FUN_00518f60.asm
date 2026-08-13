@@ -193,7 +193,7 @@ section .text
     INC EBX                             ; 005190f0
     ADD ESI,0x30                        ; 005190f1
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 005190f4
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     MOV ECX,dword ptr [EBP + 0x28558]   ; 005190f9
     ADD ESP,0x4                         ; 005190ff
     CMP EBX,ECX                         ; 00519102

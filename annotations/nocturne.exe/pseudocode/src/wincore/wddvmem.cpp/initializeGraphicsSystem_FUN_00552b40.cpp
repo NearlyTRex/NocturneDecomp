@@ -11,7 +11,7 @@
 int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00552b40(int width,int height)
 
 {
-  int iVar1;
+  HRESULT HVar1;
   
   g_BackBuffer = malloc
                            (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
@@ -47,8 +47,8 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00552b40(int width,
     (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
     g_DirectDrawObject = (IDirectDraw *)0x0;
   }
-  iVar1 = DirectDrawCreate(0,&g_DirectDrawObject,0);
-  if (iVar1 == 0) {
+  HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
+  if (HVar1 == 0) {
     (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,_DAT_02de2098,0x11);
   }
   engine_special_cpp_loadExternalRenderer_FUN_00531780(_DAT_02de2098);

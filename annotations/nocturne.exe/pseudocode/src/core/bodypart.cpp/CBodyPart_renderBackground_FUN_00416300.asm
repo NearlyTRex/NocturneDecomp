@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_004163ae
     PUSH EAX                            ; 004163b3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004163b4
-        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0()
+        ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     MOV EAX,[0x005be368]                ; 004163b9 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
     MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004163be | g_CDemonSet_01e57284.disable_directional_lighting
     ADD ESP,0x4                         ; 004163c8

@@ -3,17 +3,17 @@
 // Function prototypes for sound/mp3.cpp
 // Generated from Ghidra function signatures
 
-// Original: sound_mp3.cpp_FUN_004e2480
+// Original: sound_mp3.cpp_validateLayer2AllocationTable_FUN_004e2480
 // Address: 004e2480
-int FUN_004e2480(int *param_1);
+int __cdecl validateLayer2AllocationTable(SMpegFrame *frame);
 
-// Original: sound_mp3.cpp_FUN_004e25c0
+// Original: sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_004e25c0
 // Address: 004e25c0
-undefined4 FUN_004e25c0(int param_1,int param_2);
+void * __cdecl getMpegLayer2AllocationTable(int layer,int mode_extension);
 
-// Original: sound_mp3.cpp_FUN_004e2630
+// Original: sound_mp3.cpp_calculateMpegFrame_FUN_004e2630
 // Address: 004e2630
-void FUN_004e2630(int *param_1);
+void __cdecl calculateMpegFrame(SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_004e27f0
 // Address: 004e27f0
@@ -183,13 +183,13 @@ void __cdecl CMP3Decoder::synthesisPoly(CMP3Decoder *this_ptr,float *input_sampl
 // Address: 004e77d0
 int __cdecl calculateMainDataSize(SMpegFrame frame_info);
 
-// Original: sound_mp3.cpp_FUN_004e78b0
+// Original: sound_mp3.cpp_initializeHuffmanTables_FUN_004e78b0
 // Address: 004e78b0
-int FUN_004e78b0(void);
+int __cdecl initializeHuffmanTables(void);
 
-// Original: sound_mp3.cpp_FUN_004e7b00
+// Original: sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_004e7b00
 // Address: 004e7b00
-void FUN_004e7b00(void);
+void __cdecl initializeHuffmanTablesOnce(void);
 
 // Original: sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90
 // Address: 004e7d90

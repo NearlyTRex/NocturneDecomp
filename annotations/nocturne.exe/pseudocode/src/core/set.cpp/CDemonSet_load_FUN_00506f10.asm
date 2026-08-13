@@ -60,7 +60,7 @@
 ;   core_dcamera.cpp_loadCameraFog_FUN_00447d10
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650
-;   core_dtrace.cpp_FUN_00467890
+;   core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_path.cpp_resetAllPathMaps_FUN_004f1e90
@@ -829,8 +829,8 @@ section .text
     ADD ESP,0x4                         ; 0050781b
     PUSH EBX                            ; 0050781e
     PUSH 0x1fba938                      ; 0050781f | g_CDemonRaytrace_01fba938
-    CALL core_dtrace.cpp_FUN_00467890   ; 00507824
-        ;   XREF to: 00467890 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00467890()
+    CALL core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890 ; 00507824
+        ;   XREF to: 00467890 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890(CDemonRaytrace * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00507829
     CALL core_path.cpp_resetAllPathMaps_FUN_004f1e90 ; 0050782c
         ;   XREF to: 004f1e90 (UNCONDITIONAL_CALL)  ; void core_path.cpp_resetAllPathMaps_FUN_004f1e90()

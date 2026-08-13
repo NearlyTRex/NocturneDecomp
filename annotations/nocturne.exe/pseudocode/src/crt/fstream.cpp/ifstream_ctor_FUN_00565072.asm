@@ -45,7 +45,7 @@ section .text
     PUSH 0x1                            ; 0056508f
     PUSH EAX                            ; 00565091
     CALL crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d ; 00565092
-        ;   XREF to: 0056b75d (UNCONDITIONAL_CALL)  ; undefined crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d()
+        ;   XREF to: 0056b75d (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_fstreambase_ctor_FUN_0056b75d(fstreambase * this_ptr, int ctor_flags, int fd, int mode, ...)
     ADD ESP,0x14                        ; 00565097
     PUSH 0x1                            ; 0056509a
     ADD EAX,0x44                        ; 0056509c

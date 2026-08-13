@@ -59,9 +59,9 @@ void __cdecl showOptionsScreen(int initialize_systems);
 // Address: 004d23d0
 int __cdecl FUN_004d23d0(void);
 
-// Original: core_menu.cpp_FUN_004d2880
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_004d2880
 // Address: 004d2880
-void FUN_004d2880(void);
+void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
 // Original: core_menu.cpp_getKeyDisplayName_FUN_004d2900
 // Address: 004d2900

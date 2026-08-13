@@ -133,8 +133,8 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_abortRemovedMRGLHandler_FUN_00404430(SMRGLHeaderExtended *primitive);
-CTextureCache * __cdecl engine_3d_c_FUN_005458a0(void);
-void __cdecl engine_3d_c_FUN_005458d0(void);
+CTextureCache * __cdecl engine_3d_c_FUN_00404480(void);
+void __cdecl engine_3d_c_FUN_00404490(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004044a0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended *mrgl);
@@ -276,7 +276,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor 
 void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040bca0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040bce0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_string);
-void core_actor_cpp_FUN_0040bd90(char *param_1);
+void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(CDemonActor *this_ptr,char *context_file,int context_line);
 int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int indent_delta);
 void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040c040(CDemonActor *this_ptr,_FILE *file_handle);
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(CDemonActor *this_ptr,_FILE *file_handle);

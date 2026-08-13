@@ -467,22 +467,6 @@ void FUN_0056afd0(void *param_1,ulong param_2);
 // Address: 0056b1ee
 void FUN_0056b1ee(void);
 
-// Original: crt_unknown.c_FUN_0056b491
-// Address: 0056b491
-void FUN_0056b491(int param_1,uint param_2);
-
-// Original: crt_unknown.c_FUN_0056b4eb
-// Address: 0056b4eb
-void FUN_0056b4eb(int param_1,uint param_2);
-
-// Original: crt_unknown.c_FUN_0056b6d0
-// Address: 0056b6d0
-void FUN_0056b6d0(int param_1,uint param_2);
-
-// Original: crt_unknown.c_FUN_0056b7f8
-// Address: 0056b7f8
-void FUN_0056b7f8(int param_1,uint param_2);
-
 // Original: crt_unknown.c_FUN_0056bbf0
 // Address: 0056bbf0
 int __watcallStack FUN_0056bbf0(char *filename);
@@ -1147,9 +1131,9 @@ void FUN_00571364(void);
 // Address: 005713a0
 void FUN_005713a0(ThreadData *param_1);
 
-// Original: crt_unknown.c_FUN_00571364
+// Original: crt_unknown.c_FUN_005713d0
 // Address: 005713d0
-void FUN_00571364(void);
+void FUN_005713d0(void);
 
 // Original: crt_unknown.c_FUN_005713e0
 // Address: 005713e0
@@ -1203,9 +1187,9 @@ void FUN_0057189c(void);
 // Address: 005718c4
 void FUN_005718c4(void);
 
-// Original: crt_unknown.c_FUN_00571b2c
+// Original: crt_unknown.c_None_FUN_00571b2c
 // Address: 00571b2c
-void FUN_00571b2c(void);
+void __cdecl None(byte *param_1,undefined8 *param_2);
 
 // Original: crt_unknown.c_FUN_00571b8e
 // Address: 00571b8e
@@ -1275,9 +1259,9 @@ uint FUN_00572ef0(uint param_1,uint param_2);
 // Address: 005733e0
 uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3);
 
-// Original: crt_unknown.c_FUN_00573ffb
+// Original: crt_unknown.c_FUN_00573650
 // Address: 00573650
-undefined4 FUN_00573ffb(void);
+undefined4 FUN_00573650(void);
 
 // Original: crt_unknown.c_FUN_00573db0
 // Address: 00573db0
@@ -1334,295 +1318,3 @@ void FUN_00574680(void);
 // Original: crt_unknown.c_FUN_005746f0
 // Address: 005746f0
 int FUN_005746f0(int param_1);
-
-// Original: crt_unknown.c_FUN_00574819
-// Address: 00574819
-void FUN_00574819(HANDLE param_1,FILETIME *param_2,FILETIME *param_3,FILETIME *param_4);
-
-// Original: crt_unknown.c_FUN_00574825
-// Address: 00574825
-void FUN_00574825(SYSTEMTIME *param_1,LPFILETIME param_2);
-
-// Original: crt_unknown.c_FUN_00574831
-// Address: 00574831
-void FUN_00574831(HANDLE param_1);
-
-// Original: crt_unknown.c_FUN_0057483d
-// Address: 0057483d
-void FUN_0057483d(LPCSTR param_1);
-
-// Original: crt_unknown.c_FUN_00574849
-// Address: 00574849
-void FUN_00574849(HANDLE param_1,LPCVOID param_2,DWORD param_3,LPDWORD param_4,LPOVERLAPPED param_5);
-
-// Original: crt_unknown.c_FUN_00574855
-// Address: 00574855
-void FUN_00574855(LPVOID param_1,SIZE_T param_2,DWORD param_3,DWORD param_4);
-
-// Original: crt_unknown.c_FUN_00574861
-// Address: 00574861
-void FUN_00574861(HANDLE param_1,LONG param_2,PLONG param_3,DWORD param_4);
-
-// Original: crt_unknown.c_FUN_0057486d
-// Address: 0057486d
-void FUN_0057486d(void);
-
-// Original: crt_unknown.c_FUN_00574879
-// Address: 00574879
-void FUN_00574879(void);
-
-// Original: crt_unknown.c_FUN_00574885
-// Address: 00574885
-void FUN_00574885(LPCSTR param_1,LPSECURITY_ATTRIBUTES param_2);
-
-// Original: crt_unknown.c_FUN_00574891
-// Address: 00574891
-void FUN_00574891(LPCSTR param_1,DWORD param_2,LPSTR param_3,LPSTR *param_4);
-
-// Original: crt_unknown.c_FUN_0057489d
-// Address: 0057489d
-void FUN_0057489d(HWND param_1,RECT *param_2,BOOL param_3);
-
-// Original: crt_unknown.c_FUN_005748a9
-// Address: 005748a9
-void FUN_005748a9(LPRECT param_1);
-
-// Original: crt_unknown.c_FUN_005748b5
-// Address: 005748b5
-void FUN_005748b5(HWND param_1,LPRECT param_2);
-
-// Original: crt_unknown.c_FUN_005748c1
-// Address: 005748c1
-void FUN_005748c1(UINT_PTR param_1,LPJOYCAPSA param_2,UINT param_3);
-
-// Original: crt_unknown.c_FUN_005748d5
-// Address: 005748d5
-void FUN_005748d5(void);
-
-// Original: crt_unknown.c_FUN_005748e5
-// Address: 005748e5
-void FUN_005748e5(HKEY param_1,LPCSTR param_2,DWORD param_3,REGSAM param_4,PHKEY param_5);
-
-// Original: crt_unknown.c_FUN_005748f1
-// Address: 005748f1
-void FUN_005748f1(HANDLE param_1);
-
-// Original: crt_unknown.c_FUN_005748fd
-// Address: 005748fd
-void FUN_005748fd(LPSECURITY_ATTRIBUTES param_1,BOOL param_2,LPCSTR param_3);
-
-// Original: crt_unknown.c_FUN_00574909
-// Address: 00574909
-void FUN_00574909(UINT param_1);
-
-// Original: crt_unknown.c_FUN_00574915
-// Address: 00574915
-void FUN_00574915(HWND param_1);
-
-// Original: crt_unknown.c_FUN_00574921
-// Address: 00574921
-void FUN_00574921(WNDCLASSA *param_1);
-
-// Original: crt_unknown.c_FUN_0057492d
-// Address: 0057492d
-void FUN_0057492d(HINSTANCE param_1,LPCSTR param_2);
-
-// Original: crt_unknown.c_FUN_00574939
-// Address: 00574939
-void FUN_00574939(LPCSTR param_1);
-
-// Original: crt_unknown.c_FUN_00574945
-// Address: 00574945
-void FUN_00574945(DWORD param_1,LPSTR param_2);
-
-// Original: crt_unknown.c_FUN_00574951
-// Address: 00574951
-void FUN_00574951(HWND param_1);
-
-// Original: crt_unknown.c_FUN_0057495d
-// Address: 0057495d
-void FUN_0057495d(HWND param_1);
-
-// Original: crt_unknown.c_FUN_00574969
-// Address: 00574969
-void FUN_00574969(LPCSTR param_1,LPCSTR param_2);
-
-// Original: crt_unknown.c_FUN_00574975
-// Address: 00574975
-void FUN_00574975(MSG *param_1);
-
-// Original: crt_unknown.c_FUN_00574981
-// Address: 00574981
-void FUN_00574981(LPMSG param_1,HWND param_2,UINT param_3,UINT param_4,UINT param_5);
-
-// Original: crt_unknown.c_FUN_0057498d
-// Address: 0057498d
-void FUN_0057498d(HANDLE param_1,int param_2);
-
-// Original: crt_unknown.c_FUN_00574999
-// Address: 00574999
-void FUN_00574999(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4);
-
-// Original: crt_unknown.c_FUN_005749a5
-// Address: 005749a5
-void FUN_005749a5(int param_1,int param_2);
-
-// Original: crt_unknown.c_FUN_005749b1
-// Address: 005749b1
-void FUN_005749b1(UINT param_1);
-
-// Original: crt_unknown.c_FUN_005749bd
-// Address: 005749bd
-void FUN_005749bd(UINT param_1);
-
-// Original: crt_unknown.c_FUN_005749c9
-// Address: 005749c9
-void FUN_005749c9(LARGE_INTEGER *param_1);
-
-// Original: crt_unknown.c_FUN_005749d5
-// Address: 005749d5
-void FUN_005749d5(HDC param_1);
-
-// Original: crt_unknown.c_FUN_005749e1
-// Address: 005749e1
-void FUN_005749e1(HDC param_1,int param_2,int param_3,int param_4,int param_5);
-
-// Original: crt_unknown.c_FUN_005749ed
-// Address: 005749ed
-void FUN_005749ed(HDC param_1,COLORREF param_2);
-
-// Original: crt_unknown.c_FUN_005749f9
-// Address: 005749f9
-void FUN_005749f9(HDC param_1,HGDIOBJ param_2);
-
-// Original: crt_unknown.c_FUN_00574a05
-// Address: 00574a05
-void FUN_00574a05(HDC param_1);
-
-// Original: crt_unknown.c_FUN_00574a13
-// Address: 00574a13
-void FUN_00574a13(int param_1,int param_2,int param_3,DWORD param_4,DWORD param_5,DWORD param_6,DWORD param_7,DWORD param_8,DWORD param_9,DWORD param_10,DWORD param_11,LPCSTR param_12);
-
-// Original: crt_unknown.c_FUN_00574a23
-// Address: 00574a23
-void FUN_00574a23(LPCSTR param_1);
-
-// Original: crt_unknown.c_FUN_00574a2f
-// Address: 00574a2f
-void FUN_00574a2f(HWND param_1);
-
-// Original: crt_unknown.c_FUN_00574a3b
-// Address: 00574a3b
-void FUN_00574a3b(UINT_PTR param_1,LPWAVEOUTCAPSA param_2,UINT param_3);
-
-// Original: crt_unknown.c_FUN_00574a47
-// Address: 00574a47
-void FUN_00574a47(HWAVEOUT param_1);
-
-// Original: crt_unknown.c_FUN_00574a53
-// Address: 00574a53
-void FUN_00574a53(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
-
-// Original: crt_unknown.c_FUN_00574a5f
-// Address: 00574a5f
-void FUN_00574a5f(HWAVEOUT param_1,LPWAVEHDR param_2,UINT param_3);
-
-// Original: crt_unknown.c_FUN_00574a6b
-// Address: 00574a6b
-void FUN_00574a6b(UINT param_1,HANDLE param_2);
-
-// Original: crt_unknown.c_FUN_00574a77
-// Address: 00574a77
-void FUN_00574a77(HGLOBAL param_1);
-
-// Original: crt_unknown.c_FUN_00574a83
-// Address: 00574a83
-void FUN_00574a83(void);
-
-// Original: crt_unknown.c_FUN_00574a8f
-// Address: 00574a8f
-void FUN_00574a8f(HWND param_1);
-
-// Original: crt_unknown.c_FUN_00574a9b
-// Address: 00574a9b
-void FUN_00574a9b(FILETIME *param_1,LPFILETIME param_2);
-
-// Original: crt_unknown.c_FUN_00574aa7
-// Address: 00574aa7
-void FUN_00574aa7(HANDLE param_1,LPWIN32_FIND_DATAA param_2);
-
-// Original: crt_unknown.c_FUN_00574ab3
-// Address: 00574ab3
-void FUN_00574ab3(LPCWSTR param_1,LPCWSTR param_2);
-
-// Original: crt_unknown.c_FUN_00574abf
-// Address: 00574abf
-void FUN_00574abf(void);
-
-// Original: crt_unknown.c_FUN_00574acb
-// Address: 00574acb
-void FUN_00574acb(LPSTR param_1,DWORD param_2);
-
-// Original: crt_unknown.c_FUN_00574ad9
-// Address: 00574ad9
-void FUN_00574ad9(void);
-
-// Original: crt_unknown.c_FUN_00574ae9
-// Address: 00574ae9
-void FUN_00574ae9(void);
-
-// Original: crt_unknown.c_FUN_00574af5
-// Address: 00574af5
-void FUN_00574af5(LPCH param_1);
-
-// Original: crt_unknown.c_FUN_00574b01
-// Address: 00574b01
-void FUN_00574b01(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
-
-// Original: crt_unknown.c_FUN_00574b0d
-// Address: 00574b0d
-void FUN_00574b0d(HANDLE param_1,DWORD param_2);
-
-// Original: crt_unknown.c_FUN_00574b19
-// Address: 00574b19
-void FUN_00574b19(HANDLE param_1,PINPUT_RECORD param_2,DWORD param_3,LPDWORD param_4);
-
-// Original: crt_unknown.c_FUN_00574b25
-// Address: 00574b25
-void FUN_00574b25(LPVOID param_1,SIZE_T param_2,DWORD param_3);
-
-// Original: crt_unknown.c_FUN_00574b31
-// Address: 00574b31
-void FUN_00574b31(LPCSTR param_1);
-
-// Original: crt_unknown.c_FUN_00574b3d
-// Address: 00574b3d
-void FUN_00574b3d(_EXCEPTION_POINTERS *param_1);
-
-// Original: crt_unknown.c_FUN_00574b49
-// Address: 00574b49
-void FUN_00574b49(UINT param_1,DWORD param_2,LPCSTR param_3,int param_4,LPWSTR param_5,int param_6);
-
-// Original: crt_unknown.c_FUN_00574b55
-// Address: 00574b55
-void FUN_00574b55(DWORD param_1);
-
-// Original: crt_unknown.c_FUN_00574b63
-// Address: 00574b63
-void FUN_00574b63(void);
-
-// Original: crt_unknown.c_FUN_00574b73
-// Address: 00574b73
-void FUN_00574b73(LPCRITICAL_SECTION param_1);
-
-// Original: crt_unknown.c_FUN_00574b7f
-// Address: 00574b7f
-void FUN_00574b7f(void);
-
-// Original: crt_unknown.c_FUN_00574b8b
-// Address: 00574b8b
-void FUN_00574b8b(LPCRITICAL_SECTION param_1);
-
-// Original: crt_unknown.c_FUN_00574b97
-// Address: 00574b97
-void FUN_00574b97(DWORD param_1);

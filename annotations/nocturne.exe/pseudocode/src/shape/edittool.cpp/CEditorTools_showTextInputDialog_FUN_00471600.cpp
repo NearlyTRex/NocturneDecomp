@@ -11,6 +11,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEd
 {
   int iVar1;
   
-  iVar1 = shape_edittool_cpp_FUN_0046f7e0(prompt_text,input_buffer,buffer_size,dialog_flags,0);
+  iVar1 = shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0
+                    (prompt_text,input_buffer,buffer_size,dialog_flags,0);
   return iVar1;
 }

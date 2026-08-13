@@ -39,10 +39,10 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_00490af0(CBitFont *this
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_00490b20(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_FUN_00490b70(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_CBitFont_FUN_00490c20(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6);
+void __cdecl engine_font_cpp_CBitFont_printF_FUN_00490c20(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
 void __cdecl engine_font_cpp_CBitFont_FUN_00490c70(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_00490ce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_CBitFont_FUN_00490d20(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,char *param_6);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_00490d20(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_FUN_00490d70(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);

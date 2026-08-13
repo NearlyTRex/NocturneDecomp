@@ -45,11 +45,11 @@ void __cdecl CHostage::archive(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004b8540
 // Address: 004b8540
-undefined4 CHostage::isGrabbable(int param_1);
+int __cdecl CHostage::isGrabbable(CHostage *this_ptr,CDemonActor *grabber);
 
-// Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004b8580
+// Original: core_hostage.cpp_CHostage_canBeGrabbed_FUN_004b8580
 // Address: 004b8580
-undefined4 CHostage::isGrabbable(void);
+int __cdecl CHostage::canBeGrabbed(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_hostage.cpp_CHostage_getGrabbed_FUN_004b8590
 // Address: 004b8590

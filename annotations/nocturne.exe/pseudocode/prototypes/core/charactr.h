@@ -31,9 +31,9 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 // Address: 00424730
 float __cdecl clampFloat(float value,float limit);
 
-// Original: core_charactr.cpp_FUN_00424780
+// Original: core_charactr.cpp_clampNormalizedAngle_FUN_00424780
 // Address: 00424780
-float FUN_00424780(void);
+float __cdecl clampNormalizedAngle(float angle,float limit);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
 // Address: 004247f0
@@ -379,13 +379,13 @@ void __cdecl setActorXPos(CDemonActor *actor,float x);
 // Address: 0042b510
 void __cdecl projectPointToVertex(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position);
 
-// Original: core_charactr.cpp_FUN_0042b570
+// Original: core_charactr.cpp_getTranslationMatrix_FUN_0042b570
 // Address: 0042b570
-void FUN_0042b570(void);
+void __cdecl getTranslationMatrix(CMatrix3x4f *matrix,CVector3f *out_translation);
 
-// Original: core_charactr.cpp_FUN_0042b5a0
+// Original: core_charactr.cpp_getDeformableModelPartCount_FUN_0042b5a0
 // Address: 0042b5a0
-undefined4 FUN_0042b5a0(void);
+int __cdecl getDeformableModelPartCount(CDeformableModel *model_ptr);
 
 // Original: core_charactr.cpp_getActorCreateEvent_FUN_0042b5b0
 // Address: 0042b5b0

@@ -157,7 +157,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
                 (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_98);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
                 (g_CDemonRenderer_PTR_005ae704,&local_f0);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     }
     uVar4 = uVar4 + 1;
     world_position = world_position + 1;
@@ -214,7 +214,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_44);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
                   (g_CDemonRenderer_PTR_005ae704,&local_f0);
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
       }
       iVar5 = iVar5 + 0xc;
       iVar3 = iVar3 + 1;

@@ -15,7 +15,7 @@ void __fastcall ::memcpy(void *dest,void *src,uint size);
 // Address: 00565e40
 int __cdecl ::mkdir(char *path);
 
-// Original: crt_watcom.c_getcwd_FUN_0056c5f0
+// Original: crt_watcom.c_getcwd_FUN_00566440
 // Address: 00566440
 char * __cdecl getcwd(char *buffer,SIZE_T size);
 

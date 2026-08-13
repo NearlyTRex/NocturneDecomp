@@ -177,7 +177,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
               (g_CDemonRenderer_PTR_005ae704,&local_d8);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520(this_ptr);
   return;
 }

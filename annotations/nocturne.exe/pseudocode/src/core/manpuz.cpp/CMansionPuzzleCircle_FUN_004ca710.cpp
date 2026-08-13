@@ -19,6 +19,6 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCir
             (g_CDemonRenderer_PTR_005ae704,&pSVar1->rotation,&pSVar1->local_position);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&this_ptr->panel_model,0.0,-1);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   return;
 }

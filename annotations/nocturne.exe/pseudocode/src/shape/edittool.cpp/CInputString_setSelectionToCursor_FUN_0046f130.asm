@@ -11,7 +11,7 @@
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0046f2a0 at 0046f2b0
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f570
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0046f330 at 0046f37e
-;   shape_edittool.cpp_FUN_0046f7e0 at 0046f9d4
+;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f9d4
 ;
 ; *****************************************************************************
 

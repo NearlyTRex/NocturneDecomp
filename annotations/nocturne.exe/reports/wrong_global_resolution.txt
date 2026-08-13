@@ -11,7 +11,7 @@ suspicious, since the reference list uses exact address resolution.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions checked: 5604
+  Functions checked: 5534
   Functions with suspicious globals: 610
   Total suspicious global references: 1290
 
@@ -1140,39 +1140,39 @@ engine_2d.c_resetGraphicsSystem_FUN_00403760  [.cpp]  (9 suspicious globals)
   File: engine/2d.c
 
   g_BitsPerPixel
-    Used at lines: 18, 48, 74
+    Used at lines: 19, 49, 75
     NOT found in function reference list
 
   g_DirectDrawObject
-    Used at lines: 42, 43, 43, 44, 44, ...
+    Used at lines: 43, 44, 44, 45, 45, ...
     NOT found in function reference list
 
   g_DirectDrawSurface
-    Used at lines: 38, 39, 39, 40, 60, ...
+    Used at lines: 39, 40, 40, 41, 61, ...
     NOT found in function reference list
 
   g_DirectDrawUnknown
-    Used at lines: 30, 31, 31, 32, 52, ...
+    Used at lines: 31, 32, 32, 33, 53, ...
     NOT found in function reference list
 
   g_SoftwareRenderSurface
-    Used at lines: 34, 35, 35, 36, 56, ...
+    Used at lines: 35, 36, 36, 37, 57, ...
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 17, 51
+    Used at lines: 18, 52
     NOT found in function reference list
 
   g_UseExternalRenderer
-    Used at lines: 50
+    Used at lines: 51
     NOT found in function reference list
 
   g_WindowHeight
-    Used at lines: 19, 48, 74
+    Used at lines: 20, 49, 75
     NOT found in function reference list
 
   g_WindowWidth
-    Used at lines: 19, 48, 74
+    Used at lines: 20, 49, 75
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2036,19 +2036,19 @@ engine_2d.c_plotPixelWithDepth_FUN_00401680  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_FUN_0042fd60  [.cpp]  (3 suspicious globals)
+cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042fd60  [.cpp]  (3 suspicious globals)
   File: cockpit/ckptutil.c
 
   g_ColorCubeLookup
-    Used at lines: 55
+    Used at lines: 54
     NOT found in function reference list
 
   g_ScreenBufferArray
-    Used at lines: 38, 62, 70, 98, 104
+    Used at lines: 37, 61, 69, 97, 103
     NOT found in function reference list
 
   g_SourcePaletteData
-    Used at lines: 40, 41, 44, 45, 80, ...
+    Used at lines: 39, 40, 43, 44, 79, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3748,7 +3748,7 @@ core_werewolf.cpp_staticInit_FUN_00555a00  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_xform.cpp_FUN_0055de20  [.cpp]  (3 suspicious globals)
+core_xform.cpp_clipPolygonStage4_FUN_0055de20  [.cpp]  (3 suspicious globals)
   File: core/xform.cpp
 
   DAT_00766c74
@@ -3948,7 +3948,7 @@ core_dcamera.cpp_renderFlatColorScanline_FUN_00444440  [.cpp]  (2 suspicious glo
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_FUN_00448660  [.cpp]  (2 suspicious globals)
+core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00448660  [.cpp]  (2 suspicious globals)
   File: core/dcube.cpp
 
   g_CVector3f_ARRAY_014b8490
@@ -3960,7 +3960,7 @@ core_dcube.cpp_FUN_00448660  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_FUN_004487c0  [.cpp]  (2 suspicious globals)
+core_dcube.cpp_clipPolygonAgainstMinY_FUN_004487c0  [.cpp]  (2 suspicious globals)
   File: core/dcube.cpp
 
   g_CVector3f_ARRAY_014b8554
@@ -3972,7 +3972,7 @@ core_dcube.cpp_FUN_004487c0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_FUN_00448bf0  [.cpp]  (2 suspicious globals)
+core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00448bf0  [.cpp]  (2 suspicious globals)
   File: core/dcube.cpp
 
   g_CVector3f_ARRAY_014b87a0
@@ -3984,27 +3984,27 @@ core_dcube.cpp_FUN_00448bf0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dstrender.cpp_FUN_0046556f  [.cpp]  (2 suspicious globals)
+core_dstrender.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_0046568b  [.cpp]  (2 suspicious globals)
   File: core/dstrender.cpp
 
   DAT_005b5d00
-    Used at lines: 55, 68, 117, 129
+    Used at lines: 57, 70, 121, 132
     NOT found in function reference list
 
   DAT_00b0e1fc
-    Used at lines: 45, 105
+    Used at lines: 46, 108
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dstrender.cpp_FUN_0046568b  [.cpp]  (2 suspicious globals)
+core_dstrender.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0046556f  [.cpp]  (2 suspicious globals)
   File: core/dstrender.cpp
 
   DAT_005b5d00
-    Used at lines: 55, 68, 117, 129
+    Used at lines: 57, 70, 121, 132
     NOT found in function reference list
 
   DAT_00b0e1fc
-    Used at lines: 45, 105
+    Used at lines: 46, 108
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4020,19 +4020,7 @@ core_dtrace.cpp_staticInit_FUN_004671c0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dtri.cpp_FUN_0046d680  [.cpp]  (2 suspicious globals)
-  File: core/dtri.cpp
-
-  g_CVector3f_ARRAY_01bc9970
-    Used at lines: 21, 28, 41, 52
-    NOT found in function reference list
-
-  g_CVector3f_ARRAY_01bc9a34
-    Used at lines: 33, 34, 35, 36, 42, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dtri.cpp_FUN_0046d7e0  [.cpp]  (2 suspicious globals)
+core_dtri.cpp_clipPolygonToBottom_FUN_0046d7e0  [.cpp]  (2 suspicious globals)
   File: core/dtri.cpp
 
   g_CVector3f_ARRAY_01bc9a34
@@ -4044,7 +4032,7 @@ core_dtri.cpp_FUN_0046d7e0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dtri.cpp_FUN_0046dc10  [.cpp]  (2 suspicious globals)
+core_dtri.cpp_clipPolygonToNear_FUN_0046dc10  [.cpp]  (2 suspicious globals)
   File: core/dtri.cpp
 
   g_CVector3f_ARRAY_01bc9c80
@@ -4052,6 +4040,18 @@ core_dtri.cpp_FUN_0046dc10  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
   g_CVector3f_ARRAY_01bc9d44
+    Used at lines: 33, 34, 35, 36, 42, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dtri.cpp_clipPolygonToTop_FUN_0046d680  [.cpp]  (2 suspicious globals)
+  File: core/dtri.cpp
+
+  g_CVector3f_ARRAY_01bc9970
+    Used at lines: 21, 28, 41, 52
+    NOT found in function reference list
+
+  g_CVector3f_ARRAY_01bc9a34
     Used at lines: 33, 34, 35, 36, 42, ...
     NOT found in function reference list
 
@@ -4263,7 +4263,7 @@ core_setdir.cpp_FUN_005138e0  [.cpp]  (2 suspicious globals)
 core_setdir.cpp_staticInit_FUN_00511d60  [.cpp]  (2 suspicious globals)
   File: core/setdir.cpp
 
-  g_CBoundingBox3D_005993f0
+  g_CBoundingBox3DTypeInfo_005993f0
     Used at lines: 13
     NOT found in function reference list
 
@@ -4500,7 +4500,7 @@ shape_edittool.cpp_staticInit_FUN_0046ef80  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00523170  [.cpp]  (2 suspicious globals)
+sound_sndmain.cpp_nextMixingBuffer_FUN_00523170  [.cpp]  (2 suspicious globals)
   File: sound/sndmain.cpp
 
   DAT_02dc1b74
@@ -4532,19 +4532,19 @@ cockpit_ckptutil.c_FUN_0042d130  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_FUN_0042f8c0  [.cpp]  (1 suspicious globals)
-  File: cockpit/ckptutil.c
-
-  g_Hardware16BitPalette
-    Used at lines: 81
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_0042d100  [.cpp]  (1 suspicious globals)
   File: cockpit/ckptutil.c
 
   g_Hardware16BitPalette
     Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0  [.cpp]  (1 suspicious globals)
+  File: cockpit/ckptutil.c
+
+  g_Hardware16BitPalette
+    Used at lines: 79
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4812,7 +4812,7 @@ core_dcamera.cpp_renderVolumetricLightScanline_FUN_004442a0  [.cpp]  (1 suspicio
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_FUN_00448d60  [.cpp]  (1 suspicious globals)
+core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00448d60  [.cpp]  (1 suspicious globals)
   File: core/dcube.cpp
 
   g_CVector3f_ARRAY_014b8928
@@ -4844,7 +4844,7 @@ core_dimage.cpp_CDemonImage_load_FUN_0044d550  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dlight.cpp_FUN_0044ed50  [.cpp]  (1 suspicious globals)
+core_dlight.cpp_drawGrayscalePixel_FUN_0044ed50  [.cpp]  (1 suspicious globals)
   File: core/dlight.cpp
 
   g_ScreenBufferArray
@@ -4897,6 +4897,14 @@ core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0  [.cpp]  (1 suspicious globa
 
   g_VOID_PTR_01af4ef0
     Used at lines: 52
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00457640  [.cpp]  (1 suspicious globals)
+  File: core/dpart.cpp
+
+  g_RenderStateFlags
+    Used at lines: 105
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4956,19 +4964,19 @@ core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0  [.cpp]  (1
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dtri.cpp_FUN_0046dd80  [.cpp]  (1 suspicious globals)
-  File: core/dtri.cpp
-
-  g_CVector3f_ARRAY_01bc9e08
-    Used at lines: 33, 34, 35, 36, 42, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_dtri.cpp_buildClipTriangleFan_FUN_0046e960  [.cpp]  (1 suspicious globals)
   File: core/dtri.cpp
 
   g_CDemonTriangle_ARRAY_01bc9ec8
     Used at lines: 21, 33
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dtri.cpp_clipPolygonToFar_FUN_0046dd80  [.cpp]  (1 suspicious globals)
+  File: core/dtri.cpp
+
+  g_CVector3f_ARRAY_01bc9e08
+    Used at lines: 33, 34, 35, 36, 42, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5040,7 +5048,7 @@ core_event.cpp_CEventList_executeCommand_FUN_0047ac50  [.cpp]  (1 suspicious glo
   File: core/event.cpp
 
   g_HeroActors
-    Used at lines: 863
+    Used at lines: 868
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5240,7 +5248,7 @@ core_fire.cpp_CMuzzleFlash_render_FUN_00484f00  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
   g_CKeyFramedModelInstance_01c09338
-    Used at lines: 39, 46, 54
+    Used at lines: 40, 47, 55
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5504,7 +5512,7 @@ core_game.cpp_CGame_runGameSession_FUN_0049da10  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
   g_HeroActors
-    Used at lines: 134, 164, 165, 258, 292, ...
+    Used at lines: 134, 164, 165, 258, 293, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6504,7 +6512,7 @@ core_set.cpp_CDemonSet_load_FUN_00506f10  [.cpp]  (1 suspicious globals)
   File: core/set.cpp
 
   g_CKeyFramedModel_01fbacc8
-    Used at lines: 413
+    Used at lines: 414
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6692,11 +6700,11 @@ core_sound.cpp_CSound_shutdown_FUN_0052df90  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_sound.cpp_FUN_0052d710  [.cpp]  (1 suspicious globals)
+core_sound.cpp_resetTrainSounds_FUN_0052d710  [.cpp]  (1 suspicious globals)
   File: core/sound.cpp
 
   DAT_02dc9d50
-    Used at lines: 15
+    Used at lines: 14
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7204,14 +7212,6 @@ engine_drender.cpp_CDemonRenderer_ctor_FUN_0045ed00  [.cpp]  (1 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_drender.cpp_FUN_00457640  [.cpp]  (1 suspicious globals)
-  File: engine/drender.cpp
-
-  g_RenderStateFlags
-    Used at lines: 99
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_drender.cpp_staticInit_FUN_0045ecf0  [.cpp]  (1 suspicious globals)
   File: engine/drender.cpp
 
@@ -7360,7 +7360,7 @@ sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0  [.cpp]  (1 suspicious globals
   File: sound/snddx.cpp
 
   DAT_02dc93a0
-    Used at lines: 23, 62, 77
+    Used at lines: 26, 62, 77
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

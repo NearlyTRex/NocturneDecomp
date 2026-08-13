@@ -7,7 +7,7 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; Called Functions:
-;   Ordinal_23
+;   crt_wsock32.c_socket
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
     PUSH 0x0                            ; 00548f0e
     PUSH 0x1                            ; 00548f10
     PUSH 0x2                            ; 00548f12
-    CALL Ordinal_23                     ; 00548f14
-        ;   XREF to: 00574bfc (UNCONDITIONAL_CALL)  ; undefined Ordinal_23()
+    CALL crt_wsock32.c_socket           ; 00548f14
+        ;   XREF to: 00574bfc (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_socket(int af, int type, int protocol)
     MOV dword ptr [EBX],EAX             ; 00548f19
     CMP EAX,-0x1                        ; 00548f1b
     SETNZ AL                            ; 00548f1e

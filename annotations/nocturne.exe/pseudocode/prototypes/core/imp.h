@@ -27,9 +27,9 @@ void __cdecl CImp::setup(CImp *this_ptr);
 // Address: 004bbaf0
 void __cdecl CImp::process(CImp *this_ptr,float delta_time);
 
-// Original: core_imp.cpp_FUN_004bc7c0
+// Original: core_imp.cpp_setVector_FUN_004bc7c0
 // Address: 004bc7c0
-void FUN_004bc7c0(void);
+CVector3f * __cdecl setVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004bc7e0
 // Address: 004bc7e0

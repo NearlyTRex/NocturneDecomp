@@ -13,7 +13,7 @@
 ; va_list_t        Stack[0x1c]:4   args
 ;
 ; XREF[1]:
-;   engine_font.cpp_CBitFont_FUN_00490d20 at 00490d4f
+;   engine_font.cpp_CBitFont_drawTextCenterF_FUN_00490d20 at 00490d4f
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
