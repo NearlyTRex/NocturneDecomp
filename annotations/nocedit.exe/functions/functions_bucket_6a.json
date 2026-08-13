@@ -1,21 +1,23 @@
 [
   {
-    "addr":"006060fe",
+    "addr":"00610aea",
     "body":[
       {
-        "end":"00606189",
-        "size":140,
-        "start":"006060fe"
+        "end":"00610aea",
+        "size":1,
+        "start":"00610aea"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stdcall",
     "importable":true,
-    "name":"crt_strstream.cpp_strstreambase_ctor_FUN_006060fe",
-    "ret":"strstreambase*",
+    "name":"crt_kernel32.c_VirtualAlloc",
+    "ret":"LPVOID",
+    "thtarget":"EXTERNAL:000000a3",
+    "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"lpAddress",
           "storage":{
             "offset":4,
             "size":4,
@@ -28,10 +30,10 @@
               }
             ]
           },
-          "type":"strstreambase*"
+          "type":"LPVOID"
         },
         {
-          "name":"ctor_flags",
+          "name":"dwSize",
           "storage":{
             "offset":8,
             "size":4,
@@ -44,10 +46,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"SIZE_T"
         },
         {
-          "name":"buffer",
+          "name":"flAllocationType",
           "storage":{
             "offset":12,
             "size":4,
@@ -60,10 +62,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"DWORD"
         },
         {
-          "name":"size",
+          "name":"flProtect",
           "storage":{
             "offset":16,
             "size":4,
@@ -76,23 +78,7 @@
               }
             ]
           },
-          "type":"int"
-        },
-        {
-          "name":"pstart",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
+          "type":"DWORD"
         }
       ],
       "ret_storage":{
@@ -108,24 +94,24 @@
     }
   },
   {
-    "addr":"00610bfe",
+    "addr":"00610c6a",
     "body":[
       {
-        "end":"00610bfe",
+        "end":"00610c6a",
         "size":1,
-        "start":"00610bfe"
+        "start":"00610c6a"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_kernel32.c_GlobalMemoryStatus",
-    "ret":"void",
-    "thtarget":"EXTERNAL:00000081",
+    "name":"crt_user32.c_PeekMessageA",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000040",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"lpBuffer",
+          "name":"lpMsg",
           "storage":{
             "offset":4,
             "size":4,
@@ -138,27 +124,73 @@
               }
             ]
           },
-          "type":"LPMEMORYSTATUS"
+          "type":"LPMSG"
+        },
+        {
+          "name":"hWnd",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"HWND"
+        },
+        {
+          "name":"wMsgFilterMin",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"wMsgFilterMax",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"wRemoveMsg",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
         }
-      ]
-    }
-  },
-  {
-    "addr":"00610d7e",
-    "body":[
-      {
-        "end":"00610d7e",
-        "size":1,
-        "start":"00610d7e"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_advapi32.c_RevertToSelf",
-    "ret":"BOOL",
-    "thtarget":"EXTERNAL:0000002d",
-    "thunk":true,
-    "vars":{
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -172,24 +204,24 @@
     }
   },
   {
-    "addr":"00610efe",
+    "addr":"00610dea",
     "body":[
       {
-        "end":"00610f03",
-        "size":6,
-        "start":"00610efe"
+        "end":"00610dea",
+        "size":1,
+        "start":"00610dea"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_wsock32.c_closesocket",
-    "ret":"int",
-    "thtarget":"EXTERNAL:000000b2",
+    "name":"crt_kernel32.c_FindFirstFileA",
+    "ret":"HANDLE",
+    "thtarget":"EXTERNAL:0000005e",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"s",
+          "name":"lpFileName",
           "storage":{
             "offset":4,
             "size":4,
@@ -202,7 +234,23 @@
               }
             ]
           },
-          "type":"_SOCKET"
+          "type":"LPCSTR"
+        },
+        {
+          "name":"lpFindFileData",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPWIN32_FIND_DATAA"
         }
       ],
       "ret_storage":{

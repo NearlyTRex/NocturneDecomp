@@ -1,21 +1,23 @@
 [
   {
-    "addr":"00601272",
+    "addr":"00610b6e",
     "body":[
       {
-        "end":"0060128b",
-        "size":26,
-        "start":"00601272"
+        "end":"00610b6e",
+        "size":1,
+        "start":"00610b6e"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stdcall",
     "importable":true,
-    "name":"crt_memory.c___vec_new_FUN_00601272",
-    "ret":"void*",
+    "name":"crt_kernel32.c_SetFilePointer",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:00000096",
+    "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"array_memory",
+          "name":"hFile",
           "storage":{
             "offset":4,
             "size":4,
@@ -28,10 +30,10 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"HANDLE"
         },
         {
-          "name":"element_count",
+          "name":"lDistanceToMove",
           "storage":{
             "offset":8,
             "size":4,
@@ -40,68 +42,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"type_info",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"WatcomTypeInfo*"
-        }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
-    }
-  },
-  {
-    "addr":"00610bf2",
-    "body":[
-      {
-        "end":"00610bf2",
-        "size":1,
-        "start":"00610bf2"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_user32.c_GetKeyNameTextA",
-    "ret":"int",
-    "thtarget":"EXTERNAL:00000037",
-    "thunk":true,
-    "vars":{
-      "params":[
-        {
-          "name":"lParam",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
                 "size":4
               }
             ]
@@ -109,7 +49,131 @@
           "type":"LONG"
         },
         {
-          "name":"lpString",
+          "name":"lpDistanceToMoveHigh",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"PLONG"
+        },
+        {
+          "name":"dwMoveMethod",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00610cee",
+    "body":[
+      {
+        "end":"00610cee",
+        "size":1,
+        "start":"00610cee"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_gdi32.c_CreateCompatibleDC",
+    "ret":"HDC",
+    "thtarget":"EXTERNAL:00000002",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"hdc",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"HDC"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
+  },
+  {
+    "addr":"00610e6e",
+    "body":[
+      {
+        "end":"00610e6e",
+        "size":1,
+        "start":"00610e6e"
+      }
+    ],
+    "conv":"__stdcall",
+    "importable":true,
+    "name":"crt_kernel32.c_WideCharToMultiByte",
+    "ret":"int",
+    "thtarget":"EXTERNAL:000000a7",
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"CodePage",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"dwFlags",
           "storage":{
             "offset":8,
             "size":4,
@@ -118,6 +182,54 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
+        },
+        {
+          "name":"lpWideCharStr",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCWSTR"
+        },
+        {
+          "name":"cchWideChar",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"lpMultiByteStr",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
                 "size":4
               }
             ]
@@ -125,176 +237,52 @@
           "type":"LPSTR"
         },
         {
-          "name":"cchSize",
+          "name":"cbMultiByte",
           "storage":{
-            "offset":12,
+            "offset":24,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x18]",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"int"
-        }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
-    }
-  },
-  {
-    "addr":"00610d72",
-    "body":[
-      {
-        "end":"00610d72",
-        "size":1,
-        "start":"00610d72"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_winmm.c_waveOutPrepareHeader",
-    "ret":"MMRESULT",
-    "thtarget":"EXTERNAL:00000021",
-    "thunk":true,
-    "vars":{
-      "params":[
-        {
-          "name":"hwo",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"HWAVEOUT"
         },
         {
-          "name":"pwh",
+          "name":"lpDefaultChar",
           "storage":{
-            "offset":8,
+            "offset":28,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x1c]",
+                "offset":28,
                 "size":4
               }
             ]
           },
-          "type":"LPWAVEHDR"
+          "type":"LPCSTR"
         },
         {
-          "name":"cbwh",
+          "name":"lpUsedDefaultChar",
           "storage":{
-            "offset":12,
+            "offset":32,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x20]",
+                "offset":32,
                 "size":4
               }
             ]
           },
-          "type":"UINT"
-        }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
-    }
-  },
-  {
-    "addr":"00610ef2",
-    "body":[
-      {
-        "end":"00610ef7",
-        "size":6,
-        "start":"00610ef2"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_wsock32.c_accept",
-    "ret":"_SOCKET",
-    "thtarget":"EXTERNAL:000000b0",
-    "thunk":true,
-    "vars":{
-      "params":[
-        {
-          "name":"s",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"_SOCKET"
-        },
-        {
-          "name":"addr",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"SOCKADDR*"
-        },
-        {
-          "name":"addrlen",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int*"
+          "type":"LPBOOL"
         }
       ],
       "ret_storage":{

@@ -1,21 +1,23 @@
 [
   {
-    "addr":"006060fe",
+    "addr":"00610baa",
     "body":[
       {
-        "end":"00606189",
-        "size":140,
-        "start":"006060fe"
+        "end":"00610baa",
+        "size":1,
+        "start":"00610baa"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stdcall",
     "importable":true,
-    "name":"crt_strstream.cpp_strstreambase_ctor_FUN_006060fe",
-    "ret":"strstreambase*",
+    "name":"crt_kernel32.c_GetModuleHandleA",
+    "ret":"HMODULE",
+    "thtarget":"EXTERNAL:00000078",
+    "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"lpModuleName",
           "storage":{
             "offset":4,
             "size":4,
@@ -28,71 +30,7 @@
               }
             ]
           },
-          "type":"strstreambase*"
-        },
-        {
-          "name":"ctor_flags",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"buffer",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
-        },
-        {
-          "name":"size",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"pstart",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
+          "type":"LPCSTR"
         }
       ],
       "ret_storage":{
@@ -108,24 +46,24 @@
     }
   },
   {
-    "addr":"00610bfe",
+    "addr":"00610d2a",
     "body":[
       {
-        "end":"00610bfe",
+        "end":"00610d2a",
         "size":1,
-        "start":"00610bfe"
+        "start":"00610d2a"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_kernel32.c_GlobalMemoryStatus",
-    "ret":"void",
-    "thtarget":"EXTERNAL:00000081",
+    "name":"crt_winmm.c_waveInOpen",
+    "ret":"MMRESULT",
+    "thtarget":"EXTERNAL:00000019",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"lpBuffer",
+          "name":"phwi",
           "storage":{
             "offset":4,
             "size":4,
@@ -138,27 +76,89 @@
               }
             ]
           },
-          "type":"LPMEMORYSTATUS"
+          "type":"LPHWAVEIN"
+        },
+        {
+          "name":"uDeviceID",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"UINT"
+        },
+        {
+          "name":"pwfx",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"LPCWAVEFORMATEX"
+        },
+        {
+          "name":"dwCallback",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD_PTR"
+        },
+        {
+          "name":"dwInstance",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD_PTR"
+        },
+        {
+          "name":"fdwOpen",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"DWORD"
         }
-      ]
-    }
-  },
-  {
-    "addr":"00610d7e",
-    "body":[
-      {
-        "end":"00610d7e",
-        "size":1,
-        "start":"00610d7e"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_advapi32.c_RevertToSelf",
-    "ret":"BOOL",
-    "thtarget":"EXTERNAL:0000002d",
-    "thunk":true,
-    "vars":{
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -172,24 +172,24 @@
     }
   },
   {
-    "addr":"00610efe",
+    "addr":"00610eaa",
     "body":[
       {
-        "end":"00610f03",
-        "size":6,
-        "start":"00610efe"
+        "end":"00610eaa",
+        "size":1,
+        "start":"00610eaa"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_wsock32.c_closesocket",
-    "ret":"int",
-    "thtarget":"EXTERNAL:000000b2",
+    "name":"crt_kernel32.c_TlsGetValue",
+    "ret":"LPVOID",
+    "thtarget":"EXTERNAL:000000a0",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"s",
+          "name":"dwTlsIndex",
           "storage":{
             "offset":4,
             "size":4,
@@ -202,7 +202,7 @@
               }
             ]
           },
-          "type":"_SOCKET"
+          "type":"DWORD"
         }
       ],
       "ret_storage":{

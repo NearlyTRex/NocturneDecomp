@@ -1,21 +1,23 @@
 [
   {
-    "addr":"006060fe",
+    "addr":"00610b3e",
     "body":[
       {
-        "end":"00606189",
-        "size":140,
-        "start":"006060fe"
+        "end":"00610b3e",
+        "size":1,
+        "start":"00610b3e"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stdcall",
     "importable":true,
-    "name":"crt_strstream.cpp_strstreambase_ctor_FUN_006060fe",
-    "ret":"strstreambase*",
+    "name":"crt_kernel32.c_ReadFile",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:0000008c",
+    "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"hFile",
           "storage":{
             "offset":4,
             "size":4,
@@ -28,10 +30,10 @@
               }
             ]
           },
-          "type":"strstreambase*"
+          "type":"HANDLE"
         },
         {
-          "name":"ctor_flags",
+          "name":"lpBuffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -44,10 +46,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"LPVOID"
         },
         {
-          "name":"buffer",
+          "name":"nNumberOfBytesToRead",
           "storage":{
             "offset":12,
             "size":4,
@@ -60,10 +62,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"DWORD"
         },
         {
-          "name":"size",
+          "name":"lpNumberOfBytesRead",
           "storage":{
             "offset":16,
             "size":4,
@@ -76,10 +78,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"LPDWORD"
         },
         {
-          "name":"pstart",
+          "name":"lpOverlapped",
           "storage":{
             "offset":20,
             "size":4,
@@ -92,7 +94,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"LPOVERLAPPED"
         }
       ],
       "ret_storage":{
@@ -108,24 +110,24 @@
     }
   },
   {
-    "addr":"00610bfe",
+    "addr":"00610cbe",
     "body":[
       {
-        "end":"00610bfe",
+        "end":"00610cbe",
         "size":1,
-        "start":"00610bfe"
+        "start":"00610cbe"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_kernel32.c_GlobalMemoryStatus",
-    "ret":"void",
-    "thtarget":"EXTERNAL:00000081",
+    "name":"crt_gdi32.c_DeleteDC",
+    "ret":"BOOL",
+    "thtarget":"EXTERNAL:00000005",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"lpBuffer",
+          "name":"hdc",
           "storage":{
             "offset":4,
             "size":4,
@@ -138,27 +140,9 @@
               }
             ]
           },
-          "type":"LPMEMORYSTATUS"
+          "type":"HDC"
         }
-      ]
-    }
-  },
-  {
-    "addr":"00610d7e",
-    "body":[
-      {
-        "end":"00610d7e",
-        "size":1,
-        "start":"00610d7e"
-      }
-    ],
-    "conv":"__stdcall",
-    "importable":true,
-    "name":"crt_advapi32.c_RevertToSelf",
-    "ret":"BOOL",
-    "thtarget":"EXTERNAL:0000002d",
-    "thunk":true,
-    "vars":{
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -172,24 +156,24 @@
     }
   },
   {
-    "addr":"00610efe",
+    "addr":"00610e3e",
     "body":[
       {
-        "end":"00610f03",
-        "size":6,
-        "start":"00610efe"
+        "end":"00610e3e",
+        "size":1,
+        "start":"00610e3e"
       }
     ],
     "conv":"__stdcall",
     "importable":true,
-    "name":"crt_wsock32.c_closesocket",
-    "ret":"int",
-    "thtarget":"EXTERNAL:000000b2",
+    "name":"crt_kernel32.c_GetFileAttributesA",
+    "ret":"DWORD",
+    "thtarget":"EXTERNAL:00000070",
     "thunk":true,
     "vars":{
       "params":[
         {
-          "name":"s",
+          "name":"lpFileName",
           "storage":{
             "offset":4,
             "size":4,
@@ -202,7 +186,7 @@
               }
             ]
           },
-          "type":"_SOCKET"
+          "type":"LPCSTR"
         }
       ],
       "ret_storage":{

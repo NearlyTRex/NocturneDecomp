@@ -1200,7 +1200,7 @@
     "addr":"80000001",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_accept",
+    "name":"accept",
     "type":"Function"
   },
   {
@@ -1221,7 +1221,7 @@
     "addr":"80000002",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_bind",
+    "name":"connect",
     "type":"Function"
   },
   {
@@ -1239,10 +1239,10 @@
     "type":"Function"
   },
   {
-    "addr":"80000004",
+    "addr":"80000003",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_connect",
+    "name":"bind",
     "type":"Function"
   },
   {
@@ -1256,7 +1256,7 @@
     "addr":"80000006",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_getsockname",
+    "name":"getsockname",
     "type":"Function"
   },
   {
@@ -1277,21 +1277,7 @@
     "addr":"8000000c",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_ioctlsocket",
-    "type":"Function"
-  },
-  {
-    "addr":"8000000c",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
     "name":"getpeername",
-    "type":"Function"
-  },
-  {
-    "addr":"8000000d",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_listen",
     "type":"Function"
   },
   {
@@ -1337,10 +1323,24 @@
     "type":"Function"
   },
   {
+    "addr":"80000014",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"ioctlsocket",
+    "type":"Function"
+  },
+  {
     "addr":"80000015",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_setsockopt",
+    "name":"setsockopt",
+    "type":"Function"
+  },
+  {
+    "addr":"80000015",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"listen",
     "type":"Function"
   },
   {
@@ -1354,7 +1354,7 @@
     "addr":"80000017",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"crt_wsock32.c_socket",
+    "name":"socket",
     "type":"Function"
   },
   {
