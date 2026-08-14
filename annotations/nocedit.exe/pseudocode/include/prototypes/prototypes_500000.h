@@ -255,7 +255,7 @@ SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem *this_ptr,uint flags)
 SPanel * __cdecl core_manpuz_cpp_SPanel_ctor_FUN_0050b980(SPanel *this_ptr);
 SPanel * __cdecl core_manpuz_cpp_SPanel_dtor_FUN_0050b990(SPanel *this_ptr,uint flags);
 SPanel * __cdecl core_manpuz_cpp_copyPanel_FUN_0050b9a0(SPanel *dest,SPanel *src);
-CDemonTriangle * __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_0050ba70(CDemonTriangle *objs,uint flags);
+CDemonTriangle * __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_0050ba70(CDemonTriangle *this_ptr,uint flags);
 SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(SPanel *objs,uint flags);
 SGem * __cdecl core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(SGem *objs,uint flags);
 SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(SReflector *objs,uint flags);

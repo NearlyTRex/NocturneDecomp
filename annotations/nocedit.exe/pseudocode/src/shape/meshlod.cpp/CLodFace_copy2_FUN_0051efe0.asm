@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source)
+; CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *this_ptr,CLodFace *source)
 ;
 ; Parameters:
-; CLodFace *       Stack[0x4]:4   destination
+; CLodFace *       Stack[0x4]:4   this_ptr
 ; CLodFace *       Stack[0x8]:4   source
 ;
 ; Called Functions:

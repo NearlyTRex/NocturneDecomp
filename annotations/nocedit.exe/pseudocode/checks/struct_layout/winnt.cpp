@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: winnt
-// Structs : 15
+// Structs : 22
 
 #include "nocturne.h"
 
@@ -129,6 +129,28 @@ static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, RegisterArea) == 28,
 static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, Cr0NpxState) == 108,
               "offsetof(_FLOATING_SAVE_AREA, Cr0NpxState) != 108");
 
+// ---- _FLOATING_SAVE_AREA (112 bytes) ----
+static_assert(sizeof(_FLOATING_SAVE_AREA) == 112,
+              "sizeof(_FLOATING_SAVE_AREA) != 112");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, ControlWord) == 0,
+              "offsetof(_FLOATING_SAVE_AREA, ControlWord) != 0");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, StatusWord) == 4,
+              "offsetof(_FLOATING_SAVE_AREA, StatusWord) != 4");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, TagWord) == 8,
+              "offsetof(_FLOATING_SAVE_AREA, TagWord) != 8");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, ErrorOffset) == 12,
+              "offsetof(_FLOATING_SAVE_AREA, ErrorOffset) != 12");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, ErrorSelector) == 16,
+              "offsetof(_FLOATING_SAVE_AREA, ErrorSelector) != 16");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, DataOffset) == 20,
+              "offsetof(_FLOATING_SAVE_AREA, DataOffset) != 20");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, DataSelector) == 24,
+              "offsetof(_FLOATING_SAVE_AREA, DataSelector) != 24");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, RegisterArea) == 28,
+              "offsetof(_FLOATING_SAVE_AREA, RegisterArea) != 28");
+static_assert(__builtin_offsetof(_FLOATING_SAVE_AREA, Cr0NpxState) == 108,
+              "offsetof(_FLOATING_SAVE_AREA, Cr0NpxState) != 108");
+
 // ---- _GUID (16 bytes) ----
 static_assert(sizeof(_GUID) == 16,
               "sizeof(_GUID) != 16");
@@ -148,6 +170,48 @@ static_assert(__builtin_offsetof(_LIST_ENTRY, Flink) == 0,
               "offsetof(_LIST_ENTRY, Flink) != 0");
 static_assert(__builtin_offsetof(_LIST_ENTRY, Blink) == 4,
               "offsetof(_LIST_ENTRY, Blink) != 4");
+
+// ---- _LIST_ENTRY (8 bytes) ----
+static_assert(sizeof(_LIST_ENTRY) == 8,
+              "sizeof(_LIST_ENTRY) != 8");
+static_assert(__builtin_offsetof(_LIST_ENTRY, Flink) == 0,
+              "offsetof(_LIST_ENTRY, Flink) != 0");
+static_assert(__builtin_offsetof(_LIST_ENTRY, Blink) == 4,
+              "offsetof(_LIST_ENTRY, Blink) != 4");
+
+// ---- _MEMORY_BASIC_INFORMATION (28 bytes) ----
+static_assert(sizeof(_MEMORY_BASIC_INFORMATION) == 28,
+              "sizeof(_MEMORY_BASIC_INFORMATION) != 28");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, BaseAddress) == 0,
+              "offsetof(_MEMORY_BASIC_INFORMATION, BaseAddress) != 0");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, AllocationBase) == 4,
+              "offsetof(_MEMORY_BASIC_INFORMATION, AllocationBase) != 4");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, AllocationProtect) == 8,
+              "offsetof(_MEMORY_BASIC_INFORMATION, AllocationProtect) != 8");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, RegionSize) == 12,
+              "offsetof(_MEMORY_BASIC_INFORMATION, RegionSize) != 12");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, State) == 16,
+              "offsetof(_MEMORY_BASIC_INFORMATION, State) != 16");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, Protect) == 20,
+              "offsetof(_MEMORY_BASIC_INFORMATION, Protect) != 20");
+static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, Type) == 24,
+              "offsetof(_MEMORY_BASIC_INFORMATION, Type) != 24");
+
+// ---- _RTL_CRITICAL_SECTION (24 bytes) ----
+static_assert(sizeof(_RTL_CRITICAL_SECTION) == 24,
+              "sizeof(_RTL_CRITICAL_SECTION) != 24");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, DebugInfo) == 0,
+              "offsetof(_RTL_CRITICAL_SECTION, DebugInfo) != 0");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, LockCount) == 4,
+              "offsetof(_RTL_CRITICAL_SECTION, LockCount) != 4");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, RecursionCount) == 8,
+              "offsetof(_RTL_CRITICAL_SECTION, RecursionCount) != 8");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, OwningThread) == 12,
+              "offsetof(_RTL_CRITICAL_SECTION, OwningThread) != 12");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, LockSemaphore) == 16,
+              "offsetof(_RTL_CRITICAL_SECTION, LockSemaphore) != 16");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION, SpinCount) == 20,
+              "offsetof(_RTL_CRITICAL_SECTION, SpinCount) != 20");
 
 // ---- _RTL_CRITICAL_SECTION (24 bytes) ----
 static_assert(sizeof(_RTL_CRITICAL_SECTION) == 24,
@@ -187,6 +251,28 @@ static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, CreatorBackTraceIn
 static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, SpareWORD) == 30,
               "offsetof(_RTL_CRITICAL_SECTION_DEBUG, SpareWORD) != 30");
 
+// ---- _RTL_CRITICAL_SECTION_DEBUG (32 bytes) ----
+static_assert(sizeof(_RTL_CRITICAL_SECTION_DEBUG) == 32,
+              "sizeof(_RTL_CRITICAL_SECTION_DEBUG) != 32");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, Type) == 0,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, Type) != 0");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, CreatorBackTraceIndex) == 2,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, CreatorBackTraceIndex) != 2");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, CriticalSection) == 4,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, CriticalSection) != 4");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, ProcessLocksList) == 8,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, ProcessLocksList) != 8");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, EntryCount) == 16,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, EntryCount) != 16");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, ContentionCount) == 20,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, ContentionCount) != 20");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, Flags) == 24,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, Flags) != 24");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, CreatorBackTraceIndexHigh) == 28,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, CreatorBackTraceIndexHigh) != 28");
+static_assert(__builtin_offsetof(_RTL_CRITICAL_SECTION_DEBUG, SpareWORD) == 30,
+              "offsetof(_RTL_CRITICAL_SECTION_DEBUG, SpareWORD) != 30");
+
 // ---- _floatx2 (8 bytes) ----
 static_assert(sizeof(_floatx2) == 8,
               "sizeof(_floatx2) != 8");
@@ -202,6 +288,22 @@ static_assert(__builtin_offsetof(_struct_19, LowPart) == 0,
               "offsetof(_struct_19, LowPart) != 0");
 static_assert(__builtin_offsetof(_struct_19, HighPart) == 4,
               "offsetof(_struct_19, HighPart) != 4");
+
+// ---- _struct_19 (8 bytes) ----
+static_assert(sizeof(_struct_19) == 8,
+              "sizeof(_struct_19) != 8");
+static_assert(__builtin_offsetof(_struct_19, LowPart) == 0,
+              "offsetof(_struct_19, LowPart) != 0");
+static_assert(__builtin_offsetof(_struct_19, HighPart) == 4,
+              "offsetof(_struct_19, HighPart) != 4");
+
+// ---- _struct_20 (8 bytes) ----
+static_assert(sizeof(_struct_20) == 8,
+              "sizeof(_struct_20) != 8");
+static_assert(__builtin_offsetof(_struct_20, LowPart) == 0,
+              "offsetof(_struct_20, LowPart) != 0");
+static_assert(__builtin_offsetof(_struct_20, HighPart) == 4,
+              "offsetof(_struct_20, HighPart) != 4");
 
 // ---- _struct_20 (8 bytes) ----
 static_assert(sizeof(_struct_20) == 8,

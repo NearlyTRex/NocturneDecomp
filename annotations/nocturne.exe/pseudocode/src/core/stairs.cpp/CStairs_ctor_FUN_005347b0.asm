@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)
+; CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *this_ptr)
 ;
 ; Parameters:
-; CStairs *        Stack[0x4]:4   param_1
+; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_stairs.cpp_factoryFuncStairs_FUN_00534780 at 00534793

@@ -439,6 +439,10 @@ void __cdecl freeAllSkeletons(void);
 // Address: 0051f760
 void __cdecl FUN_0051f760(char *output_buffer);
 
+// Original: core_skeleton.cpp_calculateDistanceSquared_FUN_0051f800
+// Address: 0051f800
+float __cdecl calculateDistanceSquared(CVector3f *point1,CVector3f *point2);
+
 // Original: core_skeleton.cpp_SVert_ctor_FUN_0051f840
 // Address: 0051f840
 SVert * __cdecl SVert::ctor(SVert *this_ptr);

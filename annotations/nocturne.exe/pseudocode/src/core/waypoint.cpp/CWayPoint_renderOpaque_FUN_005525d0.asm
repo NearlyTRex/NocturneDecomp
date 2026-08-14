@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(void)
+; int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(CWayPoint *this_ptr)
 ;
+; Parameters:
+; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

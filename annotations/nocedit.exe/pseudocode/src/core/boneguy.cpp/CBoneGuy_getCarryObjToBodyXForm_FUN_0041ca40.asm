@@ -29,7 +29,7 @@
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
-;   core_actor.cpp_CVector_ctor_FUN_00410340
+;   core_actor.cpp_CVector3f_ctor_FUN_00410340
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
@@ -76,8 +76,8 @@ section .text
     ADD ESP,0x8                         ; 0041cab1
     LEA EAX,[EBP + 0x32]                ; 0041cab4
     PUSH EAX                            ; 0041cab7
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cab8
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 0041cab8
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     FLD float ptr [EBP + -0xa]          ; 0041cabd
     FLD float ptr [EBP + -0x6]          ; 0041cac0
     FLD float ptr [EBP + -0x2]          ; 0041cac3
@@ -95,8 +95,8 @@ section .text
     FXCH                                ; 0041cae1
     FSTP float ptr [EBP + 0x36]         ; 0041cae3
     FSTP float ptr [EBP + 0x3a]         ; 0041cae6
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cae9
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 0041cae9
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     FLD float ptr [0x00616165]          ; 0041caee | FLOAT_00616165
     FLD float ptr [EBP + 0x32]          ; 0041caf4
     FMUL ST1                            ; 0041caf7

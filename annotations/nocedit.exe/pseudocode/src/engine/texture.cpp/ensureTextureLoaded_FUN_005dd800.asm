@@ -76,7 +76,7 @@ section .text
     MOV ESI,dword ptr [0x03f87358]      ; 005dd845 | g_TextureCacheInstance
     PUSH ESI                            ; 005dd84b
     CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 ; 005dd84c
-        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * cache, char * texture_name)
+        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * this_ptr, char * texture_name)
     MOV ESI,0x1                         ; 005dd851
     ADD ESP,0x8                         ; 005dd856
     MOV dword ptr [EBX + 0x4],EAX       ; 005dd859
@@ -86,7 +86,7 @@ section .text
     PUSH EDI                            ; 005dd863
     MOV [0x03f87354],EAX                ; 005dd864 | g_CurrentTextureIndex
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd869
-        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
+        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * this_ptr, int texture_index)
     MOV EBP,dword ptr [0x02d03e94]      ; 005dd86e | g_UseExternalRenderer
     ADD ESP,0x8                         ; 005dd874
     TEST EBP,EBP                        ; 005dd877

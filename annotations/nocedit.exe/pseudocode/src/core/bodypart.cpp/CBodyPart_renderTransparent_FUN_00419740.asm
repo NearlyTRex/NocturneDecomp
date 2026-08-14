@@ -47,7 +47,7 @@ section .text
     PUSH EDI                            ; 0041977f
     MOV dword ptr [EBX + 0x15ac88],EAX  ; 00419780 | g_CDemonSetInstance.disable_directional_lighting
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 00419786
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041978b
     MOV EBP,dword ptr [EDI + 0xcc0]     ; 0041978e
     PUSH EBP                            ; 00419794

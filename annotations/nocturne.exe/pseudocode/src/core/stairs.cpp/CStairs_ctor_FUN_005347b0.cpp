@@ -2,17 +2,17 @@
 // Address: 005347b0
 // Address Range: [[005347b0, 00534812]]
 // Convention: __cdecl
-// Signature: CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)
+// Signature: CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *this_ptr)
 
 #include "nocturne.h"
 
-CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)
+CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *this_ptr)
 
 {
   CDemonActor *pCVar1;
   void *pvVar2;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&param_1->base);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&this_ptr->base);
   pvVar2 = __arrinit
                      (pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo_0059c080);
   *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;

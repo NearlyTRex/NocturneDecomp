@@ -46,6 +46,17 @@ def get_logger():
 def log_info(message):
     get_logger().info(message)
 
+def log_warning(message):
+    """Report without aborting.
+
+    log_error() exits the process, so it cannot be used to print a list of
+    findings: only the first line is ever emitted, and any `--allow-*` flag
+    meant to downgrade that finding to a report is never even consulted,
+    because the exit happens before the check. Use this for the detail lines
+    and let the caller decide whether to raise.
+    """
+    get_logger().warning(message)
+
 def log_error(message):
     get_logger().error(message)
     sys.exit(1)

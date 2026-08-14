@@ -266,7 +266,7 @@ section .text
         ;   Label: LAB_005240fa
     PUSH ECX                            ; 005240fe
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005240ff
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00524104
     PUSH EBX                            ; 00524107
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 ; 00524108
@@ -416,7 +416,7 @@ section .text
     PUSH EBX                            ; 00524292
         ;   Label: LAB_00524292
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 00524293
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00524298
     MOV ECX,dword ptr [ESP + 0x20]      ; 0052429b
         ;   Label: LAB_0052429b
@@ -532,7 +532,7 @@ section .text
         ;   XREF to: 00524240 (CONDITIONAL_JUMP)  ; LAB_00524240
     PUSH EBX                            ; 005243cc
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 005243cd
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005243d2
     PUSH EBX                            ; 005243d5
     PUSH 0x592cc4                       ; 005243d6 | = "Error reading %s while streaming\n"

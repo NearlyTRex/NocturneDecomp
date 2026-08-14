@@ -428,7 +428,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0052c0fb
     PUSH EAX                            ; 0052c0ff
     CALL core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0 ; 0052c100
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * objs, uint flags)
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052c105
     ADD ESP,0x4db4                      ; 0052c108
     POP EBP                             ; 0052c10e
@@ -1125,7 +1125,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0052ca76
     PUSH EAX                            ; 0052ca7a
     CALL core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0 ; 0052ca7b
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * objs, uint flags)
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052ca80
     POP EBX                             ; 0052ca83
     POP ESI                             ; 0052ca84

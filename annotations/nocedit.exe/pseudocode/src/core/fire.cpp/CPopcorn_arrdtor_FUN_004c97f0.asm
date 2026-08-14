@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPopcorn * __cdecl core_fire_cpp_CPopcorn_arrdtor_FUN_004c97f0(CPopcorn *objs,uint flags)
+; CPopcorn * __cdecl core_fire_cpp_CPopcorn_arrdtor_FUN_004c97f0(CPopcorn *this_ptr,uint flags)
 ;
 ; Parameters:
-; CPopcorn *       Stack[0x4]:4   objs
+; CPopcorn *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

@@ -157,4 +157,4 @@ void __cdecl CDemonCube::buildVoxelOccupancyGrid(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CVector3f_arrdtor_FUN_00457eb0
 // Address: 00457eb0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

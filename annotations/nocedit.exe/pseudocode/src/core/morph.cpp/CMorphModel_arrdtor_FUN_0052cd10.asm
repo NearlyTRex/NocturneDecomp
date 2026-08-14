@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *objs,uint flags)
+; CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *this_ptr,uint flags)
 ;
 ; Parameters:
-; CMorphModel *    Stack[0x4]:4   objs
+; CMorphModel *    Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

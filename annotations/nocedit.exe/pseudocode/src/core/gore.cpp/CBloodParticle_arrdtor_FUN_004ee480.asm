@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *objs,uint flags)
+; CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *this_ptr,uint flags)
 ;
 ; Parameters:
-; CBloodParticle * Stack[0x4]:4   objs
+; CBloodParticle * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

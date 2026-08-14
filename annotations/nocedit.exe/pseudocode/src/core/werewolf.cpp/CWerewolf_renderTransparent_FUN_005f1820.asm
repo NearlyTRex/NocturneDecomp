@@ -64,7 +64,7 @@ section .text
     PUSH ESI                            ; 005f1879
     PUSH EBX                            ; 005f187a
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005f187b
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     MOV EDX,dword ptr [EBX + 0xbed0]    ; 005f1880
     LEA EAX,[EDX*0x4 + 0x0]             ; 005f1886
     SUB EAX,EDX                         ; 005f188d

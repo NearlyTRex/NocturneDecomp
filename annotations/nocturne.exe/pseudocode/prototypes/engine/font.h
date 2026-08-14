@@ -157,7 +157,7 @@ int __cdecl CBitFont::wrapText(CBitFont *this_ptr,char *source_text,char *dest_b
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0
 // Address: 004930b0
-int __cdecl CBitFont::getCharWidth(CBitFont *font,int char_code);
+int __cdecl CBitFont::getCharWidth(CBitFont *this_ptr,int char_code);
 
 // Original: engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 // Address: 004930e0

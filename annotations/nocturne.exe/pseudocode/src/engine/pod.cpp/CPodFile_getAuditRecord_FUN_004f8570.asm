@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2)
+; CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record)
 ;
+; Parameters:
+; CPodFile *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   record_index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_0058da77

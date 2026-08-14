@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *model_ptr)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *this_ptr)
 ;
 ; Parameters:
-; CKeyFramedModel * Stack[0x4]:4   model_ptr
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

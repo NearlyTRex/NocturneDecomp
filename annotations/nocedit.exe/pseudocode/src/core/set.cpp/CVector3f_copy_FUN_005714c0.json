@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CVector3f_copy_FUN_005714c0",
-    "signature": "CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *a,CVector3f *b)"
+    "signature": "CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *this_ptr,CVector3f *b)"
   },
   "function_calls": [],
   "globals": [],
@@ -71,7 +71,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "a->x = b->x;",
+      "text": "this_ptr->x = b->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -80,7 +80,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "a[1].x = b[1].x;",
+      "text": "this_ptr[1].x = b[1].x;",
       "type": "unrolled_memcpy"
     }
   ],
@@ -93,7 +93,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "a",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CVector3f *"

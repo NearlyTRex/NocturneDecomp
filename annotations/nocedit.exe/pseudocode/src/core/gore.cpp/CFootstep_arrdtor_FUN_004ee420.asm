@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *objs,uint flags)
+; CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *this_ptr,uint flags)
 ;
 ; Parameters:
-; CFootstep *      Stack[0x4]:4   objs
+; CFootstep *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

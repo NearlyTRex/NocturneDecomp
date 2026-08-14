@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * __cdecl core_skeleton_cpp_CBoundingBox3D_arrdtor_FUN_005a2030(CBoundingBox3D *objs,uint flags)
+; CBoundingBox3D * __cdecl core_skeleton_cpp_CBoundingBox3D_arrdtor_FUN_005a2030(CBoundingBox3D *this_ptr,uint flags)
 ;
 ; Parameters:
-; CBoundingBox3D * Stack[0x4]:4   objs
+; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

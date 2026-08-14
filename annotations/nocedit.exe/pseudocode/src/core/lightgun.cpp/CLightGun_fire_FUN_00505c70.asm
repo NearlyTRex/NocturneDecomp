@@ -52,7 +52,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_actor.cpp_CVector_ctor_FUN_00410340
+;   core_actor.cpp_CVector3f_ctor_FUN_00410340
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
@@ -309,8 +309,8 @@ section .text
     MOV dword ptr [ESP + 0x10c],EAX     ; 00505fa4
     LEA EAX,[ESP + 0xc0]                ; 00505fab
     PUSH EAX                            ; 00505fb2
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00505fb3
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 00505fb3
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 00505fb8
     MOV EAX,dword ptr [ESP + 0x10c]     ; 00505fbb
     FLD float ptr [EBX]                 ; 00505fc2
@@ -324,8 +324,8 @@ section .text
     LEA EAX,[ESP + 0xd8]                ; 00505fe0
     PUSH EAX                            ; 00505fe7
     FSTP float ptr [ESP + 0xcc]         ; 00505fe8
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00505fef
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 00505fef
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 00505ff4
     FLD float ptr [0x006314f6]          ; 00505ff7 | FLOAT_006314f6
     FLD float ptr [ESP + 0xc0]          ; 00505ffd

@@ -29,7 +29,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0047c224
     PUSH EBX                            ; 0047c228
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c229
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047c22e
     MOV EDX,dword ptr [ESP + 0x30]      ; 0047c231
     LEA EAX,[EDX*0x4 + 0x0]             ; 0047c235

@@ -97,4 +97,4 @@ CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint flags);
 
 // Original: core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0
 // Address: 004eb8a0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

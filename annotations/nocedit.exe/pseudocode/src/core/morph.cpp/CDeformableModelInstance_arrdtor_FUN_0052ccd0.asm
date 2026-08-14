@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDeformableModelInstance * __cdecl core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance *objs,uint flags)
+; CDeformableModelInstance * __cdecl core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance *this_ptr,uint flags)
 ;
 ; Parameters:
-; CDeformableModelInstance * Stack[0x4]:4   objs
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 00473be7
     MOV dword ptr [EBX + 0x8],0x0       ; 00473be8
     CALL shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 ; 00473bef
-        ;   XREF to: 00473c00 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00(CStrList * dest_ptr, CStrList * source_ptr)
+        ;   XREF to: 00473c00 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00(CStrList * this_ptr, CStrList * source_ptr)
     ADD ESP,0x8                         ; 00473bf4
     MOV EAX,EBX                         ; 00473bf7
     POP EBX                             ; 00473bf9

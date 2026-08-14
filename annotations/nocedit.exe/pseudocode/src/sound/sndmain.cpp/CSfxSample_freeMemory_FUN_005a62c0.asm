@@ -53,7 +53,7 @@ section .text
     PUSH EBX                            ; 005a62d4
         ;   Label: LAB_005a62d4
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540 ; 005a62d5
-        ;   XREF to: 005a6540 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample * sample)
+        ;   XREF to: 005a6540 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005a62da
     PUSH EBX                            ; 005a62dd
     CALL sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400 ; 005a62de

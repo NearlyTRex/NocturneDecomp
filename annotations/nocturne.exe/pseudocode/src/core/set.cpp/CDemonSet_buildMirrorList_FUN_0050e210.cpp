@@ -9,8 +9,8 @@
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet *this_ptr)
 
 {
-  CGlass *actor;
-  CBoundingBox3D *this_ptr_00;
+  CGlass *this_ptr_00;
+  CBoundingBox3D *this_ptr_01;
   int iVar1;
   int iVar2;
   CDemonSet *pCVar3;
@@ -21,15 +21,16 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(CDemonSet *this
   pCVar3 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      actor = (CGlass *)
-              core_actor_cpp_castToClassHash_FUN_0040d890
-                        (pCVar3->actors[0],g_CGlassActorType_01c78c40.name_hash);
-      if ((actor != (CGlass *)0x0) && (actor->mirror_flag != 0)) {
-        core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)actor);
-        this_ptr_00 = (*((actor->base).vtable._ub)->getBoundingBox)((CDemonActor *)actor,&local_28);
-        iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
+      this_ptr_00 = (CGlass *)
+                    core_actor_cpp_castToClassHash_FUN_0040d890
+                              (pCVar3->actors[0],g_CGlassActorType_01c78c40.name_hash);
+      if ((this_ptr_00 != (CGlass *)0x0) && (this_ptr_00->mirror_flag != 0)) {
+        core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr_00);
+        this_ptr_01 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
+                                ((CDemonActor *)this_ptr_00,&local_28);
+        iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_01);
         if (iVar1 != 0) {
-          this_ptr->mirror_glass_actors[this_ptr->mirror_glass_actor_count] = actor;
+          this_ptr->mirror_glass_actors[this_ptr->mirror_glass_actor_count] = this_ptr_00;
           iVar1 = this_ptr->mirror_glass_actor_count + 1;
           this_ptr->mirror_glass_actor_count = iVar1;
           if (99 < iVar1) {

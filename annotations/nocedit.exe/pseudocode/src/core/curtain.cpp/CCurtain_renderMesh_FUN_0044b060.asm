@@ -45,7 +45,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x40]      ; 0044b065
     PUSH ESI                            ; 0044b069
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 0044b06a
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0044b06f
     MOV EAX,ESP                         ; 0044b072
     PUSH EAX                            ; 0044b074

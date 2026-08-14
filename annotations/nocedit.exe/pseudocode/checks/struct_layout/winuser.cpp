@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: winuser
-// Structs : 8
+// Structs : 10
 
 #include "nocturne.h"
 
@@ -66,6 +66,46 @@ static_assert(__builtin_offsetof(tagMSG, time) == 16,
               "offsetof(tagMSG, time) != 16");
 static_assert(__builtin_offsetof(tagMSG, pt) == 20,
               "offsetof(tagMSG, pt) != 20");
+
+// ---- tagMSG (28 bytes) ----
+static_assert(sizeof(tagMSG) == 28,
+              "sizeof(tagMSG) != 28");
+static_assert(__builtin_offsetof(tagMSG, hwnd) == 0,
+              "offsetof(tagMSG, hwnd) != 0");
+static_assert(__builtin_offsetof(tagMSG, message) == 4,
+              "offsetof(tagMSG, message) != 4");
+static_assert(__builtin_offsetof(tagMSG, wParam) == 8,
+              "offsetof(tagMSG, wParam) != 8");
+static_assert(__builtin_offsetof(tagMSG, lParam) == 12,
+              "offsetof(tagMSG, lParam) != 12");
+static_assert(__builtin_offsetof(tagMSG, time) == 16,
+              "offsetof(tagMSG, time) != 16");
+static_assert(__builtin_offsetof(tagMSG, pt) == 20,
+              "offsetof(tagMSG, pt) != 20");
+
+// ---- tagWNDCLASSA (40 bytes) ----
+static_assert(sizeof(tagWNDCLASSA) == 40,
+              "sizeof(tagWNDCLASSA) != 40");
+static_assert(__builtin_offsetof(tagWNDCLASSA, style) == 0,
+              "offsetof(tagWNDCLASSA, style) != 0");
+static_assert(__builtin_offsetof(tagWNDCLASSA, lpfnWndProc) == 4,
+              "offsetof(tagWNDCLASSA, lpfnWndProc) != 4");
+static_assert(__builtin_offsetof(tagWNDCLASSA, cbClsExtra) == 8,
+              "offsetof(tagWNDCLASSA, cbClsExtra) != 8");
+static_assert(__builtin_offsetof(tagWNDCLASSA, cbWndExtra) == 12,
+              "offsetof(tagWNDCLASSA, cbWndExtra) != 12");
+static_assert(__builtin_offsetof(tagWNDCLASSA, hInstance) == 16,
+              "offsetof(tagWNDCLASSA, hInstance) != 16");
+static_assert(__builtin_offsetof(tagWNDCLASSA, hIcon) == 20,
+              "offsetof(tagWNDCLASSA, hIcon) != 20");
+static_assert(__builtin_offsetof(tagWNDCLASSA, hCursor) == 24,
+              "offsetof(tagWNDCLASSA, hCursor) != 24");
+static_assert(__builtin_offsetof(tagWNDCLASSA, hbrBackground) == 28,
+              "offsetof(tagWNDCLASSA, hbrBackground) != 28");
+static_assert(__builtin_offsetof(tagWNDCLASSA, lpszMenuName) == 32,
+              "offsetof(tagWNDCLASSA, lpszMenuName) != 32");
+static_assert(__builtin_offsetof(tagWNDCLASSA, lpszClassName) == 36,
+              "offsetof(tagWNDCLASSA, lpszClassName) != 36");
 
 // ---- tagWNDCLASSA (40 bytes) ----
 static_assert(sizeof(tagWNDCLASSA) == 40,

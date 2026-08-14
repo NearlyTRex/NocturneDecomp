@@ -55,7 +55,7 @@ section .text
     PUSH ESI                            ; 005e4da1
         ;   Label: LAB_005e4da1
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005e4da2
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005e4da7
     MOV EDX,ESP                         ; 005e4daa
     PUSH EDX                            ; 005e4dac

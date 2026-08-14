@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShell * __cdecl core_fire_cpp_CShell_arrdtor_FUN_004c9810(CShell *objs,uint flags)
+; CShell * __cdecl core_fire_cpp_CShell_arrdtor_FUN_004c9810(CShell *this_ptr,uint flags)
 ;
 ; Parameters:
-; CShell *         Stack[0x4]:4   objs
+; CShell *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

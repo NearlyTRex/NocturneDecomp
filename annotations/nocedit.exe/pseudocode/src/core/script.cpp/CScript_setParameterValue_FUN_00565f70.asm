@@ -124,7 +124,7 @@ section .text
     PUSH EBP                            ; 0056602b
     PUSH 0x310cb74                      ; 0056602c | CCmdParse_0310cb74
     CALL core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760 ; 00566031
-        ;   XREF to: 00562760 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse * this_pointer, int param_index)
+        ;   XREF to: 00562760 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse * this_ptr, int param_index)
     ADD ESP,0x8                         ; 00566036
     PUSH EAX                            ; 00566039
     MOV ESI,dword ptr [0x0310fd48]      ; 0056603a | g_CurrentEditingLine

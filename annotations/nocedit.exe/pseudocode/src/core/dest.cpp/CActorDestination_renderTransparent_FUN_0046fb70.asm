@@ -71,7 +71,7 @@ section .text
     PUSH EBX                            ; 0046fbab
         ;   Label: LAB_0046fbab
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 0046fbac
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0046fbb1
     LEA EAX,[ESP + 0x18]                ; 0046fbb4
     PUSH EAX                            ; 0046fbb8
@@ -116,7 +116,7 @@ section .text
         ;   XREF to: 0046fbab (CONDITIONAL_JUMP)  ; LAB_0046fbab
     PUSH EBX                            ; 0046fc13
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 0046fc14
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0046fc19
     MOV ESI,ESP                         ; 0046fc1c
     PUSH ESI                            ; 0046fc1e

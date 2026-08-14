@@ -32,7 +32,7 @@
 // =============================================================================
 
 int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width);
-int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont *font,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004d0200(CBitFont *this_ptr,int char_code);
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont *this_ptr,int offset_value,int start_char,int end_char);

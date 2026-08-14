@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *dest_ptr,CStrList *source_ptr)
+; CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *this_ptr,CStrList *source_ptr)
 ;
 ; Parameters:
-; CStrList *       Stack[0x4]:4   dest_ptr
+; CStrList *       Stack[0x4]:4   this_ptr
 ; CStrList *       Stack[0x8]:4   source_ptr
 ;
 ; XREF[1]:

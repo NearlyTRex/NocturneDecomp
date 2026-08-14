@@ -2,13 +2,13 @@
 // Address: 0047a3e0
 // Address Range: [[0047a3e0, 0047a812]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+// Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 
 {
   char cVar2;
@@ -47,21 +47,21 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   shape_design_c_initializeTextureManager_FUN_0046a880(1);
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   local_24 = 0;
-  if (0 < model_ptr->texture_count) {
-    local_3c = model_ptr->texture_list[0].textures[0].texture_name;
+  if (0 < this_ptr->texture_count) {
+    local_3c = this_ptr->texture_list[0].textures[0].texture_name;
     do {
       iVar8 = 0x7fffffff;
       max_u = -0x7fffffff;
       iVar6 = 0x7fffffff;
       local_18 = 0;
       iVar7 = -0x7fffffff;
-      if (0 < model_ptr->poly_count) {
-        local_20 = model_ptr->poly_texture_index_list;
+      if (0 < this_ptr->poly_count) {
+        local_20 = this_ptr->poly_texture_index_list;
         local_1c = 0;
         do {
           if (local_24 == *local_20) {
-            iVar3 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base)
-                          .base.type + local_1c;
+            iVar3 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
+                          base.type + local_1c;
             iVar5 = iVar3 + 0x24;
             do {
               if (*(int *)(iVar3 + 0x1c) < iVar8) {
@@ -82,14 +82,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
           local_20 = local_20 + 1;
           local_1c = local_1c + 0x48;
           local_18 = local_18 + 1;
-        } while (local_18 < model_ptr->poly_count);
+        } while (local_18 < this_ptr->poly_count);
       }
       if (iVar8 <= max_u) {
         shape_design_c_cramTextures_FUN_0046a970(local_3c,iVar8,iVar6,max_u,iVar7);
       }
       local_3c = local_3c + 0x48;
       local_24 = local_24 + 1;
-    } while (local_24 < model_ptr->texture_count);
+    } while (local_24 < this_ptr->texture_count);
   }
   shape_design_c_initializeCram_FUN_0046b6e0(&local_b8);
   pSVar9 = &local_b8;
@@ -112,19 +112,19 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   local_b8.enable_visualization = 1;
   shape_design_c_cramTextureList_FUN_0046bb80(&local_b8);
   iStack_30 = 0;
-  if (0 < model_ptr->poly_count) {
+  if (0 < this_ptr->poly_count) {
     iStack_38 = 0;
     iStack_2c = 0;
     do {
-      piVar4 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);
+      piVar4 = (int *)((int)this_ptr->poly_texture_index_list + iStack_2c);
       if (*piVar4 < 0) {
         *piVar4 = 0;
       }
       iVar4 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                        (model_ptr->texture_list
-                         [*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].textures[0]
-                         .texture_name);
-      iVar9 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base).base.
+                        (this_ptr->texture_list
+                         [*(int *)((int)this_ptr->poly_texture_index_list + iStack_2c)].textures[0].
+                         texture_name);
+      iVar9 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
                     type + iStack_38;
       iVar10 = 0;
       iVar5 = iVar9;
@@ -154,16 +154,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       }
       iVar5 = shape_design_c_getAtlasMapIndex_FUN_0046e030(iVar4);
       iStack_30 = iStack_30 + 1;
-      *(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar5;
+      *(int *)((int)this_ptr->poly_texture_index_list + iStack_2c) = iVar5;
       iStack_2c = iStack_2c + 4;
       iStack_38 = iStack_38 + 0x48;
-    } while (iStack_30 < model_ptr->poly_count);
+    } while (iStack_30 < this_ptr->poly_count);
   }
   iVar5 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
   iVar4 = 0;
-  model_ptr->texture_count = iVar5;
+  this_ptr->texture_count = iVar5;
   if (0 < iVar5) {
-    pcStack_34 = model_ptr->texture_list[0].textures[0].texture_name;
+    pcStack_34 = this_ptr->texture_list[0].textures[0].texture_name;
     do {
       pcVar5 = shape_design_c_getTextureName_FUN_0046e060(iVar4);
       pcVar10 = pcStack_34;
@@ -178,9 +178,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       } while (cVar2 != '\0');
       iVar4 = iVar4 + 1;
       pcStack_34 = pcStack_34 + 0x48;
-    } while (iVar4 < model_ptr->texture_count);
+    } while (iVar4 < this_ptr->texture_count);
   }
-  core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(model_ptr);
+  core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(this_ptr);
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   return;
 }

@@ -85,11 +85,11 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_00560cd0(CZ
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
               (&local_16c,(CVector3f *)&DAT_02dd1184,&local_94);
     (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_dc);
-    core_actor_cpp_CVector_ctor_FUN_0040e160(&local_1c);
+    core_actor_cpp_CVector3f_ctor_FUN_0040e160(&local_1c);
     local_1c.x = local_dc.min.x + local_dc.max.x;
     local_1c.y = local_dc.min.y + local_dc.max.y;
     local_1c.z = local_dc.min.z + local_dc.max.z;
-    core_actor_cpp_CVector_ctor_FUN_0040e160(&local_7c);
+    core_actor_cpp_CVector3f_ctor_FUN_0040e160(&local_7c);
     local_7c.x = local_1c.x * 0.5f;
     local_7c.y = local_1c.y * 0.5f;
     local_7c.z = local_dc.min.z + (float)0.40000000000000002;

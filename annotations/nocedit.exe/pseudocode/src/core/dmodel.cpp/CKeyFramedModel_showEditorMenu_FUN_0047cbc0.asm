@@ -1006,7 +1006,7 @@ section .text
     PUSH EBX                            ; 0047d53d
         ;   Label: LAB_0047d53d
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047d53e
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047d543
     PUSH 0x3e                           ; 0047d546
         ;   Label: LAB_0047d546
@@ -1739,7 +1739,7 @@ section .text
     PUSH ESI                            ; 0047dc99
     MOV dword ptr [EBP + 0x2a],EDI      ; 0047dc9a
     CALL core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 ; 0047dc9d
-        ;   XREF to: 0047a3e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel * model_ptr, char * atlas_filename, int quality_parameter, int pack_parameter)
+        ;   XREF to: 0047a3e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel * this_ptr, char * atlas_filename, int quality_parameter, int pack_parameter)
     ADD ESP,0x10                        ; 0047dca2
     JMP 0x0047d6c7                      ; 0047dca5
         ;   XREF to: 0047d6c7 (UNCONDITIONAL_JUMP)  ; LAB_0047d6c7
@@ -2097,7 +2097,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0047e0f7 | g_CEditorToolsPtr
     PUSH ECX                            ; 0047e0fd | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0047e0fe
-        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value)
+        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * this_ptr, char * prompt_text, CVector3f * result_ptr, int show_current_value)
     ADD ESP,0x10                        ; 0047e103
     TEST EAX,EAX                        ; 0047e106
     JZ 0x0047d6c7                       ; 0047e108

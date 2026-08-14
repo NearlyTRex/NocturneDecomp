@@ -57,7 +57,7 @@ section .text
     PUSH EBX                            ; 00498cf3
         ;   Label: LAB_00498cf3
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00498cf4
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00498cf9
     PUSH 0x0                            ; 00498cfc
     LEA EAX,[EBX + 0x1fa7c]             ; 00498cfe

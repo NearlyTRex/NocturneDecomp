@@ -63,9 +63,9 @@ int __cdecl CBaron::renderTransparent(CBaron *this_ptr);
 // Address: 004112f0
 void __cdecl CBaron::processDamage(CBaron *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310
+// Original: core_baron.cpp_CBaron_drawWeapon_FUN_00411310
 // Address: 00411310
-void CBaron::handlePureVirtualCall(void);
+void __cdecl CBaron::drawWeapon(CBaron *this_ptr,int drawn);
 
 // Original: core_baron.cpp_factoryFuncBaronWeapon_FUN_00411320
 // Address: 00411320
@@ -99,9 +99,9 @@ int __cdecl CBaronWeapon::fire(CBaronWeapon *this_ptr);
 // Address: 00411440
 int __cdecl CBaronWeapon::isReadyToFire(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaron_fireProjectile_FUN_00411470
+// Original: core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00411470
 // Address: 00411470
-void __cdecl CBaron::fireProjectile(CBaron *this_ptr);
+void __cdecl CBaronWeapon::fireProjectile(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0
 // Address: 004114a0

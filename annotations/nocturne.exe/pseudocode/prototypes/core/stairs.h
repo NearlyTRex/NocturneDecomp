@@ -17,7 +17,7 @@ CDemonActorType * __cdecl CStairs::getActorType(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_ctor_FUN_005347b0
 // Address: 005347b0
-CStairs * __cdecl CStairs::ctor(CStairs *param_1);
+CStairs * __cdecl CStairs::ctor(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_setup_FUN_00534820
 // Address: 00534820

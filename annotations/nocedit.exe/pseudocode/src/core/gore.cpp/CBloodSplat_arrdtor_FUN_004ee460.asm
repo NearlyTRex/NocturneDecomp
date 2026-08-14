@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *objs,uint flags)
+; CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *this_ptr,uint flags)
 ;
 ; Parameters:
-; CBloodSplat *    Stack[0x4]:4   objs
+; CBloodSplat *    Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

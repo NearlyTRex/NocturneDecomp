@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00544380(CMouse *ptr)
+; CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00544380(CMouse *this_ptr)
 ;
 ; Parameters:
-; CMouse *         Stack[0x4]:4   ptr
+; CMouse *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   engine_ncursfx.cpp_staticInit_FUN_00544360 at 00544365

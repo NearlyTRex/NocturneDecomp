@@ -130,13 +130,13 @@ void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(CDemonSet
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(CDemonSet *this_ptr,int *light_state_buffer);
 void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0050e920(CDemonSet *this_ptr,_FILE *file_handle);
-int __cdecl core_set_cpp_CVector3f_equals_FUN_0050ea10(CVector3f *a,CVector3f *b);
+int __cdecl core_set_cpp_CVector3f_equals_FUN_0050ea10(CVector3f *this_ptr,CVector3f *b);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0050ea40(SRoom *this_ptr);
 SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_0050ea50(SRoom *this_ptr,uint flags);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_0050ea60(SVDBox *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_0050ea70(SVDBox *this_ptr,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_0050ea80(C3DSLight *this_ptr,uint flags);
-CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b);
+CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *this_ptr,CVector3f *b);
 CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_0050eae0(CVector3f *this_ptr,uint flags);
 C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor_FUN_0050eb00(C3DSCamera *this_ptr,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor_FUN_0050eb20(C3DSLight *this_ptr,uint flags);

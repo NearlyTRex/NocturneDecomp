@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b)
+; CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *this_ptr,CVector3f *b)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   b
 ;
 ; *****************************************************************************

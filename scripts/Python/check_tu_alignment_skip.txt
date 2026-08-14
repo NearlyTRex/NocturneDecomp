@@ -1,0 +1,58 @@
+# Exemptions for check_tu_alignment.py.
+#
+# Forms:
+#
+#   <tu>              exempt from EVERY check
+#   contiguity:<tu>   exempt from the contiguity check only
+#   order:<tu>        exempt from the link-order check only
+#   dos83:<tu>        exempt from the DOS 8.3 name check only
+#
+# Use the underscore form the exporter uses (`core_chain.cpp`, not
+# `core/chain.cpp`). Blanks and '#' comments are ignored. `crt/*` is skipped
+# unconditionally by the tool and does not belong here: the CRT is a static
+# library with one object per function, so it scatters by design.
+#
+# Prefer fixing a name over adding it here. An entry is a claim that the
+# layout is irregular, and it needs to say why.
+#
+# ---------------------------------------------------------------------------
+# The four known link-order exceptions
+# ---------------------------------------------------------------------------
+# The same four TUs sit out of basename-alphabetical position in BOTH
+# independently-linked builds, and two of them are proven correct by a
+# `__FILE__` literal in the binary:
+#
+#   core/chain.cpp    asserts "..\core\chain.cpp"    -> name is a fact
+#   sound/snddx.cpp   asserts "..\sound\snddx.cpp"   -> name is a fact
+#
+# Since a proven-correct name can be out of position, displacement is a
+# property of this project's link order, not evidence of a bad name. That
+# removes the case against the other two, which are inferred but describe
+# their contents accurately:
+#
+#   engine/ncursfx.cpp   CMouse + "crsr%d" / "crsrskll%d" / "flame%d"
+#                        -- animated cursor effects, exactly what the name says
+#   core/terrain.cpp     CTerrain: a singleton wrapping CGround, driven by
+#                        CDemonSet_load/clear/renderScene and CGame_process.
+#                        core/ground.cpp itself has renderTerrainPrimitive and
+#                        renderTerrainQuad, so "terrain" is the codebase's own
+#                        word for this subsystem, not an invention.
+#
+# Order-only, so contiguity is still enforced on all four. Revisit only if the
+# debug build yields a __FILE__ string for either inferred name.
+order:core_chain.cpp
+order:sound_snddx.cpp
+order:engine_ncursfx.cpp
+order:core_terrain.cpp
+
+# ---------------------------------------------------------------------------
+# Known-benign contiguity pattern, deliberately NOT skipped
+# ---------------------------------------------------------------------------
+# cockpit_pkbitmap.cpp reports a 2-function trailing run
+# (CPackedBitmap_getWidth / getHeight, 8 bytes each, zero xrefs) that lands
+# inside cockpit_pkbmpset.cpp. Both builds show it, and pkbitmap.cpp is healthy
+# in both (33 functions in nocedit, 36 in nocturne), so this is not a
+# mis-transfer -- it is Watcom emitting an out-of-line copy of an inline
+# accessor into the object file that took its address. The name is right by
+# class and wrong only by object file. Left visible on purpose: if a second TU
+# ever shows the same shape it should be looked at, not pre-silenced.

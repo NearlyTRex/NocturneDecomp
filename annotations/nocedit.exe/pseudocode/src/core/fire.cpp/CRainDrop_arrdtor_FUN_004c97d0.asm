@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor_FUN_004c97d0(CRainDrop *objs,uint flags)
+; CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor_FUN_004c97d0(CRainDrop *this_ptr,uint flags)
 ;
 ; Parameters:
-; CRainDrop *      Stack[0x4]:4   objs
+; CRainDrop *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

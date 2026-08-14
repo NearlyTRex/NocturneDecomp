@@ -213,7 +213,7 @@ SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460
 // Address: 0043e460
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480
 // Address: 0043e480

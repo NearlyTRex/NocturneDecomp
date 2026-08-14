@@ -2,11 +2,11 @@
 // Address: 004a0300
 // Address Range: [[004a0300, 004a03ca]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value )
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value )
 
 {
   int iVar1;
@@ -23,14 +23,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CE
   }
   while( true ) {
     iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                      (editor_tools,prompt_text,local_40,0x28,1);
+                      (this_ptr,prompt_text,local_40,0x28,1);
     if (iVar1 == 0) {
       return 0;
     }
     iVar2 = sscanf(local_40,"%f%*[ ,]%f%*[ ,]%f");
     if (iVar2 == 3) break;
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (editor_tools,"Please enter a valid vector.");
+              (this_ptr,"Please enter a valid vector.");
   }
   if (result_ptr != &local_18) {
     result_ptr->x = local_18.x;

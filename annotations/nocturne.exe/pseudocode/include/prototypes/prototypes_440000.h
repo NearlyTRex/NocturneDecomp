@@ -20,6 +20,8 @@
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCorona.h"
 #include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SFog.h"
@@ -152,7 +154,7 @@ CDemonActorType * __cdecl core_dest_cpp_CActorDestination_getActorType_FUN_0044b
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0044b810(CActorDestination *this_ptr);
 void __cdecl core_dest_cpp_CActorDestination_process_FUN_0044b850(CActorDestination *this_ptr,float delta_time);
-int __cdecl core_actor_cpp_CDemonActor_returnZero_FUN_0044ba10(CDemonActor *this_ptr);
+ECollisionType __cdecl core_dest_cpp_CActorDestination_getCollisionType_FUN_0044ba10(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0(CActorDestination *this_ptr,CDemonActor *actor);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0044bb10(CActorDestination *this_ptr);
@@ -196,7 +198,7 @@ CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(CMa
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_0044db00(double y,double x);
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
-CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
+CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_0044dfb0(CMatrix3x3f *this_ptr,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
 void __cdecl core_dlight_cpp_staticInit_FUN_0044e0f0(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_0044e1c0(CDemonLight *this_ptr,uint flags);

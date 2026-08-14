@@ -105,4 +105,4 @@ SCurtainVertex * __cdecl SCurtainVertex::arrdtor(SCurtainVertex *objs,uint flags
 
 // Original: core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0
 // Address: 0044baf0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

@@ -2,11 +2,11 @@
 // Address: 00562760
 // Address Range: [[00562760, 005627e9]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_pointer,int param_index)
+// Signature: int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_ptr,int param_index)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_pointer,int param_index)
+int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_ptr,int param_index)
 
 {
   char cVar2;
@@ -22,11 +22,11 @@ int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdPars
   char *pcVar8;
   char cVar1;
   
-  if (this_pointer->param_count <= param_index) {
-    param_index = this_pointer->param_count + -1;
+  if (this_ptr->param_count <= param_index) {
+    param_index = this_ptr->param_count + -1;
   }
   uVar2 = 0xffffffff;
-  pcVar7 = this_pointer->cmd_name;
+  pcVar7 = this_ptr->cmd_name;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
@@ -35,7 +35,7 @@ int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdPars
   } while (cVar1 != '\0');
   iVar5 = 0;
   uVar3 = 0xffffffff;
-  pcVar7 = this_pointer->argument_text;
+  pcVar7 = this_ptr->argument_text;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
@@ -44,10 +44,10 @@ int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdPars
   } while (cVar2 != '\0');
   iVar4 = ~uVar2 + (~uVar3 - 2);
   if (-1 < param_index) {
-    pcVar6 = this_pointer->params[0].parsed_value;
+    pcVar6 = this_ptr->params[0].parsed_value;
     do {
       uVar4 = 0xffffffff;
-      pCVar7 = this_pointer->params + iVar5;
+      pCVar7 = this_ptr->params + iVar5;
       do {
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;

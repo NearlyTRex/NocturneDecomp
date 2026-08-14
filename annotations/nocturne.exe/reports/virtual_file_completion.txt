@@ -4,12 +4,12 @@ VIRTUAL FILE COMPLETION REPORT
 
 SUMMARY
 --------------------------------------------------
-Total virtual files: 205
+Total virtual files: 203
 Total functions: 4921
-Clean functions: 2505 (50.9%)
-Files at 100%: 12
-Files at 90%+: 14
-Files at 50%+: 137
+Clean functions: 2510 (51.0%)
+Files at 100%: 10
+Files at 90%+: 12
+Files at 50%+: 136
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
@@ -24,10 +24,8 @@ FILES AT 100% (COMPLETE)
   engine/force.cpp: 1 functions, 4 lines
   engine/palette.cpp: 4 functions, 20 lines
   shape/memdbg.cpp: 2 functions, 11 lines
-  shape/meshlod.cpp: 2 functions, 17 lines
-  shape/multicrm.cpp: 1 functions, 4 lines
 
-Total: 12 files
+Total: 10 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -88,11 +86,11 @@ FILES AT 50-89%
            - core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004a8b70 (14 lines) [unrolled_memcpy]
    82.4% | core/stairs.cpp
          14/17 clean, 3 remaining
-           - core_stairs.cpp_CStairs_ctor_FUN_005347b0 (17 lines) [pointer_cast, pointer_truncation, unnamed_param]
+           - core_stairs.cpp_CStairs_ctor_FUN_005347b0 (17 lines) [pointer_cast, pointer_truncation]
            - core_stairs.cpp_CStairs_customRayIntersect_FUN_00534960 (27 lines) [unrolled_memcpy]
            - core_stairs.cpp_CStairs_dtor_FUN_00534c10 (19 lines) [negative_offset]
-   80.0% | core/dest.cpp
-         8/10 clean, 2 remaining
+   81.8% | core/dest.cpp
+         9/11 clean, 2 remaining
            - core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0 (25 lines) [unrolled_strcpy]
            - core_dest.cpp_CActorDestination_process_FUN_0044b850 (56 lines) [pointer_cast, self_copy_guard]
    80.0% | core/filmreel.cpp
@@ -109,7 +107,7 @@ FILES AT 50-89%
            - core_trap.cpp_CTrap_getBoundingBox_FUN_00546b90 (14 lines) [unrolled_memcpy]
    80.0% | core/waypoint.cpp
          8/10 clean, 2 remaining
-           - core_waypoint.cpp_CWaypoint_setup_FUN_00552510 (37 lines) [shadow_pointer_walk, warning_type_propagation]
+           - core_waypoint.cpp_CWayPoint_setup_FUN_00552510 (37 lines) [shadow_pointer_walk, warning_type_propagation]
            - core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 (86 lines) [pointer_cast, pointer_stride_bytecount, shadow_pointer_walk, undefined_data, warning_overlapping_globals]
    80.0% | engine/boss.c
          4/5 clean, 1 remaining
@@ -272,6 +270,12 @@ FILES AT 50-89%
            - core_flamecan.cpp_CFlameCan_setup_FUN_0048e410 (37 lines) [unrolled_memcpy]
            - core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_0048e8a0 (14 lines) [unrolled_memcpy]
            - core_flamecan.cpp_CFlameCan_dtor_FUN_0048e8f0 (20 lines) [negative_offset]
+   71.4% | core/ladder.cpp
+         10/14 clean, 4 remaining
+           - core_ladder.cpp_CLadder_ctor_FUN_004c4290 (23 lines) [negative_offset]
+           - core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0 (34 lines) [unrolled_memcpy]
+           - core_ladder.cpp_CLadder_FUN_004c45a0 (49 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_ladder.cpp_CLadder_FUN_004c46b0 (48 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
    71.4% | core/marquee.cpp
          10/14 clean, 4 remaining
            - core_marquee.cpp_CMarquee_ctor_FUN_004cc0e0 (34 lines) [negative_offset, pointer_cast, pointer_truncation]
@@ -426,13 +430,6 @@ FILES AT 50-89%
            - core_boxactor.cpp_CLightActor_FUN_0041f6e0 (93 lines) [undefined_data, unrolled_memset]
            - core_boxactor.cpp_CLightActor_dtor_FUN_0041fa10 (23 lines) [negative_offset]
            - core_boxactor.cpp_CBoxActor_dtor_FUN_0041fa90 (20 lines) [negative_offset]
-   64.3% | core/ladder.cpp
-         9/14 clean, 5 remaining
-           - core_ladder.cpp_CLadder_ctor_FUN_004c4290 (23 lines) [negative_offset]
-           - core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0 (34 lines) [unrolled_memcpy]
-           - core_ladder.cpp_CLadder_FUN_004c45a0 (49 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_ladder.cpp_CLadder_FUN_004c46b0 (48 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0 (4 lines) [unnamed_param]
    64.0% | sound/sndwav.cpp
          16/25 clean, 9 remaining
            - sound_sndwav.cpp_staticInit_FUN_0052c120 (6 lines) [warning_overlapping_globals]
@@ -510,8 +507,8 @@ FILES AT 50-89%
            - engine_font.cpp_CBitFont_remapPalette_FUN_004931b0 (64 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, warning_unreachable]
            - engine_font.cpp_CBitFont_showFontTest_FUN_004933c0 (100 lines) [undefined_data, unrolled_memcpy]
            - engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 (248 lines) [undefined_data]
-   60.7% | core/actor.cpp
-         71/117 clean, 46 remaining
+   60.3% | core/actor.cpp
+         70/116 clean, 46 remaining
            - core_actor.cpp_rayCylinderIntersect_FUN_00409860 (114 lines) [unrolled_memset]
            - core_actor.cpp_initTransformCache_FUN_00409cf0 (11 lines) [unrolled_memset]
            - core_actor.cpp_CDemonActor_ctor_FUN_00409d30 (66 lines) [negative_offset, pointer_cast, pointer_truncation, suspect_float, undefined_data, unrolled_memset, unrolled_strcpy]
@@ -554,7 +551,7 @@ FILES AT 50-89%
            - core_actor.cpp_copyVector_FUN_0040e180 (10 lines) [unrolled_memcpy]
            - core_actor.cpp_FUN_0040e1cc (19 lines) [concat_reconstruction, nonstandard_int, pointer_truncation, register_param, unaffected_reg, warning_overlapping_globals]
            - core_actor.cpp_CBoundingBox3D_copy_FUN_0040e240 (10 lines) [unrolled_memcpy]
-           - core_actor.cpp_CVector_copy_FUN_0040e2a0 (7 lines) [unrolled_memcpy]
+           - core_actor.cpp_CVector3f_copy_FUN_0040e2a0 (7 lines) [unrolled_memcpy]
            - core_actor.cpp_FUN_0040e2ce (10 lines) [register_param, unaffected_reg]
            - core_actor.cpp_FUN_0040e2e1 (6 lines) [register_param, unnamed_param]
            - core_actor.cpp_FUN_0040e2f1 (6 lines) [register_param, unnamed_param]
@@ -680,6 +677,52 @@ FILES AT 50-89%
            - core_succubus.cpp_CSuccubus_process_FUN_00540f50 (297 lines) [unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_type_propagation, warning_unreachable]
            - core_succubus.cpp_CSuccubus_renderOpaque_FUN_00541640 (57 lines) [warning_overlapping_globals]
            - core_succubus.cpp_CSuccubus_dtor_FUN_00541860 (38 lines) [negative_offset]
+   58.1% | core/charactr.cpp
+         61/105 clean, 44 remaining
+           - core_charactr.cpp_staticInit_FUN_00423ea0 (9 lines) [undefined_data]
+           - core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 (18 lines) [unrolled_memset]
+           - core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (93 lines) [pointer_cast, pointer_truncation, preinc_loop_idiom]
+           - core_charactr.cpp_CCharacter_setup_FUN_00424260 (104 lines) [shadow_pointer_walk, undefined_data, unrolled_strcpy]
+           - core_charactr.cpp_CCharacter_archive_FUN_004244b0 (65 lines) [shadow_pointer_walk, undefined_data]
+           - core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0 (13 lines) [unrolled_memset]
+           - core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 (157 lines) [unrolled_memset]
+           - core_charactr.cpp_CCharacter_kill_FUN_00424f40 (24 lines) [unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 (306 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unrolled_memset, unrolled_strlen, warning_overlapping_globals]
+           - core_charactr.cpp_CCharacter_FUN_004259f0 (74 lines) [raw_address_constant, shadow_pointer_walk, unrolled_memset]
+           - core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 (261 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy, unrolled_strcpy, warning_overlapping_globals]
+           - core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 (34 lines) [warning_overlapping_globals]
+           - core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 (45 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0 (120 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_processFire_FUN_004269b0 (193 lines) [displaced_global_access, pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 (104 lines) [displaced_global_access, pointer_cast, pointer_truncation, shadow_pointer_walk, suspect_float, undefined_data]
+           - core_charactr.cpp_CCharacter_FUN_004270e0 (52 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, warning_overlapping_globals]
+           - core_charactr.cpp_CCharacter_renderFlames_FUN_00427290 (23 lines) [shadow_pointer_walk]
+           - core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 (145 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_FUN_00427730 (33 lines) [shadow_pointer_walk]
+           - core_charactr.cpp_CCharacter_getBoundingBox_FUN_00427a20 (10 lines) [unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_dismember_FUN_00427b60 (77 lines) [unknown_field]
+           - core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 (76 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0 (77 lines) [unknown_field, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_followActor_FUN_00428780 (107 lines) [undefined_data]
+           - core_charactr.cpp_CCharacter_FUN_00428c00 (103 lines) [undefined_data, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_computePickup_FUN_00429010 (61 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170 (24 lines) [unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 (122 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_param, unaffected_reg, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 (19 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0 (17 lines) [shadow_pointer_walk]
+           - core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 (23 lines) [unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 (219 lines) [bit_int_float_compare, pointer_cast, unknown_field, unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60 (63 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_type_propagation]
+           - core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060 (38 lines) [unrolled_memcpy]
+           - core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 (121 lines) [pointer_cast, undefined_data]
+           - core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 (29 lines) [unrolled_strcpy]
+           - core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 (83 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk]
+           - core_charactr.cpp_CCharacter_FUN_0042af70 (158 lines) [undefined_data, unrolled_memcpy, warning_type_propagation]
+           - core_charactr.cpp_projectPointToVertex_FUN_0042b510 (11 lines) [warning_overlapping_globals]
+           - core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 (31 lines) [negative_offset]
+           - core_charactr.cpp_FUN_0042b6c0 (8 lines) [stack_param]
+           - core_charactr.cpp_FUN_0042b6d0 (8 lines) [stack_param]
+           - core_charactr.cpp_FUN_0042b6e0 (8 lines) [stack_param]
    57.1% | cockpit/drawsurf.cpp
          52/91 clean, 39 remaining
            - cockpit_drawsurf.cpp_setColor_FUN_0045b5f0 (54 lines) [warning_overlapping_globals, warning_unreachable]
@@ -721,53 +764,6 @@ FILES AT 50-89%
            - cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0045e320 (8 lines) [warning_overlapping_globals]
            - cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0045e340 (11 lines) [warning_overlapping_globals]
            - cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370 (216 lines) [raw_address_constant, stack_param, stack_ref]
-   57.1% | core/charactr.cpp
-         60/105 clean, 45 remaining
-           - core_charactr.cpp_staticInit_FUN_00423ea0 (9 lines) [undefined_data]
-           - core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 (18 lines) [unrolled_memset]
-           - core_charactr.cpp_CCharacter_ctor_FUN_00423f40 (93 lines) [pointer_cast, pointer_truncation, preinc_loop_idiom]
-           - core_charactr.cpp_CCharacter_setup_FUN_00424260 (104 lines) [shadow_pointer_walk, undefined_data, unrolled_strcpy]
-           - core_charactr.cpp_CCharacter_archive_FUN_004244b0 (65 lines) [shadow_pointer_walk, undefined_data]
-           - core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0 (13 lines) [unrolled_memset]
-           - core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 (157 lines) [unrolled_memset]
-           - core_charactr.cpp_CCharacter_kill_FUN_00424f40 (24 lines) [unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 (306 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unrolled_memset, unrolled_strlen, warning_overlapping_globals]
-           - core_charactr.cpp_CCharacter_FUN_004259f0 (74 lines) [raw_address_constant, shadow_pointer_walk, unrolled_memset]
-           - core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 (261 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy, unrolled_strcpy, warning_overlapping_globals]
-           - core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 (34 lines) [warning_overlapping_globals]
-           - core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 (45 lines) [pointer_cast, pointer_truncation, undefined_data, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0 (120 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_processFire_FUN_004269b0 (193 lines) [displaced_global_access, pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 (104 lines) [displaced_global_access, pointer_cast, pointer_truncation, shadow_pointer_walk, suspect_float, undefined_data]
-           - core_charactr.cpp_CCharacter_FUN_004270e0 (52 lines) [pointer_cast, pointer_truncation, stack_ref, undefined_data, warning_overlapping_globals]
-           - core_charactr.cpp_CCharacter_renderFlames_FUN_00427290 (23 lines) [shadow_pointer_walk]
-           - core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 (145 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_FUN_00427730 (33 lines) [shadow_pointer_walk]
-           - core_charactr.cpp_CCharacter_getBoundingBox_FUN_00427a20 (10 lines) [unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_dismember_FUN_00427b60 (77 lines) [unknown_field]
-           - core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 (76 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0 (77 lines) [unknown_field, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_followActor_FUN_00428780 (107 lines) [undefined_data]
-           - core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0 (5 lines) [unnamed_param]
-           - core_charactr.cpp_CCharacter_FUN_00428c00 (103 lines) [undefined_data, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_computePickup_FUN_00429010 (61 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00429170 (24 lines) [unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 (122 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, stack_param, unaffected_reg, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429490 (19 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_isCarryingAnything_FUN_004294f0 (17 lines) [shadow_pointer_walk]
-           - core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0 (23 lines) [unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 (219 lines) [bit_int_float_compare, pointer_cast, unknown_field, unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_applyLookAt_FUN_00429e60 (63 lines) [pointer_cast, pointer_truncation, stack_alignment_array, warning_type_propagation]
-           - core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060 (38 lines) [unrolled_memcpy]
-           - core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 (121 lines) [pointer_cast, undefined_data]
-           - core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a760 (29 lines) [unrolled_strcpy]
-           - core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 (83 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk]
-           - core_charactr.cpp_CCharacter_FUN_0042af70 (158 lines) [undefined_data, unrolled_memcpy, warning_type_propagation]
-           - core_charactr.cpp_projectPointToVertex_FUN_0042b510 (11 lines) [warning_overlapping_globals]
-           - core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 (31 lines) [negative_offset]
-           - core_charactr.cpp_FUN_0042b6c0 (8 lines) [stack_param]
-           - core_charactr.cpp_FUN_0042b6d0 (8 lines) [stack_param]
-           - core_charactr.cpp_FUN_0042b6e0 (8 lines) [stack_param]
    57.1% | core/dirmat.cpp
          4/7 clean, 3 remaining
            - core_dirmat.cpp_angleFromSinCos_FUN_0044db00 (30 lines) [warning_overlapping_globals]
@@ -1035,6 +1031,38 @@ FILES AT 50-89%
            - core_event.cpp_FUN_00481950 (5 lines) [unnamed_param]
            - core_event.cpp_FUN_00481960 (8 lines) [stack_param]
            - core_event.cpp_FUN_00481970 (8 lines) [stack_param]
+   50.8% | core/stranger.cpp
+         31/61 clean, 30 remaining
+           - core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0 (43 lines) [pointer_cast, pointer_truncation]
+           - core_stranger.cpp_CStranger_ctor_FUN_005350c0 (214 lines) [negative_offset, pointer_truncation]
+           - core_stranger.cpp_CStranger_setup_FUN_00535450 (104 lines) [unrolled_memcpy, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_processFrame_FUN_00535900 (1162 lines) [bit_int_float_compare, bitcast_double_pair, stack_param, sub84_truncation, suspect_float, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset]
+           - core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 (291 lines) [stack_param, stack_ref, unaffected_reg, unresolved_funcptr, unrolled_memcpy, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_FUN_00538440 (28 lines) [unnamed_param, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_FUN_005384d0 (645 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_ref, tautological_addr_guard, undefined_data, unknown_field, unresolved_funcptr, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_FUN_005396d0 (47 lines) [pointer_cast, pointer_truncation, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0 (90 lines) [unrolled_memset, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 (294 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 (214 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 (50 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (582 lines) [pointer_cast, pointer_truncation, suspect_float, undefined_data, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630 (272 lines) [pointer_cast, unrolled_memcpy, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_0053bf90 (143 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_0053c3b0 (141 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+           - core_stranger.cpp_CStranger_FUN_0053c800 (255 lines) [pointer_cast, stack_param, unrolled_memcpy]
+           - core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 (215 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910 (270 lines) [pointer_cast, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320 (129 lines) [unrolled_memcpy, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_processDamage_FUN_0053e860 (159 lines) [stack_ref, suspect_float]
+           - core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0 (150 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy, warning_overlapping_globals]
+           - core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 (18 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
+           - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 (373 lines) [bit_int_float_compare, pointer_truncation, stack_param, stack_ref, suspect_float, warning_unreachable]
+           - core_stranger.cpp_CStranger_FUN_0053ffe0 (139 lines) [unaffected_reg]
+           - core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660 (36 lines) [unaffected_reg, unrolled_memset]
+           - core_stranger.cpp_FUN_00540970 (8 lines) [stack_param]
+           - core_stranger.cpp_FUN_005409c0 (4 lines) [unnamed_param]
+           - core_stranger.cpp_FUN_00540a10 (4 lines) [pointer_cast]
+           - core_stranger.cpp_setWindVelocity_FUN_00540a40 (10 lines) [unrolled_memcpy]
    50.0% | core/batman.cpp
          7/14 clean, 7 remaining
            - core_batman.cpp_CBatman_ctor_FUN_004133e0 (36 lines) [unrolled_memset, unrolled_strcpy]
@@ -1248,43 +1276,11 @@ FILES AT 50-89%
            - shape_spotview.cpp_CSpotView_handleInput_FUN_005342b0 (108 lines) [warning_overlapping_globals]
            - shape_spotview.cpp_CSpotView_clampValues_FUN_00534590 (30 lines) [warning_overlapping_globals]
 
-Total: 123 files
+Total: 124 files
 
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
-   49.2% | core/stranger.cpp
-         29/59 clean, 30 remaining
-           - core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0 (43 lines) [pointer_cast, pointer_truncation]
-           - core_stranger.cpp_CStranger_ctor_FUN_005350c0 (214 lines) [negative_offset, pointer_truncation]
-           - core_stranger.cpp_CStranger_setup_FUN_00535450 (104 lines) [unrolled_memcpy, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_processFrame_FUN_00535900 (1162 lines) [bit_int_float_compare, bitcast_double_pair, stack_param, sub84_truncation, suspect_float, undefined_data, unknown_field, unrolled_memcpy, unrolled_memset]
-           - core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0 (291 lines) [stack_param, stack_ref, unaffected_reg, unresolved_funcptr, unrolled_memcpy, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_FUN_00538440 (28 lines) [unnamed_param, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_FUN_005384d0 (645 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_ref, tautological_addr_guard, undefined_data, unknown_field, unresolved_funcptr, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_FUN_005396d0 (47 lines) [pointer_cast, pointer_truncation, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0 (90 lines) [unrolled_memset, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 (294 lines) [bit_int_float_compare, pointer_cast, pointer_truncation, stack_alignment_array, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 (214 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 (50 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 (582 lines) [pointer_cast, pointer_truncation, suspect_float, undefined_data, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_tryPickupObject_FUN_0053b630 (272 lines) [pointer_cast, unrolled_memcpy, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_0053bf90 (143 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_0053c3b0 (141 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-           - core_stranger.cpp_CStranger_FUN_0053c800 (255 lines) [pointer_cast, stack_param, unrolled_memcpy]
-           - core_stranger.cpp_CStranger_renderOpaque_FUN_0053d100 (215 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910 (270 lines) [pointer_cast, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
-           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320 (129 lines) [unrolled_memcpy, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_processDamage_FUN_0053e860 (159 lines) [stack_ref, suspect_float]
-           - core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0 (150 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy, warning_overlapping_globals]
-           - core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 (18 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0053f310 (373 lines) [bit_int_float_compare, pointer_truncation, stack_param, stack_ref, suspect_float, warning_unreachable]
-           - core_stranger.cpp_CStranger_FUN_0053ffe0 (139 lines) [unaffected_reg]
-           - core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660 (36 lines) [unaffected_reg, unrolled_memset]
-           - core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720 (4 lines) [unnamed_param]
-           - core_stranger.cpp_FUN_00540970 (8 lines) [stack_param]
-           - core_stranger.cpp_FUN_005409c0 (4 lines) [unnamed_param]
-           - core_stranger.cpp_setWindVelocity_FUN_00540a40 (10 lines) [unrolled_memcpy]
    48.2% | engine/2d.c
          40/83 clean, 43 remaining
            - engine_2d.c_initGraphicsSystem_FUN_00401010 (78 lines) [pointer_cast, pointer_truncation, raw_address_constant]
@@ -1398,33 +1394,8 @@ FILES BELOW 50%
            - core_frankgen.cpp_findLeader_FUN_00495240 (23 lines) [pointer_cast]
            - core_frankgen.cpp_FUN_00495410 (6 lines) [stack_param]
            - core_frankgen.cpp_FUN_00495420 (6 lines) [stack_param]
-   46.5% | core/bodypart.cpp
-         20/43 clean, 23 remaining
-           - core_bodypart.cpp_createBodyPart_FUN_00415b30 (64 lines) [unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (35 lines) [negative_offset, pointer_cast, pointer_truncation, suspect_float]
-           - core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40 (28 lines) [negative_offset]
-           - core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 (32 lines) [alloc_magic_size]
-           - core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 (51 lines) [pointer_cast]
-           - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0 (46 lines) [shadow_pointer_walk]
-           - core_bodypart.cpp_CBodyPart_archive_FUN_00416570 (131 lines) [pointer_cast, pointer_truncation, undefined_data]
-           - core_bodypart.cpp_CBodyPart_process_FUN_004168d0 (85 lines) [undefined_data, unrolled_memcpy, warning_overlapping_globals]
-           - core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00 (47 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk]
-           - core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00416c50 (10 lines) [unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 (196 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy, warning_overlapping_globals]
-           - core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 (196 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, suspect_float, undefined_data, unknown_field, unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730 (171 lines) [dropped_loop_counter, pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, suspect_float, warning_type_propagation, warning_unreachable]
-           - core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 (25 lines) [unrolled_memcpy]
-           - core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 (56 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90 (38 lines) [unrolled_strcpy]
-           - core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70 (44 lines) [undefined_data, unrolled_memcpy, warning_overlapping_globals]
-           - core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0 (12 lines) [undefined_data]
-           - core_bodypart.cpp_FUN_00417fec (14 lines) [concat_reconstruction, nonstandard_int, register_param, unaffected_reg]
-           - core_bodypart.cpp_FUN_0041803d (19 lines) [unnamed_param, warning_overlapping_globals]
-           - core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0 (6 lines) [negative_offset]
-           - core_bodypart.cpp_SBodyPartFire_dtor_FUN_004180c0 (6 lines) [negative_offset]
-           - core_bodypart.cpp_SBodyPartModel_ctor_FUN_004180e0 (6 lines) [negative_offset]
-   46.5% | core/skeleton.cpp
-         53/114 clean, 61 remaining
+   47.0% | core/skeleton.cpp
+         54/115 clean, 61 remaining
            - core_skeleton.cpp_CSkeleton_FUN_005174e0 (16 lines) [negative_offset]
            - core_skeleton.cpp_CSkeleton_load_FUN_00517560 (27 lines) [unrolled_strcpy]
            - core_skeleton.cpp_CSkeleton_loadStream_FUN_005175f0 (139 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk]
@@ -1486,6 +1457,31 @@ FILES BELOW 50%
            - core_skeleton.cpp_FUN_0051f760 (35 lines) [warning_overlapping_globals]
            - core_skeleton.cpp_SVert_ctor_FUN_0051f840 (6 lines) [pointer_cast, pointer_truncation]
            - core_skeleton.cpp_SVert_dtor_FUN_0051f860 (6 lines) [negative_offset]
+   46.5% | core/bodypart.cpp
+         20/43 clean, 23 remaining
+           - core_bodypart.cpp_createBodyPart_FUN_00415b30 (64 lines) [unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20 (35 lines) [negative_offset, pointer_cast, pointer_truncation, suspect_float]
+           - core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40 (28 lines) [negative_offset]
+           - core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0 (32 lines) [alloc_magic_size]
+           - core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 (51 lines) [pointer_cast]
+           - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004161a0 (46 lines) [shadow_pointer_walk]
+           - core_bodypart.cpp_CBodyPart_archive_FUN_00416570 (131 lines) [pointer_cast, pointer_truncation, undefined_data]
+           - core_bodypart.cpp_CBodyPart_process_FUN_004168d0 (85 lines) [undefined_data, unrolled_memcpy, warning_overlapping_globals]
+           - core_bodypart.cpp_CBodyPart_processFires_FUN_00416b00 (47 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk]
+           - core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00416c50 (10 lines) [unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 (196 lines) [pointer_cast, pointer_stride_bytecount, pointer_truncation, shadow_pointer_walk, undefined_data, unrolled_memcpy, warning_overlapping_globals]
+           - core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 (196 lines) [pointer_cast, pointer_truncation, shadow_pointer_walk, suspect_float, undefined_data, unknown_field, unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730 (171 lines) [dropped_loop_counter, pointer_cast, pointer_truncation, raw_address_constant, stack_alignment_array, suspect_float, warning_type_propagation, warning_unreachable]
+           - core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 (25 lines) [unrolled_memcpy]
+           - core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 (56 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
+           - core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90 (38 lines) [unrolled_strcpy]
+           - core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_00417d70 (44 lines) [undefined_data, unrolled_memcpy, warning_overlapping_globals]
+           - core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0 (12 lines) [undefined_data]
+           - core_bodypart.cpp_FUN_00417fec (14 lines) [concat_reconstruction, nonstandard_int, register_param, unaffected_reg]
+           - core_bodypart.cpp_FUN_0041803d (19 lines) [unnamed_param, warning_overlapping_globals]
+           - core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0 (6 lines) [negative_offset]
+           - core_bodypart.cpp_SBodyPartFire_dtor_FUN_004180c0 (6 lines) [negative_offset]
+           - core_bodypart.cpp_SBodyPartModel_ctor_FUN_004180e0 (6 lines) [negative_offset]
    46.4% | core/dtri.cpp
          13/28 clean, 15 remaining
            - core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 (20 lines) [unrolled_memcpy]
@@ -1577,6 +1573,42 @@ FILES BELOW 50%
            - shape_edittool.cpp_CEdCheck_render_FUN_00477390 (49 lines) [warning_overlapping_globals]
            - shape_edittool.cpp_CEdCheck_handleInput_FUN_004774b0 (41 lines) [undefined_data, warning_overlapping_globals]
            - shape_edittool.cpp_FUN_00477680 (5 lines) [unnamed_param]
+   45.8% | core/scat.cpp
+         11/24 clean, 13 remaining
+           - core_scat.cpp_FUN_004fbb70 (9 lines) [stack_param]
+           - core_scat.cpp_FUN_004fbbb0 (15 lines) [unnamed_param]
+           - core_scat.cpp_CScat_ctor_FUN_004fbc00 (24 lines) [unrolled_memset]
+           - core_scat.cpp_CScat_setup_FUN_004fbcc0 (49 lines) [warning_overlapping_globals]
+           - core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80 (25 lines) [unrolled_strcpy]
+           - core_scat.cpp_CScat_process_FUN_004fbf20 (315 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unaffected_reg, unknown_field, unresolved_funcptr, unrolled_memset, warning_overlapping_globals]
+           - core_scat.cpp_CScat_updateAI_FUN_004fc610 (156 lines) [bit_int_float_compare, unrolled_memcpy, warning_type_propagation]
+           - core_scat.cpp_CScat_FUN_004fcd90 (109 lines) [pointer_truncation, suspect_float, unaffected_reg]
+           - core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 (60 lines) [warning_overlapping_globals]
+           - core_scat.cpp_CScat_FUN_004fd1d0 (154 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
+           - core_scat.cpp_CScat_updateAiming_FUN_004fd450 (159 lines) [pointer_cast, warning_overlapping_globals]
+           - core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 (89 lines) [warning_type_propagation]
+           - core_scat.cpp_CScat_FUN_004fdd00 (63 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
+   45.7% | core/gabriela.cpp
+         16/35 clean, 19 remaining
+           - core_gabriela.cpp_staticInit_FUN_004954a0 (24 lines) [warning_overlapping_globals]
+           - core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004955c0 (13 lines) [warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (36 lines) [negative_offset]
+           - core_gabriela.cpp_CGabriella_setup_FUN_004957c0 (72 lines) [warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_process_FUN_00495a20 (707 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 (210 lines) [unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 (174 lines) [stack_param, stack_ref, unrolled_memcpy, warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 (28 lines) [warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 (352 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 (151 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, undefined_data, unrolled_memcpy, warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0 (138 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004987e0 (110 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60 (15 lines) [unaffected_reg]
+           - core_gabriela.cpp_CGabriella_FUN_00498de0 (89 lines) [warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0 (165 lines) [pointer_cast, unrolled_memset, warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_FUN_004998c0 (80 lines) [warning_overlapping_globals]
+           - core_gabriela.cpp_CGabriella_FUN_00499b00 (64 lines) [pointer_cast, pointer_truncation, unnamed_param, unrolled_memcpy]
+           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 (151 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_dtor_FUN_0049a170 (20 lines) [negative_offset]
    45.0% | core/mimic.cpp
          9/20 clean, 11 remaining
            - core_mimic.cpp_mirrorXTransform_FUN_004d43c0 (12 lines) [unaffected_reg, warning_overlapping_globals]
@@ -1640,28 +1672,6 @@ FILES BELOW 50%
            - core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_0041daa0 (53 lines) [warning_overlapping_globals]
            - core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 (134 lines) [warning_overlapping_globals]
            - core_box.cpp_CBoundingBox3D_clampPoint_FUN_0041e160 (26 lines) [unrolled_memcpy]
-   42.9% | core/gabriela.cpp
-         15/35 clean, 20 remaining
-           - core_gabriela.cpp_staticInit_FUN_004954a0 (24 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004955c0 (13 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_ctor_FUN_004956a0 (36 lines) [negative_offset]
-           - core_gabriela.cpp_CGabriella_setup_FUN_004957c0 (72 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_process_FUN_00495a20 (707 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, unrolled_memset, warning_overlapping_globals, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 (210 lines) [unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 (174 lines) [stack_param, stack_ref, unrolled_memcpy, warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 (28 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_00497900 (352 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0 (151 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, undefined_data, unrolled_memcpy, warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0 (138 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004987e0 (110 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60 (15 lines) [unaffected_reg]
-           - core_gabriela.cpp_CGabriella_FUN_00498de0 (89 lines) [warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0 (165 lines) [pointer_cast, unrolled_memset, warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_FUN_004998c0 (80 lines) [warning_overlapping_globals]
-           - core_gabriela.cpp_CGabriella_FUN_00499b00 (64 lines) [pointer_cast, pointer_truncation, unnamed_param, unrolled_memcpy]
-           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0 (151 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110 (4 lines) [unnamed_param]
-           - core_gabriela.cpp_CGabriella_dtor_FUN_0049a170 (20 lines) [negative_offset]
    42.9% | core/moon.cpp
          6/14 clean, 8 remaining
            - core_moon.cpp_CMoon_ctor_FUN_004de800 (10 lines) [negative_offset]
@@ -1877,7 +1887,7 @@ FILES BELOW 50%
            - engine_pod.cpp_CPodFile_FUN_004f7ae0 (233 lines) [alloc_magic_size, pointer_cast, pointer_truncation, stack_alignment_array, unrolled_strcpy, unrolled_strlen]
            - engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0 (27 lines) [unrolled_strcpy]
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 (114 lines) [pointer_cast, pointer_truncation, stack_param, stack_ref, undefined_data]
-           - engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (31 lines) [unaffected_reg, unnamed_param, unrolled_memcpy]
+           - engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (32 lines) [pointer_cast, pointer_truncation, unrolled_memcpy]
            - engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (47 lines) [undefined_data]
            - engine_pod.cpp_CPod_ctor_FUN_004f8810 (12 lines) [shadow_pointer_walk]
            - engine_pod.cpp_CPod_remount_FUN_004f8970 (36 lines) [shadow_pointer_walk, unrolled_strcpy]
@@ -1978,23 +1988,6 @@ FILES BELOW 50%
            - wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0 (27 lines) [undefined_data, unrolled_strlen]
            - wincore_winrun.cpp_initJoystick_FUN_00559e20 (23 lines) [warning_overlapping_globals]
            - wincore_winrun.cpp_getJoystickState_FUN_00559eb0 (66 lines) [unresolved_funcptr, warning_overlapping_globals]
-   37.5% | core/scat.cpp
-         9/24 clean, 15 remaining
-           - core_scat.cpp_FUN_004fbb70 (9 lines) [stack_param]
-           - core_scat.cpp_FUN_004fbbb0 (15 lines) [unnamed_param]
-           - core_scat.cpp_CScat_ctor_FUN_004fbc00 (24 lines) [unrolled_memset]
-           - core_scat.cpp_CScat_setup_FUN_004fbcc0 (49 lines) [warning_overlapping_globals]
-           - core_scat.cpp_CScat_createDefaultWeapon_FUN_004fbe80 (25 lines) [unrolled_strcpy]
-           - core_scat.cpp_CScat_process_FUN_004fbf20 (315 lines) [pointer_cast, pointer_truncation, stack_alignment_array, stack_param, unaffected_reg, unknown_field, unresolved_funcptr, unrolled_memset, warning_overlapping_globals]
-           - core_scat.cpp_CScat_updateAI_FUN_004fc610 (156 lines) [bit_int_float_compare, unrolled_memcpy, warning_type_propagation]
-           - core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20 (4 lines) [unnamed_param]
-           - core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30 (5 lines) [unnamed_param]
-           - core_scat.cpp_CScat_FUN_004fcd90 (109 lines) [pointer_truncation, suspect_float, unaffected_reg]
-           - core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0 (60 lines) [warning_overlapping_globals]
-           - core_scat.cpp_CScat_FUN_004fd1d0 (154 lines) [pointer_cast, pointer_truncation, stack_alignment_array, undefined_data, unresolved_funcptr, warning_overlapping_globals, warning_type_propagation]
-           - core_scat.cpp_CScat_updateAiming_FUN_004fd450 (159 lines) [pointer_cast, warning_overlapping_globals]
-           - core_scat.cpp_CScat_scoreAimTarget_FUN_004fda20 (89 lines) [warning_type_propagation]
-           - core_scat.cpp_CScat_FUN_004fdd00 (63 lines) [pointer_cast, pointer_truncation, unrolled_memcpy, warning_overlapping_globals, warning_type_propagation]
    37.5% | core/script.cpp
          15/40 clean, 25 remaining
            - core_script.cpp_validateActorVariableName_FUN_004fdec0 (35 lines) [undefined_data, unrolled_strlen]
@@ -2114,7 +2107,7 @@ FILES BELOW 50%
            - sound_mp3.cpp_calculateMpegFrame_FUN_004e2630 (64 lines) [undefined_data]
            - sound_mp3.cpp_CFileBitStream_FUN_004e28a0 (33 lines) [unnamed_param]
            - sound_mp3.cpp_CFileBitStream_readBit_FUN_004e29d0 (46 lines) [undefined_data]
-           - sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 (74 lines) [undefined_data]
+           - sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 (73 lines) [undefined_data]
            - sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0 (36 lines) [undefined_data]
            - sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 (84 lines) [warning_overlapping_globals]
            - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004e31f0 (64 lines) [pointer_cast]
@@ -2219,7 +2212,7 @@ FILES BELOW 50%
            - core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 (37 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_FUN_0050e080 (36 lines) [undefined_data, warning_overlapping_globals]
            - core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 (15 lines) [undefined_data, warning_overlapping_globals]
-           - core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210 (38 lines) [shadow_pointer_walk]
+           - core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210 (39 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_FUN_0050e370 (22 lines) [undefined_data, warning_overlapping_globals]
            - core_set.cpp_CDemonSet_setGamma_FUN_0050e400 (27 lines) [suspect_float]
            - core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510 (17 lines) [shadow_pointer_walk]
@@ -2570,7 +2563,7 @@ FILES BELOW 50%
            - sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0 (23 lines) [pointer_cast, warning_overlapping_globals]
            - sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830 (136 lines) [bitcast_double_pair, undefined_data, unresolved_funcptr, warning_overlapping_globals]
            - sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (359 lines) [bitcast_double_pair, pointer_cast, pointer_stride_bytecount, pointer_truncation, raw_address_constant, raw_address_pointer_store, shadow_pointer_walk, sub84_truncation, warning_overlapping_globals]
-           - sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 (49 lines) [pointer_truncation, unresolved_funcptr, warning_overlapping_globals]
+           - sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 (50 lines) [pointer_truncation, unresolved_funcptr, warning_overlapping_globals]
            - sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0 (52 lines) [unresolved_funcptr, warning_overlapping_globals]
            - sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0 (17 lines) [unresolved_funcptr, warning_overlapping_globals]
            - sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870 (53 lines) [pointer_cast]
@@ -2848,4 +2841,4 @@ FILES BELOW 50%
            - wincore_winvideo.cpp_toggleMoviePlayback_FUN_0055a4a0 (24 lines) [warning_overlapping_globals]
            - wincore_winvideo.cpp_FUN_0055a510 (111 lines) [warning_overlapping_globals]
 
-Total: 68 files
+Total: 67 files

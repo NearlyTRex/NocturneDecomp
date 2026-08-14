@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
+; void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *this_ptr)
 ;
 ; Parameters:
-; CSfxSlot *       Stack[0x4]:4   slot
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 at 005a69e7

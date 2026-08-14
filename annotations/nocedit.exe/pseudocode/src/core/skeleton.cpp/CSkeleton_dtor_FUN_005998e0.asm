@@ -36,7 +36,7 @@ section .text
     ADD EBX,0x2937c                     ; 005998fa
     PUSH EBX                            ; 00599900
     CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0 ; 00599901
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0(CVector3f * objs, uint flags)
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00599906
     SUB EAX,0x2937c                     ; 00599909
     POP EBX                             ; 0059990e

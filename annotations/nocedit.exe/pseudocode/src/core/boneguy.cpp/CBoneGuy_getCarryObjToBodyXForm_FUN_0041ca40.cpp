@@ -44,11 +44,11 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_120,&g_ZeroVector.f,&local_60);
   (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_90);
-  core_actor_cpp_CVector_ctor_FUN_00410340(&local_54);
+  core_actor_cpp_CVector3f_ctor_FUN_00410340(&local_54);
   local_54.x = local_90.min.x + local_90.max.x;
   local_54.y = local_90.min.y + local_90.max.y;
   local_54.z = local_90.min.z + local_90.max.z;
-  core_actor_cpp_CVector_ctor_FUN_00410340(&local_30);
+  core_actor_cpp_CVector3f_ctor_FUN_00410340(&local_30);
   local_30.x = local_54.x * 0.5f;
   local_30.y = local_54.y * 0.5f;
   local_30.z = local_90.min.z + (float)0.40000000000000002;

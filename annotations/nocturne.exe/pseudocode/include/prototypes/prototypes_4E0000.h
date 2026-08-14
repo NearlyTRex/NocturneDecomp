@@ -116,7 +116,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_004e2850(CFileBitStream *thi
 void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e28a0(CFileBitStream *this_ptr,_FILE *param_2,ulong param_3,int param_4);
 void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e2980(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(CFileBitStream *this_ptr);
-uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *bitstream,int num_bits);
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40(CFileBitStream *this_ptr);
 int __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e2c50(CFileBitStream *this_ptr);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004e2c60(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);
@@ -232,7 +232,7 @@ char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(char *key);
 char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg);
 void __cdecl engine_ncursfx_cpp_staticInit_FUN_004ee4e0(void);
-CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *ptr);
+CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(CMouse *this_ptr);
 CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_004ee560(CMouse *this_ptr,uint flags);
 void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(CMouse *this_ptr);
 void __cdecl engine_ncursfx_cpp_CMouse_FUN_004ee680(CMouse *this_ptr);

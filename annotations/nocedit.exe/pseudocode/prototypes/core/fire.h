@@ -505,7 +505,7 @@ void __cdecl transformWorldToScreen(CVector3i *input,SProjectedVertex *output,CV
 
 // Original: core_fire.cpp_CKeyFramedModel_getBoundsMin_FUN_004c9450
 // Address: 004c9450
-CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *model_ptr);
+CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *this_ptr);
 
 // Original: core_fire.cpp_CBulletTrail_reset_FUN_004c9460
 // Address: 004c9460
@@ -669,76 +669,76 @@ CKeyFramedModelInstance * __cdecl CKeyFramedModelInstance::dtor(CKeyFramedModelI
 
 // Original: core_fire.cpp_CRainDrop_arrdtor_FUN_004c97d0
 // Address: 004c97d0
-CRainDrop * __cdecl CRainDrop::arrdtor(CRainDrop *objs,uint flags);
+CRainDrop * __cdecl CRainDrop::arrdtor(CRainDrop *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CPopcorn_arrdtor_FUN_004c97f0
 // Address: 004c97f0
-CPopcorn * __cdecl CPopcorn::arrdtor(CPopcorn *objs,uint flags);
+CPopcorn * __cdecl CPopcorn::arrdtor(CPopcorn *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CShell_arrdtor_FUN_004c9810
 // Address: 004c9810
-CShell * __cdecl CShell::arrdtor(CShell *objs,uint flags);
+CShell * __cdecl CShell::arrdtor(CShell *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CTrail_arrdtor_FUN_004c9830
 // Address: 004c9830
-CTrail * __cdecl CTrail::arrdtor(CTrail *objs,uint flags);
+CTrail * __cdecl CTrail::arrdtor(CTrail *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CLightningBolt_arrdtor_FUN_004c9850
 // Address: 004c9850
-CLightningBolt * __cdecl CLightningBolt::arrdtor(CLightningBolt *objs,uint flags);
+CLightningBolt * __cdecl CLightningBolt::arrdtor(CLightningBolt *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CGunFlame_arrdtor_FUN_004c9870
 // Address: 004c9870
-CGunFlame * __cdecl CGunFlame::arrdtor(CGunFlame *objs,uint flags);
+CGunFlame * __cdecl CGunFlame::arrdtor(CGunFlame *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CCrater_arrdtor_FUN_004c9890
 // Address: 004c9890
-CCrater * __cdecl CCrater::arrdtor(CCrater *objs,uint flags);
+CCrater * __cdecl CCrater::arrdtor(CCrater *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CToss_arrdtor_FUN_004c98b0
 // Address: 004c98b0
-CToss * __cdecl CToss::arrdtor(CToss *objs,uint flags);
+CToss * __cdecl CToss::arrdtor(CToss *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CExplosion_arrdtor_FUN_004c98d0
 // Address: 004c98d0
-CExplosion * __cdecl CExplosion::arrdtor(CExplosion *objs,uint flags);
+CExplosion * __cdecl CExplosion::arrdtor(CExplosion *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CLaserBeam_arrdtor_FUN_004c98f0
 // Address: 004c98f0
-CLaserBeam * __cdecl CLaserBeam::arrdtor(CLaserBeam *objs,uint flags);
+CLaserBeam * __cdecl CLaserBeam::arrdtor(CLaserBeam *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CRock_arrdtor_FUN_004c9910
 // Address: 004c9910
-CRock * __cdecl CRock::arrdtor(CRock *objs,uint flags);
+CRock * __cdecl CRock::arrdtor(CRock *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CFireball_arrdtor_FUN_004c9930
 // Address: 004c9930
-CFireball * __cdecl CFireball::arrdtor(CFireball *objs,uint flags);
+CFireball * __cdecl CFireball::arrdtor(CFireball *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CBulletTrail_arrdtor_FUN_004c9950
 // Address: 004c9950
-CBulletTrail * __cdecl CBulletTrail::arrdtor(CBulletTrail *objs,uint flags);
+CBulletTrail * __cdecl CBulletTrail::arrdtor(CBulletTrail *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CGlassParticle_arrdtor_FUN_004c9970
 // Address: 004c9970
-CGlassParticle * __cdecl CGlassParticle::arrdtor(CGlassParticle *objs,uint flags);
+CGlassParticle * __cdecl CGlassParticle::arrdtor(CGlassParticle *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CMuzzleFlash_arrdtor_FUN_004c9990
 // Address: 004c9990
-CMuzzleFlash * __cdecl CMuzzleFlash::arrdtor(CMuzzleFlash *objs,uint flags);
+CMuzzleFlash * __cdecl CMuzzleFlash::arrdtor(CMuzzleFlash *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CSpark_arrdtor_FUN_004c99b0
 // Address: 004c99b0
-CSpark * __cdecl CSpark::arrdtor(CSpark *objs,uint flags);
+CSpark * __cdecl CSpark::arrdtor(CSpark *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CStake_arrdtor_FUN_004c99d0
 // Address: 004c99d0
-CStake * __cdecl CStake::arrdtor(CStake *objs,uint flags);
+CStake * __cdecl CStake::arrdtor(CStake *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CBulletHole_arrdtor_FUN_004c99f0
 // Address: 004c99f0
-CBulletHole * __cdecl CBulletHole::arrdtor(CBulletHole *objs,uint flags);
+CBulletHole * __cdecl CBulletHole::arrdtor(CBulletHole *this_ptr,uint flags);
 
 // Original: core_fire.cpp_CSmokeParticle_arrdtor_FUN_004c9a10
 // Address: 004c9a10
-CSmokeParticle * __cdecl CSmokeParticle::arrdtor(CSmokeParticle *objs,uint flags);
+CSmokeParticle * __cdecl CSmokeParticle::arrdtor(CSmokeParticle *this_ptr,uint flags);

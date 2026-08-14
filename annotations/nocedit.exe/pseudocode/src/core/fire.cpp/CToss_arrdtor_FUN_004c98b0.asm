@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CToss * __cdecl core_fire_cpp_CToss_arrdtor_FUN_004c98b0(CToss *objs,uint flags)
+; CToss * __cdecl core_fire_cpp_CToss_arrdtor_FUN_004c98b0(CToss *this_ptr,uint flags)
 ;
 ; Parameters:
-; CToss *          Stack[0x4]:4   objs
+; CToss *          Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

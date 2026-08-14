@@ -4893,13 +4893,45 @@
         "start":"00411310"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310",
-    "ret":"undefined1",
+    "name":"core_baron.cpp_CBaron_drawWeapon_FUN_00411310",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CBaron*"
+        },
+        {
+          "name":"drawn",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -20202,8 +20234,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_returnZero_FUN_0044ba10",
-    "ret":"int",
+    "name":"core_dest.cpp_CActorDestination_getCollisionType_FUN_0044ba10",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -20220,7 +20252,23 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"CActorDestination*"
+        },
+        {
+          "name":"collision_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCollisionInfo*"
         }
       ],
       "ret_storage":{
@@ -23477,7 +23525,7 @@
       ],
       "params":[
         {
-          "name":"finder",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -39373,12 +39421,38 @@
         "start":"0049a110"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110",
-    "ret":"undefined1",
+    "name":"core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_0049a110",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CGabriella*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -49244,12 +49318,38 @@
         "start":"004d6010"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_minecar.cpp_CMineCar_getActorType_FUN_004d6010",
-    "ret":"undefined1",
+    "ret":"CDemonActorType*",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMineCar*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -57777,7 +57877,7 @@
     "vars":{
       "params":[
         {
-          "name":"a",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -57837,7 +57937,7 @@
     "vars":{
       "params":[
         {
-          "name":"a",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -67850,12 +67950,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_multicrm.cpp_CMultiCram_getSecondModel_FUN_00540a10",
-    "ret":"CDSEModel*",
+    "name":"core_stranger.cpp_FUN_00540a10",
+    "ret":"void*",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -67868,7 +67968,7 @@
               }
             ]
           },
-          "type":"CMultiCram*"
+          "type":"void*"
         }
       ],
       "ret_storage":{
@@ -68880,7 +68980,7 @@
       ],
       "params":[
         {
-          "name":"cache",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -72819,7 +72919,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_waypoint.cpp_CWaypoint_setup_FUN_00552510",
+    "name":"core_waypoint.cpp_CWayPoint_setup_FUN_00552510",
     "ret":"void",
     "vars":{
       "params":[

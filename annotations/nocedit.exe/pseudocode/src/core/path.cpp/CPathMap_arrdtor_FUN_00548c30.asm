@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor_FUN_00548c30(CPathMap *objs,uint flags)
+; CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor_FUN_00548c30(CPathMap *this_ptr,uint flags)
 ;
 ; Parameters:
-; CPathMap *       Stack[0x4]:4   objs
+; CPathMap *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

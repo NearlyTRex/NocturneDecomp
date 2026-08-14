@@ -60,7 +60,7 @@ section .text
     ADD EAX,EBX                         ; 005aa330
     PUSH EAX                            ; 005aa332 | g_SfxSlots[1].status
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005aa333
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005aa338
     JMP 0x005aa307                      ; 005aa33b
         ;   XREF to: 005aa307 (UNCONDITIONAL_JUMP)  ; LAB_005aa307

@@ -179,9 +179,9 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 00540660
 void __cdecl CStranger::processWeaponTick(CStranger *this_ptr,float delta_time);
 
-// Original: core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720
+// Original: core_stranger.cpp_CStranger_isWeaponDrawn_FUN_00540720
 // Address: 00540720
-undefined4 CStranger::handlePureVirtualCall(int param_1);
+int __cdecl CStranger::isWeaponDrawn(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_drawWeapon_FUN_00540730
 // Address: 00540730
@@ -211,6 +211,10 @@ void __cdecl CStranger::drop(CStranger *this_ptr,CDemonActor *carrier,CVector3f 
 // Address: 00540970
 float FUN_00540970(void);
 
+// Original: core_stranger.cpp_divideVectorByScalar_FUN_005409a0
+// Address: 005409a0
+void __cdecl divideVectorByScalar(CVector3f *vector,float *divisor);
+
 // Original: core_stranger.cpp_FUN_005409c0
 // Address: 005409c0
 float FUN_005409c0(float *param_1,float *param_2);
@@ -218,6 +222,10 @@ float FUN_005409c0(float *param_1,float *param_2);
 // Original: core_stranger.cpp_setMatrixTranslation_FUN_005409f0
 // Address: 005409f0
 void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
+
+// Original: core_stranger.cpp_FUN_00540a10
+// Address: 00540a10
+void * __cdecl FUN_00540a10(void *ptr);
 
 // Original: core_stranger.cpp_isProcessDisabled_FUN_00540a20
 // Address: 00540a20

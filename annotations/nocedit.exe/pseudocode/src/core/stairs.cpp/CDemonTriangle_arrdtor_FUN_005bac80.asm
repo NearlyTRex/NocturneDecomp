@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonTriangle * __cdecl core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(CDemonTriangle *objs,uint flags)
+; CDemonTriangle * __cdecl core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(CDemonTriangle *this_ptr,uint flags)
 ;
 ; Parameters:
-; CDemonTriangle * Stack[0x4]:4   objs
+; CDemonTriangle * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

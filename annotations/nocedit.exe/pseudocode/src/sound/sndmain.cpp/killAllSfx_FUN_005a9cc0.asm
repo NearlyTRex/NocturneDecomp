@@ -32,7 +32,7 @@ section .text
     PUSH EBX                            ; 005a9cd2 | g_SfxSlots | g_SfxSlots[1].status
         ;   Label: LAB_005a9cd2
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a9cd3
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD EBX,0x128                       ; 005a9cd8
     ADD ESP,0x4                         ; 005a9cde
     CMP EBX,ESI                         ; 005a9ce1

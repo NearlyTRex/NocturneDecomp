@@ -42,17 +42,17 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
       core_actor_cpp_copyFloat2_FUN_004104e0(&current_copy.y, &pCVar3->y);
       core_actor_cpp_copyFloat1_FUN_004104d0(&current_copy.z, &pCVar3->z);
 
-      core_actor_cpp_CVector_ctor_FUN_00410340(&scaled_adjacent);
+      core_actor_cpp_CVector3f_ctor_FUN_00410340(&scaled_adjacent);
       scaled_adjacent.x = pCVar2->x * 0.2f;
       scaled_adjacent.y = pCVar2->y * 0.2f;
       scaled_adjacent.z = pCVar2->z * 0.2f;
 
-      core_actor_cpp_CVector_ctor_FUN_00410340(&scaled_current);
+      core_actor_cpp_CVector3f_ctor_FUN_00410340(&scaled_current);
       scaled_current.x = pCVar3->x * 0.8f;
       scaled_current.y = pCVar3->y * 0.8f;
       scaled_current.z = 0.8f * pCVar3->z;
 
-      core_actor_cpp_CVector_ctor_FUN_00410340(&midpoint);
+      core_actor_cpp_CVector3f_ctor_FUN_00410340(&midpoint);
       pCVar1 = g_CDemonRendererPtr1;
       midpoint.x = scaled_current.x + scaled_adjacent.x;
       midpoint.y = scaled_current.y + scaled_adjacent.y;

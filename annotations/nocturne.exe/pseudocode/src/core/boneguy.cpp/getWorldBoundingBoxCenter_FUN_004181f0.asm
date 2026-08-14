@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
-;   core_actor.cpp_CVector_ctor_FUN_0040e160
+;   core_actor.cpp_CVector3f_ctor_FUN_0040e160
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     ADD ESP,0x8                         ; 0041820e
     LEA EAX,[ESP + 0x24]                ; 00418211
     PUSH EAX                            ; 00418215
-    CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00418216
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_0040e160 ; 00418216
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040e160(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 0041821b
     LEA EAX,[ESP + 0x18]                ; 0041821e
     FLD float ptr [ESP]                 ; 00418222
@@ -55,8 +55,8 @@ section .text
     FXCH                                ; 00418246
     FSTP float ptr [ESP + 0x2c]         ; 00418248
     FSTP float ptr [ESP + 0x30]         ; 0041824c
-    CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00418250
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_0040e160 ; 00418250
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040e160(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 00418255
     FLD float ptr [0x0057913e]          ; 00418258 | DAT_0057913e
     FLD float ptr [ESP + 0x24]          ; 0041825e

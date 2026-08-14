@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_00545728
     PUSH ESI                            ; 00545729
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410 ; 0054572a
-        ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * cache, int texture_index)
+        ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * this_ptr, int texture_index)
     INC EBX                             ; 0054572f
     ADD ESP,0x8                         ; 00545730
     MOV ECX,0x3e8                       ; 00545733

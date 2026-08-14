@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor *actor)
+; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor *this_ptr)
 ;
 ; Parameters:
-; CDemonActor *    Stack[0x4]:4   actor
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[74]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040dee6

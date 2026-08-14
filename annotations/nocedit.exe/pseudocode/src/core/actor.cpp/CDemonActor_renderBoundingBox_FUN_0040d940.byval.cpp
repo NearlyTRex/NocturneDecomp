@@ -63,7 +63,7 @@ __asm {
         add ESP,0x8
         lea EDI,[ESP + 0x120]
         push EDI
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_0061445c]
         fld float ptr [ESI]
         fmul ST(1)
@@ -77,7 +77,7 @@ __asm {
         fmulp
         push ESI
         fstp float ptr [ESP + 0x12c]
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_00614460]
         fld float ptr [EBX]
         fmul ST(1)
@@ -90,7 +90,7 @@ __asm {
         fstp float ptr [ESP + 0x74]
         lea EBX,[ESP + 0x30]
         push EBX
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         lea EBX,[ESP + 0x10c]
         add ESP,0x4
         mov ESI,dword ptr [g_CDemonRendererPtr1]
@@ -179,7 +179,7 @@ __asm {
         add ESP,0x8
         lea EDI,[ESP + 0xd8]
         push EDI
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_0061445c]
         fld float ptr [ESI]
         fmul ST(1)
@@ -193,7 +193,7 @@ __asm {
         fmulp
         push ESI
         fstp float ptr [ESP + 0xe4]
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_00614460]
         fld float ptr [EBX]
         fmul ST(1)
@@ -207,7 +207,7 @@ __asm {
         fmulp
         push EBX
         fstp float ptr [ESP + 0xa8]
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         lea EBX,[ESP + 0x40]
         add ESP,0x4
         mov ESI,dword ptr [g_CDemonRendererPtr1]
@@ -296,7 +296,7 @@ __asm {
         add ESP,0x8
         lea EDI,[ESP + 0x48]
         push EDI
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_0061445c]
         fld float ptr [ESI]
         fmul ST(1)
@@ -310,7 +310,7 @@ __asm {
         fmulp
         push ESI
         fstp float ptr [ESP + 0x54]
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         fld float ptr [FLOAT_00614460]
         fld float ptr [EBX]
         fmul ST(1)
@@ -324,7 +324,7 @@ __asm {
         lea ESI,[ESP + 0x78]
         push EBX
         fstp float ptr [ESP + 0x24]
-        call core_actor_cpp_CVector_ctor_FUN_00410340
+        call core_actor_cpp_CVector3f_ctor_FUN_00410340
         add ESP,0x4
         mov EBX,dword ptr [g_CDemonRendererPtr1]
         fld float ptr [ESP + 0x18]

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle *triangle)
+; void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle *this_ptr)
 ;
 ; Parameters:
-; CDemonTriangle * Stack[0x4]:4   triangle
+; CDemonTriangle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30

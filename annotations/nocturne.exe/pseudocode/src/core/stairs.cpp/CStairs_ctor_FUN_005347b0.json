@@ -62,17 +62,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 232,
+    "complexity_score": 207,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
     "total_lines": 40
   },
@@ -94,7 +93,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stairs.cpp_CStairs_ctor_FUN_005347b0",
-    "signature": "CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)"
+    "signature": "CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *this_ptr)"
   },
   "function_calls": [
     {
@@ -174,7 +173,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "param_1",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CStairs *"
@@ -182,22 +181,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&param_1->base);",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 11,

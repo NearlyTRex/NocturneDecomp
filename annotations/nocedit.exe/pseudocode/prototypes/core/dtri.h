@@ -25,7 +25,7 @@ void __cdecl CDemonTriangle::writeDataBinary(CDemonTriangle *this_ptr,_FILE *fil
 
 // Original: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
 // Address: 0049a640
-void __cdecl CDemonTriangle::calculateData(CDemonTriangle *triangle);
+void __cdecl CDemonTriangle::calculateData(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790
 // Address: 0049a790
@@ -113,4 +113,4 @@ void __cdecl CDemonTriangle::render(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_arrdtor_FUN_0049cd20
 // Address: 0049cd20
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *this_ptr,uint flags);

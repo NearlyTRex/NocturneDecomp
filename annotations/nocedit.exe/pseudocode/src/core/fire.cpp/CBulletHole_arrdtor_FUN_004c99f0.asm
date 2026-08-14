@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBulletHole * __cdecl core_fire_cpp_CBulletHole_arrdtor_FUN_004c99f0(CBulletHole *objs,uint flags)
+; CBulletHole * __cdecl core_fire_cpp_CBulletHole_arrdtor_FUN_004c99f0(CBulletHole *this_ptr,uint flags)
 ;
 ; Parameters:
-; CBulletHole *    Stack[0x4]:4   objs
+; CBulletHole *    Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

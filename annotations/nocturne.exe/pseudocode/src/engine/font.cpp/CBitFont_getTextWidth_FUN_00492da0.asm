@@ -119,7 +119,7 @@ section .text
         ;   Label: LAB_00492e2b
     PUSH EDI                            ; 00492e2c
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0 ; 00492e2d
-        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * font, int char_code)
+        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * this_ptr, int char_code)
     MOV EDX,dword ptr [EDI + 0x3174]    ; 00492e32
     ADD ESP,0x8                         ; 00492e38
     ADD EAX,EDX                         ; 00492e3b

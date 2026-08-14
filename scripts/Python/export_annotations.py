@@ -155,7 +155,8 @@ def get_export_categories():
 def export_selected_categories(currentProgram, folder, categories, export_categories,
                                log_info, log_error, strict=False, deep_analysis=False,
                                allow_size_mismatch=False,
-                               allow_name_address_mismatch=False):
+                               allow_name_address_mismatch=False,
+                               allow_this_ptr_mismatch=False):
     for category in categories:
         category = category.strip().lower()
         if category in export_categories:
@@ -170,7 +171,8 @@ def export_selected_categories(currentProgram, folder, categories, export_catego
             elif category == "functions":
                 export_categories[category](
                     currentProgram, folder,
-                    allow_name_address_mismatch=allow_name_address_mismatch)
+                    allow_name_address_mismatch=allow_name_address_mismatch,
+                    allow_this_ptr_mismatch=allow_this_ptr_mismatch)
             else:
                 export_categories[category](currentProgram, folder)
         else:
@@ -179,7 +181,7 @@ def export_selected_categories(currentProgram, folder, categories, export_catego
 
 def run_export(currentProgram, output_folder, categories=None, strict=False,
                deep_analysis=False, allow_size_mismatch=False,
-               allow_name_address_mismatch=False):
+               allow_name_address_mismatch=False, allow_this_ptr_mismatch=False):
     """Main export function that takes currentProgram and args.
 
     Args:
@@ -193,6 +195,9 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
         allow_name_address_mismatch: If True, downgrade a function whose
             _FUN_<addr> suffix is not its entry point from a hard failure to
             a report
+        allow_this_ptr_mismatch: If True, downgrade a class method whose
+            parameter 0 is not `this_ptr` of its own class from a hard
+            failure to a report
     """
 
     # Import after PyGhidra started
@@ -223,6 +228,7 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
     log_info("Strict mode: %s" % strict)
     log_info("Allow struct size mismatch: %s" % allow_size_mismatch)
     log_info("Allow name/address mismatch: %s" % allow_name_address_mismatch)
+    log_info("Allow this_ptr mismatch: %s" % allow_this_ptr_mismatch)
     log_info("=" * 60)
 
     # Export annotations
@@ -231,12 +237,14 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
                                    log_info, log_error, strict=strict,
                                    deep_analysis=deep_analysis,
                                    allow_size_mismatch=allow_size_mismatch,
-                                   allow_name_address_mismatch=allow_name_address_mismatch)
+                                   allow_name_address_mismatch=allow_name_address_mismatch,
+                                   allow_this_ptr_mismatch=allow_this_ptr_mismatch)
     else:
         export_annotations(currentProgram, output_folder, strict=strict,
                           deep_analysis=deep_analysis,
                           allow_size_mismatch=allow_size_mismatch,
-                          allow_name_address_mismatch=allow_name_address_mismatch)
+                          allow_name_address_mismatch=allow_name_address_mismatch,
+                          allow_this_ptr_mismatch=allow_this_ptr_mismatch)
 
     # Export complete
     log_info("=" * 60)
@@ -303,6 +311,13 @@ Available categories:
                              "entry point (by default that fails the export, because it "
                              "means a name was applied to the wrong symbol and two "
                              "functions will collide on one pseudocode filename)")
+    parser.add_argument("--allow-this-ptr-mismatch", action="store_true",
+                        help="Export even if a class method named "
+                             "<tu>_<Class>_<method>_FUN_<addr> does not take "
+                             "`this_ptr` of type `<Class> *` as its first parameter "
+                             "(by default that fails the export, because an absent or "
+                             "mistyped receiver degrades the decompilation of every "
+                             "caller)")
     parser.add_argument("--all-programs", action="store_true",
                         help="Export every program in the project. In this mode program_name is "
                              "ignored and output_folder is treated as a parent directory: each "
@@ -367,7 +382,8 @@ Available categories:
                     run_export(currentProgram, out_folder, categories=categories,
                                strict=args.strict, deep_analysis=args.deep_analysis,
                                allow_size_mismatch=args.allow_struct_size_mismatch,
-                               allow_name_address_mismatch=args.allow_name_address_mismatch)
+                               allow_name_address_mismatch=args.allow_name_address_mismatch,
+                               allow_this_ptr_mismatch=args.allow_this_ptr_mismatch)
             except SystemExit as e:
                 # A library deep in the export (e.g. data-type dependency resolution)
                 # may call sys.exit() on a per-program problem. SystemExit is a

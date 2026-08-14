@@ -42,7 +42,7 @@ section .text
     PUSH EAX                            ; 00527244
         ;   Label: LAB_00527244
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00527245
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 0052724a
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 0052724d
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()

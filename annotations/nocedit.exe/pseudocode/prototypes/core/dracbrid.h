@@ -97,7 +97,7 @@ CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30
 // Address: 00486e30
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_SFreaky_arrdtor_FUN_00486e50
 // Address: 00486e50

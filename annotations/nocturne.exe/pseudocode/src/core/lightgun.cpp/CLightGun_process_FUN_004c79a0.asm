@@ -68,7 +68,7 @@ section .text
     PUSH dword ptr [0x0059fd60]         ; 004c79c8 | FLOAT_0059fd60
     PUSH EAX                            ; 004c79ce
     CALL core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20 ; 004c79cf
-        ;   XREF to: 004c1b20 (UNCONDITIONAL_CALL)  ; float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory * inventory_ptr, float max_charge)
+        ;   XREF to: 004c1b20 (UNCONDITIONAL_CALL)  ; float core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory * this_ptr, float max_charge)
     MOV dword ptr [ESP + 0x18],EAX      ; 004c79d4
     FLD float ptr [ESP + 0x18]          ; 004c79d8
     FDIVR float ptr [0x0059fd60]        ; 004c79dc | FLOAT_0059fd60

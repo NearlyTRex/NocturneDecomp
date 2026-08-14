@@ -237,7 +237,7 @@ void __cdecl core_actor_cpp_CDemonActor_process_FUN_00408a80(CDemonActor *this_p
 int __cdecl core_actor_cpp_CDemonActor_renderOpaque_FUN_00408aa0(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_renderTransparent_FUN_00408ac0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActor *this_ptr,int layer_flag);
-void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor *actor);
+void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor *this_ptr);
 CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00408b50(CDemonActor *this_ptr);
 char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor *this_ptr);

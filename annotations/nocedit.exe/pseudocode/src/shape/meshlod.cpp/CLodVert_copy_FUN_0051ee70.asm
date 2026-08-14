@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLodVert * __cdecl shape_meshlod_cpp_CLodVert_copy_FUN_0051ee70(CLodVert *destination,CLodVert *source)
+; CLodVert * __cdecl shape_meshlod_cpp_CLodVert_copy_FUN_0051ee70(CLodVert *this_ptr,CLodVert *source)
 ;
 ; Parameters:
-; CLodVert *       Stack[0x4]:4   destination
+; CLodVert *       Stack[0x4]:4   this_ptr
 ; CLodVert *       Stack[0x8]:4   source
 ;
 ; *****************************************************************************

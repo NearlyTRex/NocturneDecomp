@@ -21,7 +21,7 @@ void __cdecl CTextureCache::freeTextures(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
 // Address: 005dcc00
-int __cdecl CTextureCache::loadTexture(CTextureCache *cache,char *texture_name);
+int __cdecl CTextureCache::loadTexture(CTextureCache *this_ptr,char *texture_name);
 
 // Original: engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180
 // Address: 005dd180
@@ -29,7 +29,7 @@ int __cdecl CTextureCache::findTexture(CTextureCache *this_ptr,int hint_index,ch
 
 // Original: engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
 // Address: 005dd200
-void __cdecl CTextureCache::setupTexture(CTextureCache *cache,int texture_index);
+void __cdecl CTextureCache::setupTexture(CTextureCache *this_ptr,int texture_index);
 
 // Original: engine_texture.cpp_CTextureCache_getTextureCount_FUN_005dd570
 // Address: 005dd570

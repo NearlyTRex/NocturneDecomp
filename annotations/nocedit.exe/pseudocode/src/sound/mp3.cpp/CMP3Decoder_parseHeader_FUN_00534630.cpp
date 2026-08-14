@@ -15,7 +15,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   int iVar1;
   long lVar2;
   char *pcVar3;
-  CFileBitStream *bitstream;
+  CFileBitStream *this_ptr_00;
   uint uVar2;
   uint uVar4;
   int iVar5;
@@ -71,15 +71,15 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   (this_ptr->file_bitstream).total_bits_read = 0;
   (this_ptr->file_bitstream).bytes_remaining = (this_ptr->file_bitstream).stream_length;
   (this_ptr->file_bitstream).end_of_stream_flag = 0;
-  bitstream = &this_ptr->file_bitstream;
+  this_ptr_00 = &this_ptr->file_bitstream;
   (this_ptr->file_bitstream).error_flag = 0;
   uVar7 = (this_ptr->file_bitstream).total_bits_read & 7;
   if (uVar7 != 0) {
-    sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(bitstream,8 - uVar7);
+    sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr_00,8 - uVar7);
   }
-  uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(bitstream,0xc);
+  uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr_00,0xc);
   while (((uVar2 & 0x1fff) != 0xfff && ((this_ptr->file_bitstream).error_flag == 0))) {
-    uVar4 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(bitstream,8);
+    uVar4 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr_00,8);
     uVar2 = uVar2 << 8 | uVar4;
   }
   local_48 = &local_78;

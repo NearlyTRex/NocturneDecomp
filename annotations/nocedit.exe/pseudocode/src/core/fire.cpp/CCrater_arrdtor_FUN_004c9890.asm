@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCrater * __cdecl core_fire_cpp_CCrater_arrdtor_FUN_004c9890(CCrater *objs,uint flags)
+; CCrater * __cdecl core_fire_cpp_CCrater_arrdtor_FUN_004c9890(CCrater *this_ptr,uint flags)
 ;
 ; Parameters:
-; CCrater *        Stack[0x4]:4   objs
+; CCrater *        Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

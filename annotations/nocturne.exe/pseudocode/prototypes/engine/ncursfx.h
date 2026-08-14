@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: engine_ncursfx.cpp_CMouse_ctor_FUN_004ee500
 // Address: 004ee500
-CMouse * __cdecl CMouse::ctor(CMouse *ptr);
+CMouse * __cdecl CMouse::ctor(CMouse *this_ptr);
 
 // Original: engine_ncursfx.cpp_CMouse_dtor_FUN_004ee560
 // Address: 004ee560

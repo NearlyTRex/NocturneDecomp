@@ -118,7 +118,7 @@ CSpotView * __cdecl shape_spotview_cpp_CSpotView_dtor_FUN_00534740(CSpotView *th
 void __cdecl core_stairs_cpp_staticInit_FUN_00534750(void);
 CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00534780(void);
 CDemonActorType * __cdecl core_stairs_cpp_CStairs_getActorType_FUN_005347a0(CStairs *this_ptr);
-CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1);
+CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_setup_FUN_00534820(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_process_FUN_00534840(CStairs *this_ptr,float delta_time);
 int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_00534850(CStairs *this_ptr);

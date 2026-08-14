@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits)
+; uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *this_ptr,int num_bits)
 ;
 ; Parameters:
-; CFileBitStream * Stack[0x4]:4   bitstream
+; CFileBitStream * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   num_bits
 ; Local Variables:
 ; uint             Stack[-0x14]:4  local_14

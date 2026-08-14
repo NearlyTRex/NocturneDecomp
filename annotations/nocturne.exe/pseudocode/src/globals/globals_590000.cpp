@@ -1280,7 +1280,7 @@ CDemonActor_vtable g_CActorDestinationVTable = {
     .setup = (CDemonActor_setup *)core_dest_cpp_CActorDestination_setup_FUN_0044b810,
     .process = (CDemonActor_process *)core_dest_cpp_CActorDestination_process_FUN_0044b850,
     .renderOpaque = (CDemonActor_renderOpaque *)core_actor_cpp_CDemonActor_returnZero_FUN_00409f00,
-    .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_CDemonActor_returnZero_FUN_0044ba10,
+    .renderTransparent = (CDemonActor_renderTransparent *)core_dest_cpp_CActorDestination_getCollisionType_FUN_0044ba10,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_00409f10,
     .getBoundingBox = (CDemonActor_getBoundingBox *)core_dest_cpp_CActorDestination_getBoundingBox_FUN_0044ba20,
     .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930,
@@ -1290,7 +1290,7 @@ CDemonActor_vtable g_CActorDestinationVTable = {
     .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_0040a300,
     .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320,
     .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350,
-    .getCollisionType = (CDemonActor_getCollisionType *)core_actor_cpp_CDemonActor_returnZero_FUN_0044ba10,
+    .getCollisionType = (CDemonActor_getCollisionType *)core_dest_cpp_CActorDestination_getCollisionType_FUN_0044ba10,
     .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140,
     .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_returnZero_FUN_0040a130,
     .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_returnZero_FUN_0040a130,
@@ -1550,7 +1550,7 @@ CDemonActor_vtable g_CFilmProjectorVTable = {
     .setup = (CDemonActor_setup *)core_filmreel_cpp_CFilmProjector_setup_FUN_00481fd0,
     .process = (CDemonActor_process *)core_filmreel_cpp_CFilmProjector_process_FUN_00482010,
     .renderOpaque = (CDemonActor_renderOpaque *)core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004821d0,
-    .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_CDemonActor_returnZero_FUN_0044ba10,
+    .renderTransparent = (CDemonActor_renderTransparent *)core_dest_cpp_CActorDestination_getCollisionType_FUN_0044ba10,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_00409f10,
     .getBoundingBox = (CDemonActor_getBoundingBox *)core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004821a0,
     .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930,
@@ -1560,7 +1560,7 @@ CDemonActor_vtable g_CFilmProjectorVTable = {
     .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_0040a300,
     .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_0040a320,
     .playAmbientSoundWithVolume = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_0040a350,
-    .getCollisionType = (CDemonActor_getCollisionType *)core_actor_cpp_CDemonActor_returnZero_FUN_0044ba10,
+    .getCollisionType = (CDemonActor_getCollisionType *)core_dest_cpp_CActorDestination_getCollisionType_FUN_0044ba10,
     .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_0040a140,
     .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_CDemonActor_returnZero_FUN_0040a130,
     .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_CDemonActor_returnZero_FUN_0040a130,
@@ -3836,7 +3836,7 @@ CHero_full_vtable g_CBaronVTable = {
     },
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0,
-        .drawWeapon = (CHero_drawWeapon *)core_baron_cpp_CBaron_handlePureVirtualCall_FUN_00411310,
+        .drawWeapon = (CHero_drawWeapon *)core_baron_cpp_CBaron_drawWeapon_FUN_00411310,
         .isWeaponDrawn = (CHero_isWeaponDrawn *)core_baron_cpp_CBaron_renderOpaque_FUN_004110e0,
         .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004b5ec0
     }
@@ -4017,7 +4017,7 @@ CHero_full_vtable g_CGabriellaVTable = {
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0,
         .drawWeapon = (CHero_drawWeapon *)core_gabriela_cpp_CGabriella_drawWeapon_FUN_0049a130,
-        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_gabriela_cpp_CGabriella_handlePureVirtualCall_FUN_0049a110,
+        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_0049a110,
         .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004b5ec0
     }
 };
@@ -4296,7 +4296,7 @@ CHero_full_vtable g_CIcePickVTable = {
 CKeys_vtable g_CKeysVTable = {
     .getKeyState = (CKeys_getKeyState *)engine_keys_cpp_CKeys_getKeyState_FUN_004c4180,
     .getAndClearKeyState = (CKeys_getAndClearKeyState *)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004c4190,
-    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_CKeys_clearKeypresses_FUN_004c41b0
+    .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_clearKeypresses_FUN_004c41b0
 };
 
 // CParticle_vtable
@@ -4435,7 +4435,7 @@ CWeapon_full_vtable g_CBaronWeaponVTable = {
         .fire = (CWeapon_fire *)core_baron_cpp_CBaronWeapon_fire_FUN_00411400,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440,
         .getDamage = (CWeapon_getDamage *)core_weapon_cpp_CWeapon_getDamage_FUN_00554650,
-        .fireProjectile = (CWeapon_fireProjectile *)core_baron_cpp_CBaron_fireProjectile_FUN_00411470,
+        .fireProjectile = (CWeapon_fireProjectile *)core_baron_cpp_CBaronWeapon_fireProjectile_FUN_00411470,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
     }
 };
@@ -5137,10 +5137,10 @@ WatcomDestructorCall g_WatcomDestructorCall_0059fff4 = {
 // WatcomTypeInfo
 WatcomTypeInfo g_CVectorTypeInfo_005993b0 = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector_ctor_FUN_0040e160,
-    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector_copy_FUN_0040e2a0,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_actor_cpp_CVector_dtor_FUN_0040e170,
-    .instance_size = 0x0000000C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector3f_ctor_FUN_0040e160,
+    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector3f_copy_FUN_0040e2a0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_actor_cpp_CVector3f_dtor_FUN_0040e170,
+    .instance_size = (int)sizeof(CVector3f),
     .class_name = (char *)s_CVector_005ace94
 };
 WatcomTypeInfo g_CDemonActorTypeInfo_005993d0 = {

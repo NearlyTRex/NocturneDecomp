@@ -301,11 +301,11 @@ void __cdecl CDemonSet::renderDecals(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CVector3f_equals_FUN_00571410
 // Address: 00571410
-int __cdecl CVector3f::equals(CVector3f *a,CVector3f *b);
+int __cdecl CVector3f::equals(CVector3f *this_ptr,CVector3f *b);
 
 // Original: core_set.cpp_CVector3f_notEquals_FUN_00571440
 // Address: 00571440
-int __cdecl CVector3f::notEquals(CVector3f *a,CVector3f *b);
+int __cdecl CVector3f::notEquals(CVector3f *this_ptr,CVector3f *b);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_00571470
 // Address: 00571470
@@ -329,11 +329,11 @@ C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 
 // Original: core_set.cpp_CVector3f_copy_FUN_005714c0
 // Address: 005714c0
-CVector3f * __cdecl CVector3f::copy(CVector3f *a,CVector3f *b);
+CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *b);
 
 // Original: core_set.cpp_CVector3f_arrdtor_FUN_00571510
 // Address: 00571510
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_set.cpp_C3DSCamera_arrdtor_FUN_00571530
 // Address: 00571530

@@ -85,4 +85,4 @@ CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
 // Original: core_stairs.cpp_CDemonTriangle_arrdtor_FUN_005bac80
 // Address: 005bac80
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *this_ptr,uint flags);

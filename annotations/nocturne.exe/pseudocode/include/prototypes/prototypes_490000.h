@@ -59,7 +59,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004916c0(CBitFont *this_p
 int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont *this_ptr,char *text);
 int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont *this_ptr,char *text_string);
 int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_00492f30(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width);
-int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont *font,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_00493110(CBitFont *this_ptr,int char_code);
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_00493140(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
@@ -124,7 +124,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004998c0(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 void __cdecl core_gabriela_cpp_CGabriella_FUN_00499b00(CGabriella *this_ptr,float param_2,float *param_3,int param_4,int param_5,CVector3f *param_6);
 void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-bool core_gabriela_cpp_CGabriella_handlePureVirtualCall_FUN_0049a110(int param_1);
+int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_0049a110(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_0049a130(CGabriella *this_ptr,int drawn);
 CWeapon * __cdecl core_gabriela_cpp_getSelectedWeapon_FUN_0049a160(CInventory *inventory_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_0049a170(CGabriella *this_ptr,uint flags);

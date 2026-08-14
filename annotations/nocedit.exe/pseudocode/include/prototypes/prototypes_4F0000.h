@@ -276,7 +276,7 @@ void __cdecl core_inv_cpp_CInventory_setupItems_FUN_004ff780(CInventory *this_pt
 int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004ffab0(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *this_ptr);
-float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *inventory_ptr,float max_charge);
+float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *this_ptr,float max_charge);
 void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr,int ammo_type);
 int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(CInventory *this_ptr,int reset_both);

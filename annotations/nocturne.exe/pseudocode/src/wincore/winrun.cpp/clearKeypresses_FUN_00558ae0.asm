@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50 at 00403f50
-;   engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0 at 004c41b0
+;   engine_keys.cpp_clearKeypresses_FUN_004c41b0 at 004c41b0
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f4fd
 ;
 ; Referenced Globals:

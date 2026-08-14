@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_pointer,int param_index)
+; int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_ptr,int param_index)
 ;
 ; Parameters:
-; CCmdParse *      Stack[0x4]:4   this_pointer
+; CCmdParse *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   param_index
 ;
 ; XREF[1]:

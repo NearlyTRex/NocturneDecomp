@@ -9,7 +9,7 @@
 CVector3f * __cdecl core_script_cpp_makeVector_FUN_00567d00(CVector3f *out,float x,float y,float z)
 
 {
-  core_actor_cpp_CVector_ctor_FUN_00410340(out);
+  core_actor_cpp_CVector3f_ctor_FUN_00410340(out);
   out->x = x;
   out->z = y;
   out->y = z;

@@ -49,7 +49,7 @@ void __cdecl CDemonActor::renderBackground(CDemonActor *this_ptr,int layer_flag)
 
 // Original: core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 // Address: 00408b00
-void __cdecl CDemonActor::setupRenderState(CDemonActor *actor);
+void __cdecl CDemonActor::setupRenderState(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 // Address: 00408b40
@@ -667,13 +667,13 @@ int __cdecl CActorProperty::getValueWidth(CActorProperty *this_ptr,CDemonActor *
 // Address: 0040eed0
 int __cdecl CActorProperty::editInteractive(CActorProperty *this_ptr,CDemonActor *actor);
 
-// Original: core_actor.cpp_CVector_ctor_FUN_00410340
+// Original: core_actor.cpp_CVector3f_ctor_FUN_00410340
 // Address: 00410340
-CVector3f * __cdecl CVector::ctor(CVector3f *this_ptr);
+CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_CVector_dtor_FUN_00410350
+// Original: core_actor.cpp_CVector3f_dtor_FUN_00410350
 // Address: 00410350
-CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::dtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_actor.cpp_copyVector_FUN_00410360
 // Address: 00410360
@@ -715,9 +715,9 @@ CBoundingBox3D * __cdecl CBoundingBox3D::copy(CBoundingBox3D *this_ptr,CBounding
 // Address: 00410490
 CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
 
-// Original: core_actor.cpp_CVector_copy_FUN_004104a0
+// Original: core_actor.cpp_CVector3f_copy_FUN_004104a0
 // Address: 004104a0
-CVector3f * __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
+CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *other);
 
 // Original: core_actor.cpp_copyFloat1_FUN_004104d0
 // Address: 004104d0
@@ -733,4 +733,4 @@ float * __cdecl copyFloat3(float *dst,float *src);
 
 // Original: core_actor.cpp_CVector3f_arrdtor_FUN_00410500
 // Address: 00410500
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

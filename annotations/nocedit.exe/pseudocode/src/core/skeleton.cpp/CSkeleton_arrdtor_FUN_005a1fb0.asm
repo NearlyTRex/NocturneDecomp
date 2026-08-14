@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor_FUN_005a1fb0(CSkeleton *objs,uint flags)
+; CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor_FUN_005a1fb0(CSkeleton *this_ptr,uint flags)
 ;
 ; Parameters:
-; CSkeleton *      Stack[0x4]:4   objs
+; CSkeleton *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

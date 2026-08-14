@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 00570c3a (CONDITIONAL_JUMP)  ; LAB_00570c3a
     PUSH EBX                            ; 00570bc4
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 00570bc5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00570bca
     MOV EAX,ESP                         ; 00570bcd
     PUSH EAX                            ; 00570bcf

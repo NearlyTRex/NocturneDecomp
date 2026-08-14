@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)"
   },
   "function_calls": [
     {
@@ -202,28 +202,28 @@
     {
       "description": "Complex pointer cast",
       "line": 112,
-      "match": "(int *)((int)model_ptr",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "piVar4 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);",
+      "text": "piVar4 = (int *)((int)this_ptr->poly_texture_index_list + iStack_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 118,
-      "match": "(int *)((int)model_ptr",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "[*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].textures[0]",
+      "text": "[*(int *)((int)this_ptr->poly_texture_index_list + iStack_2c)].textures[0].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 150,
-      "match": "(int *)((int)model_ptr",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar5;",
+      "text": "*(int *)((int)this_ptr->poly_texture_index_list + iStack_2c) = iVar5;",
       "type": "pointer_cast"
     },
     {
@@ -250,7 +250,7 @@
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "iVar3 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base)",
+      "text": "iVar3 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
       "type": "pointer_cast"
     },
     {
@@ -259,7 +259,7 @@
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "iVar9 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base).base.",
+      "text": "iVar9 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.",
       "type": "pointer_cast"
     }
   ],
@@ -384,7 +384,7 @@
       },
       {
         "is_param": true,
-        "name": "model_ptr",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CKeyFramedModel *"

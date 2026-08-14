@@ -77,7 +77,7 @@ void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_00481dc0
 // Address: 00481dc0
-void __cdecl CFileFinder::convertStruct(CFileFinder *finder,LPWIN32_FIND_DATAA find_data);
+void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
 
 // Original: engine_dosio.cpp_splitPath_FUN_00481f20
 // Address: 00481f20

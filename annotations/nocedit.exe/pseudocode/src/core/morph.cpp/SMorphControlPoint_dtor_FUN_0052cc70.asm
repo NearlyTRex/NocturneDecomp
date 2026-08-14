@@ -20,7 +20,7 @@ section .text
     ADD EAX,0x8                         ; 0052cc76
     PUSH EAX                            ; 0052cc79
     CALL core_morph.cpp_CVector3f_arrdtor_FUN_0052cc90 ; 0052cc7a
-        ;   XREF to: 0052cc90 (UNCONDITIONAL_CALL)  ; CVector3f * core_morph.cpp_CVector3f_arrdtor_FUN_0052cc90(CVector3f * objs, uint flags)
+        ;   XREF to: 0052cc90 (UNCONDITIONAL_CALL)  ; CVector3f * core_morph.cpp_CVector3f_arrdtor_FUN_0052cc90(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052cc7f
     SUB EAX,0x8                         ; 0052cc82
     RET                                 ; 0052cc85

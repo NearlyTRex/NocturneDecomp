@@ -223,6 +223,7 @@
 #include "types/classes/CPickList_vtable.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
 #include "types/classes/CPodDirectoryEntry.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"

@@ -77,4 +77,4 @@ void __cdecl CFilterFX::process(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_CDemonFilter_arrdtor_FUN_00470980
 // Address: 00470980
-CDemonFilter * __cdecl CDemonFilter::arrdtor(CDemonFilter *objs,uint flags);
+CDemonFilter * __cdecl CDemonFilter::arrdtor(CDemonFilter *this_ptr,uint flags);

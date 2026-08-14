@@ -53,8 +53,8 @@ SBat * __cdecl SBat::arrdtor(SBat *objs,uint flags);
 
 // Original: core_moon.cpp_CCourse_arrdtor_FUN_0052a450
 // Address: 0052a450
-CCourse * __cdecl CCourse::arrdtor(CCourse *objs,uint flags);
+CCourse * __cdecl CCourse::arrdtor(CCourse *this_ptr,uint flags);
 
 // Original: core_moon.cpp_CAlphaBitmap_arrdtor_FUN_0052a470
 // Address: 0052a470
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);

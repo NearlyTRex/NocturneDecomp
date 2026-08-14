@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *objs,uint flags)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *this_ptr,uint flags)
 ;
 ; Parameters:
-; CKeyFramedModel * Stack[0x4]:4   objs
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

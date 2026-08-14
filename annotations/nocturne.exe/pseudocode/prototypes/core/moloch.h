@@ -47,10 +47,10 @@ void __cdecl CMoloch::archive(CMoloch *this_ptr);
 // Address: 004de700
 void __cdecl CMoloch::startMorph(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de750
+// Original: core_moloch.cpp_CMoloch_drawWeapon_FUN_004de750
 // Address: 004de750
-void CMoloch::handlePureVirtualCall(void);
+void __cdecl CMoloch::drawWeapon(CMoloch *this_ptr,int drawn);
 
-// Original: core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de760
+// Original: core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_004de760
 // Address: 004de760
-undefined4 CMoloch::handlePureVirtualCall(void);
+int __cdecl CMoloch::isWeaponDrawn(CMoloch *this_ptr);

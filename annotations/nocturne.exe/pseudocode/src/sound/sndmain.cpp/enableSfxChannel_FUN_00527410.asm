@@ -68,7 +68,7 @@ section .text
     ADD EAX,EBX                         ; 00527464
     PUSH EAX                            ; 00527466
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00527467
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 0052746c
     ADD EBX,0x120                       ; 0052746f
         ;   Label: LAB_0052746f

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFireball * __cdecl core_fire_cpp_CFireball_arrdtor_FUN_004c9930(CFireball *objs,uint flags)
+; CFireball * __cdecl core_fire_cpp_CFireball_arrdtor_FUN_004c9930(CFireball *this_ptr,uint flags)
 ;
 ; Parameters:
-; CFireball *      Stack[0x4]:4   objs
+; CFireball *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

@@ -25,11 +25,11 @@ void __cdecl CDemonFileManager::createPodFromDirectory(CDemonFileManager *this_p
 
 // Original: core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
 // Address: 004be070
-void __cdecl CDemonFileManager::addDeformableModelToExtractList(CDemonFileManager *file_manager_ptr,char *model_filename);
+void __cdecl CDemonFileManager::addDeformableModelToExtractList(CDemonFileManager *this_ptr,char *model_filename);
 
 // Original: core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
 // Address: 004be150
-void __cdecl CDemonFileManager::addClothFileToExtractList(CDemonFileManager *file_manager_ptr,char *cloth_filename);
+void __cdecl CDemonFileManager::addClothFileToExtractList(CDemonFileManager *this_ptr,char *cloth_filename);
 
 // Original: core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230
 // Address: 004be230

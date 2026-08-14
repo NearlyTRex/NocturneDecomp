@@ -137,7 +137,7 @@ int __cdecl CEditorTools::promptForValidFloat(CEditorTools *this_ptr,char *promp
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530
 // Address: 00471530
-int __cdecl CEditorTools::promptForValidVector(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value);
+int __cdecl CEditorTools::promptForValidVector(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600
 // Address: 00471600
@@ -241,7 +241,7 @@ CStrList * __cdecl CStrList::copy(CStrList *this_ptr,CStrList *other);
 
 // Original: shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00
 // Address: 00473c00
-CStrList * __cdecl CStrList::copyFrom(CStrList *dest_ptr,CStrList *source_ptr);
+CStrList * __cdecl CStrList::copyFrom(CStrList *this_ptr,CStrList *source_ptr);
 
 // Original: shape_edittool.cpp_CStrList_clear_FUN_00473c50
 // Address: 00473c50

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *objs,uint flags)
+; CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970(CGlassParticle *this_ptr,uint flags)
 ;
 ; Parameters:
-; CGlassParticle * Stack[0x4]:4   objs
+; CGlassParticle * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

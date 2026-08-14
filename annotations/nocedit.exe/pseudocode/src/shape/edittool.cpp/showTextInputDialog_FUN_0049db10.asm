@@ -216,7 +216,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0049dce6 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0049dcec | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230 ; 0049dced
-        ;   XREF to: 004a1230 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools * editor_tools, int line_position)
+        ;   XREF to: 004a1230 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools * this_ptr, int line_position)
     ADD ESP,0x8                         ; 0049dcf2
     MOV ECX,dword ptr [0x02d0255c]      ; 0049dcf5 | g_ClipTop
     PUSH ECX                            ; 0049dcfb

@@ -276,8 +276,8 @@ core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0,0040e0a0,core/actor.cpp,10,0,,10
 core_actor.cpp_crc32ProcessInt_FUN_0040e0e0,0040e0e0,core/actor.cpp,5,0,,5
 core_actor.cpp_crc32ProcessVector_FUN_0040e100,0040e100,core/actor.cpp,5,0,,5
 core_actor.cpp_crc32ProcessString_FUN_0040e120,0040e120,core/actor.cpp,12,0,,12
-core_actor.cpp_CVector_ctor_FUN_0040e160,0040e160,core/actor.cpp,4,0,,4
-core_actor.cpp_CVector_dtor_FUN_0040e170,0040e170,core/actor.cpp,4,0,,4
+core_actor.cpp_CVector3f_ctor_FUN_0040e160,0040e160,core/actor.cpp,4,0,,4
+core_actor.cpp_CVector3f_dtor_FUN_0040e170,0040e170,core/actor.cpp,4,0,,4
 core_actor.cpp_copyVector_FUN_0040e180,0040e180,core/actor.cpp,10,1,unrolled_memcpy,25
 core_actor.cpp_CVector3f_length_FUN_0040e1a0,0040e1a0,core/actor.cpp,4,0,,4
 core_actor.cpp_FUN_0040e1cc,0040e1cc,core/actor.cpp,19,20,concat_reconstruction|nonstandard_int|pointer_truncation|register_param|unaffected_reg|warning_overlapping_globals,249
@@ -285,7 +285,7 @@ core_actor.cpp_SDamageInfo_dtor_FUN_0040e220,0040e220,core/actor.cpp,4,0,,4
 core_actor.cpp_CBoundingBox3D_ctor_FUN_0040e230,0040e230,core/actor.cpp,4,0,,4
 core_actor.cpp_CBoundingBox3D_copy_FUN_0040e240,0040e240,core/actor.cpp,10,1,unrolled_memcpy,25
 core_actor.cpp_CBoundingBox3D_dtor_FUN_0040e290,0040e290,core/actor.cpp,4,0,,4
-core_actor.cpp_CVector_copy_FUN_0040e2a0,0040e2a0,core/actor.cpp,7,1,unrolled_memcpy,22
+core_actor.cpp_CVector3f_copy_FUN_0040e2a0,0040e2a0,core/actor.cpp,7,1,unrolled_memcpy,22
 core_actor.cpp_FUN_0040e2ce,0040e2ce,core/actor.cpp,10,9,register_param|unaffected_reg,110
 core_actor.cpp_FUN_0040e2e1,0040e2e1,core/actor.cpp,6,4,register_param|unnamed_param,56
 core_actor.cpp_FUN_0040e2f1,0040e2f1,core/actor.cpp,6,4,register_param|unnamed_param,56
@@ -383,7 +383,7 @@ core_baron.cpp_CBaron_archive_FUN_00411080,00411080,core/baron.cpp,11,0,,11
 core_baron.cpp_CBaron_renderOpaque_FUN_004110e0,004110e0,core/baron.cpp,4,0,,4
 core_baron.cpp_CBaron_renderTransparent_FUN_004110f0,004110f0,core/baron.cpp,78,3,undefined_data|warning_overlapping_globals,118
 core_baron.cpp_CBaron_processDamage_FUN_004112f0,004112f0,core/baron.cpp,6,0,,6
-core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310,00411310,core/baron.cpp,4,0,,4
+core_baron.cpp_CBaron_drawWeapon_FUN_00411310,00411310,core/baron.cpp,4,0,,4
 core_baron.cpp_factoryFuncBaronWeapon_FUN_00411320,00411320,core/baron.cpp,10,0,,10
 core_baron.cpp_CBaronWeapon_getActorType_FUN_00411340,00411340,core/baron.cpp,4,0,,4
 core_baron.cpp_CBaronWeapon_ctor_FUN_00411350,00411350,core/baron.cpp,13,0,,13
@@ -392,7 +392,7 @@ core_baron.cpp_CBaronWeapon_process_FUN_004113d0,004113d0,core/baron.cpp,6,0,,6
 core_baron.cpp_CBaronWeapon_renderOpaque_FUN_004113f0,004113f0,core/baron.cpp,5,0,,5
 core_baron.cpp_CBaronWeapon_fire_FUN_00411400,00411400,core/baron.cpp,9,0,,9
 core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00411440,00411440,core/baron.cpp,22,0,,22
-core_baron.cpp_CBaron_fireProjectile_FUN_00411470,00411470,core/baron.cpp,4,0,,4
+core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00411470,00411470,core/baron.cpp,4,0,,4
 core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0,004114a0,core/baron.cpp,20,0,,20
 core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530,00411530,core/baron.cpp,34,1,pointer_cast,49
 core_baron.cpp_CBaron_getCollisionType_FUN_00411600,00411600,core/baron.cpp,4,0,,4
@@ -734,7 +734,7 @@ core_charactr.cpp_CCharacter_getDeathState_FUN_00428710,00428710,core/charactr.c
 core_charactr.cpp_CCharacter_followActor_FUN_00428780,00428780,core/charactr.cpp,107,1,undefined_data,122
 core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0,00428ab0,core/charactr.cpp,29,0,,29
 core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60,00428b60,core/charactr.cpp,11,0,,11
-core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0,00428bb0,core/charactr.cpp,5,4,unnamed_param,50
+core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0,00428bb0,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_isWalkComplete_FUN_00428bc0,00428bc0,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_canWalk_FUN_00428bf0,00428bf0,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_FUN_00428c00,00428c00,core/charactr.cpp,103,3,undefined_data|unrolled_memcpy,143
@@ -1204,7 +1204,7 @@ core_dest.cpp_CActorDestination_getActorType_FUN_0044b790,0044b790,core/dest.cpp
 core_dest.cpp_CActorDestination_ctor_FUN_0044b7a0,0044b7a0,core/dest.cpp,25,1,unrolled_strcpy,40
 core_dest.cpp_CActorDestination_setup_FUN_0044b810,0044b810,core/dest.cpp,13,0,,13
 core_dest.cpp_CActorDestination_process_FUN_0044b850,0044b850,core/dest.cpp,56,3,pointer_cast|self_copy_guard,96
-core_actor.cpp_CDemonActor_returnZero_FUN_0044ba10,0044ba10,core/actor.cpp,4,0,,4
+core_dest.cpp_CActorDestination_getCollisionType_FUN_0044ba10,0044ba10,core/dest.cpp,4,0,,4
 core_dest.cpp_CActorDestination_getBoundingBox_FUN_0044ba20,0044ba20,core/dest.cpp,16,0,,16
 core_dest.cpp_CActorDestination_acceptsActor_FUN_0044bab0,0044bab0,core/dest.cpp,19,0,,19
 core_dest.cpp_CActorDestination_archive_FUN_0044bb10,0044bb10,core/dest.cpp,22,0,,22
@@ -2321,7 +2321,7 @@ core_gabriela.cpp_CGabriella_processDamage_FUN_004996b0,004996b0,core/gabriela.c
 core_gabriela.cpp_CGabriella_FUN_004998c0,004998c0,core/gabriela.cpp,80,1,warning_overlapping_globals,95
 core_gabriela.cpp_CGabriella_FUN_00499b00,00499b00,core/gabriela.cpp,64,20,pointer_cast|pointer_truncation|unnamed_param|unrolled_memcpy,284
 core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_00499ca0,00499ca0,core/gabriela.cpp,151,18,pointer_cast|pointer_truncation|unrolled_memcpy|warning_type_propagation,351
-core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110,0049a110,core/gabriela.cpp,4,2,unnamed_param,29
+core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_0049a110,0049a110,core/gabriela.cpp,4,0,,4
 core_gabriela.cpp_CGabriella_drawWeapon_FUN_0049a130,0049a130,core/gabriela.cpp,9,0,,9
 core_gabriela.cpp_getSelectedWeapon_FUN_0049a160,0049a160,core/gabriela.cpp,4,0,,4
 core_gabriela.cpp_CGabriella_dtor_FUN_0049a170,0049a170,core/gabriela.cpp,20,1,negative_offset,35
@@ -2780,7 +2780,7 @@ engine_keyframe.c_recomputeKeyFrameNormals_FUN_004c4080,004c4080,engine/keyframe
 engine_keys.cpp_staticInit_FUN_004c4170,004c4170,engine/keys.cpp,5,0,,5
 engine_keys.cpp_CKeys_getKeyState_FUN_004c4180,004c4180,engine/keys.cpp,4,1,undefined_data,19
 engine_keys.cpp_CKeys_getAndClearKeyState_FUN_004c4190,004c4190,engine/keys.cpp,7,2,undefined_data,32
-engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0,004c41b0,engine/keys.cpp,5,0,,5
+engine_keys.cpp_clearKeypresses_FUN_004c41b0,004c41b0,engine/keys.cpp,5,0,,5
 engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0,004c41c0,engine/keys.cpp,6,0,,6
 engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0,004c41d0,engine/keys.cpp,8,0,,8
 engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0,004c41f0,engine/keys.cpp,5,1,undefined_data,20
@@ -2798,7 +2798,7 @@ core_ladder.cpp_CLadder_archive_FUN_004c44f0,004c44f0,core/ladder.cpp,13,0,,13
 core_ladder.cpp_CLadder_getCollisionType_FUN_004c4570,004c4570,core/ladder.cpp,9,0,,9
 core_ladder.cpp_CLadder_FUN_004c45a0,004c45a0,core/ladder.cpp,49,6,pointer_cast|pointer_truncation|unrolled_memcpy,124
 core_ladder.cpp_CLadder_FUN_004c46b0,004c46b0,core/ladder.cpp,48,6,pointer_cast|pointer_truncation|unrolled_memcpy,123
-core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0,004c47c0,core/ladder.cpp,4,2,unnamed_param,29
+core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0,004c47c0,core/ladder.cpp,4,0,,4
 core_ladder.cpp_CLadder_dtor_FUN_004c47d0,004c47d0,core/ladder.cpp,16,0,,16
 core_larva.cpp_staticInit_FUN_004c4820,004c4820,core/larva.cpp,8,0,,8
 core_larva.cpp_factoryFuncLarva_FUN_004c4850,004c4850,core/larva.cpp,10,0,,10
@@ -3032,7 +3032,7 @@ core_mimic.cpp_CMimic_processMorph_FUN_004d5e20,004d5e20,core/mimic.cpp,53,2,poi
 core_minecar.cpp_staticInit_FUN_004d5fb0,004d5fb0,core/minecar.cpp,8,0,,8
 core_minecar.cpp_factoryFuncMineCar_FUN_004d5fe0,004d5fe0,core/minecar.cpp,12,0,,12
 core_minecar.cpp_CMineCar_getActorType_FUN_004d6010,004d6010,core/minecar.cpp,4,0,,4
-core_minecar.cpp_CMinecar_setup_FUN_004d6020,004d6020,core/minecar.cpp,6,0,,6
+core_minecar.cpp_CMineCar_setup_FUN_004d6020,004d6020,core/minecar.cpp,6,0,,6
 core_minecar.cpp_CMineCar_process_FUN_004d6040,004d6040,core/minecar.cpp,16,0,,16
 core_minecar.cpp_CMineCar_ctor_FUN_004d60b0,004d60b0,core/minecar.cpp,7,0,,7
 core_minecar.cpp_CMineCar_dtor_FUN_004d60d0,004d60d0,core/minecar.cpp,19,0,,19
@@ -3144,8 +3144,8 @@ core_moloch.cpp_CMoloch_processAI_FUN_004de1b0,004de1b0,core/moloch.cpp,133,4,un
 core_moloch.cpp_CMoloch_renderOpaque_FUN_004de550,004de550,core/moloch.cpp,48,1,warning_overlapping_globals,63
 core_moloch.cpp_CMoloch_archive_FUN_004de680,004de680,core/moloch.cpp,12,0,,12
 core_moloch.cpp_CMoloch_startMorph_FUN_004de700,004de700,core/moloch.cpp,13,0,,13
-core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de750,004de750,core/moloch.cpp,4,0,,4
-core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de760,004de760,core/moloch.cpp,4,0,,4
+core_moloch.cpp_CMoloch_drawWeapon_FUN_004de750,004de750,core/moloch.cpp,4,0,,4
+core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_004de760,004de760,core/moloch.cpp,4,0,,4
 core_moon.cpp_staticInit_FUN_004de770,004de770,core/moon.cpp,14,0,,14
 core_moon.cpp_CMoon_ctor_FUN_004de800,004de800,core/moon.cpp,10,2,negative_offset,35
 core_moon.cpp_CMoon_dtor_FUN_004de830,004de830,core/moon.cpp,7,1,negative_offset,22
@@ -3240,7 +3240,7 @@ sound_mp3.cpp_CFileBitStream_reset_FUN_004e2850,004e2850,sound/mp3.cpp,11,0,,11
 sound_mp3.cpp_CFileBitStream_FUN_004e28a0,004e28a0,sound/mp3.cpp,33,8,unnamed_param,118
 sound_mp3.cpp_CFileBitStream_FUN_004e2980,004e2980,sound/mp3.cpp,21,0,,21
 sound_mp3.cpp_CFileBitStream_readBit_FUN_004e29d0,004e29d0,sound/mp3.cpp,46,1,undefined_data,61
-sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0,004e2ac0,sound/mp3.cpp,74,1,undefined_data,89
+sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0,004e2ac0,sound/mp3.cpp,73,1,undefined_data,88
 sound_mp3.cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40,004e2c40,sound/mp3.cpp,4,0,,4
 sound_mp3.cpp_CFileBitStream_FUN_004e2c50,004e2c50,sound/mp3.cpp,4,0,,4
 sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004e2c60,004e2c60,sound/mp3.cpp,16,0,,16
@@ -3525,7 +3525,7 @@ engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0,004f80e0,engine/pod.cpp,19,0,,19
 engine_pod.cpp_CPodFile_findFileIndex_FUN_004f8150,004f8150,engine/pod.cpp,28,0,,28
 engine_pod.cpp_CPodFile_populateFileInfo_FUN_004f81c0,004f81c0,engine/pod.cpp,27,1,unrolled_strcpy,42
 engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240,004f8240,engine/pod.cpp,114,19,pointer_cast|pointer_truncation|stack_param|stack_ref|undefined_data,329
-engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570,004f8570,engine/pod.cpp,31,14,unaffected_reg|unnamed_param|unrolled_memcpy,186
+engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570,004f8570,engine/pod.cpp,32,4,pointer_cast|pointer_truncation|unrolled_memcpy,87
 engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0,004f86a0,engine/pod.cpp,47,4,undefined_data,92
 engine_pod.cpp_CPod_ctor_FUN_004f8810,004f8810,engine/pod.cpp,12,1,shadow_pointer_walk,27
 engine_pod.cpp_CPod_dtor_FUN_004f8840,004f8840,engine/pod.cpp,16,0,,16
@@ -3581,8 +3581,8 @@ core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50,004fca50,core/scat.
 core_scat.cpp_CScat_archive_FUN_004fcae0,004fcae0,core/scat.cpp,5,0,,5
 core_scat.cpp_CScat_renderOpaque_FUN_004fcb20,004fcb20,core/scat.cpp,35,0,,35
 core_scat.cpp_CScat_processDamage_FUN_004fcbd0,004fcbd0,core/scat.cpp,57,0,,57
-core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20,004fcd20,core/scat.cpp,4,2,unnamed_param,29
-core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30,004fcd30,core/scat.cpp,5,4,unnamed_param,50
+core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20,004fcd20,core/scat.cpp,4,0,,4
+core_scat.cpp_CScat_drawWeapon_FUN_004fcd30,004fcd30,core/scat.cpp,5,0,,5
 core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40,004fcd40,core/scat.cpp,8,0,,8
 core_scat.cpp_CScat_FUN_004fcd90,004fcd90,core/scat.cpp,109,12,pointer_truncation|suspect_float|unaffected_reg,244
 core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0,004fcff0,core/scat.cpp,60,1,warning_overlapping_globals,75
@@ -3695,7 +3695,7 @@ core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40,0050df40,core/set.cpp,37
 core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0,0050dfe0,core/set.cpp,38,0,,38
 core_set.cpp_CDemonSet_FUN_0050e080,0050e080,core/set.cpp,36,5,undefined_data|warning_overlapping_globals,96
 core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190,0050e190,core/set.cpp,15,3,undefined_data|warning_overlapping_globals,55
-core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210,0050e210,core/set.cpp,38,1,shadow_pointer_walk,53
+core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210,0050e210,core/set.cpp,39,1,shadow_pointer_walk,54
 core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0050e300,0050e300,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_restoreCameraView_FUN_0050e310,0050e310,core/set.cpp,9,0,,9
 core_set.cpp_CDemonSet_setFlatColor_FUN_0050e340,0050e340,core/set.cpp,7,0,,7
@@ -3944,7 +3944,7 @@ core_skeleton.cpp_FUN_0051f650,0051f650,core/skeleton.cpp,12,2,undefined_data|wa
 core_skeleton.cpp_FUN_0051f680,0051f680,core/skeleton.cpp,29,1,warning_overlapping_globals,44
 core_skeleton.cpp_freeAllSkeletons_FUN_0051f730,0051f730,core/skeleton.cpp,13,1,warning_overlapping_globals,28
 core_skeleton.cpp_FUN_0051f760,0051f760,core/skeleton.cpp,35,1,warning_overlapping_globals,50
-shape_meshlod.cpp_calculateDistanceSquared_FUN_0051f800,0051f800,shape/meshlod.cpp,10,0,,10
+core_skeleton.cpp_calculateDistanceSquared_FUN_0051f800,0051f800,core/skeleton.cpp,10,0,,10
 core_skeleton.cpp_SVert_ctor_FUN_0051f840,0051f840,core/skeleton.cpp,6,2,pointer_cast|pointer_truncation,36
 core_skeleton.cpp_SVert_dtor_FUN_0051f860,0051f860,core/skeleton.cpp,6,1,negative_offset,21
 core_skeleton.cpp_CSkeleton_arrdtor_FUN_0051f880,0051f880,core/skeleton.cpp,6,0,,6
@@ -4008,7 +4008,7 @@ sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630,00524630,sound/snd
 sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0,005247a0,sound/sndmain.cpp,23,2,pointer_cast|warning_overlapping_globals,53
 sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830,00524830,sound/sndmain.cpp,136,7,bitcast_double_pair|undefined_data|unresolved_funcptr|warning_overlapping_globals,226
 sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10,00524d10,sound/sndmain.cpp,359,56,bitcast_double_pair|pointer_cast|pointer_stride_bytecount|pointer_truncation|raw_address_constant|raw_address_pointer_store|shadow_pointer_walk|sub84_truncation|warning_overlapping_globals,964
-sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570,00525570,sound/sndmain.cpp,49,3,pointer_truncation|unresolved_funcptr|warning_overlapping_globals,94
+sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570,00525570,sound/sndmain.cpp,50,3,pointer_truncation|unresolved_funcptr|warning_overlapping_globals,95
 sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005256f0,005256f0,sound/sndmain.cpp,52,3,unresolved_funcptr|warning_overlapping_globals,92
 sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0,005257e0,sound/sndmain.cpp,17,2,unresolved_funcptr|warning_overlapping_globals,47
 sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870,00525870,sound/sndmain.cpp,53,1,pointer_cast,68
@@ -4311,7 +4311,7 @@ shape_spotview.cpp_CSpotView_dtor_FUN_00534740,00534740,shape/spotview.cpp,4,0,,
 core_stairs.cpp_staticInit_FUN_00534750,00534750,core/stairs.cpp,8,0,,8
 core_stairs.cpp_factoryFuncStairs_FUN_00534780,00534780,core/stairs.cpp,10,0,,10
 core_stairs.cpp_CStairs_getActorType_FUN_005347a0,005347a0,core/stairs.cpp,4,0,,4
-core_stairs.cpp_CStairs_ctor_FUN_005347b0,005347b0,core/stairs.cpp,17,20,pointer_cast|pointer_truncation|unnamed_param,232
+core_stairs.cpp_CStairs_ctor_FUN_005347b0,005347b0,core/stairs.cpp,17,18,pointer_cast|pointer_truncation,207
 core_stairs.cpp_CStairs_setup_FUN_00534820,00534820,core/stairs.cpp,6,0,,6
 core_stairs.cpp_CStairs_process_FUN_00534840,00534840,core/stairs.cpp,4,0,,4
 core_stairs.cpp_CStairs_renderOpaque_FUN_00534850,00534850,core/stairs.cpp,4,0,,4
@@ -4376,7 +4376,7 @@ core_stranger.cpp_CStranger_tryThrowDynamite_FUN_0053ff50,0053ff50,core/stranger
 core_stranger.cpp_CStranger_FUN_0053ffe0,0053ffe0,core/stranger.cpp,139,4,unaffected_reg,184
 core_stranger.cpp_CStranger_FUN_005402f0,005402f0,core/stranger.cpp,107,0,,107
 core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660,00540660,core/stranger.cpp,36,3,unaffected_reg|unrolled_memset,76
-core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720,00540720,core/stranger.cpp,4,2,unnamed_param,29
+core_stranger.cpp_CStranger_isWeaponDrawn_FUN_00540720,00540720,core/stranger.cpp,4,0,,4
 core_stranger.cpp_CStranger_drawWeapon_FUN_00540730,00540730,core/stranger.cpp,11,0,,11
 core_stranger.cpp_CStranger_getGrabbed_FUN_00540770,00540770,core/stranger.cpp,22,0,,22
 core_stranger.cpp_CStranger_reset_FUN_00540820,00540820,core/stranger.cpp,16,0,,16
@@ -4384,10 +4384,10 @@ core_stranger.cpp_CStranger_getDeathState_FUN_00540890,00540890,core/stranger.cp
 core_stranger.cpp_CStranger_dropCarriedObject_FUN_005408c0,005408c0,core/stranger.cpp,12,0,,12
 core_stranger.cpp_CStranger_drop_FUN_00540920,00540920,core/stranger.cpp,11,0,,11
 core_stranger.cpp_FUN_00540970,00540970,core/stranger.cpp,8,8,stack_param,93
-shape_meshlod.cpp_divideVectorByScalar_FUN_005409a0,005409a0,shape/meshlod.cpp,7,0,,7
+core_stranger.cpp_divideVectorByScalar_FUN_005409a0,005409a0,core/stranger.cpp,7,0,,7
 core_stranger.cpp_FUN_005409c0,005409c0,core/stranger.cpp,4,8,unnamed_param,89
 core_stranger.cpp_setMatrixTranslation_FUN_005409f0,005409f0,core/stranger.cpp,7,0,,7
-shape_multicrm.cpp_CMultiCram_getSecondModel_FUN_00540a10,00540a10,shape/multicrm.cpp,4,0,,4
+core_stranger.cpp_FUN_00540a10,00540a10,core/stranger.cpp,4,1,pointer_cast,19
 core_stranger.cpp_isProcessDisabled_FUN_00540a20,00540a20,core/stranger.cpp,4,0,,4
 core_stranger.cpp_getScaleY_FUN_00540a30,00540a30,core/stranger.cpp,4,0,,4
 core_stranger.cpp_setWindVelocity_FUN_00540a40,00540a40,core/stranger.cpp,10,1,unrolled_memcpy,25
@@ -4708,7 +4708,7 @@ core_waypoint.cpp_CWayPoint_isReachable_FUN_005523b0,005523b0,core/waypoint.cpp,
 core_waypoint.cpp_factoryFuncWayPoint_FUN_005524a0,005524a0,core/waypoint.cpp,10,0,,10
 core_waypoint.cpp_CWayPoint_getActorType_FUN_005524c0,005524c0,core/waypoint.cpp,4,0,,4
 core_waypoint.cpp_CWayPoint_ctor_FUN_005524d0,005524d0,core/waypoint.cpp,11,0,,11
-core_waypoint.cpp_CWaypoint_setup_FUN_00552510,00552510,core/waypoint.cpp,37,2,shadow_pointer_walk|warning_type_propagation,67
+core_waypoint.cpp_CWayPoint_setup_FUN_00552510,00552510,core/waypoint.cpp,37,2,shadow_pointer_walk|warning_type_propagation,67
 core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0,005525d0,core/waypoint.cpp,4,0,,4
 core_waypoint.cpp_CWayPoint_archive_FUN_005525e0,005525e0,core/waypoint.cpp,25,0,,25
 core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680,00552680,core/waypoint.cpp,86,8,pointer_cast|pointer_stride_bytecount|shadow_pointer_walk|undefined_data|warning_overlapping_globals,191

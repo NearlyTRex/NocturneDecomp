@@ -1,0 +1,26 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_baron.cpp_CBaron_drawWeapon_FUN_00411310
+# Entry:       00411310
+# Signature:   void __cdecl core_baron_cpp_CBaron_drawWeapon_FUN_00411310(CBaron *this_ptr,int drawn)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00411310 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 1 instructions, 3 P-code ops
+# ============================================================================

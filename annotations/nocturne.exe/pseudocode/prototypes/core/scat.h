@@ -59,13 +59,13 @@ int __cdecl CScat::renderOpaque(CScat *this_ptr);
 // Address: 004fcbd0
 void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20
+// Original: core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20
 // Address: 004fcd20
-undefined4 CScat::handlePureVirtualCall(int param_1);
+int __cdecl CScat::isWeaponDrawn(CScat *this_ptr);
 
-// Original: core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30
+// Original: core_scat.cpp_CScat_drawWeapon_FUN_004fcd30
 // Address: 004fcd30
-void CScat::handlePureVirtualCall(int param_1,undefined4 param_2);
+void __cdecl CScat::drawWeapon(CScat *this_ptr,int drawn);
 
 // Original: core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40
 // Address: 004fcd40

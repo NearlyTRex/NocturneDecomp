@@ -121,7 +121,7 @@ void __cdecl CInventory::updateInventory(CInventory *this_ptr);
 
 // Original: core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
 // Address: 004ffda0
-float __cdecl CInventory::calculateTotalBatteryCharge(CInventory *inventory_ptr,float max_charge);
+float __cdecl CInventory::calculateTotalBatteryCharge(CInventory *this_ptr,float max_charge);
 
 // Original: core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10
 // Address: 004ffe10

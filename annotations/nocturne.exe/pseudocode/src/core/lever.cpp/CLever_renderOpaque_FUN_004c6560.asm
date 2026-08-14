@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004c6569
     PUSH EBX                            ; 004c656c
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004c656d
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c6572
     PUSH 0x0                            ; 004c6575
     LEA ESI,[EBP + -0x1c]               ; 004c6577

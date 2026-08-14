@@ -534,7 +534,7 @@ section .text
     PUSH 0xff                           ; 004d0d02
     PUSH ESI                            ; 004d0d07
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0 ; 004d0d08
-        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)
+        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0d0d
     PUSH EAX                            ; 004d0d10
     PUSH 0x62a8ad                       ; 004d0d11 | s_MaxChar_0062a8ad

@@ -241,7 +241,7 @@ SPanel * __cdecl copyPanel(SPanel *dest,SPanel *src);
 
 // Original: core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_0050ba70
 // Address: 0050ba70
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *objs,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SPanel_arrdtor_FUN_0050ba90
 // Address: 0050ba90

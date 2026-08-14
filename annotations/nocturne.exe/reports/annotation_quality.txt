@@ -12,16 +12,16 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,921
-  Unnamed functions (FUN_):          307 ( 6.2%)
-  Functions with unnamed params:     26 ( 0.5%)
-  Functions with type issues:        1,689 (34.3%)
+  Unnamed functions (FUN_):          308 ( 6.3%)
+  Functions with unnamed params:     25 ( 0.5%)
+  Functions with type issues:        1,688 (34.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
     Missing register params:           10
-    Wrong calling convention:          50
+    Wrong calling convention:          49
     Undefined types in variables:      1609
     Unresolved stack params:           112
 
@@ -273,7 +273,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0052ee30  unknown       0 callers
     0x0052ee40  unknown       0 callers
 
-  core/stranger.cpp (10 unnamed)
+  core/stranger.cpp (11 unnamed)
     0x005384d0  __cdecl       2 callers
     0x00538440  __cdecl       1 callers
     0x005396d0  __cdecl       1 callers
@@ -284,6 +284,7 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005383e0  __cdecl       0 callers
     0x00540970  unknown       0 callers
     0x005409c0  unknown       0 callers
+    0x00540a10  __cdecl       0 callers
 
   wincore/wddvmem.cpp (5 unnamed)
     0x00553ba0  __cdecl       2 callers
@@ -636,10 +637,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (char *)
     Named:   this_ptr (CSound *)
 
-  CStairs_ctor
-    Address: 0x005347b0  File: core/stairs.cpp
-    Unnamed: param_1 (CStairs *)
-
   CStranger
     Address: 0x00538440  File: core/stranger.cpp
     Unnamed: param_2 (float *)
@@ -745,7 +742,7 @@ Missing register parameters (likely wrong calling convention) (10)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (50)
+Wrong calling convention (unaffected register usage) (49)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -980,12 +977,6 @@ Wrong calling convention (unaffected register usage) (50)
     Address: 0x004f5110  File: cockpit/pkbitmap.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
     Signature: CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5110(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CPodFile_getAuditRecord
-    Address: 0x004f8570  File: engine/pod.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CScat_process
@@ -8963,6 +8954,11 @@ Undefined types in variables (1609)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  calculateDistanceSquared
+    Address: 0x0051f800  File: core/skeleton.cpp
+    Locals:  local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CSmiley_processDismemberment
     Address: 0x00520b60  File: core/smiley.cpp
     Locals:  local_14 (undefined4)
@@ -9598,11 +9594,6 @@ Undefined types in variables (1609)
     Locals:  local_134 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  calculateDistanceSquared
-    Address: 0x0051f800  File: shape/meshlod.cpp
-    Locals:  local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CSpotView_handleInput
     Address: 0x005342b0  File: shape/spotview.cpp
     Locals:  local_20 (undefined4)
@@ -9785,7 +9776,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (69 groups)
+DUPLICATE FUNCTION NAMES (67 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9826,10 +9817,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0040e2e1  (undefined4 *param_1)
     0x0040e2f1  (undefined4 *param_1)
 
-  core_actor.cpp_CDemonActor_returnZero  (3 functions)
+  core_actor.cpp_CDemonActor_returnZero  (2 functions)
     0x00409f00  (CDemonActor *this_ptr)
     0x0040a130  (CDemonActor *this_ptr)
-    0x0044ba10  (CDemonActor *this_ptr)
 
   core_bat.cpp  (3 functions)
     0x0041206c  (void)
@@ -9864,7 +9854,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0042af70  (CCharacter *this_ptr,float delta_time)
 
   core_charactr.cpp_CCharacter_setWalkTimeout  (2 functions)
-    0x00428bb0  (int param_1,undefined4 param_2)
+    0x00428bb0  (CCharacter *this_ptr,float timeout)
     0x00428ee0  (CCharacter *this_ptr,float timeout)
 
   core_cloth.cpp_CCloth  (3 functions)
@@ -10000,10 +9990,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004d90e0  (CDemonMission *this_ptr,CLocation *teleport_target)
     0x004d93d0  (CDemonMission *this_ptr,char *param_2)
 
-  core_moloch.cpp_CMoloch_handlePureVirtualCall  (2 functions)
-    0x004de750  (void)
-    0x004de760  (void)
-
   core_scat.cpp  (2 functions)
     0x004fbb70  (void)
     0x004fbbb0  (int param_1)
@@ -10012,10 +9998,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004fcd90  (CScat *this_ptr,float delta_time)
     0x004fd1d0  (CScat *this_ptr,int hand_index)
     0x004fdd00  (CScat *this_ptr)
-
-  core_scat.cpp_CScat_handlePureVirtualCall  (2 functions)
-    0x004fcd20  (int param_1)
-    0x004fcd30  (int param_1,undefined4 param_2)
 
   core_script.cpp_CScript  (9 functions)
     0x004fe500  (CScript *this_ptr)
@@ -10090,9 +10072,10 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0052dff0  (CSound *this_ptr)
     0x0052ebc0  (CSound *this_ptr,char *param_2)
 
-  core_stranger.cpp  (2 functions)
+  core_stranger.cpp  (3 functions)
     0x00540970  (void)
     0x005409c0  (float *param_1,float *param_2)
+    0x00540a10  (void *ptr)
 
   core_stranger.cpp_CStranger  (8 functions)
     0x005383e0  (CStranger *this_ptr)

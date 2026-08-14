@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value)
+; int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value )
 ;
 ; Parameters:
-; CEditorTools *   Stack[0x4]:4   editor_tools
+; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   prompt_text
 ; CVector3f *      Stack[0xc]:4   result_ptr
 ; int              Stack[0x10]:4   show_current_value

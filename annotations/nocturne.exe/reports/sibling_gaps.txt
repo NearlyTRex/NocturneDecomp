@@ -611,9 +611,9 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
   The mapper matches on bytes and layout only -- it never reads a name, so
   these are invisible to it. Unit and name core both agree on each row.
 
-  candidate pairs   : 37
+  candidate pairs   : 39
   ambiguous cores   : 1   (core repeats on one side -- overloads; excluded)
-  by shape agreement: {'unshaped': 34, 'size_mismatch': 2, 'similar_size': 1}
+  by shape agreement: {'unshaped': 36, 'size_mismatch': 2, 'similar_size': 1}
     identical/same_mnemonics -- the body did not change either; the mapper
     missed these on layout alone, so they are as safe as a matched pair.
     size_mismatch -- the body WAS edited between the builds. That is the
@@ -631,6 +631,8 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
     004cbad0 -> 0048ec80  [unshaped]  core_flamegun.cpp_CFlameThrower_fireProjectile
     00524ef0 -> 004d9e50  [unshaped]  core_mission.cpp_CDemonMission_ctor
     00524f00 -> 004d9e60  [unshaped]  core_mission.cpp_CDemonMission_dtor
+    005299d0 -> 004de750  [unshaped]  core_moloch.cpp_CMoloch_drawWeapon
+    005299e0 -> 004de760  [unshaped]  core_moloch.cpp_CMoloch_isWeaponDrawn
     005714b0 -> 0050ea80  [unshaped]  core_set.cpp_C3DSLight_dtor
     00571470 -> 0050ea40  [unshaped]  core_set.cpp_SRoom_ctor
     00571480 -> 0050ea50  [unshaped]  core_set.cpp_SRoom_dtor
@@ -661,13 +663,17 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
   pairs compared        : 5197
-  never transferred     : 80   (nocturne side has no signature at all -- transfer work, not drift)
+  never transferred     : 72   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 42   (both sides typed, and they disagree -- investigate)
-  name core differs     : 191   (mapped as the same function under two different names)
+  name core differs     : 183   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
-  by kind: {'param': 21, 'ret': 16, 'param0': 6, 'param2': 5, 'param1': 4, 'param3': 1, 'conv': 1}
+  by kind: {'param': 22, 'ret': 18, 'param2': 5, 'param0': 5, 'param1': 4, 'param3': 1, 'conv': 1}
 
+    0053ee30 -> 00540a10  conf 0.99  shape identical
+      shape_multicrm.cpp_CMultiCram_getSecondModel
+        param0 CMultiCram* -> void*
+        ret CDSEModel* -> void*
     00543cf0 -> 004ede70  conf 0.99  shape identical
       core_netgame.cpp_SNetPlayer_copy
         ret void -> SNetPlayer*
@@ -732,9 +738,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     0042f9f0 -> 0042b5d0  conf 0.85  shape same_mnemonics
       core_charactr.cpp_CCharacter_dtor
         ret CDemonActor* -> CCharacter*
-    0046fb70 -> 0044ba10  conf 0.85  shape unshaped
-      core_dest.cpp_CActorDestination_renderTransparent
-        param0 CActorDestination* -> CDemonActor*
     004719c0 -> 0044d440  conf 0.85  shape identical
       core_dimage.cpp_CDemonImage_dtor
         param count 2 -> 1
@@ -767,12 +770,13 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     00409080 -> 0040a380  conf 0.82  shape unshaped
       core_actor.cpp_CDemonActor_drop
         param count 3 -> 1
+    0046fb70 -> 0044ba10  conf 0.82  shape unshaped
+      core_dest.cpp_CActorDestination_renderTransparent
+        param count 1 -> 2
+        ret int -> ECollisionType
     005da7c0 -> 00543890  conf 0.82  shape unshaped
       core_teleport.cpp_CTeleportDest_getCollisionType
         param0 CTeleportDest* -> CDemonActor*
-    00413e60 -> 00411470  conf 0.78  shape unshaped
-      core_baron.cpp_CBaronWeapon_fireProjectile
-        param0 CBaronWeapon* -> CBaron*
     0050d720 -> 004cdbc0  conf 0.78  shape same_mnemonics
       engine_matrix.c_pop
         param count 0 -> 1
@@ -808,7 +812,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 173, 'stubbed in nocturne': 8, 'renamed': 7, 'MAPPING SUSPECT': 2, 'case-only spelling': 1}
+  {'unnamed on one side': 172, 'renamed': 8, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -817,15 +821,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     stubbed in nocturne the game build compiled the body out; expected
     renamed             genuinely different identifiers; read both
 
-    [MAPPING SUSPECT] 0046fb70 -> 0044ba10  conf 0.85  shape unshaped
-      nocedit  CActorDestination_renderTransparent
-      nocturne CDemonActor_returnZero
-    [MAPPING SUSPECT] 00413e60 -> 00411470  conf 0.78  shape unshaped
-      nocedit  CBaronWeapon_fireProjectile
-      nocturne CBaron_fireProjectile
-    [case-only spelling] 00520e80 -> 004d6010  conf 0.78  shape unshaped
-      nocedit  CMinecar_getActorType
-      nocturne CMineCar_getActorType
     [renamed] 00544730 -> 004ee8b0  conf 0.99  shape identical
       nocedit  CAlphaBitmap_arrdtor1
       nocturne CAlphaBitmap_arrdtor
@@ -841,6 +836,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [renamed] 005bac80 -> 00534c80  conf 0.85  shape identical
       nocedit  CDemonTriangle_arrdtor
       nocturne SFly_arrdtor
+    [renamed] 0046fb70 -> 0044ba10  conf 0.82  shape unshaped
+      nocedit  CActorDestination_renderTransparent
+      nocturne CActorDestination_getCollisionType
     [renamed] 005db9d0 -> 005445c0  conf 0.82  shape same_mnemonics
       nocedit  CTentacle_updateGrabbedVictim
       nocturne CTentacle_attractActorToward
@@ -853,21 +851,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [stubbed in nocturne] 00409080 -> 0040a380  conf 0.82  shape unshaped
       nocedit  CDemonActor_drop
       nocturne CDemonActor_doNothing
-    [stubbed in nocturne] 004d7590 -> 0049a110  conf 0.82  shape same_mnemonics
-      nocedit  CGabriella_isWeaponDrawn
-      nocturne CGabriella_handlePureVirtualCall
-    [stubbed in nocturne] 00413cf0 -> 00411310  conf 0.78  shape unshaped
-      nocedit  CBaron_drawWeapon
-      nocturne CBaron_handlePureVirtualCall
-    [stubbed in nocturne] 00557ff0 -> 004fcd20  conf 0.78  shape same_mnemonics
-      nocedit  CScat_isWeaponDrawn
-      nocturne CScat_handlePureVirtualCall
-    [stubbed in nocturne] 00558000 -> 004fcd30  conf 0.78  shape same_mnemonics
-      nocedit  CScat_drawWeapon
-      nocturne CScat_handlePureVirtualCall
-    [stubbed in nocturne] 005c6650 -> 00540720  conf 0.78  shape same_mnemonics
-      nocedit  CStranger_isWeaponDrawn
-      nocturne CStranger_handlePureVirtualCall
     [stubbed in nocturne] 004090a0 -> 0040a130  conf 0.57  shape unshaped
       nocedit  CDemonActor_getPathMap
       nocturne CDemonActor_returnZero
@@ -1066,9 +1049,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 004fe900 -> 004c0640  conf 0.85  shape similar_size
       nocedit  CInventory_createAmmoFromWeapon
       nocturne CInventory
-    [unnamed on one side] 00502450 -> 004c41b0  conf 0.85  shape unshaped
-      nocedit  clearKeypresses
-      nocturne CKeys_clearKeypresses
     [unnamed on one side] 00502a70 -> 004c45a0  conf 0.85  shape same_mnemonics
       nocedit  CLadder_updatePositionFromMaster
       nocturne CLadder

@@ -20,7 +20,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0047c471
     PUSH EBX                            ; 0047c475
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c476
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     MOV EAX,dword ptr [EBX + 0x5690]    ; 0047c47b
     FLD float ptr [EAX + 0x10]          ; 0047c481
     FSUB float ptr [EAX + 0x4]          ; 0047c484

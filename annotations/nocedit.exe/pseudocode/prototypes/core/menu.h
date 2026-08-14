@@ -89,4 +89,4 @@ void __cdecl configureCustomKeyBindings(void);
 
 // Original: core_menu.cpp_CAlphaBitmap_arrdtor_FUN_00514f50
 // Address: 00514f50
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);

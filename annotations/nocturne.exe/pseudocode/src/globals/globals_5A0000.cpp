@@ -509,7 +509,7 @@ CDemonActor_vtable g_CMarqueeVTable = {
     .archive = (CDemonActor_archive *)core_marquee_cpp_CMarquee_archive_FUN_004cc870
 };
 CDemonActor_vtable g_CMineCarVTable = {
-    .setup = (CDemonActor_setup *)core_minecar_cpp_CMinecar_setup_FUN_004d6020,
+    .setup = (CDemonActor_setup *)core_minecar_cpp_CMineCar_setup_FUN_004d6020,
     .process = (CDemonActor_process *)core_minecar_cpp_CMineCar_process_FUN_004d6040,
     .renderOpaque = (CDemonActor_renderOpaque *)core_platfrm_cpp_CPlatform_renderOpaque_FUN_004f6c60,
     .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_CDemonActor_returnZero_FUN_00409f00,
@@ -1319,7 +1319,7 @@ CDemonActor_vtable g_CWaterActorVTable = {
     .archive = (CDemonActor_archive *)core_wateract_cpp_CWaterActor_archive_FUN_00551ea0
 };
 CDemonActor_vtable g_CWayPointVTable = {
-    .setup = (CDemonActor_setup *)core_waypoint_cpp_CWaypoint_setup_FUN_00552510,
+    .setup = (CDemonActor_setup *)core_waypoint_cpp_CWayPoint_setup_FUN_00552510,
     .process = (CDemonActor_process *)core_trigger_cpp_CTrigger_process_FUN_00547b30,
     .renderOpaque = (CDemonActor_renderOpaque *)core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0,
     .renderTransparent = (CDemonActor_renderTransparent *)core_trigger_cpp_CTrigger_renderTransparent_FUN_00548100,
@@ -2170,8 +2170,8 @@ CHero_full_vtable g_CMolochVTable = {
     },
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0,
-        .drawWeapon = (CHero_drawWeapon *)core_moloch_cpp_CMoloch_handlePureVirtualCall_FUN_004de750,
-        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_moloch_cpp_CMoloch_handlePureVirtualCall_FUN_004de760,
+        .drawWeapon = (CHero_drawWeapon *)core_moloch_cpp_CMoloch_drawWeapon_FUN_004de750,
+        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_moloch_cpp_CMoloch_isWeaponDrawn_FUN_004de760,
         .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004b5ec0
     }
 };
@@ -2260,8 +2260,8 @@ CHero_full_vtable g_CScatVTable = {
     },
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_scat_cpp_CScat_createDefaultWeapon_FUN_004fbe80,
-        .drawWeapon = (CHero_drawWeapon *)core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd30,
-        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd20,
+        .drawWeapon = (CHero_drawWeapon *)core_scat_cpp_CScat_drawWeapon_FUN_004fcd30,
+        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_scat_cpp_CScat_isWeaponDrawn_FUN_004fcd20,
         .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004b5ec0
     }
 };
@@ -2351,7 +2351,7 @@ CHero_full_vtable g_CStrangerVTable = {
     ._uh = {
         .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0,
         .drawWeapon = (CHero_drawWeapon *)core_stranger_cpp_CStranger_drawWeapon_FUN_00540730,
-        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_stranger_cpp_CStranger_handlePureVirtualCall_FUN_00540720,
+        .isWeaponDrawn = (CHero_isWeaponDrawn *)core_stranger_cpp_CStranger_isWeaponDrawn_FUN_00540720,
         .reset = (CHero_reset *)core_stranger_cpp_CStranger_reset_FUN_00540820
     }
 };

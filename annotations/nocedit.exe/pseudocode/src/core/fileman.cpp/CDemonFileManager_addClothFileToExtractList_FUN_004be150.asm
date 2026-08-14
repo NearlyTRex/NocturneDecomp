@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150(CDemonFileManager *file_manager_ptr,char *cloth_filename)
+; void __cdecl core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150(CDemonFileManager *this_ptr,char *cloth_filename)
 ;
 ; Parameters:
-; CDemonFileManager * Stack[0x4]:4   file_manager_ptr
+; CDemonFileManager * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   cloth_filename
 ;
 ; XREF[1]:

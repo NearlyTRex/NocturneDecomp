@@ -2,13 +2,13 @@
 // Address: 005dd200
 // Address Range: [[005dd200, 005dd56a]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index)
+// Signature: void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *this_ptr,int texture_index)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x005dd2de) */
 
-void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index)
+void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *this_ptr,int texture_index)
 
 {
   int iVar1;
@@ -22,12 +22,12 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
   byte *pbVar2;
   byte bVar3;
   
-  g_CurrentTextureData = cache->texture_data_ptrs[texture_index];
-  g_CurrentTextureOpacityData = cache->texture_opacity_ptrs[texture_index];
+  g_CurrentTextureData = this_ptr->texture_data_ptrs[texture_index];
+  g_CurrentTextureOpacityData = this_ptr->texture_opacity_ptrs[texture_index];
   g_CurrentTextureOffsetU = 0;
   g_CurrentTextureOffsetV = 0;
-  g_CurrentTextureDimension = cache->texture_dimensions[texture_index];
-  pbVar6 = cache->texture_palette_ptrs[texture_index];
+  g_CurrentTextureDimension = this_ptr->texture_dimensions[texture_index];
+  pbVar6 = this_ptr->texture_palette_ptrs[texture_index];
   g_CurrentPalette = (SRGBColorPalette *)pbVar6;
   if (g_UseExternalRenderer == 0) {
     if (g_BitsPerPixel == 0x20) {

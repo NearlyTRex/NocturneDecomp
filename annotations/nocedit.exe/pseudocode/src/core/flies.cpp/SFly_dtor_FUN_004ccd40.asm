@@ -20,7 +20,7 @@ section .text
     ADD EAX,0x4                         ; 004ccd46
     PUSH EAX                            ; 004ccd49
     CALL core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30 ; 004ccd4a
-        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f * objs, uint flags)
+        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ccd4f
     SUB EAX,0x4                         ; 004ccd52
     RET                                 ; 004ccd55

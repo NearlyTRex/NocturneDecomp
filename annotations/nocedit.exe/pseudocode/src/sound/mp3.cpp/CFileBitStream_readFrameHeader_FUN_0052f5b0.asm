@@ -33,7 +33,7 @@ section .text
     PUSH ESI                            ; 0052f5c7
     MOV dword ptr [EBX],EAX             ; 0052f5c8
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f5ca
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     MOV EDX,0x4                         ; 0052f5cf
     ADD ESP,0x8                         ; 0052f5d4
     SUB EDX,EAX                         ; 0052f5d7
@@ -49,13 +49,13 @@ section .text
     PUSH ESI                            ; 0052f5f1
     MOV dword ptr [EBX + 0x8],EAX       ; 0052f5f2
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f5f5
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0052f5fa
     PUSH 0x2                            ; 0052f5fd
     PUSH ESI                            ; 0052f5ff
     MOV dword ptr [EBX + 0xc],EAX       ; 0052f600
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f603
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0052f608
     PUSH ESI                            ; 0052f60b
     MOV dword ptr [EBX + 0x10],EAX      ; 0052f60c
@@ -71,13 +71,13 @@ section .text
     PUSH ESI                            ; 0052f625
     MOV dword ptr [EBX + 0x18],EAX      ; 0052f626
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f629
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0052f62e
     PUSH 0x2                            ; 0052f631
     PUSH ESI                            ; 0052f633
     MOV dword ptr [EBX + 0x1c],EAX      ; 0052f634
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f637
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0052f63c
     PUSH ESI                            ; 0052f63f
     MOV dword ptr [EBX + 0x20],EAX      ; 0052f640
@@ -93,7 +93,7 @@ section .text
     PUSH ESI                            ; 0052f659
     MOV dword ptr [EBX + 0x28],EAX      ; 0052f65a
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f65d
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0052f662
     MOV dword ptr [EBX + 0x2c],EAX      ; 0052f665
     POP ESI                             ; 0052f668

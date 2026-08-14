@@ -64,7 +64,7 @@ section .text
     PUSH EAX                            ; 0049a7d4
         ;   Label: LAB_0049a7d4
     CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640 ; 0049a7d5
-        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)
+        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * this_ptr)
     ADD ESP,0x4                         ; 0049a7da
     POP ESI                             ; 0049a7dd
     POP EBX                             ; 0049a7de

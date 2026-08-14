@@ -165,7 +165,7 @@ int __cdecl CEditorTools::promptForValidDouble(CEditorTools *this_ptr,char *prom
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
 // Address: 004a0300
-int __cdecl CEditorTools::promptForValidVector(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value);
+int __cdecl CEditorTools::promptForValidVector(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value);
 
 // Original: shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 // Address: 004a03d0
@@ -205,7 +205,7 @@ void __cdecl CEditorTools::paintCurrentWindow(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230
 // Address: 004a1230
-void __cdecl CEditorTools::drawWindowSeparator(CEditorTools *editor_tools,int line_position);
+void __cdecl CEditorTools::drawWindowSeparator(CEditorTools *this_ptr,int line_position);
 
 // Original: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 // Address: 004a1330
@@ -273,7 +273,7 @@ CStrList * __cdecl CStrList::copy(CStrList *this_ptr,CStrList *other);
 
 // Original: shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0
 // Address: 004a2ac0
-CStrList * __cdecl CStrList::copyFrom(CStrList *dest_ptr,CStrList *source_ptr);
+CStrList * __cdecl CStrList::copyFrom(CStrList *this_ptr,CStrList *source_ptr);
 
 // Original: shape_edittool.cpp_CStrList_clear_FUN_004a2b10
 // Address: 004a2b10

@@ -285,7 +285,7 @@ void __cdecl CDemonSet::loadStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_set.cpp_CVector3f_equals_FUN_0050ea10
 // Address: 0050ea10
-int __cdecl CVector3f::equals(CVector3f *a,CVector3f *b);
+int __cdecl CVector3f::equals(CVector3f *this_ptr,CVector3f *b);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_0050ea40
 // Address: 0050ea40
@@ -309,7 +309,7 @@ C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 
 // Original: core_set.cpp_CVector3f_copy_FUN_0050ea90
 // Address: 0050ea90
-CVector3f * __cdecl CVector3f::copy(CVector3f *a,CVector3f *b);
+CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *b);
 
 // Original: core_set.cpp_CVector3f_arrdtor_FUN_0050eae0
 // Address: 0050eae0

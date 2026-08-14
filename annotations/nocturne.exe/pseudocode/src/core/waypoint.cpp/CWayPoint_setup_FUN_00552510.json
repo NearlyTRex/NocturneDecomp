@@ -1,0 +1,232 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "warning_type_propagation"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00552510",
+    "address_range": [
+      [
+        "00552510",
+        "005525cb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWayPoint_setup_FUN_00552510",
+    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_00552510(CWayPoint *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00547a00",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_setup_FUN_00547a00"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00597768",
+      "name": "s_none_00597768",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0059776d",
+      "name": "s_true_0059776d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00597772",
+      "name": "s_core_waypoint_cpp_00597772",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00597787",
+      "name": "s_Can_t_have_creation_even_00597787",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.073529411764706,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 109,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 30,
+      "INT_AND": 35,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 16,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 345
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CWayPoint *)((pCVar5->base).base.actor_name + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWayPoint",
+        "offset": 0,
+        "vtable_addr": "005a4034"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

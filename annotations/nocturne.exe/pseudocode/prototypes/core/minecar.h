@@ -13,11 +13,11 @@ CMineCar * __cdecl factoryFuncMineCar(void);
 
 // Original: core_minecar.cpp_CMineCar_getActorType_FUN_004d6010
 // Address: 004d6010
-CDemonActorType * CMineCar::getActorType(void);
+CDemonActorType * __cdecl CMineCar::getActorType(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_CMinecar_setup_FUN_004d6020
+// Original: core_minecar.cpp_CMineCar_setup_FUN_004d6020
 // Address: 004d6020
-void __cdecl CMinecar::setup(CMineCar *this_ptr);
+void __cdecl CMineCar::setup(CMineCar *this_ptr);
 
 // Original: core_minecar.cpp_CMineCar_process_FUN_004d6040
 // Address: 004d6040

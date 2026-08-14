@@ -453,20 +453,20 @@ SVert * __cdecl SVert::dtor(SVert *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CSkeleton_arrdtor_FUN_005a1fb0
 // Address: 005a1fb0
-CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *objs,uint flags);
+CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_arrdtor_FUN_005a1fd0
 // Address: 005a1fd0
-CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *objs,uint flags);
+CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CVector3f_arrdtor1_FUN_005a1ff0
 // Address: 005a1ff0
-CVector3f * __cdecl CVector3f::arrdtor1(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor1(CVector3f *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CVector3f_arrdtor2_FUN_005a2010
 // Address: 005a2010
-CVector3f * __cdecl CVector3f::arrdtor2(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor2(CVector3f *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_005a2030
 // Address: 005a2030
-CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *objs,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);

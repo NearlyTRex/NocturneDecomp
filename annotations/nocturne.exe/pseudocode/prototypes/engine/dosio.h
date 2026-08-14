@@ -73,7 +73,7 @@ void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
 // Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90
 // Address: 00456d90
-void __cdecl CFileFinder::convertStruct(CFileFinder *finder,LPWIN32_FIND_DATAA find_data);
+void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
 
 // Original: engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
 // Address: 00565dd0

@@ -85,7 +85,7 @@ section .text
     PUSH EBP                            ; 00545981
     MOV [0x02dd0f80],EAX                ; 00545982 | DAT_02dd0f80
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410 ; 00545987
-        ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * cache, int texture_index)
+        ;   XREF to: 00545410 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache * this_ptr, int texture_index)
     MOV EAX,[0x01c02594]                ; 0054598c | g_UseExternalRenderer
     ADD ESP,0x8                         ; 00545991
     TEST EAX,EAX                        ; 00545994

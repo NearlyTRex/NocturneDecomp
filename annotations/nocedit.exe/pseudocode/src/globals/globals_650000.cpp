@@ -5028,10 +5028,10 @@ WatcomDestructorCall WatcomDestructorCall_0065f230 = {
 // WatcomTypeInfo
 WatcomTypeInfo g_CVectorTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector_ctor_FUN_00410340,
-    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector_copy_FUN_004104a0,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_actor_cpp_CVector_dtor_FUN_00410350,
-    .instance_size = 0x0000000C /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector3f_ctor_FUN_00410340,
+    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_actor_cpp_CVector3f_copy_FUN_004104a0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_actor_cpp_CVector3f_dtor_FUN_00410350,
+    .instance_size = (int)sizeof(CVector3f),
     .class_name = (char *)s_CVector_0066e3b4
 };
 WatcomTypeInfo g_CDemonActorTypeInfo = {

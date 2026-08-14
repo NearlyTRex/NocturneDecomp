@@ -153,7 +153,7 @@ CVector3i * __stack2_esi CDemonRaytrace::worldPositionToVoxelCoords(CDemonRaytra
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930
 // Address: 00499930
-CVector3f * __cdecl CDemonRaytrace::voxelCoordsToWorldPosition(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords);
+CVector3f * __cdecl CDemonRaytrace::voxelCoordsToWorldPosition(CDemonRaytrace *this_ptr,CVector3f *output_position,CVector3i *voxel_coords);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970
 // Address: 00499970
@@ -205,4 +205,4 @@ STriangleRef * __cdecl STriangleRef::dtor(STriangleRef *this_ptr,uint flags);
 
 // Original: core_dtrace.cpp_CVector3f_arrdtor_FUN_0049a410
 // Address: 0049a410
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

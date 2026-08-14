@@ -554,7 +554,7 @@ LAB_005fa85e:
               if (pCVar18 != (CDemonActor *)0x0) {
                 pCVar14 = (*((pCVar18->vtable)._ub)->getBoundingBox)(pCVar18,&local_2cc);
                 local_14 = &pCVar14->max;
-                core_actor_cpp_CVector_ctor_FUN_00410340(&local_194);
+                core_actor_cpp_CVector3f_ctor_FUN_00410340(&local_194);
                 local_194.x = local_14->x - (pCVar14->min).x;
                 local_194.y = local_14->y - (pCVar14->min).y;
                 local_194.z = local_14->z - (pCVar14->min).z;
@@ -676,7 +676,7 @@ LAB_005fac96:
             if (pCVar18 != (CDemonActor *)0x0) {
               pCVar14 = (*((pCVar18->vtable)._ub)->getBoundingBox)(pCVar18,&local_2fc);
               local_68 = &local_1f4;
-              core_actor_cpp_CVector_ctor_FUN_00410340(local_68);
+              core_actor_cpp_CVector3f_ctor_FUN_00410340(local_68);
               local_1f4.x = (pCVar14->max).x - (pCVar14->min).x;
               local_1f4.y = (pCVar14->max).y - (pCVar14->min).y;
               local_1f4.z = (pCVar14->max).z - (pCVar14->min).z;

@@ -116,7 +116,7 @@ section .text
     PUSH EBX                            ; 005a5d8f
         ;   Label: LAB_005a5d8f
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a5d90
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a5d95
     CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005a5d98
         ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()

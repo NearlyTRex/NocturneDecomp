@@ -129,4 +129,4 @@ int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *posi
 
 // Original: core_setdir.cpp_CZThumb_arrdtor_FUN_00576910
 // Address: 00576910
-CZThumb * __cdecl CZThumb::arrdtor(CZThumb *objs,uint flags);
+CZThumb * __cdecl CZThumb::arrdtor(CZThumb *this_ptr,uint flags);

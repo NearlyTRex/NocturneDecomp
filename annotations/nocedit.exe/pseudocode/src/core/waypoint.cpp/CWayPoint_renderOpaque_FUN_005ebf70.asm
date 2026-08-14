@@ -103,7 +103,7 @@ section .text
     ADD ESP,0x8                         ; 005ebfd7
     PUSH ESI                            ; 005ebfda
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005ebfdb
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ebfe0
     LEA EDX,[ESP + 0x18]                ; 005ebfe3
     PUSH EDX                            ; 005ebfe7

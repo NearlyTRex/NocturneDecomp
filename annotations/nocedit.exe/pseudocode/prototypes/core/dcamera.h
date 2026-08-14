@@ -345,4 +345,4 @@ int __cdecl CDemonCamera::testVisibility(CDemonCamera *this_ptr,CVector3i *corne
 
 // Original: core_dcamera.cpp_CVector3f_arrdtor_FUN_00454700
 // Address: 00454700
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

@@ -172,7 +172,7 @@ section .text
     PUSH EDI                            ; 00524e33
         ;   Label: LAB_00524e33
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00524e34
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00524e39
     XOR EBX,EBX                         ; 00524e3c
         ;   Label: LAB_00524e3c

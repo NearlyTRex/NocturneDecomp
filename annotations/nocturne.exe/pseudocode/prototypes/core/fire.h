@@ -497,7 +497,7 @@ void __cdecl transformWorldToScreen(CVector3i *input,SProjectedVertex *output,CV
 
 // Original: core_fire.cpp_CKeyFramedModel_getBoundsMin_FUN_0048c920
 // Address: 0048c920
-CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *model_ptr);
+CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *this_ptr);
 
 // Original: core_fire.cpp_CBulletTrail_reset_FUN_0048c930
 // Address: 0048c930

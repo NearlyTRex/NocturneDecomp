@@ -63,7 +63,7 @@ void __cdecl core_baron_cpp_CBaron_archive_FUN_00411080(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_004110e0(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_004110f0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_processDamage_FUN_004112f0(CBaron *this_ptr,SDamageInfo *damage_info);
-void core_baron_cpp_CBaron_handlePureVirtualCall_FUN_00411310(void);
+void __cdecl core_baron_cpp_CBaron_drawWeapon_FUN_00411310(CBaron *this_ptr,int drawn);
 CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00411320(void);
 CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00411340(CBaronWeapon *this_ptr);
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00411350(CBaronWeapon *this_ptr);
@@ -72,7 +72,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_004113d0(CBaronWeapon *this
 void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_004113f0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00411400(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00411440(CBaronWeapon *this_ptr);
-void __cdecl core_baron_cpp_CBaron_fireProjectile_FUN_00411470(CBaron *this_ptr);
+void __cdecl core_baron_cpp_CBaronWeapon_fireProjectile_FUN_00411470(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004114a0(CBaronWeapon *this_ptr,int weapon_state);
 void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(CBaronWeapon *this_ptr);
 ECollisionType __cdecl core_baron_cpp_CBaron_getCollisionType_FUN_00411600(CBaron *this_ptr,SCollisionInfo *collision_info);

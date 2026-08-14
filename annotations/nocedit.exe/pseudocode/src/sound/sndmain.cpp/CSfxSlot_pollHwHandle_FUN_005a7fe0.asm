@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 005a8044
         ;   Label: LAB_005a8044
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a8045
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a804a
     POP EBP                             ; 005a804d
     POP EDI                             ; 005a804e
@@ -101,7 +101,7 @@ section .text
     PUSH EBX                            ; 005a8072
         ;   Label: LAB_005a8072
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a8073
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a8078
     POP EBP                             ; 005a807b
     POP EDI                             ; 005a807c
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0xc                         ; 005a80c1
     PUSH EBX                            ; 005a80c4
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a80c5
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a80ca
     POP EBP                             ; 005a80cd
     POP EDI                             ; 005a80ce

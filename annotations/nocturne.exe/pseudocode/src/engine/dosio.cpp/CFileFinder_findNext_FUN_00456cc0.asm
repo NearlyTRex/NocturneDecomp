@@ -61,7 +61,7 @@ section .text
     PUSH EAX                            ; 00456d14
     PUSH EBX                            ; 00456d15
     CALL engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 ; 00456d16
-        ;   XREF to: 00456d90 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder * finder, LPWIN32_FIND_DATAA find_data)
+        ;   XREF to: 00456d90 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder * this_ptr, LPWIN32_FIND_DATAA find_data)
     MOV EAX,0x1                         ; 00456d1b
     ADD ESP,0x8                         ; 00456d20
     ADD ESP,0x140                       ; 00456d23

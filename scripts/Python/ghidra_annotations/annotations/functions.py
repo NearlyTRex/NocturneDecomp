@@ -19,6 +19,10 @@ class FunctionNameAddressMismatchError(Exception):
     """A function's _FUN_<addr> suffix disagrees with its entry point."""
 
 
+class ThisPtrMismatchError(Exception):
+    """A class method's receiver contradicts the class its name claims."""
+
+
 # folder_file.ext_functionName_FUN_<address> -- the trailing address is a
 # redundant copy of the entry point, which is exactly what makes it checkable.
 NAME_ADDRESS_SUFFIX = re.compile(r"_FUN_([0-9a-fA-F]{4,8})$")
@@ -76,6 +80,80 @@ def find_name_address_mismatches(functions):
             mismatches.append(
                 "%s starts at %s but its name claims %s" % (name, addr, claimed))
     return mismatches
+
+
+# <tu>_<Class>_<method>_FUN_<addr>. The class is the first C-prefixed component
+# after the translation unit, which is exactly what the schema promises.
+CLASS_METHOD_RE = re.compile(
+    r"^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>C[A-Z][A-Za-z0-9]*)_"
+    r"(?P<method>.+)_FUN_[0-9a-fA-F]+$")
+
+RECEIVER_NAME = "this_ptr"
+
+
+def known_class_names(currentProgram):
+    """Class names that exist as real types, read from the LIVE type manager.
+
+    Deliberately not read from include/types/classes/: that directory is
+    written by the data_types export, so depending on it here would make this
+    gate's verdict depend on whether another exporter had already run.
+    """
+    names = set()
+    it = currentProgram.getDataTypeManager().getAllDataTypes()
+    while it.hasNext():
+        names.add(it.next().getName())
+    return names
+
+
+def find_this_ptr_defects(functions, class_names):
+    """Class methods whose parameter 0 contradicts the class in their name.
+
+    `<tu>_<Class>_<method>_FUN_<addr>` asserts membership of `Class`, which
+    makes two claims about parameter 0 that are otherwise unenforced: it is the
+    `this` pointer, and its type is `Class *`. Three ways that fails:
+
+      NO_PARAMS  a member function declaring no parameters cannot receive
+                 `this`, so the prototype is wrong and every caller decompiles
+                 against it.
+      TYPE       the name spells the class one way and the parameter another.
+                 Two spellings of one class splits greps and invites a second,
+                 divergent struct.
+      NAME       the receiver is typed right but called something else, so a
+                 reader cannot tell the implicit `this` from a real argument
+                 and any tooling keyed on `this_ptr` skips the function.
+
+    Returned strings are for the log; the caller decides whether to raise.
+    """
+    defects = []
+    for func_data in functions:
+        name = func_data.get("name") or ""
+        match = CLASS_METHOD_RE.match(name)
+        if not match:
+            continue
+        cls = match.group("cls")
+        params = (func_data.get("vars") or {}).get("params") or []
+        if not params:
+            defects.append(
+                "%s declares no parameters, so it cannot receive `%s` of type %s *"
+                % (name, RECEIVER_NAME, cls))
+            continue
+        p0 = params[0]
+        have_name = p0.get("name")
+        have_type = (p0.get("type") or "").replace(" ", "")
+        if have_type != cls + "*":
+            hint = ""
+            have_cls = have_type.rstrip("*")
+            if cls not in class_names and have_cls in class_names:
+                hint = (" -- %s is not a type and %s is, so the NAME is wrong"
+                        % (cls, have_cls))
+            defects.append(
+                "%s claims class %s but parameter 0 is `%s %s`%s"
+                % (name, cls, p0.get("type"), have_name, hint))
+        elif have_name != RECEIVER_NAME:
+            defects.append(
+                "%s receiver is typed %s but named `%s`, not `%s`"
+                % (name, p0.get("type"), have_name, RECEIVER_NAME))
+    return defects
 
 
 def is_function_external(currentProgram, function):
@@ -805,7 +883,8 @@ def import_functions(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
-def export_functions(currentProgram, path, allow_name_address_mismatch=False):
+def export_functions(currentProgram, path, allow_name_address_mismatch=False,
+                     allow_this_ptr_mismatch=False):
 
     # Load existing functions to preserve importable markings
     existing_importable = {}
@@ -916,11 +995,15 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False):
     # from. Raising here aborts the export before pseudocode runs, which is the
     # point: a stolen address suffix collides two functions onto one pseudocode
     # filename, and the tree it would produce is quietly missing a function.
+    # log_warning, not log_error: log_error exits the process, so using it here
+    # printed the header and then died -- the detail lines never appeared and
+    # --allow-name-address-mismatch was never reached to be honoured. The raise
+    # below is what aborts, and only when the flag says it should.
     mismatches = find_name_address_mismatches(functions)
     if mismatches:
-        log_error("FUNCTION NAME/ADDRESS MISMATCHES (%d):" % len(mismatches))
+        log_warning("FUNCTION NAME/ADDRESS MISMATCHES (%d):" % len(mismatches))
         for msg in mismatches:
-            log_error("  " + msg)
+            log_warning("  " + msg)
     if mismatches and not allow_name_address_mismatch:
         raise FunctionNameAddressMismatchError(
             "Function name/address mismatch: %d function(s) carry a _FUN_<addr> "
@@ -928,3 +1011,24 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False):
             "wrong symbol. Fix the names in Ghidra before exporting, or pass "
             "--allow-name-address-mismatch to export anyway.\n" % len(mismatches)
             + "\n".join(mismatches))
+
+    # Same placement and the same reason: an `undefined` or absent receiver
+    # degrades the decompilation of every caller, so it must not reach the
+    # pseudocode tree. Only this check gates - the contiguity, link-order and
+    # DOS 8.3 checks in check_tu_alignment.py stay report-only, because they
+    # still have outstanding findings that nothing can currently fix.
+    this_ptr_defects = find_this_ptr_defects(functions,
+                                             known_class_names(currentProgram))
+    if this_ptr_defects:
+        log_warning("CLASS METHOD RECEIVER DEFECTS (%d):" % len(this_ptr_defects))
+        for msg in this_ptr_defects:
+            log_warning("  " + msg)
+    if this_ptr_defects and not allow_this_ptr_mismatch:
+        raise ThisPtrMismatchError(
+            "Class method receiver: %d function(s) named "
+            "<tu>_<Class>_<method>_FUN_<addr> do not take `%s` of type "
+            "`<Class> *` as parameter 0. Fix them in Ghidra (see "
+            "scripts/Python/fix_this_ptr.py) before exporting, or pass "
+            "--allow-this-ptr-mismatch to export anyway.\n"
+            % (len(this_ptr_defects), RECEIVER_NAME)
+            + "\n".join(this_ptr_defects))

@@ -215,7 +215,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_copyVector_FUN_0040e180
-;   core_actor.cpp_CVector_ctor_FUN_0040e160
+;   core_actor.cpp_CVector3f_ctor_FUN_0040e160
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
@@ -3169,8 +3169,8 @@ section .text
         ;   XREF to: 004ff43c (CONDITIONAL_JUMP)  ; LAB_004ff43c
     LEA EAX,[ESP + 0x3e60]              ; 00501341
     PUSH EAX                            ; 00501348
-    CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00501349
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_0040e160 ; 00501349
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040e160(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 0050134e
     MOV EDX,dword ptr [ESP + 0x3e90]    ; 00501351
     MOV CL,byte ptr [EDX]               ; 00501358

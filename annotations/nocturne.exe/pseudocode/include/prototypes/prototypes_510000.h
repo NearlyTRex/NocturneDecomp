@@ -278,7 +278,7 @@ void __cdecl core_skeleton_cpp_FUN_0051f650(void);
 CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename);
 void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void);
 void __cdecl core_skeleton_cpp_FUN_0051f760(char *output_buffer);
-float __cdecl shape_meshlod_cpp_calculateDistanceSquared_FUN_0051f800(CVector3f *point1,CVector3f *point2);
+float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_0051f800(CVector3f *point1,CVector3f *point2);
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_0051f840(SVert *this_ptr);
 SVert * __cdecl core_skeleton_cpp_SVert_dtor_FUN_0051f860(SVert *this_ptr,uint flags);
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor_FUN_0051f880(CSkeleton *this_ptr,uint flags);

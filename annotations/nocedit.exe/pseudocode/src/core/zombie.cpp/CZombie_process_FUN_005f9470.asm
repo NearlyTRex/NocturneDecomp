@@ -171,7 +171,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_CVector_ctor_FUN_00410340
+;   core_actor.cpp_CVector3f_ctor_FUN_00410340
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
@@ -1975,8 +1975,8 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005fa961
     LEA EAX,[EBP + 0xfffffef6]          ; 005fa964
     PUSH EAX                            ; 005fa96a
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 005fa96b
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 005fa96b
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     MOV EAX,dword ptr [EBP + 0x76]      ; 005fa970
     FLD float ptr [EAX]                 ; 005fa973
     FSUB float ptr [ESI]                ; 005fa975
@@ -2321,8 +2321,8 @@ section .text
     PUSH EAX                            ; 005fad4b
     LEA EDI,[ESI + 0xc]                 ; 005fad4c
     MOV dword ptr [EBP + 0x22],EAX      ; 005fad4f
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 005fad52
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_00410340 ; 005fad52
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_00410340(CVector3f * this_ptr)
     FLD float ptr [EDI]                 ; 005fad57
     FSUB float ptr [ESI]                ; 005fad59
     FSTP float ptr [EBP + 0xfffffe96]   ; 005fad5b

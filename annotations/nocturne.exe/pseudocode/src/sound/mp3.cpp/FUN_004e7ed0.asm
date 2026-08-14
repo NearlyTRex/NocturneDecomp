@@ -154,7 +154,7 @@ section .text
         ;   Label: LAB_004e7fdd
     PUSH ESI                            ; 004e7fde
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e7fdf
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 004e7fe4
     MOV EBX,EAX                         ; 004e7fe7
     MOV EAX,EBX                         ; 004e7fe9
@@ -171,7 +171,7 @@ section .text
     PUSH ESI                            ; 004e7ffa
     SHL EBX,0x8                         ; 004e7ffb
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e7ffe
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 004e8003
     OR EBX,EAX                          ; 004e8006
     JMP 0x004e7fe9                      ; 004e8008
@@ -190,7 +190,7 @@ section .text
     PUSH ECX                            ; 004e8025
     PUSH EAX                            ; 004e8026
     CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 ; 004e8027
-        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * bitstream, int num_bits)
+        ;   XREF to: 004e2ac0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 004e802c
     JMP 0x004e7fdd                      ; 004e802f
         ;   XREF to: 004e7fdd (UNCONDITIONAL_JUMP)  ; LAB_004e7fdd

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4921
-Clean: 2477 (50.3%)
-With suspects: 2444
-Total suspects: 21491
+Clean: 2482 (50.4%)
+With suspects: 2439
+Total suspects: 21463
 
 ====================================================================================================
 cockpit_ckptutil.c_FUN_0042d180 (24 suspects)
@@ -1910,7 +1910,7 @@ core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150 (2 suspects)
   Line 9 [unrolled_memcpy]: (this_ptr->orient).vec.x = new_orientation->x;
 
 ====================================================================================================
-core_actor.cpp_CVector_copy_FUN_0040e2a0 (1 suspect)
+core_actor.cpp_CVector3f_copy_FUN_0040e2a0 (1 suspect)
   File: core/actor.cpp
 ====================================================================================================
   Line 5 [unrolled_memcpy]: this_ptr->x = other->x;
@@ -4741,15 +4741,6 @@ core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0 (1 suspect)
   File: core/charactr.cpp
 ====================================================================================================
   Line 11 [unrolled_memset]: (this_ptr->velocity).z = 0.0;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0 (4 suspects)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(int param_1,uint param_2)
-  Line 2 [unnamed_param]: void core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(int param_1,uint param_2)
-  Line 5 [unnamed_param]: *(uint *)(param_1 + 0x25a4) = param_2;
-  Line 5 [unnamed_param]: *(uint *)(param_1 + 0x25a4) = param_2;
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_setup_FUN_00424260 (6 suspects)
@@ -7666,15 +7657,15 @@ core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620 (5 suspects)
 core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0 (9 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
-  Line 16 [pointer_cast]: this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)
-  Line 24 [unrolled_memcpy]: (this_ptr_00->min).x = local_28.min.x;
-  Line 29 [unrolled_memcpy]: (this_ptr_00->max).x = local_28.min.x;
-  Line 47 [unrolled_memcpy]: ((CVector3f *)local_28.max.z)->x = (this_ptr_00->min).x;
-  Line 51 [pointer_cast]: if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {
-  Line 52 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;
-  Line 52 [unrolled_memcpy]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;
-  Line 53 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_00->min).y;
-  Line 54 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_00->min).z;
+  Line 16 [pointer_cast]: this_ptr_01 = (CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);
+  Line 23 [unrolled_memcpy]: (this_ptr_01->min).x = local_28.min.x;
+  Line 28 [unrolled_memcpy]: (this_ptr_01->max).x = local_28.min.x;
+  Line 46 [unrolled_memcpy]: ((CVector3f *)local_28.max.z)->x = (this_ptr_01->min).x;
+  Line 50 [pointer_cast]: if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_01) {
+  Line 51 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;
+  Line 51 [unrolled_memcpy]: ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_01->min).x;
+  Line 52 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_01->min).y;
+  Line 53 [pointer_cast]: ((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_01->min).z;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 (5 suspects)
@@ -11819,13 +11810,6 @@ core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_00497870 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110 (2 suspects)
-  File: core/gabriela.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: bool core_gabriela_cpp_CGabriella_handlePureVirtualCall_FUN_0049a110(int param_1)
-  Line 5 [unnamed_param]: return *(int *)(param_1 + 0x1fa3c) != 0;
-
-====================================================================================================
 core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 (5 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
@@ -14838,13 +14822,6 @@ core_ladder.cpp_CLadder_getBoundingBox_FUN_004c43f0 (1 suspect)
   File: core/ladder.cpp
 ====================================================================================================
   Line 30 [unrolled_memcpy]: (out_box->min).x = (pCVar7->bounds).min.x;
-
-====================================================================================================
-core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0 (2 suspects)
-  File: core/ladder.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: uint core_ladder_cpp_CLadder_getGroundType_FUN_004c47c0(int param_1)
-  Line 5 [unnamed_param]: return *(uint *)(param_1 + 0x2f4);
 
 ====================================================================================================
 core_larva.cpp_CLarva_dtor_FUN_004c5540 (2 suspects)
@@ -18211,22 +18188,6 @@ core_scat.cpp_CScat_ctor_FUN_004fbc00 (1 suspect)
   Line 13 [unrolled_memset]: (this_ptr_00->head_euler_angles).z = 0.0;
 
 ====================================================================================================
-core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20 (2 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: uint core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd20(int param_1)
-  Line 5 [unnamed_param]: return *(uint *)(param_1 + 0x1fa3c);
-
-====================================================================================================
-core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30 (4 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd30(int param_1,uint param_2)
-  Line 2 [unnamed_param]: void core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd30(int param_1,uint param_2)
-  Line 5 [unnamed_param]: *(uint *)(param_1 + 0x1fa3c) = param_2;
-  Line 5 [unnamed_param]: *(uint *)(param_1 + 0x1fa3c) = param_2;
-
-====================================================================================================
 core_scat.cpp_CScat_process_FUN_004fbf20 (29 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -18955,7 +18916,7 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 (20 suspects)
 core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
-  Line 37 [shadow_pointer_walk]: pCVar3 = (CDemonSet *)pCVar3->cameras;
+  Line 38 [shadow_pointer_walk]: pCVar3 = (CDemonSet *)pCVar3->cameras;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 (29 suspects)
@@ -19788,8 +19749,8 @@ core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 (2 suspects)
 core_set.cpp_CVector3f_copy_FUN_0050ea90 (2 suspects)
   File: core/set.cpp
 ====================================================================================================
-  Line 11 [unrolled_memcpy]: a->x = b->x;
-  Line 18 [unrolled_memcpy]: a[1].x = b[1].x;
+  Line 11 [unrolled_memcpy]: this_ptr->x = b->x;
+  Line 18 [unrolled_memcpy]: this_ptr[1].x = b[1].x;
 
 ====================================================================================================
 core_set.cpp_computeTriangleNormalIndexed_FUN_0050bcf0 (2 suspects)
@@ -21898,11 +21859,9 @@ core_spike.cpp_CSpike_getBoundingBox_FUN_005335a0 (1 suspect)
   Line 10 [unrolled_memcpy]: (out_box->min).x = (pCVar1->min).x;
 
 ====================================================================================================
-core_stairs.cpp_CStairs_ctor_FUN_005347b0 (20 suspects)
+core_stairs.cpp_CStairs_ctor_FUN_005347b0 (18 suspects)
   File: core/stairs.cpp
 ====================================================================================================
-  Line 2 [unnamed_param]: CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005347b0(CStairs *param_1)
-  Line 8 [unnamed_param]: pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00409d30(&param_1->base);
   Line 11 [pointer_cast]: *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;
   Line 11 [pointer_truncation]: *(CDemonActor_vtable **)((int)pvVar2 + -0x1c) = &g_CStairsVTable;
   Line 12 [pointer_cast]: *(uint *)((int)pvVar2 + -0x18) = 0x3f800000;
@@ -22420,13 +22379,6 @@ core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_0053f210 (5 suspects)
   Line 22 [unrolled_memcpy]: // 0053f247: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720 (2 suspects)
-  File: core/stranger.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: uint core_stranger_cpp_CStranger_handlePureVirtualCall_FUN_00540720(int param_1)
-  Line 5 [unnamed_param]: return *(uint *)(param_1 + 0x1fa3c);
-
-====================================================================================================
 core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 (57 suspects)
   File: core/stranger.cpp
 ====================================================================================================
@@ -22731,6 +22683,12 @@ core_stranger.cpp_FUN_005409c0 (8 suspects)
   Line 5 [unnamed_param]: return param_1[2] * param_2[2] + *param_1 * *param_2 + param_1[1] * param_2[1];
   Line 5 [unnamed_param]: return param_1[2] * param_2[2] + *param_1 * *param_2 + param_1[1] * param_2[1];
   Line 5 [unnamed_param]: return param_1[2] * param_2[2] + *param_1 * *param_2 + param_1[1] * param_2[1];
+
+====================================================================================================
+core_stranger.cpp_FUN_00540a10 (1 suspect)
+  File: core/stranger.cpp
+====================================================================================================
+  Line 5 [pointer_cast]: return *(void **)((int)ptr + 8);
 
 ====================================================================================================
 core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0053d790 (1 suspect)
@@ -23857,7 +23815,7 @@ core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_00552680 (8 suspects)
   Line 75 [pointer_cast]: pCVar9 = *(CWayPoint **)((int)g_CDemonSet_PTR_005be368->waypoints + iVar4);
 
 ====================================================================================================
-core_waypoint.cpp_CWaypoint_setup_FUN_00552510 (2 suspects)
+core_waypoint.cpp_CWayPoint_setup_FUN_00552510 (2 suspects)
   File: core/waypoint.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -28779,23 +28737,12 @@ engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 (4 suspects)
   Line 38 [undefined_data]: _fread(&DAT_01e428d0,size,1,file);
 
 ====================================================================================================
-engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (15 suspects)
+engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570 (4 suspects)
   File: engine/pod.cpp
 ====================================================================================================
-  Line 2 [unnamed_param]: void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2)
-  Line 2 [unnamed_param]: void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2)
-  Line 7 [unaffected_reg]: uint *unaff_ESI;
-  Line 13 [unnamed_param]: if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {
-  Line 13 [unnamed_param]: if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {
-  Line 13 [unnamed_param]: if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {
-  Line 18 [unnamed_param]: file = _fopen((char *)(param_1 + 4),"rb");
-  Line 24 [unnamed_param]: _fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
-  Line 24 [unnamed_param]: _fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
-  Line 28 [unrolled_memcpy]: for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 29 [unaffected_reg]: *unaff_ESI = *puVar2;
-  Line 31 [unaffected_reg]: unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
-  Line 31 [unaffected_reg]: unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
-  Line 36 [static_uninitvar]: *unaff_ESI = *puVar2;
+  Line 29 [unrolled_memcpy]: for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 32 [pointer_cast]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+  Line 32 [pointer_truncation]: pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
   Line 65 [unrolled_memcpy]: // 004f8624: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -30987,7 +30934,7 @@ sound_mp3.cpp_CFileBitStream_readBit_FUN_004e29d0 (1 suspect)
 sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0 (1 suspect)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 73 [undefined_data]: *(uint *)(&DAT_005bc010 + bitstream->bits_available * 4)) >>
+  Line 72 [undefined_data]: *(uint *)(&DAT_005bc010 + this_ptr->bits_available * 4)) >>
 
 ====================================================================================================
 sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004e37d0 (22 suspects)
@@ -32073,8 +32020,8 @@ sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 (3 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 21 [unresolved_funcptr]: (**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,slot);
-  Line 43 [pointer_truncation]: if ((int)&slot[-0x28a84].fade_time_remaining / 0x120 != this_ptr->streaming_slot_index) {
+  Line 21 [unresolved_funcptr]: (**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,this_ptr);
+  Line 43 [pointer_truncation]: if ((int)&this_ptr[-0x28a84].fade_time_remaining / 0x120 != this_ptr_00->streaming_slot_index)
 
 ====================================================================================================
 sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10 (58 suspects)
@@ -32599,7 +32546,7 @@ sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 (2 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 26 [unresolved_funcptr]: (iVar2 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,slot), iVar2 != 0)) {
+  Line 26 [unresolved_funcptr]: (iVar2 = (**(code **)(*_DAT_02dc8318 + 0x50))(_DAT_02dc8318,this_ptr), iVar2 != 0)) {
 
 ====================================================================================================
 sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 (12 suspects)
@@ -32684,7 +32631,7 @@ sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880 (1 suspect)
 sound_sndmain.cpp_killAllSfx_FUN_005272b0 (1 suspect)
   File: sound/sndmain.cpp
 ====================================================================================================
-  Line 12 [undefined_data]: } while (slot != (CSfxSlot *)&DAT_02dc1b74);
+  Line 12 [undefined_data]: } while (this_ptr != (CSfxSlot *)&DAT_02dc1b74);
 
 ====================================================================================================
 sound_sndmain.cpp_killSfxByName_FUN_005278e0 (2 suspects)

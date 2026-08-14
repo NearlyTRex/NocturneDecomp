@@ -65,7 +65,7 @@ void __cdecl CKeyFramedModel::calcNormals(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
 // Address: 00478010
-void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *model_ptr);
+void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190
 // Address: 00478190
@@ -145,11 +145,11 @@ void __cdecl CKeyFramedModel::createSinglePart(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
 // Address: 0047a3e0
-void __cdecl CKeyFramedModel::packTexturesToAtlases(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter);
+void __cdecl CKeyFramedModel::packTexturesToAtlases(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
 // Address: 0047a820
-void __cdecl CKeyFramedModel::sortPolygonsByTexture(CKeyFramedModel *model_ptr);
+void __cdecl CKeyFramedModel::sortPolygonsByTexture(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00
 // Address: 0047aa00
@@ -265,4 +265,4 @@ void __cdecl SRA4HQPoint::copy(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_arrdtor_FUN_0047efc0
 // Address: 0047efc0
-CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor(CKeyFramedModel *objs,uint flags);
+CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor(CKeyFramedModel *this_ptr,uint flags);

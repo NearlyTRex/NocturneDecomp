@@ -125,7 +125,7 @@ section .text
     PUSH EBP                            ; 004ca174
         ;   Label: LAB_004ca174
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 004ca175
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     MOV EAX,dword ptr [EBP + 0x298]     ; 004ca17a
     ADD ESP,0x4                         ; 004ca180
     TEST EAX,EAX                        ; 004ca183

@@ -2,11 +2,11 @@
 // Address: 0052ef40
 // Address Range: [[0052ef40, 0052f0b2]]
 // Convention: __cdecl
-// Signature: uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits)
+// Signature: uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *this_ptr,int num_bits)
 
 #include "nocturne.h"
 
-uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits)
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *this_ptr,int num_bits)
 
 {
   SIZE_T SVar1;
@@ -22,65 +22,64 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CurrentMp3Filename);
   }
-  bitstream->total_bits_read = bitstream->total_bits_read + num_bits;
+  this_ptr->total_bits_read = this_ptr->total_bits_read + num_bits;
   do {
     if (num_bits < 1) {
       return local_14;
     }
-    if (bitstream->bits_available == 0) {
-      bitstream->bits_available = 8;
-      iVar1 = bitstream->current_byte_index + -1;
-      bitstream->current_byte_index = iVar1;
-      if ((iVar1 < 4) || (iVar1 < bitstream->end_of_stream_flag)) {
-        if (bitstream->end_of_stream_flag == 0) {
-          for (iVar1 = bitstream->current_byte_index; -1 < iVar1; iVar1 = iVar1 + -1) {
-            bitstream->buffer
-            [((bitstream->buffer_size + -1) - bitstream->current_byte_index) + iVar1] =
-                 bitstream->buffer[iVar1];
+    if (this_ptr->bits_available == 0) {
+      this_ptr->bits_available = 8;
+      iVar1 = this_ptr->current_byte_index + -1;
+      this_ptr->current_byte_index = iVar1;
+      if ((iVar1 < 4) || (iVar1 < this_ptr->end_of_stream_flag)) {
+        if (this_ptr->end_of_stream_flag == 0) {
+          for (iVar1 = this_ptr->current_byte_index; -1 < iVar1; iVar1 = iVar1 + -1) {
+            this_ptr->buffer[((this_ptr->buffer_size + -1) - this_ptr->current_byte_index) + iVar1]
+                 = this_ptr->buffer[iVar1];
           }
-          iVar1 = (bitstream->buffer_size + -2) - bitstream->current_byte_index;
+          iVar1 = (this_ptr->buffer_size + -2) - this_ptr->current_byte_index;
           if (iVar1 < 0) {
 LAB_0052f051:
-            bitstream->current_byte_index = bitstream->buffer_size + -1;
+            this_ptr->current_byte_index = this_ptr->buffer_size + -1;
           }
           else {
             do {
               while( true ) {
-                if (bitstream->end_of_stream_flag != 0) goto LAB_0052f051;
+                if (this_ptr->end_of_stream_flag != 0) goto LAB_0052f051;
                 SVar1 = 0;
-                if (0 < bitstream->bytes_remaining) {
-                  buffer = bitstream->buffer + iVar1;
+                if (0 < this_ptr->bytes_remaining) {
+                  buffer = this_ptr->buffer + iVar1;
                   iVar1 = iVar1 + -1;
-                  SVar1 = _fread(buffer,1,1,bitstream->file_handle);
+                  SVar1 = _fread(buffer,1,1,this_ptr->file_handle);
                 }
                 if (SVar1 != 1) break;
-                bitstream->bytes_remaining = bitstream->bytes_remaining + -1;
+                this_ptr->bytes_remaining = this_ptr->bytes_remaining + -1;
                 if (iVar1 < 0) {
-                  bitstream->current_byte_index = bitstream->buffer_size + -1;
+                  this_ptr->current_byte_index = this_ptr->buffer_size + -1;
                   goto LAB_0052ef6c;
                 }
               }
-              bitstream->end_of_stream_flag = iVar1 + 1;
+              this_ptr->end_of_stream_flag = iVar1 + 1;
             } while (-1 < iVar1);
-            bitstream->current_byte_index = bitstream->buffer_size + -1;
+            this_ptr->current_byte_index = this_ptr->buffer_size + -1;
           }
         }
         else {
-          bitstream->error_flag = 1;
+          this_ptr->error_flag = 1;
         }
       }
     }
 LAB_0052ef6c:
-    iVar1 = bitstream->bits_available;
+    iVar1 = this_ptr->bits_available;
     if (num_bits < iVar1) {
       iVar1 = num_bits;
     }
     num_bits = num_bits - iVar1;
-    iVar2 = bitstream->bits_available - iVar1;
+    iVar2 = this_ptr->bits_available - iVar1;
     local_14 = local_14 |
-               ((int)((uint)(byte)bitstream->buffer[bitstream->current_byte_index] &
-                     g_MpegBitMaskTableMultiBit[bitstream->bits_available]) >> ((byte)iVar2 & 0x1f))
+               ((int)((uint)(byte)this_ptr->buffer[this_ptr->current_byte_index] &
+                     g_MpegBitMaskTableMultiBit[this_ptr->bits_available]) >> ((byte)iVar2 & 0x1f))
                << ((byte)num_bits & 0x1f);
-    bitstream->bits_available = iVar2;
+    this_ptr->bits_available = iVar2;
   } while( true );
 }

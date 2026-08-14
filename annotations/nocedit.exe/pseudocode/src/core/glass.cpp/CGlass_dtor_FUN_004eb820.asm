@@ -32,7 +32,7 @@ section .text
     ADD EBX,0x38c                       ; 004eb82e
     PUSH EBX                            ; 004eb834
     CALL core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0 ; 004eb835
-        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f * objs, uint flags)
+        ;   XREF to: 004eb8a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004eb83a
     PUSH 0x0                            ; 004eb83d
     SUB EAX,0x1a0                       ; 004eb83f

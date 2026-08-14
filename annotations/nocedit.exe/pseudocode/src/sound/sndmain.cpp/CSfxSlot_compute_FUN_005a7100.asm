@@ -338,7 +338,7 @@ section .text
     PUSH ESI                            ; 005a73d3
         ;   Label: LAB_005a73d3
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 ; 005a73d4
-        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * slot)
+        ;   XREF to: 005a7e60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a73d9
     XOR EAX,EAX                         ; 005a73dc
     MOV ESP,EBP                         ; 005a73de

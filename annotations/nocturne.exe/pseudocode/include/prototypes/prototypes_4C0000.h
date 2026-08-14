@@ -24,6 +24,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -61,7 +62,7 @@ void __cdecl core_inv_cpp_CInventory_setupItems_FUN_004c1510(CInventory *this_pt
 int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDemonActor *actor_ptr);
 CLightGun * __cdecl core_inv_cpp_CInventory_getActiveLightGun_FUN_004c1830(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(CInventory *this_ptr);
-float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory *inventory_ptr,float max_charge);
+float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(CInventory *this_ptr,float max_charge);
 void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(CInventory *this_ptr,int ammo_type);
 int __cdecl core_inv_cpp_CInventory_isWeaponInCategory_FUN_004c1bf0(CInventory *this_ptr,CDemonActor *weapon_actor,int weapon_category);
 void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(CInventory *this_ptr,int reset_both);
@@ -96,7 +97,7 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(SMRGLPrimit
 void __cdecl engine_keys_cpp_staticInit_FUN_004c4170(void);
 int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_004c4180(CKeys *this_ptr,EInputCodeType key_code);
 int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004c4190(CKeys *this_ptr,EInputCodeType key_code);
-void __cdecl engine_keys_cpp_CKeys_clearKeypresses_FUN_004c41b0(void);
+void __cdecl engine_keys_cpp_clearKeypresses_FUN_004c41b0(void);
 int __cdecl engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(CKeys *this_ptr);
 int __cdecl engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(CKeys *this_ptr);
 void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys *this_ptr,EInputCodeType key_code);
@@ -114,7 +115,7 @@ void __cdecl core_ladder_cpp_CLadder_archive_FUN_004c44f0(CLadder *this_ptr);
 ECollisionType __cdecl core_ladder_cpp_CLadder_getCollisionType_FUN_004c4570(CLadder *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ladder_cpp_CLadder_FUN_004c45a0(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_FUN_004c46b0(CLadder *this_ptr);
-undefined4 core_ladder_cpp_CLadder_getGroundType_FUN_004c47c0(int param_1);
+EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_004c47c0(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004c47d0(CLadder *this_ptr,uint flags);
 void __cdecl core_larva_cpp_staticInit_FUN_004c4820(void);
 CLarva * __cdecl core_larva_cpp_factoryFuncLarva_FUN_004c4850(void);

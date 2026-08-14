@@ -187,7 +187,7 @@ void __cdecl core_vehicle_cpp_CVehicle_addFilesToExtract_FUN_005e8d00(CVehicle *
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_ptr,uint flags);
 CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_005e8da0(CTire *this_ptr);
 CTire * __cdecl core_vehicle_cpp_CTire_dtor_FUN_005e8dc0(CTire *this_ptr,uint flags);
-CTire * __cdecl core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0(CTire *objs,uint flags);
+CTire * __cdecl core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0(CTire *this_ptr,uint flags);
 void __cdecl core_vessel_cpp_staticInit_FUN_005e8df0(void);
 CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_005e8e20(void);
 CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_005e8e50(CCryptVessel *this_ptr);
@@ -244,7 +244,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40(CWayPoint *this
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_005ebe30(void);
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_005ebe60(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005ebe70(CWayPoint *this_ptr);
-void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005ebeb0(CWayPoint *this_ptr);
 int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005ec280(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320(CWayPoint *this_ptr,CWayPoint *start_waypoint);
@@ -317,7 +317,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005efb40(CWeather *this_ptr,uint flags);
-CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005efb50(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005efb50(CVector3f *this_ptr,uint flags);
 void __cdecl core_werewolf_cpp_staticInit_FUN_005efb70(void);
 CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_005efbd0(void);
 CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_005efc00(CWerewolf *this_ptr);

@@ -129,7 +129,7 @@ CVector3i * __stack2_esi CDemonRaytrace::worldPositionToVoxelCoords(CDemonRaytra
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_0046b7b0
 // Address: 0046b7b0
-CVector3f * __cdecl CDemonRaytrace::voxelCoordsToWorldPosition(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords);
+CVector3f * __cdecl CDemonRaytrace::voxelCoordsToWorldPosition(CDemonRaytrace *this_ptr,CVector3f *output_position,CVector3i *voxel_coords);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0
 // Address: 0046b7f0

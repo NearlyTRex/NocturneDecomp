@@ -48,10 +48,12 @@ def delete_annotations(currentProgram, path):
     delete_pseudocode(currentProgram, path)
 
 def export_annotations(currentProgram, folder, strict=False, deep_analysis=False,
-                       allow_size_mismatch=False, allow_name_address_mismatch=False):
+                       allow_size_mismatch=False, allow_name_address_mismatch=False,
+                       allow_this_ptr_mismatch=False):
     export_data_types(currentProgram, folder)
     export_functions(currentProgram, folder,
-                     allow_name_address_mismatch=allow_name_address_mismatch)
+                     allow_name_address_mismatch=allow_name_address_mismatch,
+                     allow_this_ptr_mismatch=allow_this_ptr_mismatch)
     export_call_overrides(currentProgram, folder)
     export_comments(currentProgram, folder)
     export_bookmarks(currentProgram, folder)

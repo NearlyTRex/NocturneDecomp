@@ -127,9 +127,9 @@ void __cdecl CGabriella(CGabriella *this_ptr,float param_2,float *param_3,int pa
 // Address: 00499ca0
 void __stack2_esi CGabriella::getCarryObjToBodyXForm(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110
+// Original: core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_0049a110
 // Address: 0049a110
-bool CGabriella::handlePureVirtualCall(int param_1);
+int __cdecl CGabriella::isWeaponDrawn(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_drawWeapon_FUN_0049a130
 // Address: 0049a130

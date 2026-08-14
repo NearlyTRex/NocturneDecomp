@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4921
-Clean functions: 2505 (50.9%)
-Functions with suspects: 2416 (49.1%)
+Clean functions: 2510 (51.0%)
+Functions with suspects: 2411 (49.0%)
 
-Total suspect patterns: 21491
-Average suspects per function: 4.37
+Total suspect patterns: 21463
+Average suspects per function: 4.36
 
-Virtual files: 205 total, 12 at 100%, 14 at 90%+
+Virtual files: 203 total, 10 at 100%, 12 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3328, Average: 44.5
@@ -29,11 +29,11 @@ Failed: 4921
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   undefined_data            4051
-  pointer_cast              3544
-  pointer_truncation        2871
+  pointer_cast              3546
+  pointer_truncation        2872
   unrolled_memcpy           1473
   warning_overlapping_globals 877
-  unnamed_param             876
+  unnamed_param             850
   stack_param               815
   unknown_field             700
   concat_reconstruction     664
@@ -41,8 +41,8 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strcpy           483
   negative_offset           459
   stack_ref                 458
-  unaffected_reg            412
-  static_uninitvar          410
+  static_uninitvar          409
+  unaffected_reg            408
   nonstandard_int           270
   raw_address_constant      267
   unrolled_strlen           238
@@ -122,8 +122,8 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   0040b1a0: core_actor.cpp_CDemonActor_onPickup_FUN_0040b1a0 (4 lines)
   0040b1f0: core_actor.cpp_CDemonActor_stopInteraction_FUN_0040b1f0 (4 lines)
   0040d830: core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040d830 (4 lines)
-  0040e160: core_actor.cpp_CVector_ctor_FUN_0040e160 (4 lines)
-  0040e170: core_actor.cpp_CVector_dtor_FUN_0040e170 (4 lines)
+  0040e160: core_actor.cpp_CVector3f_ctor_FUN_0040e160 (4 lines)
+  0040e170: core_actor.cpp_CVector3f_dtor_FUN_0040e170 (4 lines)
   0040e1a0: core_actor.cpp_CVector3f_length_FUN_0040e1a0 (4 lines)
   0040e220: core_actor.cpp_SDamageInfo_dtor_FUN_0040e220 (4 lines)
   0040e230: core_actor.cpp_CBoundingBox3D_ctor_FUN_0040e230 (4 lines)
@@ -145,9 +145,9 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   004100e0: core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_004100e0 (4 lines)
   004101c0: core_baron.cpp_CBaron_getActorType_FUN_004101c0 (4 lines)
   004110e0: core_baron.cpp_CBaron_renderOpaque_FUN_004110e0 (4 lines)
-  00411310: core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310 (4 lines)
+  00411310: core_baron.cpp_CBaron_drawWeapon_FUN_00411310 (4 lines)
   00411340: core_baron.cpp_CBaronWeapon_getActorType_FUN_00411340 (4 lines)
-  00411470: core_baron.cpp_CBaron_fireProjectile_FUN_00411470 (4 lines)
+  00411470: core_baron.cpp_CBaronWeapon_fireProjectile_FUN_00411470 (4 lines)
   00411600: core_baron.cpp_CBaron_getCollisionType_FUN_00411600 (4 lines)
   00411700: core_barrier.cpp_CBarrier_getActorType_FUN_00411700 (4 lines)
   00411790: core_barrier.cpp_CBarrier_renderTransparent_FUN_00411790 (4 lines)
@@ -159,7 +159,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2455 more
+  ... and 2460 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -210,7 +210,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404790: engine_3d.c_processTextureCoordinates_FUN_00404790
     ... and 671 more
 
-  pointer_cast (719 functions):
+  pointer_cast (721 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -221,9 +221,9 @@ FUNCTIONS BY SUSPECT TYPE
     00401f30: engine_2d.c_drawCharacterMasked_FUN_00401f30
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
-    ... and 709 more
+    ... and 711 more
 
-  pointer_truncation (557 functions):
+  pointer_truncation (558 functions):
     00401010: engine_2d.c_initGraphicsSystem_FUN_00401010
     004012d0: engine_2d.c_drawAntialiasedCharShadow_FUN_004012d0
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -234,7 +234,7 @@ FUNCTIONS BY SUSPECT TYPE
     00402040: engine_2d.c_drawCharacterMaskedColor_FUN_00402040
     004021a0: engine_2d.c_drawCharacterHighlighted_FUN_004021a0
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
-    ... and 547 more
+    ... and 548 more
 
   unrolled_memcpy (535 functions):
     004023b0: engine_2d.c_wrapTextToWidth_FUN_004023b0
@@ -262,18 +262,18 @@ FUNCTIONS BY SUSPECT TYPE
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
     ... and 867 more
 
-  unnamed_param (78 functions):
+  unnamed_param (70 functions):
     0040e2e1: core_actor.cpp_FUN_0040e2e1
     0040e2f1: core_actor.cpp_FUN_0040e2f1
     00412080: core_bat.cpp_FUN_00412080
     00412090: core_bat.cpp_FUN_00412090
     0041803d: core_bodypart.cpp_FUN_0041803d
     004182cd: core_boneguy.cpp_FUN_004182cd
-    00428bb0: core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0
     0042e7b0: cockpit_ckptutil.c_FUN_0042e7b0
     0042ee00: cockpit_ckptutil.c_FUN_0042ee00
     00430210: cockpit_ckptutil.c_FUN_00430210
-    ... and 68 more
+    004303d0: cockpit_ckptutil.c_FUN_004303d0
+    ... and 60 more
 
   stack_param (112 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
@@ -366,7 +366,9 @@ FUNCTIONS BY SUSPECT TYPE
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
     ... and 148 more
 
-  unaffected_reg (50 functions):
+  static_uninitvar (0 functions):
+
+  unaffected_reg (49 functions):
     00401710: engine_2d.c_drawLine3D_FUN_00401710
     00401850: engine_2d.c_findBestPaletteMatch_FUN_00401850
     00402e90: engine_2d.c_buildFogTable_FUN_00402e90
@@ -377,9 +379,7 @@ FUNCTIONS BY SUSPECT TYPE
     0041206c: core_bat.cpp_FUN_0041206c
     00417fec: core_bodypart.cpp_FUN_00417fec
     004216d0: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
-    ... and 40 more
-
-  static_uninitvar (0 functions):
+    ... and 39 more
 
   nonstandard_int (25 functions):
     0040e1cc: core_actor.cpp_FUN_0040e1cc

@@ -609,7 +609,7 @@ section .text
     PUSH EBP                            ; 00526c2e | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
         ;   Label: LAB_00526c2e
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 00526c2f
-        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * slot)
+        ;   XREF to: 00525570 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 00526c34
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526c37
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()

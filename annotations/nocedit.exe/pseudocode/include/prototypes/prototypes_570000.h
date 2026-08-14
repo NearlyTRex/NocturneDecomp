@@ -59,15 +59,15 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00571230(CDemonSet *this_p
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00571380(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_005713c0(CDemonSet *this_ptr);
-int __cdecl core_set_cpp_CVector3f_equals_FUN_00571410(CVector3f *a,CVector3f *b);
-int __cdecl core_set_cpp_CVector3f_notEquals_FUN_00571440(CVector3f *a,CVector3f *b);
+int __cdecl core_set_cpp_CVector3f_equals_FUN_00571410(CVector3f *this_ptr,CVector3f *b);
+int __cdecl core_set_cpp_CVector3f_notEquals_FUN_00571440(CVector3f *this_ptr,CVector3f *b);
 SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00571470(SRoom *this_ptr);
 SRoom * __cdecl core_set_cpp_SRoom_dtor_FUN_00571480(SRoom *this_ptr,uint flags);
 SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00571490(SVDBox *this_ptr);
 SVDBox * __cdecl core_set_cpp_SVDBox_dtor_FUN_005714a0(SVDBox *this_ptr,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_dtor_FUN_005714b0(C3DSLight *this_ptr,uint flags);
-CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *a,CVector3f *b);
-CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_00571510(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_005714c0(CVector3f *this_ptr,CVector3f *b);
+CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor_FUN_00571510(CVector3f *this_ptr,uint flags);
 C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor_FUN_00571530(C3DSCamera *objs,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor_FUN_00571550(C3DSLight *objs,uint flags);
 SRoom * __cdecl core_set_cpp_SRoom_arrdtor_FUN_00571570(SRoom *objs,uint flags);
@@ -143,7 +143,7 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_005763a0(SVDBox *obb_a,SVDBo
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonSet *this_ptr,CVector3f *position);
-CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *objs,uint flags);
+CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *this_ptr,uint flags);
 void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void);
 void __cdecl core_setedit_cpp_incrementTrailingNumber_FUN_00576950(char *name);
 void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char *name,int thumbnail_index);

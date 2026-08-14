@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor_FUN_005a1fd0(CDeformableModel *objs,uint flags)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor_FUN_005a1fd0(CDeformableModel *this_ptr,uint flags)
 ;
 ; Parameters:
-; CDeformableModel * Stack[0x4]:4   objs
+; CDeformableModel * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

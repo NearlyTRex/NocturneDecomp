@@ -58,7 +58,7 @@
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 80,
+        "line": 79,
         "message": "use of undeclared identifier 'DAT_005bc010'; did you mean 'DAT_005bc030'?"
       }
     ],
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 89,
+    "complexity_score": 88,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 73,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 253
+    "total_lines": 252
   },
   "cross_references": [
     {
@@ -158,7 +158,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0",
-    "signature": "uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *bitstream,int num_bits)"
+    "signature": "uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(CFileBitStream *this_ptr,int num_bits)"
   },
   "function_calls": [
     {
@@ -379,7 +379,7 @@
       },
       {
         "is_param": true,
-        "name": "bitstream",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CFileBitStream *"
@@ -396,10 +396,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 72,
       "match": "DAT_005bc010",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_005bc010 + bitstream->bits_available * 4)) >>",
+      "text": "*(uint *)(&DAT_005bc010 + this_ptr->bits_available * 4)) >>",
       "type": "undefined_data"
     }
   ]

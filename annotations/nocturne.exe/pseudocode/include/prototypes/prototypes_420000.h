@@ -142,7 +142,7 @@ EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00428710(CCha
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state );
 void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_00428ab0(CCharacter *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_00428b60(CCharacter *this_ptr,CDemonActor *target);
-void core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(int param_1,undefined4 param_2);
+void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(CCharacter *this_ptr,float timeout);
 int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_canWalk_FUN_00428bf0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_FUN_00428c00(CCharacter *this_ptr,float delta_time);

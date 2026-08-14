@@ -71,7 +71,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(CSfxSample *th
 void __cdecl sound_sndmain_cpp_CSfxSample_releaseBufferId_FUN_00523b20(CSfxSample *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_00523b70(CSfxSample *this_ptr);
 void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0(CSfxSample *this_ptr,int lock_offset,int lock_length);
-void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample *sample);
+void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset);
 int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *this_ptr,float time_window,float update_interval);
 void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_00524410(CSfxSlot *this_ptr);
@@ -81,7 +81,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(CSfxS
 void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0(CSfxSlot *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(CSfxSlot *this_ptr,float delta_time);
 void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(CSfxSlot *this_ptr,SMixBuffer mix_buffer);
-void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *slot);
+void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005256f0(CSfxSlot *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(CSfxSlot *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot *this_ptr,double hardware_playback_pos);

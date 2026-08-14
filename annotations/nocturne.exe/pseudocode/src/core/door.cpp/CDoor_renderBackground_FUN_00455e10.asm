@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_00455e2d
     MOV dword ptr [EBX + 0x9c0],0x3     ; 00455e2e
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00455e38
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00455e3d
     PUSH 0x0                            ; 00455e40
     LEA EDX,[ESP + 0x4]                 ; 00455e42

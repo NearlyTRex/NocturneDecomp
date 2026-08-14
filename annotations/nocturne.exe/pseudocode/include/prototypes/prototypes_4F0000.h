@@ -15,6 +15,7 @@
 #include "types/classes/CPendulum.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
 #include "types/classes/CScat.h"
@@ -156,7 +157,7 @@ void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_004f8150(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_004f81c0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_ptr);
-void engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f8570(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
 uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_ptr,int file_index);
 CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_004f8810(CPod *this_ptr);
 CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(CPod *this_ptr,uint flags);
@@ -212,8 +213,8 @@ void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(CScat 
 void __cdecl core_scat_cpp_CScat_archive_FUN_004fcae0(CScat *this_ptr);
 int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_004fcb20(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_processDamage_FUN_004fcbd0(CScat *this_ptr,SDamageInfo *damage_info);
-undefined4 core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd20(int param_1);
-void core_scat_cpp_CScat_handlePureVirtualCall_FUN_004fcd30(int param_1,undefined4 param_2);
+int __cdecl core_scat_cpp_CScat_isWeaponDrawn_FUN_004fcd20(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_drawWeapon_FUN_004fcd30(CScat *this_ptr,int drawn);
 int __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_FUN_004fcd90(CScat *this_ptr,float delta_time);
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr);

@@ -75,7 +75,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00453170(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(CKeyFramedModel *this_ptr);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *model_ptr);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(CKeyFramedModel *this_ptr);
 float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_00453990(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00453e10(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
@@ -147,7 +147,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00456c40(CFileFinder *th
 int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00456cc0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00456d40(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00456d80(CFileFinder *this_ptr);
-void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder *finder,LPWIN32_FIND_DATAA find_data);
+void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00456ef0(CDemonPart *this_ptr);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00456f40(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00456f60(CDemonPart *this_ptr);

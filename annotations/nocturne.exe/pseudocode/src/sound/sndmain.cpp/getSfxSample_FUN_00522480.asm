@@ -344,7 +344,7 @@ section .text
         ;   XREF to: 005227d5 (CONDITIONAL_JUMP)  ; LAB_005227d5
     PUSH EBP                            ; 005227a3
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 005227a4
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005227a9
     MOV ESI,dword ptr [ESP + 0x100]     ; 005227ac
     PUSH ESI                            ; 005227b3
@@ -459,7 +459,7 @@ section .text
     PUSH EBP                            ; 00522928
         ;   Label: LAB_00522928
     CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0 ; 00522929
-        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * sample)
+        ;   XREF to: 00523cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(CSfxSample * this_ptr)
     JMP 0x005227b9                      ; 0052292e
         ;   XREF to: 005227b9 (UNCONDITIONAL_JUMP)  ; LAB_005227b9
     MOV EAX,dword ptr [ESP + 0x118]     ; 00522933

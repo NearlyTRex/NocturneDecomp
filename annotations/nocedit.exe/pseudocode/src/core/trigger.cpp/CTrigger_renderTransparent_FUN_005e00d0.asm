@@ -90,7 +90,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005e0106
     PUSH EBX                            ; 005e0109
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005e010a
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005e010f
     LEA EDX,[ESP + 0x34]                ; 005e0112
     PUSH EDX                            ; 005e0116
@@ -138,7 +138,7 @@ section .text
         ;   XREF to: 005e0609 (CONDITIONAL_JUMP)  ; LAB_005e0609
     PUSH EDX                            ; 005e0189
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005e018a
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005e018f
     MOV EAX,dword ptr [EBP + 0x14]      ; 005e0192
     FLD float ptr [EAX + 0x160]         ; 005e0195

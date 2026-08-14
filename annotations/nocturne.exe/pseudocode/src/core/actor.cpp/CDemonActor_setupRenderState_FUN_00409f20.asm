@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *actor)
+; void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *this_ptr)
 ;
 ; Parameters:
-; CDemonActor *    Stack[0x4]:4   actor
+; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[66]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040ec30 at 0040ec3a

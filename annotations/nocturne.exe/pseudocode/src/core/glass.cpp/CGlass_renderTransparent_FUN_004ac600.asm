@@ -66,7 +66,7 @@ section .text
     PUSH EDI                            ; 004ac642
     PUSH EBP                            ; 004ac643
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004ac644
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004ac649
     PUSH EBX                            ; 004ac64c
     LEA EAX,[ESP + 0x8]                 ; 004ac64d

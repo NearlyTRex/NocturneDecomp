@@ -24,7 +24,7 @@ section .text
     PUSH EAX                            ; 00534792
         ;   Label: LAB_00534792
     CALL core_stairs.cpp_CStairs_ctor_FUN_005347b0 ; 00534793
-        ;   XREF to: 005347b0 (UNCONDITIONAL_CALL)  ; CStairs * core_stairs.cpp_CStairs_ctor_FUN_005347b0(CStairs * param_1)
+        ;   XREF to: 005347b0 (UNCONDITIONAL_CALL)  ; CStairs * core_stairs.cpp_CStairs_ctor_FUN_005347b0(CStairs * this_ptr)
     ADD ESP,0x4                         ; 00534798
     RET                                 ; 0053479b
 

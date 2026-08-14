@@ -78,8 +78,8 @@ int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_005524a0(void);
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_005524c0(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005524d0(CWayPoint *this_ptr);
-void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_00552510(CWayPoint *this_ptr);
-undefined4 core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(void);
+void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_00552510(CWayPoint *this_ptr);
+int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005525d0(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(CWayPoint *this_ptr,CWayPoint *start_waypoint);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00552830(CWayPoint *this_ptr,uint flags);

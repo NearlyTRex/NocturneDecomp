@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(int param_1,undefined4 param_2)
+; void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(CCharacter *this_ptr,float timeout)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   timeout
 ;
 ; *****************************************************************************
 

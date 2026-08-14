@@ -445,7 +445,7 @@ void __cdecl copyVector(CVector3f *destination,CVector3f *source);
 
 // Original: shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
 // Address: 0051ee70
-CLodVert * __cdecl CLodVert::copy(CLodVert *destination,CLodVert *source);
+CLodVert * __cdecl CLodVert::copy(CLodVert *this_ptr,CLodVert *source);
 
 // Original: shape_meshlod.cpp_CLodEdge_isBoundary_FUN_0051eea0
 // Address: 0051eea0
@@ -473,7 +473,7 @@ CLodFace * __cdecl CLodFace::dtor(CLodFace *this_ptr,uint flags);
 
 // Original: shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0
 // Address: 0051efe0
-CLodFace * __cdecl CLodFace::copy2(CLodFace *destination,CLodFace *source);
+CLodFace * __cdecl CLodFace::copy2(CLodFace *this_ptr,CLodFace *source);
 
 // Original: shape_meshlod.cpp_CSpotView_dtor_FUN_0051f080
 // Address: 0051f080
@@ -493,8 +493,8 @@ float * __cdecl copyFloat3(float *dest_ptr,float *src_ptr);
 
 // Original: shape_meshlod.cpp_CLodFace_arrdtor_FUN_0051f0c0
 // Address: 0051f0c0
-CLodFace * __cdecl CLodFace::arrdtor(CLodFace *objs,uint flags);
+CLodFace * __cdecl CLodFace::arrdtor(CLodFace *this_ptr,uint flags);
 
 // Original: shape_meshlod.cpp_CVector3f_arrdtor_FUN_0051f0e0
 // Address: 0051f0e0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);

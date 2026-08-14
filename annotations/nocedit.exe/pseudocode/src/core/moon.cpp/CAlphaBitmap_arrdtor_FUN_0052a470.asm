@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags)
+; CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
-; CAlphaBitmap *   Stack[0x4]:4   objs
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

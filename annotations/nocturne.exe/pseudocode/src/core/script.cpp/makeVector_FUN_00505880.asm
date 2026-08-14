@@ -13,7 +13,7 @@
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005014e4
 ;
 ; Called Functions:
-;   core_actor.cpp_CVector_ctor_FUN_0040e160
+;   core_actor.cpp_CVector3f_ctor_FUN_0040e160
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_script.cpp_makeVector_FUN_00505880
     MOV EBX,dword ptr [ESP + 0x8]       ; 00505881
     PUSH EBX                            ; 00505885
-    CALL core_actor.cpp_CVector_ctor_FUN_0040e160 ; 00505886
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_0040e160(CVector3f * this_ptr)
+    CALL core_actor.cpp_CVector3f_ctor_FUN_0040e160 ; 00505886
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector3f_ctor_FUN_0040e160(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 0050588b
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050588e
     MOV dword ptr [EBX],EAX             ; 00505892

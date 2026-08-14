@@ -271,8 +271,8 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 ### `sound_sndmain.cpp_killAllSfx_FUN_005a9cc0`
 
 - Pool `g_SfxSlots` sentinel `g_SfxLastSlot` (count 64)
-  - Before: `while (slot != (CSfxSlot *)&g_SfxLastSlot)`
-  - After:  `while (slot != g_SfxSlots + sizeof(g_SfxSlots) / sizeof(g_SfxSlots[0]))`
+  - Before: `while (this_ptr != (CSfxSlot *)&g_SfxLastSlot)`
+  - After:  `while (this_ptr != g_SfxSlots + sizeof(g_SfxSlots) / sizeof(g_SfxSlots[0]))`
 
 ### `sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0`
 

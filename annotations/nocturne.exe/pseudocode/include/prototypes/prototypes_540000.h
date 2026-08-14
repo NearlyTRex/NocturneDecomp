@@ -9,12 +9,10 @@
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CCryptVessel.h"
-#include "types/classes/CDSEModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
 #include "types/classes/CMatrix3x4f.h"
-#include "types/classes/CMultiCram.h"
 #include "types/classes/CStranger.h"
 #include "types/classes/CSuccubus.h"
 #include "types/classes/CSvetlana.h"
@@ -53,7 +51,7 @@
 
 void __cdecl core_stranger_cpp_CStranger_FUN_005402f0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStranger *this_ptr,float delta_time);
-undefined4 core_stranger_cpp_CStranger_handlePureVirtualCall_FUN_00540720(int param_1);
+int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_00540720(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_00540730(CStranger *this_ptr,int drawn);
 int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_00540770(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_stranger_cpp_CStranger_reset_FUN_00540820(CStranger *this_ptr);
@@ -61,10 +59,10 @@ EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00540890(CStra
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_00540920(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 float core_stranger_cpp_FUN_00540970(void);
-void __cdecl shape_meshlod_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
+void __cdecl core_stranger_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
 float core_stranger_cpp_FUN_005409c0(float *param_1,float *param_2);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation);
-CDSEModel * __cdecl shape_multicrm_cpp_CMultiCram_getSecondModel_FUN_00540a10(CMultiCram *this_ptr);
+void * __cdecl core_stranger_cpp_FUN_00540a10(void *ptr);
 int __cdecl core_stranger_cpp_isProcessDisabled_FUN_00540a20(CDemonActor *actor);
 int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor);
 void __cdecl core_stranger_cpp_setWindVelocity_FUN_00540a40(CCloth *cloth_ptr,CVector3f *velocity);
@@ -154,7 +152,7 @@ void __cdecl engine_texture_cpp_CTextureCache_FUN_00544e50(CTextureCache *this_p
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_00544e60(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(CTextureCache *this_ptr,char *texture_name);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_00545390(CTextureCache *this_ptr,int hint_index,char *texture_name);
-void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *cache,int texture_index);
+void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *this_ptr,int texture_index);
 void __cdecl engine_texture_cpp_CTextureCache_FUN_00545700(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00545810(CTextureCache *this_ptr,char *output_buffer);
 CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005458a0(void);

@@ -31,7 +31,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0047c2d6
     PUSH EBX                            ; 0047c2da
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c2db
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047c2e0
     MOV EDX,dword ptr [ESP + 0x20]      ; 0047c2e3
     LEA EAX,[EDX*0x4 + 0x0]             ; 0047c2e7
@@ -73,7 +73,7 @@ section .text
     PUSH EBX                            ; 0047c35c
         ;   Label: LAB_0047c35c
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c35d
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047c362
     ADD ESP,0xc                         ; 0047c365
     POP EDI                             ; 0047c368

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor_FUN_004ee440(CBloodPool *objs,uint flags)
+; CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor_FUN_004ee440(CBloodPool *this_ptr,uint flags)
 ;
 ; Parameters:
-; CBloodPool *     Stack[0x4]:4   objs
+; CBloodPool *     Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

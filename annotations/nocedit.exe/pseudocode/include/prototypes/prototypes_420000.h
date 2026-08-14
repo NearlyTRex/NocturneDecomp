@@ -113,7 +113,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setLightOrientZ_FUN_004235c0(CLightAc
 int __cdecl core_boxactor_cpp_CLightActor_isLightPartVisible_FUN_004235d0(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActor *this_ptr,uint flags);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *this_ptr,uint flags);
-CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor_FUN_004236e0(CDemonFilter *objs,uint flags);
+CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor_FUN_004236e0(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_bride_cpp_staticInit_FUN_00423700(void);
 CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_00423760(void);
 CDemonActorType * __cdecl core_bride_cpp_CBride_getActorType_FUN_00423790(CBride *this_ptr);

@@ -1596,7 +1596,7 @@
     "vars":{
       "params":[
         {
-          "name":"actor",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -2835,7 +2835,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CVector_copy_FUN_0040e2a0",
+    "name":"core_actor.cpp_CVector3f_copy_FUN_0040e2a0",
     "ret":"CVector3f*",
     "vars":{
       "params":[
@@ -23156,7 +23156,7 @@
     "vars":{
       "params":[
         {
-          "name":"model_ptr",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -31728,7 +31728,7 @@
       ],
       "params":[
         {
-          "name":"inventory_ptr",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -34401,7 +34401,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_minecar.cpp_CMinecar_setup_FUN_004d6020",
+    "name":"core_minecar.cpp_CMineCar_setup_FUN_004d6020",
     "ret":"void",
     "vars":{
       "params":[
@@ -42277,12 +42277,38 @@
         "start":"004fcd20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20",
-    "ret":"undefined1",
+    "name":"core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CScat*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53444,12 +53470,38 @@
         "start":"00540720"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720",
-    "ret":"undefined1",
+    "name":"core_stranger.cpp_CStranger_isWeaponDrawn_FUN_00540720",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -53564,7 +53616,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_divideVectorByScalar_FUN_005409a0",
+    "name":"core_stranger.cpp_divideVectorByScalar_FUN_005409a0",
     "ret":"void",
     "vars":{
       "params":[

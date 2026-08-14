@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0",
-    "signature": "CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source)"
+    "signature": "CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *this_ptr,CLodFace *source)"
   },
   "function_calls": [
     {
@@ -89,7 +89,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "destination->submesh_id = source->submesh_id;",
+      "text": "this_ptr->submesh_id = source->submesh_id;",
       "type": "unrolled_memcpy"
     },
     {
@@ -98,7 +98,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "destination->edge_idx_0 = source->edge_idx_0;",
+      "text": "this_ptr->edge_idx_0 = source->edge_idx_0;",
       "type": "unrolled_memcpy"
     },
     {
@@ -107,7 +107,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(destination->normal).x = (source->normal).x;",
+      "text": "(this_ptr->normal).x = (source->normal).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -129,7 +129,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "destination",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CLodFace *"

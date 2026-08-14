@@ -77,8 +77,8 @@ void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_p
 CQuaternion4f * __cdecl core_mimic_cpp_copyQuaternion_FUN_00520e00(CQuaternion4f *dest,CQuaternion4f *src);
 void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_00520e50(void);
-CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr);
-void __cdecl core_minecar_cpp_CMinecar_setup_FUN_00520e90(CMineCar *this_ptr);
+CDemonActorType * __cdecl core_minecar_cpp_CMineCar_getActorType_FUN_00520e80(CMineCar *this_ptr);
+void __cdecl core_minecar_cpp_CMineCar_setup_FUN_00520e90(CMineCar *this_ptr);
 void __cdecl core_minecar_cpp_CMineCar_process_FUN_00520eb0(CMineCar *this_ptr,float delta_time);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_00520f20(CMineCar *this_ptr);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_00520f40(CMineCar *this_ptr,uint flags);
@@ -103,7 +103,7 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_00522bf0(SClipPlane *this_ptr);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_00522c00(SClipPlane *this_ptr,uint flags);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(SClipPlane *objs,uint flags);
-CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_00522c30(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_00522c30(CVector3f *this_ptr,uint flags);
 void __cdecl core_mission_cpp_staticInit_FUN_00522c50(void);
 void __cdecl core_mission_cpp_skipLine_FUN_00522c60(_FILE *file_handle);
 void __cdecl core_mission_cpp_CDemonMission_reset_FUN_00522c80(CDemonMission *this_ptr);
@@ -210,8 +210,8 @@ int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(CMoon *this_pt
 SBat * __cdecl core_moon_cpp_SBat_ctor_FUN_0052a410(SBat *this_ptr);
 SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_0052a420(SBat *this_ptr,uint flags);
 SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_0052a430(SBat *objs,uint flags);
-CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags);
-CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *objs,uint flags);
+CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *this_ptr,uint flags);
+CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470(CAlphaBitmap *this_ptr,uint flags);
 int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_0052a490(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_0052a4c0(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_0052a4f0(CMorphModel *this_ptr,uint flags);
@@ -255,11 +255,11 @@ void __cdecl core_morph_cpp_transformAndProjectVertex_FUN_0052cc10(SProjectedVer
 int __cdecl core_morph_cpp_addInts_FUN_0052cc40(int a,int b);
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr);
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70(SMorphControlPoint *this_ptr,uint flags);
-CVector3f * __cdecl core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(CVector3f *this_ptr,uint flags);
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint *objs,uint flags);
-CDeformableModelInstance * __cdecl core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance *objs,uint flags);
-CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0(CBoundingBox3D *objs,uint flags);
-CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *objs,uint flags);
+CDeformableModelInstance * __cdecl core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance *this_ptr,uint flags);
+CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0(CBoundingBox3D *this_ptr,uint flags);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_0052cd10(CMorphModel *this_ptr,uint flags);
 void __cdecl core_morph_cpp_skipLine_FUN_0052cd30(_FILE *file_handle);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr,_FILE *file_handle);
@@ -302,7 +302,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_reset_FUN_0052eca0(CFileBitStream *thi
 void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream *this_ptr,_FILE *file_handle,int buffer_size,int stream_length);
 void __cdecl sound_mp3_cpp_CFileBitStream_close_FUN_0052edf0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_0052ee50(CFileBitStream *this_ptr);
-uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int num_bits);
+uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_getTotalBitsRead_FUN_0052f0c0(CFileBitStream *this_ptr);
 int __cdecl sound_mp3_cpp_CFileBitStream_getErrorFlag_FUN_0052f0d0(CFileBitStream *this_ptr);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);

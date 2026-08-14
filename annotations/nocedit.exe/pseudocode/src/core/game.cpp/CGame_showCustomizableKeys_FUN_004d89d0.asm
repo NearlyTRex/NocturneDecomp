@@ -92,7 +92,7 @@ section .text
     PUSH ECX                            ; 004d8a0d
     MOV [0x02d831cc],EAX                ; 004d8a0e | g_HelpLineHeight
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0 ; 004d8a13
-        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)
+        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d8a18
     MOV EDX,dword ptr [0x02d831cc]      ; 004d8a1b | g_HelpLineHeight
     MOV [0x02d831d0],EAX                ; 004d8a21 | g_HelpCharWidth

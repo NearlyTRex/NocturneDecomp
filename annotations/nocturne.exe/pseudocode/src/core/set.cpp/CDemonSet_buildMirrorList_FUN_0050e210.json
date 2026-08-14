@@ -62,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 53,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 39,
     "suspect_count": 1,
     "suspect_types": [
       "shadow_pointer_walk"
     ],
-    "total_lines": 121
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -240,7 +240,7 @@
   "suspects": [
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
+      "line": 38,
       "match": "pCVar3 = (T *)pCVar3->ARRAY",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonSet *)pCVar3->cameras;",

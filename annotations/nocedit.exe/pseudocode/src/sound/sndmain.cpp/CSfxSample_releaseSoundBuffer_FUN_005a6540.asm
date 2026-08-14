@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample *sample)
+; void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSample *this_ptr)
 ;
 ; Parameters:
-; CSfxSample *     Stack[0x4]:4   sample
+; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 at 005a62d5

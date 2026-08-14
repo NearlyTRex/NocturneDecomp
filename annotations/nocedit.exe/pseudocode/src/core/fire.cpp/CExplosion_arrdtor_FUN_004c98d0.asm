@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CExplosion * __cdecl core_fire_cpp_CExplosion_arrdtor_FUN_004c98d0(CExplosion *objs,uint flags)
+; CExplosion * __cdecl core_fire_cpp_CExplosion_arrdtor_FUN_004c98d0(CExplosion *this_ptr,uint flags)
 ;
 ; Parameters:
-; CExplosion *     Stack[0x4]:4   objs
+; CExplosion *     Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

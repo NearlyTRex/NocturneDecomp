@@ -887,7 +887,7 @@ joined_r0x0055f6da:
                                             if (iVar8 == 0) {
                                               return -1;
                                             }
-                                            core_actor_cpp_CVector_ctor_FUN_00410340(&local_154);
+                                            core_actor_cpp_CVector3f_ctor_FUN_00410340(&local_154);
                                             pCVar10 = (CVector3f *)0x0;
                                             if (*local_11c == ',') {
                                               local_60 = -1;

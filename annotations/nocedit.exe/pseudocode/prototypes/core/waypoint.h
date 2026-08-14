@@ -23,9 +23,9 @@ CDemonActorType * __cdecl CWayPoint::getActorType(CWayPoint *this_ptr);
 // Address: 005ebe70
 CWayPoint * __cdecl CWayPoint::ctor(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0
+// Original: core_waypoint.cpp_CWayPoint_setup_FUN_005ebeb0
 // Address: 005ebeb0
-void __cdecl CWaypoint::setup(CWayPoint *this_ptr);
+void __cdecl CWayPoint::setup(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005ebf70
 // Address: 005ebf70

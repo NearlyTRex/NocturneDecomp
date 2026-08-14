@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTrail * __cdecl core_fire_cpp_CTrail_arrdtor_FUN_004c9830(CTrail *objs,uint flags)
+; CTrail * __cdecl core_fire_cpp_CTrail_arrdtor_FUN_004c9830(CTrail *this_ptr,uint flags)
 ;
 ; Parameters:
-; CTrail *         Stack[0x4]:4   objs
+; CTrail *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

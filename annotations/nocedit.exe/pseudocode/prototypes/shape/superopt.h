@@ -669,7 +669,7 @@ void __cdecl CP2D::set(CP2D *this_ptr,double x,double y);
 
 // Original: shape_superopt.cpp_CP2D_copy_FUN_005d8330
 // Address: 005d8330
-CP2D * __cdecl CP2D::copy(CP2D *dst,CP2D *src);
+CP2D * __cdecl CP2D::copy(CP2D *this_ptr,CP2D *src);
 
 // Original: shape_superopt.cpp_CP2D_subtract_FUN_005d8350
 // Address: 005d8350

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *objs,uint flags)
+; CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *this_ptr,uint flags)
 ;
 ; Parameters:
-; CDemonFilter *   Stack[0x4]:4   objs
+; CDemonFilter *   Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

@@ -156,7 +156,7 @@ CVec * __cdecl shape_superopt_cpp_CVec_cross_FUN_005d8270(CVec *this_ptr,CVec *a
 void __cdecl shape_superopt_cpp_CVec_copy3_FUN_005d82b0(CVec *this_ptr,CVec *other);
 double __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other);
 void __cdecl shape_superopt_cpp_CP2D_set_FUN_005d8310(CP2D *this_ptr,double x,double y);
-CP2D * __cdecl shape_superopt_cpp_CP2D_copy_FUN_005d8330(CP2D *dst,CP2D *src);
+CP2D * __cdecl shape_superopt_cpp_CP2D_copy_FUN_005d8330(CP2D *this_ptr,CP2D *src);
 CP2D * __stack2_esi shape_superopt_cpp_CP2D_subtract_FUN_005d8350(CP2D *this_ptr,CP2D *a,CP2D *b);
 CP2D * __stack2_esi shape_superopt_cpp_CP2D_add_FUN_005d8390(CP2D *this_ptr,CP2D *a,CP2D *b);
 CP2D * __stackdbl_esi shape_superopt_cpp_CP2D_scale_FUN_005d83d0(CP2D *this_ptr,double scale,CP2D *result);
@@ -267,9 +267,9 @@ CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CText
 int __cdecl engine_texture_cpp_CTextureCache_free_FUN_005dcb00(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTextureCache *this_ptr);
-int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,char *texture_name);
+int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *this_ptr,char *texture_name);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache *this_ptr,int hint_index,char *texture_name);
-void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index);
+void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *this_ptr,int texture_index);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCount_FUN_005dd570(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_renderAllTextures_FUN_005dd580(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache *this_ptr,char *output_buffer);

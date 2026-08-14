@@ -197,7 +197,7 @@ int __cdecl CCmdParse::getParamTextLength(CCmdParse *this_ptr,int param_count);
 
 // Original: core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760
 // Address: 00562760
-int __cdecl CCmdParse::getParamTextLengthAt(CCmdParse *this_pointer,int param_index);
+int __cdecl CCmdParse::getParamTextLengthAt(CCmdParse *this_ptr,int param_index);
 
 // Original: core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0
 // Address: 005627f0

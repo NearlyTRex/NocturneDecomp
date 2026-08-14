@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStake * __cdecl core_fire_cpp_CStake_arrdtor_FUN_004c99d0(CStake *objs,uint flags)
+; CStake * __cdecl core_fire_cpp_CStake_arrdtor_FUN_004c99d0(CStake *this_ptr,uint flags)
 ;
 ; Parameters:
-; CStake *         Stack[0x4]:4   objs
+; CStake *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

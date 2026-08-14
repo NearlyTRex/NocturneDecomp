@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *this_ptr)
 ;
 ; Parameters:
-; CKeyFramedModel * Stack[0x4]:4   model_ptr
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; CKeyFramedModel * Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28

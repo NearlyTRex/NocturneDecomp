@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *objs,uint flags)
+; CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_arrdtor_FUN_004c9850(CLightningBolt *this_ptr,uint flags)
 ;
 ; Parameters:
-; CLightningBolt * Stack[0x4]:4   objs
+; CLightningBolt * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

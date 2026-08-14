@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x2c                        ; 0049a515
     PUSH EBX                            ; 0049a518
     CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640 ; 0049a519
-        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)
+        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * this_ptr)
     ADD ESP,0x4                         ; 0049a51e
     POP EBX                             ; 0049a521
     RET                                 ; 0049a522

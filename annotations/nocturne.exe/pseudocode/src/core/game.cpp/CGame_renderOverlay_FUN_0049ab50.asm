@@ -117,7 +117,7 @@ section .text
     PUSH EBX                            ; 0049abe8
     MOV EDI,EAX                         ; 0049abe9
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0 ; 0049abeb
-        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * font, int char_code)
+        ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049abf0
     MOV ESI,EAX                         ; 0049abf3
     MOV EAX,[0x005be220]                ; 0049abf5 | DAT_005be220

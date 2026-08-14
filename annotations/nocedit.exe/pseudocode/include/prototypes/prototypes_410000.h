@@ -52,8 +52,8 @@
 // FUNCTION PROTOTYPES - Range 0x410000
 // =============================================================================
 
-CVector3f * __cdecl core_actor_cpp_CVector_ctor_FUN_00410340(CVector3f *this_ptr);
-CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_00410350(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_00410340(CVector3f *this_ptr);
+CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_00410350(CVector3f *this_ptr,uint flags);
 void __cdecl core_actor_cpp_copyVector_FUN_00410360(CVector3f *dst_ptr,CVector3f *src_ptr);
 float __cdecl core_actor_cpp_CVector3f_length_FUN_00410380(CVector3f *this_ptr);
 void __cdecl core_actor_cpp_CVector3f_zero_FUN_004103b0(CVector3f *this_ptr);
@@ -64,11 +64,11 @@ SDamageInfo * __cdecl core_actor_cpp_SDamageInfo_dtor_FUN_00410420(SDamageInfo *
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_ctor_FUN_00410430(CBoundingBox3D *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_copy_FUN_00410440(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_dtor_FUN_00410490(CBoundingBox3D *this_ptr,uint flags);
-CVector3f * __cdecl core_actor_cpp_CVector_copy_FUN_004104a0(CVector3f *this_ptr,CVector3f *other);
+CVector3f * __cdecl core_actor_cpp_CVector3f_copy_FUN_004104a0(CVector3f *this_ptr,CVector3f *other);
 float * __cdecl core_actor_cpp_copyFloat1_FUN_004104d0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat2_FUN_004104e0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat3_FUN_004104f0(float *dst,float *src);
-CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor_FUN_00410500(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor_FUN_00410500(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap *this_ptr);
@@ -143,9 +143,9 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_00412500(CArmour *this_ptr,ui
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_004125c0(CEnemy *this_ptr,uint flags);
 SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_00412680(SFire *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint flags);
-CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f *this_ptr,uint flags);
 SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_00412700(SFire *objs,uint flags);
-CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *objs,uint flags);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_00412740(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_00412770(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_004127a0(CBackgroundActor *this_ptr);

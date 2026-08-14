@@ -43,7 +43,7 @@ CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFX *this
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFX *this_ptr);
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFX *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr);
-CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *objs,uint flags);
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void);
 void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void);
 void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void);
@@ -65,7 +65,7 @@ CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMa
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);
 float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00472090(double y,double x);
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
-CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
+CMatrix3x3f * __stack2_esi core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540(CMatrix3x3f *this_ptr,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
 void __cdecl core_dlight_cpp_staticInit_FUN_00472680(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint flags);
@@ -115,7 +115,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramedModel *this_ptr);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *model_ptr);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190(CKeyFramedModel *this_ptr);
 float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *output_normal);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00478650(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
@@ -135,8 +135,8 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedM
 void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this_ptr,char *filename);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramedModel *this_ptr,char *filename);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_createSinglePart_FUN_0047a3b0(CKeyFramedModel *this_ptr);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00(CKeyFramedModel *this_ptr,float weld_tolerance,float angle_threshold_radians);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0(CKeyFramedModel *this_ptr,float weld_tolerance);
@@ -165,7 +165,7 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemon
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
-CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *objs,uint flags);
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_0047f010(void);
 CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0047f040(CZombieDog *this_ptr);

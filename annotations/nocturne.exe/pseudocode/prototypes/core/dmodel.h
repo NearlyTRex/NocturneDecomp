@@ -61,7 +61,7 @@ void __cdecl CKeyFramedModel::calcNormals(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0
 // Address: 004537d0
-void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *model_ptr);
+void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950
 // Address: 00453950

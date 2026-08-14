@@ -1161,6 +1161,10 @@
       "type":"struct"
     },
     {
+      "name":"CPodAuditRecord",
+      "type":"struct"
+    },
+    {
       "name":"CPodDirectoryEntry",
       "type":"struct"
     },
@@ -36614,6 +36618,66 @@
       "importable":true,
       "len":24,
       "name":"CPod_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":32,
+          "name":"user_path",
+          "offset":0,
+          "type":"char[32]"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":32,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"operation_type",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":256,
+          "name":"filename",
+          "offset":40,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"original_timestamp",
+          "offset":296,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"original_file_size",
+          "offset":300,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"file_offset",
+          "offset":304,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"compressed_size",
+          "offset":308,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":312,
+      "name":"CPodAuditRecord",
       "pack":false,
       "type":"struct"
     },

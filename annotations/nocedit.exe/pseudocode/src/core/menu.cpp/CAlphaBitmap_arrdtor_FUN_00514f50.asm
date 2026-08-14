@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *objs,uint flags)
+; CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
-; CAlphaBitmap *   Stack[0x4]:4   objs
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

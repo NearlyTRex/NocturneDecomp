@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *objs,uint flags)
+; CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *this_ptr,uint flags)
 ;
 ; Parameters:
-; CLodFace *       Stack[0x4]:4   objs
+; CLodFace *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

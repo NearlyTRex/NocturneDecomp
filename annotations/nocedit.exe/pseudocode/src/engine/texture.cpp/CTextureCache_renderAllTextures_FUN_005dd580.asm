@@ -37,7 +37,7 @@ section .text
         ;   Label: LAB_005dd5a8
     PUSH ESI                            ; 005dd5a9
     CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd5aa
-        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
+        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * this_ptr, int texture_index)
     INC EBX                             ; 005dd5af
     ADD ESP,0x8                         ; 005dd5b0
     MOV ECX,0x3e8                       ; 005dd5b3

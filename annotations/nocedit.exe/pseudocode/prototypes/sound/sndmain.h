@@ -129,7 +129,7 @@ void * __cdecl CSfxSample::lock(CSfxSample *this_ptr,int lock_offset,int lock_le
 
 // Original: sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540
 // Address: 005a6540
-void __cdecl CSfxSample::releaseSoundBuffer(CSfxSample *sample);
+void __cdecl CSfxSample::releaseSoundBuffer(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
 // Address: 005a65a0
@@ -169,7 +169,7 @@ void __cdecl CSfxSlot::mix(CSfxSlot *this_ptr,SMixBuffer mix_buffer);
 
 // Original: sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 // Address: 005a7e60
-void __cdecl CSfxSlot::kill(CSfxSlot *slot);
+void __cdecl CSfxSlot::kill(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
 // Address: 005a7fe0
@@ -773,4 +773,4 @@ CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_arrdtor_FUN_005ade40
 // Address: 005ade40
-CSfxSample * __cdecl CSfxSample::arrdtor(CSfxSample *objs,uint flags);
+CSfxSample * __cdecl CSfxSample::arrdtor(CSfxSample *this_ptr,uint flags);

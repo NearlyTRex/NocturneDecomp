@@ -9,13 +9,13 @@
 int __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(uint sfx_handle)
 
 {
-  CSfxSlot *slot;
+  CSfxSlot *this_ptr;
   
-  slot = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
-  if (slot == (CSfxSlot *)0x0) {
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(sfx_handle,1);
+  if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(slot);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(this_ptr);
   sound_sndmain_cpp_unlockSound_FUN_00528890();
   return 1;
 }

@@ -49,7 +49,7 @@ int __cdecl CPodFile::verifyChecksum(CPodFile *this_ptr);
 
 // Original: engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570
 // Address: 004f8570
-void CPodFile::getAuditRecord(int param_1,int param_2);
+CPodAuditRecord * __stack2_esi CPodFile::getAuditRecord(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
 
 // Original: engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0
 // Address: 004f86a0

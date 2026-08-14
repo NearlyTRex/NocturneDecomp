@@ -37,7 +37,7 @@ uint __cdecl CFileBitStream::readBit(CFileBitStream *this_ptr);
 
 // Original: sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0
 // Address: 004e2ac0
-uint __cdecl CFileBitStream::readBits(CFileBitStream *bitstream,int num_bits);
+uint __cdecl CFileBitStream::readBits(CFileBitStream *this_ptr,int num_bits);
 
 // Original: sound_mp3.cpp_CFileBitStream_getTotalBitsRead_FUN_004e2c40
 // Address: 004e2c40

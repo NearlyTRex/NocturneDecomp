@@ -134,7 +134,7 @@ void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr
 void __cdecl core_glass_cpp_CGlass_showEditorHelp_FUN_004eb600(CGlass *this_ptr,int *y_pos);
 void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_ptr,_FILE *file_handle);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint flags);
-CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004eb8a0(CVector3f *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004eb8c0(void);
 void __cdecl core_gore_cpp_getBloodColorParams_FUN_004eb950(int blood_type,int *out_light,int *out_color,int *out_fog);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004eb9a0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
@@ -185,10 +185,10 @@ CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_ctor_FUN_004ee3d0(CBloodSplat *t
 CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_dtor_FUN_004ee3e0(CBloodSplat *this_ptr,uint flags);
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004ee3f0(CBloodParticle *this_ptr);
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004ee410(CBloodParticle *this_ptr,uint flags);
-CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *objs,uint flags);
-CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor_FUN_004ee440(CBloodPool *objs,uint flags);
-CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *objs,uint flags);
-CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *objs,uint flags);
+CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004ee420(CFootstep *this_ptr,uint flags);
+CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor_FUN_004ee440(CBloodPool *this_ptr,uint flags);
+CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004ee460(CBloodSplat *this_ptr,uint flags);
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480(CBloodParticle *this_ptr,uint flags);
 void __cdecl core_grave_cpp_staticInit_FUN_004ee4a0(void);
 CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004ee4d0(void);
 CDemonActorType * __cdecl core_grave_cpp_CGrave_getActorType_FUN_004ee500(CGrave *this_ptr);

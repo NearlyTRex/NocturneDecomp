@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *objs,uint flags)
+; CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_0052a450(CCourse *this_ptr,uint flags)
 ;
 ; Parameters:
-; CCourse *        Stack[0x4]:4   objs
+; CCourse *        Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

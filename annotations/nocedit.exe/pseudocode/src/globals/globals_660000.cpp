@@ -805,7 +805,7 @@ CDemonActor_vtable g_CMarqueeVTable = {
     .archive = (CDemonActor_archive *)core_marquee_cpp_CMarquee_archive_FUN_0050c2f0
 };
 CDemonActor_vtable g_CMinecarVTable = {
-    .setup = (CDemonActor_setup *)core_minecar_cpp_CMinecar_setup_FUN_00520e90,
+    .setup = (CDemonActor_setup *)core_minecar_cpp_CMineCar_setup_FUN_00520e90,
     .process = (CDemonActor_process *)core_minecar_cpp_CMineCar_process_FUN_00520eb0,
     .renderOpaque = (CDemonActor_renderOpaque *)core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720,
     .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_CDemonActor_renderTransparent_FUN_00408ac0,
@@ -854,7 +854,7 @@ CDemonActor_vtable g_CMinecarVTable = {
     .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50,
     .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0,
     .calculateChecksum = (CDemonActor_calculateChecksum *)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0,
-    .getActorType = (CDemonActor_getActorType *)core_minecar_cpp_CMinecar_getActorType_FUN_00520e80,
+    .getActorType = (CDemonActor_getActorType *)core_minecar_cpp_CMineCar_getActorType_FUN_00520e80,
     .onAreaDeleted = (CDemonActor_onAreaDeleted *)core_actor_cpp_CDemonActor_onAreaDeleted_FUN_0040cfe0,
     .onActorDeleted = (CDemonActor_onActorDeleted *)core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000,
     .processInEditor = (CDemonActor_processInEditor *)core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00,
@@ -1720,7 +1720,7 @@ CDemonActor_vtable g_CWaterActorVTable = {
     .archive = (CDemonActor_archive *)core_wateract_cpp_CWaterActor_archive_FUN_005eb510
 };
 CDemonActor_vtable g_CWayPointVTable = {
-    .setup = (CDemonActor_setup *)core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0,
+    .setup = (CDemonActor_setup *)core_waypoint_cpp_CWayPoint_setup_FUN_005ebeb0,
     .process = (CDemonActor_process *)core_trigger_cpp_CTrigger_process_FUN_005dfac0,
     .renderOpaque = (CDemonActor_renderOpaque *)core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005ebf70,
     .renderTransparent = (CDemonActor_renderTransparent *)core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0,

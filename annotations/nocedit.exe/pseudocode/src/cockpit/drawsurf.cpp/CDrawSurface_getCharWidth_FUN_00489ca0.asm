@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 00489cb1
     PUSH EDX                            ; 00489cb2
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0 ; 00489cb3
-        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)
+        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00489cb8
     ADD ESP,0x4                         ; 00489cbb
     RET                                 ; 00489cbe

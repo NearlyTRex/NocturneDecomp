@@ -308,7 +308,7 @@ section .text
         ;   XREF to: 005c3508 (CONDITIONAL_JUMP)  ; LAB_005c3508
     PUSH EBX                            ; 005c340e
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005c340f
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005c3414
     MOV EAX,dword ptr [EBX + 0x1fb98]   ; 005c3417
     LEA EDI,[EBX + 0xfd8]               ; 005c341d
@@ -428,7 +428,7 @@ section .text
         ;   Label: LAB_005c354f
     MOV EDI,0x40490fdb                  ; 005c3550
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005c3555
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * this_ptr)
     LEA EAX,[EBP + 0x5a]                ; 005c355a
     MOV EDX,0x3f38263b                  ; 005c355d
     ADD ESP,0x4                         ; 005c3562

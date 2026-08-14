@@ -185,7 +185,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046af
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position);
 void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0046b650(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords);
 CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
-CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_0046b7b0(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords);
+CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_0046b7b0(CDemonRaytrace *this_ptr,CVector3f *output_position,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0046b8d0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace *this_ptr,CVector3f *output_vector);
@@ -202,7 +202,7 @@ void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0046c300(CDemonTriangl
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0046c350(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0046c3c0(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0046c410(CDemonTriangle *this_ptr,_FILE *file_handle);
-void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle *triangle);
+void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0046c460(CDemonTriangle *this_ptr);
 void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0046c5b0(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3);
 float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0046c620(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
 int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0046c820(SIntersectXZCylinder *cylinder);

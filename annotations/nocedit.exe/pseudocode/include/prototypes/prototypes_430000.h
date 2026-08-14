@@ -186,7 +186,7 @@ SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_0043e400(SClothBone *thi
 SClothBone * __cdecl core_cloth_cpp_SClothBone_dtor_FUN_0043e410(SClothBone *this_ptr,uint flags);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_0043e420(SClothVertex *this_ptr);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVertex *this_ptr,uint flags);
-CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f *this_ptr,uint flags);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_0043e480(SClothVertex *objs,uint flags);
 SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(SClothBone *objs,uint flags);
 int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count);

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpark * __cdecl core_fire_cpp_CSpark_arrdtor_FUN_004c99b0(CSpark *objs,uint flags)
+; CSpark * __cdecl core_fire_cpp_CSpark_arrdtor_FUN_004c99b0(CSpark *this_ptr,uint flags)
 ;
 ; Parameters:
-; CSpark *         Stack[0x4]:4   objs
+; CSpark *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

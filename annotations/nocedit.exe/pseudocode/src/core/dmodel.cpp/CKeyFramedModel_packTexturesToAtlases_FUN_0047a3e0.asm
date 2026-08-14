@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *model_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
+; void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(CKeyFramedModel *this_ptr,char *atlas_filename,int quality_parameter,int pack_parameter)
 ;
 ; Parameters:
-; CKeyFramedModel * Stack[0x4]:4   model_ptr
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   atlas_filename
 ; int              Stack[0xc]:4   quality_parameter
 ; int              Stack[0x10]:4   pack_parameter
@@ -408,7 +408,7 @@ section .text
         ;   Label: LAB_0047a7f0
     PUSH ESI                            ; 0047a7f3
     CALL core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 ; 0047a7f4
-        ;   XREF to: 0047a820 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel * model_ptr)
+        ;   XREF to: 0047a820 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047a7f9
     CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0047a7fc
         ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()

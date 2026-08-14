@@ -171,11 +171,11 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
                   (g_CConsolePtr,"%s in volume\n",this_ptr_03);
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
         pCVar2 = (*((this_ptr_03->base).vtable._ub)->getBoundingBox)(&this_ptr_03->base,&CStack_c0);
-        core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_60);
+        core_actor_cpp_CVector3f_ctor_FUN_00410340(&CStack_60);
         CStack_60.x = (pCVar2->min).x + (pCVar2->max).x;
         CStack_60.y = (pCVar2->min).y + (pCVar2->max).y;
         CStack_60.z = (pCVar2->min).z + (pCVar2->max).z;
-        core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_48);
+        core_actor_cpp_CVector3f_ctor_FUN_00410340(&CStack_48);
         CStack_48.x = CStack_60.x * 0.5f;
         CStack_48.y = CStack_60.y * 0.5f;
         CStack_48.z = CStack_60.z * 0.5f;

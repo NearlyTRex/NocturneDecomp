@@ -607,7 +607,7 @@ section .text
     PUSH EAX                            ; 004bdf7f
     PUSH EBP                            ; 004bdf80
     CALL core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 ; 004bdf81
-        ;   XREF to: 004be150 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150(CDemonFileManager * file_manager_ptr, char * cloth_filename)
+        ;   XREF to: 004be150 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150(CDemonFileManager * this_ptr, char * cloth_filename)
     ADD ESP,0x8                         ; 004bdf86
     JMP 0x004bdb2c                      ; 004bdf89
         ;   XREF to: 004bdb2c (UNCONDITIONAL_JUMP)  ; LAB_004bdb2c
@@ -625,7 +625,7 @@ section .text
     PUSH EAX                            ; 004bdfae
     PUSH EBP                            ; 004bdfaf
     CALL core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 ; 004bdfb0
-        ;   XREF to: 004be070 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070(CDemonFileManager * file_manager_ptr, char * model_filename)
+        ;   XREF to: 004be070 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070(CDemonFileManager * this_ptr, char * model_filename)
     ADD ESP,0x8                         ; 004bdfb5
     JMP 0x004bdb2c                      ; 004bdfb8
         ;   XREF to: 004bdb2c (UNCONDITIONAL_JUMP)  ; LAB_004bdb2c

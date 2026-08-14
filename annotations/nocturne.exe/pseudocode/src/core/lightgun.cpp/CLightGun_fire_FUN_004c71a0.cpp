@@ -190,11 +190,11 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
         pCVar3 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                            (&this_ptr_00->base,(CBoundingBox3D *)auStack_c8);
         this_ptr = (CLightGun *)&pCVar3->max;
-        core_actor_cpp_CVector_ctor_FUN_0040e160((CVector3f *)(auStack_8c + 8));
+        core_actor_cpp_CVector3f_ctor_FUN_0040e160((CVector3f *)(auStack_8c + 8));
         auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;
         fStack_80 = (pCVar3->min).y + (pCVar3->max).y;
         fStack_7c = (pCVar3->min).z + (pCVar3->max).z;
-        core_actor_cpp_CVector_ctor_FUN_0040e160(&local_60);
+        core_actor_cpp_CVector3f_ctor_FUN_0040e160(&local_60);
         local_60.x = (float)auStack_8c._8_4_ * 0.5f;
         local_60.y = fStack_80 * 0.5f;
         local_60.z = fStack_7c * 0.5f;

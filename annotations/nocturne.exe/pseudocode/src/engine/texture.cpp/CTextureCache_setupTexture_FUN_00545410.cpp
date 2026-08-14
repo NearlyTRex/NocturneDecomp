@@ -2,13 +2,13 @@
 // Address: 00545410
 // Address Range: [[00545410, 005456ed]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *cache,int texture_index)
+// Signature: void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *this_ptr,int texture_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *cache,int texture_index)
+void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTextureCache *this_ptr,int texture_index)
 
 {
   int iVar1;
@@ -17,12 +17,12 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(CTexture
   uint uVar4;
   uint uVar5;
   
-  g_CurrentTextureData = cache->texture_data_ptrs[texture_index];
-  g_CurrentTextureDimension = cache->texture_dimensions[texture_index];
+  g_CurrentTextureData = this_ptr->texture_data_ptrs[texture_index];
+  g_CurrentTextureDimension = this_ptr->texture_dimensions[texture_index];
   _DAT_01c02588 = 0;
-  g_CurrentTextureOpacityData = cache->texture_opacity_ptrs[texture_index];
+  g_CurrentTextureOpacityData = this_ptr->texture_opacity_ptrs[texture_index];
   _DAT_01c0258c = 0;
-  pSVar3 = (SRGBColor *)(cache->texture_palette_ptrs + texture_index * 0xc0);
+  pSVar3 = (SRGBColor *)(this_ptr->texture_palette_ptrs + texture_index * 0xc0);
   g_CurrentPalette = (SRGBColorPalette *)pSVar3;
   if (g_UseExternalRenderer == 0) {
     if (g_BitsPerPixel == 0x20) {

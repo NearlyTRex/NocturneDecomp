@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_fire_cpp_CKeyFramedModel_getBoundsMin_FUN_004c9450(CKeyFramedModel *model_ptr)
+; CVector3f * __cdecl core_fire_cpp_CKeyFramedModel_getBoundsMin_FUN_004c9450(CKeyFramedModel *this_ptr)
 ;
 ; Parameters:
-; CKeyFramedModel * Stack[0x4]:4   model_ptr
+; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 

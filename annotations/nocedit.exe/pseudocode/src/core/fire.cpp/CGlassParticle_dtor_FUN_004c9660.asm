@@ -21,7 +21,7 @@ section .text
     ADD EAX,0x78                        ; 004c9666
     PUSH EAX                            ; 004c9669
     CALL core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460 ; 004c966a
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f * objs, uint flags)
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004c966f
     PUSH 0x1                            ; 004c9672
     SUB EAX,0x78                        ; 004c9674

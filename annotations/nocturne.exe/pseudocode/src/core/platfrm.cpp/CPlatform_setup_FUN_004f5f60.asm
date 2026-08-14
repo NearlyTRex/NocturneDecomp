@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_conveyor.cpp_CConveyor_setup_FUN_0043b110 at 0043b172
-;   core_minecar.cpp_CMinecar_setup_FUN_004d6020 at 004d6025
+;   core_minecar.cpp_CMineCar_setup_FUN_004d6020 at 004d6025
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0

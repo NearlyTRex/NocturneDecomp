@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *finder,LPWIN32_FIND_DATAA find_data)
+; void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data)
 ;
 ; Parameters:
-; CFileFinder *    Stack[0x4]:4   finder
+; CFileFinder *    Stack[0x4]:4   this_ptr
 ; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ; Local Variables:
 ; _tm              Stack[-0x4c]:36  _Stack_4c

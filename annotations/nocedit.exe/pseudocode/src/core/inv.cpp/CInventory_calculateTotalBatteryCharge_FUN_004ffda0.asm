@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *inventory_ptr,float max_charge)
+; float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0(CInventory *this_ptr,float max_charge)
 ;
 ; Parameters:
-; CInventory *     Stack[0x4]:4   inventory_ptr
+; CInventory *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   max_charge
 ; Local Variables:
 ; float            Stack[-0x20]:4  local_20

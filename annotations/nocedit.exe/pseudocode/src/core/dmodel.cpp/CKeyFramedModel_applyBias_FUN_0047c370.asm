@@ -100,7 +100,7 @@ section .text
     PUSH EBX                            ; 0047c45f
         ;   Label: LAB_0047c45f
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c460
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047c465
     ADD ESP,0x14                        ; 0047c468
     POP EDI                             ; 0047c46b

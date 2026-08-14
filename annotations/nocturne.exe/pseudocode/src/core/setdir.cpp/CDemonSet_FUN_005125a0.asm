@@ -895,7 +895,7 @@ section .text
     PUSH EDI                            ; 0051302d
     MOV ESI,0x180                       ; 0051302e
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00513033
-        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * actor)
+        ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     MOV EAX,0x800000ff                  ; 00513038
     ADD ESP,0x4                         ; 0051303d
     XOR EDX,EDX                         ; 00513040

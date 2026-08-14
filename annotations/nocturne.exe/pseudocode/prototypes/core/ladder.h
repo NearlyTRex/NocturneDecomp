@@ -53,7 +53,7 @@ void __cdecl CLadder(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0
 // Address: 004c47c0
-undefined4 CLadder::getGroundType(int param_1);
+EGroundType __cdecl CLadder::getGroundType(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_dtor_FUN_004c47d0
 // Address: 004c47d0

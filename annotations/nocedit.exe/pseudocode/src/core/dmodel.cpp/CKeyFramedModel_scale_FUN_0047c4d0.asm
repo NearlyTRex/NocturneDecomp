@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 0047c506 (CONDITIONAL_JUMP)  ; LAB_0047c506
     PUSH ESI                            ; 0047c4f6
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c4f7
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047c4fc
     MOV ESP,EBP                         ; 0047c4ff
     POP EBP                             ; 0047c501

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRock * __cdecl core_fire_cpp_CRock_arrdtor_FUN_004c9910(CRock *objs,uint flags)
+; CRock * __cdecl core_fire_cpp_CRock_arrdtor_FUN_004c9910(CRock *this_ptr,uint flags)
 ;
 ; Parameters:
-; CRock *          Stack[0x4]:4   objs
+; CRock *          Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *objs,uint flags)
+; CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *this_ptr,uint flags)
 ;
 ; Parameters:
-; CZThumb *        Stack[0x4]:4   objs
+; CZThumb *        Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

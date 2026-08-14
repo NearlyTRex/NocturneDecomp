@@ -41,7 +41,7 @@ void __cdecl CDemonActor::renderBackground(CDemonActor *this_ptr,int layer_flag)
 
 // Original: core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 // Address: 00409f20
-void __cdecl CDemonActor::setupRenderState(CDemonActor *actor);
+void __cdecl CDemonActor::setupRenderState(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
 // Address: 00409f60
@@ -411,13 +411,13 @@ void __cdecl crc32ProcessVector(uint *crc_state,CVector3f *vector);
 // Address: 0040e120
 void __cdecl crc32ProcessString(uint *crc_state,char *string);
 
-// Original: core_actor.cpp_CVector_ctor_FUN_0040e160
+// Original: core_actor.cpp_CVector3f_ctor_FUN_0040e160
 // Address: 0040e160
-CVector3f * __cdecl CVector::ctor(CVector3f *this_ptr);
+CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_CVector_dtor_FUN_0040e170
+// Original: core_actor.cpp_CVector3f_dtor_FUN_0040e170
 // Address: 0040e170
-CVector3f * __cdecl CVector::dtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::dtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_actor.cpp_copyVector_FUN_0040e180
 // Address: 0040e180
@@ -447,9 +447,9 @@ CBoundingBox3D * __cdecl CBoundingBox3D::copy(CBoundingBox3D *this_ptr,CBounding
 // Address: 0040e290
 CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
 
-// Original: core_actor.cpp_CVector_copy_FUN_0040e2a0
+// Original: core_actor.cpp_CVector3f_copy_FUN_0040e2a0
 // Address: 0040e2a0
-CVector3f * __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
+CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *other);
 
 // Original: core_actor.cpp_FUN_0040e2ce
 // Address: 0040e2ce
@@ -466,7 +466,3 @@ void FUN_0040e2f1(undefined4 *param_1);
 // Original: core_actor.cpp_CVector3f_arrdtor_FUN_0040e300
 // Address: 0040e300
 CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
-
-// Original: core_actor.cpp_CDemonActor_returnZero_FUN_0044ba10
-// Address: 0044ba10
-int __cdecl CDemonActor::returnZero(CDemonActor *this_ptr);

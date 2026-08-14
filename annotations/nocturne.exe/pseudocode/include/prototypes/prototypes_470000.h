@@ -37,7 +37,7 @@ undefined4 shape_edittool_cpp_FUN_00470730(void);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value);
-int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value);
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value );
 int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_00471630(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(CEditorTools *this_ptr,char *message_text);
@@ -63,7 +63,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_00473a60(CE
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00473b60(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00473b80(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_00473bd0(CStrList *this_ptr,CStrList *other);
-CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *dest_ptr,CStrList *source_ptr);
+CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00473c00(CStrList *this_ptr,CStrList *source_ptr);
 void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00473c50(CStrList *this_ptr);
 void __cdecl shape_edittool_cpp_CStrList_add_FUN_00473cb0(CStrList *this_ptr,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_appendRange_FUN_00473cd0(CStrList *this_ptr,CStrList *source_list);

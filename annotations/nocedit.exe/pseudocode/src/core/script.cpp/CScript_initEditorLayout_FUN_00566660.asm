@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 00566673
     MOV [0x03114200],EAX                ; 00566674 | g_ScriptEditorFont
     CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0 ; 00566679
-        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)
+        ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0056667e
     MOV ECX,dword ptr [0x03114200]      ; 00566681 | g_ScriptEditorFont
     PUSH ECX                            ; 00566687

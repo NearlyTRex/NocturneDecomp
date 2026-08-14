@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: mmsystem
-// Structs : 9
+// Structs : 17
 
 #include "nocturne.h"
 
@@ -20,6 +20,18 @@ static_assert(sizeof(HWAVEIN__) == 4,
               "sizeof(HWAVEIN__) != 4");
 static_assert(__builtin_offsetof(HWAVEIN__, unused) == 0,
               "offsetof(HWAVEIN__, unused) != 0");
+
+// ---- HWAVEIN__ (4 bytes) ----
+static_assert(sizeof(HWAVEIN__) == 4,
+              "sizeof(HWAVEIN__) != 4");
+static_assert(__builtin_offsetof(HWAVEIN__, unused) == 0,
+              "offsetof(HWAVEIN__, unused) != 0");
+
+// ---- HWAVEOUT__ (4 bytes) ----
+static_assert(sizeof(HWAVEOUT__) == 4,
+              "sizeof(HWAVEOUT__) != 4");
+static_assert(__builtin_offsetof(HWAVEOUT__, unused) == 0,
+              "offsetof(HWAVEOUT__, unused) != 0");
 
 // ---- HWAVEOUT__ (4 bytes) ----
 static_assert(sizeof(HWAVEOUT__) == 4,
@@ -69,6 +81,18 @@ static_assert(__builtin_offsetof(joyinfo_tag, wZpos) == 8,
 static_assert(__builtin_offsetof(joyinfo_tag, wButtons) == 12,
               "offsetof(joyinfo_tag, wButtons) != 12");
 
+// ---- joyinfo_tag (16 bytes) ----
+static_assert(sizeof(joyinfo_tag) == 16,
+              "sizeof(joyinfo_tag) != 16");
+static_assert(__builtin_offsetof(joyinfo_tag, wXpos) == 0,
+              "offsetof(joyinfo_tag, wXpos) != 0");
+static_assert(__builtin_offsetof(joyinfo_tag, wYpos) == 4,
+              "offsetof(joyinfo_tag, wYpos) != 4");
+static_assert(__builtin_offsetof(joyinfo_tag, wZpos) == 8,
+              "offsetof(joyinfo_tag, wZpos) != 8");
+static_assert(__builtin_offsetof(joyinfo_tag, wButtons) == 12,
+              "offsetof(joyinfo_tag, wButtons) != 12");
+
 // ---- tWAVEFORMATEX (20 bytes) ----
 static_assert(sizeof(tWAVEFORMATEX) == 20,
               "sizeof(tWAVEFORMATEX) != 20");
@@ -86,6 +110,76 @@ static_assert(__builtin_offsetof(tWAVEFORMATEX, wBitsPerSample) == 14,
               "offsetof(tWAVEFORMATEX, wBitsPerSample) != 14");
 static_assert(__builtin_offsetof(tWAVEFORMATEX, cbSize) == 16,
               "offsetof(tWAVEFORMATEX, cbSize) != 16");
+
+// ---- tWAVEFORMATEX (18 bytes) ----
+static_assert(sizeof(tWAVEFORMATEX) == 18,
+              "sizeof(tWAVEFORMATEX) != 18");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, wFormatTag) == 0,
+              "offsetof(tWAVEFORMATEX, wFormatTag) != 0");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, nChannels) == 2,
+              "offsetof(tWAVEFORMATEX, nChannels) != 2");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, nSamplesPerSec) == 4,
+              "offsetof(tWAVEFORMATEX, nSamplesPerSec) != 4");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, nAvgBytesPerSec) == 8,
+              "offsetof(tWAVEFORMATEX, nAvgBytesPerSec) != 8");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, nBlockAlign) == 12,
+              "offsetof(tWAVEFORMATEX, nBlockAlign) != 12");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, wBitsPerSample) == 14,
+              "offsetof(tWAVEFORMATEX, wBitsPerSample) != 14");
+static_assert(__builtin_offsetof(tWAVEFORMATEX, cbSize) == 16,
+              "offsetof(tWAVEFORMATEX, cbSize) != 16");
+
+// ---- tagJOYCAPSA (404 bytes) ----
+static_assert(sizeof(tagJOYCAPSA) == 404,
+              "sizeof(tagJOYCAPSA) != 404");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wMid) == 0,
+              "offsetof(tagJOYCAPSA, wMid) != 0");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wPid) == 2,
+              "offsetof(tagJOYCAPSA, wPid) != 2");
+static_assert(__builtin_offsetof(tagJOYCAPSA, szPname) == 4,
+              "offsetof(tagJOYCAPSA, szPname) != 4");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wXmin) == 36,
+              "offsetof(tagJOYCAPSA, wXmin) != 36");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wXmax) == 40,
+              "offsetof(tagJOYCAPSA, wXmax) != 40");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wYmin) == 44,
+              "offsetof(tagJOYCAPSA, wYmin) != 44");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wYmax) == 48,
+              "offsetof(tagJOYCAPSA, wYmax) != 48");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wZmin) == 52,
+              "offsetof(tagJOYCAPSA, wZmin) != 52");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wZmax) == 56,
+              "offsetof(tagJOYCAPSA, wZmax) != 56");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wNumButtons) == 60,
+              "offsetof(tagJOYCAPSA, wNumButtons) != 60");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wPeriodMin) == 64,
+              "offsetof(tagJOYCAPSA, wPeriodMin) != 64");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wPeriodMax) == 68,
+              "offsetof(tagJOYCAPSA, wPeriodMax) != 68");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wRmin) == 72,
+              "offsetof(tagJOYCAPSA, wRmin) != 72");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wRmax) == 76,
+              "offsetof(tagJOYCAPSA, wRmax) != 76");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wUmin) == 80,
+              "offsetof(tagJOYCAPSA, wUmin) != 80");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wUmax) == 84,
+              "offsetof(tagJOYCAPSA, wUmax) != 84");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wVmin) == 88,
+              "offsetof(tagJOYCAPSA, wVmin) != 88");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wVmax) == 92,
+              "offsetof(tagJOYCAPSA, wVmax) != 92");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wCaps) == 96,
+              "offsetof(tagJOYCAPSA, wCaps) != 96");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wMaxAxes) == 100,
+              "offsetof(tagJOYCAPSA, wMaxAxes) != 100");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wNumAxes) == 104,
+              "offsetof(tagJOYCAPSA, wNumAxes) != 104");
+static_assert(__builtin_offsetof(tagJOYCAPSA, wMaxButtons) == 108,
+              "offsetof(tagJOYCAPSA, wMaxButtons) != 108");
+static_assert(__builtin_offsetof(tagJOYCAPSA, szRegKey) == 112,
+              "offsetof(tagJOYCAPSA, szRegKey) != 112");
+static_assert(__builtin_offsetof(tagJOYCAPSA, szOEMVxD) == 144,
+              "offsetof(tagJOYCAPSA, szOEMVxD) != 144");
 
 // ---- tagJOYCAPSA (404 bytes) ----
 static_assert(sizeof(tagJOYCAPSA) == 404,
@@ -157,6 +251,24 @@ static_assert(__builtin_offsetof(tagWAVEINCAPSA, wChannels) == 44,
 static_assert(__builtin_offsetof(tagWAVEINCAPSA, wReserved1) == 46,
               "offsetof(tagWAVEINCAPSA, wReserved1) != 46");
 
+// ---- tagWAVEINCAPSA (48 bytes) ----
+static_assert(sizeof(tagWAVEINCAPSA) == 48,
+              "sizeof(tagWAVEINCAPSA) != 48");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, wMid) == 0,
+              "offsetof(tagWAVEINCAPSA, wMid) != 0");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, wPid) == 2,
+              "offsetof(tagWAVEINCAPSA, wPid) != 2");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, vDriverVersion) == 4,
+              "offsetof(tagWAVEINCAPSA, vDriverVersion) != 4");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, szPname) == 8,
+              "offsetof(tagWAVEINCAPSA, szPname) != 8");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, dwFormats) == 40,
+              "offsetof(tagWAVEINCAPSA, dwFormats) != 40");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, wChannels) == 44,
+              "offsetof(tagWAVEINCAPSA, wChannels) != 44");
+static_assert(__builtin_offsetof(tagWAVEINCAPSA, wReserved1) == 46,
+              "offsetof(tagWAVEINCAPSA, wReserved1) != 46");
+
 // ---- tagWAVEOUTCAPSA (52 bytes) ----
 static_assert(sizeof(tagWAVEOUTCAPSA) == 52,
               "sizeof(tagWAVEOUTCAPSA) != 52");
@@ -176,6 +288,46 @@ static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, wReserved1) == 46,
               "offsetof(tagWAVEOUTCAPSA, wReserved1) != 46");
 static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, dwSupport) == 48,
               "offsetof(tagWAVEOUTCAPSA, dwSupport) != 48");
+
+// ---- tagWAVEOUTCAPSA (52 bytes) ----
+static_assert(sizeof(tagWAVEOUTCAPSA) == 52,
+              "sizeof(tagWAVEOUTCAPSA) != 52");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, wMid) == 0,
+              "offsetof(tagWAVEOUTCAPSA, wMid) != 0");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, wPid) == 2,
+              "offsetof(tagWAVEOUTCAPSA, wPid) != 2");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, vDriverVersion) == 4,
+              "offsetof(tagWAVEOUTCAPSA, vDriverVersion) != 4");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, szPname) == 8,
+              "offsetof(tagWAVEOUTCAPSA, szPname) != 8");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, dwFormats) == 40,
+              "offsetof(tagWAVEOUTCAPSA, dwFormats) != 40");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, wChannels) == 44,
+              "offsetof(tagWAVEOUTCAPSA, wChannels) != 44");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, wReserved1) == 46,
+              "offsetof(tagWAVEOUTCAPSA, wReserved1) != 46");
+static_assert(__builtin_offsetof(tagWAVEOUTCAPSA, dwSupport) == 48,
+              "offsetof(tagWAVEOUTCAPSA, dwSupport) != 48");
+
+// ---- wavehdr_tag (32 bytes) ----
+static_assert(sizeof(wavehdr_tag) == 32,
+              "sizeof(wavehdr_tag) != 32");
+static_assert(__builtin_offsetof(wavehdr_tag, lpData) == 0,
+              "offsetof(wavehdr_tag, lpData) != 0");
+static_assert(__builtin_offsetof(wavehdr_tag, dwBufferLength) == 4,
+              "offsetof(wavehdr_tag, dwBufferLength) != 4");
+static_assert(__builtin_offsetof(wavehdr_tag, dwBytesRecorded) == 8,
+              "offsetof(wavehdr_tag, dwBytesRecorded) != 8");
+static_assert(__builtin_offsetof(wavehdr_tag, dwUser) == 12,
+              "offsetof(wavehdr_tag, dwUser) != 12");
+static_assert(__builtin_offsetof(wavehdr_tag, dwFlags) == 16,
+              "offsetof(wavehdr_tag, dwFlags) != 16");
+static_assert(__builtin_offsetof(wavehdr_tag, dwLoops) == 20,
+              "offsetof(wavehdr_tag, dwLoops) != 20");
+static_assert(__builtin_offsetof(wavehdr_tag, lpNext) == 24,
+              "offsetof(wavehdr_tag, lpNext) != 24");
+static_assert(__builtin_offsetof(wavehdr_tag, reserved) == 28,
+              "offsetof(wavehdr_tag, reserved) != 28");
 
 // ---- wavehdr_tag (32 bytes) ----
 static_assert(sizeof(wavehdr_tag) == 32,

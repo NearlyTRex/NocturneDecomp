@@ -2,28 +2,28 @@
 // Address: 0050ea90
 // Address Range: [[0050ea90, 0050ead4]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b)
+// Signature: CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *this_ptr,CVector3f *b)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *a,CVector3f *b)
+CVector3f * __cdecl core_set_cpp_CVector3f_copy_FUN_0050ea90(CVector3f *this_ptr,CVector3f *b)
 
 {
-  if (a == b) {
-    if (a + 1 == b + 1) {
-      return a;
+  if (this_ptr == b) {
+    if (this_ptr + 1 == b + 1) {
+      return this_ptr;
     }
   }
   else {
-    a->x = b->x;
-    a->y = b->y;
-    a->z = b->z;
-    if (a + 1 == b + 1) {
-      return a;
+    this_ptr->x = b->x;
+    this_ptr->y = b->y;
+    this_ptr->z = b->z;
+    if (this_ptr + 1 == b + 1) {
+      return this_ptr;
     }
   }
-  a[1].x = b[1].x;
-  a[1].y = b[1].y;
-  a[1].z = b[1].z;
-  return a;
+  this_ptr[1].x = b[1].x;
+  this_ptr[1].y = b[1].y;
+  this_ptr[1].z = b[1].z;
+  return this_ptr;
 }

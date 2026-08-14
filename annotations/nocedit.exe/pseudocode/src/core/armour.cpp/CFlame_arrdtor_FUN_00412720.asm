@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *objs,uint flags)
+; CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *this_ptr,uint flags)
 ;
 ; Parameters:
-; CFlame *         Stack[0x4]:4   objs
+; CFlame *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[37]:

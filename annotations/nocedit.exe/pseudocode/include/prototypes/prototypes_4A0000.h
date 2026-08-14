@@ -33,7 +33,7 @@
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools *this_ptr,char *prompt_text,float *result_ptr,int enable_range_check,float min_value,float max_value,int show_current_value);
 int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CEditorTools *this_ptr,char *prompt_text,double *result_ptr,int enable_range_check,double min_value,double max_value,int show_current_value);
-int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *editor_tools,char *prompt_text,CVector3f *result_ptr,int show_current_value);
+int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools *this_ptr,char *prompt_text,CVector3f *result_ptr,int show_current_value );
 int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools *this_ptr,char *message_text);
@@ -43,7 +43,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
 void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr);
-void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools *editor_tools,int line_position);
+void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools *this_ptr,int line_position);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools *this_ptr);
@@ -60,7 +60,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CE
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags);
 CStrList * __cdecl shape_edittool_cpp_CStrList_copy_FUN_004a2a90(CStrList *this_ptr,CStrList *other);
-CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *dest_ptr,CStrList *source_ptr);
+CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList *this_ptr,CStrList *source_ptr);
 void __cdecl shape_edittool_cpp_CStrList_clear_FUN_004a2b10(CStrList *this_ptr);
 void __cdecl shape_edittool_cpp_CStrList_add_FUN_004a2b80(CStrList *this_ptr,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_appendRange_FUN_004a2ba0(CStrList *this_ptr,CStrList *source_list);

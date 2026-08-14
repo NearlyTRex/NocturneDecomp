@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont *font,int char_code)
+; int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont *this_ptr,int char_code)
 ;
 ; Parameters:
-; CBitFont *       Stack[0x4]:4   font
+; CBitFont *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   char_code
 ;
 ; XREF[7]:

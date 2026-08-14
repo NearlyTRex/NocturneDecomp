@@ -143,7 +143,7 @@ section .text
     ADD ESP,0xc                         ; 00476e91
     PUSH EBX                            ; 00476e94
     CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 00476e95
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00476e9a
     MOV ESI,dword ptr [EBX + 0x120]     ; 00476e9d
     XOR EDX,EDX                         ; 00476ea3

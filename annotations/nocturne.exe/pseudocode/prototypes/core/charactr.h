@@ -221,7 +221,7 @@ void __cdecl CCharacter::setWalkTargetImmediate(CCharacter *this_ptr,CDemonActor
 
 // Original: core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0
 // Address: 00428bb0
-void CCharacter::setWalkTimeout(int param_1,undefined4 param_2);
+void __cdecl CCharacter::setWalkTimeout(CCharacter *this_ptr,float timeout);
 
 // Original: core_charactr.cpp_CCharacter_isWalkComplete_FUN_00428bc0
 // Address: 00428bc0

@@ -251,7 +251,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 0040f05e | g_CEditorToolsPtr
     PUSH EDI                            ; 0040f064 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 ; 0040f065
-        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * editor_tools, char * prompt_text, CVector3f * result_ptr, int show_current_value)
+        ;   XREF to: 004a0300 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300(CEditorTools * this_ptr, char * prompt_text, CVector3f * result_ptr, int show_current_value)
     ADD ESP,0x10                        ; 0040f06a
     TEST EAX,EAX                        ; 0040f06d
     JZ 0x0040eef2                       ; 0040f06f

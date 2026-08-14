@@ -97,7 +97,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_004991
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position);
 void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords);
 CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
-CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930(CDemonRaytrace *raytrace_ptr,CVector3f *output_position,CVector3i *voxel_coords);
+CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930(CDemonRaytrace *this_ptr,CVector3f *output_position,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(CDemonRaytrace *this_ptr,CVector3f *output_vector);
@@ -110,13 +110,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemo
 void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags);
-CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor_FUN_0049a410(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor_FUN_0049a410(CVector3f *this_ptr,uint flags);
 void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0(CDemonTriangle *this_ptr,_FILE *file_handle);
-void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle *triangle);
+void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle *this_ptr);
 void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3);
 float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
 int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(SIntersectXZCylinder *cylinder);
@@ -138,7 +138,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(int fla
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0049cbb0(void);
 CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr);
-CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *objs,uint flags);
+CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void);
 CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_0049cd80(void);
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0049cdb0(CDynamite *this_ptr);

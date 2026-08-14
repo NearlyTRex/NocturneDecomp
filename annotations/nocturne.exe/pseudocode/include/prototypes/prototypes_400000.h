@@ -233,7 +233,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(CDemonActor *
 void __cdecl core_actor_cpp_CDemonActor_process_FUN_00409ed0(CDemonActor *this_ptr,float delta_time);
 int __cdecl core_actor_cpp_CDemonActor_returnZero_FUN_00409f00(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00409f10(CDemonActor *this_ptr,int layer_flag);
-void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *actor);
+void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor *this_ptr);
 CDemonActorType * __cdecl core_actor_cpp_CDemonActor_getActorType_FUN_00409f70(CDemonActor *this_ptr);
 char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(CDemonActor *this_ptr);
@@ -330,8 +330,8 @@ void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040e0a0(uint *crc_state,byte
 void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040e0e0(uint *crc_state,int value);
 void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040e100(uint *crc_state,CVector3f *vector);
 void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040e120(uint *crc_state,char *string);
-CVector3f * __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(CVector3f *this_ptr);
-CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_0040e170(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040e160(CVector3f *this_ptr);
+CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_0040e170(CVector3f *this_ptr,uint flags);
 void __cdecl core_actor_cpp_copyVector_FUN_0040e180(CVector3f *dst_ptr,CVector3f *src_ptr);
 float __cdecl core_actor_cpp_CVector3f_length_FUN_0040e1a0(CVector3f *this_ptr);
 void core_actor_cpp_FUN_0040e1cc(void);
@@ -339,7 +339,7 @@ SDamageInfo * __cdecl core_actor_cpp_SDamageInfo_dtor_FUN_0040e220(SDamageInfo *
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_ctor_FUN_0040e230(CBoundingBox3D *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_copy_FUN_0040e240(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_dtor_FUN_0040e290(CBoundingBox3D *this_ptr,uint flags);
-CVector3f * __cdecl core_actor_cpp_CVector_copy_FUN_0040e2a0(CVector3f *this_ptr,CVector3f *other);
+CVector3f * __cdecl core_actor_cpp_CVector3f_copy_FUN_0040e2a0(CVector3f *this_ptr,CVector3f *other);
 void core_actor_cpp_FUN_0040e2ce(void);
 void core_actor_cpp_FUN_0040e2e1(undefined4 *param_1);
 void core_actor_cpp_FUN_0040e2f1(undefined4 *param_1);

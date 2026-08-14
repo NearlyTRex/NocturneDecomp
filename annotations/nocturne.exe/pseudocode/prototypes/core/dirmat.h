@@ -29,4 +29,4 @@ CVector3f * __cdecl CMatrix3x3f::getEulerAngles(CMatrix3x3f *this_ptr,CVector3f 
 
 // Original: core_dirmat.cpp_CMatrix3x3f_multiply_FUN_0044dfb0
 // Address: 0044dfb0
-CMatrix3x3f * __stack2_esi CMatrix3x3f::multiply(CMatrix3x3f *matrix_a,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);
+CMatrix3x3f * __stack2_esi CMatrix3x3f::multiply(CMatrix3x3f *this_ptr,CMatrix3x3f *matrix_b,CMatrix3x3f *matrix_out);

@@ -177,7 +177,7 @@ SMorphControlPoint * __cdecl SMorphControlPoint::dtor(SMorphControlPoint *this_p
 
 // Original: core_morph.cpp_CVector3f_arrdtor_FUN_0052cc90
 // Address: 0052cc90
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
 
 // Original: core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0
 // Address: 0052ccb0
@@ -185,15 +185,15 @@ SMorphControlPoint * __cdecl SMorphControlPoint::arrdtor(SMorphControlPoint *obj
 
 // Original: core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
 // Address: 0052ccd0
-CDeformableModelInstance * __cdecl CDeformableModelInstance::arrdtor(CDeformableModelInstance *objs,uint flags);
+CDeformableModelInstance * __cdecl CDeformableModelInstance::arrdtor(CDeformableModelInstance *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CBoundingBox3D_arrdtor_FUN_0052ccf0
 // Address: 0052ccf0
-CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *objs,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CMorphModel_arrdtor_FUN_0052cd10
 // Address: 0052cd10
-CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *objs,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *this_ptr,uint flags);
 
 // Original: core_morph.cpp_skipLine_FUN_0052cd30
 // Address: 0052cd30

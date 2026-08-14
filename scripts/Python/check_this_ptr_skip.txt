@@ -1,0 +1,22 @@
+# Exemptions for check_this_ptr.py.
+#
+# One entry per line, either:
+#
+#   <symbol>              exempt in every program
+#   <program>:<symbol>    exempt in one, e.g. nocturne.exe:core_x.cpp_C_m_FUN_1
+#
+# Blanks and '#' comments are ignored.
+#
+# Deliberately EMPTY. Every current finding is a real defect to fix, not a
+# pattern to whitelist:
+#
+#   TYPE  the function name spells the class differently from the type
+#         (CMinecar/CMineCar, CWaypoint/CWayPoint, CVector/CVector3f). The
+#         type is the real one in every case; fix the name.
+#   NAME  the receiver is typed right but named something else. The bulk are
+#         Watcom array destructors carrying `objs`. These are NOT exempt --
+#         the receiver is still the object the method acts on, so it is
+#         `this_ptr` like any other member function.
+#
+# Add an entry only for a function that genuinely is not a member of the class
+# its name claims, and say why.

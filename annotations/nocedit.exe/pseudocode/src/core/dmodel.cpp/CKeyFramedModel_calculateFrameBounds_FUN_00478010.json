@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 63,
+    "complexity_score": 64,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 64,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 207
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -77,7 +77,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010",
-    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *model_ptr)"
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *this_ptr)"
   },
   "function_calls": [
     {
@@ -244,7 +244,7 @@
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(float *)((int)local_28.max.z + 4) = (this_ptr_00->min).y;",
+      "text": "*(float *)((int)local_28.max.z + 4) = (frame_bounds_ptr->min).y;",
       "type": "pointer_cast"
     },
     {
@@ -253,7 +253,7 @@
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(float *)((int)local_28.max.z + 8) = (this_ptr_00->min).z;",
+      "text": "*(float *)((int)local_28.max.z + 8) = (frame_bounds_ptr->min).z;",
       "type": "pointer_cast"
     },
     {
@@ -262,7 +262,7 @@
       "match": "(CBoundingBox3D *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {",
+      "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != frame_bounds_ptr) {",
       "type": "pointer_cast"
     },
     {
@@ -271,7 +271,7 @@
       "match": "(CBoundingBox3D *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(((CBoundingBox3D *)((int)local_28.max.z + 0xc))->min).x = (this_ptr_00->min).x;",
+      "text": "(((CBoundingBox3D *)((int)local_28.max.z + 0xc))->min).x = (frame_bounds_ptr->min).x;",
       "type": "pointer_cast"
     },
     {
@@ -280,7 +280,7 @@
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(float *)((int)local_28.max.z + 0x10) = (this_ptr_00->min).y;",
+      "text": "*(float *)((int)local_28.max.z + 0x10) = (frame_bounds_ptr->min).y;",
       "type": "pointer_cast"
     },
     {
@@ -289,7 +289,7 @@
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(float *)((int)local_28.max.z + 0x14) = (this_ptr_00->min).z;",
+      "text": "*(float *)((int)local_28.max.z + 0x14) = (frame_bounds_ptr->min).z;",
       "type": "pointer_cast"
     },
     {
@@ -298,7 +298,7 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(this_ptr_00->min).x = local_28.min.x;",
+      "text": "(frame_bounds_ptr->min).x = local_28.min.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -307,16 +307,16 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(this_ptr_00->max).x = local_28.min.x;",
+      "text": "(frame_bounds_ptr->max).x = local_28.min.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 17,
+      "line": 18,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)",
+      "text": "(CBoundingBox3D *)((int)&(this_ptr->frame_bounds->min).x + (int)local_28.max.x);",
       "type": "pointer_cast"
     }
   ],
@@ -336,7 +336,7 @@
       },
       {
         "is_param": true,
-        "name": "model_ptr",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CKeyFramedModel *"

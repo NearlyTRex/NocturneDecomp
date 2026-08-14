@@ -16,11 +16,11 @@ CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointWorld_FUN_004da070(CVecto
   CVector3f CStack_1c;
   
   (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_40);
-  core_actor_cpp_CVector_ctor_FUN_0040e160(&CStack_1c);
+  core_actor_cpp_CVector3f_ctor_FUN_0040e160(&CStack_1c);
   CStack_1c.x = CStack_40.min.x + CStack_40.max.x;
   CStack_1c.y = CStack_40.min.y + CStack_40.max.y;
   CStack_1c.z = CStack_40.min.z + CStack_40.max.z;
-  core_actor_cpp_CVector_ctor_FUN_0040e160(&CStack_28);
+  core_actor_cpp_CVector3f_ctor_FUN_0040e160(&CStack_28);
   CStack_28.x = CStack_1c.x * _DAT_0058a171;
   CStack_28.y = CStack_1c.y * _DAT_0058a171;
   CStack_28.z = CStack_40.min.z + (float)_DAT_0058a179;

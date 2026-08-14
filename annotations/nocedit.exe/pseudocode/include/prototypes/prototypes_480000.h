@@ -98,7 +98,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(CFileFinder *th
 int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00481d70(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00481db0(CFileFinder *this_ptr);
-void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *finder,LPWIN32_FIND_DATAA find_data);
+void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
 void __cdecl engine_dosio_cpp_splitPath_FUN_00481f20(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_makePath_FUN_00481f50(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(char *input_path,char *drive,char *output_path);
@@ -145,7 +145,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_addFilesToExtract_FUN_00486d00(CDra
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDraculaBride *this_ptr,uint flags);
-CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *objs,uint flags);
+CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *this_ptr,uint flags);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486e70(CDrawSurface *this_ptr);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
