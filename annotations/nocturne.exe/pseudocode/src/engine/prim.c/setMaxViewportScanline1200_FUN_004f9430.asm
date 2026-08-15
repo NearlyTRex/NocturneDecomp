@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_FUN_004f9430(void)
+; void __cdecl engine_prim_c_setMaxViewportScanline1200_FUN_004f9430(void)
 ;
 ;
 ; Referenced Globals:
@@ -12,6 +12,6 @@
 section .text
 
     MOV dword ptr [0x005be1e4],0x4b0    ; 004f9430 | INT_005be1e4
-        ;   Label: engine_prim.c_FUN_004f9430
+        ;   Label: engine_prim.c_setMaxViewportScanline1200_FUN_004f9430
     RET                                 ; 004f943a
 

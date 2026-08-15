@@ -1,12 +1,12 @@
-// Name: crt_unknown.c_FUN_0056bfdb
+// Name: crt_unknown.c_fdiv_thunk_FUN_0056bfdb
 // Address: 0056bfdb
 // Address Range: [[0056bfdb, 0056bff6]]
 // Convention: __fpu_thunk
-// Signature: void __fpu_thunk crt_unknown_c_FUN_0056bfdb(void)
+// Signature: void __fpu_thunk crt_unknown_c_fdiv_thunk_FUN_0056bfdb(void)
 
 #include "nocturne.h"
 
-void __fpu_thunk FUN_0056bfdb(void)
+void __fpu_thunk fdiv_thunk(void)
 
 {
   float10 in_ST2;

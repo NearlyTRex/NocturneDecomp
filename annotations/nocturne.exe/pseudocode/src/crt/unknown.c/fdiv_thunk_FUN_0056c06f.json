@@ -16,16 +16,16 @@
   },
   "cross_references": [],
   "function": {
-    "address": "0056c25b",
+    "address": "0056c06f",
     "address_range": [
       [
-        "0056c25b",
-        "0056c27a"
+        "0056c06f",
+        "0056c08e"
       ]
     ],
     "convention": "__fpu_thunk",
-    "name": "crt_unknown.c_FUN_0056c25b",
-    "signature": "void __fpu_thunk crt_unknown_c_FUN_0056c25b(void)"
+    "name": "crt_unknown.c_fdiv_thunk_FUN_0056c06f",
+    "signature": "void __fpu_thunk crt_unknown_c_fdiv_thunk_FUN_0056c06f(void)"
   },
   "function_calls": [
     {
@@ -83,9 +83,9 @@
     {
       "description": "FPU register input (calling convention issue)",
       "line": 5,
-      "match": "in_ST2",
+      "match": "in_ST1",
       "severity": "mild",
-      "text": "float10 in_ST2;",
+      "text": "float10 in_ST1;",
       "type": "fpu_register_input"
     },
     {
@@ -99,9 +99,9 @@
     {
       "description": "FPU register input (calling convention issue)",
       "line": 8,
-      "match": "in_ST2",
+      "match": "in_ST1",
       "severity": "mild",
-      "text": "fdiv(in_ST2,in_ST3);",
+      "text": "fdiv(in_ST1,in_ST3);",
       "type": "fpu_register_input"
     },
     {
@@ -109,7 +109,7 @@
       "line": 8,
       "match": "in_ST3",
       "severity": "mild",
-      "text": "fdiv(in_ST2,in_ST3);",
+      "text": "fdiv(in_ST1,in_ST3);",
       "type": "fpu_register_input"
     }
   ],
@@ -117,7 +117,7 @@
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 176,
+        "offset": 80,
         "vtable_addr": "005c3f84"
       }
     ],

@@ -178,7 +178,7 @@ void __cdecl core_podmain_cpp_staticInit_FUN_004f9280(void);
 void __cdecl core_podmain_cpp_CDemonPod_load_FUN_004f92b0(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_004f93c0(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_004f93e0(CDemonPod *this_ptr,uint flags);
-void __cdecl engine_prim_c_FUN_004f9430(void);
+void __cdecl engine_prim_c_setMaxViewportScanline1200_FUN_004f9430(void);
 void __cdecl engine_prim_c_setMaxViewportScanline_FUN_004f9440(int max);
 void __cdecl engine_prim_c_setCullingMode_FUN_004f9450(int culling_mode);
 void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_004f9460(SRenderVertex *start_vertex,SRenderVertex *end_vertex);

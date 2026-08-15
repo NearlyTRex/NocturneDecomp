@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5706 functions, 5248 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5706 functions, 5251 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -22,14 +22,12 @@ A. TRANSLATION-UNIT RESIDUE
   sound_sndmain.cpp                  35         2        33  PAIRABLE
   engine_2d.c                         2         9         2  PAIRABLE
   core_stranger.cpp                   6         2         3  PAIRABLE
-  core_chain.cpp                      4         2         0  PAIRABLE
   core_game.cpp                       4         2         4  PAIRABLE
   cockpit_pkbmpset.cpp                3         2         0  PAIRABLE
   core_scat.cpp                       3         2         3  PAIRABLE
   core_script.cpp                    56         1        56  PAIRABLE
   core_setutil.cpp                   20         1        11  PAIRABLE
   core_manpuz.cpp                     7         1         5  PAIRABLE
-  core_frankgen.cpp                   6         1         5  PAIRABLE
   engine_drender.cpp                  6         1         4  PAIRABLE
   core_ladder.cpp                     5         1         0  PAIRABLE
   core_event.cpp                      1         4         0  PAIRABLE
@@ -73,6 +71,7 @@ A. TRANSLATION-UNIT RESIDUE
   engine_pod.cpp                      6         0         2  EDITOR-ONLY
   core_door.cpp                       5         0         5  EDITOR-ONLY
   core_drip.cpp                       5         0         5  EDITOR-ONLY
+  core_frankgen.cpp                   5         0         5  EDITOR-ONLY
   core_pendulum.cpp                   5         0         0  EDITOR-ONLY
   core_set.cpp                        5         0         5  EDITOR-ONLY
   core_werewolf.cpp                   5         0         0  EDITOR-ONLY
@@ -132,6 +131,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_bodypart.cpp                   2         0         2  EDITOR-ONLY
   core_bride.cpp                      2         0         0  EDITOR-ONLY
   core_bugs.cpp                       2         0         2  EDITOR-ONLY
+  core_chain.cpp                      2         0         2  EDITOR-ONLY
   core_crate.cpp                      2         0         2  EDITOR-ONLY
   core_dest.cpp                       2         0         2  EDITOR-ONLY
   core_enemy.cpp                      2         0         0  EDITOR-ONLY
@@ -182,8 +182,8 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1610 nocedit / 81 nocturne functions unmatched across 171 units
-  units: 31 pairable, 138 editor-only, 2 game-only
+  1607 nocedit / 78 nocturne functions unmatched across 171 units
+  units: 29 pairable, 140 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
 
 ==============================================================================
@@ -206,18 +206,6 @@ shape_edittool.cpp   between 0049e940->004701a0 and 0049f270->00470550
       00470310   224b   70i  shape_edittool.cpp
       004703f0   346b  114i  shape_edittool.cpp
   UNSURE -- no proposal: 4 nocedit / 3 nocturne left over
-------------------------------------------------------------------------------
-core_chain.cpp   between 00431110->0042ccf0 and 00431350->0042cd20
-  refused: count mismatch 4 vs 2 -- something was added AND removed here
-  nocedit  residue (4):
-      00431120   302b   95i  core_chain.cpp_CChain_getPropertyList
-      00431250   221b   75i  core_chain.cpp_CChain_addFilesToExtract
-      00431330     5b    ?i  core_chain.cpp_passthroughInt1
-      00431340     5b    ?i  core_chain.cpp_passthroughInt2
-  nocturne residue (2):
-      0042cd00     5b    ?i  core_chain.cpp
-      0042cd10     5b    ?i  core_chain.cpp
-  UNSURE -- no proposal: 4 nocedit / 2 nocturne left over
 ------------------------------------------------------------------------------
 core_dcamera.cpp   between 00454060->00447f20 and 00454700->004483f0
   refused: count mismatch 3 vs 2 -- something was added AND removed here
@@ -286,15 +274,6 @@ core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
       0044ae80    78b   31i  core_dcube.cpp
   UNSURE -- no proposal: 5 nocedit / 1 nocturne left over
 ------------------------------------------------------------------------------
-core_frankgen.cpp   between 004d2880->00495410 and 004d28a0->00495430
-  refused: equal counts, every body too small to hash (<8B) -- order is unopposed here
-  nocedit  residue (1):
-      004d2890     7b    ?i  core_frankgen.cpp_getActorName
-  nocturne residue (1):
-      00495420     7b    ?i  core_frankgen.cpp
-  suggested alignment:
-      004d2890 -> 00495420   (position only)   core_frankgen.cpp_getActorName
-------------------------------------------------------------------------------
 core_ladder.cpp   between 00502b80->004c46b0 and 00502ed0->004c47d0
   refused: count mismatch 5 vs 1 -- something was added AND removed here
   nocedit  residue (5):
@@ -326,8 +305,8 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
   UNSURE -- no proposal: 2 nocedit / 1 nocturne left over
 ------------------------------------------------------------------------------
 
-  12 pairable brackets covering 38 nocedit / 18 nocturne functions
-  223 one-sided brackets (624 editor-only, 22 game-only) -- not pairable by construction
+  10 pairable brackets covering 33 nocedit / 15 nocturne functions
+  224 one-sided brackets (626 editor-only, 22 game-only) -- not pairable by construction
   948 nocedit functions in 56 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
         144  before the unit's first anchor
@@ -352,8 +331,8 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5248
-  never transferred     : 60   (nocturne side has no signature at all -- transfer work, not drift)
+  pairs compared        : 5251
+  never transferred     : 63   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 54   (both sides typed, and they disagree -- investigate)
   name core differs     : 186   (mapped as the same function under two different names)
 
@@ -1107,5 +1086,5 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocedit  CDemonSet_isCameraPanning
       nocturne CDemonSet
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2488, 'unverifiable': 2729, 'conflict': 31}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2488, 'unverifiable': 2732, 'conflict': 31}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

@@ -14,7 +14,7 @@
 ;   crt_math.c_fdiv_thunk_FUN_0056c3d7 at 0056c3e0
 ;   crt_math.c_pentiumFdivpWorkaround_FUN_0056c403 at 0056c40d
 ;   crt_unknown.c_FUN_0056bfc0 at 0056bfc7
-;   crt_unknown.c_FUN_0056bfdb at 0056bfea
+;   crt_unknown.c_FUN_0056bff7 at 0056bffe
 ;   ... and 35 more
 ;
 ; Referenced Globals:

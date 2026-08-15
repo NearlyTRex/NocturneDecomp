@@ -13006,6 +13006,36 @@
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
+   "a": "00431330",
+   "b": "0042cd00",
+   "name": "core_chain.cpp_passthroughInt1_FUN_00431330",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_chain.cpp_passthroughInt1. Body identical (MOV EAX,[ESP"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00431340",
+   "b": "0042cd10",
+   "name": "core_chain.cpp_passthroughInt2_FUN_00431340",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_chain.cpp_passthroughInt2. Same bracket and reasoning a"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
    "a": "00431350",
    "b": "0042cd20",
    "name": "core_chain.cpp_fastSqrt_FUN_00431350",
@@ -35785,6 +35815,21 @@
    "shape_agreement": "identical",
    "conv": "__cdecl",
    "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "004d2890",
+   "b": "00495420",
+   "name": "core_frankgen.cpp_getActorName_FUN_004d2890",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_frankgen.cpp_getActorName. Byte-identical body (MOV EAX"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "char*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
@@ -84288,6 +84333,16 @@
    "name": "core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0"
   },
   {
+   "a": "00431120",
+   "tu": "core_chain.cpp",
+   "name": "core_chain.cpp_CChain_getPropertyList_FUN_00431120"
+  },
+  {
+   "a": "00431250",
+   "tu": "core_chain.cpp",
+   "name": "core_chain.cpp_CChain_addFilesToExtract_FUN_00431250"
+  },
+  {
    "a": "00431770",
    "tu": "cockpit_ckptutil.c",
    "name": "cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00431770"
@@ -86472,8 +86527,6 @@
   "0042fb00",
   "00431120",
   "00431250",
-  "00431330",
-  "00431340",
   "00431770",
   "00438b80",
   "00439260",
@@ -86949,7 +87002,6 @@
   "004d25f0",
   "004d2740",
   "004d2770",
-  "004d2890",
   "004d75e0",
   "004d7610",
   "004d7630",
@@ -88194,8 +88246,6 @@
   "0042b6c0",
   "0042b6d0",
   "0042b6e0",
-  "0042cd00",
-  "0042cd10",
   "0043b500",
   "0043b510",
   "0043b5b0",
@@ -88220,7 +88270,6 @@
   "00481960",
   "00481970",
   "004940d0",
-  "00495420",
   "004a72a0",
   "004a72b0",
   "004c47c0",

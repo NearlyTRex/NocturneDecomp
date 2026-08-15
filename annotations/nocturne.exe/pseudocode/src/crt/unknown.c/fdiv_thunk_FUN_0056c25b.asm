@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __fpu_thunk crt_unknown_c_FUN_0056c25b(void)
+; void __fpu_thunk crt_unknown_c_fdiv_thunk_FUN_0056c25b(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0
@@ -14,7 +14,7 @@
 section .text
 
     FXCH ST5                            ; 0056c25b
-        ;   Label: crt_unknown.c_FUN_0056c25b
+        ;   Label: crt_unknown.c_fdiv_thunk_FUN_0056c25b
     FSTP extended double ptr [ESP + 0xc] ; 0056c25d
     FXCH ST4                            ; 0056c261
     FLD ST0                             ; 0056c263
