@@ -215,18 +215,18 @@ SPanel * __cdecl SPanel::dtor(SPanel *this_ptr,uint flags);
 // Address: 004cbf30
 SPanel * __cdecl copyPanel(SPanel *dest,SPanel *src);
 
-// Original: core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000
+// Original: core_manpuz.cpp_CDemonTriangle_arrdtor2_FUN_004cc000
 // Address: 004cc000
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor2(CDemonTriangle *this_ptr,uint flags);
 
-// Original: core_manpuz.cpp_SPanel_arrdtor_FUN_004cc020
+// Original: core_manpuz.cpp_SPanel_arrdtor12_FUN_004cc020
 // Address: 004cc020
-SPanel * __cdecl SPanel::arrdtor(SPanel *this_ptr,uint flags);
+SPanel * __cdecl SPanel::arrdtor12(SPanel *this_ptr,uint flags);
 
-// Original: core_manpuz.cpp_SGem_arrdtor_FUN_004cc040
+// Original: core_manpuz.cpp_SGem_arrdtor12_FUN_004cc040
 // Address: 004cc040
-SGem * __cdecl SGem::arrdtor(SGem *this_ptr,uint flags);
+SGem * __cdecl SGem::arrdtor12(SGem *this_ptr,uint flags);
 
-// Original: core_manpuz.cpp_SReflector_arrdtor_FUN_004cc060
+// Original: core_manpuz.cpp_SReflector_arrdtor2_FUN_004cc060
 // Address: 004cc060
-SReflector * __cdecl SReflector::arrdtor(SReflector *this_ptr,uint flags);
+SReflector * __cdecl SReflector::arrdtor2(SReflector *this_ptr,uint flags);

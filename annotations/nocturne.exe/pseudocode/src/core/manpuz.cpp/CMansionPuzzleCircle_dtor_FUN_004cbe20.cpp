@@ -21,9 +21,9 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004
     shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pSVar1 = core_manpuz_cpp_SReflector_arrdtor_FUN_004cc060(this_ptr->reflectors,0);
-  pSVar2 = core_manpuz_cpp_SGem_arrdtor_FUN_004cc040((SGem *)(pSVar1 + -0x17),0);
-  pSVar3 = core_manpuz_cpp_SPanel_arrdtor_FUN_004cc020
+  pSVar1 = core_manpuz_cpp_SReflector_arrdtor2_FUN_004cc060(this_ptr->reflectors,0);
+  pSVar2 = core_manpuz_cpp_SGem_arrdtor12_FUN_004cc040((SGem *)(pSVar1 + -0x17),0);
+  pSVar3 = core_manpuz_cpp_SPanel_arrdtor12_FUN_004cc020
                      ((SPanel *)&pSVar2[-7].collision_tri_a.vertex3.y,0);
   ptr = (CMansionPuzzleCircle *)
         core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)&pSVar3[-0x10].world_position,1)

@@ -6599,7 +6599,7 @@ WatcomDestructorCall WatcomDestructorCall_006612a0 = {
 };
 WatcomDestructorCall WatcomDestructorCall_006612d0 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50,
+    .destructor_func = (void *)core_menu_cpp_CAlphaBitmap_arrdtor8_FUN_00514f50,
     .object_instance = (void *)&g_MenuBitmaps
 };
 WatcomDestructorCall WatcomDestructorInfo_006612dc = {
@@ -6629,7 +6629,7 @@ WatcomDestructorCall WatcomDestructorCall_0066130c = {
 };
 WatcomDestructorCall WatcomDestructorCall_00661360 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0,
+    .destructor_func = (void *)shape_meshlod_cpp_CLodFace_arrdtor200_FUN_0051f0c0,
     .object_instance = (void *)&g_TempNeighborFaces
 };
 WatcomDestructorCall WatcomDestructorCall_00661ad0 = {
@@ -6639,12 +6639,12 @@ WatcomDestructorCall WatcomDestructorCall_00661ad0 = {
 };
 WatcomDestructorCall WatcomDestructorCall_00661adc = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_moon_cpp_CAlphaBitmap_arrdtor_FUN_0052a470,
+    .destructor_func = (void *)core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_0052a470,
     .object_instance = (void *)&g_MoonAnimTextures
 };
 WatcomDestructorCall WatcomDestructorCall_00661ae8 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_moon_cpp_CCourse_arrdtor_FUN_0052a450,
+    .destructor_func = (void *)core_moon_cpp_CCourse_arrdtor3_FUN_0052a450,
     .object_instance = (void *)&g_MoonBatCourses
 };
 WatcomDestructorCall WatcomDestructorCall_00661af4 = {
@@ -6674,7 +6674,7 @@ WatcomDestructorCall WatcomDestructorCall_00661d20 = {
 };
 WatcomDestructorCall WatcomDestructorCall_006620e0 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_path_cpp_CPathMap_arrdtor_FUN_00548c30,
+    .destructor_func = (void *)core_path_cpp_CPathMap_arrdtor12_FUN_00548c30,
     .object_instance = (void *)&g_PathMapCache
 };
 WatcomDestructorCall g_CDemonPodDestructorNode = {
@@ -6724,7 +6724,7 @@ WatcomDestructorCall WatcomDestructorCall_00662844 = {
 };
 WatcomDestructorCall WatcomDestructorCall_006629b0 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_setdir_cpp_CZThumb_arrdtor_FUN_00576910,
+    .destructor_func = (void *)core_setdir_cpp_CZThumb_arrdtor1500_FUN_00576910,
     .object_instance = (void *)&g_CZThumbPool
 };
 WatcomDestructorCall WatcomDestructorCall_00662a10 = {
@@ -6744,17 +6744,17 @@ WatcomDestructorCall WatcomDestructorCall_00662e30 = {
 };
 WatcomDestructorCall WatcomDestructorCall_00662e80 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_skeleton_cpp_CDeformableModel_arrdtor_FUN_005a1fd0,
+    .destructor_func = (void *)core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_005a1fd0,
     .object_instance = (void *)&g_DeformableModelPool
 };
 WatcomDestructorCall WatcomDestructorCall_00662e8c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_skeleton_cpp_CSkeleton_arrdtor_FUN_005a1fb0,
+    .destructor_func = (void *)core_skeleton_cpp_CSkeleton_arrdtor40_FUN_005a1fb0,
     .object_instance = (void *)&g_SkeletonPool
 };
 WatcomDestructorCall WatcomDestructorCall_00663110 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)sound_sndmain_cpp_CSfxSample_arrdtor_FUN_005ade40,
+    .destructor_func = (void *)sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_005ade40,
     .object_instance = (void *)&g_SfxSamples
 };
 WatcomDestructorCall WatcomDestructorCall_0066311c = {

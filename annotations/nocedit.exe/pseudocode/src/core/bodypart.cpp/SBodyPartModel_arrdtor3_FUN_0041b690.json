@@ -1,0 +1,120 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00419130",
+      "from_addr": "0041917c",
+      "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00419130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041b690",
+    "address_range": [
+      [
+        "0041b690",
+        "0041b6a4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_0041b690",
+    "signature": "SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor3_FUN_0041b690(SBodyPartModel *objs,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrfini_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065aec0",
+      "name": "g_SBodyPartModelTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0041917c",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_dtor_FUN_00419130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "objs",
+        "offset": 4,
+        "size": 4,
+        "type": "SBodyPartModel *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

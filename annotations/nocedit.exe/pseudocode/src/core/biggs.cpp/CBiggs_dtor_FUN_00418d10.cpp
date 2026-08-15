@@ -26,14 +26,14 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint f
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = (CBiggs_ptr_13260)
-           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
+           core_armour_cpp_CFlame_arrdtor50_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
   pSVar1 = (CBiggs_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
+           core_armour_cpp_SFire_arrdtor50_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
   pCVar3 = (CBiggs_ptr_11536)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);
   pCVar4 = (CBiggs_ptr_11356)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pCVar3)->base.base.collision_test_points,0);
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar4)->base.base.cloth_list,0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

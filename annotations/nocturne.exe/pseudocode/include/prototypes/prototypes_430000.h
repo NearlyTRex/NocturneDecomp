@@ -123,9 +123,9 @@ SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_00438980(SClothBone *thi
 SClothBone * __cdecl core_cloth_cpp_SClothBone_dtor_FUN_00438990(SClothBone *this_ptr,uint flags);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_004389a0(SClothVertex *this_ptr);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_004389c0(SClothVertex *this_ptr,uint flags);
-CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor_FUN_004389e0(CVector3f *this_ptr,uint flags);
-SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(SClothVertex *this_ptr,uint flags);
-SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(SClothBone *this_ptr,uint flags);
+CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor3_FUN_004389e0(CVector3f *this_ptr,uint flags);
+SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor800_FUN_00438a00(SClothVertex *this_ptr,uint flags);
+SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor50_FUN_00438a20(SClothBone *this_ptr,uint flags);
 int __cdecl support_codec_cpp_readByteWithCount_FUN_00438a40(_istream *istream,int *remaining_count);
 void __cdecl support_codec_cpp_resetBitBuffer_FUN_00438a90(SBitBuffer *bit_buffer);
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_00438ab0(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining);
@@ -273,8 +273,8 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0043f8e0(CCurtain *this_pt
 SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_ctor_FUN_0043f950(SCurtainVertex *this_ptr);
 SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_dtor_FUN_0043f960(SCurtainVertex *this_ptr,uint flags);
 SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0043f970(SCollisionInfo *this_ptr,uint flags);
-SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0043f980(SCurtainVertex *this_ptr,uint flags);
-CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f *this_ptr,uint flags);
+SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor1000_FUN_0043f980(SCurtainVertex *this_ptr,uint flags);
+CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor100_FUN_0043f9a0(CVector3f *this_ptr,uint flags);
 void __cdecl core_dcamera_cpp_staticInit_FUN_0043f9c0(void);
 void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_0043fa20(SFogGrid *fog);
 void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043fa50(SFogGrid *fog);

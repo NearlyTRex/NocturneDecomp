@@ -18,7 +18,7 @@ CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_0048fc30(CFlies *this_ptr,uint f
     shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pSVar1 = core_flies_cpp_SFly_arrdtor_FUN_0048fce0(this_ptr->flies,0);
+  pSVar1 = core_flies_cpp_SFly_arrdtor200_FUN_0048fce0(this_ptr->flies,0);
   ptr = (CFlies *)
         core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
                   ((CDemonActor *)&pSVar1[-7].control_points[0].z,1);

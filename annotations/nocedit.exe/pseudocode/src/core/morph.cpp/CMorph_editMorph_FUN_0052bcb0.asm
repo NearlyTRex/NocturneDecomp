@@ -95,13 +95,13 @@
 ;   core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDT_FUN_004d7d90
-;   core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
+;   core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0
 ;   core_morph.cpp_CMorph_free_FUN_0052b350
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
 ;   core_morph.cpp_CMorph_previewMorph_FUN_0052ca90
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430
 ;   core_morph.cpp_drawVertexMarker_FUN_0052bb80
-;   core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0
+;   core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
@@ -427,8 +427,8 @@ section .text
         ;   Label: LAB_0052c0fa
     LEA EAX,[ESP + 0x4]                 ; 0052c0fb
     PUSH EAX                            ; 0052c0ff
-    CALL core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0 ; 0052c100
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
+    CALL core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0 ; 0052c100
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052c105
     ADD ESP,0x4db4                      ; 0052c108
     POP EBP                             ; 0052c10e
@@ -1118,14 +1118,14 @@ section .text
     PUSH 0x0                            ; 0052ca62
     LEA EAX,[ESP + 0x4920]              ; 0052ca64
     PUSH EAX                            ; 0052ca6b
-    CALL core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0 ; 0052ca6c
-        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; SMorphControlPoint * core_morph.cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(SMorphControlPoint * objs, uint flags)
+    CALL core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0 ; 0052ca6c
+        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; SMorphControlPoint * core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(SMorphControlPoint * objs, uint flags)
     ADD ESP,0x8                         ; 0052ca71
     PUSH 0x0                            ; 0052ca74
     LEA EAX,[ESP + 0x10]                ; 0052ca76
     PUSH EAX                            ; 0052ca7a
-    CALL core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0 ; 0052ca7b
-        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
+    CALL core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0 ; 0052ca7b
+        ;   XREF to: 0052ccd0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0(CDeformableModelInstance * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052ca80
     POP EBX                             ; 0052ca83
     POP ESI                             ; 0052ca84

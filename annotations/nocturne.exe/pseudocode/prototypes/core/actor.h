@@ -463,6 +463,6 @@ void FUN_0040e2e1(undefined4 *param_1);
 // Address: 0040e2f1
 void FUN_0040e2f1(undefined4 *param_1);
 
-// Original: core_actor.cpp_CVector3f_arrdtor_FUN_0040e300
+// Original: core_actor.cpp_CVector3f_arrdtor10_FUN_0040e300
 // Address: 0040e300
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor10(CVector3f *this_ptr,uint flags);

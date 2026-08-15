@@ -34,12 +34,13 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004d4540(CMimic *this_ptr,uint f
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_004e0070(&this_ptr->morph,0);
   pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00435160
                      ((CCloth *)pCVar1[-0x4e].models[1].textures[0xc].textures[2].texture_name,0);
-  pCVar3 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50
+  pCVar3 = core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50
                      ((CFlame *)(pCVar2[-1].vertices[0x2ce].bone_index + 2),0);
-  pSVar4 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30
+  pSVar4 = core_armour_cpp_SFire_arrdtor50_FUN_0040fe30
                      ((SFire *)(pCVar3[-2].base.create_event + 0x10),0);
-  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10((CVector3f *)&pSVar4[-0x16].bone_index,0);
-  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(pCVar5 + -0xf,0);
+  pCVar5 = core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10
+                     ((CVector3f *)&pSVar4[-0x16].bone_index,0);
+  pCVar5 = core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10(pCVar5 + -0xf,0);
   pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_00438250((CClothList *)(pCVar5 + -0x26),0);
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
                      ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);

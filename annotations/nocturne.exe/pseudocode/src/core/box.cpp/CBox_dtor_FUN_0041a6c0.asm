@@ -18,7 +18,7 @@
 ;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 at 00553ebf
 ;
 ; Called Functions:
-;   core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
+;   core_box.cpp_SScrape_arrdtor8_FUN_0041cbe0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH 0x0                            ; 0041a6c4
     ADD EAX,0xb4                        ; 0041a6c6
     PUSH EAX                            ; 0041a6cb
-    CALL core_box.cpp_SScrape_arrdtor_FUN_0041cbe0 ; 0041a6cc
-        ;   XREF to: 0041cbe0 (UNCONDITIONAL_CALL)  ; SScrape * core_box.cpp_SScrape_arrdtor_FUN_0041cbe0(SScrape * this_ptr, uint flags)
+    CALL core_box.cpp_SScrape_arrdtor8_FUN_0041cbe0 ; 0041a6cc
+        ;   XREF to: 0041cbe0 (UNCONDITIONAL_CALL)  ; SScrape * core_box.cpp_SScrape_arrdtor8_FUN_0041cbe0(SScrape * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041a6d1
     SUB EAX,0xb4                        ; 0041a6d4
     RET                                 ; 0041a6d9

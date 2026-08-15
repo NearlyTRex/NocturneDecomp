@@ -43,7 +43,7 @@ CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_004706e0(CFilterFX *this
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFX *this_ptr);
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFX *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFX *this_ptr);
-CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemonFilter *this_ptr,uint flags);
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00470980(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void);
 void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void);
 void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void);
@@ -165,7 +165,7 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemon
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
-CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *this_ptr,uint flags);
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0047efc0(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_0047f010(void);
 CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0047f040(CZombieDog *this_ptr);

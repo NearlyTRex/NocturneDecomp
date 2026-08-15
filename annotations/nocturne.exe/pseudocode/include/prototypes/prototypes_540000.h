@@ -332,7 +332,7 @@ uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_0054f7a0(CVehicle *t
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_0054f7f0(CVehicle *this_ptr,uint flags);
 CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_0054f870(CTire *this_ptr);
 CTire * __cdecl core_vehicle_cpp_CTire_dtor_FUN_0054f890(CTire *this_ptr,uint flags);
-CTire * __cdecl core_vehicle_cpp_CTire_arrdtor_FUN_0054f8a0(CTire *this_ptr,uint flags);
+CTire * __cdecl core_vehicle_cpp_CTire_arrdtor4_FUN_0054f8a0(CTire *this_ptr,uint flags);
 void __cdecl core_vessel_cpp_staticInit_FUN_0054f8c0(void);
 CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_0054f8f0(void);
 CDemonActorType * __cdecl core_vessel_cpp_CCryptVessel_getActorType_FUN_0054f910(CCryptVessel *this_ptr);

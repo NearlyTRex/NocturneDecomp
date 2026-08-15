@@ -13,6 +13,6 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005998e0(CSkeleton *thi
   
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   pCVar1 = (CSkeleton_ptr_168828)
-           core_curtain_cpp_CVector3f_arrdtor_FUN_0044baf0(this_ptr->bone_scales,0);
+           core_curtain_cpp_CVector3f_arrdtor100_FUN_0044baf0(this_ptr->bone_scales,0);
   return ADJ(pCVar1);
 }

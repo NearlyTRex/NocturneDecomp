@@ -11,6 +11,6 @@ CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_004d6570(CMirror *this_ptr,ui
 {
   SClipPlane *pSVar1;
   
-  pSVar1 = core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(this_ptr->clip_planes,0);
+  pSVar1 = core_mirror_cpp_SClipPlane_arrdtor5_FUN_004d7d90(this_ptr->clip_planes,0);
   return (CMirror *)&pSVar1[-10].C;
 }

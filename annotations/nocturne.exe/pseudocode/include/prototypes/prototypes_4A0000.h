@@ -122,7 +122,7 @@ void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004add80(CGlass *this_ptr,SLas
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004adec0(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_FUN_004aded0(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004adef0(CGlass *this_ptr,uint flags);
-CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004adf70(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor25_FUN_004adf70(CVector3f *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004adf90(void);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ae070(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr);

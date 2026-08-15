@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   core_course.cpp_CCourse_dtor_FUN_0043b5f0
-;   core_vehicle.cpp_CTire_arrdtor_FUN_0054f8a0
+;   core_vehicle.cpp_CTire_arrdtor4_FUN_0054f8a0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -37,8 +37,8 @@ section .text
     PUSH 0x0                            ; 0054f80d
     SUB EAX,0x6e4                       ; 0054f80f
     PUSH EAX                            ; 0054f814
-    CALL core_vehicle.cpp_CTire_arrdtor_FUN_0054f8a0 ; 0054f815
-        ;   XREF to: 0054f8a0 (UNCONDITIONAL_CALL)  ; CTire * core_vehicle.cpp_CTire_arrdtor_FUN_0054f8a0(CTire * this_ptr, uint flags)
+    CALL core_vehicle.cpp_CTire_arrdtor4_FUN_0054f8a0 ; 0054f815
+        ;   XREF to: 0054f8a0 (UNCONDITIONAL_CALL)  ; CTire * core_vehicle.cpp_CTire_arrdtor4_FUN_0054f8a0(CTire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054f81a
     PUSH 0x1                            ; 0054f81d
     LEA EBX,[EAX + 0xfffff6cc]          ; 0054f81f

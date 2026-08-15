@@ -203,6 +203,6 @@ STriangleRef * __cdecl STriangleRef::copy(STriangleRef *this_ptr,STriangleRef *o
 // Address: 0049a400
 STriangleRef * __cdecl STriangleRef::dtor(STriangleRef *this_ptr,uint flags);
 
-// Original: core_dtrace.cpp_CVector3f_arrdtor_FUN_0049a410
+// Original: core_dtrace.cpp_CVector3f_arrdtor20000_FUN_0049a410
 // Address: 0049a410
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor20000(CVector3f *this_ptr,uint flags);

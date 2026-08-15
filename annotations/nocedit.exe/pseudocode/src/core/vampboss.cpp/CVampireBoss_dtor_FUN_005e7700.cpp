@@ -34,14 +34,14 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampire
   pCVar4 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(&ADJ(pCVar3)->wing_cloth,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(&ADJ(pCVar4)->model,0);
   pCVar6 = (CVampireBoss_ptr_13260)
-           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar5)->base.base.flames,0);
+           core_armour_cpp_CFlame_arrdtor50_FUN_00412720(ADJ(pCVar5)->base.base.flames,0);
   pSVar1 = (CVampireBoss_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar6)->base.base.fires,0);
+           core_armour_cpp_SFire_arrdtor50_FUN_00412700(ADJ(pCVar6)->base.base.fires,0);
   pCVar7 = (CVampireBoss_ptr_11536)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);
   pCVar8 = (CVampireBoss_ptr_11356)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pCVar7)->base.base.collision_test_points,0);
   pCVar9 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar8)->base.base.cloth_list,0);
   pCVar10 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

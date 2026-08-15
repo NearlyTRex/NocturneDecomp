@@ -330,11 +330,11 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
       }
       g_CDemonSetPtr->lighting_quality_mode = (int)_Var2;
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(local_4a8,0);
-      core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
+      core_morph_cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(local_4a8,0);
+      core_morph_cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0(local_4db8,0);
       return;
     }
   }
-  core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
+  core_morph_cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0(local_4db8,0);
   return;
 }

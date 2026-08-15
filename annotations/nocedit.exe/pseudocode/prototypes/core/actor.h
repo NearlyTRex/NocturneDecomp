@@ -731,6 +731,6 @@ float * __cdecl copyFloat2(float *dst,float *src);
 // Address: 004104f0
 float * __cdecl copyFloat3(float *dst,float *src);
 
-// Original: core_actor.cpp_CVector3f_arrdtor_FUN_00410500
+// Original: core_actor.cpp_CVector3f_arrdtor10_FUN_00410500
 // Address: 00410500
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor10(CVector3f *this_ptr,uint flags);

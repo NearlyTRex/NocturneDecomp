@@ -47,14 +47,14 @@ SBat * __cdecl SBat::ctor(SBat *this_ptr);
 // Address: 004df1a0
 SBat * __cdecl SBat::dtor(SBat *this_ptr,uint flags);
 
-// Original: core_moon.cpp_SBat_arrdtor_FUN_004df1b0
+// Original: core_moon.cpp_SBat_arrdtor30_FUN_004df1b0
 // Address: 004df1b0
-SBat * __cdecl SBat::arrdtor(SBat *this_ptr,uint flags);
+SBat * __cdecl SBat::arrdtor30(SBat *this_ptr,uint flags);
 
-// Original: core_moon.cpp_CCourse_arrdtor_FUN_004df1d0
+// Original: core_moon.cpp_CCourse_arrdtor3_FUN_004df1d0
 // Address: 004df1d0
-CCourse * __cdecl CCourse::arrdtor(CCourse *this_ptr,uint flags);
+CCourse * __cdecl CCourse::arrdtor3(CCourse *this_ptr,uint flags);
 
-// Original: core_moon.cpp_CAlphaBitmap_arrdtor_FUN_004df1f0
+// Original: core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_004df1f0
 // Address: 004df1f0
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);

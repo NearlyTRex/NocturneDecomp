@@ -83,10 +83,10 @@ SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);
 // Address: 00522c00
 SClipPlane * __cdecl SClipPlane::dtor(SClipPlane *this_ptr,uint flags);
 
-// Original: core_mirror.cpp_SClipPlane_arrdtor_FUN_00522c10
+// Original: core_mirror.cpp_SClipPlane_arrdtor5_FUN_00522c10
 // Address: 00522c10
-SClipPlane * __cdecl SClipPlane::arrdtor(SClipPlane *objs,uint flags);
+SClipPlane * __cdecl SClipPlane::arrdtor5(SClipPlane *objs,uint flags);
 
-// Original: core_mirror.cpp_CVector3f_arrdtor_FUN_00522c30
+// Original: core_mirror.cpp_CVector3f_arrdtor32_FUN_00522c30
 // Address: 00522c30
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor32(CVector3f *this_ptr,uint flags);

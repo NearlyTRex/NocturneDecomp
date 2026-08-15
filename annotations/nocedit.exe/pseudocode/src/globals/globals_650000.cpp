@@ -4886,7 +4886,7 @@ CWeapon_full_vtable g_CGunVTable = {
 // WatcomDestructorCall
 WatcomDestructorCall WatcomDestructorCall_0065b180 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor_FUN_004236e0,
+    .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_004236e0,
     .object_instance = (void *)&CDemonFilter_ARRAY_008229ec
 };
 WatcomDestructorCall WatcomDestructorCall_0065bb30 = {
@@ -4906,12 +4906,12 @@ WatcomDestructorCall WatcomDestructorCall_0065c630 = {
 };
 WatcomDestructorCall WatcomDestructorCall_0065c830 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor_FUN_004236e0,
+    .destructor_func = (void *)core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_004236e0,
     .object_instance = (void *)&CDemonFilter_ARRAY_020a4878
 };
 WatcomDestructorCall WatcomDestructorCall_0065c83c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980,
+    .destructor_func = (void *)core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00470980,
     .object_instance = (void *)&CDemonFilter_ARRAY_020a4ad8
 };
 WatcomDestructorCall WatcomDestructorCall_0065c848 = {
@@ -4926,12 +4926,12 @@ WatcomDestructorCall WatcomDestructorCall_0065c854 = {
 };
 WatcomDestructorCall WatcomDestructorCall_0065c960 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0,
+    .destructor_func = (void *)core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0047efc0,
     .object_instance = (void *)&g_CKeyFramedModelPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065cd40 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50,
+    .destructor_func = (void *)core_dracbrid_cpp_SFreaky_arrdtor6_FUN_00486e50,
     .object_instance = (void *)&SFreaky_ARRAY_02c6d0c0
 };
 WatcomDestructorCall WatcomDestructorCall_0065d440 = {
@@ -4941,52 +4941,52 @@ WatcomDestructorCall WatcomDestructorCall_0065d440 = {
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc30 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CStake_arrdtor_FUN_004c99d0,
+    .destructor_func = (void *)core_fire_cpp_CStake_arrdtor256_FUN_004c99d0,
     .object_instance = (void *)&g_StakePool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc3c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CSpark_arrdtor_FUN_004c99b0,
+    .destructor_func = (void *)core_fire_cpp_CSpark_arrdtor256_FUN_004c99b0,
     .object_instance = (void *)&g_SparkPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc48 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CGlassParticle_arrdtor_FUN_004c9970,
+    .destructor_func = (void *)core_fire_cpp_CGlassParticle_arrdtor256_FUN_004c9970,
     .object_instance = (void *)&g_GlassParticlePool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc54 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CFireball_arrdtor_FUN_004c9930,
+    .destructor_func = (void *)core_fire_cpp_CFireball_arrdtor64_FUN_004c9930,
     .object_instance = (void *)&g_FireballPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc60 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CRock_arrdtor_FUN_004c9910,
+    .destructor_func = (void *)core_fire_cpp_CRock_arrdtor64_FUN_004c9910,
     .object_instance = (void *)&g_RockPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc6c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CToss_arrdtor_FUN_004c98b0,
+    .destructor_func = (void *)core_fire_cpp_CToss_arrdtor20_FUN_004c98b0,
     .object_instance = (void *)&g_TossPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc78 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CCrater_arrdtor_FUN_004c9890,
+    .destructor_func = (void *)core_fire_cpp_CCrater_arrdtor20_FUN_004c9890,
     .object_instance = (void *)&g_CraterPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc84 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CShell_arrdtor_FUN_004c9810,
+    .destructor_func = (void *)core_fire_cpp_CShell_arrdtor50_FUN_004c9810,
     .object_instance = (void *)&g_ShellPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc90 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CPopcorn_arrdtor_FUN_004c97f0,
+    .destructor_func = (void *)core_fire_cpp_CPopcorn_arrdtor256_FUN_004c97f0,
     .object_instance = (void *)&g_PopcornPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065dc9c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_fire_cpp_CRainDrop_arrdtor_FUN_004c97d0,
+    .destructor_func = (void *)core_fire_cpp_CRainDrop_arrdtor256_FUN_004c97d0,
     .object_instance = (void *)&g_RainDropPool
 };
 WatcomDestructorCall WatcomDestructorCall_0065e990 = {
@@ -5011,12 +5011,12 @@ WatcomDestructorCall WatcomDestructorCall_0065f000 = {
 };
 WatcomDestructorCall WatcomDestructorCall_0065f00c = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_gore_cpp_CBloodParticle_arrdtor_FUN_004ee480,
+    .destructor_func = (void *)core_gore_cpp_CBloodParticle_arrdtor256_FUN_004ee480,
     .object_instance = (void *)&g_BloodParticles
 };
 WatcomDestructorCall WatcomDestructorCall_0065f018 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)core_gore_cpp_CFootstep_arrdtor_FUN_004ee420,
+    .destructor_func = (void *)core_gore_cpp_CFootstep_arrdtor1000_FUN_004ee420,
     .object_instance = (void *)&g_Footsteps
 };
 WatcomDestructorCall WatcomDestructorCall_0065f230 = {

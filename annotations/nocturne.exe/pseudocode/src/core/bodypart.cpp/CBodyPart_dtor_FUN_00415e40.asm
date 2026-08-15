@@ -14,8 +14,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415ee0
-;   core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130
-;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
+;   core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00418130
+;   core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_00418110
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
@@ -47,14 +47,14 @@ section .text
     PUSH 0x0                            ; 00415e74
     SUB EAX,0x56c                       ; 00415e76
     PUSH EAX                            ; 00415e7b
-    CALL core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130 ; 00415e7c
-        ;   XREF to: 00418130 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire * this_ptr, uint flags)
+    CALL core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00418130 ; 00415e7c
+        ;   XREF to: 00418130 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00418130(SBodyPartFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415e81
     PUSH 0x0                            ; 00415e84
     SUB EAX,0x4c0                       ; 00415e86
     PUSH EAX                            ; 00415e8b
-    CALL core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110 ; 00415e8c
-        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel * this_ptr, uint flags)
+    CALL core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_00418110 ; 00415e8c
+        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_00418110(SBodyPartModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00415e91
     PUSH 0x1                            ; 00415e94
     LEA EBX,[EAX + 0xfffffd78]          ; 00415e96

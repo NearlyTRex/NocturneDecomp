@@ -190,8 +190,8 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0044ba30(CCurtain *this_pt
 SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_ctor_FUN_0044baa0(SCurtainVertex *this_ptr);
 SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_dtor_FUN_0044bab0(SCurtainVertex *this_ptr,uint flags);
 SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0044bac0(SCollisionInfo *this_ptr,uint flags);
-SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex *objs,uint flags);
-CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0044baf0(CVector3f *this_ptr,uint flags);
+SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex *objs,uint flags);
+CVector3f * __cdecl core_curtain_cpp_CVector3f_arrdtor100_FUN_0044baf0(CVector3f *this_ptr,uint flags);
 void __cdecl core_dcamera_cpp_staticInit_FUN_0044bb10(void);
 uint __cdecl core_dcamera_cpp_getLightmapPaletteValue_FUN_0044bb50(int palette_index);
 void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(SFogGrid *fog);

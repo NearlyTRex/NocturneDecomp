@@ -21,11 +21,11 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_005
     return this_ptr;
   }
   pSVar1 = (CMansionPuzzleCircle_ptr_4928)
-           core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(this_ptr->reflectors,0);
+           core_manpuz_cpp_SReflector_arrdtor2_FUN_0050bad0(this_ptr->reflectors,0);
   pSVar2 = (CMansionPuzzleCircle_ptr_2720)
-           core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(ADJ(pSVar1)->gems,0);
+           core_manpuz_cpp_SGem_arrdtor12_FUN_0050bab0(ADJ(pSVar1)->gems,0);
   pSVar3 = (CMansionPuzzleCircle_ptr_1520)
-           core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(ADJ(pSVar2)->panels,0);
+           core_manpuz_cpp_SPanel_arrdtor12_FUN_0050ba90(ADJ(pSVar2)->panels,0);
   ptr = (CMansionPuzzleCircle *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pSVar3)->base,1);
   if ((flags & 2) == 0) {
     return ptr;

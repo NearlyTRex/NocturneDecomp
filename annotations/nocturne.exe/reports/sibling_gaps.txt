@@ -334,7 +334,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
   pairs compared        : 5251
   never transferred     : 63   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 54   (both sides typed, and they disagree -- investigate)
-  name core differs     : 186   (mapped as the same function under two different names)
+  name core differs     : 184   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 30, 'param': 22, 'param1': 5, 'param2': 5, 'param0': 5, 'param3': 1, 'conv': 1}
@@ -467,7 +467,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         param count 1 -> 0
         ret void -> int
     005bac80 -> 00534c80  conf 0.85  shape identical
-      core_stairs.cpp_CDemonTriangle_arrdtor
+      core_stairs.cpp_CDemonTriangle_arrdtor40
         param0 CDemonTriangle* -> SFly*
         ret CDemonTriangle* -> SFly*
     005e1ee0 -> 005492a0  conf 0.85  shape unshaped
@@ -518,7 +518,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 175, 'renamed': 8, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 175, 'renamed': 6, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -527,21 +527,15 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     stubbed in nocturne the game build compiled the body out; expected
     renamed             genuinely different identifiers; read both
 
-    [renamed] 00544730 -> 004ee8b0  conf 0.99  shape identical
-      nocedit  CAlphaBitmap_arrdtor1
-      nocturne CAlphaBitmap_arrdtor
     [renamed] 00448630 -> 0043c970  conf 0.91  shape same_mnemonics
       nocedit  CCrate_drop
       nocturne CCrate_onDropped
     [renamed] 004111b0 -> 0040ef60  conf 0.85  shape same_mnemonics
       nocedit  CAmmo_setAmmoCount
       nocturne CAmmo_setWeaponAmmo
-    [renamed] 00544750 -> 004ee8d0  conf 0.85  shape identical
-      nocedit  CAlphaBitmap_arrdtor2
-      nocturne CAlphaBitmap_arrdtor
     [renamed] 005bac80 -> 00534c80  conf 0.85  shape identical
-      nocedit  CDemonTriangle_arrdtor
-      nocturne SFly_arrdtor
+      nocedit  CDemonTriangle_arrdtor40
+      nocturne SFly_arrdtor40
     [renamed] 0046fb70 -> 0044ba10  conf 0.82  shape unshaped
       nocedit  CActorDestination_renderTransparent
       nocturne CActorDestination_getCollisionType

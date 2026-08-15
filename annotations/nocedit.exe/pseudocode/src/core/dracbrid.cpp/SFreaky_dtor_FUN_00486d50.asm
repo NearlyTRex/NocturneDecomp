@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30
+;   core_dracbrid.cpp_CVector3f_arrdtor4_FUN_00486e30
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH 0x0                            ; 00486d54
     ADD EAX,0x20                        ; 00486d56
     PUSH EAX                            ; 00486d59
-    CALL core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30 ; 00486d5a
-        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f * this_ptr, uint flags)
+    CALL core_dracbrid.cpp_CVector3f_arrdtor4_FUN_00486e30 ; 00486d5a
+        ;   XREF to: 00486e30 (UNCONDITIONAL_CALL)  ; CVector3f * core_dracbrid.cpp_CVector3f_arrdtor4_FUN_00486e30(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00486d5f
     SUB EAX,0x20                        ; 00486d62
     RET                                 ; 00486d65

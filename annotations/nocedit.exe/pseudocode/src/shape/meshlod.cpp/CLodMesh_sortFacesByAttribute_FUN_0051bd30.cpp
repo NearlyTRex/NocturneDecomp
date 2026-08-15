@@ -162,7 +162,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
           puVar16[0x20] = uVar13;
           puVar16[0x21] = uVar14;
           puVar16[0x22] = uVar3;
-          core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(local_6c,0);
+          core_cloth_cpp_CVector3f_arrdtor3_FUN_0043e460(local_6c,0);
         }
         local_24 = local_24 + 0x8c;
         local_28 = local_28 + 0x8c;

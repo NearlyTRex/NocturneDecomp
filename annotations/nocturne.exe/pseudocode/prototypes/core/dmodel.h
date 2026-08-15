@@ -127,6 +127,6 @@ CDemonTriangle * __cdecl CDemonTriangle::ctor(CDemonTriangle *this_ptr);
 // Address: 004545d0
 CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);
 
-// Original: core_dmodel.cpp_CKeyFramedModel_arrdtor_FUN_004545e0
+// Original: core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_004545e0
 // Address: 004545e0
-CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor(CKeyFramedModel *this_ptr,uint flags);
+CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor256(CKeyFramedModel *this_ptr,uint flags);

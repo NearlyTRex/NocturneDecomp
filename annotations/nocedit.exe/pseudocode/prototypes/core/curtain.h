@@ -99,10 +99,10 @@ SCurtainVertex * __cdecl SCurtainVertex::dtor(SCurtainVertex *this_ptr,uint flag
 // Address: 0044bac0
 SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
 
-// Original: core_curtain.cpp_SCurtainVertex_arrdtor_FUN_0044bad0
+// Original: core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0
 // Address: 0044bad0
-SCurtainVertex * __cdecl SCurtainVertex::arrdtor(SCurtainVertex *objs,uint flags);
+SCurtainVertex * __cdecl SCurtainVertex::arrdtor1000(SCurtainVertex *objs,uint flags);
 
-// Original: core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0
+// Original: core_curtain.cpp_CVector3f_arrdtor100_FUN_0044baf0
 // Address: 0044baf0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor100(CVector3f *this_ptr,uint flags);

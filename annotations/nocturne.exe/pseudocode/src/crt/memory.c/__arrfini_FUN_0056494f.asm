@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[81]:
-;   core_actor.cpp_CVector3f_arrdtor_FUN_0040e300 at 0040e30c
-;   core_armour.cpp_CFlame_arrdtor_FUN_0040fe50 at 0040fe5c
-;   core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 at 0040fe1c
-;   core_armour.cpp_SFire_arrdtor_FUN_0040fe30 at 0040fe3c
-;   core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130 at 0041813c
-;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110 at 0041811c
-;   core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0 at 0041a4fc
-;   core_box.cpp_SScrape_arrdtor_FUN_0041cbe0 at 0041cbec
-;   core_boxactor.cpp_CDemonFilter_arrdtor_FUN_0041fb00 at 0041fb0c
-;   core_bugs.cpp_SBug_arrdtor_FUN_00423e80 at 00423e8f
+;   core_actor.cpp_CVector3f_arrdtor10_FUN_0040e300 at 0040e30c
+;   core_armour.cpp_CFlame_arrdtor50_FUN_0040fe50 at 0040fe5c
+;   core_armour.cpp_CVector3f_arrdtor15_FUN_0040fe10 at 0040fe1c
+;   core_armour.cpp_SFire_arrdtor50_FUN_0040fe30 at 0040fe3c
+;   core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00418130 at 0041813c
+;   core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_00418110 at 0041811c
+;   core_boneguy.cpp_SBoneGuyBox_arrdtor20_FUN_0041a4f0 at 0041a4fc
+;   core_box.cpp_SScrape_arrdtor8_FUN_0041cbe0 at 0041cbec
+;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_0041fb00 at 0041fb0c
+;   core_bugs.cpp_SBug_arrdtor400_FUN_00423e80 at 00423e8f
 ;   ... and 71 more
 ;
 ; Called Functions:

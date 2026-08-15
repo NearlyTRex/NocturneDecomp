@@ -19,7 +19,7 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0044ba30(CCurtain *this_pt
     return this_ptr;
   }
   pSVar1 = (CCurtain_ptr_520)
-           core_curtain_cpp_SCurtainVertex_arrdtor_FUN_0044bad0(this_ptr->vertices,0);
+           core_curtain_cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(this_ptr->vertices,0);
   ptr = (CCurtain *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pSVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;

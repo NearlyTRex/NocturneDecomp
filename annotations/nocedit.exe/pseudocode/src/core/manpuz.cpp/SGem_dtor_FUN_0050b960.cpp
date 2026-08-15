@@ -11,6 +11,6 @@ SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_0050b960(SGem *this_ptr,uint flags)
 {
   SGem_ptr_60 pCVar1;
   
-  pCVar1 = core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_0050ba70(&this_ptr->collision_tri_a,0);
+  pCVar1 = core_manpuz_cpp_CDemonTriangle_arrdtor2_FUN_0050ba70(&this_ptr->collision_tri_a,0);
   return ADJ(pCVar1);
 }

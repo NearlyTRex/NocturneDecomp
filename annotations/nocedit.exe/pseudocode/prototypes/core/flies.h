@@ -87,6 +87,6 @@ SFly * __cdecl SFly::ctor(SFly *this_ptr);
 // Address: 004ccd40
 SFly * __cdecl SFly::dtor(SFly *this_ptr,uint flags);
 
-// Original: core_flies.cpp_SFly_arrdtor_FUN_004ccd60
+// Original: core_flies.cpp_SFly_arrdtor200_FUN_004ccd60
 // Address: 004ccd60
-SFly * __cdecl SFly::arrdtor(SFly *objs,uint flags);
+SFly * __cdecl SFly::arrdtor200(SFly *objs,uint flags);

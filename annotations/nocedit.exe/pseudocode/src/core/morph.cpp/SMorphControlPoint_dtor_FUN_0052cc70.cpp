@@ -12,6 +12,6 @@ SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_dtor_FUN_0052cc70
   SMorphControlPoint_ptr_8 pCVar1;
   
   pCVar1 = (SMorphControlPoint_ptr_8)
-           core_morph_cpp_CVector3f_arrdtor_FUN_0052cc90(this_ptr->position,0);
+           core_morph_cpp_CVector3f_arrdtor2_FUN_0052cc90(this_ptr->position,0);
   return ADJ(pCVar1);
 }

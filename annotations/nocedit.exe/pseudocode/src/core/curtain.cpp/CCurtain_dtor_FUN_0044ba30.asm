@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
-;   core_curtain.cpp_SCurtainVertex_arrdtor_FUN_0044bad0
+;   core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 0044ba3c
     ADD EBX,0x208                       ; 0044ba3e
     PUSH EBX                            ; 0044ba44
-    CALL core_curtain.cpp_SCurtainVertex_arrdtor_FUN_0044bad0 ; 0044ba45
-        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; SCurtainVertex * core_curtain.cpp_SCurtainVertex_arrdtor_FUN_0044bad0(SCurtainVertex * objs, uint flags)
+    CALL core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0 ; 0044ba45
+        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; SCurtainVertex * core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex * objs, uint flags)
     ADD ESP,0x8                         ; 0044ba4a
     PUSH 0x1                            ; 0044ba4d
     LEA EBX,[EAX + 0xfffffdf8]          ; 0044ba4f

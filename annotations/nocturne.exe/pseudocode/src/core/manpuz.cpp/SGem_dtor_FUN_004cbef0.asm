@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000
+;   core_manpuz.cpp_CDemonTriangle_arrdtor2_FUN_004cc000
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH 0x0                            ; 004cbef4
     ADD EAX,0x3c                        ; 004cbef6
     PUSH EAX                            ; 004cbef9
-    CALL core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000 ; 004cbefa
-        ;   XREF to: 004cc000 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000(CDemonTriangle * this_ptr, uint flags)
+    CALL core_manpuz.cpp_CDemonTriangle_arrdtor2_FUN_004cc000 ; 004cbefa
+        ;   XREF to: 004cc000 (UNCONDITIONAL_CALL)  ; CDemonTriangle * core_manpuz.cpp_CDemonTriangle_arrdtor2_FUN_004cc000(CDemonTriangle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbeff
     SUB EAX,0x3c                        ; 004cbf02
     RET                                 ; 004cbf05

@@ -159,14 +159,14 @@ SClothVertex * __cdecl SClothVertex::ctor(SClothVertex *this_ptr);
 // Address: 004389c0
 SClothVertex * __cdecl SClothVertex::dtor(SClothVertex *this_ptr,uint flags);
 
-// Original: core_cloth.cpp_CVector3f_arrdtor_FUN_004389e0
+// Original: core_cloth.cpp_CVector3f_arrdtor3_FUN_004389e0
 // Address: 004389e0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor3(CVector3f *this_ptr,uint flags);
 
-// Original: core_cloth.cpp_SClothVertex_arrdtor_FUN_00438a00
+// Original: core_cloth.cpp_SClothVertex_arrdtor800_FUN_00438a00
 // Address: 00438a00
-SClothVertex * __cdecl SClothVertex::arrdtor(SClothVertex *this_ptr,uint flags);
+SClothVertex * __cdecl SClothVertex::arrdtor800(SClothVertex *this_ptr,uint flags);
 
-// Original: core_cloth.cpp_SClothBone_arrdtor_FUN_00438a20
+// Original: core_cloth.cpp_SClothBone_arrdtor50_FUN_00438a20
 // Address: 00438a20
-SClothBone * __cdecl SClothBone::arrdtor(SClothBone *this_ptr,uint flags);
+SClothBone * __cdecl SClothBone::arrdtor50(SClothBone *this_ptr,uint flags);

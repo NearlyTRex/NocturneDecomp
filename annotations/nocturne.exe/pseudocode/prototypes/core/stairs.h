@@ -67,6 +67,6 @@ void __cdecl CStairs::buildCollision(CStairs *this_ptr);
 // Address: 00534c10
 CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
-// Original: core_stairs.cpp_SFly_arrdtor_FUN_00534c80
+// Original: core_stairs.cpp_SFly_arrdtor40_FUN_00534c80
 // Address: 00534c80
-SFly * __cdecl SFly::arrdtor(SFly *this_ptr,uint flags);
+SFly * __cdecl SFly::arrdtor40(SFly *this_ptr,uint flags);

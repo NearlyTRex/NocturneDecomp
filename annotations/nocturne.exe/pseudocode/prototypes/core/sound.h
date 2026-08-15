@@ -159,6 +159,6 @@ undefined4 * FUN_0052ee30(void);
 // Address: 0052ee40
 undefined4 * FUN_0052ee40(void);
 
-// Original: core_sound.cpp_STrainNoise_arrdtor_FUN_0052ee50
+// Original: core_sound.cpp_STrainNoise_arrdtor10_FUN_0052ee50
 // Address: 0052ee50
-STrainNoise * __cdecl STrainNoise::arrdtor(STrainNoise *this_ptr,uint flags);
+STrainNoise * __cdecl STrainNoise::arrdtor10(STrainNoise *this_ptr,uint flags);

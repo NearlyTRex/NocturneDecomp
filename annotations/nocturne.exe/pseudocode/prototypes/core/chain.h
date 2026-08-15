@@ -75,6 +75,6 @@ SChainVertex * __cdecl SChainVertex::ctor(SChainVertex *this_ptr);
 // Address: 0042cdb0
 SChainVertex * __cdecl SChainVertex::dtor(SChainVertex *this_ptr,uint flags);
 
-// Original: core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0
+// Original: core_chain.cpp_SChainVertex_arrdtor20_FUN_0042cdc0
 // Address: 0042cdc0
-SChainVertex * __cdecl SChainVertex::arrdtor(SChainVertex *this_ptr,uint flags);
+SChainVertex * __cdecl SChainVertex::arrdtor20(SChainVertex *this_ptr,uint flags);

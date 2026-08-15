@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_free_FUN_00438cb0
-;   core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0
-;   core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480
+;   core_cloth.cpp_SClothBone_arrdtor50_FUN_0043e4a0
+;   core_cloth.cpp_SClothVertex_arrdtor800_FUN_0043e480
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90
 ;
 ; *****************************************************************************
@@ -37,14 +37,14 @@ section .text
     PUSH 0x0                            ; 00438c0e
     ADD EBX,0x3ce90                     ; 00438c10
     PUSH EBX                            ; 00438c16
-    CALL core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0 ; 00438c17
-        ;   XREF to: 0043e4a0 (UNCONDITIONAL_CALL)  ; SClothBone * core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0(SClothBone * objs, uint flags)
+    CALL core_cloth.cpp_SClothBone_arrdtor50_FUN_0043e4a0 ; 00438c17
+        ;   XREF to: 0043e4a0 (UNCONDITIONAL_CALL)  ; SClothBone * core_cloth.cpp_SClothBone_arrdtor50_FUN_0043e4a0(SClothBone * objs, uint flags)
     ADD ESP,0x8                         ; 00438c1c
     PUSH 0x0                            ; 00438c1f
     SUB EAX,0x377b8                     ; 00438c21
     PUSH EAX                            ; 00438c26
-    CALL core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480 ; 00438c27
-        ;   XREF to: 0043e480 (UNCONDITIONAL_CALL)  ; SClothVertex * core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480(SClothVertex * objs, uint flags)
+    CALL core_cloth.cpp_SClothVertex_arrdtor800_FUN_0043e480 ; 00438c27
+        ;   XREF to: 0043e480 (UNCONDITIONAL_CALL)  ; SClothVertex * core_cloth.cpp_SClothVertex_arrdtor800_FUN_0043e480(SClothVertex * objs, uint flags)
     ADD ESP,0x8                         ; 00438c2c
     PUSH 0x1                            ; 00438c2f
     LEA EBX,[EAX + 0xffffa928]          ; 00438c31

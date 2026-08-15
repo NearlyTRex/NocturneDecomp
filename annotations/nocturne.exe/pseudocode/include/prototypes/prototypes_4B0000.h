@@ -75,10 +75,10 @@ CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_ctor_FUN_004b0a10(CBloodSplat *t
 CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_dtor_FUN_004b0a20(CBloodSplat *this_ptr,uint flags);
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004b0a30(CBloodParticle *this_ptr);
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004b0a50(CBloodParticle *this_ptr,uint flags);
-CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor_FUN_004b0a60(CFootstep *this_ptr,uint flags);
-CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor_FUN_004b0a80(CBloodPool *this_ptr,uint flags);
-CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor_FUN_004b0aa0(CBloodSplat *this_ptr,uint flags);
-CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor_FUN_004b0ac0(CBloodParticle *this_ptr,uint flags);
+CFootstep * __cdecl core_gore_cpp_CFootstep_arrdtor1000_FUN_004b0a60(CFootstep *this_ptr,uint flags);
+CBloodPool * __cdecl core_gore_cpp_CBloodPool_arrdtor32_FUN_004b0a80(CBloodPool *this_ptr,uint flags);
+CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_arrdtor2000_FUN_004b0aa0(CBloodSplat *this_ptr,uint flags);
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor256_FUN_004b0ac0(CBloodParticle *this_ptr,uint flags);
 void __cdecl core_grave_cpp_staticInit_FUN_004b0ae0(void);
 CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004b0b10(void);
 CDemonActorType * __cdecl core_grave_cpp_CGrave_getActorType_FUN_004b0b30(CGrave *this_ptr);

@@ -23,9 +23,9 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415e40(CBodyPart *thi
   (this_ptr->base).vtable._ub = &g_CBodyPartVTable;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(this_ptr,0,0);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041a6c0(&this_ptr->physics_box,0);
-  pSVar2 = core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130
+  pSVar2 = core_bodypart_cpp_SBodyPartFire_arrdtor2_FUN_00418130
                      ((SBodyPartFire *)&pCVar1[-3].scrape_points[4].previous_position,0);
-  pSVar3 = core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110
+  pSVar3 = core_bodypart_cpp_SBodyPartModel_arrdtor3_FUN_00418110
                      ((SBodyPartModel *)(pSVar2[-2].flame.base.create_event + 0xc),0);
   ptr = (CBodyPart *)
         core_actor_cpp_CDemonActor_dtor_FUN_00409ea0

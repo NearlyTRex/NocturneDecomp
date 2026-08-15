@@ -110,7 +110,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemo
 void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_copy_FUN_0049a3b0(STriangleRef *this_ptr,STriangleRef *other);
 STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleRef *this_ptr,uint flags);
-CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor_FUN_0049a410(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_dtrace_cpp_CVector3f_arrdtor20000_FUN_0049a410(CVector3f *this_ptr,uint flags);
 void __cdecl core_dtri_cpp_staticInit_FUN_0049a430(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_0049a530(CDemonTriangle *this_ptr,_FILE *file_handle);
@@ -138,7 +138,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(int fla
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0049cbb0(void);
 CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr);
-CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor_FUN_0049cd20(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_arrdtor8_FUN_0049cd20(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_0049cd40(void);
 CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_0049cd80(void);
 CDemonActorType * __cdecl core_dynamite_cpp_CDynamite_getActorType_FUN_0049cdb0(CDynamite *this_ptr);

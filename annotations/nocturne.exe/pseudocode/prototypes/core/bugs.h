@@ -167,6 +167,6 @@ SBug * __cdecl SBug::ctor(SBug *this_ptr);
 // Address: 00423e70
 SBug * __cdecl SBug::dtor(SBug *this_ptr,uint flags);
 
-// Original: core_bugs.cpp_SBug_arrdtor_FUN_00423e80
+// Original: core_bugs.cpp_SBug_arrdtor400_FUN_00423e80
 // Address: 00423e80
-SBug * __cdecl SBug::arrdtor(SBug *this_ptr,uint flags);
+SBug * __cdecl SBug::arrdtor400(SBug *this_ptr,uint flags);

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0
+;   core_chain.cpp_SChainVertex_arrdtor20_FUN_0042cdc0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 0042cd3c
     ADD EBX,0x284                       ; 0042cd3e
     PUSH EBX                            ; 0042cd44
-    CALL core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0 ; 0042cd45
-        ;   XREF to: 0042cdc0 (UNCONDITIONAL_CALL)  ; SChainVertex * core_chain.cpp_SChainVertex_arrdtor_FUN_0042cdc0(SChainVertex * this_ptr, uint flags)
+    CALL core_chain.cpp_SChainVertex_arrdtor20_FUN_0042cdc0 ; 0042cd45
+        ;   XREF to: 0042cdc0 (UNCONDITIONAL_CALL)  ; SChainVertex * core_chain.cpp_SChainVertex_arrdtor20_FUN_0042cdc0(SChainVertex * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0042cd4a
     PUSH 0x1                            ; 0042cd4d
     LEA EBX,[EAX + 0xfffffd7c]          ; 0042cd4f

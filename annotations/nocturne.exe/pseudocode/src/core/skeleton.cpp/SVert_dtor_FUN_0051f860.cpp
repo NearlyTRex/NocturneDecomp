@@ -11,6 +11,6 @@ SVert * __cdecl core_skeleton_cpp_SVert_dtor_FUN_0051f860(SVert *this_ptr,uint f
 {
   CVector3f *pCVar1;
   
-  pCVar1 = core_cloth_cpp_CVector3f_arrdtor_FUN_004389e0(&this_ptr->position,0);
+  pCVar1 = core_cloth_cpp_CVector3f_arrdtor3_FUN_004389e0(&this_ptr->position,0);
   return (SVert *)&pCVar1[-2].z;
 }

@@ -1,0 +1,156 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d7db0",
+    "address_range": [
+      [
+        "004d7db0",
+        "004d7dc4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CVector3f_arrdtor32_FUN_004d7db0",
+    "signature": "CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor32_FUN_004d7db0(CVector3f *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056494f",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrfini_FUN_0056494f"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005993b0",
+      "name": "g_CVectorTypeInfo_005993b0",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

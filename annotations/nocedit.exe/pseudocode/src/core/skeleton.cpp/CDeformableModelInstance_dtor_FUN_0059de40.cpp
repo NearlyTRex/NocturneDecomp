@@ -21,7 +21,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
   (this_ptr->motion_controller).vtable = &g_CDeformableModelInstanceVTable;
   core_skeleton_cpp_CDeformableModelInstance_free_FUN_0059df40(this_ptr);
   pCVar1 = (CDeformableModelInstance_ptr_88)
-           core_curtain_cpp_CVector3f_arrdtor_FUN_0044baf0(this_ptr->transformed_vertices,0);
+           core_curtain_cpp_CVector3f_arrdtor100_FUN_0044baf0(this_ptr->transformed_vertices,0);
   ptr = (CDeformableModelInstance *)
         core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(&ADJ(pCVar1)->motion_controller,1);
   if ((flags & 2) == 0) {

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_wateract.cpp_SWaterVertex_arrdtor_FUN_00552360
+;   core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_00552360
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 005522dc
     ADD EBX,0x294                       ; 005522de
     PUSH EBX                            ; 005522e4
-    CALL core_wateract.cpp_SWaterVertex_arrdtor_FUN_00552360 ; 005522e5
-        ;   XREF to: 00552360 (UNCONDITIONAL_CALL)  ; SWaterVertex * core_wateract.cpp_SWaterVertex_arrdtor_FUN_00552360(SWaterVertex * this_ptr, uint flags)
+    CALL core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_00552360 ; 005522e5
+        ;   XREF to: 00552360 (UNCONDITIONAL_CALL)  ; SWaterVertex * core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_00552360(SWaterVertex * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005522ea
     PUSH 0x1                            ; 005522ed
     LEA EBX,[EAX + 0xfffffd6c]          ; 005522ef

@@ -11,7 +11,7 @@ CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr,ui
 {
   CMirror_ptr_152 pSVar1;
   
-  pSVar1 = (CMirror_ptr_152)core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(this_ptr->clip_planes,0)
-  ;
+  pSVar1 = (CMirror_ptr_152)
+           core_mirror_cpp_SClipPlane_arrdtor5_FUN_00522c10(this_ptr->clip_planes,0);
   return ADJ(pSVar1);
 }

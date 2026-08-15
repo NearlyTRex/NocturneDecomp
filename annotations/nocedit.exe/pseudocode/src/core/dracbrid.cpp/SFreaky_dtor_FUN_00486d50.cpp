@@ -12,6 +12,6 @@ SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr,
   SFreaky_ptr_32 pCVar1;
   
   pCVar1 = (SFreaky_ptr_32)
-           core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(this_ptr->control_points,0);
+           core_dracbrid_cpp_CVector3f_arrdtor4_FUN_00486e30(this_ptr->control_points,0);
   return ADJ(pCVar1);
 }

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460
+;   core_cloth.cpp_CVector3f_arrdtor3_FUN_0043e460
 ;   core_particle.cpp_CParticle_dtor_FUN_00545670
 ;
 ; *****************************************************************************
@@ -20,8 +20,8 @@ section .text
     PUSH 0x0                            ; 004c9664
     ADD EAX,0x78                        ; 004c9666
     PUSH EAX                            ; 004c9669
-    CALL core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460 ; 004c966a
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f * this_ptr, uint flags)
+    CALL core_cloth.cpp_CVector3f_arrdtor3_FUN_0043e460 ; 004c966a
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; CVector3f * core_cloth.cpp_CVector3f_arrdtor3_FUN_0043e460(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004c966f
     PUSH 0x1                            ; 004c9672
     SUB EAX,0x78                        ; 004c9674

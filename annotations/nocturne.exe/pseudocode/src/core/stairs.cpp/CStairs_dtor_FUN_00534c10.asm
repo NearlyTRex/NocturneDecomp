@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_stairs.cpp_SFly_arrdtor_FUN_00534c80
+;   core_stairs.cpp_SFly_arrdtor40_FUN_00534c80
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -30,8 +30,8 @@ section .text
     PUSH 0x0                            ; 00534c1c
     ADD EBX,0x168                       ; 00534c1e
     PUSH EBX                            ; 00534c24
-    CALL core_stairs.cpp_SFly_arrdtor_FUN_00534c80 ; 00534c25
-        ;   XREF to: 00534c80 (UNCONDITIONAL_CALL)  ; SFly * core_stairs.cpp_SFly_arrdtor_FUN_00534c80(SFly * this_ptr, uint flags)
+    CALL core_stairs.cpp_SFly_arrdtor40_FUN_00534c80 ; 00534c25
+        ;   XREF to: 00534c80 (UNCONDITIONAL_CALL)  ; SFly * core_stairs.cpp_SFly_arrdtor40_FUN_00534c80(SFly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00534c2a
     PUSH 0x1                            ; 00534c2d
     LEA EBX,[EAX + 0xfffffe98]          ; 00534c2f

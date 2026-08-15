@@ -1,0 +1,205 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "0043e440",
+      "from_addr": "0043e44c",
+      "name": "core_cloth.cpp_SClothVertex_dtor_FUN_0043e440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c95a0",
+      "from_addr": "004c95aa",
+      "name": "core_fire.cpp_CCrater_dtor_FUN_004c95a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9660",
+      "from_addr": "004c966a",
+      "name": "core_fire.cpp_CGlassParticle_dtor_FUN_004c9660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1f90",
+      "from_addr": "005a1f9a",
+      "name": "core_skeleton.cpp_SVert_dtor_FUN_005a1f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051efc0",
+      "from_addr": "0051efca",
+      "name": "shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051bd30",
+      "from_addr": "0051c05c",
+      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043e460",
+    "address_range": [
+      [
+        "0043e460",
+        "0043e474"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CVector3f_arrdtor3_FUN_0043e460",
+    "signature": "CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor3_FUN_0043e460(CVector3f *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrfini_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006598c0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004c95aa",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CCrater_dtor_FUN_004c95a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c966a",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CGlassParticle_dtor_FUN_004c9660",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051efca",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodFace_dtor_FUN_0051efc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043e44c",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_SClothVertex_dtor_FUN_0043e440",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1f9a",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_SVert_dtor_FUN_005a1f90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051c05c",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

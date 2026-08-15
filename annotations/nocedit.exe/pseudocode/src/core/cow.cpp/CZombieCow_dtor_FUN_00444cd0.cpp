@@ -24,14 +24,14 @@ CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_
     return this_ptr;
   }
   pCVar1 = (CZombieCow_ptr_13260)
-           core_armour_cpp_CFlame_arrdtor_FUN_00412720((this_ptr->base).base.flames,0);
+           core_armour_cpp_CFlame_arrdtor50_FUN_00412720((this_ptr->base).base.flames,0);
   pSVar1 = (CZombieCow_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fires,0);
+           core_armour_cpp_SFire_arrdtor50_FUN_00412700(ADJ(pCVar1)->base.base.fires,0);
   pCVar2 = (CZombieCow_ptr_11536)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);
   pCVar3 = (CZombieCow_ptr_11356)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pCVar2)->base.base.collision_test_points,0);
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar3)->base.base.cloth_list,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

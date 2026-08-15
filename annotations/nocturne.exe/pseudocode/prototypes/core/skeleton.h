@@ -451,14 +451,14 @@ SVert * __cdecl SVert::ctor(SVert *this_ptr);
 // Address: 0051f860
 SVert * __cdecl SVert::dtor(SVert *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_CSkeleton_arrdtor_FUN_0051f880
+// Original: core_skeleton.cpp_CSkeleton_arrdtor40_FUN_0051f880
 // Address: 0051f880
-CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *this_ptr,uint flags);
+CSkeleton * __cdecl CSkeleton::arrdtor40(CSkeleton *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_CDeformableModel_arrdtor_FUN_0051f8a0
+// Original: core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_0051f8a0
 // Address: 0051f8a0
-CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *this_ptr,uint flags);
+CDeformableModel * __cdecl CDeformableModel::arrdtor64(CDeformableModel *this_ptr,uint flags);
 
-// Original: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_0051f900
+// Original: core_skeleton.cpp_CBoundingBox3D_arrdtor100_FUN_0051f900
 // Address: 0051f900
-CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor100(CBoundingBox3D *this_ptr,uint flags);

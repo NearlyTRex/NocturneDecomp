@@ -79,6 +79,6 @@ int __cdecl getSinglePressedKey(void);
 // Address: 004d2d00
 void __cdecl configureCustomKeyBindings(void);
 
-// Original: core_menu.cpp_CAlphaBitmap_arrdtor_FUN_004d4370
+// Original: core_menu.cpp_CAlphaBitmap_arrdtor8_FUN_004d4370
 // Address: 004d4370
-CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor8(CAlphaBitmap *this_ptr,uint flags);

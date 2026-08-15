@@ -92,7 +92,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FU
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance *this_ptr,char *filename);
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_004545c0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_004545d0(CDemonTriangle *this_ptr,uint flags);
-CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_004545e0(CKeyFramedModel *this_ptr,uint flags);
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_004545e0(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_00454600(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_00454630(void);
 CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_00454650(CZombieDog *this_ptr);
@@ -182,8 +182,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0045b310(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_0045b330(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0045b350(CDraculaBride *this_ptr,uint flags);
-CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_0045b410(CVector3f *this_ptr,uint flags);
-SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_0045b430(SFreaky *this_ptr,uint flags);
+CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor4_FUN_0045b410(CVector3f *this_ptr,uint flags);
+SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor6_FUN_0045b430(SFreaky *this_ptr,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0045b4c0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0045b5f0(int color_value);

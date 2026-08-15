@@ -25,7 +25,7 @@
 ;   WatcomTypeInfo g_CDeformableModelInstanceTypeInfo_005a1f00
 ;
 ; Called Functions:
-;   core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0
+;   core_curtain.cpp_CVector3f_arrdtor100_FUN_0043f9a0
 ;   core_motion.cpp_CMotionController_dtor_FUN_004e1150
 ;   core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0
 ;   crt_memory.c___vec_delete_FUN_0056445f
@@ -50,8 +50,8 @@ section .text
     PUSH 0x0                            ; 0051b6fc
     ADD EBX,0x58                        ; 0051b6fe
     PUSH EBX                            ; 0051b701
-    CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0 ; 0051b702
-        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0(CVector3f * this_ptr, uint flags)
+    CALL core_curtain.cpp_CVector3f_arrdtor100_FUN_0043f9a0 ; 0051b702
+        ;   XREF to: 0043f9a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor100_FUN_0043f9a0(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0051b707
     PUSH 0x1                            ; 0051b70a
     LEA EBX,[EAX + -0x58]               ; 0051b70c

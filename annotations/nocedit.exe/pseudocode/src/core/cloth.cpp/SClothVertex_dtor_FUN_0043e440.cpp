@@ -12,6 +12,6 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVerte
   SClothVertex_ptr_236 pCVar1;
   
   pCVar1 = (SClothVertex_ptr_236)
-           core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(this_ptr->bone_positions,0);
+           core_cloth_cpp_CVector3f_arrdtor3_FUN_0043e460(this_ptr->bone_positions,0);
   return ADJ(pCVar1);
 }

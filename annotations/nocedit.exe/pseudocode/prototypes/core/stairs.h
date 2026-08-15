@@ -83,6 +83,6 @@ void __cdecl CStairs::onActorDeleted(CStairs *this_ptr,CDemonActor *deleted_acto
 // Address: 005bac10
 CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);
 
-// Original: core_stairs.cpp_CDemonTriangle_arrdtor_FUN_005bac80
+// Original: core_stairs.cpp_CDemonTriangle_arrdtor40_FUN_005bac80
 // Address: 005bac80
-CDemonTriangle * __cdecl CDemonTriangle::arrdtor(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::arrdtor40(CDemonTriangle *this_ptr,uint flags);

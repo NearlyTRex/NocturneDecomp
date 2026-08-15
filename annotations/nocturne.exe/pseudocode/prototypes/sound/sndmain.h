@@ -639,6 +639,6 @@ CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 // Address: 00529a50
 CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
-// Original: sound_sndmain.cpp_CSfxSample_arrdtor_FUN_00529a60
+// Original: sound_sndmain.cpp_CSfxSample_arrdtor64_FUN_00529a60
 // Address: 00529a60
-CSfxSample * __cdecl CSfxSample::arrdtor(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);

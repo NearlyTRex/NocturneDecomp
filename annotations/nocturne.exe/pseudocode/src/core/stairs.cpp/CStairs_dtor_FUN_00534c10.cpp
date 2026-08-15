@@ -18,7 +18,7 @@ CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00534c10(CStairs *this_ptr,ui
     shape_memdbg_cpp_free_FUN_00564486(ptr_00);
     return this_ptr;
   }
-  pSVar1 = core_stairs_cpp_SFly_arrdtor_FUN_00534c80((SFly *)this_ptr->collision_triangles,0);
+  pSVar1 = core_stairs_cpp_SFly_arrdtor40_FUN_00534c80((SFly *)this_ptr->collision_triangles,0);
   ptr = (CStairs *)
         core_actor_cpp_CDemonActor_dtor_FUN_00409ea0((CDemonActor *)pSVar1[-7].control_points,1);
   if ((flags & 2) == 0) {

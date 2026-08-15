@@ -245,7 +245,7 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
 void __cdecl core_stairs_cpp_CStairs_showEditorHelp_FUN_005bab90(CStairs *this_ptr,int *y_pos);
 void __cdecl core_stairs_cpp_CStairs_onActorDeleted_FUN_005babf0(CStairs *this_ptr,CDemonActor *deleted_actor);
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,uint flags);
-CDemonTriangle * __cdecl core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl core_stairs_cpp_CDemonTriangle_arrdtor40_FUN_005bac80(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_stone_cpp_staticInit_FUN_005baca0(void);
 CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_005bacd0(void);
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_005bad00(CTempleStone *this_ptr);

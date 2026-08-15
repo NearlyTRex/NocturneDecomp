@@ -55,7 +55,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_c
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description);
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void);
-CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor8_FUN_004d4370(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_004d4390(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void);
 CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_004d4420(void);
@@ -103,8 +103,8 @@ CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex
 CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004d7bd0(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_004d7d70(SClipPlane *this_ptr);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_004d7d80(SClipPlane *this_ptr,uint flags);
-SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(SClipPlane *this_ptr,uint flags);
-CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_004d7db0(CVector3f *this_ptr,uint flags);
+SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor5_FUN_004d7d90(SClipPlane *this_ptr,uint flags);
+CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor32_FUN_004d7db0(CVector3f *this_ptr,uint flags);
 void __cdecl core_mission_cpp_staticInit_FUN_004d7dd0(void);
 void __cdecl core_mission_cpp_skipLine_FUN_004d7de0(_FILE *file_handle);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d7e00(CDemonMission *this_ptr);
@@ -204,9 +204,9 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
 int __cdecl core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_004df170(CMoon *this_ptr);
 SBat * __cdecl core_moon_cpp_SBat_ctor_FUN_004df190(SBat *this_ptr);
 SBat * __cdecl core_moon_cpp_SBat_dtor_FUN_004df1a0(SBat *this_ptr,uint flags);
-SBat * __cdecl core_moon_cpp_SBat_arrdtor_FUN_004df1b0(SBat *this_ptr,uint flags);
-CCourse * __cdecl core_moon_cpp_CCourse_arrdtor_FUN_004df1d0(CCourse *this_ptr,uint flags);
-CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor_FUN_004df1f0(CAlphaBitmap *this_ptr,uint flags);
+SBat * __cdecl core_moon_cpp_SBat_arrdtor30_FUN_004df1b0(SBat *this_ptr,uint flags);
+CCourse * __cdecl core_moon_cpp_CCourse_arrdtor3_FUN_004df1d0(CCourse *this_ptr,uint flags);
+CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_004df1f0(CAlphaBitmap *this_ptr,uint flags);
 int __cdecl core_morph_cpp_countTrianglesFromPolygons_FUN_004df210(int poly_count,SMRGLHeaderPrimitive *poly_headers,int poly_stride);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004df240(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_004df270(CMorphModel *this_ptr,uint flags);

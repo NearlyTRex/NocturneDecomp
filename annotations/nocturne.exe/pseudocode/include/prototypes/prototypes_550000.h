@@ -72,7 +72,7 @@ void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005522a0(CWaterActor *
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005522d0(CWaterActor *this_ptr,uint flags);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_00552340(SWaterVertex *this_ptr);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_dtor_FUN_00552350(SWaterVertex *this_ptr,uint flags);
-SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor_FUN_00552360(SWaterVertex *this_ptr,uint flags);
+SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor1000_FUN_00552360(SWaterVertex *this_ptr,uint flags);
 void __cdecl core_waypoint_cpp_staticInit_FUN_00552380(void);
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005523b0(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_005524a0(void);
@@ -139,7 +139,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_00555750(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005559d0(CWeather *this_ptr,uint flags);
-CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005559e0(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor200_FUN_005559e0(CVector3f *this_ptr,uint flags);
 void __cdecl core_werewolf_cpp_staticInit_FUN_00555a00(void);
 CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_00555a60(void);
 CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_00555a80(CWerewolf *this_ptr);

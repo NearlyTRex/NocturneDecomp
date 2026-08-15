@@ -72,8 +72,8 @@ void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_004e0380(CMorph 
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(CMorph *this_ptr,float morph_t);
 int __cdecl core_morph_cpp_addInts_FUN_004e0890(int a,int b);
-CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor_FUN_004e08a0(CBoundingBox3D *this_ptr,uint flags);
-CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel *this_ptr,uint flags);
+CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor2_FUN_004e08a0(CBoundingBox3D *this_ptr,uint flags);
+CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor2_FUN_004e08c0(CMorphModel *this_ptr,uint flags);
 void core_motion_cpp_FUN_004e08e0(_FILE *param_1);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr,_FILE *file_handle);
@@ -240,8 +240,8 @@ int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_004ee690(CMouse *this_ptr,
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_004ee6c0(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_004ee720(CMouse *this_ptr,int *out_x,int *out_y);
 void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_004ee740(CMouse *this_ptr);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8b0(CAlphaBitmap *this_ptr,uint flags);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_004ee8d0(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_004ee8b0(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor15_FUN_004ee8d0(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_004ee8f0(void);
 CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_004ee920(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_004ee940(CNPC *this_ptr);

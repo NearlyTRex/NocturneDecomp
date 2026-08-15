@@ -38,7 +38,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_c
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(EInputCodeType *key_code_ptr,char *description);
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void);
-CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor8_FUN_00514f50(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void);
 CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1);
 double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1);
@@ -161,8 +161,8 @@ CSpotView * __cdecl shape_meshlod_cpp_CSpotView_dtor_FUN_0051f080(CSpotView *thi
 float * __cdecl shape_meshlod_cpp_copyFloat1_FUN_0051f090(float *dest_ptr,float *src_ptr);
 float * __cdecl shape_meshlod_cpp_copyFloat2_FUN_0051f0a0(float *dest_ptr,float *src_ptr);
 float * __cdecl shape_meshlod_cpp_copyFloat3_FUN_0051f0b0(float *dest_ptr,float *src_ptr);
-CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *this_ptr,uint flags);
-CVector3f * __cdecl shape_meshlod_cpp_CVector3f_arrdtor_FUN_0051f0e0(CVector3f *this_ptr,uint flags);
+CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor200_FUN_0051f0c0(CLodFace *this_ptr,uint flags);
+CVector3f * __cdecl shape_meshlod_cpp_CVector3f_arrdtor400_FUN_0051f0e0(CVector3f *this_ptr,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0051f130(void);
 CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_0051f190(void);

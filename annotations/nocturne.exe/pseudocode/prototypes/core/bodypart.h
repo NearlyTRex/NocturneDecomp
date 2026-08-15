@@ -167,10 +167,10 @@ SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 // Address: 00418100
 SBodyPartModel * __cdecl SBodyPartModel::dtor(SBodyPartModel *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
+// Original: core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_00418110
 // Address: 00418110
-SBodyPartModel * __cdecl SBodyPartModel::arrdtor(SBodyPartModel *this_ptr,uint flags);
+SBodyPartModel * __cdecl SBodyPartModel::arrdtor3(SBodyPartModel *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130
+// Original: core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_00418130
 // Address: 00418130
-SBodyPartFire * __cdecl SBodyPartFire::arrdtor(SBodyPartFire *this_ptr,uint flags);
+SBodyPartFire * __cdecl SBodyPartFire::arrdtor2(SBodyPartFire *this_ptr,uint flags);

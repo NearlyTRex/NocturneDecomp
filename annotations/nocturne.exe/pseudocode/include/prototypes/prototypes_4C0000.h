@@ -242,10 +242,10 @@ SGem * __cdecl core_manpuz_cpp_SGem_dtor_FUN_004cbef0(SGem *this_ptr,uint flags)
 SPanel * __cdecl core_manpuz_cpp_SPanel_ctor_FUN_004cbf10(SPanel *this_ptr);
 SPanel * __cdecl core_manpuz_cpp_SPanel_dtor_FUN_004cbf20(SPanel *this_ptr,uint flags);
 SPanel * __cdecl core_manpuz_cpp_copyPanel_FUN_004cbf30(SPanel *dest,SPanel *src);
-CDemonTriangle * __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor_FUN_004cc000(CDemonTriangle *this_ptr,uint flags);
-SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor_FUN_004cc020(SPanel *this_ptr,uint flags);
-SGem * __cdecl core_manpuz_cpp_SGem_arrdtor_FUN_004cc040(SGem *this_ptr,uint flags);
-SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor_FUN_004cc060(SReflector *this_ptr,uint flags);
+CDemonTriangle * __cdecl core_manpuz_cpp_CDemonTriangle_arrdtor2_FUN_004cc000(CDemonTriangle *this_ptr,uint flags);
+SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor12_FUN_004cc020(SPanel *this_ptr,uint flags);
+SGem * __cdecl core_manpuz_cpp_SGem_arrdtor12_FUN_004cc040(SGem *this_ptr,uint flags);
+SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor2_FUN_004cc060(SReflector *this_ptr,uint flags);
 void __cdecl core_marquee_cpp_staticInit_FUN_004cc080(void);
 CMarquee * __cdecl core_marquee_cpp_factoryFuncMarquee_FUN_004cc0b0(void);
 CDemonActorType * __cdecl core_marquee_cpp_CMarquee_getActorType_FUN_004cc0d0(CMarquee *this_ptr);

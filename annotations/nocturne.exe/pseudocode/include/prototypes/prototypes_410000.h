@@ -210,8 +210,8 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_004180a0(SBodyP
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_004180c0(SBodyPartFire *this_ptr,uint flags);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_004180e0(SBodyPartModel *this_ptr);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_00418100(SBodyPartModel *this_ptr,uint flags);
-SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110(SBodyPartModel *this_ptr,uint flags);
-SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(SBodyPartFire *this_ptr,uint flags);
+SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor3_FUN_00418110(SBodyPartModel *this_ptr,uint flags);
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor2_FUN_00418130(SBodyPartFire *this_ptr,uint flags);
 void __cdecl core_boneguy_cpp_staticInit_FUN_00418150(void);
 CVector3f * __cdecl core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_00418180(CVector3f *out,CDemonActor *actor);
 CVector3f * __cdecl core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_004181f0(CVector3f *out,CDemonActor *actor);
@@ -236,7 +236,7 @@ ECollisionType __cdecl core_boneguy_cpp_CBoneGuy_getCollisionType_FUN_0041a3e0(C
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a400(CBoneGuy *this_ptr,uint flags);
 SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_ctor_FUN_0041a4d0(SBoneGuyBox *this_ptr);
 SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_dtor_FUN_0041a4e0(SBoneGuyBox *this_ptr,uint flags);
-SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0(SBoneGuyBox *this_ptr,uint flags);
+SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor20_FUN_0041a4f0(SBoneGuyBox *this_ptr,uint flags);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041a510(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041a540(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041a570(SMRGLHeaderExtended *mrgl_data);
@@ -254,7 +254,7 @@ void __cdecl core_box_cpp_CBox_saveToFile_FUN_0041c9e0(CBox *this_ptr,_FILE *fil
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_0041cb40(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_0041cbc0(SScrape *this_ptr);
 SScrape * __cdecl core_box_cpp_SScrape_dtor_FUN_0041cbd0(SScrape *this_ptr,uint flags);
-SScrape * __cdecl core_box_cpp_SScrape_arrdtor_FUN_0041cbe0(SScrape *this_ptr,uint flags);
+SScrape * __cdecl core_box_cpp_SScrape_arrdtor8_FUN_0041cbe0(SScrape *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_0041cc00(CBoundingBox3D *this_ptr,CVector3f *point);
 CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundingBox3D *this_ptr);
@@ -305,7 +305,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_0041f6e0(CLightActor *this_ptr);
 int __cdecl core_boxactor_cpp_CLightActor_isLightPartVisible_FUN_0041f9f0(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_0041fa10(CLightActor *this_ptr,uint flags);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_0041fa90(CBoxActor *this_ptr,uint flags);
-CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor_FUN_0041fb00(CDemonFilter *this_ptr,uint flags);
+CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_0041fb00(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_bride_cpp_staticInit_FUN_0041fb20(void);
 CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_0041fb80(void);
 CDemonActorType * __cdecl core_bride_cpp_CBride_getActorType_FUN_0041fba0(CBride *this_ptr);

@@ -11,6 +11,6 @@ CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041a6c0(CBox *this_ptr,uint flags)
 {
   SScrape *pSVar1;
   
-  pSVar1 = core_box_cpp_SScrape_arrdtor_FUN_0041cbe0(this_ptr->scrape_points,0);
+  pSVar1 = core_box_cpp_SScrape_arrdtor8_FUN_0041cbe0(this_ptr->scrape_points,0);
   return (CBox *)&pSVar1[-4].previous_position.y;
 }

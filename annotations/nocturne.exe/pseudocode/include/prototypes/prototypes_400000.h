@@ -343,7 +343,7 @@ CVector3f * __cdecl core_actor_cpp_CVector3f_copy_FUN_0040e2a0(CVector3f *this_p
 void core_actor_cpp_FUN_0040e2ce(void);
 void core_actor_cpp_FUN_0040e2e1(undefined4 *param_1);
 void core_actor_cpp_FUN_0040e2f1(undefined4 *param_1);
-CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor_FUN_0040e300(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor10_FUN_0040e300(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap *this_ptr);
@@ -406,9 +406,9 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040fc30(CArmour *this_ptr,ui
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040fcf0(CEnemy *this_ptr,uint flags);
 SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_0040fdb0(SFire *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040fdc0(CFlame *this_ptr,uint flags);
-CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(CVector3f *this_ptr,uint flags);
-SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(SFire *this_ptr,uint flags);
-CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(CFlame *this_ptr,uint flags);
+CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor15_FUN_0040fe10(CVector3f *this_ptr,uint flags);
+SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_0040fe30(SFire *this_ptr,uint flags);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor50_FUN_0040fe50(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_0040fe70(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040fea0(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_0040fec0(CBackgroundActor *this_ptr);

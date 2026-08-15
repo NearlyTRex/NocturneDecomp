@@ -79,6 +79,6 @@ undefined4 * FUN_005143a0(void);
 // Address: 005143b0
 undefined4 * FUN_005143b0(void);
 
-// Original: core_setdir.cpp_CBoundingBox3D_arrdtor_FUN_005143c0
+// Original: core_setdir.cpp_CBoundingBox3D_arrdtor2000_FUN_005143c0
 // Address: 005143c0
-CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor2000(CBoundingBox3D *this_ptr,uint flags);

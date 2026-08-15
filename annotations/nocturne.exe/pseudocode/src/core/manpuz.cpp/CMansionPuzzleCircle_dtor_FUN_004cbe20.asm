@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
-;   core_manpuz.cpp_SGem_arrdtor_FUN_004cc040
-;   core_manpuz.cpp_SPanel_arrdtor_FUN_004cc020
-;   core_manpuz.cpp_SReflector_arrdtor_FUN_004cc060
+;   core_manpuz.cpp_SGem_arrdtor12_FUN_004cc040
+;   core_manpuz.cpp_SPanel_arrdtor12_FUN_004cc020
+;   core_manpuz.cpp_SReflector_arrdtor2_FUN_004cc060
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c_operator_delete_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
@@ -32,20 +32,20 @@ section .text
     PUSH 0x0                            ; 004cbe2c
     ADD EBX,0x1338                      ; 004cbe2e
     PUSH EBX                            ; 004cbe34
-    CALL core_manpuz.cpp_SReflector_arrdtor_FUN_004cc060 ; 004cbe35
-        ;   XREF to: 004cc060 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_SReflector_arrdtor_FUN_004cc060(SReflector * this_ptr, uint flags)
+    CALL core_manpuz.cpp_SReflector_arrdtor2_FUN_004cc060 ; 004cbe35
+        ;   XREF to: 004cc060 (UNCONDITIONAL_CALL)  ; SReflector * core_manpuz.cpp_SReflector_arrdtor2_FUN_004cc060(SReflector * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbe3a
     PUSH 0x0                            ; 004cbe3d
     SUB EAX,0x8a0                       ; 004cbe3f
     PUSH EAX                            ; 004cbe44
-    CALL core_manpuz.cpp_SGem_arrdtor_FUN_004cc040 ; 004cbe45
-        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_SGem_arrdtor_FUN_004cc040(SGem * this_ptr, uint flags)
+    CALL core_manpuz.cpp_SGem_arrdtor12_FUN_004cc040 ; 004cbe45
+        ;   XREF to: 004cc040 (UNCONDITIONAL_CALL)  ; SGem * core_manpuz.cpp_SGem_arrdtor12_FUN_004cc040(SGem * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbe4a
     PUSH 0x0                            ; 004cbe4d
     SUB EAX,0x4b0                       ; 004cbe4f
     PUSH EAX                            ; 004cbe54
-    CALL core_manpuz.cpp_SPanel_arrdtor_FUN_004cc020 ; 004cbe55
-        ;   XREF to: 004cc020 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_SPanel_arrdtor_FUN_004cc020(SPanel * this_ptr, uint flags)
+    CALL core_manpuz.cpp_SPanel_arrdtor12_FUN_004cc020 ; 004cbe55
+        ;   XREF to: 004cc020 (UNCONDITIONAL_CALL)  ; SPanel * core_manpuz.cpp_SPanel_arrdtor12_FUN_004cc020(SPanel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cbe5a
     PUSH 0x1                            ; 004cbe5d
     LEA EBX,[EAX + 0xfffffa18]          ; 004cbe5f

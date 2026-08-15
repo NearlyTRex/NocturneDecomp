@@ -71,6 +71,6 @@ void __cdecl CFilterFX::openMovie(CFilterFX *this_ptr,char *filename);
 // Address: 0044c4a0
 void __cdecl CFilterFX::process(CFilterFX *this_ptr);
 
-// Original: core_dfilter.cpp_CDemonFilter_arrdtor_FUN_0044c540
+// Original: core_dfilter.cpp_CDemonFilter_arrdtor4_FUN_0044c540
 // Address: 0044c540
-CDemonFilter * __cdecl CDemonFilter::arrdtor(CDemonFilter *this_ptr,uint flags);
+CDemonFilter * __cdecl CDemonFilter::arrdtor4(CDemonFilter *this_ptr,uint flags);

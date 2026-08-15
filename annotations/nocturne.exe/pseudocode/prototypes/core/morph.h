@@ -147,10 +147,10 @@ void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 // Address: 004e0890
 int __cdecl addInts(int a,int b);
 
-// Original: core_morph.cpp_CBoundingBox3D_arrdtor_FUN_004e08a0
+// Original: core_morph.cpp_CBoundingBox3D_arrdtor2_FUN_004e08a0
 // Address: 004e08a0
-CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::arrdtor2(CBoundingBox3D *this_ptr,uint flags);
 
-// Original: core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
+// Original: core_morph.cpp_CMorphModel_arrdtor2_FUN_004e08c0
 // Address: 004e08c0
-CMorphModel * __cdecl CMorphModel::arrdtor(CMorphModel *this_ptr,uint flags);
+CMorphModel * __cdecl CMorphModel::arrdtor2(CMorphModel *this_ptr,uint flags);

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_free_FUN_004e0090
-;   core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
+;   core_morph.cpp_CMorphModel_arrdtor2_FUN_004e08c0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH 0x0                            ; 004e007d
     MOV ECX,dword ptr [ESP + 0x8]       ; 004e007f
     PUSH ECX                            ; 004e0083
-    CALL core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0 ; 004e0084
-        ;   XREF to: 004e08c0 (UNCONDITIONAL_CALL)  ; CMorphModel * core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0(CMorphModel * this_ptr, uint flags)
+    CALL core_morph.cpp_CMorphModel_arrdtor2_FUN_004e08c0 ; 004e0084
+        ;   XREF to: 004e08c0 (UNCONDITIONAL_CALL)  ; CMorphModel * core_morph.cpp_CMorphModel_arrdtor2_FUN_004e08c0(CMorphModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004e0089
     RET                                 ; 004e008c
 

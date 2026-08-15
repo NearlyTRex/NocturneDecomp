@@ -39,6 +39,6 @@ void __cdecl CWeather::setOriginAndRotation(CWeather *this_ptr,CVector3f *direct
 // Address: 005559d0
 CWeather * __cdecl CWeather::dtor(CWeather *this_ptr,uint flags);
 
-// Original: core_weather.cpp_CVector3f_arrdtor_FUN_005559e0
+// Original: core_weather.cpp_CVector3f_arrdtor200_FUN_005559e0
 // Address: 005559e0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor200(CVector3f *this_ptr,uint flags);

@@ -31,14 +31,14 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *thi
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
                      (&ADJ(pCVar2)->hotdemon_model,0);
   pCVar4 = (CSuccubus_ptr_13260)
-           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar3)->base.base.flames,0);
+           core_armour_cpp_CFlame_arrdtor50_FUN_00412720(ADJ(pCVar3)->base.base.flames,0);
   pSVar1 = (CSuccubus_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar4)->base.base.fires,0);
+           core_armour_cpp_SFire_arrdtor50_FUN_00412700(ADJ(pCVar4)->base.base.fires,0);
   pCVar5 = (CSuccubus_ptr_11536)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);
   pCVar6 = (CSuccubus_ptr_11356)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pCVar5)->base.base.collision_test_points,0);
   pCVar7 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar6)->base.base.cloth_list,0);
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

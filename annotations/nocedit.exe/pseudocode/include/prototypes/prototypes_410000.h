@@ -68,7 +68,7 @@ CVector3f * __cdecl core_actor_cpp_CVector3f_copy_FUN_004104a0(CVector3f *this_p
 float * __cdecl core_actor_cpp_copyFloat1_FUN_004104d0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat2_FUN_004104e0(float *dst,float *src);
 float * __cdecl core_actor_cpp_copyFloat3_FUN_004104f0(float *dst,float *src);
-CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor_FUN_00410500(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor10_FUN_00410500(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap *this_ptr);
@@ -143,9 +143,9 @@ CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_00412500(CArmour *this_ptr,ui
 CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_004125c0(CEnemy *this_ptr,uint flags);
 SFire * __cdecl core_armour_cpp_SFire_dtor_FUN_00412680(SFire *this_ptr,uint flags);
 CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint flags);
-CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(CVector3f *this_ptr,uint flags);
-SFire * __cdecl core_armour_cpp_SFire_arrdtor_FUN_00412700(SFire *objs,uint flags);
-CFlame * __cdecl core_armour_cpp_CFlame_arrdtor_FUN_00412720(CFlame *this_ptr,uint flags);
+CVector3f * __cdecl core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0(CVector3f *this_ptr,uint flags);
+SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_00412700(SFire *objs,uint flags);
+CFlame * __cdecl core_armour_cpp_CFlame_arrdtor50_FUN_00412720(CFlame *this_ptr,uint flags);
 void __cdecl core_backgnd_cpp_staticInit_FUN_00412740(void);
 CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_00412770(void);
 CDemonActorType * __cdecl core_backgnd_cpp_CBackgroundActor_getActorType_FUN_004127a0(CBackgroundActor *this_ptr);
@@ -343,8 +343,8 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_0041b620(SBodyP
 SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_dtor_FUN_0041b640(SBodyPartFire *this_ptr,uint flags);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_0041b660(SBodyPartModel *this_ptr);
 SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_dtor_FUN_0041b680(SBodyPartModel *this_ptr,uint flags);
-SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_0041b690(SBodyPartModel *objs,uint flags);
-SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_0041b6b0(SBodyPartFire *objs,uint flags);
+SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor3_FUN_0041b690(SBodyPartModel *objs,uint flags);
+SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor2_FUN_0041b6b0(SBodyPartFire *objs,uint flags);
 void __cdecl core_boneguy_cpp_staticInit_FUN_0041b6d0(void);
 CVector3f * __cdecl core_boneguy_cpp_getLocalBoundingBoxCenter_FUN_0041b700(CVector3f *out,CDemonActor *actor);
 CVector3f * __cdecl core_boneguy_cpp_getWorldBoundingBoxCenter_FUN_0041b770(CVector3f *out,CDemonActor *actor);
@@ -372,7 +372,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_addFilesToExtract_FUN_0041da10(CBoneGuy *
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041da40(CBoneGuy *this_ptr,uint flags);
 SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_ctor_FUN_0041db10(SBoneGuyBox *this_ptr);
 SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_dtor_FUN_0041db20(SBoneGuyBox *this_ptr,uint flags);
-SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041db30(SBoneGuyBox *objs,uint flags);
+SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor20_FUN_0041db30(SBoneGuyBox *objs,uint flags);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041db50(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041db80(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041dbb0(SMRGLHeaderExtended *mrgl_data);

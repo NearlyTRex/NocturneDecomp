@@ -20,7 +20,7 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_0054f7f0(CVehicle *this_pt
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_0043b5f0(&this_ptr->course,0);
-  pCVar2 = core_vehicle_cpp_CTire_arrdtor_FUN_0054f8a0((CTire *)(pCVar1 + -0x93),0);
+  pCVar2 = core_vehicle_cpp_CTire_arrdtor4_FUN_0054f8a0((CTire *)(pCVar1 + -0x93),0);
   ptr = (CVehicle *)
         core_actor_cpp_CDemonActor_dtor_FUN_00409ea0
                   ((CDemonActor *)(pCVar2[-6].model.model_name + 0x78),1);

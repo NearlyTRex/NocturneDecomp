@@ -26,14 +26,14 @@ CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004f6b60(CHostage *this_pt
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&(this_ptr->base).path_map,0);
   pCVar2 = (CHostage_ptr_13260)
-           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
+           core_armour_cpp_CFlame_arrdtor50_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
   pSVar1 = (CHostage_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
+           core_armour_cpp_SFire_arrdtor50_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
   pCVar3 = (CHostage_ptr_11536)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);
   pCVar4 = (CHostage_ptr_11356)
-           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+           core_armour_cpp_CVector3f_arrdtor15_FUN_004126e0
                      (ADJ(pCVar3)->base.base.collision_test_points,0);
   pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar4)->base.base.cloth_list,0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40

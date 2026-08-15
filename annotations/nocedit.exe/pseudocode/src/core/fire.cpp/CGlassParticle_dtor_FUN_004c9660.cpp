@@ -13,7 +13,7 @@ CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_004c9660(CGlassPa
   CGlassParticle *pCVar2;
   
   pCVar1 = (CGlassParticle_ptr_120)
-           core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460((this_ptr->triangle_delta).vertices,0);
+           core_cloth_cpp_CVector3f_arrdtor3_FUN_0043e460((this_ptr->triangle_delta).vertices,0);
   pCVar2 = (CGlassParticle *)core_particle_cpp_CParticle_dtor_FUN_00545670(&ADJ(pCVar1)->base,1);
   return pCVar2;
 }

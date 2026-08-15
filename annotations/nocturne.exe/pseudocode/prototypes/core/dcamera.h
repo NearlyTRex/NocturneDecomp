@@ -343,6 +343,6 @@ void __cdecl CDemonCamera(CDemonCamera *this_ptr);
 // Address: 00448380
 void __cdecl CDemonCamera(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_CVector3f_arrdtor_FUN_004483f0
+// Original: core_dcamera.cpp_CVector3f_arrdtor77120_FUN_004483f0
 // Address: 004483f0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor77120(CVector3f *this_ptr,uint flags);

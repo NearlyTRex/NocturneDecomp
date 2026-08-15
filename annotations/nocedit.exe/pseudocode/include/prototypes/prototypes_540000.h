@@ -101,8 +101,8 @@ int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_00544510(CMouse *this_ptr,
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_00544540(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_005445a0(CMouse *this_ptr,int *out_x,int *out_y);
 void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_005445c0(CMouse *this_ptr);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_00544730(CAlphaBitmap *this_ptr,uint flags);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_00544750(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_00544730(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor15_FUN_00544750(CAlphaBitmap *this_ptr,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_00544770(void);
 CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_005447a0(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_005447d0(CNPC *this_ptr);
@@ -167,7 +167,7 @@ void __cdecl core_path_cpp_renderAllPathMaps_FUN_005485f0(int depth,int red,int 
 void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00548680(CVector3f *position,int depth,int red,int green,int fog);
 void __cdecl core_path_cpp_CPathMap_setupPathSearch_FUN_00548750(CPathMap *this_ptr);
 uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,int start_height);
-CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor_FUN_00548c30(CPathMap *this_ptr,uint flags);
+CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor12_FUN_00548c30(CPathMap *this_ptr,uint flags);
 void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx_file);
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename);
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename);

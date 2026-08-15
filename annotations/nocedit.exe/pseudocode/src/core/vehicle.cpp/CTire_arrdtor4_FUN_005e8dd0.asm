@@ -1,0 +1,32 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CTire * __cdecl core_vehicle_cpp_CTire_arrdtor4_FUN_005e8dd0(CTire *this_ptr,uint flags)
+;
+; Parameters:
+; CTire *          Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
+;
+; XREF[1]:
+;   core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20 at 005e8d45
+;
+; Referenced Globals:
+;   WatcomTypeInfo g_CTireTypeInfo
+;
+; Called Functions:
+;   crt_memory.c___arrfini_FUN_005feee9
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x665150                       ; 005e8dd0 | g_CTireTypeInfo
+        ;   Label: core_vehicle.cpp_CTire_arrdtor4_FUN_005e8dd0
+    PUSH 0x4                            ; 005e8dd5
+    MOV EDX,dword ptr [ESP + 0xc]       ; 005e8dd7
+    PUSH EDX                            ; 005e8ddb
+    CALL crt_memory.c___arrfini_FUN_005feee9 ; 005e8ddc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005feee9(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
+    ADD ESP,0xc                         ; 005e8de1
+    RET                                 ; 005e8de4
+

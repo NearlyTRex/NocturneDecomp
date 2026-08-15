@@ -311,22 +311,22 @@ C3DSLight * __cdecl C3DSLight::dtor(C3DSLight *this_ptr,uint flags);
 // Address: 0050ea90
 CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *b);
 
-// Original: core_set.cpp_CVector3f_arrdtor_FUN_0050eae0
+// Original: core_set.cpp_CVector3f_arrdtor4000_FUN_0050eae0
 // Address: 0050eae0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor4000(CVector3f *this_ptr,uint flags);
 
-// Original: core_set.cpp_C3DSCamera_arrdtor_FUN_0050eb00
+// Original: core_set.cpp_C3DSCamera_arrdtor250_FUN_0050eb00
 // Address: 0050eb00
-C3DSCamera * __cdecl C3DSCamera::arrdtor(C3DSCamera *this_ptr,uint flags);
+C3DSCamera * __cdecl C3DSCamera::arrdtor250(C3DSCamera *this_ptr,uint flags);
 
-// Original: core_set.cpp_C3DSLight_arrdtor_FUN_0050eb20
+// Original: core_set.cpp_C3DSLight_arrdtor200_FUN_0050eb20
 // Address: 0050eb20
-C3DSLight * __cdecl C3DSLight::arrdtor(C3DSLight *this_ptr,uint flags);
+C3DSLight * __cdecl C3DSLight::arrdtor200(C3DSLight *this_ptr,uint flags);
 
-// Original: core_set.cpp_SRoom_arrdtor_FUN_0050eb40
+// Original: core_set.cpp_SRoom_arrdtor20_FUN_0050eb40
 // Address: 0050eb40
-SRoom * __cdecl SRoom::arrdtor(SRoom *this_ptr,uint flags);
+SRoom * __cdecl SRoom::arrdtor20(SRoom *this_ptr,uint flags);
 
-// Original: core_set.cpp_SVDBox_arrdtor_FUN_0050eb60
+// Original: core_set.cpp_SVDBox_arrdtor250_FUN_0050eb60
 // Address: 0050eb60
-SVDBox * __cdecl SVDBox::arrdtor(SVDBox *this_ptr,uint flags);
+SVDBox * __cdecl SVDBox::arrdtor250(SVDBox *this_ptr,uint flags);

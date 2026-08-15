@@ -131,7 +131,7 @@ int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00534a70(CStairs *t
 EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_00534ac0(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00534ad0(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00534c10(CStairs *this_ptr,uint flags);
-SFly * __cdecl core_stairs_cpp_SFly_arrdtor_FUN_00534c80(SFly *this_ptr,uint flags);
+SFly * __cdecl core_stairs_cpp_SFly_arrdtor40_FUN_00534c80(SFly *this_ptr,uint flags);
 void __cdecl core_stone_cpp_staticInit_FUN_00534ca0(void);
 CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_00534cd0(void);
 CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_00534cf0(CTempleStone *this_ptr);

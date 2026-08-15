@@ -25,7 +25,7 @@
 ;   CMotionController_vtable g_CDeformableModelInstanceVTable
 ;
 ; Called Functions:
-;   core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0
+;   core_curtain.cpp_CVector3f_arrdtor100_FUN_0044baf0
 ;   core_motion.cpp_CMotionController_dtor_FUN_0052d5a0
 ;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 ;   crt_memory.c___vec_delete_FUN_005fe632
@@ -50,8 +50,8 @@ section .text
     PUSH 0x0                            ; 0059de5c
     ADD EBX,0x58                        ; 0059de5e
     PUSH EBX                            ; 0059de61
-    CALL core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0 ; 0059de62
-        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0(CVector3f * this_ptr, uint flags)
+    CALL core_curtain.cpp_CVector3f_arrdtor100_FUN_0044baf0 ; 0059de62
+        ;   XREF to: 0044baf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_curtain.cpp_CVector3f_arrdtor100_FUN_0044baf0(CVector3f * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0059de67
     PUSH 0x1                            ; 0059de6a
     LEA EBX,[EAX + -0x58]               ; 0059de6c

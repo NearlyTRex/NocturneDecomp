@@ -263,6 +263,6 @@ void __cdecl CDemonTriangle::copy(CDemonTriangle *this_ptr,CDemonTriangle *other
 // Address: 0047ef60
 void __cdecl SRA4HQPoint::copy(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
 
-// Original: core_dmodel.cpp_CKeyFramedModel_arrdtor_FUN_0047efc0
+// Original: core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_0047efc0
 // Address: 0047efc0
-CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor(CKeyFramedModel *this_ptr,uint flags);
+CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor256(CKeyFramedModel *this_ptr,uint flags);

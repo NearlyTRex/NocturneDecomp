@@ -111,6 +111,6 @@ SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
 // Address: 0041db20
 SBoneGuyBox * __cdecl SBoneGuyBox::dtor(SBoneGuyBox *this_ptr,uint flags);
 
-// Original: core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041db30
+// Original: core_boneguy.cpp_SBoneGuyBox_arrdtor20_FUN_0041db30
 // Address: 0041db30
-SBoneGuyBox * __cdecl SBoneGuyBox::arrdtor(SBoneGuyBox *objs,uint flags);
+SBoneGuyBox * __cdecl SBoneGuyBox::arrdtor20(SBoneGuyBox *objs,uint flags);

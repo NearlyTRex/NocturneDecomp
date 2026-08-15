@@ -491,10 +491,10 @@ float * __cdecl copyFloat2(float *dest_ptr,float *src_ptr);
 // Address: 0051f0b0
 float * __cdecl copyFloat3(float *dest_ptr,float *src_ptr);
 
-// Original: shape_meshlod.cpp_CLodFace_arrdtor_FUN_0051f0c0
+// Original: shape_meshlod.cpp_CLodFace_arrdtor200_FUN_0051f0c0
 // Address: 0051f0c0
-CLodFace * __cdecl CLodFace::arrdtor(CLodFace *this_ptr,uint flags);
+CLodFace * __cdecl CLodFace::arrdtor200(CLodFace *this_ptr,uint flags);
 
-// Original: shape_meshlod.cpp_CVector3f_arrdtor_FUN_0051f0e0
+// Original: shape_meshlod.cpp_CVector3f_arrdtor400_FUN_0051f0e0
 // Address: 0051f0e0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor400(CVector3f *this_ptr,uint flags);

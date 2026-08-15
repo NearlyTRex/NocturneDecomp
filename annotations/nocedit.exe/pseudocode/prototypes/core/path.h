@@ -99,6 +99,6 @@ void __cdecl CPathMap::setupPathSearch(CPathMap *this_ptr);
 // Address: 005487a0
 uint __cdecl CPathMap::searchGrid(CPathMap *this_ptr,int start_height);
 
-// Original: core_path.cpp_CPathMap_arrdtor_FUN_00548c30
+// Original: core_path.cpp_CPathMap_arrdtor12_FUN_00548c30
 // Address: 00548c30
-CPathMap * __cdecl CPathMap::arrdtor(CPathMap *this_ptr,uint flags);
+CPathMap * __cdecl CPathMap::arrdtor12(CPathMap *this_ptr,uint flags);

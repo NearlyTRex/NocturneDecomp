@@ -145,8 +145,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_addFilesToExtract_FUN_00486d00(CDra
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_00486d30(SFreaky *this_ptr);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_dtor_FUN_00486d50(SFreaky *this_ptr,uint flags);
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDraculaBride *this_ptr,uint flags);
-CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *this_ptr,uint flags);
-SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags);
+CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor4_FUN_00486e30(CVector3f *this_ptr,uint flags);
+SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor6_FUN_00486e50(SFreaky *objs,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486e70(CDrawSurface *this_ptr);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );

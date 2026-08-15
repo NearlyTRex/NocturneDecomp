@@ -112,7 +112,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00447e80(CDemonCa
 CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_FUN_00447f20(CDemonCamera *this_ptr,CVector3f *output_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00448310(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00448380(CDemonCamera *this_ptr);
-CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor_FUN_004483f0(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor77120_FUN_004483f0(CVector3f *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_staticInit_FUN_00448410(void);
 void __cdecl core_dcube_cpp_copyVector3_FUN_004484a0(CVector3f *dest,CVector3f *src);
 void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d);
@@ -145,7 +145,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(CDemonCube *t
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_0044b290(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_0044b430(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_0044b500(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
-CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor_FUN_0044b640(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor16_FUN_0044b640(CVector3f *this_ptr,uint flags);
 void __cdecl core_dcube_cpp_FUN_0044b660(char *filename);
 void core_dcube_cpp_FUN_0044b720(void);
 void __cdecl core_dest_cpp_staticInit_FUN_0044b740(void);
@@ -176,7 +176,7 @@ CFilterFX * __cdecl core_dfilter_cpp_CFilterFX_dtor_FUN_0044c2d0(CFilterFX *this
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_0044c2f0(CFilterFX *this_ptr);
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_ptr,char *filename);
 void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(CFilterFX *this_ptr);
-CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_0044c540(CDemonFilter *this_ptr,uint flags);
+CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_0044c540(CDemonFilter *this_ptr,uint flags);
 void __cdecl core_dfont_cpp_FUN_0044c560(void);
 void __cdecl core_dfont_cpp_FUN_0044cc00(void);
 void __cdecl core_dfont_cpp_remapFonts_FUN_0044cd80(void);

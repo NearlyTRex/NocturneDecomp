@@ -59,14 +59,14 @@ SFire * __cdecl SFire::dtor(SFire *this_ptr,uint flags);
 // Address: 0040fdc0
 CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
-// Original: core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10
+// Original: core_armour.cpp_CVector3f_arrdtor15_FUN_0040fe10
 // Address: 0040fe10
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor15(CVector3f *this_ptr,uint flags);
 
-// Original: core_armour.cpp_SFire_arrdtor_FUN_0040fe30
+// Original: core_armour.cpp_SFire_arrdtor50_FUN_0040fe30
 // Address: 0040fe30
-SFire * __cdecl SFire::arrdtor(SFire *this_ptr,uint flags);
+SFire * __cdecl SFire::arrdtor50(SFire *this_ptr,uint flags);
 
-// Original: core_armour.cpp_CFlame_arrdtor_FUN_0040fe50
+// Original: core_armour.cpp_CFlame_arrdtor50_FUN_0040fe50
 // Address: 0040fe50
-CFlame * __cdecl CFlame::arrdtor(CFlame *this_ptr,uint flags);
+CFlame * __cdecl CFlame::arrdtor50(CFlame *this_ptr,uint flags);
