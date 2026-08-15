@@ -507,6 +507,33 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_2e0.z` takes the address of a field at offset 12 inside `local_2e0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_2e0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_2e0` itself).",
+      "line": 288,
+      "match": "(CQuaternion4f *)&local_2e0.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((float)dVar17,(CQuaternion4f *)&local_2e0.z);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_2c0.z` takes the address of a field at offset 12 inside `local_2c0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_2c0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_2c0` itself).",
+      "line": 294,
+      "match": "(CQuaternion4f *)&local_2c0.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(-(float)dVar17,(CQuaternion4f *)&local_2c0.z);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CQuaternion4f *)&local_1d0.z` takes the address of a field at offset 12 inside `local_1d0` (a 16-byte CQuaternion4f), then casts it to CQuaternion4f * (same type as the local). A 16-byte access from that offset has only 4 bytes left and overruns `local_1d0` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CQuaternion4f local (often just `&local_1d0` itself).",
+      "line": 296,
+      "match": "(CQuaternion4f *)&local_1d0.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar1,(CQuaternion4f *)&local_1d0.z,local_1f08,g_StrangerIndices[6],",
+      "type": "subfield_vector_pun"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e19999a is the IEEE 754 bit pattern of 0.15f. Rewrite in a .keep as a plain float compare against 0.15f.",
       "line": 141,
       "match": "(int)this_ptr->turn_blend_weight < 0x3e19999a",

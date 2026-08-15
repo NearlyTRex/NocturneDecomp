@@ -402,6 +402,15 @@
       "severity": "moderate",
       "text": "for (; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CVector3i *)&local_74.a` takes the address of a field at offset 44 inside `local_74` (a 48-byte SRenderVertex), then casts it to CVector3i *. A 12-byte access from that offset has only 4 bytes left and overruns `local_74` by 8 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CVector3i local (often just `&local_74` itself).",
+      "line": 69,
+      "match": "(CVector3i *)&local_74.a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3i *)&local_74.a);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

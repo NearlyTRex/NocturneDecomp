@@ -4595,6 +4595,10 @@ def identify_shadow_pointer_walk(decompiled_code):
 # would be noisy. Pointer-deref (`->`) and array-index (`[i]`) bases are
 # excluded for the same reason. Only `.y`/`.z` are flagged — a `.x` start
 # (offset 0) is the vector head and doesn't overrun.
+#
+# The nested form IS decidable once the struct maps are available, so the
+# second pass below (_SUBFIELD_STRUCT_PUN_RE) handles it exactly rather than
+# by regex guesswork. This first pass stays as the map-free fallback.
 _SUBFIELD_VECTOR_PUN_RE = re.compile(
     r'\(\s*(CVector3[fi])\s*\*\s*\)\s*'        # cast to (CVector3f/i *)
     r'&\s*'                                     # address-of
@@ -4603,18 +4607,100 @@ _SUBFIELD_VECTOR_PUN_RE = re.compile(
 )
 
 
+# §26 nested form — sub-field address of a *struct* local, cast to a struct
+# pointer: `(CBoundingBox3D *)&local_box.max.y`. Whether this overruns is not
+# guesswork once the layout/size maps are in hand; it is arithmetic:
+#
+#     overrun  <=>  sizeof(CastType) > sizeof(typeof(LOCAL)) - offset(path)
+#
+# The dominant real-world case is a *self-typed* pun, where CastType is the
+# same type as LOCAL and the path offset is non-zero — a full-object access
+# starting mid-object, which overruns by exactly the offset. Ghidra emits it
+# when its stack-local partition disagrees with Watcom's real frame layout, so
+# the sub-field address happens to name the right byte offset. Faithful under
+# Watcom's compact frame; a guaranteed `stack-buffer-overflow` under ASan.
+#
+# Canonical: CDemonActor::processMeleeHit passed `&local_f8.max.y` (offset 16
+# into a 24-byte CBoundingBox3D) to a getBoundingBox vtable call, so the
+# callee's 24-byte write ran 8 bytes past the local.
+_SUBFIELD_STRUCT_PUN_RE = re.compile(
+    r'\(\s*(\w+)\s*\*\s*\)\s*'                  # cast to (T *)
+    r'&\s*'                                     # address-of
+    r'([A-Za-z_]\w*)'                           # bare local identifier
+    r'((?:\s*\.\s*[A-Za-z_]\w*)+)'              # one or more .field steps
+)
+
+# The pun sits directly on one side of an equality test — address identity
+# only, never a dereference.
+_CMP_BEFORE_RE = re.compile(r'(==|!=)\s*$')
+_CMP_AFTER_RE = re.compile(r'\s*(==|!=)')
 
 
-def identify_subfield_vector_pun(decompiled_code):
-    """Detect §26 sub-field-address vector field-puns.
 
-    Flags `(CVector3f *)&LOCAL.y` / `&LOCAL.z` — taking the address of a
-    non-first component of a vector local and casting to a vector pointer,
-    which makes a 3-component access overrun the local (ASan
-    stack-buffer-overflow).
+
+def _sfp_struct_size(type_name, struct_layout_map, struct_size_map):
+    """Byte size of `type_name`, preferring the exact Ghidra struct size.
+
+    Falls back to `last_field.offset + last_field.len` from the layout (exact
+    for this project's `#pragma pack(push, 1)` structs). Returns None when the
+    type is unknown, so callers stay conservative.
+    """
+    if struct_size_map:
+        size = struct_size_map.get(type_name)
+        if size:
+            return size
+    fields = (struct_layout_map or {}).get(type_name)
+    if not fields:
+        return None
+    last = fields[-1]
+    if last.get('offset') is None or last.get('len') is None:
+        return None
+    return last['offset'] + last['len']
+
+
+def _sfp_path_offset(root_type, path, struct_layout_map):
+    """Walk a `.f1.f2...` field path from `root_type`, returning (offset, type).
+
+    Returns (None, None) if any step can't be resolved, so an unknown field
+    never produces a bogus offset.
+    """
+    offset = 0
+    cur = root_type
+    for fname in path:
+        fields = (struct_layout_map or {}).get(cur)
+        if not fields:
+            return None, None
+        match = None
+        for fld in fields:
+            if fld['name'] == fname:
+                match = fld
+                break
+        if match is None or match.get('offset') is None:
+            return None, None
+        offset += match['offset']
+        cur = match.get('type')
+    return offset, cur
+
+
+def identify_subfield_vector_pun(decompiled_code, struct_layout_map=None,
+                                 struct_size_map=None):
+    """Detect §26 sub-field-address field-puns.
+
+    Two passes:
+
+    1. Map-free vector form — `(CVector3f *)&LOCAL.y` / `&LOCAL.z`, the address
+       of a non-first component of a vector local cast to a vector pointer, so
+       a 3-component access starts mid-vector and overruns the local.
+    2. Map-driven struct form — `(T *)&LOCAL.f1.f2` where the byte offset of
+       the path and the sizes of `T` and `typeof(LOCAL)` are all known, and
+       `sizeof(T) > sizeof(typeof(LOCAL)) - offset`. This is exact arithmetic
+       rather than a heuristic, so it carries no false positives; it is inert
+       without the maps.
 
     Args:
         decompiled_code: The decompiled C pseudocode string.
+        struct_layout_map: struct -> sorted field list (build_struct_layout_map).
+        struct_size_map: struct -> exact byte size (build_struct_size_map).
 
     Returns:
         List of suspect dicts.
@@ -4622,13 +4708,18 @@ def identify_subfield_vector_pun(decompiled_code):
     suspects = []
     if not decompiled_code:
         return suspects
+    seen = set()
+
+    def _skip(line):
+        s = line.lstrip()
+        return s.startswith('//') or s.startswith('/*') or s.startswith('*')
+
     for line_no, line in enumerate(decompiled_code.split('\n'), 1):
-        stripped = line.lstrip()
-        if (stripped.startswith('//') or stripped.startswith('/*') or
-                stripped.startswith('*')):
+        if _skip(line):
             continue
         for m in _SUBFIELD_VECTOR_PUN_RE.finditer(line):
             vtype, base, comp = m.group(1), m.group(2).replace(' ', ''), m.group(3)
+            seen.add((line_no, base, (comp,)))
             suspects.append({
                 'line': line_no,
                 'type': 'subfield_vector_pun',
@@ -4642,6 +4733,72 @@ def identify_subfield_vector_pun(decompiled_code):
                     '§26). Introduce a real contiguous %s local, write all '
                     '3 components (recover dropped writes from the .asm), and '
                     'pass its address.' % (vtype, base, comp, base, vtype)),
+                'severity': 'moderate',
+            })
+
+    if not struct_layout_map:
+        return suspects
+    var_types = _sfo_resolve_var_types(decompiled_code)
+    if not var_types:
+        return suspects
+
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        if _skip(line):
+            continue
+        for m in _SUBFIELD_STRUCT_PUN_RE.finditer(line):
+            cast_type = m.group(1)
+            base = m.group(2)
+            path = tuple(p.strip() for p in m.group(3).split('.') if p.strip())
+            if not path or (line_no, base, path) in seen:
+                continue
+            # The field path continues into an array subscript
+            # (`&local.arr[7].field.z`), so what matched is only its prefix.
+            # Resolving the real offset needs index-aware math; bail rather
+            # than score a truncated path and report a bogus overrun.
+            if line[m.end():m.end() + 1] == '[':
+                continue
+            # A pun that is only *compared* (`&x != (T *)&x.max`) never
+            # dereferences, so it cannot overrun. Those are dead
+            # address-identity guards — tautological_addr_guard's job, not
+            # this detector's.
+            if (_CMP_BEFORE_RE.search(line[:m.start()]) or
+                    _CMP_AFTER_RE.match(line[m.end():])):
+                continue
+            local_type = var_types.get(base)
+            if not local_type or local_type not in struct_layout_map:
+                continue
+            cast_size = _sfp_struct_size(cast_type, struct_layout_map,
+                                         struct_size_map)
+            local_size = _sfp_struct_size(local_type, struct_layout_map,
+                                          struct_size_map)
+            if not cast_size or not local_size:
+                continue
+            offset, _ = _sfp_path_offset(local_type, path, struct_layout_map)
+            if offset is None or offset <= 0:
+                continue
+            remaining = local_size - offset
+            if cast_size <= remaining:
+                continue
+            seen.add((line_no, base, path))
+            expr = '(%s *)&%s.%s' % (cast_type, base, '.'.join(path))
+            selfty = ' (same type as the local)' if cast_type == local_type else ''
+            suspects.append({
+                'line': line_no,
+                'type': 'subfield_vector_pun',
+                'match': expr,
+                'text': line.strip()[:120],
+                'description': (
+                    'Sub-field-address struct field-pun — `%s` takes the address '
+                    'of a field at offset %d inside `%s` (a %d-byte %s), then '
+                    'casts it to %s *%s. A %d-byte access from that offset has '
+                    'only %d bytes left and overruns `%s` by %d bytes (ASan '
+                    'stack-buffer-overflow; §26). Ghidra emits this when its '
+                    'stack-local partition disagrees with Watcom\'s real frame '
+                    'layout. Confirm the intended slot in the .asm, then pass a '
+                    'real contiguous %s local (often just `&%s` itself).'
+                    % (expr, offset, base, local_size, local_type, cast_type,
+                       selfty, cast_size, remaining, base,
+                       cast_size - remaining, cast_type, base)),
                 'severity': 'moderate',
             })
     return suspects
@@ -6934,7 +7091,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_subobject_byte_offset_cast(code))
     found.extend(identify_pointer_int_offset_access(code))
     found.extend(identify_shadow_pointer_walk(code))
-    found.extend(identify_subfield_vector_pun(code))
+    found.extend(identify_subfield_vector_pun(
+        code, struct_layout_map, struct_size_map))
     found.extend(identify_vector_type_pun(code))
     found.extend(identify_baked_self_address(code))
     found.extend(identify_unrolled_strlen_loops(code))

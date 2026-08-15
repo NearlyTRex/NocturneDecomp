@@ -63,7 +63,7 @@ LAB_00413b59:
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&local_40.min.y);
+                          ((CDemonActor *)this_ptr,&local_40);
   iVar5 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar5 != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

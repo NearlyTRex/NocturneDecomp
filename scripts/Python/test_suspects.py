@@ -171,7 +171,8 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_subobject_byte_offset_cast(code))
     found.extend(susp.identify_pointer_int_offset_access(code))
     found.extend(susp.identify_shadow_pointer_walk(code))
-    found.extend(susp.identify_subfield_vector_pun(code))
+    found.extend(susp.identify_subfield_vector_pun(
+        code, struct_layout_map, struct_size_map))
     found.extend(susp.identify_vector_type_pun(code))
     found.extend(susp.identify_baked_self_address(code))
     found.extend(susp.identify_unrolled_strlen_loops(code))
@@ -307,17 +308,41 @@ def main(argv=None):
 
     susp = _load_suspects_module()
 
-    # Build the struct layout map (for the type-aware struct_field_overrun
-    # detector) from data_types.json under annotations/<exe>/.
-    struct_layout_map = {}
-    struct_size_map = {}
+    # Struct layout/size maps for the type-aware detectors, resolved per file
+    # from the binary that owns it (annotations/<exe>/data_types.json).
+    #
+    # These must NOT be shared across binaries. The siblings reuse struct names
+    # with different layouts, and tridx7 doesn't define the game types at all,
+    # so taking whichever path glob happened to return first silently checked
+    # nocedit sources against tridx7's type universe — every type-aware
+    # detector (struct_field_overrun, mem_magic_size, alloc_magic_size,
+    # stale_struct_offset_64bit, unrolled_field_copy, pointer_truncation,
+    # subfield_vector_pun) then found no matching struct and reported nothing.
     import glob as _glob
-    for _dt in _glob.glob(os.path.join(
-            REPO_ROOT, 'annotations', '*', 'data_types', 'data_types.json')):
-        struct_layout_map = susp.build_struct_layout_map(_dt)
-        struct_size_map = susp.build_struct_size_map(_dt)
-        if struct_layout_map:
-            break
+    _dt_cache = {}
+
+    def _maps_for(path):
+        exe = None
+        parts = os.path.abspath(path).split(os.sep)
+        if 'annotations' in parts:
+            i = parts.index('annotations')
+            if i + 1 < len(parts):
+                exe = parts[i + 1]
+        if exe not in _dt_cache:
+            dt = os.path.join(REPO_ROOT, 'annotations', exe or '',
+                              'data_types', 'data_types.json')
+            if not os.path.isfile(dt):
+                # Not under annotations/<exe>/ (ad-hoc file) — prefer the
+                # shipping decomp's types over an arbitrary glob hit.
+                cands = sorted(_glob.glob(os.path.join(
+                    REPO_ROOT, 'annotations', '*', 'data_types',
+                    'data_types.json')))
+                pref = [c for c in cands if 'nocedit.exe' in c]
+                dt = (pref or cands or [None])[0]
+            _dt_cache[exe] = (
+                (susp.build_struct_layout_map(dt),
+                 susp.build_struct_size_map(dt)) if dt else ({}, {}))
+        return _dt_cache[exe]
 
     # Global pointer types for the pointer_truncation detector, parsed from the
     # committed include/globals/*.h headers (the export pipeline sources these
@@ -332,6 +357,7 @@ def main(argv=None):
             continue
         with open(path, 'r') as f:
             code = f.read()
+        struct_layout_map, struct_size_map = _maps_for(path)
         suspects = run_detectors(susp, code, struct_layout_map,
                                  global_interval_map, struct_size_map)
 

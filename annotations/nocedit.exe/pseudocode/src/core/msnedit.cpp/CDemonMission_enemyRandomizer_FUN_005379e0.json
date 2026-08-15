@@ -385,6 +385,60 @@
       "severity": "moderate",
       "text": "if ((int)string_data < 1) {",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPickList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CPickList * (same type as the local). A 936-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 932 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPickList local (often just `&aCStack_cfc` itself).",
+      "line": 89,
+      "match": "(CPickList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&aCStack_cfc.selection_state);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CStrList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CStrList *. A 16-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CStrList local (often just `&aCStack_cfc` itself).",
+      "line": 91,
+      "match": "(CStrList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CStrList *)&aCStack_cfc.selection_state,\"Randomize speed for specified enemies with randomizeMe flag set\");",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CStrList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CStrList *. A 16-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 12 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CStrList local (often just `&aCStack_cfc` itself).",
+      "line": 93,
+      "match": "(CStrList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CStrList *)&aCStack_cfc.selection_state,\"Randomize speed for all specified enemies\");",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPickList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CPickList * (same type as the local). A 936-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 932 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPickList local (often just `&aCStack_cfc` itself).",
+      "line": 95,
+      "match": "(CPickList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPickList *)&aCStack_cfc.selection_state,\"Randomize speeds\",",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPickList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CPickList * (same type as the local). A 936-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 932 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPickList local (often just `&aCStack_cfc` itself).",
+      "line": 132,
+      "match": "(CPickList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPickList *)&aCStack_cfc.selection_state,0);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPickList *)&aCStack_cfc.selection_state` takes the address of a field at offset 932 inside `aCStack_cfc` (a 936-byte CPickList), then casts it to CPickList * (same type as the local). A 936-byte access from that offset has only 4 bytes left and overruns `aCStack_cfc` by 932 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPickList local (often just `&aCStack_cfc` itself).",
+      "line": 137,
+      "match": "(CPickList *)&aCStack_cfc.selection_state",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPickList *)&aCStack_cfc.selection_state,0);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

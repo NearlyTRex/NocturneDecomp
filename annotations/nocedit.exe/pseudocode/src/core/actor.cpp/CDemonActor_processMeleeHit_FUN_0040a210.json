@@ -697,6 +697,177 @@
       "severity": "moderate",
       "text": "(g_CDemonSetPtr,(CVector3f *)&local_b0.y,(CVector3f *)&local_bc.y),",
       "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&local_110.min.y` takes the address of a field at offset 4 inside `local_110` (a 24-byte CBoundingBox3D), then casts it to CBoundingBox3D * (same type as the local). A 24-byte access from that offset has only 20 bytes left and overruns `local_110` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&local_110` itself).",
+      "line": 59,
+      "match": "(CBoundingBox3D *)&local_110.min.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&local_110.min.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&local_f8.max.y` takes the address of a field at offset 16 inside `local_f8` (a 24-byte CBoundingBox3D), then casts it to CBoundingBox3D * (same type as the local). A 24-byte access from that offset has only 8 bytes left and overruns `local_f8` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&local_f8` itself).",
+      "line": 104,
+      "match": "(CBoundingBox3D *)&local_f8.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar6,(CBoundingBox3D *)&local_f8.max.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_254.impact_force` takes the address of a field at offset 24 inside `local_254` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 36 bytes left and overruns `local_254` by 24 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_254` itself).",
+      "line": 109,
+      "match": "(SDamageInfo *)&local_254.impact_force",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((SDamageInfo *)&local_254.impact_force);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_254.ammo_type` takes the address of a field at offset 40 inside `local_254` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 20 bytes left and overruns `local_254` by 40 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_254` itself).",
+      "line": 116,
+      "match": "(SDamageInfo *)&local_254.ammo_type",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_254.ammo_type,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&local_128.max.y` takes the address of a field at offset 16 inside `local_128` (a 24-byte CBoundingBox3D), then casts it to CBoundingBox3D * (same type as the local). A 24-byte access from that offset has only 8 bytes left and overruns `local_128` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&local_128` itself).",
+      "line": 131,
+      "match": "(CBoundingBox3D *)&local_128.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar5,(CBoundingBox3D *)&local_128.max.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1a0.impact_point.y` takes the address of a field at offset 16 inside `local_1a0` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_1a0` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1a0` itself).",
+      "line": 157,
+      "match": "(SDamageInfo *)&local_1a0.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_1a0.impact_point.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1a0.impact_point.y` takes the address of a field at offset 16 inside `local_1a0` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_1a0` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1a0` itself).",
+      "line": 159,
+      "match": "(SDamageInfo *)&local_1a0.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_1a0.impact_point.y,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1a0.impact_direction.y` takes the address of a field at offset 32 inside `local_1a0` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 28 bytes left and overruns `local_1a0` by 32 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1a0` itself).",
+      "line": 165,
+      "match": "(SDamageInfo *)&local_1a0.impact_direction.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SDamageInfo *)&local_1a0.impact_direction.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1a0.damage_type` takes the address of a field at offset 48 inside `local_1a0` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 12 bytes left and overruns `local_1a0` by 48 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1a0` itself).",
+      "line": 172,
+      "match": "(SDamageInfo *)&local_1a0.damage_type",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_1a0.damage_type,(CDemonActor *)pCVar3",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_164.impact_point.y` takes the address of a field at offset 16 inside `local_164` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_164` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_164` itself).",
+      "line": 228,
+      "match": "(SDamageInfo *)&local_164.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((SDamageInfo *)&local_164.impact_point.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_164.impact_point.y` takes the address of a field at offset 16 inside `local_164` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_164` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_164` itself).",
+      "line": 230,
+      "match": "(SDamageInfo *)&local_164.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_164.impact_point.y,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_164.impact_direction.y` takes the address of a field at offset 32 inside `local_164` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 28 bytes left and overruns `local_164` by 32 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_164` itself).",
+      "line": 239,
+      "match": "(SDamageInfo *)&local_164.impact_direction.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_164.impact_direction.y,this_ptr);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1dc.impact_point.y` takes the address of a field at offset 16 inside `local_1dc` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_1dc` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1dc` itself).",
+      "line": 245,
+      "match": "(SDamageInfo *)&local_1dc.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_1dc.impact_point.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1dc.impact_point.y` takes the address of a field at offset 16 inside `local_1dc` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_1dc` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1dc` itself).",
+      "line": 247,
+      "match": "(SDamageInfo *)&local_1dc.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_1dc.impact_point.y,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_1dc.impact_direction.y` takes the address of a field at offset 32 inside `local_1dc` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 28 bytes left and overruns `local_1dc` by 32 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_1dc` itself).",
+      "line": 250,
+      "match": "(SDamageInfo *)&local_1dc.impact_direction.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_1dc.impact_direction.y,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_218.impact_point.y` takes the address of a field at offset 16 inside `local_218` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_218` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_218` itself).",
+      "line": 264,
+      "match": "(SDamageInfo *)&local_218.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_218.impact_point.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_218.impact_point.y` takes the address of a field at offset 16 inside `local_218` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 44 bytes left and overruns `local_218` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_218` itself).",
+      "line": 267,
+      "match": "(SDamageInfo *)&local_218.impact_point.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_218.impact_point.y,&pCVar3->base);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_218.impact_direction.y` takes the address of a field at offset 32 inside `local_218` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 28 bytes left and overruns `local_218` by 32 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_218` itself).",
+      "line": 291,
+      "match": "(SDamageInfo *)&local_218.impact_direction.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar3,(SDamageInfo *)&local_218.impact_direction.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(SDamageInfo *)&local_218.ammo_type` takes the address of a field at offset 40 inside `local_218` (a 60-byte SDamageInfo), then casts it to SDamageInfo * (same type as the local). A 60-byte access from that offset has only 20 bytes left and overruns `local_218` by 40 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous SDamageInfo local (often just `&local_218` itself).",
+      "line": 293,
+      "match": "(SDamageInfo *)&local_218.ammo_type",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&local_218.ammo_type,&pCVar3->base);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

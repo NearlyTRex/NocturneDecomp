@@ -104,7 +104,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
               pSphereCenter = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)pCVar6,&local_74,&local_c8);
               pCVar1 = (*((pCVar6->base).vtable._ub)->getBoundingBox)
-                                 ((CDemonActor *)pCVar6,(CBoundingBox3D *)&local_f8.max.y);
+                                 ((CDemonActor *)pCVar6,&local_f8);
               iVar4 = core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
                                 (pCVar1,pSphereCenter,sphereRadius);
               if (iVar4 != 0) {
@@ -127,7 +127,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
               pSphereCenter = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)pCVar5,&local_68,&local_c8);
               pCVar1 = (*((pCVar5->base).vtable._ub)->getBoundingBox)
-                                 ((CDemonActor *)pCVar5,(CBoundingBox3D *)&local_128.max.y);
+                                 ((CDemonActor *)pCVar5,&local_128);
               iVar4 = core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
                                 (pCVar1,pSphereCenter,sphereRadius);
               if (iVar4 != 0) {

@@ -1199,6 +1199,24 @@
       "severity": "moderate",
       "text": "local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPoly *)&local_1f0.z` takes the address of a field at offset 8 inside `local_1f0` (a 12-byte CVector3f), then casts it to CPoly *. A 104-byte access from that offset has only 4 bytes left and overruns `local_1f0` by 100 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPoly local (often just `&local_1f0` itself).",
+      "line": 431,
+      "match": "(CPoly *)&local_1f0.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)&local_1f0.z,0);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CPoly *)&local_1f0.z` takes the address of a field at offset 8 inside `local_1f0` (a 12-byte CVector3f), then casts it to CPoly *. A 104-byte access from that offset has only 4 bytes left and overruns `local_1f0` by 100 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CPoly local (often just `&local_1f0` itself).",
+      "line": 435,
+      "match": "(CPoly *)&local_1f0.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->poly_array + iVar16,(CPoly *)&local_1f0.z,this_ptr);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

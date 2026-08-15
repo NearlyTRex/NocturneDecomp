@@ -1259,6 +1259,15 @@
       "type": "subfield_vector_pun"
     },
     {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&local_280.pitch_max` takes the address of a field at offset 24 inside `local_280` (a 32-byte SInteractionInfo), then casts it to CBoundingBox3D *. A 24-byte access from that offset has only 8 bytes left and overruns `local_280` by 16 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&local_280` itself).",
+      "line": 111,
+      "match": "(CBoundingBox3D *)&local_280.pitch_max",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar9,(CBoundingBox3D *)&local_280.pitch_max);",
+      "type": "subfield_vector_pun"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
       "line": 934,
       "match": "0x42c80000 < (int)local_2bc.damage_amount)",

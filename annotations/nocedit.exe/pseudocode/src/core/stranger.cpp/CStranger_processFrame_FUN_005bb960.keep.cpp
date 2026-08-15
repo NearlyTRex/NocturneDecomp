@@ -43,6 +43,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   float local_2c0;
   SDamageInfo local_2bc;
   SInteractionInfo local_280;
+  CBoundingBox3D local_carry_bbox;
   CBoundingBox3D local_248;
   CVector3f local_230;
   CVector3f local_224;
@@ -100,7 +101,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   pCVar9 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar9 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     pCVar15 = (*((pCVar9->vtable)._ub)->getBoundingBox)
-                        (pCVar9,(CBoundingBox3D *)&local_280.pitch_max);
+                        (pCVar9,&local_carry_bbox);
     if (&this_ptr->carry_object_bbox != pCVar15) {
       (this_ptr->carry_object_bbox).min = pCVar15->min;
     }

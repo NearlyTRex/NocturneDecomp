@@ -758,6 +758,15 @@
       "severity": "moderate",
       "text": "g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&auStack_d4.z` takes the address of a field at offset 8 inside `auStack_d4` (a 12-byte CVector3f), then casts it to CBoundingBox3D *. A 24-byte access from that offset has only 4 bytes left and overruns `auStack_d4` by 20 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&auStack_d4` itself).",
+      "line": 89,
+      "match": "(CBoundingBox3D *)&auStack_d4.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*((actor->vtable)._ub)->getBoundingBox)(actor,(CBoundingBox3D *)&auStack_d4.z);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

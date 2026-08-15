@@ -213,6 +213,15 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CBoundingBox3D *)&local_40.min.y` takes the address of a field at offset 4 inside `local_40` (a 24-byte CBoundingBox3D), then casts it to CBoundingBox3D * (same type as the local). A 24-byte access from that offset has only 20 bytes left and overruns `local_40` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CBoundingBox3D local (often just `&local_40` itself).",
+      "line": 63,
+      "match": "(CBoundingBox3D *)&local_40.min.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&local_40.min.y);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

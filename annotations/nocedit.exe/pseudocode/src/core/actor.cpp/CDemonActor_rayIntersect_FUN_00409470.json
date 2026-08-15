@@ -348,6 +348,42 @@
       "severity": "moderate",
       "text": "output_normal = (CVector3f *)&local_54.y;",
       "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CVector3f *)&local_84.max.y` takes the address of a field at offset 16 inside `local_84` (a 24-byte CBoundingBox3D), then casts it to CVector3f *. A 12-byte access from that offset has only 8 bytes left and overruns `local_84` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CVector3f local (often just `&local_84` itself).",
+      "line": 102,
+      "match": "(CVector3f *)&local_84.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CVector3f *)&local_84.max.y;",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CVector3f *)&local_6c.max.y` takes the address of a field at offset 16 inside `local_6c` (a 24-byte CBoundingBox3D), then casts it to CVector3f *. A 12-byte access from that offset has only 8 bytes left and overruns `local_6c` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CVector3f local (often just `&local_6c` itself).",
+      "line": 103,
+      "match": "(CVector3f *)&local_6c.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ray_origin_00 = (CVector3f *)&local_6c.max.y;",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CVector3f *)&local_6c.max.y` takes the address of a field at offset 16 inside `local_6c` (a 24-byte CBoundingBox3D), then casts it to CVector3f *. A 12-byte access from that offset has only 8 bytes left and overruns `local_6c` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CVector3f local (often just `&local_6c` itself).",
+      "line": 119,
+      "match": "(CVector3f *)&local_6c.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(collision_info->deformable_model,(CVector3f *)&local_6c.max.y,",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address struct field-pun \u2014 `(CVector3f *)&local_84.max.y` takes the address of a field at offset 16 inside `local_84` (a 24-byte CBoundingBox3D), then casts it to CVector3f *. A 12-byte access from that offset has only 8 bytes left and overruns `local_84` by 4 bytes (ASan stack-buffer-overflow; \u00a726). Ghidra emits this when its stack-local partition disagrees with Watcom's real frame layout. Confirm the intended slot in the .asm, then pass a real contiguous CVector3f local (often just `&local_84` itself).",
+      "line": 120,
+      "match": "(CVector3f *)&local_84.max.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)&local_84.max.y);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {
