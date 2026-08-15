@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          4,921
-  Unnamed functions (FUN_):          308 ( 6.3%)
+  Unnamed functions (FUN_):          298 ( 6.1%)
   Functions with unnamed params:     25 ( 0.5%)
-  Functions with type issues:        1,688 (34.3%)
+  Functions with type issues:        1,686 (34.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           10
     Wrong calling convention:          49
     Undefined types in variables:      1609
-    Unresolved stack params:           112
+    Unresolved stack params:           110
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -48,20 +48,18 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042b6d0  unknown       0 callers
     0x0042b6e0  unknown       0 callers
 
-  shape/edittool.cpp (15 unnamed)
+  shape/edittool.cpp (13 unnamed)
     0x0046fcd0  unknown       21 callers
     0x0046fb40  unknown       7 callers
     0x00476160  unknown       6 callers
     0x00470230  unknown       2 callers
     0x00475230  __cdecl       2 callers
     0x004759d0  __cdecl       2 callers
-    0x00476e90  unknown       1 callers
     0x00470310  unknown       0 callers
     0x004703f0  unknown       0 callers
     0x00470730  unknown       0 callers
     0x00472fd0  unknown       0 callers
     0x00474ae0  unknown       0 callers
-    0x00476e70  unknown       0 callers
     0x00476f40  unknown       0 callers
     0x00477680  __cdecl       0 callers
 
@@ -75,14 +73,12 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004303d0  unknown       0 callers
     0x00430630  unknown       0 callers
 
-  engine/drender.cpp (7 unnamed)
+  engine/drender.cpp (5 unnamed)
     0x00460d10  unknown       9 callers
     0x00460d90  unknown       7 callers
     0x00461720  __cdecl       1 callers
-    0x004574e0  unknown       0 callers
     0x004579c0  unknown       0 callers
     0x00460c26  unknown       0 callers
-    0x00460c90  unknown       0 callers
 
   core/hero.cpp (3 unnamed)
     0x004b46d0  __cdecl       9 callers
@@ -94,10 +90,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004ac7c0  __cdecl       2 callers
     0x004accf0  __cdecl       1 callers
 
-  core/dmodel.cpp (3 unnamed)
+  core/dmodel.cpp (2 unnamed)
     0x00452f10  __cdecl       7 callers
     0x00454460  __cdecl       2 callers
-    0x00452560  unknown       0 callers
 
   cockpit/pkbitmap.cpp (9 unnamed)
     0x004f5320  __cdecl       6 callers
@@ -164,13 +159,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00481960  unknown       0 callers
     0x00481970  unknown       0 callers
 
-  core/fire.cpp (2 unnamed)
+  core/fire.cpp (1 unnamed)
     0x0048b6f0  __cdecl       3 callers
-    0x0048c940  unknown       0 callers
 
-  core/frankgen.cpp (3 unnamed)
+  core/frankgen.cpp (2 unnamed)
     0x004950a0  __cdecl       3 callers
-    0x00495410  unknown       0 callers
     0x00495420  unknown       0 callers
 
   core/script.cpp (9 unnamed)
@@ -437,11 +430,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/vessel.cpp (1 unnamed)
     0x0054fc40  __cdecl       1 callers
 
-  wincore/winrun.cpp (6 unnamed)
+  wincore/winrun.cpp (5 unnamed)
     0x00559260  __stdcall     1 callers
     0x00559500  __cdecl       1 callers
     0x00559e90  __cdecl       1 callers
-    0x00558be0  unknown       0 callers
     0x00558c40  unknown       0 callers
     0x00558d90  __stdcall     0 callers
 
@@ -479,10 +471,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/dtrace.cpp (1 unnamed)
     0x004673e0  unknown       0 callers
-
-  core/dtri.cpp (2 unnamed)
-    0x0046e9d0  unknown       0 callers
-    0x0046e9e0  unknown       0 callers
 
   core/enemy.cpp (1 unnamed)
     0x0047a150  __cdecl       0 callers
@@ -1040,7 +1028,7 @@ Wrong calling convention (unaffected register usage) (49)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (112)
+Unresolved stack parameters (missing from signature) (110)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -1317,12 +1305,6 @@ Unresolved stack parameters (missing from signature) (112)
     Address: 0x00481970  File: core/event.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
     Signature: undefined4 * core_event_cpp_FUN_00481970(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00495410
-    Address: 0x00495410  File: core/frankgen.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_frankgen_cpp_FUN_00495410(void)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_00495420
@@ -1707,12 +1689,6 @@ Unresolved stack parameters (missing from signature) (112)
     Address: 0x005580b0  File: engine/winfont.cpp
     Evidence: in_stack_0000002c, in_stack_0000002c
     Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005580b0(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00558be0
-    Address: 0x00558be0  File: wincore/winrun.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void wincore_winrun_cpp_FUN_00558be0(void)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
@@ -3760,6 +3736,11 @@ Undefined types in variables (1609)
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CDemonPart_renderFaces
+    Address: 0x004574e0  File: core/dpart.cpp
+    Locals:  local_58 (undefined), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_34 (undefined4), local_28 (undefined4), local_1c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CElephantGun_onFired
     Address: 0x00477fd0  File: core/elephant.cpp
     Locals:  local_6c (undefined), local_44 (undefined), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined), local_14 (undefined4)
@@ -3873,11 +3854,6 @@ Undefined types in variables (1609)
   CWeather_update
     Address: 0x00554980  File: core/weather.cpp
     Locals:  local_3c (undefined4), local_38 (undefined8), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004574e0
-    Address: 0x004574e0  File: engine/drender.cpp
-    Locals:  local_58 (undefined), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_34 (undefined4), local_28 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   renderTriangleSimple
@@ -7308,13 +7284,13 @@ Undefined types in variables (1609)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonRenderer_setCameraOriginFromScaledPoint
-    Address: 0x00460700  File: engine/drender.cpp
+  CDemonRenderer_scaleAndSetDirectionalLight
+    Address: 0x00460c90  File: engine/drender.cpp
     Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00460c90
-    Address: 0x00460c90  File: engine/drender.cpp
+  CDemonRenderer_setCameraOriginFromScaledPoint
+    Address: 0x00460700  File: engine/drender.cpp
     Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -9776,7 +9752,7 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (67 groups)
+DUPLICATE FUNCTION NAMES (64 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -9903,14 +9879,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0044e2c0  (CDemonLight *this_ptr)
     0x0044f0b0  (CDemonLight *this_ptr)
 
-  core_dmodel.cpp  (2 functions)
-    0x00452560  (_FILE *param_1,int param_2)
-    0x00454460  (void)
-
-  core_dtri.cpp  (2 functions)
-    0x0046e9d0  (void)
-    0x0046e9e0  (void)
-
   core_dynamite.cpp  (4 functions)
     0x0046ecf0  (void)
     0x0046ed20  (void)
@@ -9922,10 +9890,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00481950  (undefined4 *param_1,undefined4 *param_2)
     0x00481960  (void)
     0x00481970  (void)
-
-  core_frankgen.cpp  (2 functions)
-    0x00495410  (void)
-    0x00495420  (void)
 
   core_gabriela.cpp_CGabriella  (3 functions)
     0x00498de0  (CGabriella *this_ptr,CDemonActor *target_actor,int use_wi...)
@@ -10091,11 +10055,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00404480  (void)
     0x00404490  (void)
 
-  engine_drender.cpp  (7 functions)
-    0x004574e0  (int param_1)
+  engine_drender.cpp  (5 functions)
     0x004579c0  (int param_1,int *param_2)
     0x00460c26  (void)
-    0x00460c90  (undefined4 param_1,float *param_2)
     0x00460d10  (void)
     0x00460d90  (void)
     0x00461720  (CDemonRenderer *this_ptr,SInputFace *face_array,int face_...)
@@ -10129,7 +10091,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00544e50  (CTextureCache *this_ptr)
     0x00545700  (CTextureCache *this_ptr)
 
-  shape_edittool.cpp  (15 functions)
+  shape_edittool.cpp  (13 functions)
     0x0046fb40  (CEditorTools *param_1,char *param_2)
     0x0046fcd0  (CEditorTools *param_1,char *param_2)
     0x00470230  (undefined4 param_1,char *param_2)
@@ -10141,8 +10103,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00475230  (CPickList *this_ptr)
     0x004759d0  (CPickList *this_ptr)
     0x00476160  (CStrList *param_1)
-    0x00476e70  (undefined4 param_1)
-    0x00476e90  (int param_1)
     0x00476f40  (int param_1)
     0x00477680  (undefined4 *param_1,undefined4 *param_2)
 
@@ -10174,8 +10134,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00553ca0  (void)
     0x00553d30  (LPCSTR lpLibFileName)
 
-  wincore_winrun.cpp  (6 functions)
-    0x00558be0  (void)
+  wincore_winrun.cpp  (5 functions)
     0x00558c40  (void)
     0x00558d90  (HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
     0x00559260  (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLi...)

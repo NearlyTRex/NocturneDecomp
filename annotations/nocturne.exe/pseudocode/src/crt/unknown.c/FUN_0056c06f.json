@@ -23,9 +23,9 @@
         "0056c08e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__fpu_thunk",
     "name": "crt_unknown.c_FUN_0056c06f",
-    "signature": "void crt_unknown_c_FUN_0056c06f(void)"
+    "signature": "void __fpu_thunk crt_unknown_c_FUN_0056c06f(void)"
   },
   "function_calls": [
     {
@@ -38,11 +38,10 @@
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
-    "confidence": "unknown",
+    "confidence": "skipped",
     "declared_params": 0,
-    "declared_stack_bytes": 0,
     "estimated_params": 0,
-    "matches_declared": true
+    "skip_reason": "fpu_or_no_param_convention"
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.181818181818182,
@@ -65,9 +64,9 @@
     "pcode_op_count": 79
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [

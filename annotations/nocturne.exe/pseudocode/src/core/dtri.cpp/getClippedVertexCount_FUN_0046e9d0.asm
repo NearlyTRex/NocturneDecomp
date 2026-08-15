@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0046e9d0(void)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_01bc9e04
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,[0x01bc9e04]                ; 0046e9d0 | DAT_01bc9e04
+        ;   Label: core_dtri.cpp_getClippedVertexCount_FUN_0046e9d0
+    RET                                 ; 0046e9d5
+

@@ -9,15 +9,15 @@ SUSPECT TYPE COUNTS
   pointer_truncation              2872 ( 13.4%)
   unrolled_memcpy                 1473 (  6.9%)
   warning_overlapping_globals      877 (  4.1%)
-  unnamed_param                    850 (  4.0%)
-  stack_param                      815 (  3.8%)
+  unnamed_param                    824 (  3.8%)
+  stack_param                      811 (  3.8%)
   unknown_field                    700 (  3.3%)
   concat_reconstruction            664 (  3.1%)
   shadow_pointer_walk              542 (  2.5%)
   unrolled_strcpy                  483 (  2.3%)
   negative_offset                  459 (  2.1%)
   stack_ref                        458 (  2.1%)
-  static_uninitvar                 409 (  1.9%)
+  static_uninitvar                 408 (  1.9%)
   unaffected_reg                   408 (  1.9%)
   nonstandard_int                  270 (  1.3%)
   raw_address_constant             267 (  1.2%)
@@ -44,8 +44,8 @@ SUSPECT TYPE COUNTS
   alloc_magic_size                  26 (  0.1%)
   eflags_input                      26 (  0.1%)
   sign_compare_idiom                22 (  0.1%)
-  param_count_too_few               21 (  0.1%)
   extra_output                      21 (  0.1%)
+  param_count_too_few               20 (  0.1%)
   signed_shift_global_idiom         17 (  0.1%)
   static_invalid_pointer_cast       12 (  0.1%)
   fast_sqrt_inline                  12 (  0.1%)
@@ -2854,7 +2854,6 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0
   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
   core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0
-  core_dtri.cpp_FUN_0046e9d0
   core_dtri.cpp_clipPolygonToBottom_FUN_0046d7e0
   core_dtri.cpp_clipPolygonToFar_FUN_0046dd80
   core_dtri.cpp_clipPolygonToLeft_FUN_0046dab0
@@ -2863,6 +2862,7 @@ Functions:
   core_dtri.cpp_clipPolygonToTop_FUN_0046d680
   core_dtri.cpp_clipTriangleToBounds_FUN_0046df40
   core_dtri.cpp_getClippedTriangleCount_FUN_0046e950
+  core_dtri.cpp_getClippedVertexCount_FUN_0046e9d0
   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110
   core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30
   core_dynamite.cpp_CDynamite_process_FUN_0046edc0
@@ -3362,6 +3362,7 @@ Functions:
   engine_zraster.c_findRasterizerEdge_FUN_00562880
   engine_zraster.c_rasterizePolygonCustom_FUN_00562de0
   engine_zraster.c_rasterizeTriangle_FUN_005628c0
+  shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90
   shape_edittool.cpp_CEdButton_wasClicked_FUN_00476fd0
   shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004772e0
   shape_edittool.cpp_CEdCheck_handleInput_FUN_004774b0
@@ -3401,7 +3402,6 @@ Functions:
   shape_edittool.cpp_FUN_00472fd0
   shape_edittool.cpp_FUN_00475230
   shape_edittool.cpp_FUN_004759d0
-  shape_edittool.cpp_FUN_00476e90
   shape_edittool.cpp_FUN_00476f40
   shape_edittool.cpp_calculateButtonHeight_FUN_00477100
   shape_edittool.cpp_calculateButtonWidth_FUN_00477080
@@ -3540,7 +3540,6 @@ Functions:
   wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70
   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-  wincore_winrun.cpp_FUN_00558be0
   wincore_winrun.cpp_FUN_00558c40
   wincore_winrun.cpp_FUN_00558d90
   wincore_winrun.cpp_FUN_00559260
@@ -3555,6 +3554,7 @@ Functions:
   wincore_winrun.cpp_initJoystick_FUN_00559e20
   wincore_winrun.cpp_processWindowMessages_FUN_005591c0
   wincore_winrun.cpp_setCursorPosition_FUN_00558d60
+  wincore_winrun.cpp_setValue_FUN_00558be0
   wincore_winrun.cpp_wasKeyPressed_FUN_00558b70
   wincore_winvideo.cpp_FUN_0055a510
   wincore_winvideo.cpp_closeMovie_FUN_0055a1c0
@@ -3563,12 +3563,12 @@ Functions:
   wincore_winvideo.cpp_toggleMoviePlayback_FUN_0055a4a0
 
 ====================================================================================================
-TYPE: unnamed_param (850 occurrences)
+TYPE: unnamed_param (824 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   343x  param_2
-   229x  param_1
+   335x  param_2
+   211x  param_1
    128x  param_3
     95x  param_4
     33x  param_5
@@ -3598,10 +3598,8 @@ Functions:
   core_dlight.cpp_FUN_0044ed80
   core_dlight.cpp_FUN_0044f9b0
   core_dlight.cpp_FUN_00450c90
-  core_dmodel.cpp_FUN_00452560
   core_dtrace.cpp_FUN_004673e0
   core_event.cpp_FUN_00481950
-  core_fire.cpp_FUN_0048c940
   core_gabriela.cpp_CGabriella_FUN_00499b00
   core_game.cpp_FUN_004a03a0
   core_glass.cpp_CGlass_FUN_004accf0
@@ -3627,9 +3625,7 @@ Functions:
   core_stranger.cpp_FUN_005409c0
   core_wateract.cpp_CWaterActor_FUN_005519c0
   core_xform.cpp_FUN_0055d660
-  engine_drender.cpp_FUN_004574e0
   engine_drender.cpp_FUN_004579c0
-  engine_drender.cpp_FUN_00460c90
   engine_font.cpp_CBitFont_FUN_00490210
   engine_pod.cpp_FUN_004f7980
   engine_pod.cpp_FUN_004f8eb0
@@ -3641,8 +3637,6 @@ Functions:
   shape_edittool.cpp_FUN_00472fd0
   shape_edittool.cpp_FUN_00474ae0
   shape_edittool.cpp_FUN_00476160
-  shape_edittool.cpp_FUN_00476e70
-  shape_edittool.cpp_FUN_00476e90
   shape_edittool.cpp_FUN_00476f40
   shape_edittool.cpp_FUN_00477680
   sound_mp3.cpp_CFileBitStream_FUN_004e28a0
@@ -3650,11 +3644,11 @@ Functions:
   support_newmsg.cpp_FUN_004edfc0
 
 ====================================================================================================
-TYPE: stack_param (815 occurrences)
+TYPE: stack_param (811 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    98x  in_stack_00000004
+    94x  in_stack_00000004
     53x  in_stack_00000008
     47x  in_stack_fffffc88
     32x  in_stack_0000000c
@@ -3715,7 +3709,6 @@ Functions:
   core_event.cpp_FUN_00481930
   core_event.cpp_FUN_00481960
   core_event.cpp_FUN_00481970
-  core_frankgen.cpp_FUN_00495410
   core_frankgen.cpp_FUN_00495420
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410
   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004980d0
@@ -3787,7 +3780,6 @@ Functions:
   sound_sndmain.cpp_FUN_005262a0
   sound_sndmain.cpp_nextMixingBuffer_FUN_00523170
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
-  wincore_winrun.cpp_FUN_00558be0
 
 ====================================================================================================
 TYPE: unknown_field (700 occurrences)
@@ -4905,11 +4897,11 @@ Functions:
   sound_sndmain.cpp_startSfx_FUN_005265a0
 
 ====================================================================================================
-TYPE: static_uninitvar (409 occurrences)
+TYPE: static_uninitvar (408 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   409x  Cppcheck: uninitialized variable
+   408x  Cppcheck: uninitialized variable
 
 Functions:
   cockpit_ckptutil.c_FUN_0042d180
@@ -5009,7 +5001,6 @@ Functions:
   core_fire.cpp_CSpark_setupRenderState_FUN_004837a0
   core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0
   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490
-  core_frankgen.cpp_FUN_00495410
   core_frankgen.cpp_FUN_00495420
   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10
   core_game.cpp_CGame_displayActStats_FUN_004a6680
@@ -5318,8 +5309,8 @@ Functions:
   engine_3d.c_drawLineStrip2D_FUN_00405870
   engine_3d.c_drawLineStrip3D_FUN_00405900
   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
+  engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90
   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
-  engine_drender.cpp_FUN_00460c90
   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_00473190
@@ -6665,7 +6656,23 @@ Functions:
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
 
 ====================================================================================================
-TYPE: param_count_too_few (21 occurrences)
+TYPE: extra_output (21 occurrences)
+====================================================================================================
+
+Unique patterns:
+    10x  extraout_EDX
+     6x  extraout_ECX
+     3x  extraout_ECX_00
+     2x  extraout_EAX
+
+Functions:
+  core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080
+  core_sound.cpp_FUN_0052d790
+  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
+
+====================================================================================================
+TYPE: param_count_too_few (20 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -6678,7 +6685,6 @@ Unique patterns:
      1x  declared:1 vs estimated:2
      1x  declared:0 vs estimated:7
      1x  declared:2 vs estimated:3
-     1x  declared:0 vs estimated:2
      1x  declared:7 vs estimated:8
 
 Functions:
@@ -6701,24 +6707,7 @@ Functions:
   shape_edittool.cpp_FUN_0046fb40
   shape_edittool.cpp_FUN_0046fcd0
   shape_edittool.cpp_FUN_00470230
-  shape_edittool.cpp_FUN_00476e90
   support_newmsg.cpp_FUN_004edfc0
-
-====================================================================================================
-TYPE: extra_output (21 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  extraout_EDX
-     6x  extraout_ECX
-     3x  extraout_ECX_00
-     2x  extraout_EAX
-
-Functions:
-  core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080
-  core_sound.cpp_FUN_0052d790
-  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 
 ====================================================================================================
 TYPE: signed_shift_global_idiom (17 occurrences)

@@ -1,0 +1,291 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 196
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004574e0",
+    "address_range": [
+      [
+        "004574e0",
+        "00457634"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0",
+    "signature": "void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004574e0(CDemonPart *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050dfe0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0"
+    },
+    {
+      "addr": "0050c200",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200"
+    },
+    {
+      "addr": "00404610",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00404610"
+    },
+    {
+      "addr": "00461050",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050"
+    },
+    {
+      "addr": "00460f10",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10"
+    },
+    {
+      "addr": "00460fa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0"
+    },
+    {
+      "addr": "00460fb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ae704",
+      "name": "g_CDemonRenderer_PTR_005ae704",
+      "type": "CDemonRenderer*",
+      "value": "01b4d738"
+    },
+    {
+      "addr": "005be368",
+      "name": "g_CDemonSet_PTR_005be368",
+      "type": "CDemonSet*",
+      "value": "01e57284"
+    },
+    {
+      "addr": "01b4d738",
+      "name": "DAT_01b4d738",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d750",
+      "name": "DAT_01b4d750",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e57284",
+      "name": "g_CDemonSet_01e57284",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6173913043478265,
+    "instruction_count": 115,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CBRANCH": 5,
+      "COPY": 88,
+      "INT_2COMP": 1,
+      "INT_ADD": 47,
+      "INT_AND": 78,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 3,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 28,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 38,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 22,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 42,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 531
+  },
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPart *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -26572,9 +26572,10 @@
         "start":"00460c90"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_FUN_00460c90",
-    "ret":"undefined1",
+    "name":"engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -26610,9 +26611,40 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonRenderer*"
+        },
+        {
+          "name":"light_direction",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
     }
   },
   {
@@ -29858,13 +29890,29 @@
         "start":"00476e90"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_FUN_00476e90",
-    "ret":"undefined1",
+    "name":"shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEdButton*"
+        }
+      ]
     }
   },
   {
@@ -38391,12 +38439,38 @@
         "start":"00495410"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00495410",
-    "ret":"undefined1",
+    "name":"core_frankgen.cpp_getFrameCount_FUN_00495410",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyFramedModel*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

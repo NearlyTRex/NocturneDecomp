@@ -35,6 +35,10 @@ void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 // Address: 004571f0
 void __cdecl CDemonPart::loadFromFile(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 
+// Original: core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0
+// Address: 004574e0
+void __cdecl CDemonPart::renderFaces(CDemonPart *this_ptr);
+
 // Original: core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00457640
 // Address: 00457640
 void __cdecl setupTriangleEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);

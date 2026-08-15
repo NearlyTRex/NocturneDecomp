@@ -31,9 +31,9 @@ int __cdecl wasKeyPressed(void);
 // Address: 00558ba0
 void __cdecl enqueueInput(int input_value);
 
-// Original: wincore_winrun.cpp_FUN_00558be0
+// Original: wincore_winrun.cpp_setValue_FUN_00558be0
 // Address: 00558be0
-void FUN_00558be0(void);
+void __cdecl setValue(int val);
 
 // Original: wincore_winrun.cpp_plotClippedPixel_FUN_00558c00
 // Address: 00558c00

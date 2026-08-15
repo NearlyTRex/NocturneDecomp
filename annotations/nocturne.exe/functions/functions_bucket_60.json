@@ -14125,13 +14125,45 @@
         "start":"00452560"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_dmodel.cpp_FUN_00452560",
-    "ret":"undefined1",
+    "name":"core_dmodel.cpp_skipLines_FUN_00452560",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        },
+        {
+          "name":"line_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -15049,9 +15081,10 @@
         "start":"004574e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_FUN_004574e0",
-    "ret":"undefined1",
+    "name":"core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -15215,9 +15248,24 @@
           "type":"undefined1"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonPart*"
+        }
+      ]
     }
   },
   {
@@ -20383,12 +20431,20 @@
         "start":"0046e9e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtri.cpp_FUN_0046e9e0",
-    "ret":"undefined1",
+    "name":"core_dtri.cpp_getClippedVertices_FUN_0046e9e0",
+    "ret":"CVector3f*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -61696,13 +61752,29 @@
         "start":"00558be0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_winrun.cpp_FUN_00558be0",
-    "ret":"undefined1",
+    "name":"wincore_winrun.cpp_setValue_FUN_00558be0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"val",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {

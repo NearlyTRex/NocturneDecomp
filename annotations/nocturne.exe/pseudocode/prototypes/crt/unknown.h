@@ -521,7 +521,7 @@ void FUN_0056bfd6(void);
 
 // Original: crt_unknown.c_FUN_0056bfdb
 // Address: 0056bfdb
-void FUN_0056bfdb(void);
+void __fpu_thunk FUN_0056bfdb(void);
 
 // Original: crt_unknown.c_FUN_0056bff7
 // Address: 0056bff7
@@ -549,7 +549,7 @@ void FUN_0056c06a(void);
 
 // Original: crt_unknown.c_FUN_0056c06f
 // Address: 0056c06f
-void FUN_0056c06f(void);
+void __fpu_thunk FUN_0056c06f(void);
 
 // Original: crt_unknown.c_FUN_0056c08f
 // Address: 0056c08f
@@ -609,7 +609,7 @@ void FUN_0056c1b2(void);
 
 // Original: crt_unknown.c_FUN_0056c1b7
 // Address: 0056c1b7
-void FUN_0056c1b7(void);
+void __fpu_thunk FUN_0056c1b7(void);
 
 // Original: crt_unknown.c_FUN_0056c1d7
 // Address: 0056c1d7
@@ -637,7 +637,7 @@ void FUN_0056c256(void);
 
 // Original: crt_unknown.c_FUN_0056c25b
 // Address: 0056c25b
-void FUN_0056c25b(void);
+void __fpu_thunk FUN_0056c25b(void);
 
 // Original: crt_unknown.c_FUN_0056c27b
 // Address: 0056c27b
@@ -665,7 +665,7 @@ void FUN_0056c2fa(void);
 
 // Original: crt_unknown.c_FUN_0056c2ff
 // Address: 0056c2ff
-void FUN_0056c2ff(void);
+void __fpu_thunk FUN_0056c2ff(void);
 
 // Original: crt_unknown.c_FUN_0056c31f
 // Address: 0056c31f

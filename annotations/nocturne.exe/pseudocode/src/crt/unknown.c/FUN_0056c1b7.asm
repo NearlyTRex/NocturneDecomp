@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_0056c1b7(void)
+; void __fpu_thunk crt_unknown_c_FUN_0056c1b7(void)
 ;
 ; Parameters:
 ; undefined1[10]   Stack[0x0]:10   local_res0

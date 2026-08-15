@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 4921
-Clean: 2482 (50.4%)
-With suspects: 2439
-Total suspects: 21463
+Clean: 2487 (50.5%)
+With suspects: 2434
+Total suspects: 21431
 
 ====================================================================================================
 cockpit_ckptutil.c_FUN_0042d180 (24 suspects)
@@ -7713,17 +7713,6 @@ core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 (1 suspect)
   Line 71 [pointer_cast]: } while (iVar9 == *(int *)((int)this_ptr->poly_texture_index_list + iVar6));
 
 ====================================================================================================
-core_dmodel.cpp_FUN_00452560 (6 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_dmodel_cpp_FUN_00452560(_FILE *param_1,int param_2)
-  Line 2 [unnamed_param]: void core_dmodel_cpp_FUN_00452560(_FILE *param_1,int param_2)
-  Line 8 [unnamed_param]: if (param_2 < 1) {
-  Line 12 [unnamed_param]: iVar1 = _fgetc(param_1);
-  Line 17 [unnamed_param]: param_2 = param_2 + -1;
-  Line 17 [unnamed_param]: param_2 = param_2 + -1;
-
-====================================================================================================
 core_dmodel.cpp_FUN_00454460 (1 suspect)
   File: core/dmodel.cpp
 ====================================================================================================
@@ -9530,12 +9519,6 @@ core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0 (1 suspect)
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
-core_dtri.cpp_FUN_0046e9d0 (1 suspect)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-====================================================================================================
 core_dtri.cpp_clipLineToPlane_FUN_0046d4e0 (10 suspects)
   File: core/dtri.cpp
 ====================================================================================================
@@ -9630,6 +9613,12 @@ core_dtri.cpp_cylinderEdgeIntersection_FUN_0046c820 (1 suspect)
 
 ====================================================================================================
 core_dtri.cpp_getClippedTriangleCount_FUN_0046e950 (1 suspect)
+  File: core/dtri.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+====================================================================================================
+core_dtri.cpp_getClippedVertexCount_FUN_0046e9d0 (1 suspect)
   File: core/dtri.cpp
 ====================================================================================================
   Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -11312,13 +11301,6 @@ core_fire.cpp_CTrail_render_FUN_00489360 (18 suspects)
   Line 89 [undefined_data]: DAT_005c50cc = 0xffff;
 
 ====================================================================================================
-core_fire.cpp_FUN_0048c940 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void core_fire_cpp_FUN_0048c940(uint *param_1)
-  Line 5 [unnamed_param]: *param_1 = 0;
-
-====================================================================================================
 core_fire.cpp_allocateBulletHole_FUN_0048a0e0 (1 suspect)
   File: core/fire.cpp
 ====================================================================================================
@@ -11675,14 +11657,6 @@ core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 (4 suspects)
   Line 59 [unrolled_strcpy]: do {
   Line 74 [unrolled_strcpy]: do {
   Line 89 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_frankgen.cpp_FUN_00495410 (3 suspects)
-  File: core/frankgen.cpp
-====================================================================================================
-  Line 7 [stack_param]: int in_stack_00000004;
-  Line 9 [stack_param]: return *(uint *)(in_stack_00000004 + 0x100);
-  Line 16 [static_uninitvar]: return *(uint *)(in_stack_00000004 + 0x100);
 
 ====================================================================================================
 core_frankgen.cpp_FUN_00495420 (3 suspects)
@@ -27766,6 +27740,12 @@ engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90 (3 suspects)
   Line 49 [undefined_data]: (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);
 
 ====================================================================================================
+engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90 (1 suspect)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 13 [raw_address_constant]: dir_z = 0x460cd0;
+
+====================================================================================================
 engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
@@ -27804,19 +27784,6 @@ engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0 (3 suspe
   Line 85 [undefined_data]: iVar16 = DAT_005b7648;
 
 ====================================================================================================
-engine_drender.cpp_FUN_004574e0 (8 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_drender_cpp_FUN_004574e0(int param_1)
-  Line 17 [unnamed_param]: iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);
-  Line 17 [unnamed_param]: iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);
-  Line 20 [unnamed_param]: (CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));
-  Line 20 [unnamed_param]: (CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));
-  Line 25 [unnamed_param]: plane = *(UIntegerFloat **)(param_1 + 0x34);
-  Line 27 [unnamed_param]: if (0 < *(int *)(param_1 + 0x24)) {
-  Line 52 [unnamed_param]: } while ((int)uVar2 < *(int *)(param_1 + 0x24));
-
-====================================================================================================
 engine_drender.cpp_FUN_004579c0 (6 suspects)
   File: engine/drender.cpp
 ====================================================================================================
@@ -27834,17 +27801,6 @@ engine_drender.cpp_FUN_00460c26 (3 suspects)
   Line 5 [fpu_register_input]: float10 in_ST0;
   Line 8 [fpu_register_input]: dVar1 = round((double)in_ST0);
   Line 9 [undefined_data]: DAT_005b7648 = (int)ROUND(dVar1);
-
-====================================================================================================
-engine_drender.cpp_FUN_00460c90 (6 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: void engine_drender_cpp_FUN_00460c90(uint param_1,float *param_2)
-  Line 2 [unnamed_param]: void engine_drender_cpp_FUN_00460c90(uint param_1,float *param_2)
-  Line 9 [unnamed_param]: dVar1 = (double)param_2[1] * 65536;
-  Line 10 [unnamed_param]: dVar2 = (double)*param_2 * 65536;
-  Line 11 [unnamed_param]: round((double)param_2[2] * 65536);
-  Line 13 [raw_address_constant]: dir_z = 0x460cd0;
 
 ====================================================================================================
 engine_drender.cpp_FUN_00460d10 (10 suspects)
@@ -29806,6 +29762,12 @@ shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0 (3 suspects)
   Line 13 [pointer_truncation]: ((CEdButton *)x_pos,y_pos,(int)button_text,iVar1 + y_pos + -1,(int)bottom,unaff_EDI);
 
 ====================================================================================================
+shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+====================================================================================================
 shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00476ef0 (4 suspects)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -30763,23 +30725,6 @@ shape_edittool.cpp_FUN_00476160 (6 suspects)
   Line 7 [unnamed_param]: param_1[0x13].capacity = 0;
   Line 9 [unnamed_param]: param_1[0x13].item_count = 0;
   Line 10 [unnamed_param]: shape_edittool_cpp_CStrList_clear_FUN_00473c50(param_1);
-
-====================================================================================================
-shape_edittool.cpp_FUN_00476e70 (3 suspects)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 2 [unnamed_param]: uint shape_edittool_cpp_FUN_00476e70(uint param_1)
-  Line 5 [unnamed_param]: shape_edittool_cpp_FUN_00476e90(param_1);
-  Line 6 [unnamed_param]: return param_1;
-
-====================================================================================================
-shape_edittool.cpp_FUN_00476e90 (4 suspects)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 4 [unnamed_param]: void shape_edittool_cpp_FUN_00476e90(int param_1)
-  Line 7 [unnamed_param]: if (param_1 != _DAT_01bcde24) {
 
 ====================================================================================================
 shape_edittool.cpp_FUN_00476f40 (12 suspects)
@@ -33479,14 +33424,6 @@ wincore_wddvmem.cpp_swapBuffers_FUN_00553910 (11 suspects)
   Line 92 [pointer_truncation]: puVar5 = *(byte **)((int)g_ScreenBufferArray + iVar10);
 
 ====================================================================================================
-wincore_winrun.cpp_FUN_00558be0 (3 suspects)
-  File: wincore/winrun.cpp
-====================================================================================================
-  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-  Line 8 [stack_param]: uint in_stack_00000004;
-  Line 10 [stack_param]: _DAT_02de0854 = in_stack_00000004;
-
-====================================================================================================
 wincore_winrun.cpp_FUN_00558c40 (1 suspect)
   File: wincore/winrun.cpp
 ====================================================================================================
@@ -33630,6 +33567,12 @@ wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0 (2 suspects)
 ====================================================================================================
   Line 14 [undefined_data]: LVar2 = RegCreateKeyExA((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,
   Line 21 [unrolled_strlen]: do {
+
+====================================================================================================
+wincore_winrun.cpp_setValue_FUN_00558be0 (1 suspect)
+  File: wincore/winrun.cpp
+====================================================================================================
+  Line 2 [warning_overlapping_globals]: /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ====================================================================================================
 wincore_winrun.cpp_wasKeyPressed_FUN_00558b70 (1 suspect)

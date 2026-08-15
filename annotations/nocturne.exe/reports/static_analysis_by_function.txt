@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 328
-  Total diagnostics: 939
+  Functions with findings: 327
+  Total diagnostics: 938
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 328
+  .keep.cpp files: 0, raw .cpp files: 327
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -2094,12 +2094,6 @@ core_fire.cpp_CRainDrop_render_FUN_00489d00  [.cpp] [Cppcheck (quick)]
   Line   51: [uninitvar] Uninitialized variable: local_38
 
 ----------------------------------------------------------------------------------------------------
-core_frankgen.cpp_FUN_00495410  [.cpp] [Cppcheck (quick)]
-  File: core/frankgen.cpp  (1 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
 core_frankgen.cpp_FUN_00495420  [.cpp] [Cppcheck (quick)]
   File: core/frankgen.cpp  (1 diagnostics)
 
@@ -2346,13 +2340,13 @@ engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0  [.cpp] [Cpp
   Line   41: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700  [.cpp] [Cppcheck (quick)]
+engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90  [.cpp] [Cppcheck (quick)]
   File: engine/drender.cpp  (1 diagnostics)
 
   Line   18: [ignoredReturnValue] Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-engine_drender.cpp_FUN_00460c90  [.cpp] [Cppcheck (quick)]
+engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700  [.cpp] [Cppcheck (quick)]
   File: engine/drender.cpp  (1 diagnostics)
 
   Line   18: [ignoredReturnValue] Return value of function round() is not used.

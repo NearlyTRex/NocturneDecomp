@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_math_c_fdiv_thunk_FUN_0056c1eb(void)
+; void __fpu_thunk crt_math_c_fdiv_thunk_FUN_0056c1eb(void)
 ;
 ;
 ; Called Functions:

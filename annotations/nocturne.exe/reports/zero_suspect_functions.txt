@@ -648,6 +648,7 @@ annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_intersec
 annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_prepareForRender_FUN_00453040.cpp
 annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_readBinaryModel_FUN_004527a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_rotateAndLightVertices_FUN_004530c0.cpp
+annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/skipLines_FUN_00452560.cpp
 annotations/nocturne.exe/pseudocode/src/core/dmodel.cpp/staticInit_FUN_00452530.cpp
 annotations/nocturne.exe/pseudocode/src/core/dog.cpp/CZombieDog_archive_FUN_00454dc0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dog.cpp/CZombieDog_ctor_FUN_00454660.cpp
@@ -676,6 +677,7 @@ annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_ctor_FUN_00456
 annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_dtor_FUN_00456f40.cpp
 annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_free_FUN_00457060.cpp
 annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_load_FUN_004570c0.cpp
+annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_renderFaces_FUN_004574e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dpart.cpp/CDemonPart_save_FUN_004570f0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_checkHeartShot_FUN_0045a6a0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_getActorType_FUN_00458630.cpp
@@ -720,10 +722,10 @@ annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/CDemonTriangle_readDataBin
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/CDemonTriangle_readDataCSV_FUN_0046c300.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/CDemonTriangle_writeDataBinary_FUN_0046c410.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/CDemonTriangle_writeDataCSV_FUN_0046c350.cpp
-annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/FUN_0046e9e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/buildClipTriangleFan_FUN_0046e960.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/cylinderEdgeTestWithHeight_FUN_0046cb00.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/cylinderTriangleTest_FUN_0046cba0.cpp
+annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/getClippedVertices_FUN_0046e9e0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/rayEdgeHeightTest_FUN_0046cfa0.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/rayTriangleIntersection_FUN_0046c620.cpp
 annotations/nocturne.exe/pseudocode/src/core/dtri.cpp/staticInit_FUN_0046c250.cpp
@@ -874,6 +876,7 @@ annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CShell_onCollision_FUN_004
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CShell_process_FUN_004897d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_arrdtor_FUN_0048cee0.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_ctor_FUN_0048cc70.cpp
+annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_deactivate_FUN_0048c940.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_dtor_FUN_0048cc80.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSmokeParticle_reset_FUN_00482770.cpp
 annotations/nocturne.exe/pseudocode/src/core/fire.cpp/CSpark_arrdtor_FUN_0048ce80.cpp
@@ -955,6 +958,7 @@ annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_g
 annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_setCourseFrame_FUN_00495340.cpp
 annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_setPartFrame_FUN_004952b0.cpp
 annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/factoryFuncFrankenstienMachine_FUN_00494600.cpp
+annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/getFrameCount_FUN_00495410.cpp
 annotations/nocturne.exe/pseudocode/src/core/frankgen.cpp/staticInit_FUN_004945d0.cpp
 annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_archive_FUN_00498c10.cpp
 annotations/nocturne.exe/pseudocode/src/core/gabriela.cpp/CGabriella_canFireWeapon_FUN_00498af0.cpp
@@ -2295,6 +2299,7 @@ annotations/nocturne.exe/pseudocode/src/engine/winfont.cpp/CWinFont_createTextBa
 annotations/nocturne.exe/pseudocode/src/engine/winfont.cpp/CWinFont_ctor_FUN_00557f50.cpp
 annotations/nocturne.exe/pseudocode/src/engine/winfont.cpp/CWinFont_drawText_FUN_00558060.cpp
 annotations/nocturne.exe/pseudocode/src/engine/winfont.cpp/CWinFont_getLineSpacing_FUN_005587e0.cpp
+annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEdButton_dtor_FUN_00476e70.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEdCheck_calculateBaseWidth_FUN_00477340.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEdCheck_calculateScaledWidth_FUN_00477300.cpp
 annotations/nocturne.exe/pseudocode/src/shape/edittool.cpp/CEdCheck_calculateSpacing_FUN_00477370.cpp

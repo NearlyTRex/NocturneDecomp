@@ -13,6 +13,7 @@
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CInventory.h"
+#include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
@@ -90,7 +91,7 @@ CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 ECollisionType __cdecl core_frankgen_cpp_CFrankenstienMachine_getCollisionType_FUN_00495400(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_frankgen_cpp_FUN_00495410(void);
+int __cdecl core_frankgen_cpp_getFrameCount_FUN_00495410(CKeyFramedModel *model_ptr);
 undefined4 core_frankgen_cpp_FUN_00495420(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_00495430(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004954a0(void);

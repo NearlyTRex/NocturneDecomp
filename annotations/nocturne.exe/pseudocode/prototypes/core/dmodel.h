@@ -7,9 +7,9 @@
 // Address: 00452530
 void __cdecl staticInit(void);
 
-// Original: core_dmodel.cpp_FUN_00452560
+// Original: core_dmodel.cpp_skipLines_FUN_00452560
 // Address: 00452560
-void FUN_00452560(_FILE *param_1,int param_2);
+void __cdecl skipLines(_FILE *file_handle,int line_count);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590
 // Address: 00452590

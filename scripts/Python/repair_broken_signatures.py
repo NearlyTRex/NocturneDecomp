@@ -137,6 +137,13 @@ def main():
     finally:
         project.close()
 
+    # os._exit skips atexit AND the stdio flush. Without this, a redirected run
+    # (pipe or file -> block-buffered stdout) discards the entire report and
+    # exits 0, which reads as "nothing was broken". Flush before exiting; the
+    # hard exit itself has to stay, since a lingering JVM thread would hang a
+    # normal interpreter shutdown.
+    sys.stdout.flush()
+    sys.stderr.flush()
     os._exit(0 if not still else 1)
 
 

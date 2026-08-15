@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 4921
-Clean functions: 2510 (51.0%)
-Functions with suspects: 2411 (49.0%)
+Clean functions: 2515 (51.1%)
+Functions with suspects: 2406 (48.9%)
 
-Total suspect patterns: 21463
+Total suspect patterns: 21431
 Average suspects per function: 4.36
 
 Virtual files: 203 total, 10 at 100%, 12 at 90%+
@@ -18,7 +18,7 @@ Virtual files: 203 total, 10 at 100%, 12 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3328, Average: 44.5
 
-Average complexity score: 92.3
+Average complexity score: 92.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -33,15 +33,15 @@ SUSPECT PATTERN BREAKDOWN
   pointer_truncation        2872
   unrolled_memcpy           1473
   warning_overlapping_globals 877
-  unnamed_param             850
-  stack_param               815
+  unnamed_param             824
+  stack_param               811
   unknown_field             700
   concat_reconstruction     664
   shadow_pointer_walk       542
   unrolled_strcpy           483
   negative_offset           459
   stack_ref                 458
-  static_uninitvar          409
+  static_uninitvar          408
   unaffected_reg            408
   nonstandard_int           270
   raw_address_constant      267
@@ -68,8 +68,8 @@ SUSPECT PATTERN BREAKDOWN
   alloc_magic_size          26
   eflags_input              26
   sign_compare_idiom        22
-  param_count_too_few       21
   extra_output              21
+  param_count_too_few       20
   signed_shift_global_idiom 17
   static_invalid_pointer_cast 12
   fast_sqrt_inline          12
@@ -159,7 +159,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00414e60: core_battery.cpp_CBattery_process_FUN_00414e60 (4 lines)
   00414f40: core_battery.cpp_CBattery_getCollisionType_FUN_00414f40 (4 lines)
   00415040: core_beast.cpp_CBeast_getActorType_FUN_00415040 (4 lines)
-  ... and 2460 more
+  ... and 2465 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -262,7 +262,7 @@ FUNCTIONS BY SUSPECT TYPE
     00406230: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230
     ... and 867 more
 
-  unnamed_param (70 functions):
+  unnamed_param (64 functions):
     0040e2e1: core_actor.cpp_FUN_0040e2e1
     0040e2f1: core_actor.cpp_FUN_0040e2f1
     00412080: core_bat.cpp_FUN_00412080
@@ -273,9 +273,9 @@ FUNCTIONS BY SUSPECT TYPE
     0042ee00: cockpit_ckptutil.c_FUN_0042ee00
     00430210: cockpit_ckptutil.c_FUN_00430210
     004303d0: cockpit_ckptutil.c_FUN_004303d0
-    ... and 60 more
+    ... and 54 more
 
-  stack_param (112 functions):
+  stack_param (110 functions):
     004013d0: engine_2d.c_drawAntialiasedChar_FUN_004013d0
     00405870: engine_3d.c_drawLineStrip2D_FUN_00405870
     00405900: engine_3d.c_drawLineStrip3D_FUN_00405900
@@ -286,7 +286,7 @@ FUNCTIONS BY SUSPECT TYPE
     0041ceb0: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     00423d20: core_bugs.cpp_FUN_00423d20
     00429220: core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220
-    ... and 102 more
+    ... and 100 more
 
   unknown_field (119 functions):
     00403fb0: engine_2d.c_getInputWithPrompt_FUN_00403fb0
@@ -662,7 +662,13 @@ FUNCTIONS BY SUSPECT TYPE
     004fa2e0: engine_prim.c_FUN_004fa2e0
     ... and 1 more
 
-  param_count_too_few (21 functions):
+  extra_output (4 functions):
+    0051f080: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080
+    0052d790: core_sound.cpp_FUN_0052d790
+    0054e4a0: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+    0055d2d0: core_xform.cpp_slerpQuaternion_FUN_0055d2d0
+
+  param_count_too_few (20 functions):
     0041ceb0: core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     0044ed80: core_dlight.cpp_FUN_0044ed80
     0044f9b0: core_dlight.cpp_FUN_0044f9b0
@@ -673,13 +679,7 @@ FUNCTIONS BY SUSPECT TYPE
     0045ddd0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0045ddd0
     0045dea0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0
     0045df80: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0045df80
-    ... and 11 more
-
-  extra_output (4 functions):
-    0051f080: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080
-    0052d790: core_sound.cpp_FUN_0052d790
-    0054e4a0: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-    0055d2d0: core_xform.cpp_slerpQuaternion_FUN_0055d2d0
+    ... and 10 more
 
   signed_shift_global_idiom (9 functions):
     00452110: core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110

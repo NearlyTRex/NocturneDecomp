@@ -3,10 +3,6 @@
 // Function prototypes for engine/drender.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_drender.cpp_FUN_004574e0
-// Address: 004574e0
-void FUN_004574e0(int param_1);
-
 // Original: engine_drender.cpp_FUN_004579c0
 // Address: 004579c0
 int * FUN_004579c0(int param_1,int *param_2);
@@ -191,9 +187,9 @@ void __cdecl CDemonRenderer::setLightIntensity(CDemonRenderer *this_ptr,float in
 // Address: 00460c70
 void __cdecl CDemonRenderer::setLightDirection(CDemonRenderer *this_ptr,CVector3i *direction);
 
-// Original: engine_drender.cpp_FUN_00460c90
+// Original: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90
 // Address: 00460c90
-void FUN_00460c90(undefined4 param_1,float *param_2);
+void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_ptr,CVector3f *light_direction);
 
 // Original: engine_drender.cpp_FUN_00460d10
 // Address: 00460d10

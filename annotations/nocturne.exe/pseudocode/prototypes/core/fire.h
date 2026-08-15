@@ -503,9 +503,9 @@ CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *this_ptr);
 // Address: 0048c930
 void __cdecl CBulletTrail::reset(CBulletTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_0048c940
+// Original: core_fire.cpp_CSmokeParticle_deactivate_FUN_0048c940
 // Address: 0048c940
-void FUN_0048c940(undefined4 *param_1);
+void __cdecl CSmokeParticle::deactivate(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CRainDrop_ctor_FUN_0048c960
 // Address: 0048c960

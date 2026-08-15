@@ -823,6 +823,21 @@
    "sig_detail": "callers pop 4 == 4 stack bytes"
   },
   {
+   "a": "00402860",
+   "b": "00403460",
+   "name": "engine_2d.c_loadLightTable_FUN_00402860",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:engine_2d.c_loadLightTable_FUN_00402860. same TU and same na"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
    "a": "00402870",
    "b": "00403570",
    "name": "engine_2d.c_buildColorLookupTable_FUN_00402870",
@@ -2580,6 +2595,7 @@
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00661174<->005a03f4 forced",
     "vtable_order:0065cf84<->0059c5e4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:0065e684<->0059db84 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
@@ -2942,7 +2958,7 @@
     "vtable_order:0065a784<->0059b8a4 forced",
     "vtable_order:0065cf84<->0059c5e4 forced",
     "vtable_order:0065d684<->0059cc74 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:0065e684<->0059db84 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
@@ -3070,7 +3086,7 @@
     "vtable_order:0065a784<->0059b8a4 forced",
     "vtable_order:0065cf84<->0059c5e4 forced",
     "vtable_order:0065d684<->0059cc74 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:0065e684<->0059db84 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
@@ -3158,7 +3174,7 @@
     "vtable:00664a24<->0059be64 strict",
     "vtable:00659d34<->005997b4 strict",
     "vtable:0065a934<->0059a2f4 strict",
-    "vtable:0065bf34<->0059be64 strict",
+    "vtable:0065bf34<->0059b734 strict",
     "vtable:0065d534<->0059cb34 strict",
     "vtable:0065e034<->0059be64 strict",
     "vtable:0065fb34<->0059b8a4 strict",
@@ -3174,7 +3190,7 @@
     "vtable:0065ed44<->0059b8a4 strict",
     "vtable:0065f844<->0059ec84 strict",
     "vtable:00661044<->0059be64 strict",
-    "vtable:00661944<->0059b8a4 strict",
+    "vtable:00661944<->005a0ac4 strict",
     "vtable:00663944<->0059b8a4 strict",
     "vtable:0065a354<->00599d74 strict",
     "vtable:0065bd54<->0059b8a4 strict",
@@ -3198,7 +3214,7 @@
     "vtable:0065a784<->0059b8a4 strict",
     "vtable:0065cf84<->0059be64 strict",
     "vtable:0065d684<->0059be64 strict",
-    "vtable:0065e284<->0059be64 strict",
+    "vtable:0065e284<->0059d7b4 strict",
     "vtable:0065e684<->0059be64 strict",
     "vtable:00662a84<->005a1af4 strict",
     "vtable:00662f84<->005a1fb4 strict",
@@ -3417,6 +3433,21 @@
    "sig_detail": "no conclusive measurement; wants 8 (pop 0, push 4, store None)"
   },
   {
+   "a": "004098c0",
+   "b": "0040ab30",
+   "name": "core_actor.cpp_CDemonActor_updateCollisionData_FUN_004098c0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_actor.cpp_CDemonActor_updateCollisionData_FUN_004098c0."
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
    "a": "00409930",
    "b": "0040ab70",
    "name": "core_actor.cpp_draw3DPointMarker_FUN_00409930",
@@ -3438,13 +3469,34 @@
    "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065ac24<->0059a5b4 forced",
+    "vtable_order:0065b424<->0059e224 forced",
+    "vtable_order:00661424<->005a05f4 forced",
     "vtable_order:00659d34<->005997b4 forced",
+    "vtable_order:00660734<->0059fa84 forced",
+    "vtable_order:0065ca44<->0059c0f4 forced",
     "vtable_order:0065ea44<->0059df54 forced",
+    "vtable_order:0065ed44<->0059e224 forced",
+    "vtable_order:00663944<->0059b8a4 forced",
+    "vtable_order:0065aa64<->0059a414 forced",
+    "vtable_order:0065af74<->0059a8b4 forced",
+    "vtable_order:00664474<->005a3104 forced",
+    "vtable_order:0065a784<->0059b8a4 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
+    "vtable_order:00665784<->0059e224 forced",
+    "vtable_order:0065cd94<->0059c414 forced",
+    "vtable_order:00661794<->005a0934 forced",
     "vtable_order:00662694<->005a1754 forced",
     "vtable_order:00664e94<->005a3a94 forced",
+    "vtable_order:0065c0b4<->0059b8a4 forced",
     "vtable_order:0065a5c4<->00599fc4 forced",
+    "vtable_order:0065d0c4<->0059e224 forced",
+    "vtable_order:0065d7d4<->0059cdb4 forced",
+    "vtable_order:00664cd4<->005a38f4 forced",
+    "vtable_order:0065b5e4<->0059aec4 forced",
+    "vtable_order:0065fce4<->0059e224 forced",
     "vtable_order:006659e4<->005a4554 forced",
+    "vtable_order:006601f4<->0059f584 forced",
     "order_multi:core_actor.cpp between 00409930 and 00409ec0"
    ],
    "shape_agreement": "similar_size",
@@ -3565,7 +3617,7 @@
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00661174<->005a03f4 forced",
     "vtable_order:00664674<->0059d8f4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -3701,7 +3753,7 @@
     "vtable_order:00664474<->005a3104 forced",
     "vtable_order:00664674<->0059d8f4 forced",
     "vtable_order:0065a784<->0059b8a4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
     "vtable_order:00663784<->005a2744 forced",
@@ -3784,7 +3836,7 @@
     "vtable_order:0065c264<->0059ba34 forced",
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00664674<->0059d8f4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -4479,7 +4531,7 @@
     "vtable_order:00664074<->005a2d44 forced",
     "vtable_order:00664674<->0059d8f4 forced",
     "vtable_order:0065a784<->0059b8a4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
     "vtable_order:00663784<->005a2744 forced",
@@ -4872,6 +4924,36 @@
    "shape_agreement": "identical",
    "conv": "__cdecl",
    "ret": "float",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00410420",
+   "b": "0040e220",
+   "name": "core_actor.cpp_SDamageInfo_dtor_FUN_00410420",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_actor.cpp_SDamageInfo_dtor_FUN_00410420. same TU and sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SDamageInfo*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "00410430",
+   "b": "0040e230",
+   "name": "core_actor.cpp_CBoundingBox3D_ctor_FUN_00410430",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_actor.cpp_CBoundingBox3D_ctor_FUN_00410430. same TU and"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CBoundingBox3D*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
@@ -7217,7 +7299,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "order_multi:core_batman.cpp between 004163e0 and 00416870"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -7232,7 +7314,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "order_multi:core_batman.cpp between 004163e0 and 00416870"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -7247,7 +7329,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "order_multi:core_batman.cpp between 004163e0 and 00416870"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7259,10 +7341,11 @@
    "a": "00416510",
    "b": "004134a0",
    "name": "core_batman.cpp_CBatman_setup_FUN_00416510",
-   "confidence": 0.78,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "vtable_order:0065a784<->0059a164 forced",
+    "order_multi:core_batman.cpp between 004163e0 and 00416870"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7274,10 +7357,12 @@
    "a": "004167f0",
    "b": "00413780",
    "name": "core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0",
-   "confidence": 0.78,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "callsite:via 00416870",
+    "callsite:via 00416870",
+    "order_multi:core_batman.cpp between 004163e0 and 00416870"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7289,12 +7374,10 @@
    "a": "00416870",
    "b": "00413800",
    "name": "core_batman.cpp_CBatman_process_FUN_00416870",
-   "confidence": 0.89,
+   "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 004c7b20",
-    "caller:calls 004297e0",
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "caller:calls 004c7b20"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7306,14 +7389,15 @@
    "a": "004173b0",
    "b": "00414340",
    "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0",
-   "confidence": 0.89,
+   "confidence": 0.955,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065a784<->0059a164 forced",
     "caller:calls 0048ce00",
     "caller:calls 0048ca70",
     "caller:calls 00429aa0",
     "caller:calls 0052e700",
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "order_multi:core_batman.cpp between 00416870 and 00417660"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -7328,7 +7412,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_batman.cpp between 004163e0 and 00417660"
+    "order_multi:core_batman.cpp between 00416870 and 00417660"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7355,9 +7439,10 @@
    "a": "004179a0",
    "b": "00414930",
    "name": "core_batman.cpp_CBatman_processDamage_FUN_004179a0",
-   "confidence": 0.75,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065a784<->0059a164 forced",
     "caller:calls 00417660"
    ],
    "shape_agreement": "same_mnemonics",
@@ -7370,10 +7455,10 @@
    "a": "00417bb0",
    "b": "00414b40",
    "name": "core_batman.cpp_CBatman_getTargetPoints_FUN_00417bb0",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order:core_batman.cpp between 004179a0 and 00417cb0"
+    "vtable_order:0065a784<->0059a164 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7385,9 +7470,10 @@
    "a": "00417cb0",
    "b": "00414c40",
    "name": "core_batman.cpp_CBatman_getCollisionType_FUN_00417cb0",
-   "confidence": 0.75,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065a784<->0059a164 forced",
     "caller:calls 0042bc20"
    ],
    "shape_agreement": "same_mnemonics",
@@ -7764,11 +7850,11 @@
    "a": "004183a0",
    "b": "004151d0",
    "name": "core_beast.cpp_CBeast_getDeathState_FUN_004183a0",
-   "confidence": 0.91,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065aa64<->0059a414 forced",
-    "order_multi:core_beast.cpp between 00418380 and 00418400"
+    "order:core_beast.cpp between 00418380 and 004183b0"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -7780,10 +7866,10 @@
    "a": "004183b0",
    "b": "004151e0",
    "name": "core_beast.cpp_CBeast_getTargetPoints_FUN_004183b0",
-   "confidence": 0.78,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_beast.cpp between 00418380 and 00418400"
+    "vtable_order:0065aa64<->0059a414 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7904,7 +7990,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065ac24<->0059a5b4 forced",
-    "order_multi:core_biggs.cpp between 00418680 and 00418c60"
+    "order_multi:core_biggs.cpp between 00418680 and 00418c10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7920,7 +8006,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065ac24<->0059a5b4 forced",
-    "order_multi:core_biggs.cpp between 00418680 and 00418c60"
+    "order_multi:core_biggs.cpp between 00418680 and 00418c10"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -7935,7 +8021,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_biggs.cpp between 00418680 and 00418c60"
+    "order_multi:core_biggs.cpp between 00418680 and 00418c10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7951,7 +8037,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065ac24<->0059a5b4 forced",
-    "order_multi:core_biggs.cpp between 00418680 and 00418c60"
+    "order_multi:core_biggs.cpp between 00418680 and 00418c10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -7963,10 +8049,10 @@
    "a": "00418c10",
    "b": "004159c0",
    "name": "core_biggs.cpp_CBiggs_getTargetPoints_FUN_00418c10",
-   "confidence": 0.78,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_biggs.cpp between 00418680 and 00418c60"
+    "vtable_order:0065ac24<->0059a5b4 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -8892,7 +8978,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_boneguy.cpp between 0041d270 and 0041d680"
+    "order_multi:core_boneguy.cpp between 0041d270 and 0041d550"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -8909,7 +8995,7 @@
    "evidence": [
     "vtable_order:0065af74<->0059a8b4 forced",
     "caller:calls 0041d680",
-    "order_multi:core_boneguy.cpp between 0041d270 and 0041d680"
+    "order_multi:core_boneguy.cpp between 0041d270 and 0041d550"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -8921,10 +9007,10 @@
    "a": "0041d550",
    "b": "00419fc0",
    "name": "core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_0041d550",
-   "confidence": 0.78,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_boneguy.cpp between 0041d270 and 0041d680"
+    "vtable_order:0065af74<->0059a8b4 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -10192,10 +10278,10 @@
    "a": "00424560",
    "b": "00420970",
    "name": "core_bride.cpp_CBride_archive_FUN_00424560",
-   "confidence": 0.78,
+   "confidence": 0.85,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_bride.cpp between 00423a30 and 00424830"
+    "order:core_bride.cpp between 00423a30 and 00424600"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -10207,15 +10293,12 @@
    "a": "00424600",
    "b": "00420a10",
    "name": "core_bride.cpp_CBride_processDismemberment_FUN_00424600",
-   "confidence": 0.9625,
+   "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 00424830",
-    "caller:calls 0040cd10",
     "caller:calls 00418e10",
     "caller:calls 0042bd30",
-    "caller:calls 0042f300",
-    "order_multi:core_bride.cpp between 00423a30 and 00424830"
+    "caller:calls 0042f300"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -10242,10 +10325,10 @@
    "a": "00424a10",
    "b": "00420e20",
    "name": "core_bride.cpp_CBride_getTargetPoints_FUN_00424a10",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order:core_bride.cpp between 00424830 and 00424aa0"
+    "vtable_order:0065b424<->0059ad24 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -12066,7 +12149,7 @@
     "vtable_order:0065f974<->0059eda4 forced",
     "vtable_order:00664074<->005a2d44 forced",
     "vtable_order:00664474<->005a3104 forced",
-    "vtable_order:0065a784<->0059b8a4 forced",
+    "vtable_order:0065a784<->0059a164 forced",
     "vtable_order:00662f84<->005a1fb4 forced",
     "vtable_order:00663784<->005a2744 forced",
     "vtable_order:00665784<->0059b8a4 forced",
@@ -15958,11 +16041,10 @@
    "a": "00441c60",
    "b": "0043b020",
    "name": "core_conveyor.cpp_factoryFuncConveyor_FUN_00441c60",
-   "confidence": 0.89,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 00441ca0",
-    "order_multi:core_conveyor.cpp between 00441c30 and 00441ca0"
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -15977,7 +16059,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_conveyor.cpp between 00441c30 and 00441ca0"
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -15989,10 +16071,10 @@
    "a": "00441ca0",
    "b": "0043b050",
    "name": "core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0",
-   "confidence": 0.75,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 0054c850"
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16004,10 +16086,10 @@
    "a": "00441d60",
    "b": "0043b110",
    "name": "core_conveyor.cpp_CConveyor_setup_FUN_00441d60",
-   "confidence": 0.75,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 0054ca20"
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16019,11 +16101,10 @@
    "a": "00441df0",
    "b": "0043b1a0",
    "name": "core_conveyor.cpp_CConveyor_process_FUN_00441df0",
-   "confidence": 0.925,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065bf34<->0059b734 forced",
-    "order:core_conveyor.cpp between 00441d60 and 00441f40"
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16035,16 +16116,32 @@
    "a": "00441f40",
    "b": "0043b2f0",
    "name": "core_conveyor.cpp_CConveyor_renderOpaque_FUN_00441f40",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "ambiguous": false,
    "evidence": [
-    "vtable:0065bf34<->0059b734 strict"
+    "vtable:0065bf34<->0059b734 strict",
+    "order_multi:core_conveyor.cpp between 00441c30 and 00441f50"
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
    "ret": "int",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00441f50",
+   "b": "0043b300",
+   "name": "core_conveyor.cpp_CConveyor_renderBackground_FUN_00441f50",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_conveyor.cpp_CConveyor_renderBackground_FUN_00441f50. s"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "00442020",
@@ -16080,16 +16177,16 @@
    "a": "004420d0",
    "b": "0043b3c0",
    "name": "core_conveyor.cpp_CConveyor_getBoundingBox_FUN_004420d0",
-   "conv": "__cdecl",
-   "ret": "CBoundingBox3D*",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:0065bf34<->0059b734 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "CBoundingBox3D*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "00442310",
@@ -16328,7 +16425,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_cow.cpp between 00444310 and 00444b40"
+    "order_multi:core_cow.cpp between 00444310 and 00444c00"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16340,12 +16437,10 @@
    "a": "004448c0",
    "b": "0043c360",
    "name": "core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0",
-   "confidence": 0.9625,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 00444b40",
-    "caller:calls 0042bcc0",
-    "order_multi:core_cow.cpp between 00444310 and 00444b40"
+    "order_multi:core_cow.cpp between 00444310 and 00444c00"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16357,10 +16452,11 @@
    "a": "00444b40",
    "b": "0043c5e0",
    "name": "core_cow.cpp_CZombieCow_processDamage_FUN_00444b40",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065c0b4<->0059b8a4 forced"
+    "vtable_order:0065c0b4<->0059b8a4 forced",
+    "order_multi:core_cow.cpp between 00444310 and 00444c00"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -16372,16 +16468,16 @@
    "a": "00444c00",
    "b": "0043c6a0",
    "name": "core_cow.cpp_CZombieCow_getTargetPoints_FUN_00444c00",
-   "conv": "__cdecl",
-   "ret": "int",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:0065c0b4<->0059b8a4 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "00444cd0",
@@ -16635,9 +16731,10 @@
    "a": "004489d0",
    "b": "0043cd10",
    "name": "core_crate.cpp_CCrate_getTargetPoints_FUN_004489d0",
-   "confidence": 0.78,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065c264<->0059ba34 forced",
     "order_multi:core_crate.cpp between 00448960 and 00448a70"
    ],
    "shape_agreement": "same_mnemonics",
@@ -20247,6 +20344,21 @@
    "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
+   "a": "00476c80",
+   "b": "00452560",
+   "name": "core_dmodel.cpp_skipLines_FUN_00476c80",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_dmodel.cpp_skipLines_FUN_00476c80. byte-identical body."
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
    "a": "00476cf0",
    "b": "00452590",
    "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0",
@@ -20676,6 +20788,36 @@
    "sig_detail": "callers pop 8 == 8 stack bytes"
   },
   {
+   "a": "0047eef0",
+   "b": "004545c0",
+   "name": "core_dmodel.cpp_CDemonTriangle_ctor_FUN_0047eef0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_dmodel.cpp_CDemonTriangle_ctor_FUN_0047eef0. same TU an"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonTriangle*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "0047ef00",
+   "b": "004545d0",
+   "name": "core_dmodel.cpp_CDemonTriangle_dtor_FUN_0047ef00",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_dmodel.cpp_CDemonTriangle_dtor_FUN_0047ef00. same TU an"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonTriangle*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
    "a": "0047efc0",
    "b": "004545e0",
    "name": "core_dmodel.cpp_CKeyFramedModel_arrdtor_FUN_0047efc0",
@@ -20783,10 +20925,10 @@
    "a": "0047f7b0",
    "b": "00454dc0",
    "name": "core_dog.cpp_CZombieDog_archive_FUN_0047f7b0",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order:core_dog.cpp between 0047f140 and 0047f820"
+    "order_multi:core_dog.cpp between 0047f140 and 0047f8d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -20798,10 +20940,11 @@
    "a": "0047f820",
    "b": "00454e30",
    "name": "core_dog.cpp_CZombieDog_processDamage_FUN_0047f820",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065ca44<->0059c0f4 forced"
+    "vtable_order:0065ca44<->0059c0f4 forced",
+    "order_multi:core_dog.cpp between 0047f140 and 0047f8d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -20813,16 +20956,16 @@
    "a": "0047f8d0",
    "b": "00454ee0",
    "name": "core_dog.cpp_CZombieDog_getTargetPoints_FUN_0047f8d0",
-   "conv": "__cdecl",
-   "ret": "int",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:0065ca44<->0059c0f4 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "0047f9a0",
@@ -21706,7 +21849,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "order_multi:core_dracbrid.cpp between 00483ef0 and 00484410"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -21721,7 +21864,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "order_multi:core_dracbrid.cpp between 00483ef0 and 00484410"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -21736,7 +21879,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "order_multi:core_dracbrid.cpp between 00483ef0 and 00484410"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21752,7 +21895,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065cd94<->0059c414 forced",
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "order_multi:core_dracbrid.cpp between 00483ef0 and 00484410"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21764,11 +21907,10 @@
    "a": "00484410",
    "b": "00458a90",
    "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
-   "confidence": 0.91,
+   "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065cd94<->0059c414 forced",
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "caller:calls 004c8ef0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21780,10 +21922,11 @@
    "a": "004858f0",
    "b": "00459f70",
    "name": "core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0",
-   "confidence": 0.78,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "callsite:via 00484410",
+    "order_multi:core_dracbrid.cpp between 00484410 and 00485bc0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21798,7 +21941,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_dracbrid.cpp between 00483ef0 and 00485bc0"
+    "order_multi:core_dracbrid.cpp between 00484410 and 00485bc0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21825,10 +21968,11 @@
    "a": "00485be0",
    "b": "0045a260",
    "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065cd94<->0059c414 forced"
+    "vtable_order:0065cd94<->0059c414 forced",
+    "order_multi:core_dracbrid.cpp between 00485bc0 and 00486360"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -21840,10 +21984,11 @@
    "a": "00485dd0",
    "b": "0045a450",
    "name": "core_dracbrid.cpp_CDraculaBride_archive_FUN_00485dd0",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065cd94<->0059c414 forced"
+    "vtable_order:0065cd94<->0059c414 forced",
+    "order_multi:core_dracbrid.cpp between 00485bc0 and 00486360"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21855,11 +22000,10 @@
    "a": "00486020",
    "b": "0045a6a0",
    "name": "core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00486020",
-   "confidence": 0.925,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 00486070",
-    "order:core_dracbrid.cpp between 00485dd0 and 00486070"
+    "order_multi:core_dracbrid.cpp between 00485bc0 and 00486360"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21871,10 +22015,12 @@
    "a": "00486070",
    "b": "0045a6f0",
    "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070",
-   "confidence": 0.82,
+   "confidence": 0.955,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065cd94<->0059c414 forced"
+    "vtable_order:0065cd94<->0059c414 forced",
+    "caller:calls 004864c0",
+    "order_multi:core_dracbrid.cpp between 00485bc0 and 00486360"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21886,10 +22032,11 @@
    "a": "00486320",
    "b": "0045a9a0",
    "name": "core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_00486320",
-   "confidence": 0.82,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065cd94<->0059c414 forced"
+    "vtable_order:0065cd94<->0059c414 forced",
+    "order_multi:core_dracbrid.cpp between 00485bc0 and 00486360"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21901,10 +22048,10 @@
    "a": "00486360",
    "b": "0045a9e0",
    "name": "core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360",
-   "confidence": 0.8,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "shape_relaxed:c33f1b6d"
+    "vtable_order:0065cd94<->0059c414 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -21931,9 +22078,10 @@
    "a": "004869a0",
    "b": "0045b020",
    "name": "core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0",
-   "confidence": 0.75,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
+    "callsite:via 00484410",
     "caller:calls 005b9490",
     "caller:calls 005b92d0",
     "caller:calls 005b90a0"
@@ -24107,10 +24255,10 @@
    "a": "0048c670",
    "b": "00460c26",
    "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order:engine_drender.cpp between 0048c650 and 0048c690"
+    "order_multi:engine_drender.cpp between 0048c650 and 0048c6e0"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -24122,10 +24270,10 @@
    "a": "0048c690",
    "b": "00460c40",
    "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 0056a190"
+    "order_multi:engine_drender.cpp between 0048c650 and 0048c6e0"
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
@@ -24137,16 +24285,31 @@
    "a": "0048c6c0",
    "b": "00460c70",
    "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 0056a190"
+    "order_multi:engine_drender.cpp between 0048c650 and 0048c6e0"
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 8 == 8 stack bytes"
+  },
+  {
+   "a": "0048c6e0",
+   "b": "00460c90",
+   "name": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLigh"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "0048c760",
@@ -25043,16 +25206,16 @@
    "a": "0048f4d0",
    "b": "004632c0",
    "name": "core_drone.cpp_CDrone_getTargetPoints_FUN_0048f4d0",
-   "conv": "__cdecl",
-   "ret": "int",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:0065d0c4<->0059c714 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "0048f5a0",
@@ -26555,6 +26718,36 @@
    "ret": "CDemonTriangle*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "0049cbb0",
+   "b": "0046e9d0",
+   "name": "core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0. closed bra"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
+  },
+  {
+   "a": "0049cbc0",
+   "b": "0046e9e0",
+   "name": "core_dtri.cpp_getClippedVertices_FUN_0049cbc0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_dtri.cpp_getClippedVertices_FUN_0049cbc0. closed bracke"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CVector3f*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
    "a": "0049cbd0",
@@ -28445,6 +28638,36 @@
    "sig_detail": "callers pop 0 == 0 stack bytes"
   },
   {
+   "a": "004a6510",
+   "b": "00476e70",
+   "name": "shape_edittool.cpp_CEdButton_dtor_FUN_004a6510",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:shape_edittool.cpp_CEdButton_dtor_FUN_004a6510. byte-identic"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "CEdButton*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "004a6530",
+   "b": "00476e90",
+   "name": "shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
    "a": "004a6550",
    "b": "00476eb0",
    "name": "shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_004a6550",
@@ -29213,9 +29436,13 @@
    "a": "004a97c0",
    "b": "00479820",
    "name": "core_enemy.cpp_CEnemy_getTargetPoints_FUN_004a97c0",
-   "confidence": 0.78,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:00661424<->005a05f4 forced",
+    "vtable_order:00664474<->005a3104 forced",
+    "vtable_order:0065d7d4<->0059cdb4 forced",
+    "vtable_order:0065b5e4<->0059aec4 forced",
     "order_multi:core_enemy.cpp between 004a9500 and 004a9a50"
    ],
    "shape_agreement": "same_mnemonics",
@@ -32695,6 +32922,21 @@
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
   {
+   "a": "004c9470",
+   "b": "0048c940",
+   "name": "core_fire.cpp_CSmokeParticle_deactivate_FUN_004c9470",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_fire.cpp_CSmokeParticle_deactivate_FUN_004c9470. byte-i"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
    "a": "004c9490",
    "b": "0048c960",
    "name": "core_fire.cpp_CRainDrop_ctor_FUN_004c9490",
@@ -33875,10 +34117,10 @@
    "a": "004cb580",
    "b": "0048e790",
    "name": "core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004cb580",
-   "confidence": 0.78,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_flamecan.cpp between 004cb550 and 004cb680"
+    "vtable_order:0065e144<->0059d684 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -33890,10 +34132,10 @@
    "a": "004cb620",
    "b": "0048e830",
    "name": "core_flamecan.cpp_CFlameCan_archive_FUN_004cb620",
-   "confidence": 0.78,
+   "confidence": 0.85,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_flamecan.cpp between 004cb550 and 004cb680"
+    "order:core_flamecan.cpp between 004cb580 and 004cb680"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -33968,7 +34210,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_flamegun.cpp between 004cb810 and 004cb9b0"
+    "order_multi:core_flamegun.cpp between 004cb810 and 004cbab0"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
@@ -33983,7 +34225,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_flamegun.cpp between 004cb810 and 004cb9b0"
+    "order_multi:core_flamegun.cpp between 004cb810 and 004cbab0"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -33995,11 +34237,10 @@
    "a": "004cb880",
    "b": "0048e9c0",
    "name": "core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880",
-   "confidence": 0.89,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 005ede70",
-    "order_multi:core_flamegun.cpp between 004cb810 and 004cb9b0"
+    "order_multi:core_flamegun.cpp between 004cb810 and 004cbab0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -34011,12 +34252,10 @@
    "a": "004cb920",
    "b": "0048ea60",
    "name": "core_flamegun.cpp_CFlameThrower_fire_FUN_004cb920",
-   "confidence": 0.955,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:0065e284<->0059d7b4 forced",
-    "caller:calls 004c8ef0",
-    "order_multi:core_flamegun.cpp between 004cb810 and 004cb9b0"
+    "order_multi:core_flamegun.cpp between 004cb810 and 004cbab0"
    ],
    "shape_agreement": "size_mismatch",
    "conv": "__cdecl",
@@ -34028,17 +34267,46 @@
    "a": "004cb9b0",
    "b": "0048eb30",
    "name": "core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0",
-   "confidence": 0.75,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 005b3b90",
-    "caller:calls 005ee110"
+    "order_multi:core_flamegun.cpp between 004cb810 and 004cbab0"
    ],
    "shape_agreement": "similar_size",
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "004cbab0",
+   "b": "0048ec60",
+   "name": "core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0. same"
+   ],
+   "shape_agreement": "size_mismatch",
+   "conv": "__cdecl",
+   "ret": "float",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "004cbad0",
+   "b": "0048ec80",
+   "name": "core_flamegun.cpp_CFlameThrower_fireProjectile_FUN_004cbad0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_flamegun.cpp_CFlameThrower_fireProjectile_FUN_004cbad0."
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
   {
    "a": "004cbb00",
@@ -34104,9 +34372,10 @@
    "a": "004cbbc0",
    "b": "0048ed60",
    "name": "core_flashlit.cpp_CFlashlight_ctor_FUN_004cbbc0",
-   "confidence": 0.78,
+   "confidence": 0.89,
    "ambiguous": false,
    "evidence": [
+    "caller:calls 005ede70",
     "order_multi:core_flashlit.cpp between 004cbb50 and 004cbc60"
    ],
    "shape_agreement": "same_mnemonics",
@@ -35505,6 +35774,21 @@
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
+   "a": "004d2880",
+   "b": "00495410",
+   "name": "core_frankgen.cpp_getFrameCount_FUN_004d2880",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_frankgen.cpp_getFrameCount_FUN_004d2880. byte-identical"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
    "a": "004d28a0",
    "b": "00495430",
    "name": "core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004d28a0",
@@ -35663,7 +35947,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d4d80"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35681,7 +35965,7 @@
     "callsite:via 004d2ea0",
     "caller:calls 004f3890",
     "caller:calls 004f38d0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d4d80"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35696,8 +35980,9 @@
    "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
+    "callsite:via 004d4d80",
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d4d80"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35712,8 +35997,9 @@
    "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
+    "callsite:via 004d4d80",
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d4d80"
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
@@ -35730,7 +36016,7 @@
    "evidence": [
     "callsite:via 004d2ea0",
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d4d80"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35742,12 +36028,10 @@
    "a": "004d4d80",
    "b": "00497900",
    "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
-   "confidence": 0.9625,
+   "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 004d2ea0",
-    "caller:calls 0059e0a0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "caller:calls 0059e0a0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35765,7 +36049,7 @@
     "callsite:via 004d2ea0",
     "caller:calls 005f6cc0",
     "caller:calls 005f6c40",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35781,7 +36065,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35797,7 +36081,7 @@
    "ambiguous": false,
    "evidence": [
     "caller:calls 00411700",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35813,7 +36097,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35829,7 +36113,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35845,7 +36129,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35861,7 +36145,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35876,7 +36160,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35892,7 +36176,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065e804<->0059dcf4 forced",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35908,7 +36192,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065e804<->0059dcf4 forced",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35923,7 +36207,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -35939,7 +36223,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 004d2ea0",
-    "order_multi:core_gabriela.cpp between 004d2ea0 and 004d6b30"
+    "order_multi:core_gabriela.cpp between 004d4d80 and 004d6b30"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -37640,16 +37924,16 @@
    "a": "004e8bc0",
    "b": "004ab830",
    "name": "core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0",
-   "conv": "__cdecl",
-   "ret": "int",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:0065ed44<->0059e224 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "004e8f10",
@@ -40406,6 +40690,7 @@
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:00661944<->005a0ac4 forced",
     "vtable_order:0065f6d4<->0059eb34 forced"
    ],
    "shape_agreement": "same_mnemonics",
@@ -41104,10 +41389,10 @@
    "a": "004f78f0",
    "b": "004b98f0",
    "name": "core_hotdemon.cpp_CHotDemon_getTargetPoints_FUN_004f78f0",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order:core_hotdemon.cpp between 004f7720 and 004f79b0"
+    "vtable_order:0065fce4<->0059f0d4 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -41360,10 +41645,11 @@
    "a": "004f8810",
    "b": "004ba740",
    "name": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810",
-   "confidence": 0.85,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 004f80b0"
+    "callsite:via 004f80b0",
+    "caller:calls 0059ff20"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -41736,9 +42022,10 @@
    "a": "004faf40",
    "b": "004bce00",
    "name": "core_imp.cpp_CImp_getTargetPoints_FUN_004faf40",
-   "confidence": 0.78,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:006601f4<->0059f584 forced",
     "order_multi:core_imp.cpp between 004faaf0 and 004fb0f0"
    ],
    "shape_agreement": "same_mnemonics",
@@ -43482,16 +43769,16 @@
    "a": "00503c00",
    "b": "004c54f0",
    "name": "core_larva.cpp_CLarva_getTargetPoints_FUN_00503c00",
-   "conv": "__cdecl",
-   "ret": "int",
-   "confidence": 0.9,
-   "shape_agreement": "same_mnemonics",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)",
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "vtable_slot:relaxed"
-   ]
+    "vtable_order:00660734<->0059fa84 forced"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "00503cc0",
@@ -44232,9 +44519,10 @@
    "a": "00506bc0",
    "b": "004c81a0",
    "name": "core_litecone.cpp_CLightCone_process_FUN_00506bc0",
-   "confidence": 0.78,
+   "confidence": 0.89,
    "ambiguous": false,
    "evidence": [
+    "caller:calls 004adca0",
     "order_multi:core_litecone.cpp between 00506aa0 and 00506c20"
    ],
    "shape_agreement": "same_mnemonics",
@@ -48413,6 +48701,36 @@
    "sig_detail": "callers pop 4 == 4 stack bytes"
   },
   {
+   "a": "00524ef0",
+   "b": "004d9e50",
+   "name": "core_mission.cpp_CDemonMission_ctor_FUN_00524ef0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_mission.cpp_CDemonMission_ctor_FUN_00524ef0. same TU an"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonMission*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00524f00",
+   "b": "004d9e60",
+   "name": "core_mission.cpp_CDemonMission_dtor_FUN_00524f00",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_mission.cpp_CDemonMission_dtor_FUN_00524f00. same TU an"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonMission*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
    "a": "00524f10",
    "b": "004d9e70",
    "name": "core_mmx.c_detectCPUFeatures_FUN_00524f10",
@@ -48710,7 +49028,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_mobster.cpp between 005271c0 and 005279d0"
+    "order_multi:core_mobster.cpp between 005271c0 and 005278d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -48725,7 +49043,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_mobster.cpp between 005271c0 and 005279d0"
+    "order_multi:core_mobster.cpp between 005271c0 and 005278d0"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -48740,7 +49058,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_mobster.cpp between 005271c0 and 005279d0"
+    "order_multi:core_mobster.cpp between 005271c0 and 005278d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -48756,7 +49074,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:00661794<->005a0934 forced",
-    "order_multi:core_mobster.cpp between 005271c0 and 005279d0"
+    "order_multi:core_mobster.cpp between 005271c0 and 005278d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -48768,10 +49086,10 @@
    "a": "005278d0",
    "b": "004dc820",
    "name": "core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0",
-   "confidence": 0.78,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_mobster.cpp between 005271c0 and 005279d0"
+    "vtable_order:00661794<->005a0934 forced"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -49119,6 +49437,36 @@
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
+   "a": "005299d0",
+   "b": "004de750",
+   "name": "core_moloch.cpp_CMoloch_drawWeapon_FUN_005299d0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_moloch.cpp_CMoloch_drawWeapon_FUN_005299d0. same TU and"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "005299e0",
+   "b": "004de760",
+   "name": "core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_005299e0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_005299e0. same TU "
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
   {
    "a": "005299f0",
@@ -55790,13 +56138,10 @@
    "a": "005582c0",
    "b": "004fcff0",
    "name": "core_scat.cpp_CScat_blendLayerAction_FUN_005582c0",
-   "confidence": 0.925,
+   "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 005571f0",
-    "caller:calls 0052e3a0",
-    "caller:calls 0052dd20",
-    "caller:calls 0059eb50"
+    "caller:calls 0052e3a0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -55811,11 +56156,9 @@
    "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 0059f750",
     "caller:calls 005f7a30",
     "caller:calls 005f79f0",
-    "caller:calls 005f77e0",
-    "caller:calls 005f79b0"
+    "caller:calls 005f77e0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -57940,6 +58283,81 @@
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
+   "a": "00571470",
+   "b": "0050ea40",
+   "name": "core_set.cpp_SRoom_ctor_FUN_00571470",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_set.cpp_SRoom_ctor_FUN_00571470. same TU and same name "
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SRoom*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00571480",
+   "b": "0050ea50",
+   "name": "core_set.cpp_SRoom_dtor_FUN_00571480",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_set.cpp_SRoom_dtor_FUN_00571480. same TU and same name "
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SRoom*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "00571490",
+   "b": "0050ea60",
+   "name": "core_set.cpp_SVDBox_ctor_FUN_00571490",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_set.cpp_SVDBox_ctor_FUN_00571490. same TU and same name"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SVDBox*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005714a0",
+   "b": "0050ea70",
+   "name": "core_set.cpp_SVDBox_dtor_FUN_005714a0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_set.cpp_SVDBox_dtor_FUN_005714a0. same TU and same name"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SVDBox*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "005714b0",
+   "b": "0050ea80",
+   "name": "core_set.cpp_C3DSLight_dtor_FUN_005714b0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_set.cpp_C3DSLight_dtor_FUN_005714b0. same TU and same n"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "C3DSLight*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
    "a": "005714c0",
    "b": "0050ea90",
    "name": "core_set.cpp_CVector3f_copy_FUN_005714c0",
@@ -58604,6 +59022,51 @@
    "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "00574750",
+   "b": "00511d20",
+   "name": "core_setcolid.cpp_SCollisionReturnInfo_ctor_FUN_00574750",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_setcolid.cpp_SCollisionReturnInfo_ctor_FUN_00574750. sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SCollisionReturnInfo*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "00574760",
+   "b": "00511d30",
+   "name": "core_setcolid.cpp_SCollisionReturnInfo_dtor_FUN_00574760",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_setcolid.cpp_SCollisionReturnInfo_dtor_FUN_00574760. sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "SCollisionReturnInfo*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "00574790",
+   "b": "00511d60",
+   "name": "core_setdir.cpp_staticInit_FUN_00574790",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_setdir.cpp_staticInit_FUN_00574790. same TU and same na"
+   ],
+   "shape_agreement": "size_mismatch",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
    "a": "00574910",
@@ -61346,6 +61809,21 @@
    "ret": "CBoundingBox3D*",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 8 == 8 stack bytes"
+  },
+  {
+   "a": "005a2050",
+   "b": "0051f920",
+   "name": "core_slew.cpp_staticInit_FUN_005a2050",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_slew.cpp_staticInit_FUN_005a2050. same TU and same name"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
    "a": "005a20b0",
@@ -64594,6 +65072,21 @@
    "sig_detail": "callers pop 4 == 4 stack bytes"
   },
   {
+   "a": "005b0670",
+   "b": "0052c120",
+   "name": "sound_sndwav.cpp_staticInit_FUN_005b0670",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_staticInit_FUN_005b0670. same TU and same n"
+   ],
+   "shape_agreement": "similar_size",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
+  },
+  {
    "a": "005b06c0",
    "b": "0052c130",
    "name": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0",
@@ -64716,6 +65209,186 @@
    "ret": "CWavOutDevice*",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
+   "a": "005b1650",
+   "b": "0052c7b0",
+   "name": "sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_005b1650",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_005b1650. s"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b1660",
+   "b": "0052c7c0",
+   "name": "sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 28 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b1670",
+   "b": "0052c7d0",
+   "name": "sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 52 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b1680",
+   "b": "0052c7e0",
+   "name": "sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 28 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b1690",
+   "b": "0052c7f0",
+   "name": "sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_F"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16a0",
+   "b": "0052c800",
+   "name": "sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_00"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16b0",
+   "b": "0052c810",
+   "name": "sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0. "
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 20 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16c0",
+   "b": "0052c820",
+   "name": "sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0. same"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16d0",
+   "b": "0052c830",
+   "name": "sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0. same"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 16 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16e0",
+   "b": "0052c840",
+   "name": "sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0. sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b16f0",
+   "b": "0052c850",
+   "name": "sound_sndwav.cpp_CWavOutDevice_allocateSfx_FUN_005b16f0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_allocateSfx_FUN_005b16f0. sam"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b1700",
+   "b": "0052c860",
+   "name": "sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700. same "
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
   },
   {
    "a": "005b1710",
@@ -65300,6 +65973,36 @@
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 12 == 12 stack bytes"
+  },
+  {
+   "a": "005b3e00",
+   "b": "0052ee00",
+   "name": "core_sound.cpp_STrainNoise_ctor_FUN_005b3e00",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_sound.cpp_STrainNoise_ctor_FUN_005b3e00. same TU and sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "STrainNoise*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005b3e10",
+   "b": "0052ee10",
+   "name": "core_sound.cpp_STrainNoise_dtor_FUN_005b3e10",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_sound.cpp_STrainNoise_dtor_FUN_005b3e10. same TU and sa"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "STrainNoise*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "005b3e70",
@@ -67084,6 +67787,21 @@
    "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
+   "a": "005baee0",
+   "b": "00534e90",
+   "name": "core_stranger.cpp_blendWeightCallback_FUN_005baee0",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_stranger.cpp_blendWeightCallback_FUN_005baee0. byte-ide"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "float",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 20 (pop None, push None, store None)"
+  },
+  {
    "a": "005bafe0",
    "b": "00534f90",
    "name": "core_stranger.cpp_canPickupObject_FUN_005bafe0",
@@ -67199,6 +67917,7 @@
    "confidence": 0.75,
    "ambiguous": false,
    "evidence": [
+    "caller:calls 005be490",
     "caller:calls 005c4370"
    ],
    "shape_agreement": "similar_size",
@@ -67211,11 +67930,12 @@
    "a": "005bdd20",
    "b": "00537cd0",
    "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
-   "confidence": 0.75,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
     "caller:calls 005c1f00",
-    "caller:calls 005c1f80"
+    "caller:calls 005c1f80",
+    "order:core_stranger.cpp between 005bb960 and 005be430"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -67224,14 +67944,45 @@
    "sig_detail": "callers push 8 == 8 stack bytes"
   },
   {
+   "a": "005be430",
+   "b": "005383e0",
+   "name": "core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005be430",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005be"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "float",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005be490",
+   "b": "00538440",
+   "name": "core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490. i"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "CVector3f*",
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 8 == 8 stack bytes"
+  },
+  {
    "a": "005be520",
    "b": "005384d0",
    "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-   "confidence": 0.75,
+   "confidence": 0.89,
    "ambiguous": false,
    "evidence": [
     "caller:calls 0059f230",
-    "caller:calls 005bfb60"
+    "caller:calls 005bfb60",
+    "order_multi:core_stranger.cpp between 005be490 and 005bfb10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -67246,7 +67997,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_stranger.cpp between 005be520 and 005bfb10"
+    "order_multi:core_stranger.cpp between 005be490 and 005bfb10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -67261,7 +68012,7 @@
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "order_multi:core_stranger.cpp between 005be520 and 005bfb10"
+    "order_multi:core_stranger.cpp between 005be490 and 005bfb10"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -68034,10 +68785,10 @@
    "a": "005c7780",
    "b": "00541830",
    "name": "core_succubus.cpp_CSuccubus_getTargetPoints_FUN_005c7780",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order:core_succubus.cpp between 005c7760 and 005c7790"
+    "vtable_order:00663944<->005a28e4 forced"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -71266,10 +72017,10 @@
    "a": "005e50f0",
    "b": "0054c0e0",
    "name": "core_tvbat.cpp_CTVBat_getTargetPoints_FUN_005e50f0",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
-    "order:core_tvbat.cpp between 005e50d0 and 005e5100"
+    "vtable_order:00664cd4<->005a38f4 forced"
    ],
    "shape_agreement": "unshaped",
    "conv": "__cdecl",
@@ -73228,6 +73979,7 @@
     "vtable_order:0065d534<->0059cb34 forced",
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00661174<->005a03f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:0065f2a4<->0059e744 forced",
     "vtable_order:006655b4<->005a4154 forced",
@@ -73254,7 +74006,7 @@
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00661174<->005a03f4 forced",
     "vtable_order:00664674<->0059d8f4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
     "vtable_order:0065f2a4<->0059e744 forced",
@@ -73293,6 +74045,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:0065d534<->0059cb34 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:0065f2a4<->0059e744 forced",
     "vtable_order:006655b4<->005a4154 forced",
@@ -73320,7 +74073,7 @@
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00661174<->005a03f4 forced",
     "vtable_order:00664674<->0059d8f4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -73363,7 +74116,7 @@
     "vtable_order:0065d534<->0059cb34 forced",
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00664674<->005a32e4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -73390,7 +74143,7 @@
     "vtable_order:0065d534<->0059cb34 forced",
     "vtable_order:00660a64<->0059fd94 forced",
     "vtable_order:00664674<->005a32e4 forced",
-    "vtable_order:0065e284<->0059d8f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -73414,6 +74167,7 @@
    "confidence": 0.82,
    "ambiguous": false,
    "evidence": [
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:0065f2a4<->0059e744 forced"
    ],
    "shape_agreement": "same_mnemonics",
@@ -73446,6 +74200,7 @@
    "evidence": [
     "vtable:0065d534<->0059cb34 strict",
     "vtable:00661174<->005a03f4 strict",
+    "vtable:0065e284<->0059d7b4 strict",
     "vtable:00662a84<->005a1af4 strict",
     "vtable:00664b84<->005a37b4 strict",
     "vtable:0065f2a4<->0059e744 strict",
@@ -73468,6 +74223,7 @@
     "vtable_order:0065d314<->0059c924 forced",
     "vtable_order:0065d534<->0059cb34 forced",
     "vtable_order:00661174<->005a03f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:0065f2a4<->0059e744 forced",
     "vtable_order:00662bd4<->005a1c34 forced",
@@ -73506,6 +74262,7 @@
     "vtable_order:0065d314<->0059c924 forced",
     "vtable_order:0065d534<->0059cb34 forced",
     "vtable_order:00661174<->005a03f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00662a84<->005a1af4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065c394<->0059bb54 forced",
@@ -73574,6 +74331,7 @@
    "ambiguous": false,
    "evidence": [
     "vtable_order:00661174<->005a03f4 forced",
+    "vtable_order:0065e284<->0059d7b4 forced",
     "vtable_order:00664b84<->005a37b4 forced",
     "vtable_order:0065f2a4<->0059e744 forced",
     "vtable_order:006655b4<->005a4154 forced",
@@ -73585,6 +74343,36 @@
    "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005eea80",
+   "b": "00554910",
+   "name": "core_weapon.cpp_CDemonGlobe_ctor_FUN_005eea80",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_weapon.cpp_CDemonGlobe_ctor_FUN_005eea80. same TU and s"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonGlobe*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
+  },
+  {
+   "a": "005eea90",
+   "b": "00554920",
+   "name": "core_weapon.cpp_CDemonGlobe_dtor_FUN_005eea90",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:core_weapon.cpp_CDemonGlobe_dtor_FUN_005eea90. same TU and s"
+   ],
+   "shape_agreement": "unshaped",
+   "conv": "__cdecl",
+   "ret": "CDemonGlobe*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "005eeaa0",
@@ -73822,7 +74610,14 @@
    "ambiguous": false,
    "evidence": [
     "caller:calls 004edbb0",
-    "caller:calls 005240a0"
+    "caller:calls 004286e0",
+    "caller:calls 005240a0",
+    "caller:calls 0042dfc0",
+    "caller:calls 00429870",
+    "caller:calls 0042ca70",
+    "caller:calls 00429820",
+    "caller:calls 004a9880",
+    "caller:calls 004a9fd0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -73950,10 +74745,11 @@
    "a": "005f1df0",
    "b": "00557c70",
    "name": "core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_005f1df0",
-   "confidence": 0.85,
+   "confidence": 0.91,
    "ambiguous": false,
    "evidence": [
-    "order:core_werewolf.cpp between 005f1db0 and 005f1e40"
+    "vtable_order:00665784<->005a4314 forced",
+    "caller:calls 0059fb00"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -74231,6 +75027,21 @@
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
+   "a": "005f2f70",
+   "b": "00558be0",
+   "name": "wincore_winrun.cpp_setValue_FUN_005f2f70",
+   "confidence": 1.0,
+   "ambiguous": false,
+   "evidence": [
+    "manual:wincore_winrun.cpp_setValue_FUN_005f2f70. byte-identical bod"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
   {
    "a": "005f2f90",
@@ -82967,6 +83778,26 @@
    "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0"
   },
   {
+   "a": "00409880",
+   "tu": "core_actor.cpp",
+   "name": "core_actor.cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880"
+  },
+  {
+   "a": "004098a0",
+   "tu": "core_actor.cpp",
+   "name": "core_actor.cpp_CDemonActor_allowBulletHoles_FUN_004098a0"
+  },
+  {
+   "a": "004098e0",
+   "tu": "core_actor.cpp",
+   "name": "core_actor.cpp_CDemonActor_getTargetPoints_FUN_004098e0"
+  },
+  {
+   "a": "00409900",
+   "tu": "core_actor.cpp",
+   "name": "core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409900"
+  },
+  {
    "a": "00409f20",
    "tu": "core_actor.cpp",
    "name": "core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20"
@@ -83537,6 +84368,11 @@
    "name": "core_colonel.cpp_CColonel_addFilesToExtract_FUN_00440630"
   },
   {
+   "a": "00441f60",
+   "tu": "core_conveyor.cpp",
+   "name": "core_conveyor.cpp_CConveyor_renderTransparent_FUN_00441f60"
+  },
+  {
    "a": "00448b20",
    "tu": "core_crate.cpp",
    "name": "core_crate.cpp_CCrate_getPropertyList_FUN_00448b20"
@@ -83575,6 +84411,166 @@
    "a": "00470510",
    "tu": "core_dfilter.cpp",
    "name": "core_dfilter.cpp_CDemonFilter_save_FUN_00470510"
+  },
+  {
+   "a": "00476cb0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_clampTextureCoordinate_FUN_00476cb0"
+  },
+  {
+   "a": "00478e10",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10"
+  },
+  {
+   "a": "00479260",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260"
+  },
+  {
+   "a": "00479330",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330"
+  },
+  {
+   "a": "00479f30",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30"
+  },
+  {
+   "a": "0047a3b0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_createSinglePart_FUN_0047a3b0"
+  },
+  {
+   "a": "0047a3e0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0"
+  },
+  {
+   "a": "0047a820",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820"
+  },
+  {
+   "a": "0047aa00",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00"
+  },
+  {
+   "a": "0047aa30",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30"
+  },
+  {
+   "a": "0047ada0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0"
+  },
+  {
+   "a": "0047b170",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_safeAcos_FUN_0047b170"
+  },
+  {
+   "a": "0047b1e0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0"
+  },
+  {
+   "a": "0047bbc0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0"
+  },
+  {
+   "a": "0047bdb0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0"
+  },
+  {
+   "a": "0047bf40",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40"
+  },
+  {
+   "a": "0047c080",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080"
+  },
+  {
+   "a": "0047c220",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220"
+  },
+  {
+   "a": "0047c2d0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0"
+  },
+  {
+   "a": "0047c370",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370"
+  },
+  {
+   "a": "0047c470",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470"
+  },
+  {
+   "a": "0047c4a0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0"
+  },
+  {
+   "a": "0047c4d0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0"
+  },
+  {
+   "a": "0047c5f0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0"
+  },
+  {
+   "a": "0047c930",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_copyFile_FUN_0047c930"
+  },
+  {
+   "a": "0047ca50",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_copyTextureFiles_FUN_0047ca50"
+  },
+  {
+   "a": "0047cbc0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0"
+  },
+  {
+   "a": "0047e810",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810"
+  },
+  {
+   "a": "0047ea10",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10"
+  },
+  {
+   "a": "0047ed00",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00"
+  },
+  {
+   "a": "0047edd0",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0"
+  },
+  {
+   "a": "0047ee30",
+   "tu": "core_dmodel.cpp",
+   "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30"
   },
   {
    "a": "00481250",
@@ -83640,6 +84636,11 @@
    "a": "0048ad90",
    "tu": "engine_drender.cpp",
    "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90"
+  },
+  {
+   "a": "0048c740",
+   "tu": "engine_drender.cpp",
+   "name": "engine_drender.cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740"
   },
   {
    "a": "0048d410",
@@ -83812,6 +84813,11 @@
    "name": "shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450"
   },
   {
+   "a": "004a64e0",
+   "tu": "shape_edittool.cpp",
+   "name": "shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0"
+  },
+  {
    "a": "004a8db0",
    "tu": "core_emitter.cpp",
    "name": "core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0"
@@ -83857,6 +84863,16 @@
    "name": "core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60"
   },
   {
+   "a": "004c9480",
+   "tu": "core_fire.cpp",
+   "name": "core_fire.cpp_CBulletTrail_deactivate_FUN_004c9480"
+  },
+  {
+   "a": "004cbad1",
+   "tu": "core_flamegun.cpp",
+   "name": "core_flamegun.cpp_CFlameThrower_getDamageAlt_FUN_004cbad1"
+  },
+  {
    "a": "004cc2c0",
    "tu": "core_flies.cpp",
    "name": "core_flies.cpp_drawFlyPixelClipped_FUN_004cc2c0"
@@ -83875,6 +84891,31 @@
    "a": "004ccc70",
    "tu": "core_flies.cpp",
    "name": "core_flies.cpp_CFlies_showEditorHelp_FUN_004ccc70"
+  },
+  {
+   "a": "004d2500",
+   "tu": "core_frankgen.cpp",
+   "name": "core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500"
+  },
+  {
+   "a": "004d2560",
+   "tu": "core_frankgen.cpp",
+   "name": "core_frankgen.cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560"
+  },
+  {
+   "a": "004d25f0",
+   "tu": "core_frankgen.cpp",
+   "name": "core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0"
+  },
+  {
+   "a": "004d2740",
+   "tu": "core_frankgen.cpp",
+   "name": "core_frankgen.cpp_CFrankenstienMachine_showEditorHelp_FUN_004d2740"
+  },
+  {
+   "a": "004d2770",
+   "tu": "core_frankgen.cpp",
+   "name": "core_frankgen.cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770"
   },
   {
    "a": "004d75e0",
@@ -84125,6 +85166,21 @@
    "a": "00511840",
    "tu": "core_menu.cpp",
    "name": "core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840"
+  },
+  {
+   "a": "00524e60",
+   "tu": "core_mission.cpp",
+   "name": "core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60"
+  },
+  {
+   "a": "00529950",
+   "tu": "core_moloch.cpp",
+   "name": "core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950"
+  },
+  {
+   "a": "005299b0",
+   "tu": "core_moloch.cpp",
+   "name": "core_moloch.cpp_CMoloch_addFilesToExtract_FUN_005299b0"
   },
   {
    "a": "0052bb50",
@@ -84512,6 +85568,46 @@
    "name": "core_set.cpp_CDemonSet_renderDecals_FUN_005713c0"
   },
   {
+   "a": "00571440",
+   "tu": "core_set.cpp",
+   "name": "core_set.cpp_CVector3f_notEquals_FUN_00571440"
+  },
+  {
+   "a": "005747d0",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_backupZBufferScanlines_FUN_005747d0"
+  },
+  {
+   "a": "00574830",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_restoreZBufferTable_FUN_00574830"
+  },
+  {
+   "a": "005748a0",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_setPixelGrayscale_FUN_005748a0"
+  },
+  {
+   "a": "005748d0",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_CZThumb_ctor_FUN_005748d0"
+  },
+  {
+   "a": "005748f0",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_CZThumb_dtor_FUN_005748f0"
+  },
+  {
+   "a": "00574b20",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_CZThumb_write_FUN_00574b20"
+  },
+  {
+   "a": "00574b50",
+   "tu": "core_setdir.cpp",
+   "name": "core_setdir.cpp_CZThumb_free_FUN_00574b50"
+  },
+  {
    "a": "00574e30",
    "tu": "core_setdir.cpp",
    "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30"
@@ -84782,6 +85878,11 @@
    "name": "sound_snddx.cpp_checkDirectSoundError_FUN_005adf90"
   },
   {
+   "a": "005b0690",
+   "tu": "sound_sndwav.cpp",
+   "name": "sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690"
+  },
+  {
    "a": "005b0c90",
    "tu": "sound_sndwav.cpp",
    "name": "sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90"
@@ -84815,6 +85916,21 @@
    "a": "005b12e0",
    "tu": "sound_sndwav.cpp",
    "name": "sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0"
+  },
+  {
+   "a": "005b1560",
+   "tu": "sound_sndwav.cpp",
+   "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560"
+  },
+  {
+   "a": "005b1600",
+   "tu": "sound_sndwav.cpp",
+   "name": "sound_sndwav.cpp_getWavInDevice_FUN_005b1600"
+  },
+  {
+   "a": "005b3de0",
+   "tu": "core_sound.cpp",
+   "name": "core_sound.cpp_editSoundName_FUN_005b3de0"
   },
   {
    "a": "005b7200",
@@ -84910,6 +86026,21 @@
    "a": "005babf0",
    "tu": "core_stairs.cpp",
    "name": "core_stairs.cpp_CStairs_onActorDeleted_FUN_005babf0"
+  },
+  {
+   "a": "005baf20",
+   "tu": "core_stranger.cpp",
+   "name": "core_stranger.cpp_getWeaponInteractionType_FUN_005baf20"
+  },
+  {
+   "a": "005bafa0",
+   "tu": "core_stranger.cpp",
+   "name": "core_stranger.cpp_getWeaponHoldType_FUN_005bafa0"
+  },
+  {
+   "a": "005be480",
+   "tu": "core_stranger.cpp",
+   "name": "core_stranger.cpp_getDefaultAimPitch_FUN_005be480"
   },
   {
    "a": "005c77b0",
@@ -85132,9 +86263,24 @@
    "name": "core_weapon.cpp_CWeapon_getCarrier_FUN_005ee490"
   },
   {
+   "a": "005ee9f0",
+   "tu": "core_weapon.cpp",
+   "name": "core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9f0"
+  },
+  {
+   "a": "005eea60",
+   "tu": "core_weapon.cpp",
+   "name": "core_weapon.cpp_CWeapon_addFilesToExtract_FUN_005eea60"
+  },
+  {
    "a": "005f2f20",
    "tu": "wincore_winrun.cpp",
    "name": "wincore_winrun.cpp_getValue_FUN_005f2f20"
+  },
+  {
+   "a": "005f2f80",
+   "tu": "wincore_winrun.cpp",
+   "name": "wincore_winrun.cpp_doNothing1_FUN_005f2f80"
   },
   {
    "a": "005f3100",
@@ -85171,7 +86317,6 @@
   "00401000",
   "004027a0",
   "00402810",
-  "00402860",
   "00403740",
   "00404e40",
   "00404ee0",
@@ -85194,7 +86339,6 @@
   "004093f0",
   "00409880",
   "004098a0",
-  "004098c0",
   "004098e0",
   "00409900",
   "00409f20",
@@ -85254,8 +86398,6 @@
   "004103d0",
   "00410400",
   "00410410",
-  "00410420",
-  "00410430",
   "00410d20",
   "00411200",
   "004112b0",
@@ -85358,7 +86500,6 @@
   "00441110",
   "00441260",
   "00441790",
-  "00441f50",
   "00441f60",
   "00442130",
   "004421c0",
@@ -85579,7 +86720,6 @@
   "0046fe80",
   "00470510",
   "00476a60",
-  "00476c80",
   "00476cb0",
   "00478e10",
   "00479260",
@@ -85612,8 +86752,6 @@
   "0047ed00",
   "0047edd0",
   "0047ee30",
-  "0047eef0",
-  "0047ef00",
   "0047ef10",
   "0047ef60",
   "0047f920",
@@ -85641,7 +86779,6 @@
   "00486e70",
   "0048a6a0",
   "0048ad90",
-  "0048c6e0",
   "0048c740",
   "0048d410",
   "0048dc20",
@@ -85677,8 +86814,6 @@
   "00495310",
   "0049a3b0",
   "0049a400",
-  "0049cbb0",
-  "0049cbc0",
   "0049d290",
   "0049e130",
   "0049e410",
@@ -85700,8 +86835,6 @@
   "004a6420",
   "004a6450",
   "004a64e0",
-  "004a6510",
-  "004a6530",
   "004a6ef0",
   "004a6f00",
   "004a8db0",
@@ -85799,7 +86932,6 @@
   "004bee30",
   "004c6be0",
   "004c7d60",
-  "004c9470",
   "004c9480",
   "004cae70",
   "004caf60",
@@ -85807,8 +86939,6 @@
   "004cb0e0",
   "004cb6e0",
   "004cb750",
-  "004cbab0",
-  "004cbad0",
   "004cbad1",
   "004cc2c0",
   "004ccaa0",
@@ -85819,7 +86949,6 @@
   "004d25f0",
   "004d2740",
   "004d2770",
-  "004d2880",
   "004d2890",
   "004d75e0",
   "004d7610",
@@ -86053,15 +87182,11 @@
   "00520dd0",
   "00520e00",
   "00524e60",
-  "00524ef0",
-  "00524f00",
   "00527b70",
   "00527c30",
   "00527c40",
   "00529950",
   "005299b0",
-  "005299d0",
-  "005299e0",
   "0052bb50",
   "0052bb80",
   "0052bcb0",
@@ -86282,15 +87407,7 @@
   "00571380",
   "005713c0",
   "00571440",
-  "00571470",
-  "00571480",
-  "00571490",
-  "005714a0",
-  "005714b0",
-  "00574750",
-  "00574760",
   "00574770",
-  "00574790",
   "005747d0",
   "00574830",
   "005748a0",
@@ -86462,7 +87579,6 @@
   "0059a740",
   "005a1ff0",
   "005a2010",
-  "005a2050",
   "005a2060",
   "005a20a0",
   "005a3810",
@@ -86503,7 +87619,6 @@
   "005ade20",
   "005ade30",
   "005adf90",
-  "005b0670",
   "005b0690",
   "005b0c90",
   "005b0cc0",
@@ -86514,21 +87629,7 @@
   "005b12e0",
   "005b1560",
   "005b1600",
-  "005b1650",
-  "005b1660",
-  "005b1670",
-  "005b1680",
-  "005b1690",
-  "005b16a0",
-  "005b16b0",
-  "005b16c0",
-  "005b16d0",
-  "005b16e0",
-  "005b16f0",
-  "005b1700",
   "005b3de0",
-  "005b3e00",
-  "005b3e10",
   "005b7200",
   "005b73c0",
   "005b7400",
@@ -86550,12 +87651,9 @@
   "005bab90",
   "005babf0",
   "005badd0",
-  "005baee0",
   "005baf20",
   "005bafa0",
-  "005be430",
   "005be480",
-  "005be490",
   "005c68a0",
   "005c68f0",
   "005c6910",
@@ -86810,15 +87908,12 @@
   "005ee490",
   "005ee9f0",
   "005eea60",
-  "005eea80",
-  "005eea90",
   "005f2010",
   "005f2070",
   "005f20d0",
   "005f21e0",
   "005f21f0",
   "005f2f20",
-  "005f2f70",
   "005f2f80",
   "005f3100",
   "005f4140",
@@ -87081,7 +88176,6 @@
   "00403070",
   "00403130",
   "004031a0",
-  "00403460",
   "00403500",
   "00404430",
   "004059c0",
@@ -87089,11 +88183,8 @@
   "00405ab0",
   "00405b30",
   "00405b40",
-  "0040ab30",
   "0040b1f0",
   "0040e1cc",
-  "0040e220",
-  "0040e230",
   "0040eadd",
   "0041206c",
   "00412080",
@@ -87105,7 +88196,6 @@
   "0042b6e0",
   "0042cd00",
   "0042cd10",
-  "0043b300",
   "0043b500",
   "0043b510",
   "0043b5b0",
@@ -87119,38 +88209,22 @@
   "00452500",
   "00452510",
   "00452520",
-  "00452560",
-  "004545c0",
-  "004545d0",
   "004579c0",
-  "00460c90",
-  "0046e9d0",
-  "0046e9e0",
   "00470230",
   "00470310",
   "004703f0",
-  "00476e70",
-  "00476e90",
   "00477680",
   "00477690",
   "00481930",
   "00481950",
   "00481960",
   "00481970",
-  "0048c940",
-  "0048ec60",
-  "0048ec80",
   "004940d0",
-  "00495410",
   "00495420",
   "004a72a0",
   "004a72b0",
   "004c47c0",
   "004ca710",
-  "004d9e50",
-  "004d9e60",
-  "004de750",
-  "004de760",
   "004e08e0",
   "004edfc0",
   "004efc10",
@@ -87160,51 +88234,21 @@
   "004fbb70",
   "004fbbb0",
   "004fde80",
-  "0050ea40",
-  "0050ea50",
-  "0050ea60",
-  "0050ea70",
-  "0050ea80",
-  "00511d20",
-  "00511d30",
-  "00511d60",
   "00514390",
   "005143a0",
   "005143b0",
   "005143c0",
   "00515c40",
-  "0051f920",
   "0051f930",
   "00529a40",
   "00529a50",
-  "0052c120",
-  "0052c7b0",
-  "0052c7c0",
-  "0052c7d0",
-  "0052c7e0",
-  "0052c7f0",
-  "0052c800",
-  "0052c810",
-  "0052c820",
-  "0052c830",
-  "0052c840",
-  "0052c850",
-  "0052c860",
-  "0052ee00",
-  "0052ee10",
   "0052ee20",
   "0052ee30",
   "0052ee40",
   "0052ee50",
   "00534740",
-  "00534e90",
-  "005383e0",
-  "00538440",
   "00540970",
   "005409c0",
-  "00554910",
-  "00554920",
-  "00558be0",
   "00563ce0",
   "00563d12",
   "00563d13",

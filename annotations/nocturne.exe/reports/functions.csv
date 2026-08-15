@@ -1286,7 +1286,7 @@ core_dlight.cpp_FUN_00452500,00452500,core/dlight.cpp,8,5,stack_param,63
 core_dlight.cpp_FUN_00452510,00452510,core/dlight.cpp,8,5,stack_param,63
 core_dlight.cpp_FUN_00452520,00452520,core/dlight.cpp,8,5,stack_param,63
 core_dmodel.cpp_staticInit_FUN_00452530,00452530,core/dmodel.cpp,7,0,,7
-core_dmodel.cpp_FUN_00452560,00452560,core/dmodel.cpp,16,6,unnamed_param,81
+core_dmodel.cpp_skipLines_FUN_00452560,00452560,core/dmodel.cpp,16,0,,16
 core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590,00452590,core/dmodel.cpp,20,0,,20
 core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00452630,00452630,core/dmodel.cpp,5,0,,5
 core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650,00452650,core/dmodel.cpp,54,3,shadow_pointer_walk|unrolled_strcpy,94
@@ -1376,7 +1376,7 @@ core_dpart.cpp_CDemonPart_load_FUN_004570c0,004570c0,core/dpart.cpp,7,0,,7
 core_dpart.cpp_CDemonPart_save_FUN_004570f0,004570f0,core/dpart.cpp,7,0,,7
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00457120,00457120,core/dpart.cpp,39,14,pointer_cast|pointer_truncation,189
 core_dpart.cpp_CDemonPart_loadFromFile_FUN_004571f0,004571f0,core/dpart.cpp,110,25,pointer_cast|pointer_truncation|stack_param,375
-engine_drender.cpp_FUN_004574e0,004574e0,engine/drender.cpp,55,8,unnamed_param,140
+core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0,004574e0,core/dpart.cpp,55,0,,55
 core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00457640,00457640,core/dpart.cpp,114,3,undefined_data|warning_overlapping_globals,154
 core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_004578a0,004578a0,core/dpart.cpp,57,2,undefined_data|warning_overlapping_globals,87
 engine_drender.cpp_FUN_004579c0,004579c0,engine/drender.cpp,18,6,undefined_data|unnamed_param|warning_overlapping_globals,93
@@ -1538,7 +1538,7 @@ engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00,00460c00,engin
 engine_drender.cpp_FUN_00460c26,00460c26,engine/drender.cpp,8,3,fpu_register_input|undefined_data,48
 engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40,00460c40,engine/drender.cpp,7,0,,7
 engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70,00460c70,engine/drender.cpp,5,0,,5
-engine_drender.cpp_FUN_00460c90,00460c90,engine/drender.cpp,15,6,raw_address_constant|unnamed_param,85
+engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00460c90,00460c90,engine/drender.cpp,15,1,raw_address_constant,30
 engine_drender.cpp_FUN_00460d10,00460d10,engine/drender.cpp,14,9,param_count_too_few|pointer_cast|pointer_truncation|unaffected_reg,124
 engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30,00460d30,engine/drender.cpp,11,0,,11
 engine_drender.cpp_FUN_00460d90,00460d90,engine/drender.cpp,14,9,param_count_too_few|pointer_cast|pointer_truncation|unaffected_reg,124
@@ -1695,8 +1695,8 @@ core_dtri.cpp_clipPolygonToFar_FUN_0046dd80,0046dd80,core/dtri.cpp,54,3,unrolled
 core_dtri.cpp_clipTriangleToBounds_FUN_0046df40,0046df40,core/dtri.cpp,369,13,unrolled_memcpy|warning_overlapping_globals,509
 core_dtri.cpp_getClippedTriangleCount_FUN_0046e950,0046e950,core/dtri.cpp,8,1,warning_overlapping_globals,23
 core_dtri.cpp_buildClipTriangleFan_FUN_0046e960,0046e960,core/dtri.cpp,24,0,,24
-core_dtri.cpp_FUN_0046e9d0,0046e9d0,core/dtri.cpp,6,1,warning_overlapping_globals,21
-core_dtri.cpp_FUN_0046e9e0,0046e9e0,core/dtri.cpp,5,0,,5
+core_dtri.cpp_getClippedVertexCount_FUN_0046e9d0,0046e9d0,core/dtri.cpp,5,1,warning_overlapping_globals,20
+core_dtri.cpp_getClippedVertices_FUN_0046e9e0,0046e9e0,core/dtri.cpp,4,0,,4
 core_dtri.cpp_CDemonTriangle_render_FUN_0046e9f0,0046e9f0,core/dtri.cpp,35,1,warning_overlapping_globals,50
 core_dtri.cpp_CDemonTriangle_arrdtor_FUN_0046eb40,0046eb40,core/dtri.cpp,6,0,,6
 core_dynamite.cpp_staticInit_FUN_0046eb60,0046eb60,core/dynamite.cpp,11,0,,11
@@ -1822,8 +1822,8 @@ shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920,00476920,shape/edittool
 shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0,00476ce0,shape/edittool.cpp,16,0,,16
 shape_edittool.cpp_calculateGridWidth_FUN_00476df0,00476df0,shape/edittool.cpp,4,0,,4
 shape_edittool.cpp_calculateGridHeight_FUN_00476e10,00476e10,shape/edittool.cpp,6,0,,6
-shape_edittool.cpp_FUN_00476e70,00476e70,shape/edittool.cpp,5,3,unnamed_param,40
-shape_edittool.cpp_FUN_00476e90,00476e90,shape/edittool.cpp,9,4,param_count_too_few|unnamed_param|warning_overlapping_globals,64
+shape_edittool.cpp_CEdButton_dtor_FUN_00476e70,00476e70,shape/edittool.cpp,5,0,,5
+shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90,00476e90,shape/edittool.cpp,9,1,warning_overlapping_globals,24
 shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0,00476eb0,shape/edittool.cpp,12,3,pointer_truncation|unaffected_reg,52
 shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_00476ef0,00476ef0,shape/edittool.cpp,20,4,pointer_cast|pointer_truncation,70
 shape_edittool.cpp_FUN_00476f40,00476f40,shape/edittool.cpp,17,12,unnamed_param|warning_overlapping_globals,147
@@ -2098,7 +2098,7 @@ core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0,0048c8a0,core/fire.c
 core_fire.cpp_transformWorldToScreen_FUN_0048c8d0,0048c8d0,core/fire.cpp,9,0,,9
 core_fire.cpp_CKeyFramedModel_getBoundsMin_FUN_0048c920,0048c920,core/fire.cpp,4,0,,4
 core_fire.cpp_CBulletTrail_reset_FUN_0048c930,0048c930,core/fire.cpp,5,0,,5
-core_fire.cpp_FUN_0048c940,0048c940,core/fire.cpp,5,2,unnamed_param,30
+core_fire.cpp_CSmokeParticle_deactivate_FUN_0048c940,0048c940,core/fire.cpp,5,0,,5
 core_fire.cpp_CRainDrop_ctor_FUN_0048c960,0048c960,core/fire.cpp,7,0,,7
 core_fire.cpp_CRainDrop_dtor_FUN_0048c980,0048c980,core/fire.cpp,6,0,,6
 core_fire.cpp_CPopcorn_ctor_FUN_0048c990,0048c990,core/fire.cpp,7,0,,7
@@ -2287,7 +2287,7 @@ core_frankgen.cpp_findLeader_FUN_00495240,00495240,core/frankgen.cpp,23,1,pointe
 core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004952b0,004952b0,core/frankgen.cpp,19,0,,19
 core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_00495340,00495340,core/frankgen.cpp,22,0,,22
 core_frankgen.cpp_CFrankenstienMachine_getCollisionType_FUN_00495400,00495400,core/frankgen.cpp,4,0,,4
-core_frankgen.cpp_FUN_00495410,00495410,core/frankgen.cpp,6,2,stack_param,31
+core_frankgen.cpp_getFrameCount_FUN_00495410,00495410,core/frankgen.cpp,4,0,,4
 core_frankgen.cpp_FUN_00495420,00495420,core/frankgen.cpp,6,2,stack_param,31
 core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_00495430,00495430,core/frankgen.cpp,20,0,,20
 core_gabriela.cpp_staticInit_FUN_004954a0,004954a0,core/gabriela.cpp,24,1,warning_overlapping_globals,39
@@ -4802,7 +4802,7 @@ wincore_winrun.cpp_clearKeypresses_FUN_00558ae0,00558ae0,wincore/winrun.cpp,8,1,
 wincore_winrun.cpp_getNextKeypress_FUN_00558b00,00558b00,wincore/winrun.cpp,25,4,concat_reconstruction|undefined_type|warning_overlapping_globals,80
 wincore_winrun.cpp_wasKeyPressed_FUN_00558b70,00558b70,wincore/winrun.cpp,5,1,warning_overlapping_globals,20
 wincore_winrun.cpp_enqueueInput_FUN_00558ba0,00558ba0,wincore/winrun.cpp,14,2,undefined_data|warning_overlapping_globals,44
-wincore_winrun.cpp_FUN_00558be0,00558be0,wincore/winrun.cpp,8,3,stack_param|warning_overlapping_globals,48
+wincore_winrun.cpp_setValue_FUN_00558be0,00558be0,wincore/winrun.cpp,6,1,warning_overlapping_globals,21
 wincore_winrun.cpp_plotClippedPixel_FUN_00558c00,00558c00,wincore/winrun.cpp,9,0,,9
 wincore_winrun.cpp_FUN_00558c40,00558c40,wincore/winrun.cpp,44,1,warning_overlapping_globals,59
 wincore_winrun.cpp_clearMouseClicks_FUN_00558d50,00558d50,wincore/winrun.cpp,6,1,warning_overlapping_globals,21

@@ -15,9 +15,9 @@
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b03b
 ;   core_dlight.cpp_CDemonLight_FUN_0044f0b0 at 0044f211
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 004531aa
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0 at 004574f4
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00468d00 at 004690f1
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00485cf7
-;   core_ground.cpp_CGround_render_FUN_004b2110 at 004b2168
 ;   ... and 9 more
 ;
 ; Called Functions:

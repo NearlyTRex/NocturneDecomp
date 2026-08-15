@@ -67,9 +67,9 @@ void __cdecl CFrankenstienMachine::setCourseFrame(CFrankenstienMachine *this_ptr
 // Address: 00495400
 ECollisionType __cdecl CFrankenstienMachine::getCollisionType(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_frankgen.cpp_FUN_00495410
+// Original: core_frankgen.cpp_getFrameCount_FUN_00495410
 // Address: 00495410
-undefined4 FUN_00495410(void);
+int __cdecl getFrameCount(CKeyFramedModel *model_ptr);
 
 // Original: core_frankgen.cpp_FUN_00495420
 // Address: 00495420

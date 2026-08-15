@@ -13,11 +13,11 @@
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437fcc
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b027
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 00453260
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0 at 00457596
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dffa1
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004dfcb0 at 004dfe84
 ;   core_set.cpp_CDemonSet_FUN_0050a260 at 0050a432
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750 at 00508848
-;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0050a640 at 0050a75a
 ;   ... and 8 more
 ;
 ; Referenced Globals:

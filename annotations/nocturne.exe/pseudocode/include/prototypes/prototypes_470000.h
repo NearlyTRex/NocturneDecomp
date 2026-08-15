@@ -115,8 +115,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00476920(CEdScrollB
 void __cdecl shape_edittool_cpp_CEdScrollBar_clampScrollPosition_FUN_00476ce0(CEdScrollBar *this_ptr);
 int __cdecl shape_edittool_cpp_calculateGridWidth_FUN_00476df0(void);
 int __cdecl shape_edittool_cpp_calculateGridHeight_FUN_00476e10(void);
-undefined4 shape_edittool_cpp_FUN_00476e70(undefined4 param_1);
-void shape_edittool_cpp_FUN_00476e90(int param_1);
+CEdButton * __cdecl shape_edittool_cpp_CEdButton_dtor_FUN_00476e70(CEdButton *this_ptr,uint flags);
+void __cdecl shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90(CEdButton *this_ptr);
 void __cdecl shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0(CEdButton *this_ptr,int x_pos,int y_pos,char *button_text);
 void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00476ef0(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text);
 void shape_edittool_cpp_FUN_00476f40(int param_1);

@@ -447,13 +447,13 @@ int __cdecl calculateGridWidth(void);
 // Address: 00476e10
 int __cdecl calculateGridHeight(void);
 
-// Original: shape_edittool.cpp_FUN_00476e70
+// Original: shape_edittool.cpp_CEdButton_dtor_FUN_00476e70
 // Address: 00476e70
-undefined4 FUN_00476e70(undefined4 param_1);
+CEdButton * __cdecl CEdButton::dtor(CEdButton *this_ptr,uint flags);
 
-// Original: shape_edittool.cpp_FUN_00476e90
+// Original: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_00476e90
 // Address: 00476e90
-void FUN_00476e90(int param_1);
+void __cdecl CEdButton::clearActiveButtonIfMatch(CEdButton *this_ptr);
 
 // Original: shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_00476eb0
 // Address: 00476eb0

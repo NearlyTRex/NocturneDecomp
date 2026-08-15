@@ -394,6 +394,17 @@ def lint_ledger(entries, path):
                 problems.append(f"{where}: name suffix _FUN_{m.group(1)} does not match"
                                 f" address {addr}{hint}")
 
+        # Catch the storage hazard while the ledger is being written, not at
+        # apply time -- by then the damage is a repair job, and it takes down
+        # the annotation export with it.
+        if needs_custom_storage(e):
+            problems.append(
+                f"{where}: {e.get('conv')} / ret {e.get('ret')} needs CUSTOM_STORAGE"
+                " -- this pass writes DYNAMIC_STORAGE, which throws after setting"
+                " the storage flag and leaves getReturnType() raising. Drop the"
+                " entry; transfer_custom_storage.py owns storage, and a (void)"
+                " float10 thunk has none to copy, so leave it unsignatured")
+
         src = e.get("source") or {}
         if not src.get("note"):
             problems.append(f"{where}: source.note is required -- an entry without"
@@ -452,6 +463,21 @@ def build_plan_ledger(entries, program, only=None, basis=None, min_conf=None):
         conf = (e.get("source") or {}).get("confidence")
         if floor and CONF_RANK.get(conf, 0) < floor:
             skipped[f"below_confidence({conf})"] += 1
+            continue
+        if needs_custom_storage(e):
+            # Same refusal as the namecore pass, and it has to live here too:
+            # a ledger is hand-authored, so nothing upstream has applied this
+            # gate. An FPU convention / float10 return cannot be written with
+            # DYNAMIC_STORAGE -- updateFunction throws *after* setting the
+            # custom-storage flag, leaving the function with a flag and no
+            # storage. getReturnType() then raises IndexOutOfBounds, which
+            # aborts the whole annotation export, not just this function.
+            #
+            # A clean dry run is NOT evidence that the write is safe: the diff
+            # only compares fields, it never attempts the storage allocation
+            # that throws. Refuse rather than damage; repair with
+            # repair_broken_signatures.py --fix if one already got through.
+            skipped["needs_custom_storage"] += 1
             continue
         exp = e.get("expect") or {}
         plan.append({

@@ -65,27 +65,27 @@ void __watcallRegister dispatch::divide(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c007
 // Address: 0056c007
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c0a3
 // Address: 0056c0a3
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c1eb
 // Address: 0056c1eb
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c28f
 // Address: 0056c28f
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c333
 // Address: 0056c333
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_fdiv_thunk_FUN_0056c3d7
 // Address: 0056c3d7
-void fdiv::thunk(void);
+void __fpu_thunk fdiv::thunk(void);
 
 // Original: crt_math.c_pentiumFdivpWorkaround_FUN_0056c403
 // Address: 0056c403

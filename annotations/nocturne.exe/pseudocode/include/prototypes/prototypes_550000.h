@@ -172,7 +172,7 @@ void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00558ae0(void);
 int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00558b00(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00558ba0(int input_value);
-void wincore_winrun_cpp_FUN_00558be0(void);
+void __cdecl wincore_winrun_cpp_setValue_FUN_00558be0(int val);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00558c00(int x_coord,int y_coord);
 void wincore_winrun_cpp_FUN_00558c40(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_00558d50(void);

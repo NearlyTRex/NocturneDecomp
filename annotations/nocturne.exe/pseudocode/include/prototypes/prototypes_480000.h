@@ -240,7 +240,7 @@ int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_0048c8a0(CFireEff
 void __cdecl core_fire_cpp_transformWorldToScreen_FUN_0048c8d0(CVector3i *input,SProjectedVertex *output,CVector3f *world_position);
 CVector3f * __cdecl core_fire_cpp_CKeyFramedModel_getBoundsMin_FUN_0048c920(CKeyFramedModel *this_ptr);
 void __cdecl core_fire_cpp_CBulletTrail_reset_FUN_0048c930(CBulletTrail *this_ptr);
-void core_fire_cpp_FUN_0048c940(undefined4 *param_1);
+void __cdecl core_fire_cpp_CSmokeParticle_deactivate_FUN_0048c940(CSmokeParticle *this_ptr);
 CRainDrop * __cdecl core_fire_cpp_CRainDrop_ctor_FUN_0048c960(CRainDrop *this_ptr);
 CRainDrop * __cdecl core_fire_cpp_CRainDrop_dtor_FUN_0048c980(CRainDrop *this_ptr,uint flags);
 CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_0048c990(CPopcorn *this_ptr);

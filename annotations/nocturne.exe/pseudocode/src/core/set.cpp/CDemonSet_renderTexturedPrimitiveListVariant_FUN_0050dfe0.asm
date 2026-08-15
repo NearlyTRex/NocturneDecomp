@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   count
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_004574e0 at 00457622
+;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004574e0 at 00457622
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
