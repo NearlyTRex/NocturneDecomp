@@ -25,7 +25,8 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
   pEVar2 = ExceptionInfo->ExceptionRecord;
   pCVar3 = ExceptionInfo->ContextRecord;
   BVar4 = has_active_window();
-  if ((BVar4 != 0) || (pvVar5 = FUN_005714ec(), pvVar5 == (HANDLE)0xffffffff)) {
+  if ((BVar4 != 0) ||
+     (pvVar5 = GetConsoleOutputHandle(), pvVar5 == (HANDLE)0xffffffff)) {
     return 0;
   }
   local_114[0] = '\0';

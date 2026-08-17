@@ -54,18 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_02de2098'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 54,
-        "message": "use of undeclared identifier '_DAT_02de2098'"
       }
     ],
     "success": false,
@@ -74,20 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 115,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "signed_shift_global_idiom",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 178
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -112,7 +99,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -230,8 +217,8 @@
     },
     {
       "addr": "02de2098",
-      "name": "DAT_02de2098",
-      "type": "undefined4",
+      "name": "g_HWND_02de2098",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -318,16 +305,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(void *)((int)g_SoftwareFrameBuffer",
       "severity": "moderate",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
@@ -335,7 +314,7 @@
     },
     {
       "description": "Pointer value `g_SoftwareFrameBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 23,
       "match": "(int)g_SoftwareFrameBuffer",
       "severity": "moderate",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
@@ -343,7 +322,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 10,
+      "line": 8,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -",
@@ -351,7 +330,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 11,
+      "line": 9,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *",

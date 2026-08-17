@@ -44,8 +44,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_stdlib.c__qsort_FUN_00563db8
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
-;   engine_drender.cpp_FUN_00460d10
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     PUSH EBX                            ; 0050d2f8 | DAT_01b4d738
     LEA ESI,[ESP + 0x4c]                ; 0050d2f9
     MOV dword ptr [0x02080430],ECX      ; 0050d2fd | DAT_02080430
-    CALL engine_drender.cpp_FUN_00460d10 ; 0050d303
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10 ; 0050d303
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0050d308
     LEA EAX,[ESP + 0x24]                ; 0050d30b
     PUSH EAX                            ; 0050d30f

@@ -11,8 +11,8 @@
 void __cdecl core_set_cpp_CDemonSet_FUN_0050aa70(CDemonSet *this_ptr)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  int *piVar1;
+  int *piVar2;
   uint *puVar3;
   int iVar4;
   int iVar5;
@@ -23,12 +23,13 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050aa70(CDemonSet *this_ptr)
   if (0 < _DAT_01fb9b54) {
     iVar4 = 0;
     do {
-      puVar1 = (uint *)((int)&DAT_005be4fc + iVar4);
-      puVar2 = (uint *)((int)&DAT_005be37c + iVar4);
+      piVar1 = (int *)((int)&DAT_005be4fc + iVar4);
+      piVar2 = (int *)((int)&DAT_005be37c + iVar4);
       puVar3 = (uint *)(&DAT_01fb9b58 + iVar4);
       iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;
-      core_dlight_cpp_FUN_0044ed80(*puVar3,*puVar2,*puVar1,0x80);
+      core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80
+                ((CDemonLight *)*puVar3,*piVar2,*piVar1,0x80);
     } while (iVar5 < _DAT_01fb9b54);
   }
   iVar4 = 0;
@@ -36,13 +37,14 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050aa70(CDemonSet *this_ptr)
     iVar5 = iVar5 * 4;
     iVar6 = 0;
     do {
-      puVar1 = (uint *)((int)&DAT_005be4fc + iVar5);
-      puVar2 = (uint *)((int)&DAT_005be37c + iVar5);
+      piVar1 = (int *)((int)&DAT_005be4fc + iVar5);
+      piVar2 = (int *)((int)&DAT_005be37c + iVar5);
       puVar3 = (uint *)(iVar6 + 0x1fba2dc);
       iVar6 = iVar6 + 4;
       iVar5 = iVar5 + 4;
       iVar4 = iVar4 + 1;
-      core_dlight_cpp_FUN_0044ed80(*puVar3,*puVar2,*puVar1,0x80);
+      core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80
+                ((CDemonLight *)*puVar3,*piVar2,*piVar1,0x80);
     } while (iVar4 < _DAT_01fba2d8);
   }
   iVar5 = _DAT_01fb9b54 + _DAT_01fba2d8;

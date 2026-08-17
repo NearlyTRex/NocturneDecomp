@@ -1,0 +1,359 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_01c78ac8'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 39,
+        "message": "use of undeclared identifier '_DAT_01c78acc'; did you mean 'DAT_0077ac8c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 40,
+        "message": "use of undeclared identifier '_DAT_01c78acc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 41,
+        "message": "use of undeclared identifier '_DAT_01c78acc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_01c78ad4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 45,
+        "message": "use of undeclared identifier '_DAT_01c78acc'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 49,
+        "message": "use of undeclared identifier '_DAT_01c78ad0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 50,
+        "line": 49,
+        "message": "use of undeclared identifier '_DAT_01c78ad4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 49,
+        "message": "use of undeclared identifier '_DAT_01c78ad0'; did you mean 'DAT_005c18a0'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 50,
+        "message": "use of undeclared identifier '_DAT_01c78acc'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 262,
+    "complexity_score": 148,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 365
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0049a320",
+    "address_range": [
+      [
+        "0049a320",
+        "0049a645"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_captureDebugMovieFrame_FUN_0049a320",
+    "signature": "void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_0049a320(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "00566cc0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fputc_FUN_00566cc0"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00402600",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00402600"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00582386",
+      "name": "s_noc_05d_raw_00582386",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00582392",
+      "name": "s_Movie_recording_active_m_00582392",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005823b3",
+      "name": "s_wb_005823b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005823b6",
+      "name": "s_movie_005823b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b761c",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005b7620",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005b9364",
+      "name": "DAT_005b9364",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9368",
+      "name": "DAT_005b9368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bac64",
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
+    },
+    {
+      "addr": "01bd2fa0",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa4",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac8",
+      "name": "DAT_01c78ac8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78acc",
+      "name": "DAT_01c78acc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ad0",
+      "name": "DAT_01c78ad0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ad4",
+      "name": "DAT_01c78ad4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc30e4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.806306306306307,
+    "instruction_count": 222,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 51,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CALLIND": 2,
+      "CBRANCH": 16,
+      "COPY": 190,
+      "INT_ADD": 80,
+      "INT_AND": 250,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 140,
+      "INT_LEFT": 9,
+      "INT_LESS": 10,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 41,
+      "INT_OR": 50,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 26,
+      "INT_SDIV": 7,
+      "INT_SEXT": 19,
+      "INT_SLESS": 68,
+      "INT_SREM": 7,
+      "INT_SRIGHT": 14,
+      "INT_SUB": 57,
+      "INT_XOR": 9,
+      "INT_ZEXT": 14,
+      "LOAD": 38,
+      "POPCOUNT": 64,
+      "RETURN": 3,
+      "STORE": 50,
+      "SUBPIECE": 22
+    },
+    "pcode_op_count": 1289
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + iStack_1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + iStack_1c));",
+      "type": "pointer_truncation"
+    }
+  ]
+}

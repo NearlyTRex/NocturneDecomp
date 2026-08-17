@@ -6,7 +6,7 @@
 #include "system/ksproxy.h"
 #include "system/mmsystem.h"
 #include "system/windef.h"
-#include "system/wingdi.h"
+#include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDirectSoundDevice.h"

@@ -2,13 +2,13 @@
 // Address: 004cdac0
 // Address Range: [[004cdac0, 004cdbbe]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(CDemonRenderer *this_ptr)
+// Signature: void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(CDemonRenderer *this_ptr)
+void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 {
   *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;

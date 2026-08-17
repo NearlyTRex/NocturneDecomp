@@ -40,12 +40,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(CKeyFram
   if (local_44 < 5) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 296;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is invalid version %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is invalid version %d",local_44);
   }
   if (8 < local_44) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 299;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is version %d, this .exe can only handle up to version %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is version %d, this .exe can only handle up to version %d",local_44,8);
   }
   iVar3 = 1;
   do {

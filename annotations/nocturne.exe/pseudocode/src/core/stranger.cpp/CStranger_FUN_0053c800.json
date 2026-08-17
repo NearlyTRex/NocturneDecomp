@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 169,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fb40'"
       }
     ],
     "success": false,
@@ -68,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 400,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 255,
+    "pseudocode_lines": 251,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 881
+    "total_lines": 877
   },
   "cross_references": [
     {
@@ -166,13 +160,13 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
       "addr": "0046fb40",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0046fb40"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40"
     }
   ],
   "globals": [
@@ -598,7 +592,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "double in_stack_ffffff18;",
@@ -606,7 +600,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iStack_1c),",
@@ -614,7 +608,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 122,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)local_18),",
@@ -622,7 +616,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 141,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
@@ -630,7 +624,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 141,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "(in_stack_ffffff18 = (double)local_8c, 0.0 < in_stack_ffffff18)) &&",
@@ -638,7 +632,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 142,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "(in_stack_ffffff18 < 4)))) {",
@@ -646,7 +640,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 219,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
@@ -654,50 +648,50 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 238,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar15),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar13),",
       "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 101,
+      "line": 98,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar9->x = (pCVar14->position).x;",
+      "text": "pCVar7->x = (pCVar12->position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 108,
+      "line": 105,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar7->vec).x = (pUVar13->vec).x;",
+      "text": "(pUVar5->vec).x = (pUVar11->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 151,
+      "line": 148,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_world_center).x = pCVar9->x;",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 169,
+      "line": 166,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar9->x = (pCVar14->position).x;",
+      "text": "pCVar7->x = (pCVar12->position).x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 176,
+      "line": 173,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar13->vec).x = (pUVar7->vec).x;",
+      "text": "(pUVar11->vec).x = (pUVar5->vec).x;",
       "type": "unrolled_memcpy"
     }
   ]

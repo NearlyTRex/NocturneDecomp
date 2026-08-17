@@ -9,7 +9,7 @@
 void FUN_00563ce0(void)
 
 {
-  PTR_crt_unknown_c_FUN_0056ad3f_005c1cb4 = FUN_0056a189;
+  PTR_crt_unknown_c_FUN_0056ad3f_005c1cb4 = _strtod;
   PTR_crt_unknown_c_FUN_0056ad3f_005c1cb8 = FUN_0056a1b5;
   PTR_crt_unknown_c_FUN_0056ad3f_005c1cbc = FUN_0056a388;
   PTR_crt_unknown_c_FUN_0056ad3f_005c1cc0 = &UNK_0056ad3a;

@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 46,
+        "line": 47,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 47,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_01fba2ec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 57,
+        "line": 58,
         "message": "use of undeclared identifier '_DAT_01ffb074'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 59,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_01ffb074'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 61,
+        "line": 62,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 64,
+        "line": 65,
         "message": "use of undeclared identifier 'DAT_01fb9b58'; did you mean 'DAT_005b9258'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 66,
+        "line": 67,
         "message": "use of undeclared identifier 'DAT_01fb9b58'; did you mean 'DAT_005b9258'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 70,
+        "line": 71,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 73,
+        "line": 74,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 94,
+        "line": 95,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       }
     ],
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 795,
-    "complexity_score": 574,
+    "complexity_score": 592,
     "cross_reference_count": 1,
     "function_call_count": 35,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 284,
-    "suspect_count": 25,
+    "pseudocode_lines": 292,
+    "suspect_count": 26,
     "suspect_types": [
       "raw_address_constant",
       "raw_address_pointer_store",
@@ -139,7 +139,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1079
+    "total_lines": 1087
   },
   "cross_references": [
     {
@@ -229,14 +229,14 @@
       "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430"
     },
     {
+      "addr": "0044f9b0",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0"
+    },
+    {
       "addr": "0044e970",
       "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970"
-    },
-    {
-      "addr": "0044f9b0",
-      "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044f9b0"
     },
     {
       "addr": "0048a650",
@@ -311,7 +311,7 @@
     {
       "addr": "005138e0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_005138e0"
+      "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0"
     },
     {
       "addr": "00549310",
@@ -330,7 +330,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -742,7 +742,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 77,
-          "line": 207,
+          "line": 208,
           "message": "Uninitialized variable: in_stack_ffffff9c",
           "severity": "error"
         }
@@ -762,7 +762,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_ffffff9c",
       "severity": "moderate",
       "text": "float in_stack_ffffff9c;",
@@ -770,23 +770,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "if ((*(CDemonLight **)(&DAT_01fb9b58 + iVar7))->light_enabled_flag != 0) {",
+      "text": "if ((*(CDemonLight **)(&DAT_01fb9b58 + iVar8))->light_enabled_flag != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 60,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "(&g_CDemonCamera_01fb8508,*(CDemonLight **)(&DAT_01fb9b58 + iVar7));",
+      "text": "(&g_CDemonCamera_01fb8508,*(CDemonLight **)(&DAT_01fb9b58 + iVar8));",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 69,
+      "line": 70,
       "match": "*(CDemonLight **)(local_18 + 0x1fba2dc",
       "severity": "moderate",
       "text": "pCVar3 = *(CDemonLight **)(local_18 + 0x1fba2dc);",
@@ -794,15 +794,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 79,
-      "match": "*(CDemonLight **)(iVar6 + 0x1fba2dc",
+      "line": 80,
+      "match": "*(CDemonLight **)(iVar7 + 0x1fba2dc",
       "severity": "moderate",
-      "text": "(&g_CDemonCamera_01fb8508,*(CDemonLight **)(iVar6 + 0x1fba2dc));",
+      "text": "(&g_CDemonCamera_01fb8508,*(CDemonLight **)(iVar7 + 0x1fba2dc));",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 95,
+      "line": 96,
       "match": "*(CDemonGlobe **)(local_1c + 0x1fba2f0",
       "severity": "moderate",
       "text": "(&g_CDemonCamera_01fb8508,*(CDemonGlobe **)(local_1c + 0x1fba2f0),0);",
@@ -810,23 +810,23 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 101,
-      "match": "*(CDemonGlobe **)(iVar6 + 0x1fba2f0",
+      "line": 102,
+      "match": "*(CDemonGlobe **)(iVar7 + 0x1fba2f0",
       "severity": "moderate",
-      "text": "(&g_CDemonCamera_01fb8508,*(CDemonGlobe **)(iVar6 + 0x1fba2f0),1);",
+      "text": "(&g_CDemonCamera_01fb8508,*(CDemonGlobe **)(iVar7 + 0x1fba2f0),1);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 115,
-      "match": "*(CDemonGlobe **)(iVar6 + 0x1fba484",
+      "line": 116,
+      "match": "*(CDemonGlobe **)(iVar7 + 0x1fba484",
       "severity": "moderate",
-      "text": "globe = *(CDemonGlobe **)(iVar6 + 0x1fba484);",
+      "text": "globe = *(CDemonGlobe **)(iVar7 + 0x1fba484);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 120,
       "match": "DAT_01fba7a8",
       "severity": "mild",
       "text": "*(CDemonGlobe **)(&DAT_01fba7a8 + _DAT_01fba7a4 * 4) = globe;",
@@ -834,7 +834,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 177,
+      "line": 178,
       "match": "*(CDemonLight **)(local_34 + 0x1fba2dc",
       "severity": "moderate",
       "text": "pCVar3 = *(CDemonLight **)(local_34 + 0x1fba2dc);",
@@ -842,7 +842,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 201,
       "match": "in_stack_ffffff9c",
       "severity": "moderate",
       "text": "core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,0,(int)in_stack_ffffff9c);",
@@ -850,15 +850,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 203,
       "match": "in_stack_ffffff9c",
       "severity": "moderate",
       "text": "(g_CFireEffect_PTR_005b80f0,0,(int)in_stack_ffffff9c);",
       "type": "stack_param"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 225,
+      "match": "*(CDemonLight **)(local_38 + 0x1fba2dc",
+      "severity": "moderate",
+      "text": "pCVar3 = *(CDemonLight **)(local_38 + 0x1fba2dc);",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 226,
+      "line": 228,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
       "text": "(&g_CDemonCamera_01fb8508,(CVector3f *)&stack0xffffff9c,(SProjectedVertex *)0x0);",
@@ -866,15 +874,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 254,
       "match": "DAT_01fb9b58",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(&DAT_01fb9b58 + iVar7);",
+      "text": "puVar1 = (uint *)(&DAT_01fb9b58 + iVar8);",
       "type": "undefined_data"
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 155,
+      "line": 156,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "if (0x02DD1210->wave_animation_enabled != 0) {",
@@ -882,7 +890,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 156,
+      "line": 157,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);",
@@ -890,7 +898,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 172,
+      "line": 173,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_renderParticles_FUN_00555020(0x02DDF9F0);",
@@ -898,7 +906,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 203,
+      "line": 204,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "if (0x02DD1210->wave_animation_enabled == 0) {",
@@ -906,7 +914,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 204,
+      "line": 205,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);",
@@ -914,7 +922,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 179,
+      "line": 180,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_58.x = (pCVar3->base).position.x;",
@@ -922,39 +930,39 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 273,
+      "line": 281,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pCVar4->previous_transform_state).position.x = (pCVar4->location).position.x;",
+      "text": "(pCVar5->previous_transform_state).position.x = (pCVar5->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 279,
+      "line": 287,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar2->vec).x = (pCVar4->orient).vec.x;",
+      "text": "(pUVar2->vec).x = (pCVar5->orient).vec.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 216,
-      "match": "pCVar5 = (T *)pCVar5->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 217,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 284,
-      "match": "pCVar5 = (T *)pCVar5->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 292,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Uninitialized variable: in_stack_ffffff9c",
-      "line": 207,
+      "line": 208,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,0,(int)in_stack_ffffff9c);",

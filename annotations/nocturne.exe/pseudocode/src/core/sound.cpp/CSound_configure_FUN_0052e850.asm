@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004d23d0 at 004d26cb
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1b85
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d26cb
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2328
 ;
 ; Referenced Globals:

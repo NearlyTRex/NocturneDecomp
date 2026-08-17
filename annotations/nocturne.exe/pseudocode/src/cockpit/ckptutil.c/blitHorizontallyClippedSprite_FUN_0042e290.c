@@ -20,7 +20,7 @@ void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_0042e290(void 
   count = (end_x - start_x) + 1;
   iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
-    pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);
     iVar3 = max_height - src_y_offset;
     if (g_BitsPerPixel == 8) {

@@ -18,6 +18,7 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_
   int iVar5;
   char *format_string;
   CKeys *pCVar6;
+  double dVar7;
   
   iVar3 = g_WindowWidth * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
@@ -73,13 +74,15 @@ LAB_004cfc23:
               (iVar5,iVar1,
                (int)(((longlong)(iVar4 - iVar5) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + iVar5,
                iVar2,4);
+    dVar7 = (double)iVar3 * 1.52587890625e-05;
     format_string = "%4.2f";
     iVar5 = 0;
     iVar4 = 0xff;
     iVar2 = g_ClipBottom + g_ClipTop;
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string);
+              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string,
+               dVar7);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     pCVar6 = g_CKeys_PTR_005bac64;
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);

@@ -49,7 +49,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
     engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_01,"Using auto health\n");
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&(this_ptr->base).inventory);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n");
+              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n",
+               (double)(this_ptr->base).base.hit_points);
   }
   local_28.y = 0.0;
   local_28.z = 1.0;

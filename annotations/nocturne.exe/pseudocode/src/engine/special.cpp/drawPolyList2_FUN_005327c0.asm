@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_00461720 at 004619dd
+;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720 at 004619dd
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer

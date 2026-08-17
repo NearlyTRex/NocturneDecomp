@@ -22,7 +22,7 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodPa
   float local_60;
   float local_54;
   float local_48;
-  uint local_18;
+  CVector3i local_18;
   
   bVar4 = 0;
   _DAT_01c78c84 = 4;
@@ -34,12 +34,13 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodPa
   _DAT_01c78c9c = 1;
   _DAT_01c78ca0 = 2;
   _DAT_01c78ca4 = 3;
-  engine_drender_cpp_FUN_00460d90(g_CDemonRenderer_PTR_005ae704);
-  _DAT_01c78ca8 = local_18;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
+            (g_CDemonRenderer_PTR_005ae704,&local_18);
+  _DAT_01c78ca8 = local_18.x;
   *(uint *)(&DAT_01c78cac + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
   *(uint *)(&DAT_01c78cb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   _DAT_01c78cac = 0;
   puVar2 = (uint *)(_DAT_007f7370 + 0x110);
   puVar3 = (uint *)&stack0xffffffc0;

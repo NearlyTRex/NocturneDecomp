@@ -67,7 +67,7 @@ section .text
     PUSH EDI                            ; 00407d29
     MOV [0x01c00c74],EAX                ; 00407d2a | g_CurrentLightingValue
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00407d2f
-        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; int engine_3d.c_lookupLitColor_FUN_00404680(int color_index, int light_level)
+        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_00404680(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00407d34
     PUSH ESI                            ; 00407d37
     MOV EBP,dword ptr [EBX + 0x4]       ; 00407d38

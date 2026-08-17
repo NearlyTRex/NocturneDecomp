@@ -62,19 +62,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 87,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unrolled_memcpy"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -92,7 +92,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -226,7 +226,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(CPodAuditRecord *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CPodAuditRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {",

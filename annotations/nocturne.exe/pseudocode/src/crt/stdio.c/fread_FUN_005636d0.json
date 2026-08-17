@@ -2,19 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 228,
+    "complexity_score": 301,
     "cross_reference_count": 43,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
-    "suspect_count": 10,
+    "pseudocode_lines": 116,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
+      "stack_param",
+      "unaffected_reg",
       "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 353
+    "total_lines": 356
   },
   "cross_references": [
     {
@@ -216,15 +218,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f7980",
-      "from_addr": "004f79e2",
-      "name": "engine_pod.cpp_FUN_004f7980",
+      "addr": "004f8eb0",
+      "from_addr": "004f8fb5",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f8eb0",
-      "from_addr": "004f8fb5",
-      "name": "engine_pod.cpp_FUN_004f8eb0",
+      "addr": "004f7980",
+      "from_addr": "004f79e2",
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -305,14 +307,14 @@
       "name": "crt_unknown.c_FillInputBuffer_FUN_00564670"
     },
     {
-      "addr": "00568ed0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
-    },
-    {
       "addr": "00568f70",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_00568f70"
+    },
+    {
+      "addr": "00568ed0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [
@@ -526,8 +528,32 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "char *in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);",
@@ -535,7 +561,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -543,15 +569,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 30,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
       "match": "(char *)(uVar8 + (int)buffer",
       "severity": "moderate",
       "text": "} while (pcVar7 != (char *)(uVar8 + (int)buffer));",
@@ -559,7 +609,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 85,
       "match": "(void *)((int)buffer",
       "severity": "moderate",
       "text": "buffer = (void *)((int)buffer + uVar3);",
@@ -567,7 +617,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 107,
       "match": "(void *)((int)buffer",
       "severity": "moderate",
       "text": "buffer = (void *)((int)buffer + iVar4);",
@@ -575,7 +625,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
+      "line": 115,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -583,7 +633,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 71,
+      "line": 74,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
@@ -591,7 +641,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 76,
+      "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",

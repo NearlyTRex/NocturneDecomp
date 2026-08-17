@@ -93,12 +93,6 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 68,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_02de2098'; did you mean 'DAT_02DF2098'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 23,
         "line": 42,
         "message": "use of undeclared identifier 'code'"
@@ -114,6 +108,12 @@
         "column": 33,
         "line": 42,
         "message": "use of undeclared identifier '_DAT_02dc9214'; did you mean 'DAT_004A9214'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_02dc9214'"
       }
     ],
     "success": false,
@@ -255,8 +255,8 @@
     },
     {
       "addr": "02de2098",
-      "name": "DAT_02de2098",
-      "type": "undefined4",
+      "name": "g_HWND_02de2098",
+      "type": "HWND",
       "value": null
     }
   ],
@@ -365,7 +365,7 @@
       "line": 30,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,_DAT_02de2098,3);",
+      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,g_HWND_02de2098,3);",
       "type": "unresolved_funcptr"
     },
     {

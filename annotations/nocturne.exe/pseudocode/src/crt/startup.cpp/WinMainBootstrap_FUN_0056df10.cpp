@@ -64,7 +64,7 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
   pHVar3 = GetModuleHandleA(*(LPCSTR *)(puVar6 + -0x10));
   *(HMODULE *)(puVar6 + -0x10) = pHVar3;
   *(uint *)(puVar6 + -0x14) = 0x56dfb2;
-  iVar4 = wincore_winrun_cpp_FUN_00559260
+  iVar4 = wincore_winrun_cpp_winMain_FUN_00559260
                     (*(HINSTANCE *)(puVar6 + -0x10),*(HINSTANCE *)(puVar6 + -0xc),
                      *(LPSTR *)(puVar6 + -8),*(int *)(puVar6 + -4));
   *(int *)(puVar6 + -4) = iVar4;

@@ -10,6 +10,9 @@ int __cdecl _ungetc(int character,_FILE *stream)
 
 {
   char *pcVar1;
+  char *unaff_EBP;
+  SIZE_T unaff_ESI;
+  int unaff_EDI;
   
   if (character == -1) {
     return -1;
@@ -33,7 +36,7 @@ LAB_005647b5:
     return -1;
   }
   if (stream->_link->__reserve_end == (char *)0x0) {
-    FUN_00568ed0(stream);
+    _setvbuf(stream,unaff_EBP,unaff_EDI,unaff_ESI);
   }
   if (stream->_cnt == 0) {
     stream->_cnt = 1;

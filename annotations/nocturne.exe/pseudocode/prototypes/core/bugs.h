@@ -139,9 +139,9 @@ CVector3i * __cdecl copyVectorToPair(CVector3i *dest,CVector3i *src);
 // Address: 00423d00
 int __cdecl getBugVertex(SBug *bug_data,int bug_index);
 
-// Original: core_bugs.cpp_FUN_00423d20
+// Original: core_bugs.cpp_getBugState_FUN_00423d20
 // Address: 00423d20
-undefined4 FUN_00423d20(void);
+int __cdecl getBugState(SBug *bug_data);
 
 // Original: core_bugs.cpp_getDeformableModelName_FUN_00423d30
 // Address: 00423d30

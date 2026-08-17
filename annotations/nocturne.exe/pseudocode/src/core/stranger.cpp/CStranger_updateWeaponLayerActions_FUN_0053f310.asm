@@ -50,8 +50,8 @@
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042aa50
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
+;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0046ed80
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0046ed30
-;   core_dynamite.cpp_FUN_0046ed80
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004b5c70
 ;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004c1830
 ;   core_inv.cpp_CInventory_removeItem_FUN_004c07b0
@@ -213,8 +213,8 @@ section .text
     JZ 0x0053f4b6                       ; 0053f4a3
         ;   XREF to: 0053f4b6 (CONDITIONAL_JUMP)  ; caseD_b
     PUSH EAX                            ; 0053f4a5
-    CALL core_dynamite.cpp_FUN_0046ed80 ; 0053f4a6
-        ;   XREF to: 0046ed80 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0046ed80(CDynamite * this_ptr)
+    CALL core_dynamite.cpp_CDynamite_isFuseLit_FUN_0046ed80 ; 0053f4a6
+        ;   XREF to: 0046ed80 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_CDynamite_isFuseLit_FUN_0046ed80(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 0053f4ab
     TEST EAX,EAX                        ; 0053f4ae
     JZ 0x0053f8a2                       ; 0053f4b0
@@ -886,8 +886,8 @@ section .text
     PUSH 0x595dde                       ; 0053fbae | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x005b6d50]                ; 0053fbb3 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0053fbb8
-    CALL shape_edittool.cpp_FUN_0046fb40 ; 0053fbb9
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 0053fbb9
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053fbbe
     MOV dword ptr [EBX + 0x1faa0],0x2   ; 0053fbc1
         ;   Label: LAB_0053fbc1

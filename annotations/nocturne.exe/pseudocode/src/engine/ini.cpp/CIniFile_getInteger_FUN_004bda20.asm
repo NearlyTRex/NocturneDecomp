@@ -12,7 +12,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_FUN_004a4b50 at 004a4c6c
-;   core_inivar.cpp_FUN_004bdb80 at 004bdbdb
+;   core_inivar.cpp_readIniData_FUN_004bdb80 at 004bdbdb
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d2a
 ;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528aa4
 ;

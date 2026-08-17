@@ -118,13 +118,13 @@ LAB_005383ca:
             this_ptr->action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x77c);
           }
           pCVar7 = (this_ptr->base).object_to_pick_up;
           if (pCVar7 == (CDemonActor *)0x0) {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"Object to pick up is now NULL\nstranger.cpp line %d",0x782);
           }
           else {
@@ -143,7 +143,7 @@ LAB_005383ca:
               if (iVar4 == 2) {
                 if (this_ptr->action_pending != 0) {
                   in_stack_ffffff48 = &g_CEditorTools_PTR_005b6d50->unused;
-                  shape_edittool_cpp_FUN_0046fb40
+                  shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                             (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d");
                 }
                 this_ptr->action_pending = 1;
@@ -167,7 +167,7 @@ LAB_00537df4:
           }
           else {
             if (iVar4 == 6) goto LAB_00537df4;
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",iVar4,0x75e);
           }
           iVar4 = (this_ptr->base).base.layer_action_index;
@@ -256,7 +256,7 @@ LAB_00537df4:
             this_ptr->action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x7c0);
           }
@@ -266,12 +266,12 @@ LAB_00537df4:
             this_ptr->action_pending = 0;
           }
           else {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x813);
           }
           if ((this_ptr->base).door_to_open == (CDoor *)0x0) {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"doorToOpen == NULL\nstranger.cpp line %d",0x819);
           }
           iVar4 = core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);

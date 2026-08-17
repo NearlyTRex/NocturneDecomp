@@ -1,0 +1,206 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 62,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_01bcd070'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 22,
+        "message": "use of undeclared identifier '_DAT_01bcd070'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_01bcd070'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00476f40",
+    "address_range": [
+      [
+        "00476f40",
+        "00476fc5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdButton_paint_FUN_00476f40",
+    "signature": "void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_00476f40(CEdButton *this_ptr,int draw_border_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00490980",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawText_FUN_00490980"
+    },
+    {
+      "addr": "00492e60",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60"
+    },
+    {
+      "addr": "00492da0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0"
+    },
+    {
+      "addr": "00476260",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_00476260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01bcd070",
+      "name": "DAT_01bcd070",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.258620689655173,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 4,
+      "COPY": 47,
+      "INT_ADD": 22,
+      "INT_AND": 52,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 30,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 8,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 29,
+      "LOAD": 17,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 305
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdButton *"
+      },
+      {
+        "is_param": true,
+        "name": "draw_border_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

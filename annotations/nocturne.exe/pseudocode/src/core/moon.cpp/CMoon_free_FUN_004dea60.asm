@@ -7,7 +7,7 @@
 ; CMoon *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004d23d0 at 004d2780
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d2780
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2394
 ;   core_moon.cpp_CMoon_dtor_FUN_004de830 at 004de836
 ;

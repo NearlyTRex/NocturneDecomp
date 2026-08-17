@@ -33,7 +33,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEdit
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
   uVar4 = ~uVar4;
-  BVar2 = OpenClipboard(_DAT_02de2098);
+  BVar2 = OpenClipboard(g_HWND_02de2098);
   if (BVar2 != 0) {
     hMem = GlobalAlloc(0x2002,uVar4);
     if (hMem != (HGLOBAL)0x0) {

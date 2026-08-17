@@ -39,7 +39,7 @@ time_t __cdecl _mktime(_tm *timeptr)
     for (iVar5 = timeptr->tm_sec + (timeptr->tm_min + timeptr->tm_hour * 0x3c) * 0x3c;
         iVar3 = iVar3 + -1, iVar5 < 0; iVar5 = iVar5 + 0x15180) {
     }
-    gmtime_r(iVar3,iVar5,0,(char)timeptr);
+    gmtime_r(iVar3,iVar5,0,timeptr);
     tzset();
     iVar5 = iVar5 + DAT_005c1f14;
     if (timeptr->tm_isdst < 0) {

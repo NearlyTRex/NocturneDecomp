@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_0044d440(CDemonImage *this_ptr)
+; CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_0044d440(CDemonImage *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonImage *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
 ;   core_dimage.cpp_CDemonImage_freeMemory_FUN_0044d4c0

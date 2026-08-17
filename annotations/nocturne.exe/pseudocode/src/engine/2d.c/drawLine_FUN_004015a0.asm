@@ -22,7 +22,7 @@
 ;   engine_console.cpp_CConsole_render_FUN_0043aec0 at 0043afb9
 ;   engine_font.cpp_CBitFont_showExtendedFontTest_FUN_00493760 at 0049382d
 ;   shape_edittool.cpp_CInputString_draw_FUN_0046f680 at 0046f7cd
-;   shape_edittool.cpp_FUN_004759d0 at 00475a93
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 at 00475a93
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530

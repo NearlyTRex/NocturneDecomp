@@ -74,7 +74,7 @@
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40
 ;   core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   shape_edittool.cpp_FUN_0046fb40
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40
 ;
 ; *****************************************************************************
 
@@ -324,8 +324,8 @@ section .text
     PUSH 0x595b87                       ; 0053caf2 | = "actionPending = %d\nstranger.cpp line %d"
     MOV ESI,dword ptr [0x005b6d50]      ; 0053caf7 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 0053cafd
-    CALL shape_edittool.cpp_FUN_0046fb40 ; 0053cafe
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 0053cafe
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053cb03
     MOV EAX,dword ptr [ESP + 0xbc]      ; 0053cb06
         ;   Label: LAB_0053cb06

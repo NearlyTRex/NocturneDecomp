@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/winnls.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 
 // =============================================================================
@@ -12,13 +12,9 @@
 // Forward declarations
 struct _EXCEPTION_POINTERS;
 
-// Typedef: LPCPINFO
-// pointer to _cpinfo
-typedef struct _cpinfo* LPCPINFO;
-
-// Typedef: LPFILETIME
-// pointer to _FILETIME
-typedef struct _FILETIME* LPFILETIME;
+// Typedef: LPCRITICAL_SECTION
+// pointer to _RTL_CRITICAL_SECTION
+typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
 
 // Typedef: LPLONG
 // pointer to long
@@ -56,17 +52,6 @@ typedef struct _TIME_ZONE_INFORMATION* LPTIME_ZONE_INFORMATION;
 // pointer to _WIN32_FIND_DATAA
 typedef struct _WIN32_FIND_DATAA* LPWIN32_FIND_DATAA;
 
-// Function Definition: PHANDLER_ROUTINE_FUNC
-typedef BOOL PHANDLER_ROUTINE_FUNC(DWORD CtrlType);
-
-// Typedef: PHANDLER_ROUTINE
-// pointer to PHANDLER_ROUTINE_FUNC
-typedef PHANDLER_ROUTINE_FUNC* PHANDLER_ROUTINE;
-
-// Typedef: PMEMORY_BASIC_INFORMATION
-// pointer to _MEMORY_BASIC_INFORMATION
-typedef struct _MEMORY_BASIC_INFORMATION* PMEMORY_BASIC_INFORMATION;
-
 // Function Definition: PTHREAD_START_ROUTINE_FUNC
 typedef DWORD PTHREAD_START_ROUTINE_FUNC(LPVOID lpThreadParameter);
 
@@ -93,19 +78,6 @@ typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
 // pointer to ulong
 typedef ulong* PULONG;
 
-// Structure: _FILETIME
-typedef struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
-} _FILETIME;
-
-// Typedef: FILETIME
-typedef _FILETIME FILETIME;
-
-// Typedef: PFILETIME
-// pointer to FILETIME
-typedef FILETIME* PFILETIME;
-
 // Structure: _MEMORYSTATUS
 typedef struct _MEMORYSTATUS {
     DWORD dwLength;
@@ -117,25 +89,6 @@ typedef struct _MEMORYSTATUS {
     SIZE_T dwTotalVirtual;
     SIZE_T dwAvailVirtual;
 } _MEMORYSTATUS;
-
-// Structure: _MEMORY_BASIC_INFORMATION
-typedef struct _MEMORY_BASIC_INFORMATION {
-    PVOID BaseAddress;
-    PVOID AllocationBase;
-    DWORD AllocationProtect;
-    SIZE_T RegionSize;
-    DWORD State;
-    DWORD Protect;
-    DWORD Type;
-} _MEMORY_BASIC_INFORMATION;
-
-// Structure: _OVERLAPPED
-typedef struct _OVERLAPPED {
-    ULONG_PTR Internal;
-    ULONG_PTR InternalHigh;
-    _union_518 u;
-    HANDLE hEvent;
-} _OVERLAPPED;
 
 // Structure: _PROCESS_INFORMATION
 typedef struct _PROCESS_INFORMATION {
@@ -218,4 +171,24 @@ typedef struct _WIN32_FIND_DATAA {
 
 // Typedef: WIN32_FIND_DATAA
 typedef _WIN32_FIND_DATAA WIN32_FIND_DATAA;
+
+// Structure: _struct_519
+typedef struct _struct_519 {
+    DWORD Offset;
+    DWORD OffsetHigh;
+} _struct_519;
+
+// Union: _union_518
+typedef union _union_518 {
+    _struct_519 s;
+    PVOID Pointer;
+} _union_518;
+
+// Structure: _OVERLAPPED
+typedef struct _OVERLAPPED {
+    ULONG_PTR Internal;
+    ULONG_PTR InternalHigh;
+    _union_518 u;
+    HANDLE hEvent;
+} _OVERLAPPED;
 

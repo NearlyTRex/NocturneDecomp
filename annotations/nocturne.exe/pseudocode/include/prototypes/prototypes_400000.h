@@ -27,6 +27,7 @@
 #include "types/classes/CRuleList.h"
 #include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
@@ -133,13 +134,13 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00404360(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_abortRemovedMRGLHandler_FUN_00404430(SMRGLHeaderExtended *primitive);
-CTextureCache * __cdecl engine_3d_c_FUN_00404480(void);
-void __cdecl engine_3d_c_FUN_00404490(void);
+CTextureCache * __cdecl engine_3d_c_initTextureCache_FUN_00404480(void);
+void __cdecl engine_3d_c_freeTextureCache_FUN_00404490(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004044a0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00404530(SMRGLHeaderExtended *mrgl);
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(SClipPlane *plane);
-int __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_index,int light_level);
+uint __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_value,int lighting_value);
 void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00404710(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00404730(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00404790(SMRGLHeaderPrimitive *prim);
@@ -318,7 +319,7 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040d8f0(void);
 int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040d930(CDemonActor *this_ptr,float volume);
 int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040d9f0(CDemonActor *this_ptr,CVector3f *location,float volume);
-uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
+int __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040dd30(void);
 float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value,float max_value);
@@ -334,15 +335,16 @@ CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040e160(CVector3f *this_p
 CVector3f * __cdecl core_actor_cpp_CVector3f_dtor_FUN_0040e170(CVector3f *this_ptr,uint flags);
 void __cdecl core_actor_cpp_copyVector_FUN_0040e180(CVector3f *dst_ptr,CVector3f *src_ptr);
 float __cdecl core_actor_cpp_CVector3f_length_FUN_0040e1a0(CVector3f *this_ptr);
-void core_actor_cpp_FUN_0040e1cc(void);
+void __cdecl core_actor_cpp_CVector3f_zero_FUN_0040e1d0(CVector3f *this_ptr);
+void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_0040e1f0(CVector3f *this_ptr,CVector3i *other);
 SDamageInfo * __cdecl core_actor_cpp_SDamageInfo_dtor_FUN_0040e220(SDamageInfo *this_ptr,uint flags);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_ctor_FUN_0040e230(CBoundingBox3D *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_copy_FUN_0040e240(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_dtor_FUN_0040e290(CBoundingBox3D *this_ptr,uint flags);
 CVector3f * __cdecl core_actor_cpp_CVector3f_copy_FUN_0040e2a0(CVector3f *this_ptr,CVector3f *other);
-void core_actor_cpp_FUN_0040e2ce(void);
-void core_actor_cpp_FUN_0040e2e1(undefined4 *param_1);
-void core_actor_cpp_FUN_0040e2f1(undefined4 *param_1);
+float * __cdecl core_actor_cpp_copyFloat1_FUN_0040e2d0(float *dst,float *src);
+float * __cdecl core_actor_cpp_copyFloat2_FUN_0040e2e0(float *dst,float *src);
+float * __cdecl core_actor_cpp_copyFloat3_FUN_0040e2f0(float *dst,float *src);
 CVector3f * __cdecl core_actor_cpp_CVector3f_arrdtor10_FUN_0040e300(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(CAlphaBitmap *this_ptr,uint flags);
@@ -352,7 +354,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(CAlphaBitmap 
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(CAlphaBitmap *this_ptr);
-void engine_alphabit_cpp_FUN_0040eadd(void);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_0040eae0(CAlphaBitmap *this_ptr);
 void __cdecl core_ammo_cpp_staticInit_FUN_0040eb10(void);
 CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040eb40(void);
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_0040eb60(CAmmo *this_ptr);

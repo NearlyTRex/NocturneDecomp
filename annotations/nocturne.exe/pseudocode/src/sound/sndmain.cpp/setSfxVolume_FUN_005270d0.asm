@@ -14,7 +14,7 @@
 ;   core_lightgun.cpp_CLightGun_process_FUN_004c79a0 at 004c7a91
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004caf89
 ;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e0d3
-;   core_sound.cpp_FUN_0052d790 at 0052db01
+;   core_sound.cpp_processTrainSounds_FUN_0052d790 at 0052db01
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8318

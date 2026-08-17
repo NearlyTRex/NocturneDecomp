@@ -22,6 +22,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
   double dVar5;
   double dVar6;
   uint uVar7;
+  uint uVar8;
   float local_30;
   float local_2c;
   
@@ -40,6 +41,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     }
     local_2c = current_progress / total_progress;
   }
+  uVar8 = 0x4717ca;
   dVar5 = round
                     ((double)(local_2c * (float)100 + (float)0.5));
   iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
@@ -50,7 +52,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
               (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipTop,_DAT_01bcddec,-1,"%d%% complete"
-              );
+               ,(int)ROUND(dVar5),uVar8);
     iVar3 = g_ClipRight;
     iVar1 = _DAT_01bcd9bc * 2 + g_ClipTop + 1;
     y2 = _DAT_01bcd9bc * 4 + g_ClipTop + -1;
@@ -71,16 +73,21 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(CEdit
               (float)8.4771050347222196e-07;
       dVar5 = (double)fVar2;
       if ((float)5 < fVar2) {
-        uVar7 = 0x471966;
+        uVar8 = 0x471966;
         dVar6 = round
                           ((double)(((total_progress - current_progress) * fVar2) / current_progress
                                    + (float)0.5));
-        if (0 < (int)ROUND(dVar6)) {
-          round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar7)) + 0.5);
+        iVar1 = (int)ROUND(dVar6);
+        if (0 < iVar1) {
+          uVar7 = 0x4719a2;
+          dVar6 = round
+                            (__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar5),0),uVar8)) + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
                     (_DAT_01bcd070,g_ClipLeft,g_ClipRight,g_ClipBottom - _DAT_01bcd9bc,_DAT_01bcddec
-                     ,-1,"%d:%02d elapsed, approximately %d:%02d remaining");
+                     ,-1,"%d:%02d elapsed, approximately %d:%02d remaining",(int)ROUND(dVar6) / 0x3c,
+                     (int)ROUND(dVar6) % 0x3c,iVar1 / 0x3c,iVar1 % 0x3c,uVar7,uVar8,SUB84(__BITCAST_UINT64(dVar5),0),
+                     (int)((ulonglong)dVar5 >> 0x20));
         }
       }
     }

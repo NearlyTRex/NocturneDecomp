@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
 
 {
@@ -33,7 +31,7 @@ int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005528e0(void)
   HVar1 = DirectDrawCreate((GUID *)0x0,&g_DirectDrawObject,(IUnknown *)0x0);
   if (HVar1 == 0) {
     HVar1 = (*g_DirectDrawObject->vtable->SetCooperativeLevel)
-                      (g_DirectDrawObject,_DAT_02de2098,0x11);
+                      (g_DirectDrawObject,g_HWND_02de2098,0x11);
     if (HVar1 == 0) {
       return 1;
     }

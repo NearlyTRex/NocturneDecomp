@@ -116,7 +116,9 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004abc90(CGlass *this_ptr)
   if ((0x19 < this_ptr->broken_vertex_count) || (0x10 < iVar4)) {
     g_CurrentFilename = "..\\core\\glass.cpp";
     g_CurrentLineNumber = 134;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CGlass::setup - Too many verticies(%d) or faces(%d)!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CGlass::setup - Too many verticies(%d) or faces(%d)!",this_ptr->broken_vertex_count,
+               this_ptr->broken_polygon_count);
   }
   local_2c = (this_ptr->glass_size).x / (float)this_ptr->grid_cols;
   local_3c.y = (this_ptr->glass_size).y / (float)this_ptr->grid_rows;

@@ -47,7 +47,7 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(CEventLi
       if (0x1f < ~uVar3 - 1) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 2621;
-        core_main_c_displayErrorAndQuit_FUN_004c8440("Event name %s too long!");
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Event name %s too long!",name);
       }
       pacVar6 = (this_ptr->game_flags).names + (this_ptr->game_flags).count;
       do {

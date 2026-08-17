@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 152,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 10,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 189
   },
   "cross_references": [
@@ -38,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_time.c_gmtime_r_FUN_00607690",
-    "signature": "undefined4 * __cdecl crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,undefined4 *param_4)"
+    "signature": "_tm * __cdecl crt_time_c_gmtime_r_FUN_00607690(time_t days,time_t seconds,time_t timezone_offset,_tm *result)"
   },
   "function_calls": [
     {
@@ -143,10 +141,10 @@
     "pcode_op_count": 787
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -176,89 +174,15 @@
         "offset": 12,
         "size": 4,
         "type": "time_t"
+      },
+      {
+        "is_param": true,
+        "name": "result",
+        "offset": 16,
+        "size": 4,
+        "type": "_tm *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint * __cdecl gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[2] = (int)(((ulonglong)seconds % 0x15180) / 0xe10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[1] = (int)(uVar1 / 0x3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*param_4 = (int)(uVar1 % 0x3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[5] = uVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[7] = uVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4] = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[3] = (uVar4 - (int)local_14[uVar3]) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[6] = (uVar5 + 1) % 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "return param_4;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

@@ -14,7 +14,7 @@
 ;   undefined1* g_StreambufVTable = 0056ff82
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00571ef0
+;   crt_unknown.c_freeBuffer_FUN_00571ef0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 00571db7
         ;   Label: LAB_00571db7
     PUSH EDX                            ; 00571dba
-    CALL crt_unknown.c_FUN_00571ef0     ; 00571dbb
-        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00571ef0(void * buffer)
+    CALL crt_unknown.c_freeBuffer_FUN_00571ef0 ; 00571dbb
+        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_freeBuffer_FUN_00571ef0(void * buffer)
     ADD ESP,0x4                         ; 00571dc0
     MOV EAX,EBX                         ; 00571dc3
     POP EBX                             ; 00571dc5

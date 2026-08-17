@@ -19,9 +19,9 @@ void __cdecl filterSoundFilesByPattern(char *wildcard_pattern);
 // Address: 0052c9d0
 void __cdecl updateListeners(void);
 
-// Original: core_sound.cpp_FUN_0052d030
+// Original: core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030
 // Address: 0052d030
-void __cdecl FUN_0052d030(CSound *this_ptr,char *out_result,char *wildcard_pattern);
+void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 
 // Original: core_sound.cpp_playSfxInternal_FUN_0052d120
 // Address: 0052d120
@@ -31,9 +31,9 @@ uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,fl
 // Address: 0052d710
 void __cdecl resetTrainSounds(void);
 
-// Original: core_sound.cpp_FUN_0052d790
+// Original: core_sound.cpp_processTrainSounds_FUN_0052d790
 // Address: 0052d790
-uint FUN_0052d790(void);
+void __cdecl processTrainSounds(void);
 
 // Original: core_sound.cpp_stopTrainSounds_FUN_0052dcc0
 // Address: 0052dcc0
@@ -47,9 +47,9 @@ CSound * __cdecl CSound::ctor(CSound *this_ptr);
 // Address: 0052dd20
 void __cdecl CSound::findAllSoundFiles(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0052dd80
+// Original: core_sound.cpp_CSound_dtor_FUN_0052dd80
 // Address: 0052dd80
-void __cdecl FUN_0052dd80(CSound *this_ptr);
+void __cdecl CSound::dtor(CSound *this_ptr);
 
 // Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0052dd90
 // Address: 0052dd90
@@ -115,9 +115,9 @@ void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 // Address: 0052ebc0
 float __cdecl CSound(CSound *this_ptr,char *param_2);
 
-// Original: core_sound.cpp_FUN_0052ec80
+// Original: core_sound.cpp_CSound_getReverbPresetCount_FUN_0052ec80
 // Address: 0052ec80
-undefined4 FUN_0052ec80(void);
+int __cdecl CSound::getReverbPresetCount(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_getSoundModeName_FUN_0052ec90
 // Address: 0052ec90
@@ -131,9 +131,9 @@ void __cdecl CSound::set3DListenerOrientRight(CSound *this_ptr,float listener_or
 // Address: 0052ece0
 void __cdecl CSound::setReverbPreset(CSound *this_ptr,int index);
 
-// Original: core_sound.cpp_FUN_0052ed40
+// Original: core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40
 // Address: 0052ed40
-undefined4 FUN_0052ed40(undefined4 param_1,char *param_2,int *param_3);
+int __cdecl CSound::selectReverbPreset(CSound *this_ptr,char *title,int *selection_inout);
 
 // Original: core_sound.cpp_CSound_setVolumeFade_FUN_0052ede0
 // Address: 0052ede0

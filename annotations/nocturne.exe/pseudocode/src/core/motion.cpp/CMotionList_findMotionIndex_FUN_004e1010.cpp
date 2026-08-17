@@ -30,6 +30,6 @@ int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList
   }
   g_CurrentFilename = "..\\core\\motion.cpp";
   g_CurrentLineNumber = 256;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find motion \"%s\" in motion list");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find motion \"%s\" in motion list",motion_name);
   return -1;
 }

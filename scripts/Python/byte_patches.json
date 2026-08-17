@@ -2,267 +2,273 @@
     "groups": [
         {
             "name": "split_double_reads",
+            "program": "nocedit.exe",
             "description": "Replace split dword MOV+PUSH of doubles with FLD/FSTP for clean decompilation",
             "patches": [
                 {
                     "name": "CSfxSlot_seek: cvtPlaybackPos double arg",
                     "address": "0x005a83c4",
                     "original": "6a008b7b68578b6b64558b4360508b537852",
-                    "patched":  "6a00ff736883ec08dd4360dd1c24ff737890",
+                    "patched": "6a00ff736883ec08dd4360dd1c24ff737890",
                     "description": "Replace split dword reads of trigger_time with FLD/FSTP double"
                 },
                 {
                     "name": "CSfxSlot_seek: normalizePlaybackPos double arg",
                     "address": "0x005a83f8",
                     "original": "8b7364568b7b60578b6b7855",
-                    "patched":  "83ec08dd4360dd1c24ff7378",
+                    "patched": "83ec08dd4360dd1c24ff7378",
                     "description": "Replace split dword reads of trigger_time for normalizePlaybackPos call"
                 },
                 {
                     "name": "getSfxPlaybackPosition: cvtPlaybackPos double arg",
                     "address": "0x005a9760",
                     "original": "8b4b68518b7364568b7b60578b437850",
-                    "patched":  "ff736883ec08dd4360dd1c24ff737890",
+                    "patched": "ff736883ec08dd4360dd1c24ff737890",
                     "description": "Replace split dword reads of trigger_time for cvtPlaybackPos call"
                 },
                 {
                     "name": "audioThreadProc: sleep double arg (g_AudioLatencySeconds)",
                     "address": "0x005abbd1",
                     "original": "8b1dfc93f603538b35f893f60356",
-                    "patched":  "83ec08dd05f893f603dd1c249090",
+                    "patched": "83ec08dd05f893f603dd1c249090",
                     "description": "Replace split dword reads of g_AudioLatencySeconds for sleep call"
                 },
                 {
                     "name": "enableSound: ListenerPos.z",
                     "address": "0x005aafa0",
                     "original": "8b354488f603568b3d4088f60357",
-                    "patched":  "83ec08dd054088f603dd1c249090",
+                    "patched": "83ec08dd054088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68840"
                 },
                 {
                     "name": "enableSound: ListenerPos.y (MixBuffer interleaved)",
                     "address": "0x005aafae",
                     "original": "8b2d3c88f60331c9558b153888f603890d7892f60352890d7c92f603",
-                    "patched":  "31c9890d7892f603890d7c92f60383ec08dd053888f603dd1c249090",
+                    "patched": "31c9890d7892f603890d7c92f60383ec08dd053888f603dd1c249090",
                     "description": "FLD/FSTP ListenerPos.y with MixBuffer zeroing moved before"
                 },
                 {
                     "name": "enableSound: ListenerPos.x (last + CSoundDevicePtr)",
                     "address": "0x005aafca",
                     "original": "8b0d3488f603518b353088f603a16892f603568b1850",
-                    "patched":  "83ec08dd053088f603dd1c24a16892f6038b18509090",
+                    "patched": "83ec08dd053088f603dd1c24a16892f6038b18509090",
                     "description": "FLD/FSTP global double at 0x03f68830 (last + CSoundDevicePtr)"
                 },
                 {
                     "name": "enableSound: OrientRight.z",
                     "address": "0x005aafe6",
                     "original": "8b3da488f603578b2da088f60355",
-                    "patched":  "83ec08dd05a088f603dd1c249090",
+                    "patched": "83ec08dd05a088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f688a0"
                 },
                 {
                     "name": "enableSound: OrientRight.y",
                     "address": "0x005aaff4",
                     "original": "8b159c88f603528b0d9888f60351",
-                    "patched":  "83ec08dd059888f603dd1c249090",
+                    "patched": "83ec08dd059888f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68898"
                 },
                 {
                     "name": "enableSound: OrientRight.x",
                     "address": "0x005ab002",
                     "original": "8b359488f603568b3d9088f60357",
-                    "patched":  "83ec08dd059088f603dd1c249090",
+                    "patched": "83ec08dd059088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68890"
                 },
                 {
                     "name": "enableSound: OrientUp.z",
                     "address": "0x005ab010",
                     "original": "8b2d8c88f603558b158888f60352",
-                    "patched":  "83ec08dd058888f603dd1c249090",
+                    "patched": "83ec08dd058888f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68888"
                 },
                 {
                     "name": "enableSound: OrientUp.y",
                     "address": "0x005ab01e",
                     "original": "8b0d8488f603518b358088f60356",
-                    "patched":  "83ec08dd058088f603dd1c249090",
+                    "patched": "83ec08dd058088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68880"
                 },
                 {
                     "name": "enableSound: OrientUp.x",
                     "address": "0x005ab02c",
                     "original": "8b3d7c88f603578b2d7888f60355",
-                    "patched":  "83ec08dd057888f603dd1c249090",
+                    "patched": "83ec08dd057888f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68878"
                 },
                 {
                     "name": "enableSound: OrientFront.z",
                     "address": "0x005ab03a",
                     "original": "8b157488f603528b0d7088f60351",
-                    "patched":  "83ec08dd057088f603dd1c249090",
+                    "patched": "83ec08dd057088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68870"
                 },
                 {
                     "name": "enableSound: OrientFront.y",
                     "address": "0x005ab048",
                     "original": "8b356c88f603568b3d6888f60357",
-                    "patched":  "83ec08dd056888f603dd1c249090",
+                    "patched": "83ec08dd056888f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68868"
                 },
                 {
                     "name": "enableSound: OrientFront.x (last + CSoundDevicePtr)",
                     "address": "0x005ab056",
                     "original": "8b2d6488f603558b156088f603a16892f603528b1850",
-                    "patched":  "83ec08dd056088f603dd1c24a16892f6038b18509090",
+                    "patched": "83ec08dd056088f603dd1c24a16892f6038b18509090",
                     "description": "FLD/FSTP global double at 0x03f68860 (last + CSoundDevicePtr)"
                 },
                 {
                     "name": "enableSound: Velocity.z",
                     "address": "0x005ab072",
                     "original": "8b0d5c88f603518b355888f60356",
-                    "patched":  "83ec08dd055888f603dd1c249090",
+                    "patched": "83ec08dd055888f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68858"
                 },
                 {
                     "name": "enableSound: Velocity.y",
                     "address": "0x005ab080",
                     "original": "8b3d5488f603578b2d5088f60355",
-                    "patched":  "83ec08dd055088f603dd1c249090",
+                    "patched": "83ec08dd055088f603dd1c249090",
                     "description": "FLD/FSTP global double at 0x03f68850"
                 },
                 {
                     "name": "enableSound: Velocity.x (last + CSoundDevicePtr)",
                     "address": "0x005ab08e",
                     "original": "8b154c88f603528b0d4888f603a16892f603518b1850",
-                    "patched":  "83ec08dd054888f603dd1c24a16892f6038b18509090",
+                    "patched": "83ec08dd054888f603dd1c24a16892f6038b18509090",
                     "description": "FLD/FSTP global double at 0x03f68848 (last + CSoundDevicePtr)"
                 },
                 {
                     "name": "enableSound: DistanceFactor (last + CSoundDevicePtr)",
                     "address": "0x005ab0aa",
                     "original": "8b35341b6800568b3d301b6800a16892f603578b1850",
-                    "patched":  "83ec08dd05301b6800dd1c24a16892f6038b18509090",
+                    "patched": "83ec08dd05301b6800dd1c24a16892f6038b18509090",
                     "description": "FLD/FSTP global double at 0x00681b30 (last + CSoundDevicePtr)"
                 },
                 {
                     "name": "computeBoxStats: doubleMax#2 spread_blue",
                     "address": "0x00441504",
                     "original": "8b8b2c400000518bb32840000056",
-                    "patched":  "83ec08dd8328400000dd1c249090",
+                    "patched": "83ec08dd8328400000dd1c249090",
                     "description": "FLD/FSTP [EBX+0x4028] double"
                 },
                 {
                     "name": "computeBoxStats: doubleMax#2 max_spread",
                     "address": "0x00441518",
                     "original": "8bbb3c400000578b833840000050",
-                    "patched":  "83ec08dd8338400000dd1c249090",
+                    "patched": "83ec08dd8338400000dd1c249090",
                     "description": "FLD/FSTP [EBX+0x4038] double"
                 },
                 {
                     "name": "computeBoxStats: doubleMax#3 spread_intensity",
                     "address": "0x0044153a",
                     "original": "8b9334400000528b8b3040000051",
-                    "patched":  "83ec08dd8330400000dd1c249090",
+                    "patched": "83ec08dd8330400000dd1c249090",
                     "description": "FLD/FSTP [EBX+0x4030] double"
                 },
                 {
                     "name": "computeBoxStats: doubleMax#3 max_spread",
                     "address": "0x0044154e",
                     "original": "8bb33c400000568bbb3840000057",
-                    "patched":  "83ec08dd8338400000dd1c249090",
+                    "patched": "83ec08dd8338400000dd1c249090",
                     "description": "FLD/FSTP [EBX+0x4038] double"
                 }
             ]
         },
         {
             "name": "partial_register_returns",
+            "program": "nocedit.exe",
             "description": "Replace partial register writes (MOV AL,reg) with full register moves to eliminate CONCAT/undefined artifacts",
             "patches": [
                 {
                     "name": "getNextKeypress: MOV AL,BL return path 1",
                     "address": "0x005f2ee3",
                     "original": "88d8",
-                    "patched":  "89d8",
+                    "patched": "89d8",
                     "description": "MOV AL,BL -> MOV EAX,EBX to eliminate CONCAT31/undefined3 in return value"
                 },
                 {
                     "name": "getNextKeypress: MOV AL,BL return path 2",
                     "address": "0x005f2ef1",
                     "original": "88d8",
-                    "patched":  "89d8",
+                    "patched": "89d8",
                     "description": "MOV AL,BL -> MOV EAX,EBX to eliminate CONCAT31/undefined3 in return value"
                 }
             ]
         },
         {
             "name": "partial_register_reads",
+            "program": "nocedit.exe",
             "description": "Replace XOR+partial byte reads with full MOVZX to eliminate uint3/CONCAT artifacts from palette lookups",
             "patches": [
                 {
                     "name": "loadCameraThumbnail: palette byte read G channel",
                     "address": "0x00576c13",
                     "original": "31d20fb6b8c03c65038a90c13c65030fb6b0c23c6503",
-                    "patched":  "0fb6b8c03c65030fb690c13c65030fb6b0c23c650390",
+                    "patched": "0fb6b8c03c65030fb690c13c65030fb6b0c23c650390",
                     "description": "XOR EDX,EDX + MOV DL,[palette+1] -> MOVZX EDX,[palette+1] to eliminate uint3 artifact"
                 }
             ]
         },
         {
             "name": "partial_register_loop_temps",
+            "program": "nocedit.exe",
             "description": "Change loop temp register from AL to CL to avoid partial EAX writes causing CONCAT/int3 artifacts",
             "patches": [
                 {
                     "name": "CGame_processCheatCodes: history shift loop AL->CL",
                     "address": "0x004ddbc3",
                     "original": "8a83d831d8028883d931d802",
-                    "patched":  "8a8bd831d802888bd931d802",
+                    "patched": "8a8bd831d802888bd931d802",
                     "description": "MOV AL,[history] / MOV [history+1],AL -> MOV CL / MOV CL to eliminate CONCAT31/int3"
                 }
             ]
         },
         {
             "name": "dead_code_after_noreturn",
+            "program": "nocedit.exe",
             "description": "Replace dead code after noreturn calls with clean return to eliminate iRam/null deref artifacts",
             "patches": [
                 {
                     "name": "CPod_init: dead code after displayErrorAndQuit",
                     "address": "0x00550c63",
                     "original": "833b007402 5bc3",
-                    "patched":  "5bc390909090 90",
+                    "patched": "5bc390909090 90",
                     "description": "Replace dead CMP [NULL],0 / JZ with POP EBX / RET to eliminate iRam00000000"
                 }
             ]
         },
         {
             "name": "thunk_to_real_function",
+            "program": "nocedit.exe",
             "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
             "patches": [
                 {
                     "name": "CDemonRenderer_matrixPush: JMP->CALL+RET for this_ptr param",
                     "address": "0x0048c630",
                     "original": "e9eb0f08008d",
-                    "patched":  "e8eb0f0800c3",
+                    "patched": "e8eb0f0800c3",
                     "description": "Convert JMP push to CALL push + RET so decompiler sees CDemonRenderer* this_ptr parameter"
                 },
                 {
                     "name": "CDemonRenderer_matrixPop: JMP->CALL+RET for this_ptr param",
                     "address": "0x0048c640",
                     "original": "e9db1008008d",
-                    "patched":  "e8db100800c3",
+                    "patched": "e8db100800c3",
                     "description": "Convert JMP pop to CALL pop + RET so decompiler sees CDemonRenderer* this_ptr parameter"
                 },
                 {
                     "name": "CSound_dtor: JMP->CALL+RET for this_ptr param",
                     "address": "0x005b2d60",
                     "original": "e94b81ffff8d",
-                    "patched":  "e84b81ffffc3",
+                    "patched": "e84b81ffffc3",
                     "description": "Convert JMP shutdownSoundSystem to CALL + RET so decompiler sees CSound* this_ptr parameter"
                 },
                 {
                     "name": "CDemonRenderer_popViewport: JMP->CALL+RET for this_ptr param",
                     "address": "0x0048c8c0",
                     "original": "e9bb1b08008d",
-                    "patched":  "e8bb1b0800c3",
+                    "patched": "e8bb1b0800c3",
                     "description": "Convert JMP popViewport to CALL + RET so decompiler sees CDemonRenderer* this_ptr parameter"
                 }
             ],
@@ -271,6 +277,47 @@
                 "0x0048c640",
                 "0x005b2d60",
                 "0x0048c8c0"
+            ]
+        },
+        {
+            "name": "thunk_to_real_function",
+            "program": "nocturne.exe",
+            "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
+            "patches": [
+                {
+                    "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0: JMP->CALL+RET for this_ptr",
+                    "address": "0x00460be0",
+                    "original": "e9dbce06008d",
+                    "patched": "e8dbce0600c3",
+                    "description": "Convert JMP engine_matrix.c_matrixPush_FUN_004cdac0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0: JMP->CALL+RET for this_ptr",
+                    "address": "0x00460bf0",
+                    "original": "e9cbcf06008d",
+                    "patched": "e8cbcf0600c3",
+                    "description": "Convert JMP engine_matrix.c_pop_FUN_004cdbc0 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70: JMP->CALL+RET for this_ptr",
+                    "address": "0x00460e70",
+                    "original": "e9abda06008d",
+                    "patched": "e8abda0600c3",
+                    "description": "Convert JMP engine_matrix.c_popViewport_FUN_004ce920 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                },
+                {
+                    "name": "core_sound.cpp_CSound_dtor_FUN_0052dd80: JMP->CALL+RET for this_ptr",
+                    "address": "0x0052dd80",
+                    "original": "e98ba0ffff8d",
+                    "patched": "e88ba0ffffc3",
+                    "description": "Convert JMP sound_sndmain.cpp_shutdownSoundSystem_FUN_00527e10 to CALL + RET so the wrapper carries its own signature instead of sharing the target's"
+                }
+            ],
+            "clear_thunks": [
+                "0x00460be0",
+                "0x00460bf0",
+                "0x00460e70",
+                "0x0052dd80"
             ]
         }
     ]

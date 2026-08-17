@@ -193,7 +193,7 @@ __asm {
         jz LAB_005539be
         cmp EAX,0x887601c2
         jnz LAB_005539be
-        call wincore_wddvmem_cpp_FUN_00553ba0
+        call wincore_wddvmem_cpp_videoRestore_FUN_00553ba0
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0

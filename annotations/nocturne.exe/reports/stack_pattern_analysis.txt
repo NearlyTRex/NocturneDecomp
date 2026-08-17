@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 535 / 5534
+Functions with stack patterns: 535 / 5535
 
 Pattern type counts:
   stack_alignment                  416
@@ -28,7 +28,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_io.c_write_FUN_0057301c
     Address: 0057301c
-    Suspect count: 42
+    Suspect count: 43
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005731be: SUB ESP,EAX
     - [alt_frame_pointer] at 005731ce: MOV ESI,ESP
@@ -89,7 +89,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040a74c: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0
-    File: core/actor.cpp, Suspects: 8
+    File: core/actor.cpp, Suspects: 7
     - [alt_frame_pointer] at 0040ae12: MOV EDI,ESP
 
   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040b200
@@ -97,7 +97,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0040b207: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300
-    File: core/actor.cpp, Suspects: 42
+    File: core/actor.cpp, Suspects: 46
     - [stack_alignment] at 0040b30c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040c7f0
@@ -185,8 +185,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/boneguy.cpp, Suspects: 1
     - [stack_alignment] at 004181f8: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_FUN_004182cd
-    File: core/boneguy.cpp, Suspects: 5
+  core_boneguy.cpp_rgbToHsv_FUN_004182d0
+    File: core/boneguy.cpp, Suspects: 1
     - [stack_alignment] at 004182d7: AND ESP,0xfffffff8
 
   core_boneguy.cpp_hsvToRgb_FUN_00418480
@@ -265,5 +265,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 12.5 suspects/function
-  Without stack patterns: avg 3.7 suspects/function
+  With stack patterns:    avg 12.4 suspects/function
+  Without stack patterns: avg 3.6 suspects/function

@@ -99,21 +99,21 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 62,
+        "line": 63,
+        "message": "use of undeclared identifier 'DAT_01cd8b28'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 25,
-        "line": 64,
+        "line": 65,
         "message": "use of undeclared identifier 'DAT_005bdbb0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 28,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier 'DAT_01cd944c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 80,
-        "message": "use of undeclared identifier 'DAT_005bdbb4'; did you mean 'DAT_005bbbb4'?"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 543,
+    "complexity_score": 586,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 32,
+    "pseudocode_lines": 201,
+    "suspect_count": 36,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -136,7 +136,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 768
+    "total_lines": 771
   },
   "cross_references": [
     {
@@ -161,7 +161,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -624,7 +624,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"wrong table number %u.  File: %s\",iVar6,&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
       "match": "DAT_005bdbb0",
       "severity": "mild",
       "text": "iVar7 = *(int *)(&DAT_005bdbb0 + local_18);",
@@ -632,7 +640,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 66,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "uVar9 = *(uint *)(&DAT_01cd944c + iVar8);",
@@ -640,7 +648,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 72,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"MP3 Huffman tree overflow!  File: %s\",&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
       "match": "DAT_005bdbb4",
       "severity": "mild",
       "text": "puVar4 = *(byte **)(&DAT_005bdbb4 + local_18);",
@@ -648,7 +664,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 77,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_01cd944c + iVar8) != 0) {",
@@ -656,7 +672,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 84,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "} while (uVar9 < *(uint *)(&DAT_01cd944c + iVar8));",
@@ -664,7 +680,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 99,
       "match": "(uint *)((int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);",
@@ -672,7 +688,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 100,
       "match": "(uint *)((int)puVar11",
       "severity": "moderate",
       "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
@@ -680,7 +696,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 102,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar8) = *(uint *)(&DAT_01cd944c + iVar7);",
@@ -688,7 +704,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 102,
       "match": "DAT_01cd944c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01cd944c + iVar8) = *(uint *)(&DAT_01cd944c + iVar7);",
@@ -696,7 +712,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 109,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(pcVar13,iVar6,&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"decoder table read error.  File: %s\",&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
       "match": "DAT_005bc0fc",
       "severity": "mild",
       "text": "local_20 = *(int *)(&DAT_005bc0fc + iVar8 * 4 + local_34 * 0x94);",
@@ -704,7 +736,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 129,
       "match": "DAT_005bc100",
       "severity": "mild",
       "text": "iVar8 = *(int *)(&DAT_005bc100 +",
@@ -712,7 +744,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 142,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
       "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
@@ -720,7 +752,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 145,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1cd8c28);",
@@ -728,7 +760,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 149,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1cd8c28);",
@@ -736,7 +768,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 153,
       "match": "(int *)((int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1cd8c28);",
@@ -744,7 +776,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 164,
       "match": "(int *)((int)piVar1",
       "severity": "moderate",
       "text": "local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1cd8c28);",
@@ -752,7 +784,7 @@
     },
     {
       "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
+      "line": 99,
       "match": "(int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);",
@@ -760,7 +792,7 @@
     },
     {
       "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 100,
       "match": "(int)puVar11",
       "severity": "moderate",
       "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
@@ -768,7 +800,7 @@
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 139,
+      "line": 142,
       "match": "(int)local_24",
       "severity": "moderate",
       "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
@@ -776,7 +808,7 @@
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 142,
+      "line": 145,
       "match": "(int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x34) * 0x828 + 0x1cd8c28);",
@@ -784,7 +816,7 @@
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 149,
       "match": "(int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x38) * 0x828 + 0x1cd8c28);",
@@ -792,7 +824,7 @@
     },
     {
       "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 150,
+      "line": 153,
       "match": "(int)local_24",
       "severity": "moderate",
       "text": "(SHuffmanTable *)(*(int *)((int)local_24 + local_30 + 0x3c) * 0x828 + 0x1cd8c28);",
@@ -800,7 +832,7 @@
     },
     {
       "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 164,
       "match": "(int)piVar1",
       "severity": "moderate",
       "text": "local_28 = (SHuffmanTable *)((*(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1cd8c28);",
@@ -808,7 +840,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 90,
+      "line": 92,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x200; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -816,7 +848,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 95,
+      "line": 97,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 2; iVar3 != 0; iVar3 = iVar3 + -1) {",

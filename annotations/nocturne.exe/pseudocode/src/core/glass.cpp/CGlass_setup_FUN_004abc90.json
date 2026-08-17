@@ -58,13 +58,13 @@
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 131,
+        "line": 133,
         "message": "use of undeclared identifier 'stack0xffffff20'"
       },
       {
         "category": "cast_error",
         "column": 18,
-        "line": 159,
+        "line": 161,
         "message": "C-style cast from 'SMRGLPrimitiveQuad *' to 'float' is not allowed"
       }
     ],
@@ -74,12 +74,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 578,
-    "complexity_score": 397,
+    "complexity_score": 399,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 262,
+    "pseudocode_lines": 264,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -88,7 +88,7 @@
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 840
+    "total_lines": 842
   },
   "cross_references": [],
   "function": {
@@ -117,7 +117,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -719,7 +719,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 124,
+      "line": 126,
       "match": "&stack0xffffff20",
       "severity": "moderate",
       "text": "if (pCVar5 != (CVector3f *)&stack0xffffff20) {",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 137,
+      "line": 139,
       "match": "6.865027e-39",
       "severity": "mild",
       "text": "fVar12 = 6.865027e-39;",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 158,
       "match": "(SMRGLPrimitiveQuad *)((int)local_3c",
       "severity": "moderate",
       "text": "pSVar6 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 204,
+      "line": 206,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 219,
+      "line": 221,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 234,
+      "line": 236,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 249,
+      "line": 251,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

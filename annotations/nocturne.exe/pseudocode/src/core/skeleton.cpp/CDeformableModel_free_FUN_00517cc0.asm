@@ -10,7 +10,7 @@
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 at 0051801f
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0 at 00517db5
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80 at 00517c86
-;   core_skeleton.cpp_FUN_0051f650 at 0051f65e
+;   core_skeleton.cpp_freeAllModels_FUN_0051f650 at 0051f65e
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_SVertTypeInfo_005a1ee0

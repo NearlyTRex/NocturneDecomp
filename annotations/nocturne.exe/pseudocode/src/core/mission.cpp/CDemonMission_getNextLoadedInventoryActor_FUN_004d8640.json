@@ -54,6 +54,12 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 111,
+        "line": 25,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -62,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 19,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 70
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -95,7 +101,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {

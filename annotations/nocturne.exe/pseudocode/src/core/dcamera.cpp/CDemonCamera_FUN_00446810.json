@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_012b022c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 55,
+        "line": 56,
         "message": "use of undeclared identifier '_DAT_0140d778'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 56,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_0140d77c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 58,
+        "line": 59,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 61,
+        "line": 62,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "format_error",
         "column": 31,
-        "line": 63,
+        "line": 64,
         "message": "format specifies type 'char *' but the argument has type 'CDemonCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 94,
+        "line": 95,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 106,
+        "line": 107,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 164,
+        "line": 165,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 184,
+        "line": 185,
         "message": "use of undeclared identifier 'DAT_012ceb78'"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 450,
-    "complexity_score": 473,
+    "complexity_score": 476,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 203,
+    "pseudocode_lines": 206,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
@@ -137,7 +137,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 653
+    "total_lines": 656
   },
   "cross_references": [
     {
@@ -182,7 +182,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -706,21 +706,21 @@
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 71,
+          "line": 72,
           "message": "Uninitialized variable: local_114",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 195,
+          "line": 197,
           "message": "Uninitialized variable: iStack_120",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 17,
-          "line": 100,
+          "line": 101,
           "message": "Uninitialized variable: unaff_EDI",
           "severity": "error"
         }
@@ -748,7 +748,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 94,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_height) {",
@@ -756,7 +756,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 100,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "puVar4 = &DAT_012ceb78 + local_40;",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 103,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (1 < unaff_EDI->display_width) {",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 120,
+      "line": 121,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar10 < unaff_EDI->display_width);",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 126,
+      "line": 127,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_34 < unaff_EDI->display_height);",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 128,
+      "line": 129,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0(unaff_EDI,local_20);",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 131,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_height) {",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 139,
+      "line": 140,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if (0 < unaff_EDI->display_width) {",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 158,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "(&DAT_012ceb78)[iVar6] = (char)iVar2;",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
+      "line": 169,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (iVar11 < unaff_EDI->display_width);",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 173,
+      "line": 174,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "} while (local_38 < unaff_EDI->display_height);",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 178,
       "match": "DAT_012ceb78",
       "severity": "mild",
       "text": "((CCodec *)auStack_a0,&DAT_012ceb78,&local_58,(_ostream *)auStack_13c);",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 145,
+      "line": 146,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 147,
+      "line": 148,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 162,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
@@ -868,7 +868,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 164,
+      "line": 165,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Raw hex address 0x444645 assigned to bare local `local_50`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_50` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 72,
+      "line": 73,
       "match": "0x444645",
       "severity": "moderate",
       "text": "local_50 = 0x00444645;",
@@ -884,7 +884,7 @@
     },
     {
       "description": "Raw hex address 0x4469b4 assigned to bare local `iVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 80,
+      "line": 81,
       "match": "0x4469b4",
       "severity": "moderate",
       "text": "iVar10 = 0x4469b4;",
@@ -892,7 +892,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 145,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "uVar1 = (uint)*(byte *)((int)&g_VOID_PTR_012e1778 + local_50 + local_30 + iVar11);",
@@ -900,7 +900,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 147,
+      "line": 148,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "uVar1 = uVar1 - *(byte *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
@@ -908,7 +908,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 161,
+      "line": 162,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "cVar3 = cVar3 + *(char *)((int)&g_VOID_PTR_012e1778 + local_4c + local_30 + iVar11",
@@ -916,7 +916,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 164,
+      "line": 165,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar3;",
@@ -924,7 +924,7 @@
     },
     {
       "description": "Uninitialized variable: local_114",
-      "line": 71,
+      "line": 72,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_114 != (void *)0x0) {",
@@ -932,7 +932,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_120",
-      "line": 195,
+      "line": 197,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (iStack_120 != 0) {",
@@ -940,7 +940,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_EDI",
-      "line": 100,
+      "line": 101,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (1 < unaff_EDI->display_height) {",

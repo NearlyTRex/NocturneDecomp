@@ -474,8 +474,8 @@ section .text
     PUSH EAX                            ; 004a400d
     MOV EDI,dword ptr [0x005b6d50]      ; 004a400e | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a4014
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a4015
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a4015
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a401a
     ADD ESP,0x548                       ; 004a401d
     POP EBP                             ; 004a4023
@@ -544,8 +544,8 @@ section .text
     PUSH EAX                            ; 004a40c9
     MOV EBX,dword ptr [0x005b6d50]      ; 004a40ca | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a40d0
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a40d1
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a40d1
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a40d6
     MOV dword ptr [0x00763e90],ESI      ; 004a40d9 | DAT_00763e90
     ADD ESP,0x548                       ; 004a40df
@@ -558,8 +558,8 @@ section .text
         ;   Label: LAB_004a40ea
     MOV ECX,dword ptr [0x005b6d50]      ; 004a40eb | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004a40f1
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a40f2
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a40f2
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a40f7
     PUSH EBP                            ; 004a40fa
     LEA EAX,[ESP + 0x490]               ; 004a40fb
@@ -583,8 +583,8 @@ section .text
         ;   Label: LAB_004a4127
     MOV EDI,dword ptr [0x005b6d50]      ; 004a4128 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a412e
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a412f
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a412f
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a4134
     PUSH EBP                            ; 004a4137
     LEA EAX,[ESP + 0x490]               ; 004a4138

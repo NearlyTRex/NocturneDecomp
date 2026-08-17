@@ -11,9 +11,12 @@ int __watcallStack FillInputBuffer(_FILE *file)
 {
   int iVar1;
   uint uVar2;
+  char *unaff_EBP;
+  SIZE_T unaff_ESI;
+  int unaff_EDI;
   
   if (file->_link->__reserve_end == (char *)0x0) {
-    FUN_00568ed0(file);
+    _setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);
   }
   if (((file->_flag & 0x2000) != 0) && ((file->_flag & 0x600) != 0)) {
     FUN_0056aefc(0x2000);

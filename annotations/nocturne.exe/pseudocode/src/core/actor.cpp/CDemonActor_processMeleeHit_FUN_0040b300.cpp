@@ -149,7 +149,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040b300(CDemonActor 
                           (this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd84,(CDemonActor *)pCVar5);
                 in_stack_fffffd6c = (char *)g_CConsole_PTR_005ad350;
                 engine_console_cpp_CConsole_printf_FUN_0043ac60
-                          (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n");
+                          (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n",this_ptr,
+                           (double)uStack_26c._4_4_,pCVar5);
                 core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,uStack_26c._4_4_);
                 in_stack_fffffd70 = (CVector3f *)0x40b6e4;
                 (*((this_ptr->vtable)._ub)->playAttackHitEffects)
@@ -244,7 +245,9 @@ LAB_0040b4bd:
               (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                         (this_ptr,hit_type,(SDamageInfo *)(auStack_178 + 0x20),&pCVar5->base);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n");
+                        (g_CConsole_PTR_005ad350,"%s causing %5.2f damage to %s\n",this_ptr,
+                         SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),
+                         (int)((ulonglong)(double)(float)auStack_148._4_4_ >> 0x20),pCVar5);
               core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);
               (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                         (this_ptr,hit_type,(SDamageInfo *)(auStack_178 + 0x30),unaff_retaddr);

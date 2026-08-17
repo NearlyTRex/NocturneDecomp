@@ -105,7 +105,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
       }
       if (_DAT_01cea3fc < 3) {
         if (_DAT_01cea3fc == 2) {
-          shape_edittool_cpp_FUN_0046fcd0
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                     (g_CEditorTools_PTR_005b6d50,"Connection refused - computer is not a server");
           core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,0);
           return 0;
@@ -113,13 +113,13 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
       }
       else {
         if (_DAT_01cea3fc < 4) {
-          shape_edittool_cpp_FUN_0046fcd0
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                     (g_CEditorTools_PTR_005b6d50,"Connection refused - game is full");
           core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,0);
           return 0;
         }
         if (_DAT_01cea3fc == 4) {
-          shape_edittool_cpp_FUN_0046fcd0
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                     (g_CEditorTools_PTR_005b6d50,"Connection refused - already in the game");
           goto LAB_004e9d11;
         }

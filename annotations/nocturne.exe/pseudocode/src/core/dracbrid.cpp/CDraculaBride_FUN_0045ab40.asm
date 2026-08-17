@@ -60,7 +60,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
-;   core_sound.cpp_FUN_0052d030
+;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030
 ;   core_spline.cpp_computeSplineBasis_FUN_00533ce0
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_00533f10
 ;   core_spline.cpp_evaluateSplineTangent3D_FUN_005340d0
@@ -398,8 +398,8 @@ section .text
     PUSH EAX                            ; 0045afe2
     MOV ESI,dword ptr [0x005bed68]      ; 0045afe3 | g_CSound_PTR_005bed68
     PUSH ESI                            ; 0045afe9
-    CALL core_sound.cpp_FUN_0052d030    ; 0045afea
-        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030 ; 0045afea
+        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0045afef
     MOV EAX,ESP                         ; 0045aff2
     PUSH EAX                            ; 0045aff4

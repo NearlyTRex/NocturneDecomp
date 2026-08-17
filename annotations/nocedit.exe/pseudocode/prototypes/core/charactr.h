@@ -413,7 +413,7 @@ float __cdecl getGameDeltaTime(CGame *game_ptr);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0
 // Address: 0042f9f0
-CDemonActor * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042fab0
 // Address: 0042fab0

@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2045,
-    "complexity_score": 1698,
+    "complexity_score": 1699,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 211,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 903,
+    "pseudocode_lines": 904,
     "suspect_count": 76,
     "suspect_types": [
       "raw_address_constant",
@@ -138,7 +138,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2948
+    "total_lines": 2949
   },
   "cross_references": [
     {
@@ -179,7 +179,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -219,8 +219,13 @@
     },
     {
       "addr": "0046fff0",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0"
+    },
+    {
+      "addr": "0046fcd0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0"
     },
     {
       "addr": "00474c90",
@@ -241,11 +246,6 @@
       "addr": "00473cb0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00473cb0"
-    },
-    {
-      "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0046fcd0"
     },
     {
       "addr": "004ee370",
@@ -1885,7 +1885,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 763,
+      "line": 764,
       "match": "DAT_01cc8124",
       "severity": "mild",
       "text": "**(EInputCodeType **)(&DAT_01cc8124 + iVar28 * 4) = EVar31;",
@@ -1893,15 +1893,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 789,
-      "match": "DAT_01cc8124",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01cc8124 + iVar33) == **(int **)(&DAT_01cc8124 + iVar28 * 4))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 789,
+      "line": 790,
       "match": "DAT_01cc8124",
       "severity": "mild",
       "text": "(**(int **)(&DAT_01cc8124 + iVar33) == **(int **)(&DAT_01cc8124 + iVar28 * 4))) {",
@@ -1910,6 +1902,14 @@
     {
       "description": "Undefined global data reference",
       "line": 790,
+      "match": "DAT_01cc8124",
+      "severity": "mild",
+      "text": "(**(int **)(&DAT_01cc8124 + iVar33) == **(int **)(&DAT_01cc8124 + iVar28 * 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 791,
       "match": "DAT_01cc8124",
       "severity": "mild",
       "text": "**(int **)(&DAT_01cc8124 + iVar33) = 599;",
@@ -2173,7 +2173,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 715,
+      "line": 716,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2181,7 +2181,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 736,
+      "line": 737,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2205,7 +2205,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 727,
+      "line": 728,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2229,7 +2229,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 727,
+      "line": 728,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

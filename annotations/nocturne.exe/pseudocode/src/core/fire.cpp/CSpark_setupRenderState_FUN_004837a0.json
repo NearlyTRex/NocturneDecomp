@@ -122,14 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 254,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 16,
+    "pseudocode_lines": 65,
+    "suspect_count": 18,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
@@ -137,7 +139,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 141
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -168,7 +170,7 @@
     {
       "addr": "00460d90",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_00460d90"
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90"
     }
   ],
   "globals": [
@@ -463,21 +465,21 @@
         {
           "check_id": "uninitvar",
           "column": 19,
-          "line": 66,
+          "line": 67,
           "message": "Uninitialized variable: local_54",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 19,
-          "line": 67,
+          "line": 68,
           "message": "Uninitialized variable: local_48",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 25,
-          "line": 68,
+          "line": 69,
           "message": "Uninitialized variable: local_60",
           "severity": "error"
         }
@@ -513,23 +515,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_01c08d0c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c08d0c + (uint)bVar4 * -8) =",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_01c08d10",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c08d10 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
@@ -537,15 +531,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xfffffff0",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
+      "line": 47,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffffc0;",
@@ -553,7 +539,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 52,
+      "line": 53,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "puVar2 = (uint *)&stack0xffffffc0;",
@@ -561,11 +547,27 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 54,
       "match": "&stack0xffffff98",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffff98;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&local_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&local_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_005c5030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_005c5030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -601,7 +603,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 47,
+      "line": 48,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -609,15 +611,31 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Uninitialized variable: local_54",
-      "line": 66,
+      "line": 67,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "dVar6 = (double)local_54 * -65536;",
@@ -625,7 +643,7 @@
     },
     {
       "description": "Uninitialized variable: local_48",
-      "line": 67,
+      "line": 68,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "dVar7 = (double)local_48 * -65536;",
@@ -633,7 +651,7 @@
     },
     {
       "description": "Uninitialized variable: local_60",
-      "line": 68,
+      "line": 69,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "dVar5 = round((double)local_60 * -65536);",

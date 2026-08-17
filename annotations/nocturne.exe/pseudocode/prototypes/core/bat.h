@@ -51,14 +51,14 @@ void __cdecl CBat::updateCoursePosition(CBat *this_ptr);
 // Address: 00412000
 CBat * __cdecl CBat::dtor(CBat *this_ptr,uint flags);
 
-// Original: core_bat.cpp_FUN_0041206c
-// Address: 0041206c
-void FUN_0041206c(void);
+// Original: core_bat.cpp_copyFloat_FUN_00412070
+// Address: 00412070
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_bat.cpp_FUN_00412080
+// Original: core_bat.cpp_copyFloat_FUN_00412080
 // Address: 00412080
-undefined4 * FUN_00412080(undefined4 *param_1,undefined4 *param_2);
+float * __cdecl copyFloat(float *dst,float *src);
 
-// Original: core_bat.cpp_FUN_00412090
+// Original: core_bat.cpp_copyFloat_FUN_00412090
 // Address: 00412090
-undefined4 * FUN_00412090(undefined4 *param_1,undefined4 *param_2);
+float * __cdecl copyFloat(float *dst,float *src);

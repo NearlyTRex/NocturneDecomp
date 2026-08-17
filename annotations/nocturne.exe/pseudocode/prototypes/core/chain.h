@@ -51,13 +51,13 @@ void __cdecl CChain::archive(CChain *this_ptr);
 // Address: 0042ccf0
 ECollisionType __cdecl CChain::getCollisionType(CChain *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_chain.cpp_FUN_0042cd00
+// Original: core_chain.cpp_passthroughInt1_FUN_0042cd00
 // Address: 0042cd00
-undefined4 FUN_0042cd00(void);
+int __cdecl passthroughInt1(int value);
 
-// Original: core_chain.cpp_FUN_0042cd10
+// Original: core_chain.cpp_passthroughInt2_FUN_0042cd10
 // Address: 0042cd10
-undefined4 FUN_0042cd10(void);
+int __cdecl passthroughInt2(int value);
 
 // Original: core_chain.cpp_fastSqrt_FUN_0042cd20
 // Address: 0042cd20

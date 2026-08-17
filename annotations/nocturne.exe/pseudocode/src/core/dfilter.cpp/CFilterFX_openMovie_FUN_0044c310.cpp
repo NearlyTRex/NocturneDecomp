@@ -22,7 +22,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_p
     if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 346;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open movie %s.txt");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open movie %s.txt",filename);
     }
     _fscanf(p_Var1,"%d\n",this_ptr);
     _fclose(p_Var1);
@@ -33,7 +33,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_p
     if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 358;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open movie %s.mov");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open movie %s.mov",filename);
     }
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,p_Var1);
     _fclose(p_Var1);

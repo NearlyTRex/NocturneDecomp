@@ -40,7 +40,7 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_00480c30(CEventList *thi
   if (0x13 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 2990;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",name,0x13);
   }
   pcVar5 = pSVar4->handle_name;
   do {

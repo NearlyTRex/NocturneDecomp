@@ -5,7 +5,6 @@
 #include "system/winbase.h"
 #include "system/wincon.h"
 #include "system/windef.h"
-#include "system/wingdi.h"
 #include "system/winnls.h"
 #include "system/winnt.h"
 

@@ -30,6 +30,6 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004e10a0(CMotionList 
   }
   g_CurrentFilename = "..\\core\\motion.cpp";
   g_CurrentLineNumber = 275;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find state \"%s\" in motion list");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't find state \"%s\" in motion list",state_name);
   return -1;
 }

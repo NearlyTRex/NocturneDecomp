@@ -57,27 +57,21 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01cc4808'; did you mean 'DAT_02DF4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 14,
-        "line": 21,
-        "message": "use of undeclared identifier 'stack0x00000008'"
+        "line": 19,
+        "message": "use of undeclared identifier 'DAT_01cc3700'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01cc4808'; did you mean 'DAT_02DF4808'?"
+        "column": 46,
+        "line": 19,
+        "message": "use of undeclared identifier 'stack0xfffffff4'"
       },
       {
-        "category": "cast_error",
-        "column": 38,
-        "line": 23,
-        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
+        "category": "undeclared_identifier",
+        "column": 67,
+        "line": 37,
+        "message": "use of undeclared identifier 'DAT_01cc3700'"
       }
     ],
     "success": false,
@@ -85,56 +79,33 @@
   },
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 99,
-    "complexity_score": 92,
+    "assembly_lines": 94,
+    "complexity_score": 133,
     "cross_reference_count": 531,
     "function_call_count": 6,
-    "global_count": 3,
+    "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 3,
+    "pseudocode_lines": 43,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_ref",
+      "undefined_data",
       "unrolled_strchr",
-      "warning_overlapping_globals"
+      "warning_noreturn"
     ],
-    "total_lines": 146
+    "total_lines": 137
   },
   "cross_references": [
     {
       "addr": "0042e7b0",
       "from_addr": "0042e96f",
-      "name": "cockpit_ckptutil.c_FUN_0042e7b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042ee00",
-      "from_addr": "0042ee5e",
-      "name": "cockpit_ckptutil.c_FUN_0042ee00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00430210",
-      "from_addr": "004302c4",
-      "name": "cockpit_ckptutil.c_FUN_00430210",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004303d0",
-      "from_addr": "004304e8",
-      "name": "cockpit_ckptutil.c_FUN_004303d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00430630",
-      "from_addr": "0043075b",
-      "name": "cockpit_ckptutil.c_FUN_00430630",
+      "name": "cockpit_ckptutil.c_generateScrollHeightMap_FUN_0042e7b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00431260",
       "from_addr": "004313a3",
-      "name": "cockpit_ckptutil.c_FUN_00431260",
+      "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00431260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -150,6 +121,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00430210",
+      "from_addr": "004302c4",
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0042f050",
       "from_addr": "0042f0e8",
       "name": "cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042f050",
@@ -159,6 +136,24 @@
       "addr": "0042d240",
       "from_addr": "0042d29b",
       "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042d240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004303d0",
+      "from_addr": "004304e8",
+      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_004303d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042ee00",
+      "from_addr": "0042ee5e",
+      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_0042ee00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00430630",
+      "from_addr": "0043075b",
+      "name": "cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -620,7 +615,7 @@
     {
       "addr": "0044c560",
       "from_addr": "0044c8ed",
-      "name": "core_dfont.cpp_FUN_0044c560",
+      "name": "core_dfont.cpp_initFonts_FUN_0044c560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1088,7 +1083,7 @@
     {
       "addr": "004bdb80",
       "from_addr": "004be2ba",
-      "name": "core_inivar.cpp_FUN_004bdb80",
+      "name": "core_inivar.cpp_readIniData_FUN_004bdb80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1896,15 +1891,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051f680",
-      "from_addr": "0051f6f2",
-      "name": "core_skeleton.cpp_FUN_0051f680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0051f570",
       "from_addr": "0051f5ea",
       "name": "core_skeleton.cpp_getDeformableModel_FUN_0051f570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f680",
+      "from_addr": "0051f6f2",
+      "name": "core_skeleton.cpp_loadSkeleton_FUN_0051f680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2274,6 +2269,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00461720",
+      "from_addr": "004619ad",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004614b0",
       "from_addr": "004616cf",
       "name": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0",
@@ -2283,12 +2284,6 @@
       "addr": "0045ed40",
       "from_addr": "0045ed6c",
       "name": "engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0045ed40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00461720",
-      "from_addr": "004619ad",
-      "name": "engine_drender.cpp_FUN_00461720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2460,12 +2455,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f2990",
-      "from_addr": "004f2a8d",
-      "name": "engine_pcx.c_FUN_004f2990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f2620",
       "from_addr": "004f26bf",
       "name": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
@@ -2475,6 +2464,12 @@
       "addr": "004f27e0",
       "from_addr": "004f287f",
       "name": "engine_pcx.c_saveScreenRaw32_FUN_004f27e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2990",
+      "from_addr": "004f2a8d",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_004f2990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2502,6 +2497,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004f8eb0",
+      "from_addr": "004f8f16",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f8af0",
       "from_addr": "004f8b1b",
       "name": "engine_pod.cpp_CPod_init_FUN_004f8af0",
@@ -2517,12 +2518,6 @@
       "addr": "004f8970",
       "from_addr": "004f89f9",
       "name": "engine_pod.cpp_CPod_remount_FUN_004f8970",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f8eb0",
-      "from_addr": "004f8f16",
-      "name": "engine_pod.cpp_FUN_004f8eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2640,6 +2635,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046fcd0",
+      "from_addr": "0046fcff",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00470eb0",
       "from_addr": "00470ef3",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0",
@@ -2649,6 +2650,12 @@
       "addr": "0046fe60",
       "from_addr": "0046fe8f",
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046fb40",
+      "from_addr": "0046fb6f",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2760,18 +2767,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046fb40",
-      "from_addr": "0046fb6f",
-      "name": "shape_edittool.cpp_FUN_0046fb40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046fcd0",
-      "from_addr": "0046fcff",
-      "name": "shape_edittool.cpp_FUN_0046fcd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00477100",
       "from_addr": "0047712b",
       "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00477100",
@@ -2832,6 +2827,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e7ed0",
+      "from_addr": "004e7f79",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e2de0",
       "from_addr": "004e2e2b",
       "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_004e2de0",
@@ -2847,12 +2848,6 @@
       "addr": "004e4320",
       "from_addr": "004e4502",
       "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e7ed0",
-      "from_addr": "004e7f79",
-      "name": "sound_mp3.cpp_FUN_004e7ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3018,18 +3013,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005229f0",
-      "from_addr": "00522aee",
-      "name": "sound_sndmain.cpp_FUN_005229f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00526150",
-      "from_addr": "005261a0",
-      "name": "sound_sndmain.cpp_FUN_00526150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00522f10",
       "from_addr": "00522fe7",
       "name": "sound_sndmain.cpp_allocMixBuffers_FUN_00522f10",
@@ -3096,6 +3079,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005229f0",
+      "from_addr": "00522aee",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00528800",
       "from_addr": "00528835",
       "name": "sound_sndmain.cpp_lockSound_FUN_00528800",
@@ -3147,6 +3136,12 @@
       "addr": "005261b0",
       "from_addr": "005261f7",
       "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_005261b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526150",
+      "from_addr": "005261a0",
+      "name": "sound_sndmain.cpp_setNextSfxUserData_FUN_00526150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3236,13 +3231,7 @@
     {
       "addr": "00552a20",
       "from_addr": "00552a72",
-      "name": "wincore_wddvmem.cpp_FUN_00552a20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00553ba0",
-      "from_addr": "00553d06",
-      "name": "wincore_wddvmem.cpp_FUN_00553ba0",
+      "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00552a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3286,6 +3275,12 @@
       "from_addr": "00553a5b",
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553ba0",
+      "from_addr": "00553d06",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_00553ba0",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -3293,18 +3288,22 @@
     "address_range": [
       [
         "004c8440",
+        "004c84cc"
+      ],
+      [
+        "004c84d6",
         "004c8506"
       ]
     ],
     "convention": "__cdecl",
     "name": "core_main.c_displayErrorAndQuit_FUN_004c8440",
-    "signature": "void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format)"
+    "signature": "void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format,...)"
   },
   "function_calls": [
     {
       "addr": "0052dd80",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0052dd80"
+      "name": "core_sound.cpp_CSound_dtor_FUN_0052dd80"
     },
     {
       "addr": "00563a08",
@@ -3322,14 +3321,14 @@
       "name": "engine_2d.c_cleanupGraphicsSystem_FUN_004012a0"
     },
     {
+      "addr": "00559500",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500"
+    },
+    {
       "addr": "00558a20",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_endPeriod_FUN_00558a20"
-    },
-    {
-      "addr": "00559500",
-      "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_00559500"
     }
   ],
   "globals": [
@@ -3338,6 +3337,12 @@
       "name": "g_CSound_PTR_005bed68",
       "type": "CSound*",
       "value": "02dc9450"
+    },
+    {
+      "addr": "01cc3700",
+      "name": "DAT_01cc3700",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "01cc4800",
@@ -3350,33 +3355,38 @@
       "name": "DAT_01cc4808",
       "type": "undefined4",
       "value": null
+    },
+    {
+      "addr": "02dc9450",
+      "name": "g_CSound_02dc9450",
+      "type": "CSound",
+      "value": null
     }
   ],
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.414285714285715,
-    "instruction_count": 70,
+    "avg_pcode_per_instr": 4.3076923076923075,
+    "instruction_count": 65,
     "opcode_distribution": {
       "BOOL_NEGATE": 4,
       "BRANCH": 2,
       "CALL": 6,
       "CBRANCH": 10,
-      "COPY": 40,
-      "INT_ADD": 18,
-      "INT_AND": 47,
-      "INT_CARRY": 4,
-      "INT_EQUAL": 46,
+      "COPY": 36,
+      "INT_ADD": 13,
+      "INT_AND": 43,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 42,
       "INT_LESS": 12,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 9,
-      "INT_SLESS": 23,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 21,
       "INT_SUB": 26,
       "INT_XOR": 1,
-      "LOAD": 9,
-      "POPCOUNT": 23,
-      "RETURN": 1,
+      "LOAD": 6,
+      "POPCOUNT": 21,
       "STORE": 16
     },
-    "pcode_op_count": 309
+    "pcode_op_count": 280
   },
   "stack_frame": {
     "frame_size": 20,
@@ -3409,7 +3419,7 @@
         {
           "check_id": "nullPointerArithmetic",
           "column": 23,
-          "line": 54,
+          "line": 49,
           "message": "Pointer addition with NULL pointer.",
           "severity": "error"
         }
@@ -3420,24 +3430,56 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_01cc4808",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "if (DAT_01cc4808 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01cc4808",
+      "severity": "mild",
+      "text": "DAT_01cc4808 = 1;",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0x00000008",
+      "line": 12,
+      "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "local_c = &stack0x00000008;",
+      "text": "_vsprintf(&DAT_01cc3700,format,(va_list_t)&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_01cc3700",
+      "severity": "mild",
+      "text": "_vsprintf(&DAT_01cc3700,format,(va_list_t)&stack0xfffffff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 29,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01cc3700",
+      "severity": "mild",
+      "text": "wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00559500(&DAT_01cc3700);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
-      "line": 37,
+      "line": 32,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3445,7 +3487,7 @@
     },
     {
       "description": "Pointer addition with NULL pointer.",
-      "line": 54,
+      "line": 49,
       "match": "Cppcheck: null pointer arithmetic",
       "severity": "major",
       "text": "pcVar2 = pcVar2 + 1;",

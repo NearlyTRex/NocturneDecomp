@@ -8,11 +8,11 @@
 // WINREG - System Header
 // =============================================================================
 
-// Typedef: HKEY
-// pointer to HKEY__
-typedef struct HKEY__* HKEY;
+// Typedef: LSTATUS
+// Signed Long Integer (compiler-specific size)
+typedef LONG LSTATUS;
 
-// Typedef: PHKEY
-// pointer to HKEY
-typedef HKEY* PHKEY;
+// Typedef: REGSAM
+// Unsigned Long Integer (compiler-specific size)
+typedef ACCESS_MASK REGSAM;
 

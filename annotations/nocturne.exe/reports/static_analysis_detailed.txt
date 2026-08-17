@@ -65,24 +65,12 @@ cert-flp30-c (5)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (926 diagnostics)
+Cppcheck (quick) (883 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (408)
+uninitvar (371)
 ----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_FUN_0042d180                    line 23
-    File: cockpit/ckptutil.c
-    Uninitialized variable: in_stack_00000008
-
-  cockpit_ckptutil.c_FUN_0042d180                    line 24
-    File: cockpit/ckptutil.c
-    Uninitialized variable: in_stack_00000014
-
-  cockpit_ckptutil.c_FUN_0042d180                    line 34
-    File: cockpit/ckptutil.c
-    Uninitialized variable: in_stack_00000010
 
   cockpit_ckptutil.c_applyActPalette_FUN_0042d370    line 19
     File: cockpit/ckptutil.c
@@ -184,13 +172,13 @@ uninitvar (408)
     File: cockpit/drawsurf.cpp
     Uninitialized variable: in_stack_00000058
 
-  cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e3 line 190
+  cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e3 line 189
     File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_0000013c
+    Uninitialized variable: in_stack_0000011c
 
-  cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e3 line 193
+  cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e3 line 192
     File: cockpit/drawsurf.cpp
-    Uninitialized variable: in_stack_00000148
+    Uninitialized variable: in_stack_00000128
 
   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompress line 22
     File: cockpit/pkbitmap.cpp
@@ -216,54 +204,6 @@ uninitvar (408)
     File: core/actor.cpp
     Uninitialized variable: fStack_b8
 
-  core_actor.cpp_FUN_0040e1cc                        line 21
-    File: core/actor.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_actor.cpp_FUN_0040e1cc                        line 21
-    File: core/actor.cpp
-    Uninitialized variable: in_CL
-
-  core_actor.cpp_FUN_0040e1cc                        line 26
-    File: core/actor.cpp
-    Uninitialized variable: unaff_retaddr
-
-  core_actor.cpp_FUN_0040e1cc                        line 26
-    File: core/actor.cpp
-    Uninitialized variable: in_EDX
-
-  core_actor.cpp_FUN_0040e2ce                        line 17
-    File: core/actor.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_actor.cpp_FUN_0040e2ce                        line 17
-    File: core/actor.cpp
-    Uninitialized variable: in_CL
-
-  core_actor.cpp_FUN_0040e2ce                        line 18
-    File: core/actor.cpp
-    Uninitialized variable: in_EDX
-
-  core_actor.cpp_FUN_0040e2e1                        line 14
-    File: core/actor.cpp
-    Uninitialized variable: in_EDX
-
-  core_actor.cpp_FUN_0040e2f1                        line 14
-    File: core/actor.cpp
-    Uninitialized variable: in_EDX
-
-  core_bat.cpp_FUN_0041206c                          line 17
-    File: core/bat.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_bat.cpp_FUN_0041206c                          line 17
-    File: core/bat.cpp
-    Uninitialized variable: in_CL
-
-  core_bat.cpp_FUN_0041206c                          line 18
-    File: core/bat.cpp
-    Uninitialized variable: in_EDX
-
   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041 line 113
     File: core/bodypart.cpp
     Uninitialized variable: iStack_50
@@ -283,26 +223,6 @@ uninitvar (408)
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 177
     File: core/bodypart.cpp
     Uninitialized variable: local_70
-
-  core_bodypart.cpp_FUN_00417fec                     line 18
-    File: core/bodypart.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_bodypart.cpp_FUN_00417fec                     line 18
-    File: core/bodypart.cpp
-    Uninitialized variable: in_CL
-
-  core_bodypart.cpp_FUN_00417fec                     line 20
-    File: core/bodypart.cpp
-    Uninitialized variable: in_EDX
-
-  core_bodypart.cpp_FUN_0041803d                     line 22
-    File: core/bodypart.cpp
-    Uninitialized variable: unaff_retaddr
-
-  core_boneguy.cpp_FUN_004182cd                      line 66
-    File: core/boneguy.cpp
-    Uninitialized variable: unaff_retaddr
 
   core_boneguy.cpp_hsvToRgb_FUN_00418480             line 29
     File: core/boneguy.cpp
@@ -360,9 +280,9 @@ uninitvar (408)
     File: core/bugs.cpp
     Uninitialized variable: unaff_EDI
 
-  core_bugs.cpp_FUN_00423d20                         line 16
+  core_bugs.cpp_CBugs_renderOpaque_FUN_00421540      line 63
     File: core/bugs.cpp
-    Uninitialized variable: in_stack_00000004
+    Uninitialized variable: in_stack_00000008
 
   core_chain.cpp_CChain_constrainSegmentDistance_FUN line 35
     File: core/chain.cpp
@@ -504,11 +424,11 @@ uninitvar (408)
     File: core/curtain.cpp
     Uninitialized variable: local_dc
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 71
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 72
     File: core/dcamera.cpp
     Uninitialized variable: local_114
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 195
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 197
     File: core/dcamera.cpp
     Uninitialized variable: iStack_120
 
@@ -536,6 +456,10 @@ uninitvar (408)
     File: core/dcamera.cpp
     Uninitialized variable: unaff_retaddr
 
+  core_dcamera.cpp_CDemonCamera_saveCameraTransform_ line 19
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_EBP
+
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN line 40
     File: core/dcamera.cpp
     Uninitialized variable: local_3c
@@ -543,18 +467,6 @@ uninitvar (408)
   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN line 41
     File: core/dcamera.cpp
     Uninitialized variable: local_38
-
-  core_dcamera.cpp_CDemonCamera_updateTransformMatri line 31
-    File: core/dcamera.cpp
-    Uninitialized variable: local_18
-
-  core_dcamera.cpp_FUN_00442d9c                      line 23
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_EBP
-
-  core_dcamera.cpp_FUN_00442d9c                      line 40
-    File: core/dcamera.cpp
-    Uninitialized variable: in_EDX
 
   core_dcamera.cpp_renderCoronaProjectedTextureScanl line 45
     File: core/dcamera.cpp
@@ -564,15 +476,15 @@ uninitvar (408)
     File: core/dcamera.cpp
     Uninitialized variable: local_3c
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 90
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 91
     File: core/dcube.cpp
     Uninitialized variable: local_3c
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 91
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 92
     File: core/dcube.cpp
     Uninitialized variable: local_38
 
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 92
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044a line 93
     File: core/dcube.cpp
     Uninitialized variable: local_34
 
@@ -592,59 +504,35 @@ uninitvar (408)
     File: core/dglobe.cpp
     Uninitialized variable: unaff_retaddr
 
-  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 86
-    File: core/dlight.cpp
-    Uninitialized variable: local_f0
-
-  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 92
-    File: core/dlight.cpp
-    Uninitialized variable: local_94
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 66
-    File: core/dlight.cpp
-    Uninitialized variable: local_7c
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 72
-    File: core/dlight.cpp
-    Uninitialized variable: local_5c
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 86
+  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 87
     File: core/dlight.cpp
     Uninitialized variable: local_50
 
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 86
+  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 87
     File: core/dlight.cpp
     Uninitialized variable: local_54
 
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 105
+  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 106
     File: core/dlight.cpp
     Uninitialized variable: local_20
 
-  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 86
-    File: core/dlight.cpp
-    Uninitialized variable: local_d4
-
-  core_dlight.cpp_FUN_0044f9b0                       line 90
-    File: core/dlight.cpp
-    Uninitialized variable: local_ec
-
-  core_dlight.cpp_FUN_00450c90                       line 97
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 97
     File: core/dlight.cpp
     Uninitialized variable: local_20
 
-  core_dlight.cpp_FUN_00450c90                       line 108
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 107
     File: core/dlight.cpp
     Uninitialized variable: local_50
 
-  core_dlight.cpp_FUN_00450c90                       line 130
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 129
     File: core/dlight.cpp
     Uninitialized variable: local_3c
 
-  core_dlight.cpp_FUN_00450c90                       line 134
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 133
     File: core/dlight.cpp
     Uninitialized variable: local_54
 
-  core_dlight.cpp_FUN_00450c90                       line 194
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 193
     File: core/dlight.cpp
     Uninitialized variable: local_5c
 
@@ -772,19 +660,19 @@ uninitvar (408)
     File: core/dtrace.cpp
     Uninitialized variable: unaff_EDI
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 127
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 265
     File: core/dtrace.cpp
-    Uninitialized variable: local_150
+    Uninitialized variable: local_144
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 274
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 279
     File: core/dtrace.cpp
     Uninitialized variable: iStack_124
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 277
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 282
     File: core/dtrace.cpp
     Uninitialized variable: iStack_120
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 280
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 285
     File: core/dtrace.cpp
     Uninitialized variable: iStack_11c
 
@@ -944,15 +832,23 @@ uninitvar (408)
     File: core/fire.cpp
     Uninitialized variable: local_44
 
-  core_fire.cpp_CFireball_setupRenderState_FUN_00484 line 58
+  core_fire.cpp_CFireball_render_FUN_00484390        line 98
     File: core/fire.cpp
-    Uninitialized variable: local_54
+    Uninitialized variable: local_1c
+
+  core_fire.cpp_CFireball_render_FUN_00484390        line 190
+    File: core/fire.cpp
+    Uninitialized variable: local_18
 
   core_fire.cpp_CFireball_setupRenderState_FUN_00484 line 59
     File: core/fire.cpp
-    Uninitialized variable: local_48
+    Uninitialized variable: local_54
 
   core_fire.cpp_CFireball_setupRenderState_FUN_00484 line 60
+    File: core/fire.cpp
+    Uninitialized variable: local_48
+
+  core_fire.cpp_CFireball_setupRenderState_FUN_00484 line 61
     File: core/fire.cpp
     Uninitialized variable: local_60
 
@@ -964,41 +860,29 @@ uninitvar (408)
     File: core/fire.cpp
     Uninitialized variable: local_11c
 
-  core_fire.cpp_CPopcorn_render_FUN_00489990         line 52
-    File: core/fire.cpp
-    Uninitialized variable: local_30
-
-  core_fire.cpp_CRainDrop_render_FUN_00489d00        line 51
-    File: core/fire.cpp
-    Uninitialized variable: local_38
-
-  core_fire.cpp_CSmokeParticle_setupRenderState_FUN_ line 58
-    File: core/fire.cpp
-    Uninitialized variable: local_54
-
   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_ line 59
     File: core/fire.cpp
-    Uninitialized variable: local_48
+    Uninitialized variable: local_54
 
   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_ line 60
     File: core/fire.cpp
-    Uninitialized variable: local_60
+    Uninitialized variable: local_48
 
-  core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 line 66
+  core_fire.cpp_CSmokeParticle_setupRenderState_FUN_ line 61
     File: core/fire.cpp
-    Uninitialized variable: local_54
+    Uninitialized variable: local_60
 
   core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 line 67
     File: core/fire.cpp
-    Uninitialized variable: local_48
+    Uninitialized variable: local_54
 
   core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 line 68
     File: core/fire.cpp
-    Uninitialized variable: local_60
+    Uninitialized variable: local_48
 
-  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 76
-    File: core/flame.cpp
-    Uninitialized variable: iStack_30
+  core_fire.cpp_CSpark_setupRenderState_FUN_004837a0 line 69
+    File: core/fire.cpp
+    Uninitialized variable: local_60
 
   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 106
     File: core/flies.cpp
@@ -1007,10 +891,6 @@ uninitvar (408)
   core_flies.cpp_CFlies_renderOpaque_FUN_0048f490    line 107
     File: core/flies.cpp
     Uninitialized variable: fStack_3c
-
-  core_frankgen.cpp_FUN_00495420                     line 16
-    File: core/frankgen.cpp
-    Uninitialized variable: in_stack_00000004
 
   core_gabriela.cpp_CGabriella_processAI_FUN_00496d1 line 105
     File: core/gabriela.cpp
@@ -1036,15 +916,15 @@ uninitvar (408)
     File: core/ghoul.cpp
     Uninitialized variable: local_1c4
 
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 58
+  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 59
     File: core/gore.cpp
     Uninitialized variable: local_54
 
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 59
+  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 60
     File: core/gore.cpp
     Uninitialized variable: local_48
 
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 60
+  core_gore.cpp_CBloodParticle_setupRenderState_FUN_ line 61
     File: core/gore.cpp
     Uninitialized variable: local_60
 
@@ -1232,7 +1112,7 @@ uninitvar (408)
     File: core/set.cpp
     Uninitialized variable: iStack_24
 
-  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 114
+  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 117
     File: core/set.cpp
     Uninitialized variable: fStack_48
 
@@ -1432,6 +1312,10 @@ uninitvar (408)
     File: core/vecdir.cpp
     Uninitialized variable: extraout_ECX_00
 
+  core_vehicle.cpp_CVehicle_renderOpaque_FUN_0054f51 line 55
+    File: core/vehicle.cpp
+    Uninitialized variable: in_stack_0000000c
+
   core_wateract.cpp_CWaterActor_setup_FUN_00551370   line 48
     File: core/wateract.cpp
     Uninitialized variable: iStack_4c
@@ -1451,10 +1335,6 @@ uninitvar (408)
   core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_0055 line 90
     File: core/werewolf.cpp
     Uninitialized variable: local_50
-
-  core_xform.cpp_FUN_0055d660                        line 27
-    File: core/xform.cpp
-    Uninitialized variable: unaff_ESI
 
   core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0 line 118
     File: core/xform.cpp
@@ -1508,27 +1388,15 @@ uninitvar (408)
     File: engine/2d.c
     Uninitialized variable: iStack_1c
 
-  engine_alphabit.cpp_FUN_0040eadd                   line 19
-    File: engine/alphabit.cpp
-    Uninitialized variable: unaff_retaddr
-
-  engine_drender.cpp_FUN_00460d10                    line 19
-    File: engine/drender.cpp
-    Uninitialized variable: unaff_ESI
-
-  engine_drender.cpp_FUN_00460d90                    line 19
-    File: engine/drender.cpp
-    Uninitialized variable: unaff_ESI
-
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN line 94
     File: engine/font.cpp
     Uninitialized variable: local_28
 
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 118
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 126
     File: engine/keyframe.c
     Uninitialized variable: iStack_34
 
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 148
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 156
     File: engine/keyframe.c
     Uninitialized variable: local_2c
 
@@ -1600,13 +1468,9 @@ uninitvar (408)
     File: shape/edittool.cpp
     Uninitialized variable: in_stack_ffffff0c
 
-  shape_edittool.cpp_CEditorTools_updatePercentage_F line 61
+  shape_edittool.cpp_CEditorTools_updatePercentage_F line 63
     File: shape/edittool.cpp
     Uninitialized variable: local_30
-
-  shape_edittool.cpp_FUN_00470730                    line 98
-    File: shape/edittool.cpp
-    Uninitialized variable: in_stack_0000000c
 
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 143
     File: sound/mp3.cpp
@@ -1628,11 +1492,11 @@ uninitvar (408)
     File: sound/mp3.cpp
     Uninitialized variable: local_100
 
-  sound_mp3.cpp_FUN_004e7ed0                         line 142
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0 line 144
     File: sound/mp3.cpp
     Uninitialized variable: unaff_retaddr
 
-  sound_mp3.cpp_FUN_004e7ed0                         line 143
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0 line 145
     File: sound/mp3.cpp
     Uninitialized variable: iStack_40
 
@@ -1643,10 +1507,6 @@ uninitvar (408)
   sound_snddx.cpp_CDirectSoundDevice_unlockSample_FU line 25
     File: sound/snddx.cpp
     Uninitialized variable: in_stack_00000014
-
-  sound_snddx.cpp_FUN_0052ad30                       line 16
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000004
 
   sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 55
     File: sound/snddx.cpp
@@ -1659,14 +1519,6 @@ uninitvar (408)
   sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 59
     File: sound/snddx.cpp
     Uninitialized variable: iStack_3c
-
-  sound_sndmain.cpp_FUN_00525ff0                     line 20
-    File: sound/sndmain.cpp
-    Uninitialized variable: in_stack_00000004
-
-  sound_sndmain.cpp_FUN_005260c0                     line 20
-    File: sound/sndmain.cpp
-    Uninitialized variable: in_stack_00000004
 
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e6 line 157
     File: sound/sndmain.cpp
@@ -1784,19 +1636,19 @@ shiftTooManyBitsSigned (200)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 311
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 312
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 409
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 410
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 415
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 416
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 461
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_004432 line 462
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1920,39 +1772,39 @@ shiftTooManyBitsSigned (200)
     File: core/dlight.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 30
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 31
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 32
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 33
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 55
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 56
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 57
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugVi line 58
+    File: core/dlight.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_dlight.cpp_CDemonLight_testShadowMapRegion_FU line 24
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 31
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 32
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 33
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 34
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 57
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 58
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 59
-    File: core/dlight.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dlight.cpp_FUN_0044ed80                       line 60
     File: core/dlight.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1988,15 +1840,15 @@ shiftTooManyBitsSigned (200)
     File: core/dstrender.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 329
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 334
     File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 330
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 335
     File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 331
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 336
     File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2444,7 +2296,7 @@ shiftTooManyBitsSigned (200)
     File: shape/edittool.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 134
+  shape_edittool.cpp_CEditorTools_createModalWindow_ line 132
     File: shape/edittool.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -2509,7 +2361,7 @@ shiftTooManyBitsSigned (200)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (90)
+legacyUninitvar (84)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600         line 65
@@ -2576,7 +2428,7 @@ legacyUninitvar (90)
     File: core/box.cpp
     Uninitialized variable: local_378
 
-  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 100
+  core_dcamera.cpp_CDemonCamera_FUN_00446810         line 101
     File: core/dcamera.cpp
     Uninitialized variable: unaff_EDI
 
@@ -2588,19 +2440,7 @@ legacyUninitvar (90)
     File: core/dcube.cpp
     Uninitialized variable: in_stack_0000000c
 
-  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 87
-    File: core/dlight.cpp
-    Uninitialized variable: afStack_ec
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 67
-    File: core/dlight.cpp
-    Uninitialized variable: afStack_78
-
-  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 87
-    File: core/dlight.cpp
-    Uninitialized variable: aiStack_d0
-
-  core_dlight.cpp_FUN_00450c90                       line 195
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 194
     File: core/dlight.cpp
     Uninitialized variable: local_5c
 
@@ -2664,10 +2504,6 @@ legacyUninitvar (90)
     File: core/dtrace.cpp
     Uninitialized variable: local_58
 
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 128
-    File: core/dtrace.cpp
-    Uninitialized variable: aiStack_14c
-
   core_dtrace.cpp_CDemonRaytrace_testCylinderCollisi line 65
     File: core/dtrace.cpp
     Uninitialized variable: unaff_EDI
@@ -2680,18 +2516,6 @@ legacyUninitvar (90)
     File: core/elephant.cpp
     Uninitialized variable: pCStack_2c
 
-  core_fire.cpp_CPopcorn_render_FUN_00489990         line 53
-    File: core/fire.cpp
-    Uninitialized variable: aiStack_2c
-
-  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 77
-    File: core/flame.cpp
-    Uninitialized variable: aiStack_2c
-
-  core_flame.cpp_CFlame_renderTransparent_FUN_0048d5 line 191
-    File: core/flame.cpp
-    Uninitialized variable: fStack_18
-
   core_inv.cpp_CInventory_FUN_004c2470               line 170
     File: core/inv.cpp
     Uninitialized variable: local_4c
@@ -2700,7 +2524,7 @@ legacyUninitvar (90)
     File: core/inv.cpp
     Uninitialized variable: local_20
 
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 62
+  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 63
     File: core/mission.cpp
     Uninitialized variable: unaff_ESI
 
@@ -2712,7 +2536,7 @@ legacyUninitvar (90)
     File: core/path.cpp
     Uninitialized variable: local_38
 
-  core_set.cpp_CDemonSet_FUN_00509a80                line 207
+  core_set.cpp_CDemonSet_FUN_00509a80                line 208
     File: core/set.cpp
     Uninitialized variable: in_stack_ffffff9c
 
@@ -2744,13 +2568,17 @@ legacyUninitvar (90)
     File: core/set.cpp
     Uninitialized variable: iStack_18
 
-  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 112
+  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 115
     File: core/set.cpp
     Uninitialized variable: fStack_4c
 
-  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 102
+  core_set.cpp_CDemonSet_processActors_FUN_00509140  line 105
     File: core/set.cpp
     Uninitialized variable: iStack_18
+
+  core_setdir.cpp_CDemonSet_FUN_00513720             line 72
+    File: core/setdir.cpp
+    Uninitialized variable: local_20
 
   core_shotgun.cpp_CShotgun_fire_FUN_00515ea0        line 147
     File: core/shotgun.cpp
@@ -2844,7 +2672,7 @@ legacyUninitvar (90)
     File: engine/model.c
     Uninitialized variable: local_ac
 
-  shape_edittool.cpp_CEditorTools_promptForValidFloa line 33
+  shape_edittool.cpp_CEditorTools_promptForValidFloa line 34
     File: shape/edittool.cpp
     Uninitialized variable: local_18
 
@@ -2864,7 +2692,7 @@ legacyUninitvar (90)
     File: sound/mp3.cpp
     Uninitialized variable: afStack_e78[local_f8]
 
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 72
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 74
     File: sound/sndmain.cpp
     Uninitialized variable: local_28
 
@@ -2873,7 +2701,7 @@ legacyUninitvar (90)
     Uninitialized variable: local_30
 
 ----------------------------------------------------------------------------------------------------
-ignoredReturnValue (58)
+ignoredReturnValue (57)
 ----------------------------------------------------------------------------------------------------
 
   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_F line 51
@@ -3096,11 +2924,7 @@ ignoredReturnValue (58)
     File: engine/matrix.c
     Return value of function atan2() is not used.
 
-  shape_edittool.cpp_CEditorTools_updatePercentage_F line 79
-    File: shape/edittool.cpp
-    Return value of function round() is not used.
-
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 69
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 70
     File: sound/sndmain.cpp
     Return value of function round() is not used.
 
@@ -3256,11 +3080,11 @@ wrongPrintfScanfArgNum (41)
     File: core/sound.cpp
     sscanf format string requires 3 parameters but only 0 are given.
 
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 191
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 193
     File: core/sound.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 204
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 206
     File: core/sound.cpp
     sscanf format string requires 2 parameters but only 1 is given.
 
@@ -3445,24 +3269,16 @@ invalidscanf (41)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (27)
+objectIndex (25)
 ----------------------------------------------------------------------------------------------------
 
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 168
     File: core/bodypart.cpp
     The address of local variable 'fStack_7c' might be accessed at non-zero index.
 
-  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 88
+  core_dlight.cpp_CDemonLight_renderLightGlowSprites line 94
     File: core/dlight.cpp
-    The address of local variable 'local_98' is accessed at non-zero index.
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 68
-    File: core/dlight.cpp
-    The address of local variable 'local_60' is accessed at non-zero index.
-
-  core_dlight.cpp_FUN_0044f9b0                       line 91
-    File: core/dlight.cpp
-    The address of local variable 'fStack_e8' might be accessed at non-zero index.
+    The address of local variable 'local_a0' might be accessed at non-zero index.
 
   core_morph.cpp_CMorph_getReady_FUN_004e03c0        line 108
     File: core/morph.cpp
@@ -3609,6 +3425,50 @@ invalidPointerCast (12)
     Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
+nullPointerRedundantCheck (10)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 83
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 89
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 90
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 91
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 50
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 52
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 54
+    File: core/colonel.cpp
+    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
+
+  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 75
+    File: core/dtrace.cpp
+    Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.
+
+  engine_pod.cpp_CPod_init_FUN_004f8af0              line 23
+    File: engine/pod.cpp
+    Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  engine_prim.c_renderScanlinePolygon_FUN_004fad00   line 251
+    File: engine/prim.c
+    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+----------------------------------------------------------------------------------------------------
 nullPointer (9)
 ----------------------------------------------------------------------------------------------------
 
@@ -3640,45 +3500,13 @@ nullPointer (9)
     File: core/script.cpp
     Possible null pointer dereference: pcVar2
 
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 91
+  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 98
     File: sound/sndmain.cpp
-    Possible null pointer dereference: pcVar8
+    Possible null pointer dereference: pcVar9
 
   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00 line 34
     File: sound/sndmain.cpp
     Possible null pointer dereference: pcVar2
-
-----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (7)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 75
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 50
-    File: core/colonel.cpp
-    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
-
-  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 52
-    File: core/colonel.cpp
-    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
-
-  core_colonel.cpp_CColonel_processAI_FUN_0043a470   line 54
-    File: core/colonel.cpp
-    Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.
-
-  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 75
-    File: core/dtrace.cpp
-    Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.
-
-  engine_pod.cpp_CPod_init_FUN_004f8af0              line 23
-    File: engine/pod.cpp
-    Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  engine_prim.c_renderScanlinePolygon_FUN_004fad00   line 251
-    File: engine/prim.c
-    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (7)
@@ -3720,7 +3548,7 @@ identicalInnerCondition (5)
     File: core/dmodel.cpp
     Identical inner 'if' condition is always true.
 
-  core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0  line 37
+  core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0  line 38
     File: core/menu.cpp
     Identical inner 'if' condition is always true.
 
@@ -3740,15 +3568,15 @@ identicalInnerCondition (5)
 pointerOutOfBounds (4)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 257
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 260
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 259
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 262
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 298
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 301
     File: core/actor.cpp
     Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.
 
@@ -3784,7 +3612,7 @@ arrayIndexOutOfBounds (3)
     File: core/dcamera.cpp
     Array 'aiStack_70[4]' accessed at index 4, which is out of bounds.
 
-  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 190
+  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 191
     File: core/skeleton.cpp
     Array 'local_74[2]' accessed at index 2, which is out of bounds.
 
@@ -3812,13 +3640,13 @@ invalidScanfArgType_int (3)
 selfAssignment (2)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_ckptutil.c_FUN_00430630                    line 179
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_0043063 line 182
     File: cockpit/ckptutil.c
-    Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
+    Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.
 
-  cockpit_ckptutil.c_FUN_00430630                    line 281
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_0043063 line 285
     File: cockpit/ckptutil.c
-    Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
+    Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 pointerOutOfBoundsCond (2)
@@ -3828,7 +3656,7 @@ pointerOutOfBoundsCond (2)
     File: sound/mp3.cpp
     Undefined behaviour, when 'layer*0x10' is 48 the pointer arithmetic '"$CMotionController$$"+layer*0x10' is out of bounds.
 
-  sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_004 line 18
+  sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_004 line 19
     File: sound/mp3.cpp
     Undefined behaviour, when 'layer*0x10' is 64 the pointer arithmetic '"$CMotionController$$"+layer*0x10' is out of bounds.
 
@@ -3844,7 +3672,7 @@ compareBoolExpressionWithInt (1)
 nullPointerArithmetic (1)
 ----------------------------------------------------------------------------------------------------
 
-  core_main.c_displayErrorAndQuit_FUN_004c8440       line 54
+  core_main.c_displayErrorAndQuit_FUN_004c8440       line 49
     File: core/main.c
     Pointer addition with NULL pointer.
 

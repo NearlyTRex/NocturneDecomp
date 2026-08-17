@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *this_ptr)
@@ -19,9 +18,9 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
   CVector3f *input;
   CVector3f *start_pos;
   CMatrix3x4f *pCVar5;
-  CMatrix3x4f *pCVar6;
-  byte bVar7;
-  CMatrix3x4f local_22c;
+  float *pfVar6;
+  CMatrix3x4f *pCVar7;
+  byte bVar8;
   CMatrix3x4f local_1fc;
   CMatrix3x4f local_1cc;
   CMatrix3x4f local_19c;
@@ -45,7 +44,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
   float local_18;
   float local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     return 0;
@@ -62,14 +61,15 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
               (&local_16c,&local_a0,&local_34);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_16c,
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dc9f50,
-               &local_22c);
-    pCVar5 = &local_22c;
-    pCVar6 = &local_13c;
+               (CMatrix3x4f *)
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f50].m,
+               (CMatrix3x4f *)&stack0xfffffdd4);
+    pfVar6 = (float *)&stack0xfffffdd4;
+    pCVar5 = &local_13c;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].w = pCVar5->m[0].w;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+      pCVar5->m[0].w = *pfVar6;
+      pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
     }
     core_xform_cpp_getTranslation_FUN_0055bc00(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_13c,&local_94);
@@ -182,7 +182,8 @@ LAB_0053d387:
                 (&local_1cc,&local_64,&local_88);
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1cc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dc9f50,
+                 (CMatrix3x4f *)
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f50].m,
                  &local_10c);
       pCVar5 = &local_10c;
     }
@@ -197,15 +198,16 @@ LAB_0053d387:
                 (&local_1fc,&local_58,&local_28);
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1fc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices + _DAT_02dc9f88,
+                 (CMatrix3x4f *)
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices[_DAT_02dc9f88].m,
                  &local_19c);
       pCVar5 = &local_19c;
     }
-    pCVar6 = &local_dc;
+    pCVar7 = &local_dc;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].w = pCVar5->m[0].w;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+      pCVar7->m[0].w = pCVar5->m[0].w;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
+      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
     }
     core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_0055bc00(&local_dc,&local_4c);

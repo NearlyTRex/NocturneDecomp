@@ -11,28 +11,27 @@
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
 
 {
+  int *piVar1;
   CBitFont *this_ptr_00;
-  int iVar1;
   int iVar2;
-  uint uVar3;
-  void *pvVar4;
-  uint uVar5;
-  int *piVar6;
-  int iVar7;
-  uint *puVar8;
-  int iVar9;
-  uint *puVar10;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  uint uVar7;
+  void *pvVar8;
+  uint uVar9;
+  char *buffer;
+  int iVar10;
   uint *puVar11;
-  byte bVar12;
-  uint local_12e8 [1200];
+  int iVar12;
+  uint *puVar13;
+  uint *puVar14;
+  byte bVar15;
+  int in_stack_ffffed18;
   int local_28;
-  int local_24;
-  int local_20;
-  int *local_1c;
-  int local_18;
-  uint local_14;
   
-  bVar12 = 0;
+  bVar15 = 0;
   if (_DAT_01bcd070 == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 139;
@@ -45,16 +44,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     g_CurrentLineNumber = 1652;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open another window!");
   }
-  iVar1 = _DAT_01bcd07c * 0x1d8;
-  local_1c = (int *)(iVar1 + 0x1bcd080);
-  local_20 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
-                  (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
-  local_24 = g_WindowHeight / 0x60;
+  iVar2 = _DAT_01bcd07c * 0x1d8;
+  iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
+               (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+  iVar4 = g_WindowHeight / 0x60;
   _DAT_01bcd07c = _DAT_01bcd07c + 1;
-  left = left - local_20;
-  top = top - local_24;
-  right = right + local_20;
-  bottom = bottom + local_24;
+  left = left - iVar3;
+  top = top - iVar4;
+  right = right + iVar3;
+  bottom = bottom + iVar4;
   if (left < 0) {
     left = 0;
   }
@@ -62,27 +60,27 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
     right = g_WindowWidth;
   }
   local_28 = 0;
-  *(byte *)(iVar1 + 0x1bcd0b8) = 0;
+  *(byte *)(iVar2 + 0x1bcd0b8) = 0;
   if (text_content != (char *)0x0) {
-    iVar1 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
+    iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
                       (_DAT_01bcd070,text_content,(char *)0x1bcc0d0,0x14,200,
-                       (right - left) + local_20 * -2);
-    iVar9 = 0;
-    piVar6 = local_1c + 0xe;
-    if (0 < iVar1) {
-      iVar7 = 0x1bcc0d0;
+                       (right - left) + iVar3 * -2);
+    iVar12 = 0;
+    buffer = (char *)(iVar2 + 0x1bcd0b8);
+    if (0 < iVar5) {
+      iVar10 = 0x1bcc0d0;
       do {
-        iVar9 = iVar9 + 1;
-        iVar2 = _sprintf((char *)piVar6,"%s\n",iVar7);
-        piVar6 = (int *)((int)piVar6 + iVar2);
-        iVar7 = iVar7 + 200;
-      } while (iVar9 < iVar1);
+        iVar12 = iVar12 + 1;
+        iVar6 = _sprintf(buffer,"%s\n",iVar10);
+        buffer = buffer + iVar6;
+        iVar10 = iVar10 + 200;
+      } while (iVar12 < iVar5);
     }
     this_ptr_00 = _DAT_01bcd070;
-    if (0 < iVar1) {
-      *(char *)((int)piVar6 + -1) = '\0';
+    if (0 < iVar5) {
+      buffer[-1] = '\0';
       local_28 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
-                           (this_ptr_00,(char *)(local_1c + 0xe));
+                           (this_ptr_00,(char *)(iVar2 + 0x1bcd0b8));
       local_28 = _DAT_01bcd9bc + local_28;
       bottom = bottom + local_28 / 2;
       top = top - local_28 / 2;
@@ -97,94 +95,92 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEdi
   if ((window_flags & 1) == 0) {
     if (g_UseExternalRenderer != 0) {
       if (0 < g_WindowHeight) {
-        iVar1 = 0;
+        iVar5 = 0;
         do {
-          iVar9 = iVar1 + 4;
-          *(uint *)((int)local_12e8 + iVar1) =
-               *(uint *)((int)g_ScreenBufferArray + iVar1);
-          iVar1 = iVar9;
-        } while (iVar9 < g_WindowHeight * 4);
+          iVar12 = iVar5 + 4;
+          *(uint *)(&stack0xffffed18 + iVar5) =
+               *(uint *)((int)g_ScreenBufferArray + iVar5);
+          iVar5 = iVar12;
+        } while (iVar12 < g_WindowHeight * 4);
       }
       engine_special_cpp_lockFrame_FUN_005322e0();
-      iVar1 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
-      uVar3 = (int)((g_WindowWidth * g_BitsPerPixel + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
-      iVar1 = 0;
+      iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+      uVar7 = (int)((g_WindowWidth * g_BitsPerPixel + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
+      iVar5 = 0;
       if (0 < g_WindowHeight) {
-        iVar9 = 0;
+        iVar12 = 0;
         do {
-          puVar8 = *(uint **)((int)g_ScreenBufferArray + iVar9);
-          puVar10 = *(uint **)((int)local_12e8 + iVar9);
-          for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *puVar10 = *puVar8;
-            puVar8 = puVar8 + (uint)bVar12 * -2 + 1;
-            puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+          puVar11 = *(uint **)((int)g_ScreenBufferArray + iVar12);
+          puVar13 = *(uint **)(&stack0xffffed18 + iVar12);
+          for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+            *puVar13 = *puVar11;
+            puVar11 = puVar11 + (uint)bVar15 * -2 + 1;
+            puVar13 = puVar13 + (uint)bVar15 * -2 + 1;
           }
-          for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *(byte *)puVar10 = *(byte *)puVar8;
-            puVar8 = (uint *)((int)puVar8 + (uint)bVar12 * -2 + 1);
-            puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
+          for (uVar9 = uVar7 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+            *(byte *)puVar13 = *(byte *)puVar11;
+            puVar11 = (uint *)((int)puVar11 + (uint)bVar15 * -2 + 1);
+            puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);
           }
-          iVar1 = iVar1 + 1;
-          iVar9 = iVar9 + 4;
-        } while (iVar1 < g_WindowHeight);
+          iVar5 = iVar5 + 1;
+          iVar12 = iVar12 + 4;
+        } while (iVar5 < g_WindowHeight);
       }
-      engine_special_cpp_unlockFrame_FUN_00532320();
+      engine_special_cpp_unlockFrame_FUN_00532320(in_stack_ffffed18);
     }
-    iVar1 = (right - left) * g_BitsPerPixel;
-    iVar9 = iVar1 >> 0x1f;
-    local_14 = (int)((iVar1 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
-    pvVar4 = malloc((bottom - top) * local_14);
-    local_1c[0x72] = (int)pvVar4;
-    if (pvVar4 == (void *)0x0) {
+    iVar5 = (right - left) * g_BitsPerPixel;
+    iVar12 = iVar5 >> 0x1f;
+    uVar7 = (int)((iVar5 + iVar12 * -8) - (uint)(iVar12 << 2 < 0)) >> 3;
+    pvVar8 = malloc((bottom - top) * uVar7);
+    *(void **)(iVar2 + 0x1bcd248) = pvVar8;
+    if (pvVar8 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";
       g_CurrentLineNumber = 1732;
       core_main_c_displayErrorAndQuit_FUN_004c8440("out of memory to open editor window.");
     }
-    puVar8 = (uint *)local_1c[0x72];
+    puVar11 = *(uint **)(iVar2 + 0x1bcd248);
     if (top < bottom) {
-      iVar1 = top * 4;
-      local_18 = bottom * 4;
+      iVar5 = top * 4;
       do {
-        iVar9 = left * g_BitsPerPixel >> 0x1f;
-        piVar6 = (int *)((int)g_ScreenBufferArray + iVar1);
-        iVar1 = iVar1 + 4;
-        puVar10 = (uint *)
-                  (*piVar6 +
-                  ((int)((left * g_BitsPerPixel + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3));
-        puVar11 = puVar8;
-        for (uVar3 = local_14 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar11 = *puVar10;
-          puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
-          puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+        iVar12 = left * g_BitsPerPixel >> 0x1f;
+        piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
+        iVar5 = iVar5 + 4;
+        puVar13 = (uint *)
+                  (*piVar1 +
+                  ((int)((left * g_BitsPerPixel + iVar12 * -8) - (uint)(iVar12 << 2 < 0)) >> 3));
+        puVar14 = puVar11;
+        for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+          *puVar14 = *puVar13;
+          puVar13 = puVar13 + (uint)bVar15 * -2 + 1;
+          puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
         }
-        for (uVar3 = local_14 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *(byte *)puVar11 = *(byte *)puVar10;
-          puVar10 = (uint *)((int)puVar10 + (uint)bVar12 * -2 + 1);
-          puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);
+        for (uVar9 = uVar7 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+          *(byte *)puVar14 = *(byte *)puVar13;
+          puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);
+          puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
         }
-        puVar8 = (uint *)((int)puVar8 + local_14);
-      } while (iVar1 < local_18);
+        puVar11 = (uint *)((int)puVar11 + uVar7);
+      } while (iVar5 < bottom * 4);
     }
   }
   else {
-    local_1c[0x72] = 0;
+    *(uint *)(iVar2 + 0x1bcd248) = 0;
   }
-  local_1c[4] = g_ClipLeft;
-  local_1c[5] = g_ClipTop;
-  local_1c[6] = g_ClipRight;
-  local_1c[7] = g_ClipBottom;
-  local_1c[8] = g_Projection.half_width_fixed;
-  local_1c[9] = g_Projection.neg_half_height_fixed;
-  local_1c[10] = g_Projection.center_x_fixed;
-  local_1c[0xb] = g_Projection.center_y_fixed;
-  local_1c[0xc] = g_ViewportWidth;
-  local_1c[0xd] = g_ViewportHeight;
-  *local_1c = left;
-  local_1c[1] = top;
-  local_1c[2] = right;
-  local_1c[3] = bottom;
+  *(int *)(iVar2 + 0x1bcd090) = g_ClipLeft;
+  *(int *)(iVar2 + 0x1bcd094) = g_ClipTop;
+  *(int *)(iVar2 + 0x1bcd098) = g_ClipRight;
+  *(int *)(iVar2 + 0x1bcd09c) = g_ClipBottom;
+  *(int *)(iVar2 + 0x1bcd0a0) = g_Projection.half_width_fixed;
+  *(int *)(iVar2 + 0x1bcd0a4) = g_Projection.neg_half_height_fixed;
+  *(int *)(iVar2 + 0x1bcd0a8) = g_Projection.center_x_fixed;
+  *(int *)(iVar2 + 0x1bcd0ac) = g_Projection.center_y_fixed;
+  *(int *)(iVar2 + 0x1bcd0b0) = g_ViewportWidth;
+  *(int *)(iVar2 + 0x1bcd0b4) = g_ViewportHeight;
+  *(int *)(iVar2 + 0x1bcd080) = left;
+  *(int *)(iVar2 + 0x1bcd084) = top;
+  *(int *)(iVar2 + 0x1bcd088) = right;
+  *(int *)(iVar2 + 0x1bcd08c) = bottom;
   engine_2d_c_setupViewportAndClipping_FUN_00401e30
-            (left + local_20,top + local_24 + local_28,(right - local_20) + -1,
-             (bottom - local_24) + -1);
+            (left + iVar3,top + iVar4 + local_28,(right - iVar3) + -1,(bottom - iVar4) + -1);
   return;
 }

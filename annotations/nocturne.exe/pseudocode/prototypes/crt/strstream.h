@@ -57,7 +57,7 @@ int __watcallStack strstreambuf::seekoff(strstreambuf *this_ptr,int seek_distanc
 
 // Original: crt_strstream.cpp_strstreambuf_sync_FUN_005701cc
 // Address: 005701cc
-undefined4 strstreambuf::sync(void);
+int __watcallStack strstreambuf::sync(void);
 
 // Original: crt_strstream.cpp_strstreambuf_dtor_FUN_005701cf
 // Address: 005701cf

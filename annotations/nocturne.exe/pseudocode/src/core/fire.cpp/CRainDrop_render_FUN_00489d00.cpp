@@ -26,9 +26,9 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
   uint local_54;
   CVector3i local_50;
   CVector3i local_44;
-  int local_38;
-  int iStack_34;
-  CVector3i CStack_30;
+  byte local_38 [12];
+  int local_2c;
+  int local_28;
   CVector3i local_20;
   int local_14;
   int local_10;
@@ -46,12 +46,14 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)this_ptr);
-  engine_drender_cpp_FUN_00460d90(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
+            (g_CDemonRenderer_PTR_005ae704,(CVector3i *)local_38);
   rotation = (CVector3i *)0x0;
-  local_20.x = local_38;
-  *(int *)((int)&local_20 + (uint)bVar2 * -8 + 4) = (&iStack_34)[(uint)bVar2 * -2];
+  local_20.x = local_38._0_4_;
+  *(uint *)((int)&local_20 + (uint)bVar2 * -8 + 4) =
+       *(uint *)(local_38 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&local_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       *(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)(local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50
             (g_CDemonRenderer_PTR_005ae704,&local_20,rotation);
   local_5c = 0xbe000000;
@@ -104,15 +106,15 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
                              (this_ptr->base).lifetime_remaining * (float)4));
   DAT_005c5040 = (int)ROUND(dVar3);
   _DAT_005c50c0 = 0x900000;
-  CStack_30.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
-  CStack_30.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
-  CStack_30.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
+  local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);
+  local_2c = (int)ROUND((this_ptr->base).position.y * 256.0f);
+  local_28 = (int)ROUND((this_ptr->base).position.z * 256.0f);
   DAT_005c5070 = DAT_005c5040;
   _DAT_005c50a0 = DAT_005c5040;
   _DAT_005c50d0 = DAT_005c5040;
   local_20.z = DAT_005c5040;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSet_PTR_005be368,&CStack_30,(CVector3i *)&DAT_01c08d14,0,4);
+            (g_CDemonSet_PTR_005be368,(CVector3i *)(local_38 + 8),(CVector3i *)&DAT_01c08d14,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   local_a8 = 4;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080

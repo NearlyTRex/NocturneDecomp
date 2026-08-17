@@ -83,7 +83,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_updateTexture_FUN_005323c0",
-    "signature": "int __cdecl engine_special_cpp_updateTexture_FUN_005323c0(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)"
+    "signature": "int __cdecl engine_special_cpp_updateTexture_FUN_005323c0(SMRGLTextureBasic *texture_info)"
   },
   "function_calls": [],
   "globals": [
@@ -128,9 +128,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 5,
-    "declared_stack_bytes": 20,
-    "estimated_params": 5,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -159,10 +159,10 @@
     "pcode_op_count": 82
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -171,34 +171,6 @@
         "offset": 4,
         "size": 4,
         "type": "SMRGLTextureBasic *"
-      },
-      {
-        "is_param": true,
-        "name": "texture_dimension",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "texture_data",
-        "offset": 12,
-        "size": 4,
-        "type": "uchar *"
-      },
-      {
-        "is_param": true,
-        "name": "palette_data",
-        "offset": 16,
-        "size": 4,
-        "type": "uchar *"
-      },
-      {
-        "is_param": true,
-        "name": "opacity_data",
-        "offset": 20,
-        "size": 4,
-        "type": "uchar *"
       }
     ]
   },

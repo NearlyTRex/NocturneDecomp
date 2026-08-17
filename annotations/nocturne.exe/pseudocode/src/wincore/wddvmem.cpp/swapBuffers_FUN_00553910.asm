@@ -20,9 +20,9 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e516
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9e0
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f68
-;   core_main.c_FUN_004c8510 at 004c8552
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9207
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c5e
+;   core_main.c_showDeveloperToolsMenu_FUN_004c8510 at 004c8552
 ;   ... and 34 more
 ;
 ; Referenced Globals:
@@ -48,8 +48,8 @@
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_special.cpp_toggle_FUN_00532ba0
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
-;   wincore_wddvmem.cpp_FUN_00553ba0
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
+;   wincore_wddvmem.cpp_videoRestore_FUN_00553ba0
 ;   wincore_winrun.cpp_processWindowMessages_FUN_005591c0
 ;
 ; *****************************************************************************
@@ -267,8 +267,8 @@ section .text
     CMP EAX,0x887601c2                  ; 00553b41
     JNZ 0x005539be                      ; 00553b46
         ;   XREF to: 005539be (CONDITIONAL_JUMP)  ; LAB_005539be
-    CALL wincore_wddvmem.cpp_FUN_00553ba0 ; 00553b4c
-        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00553ba0()
+    CALL wincore_wddvmem.cpp_videoRestore_FUN_00553ba0 ; 00553b4c
+        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_videoRestore_FUN_00553ba0()
     XOR ESI,ESI                         ; 00553b51
     MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b59

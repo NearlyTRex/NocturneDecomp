@@ -37,7 +37,7 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_004f88a0(CPod *this_ptr,char *pod_fil
   }
   g_CurrentFilename = "..\\engine\\pod.cpp";
   g_CurrentLineNumber = 622;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't mount %s");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Can't mount %s",pod_filename);
   this_ptr->pod_file_count = this_ptr->pod_file_count + 1;
   return;
 }

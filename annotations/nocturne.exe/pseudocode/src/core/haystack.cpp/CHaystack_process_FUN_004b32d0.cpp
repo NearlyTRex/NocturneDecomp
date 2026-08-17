@@ -171,7 +171,7 @@ LAB_004b35c4:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&pCVar14->motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                    (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
           goto switchD_004b375e_caseD_4;
         }
         goto LAB_004b35c4;

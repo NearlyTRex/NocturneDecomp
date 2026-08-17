@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   border_style_flag
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEdButton_paint_FUN_00476f40 at 00476f5c
 ;   shape_edittool.cpp_CEdCheck_render_FUN_00477390 at 00477436
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_00476580 at 00476615
-;   shape_edittool.cpp_FUN_00476f40 at 00476f5c
 ;
 ; Referenced Globals:
 ;   int g_ActiveRenderColor

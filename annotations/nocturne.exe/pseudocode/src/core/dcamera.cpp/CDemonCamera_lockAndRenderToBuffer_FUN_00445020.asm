@@ -76,7 +76,7 @@ section .text
     JMP 0x00445033                      ; 0044508f
         ;   XREF to: 00445033 (UNCONDITIONAL_JUMP)  ; LAB_00445033
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00445091
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
         ;   Label: LAB_00445091
     CMP dword ptr [0x02dc9d60],0x0      ; 00445096 | g_UseDirect3D
     JNZ 0x004450a2                      ; 0044509d

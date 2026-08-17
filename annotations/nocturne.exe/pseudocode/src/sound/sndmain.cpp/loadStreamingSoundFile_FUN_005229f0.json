@@ -1,0 +1,421 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 30,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 7,
+        "line": 31,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 33,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 34,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 35,
+        "message": "use of undeclared identifier '_DAT_02dc1ed8'; did you mean 'DAT_005c1dd8'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 52,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 265,
+    "complexity_score": 189,
+    "cross_reference_count": 0,
+    "function_call_count": 15,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 124,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 389
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005229f0",
+    "address_range": [
+      [
+        "005229f0",
+        "00522d06"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
+    "signature": "CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005229f0(int slot_index,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    },
+    {
+      "addr": "0056497c",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_0056497c"
+    },
+    {
+      "addr": "00566e70",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_00566e70"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    },
+    {
+      "addr": "00566498",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_00566498"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    },
+    {
+      "addr": "004568c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
+    },
+    {
+      "addr": "004e7d90",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90"
+    },
+    {
+      "addr": "004e7df0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0"
+    },
+    {
+      "addr": "00523910",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910"
+    },
+    {
+      "addr": "00523a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60"
+    },
+    {
+      "addr": "00521e10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10"
+    },
+    {
+      "addr": "00523d10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10"
+    },
+    {
+      "addr": "00521830",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_parseWavFile_FUN_00521830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00592787",
+      "name": "s_mp3_00592787",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0059278b",
+      "name": "s_mp3_0059278b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00592790",
+      "name": "s_sound_00592790",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00592796",
+      "name": "s_sound_sndmain_cpp_00592796",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005927ab",
+      "name": "s_Out_of_memory_005927ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005927ba",
+      "name": "s_rb_005927ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005927bd",
+      "name": "s_sound_005927bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005a2174",
+      "name": "FLOAT_005a2174",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dc1ed8",
+      "name": "DAT_02dc1ed8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc216c",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc2170",
+      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.442857142857143,
+    "instruction_count": 210,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 19,
+      "CBRANCH": 18,
+      "COPY": 198,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 90,
+      "INT_AND": 112,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 102,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 27,
+      "INT_SEXT": 3,
+      "INT_SLESS": 51,
+      "INT_SUB": 65,
+      "INT_XOR": 5,
+      "LOAD": 36,
+      "POPCOUNT": 51,
+      "RETURN": 3,
+      "ROUND": 2,
+      "STORE": 84,
+      "SUBPIECE": 2,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 933
+  },
+  "stack_frame": {
+    "frame_size": 288,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "slot_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 58,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 93,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 65,
+      "match": "pCVar8 = (T *)((pCVar8->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 100,
+      "match": "pCVar8 = (T *)((pCVar8->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

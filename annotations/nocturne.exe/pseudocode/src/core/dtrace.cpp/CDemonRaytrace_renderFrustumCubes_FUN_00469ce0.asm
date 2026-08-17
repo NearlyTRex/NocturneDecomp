@@ -127,8 +127,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
-;   engine_drender.cpp_FUN_00460d10
 ;
 ; *****************************************************************************
 
@@ -160,8 +160,8 @@ section .text
     PUSH ESI                            ; 00469d2b | DAT_01b4d738
     LEA ESI,[ESP + 0x64]                ; 00469d2c
     LEA EDI,[ESP + 0x7c]                ; 00469d30
-    CALL engine_drender.cpp_FUN_00460d10 ; 00469d34
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10 ; 00469d34
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x64]                ; 00469d39
     ADD ESP,0x4                         ; 00469d3d
     MOVSD ES:EDI,ESI                    ; 00469d40

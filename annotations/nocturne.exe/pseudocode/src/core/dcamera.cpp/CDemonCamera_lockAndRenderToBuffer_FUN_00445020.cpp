@@ -10,6 +10,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(CDe
 
 {
   int iVar1;
+  int unaff_EDI;
   
   if (g_WindowHeight < 0x1e1) {
     engine_special_cpp_lockFrame_FUN_005322e0();
@@ -24,7 +25,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(CDe
   }
   core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0(this_ptr);
   if (g_WindowHeight < 0x1e1) {
-    iVar1 = engine_special_cpp_unlockFrame_FUN_00532320();
+    iVar1 = engine_special_cpp_unlockFrame_FUN_00532320(unaff_EDI);
     if (g_UseDirect3D == 0) {
       return iVar1;
     }

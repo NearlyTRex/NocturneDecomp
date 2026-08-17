@@ -9,17 +9,17 @@
 int FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
 
 {
-  uint uVar1;
-  int iVar2;
+  int iVar1;
+  uint uVar2;
   uint uVar3;
   _stat _Stack_50;
   
-  uVar1 = *param_2;
-  if ((uVar1 & 3) == 3) {
+  uVar2 = *param_2;
+  if ((uVar2 & 3) == 3) {
     uVar3 = 0x22;
   }
-  else if ((uVar1 & 1) == 0) {
-    if ((uVar1 & 2) == 0) {
+  else if ((uVar2 & 1) == 0) {
+    if ((uVar2 & 2) == 0) {
       return -1;
     }
     uVar3 = 0x21;
@@ -27,44 +27,45 @@ int FUN_00570ad0(char *param_1,uint *param_2,uint param_3)
   else {
     uVar3 = 0;
   }
-  if ((uVar1 & 8) != 0) {
+  if ((uVar2 & 8) != 0) {
     uVar3 = uVar3 | 0x10;
   }
-  if ((uVar1 & 0x10) != 0) {
+  if ((uVar2 & 0x10) != 0) {
     uVar3 = uVar3 | 0x40;
   }
-  if ((uVar1 & 0x20) != 0) {
+  if ((uVar2 & 0x20) != 0) {
     uVar3 = uVar3 & 0xffffffdf;
   }
-  if ((uVar1 & 0x100) == 0) {
+  if ((uVar2 & 0x100) == 0) {
     uVar3 = uVar3 | 0x100;
     *(byte *)param_2 = (byte)*param_2 | 0x80;
   }
   else {
     uVar3 = uVar3 | 0x200;
   }
-  if ((((uVar1 & 0x40) != 0) && ((uVar3 | 0x20) != 0)) &&
-     (iVar2 = getFileStat(param_1,&_Stack_50), iVar2 != -1)) {
+  if ((((uVar2 & 0x40) != 0) && ((uVar3 | 0x20) != 0)) &&
+     (iVar1 = getFileStat(param_1,&_Stack_50), iVar1 != -1)) {
     return -1;
   }
-  param_3 = param_3 & 0x7000;
-  iVar2 = 0;
-  if (param_3 < 0x2000) {
-    if (param_3 == 0x1000) {
-      iVar2 = 0x20;
+  uVar2 = param_3 & 0x7000;
+  iVar1 = 0;
+  if (uVar2 < 0x2000) {
+    if (uVar2 == 0x1000) {
+      iVar1 = 0x20;
     }
   }
-  else if (param_3 < 0x2001) {
-    iVar2 = 0x30;
+  else if (uVar2 < 0x2001) {
+    iVar1 = 0x30;
   }
-  else if (0x2fff < param_3) {
-    if (param_3 < 0x3001) {
-      iVar2 = 0x40;
+  else if (0x2fff < uVar2) {
+    if (uVar2 < 0x3001) {
+      iVar1 = 0x40;
     }
-    else if (param_3 == 0x4000) {
-      iVar2 = 0x10;
+    else if (uVar2 == 0x4000) {
+      iVar1 = 0x10;
     }
   }
-  iVar2 = CreateFileVariadic(param_1,uVar3,iVar2);
-  return iVar2;
+  param_3 = param_3 & 0xffff8fff;
+  iVar1 = CreateFileVariadic(param_1,uVar3,iVar1,param_3);
+  return iVar1;
 }

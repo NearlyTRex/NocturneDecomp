@@ -59,13 +59,13 @@ int __cdecl getTriangleWindingFromIndices2(SMRGLPrimitiveTriangle *triangle_indi
 // Address: 004f9cb0
 int __cdecl getTriangleWindingFromPackedIndices(STrianglePackedIndices *triangle);
 
-// Original: engine_prim.c_FUN_004f9dd0
+// Original: engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
 // Address: 004f9dd0
-void __cdecl FUN_004f9dd0(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderPolygonSoftware(SRenderVertex *vertices,int vertex_count);
 
-// Original: engine_prim.c_FUN_004fa2e0
+// Original: engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
 // Address: 004fa2e0
-void __cdecl FUN_004fa2e0(int *vertex_indices,int vertex_count);
+void __cdecl renderIndexedPolygonSoftware(int *vertex_indices,int vertex_count);
 
 // Original: engine_prim.c_setupAdvancedSoftwareEdge_FUN_004fa800
 // Address: 004fa800

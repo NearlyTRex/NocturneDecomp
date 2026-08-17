@@ -34,7 +34,7 @@
 
 int __cdecl core_game_cpp_checkCheatCode_FUN_004a0260(char *cheat_string);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(char *class_name);
-void __cdecl core_game_cpp_FUN_004a03a0(char *param_1,EAmmoType param_2);
+void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004a03a0(char *param_1,EAmmoType param_2);
 void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004a0430(char *cheat_code,char *class_name,char *message);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr);

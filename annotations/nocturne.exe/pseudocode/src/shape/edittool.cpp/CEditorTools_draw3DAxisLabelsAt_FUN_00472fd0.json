@@ -1,0 +1,293 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 19,
+        "message": "use of undeclared identifier '_DAT_0059ca4c'; did you mean 'DAT_0059cf1c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_0059ca4c'; did you mean 'DAT_0059cf1c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 55,
+        "line": 21,
+        "message": "use of undeclared identifier '_DAT_0059ca4c'; did you mean 'DAT_0059cf1c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 23,
+        "message": "use of undeclared identifier '_DAT_0059ca5c'; did you mean 'DAT_0059cf1c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 24,
+        "message": "use of undeclared identifier '_DAT_0059ca5c'; did you mean 'DAT_0059cf1c'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 25,
+        "message": "use of undeclared identifier '_DAT_0059ca5c'; did you mean 'DAT_0059cf1c'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00472fd0",
+    "address_range": [
+      [
+        "00472fd0",
+        "00473073"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation)"
+  },
+  "function_calls": [
+    {
+      "addr": "004044d0",
+      "is_variadic": false,
+      "name": "engine_3d.c_processCameraRelativePoint_FUN_004044d0"
+    },
+    {
+      "addr": "004cd380",
+      "is_variadic": false,
+      "name": "engine_matrix.c_matrixPushAndTransform_FUN_004cd380"
+    },
+    {
+      "addr": "004cdbc0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_004cdbc0"
+    },
+    {
+      "addr": "00472de0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0059ca4c",
+      "name": "DAT_0059ca4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0059ca5c",
+      "name": "DAT_0059ca5c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.611111111111111,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 143,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_MULT": 6,
+      "INT_ADD": 26,
+      "INT_AND": 10,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 18,
+      "LOAD": 18,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 23,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 303
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "text_color",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 20,
+        "size": 4,
+        "type": "UOrientationVector *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

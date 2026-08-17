@@ -1,0 +1,247 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 134,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
+    "suspect_types": [
+      "fnstsw_flag_artifact",
+      "register_param",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056ddf0",
+    "address_range": [
+      [
+        "0056ddf0",
+        "0056de8b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_build_cmdline_FUN_0056ddf0",
+    "signature": "int __cdecl crt_unknown_c_build_cmdline_FUN_0056ddf0(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "crt_startup.c_HandleRuntimeError_FUN_0056ddc0"
+    },
+    {
+      "addr": "005635c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_InternalHeapAlloc_FUN_005635c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00598bec",
+      "name": "s_Not_enough_memory_to_all_00598bec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c18a0",
+      "name": "DAT_005c18a0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c18d5",
+      "name": "DAT_005c18d5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de4e20",
+      "name": "DAT_02de4e20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de4e24",
+      "name": "DAT_02de4e24",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7916666666666665,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 15,
+      "INT_AND": 27,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
+      "INT_OR": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 182
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "argc",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "argv",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "program",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "out_cmdline",
+        "offset": 16,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "out_environment",
+        "offset": 20,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "out_buffer",
+        "offset": 24,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "out_bufsize",
+        "offset": 28,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "copy_program_flag",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar3 = CONCAT22((short)((uint)in_EAX >> 0x10),CONCAT11(DAT_005c18d5,(char)in_EAX)) & 0xfffff8ff;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar3 = CONCAT22((short)((uint)in_EAX >> 0x10),CONCAT11(DAT_005c18d5,(char)in_EAX)) & 0xfffff8ff;",
+      "type": "register_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 14,
+      "match": "CONCAT22((short)((uint)in_EAX >> 0x10",
+      "severity": "severe",
+      "text": "uVar3 = CONCAT22((short)((uint)in_EAX >> 0x10),CONCAT11(DAT_005c18d5,(char)in_EAX)) & 0xfffff8ff;",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005c18d5",
+      "severity": "mild",
+      "text": "uVar3 = CONCAT22((short)((uint)in_EAX >> 0x10),CONCAT11(DAT_005c18d5,(char)in_EAX)) & 0xfffff8ff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005c18d5",
+      "severity": "mild",
+      "text": "DAT_005c18d5 = (byte)(uVar3 >> 8) | 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005c1894",
+      "severity": "mild",
+      "text": "puVar5 = &DAT_005c1894;",
+      "type": "undefined_data"
+    }
+  ]
+}

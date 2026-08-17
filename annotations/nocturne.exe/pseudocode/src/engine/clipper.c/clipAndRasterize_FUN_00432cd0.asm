@@ -67,8 +67,8 @@
 ;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
 ;   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
-;   engine_prim.c_FUN_004f9dd0
-;   engine_prim.c_FUN_004fa2e0
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0
+;   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0
 ;   engine_special.cpp_drawPolygon2_FUN_00532650
 ;
 ; *****************************************************************************
@@ -188,8 +188,8 @@ section .text
     PUSH EBX                            ; 00432deb
         ;   Label: LAB_00432deb
     PUSH EAX                            ; 00432dec
-    CALL engine_prim.c_FUN_004fa2e0     ; 00432ded
-        ;   XREF to: 004fa2e0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_004fa2e0(int * vertex_indices, int vertex_count)
+    CALL engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0 ; 00432ded
+        ;   XREF to: 004fa2e0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 00432df2
     JMP 0x00432de0                      ; 00432df5
         ;   XREF to: 00432de0 (UNCONDITIONAL_JUMP)  ; LAB_00432de0
@@ -291,8 +291,8 @@ section .text
         ;   XREF to: 00432de0 (CONDITIONAL_JUMP)  ; LAB_00432de0
     PUSH EBX                            ; 00432edf
     PUSH 0x766c74                       ; 00432ee0 | DAT_00766c74
-    CALL engine_prim.c_FUN_004f9dd0     ; 00432ee5
-        ;   XREF to: 004f9dd0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_004f9dd0(SRenderVertex * vertices, int vertex_count)
+    CALL engine_prim.c_renderPolygonSoftware_FUN_004f9dd0 ; 00432ee5
+        ;   XREF to: 004f9dd0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderPolygonSoftware_FUN_004f9dd0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00432eea
     ADD ESP,0x140                       ; 00432eed
     POP EBP                             ; 00432ef3

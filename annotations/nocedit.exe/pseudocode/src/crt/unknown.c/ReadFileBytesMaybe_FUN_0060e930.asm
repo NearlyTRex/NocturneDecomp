@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; uint __cdecl crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930(uint param_1,char *param_2,DWORD param_3)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   param_1
+; char *           Stack[0x8]:4   param_2
+; DWORD            Stack[0xc]:4   param_3
 ;
 ; XREF[1]:
 ;   crt_fstream.cpp_filebuf_underflow_FUN_0060da87 at 0060db7a

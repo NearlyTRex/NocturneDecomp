@@ -58,62 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 28,
+        "line": 31,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_005a2148'"
+        "category": "format_error",
+        "column": 59,
+        "line": 42,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 74,
+        "line": 61,
+        "message": "use of undeclared identifier '_DAT_005a2148'"
+      },
+      {
+        "category": "format_error",
+        "column": 18,
+        "line": 71,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 48,
+        "line": 80,
         "message": "use of undeclared identifier '_DAT_02dc78e0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 75,
+        "line": 81,
         "message": "use of undeclared identifier '_DAT_02dc78e8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 48,
-        "line": 76,
+        "line": 82,
         "message": "use of undeclared identifier '_DAT_02dc78f0'"
+      },
+      {
+        "category": "format_error",
+        "column": 69,
+        "line": 87,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 82,
+        "line": 89,
         "message": "use of undeclared identifier '_DAT_02dc78f8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 83,
+        "line": 90,
         "message": "use of undeclared identifier '_DAT_02dc7900'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_02dc7908'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 91,
-        "message": "use of undeclared identifier '_DAT_005bea80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 91,
-        "message": "use of undeclared identifier '_DAT_005a2150'"
       }
     ],
     "success": false,
@@ -122,20 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 226,
+    "complexity_score": 270,
     "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
-    "suspect_count": 7,
+    "pseudocode_lines": 150,
+    "suspect_count": 9,
     "suspect_types": [
       "bitcast_double_pair",
+      "shadow_pointer_walk",
+      "sub84_truncation",
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 600
+    "total_lines": 614
   },
   "cross_references": [
     {
@@ -233,12 +235,12 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -782,8 +784,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 78,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 89,
+      "line": 96,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
@@ -791,7 +801,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 93,
+      "line": 100,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158)) < local_60) {",
@@ -799,7 +809,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 94,
+      "line": 101,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(2.25f,FLOAT_005a2158));",
@@ -807,27 +817,35 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 121,
       "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "if ((this_ptr->is_active == 1) && (iVar11 = 0, 0 < DAT_005bea68)) {",
+      "text": "if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < DAT_005bea68)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 130,
       "match": "DAT_005bea68",
       "severity": "mild",
-      "text": "} while (iVar11 < DAT_005bea68);",
+      "text": "} while (iVar12 < DAT_005bea68);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
+      "line": 145,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02dc8318 + 0x40))(_DAT_02dc8318,this_ptr,local_18);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 129,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

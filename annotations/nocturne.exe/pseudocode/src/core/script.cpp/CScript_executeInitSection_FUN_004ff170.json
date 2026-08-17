@@ -58,25 +58,31 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 20,
+        "line": 21,
         "message": "use of undeclared identifier '_DAT_01e56418'; did you mean 'DAT_02DE6418'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01e56c24'"
       },
       {
         "category": "undeclared_identifier",
+        "column": 58,
+        "line": 45,
+        "message": "use of undeclared identifier 'DAT_01e56420'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 11,
-        "line": 51,
+        "line": 55,
         "message": "use of undeclared identifier '_DAT_01e56c24'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 53,
+        "line": 57,
         "message": "use of undeclared identifier '_DAT_01e56c24'"
       }
     ],
@@ -86,17 +92,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 64,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
-    "suspect_count": 1,
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
     "suspect_types": [
+      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 176
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -126,7 +133,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -314,6 +321,14 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01e56420",
+      "severity": "mild",
+      "text": "this_ptr->parsed_lines[iVar1].text,&DAT_01e56420);",
+      "type": "undefined_data"
     }
   ]
 }

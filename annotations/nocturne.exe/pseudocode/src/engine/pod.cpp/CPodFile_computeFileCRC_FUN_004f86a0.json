@@ -58,25 +58,25 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 34,
+        "line": 35,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 36,
+        "line": 37,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 44,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 45,
+        "line": 46,
         "message": "use of undeclared identifier 'DAT_01e428d0'"
       }
     ],
@@ -86,17 +86,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 92,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 48,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 187
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -121,7 +121,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -304,7 +304,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar3 = &DAT_01e428d0;",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,0x10000,1,file);",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar3 = &DAT_01e428d0;",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,size,1,file);",

@@ -143,7 +143,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDe
                     g_CurrentFilename = "..\\core\\setcolid.cpp";
                     g_CurrentLineNumber = 203;
                     core_main_c_displayErrorAndQuit_FUN_004c8440
-                              ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
+                              ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
                   }
                   CStack_58.x = local_e8.x - (pCVar2->location).position.x;
                   CStack_58.y = local_e8.y - (pCVar2->location).position.y;

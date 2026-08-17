@@ -68,6 +68,18 @@
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
+        "category": "format_error",
+        "column": 54,
+        "line": 190,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 57,
+        "line": 200,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "cast_error",
         "column": 34,
         "line": 390,
@@ -78,6 +90,12 @@
         "column": 46,
         "line": 393,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 483,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "type_error",
@@ -96,24 +114,6 @@
         "column": 26,
         "line": 500,
         "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 26,
-        "line": 501,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 48,
-        "line": 502,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 58,
-        "line": 513,
-        "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2754,
-    "complexity_score": 1787,
+    "complexity_score": 1788,
     "cross_reference_count": 1,
     "function_call_count": 51,
     "global_count": 68,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1162,
+    "pseudocode_lines": 1163,
     "suspect_count": 58,
     "suspect_types": [
       "bit_int_float_compare",
@@ -140,7 +140,7 @@
       "unrolled_memcpy",
       "unrolled_memset"
     ],
-    "total_lines": 3916
+    "total_lines": 3917
   },
   "cross_references": [
     {
@@ -371,7 +371,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -1307,7 +1307,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 970,
+      "line": 971,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = 2.12199579936439e-314;",
@@ -1315,7 +1315,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 973,
+      "line": 974,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
@@ -1323,7 +1323,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 973,
+      "line": 974,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.motion_controller,SUB84(in_stack_fffffd10,0),",
@@ -1331,7 +1331,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 974,
+      "line": 975,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(int)((ulonglong)in_stack_fffffd10 >> 0x20));",
@@ -1339,7 +1339,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 977,
+      "line": 978,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "((CDemonActor *)this_ptr,(CVector3f *)&DAT_02dd1184,fVar17 * 0.025f + 1.0)",
@@ -1347,7 +1347,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1121,
+      "line": 1122,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_1dc.x = (float)auStack_110._0_4_ - CStack_194.x;",
@@ -1355,7 +1355,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1122,
+      "line": 1123,
       "match": "._8_4_",
       "severity": "mild",
       "text": "CStack_1dc.z = (float)auStack_110._8_4_ - CStack_194.z;",
@@ -1435,7 +1435,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1015,
+      "line": 1016,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1443,7 +1443,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 954,
+      "line": 955,
       "match": "0x42c80000 < (int)SStack_2bc.damage_amount)",
       "severity": "moderate",
       "text": "if (0x42c80000 < (int)SStack_2bc.damage_amount) {",

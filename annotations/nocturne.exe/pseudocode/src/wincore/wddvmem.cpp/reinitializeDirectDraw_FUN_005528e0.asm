@@ -9,7 +9,7 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
 ;   crt_ddraw.c_DirectDrawCreate
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 005528ed (UNCONDITIONAL_JUMP)  ; LAB_005528ed
     PUSH 0x11                           ; 0055296b
         ;   Label: LAB_0055296b
-    MOV ECX,dword ptr [0x02de2098]      ; 0055296d | DAT_02de2098
+    MOV ECX,dword ptr [0x02de2098]      ; 0055296d | g_HWND_02de2098
     MOV EAX,[0x02ddf550]                ; 00552973 | g_DirectDrawObject
     PUSH ECX                            ; 00552978
     MOV EDX,dword ptr [EAX]             ; 00552979

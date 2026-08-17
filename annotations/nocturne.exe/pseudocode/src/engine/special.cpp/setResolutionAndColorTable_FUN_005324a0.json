@@ -62,27 +62,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 46,
+    "complexity_score": 72,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 14,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 46,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 144
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 145
   },
   "cross_references": [
-    {
-      "addr": "00553ba0",
-      "from_addr": "00553bd2",
-      "name": "wincore_wddvmem.cpp_FUN_00553ba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00553190",
       "from_addr": "00553240",
       "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553ba0",
+      "from_addr": "00553bd2",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_00553ba0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -223,7 +225,7 @@
       {
         "call_addr": "00553bd2",
         "call_type": "direct",
-        "caller": "wincore_wddvmem.cpp_FUN_00553ba0",
+        "caller": "wincore_wddvmem.cpp_videoRestore_FUN_00553ba0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -295,5 +297,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "engine_special_cpp_unlockFrame_FUN_00532320(unaff_EBP);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

@@ -49,7 +49,7 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_004d0d20(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBarByBounds_FUN_004d1290(int x_center,int y_bottom,int y_top);
 void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int initialize_systems);
-int __cdecl core_menu_cpp_FUN_004d23d0(void);
+int __cdecl core_menu_cpp_showMainGameMenu_FUN_004d23d0(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004d2880(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004d2900(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key_code_ptr,char *description);
@@ -128,7 +128,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_004d8fc0(CDemonMission *this_ptr
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004d9020(CDemonMission *this_ptr,int set_index);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d90e0(CDemonMission *this_ptr,CLocation *teleport_target);
-void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
+void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission *this_ptr,CDemonActor *actor,uint flags);
 void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_FUN_004d93d0(CDemonMission *this_ptr,char *param_2);

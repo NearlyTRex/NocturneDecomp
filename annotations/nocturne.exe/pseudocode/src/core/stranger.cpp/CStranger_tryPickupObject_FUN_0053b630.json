@@ -58,14 +58,20 @@
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 222,
+        "line": 224,
         "message": "use of undeclared identifier '_DAT_02dc9f88'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 224,
+        "line": 226,
         "message": "use of undeclared identifier '_DAT_02dc9f60'"
+      },
+      {
+        "category": "format_error",
+        "column": 22,
+        "line": 239,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -74,19 +80,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 347,
+    "complexity_score": 353,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 272,
+    "pseudocode_lines": 278,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 964
+    "total_lines": 970
   },
   "cross_references": [
     {
@@ -132,7 +138,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -157,7 +163,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -479,7 +485,7 @@
       "line": 72,
       "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
       "severity": "moderate",
-      "text": "pCVar3 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);",
+      "text": "pCVar8 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -487,7 +493,7 @@
       "line": 170,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar7->min).x;",
+      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -495,7 +501,7 @@
       "line": 176,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar8->x = (pCVar7->max).x;",
+      "text": "pCVar7->x = (pCVar6->max).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -503,15 +509,15 @@
       "line": 191,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_world_center).x = pCVar8->x;",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 252,
+      "line": 256,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->carry_object_world_center).x = pCVar8->x;",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -54,6 +54,12 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 80,
+        "line": 21,
+        "message": "format specifies type 'char *' but the argument has type 'CTrigger *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -62,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 15,
+    "complexity_score": 16,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 16,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 56
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -143,7 +149,7 @@
   "function_calls": [
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],

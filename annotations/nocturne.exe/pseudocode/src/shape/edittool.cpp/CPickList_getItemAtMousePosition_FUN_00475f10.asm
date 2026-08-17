@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   mouse_y
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00475230 at 0047537f
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230 at 0047537f
 ;
 ; Referenced Globals:
 ;   int g_ClipLeft

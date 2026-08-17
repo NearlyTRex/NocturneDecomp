@@ -3,7 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/iostream.h"
-#include "system/windef.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x610000

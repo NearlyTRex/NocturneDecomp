@@ -21,7 +21,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050d910(CDemonSet *this_ptr,SInputFace 
   SMRGLPrimitivePoly SStack_118;
   uint local_90;
   uint uStack_8c;
-  CVector3i local_50 [2];
+  CVector3i local_50;
+  CVector3i local_44;
   CVector3i local_38;
   int local_2c;
   int local_28 [6];
@@ -39,7 +40,8 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050d910(CDemonSet *this_ptr,SInputFace 
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
-  engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
+            (g_CDemonRenderer_PTR_005ae704,&local_44);
   local_28[2] = 0;
   if (0 < count) {
     do {
@@ -76,10 +78,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050d910(CDemonSet *this_ptr,SInputFace 
             local_28[1] = (int)ROUND(*(float *)(&DAT_02045ab8 + iVar4));
           }
           else {
-            local_50[0].x = (int)ROUND(_DAT_01fff54c * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b130);
-            local_50[0].y = (int)ROUND(_DAT_01fff550 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b134);
-            local_50[0].z = (int)ROUND(_DAT_01fff554 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b138);
-            engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(local_50,&local_38);
+            local_50.x = (int)ROUND(_DAT_01fff54c * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b130);
+            local_50.y = (int)ROUND(_DAT_01fff550 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b134);
+            local_50.z = (int)ROUND(_DAT_01fff554 * _DAT_005a18f0) - *(int *)(iVar4 + 0x200b138);
+            engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_50,&local_38);
             local_2c = local_38.x;
             local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);
             local_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =

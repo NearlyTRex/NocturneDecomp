@@ -100,13 +100,15 @@ typedef struct HMENU__ {
 typedef HINSTANCE HMODULE;
 
 // Typedef: HWND
-// pointer to HWND__
-typedef struct HWND__* HWND;
+// Signed Integer (compiler-specific size)
+typedef int HWND;
 
 // Structure: HWND__
+#pragma pack(push, 1)
 typedef struct HWND__ {
     int unused;
 } HWND__;
+#pragma pack(pop)
 
 // Typedef: LPBOOL
 // pointer to BOOL

@@ -1,11 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(uchar *source_palette,ushort *color_table)
+; int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(void)
 ;
-; Parameters:
-; uchar *          Stack[0x4]:4   source_palette
-; ushort *         Stack[0x8]:4   color_table
 ;
 ; Referenced Globals:
 ;   ushort[256] g_ColorTable16

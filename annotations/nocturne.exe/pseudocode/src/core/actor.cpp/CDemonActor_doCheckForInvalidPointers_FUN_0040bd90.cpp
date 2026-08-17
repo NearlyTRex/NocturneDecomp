@@ -20,13 +20,16 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(C
   CDemonActor *pCVar7;
   char *pcVar8;
   byte bVar9;
+  double dVar10;
+  double dVar11;
+  double dVar12;
   uint local_18;
   
   bVar9 = 0;
   if (this_ptr == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 1817;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("NULL actor pointer detected, %s line %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("NULL actor pointer detected, %s line %d",context_file);
   }
   if (((CDemonActor *)0xfeffffff < this_ptr) || ((int)this_ptr < 0x1000)) {
     g_CurrentFilename = "..\\core\\actor.cpp";
@@ -55,6 +58,9 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(C
   fVar2 = (this_ptr->location).position.x;
   fVar3 = (this_ptr->location).position.z;
   if (_DAT_005779d5 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {
+    dVar12 = (double)(this_ptr->location).position.z;
+    dVar11 = (double)(this_ptr->location).position.y;
+    dVar10 = (double)(this_ptr->location).position.x;
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 1842;
     memset(&DAT_00763e10,0,0x32);
@@ -70,7 +76,9 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(C
       pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
       pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
     }
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s\npos = %g,%g,%g");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s\npos = %g,%g,%g",context_file,context_line,this_ptr,&DAT_00763e10,
+               dVar10,dVar11,dVar12);
   }
   cVar4 = this_ptr->actor_name[0];
   local_18 = 0;
@@ -78,6 +86,9 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(C
   while (cVar4 != '\0') {
     if ((0x1c < local_18) ||
        ((g_CharacterClassificationTable[(byte)(pCVar6->actor_name[0] + 1)] & 8) == 0)) {
+      dVar12 = (double)(this_ptr->location).position.z;
+      dVar11 = (double)(this_ptr->location).position.y;
+      dVar10 = (double)(this_ptr->location).position.x;
       g_CurrentFilename = "..\\core\\actor.cpp";
       g_CurrentLineNumber = 1856;
       memset(&DAT_00763e10,0,0x32);
@@ -95,7 +106,9 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90(C
           pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
         }
       }
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s",context_file,context_line,this_ptr,
+                 &DAT_00763e10,dVar10,dVar11,dVar12);
     }
     local_18 = local_18 + 1;
     pCVar6 = (CDemonActor *)(pCVar6->actor_name + 1);

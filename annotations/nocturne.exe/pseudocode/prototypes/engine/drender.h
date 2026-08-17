@@ -175,9 +175,9 @@ void __cdecl CDemonRenderer::matrixPop(CDemonRenderer *this_ptr);
 // Address: 00460c00
 void __cdecl CDemonRenderer::setProjectionScale(CDemonRenderer *this_ptr,float field_of_view);
 
-// Original: engine_drender.cpp_FUN_00460c26
-// Address: 00460c26
-void FUN_00460c26(void);
+// Original: engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_00460c20
+// Address: 00460c20
+void __cdecl CDemonRenderer::setProjectionScaleSimple(CDemonRenderer *this_ptr,float scale_factor);
 
 // Original: engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
 // Address: 00460c40
@@ -191,17 +191,17 @@ void __cdecl CDemonRenderer::setLightDirection(CDemonRenderer *this_ptr,CVector3
 // Address: 00460c90
 void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_ptr,CVector3f *light_direction);
 
-// Original: engine_drender.cpp_FUN_00460d10
+// Original: engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
 // Address: 00460d10
-void FUN_00460d10(void);
+CVector3i * __stack_esi CDemonRenderer::getCameraOriginFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
 // Address: 00460d30
 CVector3f * __cdecl CDemonRenderer::getCameraOriginWorld(CDemonRenderer *this_ptr,CVector3f *output);
 
-// Original: engine_drender.cpp_FUN_00460d90
+// Original: engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
 // Address: 00460d90
-void FUN_00460d90(void);
+CVector3i * __stack_esi CDemonRenderer::getCameraRotationFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
 // Address: 00460db0
@@ -291,9 +291,9 @@ void __cdecl CDemonRenderer::renderQuadBatch(CDemonRenderer *this_ptr,SMRGLPrimi
 // Address: 004614b0
 void __cdecl CDemonRenderer::renderFacetList(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags);
 
-// Original: engine_drender.cpp_FUN_00461720
+// Original: engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720
 // Address: 00461720
-void __cdecl FUN_00461720(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
+void __cdecl CDemonRenderer::renderFaceList(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0
 // Address: 004619f0

@@ -21,7 +21,7 @@
 ;   int g_ClipRight
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d130
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     POP ESI                             ; 0042dcf9
     POP EBX                             ; 0042dcfa
     RET                                 ; 0042dcfb
-    CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042dcfc
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130 ; 0042dcfc
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130()
         ;   Label: LAB_0042dcfc
     MOV EDX,dword ptr [ESP + 0x54]      ; 0042dd01
     MOV EBP,dword ptr [ESP + 0x4c]      ; 0042dd05

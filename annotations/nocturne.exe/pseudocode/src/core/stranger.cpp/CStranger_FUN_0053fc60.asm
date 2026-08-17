@@ -111,8 +111,8 @@ section .text
     PUSH 0x595e54                       ; 0053fcf2 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV ESI,dword ptr [0x005b6d50]      ; 0053fcf7 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 0053fcfd
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 0053fcfe
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 0053fcfe
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053fd03
     PUSH EBX                            ; 0053fd06
         ;   Label: LAB_0053fd06
@@ -144,8 +144,8 @@ section .text
     PUSH 0x595e17                       ; 0053fd44 | = "eDoorMoveNone returned by checkDoorOp..."
     MOV EAX,[0x005b6d50]                ; 0053fd49 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 0053fd4e
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 0053fd4f
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 0053fd4f
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053fd54
     MOV dword ptr [EBX + 0xbca0],0x0    ; 0053fd57
     ADD ESP,0x8                         ; 0053fd61

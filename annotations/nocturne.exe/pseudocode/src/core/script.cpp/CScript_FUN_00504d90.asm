@@ -25,7 +25,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_script.cpp_CScript_FUN_00504d60
 ;   core_script.cpp_CScript_step_FUN_004ff2c0
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
     PUSH 0x58faf7                       ; 00504e41 | = "Error processing script to skip cinem..."
     MOV EDI,dword ptr [0x005b6d50]      ; 00504e46 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 00504e4c
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 00504e4d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 00504e4d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 00504e52
     JMP 0x00504df9                      ; 00504e55
         ;   XREF to: 00504df9 (UNCONDITIONAL_JUMP)  ; LAB_00504df9

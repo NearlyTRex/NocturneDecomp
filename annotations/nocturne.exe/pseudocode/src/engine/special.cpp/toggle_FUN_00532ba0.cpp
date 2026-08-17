@@ -12,6 +12,7 @@ int __cdecl engine_special_cpp_toggle_FUN_00532ba0(void)
   uint uVar1;
   uint uVar2;
   int iVar3;
+  int unaff_EBX;
   uint *puVar4;
   uint *puVar5;
   uint *puVar6;
@@ -49,7 +50,7 @@ int __cdecl engine_special_cpp_toggle_FUN_00532ba0(void)
         puVar4 = (uint *)((int)puVar4 + uVar1);
       } while (local_8 < g_WindowHeight);
     }
-    engine_special_cpp_unlockFrame_FUN_00532320();
+    engine_special_cpp_unlockFrame_FUN_00532320(unaff_EBX);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
   }
   g_ExternalFrameLocked = 0;

@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 1005;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::setCameraView - invalid index: %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::setCameraView - invalid index: %d",index);
   }
   iVar5 = 0;
   if (0 < _DAT_01fba2d8) {

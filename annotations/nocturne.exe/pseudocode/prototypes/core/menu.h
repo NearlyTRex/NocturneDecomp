@@ -55,9 +55,9 @@ void __cdecl configureSoundOptions(void);
 // Address: 004d21c0
 void __cdecl showOptionsScreen(int initialize_systems);
 
-// Original: core_menu.cpp_FUN_004d23d0
+// Original: core_menu.cpp_showMainGameMenu_FUN_004d23d0
 // Address: 004d23d0
-int __cdecl FUN_004d23d0(void);
+int __cdecl showMainGameMenu(void);
 
 // Original: core_menu.cpp_addCustomKeyBinding_FUN_004d2880
 // Address: 004d2880

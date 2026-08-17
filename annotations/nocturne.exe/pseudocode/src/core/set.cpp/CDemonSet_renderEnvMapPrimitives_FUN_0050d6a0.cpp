@@ -27,6 +27,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
   int local_2c;
   int local_28;
   int local_24;
+  CVector3i local_20;
   int local_14;
   
   bVar10 = 0;
@@ -42,7 +43,8 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(CDemonSe
                (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);
   }
-  engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
+            (g_CDemonRenderer_PTR_005ae704,&local_20);
   local_14 = 0;
   if (0 < count) {
     do {

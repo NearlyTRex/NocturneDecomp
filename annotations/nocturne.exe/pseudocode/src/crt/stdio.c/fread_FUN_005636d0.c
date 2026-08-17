@@ -14,11 +14,14 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
   uint uVar3;
   int iVar4;
   uint uVar5;
+  int unaff_EBP;
   char *pcVar6;
   char *pcVar7;
   uint uVar8;
+  SIZE_T unaff_EDI;
   byte bVar9;
-  uint uStack_14;
+  char *in_stack_ffffffec;
+  uint uVar10;
   
   bVar9 = 0;
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
@@ -35,9 +38,9 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
       return 0;
     }
     if (file->_link->__reserve_end == (char *)0x0) {
-      FUN_00568ed0(file);
+      _setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);
     }
-    uStack_14 = 0;
+    uVar10 = 0;
     if ((file->_flag & 0x40) == 0) {
       pcVar6 = buffer;
       do {
@@ -60,7 +63,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
           break;
         }
         pcVar7 = pcVar6 + 1;
-        uStack_14 = uStack_14 + 1;
+        uVar10 = uVar10 + 1;
         *pcVar6 = cVar1;
         pcVar6 = pcVar7;
       } while (pcVar7 != (char *)(uVar8 + (int)buffer));
@@ -87,7 +90,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
             }
             uVar8 = uVar8 - uVar3;
             buffer = (void *)((int)buffer + uVar3);
-            uStack_14 = uStack_14 + uVar3;
+            uVar10 = uVar10 + uVar3;
             file->_ptr = file->_ptr + uVar3;
             file->_cnt = file->_cnt - uVar3;
           }
@@ -110,14 +113,14 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
           }
           buffer = (void *)((int)buffer + iVar4);
           uVar8 = uVar8 - iVar4;
-          uStack_14 = uStack_14 + iVar4;
+          uVar10 = uVar10 + iVar4;
         }
         iVar4 = FillInputBuffer(file);
       } while (iVar4 != 0);
     }
 LAB_005638a9:
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
-    SVar2 = uStack_14 / size;
+    SVar2 = uVar10 / size;
   }
   return SVar2;
 }

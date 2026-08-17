@@ -34,6 +34,7 @@
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
+#include "types/structs/SScanlineSpans.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -80,7 +81,7 @@ void __cdecl core_bugs_cpp_normalizeVector_FUN_00423c20(CVector3f *dest);
 CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00423c90(CVector3f *dest,CVector3i *src);
 CVector3i * __cdecl core_bugs_cpp_copyVectorToPair_FUN_00423cc0(CVector3i *dest,CVector3i *src);
 int __cdecl core_bugs_cpp_getBugVertex_FUN_00423d00(SBug *bug_data,int bug_index);
-undefined4 core_bugs_cpp_FUN_00423d20(void);
+int __cdecl core_bugs_cpp_getBugState_FUN_00423d20(SBug *bug_data);
 char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00423d30(CDeformableModelInstance *model_ptr);
 int * __cdecl core_bugs_cpp_swapIntegers_FUN_00423d40(int *a,int *b);
 float __cdecl core_bugs_cpp_maxFloat_FUN_00423d60(float a,float b);
@@ -205,8 +206,8 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_pt
 CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_0042ca90(CChain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_chain_cpp_CChain_archive_FUN_0042cbc0(CChain *this_ptr);
 ECollisionType __cdecl core_chain_cpp_CChain_getCollisionType_FUN_0042ccf0(CChain *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_chain_cpp_FUN_0042cd00(void);
-undefined4 core_chain_cpp_FUN_0042cd10(void);
+int __cdecl core_chain_cpp_passthroughInt1_FUN_0042cd00(int value);
+int __cdecl core_chain_cpp_passthroughInt2_FUN_0042cd10(int value);
 float __cdecl core_chain_cpp_fastSqrt_FUN_0042cd20(float value);
 CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_0042cd30(CChain *this_ptr,uint flags);
 SChainVertex * __cdecl core_chain_cpp_SChainVertex_ctor_FUN_0042cda0(SChainVertex *this_ptr);
@@ -217,10 +218,10 @@ void __cdecl cockpit_ckptutil_c_expandIndexedToRGB_FUN_0042ceca(void *output_buf
 void __cdecl cockpit_ckptutil_c_optimizedMemcpy_FUN_0042cef8(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_0042cff2(void *dest_buffer,void *src_buffer,int byte_count);
 void __cdecl cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_0042d100(void *output_buffer,void *input_buffer,int pixel_count);
-ColorConversionFunc * __cdecl cockpit_ckptutil_c_FUN_0042d130(void);
+ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130(void);
 OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_0042d150(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_0042d170(void);
-void * cockpit_ckptutil_c_FUN_0042d180(void);
+void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_0042d180(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index);
 void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_0042d200(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_0042d370(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
@@ -241,12 +242,12 @@ void __cdecl cockpit_ckptutil_c_blitFullScreen_FUN_0042e4f0(void *sprite_data,vo
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042e6c0(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
 void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042e750(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
-void cockpit_ckptutil_c_FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
+void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_0042e7b0(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output,int num_height_rows,int transparency_color);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042e9d0(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042eb00(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_0042eb90(char *filename,SEdgeList *edge_lists,int expected_count);
 void __cdecl cockpit_ckptutil_c_loadSingleEdgeList_FUN_0042edc0(char *filename,void **edge_data_out,int *edge_count_out);
-void cockpit_ckptutil_c_FUN_0042ee00(char *param_1,int param_2,int param_3);
+void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_0042ee00(char *filename,SEdgeList *edge_lists,int edge_list_count);
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042ef60(SEdge *edges,int count,int x_offset,int y_offset);
 void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_0042f050(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height);
 void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_0042f190(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_0056ae10(int param_1,undefined4 param_2,undefined4 param_3)
+; undefined4 crt_unknown_c_FUN_0056ae10(_FILE *param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
 ; XREF[2]:
@@ -15,8 +15,8 @@
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_00568890
-;   crt_unknown.c_FUN_00568ed0
 ;   crt_unknown.c_FUN_00569040
+;   crt_unknown.c_setvbuf_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     JNZ 0x0056ae71                      ; 0056ae66
         ;   XREF to: 0056ae71 (CONDITIONAL_JUMP)  ; LAB_0056ae71
     PUSH EBX                            ; 0056ae68
-    CALL crt_unknown.c_FUN_00568ed0     ; 0056ae69
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
+    CALL crt_unknown.c_setvbuf_FUN_00568ed0 ; 0056ae69
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_setvbuf_FUN_00568ed0(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x4                         ; 0056ae6e
     MOV DL,byte ptr [EBX + 0xd]         ; 0056ae71
         ;   Label: LAB_0056ae71

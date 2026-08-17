@@ -58,44 +58,50 @@
       {
         "category": "undeclared_identifier",
         "column": 5,
-        "line": 33,
+        "line": 35,
         "message": "use of undeclared identifier '_DAT_01c78b14'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 35,
+        "line": 37,
         "message": "no matching function for call to 'core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0'"
       },
       {
         "category": "undeclared_identifier",
+        "column": 34,
+        "line": 42,
+        "message": "use of undeclared identifier '_DAT_01c78b14'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 5,
-        "line": 41,
+        "line": 46,
         "message": "use of undeclared identifier '_DAT_01c78b14'"
       },
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 43,
+        "line": 48,
         "message": "no matching function for call to 'core_script_cpp_CScript_process_FUN_004fe5b0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 34,
+        "line": 53,
+        "message": "use of undeclared identifier '_DAT_01c78b14'"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 53,
+        "line": 61,
         "message": "member reference type 'int' is not a pointer"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 55,
+        "line": 63,
         "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
       },
       {
         "category": "undeclared_identifier",
@@ -104,15 +110,9 @@
         "message": "use of undeclared identifier '_DAT_01c78b14'"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 77,
-        "message": "no matching function for call to 'core_water_cpp_CWater_process_FUN_00550860'"
-      },
-      {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 79,
+        "column": 34,
+        "line": 77,
         "message": "use of undeclared identifier '_DAT_01c78b14'"
       }
     ],
@@ -122,18 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 184,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
-    "suspect_count": 7,
+    "pseudocode_lines": 129,
+    "suspect_count": 10,
     "suspect_types": [
       "raw_address_constant",
+      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 528
+    "total_lines": 553
   },
   "cross_references": [
     {
@@ -253,7 +254,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -588,8 +589,32 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_00558a30();",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 128,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Raw hex literal 0x14b98ec matches address of g_CFilterFX_014b98ec (type CFilterFX). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 28,
+      "line": 30,
       "match": "0x14b98ec",
       "severity": "moderate",
       "text": "core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(0x014B98EC);",
@@ -597,7 +622,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 36,
+      "line": 41,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_script_cpp_CScript_process_FUN_004fe5b0(0x01E56DA0);",
@@ -605,7 +630,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 46,
+      "line": 54,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,2);",
@@ -613,7 +638,7 @@
     },
     {
       "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 48,
+      "line": 56,
       "match": "0x1e56da0",
       "severity": "moderate",
       "text": "0x01E56DA0->focus_actor_changed = 0;",
@@ -621,7 +646,7 @@
     },
     {
       "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 70,
+      "line": 84,
       "match": "0x2dd1210",
       "severity": "moderate",
       "text": "core_water_cpp_CWater_process_FUN_00550860(0x02DD1210);",
@@ -629,7 +654,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 88,
+      "line": 108,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_update_FUN_00554980(0x02DDF9F0);",

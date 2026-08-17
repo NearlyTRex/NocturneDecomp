@@ -138,7 +138,7 @@ section .text
     TEST EAX,EAX                        ; 00552c4a
     JZ 0x00552c8f                       ; 00552c4c
         ;   XREF to: 00552c8f (CONDITIONAL_JUMP)  ; LAB_00552c8f
-    MOV EBX,dword ptr [0x02de2098]      ; 00552c4e | DAT_02de2098
+    MOV EBX,dword ptr [0x02de2098]      ; 00552c4e | g_HWND_02de2098
         ;   Label: LAB_00552c4e
     PUSH EBX                            ; 00552c54
     CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 00552c55
@@ -163,7 +163,7 @@ section .text
         ;   XREF to: 00552b7c (UNCONDITIONAL_JUMP)  ; LAB_00552b7c
     PUSH 0x11                           ; 00552c8f
         ;   Label: LAB_00552c8f
-    MOV ECX,dword ptr [0x02de2098]      ; 00552c91 | DAT_02de2098
+    MOV ECX,dword ptr [0x02de2098]      ; 00552c91 | g_HWND_02de2098
     MOV EAX,[0x02ddf550]                ; 00552c97 | g_DirectDrawObject
     PUSH ECX                            ; 00552c9c
     MOV EDX,dword ptr [EAX]             ; 00552c9d

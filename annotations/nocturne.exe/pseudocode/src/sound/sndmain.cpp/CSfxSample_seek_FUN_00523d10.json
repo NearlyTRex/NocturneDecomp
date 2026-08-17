@@ -54,6 +54,24 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 91,
+        "line": 19,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 106,
+        "line": 39,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 43,
+        "line": 52,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -62,17 +80,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 61,
+    "complexity_score": 77,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 1,
+    "pseudocode_lines": 47,
+    "suspect_count": 2,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_truncation"
     ],
-    "total_lines": 183
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -90,7 +109,7 @@
     {
       "addr": "005229f0",
       "from_addr": "00522bd9",
-      "name": "sound_sndmain.cpp_FUN_005229f0",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,7 +134,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -245,7 +264,7 @@
       {
         "call_addr": "00522bd9",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005229f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -352,6 +371,17 @@
       "severity": "moderate",
       "text": "(int)this_ptr_00);",
       "type": "pointer_truncation"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SfxSample::seek - no MP3 and no wavFile for sample...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SfxSample::seek - no MP3 and no wavFile for sample '%s'",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 32,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"SfxSample::seek - no MP3 and no wavFile for sample '%s",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

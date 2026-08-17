@@ -99,7 +99,7 @@ LAB_005224ea:
     if (local_14 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 768;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open %s",filename);
     }
     lVar3 = _ftell(local_14);
     pCVar6->file_offset = lVar3;
@@ -140,7 +140,7 @@ LAB_005224ea:
     if (iVar7 != 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 893;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Unknown sample file format extension: %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Unknown sample file format extension: %s",filename);
       return pCVar6;
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(&g_CMP3Decoder_02da8ae0,filename);
@@ -153,7 +153,7 @@ LAB_005224ea:
     if ((pCVar6->sample_info).sample_count < 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 847;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Don't know length of sample %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Don't know length of sample %s",filename);
     }
     pCVar6->taken = 0;
     pCVar6->ref_count = 0;

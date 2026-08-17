@@ -29,7 +29,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(CSkeleton *this_ptr,c
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 246;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CSkeleton::load - Can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CSkeleton::load - Can't open %s",filename);
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(this_ptr,file_handle);
   _fclose(file_handle);

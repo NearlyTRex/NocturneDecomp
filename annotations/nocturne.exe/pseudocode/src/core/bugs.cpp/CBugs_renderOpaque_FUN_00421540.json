@@ -62,19 +62,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 115,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 4,
+    "pseudocode_lines": 61,
+    "suspect_count": 6,
     "suspect_types": [
       "shadow_pointer_walk",
+      "stack_param",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 206
+    "total_lines": 207
   },
   "cross_references": [],
   "function": {
@@ -229,6 +230,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CBugs_renderOpaque_FUN_00421540.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 37,
+          "line": 63,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -239,8 +257,24 @@
       "type": "warning_type_propagation"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "} while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));",
+      "type": "stack_param"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_2c.x = CStack_20.x;",
@@ -248,7 +282,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
+      "line": 53,
       "match": "position = (T *)&position[N].SUBFIELD",
       "severity": "moderate",
       "text": "position = (CVector3f *)&position[5].y;",
@@ -256,11 +290,19 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `rotation` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*rotation) + offsetof(subfield)` equals the real array stride. Replace `rotation->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 54,
+      "line": 55,
       "match": "rotation = (T *)&rotation[N].SUBFIELD",
       "severity": "moderate",
       "text": "rotation = (CVector3f *)&rotation[5].y;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 63,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "} while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

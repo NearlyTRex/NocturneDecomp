@@ -1,0 +1,198 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 85
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042d180",
+    "address_range": [
+      [
+        "0042d180",
+        "0042d1f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_0042d180",
+    "signature": "void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_0042d180(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d370",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_0042d370"
+    },
+    {
+      "addr": "00431260",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00431260"
+    },
+    {
+      "addr": "0042d240",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_0042d240"
+    },
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7962962962962963,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 51,
+      "INT_ADD": 22,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 22,
+      "LOAD": 18,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 22,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 205
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "span_data_buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "SScanlineSpans *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "transparent_color_index",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

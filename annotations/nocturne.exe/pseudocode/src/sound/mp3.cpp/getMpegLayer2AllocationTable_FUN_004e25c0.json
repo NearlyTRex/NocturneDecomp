@@ -54,6 +54,12 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 82,
+        "line": 18,
+        "message": "use of undeclared identifier 'DAT_01cd8b28'"
       }
     ],
     "success": false,
@@ -62,15 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 10,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 53
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -88,7 +96,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
@@ -207,7 +215,7 @@
         {
           "check_id": "pointerOutOfBoundsCond",
           "column": 44,
-          "line": 18,
+          "line": 19,
           "message": "Undefined behaviour, when 'layer*0x10' is 64 the pointer arithmetic '\"$CMotionController$$\"+layer*0x10' is out of bounds.",
           "severity": "portability"
         }
@@ -216,5 +224,14 @@
     },
     "file_variant": "raw"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"js_bound bad layer/modext (%d/%d)  File: %s\",layer,mode_extension,&DAT_01cd8b28);",
+      "type": "undefined_data"
+    }
+  ]
 }

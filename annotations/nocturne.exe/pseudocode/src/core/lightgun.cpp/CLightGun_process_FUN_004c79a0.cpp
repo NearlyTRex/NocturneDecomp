@@ -39,7 +39,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_pt
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0
                 (&(this_ptr->base).base.location.position);
       sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(fVar1);
-      sound_sndmain_cpp_FUN_00526120(base_frequency);
+      sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00526120(base_frequency);
       uVar4 = sound_sndmain_cpp_startSfx_FUN_005265a0("cre-charge.wav");
       this_ptr->sfx_handle = uVar4;
       sound_sndmain_cpp_popSfxOptions_FUN_005263c0();

@@ -23,29 +23,25 @@ typedef int EXCEPTION_DISPOSITION;
 // Function Definition: EXCEPTION_FILTER_FUNC
 typedef int EXCEPTION_FILTER_FUNC(int action, DWORD exceptionCode);
 
-// Function Definition: FARPROC_FUNC
-typedef int FARPROC_FUNC(void);
-
-// Typedef: FARPROC
-// pointer to FARPROC_FUNC
-typedef FARPROC_FUNC* FARPROC;
-
-// Structure: HKEY__
-typedef struct HKEY__ {
-    void* unused;
-} HKEY__;
+// Typedef: LPCH
+// pointer to CHAR
+typedef CHAR* LPCH;
 
 // Typedef: LPGUID
 // pointer to _GUID
 typedef struct _GUID* LPGUID;
 
-// Typedef: LSTATUS
-// Signed Long Integer (compiler-specific size)
-typedef LONG LSTATUS;
+// Typedef: PHANDLE
+// pointer to HANDLE
+typedef HANDLE* PHANDLE;
 
 // Typedef: PLONG
 // pointer to LONG
 typedef LONG* PLONG;
+
+// Typedef: PMEMORY_BASIC_INFORMATION
+// pointer to _MEMORY_BASIC_INFORMATION
+typedef struct _MEMORY_BASIC_INFORMATION* PMEMORY_BASIC_INFORMATION;
 
 // Typedef: PRTL_CRITICAL_SECTION
 // pointer to _RTL_CRITICAL_SECTION
@@ -54,10 +50,6 @@ typedef struct _RTL_CRITICAL_SECTION* PRTL_CRITICAL_SECTION;
 // Typedef: PRTL_CRITICAL_SECTION_DEBUG
 // pointer to _RTL_CRITICAL_SECTION_DEBUG
 typedef struct _RTL_CRITICAL_SECTION_DEBUG* PRTL_CRITICAL_SECTION_DEBUG;
-
-// Typedef: REGSAM
-// Unsigned Long Integer (compiler-specific size)
-typedef ACCESS_MASK REGSAM;
 
 // Union: _BIT_INTEGER16
 #pragma pack(push, 1)
@@ -187,6 +179,17 @@ typedef struct _LIST_ENTRY {
 // Typedef: LIST_ENTRY
 typedef _LIST_ENTRY LIST_ENTRY;
 
+// Structure: _MEMORY_BASIC_INFORMATION
+typedef struct _MEMORY_BASIC_INFORMATION {
+    PVOID BaseAddress;
+    PVOID AllocationBase;
+    DWORD AllocationProtect;
+    SIZE_T RegionSize;
+    DWORD State;
+    DWORD Protect;
+    DWORD Type;
+} _MEMORY_BASIC_INFORMATION;
+
 // Union: _MMX_INTEGER
 #pragma pack(push, 1)
 typedef union _MMX_INTEGER {
@@ -222,10 +225,6 @@ typedef struct _RTL_CRITICAL_SECTION {
 // Typedef: CRITICAL_SECTION
 typedef _RTL_CRITICAL_SECTION CRITICAL_SECTION;
 
-// Typedef: LPCRITICAL_SECTION
-// pointer to _RTL_CRITICAL_SECTION
-typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
-
 // Structure: _floatx2
 #pragma pack(push, 1)
 typedef struct _floatx2 {
@@ -240,26 +239,21 @@ typedef struct _struct_19 {
     LONG HighPart;
 } _struct_19;
 
-// Union: _LARGE_INTEGER
-typedef union _LARGE_INTEGER {
-    _struct_19 s;
-    LONGLONG QuadPart;
-} _LARGE_INTEGER;
-
-// Typedef: LARGE_INTEGER
-typedef _LARGE_INTEGER LARGE_INTEGER;
-
 // Structure: _struct_20
 typedef struct _struct_20 {
     DWORD LowPart;
     LONG HighPart;
 } _struct_20;
 
-// Structure: _struct_519
-typedef struct _struct_519 {
-    DWORD Offset;
-    DWORD OffsetHigh;
-} _struct_519;
+// Union: _LARGE_INTEGER
+typedef union _LARGE_INTEGER {
+    _struct_19 s;
+    _struct_20 u;
+    LONGLONG QuadPart;
+} _LARGE_INTEGER;
+
+// Typedef: LARGE_INTEGER
+typedef _LARGE_INTEGER LARGE_INTEGER;
 
 // Structure: _uintx2
 #pragma pack(push, 1)
@@ -276,10 +270,4 @@ typedef union _SPLIT_DOUBLE {
     _uintx2 u;
 } _SPLIT_DOUBLE;
 #pragma pack(pop)
-
-// Union: _union_518
-typedef union _union_518 {
-    _struct_519 s;
-    PVOID Pointer;
-} _union_518;
 

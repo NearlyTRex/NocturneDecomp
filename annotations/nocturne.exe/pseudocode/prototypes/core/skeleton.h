@@ -423,21 +423,21 @@ void __cdecl blendBoneTransformData(SPose *result_pose,SPose *bone_data_out,SPos
 // Address: 0051f570
 CDeformableModel * __cdecl getDeformableModel(char *model_filename);
 
-// Original: core_skeleton.cpp_FUN_0051f650
+// Original: core_skeleton.cpp_freeAllModels_FUN_0051f650
 // Address: 0051f650
-void __cdecl FUN_0051f650(void);
+void __cdecl freeAllModels(void);
 
-// Original: core_skeleton.cpp_FUN_0051f680
+// Original: core_skeleton.cpp_loadSkeleton_FUN_0051f680
 // Address: 0051f680
-CSkeleton * __cdecl FUN_0051f680(char *filename);
+CSkeleton * __cdecl loadSkeleton(char *filename);
 
 // Original: core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
 // Address: 0051f730
 void __cdecl freeAllSkeletons(void);
 
-// Original: core_skeleton.cpp_FUN_0051f760
+// Original: core_skeleton.cpp_getMemoryStats_FUN_0051f760
 // Address: 0051f760
-void __cdecl FUN_0051f760(char *output_buffer);
+void __cdecl getMemoryStats(char *output_buffer);
 
 // Original: core_skeleton.cpp_calculateDistanceSquared_FUN_0051f800
 // Address: 0051f800

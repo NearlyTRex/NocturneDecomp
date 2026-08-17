@@ -18,7 +18,6 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
   float *pfVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  CDemonRenderer *in_stack_ffffff0c;
   CMatrix3x4f local_c4;
   CMatrix3x4f local_94;
   CBoundingBox3D local_64;
@@ -41,7 +40,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
         local_18 = g_CDemonRenderer_PTR_005ae704->advanced_culling_enabled;
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0
                   (g_CDemonRenderer_PTR_005ae704,(uint)(local_18 == 0));
-        engine_matrix_c_matrixPush_FUN_004cdac0(in_stack_ffffff0c);
+        engine_matrix_c_matrixPush_FUN_004cdac0();
         g_RelativeX = -g_RelativeX;
         _DAT_01c039dc = -_DAT_01c039dc;
         g_TransformMatrix.m[0].x = -g_TransformMatrix.m[0].x;

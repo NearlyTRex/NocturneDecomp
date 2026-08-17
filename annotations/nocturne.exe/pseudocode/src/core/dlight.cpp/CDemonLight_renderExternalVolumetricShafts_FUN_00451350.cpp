@@ -25,7 +25,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   unkbyte10 Var10;
   float10 fVar11;
   double dVar12;
-  float afStackY_10d8 [985];
+  int aiStackY_10d8 [985];
   SMRGLHeaderPrimitive local_160;
   uint local_148;
   uint local_144;
@@ -41,8 +41,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   float local_fc;
   float local_f8;
   float local_f4;
-  int local_f0;
-  float afStack_ec [4];
+  CVector3i local_f0;
+  float local_e4;
+  float local_e0;
   float local_dc;
   CVector3i local_d8;
   CVector3f local_cc;
@@ -50,8 +51,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   CVector3f local_b4;
   CVector3i local_a8;
   int local_9c;
-  float local_98;
-  int local_94;
+  int local_98 [8];
   int local_78;
   int local_70;
   float local_6c;
@@ -82,23 +82,23 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)0.10000000000000001 <= (g_CDemonSet_PTR_005be368->active_fog).density_multiplier)) &&
      (g_CGame_PTR_005b9354->halo_mode != 0)) {
-    engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
-    local_9c = local_f0;
-    (&local_98)[(uint)bVar5 * -2] = afStack_ec[(uint)bVar5 * -2];
-    (&local_98)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         afStack_ec[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
+              (g_CDemonRenderer_PTR_005ae704,&local_f0);
+    local_9c = local_f0.x;
+    local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);
+    local_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         *(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     local_114 = (float)local_9c * _DAT_0059c038;
-    local_110 = (float)(int)local_98 * _DAT_0059c038;
-    local_10c = (float)local_94 * _DAT_0059c038;
-    afStack_ec[2] = local_114 - (this_ptr->base).position.x;
-    afStack_ec[3] = local_110 - (this_ptr->base).position.y;
+    local_110 = (float)local_98[0] * _DAT_0059c038;
+    local_10c = (float)local_98[1] * _DAT_0059c038;
+    local_e4 = local_114 - (this_ptr->base).position.x;
+    local_e0 = local_110 - (this_ptr->base).position.y;
     local_dc = local_10c - (this_ptr->base).position.z;
-    local_54 = SQRT(local_dc * local_dc +
-                    afStack_ec[2] * afStack_ec[2] + afStack_ec[3] * afStack_ec[3]);
+    local_54 = SQRT(local_dc * local_dc + local_e4 * local_e4 + local_e0 * local_e0);
     if (0.0 < local_54) {
       fVar1 = 1.0 / local_54;
-      afStack_ec[2] = afStack_ec[2] * fVar1;
-      afStack_ec[3] = afStack_ec[3] * fVar1;
+      local_e4 = local_e4 * fVar1;
+      local_e0 = local_e0 * fVar1;
       local_120.x = 0.0;
       local_120.y = 0.0;
       local_120.z = 1.0;

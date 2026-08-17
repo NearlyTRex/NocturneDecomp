@@ -36,7 +36,7 @@
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;   crt_stdio.c_ungetc_FUN_00564740
 ;   crt_string.c__stricmp_FUN_00564520
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -165,8 +165,8 @@ section .text
     PUSH 0x589bea                       ; 004d8bb4 | = "WARNING.  Can't find actor '%s' in %s..."
     MOV ECX,dword ptr [0x005b6d50]      ; 004d8bb9 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004d8bbf
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d8bc0
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d8bc0
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 004d8bc5
     JMP 0x004d8b80                      ; 004d8bc8
         ;   XREF to: 004d8b80 (UNCONDITIONAL_JUMP)  ; LAB_004d8b80

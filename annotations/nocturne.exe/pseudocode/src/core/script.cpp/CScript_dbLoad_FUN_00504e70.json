@@ -54,12 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 85,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       }
     ],
     "success": false,
@@ -68,12 +62,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 221,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 117,
     "suspect_count": 8,
     "suspect_types": [
       "alloc_magic_size",
@@ -82,7 +76,7 @@
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 404
+    "total_lines": 405
   },
   "cross_references": [
     {
@@ -107,7 +101,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -167,8 +161,8 @@
     },
     {
       "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0046fcd0"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0"
     }
   ],
   "globals": [
@@ -460,7 +454,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 116,
       "match": "(SDialogEntry *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -468,7 +462,7 @@
     },
     {
       "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 115,
+      "line": 116,
       "match": "(int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -476,7 +470,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -484,7 +478,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 67,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -492,7 +486,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -500,7 +494,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 112,
+      "line": 113,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -508,7 +502,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x226 == sizeof(SDialogEntry). Replace the magic with sizeof(SDialogEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 103,
+      "line": 104,
       "match": "(SDialogEntry*) alloc stride 0x226",
       "severity": "moderate",
       "text": "(SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226)",

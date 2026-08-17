@@ -57,8 +57,14 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 84,
+        "line": 22,
+        "message": "use of undeclared identifier 'DAT_01cd8b28'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 33,
-        "line": 79,
+        "line": 80,
         "message": "use of undeclared identifier 'DAT_005bc010'; did you mean 'DAT_005bc030'?"
       }
     ],
@@ -68,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 88,
+    "complexity_score": 99,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 73,
-    "suspect_count": 1,
+    "pseudocode_lines": 74,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 252
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -136,15 +142,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e4320",
-      "from_addr": "004e4344",
-      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320",
+      "addr": "004e7ed0",
+      "from_addr": "004e7fdf",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7ed0",
-      "from_addr": "004e7fdf",
-      "name": "sound_mp3.cpp_FUN_004e7ed0",
+      "addr": "004e4320",
+      "from_addr": "004e4344",
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -163,7 +169,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -216,7 +222,7 @@
       {
         "call_addr": "004e7fdf",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_004e7ed0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +233,7 @@
       {
         "call_addr": "004e7ffe",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_004e7ed0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +244,7 @@
       {
         "call_addr": "004e8027",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_004e7ed0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -396,7 +402,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 15,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"Cannot read or write more than %d bits at a time.  File: %s\",0x20,&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
       "match": "DAT_005bc010",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005bc010 + this_ptr->bits_available * 4)) >>",

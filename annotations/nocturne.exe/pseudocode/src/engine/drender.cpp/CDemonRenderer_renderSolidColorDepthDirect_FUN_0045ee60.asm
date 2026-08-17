@@ -12,7 +12,7 @@
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004d7760 at 004d77dc
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 at 0050dfaf
 ;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 0051340b
-;   core_setdir.cpp_FUN_00511d80 at 0051248c
+;   core_setdir.cpp_testCameraVisibility_FUN_00511d80 at 0051248c
 ;
 ; Referenced Globals:
 ;   MainScanlineFunc* g_ScanlineRenderFunc

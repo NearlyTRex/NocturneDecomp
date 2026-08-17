@@ -19,11 +19,15 @@
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 at 00426687
 ;   ... and 52 more
 ;
+; Called Functions:
+;   engine_matrix.c_pop_FUN_004cdbc0
+;
 ; *****************************************************************************
 
 section .text
 
-    JMP 0x004cdbc0                      ; 00460bf0
-        ;   XREF to: 004cdbc0 (UNCONDITIONAL_JUMP)
+    CALL engine_matrix.c_pop_FUN_004cdbc0 ; 00460bf0
+        ;   XREF to: 004cdbc0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004cdbc0()
         ;   Label: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
+    RET                                 ; 00460bf5
 

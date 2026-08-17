@@ -38,7 +38,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
           unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(this_ptr,local_dc)
           ;
           if (unaff_ESI == (CDemonActor *)0x0) {
-            shape_edittool_cpp_FUN_0046fcd0
+            shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                       (g_CEditorTools_PTR_005b6d50,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,
                        current_actor,property_description);
           }
@@ -58,7 +58,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
   do {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 557;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading actor pointer.\nOwner: %s\nDescription: %s\n");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description);
     pCVar1 = unaff_ESI;
 LAB_004d8b28:
     while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {

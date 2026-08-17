@@ -23,9 +23,9 @@ CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 // Address: 004182c0
 CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004182cd
-// Address: 004182cd
-float * FUN_004182cd(float *param_1);
+// Original: core_boneguy.cpp_rgbToHsv_FUN_004182d0
+// Address: 004182d0
+CColor3f * __cdecl rgbToHsv(CColor3f *out_hsv,CColor3f *in_rgb);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00418480
 // Address: 00418480

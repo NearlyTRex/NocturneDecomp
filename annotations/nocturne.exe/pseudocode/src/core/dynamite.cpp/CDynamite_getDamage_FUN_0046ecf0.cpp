@@ -1,0 +1,16 @@
+// Name: core_dynamite.cpp_CDynamite_getDamage_FUN_0046ecf0
+// Address: 0046ecf0
+// Address Range: [[0046ecf0, 0046ed1f]]
+// Convention: __cdecl
+// Signature: float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0046ecf0(CDynamite *this_ptr)
+
+#include "nocturne.h"
+
+float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0046ecf0(CDynamite *this_ptr)
+
+{
+  float fVar1;
+  
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(400.0,500.0);
+  return fVar1;
+}

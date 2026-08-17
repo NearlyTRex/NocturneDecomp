@@ -33,7 +33,7 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;   support_trisock.cpp_createNetworkAddr_FUN_00548d30
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;
@@ -247,8 +247,8 @@ section .text
         ;   Label: LAB_004e9cad
     MOV ESI,dword ptr [0x005b6d50]      ; 004e9cb2 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004e9cb8
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9cb9
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9cb9
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e9cbe
     PUSH 0x0                            ; 004e9cc1
     PUSH EBX                            ; 004e9cc3
@@ -266,8 +266,8 @@ section .text
         ;   Label: LAB_004e9cd5
     MOV ECX,dword ptr [0x005b6d50]      ; 004e9cda | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004e9ce0
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9ce1
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9ce1
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e9ce6
     PUSH 0x0                            ; 004e9ce9
     PUSH EBX                            ; 004e9ceb
@@ -285,8 +285,8 @@ section .text
         ;   Label: LAB_004e9cfd
     MOV EDX,dword ptr [0x005b6d50]      ; 004e9d02 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004e9d08
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9d09
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9d09
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004e9d0e
     PUSH 0x0                            ; 004e9d11
         ;   Label: LAB_004e9d11

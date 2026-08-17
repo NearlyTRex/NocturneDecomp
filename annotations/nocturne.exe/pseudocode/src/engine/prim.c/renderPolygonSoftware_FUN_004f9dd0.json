@@ -1,0 +1,475 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 98,
+        "message": "use of undeclared identifier '_DAT_01e52ef0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 99,
+        "message": "use of undeclared identifier '_DAT_01e52a68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 101,
+        "message": "use of undeclared identifier '_DAT_01e52eec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 121,
+        "message": "use of undeclared identifier '_DAT_01e52a68'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 122,
+        "message": "use of undeclared identifier 'DAT_01e52a6c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 17,
+        "line": 123,
+        "message": "use of undeclared identifier '_DAT_01e52eec'; did you mean 'DAT_005c20ec'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 126,
+        "message": "use of undeclared identifier '_DAT_01e52eec'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 128,
+        "message": "use of undeclared identifier '_DAT_01e52ef0'; did you mean 'DAT_005bef20'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 129,
+        "message": "use of undeclared identifier '_DAT_01e52ef0'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 9,
+        "line": 182,
+        "message": "use of undeclared identifier '_DAT_01e52a68'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 510,
+    "complexity_score": 295,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 220,
+    "suspect_count": 6,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 730
+  },
+  "cross_references": [
+    {
+      "addr": "00432cd0",
+      "from_addr": "00432ee5",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f9dd0",
+    "address_range": [
+      [
+        "004f9dd0",
+        "004fa2dc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_renderPolygonSoftware_FUN_004f9dd0",
+    "signature": "void __cdecl engine_prim_c_renderPolygonSoftware_FUN_004f9dd0(SRenderVertex *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f9960",
+      "is_variadic": false,
+      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_004f9960"
+    },
+    {
+      "addr": "004f9a10",
+      "is_variadic": false,
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10"
+    },
+    {
+      "addr": "004f9830",
+      "is_variadic": false,
+      "name": "engine_prim.c_findEdgeInBuffer_FUN_004f9830"
+    },
+    {
+      "addr": "004f98e0",
+      "is_variadic": false,
+      "name": "engine_prim.c_normalizeTextureCoords_FUN_004f98e0"
+    },
+    {
+      "addr": "004f9870",
+      "is_variadic": false,
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_004f9870"
+    },
+    {
+      "addr": "004f99d0",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_004f99d0"
+    },
+    {
+      "addr": "00532620",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolygon_FUN_00532620"
+    },
+    {
+      "addr": "00530710",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderScanline_FUN_00530710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004f9da8",
+      "name": "switchdataD_004f9da8",
+      "type": "void*",
+      "value": "004f9ee1"
+    },
+    {
+      "addr": "005b7644",
+      "name": "INT_005b7644",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "005be1e4",
+      "name": "INT_005be1e4",
+      "type": "int",
+      "value": "0x4b0"
+    },
+    {
+      "addr": "006b0278",
+      "name": "DAT_006b0278",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006b0280",
+      "name": "DAT_006b0280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c48",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
+      "value": null
+    },
+    {
+      "addr": "01c00c4c",
+      "name": "g_Projection.neg_half_height_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c50",
+      "name": "g_Projection.center_x_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00c54",
+      "name": "g_Projection.center_y_fixed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02594",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01c039a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "01c039a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e52a68",
+      "name": "DAT_01e52a68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e52a6c",
+      "name": "DAT_01e52a6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e52eec",
+      "name": "DAT_01e52eec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e52ef0",
+      "name": "DAT_01e52ef0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e52ef8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00432ee5",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipAndRasterize_FUN_00432cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.685579196217494,
+    "instruction_count": 423,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 80,
+      "BOOL_OR": 7,
+      "BRANCH": 10,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 29,
+      "COPY": 335,
+      "INT_ADD": 196,
+      "INT_AND": 417,
+      "INT_CARRY": 43,
+      "INT_DIV": 1,
+      "INT_EQUAL": 246,
+      "INT_LEFT": 16,
+      "INT_LESS": 28,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 73,
+      "INT_OR": 88,
+      "INT_REM": 1,
+      "INT_RIGHT": 24,
+      "INT_SBORROW": 28,
+      "INT_SCARRY": 51,
+      "INT_SDIV": 3,
+      "INT_SEXT": 54,
+      "INT_SLESS": 138,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 99,
+      "INT_XOR": 20,
+      "INT_ZEXT": 9,
+      "LOAD": 124,
+      "POPCOUNT": 114,
+      "RETURN": 3,
+      "STORE": 85,
+      "SUBPIECE": 42
+    },
+    "pcode_op_count": 2405
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_006b0280",
+      "severity": "mild",
+      "text": "if (DAT_006b0280 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_006b0278",
+      "severity": "mild",
+      "text": "if ((g_UseExternalRenderer != 0) && (DAT_006b0278 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_01e52a6c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e52a6c + iVar3) = iVar8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 185,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(_DAT_01e52eec,INT_005be1e4);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 220,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(local_1c,iVar9);",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

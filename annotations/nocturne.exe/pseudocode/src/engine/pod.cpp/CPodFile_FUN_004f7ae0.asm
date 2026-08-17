@@ -29,10 +29,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f8eee
 ;   engine_pod.cpp_CPod_mount_FUN_004f88a0 at 004f8903
 ;   engine_pod.cpp_CPod_remount_FUN_004f8970 at 004f89b4
 ;   engine_pod.cpp_CPod_verifyIntegrity_FUN_004f9100 at 004f911f
-;   engine_pod.cpp_FUN_004f8eb0 at 004f8eee
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058d9ac

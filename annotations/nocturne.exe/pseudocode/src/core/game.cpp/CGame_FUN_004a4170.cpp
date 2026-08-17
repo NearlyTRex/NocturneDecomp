@@ -169,7 +169,7 @@ LAB_004a43cc:
       if (local_124._ios.__enabled_exceptions != 0) {
         pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("Can't open saved game file.");
-        shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
+        shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
         crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_168,0);
         return;
@@ -178,7 +178,7 @@ LAB_004a43cc:
       if (local_a4._ios.__enabled_exceptions != 0) {
         pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("Can't create temp file to load saved game file.");
-        shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
+        shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
         crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_168,0);
         return;
@@ -193,7 +193,7 @@ LAB_004a43cc:
       if (local_34 != 0) {
         pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                            ("Error writing temp file to load saved game.");
-        shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
+        shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar9);
         support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(&local_6c.lzw_dict,0);
         support_codec_cpp_CCodec_dtor_FUN_00438f30(&local_6c.base,1);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
@@ -204,7 +204,8 @@ LAB_004a43cc:
       if (file_handle == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
         g_CurrentLineNumber = 3631;
-        core_main_c_displayErrorAndQuit_FUN_004c8440("Can't reopen %s");
+        core_main_c_displayErrorAndQuit_FUN_004c8440
+                  ("Can't reopen %s","save\\$$SAVE$$.TMP");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(&local_6c.lzw_dict,0);
       support_codec_cpp_CCodec_dtor_FUN_00438f30(&local_6c.base,1);
@@ -269,7 +270,7 @@ LAB_004a43cc:
             *(CDemonActor **)((int)g_HeroActors + iVar2) = pCVar3;
             if (pCVar3 == (CDemonActor *)0x0) {
               _fclose(file_handle);
-              shape_edittool_cpp_FUN_0046fcd0
+              shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                         (g_CEditorTools_PTR_005b6d50,"Can't find hero %s.  Sorry.",local_230);
             }
             local_14 = local_14 + 1;

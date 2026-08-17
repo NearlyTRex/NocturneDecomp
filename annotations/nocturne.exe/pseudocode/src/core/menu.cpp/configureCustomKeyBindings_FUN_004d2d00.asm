@@ -47,10 +47,10 @@
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
-;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -1393,8 +1393,8 @@ section .text
     PUSH EAX                            ; 004d3c66
     MOV EBX,dword ptr [0x005b6d50]      ; 004d3c67 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004d3c6d
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d3c6e
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d3c6e
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d3c73
         ;   Label: LAB_004d3c73
     PUSH 0x0                            ; 004d3c76
@@ -2091,8 +2091,8 @@ section .text
     PUSH 0x5891ce                       ; 004d433f | = "One or more keys not valid.  Restorin..."
     MOV EDX,dword ptr [0x005b6d50]      ; 004d4344 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004d434a
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d434b
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d434b
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d4350
     ADD ESP,0x83c                       ; 004d4353
     POP EBP                             ; 004d4359

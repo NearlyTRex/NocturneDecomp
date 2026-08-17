@@ -74,15 +74,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 40,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "stack_ref"
     ],
     "total_lines": 45
@@ -111,7 +110,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string,...)"
   },
   "function_calls": [
     {
@@ -260,17 +259,6 @@
       "severity": "moderate",
       "text": "local_14 = &stack0x00000020;",
       "type": "stack_ref"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 7,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:7 vs estimated:8",
-      "param_delta": 1,
-      "text": "Function declares 7 params but call sites push 8 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

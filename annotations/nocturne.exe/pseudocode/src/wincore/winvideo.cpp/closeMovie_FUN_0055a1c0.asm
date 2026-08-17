@@ -7,9 +7,9 @@
 ; HWND             Stack[0x4]:4   window_handle
 ;
 ; XREF[3]:
-;   wincore_winrun.cpp_FUN_00558d90 at 00559081
-;   wincore_winvideo.cpp_FUN_0055a510 at 0055a58b
+;   wincore_winrun.cpp_mainWindowProc_FUN_00558d90 at 00559081
 ;   wincore_winvideo.cpp_openMovie_FUN_0055a210 at 0055a22b
+;   wincore_winvideo.cpp_playMovie_FUN_0055a510 at 0055a58b
 ;
 ; Referenced Globals:
 ;   void* PTR_mciSendStringA_005753e0 = 00175816

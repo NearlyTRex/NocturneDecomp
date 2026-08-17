@@ -1,0 +1,90 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 20,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "0056ead4",
+      "from_addr": "0056eaf3",
+      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0056ead4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fc30",
+      "from_addr": "0056fc69",
+      "name": "crt_stdio.c_WriteConsoleChar_FUN_0056fc30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005714ec",
+    "address_range": [
+      [
+        "005714ec",
+        "005714f6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec",
+    "signature": "HANDLE __cdecl crt_unknown_c_GetConsoleOutputHandle_FUN_005714ec(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057146c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0057146c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c20d4",
+      "name": "DAT_005c20d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 1,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_005c20d4",
+      "severity": "mild",
+      "text": "return DAT_005c20d4;",
+      "type": "undefined_data"
+    }
+  ]
+}

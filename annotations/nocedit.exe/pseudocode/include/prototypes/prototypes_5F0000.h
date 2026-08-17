@@ -11,7 +11,6 @@
 #include "system/watcom.h"
 #include "system/winbase.h"
 #include "system/windef.h"
-#include "system/wingdi.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CActorProperty.h"

@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   bits_per_pixel
 ;
 ; XREF[2]:
-;   wincore_wddvmem.cpp_FUN_00553ba0 at 00553bd2
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 at 00553240
+;   wincore_wddvmem.cpp_videoRestore_FUN_00553ba0 at 00553bd2
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
@@ -107,7 +107,7 @@ section .text
     MOV dword ptr [0x02dc9d70],EBX      ; 00532570 | g_FrameBufferTestResult
         ;   Label: LAB_00532570
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00532576
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
         ;   Label: LAB_00532576
     MOV EAX,0x1                         ; 0053257b
     POP EBP                             ; 00532580

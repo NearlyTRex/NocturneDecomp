@@ -22,7 +22,7 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d130
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     LEA EDX,[ECX + EAX*0x1]             ; 0042d70e
     MOV EBP,EDI                         ; 0042d711
     MOV dword ptr [ESP + 0x48],EDX      ; 0042d713
-    CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042d717
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130 ; 0042d717
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130()
     SHL EBP,0x5                         ; 0042d71c
     MOV EDX,dword ptr [ESP + 0x64]      ; 0042d71f
     MOV dword ptr [ESP + 0x30],EAX      ; 0042d723

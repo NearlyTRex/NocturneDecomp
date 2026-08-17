@@ -58,13 +58,13 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 18,
+        "line": 16,
         "message": "use of undeclared identifier '_DAT_01c039dc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 18,
+        "line": 16,
         "message": "use of undeclared identifier '_DAT_01c039dc'"
       }
     ],
@@ -74,18 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 52,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [],
   "function": {
@@ -185,22 +184,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "CDemonRenderer *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "engine_matrix_c_matrixPush_FUN_004cdac0(unaff_EDI);",
-      "type": "unaffected_reg"
     }
   ]
 }

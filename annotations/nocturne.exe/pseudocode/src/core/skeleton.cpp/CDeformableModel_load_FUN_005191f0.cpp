@@ -29,7 +29,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005191f0(CDeformableMod
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 1202;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::load - Can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::load - Can't open %s",filename);
   }
   core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(this_ptr,file_handle);
   _fclose(file_handle);

@@ -102,7 +102,7 @@ section .text
     PUSH EAX                            ; 0057228b
     MOV dword ptr [EBX + 0xc],EDX       ; 0057228c
     CALL crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0 ; 0057228f
-        ;   XREF to: 005733e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0()
+        ;   XREF to: 005733e0 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0(uint param_1, char * param_2, DWORD param_3)
     ADD ESP,0xc                         ; 00572294
     TEST EAX,EAX                        ; 00572297
     JLE 0x005722a9                      ; 00572299
@@ -132,7 +132,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 005722c6
     PUSH EAX                            ; 005722c9
     CALL crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0 ; 005722ca
-        ;   XREF to: 005733e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0()
+        ;   XREF to: 005733e0 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0(uint param_1, char * param_2, DWORD param_3)
     ADD ESP,0xc                         ; 005722cf
     TEST EAX,EAX                        ; 005722d2
     JG 0x0057222f                       ; 005722d4

@@ -93,7 +93,7 @@ LAB_004eecd2:
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_004e1740
                 (&pCVar1->motion_controller,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }
   }
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;

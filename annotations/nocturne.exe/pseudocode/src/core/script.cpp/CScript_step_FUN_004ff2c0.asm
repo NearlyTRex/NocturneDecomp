@@ -4212,8 +4212,8 @@ section .text
     PUSH 0x58ee25                       ; 00501fd4 | = "Script GTFO at line %d:\n%s\nTerminat..."
     MOV EDI,dword ptr [0x005b6d50]      ; 00501fd9 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 00501fdf
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 00501fe0
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 00501fe0
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00501fe5
     XOR EAX,EAX                         ; 00501fe8
     MOV dword ptr [EBX],0x1             ; 00501fea

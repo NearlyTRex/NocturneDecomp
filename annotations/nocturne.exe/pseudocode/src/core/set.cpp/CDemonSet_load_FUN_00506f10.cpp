@@ -49,7 +49,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
   if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 283;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::Unable to open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::Unable to open %s",filename);
   }
   _fscanf(p_Var4,"%d\n",&this_ptr->set_file_version);
   _fscanf(p_Var4,"%f\n",&this_ptr->set_scale_factor);

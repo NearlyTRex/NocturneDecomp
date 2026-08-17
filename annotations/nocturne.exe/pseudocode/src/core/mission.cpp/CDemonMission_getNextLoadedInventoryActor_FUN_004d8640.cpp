@@ -21,7 +21,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor
   if (iVar2 != 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 395;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",actor_name,this_ptr->next_inventory_actor);
   }
   pCVar1 = this_ptr->next_inventory_actor;
   this_ptr->next_inventory_actor = pCVar1->next_actor;

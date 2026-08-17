@@ -12,6 +12,12 @@ CDemonActorType g_CZombieActorType_02de4940 = {};
 CVector3f CVector3f_02de0774 = {};
 CVector3f CVector3f_02de0780 = {};
 
+// HWND
+HWND g_HWND_02de2098 = {};
+
+// char[256]
+char g_CHAR_ARRAY_02de0860[256] = {};
+
 // word
 word DAT_02DE612A = 0;
 word DAT_02DE62C2 = 0;

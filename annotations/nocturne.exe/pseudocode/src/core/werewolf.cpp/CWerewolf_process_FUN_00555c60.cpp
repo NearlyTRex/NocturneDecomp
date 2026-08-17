@@ -132,7 +132,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
     }
     else if (uVar7 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
-                (g_CDemonMission_PTR_005baf90,this_ptr,1);
+                (g_CDemonMission_PTR_005baf90,(CDemonActor *)this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,uVar7);
@@ -650,7 +650,7 @@ LAB_00555e70:
     if (uVar4 != 3) goto LAB_0055610d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }
 LAB_00555e78:
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;

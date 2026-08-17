@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 004710f9
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00474f0c
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f8ca
-;   wincore_winvideo.cpp_FUN_0055a510 at 0055a80c
+;   wincore_winvideo.cpp_playMovie_FUN_0055a510 at 0055a80c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de0848

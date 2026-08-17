@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/windef.h"
+#include "system/winnt.h"
 
 // Structure: CFileFinder
 // Ghidra size: 0x114 (276 bytes)

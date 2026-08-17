@@ -15,7 +15,7 @@ void __cdecl crt_iostream_cpp_ios_freeBufferChain_FUN_00570410(ios *stream_ptr)
   buffer = *(uint **)&stream_ptr->__fill_character;
   while (buffer != (uint *)0x0) {
     puVar1 = (uint *)*buffer;
-    FUN_00571ef0(buffer);
+    freeBuffer(buffer);
     buffer = puVar1;
   }
   return;

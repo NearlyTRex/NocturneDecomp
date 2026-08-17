@@ -58,43 +58,43 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 40,
+        "line": 41,
         "message": "use of undeclared identifier '_DAT_02dc84bc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 53,
+        "line": 54,
         "message": "use of undeclared identifier '_DAT_02dc8318'"
       },
       {
         "category": "cast_error",
         "column": 81,
-        "line": 85,
+        "line": 87,
         "message": "C-style cast from 'CSfxSample *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 132,
+        "line": 136,
         "message": "use of undeclared identifier 'DAT_02db1118'; did you mean 'DAT_02DF1118'?"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 176,
+        "line": 180,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 183,
+        "line": 187,
         "message": "use of undeclared identifier 'DAT_02db1118'; did you mean 'DAT_02DF1118'?"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 215,
+        "line": 220,
         "message": "assigning to 'short *' from incompatible type 'void *'"
       }
     ],
@@ -104,13 +104,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 361,
+    "complexity_score": 376,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 221,
-    "suspect_count": 11,
+    "pseudocode_lines": 226,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -119,7 +119,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 721
+    "total_lines": 726
   },
   "cross_references": [
     {
@@ -150,7 +150,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -547,14 +547,14 @@
         {
           "check_id": "ignoredReturnValue",
           "column": 5,
-          "line": 69,
+          "line": 70,
           "message": "Return value of function round() is not used.",
           "severity": "warning"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 79,
-          "line": 72,
+          "line": 74,
           "message": "Uninitialized variable: local_28",
           "severity": "error"
         }
@@ -574,7 +574,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 129,
       "match": "DAT_02db1118",
       "severity": "mild",
       "text": "output_buffer = (short *)&DAT_02db1118;",
@@ -582,7 +582,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 176,
+      "line": 180,
       "match": "DAT_02db1118",
       "severity": "mild",
       "text": "puVar10 = (uint *)&DAT_02db1118;",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 188,
       "match": "(uint *)((int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -598,7 +598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 189,
       "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
@@ -606,7 +606,7 @@
     },
     {
       "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 184,
+      "line": 188,
       "match": "(int)puVar10",
       "severity": "moderate",
       "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
@@ -614,34 +614,42 @@
     },
     {
       "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 185,
+      "line": 189,
       "match": "(int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x523f55 assigned to bare local `iVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 61,
+      "description": "Raw hex address 0x523f55 assigned to bare local `iVar14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 62,
       "match": "0x523f55",
       "severity": "moderate",
-      "text": "iVar13 = 0x523f55;",
+      "text": "iVar14 = 0x523f55;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x523f78 assigned to bare local `uVar13`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar13` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 65,
+      "match": "0x523f78",
+      "severity": "moderate",
+      "text": "uVar13 = 0x523f78;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 177,
+      "line": 181,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar13 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar9 = local_20 * iVar14 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 182,
+      "line": 186,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = local_20 * iVar13 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar9 = local_20 * iVar14 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -654,7 +662,7 @@
     },
     {
       "description": "Uninitialized variable: local_28",
-      "line": 72,
+      "line": 74,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "((double)this_ptr->stream_write_position - *(double *)(local_28 + 0x118));",

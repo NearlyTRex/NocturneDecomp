@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01fba9a4
 ;
 ; Called Functions:
-;   core_dlight.cpp_FUN_0044ed80
+;   core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_2d.c_drawText_FUN_00402600
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH EBP                            ; 0050aaa1
     ADD EBX,0x4                         ; 0050aaa2
     INC ESI                             ; 0050aaa5
-    CALL core_dlight.cpp_FUN_0044ed80   ; 0050aaa6
-        ;   XREF to: 0044ed80 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044ed80()
+    CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80 ; 0050aaa6
+        ;   XREF to: 0044ed80 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
     MOV EAX,[0x01fb9b54]                ; 0050aaab | DAT_01fb9b54
     ADD ESP,0x10                        ; 0050aab0
     CMP ESI,EAX                         ; 0050aab3
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 0050aaf1
     ADD EBX,0x4                         ; 0050aaf2
     INC EBP                             ; 0050aaf5
-    CALL core_dlight.cpp_FUN_0044ed80   ; 0050aaf6
-        ;   XREF to: 0044ed80 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044ed80()
+    CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80 ; 0050aaf6
+        ;   XREF to: 0044ed80 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
     MOV EDX,dword ptr [0x01fba2d8]      ; 0050aafb | DAT_01fba2d8
     ADD ESP,0x10                        ; 0050ab01
     CMP EBP,EDX                         ; 0050ab04

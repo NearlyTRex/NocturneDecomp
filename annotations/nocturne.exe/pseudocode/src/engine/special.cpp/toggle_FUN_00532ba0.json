@@ -58,7 +58,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 21,
+        "line": 22,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -68,20 +68,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 188,
+    "complexity_score": 214,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 12,
+    "pseudocode_lines": 49,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "signed_shift_global_idiom",
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 125
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -252,8 +253,16 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(uint **)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
@@ -261,7 +270,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(uint *)((int)puVar5",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
@@ -269,7 +278,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(uint *)((int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
@@ -277,15 +286,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 43,
       "match": "(uint *)((int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + uVar1);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "engine_special_cpp_unlockFrame_FUN_00532320(unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 30,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar3);",
@@ -293,7 +310,7 @@
     },
     {
       "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "(int)puVar5",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
@@ -301,7 +318,7 @@
     },
     {
       "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "(int)puVar6",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
@@ -309,7 +326,7 @@
     },
     {
       "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 43,
       "match": "(int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + uVar1);",
@@ -317,7 +334,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
@@ -325,7 +342,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 35,
+      "line": 36,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
@@ -333,7 +350,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 20,
+      "line": 21,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar3 = g_WindowWidth * g_BitsPerPixel >> 0x1f;",

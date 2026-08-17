@@ -25,8 +25,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004c8510 at 004c8597
-;   core_menu.cpp_FUN_004d23d0 at 004d263f
+;   core_main.c_showDeveloperToolsMenu_FUN_004c8510 at 004c8597
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d263f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00583db6
@@ -61,7 +61,7 @@
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
-;   shape_edittool.cpp_CPickList_ctor_FUN_00474c90
+;   shape_edittool.cpp_CPickList_clear_FUN_00476160
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -520,8 +520,8 @@ section .text
     LEA EAX,[ESP + 0x200]               ; 004a50dc
         ;   Label: LAB_004a50dc
     PUSH EAX                            ; 004a50e3
-    CALL shape_edittool.cpp_FUN_00476160 ; 004a50e4
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 004a50e4
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004a50e9
     TEST EBP,EBP                        ; 004a50ec
     JNZ 0x004a5254                      ; 004a50ee

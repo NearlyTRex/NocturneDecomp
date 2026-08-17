@@ -28,7 +28,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042d900(void *sp
   iVar6 = src_x + g_ClipLeft;
   if (sprite_data != (void *)0x0) {
     sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
-    pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     iStack_30 = screen_y * 0x84;
     if (g_BitsPerPixel == 8) {
       iStack_18 = screen_x + (int)g_ScreenBufferArray[src_y + screen_y];

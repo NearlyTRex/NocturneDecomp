@@ -7,6 +7,10 @@
 // WINNLS - System Header
 // =============================================================================
 
+// Typedef: LPCPINFO
+// pointer to _cpinfo
+typedef struct _cpinfo* LPCPINFO;
+
 // Structure: _cpinfo
 typedef struct _cpinfo {
     UINT MaxCharSize;

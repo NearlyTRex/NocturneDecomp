@@ -64,55 +64,55 @@
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 33,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_02dc9214'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 40,
+        "line": 41,
         "message": "use of undeclared identifier '_DAT_02dc92ac'; did you mean 'DAT_005992ac'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 44,
+        "line": 45,
         "message": "use of undeclared identifier 'DAT_02dc92ac'; did you mean 'DAT_005992ac'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 54,
+        "line": 55,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 54,
+        "line": 55,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 66,
+        "line": 67,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 66,
+        "line": 67,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 72,
+        "line": 73,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 72,
+        "line": 73,
         "message": "expected expression"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 293,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 114,
     "suspect_count": 16,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 391
+    "total_lines": 392
   },
   "cross_references": [],
   "function": {
@@ -153,7 +153,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -163,7 +163,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -382,7 +382,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_02dc92ac",
       "severity": "mild",
       "text": "iVar1 = *(int *)(&DAT_02dc92ac + iVar4);",
@@ -390,7 +390,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 45,
+      "line": 46,
       "match": "*(int **)(iVar7 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);",
@@ -398,7 +398,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2);",
@@ -406,7 +406,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 60,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -414,7 +414,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
+      "line": 66,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -422,7 +422,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
+      "line": 71,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*_DAT_02dc9214 + 0x14))",
@@ -430,7 +430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "(_DAT_02dc9214,*(uint *)(&DAT_02dc9244 + sample_buffer_id * 4),",
@@ -438,7 +438,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 74,
+      "line": 75,
       "match": "*(uint **)(iVar1 + 0x2dc92a8",
       "severity": "moderate",
       "text": "puVar3 = *(uint **)(iVar1 + 0x2dc92a8);",
@@ -446,7 +446,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 76,
+      "line": 77,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)*puVar3)(puVar3,&DAT_005c3918,iVar1 + 0x2dc9324);",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_005c3918",
       "severity": "mild",
       "text": "uVar5 = (**(code **)*puVar3)(puVar3,&DAT_005c3918,iVar1 + 0x2dc9324);",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
+      "line": 97,
       "match": "*(int **)(iVar7 * 4 + 0x2dc92a8",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);",
@@ -470,7 +470,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
+      "line": 98,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((piVar2 != (int *)0x0) && (uVar5 = (**(code **)(*piVar2 + 0x48))(piVar2), uVar5 != 0)) {",
@@ -478,7 +478,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 108,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
+      "line": 114,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar2 + 8))(piVar2);",

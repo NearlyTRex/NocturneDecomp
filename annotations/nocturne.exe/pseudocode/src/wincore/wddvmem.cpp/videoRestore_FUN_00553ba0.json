@@ -1,0 +1,283 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 32,
+        "line": 17,
+        "message": "use of undeclared identifier '_DAT_02ddf568'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 61,
+        "message": "use of undeclared identifier 'SetFocus'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 68,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 53,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 197
+  },
+  "cross_references": [
+    {
+      "addr": "00553910",
+      "from_addr": "00553b4c",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558d90",
+      "from_addr": "00558e69",
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_00558d90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00553ba0",
+    "address_range": [
+      [
+        "00553ba0",
+        "00553c9f"
+      ],
+      [
+        "00553ca1",
+        "00553d11"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_videoRestore_FUN_00553ba0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_00553ba0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00574ba8",
+      "is_variadic": false,
+      "name": "crt_ddraw.c_DirectDrawCreate"
+    },
+    {
+      "addr": "005324a0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_setResolutionAndColorTable_FUN_005324a0"
+    },
+    {
+      "addr": "EXTERNAL:0000003a",
+      "is_variadic": false,
+      "name": "SetFocus"
+    },
+    {
+      "addr": "00552e00",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575470",
+      "name": "PTR_SetFocus_00575470",
+      "type": "void*",
+      "value": "00175a70"
+    },
+    {
+      "addr": "00597b48",
+      "name": "s_wincore_wddvmem_cpp_00597b48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00597b5f",
+      "name": "s_videoRestore_Unable_to_s_00597b5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b761c",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "005b7620",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005b7624",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dc9d60",
+      "name": "g_UseDirect3D",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02ddf550",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
+      "value": null
+    },
+    {
+      "addr": "02ddf554",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "02ddf558",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "02ddf55c",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
+      "value": null
+    },
+    {
+      "addr": "02ddf568",
+      "name": "DAT_02ddf568",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de2098",
+      "name": "g_HWND_02de2098",
+      "type": "HWND",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4491525423728815,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 10,
+      "CBRANCH": 11,
+      "COPY": 118,
+      "INT_ADD": 20,
+      "INT_AND": 45,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 36,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 43,
+      "INT_XOR": 4,
+      "LOAD": 26,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 407
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -30,7 +30,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_FUN_004e28a0(CFileBitStream *this_ptr,
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 511;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory.  File: %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
   }
   _fseek(this_ptr->file_handle,this_ptr->stream_start_position,0);
   this_ptr->current_byte_index = 0;

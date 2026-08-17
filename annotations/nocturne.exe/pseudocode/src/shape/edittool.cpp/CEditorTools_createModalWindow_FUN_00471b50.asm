@@ -283,7 +283,7 @@ section .text
         ;   XREF to: 00471e11 (CONDITIONAL_JUMP)  ; LAB_00471e11
     LEA EAX,[EAX]                       ; 00471e3a
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00471e40
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
         ;   Label: LAB_00471e40
     MOV EDX,dword ptr [ESP + 0x12f8]    ; 00471e45
         ;   Label: LAB_00471e45

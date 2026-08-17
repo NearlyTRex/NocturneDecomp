@@ -119,7 +119,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,S
 int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_00503c00(CLarva *this_ptr,CVector3f *out_points_array);
 void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_larva_cpp_CLarva_addFilesToExtract_FUN_00503c90(CLarva *this_ptr,_FILE *file_handle);
-CDemonActor * __cdecl core_larva_cpp_CLarva_dtor_FUN_00503cc0(CLarva *this_ptr,uint flags);
+CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_00503cc0(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_00503d80(void);
 void __cdecl core_level_cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader *this_ptr);
 void __cdecl core_level_cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);

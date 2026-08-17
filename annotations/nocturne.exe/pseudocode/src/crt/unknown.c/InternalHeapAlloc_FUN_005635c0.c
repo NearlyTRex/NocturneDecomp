@@ -55,7 +55,7 @@ void * __cdecl InternalHeapAlloc(ulong size)
          (pvVar3 = SystemAllocWrapper(size), pvVar3 == (void *)0x0)) break;
       bVar2 = true;
     }
-    iVar4 = FUN_00568e70(size);
+    iVar4 = AllocatorFallbackStub(size);
     if (iVar4 == 0) break;
     bVar2 = false;
   }

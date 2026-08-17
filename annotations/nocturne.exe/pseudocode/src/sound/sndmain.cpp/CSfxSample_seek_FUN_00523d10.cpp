@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(CSfxSample *this_ptr
   if (this_ptr->streaming_slot_index < 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 1937;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSample::seek - '%s' isn't streamed!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
   dVar2 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
                     (this_ptr,(double)playback_position,0);
@@ -48,7 +48,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_00523d10(CSfxSample *this_ptr
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 1957;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Error seeking %s to %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("Error seeking %s to %d",this_ptr,this_ptr->stream_read_position);
       return;
     }
   }

@@ -135,7 +135,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_0045ab40(CDraculaBride *this_pt
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(&pSVar5->position);
         sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00526090(&pSVar5->tangent);
         sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(volume);
-        core_sound_cpp_FUN_0052d030(g_CSound_PTR_005bed68,local_174,sound_name);
+        core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
+                  (g_CSound_PTR_005bed68,local_174,sound_name);
         uVar4 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_174);
         pSVar5->sfx_handle = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005263c0();

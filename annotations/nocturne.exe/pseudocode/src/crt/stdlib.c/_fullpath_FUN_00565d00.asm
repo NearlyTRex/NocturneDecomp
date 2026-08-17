@@ -13,7 +13,7 @@
 ;   crt_io.c_getTempDirectory_FUN_005687bc at 00568807
 ;   engine_dosio.cpp_findFileNormally_FUN_00456800 at 00456832
 ;   engine_pod.cpp_CPodFile_FUN_004f7ae0 at 004f7b12
-;   shape_edittool.cpp_FUN_00474ae0 at 00474c2c
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00474ae0 at 00474c2c
 ;
 ; Referenced Globals:
 ;   void* PTR_GetFullPathNameA_00575518 = 00175d5c

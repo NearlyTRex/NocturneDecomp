@@ -26,7 +26,7 @@
 ;   undefined4 DAT_02de07e4
 ;   undefined4 DAT_02de07e8
 ;   undefined4 DAT_02de07f4
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -214,7 +214,7 @@ section .text
     MOV EBX,dword ptr [0x005c165c]      ; 005589e7 | PTR_s_Nocturne_005c165c
     PUSH EBX                            ; 005589ed | = "Nocturne"
     PUSH 0x597f11                       ; 005589ee | = "Unable to set timer"
-    MOV ESI,dword ptr [0x02de2098]      ; 005589f3 | DAT_02de2098
+    MOV ESI,dword ptr [0x02de2098]      ; 005589f3 | g_HWND_02de2098
     PUSH ESI                            ; 005589f9
     CALL dword ptr CS:[0x57544c]        ; 005589fa | PTR_MessageBoxA_0057544c
     CMP EAX,0x2                         ; 00558a01

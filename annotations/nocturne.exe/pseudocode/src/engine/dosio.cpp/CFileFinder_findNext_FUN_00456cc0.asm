@@ -8,10 +8,10 @@
 ;
 ; XREF[5]:
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f9311
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470841
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 0047483e
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 00474a3d
-;   shape_edittool.cpp_FUN_00470730 at 00470841
-;   shape_edittool.cpp_FUN_00474ae0 at 00474c48
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00474ae0 at 00474c48
 ;
 ; Referenced Globals:
 ;   void* PTR_FindNextFileA_005754d0 = 00175c0e

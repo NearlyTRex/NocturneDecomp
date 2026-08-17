@@ -26,7 +26,9 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\core\\game.cpp";
       g_CurrentLineNumber = 1175;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::setGameRes - Unable to set the video mode to %dx%dx%d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",this_ptr->game_pixx,this_ptr->game_pixy,
+                 this_ptr->game_bpp);
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00403760();

@@ -65,18 +65,18 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
-;   core_sound.cpp_FUN_0052d030
+;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   sound_sndmain.cpp_FUN_00526120
-;   sound_sndmain.cpp_FUN_00526150
 ;   sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
+;   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120
 ;   sound_sndmain.cpp_setNextSfxFlags_FUN_00526240
 ;   sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00525f50
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0
+;   sound_sndmain.cpp_setNextSfxUserData_FUN_00526150
 ;   sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0
 ;   ... and 1 more
 ;
@@ -295,16 +295,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052d32a
     PUSH EAX                            ; 0052d32d
     PUSH 0x0                            ; 0052d32e
-    CALL sound_sndmain.cpp_FUN_00526150 ; 0052d330
-        ;   XREF to: 00526150 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00526150(int index, void * userdata)
+    CALL sound_sndmain.cpp_setNextSfxUserData_FUN_00526150 ; 0052d330
+        ;   XREF to: 00526150 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxUserData_FUN_00526150(int index, void * userdata)
     ADD ESP,0x8                         ; 0052d335
     PUSH dword ptr [ESP]                ; 0052d338
     CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0 ; 0052d33b
         ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0(float volume)
     ADD ESP,0x4                         ; 0052d340
     PUSH dword ptr [ESP + 0x4]          ; 0052d343
-    CALL sound_sndmain.cpp_FUN_00526120 ; 0052d347
-        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00526120(float base_frequency)
+    CALL sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120 ; 0052d347
+        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120(float base_frequency)
     ADD ESP,0x4                         ; 0052d34c
     LEA EAX,[ESP + 0xd0]                ; 0052d34f
     PUSH EAX                            ; 0052d356
@@ -471,8 +471,8 @@ section .text
     MOV EAX,[0x005bed68]                ; 0052d519 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 0052d51e
     MOV byte ptr [EDX],0x0              ; 0052d51f
-    CALL core_sound.cpp_FUN_0052d030    ; 0052d522
-        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030 ; 0052d522
+        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0052d527
     CMP byte ptr [ESP + 0xd0],0x0       ; 0052d52a
     JNZ 0x0052d298                      ; 0052d532
@@ -486,8 +486,8 @@ section .text
     PUSH EAX                            ; 0052d549
     MOV ECX,dword ptr [0x005bed68]      ; 0052d54a | g_CSound_PTR_005bed68
     PUSH ECX                            ; 0052d550
-    CALL core_sound.cpp_FUN_0052d030    ; 0052d551
-        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030 ; 0052d551
+        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0052d030(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0052d556
     JMP 0x0052d2a6                      ; 0052d559
         ;   XREF to: 0052d2a6 (UNCONDITIONAL_JUMP)  ; LAB_0052d2a6

@@ -238,7 +238,7 @@ int __cdecl core_batcreat_cpp_CBatCreature_getTargetPoints_FUN_00416240(CBatCrea
 ECollisionType __cdecl core_batcreat_cpp_CBatCreature_getCollisionType_FUN_00416290(CBatCreature *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_batcreat_cpp_CBatCreature_getPropertyList_FUN_004162b0(CBatCreature *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_batcreat_cpp_CBatCreature_addFilesToExtract_FUN_004162f0(CBatCreature *this_ptr,_FILE *file_handle);
-CDemonActor * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00416320(CBatCreature *this_ptr,uint flags);
+CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00416320(CBatCreature *this_ptr,uint flags);
 void __cdecl core_batman_cpp_staticInit_FUN_004163e0(void);
 CBatman * __cdecl core_batman_cpp_factoryFuncBatman_FUN_00416410(void);
 CDemonActorType * __cdecl core_batman_cpp_CBatman_getActorType_FUN_00416440(CBatman *this_ptr);

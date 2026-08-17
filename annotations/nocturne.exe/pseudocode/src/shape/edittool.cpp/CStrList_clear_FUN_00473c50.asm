@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_FUN_004fe500 at 004fe509
+;   shape_edittool.cpp_CPickList_clear_FUN_00476160 at 0047617a
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00473b80 at 00473b94
-;   shape_edittool.cpp_FUN_00476160 at 0047617a
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0

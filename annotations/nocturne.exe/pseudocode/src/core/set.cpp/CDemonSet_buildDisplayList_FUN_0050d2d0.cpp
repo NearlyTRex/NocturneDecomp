@@ -27,8 +27,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
   float fStack_50;
   CVector3f CStack_4c;
   float fStack_40;
-  float local_3c;
-  float fStack_38;
+  CVector3i local_3c;
   int local_28;
   uint local_24;
   int local_14;
@@ -37,7 +36,8 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
     local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
   }
   _DAT_02080430 = 0;
-  engine_drender_cpp_FUN_00460d10();
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
+            (g_CDemonRenderer_PTR_005ae704,&local_3c);
   engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)(auStack_64 + 4));
   if (_DAT_007f7370 == 0) {
@@ -82,11 +82,11 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
           pCVar5 = (*((this_ptr_00->base).base.vtable._ub)->getBoundingBox)
                              ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff7c);
           fStack_40 = (pCVar5->min).x + (pCVar5->max).x;
-          local_3c = (pCVar5->min).y + (pCVar5->max).y;
+          local_3c.x = (int)((pCVar5->min).y + (pCVar5->max).y);
           CStack_4c.x = fStack_40 * 0.5f;
-          CStack_4c.y = local_3c * 0.5f;
-          fStack_38 = (pCVar5->min).z + (pCVar5->max).z;
-          CStack_4c.z = fStack_38 * 0.5f;
+          CStack_4c.y = (float)local_3c.x * 0.5f;
+          local_3c.y = (int)((pCVar5->min).z + (pCVar5->max).z);
+          CStack_4c.z = (float)local_3c.y * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr_00,(CVector3f *)auStack_64,&CStack_4c);
           *(CHero **)(&DAT_02080434 + _DAT_02080430 * 8) = this_ptr_00;
@@ -144,7 +144,9 @@ LAB_0050d39b:
     local_14 = wincore_winrun_cpp_getTime_FUN_00558a30();
     local_14 = local_14 - local_28;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"buildDispList %d items : %3.2f ms\n");
+              (g_CConsole_PTR_005ad350,"buildDispList %d items : %3.2f ms\n",_DAT_02080430,
+               ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
+               (double)g_CGame_PTR_005b9354->delta_time_float);
     return;
   }
   return;

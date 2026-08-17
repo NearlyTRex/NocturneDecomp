@@ -56,64 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "format_error",
+        "column": 70,
+        "line": 131,
+        "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 79,
+        "line": 131,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
         "category": "incompatible_types",
         "column": 24,
-        "line": 245,
+        "line": 246,
         "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
+      },
+      {
+        "category": "format_error",
+        "column": 67,
+        "line": 251,
+        "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 251,
+        "line": 252,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 299,
+        "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 298,
+        "line": 300,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
+      },
+      {
+        "category": "format_error",
+        "column": 71,
+        "line": 309,
+        "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 308,
+        "line": 310,
         "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
       },
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 343,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 392,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 394,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 405,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonActor *' from 'uint32_t' (aka 'unsigned int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 459,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_executeCommands_FUN_0047ab70'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 461,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0'"
+        "category": "format_error",
+        "column": 96,
+        "line": 344,
+        "message": "format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 868,
+    "complexity_score": 871,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 688,
+    "pseudocode_lines": 691,
     "suspect_count": 14,
     "suspect_types": [
       "concat_reconstruction",
@@ -139,7 +139,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2344
+    "total_lines": 2347
   },
   "cross_references": [],
   "function": {
@@ -348,7 +348,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -1216,7 +1216,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 181,
       "match": "in_stack_fffffe40",
       "severity": "moderate",
       "text": "in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);",
@@ -1224,7 +1224,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 398,
+      "line": 401,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "pCVar21 = SUB84(__BITCAST_UINT64((double)fVar4),0);",
@@ -1232,7 +1232,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 531,
+      "line": 534,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_20 = 1.4013e-45;",
@@ -1240,7 +1240,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 674,
+      "line": 677,
       "match": "8.40779e-45",
       "severity": "mild",
       "text": "(pCVar17->model).transformed_vertices[0x4f].z = 8.40779e-45;",
@@ -1248,7 +1248,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 407,
+      "line": 410,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar15->x = pCVar19->x;",
@@ -1264,18 +1264,10 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 532,
+      "line": 535,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 585,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
@@ -1283,12 +1275,20 @@
       "line": 588,
       "match": "cascade_constant_fill",
       "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 591,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 180,
+      "line": 181,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "in_stack_fffffe40 = CONCAT44(pCVar21,&g_HeroActors[g_LocalHeroIndex]->inventory);",
@@ -1296,7 +1296,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 149,
+      "line": 150,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "(*(CDemonActor **)",

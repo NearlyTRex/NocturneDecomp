@@ -64,7 +64,8 @@ LAB_005192e4:
     if (0x00000007 < local_64) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 1226;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't load model of version %d, this .exe can only handle up to version %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("Can't load model of version %d, this .exe can only handle up to version %d",local_64,0x00000007);
     }
     if (local_64 < 3) {
       do {

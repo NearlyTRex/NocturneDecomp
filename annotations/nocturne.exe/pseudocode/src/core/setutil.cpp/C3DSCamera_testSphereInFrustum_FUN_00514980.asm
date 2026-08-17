@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00512d7f
-;   core_setdir.cpp_FUN_00511d80 at 00511e00
+;   core_setdir.cpp_testCameraVisibility_FUN_00511d80 at 00511e00
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0

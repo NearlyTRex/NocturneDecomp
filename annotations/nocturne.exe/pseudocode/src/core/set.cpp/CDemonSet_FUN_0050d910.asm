@@ -59,11 +59,11 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0045f790
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   engine_drender.cpp_FUN_00460d10
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
 ;   engine_matrix.c_normalizeVector3DFloat_FUN_004cde90
 ;
@@ -97,8 +97,8 @@ section .text
         ;   Label: LAB_0050d952
     PUSH EAX                            ; 0050d957 | DAT_01b4d738
     LEA ESI,[ESP + 0xd8]                ; 0050d958
-    CALL engine_drender.cpp_FUN_00460d10 ; 0050d95f
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10 ; 0050d95f
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0050d964
     XOR EDX,EDX                         ; 0050d967
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0050d969

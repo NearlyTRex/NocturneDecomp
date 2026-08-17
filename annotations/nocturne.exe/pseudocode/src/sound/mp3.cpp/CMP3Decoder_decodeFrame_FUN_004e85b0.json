@@ -68,6 +68,18 @@
         "message": "use of undeclared identifier 'DAT_005bbc48'"
       },
       {
+        "category": "format_error",
+        "column": 112,
+        "line": 165,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 180,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 59,
         "line": 215,
@@ -86,6 +98,12 @@
         "message": "use of undeclared identifier 'stack0xffff9f10'; did you mean 'in_stack_ffff9f10'?"
       },
       {
+        "category": "format_error",
+        "column": 95,
+        "line": 378,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "cast_error",
         "column": 29,
         "line": 518,
@@ -96,12 +114,6 @@
         "column": 43,
         "line": 514,
         "message": "use of undeclared identifier 'DAT_005bbc48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 515,
-        "message": "use of undeclared identifier 'DAT_005bbc88'"
       }
     ],
     "success": false,
@@ -110,14 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1168,
+    "complexity_score": 1203,
     "cross_reference_count": 2,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 528,
-    "suspect_count": 60,
+    "suspect_count": 63,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
@@ -159,7 +172,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -1523,6 +1536,39 @@
       "severity": "moderate",
       "text": "iVar7 = 0x4e8afb;",
       "type": "raw_address_constant"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"MPEG Layer 2 - pick_table - can't load tables!  Fi...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 158,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"js_bound bad layer/modext (%d/%d)  File: %s\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 173,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Not enough main data to decode frame %d.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Not enough main data to decode frame %d.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 371,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Not enough main data to decode frame %d.\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

@@ -7,7 +7,7 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_0044c560 at 0044c5ad
+;   core_dfont.cpp_initFonts_FUN_0044c560 at 0044c5ad
 ;
 ; *****************************************************************************
 

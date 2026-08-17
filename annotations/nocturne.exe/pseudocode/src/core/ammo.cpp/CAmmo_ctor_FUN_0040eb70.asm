@@ -10,7 +10,7 @@
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040eb40 at 0040eb53
 ;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1f5
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b25
-;   core_game.cpp_FUN_004a03a0 at 004a03bb
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0 at 004a03bb
 ;   core_inv.cpp_CInventory_FUN_004c0640 at 004c0664
 ;
 ; Referenced Globals:

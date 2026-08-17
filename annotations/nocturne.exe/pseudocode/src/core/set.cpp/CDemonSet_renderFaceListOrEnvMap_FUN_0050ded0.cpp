@@ -20,7 +20,8 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSe
         return;
       }
     }
-    engine_drender_cpp_FUN_00461720(g_CDemonRenderer_PTR_005ae704,faces,count,flags);
+    engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_00461720
+              (g_CDemonRenderer_PTR_005ae704,faces,count,flags);
   }
   return;
 }

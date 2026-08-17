@@ -10,8 +10,8 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 
 {
   byte bVar1;
-  uint uVar2;
-  SIZE_T SVar3;
+  SIZE_T SVar2;
+  uint uVar3;
   uint uVar4;
   int iVar5;
   byte bVar7;
@@ -19,7 +19,10 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
   char *pcVar8;
   char *pcVar9;
   bool bVar10;
-  uint uStack_18;
+  char *in_stack_ffffffe0;
+  int in_stack_ffffffe4;
+  SIZE_T in_stack_ffffffe8;
+  uint uVar11;
   uint uStack_14;
   
   bVar7 = 0;
@@ -28,7 +31,7 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
     setErrno(4);
     *(byte *)&file->_flag = (byte)file->_flag | 0x20;
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
-    SVar3 = 0;
+    SVar2 = 0;
   }
   else {
     uStack_14 = count * size;
@@ -37,11 +40,12 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
       return 0;
     }
     if (file->_link->__reserve_end == (char *)0x0) {
-      FUN_00568ed0(file);
+      _setvbuf(file,in_stack_ffffffe0,in_stack_ffffffe4,in_stack_ffffffe8)
+      ;
     }
-    uVar2 = file->_flag;
     bVar1 = (byte)file->_flag;
-    uStack_18 = 0;
+    uVar3 = file->_flag & 0x30;
+    uVar11 = 0;
     *(byte *)&file->_flag = bVar1 & 0xcf;
     if ((bVar1 & 0x40) == 0) {
       bVar7 = *(byte *)((int)&file->_flag + 1);
@@ -58,8 +62,8 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
         ptr = (void *)((int)ptr + 1);
         _fputc((uint)bVar7,file);
         if ((file->_flag & 0x30) != 0) break;
-        uStack_18 = uStack_18 + 1;
-      } while (uStack_14 - uStack_18 != 0);
+        uVar11 = uVar11 + 1;
+      } while (uStack_14 - uVar11 != 0);
       file->_link->__get_base = pcVar8;
       if (bVar10) {
         bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;
@@ -111,16 +115,16 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
         }
 LAB_00563ba0:
         ptr = (void *)((int)ptr + uVar4);
-        uStack_18 = uStack_18 + uVar4;
+        uVar11 = uVar11 + uVar4;
         uStack_14 = uStack_14 - uVar4;
       } while ((uStack_14 != 0) && ((file->_flag & 0x20) == 0));
     }
     if ((file->_flag & 0x20) != 0) {
-      uStack_18 = 0;
+      uVar11 = 0;
     }
-    file->_flag = file->_flag | uVar2 & 0x30;
+    file->_flag = file->_flag | uVar3;
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);
-    SVar3 = uStack_18 / size;
+    SVar2 = uVar11 / size;
   }
-  return SVar3;
+  return SVar2;
 }

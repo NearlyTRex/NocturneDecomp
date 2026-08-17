@@ -30,8 +30,8 @@
 ;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FillInputBuffer_FUN_00564670
-;   crt_unknown.c_FUN_00568ed0
 ;   crt_unknown.c_FUN_00568f70
+;   crt_unknown.c_setvbuf_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     JNZ 0x00563748                      ; 0056373d
         ;   XREF to: 00563748 (CONDITIONAL_JUMP)  ; LAB_00563748
     PUSH EBX                            ; 0056373f
-    CALL crt_unknown.c_FUN_00568ed0     ; 00563740
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
+    CALL crt_unknown.c_setvbuf_FUN_00568ed0 ; 00563740
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_setvbuf_FUN_00568ed0(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x4                         ; 00563745
     XOR EBP,EBP                         ; 00563748
         ;   Label: LAB_00563748

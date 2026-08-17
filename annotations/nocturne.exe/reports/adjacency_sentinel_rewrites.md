@@ -8,12 +8,12 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 - Rewrites applied: **5**
 - Functions touched: **5**
-- Pools indexed: **142**
-- Adjacency pairs in lookup: **142**
+- Pools indexed: **143**
+- Adjacency pairs in lookup: **143**
 
 ## Rewrites by function
 
-### `core_dmodel.cpp_FUN_00454460`
+### `core_dmodel.cpp_freeAllModels_FUN_00454460`
 
 - Pool `g_CKeyFramedModel_ARRAY_01abb65c` sentinel `g_CZombieDogActorType_01af4e5c` (count 256)
   - Before: `while (this_ptr != (CKeyFramedModel *)&g_CZombieDogActorType_01af4e5c)`

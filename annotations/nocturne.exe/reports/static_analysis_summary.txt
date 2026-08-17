@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 327
+  Functions with static analysis data: 306
   Functions flagged by multiple tools: 3
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   12
 
   Cppcheck (quick):
-    Files analyzed:      321
-    Files with findings: 321
-    Total diagnostics:   926
+    Files analyzed:      300
+    Files with findings: 300
+    Total diagnostics:   883
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -33,16 +33,16 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                 408  [likely decompiler artifact]
+  uninitvar                                                 371  [likely decompiler artifact]
   shiftTooManyBitsSigned                                    200  [likely decompiler artifact]
-  legacyUninitvar                                            90
-  ignoredReturnValue                                         58
+  legacyUninitvar                                            84
+  ignoredReturnValue                                         57
   wrongPrintfScanfArgNum                                     41
   invalidscanf                                               41
-  objectIndex                                                27
+  objectIndex                                                25
   invalidPointerCast                                         12
+  nullPointerRedundantCheck                                  10
   nullPointer                                                 9
-  nullPointerRedundantCheck                                   7
   shiftNegativeLHS                                            7
   identicalInnerCondition                                     5
   pointerOutOfBounds                                          4

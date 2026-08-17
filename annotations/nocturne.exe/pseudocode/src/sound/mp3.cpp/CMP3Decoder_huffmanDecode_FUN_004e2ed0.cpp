@@ -52,7 +52,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(CMP3Decoder *th
   } while ((uVar4 != 0) || (uVar3 < _DAT_01cd944c));
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 800;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Illegal Huffman code in data.  File: %s");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Illegal Huffman code in data.  File: %s",&DAT_01cd8b28);
 LAB_004e2f39:
   if ((huffman_table->table_id[0] == '3') &&
      ((huffman_table->table_id[1] == '2' || (huffman_table->table_id[1] == '3')))) {

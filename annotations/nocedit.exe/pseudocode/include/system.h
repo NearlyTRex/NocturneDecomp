@@ -9,6 +9,7 @@
 #include "system/crt.h"
 #include "system/basetypes.h"
 #include "system/advapi32.h"
+#include "system/basetsd.h"
 #include "system/d3d.h"
 #include "system/ddraw.h"
 #include "system/dos.h"

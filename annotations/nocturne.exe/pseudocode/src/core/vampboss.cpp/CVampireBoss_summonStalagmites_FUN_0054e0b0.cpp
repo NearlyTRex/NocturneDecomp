@@ -25,7 +25,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_0054e0b0(CVamp
     if ((this_ptr_00 != (CDrip *)0x0) && (this_ptr_00->type == DRIP_TYPE_STALAG)) {
       iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
       if (iVar1 == 0) {
-        core_drip_cpp_FUN_00462710(this_ptr_00);
+        core_drip_cpp_CDrip_reset_FUN_00462710(this_ptr_00);
       }
     }
     iVar3 = iVar3 + 4;

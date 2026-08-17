@@ -89,7 +89,7 @@ int __cdecl lockFrame(void);
 
 // Original: engine_special.cpp_unlockFrame_FUN_00532320
 // Address: 00532320
-int __cdecl unlockFrame(void);
+int __cdecl unlockFrame(int clear_lock_flag);
 
 // Original: engine_special.cpp_beginScene_FUN_00532340
 // Address: 00532340
@@ -101,11 +101,11 @@ int __cdecl endScene(void);
 
 // Original: engine_special.cpp_selectTexture_FUN_00532380
 // Address: 00532380
-int __cdecl selectTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
+int __cdecl selectTexture(SMRGLTextureBasic *texture_info);
 
 // Original: engine_special.cpp_updateTexture_FUN_005323c0
 // Address: 005323c0
-int __cdecl updateTexture(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data);
+int __cdecl updateTexture(SMRGLTextureBasic *texture_info);
 
 // Original: engine_special.cpp_selectTextureFromPalette_FUN_00532400
 // Address: 00532400
@@ -125,7 +125,7 @@ int __cdecl setResolutionAndColorTable(int width,int height,int bits_per_pixel);
 
 // Original: engine_special.cpp_setColorTable16_FUN_005325c0
 // Address: 005325c0
-int __cdecl setColorTable16(uchar *source_palette,ushort *color_table);
+int __cdecl setColorTable16(void);
 
 // Original: engine_special.cpp_restoreVideoMode_FUN_005325f0
 // Address: 005325f0

@@ -15,7 +15,7 @@
 ; XREF[3]:
 ;   core_cloth.cpp_CCloth_FUN_00437ab0 at 00437cb0
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00518f60 at 005190e1
-;   shape_edittool.cpp_FUN_00472fd0 at 00473060
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0 at 00473060
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa

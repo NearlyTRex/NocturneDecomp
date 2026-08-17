@@ -17,7 +17,7 @@
 ;   crt_strstream.cpp_strstreambuf_init_FUN_0056fe65 at 0056feb0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_00571ef0
+;   crt_unknown.c_freeBuffer_FUN_00571ef0
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 00571e33
         ;   Label: LAB_00571e33
     PUSH EDX                            ; 00571e36
-    CALL crt_unknown.c_FUN_00571ef0     ; 00571e37
-        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00571ef0(void * buffer)
+    CALL crt_unknown.c_freeBuffer_FUN_00571ef0 ; 00571e37
+        ;   XREF to: 00571ef0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_freeBuffer_FUN_00571ef0(void * buffer)
     ADD ESP,0x4                         ; 00571e3c
     JMP 0x00571e03                      ; 00571e3f
         ;   XREF to: 00571e03 (UNCONDITIONAL_JUMP)  ; LAB_00571e03

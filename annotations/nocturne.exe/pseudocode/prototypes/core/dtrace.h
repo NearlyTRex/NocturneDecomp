@@ -31,9 +31,9 @@ void __cdecl CDemonRaytrace::allocNewCubeList(CDemonRaytrace *this_ptr);
 // Address: 004673a0
 void __cdecl CDemonRaytrace::freeNewCubeList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_FUN_004673e0
+// Original: core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_004673e0
 // Address: 004673e0
-void FUN_004673e0(CDemonRaytrace *param_1);
+void __cdecl CDemonRaytrace::consolidateTriList(CDemonRaytrace *this_ptr);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00467560
 // Address: 00467560

@@ -35,7 +35,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
       iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(this_ptr,&local_18);
       if (iVar2 == 0) goto LAB_004fe623;
       if (iVar2 < 0) {
-        shape_edittool_cpp_FUN_0046fcd0
+        shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                   (g_CEditorTools_PTR_005b6d50,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
                    this_ptr->parsed_lines[iVar1].line_number,this_ptr->parsed_lines[iVar1].text,
                    &DAT_01e56420);
@@ -46,7 +46,7 @@ LAB_004fe675:
       iVar4 = iVar4 + 1;
     } while (iVar4 < 0xc9);
     if (_DAT_01e56c28 == 0) {
-      shape_edittool_cpp_FUN_0046fcd0
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                 (g_CEditorTools_PTR_005b6d50,"!WARNING!  Infinite loop detected in script at line %d",
                  this_ptr->parsed_lines[iVar1].line_number);
       _DAT_01e56c28 = 1;

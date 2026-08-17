@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_inivar.cpp_FUN_004bdb80 at 004bddc9
+;   core_inivar.cpp_readIniData_FUN_004bdb80 at 004bddc9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DeviceName_00593a1e

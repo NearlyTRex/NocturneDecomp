@@ -10,9 +10,9 @@
 ; int              Stack[0x10]:4   palette_index
 ;
 ; XREF[3]:
-;   cockpit_ckptutil.c_FUN_0042d180 at 0042d1b0
-;   cockpit_ckptutil.c_FUN_00430210 at 004303bb
 ;   cockpit_ckptutil.c_applyColorPalette_FUN_0042d200 at 0042d232
+;   cockpit_ckptutil.c_loadBitmapWithPalette_FUN_0042d180 at 0042d1b0
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210 at 004303bb
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0

@@ -14,7 +14,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
   CVector3f *pCVar3;
   CKeyFramedModelInstance *this_ptr_00;
   CVector3f *position;
-  CBoundingBox3D CStack_78;
+  int in_stack_0000000c;
   CBoundingBox3D local_60;
   CVector3f CStack_48;
   CVector3f CStack_3c;
@@ -48,16 +48,16 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
-          pCStack_14 = (CVector3f *)&pCStack_14[0x24].y;
           iVar2 = iVar2 + 1;
           pCVar3 = (CVector3f *)&pCVar3[0x24].y;
           position = (CVector3f *)&position[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
-        } while (iVar2 < this_ptr->tire_count);
+        } while (iVar2 < *(int *)(in_stack_0000000c + 0x930));
       }
     }
     else {
-      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_78);
+      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                         (&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);
       core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(pCVar1);
     }
   }

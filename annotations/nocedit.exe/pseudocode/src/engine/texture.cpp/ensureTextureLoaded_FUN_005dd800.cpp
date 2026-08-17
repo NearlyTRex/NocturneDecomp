@@ -28,10 +28,10 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_005dd80
     ;
     if (g_UseExternalRenderer != 0) {
       if (bVar1) {
-        engine_special_cpp_updateTexture_FUN_005b7380(texture,g_CurrentPalette);
+        engine_special_cpp_updateTextureFromPalette_FUN_005b7380(texture,g_CurrentPalette);
         return (SMRGLHeaderExtended *)(texture + 1);
       }
-      engine_special_cpp_selectTexture_FUN_005b7340(texture,g_CurrentPalette);
+      engine_special_cpp_selectTextureFromPalette_FUN_005b7340(texture,g_CurrentPalette);
     }
     return (SMRGLHeaderExtended *)(texture + 1);
   }

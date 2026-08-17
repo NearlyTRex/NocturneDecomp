@@ -58,62 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 59,
+        "line": 63,
         "message": "use of undeclared identifier 'DAT_01c78ca8'"
+      },
+      {
+        "category": "type_error",
+        "column": 11,
+        "line": 83,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 11,
+        "line": 92,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 66,
-        "line": 93,
+        "line": 99,
         "message": "use of undeclared identifier 'DAT_005b96d4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 94,
+        "line": 100,
         "message": "use of undeclared identifier '_DAT_005c505c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 95,
+        "line": 101,
         "message": "use of undeclared identifier '_DAT_005c5090'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 96,
+        "line": 102,
         "message": "use of undeclared identifier '_DAT_005c505c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 97,
+        "line": 103,
         "message": "use of undeclared identifier '_DAT_005c5030'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 97,
+        "line": 103,
         "message": "use of undeclared identifier '_DAT_005c5090'"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 98,
+        "line": 104,
         "message": "use of undeclared identifier '_DAT_005c505c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_005c505c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_005c5090'"
       }
     ],
     "success": false,
@@ -122,21 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 665,
+    "complexity_score": 788,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 220,
-    "suspect_count": 42,
+    "pseudocode_lines": 228,
+    "suspect_count": 53,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
+      "unknown_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 767
+    "total_lines": 775
   },
   "cross_references": [],
   "function": {
@@ -811,15 +812,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 56,
       "match": "DAT_01c78ca8",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_c0._8_4_ = (uint)ROUND(256.0f * 0.1);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_90._8_4_ = (uint)ROUND(256.0f * -0.1);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 92,
       "match": "DAT_005b96d4",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b96d4);",
@@ -827,15 +844,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 95,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "DAT_005c502c = _DAT_005c505c + 0x80000;",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_7c._0_4_ = (uint)ROUND((this_ptr->base).position.x * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_7c._4_4_ = (uint)ROUND((this_ptr->base).position.y * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 104,
       "match": "DAT_005c502c",
       "severity": "mild",
       "text": "_DAT_005c50bc = DAT_005c502c;",
@@ -843,15 +876,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 107,
       "match": "DAT_01c78cb4",
       "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);",
+      "text": "(g_CDemonSet_PTR_005be368,(CVector3i *)local_7c,(CVector3i *)&DAT_01c78cb4,0,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 127,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
@@ -859,7 +892,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 128,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
@@ -867,7 +900,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 130,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
@@ -875,7 +908,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 131,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
@@ -883,7 +916,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 134,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
@@ -891,31 +924,87 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 160,
+      "line": 166,
       "match": "DAT_01c78ca8",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_01c78ca8,(CVector3i *)0x0);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_90._0_4_ = (uint)ROUND(local_a8 * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 180,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_90._4_4_ = (uint)ROUND(fStack_14 * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 181,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_90._8_4_ = (uint)ROUND(256.0f * 0.0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 197,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_c0._0_4_ = (uint)ROUND(fStack_14 * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 198,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_c0._4_4_ = (uint)ROUND(local_18 * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 199,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_c0._8_4_ = (uint)ROUND(256.0f * 0.0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 203,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_7c._4_4_ = (uint)ROUND(local_d8.x * 256.0f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
       "match": "DAT_01c78cb4",
       "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,&local_7c,(CVector3i *)&DAT_01c78cb4,0,4);",
+      "text": "(g_CDemonSet_PTR_005be368,(CVector3i *)(local_7c + 4),(CVector3i *)&DAT_01c78cb4,0,4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 210,
       "match": "DAT_005c5034",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
+      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 211,
       "match": "DAT_005c5034",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -923,15 +1012,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 213,
       "match": "DAT_005c5038",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
+      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 214,
       "match": "DAT_005c5038",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -939,15 +1028,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 209,
+      "line": 217,
       "match": "DAT_005c503c",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
+      "text": "lVar2 = (longlong)local_1c * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 210,
+      "line": 218,
       "match": "DAT_005c503c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",
@@ -955,7 +1044,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 121,
+      "line": 127,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
@@ -963,7 +1052,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
+      "line": 128,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
@@ -971,7 +1060,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 124,
+      "line": 130,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
@@ -979,7 +1068,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 125,
+      "line": 131,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
@@ -987,7 +1076,7 @@
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 128,
+      "line": 134,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
@@ -995,15 +1084,15 @@
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 202,
+      "line": 210,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
+      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_005c5034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 203,
+      "line": 211,
       "match": "(int)&DAT_005c5034",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -1011,15 +1100,15 @@
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 205,
+      "line": 213,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
+      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_005c5038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 206,
+      "line": 214,
       "match": "(int)&DAT_005c5038",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -1027,15 +1116,15 @@
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 209,
+      "line": 217,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
+      "text": "lVar2 = (longlong)local_1c * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_005c503c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 210,
+      "line": 218,
       "match": "(int)&DAT_005c503c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",
@@ -1043,15 +1132,15 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 138,
+      "line": 144,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_dc.x = (this_ptr->base).position.x;",
+      "text": "local_d8.x = (this_ptr->base).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 121,
+      "line": 127,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar5);",
@@ -1059,7 +1148,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 122,
+      "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar5) =",
@@ -1067,7 +1156,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 124,
+      "line": 130,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar5);",
@@ -1075,7 +1164,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 125,
+      "line": 131,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar5) =",
@@ -1083,7 +1172,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 128,
+      "line": 134,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar5) = 0;",
@@ -1091,15 +1180,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 202,
+      "line": 210,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
+      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 203,
+      "line": 211,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5034 + iVar3) =",
@@ -1107,15 +1196,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 205,
+      "line": 213,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
+      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&DAT_005c5038 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 206,
+      "line": 214,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5038 + iVar3) =",
@@ -1123,15 +1212,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 209,
+      "line": 217,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
+      "text": "lVar2 = (longlong)local_1c * (longlong)*(int *)((int)&DAT_005c503c + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 210,
+      "line": 218,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c503c + iVar3) =",

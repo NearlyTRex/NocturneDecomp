@@ -205,7 +205,7 @@ section .text
     MOV EAX,[0x006b0260]                ; 00407c3f | DAT_006b0260
     PUSH EAX                            ; 00407c44
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00407c45
-        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; int engine_3d.c_lookupLitColor_FUN_00404680(int color_index, int light_level)
+        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_00404680(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00407c4a
     MOV [0x01c00c70],EAX                ; 00407c4d | g_ActiveRenderColor
     JMP 0x00407a8d                      ; 00407c52

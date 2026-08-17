@@ -33,7 +33,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -167,8 +167,8 @@ section .text
     PUSH 0x589f41                       ; 004d9a61 | = "Can't find hero placeholder for hero %d"
     MOV EDI,dword ptr [0x005b6d50]      ; 004d9a66 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d9a6c
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d9a6d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d9a6d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004d9a72
     XOR EAX,EAX                         ; 004d9a75
     ADD ESP,0x4                         ; 004d9a77

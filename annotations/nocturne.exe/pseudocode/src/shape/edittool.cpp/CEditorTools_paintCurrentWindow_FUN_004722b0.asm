@@ -11,12 +11,12 @@
 ; XREF[9]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfc5f
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d0 at 0047012c
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 at 0046fdbf
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0 at 00470f9a
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 at 0046ff4f
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 at 0046fc2f
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 at 00471816
-;   shape_edittool.cpp_FUN_0046fb40 at 0046fc2f
-;   shape_edittool.cpp_FUN_0046fcd0 at 0046fdbf
-;   shape_edittool.cpp_FUN_004759d0 at 004759e1
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 at 004759e1
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0 at 0046f8a2
 ;
 ; Referenced Globals:
@@ -130,7 +130,7 @@ section .text
         ;   XREF to: 00403ef0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403ef0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 00472380
     CALL engine_matrix.c_popViewport_FUN_004ce920 ; 00472383
-        ;   XREF to: 004ce920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_004ce920(CDemonRenderer * this_ptr)
+        ;   XREF to: 004ce920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_004ce920()
     CMP byte ptr [EBX + 0x38],0x0       ; 00472388
     JNZ 0x004723c6                      ; 0047238c
         ;   XREF to: 004723c6 (CONDITIONAL_JUMP)  ; LAB_004723c6

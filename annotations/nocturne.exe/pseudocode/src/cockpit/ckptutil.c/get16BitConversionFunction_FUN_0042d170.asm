@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   cockpit_ckptutil.c_FUN_0042d130 at 0042d13e
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130 at 0042d13e
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_004f44d0 at 004f45c4
 ;
 ; *****************************************************************************

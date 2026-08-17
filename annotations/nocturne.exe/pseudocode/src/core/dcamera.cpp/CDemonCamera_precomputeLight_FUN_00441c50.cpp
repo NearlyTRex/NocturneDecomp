@@ -85,7 +85,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(CDemonCa
      (light_source->corona_lightmap_indices == (int *)0x0)) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 1710;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::precomputeLight - Too many lights visible from camera %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonCamera::precomputeLight - Too many lights visible from camera %s",this_ptr);
   }
   core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(light_source);
   if ((rect == (CRect *)0x0) || (this_ptr->max_distance != 6.72623e-43)) {

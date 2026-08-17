@@ -14,7 +14,7 @@
 ;   int g_ClipBottom
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d130
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EBP                            ; 0042e523
     SUB ESP,0x30                        ; 0042e524
     MOV EBP,dword ptr [ESP + 0x48]      ; 0042e527
-    CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e52b
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130 ; 0042e52b
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130()
     MOV EDX,dword ptr [0x005b7624]      ; 0042e530 | g_BitsPerPixel
     MOV EDI,EAX                         ; 0042e536
     CMP EDX,0x8                         ; 0042e538

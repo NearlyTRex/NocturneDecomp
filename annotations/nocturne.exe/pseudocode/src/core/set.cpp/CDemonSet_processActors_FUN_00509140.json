@@ -58,61 +58,61 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 58,
+        "line": 61,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 59,
+        "line": 62,
         "message": "use of undeclared identifier '_DAT_01fba2ec'"
       },
       {
         "category": "cast_error",
-        "column": 16,
-        "line": 60,
+        "column": 17,
+        "line": 63,
         "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "cast_error",
         "column": 13,
-        "line": 61,
+        "line": 64,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
         "column": 15,
-        "line": 73,
+        "line": 76,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "incompatible_types",
         "column": 32,
-        "line": 91,
+        "line": 94,
         "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 95,
+        "line": 98,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       },
       {
         "category": "cast_error",
         "column": 71,
-        "line": 95,
+        "line": 98,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "incompatible_types",
         "column": 58,
-        "line": 99,
+        "line": 102,
         "message": "incompatible integer to pointer conversion assigning to 'CDemonActor *' from 'undefined4' (aka 'unsigned int')"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 106,
+        "line": 109,
         "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 478,
+    "complexity_score": 494,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 238,
+    "pseudocode_lines": 254,
     "suspect_count": 21,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -137,7 +137,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 791
+    "total_lines": 807
   },
   "cross_references": [
     {
@@ -213,7 +213,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -539,21 +539,21 @@
         {
           "check_id": "uninitvar",
           "column": 21,
-          "line": 114,
+          "line": 117,
           "message": "Uninitialized variable: fStack_48",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 23,
-          "line": 112,
+          "line": 115,
           "message": "Uninitialized variable: fStack_4c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 31,
-          "line": 102,
+          "line": 105,
           "message": "Uninitialized variable: iStack_18",
           "severity": "error"
         }
@@ -573,55 +573,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 87,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "DAT_00763e44 = pCVar1;",
+      "text": "DAT_00763e44 = pCVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 91,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)delta_time);",
+      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 91,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)delta_time);",
+      "text": "(*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 92,
-      "match": "*(CDemonActor **)(iVar7 + 0x1ffcfb8",
+      "line": 95,
+      "match": "*(CDemonActor **)(iVar8 + 0x1ffcfb8",
       "severity": "moderate",
-      "text": "*(CDemonActor **)(iVar7 + 0x1ffcfb8) = DAT_00763e44;",
+      "text": "*(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 95,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "*(CDemonActor **)(iVar7 + 0x1ffcfb8) = DAT_00763e44;",
+      "text": "*(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_00763e44",
-      "severity": "mild",
-      "text": "this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
+      "line": 102,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);",
@@ -632,7 +624,7 @@
       "line": 102,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "(this_ptr_00,&(DAT_00763e44->location).position,0);",
+      "text": "this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);",
       "type": "undefined_data"
     },
     {
@@ -640,23 +632,7 @@
       "line": 105,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_00763e44",
-      "severity": "mild",
-      "text": "((float)local_50 == (DAT_00763e44->orient).vec.x)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_00763e44",
-      "severity": "mild",
-      "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
+      "text": "(this_ptr_00,&(DAT_00763e44->location).position,0);",
       "type": "undefined_data"
     },
     {
@@ -664,7 +640,23 @@
       "line": 108,
       "match": "DAT_00763e44",
       "severity": "mild",
-      "text": "DAT_00763e44 = (CDemonActor *)0x0;",
+      "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_00763e44",
+      "severity": "mild",
+      "text": "((float)local_50 == (DAT_00763e44->orient).vec.x)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 110,
+      "match": "DAT_00763e44",
+      "severity": "mild",
+      "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
       "type": "undefined_data"
     },
     {
@@ -672,12 +664,20 @@
       "line": 111,
       "match": "DAT_00763e44",
       "severity": "mild",
+      "text": "DAT_00763e44 = (CDemonActor *)0x0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_00763e44",
+      "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(DAT_00763e44);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 115,
       "match": "DAT_00763e44",
       "severity": "mild",
       "text": "DAT_00763e44 = (CDemonActor *)0x0;",
@@ -685,7 +685,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 141,
+      "line": 146,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xffffff60);",
@@ -693,47 +693,47 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 149,
+      "line": 153,
       "match": "&stack0xffffff60",
       "severity": "moderate",
-      "text": "(pCStack_34,(SDamageInfo *)&stack0xffffff60);",
+      "text": "damage_info = (CPathMap *)&stack0xffffff60;",
       "type": "stack_ref"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 144,
+      "line": 149,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "aCStack_94[0].x = CStack_64.x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 63,
-      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 66,
+      "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
+      "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 120,
-      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 123,
+      "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
+      "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 187,
-      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 194,
+      "match": "pCVar7 = (T *)pCVar7->ARRAY",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
+      "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Uninitialized variable: fStack_48",
-      "line": 114,
+      "line": 117,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
@@ -741,7 +741,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_4c",
-      "line": 112,
+      "line": 115,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
@@ -749,7 +749,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_18",
-      "line": 102,
+      "line": 105,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "iStack_18 = iStack_18 + 1;",

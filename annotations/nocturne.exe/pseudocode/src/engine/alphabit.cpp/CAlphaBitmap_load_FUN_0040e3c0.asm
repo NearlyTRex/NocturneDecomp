@@ -22,7 +22,7 @@
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9158
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c3d
 ;   core_main.c_showPromoScreen_FUN_004c8eb0 at 004c8f09
-;   core_menu.cpp_FUN_004d23d0 at 004d240a
+;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004cffb4
 ;   ... and 3 more
 ;
 ; Referenced Globals:

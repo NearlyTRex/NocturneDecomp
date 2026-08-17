@@ -7,8 +7,8 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_004673e0 at 00467400
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00467220 at 0046722f
-;   core_dtrace.cpp_FUN_004673e0 at 00467400
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_free_FUN_00564486

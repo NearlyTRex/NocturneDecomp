@@ -307,13 +307,13 @@ _FILE * FUN_00568690(void);
 // Address: 00568890
 int FUN_00568890(undefined4 *param_1);
 
-// Original: crt_unknown.c_FUN_00568e70
+// Original: crt_unknown.c_AllocatorFallbackStub_FUN_00568e70
 // Address: 00568e70
-int __cdecl FUN_00568e70(uint size);
+int __cdecl AllocatorFallbackStub(uint size);
 
-// Original: crt_unknown.c_FUN_00568ed0
+// Original: crt_unknown.c_setvbuf_FUN_00568ed0
 // Address: 00568ed0
-void FUN_00568ed0(_FILE *param_1);
+int __cdecl setvbuf(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size);
 
 // Original: crt_unknown.c_FUN_00568f70
 // Address: 00568f70
@@ -383,9 +383,9 @@ void FUN_0056a0f7(void);
 // Address: 0056a170
 void FUN_0056a170(void);
 
-// Original: crt_unknown.c_FUN_0056a189
+// Original: crt_unknown.c__strtod_FUN_0056a189
 // Address: 0056a189
-void FUN_0056a189(char *param_1,undefined4 *param_2);
+double __cdecl ::strtod(char *str);
 
 // Original: crt_unknown.c_FUN_0056a1b5
 // Address: 0056a1b5
@@ -445,7 +445,7 @@ void FUN_0056adf0(undefined4 *param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_0056ae10
 // Address: 0056ae10
-undefined4 FUN_0056ae10(int param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_0056ae10(_FILE *param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: crt_unknown.c_FUN_0056aef0
 // Address: 0056aef0
@@ -467,9 +467,9 @@ void FUN_0056afd0(void *param_1,ulong param_2);
 // Address: 0056b1ee
 void FUN_0056b1ee(void);
 
-// Original: crt_unknown.c_FUN_0056bbf0
+// Original: crt_unknown.c_remove_FUN_0056bbf0
 // Address: 0056bbf0
-int __watcallStack FUN_0056bbf0(char *filename);
+int __watcallStack remove(char *filename);
 
 // Original: crt_unknown.c_FUN_0056bdc8
 // Address: 0056bdc8
@@ -757,7 +757,7 @@ undefined4 FUN_0056d308(int *param_1,int *param_2);
 
 // Original: crt_unknown.c_FUN_0056d488
 // Address: 0056d488
-void FUN_0056d488(time_t *param_1,int param_2);
+void FUN_0056d488(time_t *param_1,_tm *param_2);
 
 // Original: crt_unknown.c_FUN_0056d4ab
 // Address: 0056d4ab
@@ -771,9 +771,9 @@ uint FUN_0056d4d0(void);
 // Address: 0056d4e8
 uint FUN_0056d4e8(void);
 
-// Original: crt_unknown.c_FUN_0056ddf0
+// Original: crt_unknown.c_build_cmdline_FUN_0056ddf0
 // Address: 0056ddf0
-void FUN_0056ddf0(void);
+int __cdecl build::cmdline(int argc,char **argv,char *program,char **out_cmdline,char **out_environment,char **out_buffer,int *out_bufsize,int copy_program_flag);
 
 // Original: crt_unknown.c_FUN_0056de90
 // Address: 0056de90
@@ -1007,9 +1007,9 @@ void FUN_0056fa00(undefined4 param_1,undefined4 param_2,int param_3,int *param_4
 // Address: 0056fa40
 void FUN_0056fa40(void);
 
-// Original: crt_unknown.c_FUN_0056fcd0
+// Original: crt_unknown.c_ExitHookStub_FUN_0056fcd0
 // Address: 0056fcd0
-undefined1 __cdecl FUN_0056fcd0(void);
+undefined1 __cdecl ExitHookStub(void);
 
 // Original: crt_unknown.c_FUN_0056fd65
 // Address: 0056fd65
@@ -1147,17 +1147,17 @@ undefined4 * FUN_00571410(undefined4 *param_1,undefined4 *param_2,uint param_3);
 // Address: 00571440
 undefined4 FUN_00571440(short *param_1);
 
-// Original: crt_unknown.c_FUN_005714e0
+// Original: crt_unknown.c_GetConsoleInputHandle_FUN_005714e0
 // Address: 005714e0
-HANDLE __watcallRegister FUN_005714e0(void);
+HANDLE __watcallRegister GetConsoleInputHandle(void);
 
-// Original: crt_unknown.c_FUN_005714ec
+// Original: crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec
 // Address: 005714ec
-HANDLE __cdecl FUN_005714ec(void);
+HANDLE __cdecl GetConsoleOutputHandle(void);
 
-// Original: crt_unknown.c_FUN_00571500
+// Original: crt_unknown.c_ClearFPUExceptions_FUN_00571500
 // Address: 00571500
-void __cdecl FUN_00571500(void);
+void __cdecl ClearFPUExceptions(void);
 
 // Original: crt_unknown.c_FUN_00571588
 // Address: 00571588
@@ -1207,13 +1207,13 @@ undefined4 FUN_00571bdc(undefined4 param_1,undefined4 param_2,undefined4 param_3
 // Address: 00571cc6
 uint FUN_00571cc6(int *param_1);
 
-// Original: crt_unknown.c_FUN_00571ee0
+// Original: crt_unknown.c_streambuf_allocBuffer_FUN_00571ee0
 // Address: 00571ee0
-void * __watcallStack FUN_00571ee0(uint size);
+void * __watcallStack streambuf::allocBuffer(uint size);
 
-// Original: crt_unknown.c_FUN_00571ef0
+// Original: crt_unknown.c_freeBuffer_FUN_00571ef0
 // Address: 00571ef0
-void __watcallStack FUN_00571ef0(void *buffer);
+void __watcallStack freeBuffer(void *buffer);
 
 // Original: crt_unknown.c_FUN_00572b70
 // Address: 00572b70
@@ -1257,7 +1257,7 @@ uint FUN_00572ef0(uint param_1,uint param_2);
 
 // Original: crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0
 // Address: 005733e0
-uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3);
+uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3);
 
 // Original: crt_unknown.c_FUN_00573650
 // Address: 00573650

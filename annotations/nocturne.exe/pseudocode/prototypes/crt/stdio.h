@@ -113,7 +113,7 @@ _FILE * __watcallStack stream::flush(_FILE *stream);
 
 // Original: crt_stdio.c_CreateFileVariadic_FUN_0056b934
 // Address: 0056b934
-int __cdecl CreateFileVariadic(char *filename,int access_mode,int share_mode);
+int __cdecl CreateFileVariadic(char *filename,int access_mode,int share_mode,...);
 
 // Original: crt_stdio.c_CreateFileImpl_FUN_0056b960
 // Address: 0056b960
@@ -161,7 +161,7 @@ _FILE * __cdecl get::standard_file_handle(int fd);
 
 // Original: crt_stdio.c_closeUnsupported_FUN_00570007
 // Address: 00570007
-undefined4 closeUnsupported(void);
+int __watcallStack closeUnsupported(void);
 
 // Original: crt_stdio.c_InitializeConsoleHandles_FUN_0057146c
 // Address: 0057146c

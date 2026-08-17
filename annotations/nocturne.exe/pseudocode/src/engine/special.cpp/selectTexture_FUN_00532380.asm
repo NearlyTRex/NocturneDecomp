@@ -1,14 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_selectTexture_FUN_00532380(SMRGLTextureBasic *texture_info,int texture_dimension,uchar *texture_data,uchar *palette_data,uchar *opacity_data)
+; int __cdecl engine_special_cpp_selectTexture_FUN_00532380(SMRGLTextureBasic *texture_info)
 ;
 ; Parameters:
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
-; int              Stack[0x8]:4   texture_dimension
-; uchar *          Stack[0xc]:4   texture_data
-; uchar *          Stack[0x10]:4   palette_data
-; uchar *          Stack[0x14]:4   opacity_data
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureDimension = 0x100

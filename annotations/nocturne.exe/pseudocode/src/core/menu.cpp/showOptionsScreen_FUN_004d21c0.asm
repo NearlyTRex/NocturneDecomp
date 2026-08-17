@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e309
-;   core_menu.cpp_FUN_004d23d0 at 004d2841
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d2841
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d21ac = 004d22ed

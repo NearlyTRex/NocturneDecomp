@@ -58,61 +58,61 @@
       {
         "category": "format_error",
         "column": 28,
-        "line": 108,
+        "line": 109,
         "message": "format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 61,
-        "line": 127,
+        "line": 128,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 50,
-        "line": 140,
+        "line": 141,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 143,
+        "line": 144,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 44,
-        "line": 162,
+        "line": 163,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 58,
-        "line": 167,
+        "line": 168,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 183,
+        "line": 184,
         "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 38,
-        "line": 184,
+        "line": 185,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 184,
+        "line": 185,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 184,
+        "line": 185,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -122,17 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 903,
-    "complexity_score": 279,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 264,
+    "pseudocode_lines": 265,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 1167
+    "total_lines": 1168
   },
   "cross_references": [
     {
@@ -157,7 +157,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -669,7 +669,7 @@
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 29,
-          "line": 190,
+          "line": 191,
           "message": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
           "severity": "error"
         }
@@ -681,7 +681,7 @@
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 236,
+      "line": 237,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "this_ptr->bbox_pool[0].min.z = 0.0;",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Array 'local_74[2]' accessed at index 2, which is out of bounds.",
-      "line": 190,
+      "line": 191,
       "match": "Cppcheck: array index out of bounds",
       "severity": "major",
       "text": "*puVar8 = local_74[iVar2 * 2];",

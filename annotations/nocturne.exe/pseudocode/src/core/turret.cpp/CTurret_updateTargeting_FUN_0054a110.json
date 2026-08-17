@@ -56,6 +56,12 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "format_error",
+        "column": 69,
+        "line": 48,
+        "message": "format specifies type 'char *' but the argument has type 'CTurret *' [-Werror,-Wformat]"
+      },
+      {
         "category": "type_error",
         "column": 13,
         "line": 78,
@@ -108,12 +114,6 @@
         "column": 64,
         "line": 108,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 115,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
       }
     ],
     "success": false,
@@ -212,7 +212,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],

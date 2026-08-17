@@ -88,7 +88,8 @@ def needs_custom_storage(conv, spec):
 # normalised away. Same code, therefore same parameters.
 PROVEN_SHAPES = frozenset(("identical", "same_mnemonics"))
 
-ORDER = ["NAME_SIG", "NAME", "SIG_ONLY", "ALREADY", "SKIP_CONF", "SKIP_SHAPE",
+ORDER = ["NAME_SIG", "NAME", "SIG_ONLY", "ALREADY", "SKIP_LEDGER", "SKIP_NO_RECEIVER",
+         "SKIP_CONF", "SKIP_SHAPE",
          "SKIP_CRT", "SKIP_NAMED", "SKIP_TU"]
 
 
@@ -153,8 +154,19 @@ def target_name(nocedit_name, nocturne_name, nocturne_addr):
 
 
 def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
-         require_tu_match=True, refresh_signatures=False):
-    """Decide an action per pair without touching Ghidra."""
+         require_tu_match=True, refresh_signatures=False, ledger=None,
+         current_params=None):
+    """Decide an action per pair without touching Ghidra.
+
+    `ledger` is an optional reviewed approval list keyed by nocturne address
+    (see annotations/<to>/name_transfer_ledger.json). It is a per-row override
+    of the confidence gate in BOTH directions: an approved row is named even
+    below --min-confidence, and a rejected row is never named however high the
+    mapper rated it. That distinction matters because the score is not
+    monotonic below 0.99 -- a reviewed 0.78 pair can be better evidenced than
+    an unreviewed 0.95 one, and a confidently-wrong pair is exactly the case a
+    threshold cannot catch.
+    """
     interior = set()
     if crt_wall:
         interior = {a.lower() for a in crt_wall.get("crt_interior", [])}
@@ -166,6 +178,24 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
         want = target_name(p["name"], cur, b)
         cur_tu, cur_core = sm.split_qualified_name(cur)
         edit_tu = sm.tu_of(p["name"])
+        # Does the desired name assert a class receiver, and can the target
+        # honour it? `current_params` is the live parameter count keyed by
+        # nocturne address; 0 means the function declares none at all.
+        claimed_cls = None
+        if want:
+            mcls = re.match(r'^[a-z0-9_]+\.(?:cpp|c)_(C[A-Z]\w*|S[A-Z]\w*)_\w+_FUN_', want)
+            claimed_cls = mcls.group(1) if mcls else None
+        needs_receiver = claimed_cls is not None
+        has_receiver = (current_params or {}).get(b, 0) > 0
+
+        led = ledger.get(b) if ledger else None
+        # An approved row bypasses the confidence gate but still faces every
+        # other check (TU conflict, weak shape, already-named); a rejected row
+        # is refused outright. Folding approval INTO the gate rather than
+        # adding a branch matters: a branch that merely `pass`es ends the
+        # elif chain and leaves the row with no action at all.
+        ledger_ok = bool(led) and led.get("status") == "approve" and not p.get("ambiguous")
+        ledger_reject = bool(led) and led.get("status") == "reject"
         row = {"a": p["a"], "b": b, "want": want, "current": cur,
                "confidence": p["confidence"],
                "shape": p.get("shape_agreement", "unshaped"),
@@ -219,7 +249,11 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
             row["action"] = "SKIP_TU"
             row["detail"] = "unit disagrees: nocturne %s vs nocedit %s" % (
                 cur_tu, edit_tu)
-        elif p["confidence"] < min_confidence or p.get("ambiguous"):
+        elif ledger_reject:
+            row["action"] = "SKIP_LEDGER"
+            row["detail"] = "rejected on review: %s" % ledger[b].get("note", "")
+        elif (not ledger_ok) and (p["confidence"] < min_confidence
+                                  or p.get("ambiguous")):
             # Too weak to name, but the prototype stands on its own evidence,
             # so take the half we can prove and leave the name alone.
             if sig_ok:
@@ -230,7 +264,30 @@ def plan(mapping, crt_wall, min_confidence, want_signatures, current_names,
                 row["action"] = "SKIP_CONF"
                 row["detail"] = ("ambiguous" if p.get("ambiguous")
                                  else "confidence %.2f" % p["confidence"])
-        elif row["shape"] in WEAK_SHAPES:
+        elif needs_receiver and not has_receiver:
+            # `<tu>_<Class>_<method>_FUN_<addr>` ASSERTS that parameter 0 is
+            # `<Class> *this_ptr`. Applying such a name to a function with no
+            # parameters makes an assertion the program cannot satisfy, and the
+            # exporter enforces it downstream: check_this_ptr aborts the whole
+            # nocturne export with "N function(s) ... do not take this_ptr".
+            # A name-only transfer onto an UNSIGNATURED target hits this every
+            # time -- 24 of them blocked an export before this gate existed.
+            # The prototype is the missing half, and it is not ours to invent:
+            # these pairs measure `unverifiable`, so the signature gate refuses
+            # them too. Leave the function anonymous until it has a receiver.
+            row["action"] = "SKIP_NO_RECEIVER"
+            row["detail"] = ("name claims class %s but the target declares no "
+                             "parameters; needs a signature first" % claimed_cls)
+        elif row["shape"] in WEAK_SHAPES and not ledger_ok:
+            # A reviewed row overrides this one but NOT SKIP_TU above, and the
+            # asymmetry is the point. `size_mismatch` is a heuristic *about the
+            # shape*, and a review that read both bodies has already accounted
+            # for why they differ -- one build doing more work is the normal
+            # case, not a warning. A unit conflict is independent of everything
+            # the review looked at, and it is the only check that catches an
+            # identical-body shape collision between two unrelated functions
+            # (an editor-only CMultiCram accessor mapped into game
+            # core_stranger.cpp), so it keeps its veto.
             row["action"] = "SKIP_SHAPE"
             row["detail"] = row["shape"]
         elif sig_ok:
@@ -452,6 +509,10 @@ def main():
                          "for prototypes blocked earlier by a missing type")
     ap.add_argument("--ignore-tu", action="store_true",
                     help="do not block on nocturne/nocedit translation-unit disagreement")
+    ap.add_argument("--ledger",
+                    help="reviewed approval list (name_transfer_ledger.json): "
+                         "per-row approve/reject that overrides --min-confidence "
+                         "in both directions")
     ap.add_argument("--limit", type=int, default=0,
                     help="apply at most N rows; use for a first small batch")
     ap.add_argument("--apply", action="store_true")
@@ -464,6 +525,15 @@ def main():
     if args.crt_wall:
         with open(args.crt_wall) as fh:
             crt_wall = json.load(fh)
+
+    ledger = None
+    if args.ledger:
+        with open(args.ledger) as fh:
+            blob = json.load(fh)
+        ledger = {e["b"].lower(): e for e in blob["entries"]}
+        n_ok = sum(1 for e in ledger.values() if e.get("status") == "approve")
+        print("Ledger: %d reviewed row(s) -- %d approved, %d rejected"
+              % (len(ledger), n_ok, len(ledger) - n_ok))
 
     print("Loaded %d pairs from %s" % (len(mapping["pairs"]), args.mapping))
     if crt_wall:
@@ -503,12 +573,16 @@ def main():
             for f in fm.getFunctions(True):
                 funcs["%08x" % f.getEntryPoint().getOffset()] = f
             current = {a: f.getName() for a, f in funcs.items()}
+            # Live parameter counts, so the receiver gate can tell an
+            # unsignatured target from one that can actually hold `this`.
+            current_params = {a: f.getParameterCount() for a, f in funcs.items()}
             print("Program has %d functions" % len(funcs))
 
             rows = plan(mapping, crt_wall, args.min_confidence,
                         args.signatures, current,
                         require_tu_match=not args.ignore_tu,
-                        refresh_signatures=args.refresh_signatures)
+                        refresh_signatures=args.refresh_signatures,
+                        ledger=ledger, current_params=current_params)
             for r in rows:
                 r["conv"] = conv_by_a.get(r["a"])
                 r["sig"] = sig_by_a.get(r["a"])

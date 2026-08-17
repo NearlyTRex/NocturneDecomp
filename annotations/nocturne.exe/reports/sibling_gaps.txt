@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5706 functions, 5251 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5707 functions, 5257 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -14,17 +14,16 @@ A. TRANSLATION-UNIT RESIDUE
   shape_edittool.cpp                 23         5        17  PAIRABLE
   core_charactr.cpp                   9         5         6  PAIRABLE
   core_setdir.cpp                    16         4        15  PAIRABLE
-  core_dcamera.cpp                    4         4         1  PAIRABLE
   core_course.cpp                     8         3         0  PAIRABLE
   core_dcube.cpp                      7         3         2  PAIRABLE
   core_bat.cpp                        4         3         4  PAIRABLE
-  core_actor.cpp                     69         2        62  PAIRABLE
   sound_sndmain.cpp                  35         2        33  PAIRABLE
   engine_2d.c                         2         9         2  PAIRABLE
   core_stranger.cpp                   6         2         3  PAIRABLE
   core_game.cpp                       4         2         4  PAIRABLE
   cockpit_pkbmpset.cpp                3         2         0  PAIRABLE
   core_scat.cpp                       3         2         3  PAIRABLE
+  core_dcamera.cpp                    2         2         2  PAIRABLE
   core_script.cpp                    56         1        56  PAIRABLE
   core_setutil.cpp                   20         1        11  PAIRABLE
   core_manpuz.cpp                     7         1         5  PAIRABLE
@@ -36,7 +35,6 @@ A. TRANSLATION-UNIT RESIDUE
   core_slew.cpp                       2         1         0  PAIRABLE
   cockpit_pkbitmap.cpp                1         1         0  PAIRABLE
   core_path.cpp                       1         1         0  PAIRABLE
-  engine_alphabit.cpp                 1         1         0  PAIRABLE
   shape_spotview.cpp                  1         1         0  PAIRABLE
   support_newmsg.cpp                  1         1         0  PAIRABLE
   shape_superopt.cpp                186         0         0  EDITOR-ONLY
@@ -44,6 +42,7 @@ A. TRANSLATION-UNIT RESIDUE
   shape_meshlod.cpp                 122         0         0  EDITOR-ONLY
   engine_fileio.cpp                  73         0         0  EDITOR-ONLY
   core_skeledit.cpp                  70         0         0  EDITOR-ONLY
+  core_actor.cpp                     66         0        66  EDITOR-ONLY
   core_msnedit.cpp                   63         0         0  EDITOR-ONLY
   core_setedit.cpp                   58         0         0  EDITOR-ONLY
   core_dmodel.cpp                    34         0        32  EDITOR-ONLY
@@ -182,9 +181,10 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1607 nocedit / 78 nocturne functions unmatched across 171 units
-  units: 29 pairable, 140 editor-only, 2 game-only
+  1601 nocedit / 73 nocturne functions unmatched across 170 units
+  units: 27 pairable, 141 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
+  families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
 ==============================================================================
 B. UNRESOLVED BRACKETS  (the manual-pairing worklist)
@@ -206,17 +206,6 @@ shape_edittool.cpp   between 0049e940->004701a0 and 0049f270->00470550
       00470310   224b   70i  shape_edittool.cpp
       004703f0   346b  114i  shape_edittool.cpp
   UNSURE -- no proposal: 4 nocedit / 3 nocturne left over
-------------------------------------------------------------------------------
-core_dcamera.cpp   between 00454060->00447f20 and 00454700->004483f0
-  refused: count mismatch 3 vs 2 -- something was added AND removed here
-  nocedit  residue (3):
-      00454450    80b   28i  core_dcamera.cpp_CDemonCamera_saveZBufferScanlines
-      004544a0    80b   28i  core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines
-      004544f0   520b  149i  core_dcamera.cpp_CDemonCamera_testVisibility
-  nocturne residue (2):
-      00448310    99b   30i  core_dcamera.cpp_CDemonCamera
-      00448380    99b   30i  core_dcamera.cpp_CDemonCamera
-  UNSURE -- no proposal: 3 nocedit / 2 nocturne left over
 ------------------------------------------------------------------------------
 core_stranger.cpp   between 005c6850->00540920 and 005c6930->005409f0
   refused: count mismatch 3 vs 2 -- something was added AND removed here
@@ -241,27 +230,6 @@ sound_sndmain.cpp   between 005ade00->00529a20 and 005ade40->00529a60
       005ade20 -> 00529a40   (position only)   sound_sndmain.cpp_CSfxSlot_dtor
       005ade30 -> 00529a50   (position only)   sound_sndmain.cpp_CSfxOptions_dtor
 ------------------------------------------------------------------------------
-core_actor.cpp   between 0040a030->0040b1b0 and 0040a0f0->0040b200
-  refused: count mismatch 3 vs 1 -- something was added AND removed here
-  nocedit  residue (3):
-      0040a090    26b    8i  core_actor.cpp_CDemonActor_startInteraction
-      0040a0b0    26b    8i  core_actor.cpp_CDemonActor_updateInteraction
-      0040a0d0    24b    7i  core_actor.cpp_CDemonActor_stopUsing
-  nocturne residue (1):
-      0040b1f0     1b    ?i  core_actor.cpp_CDemonActor_stopInteraction
-  UNSURE -- no proposal: 3 nocedit / 1 nocturne left over
-------------------------------------------------------------------------------
-core_actor.cpp   between 00410380->0040e1a0 and 00410420->0040e220
-  refused: count mismatch 4 vs 1 -- something was added AND removed here
-  nocedit  residue (4):
-      004103b0    23b    7i  core_actor.cpp_CVector3f_zero
-      004103d0    45b   14i  core_actor.cpp_CVector3f_toFixed8
-      00410400     5b    ?i  core_actor.cpp_CSlew_ctor
-      00410410     5b    ?i  core_actor.cpp_CSlew_dtor
-  nocturne residue (1):
-      0040e1cc    81b   27i  core_actor.cpp
-  UNSURE -- no proposal: 4 nocedit / 1 nocturne left over
-------------------------------------------------------------------------------
 core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
   refused: count mismatch 5 vs 1 -- something was added AND removed here
   nocedit  residue (5):
@@ -284,7 +252,8 @@ core_ladder.cpp   between 00502b80->004c46b0 and 00502ed0->004c47d0
       00502eb0    24b    8i  core_ladder.cpp_CLadder_addFilesToExtract
   nocturne residue (1):
       004c47c0    11b    3i  core_ladder.cpp_CLadder_getGroundType
-  UNSURE -- no proposal: 5 nocedit / 1 nocturne left over
+  suggested alignment:
+      00502e90 -> 004c47c0   (position after absent-family strip)   core_ladder.cpp_CLadder_onActorDeleted
 ------------------------------------------------------------------------------
 core_manpuz.cpp   between 00509b20->004ca640 and 00509d50->004ca790
   refused: count mismatch 2 vs 1 -- something was added AND removed here
@@ -305,12 +274,12 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
   UNSURE -- no proposal: 2 nocedit / 1 nocturne left over
 ------------------------------------------------------------------------------
 
-  10 pairable brackets covering 33 nocedit / 15 nocturne functions
-  224 one-sided brackets (626 editor-only, 22 game-only) -- not pairable by construction
-  948 nocedit functions in 56 regions with no bracket at all:
+  7 pairable brackets covering 23 nocedit / 11 nocturne functions
+  226 one-sided brackets (631 editor-only, 22 game-only) -- not pairable by construction
+  947 nocedit functions in 55 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
         144  before the unit's first anchor
-         91  after the unit's last anchor
+         90  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
 
 ==============================================================================
@@ -331,13 +300,13 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5251
-  never transferred     : 63   (nocturne side has no signature at all -- transfer work, not drift)
-  genuine divergence    : 54   (both sides typed, and they disagree -- investigate)
-  name core differs     : 184   (mapped as the same function under two different names)
+  pairs compared        : 5257
+  never transferred     : 5   (nocturne side has no signature at all -- transfer work, not drift)
+  genuine divergence    : 38   (both sides typed, and they disagree -- investigate)
+  name core differs     : 182   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
-  by kind: {'ret': 30, 'param': 22, 'param1': 5, 'param2': 5, 'param0': 5, 'param3': 1, 'conv': 1}
+  by kind: {'ret': 25, 'param': 13, 'param1': 4, 'param2': 4, 'param0': 4, 'param3': 1, 'conv': 1}
 
     005be490 -> 00538440  conf 1.00  shape same_mnemonics
       core_stranger.cpp_CStranger_getHandsMidpoint
@@ -347,12 +316,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       shape_multicrm.cpp_CMultiCram_getSecondModel
         param0 CMultiCram* -> void*
         ret CDSEModel* -> void*
-    00543cf0 -> 004ede70  conf 0.99  shape identical
-      core_netgame.cpp_SNetPlayer_copy
-        ret void -> SNetPlayer*
-    005b7580 -> 005325c0  conf 0.99  shape identical
-      engine_special.cpp_setColorTable16
-        param count 0 -> 2
     005ffeb2 -> 00565c12  conf 0.99  shape identical
       crt_math.c_integer_power
         param count 2 -> 0
@@ -413,55 +376,24 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       crt_exception.c_installExceptionHandler
         param count 1 -> 0
         ret void -> undefined1
-    005240a0 -> 004d9110  conf 0.97  shape size_mismatch
-      core_mission.cpp_CDemonMission_markActorToDelete
-        param1 CDemonActor* -> undefined4
-        param2 uint -> undefined4
-    004039c0 -> 00404680  conf 0.93  shape size_mismatch
-      engine_3d.c_lookupLitColor
-        ret uint -> int
-    0050d620 -> 004cdac0  conf 0.93  shape same_mnemonics
-      engine_matrix.c_matrixPush
-        param count 0 -> 1
     00570ea0 -> 0050e550  conf 0.93  shape size_mismatch
       core_set.cpp_CDemonSet_setCameraEnabled
         param2 int -> undefined4
-    005aaeb0 -> 00527e10  conf 0.93  shape similar_size
-      sound_sndmain.cpp_shutdownSoundSystem
-        param count 0 -> 1
-    005b7250 -> 00532320  conf 0.93  shape size_mismatch
-      engine_special.cpp_unlockFrame
-        param count 1 -> 0
-    0040ca10 -> 0040db50  conf 0.89  shape similar_size
-      core_actor.cpp_CDemonActor_handleFootstep
-        ret int -> uint
     0052b5c0 -> 004e0300  conf 0.89  shape identical
       core_morph.cpp_CMorph_updateModelVertices
         param count 4 -> 1
     00570700 -> 0050dd60  conf 0.89  shape identical
       core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap
         param count 4 -> 1
-    0042f9f0 -> 0042b5d0  conf 0.85  shape same_mnemonics
-      core_charactr.cpp_CCharacter_dtor
-        ret CDemonActor* -> CCharacter*
-    004719c0 -> 0044d440  conf 0.85  shape identical
-      core_dimage.cpp_CDemonImage_dtor
-        param count 2 -> 1
     004fe900 -> 004c0640  conf 0.85  shape similar_size
       core_inv.cpp_CInventory_createAmmoFromWeapon
         param1 CWeapon* -> int
-    005054c0 -> 004c6a00  conf 0.85  shape unshaped
-      engine_light.cpp_getAmbientLightLevel
-        ret int -> undefined4
     0050f1b0 -> 0056497c  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugAllocTracked1
         param count 3 -> 1
     0050f350 -> 00565c50  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugCalloc
         param count 4 -> 2
-    00575f70 -> 005138e0  conf 0.85  shape size_mismatch
-      core_setdir.cpp_CDemonSet_renderVirtualDirectors
-        param0 CDemonSet* -> int*
     005b7c30 -> 00532ba0  conf 0.85  shape similar_size
       engine_special.cpp_presentToExternalRenderer
         param count 1 -> 0
@@ -483,12 +415,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     005da7c0 -> 00543890  conf 0.82  shape unshaped
       core_teleport.cpp_CTeleportDest_getCollisionType
         param0 CTeleportDest* -> CDemonActor*
-    0050d720 -> 004cdbc0  conf 0.78  shape same_mnemonics
-      engine_matrix.c_pop
-        param count 0 -> 1
-    0050e480 -> 004ce920  conf 0.78  shape same_mnemonics
-      engine_matrix.c_popViewport
-        param count 0 -> 1
     0052ecf0 -> 004e28a0  conf 0.78  shape similar_size
       sound_mp3.cpp_CFileBitStream_init
         param2 int -> ulong
@@ -496,12 +422,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       core_set.cpp_CDemonSet_reinitCamera
         param1 int -> undefined4
         param2 int -> undefined4
-    005b72c0 -> 00532380  conf 0.78  shape identical
-      engine_special.cpp_selectTextureGlobal
-        param count 1 -> 5
-    005b7300 -> 005323c0  conf 0.78  shape identical
-      engine_special.cpp_updateTextureGlobal
-        param count 1 -> 5
     004ea1c0 -> 004accf0  conf 0.75  shape same_mnemonics
       core_glass.cpp_CGlass_createShatterParticles
         param1 SQuadVertices* -> float*
@@ -518,7 +438,7 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 175, 'renamed': 6, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 173, 'renamed': 6, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -554,6 +474,12 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [stubbed in nocturne] 004090a0 -> 0040a130  conf 0.57  shape unshaped
       nocedit  CDemonActor_getPathMap
       nocturne CDemonActor_returnZero
+    [unnamed on one side] 00454450 -> 00448310  conf 1.00  shape similar_size
+      nocedit  CDemonCamera_saveZBufferScanlines
+      nocturne CDemonCamera
+    [unnamed on one side] 004544a0 -> 00448380  conf 1.00  shape similar_size
+      nocedit  CDemonCamera_restoreZBufferScanlines
+      nocturne CDemonCamera
     [unnamed on one side] 005baee0 -> 00534e90  conf 1.00  shape identical
       nocedit  blendWeightCallback
       nocturne motionBlendWeightFunc
@@ -623,9 +549,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 0059df40 -> 0051b7d0  conf 0.93  shape size_mismatch
       nocedit  CDeformableModelInstance_free
       nocturne CDeformableModelInstance
-    [unnamed on one side] 005b7340 -> 00532400  conf 0.93  shape identical
-      nocedit  selectTexture
-      nocturne selectTextureFromPalette
     [unnamed on one side] 005e9180 -> 0054fc40  conf 0.93  shape same_mnemonics
       nocedit  isStartLocTriggered
       nocturne CCryptVessel
@@ -743,6 +666,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 00408820 -> 00409cd0  conf 0.85  shape size_mismatch
       nocedit  deleteActor
       nocturne destroyActor
+    [unnamed on one side] 00454060 -> 00447f20  conf 0.85  shape same_mnemonics
+      nocedit  CDemonCamera_computeVisibleFrustumBounds
+      nocturne CDemonCamera
     [unnamed on one side] 004569b0 -> 0044adf0  conf 0.85  shape size_mismatch
       nocedit  CDemonCube_freeMemory
       nocturne CDemonCube
@@ -803,9 +729,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 005b2fd0 -> 0052dff0  conf 0.85  shape same_mnemonics
       nocedit  CSound_process
       nocturne CSound
-    [unnamed on one side] 005b7380 -> 00532440  conf 0.85  shape identical
-      nocedit  updateTexture
-      nocturne updateTextureFromPalette
     [unnamed on one side] 005b7c30 -> 00532ba0  conf 0.85  shape similar_size
       nocedit  presentToExternalRenderer
       nocturne toggle
@@ -824,9 +747,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 005da7c0 -> 00543890  conf 0.82  shape unshaped
       nocedit  CTeleportDest_getCollisionType
       nocturne CTeleportDest
-    [unnamed on one side] 00454060 -> 00447f20  conf 0.80  shape same_mnemonics
-      nocedit  CDemonCamera_computeVisibleFrustumBounds
-      nocturne CDemonCamera
     [unnamed on one side] 004aa0f0 -> 0047a150  conf 0.80  shape same_mnemonics
       nocedit  CEnemy_countSameClassAttackingHero
       nocturne CEnemy
@@ -959,12 +879,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 005a23f0 -> 0051fcc0  conf 0.78  shape similar_size
       nocedit  factorFunc
       nocturne factoryFuncSmiley
-    [unnamed on one side] 005b72c0 -> 00532380  conf 0.78  shape identical
-      nocedit  selectTextureGlobal
-      nocturne selectTexture
-    [unnamed on one side] 005b7300 -> 005323c0  conf 0.78  shape identical
-      nocedit  updateTextureGlobal
-      nocturne updateTexture
     [unnamed on one side] 005bf720 -> 005396d0  conf 0.78  shape same_mnemonics
       nocedit  CStranger_extractTurnPose
       nocturne CStranger
@@ -1080,5 +994,5 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocedit  CDemonSet_isCameraPanning
       nocturne CDemonSet
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2488, 'unverifiable': 2732, 'conflict': 31}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2493, 'unverifiable': 2735, 'conflict': 29}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

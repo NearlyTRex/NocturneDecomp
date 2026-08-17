@@ -49,7 +49,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap *th
   if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 95;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CAlphaBitmap::load - Can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
   }
   p_Var6 = local_14;
   _fread(this_ptr->raw,width,height,local_14);
@@ -59,7 +59,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(CAlphaBitmap *th
   if (local_14 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 101;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CAlphaBitmap::load - Can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
   }
   iVar7 = 0;
   do {

@@ -9,15 +9,16 @@
 _tm * __cdecl localtime_r(time_t *timer,_tm *result)
 
 {
-  time_t tVar1;
-  int iVar2;
+  time_t seconds;
+  int iVar1;
   
   tzset();
-  tVar1 = *timer;
-  gmtime_r(0x63df,tVar1,g_TimezoneOffset,result);
-  iVar2 = determine_dst_status(result);
-  if (iVar2 != 0) {
-    gmtime_r(0x63df,tVar1,g_TimezoneOffset - g_DaylightSavingOffset,result);
+  seconds = *timer;
+  gmtime_r(0x63df,seconds,g_TimezoneOffset,result);
+  iVar1 = determine_dst_status(result);
+  if (iVar1 != 0) {
+    gmtime_r
+              (0x63df,seconds,g_TimezoneOffset - g_DaylightSavingOffset,result);
   }
   return result;
 }

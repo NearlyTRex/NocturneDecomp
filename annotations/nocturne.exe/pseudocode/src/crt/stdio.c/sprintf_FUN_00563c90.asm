@@ -10,15 +10,15 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[159]:
-;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee3e
-;   cockpit_ckptutil.c_FUN_00430210 at 0043029b
-;   cockpit_ckptutil.c_FUN_004303d0 at 004304cc
-;   cockpit_ckptutil.c_FUN_00430630 at 0043073b
-;   cockpit_ckptutil.c_FUN_00431260 at 00431387
+;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00431260 at 00431387
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d552
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebce
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210 at 0043029b
 ;   cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042f050 at 0042f0c8
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d27b
+;   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0 at 004304cc
+;   cockpit_ckptutil.c_saveEdgeListFile_FUN_0042ee00 at 0042ee3e
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 at 0043073b
 ;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110 at 004f51d1
 ;   ... and 149 more
 ;

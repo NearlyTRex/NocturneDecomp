@@ -195,7 +195,7 @@ joined_r0x0053f88b:
                  core_actor_cpp_castToClassHash_FUN_0040d890
                            (&this_ptr->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
       if (((local_1c != (CDynamite *)0x0) &&
-          (iVar6 = core_dynamite_cpp_FUN_0046ed80(local_1c), iVar6 == 0)) &&
+          (iVar6 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0046ed80(local_1c), iVar6 == 0)) &&
          ((float)(int)(0xb / (longlong)local_34->frame_count) <=
           (this_ptr->base).base.layer_action_t)) {
         core_dynamite_cpp_CDynamite_lightFuse_FUN_0046ed30(local_1c);
@@ -340,7 +340,7 @@ LAB_0053f520:
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_28,0x16,1);
           if (this_ptr->action_pending != 0) {
-            shape_edittool_cpp_FUN_0046fb40
+            shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                       (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x13ba);
           }

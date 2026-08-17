@@ -14,10 +14,10 @@ void __cdecl wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(HWND window_handle)
   if (_DAT_02de3124 == 0) {
     return;
   }
-  mciSendStringA("close mov",(LPSTR)0x0,0,(HWND)0x0);
+  mciSendStringA("close mov",(LPSTR)0x0,0,0);
   _DAT_02de3120 = 0;
   _DAT_02de3124 = 0;
-  InvalidateRect((HWND)window_handle,(RECT *)0x0,1);
-  UpdateWindow((HWND)window_handle);
+  InvalidateRect(window_handle,(RECT *)0x0,1);
+  UpdateWindow(window_handle);
   return;
 }

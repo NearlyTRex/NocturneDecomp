@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot 
   CSfxSample *pCVar1;
   double dVar2;
   double dVar3;
-  double local_28;
+  ulonglong local_28;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -33,7 +33,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00525870(CSfxSlot 
      ((double)this_ptr->sample->streaming_buffer_size + 0.001 < local_28)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 3011;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos._0_4_,
+               hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,
+               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
+               local_28._4_4_,this_ptr->sample->streaming_buffer_size,this_ptr->sample);
   }
   if (((this_ptr->options).trigger_time != this_ptr->prev_hardware_playback_pos) ||
      (hardware_playback_pos < (this_ptr->options).trigger_time)) {

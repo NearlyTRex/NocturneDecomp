@@ -487,7 +487,7 @@ LAB_0053b4b4:
       if (iVar5 != 3) {
         g_CurrentFilename = "..\\core\\stranger.cpp";
         g_CurrentLineNumber = 3140;
-        core_main_c_displayErrorAndQuit_FUN_004c8440("Don't know how to carry light %s");
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Don't know how to carry light %s",pCVar2);
         goto LAB_0053b05b;
       }
     }

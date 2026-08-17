@@ -15,9 +15,9 @@ uint __cdecl crc32UpdateBuffer(uchar *data_buffer,uint byte_count,uint initial_c
 // Address: 004f78d0
 uint __cdecl crc32ComputeFromFile(_FILE *file_stream,uint total_bytes);
 
-// Original: engine_pod.cpp_FUN_004f7980
+// Original: engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980
 // Address: 004f7980
-uint FUN_004f7980(char *param_1,int param_2);
+uint __cdecl crc32ComputeFileRange(char *filename,int start_offset);
 
 // Original: engine_pod.cpp_CPodFile_ctor_FUN_004f7a80
 // Address: 004f7a80
@@ -99,9 +99,9 @@ void __cdecl CPod::initSearch(CPod *this_ptr,char *search_pattern,CPodSearchCont
 // Address: 004f8da0
 int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_context);
 
-// Original: engine_pod.cpp_FUN_004f8eb0
+// Original: engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0
 // Address: 004f8eb0
-void FUN_004f8eb0(undefined4 param_1,char *param_2);
+void __cdecl CPod::computeAndStoreCRC(CPod *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_004f9100
 // Address: 004f9100

@@ -47,7 +47,7 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0(C
       if (0x1f < ~uVar3 - 1) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 2555;
-        core_main_c_displayErrorAndQuit_FUN_004c8440("Event name %s too long!");
+        core_main_c_displayErrorAndQuit_FUN_004c8440("Event name %s too long!",name);
       }
       pacVar6 = (this_ptr->persistent_events).names + (this_ptr->persistent_events).count;
       do {

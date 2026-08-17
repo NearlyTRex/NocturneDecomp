@@ -4357,7 +4357,7 @@ CPickList_full_vtable g_CPickListVTable = {
         .sort = (CStrList_sort *)shape_edittool_cpp_CPickList_sort_FUN_004761a0,
         .insert = (CStrList_insert *)shape_edittool_cpp_CPickList_insert_FUN_004760a0,
         .swap = (CStrList_swap *)shape_edittool_cpp_CPickList_swap_FUN_00476200,
-        .clear = (CStrList_clear *)shape_edittool_cpp_FUN_00476160
+        .clear = (CStrList_clear *)shape_edittool_cpp_CPickList_clear_FUN_00476160
     },
     ._up = {.handleInput = (CPickList_handleInput *)shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0}
 };
@@ -4566,8 +4566,8 @@ CWeapon_full_vtable g_CDynamiteVTable = {
         .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_00554590,
         .fire = (CWeapon_fire *)core_dynamite_cpp_CDynamite_fire_FUN_0046ec80,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_00554630,
-        .getDamage = (CWeapon_getDamage *)core_dynamite_cpp_FUN_0046ecf0,
-        .fireProjectile = (CWeapon_fireProjectile *)core_dynamite_cpp_FUN_0046ed20,
+        .getDamage = (CWeapon_getDamage *)core_dynamite_cpp_CDynamite_getDamage_FUN_0046ecf0,
+        .fireProjectile = (CWeapon_fireProjectile *)core_dynamite_cpp_CDynamite_fireProjectile_FUN_0046ed20,
         .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0
     }
 };

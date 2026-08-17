@@ -13,7 +13,7 @@
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfc4a
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 at 004769c7
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e2a
-;   shape_edittool.cpp_FUN_00475230 at 00475359
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230 at 00475359
 ;
 ; Referenced Globals:
 ;   void* PTR_SetCursorPos_00575468 = 00175a54

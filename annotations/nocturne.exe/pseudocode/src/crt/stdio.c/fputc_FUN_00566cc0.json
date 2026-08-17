@@ -2,19 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 191,
+    "complexity_score": 259,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 12,
+    "pseudocode_lines": 59,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 209
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -26,7 +27,7 @@
     {
       "addr": "0049a320",
       "from_addr": "0049a58e",
-      "name": "core_game.cpp_FUN_0049a320",
+      "name": "core_game.cpp_captureDebugMovieFrame_FUN_0049a320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,12 +55,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f2990",
-      "from_addr": "004f2af6",
-      "name": "engine_pcx.c_FUN_004f2990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f2620",
       "from_addr": "004f274c",
       "name": "engine_pcx.c_saveScreenRaw16_FUN_004f2620",
@@ -69,6 +64,12 @@
       "addr": "004f27e0",
       "from_addr": "004f28fa",
       "name": "engine_pcx.c_saveScreenRaw32_FUN_004f27e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2990",
+      "from_addr": "004f2af6",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_004f2990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,7 +110,7 @@
     {
       "addr": "00568ed0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [
@@ -165,7 +166,7 @@
       {
         "call_addr": "004f2af6",
         "call_type": "direct",
-        "caller": "engine_pcx.c_FUN_004f2990",
+        "caller": "engine_pcx.c_saveScreenshotGeneral_FUN_004f2990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +177,7 @@
       {
         "call_addr": "004f2b14",
         "call_type": "direct",
-        "caller": "engine_pcx.c_FUN_004f2990",
+        "caller": "engine_pcx.c_saveScreenshotGeneral_FUN_004f2990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,8 +299,32 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);",
@@ -307,7 +332,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -315,7 +340,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -323,7 +380,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -331,15 +388,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 57,
+      "line": 60,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -347,7 +396,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",
@@ -355,7 +404,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",
@@ -363,7 +412,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 48,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",
@@ -371,7 +420,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 48,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",
@@ -379,7 +428,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
+      "line": 34,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",
@@ -387,7 +436,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;",

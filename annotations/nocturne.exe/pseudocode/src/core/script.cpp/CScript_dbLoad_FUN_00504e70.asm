@@ -52,7 +52,7 @@
 ;   crt_string.c_splitpath_FUN_00566498
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -225,8 +225,8 @@ section .text
     PUSH 0x58fc34                       ; 0050502b | = "Warning! Duplicate wav string %s dete..."
     MOV ESI,dword ptr [0x005b6d50]      ; 00505030 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 00505036
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 00505037
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 00505037
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0050503c
     LEA EAX,[ESP + 0x8]                 ; 0050503f
         ;   Label: LAB_0050503f

@@ -10,7 +10,7 @@
 ;   core_sound.cpp_staticInit_FUN_0052c8c0 at 0052c8c5
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00527d80
+;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80
 ;   sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005273d0
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
     CALL sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005273d0 ; 0052dd0d
         ;   XREF to: 005273d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005273d0(int channel_count)
     ADD ESP,0x4                         ; 0052dd12
-    CALL sound_sndmain.cpp_FUN_00527d80 ; 0052dd15
-        ;   XREF to: 00527d80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00527d80()
+    CALL sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 ; 0052dd15
+        ;   XREF to: 00527d80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80()
     MOV EAX,EBX                         ; 0052dd1a
     POP EBX                             ; 0052dd1c
     RET                                 ; 0052dd1d

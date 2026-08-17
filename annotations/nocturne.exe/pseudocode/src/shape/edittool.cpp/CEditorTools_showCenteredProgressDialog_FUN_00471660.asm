@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; XREF[3]:
-;   core_dtrace.cpp_FUN_004673e0 at 004673f7
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_004673e0 at 004673f7
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f11
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8416
 ;

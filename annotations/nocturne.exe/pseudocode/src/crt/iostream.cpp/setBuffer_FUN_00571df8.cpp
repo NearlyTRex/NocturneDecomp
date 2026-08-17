@@ -13,7 +13,7 @@ void __watcallStack crt_iostream_cpp_setBuffer_FUN_00571df8(streambuf *this_ptr,
   byte bVar2;
   
   if ((this_ptr->__flags & 2) != 0) {
-    FUN_00571ef0(this_ptr->__reserve_base);
+    freeBuffer(this_ptr->__reserve_base);
   }
   if ((new_buffer != (void *)0x0) && (new_buffer < buffer_end)) {
     this_ptr->__reserve_base = new_buffer;

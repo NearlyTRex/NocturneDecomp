@@ -10,8 +10,8 @@
 ; XREF[6]:
 ;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_004f86a0 at 004f8788
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8363
-;   engine_pod.cpp_FUN_004f7980 at 004f79f6
-;   engine_pod.cpp_FUN_004f8eb0 at 004f8fc7
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f8fc7
+;   engine_pod.cpp_crc32ComputeFileRange_FUN_004f7980 at 004f79f6
 ;   engine_pod.cpp_crc32ComputeFromFile_FUN_004f78d0 at 004f7912
 ;   engine_pod.cpp_crc32UpdateBuffer_FUN_004f7890 at 004f78ad
 ;

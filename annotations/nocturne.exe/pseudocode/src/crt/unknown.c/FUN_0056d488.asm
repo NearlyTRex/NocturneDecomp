@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_0056d488(time_t *param_1,int param_2)
+; void crt_unknown_c_FUN_0056d488(time_t *param_1,_tm *param_2)
 ;
 ;
 ; XREF[1]:
@@ -24,7 +24,7 @@ section .text
     PUSH EDX                            ; 0056d49c
     PUSH 0x63df                         ; 0056d49d
     CALL crt_time.c_gmtime_r_FUN_0056d340 ; 0056d4a2
-        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; undefined1 crt_time.c_gmtime_r_FUN_0056d340(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)
+        ;   XREF to: 0056d340 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c_gmtime_r_FUN_0056d340(time_t days, time_t seconds, time_t timezone_offset, _tm * result)
     ADD ESP,0x10                        ; 0056d4a7
     RET                                 ; 0056d4aa
 

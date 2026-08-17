@@ -60,6 +60,12 @@
         "column": 31,
         "line": 174,
         "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "format_error",
+        "column": 106,
+        "line": 208,
+        "message": "format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -68,18 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 307,
+    "complexity_score": 308,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 248,
     "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
-    "total_lines": 917
+    "total_lines": 918
   },
   "cross_references": [
     {
@@ -174,7 +180,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -642,7 +648,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 212,
+      "line": 213,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_14c.push_normal.x = SStack_204.push_normal.x;",
@@ -650,7 +656,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 243,
+      "line": 244,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->collision_normal).x = local_14c.push_normal.x;",
@@ -658,7 +664,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 222,
+      "line": 223,
       "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
       "text": "local_18 = (CDemonSet *)local_18->cameras;",

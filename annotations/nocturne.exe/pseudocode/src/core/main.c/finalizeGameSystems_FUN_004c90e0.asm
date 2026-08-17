@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_00559260 at 005594eb
+;   wincore_winrun.cpp_winMain_FUN_00559260 at 005594eb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_load_d_00587e78
@@ -28,20 +28,20 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_dfont.cpp_FUN_0044cc00
-;   core_dmodel.cpp_FUN_00454460
+;   core_dfont.cpp_freeFonts_FUN_0044cc00
+;   core_dmodel.cpp_freeAllModels_FUN_00454460
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0
 ;   core_mission.cpp_CDemonMission_FUN_004d7e90
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
+;   core_skeleton.cpp_freeAllModels_FUN_0051f650
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
-;   core_skeleton.cpp_FUN_0051f650
-;   core_sound.cpp_FUN_0052dd80
+;   core_sound.cpp_CSound_dtor_FUN_0052dd80
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdlib.c_rand_FUN_0056488c
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
-;   engine_3d.c_FUN_00404490
+;   engine_3d.c_freeTextureCache_FUN_00404490
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
 ;   ... and 17 more
 ;
@@ -276,27 +276,27 @@ section .text
     ADD ESP,0x4                         ; 004c9341
     MOV EAX,[0x005bed68]                ; 004c9344 | g_CSound_PTR_005bed68
     PUSH EAX                            ; 004c9349
-    CALL core_sound.cpp_FUN_0052dd80    ; 004c934a
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052dd80(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_dtor_FUN_0052dd80 ; 004c934a
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_0052dd80(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c934f
-    CALL core_dmodel.cpp_FUN_00454460   ; 004c9352
-        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00454460()
-    CALL core_skeleton.cpp_FUN_0051f650 ; 004c9357
-        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f650()
+    CALL core_dmodel.cpp_freeAllModels_FUN_00454460 ; 004c9352
+        ;   XREF to: 00454460 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_freeAllModels_FUN_00454460()
+    CALL core_skeleton.cpp_freeAllModels_FUN_0051f650 ; 004c9357
+        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_0051f650()
     CALL core_skeleton.cpp_freeAllSkeletons_FUN_0051f730 ; 004c935c
         ;   XREF to: 0051f730 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllSkeletons_FUN_0051f730()
-    CALL engine_matrix.c_FUN_004cca50   ; 004c9361
-        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_FUN_004cca50()
+    CALL engine_matrix.c_doNothing_FUN_004cca50 ; 004c9361
+        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_doNothing_FUN_004cca50()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c9366
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_004012a0 ; 004c936b
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()
-    CALL engine_3d.c_FUN_00404490       ; 004c9370
-        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00404490()
-    CALL core_dfont.cpp_FUN_0044cc00    ; 004c9375
-        ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044cc00()
-    CALL wincore_winrun.cpp_FUN_00559e90 ; 004c937a
-        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00559e90()
+    CALL engine_3d.c_freeTextureCache_FUN_00404490 ; 004c9370
+        ;   XREF to: 00404490 (UNCONDITIONAL_CALL)  ; void engine_3d.c_freeTextureCache_FUN_00404490()
+    CALL core_dfont.cpp_freeFonts_FUN_0044cc00 ; 004c9375
+        ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_0044cc00()
+    CALL wincore_winrun.cpp_doNothing2_FUN_00559e90 ; 004c937a
+        ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing2_FUN_00559e90()
     MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | g_CPod_PTR_005be1cc
     PUSH EDX                            ; 004c9385
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004c9386

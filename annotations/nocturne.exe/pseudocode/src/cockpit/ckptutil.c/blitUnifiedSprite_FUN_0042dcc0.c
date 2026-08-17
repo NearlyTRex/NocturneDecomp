@@ -27,7 +27,7 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_0042dcc0(void *sprite_data
   iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   iVar8 = g_ClipLeft - dest_x;
   if (sprite_data != (void *)0x0) {
-    pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     if (g_BitsPerPixel == 8) {
       pvStack_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);
       if (0 < height) {

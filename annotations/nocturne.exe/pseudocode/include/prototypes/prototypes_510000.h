@@ -32,7 +32,7 @@
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIntersectXZCylinder.h"
-#include "types/structs/SMRGLPrimitivePoly.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SPart.h"
 #include "types/structs/SPartInstanceData.h"
 #include "types/structs/SPose.h"
@@ -75,14 +75,14 @@ void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_00511ca0(SDamageInfo *this_p
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00511d20(SCollisionReturnInfo *this_ptr);
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00511d30(SCollisionReturnInfo *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00511d60(void);
-float core_setdir_cpp_FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6);
+float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonActor *param_2,int param_3);
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(CDemonSet *this_ptr,char *filename);
 void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *param_2);
 void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr);
-void __cdecl core_setdir_cpp_FUN_005138e0(int *param_1);
+void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_00513d80(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_00513e20(CDemonSet *this_ptr,int param_2,CVector3f *param_3);
@@ -274,10 +274,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
 void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_0051f1d0(SPose *bone_data,CDeformableModelInstance *instance_ptr);
 void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_0051f3f0(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
 CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_0051f570(char *model_filename);
-void __cdecl core_skeleton_cpp_FUN_0051f650(void);
-CSkeleton * __cdecl core_skeleton_cpp_FUN_0051f680(char *filename);
+void __cdecl core_skeleton_cpp_freeAllModels_FUN_0051f650(void);
+CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0051f680(char *filename);
 void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void);
-void __cdecl core_skeleton_cpp_FUN_0051f760(char *output_buffer);
+void __cdecl core_skeleton_cpp_getMemoryStats_FUN_0051f760(char *output_buffer);
 float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_0051f800(CVector3f *point1,CVector3f *point2);
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_0051f840(SVert *this_ptr);
 SVert * __cdecl core_skeleton_cpp_SVert_dtor_FUN_0051f860(SVert *this_ptr,uint flags);

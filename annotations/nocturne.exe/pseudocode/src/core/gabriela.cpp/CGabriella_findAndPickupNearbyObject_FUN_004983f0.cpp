@@ -131,7 +131,7 @@ LAB_00498579:
 LAB_00498759:
       g_CurrentFilename = "..\\core\\gabriela.cpp";
       g_CurrentLineNumber = 1592;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze - invalid pickUpType: %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze - invalid pickUpType: %d",uStack_28);
       return 1;
     }
     iVar5 = 0xe;

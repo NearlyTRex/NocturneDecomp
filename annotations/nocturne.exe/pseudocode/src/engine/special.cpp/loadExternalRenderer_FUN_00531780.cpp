@@ -25,7 +25,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00531780(HWND window_han
   if (g_UseDirect3D == 0) {
     return 0;
   }
-  g_RendererDLLHandle = wincore_wddvmem_cpp_FUN_00553d30(g_RendererDllPath);
+  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_00553d30(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
     g_UseDirect3D = (int)g_RendererDLLHandle;
     return 0;

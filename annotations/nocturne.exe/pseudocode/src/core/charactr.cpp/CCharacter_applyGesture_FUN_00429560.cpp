@@ -19,7 +19,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(CCharacter *
     if (this_ptr->gesture_branch_root < -1) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
       g_CurrentLineNumber = 3291;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
     }
     iVar1 = this_ptr->gesture_motion_index;
     pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890

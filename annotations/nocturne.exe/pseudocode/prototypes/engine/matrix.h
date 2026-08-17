@@ -7,9 +7,9 @@
 // Address: 004cc9d0
 void __cdecl initializeTrigTables(void);
 
-// Original: engine_matrix.c_FUN_004cca50
+// Original: engine_matrix.c_doNothing_FUN_004cca50
 // Address: 004cca50
-void __cdecl FUN_004cca50(void);
+void __cdecl doNothing(void);
 
 // Original: engine_matrix.c_interpolatedSin_FUN_004cca60
 // Address: 004cca60
@@ -57,11 +57,11 @@ void __cdecl matrixPushAndTransform(int rot_x,int rot_y,int rot_z,int translate_
 
 // Original: engine_matrix.c_matrixPush_FUN_004cdac0
 // Address: 004cdac0
-void __cdecl matrixPush(CDemonRenderer *this_ptr);
+void __cdecl matrixPush(void);
 
 // Original: engine_matrix.c_pop_FUN_004cdbc0
 // Address: 004cdbc0
-void __cdecl pop(CDemonRenderer *this_ptr);
+void __cdecl pop(void);
 
 // Original: engine_matrix.c_calculate3DDistance_FUN_004cdcd0
 // Address: 004cdcd0
@@ -109,7 +109,7 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 
 // Original: engine_matrix.c_popViewport_FUN_004ce920
 // Address: 004ce920
-void __cdecl popViewport(CDemonRenderer *this_ptr);
+void __cdecl popViewport(void);
 
 // Original: engine_matrix.c_projectToScreen_FUN_004cea50
 // Address: 004cea50

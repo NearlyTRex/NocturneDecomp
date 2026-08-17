@@ -1,0 +1,195 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 45,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "0049cc10",
+      "from_addr": "0049d40f",
+      "name": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00527520",
+    "address_range": [
+      [
+        "00527520",
+        "00527566"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getNextActiveSfx_FUN_00527520",
+    "signature": "uint __cdecl sound_sndmain_cpp_getNextActiveSfx_FUN_00527520(uint current_sfx_handle)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02dbd3e4",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[0].playback_state",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dbd504",
+      "name": "g_CSfxSlot_ARRAY_02dbd374[1].playback_state",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049d40f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_0049cc10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.038461538461538,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "CBRANCH": 4,
+      "COPY": 21,
+      "INT_ADD": 12,
+      "INT_AND": 50,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 29,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 11,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SUB": 6,
+      "INT_XOR": 3,
+      "LOAD": 7,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 209
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "current_sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_CSfxSlot_ARRAY_02dbd374[0].distance_to_speakers + iVar2 + -8) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
+      "severity": "moderate",
+      "text": "(iVar1 = *(int *)((int)g_CSfxSlot_ARRAY_02dbd374[0].distance_to_speakers + iVar2 + -0xc),",
+      "type": "pointer_cast"
+    }
+  ]
+}

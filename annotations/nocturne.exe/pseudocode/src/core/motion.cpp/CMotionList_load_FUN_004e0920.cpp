@@ -39,7 +39,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr
   if (2 < local_34) {
     g_CurrentFilename = "..\\core\\motion.cpp";
     g_CurrentLineNumber = 93;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_34,2);
   }
   do {
     iVar2 = _fgetc(file_handle);

@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470b78
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047456d
-;   shape_edittool.cpp_FUN_00470730 at 00470b78
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_00598a98

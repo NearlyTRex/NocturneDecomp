@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   pcx_file
 ;
 ; XREF[1]:
-;   engine_pcx.c_FUN_004f2990 at 004f2ab8
+;   engine_pcx.c_saveScreenshotGeneral_FUN_004f2990 at 004f2ab8
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

@@ -18,7 +18,7 @@
 ;   crt_stdio.c_fputc_FUN_00566cc0
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_00568890
-;   crt_unknown.c_FUN_00568ed0
+;   crt_unknown.c_setvbuf_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     JNZ 0x0057368f                      ; 00573684
         ;   XREF to: 0057368f (CONDITIONAL_JUMP)  ; LAB_0057368f
     PUSH ESI                            ; 00573686
-    CALL crt_unknown.c_FUN_00568ed0     ; 00573687
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
+    CALL crt_unknown.c_setvbuf_FUN_00568ed0 ; 00573687
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_setvbuf_FUN_00568ed0(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x4                         ; 0057368c
     MOV AH,byte ptr [ESI + 0xd]         ; 0057368f
         ;   Label: LAB_0057368f

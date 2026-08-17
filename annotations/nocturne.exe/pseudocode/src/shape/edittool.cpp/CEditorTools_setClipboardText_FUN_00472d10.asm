@@ -22,7 +22,7 @@
 ;   char CHAR_00h_0057ea92 = \x00
 ;   TerminatedCString s_XYZ_0057ea93
 ;   undefined4 DAT_01bcd078
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
 ;   CloseClipboard
@@ -55,7 +55,7 @@ section .text
     SCASB.REPNE ES:EDI                  ; 00472d2c | CHAR_00h_0057ea92 | = "XYZ"
     NOT ECX                             ; 00472d2e
     DEC ECX                             ; 00472d30
-    MOV ESI,dword ptr [0x02de2098]      ; 00472d31 | DAT_02de2098
+    MOV ESI,dword ptr [0x02de2098]      ; 00472d31 | g_HWND_02de2098
     PUSH ESI                            ; 00472d37
     LEA EBX,[ECX + 0x1]                 ; 00472d38
     CALL dword ptr CS:[0x575454]        ; 00472d3b | PTR_OpenClipboard_00575454

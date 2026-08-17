@@ -120,7 +120,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_special.cpp_unlockFrame_FUN_00532320",
-    "signature": "int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)"
+    "signature": "int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(int clear_lock_flag)"
   },
   "function_calls": [],
   "globals": [
@@ -173,12 +173,20 @@
     "pcode_op_count": 33
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "clear_lock_flag",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": []
 }

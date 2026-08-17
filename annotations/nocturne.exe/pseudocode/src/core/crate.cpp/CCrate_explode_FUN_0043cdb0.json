@@ -56,10 +56,10 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 30,
-        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110'"
+        "category": "format_error",
+        "column": 56,
+        "line": 20,
+        "message": "format specifies type 'char *' but the argument has type 'CCrate *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -68,17 +68,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 39,
+    "complexity_score": 40,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 89
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -143,7 +143,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -301,7 +301,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 16,
+      "line": 17,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_10.x = (pCVar1->position).x;",

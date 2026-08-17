@@ -34,7 +34,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(U
       }
       uVar2 = DirectSoundCreate(lp_guid,(LPDIRECTSOUND *)&DAT_02dc9214,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
-        uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,_DAT_02de2098,3);
+        uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,g_HWND_02de2098,3);
         if (uVar2 == 0) {
           memset(&uStack_20,0,0x14);
           uStack_20 = 0x14;

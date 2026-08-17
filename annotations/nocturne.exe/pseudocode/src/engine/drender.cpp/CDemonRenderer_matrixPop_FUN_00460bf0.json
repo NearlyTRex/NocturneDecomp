@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 15,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
       }
     ],
     "success": false,
@@ -121,18 +61,16 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 3,
-    "complexity_score": 41,
+    "assembly_lines": 4,
+    "complexity_score": 5,
     "cross_reference_count": 62,
-    "function_call_count": 0,
+    "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 29
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [
     {
@@ -232,21 +170,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00450520",
-      "from_addr": "00450c5c",
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0044f9b0",
       "from_addr": "00450127",
-      "name": "core_dlight.cpp_FUN_0044f9b0",
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00450c90",
       "from_addr": "004512fd",
-      "name": "core_dlight.cpp_FUN_00450c90",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00450c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450520",
+      "from_addr": "00450c5c",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -513,14 +451,20 @@
     "address_range": [
       [
         "00460bf0",
-        "00460bf4"
+        "00460bf5"
       ]
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0",
     "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer *this_ptr)"
   },
-  "function_calls": [],
+  "function_calls": [
+    {
+      "addr": "004cdbc0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_004cdbc0"
+    }
+  ],
   "globals": [],
   "param_estimates": {
     "call_site_count": 50,
@@ -643,12 +587,17 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 1.0,
-    "instruction_count": 1,
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 2,
     "opcode_distribution": {
-      "BRANCH": 1
+      "CALL": 1,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 1
     },
-    "pcode_op_count": 1
+    "pcode_op_count": 6
   },
   "stack_frame": {
     "frame_size": 8,
@@ -666,14 +615,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

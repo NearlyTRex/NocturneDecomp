@@ -2,19 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 369,
+    "complexity_score": 555,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 31,
+    "pseudocode_lines": 45,
+    "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "unaffected_reg",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 145
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -40,7 +43,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0056ae10",
-    "signature": "undefined4 crt_unknown_c_FUN_0056ae10(int param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "undefined4 crt_unknown_c_FUN_0056ae10(_FILE *param_1,undefined4 param_2,undefined4 param_3)"
   },
   "function_calls": [
     {
@@ -54,14 +57,14 @@
       "name": "crt_unknown.c_FUN_00568890"
     },
     {
-      "addr": "00568ed0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
-    },
-    {
       "addr": "00569040",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_00569040"
+    },
+    {
+      "addr": "00568ed0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [
@@ -158,7 +161,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_0056ae10(int param_1,uint param_2,uint param_3)",
+      "text": "uint FUN_0056ae10(_FILE *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +169,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_0056ae10(int param_1,uint param_2,uint param_3)",
+      "text": "uint FUN_0056ae10(_FILE *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -174,63 +177,79 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint FUN_0056ae10(int param_1,uint param_2,uint param_3)",
+      "text": "uint FUN_0056ae10(_FILE *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1->_handle);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(param_1->_handle);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(*(int *)(param_1 + 8) + 0xc);",
+      "text": "pcVar1 = param_1->_link->__get_base;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1->_handle);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1->_handle);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 8) + 0xc) = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)(param_1 + 0xc);",
+      "text": "param_1->_link->__get_base = (char *)0x1;",
       "type": "unnamed_param"
     },
     {
@@ -238,15 +257,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xc) = *(byte *)(param_1 + 0xc) & 0xcf;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xc) = *(byte *)(param_1 + 0xc) & 0xcf;",
+      "text": "uVar2 = param_1->_flag;",
       "type": "unnamed_param"
     },
     {
@@ -254,7 +265,15 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 8) + 8) == 0) {",
+      "text": "*(byte *)&param_1->_flag = (byte)param_1->_flag & 0xcf;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)&param_1->_flag = (byte)param_1->_flag & 0xcf;",
       "type": "unnamed_param"
     },
     {
@@ -262,39 +281,55 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00568ed0(param_1);",
+      "text": "if (param_1->_link->__reserve_end == (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(param_1,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(param_1,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "_setvbuf(param_1,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_setvbuf(param_1,unaff_EBP,unaff_EDI,unaff_ESI);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "bVar5 = (*(byte *)(param_1 + 0xd) & 4) != 0;",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "bVar4 = *(byte *)(param_1 + 0xd) & 0xfa;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xd) = bVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xd) = bVar4 | 1;",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
       "type": "unnamed_param"
     },
     {
@@ -302,23 +337,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 1;",
       "type": "unnamed_param"
     },
     {
@@ -326,15 +345,23 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "bVar4 = *(byte *)(param_1 + 0xd) & 0xfa;",
+      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
+      "line": 35,
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xd) = bVar4;",
+      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);",
       "type": "unnamed_param"
     },
     {
@@ -342,7 +369,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xd) = bVar4 | 4;",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1) & 0xfa;",
       "type": "unnamed_param"
     },
     {
@@ -350,7 +377,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00568890(param_1);",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 4;",
       "type": "unnamed_param"
     },
     {
@@ -358,40 +393,144 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0xc) & 0x20) != 0) {",
+      "text": "FUN_00568890(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) | uVar2 & 0x30;",
+      "text": "if ((param_1->_flag & 0x20) != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) | uVar2 & 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x10));",
+      "text": "param_1->_flag = param_1->_flag | uVar2 & 0x30;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->_flag = param_1->_flag | uVar2 & 0x30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1->_handle);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(param_1->_handle);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1) & 0xfa;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&param_1->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar4 = *(byte *)((int)&param_1->_flag + 1) & 0xfa;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 38,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&param_1->_flag + 1) = bVar4 | 4;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

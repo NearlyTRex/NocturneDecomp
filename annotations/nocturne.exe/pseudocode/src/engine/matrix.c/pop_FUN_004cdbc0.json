@@ -139,12 +139,12 @@
       "addr": "00460bf0",
       "from_addr": "00460bf0",
       "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0",
-      "type": "UNCONDITIONAL_JUMP"
+      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00472fd0",
       "from_addr": "00473068",
-      "name": "shape_edittool.cpp_FUN_00472fd0",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,12 +158,12 @@
     ],
     "convention": "__cdecl",
     "name": "engine_matrix.c_pop_FUN_004cdbc0",
-    "signature": "void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)"
+    "signature": "void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)"
   },
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
@@ -290,25 +290,36 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00473068",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00472fd0",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
         "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
+      },
+      {
+        "call_addr": "00460bf0",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
     "estimated_params": 0,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.7346938775510203,
@@ -336,20 +347,12 @@
     "pcode_op_count": 134
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 4,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 0,
     "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDemonRenderer *"
-      }
-    ]
+    "variables": []
   },
   "suspects": [
     {

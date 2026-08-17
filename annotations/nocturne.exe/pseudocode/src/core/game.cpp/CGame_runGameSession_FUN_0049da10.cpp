@@ -33,15 +33,19 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   engine_console_cpp_CConsole_printf_FUN_0043ac60
             (g_CConsole_PTR_005ad350,"Nocturne is alive and kicking\n");
   engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"game.cpp built on %s %s\n\n");
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"System RAM: %d\n");
+            (g_CConsole_PTR_005ad350,"game.cpp built on %s %s\n\n","Nov 02 1999",
+             "15:09:32");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (g_CConsole_PTR_005ad350,"System RAM: %d\n",_DAT_02de20a8);
   local_18 = 1;
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"Swap file: %d\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (g_CConsole_PTR_005ad350,"Swap file: %d\n",_DAT_02de20ac);
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
             (g_CEditorTools_PTR_005b6d50,local_120);
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"%s\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"%s\n",local_120);
   local_20 = &stack0xfffffc00;
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"ESP: %08X\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (g_CConsole_PTR_005ad350,"ESP: %08X\n",&stack0xfffffc00);
   this_ptr->camera_view_index = 0;
   this_ptr->is_paused = 0;
   this_ptr->is_game_active = 1;
@@ -112,7 +116,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
   core_set_cpp_CDemonSet_setGamma_FUN_0050e400(g_CDemonSet_PTR_005be368,this_ptr->gamma);
   core_game_cpp_CGame_setGameRes_FUN_0049d870(this_ptr);
   core_game_cpp_CGame_clearOverlay_FUN_0049aa90(this_ptr);
-  shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
+  shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01c78424);
   if (this_ptr->is_game_active == 0) {
     core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
               (g_CDemonSet_PTR_005be368,this_ptr->camera_view_index);
@@ -159,7 +163,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         iVar5 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)
                           (g_CKeys_PTR_005bac64,DIK_ESCAPE);
         if (iVar5 != 0) {
-          shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
+          shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01c78424);
           this_ptr->wait_for_keypress = 0;
           EVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
@@ -264,12 +268,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         _DAT_01c78420 = 0;
       }
       else {
-        iVar3 = shape_edittool_cpp_FUN_00475230(&g_CPickList_01c78424);
+        iVar3 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_00475230(&g_CPickList_01c78424);
         if (iVar3 != -2) {
           engine_2d_c_clearInputAndWait_FUN_00403f50();
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
                     (g_CEditorTools_PTR_005b6d50);
-          shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
+          shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01c78424);
           _DAT_01c78420 = 0;
         }
         if (iVar3 == 0) {
@@ -357,7 +361,7 @@ LAB_0049dec1:
   (*g_CKeys_PTR_005bac64->vtable->clearKeyPresses)(g_CKeys_PTR_005bac64);
   core_set_cpp_CDemonSet_FUN_0050ad20(g_CDemonSet_PTR_005be368);
   this_ptr->time_scale_factor = 1.0;
-  shape_edittool_cpp_FUN_00476160(&g_CPickList_01c78424);
+  shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01c78424);
   core_inv_cpp_freeInventory_FUN_004bf270();
   return local_1c;
 }

@@ -47,6 +47,7 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
       if ((local_14 & 0x40) == 0) {
         local_20 = GetStackUsage();
         if (local_20 < 0xb0) {
+                    /* WARNING: Subroutine does not return */
           stack_overflow_handler(in_stack_ffffffdc);
         }
         DVar2 = 0x200;

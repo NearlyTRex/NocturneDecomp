@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools *this_ptr,char *format)
+; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools *this_ptr,char *format,...)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -17,7 +17,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d63
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb0c
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8294
-;   engine_pod.cpp_FUN_004f8eb0 at 004f8ece
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f8ece
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa

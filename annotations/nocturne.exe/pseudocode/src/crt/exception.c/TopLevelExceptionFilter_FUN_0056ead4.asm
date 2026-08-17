@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   crt_exception.c_FormatHexString_FUN_0056ea78
-;   crt_unknown.c_FUN_005714ec
+;   crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec
 ;   crt_windows.c_has_active_window_FUN_0056ea40
 ;   WriteFile
 ;
@@ -54,8 +54,8 @@ section .text
     TEST EAX,EAX                        ; 0056eaef
     JNZ 0x0056eafd                      ; 0056eaf1
         ;   XREF to: 0056eafd (CONDITIONAL_JUMP)  ; LAB_0056eafd
-    CALL crt_unknown.c_FUN_005714ec     ; 0056eaf3
-        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_FUN_005714ec()
+    CALL crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec ; 0056eaf3
+        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec()
     CMP EAX,-0x1                        ; 0056eaf8
     JNZ 0x0056eb04                      ; 0056eafb
         ;   XREF to: 0056eb04 (CONDITIONAL_JUMP)  ; LAB_0056eb04

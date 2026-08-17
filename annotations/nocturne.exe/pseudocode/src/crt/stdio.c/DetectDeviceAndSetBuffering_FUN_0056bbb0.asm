@@ -7,8 +7,8 @@
 ; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[2]:
-;   crt_unknown.c_FUN_00568ed0 at 00568ed7
 ;   crt_unknown.c_OpenFileAndInitialize_FUN_0056551c at 0056561f
+;   crt_unknown.c_setvbuf_FUN_00568ed0 at 00568ed7
 ;
 ; Called Functions:
 ;   crt_io.c_IsSpecialDevice_FUN_005705c0

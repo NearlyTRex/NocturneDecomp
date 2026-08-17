@@ -22,7 +22,7 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_00540660(CStrange
                   core_actor_cpp_castToClassHash_FUN_0040d890
                             (&this_ptr->weapon->base,g_CDynamiteActorType_01bca088.name_hash);
     if (this_ptr_01 != (CCharacter *)0x0) {
-      iVar2 = core_dynamite_cpp_FUN_0046eda0((CDynamite *)this_ptr_01);
+      iVar2 = core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0046eda0((CDynamite *)this_ptr_01);
       if (iVar2 != 0) {
         (this_ptr_01->model).transformed_vertices[0x51].z = 0.0;
         (this_ptr_01->model).transformed_vertices[0x51].y =

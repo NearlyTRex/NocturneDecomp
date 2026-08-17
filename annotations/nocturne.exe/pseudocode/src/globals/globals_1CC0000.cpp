@@ -76,3 +76,6 @@ char* g_CurrentFilename = {};
 // int
 int g_CurrentLineNumber = {};
 
+// undefined4
+undefined4 DAT_01cc4808 = {};
+

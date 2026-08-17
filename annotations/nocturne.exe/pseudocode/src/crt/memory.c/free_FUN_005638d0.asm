@@ -7,8 +7,8 @@
 ; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[65]:
-;   cockpit_ckptutil.c_FUN_004303d0 at 004304ac
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042eced
+;   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0 at 004304ac
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 at 004f3f76
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80 at 004f3f8f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46e1

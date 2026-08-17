@@ -8,8 +8,8 @@
 ; SSoftwareEdge *  Stack[0x8]:4   edge_ptr
 ;
 ; XREF[2]:
-;   engine_prim.c_FUN_004f9dd0 at 004f9f5a
-;   engine_prim.c_FUN_004fa2e0 at 004fa4bf
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0 at 004fa4bf
+;   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0 at 004f9f5a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e52a68

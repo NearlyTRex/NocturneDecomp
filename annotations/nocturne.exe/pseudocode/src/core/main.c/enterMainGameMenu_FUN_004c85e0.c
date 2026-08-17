@@ -171,7 +171,7 @@ LAB_004d2665:
         (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_L),
         iVar4 != 0)))) {
       core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
-      core_main_c_FUN_004c8510();
+      core_main_c_showDeveloperToolsMenu_FUN_004c8510();
       core_sound_cpp_CSound_configure_FUN_0052e850(g_CSound_PTR_005bed68);
     }
     iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL);

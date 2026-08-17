@@ -45,7 +45,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_0054a110(CTurret *this_
   pCVar6 = this_ptr->guard_zone_box_trigger;
   if (pCVar6 == (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s has no guard trigger!\n");
+              (g_CConsole_PTR_005ad350,"%s has no guard trigger!\n",this_ptr);
     return;
   }
   (*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,(CBoundingBox3D *)local_b4);

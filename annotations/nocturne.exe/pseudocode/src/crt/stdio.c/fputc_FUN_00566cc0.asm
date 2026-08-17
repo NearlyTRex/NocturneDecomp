@@ -9,14 +9,14 @@
 ;
 ; XREF[10]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d7df
-;   core_game.cpp_FUN_0049a320 at 0049a58e
+;   core_game.cpp_captureDebugMovieFrame_FUN_0049a320 at 0049a58e
 ;   crt_math.c_print_error_message_FUN_005729e8 at 00572a2a
 ;   crt_stdio.c_fputs_FUN_00573660 at 005736be
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563c0e
 ;   crt_unknown.c_FUN_0056adf0 at 0056adfe
-;   engine_pcx.c_FUN_004f2990 at 004f2af6
 ;   engine_pcx.c_saveScreenRaw16_FUN_004f2620 at 004f274c
 ;   engine_pcx.c_saveScreenRaw32_FUN_004f27e0 at 004f28fa
+;   engine_pcx.c_saveScreenshotGeneral_FUN_004f2990 at 004f2af6
 ;   engine_pcx.c_writePCXScanline_FUN_004f2550 at 004f2586
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@
 ;   crt_errno.c_setErrno_FUN_00568e80
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_unknown.c_FUN_00568890
-;   crt_unknown.c_FUN_00568ed0
+;   crt_unknown.c_setvbuf_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     JNZ 0x00566d44                      ; 00566d39
         ;   XREF to: 00566d44 (CONDITIONAL_JUMP)  ; LAB_00566d44
     PUSH EBX                            ; 00566d3b
-    CALL crt_unknown.c_FUN_00568ed0     ; 00566d3c
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
+    CALL crt_unknown.c_setvbuf_FUN_00568ed0 ; 00566d3c
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_setvbuf_FUN_00568ed0(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x4                         ; 00566d41
     MOV EAX,dword ptr [ESP + 0x14]      ; 00566d44
         ;   Label: LAB_00566d44

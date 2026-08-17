@@ -28,7 +28,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(CDirectS
      (*(int *)(&DAT_02dc9244 + sample_buffer_id * 4) == 0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 702;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::allocateSfx - Invalid sample handle: %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("DirectSoundDevice::allocateSfx - Invalid sample handle: %d",sample_buffer_id);
   }
   if (_DAT_02dc9214 == (int *)0x0) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";

@@ -45,9 +45,9 @@
 ;   crt_string.c_splitpath_FUN_00566498
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
+;   shape_edittool.cpp_CPickList_clear_FUN_00476160
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
-;   shape_edittool.cpp_CStrList_getItemCount_FUN_00477660
-;   shape_edittool.cpp_FUN_0046fcd0
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -189,8 +189,8 @@ section .text
     ADD ESP,0x8                         ; 004fed25
     PUSH 0x1e56c30                      ; 004fed28
     MOV EBX,EAX                         ; 004fed2d
-    CALL shape_edittool.cpp_FUN_00476160 ; 004fed2f
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 004fed2f
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004fed34
     TEST EBX,EBX                        ; 004fed37
     JZ 0x004fee03                       ; 004fed39
@@ -250,8 +250,8 @@ section .text
     PUSH 0x58e279                       ; 004fedd2 | = "Probable non-text file %s detected ne..."
     MOV EDX,dword ptr [0x005b6d50]      ; 004fedd7 | g_CEditorTools_PTR_005b6d50
     PUSH EDX                            ; 004feddd
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fedde
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004fedde
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004fede3
     MOV ECX,dword ptr [ESP + 0x320]     ; 004fede6
     PUSH ECX                            ; 004feded

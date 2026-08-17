@@ -16,7 +16,7 @@
 ;   core_script.cpp_CScript_FUN_004febd0 at 004fece4
 ;   core_script.cpp_CScript_getDialogDuration_FUN_005049b0 at 00504a7c
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501011
-;   core_sound.cpp_FUN_0052ed40 at 0052ed63
+;   core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40 at 0052ed63
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f84bf
 ;   ... and 7 more
 ;

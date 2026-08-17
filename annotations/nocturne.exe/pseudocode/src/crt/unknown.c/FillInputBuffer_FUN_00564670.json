@@ -2,15 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 42,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 42,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 141
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -40,11 +42,6 @@
   },
   "function_calls": [
     {
-      "addr": "00568ed0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
-    },
-    {
       "addr": "00568f70",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_00568f70"
@@ -58,6 +55,11 @@
       "addr": "0056af50",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_0056af50"
+    },
+    {
+      "addr": "00568ed0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [],
@@ -104,5 +106,54 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

@@ -31,6 +31,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr)
   byte auStack_13c [28];
   int iStack_120;
   void *local_114;
+  byte auStack_104 [12];
   char local_f8 [88];
   byte auStack_a0 [56];
   CVector3i CStack_68;
@@ -71,7 +72,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr)
   if (local_114 != (void *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 4816;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create %s",local_f8);
   }
   crt_fstream_cpp_ostream_write_FUN_00565a13
             ((_ostream *)(auStack_13c + 0xc),&g_SFogGrid_0140d784,0x1000);
@@ -185,17 +186,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_FUN_00446810(CDemonCamera *this_ptr)
         if (iVar10 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 4925;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Error compressing %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Error compressing %s",auStack_104);
         }
         if (local_58 != 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 4927;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Not all bytes consumed compressing %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440
+                    ("Not all bytes consumed compressing %s",auStack_104);
         }
         if (iStack_120 != 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 4928;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Error writing compressed file %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440
+                    ("Error writing compressed file %s",auStack_104);
         }
         local_50 = local_50 + 0x12c00;
         local_4c = local_4c + 0x12c00;

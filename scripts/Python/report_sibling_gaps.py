@@ -99,7 +99,49 @@ def describe(img, addr, shapes):
     return f"{addr} {size:5d}b {insn}  {short(func.get('name'))}"
 
 
-def suggest(a_img, b_img, shapes_a, shapes_b, gap_a, gap_b):
+MIN_FAMILY = 3   # a family this size vanishing wholesale is a build decision
+
+
+def absent_families(a_img, b_img):
+    """Classes and method categories present in A but wholly absent from B.
+
+    Whole families get compiled out of the game build -- the entire CZThumb
+    class (10 methods) and the editor-API categories (getPropertyList x96,
+    addFilesToExtract x84, processInEditor, showEditorHelp) have ZERO
+    instances in nocturne. Inside a bracket those functions are noise: they
+    inflate A's residue and stop the counts ever balancing, so the order pass
+    refuses a region whose survivors are otherwise forced.
+
+    Only a family that disappears ENTIRELY counts, and only above MIN_FAMILY.
+    One missing function means "not named yet" -- nocturne is far from fully
+    named -- while a class of ten going to zero is a build decision.
+    """
+    def tally(img):
+        cls, meth = Counter(), Counter()
+        for f in img.by_addr.values():
+            c = core_of(f.get("name"))
+            if not c or "_" not in c:
+                continue
+            k, m = c.split("_", 1)
+            cls[k] += 1
+            meth[m.rsplit("_", 1)[-1]] += 1
+        return cls, meth
+    ca, ma = tally(a_img)
+    cb, mb = tally(b_img)
+    gone_cls = {k for k, n in ca.items() if n >= MIN_FAMILY and cb.get(k, 0) == 0}
+    gone_meth = {k for k, n in ma.items() if n >= MIN_FAMILY and mb.get(k, 0) == 0}
+    return gone_cls, gone_meth
+
+
+def in_absent_family(img, addr, gone_cls, gone_meth):
+    c = core_of((img.by_addr.get(addr) or {}).get("name"))
+    if not c or "_" not in c:
+        return False
+    k, m = c.split("_", 1)
+    return k in gone_cls or m.rsplit("_", 1)[-1] in gone_meth
+
+
+def suggest(a_img, b_img, shapes_a, shapes_b, gap_a, gap_b, absent=None):
     """Greedily align two residue lists.
 
     Deliberately weaker than anything the mapper would commit on: this is a
@@ -153,6 +195,20 @@ def suggest(a_img, b_img, shapes_a, shapes_b, gap_a, gap_b):
     # genuinely all there is.
     rest_a = [x for x in gap_a if x not in claimed_a]
     rest_b = [y for y in gap_b if y not in taken]
+
+    # Drop A-side leftovers belonging to a family the other build does not have
+    # at all, then see whether the survivors balance. This is what rescued
+    # nocturne 00511d80: 15 nocedit functions vs 1, of which 13 were CZThumb --
+    # a class with zero instances in the game build. Stripping them leaves
+    # testCameraVisibility opposite it, which is the correct pair and which the
+    # order pass had refused on the raw counts.
+    if absent and len(rest_a) != len(rest_b):
+        kept = [x for x in rest_a if not in_absent_family(a_img, x, *absent)]
+        if len(kept) == len(rest_b) and kept:
+            for x, y in zip(kept, rest_b):
+                claim(x, y, "position after absent-family strip")
+            return rows, [], []
+
     if rest_a and len(rest_a) == len(rest_b) and all(
             shapes_a.get(x) is None and shapes_b.get(y) is None
             for x, y in zip(rest_a, rest_b)):
@@ -330,7 +386,8 @@ def section_a(a_img, b_img, a2b, b2a, editor_only, include_crt, show):
     return rows
 
 
-def section_b(brackets, unbracketed, a_img, b_img, shapes_a, shapes_b, show, tu_filter):
+def section_b(brackets, unbracketed, a_img, b_img, shapes_a, shapes_b, show,
+              tu_filter, absent=None):
     print("\n" + "=" * 78)
     print("B. UNRESOLVED BRACKETS  (the manual-pairing worklist)")
     print("=" * 78)
@@ -361,7 +418,7 @@ def section_b(brackets, unbracketed, a_img, b_img, shapes_a, shapes_b, show, tu_
         for y in br.gap_b:
             print(f"      {describe(b_img, y, shapes_b)}")
         rows, rest_a, rest_b = suggest(a_img, b_img, shapes_a, shapes_b,
-                                       br.gap_a, br.gap_b)
+                                       br.gap_a, br.gap_b, absent=absent)
         if rows:
             print("  suggested alignment:")
             for x, y, why in rows:
@@ -644,8 +701,13 @@ def main():
     if "b" in args.section:
         brackets, unbracketed = walk_brackets(a_img, b_img, a2b, b2a,
                                               shapes_a, shapes_b, args.include_crt)
+        absent = absent_families(a_img, b_img)
+        print("  families absent from %s entirely: %d class(es), %d method categor(ies)"
+              % (args.to_prog if hasattr(args, "to_prog") else "the target",
+                 len(absent[0]), len(absent[1])))
         proposals = section_b(brackets, unbracketed, a_img, b_img,
-                              shapes_a, shapes_b, args.show, args.tu)
+                              shapes_a, shapes_b, args.show, args.tu,
+                              absent=absent)
         payload["brackets"] = [
             {"tu": br.tu, "anchor_lo": [br.lo_a, br.lo_b],
              "anchor_hi": [br.hi_a, br.hi_b], "reason": br.reason,

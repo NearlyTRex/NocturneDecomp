@@ -5632,12 +5632,38 @@
         "start":"00423d20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_FUN_00423d20",
-    "ret":"undefined1",
+    "name":"core_bugs.cpp_getBugState_FUN_00423d20",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"bug_data",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SBug*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -15808,6 +15834,7 @@
     "importable":true,
     "name":"cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0045dea0",
     "ret":"void",
+    "variadic":true,
     "vars":{
       "locals":[
         {
@@ -16370,6 +16397,56 @@
     }
   },
   {
+    "addr":"00460c20",
+    "body":[
+      {
+        "end":"00460c35",
+        "size":22,
+        "start":"00460c20"
+      }
+    ],
+    "conv":"__cdecl",
+    "importable":true,
+    "name":"engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_00460c20",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonRenderer*"
+        },
+        {
+          "name":"scale_factor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
+    }
+  },
+  {
     "addr":"00460e20",
     "body":[
       {
@@ -16758,7 +16835,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_FUN_00461720",
+    "name":"engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720",
     "ret":"void",
     "vars":{
       "locals":[
@@ -19321,13 +19398,29 @@
         "start":"0046ed20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_dynamite.cpp_FUN_0046ed20",
-    "ret":"undefined1",
+    "name":"core_dynamite.cpp_CDynamite_fireProjectile_FUN_0046ed20",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDynamite*"
+        }
+      ]
     }
   },
   {
@@ -19341,7 +19434,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dynamite.cpp_FUN_0046eda0",
+    "name":"core_dynamite.cpp_CDynamite_isFuseBurnedOut_FUN_0046eda0",
     "ret":"int",
     "vars":{
       "params":[
@@ -24137,6 +24230,7 @@
     "importable":true,
     "name":"engine_font.cpp_CBitFont_drawTextF_FUN_00490b20",
     "ret":"int",
+    "variadic":true,
     "vars":{
       "params":[
         {
@@ -24261,6 +24355,7 @@
     "importable":true,
     "name":"engine_font.cpp_CBitFont_printF_FUN_00490c20",
     "ret":"void",
+    "variadic":true,
     "vars":{
       "locals":[
         {
@@ -24393,6 +24488,7 @@
     "importable":true,
     "name":"engine_font.cpp_CBitFont_drawTextCenterF_FUN_00490d20",
     "ret":"int",
+    "variadic":true,
     "vars":{
       "params":[
         {
@@ -24995,12 +25091,38 @@
         "start":"00495420"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_frankgen.cpp_FUN_00495420",
-    "ret":"undefined1",
+    "name":"core_frankgen.cpp_getActorName_FUN_00495420",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -26822,14 +26944,10 @@
         "start":"0049a320"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_0049a320",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"core_game.cpp_captureDebugMovieFrame_FUN_0049a320",
+    "ret":"void"
   },
   {
     "addr":"0049a8a0",
@@ -27094,7 +27212,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004a03a0",
+    "name":"core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0",
     "ret":"void",
     "vars":{
       "params":[
@@ -33646,27 +33764,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_matrix.c_popViewport_FUN_004ce920",
-    "ret":"void",
-    "vars":{
-      "params":[
-        {
-          "name":"this_ptr",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonRenderer*"
-        }
-      ]
-    }
+    "ret":"void"
   },
   {
     "addr":"004cf1a0",
@@ -51284,13 +51382,61 @@
         "start":"00526020"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00526020",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_00526020",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"vel_x",
+          "storage":{
+            "offset":4,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"vel_y",
+          "storage":{
+            "offset":12,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"vel_z",
+          "storage":{
+            "offset":20,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ]
     }
   },
   {
@@ -51304,7 +51450,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00526120",
+    "name":"sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120",
     "ret":"void",
     "vars":{
       "params":[
@@ -51336,13 +51482,29 @@
         "start":"005262a0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_005262a0",
-    "ret":"undefined1",
+    "name":"sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005262a0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"flag_mask",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ]
     }
   },
   {
@@ -51632,7 +51794,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_FUN_00527520",
+    "name":"sound_sndmain.cpp_getNextActiveSfx_FUN_00527520",
     "ret":"uint",
     "vars":{
       "params":[
@@ -52793,6 +52955,24 @@
     "name":"engine_special.cpp_unlockFrame_FUN_00532320",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"clear_lock_flag",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -56406,14 +56586,10 @@
         "start":"00552a20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_wddvmem.cpp_FUN_00552a20",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00552a20",
+    "ret":"void"
   },
   {
     "addr":"005533a0",
@@ -56493,7 +56669,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_wddvmem.cpp_FUN_00553ba0",
+    "name":"wincore_wddvmem.cpp_videoRestore_FUN_00553ba0",
     "ret":"void"
   },
   {
@@ -56507,7 +56683,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_wddvmem.cpp_FUN_00553ca0",
+    "name":"wincore_wddvmem.cpp_stubFunction_FUN_00553ca0",
     "ret":"void"
   },
   {

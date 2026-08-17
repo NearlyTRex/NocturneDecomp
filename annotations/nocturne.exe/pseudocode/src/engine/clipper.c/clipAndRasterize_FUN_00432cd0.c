@@ -51,7 +51,7 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
   
   bVar18 = 0;
   if (INT_005b7644 == 0) {
-    engine_prim_c_FUN_004fa2e0(vertex_indices,vertex_count);
+    engine_prim_c_renderIndexedPolygonSoftware_FUN_004fa2e0(vertex_indices,vertex_count);
   }
   else {
     uVar7 = 0xffffffff;
@@ -590,7 +590,8 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_00432cd0(int vertex_count,int
         }
       }
       if (2 < (int)DAT_00766c70) {
-        engine_prim_c_FUN_004f9dd0((SRenderVertex *)&DAT_00766c74,DAT_00766c70);
+        engine_prim_c_renderPolygonSoftware_FUN_004f9dd0
+                  ((SRenderVertex *)&DAT_00766c74,DAT_00766c70);
         return;
       }
     }

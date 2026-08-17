@@ -16,9 +16,16 @@
 #
 # ============================================================================
 
-@00460bf0 [ESP:+0]  # JMP 0x004cdbc0
-BRANCH (ram,0x4cdbc0,4)
+@00460bf0 [ESP:+0](-4)  # CALL 0x004cdbc0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x460bf5,4)
+CALL (ram,0x4cdbc0,4)
+
+@00460bf5 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 1 instructions, 1 P-code ops
+# Summary: 2 instructions, 6 P-code ops
 # ============================================================================

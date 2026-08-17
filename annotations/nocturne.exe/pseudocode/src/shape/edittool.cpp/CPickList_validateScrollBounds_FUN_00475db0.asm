@@ -7,9 +7,9 @@
 ; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230 at 00475240
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 004751fc
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 at 00474e93
-;   shape_edittool.cpp_FUN_00475230 at 00475240
 ;
 ; *****************************************************************************
 

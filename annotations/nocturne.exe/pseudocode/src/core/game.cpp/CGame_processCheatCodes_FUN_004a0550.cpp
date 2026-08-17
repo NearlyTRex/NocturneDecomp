@@ -1289,7 +1289,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,&DAT_005b92f0);
             break;
           }
-          shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar11);
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+                    (g_CEditorTools_PTR_005b6d50,pcVar11);
         }
       }
 LAB_004a2165:

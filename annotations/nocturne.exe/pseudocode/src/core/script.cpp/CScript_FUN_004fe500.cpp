@@ -16,6 +16,6 @@ void __cdecl core_script_cpp_CScript_FUN_004fe500(CScript *this_ptr)
     this_ptr->dialog_entries = (SDialogEntry *)0x0;
   }
   this_ptr->dialog_entry_count = 0;
-  shape_edittool_cpp_FUN_00476160(&g_CPickList_01e56c30);
+  shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01e56c30);
   return;
 }

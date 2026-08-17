@@ -91,9 +91,9 @@ void __cdecl CKeyFramedModel::populateCollisionList(CKeyFramedModel *this_ptr,CV
 // Address: 004543b0
 CKeyFramedModel * __cdecl loadModel(char *filename);
 
-// Original: core_dmodel.cpp_FUN_00454460
+// Original: core_dmodel.cpp_freeAllModels_FUN_00454460
 // Address: 00454460
-void __cdecl FUN_00454460(void);
+void __cdecl freeAllModels(void);
 
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 // Address: 00454490

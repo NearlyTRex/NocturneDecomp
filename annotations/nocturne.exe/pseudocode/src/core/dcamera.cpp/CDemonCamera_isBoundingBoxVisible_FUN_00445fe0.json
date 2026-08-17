@@ -54,6 +54,12 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 28,
+        "line": 150,
+        "message": "use of undeclared identifier 'stack0xfffffec8'"
       }
     ],
     "success": false,
@@ -62,19 +68,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 241,
+    "complexity_score": 234,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
+    "pseudocode_lines": 189,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
+      "stack_ref",
       "unrolled_memcpy"
     ],
-    "total_lines": 558
+    "total_lines": 551
   },
   "cross_references": [
     {
@@ -851,16 +857,16 @@
   },
   "suspects": [
     {
-      "description": "Raw hex address 0x446087 assigned to bare local `iStack_13c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_13c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 84,
-      "match": "0x446087",
+      "description": "Direct stack address reference",
+      "line": 143,
+      "match": "&stack0xfffffec8",
       "severity": "moderate",
-      "text": "iStack_13c = 0x446087;",
-      "type": "raw_address_constant"
+      "text": "(CVector3i *)&stack0xfffffec8);",
+      "type": "stack_ref"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 78,
+      "line": 75,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;",
@@ -868,7 +874,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 187,
+      "line": 180,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",

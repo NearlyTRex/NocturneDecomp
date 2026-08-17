@@ -93,6 +93,12 @@
   },
   "cross_references": [
     {
+      "addr": "004f8eb0",
+      "from_addr": "004f8eee",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f88a0",
       "from_addr": "004f8903",
       "name": "engine_pod.cpp_CPod_mount_FUN_004f88a0",
@@ -108,12 +114,6 @@
       "addr": "004f9100",
       "from_addr": "004f911f",
       "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_004f9100",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f8eb0",
-      "from_addr": "004f8eee",
-      "name": "engine_pod.cpp_FUN_004f8eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -258,7 +258,7 @@
       {
         "call_addr": "004f8eee",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_004f8eb0",
+        "caller": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -57,7 +57,7 @@ void __cdecl parse::tz_string(char *tz_string);
 
 // Original: crt_time.c_gmtime_r_FUN_00607690
 // Address: 00607690
-undefined4 * __cdecl gmtime::r(int days,uint seconds,int timezone_offset,undefined4 *param_4);
+_tm * __cdecl gmtime::r(time_t days,time_t seconds,time_t timezone_offset,_tm *result);
 
 // Original: crt_time.c_is_leap_year_FUN_00607820
 // Address: 00607820

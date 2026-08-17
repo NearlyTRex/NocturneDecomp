@@ -39,11 +39,11 @@
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0
-;   sound_sndmain.cpp_FUN_00526120
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
+;   sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0
 ;   ... and 4 more
 ;
@@ -254,8 +254,8 @@ section .text
         ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0(float volume)
     ADD ESP,0x4                         ; 004c7c22
     PUSH dword ptr [ESP + 0x10]         ; 004c7c25
-    CALL sound_sndmain.cpp_FUN_00526120 ; 004c7c29
-        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00526120(float base_frequency)
+    CALL sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120 ; 004c7c29
+        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_00526120(float base_frequency)
     ADD ESP,0x4                         ; 004c7c2e
     PUSH 0x587a89                       ; 004c7c31 | = "cre-charge.wav"
     CALL sound_sndmain.cpp_startSfx_FUN_005265a0 ; 004c7c36

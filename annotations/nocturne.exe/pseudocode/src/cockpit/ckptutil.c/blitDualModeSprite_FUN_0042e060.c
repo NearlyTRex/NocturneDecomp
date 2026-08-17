@@ -24,7 +24,7 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_0042e060(void *sprite_dat
   
   iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
-    pCVar5 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     if (g_BitsPerPixel == 8) {
       pvStack_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);
       if (0 < height) {

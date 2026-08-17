@@ -280,7 +280,7 @@ void __cdecl core_charactr_cpp_getTranslationMatrix_FUN_0042f990(CMatrix3x4f *ma
 int __cdecl core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(CDeformableModel *model_ptr);
 char * __cdecl core_charactr_cpp_getActorCreateEvent_FUN_0042f9d0(CDemonActor *actor);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(CGame *game_ptr);
-CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter *this_ptr,uint flags);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042fab0(SFire *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042fac0(SPose *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042fad0(SPose *this_ptr,uint flags);

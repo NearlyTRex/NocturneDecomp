@@ -26,7 +26,8 @@ CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_004f85
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 502;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CPodFile::getAuditRecord - can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CPodFile::getAuditRecord - can't open %s",this_ptr->filename);
   }
   _fseek(file,record_index * 0x138 + this_ptr->total_file_size,0);
   _fread(auStack_144,0x138,1,file);

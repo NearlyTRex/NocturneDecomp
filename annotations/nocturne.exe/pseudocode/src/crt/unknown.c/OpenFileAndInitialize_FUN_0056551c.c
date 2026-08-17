@@ -13,6 +13,7 @@ _FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_m
   ushort uVar2;
   int iVar3;
   uint uVar4;
+  uint uVar5;
   
   *(byte *)&file_struct->_flag = (byte)file_struct->_flag & 0xfc;
   file_struct->_flag = file_struct->_flag | parsed_mode_flags;
@@ -28,6 +29,7 @@ _FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_m
     else {
       uVar4 = uVar4 | 0x200;
     }
+    uVar5 = 0;
   }
   else {
     bVar1 = ((parsed_mode_flags & 1U) != 0) + 0x21;
@@ -44,22 +46,23 @@ _FILE * __cdecl OpenFileAndInitialize(char *filename,char mode_char,int parsed_m
       uVar2 = CONCAT11(2,bVar1);
     }
     uVar4 = (uint)uVar2;
+    uVar5 = 0x180;
   }
-  iVar3 = CreateFileVariadic(filename,uVar4,additional_flags);
+  iVar3 = CreateFileVariadic(filename,uVar4,additional_flags,uVar5);
   file_struct->_handle = iVar3;
-  if (file_struct->_handle != -1) {
-    file_struct->_cnt = 0;
-    file_struct->_bufsize = 0;
-    file_struct->_link->__get_base = (char *)0x0;
-    file_struct->_link->__get_end = (char *)stage1_result;
-    *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
-    file_struct->_link->__reserve_end = (char *)0x0;
-    if ((parsed_mode_flags & 0x80U) != 0) {
-      _fseek(file_struct,0,2);
-    }
-    DetectDeviceAndSetBuffering(file_struct);
-    return file_struct;
+  if (file_struct->_handle == -1) {
+    __freefp(file_struct);
+    return (_FILE *)0x0;
   }
-  __freefp(file_struct);
-  return (_FILE *)0x0;
+  file_struct->_cnt = 0;
+  file_struct->_bufsize = 0;
+  file_struct->_link->__get_base = (char *)0x0;
+  file_struct->_link->__get_end = (char *)stage1_result;
+  *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
+  file_struct->_link->__reserve_end = (char *)0x0;
+  if ((parsed_mode_flags & 0x80U) != 0) {
+    _fseek(file_struct,0,2);
+  }
+  DetectDeviceAndSetBuffering(file_struct);
+  return file_struct;
 }

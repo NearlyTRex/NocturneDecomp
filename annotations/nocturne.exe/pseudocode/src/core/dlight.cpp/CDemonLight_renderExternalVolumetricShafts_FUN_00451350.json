@@ -56,27 +56,21 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 85,
-        "message": "no matching function for call to 'engine_drender_cpp_FUN_00460d10'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 35,
-        "line": 90,
-        "message": "use of undeclared identifier '_DAT_0059c038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
         "line": 91,
         "message": "use of undeclared identifier '_DAT_0059c038'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 35,
+        "column": 38,
         "line": 92,
+        "message": "use of undeclared identifier '_DAT_0059c038'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 93,
         "message": "use of undeclared identifier '_DAT_0059c038'"
       },
       {
@@ -114,6 +108,12 @@
         "column": 51,
         "line": 192,
         "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 51,
+        "line": 193,
+        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
       }
     ],
     "success": false,
@@ -122,14 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 357,
+    "complexity_score": 407,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 252,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "unknown_field",
       "unknown_type",
@@ -186,6 +188,11 @@
       "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0"
     },
     {
+      "addr": "00460d10",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10"
+    },
+    {
       "addr": "00460d30",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30"
@@ -204,11 +211,6 @@
       "addr": "00460e80",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80"
-    },
-    {
-      "addr": "00460d10",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_00460d10"
     },
     {
       "addr": "0053075c",
@@ -907,44 +909,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonLight_renderExternalVolumetricShafts_FUN_00451350.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "objectIndex",
-          "column": 16,
-          "line": 88,
-          "message": "The address of local variable 'local_98' is accessed at non-zero index.",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 86,
-          "message": "Uninitialized variable: local_f0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 24,
-          "line": 92,
-          "message": "Uninitialized variable: local_94",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 37,
-          "line": 87,
-          "message": "Uninitialized variable: afStack_ec",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -965,9 +929,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 21,
-      "match": "afStackY_10d8",
+      "match": "aiStackY_10d8",
       "severity": "moderate",
-      "text": "float afStackY_10d8 [985];",
+      "text": "int aiStackY_10d8 [985];",
       "type": "stack_alignment_array"
     },
     {
@@ -1003,6 +967,22 @@
       "type": "unknown_field"
     },
     {
+      "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&local_f0",
+      "severity": "moderate",
+      "text": "local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)&local_f0",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 109,
       "match": "field-by-field struct copy",
@@ -1011,36 +991,20 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "The address of local variable 'local_98' is accessed at non-zero index.",
-      "line": 88,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 81,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(&local_98)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =",
-      "type": "static_object_index"
+      "text": "local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Uninitialized variable: local_f0",
-      "line": 86,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_9c = local_f0;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_94",
-      "line": 92,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_10c = (float)local_94 * _DAT_0059c038;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: afStack_ec",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(&local_98)[(uint)bVar5 * -2] = afStack_ec[(uint)bVar5 * -2];",
-      "type": "static_legacy_uninitvar"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 83,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

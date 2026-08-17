@@ -11,7 +11,7 @@
 ;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30 at 0048dc3a
 ;
 ; Called Functions:
-;   engine_special.cpp_updateTexture_FUN_005b7380
+;   engine_special.cpp_updateTextureFromPalette_FUN_005b7380
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     PUSH ECX                            ; 005dd942
     MOV EBX,dword ptr [ESP + 0xc]       ; 005dd943
     PUSH EBX                            ; 005dd947
-    CALL engine_special.cpp_updateTexture_FUN_005b7380 ; 005dd948
-        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
+    CALL engine_special.cpp_updateTextureFromPalette_FUN_005b7380 ; 005dd948
+        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_updateTextureFromPalette_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd94d
     POP EBX                             ; 005dd950
     RET                                 ; 005dd951

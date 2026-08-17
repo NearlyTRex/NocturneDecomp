@@ -57,32 +57,14 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 47,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_005992b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_005992b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_005992b0'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 43,
-        "line": 24,
+        "line": 22,
         "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 25,
+        "line": 23,
         "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
       }
     ],
@@ -92,17 +74,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 80,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 312
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 311
   },
   "cross_references": [],
   "function": {
@@ -132,9 +112,9 @@
   "globals": [
     {
       "addr": "005992b0",
-      "name": "DAT_005992b0",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005992b0",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae700",
@@ -252,14 +232,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

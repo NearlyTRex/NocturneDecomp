@@ -147,9 +147,9 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 // Address: 00442c50
 int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
-// Original: core_dcamera.cpp_FUN_00442d9c
+// Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c
 // Address: 00442d9c
-void FUN_00442d9c(void);
+void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
 
 // Original: core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_00443050
 // Address: 00443050

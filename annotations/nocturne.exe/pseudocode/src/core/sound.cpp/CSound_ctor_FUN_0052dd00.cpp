@@ -11,6 +11,6 @@ CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0052dd00(CSound *this_ptr)
 {
   this_ptr->magic = 0x1400;
   sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005273d0(3);
-  sound_sndmain_cpp_FUN_00527d80();
+  sound_sndmain_cpp_resetSoundSystemDefaults_FUN_00527d80();
   return this_ptr;
 }

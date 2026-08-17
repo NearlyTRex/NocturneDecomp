@@ -11,6 +11,6 @@ int __watcallStack remove(char *filename)
 {
   int iVar1;
   
-  iVar1 = FUN_0056bbf0(filename);
+  iVar1 = remove(filename);
   return iVar1;
 }

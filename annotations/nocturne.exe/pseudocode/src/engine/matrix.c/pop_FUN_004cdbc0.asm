@@ -1,14 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr)
+; void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)
 ;
-; Parameters:
-; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 at 00460bf0
-;   shape_edittool.cpp_FUN_00472fd0 at 00473068
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_00472fd0 at 00473068
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_00588233

@@ -56,16 +56,28 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "incompatible_types",
+        "column": 12,
+        "line": 17,
+        "message": "incompatible integer to pointer conversion assigning to 'CDemonActor *' from 'undefined4' (aka 'unsigned int')"
+      },
+      {
         "category": "other",
         "column": 20,
-        "line": 12,
+        "line": 20,
         "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CDemonActor *')"
       },
       {
         "category": "incompatible_types",
-        "column": 5,
-        "line": 13,
+        "column": 14,
+        "line": 21,
         "message": "no matching function for call to 'core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0'"
+      },
+      {
+        "category": "format_error",
+        "column": 130,
+        "line": 34,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -74,17 +86,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 35,
+    "complexity_score": 72,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 62
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -186,7 +198,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
@@ -429,7 +441,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 10,
+      "match": "DAT_00763e8c",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_00763e8c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
       "match": "DAT_00763e8c",
       "severity": "mild",
       "text": "if (DAT_00763e8c != (CDemonActor *)0x0) {",
@@ -437,10 +457,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 6,
+      "line": 14,
       "match": "DAT_00763e8c",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);",
+      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00763e88",
+      "severity": "mild",
+      "text": "if (DAT_00763e88 == 2) {",
       "type": "undefined_data"
     }
   ]

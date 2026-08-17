@@ -2,11 +2,11 @@
 // Address: 00532320
 // Address Range: [[00532320, 0053233c]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)
+// Signature: int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)
+int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
 
 {
   int iVar1;

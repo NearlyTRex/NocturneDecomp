@@ -15,7 +15,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *pa
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 674;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't create %s",param_2);
   }
   _fwrite(&DAT_020875f8,0x3000,this_ptr->camera_count,file);
   if ((file->_flag & 0x20) == 0) {
@@ -24,7 +24,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513670(CDemonSet *this_ptr,char *pa
   }
   g_CurrentFilename = "..\\core\\setdir.cpp";
   g_CurrentLineNumber = 676;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Error writing %s");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("Error writing %s",param_2);
   _fclose(file);
   return;
 }

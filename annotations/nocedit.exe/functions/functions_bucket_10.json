@@ -10988,7 +10988,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
     "ret":"void",
@@ -26149,7 +26148,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
     "ret":"void",
@@ -26909,7 +26907,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210",
     "ret":"void",
@@ -42144,7 +42141,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
     "ret":"int",
@@ -50571,7 +50567,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90",
     "ret":"void",
@@ -64714,7 +64709,6 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690",
     "ret":"void",
@@ -112297,10 +112291,9 @@
       }
     ],
     "conv":"__cdecl",
-    "custom_storage":true,
     "importable":true,
     "name":"crt_time.c_gmtime_r_FUN_00607690",
-    "ret":"undefined1",
+    "ret":"_tm*",
     "vars":{
       "locals":[
         {
@@ -112450,13 +112443,29 @@
         {
           "name":"result",
           "storage":{
-            "invalid":true
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
           },
-          "type":"undefined1"
+          "type":"_tm*"
         }
       ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

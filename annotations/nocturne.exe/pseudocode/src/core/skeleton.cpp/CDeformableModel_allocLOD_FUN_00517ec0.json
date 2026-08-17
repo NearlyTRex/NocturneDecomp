@@ -72,6 +72,24 @@
         "column": 14,
         "line": 48,
         "message": "assigning to 'int *' from incompatible type 'void *'"
+      },
+      {
+        "category": "format_error",
+        "column": 107,
+        "line": 62,
+        "message": "format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 130,
+        "line": 62,
+        "message": "format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 14,
+        "line": 63,
+        "message": "format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -80,17 +98,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 68,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 55,
     "suspect_count": 1,
     "suspect_types": [
       "alloc_magic_size"
     ],
-    "total_lines": 209
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -115,7 +133,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {

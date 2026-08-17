@@ -54,66 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 15,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c039dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c039e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c039e4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01cc5174'; did you mean 'DAT_005c5174'?"
       }
     ],
     "success": false,
@@ -121,18 +61,16 @@
   },
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 3,
-    "complexity_score": 42,
+    "assembly_lines": 4,
+    "complexity_score": 5,
     "cross_reference_count": 1,
-    "function_call_count": 0,
+    "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 30
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [
     {
@@ -147,14 +85,20 @@
     "address_range": [
       [
         "00460be0",
-        "00460be4"
+        "00460be5"
       ]
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0",
     "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_matrixPush_FUN_00460be0(CDemonRenderer *this_ptr)"
   },
-  "function_calls": [],
+  "function_calls": [
+    {
+      "addr": "004cdac0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_matrixPush_FUN_004cdac0"
+    }
+  ],
   "globals": [],
   "param_estimates": {
     "call_site_count": 1,
@@ -178,12 +122,17 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 1.0,
-    "instruction_count": 1,
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 2,
     "opcode_distribution": {
-      "BRANCH": 1
+      "CALL": 1,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 1
     },
-    "pcode_op_count": 1
+    "pcode_op_count": 6
   },
   "stack_frame": {
     "frame_size": 8,
@@ -201,14 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

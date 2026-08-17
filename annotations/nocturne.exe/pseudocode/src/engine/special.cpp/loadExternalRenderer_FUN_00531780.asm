@@ -39,8 +39,8 @@
 ;   engine_special.cpp_CExternalRenderer_validate_FUN_00532df0
 ;   engine_special.cpp_selectCard_FUN_00532d00
 ;   engine_special.cpp_shutdownExternalRenderer_FUN_00530d40
-;   wincore_wddvmem.cpp_FUN_00553d30
 ;   wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
+;   wincore_wddvmem.cpp_loadLibrary_FUN_00553d30
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0053179b (UNCONDITIONAL_JUMP)  ; LAB_0053179b
     PUSH 0x5c0e80                       ; 005317b9 | g_RendererDllPath
         ;   Label: LAB_005317b9
-    CALL wincore_wddvmem.cpp_FUN_00553d30 ; 005317be
-        ;   XREF to: 00553d30 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_FUN_00553d30(LPCSTR lpLibFileName)
+    CALL wincore_wddvmem.cpp_loadLibrary_FUN_00553d30 ; 005317be
+        ;   XREF to: 00553d30 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_00553d30(LPCSTR lpLibFileName)
     ADD ESP,0x4                         ; 005317c3
     MOV [0x02dc9e08],EAX                ; 005317c6 | g_RendererDLLHandle
     TEST EAX,EAX                        ; 005317cb

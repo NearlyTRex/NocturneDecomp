@@ -9,7 +9,7 @@
 ; CVector3f[10]    Stack[-0x9c]:120  local_9c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005992b0
+;   float FLOAT_005992b0 = 256
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   void* PTR_DAT_005ae700 = 01b4d738
 ;   int g_WindowWidth = 0x140
@@ -61,13 +61,13 @@ section .text
     MOV EAX,EDI                         ; 0040ae26
     MOV EDX,dword ptr [0x005ae700]      ; 0040ae28 | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0040ae2e
-    FMUL float ptr [0x005992b0]         ; 0040ae30 | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ae30 | FLOAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ae36
     FLD float ptr [EAX + 0x4]           ; 0040ae38
-    FMUL float ptr [0x005992b0]         ; 0040ae3b | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ae3b | FLOAT_005992b0
     FISTP dword ptr [EBX + 0x4]         ; 0040ae41
     FLD float ptr [EAX + 0x8]           ; 0040ae44
-    FMUL float ptr [0x005992b0]         ; 0040ae47 | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ae47 | FLOAT_005992b0
     FISTP dword ptr [EBX + 0x8]         ; 0040ae4d
     LEA EAX,[ESP + 0x78]                ; 0040ae50
     PUSH EAX                            ; 0040ae54

@@ -74,9 +74,21 @@
         "message": "use of undeclared identifier 'DAT_02dbd348'"
       },
       {
+        "category": "format_error",
+        "column": 97,
+        "line": 78,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 100,
+        "line": 88,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
+      },
+      {
         "category": "incompatible_types",
         "column": 15,
-        "line": 94,
+        "line": 95,
         "message": "no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_00521830'"
       }
     ],
@@ -86,12 +98,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 186,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 97,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -99,7 +111,7 @@
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 326
+    "total_lines": 327
   },
   "cross_references": [
     {
@@ -124,7 +136,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {

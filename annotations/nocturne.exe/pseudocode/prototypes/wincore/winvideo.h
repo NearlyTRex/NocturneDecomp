@@ -19,6 +19,6 @@ void __cdecl openMovie(HWND parent_window,char *movie_filename);
 // Address: 0055a4a0
 void __cdecl toggleMoviePlayback(HWND notify_window,int play_state);
 
-// Original: wincore_winvideo.cpp_FUN_0055a510
+// Original: wincore_winvideo.cpp_playMovie_FUN_0055a510
 // Address: 0055a510
-int __cdecl FUN_0055a510(char *directory_path,char *movie_filename);
+int __cdecl playMovie(char *directory_path,char *movie_filename);

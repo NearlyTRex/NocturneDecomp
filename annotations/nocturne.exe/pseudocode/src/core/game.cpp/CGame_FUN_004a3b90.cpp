@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
   if (this_ptr->letterbox_mode != 0) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Unable to save during cinematic")
     ;
-    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar5);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar5);
     return;
   }
   remove("save\\$$SAVE$$.TMP");
@@ -96,7 +96,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
   if (file == (_FILE *)0x0) {
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Warning!  Your game didn't save.")
     ;
-    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar5);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar5);
     DAT_00763e90 = file;
     return;
   }
@@ -149,7 +149,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
     buffer_size = 0x000001A4;
     crt_fstream_cpp_openFile_FUN_00565eb5(local_14c,"save\\$$SAVE$$.TMP",0x121,0x000001A4);
     if (local_108._ios.__enabled_exceptions != 0) {
-      shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
       crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;
@@ -157,7 +157,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filenam
     _sprintf(local_350,"%s\\%s","save",local_558);
     crt_fstream_cpp_openFile_FUN_00565eb5(local_cc,local_350,0x112,buffer_size);
     if (local_88._ios.__enabled_exceptions != 0) {
-      shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,pcVar4);
       crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_cc,0);
       crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_14c,0);
       return;

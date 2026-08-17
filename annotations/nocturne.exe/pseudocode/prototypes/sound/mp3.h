@@ -203,9 +203,9 @@ CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr,uint flags);
 // Address: 004e7df0
 void __cdecl CMP3Decoder::openFile(CMP3Decoder *this_ptr,char *filename);
 
-// Original: sound_mp3.cpp_FUN_004e7ed0
+// Original: sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0
 // Address: 004e7ed0
-int __cdecl FUN_004e7ed0(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
+int __cdecl CMP3Decoder::parseHeader(CMP3Decoder *this_ptr,_FILE *file_handle,int file_size);
 
 // Original: sound_mp3.cpp_CMP3Decoder_free_FUN_004e8260
 // Address: 004e8260

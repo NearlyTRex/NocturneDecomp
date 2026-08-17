@@ -19,7 +19,7 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00473de0(CStrList *this_pt
   if (new_capacity < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 2517;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::allocate - invalid count: %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::allocate - invalid count: %d",new_capacity);
   }
   if (this_ptr->capacity < new_capacity) {
     this_ptr->capacity = new_capacity;

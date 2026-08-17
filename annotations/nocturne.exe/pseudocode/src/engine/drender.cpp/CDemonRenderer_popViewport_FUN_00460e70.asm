@@ -14,11 +14,15 @@
 ;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 005129a8
 ;   core_setdir.cpp_CDemonSet_FUN_00513720 at 00513884
 ;
+; Called Functions:
+;   engine_matrix.c_popViewport_FUN_004ce920
+;
 ; *****************************************************************************
 
 section .text
 
-    JMP 0x004ce920                      ; 00460e70
-        ;   XREF to: 004ce920 (UNCONDITIONAL_JUMP)
+    CALL engine_matrix.c_popViewport_FUN_004ce920 ; 00460e70
+        ;   XREF to: 004ce920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_004ce920()
         ;   Label: engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
+    RET                                 ; 00460e75
 

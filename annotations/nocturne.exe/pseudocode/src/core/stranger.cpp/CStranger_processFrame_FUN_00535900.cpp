@@ -946,7 +946,8 @@ LAB_00537586:
       if ((this_ptr->base).base.is_on_ground != 0) {
         engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"Splat at %3.2f fps\n");
+                  (g_CConsole_PTR_005ad350,"Splat at %3.2f fps\n",
+                   (double)(this_ptr->base).base.velocity.y);
         fVar17 = -this_ptr->fall_velocity_snapshot;
         dVar27 = (double)fVar17;
         if (fVar17 < (float)20) {

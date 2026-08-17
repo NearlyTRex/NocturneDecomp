@@ -11,7 +11,7 @@ int __watcallStack crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *this_ptr)
 {
   void *new_buffer;
   
-  new_buffer = FUN_00571ee0(0x204);
+  new_buffer = streambuf_allocBuffer(0x204);
   if (new_buffer == (void *)0x0) {
     return -1;
   }

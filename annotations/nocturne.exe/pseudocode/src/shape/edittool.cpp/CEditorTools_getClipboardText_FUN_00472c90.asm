@@ -15,7 +15,7 @@
 ;   void* PTR_OpenClipboard_00575454 = 001759fc
 ;   char CHAR_00h_0057ea91 = \x00
 ;   undefined4 DAT_01bcd078
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
 ;   CloseClipboard
@@ -29,7 +29,7 @@ section .text
 
     PUSH EBX                            ; 00472c90
         ;   Label: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00472c90
-    MOV EDX,dword ptr [0x02de2098]      ; 00472c91 | DAT_02de2098
+    MOV EDX,dword ptr [0x02de2098]      ; 00472c91 | g_HWND_02de2098
     PUSH EDX                            ; 00472c97
     CALL dword ptr CS:[0x575454]        ; 00472c98 | PTR_OpenClipboard_00575454
     TEST EAX,EAX                        ; 00472c9f

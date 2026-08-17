@@ -1,0 +1,641 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 42,
+        "line": 35,
+        "message": "use of undeclared identifier 'PTR_s_f0100_005baf18'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 59,
+        "message": "use of undeclared identifier 'DAT_01cc7d10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 70,
+        "message": "use of undeclared identifier 'DAT_01cc7e10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 81,
+        "message": "use of undeclared identifier 'DAT_01cc7f10'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 91,
+        "message": "use of undeclared identifier 'DAT_01cc8010'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 15,
+        "line": 93,
+        "message": "use of undeclared identifier 'DAT_01cc7d10'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 474,
+    "complexity_score": 327,
+    "cross_reference_count": 1,
+    "function_call_count": 22,
+    "global_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 182,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 656
+  },
+  "cross_references": [
+    {
+      "addr": "004c85e0",
+      "from_addr": "004c85e0",
+      "name": "core_main.c_enterMainGameMenu_FUN_004c85e0",
+      "type": "UNCONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "004d23d0",
+    "address_range": [
+      [
+        "004d23d0",
+        "004d2871"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_showMainGameMenu_FUN_004d23d0",
+    "signature": "int __cdecl core_menu_cpp_showMainGameMenu_FUN_004d23d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a4170",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004a4170"
+    },
+    {
+      "addr": "004a4b50",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_FUN_004a4b50"
+    },
+    {
+      "addr": "0049a890",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_0049a890"
+    },
+    {
+      "addr": "0049a8a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_updateDT_FUN_0049a8a0"
+    },
+    {
+      "addr": "004c8510",
+      "is_variadic": false,
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004c8510"
+    },
+    {
+      "addr": "004cf440",
+      "is_variadic": false,
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440"
+    },
+    {
+      "addr": "004d21c0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_showOptionsScreen_FUN_004d21c0"
+    },
+    {
+      "addr": "004dea60",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_free_FUN_004dea60"
+    },
+    {
+      "addr": "004de860",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_init_FUN_004de860"
+    },
+    {
+      "addr": "004dec50",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_render_FUN_004dec50"
+    },
+    {
+      "addr": "004deae0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_update_FUN_004deae0"
+    },
+    {
+      "addr": "0052e850",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_configure_FUN_0052e850"
+    },
+    {
+      "addr": "0052e9c0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_reset_FUN_0052e9c0"
+    },
+    {
+      "addr": "00403f50",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403f50"
+    },
+    {
+      "addr": "0040e3c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0"
+    },
+    {
+      "addr": "0040e9e0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_scale_FUN_0040e9e0"
+    },
+    {
+      "addr": "0052ee70",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0052ee70"
+    },
+    {
+      "addr": "005459f0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_clearTextureCache_FUN_005459f0"
+    },
+    {
+      "addr": "00526ca0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0"
+    },
+    {
+      "addr": "00526cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0"
+    },
+    {
+      "addr": "004ee370",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_004ee370"
+    },
+    {
+      "addr": "00553910",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004d23b8",
+      "name": "switchdataD_004d23b8",
+      "type": "void*",
+      "value": "004d25ec"
+    },
+    {
+      "addr": "00588d05",
+      "name": "s_fblurl_00588d05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d0c",
+      "name": "s_fblurm_00588d0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d13",
+      "name": "s_fblurr_00588d13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d1a",
+      "name": "s_S_T_A_R_T_00588d1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d24",
+      "name": "s_O_P_T_I_O_N_S_00588d24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d32",
+      "name": "s_L_O_A_D_00588d32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d3a",
+      "name": "s_Q_U_I_T_00588d3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00589207",
+      "name": "s_f0100_00589207",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058920d",
+      "name": "s_f0300_0058920d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "005b9354",
+      "name": "g_CGame_PTR_005b9354",
+      "type": "CGame*",
+      "value": "01c775ec"
+    },
+    {
+      "addr": "005bac64",
+      "name": "g_CKeys_PTR_005bac64",
+      "type": "CKeys*",
+      "value": "01cc30e4"
+    },
+    {
+      "addr": "005baf18",
+      "name": "PTR_s_f0100_005baf18",
+      "type": "void*",
+      "value": "00589207"
+    },
+    {
+      "addr": "005baf1c",
+      "name": "PTR_s_f0300_005baf1c",
+      "type": "undefined1*",
+      "value": "0058920d"
+    },
+    {
+      "addr": "005bed68",
+      "name": "g_CSound_PTR_005bed68",
+      "type": "CSound*",
+      "value": "02dc9450"
+    },
+    {
+      "addr": "01c775ec",
+      "name": "g_CGame_01c775ec",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01c775f0",
+      "name": "g_CGame_01c775ec.game_pixy",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c77850",
+      "name": "g_CGame_01c775ec.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc30e4",
+      "name": "g_CKeys_01cc30e4",
+      "type": "CKeys",
+      "value": null
+    },
+    {
+      "addr": "01cc7d10",
+      "name": "DAT_01cc7d10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7d11",
+      "name": "DAT_01cc7d11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7d12",
+      "name": "DAT_01cc7d12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7d13",
+      "name": "DAT_01cc7d13",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7e10",
+      "name": "DAT_01cc7e10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7e11",
+      "name": "DAT_01cc7e11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7e12",
+      "name": "DAT_01cc7e12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7e13",
+      "name": "DAT_01cc7e13",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f10",
+      "name": "DAT_01cc7f10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f11",
+      "name": "DAT_01cc7f11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f12",
+      "name": "DAT_01cc7f12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7f13",
+      "name": "DAT_01cc7f13",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8010",
+      "name": "DAT_01cc8010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8011",
+      "name": "DAT_01cc8011",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8012",
+      "name": "DAT_01cc8012",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8013",
+      "name": "DAT_01cc8013",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dc9d60",
+      "name": "g_UseDirect3D",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1680440771349865,
+    "instruction_count": 363,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "BRANCHIND": 1,
+      "CALL": 43,
+      "CALLIND": 11,
+      "CBRANCH": 27,
+      "COPY": 244,
+      "INT_ADD": 92,
+      "INT_AND": 196,
+      "INT_CARRY": 56,
+      "INT_EQUAL": 182,
+      "INT_LESS": 17,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 56,
+      "INT_SLESS": 91,
+      "INT_SUB": 159,
+      "INT_XOR": 4,
+      "LOAD": 47,
+      "POPCOUNT": 91,
+      "RETURN": 2,
+      "STORE": 157
+    },
+    "pcode_op_count": 1513
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_01cc7d10",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_01cc7d10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_01cc7e10",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_01cc7e10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_01cc7f10",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_01cc7f10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_01cc8010",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_01cc8010;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_01cc7d10",
+      "severity": "mild",
+      "text": "puVar5 = &DAT_01cc7d10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 98,
+      "match": "*(byte **)(iVar4 + 0x1cc8110",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar4 + 0x1cc8110) = puVar5;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer value `&PTR_s_f0100_005baf18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&PTR_s_f0100_005baf18",
+      "severity": "moderate",
+      "text": "(this_ptr,*(char **)((int)&PTR_s_f0100_005baf18 + iVar6),0x40,0x40);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 53,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 64,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 75,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 87,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(this_ptr,*(char **)((int)&PTR_s_f0100_005baf18 + iVar6),0x40,0x40);",
+      "type": "pointer_cast"
+    }
+  ]
+}

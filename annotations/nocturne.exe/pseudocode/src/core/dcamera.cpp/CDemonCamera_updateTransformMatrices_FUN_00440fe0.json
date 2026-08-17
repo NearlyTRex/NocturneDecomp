@@ -54,24 +54,6 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 29,
-        "message": "no matching function for call to 'engine_drender_cpp_FUN_00460d10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
       }
     ],
     "success": false,
@@ -80,17 +62,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 111,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
       "unrolled_memcpy"
     ],
     "total_lines": 83
@@ -130,7 +112,7 @@
     {
       "addr": "00460d10",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_00460d10"
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10"
     }
   ],
   "globals": [
@@ -304,23 +286,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_updateTransformMatrices_FUN_00440fe0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 33,
-          "line": 31,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -335,24 +300,24 @@
       "line": 23,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);",
+      "text": "puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + 0x170);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 25,
-      "match": "&stack0xffffffec",
+      "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "text": "*puVar1 = *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "&stack0xfffffff0",
+      "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom field-by-field struct copy (7 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
@@ -371,12 +336,20 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Uninitialized variable: local_18",
-      "line": 31,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(this_ptr->camera_origin).x = local_18;",
-      "type": "static_uninitvar"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

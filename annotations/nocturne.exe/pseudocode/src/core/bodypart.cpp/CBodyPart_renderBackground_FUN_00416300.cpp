@@ -22,7 +22,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00416300(CBodyPart
        this_ptr_00 = g_CConsole_PTR_005ad350, iVar1 == 0)) {
       this_ptr->render_in_background = 1;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (this_ptr_00,"%s going into background\n");
+                (this_ptr_00,"%s going into background\n",this_ptr);
     }
     if (this_ptr->render_in_background == 0) {
       return;

@@ -9,20 +9,22 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0051b750(CDeformableModelInstance *this_ptr)
 
 {
-  CDeformableModel *pCVar1;
-  CVector3i *pCVar2;
+  int iVar1;
+  CDeformableModel *pCVar2;
+  CVector3i *pCVar3;
   
   core_skeleton_cpp_CDeformableModelInstance_FUN_0051b7d0(this_ptr);
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
-  pCVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(pCVar1->vertex_count[0] * 0xc);
-  this_ptr->skinned_vertices_buffer = pCVar2;
-  if (pCVar2 != (CVector3i *)0x0) {
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(this_ptr);
+  iVar1 = pCVar2->vertex_count[0];
+  pCVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar1 * 0xc);
+  this_ptr->skinned_vertices_buffer = pCVar3;
+  if (pCVar3 != (CVector3i *)0x0) {
     this_ptr->cached_skinned_lod_index = -1;
     return;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 2298;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModelInstance::allocPointList out of memory for %d points!");
+  core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModelInstance::allocPointList out of memory for %d points!",iVar1);
   this_ptr->cached_skinned_lod_index = -1;
   return;
 }

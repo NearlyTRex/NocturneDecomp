@@ -7,7 +7,7 @@
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0051f760 at 0051f778
+;   core_skeleton.cpp_getMemoryStats_FUN_0051f760 at 0051f778
 ;
 ; *****************************************************************************
 

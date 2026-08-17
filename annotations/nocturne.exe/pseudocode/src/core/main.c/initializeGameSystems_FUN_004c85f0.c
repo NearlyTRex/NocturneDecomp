@@ -58,7 +58,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   _freopen("stderr.txt","wt",(_FILE *)&DAT_005c18c8);
   g_RenderingMode = 3;
   core_flattn_cpp_doNothing_FUN_0048ee80();
-  core_inivar_cpp_FUN_004bdb80();
+  core_inivar_cpp_readIniData_FUN_004bdb80();
   g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_004f8af0(g_CPod_PTR_005be1cc);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00456750((FileSearchHandlerFunc *)&LAB_004f9250);
@@ -73,7 +73,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     core_main_c_displayErrorAndQuit_FUN_004c8440(pcVar7);
   }
   engine_matrix_c_initializeTrigTables_FUN_004cc9d0();
-  engine_3d_c_FUN_00404480();
+  engine_3d_c_initTextureCache_FUN_00404480();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0();
   wincore_winrun_cpp_initJoystick_FUN_00559e20();
@@ -83,7 +83,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     g_CurrentLineNumber = 712;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
-  core_dfont_cpp_FUN_0044c560();
+  core_dfont_cpp_initFonts_FUN_0044c560();
   if (_DAT_02de20a8 < 0x3c00000) {
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
     pcVar7 = acStack_528;
@@ -310,7 +310,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_FUN_0046fb40(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
+              (g_CEditorTools_PTR_005b6d50,acStack_528);
   }
   if (_DAT_02de20ac < 0xc800000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
@@ -451,7 +452,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_FUN_0046fb40(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
+              (g_CEditorTools_PTR_005b6d50,&stack0xfffff8d8);
   }
   pCVar4 = g_CGame_PTR_005b9354;
   if (_DAT_01cae37c != 0) {
@@ -462,7 +464,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
     pCVar4->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }
-  wincore_winvideo_cpp_FUN_0055a510("video","opening.avi");
+  wincore_winvideo_cpp_playMovie_FUN_0055a510("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0052ee70();
   pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading...");
   pcVar5 = acStack_328;

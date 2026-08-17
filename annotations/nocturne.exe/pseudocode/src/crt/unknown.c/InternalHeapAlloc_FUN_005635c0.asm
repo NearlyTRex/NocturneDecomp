@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   crt_memory.c_malloc_FUN_005635b0 at 005635b5
-;   crt_unknown.c_FUN_0056ddf0 at 0056de1d
+;   crt_unknown.c_build_cmdline_FUN_0056ddf0 at 0056de1d
 ;   crt_unknown.c_realloc__FUN_00564a88 at 00564a99
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@
 ;   crt_heap.c_AllocateFromFreeList_FUN_00568b00
 ;   crt_heap.c_SystemAllocWrapper_FUN_00568e08
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   crt_unknown.c_FUN_00568e70
+;   crt_unknown.c_AllocatorFallbackStub_FUN_00568e70
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 005636a6 (CONDITIONAL_JUMP)  ; LAB_005636a6
     PUSH EBP                            ; 0056368e
         ;   Label: LAB_0056368e
-    CALL crt_unknown.c_FUN_00568e70     ; 0056368f
-        ;   XREF to: 00568e70 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_00568e70(uint size)
+    CALL crt_unknown.c_AllocatorFallbackStub_FUN_00568e70 ; 0056368f
+        ;   XREF to: 00568e70 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_AllocatorFallbackStub_FUN_00568e70(uint size)
     ADD ESP,0x4                         ; 00563694
     TEST EAX,EAX                        ; 00563697
     JZ 0x005636b0                       ; 00563699

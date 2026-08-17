@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   crt_io.c__utime_FUN_0056cb60 at 0056cbe4
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470b60
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 00474549
-;   shape_edittool.cpp_FUN_00470730 at 00470b60
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc

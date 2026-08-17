@@ -2,51 +2,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/winuser.h"
+#include "system/windef.h"
 
 // =============================================================================
 // WINGDI - System Header
 // =============================================================================
 
-// Function Definition: CREATE_FONT_A_FUNC
-typedef HFONT CREATE_FONT_A_FUNC(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
-
-// Function Definition: GET_STOCK_OBJECT_FUNC
-typedef LPVOID GET_STOCK_OBJECT_FUNC(int i);
-
-// Typedef: HDC
-// pointer to HDC__
-typedef struct HDC__* HDC;
-
-// Structure: HDC__
-typedef struct HDC__ {
-    int unused;
-} HDC__;
-
 // Function Definition: CREATE_COMPATIBLE_DC_FUNC
 typedef HDC CREATE_COMPATIBLE_DC_FUNC(HDC hdc);
+
+// Function Definition: CREATE_FONT_A_FUNC
+typedef HFONT CREATE_FONT_A_FUNC(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
 
 // Function Definition: DELETE_DC_FUNC
 typedef BOOL DELETE_DC_FUNC(HDC hdc);
 
-// Typedef: HGDIOBJ
-// pointer to void
-typedef void* HGDIOBJ;
-
 // Function Definition: DELETE_OBJECT_FUNC
 typedef BOOL DELETE_OBJECT_FUNC(HGDIOBJ ho);
 
-// Typedef: HGLOBAL
-// pointer to void
-typedef HANDLE HGLOBAL;
+// Function Definition: GET_STOCK_OBJECT_FUNC
+typedef LPVOID GET_STOCK_OBJECT_FUNC(int i);
 
-// Typedef: LPRECT
-// pointer to tagRECT
-typedef struct tagRECT* LPRECT;
-
-// Typedef: LPSIZE
-// pointer to tagSIZE
-typedef struct tagSIZE* LPSIZE;
+// Function Definition: GET_TEXT_EXTENT_POINT32_A_FUNC
+typedef BOOL GET_TEXT_EXTENT_POINT32_A_FUNC(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl);
 
 // Function Definition: RECTANGLE_FUNC
 typedef BOOL RECTANGLE_FUNC(HDC hdc, int left, int top, int right, int bottom);
@@ -97,17 +75,6 @@ typedef tagLOGBRUSH LOGBRUSH;
 // Function Definition: CREATE_BRUSH_INDIRECT_FUNC
 typedef HBRUSH CREATE_BRUSH_INDIRECT_FUNC(LOGBRUSH* plbrush);
 
-// Structure: tagRECT
-typedef struct tagRECT {
-    LONG left;
-    LONG top;
-    LONG right;
-    LONG bottom;
-} tagRECT;
-
-// Typedef: RECT
-typedef tagRECT RECT;
-
 // Structure: tagRGBQUAD
 #pragma pack(push, 1)
 typedef struct tagRGBQUAD {
@@ -132,13 +99,4 @@ typedef tagBITMAPINFO BITMAPINFO;
 
 // Function Definition: CREATE_DIB_SECTION_FUNC
 typedef HBITMAP CREATE_DIB_SECTION_FUNC(HDC hdc, BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset);
-
-// Structure: tagSIZE
-typedef struct tagSIZE {
-    LONG cx;
-    LONG cy;
-} tagSIZE;
-
-// Function Definition: GET_TEXT_EXTENT_POINT32_A_FUNC
-typedef BOOL GET_TEXT_EXTENT_POINT32_A_FUNC(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl);
 

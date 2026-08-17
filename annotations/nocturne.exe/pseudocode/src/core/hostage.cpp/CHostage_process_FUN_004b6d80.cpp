@@ -125,9 +125,10 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
     uVar13 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(local_28,&local_1a0);
     if (uVar13 < 0xb) {
       if (uVar13 == 6) {
-        if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
+        pCVar21 = (this_ptr->base).base.grabbed_by;
+        if (pCVar21 != (CDemonActor *)0x0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s escaping from %s\n");
+                    (g_CConsole_PTR_005ad350,"%s escaping from %s\n",this_ptr,pCVar21);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_194);
           local_194.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,15.0);
           local_194.attacker = (CDemonActor *)this_ptr;
@@ -247,7 +248,7 @@ LAB_004b7170:
              pCVar11 = g_CConsole_PTR_005ad350, iVar12 == 0)) goto LAB_004b7672;
           this_ptr->hostage_state = 1;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (pCVar11,"%s rescued, entering follow mode\n");
+                    (pCVar11,"%s rescued, entering follow mode\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
                     (0x01C03A10,this_ptr->hero_found_me_event);
         }
@@ -294,7 +295,8 @@ LAB_004b7170:
                         (&pCVar2->motion_controller,0,1);
               pCVar11 = g_CConsole_PTR_005ad350;
               this_ptr->hostage_state = 2;
-              engine_console_cpp_CConsole_printf_FUN_0043ac60(pCVar11,"%s left behind!\n");
+              engine_console_cpp_CConsole_printf_FUN_0043ac60
+                        (pCVar11,"%s left behind!\n",this_ptr);
               core_event_cpp_CEventList_executeCommands_FUN_0047ab70
                         (0x01C03A10,this_ptr->hero_left_me_event);
               (this_ptr->base).base.hero_proximity_timer = 0.0;
@@ -304,7 +306,7 @@ LAB_004b7170:
         else {
           this_ptr->hostage_state = 3;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (pCVar11,"%s was led close enough, going home!\n");
+                    (pCVar11,"%s was led close enough, going home!\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
                     (0x01C03A10,this_ptr->going_to_sit_down_event);
           (this_ptr->base).base.hero_proximity_timer = 0.0;
@@ -339,7 +341,7 @@ LAB_004b794d:
             if (local_50 == 0) break;
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s was left behind, but now can follow again!\n");
+                    (g_CConsole_PTR_005ad350,"%s was left behind, but now can follow again!\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
                     (0x01C03A10,this_ptr->hero_came_back_event);
         }
@@ -348,7 +350,7 @@ LAB_004b794d:
         if (this_ptr->next_way_point == (CDemonActor *)0x0) {
           this_ptr->hostage_state = 2;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (pCVar11,"%s doesn't know next waypoint going home.  Help me!\n");
+                    (pCVar11,"%s doesn't know next waypoint going home.  Help me!\n",this_ptr);
         }
         else {
           core_charactr_cpp_CCharacter_followActor_FUN_00428780
@@ -357,12 +359,13 @@ LAB_004b794d:
           switch(this_ptr->follow_state) {
           case 0:
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s reached waypoint %s!\n");
+                      (g_CConsole_PTR_005ad350,"%s reached waypoint %s!\n",this_ptr,
+                       this_ptr->next_way_point);
             pCVar11 = g_CConsole_PTR_005ad350;
             if ((CWayPoint *)this_ptr->next_way_point == (CWayPoint *)this_ptr->goal_way_point) {
               this_ptr->hostage_state = 4;
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (pCVar11,"%s rescued and taken home!\n");
+                        (pCVar11,"%s rescued and taken home!\n",this_ptr);
               this_ptr->next_way_point = (CDemonActor *)0x0;
             }
             else {
@@ -386,7 +389,7 @@ LAB_004b794d:
             pCVar11 = g_CConsole_PTR_005ad350;
             this_ptr->hostage_state = 2;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (pCVar11,"%s got confused going home.  Help me!\n");
+                      (pCVar11,"%s got confused going home.  Help me!\n",this_ptr);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&pCVar2->motion_controller,0,1);
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70
@@ -495,7 +498,7 @@ LAB_004b7672:
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(this_ptr->base).base.model.motion_controller,0,1);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                  (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
       }
     }
   }

@@ -25,7 +25,7 @@ int __cdecl determine::dst_status(_tm *timeptr);
 
 // Original: crt_time.c_gmtime_r_FUN_0056d340
 // Address: 0056d340
-undefined1 __cdecl gmtime::r(time_t days,time_t seconds,time_t timezone_offset,undefined1 result);
+_tm * __cdecl gmtime::r(time_t days,time_t seconds,time_t timezone_offset,_tm *result);
 
 // Original: crt_time.c_tzset_FUN_0056d608
 // Address: 0056d608

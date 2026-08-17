@@ -204,7 +204,8 @@ LAB_0051133f:
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                 g_CurrentFilename = "..\\core\\setcolid.cpp";
                 g_CurrentLineNumber = 905;
-                core_main_c_displayErrorAndQuit_FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
+                core_main_c_displayErrorAndQuit_FUN_004c8440
+                          ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
               }
               core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20
                         (&SStack_204,local_14c.center_x - (actor->location).position.x,

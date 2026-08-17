@@ -42,7 +42,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
     return;
   }
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
-            (g_CDemonMission_PTR_005baf90,this_ptr,1);
+            (g_CDemonMission_PTR_005baf90,&this_ptr->base,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_40);
   fStack_10 = local_40.max.x - local_40.min.x;
   fStack_1c = fStack_10 * 0.5f;

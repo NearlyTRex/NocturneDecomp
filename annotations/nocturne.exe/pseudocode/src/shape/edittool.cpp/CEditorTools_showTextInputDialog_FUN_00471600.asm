@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430 at 00471469
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 at 0047138e
 ;   shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530 at 00471559
-;   shape_edittool.cpp_FUN_00470730 at 00470a11
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470a11
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0046f7e0

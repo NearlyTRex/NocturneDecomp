@@ -76,12 +76,6 @@
   },
   "cross_references": [
     {
-      "addr": "005229f0",
-      "from_addr": "00522afe",
-      "name": "sound_sndmain.cpp_FUN_005229f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005279e0",
       "from_addr": "00527b8b",
       "name": "sound_sndmain.cpp_getSampleInfo_FUN_005279e0",
@@ -91,6 +85,12 @@
       "addr": "00522480",
       "from_addr": "0052280e",
       "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005229f0",
+      "from_addr": "00522afe",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,7 +115,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -131,7 +131,7 @@
     {
       "addr": "004e7ed0",
       "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004e7ed0"
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0"
     }
   ],
   "globals": [
@@ -241,7 +241,7 @@
       {
         "call_addr": "00522afe",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005229f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

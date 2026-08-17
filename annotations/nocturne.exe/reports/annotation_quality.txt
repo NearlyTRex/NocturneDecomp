@@ -11,19 +11,19 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          4,921
-  Unnamed functions (FUN_):          297 ( 6.0%)
-  Functions with unnamed params:     25 ( 0.5%)
-  Functions with type issues:        1,686 (34.3%)
+  Total functions analyzed:          4,922
+  Unnamed functions (FUN_):          198 ( 4.0%)
+  Functions with unnamed params:     23 ( 0.5%)
+  Functions with type issues:        1,669 (33.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
-    Missing register params:           10
-    Wrong calling convention:          49
-    Undefined types in variables:      1609
-    Unresolved stack params:           110
+    Missing register params:           3
+    Wrong calling convention:          45
+    Undefined types in variables:      1604
+    Unresolved stack params:           104
 
   Excluded (.keep / MMX / by-value):   0 functions
     Wrong calling convention:          0
@@ -48,38 +48,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042b6d0  unknown       0 callers
     0x0042b6e0  unknown       0 callers
 
-  shape/edittool.cpp (13 unnamed)
-    0x0046fcd0  unknown       21 callers
-    0x0046fb40  unknown       7 callers
-    0x00476160  unknown       6 callers
-    0x00470230  unknown       2 callers
-    0x00475230  __cdecl       2 callers
-    0x004759d0  __cdecl       2 callers
-    0x00470310  unknown       0 callers
-    0x004703f0  unknown       0 callers
-    0x00470730  unknown       0 callers
-    0x00472fd0  unknown       0 callers
-    0x00474ae0  unknown       0 callers
-    0x00476f40  unknown       0 callers
-    0x00477680  __cdecl       0 callers
-
-  cockpit/ckptutil.c (8 unnamed)
-    0x0042d130  __cdecl       11 callers
-    0x00431260  __cdecl       1 callers
-    0x0042d180  unknown       0 callers
-    0x0042e7b0  unknown       0 callers
-    0x0042ee00  unknown       0 callers
-    0x00430210  unknown       0 callers
-    0x004303d0  unknown       0 callers
-    0x00430630  unknown       0 callers
-
-  engine/drender.cpp (5 unnamed)
-    0x00460d10  unknown       9 callers
-    0x00460d90  unknown       7 callers
-    0x00461720  __cdecl       1 callers
-    0x004579c0  unknown       0 callers
-    0x00460c26  unknown       0 callers
-
   core/hero.cpp (3 unnamed)
     0x004b46d0  __cdecl       9 callers
     0x004b5110  __cdecl       6 callers
@@ -90,18 +58,16 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004ac7c0  __cdecl       2 callers
     0x004accf0  __cdecl       1 callers
 
-  core/dmodel.cpp (2 unnamed)
+  core/dmodel.cpp (1 unnamed)
     0x00452f10  __cdecl       7 callers
-    0x00454460  __cdecl       2 callers
 
-  cockpit/pkbitmap.cpp (9 unnamed)
+  cockpit/pkbitmap.cpp (8 unnamed)
     0x004f5320  __cdecl       6 callers
     0x004f3f50  __cdecl       5 callers
     0x004f5290  __cdecl       2 callers
     0x004f52c0  __cdecl       2 callers
     0x004f4f90  __cdecl       1 callers
     0x004f5110  __cdecl       1 callers
-    0x004f4050  unknown       0 callers
     0x004f49d8  unknown       0 callers
     0x004f4b30  __cdecl       0 callers
 
@@ -119,12 +85,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0050e370  __cdecl       1 callers
     0x0050dd60  __cdecl       0 callers
 
-  core/setdir.cpp (9 unnamed)
+  core/setdir.cpp (7 unnamed)
     0x005125a0  __cdecl       5 callers
     0x00513670  __cdecl       1 callers
     0x00513720  __cdecl       1 callers
-    0x005138e0  __cdecl       1 callers
-    0x00511d80  unknown       0 callers
     0x00513e20  __cdecl       0 callers
     0x00514390  unknown       0 callers
     0x005143a0  unknown       0 callers
@@ -140,17 +104,12 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004d90e0  __cdecl       1 callers
     0x004d93d0  __cdecl       0 callers
 
-  engine/pod.cpp (3 unnamed)
+  engine/pod.cpp (1 unnamed)
     0x004f7ae0  __cdecl       4 callers
-    0x004f7980  unknown       0 callers
-    0x004f8eb0  unknown       0 callers
 
-  core/skeleton.cpp (5 unnamed)
+  core/skeleton.cpp (2 unnamed)
     0x005174e0  __cdecl       4 callers
-    0x0051f650  __cdecl       3 callers
     0x0051b7d0  __cdecl       2 callers
-    0x0051f680  __cdecl       1 callers
-    0x0051f760  __cdecl       1 callers
 
   core/event.cpp (5 unnamed)
     0x00481620  __cdecl       3 callers
@@ -162,9 +121,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/fire.cpp (1 unnamed)
     0x0048b6f0  __cdecl       3 callers
 
-  core/frankgen.cpp (2 unnamed)
+  core/frankgen.cpp (1 unnamed)
     0x004950a0  __cdecl       3 callers
-    0x00495420  unknown       0 callers
 
   core/script.cpp (9 unnamed)
     0x004feff0  __cdecl       3 callers
@@ -188,18 +146,17 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/ammobox.cpp (1 unnamed)
     0x0040f1a0  __cdecl       2 callers
 
-  core/bugs.cpp (4 unnamed)
+  core/bugs.cpp (3 unnamed)
     0x00421b80  __cdecl       2 callers
     0x004219f0  __cdecl       1 callers
     0x00422050  __cdecl       1 callers
-    0x00423d20  unknown       0 callers
 
   core/cloth.cpp (3 unnamed)
     0x00435210  __cdecl       2 callers
     0x00437ab0  __cdecl       1 callers
     0x00437a60  __cdecl       0 callers
 
-  core/dcamera.cpp (11 unnamed)
+  core/dcamera.cpp (10 unnamed)
     0x004401b0  __cdecl       2 callers
     0x004421b0  __cdecl       2 callers
     0x00446800  __cdecl       1 callers
@@ -210,14 +167,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00448310  __cdecl       1 callers
     0x00448380  __cdecl       1 callers
     0x004425d0  unknown       0 callers
-    0x00442d9c  unknown       0 callers
 
-  core/dlight.cpp (8 unnamed)
+  core/dlight.cpp (5 unnamed)
     0x0044e2c0  __cdecl       2 callers
-    0x0044ed80  unknown       1 callers
     0x0044f0b0  __cdecl       1 callers
-    0x0044f9b0  unknown       1 callers
-    0x00450c90  unknown       0 callers
     0x00452500  unknown       0 callers
     0x00452510  unknown       0 callers
     0x00452520  unknown       0 callers
@@ -225,15 +178,19 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/dracbrid.cpp (1 unnamed)
     0x0045ab40  __cdecl       2 callers
 
-  core/game.cpp (8 unnamed)
+  shape/edittool.cpp (4 unnamed)
+    0x00470230  unknown       2 callers
+    0x00470310  unknown       0 callers
+    0x004703f0  unknown       0 callers
+    0x00477680  __cdecl       0 callers
+
+  core/game.cpp (6 unnamed)
     0x004a3a90  __cdecl       2 callers
     0x004a3b90  __cdecl       2 callers
     0x004a4170  __cdecl       2 callers
     0x004a4b50  __cdecl       2 callers
     0x004a3a70  __cdecl       1 callers
     0x004a57c0  __cdecl       1 callers
-    0x0049a320  unknown       0 callers
-    0x004a03a0  __cdecl       0 callers
 
   core/setutil.cpp (4 unnamed)
     0x005148b0  __cdecl       2 callers
@@ -241,27 +198,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00515410  __cdecl       1 callers
     0x00515c40  __cdecl       1 callers
 
-  sound/sndmain.cpp (11 unnamed)
-    0x00526120  __cdecl       2 callers
-    0x00526150  __cdecl       1 callers
-    0x00527520  __cdecl       1 callers
-    0x00527d80  __cdecl       1 callers
-    0x005229f0  unknown       0 callers
-    0x00525ff0  unknown       0 callers
-    0x00526020  unknown       0 callers
-    0x005260c0  unknown       0 callers
-    0x005262a0  unknown       0 callers
-    0x00526310  unknown       0 callers
-    0x00529a00  __cdecl       0 callers
-
-  core/sound.cpp (10 unnamed)
-    0x0052d030  __cdecl       2 callers
-    0x0052dd80  __cdecl       2 callers
+  core/sound.cpp (5 unnamed)
     0x0052ebc0  __cdecl       2 callers
     0x0052dff0  __cdecl       1 callers
-    0x0052d790  unknown       0 callers
-    0x0052ec80  unknown       0 callers
-    0x0052ed40  unknown       0 callers
     0x0052ee20  unknown       0 callers
     0x0052ee30  unknown       0 callers
     0x0052ee40  unknown       0 callers
@@ -279,20 +218,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005409c0  unknown       0 callers
     0x00540a10  __cdecl       0 callers
 
-  wincore/wddvmem.cpp (5 unnamed)
-    0x00553ba0  __cdecl       2 callers
-    0x00553d30  __cdecl       2 callers
-    0x00553ca0  __cdecl       1 callers
-    0x00552a20  unknown       0 callers
-    0x00552af0  unknown       0 callers
-
-  engine/3d.c (2 unnamed)
-    0x00404480  __cdecl       1 callers
-    0x00404490  __cdecl       1 callers
-
-  core/boneguy.cpp (2 unnamed)
+  core/boneguy.cpp (1 unnamed)
     0x004196b0  __cdecl       1 callers
-    0x004182cd  unknown       0 callers
 
   core/box.cpp (1 unnamed)
     0x0041d050  __cdecl       1 callers
@@ -310,19 +237,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0044ae80  unknown       0 callers
     0x0044b660  __cdecl       0 callers
     0x0044b720  unknown       0 callers
-
-  core/dfont.cpp (2 unnamed)
-    0x0044c560  __cdecl       1 callers
-    0x0044cc00  __cdecl       1 callers
-
-  core/drip.cpp (1 unnamed)
-    0x00462710  __cdecl       1 callers
-
-  core/dynamite.cpp (4 unnamed)
-    0x0046ed80  __cdecl       1 callers
-    0x0046eda0  __cdecl       1 callers
-    0x0046ecf0  unknown       0 callers
-    0x0046ed20  unknown       0 callers
 
   core/flame.cpp (1 unnamed)
     0x0048df10  __cdecl       1 callers
@@ -343,9 +257,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004ba740  __cdecl       1 callers
     0x004baba0  __cdecl       1 callers
 
-  core/inivar.cpp (1 unnamed)
-    0x004bdb80  __cdecl       1 callers
-
   core/inv.cpp (2 unnamed)
     0x004c2470  __cdecl       1 callers
     0x004c0640  __cdecl       0 callers
@@ -357,17 +268,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/level.cpp (1 unnamed)
     0x004c5630  __cdecl       1 callers
 
-  core/main.c (1 unnamed)
-    0x004c8510  __cdecl       1 callers
-
   core/manpuz.cpp (4 unnamed)
     0x004ca410  __cdecl       1 callers
     0x004ca710  __cdecl       1 callers
     0x004ca790  __cdecl       1 callers
     0x004cb010  __cdecl       1 callers
-
-  engine/matrix.c (1 unnamed)
-    0x004cca50  __cdecl       1 callers
 
   core/mimic.cpp (2 unnamed)
     0x004d4ba0  __cdecl       1 callers
@@ -377,27 +282,14 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004d76e0  __cdecl       1 callers
     0x004d7720  __cdecl       1 callers
 
-  sound/mp3.cpp (4 unnamed)
-    0x004e7ed0  __cdecl       1 callers
-    0x004e28a0  __cdecl       0 callers
-    0x004e2980  __cdecl       0 callers
-    0x004e2c50  __cdecl       0 callers
-
   support/newmsg.cpp (1 unnamed)
     0x004edfc0  unknown       1 callers
 
   engine/ncursfx.cpp (1 unnamed)
     0x004ee680  __cdecl       1 callers
 
-  engine/pcx.c (1 unnamed)
-    0x004f2990  __cdecl       1 callers
-
   core/platfrm.cpp (1 unnamed)
     0x004f7360  __cdecl       1 callers
-
-  engine/prim.c (2 unnamed)
-    0x004f9dd0  __cdecl       1 callers
-    0x004fa2e0  __cdecl       1 callers
 
   core/scat.cpp (5 unnamed)
     0x004fcd90  __cdecl       1 callers
@@ -429,59 +321,21 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/vessel.cpp (1 unnamed)
     0x0054fc40  __cdecl       1 callers
 
-  wincore/winrun.cpp (5 unnamed)
-    0x00559260  __stdcall     1 callers
-    0x00559500  __cdecl       1 callers
-    0x00559e90  __cdecl       1 callers
-    0x00558c40  unknown       0 callers
-    0x00558d90  __stdcall     0 callers
-
-  wincore/winvideo.cpp (1 unnamed)
-    0x0055a510  __cdecl       1 callers
-
   core/zombie.cpp (1 unnamed)
     0x00561010  __cdecl       1 callers
-
-  core/actor.cpp (4 unnamed)
-    0x0040e1cc  unknown       0 callers
-    0x0040e2ce  unknown       0 callers
-    0x0040e2e1  unknown       0 callers
-    0x0040e2f1  unknown       0 callers
-
-  engine/alphabit.cpp (1 unnamed)
-    0x0040eadd  unknown       0 callers
-
-  core/bat.cpp (3 unnamed)
-    0x0041206c  unknown       0 callers
-    0x00412080  unknown       0 callers
-    0x00412090  unknown       0 callers
-
-  core/bodypart.cpp (2 unnamed)
-    0x00417fec  unknown       0 callers
-    0x0041803d  unknown       0 callers
-
-  core/chain.cpp (2 unnamed)
-    0x0042cd00  unknown       0 callers
-    0x0042cd10  unknown       0 callers
 
   core/course.cpp (2 unnamed)
     0x0043b500  unknown       0 callers
     0x0043b5b0  unknown       0 callers
 
-  core/dtrace.cpp (1 unnamed)
-    0x004673e0  unknown       0 callers
+  engine/drender.cpp (1 unnamed)
+    0x004579c0  unknown       0 callers
 
   core/enemy.cpp (1 unnamed)
     0x0047a150  __cdecl       0 callers
 
-  engine/light.cpp (1 unnamed)
-    0x004c6a00  __cdecl       0 callers
-
   core/lightgun.cpp (1 unnamed)
     0x004c6f50  __cdecl       0 callers
-
-  core/menu.cpp (1 unnamed)
-    0x004d23d0  __cdecl       0 callers
 
   core/morph.cpp (1 unnamed)
     0x004e0300  __cdecl       0 callers
@@ -489,8 +343,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/motion.cpp (1 unnamed)
     0x004e08e0  unknown       0 callers
 
-  core/netgame.cpp (1 unnamed)
-    0x004e9630  unknown       0 callers
+  sound/mp3.cpp (3 unnamed)
+    0x004e28a0  __cdecl       0 callers
+    0x004e2980  __cdecl       0 callers
+    0x004e2c50  __cdecl       0 callers
 
   core/path.cpp (1 unnamed)
     0x004efc10  unknown       0 callers
@@ -499,17 +355,14 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004f5d00  unknown       0 callers
     0x004f5d10  unknown       0 callers
 
-  sound/snddx.cpp (1 unnamed)
-    0x0052ad30  unknown       0 callers
+  sound/sndmain.cpp (1 unnamed)
+    0x00529a00  __cdecl       0 callers
 
   core/teleport.cpp (1 unnamed)
     0x00543890  __cdecl       0 callers
 
   core/wateract.cpp (1 unnamed)
     0x005519c0  __cdecl       0 callers
-
-  core/xform.cpp (1 unnamed)
-    0x0055d660  unknown       0 callers
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -547,14 +400,9 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (undefined4), param_3 (undefined4)
     Named:   this_ptr (CDemonCamera *)
 
-  FUN_004a03a0
+  giveHeroWeaponAmmo
     Address: 0x004a03a0  File: core/game.cpp
     Unnamed: param_1 (char *), param_2 (EAmmoType)
-
-  CDemonMission_markActorToDelete
-    Address: 0x004d9110  File: core/mission.cpp
-    Unnamed: param_2 (undefined4), param_3 (undefined4)
-    Named:   this_ptr (CDemonMission *)
 
   CScript
     Address: 0x004febd0  File: core/script.cpp
@@ -615,10 +463,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (char *)
     Named:   this_ptr (CDemonSet *)
 
-  FUN_005138e0
-    Address: 0x005138e0  File: core/setdir.cpp
-    Unnamed: param_1 (int *)
-
   CSound
     Address: 0x0052ebc0  File: core/sound.cpp
     Unnamed: param_2 (char *)
@@ -665,50 +509,8 @@ Wrong return type (64-bit return via EDX:EAX) (2)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (10)
+Missing register parameters (likely wrong calling convention) (3)
 --------------------------------------------------------------------------------
-
-  FUN_0040e1cc
-    Address: 0x0040e1cc  File: core/actor.cpp
-    Evidence: in_EAX, in_CL, in_EDX, in_CL, in_EAX, in_EAX, in_CL, in_EDX, in_EDX, in_EDX
-    Signature: void core_actor_cpp_FUN_0040e1cc(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_0040e2ce
-    Address: 0x0040e2ce  File: core/actor.cpp
-    Evidence: in_EAX, in_CL, in_EDX, in_CL, in_EDX, in_EAX
-    Signature: void core_actor_cpp_FUN_0040e2ce(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_0040e2e1
-    Address: 0x0040e2e1  File: core/actor.cpp
-    Evidence: in_EDX, in_EDX
-    Signature: void core_actor_cpp_FUN_0040e2e1(undefined4 *param_1)
-    Suggested: Likely register-based calling convention
-
-  FUN_0040e2f1
-    Address: 0x0040e2f1  File: core/actor.cpp
-    Evidence: in_EDX, in_EDX
-    Signature: void core_actor_cpp_FUN_0040e2f1(undefined4 *param_1)
-    Suggested: Likely register-based calling convention
-
-  FUN_0041206c
-    Address: 0x0041206c  File: core/bat.cpp
-    Evidence: in_EAX, in_CL, in_EDX, in_CL, in_EDX, in_EAX, in_EAX
-    Signature: void core_bat_cpp_FUN_0041206c(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_00417fec
-    Address: 0x00417fec  File: core/bodypart.cpp
-    Evidence: in_EAX, in_CL, in_EDX, in_CL, in_EAX, in_EAX, in_EDX, in_EDX, in_EDX
-    Signature: void core_bodypart_cpp_FUN_00417fec(void)
-    Suggested: Likely register-based calling convention
-
-  FUN_00442d9c
-    Address: 0x00442d9c  File: core/dcamera.cpp
-    Evidence: in_EDX, in_EDX, in_EDX
-    Signature: void core_dcamera_cpp_FUN_00442d9c(void)
-    Suggested: Likely register-based calling convention
 
   CDrawSurface_clipLine
     Address: 0x0045c440  File: cockpit/drawsurf.cpp
@@ -729,7 +531,7 @@ Missing register parameters (likely wrong calling convention) (10)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (49)
+Wrong calling convention (unaffected register usage) (45)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -762,30 +564,6 @@ Wrong calling convention (unaffected register usage) (49)
     Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderSortedPolygonList_FUN_00405b40(SMRGLHeaderExtended *primitive)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_0040e1cc
-    Address: 0x0040e1cc  File: core/actor.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void core_actor_cpp_FUN_0040e1cc(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0040e2ce
-    Address: 0x0040e2ce  File: core/actor.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void core_actor_cpp_FUN_0040e2ce(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_0041206c
-    Address: 0x0041206c  File: core/bat.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void core_bat_cpp_FUN_0041206c(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00417fec
-    Address: 0x00417fec  File: core/bodypart.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void core_bodypart_cpp_FUN_00417fec(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CBugs_renderGroundHeightGrid
     Address: 0x004216d0  File: core/bugs.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -816,10 +594,16 @@ Wrong calling convention (unaffected register usage) (49)
     Signature: void __cdecl core_curtain_cpp_CCurtain_setup_FUN_0043dad0(CCurtain *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_00442d9c
+  CDemonCamera_saveCameraTransform
     Address: 0x00442d9c  File: core/dcamera.cpp
-    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: void core_dcamera_cpp_FUN_00442d9c(void)
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
+    Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CDemonCamera_lockAndRenderToBuffer
+    Address: 0x00445020  File: core/dcamera.cpp
+    Evidence: unaff_EDI, unaff_EDI
+    Signature: int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(CDemonCamera *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonCamera
@@ -832,18 +616,6 @@ Wrong calling convention (unaffected register usage) (49)
     Address: 0x0045c0f0  File: cockpit/drawsurf.cpp
     Evidence: unaff_EBP, unaff_ESI, unaff_EDI, unaff_EBP, unaff_EBP, unaff_ESI, unaff_EBP, unaff_ESI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_ESI
     Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00460d10
-    Address: 0x00460d10  File: engine/drender.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_drender_cpp_FUN_00460d10(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00460d90
-    Address: 0x00460d90  File: engine/drender.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void engine_drender_cpp_FUN_00460d90(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonRaytrace_cylinderGroundCheck
@@ -864,10 +636,10 @@ Wrong calling convention (unaffected register usage) (49)
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_00470730
+  CEditorTools_showDirectoryBrowser
     Address: 0x00470730  File: shape/edittool.cpp
     Evidence: unaff_ESI, unaff_ESI
-    Signature: undefined4 shape_edittool_cpp_FUN_00470730(void)
+    Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_00470730(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CEditorTools_draw3DAxisLabels
@@ -892,6 +664,12 @@ Wrong calling convention (unaffected register usage) (49)
     Address: 0x00498b60  File: core/gabriela.cpp
     Evidence: unaff_ESI, unaff_ESI
     Signature: void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_00498b60(CGabriella *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  CGame_process
+    Address: 0x004a6010  File: core/game.cpp
+    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
+    Signature: void __cdecl core_game_cpp_CGame_process_FUN_004a6010(CGame *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CGame_displayActStats
@@ -928,12 +706,6 @@ Wrong calling convention (unaffected register usage) (49)
     Address: 0x004d2d00  File: core/menu.cpp
     Evidence: unaff_ESI, unaff_ESI
     Signature: void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  mirrorXTransform
-    Address: 0x004d43c0  File: core/mimic.cpp
-    Evidence: unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_mimic_cpp_mirrorXTransform_FUN_004d43c0(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonMission_loadActor
@@ -984,6 +756,18 @@ Wrong calling convention (unaffected register usage) (49)
     Signature: void __cdecl engine_special_cpp_renderScanlineSwapped_FUN_00530716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  setResolutionAndColorTable
+    Address: 0x005324a0  File: engine/special.cpp
+    Evidence: unaff_EBP, unaff_EBP
+    Signature: int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width,int height,int bits_per_pixel)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  toggle
+    Address: 0x00532ba0  File: engine/special.cpp
+    Evidence: unaff_EBX, unaff_EBX
+    Signature: int __cdecl engine_special_cpp_toggle_FUN_00532ba0(void)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   CStranger_processMotionEvents
     Address: 0x00537cd0  File: core/stranger.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
@@ -1020,14 +804,8 @@ Wrong calling convention (unaffected register usage) (49)
     Signature: void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005543c0(CWeapon *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_0055d660
-    Address: 0x0055d660  File: core/xform.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void core_xform_cpp_FUN_0055d660(CVector3f *param_1)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (110)
+Unresolved stack parameters (missing from signature) (104)
 --------------------------------------------------------------------------------
 
   drawAntialiasedChar
@@ -1078,10 +856,10 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(CBoundingBox3D *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00423d20
-    Address: 0x00423d20  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_bugs_cpp_FUN_00423d20(void)
+  CBugs_renderOpaque
+    Address: 0x00421540  File: core/bugs.cpp
+    Evidence: in_stack_00000008, in_stack_00000008
+    Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CCharacter_updateCarriedObjects
@@ -1108,24 +886,6 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: undefined4 * core_charactr_cpp_FUN_0042b6e0(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0042cd00
-    Address: 0x0042cd00  File: core/chain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_chain_cpp_FUN_0042cd00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042cd10
-    Address: 0x0042cd10  File: core/chain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_chain_cpp_FUN_0042cd10(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042d180
-    Address: 0x0042d180  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000008, in_stack_0000000c, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000018, in_stack_00000010, in_stack_00000004, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_00000018
-    Signature: void * cockpit_ckptutil_c_FUN_0042d180(void)
-    Suggested: Signature is missing stack parameters entirely
-
   loadACTToIndexedPalette
     Address: 0x0042d3f0  File: cockpit/ckptutil.c
     Evidence: in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
@@ -1150,10 +910,10 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: void core_course_cpp_FUN_0043b5b0(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00442d9c
+  CDemonCamera_saveCameraTransform
     Address: 0x00442d9c  File: core/dcamera.cpp
-    Evidence: in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028
-    Signature: void core_dcamera_cpp_FUN_00442d9c(void)
+    Evidence: in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028, in_stack_00000028
+    Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_0044ae80
@@ -1218,7 +978,7 @@ Unresolved stack parameters (missing from signature) (110)
 
   testDrawingSurface
     Address: 0x0045e370  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000108, in_stack_00000110, in_stack_00000120, in_stack_0000013c, in_stack_00000148, in_stack_0000014c, in_stack_0000019c, in_stack_00000110, in_stack_00000108, in_stack_00000120, in_stack_0000014c, in_stack_0000013c, in_stack_00000148, in_stack_0000019c, in_stack_0000019c
+    Evidence: in_stack_000000e8, in_stack_000000f0, in_stack_00000100, in_stack_0000011c, in_stack_00000128, in_stack_0000012c, in_stack_0000015c, in_stack_000000f0, in_stack_000000e8, in_stack_00000100, in_stack_0000012c, in_stack_0000011c, in_stack_00000128, in_stack_0000015c, in_stack_0000015c
     Signature: void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0045e370(CBitFont *test_font)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1246,22 +1006,16 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00470730
-    Address: 0x00470730  File: shape/edittool.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000010
-    Signature: undefined4 shape_edittool_cpp_FUN_00470730(void)
+  CEditorTools_createModalWindow
+    Address: 0x00471b50  File: shape/edittool.cpp
+    Evidence: in_stack_ffffed18, in_stack_ffffed18
+    Signature: void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
     Suggested: Signature is missing stack parameters entirely
 
   CEditorTools_draw3DAxisLabels
     Address: 0x00472de0  File: shape/edittool.cpp
     Evidence: in_stack_ffffff78, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff88, in_stack_ffffffa8, in_stack_ffffffb0, in_stack_ffffffb8, in_stack_ffffffd0, in_stack_ffffffd4, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffff7c, in_stack_ffffff78, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffffb8, in_stack_ffffffd0, in_stack_ffffffd4, in_stack_ffffff84, in_stack_ffffff80, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffffb8, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffff88, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb8
     Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools *this_ptr,float scale_factor,int text_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00472fd0
-    Address: 0x00472fd0  File: shape/edittool.cpp
-    Evidence: in_stack_ffffffd8, in_stack_ffffffd8
-    Signature: void shape_edittool_cpp_FUN_00472fd0(CEditorTools *param_1,float param_2,int param_3,undefined4 param_4,float *param_5)
     Suggested: Signature is missing stack parameters entirely
 
   draw3DInterpolatedLine
@@ -1306,12 +1060,6 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: undefined4 * core_event_cpp_FUN_00481970(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00495420
-    Address: 0x00495420  File: core/frankgen.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: undefined4 core_frankgen_cpp_FUN_00495420(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CGabriella_processMotionEvents
     Address: 0x00497410  File: core/gabriela.cpp
     Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
@@ -1322,6 +1070,12 @@ Unresolved stack parameters (missing from signature) (110)
     Address: 0x004980d0  File: core/gabriela.cpp
     Evidence: in_stack_fffffc54, in_stack_fffffc58, in_stack_fffffc54, in_stack_fffffc58, in_stack_fffffc54, in_stack_fffffc58
     Signature: void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004980d0(CGabriella *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGame_processFrame
+    Address: 0x0049cc10  File: core/game.cpp
+    Evidence: in_stack_fffff9fc, in_stack_fffff9fc
+    Signature: void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CGame_runGameSession
@@ -1340,6 +1094,12 @@ Unresolved stack parameters (missing from signature) (110)
     Address: 0x004a4b50  File: core/game.cpp
     Evidence: in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c, in_stack_fffffb4c
     Signature: void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGame
+    Address: 0x004a57c0  File: core/game.cpp
+    Evidence: in_stack_fffff5d0, in_stack_fffff5d0
+    Signature: void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CGhoul_process
@@ -1382,12 +1142,6 @@ Unresolved stack parameters (missing from signature) (110)
     Address: 0x004d12e0  File: core/menu.cpp
     Evidence: in_stack_fffff7ec, in_stack_fffff7ec
     Signature: void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMimic_renderMirrored
-    Address: 0x004d5860  File: core/mimic.cpp
-    Evidence: in_stack_ffffff0c, in_stack_ffffff0c
-    Signature: int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(CMimic *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_ensureHeroPlaceholder
@@ -1546,40 +1300,10 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_00523170(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00525ff0
-    Address: 0x00525ff0  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void sound_sndmain_cpp_FUN_00525ff0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00526020
-    Address: 0x00526020  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018
-    Signature: void sound_sndmain_cpp_FUN_00526020(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005260c0
-    Address: 0x005260c0  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void sound_sndmain_cpp_FUN_005260c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005262a0
-    Address: 0x005262a0  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void sound_sndmain_cpp_FUN_005262a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   pollAndMixSfx
     Address: 0x005294f0  File: sound/sndmain.cpp
     Evidence: in_stack_ffffff68, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff7c, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff80, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84
     Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0052ad30
-    Address: 0x0052ad30  File: sound/snddx.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: undefined4 sound_snddx_cpp_FUN_0052ad30(void)
     Suggested: Signature is missing stack parameters entirely
 
   CDirectSoundDevice_lockSample
@@ -1594,10 +1318,10 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(CDirectSoundDevice *this_ptr,int buffer_id)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0052ed40
+  CSound_selectReverbPreset
     Address: 0x0052ed40  File: core/sound.cpp
     Evidence: in_stack_fffffe8c, in_stack_fffffe8c
-    Signature: undefined4 core_sound_cpp_FUN_0052ed40(undefined4 param_1,char *param_2,int *param_3)
+    Signature: int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0052ed40(CSound *this_ptr,char *title,int *selection_inout)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_0052ee20
@@ -1654,6 +1378,18 @@ Unresolved stack parameters (missing from signature) (110)
     Signature: int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
+  parseIPAddress
+    Address: 0x00548af0  File: support/trisock.cpp
+    Evidence: in_stack_00000010, in_stack_00000010
+    Signature: uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_00548af0(uint *result_ptr,char *dotted_decimal_string)
+    Suggested: Signature is missing stack parameters entirely
+
+  buildIPAddressOrDie
+    Address: 0x00548b40  File: support/trisock.cpp
+    Evidence: in_stack_00000024, in_stack_00000024
+    Signature: uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_00548b40(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
+    Suggested: Signature is missing stack parameters entirely
+
   CTurret_updateTargeting
     Address: 0x0054a110  File: core/turret.cpp
     Evidence: in_stack_00000010, in_stack_fffffeac, in_stack_00000010, in_stack_fffffeac, in_stack_00000010, in_stack_fffffeac, in_stack_fffffeac
@@ -1664,6 +1400,12 @@ Unresolved stack parameters (missing from signature) (110)
     Address: 0x0054a920  File: core/turret.cpp
     Evidence: in_stack_ffffffac, in_stack_ffffffac
     Signature: void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CVehicle_renderOpaque
+    Address: 0x0054f510  File: core/vehicle.cpp
+    Evidence: in_stack_0000000c, in_stack_0000000c
+    Signature: int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CWeapon_onDropped
@@ -1691,7 +1433,7 @@ Unresolved stack parameters (missing from signature) (110)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (1609)
+Undefined types in variables (1604)
 --------------------------------------------------------------------------------
 
   CBox_processPhysics
@@ -1809,7 +1551,7 @@ Undefined types in variables (1609)
     Locals:  local_1bc (undefined), local_1b8 (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined), local_17c (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined), local_11c (undefined), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined), local_94 (undefined), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined), local_44 (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0044f9b0
+  CDemonLight_renderLightGlowSprites
     Address: 0x0044f9b0  File: core/dlight.cpp
     Locals:  local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -1874,7 +1616,7 @@ Undefined types in variables (1609)
     Locals:  local_1a0 (undefined), local_19c (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined), local_160 (undefined4), local_128 (undefined), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined), local_d0 (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined), local_a4 (undefined), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined), local_70 (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined), local_44 (undefined), local_2c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00430630
+  traceConnectedEdges
     Address: 0x00430630  File: cockpit/ckptutil.c
     Locals:  local_1f4 (undefined), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2024,7 +1766,7 @@ Undefined types in variables (1609)
     Locals:  local_167 (undefined4), local_163 (undefined), local_162 (undefined1), local_113 (undefined4), local_10f (undefined), local_10e (undefined1), local_fb (undefined4), local_f7 (undefined2), local_bc (undefined), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined), local_9c (undefined2), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00450c90
+  CDemonLight_renderRadialVolumetricScattering
     Address: 0x00450c90  File: core/dlight.cpp
     Locals:  local_f8 (undefined4), local_f0 (undefined), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2149,7 +1891,7 @@ Undefined types in variables (1609)
     Locals:  local_22c (undefined), local_1fc (undefined), local_1cc (undefined), local_19c (undefined), local_16c (undefined), local_13c (undefined), local_10c (undefined), local_dc (undefined), local_ac (undefined), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined), local_70 (undefined), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined), local_40 (undefined), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00470730
+  CEditorTools_showDirectoryBrowser
     Address: 0x00470730  File: shape/edittool.cpp
     Locals:  local_1c90 (undefined), local_1a60 (undefined4), local_18f0 (undefined), local_17f0 (undefined1), local_17ec (undefined4), local_17e8 (undefined), local_17dc (undefined), local_16d8 (undefined), local_15d4 (undefined), local_14d0 (undefined), local_13cc (undefined), local_12c8 (undefined), local_11c4 (undefined), local_10c4 (undefined), local_fc4 (undefined), local_ec4 (undefined), local_dc4 (undefined), local_cc4 (undefined), local_bc4 (undefined), local_ac4 (undefined), local_9c4 (undefined), local_8c4 (undefined), local_7c4 (undefined), local_6c4 (undefined), local_6c3 (undefined), local_5c4 (undefined), local_4c4 (undefined), local_4c3 (undefined), local_3c4 (undefined), local_2c4 (undefined), local_1c4 (undefined), local_fc (undefined), local_34 (undefined), local_14 (undefined4), local_10 (undefined), local_c (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -2174,7 +1916,7 @@ Undefined types in variables (1609)
     Locals:  local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00511d80
+  testCameraVisibility
     Address: 0x00511d80  File: core/setdir.cpp
     Locals:  local_d8 (undefined4), local_d4 (undefined), local_d0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2649,7 +2391,7 @@ Undefined types in variables (1609)
     Locals:  local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined), local_1d0 (undefined), local_1c4 (undefined), local_1b8 (undefined), local_1ac (undefined), local_1a0 (undefined), local_194 (undefined), local_188 (undefined), local_150 (undefined), local_118 (undefined), local_e0 (undefined), local_a8 (undefined), local_70 (undefined), local_38 (undefined), local_2c (undefined), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005138e0
+  CDemonSet_renderVirtualDirectors
     Address: 0x005138e0  File: core/setdir.cpp
     Locals:  local_cc (undefined8), local_c4 (undefined), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2829,14 +2571,14 @@ Undefined types in variables (1609)
     Locals:  local_14c (undefined4), local_148 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CMP3Decoder_parseHeader
+    Address: 0x004e7ed0  File: sound/mp3.cpp
+    Locals:  local_78 (undefined4), local_74 (undefined4), local_6c (undefined4), local_68 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4), local_44 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CMP3Decoder_readLayer3SideInfo
     Address: 0x004e4320  File: sound/mp3.cpp
     Locals:  local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004e7ed0
-    Address: 0x004e7ed0  File: sound/mp3.cpp
-    Locals:  local_78 (undefined4), local_74 (undefined4), local_6c (undefined4), local_68 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4), local_44 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDemonActor_rayIntersect
@@ -3109,7 +2851,7 @@ Undefined types in variables (1609)
     Locals:  local_78 (undefined8), local_70 (undefined4), local_6c (undefined), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0055a510
+  playMovie
     Address: 0x0055a510  File: wincore/winvideo.cpp
     Locals:  local_1f8 (undefined), local_f4 (undefined), local_f3 (undefined1), local_f2 (undefined1), local_f1 (undefined1), local_f0 (undefined1), local_ef (undefined1), local_ee (undefined1), local_74 (undefined), local_24 (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3379,7 +3121,7 @@ Undefined types in variables (1609)
     Locals:  local_16c (undefined), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f2990
+  saveScreenshotGeneral
     Address: 0x004f2990  File: engine/pcx.c
     Locals:  local_88 (undefined), local_87 (undefined1), local_86 (undefined1), local_85 (undefined1), local_84 (undefined2), local_82 (undefined2), local_80 (undefined2), local_7e (undefined2), local_47 (undefined1), local_46 (undefined2), local_44 (undefined2), local_42 (undefined2), local_40 (undefined2)
     Suggested: Resolve undefined types to concrete types
@@ -3394,7 +3136,7 @@ Undefined types in variables (1609)
     Locals:  local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00559260
+  winMain
     Address: 0x00559260  File: wincore/winrun.cpp
     Locals:  local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_28 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3404,8 +3146,8 @@ Undefined types in variables (1609)
     Locals:  local_a4 (undefined), local_a3 (undefined1), local_a2 (undefined1), local_a1 (undefined1), local_a0 (undefined1), local_9f (undefined1), local_9e (undefined1), local_24 (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004182cd
-    Address: 0x004182cd  File: core/boneguy.cpp
+  rgbToHsv
+    Address: 0x004182d0  File: core/boneguy.cpp
     Params:  local_res0 (undefined4)
     Locals:  local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3890,7 +3632,7 @@ Undefined types in variables (1609)
     Locals:  local_2a0 (undefined4), local_29c (undefined1), local_29b (undefined1), local_184 (undefined), local_183 (undefined1), local_84 (undefined), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00431260
+  generateTransparencySpans
     Address: 0x00431260  File: cockpit/ckptutil.c
     Locals:  local_130 (undefined), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4080,7 +3822,7 @@ Undefined types in variables (1609)
     Locals:  local_38 (undefined8), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004759d0
+  CPickList_renderDialog
     Address: 0x004759d0  File: shape/edittool.cpp
     Locals:  local_15c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4335,7 +4077,7 @@ Undefined types in variables (1609)
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f4050
+  CPackedBitmap_renderToScreenBuffer
     Address: 0x004f4050  File: cockpit/pkbitmap.cpp
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4425,7 +4167,7 @@ Undefined types in variables (1609)
     Locals:  local_40 (undefined8), local_38 (undefined8), local_30 (undefined8), local_28 (undefined4), local_1c (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0044ed80
+  CDemonLight_renderShadowMapDebugView
     Address: 0x0044ed80  File: core/dlight.cpp
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4715,6 +4457,11 @@ Undefined types in variables (1609)
     Locals:  local_78 (undefined), local_54 (undefined), local_50 (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CDemonRaytrace_consolidateTriList
+    Address: 0x004673e0  File: core/dtrace.cpp
+    Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonRaytrace_setPVS
     Address: 0x0046ace0  File: core/dtrace.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
@@ -4722,11 +4469,6 @@ Undefined types in variables (1609)
 
   CDemonRaytrace_testCylinderCollision
     Address: 0x00468af0  File: core/dtrace.cpp
-    Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_004673e0
-    Address: 0x004673e0  File: core/dtrace.cpp
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -4925,14 +4667,19 @@ Undefined types in variables (1609)
     Locals:  local_6c (undefined1), local_6b (undefined1), local_69 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f8eb0
+  CPod_computeAndStoreCRC
     Address: 0x004f8eb0  File: engine/pod.cpp
     Locals:  local_240 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004fa2e0
+  renderIndexedPolygonSoftware
     Address: 0x004fa2e0  File: engine/prim.c
     Locals:  local_64 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CEditorTools_draw3DAxisLabelsAt
+    Address: 0x00472fd0  File: shape/edittool.cpp
+    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CEditorTools_draw3DProjectedLine
@@ -4943,11 +4690,6 @@ Undefined types in variables (1609)
   CEditorTools_promptForValidFloat
     Address: 0x00471430  File: shape/edittool.cpp
     Locals:  local_50 (undefined8), local_48 (undefined8), local_40 (undefined4), local_3c (undefined4), local_38 (undefined1), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00472fd0
-    Address: 0x00472fd0  File: shape/edittool.cpp
-    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFileBitStream_readAllocationValues
@@ -5005,8 +4747,8 @@ Undefined types in variables (1609)
     Locals:  local_38 (undefined8), local_30 (undefined4), local_2c (undefined), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0041803d
-    Address: 0x0041803d  File: core/bodypart.cpp
+  boundingBoxCenter
+    Address: 0x00418040  File: core/bodypart.cpp
     Params:  local_res0 (undefined4)
     Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5266,7 +5008,7 @@ Undefined types in variables (1609)
     Locals:  local_150 (undefined), local_14f (undefined1), local_50 (undefined), local_3a (undefined4), local_32 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00461720
+  CDemonRenderer_renderFaceList
     Address: 0x00461720  File: engine/drender.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5291,11 +5033,6 @@ Undefined types in variables (1609)
     Locals:  local_2c (undefined4), local_28 (undefined), local_27 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f9dd0
-    Address: 0x004f9dd0  File: engine/prim.c
-    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   calculateTriangleWindingOrder
     Address: 0x004f9a10  File: engine/prim.c
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -5316,24 +5053,24 @@ Undefined types in variables (1609)
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  renderPolygonSoftware
+    Address: 0x004f9dd0  File: engine/prim.c
+    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   renderScanlinePolygon
     Address: 0x004fad00  File: engine/prim.c
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0042ee00
-    Address: 0x0042ee00  File: cockpit/ckptutil.c
-    Locals:  local_6c (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00430210
-    Address: 0x00430210  File: cockpit/ckptutil.c
-    Locals:  local_6c (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   blitWithTransparencyFallback
     Address: 0x0042e6c0  File: cockpit/ckptutil.c
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  loadRotatedBitmapFile
+    Address: 0x00430210  File: cockpit/ckptutil.c
+    Locals:  local_6c (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   mirrorBitmapHorizontally
@@ -5344,6 +5081,11 @@ Undefined types in variables (1609)
   renderEdgeArrayWithBufferLookup
     Address: 0x0042f190  File: cockpit/ckptutil.c
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  saveEdgeListFile
+    Address: 0x0042ee00  File: cockpit/ckptutil.c
+    Locals:  local_6c (undefined), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPackedBitmapSet
@@ -6146,14 +5888,14 @@ Undefined types in variables (1609)
     Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004d23d0
-    Address: 0x004d23d0  File: core/menu.cpp
-    Locals:  local_1c (undefined4), local_c (undefined4), local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   calibrateGamepad
     Address: 0x004cf8d0  File: core/menu.cpp
     Locals:  local_224 (undefined), local_24 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  showMainGameMenu
+    Address: 0x004d23d0  File: core/menu.cpp
+    Locals:  local_1c (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMobster_getTargetPoints
@@ -6616,12 +6358,6 @@ Undefined types in variables (1609)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0040e1cc
-    Address: 0x0040e1cc  File: core/actor.cpp
-    Params:  local_res0 (undefined4)
-    Locals:  local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   archiveDeformableModelInstance
     Address: 0x0040ca80  File: core/actor.cpp
     Locals:  local_d0 (undefined), local_cf (undefined1)
@@ -6757,7 +6493,7 @@ Undefined types in variables (1609)
     Locals:  local_20 (undefined8), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0046ecf0
+  CDynamite_getDamage
     Address: 0x0046ecf0  File: core/dynamite.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6920,11 +6656,6 @@ Undefined types in variables (1609)
   CDemonMission_loadActor
     Address: 0x004d8aa0  File: core/mission.cpp
     Locals:  local_dc (undefined), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission_markActorToDelete
-    Address: 0x004d9110  File: core/mission.cpp
-    Params:  param_2 (undefined4), param_3 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMoon_init
@@ -7232,15 +6963,15 @@ Undefined types in variables (1609)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CAlphaBitmap_copyRawToOpa
+    Address: 0x0040eae0  File: engine/alphabit.cpp
+    Params:  local_res0 (undefined4)
+    Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CAlphaBitmap_load
     Address: 0x0040e3c0  File: engine/alphabit.cpp
     Locals:  local_114 (undefined), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0040eadd
-    Address: 0x0040eadd  File: engine/alphabit.cpp
-    Params:  local_res0 (undefined4)
-    Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   clipPolygonBottomPlane
@@ -7328,7 +7059,7 @@ Undefined types in variables (1609)
     Locals:  local_110 (undefined1), local_10f (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f7980
+  crc32ComputeFileRange
     Address: 0x004f7980  File: engine/pod.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7353,18 +7084,18 @@ Undefined types in variables (1609)
     Locals:  local_34 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CEditorTools_showError
+    Address: 0x0046fcd0  File: shape/edittool.cpp
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CEditorTools_showMessage
     Address: 0x0046fe60  File: shape/edittool.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0046fb40
+  CEditorTools_showWarning
     Address: 0x0046fb40  File: shape/edittool.cpp
-    Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0046fcd0
-    Address: 0x0046fcd0  File: shape/edittool.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -7433,15 +7164,15 @@ Undefined types in variables (1609)
     Locals:  local_1c (undefined8), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005229f0
-    Address: 0x005229f0  File: sound/sndmain.cpp
-    Locals:  local_114 (undefined), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   convertDoubleToFixed
     Address: 0x005235b0  File: sound/sndmain.cpp
     Params:  local_res0 (undefined8)
     Locals:  local_14 (undefined1[16])
+    Suggested: Resolve undefined types to concrete types
+
+  loadStreamingSoundFile
+    Address: 0x005229f0  File: sound/sndmain.cpp
+    Locals:  local_114 (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   logSoundError
@@ -7634,16 +7365,6 @@ Undefined types in variables (1609)
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0040e2e1
-    Address: 0x0040e2e1  File: core/actor.cpp
-    Locals:  local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0040e2f1
-    Address: 0x0040e2f1  File: core/actor.cpp
-    Locals:  local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   archiveFloat
     Address: 0x0040c880  File: core/actor.cpp
     Locals:  local_10 (undefined8)
@@ -7747,11 +7468,6 @@ Undefined types in variables (1609)
   CBodyPart_renderOpaque
     Address: 0x004161a0  File: core/bodypart.cpp
     Locals:  local_20 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00417fec
-    Address: 0x00417fec  File: core/bodypart.cpp
-    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CBoneGuy_renderTransparent
@@ -7969,14 +7685,14 @@ Undefined types in variables (1609)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CDemonCamera_saveCameraTransform
+    Address: 0x00442d9c  File: core/dcamera.cpp
+    Params:  local_res0 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonCamera_updateTransformMatrices
     Address: 0x00440fe0  File: core/dcamera.cpp
     Locals:  local_18 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00442d9c
-    Address: 0x00442d9c  File: core/dcamera.cpp
-    Params:  local_res0 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   loadCameraFog
@@ -8499,7 +8215,7 @@ Undefined types in variables (1609)
     Locals:  local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004bdb80
+  readIniData
     Address: 0x004bdb80  File: core/inivar.cpp
     Locals:  local_204 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -9751,25 +9467,11 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (63 groups)
+DUPLICATE FUNCTION NAMES (46 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
 Some are legitimate overloads, others may need disambiguating names.
-
-  cockpit_ckptutil.c  (8 functions)
-    0x0042d130  (void)
-    0x0042d180  (void)
-    0x0042e7b0  (int param_1,int param_2,int param_3,int param_4,int *para...)
-    0x0042ee00  (char *param_1,int param_2,int param_3)
-    0x00430210  (char *param_1,void *param_2,uint param_3,uint param_4,int...)
-    0x004303d0  (undefined4 *param_1,int param_2,uint param_3,uint param_4)
-    0x00430630  (int param_1,int *param_2,void *param_3,int *param_4,int p...)
-    0x00431260  (void *bitmap_buffer,char *filename,SScanlineSpans *span_o...)
-
-  cockpit_pkbitmap.cpp  (2 functions)
-    0x004f4050  (int param_1,int param_2,int param_3)
-    0x004f49d8  (void)
 
   cockpit_pkbitmap.cpp_CPackedBitmap  (2 functions)
     0x004f3f50  (CPackedBitmap *this_ptr)
@@ -9786,33 +9488,19 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004f5d00  (void)
     0x004f5d10  (void)
 
-  core_actor.cpp  (4 functions)
-    0x0040e1cc  (void)
-    0x0040e2ce  (void)
-    0x0040e2e1  (undefined4 *param_1)
-    0x0040e2f1  (undefined4 *param_1)
-
   core_actor.cpp_CDemonActor_returnZero  (2 functions)
     0x00409f00  (CDemonActor *this_ptr)
     0x0040a130  (CDemonActor *this_ptr)
 
-  core_bat.cpp  (3 functions)
-    0x0041206c  (void)
-    0x00412080  (undefined4 *param_1,undefined4 *param_2)
-    0x00412090  (undefined4 *param_1,undefined4 *param_2)
-
-  core_bodypart.cpp  (2 functions)
-    0x00417fec  (void)
-    0x0041803d  (float *param_1)
+  core_bat.cpp_copyFloat  (3 functions)
+    0x00412070  (float *dst,float *src)
+    0x00412080  (float *dst,float *src)
+    0x00412090  (float *dst,float *src)
 
   core_bugs.cpp_CBugs  (3 functions)
     0x004219f0  (CBugs *this_ptr,int tri_count,SInputFace *triangles)
     0x00421b80  (CBugs *this_ptr)
     0x00422050  (CBugs *this_ptr,float delta_time)
-
-  core_chain.cpp  (2 functions)
-    0x0042cd00  (void)
-    0x0042cd10  (void)
 
   core_charactr.cpp  (3 functions)
     0x0042b6c0  (void)
@@ -9841,10 +9529,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0043b500  (void)
     0x0043b5b0  (void)
 
-  core_dcamera.cpp  (2 functions)
-    0x004425d0  (undefined4 param_1,int param_2,int param_3)
-    0x00442d9c  (void)
-
   core_dcamera.cpp_CDemonCamera  (9 functions)
     0x004401b0  (CDemonCamera *this_ptr,int param_2,int param_3)
     0x004421b0  (CDemonCamera *this_ptr)
@@ -9862,14 +9546,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0044b660  (char *filename)
     0x0044b720  (void)
 
-  core_dfont.cpp  (2 functions)
-    0x0044c560  (void)
-    0x0044cc00  (void)
-
-  core_dlight.cpp  (6 functions)
-    0x0044ed80  (char *param_1,int param_2,int param_3,int param_4)
-    0x0044f9b0  (int param_1)
-    0x00450c90  (int param_1)
+  core_dlight.cpp  (3 functions)
     0x00452500  (void)
     0x00452510  (void)
     0x00452520  (void)
@@ -9877,12 +9554,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_dlight.cpp_CDemonLight  (2 functions)
     0x0044e2c0  (CDemonLight *this_ptr)
     0x0044f0b0  (CDemonLight *this_ptr)
-
-  core_dynamite.cpp  (4 functions)
-    0x0046ecf0  (void)
-    0x0046ed20  (void)
-    0x0046ed80  (CDynamite *this_ptr)
-    0x0046eda0  (CDynamite *this_ptr)
 
   core_event.cpp  (4 functions)
     0x00481930  (void)
@@ -9894,10 +9565,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00498de0  (CGabriella *this_ptr,CDemonActor *target_actor,int use_wi...)
     0x004998c0  (CGabriella *this_ptr,float delta_time,int has_carried_obj...)
     0x00499b00  (CGabriella *this_ptr,float param_2,float *param_3,int par...)
-
-  core_game.cpp  (2 functions)
-    0x0049a320  (void)
-    0x004a03a0  (char *param_1,EAmmoType param_2)
 
   core_game.cpp_CGame  (6 functions)
     0x004a3a70  (CGame *this_ptr)
@@ -9995,9 +9662,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00511a10  (CDemonSet *this_ptr,CDemonActor *actor)
     0x00511aa0  (CDemonSet *this_ptr,CDemonActor *actor)
 
-  core_setdir.cpp  (5 functions)
-    0x00511d80  (CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePol...)
-    0x005138e0  (int *param_1)
+  core_setdir.cpp  (3 functions)
     0x00514390  (void)
     0x005143a0  (void)
     0x005143b0  (void)
@@ -10016,17 +9681,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00515410  (C3DSLight *this_ptr)
     0x00515c40  (C3DSLight *this_ptr)
 
-  core_skeleton.cpp  (3 functions)
-    0x0051f650  (void)
-    0x0051f680  (char *filename)
-    0x0051f760  (char *output_buffer)
-
-  core_sound.cpp  (8 functions)
-    0x0052d030  (CSound *this_ptr,char *out_result,char *wildcard_pattern)
-    0x0052d790  (void)
-    0x0052dd80  (CSound *this_ptr)
-    0x0052ec80  (void)
-    0x0052ed40  (undefined4 param_1,char *param_2,int *param_3)
+  core_sound.cpp  (3 functions)
     0x0052ee20  (void)
     0x0052ee30  (void)
     0x0052ee40  (void)
@@ -10050,31 +9705,12 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0053ffe0  (CStranger *this_ptr,float delta_time)
     0x005402f0  (CStranger *this_ptr)
 
-  engine_3d.c  (2 functions)
-    0x00404480  (void)
-    0x00404490  (void)
-
-  engine_drender.cpp  (5 functions)
-    0x004579c0  (int param_1,int *param_2)
-    0x00460c26  (void)
-    0x00460d10  (void)
-    0x00460d90  (void)
-    0x00461720  (CDemonRenderer *this_ptr,SInputFace *face_array,int face_...)
-
   engine_font.cpp_CBitFont  (5 functions)
     0x0048fe30  (CBitFont *this_ptr,uint flags)
     0x00490210  (CBitFont *this_ptr,char *param_2)
     0x00490b70  (CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int...)
     0x00490c70  (CBitFont *this_ptr,int x,int y,int color_mode,int color_v...)
     0x00490d70  (CBitFont *this_ptr,int center_x,int y_pos,int color_mode,...)
-
-  engine_pod.cpp  (2 functions)
-    0x004f7980  (char *param_1,int param_2)
-    0x004f8eb0  (undefined4 param_1,char *param_2)
-
-  engine_prim.c  (2 functions)
-    0x004f9dd0  (SRenderVertex *vertices,int vertex_count)
-    0x004fa2e0  (int *vertex_indices,int vertex_count)
 
   engine_special.cpp_switchRenderer  (2 functions)
     0x00532f30  (CExternalRenderer *renderer,int card_index)
@@ -10085,19 +9721,10 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00544e50  (CTextureCache *this_ptr)
     0x00545700  (CTextureCache *this_ptr)
 
-  shape_edittool.cpp  (13 functions)
-    0x0046fb40  (CEditorTools *param_1,char *param_2)
-    0x0046fcd0  (CEditorTools *param_1,char *param_2)
+  shape_edittool.cpp  (4 functions)
     0x00470230  (undefined4 param_1,char *param_2)
     0x00470310  (undefined4 param_1,char *param_2)
     0x004703f0  (undefined4 param_1,char *param_2)
-    0x00470730  (void)
-    0x00472fd0  (CEditorTools *param_1,float param_2,int param_3,undefined...)
-    0x00474ae0  (CStrList *param_1,char *param_2,char *param_3)
-    0x00475230  (CPickList *this_ptr)
-    0x004759d0  (CPickList *this_ptr)
-    0x00476160  (CStrList *param_1)
-    0x00476f40  (int param_1)
     0x00477680  (undefined4 *param_1,undefined4 *param_2)
 
   sound_mp3.cpp_CFileBitStream  (3 functions)
@@ -10105,32 +9732,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004e2980  (CFileBitStream *this_ptr)
     0x004e2c50  (CFileBitStream *this_ptr)
 
-  sound_sndmain.cpp  (10 functions)
-    0x005229f0  (int param_1,char *param_2)
-    0x00525ff0  (void)
-    0x00526020  (void)
-    0x005260c0  (void)
-    0x00526120  (float base_frequency)
-    0x00526150  (int index,void *userdata)
-    0x005262a0  (void)
-    0x00526310  (void)
-    0x00527520  (uint current_sfx_handle)
-    0x00527d80  (void)
-
   sound_sndmain.cpp_CSfxOptions_dtor  (2 functions)
     0x00529a40  (CSfxOptions *this_ptr,uint flags)
     0x00529a50  (CSfxOptions *this_ptr,uint flags)
-
-  wincore_wddvmem.cpp  (5 functions)
-    0x00552a20  (void)
-    0x00552af0  (void)
-    0x00553ba0  (void)
-    0x00553ca0  (void)
-    0x00553d30  (LPCSTR lpLibFileName)
-
-  wincore_winrun.cpp  (5 functions)
-    0x00558c40  (void)
-    0x00558d90  (HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
-    0x00559260  (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLi...)
-    0x00559500  (char *message)
-    0x00559e90  (void)

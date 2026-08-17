@@ -365,7 +365,7 @@ int __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *loca
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50
 // Address: 0040db50
-uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
+int __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040dd20
 // Address: 0040dd20
@@ -427,9 +427,13 @@ void __cdecl copyVector(CVector3f *dst_ptr,CVector3f *src_ptr);
 // Address: 0040e1a0
 float __cdecl CVector3f::length(CVector3f *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040e1cc
-// Address: 0040e1cc
-void FUN_0040e1cc(void);
+// Original: core_actor.cpp_CVector3f_zero_FUN_0040e1d0
+// Address: 0040e1d0
+void __cdecl CVector3f::zero(CVector3f *this_ptr);
+
+// Original: core_actor.cpp_CVector3f_toFixed8_FUN_0040e1f0
+// Address: 0040e1f0
+void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 
 // Original: core_actor.cpp_SDamageInfo_dtor_FUN_0040e220
 // Address: 0040e220
@@ -451,17 +455,17 @@ CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flag
 // Address: 0040e2a0
 CVector3f * __cdecl CVector3f::copy(CVector3f *this_ptr,CVector3f *other);
 
-// Original: core_actor.cpp_FUN_0040e2ce
-// Address: 0040e2ce
-void FUN_0040e2ce(void);
+// Original: core_actor.cpp_copyFloat1_FUN_0040e2d0
+// Address: 0040e2d0
+float * __cdecl copyFloat1(float *dst,float *src);
 
-// Original: core_actor.cpp_FUN_0040e2e1
-// Address: 0040e2e1
-void FUN_0040e2e1(undefined4 *param_1);
+// Original: core_actor.cpp_copyFloat2_FUN_0040e2e0
+// Address: 0040e2e0
+float * __cdecl copyFloat2(float *dst,float *src);
 
-// Original: core_actor.cpp_FUN_0040e2f1
-// Address: 0040e2f1
-void FUN_0040e2f1(undefined4 *param_1);
+// Original: core_actor.cpp_copyFloat3_FUN_0040e2f0
+// Address: 0040e2f0
+float * __cdecl copyFloat3(float *dst,float *src);
 
 // Original: core_actor.cpp_CVector3f_arrdtor10_FUN_0040e300
 // Address: 0040e300

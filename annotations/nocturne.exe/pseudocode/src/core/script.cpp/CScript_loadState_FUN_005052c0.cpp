@@ -73,7 +73,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     _fscanf(file_handle,"%u\n",&local_14);
     uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(this_ptr);
     if (uVar1 != local_14) {
-      shape_edittool_cpp_FUN_0046fb40
+      shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
                 (g_CEditorTools_PTR_005b6d50,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
       return;
     }

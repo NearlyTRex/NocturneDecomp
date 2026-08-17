@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02dc9214
 ;   undefined4 DAT_02dc9218
 ;   undefined4 DAT_02dc9220
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 0052bfb2
     PUSH 0x3                            ; 0052bfb3
         ;   Label: LAB_0052bfb3
-    MOV ECX,dword ptr [0x02de2098]      ; 0052bfb5 | DAT_02de2098
+    MOV ECX,dword ptr [0x02de2098]      ; 0052bfb5 | g_HWND_02de2098
     MOV EAX,[0x02dc9214]                ; 0052bfbb | DAT_02dc9214
     PUSH ECX                            ; 0052bfc0
     MOV EDX,dword ptr [EAX]             ; 0052bfc1

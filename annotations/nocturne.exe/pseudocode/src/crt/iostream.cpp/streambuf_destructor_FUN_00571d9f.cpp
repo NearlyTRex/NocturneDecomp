@@ -16,6 +16,6 @@ streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(st
   if ((uVar1 & 2) == 0) {
     return this_ptr;
   }
-  FUN_00571ef0(this_ptr->__reserve_base);
+  freeBuffer(this_ptr->__reserve_base);
   return this_ptr;
 }

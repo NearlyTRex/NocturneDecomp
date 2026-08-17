@@ -10,8 +10,8 @@ void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004d9900(CDemonMis
 
 {
   engine_texture_cpp_clearTextureCache_FUN_005459f0();
-  core_dmodel_cpp_FUN_00454460();
-  core_skeleton_cpp_FUN_0051f650();
+  core_dmodel_cpp_freeAllModels_FUN_00454460();
+  core_skeleton_cpp_freeAllModels_FUN_0051f650();
   core_skeleton_cpp_freeAllSkeletons_FUN_0051f730();
   return;
 }

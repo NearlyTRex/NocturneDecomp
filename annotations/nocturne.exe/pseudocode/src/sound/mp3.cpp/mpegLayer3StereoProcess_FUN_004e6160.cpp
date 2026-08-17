@@ -502,7 +502,8 @@ LAB_004e6377:
           }
           g_CurrentFilename = "..\\sound\\mp3.cpp";
           g_CurrentLineNumber = 2488;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Error in streo processing.  File: %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440
+                    ("Error in streo processing.  File: %s",&DAT_01cd8b28);
         }
         iVar9 = iVar9 + 1;
         iVar6 = iVar6 + 4;

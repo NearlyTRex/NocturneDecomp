@@ -27,7 +27,7 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;
 ; Called Functions:
-;   cockpit_ckptutil.c_FUN_0042d130
+;   cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     POP ESI                             ; 0042e2d5
     POP EBX                             ; 0042e2d6
     RET                                 ; 0042e2d7
-    CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e2d8
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_FUN_0042d130()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130 ; 0042e2d8
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_0042d130()
         ;   Label: LAB_0042e2d8
     MOV ECX,dword ptr [ESP + 0x34]      ; 0042e2dd
     MOV EBP,EAX                         ; 0042e2e1

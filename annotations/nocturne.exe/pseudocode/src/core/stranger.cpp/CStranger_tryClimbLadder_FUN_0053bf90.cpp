@@ -139,7 +139,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(CStranger *t
               this_ptr->ladder_facing_angle = pCVar1->y;
               this_ptr->ladder_blend_time = 1.0;
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (this_ptr_00,"Climbing ladder %s\n");
+                        (this_ptr_00,"Climbing ladder %s\n",this_ptr_01);
               return 1;
             }
           }

@@ -74,15 +74,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "stack_ref"
     ],
     "total_lines": 51
@@ -105,7 +104,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070",
-    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format)"
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format,...)"
   },
   "function_calls": [
     {
@@ -234,17 +233,6 @@
       "severity": "moderate",
       "text": "puStack_14 = &stack0x0000001c;",
       "type": "stack_ref"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 6,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:6 vs estimated:7",
-      "param_delta": 1,
-      "text": "Function declares 6 params but call sites push 7 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -22,7 +22,7 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504fdf
 ;   core_script.cpp_CScript_findDialogEntry_FUN_00505180 at 005051a6
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 004900b6
-;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047459c
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470a8b
 ;   ... and 10 more
 ;
 ; Called Functions:

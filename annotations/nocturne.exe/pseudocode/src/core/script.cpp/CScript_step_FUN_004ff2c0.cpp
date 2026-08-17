@@ -1421,12 +1421,13 @@ LAB_004ff42f:
                                                             (&local_118,local_3400,300);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00501802;
                                                   if (_DAT_01e56418 == 0) {
-                                                    shape_edittool_cpp_FUN_0046fcd0
-                                                              (g_CEditorTools_PTR_005b6d50,
-                                                               "Script GTFO at line %d:\n%s\nTerminating mission.",
-                                                               local_11c,local_3400);
-                                                    this_ptr->script_pause_flag = 1;
-                                                    local_124 = 0;
+                                                                                                        
+                                                  shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+                                                            (g_CEditorTools_PTR_005b6d50,
+                                                             "Script GTFO at line %d:\n%s\nTerminating mission.",
+                                                             local_11c,local_3400);
+                                                  this_ptr->script_pause_flag = 1;
+                                                  local_124 = 0;
                                                   }
                                                   }
                                                   else {
@@ -2307,7 +2308,8 @@ LAB_00503106:
                                                   if (local_7c == 0) {
                                                     engine_console_cpp_CConsole_printf_FUN_0043ac60
                                                               (g_CConsole_PTR_005ad350,
-                                                               "%s can't selectWeapon(%s)\n");
+                                                               "%s can't selectWeapon(%s)\n",
+                                                               local_700,local_69c);
                                                   }
                                                   }
                                                   }

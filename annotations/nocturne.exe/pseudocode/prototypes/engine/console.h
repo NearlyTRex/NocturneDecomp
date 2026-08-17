@@ -13,7 +13,7 @@ CConsole * __cdecl CConsole::dtor(CConsole *this_ptr,uint flags);
 
 // Original: engine_console.cpp_CConsole_printf_FUN_0043ac60
 // Address: 0043ac60
-void __cdecl CConsole::printf(CConsole *this_ptr,char *format);
+void __cdecl CConsole::printf(CConsole *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: engine_console.cpp_CConsole_writeChar_FUN_0043ad30
 // Address: 0043ad30

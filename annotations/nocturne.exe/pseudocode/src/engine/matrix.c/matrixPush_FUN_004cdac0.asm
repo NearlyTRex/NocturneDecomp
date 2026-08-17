@@ -1,10 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(CDemonRenderer *this_ptr)
+; void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 ;
-; Parameters:
-; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5911

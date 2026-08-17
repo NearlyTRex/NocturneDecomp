@@ -100,7 +100,7 @@
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 38,
+        "line": 39,
         "message": "use of undeclared identifier '_DAT_01bcd07c'"
       },
       {
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 101,
+    "complexity_score": 76,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 61,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_truncation",
       "warning_overlapping_globals"
     ],
     "total_lines": 236
@@ -149,6 +148,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046fcd0",
+      "from_addr": "0046fdbf",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00470eb0",
       "from_addr": "00470f9a",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0",
@@ -161,27 +166,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046fb40",
+      "from_addr": "0046fc2f",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00471760",
       "from_addr": "00471816",
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046fb40",
-      "from_addr": "0046fc2f",
-      "name": "shape_edittool.cpp_FUN_0046fb40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046fcd0",
-      "from_addr": "0046fdbf",
-      "name": "shape_edittool.cpp_FUN_0046fcd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004759d0",
       "from_addr": "004759e1",
-      "name": "shape_edittool.cpp_FUN_004759d0",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -206,7 +205,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -364,7 +363,7 @@
       {
         "call_addr": "0046fdbf",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0046fcd0",
+        "caller": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -375,7 +374,7 @@
       {
         "call_addr": "004759e1",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004759d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -386,7 +385,7 @@
       {
         "call_addr": "0046fc2f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0046fb40",
+        "caller": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -517,22 +516,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)this_ptr_00",
-      "severity": "moderate",
-      "text": "g_ActiveRenderColor = (int)this_ptr_00;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
-      "match": "(int)this_ptr_00",
-      "severity": "moderate",
-      "text": "g_ActiveRenderColor = (int)this_ptr_00;",
-      "type": "pointer_truncation"
     }
   ]
 }

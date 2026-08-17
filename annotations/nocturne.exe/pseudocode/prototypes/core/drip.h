@@ -31,9 +31,9 @@ void __cdecl CDrip::archive(CDrip *this_ptr);
 // Address: 00462300
 void __cdecl CDrip::process(CDrip *this_ptr,float delta_time);
 
-// Original: core_drip.cpp_FUN_00462710
+// Original: core_drip.cpp_CDrip_reset_FUN_00462710
 // Address: 00462710
-void __cdecl FUN_00462710(CDrip *this_ptr);
+void __cdecl CDrip::reset(CDrip *this_ptr);
 
 // Original: core_drip.cpp_CDrip_renderOpaque_FUN_00462720
 // Address: 00462720

@@ -68,52 +68,46 @@
         "message": "use of undeclared identifier 'DAT_01fb9b58'; did you mean 'DAT_005b9258'?"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 31,
-        "message": "no matching function for call to 'core_dlight_cpp_FUN_0044ed80'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 32,
+        "line": 33,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 35,
+        "line": 36,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 45,
-        "message": "no matching function for call to 'core_dlight_cpp_FUN_0044ed80'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 46,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 48,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 48,
+        "line": 50,
         "message": "use of undeclared identifier '_DAT_01fba2d8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 49,
+        "line": 51,
         "message": "use of undeclared identifier '_DAT_01fba9a4'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 39,
+        "line": 53,
+        "message": "use of undeclared identifier '_DAT_01fb9b54'"
       }
     ],
     "success": false,
@@ -122,12 +116,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 258,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 45,
     "suspect_count": 19,
     "suspect_types": [
       "displaced_global_access",
@@ -136,7 +130,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 147
+    "total_lines": 149
   },
   "cross_references": [
     {
@@ -162,7 +156,7 @@
     {
       "addr": "0044ed80",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_0044ed80"
+      "name": "core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80"
     },
     {
       "addr": "00563c90",
@@ -334,7 +328,7 @@
       "line": 19,
       "match": "DAT_005be4fc",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar4);",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar4);",
       "type": "undefined_data"
     },
     {
@@ -342,7 +336,7 @@
       "line": 20,
       "match": "DAT_005be37c",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar4);",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar4);",
       "type": "undefined_data"
     },
     {
@@ -355,32 +349,24 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005be4fc",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 33,
-      "match": "DAT_005be37c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_005be37c",
-      "severity": "mild",
-      "text": "engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
       "match": "DAT_005be4fc",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_005be37c",
+      "severity": "mild",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005be37c",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);",
       "type": "undefined_data"
@@ -388,6 +374,14 @@
     {
       "description": "Undefined global data reference",
       "line": 45,
+      "match": "DAT_005be4fc",
+      "severity": "mild",
+      "text": "engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
       "match": "DAT_005be37c",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5] + 0xb);",
@@ -395,7 +389,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 47,
       "match": "DAT_005be4fc",
       "severity": "mild",
       "text": "engine_2d_c_drawText_FUN_00402600(local_110,(&DAT_005be37c)[iVar5],(&DAT_005be4fc)[iVar5] + 0xb);",
@@ -406,7 +400,7 @@
       "line": 19,
       "match": "(int)&DAT_005be4fc",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar4);",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar4);",
       "type": "pointer_truncation"
     },
     {
@@ -414,23 +408,23 @@
       "line": 20,
       "match": "(int)&DAT_005be37c",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar4);",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_005be4fc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
+      "line": 33,
       "match": "(int)&DAT_005be4fc",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar5);",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar5);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_005be37c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "(int)&DAT_005be37c",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar5);",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar5);",
       "type": "pointer_truncation"
     },
     {
@@ -438,7 +432,7 @@
       "line": 19,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar4);",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -446,15 +440,7 @@
       "line": 20,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&DAT_005be4fc + iVar5);",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -462,7 +448,15 @@
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&DAT_005be37c + iVar5);",
+      "text": "piVar1 = (int *)((int)&DAT_005be4fc + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&DAT_005be37c + iVar5);",
       "type": "pointer_cast"
     },
     {

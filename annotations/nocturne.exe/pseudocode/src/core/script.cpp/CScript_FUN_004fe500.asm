@@ -13,8 +13,8 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_freeParsedLines_FUN_004fe550
 ;   crt_memory.c_free_FUN_005638d0
+;   shape_edittool.cpp_CPickList_clear_FUN_00476160
 ;   shape_edittool.cpp_CStrList_clear_FUN_00473c50
-;   shape_edittool.cpp_FUN_00476160
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x1e56c30                      ; 004fe521
         ;   Label: LAB_004fe521
     MOV dword ptr [EBX + 0x1c],0x0      ; 004fe526
-    CALL shape_edittool.cpp_FUN_00476160 ; 004fe52d
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 004fe52d
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004fe532
     POP EBX                             ; 004fe535
     RET                                 ; 004fe536

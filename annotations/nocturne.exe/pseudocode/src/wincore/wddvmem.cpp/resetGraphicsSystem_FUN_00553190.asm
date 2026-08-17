@@ -162,7 +162,7 @@ section .text
     JNZ 0x005532e0                      ; 005532ca
         ;   XREF to: 005532e0 (CONDITIONAL_JUMP)  ; LAB_005532e0
     PUSH 0x11                           ; 005532cc
-    MOV EBP,dword ptr [0x02de2098]      ; 005532ce | DAT_02de2098
+    MOV EBP,dword ptr [0x02de2098]      ; 005532ce | g_HWND_02de2098
     MOV EAX,[0x02ddf550]                ; 005532d4 | g_DirectDrawObject
     PUSH EBP                            ; 005532d9
     MOV EDX,dword ptr [EAX]             ; 005532da

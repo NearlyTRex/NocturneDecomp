@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined1 __cdecl crt_unknown_c_ExitHookStub_FUN_0056fcd0(void)
+;
+;
+; XREF[2]:
+;   crt_exit.c_FinalExitHandler_FUN_0056fd00 at 0056fd01
+;   crt_startup.c_ExitApplication_FUN_0056fcd4 at 0056fcd4
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 0056fcd0
+        ;   Label: crt_unknown.c_ExitHookStub_FUN_0056fcd0
+

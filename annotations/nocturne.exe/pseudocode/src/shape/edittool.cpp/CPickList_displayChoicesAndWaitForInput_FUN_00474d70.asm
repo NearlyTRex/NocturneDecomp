@@ -17,11 +17,11 @@
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3baa
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2125
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c9d
-;   core_sound.cpp_FUN_0052ed40 at 0052ed8a
+;   core_sound.cpp_CSound_selectReverbPreset_FUN_0052ed40 at 0052ed8a
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f850d
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 004709c7
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 00470651
 ;   shape_edittool.cpp_FUN_00470230 at 004702e6
-;   shape_edittool.cpp_FUN_00470310 at 004703c6
 ;   ... and 2 more
 ;
 ; Referenced Globals:
@@ -42,9 +42,9 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70
-;   shape_edittool.cpp_FUN_00475230
-;   shape_edittool.cpp_FUN_004759d0
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   wincore_winrun.cpp_setCursorPosition_FUN_00558d60
 ;
@@ -101,13 +101,13 @@ section .text
     ADD ESP,0x10                        ; 00474e04
     PUSH ESI                            ; 00474e07
         ;   Label: LAB_00474e07
-    CALL shape_edittool.cpp_FUN_00475230 ; 00474e08
-        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00475230(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230 ; 00474e08
+        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00474e0d
     PUSH ESI                            ; 00474e10
     MOV EBX,EAX                         ; 00474e11
-    CALL shape_edittool.cpp_FUN_004759d0 ; 00474e13
-        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_004759d0(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 ; 00474e13
+        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00474e18
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00474e1b
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

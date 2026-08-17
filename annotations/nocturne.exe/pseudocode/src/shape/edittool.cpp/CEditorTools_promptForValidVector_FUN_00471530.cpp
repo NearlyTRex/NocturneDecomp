@@ -28,7 +28,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(CE
     }
     iVar1 = sscanf(acStack_40,"%f%*[ ,]%f%*[ ,]%f");
     if (iVar1 == 3) break;
-    shape_edittool_cpp_FUN_0046fcd0(this_ptr);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+              (this_ptr,"Please enter a valid vector.");
   }
   if (result_ptr != &CStack_18) {
     result_ptr->x = CStack_18.x;

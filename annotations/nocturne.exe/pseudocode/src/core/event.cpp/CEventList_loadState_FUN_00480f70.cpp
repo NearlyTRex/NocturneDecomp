@@ -27,7 +27,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(CEventList *this_pt
   if (5 < local_20) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 3116;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d",local_20,5);
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;

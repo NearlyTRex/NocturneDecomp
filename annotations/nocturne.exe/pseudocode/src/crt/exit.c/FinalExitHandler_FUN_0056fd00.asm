@@ -11,12 +11,12 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c1d94
-;   void* PTR_crt_unknown.c_FUN_0056fcd0_005c2054 = 0056fcd0
-;   void* PTR_crt_unknown.c_FUN_0056fcd0_005c2058 = 0056fcd0
+;   void* PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054 = 0056fcd0
+;   void* PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2058 = 0056fcd0
 ;
 ; Called Functions:
 ;   crt_exit.c_ExitProcess_FUN_005674b0
-;   crt_unknown.c_FUN_0056fcd0
+;   crt_unknown.c_ExitHookStub_FUN_0056fcd0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
 
     PUSH EBX                            ; 0056fd00
         ;   Label: crt_exit.c_FinalExitHandler_FUN_0056fd00
-    CALL dword ptr [0x005c2054]         ; 0056fd01 | PTR_crt_unknown.c_FUN_0056fcd0_005c2054
-    CALL dword ptr [0x005c2058]         ; 0056fd07 | PTR_crt_unknown.c_FUN_0056fcd0_005c2058
+    CALL dword ptr [0x005c2054]         ; 0056fd01 | PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054
+    CALL dword ptr [0x005c2058]         ; 0056fd07 | PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2058
     CMP dword ptr [0x005c1d94],0x0      ; 0056fd0d | DAT_005c1d94
     JZ 0x0056fd1c                       ; 0056fd14
         ;   XREF to: 0056fd1c (CONDITIONAL_JUMP)  ; LAB_0056fd1c

@@ -15,6 +15,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
   CBoundingBox3D *this_ptr_00;
   CVector3f *rotation;
   CVector3f *position;
+  int in_stack_00000008;
   CBoundingBox3D local_44;
   CVector3f CStack_2c;
   CVector3f CStack_20;
@@ -59,7 +60,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_00421540(CBugs *this_ptr)
             position = (CVector3f *)&position[5].y;
             iVar1 = iVar1 + 1;
             rotation = (CVector3f *)&rotation[5].y;
-          } while (iVar1 < this_ptr->count);
+          } while (iVar1 < *(int *)(in_stack_00000008 + 0xbd28));
         }
         core_set_cpp_CDemonSet_FUN_0050e370(g_CDemonSet_PTR_005be368,(CVector3f *)0x0);
       }

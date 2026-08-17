@@ -25,7 +25,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFr
     if ((local_2c < 3) || (4 < local_2c)) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
       g_CurrentLineNumber = 237;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is invalid version %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("KFM file is invalid version %d",local_2c);
     }
     local_14 = 0;
     if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))

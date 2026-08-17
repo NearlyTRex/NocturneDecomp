@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e94b
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de25
-;   sound_sndmain.cpp_FUN_00527d80 at 00527e06
+;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 at 00527e06
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc78f8

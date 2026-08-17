@@ -3,7 +3,6 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/windef.h"
-#include "system/wingdi.h"
 #include "system/winuser.h"
 
 // =============================================================================

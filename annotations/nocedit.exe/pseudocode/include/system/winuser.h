@@ -8,55 +8,6 @@
 // WINUSER - System Header
 // =============================================================================
 
-// Typedef: HBITMAP
-// pointer to HBITMAP__
-typedef struct HBITMAP__* HBITMAP;
-
-// Structure: HBITMAP__
-typedef struct HBITMAP__ {
-    int unused;
-} HBITMAP__;
-
-// Typedef: HBRUSH
-// pointer to HBRUSH__
-typedef struct HBRUSH__* HBRUSH;
-
-// Structure: HBRUSH__
-typedef struct HBRUSH__ {
-    int unused;
-} HBRUSH__;
-
-// Typedef: HFONT
-// pointer to HFONT__
-typedef struct HFONT__* HFONT;
-
-// Structure: HFONT__
-typedef struct HFONT__ {
-    int unused;
-} HFONT__;
-
-// Typedef: HICON
-// pointer to HICON__
-typedef struct HICON__* HICON;
-
-// Structure: HICON__
-typedef struct HICON__ {
-    int unused;
-} HICON__;
-
-// Typedef: HCURSOR
-// pointer to HICON__
-typedef HICON HCURSOR;
-
-// Typedef: HMENU
-// pointer to HMENU__
-typedef struct HMENU__* HMENU;
-
-// Structure: HMENU__
-typedef struct HMENU__ {
-    int unused;
-} HMENU__;
-
 // Typedef: HWND
 // Signed Integer (compiler-specific size)
 typedef int HWND;
@@ -76,9 +27,6 @@ typedef IS_SPECIAL_DEVICE_FUNC* LPISSPECIALDEVICE;
 // Typedef: LPMSG
 // pointer to tagMSG
 typedef struct tagMSG* LPMSG;
-
-// Typedef: POINT
-typedef tagPOINT POINT;
 
 // Function Definition: SPECIAL_CONSOLE_INPUT_HANDLER_FUNC
 typedef int SPECIAL_CONSOLE_INPUT_HANDLER_FUNC(int device_type);

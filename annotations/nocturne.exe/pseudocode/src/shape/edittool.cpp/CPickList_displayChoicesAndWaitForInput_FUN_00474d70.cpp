@@ -31,8 +31,8 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474
     shape_edittool_cpp_CPickList_initializeDialog_FUN_00474e70
               (this_ptr,dialog_title,initial_selected_index,0);
     do {
-      iVar2 = shape_edittool_cpp_FUN_00475230(this_ptr);
-      shape_edittool_cpp_FUN_004759d0(this_ptr);
+      iVar2 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_00475230(this_ptr);
+      shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(this_ptr);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     } while (iVar2 == -2);
     wincore_winrun_cpp_setCursorPosition_FUN_00558d60(x,y);

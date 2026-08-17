@@ -108,8 +108,8 @@
     {
       "addr": "0052dd80",
       "from_addr": "0052dd80",
-      "name": "core_sound.cpp_FUN_0052dd80",
-      "type": "UNCONDITIONAL_JUMP"
+      "name": "core_sound.cpp_CSound_dtor_FUN_0052dd80",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -122,7 +122,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_00527e10",
-    "signature": "void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_00527e10(CSound *this_ptr)"
+    "signature": "void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_00527e10(void)"
   },
   "function_calls": [
     {
@@ -145,12 +145,24 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1,
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052dd80",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_dtor_FUN_0052dd80",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -176,20 +188,12 @@
     "pcode_op_count": 36
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 4,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 0,
     "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CSound *"
-      }
-    ]
+    "variables": []
   },
   "suspects": [
     {

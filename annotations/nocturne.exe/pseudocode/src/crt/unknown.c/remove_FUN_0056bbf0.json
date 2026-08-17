@@ -1,0 +1,108 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "005657c0",
+      "from_addr": "005657c5",
+      "name": "crt_stdio.c_remove_FUN_005657c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056bbf0",
+    "address_range": [
+      [
+        "0056bbf0",
+        "0056bc06"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_unknown.c_remove_FUN_0056bbf0",
+    "signature": "int __watcallStack crt_unknown_c_remove_FUN_0056bbf0(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000047",
+      "is_variadic": false,
+      "name": "DeleteFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754a8",
+      "name": "PTR_DeleteFileA_005754a8",
+      "type": "void*",
+      "value": "00175b4c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005657c5",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_remove_FUN_005657c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 2,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

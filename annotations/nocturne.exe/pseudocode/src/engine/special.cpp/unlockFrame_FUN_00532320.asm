@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(void)
+; int __cdecl engine_special_cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
 ;
+; Parameters:
+; int              Stack[0x4]:4   clear_lock_flag
 ;
 ; XREF[6]:
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020 at 00445091

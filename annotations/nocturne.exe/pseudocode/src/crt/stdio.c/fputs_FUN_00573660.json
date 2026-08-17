@@ -2,19 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 207,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 15,
+    "pseudocode_lines": 45,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "stack_param",
+      "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 132
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -55,7 +57,7 @@
     {
       "addr": "00568ed0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [
@@ -167,16 +169,64 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 11,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "char *in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(file,in_stack_ffffffec,unaff_EBP,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file->_handle);",
@@ -184,7 +234,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 15,
+      "line": 18,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "bVar2 = *(byte *)((int)&file->_flag + 1);",
@@ -192,7 +242,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
+      "line": 22,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2;",
@@ -200,7 +250,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
+      "line": 23,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2 | 2;",
@@ -208,7 +258,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
+      "line": 36,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "bVar2 = *(byte *)((int)&file->_flag + 1) & 0xf9;",
@@ -216,7 +266,7 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 34,
+      "line": 37,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2;",
@@ -224,23 +274,23 @@
     },
     {
       "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
+      "line": 38,
       "match": "(int)&file->_flag",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2 | 4;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pbVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
-      "match": "(int)pbVar3",
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar5",
       "severity": "moderate",
-      "text": "iVar4 = (int)pbVar3 - (int)str;",
+      "text": "iVar3 = (int)str - (int)pcVar5;",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 15,
+      "line": 18,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "bVar2 = *(byte *)((int)&file->_flag + 1);",
@@ -248,7 +298,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
+      "line": 22,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2;",
@@ -256,7 +306,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 20,
+      "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2 | 2;",
@@ -264,7 +314,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 33,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "bVar2 = *(byte *)((int)&file->_flag + 1) & 0xf9;",
@@ -272,7 +322,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 34,
+      "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2;",
@@ -280,7 +330,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 35,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar2 | 4;",

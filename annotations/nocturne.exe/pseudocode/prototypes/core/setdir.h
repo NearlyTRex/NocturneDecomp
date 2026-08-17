@@ -7,9 +7,9 @@
 // Address: 00511d60
 void __cdecl staticInit(void);
 
-// Original: core_setdir.cpp_FUN_00511d80
+// Original: core_setdir.cpp_testCameraVisibility_FUN_00511d80
 // Address: 00511d80
-float FUN_00511d80(CDemonActor *param_1,CVector3i *param_2,SMRGLPrimitivePoly *param_3,int param_4,C3DSCamera *param_5,float param_6);
+float __cdecl testCameraVisibility(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 
 // Original: core_setdir.cpp_CDemonSet_FUN_005125a0
 // Address: 005125a0
@@ -35,9 +35,9 @@ void __cdecl CDemonSet(CDemonSet *this_ptr,char *param_2);
 // Address: 00513720
 void __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_setdir.cpp_FUN_005138e0
+// Original: core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0
 // Address: 005138e0
-void __cdecl FUN_005138e0(int *param_1);
+void __cdecl CDemonSet::renderVirtualDirectors(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00513ce0
 // Address: 00513ce0

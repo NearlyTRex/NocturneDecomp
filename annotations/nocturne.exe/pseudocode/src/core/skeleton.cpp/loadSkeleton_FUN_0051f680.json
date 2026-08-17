@@ -1,0 +1,258 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 20,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 22,
+        "line": 29,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 14,
+        "line": 31,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 43,
+        "line": 36,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 37,
+        "message": "use of undeclared identifier '_DAT_02737ef4'; did you mean 'DAT_007672f4'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 44,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "005180a0",
+      "from_addr": "005180b2",
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051f680",
+    "address_range": [
+      [
+        "0051f680",
+        "0051f72b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_loadSkeleton_FUN_0051f680",
+    "signature": "CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_0051f680(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00517560",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00517560"
+    },
+    {
+      "addr": "00564520",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_00564520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00591e2e",
+      "name": "s_core_skeleton_cpp_00591e2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00591e43",
+      "name": "s_Can_t_load_s_because_ske_00591e43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02737ef4",
+      "name": "DAT_02737ef4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005180b2",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_005180a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.192982456140351,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 51,
+      "INT_ADD": 20,
+      "INT_AND": 28,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 6,
+      "INT_SLESS": 13,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 14,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 239
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -13,9 +13,9 @@
 ;   core_chain.cpp_CChain_renderTransparent_FUN_0042c4c0 at 0042c5bb
 ;   core_charactr.cpp_CCharacter_FUN_004270e0 at 004270f9
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f902
+;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0 at 0044fcca
+;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00450c90 at 00450d0e
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450815
-;   core_dlight.cpp_FUN_0044f9b0 at 0044fcca
-;   core_dlight.cpp_FUN_00450c90 at 00450d0e
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_00451b70 at 00451be4
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0045a260 at 0045a3a2
 ;   ... and 24 more

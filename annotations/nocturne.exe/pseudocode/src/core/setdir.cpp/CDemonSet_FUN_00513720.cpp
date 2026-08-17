@@ -9,7 +9,6 @@
 void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
 
 {
-  int value;
   int iVar1;
   uint *puVar2;
   int iVar3;
@@ -17,18 +16,19 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
+  C3DSCamera *local_20;
   CVector3f *local_1c;
   uint *local_18;
   CVector3f *local_14;
   
   bVar7 = 0;
-  value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
-  ;
+  engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (g_CDemonRenderer_PTR_005ae704,0,0,0x40,0x30);
   iVar4 = 0;
   if (0 < this_ptr->camera_count) {
+    local_20 = this_ptr->cameras;
     local_1c = &this_ptr->cameras[0].orientation;
     local_14 = &this_ptr->cameras[0].position;
     local_18 = (uint *)&DAT_020875f8;
@@ -36,7 +36,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
                 ((CDemonRenderer *)PTR_DAT_005ae700,local_14);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
-                ((CDemonRenderer *)PTR_DAT_005ae700,this_ptr->cameras[iVar4].projection_scale);
+                ((CDemonRenderer *)PTR_DAT_005ae700,local_20[iVar4].projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
                 ((CDemonRenderer *)PTR_DAT_005ae700,local_1c);
       engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
@@ -68,6 +68,7 @@ void __cdecl core_setdir_cpp_CDemonSet_FUN_00513720(CDemonSet *this_ptr)
     } while (iVar4 < this_ptr->camera_count);
   }
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070(g_CDemonRenderer_PTR_005ae704,value);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
+            (g_CDemonRenderer_PTR_005ae704,(int)local_20);
   return;
 }

@@ -245,8 +245,8 @@ section .text
         ;   XREF to: 0049aa90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_clearOverlay_FUN_0049aa90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0049dcfb
     PUSH 0x1c78424                      ; 0049dcfe | g_CPickList_01c78424
-    CALL shape_edittool.cpp_FUN_00476160 ; 0049dd03
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 0049dd03
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     MOV EDI,dword ptr [EBX + 0x274]     ; 0049dd08
     ADD ESP,0x4                         ; 0049dd0e
     TEST EDI,EDI                        ; 0049dd11
@@ -373,8 +373,8 @@ section .text
     JLE 0x0049e0d4                      ; 0049de6e
         ;   XREF to: 0049e0d4 (CONDITIONAL_JUMP)  ; LAB_0049e0d4
     PUSH EDI                            ; 0049de74 | g_CPickList_01c78424
-    CALL shape_edittool.cpp_FUN_00475230 ; 0049de75
-        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00475230(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230 ; 0049de75
+        ;   XREF to: 00475230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_handleDialogInput_FUN_00475230(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049de7a
     MOV EBX,EAX                         ; 0049de7d
     CMP EAX,-0x2                        ; 0049de7f
@@ -388,8 +388,8 @@ section .text
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049de95
     PUSH EDI                            ; 0049de98 | g_CPickList_01c78424
-    CALL shape_edittool.cpp_FUN_00476160 ; 0049de99
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 0049de99
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     XOR EAX,EAX                         ; 0049de9e
     ADD ESP,0x4                         ; 0049dea0
     MOV [0x01c78420],EAX                ; 0049dea3 | DAT_01c78420
@@ -511,8 +511,8 @@ section .text
     ADD ESP,0x4                         ; 0049dfef
     PUSH 0x1c78424                      ; 0049dff2 | g_CPickList_01c78424
     MOV dword ptr [EDI + 0x1ec],0x3f800000 ; 0049dff7
-    CALL shape_edittool.cpp_FUN_00476160 ; 0049e001
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 0049e001
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049e006
     CALL core_inv.cpp_freeInventory_FUN_004bf270 ; 0049e009
         ;   XREF to: 004bf270 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_freeInventory_FUN_004bf270()
@@ -640,8 +640,8 @@ section .text
     JZ 0x0049e0dc                       ; 0049e167
         ;   XREF to: 0049e0dc (CONDITIONAL_JUMP)  ; LAB_0049e0dc
     PUSH EDI                            ; 0049e16d | g_CPickList_01c78424
-    CALL shape_edittool.cpp_FUN_00476160 ; 0049e16e
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00476160 ; 0049e16e
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049e173
     MOV dword ptr [EAX + 0x200],EBX     ; 0049e176
     MOV EAX,[0x01cae0e8]                ; 0049e17c | g_LocalHeroIndex

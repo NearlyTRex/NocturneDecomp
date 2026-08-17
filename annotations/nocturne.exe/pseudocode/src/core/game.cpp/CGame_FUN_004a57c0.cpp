@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
   int iVar7;
   char *pcVar8;
   byte bVar10;
-  uint auStack_a30 [256];
+  int in_stack_fffff5d0;
   byte local_630 [768];
   ushort auStack_330 [256];
   char local_130 [256];
@@ -42,13 +42,14 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
   this_ptr->cutscene_skippable = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",pcVar9);
   if (iVar2 < 0) {
-    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't open %s",pcVar9);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+              (g_CEditorTools_PTR_005b6d50,"Can't open %s",pcVar9);
     this_ptr->bitmap_filename[0] = '\0';
     return;
   }
   iVar3 = this_ptr->bitmap_width * this_ptr->bitmap_height;
   if (iVar2 != iVar3) {
-    shape_edittool_cpp_FUN_0046fcd0
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
               (g_CEditorTools_PTR_005b6d50,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,
                this_ptr->bitmap_width,this_ptr->bitmap_height,iVar3);
     this_ptr->bitmap_filename[0] = '\0';
@@ -78,7 +79,8 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
   } while (cVar1 != '\0');
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_130,"rb");
   if (p_Var4 == (_FILE *)0x0) {
-    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't open %s",local_130);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+              (g_CEditorTools_PTR_005b6d50,"Can't open %s",local_130);
   }
   else {
     _fread(local_630,1,0x300,p_Var4);
@@ -99,13 +101,13 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
              (ushort)(local_30 << (g_GreenBitPosition.bytes[0] & 0x1f));
       }
       else if (g_BitsPerPixel == 0x20) {
-        *(uint *)((int)auStack_a30 + local_20) =
+        *(uint *)(&stack0xfffff5d0 + local_20) =
              (uint)local_630[iVar2] << (g_RedBitPosition.bytes[0] & 0x1f) |
              (uint)local_630[iVar2 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
              (uint)local_630[iVar2 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
-        *(uint *)((int)auStack_a30 + local_20) =
+        *(uint *)(&stack0xfffff5d0 + local_20) =
              (uint)local_630[iVar2 + 1] << 8 | (uint)local_630[iVar2] << 0x10 |
              (uint)local_630[iVar2 + 2];
       }
@@ -116,7 +118,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
     engine_special_cpp_lockFrame_FUN_005322e0();
     engine_special_cpp_clearScreen_FUN_0052ee70();
-    engine_special_cpp_unlockFrame_FUN_00532320();
+    engine_special_cpp_unlockFrame_FUN_00532320(in_stack_fffff5d0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     local_18 = malloc(this_ptr->bitmap_width * this_ptr->bitmap_height);
@@ -126,7 +128,8 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
       if (p_Var4 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
         g_CurrentLineNumber = 4136;
-        core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open %s");
+        core_main_c_displayErrorAndQuit_FUN_004c8440
+                  ("Can't open %s",this_ptr->bitmap_filename);
       }
       _fread(local_18,this_ptr->bitmap_width,this_ptr->bitmap_height,p_Var4)
       ;
@@ -150,7 +153,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
               }
               else {
                 *(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =
-                     auStack_a30[*pbVar5];
+                     *(uint *)(&stack0xfffff5d0 + (uint)*pbVar5 * 4);
               }
               iVar3 = iVar3 + 4;
               iVar2 = iVar2 + 1;

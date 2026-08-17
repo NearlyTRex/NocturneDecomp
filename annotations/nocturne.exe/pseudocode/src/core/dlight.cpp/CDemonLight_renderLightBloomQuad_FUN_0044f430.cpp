@@ -19,7 +19,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
   uint uVar4;
   byte bVar5;
   double dVar6;
-  float afStackY_1064 [992];
+  int aiStackY_1064 [992];
   SMRGLHeaderPrimitive local_d8;
   uint local_c0;
   uint local_bc;
@@ -32,12 +32,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
   float local_9c;
   CVector3i local_98;
   CVector3i local_8c;
-  int local_7c;
-  float afStack_78 [4];
+  CVector3i local_7c;
+  float local_70;
+  float local_6c;
   float local_68;
   int local_64;
-  float local_60;
-  int local_5c;
+  int local_60 [2];
   float local_58;
   float local_54;
   float local_50;
@@ -62,18 +62,19 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)local_34);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)local_34,(CVector3f *)0x0);
-  engine_drender_cpp_FUN_00460d10(g_CDemonRenderer_PTR_005ae704);
-  local_64 = local_7c;
-  (&local_60)[(uint)bVar5 * -2] = afStack_78[(uint)bVar5 * -2];
-  (&local_60)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       afStack_78[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
+            (g_CDemonRenderer_PTR_005ae704,&local_7c);
+  local_64 = local_7c.x;
+  local_60[(uint)bVar5 * -2] = *(int *)((int)&local_7c + (uint)bVar5 * -8 + 4);
+  local_60[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+       *(int *)((int)&local_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   local_68 = (float)0.00390625;
-  afStack_78[2] = (float)local_64 * local_68;
-  local_14 = local_5c;
-  afStack_78[3] = (float)(int)local_60 * local_68;
-  local_68 = (float)local_5c * local_68;
-  local_a0 = world_position->x - afStack_78[2];
-  local_9c = (this_ptr->base).position.y - afStack_78[3];
+  local_70 = (float)local_64 * local_68;
+  local_14 = local_60[1];
+  local_6c = (float)local_60[0] * local_68;
+  local_68 = (float)local_60[1] * local_68;
+  local_a0 = world_position->x - local_70;
+  local_9c = (this_ptr->base).position.y - local_6c;
   local_98.x = (int)((this_ptr->base).position.z - local_68);
   if (&local_58 != &local_a0) {
     local_58 = local_a0;

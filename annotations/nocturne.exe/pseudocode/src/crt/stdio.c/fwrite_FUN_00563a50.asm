@@ -18,8 +18,8 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00403630 at 00403718
 ;   engine_2d.c_saveFogTable_FUN_00403130 at 0040315b
 ;   engine_2d.c_saveLightTable_FUN_00403500 at 0040352b
-;   engine_pcx.c_FUN_004f2990 at 004f2aa4
-;   engine_pod.cpp_FUN_004f8eb0 at 004f9081
+;   engine_pcx.c_saveScreenshotGeneral_FUN_004f2990 at 004f2aa4
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f9081
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
@@ -32,8 +32,8 @@
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
 ;   crt_thread.c_GetTLS_FUN_005671dc
 ;   crt_unknown.c_FUN_00568890
-;   crt_unknown.c_FUN_00568ed0
 ;   crt_unknown.c_FUN_00569fb0
+;   crt_unknown.c_setvbuf_FUN_00568ed0
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     JNZ 0x00563acd                      ; 00563ac2
         ;   XREF to: 00563acd (CONDITIONAL_JUMP)  ; LAB_00563acd
     PUSH EBX                            ; 00563ac4
-    CALL crt_unknown.c_FUN_00568ed0     ; 00563ac5
-        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00568ed0()
+    CALL crt_unknown.c_setvbuf_FUN_00568ed0 ; 00563ac5
+        ;   XREF to: 00568ed0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_setvbuf_FUN_00568ed0(_FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x4                         ; 00563aca
     MOV EAX,dword ptr [EBX + 0xc]       ; 00563acd
         ;   Label: LAB_00563acd

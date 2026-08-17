@@ -122,20 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1406,
+    "complexity_score": 1417,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 526,
-    "suspect_count": 86,
+    "pseudocode_lines": 527,
+    "suspect_count": 87,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 1557
+    "total_lines": 1558
   },
   "cross_references": [
     {
@@ -161,7 +161,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -1224,6 +1224,14 @@
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar9,local_2078);",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 499,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"Error in streo processing.  File: %s\",&DAT_01cd8b28);",
+      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&uStack_57a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

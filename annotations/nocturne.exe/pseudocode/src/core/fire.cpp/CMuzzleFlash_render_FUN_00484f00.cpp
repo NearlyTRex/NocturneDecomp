@@ -11,7 +11,6 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
 {
   CDemonRenderer *this_ptr_00;
   uint uVar1;
-  CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
   float local_10;
@@ -46,11 +45,9 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
-  local_34.x = 0.0;
-  local_34.y = 0.0;
-  local_34.z = 0.7853982;
+  local_28.x = 0.7853982;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            (g_CDemonRenderer_PTR_005ae704,&local_34,(CVector3f *)0x0);
+            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffd0,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);

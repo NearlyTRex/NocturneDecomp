@@ -12,7 +12,7 @@ whose *body* doesn't cover all its code (tail/interior left undisassembled). Thi
 tool fixes a function whose *start* is wrong - orphaned bytes that PRECEDE the
 entry, which the body-coverage scan can't see.
 
-Four detected classes (thunks/externals skipped):
+Five detected classes (thunks/externals skipped):
 
   ENTRY_LATE  - the instruction ending immediately before a function's entry is
                 orphaned (belongs to no function) and falls through into the
@@ -36,6 +36,26 @@ Four detected classes (thunks/externals skipped):
                 padding belongs to *this* function and nothing falls into it.
                 Gated on there being no incoming references to the padding entry
                 (a real entry gets called; padding does not).
+
+  ENTRY_MISALIGNED
+              - the entry is not on a real instruction boundary at all: it sits
+                INSIDE an instruction, so every question asked *at* the entry
+                returns a phase-shifted decode. This is why ENTRY_EARLY misses
+                it -- that class asks what instruction is at the entry and tests
+                it with _is_nop_like, but an entry bisecting `8D 52 00`
+                (`LEA EDX,[EDX]`) comes back as `PUSH EDX`, not a NOP, so its
+                run length is 0 and it bails. ENTRY_LATE/SPLIT need *defined*
+                code before the entry and OVERLAP needs a preceding function
+                flowing into an undefined gap, so a shifted entry sitting after
+                a clean RET matches none of them.
+                Detected by sweeping instruction starts from a trusted anchor
+                (the byte after the previous function's body) and checking
+                whether the entry is among them. The correction runs in BOTH
+                directions, which is why it is not a special case of
+                ENTRY_EARLY: an entry inside padding moves FORWARD past the NOP
+                run (0040e1cc -> 0040e1d0), while an entry inside the real first
+                instruction moves BACK to it (0040e2e1 -> 0040e2e0).
+                Gated on zero incoming refs to the bogus entry.
 
   OVERLAP     - a phase-shifted / misaligned HALLUCINATION: the entry sits after a
                 run of UNDEFINED bytes that a preceding function V flows into, i.e.
@@ -117,12 +137,14 @@ import argparse
 
 MAX_CHAIN = 64     # safety bound on prologue-chain walk-back
 MAX_NOP_RUN = 8    # safety bound on leading alignment-padding NOP run
+MAX_SWEEP = 64     # safety bound on the ENTRY_MISALIGNED anchor->entry sweep
+MAX_OVERSHOOT = 32 # how far past the entry that sweep may continue
 
 # OVERLAP is always detected/reported but is NOT in the default apply set: its
 # action is a DELETE (of a bogus function), which is a different, destructive
 # operation from the boundary moves - require an explicit --kind OVERLAP to act.
-DEFAULT_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY")
-ALL_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "OVERLAP")
+DEFAULT_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "ENTRY_MISALIGNED")
+ALL_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "ENTRY_MISALIGNED", "OVERLAP")
 
 # Single-instruction no-ops Watcom/MSVC emit as inter-function alignment padding.
 _NOP_FORMS = (
@@ -248,6 +270,136 @@ def _detect_entry_early(program, B, listing):
     return cur, _ref_count_to(program, cur)
 
 
+def _make_pseudo(program):
+    """PseudoDisassembler decodes at an address WITHOUT mutating the program."""
+    try:
+        from ghidra.app.util import PseudoDisassembler
+        return PseudoDisassembler(program)
+    except Exception:
+        return None
+
+
+def _detect_entry_misaligned(program, B, listing, fm, pseudo):
+    """ENTRY_MISALIGNED: the entry is not on a real instruction boundary.
+
+    ENTRY_EARLY can only see an entry sitting exactly ON the first byte of a
+    padding NOP, because it asks Ghidra what instruction is AT the entry and
+    tests it with _is_nop_like. When the entry is phase-shifted INTO the middle
+    of an instruction, that question returns garbage that happens to decode --
+    `0040e1cc` is the second byte of `8D 52 00` (`LEA EDX,[EDX]`) and comes back
+    as `PUSH EDX`, which is not NOP-like, so the run length is 0 and the
+    detector bails. ENTRY_LATE/SPLIT are equally blind: they need *defined* code
+    before the entry, and OVERLAP needs a preceding function flowing into an
+    undefined gap. A phase-shifted entry after a clean `RET` matches none of
+    them.
+
+    The signal none of them use is boundary agreement. Sweep forward from a
+    trusted anchor (the byte after the previous function's body, which is a
+    boundary by construction) and collect real instruction starts. If the entry
+    is not among them, it is mid-instruction and therefore wrong.
+
+    The correction runs in BOTH directions, which is why this cannot be folded
+    into ENTRY_EARLY:
+      * entry inside padding  -> true start is past the padding run
+        (`0040e1cc` -> `0040e1d0`, 4 bytes LATER)
+      * entry inside the real first instruction -> true start is that
+        instruction (`0040e2e1` -> `0040e2e0`, 1 byte EARLIER)
+
+    Returns (correct_addr, refs_to_correct, direction) or None.
+    """
+    E = B.getEntryPoint()
+    if (E.getOffset() & 0xf) == 0:
+        return None          # aligned entries are where the linker put them
+    if pseudo is None:
+        return None
+
+    # Neither FunctionManager nor Listing exposes getFunctionBefore here; walk
+    # the backward function iterator instead and take the first entry below E.
+    prev = None
+    try:
+        it = fm.getFunctions(E, False)
+        while it.hasNext():
+            f = it.next()
+            if f.getEntryPoint().getOffset() < E.getOffset():
+                prev = f
+                break
+    except Exception:
+        return None
+    if prev is None or prev.isExternal():
+        return None
+    try:
+        anchor = prev.getBody().getMaxAddress().add(1)
+    except Exception:
+        return None
+    if anchor.getOffset() >= E.getOffset():
+        return None          # bodies overlap; a different pathology
+    if E.getOffset() - anchor.getOffset() > MAX_SWEEP:
+        return None          # too far to trust a linear sweep
+
+    # Linear sweep: instruction starts from the anchor. Sweep PAST the entry --
+    # when the entry sits inside padding the real start is *after* it, so a
+    # sweep bounded at E would never collect the target.
+    starts, cur, steps = [], anchor, 0
+    limit = E.getOffset() + MAX_OVERSHOOT
+    while cur.getOffset() <= limit and steps < MAX_CHAIN:
+        try:
+            ins = pseudo.disassemble(cur)
+        except Exception:
+            return None
+        if ins is None:
+            return None      # undecodable -> data, not our shape
+        starts.append((cur, ins))
+        cur = cur.add(ins.getLength())
+        steps += 1
+    if not starts:
+        return None
+    if any(a.getOffset() == E.getOffset() for a, _ in starts):
+        return None          # entry IS a boundary -> not this bug
+
+    # The instruction containing E is the last start below it.
+    idx = None
+    for i, (a, _) in enumerate(starts):
+        if a.getOffset() < E.getOffset():
+            idx = i
+    if idx is None:
+        return None
+
+    # Watcom aligns function entries to 16 bytes, so the true start is a
+    # 16-aligned, non-padding instruction start. Anchoring on alignment (rather
+    # than on "the instruction containing the entry") matters because the entry
+    # can sit inside ANY instruction of the function, not just the first: at
+    # 00460c26 it bisects the *second* instruction, and the containing
+    # instruction 00460c24 is a valid boundary but still not the entry.
+    if _is_nop_like(starts[idx][1]):
+        # Entry fell inside alignment padding -> real code starts after the run.
+        j = idx
+        while j < len(starts) and _is_nop_like(starts[j][1]):
+            j += 1
+        if j >= len(starts):
+            return None      # padding runs past the sweep; give up
+        correct, direction = starts[j][0], "forward"
+    else:
+        # Entry fell inside the body -> walk back to the aligned start.
+        k = None
+        for i in range(idx, -1, -1):
+            if (starts[i][0].getOffset() & 0xf) == 0 and not _is_nop_like(starts[i][1]):
+                k = i
+                break
+        if k is None:
+            return None      # no aligned candidate in range; refuse to guess
+        correct, direction = starts[k][0], "back"
+    if (correct.getOffset() & 0xf) != 0:
+        return None          # not an alignment boundary -> not this shape
+
+    if correct.getOffset() == E.getOffset():
+        return None
+    # A real entry gets called (or sits in a vtable); padding and
+    # mid-instruction addresses do not.
+    if _ref_count_to(program, E) > 0:
+        return None
+    return correct, _ref_count_to(program, correct), direction
+
+
 def _detect_overlap(program, B, listing, fm, vtable_targets):
     """OVERLAP: phase-shifted / misaligned hallucinated function.
 
@@ -314,12 +466,26 @@ def detect(program, vtable_targets=frozenset()):
     """Return list of findings: dicts with kind/entry/correct/other/name."""
     fm = program.getFunctionManager()
     listing = program.getListing()
+    pseudo = _make_pseudo(program)
+    if pseudo is None:
+        print("WARN: PseudoDisassembler unavailable - ENTRY_MISALIGNED disabled")
     findings = []
 
     funcs = [f for f in fm.getFunctions(True)
              if not f.isThunk() and not f.isExternal()]
     for B in funcs:
         E = B.getEntryPoint()
+
+        mis = _detect_entry_misaligned(program, B, listing, fm, pseudo)
+        if mis is not None:
+            correct, nrefs, direction = mis
+            findings.append({
+                "kind": "ENTRY_MISALIGNED", "entry": E, "correct": correct,
+                "other": None, "name": B.getName(), "func": B,
+                "note": "entry is mid-instruction; true start lies %s (%d ref(s) "
+                        "to corrected entry)" % (direction, nrefs),
+            })
+            continue
 
         early = _detect_entry_early(program, B, listing)
         if early is not None:
@@ -756,12 +922,39 @@ def apply(program, findings, preserve):
             else:  # ENTRY_LATE / ENTRY_EARLY - same rebuild, different direction
                 B = f.get("func") or fm.getFunctionAt(f["entry"])
                 snap = snapshot_function(program, B) if (preserve and B is not None) else None
+                old_body = B.getBody() if B is not None else None
                 if B is not None:
                     fm.removeFunction(B.getEntryPoint())
+                # removeFunction drops the FUNCTION but leaves its INSTRUCTIONS.
+                # For a wrong entry those instructions are decoded at the wrong
+                # phase, so the corrected entry can land in the middle of one --
+                # e.g. at 00417ff0, inside a stale `ADD byte ptr [EBX+..],CL`
+                # spanning 00417fed-00417ff2. Ghidra refuses to create an
+                # overlapping instruction, so DisassembleCommand is a no-op,
+                # CreateFunctionCmd finds nothing, and the function is silently
+                # never recreated -- leaving the address with NO function, which
+                # is worse than the wrong one we started from. Undefine the old
+                # extent first (the same step a manual delete-and-recreate
+                # needs), widened to cover a correction that moved backwards.
+                if old_body is not None:
+                    try:
+                        lo = old_body.getMinAddress()
+                        if correct.getOffset() < lo.getOffset():
+                            lo = correct
+                        listing.clearCodeUnits(lo, old_body.getMaxAddress(), False)
+                    except Exception as e:
+                        print("  WARN: could not clear stale code units at %s: %s"
+                              % (f["entry"], e))
                 if listing.getInstructionAt(correct) is None:
                     DisassembleCommand(correct, None, True).applyTo(program, monitor)
                 CreateFunctionCmd(correct).applyTo(program, monitor)
                 nf = fm.getFunctionAt(correct)
+                if nf is None:
+                    # Never leave the address bare: say so loudly rather than
+                    # reporting a move that silently deleted a function.
+                    print("  !! %s -> %s produced NO function; the address is now "
+                          "undefined and needs a manual create"
+                          % (f["entry"], correct))
                 # Address-scoped to the vacated entry, so this cannot touch the
                 # rebuilt function regardless of when it runs relative to the
                 # rename in restore_function below.

@@ -13,8 +13,8 @@
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e899
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052debd
 ;   core_sound.cpp_syncChannel3WithChannel0_FUN_0052dd90 at 0052ddcd
-;   sound_sndmain.cpp_FUN_00527d80 at 00527d89
 ;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528c50
+;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 at 00527d89
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005935cf

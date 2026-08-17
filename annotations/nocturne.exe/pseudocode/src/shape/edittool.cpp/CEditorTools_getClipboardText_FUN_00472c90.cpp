@@ -20,7 +20,7 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00472c90(CEd
   byte bVar7;
   
   bVar7 = 0;
-  BVar2 = OpenClipboard(_DAT_02de2098);
+  BVar2 = OpenClipboard(g_HWND_02de2098);
   if (BVar2 != 0) {
     pcVar3 = GetClipboardData(1);
     if (pcVar3 != (char *)0x0) {

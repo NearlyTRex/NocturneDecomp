@@ -38,7 +38,7 @@
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170
 ;   core_script.cpp_CScript_FUN_004feff0
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0
-;   shape_edittool.cpp_FUN_0046fcd0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
 ;
 ; *****************************************************************************
@@ -114,8 +114,8 @@ section .text
         ;   Label: LAB_004d9847
     MOV EBP,dword ptr [0x005b6d50]      ; 004d984c | g_CEditorTools_PTR_005b6d50
     PUSH EBP                            ; 004d9852
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d9853
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d9853
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d9858
     XOR EAX,EAX                         ; 004d985b
     POP EBP                             ; 004d985d
@@ -127,8 +127,8 @@ section .text
         ;   Label: LAB_004d9862
     MOV EDI,dword ptr [0x005b6d50]      ; 004d9867 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004d986d
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004d986e
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d986e
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004d9873
     XOR EAX,EAX                         ; 004d9876
     POP EBP                             ; 004d9878

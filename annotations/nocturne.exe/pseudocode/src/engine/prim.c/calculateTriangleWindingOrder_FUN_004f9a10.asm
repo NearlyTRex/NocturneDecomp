@@ -21,9 +21,9 @@
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434a6c
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 0045815d
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00 at 00457ae1
-;   engine_prim.c_FUN_004f9dd0 at 004f9e83
-;   engine_prim.c_FUN_004fa2e0 at 004fa32d
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390 at 004fb3dd
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0 at 004fa32d
+;   engine_prim.c_renderPolygonSoftware_FUN_004f9dd0 at 004f9e83
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fadb3
 ;   ... and 2 more
 ;

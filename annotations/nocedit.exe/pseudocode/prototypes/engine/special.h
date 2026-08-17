@@ -103,21 +103,21 @@ int __cdecl beginScene(void);
 // Address: 005b72a0
 int __cdecl endScene(void);
 
-// Original: engine_special.cpp_selectTextureGlobal_FUN_005b72c0
+// Original: engine_special.cpp_selectTexture_FUN_005b72c0
 // Address: 005b72c0
-int __cdecl selectTextureGlobal(SMRGLTextureBasic *texture_info);
+int __cdecl selectTexture(SMRGLTextureBasic *texture_info);
 
-// Original: engine_special.cpp_updateTextureGlobal_FUN_005b7300
+// Original: engine_special.cpp_updateTexture_FUN_005b7300
 // Address: 005b7300
-int __cdecl updateTextureGlobal(SMRGLTextureBasic *texture_info);
+int __cdecl updateTexture(SMRGLTextureBasic *texture_info);
 
-// Original: engine_special.cpp_selectTexture_FUN_005b7340
+// Original: engine_special.cpp_selectTextureFromPalette_FUN_005b7340
 // Address: 005b7340
-int __cdecl selectTexture(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl selectTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
-// Original: engine_special.cpp_updateTexture_FUN_005b7380
+// Original: engine_special.cpp_updateTextureFromPalette_FUN_005b7380
 // Address: 005b7380
-int __cdecl updateTexture(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
+int __cdecl updateTextureFromPalette(SMRGLTextureBasic *tex,SRGBColorPalette *palette_data);
 
 // Original: engine_special.cpp_selectTextureBGRA_FUN_005b73c0
 // Address: 005b73c0

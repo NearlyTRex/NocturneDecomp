@@ -184,7 +184,7 @@ LAB_004fc367:
     else {
       if (uVar19 != 3) goto LAB_004fc367;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
       iVar12 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(this_ptr);
       if (iVar12 == 0) {
         iVar12 = 0;

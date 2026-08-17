@@ -14,7 +14,7 @@ int __cdecl engine_special_cpp_initializeExternalRenderer_FUN_00530e60(void)
   CExternalRenderer CStack_3b98;
   CExternalRenderer CStack_1dd0;
   
-  g_RendererDLLHandle = wincore_wddvmem_cpp_FUN_00553d30(g_RendererDllPath);
+  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_00553d30(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
     g_UseDirect3D = (int)g_RendererDLLHandle;
     return 0;

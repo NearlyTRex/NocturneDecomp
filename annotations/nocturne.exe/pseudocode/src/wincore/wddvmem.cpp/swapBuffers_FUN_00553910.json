@@ -181,12 +181,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c8510",
-      "from_addr": "004c8552",
-      "name": "core_main.c_FUN_004c8510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c90e0",
       "from_addr": "004c9207",
       "name": "core_main.c_finalizeGameSystems_FUN_004c90e0",
@@ -199,6 +193,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c8510",
+      "from_addr": "004c8552",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_004c8510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c8eb0",
       "from_addr": "004c8fb8",
       "name": "core_main.c_showPromoScreen_FUN_004c8eb0",
@@ -208,12 +208,6 @@
       "addr": "004c8e10",
       "from_addr": "004c8e28",
       "name": "core_main.c_waitWithSkip_FUN_004c8e10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d23d0",
-      "from_addr": "004d25d7",
-      "name": "core_menu.cpp_FUN_004d23d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,6 +250,12 @@
       "addr": "004cfe50",
       "from_addr": "004cff7c",
       "name": "core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d23d0",
+      "from_addr": "004d25d7",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004d23d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -337,6 +337,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046fcd0",
+      "from_addr": "0046fe25",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00470eb0",
       "from_addr": "004710ea",
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0",
@@ -349,6 +355,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046fb40",
+      "from_addr": "0046fc95",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00471760",
       "from_addr": "00471a1d",
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760",
@@ -358,18 +370,6 @@
       "addr": "00474d70",
       "from_addr": "00474e1b",
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046fb40",
-      "from_addr": "0046fc95",
-      "name": "shape_edittool.cpp_FUN_0046fb40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046fcd0",
-      "from_addr": "0046fe25",
-      "name": "shape_edittool.cpp_FUN_0046fcd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -399,7 +399,7 @@
     {
       "addr": "0055a510",
       "from_addr": "0055a575",
-      "name": "wincore_winvideo.cpp_FUN_0055a510",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_0055a510",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -419,7 +419,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -438,14 +438,14 @@
       "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520"
     },
     {
-      "addr": "00553ba0",
-      "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00553ba0"
-    },
-    {
       "addr": "00553470",
       "is_variadic": false,
       "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_00553470"
+    },
+    {
+      "addr": "00553ba0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_00553ba0"
     },
     {
       "addr": "005591c0",

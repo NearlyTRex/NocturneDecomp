@@ -10,10 +10,10 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6abb
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049ccd2
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7127
-;   core_menu.cpp_FUN_004d23d0 at 004d24a7
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d0d64
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0163
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1329
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d24a7
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d220a
 ;
 ; Referenced Globals:

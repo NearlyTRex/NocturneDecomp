@@ -401,8 +401,8 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0xc                         ; 0049cfa1
     PUSH 0x1c780c0                      ; 0049cfa4
-    CALL engine_pcx.c_FUN_004f2990      ; 0049cfa9
-        ;   XREF to: 004f2990 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_FUN_004f2990(char * filename)
+    CALL engine_pcx.c_saveScreenshotGeneral_FUN_004f2990 ; 0049cfa9
+        ;   XREF to: 004f2990 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_004f2990(char * filename)
     ADD ESP,0x4                         ; 0049cfae
     MOV EAX,[0x01cae0e8]                ; 0049cfb1 | g_LocalHeroIndex
         ;   Label: LAB_0049cfb1
@@ -719,8 +719,8 @@ section .text
     ADD ESP,0xc                         ; 0049d372
     LEA EAX,[EBP + 0xfffffdb2]          ; 0049d375
     PUSH EAX                            ; 0049d37b
-    CALL core_skeleton.cpp_FUN_0051f760 ; 0049d37c
-        ;   XREF to: 0051f760 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f760(char * output_buffer)
+    CALL core_skeleton.cpp_getMemoryStats_FUN_0051f760 ; 0049d37c
+        ;   XREF to: 0051f760 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_getMemoryStats_FUN_0051f760(char * output_buffer)
     MOV EAX,[0x005b7620]                ; 0049d381 | g_WindowHeight
     ADD ESP,0x4                         ; 0049d386
     SUB EAX,0x2c                        ; 0049d389
@@ -777,8 +777,8 @@ section .text
     ADD ESP,0xc                         ; 0049d40b
     PUSH EBX                            ; 0049d40e
         ;   Label: LAB_0049d40e
-    CALL sound_sndmain.cpp_FUN_00527520 ; 0049d40f
-        ;   XREF to: 00527520 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_FUN_00527520(uint current_sfx_handle)
+    CALL sound_sndmain.cpp_getNextActiveSfx_FUN_00527520 ; 0049d40f
+        ;   XREF to: 00527520 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_getNextActiveSfx_FUN_00527520(uint current_sfx_handle)
     ADD ESP,0x4                         ; 0049d414
     MOV EBX,EAX                         ; 0049d417
     TEST EAX,EAX                        ; 0049d419
@@ -912,8 +912,8 @@ section .text
     JLE 0x0049d58b                      ; 0049d57c
         ;   XREF to: 0049d58b (CONDITIONAL_JUMP)  ; LAB_0049d58b
     PUSH 0x1c78424                      ; 0049d57e | g_CPickList_01c78424
-    CALL shape_edittool.cpp_FUN_004759d0 ; 0049d583
-        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_004759d0(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 ; 0049d583
+        ;   XREF to: 004759d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0(CPickList * this_ptr)
     ADD ESP,0x4                         ; 0049d588
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049d58b
         ;   Label: LAB_0049d58b
@@ -927,7 +927,7 @@ section .text
         ;   XREF to: 004724e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0049d5a8
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 0049d5ab
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
         ;   Label: LAB_0049d5ab
     CMP dword ptr [EBP + 0x4e],0x0      ; 0049d5b0
         ;   Label: LAB_0049d5b0

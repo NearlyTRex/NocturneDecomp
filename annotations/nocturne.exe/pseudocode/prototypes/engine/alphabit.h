@@ -35,6 +35,6 @@ void __cdecl CAlphaBitmap::scale(CAlphaBitmap *this_ptr,int scaleFactorX,int sca
 // Address: 0040eab0
 void __cdecl CAlphaBitmap::initPalette(CAlphaBitmap *this_ptr);
 
-// Original: engine_alphabit.cpp_FUN_0040eadd
-// Address: 0040eadd
-void FUN_0040eadd(void);
+// Original: engine_alphabit.cpp_CAlphaBitmap_copyRawToOpa_FUN_0040eae0
+// Address: 0040eae0
+void __cdecl CAlphaBitmap::copyRawToOpa(CAlphaBitmap *this_ptr);

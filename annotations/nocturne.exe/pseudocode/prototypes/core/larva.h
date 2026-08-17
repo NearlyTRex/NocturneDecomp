@@ -41,4 +41,4 @@ int __cdecl CLarva::getTargetPoints(CLarva *this_ptr,CVector3f *out_points_array
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_004c5540
 // Address: 004c5540
-CDemonActor * __cdecl CLarva::dtor(CLarva *this_ptr,uint flags);
+CLarva * __cdecl CLarva::dtor(CLarva *this_ptr,uint flags);

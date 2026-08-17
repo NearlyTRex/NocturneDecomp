@@ -2,21 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 592,
+    "complexity_score": 608,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 147,
-    "suspect_count": 42,
+    "pseudocode_lines": 148,
+    "suspect_count": 43,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "undefined_data",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_noreturn"
     ],
-    "total_lines": 583
+    "total_lines": 584
   },
   "cross_references": [
     {
@@ -339,8 +340,16 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Subroutine marked as non-returning",
       "line": 43,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
       "match": "in_stack_ffffffdc",
       "severity": "moderate",
       "text": "stack_overflow_handler(in_stack_ffffffdc);",
@@ -348,7 +357,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(char *)((int)buffer",
       "severity": "moderate",
       "text": "if (*(char *)((int)buffer + local_20) == '\\n') {",
@@ -356,7 +365,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 56,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "(&stack0xffffffdc)[nNumberOfBytesToWrite] = 0xd;",
@@ -364,7 +373,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 58,
+      "line": 59,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -372,7 +381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -380,7 +389,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 59,
       "match": "DAT_005c1d54",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -388,7 +397,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 60,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,",
@@ -396,7 +405,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 60,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,",
@@ -404,7 +413,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 62,
+      "line": 63,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -412,7 +421,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 69,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);",
@@ -420,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);",
@@ -428,7 +437,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 72,
+      "line": 73,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -436,7 +445,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 79,
+      "line": 80,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "(&stack0xffffffdc)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + local_20);",
@@ -444,7 +453,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 80,
       "match": "(byte *)((int)buffer",
       "severity": "moderate",
       "text": "(&stack0xffffffdc)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + local_20);",
@@ -452,7 +461,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 84,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -460,7 +469,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -468,7 +477,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_005c1d54",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -476,7 +485,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 85,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,",
@@ -484,7 +493,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 85,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "BVar4 = WriteFile(local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,",
@@ -492,7 +501,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -500,7 +509,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 93,
+      "line": 94,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);",
@@ -508,7 +517,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 94,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "nNumberOfBytesToWrite = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,DVar2);",
@@ -516,7 +525,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
+      "line": 98,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -524,31 +533,31 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 106,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_005c1d80",
-      "severity": "mild",
-      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_005c1d54",
-      "severity": "mild",
-      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 107,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_005c1d80",
+      "severity": "mild",
+      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_005c1d54",
+      "severity": "mild",
+      "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "BVar4 = WriteFile(local_18,&stack0xffffffdc,nNumberOfBytesToWrite,&local_20,",
@@ -556,7 +565,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -564,7 +573,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 117,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "local_20 = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);",
@@ -572,7 +581,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "local_20 = (*DAT_005c1d80)(iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);",
@@ -580,7 +589,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 120,
+      "line": 121,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -588,7 +597,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 126,
+      "line": 127,
       "match": "code *",
       "severity": "moderate",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -596,7 +605,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 127,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -604,7 +613,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 127,
       "match": "DAT_005c1d54",
       "severity": "mild",
       "text": "if ((DAT_005c1d80 == (code *)0x0) || (iVar3 = (*DAT_005c1d54)(fd), iVar3 == 0)) {",
@@ -612,7 +621,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 129,
+      "line": 130,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -620,7 +629,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 136,
       "match": "DAT_005c1d80",
       "severity": "mild",
       "text": "local_1c = (*DAT_005c1d80)(iVar3,buffer,count);",
@@ -628,7 +637,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 142,
+      "line": 143,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",
@@ -636,7 +645,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 145,
+      "line": 146,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(fd);",

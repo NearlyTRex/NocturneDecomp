@@ -7,13 +7,13 @@
 // Address: 00404430
 SMRGLHeaderExtended * __cdecl abortRemovedMRGLHandler(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_FUN_00404480
+// Original: engine_3d.c_initTextureCache_FUN_00404480
 // Address: 00404480
-CTextureCache * __cdecl FUN_00404480(void);
+CTextureCache * __cdecl initTextureCache(void);
 
-// Original: engine_3d.c_FUN_00404490
+// Original: engine_3d.c_freeTextureCache_FUN_00404490
 // Address: 00404490
-void __cdecl FUN_00404490(void);
+void __cdecl freeTextureCache(void);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0
@@ -33,7 +33,7 @@ int __cdecl isVisiblePlane(SClipPlane *plane);
 
 // Original: engine_3d.c_lookupLitColor_FUN_00404680
 // Address: 00404680
-int __cdecl lookupLitColor(int color_index,int light_level);
+uint __cdecl lookupLitColor(int color_value,int lighting_value);
 
 // Original: engine_3d.c_calculatePolygonLighting_FUN_00404710
 // Address: 00404710

@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e0ec
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539c6
-;   wincore_winvideo.cpp_FUN_0055a510 at 0055a7ff
+;   wincore_winvideo.cpp_playMovie_FUN_0055a510 at 0055a7ff
 ;
 ; Referenced Globals:
 ;   void* PTR_DispatchMessageA_00575424 = 0017593a

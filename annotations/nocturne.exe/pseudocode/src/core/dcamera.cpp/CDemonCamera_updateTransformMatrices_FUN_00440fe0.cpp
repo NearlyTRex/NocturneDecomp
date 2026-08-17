@@ -9,13 +9,13 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(CDemonCamera *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
-  uint *puVar2;
-  byte bVar3;
+  CDemonRenderer *this_ptr_00;
+  uint *puVar1;
+  byte bVar2;
   int aiStackY_1000 [1017];
-  int local_18;
+  CVector3i local_18;
   
-  bVar3 = 0;
+  bVar2 = 0;
   (this_ptr->source_matrix).m[0].x = g_TransformMatrix.m[0].x;
   (this_ptr->source_matrix).m[0].y = g_TransformMatrix.m[0].y;
   (this_ptr->source_matrix).m[0].z = g_TransformMatrix.m[0].z;
@@ -23,15 +23,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(
   (this_ptr->source_matrix).m[1].y = g_TransformMatrix.m[1].y;
   (this_ptr->source_matrix).m[1].z = g_TransformMatrix.m[1].z;
   (this_ptr->source_matrix).m[2].x = g_TransformMatrix.m[2].x;
-  pCVar1 = g_CDemonRenderer_PTR_005ae704;
+  this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   (this_ptr->source_matrix).m[2].y = g_TransformMatrix.m[2].y;
   (this_ptr->source_matrix).m[2].z = g_TransformMatrix.m[2].z;
-  engine_drender_cpp_FUN_00460d10(pCVar1);
-  puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);
-  (this_ptr->camera_origin).x = local_18;
-  *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);
-  puVar2[(uint)bVar3 * -2 + 1] =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10(this_ptr_00,&local_18);
+  puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + 0x170);
+  (this_ptr->camera_origin).x = local_18.x;
+  *puVar1 = *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);
+  puVar1[(uint)bVar2 * -2 + 1] =
+       *(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
   (this_ptr->cached_projection).neg_half_height_fixed = g_Projection.neg_half_height_fixed;
   (this_ptr->cached_projection).center_x_fixed = g_Projection.center_x_fixed;

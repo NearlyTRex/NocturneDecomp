@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_position,int marker_color)
 
 {
@@ -17,9 +15,9 @@ void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_posi
   int iVar4;
   CVector3i local_14;
   
-  local_14.x = (int)ROUND(world_position->x * _DAT_005992b0);
-  local_14.y = (int)ROUND(world_position->y * _DAT_005992b0);
-  local_14.z = (int)ROUND(world_position->z * _DAT_005992b0);
+  local_14.x = (int)ROUND(world_position->x * 256.0f);
+  local_14.y = (int)ROUND(world_position->y * 256.0f);
+  local_14.z = (int)ROUND(world_position->z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xea5d0),&local_14);
   iVar3 = *(int *)PTR_DAT_005ae700;

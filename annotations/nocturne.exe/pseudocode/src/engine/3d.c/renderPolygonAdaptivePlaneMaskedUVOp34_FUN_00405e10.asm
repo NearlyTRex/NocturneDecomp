@@ -166,7 +166,7 @@ section .text
     MOV EDX,dword ptr [0x006b0260]      ; 00405f99 | DAT_006b0260
     PUSH EDX                            ; 00405f9f
     CALL engine_3d.c_lookupLitColor_FUN_00404680 ; 00405fa0
-        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; int engine_3d.c_lookupLitColor_FUN_00404680(int color_index, int light_level)
+        ;   XREF to: 00404680 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_lookupLitColor_FUN_00404680(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00405fa5
     MOV [0x01c00c70],EAX                ; 00405fa8 | g_ActiveRenderColor
     JMP 0x00405e66                      ; 00405fad

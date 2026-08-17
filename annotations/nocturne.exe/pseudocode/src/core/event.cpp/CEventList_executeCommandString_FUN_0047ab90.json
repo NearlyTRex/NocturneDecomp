@@ -60,6 +60,12 @@
         "column": 13,
         "line": 45,
         "message": "use of undeclared identifier '_DAT_01c08b5c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 52,
+        "line": 49,
+        "message": "use of undeclared identifier 'DAT_01c08b60'"
       }
     ],
     "success": false,
@@ -68,17 +74,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 56,
+    "complexity_score": 72,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 1,
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
     "suspect_types": [
+      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 137
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -114,7 +121,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -252,6 +259,14 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_01c08b60",
+      "severity": "mild",
+      "text": "(g_CConsole_PTR_005ad350,\"%s\\n\",&DAT_01c08b60);",
+      "type": "undefined_data"
     }
   ]
 }

@@ -47,6 +47,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *thi
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 218;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d");
+  core_main_c_displayErrorAndQuit_FUN_004c8440
+            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
   return;
 }

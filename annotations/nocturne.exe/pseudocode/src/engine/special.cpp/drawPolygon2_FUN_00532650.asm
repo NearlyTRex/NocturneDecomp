@@ -15,8 +15,8 @@
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434ae0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080 at 004580fd
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00 at 00457a81
-;   engine_prim.c_FUN_004fa2e0 at 004fa3b1
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390 at 004fb471
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_004fa2e0 at 004fa3b1
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer

@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
 
@@ -16,6 +17,12 @@ extern CDemonActorType g_CZombieActorType_02de4940;
 // CVector3f
 extern CVector3f CVector3f_02de0774;
 extern CVector3f CVector3f_02de0780;
+
+// HWND
+extern HWND g_HWND_02de2098;
+
+// char[256]
+extern char g_CHAR_ARRAY_02de0860[256];
 
 // word
 extern word DAT_02DE612A;

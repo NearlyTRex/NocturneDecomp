@@ -6,7 +6,6 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyActor.h"
@@ -126,7 +125,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_004c4970(CLarva *this_ptr,float d
 void __cdecl core_larva_cpp_CLarva_archive_FUN_004c5250(CLarva *this_ptr);
 void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004c5310(CLarva *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_004c54f0(CLarva *this_ptr,CVector3f *out_points_array);
-CDemonActor * __cdecl core_larva_cpp_CLarva_dtor_FUN_004c5540(CLarva *this_ptr,uint flags);
+CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004c5540(CLarva *this_ptr,uint flags);
 void __cdecl core_level_cpp_staticInit_FUN_004c5600(void);
 void __cdecl core_level_cpp_CLevelLoader_FUN_004c5630(CLevelLoader *this_ptr);
 void __cdecl core_level_cpp_CLevelLoader_show_FUN_004c5640(CLevelLoader *this_ptr,int total_frames,int use_custom_viewport,int image_variant);
@@ -148,7 +147,7 @@ ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004c68d0(CLeve
 int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_004c68f0(CLever *this_ptr,CVector3f *world_position);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004c6970(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004c69d0(int light_level);
-undefined4 __cdecl engine_light_cpp_FUN_004c6a00(void);
+int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004c6a00(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004c6a10(int dir_x,int dir_y,int dir_z);
 void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004c6a40(int enabled);
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004c6a50(int diffuse_multiplier,int specular_multiplier);
@@ -181,8 +180,8 @@ void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004c82e0(CLightCone *this_
 ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004c8370(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004c8380(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_004c83d0(void);
-void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format);
-void __cdecl core_main_c_FUN_004c8510(void);
+void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format,...) __attribute__((format(printf, 1, 2)));
+void __cdecl core_main_c_showDeveloperToolsMenu_FUN_004c8510(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void);
 void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv);
 void __cdecl core_main_c_drawCenteredText_FUN_004c8dc0(char *text,int x,int y,int color_mode);
@@ -261,7 +260,7 @@ ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_004cc8f0(C
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004cc900(CMarquee *this_ptr,CBoundingBox3D *out_box);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004cc960(CMarquee *this_ptr,uint flags);
 void __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void);
-void __cdecl engine_matrix_c_FUN_004cca50(void);
+void __cdecl engine_matrix_c_doNothing_FUN_004cca50(void);
 int __cdecl engine_matrix_c_interpolatedSin_FUN_004cca60(int angle);
 int __cdecl engine_matrix_c_interpolatedCos_FUN_004ccaa0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004ccae0(void);
@@ -273,8 +272,8 @@ void __cdecl engine_matrix_c_projectCachedPoint_FUN_004cd240(int cacheIndex);
 void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004cd260(SProjectedVertex *point);
 void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_004cd300(int cache_index);
 void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004cd380(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z);
-void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(CDemonRenderer *this_ptr);
-void __cdecl engine_matrix_c_pop_FUN_004cdbc0(CDemonRenderer *this_ptr);
+void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void);
+void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void);
 int __cdecl engine_matrix_c_calculate3DDistance_FUN_004cdcd0(int x1,int y1,int z1,int x2,int y2,int z2);
 int __cdecl engine_matrix_c_integerSquareRoot_FUN_004cdd30(int value);
 CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_004cde10(CVector3i *input_vector,CVector3i *output_vector);
@@ -286,7 +285,7 @@ void __cdecl engine_matrix_c_setCameraRotation_FUN_004ce730(int pitch,int yaw,in
 void __esi engine_matrix_c_getCameraOrigin_FUN_004ce760(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_004ce790(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004ce7c0(int x,int y,int width,int height);
-void __cdecl engine_matrix_c_popViewport_FUN_004ce920(CDemonRenderer *this_ptr);
+void __cdecl engine_matrix_c_popViewport_FUN_004ce920(void);
 int __cdecl engine_matrix_c_projectToScreen_FUN_004cea50(int input_value);
 void __cdecl engine_matrix_c_pushMatrixRelativeOffset_FUN_004ceae0(int offset_x,int offset_y,int offset_z);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004ceb90(void);

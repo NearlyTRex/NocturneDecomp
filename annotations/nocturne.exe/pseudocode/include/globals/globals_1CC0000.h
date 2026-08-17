@@ -88,3 +88,6 @@ extern char* g_CurrentFilename;
 // int
 extern int g_CurrentLineNumber;
 
+// undefined4
+extern undefined4 DAT_01cc4808;
+

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00404490 at 00404490
+;   engine_3d.c_freeTextureCache_FUN_00404490 at 00404490
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dd0f84

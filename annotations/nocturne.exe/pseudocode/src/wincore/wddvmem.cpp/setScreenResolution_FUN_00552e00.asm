@@ -13,9 +13,9 @@
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d98b
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8760
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040104f
-;   wincore_wddvmem.cpp_FUN_00553ba0 at 00553c78
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0 at 00553461
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00553190 at 005532f4
+;   wincore_wddvmem.cpp_videoRestore_FUN_00553ba0 at 00553c78
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005977c5

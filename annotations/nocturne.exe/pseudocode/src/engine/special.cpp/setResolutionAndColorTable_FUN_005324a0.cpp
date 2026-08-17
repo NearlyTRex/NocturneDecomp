@@ -13,6 +13,7 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   uint uVar2;
   void *pvVar3;
   int iVar4;
+  int unaff_EBP;
   bool bVar5;
   
   g_FrameBufferTestResult = 0;
@@ -51,6 +52,6 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005324a0(int width
   }
   g_FrameBufferTestResult = (int)bVar5;
 LAB_00532576:
-  engine_special_cpp_unlockFrame_FUN_00532320();
+  engine_special_cpp_unlockFrame_FUN_00532320(unaff_EBP);
   return 1;
 }

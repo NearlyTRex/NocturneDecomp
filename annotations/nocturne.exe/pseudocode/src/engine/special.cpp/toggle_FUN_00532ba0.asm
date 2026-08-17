@@ -87,7 +87,7 @@ section .text
     LEA EDX,[EDX]                       ; 00532c38
     MOV EAX,EAX                         ; 00532c3e
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 00532c40
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
         ;   Label: LAB_00532c40
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 00532c45
         ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()

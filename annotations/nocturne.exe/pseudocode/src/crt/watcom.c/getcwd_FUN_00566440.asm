@@ -8,7 +8,7 @@
 ; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00470730 at 0047074c
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 0047074c
 ;
 ; *****************************************************************************
 

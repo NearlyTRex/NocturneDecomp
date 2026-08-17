@@ -796,7 +796,7 @@ RuntimeHandlerEntry g_InitHandlers[160] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_0056ddf0
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_build_cmdline_FUN_0056ddf0
     },
     {
         .status = 0x00,

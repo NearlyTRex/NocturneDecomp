@@ -85,7 +85,7 @@ switchD_0056ed30_default:
     goto LAB_0056eeab;
   }
   DAT_02de5c24 = '\x01';
-  FUN_00571500();
+  ClearFPUExceptions();
   iVar4 = raiseFPE(iVar4);
   if ((iVar4 != -1) && (DAT_02de5c24 != '\0')) {
     *(ushort *)&(ContextRecord->FloatSave).StatusWord =

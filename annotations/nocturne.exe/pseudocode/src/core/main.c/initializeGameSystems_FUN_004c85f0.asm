@@ -8,7 +8,7 @@
 ; char * *         Stack[0x8]:4   argv
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_00559260 at 005594de
+;   wincore_winrun.cpp_winMain_FUN_00559260 at 005594de
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_PROCESSOR_LEVEL_00587b55
@@ -30,9 +30,9 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0044c190
-;   core_dfont.cpp_FUN_0044c560
+;   core_dfont.cpp_initFonts_FUN_0044c560
 ;   core_flattn.cpp_doNothing_FUN_0048ee80
-;   core_inivar.cpp_FUN_004bdb80
+;   core_inivar.cpp_readIniData_FUN_004bdb80
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0
 ;   core_mission.cpp_CDemonMission_FUN_004d7e00
@@ -112,8 +112,8 @@ section .text
     MOV dword ptr [0x006af628],EBX      ; 004c86b0 | g_RenderingMode
     CALL core_flattn.cpp_doNothing_FUN_0048ee80 ; 004c86b6
         ;   XREF to: 0048ee80 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_0048ee80()
-    CALL core_inivar.cpp_FUN_004bdb80   ; 004c86bb
-        ;   XREF to: 004bdb80 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_FUN_004bdb80()
+    CALL core_inivar.cpp_readIniData_FUN_004bdb80 ; 004c86bb
+        ;   XREF to: 004bdb80 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004bdb80()
     MOV EDI,dword ptr [0x005be1cc]      ; 004c86c0 | g_CPod_PTR_005be1cc
     MOV ESI,0x2                         ; 004c86c6
     PUSH EDI                            ; 004c86cb
@@ -153,8 +153,8 @@ section .text
     CALL engine_matrix.c_initializeTrigTables_FUN_004cc9d0 ; 004c873b
         ;   XREF to: 004cc9d0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_initializeTrigTables_FUN_004cc9d0()
         ;   Label: LAB_004c873b
-    CALL engine_3d.c_FUN_00404480       ; 004c8740
-        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_FUN_00404480()
+    CALL engine_3d.c_initTextureCache_FUN_00404480 ; 004c8740
+        ;   XREF to: 00404480 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_00404480()
     CALL engine_2d.c_initGraphicsSystem_FUN_00401010 ; 004c8745
         ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; void engine_2d.c_initGraphicsSystem_FUN_00401010()
     CALL wincore_winrun.cpp_calibrateCPUSpeed_FUN_005587f0 ; 004c874a
@@ -178,8 +178,8 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c8787
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c878c
-    CALL core_dfont.cpp_FUN_0044c560    ; 004c878f
-        ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_FUN_0044c560()
+    CALL core_dfont.cpp_initFonts_FUN_0044c560 ; 004c878f
+        ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_0044c560()
         ;   Label: LAB_004c878f
     CMP dword ptr [0x02de20a8],0x3c00000 ; 004c8794 | DAT_02de20a8
     JGE 0x004c8a11                      ; 004c879e
@@ -470,8 +470,8 @@ section .text
     PUSH EAX                            ; 004c8a02
     MOV EAX,[0x005b6d50]                ; 004c8a03 | g_CEditorTools_PTR_005b6d50
     PUSH EAX                            ; 004c8a08
-    CALL shape_edittool.cpp_FUN_0046fb40 ; 004c8a09
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8a09
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c8a0e
     CMP dword ptr [0x02de20ac],0xc800000 ; 004c8a11 | DAT_02de20ac
         ;   Label: LAB_004c8a11
@@ -663,8 +663,8 @@ section .text
     PUSH EAX                            ; 004c8b8b
     MOV ECX,dword ptr [0x005b6d50]      ; 004c8b8c | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004c8b92
-    CALL shape_edittool.cpp_FUN_0046fb40 ; 004c8b93
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8b93
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c8b98
     CMP dword ptr [0x01cae37c],0x0      ; 004c8b9b | DAT_01cae37c
         ;   Label: LAB_004c8b9b
@@ -673,8 +673,8 @@ section .text
     PUSH 0x587e04                       ; 004c8ba8 | = "opening.avi"
         ;   Label: LAB_004c8ba8
     PUSH 0x587e10                       ; 004c8bad | = "video"
-    CALL wincore_winvideo.cpp_FUN_0055a510 ; 004c8bb2
-        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; int wincore_winvideo.cpp_FUN_0055a510(char * directory_path, char * movie_filename)
+    CALL wincore_winvideo.cpp_playMovie_FUN_0055a510 ; 004c8bb2
+        ;   XREF to: 0055a510 (UNCONDITIONAL_CALL)  ; int wincore_winvideo.cpp_playMovie_FUN_0055a510(char * directory_path, char * movie_filename)
     ADD ESP,0x8                         ; 004c8bb7
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004c8bba
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()

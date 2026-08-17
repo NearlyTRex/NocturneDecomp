@@ -67,9 +67,9 @@ void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice 
 // Address: 0052ab60
 int __cdecl CDirectSoundDevice::allocateSample(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 
-// Original: sound_snddx.cpp_FUN_0052ad30
+// Original: sound_snddx.cpp_isValidSampleBuffer_FUN_0052ad30
 // Address: 0052ad30
-undefined4 FUN_0052ad30(void);
+int __cdecl isValidSampleBuffer(int buffer_id);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_0052ad50
 // Address: 0052ad50

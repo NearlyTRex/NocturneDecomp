@@ -56,6 +56,12 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "format_error",
+        "column": 98,
+        "line": 23,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 22,
         "line": 33,
@@ -86,14 +92,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 89,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "format_string_mismatch",
       "raw_address_pointer_store",
       "stack_ref",
       "unresolved_funcptr"
@@ -116,7 +123,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -280,6 +287,17 @@
       "severity": "moderate",
       "text": "sound_sndmain_cpp_logSoundError_FUN_00529980(&stack0xfffffe5c);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"DirectSoundDevice::startSfx - invalid handle: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "DirectSoundDevice::startSfx - invalid handle: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 16,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"DirectSoundDevice::startSfx - invalid handle: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ],
   "vtable_info": {

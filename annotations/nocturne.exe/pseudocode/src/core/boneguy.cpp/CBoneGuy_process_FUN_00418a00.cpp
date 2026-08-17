@@ -173,7 +173,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
     if (0 < this_ptr->box_count) {
       do {
         core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
-                  (g_CDemonMission_PTR_005baf90,pCVar11->boxes[0].body_part,1);
+                  (g_CDemonMission_PTR_005baf90,&(pCVar11->boxes[0].body_part)->base,1);
         pCVar11->boxes[0].body_part = (CBodyPart *)0x0;
         iVar7 = iVar7 + 1;
         pCVar11 = (CBoneGuy *)((pCVar11->base).base.base.orient_matrix.m + 1);
@@ -266,7 +266,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
           pCVar2 = &(this_ptr->base).base.model;
           if (iVar7 < 0) {
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n");
+                      (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&pCVar2->motion_controller,0,1);
           }
@@ -382,7 +382,7 @@ LAB_0041907c:
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =

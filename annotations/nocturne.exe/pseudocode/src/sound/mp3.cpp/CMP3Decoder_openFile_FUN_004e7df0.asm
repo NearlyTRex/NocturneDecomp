@@ -8,9 +8,9 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_005229f0 at 00522afe
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b8b
 ;   sound_sndmain.cpp_getSfxSample_FUN_00522480 at 0052280e
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0 at 00522afe
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005269f5
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   sound_mp3.cpp_FUN_004e7ed0
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_004e7e4c
     PUSH EBX                            ; 004e7e4d
     PUSH EDI                            ; 004e7e4e
-    CALL sound_mp3.cpp_FUN_004e7ed0     ; 004e7e4f
-        ;   XREF to: 004e7ed0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_FUN_004e7ed0(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
+    CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0 ; 004e7e4f
+        ;   XREF to: 004e7ed0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0(CMP3Decoder * this_ptr, _FILE * file_handle, int file_size)
     ADD ESP,0xc                         ; 004e7e54
     TEST EAX,EAX                        ; 004e7e57
     JZ 0x004e7ea3                       ; 004e7e59

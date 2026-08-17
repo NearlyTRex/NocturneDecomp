@@ -108,7 +108,7 @@ section .text
     MOV EBX,dword ptr [0x005baf90]      ; 004d5edd | g_CDemonMission_PTR_005baf90
     PUSH EBX                            ; 004d5ee3 | DAT_01cc9450
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004d5ee4
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004d5ee9
     LEA EAX,[EAX]                       ; 004d5eec
     MOV ESP,EBP                         ; 004d5ef0

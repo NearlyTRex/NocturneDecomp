@@ -22,7 +22,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel *
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 184;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s",filename);
   }
   do {
     cVar1 = *pcVar4;
@@ -41,7 +41,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel *
     if (file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
       g_CurrentLineNumber = 197;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s");
+      core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open keyframed model %s",filename);
     }
     core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(this_ptr,file);
   }

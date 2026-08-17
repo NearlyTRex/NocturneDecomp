@@ -1,0 +1,542 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 19,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 41,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 62,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 85,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 106,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 106,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 107,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 127,
+        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 127,
+        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 12,
+        "line": 128,
+        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 529,
+    "complexity_score": 262,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 41,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 202,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 731
+  },
+  "cross_references": [
+    {
+      "addr": "004c85f0",
+      "from_addr": "004c878f",
+      "name": "core_main.c_initializeGameSystems_FUN_004c85f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044c560",
+    "address_range": [
+      [
+        "0044c560",
+        "0044cbff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfont.cpp_initFonts_FUN_0044c560",
+    "signature": "void __cdecl core_dfont_cpp_initFonts_FUN_0044c560(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "0056497c",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_0056497c"
+    },
+    {
+      "addr": "0048fe10",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_ctor_FUN_0048fe10"
+    },
+    {
+      "addr": "0048ff40",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40"
+    },
+    {
+      "addr": "00493140",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_00493140"
+    },
+    {
+      "addr": "004931a0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_setFontReady_FUN_004931a0"
+    },
+    {
+      "addr": "00490460",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_setInitializedFlag_FUN_00490460"
+    },
+    {
+      "addr": "00557f50",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_CWinFont_ctor_FUN_00557f50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057c10d",
+      "name": "s_core_dfont_cpp_0057c10d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c11f",
+      "name": "s_Medium_font_object_not_a_0057c11f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c141",
+      "name": "s_nocfont_raw_0057c141",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c14d",
+      "name": "s_core_dfont_cpp_0057c14d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c15f",
+      "name": "s_Tiny_font_object_not_all_0057c15f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c17f",
+      "name": "s_nocsmall_raw_0057c17f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c18c",
+      "name": "s_core_dfont_cpp_0057c18c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c19e",
+      "name": "s_Theme_font_object_not_al_0057c19e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c1bf",
+      "name": "s_menufont_raw_0057c1bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c1cc",
+      "name": "s_core_dfont_cpp_0057c1cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c1de",
+      "name": "s_Debug_font_object_not_al_0057c1de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c1ff",
+      "name": "s_fnte_pfd_RAW_0057c1ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c20c",
+      "name": "s_core_dfont_cpp_0057c20c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c21e",
+      "name": "s_Console_font_object_not_0057c21e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c241",
+      "name": "s_fnte_f_RAW_0057c241",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c24c",
+      "name": "s_core_dfont_cpp_0057c24c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c25e",
+      "name": "s_Micro_font_object_not_al_0057c25e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c27f",
+      "name": "s_micro_raw_0057c27f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c289",
+      "name": "s_core_dfont_cpp_0057c289",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c29b",
+      "name": "s_initFonts_Can_t_allocate_0057c29b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c2c4",
+      "name": "s_core_dfont_cpp_0057c2c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c2d6",
+      "name": "s_initFonts_Can_t_allocate_0057c2d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c2fe",
+      "name": "s_core_dfont_cpp_0057c2fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c310",
+      "name": "s_initFonts_Can_t_allocate_0057c310",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c337",
+      "name": "s_core_dfont_cpp_0057c337",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057c349",
+      "name": "s_initFonts_Can_t_allocate_0057c349",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bdf50",
+      "name": "DAT_005bdf50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b98f8",
+      "name": "g_CBitFont_PTR_014b98f8",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b98fc",
+      "name": "g_CBitFont_PTR_014b98fc",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b9900",
+      "name": "g_CBitFont_PTR_014b9900",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b9904",
+      "name": "g_CBitFont_PTR_014b9904",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b9908",
+      "name": "g_CBitFont_PTR_014b9908",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b990c",
+      "name": "g_CBitFont_PTR_014b990c",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "014b9910",
+      "name": "DAT_014b9910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b9914",
+      "name": "DAT_014b9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b9918",
+      "name": "DAT_014b9918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b991c",
+      "name": "DAT_014b991c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcd070",
+      "name": "DAT_01bcd070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01d16810",
+      "name": "DAT_01d16810",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c878f",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_004c85f0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5861244019138754,
+    "instruction_count": 418,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 6,
+      "CALL": 56,
+      "CBRANCH": 21,
+      "COPY": 306,
+      "INT_ADD": 92,
+      "INT_AND": 175,
+      "INT_CARRY": 56,
+      "INT_EQUAL": 154,
+      "INT_SCARRY": 56,
+      "INT_SLESS": 77,
+      "INT_SUB": 189,
+      "LOAD": 10,
+      "POPCOUNT": 77,
+      "RETURN": 2,
+      "STORE": 215
+    },
+    "pcode_op_count": 1499
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_005bdf50",
+      "severity": "mild",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xe,2,2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 163,
+      "match": "DAT_005bdf50",
+      "severity": "mild",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0x12,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 178,
+      "match": "DAT_005bdf50",
+      "severity": "mild",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xc,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 193,
+      "match": "DAT_005bdf50",
+      "severity": "mild",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,10,0,0);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -11,9 +11,9 @@ void __cdecl staticInit(void);
 // Address: 0049a240
 void __cdecl setupMovieRecording(void);
 
-// Original: core_game.cpp_FUN_0049a320
+// Original: core_game.cpp_captureDebugMovieFrame_FUN_0049a320
 // Address: 0049a320
-void FUN_0049a320(void);
+void __cdecl captureDebugMovieFrame(void);
 
 // Original: core_game.cpp_CGame_ctor_FUN_0049a650
 // Address: 0049a650
@@ -147,9 +147,9 @@ int __cdecl checkCheatCode(char *cheat_string);
 // Address: 004a02e0
 void __cdecl giveHeroWeapon(char *class_name);
 
-// Original: core_game.cpp_FUN_004a03a0
+// Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0
 // Address: 004a03a0
-void __cdecl FUN_004a03a0(char *param_1,EAmmoType param_2);
+void __cdecl giveHeroWeaponAmmo(char *param_1,EAmmoType param_2);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004a0430
 // Address: 004a0430

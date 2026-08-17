@@ -23,7 +23,7 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00(CKeyFram
   if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 1086;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!",this_ptr);
   }
   if ((((this_ptr->transform_vector).x != transform_vector->x) ||
       ((this_ptr->transform_vector).y != transform_vector->y)) ||

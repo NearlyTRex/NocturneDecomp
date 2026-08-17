@@ -689,7 +689,8 @@ LAB_004d2d2e:
             pcVar34[1] = cVar1;
             pcVar34 = pcVar34 + 2;
           } while (cVar1 != '\0');
-          shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,local_844);
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+                    (g_CEditorTools_PTR_005b6d50,local_844);
           break;
         default:
           while( true ) {
@@ -905,7 +906,7 @@ LAB_004d3ec0:
                iVar18 != 0) || iVar19 != 0) || iVar20 != 0) || iVar21 != 0) || iVar22 != 0) ||
           iVar23 != 0) || iVar24 != 0) || iVar25 != 0) || iVar26 != 0) {
       core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGame_PTR_005b9354);
-      shape_edittool_cpp_FUN_0046fcd0
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                 (g_CEditorTools_PTR_005b6d50,"One or more keys not valid.  Restoring default controls.");
       return;
     }

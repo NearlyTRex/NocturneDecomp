@@ -121,7 +121,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_0043bdb0(CZombieCow *this_ptr,f
                            fVar10,fVar11);
         if (iVar4 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n");
+                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&this_ptr_00->motion_controller,0,1);
         }
@@ -181,7 +181,7 @@ LAB_0043c040:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&this_ptr_00->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

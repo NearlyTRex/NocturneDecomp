@@ -15,7 +15,7 @@
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240ab
 ;   sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 at 00525b46
-;   sound_sndmain.cpp_FUN_005229f0 at 00522bd9
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0 at 00522bd9
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526adc
 ;
 ; Referenced Globals:

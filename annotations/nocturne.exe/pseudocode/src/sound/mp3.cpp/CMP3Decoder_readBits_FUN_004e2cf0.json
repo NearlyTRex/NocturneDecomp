@@ -57,8 +57,14 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 51,
+        "line": 29,
+        "message": "use of undeclared identifier 'DAT_01cd8b28'"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 33,
-        "line": 41,
+        "line": 42,
         "message": "use of undeclared identifier 'DAT_005bc010'; did you mean 'DAT_005bc030'?"
       }
     ],
@@ -68,17 +74,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 51,
+    "complexity_score": 62,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -133,7 +139,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     }
   ],
@@ -361,7 +367,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 22,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "(\"Buffer overflow!!  File: %s\",&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
       "match": "DAT_005bc010",
       "severity": "mild",
       "text": "*(uint *)(&DAT_005bc010 + uVar1 * 4)) >> (local_14 & 0x1f)) <<",

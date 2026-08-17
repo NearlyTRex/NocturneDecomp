@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_00558d90 at 00558e8f
+;   wincore_winrun.cpp_mainWindowProc_FUN_00558d90 at 00558e8f
 ;
 ; Referenced Globals:
 ;   void* PTR_ShowWindow_0057547c = 00175aa2
 ;   int g_UseDirect3D
 ;   undefined4 DAT_02ddf568
-;   undefined4 DAT_02de2098
+;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
 ;   engine_special.cpp_restoreVideoMode_FUN_005325f0
@@ -35,7 +35,7 @@ section .text
     CALL engine_special.cpp_restoreVideoMode_FUN_005325f0 ; 00553b84
         ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreVideoMode_FUN_005325f0()
     PUSH 0x6                            ; 00553b89
-    MOV EBX,dword ptr [0x02de2098]      ; 00553b8b | DAT_02de2098
+    MOV EBX,dword ptr [0x02de2098]      ; 00553b8b | g_HWND_02de2098
     PUSH EBX                            ; 00553b91
     CALL dword ptr CS:[0x57547c]        ; 00553b92 | PTR_ShowWindow_0057547c
     POP EBX                             ; 00553b99

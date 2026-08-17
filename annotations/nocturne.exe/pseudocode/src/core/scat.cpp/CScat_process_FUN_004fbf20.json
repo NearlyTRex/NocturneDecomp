@@ -62,6 +62,12 @@
         "message": "unknown type name 'code'"
       },
       {
+        "category": "format_error",
+        "column": 87,
+        "line": 187,
+        "message": "format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]"
+      },
+      {
         "category": "cast_error",
         "column": 15,
         "line": 230,
@@ -106,12 +112,6 @@
       {
         "category": "cast_error",
         "column": 9,
-        "line": 239,
-        "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 27,
         "line": 239,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
       }
@@ -279,7 +279,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],

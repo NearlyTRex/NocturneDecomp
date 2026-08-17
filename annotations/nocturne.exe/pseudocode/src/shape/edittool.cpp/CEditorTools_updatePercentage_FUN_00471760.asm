@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_dtrace.cpp_FUN_004673e0 at 0046752d
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_004673e0 at 0046752d
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea049
 ;   engine_pod.cpp_CPodFile_verifyChecksum_FUN_004f8240 at 004f8490
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 00471725

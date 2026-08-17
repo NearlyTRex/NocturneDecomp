@@ -28,8 +28,8 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0(void)
     _DAT_02de07f4 = 1;
     MVar4 = timeBeginPeriod(1);
     if (MVar4 != 0) {
-      iVar2 = MessageBoxA(_DAT_02de2098,"Unable to set timer",PTR_s_Nocturne_005c165c,0x31)
-      ;
+      iVar2 = MessageBoxA(g_HWND_02de2098,"Unable to set timer",PTR_s_Nocturne_005c165c,
+                          0x31);
       if (iVar2 == 2) {
         _DAT_02de20a0 = 1;
       }

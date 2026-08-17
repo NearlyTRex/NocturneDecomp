@@ -23,9 +23,9 @@ float __cdecl computeTimeDelta(int start_time,int end_time);
 // Address: 004e95d0
 float __cdecl getElapsedSeconds(uint timestamp);
 
-// Original: core_netgame.cpp_FUN_004e9630
+// Original: core_netgame.cpp_resetChatCounts_FUN_004e9630
 // Address: 004e9630
-void FUN_004e9630(void);
+void __edx resetChatCounts(int count);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_004e9640
 // Address: 004e9640
@@ -241,7 +241,7 @@ SNetPlayer * __cdecl SNetPlayer::ctor(SNetPlayer *this_ptr);
 
 // Original: core_netgame.cpp_SNetPlayer_copy_FUN_004ede70
 // Address: 004ede70
-SNetPlayer * __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
+void __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_copyPlayerInput_FUN_004edf30
 // Address: 004edf30

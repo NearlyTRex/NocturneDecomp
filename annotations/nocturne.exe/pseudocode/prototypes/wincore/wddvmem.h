@@ -23,13 +23,13 @@ int __cdecl reinitializeDirectDraw(void);
 // Address: 00552990
 int __cdecl shutdownDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00552a20
+// Original: wincore_wddvmem.cpp_allocateRenderBuffers_FUN_00552a20
 // Address: 00552a20
-void FUN_00552a20(void);
+void __cdecl allocateRenderBuffers(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00552af0
+// Original: wincore_wddvmem.cpp_freeRenderBuffers_FUN_00552af0
 // Address: 00552af0
-void FUN_00552af0(void);
+void __cdecl freeRenderBuffers(void);
 
 // Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00552b40
 // Address: 00552b40
@@ -83,21 +83,21 @@ void __cdecl swapBuffers(void);
 // Address: 00553b70
 void __cdecl restoreVideoAndMinimizeWindow(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00553ba0
+// Original: wincore_wddvmem.cpp_videoRestore_FUN_00553ba0
 // Address: 00553ba0
-void __cdecl FUN_00553ba0(void);
+void __cdecl videoRestore(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00553ca0
+// Original: wincore_wddvmem.cpp_stubFunction_FUN_00553ca0
 // Address: 00553ca0
-void __cdecl FUN_00553ca0(void);
+void __cdecl stubFunction(void);
 
 // Original: wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
 // Address: 00553d20
 BOOL __cdecl freeLibrary(HMODULE hLibModule);
 
-// Original: wincore_wddvmem.cpp_FUN_00553d30
+// Original: wincore_wddvmem.cpp_loadLibrary_FUN_00553d30
 // Address: 00553d30
-HMODULE __cdecl FUN_00553d30(LPCSTR lpLibFileName);
+HMODULE __cdecl loadLibrary(LPCSTR lpLibFileName);
 
 // Original: wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
 // Address: 00553d40

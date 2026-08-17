@@ -16,8 +16,8 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
   int iVar1;
   
   if (_DAT_01cae0d4 < 1) {
-    shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't run mission - no heros")
-    ;
+    shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+              (g_CEditorTools_PTR_005b6d50,"Can't run mission - no heros");
     return 0;
   }
   if (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) {
@@ -44,6 +44,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
     core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(g_CDemonSet_PTR_005be368);
     return 1;
   }
-  shape_edittool_cpp_FUN_0046fcd0(g_CEditorTools_PTR_005b6d50,"Can't run mission - no local hero");
+  shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
+            (g_CEditorTools_PTR_005b6d50,"Can't run mission - no local hero");
   return 0;
 }

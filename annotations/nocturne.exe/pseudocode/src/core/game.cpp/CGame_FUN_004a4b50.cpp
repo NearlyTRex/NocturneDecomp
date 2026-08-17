@@ -150,7 +150,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a4b50(CGame *this_ptr,int select_mode)
       if ((iVar3 == 3) && (local_20 == 0xd6)) {
         select_mode = 1;
 LAB_004a50dc:
-        shape_edittool_cpp_FUN_00476160(&local_2b4);
+        shape_edittool_cpp_CPickList_clear_FUN_00476160(&local_2b4);
         if (iVar3 == 0) {
           iVar5 = 0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370

@@ -107,7 +107,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
         this_ptr_00 = g_CConsole_PTR_005ad350;
         if (iVar9 != 0) {
           this_ptr->victim = local_1c;
-          engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_00,"%s can see hero\n");
+          engine_console_cpp_CConsole_printf_FUN_0043ac60
+                    (this_ptr_00,"%s can see hero\n",this_ptr);
           return;
         }
         if ((((this_ptr->allow_pathfind_to_new_targets != 0) ||

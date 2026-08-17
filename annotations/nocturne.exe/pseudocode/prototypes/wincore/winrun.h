@@ -39,9 +39,9 @@ void __cdecl setValue(int val);
 // Address: 00558c00
 void __cdecl plotClippedPixel(int x_coord,int y_coord);
 
-// Original: wincore_winrun.cpp_FUN_00558c40
+// Original: wincore_winrun.cpp_drawCrosshair_FUN_00558c40
 // Address: 00558c40
-void FUN_00558c40(void);
+void __cdecl drawCrosshair(void);
 
 // Original: wincore_winrun.cpp_clearMouseClicks_FUN_00558d50
 // Address: 00558d50
@@ -51,21 +51,21 @@ void __cdecl clearMouseClicks(void);
 // Address: 00558d60
 void __cdecl setCursorPosition(int x,int y);
 
-// Original: wincore_winrun.cpp_FUN_00558d90
+// Original: wincore_winrun.cpp_mainWindowProc_FUN_00558d90
 // Address: 00558d90
-LRESULT __stdcall FUN_00558d90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+LRESULT __stdcall mainWindowProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 
 // Original: wincore_winrun.cpp_processWindowMessages_FUN_005591c0
 // Address: 005591c0
 void __cdecl processWindowMessages(void);
 
-// Original: wincore_winrun.cpp_FUN_00559260
+// Original: wincore_winrun.cpp_winMain_FUN_00559260
 // Address: 00559260
-int __stdcall FUN_00559260(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
+int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
-// Original: wincore_winrun.cpp_FUN_00559500
+// Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500
 // Address: 00559500
-void __cdecl FUN_00559500(char *message);
+void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_00559560
 // Address: 00559560
@@ -111,9 +111,9 @@ void __cdecl setRegistryStringValue(char *key_path,char *value_name,char *value_
 // Address: 00559e20
 void __cdecl initJoystick(void);
 
-// Original: wincore_winrun.cpp_FUN_00559e90
+// Original: wincore_winrun.cpp_doNothing2_FUN_00559e90
 // Address: 00559e90
-void __cdecl FUN_00559e90(void);
+void __cdecl doNothing2(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00559eb0
 // Address: 00559eb0

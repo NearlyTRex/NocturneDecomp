@@ -3,6 +3,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/windef.h"
+#include "system/winnt.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3i.h"

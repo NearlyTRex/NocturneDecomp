@@ -19,7 +19,7 @@
 ;   sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004e33d0 at 004e3437
 ;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004e2c60 at 004e2c84
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e862e
-;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320 at 004e4344
+;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0 at 004e7fdf
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -11,7 +11,7 @@
 ; XREF[10]:
 ;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0 at 0040f1c4
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a115f
-;   core_game.cpp_FUN_004a03a0 at 004a0420
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004a03a0 at 004a0420
 ;   core_game.cpp_giveHeroWeapon_FUN_004a02e0 at 004a0364
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004b5c70 at 004b5c9c
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 at 004b4e37
@@ -1564,7 +1564,7 @@ section .text
     PUSH EDX                            ; 004c00b9
     MOV dword ptr [EBP + 0x8],ECX       ; 004c00ba
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c00bd
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004c00c2
     PUSH 0x587088                       ; 004c00c5 | = "Found new type of ammo for existing w..."
     MOV EBX,dword ptr [0x005ad350]      ; 004c00ca | g_CConsole_PTR_005ad350
@@ -1611,7 +1611,7 @@ section .text
     MOV EDI,dword ptr [0x005baf90]      ; 004c0157 | g_CDemonMission_PTR_005baf90
     PUSH EDI                            ; 004c015d
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c015e
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     MOV EAX,0x1                         ; 004c0163
     ADD ESP,0xc                         ; 004c0168
     ADD ESP,0x324                       ; 004c016b
@@ -1678,7 +1678,7 @@ section .text
     MOV EDX,dword ptr [0x005baf90]      ; 004c0219 | g_CDemonMission_PTR_005baf90
     PUSH EDX                            ; 004c021f
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c0220
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004c0225
     PUSH 0x587064                       ; 004c0228 | = "Found weapon to put this ammo into\n"
     MOV ECX,dword ptr [0x005ad350]      ; 004c022d | g_CConsole_PTR_005ad350
@@ -1885,7 +1885,7 @@ section .text
     MOV ECX,dword ptr [0x005baf90]      ; 004c044a | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c0450
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c0451
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     MOV EAX,0x1                         ; 004c0456
     ADD ESP,0xc                         ; 004c045b
     ADD ESP,0x324                       ; 004c045e
@@ -1907,7 +1907,7 @@ section .text
     MOV EBX,EDX                         ; 004c0485
     MOV dword ptr [EBP + 0x8],EDI       ; 004c0487
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c048a
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     ADD ESP,0xc                         ; 004c048f
     MOV EAX,EBX                         ; 004c0492
     PUSH EBP                            ; 004c0494
@@ -1974,7 +1974,7 @@ section .text
     MOV ECX,dword ptr [0x005baf90]      ; 004c0545 | g_CDemonMission_PTR_005baf90
     PUSH ECX                            ; 004c054b
     CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110 ; 004c054c
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004d9110(CDemonMission * this_ptr, CDemonActor * actor, uint flags)
     MOV EAX,0x1                         ; 004c0551
     ADD ESP,0xc                         ; 004c0556
     ADD ESP,0x324                       ; 004c0559

@@ -36,7 +36,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_FUN_004a4b50 at 004a4efd
-;   core_menu.cpp_FUN_004d23d0 at 004d2815
+;   core_menu.cpp_showMainGameMenu_FUN_004d23d0 at 004d2815
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noc_00583c33
@@ -521,8 +521,8 @@ section .text
     PUSH EAX                            ; 004a46b6
     MOV EBX,dword ptr [0x005b6d50]      ; 004a46b7 | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a46bd
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a46be
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a46be
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a46c3
     PUSH 0x0                            ; 004a46c6
     LEA EAX,[ESP + 0x554]               ; 004a46c8
@@ -550,8 +550,8 @@ section .text
     PUSH EAX                            ; 004a4702
     MOV EDI,dword ptr [0x005b6d50]      ; 004a4703 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a4709
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a470a
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a470a
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a470f
     PUSH 0x0                            ; 004a4712
     LEA EAX,[ESP + 0x554]               ; 004a4714
@@ -579,8 +579,8 @@ section .text
     PUSH EAX                            ; 004a474e
     MOV EBX,dword ptr [0x005b6d50]      ; 004a474f | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a4755
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a4756
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a4756
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a475b
     PUSH ESI                            ; 004a475e
     LEA EAX,[ESP + 0x5d4]               ; 004a475f
@@ -688,8 +688,8 @@ section .text
     PUSH 0x583d85                       ; 004a4891 | = "Can't find hero %s.  Sorry."
     MOV ESI,dword ptr [0x005b6d50]      ; 004a4896 | g_CEditorTools_PTR_005b6d50
     PUSH ESI                            ; 004a489c
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a489d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a489d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a48a2
     MOV ESI,dword ptr [ESP + 0x624]     ; 004a48a5
         ;   Label: LAB_004a48a5

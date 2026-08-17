@@ -231,7 +231,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_archive_FUN_004b96c0(CHotDemon *this_pt
 void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004b9720(CHotDemon *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004b98f0(CHotDemon *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_hotdemon_cpp_CHotDemon_getCollisionType_FUN_004b99b0(CHotDemon *this_ptr,SCollisionInfo *collision_info);
-CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004b99d0(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004b99d0(CHotDemon *this_ptr,uint flags);
 void __cdecl core_hpriest_cpp_staticInit_FUN_004b9a90(void);
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004b9ac0(void);
 CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004b9ae0(CHighPriestOfGardath *this_ptr);
@@ -292,7 +292,7 @@ void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004bdac0(CIniFile *this_ptr,ch
 void __cdecl engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(CIniFile *this_ptr,char *key,float value);
 CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004bdb60(CIni *this_ptr);
 CIni * __cdecl engine_ini_cpp_CIni_dtor_FUN_004bdb70(CIni *this_ptr,uint flags);
-void __cdecl core_inivar_cpp_FUN_004bdb80(void);
+void __cdecl core_inivar_cpp_readIniData_FUN_004bdb80(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void);
 void __cdecl core_inv_cpp_staticInit_FUN_004be9d0(void);
 CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004beb40(CDemonActor *actor_ptr);

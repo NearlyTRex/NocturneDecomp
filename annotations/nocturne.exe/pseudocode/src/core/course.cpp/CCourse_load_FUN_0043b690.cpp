@@ -21,7 +21,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(CCourse *this_ptr,char *f
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\course.cpp";
     g_CurrentLineNumber = 124;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CCourse::load - can't open data\\%s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CCourse::load - can't open data\\%s",filename);
   }
   do {
     iVar1 = _fgetc(file);

@@ -10,14 +10,14 @@
 ; XREF[11]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_0040add0 at 0040afaa
 ;   core_actor.cpp_draw3DPointMarker_FUN_0040ab70 at 0040ace8
-;   core_setdir.cpp_FUN_005138e0 at 00513ac9
+;   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0 at 00513ac9
 ;   engine_2d.c_draw320x200SizeDot_FUN_00403780 at 00403821
 ;   engine_2d.c_drawLine_FUN_004015a0 at 004015f6
 ;   engine_2d.c_project3DPointToScreen_FUN_00401da0 at 00401ddc
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 at 004725f3
 ;   shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004737a0 at 0047388f
 ;   shape_edittool.cpp_plotPixelWithClipping_FUN_0046efa0 at 0046efea
-;   wincore_winrun.cpp_FUN_00558c40 at 00558d16
+;   wincore_winrun.cpp_drawCrosshair_FUN_00558c40 at 00558d16
 ;   ... and 1 more
 ;
 ; Referenced Globals:

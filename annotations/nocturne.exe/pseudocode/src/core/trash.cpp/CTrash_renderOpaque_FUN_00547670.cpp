@@ -11,12 +11,12 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_00547670(CTrash *this_ptr)
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  CBoundingBox3D local_3c;
   CVector3f CStack_24;
   CVector3f CStack_18;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
-  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_3c);
+  this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
+                          (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);

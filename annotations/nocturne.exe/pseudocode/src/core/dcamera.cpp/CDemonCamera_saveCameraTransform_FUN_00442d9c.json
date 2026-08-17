@@ -1,0 +1,1127 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 85,
+        "line": 37,
+        "message": "use of undeclared identifier 'stack0x00000000'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 193,
+    "complexity_score": 1231,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 112,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 284
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00442d9c",
+    "address_range": [
+      [
+        "00442d9c",
+        "00443047"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044daa0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0059bddc",
+      "name": "FLOAT_0059bddc",
+      "type": "float",
+      "value": "256"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.786516853932584,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 2,
+      "COPY": 725,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 18,
+      "FLOAT_MULT": 30,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 27,
+      "INT_ADD": 121,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 24,
+      "INT_ZEXT": 6,
+      "LOAD": 88,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 49,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 1208
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_matrix",
+        "offset": 12,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "transform_matrix",
+        "offset": 16,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_saveCameraTransform_FUN_00442d9c.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 19,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "CMatrix3x3f *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1490) = *(uint *)(unaff_EBP + 0x170);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1490) = *(uint *)(unaff_EBP + 0x170);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1494) = *(uint *)(unaff_EBP + 0x174);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1494) = *(uint *)(unaff_EBP + 0x174);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((uint *)(unaff_EBP + 0x1498) != (uint *)(unaff_EBP + 0x104)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((uint *)(unaff_EBP + 0x1498) != (uint *)(unaff_EBP + 0x104)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x149c) = *(uint *)(unaff_EBP + 0x108);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x149c) = *(uint *)(unaff_EBP + 0x108);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a0) = *(uint *)(unaff_EBP + 0x10c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a0) = *(uint *)(unaff_EBP + 0x10c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a8) = *(uint *)(unaff_EBP + 0x17c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a8) = *(uint *)(unaff_EBP + 0x17c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14ac) = *(uint *)(unaff_EBP + 0x180);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14ac) = *(uint *)(unaff_EBP + 0x180);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b0) = *(uint *)(unaff_EBP + 0x184);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b0) = *(uint *)(unaff_EBP + 0x184);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b4) = *(uint *)(unaff_EBP + 0x188);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b4) = *(uint *)(unaff_EBP + 0x188);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b8) = *(uint *)(unaff_EBP + 0x18c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b8) = *(uint *)(unaff_EBP + 0x18c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14bc) = *(uint *)(unaff_EBP + 400);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14bc) = *(uint *)(unaff_EBP + 400);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c0) = *(uint *)(unaff_EBP + 0x194);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c0) = *(uint *)(unaff_EBP + 0x194);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c4) = *(uint *)(unaff_EBP + 0x198);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c4) = *(uint *)(unaff_EBP + 0x198);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(in_stack_00000028,(CVector3f *)&rotation_matrix,(CVector3f *)&stack0x00000000)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "(in_stack_00000028,(CVector3f *)&rotation_matrix,(CVector3f *)&stack0x00000000)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((CVector3f *)(unaff_EBP + 0x104) != pCVar3) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((CVector3f *)(unaff_EBP + 0x104))->x = pCVar3->x;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float *)(unaff_EBP + 0x108) = pCVar3->y;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float *)(unaff_EBP + 0x10c) = pCVar3->z;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x16c) = (int)ROUND(*(float *)(unaff_EBP + 0x104) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x16c) = (int)ROUND(*(float *)(unaff_EBP + 0x104) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x170) = (int)ROUND(*(float *)(unaff_EBP + 0x108) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x170) = (int)ROUND(*(float *)(unaff_EBP + 0x108) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x174) = (int)ROUND(*(float *)(unaff_EBP + 0x10c) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x174) = (int)ROUND(*(float *)(unaff_EBP + 0x10c) * 256.0f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14a4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * in_stack_00000028->m[0].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a4) * in_stack_00000028->m[0].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].x));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].x));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x178) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14a4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar1 * in_stack_00000028->m[0].y));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x17c) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14b4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14ac) * in_stack_00000028->m[2].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14a8) * in_stack_00000028->m[1].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar2 * in_stack_00000028->m[0].z));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x180) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14b0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 60,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b0) * in_stack_00000028->m[0].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b0) * in_stack_00000028->m[0].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar1 * in_stack_00000028->m[1].x));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x184) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14b0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * in_stack_00000028->m[1].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * in_stack_00000028->m[1].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar2 * in_stack_00000028->m[0].y));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x188) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14c0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14b8) * in_stack_00000028->m[2].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * in_stack_00000028->m[1].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14b4) * in_stack_00000028->m[1].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar1 * in_stack_00000028->m[0].z));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x18c) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14bc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14bc) * in_stack_00000028->m[0].x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 79,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14bc) * in_stack_00000028->m[0].x +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar2 * in_stack_00000028->m[1].x));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 400) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14bc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * in_stack_00000028->m[1].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * in_stack_00000028->m[1].y +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar1 * in_stack_00000028->m[0].y));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x194) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((double)((float)*(int *)(unaff_EBP + 0x14c4) * in_stack_00000028->m[2].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * in_stack_00000028->m[1].z +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float)*(int *)(unaff_EBP + 0x14c0) * in_stack_00000028->m[1].z +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float)iVar2 * in_stack_00000028->m[0].z));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 92,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x198) = (int)ROUND(dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 12,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 16,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (9 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 20,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 19,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "static_uninitvar"
+    }
+  ]
+}

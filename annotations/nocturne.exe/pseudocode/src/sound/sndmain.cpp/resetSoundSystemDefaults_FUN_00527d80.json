@@ -1,0 +1,191 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 20,
+        "message": "use of undeclared identifier 'func_0x00527830'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "0052dd00",
+      "from_addr": "0052dd15",
+      "name": "core_sound.cpp_CSound_ctor_FUN_0052dd00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00527d80",
+    "address_range": [
+      [
+        "00527d80",
+        "00527e0f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80",
+    "signature": "void __cdecl sound_sndmain_cpp_resetSoundSystemDefaults_FUN_00527d80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00527410",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00527410"
+    },
+    {
+      "addr": "00527690",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_set3DListenerOrient_FUN_00527690"
+    },
+    {
+      "addr": "00527610",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_set3DListenerPos_FUN_00527610"
+    },
+    {
+      "addr": "005277b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_set3DListenerVelocity_FUN_005277b0"
+    },
+    {
+      "addr": "005272e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_005272e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00527830",
+      "name": "SUB_00527830",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052dd15",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_ctor_FUN_0052dd00",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.981818181818182,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 42,
+      "INT_ADD": 9,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 44,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 43
+    },
+    "pcode_op_count": 219
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

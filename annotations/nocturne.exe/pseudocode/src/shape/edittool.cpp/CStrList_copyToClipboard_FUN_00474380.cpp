@@ -36,11 +36,12 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *
       iVar5 = iVar5 + ~uVar4;
     } while (iVar6 < this_ptr->item_count);
   }
-  pcVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar5 + 1);
+  pcVar2 = shape_memdbg_cpp_malloc_FUN_00564c18(iVar5 + 1U);
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 2777;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar5 + 1U);
   }
   iVar5 = 0;
   buffer = pcVar2;

@@ -76,43 +76,43 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 199,
+        "line": 200,
         "message": "use of undeclared identifier 'DAT_0077d250'; did you mean 'DAT_00575250'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 201,
+        "line": 202,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 203,
+        "line": 204,
         "message": "use of undeclared identifier 'DAT_0077d250'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 211,
+        "line": 212,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 242,
+        "line": 243,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 247,
+        "line": 248,
         "message": "use of undeclared identifier '_DAT_0140d780'"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 262,
+        "line": 263,
         "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b06f8'?"
       }
     ],
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 1001,
+    "complexity_score": 1002,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 61,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 471,
+    "pseudocode_lines": 472,
     "suspect_count": 49,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1549
+    "total_lines": 1550
   },
   "cross_references": [
     {
@@ -164,7 +164,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -986,28 +986,28 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 57,
-          "line": 311,
+          "line": 312,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 409,
+          "line": 410,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 415,
+          "line": 416,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 47,
-          "line": 461,
+          "line": 462,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -1035,7 +1035,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 193,
       "match": "DAT_0077d250",
       "severity": "mild",
       "text": "_fread(&DAT_0077d250,local_9c,1,local_14);",
@@ -1043,7 +1043,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 197,
       "match": "DAT_0077d250",
       "severity": "mild",
       "text": "(&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,",
@@ -1051,7 +1051,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 255,
+      "line": 256,
       "match": "DAT_00b0daf8",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_00b0daf8)[iVar21] << (g_RedBitPosition.bytes[0] & 0x1f);",
@@ -1059,7 +1059,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 259,
+      "line": 260,
       "match": "DAT_00b0daf8",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_00b0daf8)[iVar21] << 0x10 | (uint)*(byte *)(iVar21 + 0xb0dafa);",
@@ -1067,7 +1067,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 266,
+      "line": 267,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "_fread(&DAT_01410290,0x280,0x1e0,p_Var6);",
@@ -1075,7 +1075,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 269,
+      "line": 270,
       "match": "3.36312e-43",
       "severity": "mild",
       "text": "if (fVar2 == 3.36312e-43) {",
@@ -1083,7 +1083,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 273,
+      "line": 274,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "pbVar8 = &DAT_01410290 + local_20;",
@@ -1091,7 +1091,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
+      "line": 275,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar28 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
@@ -1099,7 +1099,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 288,
+      "line": 289,
       "match": "6.72623e-43",
       "severity": "mild",
       "text": "else if (fVar2 == 6.72623e-43) {",
@@ -1107,7 +1107,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 289,
+      "line": 290,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "pbVar8 = &DAT_01410290;",
@@ -1115,7 +1115,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 321,
+      "line": 322,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "uVar14 = *(uint *)((uint)(byte)(&DAT_01410290)[local_60 + iVar21] * 4 + 0xb0ddfc);",
@@ -1123,7 +1123,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 327,
+      "line": 328,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "uVar9 = *(uint *)((uint)(byte)(&DAT_01410290)[iVar21 + local_5c] * 4 + 0xb0ddfc);",
@@ -1131,7 +1131,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 332,
+      "line": 333,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "uVar10 = *(uint *)((uint)(byte)(&DAT_01410290)[local_58 + local_60] * 4 + 0xb0ddfc);",
@@ -1139,7 +1139,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 338,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((uint)(byte)(&DAT_01410290)[local_58 + local_5c] * 4 + 0xb0ddfc);",
@@ -1147,7 +1147,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 384,
+      "line": 385,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01410290)",
@@ -1155,7 +1155,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 405,
+      "line": 406,
       "match": "DAT_0145b290",
       "severity": "mild",
       "text": "(&DAT_0145b290)[iVar17] =",
@@ -1163,7 +1163,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 406,
+      "line": 407,
       "match": "DAT_01410290",
       "severity": "mild",
       "text": "(&DAT_01410290)",
@@ -1171,7 +1171,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 417,
       "match": "DAT_005ad49c",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c);",
@@ -1179,7 +1179,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 418,
       "match": "DAT_0145b290",
       "severity": "mild",
       "text": "puVar26 = &DAT_0145b290;",
@@ -1187,7 +1187,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 429,
+      "line": 430,
       "match": "DAT_00b0daf8",
       "severity": "mild",
       "text": "puVar26 = &DAT_00b0daf8;",
@@ -1195,7 +1195,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 434,
+      "line": 435,
       "match": "(SRGBColorPalette *)((int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);",
@@ -1203,7 +1203,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 439,
+      "line": 440,
       "match": "(SRGBColorPalette *)((int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);",
@@ -1211,7 +1211,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 442,
+      "line": 443,
       "match": "DAT_005ad49c",
       "severity": "mild",
       "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad49c,",
@@ -1219,7 +1219,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 443,
+      "line": 444,
       "match": "DAT_00b0daf8",
       "severity": "mild",
       "text": "(SRGBColorPalette *)&DAT_00b0daf8);",
@@ -1227,7 +1227,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 221,
+      "line": 222,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "cVar5 = cVar5 + *(char *)((int)&g_VOID_PTR_012e1778 + local_44 + iVar17);",
@@ -1235,7 +1235,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 224,
+      "line": 225,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar5;",
@@ -1243,7 +1243,7 @@
     },
     {
       "description": "Pointer value `(&DAT_01410290)` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 384,
+      "line": 385,
       "match": "(byte)(&DAT_01410290)",
       "severity": "moderate",
       "text": "((uint)(byte)(&DAT_01410290)",
@@ -1251,7 +1251,7 @@
     },
     {
       "description": "Pointer value `pSVar30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 434,
+      "line": 435,
       "match": "(int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -8 + 4);",
@@ -1259,7 +1259,7 @@
     },
     {
       "description": "Pointer value `pSVar30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 439,
+      "line": 440,
       "match": "(int)pSVar30",
       "severity": "moderate",
       "text": "pSVar30 = (SRGBColorPalette *)((int)pSVar30 + (uint)bVar33 * -2 + 1);",
@@ -1267,7 +1267,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 459,
+      "line": 460,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar19) =",
@@ -1275,7 +1275,7 @@
     },
     {
       "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 460,
+      "line": 461,
       "match": "(int)&g_VOID_PTR_012e1778",
       "severity": "moderate",
       "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar15);",
@@ -1315,7 +1315,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 419,
+      "line": 420,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0x4000; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1323,7 +1323,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 424,
+      "line": 425,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1331,7 +1331,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 431,
+      "line": 432,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1339,7 +1339,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 436,
+      "line": 437,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -1347,7 +1347,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 221,
+      "line": 222,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "cVar5 = cVar5 + *(char *)((int)&g_VOID_PTR_012e1778 + local_44 + iVar17);",
@@ -1355,7 +1355,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 224,
+      "line": 225,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(char *)((int)&g_VOID_PTR_012e1778 + iVar7) = cVar5;",
@@ -1363,7 +1363,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 459,
+      "line": 460,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar19) =",
@@ -1371,7 +1371,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 460,
+      "line": 461,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar15);",
@@ -1411,7 +1411,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 311,
+      "line": 312,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((ulonglong)(uint)((int)uVar4 >> 0x1f) << 0x20 | uVar4 & 0xffffffff) /",
@@ -1419,7 +1419,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 409,
+      "line": 410,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar18 = iVar15 >> 0x1f;",
@@ -1427,7 +1427,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 415,
+      "line": 416,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "((int)((iVar21 + (iVar21 >> 0x1f) * -0x100) - (uint)((iVar21 >> 0x1f) << 7 < 0)) >>",
@@ -1435,7 +1435,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 461,
+      "line": 462,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar15 = ((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0))",

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   sort_order
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00470730 at 0047099c
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 0047099c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057efb6

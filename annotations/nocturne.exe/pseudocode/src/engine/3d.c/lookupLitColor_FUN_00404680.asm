@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_index,int light_level)
+; uint __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_value,int lighting_value)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   color_index
-; int              Stack[0x8]:4   light_level
+; int              Stack[0x4]:4   color_value
+; int              Stack[0x8]:4   lighting_value
 ;
 ; XREF[5]:
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 0040612e

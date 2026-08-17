@@ -14,6 +14,7 @@ void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_004e25c0(int layer
   }
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 433;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s");
+  core_main_c_displayErrorAndQuit_FUN_004c8440
+            ("js_bound bad layer/modext (%d/%d)  File: %s",layer,mode_extension,&DAT_01cd8b28);
   return *(void **)("$CMotionController$$" + layer * 0x10 + mode_extension * 4 + 10);
 }

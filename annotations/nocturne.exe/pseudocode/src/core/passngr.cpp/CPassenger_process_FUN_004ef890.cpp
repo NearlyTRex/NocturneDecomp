@@ -39,7 +39,8 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_p
                 (g_CDemonMission_PTR_005baf90,(CDemonActor *)this_ptr->werewolf_actor);
       this_ptr_01 = g_CDemonMission_PTR_005baf90;
       this_ptr->werewolf_actor = (CWerewolf *)0x0;
-      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110(this_ptr_01,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
+                (this_ptr_01,(CDemonActor *)this_ptr,1);
     }
   }
   else {

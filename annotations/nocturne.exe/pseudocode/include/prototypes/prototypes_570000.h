@@ -18,13 +18,13 @@
 // FUNCTION PROTOTYPES - Range 0x570000
 // =============================================================================
 
-undefined4 crt_stdio_c_closeUnsupported_FUN_00570007(void);
+int __watcallStack crt_stdio_c_closeUnsupported_FUN_00570007(void);
 int __watcallStack crt_strstream_cpp_strstreambuf_overflow_FUN_0057000d(strstreambuf *this_ptr,int character);
 int __watcallStack crt_strstream_cpp_strstreambuf_underflow_FUN_00570075(strstreambuf *this_ptr);
 strstreambuf * __watcallStack crt_strstream_cpp_strstreambuf_setbuf_FUN_005700c0(strstreambuf *this_ptr,char *ignored_buffer,int allocation_size);
 int __watcallStack crt_strstream_cpp_strstreambuf_seekoff_FUN_005700d0(strstreambuf *this_ptr,int seek_distance,int seek_mode,int flags);
 void __watcallStack crt_iostream_cpp_streambuf_seekoff_FUN_005701af(streambuf *this_ptr,int off,int dir,int which);
-undefined4 crt_strstream_cpp_strstreambuf_sync_FUN_005701cc(void);
+int __watcallStack crt_strstream_cpp_strstreambuf_sync_FUN_005701cc(void);
 strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_005701cf(strstreambuf *this_ptr,uint flags);
 strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_ctor_FUN_00570248(strstreambuf *this_ptr);
 int __watcallStack crt_strstream_cpp_strstreambuf_doallocate_FUN_00570272(strstreambuf *this_ptr);
@@ -72,9 +72,9 @@ int crt_unknown_c_FUN_005713e0(short *param_1);
 undefined4 * crt_unknown_c_FUN_00571410(undefined4 *param_1,undefined4 *param_2,uint param_3);
 undefined4 crt_unknown_c_FUN_00571440(short *param_1);
 void __watcallRegister crt_stdio_c_InitializeConsoleHandles_FUN_0057146c(void);
-HANDLE __watcallRegister crt_unknown_c_FUN_005714e0(void);
-HANDLE __cdecl crt_unknown_c_FUN_005714ec(void);
-void __cdecl crt_unknown_c_FUN_00571500(void);
+HANDLE __watcallRegister crt_unknown_c_GetConsoleInputHandle_FUN_005714e0(void);
+HANDLE __cdecl crt_unknown_c_GetConsoleOutputHandle_FUN_005714ec(void);
+void __cdecl crt_unknown_c_ClearFPUExceptions_FUN_00571500(void);
 SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_setSignalHandler_FUN_00571510(int signal_number,SIGNAL_HANDLER_TYPE new_handler_type);
 SIGNAL_HANDLER_TYPE __watcallStack crt_signal_c_getSignalHandler_FUN_00571564(int signal_number);
 undefined4 crt_unknown_c_FUN_00571588(int param_1);
@@ -101,8 +101,8 @@ streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_00571d9f(st
 int __watcallStack crt_iostream_cpp_doallocate_FUN_00571dc7(streambuf *this_ptr);
 void __watcallStack crt_iostream_cpp_setBuffer_FUN_00571df8(streambuf *this_ptr,void *new_buffer,void *buffer_end,int ownership_flag);
 int __watcallStack crt_iostream_cpp_validateBufferSeek_FUN_00571e75(int seek_distance,int whence,char *buffer_start,char *current_ptr,char *buffer_end1,char *buffer_end2);
-void * __watcallStack crt_unknown_c_FUN_00571ee0(uint size);
-void __watcallStack crt_unknown_c_FUN_00571ef0(void *buffer);
+void * __watcallStack crt_unknown_c_streambuf_allocBuffer_FUN_00571ee0(uint size);
+void __watcallStack crt_unknown_c_freeBuffer_FUN_00571ef0(void *buffer);
 int __watcallStack crt_fstream_cpp_filebuf_pbackfail_FUN_00571efe(filebuf *this_ptr,int character);
 int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_00571fd1(filebuf *this_ptr,int character);
 int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_ptr);
@@ -125,7 +125,7 @@ void crt_unknown_c_FUN_00572ea0(undefined4 *param_1,undefined4 *param_2,undefine
 uint crt_unknown_c_FUN_00572ef0(uint param_1,uint param_2);
 int __cdecl crt_io_c_extend_file_for_append_FUN_00572f40(int fd);
 int __cdecl crt_io_c_write_FUN_0057301c(int fd,void *buffer,SIZE_T count);
-uint crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *param_2,DWORD param_3);
+uint __cdecl crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *param_2,DWORD param_3);
 undefined4 crt_unknown_c_FUN_00573650(void);
 int __cdecl crt_stdio_c_fputs_FUN_00573660(char *str,_FILE *file);
 long __cdecl crt_stdlib_c_strtol_internal_FUN_00573720(char *str,char **endptr,int base,int is_signed);

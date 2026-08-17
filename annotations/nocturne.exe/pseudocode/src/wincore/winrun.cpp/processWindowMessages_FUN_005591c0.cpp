@@ -27,7 +27,7 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005591c0(void)
     iVar3 = iVar3 + 4;
   } while (iVar1 < 600);
   while( true ) {
-    while (BVar2 = PeekMessageA(&local_28,(HWND)0x0,0,0,1), BVar2 != 0) {
+    while (BVar2 = PeekMessageA(&local_28,0,0,0,1), BVar2 != 0) {
       TranslateMessage(&local_28);
       DispatchMessageA(&local_28);
     }

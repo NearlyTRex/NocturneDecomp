@@ -96,12 +96,12 @@ int support_newmsg_cpp_FUN_004edfc0(char *param_1)
         if (iVar5 != 2) {
           g_CurrentFilename = "..\\support\\newmsg.cpp";
           g_CurrentLineNumber = 99;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",param_1);
         }
         if (499 < _DAT_01d16818) {
           g_CurrentFilename = "..\\support\\newmsg.cpp";
           g_CurrentLineNumber = 104;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Too many messages in %s");
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Too many messages in %s",param_1);
         }
         pcVar9 = local_21c;
         pcVar10 = (char *)(_DAT_01d16818 * 0x80 + 0x1d177c0);

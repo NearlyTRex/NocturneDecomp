@@ -1,0 +1,305 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 9,
+        "line": 25,
+        "message": "unknown type name '_EXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 9,
+        "line": 90,
+        "message": "unknown type name '_CONTEXT'"
+      },
+      {
+        "category": "other",
+        "column": 85,
+        "line": 260,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 80,
+        "line": 269,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 498,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 498,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 499,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 499,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 107,
+        "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 86,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 189
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042ee00",
+    "address_range": [
+      [
+        "0042ee00",
+        "0042ef5e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_0042ee00",
+    "signature": "void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_0042ee00(char *filename,SEdgeList *edge_lists,int edge_list_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "005644f0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005644f0"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00456a60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFile_FUN_00456a60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057a8f8",
+      "name": "s_cockpit_ckptutil_c_0057a8f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a90e",
+      "name": "s_Edge_list_array_is_empty_0057a90e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a928",
+      "name": "s_wt_0057a928",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a92b",
+      "name": "s_art_0057a92b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a92f",
+      "name": "s_Could_not_create_output_0057a92f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a952",
+      "name": "s_cockpit_ckptutil_c_0057a952",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a968",
+      "name": "s_d_0057a968",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a96c",
+      "name": "s_d_0057a96c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057a970",
+      "name": "s_s_3d_3d_3d_3d_d_0057a970",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.827272727272727,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 8,
+      "CBRANCH": 5,
+      "COPY": 84,
+      "INT_ADD": 45,
+      "INT_AND": 83,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 59,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 4,
+      "INT_SLESS": 31,
+      "INT_SRIGHT": 1,
+      "INT_SUB": 40,
+      "INT_XOR": 4,
+      "LOAD": 22,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 39
+    },
+    "pcode_op_count": 531
+  },
+  "stack_frame": {
+    "frame_size": 124,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "edge_lists",
+        "offset": 8,
+        "size": 4,
+        "type": "SEdgeList *"
+      },
+      {
+        "is_param": true,
+        "name": "edge_list_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&edge_lists->edge_data` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&edge_lists->edge_data",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + iVar6), iVar8 < piVar7[1];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + iVar6), iVar8 < piVar7[1];",
+      "type": "pointer_cast"
+    }
+  ]
+}

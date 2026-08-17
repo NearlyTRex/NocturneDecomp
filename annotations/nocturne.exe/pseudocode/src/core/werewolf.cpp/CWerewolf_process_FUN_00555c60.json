@@ -56,12 +56,6 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 134,
-        "message": "no matching function for call to 'core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 51,
         "line": 168,
@@ -98,6 +92,12 @@
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
       },
       {
+        "category": "format_error",
+        "column": 55,
+        "line": 272,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "type_error",
         "column": 15,
         "line": 335,
@@ -110,10 +110,10 @@
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 465,
-        "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+        "category": "format_error",
+        "column": 48,
+        "line": 346,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -254,7 +254,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -319,7 +319,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {

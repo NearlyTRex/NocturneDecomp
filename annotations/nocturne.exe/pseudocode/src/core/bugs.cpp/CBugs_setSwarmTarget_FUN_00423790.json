@@ -54,6 +54,18 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "format_error",
+        "column": 76,
+        "line": 48,
+        "message": "format specifies type 'char *' but the argument has type 'CBugs *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 48,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -62,12 +74,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 415,
+    "complexity_score": 417,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 102,
     "suspect_count": 28,
     "suspect_types": [
       "concat_reconstruction",
@@ -78,7 +90,7 @@
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 338
+    "total_lines": 340
   },
   "cross_references": [
     {
@@ -128,7 +140,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -289,7 +301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 55,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "*(int *)((int)&DAT_00764d98 + iVar7) = iVar5;",
@@ -297,7 +309,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 64,
       "match": "DAT_00764d9c",
       "severity": "mild",
       "text": "if (pCVar1[*(int *)((int)&DAT_00764d9c + iVar7)].y <",
@@ -305,7 +317,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 65,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "pCVar1[*(int *)((int)&DAT_00764d98 + iVar7)].y) {",
@@ -313,7 +325,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 66,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "uVar2 = *(uint *)((int)&DAT_00764d98 + iVar7);",
@@ -321,7 +333,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 67,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00764d98 + iVar7) =",
@@ -329,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 68,
       "match": "DAT_00764d9c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7);",
@@ -337,7 +349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 69,
       "match": "DAT_00764d9c",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7) = uVar2;",
@@ -345,7 +357,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 75,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "iVar5 = pCVar1[DAT_00764d98].y;",
@@ -353,7 +365,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 84,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "pCVar9->bugs[0].dest_vertex = (&DAT_00764d98)[iVar8];",
@@ -361,7 +373,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 91,
       "match": "DAT_00764d98",
       "severity": "mild",
       "text": "(iVar5 + 0x2a < pCVar1[(&DAT_00764d98)[iVar8]].y)) {",
@@ -369,7 +381,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 55,
       "match": "(int)&DAT_00764d98",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_00764d98 + iVar7) = iVar5;",
@@ -377,7 +389,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 64,
       "match": "(int)&DAT_00764d9c",
       "severity": "moderate",
       "text": "if (pCVar1[*(int *)((int)&DAT_00764d9c + iVar7)].y <",
@@ -385,7 +397,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 65,
       "match": "(int)&DAT_00764d98",
       "severity": "moderate",
       "text": "pCVar1[*(int *)((int)&DAT_00764d98 + iVar7)].y) {",
@@ -393,7 +405,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 66,
       "match": "(int)&DAT_00764d98",
       "severity": "moderate",
       "text": "uVar2 = *(uint *)((int)&DAT_00764d98 + iVar7);",
@@ -401,7 +413,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 65,
+      "line": 67,
       "match": "(int)&DAT_00764d98",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d98 + iVar7) =",
@@ -409,7 +421,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 68,
       "match": "(int)&DAT_00764d9c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7);",
@@ -417,7 +429,7 @@
     },
     {
       "description": "Pointer value `&DAT_00764d9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 67,
+      "line": 69,
       "match": "(int)&DAT_00764d9c",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7) = uVar2;",
@@ -425,7 +437,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 84,
+      "line": 86,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",
@@ -433,7 +445,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 53,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_00764d98 + iVar7) = iVar5;",
@@ -441,7 +453,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 64,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (pCVar1[*(int *)((int)&DAT_00764d9c + iVar7)].y <",
@@ -449,7 +461,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar1[*(int *)((int)&DAT_00764d98 + iVar7)].y) {",
@@ -457,7 +469,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 66,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "uVar2 = *(uint *)((int)&DAT_00764d98 + iVar7);",
@@ -465,7 +477,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d98 + iVar7) =",
@@ -473,7 +485,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 66,
+      "line": 68,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7);",
@@ -481,7 +493,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 67,
+      "line": 69,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_00764d9c + iVar7) = uVar2;",
@@ -489,7 +501,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 93,
+      "line": 95,
       "match": "pCVar9 = (T *)&(pCVar9->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar9 = (CBugs *)&(pCVar9->base).base.base.orient_matrix.m[0].y;",

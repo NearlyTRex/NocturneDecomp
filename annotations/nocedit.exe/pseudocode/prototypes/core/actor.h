@@ -247,9 +247,9 @@ int __cdecl CDemonActor::startInteraction(CDemonActor *this_ptr,CDemonActor *use
 // Address: 0040a0b0
 int __cdecl CDemonActor::updateInteraction(CDemonActor *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 
-// Original: core_actor.cpp_CDemonActor_stopUsing_FUN_0040a0d0
+// Original: core_actor.cpp_CDemonActor_stopInteraction_FUN_0040a0d0
 // Address: 0040a0d0
-void __cdecl CDemonActor::stopUsing(CDemonActor *this_ptr,CDemonActor *user);
+void __cdecl CDemonActor::stopInteraction(CDemonActor *this_ptr,CDemonActor *user);
 
 // Original: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0
 // Address: 0040a0f0

@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   end_char
 ;
 ; XREF[1]:
-;   core_dfont.cpp_FUN_0044c560 at 0044c5cb
+;   core_dfont.cpp_initFonts_FUN_0044c560 at 0044c5cb
 ;
 ; *****************************************************************************
 

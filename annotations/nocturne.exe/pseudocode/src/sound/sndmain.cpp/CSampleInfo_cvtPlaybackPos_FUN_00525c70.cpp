@@ -18,7 +18,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
         if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 3127;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
+          core_main_c_displayErrorAndQuit_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
+          ;
           position = (double)this_ptr->sample_count * position;
         }
         else {
@@ -39,7 +40,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70(CSample
         if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 3146;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
+          core_main_c_displayErrorAndQuit_FUN_004c8440("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
+          ;
           position = position / (double)this_ptr->sample_count;
         }
         else {

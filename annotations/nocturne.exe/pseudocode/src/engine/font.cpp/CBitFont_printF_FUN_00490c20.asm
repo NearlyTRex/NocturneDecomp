@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_printF_FUN_00490c20(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format)
+; void __cdecl engine_font_cpp_CBitFont_printF_FUN_00490c20(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,...)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr

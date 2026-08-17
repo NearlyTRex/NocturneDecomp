@@ -53,7 +53,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedMod
     core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(this_ptr);
     g_CurrentLineNumber = 723;
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",this_ptr->frame_count,this_ptr->vertex_count,
+               this_ptr->poly_count);
     if (this_ptr->frame_count != 1) {
       return;
     }
@@ -68,6 +70,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedMod
   }
   g_CurrentFilename = "..\\core\\dmodel.cpp";
   g_CurrentLineNumber = 731;
-  core_main_c_displayErrorAndQuit_FUN_004c8440("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d");
+  core_main_c_displayErrorAndQuit_FUN_004c8440
+            ("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",this_ptr->vertex_count);
   return;
 }

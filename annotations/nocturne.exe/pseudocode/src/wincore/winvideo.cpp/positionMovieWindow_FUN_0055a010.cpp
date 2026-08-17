@@ -22,8 +22,8 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_0055a010(HWND parent_w
   if (_DAT_02de3124 == 0) {
     return;
   }
-  GetClientRect((HWND)parent_window,&local_24);
-  mciSendStringA("where mov source",(LPSTR)&local_a4,0x80,(HWND)0x0);
+  GetClientRect(parent_window,&local_24);
+  mciSendStringA("where mov source",(LPSTR)&local_a4,0x80,0);
   SetRectEmpty(&local_14);
   pbVar3 = &local_a4;
   while (local_a4 == 0x20) {

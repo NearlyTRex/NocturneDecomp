@@ -7,7 +7,7 @@
 ; SIZE_T           Stack[0x4]:4   size
 ;
 ; XREF[20]:
-;   cockpit_ckptutil.c_FUN_0042e7b0 at 0042e7eb
+;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_0042e7b0 at 0042e7eb
 ;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90 at 004f505f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f47fb
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 at 004f4d8b

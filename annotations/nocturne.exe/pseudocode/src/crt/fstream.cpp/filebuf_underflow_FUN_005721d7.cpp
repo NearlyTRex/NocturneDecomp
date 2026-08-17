@@ -12,13 +12,15 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_
   byte *pbVar1;
   char *pcVar2;
   char *pcVar3;
-  int iVar4;
-  byte *pbVar5;
+  DWORD DVar4;
+  uint uVar5;
+  byte *pbVar6;
+  int iVar7;
   
   pcVar3 = (this_ptr->_streambuf).__put_ptr;
   pcVar2 = (this_ptr->_streambuf).__put_base;
   if ((pcVar3 != pcVar2 && -1 < (int)pcVar3 - (int)pcVar2) &&
-     (iVar4 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf), iVar4 == -1)) {
+     (iVar7 = (*this_ptr->__vtable->sync)(&this_ptr->_streambuf), iVar7 == -1)) {
     return -1;
   }
   (this_ptr->_streambuf).__put_base = (char *)0x0;
@@ -27,7 +29,7 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_
   (this_ptr->_streambuf).__put_end = (char *)0x0;
   if (pcVar3 == (char *)0x0) {
     if ((((this_ptr->_streambuf).__flags & 1) == 0) &&
-       (iVar4 = (*this_ptr->__vtable->doallocate)(&this_ptr->_streambuf), iVar4 == -1)) {
+       (iVar7 = (*this_ptr->__vtable->doallocate)(&this_ptr->_streambuf), iVar7 == -1)) {
       return -1;
     }
     pcVar3 = (this_ptr->_streambuf).__reserve_base;
@@ -35,14 +37,14 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_
       pcVar3 = this_ptr->__unbuffered_get_area + 4;
       (this_ptr->_streambuf).__get_ptr = pcVar3;
       (this_ptr->_streambuf).__get_end = pcVar3;
-      iVar4 = this_ptr->__file_handle;
+      uVar5 = this_ptr->__file_handle;
       (this_ptr->_streambuf).__get_base = this_ptr->__unbuffered_get_area;
-      iVar4 = ReadFileBytesMaybe(iVar4,pcVar3,1);
-      if (iVar4 < 1) {
+      uVar5 = ReadFileBytesMaybe(uVar5,pcVar3,1);
+      if ((int)uVar5 < 1) {
         return -1;
       }
-      pbVar5 = (byte *)(this_ptr->_streambuf).__get_ptr;
-      (this_ptr->_streambuf).__get_end = (this_ptr->_streambuf).__get_end + iVar4;
+      pbVar6 = (byte *)(this_ptr->_streambuf).__get_ptr;
+      (this_ptr->_streambuf).__get_end = (this_ptr->_streambuf).__get_end + uVar5;
       goto LAB_00572243;
     }
 LAB_00572211:
@@ -52,22 +54,22 @@ LAB_00572211:
   }
   else if ((this_ptr->_streambuf).__get_end <= (this_ptr->_streambuf).__get_ptr) goto LAB_00572211;
   pcVar3 = (this_ptr->_streambuf).__get_end;
-  iVar4 = (int)(this_ptr->_streambuf).__reserve_end - (int)pcVar3;
-  if (iVar4 < 1) {
-    iVar4 = 0;
+  DVar4 = (int)(this_ptr->_streambuf).__reserve_end - (int)pcVar3;
+  if ((int)DVar4 < 1) {
+    uVar5 = 0;
   }
   else {
-    iVar4 = ReadFileBytesMaybe(this_ptr->__file_handle,pcVar3,iVar4);
-    if (iVar4 < 1) {
+    uVar5 = ReadFileBytesMaybe(this_ptr->__file_handle,pcVar3,DVar4);
+    if ((int)uVar5 < 1) {
       return -1;
     }
   }
-  pbVar1 = (byte *)((this_ptr->_streambuf).__get_end + iVar4);
-  pbVar5 = (byte *)(this_ptr->_streambuf).__get_ptr;
+  pbVar1 = (byte *)((this_ptr->_streambuf).__get_end + uVar5);
+  pbVar6 = (byte *)(this_ptr->_streambuf).__get_ptr;
   (this_ptr->_streambuf).__get_end = (char *)pbVar1;
-  if (pbVar1 <= pbVar5) {
+  if (pbVar1 <= pbVar6) {
     return -1;
   }
 LAB_00572243:
-  return (uint)*pbVar5;
+  return (uint)*pbVar6;
 }

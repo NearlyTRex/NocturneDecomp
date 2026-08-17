@@ -31,7 +31,7 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920(CDemonMiss
     if (actor_ptr == (CDemonActor *)0x0) {
 LAB_004d999a:
       if (local_14 == (CHero *)0x0) {
-        shape_edittool_cpp_FUN_0046fcd0
+        shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                   (g_CEditorTools_PTR_005b6d50,"Can't find hero placeholder for hero %d",index);
         return 0;
       }

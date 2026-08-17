@@ -25,7 +25,8 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_004f86a0(CPodFile *this_
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 550;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CPodFile::computeOneFileCRC - can't open %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CPodFile::computeOneFileCRC - can't open %s",this_ptr->filename);
   }
   _fseek(file,this_ptr->directory_entries[file_index].offset,0);
   current_crc = 0xffffffff;

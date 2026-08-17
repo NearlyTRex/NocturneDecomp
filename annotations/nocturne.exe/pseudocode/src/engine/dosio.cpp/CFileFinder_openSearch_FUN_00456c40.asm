@@ -10,10 +10,10 @@
 ; XREF[6]:
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f92f0
 ;   engine_dosio.cpp_getFileSizeWithFinder_FUN_004569a0 at 004569df
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470819
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 00474801
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 004749f4
-;   shape_edittool.cpp_FUN_00470730 at 00470819
-;   shape_edittool.cpp_FUN_00474ae0 at 00474bb4
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00474ae0 at 00474bb4
 ;
 ; Referenced Globals:
 ;   void* PTR_FindFirstFileA_005754cc = 00175bfc

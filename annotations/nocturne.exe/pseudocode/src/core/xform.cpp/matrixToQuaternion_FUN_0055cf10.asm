@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_xform.cpp_FUN_0055d660 at 0055d692
+;   core_xform.cpp_eulerToQuaternionIndirect_FUN_0055d660 at 0055d692
 ;   core_xform.cpp_eulerToQuaternion_FUN_0055d610 at 0055d642
 ;   core_xform.cpp_lerpMatrix3x4_FUN_0055cc30 at 0055cc9c
 ;

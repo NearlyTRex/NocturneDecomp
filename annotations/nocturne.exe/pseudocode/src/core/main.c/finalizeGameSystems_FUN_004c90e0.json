@@ -127,7 +127,7 @@
     {
       "addr": "00559260",
       "from_addr": "005594eb",
-      "name": "wincore_winrun.cpp_FUN_00559260",
+      "name": "wincore_winrun.cpp_winMain_FUN_00559260",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -147,12 +147,12 @@
     {
       "addr": "0044cc00",
       "is_variadic": false,
-      "name": "core_dfont.cpp_FUN_0044cc00"
+      "name": "core_dfont.cpp_freeFonts_FUN_0044cc00"
     },
     {
       "addr": "00454460",
       "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_00454460"
+      "name": "core_dmodel.cpp_freeAllModels_FUN_00454460"
     },
     {
       "addr": "004be2d0",
@@ -170,19 +170,19 @@
       "name": "core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0"
     },
     {
+      "addr": "0051f650",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_freeAllModels_FUN_0051f650"
+    },
+    {
       "addr": "0051f730",
       "is_variadic": false,
       "name": "core_skeleton.cpp_freeAllSkeletons_FUN_0051f730"
     },
     {
-      "addr": "0051f650",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0051f650"
-    },
-    {
       "addr": "0052dd80",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0052dd80"
+      "name": "core_sound.cpp_CSound_dtor_FUN_0052dd80"
     },
     {
       "addr": "00563380",
@@ -212,7 +212,7 @@
     {
       "addr": "00404490",
       "is_variadic": false,
-      "name": "engine_3d.c_FUN_00404490"
+      "name": "engine_3d.c_freeTextureCache_FUN_00404490"
     },
     {
       "addr": "0040e710",
@@ -257,7 +257,7 @@
     {
       "addr": "004cca50",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_004cca50"
+      "name": "engine_matrix.c_doNothing_FUN_004cca50"
     },
     {
       "addr": "004ee680",
@@ -285,14 +285,14 @@
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
     },
     {
+      "addr": "00559e90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_doNothing2_FUN_00559e90"
+    },
+    {
       "addr": "00558a20",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_endPeriod_FUN_00558a20"
-    },
-    {
-      "addr": "00559e90",
-      "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_00559e90"
     },
     {
       "addr": "00558b00",
@@ -427,7 +427,7 @@
       {
         "call_addr": "005594eb",
         "call_type": "direct",
-        "caller": "wincore_winrun.cpp_FUN_00559260",
+        "caller": "wincore_winrun.cpp_winMain_FUN_00559260",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",

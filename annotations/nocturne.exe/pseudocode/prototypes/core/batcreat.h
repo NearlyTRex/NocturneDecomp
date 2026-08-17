@@ -49,4 +49,4 @@ ECollisionType __cdecl CBatCreature::getCollisionType(CBatCreature *this_ptr,SCo
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_004132c0
 // Address: 004132c0
-CDemonActor * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);
+CBatCreature * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);

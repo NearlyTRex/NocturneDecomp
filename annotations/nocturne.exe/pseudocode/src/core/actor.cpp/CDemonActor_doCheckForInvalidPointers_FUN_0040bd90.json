@@ -56,16 +56,58 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "format_error",
+        "column": 89,
+        "line": 32,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 76,
+        "line": 37,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 36,
+        "line": 39,
         "message": "use of undeclared identifier 'DAT_0078a123'"
+      },
+      {
+        "category": "format_error",
+        "column": 95,
+        "line": 55,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 7,
-        "line": 57,
+        "line": 60,
         "message": "use of undeclared identifier '_DAT_005779d5'"
+      },
+      {
+        "category": "format_error",
+        "column": 138,
+        "line": 80,
+        "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 147,
+        "line": 80,
+        "message": "format specifies type 'char *' but the argument has type 'undefined4 *' (aka 'unsigned int *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 124,
+        "line": 110,
+        "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 18,
+        "line": 111,
+        "message": "format specifies type 'char *' but the argument has type 'undefined4 *' (aka 'unsigned int *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -74,21 +116,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 409,
+    "complexity_score": 477,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
-    "suspect_count": 29,
+    "pseudocode_lines": 107,
+    "suspect_count": 34,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 322
+    "total_lines": 335
   },
   "cross_references": [],
   "function": {
@@ -107,7 +150,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -337,12 +380,33 @@
   "static_analysis": {
     "analyzed_file": "CDemonActor_doCheckForInvalidPointers_FUN_0040bd90.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 1,
+      "diagnostic_count": 4,
       "diagnostics": [
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 11,
-          "line": 75,
+          "line": 83,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 25,
+          "line": 89,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 25,
+          "line": 90,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 25,
+          "line": 91,
           "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
           "severity": "warning"
         }
@@ -362,7 +426,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 32,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "if ((byte *)this_ptr->validation_magic != &DAT_0078a123) {",
@@ -370,183 +434,200 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "memset(&DAT_00763e10,0,0x32);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "pcVar8 = (char *)&DAT_00763e10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "memset(&DAT_00763e10,0,0x32);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "pcVar8 = (char *)&DAT_00763e10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 76,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "memset(&DAT_00763e10,0,0x32);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_00763e10",
-      "severity": "mild",
-      "text": "pcVar8 = (char *)&DAT_00763e10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(CDemonActor *)((int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(CDemonActor *)((int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 58,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 82,
-      "match": "(int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
-      "match": "(int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 35,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "memset(&DAT_00763e10,0,0x32);",
+      "type": "undefined_data"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "pcVar8 = (char *)&DAT_00763e10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 40,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "(CDemonActor *)((int)pCVar6",
       "severity": "moderate",
-      "text": "for (iVar5 = 1; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 56,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(CDemonActor *)((int)pCVar6",
       "severity": "moderate",
-      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "memset(&DAT_00763e10,0,0x32);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 61,
-      "match": "for (...; != 0; ... + -1)",
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "pcVar8 = (char *)&DAT_00763e10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CDemonActor *)((int)pCVar6",
       "severity": "moderate",
-      "text": "for (iVar5 = 1; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(CDemonActor *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",context_file,context_line,this_ptr,&DAT_00763e10,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "memset(&DAT_00763e10,0,0x32);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "pcVar8 = (char *)&DAT_00763e10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(CDemonActor *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(CDemonActor *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_00763e10",
+      "severity": "mild",
+      "text": "&DAT_00763e10,dVar10,dVar11,dVar12);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "NULL actor pointer detected, %s line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 25,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"NULL actor pointer detected, %s line %d\",context_file)",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 30,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid actor pointer %08X detected at %s, line %d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Dangling/corrupt actor pointer detected at %s line...\" has 5 specifiers but 0 arguments after it",
+      "expected_args": 5,
+      "format_string": "Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
+      "line_number": 48,
+      "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Dangling/corrupt actor pointer detected at %s line %d:",
+      "text": "Format string expects 5 args but got 0",
+      "type": "format_string_mismatch"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 80,
+      "line": 38,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -554,7 +635,39 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 85,
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 1; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 62,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 67,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 1; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 91,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 96,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 1; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -586,10 +699,34 @@
     },
     {
       "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 75,
+      "line": 83,
       "match": "Cppcheck: redundant null check or possible null dereference",
       "severity": "moderate",
       "text": "cVar4 = this_ptr->actor_name[0];",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 89,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar12 = (double)(this_ptr->location).position.z;",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 90,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar11 = (double)(this_ptr->location).position.y;",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 91,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar10 = (double)(this_ptr->location).position.x;",
       "type": "static_null_pointer_redundant_check"
     }
   ]

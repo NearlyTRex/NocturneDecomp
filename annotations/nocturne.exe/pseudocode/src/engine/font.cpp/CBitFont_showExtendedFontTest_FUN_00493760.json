@@ -58,25 +58,25 @@
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 95,
+        "line": 94,
         "message": "use of undeclared identifier 'DAT_00581aa2'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'DAT_00581ab0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 143,
+        "line": 142,
         "message": "use of undeclared identifier 'DAT_00581ac5'"
       },
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 256,
+        "line": 259,
         "message": "use of undeclared identifier 'DAT_00581ae0'"
       }
     ],
@@ -86,17 +86,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 886,
-    "complexity_score": 293,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 248,
+    "pseudocode_lines": 251,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 1134
+    "total_lines": 1137
   },
   "cross_references": [],
   "function": {
@@ -135,7 +135,7 @@
     },
     {
       "addr": "00490b20",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_font.cpp_CBitFont_drawTextF_FUN_00490b20"
     },
     {
@@ -378,34 +378,34 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 87,
       "match": "DAT_00581aa2",
       "severity": "mild",
-      "text": "(this_ptr,&DAT_00581aa2,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);",
+      "text": "(this_ptr,&DAT_00581aa2,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 111,
       "match": "DAT_00581ab0",
       "severity": "mild",
-      "text": "(this_ptr,&DAT_00581ab0,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);",
+      "text": "(this_ptr,&DAT_00581ab0,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 135,
       "match": "DAT_00581ac5",
       "severity": "mild",
-      "text": "(this_ptr,&DAT_00581ac5,(uint)screen_width >> 1,iVar6 - iVar5,6,-1);",
+      "text": "(this_ptr,&DAT_00581ac5,(uint)screen_width >> 1,iVar5 - iVar4,6,-1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 249,
+      "line": 252,
       "match": "DAT_00581ae0",
       "severity": "mild",
-      "text": "(this_ptr,(uint)screen_width >> 1,iVar6,1,6,&DAT_00581ae0);",
+      "text": "(this_ptr,(uint)screen_width >> 1,iVar5,1,6,&DAT_00581ae0,iVar6,iVar4,iVar1);",
       "type": "undefined_data"
     }
   ]

@@ -122,25 +122,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 771,
+    "complexity_score": 819,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 306,
-    "suspect_count": 42,
+    "pseudocode_lines": 309,
+    "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "self_copy_guard",
       "stack_param",
       "stack_ref",
+      "sub84_truncation",
       "suspect_float",
       "unknown_field",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1067
+    "total_lines": 1070
   },
   "cross_references": [],
   "function": {
@@ -254,7 +255,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -563,21 +564,21 @@
         {
           "check_id": "pointerOutOfBounds",
           "column": 87,
-          "line": 257,
+          "line": 260,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 68,
-          "line": 259,
+          "line": 262,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
           "severity": "portability"
         },
         {
           "check_id": "pointerOutOfBounds",
           "column": 39,
-          "line": 298,
+          "line": 301,
           "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.",
           "severity": "portability"
         },
@@ -783,12 +784,20 @@
       "line": 146,
       "match": "._4_4_",
       "severity": "mild",
+      "text": "(double)uStack_26c._4_4_,pCVar5);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._4_4_",
+      "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,uStack_26c._4_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 148,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40b6e4;",
@@ -796,7 +805,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 157,
+      "line": 158,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "in_stack_fffffd6c = \"CHero\";",
@@ -804,7 +813,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 165,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)(auStack_b0 + 4);",
@@ -812,7 +821,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
+      "line": 166,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
       "text": "in_stack_fffffd6c = (char *)pCVar3;",
@@ -820,7 +829,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 168,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "(pCVar3,in_stack_fffffd70,2.0,(SDamageInfo *)(auStack_194 + 0x10));",
@@ -828,7 +837,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 168,
+      "line": 169,
       "match": "._8_4_",
       "severity": "mild",
       "text": "uStack_26c = (double)(float)auStack_178._8_4_;",
@@ -836,7 +845,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 172,
+      "line": 173,
       "match": "in_stack_fffffd70",
       "severity": "moderate",
       "text": "in_stack_fffffd70 = (CVector3f *)0x40b5ee;",
@@ -844,7 +853,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 185,
+      "line": 186,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (CStack_40.z == 1.4013e-45) {",
@@ -852,7 +861,31 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 241,
+      "line": 242,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 242,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 243,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(int)((ulonglong)(double)(float)auStack_148._4_4_ >> 0x20),pCVar5);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 244,
       "match": "._4_4_",
       "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);",
@@ -860,7 +893,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 271,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_20c._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;",
@@ -868,7 +901,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 275,
+      "line": 278,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_68._0_4_ =",
@@ -876,7 +909,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 278,
+      "line": 281,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -884,7 +917,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 278,
+      "line": 281,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -892,7 +925,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 282,
+      "line": 285,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_40.z = (float)auStack_68._0_4_ * CStack_40.z;",
@@ -900,7 +933,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 284,
+      "line": 287,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_1f4._4_4_ = CStack_40.x;",
@@ -908,7 +941,7 @@
     },
     {
       "description": "Raw hex address 0x40b5c3 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 170,
+      "line": 171,
       "match": "0x40b5c3",
       "severity": "moderate",
       "text": "iVar4 = 0x40b5c3;",
@@ -916,7 +949,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 292,
+      "line": 295,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_1e0.x = pCVar2->x;",

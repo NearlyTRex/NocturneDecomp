@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
-;   core_dlight.cpp_FUN_0044f9b0 at 00450118
+;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0 at 00450118
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

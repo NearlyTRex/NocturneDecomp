@@ -44,7 +44,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filen
   if (local_30 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 155;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CCloth::load - Unable to open file %s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("CCloth::load - Unable to open file %s",filename);
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);
@@ -52,7 +52,8 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filen
   if (3 < this_ptr->version_num) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 162;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("%s is version %d, this .EXE is old and can only handle up to version %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("%s is version %d, this .EXE is old and can only handle up to version %d",filename,this_ptr->version_num,3);
   }
   p_Var8 = local_30;
   _fgets(local_138,0xff,local_30);

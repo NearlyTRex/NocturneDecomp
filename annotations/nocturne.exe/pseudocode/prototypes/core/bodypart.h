@@ -139,17 +139,17 @@ CVector3f * __cdecl subtractVector(CVector3f *a,CVector3f *dst,CVector3f *b);
 // Address: 00417fc0
 CVector3f * __cdecl addVector(CVector3f *a,CVector3f *dst,CVector3f *b);
 
-// Original: core_bodypart.cpp_FUN_00417fec
-// Address: 00417fec
-void FUN_00417fec(void);
+// Original: core_bodypart.cpp_copyVector_FUN_00417ff0
+// Address: 00417ff0
+CVector3f * __cdecl copyVector(CVector3f *dst,CVector3f *src);
 
 // Original: core_bodypart.cpp_boundingBoxExtent_FUN_00418010
 // Address: 00418010
 CBoundingBox3D * __cdecl boundingBoxExtent(CBoundingBox3D *src,CBoundingBox3D *dst);
 
-// Original: core_bodypart.cpp_FUN_0041803d
-// Address: 0041803d
-float * FUN_0041803d(float *param_1);
+// Original: core_bodypart.cpp_boundingBoxCenter_FUN_00418040
+// Address: 00418040
+CBoundingBox3D * __cdecl boundingBoxCenter(CBoundingBox3D *src,CBoundingBox3D *dst);
 
 // Original: core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0
 // Address: 004180a0

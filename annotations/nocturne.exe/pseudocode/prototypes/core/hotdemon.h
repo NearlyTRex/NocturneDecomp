@@ -49,4 +49,4 @@ ECollisionType __cdecl CHotDemon::getCollisionType(CHotDemon *this_ptr,SCollisio
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004b99d0
 // Address: 004b99d0
-CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

@@ -189,12 +189,13 @@ LAB_00443363:
           if ((int)local_9c < 1) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2485;
-            core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze loading %s");
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze loading %s",local_f4);
           }
           if (500000 < local_9c) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2491;
-            core_main_c_displayErrorAndQuit_FUN_004c8440("%s too big to fit in decompress buffer");
+            core_main_c_displayErrorAndQuit_FUN_004c8440
+                      ("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_0077d250,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompress_012cdb28);
@@ -205,7 +206,7 @@ LAB_00443363:
           if (iVar7 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 2500;
-            core_main_c_displayErrorAndQuit_FUN_004c8440("Error decompressing %s");
+            core_main_c_displayErrorAndQuit_FUN_004c8440("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
           if (0 < (int)_DAT_0140d780) {

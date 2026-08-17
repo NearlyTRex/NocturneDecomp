@@ -177,7 +177,7 @@ int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0(CHotDemon *
 ECollisionType __cdecl core_hotdemon_cpp_CHotDemon_getCollisionType_FUN_004f79b0(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hotdemon_cpp_CHotDemon_addFilesToExtract_FUN_004f7a10(CHotDemon *this_ptr,_FILE *file_handle);
-CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags);
 void __cdecl core_hpriest_cpp_staticInit_FUN_004f7b00(void);
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f7b30(void);
 CDemonActorType * __cdecl core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004f7b60(CHighPriestOfGardath *this_ptr);

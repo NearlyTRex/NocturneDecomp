@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_texlist.cpp_CTextureList_load_FUN_00544950 at 00544aa4
 ;   engine_ini.cpp_getProfileInteger_FUN_004bd790 at 004bd7f4
-;   wincore_winvideo.cpp_FUN_0055a510 at 0055a5f0
 ;   wincore_winvideo.cpp_openMovie_FUN_0055a210 at 0055a291
+;   wincore_winvideo.cpp_playMovie_FUN_0055a510 at 0055a5f0
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable

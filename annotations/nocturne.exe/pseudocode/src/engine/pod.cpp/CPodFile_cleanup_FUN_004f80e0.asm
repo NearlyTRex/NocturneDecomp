@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   engine_pod.cpp_CPodFile_FUN_004f7ae0 at 004f7af9
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0 at 004f7ac6
-;   engine_pod.cpp_FUN_004f8eb0 at 004f8f25
+;   engine_pod.cpp_CPod_computeAndStoreCRC_FUN_004f8eb0 at 004f8f25
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0

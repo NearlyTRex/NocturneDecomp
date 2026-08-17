@@ -57,4 +57,4 @@ void __cdecl CHotDemon::addFilesToExtract(CHotDemon *this_ptr,_FILE *file_handle
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
 // Address: 004f7a40
-CDemonActor * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

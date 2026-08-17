@@ -22,7 +22,7 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_0042db50(void *sprite_d
   iVar2 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   iVar6 = g_ClipLeft - dest_x;
   if (sprite_data != (void *)0x0) {
-    pCVar3 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar3 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     iVar4 = width + -1;
     if (g_BitsPerPixel == 8) {
       iVar7 = (int)g_ScreenBufferArray[dest_y] + dest_x;

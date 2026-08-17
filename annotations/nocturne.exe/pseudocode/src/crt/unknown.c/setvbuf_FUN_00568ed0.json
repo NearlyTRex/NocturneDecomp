@@ -1,0 +1,305 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 132,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_many",
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "00566cc0",
+      "from_addr": "00566d3c",
+      "name": "crt_stdio.c_fputc_FUN_00566cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573660",
+      "from_addr": "00573687",
+      "name": "crt_stdio.c_fputs_FUN_00573660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005636d0",
+      "from_addr": "00563740",
+      "name": "crt_stdio.c_fread_FUN_005636d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563a50",
+      "from_addr": "00563ac5",
+      "name": "crt_stdio.c_fwrite_FUN_00563a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564740",
+      "from_addr": "005647d6",
+      "name": "crt_stdio.c_ungetc_FUN_00564740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ae10",
+      "from_addr": "0056ae69",
+      "name": "crt_unknown.c_FUN_0056ae10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564670",
+      "from_addr": "00564682",
+      "name": "crt_unknown.c_FillInputBuffer_FUN_00564670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00568ed0",
+    "address_range": [
+      [
+        "00568ed0",
+        "00568f60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_setvbuf_FUN_00568ed0",
+    "signature": "int __cdecl crt_unknown_c_setvbuf_FUN_00568ed0(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "0056bbb0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_0056bbb0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "00563740",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fread_FUN_005636d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00563ac5",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fwrite_FUN_00563a50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00564682",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FillInputBuffer_FUN_00564670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005647d6",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_ungetc_FUN_00564740",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00566d3c",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fputc_FUN_00566cc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056ae69",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_0056ae10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573687",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fputs_FUN_00573660",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9583333333333335,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 45,
+      "INT_ADD": 27,
+      "INT_AND": 23,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 18,
+      "INT_OR": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 6,
+      "LOAD": 18,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 190
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 16,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&stream_ptr->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&stream_ptr->_flag",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)((int)&stream_ptr->_flag + 1) & 0xf8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream_ptr->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&stream_ptr->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&stream_ptr->_flag + 1) = bVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream_ptr->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&stream_ptr->_flag",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&stream_ptr->_flag + 1) = bVar3 | 4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)pcVar2",
+      "severity": "moderate",
+      "text": "return (int)pcVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)((int)&stream_ptr->_flag + 1) & 0xf8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&stream_ptr->_flag + 1) = bVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&stream_ptr->_flag + 1) = bVar3 | 4;",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 7,
+      "declared_params": 4,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:4 vs estimated:1",
+      "param_delta": -3,
+      "text": "Function declares 4 params but call sites push 1 (3 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

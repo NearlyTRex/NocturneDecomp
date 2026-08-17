@@ -74,15 +74,15 @@
   },
   "cross_references": [
     {
-      "addr": "0042d180",
-      "from_addr": "0042d19c",
-      "name": "cockpit_ckptutil.c_FUN_0042d180",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042d200",
       "from_addr": "0042d21a",
       "name": "cockpit_ckptutil.c_applyColorPalette_FUN_0042d200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d180",
+      "from_addr": "0042d19c",
+      "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_0042d180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -119,7 +119,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -249,7 +249,7 @@
       {
         "call_addr": "0042d19c",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0042d180",
+        "caller": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_0042d180",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

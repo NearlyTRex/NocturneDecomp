@@ -14,10 +14,10 @@ _tm * __cdecl localtime_r(time_t *timer,_tm *result)
   
   tzset();
   seconds = *timer;
-  gmtime_r(0x63df,seconds,DAT_005c1f14,(char)result);
+  gmtime_r(0x63df,seconds,DAT_005c1f14,result);
   iVar1 = determine_dst_status(result);
   if (iVar1 != 0) {
-    gmtime_r(0x63df,seconds,DAT_005c1f14 - DAT_005c1f1c,(char)result);
+    gmtime_r(0x63df,seconds,DAT_005c1f14 - DAT_005c1f1c,result);
   }
   return result;
 }

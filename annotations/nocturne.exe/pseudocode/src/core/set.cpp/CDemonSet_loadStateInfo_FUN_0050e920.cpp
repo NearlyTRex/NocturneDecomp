@@ -20,13 +20,13 @@ void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0050e920(CDemonSet *this_p
   if (local_1c != 1) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 4783;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Set saveState info is invalid version %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Set saveState info is invalid version %d",local_1c);
   }
   _fscanf(file_handle,"%*[^\n]\n");
   _fscanf(file_handle,"%d\n",&local_18);
   if (this_ptr->camera_count != local_18) {
-    shape_edittool_cpp_FUN_0046fb40(g_CEditorTools_PTR_005b6d50,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.")
-    ;
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
+              (g_CEditorTools_PTR_005b6d50,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
   }
   iVar1 = 0;
   pCVar2 = this_ptr;

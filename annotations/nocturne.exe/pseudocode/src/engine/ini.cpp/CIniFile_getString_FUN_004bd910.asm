@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   buffer_size
 ;
 ; XREF[4]:
-;   core_inivar.cpp_FUN_004bdb80 at 004bdc5b
+;   core_inivar.cpp_readIniData_FUN_004bdb80 at 004bdc5b
 ;   engine_ini.cpp_CIniFile_getFloat_FUN_004bdac0 at 004bdaf3
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 at 004bda4f
 ;   sound_sndmain.cpp_readIni_FUN_005289f0 at 00528a29

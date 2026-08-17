@@ -25,7 +25,7 @@
 ;   crt_unknown.c_FUN_00571160
 ;   crt_unknown.c_ProbeStackSpace_FUN_005670ed
 ;   GetModuleHandleA
-;   wincore_winrun.cpp_FUN_00559260
+;   wincore_winrun.cpp_winMain_FUN_00559260
 ;
 ; *****************************************************************************
 
@@ -92,8 +92,8 @@ section .text
     PUSH 0x0                            ; 0056dfa3
     CALL dword ptr CS:[0x57552c]        ; 0056dfa5 | PTR_GetModuleHandleA_0057552c
     PUSH EAX                            ; 0056dfac
-    CALL wincore_winrun.cpp_FUN_00559260 ; 0056dfad
-        ;   XREF to: 00559260 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_FUN_00559260(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+    CALL wincore_winrun.cpp_winMain_FUN_00559260 ; 0056dfad
+        ;   XREF to: 00559260 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_00559260(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
     PUSH EAX                            ; 0056dfb2
     CALL crt_startup.c_ExitApplication_FUN_0056fcd4 ; 0056dfb3
         ;   XREF to: 0056fcd4 (UNCONDITIONAL_CALL)  ; void crt_startup.c_ExitApplication_FUN_0056fcd4(int exit_code)

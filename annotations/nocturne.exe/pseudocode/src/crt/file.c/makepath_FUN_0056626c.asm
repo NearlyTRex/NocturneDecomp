@@ -16,12 +16,12 @@
 ; XREF[9]:
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 at 004d86ef
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 004900dd
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 004708d6
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 0047061d
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 004744fe
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 00474794
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 00474994
-;   shape_edittool.cpp_FUN_00470730 at 004708d6
-;   shape_edittool.cpp_FUN_00474ae0 at 00474b40
+;   shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_00474ae0 at 00474b40
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521e91
 ;
 ; Called Functions:

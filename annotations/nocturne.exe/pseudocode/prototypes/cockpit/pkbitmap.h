@@ -39,9 +39,9 @@ void __cdecl CPackedBitmap::setFilename(CPackedBitmap *this_ptr,char *filename);
 // Address: 004f3fe0
 int __cdecl CPackedBitmap::getPixelValue(CPackedBitmap *this_ptr,int x_coordinate,int row_index);
 
-// Original: cockpit_pkbitmap.cpp_FUN_004f4050
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_004f4050
 // Address: 004f4050
-void FUN_004f4050(int param_1,int param_2,int param_3);
+void __cdecl CPackedBitmap::renderToScreenBuffer(CPackedBitmap *this_ptr,int dest_x,int dest_y);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
 // Address: 004f4170

@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   text
 ;
 ; XREF[1]:
-;   core_dlight.cpp_FUN_0044ed80 at 0044ef9b
+;   core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80 at 0044ef9b
 ;
 ; Called Functions:
 ;   engine_2d.c_drawTextCenteredColor_FUN_00402cf0

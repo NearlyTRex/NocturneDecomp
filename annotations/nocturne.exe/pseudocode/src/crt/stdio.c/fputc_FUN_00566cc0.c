@@ -12,7 +12,10 @@ int __cdecl _fputc(int character,_FILE *file)
   char *pcVar1;
   int iVar2;
   uint uVar3;
+  char *unaff_EBP;
+  SIZE_T unaff_ESI;
   uint uVar4;
+  int unaff_EDI;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file->_handle);
   pcVar1 = file->_link->__get_base;
@@ -30,7 +33,7 @@ int __cdecl _fputc(int character,_FILE *file)
     return -1;
   }
   if (file->_link->__reserve_end == (char *)0x0) {
-    FUN_00568ed0(file);
+    _setvbuf(file,unaff_EBP,unaff_EDI,unaff_ESI);
   }
   uVar4 = 0x400;
   if ((character == 10) && (uVar4 = 0x600, (file->_flag & 0x40) == 0)) {

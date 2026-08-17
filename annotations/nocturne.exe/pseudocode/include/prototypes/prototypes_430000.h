@@ -37,6 +37,7 @@
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SEdge.h"
+#include "types/structs/SEdgeList.h"
 #include "types/structs/SFogGrid.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SScanlineSpans.h"
@@ -50,12 +51,12 @@ int __cdecl cockpit_ckptutil_c_isLineBlendingDisabled_FUN_004301d0(void);
 int __cdecl cockpit_ckptutil_c_isLineClippingDisabled_FUN_004301e0(void);
 void __cdecl cockpit_ckptutil_c_setLineBlendingDisabled_FUN_004301f0(int disabled);
 void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00430200(int disabled);
-void * cockpit_ckptutil_c_FUN_00430210(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,int param_6);
-void cockpit_ckptutil_c_FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00430210(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index);
+void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_004303d0(uchar *source_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00430590(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
-void * cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00430630(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal);
 void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004310f0(SEdge *edge_array,int edge_count,int flip_width);
-void __cdecl cockpit_ckptutil_c_FUN_00431260(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index);
+void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00431260(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index);
 SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_004314b0(void);
 void __cdecl engine_clipper_c_setNearPlaneDistance_FUN_00431500(int distance);
 int __cdecl engine_clipper_c_getNearPlaneDistance_FUN_00431520(void);
@@ -184,7 +185,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CColonel *this_pt
 void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_0043ac50(CConsole *this_ptr,uint flags);
-void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format);
+void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl engine_console_cpp_CConsole_writeChar_FUN_0043ad30(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_0043ae00(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_0043ae40(CConsole *this_ptr);

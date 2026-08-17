@@ -60,18 +60,6 @@
         "column": 33,
         "line": 29,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 31,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 34,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
       }
     ],
     "success": false,
@@ -80,15 +68,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 29,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 30,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 141
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -129,14 +117,14 @@
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
     },
     {
+      "addr": "0046fcd0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0"
+    },
+    {
       "addr": "00471600",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600"
-    },
-    {
-      "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0046fcd0"
     }
   ],
   "globals": [
@@ -375,7 +363,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 53,
-          "line": 33,
+          "line": 34,
           "message": "Uninitialized variable: local_18",
           "severity": "error"
         }
@@ -387,7 +375,7 @@
   "suspects": [
     {
       "description": "Uninitialized variable: local_18",
-      "line": 33,
+      "line": 34,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if ((enable_range_check == 0) || ((min_value <= local_18 && (local_18 <= max_value)))) break;",

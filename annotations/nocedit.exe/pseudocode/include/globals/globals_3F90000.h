@@ -7,6 +7,7 @@
 #include "system/stdio.h"
 #include "system/unknwn.h"
 #include "system/watcom.h"
+#include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"

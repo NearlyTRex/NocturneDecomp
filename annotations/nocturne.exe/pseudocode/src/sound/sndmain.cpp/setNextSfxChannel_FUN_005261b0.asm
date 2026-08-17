@@ -13,7 +13,7 @@
 ;   core_sound.cpp_CSound_FUN_0052dff0 at 0052e3b5
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e95f
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052decc
-;   core_sound.cpp_FUN_0052d790 at 0052db9d
+;   core_sound.cpp_processTrainSounds_FUN_0052d790 at 0052db9d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593437

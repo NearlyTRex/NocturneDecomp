@@ -58,8 +58,62 @@
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 41,
+        "line": 48,
         "message": "use of undeclared identifier '_DAT_005bea88'"
+      },
+      {
+        "category": "format_error",
+        "column": 81,
+        "line": 131,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 91,
+        "line": 131,
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 102,
+        "line": 131,
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 83,
+        "line": 156,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 93,
+        "line": 156,
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 104,
+        "line": 156,
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 68,
+        "line": 183,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 78,
+        "line": 183,
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 89,
+        "line": 183,
+        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -68,26 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 217,
+    "complexity_score": 280,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 187,
-    "suspect_count": 2,
+    "pseudocode_lines": 215,
+    "suspect_count": 5,
     "suspect_types": [
+      "sub84_truncation",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 715
+    "total_lines": 743
   },
   "cross_references": [
-    {
-      "addr": "005229f0",
-      "from_addr": "00522b65",
-      "name": "sound_sndmain.cpp_FUN_005229f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "005279e0",
       "from_addr": "00527b19",
@@ -98,6 +147,12 @@
       "addr": "00522480",
       "from_addr": "00522659",
       "name": "sound_sndmain.cpp_getSfxSample_FUN_00522480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005229f0",
+      "from_addr": "00522b65",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -123,7 +178,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -503,7 +558,7 @@
       {
         "call_addr": "00522b65",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005229f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -514,7 +569,7 @@
       {
         "call_addr": "00522c7c",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005229f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005229f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -750,8 +805,8 @@
         {
           "check_id": "nullPointer",
           "column": 52,
-          "line": 91,
-          "message": "Possible null pointer dereference: pcVar8",
+          "line": 98,
+          "message": "Possible null pointer dereference: pcVar9",
           "severity": "warning"
         }
       ],
@@ -769,19 +824,43 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 120,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_488 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 145,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_480 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 173,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_478 = SUB84(__BITCAST_UINT64((double)local_470),0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 91,
+      "line": 98,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
     {
-      "description": "Possible null pointer dereference: pcVar8",
-      "line": 91,
+      "description": "Possible null pointer dereference: pcVar9",
+      "line": 98,
       "match": "Cppcheck: null pointer dereference",
       "severity": "major",
-      "text": "((g_CharacterClassificationTable[(byte)(pcVar8[-1] + 1)] & 2) != 0))) {",
+      "text": "((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) != 0))) {",
       "type": "static_null_pointer"
     }
   ]

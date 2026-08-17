@@ -126,7 +126,8 @@ LAB_0052d1a2:
     pcVar6 = (char *)0x0;
 LAB_0052d202:
     if (pcVar6 == (char *)0x0) {
-      core_sound_cpp_FUN_0052d030(g_CSound_PTR_005bed68,local_a8,local_170);
+      core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
+                (g_CSound_PTR_005bed68,local_a8,local_170);
     }
     else {
       local_44.x = x;
@@ -166,7 +167,8 @@ LAB_0052d202:
               cVar5 = *pcVar9;
             }
             *pcVar6 = '\0';
-            core_sound_cpp_FUN_0052d030(g_CSound_PTR_005bed68,local_a8,local_10c);
+            core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
+                      (g_CSound_PTR_005bed68,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
           iVar2 = iVar2 + 1;
@@ -231,9 +233,9 @@ LAB_0052d202:
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0(position_tracker);
     }
     sound_sndmain_cpp_setNextSfxFlags_FUN_00526240(flags);
-    sound_sndmain_cpp_FUN_00526150(0,user_data);
+    sound_sndmain_cpp_setNextSfxUserData_FUN_00526150(0,user_data);
     sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0(local_178);
-    sound_sndmain_cpp_FUN_00526120(local_174);
+    sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_00526120(local_174);
     uVar3 = sound_sndmain_cpp_startSfx_FUN_005265a0(local_a8);
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }

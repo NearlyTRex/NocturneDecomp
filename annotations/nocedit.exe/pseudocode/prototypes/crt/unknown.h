@@ -97,7 +97,7 @@ uint FUN_0060d576(int *param_1);
 
 // Original: crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930
 // Address: 0060e930
-uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6);
+uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3);
 
 // Original: crt_unknown.c_FUN_0060fcf4
 // Address: 0060fcf4

@@ -29,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_004f4170
     if (g_BitsPerPixel == 0x10) {
       iVar1 = iVar1 * 2;
     }
-    pCVar2 = cockpit_ckptutil_c_FUN_0042d130();
+    pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
     local_24 = dest_y << 2;
     local_20 = start_row << 2;
     iVar3 = end_row << 2;

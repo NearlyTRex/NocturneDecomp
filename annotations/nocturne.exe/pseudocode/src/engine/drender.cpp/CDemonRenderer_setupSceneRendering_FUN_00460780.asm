@@ -18,7 +18,7 @@
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1c8
 ;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00512dbe
 ;   core_setdir.cpp_CDemonSet_FUN_00513720 at 005137dc
-;   core_setdir.cpp_FUN_00511d80 at 00511e54
+;   core_setdir.cpp_testCameraVisibility_FUN_00511d80 at 00511e54
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0

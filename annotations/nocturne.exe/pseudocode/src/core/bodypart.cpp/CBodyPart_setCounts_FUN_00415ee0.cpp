@@ -28,14 +28,16 @@ void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(CBodyPart *this_
      ((this_ptr->vertices == (CVector3i *)0x0 || (this_ptr->normals == (CVector3i *)0x0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 178;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",this_ptr->vertex_count);
   }
   if ((0 < this_ptr->tri_count) &&
      ((this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0 ||
       (this_ptr->face_texture_indices == (int *)0x0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 183;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CBodyPart::setCounts - out of memory for triangles - triCount = %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CBodyPart::setCounts - out of memory for triangles - triCount = %d",this_ptr->tri_count);
     return;
   }
   return;

@@ -44,12 +44,13 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   if (7 < this_ptr->mission_version_num) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 226;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)",this_ptr->mission_version_num,7);
   }
   if (local_28 < 4) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 229;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("This mission uses actor format version %d, which we don't support anymore!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("This mission uses actor format version %d, which we don't support anymore!",local_28);
   }
   if (this_ptr->mission_version_num < 2) {
     g_CurrentFilename = "..\\core\\mission.cpp";
@@ -98,7 +99,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
           if (pCVar3->type_id < local_18) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 264;
-            core_main_c_displayErrorAndQuit_FUN_004c8440("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!");
+            core_main_c_displayErrorAndQuit_FUN_004c8440
+                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",acStack_154,local_18,pCVar3->type_id);
           }
           *(int *)pCVar3->type_info = local_18;
         }

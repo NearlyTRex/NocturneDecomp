@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format)
+; void __cdecl core_main_c_displayErrorAndQuit_FUN_004c8440(char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   format
@@ -9,30 +9,32 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[531]:
-;   cockpit_ckptutil.c_FUN_0042e7b0 at 0042e96f
-;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee5e
-;   cockpit_ckptutil.c_FUN_00430210 at 004302c4
-;   cockpit_ckptutil.c_FUN_004303d0 at 004304e8
-;   cockpit_ckptutil.c_FUN_00430630 at 0043075b
-;   cockpit_ckptutil.c_FUN_00431260 at 004313a3
+;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_0042e7b0 at 0042e96f
+;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00431260 at 004313a3
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d575
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ebea
+;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210 at 004302c4
 ;   cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_0042f050 at 0042f0e8
 ;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d29b
+;   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0 at 004304e8
+;   cockpit_ckptutil.c_saveEdgeListFile_FUN_0042ee00 at 0042ee5e
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 at 0043075b
 ;   ... and 521 more
 ;
 ; Referenced Globals:
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
+;   undefined4 DAT_01cc3700
 ;   char* g_CurrentFilename
 ;   undefined4 DAT_01cc4808
+;   CSound g_CSound_02dc9450
 ;
 ; Called Functions:
-;   core_sound.cpp_FUN_0052dd80
+;   core_sound.cpp_CSound_dtor_FUN_0052dd80
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00566f90
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_004012a0
+;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500
 ;   wincore_winrun.cpp_endPeriod_FUN_00558a20
-;   wincore_winrun.cpp_FUN_00559500
 ;
 ; *****************************************************************************
 
@@ -54,7 +56,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004c8460
     PUSH EBX                            ; 004c8464
     MOV ECX,0x1                         ; 004c8465
-    PUSH 0x1cc3700                      ; 004c846a
+    PUSH 0x1cc3700                      ; 004c846a | DAT_01cc3700
     MOV dword ptr [0x01cc4808],ECX      ; 004c846f | DAT_01cc4808
     XOR ESI,ESI                         ; 004c8475
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 004c8477
@@ -90,22 +92,17 @@ section .text
     JNZ 0x004c84e0                      ; 004c84a8
         ;   XREF to: 004c84e0 (CONDITIONAL_JUMP)  ; LAB_004c84e0
     MOV EDI,dword ptr [0x005bed68]      ; 004c84aa | g_CSound_PTR_005bed68
-    PUSH EDI                            ; 004c84b0
-    CALL core_sound.cpp_FUN_0052dd80    ; 004c84b1
-        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0052dd80(CSound * this_ptr)
+    PUSH EDI                            ; 004c84b0 | g_CSound_02dc9450
+    CALL core_sound.cpp_CSound_dtor_FUN_0052dd80 ; 004c84b1
+        ;   XREF to: 0052dd80 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_0052dd80(CSound * this_ptr)
     ADD ESP,0x4                         ; 004c84b6
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_004012a0 ; 004c84b9
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
-    PUSH 0x1cc3700                      ; 004c84c3
-    CALL wincore_winrun.cpp_FUN_00559500 ; 004c84c8
-        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_00559500(char * message)
-    ADD ESP,0x4                         ; 004c84cd
-    ADD ESP,0x4                         ; 004c84d0
-    POP EDI                             ; 004c84d3
-    POP ESI                             ; 004c84d4
-    RET                                 ; 004c84d5
+    PUSH 0x1cc3700                      ; 004c84c3 | DAT_01cc3700
+    CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500 ; 004c84c8
+        ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500(char * message)
     CALL crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 ; 004c84d6
         ;   XREF to: 00566f90 (UNCONDITIONAL_CALL)  ; void crt_watcom.c_notifyAbnormalTermination_FUN_00566f90()
         ;   Label: LAB_004c84d6

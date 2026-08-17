@@ -17,8 +17,8 @@
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600
-;   shape_edittool.cpp_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -109,8 +109,8 @@ section .text
     PUSH 0x57e816                       ; 004715e8 | = "Please enter a valid vector."
         ;   Label: LAB_004715e8
     PUSH EBX                            ; 004715ed
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004715ee
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004715ee
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004715f3
     JMP 0x0047154e                      ; 004715f6
         ;   XREF to: 0047154e (UNCONDITIONAL_JUMP)  ; LAB_0047154e

@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5286
+Functions with parameter estimates: 5287
 Functions with no callers: 2564
-Parameter mismatches detected: 179
-Signature accuracy rate: 93.4%
+Parameter mismatches detected: 169
+Signature accuracy rate: 93.8%
 
 Mismatches by confidence:
-  High confidence:   10 (multiple call sites agree)
-  Medium confidence: 48 (some agreement)
-  Low confidence:    121 (limited data)
+  High confidence:   11 (multiple call sites agree)
+  Medium confidence: 45 (some agreement)
+  Low confidence:    113 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -56,6 +56,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_fstream.cpp_istream_seekg_ at 00565f1c: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
       crt_stdio.c_fgetc_buffered_FUN at 00571c69: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
       crt_unknown.c_FUN_00571cc6 at 00571cd4: 1 reg [EBX], 2 stack (8 bytes, via add_esp)
+
+  crt_unknown.c_setvbuf_FUN_00568ed0
+    Declared: 4 params (16 bytes), Estimated: 1 stack slots (4 bytes) [-3]
+    Call sites: 7, Confidence: high
+    File: crt/unknown.c
+    Signature: int __cdecl crt_unknown_c_setvbuf_FUN_00568ed0(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size)
+    Sample call sites:
+      crt_stdio.c_fread_FUN_005636d0 at 00563740: 0 reg [], 1 stack (4 bytes, via add_esp)
+      crt_stdio.c_fwrite_FUN_00563a5 at 00563ac5: 0 reg [], 1 stack (4 bytes, via add_esp)
+      crt_unknown.c_FillInputBuffer_ at 00564682: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
     Declared: 1 params (4 bytes), Estimated: 2 stack slots (8 bytes) [+1]
@@ -141,7 +151,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0056ced8                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_0056f170                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_00572e00                         declared:0 est:3 (+3) [2 calls]
-  engine_drender.cpp_FUN_00460d10                    declared:0 est:3 (+3) [9 calls]
   shape_edittool.cpp_FUN_00470230                    declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_0056e174                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0056e56c                         declared:0 est:2 (+2) [2 calls]
@@ -162,7 +171,6 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   core_actor.cpp_crc32ProcessBuffer_FUN_0040e0a0     declared:3 est:2 (-1) [2 calls]
   core_actor.cpp_registerActorClass_FUN_0040d3f0     declared:6 est:5 (-1) [50 calls]
-  core_dlight.cpp_FUN_0044f9b0                       declared:0 est:1 (+1) [2 calls]
   core_fire.cpp_CFireEffect_renderDecals_FUN_0048a97 declared:3 est:2 (-1) [2 calls]
   core_gore.cpp_CBloodPool_render_FUN_004af340       declared:2 est:1 (-1) [2 calls]
   core_gore.cpp_CBloodSplat_render_FUN_004aeb70      declared:2 est:1 (-1) [2 calls]
@@ -178,13 +186,12 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0056dfc0                         declared:0 est:1 (+1) [1 calls]
   crt_unknown.c_FUN_0056e664                         declared:0 est:1 (+1) [2 calls]
   engine_drender.cpp_CDemonRenderer_renderFacetList_ declared:5 est:4 (-1) [2 calls]
-  engine_matrix.c_matrixPush_FUN_004cdac0            declared:1 est:0 (-1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  121 functions with low-confidence mismatches
+  113 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_3d.c_renderSortedPolygonList_FUN_00405 declared:1 est:0 (-1)
@@ -195,31 +202,31 @@ LOW CONFIDENCE MISMATCHES (limited data)
     core_charactr.cpp_CCharacter_getCarryObjToBod declared:3 est:2 (-1)
     engine_console.cpp_CConsole_printf_FUN_0043ac declared:2 est:3 (+1)
     core_dcamera.cpp_generateFogGrid_FUN_0043fa50 declared:1 est:0 (-1)
-    core_dlight.cpp_FUN_0044ed80                  declared:0 est:7 (+7)
+    core_dlight.cpp_CDemonLight_allocateFilter_FU declared:1 est:0 (-1)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 50
+Functions where declaration has MORE params than estimated: 48
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 129
+Functions where declaration has FEWER params than estimated: 121
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -6 params: 1 functions
   -5 params: 1 functions
   -4 params: 1 functions
-  -3 params: 3 functions
+  -3 params: 4 functions
   -2 params: 8 functions
-  -1 params: 36 functions
-  +1 params: 38 functions
-  +2 params: 22 functions
-  +3 params: 24 functions
+  -1 params: 33 functions
+  +1 params: 37 functions
+  +2 params: 21 functions
+  +3 params: 22 functions
   +4 params: 17 functions
-  +5 params: 14 functions
+  +5 params: 11 functions
   +6 params: 7 functions
-  +7 params: 5 functions
+  +7 params: 4 functions
   +8 params: 1 functions
   +10 params: 1 functions

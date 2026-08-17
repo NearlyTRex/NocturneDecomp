@@ -24,7 +24,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e52
   int iStack_30;
   int iStack_2c;
   
-  pCVar4 = cockpit_ckptutil_c_FUN_0042d130();
+  pCVar4 = cockpit_ckptutil_c_getColorConversionFunction_FUN_0042d130();
   if (g_BitsPerPixel == 8) {
     iStack_2c = g_ClipTop;
     if (g_ClipTop <= g_ClipBottom) {

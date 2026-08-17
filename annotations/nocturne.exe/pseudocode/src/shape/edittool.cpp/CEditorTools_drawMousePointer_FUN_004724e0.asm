@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d5a3
-;   shape_edittool.cpp_FUN_004759d0 at 00475d8f
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004759d0 at 00475d8f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ea49

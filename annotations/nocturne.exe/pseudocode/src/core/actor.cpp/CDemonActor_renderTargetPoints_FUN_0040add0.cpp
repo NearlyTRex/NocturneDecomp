@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonActor *this_ptr)
 
 {
@@ -29,9 +27,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_0040add0(CDemonAc
   if (0 < iStack_18) {
     do {
       uStack_14 = (uint)g_ColorCubeLookup[0x7c00];
-      CStack_24.x = (int)ROUND(pCVar6->x * _DAT_005992b0);
-      CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * _DAT_005992b0);
-      CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * _DAT_005992b0);
+      CStack_24.x = (int)ROUND(pCVar6->x * 256.0f);
+      CStack_24.y = (int)ROUND(*(float *)((int)pCVar6 + 4) * 256.0f);
+      CStack_24.z = (int)ROUND(*(float *)((int)pCVar6 + 8) * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xea5d0),&CStack_24);
       iVar5 = *(int *)PTR_DAT_005ae700;

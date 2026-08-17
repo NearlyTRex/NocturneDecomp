@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 327
-  Total diagnostics: 938
+  Functions with findings: 306
+  Total diagnostics: 895
   Functions flagged by multiple tools: 3
-  .keep.cpp files: 0, raw .cpp files: 327
+  .keep.cpp files: 0, raw .cpp files: 306
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -309,30 +309,17 @@ core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80  [.cpp] [Cppcheck (quick)]
   Line   45: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dlight.cpp_FUN_0044ed80  [.cpp] [Cppcheck (quick)]
+core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044ed80  [.cpp] [Cppcheck (quick)]
   File: core/dlight.cpp  (8 diagnostics)
 
+  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   31: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   32: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   33: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   34: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   56: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   57: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   60: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0  [.cpp] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (8 diagnostics)
-
-  Line  127: [uninitvar] Uninitialized variable: local_150
-  Line  128: [legacyUninitvar] Uninitialized variable: aiStack_14c
-  Line  274: [uninitvar] Uninitialized variable: iStack_124
-  Line  277: [uninitvar] Uninitialized variable: iStack_120
-  Line  280: [uninitvar] Uninitialized variable: iStack_11c
-  Line  329: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  330: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  331: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_glass.cpp_CGlass_FUN_004accf0  [.cpp] [Cppcheck (quick)]
@@ -373,16 +360,16 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750  [.cpp] [Cppcheck 
   Line  249: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430  [.cpp] [Cppcheck (quick)]
-  File: core/dlight.cpp  (7 diagnostics)
+core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0  [.cpp] [Cppcheck (quick)]
+  File: core/dtrace.cpp  (7 diagnostics)
 
-  Line   66: [uninitvar] Uninitialized variable: local_7c
-  Line   67: [legacyUninitvar] Uninitialized variable: afStack_78
-  Line   68: [objectIndex] The address of local variable 'local_60' is accessed at non-zero index.
-  Line   72: [uninitvar] Uninitialized variable: local_5c
-  Line   86: [uninitvar] Uninitialized variable: local_50
-  Line   86: [uninitvar] Uninitialized variable: local_54
-  Line  105: [uninitvar] Uninitialized variable: local_20
+  Line  265: [uninitvar] Uninitialized variable: local_144
+  Line  279: [uninitvar] Uninitialized variable: iStack_124
+  Line  282: [uninitvar] Uninitialized variable: iStack_120
+  Line  285: [uninitvar] Uninitialized variable: iStack_11c
+  Line  334: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  335: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  336: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540  [.cpp] [Cppcheck (quick)]
@@ -442,15 +429,15 @@ core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0  [.cpp] [Cppcheck (quick)]
   Line  173: [uninitvar] Uninitialized variable: local_b4
 
 ----------------------------------------------------------------------------------------------------
-core_dlight.cpp_FUN_00450c90  [.cpp] [Cppcheck (quick)]
+core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00450c90  [.cpp] [Cppcheck (quick)]
   File: core/dlight.cpp  (6 diagnostics)
 
   Line   97: [uninitvar] Uninitialized variable: local_20
-  Line  108: [uninitvar] Uninitialized variable: local_50
-  Line  130: [uninitvar] Uninitialized variable: local_3c
-  Line  134: [uninitvar] Uninitialized variable: local_54
-  Line  194: [uninitvar] Uninitialized variable: local_5c
-  Line  195: [legacyUninitvar] Uninitialized variable: local_5c
+  Line  107: [uninitvar] Uninitialized variable: local_50
+  Line  129: [uninitvar] Uninitialized variable: local_3c
+  Line  133: [uninitvar] Uninitialized variable: local_54
+  Line  193: [uninitvar] Uninitialized variable: local_5c
+  Line  194: [legacyUninitvar] Uninitialized variable: local_5c
 
 ----------------------------------------------------------------------------------------------------
 core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00464200  [.cpp] [Cppcheck (quick)]
@@ -535,9 +522,9 @@ core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040b300  [.cpp] [Clang-Tidy (qui
 
   Line   82: [uninitvar] Uninitialized variable: fStack_b8
   Line   98: [cert-flp30-c] loop induction expression should not have floating-point type
-  Line  257: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
-  Line  259: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
-  Line  298: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.
+  Line  260: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
+  Line  262: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.
+  Line  301: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0  [.cpp] [Cppcheck (quick)]
@@ -576,8 +563,8 @@ core_sound.cpp_playSfxInternal_FUN_0052d120  [.cpp] [Cppcheck (quick)]
   Line   53: [wrongPrintfScanfArgNum] sscanf format string requires 3 parameters but only 0 are given.
   Line   54: [legacyUninitvar] Uninitialized variable: local_30
   Line   61: [uninitvar] Uninitialized variable: local_2c
-  Line  191: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
-  Line  204: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  193: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
+  Line  206: [wrongPrintfScanfArgNum] sscanf format string requires 2 parameters but only 1 is given.
 
 ----------------------------------------------------------------------------------------------------
 core_turret.cpp_CTurret_updatePatrol_FUN_0054a920  [.cpp] [Cppcheck (quick)]
@@ -658,13 +645,13 @@ cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0  [.cpp] [Cppche
   Line   67: [uninitvar] Uninitialized variable: unaff_EDI
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040e1cc  [.cpp] [Cppcheck (quick)]
+core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90  [.cpp] [Cppcheck (quick)]
   File: core/actor.cpp  (4 diagnostics)
 
-  Line   21: [uninitvar] Uninitialized variable: unaff_EBX
-  Line   21: [uninitvar] Uninitialized variable: in_CL
-  Line   26: [uninitvar] Uninitialized variable: unaff_retaddr
-  Line   26: [uninitvar] Uninitialized variable: in_EDX
+  Line   83: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   89: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   90: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   91: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
 core_boneguy.cpp_hsvToRgb_FUN_00418480  [.cpp] [Cppcheck (quick)]
@@ -706,10 +693,10 @@ core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00423480  [.cpp] [Cppcheck (quick)]
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (4 diagnostics)
 
-  Line  311: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  409: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  415: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  461: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  312: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  410: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  416: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  462: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcube.cpp_FUN_0044ae80  [.cpp] [Cppcheck (quick)]
@@ -728,15 +715,6 @@ core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0  [.cpp] [Cppcheck (quick
   Line   93: [ignoredReturnValue] Return value of function asin() is not used.
   Line  115: [ignoredReturnValue] Return value of function acos() is not used.
   Line  129: [ignoredReturnValue] Return value of function asin() is not used.
-
-----------------------------------------------------------------------------------------------------
-core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350  [.cpp] [Cppcheck (quick)]
-  File: core/dlight.cpp  (4 diagnostics)
-
-  Line   86: [uninitvar] Uninitialized variable: local_f0
-  Line   87: [legacyUninitvar] Uninitialized variable: afStack_ec
-  Line   88: [objectIndex] The address of local variable 'local_98' is accessed at non-zero index.
-  Line   92: [uninitvar] Uninitialized variable: local_94
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0046c100  [.cpp] [Cppcheck (quick)]
@@ -892,14 +870,6 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450  [.cpp] [Cppcheck (quick
   Line  127: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_FUN_0042d180  [.cpp] [Cppcheck (quick)]
-  File: cockpit/ckptutil.c  (3 diagnostics)
-
-  Line   23: [uninitvar] Uninitialized variable: in_stack_00000008
-  Line   24: [uninitvar] Uninitialized variable: in_stack_00000014
-  Line   34: [uninitvar] Uninitialized variable: in_stack_00000010
-
-----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_0042f8c0  [.cpp] [Cppcheck (quick)]
   File: cockpit/ckptutil.c  (3 diagnostics)
 
@@ -930,30 +900,6 @@ cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_0045bfb0  [.cpp] [Cppcheck
   Line   28: [uninitvar] Uninitialized variable: in_stack_00000038
   Line   29: [uninitvar] Uninitialized variable: in_stack_00000034
   Line   30: [uninitvar] Uninitialized variable: in_stack_00000030
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040e2ce  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (3 diagnostics)
-
-  Line   17: [uninitvar] Uninitialized variable: unaff_EBX
-  Line   17: [uninitvar] Uninitialized variable: in_CL
-  Line   18: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-core_bat.cpp_FUN_0041206c  [.cpp] [Cppcheck (quick)]
-  File: core/bat.cpp  (3 diagnostics)
-
-  Line   17: [uninitvar] Uninitialized variable: unaff_EBX
-  Line   17: [uninitvar] Uninitialized variable: in_CL
-  Line   18: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-core_bodypart.cpp_FUN_00417fec  [.cpp] [Cppcheck (quick)]
-  File: core/bodypart.cpp  (3 diagnostics)
-
-  Line   18: [uninitvar] Uninitialized variable: unaff_EBX
-  Line   18: [uninitvar] Uninitialized variable: in_CL
-  Line   20: [uninitvar] Uninitialized variable: in_EDX
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_FUN_0042af70  [.cpp] [Clang-Tidy (quick)]
@@ -999,9 +945,9 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_0043e290  [.cpp] [Cppcheck (quick
 core_dcamera.cpp_CDemonCamera_FUN_00446810  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (3 diagnostics)
 
-  Line   71: [uninitvar] Uninitialized variable: local_114
-  Line  100: [legacyUninitvar] Uninitialized variable: unaff_EDI
-  Line  195: [uninitvar] Uninitialized variable: iStack_120
+  Line   72: [uninitvar] Uninitialized variable: local_114
+  Line  101: [legacyUninitvar] Uninitialized variable: unaff_EDI
+  Line  197: [uninitvar] Uninitialized variable: iStack_120
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00446590  [.cpp] [Cppcheck (quick)]
@@ -1031,9 +977,17 @@ core_dcamera.cpp_renderCoronaScanlineSegment_FUN_004451a0  [.cpp] [Cppcheck (qui
 core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0  [.cpp] [Cppcheck (quick)]
   File: core/dcube.cpp  (3 diagnostics)
 
-  Line   90: [uninitvar] Uninitialized variable: local_3c
-  Line   91: [uninitvar] Uninitialized variable: local_38
-  Line   92: [uninitvar] Uninitialized variable: local_34
+  Line   91: [uninitvar] Uninitialized variable: local_3c
+  Line   92: [uninitvar] Uninitialized variable: local_38
+  Line   93: [uninitvar] Uninitialized variable: local_34
+
+----------------------------------------------------------------------------------------------------
+core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430  [.cpp] [Cppcheck (quick)]
+  File: core/dlight.cpp  (3 diagnostics)
+
+  Line   87: [uninitvar] Uninitialized variable: local_50
+  Line   87: [uninitvar] Uninitialized variable: local_54
+  Line  106: [uninitvar] Uninitialized variable: local_20
 
 ----------------------------------------------------------------------------------------------------
 core_dlight.cpp_renderConeLightGeometry_FUN_00451b70  [.cpp] [Cppcheck (quick)]
@@ -1127,33 +1081,25 @@ core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160  [.cpp] [Cppcheck (qui
 core_fire.cpp_CFireball_setupRenderState_FUN_004842a0  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (3 diagnostics)
 
-  Line   58: [uninitvar] Uninitialized variable: local_54
-  Line   59: [uninitvar] Uninitialized variable: local_48
-  Line   60: [uninitvar] Uninitialized variable: local_60
+  Line   59: [uninitvar] Uninitialized variable: local_54
+  Line   60: [uninitvar] Uninitialized variable: local_48
+  Line   61: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00482680  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (3 diagnostics)
 
-  Line   58: [uninitvar] Uninitialized variable: local_54
-  Line   59: [uninitvar] Uninitialized variable: local_48
-  Line   60: [uninitvar] Uninitialized variable: local_60
+  Line   59: [uninitvar] Uninitialized variable: local_54
+  Line   60: [uninitvar] Uninitialized variable: local_48
+  Line   61: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CSpark_setupRenderState_FUN_004837a0  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (3 diagnostics)
 
-  Line   66: [uninitvar] Uninitialized variable: local_54
-  Line   67: [uninitvar] Uninitialized variable: local_48
-  Line   68: [uninitvar] Uninitialized variable: local_60
-
-----------------------------------------------------------------------------------------------------
-core_flame.cpp_CFlame_renderTransparent_FUN_0048d5d0  [.cpp] [Cppcheck (quick)]
-  File: core/flame.cpp  (3 diagnostics)
-
-  Line   76: [uninitvar] Uninitialized variable: iStack_30
-  Line   77: [legacyUninitvar] Uninitialized variable: aiStack_2c
-  Line  191: [legacyUninitvar] Uninitialized variable: fStack_18
+  Line   67: [uninitvar] Uninitialized variable: local_54
+  Line   68: [uninitvar] Uninitialized variable: local_48
+  Line   69: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_00496d10  [.cpp] [Cppcheck (quick)]
@@ -1167,9 +1113,9 @@ core_gabriela.cpp_CGabriella_processAI_FUN_00496d10  [.cpp] [Cppcheck (quick)]
 core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0  [.cpp] [Cppcheck (quick)]
   File: core/gore.cpp  (3 diagnostics)
 
-  Line   58: [uninitvar] Uninitialized variable: local_54
-  Line   59: [uninitvar] Uninitialized variable: local_48
-  Line   60: [uninitvar] Uninitialized variable: local_60
+  Line   59: [uninitvar] Uninitialized variable: local_54
+  Line   60: [uninitvar] Uninitialized variable: local_48
+  Line   61: [uninitvar] Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 core_lightgun.cpp_CLightGun_fireProjectile_FUN_004c7ca0  [.cpp] [Cppcheck (quick)]
@@ -1191,9 +1137,9 @@ core_path.cpp_renderGridQuad_FUN_004f16d0  [.cpp] [Cppcheck (quick)]
 core_set.cpp_CDemonSet_processActors_FUN_00509140  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (3 diagnostics)
 
-  Line  102: [legacyUninitvar] Uninitialized variable: iStack_18
-  Line  112: [legacyUninitvar] Uninitialized variable: fStack_4c
-  Line  114: [uninitvar] Uninitialized variable: fStack_48
+  Line  105: [legacyUninitvar] Uninitialized variable: iStack_18
+  Line  115: [legacyUninitvar] Uninitialized variable: fStack_4c
+  Line  117: [uninitvar] Uninitialized variable: fStack_48
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350  [.cpp] [Cppcheck (quick)]
@@ -1284,18 +1230,18 @@ support_codec.cpp_readBitsFromStream_FUN_00438ab0  [.cpp] [Cppcheck (quick)]
   Line   59: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_FUN_00430630  [.cpp] [Cppcheck (quick)]
-  File: cockpit/ckptutil.c  (2 diagnostics)
-
-  Line  179: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
-  Line  281: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar10*4]' to itself.
-
-----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0  [.cpp] [Cppcheck (quick)]
   File: cockpit/ckptutil.c  (2 diagnostics)
 
   Line   27: [uninitvar] Uninitialized variable: in_stack_00000010
   Line   30: [uninitvar] Uninitialized variable: bVar3
+
+----------------------------------------------------------------------------------------------------
+cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630  [.cpp] [Cppcheck (quick)]
+  File: cockpit/ckptutil.c  (2 diagnostics)
+
+  Line  182: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.
+  Line  285: [selfAssignment] Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.
 
 ----------------------------------------------------------------------------------------------------
 cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0  [.cpp] [Cppcheck (quick)]
@@ -1308,8 +1254,8 @@ cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0  [.cpp] [Cppcheck 
 cockpit_drawsurf.cpp_testDrawingSurface_FUN_0045e370  [.cpp] [Cppcheck (quick)]
   File: cockpit/drawsurf.cpp  (2 diagnostics)
 
-  Line  190: [uninitvar] Uninitialized variable: in_stack_0000013c
-  Line  193: [uninitvar] Uninitialized variable: in_stack_00000148
+  Line  189: [uninitvar] Uninitialized variable: in_stack_0000011c
+  Line  192: [uninitvar] Uninitialized variable: in_stack_00000128
 
 ----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320  [.cpp] [Cppcheck (quick)]
@@ -1410,13 +1356,6 @@ core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_00443180  [.cpp] [Cppche
   Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_FUN_00442d9c  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line   23: [uninitvar] Uninitialized variable: unaff_EBP
-  Line   40: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_00444600  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
@@ -1436,20 +1375,6 @@ core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044ec60  [.cpp] [
 
   Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   44: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520  [.cpp] [Cppcheck (quick)]
-  File: core/dlight.cpp  (2 diagnostics)
-
-  Line   86: [uninitvar] Uninitialized variable: local_d4
-  Line   87: [legacyUninitvar] Uninitialized variable: aiStack_d0
-
-----------------------------------------------------------------------------------------------------
-core_dlight.cpp_FUN_0044f9b0  [.cpp] [Cppcheck (quick)]
-  File: core/dlight.cpp  (2 diagnostics)
-
-  Line   90: [uninitvar] Uninitialized variable: local_ec
-  Line   91: [objectIndex] The address of local variable 'fStack_e8' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 core_dlight.cpp_FUN_00452500  [.cpp] [Cppcheck (quick)]
@@ -1515,18 +1440,18 @@ core_fire.cpp_CFireball_process_FUN_00484050  [.cpp] [Cppcheck (quick)]
   Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireball_render_FUN_00484390  [.cpp] [Cppcheck (quick)]
+  File: core/fire.cpp  (2 diagnostics)
+
+  Line   98: [uninitvar] Uninitialized variable: local_1c
+  Line  190: [uninitvar] Uninitialized variable: local_18
+
+----------------------------------------------------------------------------------------------------
 core_fire.cpp_CLaserBeam_render_FUN_00485a90  [.cpp] [Cppcheck (quick)]
   File: core/fire.cpp  (2 diagnostics)
 
   Line  156: [uninitvar] Uninitialized variable: local_118
   Line  156: [uninitvar] Uninitialized variable: local_11c
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CPopcorn_render_FUN_00489990  [.cpp] [Cppcheck (quick)]
-  File: core/fire.cpp  (2 diagnostics)
-
-  Line   52: [uninitvar] Uninitialized variable: local_30
-  Line   53: [legacyUninitvar] Uninitialized variable: aiStack_2c
 
 ----------------------------------------------------------------------------------------------------
 core_flame.cpp_CFlame_updateGlobe_FUN_0048e230  [.cpp] [Cppcheck (quick)]
@@ -1742,15 +1667,15 @@ engine_2d.c_drawAntialiasedChar_FUN_004013d0  [.cpp] [Cppcheck (quick)]
 engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90  [.cpp] [Cppcheck (quick)]
   File: engine/keyframe.c  (2 diagnostics)
 
-  Line  118: [uninitvar] Uninitialized variable: iStack_34
-  Line  148: [uninitvar] Uninitialized variable: local_2c
+  Line  126: [uninitvar] Uninitialized variable: iStack_34
+  Line  156: [uninitvar] Uninitialized variable: local_2c
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (2 diagnostics)
 
   Line   29: [wrongPrintfScanfArgNum] sscanf format string requires 1 parameter but only 0 are given.
-  Line   33: [legacyUninitvar] Uninitialized variable: local_18
+  Line   34: [legacyUninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0  [.cpp] [Cppcheck (quick)]
@@ -1760,18 +1685,11 @@ shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0  [.cpp] [Cp
   Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760  [.cpp] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (2 diagnostics)
-
-  Line   61: [uninitvar] Uninitialized variable: local_30
-  Line   79: [ignoredReturnValue] Return value of function round() is not used.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_FUN_004e7ed0  [.cpp] [Cppcheck (quick)]
+sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_004e7ed0  [.cpp] [Cppcheck (quick)]
   File: sound/mp3.cpp  (2 diagnostics)
 
-  Line  142: [uninitvar] Uninitialized variable: unaff_retaddr
-  Line  143: [uninitvar] Uninitialized variable: iStack_40
+  Line  144: [uninitvar] Uninitialized variable: unaff_retaddr
+  Line  145: [uninitvar] Uninitialized variable: iStack_40
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0  [.cpp] [Clang-Tidy (quick)]
@@ -1785,7 +1703,7 @@ sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_004e25c0  [.cpp] [Cppcheck (quick
   File: sound/mp3.cpp  (2 diagnostics)
 
   Line   13: [pointerOutOfBoundsCond] Undefined behaviour, when 'layer*0x10' is 48 the pointer arithmetic '"$CMotionController$$"+layer*0x10' is out of bounds.
-  Line   18: [pointerOutOfBoundsCond] Undefined behaviour, when 'layer*0x10' is 64 the pointer arithmetic '"$CMotionController$$"+layer*0x10' is out of bounds.
+  Line   19: [pointerOutOfBoundsCond] Undefined behaviour, when 'layer*0x10' is 64 the pointer arithmetic '"$CMotionController$$"+layer*0x10' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60  [.cpp] [Cppcheck (quick)]
@@ -1798,8 +1716,8 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60  [.cpp] [Cppcheck
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0  [.cpp] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (2 diagnostics)
 
-  Line   69: [ignoredReturnValue] Return value of function round() is not used.
-  Line   72: [legacyUninitvar] Uninitialized variable: local_28
+  Line   70: [ignoredReturnValue] Return value of function round() is not used.
+  Line   74: [legacyUninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10  [.cpp] [Cppcheck (quick)]
@@ -1902,40 +1820,10 @@ cockpit_pkbmpset.cpp_FUN_004f5d00  [.cpp] [Cppcheck (quick)]
   Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040bd90  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (1 diagnostics)
-
-  Line   75: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040e2e1  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (1 diagnostics)
-
-  Line   14: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_FUN_0040e2f1  [.cpp] [Cppcheck (quick)]
-  File: core/actor.cpp  (1 diagnostics)
-
-  Line   14: [uninitvar] Uninitialized variable: in_EDX
-
-----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40  [.cpp] [Clang-Tidy (quick)]
   File: core/bodypart.cpp  (1 diagnostics)
 
   Line   46: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
-core_bodypart.cpp_FUN_0041803d  [.cpp] [Cppcheck (quick)]
-  File: core/bodypart.cpp  (1 diagnostics)
-
-  Line   22: [uninitvar] Uninitialized variable: unaff_retaddr
-
-----------------------------------------------------------------------------------------------------
-core_boneguy.cpp_FUN_004182cd  [.cpp] [Cppcheck (quick)]
-  File: core/boneguy.cpp  (1 diagnostics)
-
-  Line   66: [uninitvar] Uninitialized variable: unaff_retaddr
 
 ----------------------------------------------------------------------------------------------------
 core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550  [.cpp] [Cppcheck (quick)]
@@ -1956,10 +1844,10 @@ core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0  [.cpp] [Cppcheck (quick
   Line   72: [uninitvar] Uninitialized variable: unaff_EDI
 
 ----------------------------------------------------------------------------------------------------
-core_bugs.cpp_FUN_00423d20  [.cpp] [Cppcheck (quick)]
+core_bugs.cpp_CBugs_renderOpaque_FUN_00421540  [.cpp] [Cppcheck (quick)]
   File: core/bugs.cpp  (1 diagnostics)
 
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   63: [uninitvar] Uninitialized variable: in_stack_00000008
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_004266a0  [.cpp] [Cppcheck (quick)]
@@ -1986,10 +1874,10 @@ core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004477f0  [.cpp] [Cppcheck 
   Line   24: [uninitvar] Uninitialized variable: unaff_retaddr
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0  [.cpp] [Cppcheck (quick)]
+core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c  [.cpp] [Cppcheck (quick)]
   File: core/dcamera.cpp  (1 diagnostics)
 
-  Line   31: [uninitvar] Uninitialized variable: local_18
+  Line   19: [uninitvar] Uninitialized variable: unaff_EBP
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_processCoronaScanline_FUN_00445310  [.cpp] [Cppcheck (quick)]
@@ -2040,6 +1928,12 @@ core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60  [.cpp] [Cpp
   Line   16: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_0044f9b0  [.cpp] [Cppcheck (quick)]
+  File: core/dlight.cpp  (1 diagnostics)
+
+  Line   94: [objectIndex] The address of local variable 'local_a0' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
 core_dlight.cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0  [.cpp] [Cppcheck (quick)]
   File: core/dlight.cpp  (1 diagnostics)
 
@@ -2088,18 +1982,6 @@ core_fire.cpp_CBulletTrail_render_FUN_004856c0  [.cpp] [Cppcheck (quick)]
   Line   56: [uninitvar] Uninitialized variable: local_24
 
 ----------------------------------------------------------------------------------------------------
-core_fire.cpp_CRainDrop_render_FUN_00489d00  [.cpp] [Cppcheck (quick)]
-  File: core/fire.cpp  (1 diagnostics)
-
-  Line   51: [uninitvar] Uninitialized variable: local_38
-
-----------------------------------------------------------------------------------------------------
-core_frankgen.cpp_FUN_00495420  [.cpp] [Cppcheck (quick)]
-  File: core/frankgen.cpp  (1 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_displayActStats_FUN_004a6680  [.cpp] [Cppcheck (quick)]
   File: core/game.cpp  (1 diagnostics)
 
@@ -2145,13 +2027,13 @@ core_lightgun.cpp_CLightGun_fire_FUN_004c71a0  [.cpp] [Cppcheck (quick)]
 core_main.c_displayErrorAndQuit_FUN_004c8440  [.cpp] [Cppcheck (quick)]
   File: core/main.c  (1 diagnostics)
 
-  Line   54: [nullPointerArithmetic] Pointer addition with NULL pointer.
+  Line   49: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0  [.cpp] [Cppcheck (quick)]
   File: core/menu.cpp  (1 diagnostics)
 
-  Line   37: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line   38: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_mimic.cpp_CMimic_setupCloth_FUN_004d5770  [.cpp] [Cppcheck (quick)]
@@ -2163,7 +2045,7 @@ core_mimic.cpp_CMimic_setupCloth_FUN_004d5770  [.cpp] [Cppcheck (quick)]
 core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0  [.cpp] [Cppcheck (quick)]
   File: core/mission.cpp  (1 diagnostics)
 
-  Line   62: [legacyUninitvar] Uninitialized variable: unaff_ESI
+  Line   63: [legacyUninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 core_morph.cpp_CMorph_FUN_004e0300  [.cpp] [Cppcheck (quick)]
@@ -2223,7 +2105,7 @@ core_script.cpp_trimLine_FUN_004fdf60  [.cpp] [Cppcheck (quick)]
 core_set.cpp_CDemonSet_FUN_00509a80  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line  207: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
+  Line  208: [legacyUninitvar] Uninitialized variable: in_stack_ffffff9c
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_FUN_0050a260  [.cpp] [Cppcheck (quick)]
@@ -2242,6 +2124,12 @@ core_set.cpp_CDemonSet_FUN_0050dd60  [.cpp] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
   Line   23: [legacyUninitvar] Uninitialized variable: in_stack_00000008
+
+----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CDemonSet_FUN_00513720  [.cpp] [Cppcheck (quick)]
+  File: core/setdir.cpp  (1 diagnostics)
+
+  Line   72: [legacyUninitvar] Uninitialized variable: local_20
 
 ----------------------------------------------------------------------------------------------------
 core_setutil.cpp_C3DSCamera_load_FUN_005144e0  [.cpp] [Cppcheck (quick)]
@@ -2277,7 +2165,7 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280  [.cpp
 core_skeleton.cpp_CDeformableModel_loadStream_FUN_00519280  [.cpp] [Cppcheck (quick)]
   File: core/skeleton.cpp  (1 diagnostics)
 
-  Line  190: [arrayIndexOutOfBounds] Array 'local_74[2]' accessed at index 2, which is out of bounds.
+  Line  191: [arrayIndexOutOfBounds] Array 'local_74[2]' accessed at index 2, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0  [.cpp] [Cppcheck (quick)]
@@ -2298,28 +2186,22 @@ core_turret.cpp_CTurret_fire_FUN_0054ab10  [.cpp] [Cppcheck (quick)]
   Line  156: [pointerOutOfBounds] Undefined behaviour, pointer arithmetic 'auStack_cc+0x18' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
+core_vehicle.cpp_CVehicle_renderOpaque_FUN_0054f510  [.cpp] [Cppcheck (quick)]
+  File: core/vehicle.cpp  (1 diagnostics)
+
+  Line   55: [uninitvar] Uninitialized variable: in_stack_0000000c
+
+----------------------------------------------------------------------------------------------------
 core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0  [.cpp] [Cppcheck (quick)]
   File: core/weapon.cpp  (1 diagnostics)
 
   Line   32: [uninitvar] Uninitialized variable: fStack_14
 
 ----------------------------------------------------------------------------------------------------
-core_xform.cpp_FUN_0055d660  [.cpp] [Cppcheck (quick)]
-  File: core/xform.cpp  (1 diagnostics)
-
-  Line   27: [uninitvar] Uninitialized variable: unaff_ESI
-
-----------------------------------------------------------------------------------------------------
 engine_2d.c_buildFogTable_FUN_00402e90  [.cpp] [Cppcheck (quick)]
   File: engine/2d.c  (1 diagnostics)
 
   Line   73: [uninitvar] Uninitialized variable: unaff_SI
-
-----------------------------------------------------------------------------------------------------
-engine_alphabit.cpp_FUN_0040eadd  [.cpp] [Cppcheck (quick)]
-  File: engine/alphabit.cpp  (1 diagnostics)
-
-  Line   19: [uninitvar] Uninitialized variable: unaff_retaddr
 
 ----------------------------------------------------------------------------------------------------
 engine_clipper.c_clipAndRasterize_FUN_00432cd0  [.cpp] [Cppcheck (quick)]
@@ -2350,18 +2232,6 @@ engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700  [
   File: engine/drender.cpp  (1 diagnostics)
 
   Line   18: [ignoredReturnValue] Return value of function round() is not used.
-
-----------------------------------------------------------------------------------------------------
-engine_drender.cpp_FUN_00460d10  [.cpp] [Cppcheck (quick)]
-  File: engine/drender.cpp  (1 diagnostics)
-
-  Line   19: [uninitvar] Uninitialized variable: unaff_ESI
-
-----------------------------------------------------------------------------------------------------
-engine_drender.cpp_FUN_00460d90  [.cpp] [Cppcheck (quick)]
-  File: engine/drender.cpp  (1 diagnostics)
-
-  Line   19: [uninitvar] Uninitialized variable: unaff_ESI
 
 ----------------------------------------------------------------------------------------------------
 engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_00490470  [.cpp] [Cppcheck (quick)]
@@ -2463,7 +2333,7 @@ shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00477300  [.cpp] [Cppcheck 
 shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (1 diagnostics)
 
-  Line  134: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  132: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530  [.cpp] [Cppcheck (quick)]
@@ -2478,10 +2348,10 @@ shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00473a60  [.cpp] [Cppche
   Line   42: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_FUN_00470730  [.cpp] [Cppcheck (quick)]
+shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760  [.cpp] [Cppcheck (quick)]
   File: shape/edittool.cpp  (1 diagnostics)
 
-  Line   98: [uninitvar] Uninitialized variable: in_stack_0000000c
+  Line   63: [uninitvar] Uninitialized variable: local_30
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004e5200  [.cpp] [Cppcheck (quick)]
@@ -2532,12 +2402,6 @@ sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90  [.cpp] [Cppcheck (
   Line   25: [uninitvar] Uninitialized variable: in_stack_00000014
 
 ----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_FUN_0052ad30  [.cpp] [Cppcheck (quick)]
-  File: sound/snddx.cpp  (1 diagnostics)
-
-  Line   16: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_0052bbd0  [.cpp] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
@@ -2559,19 +2423,7 @@ sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40  [.cpp] [Cppcheck (qu
 sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10  [.cpp] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
-  Line   91: [nullPointer] Possible null pointer dereference: pcVar8
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_00525ff0  [.cpp] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line   20: [uninitvar] Uninitialized variable: in_stack_00000004
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_FUN_005260c0  [.cpp] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line   20: [uninitvar] Uninitialized variable: in_stack_00000004
+  Line   98: [nullPointer] Possible null pointer dereference: pcVar9
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00521d80  [.cpp] [Cppcheck (quick)]

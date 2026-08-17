@@ -1347,6 +1347,31 @@
       "a": "004d2890",
       "b": "00495420",
       "note": "core_frankgen.cpp_getActorName. Byte-identical body (MOV EAX,[ESP+4]; MOV EAX,[EAX]; RET) in a closed 1-v-1 bracket between matched anchors."
+    },
+    {
+      "a": "004103d0",
+      "b": "0040e1f0",
+      "note": "core_actor.cpp_CVector3f_toFixed8. Instruction-for-instruction identical (PUSH EBX; MOV EAX,[ESP+8]; MOV EBX,[ESP+0xc]; 3x FLD/FMUL 256.0/FISTP; POP EBX; RET) and the same 45-byte extent. The nocturne side was only unpairable because its entry was mis-bounded at 0040e1cc (inside alignment padding); recreated at the true start 0040e1f0."
+    },
+    {
+      "a": "0040a0d0",
+      "b": "0040b1f0",
+      "note": "core_actor.cpp_CDemonActor_stopInteraction. Vtable slot 156 on both sides, across 5 shared classes, and 0040b1f0 occupies ONLY slot 156. Region verified drift-free: slots 144/160/164/168 carry the same methods in both builds. Bodies differ in size only because nocedit's is a doCheckForInvalidPointers debug assert (24B) that the game build compiles out, leaving a bare RET (1B)."
+    },
+    {
+      "a": "005750a0",
+      "b": "00511d80",
+      "note": "core_setdir.cpp_testCameraVisibility. The mapper paired 00511d80 with CZThumb_calculateActorVisibility (00574ba0) instead, which is wrong: nocturne's setdir.cpp contains only staticInit, this function, and a CDemonSet method -- the entire CZThumb family is editor-only, and in nocedit testCameraVisibility is the last non-CZThumb function before CDemonSet_evaluateVirtualDirector, matching that position. Confirmed from nocturne's own bytes: 6 contiguous argument slots (nocedit's testCameraVisibility takes 6; CZThumb_calculateActorVisibility takes 5), arg1 has a CVector3f at +0x20 and is passed to testSphereInFrustum as world_position (so it is the CDemonActor, not a CZThumb receiver), arg5 is dereferenced at +0x19c which is the last dword of C3DSCamera (0x1a0), and arg6 is the float radius. nocturne is 560 instructions vs nocedit's 112 because nocedit delegates to CZThumb_calculateActorVisibility twice and the game build inlines that work."
+    },
+    {
+      "a": "00454450",
+      "b": "00448310",
+      "note": "core_dcamera.cpp_CDemonCamera_saveZBufferScanlines. The two functions are near-identical, so adjacency alone could not tell them apart. The discriminator is the copy direction: the callee is memcpy-like with dst=EDX and src=ECX, and save/restore differ by which register receives the camera buffer at +0x15c. Here ECX=camera buffer, EDX=scanline table, i.e. camera -> table = save. Confirmed identically in both builds, so this is direction evidence, not position."
+    },
+    {
+      "a": "004544a0",
+      "b": "00448380",
+      "note": "core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines. The two functions are near-identical, so adjacency alone could not tell them apart. The discriminator is the copy direction: the callee is memcpy-like with dst=EDX and src=ECX, and save/restore differ by which register receives the camera buffer at +0x15c. Here EDX=camera buffer, ECX=scanline table, i.e. table -> camera = restore. Confirmed identically in both builds, so this is direction evidence, not position."
     }
   ]
 }

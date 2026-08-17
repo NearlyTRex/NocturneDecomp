@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2218
-Filtered out (inside named data): 310
+Total DAT_ globals found: 2206
+Filtered out (inside named data): 320
 Immediate constants (not real globals): 61
-Real globals remaining: 2157
+Real globals remaining: 2145
 Clusters detected: 204
-DAT_ globals in clusters: 2083
+DAT_ globals in clusters: 2071
 
 Classification summary:
   unknown              71 clusters
@@ -40,10 +40,10 @@ Consider removing the Ghidra label and leaving the raw number.
       CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
 
   DAT_005bdf50  value=0x5BDF50 (6020944)  refs=5
-    FUN_0044c560
-      PUSH 0x5bdf50                       ; 0044ca64 | DAT_005bdf50
     FUN_004edfc0
       PUSH 0x5bdf50                       ; 004ee09e | DAT_005bdf50
+    initFonts
+      PUSH 0x5bdf50                       ; 0044ca64 | DAT_005bdf50
 
   DAT_0076934c  value=0x76934C (7770956)  refs=4
     CCloth_render
@@ -86,7 +86,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x77d250                       ; 004434f4 | DAT_0077d250
 
   DAT_005ae458  value=0x5AE458 (5956696)  refs=2
-    FUN_00450c90
+    CDemonLight_renderRadialVolumetricScattering
       PUSH 0x5ae458                       ; 00450cf2 | DAT_005ae458
     renderConeLightGeometry
       PUSH 0x5ae458                       ; 00451bc8 | DAT_005ae458
@@ -132,6 +132,10 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5baca4                       ; 004c56d2 | DAT_005baca4
     CLevelLoader_update
       PUSH 0x5baca4                       ; 004c5db3 | DAT_005baca4
+
+  DAT_01cc3700  value=0x1CC3700  refs=2
+    displayErrorAndQuit
+      PUSH 0x1cc3700                      ; 004c846a | DAT_01cc3700
 
   DAT_005be680  value=0x5BE680 (6022784)  refs=2
     CDemonSet
@@ -306,10 +310,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005bed20  value=0x5BED20 (6024480)  refs=1
     CDirectSoundDevice_setMode
       PUSH 0x5bed20                       ; 0052a6f0 | DAT_005bed20
-
-  DAT_02de0860  value=0x2DE0860  refs=1
-    FUN_00559500
-      PUSH 0x2de0860                      ; 00559531 | DAT_02de0860
 
   DAT_80000002  value=0x80000002  refs=1
     getRegistryStringValue
@@ -622,20 +622,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x005c5027  DAT_005c5024+3  undefined4 [byte]
       ... +42 more
 
-  0x02dc9214 - 0x02dc947c  (41 items, 616 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 11 groups of 3 consecutive ints found
-    Referenced by: 34 functions
-     near: g_CStrList_02dc9610 (CStrList) at -1020
-      0x02dc9214  DAT_02dc9214  undefined4
-      0x02dc9218  DAT_02dc9218  undefined4
-      0x02dc921c  DAT_02dc921c  undefined4
-      0x02dc9220  DAT_02dc9220  undefined4
-      0x02dc9224  DAT_02dc9224  undefined4
-      0x02dc9228  DAT_02dc9228  undefined4
-      ... +35 more
-
   0x02dc9ea0 - 0x02dca0a0  (39 items, 512 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -716,6 +702,20 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dc78f0  DAT_02dc78f0  undefined4 [double]
       0x02dc78f4  DAT_02dc78f4  undefined4
       ... +26 more
+
+  0x02dc9214 - 0x02dc9440  (30 items, 556 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 8 groups of 3 consecutive ints found
+    Referenced by: 29 functions
+     near: g_CSound_02dc9450 (CSound) at -572
+      0x02dc9214  DAT_02dc9214  undefined4
+      0x02dc9218  DAT_02dc9218  undefined4
+      0x02dc921c  DAT_02dc921c  undefined4
+      0x02dc9220  DAT_02dc9220  undefined4
+      0x02dc9224  DAT_02dc9224  undefined4
+      0x02dc9228  DAT_02dc9228  undefined4
+      ... +24 more
 
   0x01c038f0 - 0x01c039e4  (29 items, 244 bytes span)
     Classification: vector_groups
@@ -1266,18 +1266,6 @@ MEDIUM CONFIDENCE (66 clusters)
       0x02dda6c8  DAT_02dda6c8  undefined4
       0x02dda6cc  DAT_02dda6cc  undefined4
 
-  0x02de2098 - 0x02de20ac  (6 items, 20 bytes span)
-    Classification: array
-    Likely type: int[6]
-    Reason: 6 elements at stride 4
-    Referenced by: 18 functions
-      0x02de2098  DAT_02de2098  undefined4
-      0x02de209c  DAT_02de209c  undefined4
-      0x02de20a0  DAT_02de20a0  undefined4
-      0x02de20a4  DAT_02de20a4  undefined4
-      0x02de20a8  DAT_02de20a8  undefined4 [float]
-      0x02de20ac  DAT_02de20ac  undefined4 [float]
-
   0x02de2c10 - 0x02de2d10  (6 items, 256 bytes span)
     Classification: byte_blob
     Likely type: char[] or byte[]
@@ -1335,6 +1323,18 @@ MEDIUM CONFIDENCE (66 clusters)
       0x01e56421  DAT_01e56421  undefined4 [byte]
       0x01e56422  DAT_01e56422  undefined4
       0x01e56423  DAT_01e56423  undefined4
+
+  0x02de209c - 0x02de20ac  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 7 functions
+     near: g_HWND_02de2098 (HWND) at +4
+      0x02de209c  DAT_02de209c  undefined4
+      0x02de20a0  DAT_02de20a0  undefined4
+      0x02de20a4  DAT_02de20a4  undefined4
+      0x02de20a8  DAT_02de20a8  undefined4 [float]
+      0x02de20ac  DAT_02de20ac  undefined4 [float]
 
   0x005bacd0 - 0x005bacdc  (4 items, 12 bytes span)
     Classification: array
@@ -2709,7 +2709,7 @@ ISOLATED DAT_ GLOBALS (74 - not part of any cluster)
   ... +24 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (310)
+FILTERED OUT - INSIDE NAMED DATA (320)
 --------------------------------------------------------------------------------
   DAT_005779d5                    inside s_Dangling_corrupt_actor_p_00577987
   DAT_00578e76                    inside s_CBodyPart_00578e6a
@@ -2802,7 +2802,6 @@ FILTERED OUT - INSIDE NAMED DATA (310)
   DAT_005992a4                    inside s_C_FILE_INFO_00599294
   DAT_005992a8                    inside s_C_FILE_INFO_00599294
   DAT_005992ac                    inside s_C_FILE_INFO_00599294
-  DAT_005992b0                    inside s_C_FILE_INFO_00599294
   DAT_0059aa80                    inside g_SScrapeTypeInfo_0059aa60
   DAT_0059aa88                    inside g_SScrapeTypeInfo_0059aa60
   DAT_0059ae90                    inside g_CBrideTypeInfo_0059ae70
@@ -2997,6 +2996,17 @@ FILTERED OUT - INSIDE NAMED DATA (310)
   DAT_01cea404                    inside g_CNetGame_01cea280
   DAT_01cea408                    inside g_CNetGame_01cea280
   DAT_01cea40c                    inside g_CNetGame_01cea280
+  DAT_02dc9454                    inside g_CSound_02dc9450
+  DAT_02dc9458                    inside g_CSound_02dc9450
+  DAT_02dc945c                    inside g_CSound_02dc9450
+  DAT_02dc9460                    inside g_CSound_02dc9450
+  DAT_02dc9464                    inside g_CSound_02dc9450
+  DAT_02dc9468                    inside g_CSound_02dc9450
+  DAT_02dc946c                    inside g_CSound_02dc9450
+  DAT_02dc9470                    inside g_CSound_02dc9450
+  DAT_02dc9474                    inside g_CSound_02dc9450
+  DAT_02dc9478                    inside g_CSound_02dc9450
+  DAT_02dc947c                    inside g_CSound_02dc9450
   DAT_02dc9620                    inside g_CStrList_02dc9610
   DAT_02dc9f50                    inside CVector3f_02dc9f40
   DAT_02dc9f54                    inside CVector3f_02dc9f40

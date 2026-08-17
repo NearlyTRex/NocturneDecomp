@@ -56,22 +56,64 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 213,
-        "message": "use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+        "category": "format_error",
+        "column": 77,
+        "line": 135,
+        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 214,
-        "message": "use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?"
+        "category": "format_error",
+        "column": 16,
+        "line": 136,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 93,
+        "line": 142,
+        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 16,
+        "line": 143,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
         "line": 215,
+        "message": "use of undeclared identifier '_DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 216,
+        "message": "use of undeclared identifier '_DAT_02dd1188'; did you mean 'DAT_02DF1188'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 217,
         "message": "use of undeclared identifier '_DAT_02dd118c'"
+      },
+      {
+        "category": "format_error",
+        "column": 75,
+        "line": 243,
+        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 16,
+        "line": 244,
+        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 68,
+        "line": 254,
+        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -80,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 612,
-    "complexity_score": 363,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 263,
+    "pseudocode_lines": 267,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -93,7 +135,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 875
+    "total_lines": 879
   },
   "cross_references": [
     {
@@ -154,7 +196,7 @@
     },
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -184,7 +226,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],
@@ -504,7 +546,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 171,
+      "line": 173,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_44.x;",
@@ -512,7 +554,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 180,
+      "line": 182,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = (pCVar6->location).position.x;",
@@ -520,7 +562,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 201,
+      "line": 203,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_50.x;",

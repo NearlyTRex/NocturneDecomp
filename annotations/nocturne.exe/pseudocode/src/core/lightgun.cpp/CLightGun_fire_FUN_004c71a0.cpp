@@ -185,7 +185,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
                          &(this_ptr_00->base).orient.vec,&CStack_b0,aCStack_a4);
       if (iVar8 != 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s in volume\n");
+                  (g_CConsole_PTR_005ad350,"%s in volume\n",this_ptr_00);
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
         pCVar3 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                            (&this_ptr_00->base,(CBoundingBox3D *)auStack_c8);

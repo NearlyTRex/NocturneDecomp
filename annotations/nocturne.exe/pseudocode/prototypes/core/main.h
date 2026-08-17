@@ -9,11 +9,11 @@ void __cdecl staticInit(void);
 
 // Original: core_main.c_displayErrorAndQuit_FUN_004c8440
 // Address: 004c8440
-void __cdecl displayErrorAndQuit(char *format);
+void __cdecl displayErrorAndQuit(char *format,...) __attribute__((format(printf, 1, 2)));
 
-// Original: core_main.c_FUN_004c8510
+// Original: core_main.c_showDeveloperToolsMenu_FUN_004c8510
 // Address: 004c8510
-void __cdecl FUN_004c8510(void);
+void __cdecl showDeveloperToolsMenu(void);
 
 // Original: core_main.c_enterMainGameMenu_FUN_004c85e0
 // Address: 004c85e0

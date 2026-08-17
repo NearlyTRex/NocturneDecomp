@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0 at 00461b64
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30 at 00461ac2
+;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720 at 0046174e
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 at 0045f666
-;   engine_drender.cpp_FUN_00461720 at 0046174e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dd57

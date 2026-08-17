@@ -21,6 +21,6 @@ void __cdecl WriteErrorAndExit(char *error_message,int exit_code)
   }
   WriteFile(*(HANDLE *)(DAT_005c1f54 + 8),error_message,nNumberOfBytesToWrite,
             (LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);
+                    /* WARNING: Subroutine does not return */
   ExitProcess(in_stack_fffffff8);
-  return;
 }

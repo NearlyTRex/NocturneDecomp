@@ -2,17 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 103,
+    "complexity_score": 171,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 5,
+    "pseudocode_lines": 51,
+    "suspect_count": 11,
     "suspect_types": [
+      "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 183
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -61,7 +62,7 @@
     {
       "addr": "00568ed0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00568ed0"
+      "name": "crt_unknown.c_setvbuf_FUN_00568ed0"
     }
   ],
   "globals": [
@@ -196,8 +197,32 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SIZE_T unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(stream->_handle);",
@@ -205,7 +230,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(stream->_handle);",
@@ -213,7 +238,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 23,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(stream->_handle);",
@@ -221,15 +246,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(stream->_handle);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "_setvbuf(stream,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_setvbuf(stream,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "_setvbuf(stream,unaff_EBP,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
+      "line": 52,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(stream->_handle);",

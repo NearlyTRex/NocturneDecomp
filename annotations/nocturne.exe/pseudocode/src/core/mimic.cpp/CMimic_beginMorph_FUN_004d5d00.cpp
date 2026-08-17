@@ -46,6 +46,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004d5d00(CMimic *this_ptr)
   core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(this_ptr,0.0);
   this_ptr_00 = g_CConsole_PTR_005ad350;
   (this_ptr->base).base.base.is_transparent = 1;
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_00,"%s morphing into type %s\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60
+            (this_ptr_00,"%s morphing into type %s\n",this_ptr,this_ptr->morph_actor_type);
   return;
 }

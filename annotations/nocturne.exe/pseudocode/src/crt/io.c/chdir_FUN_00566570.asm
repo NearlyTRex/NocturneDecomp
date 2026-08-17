@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056c93f
-;   shape_edittool.cpp_FUN_00470730 at 00470abf
+;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_00470730 at 00470abf
 ;
 ; Referenced Globals:
 ;   void* PTR_SetCurrentDirectoryA_0057558c = 00175f86

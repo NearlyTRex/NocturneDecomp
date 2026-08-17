@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_ammobox.cpp_CAmmoBox_FUN_0040f1a0
-;   shape_edittool.cpp_FUN_0046fb40
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH 0x595acf                       ; 0053bf12 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x005b6d50]      ; 0053bf17 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 0053bf1d
-    CALL shape_edittool.cpp_FUN_0046fb40 ; 0053bf1e
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 0053bf1e
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053bf23
     POP EDI                             ; 0053bf26
     JMP 0x0053beca                      ; 0053bf27

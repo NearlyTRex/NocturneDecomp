@@ -49,7 +49,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_00557cc0(CWe
     fVar2 = local_68.z - local_5c.z;
     local_1c = SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"Chain stretched to %f\n");
+              (g_CConsole_PTR_005ad350,"Chain stretched to %f\n",(double)local_1c);
     if ((this_ptr->chain_length < local_1c) &&
        (local_20 = this_ptr->chain_length * this_ptr->chain_length - fVar3 * fVar3,
        local_2c = (double)local_20, 0.0 <= local_2c)) {

@@ -8,7 +8,7 @@
 ; DWORD            Stack[0x8]:4   file_attributes
 ;
 ; XREF[3]:
-;   core_inivar.cpp_FUN_004bdb80 at 004bdb93
+;   core_inivar.cpp_readIniData_FUN_004bdb80 at 004bdb93
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8665
 ;   engine_dosio.cpp_setFileAttributes_FUN_00456a30 at 00456a49
 ;

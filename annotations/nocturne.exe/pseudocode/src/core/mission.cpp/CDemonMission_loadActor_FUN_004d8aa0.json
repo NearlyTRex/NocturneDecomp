@@ -56,16 +56,22 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 41,
-        "message": "no matching function for call to 'shape_edittool_cpp_FUN_0046fcd0'"
+        "category": "format_error",
+        "column": 24,
+        "line": 43,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 31,
         "line": 54,
         "message": "format specifies type 'unsigned int *' but the argument has type 'CDemonActor **' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 77,
+        "line": 62,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -74,17 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 156,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 208
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -109,7 +115,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -139,8 +145,8 @@
     },
     {
       "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0046fcd0"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0"
     }
   ],
   "globals": [
@@ -323,7 +329,7 @@
         {
           "check_id": "legacyUninitvar",
           "column": 14,
-          "line": 62,
+          "line": 63,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -375,18 +381,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 56,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
       "type": "unaffected_reg"
     },
     {
@@ -394,12 +392,20 @@
       "line": 58,
       "match": "unaff_ESI",
       "severity": "moderate",
+      "text": "while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 59,
+      "match": "unaff_ESI",
+      "severity": "moderate",
       "text": "pCVar1 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 61,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -407,7 +413,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 62,
+      "line": 63,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "pCVar1 = unaff_ESI;",

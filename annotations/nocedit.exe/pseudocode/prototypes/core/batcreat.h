@@ -57,4 +57,4 @@ void __cdecl CBatCreature::addFilesToExtract(CBatCreature *this_ptr,_FILE *file_
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_00416320
 // Address: 00416320
-CDemonActor * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);
+CBatCreature * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);

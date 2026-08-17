@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
-;   crt_unknown.c_FUN_005714ec
+;   crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec
 ;   WriteConsoleA
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_0056fc5e
     CALL dword ptr [0x005c1ac0]         ; 0056fc60 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
     ADD ESP,0x4                         ; 0056fc66
-    CALL crt_unknown.c_FUN_005714ec     ; 0056fc69
-        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_FUN_005714ec()
+    CALL crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec ; 0056fc69
+        ;   XREF to: 005714ec (UNCONDITIONAL_CALL)  ; HANDLE crt_unknown.c_GetConsoleOutputHandle_FUN_005714ec()
     PUSH 0x0                            ; 0056fc6e
     LEA EDX,[ESP + 0x4]                 ; 0056fc70
     PUSH EDX                            ; 0056fc74

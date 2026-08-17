@@ -205,7 +205,7 @@ section .text
     CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a5989
         ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL engine_special.cpp_unlockFrame_FUN_00532320 ; 004a598e
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320()
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00532320(int clear_lock_flag)
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520 ; 004a5993
         ;   XREF to: 00553520 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004a5998
@@ -374,8 +374,8 @@ section .text
     PUSH 0x584380                       ; 004a5bc5 | = "Can't open %s"
     MOV EBX,dword ptr [0x005b6d50]      ; 004a5bca | g_CEditorTools_PTR_005b6d50
     PUSH EBX                            ; 004a5bd0
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5bd1
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5bd1
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a5bd6
     MOV EAX,dword ptr [ESP + 0xa34]     ; 004a5bd9
     MOV byte ptr [EAX + 0x8b4],0x0      ; 004a5be0
@@ -394,8 +394,8 @@ section .text
     PUSH 0x58438e                       ; 004a5bfc | = "%s is %d bytes, but expected %dx%d=%d..."
     MOV ECX,dword ptr [0x005b6d50]      ; 004a5c01 | g_CEditorTools_PTR_005b6d50
     PUSH ECX                            ; 004a5c07
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5c08
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5c08
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 004a5c0d
     MOV EAX,dword ptr [ESP + 0xa34]     ; 004a5c10
     MOV byte ptr [EAX + 0x8b4],0x0      ; 004a5c17
@@ -411,8 +411,8 @@ section .text
     PUSH 0x5843ca                       ; 004a5c31 | = "Can't open %s"
     MOV EDI,dword ptr [0x005b6d50]      ; 004a5c36 | g_CEditorTools_PTR_005b6d50
     PUSH EDI                            ; 004a5c3c
-    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a5c3d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5c3d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a5c42
     MOV EAX,dword ptr [ESP + 0xa34]     ; 004a5c45
         ;   Label: LAB_004a5c45

@@ -58,43 +58,43 @@
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 33,
+        "line": 34,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 76,
+        "line": 77,
         "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 79,
+        "line": 80,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       },
       {
         "category": "undeclared_identifier",
         "column": 37,
-        "line": 82,
+        "line": 83,
         "message": "use of undeclared identifier 'DAT_01fb9b58'; did you mean 'DAT_005b9258'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 88,
+        "line": 89,
         "message": "use of undeclared identifier '_DAT_014b9920'"
       },
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 109,
+        "line": 110,
         "message": "use of undeclared identifier '_DAT_014b9920'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 114,
+        "line": 115,
         "message": "use of undeclared identifier '_DAT_01fb9b54'"
       }
     ],
@@ -104,12 +104,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 183,
+    "complexity_score": 186,
     "cross_reference_count": 3,
     "function_call_count": 13,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 116,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -117,7 +117,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 407
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -204,7 +204,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     },
     {
@@ -521,7 +521,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 29,
+      "line": 30,
       "match": "*(CDemonLight **)(local_30 + 0x1fba2dc",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonLight **)(local_30 + 0x1fba2dc);",
@@ -529,26 +529,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_01fb9b58",
       "severity": "mild",
       "text": "pCVar2 = *(CDemonLight **)(&DAT_01fb9b58 + local_2c);",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 58,
-      "match": "pCVar5 = (T *)pCVar5->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 59,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 97,
-      "match": "pCVar5 = (T *)pCVar5->ARRAY",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 98,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
     }
   ]

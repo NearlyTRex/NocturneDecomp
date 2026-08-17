@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 004613c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 004d590e
     CALL engine_matrix.c_matrixPush_FUN_004cdac0 ; 004d5911
-        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0(CDemonRenderer * this_ptr)
+        ;   XREF to: 004cdac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_004cdac0()
     PUSH 0x0                            ; 004d5916
     MOV ESI,dword ptr [0x01c039b8]      ; 004d5918 | g_RelativeX
     MOV EDI,dword ptr [0x01c039dc]      ; 004d591e | DAT_01c039dc

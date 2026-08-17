@@ -10,6 +10,6 @@ void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextu
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);
-  engine_special_cpp_updateTexture_FUN_005b7380(texture,g_CurrentPalette);
+  engine_special_cpp_updateTextureFromPalette_FUN_005b7380(texture,g_CurrentPalette);
   return;
 }

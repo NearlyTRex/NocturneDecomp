@@ -53,4 +53,4 @@ void __cdecl CLarva::addFilesToExtract(CLarva *this_ptr,_FILE *file_handle);
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_00503cc0
 // Address: 00503cc0
-CDemonActor * __cdecl CLarva::dtor(CLarva *this_ptr,uint flags);
+CLarva * __cdecl CLarva::dtor(CLarva *this_ptr,uint flags);

@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_FUN_005174e0
-;   core_skeleton.cpp_FUN_0051f650
+;   core_skeleton.cpp_freeAllModels_FUN_0051f650
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
     PUSH ESI                            ; 0051f731
     MOV EBX,0x2737ef8                   ; 0051f732
-    CALL core_skeleton.cpp_FUN_0051f650 ; 0051f737
-        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0051f650()
+    CALL core_skeleton.cpp_freeAllModels_FUN_0051f650 ; 0051f737
+        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_0051f650()
     LEA ESI,[EBX + 0x670b60]            ; 0051f73c | DAT_00670b60
     PUSH EBX                            ; 0051f742
         ;   Label: LAB_0051f742

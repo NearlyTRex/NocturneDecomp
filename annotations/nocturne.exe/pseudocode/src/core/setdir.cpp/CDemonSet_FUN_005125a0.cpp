@@ -36,7 +36,6 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
   byte bVar18;
   double dVar19;
   float fVar20;
-  float fStack_2f0;
   float fStack_2ec;
   uint auStack_2e8 [48];
   CVector3i CStack_228;
@@ -64,7 +63,6 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
   float fStack_dc;
   float fStack_d8;
   CVector3f CStack_d0;
-  int iStack_c0;
   int local_bc;
   int local_b8;
   float local_b4;
@@ -252,17 +250,17 @@ LAB_0051260f:
       } while (iVar6 != 0xc0);
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
       engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_00461070
-                (g_CDemonRenderer_PTR_005ae704,local_b8);
-      g_UseExternalRenderer = local_bc;
+                (g_CDemonRenderer_PTR_005ae704,(int)local_b4);
+      g_UseExternalRenderer = local_b8;
       if (this_ptr->camera_count <= _DAT_020875f4) {
-        fStack_2f0 = -1.0;
+        fStack_2ec = -1.0;
         iVar13 = -1;
         iVar6 = 0;
         if (0 < this_ptr->camera_count) {
           iVar9 = 0;
           do {
-            if (fStack_2f0 < *(float *)(&DAT_02663604 + iVar9)) {
-              fStack_2f0 = *(float *)(&DAT_02663604 + iVar9);
+            if (fStack_2ec < *(float *)(&DAT_02663604 + iVar9)) {
+              fStack_2ec = *(float *)(&DAT_02663604 + iVar9);
               iVar13 = iVar6;
             }
             iVar6 = iVar6 + 1;
@@ -271,15 +269,15 @@ LAB_0051260f:
         }
         if (-1 < iVar13) {
           if ((this_ptr->selected_camera_index < 0) ||
-             (1 < param_3 || iVar13 != this_ptr->selected_camera_index && 0.0 < fStack_2f0)) {
+             (1 < param_3 || iVar13 != this_ptr->selected_camera_index && 0.0 < fStack_2ec)) {
             this_ptr->last_switch_area_invalid = _DAT_026714b0;
             core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(this_ptr,iVar13);
-            iStack_c0 = 1;
+            local_bc = 1;
           }
         }
         _DAT_020875f4 = 0;
       }
-      return iStack_c0;
+      return local_bc;
     }
     if (iStack_b0 == this_ptr->cameras[_DAT_020875f4].vdir_zone) {
       pCStack_98 = param_2;

@@ -120,7 +120,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00553910(void)
   if (((g_DirectDrawSurface != (IDirectDrawSurface *)0x0) &&
       (HVar6 = (*g_DirectDrawSurface->vtable->Flip)(g_DirectDrawSurface,(IDirectDrawSurface *)0x0,1)
       , HVar6 != 0)) && (HVar6 == -0x7789fe3e)) {
-    wincore_wddvmem_cpp_FUN_00553ba0();
+    wincore_wddvmem_cpp_videoRestore_FUN_00553ba0();
     _DAT_02ddf564 = 0;
     wincore_winrun_cpp_processWindowMessages_FUN_005591c0();
     return;

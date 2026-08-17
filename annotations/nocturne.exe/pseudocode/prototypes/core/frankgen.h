@@ -71,9 +71,9 @@ ECollisionType __cdecl CFrankenstienMachine::getCollisionType(CFrankenstienMachi
 // Address: 00495410
 int __cdecl getFrameCount(CKeyFramedModel *model_ptr);
 
-// Original: core_frankgen.cpp_FUN_00495420
+// Original: core_frankgen.cpp_getActorName_FUN_00495420
 // Address: 00495420
-undefined4 FUN_00495420(void);
+char * __cdecl getActorName(CDemonActor *actor);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_00495430
 // Address: 00495430

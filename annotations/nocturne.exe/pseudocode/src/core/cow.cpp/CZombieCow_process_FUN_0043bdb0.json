@@ -56,10 +56,22 @@
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
       },
       {
+        "category": "format_error",
+        "column": 82,
+        "line": 124,
+        "message": "format specifies type 'char *' but the argument has type 'CZombieCow *' [-Werror,-Wformat]"
+      },
+      {
         "category": "undeclared_identifier",
         "column": 51,
         "line": 144,
         "message": "use of undeclared identifier 'DAT_02dd1184'; did you mean 'DAT_02DF1184'?"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 184,
+        "message": "format specifies type 'char *' but the argument has type 'CZombieCow *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -209,7 +221,7 @@
     },
     {
       "addr": "0043ac60",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
     }
   ],

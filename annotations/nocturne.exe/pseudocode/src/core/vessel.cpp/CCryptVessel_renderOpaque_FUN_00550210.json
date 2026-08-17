@@ -54,6 +54,24 @@
         "column": 64,
         "line": 107,
         "message": "function cannot return function type 'FARPROC' (aka 'int ()')"
+      },
+      {
+        "category": "type_error",
+        "column": 17,
+        "line": 39,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 72,
+        "line": 39,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
+        "column": 50,
+        "line": 45,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       }
     ],
     "success": false,
@@ -62,15 +80,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 45,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 3,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 45,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 178
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 48,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 181
   },
   "cross_references": [],
   "function": {
@@ -242,7 +262,32 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_8_",
+      "severity": "mild",
+      "text": "(auStack_34._0_8_ = (ulonglong)this_ptr->timer, (double)auStack_34._0_8_ <= 0.0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_8_",
+      "severity": "mild",
+      "text": "(auStack_34._0_8_ = (ulonglong)this_ptr->timer, (double)auStack_34._0_8_ <= 0.0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._0_8_",
+      "severity": "mild",
+      "text": "(65535 - (double)auStack_34._0_8_ * 65535);",
+      "type": "unknown_field"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

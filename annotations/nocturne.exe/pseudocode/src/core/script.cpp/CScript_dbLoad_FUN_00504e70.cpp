@@ -34,7 +34,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 3778;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open world\\%s");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("Can't open world\\%s",filename);
   }
   lVar2 = _ftell(file_handle);
   local_c = local_c + lVar2;
@@ -49,7 +49,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     if (iVar3 != 3) {
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 3798;
-      core_main_c_displayErrorAndQuit_FUN_004c8440("SCScipt::dbLoad - error parsing %s record %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
     core_script_cpp_trimString_FUN_004fe000(local_334);
     core_script_cpp_trimString_FUN_004fe000(local_2bc);
@@ -82,7 +83,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     } while (cVar1 != '\0');
     iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(this_ptr,local_334);
     if (-1 < iVar3) {
-      shape_edittool_cpp_FUN_0046fcd0
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                 (g_CEditorTools_PTR_005b6d50,"Warning! Duplicate wav string %s detected in %s",local_334,filename)
       ;
     }

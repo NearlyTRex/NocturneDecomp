@@ -24,24 +24,24 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_0055a210(HWND parent_window,char
     wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(parent_window);
   }
   _sprintf(local_1b4,"open \"%s\" alias mov style child parent %d",movie_filename,parent_window);
-  MVar2 = mciSendStringA(local_1b4,(LPSTR)0x0,0,(HWND)0x0);
+  MVar2 = mciSendStringA(local_1b4,(LPSTR)0x0,0,0);
   if (MVar2 != 0) {
-    MessageBoxA((HWND)parent_window,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    MessageBoxA(parent_window,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
     _DAT_02de3124 = 0;
     return;
   }
   _DAT_02de3124 = 1;
-  MVar2 = mciSendStringA("status mov window handle",local_1b4,0x104,(HWND)0x0);
+  MVar2 = mciSendStringA("status mov window handle",local_1b4,0x104,0);
   if (MVar2 == 0) {
-    _DAT_02de311c = (HWND)atoi(local_1b4);
+    _DAT_02de311c = atoi(local_1b4);
   }
   else {
     mciGetErrorStringA(MVar2,local_1b4,0x104);
-    MessageBoxA((HWND)parent_window,local_1b4,(LPCSTR)0x0,0x30);
+    MessageBoxA(parent_window,local_1b4,(LPCSTR)0x0,0x30);
   }
   if ((_DAT_02de312c == 0) && (_DAT_02de3124 != 0)) {
-    GetClientRect((HWND)parent_window,&local_20);
-    mciSendStringA("where mov source",(LPSTR)&local_b0,0x80,(HWND)0x0);
+    GetClientRect(parent_window,&local_20);
+    mciSendStringA("where mov source",(LPSTR)&local_b0,0x80,0);
     SetRectEmpty(&local_30);
     pbVar3 = &local_b0;
     while (local_b0 == 0x20) {

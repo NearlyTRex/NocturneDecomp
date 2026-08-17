@@ -37,7 +37,19 @@ import difflib
 import re
 
 
-def load_patches(json_path, group_filter=None):
+def group_applies_to(group, program_name):
+    """Is this group meant for the program we were pointed at?
+
+    A group may carry a "program" key to pin it to one binary; the addresses in
+    a patch are only meaningful for the binary they were measured in, and
+    nocedit/nocturne/tridx7 share this file. Groups without the key are legacy
+    nocedit.exe patches and stay unfiltered, so existing behaviour is unchanged.
+    """
+    want = group.get('program')
+    return want is None or program_name is None or want == program_name
+
+
+def load_patches(json_path, group_filter=None, program_name=None):
     """Load patch definitions from JSON file.
 
     Returns a flat list of patch dicts, each with 'group' field added.
@@ -49,6 +61,8 @@ def load_patches(json_path, group_filter=None):
     for group in data['groups']:
         group_name = group['name']
         if group_filter and group_name != group_filter:
+            continue
+        if not group_applies_to(group, program_name):
             continue
         for patch in group['patches']:
             p = {
@@ -79,7 +93,7 @@ def load_cave_comments(json_path):
     ]
 
 
-def load_clear_thunks(json_path, group_filter=None):
+def load_clear_thunks(json_path, group_filter=None, program_name=None):
     """Load thunk-clearing addresses from patch groups.
 
     Returns list of address ints for functions whose thunk status should be
@@ -90,6 +104,8 @@ def load_clear_thunks(json_path, group_filter=None):
     addrs = []
     for group in data['groups']:
         if group_filter and group['name'] != group_filter:
+            continue
+        if not group_applies_to(group, program_name):
             continue
         for addr_str in group.get('clear_thunks', []):
             addrs.append(int(addr_str, 16))
@@ -124,8 +140,9 @@ def list_groups(json_path):
 
     for group in data['groups']:
         count = len(group['patches'])
-        print("  %-35s %2d patch(es)  %s" % (
-            group['name'], count, group.get('description', '')))
+        print("  %-35s %-13s %2d patch(es)  %s" % (
+            group['name'], group.get('program', 'any'), count,
+            group.get('description', '')))
 
 
 def get_bytes(program, addr_int, length):
@@ -533,7 +550,8 @@ def main():
         list_groups(json_path)
         sys.exit(0)
 
-    patches = load_patches(json_path, group_filter=args.group)
+    patches = load_patches(json_path, group_filter=args.group,
+                           program_name=args.program_name)
     if not patches:
         print("No patches found%s." % (" for group '%s'" % args.group if args.group else ""))
         sys.exit(1)
@@ -562,7 +580,8 @@ def main():
 
     cave_comments = load_cave_comments(json_path)
     body_extensions = load_function_body_extensions(json_path)
-    clear_thunks = load_clear_thunks(json_path, group_filter=args.group)
+    clear_thunks = load_clear_thunks(json_path, group_filter=args.group,
+                                     program_name=args.program_name)
 
     exit_code = 0
     try:

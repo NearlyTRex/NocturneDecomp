@@ -11,10 +11,10 @@
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0 at 004602f5
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370 at 004603e5
 ;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0 at 0045fa2c
+;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_00461720 at 004618f6
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 0046150d
 ;   engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0045f270 at 0045f2fc
 ;   engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0 at 00460515
-;   engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_00460590 at 00460605
 ;   ... and 8 more
 ;
 ; Referenced Globals:

@@ -25,7 +25,7 @@ int __cdecl core_script_cpp_CScript_FUN_00504d90(CScript *this_ptr)
     iVar1 = this_ptr->next_cmd;
     iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(this_ptr,&local_c);
     if (iVar2 < 0) {
-      shape_edittool_cpp_FUN_0046fcd0
+      shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                 (g_CEditorTools_PTR_005b6d50,"Error processing script to skip cinematic.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
                  this_ptr->parsed_lines[iVar1].line_number,this_ptr->parsed_lines[iVar1].text,
                  &DAT_01e56420);
@@ -34,7 +34,9 @@ int __cdecl core_script_cpp_CScript_FUN_00504d90(CScript *this_ptr)
     if (300 < iVar3) {
       g_CurrentLineNumber = 3749;
       g_CurrentFilename = "..\\core\\script.cpp";
-      core_main_c_displayErrorAndQuit_FUN_004c8440("Infinite loop detected trying to skip cinematic, at script line %d");
+      core_main_c_displayErrorAndQuit_FUN_004c8440
+                ("Infinite loop detected trying to skip cinematic, at script line %d",
+                 this_ptr->parsed_lines[this_ptr->next_cmd].line_number);
     }
   }
   return 1;

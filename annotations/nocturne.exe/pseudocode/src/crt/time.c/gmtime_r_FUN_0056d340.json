@@ -2,19 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 101,
+    "complexity_score": 70,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 45,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "undefined_type"
+      "undefined_data"
     ],
-    "total_lines": 188
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -46,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_time.c_gmtime_r_FUN_0056d340",
-    "signature": "undefined1 __cdecl crt_time_c_gmtime_r_FUN_0056d340(time_t days,time_t seconds,time_t timezone_offset,undefined1 result)"
+    "signature": "_tm * __cdecl crt_time_c_gmtime_r_FUN_0056d340(time_t days,time_t seconds,time_t timezone_offset,_tm *result)"
   },
   "function_calls": [
     {
@@ -162,10 +160,10 @@
     "pcode_op_count": 787
   },
   "stack_frame": {
-    "frame_size": 37,
+    "frame_size": 40,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 13,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -200,31 +198,15 @@
         "is_param": true,
         "name": "result",
         "offset": 16,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "_tm *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000011",
-      "severity": "moderate",
-      "text": "undefined3 in_stack_00000011;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined3 in_stack_00000011",
-      "severity": "moderate",
-      "text": "undefined3 in_stack_00000011;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_005a4a78",
       "severity": "mild",
       "text": "local_14 = &DAT_005a4a78;",
@@ -232,7 +214,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_005a4a92",
       "severity": "mild",
       "text": "local_14 = &DAT_005a4a92;",

@@ -15,7 +15,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(CDe
   SMRGLTextureBasic *texture;
   SMRGLTextureBasic *local_14;
   
-  skeleton_ptr = core_skeleton_cpp_FUN_0051f680(this_ptr->model_name);
+  skeleton_ptr = core_skeleton_cpp_loadSkeleton_FUN_0051f680(this_ptr->model_name);
   iVar2 = 0;
   core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(this_ptr,skeleton_ptr);
   if (0 < this_ptr->num_texture_sets) {

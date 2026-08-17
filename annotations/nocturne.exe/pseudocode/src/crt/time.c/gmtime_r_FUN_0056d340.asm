@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 __cdecl crt_time_c_gmtime_r_FUN_0056d340(time_t days,time_t seconds,time_t timezone_offset,undefined1 result)
+; _tm * __cdecl crt_time_c_gmtime_r_FUN_0056d340(time_t days,time_t seconds,time_t timezone_offset,_tm *result)
 ;
 ; Parameters:
 ; time_t           Stack[0x4]:4   days
 ; time_t           Stack[0x8]:4   seconds
 ; time_t           Stack[0xc]:4   timezone_offset
-; undefined1       Stack[0x10]:1   result
+; _tm *            Stack[0x10]:4   result
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

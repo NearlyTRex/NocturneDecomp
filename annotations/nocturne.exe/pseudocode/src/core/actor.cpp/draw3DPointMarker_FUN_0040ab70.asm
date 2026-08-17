@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005992b0
+;   float FLOAT_005992b0 = 256
 ;   void* PTR_DAT_005ae700 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
@@ -35,13 +35,13 @@ section .text
     MOV EBX,ESP                         ; 0040ab79
     MOV EDX,dword ptr [0x005ae700]      ; 0040ab7b | PTR_DAT_005ae700
     FLD float ptr [EAX]                 ; 0040ab81
-    FMUL float ptr [0x005992b0]         ; 0040ab83 | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ab83 | FLOAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ab89
     FLD float ptr [EAX + 0x4]           ; 0040ab8b
-    FMUL float ptr [0x005992b0]         ; 0040ab8e | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ab8e | FLOAT_005992b0
     FISTP dword ptr [EBX + 0x4]         ; 0040ab94
     FLD float ptr [EAX + 0x8]           ; 0040ab97
-    FMUL float ptr [0x005992b0]         ; 0040ab9a | DAT_005992b0
+    FMUL float ptr [0x005992b0]         ; 0040ab9a | FLOAT_005992b0
     FISTP dword ptr [EBX + 0x8]         ; 0040aba0
     MOV EAX,ESP                         ; 0040aba3
     PUSH EAX                            ; 0040aba5

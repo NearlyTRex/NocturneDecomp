@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 287,
+    "complexity_score": 307,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 122,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
@@ -163,7 +163,7 @@
   "function_calls": [
     {
       "addr": "004c8440",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_004c8440"
     },
     {
@@ -524,6 +524,22 @@
       "severity": "moderate",
       "text": "(*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));",
       "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Error reading %s\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Too many messages in %s\",param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Raw hex address 0x1d177c0 assigned to bare local `iVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

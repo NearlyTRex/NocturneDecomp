@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_ReadFileBytesMaybe_FUN_005733e0
 // Address: 005733e0
 // Address Range: [[005733e0, 005735e8]]
-// Convention: unknown
-// Signature: uint crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *param_2,DWORD param_3)
+// Convention: __cdecl
+// Signature: uint __cdecl crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *param_2,DWORD param_3)
 
 #include "nocturne.h"
 
-uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
+uint __cdecl ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
 
 {
   char *pcVar1;
@@ -92,8 +92,8 @@ uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3)
           return uVar2;
         }
 LAB_005734ea:
-        uVar2 = __set_errno();
-        return uVar2;
+        DVar5 = __set_errno();
+        return DVar5;
       }
     }
     else {

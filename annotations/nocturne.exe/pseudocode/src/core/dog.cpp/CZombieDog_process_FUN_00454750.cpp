@@ -164,7 +164,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_00454750(CZombieDog *this_ptr,f
         pCVar1 = &(this_ptr->base).base.model;
         if (iVar4 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n");
+                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&pCVar1->motion_controller,0,1);
         }
@@ -239,7 +239,7 @@ LAB_004549fd:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

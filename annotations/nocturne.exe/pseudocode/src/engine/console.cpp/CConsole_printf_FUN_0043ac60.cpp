@@ -2,11 +2,11 @@
 // Address: 0043ac60
 // Address Range: [[0043ac60, 0043ad29]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format)
+// Signature: void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format,...)
 
 #include "nocturne.h"
 
-void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format)
+void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format,...)
 
 {
   char cVar1;

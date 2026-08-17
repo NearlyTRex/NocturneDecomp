@@ -2,17 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 71,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "undefined_data"
+      "undefined_data",
+      "warning_noreturn"
     ],
     "total_lines": 46
   },
@@ -148,8 +149,16 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Subroutine marked as non-returning",
       "line": 17,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
       "match": "in_stack_fffffff8",
       "severity": "moderate",
       "text": "ExitProcess(in_stack_fffffff8);",

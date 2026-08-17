@@ -15,7 +15,8 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char
   if (this_ptr->bitmap_filename[0] != '\0') {
     g_CurrentFilename = "..\\core\\game.cpp";
     g_CurrentLineNumber = 4047;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::displayBitmap - tried to queue %s, but %s already queued!");
+    core_main_c_displayErrorAndQuit_FUN_004c8440
+              ("CGame::displayBitmap - tried to queue %s, but %s already queued!",filename,this_ptr->bitmap_filename);
   }
   pcVar2 = this_ptr->bitmap_filename;
   do {

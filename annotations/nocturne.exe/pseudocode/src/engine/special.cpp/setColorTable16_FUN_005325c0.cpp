@@ -2,11 +2,11 @@
 // Address: 005325c0
 // Address Range: [[005325c0, 005325ee]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(uchar *source_palette,ushort *color_table)
+// Signature: int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(void)
 
 #include "nocturne.h"
 
-int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(uchar *source_palette,ushort *color_table)
+int __cdecl engine_special_cpp_setColorTable16_FUN_005325c0(void)
 
 {
   int iVar1;
