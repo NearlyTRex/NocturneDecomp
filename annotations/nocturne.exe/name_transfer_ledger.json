@@ -1,0 +1,26 @@
+{
+ "schema": 1,
+ "from": "nocedit.exe",
+ "to": "nocturne.exe",
+ "purpose": "Pairs that must NEVER be named, with the evidence that condemned them. This is the negative counterpart to sibling_manual_pairs.json, which can only ADD pairs -- a wrong pair regenerates on every refresh, so the refusal has to live somewhere. Consumed by apply_sibling_annotations.py --ledger, where a rejected row is skipped (SKIP_LEDGER) however high the mapper rated it.\n\nThe approvals this file used to carry were applied on 2026-08-15 and then removed: once a name is in Ghidra, Ghidra is the record, and a stale approval list re-approves rows whose addresses have since moved. Rejections do not expire the same way -- an absent name is indistinguishable from an un-analysed one, so nothing else remembers the decision.",
+ "entries": [
+  {
+   "a": "00456400",
+   "b": "0044a150",
+   "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
+   "confidence": 0.85,
+   "verdict": "SUSPECT",
+   "status": "reject",
+   "note": "NOT the same function. nocedit is 240 instrs calling six distinct plane clippers (MinX/MaxX/MinY/MaxY/MinZ/MaxZ); nocturne FUN_0044a150 is 786 instrs (3.5x) calling only clipEdgeToPlane. 0/6 mapped calls corroborate. Different implementation of a related idea."
+  },
+  {
+   "a": "0053ee30",
+   "b": "00540a10",
+   "name": "shape_multicrm.cpp_CMultiCram_getSecondModel_FUN_0053ee30",
+   "confidence": 0.99,
+   "verdict": "STRONG",
+   "status": "reject",
+   "note": "REJECT despite an identical body: it is a generic 3-instruction accessor (return arg->field_0x8), a shape the strict hash collides on. The TUs are incompatible -- shape_multicrm.cpp is an editor-only tool, mapped into game core_stranger.cpp -- and nocedit has nothing between 005c6930 and 005c6950, so nocturne 00540a10 is most likely game-only. The body audit CANNOT see this; only the TU cross-check can."
+  }
+ ]
+}
