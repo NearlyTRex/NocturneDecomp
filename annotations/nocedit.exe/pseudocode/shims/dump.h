@@ -88,6 +88,15 @@ int nocturne_dump_collision_grid(const char *path, struct CVector3f *pos);
 // gradient setup gone wrong).
 int nocturne_dump_lighting_state(const char *path);
 
+// Appends one line summarising a static-lighting bake: checksums of the bake's
+// per-pixel INPUTS (camera Z-buffer, and the world positions / normals
+// precomputeNormals derives from it) and of its OUTPUTS (each spot light's lit
+// scanline extents and per-pixel corona buffers), plus the backdrop
+// framebuffer. Call at the end of setCameraView and correlate `tag` with a
+// screenshot taken a few frames later: two bakes that read identical scalar
+// lighting globals but produced different screen brightness will differ here.
+int nocturne_dump_bake_signature(const char *path, int tag);
+
 // Continuous per-frame actor-state auto-dump. Independent of gdb — meant to
 // be toggled at runtime from a keyboard hotkey (see user32 shim) so a session
 // can be recorded while the user drives the game. Two slots are exposed so

@@ -800,6 +800,181 @@ extern "C" int nocturne_dump_lighting_state(const char *path)
 }
 
 // =============================================================================
+// Bake signature — the engine's per-pixel lighting inputs and outputs
+// =============================================================================
+//
+// setCameraView rebuilds the whole static-lighting bake: it re-renders the
+// scene into the camera Z-buffer, derives per-pixel world positions and
+// normals from it (precomputeNormals), reloads the backdrop, and then projects
+// every visible spot light onto those positions (precomputeLight), leaving the
+// per-scanline lit extents and the per-pixel corona buffers behind.
+//
+// Scalar lighting globals cannot distinguish two bakes that consumed different
+// per-pixel inputs. This checksums the inputs (Z-buffer, world positions,
+// normals) and the outputs (lit extents, corona buffers) so a bake that
+// silently produced a different lit region shows up as a changed number.
+//
+// Appends one line per call so a run accumulates samples; correlate the tag
+// with the screenshot captured a few frames later.
+
+static unsigned long long sig_mix(unsigned long long h, unsigned long long v)
+{
+    return h * 1000003ull + v;
+}
+
+extern "C" int nocturne_dump_bake_signature(const char *path, int tag)
+{
+    if (path == nullptr) {
+        return -1;
+    }
+    FILE *f = std::fopen(path, "a");
+    if (f == nullptr) {
+        return -1;
+    }
+
+    CDemonCamera *cam = &g_CDemonCameraInstance;
+    const int dw = cam->display_width;
+    const int dh = cam->display_height;
+    const int fw = cam->framebuffer_width;
+    const int fh = cam->framebuffer_height;
+
+    // --- bake inputs -------------------------------------------------------
+    // Camera Z-buffer: what precomputeNormals reads to reconstruct the world.
+    // Both buffers are framebuffer_width * framebuffer_height 32-bit words
+    // (CDemonCamera::init allocates them that way).
+    unsigned long long zb = 0;
+    if (cam->zbuffer_aligned != nullptr && fw > 0 && fh > 0) {
+        const unsigned int *z = (const unsigned int *)cam->zbuffer_aligned;
+        for (int i = 0; i < fw * fh; i++) {
+            zb = sig_mix(zb, z[i]);
+        }
+    }
+
+    // Backdrop after loadImage + the light passes composite into it.
+    unsigned long long fb = 0;
+    long long fb_lum = 0;
+    if (cam->framebuffer_aligned != nullptr && fw > 0 && fh > 0) {
+        const unsigned int *p = (const unsigned int *)cam->framebuffer_aligned;
+        for (int i = 0; i < fw * fh; i++) {
+            fb = sig_mix(fb, p[i]);
+            // Cheap brightness proxy, directly comparable to the screenshot
+            // means the two states are identified by.
+            fb_lum += (p[i] & 0xff) + ((p[i] >> 8) & 0xff) + ((p[i] >> 16) & 0xff);
+        }
+    }
+    double fb_mean = (fw > 0 && fh > 0) ? (double)fb_lum / (3.0 * fw * fh) : 0.0;
+
+    // precomputeNormals output — the world position / normal of every pixel.
+    // Both arrays are sized for the fixed 320x240 precompute grid.
+    unsigned long long wp = 0, nrm = 0;
+    int wp_zero = 0;
+    for (int y = 0; y < 240; y++) {
+        for (int x = 0; x < 320; x++) {
+            const CVector3i *w = &g_PrecomputedWorldPositions[y * 320 + x];
+            if (w->x == 0 && w->y == 0 && w->z == 0) wp_zero++;
+            wp = sig_mix(wp, (unsigned int)w->x);
+            wp = sig_mix(wp, (unsigned int)w->y);
+            wp = sig_mix(wp, (unsigned int)w->z);
+            const CVector3f *n = &g_PrecomputedSurfaceNormals[y][x];
+            unsigned int nb[3];
+            std::memcpy(&nb[0], &n->x, 4);
+            std::memcpy(&nb[1], &n->y, 4);
+            std::memcpy(&nb[2], &n->z, 4);
+            nrm = sig_mix(nrm, nb[0]);
+            nrm = sig_mix(nrm, nb[1]);
+            nrm = sig_mix(nrm, nb[2]);
+        }
+    }
+
+    std::fprintf(f,
+                 "tag=%d dw=%d dh=%d fw=%d fh=%d zb=%016llx fb=%016llx "
+                 "fbmean=%.3f wp=%016llx wpzero=%d nrm=%016llx spot=%d dyn=%d",
+                 tag, dw, dh, fw, fh, zb, fb, fb_mean, wp, wp_zero, nrm,
+                 g_SpotLightCount, g_DynamicLightCount);
+
+    // --- bake outputs, per spot light --------------------------------------
+    for (int li = 0; li < g_SpotLightCount && li < 8; li++) {
+        CDemonLight *L = g_SpotLightList[li];
+        if (L == nullptr) {
+            std::fprintf(f, " | L%d=null", li);
+            continue;
+        }
+
+        // Lit extents: which pixels of each scanline this light reaches.
+        long long lit_px = 0;
+        int lit_lines = 0;
+        unsigned long long ext = 0;
+        for (int y = 0; y < 240; y++) {
+            int l = L->left_extent[y];
+            int r = L->right_extent[y];
+            ext = sig_mix(ext, (unsigned int)l);
+            ext = sig_mix(ext, (unsigned int)r);
+            if (r > l) {
+                lit_lines++;
+                lit_px += (r - l + 1);
+            }
+        }
+
+        // Per-pixel corona buffers over the whole 320x240 precompute grid.
+        unsigned long long vis = 0, lm = 0;
+        int vis_nonzero = 0;
+        if (L->corona_visibility_buffers != nullptr) {
+            const int *v = L->corona_visibility_buffers;
+            for (int i = 0; i < 320 * 240; i++) {
+                if (v[i] != 0) vis_nonzero++;
+                vis = sig_mix(vis, (unsigned int)v[i]);
+            }
+        }
+        if (L->corona_lightmap_indices != nullptr) {
+            const int *m = L->corona_lightmap_indices;
+            for (int i = 0; i < 320 * 240; i++) {
+                lm = sig_mix(lm, (unsigned int)m[i]);
+            }
+        }
+
+        // The light's own view transform — precomputeLight projects every
+        // world position through this and rejects anything landing behind the
+        // light, so a bad transform silently zeroes the whole light.
+        CCameraView *V = &L->base.base;
+        const CRect *rc = &g_SpotLightBounds[li];
+
+        std::fprintf(f,
+                     " | L%d en=%d px=%lld lines=%d ext=%016llx "
+                     "vis=%016llx visnz=%d lm=%016llx "
+                     "rect=(%d,%d)-(%d,%d) fps=%.4f foc=%.4f dead=%d "
+                     "pos=(%.3f,%.3f,%.3f) "
+                     "rot=[%.4f %.4f %.4f | %.4f %.4f %.4f | %.4f %.4f %.4f] "
+                     "lfw=%d lfh=%d lsc=%d lsw=%d lsh=%d xs=%d ys=%d "
+                     "mask=%u tsf=%d mz=%d sdb=%d lvb=%d plt=%d filt=%s",
+                     li, L->light_enabled_flag, lit_px, lit_lines, ext,
+                     vis, vis_nonzero, lm,
+                     rc->x_min, rc->y_min, rc->x_max, rc->y_max,
+                     V->fixed_point_scale, V->focal_length, V->dead,
+                     V->position.f.x, V->position.f.y, V->position.f.z,
+                     V->rotation_matrix.m[0].x, V->rotation_matrix.m[0].y,
+                     V->rotation_matrix.m[0].z,
+                     V->rotation_matrix.m[1].x, V->rotation_matrix.m[1].y,
+                     V->rotation_matrix.m[1].z,
+                     V->rotation_matrix.m[2].x, V->rotation_matrix.m[2].y,
+                     V->rotation_matrix.m[2].z,
+                     L->base.framebuffer_width, L->base.framebuffer_height,
+                     L->base.scale_factor,
+                     L->shadow_map_width, L->shadow_map_height,
+                     L->shadow_x_shift, L->shadow_y_shift,
+                     L->texture_coord_mask, L->transform_scale_factor,
+                     L->master_zbuffer != nullptr,
+                     L->shadow_depth_buffer != nullptr,
+                     L->lightmap_visibility_bits != nullptr,
+                     L->precomputed_lighting_textures != nullptr,
+                     L->filter_name);
+    }
+
+    std::fprintf(f, "\n");
+    std::fclose(f);
+    return 0;
+}
+
+// =============================================================================
 // Auto-capture sequence — gdb-driven, no in-game hook
 // =============================================================================
 //
@@ -988,6 +1163,9 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     (void)path_template; (void)every_n; (void)max_count; (void)reset;
 }
 extern "C" int nocturne_dump_lighting_state(const char *path) { (void)path; return -1; }
+extern "C" int nocturne_dump_bake_signature(const char *path, int tag) {
+    (void)path; (void)tag; return -1;
+}
 extern "C" void nocturne_auto_dump_set_slot(int slot, const char *path_template,
                                              CDemonActor *actor) {
     (void)slot; (void)path_template; (void)actor;
