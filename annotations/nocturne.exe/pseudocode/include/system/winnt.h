@@ -24,6 +24,10 @@ typedef int EXCEPTION_DISPOSITION;
 // Typedef: EXCEPTION_RECORD
 typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
 
+// Typedef: LONGVAL
+// Signed Integer (compiler-specific size)
+typedef LONG LONGVAL;
+
 // Typedef: LPCH
 // pointer to CHAR
 typedef CHAR* LPCH;
@@ -93,12 +97,12 @@ typedef _CONTEXT CONTEXT;
 // pointer to CONTEXT
 typedef CONTEXT* PCONTEXT;
 
-// Function Definition: EXCEPTION_ROUTINE
-typedef EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
+// Function Definition: EXCEPTION_ROUTINE_FUNC
+typedef EXCEPTION_DISPOSITION EXCEPTION_ROUTINE_FUNC(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
 
 // Typedef: PEXCEPTION_ROUTINE
-// pointer to EXCEPTION_ROUTINE
-typedef EXCEPTION_ROUTINE* PEXCEPTION_ROUTINE;
+// pointer to EXCEPTION_ROUTINE_FUNC
+typedef EXCEPTION_ROUTINE_FUNC* PEXCEPTION_ROUTINE;
 
 // Structure: EXCEPTION_REGISTRATION_RECORD
 #pragma pack(push, 1)

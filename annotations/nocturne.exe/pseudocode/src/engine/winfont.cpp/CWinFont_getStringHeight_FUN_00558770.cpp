@@ -30,8 +30,7 @@ int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_00558770(CWinFont *t
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  BVar3 = GetTextExtentPoint32A
-                    ((HDC)this_ptr->device_context_handle,text_string,~uVar4 - 1,&local_10);
+  BVar3 = GetTextExtentPoint32A(this_ptr->device_context_handle,text_string,~uVar4 - 1,&local_10);
   if (BVar3 == 0) {
     local_10.cy = 0;
   }

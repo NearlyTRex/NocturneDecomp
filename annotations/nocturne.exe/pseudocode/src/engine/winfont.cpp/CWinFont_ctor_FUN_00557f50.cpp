@@ -24,7 +24,7 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(CWinFont *this_
   pCVar1->cached_foreground_color = 0;
   pCVar1->cached_background_color = 0;
   pHVar2 = CreateFontA(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
-  pCVar1->font_handle = (HFONT)pHVar2;
+  pCVar1->font_handle = pHVar2;
   pCVar1->y_offset1 = y_offset1;
   pCVar1->y_offset2 = y_offset2;
   return pCVar1;

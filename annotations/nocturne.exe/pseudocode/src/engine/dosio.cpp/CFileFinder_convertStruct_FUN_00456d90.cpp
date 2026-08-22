@@ -37,7 +37,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00456d90(CFileFinder
   }
   this_ptr->file_size = find_data->nFileSizeLow;
   this_ptr->timestamp = 0;
-  BVar1 = FileTimeToLocalFileTime((FILETIME *)&find_data->ftLastWriteTime,&local_18);
+  BVar1 = FileTimeToLocalFileTime(&find_data->ftLastWriteTime,&local_18);
   if (BVar1 != 0) {
     BVar1 = FileTimeToSystemTime(&local_18,&local_28);
     if (BVar1 != 0) {

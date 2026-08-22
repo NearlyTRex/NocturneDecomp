@@ -27,7 +27,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
       this_ptr->top < height) || this_ptr->bpp != g_BitsPerPixel) {
     engine_winfont_cpp_CWinFont_reset_FUN_005586a0(this_ptr);
     pHVar2 = CreateCompatibleDC((HDC)0x0);
-    this_ptr->device_context_handle = (HDC)pHVar2;
+    this_ptr->device_context_handle = pHVar2;
     memset(&local_48,0,0x2c);
     local_48.bmiHeader.biSize = 0x28;
     local_48.bmiHeader.biPlanes = 1;
@@ -40,22 +40,22 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005584d0(CWinFo
     local_48.bmiHeader.biYPelsPerMeter = 0;
     local_48.bmiHeader.biClrImportant = 0;
     local_48.bmiHeader.biWidth = width;
-    h = CreateDIBSection((HDC)this_ptr->device_context_handle,&local_48,0,&this_ptr->ppv_bits,
-                         (HANDLE)0x0,0);
-    this_ptr->dib_handle = (HBITMAP)h;
+    h = CreateDIBSection(this_ptr->device_context_handle,&local_48,0,&this_ptr->ppv_bits,(HANDLE)0x0
+                         ,0);
+    this_ptr->dib_handle = h;
     iVar1 = 0;
     if (h != (HBITMAP)0x0) {
-      SelectObject((HDC)this_ptr->device_context_handle,h);
-      SetBkMode((HDC)this_ptr->device_context_handle,2);
-      SetBkColor((HDC)this_ptr->device_context_handle,0xff00ff);
+      SelectObject(this_ptr->device_context_handle,h);
+      SetBkMode(this_ptr->device_context_handle,2);
+      SetBkColor(this_ptr->device_context_handle,0xff00ff);
       local_1c.lbStyle = 0;
       local_1c.lbColor = 0xff00ff;
       local_1c.lbHatch = 0;
       h_00 = CreateBrushIndirect(&local_1c);
-      SelectObject((HDC)this_ptr->device_context_handle,h_00);
-      Rectangle((HDC)this_ptr->device_context_handle,0,-this_ptr->top,this_ptr->right,0);
+      SelectObject(this_ptr->device_context_handle,h_00);
+      Rectangle(this_ptr->device_context_handle,0,-this_ptr->top,this_ptr->right,0);
       DeleteObject(h_00);
-      pvVar3 = SelectObject((HDC)this_ptr->device_context_handle,this_ptr->font_handle);
+      pvVar3 = SelectObject(this_ptr->device_context_handle,this_ptr->font_handle);
       this_ptr->object_handle = pvVar3;
       this_ptr->right = width;
       this_ptr->top = height;

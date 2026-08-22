@@ -26,6 +26,14 @@ DEFAULT_COMPILER = 'clang++'
 # - -Wint-conversion: implicit int/pointer conversion without cast (wrong int vs pointer)
 # - -Wreturn-type: missing return in non-void function (wrong return type annotation)
 # - -Wtautological-compare: always-true/false comparisons (wrong signedness annotation)
+# - -Werror=sometimes-uninitialized: a local read on some path with no assignment on
+#   that path. Almost always Ghidra splitting one reused register into two locals and
+#   failing to initialize one of them (see fix_compilation.md §13) — the asm reaches the
+#   read with the register provably holding a known value. Compiles clean, then feeds
+#   garbage downstream (e.g. CScat::updateWeaponState passed stack junk as a bone index).
+#   Promoted to an error because the resulting bug surfaces far from its cause.
+#   NOT the broader -Wuninitialized: that also fires on in_ST0/in_ST1 x87 phantoms, which
+#   are missing CUSTOM_STORAGE signatures to fix in Ghidra, not a code defect.
 DEFAULT_COMPILE_FLAGS = [
     '-m32',
     '-mmmx',
@@ -44,4 +52,5 @@ DEFAULT_COMPILE_FLAGS = [
     '-Wint-conversion',
     '-Wreturn-type',
     '-Wtautological-compare',
+    '-Werror=sometimes-uninitialized',
 ]

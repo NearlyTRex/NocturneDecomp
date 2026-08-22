@@ -13,7 +13,7 @@ EXCEPTION_DISPOSITION __cdecl ExceptionHandler(EXCEPTION_RECORD *ExceptionRecord
 {
   byte *pbVar1;
   int iVar2;
-  LONG LVar3;
+  long lVar3;
   int iVar4;
   _EXCEPTION_POINTERS local_14;
   
@@ -95,8 +95,8 @@ switchD_0056ed30_default:
 LAB_0056eeab:
   local_14.ExceptionRecord = ExceptionRecord;
   local_14.ContextRecord = ContextRecord;
-  LVar3 = UnhandledExceptionFilter(&local_14);
-  if (LVar3 == 0) {
+  lVar3 = UnhandledExceptionFilter(&local_14);
+  if (lVar3 == 0) {
     return ExceptionContinueSearch;
   }
                     /* WARNING: Subroutine does not return */

@@ -9,7 +9,7 @@
 // =============================================================================
 
 // Typedef: LSTATUS
-// Signed Long Integer (compiler-specific size)
+// Signed Integer (compiler-specific size)
 typedef LONG LSTATUS;
 
 // Typedef: REGSAM

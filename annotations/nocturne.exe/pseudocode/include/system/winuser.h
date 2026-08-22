@@ -33,11 +33,12 @@ typedef int SPECIAL_DEVICE_WRITE_FUNC(int device_id, void* buffer, int bytes_to_
 // pointer to SPECIAL_DEVICE_WRITE_FUNC
 typedef SPECIAL_DEVICE_WRITE_FUNC* LPSPECIALDEVICEWRITE;
 
-// Function Definition: WNDPROC
-typedef LRESULT WNDPROC(HWND param, UINT param1, WPARAM param2, LPARAM param3);
-
 // Function Definition: WNDPROC_FUNC
 typedef LRESULT WNDPROC_FUNC(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
+// Typedef: WNDPROC
+// pointer to WNDPROC_FUNC
+typedef WNDPROC_FUNC* WNDPROC;
 
 // Structure: tagMSG
 typedef struct tagMSG {

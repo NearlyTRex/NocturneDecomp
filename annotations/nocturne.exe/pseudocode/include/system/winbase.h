@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/excpt.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 
 // =============================================================================
@@ -17,8 +18,8 @@ struct _EXCEPTION_POINTERS;
 typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
 
 // Typedef: LPLONG
-// pointer to long
-typedef long* LPLONG;
+// pointer to LONG
+typedef LONG* LPLONG;
 
 // Typedef: LPMEMORYSTATUS
 // pointer to _MEMORYSTATUS
@@ -52,36 +53,35 @@ typedef struct _TIME_ZONE_INFORMATION* LPTIME_ZONE_INFORMATION;
 // pointer to _WIN32_FIND_DATAA
 typedef struct _WIN32_FIND_DATAA* LPWIN32_FIND_DATAA;
 
-// Function Definition: PTHREAD_START_ROUTINE
-typedef DWORD PTHREAD_START_ROUTINE(LPVOID lpThreadParameter);
-
-// Typedef: LPTHREAD_START_ROUTINE
-// pointer to PTHREAD_START_ROUTINE
-typedef PTHREAD_START_ROUTINE LPTHREAD_START_ROUTINE;
-
-// Function Definition: PTOP_LEVEL_EXCEPTION_FILTER
-typedef LONG PTOP_LEVEL_EXCEPTION_FILTER(struct _EXCEPTION_POINTERS* ExceptionInfo);
-
-// Typedef: LPTOP_LEVEL_EXCEPTION_FILTER
-// pointer to PTOP_LEVEL_EXCEPTION_FILTER
-typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
-
-// Typedef: PULONG
-// pointer to ulong
-typedef ulong* PULONG;
-
-// Structure: _FILETIME
-typedef struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
-} _FILETIME;
-
-// Typedef: FILETIME
-typedef _FILETIME FILETIME;
-
 // Typedef: PFILETIME
 // pointer to FILETIME
 typedef FILETIME* PFILETIME;
+
+// Function Definition: PTHREAD_START_ROUTINE_FUNC
+typedef DWORD PTHREAD_START_ROUTINE_FUNC(LPVOID lpThreadParameter);
+
+// Typedef: PTHREAD_START_ROUTINE
+// pointer to PTHREAD_START_ROUTINE_FUNC
+typedef PTHREAD_START_ROUTINE_FUNC* PTHREAD_START_ROUTINE;
+
+// Typedef: LPTHREAD_START_ROUTINE
+// pointer to PTHREAD_START_ROUTINE_FUNC
+typedef PTHREAD_START_ROUTINE LPTHREAD_START_ROUTINE;
+
+// Function Definition: PTOP_LEVEL_EXCEPTION_FILTER_FUNC
+typedef LONGVAL PTOP_LEVEL_EXCEPTION_FILTER_FUNC(struct _EXCEPTION_POINTERS* ExceptionInfo);
+
+// Typedef: PTOP_LEVEL_EXCEPTION_FILTER
+// pointer to PTOP_LEVEL_EXCEPTION_FILTER_FUNC
+typedef PTOP_LEVEL_EXCEPTION_FILTER_FUNC* PTOP_LEVEL_EXCEPTION_FILTER;
+
+// Typedef: LPTOP_LEVEL_EXCEPTION_FILTER
+// pointer to PTOP_LEVEL_EXCEPTION_FILTER_FUNC
+typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
+
+// Typedef: PULONG
+// pointer to ULONG
+typedef ULONG* PULONG;
 
 // Structure: _MEMORYSTATUS
 typedef struct _MEMORYSTATUS {

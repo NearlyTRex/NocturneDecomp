@@ -49,8 +49,8 @@ def delete_annotations(currentProgram, path):
 
 def export_annotations(currentProgram, folder, strict=False, deep_analysis=False,
                        allow_size_mismatch=False, allow_name_address_mismatch=False,
-                       allow_this_ptr_mismatch=False):
-    export_data_types(currentProgram, folder)
+                       allow_this_ptr_mismatch=False, allow_duplicate_data_types=False):
+    export_data_types(currentProgram, folder, allow_duplicates=allow_duplicate_data_types)
     export_functions(currentProgram, folder,
                      allow_name_address_mismatch=allow_name_address_mismatch,
                      allow_this_ptr_mismatch=allow_this_ptr_mismatch)

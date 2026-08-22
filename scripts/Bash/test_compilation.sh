@@ -14,6 +14,7 @@ CFLAGS=(
     -Wno-format-security -Wno-format-extra-args
     -Wincompatible-pointer-types -Wint-conversion
     -Wreturn-type -Wtautological-compare
+    -Werror=sometimes-uninitialized
     -Wunused-variable
 )
 

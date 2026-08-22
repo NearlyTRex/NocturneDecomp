@@ -12,9 +12,9 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
   uint *puVar1;
   int iVar2;
   uint uVar3;
-  HANDLE pvVar4;
+  HANDLE handle_index;
   DWORD dwCreationDisposition;
-  HANDLE hObject;
+  HANDLE pvVar4;
   DWORD unaff_EBX;
   uint uVar5;
   DWORD dwFlagsAndAttributes;
@@ -69,36 +69,37 @@ LAB_0056ba9b:
         dwCreationDisposition = 1;
       }
     }
-    hObject = CreateFileA(filename,local_18,local_1c,&local_28,dwCreationDisposition,
-                          dwFlagsAndAttributes,(HANDLE)0x0);
-    if (hObject == (HANDLE)0xffffffff) {
+    pvVar4 = CreateFileA(filename,local_18,local_1c,&local_28,dwCreationDisposition,
+                         dwFlagsAndAttributes,(HANDLE)0x0);
+    if (pvVar4 == (HANDLE)0xffffffff) {
       if ((access_mode & 0x20) != 0) {
-        hObject = CreateFileA(filename,local_18,local_1c,(LPSECURITY_ATTRIBUTES)0x0,unaff_EBX,
-                              dwFlagsAndAttributes,(HANDLE)0x0);
+        pvVar4 = CreateFileA(filename,local_18,local_1c,(LPSECURITY_ATTRIBUTES)0x0,unaff_EBX,
+                             dwFlagsAndAttributes,(HANDLE)0x0);
       }
-      if (hObject == (HANDLE)0xffffffff) {
+      if (pvVar4 == (HANDLE)0xffffffff) {
         pvVar4 = (HANDLE)__set_errno();
         return pvVar4;
       }
     }
-    pvVar4 = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)(hObject)
-    ;
+    handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)
+                                     (pvVar4);
     uVar5 = 0;
-    if (0x00000014 <= pvVar4) {
-      CloseHandle(hObject);
+    if (0x00000014 <= handle_index) {
+      CloseHandle(pvVar4);
       setErrno(5);
       return (HANDLE)0xffffffff;
     }
-    iVar2 = IsSpecialDevice((int)pvVar4);
+    iVar2 = IsSpecialDevice((int)handle_index);
     if (iVar2 != 0) {
       uVar5 = 0x2000;
     }
   }
   else {
     uVar3 = FUN_0056e208();
-    pvVar4 = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)(uVar3);
+    handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)
+                                     (uVar3);
     uVar5 = 0x2000;
-    (*DAT_005c1d5c)(0,pvVar4,0xffffffff);
+    (*DAT_005c1d5c)(0,handle_index,0xffffffff);
   }
   if (uVar6 == 2) {
     uVar5 = uVar5 | 3;
@@ -118,6 +119,6 @@ LAB_0056ba9b:
   else if ((access_mode & 0x200) == 0) goto LAB_0056bb8d;
   uVar5 = uVar5 | 0x40;
 LAB_0056bb8d:
-  FUN_0056f278(pvVar4,uVar5);
-  return pvVar4;
+  FUN_0056f278(handle_index,uVar5);
+  return handle_index;
 }

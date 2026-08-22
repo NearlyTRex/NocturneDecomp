@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/windef.h"
+#include "system/winnt.h"
 
 // Structure: SVersionControlSession
 // Ghidra size: 0x160 (352 bytes)

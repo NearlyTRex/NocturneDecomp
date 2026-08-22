@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 238,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 114,
     "suspect_count": 11,
     "suspect_types": [
       "unaffected_reg",
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 371
+    "total_lines": 372
   },
   "cross_references": [
     {
@@ -339,7 +339,7 @@
       "line": 69,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "hObject = CreateFileA(filename,local_18,local_1c,(LPSECURITY_ATTRIBUTES)0x0,unaff_EBX,",
+      "text": "pvVar4 = CreateFileA(filename,local_18,local_1c,(LPSECURITY_ATTRIBUTES)0x0,unaff_EBX,",
       "type": "unaffected_reg"
     },
     {
@@ -347,7 +347,7 @@
       "line": 77,
       "match": "code *",
       "severity": "moderate",
-      "text": "pvVar4 = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)(hObject)",
+      "text": "handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)",
       "type": "unresolved_funcptr"
     },
     {
@@ -355,15 +355,15 @@
       "line": 92,
       "match": "code *",
       "severity": "moderate",
-      "text": "pvVar4 = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)(uVar3);",
+      "text": "handle_index = (HANDLE)(*(code *)PTR_crt_io_c_register_handler_wrapper_FUN_005671e8_005c1ac8)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_005c1d5c",
       "severity": "mild",
-      "text": "(*DAT_005c1d5c)(0,pvVar4,0xffffffff);",
+      "text": "(*DAT_005c1d5c)(0,handle_index,0xffffffff);",
       "type": "undefined_data"
     }
   ]

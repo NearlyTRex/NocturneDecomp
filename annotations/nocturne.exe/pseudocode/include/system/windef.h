@@ -2,14 +2,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/winbase.h"
 
 // =============================================================================
 // WINDEF - System Header
 // =============================================================================
 
-// Function Definition: FARPROC
-typedef int FARPROC(void);
+// Function Definition: FARPROC_FUNC
+typedef int FARPROC_FUNC(void);
+
+// Typedef: FARPROC
+// pointer to FARPROC_FUNC
+typedef FARPROC_FUNC* FARPROC;
 
 // Typedef: HBITMAP
 // pointer to HBITMAP__
@@ -141,6 +144,15 @@ typedef HANDLE* PHANDLE;
 // Typedef: PHKEY
 // pointer to HKEY
 typedef HKEY* PHKEY;
+
+// Structure: _FILETIME
+typedef struct _FILETIME {
+    DWORD dwLowDateTime;
+    DWORD dwHighDateTime;
+} _FILETIME;
+
+// Typedef: FILETIME
+typedef _FILETIME FILETIME;
 
 // Structure: tagPOINT
 typedef struct tagPOINT {

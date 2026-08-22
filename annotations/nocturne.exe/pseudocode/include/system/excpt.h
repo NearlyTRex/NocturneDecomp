@@ -9,7 +9,6 @@
 // =============================================================================
 
 // Structure: _CONTEXT
-#pragma pack(push, 4)
 typedef struct _CONTEXT {
     DWORD ContextFlags;
     DWORD Dr0;
@@ -37,7 +36,6 @@ typedef struct _CONTEXT {
     DWORD SegSs;
     BYTE ExtendedRegisters[512];
 } _CONTEXT;
-#pragma pack(pop)
 
 // Structure: _EXCEPTION_RECORD
 typedef struct _EXCEPTION_RECORD {

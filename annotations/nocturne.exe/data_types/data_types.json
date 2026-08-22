@@ -2097,6 +2097,10 @@
       "type":"struct"
     },
     {
+      "name":"FARPROC_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"FARPROC",
       "type":"typedef"
     },
@@ -2749,6 +2753,10 @@
       "type":"typedef"
     },
     {
+      "name":"LONGVAL",
+      "type":"typedef"
+    },
+    {
       "name":"LONG_PTR",
       "type":"typedef"
     },
@@ -3013,6 +3021,10 @@
       "type":"typedef"
     },
     {
+      "name":"PHANDLER_ROUTINE_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"PHANDLER_ROUTINE",
       "type":"typedef"
     },
@@ -3027,6 +3039,10 @@
     {
       "name":"PLONG",
       "type":"typedef"
+    },
+    {
+      "name":"PTHREAD_START_ROUTINE_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"PTHREAD_START_ROUTINE",
@@ -4665,7 +4681,7 @@
       "type":"typedef"
     },
     {
-      "name":"EXCEPTION_ROUTINE",
+      "name":"EXCEPTION_ROUTINE_FUNC",
       "type":"function_definition"
     },
     {
@@ -4675,6 +4691,10 @@
     {
       "name":"EXCEPTION_REGISTRATION_RECORD",
       "type":"struct"
+    },
+    {
+      "name":"PTOP_LEVEL_EXCEPTION_FILTER_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"PTOP_LEVEL_EXCEPTION_FILTER",
@@ -15482,7 +15502,7 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/System/winnt.h",
       "importable":true,
-      "name":"EXCEPTION_ROUTINE",
+      "name":"EXCEPTION_ROUTINE_FUNC",
       "parameters":[
         {
           "name":"ExceptionRecord",
@@ -15505,10 +15525,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/windef.h",
       "importable":true,
-      "name":"FARPROC",
+      "name":"FARPROC_FUNC",
       "parameters":[],
       "return_type":"int",
       "type":"function_definition"
@@ -18434,10 +18454,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wincon.h",
       "importable":true,
-      "name":"PHANDLER_ROUTINE",
+      "name":"PHANDLER_ROUTINE_FUNC",
       "parameters":[
         {
           "name":"CtrlType",
@@ -18448,10 +18468,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winbase.h",
       "importable":true,
-      "name":"PTHREAD_START_ROUTINE",
+      "name":"PTHREAD_START_ROUTINE_FUNC",
       "parameters":[
         {
           "name":"lpThreadParameter",
@@ -18462,17 +18482,17 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winbase.h",
       "importable":true,
-      "name":"PTOP_LEVEL_EXCEPTION_FILTER",
+      "name":"PTOP_LEVEL_EXCEPTION_FILTER_FUNC",
       "parameters":[
         {
           "name":"ExceptionInfo",
           "type":"_EXCEPTION_POINTERS*"
         }
       ],
-      "return_type":"LONG",
+      "return_type":"LONGVAL",
       "type":"function_definition"
     },
     {
@@ -18599,32 +18619,6 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
-      "cat":"/Nocturne/FunctionDefinition/System/winuser.h",
-      "importable":true,
-      "name":"WNDPROC",
-      "parameters":[
-        {
-          "name":"param0",
-          "type":"HWND"
-        },
-        {
-          "name":"param1",
-          "type":"UINT"
-        },
-        {
-          "name":"param2",
-          "type":"WPARAM"
-        },
-        {
-          "name":"param3",
-          "type":"LPARAM"
-        }
-      ],
-      "return_type":"LRESULT",
-      "type":"function_definition"
-    },
-    {
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/winuser.h",
       "importable":true,
@@ -18655,168 +18649,6 @@
     {
       "alig":4,
       "cat":"/Nocturne/Struct/System/excpt.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"ContextFlags",
-          "offset":0,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr0",
-          "offset":4,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr1",
-          "offset":8,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr2",
-          "offset":12,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr3",
-          "offset":16,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr6",
-          "offset":20,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Dr7",
-          "offset":24,
-          "type":"DWORD"
-        },
-        {
-          "len":112,
-          "name":"FloatSave",
-          "offset":28,
-          "type":"FLOATING_SAVE_AREA"
-        },
-        {
-          "len":4,
-          "name":"SegGs",
-          "offset":140,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"SegFs",
-          "offset":144,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"SegEs",
-          "offset":148,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"SegDs",
-          "offset":152,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Edi",
-          "offset":156,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Esi",
-          "offset":160,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Ebx",
-          "offset":164,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Edx",
-          "offset":168,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Ecx",
-          "offset":172,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Eax",
-          "offset":176,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Ebp",
-          "offset":180,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Eip",
-          "offset":184,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"SegCs",
-          "offset":188,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"EFlags",
-          "offset":192,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"Esp",
-          "offset":196,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"SegSs",
-          "offset":200,
-          "type":"DWORD"
-        },
-        {
-          "len":512,
-          "name":"ExtendedRegisters",
-          "offset":204,
-          "type":"BYTE[512]"
-        }
-      ],
-      "importable":true,
-      "len":716,
-      "name":"_CONTEXT",
-      "pack":true,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/winnt.h",
       "desc":"",
       "fields":[
         {
@@ -19154,30 +18986,6 @@
       "len":26,
       "name":"_FILE",
       "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/winbase.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"dwLowDateTime",
-          "offset":0,
-          "type":"DWORD"
-        },
-        {
-          "len":4,
-          "name":"dwHighDateTime",
-          "offset":4,
-          "type":"DWORD"
-        }
-      ],
-      "importable":true,
-      "len":8,
-      "name":"_FILETIME",
-      "pack":true,
       "type":"struct"
     },
     {
@@ -43253,24 +43061,6 @@
     },
     {
       "alig":4,
-      "cat":"/Nocturne/Struct/System/winuser.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unused",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"HBITMAP__",
-      "pack":true,
-      "type":"struct"
-    },
-    {
-      "alig":4,
       "cat":"/Nocturne/Struct/System/windef.h",
       "desc":"",
       "fields":[
@@ -43290,24 +43080,6 @@
     {
       "alig":4,
       "cat":"/Nocturne/Struct/System/windef.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unused",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"HDC__",
-      "pack":true,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/wingdi.h",
       "desc":"",
       "fields":[
         {
@@ -43464,24 +43236,6 @@
     {
       "alig":4,
       "cat":"/Nocturne/Struct/System/windef.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"unused",
-          "offset":0,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":4,
-      "name":"HFONT__",
-      "pack":true,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/winuser.h",
       "desc":"",
       "fields":[
         {
@@ -56462,42 +56216,6 @@
       "type":"struct"
     },
     {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/wingdi.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
-          "name":"left",
-          "offset":0,
-          "type":"LONG"
-        },
-        {
-          "len":4,
-          "name":"top",
-          "offset":4,
-          "type":"LONG"
-        },
-        {
-          "len":4,
-          "name":"right",
-          "offset":8,
-          "type":"LONG"
-        },
-        {
-          "len":4,
-          "name":"bottom",
-          "offset":12,
-          "type":"LONG"
-        }
-      ],
-      "importable":true,
-      "len":16,
-      "name":"tagRECT",
-      "pack":true,
-      "type":"struct"
-    },
-    {
       "alig":1,
       "cat":"/Nocturne/Struct/System/wingdi.h",
       "desc":"",
@@ -58870,13 +58588,6 @@
     },
     {
       "base":"char",
-      "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"CHAR",
-      "type":"typedef"
-    },
-    {
-      "base":"char",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"CHAR",
@@ -60564,13 +60275,6 @@
       "type":"typedef"
     },
     {
-      "base":"ULONG_PTR",
-      "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"DWORD_PTR",
-      "type":"typedef"
-    },
-    {
       "base":"_EXCEPTION_RECORD",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
@@ -60578,18 +60282,11 @@
       "type":"typedef"
     },
     {
-      "base":"FARPROC*",
+      "base":"FARPROC_FUNC*",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "function_definition":"FARPROC",
+      "function_definition":"FARPROC_FUNC",
       "importable":true,
       "name":"FARPROC",
-      "type":"typedef"
-    },
-    {
-      "base":"_FILETIME",
-      "cat":"/Nocturne/Typedef/System/winbase.h",
-      "importable":true,
-      "name":"FILETIME",
       "type":"typedef"
     },
     {
@@ -60622,13 +60319,6 @@
     },
     {
       "base":"void*",
-      "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"HANDLE",
-      "type":"typedef"
-    },
-    {
-      "base":"void*",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"HANDLE",
@@ -60637,13 +60327,6 @@
     {
       "base":"HBITMAP__*",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"HBITMAP",
-      "type":"typedef"
-    },
-    {
-      "base":"HBITMAP__*",
-      "cat":"/Nocturne/Typedef/System/winuser.h",
       "importable":true,
       "name":"HBITMAP",
       "type":"typedef"
@@ -60670,22 +60353,8 @@
       "type":"typedef"
     },
     {
-      "base":"HDC__*",
-      "cat":"/Nocturne/Typedef/System/wingdi.h",
-      "importable":true,
-      "name":"HDC",
-      "type":"typedef"
-    },
-    {
       "base":"HFONT__*",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"HFONT",
-      "type":"typedef"
-    },
-    {
-      "base":"HFONT__*",
-      "cat":"/Nocturne/Typedef/System/winuser.h",
       "importable":true,
       "name":"HFONT",
       "type":"typedef"
@@ -60698,22 +60367,8 @@
       "type":"typedef"
     },
     {
-      "base":"void*",
-      "cat":"/Nocturne/Typedef/System/wingdi.h",
-      "importable":true,
-      "name":"HGDIOBJ",
-      "type":"typedef"
-    },
-    {
       "base":"HANDLE",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"HGLOBAL",
-      "type":"typedef"
-    },
-    {
-      "base":"HANDLE",
-      "cat":"/Nocturne/Typedef/System/wingdi.h",
       "importable":true,
       "name":"HGLOBAL",
       "type":"typedef"
@@ -60824,29 +60479,15 @@
       "type":"typedef"
     },
     {
-      "base":"long",
-      "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"LONG",
-      "type":"typedef"
-    },
-    {
-      "base":"long",
+      "base":"int",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LONG",
       "type":"typedef"
     },
     {
-      "base":"long",
+      "base":"LONG",
       "cat":"/Nocturne/Typedef/System/basetsd.h",
-      "importable":true,
-      "name":"LONG_PTR",
-      "type":"typedef"
-    },
-    {
-      "base":"long",
-      "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"LONG_PTR",
       "type":"typedef"
@@ -60856,6 +60497,13 @@
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LONGLONG",
+      "type":"typedef"
+    },
+    {
+      "base":"LONG",
+      "cat":"/Nocturne/Typedef/System/winnt.h",
+      "importable":true,
+      "name":"LONGVAL",
       "type":"typedef"
     },
     {
@@ -60896,13 +60544,6 @@
     {
       "base":"PRTL_CRITICAL_SECTION",
       "cat":"/Nocturne/Typedef/System/winbase.h",
-      "importable":true,
-      "name":"LPCRITICAL_SECTION",
-      "type":"typedef"
-    },
-    {
-      "base":"PRTL_CRITICAL_SECTION",
-      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPCRITICAL_SECTION",
       "type":"typedef"
@@ -61106,7 +60747,7 @@
       "type":"typedef"
     },
     {
-      "base":"long*",
+      "base":"LONG*",
       "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"LPLONG",
@@ -61194,13 +60835,6 @@
     {
       "base":"CHAR*",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"LPSTR",
-      "type":"typedef"
-    },
-    {
-      "base":"CHAR*",
-      "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
       "name":"LPSTR",
       "type":"typedef"
@@ -61318,13 +60952,6 @@
       "type":"typedef"
     },
     {
-      "base":"LONG_PTR",
-      "cat":"/Nocturne/Typedef/System/winnt.h",
-      "importable":true,
-      "name":"LRESULT",
-      "type":"typedef"
-    },
-    {
       "base":"LONG",
       "cat":"/Nocturne/Typedef/System/winreg.h",
       "importable":true,
@@ -61396,9 +61023,9 @@
       "type":"typedef"
     },
     {
-      "base":"EXCEPTION_ROUTINE*",
+      "base":"EXCEPTION_ROUTINE_FUNC*",
       "cat":"/Nocturne/Typedef/System/winnt.h",
-      "function_definition":"EXCEPTION_ROUTINE",
+      "function_definition":"EXCEPTION_ROUTINE_FUNC",
       "importable":true,
       "name":"PEXCEPTION_ROUTINE",
       "type":"typedef"
@@ -61418,9 +61045,9 @@
       "type":"typedef"
     },
     {
-      "base":"PHANDLER_ROUTINE*",
+      "base":"PHANDLER_ROUTINE_FUNC*",
       "cat":"/Nocturne/Typedef/System/wincon.h",
-      "function_definition":"PHANDLER_ROUTINE",
+      "function_definition":"PHANDLER_ROUTINE_FUNC",
       "importable":true,
       "name":"PHANDLER_ROUTINE",
       "type":"typedef"
@@ -61496,23 +61123,23 @@
       "type":"typedef"
     },
     {
-      "base":"PTHREAD_START_ROUTINE*",
+      "base":"PTHREAD_START_ROUTINE_FUNC*",
       "cat":"/Nocturne/Typedef/System/winbase.h",
-      "function_definition":"PTHREAD_START_ROUTINE",
+      "function_definition":"PTHREAD_START_ROUTINE_FUNC",
       "importable":true,
       "name":"PTHREAD_START_ROUTINE",
       "type":"typedef"
     },
     {
-      "base":"PTOP_LEVEL_EXCEPTION_FILTER*",
+      "base":"PTOP_LEVEL_EXCEPTION_FILTER_FUNC*",
       "cat":"/Nocturne/Typedef/System/winbase.h",
-      "function_definition":"PTOP_LEVEL_EXCEPTION_FILTER",
+      "function_definition":"PTOP_LEVEL_EXCEPTION_FILTER_FUNC",
       "importable":true,
       "name":"PTOP_LEVEL_EXCEPTION_FILTER",
       "type":"typedef"
     },
     {
-      "base":"ulong*",
+      "base":"ULONG*",
       "cat":"/Nocturne/Typedef/System/winbase.h",
       "importable":true,
       "name":"PULONG",
@@ -61536,13 +61163,6 @@
     {
       "base":"tagRECT",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"RECT",
-      "type":"typedef"
-    },
-    {
-      "base":"tagRECT",
-      "cat":"/Nocturne/Typedef/System/wingdi.h",
       "importable":true,
       "name":"RECT",
       "type":"typedef"
@@ -61639,13 +61259,6 @@
       "type":"typedef"
     },
     {
-      "base":"ULONG_PTR",
-      "cat":"/Nocturne/Typedef/System/windef.h",
-      "importable":true,
-      "name":"SIZE_T",
-      "type":"typedef"
-    },
-    {
       "base":"MessageHandlerFunc*",
       "cat":"/Nocturne/Typedef/Game",
       "function_definition":"MessageHandlerFunc",
@@ -61712,15 +61325,8 @@
       "type":"typedef"
     },
     {
-      "base":"uint",
+      "base":"UINT",
       "cat":"/Nocturne/Typedef/System/basetsd.h",
-      "importable":true,
-      "name":"UINT_PTR",
-      "type":"typedef"
-    },
-    {
-      "base":"uint",
-      "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"UINT_PTR",
       "type":"typedef"
@@ -61733,22 +61339,15 @@
       "type":"typedef"
     },
     {
-      "base":"ulong",
+      "base":"UINT",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"ULONG",
       "type":"typedef"
     },
     {
-      "base":"ulong",
+      "base":"ULONG",
       "cat":"/Nocturne/Typedef/System/basetsd.h",
-      "importable":true,
-      "name":"ULONG_PTR",
-      "type":"typedef"
-    },
-    {
-      "base":"ulong",
-      "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
       "name":"ULONG_PTR",
       "type":"typedef"

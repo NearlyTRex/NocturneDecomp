@@ -22,6 +22,76 @@ from ghidra.program.model.data import Union
 from ghidra.program.model.data import UnionDataType
 from ghidra.util.task import TaskMonitor
 
+class DuplicateDataTypeError(Exception):
+    """Two data types in one program share a name."""
+
+# The categories data_types.json buckets types into. Kept in one place so the
+# duplicate check can never drift out of sync with what export writes.
+DATA_TYPE_KINDS = ("structs", "unions", "enums", "typedefs", "function_definitions")
+
+def find_duplicate_data_types(data_types):
+    """Return report lines for every name defined more than once in this program.
+
+    A data type's name is its identity everywhere downstream: the exporter keys
+    the dependency graph, the apply order and the importable markings by name,
+    and headers.py emits one C declaration per name. So two types sharing a name
+    is never a difference of opinion between two headers -- it is one definition
+    silently winning and the other being dropped, with which one wins decided by
+    dict insertion order rather than by anything a human chose.
+
+    They accumulate: a duplicate that survives an export is re-imported by
+    import_datatypes.py, which re-creates both copies, so the pair breeds rather
+    than settling. Three shapes are reported, all of them defects:
+
+      * same name twice inside one kind -- the windows.h family does this to
+        itself (LONG in both windef.h and winnt.h), and deduping in Ghidra
+        re-points the dependents at the *base* type rather than at the surviving
+        typedef, which is how `LONG lPitch` becomes `long lPitch` and grows to
+        8 bytes on the 64-bit lane.
+      * the same name in two kinds -- a standalone function definition named
+        exactly like the typedef that points at it (nocturne's FARPROC typedef
+        has base FARPROC*, referring to itself). Typedef-referenced function
+        definitions get renamed to <name>_FUNC by get_function_definition_name;
+        standalone ones keep the raw Ghidra name and collide.
+      * a Ghidra ".conflict" suffix -- the type manager's own marker for a name
+        it could not resolve, which must never reach an export.
+    """
+    reports = []
+
+    # Same name twice within one kind
+    for kind in DATA_TYPE_KINDS:
+        by_name = defaultdict(list)
+        for entry in data_types.get(kind, []):
+            by_name[entry.get("name")].append(entry.get("cat", "<no category>"))
+        for name in sorted(by_name):
+            cats = by_name[name]
+            if len(cats) > 1:
+                reports.append("%s: '%s' defined %d times in %s"
+                               % (kind, name, len(cats), ", ".join(sorted(cats))))
+
+    # Same name in more than one kind
+    kinds_by_name = defaultdict(set)
+    cats_by_name = defaultdict(list)
+    for kind in DATA_TYPE_KINDS:
+        for entry in data_types.get(kind, []):
+            kinds_by_name[entry.get("name")].add(kind)
+            cats_by_name[entry.get("name")].append("%s@%s" % (kind, entry.get("cat", "?")))
+    for name in sorted(kinds_by_name):
+        if len(kinds_by_name[name]) > 1:
+            reports.append("cross-kind: '%s' is both %s -- %s"
+                           % (name, " and ".join(sorted(kinds_by_name[name])),
+                              ", ".join(sorted(cats_by_name[name]))))
+
+    # Ghidra's own unresolved-name marker
+    for kind in DATA_TYPE_KINDS:
+        for entry in data_types.get(kind, []):
+            name = entry.get("name") or ""
+            if ".conflict" in name:
+                reports.append("%s: '%s' carries a Ghidra .conflict suffix (%s)"
+                               % (kind, name, entry.get("cat", "?")))
+
+    return reports
+
 def add_or_update_data_type(currentProgram, new_data_type):
     dtm = currentProgram.getDataTypeManager()
     tx_id = currentProgram.startTransaction("Add or Update Data Type")
@@ -924,7 +994,13 @@ def import_data_types(currentProgram, path):
     else:
         log_info("All field types resolved successfully")
 
-def export_data_types(currentProgram, path):
+def export_data_types(currentProgram, path, allow_duplicates = False):
+    """Export the program's data type database to data_types/data_types.json.
+
+    Fails the export when two data types share a name -- see
+    find_duplicate_data_types for why that is a defect rather than a nuisance.
+    Pass allow_duplicates to downgrade it to the report.
+    """
 
     # Load existing data types to preserve importable markings
     existing_importable = {}
@@ -1316,6 +1392,34 @@ def export_data_types(currentProgram, path):
 
     # Export function conventions lookup for ESP tracking
     export_func_conventions(currentProgram, path)
+
+    # Duplicate name check. Reported unconditionally so a clean run states the
+    # count rather than staying silent, which is what lets a count creep up
+    # unnoticed between exports.
+    duplicates = find_duplicate_data_types(data_types)
+    log_info("=" * 60)
+    log_info("DUPLICATE DATA TYPE CHECK")
+    log_info("  %d name(s) defined more than once" % len(duplicates))
+    # log_info, not log_error: log_error calls sys.exit(1), so looping over it
+    # would kill the run on the first line and print one duplicate out of N.
+    # The raise below is what fails the export, and it carries the whole list.
+    for msg in duplicates:
+        log_info("  DUPLICATE: " + msg)
+    log_info("=" * 60)
+
+    # The JSON above is written even when this fails: it is the evidence you
+    # grep to find which category each copy came from. But the export exits
+    # non-zero, because every downstream consumer -- the dependency graph, the
+    # apply order, the emitted headers -- assumes one definition per name, and
+    # re-importing a duplicated file re-creates both copies.
+    if duplicates and not allow_duplicates:
+        raise DuplicateDataTypeError(
+            "Duplicate data types: %d name(s) are defined more than once in %s. "
+            "Delete the redundant copy in Ghidra (and re-point its dependents at "
+            "the survivor -- deleting a typedef re-points them at its base type "
+            "instead), or pass --allow-duplicate-data-types to export anyway.\n"
+            % (len(duplicates), currentProgram.getName())
+            + "\n".join(duplicates))
 
 
 def export_func_conventions(currentProgram, path):
