@@ -7,8 +7,12 @@
 // WINDEF - System Header
 // =============================================================================
 
-// Function Definition: FARPROC
-typedef int FARPROC(void);
+// Function Definition: FARPROC_FUNC
+typedef int FARPROC_FUNC(void);
+
+// Typedef: FARPROC
+// pointer to FARPROC_FUNC
+typedef FARPROC_FUNC* FARPROC;
 
 // Typedef: HDC
 // pointer to HDC__

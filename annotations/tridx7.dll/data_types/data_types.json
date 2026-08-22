@@ -117,6 +117,10 @@
       "type":"union"
     },
     {
+      "name":"FARPROC_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"FARPROC",
       "type":"typedef"
     },
@@ -883,6 +887,10 @@
     {
       "name":"PCNZCH",
       "type":"typedef"
+    },
+    {
+      "name":"PHANDLER_ROUTINE_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"PHANDLER_ROUTINE",
@@ -1759,10 +1767,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/windef.h",
       "importable":true,
-      "name":"FARPROC",
+      "name":"FARPROC_FUNC",
       "parameters":[],
       "return_type":"int",
       "type":"function_definition"
@@ -4974,10 +4982,10 @@
       "type":"function_definition"
     },
     {
-      "calling_convention":"unknown",
+      "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/wincon.h",
       "importable":true,
-      "name":"PHANDLER_ROUTINE",
+      "name":"PHANDLER_ROUTINE_FUNC",
       "parameters":[
         {
           "name":"CtrlType",
@@ -12363,9 +12371,9 @@
       "type":"typedef"
     },
     {
-      "base":"FARPROC*",
+      "base":"FARPROC_FUNC*",
       "cat":"/Nocturne/Typedef/System/windef.h",
-      "function_definition":"FARPROC",
+      "function_definition":"FARPROC_FUNC",
       "importable":true,
       "name":"FARPROC",
       "type":"typedef"
@@ -12721,9 +12729,9 @@
       "type":"typedef"
     },
     {
-      "base":"PHANDLER_ROUTINE*",
+      "base":"PHANDLER_ROUTINE_FUNC*",
       "cat":"/Nocturne/Typedef/System/wincon.h",
-      "function_definition":"PHANDLER_ROUTINE",
+      "function_definition":"PHANDLER_ROUTINE_FUNC",
       "importable":true,
       "name":"PHANDLER_ROUTINE",
       "type":"typedef"
