@@ -128,8 +128,7 @@ LAB_0044e087:
         else {
           core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                     (&light_source->base,input_ptr,&local_70);
-          local_64.x = local_70.x;
-          local_64.y = local_70.y;
+          local_64 = local_70;
           if (local_70.z < 1) goto LAB_0044e06f;
           *piVar4 = local_70.z - local_40;
           puVar4 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270
