@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: wincon
-// Structs : 15
+// Structs : 8
 
 #include "nocturne.h"
 
@@ -35,33 +35,11 @@ static_assert(__builtin_offsetof(_COORD, X) == 0,
 static_assert(__builtin_offsetof(_COORD, Y) == 2,
               "offsetof(_COORD, Y) != 2");
 
-// ---- _COORD (4 bytes) ----
-static_assert(sizeof(_COORD) == 4,
-              "sizeof(_COORD) != 4");
-static_assert(__builtin_offsetof(_COORD, X) == 0,
-              "offsetof(_COORD, X) != 0");
-static_assert(__builtin_offsetof(_COORD, Y) == 2,
-              "offsetof(_COORD, Y) != 2");
-
 // ---- _FOCUS_EVENT_RECORD (4 bytes) ----
 static_assert(sizeof(_FOCUS_EVENT_RECORD) == 4,
               "sizeof(_FOCUS_EVENT_RECORD) != 4");
 static_assert(__builtin_offsetof(_FOCUS_EVENT_RECORD, bSetFocus) == 0,
               "offsetof(_FOCUS_EVENT_RECORD, bSetFocus) != 0");
-
-// ---- _FOCUS_EVENT_RECORD (4 bytes) ----
-static_assert(sizeof(_FOCUS_EVENT_RECORD) == 4,
-              "sizeof(_FOCUS_EVENT_RECORD) != 4");
-static_assert(__builtin_offsetof(_FOCUS_EVENT_RECORD, bSetFocus) == 0,
-              "offsetof(_FOCUS_EVENT_RECORD, bSetFocus) != 0");
-
-// ---- _INPUT_RECORD (20 bytes) ----
-static_assert(sizeof(_INPUT_RECORD) == 20,
-              "sizeof(_INPUT_RECORD) != 20");
-static_assert(__builtin_offsetof(_INPUT_RECORD, EventType) == 0,
-              "offsetof(_INPUT_RECORD, EventType) != 0");
-static_assert(__builtin_offsetof(_INPUT_RECORD, Event) == 4,
-              "offsetof(_INPUT_RECORD, Event) != 4");
 
 // ---- _INPUT_RECORD (20 bytes) ----
 static_assert(sizeof(_INPUT_RECORD) == 20,
@@ -87,28 +65,6 @@ static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, uChar) == 10,
 static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, dwControlKeyState) == 12,
               "offsetof(_KEY_EVENT_RECORD, dwControlKeyState) != 12");
 
-// ---- _KEY_EVENT_RECORD (16 bytes) ----
-static_assert(sizeof(_KEY_EVENT_RECORD) == 16,
-              "sizeof(_KEY_EVENT_RECORD) != 16");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, bKeyDown) == 0,
-              "offsetof(_KEY_EVENT_RECORD, bKeyDown) != 0");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, wRepeatCount) == 4,
-              "offsetof(_KEY_EVENT_RECORD, wRepeatCount) != 4");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, wVirtualKeyCode) == 6,
-              "offsetof(_KEY_EVENT_RECORD, wVirtualKeyCode) != 6");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, wVirtualScanCode) == 8,
-              "offsetof(_KEY_EVENT_RECORD, wVirtualScanCode) != 8");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, uChar) == 10,
-              "offsetof(_KEY_EVENT_RECORD, uChar) != 10");
-static_assert(__builtin_offsetof(_KEY_EVENT_RECORD, dwControlKeyState) == 12,
-              "offsetof(_KEY_EVENT_RECORD, dwControlKeyState) != 12");
-
-// ---- _MENU_EVENT_RECORD (4 bytes) ----
-static_assert(sizeof(_MENU_EVENT_RECORD) == 4,
-              "sizeof(_MENU_EVENT_RECORD) != 4");
-static_assert(__builtin_offsetof(_MENU_EVENT_RECORD, dwCommandId) == 0,
-              "offsetof(_MENU_EVENT_RECORD, dwCommandId) != 0");
-
 // ---- _MENU_EVENT_RECORD (4 bytes) ----
 static_assert(sizeof(_MENU_EVENT_RECORD) == 4,
               "sizeof(_MENU_EVENT_RECORD) != 4");
@@ -126,24 +82,6 @@ static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwControlKeyState) == 8,
               "offsetof(_MOUSE_EVENT_RECORD, dwControlKeyState) != 8");
 static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwEventFlags) == 12,
               "offsetof(_MOUSE_EVENT_RECORD, dwEventFlags) != 12");
-
-// ---- _MOUSE_EVENT_RECORD (16 bytes) ----
-static_assert(sizeof(_MOUSE_EVENT_RECORD) == 16,
-              "sizeof(_MOUSE_EVENT_RECORD) != 16");
-static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwMousePosition) == 0,
-              "offsetof(_MOUSE_EVENT_RECORD, dwMousePosition) != 0");
-static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwButtonState) == 4,
-              "offsetof(_MOUSE_EVENT_RECORD, dwButtonState) != 4");
-static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwControlKeyState) == 8,
-              "offsetof(_MOUSE_EVENT_RECORD, dwControlKeyState) != 8");
-static_assert(__builtin_offsetof(_MOUSE_EVENT_RECORD, dwEventFlags) == 12,
-              "offsetof(_MOUSE_EVENT_RECORD, dwEventFlags) != 12");
-
-// ---- _WINDOW_BUFFER_SIZE_RECORD (4 bytes) ----
-static_assert(sizeof(_WINDOW_BUFFER_SIZE_RECORD) == 4,
-              "sizeof(_WINDOW_BUFFER_SIZE_RECORD) != 4");
-static_assert(__builtin_offsetof(_WINDOW_BUFFER_SIZE_RECORD, dwSize) == 0,
-              "offsetof(_WINDOW_BUFFER_SIZE_RECORD, dwSize) != 0");
 
 // ---- _WINDOW_BUFFER_SIZE_RECORD (4 bytes) ----
 static_assert(sizeof(_WINDOW_BUFFER_SIZE_RECORD) == 4,

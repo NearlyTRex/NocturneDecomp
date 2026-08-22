@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: wingdi
-// Structs : 11
+// Structs : 4
 
 #include "nocturne.h"
 
@@ -15,12 +15,6 @@
 
 namespace nocturne_layout_wingdi {
 
-// ---- HDC__ (4 bytes) ----
-static_assert(sizeof(HDC__) == 4,
-              "sizeof(HDC__) != 4");
-static_assert(__builtin_offsetof(HDC__, unused) == 0,
-              "offsetof(HDC__, unused) != 0");
-
 // ---- tagBITMAPINFO (44 bytes) ----
 static_assert(sizeof(tagBITMAPINFO) == 44,
               "sizeof(tagBITMAPINFO) != 44");
@@ -28,40 +22,6 @@ static_assert(__builtin_offsetof(tagBITMAPINFO, bmiHeader) == 0,
               "offsetof(tagBITMAPINFO, bmiHeader) != 0");
 static_assert(__builtin_offsetof(tagBITMAPINFO, bmiColors) == 40,
               "offsetof(tagBITMAPINFO, bmiColors) != 40");
-
-// ---- tagBITMAPINFO (44 bytes) ----
-static_assert(sizeof(tagBITMAPINFO) == 44,
-              "sizeof(tagBITMAPINFO) != 44");
-static_assert(__builtin_offsetof(tagBITMAPINFO, bmiHeader) == 0,
-              "offsetof(tagBITMAPINFO, bmiHeader) != 0");
-static_assert(__builtin_offsetof(tagBITMAPINFO, bmiColors) == 40,
-              "offsetof(tagBITMAPINFO, bmiColors) != 40");
-
-// ---- tagBITMAPINFOHEADER (40 bytes) ----
-static_assert(sizeof(tagBITMAPINFOHEADER) == 40,
-              "sizeof(tagBITMAPINFOHEADER) != 40");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biSize) == 0,
-              "offsetof(tagBITMAPINFOHEADER, biSize) != 0");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biWidth) == 4,
-              "offsetof(tagBITMAPINFOHEADER, biWidth) != 4");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biHeight) == 8,
-              "offsetof(tagBITMAPINFOHEADER, biHeight) != 8");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biPlanes) == 12,
-              "offsetof(tagBITMAPINFOHEADER, biPlanes) != 12");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biBitCount) == 14,
-              "offsetof(tagBITMAPINFOHEADER, biBitCount) != 14");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biCompression) == 16,
-              "offsetof(tagBITMAPINFOHEADER, biCompression) != 16");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biSizeImage) == 20,
-              "offsetof(tagBITMAPINFOHEADER, biSizeImage) != 20");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biXPelsPerMeter) == 24,
-              "offsetof(tagBITMAPINFOHEADER, biXPelsPerMeter) != 24");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biYPelsPerMeter) == 28,
-              "offsetof(tagBITMAPINFOHEADER, biYPelsPerMeter) != 28");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biClrUsed) == 32,
-              "offsetof(tagBITMAPINFOHEADER, biClrUsed) != 32");
-static_assert(__builtin_offsetof(tagBITMAPINFOHEADER, biClrImportant) == 36,
-              "offsetof(tagBITMAPINFOHEADER, biClrImportant) != 36");
 
 // ---- tagBITMAPINFOHEADER (40 bytes) ----
 static_assert(sizeof(tagBITMAPINFOHEADER) == 40,
@@ -99,28 +59,6 @@ static_assert(__builtin_offsetof(tagLOGBRUSH, lbColor) == 4,
 static_assert(__builtin_offsetof(tagLOGBRUSH, lbHatch) == 8,
               "offsetof(tagLOGBRUSH, lbHatch) != 8");
 
-// ---- tagLOGBRUSH (12 bytes) ----
-static_assert(sizeof(tagLOGBRUSH) == 12,
-              "sizeof(tagLOGBRUSH) != 12");
-static_assert(__builtin_offsetof(tagLOGBRUSH, lbStyle) == 0,
-              "offsetof(tagLOGBRUSH, lbStyle) != 0");
-static_assert(__builtin_offsetof(tagLOGBRUSH, lbColor) == 4,
-              "offsetof(tagLOGBRUSH, lbColor) != 4");
-static_assert(__builtin_offsetof(tagLOGBRUSH, lbHatch) == 8,
-              "offsetof(tagLOGBRUSH, lbHatch) != 8");
-
-// ---- tagRECT (16 bytes) ----
-static_assert(sizeof(tagRECT) == 16,
-              "sizeof(tagRECT) != 16");
-static_assert(__builtin_offsetof(tagRECT, left) == 0,
-              "offsetof(tagRECT, left) != 0");
-static_assert(__builtin_offsetof(tagRECT, top) == 4,
-              "offsetof(tagRECT, top) != 4");
-static_assert(__builtin_offsetof(tagRECT, right) == 8,
-              "offsetof(tagRECT, right) != 8");
-static_assert(__builtin_offsetof(tagRECT, bottom) == 12,
-              "offsetof(tagRECT, bottom) != 12");
-
 // ---- tagRGBQUAD (4 bytes) ----
 static_assert(sizeof(tagRGBQUAD) == 4,
               "sizeof(tagRGBQUAD) != 4");
@@ -132,26 +70,6 @@ static_assert(__builtin_offsetof(tagRGBQUAD, rgbRed) == 2,
               "offsetof(tagRGBQUAD, rgbRed) != 2");
 static_assert(__builtin_offsetof(tagRGBQUAD, rgbReserved) == 3,
               "offsetof(tagRGBQUAD, rgbReserved) != 3");
-
-// ---- tagRGBQUAD (4 bytes) ----
-static_assert(sizeof(tagRGBQUAD) == 4,
-              "sizeof(tagRGBQUAD) != 4");
-static_assert(__builtin_offsetof(tagRGBQUAD, rgbBlue) == 0,
-              "offsetof(tagRGBQUAD, rgbBlue) != 0");
-static_assert(__builtin_offsetof(tagRGBQUAD, rgbGreen) == 1,
-              "offsetof(tagRGBQUAD, rgbGreen) != 1");
-static_assert(__builtin_offsetof(tagRGBQUAD, rgbRed) == 2,
-              "offsetof(tagRGBQUAD, rgbRed) != 2");
-static_assert(__builtin_offsetof(tagRGBQUAD, rgbReserved) == 3,
-              "offsetof(tagRGBQUAD, rgbReserved) != 3");
-
-// ---- tagSIZE (8 bytes) ----
-static_assert(sizeof(tagSIZE) == 8,
-              "sizeof(tagSIZE) != 8");
-static_assert(__builtin_offsetof(tagSIZE, cx) == 0,
-              "offsetof(tagSIZE, cx) != 0");
-static_assert(__builtin_offsetof(tagSIZE, cy) == 4,
-              "offsetof(tagSIZE, cy) != 4");
 
 } // namespace
 

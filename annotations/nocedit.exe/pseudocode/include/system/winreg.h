@@ -9,10 +9,10 @@
 // =============================================================================
 
 // Typedef: LSTATUS
-// Signed Long Integer (compiler-specific size)
+// Signed Integer (compiler-specific size)
 typedef LONG LSTATUS;
 
 // Typedef: REGSAM
-// Unsigned Long Integer (compiler-specific size)
+// Unsigned Integer (compiler-specific size)
 typedef ACCESS_MASK REGSAM;
 

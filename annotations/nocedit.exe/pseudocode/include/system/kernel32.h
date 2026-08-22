@@ -226,7 +226,7 @@ typedef BOOL SET_EVENT_FUNC(HANDLE hEvent);
 typedef BOOL SET_FILE_ATTRIBUTES_A_FUNC(LPCSTR lpFileName, DWORD dwFileAttributes);
 
 // Function Definition: SET_FILE_POINTER_FUNC
-typedef DWORD SET_FILE_POINTER_FUNC(HANDLE hFile, long lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
+typedef DWORD SET_FILE_POINTER_FUNC(HANDLE hFile, LONGVAL lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
 
 // Function Definition: SET_FILE_TIME_FUNC
 typedef BOOL SET_FILE_TIME_FUNC(HANDLE hFile, FILETIME* lpCreationTime, FILETIME* lpLastAccessTime, FILETIME* lpLastWriteTime);
@@ -262,7 +262,7 @@ typedef LPVOID TLS_GET_VALUE_FUNC(DWORD dwTlsIndex);
 typedef BOOL TLS_SET_VALUE_FUNC(DWORD dwTlsIndex, LPVOID lpTlsValue);
 
 // Function Definition: UNHANDLED_EXCEPTION_FILTER_FUNC
-typedef long UNHANDLED_EXCEPTION_FILTER_FUNC(struct _EXCEPTION_POINTERS* ExceptionInfo);
+typedef LONGVAL UNHANDLED_EXCEPTION_FILTER_FUNC(struct _EXCEPTION_POINTERS* ExceptionInfo);
 
 // Function Definition: VIRTUAL_ALLOC_FUNC
 typedef LPVOID VIRTUAL_ALLOC_FUNC(LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect);

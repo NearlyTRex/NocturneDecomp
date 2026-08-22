@@ -1716,8 +1716,9 @@ joined_r0x0055c026:
                                                   }
                                                   dVar1 = (double)local_3f74;
                                                   if (dVar1 <= 0.0) {
-                                                    pcVar7 = "Invalid movement rate %f";
-                                                    goto LAB_0055a97f;
+                                                    _sprintf(g_ScriptErrorBuffer,
+                                                             "Invalid movement rate %f",dVar1);
+                                                    return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
 
@@ -2977,8 +2978,10 @@ LAB_0055f91c:
                                                     if ((iVar8 != 0) ||
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar7[6] + 1)] & 0xe0) != 0)) {
-                                                      pcVar7 = "Unknown command on line %d: %s";
-                                                      goto LAB_0055a97f;
+                                                      _sprintf(g_ScriptErrorBuffer,
+                                                               "Unknown command on line %d: %s",
+                                                               iVar4,pcVar7);
+                                                      return -1;
                                                     }
                                                     local_11c =
                                                   core_script_cpp_skipWhitespace_FUN_005593d0

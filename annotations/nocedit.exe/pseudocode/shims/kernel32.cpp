@@ -271,7 +271,7 @@ static BOOL shim_CloseHandle(HANDLE hObject) {
     }
 }
 
-static DWORD shim_SetFilePointer(HANDLE hFile, long lDistanceToMove,
+static DWORD shim_SetFilePointer(HANDLE hFile, LONGVAL lDistanceToMove,
     PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod)
 {
     int fd = HANDLE_TO_FD(hFile);
@@ -1275,7 +1275,7 @@ static LPTOP_LEVEL_EXCEPTION_FILTER shim_SetUnhandledExceptionFilter(
     return prev;
 }
 
-static long shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* ExceptionInfo) {
+static LONGVAL shim_UnhandledExceptionFilter(struct _EXCEPTION_POINTERS* ExceptionInfo) {
     (void)ExceptionInfo;
     return 0; // EXCEPTION_CONTINUE_SEARCH
 }

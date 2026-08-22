@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: windef
-// Structs : 15
+// Structs : 12
 
 #include "nocturne.h"
 
@@ -51,12 +51,6 @@ static_assert(sizeof(HINSTANCE__) == 4,
 static_assert(__builtin_offsetof(HINSTANCE__, unused) == 0,
               "offsetof(HINSTANCE__, unused) != 0");
 
-// ---- HINSTANCE__ (4 bytes) ----
-static_assert(sizeof(HINSTANCE__) == 4,
-              "sizeof(HINSTANCE__) != 4");
-static_assert(__builtin_offsetof(HINSTANCE__, unused) == 0,
-              "offsetof(HINSTANCE__, unused) != 0");
-
 // ---- HKEY__ (4 bytes) ----
 static_assert(sizeof(HKEY__) == 4,
               "sizeof(HKEY__) != 4");
@@ -69,12 +63,6 @@ static_assert(sizeof(HMENU__) == 4,
 static_assert(__builtin_offsetof(HMENU__, unused) == 0,
               "offsetof(HMENU__, unused) != 0");
 
-// ---- HWND__ (4 bytes) ----
-static_assert(sizeof(HWND__) == 4,
-              "sizeof(HWND__) != 4");
-static_assert(__builtin_offsetof(HWND__, unused) == 0,
-              "offsetof(HWND__, unused) != 0");
-
 // ---- _FILETIME (8 bytes) ----
 static_assert(sizeof(_FILETIME) == 8,
               "sizeof(_FILETIME) != 8");
@@ -82,14 +70,6 @@ static_assert(__builtin_offsetof(_FILETIME, dwLowDateTime) == 0,
               "offsetof(_FILETIME, dwLowDateTime) != 0");
 static_assert(__builtin_offsetof(_FILETIME, dwHighDateTime) == 4,
               "offsetof(_FILETIME, dwHighDateTime) != 4");
-
-// ---- tagPOINT (8 bytes) ----
-static_assert(sizeof(tagPOINT) == 8,
-              "sizeof(tagPOINT) != 8");
-static_assert(__builtin_offsetof(tagPOINT, x) == 0,
-              "offsetof(tagPOINT, x) != 0");
-static_assert(__builtin_offsetof(tagPOINT, y) == 4,
-              "offsetof(tagPOINT, y) != 4");
 
 // ---- tagPOINT (8 bytes) ----
 static_assert(sizeof(tagPOINT) == 8,

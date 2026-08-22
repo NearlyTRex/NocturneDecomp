@@ -13,7 +13,10 @@ void __cdecl shape_design_c_setupViewMatrix_FUN_0045ba60(void)
   uint local_20;
   uint local_1c;
   uint local_18;
-  
+
+  local_20 = 0;
+  local_1c = 0;
+  local_18 = 0;
   if (g_PolygonScreenCache[19999].view_mode == 0) {
     local_20 = 0x4000;
     local_1c = 0;

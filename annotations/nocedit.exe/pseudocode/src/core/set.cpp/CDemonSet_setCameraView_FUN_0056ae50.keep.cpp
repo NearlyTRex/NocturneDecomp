@@ -36,7 +36,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CDemonLight *this_ptr_01;
   C3DSLight **ppCVar2;
   int fVar3;
-  
+
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 1046;
@@ -52,12 +52,24 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50(g_SpotLightList[iVar5]);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
+#if NOCTURNE_AUTHENTIC_WINDOWS
   this_ptr->previous_best_camera_timer = 3.0;
+#else
+  if (index != this_ptr->selected_camera_index) {
+    this_ptr->previous_best_camera_timer = 3.0;
+  }
+#endif
   this_ptr->lighting_quality_mode = 1;
   iVar5 = 0;
   this_ptr->directional_light_ratio_enabled = 1;
   g_SpotLightCount = 0;
+#if NOCTURNE_AUTHENTIC_WINDOWS
   this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
+#else
+  if (index != this_ptr->selected_camera_index) {
+    this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
+  }
+#endif
   g_OmniLightCount = 0;
   this_ptr->selected_camera_index = index;
   g_CoronaGlobeCount = 0;

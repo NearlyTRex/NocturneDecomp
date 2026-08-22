@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: winbase
-// Structs : 19
+// Structs : 9
 
 #include "nocturne.h"
 
@@ -15,14 +15,6 @@
 
 namespace nocturne_layout_winbase {
 
-// ---- _FILETIME (8 bytes) ----
-static_assert(sizeof(_FILETIME) == 8,
-              "sizeof(_FILETIME) != 8");
-static_assert(__builtin_offsetof(_FILETIME, dwLowDateTime) == 0,
-              "offsetof(_FILETIME, dwLowDateTime) != 0");
-static_assert(__builtin_offsetof(_FILETIME, dwHighDateTime) == 4,
-              "offsetof(_FILETIME, dwHighDateTime) != 4");
-
 // ---- _MEMORYSTATUS (32 bytes) ----
 static_assert(sizeof(_MEMORYSTATUS) == 32,
               "sizeof(_MEMORYSTATUS) != 32");
@@ -42,56 +34,6 @@ static_assert(__builtin_offsetof(_MEMORYSTATUS, dwTotalVirtual) == 24,
               "offsetof(_MEMORYSTATUS, dwTotalVirtual) != 24");
 static_assert(__builtin_offsetof(_MEMORYSTATUS, dwAvailVirtual) == 28,
               "offsetof(_MEMORYSTATUS, dwAvailVirtual) != 28");
-
-// ---- _MEMORYSTATUS (32 bytes) ----
-static_assert(sizeof(_MEMORYSTATUS) == 32,
-              "sizeof(_MEMORYSTATUS) != 32");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwLength) == 0,
-              "offsetof(_MEMORYSTATUS, dwLength) != 0");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwMemoryLoad) == 4,
-              "offsetof(_MEMORYSTATUS, dwMemoryLoad) != 4");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwTotalPhys) == 8,
-              "offsetof(_MEMORYSTATUS, dwTotalPhys) != 8");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwAvailPhys) == 12,
-              "offsetof(_MEMORYSTATUS, dwAvailPhys) != 12");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwTotalPageFile) == 16,
-              "offsetof(_MEMORYSTATUS, dwTotalPageFile) != 16");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwAvailPageFile) == 20,
-              "offsetof(_MEMORYSTATUS, dwAvailPageFile) != 20");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwTotalVirtual) == 24,
-              "offsetof(_MEMORYSTATUS, dwTotalVirtual) != 24");
-static_assert(__builtin_offsetof(_MEMORYSTATUS, dwAvailVirtual) == 28,
-              "offsetof(_MEMORYSTATUS, dwAvailVirtual) != 28");
-
-// ---- _MEMORY_BASIC_INFORMATION (28 bytes) ----
-static_assert(sizeof(_MEMORY_BASIC_INFORMATION) == 28,
-              "sizeof(_MEMORY_BASIC_INFORMATION) != 28");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, BaseAddress) == 0,
-              "offsetof(_MEMORY_BASIC_INFORMATION, BaseAddress) != 0");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, AllocationBase) == 4,
-              "offsetof(_MEMORY_BASIC_INFORMATION, AllocationBase) != 4");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, AllocationProtect) == 8,
-              "offsetof(_MEMORY_BASIC_INFORMATION, AllocationProtect) != 8");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, RegionSize) == 12,
-              "offsetof(_MEMORY_BASIC_INFORMATION, RegionSize) != 12");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, State) == 16,
-              "offsetof(_MEMORY_BASIC_INFORMATION, State) != 16");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, Protect) == 20,
-              "offsetof(_MEMORY_BASIC_INFORMATION, Protect) != 20");
-static_assert(__builtin_offsetof(_MEMORY_BASIC_INFORMATION, Type) == 24,
-              "offsetof(_MEMORY_BASIC_INFORMATION, Type) != 24");
-
-// ---- _OVERLAPPED (20 bytes) ----
-static_assert(sizeof(_OVERLAPPED) == 20,
-              "sizeof(_OVERLAPPED) != 20");
-static_assert(__builtin_offsetof(_OVERLAPPED, Internal) == 0,
-              "offsetof(_OVERLAPPED, Internal) != 0");
-static_assert(__builtin_offsetof(_OVERLAPPED, InternalHigh) == 4,
-              "offsetof(_OVERLAPPED, InternalHigh) != 4");
-static_assert(__builtin_offsetof(_OVERLAPPED, u) == 8,
-              "offsetof(_OVERLAPPED, u) != 8");
-static_assert(__builtin_offsetof(_OVERLAPPED, hEvent) == 16,
-              "offsetof(_OVERLAPPED, hEvent) != 16");
 
 // ---- _OVERLAPPED (20 bytes) ----
 static_assert(sizeof(_OVERLAPPED) == 20,
@@ -117,18 +59,6 @@ static_assert(__builtin_offsetof(_PROCESS_INFORMATION, dwProcessId) == 8,
 static_assert(__builtin_offsetof(_PROCESS_INFORMATION, dwThreadId) == 12,
               "offsetof(_PROCESS_INFORMATION, dwThreadId) != 12");
 
-// ---- _PROCESS_INFORMATION (16 bytes) ----
-static_assert(sizeof(_PROCESS_INFORMATION) == 16,
-              "sizeof(_PROCESS_INFORMATION) != 16");
-static_assert(__builtin_offsetof(_PROCESS_INFORMATION, hProcess) == 0,
-              "offsetof(_PROCESS_INFORMATION, hProcess) != 0");
-static_assert(__builtin_offsetof(_PROCESS_INFORMATION, hThread) == 4,
-              "offsetof(_PROCESS_INFORMATION, hThread) != 4");
-static_assert(__builtin_offsetof(_PROCESS_INFORMATION, dwProcessId) == 8,
-              "offsetof(_PROCESS_INFORMATION, dwProcessId) != 8");
-static_assert(__builtin_offsetof(_PROCESS_INFORMATION, dwThreadId) == 12,
-              "offsetof(_PROCESS_INFORMATION, dwThreadId) != 12");
-
 // ---- _SECURITY_ATTRIBUTES (12 bytes) ----
 static_assert(sizeof(_SECURITY_ATTRIBUTES) == 12,
               "sizeof(_SECURITY_ATTRIBUTES) != 12");
@@ -138,56 +68,6 @@ static_assert(__builtin_offsetof(_SECURITY_ATTRIBUTES, lpSecurityDescriptor) == 
               "offsetof(_SECURITY_ATTRIBUTES, lpSecurityDescriptor) != 4");
 static_assert(__builtin_offsetof(_SECURITY_ATTRIBUTES, bInheritHandle) == 8,
               "offsetof(_SECURITY_ATTRIBUTES, bInheritHandle) != 8");
-
-// ---- _SECURITY_ATTRIBUTES (12 bytes) ----
-static_assert(sizeof(_SECURITY_ATTRIBUTES) == 12,
-              "sizeof(_SECURITY_ATTRIBUTES) != 12");
-static_assert(__builtin_offsetof(_SECURITY_ATTRIBUTES, nLength) == 0,
-              "offsetof(_SECURITY_ATTRIBUTES, nLength) != 0");
-static_assert(__builtin_offsetof(_SECURITY_ATTRIBUTES, lpSecurityDescriptor) == 4,
-              "offsetof(_SECURITY_ATTRIBUTES, lpSecurityDescriptor) != 4");
-static_assert(__builtin_offsetof(_SECURITY_ATTRIBUTES, bInheritHandle) == 8,
-              "offsetof(_SECURITY_ATTRIBUTES, bInheritHandle) != 8");
-
-// ---- _STARTUPINFOA (68 bytes) ----
-static_assert(sizeof(_STARTUPINFOA) == 68,
-              "sizeof(_STARTUPINFOA) != 68");
-static_assert(__builtin_offsetof(_STARTUPINFOA, cb) == 0,
-              "offsetof(_STARTUPINFOA, cb) != 0");
-static_assert(__builtin_offsetof(_STARTUPINFOA, lpReserved) == 4,
-              "offsetof(_STARTUPINFOA, lpReserved) != 4");
-static_assert(__builtin_offsetof(_STARTUPINFOA, lpDesktop) == 8,
-              "offsetof(_STARTUPINFOA, lpDesktop) != 8");
-static_assert(__builtin_offsetof(_STARTUPINFOA, lpTitle) == 12,
-              "offsetof(_STARTUPINFOA, lpTitle) != 12");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwX) == 16,
-              "offsetof(_STARTUPINFOA, dwX) != 16");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwY) == 20,
-              "offsetof(_STARTUPINFOA, dwY) != 20");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwXSize) == 24,
-              "offsetof(_STARTUPINFOA, dwXSize) != 24");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwYSize) == 28,
-              "offsetof(_STARTUPINFOA, dwYSize) != 28");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwXCountChars) == 32,
-              "offsetof(_STARTUPINFOA, dwXCountChars) != 32");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwYCountChars) == 36,
-              "offsetof(_STARTUPINFOA, dwYCountChars) != 36");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwFillAttribute) == 40,
-              "offsetof(_STARTUPINFOA, dwFillAttribute) != 40");
-static_assert(__builtin_offsetof(_STARTUPINFOA, dwFlags) == 44,
-              "offsetof(_STARTUPINFOA, dwFlags) != 44");
-static_assert(__builtin_offsetof(_STARTUPINFOA, wShowWindow) == 48,
-              "offsetof(_STARTUPINFOA, wShowWindow) != 48");
-static_assert(__builtin_offsetof(_STARTUPINFOA, cbReserved2) == 50,
-              "offsetof(_STARTUPINFOA, cbReserved2) != 50");
-static_assert(__builtin_offsetof(_STARTUPINFOA, lpReserved2) == 52,
-              "offsetof(_STARTUPINFOA, lpReserved2) != 52");
-static_assert(__builtin_offsetof(_STARTUPINFOA, hStdInput) == 56,
-              "offsetof(_STARTUPINFOA, hStdInput) != 56");
-static_assert(__builtin_offsetof(_STARTUPINFOA, hStdOutput) == 60,
-              "offsetof(_STARTUPINFOA, hStdOutput) != 60");
-static_assert(__builtin_offsetof(_STARTUPINFOA, hStdError) == 64,
-              "offsetof(_STARTUPINFOA, hStdError) != 64");
 
 // ---- _STARTUPINFOA (68 bytes) ----
 static_assert(sizeof(_STARTUPINFOA) == 68,
@@ -249,26 +129,6 @@ static_assert(__builtin_offsetof(_SYSTEMTIME, wSecond) == 12,
 static_assert(__builtin_offsetof(_SYSTEMTIME, wMilliseconds) == 14,
               "offsetof(_SYSTEMTIME, wMilliseconds) != 14");
 
-// ---- _SYSTEMTIME (16 bytes) ----
-static_assert(sizeof(_SYSTEMTIME) == 16,
-              "sizeof(_SYSTEMTIME) != 16");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wYear) == 0,
-              "offsetof(_SYSTEMTIME, wYear) != 0");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wMonth) == 2,
-              "offsetof(_SYSTEMTIME, wMonth) != 2");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wDayOfWeek) == 4,
-              "offsetof(_SYSTEMTIME, wDayOfWeek) != 4");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wDay) == 6,
-              "offsetof(_SYSTEMTIME, wDay) != 6");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wHour) == 8,
-              "offsetof(_SYSTEMTIME, wHour) != 8");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wMinute) == 10,
-              "offsetof(_SYSTEMTIME, wMinute) != 10");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wSecond) == 12,
-              "offsetof(_SYSTEMTIME, wSecond) != 12");
-static_assert(__builtin_offsetof(_SYSTEMTIME, wMilliseconds) == 14,
-              "offsetof(_SYSTEMTIME, wMilliseconds) != 14");
-
 // ---- _TIME_ZONE_INFORMATION (172 bytes) ----
 static_assert(sizeof(_TIME_ZONE_INFORMATION) == 172,
               "sizeof(_TIME_ZONE_INFORMATION) != 172");
@@ -286,48 +146,6 @@ static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, DaylightDate) == 152,
               "offsetof(_TIME_ZONE_INFORMATION, DaylightDate) != 152");
 static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, DaylightBias) == 168,
               "offsetof(_TIME_ZONE_INFORMATION, DaylightBias) != 168");
-
-// ---- _TIME_ZONE_INFORMATION (172 bytes) ----
-static_assert(sizeof(_TIME_ZONE_INFORMATION) == 172,
-              "sizeof(_TIME_ZONE_INFORMATION) != 172");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, Bias) == 0,
-              "offsetof(_TIME_ZONE_INFORMATION, Bias) != 0");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, StandardName) == 4,
-              "offsetof(_TIME_ZONE_INFORMATION, StandardName) != 4");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, StandardDate) == 68,
-              "offsetof(_TIME_ZONE_INFORMATION, StandardDate) != 68");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, StandardBias) == 84,
-              "offsetof(_TIME_ZONE_INFORMATION, StandardBias) != 84");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, DaylightName) == 88,
-              "offsetof(_TIME_ZONE_INFORMATION, DaylightName) != 88");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, DaylightDate) == 152,
-              "offsetof(_TIME_ZONE_INFORMATION, DaylightDate) != 152");
-static_assert(__builtin_offsetof(_TIME_ZONE_INFORMATION, DaylightBias) == 168,
-              "offsetof(_TIME_ZONE_INFORMATION, DaylightBias) != 168");
-
-// ---- _WIN32_FIND_DATAA (320 bytes) ----
-static_assert(sizeof(_WIN32_FIND_DATAA) == 320,
-              "sizeof(_WIN32_FIND_DATAA) != 320");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, dwFileAttributes) == 0,
-              "offsetof(_WIN32_FIND_DATAA, dwFileAttributes) != 0");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, ftCreationTime) == 4,
-              "offsetof(_WIN32_FIND_DATAA, ftCreationTime) != 4");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, ftLastAccessTime) == 12,
-              "offsetof(_WIN32_FIND_DATAA, ftLastAccessTime) != 12");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, ftLastWriteTime) == 20,
-              "offsetof(_WIN32_FIND_DATAA, ftLastWriteTime) != 20");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, nFileSizeHigh) == 28,
-              "offsetof(_WIN32_FIND_DATAA, nFileSizeHigh) != 28");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, nFileSizeLow) == 32,
-              "offsetof(_WIN32_FIND_DATAA, nFileSizeLow) != 32");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, dwReserved0) == 36,
-              "offsetof(_WIN32_FIND_DATAA, dwReserved0) != 36");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, dwReserved1) == 40,
-              "offsetof(_WIN32_FIND_DATAA, dwReserved1) != 40");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, cFileName) == 44,
-              "offsetof(_WIN32_FIND_DATAA, cFileName) != 44");
-static_assert(__builtin_offsetof(_WIN32_FIND_DATAA, cAlternateFileName) == 304,
-              "offsetof(_WIN32_FIND_DATAA, cAlternateFileName) != 304");
 
 // ---- _WIN32_FIND_DATAA (320 bytes) ----
 static_assert(sizeof(_WIN32_FIND_DATAA) == 320,

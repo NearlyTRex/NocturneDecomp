@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/windef.h"
+#include "system/winnt.h"
 #include "system/winuser.h"
 
 // =============================================================================
@@ -37,7 +38,7 @@ typedef BOOL GET_CLIENT_RECT_FUNC(HWND hWnd, LPRECT lpRect);
 typedef HANDLE GET_CLIPBOARD_DATA_FUNC(UINT uFormat);
 
 // Function Definition: GET_KEY_NAME_TEXT_A_FUNC
-typedef int GET_KEY_NAME_TEXT_A_FUNC(long lParam, LPSTR lpString, int cchSize);
+typedef int GET_KEY_NAME_TEXT_A_FUNC(LONGVAL lParam, LPSTR lpString, int cchSize);
 
 // Function Definition: GET_LAST_ACTIVE_POPUP_FUNC
 typedef HWND GET_LAST_ACTIVE_POPUP_FUNC(HWND hWnd);

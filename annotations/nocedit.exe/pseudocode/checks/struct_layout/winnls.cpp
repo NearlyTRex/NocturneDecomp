@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: winnls
-// Structs : 2
+// Structs : 1
 
 #include "nocturne.h"
 
@@ -14,16 +14,6 @@
 #if __SIZEOF_POINTER__ == 4
 
 namespace nocturne_layout_winnls {
-
-// ---- _cpinfo (20 bytes) ----
-static_assert(sizeof(_cpinfo) == 20,
-              "sizeof(_cpinfo) != 20");
-static_assert(__builtin_offsetof(_cpinfo, MaxCharSize) == 0,
-              "offsetof(_cpinfo, MaxCharSize) != 0");
-static_assert(__builtin_offsetof(_cpinfo, DefaultChar) == 4,
-              "offsetof(_cpinfo, DefaultChar) != 4");
-static_assert(__builtin_offsetof(_cpinfo, LeadByte) == 6,
-              "offsetof(_cpinfo, LeadByte) != 6");
 
 // ---- _cpinfo (20 bytes) ----
 static_assert(sizeof(_cpinfo) == 20,

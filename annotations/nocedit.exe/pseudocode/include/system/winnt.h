@@ -8,7 +8,7 @@
 // =============================================================================
 
 // Typedef: ACCESS_MASK
-// Unsigned Long Integer (compiler-specific size)
+// Unsigned Integer (compiler-specific size)
 typedef DWORD ACCESS_MASK;
 
 // Enum: EXCEPTION_DISPOSITION
@@ -22,6 +22,10 @@ typedef int EXCEPTION_DISPOSITION;
 
 // Function Definition: EXCEPTION_FILTER_FUNC
 typedef int EXCEPTION_FILTER_FUNC(int action, DWORD exceptionCode);
+
+// Typedef: LONGVAL
+// Signed Integer (compiler-specific size)
+typedef LONG LONGVAL;
 
 // Typedef: LPCH
 // pointer to CHAR

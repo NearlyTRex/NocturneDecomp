@@ -27,6 +27,10 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int local_1c;
   float local_14;
   uint uVar8;
+#if !NOCTURNE_AUTHENTIC_WINDOWS
+  int saved_pb_index;
+  float saved_pb_timer;
+#endif
 
   local_14 = 0.0;
   local_1c = 0;
@@ -284,8 +288,17 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       if (g_ApplicationActive != 0) {
         g_ApplicationActive = 0;
+#if NOCTURNE_AUTHENTIC_WINDOWS
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
+#else
+        saved_pb_index = g_CDemonSetPtr->previous_best_camera_index;
+        saved_pb_timer = g_CDemonSetPtr->previous_best_camera_timer;
+        core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
+                  (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
+        g_CDemonSetPtr->previous_best_camera_index = saved_pb_index;
+        g_CDemonSetPtr->previous_best_camera_timer = saved_pb_timer;
+#endif
       }
       EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);

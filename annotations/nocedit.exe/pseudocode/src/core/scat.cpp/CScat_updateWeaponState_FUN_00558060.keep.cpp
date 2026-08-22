@@ -48,6 +48,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,
     iVar7 = 0;
     while (0.0 < delta_time) {
       weapon_actor = this_ptr->weapon_actor;
+      weapon_action = 0;
       if (selected_weapon == weapon_actor) {
         if (weapon_actor != (CWeapon *)0x0) {
           switch(weapon_actor->weapon_type) {
@@ -97,7 +98,6 @@ LAB_00558263:
                && ((*(selected_weapon->base.vtable._uw)->_uw.setWeaponState)
                              (selected_weapon, 2),
                   this_ptr->weapon_actor->weapon_type == 8)) {
-              iVar7 = 1;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_01,6,1);
             }
           }

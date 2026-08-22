@@ -71,6 +71,7 @@ LAB_00556829:
   g_CurrentLineNumber = 1034;
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_dc);
+  return 0;
 LAB_00556524:
   uVar5 = width * height * bytes_per_pixel;
   memcpy(*local_14->row_table,src_pixel_data,uVar5);

@@ -232,8 +232,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         fStack_2c = -0.02;
       }
       iStack_30 = g_CDemonCameraInstance.corona_blend_factor;
-      if ((float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 + fStack_2c <
-          0.0) {
+      fStack_184 = (float)iStack_30 * (float)1.5259021896696401e-05 + fStack_2c;
+      if (fStack_184 < 0.0) {
         fStack_184 = 0.0;
       }
       if (1.0 < fStack_184) {

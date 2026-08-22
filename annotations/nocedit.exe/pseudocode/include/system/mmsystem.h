@@ -82,7 +82,7 @@ typedef struct tagWAVEINCAPSA* LPWAVEINCAPSA;
 typedef struct tagWAVEOUTCAPSA* LPWAVEOUTCAPSA;
 
 // Typedef: MCIERROR
-// Unsigned Long Integer (compiler-specific size)
+// Unsigned Integer (compiler-specific size)
 typedef DWORD MCIERROR;
 
 // Function Definition: MCI_GET_ERROR_STRING_A_FUNC

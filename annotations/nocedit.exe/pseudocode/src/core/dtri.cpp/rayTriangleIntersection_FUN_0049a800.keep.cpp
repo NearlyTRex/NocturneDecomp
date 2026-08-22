@@ -24,7 +24,13 @@ float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle 
   float fVar3;
   float fVar4;
   float fVar5;
-  
+
+  local_2c = 0.0f;
+  local_28 = 0.0f;
+  local_24 = 0.0f;
+  local_20 = 0.0f;
+  local_1c = 0.0f;
+  local_14 = 0.0f;
   fVar7 = (triangle->normal).z * rayDirection->z +
           (triangle->normal).x * rayDirection->x + (triangle->normal).y * rayDirection->y;
   if (fVar7 <= 0.0) {

@@ -48,10 +48,9 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemo
   float fStack_84;
   float fStack_80;
   float fStack_68;
-  uint local_40;
   float fStack_2c;
-  
-  local_40 = 0;
+
+  iStack_30 = 0;
   if (actor == (CDemonActor *)0x0) {
     if (this_ptr->selected_camera_index < 0) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,0);

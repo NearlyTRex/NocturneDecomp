@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // WINSOCK - System Header
@@ -30,13 +31,13 @@ typedef struct HOSTENT {
 } HOSTENT;
 
 // Function Definition: HOST_TO_NETWORK_LONG_FUNC
-typedef ulong HOST_TO_NETWORK_LONG_FUNC(ulong hostlong);
+typedef ULONG HOST_TO_NETWORK_LONG_FUNC(ULONG hostlong);
 
 // Function Definition: HOST_TO_NETWORK_SHORT_FUNC
 typedef ushort HOST_TO_NETWORK_SHORT_FUNC(ushort hostshort);
 
 // Function Definition: INET_ADDR_FUNC
-typedef ulong INET_ADDR_FUNC(char* cp);
+typedef ULONG INET_ADDR_FUNC(char* cp);
 
 // Typedef: LPWSADATA
 // pointer to WSADATA
@@ -122,7 +123,7 @@ typedef int CONNECT_FUNC(_SOCKET s, struct SOCKADDR* name, int namelen);
 typedef int GET_SOCK_NAME_FUNC(_SOCKET s, struct SOCKADDR* name, int* namelen);
 
 // Function Definition: IOCTL_SOCKET_FUNC
-typedef int IOCTL_SOCKET_FUNC(_SOCKET s, long cmd, ulong* argp);
+typedef int IOCTL_SOCKET_FUNC(_SOCKET s, LONGVAL cmd, ULONG* argp);
 
 // Function Definition: LISTEN_FUNC
 typedef int LISTEN_FUNC(_SOCKET s, int backlog);
